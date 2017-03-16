@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert renders properly 1`] = `
+<div
+  className="alert alert-danger alert-dismissable"
+>
+  <button
+    aria-hidden="true"
+    className="close"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="pficon pficon-close"
+    />
+  </button>
+  <span
+    className="pficon pficon-error-circle-o"
+  />
+  <span>
+    Danger Will Robinson!
+  </span>
+</div>
+`;

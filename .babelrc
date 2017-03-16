@@ -1,3 +1,8 @@
 {
-  "presets": ["es2015", "stage-0", "react"]
+  "presets": ["es2015", "stage-0", "react"],
+  "ignore": [
+    "src/**/__snapshots__",
+    "src/**/*.test.js",
+    "src/**/*.stories.js"
+  ]
 }
