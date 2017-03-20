@@ -21,6 +21,10 @@
     "classnames": "^2.2.5"
   },
   "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.3.0",
+    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-deployer": "^1.2.0",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.1.1",
@@ -43,6 +47,9 @@
     "lint": "standard",
     "prepublish": "npm run build",
     "test": "standard && jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "storybook": "start-storybook -p 6006",
+    "storybook:export": "build-storybook -c .storybook -o .out",
+    "storybook:deploy": "storybook-to-ghpages"
   }
 }
