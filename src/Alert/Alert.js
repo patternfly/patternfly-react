@@ -2,17 +2,7 @@ import ClassNames from 'classnames'
 import React, { PropTypes } from 'react'
 
 /**
- * React <b>Alert</b> Component for Patternfly Web Components
- *
- * @prop {string} type danger, error, warning, success, info
- * @prop {func} onDismiss alert dismiss handler function
- * @prop {node} children alert contents
- *
- * @example {@lang xml}
- * <Alert type="danger" onDismiss={this.handleAlertClose}>
- *  <span>Danger Will Robinson!</span>
- * </Alert>
- *
+ * Alert Component for Patternfly React
  */
 const Alert = ({ children, onDismiss, type }) => {
   const alertClass = ClassNames({
@@ -43,8 +33,11 @@ const Alert = ({ children, onDismiss, type }) => {
   )
 }
 Alert.propTypes = {
+  /** children nodes  */
   children: PropTypes.node,
+  /** callback when alert is dismissed  */
   onDismiss: PropTypes.func,
+  /** the type of alert  */
   type: PropTypes.oneOf(['danger', 'error', 'warning', 'success', 'info']).isRequired
 }
 Alert.defaultProps = {
