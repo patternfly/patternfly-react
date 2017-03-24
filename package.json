@@ -48,8 +48,8 @@
     "prepublish": "npm run build",
     "test": "standard && jest",
     "test:watch": "jest --watchAll",
-    "storybook": "start-storybook -p 6006",
-    "storybook:export": "build-storybook -c .storybook -o .out",
+    "storybook": "start-storybook -c storybook -p 6006",
+    "build-storybook": "build-storybook -c storybook -o .out",
     "storybook:deploy": "storybook-to-ghpages"
   }
 }

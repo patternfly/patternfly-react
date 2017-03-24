@@ -22,6 +22,6 @@ npm run storybook
 
 How to deploy storybook to github pages in your fork:
 ```
-npm run storybook:export
+npm run build-storybook
 npm run storybook:deploy
 ```
