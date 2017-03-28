@@ -1,0 +1,55 @@
+{
+  "name": "patternfly-react",
+  "version": "0.0.1",
+  "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "dependencies": {
+    "classnames": "^2.2.5"
+  },
+  "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.3.0",
+    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "@kadira/storybook-deployer": "^1.2.0",
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^19.0.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "jest": "^19.0.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "standard": "^9.0.1"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0",
+    "patternfly": "~3.3"
+  },
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "lint": "standard",
+    "prepublish": "npm run build",
+    "test": "standard && jest",
+    "test:watch": "jest --watchAll",
+    "storybook": "start-storybook -c storybook -p 6006",
+    "build-storybook": "build-storybook -c storybook -o .out",
+    "storybook:deploy": "storybook-to-ghpages"
+  }
+}
