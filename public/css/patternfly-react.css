@@ -1,0 +1,348 @@
+/*The CSS defined here should be temporary until it is contributed upstream to Patternfly CSS */
+.nav.nav-tabs li,
+.nav.nav-tabs li a {
+  cursor: pointer;
+}
+.canvas-editor-container {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+.canvas-editor-container .canvas-editor-toolbar {
+  padding: 15px;
+}
+.canvas-editor-container .canvas-editor-toolbar button {
+  margin-right: 6px;
+}
+.canvas-editor-container .canvas-editor-toolbar .more-actions {
+  border-left: solid 2px #d1d1d1;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.canvas-editor-container .canvas-editor-toolbar .right-aligned-controls {
+  display: block;
+  float: right;
+  font-size: 12px;
+  font-weight: 600;
+  padding-right: 5px;
+  padding-top: 2px;
+}
+.canvas-editor-container .canvas-editor-toolbar a {
+  color: #72767b;
+  cursor: pointer;
+}
+.canvas-editor-container .canvas-editor-toolbar .pficon {
+  font-size: 20px;
+  margin-left: 15px;
+  margin-top: -4px;
+  vertical-align: middle;
+}
+.canvas-editor-container .canvas-editor-toolbar a.disabled, 
+.canvas-editor-container .canvas-editor-toolbar a:hover.disabled {
+  color: #bbb;
+  cursor: not-allowed;
+}
+
+.canvas-editor-container .canvas-editor-toolbox-container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+.canvas-editor-container .canvas-editor-toolbox-container .canvas-editor-toolbox {
+  background-color: rgba(255, 255, 255, 0.94);
+  border: 1.5px solid #d1d1d1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding-bottom: 10px;
+  padding-left: 26px;
+  padding-right: 26px;
+  padding-top: 26px;
+  position: absolute;
+  top: -1px;
+  width: 100%;
+}
+.canvas-editor-container .canvas-editor-toolbox-container .canvas-editor-toolbox .close-toolbox {
+  font-size: 16px;
+  float: right;
+  position: relative;
+  top: -17px;
+  right: -12px;
+  color: #72767b;
+  cursor: pointer;
+}
+.canvas-editor-container .canvas-editor-toolbox-container .canvas-editor-toolbox .tab-pre-title {
+  font-size: 12px;
+  margin-bottom: -6px;
+  cursor: pointer;
+}
+.canvas-editor-toolbox .tab-title {
+  font-size: 14px;
+  cursor: pointer;
+}
+.canvas-editor-toolbox .toolbox-items-list {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-bottom: 4px;
+  padding-left: 15px;
+}
+.canvas-editor-toolbox .toolbox-item {
+  background-color: rgba(255, 255, 255, 0.94);
+  border-radius: 1px;
+  border: 1px solid #bbb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: move;
+  float: left;
+  height: 36px;
+  margin-right: 16px;
+  margin-top: 16px;
+  min-height: 52px;
+  min-width: 325px;
+  padding: 6px 28px;
+  position: relative;
+  vertical-align: middle;
+}
+.canvas-editor-toolbox .toolbox-item::before {
+  background-image: linear-gradient(to bottom, #0088ce 60%, #fff 0%);
+  background-position: left;
+  background-repeat: repeat-y;
+  background-size: 2px 5px;
+  border: 4px solid #0088ce;
+  bottom: 4px;
+  content: '';
+  left: 4px;
+  position: absolute;
+  top: 3px;
+  width: 10px;
+}
+.canvas-editor-toolbox .toolbox-item img {
+  margin-right: 8px;
+  object-fit: contain;
+  height: 38px;
+}
+.canvas-editor-toolbox .draggable-item-icon {
+  font-size: 28px;
+  padding-right: 14px;
+  padding-top: 6px;
+  vertical-align: middle;
+}
+.canvas-editor-toolbox .toolbox-item span {
+  position: relative;
+  top: 4px;
+}
+.canvas-editor-container .canvas-editor-toolbox-container .canvas-container {
+  height: 756px;
+  margin-left: 15px;
+  overflow: auto;
+  width: 98%;
+}
+.canvas {
+  border: solid 1px #d1d1d1;
+  background-image: url('../img/canvas-dot-grid.png');
+  background-repeat: repeat;
+}
+.read-only {
+  background-image: none !important;
+  background-repeat: unset !important;
+}
+.canvas-in-connection-mode {
+  background-image: none !important;
+  background-repeat: unset !important;
+  background-color: #bbb;
+}
+.node-header {
+  display: table;
+  font-weight: 600;
+  cursor: default;
+}
+.node-label {
+  font-weight: 300;
+}
+.node-header p {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.invalid-node-header {
+  fill: #bbb;
+  color: #bbb;
+}
+.node-center-icon {
+  font-size: 72px;
+  cursor: default;
+}
+.bundle-icon {
+  cursor: default;
+}
+.close-icon {
+  cursor: pointer;
+  color: #626262;
+}
+.close-icon:hover {
+  color: #000;
+}
+.node-rect {
+  fill: #fff;
+  stroke-width: 2;
+  stroke: #bbb;
+}
+.invalid-node-rect {
+  fill: #d1d1d1;
+}
+.invalid-node-img {
+  opacity: 0.2;
+}
+.node-toolbar {
+  background-color: #f5f5f5;
+  border-bottom: solid 1px #bbb;
+  border-left: solid 1px #bbb;
+  border-radius: 5px;
+  border-right: solid 1px #bbb;
+  height: 28px;
+  padding-left: 8px;
+}
+.node-toolbar-icons {
+  color: #0088ce;
+  cursor: pointer;
+  font-size: 16px;
+  padding-right: 16px;
+  padding-top: 4px;
+}
+.svg-triangle polyline {
+  fill: #f5f5f5;
+  stroke-width: 2;
+  stroke: #bbb;
+}
+.connecting-mode-rec {
+  fill: #8b8d8f;
+}
+.connecting-mode-label {
+  fill: #fff;
+  font-size: 16px;
+}
+.connecting-mode-label-warning {
+  fill: #cc0000;
+  font-size: 16px;
+}
+.connector-icons {
+  cursor: pointer;
+  fill: #0088ce;
+  font-size: 16px;
+}
+.connector-icons:hover {
+  fill: #063451;
+}
+.mouseover-node-rect {
+  stroke-width: 3;
+  stroke: #bbb;
+}
+.selected-node-rect {
+  stroke-width: 3;
+  stroke: #0088ce;
+}
+.connector-tooltip {
+  fill: #f5f5f5;
+  stroke-width: 1;
+  stroke: #030303;
+}
+.connector-tooltip-text {
+  font-size: 10px;
+}
+.connector-circle {
+  fill: #fff;
+  stroke-width: 2;
+  stroke: #030303;
+}
+.mouseover-connector-circle {
+  fill: #fff;
+  stroke-width: 3;
+  stroke: #030303;
+}
+.unconnected-circle {
+  fill: #2d7623;
+  stroke-opacity: "0.8";
+  stroke-width: 2;
+  stroke: #030303;
+}
+.mouseover-unconnected-circle {
+  fill: #2d7623;
+  stroke-opacity: "0.8";
+  stroke-width: 3;
+  stroke: #030303;
+}
+.connection-line {
+  fill: transparent;
+  stroke-width: 4;
+  stroke: #8b8d8f;
+}
+.mouseover-connection-line {
+  fill: transparent;
+  stroke-width: 6;
+  stroke: #8b8d8f;
+}
+.selected-connection-line {
+  fill: transparent;
+  stroke-width: 4;
+  stroke: #cc0000;
+}
+.connection-endpoint {
+  fill: #8b8d8f;
+}
+.selected-connection-endpoint {
+  fill: #cc0000;
+}
+.mouseover-connection-endpoint {
+  fill: #8b8d8f;
+}
+.connection-name {
+  fill: #030303;
+}
+.selected-connection-name {
+  fill: #cc0000;
+}
+.mouseover-connection-name {
+  fill: #030303;
+}
+.dragging-connection {
+  pointer-events: none;
+}
+.dragging-connection-line {
+  fill: transparent;
+  stroke-width: 3;
+  stroke: #8b8d8f;
+}
+.dragging-connection-endpoint {
+  fill: #8b8d8f;
+}
+.draggable-container {
+  border: solid 1px #d1d1d1;
+}
+.drag-selection-rect {
+  fill: transparent;
+  stroke-width: 2;
+  stroke: #0088ce;
+}
+.node-dialog-close {
+  font-size: 12px;
+  padding-top: 7px;
+}
+.nodetoolbar-dialog {
+  left: -19px;
+  margin-top: 4px;
+  padding: 8px;
+  position: fixed;
+  top: 19px;
+  width: 300px;
+}
+.nodetoolbar-dialog .tag-list-action {
+  color: #fff;
+  cursor: pointer;
+}
+.tag-dialog {
+  left: 30px;
+  width: 353px;
+}
+.node-tag-title {
+  font-weight: 600;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
