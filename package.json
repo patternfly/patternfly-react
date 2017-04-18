@@ -43,7 +43,7 @@
     "patternfly": "~3.3"
   },
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "babel src --out-dir lib --ignore test.js",
     "lint": "standard",
     "prepublish": "npm run build",
     "test": "standard && jest",
