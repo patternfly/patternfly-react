@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "react-bootstrap": "^0.30.8"
   },
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.3.0",
