@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/patternfly/patternfly-react.svg?branch=master)](https://travis-ci.org/patternfly/patternfly-react)
+[![npm version](https://badge.fury.io/js/patternfly-react.svg)](https://badge.fury.io/js/patternfly-react)
+
 # patternfly-react
 
 This project will provide a set of React UI components for the [PatternFly project](https://patternfly.org).
