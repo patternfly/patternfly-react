@@ -6,7 +6,8 @@ fi
 
 npm run build-storybook
 cd .out
-git config user.name "Travis CI"
+git config --global user.email "Travis CI"
+git config --global user.name "hello@ghbot.com"
 git init
 git add .
 git commit -m "Deploy Storybook to GitHub Pages"
