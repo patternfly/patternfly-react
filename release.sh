@@ -21,7 +21,8 @@ getDeployKey () {
   ssh-add deploy_key
 }
 
-if ["$TRAVIS_REPO_SLUG" != "priley86/patternfly-react" -o "$TRAVIS_BRANCH" != "master"]; then
+if [ "${TRAVIS_REPO_SLUG}" != "priley86/patternfly-react" -o "${TRAVIS_BRANCH}" != "master" ]; then
+  echo -e "${RED}Exiting, this is not a production release.${NC}"
   exit 0;
 fi
 
