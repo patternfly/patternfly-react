@@ -26,6 +26,7 @@ if [ "${TRAVIS_REPO_SLUG}" != "${TRIGGER_REPO_SLUG}" -o "${TRAVIS_BRANCH}" != "$
   exit 0;
 fi
 
+getDeployKey
 npm run build-storybook
 cd .out
 git config --global user.email $COMMIT_AUTHOR_EMAIL
@@ -35,6 +36,5 @@ git add .
 git commit -m "Deploy Storybook to GitHub Pages"
 
 cd ..
-getDeployKey
 git push --force --quiet git@github.com:patternfly/patternfly-react.git master:gh-pages
 
