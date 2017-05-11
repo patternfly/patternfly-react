@@ -21,7 +21,7 @@ getDeployKey () {
   ssh-add deploy_key
 }
 
-if [ "${TRAVIS_REPO_SLUG}" != "priley86/patternfly-react" -o "${TRAVIS_BRANCH}" != "master" ]; then
+if [ "${TRAVIS_REPO_SLUG}" != "${TRIGGER_REPO_SLUG}" -o "${TRAVIS_BRANCH}" != "${TRIGGER_REPO_BRANCH}" ]; then
   echo -e "${RED}Exiting, this is not a production release.${NC}"
   exit 0;
 fi
@@ -36,5 +36,5 @@ git commit -m "Deploy Storybook to GitHub Pages"
 
 cd ..
 getDeployKey
-git push --force --quiet https://github.com/priley86/patternfly-react.git master:gh-pages
+git push --force --quiet git@github.com:patternfly/patternfly-react.git master:gh-pages
 
