@@ -2,6 +2,10 @@ language: node_js
 cache:
   directories:
   - node_modules
+env:
+  global:
+  - ENCRYPTION_LABEL: "b601314e09dc"
+  - COMMIT_AUTHOR_EMAIL: "patternfly-build@redhat.com"
 notifications:
   email: false
 node_js:
@@ -18,6 +22,3 @@ after_success:
 branches:
   except:
   - "/^v\\d+\\.\\d+\\.\\d+$/"
-before_install:
-- openssl aes-256-cbc -K $encrypted_b601314e09dc_key -iv $encrypted_b601314e09dc_iv
-  -in deploy_key.enc -out deploy_key -d
