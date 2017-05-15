@@ -7,7 +7,7 @@ env:
   - ENCRYPTION_LABEL: "b601314e09dc"
   - COMMIT_AUTHOR_EMAIL: "patternfly-build@redhat.com"
   - TRIGGER_REPO_SLUG: "priley86/patternfly-react"
-  - TRIGGER_REPO_BRANCH: "master"
+  - TRIGGER_REPO_BRANCH: "release"
 notifications:
   email: false
 node_js:
