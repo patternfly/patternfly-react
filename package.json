@@ -1,11 +1,11 @@
 {
   "name": "patternfly-react",
-  "version": "0.0.1",
+  "version": "0.0.0-semantically-released",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/patternfly/patternfly-react.git"
+    "url": "https://github.com/patternfly/patternfly-react.git"
   },
   "keywords": [
     "react",
@@ -32,10 +32,13 @@
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "jest": "^19.0.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-test-renderer": "^15.4.2",
+    "semantic-release": "^6.3.6",
     "standard": "^9.0.1"
   },
   "peerDependencies": {
@@ -43,6 +46,7 @@
     "patternfly": "~3.3"
   },
   "scripts": {
+    "commit": "git-cz",
     "build": "babel src --out-dir lib --ignore test.js",
     "lint": "standard",
     "prepublish": "npm run build",
@@ -50,6 +54,10 @@
     "test:watch": "jest --watchAll",
     "storybook": "start-storybook -c storybook -p 6006",
     "build-storybook": "build-storybook -c storybook -o .out",
-    "storybook:deploy": "storybook-to-ghpages"
+    "storybook:deploy": "storybook-to-ghpages",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
