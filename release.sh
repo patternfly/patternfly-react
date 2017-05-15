@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
@@ -15,7 +15,9 @@ getDeployKey () {
   ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
   echo "Checking Travis ENV VAR: ${ENCRYPTED_IV_VAR}..."
   ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
+  echo "Run Openssl"
   openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
+  echo "Run chmod"
   chmod 600 deploy_key
   eval `ssh-agent -s`
   ssh-add deploy_key
