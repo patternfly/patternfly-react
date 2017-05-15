@@ -2,6 +2,8 @@
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
+REPO="https://github.com/priley86/patternfly-react.git"
+SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 
 getDeployKey () {
   if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then
@@ -38,5 +40,5 @@ git add .
 git commit -m "Deploy Storybook to GitHub Pages"
 
 cd ..
-git push --force --quiet git@github.com:priley86/patternfly-react.git master:gh-pages
+git push --force --quiet $SSH_REPO master:gh-pages
 
