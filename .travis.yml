@@ -1,4 +1,5 @@
 language: node_js
+sudo: required
 cache:
   directories:
   - node_modules
@@ -21,7 +22,7 @@ script:
 - npm run test
 after_success:
 - npm run semantic-release
-- sh -x ./release.sh -p
+- ./release.sh
 branches:
   except:
   - "/^v\\d+\\.\\d+\\.\\d+$/"
