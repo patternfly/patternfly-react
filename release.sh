@@ -2,8 +2,7 @@
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
-REPO="https://github.com/priley86/patternfly-react.git"
-SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
+SSH_REPO="git@github.com:${TRIGGER_REPO_SLUG}"
 
 getDeployKey () {
   if [ "${TRAVIS_PULL_REQUEST}" != "false" ]; then
