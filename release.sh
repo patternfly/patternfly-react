@@ -13,10 +13,8 @@ getDeployKey () {
   ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
   echo "Checking Travis ENV VAR: ${ENCRYPTED_KEY_VAR}..."
   ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
-  echo "Checking Travis ENV VAR: ${ENCRYPTED_IV_VAR}..."
-  ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
   echo "Run Openssl"
-  openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
+  openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV_VAR -in deploy_key.enc -out deploy_key -d
   echo "Run chmod"
   chmod 600 deploy_key
   eval `ssh-agent -s`
@@ -32,11 +30,11 @@ getDeployKey
 npm run build-storybook
 cd .out
 git config --global user.email $COMMIT_AUTHOR_EMAIL
-git config --global user.name "patternfly-build"
+git config --global user.name $COMMIT_AUTHOR_USERNAME
 git init
 git add .
 git commit -m "Deploy Storybook to GitHub Pages"
 
 cd ..
-git push --force --quiet git@github.com:patternfly/patternfly-react.git master:gh-pages
+git push --force --quiet git@github.com:priley86/patternfly-react.git master:gh-pages
 
