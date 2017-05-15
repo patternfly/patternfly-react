@@ -16,7 +16,7 @@ getDeployKey () {
   echo "Checking Travis ENV VAR: ${ENCRYPTED_IV_VAR}..."
   #ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
   echo "Run Openssl"
-  openssl aes-256-cbc -K "${ENCRYPTED_KEY_VAR}" -iv "${ENCRYPTED_IV_VAR}" -in deploy_key.enc -out deploy_key -d
+  openssl aes-256-cbc -K "encrypted_${ENCRYPTION_LABEL}_key" -iv "encrypted_${ENCRYPTION_LABEL}_iv" -in deploy_key.enc -out deploy_key -d
   echo "Run chmod"
   chmod 600 deploy_key
   eval `ssh-agent -s`
