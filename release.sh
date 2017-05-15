@@ -40,7 +40,7 @@ git add .
 git commit -m "Deploy Storybook to GitHub Pages"
 
 cd ..
-git remote add origin $SSH_REPO
-git fetch origin
-git push --force --quiet origin master:gh-pages
+git remote add ssh-origin $SSH_REPO
+git fetch ssh-origin
+git push --force --quiet ssh-origin master:gh-pages
 
