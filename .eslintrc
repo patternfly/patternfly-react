@@ -1,0 +1,27 @@
+{
+  "rules": {
+    "prettier/prettier": ["error", { "semi": false, "singleQuote": true }]
+  },
+  "extends": [
+    "standard",
+    "standard-react",
+    "standard-jsx",
+    "prettier",
+    "prettier/react"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "ecmaFeatures": {
+    "jsx": true,
+    "experimentalObjectRestSpread": true
+  },
+  "plugins": [
+    "prettier",
+    "react"
+  ],
+  "parser": "babel-eslint"
+}
