@@ -7,7 +7,7 @@ import renderer from 'react-test-renderer'
 test('Alert renders properly', () => {
   const handleAlertClose = jest.fn()
   const component = renderer.create(
-    <Alert type='danger' onDismiss={handleAlertClose}>
+    <Alert type="danger" onDismiss={handleAlertClose}>
       <span>Danger Will Robinson!</span>
     </Alert>
   )

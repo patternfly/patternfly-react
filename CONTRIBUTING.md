@@ -2,7 +2,7 @@
 
 ## Code of Conduct
 
-This project is governed by the [Contributor Covenant version 1.4][1].  All contributors and participants 
+This project is governed by the [Contributor Covenant version 1.4][1].  All contributors and participants
 agree to abide by its terms. To report violations, send an email to [patternfly@redhat.com][2].
 
 ## Issue Contributions
@@ -14,7 +14,7 @@ The [issue tracker](https://github.com/patternfly/patternfly-react/issues) is th
 Our issue tracker utilizes several labels to help organize and identify issues. Here's what they represent and how we use them:
 
 - `bug` - A bug is a _demonstrable problem_ that is caused by the code in the repository. Please check if the issue has already been reported before reporting a new bug.
-- `duplicate` - A duplicate signifies that another issue encapsulates or restates this issue. Duplicates will be closed and referenced as such. 
+- `duplicate` - A duplicate signifies that another issue encapsulates or restates this issue. Duplicates will be closed and referenced as such.
 - `enhancement` - An enhancement is a feature request. Please provide as much detail as possible and consider whether your idea fits the scope and aims of this project.
 - `help wanted` - Issues we need or would love help from the community to resolve.
 - `pending response` - This label indicates that the issue is awaiting reply from a contributor or a maintainer.
@@ -27,13 +27,13 @@ React component contributions should observe the following high level process:
 
 1. Check the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) to see if your component meets the criteria for an addition to PatternFly. If you're unsure, reach out to us on the mailing list!
 2. Create an `enhancement` issue to indicate you'd like to contribute this component to PatternFly React. At this time, the PatternFly React design team will review the enhancement issue and verify that the component passes the decision tree. Only components that pass will be accepted into the repo. If the component does not pass, the team will work with you on identifying any sub-components that can be extracted that would be needed by more than one project.
-3. Implement the component observing our [react component requirements](#react-component-requirements) 
+3. Implement the component observing our [react component requirements](#react-component-requirements)
 and [code contribution guidelines](#code-contribution-guidelines).
-4. Submit your pull request and be sure to reference the `enhancement` issue so that others interested in this component may discuss. 
+4. Submit your pull request and be sure to reference the `enhancement` issue so that others interested in this component may discuss.
 5. Test your component. Once the pull request is merged, please test the component can successfully be used as intended downstream.
 6. If you submit a pull request, then please also contribute by reviewing other pull requests. Please remember that reviewing other contributions is just as important!
 
-## React Component Requirements 
+## React Component Requirements
 
 Please ensure that all React UI components contributed meet the following guidelines:
 
@@ -42,9 +42,9 @@ when possible and accept [props](https://facebook.github.io/react/docs/component
 * Provide a [single default export](http://exploringjs.com/es6/ch_modules.html#_single-default-export) for exporting your React UI component as an ES6 Module in your component's jsx definition.
 * Provide an associated `.stories.js` [story](https://getstorybook.io/docs/react-storybook/basics/writing-stories) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybooks/storybook-addon-knobs) to enable dynamic visualizations of your component's props.
 * Provide a [jest snapshot test](https://facebook.github.io/jest/docs/snapshot-testing.html) to ensure your UI markup does not change unexpectedly.
-* Ensure the component's rendered design and Storybook stories meet [PatternFly design standard](https://github.com/patternfly/patternfly-design). 
+* Ensure the component's rendered design and Storybook stories meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
 **Note:** If your component does not yet have PatternFly design documentation, the PatternFly React design team will first confirm that the pattern passes the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) and then start the process for generating design documentation.
-* Ensure the [Javascript Standard Style](https://standardjs.com/) is met with your component's Javascript. You can run the project's linter with `npm run lint`.
+* Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `npm run prettier` and run the project's linter with `npm run lint`.
 
 ## Code Contribution Guidelines
 
@@ -102,7 +102,7 @@ Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure a
   $ git push origin my-branch
   ```
 
-7. Export Storybook 
+7. Export Storybook
 
 Lastly, you'll want to export Storybook in your fork and note the Storybook url generated.
 
