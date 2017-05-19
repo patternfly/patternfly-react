@@ -63,6 +63,7 @@
     "prettier": "prettier --write --single-quote --no-semi '{src,storybook}/**/*.js'",
     "prepublish": "npm run build",
     "test": "npm run lint && jest",
+    "prepublish": "npm install --ignore-scripts && npm run build",
     "test:watch": "jest --watchAll",
     "storybook": "start-storybook -c storybook -p 6006",
     "build-storybook": "build-storybook -c storybook -o .out",
