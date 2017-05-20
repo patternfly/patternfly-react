@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListView renders properly 1`] = `
+<div
+  className="list-pf"
+>
+  <div
+    className="list-pf-item"
+  >
+    <div
+      className="list-pf-container"
+      onClick={[Function]}
+    >
+      <div
+        className="list-pf-chevron"
+      >
+        <span
+          className="fa fa-angle-right"
+        />
+      </div>
+      <div
+        className="list-pf-content"
+      >
+        First Level Item 1
+      </div>
+    </div>
+    <div
+      className="list-pf-expansion collapse"
+    >
+      <div
+        className="list-pf-container"
+        onClick={[Function]}
+      >
+        <div
+          className="list-pf-chevron"
+        >
+          <span
+            className="fa fa-angle-right"
+          />
+        </div>
+        <div
+          className="list-pf-content"
+        >
+          Second Level Item 1
+        </div>
+      </div>
+      <div
+        className="list-pf-expansion collapse"
+      >
+        <div
+          className="list-pf-container"
+          onClick={[Function]}
+        >
+          <div
+            className="list-pf-content"
+          >
+            Third Level Item 1
+          </div>
+        </div>
+      </div>
+      <div
+        className="list-pf-expansion collapse"
+      >
+        <div
+          className="list-pf-container"
+          onClick={[Function]}
+        >
+          <div
+            className="list-pf-content"
+          >
+            Third Level Item 2
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="list-pf-expansion collapse"
+    >
+      <div
+        className="list-pf-container"
+        onClick={[Function]}
+      >
+        <div
+          className="list-pf-chevron"
+        >
+          <span
+            className="fa fa-angle-right"
+          />
+        </div>
+        <div
+          className="list-pf-content"
+        >
+          Second Level Item 2
+        </div>
+      </div>
+      <div
+        className="list-pf-expansion collapse"
+      >
+        <div
+          className="list-pf-container"
+          onClick={[Function]}
+        >
+          <div
+            className="list-pf-content"
+          >
+            Third Level Item 1
+          </div>
+        </div>
+      </div>
+      <div
+        className="list-pf-expansion collapse"
+      >
+        <div
+          className="list-pf-container"
+          onClick={[Function]}
+        >
+          <div
+            className="list-pf-content"
+          >
+            Third Level Item 2
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="list-pf-item"
+  >
+    <div
+      className="list-pf-container"
+      onClick={[Function]}
+    >
+      <div
+        className="list-pf-chevron"
+      >
+        <span
+          className="fa fa-angle-right"
+        />
+      </div>
+      <div
+        className="list-pf-content"
+      >
+        First Level Item 2
+      </div>
+    </div>
+    <div
+      className="list-pf-expansion collapse"
+    >
+      <div
+        className="list-pf-container"
+        onClick={[Function]}
+      >
+        <div
+          className="list-pf-chevron"
+        >
+          <span
+            className="fa fa-angle-right"
+          />
+        </div>
+        <div
+          className="list-pf-content"
+        >
+          Second Level Item 1
+        </div>
+      </div>
+      <div
+        className="list-pf-expansion collapse"
+      >
+        <div
+          className="list-pf-container"
+          onClick={[Function]}
+        >
+          <div
+            className="list-pf-content"
+          >
+            Third Level Item 1
+          </div>
+        </div>
+      </div>
+      <div
+        className="list-pf-expansion collapse"
+      >
+        <div
+          className="list-pf-container"
+          onClick={[Function]}
+        >
+          <div
+            className="list-pf-content"
+          >
+            Third Level Item 2
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="list-pf-expansion collapse"
+    >
+      <div
+        className="list-pf-container"
+        onClick={[Function]}
+      >
+        <div
+          className="list-pf-chevron"
+        >
+          <span
+            className="fa fa-angle-right"
+          />
+        </div>
+        <div
+          className="list-pf-content"
+        >
+          Second Level Item 2
+        </div>
+      </div>
+      <div
+        className="list-pf-expansion collapse"
+      >
+        <div
+          className="list-pf-container"
+          onClick={[Function]}
+        >
+          <div
+            className="list-pf-content"
+          >
+            Third Level Item 1
+          </div>
+        </div>
+      </div>
+      <div
+        className="list-pf-expansion collapse"
+      >
+        <div
+          className="list-pf-container"
+          onClick={[Function]}
+        >
+          <div
+            className="list-pf-content"
+          >
+            Third Level Item 2
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
