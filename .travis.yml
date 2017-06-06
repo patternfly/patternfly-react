@@ -18,6 +18,7 @@ node_js:
 - '4'
 before_script:
 - npm prune
+- npm update
 script:
 - npm run test
 after_success:
