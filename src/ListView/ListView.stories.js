@@ -1,61 +1,80 @@
 import React from 'react'
-import { storiesOf, action } from '@kadira/storybook'
-import { withKnobs, boolean } from '@kadira/storybook-addon-knobs'
+import { storiesOf } from '@kadira/storybook'
+import { withKnobs } from '@kadira/storybook-addon-knobs'
 import { defaultTemplate } from '../../storybook/decorators/storyTemplates'
-import MockListManager from './__mocks__/MockListManager'
+import { mockListItems } from './__mocks__/mockListItems'
 import ListView from './ListView'
 import ListViewItem from './ListViewItem'
-import ListViewItemContainer from './ListViewItemContainer'
-import ListViewItemExpansion from './ListViewItemExpansion'
+import ListViewExpandableItem from './ListViewExpandableItem'
 
 const stories = storiesOf('ListView', module)
 stories.addDecorator(withKnobs)
 stories.addDecorator(
   defaultTemplate({
     title: 'List View',
-    documentationLink: 'http://www.patternfly.org/pattern-library/content-views/list-view/'
+    documentationLink:
+      'http://www.patternfly.org/pattern-library/content-views/list-view/'
   })
 )
 
+stories.addWithInfo('List View', `This is the List View.`, () => {
+  return (
+    <ListView>
+      {mockListItems.map((item, i) =>
+        <ListViewItem
+          key={i}
+          iconClass={item.iconClass}
+          heading={item.name}
+          itemText={item.description}
+          additionalInfo={item.additionalInfo}
+          actions={item.actions}
+        />
+      )}
+    </ListView>
+  )
+})
+
 stories.addWithInfo(
-  'basic list with expansion',
+  'List View - Simple Expansion',
   `This is the List View with basic expansion.`,
-  () => <MockListManager />
+  () => {
+    return (
+      <ListView>
+        {mockListItems.map((item, i) =>
+          <ListViewExpandableItem
+            key={i}
+            iconClass={item.iconClass}
+            heading={item.name}
+            itemText="some additional text"
+            additionalInfo={item.additionalInfo}
+            expansion={item.description}
+            actions={item.actions}
+            onItemSelected={item.onItemSelected}
+          />
+        )}
+      </ListView>
+    )
+  }
 )
 
 stories.addWithInfo(
-  'basic list with expansion knobs',
-  `This is the List View with basic expansion.`,
+  'List View - Additional Patternfly Classes',
+  `This is the List View using additional patternfly classes.
+  `,
   () => {
-    const firstLevelExpanded = boolean('First Level Expanded', false)
-    const secondLevelExpanded = boolean('Second Level Expanded', false)
     return (
       <ListView>
-        <ListViewItem isActive={firstLevelExpanded}>
-          <ListViewItemContainer
-            isExpansionItem
-            itemClicked={action('first level itemClicked')}
-            isActive={firstLevelExpanded}
-          >
-            First Level
-          </ListViewItemContainer>
-          <ListViewItemExpansion isActive={firstLevelExpanded}>
-            <ListViewItemContainer
-              isExpansionItem
-              isActive={secondLevelExpanded}
-              itemClicked={action('second level itemClicked')}
-            >
-              Second level
-            </ListViewItemContainer>
-            <ListViewItemExpansion isActive={secondLevelExpanded}>
-              <ListViewItemContainer
-                itemClicked={action('third level itemClicked')}
-              >
-                Third level
-              </ListViewItemContainer>
-            </ListViewItemExpansion>
-          </ListViewItemExpansion>
-        </ListViewItem>
+        {mockListItems.map((item, i) =>
+          <ListViewItem
+            key={i}
+            additionalListClass="list-view-pf-stacked"
+            iconClass={item.iconClass}
+            heading={item.name}
+            itemText={item.description}
+            additionalInfo={item.additionalInfo}
+            actions={item.actions}
+          />
+        )}
       </ListView>
     )
   }

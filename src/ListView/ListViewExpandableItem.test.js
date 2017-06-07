@@ -1,14 +1,14 @@
 import React from 'react'
 import { mockListItems } from './__mocks__/mockListItems'
 import ListView from './ListView'
-import ListViewItem from './ListViewItem'
+import ListViewExpandableItem from './ListViewExpandableItem'
 import renderer from 'react-test-renderer'
 
 test('ListView renders properly', () => {
   const component = renderer.create(
     <ListView>
       {mockListItems.map((item, i) =>
-        <ListViewItem
+        <ListViewExpandableItem
           key={i}
           heading={item.name}
           itemText={item.description}

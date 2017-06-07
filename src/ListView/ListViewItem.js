@@ -1,28 +1,59 @@
-import cx from 'classnames'
 import React from 'react'
 import PropTypes from 'prop-types'
+import cx from 'classnames'
+
+import ListViewActions from './ListViewActions'
+import ListViewItemMainInfo from './ListViewItemMainInfo'
+
 /**
- * ListViewItem Component for Patternfly React
+ * ListViewItemMainInfo Component for Patternfly React
  */
-const ListViewItem = ({ children, isActive, listViewItemClass }) => {
-  const itemClass = cx(listViewItemClass, isActive ? 'active' : '')
+
+const ListViewItem = ({
+  additionalListClass,
+  iconClass,
+  heading,
+  itemText,
+  additionalInfo,
+  actions
+}) => {
   return (
-    <div className={itemClass}>
-      {children}
+    <div className={cx('list-group-item', additionalListClass)}>
+      {actions && <ListViewActions actions={actions} />}
+      <ListViewItemMainInfo
+        iconClass={iconClass}
+        heading={heading}
+        itemText={itemText}
+        additionalInfo={additionalInfo}
+      />
     </div>
   )
 }
+
 ListViewItem.propTypes = {
-  /** children nodes  */
-  children: PropTypes.node,
-  /** whether item is active  */
-  isActive: PropTypes.bool,
-  /** list view item class */
-  listViewItemClass: PropTypes.string
+  /** additional list class  */
+  additionalListClass: PropTypes.string,
+  /** icon class  */
+  iconClass: PropTypes.string,
+  /** header node  */
+  heading: PropTypes.node.isRequired,
+  /** item text node  */
+  itemText: PropTypes.node,
+  /** additional info node  */
+  additionalInfo: PropTypes.arrayOf(PropTypes.node),
+  /** actions node  */
+  actions: PropTypes.node
 }
+
 ListViewItem.defaultProps = {
-  isActive: false,
-  listViewItemClass: 'list-pf-item'
+  /** default additional list class */
+  additionalListClass: '',
+  /** default icon class */
+  iconClass: null,
+  /** default additional info */
+  additionalInfo: [],
+  /** default actions info */
+  actions: null
 }
 
 export default ListViewItem

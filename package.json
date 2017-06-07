@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "patternfly": "^3.24.0"
+    "patternfly": "^3.24.0",
     "classnames": "^2.2.5",
     "react-bootstrap": "^0.30.8"
   },
