@@ -1,5 +1,6 @@
 import { Dropdown } from 'react-bootstrap'
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const DropdownKebab = ({ children, id, pullRight }) => {
   return (
@@ -14,8 +15,8 @@ const DropdownKebab = ({ children, id, pullRight }) => {
   )
 }
 DropdownKebab.propTypes = {
-  children: React.PropTypes.node,
-  id: React.PropTypes.string.isRequired,
-  pullRight: React.PropTypes.bool
+  children: PropTypes.node,
+  id: PropTypes.string.isRequired,
+  pullRight: PropTypes.bool
 }
 export default DropdownKebab

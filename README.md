@@ -16,10 +16,11 @@ import { Alert } from 'patternfly-react'
 ```
 
 ## Storybook UI Development
-This project uses [React Storybook](https://getstorybook.io/) to test and demo new React UI components. You can view our current storybook [here](https://rawgit.com/patternfly/patternfly-react/gh-pages/index.html)
+This project uses [React Storybook](https://getstorybook.io/) to test and demo new React UI components. You can view our current storybook [here](https://rawgit.com/patternfly/patternfly-react/gh-pages/index.html).
 
 How to use Storybook locally:
 ```
+npm i
 npm run storybook
 ```
 
@@ -27,6 +28,18 @@ How to deploy storybook to github pages in your fork:
 ```
 npm run build-storybook
 npm run storybook:deploy
+```
+
+To deploy Storybook to a remote other than `origin`, pass a `--remote` flag to `npm run storybook:deploy`.
+For example, to deploy to your `upstream` remote:
+```
+npm run storybook:deploy -- --remote=upstream
+```
+To deploy Storybook to a target branch and serve with rawgit instead of gh-pages, pass `--branch` flag
+to `npm run storybook:deploy`.
+For example, to deploy to `feature-branch` target:
+```
+npm run storybook:deploy -- --branch=feature-branch
 ```
 
 ## Meeting Notes

@@ -1,5 +1,6 @@
 import { Button as BsButton } from 'react-bootstrap'
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Button = props => <BsButton {...props} />
 

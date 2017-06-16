@@ -1,6 +1,5 @@
 import React from 'react'
-import { storiesOf } from '@kadira/storybook'
-
+import { storiesOf } from '@storybook/react'
 import { defaultTemplate } from '../../storybook/decorators/storyTemplates'
 import { Button } from '../index.js'
 
