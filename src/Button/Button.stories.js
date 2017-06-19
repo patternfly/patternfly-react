@@ -21,12 +21,13 @@ const description = (
 stories.addDecorator(
   defaultTemplate({
     title: 'Button',
-    documentationLink: 'http://www.patternfly.org/pattern-library/widgets/#buttons',
+    documentationLink:
+      'http://www.patternfly.org/pattern-library/widgets/#buttons',
     description: description
   })
 )
 
-stories.addWithInfo('Button', '', () => (
+stories.addWithInfo('Button', '', () =>
   <div>
     <p>
       <Button>Default Button</Button>
@@ -47,4 +48,4 @@ stories.addWithInfo('Button', '', () => (
       <Button bsSize="xsmall">Extra Small Button</Button>
     </p>
   </div>
-))
+)

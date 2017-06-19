@@ -10,14 +10,15 @@ stories.addDecorator(withKnobs)
 stories.addDecorator(
   defaultTemplate({
     title: 'Kebab Dropdown',
-    documentationLink: 'http://www.patternfly.org/pattern-library/widgets/#kebabs'
+    documentationLink:
+      'http://www.patternfly.org/pattern-library/widgets/#kebabs'
   })
 )
 
 stories.addWithInfo(
   'DropdownKebab',
   `pullRight prop is used to align the dropdown to the right.`,
-  () => (
+  () =>
     <div>
       <Button bsStyle="primary">Some Button</Button>
       {' '}
@@ -30,5 +31,4 @@ stories.addWithInfo(
         <MenuItem>Separated link</MenuItem>
       </DropdownKebab>
     </div>
-  )
 )
