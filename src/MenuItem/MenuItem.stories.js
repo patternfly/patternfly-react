@@ -27,7 +27,7 @@ stories.addDecorator(
   })
 )
 
-stories.addWithInfo('MenuItem', '', () => (
+stories.addWithInfo('MenuItem', '', () =>
   <div>
     <Dropdown.Menu style={{ display: 'block' }}>
       <MenuItem header>Header</MenuItem>
@@ -48,4 +48,4 @@ stories.addWithInfo('MenuItem', '', () => (
       </MenuItem>
     </Dropdown.Menu>
   </div>
-))
+)
