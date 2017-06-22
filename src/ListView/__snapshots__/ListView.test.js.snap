@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListView renders properly 1`] = `
+<div
+  className="list-group list-view-pf list-view-pf-view"
+>
+  <div
+    className="list-group-item"
+  >
+    <div
+      className="list-view-pf-main-info"
+    >
+      <div
+        className="list-view-pf-left"
+      >
+        <span
+          className="list-view-pf-icon-sm fa fa-plane"
+        />
+      </div>
+      <div
+        className="list-view-pf-body"
+      >
+        <div
+          className="list-view-pf-description"
+        >
+          <div
+            className="list-group-item-heading"
+          >
+            Basic Item
+          </div>
+          <div
+            className="list-group-item-text"
+          >
+            Just an item with a description
+          </div>
+        </div>
+        <div
+          className="list-view-pf-additional-info"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="list-group-item"
+  >
+    <div
+      className="list-view-pf-main-info"
+    >
+      <div
+        className="list-view-pf-body"
+      >
+        <div
+          className="list-view-pf-description"
+        >
+          <div
+            className="list-group-item-heading"
+          >
+            Item without Icon
+          </div>
+          <div
+            className="list-group-item-text"
+          >
+            An item without an icon
+          </div>
+        </div>
+        <div
+          className="list-view-pf-additional-info"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="list-group-item"
+  >
+    <div
+      className="list-view-pf-main-info"
+    >
+      <div
+        className="list-view-pf-left"
+      >
+        <span
+          className="list-view-pf-icon-sm fa fa-check-square-o"
+        />
+      </div>
+      <div
+        className="list-view-pf-body"
+      >
+        <div
+          className="list-view-pf-description"
+        >
+          <div
+            className="list-group-item-heading"
+          >
+            Item with Select
+          </div>
+          <div
+            className="list-group-item-text"
+          >
+            An item that can be selected
+          </div>
+        </div>
+        <div
+          className="list-view-pf-additional-info"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="list-group-item"
+  >
+    <div
+      className="list-view-pf-main-info"
+    >
+      <div
+        className="list-view-pf-left"
+      >
+        <span
+          className="list-view-pf-icon-sm fa fa-lightbulb-o"
+        />
+      </div>
+      <div
+        className="list-view-pf-body"
+      >
+        <div
+          className="list-view-pf-description"
+        >
+          <div
+            className="list-group-item-heading"
+          >
+            Item with Actions
+          </div>
+          <div
+            className="list-group-item-text"
+          >
+            An item with actions
+          </div>
+        </div>
+        <div
+          className="list-view-pf-additional-info"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="list-group-item"
+  >
+    <div
+      className="list-view-pf-main-info"
+    >
+      <div
+        className="list-view-pf-left"
+      >
+        <span
+          className="list-view-pf-icon-sm fa fa-paper-plane"
+        />
+      </div>
+      <div
+        className="list-view-pf-body"
+      >
+        <div
+          className="list-view-pf-description"
+        >
+          <div
+            className="list-group-item-heading"
+          >
+            Item with Additional Info
+          </div>
+          <div
+            className="list-group-item-text"
+          >
+            An item with additional info
+          </div>
+        </div>
+        <div
+          className="list-view-pf-additional-info"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="list-group-item"
+  >
+    <div
+      className="list-view-pf-main-info"
+    >
+      <div
+        className="list-view-pf-left"
+      >
+        <span
+          className="list-view-pf-icon-sm fa fa-cogs"
+        />
+      </div>
+      <div
+        className="list-view-pf-body"
+      >
+        <div
+          className="list-view-pf-description"
+        >
+          <div
+            className="list-group-item-heading"
+          >
+            Item with Everything
+          </div>
+          <div
+            className="list-group-item-text"
+          >
+            An item with all supported options
+          </div>
+        </div>
+        <div
+          className="list-view-pf-additional-info"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
