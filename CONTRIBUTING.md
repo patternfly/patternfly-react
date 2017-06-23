@@ -26,12 +26,17 @@ Our issue tracker utilizes several labels to help organize and identify issues. 
 React component contributions should observe the following high level process:
 
 1. Check the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) to see if your component meets the criteria for an addition to PatternFly. If you're unsure, reach out to us on the mailing list!
-2. Create an `enhancement` issue to indicate you'd like to contribute this component to PatternFly React. At this time, the PatternFly React design team will review the enhancement issue and verify that the component passes the decision tree. Only components that pass will be accepted into the repo. If the component does not pass, the team will work with you on identifying any sub-components that can be extracted that would be needed by more than one project.
+2. Create an `enhancement` issue to indicate you'd like to contribute this component to PatternFly React.
+  - At this time, the PatternFly React design team will review the enhancement issue and verify that the component passes the decision tree. Only components that pass will be accepted into the repo. If the component does not pass, the team will work with you on identifying any sub-components that can be extracted that would be needed by more than one project.
 3. Implement the component observing our [react component requirements](#react-component-requirements)
 and [code contribution guidelines](#code-contribution-guidelines).
 4. Submit your pull request and be sure to reference the `enhancement` issue so that others interested in this component may discuss.
 5. Test your component. Once the pull request is merged, please test the component can successfully be used as intended downstream.
 6. If you submit a pull request, then please also contribute by reviewing other pull requests. Please remember that reviewing other contributions is just as important!
+
+### Adding CSS for your Component contribution
+
+Ideally, all the css that is needed for the components in patternfly-react would be defined in the core css [patternfly](https://github.com/patternfly/patternfly) repo. However, there may be cases where additional css is needed to complete the patternfly-react component contribution. In the case where the css is specific to the component implementation in the patternfly-react repo, then the css would remain in the repo. In the case where the component does not exist yet in the core css  repo and css is needed in the patternfly-react repo to style the component, then the css would only remain in the patternfly-react repo until the component is added to the core css repo. Once the css is available as part of core css repo, it will be removed from the patternfly-react repo.
 
 ## React Component Requirements
 
