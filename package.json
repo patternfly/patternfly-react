@@ -66,7 +66,7 @@
     "lint": "eslint --max-warnings 0 src storybook",
     "prettier": "prettier --write --single-quote --no-semi '{src,storybook}/**/*.js'",
     "prepublish": "npm run build",
-    "test": "npm run lint && jest",
+    "test": "npm run lint && jest && npm run build-storybook",
     "test:watch": "jest --watchAll",
     "storybook": "start-storybook -c storybook -p 6006",
     "build-storybook": "build-storybook -c storybook -o .out",
