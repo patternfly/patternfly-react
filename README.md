@@ -43,4 +43,4 @@ npm run storybook:deploy -- --branch=feature-branch
 ```
 
 ## Meeting Notes
-You can find all Patternfly React Community Meeting notes on the [wiki](https://github.com/patternfly/patternfly-react/wiki/Meetings)
+You can find all Patternfly React Community Meeting notes [here](http://www.patternfly.org/community/monthly-community-meeting/).
