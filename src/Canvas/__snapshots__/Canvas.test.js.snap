@@ -1,0 +1,532 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Canvas renders properly 1`] = `
+<div>
+  <div
+    className="canvas-editor-toolbox-container"
+  >
+    <span>
+      Jest snapshots are always deterministic. Finding unexpected code changes is now a breeze.
+    </span>
+    <div
+      className="canvas-container"
+    >
+      <svg
+        className="canvas"
+        style={
+          Object {
+            "backgroundSize": "24 px 24px",
+            "height": 756,
+            "width": 1396,
+          }
+        }
+        xlinkHref=""
+      >
+        <g
+          transform="scale(1)"
+        >
+          <g
+            onClick={[Function]}
+            transform="translate(350, 67)"
+          >
+            <g>
+              <rect
+                className="node-rect"
+                fill="#fff"
+                fillOpacity="1.0"
+                height={150}
+                rx={0}
+                ry={0}
+                width={150}
+                x="0"
+                y="0"
+              />
+              <foreignObject
+                height={42}
+                width={150}
+                x="0"
+                y={108}
+              >
+                <div
+                  className="node-header"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <p
+                    className=""
+                    style={
+                      Object {
+                        "width": undefined,
+                      }
+                    }
+                  >
+                    Nuage
+                  </p>
+                </div>
+              </foreignObject>
+              <image
+                className="node-center-img"
+                height="80px"
+                href="img/OpenShift-logo.svg"
+                width="80px"
+                x={35}
+                xlinkHref="img/OpenShift-logo.svg"
+                y="20"
+              />
+              <text
+                className="bundle-icon"
+                style={
+                  Object {
+                    "fontFamily": "PatternFlyIcons-webfont",
+                    "fontSize": 20,
+                  }
+                }
+                x="6"
+                y="22"
+              >
+                
+              </text>
+            </g>
+          </g>
+          <g
+            onClick={[Function]}
+            transform="translate(105, 290)"
+          >
+            <g>
+              <rect
+                className="node-rect"
+                fill="#fff"
+                fillOpacity="1.0"
+                height={150}
+                rx={0}
+                ry={0}
+                width={150}
+                x="0"
+                y="0"
+              />
+              <foreignObject
+                height={42}
+                width={150}
+                x="0"
+                y={108}
+              >
+                <div
+                  className="node-header"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <p
+                    className=""
+                    style={
+                      Object {
+                        "width": undefined,
+                      }
+                    }
+                  >
+                    Allora
+                  </p>
+                </div>
+              </foreignObject>
+              <image
+                className="node-center-img"
+                height="80px"
+                href="img/kubernetes.svg"
+                width="80px"
+                x={35}
+                xlinkHref="img/kubernetes.svg"
+                y="20"
+              />
+            </g>
+          </g>
+          <g
+            onClick={[Function]}
+            transform="translate(350, 290)"
+          >
+            <g>
+              <rect
+                className="node-rect"
+                fill="#fff"
+                fillOpacity="1.0"
+                height={150}
+                rx={0}
+                ry={0}
+                width={150}
+                x="0"
+                y="0"
+              />
+              <foreignObject
+                height={42}
+                width={150}
+                x="0"
+                y={108}
+              >
+                <div
+                  className="node-header"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <p
+                    className=""
+                    style={
+                      Object {
+                        "width": undefined,
+                      }
+                    }
+                  >
+                    NetApp
+                  </p>
+                </div>
+              </foreignObject>
+              <foreignObject
+                className="node-center-img-icon"
+                height={70}
+                width={90}
+                x={30}
+                y={21}
+              >
+                <i
+                  className="pf pficon-service"
+                  style={
+                    Object {
+                      "fontSize": "70px",
+                    }
+                  }
+                />
+              </foreignObject>
+            </g>
+          </g>
+          <g
+            onClick={[Function]}
+            transform="translate(105, 67)"
+          >
+            <g>
+              <rect
+                className="node-rect"
+                fill="#fff"
+                fillOpacity="1.0"
+                height={150}
+                rx={0}
+                ry={0}
+                width={150}
+                x="0"
+                y="0"
+              />
+              <foreignObject
+                height={42}
+                width={150}
+                x="0"
+                y={108}
+              >
+                <div
+                  className="node-header"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <p
+                    className=""
+                    style={
+                      Object {
+                        "width": undefined,
+                      }
+                    }
+                  >
+                    OpenShift
+                  </p>
+                </div>
+              </foreignObject>
+              <text
+                className="node-center-icon"
+                style={
+                  Object {
+                    "fontFamily": "fontawesome",
+                  }
+                }
+                x={37}
+                y="90"
+              >
+                
+              </text>
+            </g>
+          </g>
+          <g
+            onClick={[Function]}
+            transform="translate(595, 67)"
+          >
+            <g>
+              <rect
+                className="node-rect"
+                fill="#fff"
+                fillOpacity="1.0"
+                height={150}
+                rx={0}
+                ry={0}
+                width={150}
+                x="0"
+                y="0"
+              />
+              <foreignObject
+                height={42}
+                width={150}
+                x="0"
+                y={108}
+              >
+                <div
+                  className="node-header"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <p
+                    className=""
+                    style={
+                      Object {
+                        "width": undefined,
+                      }
+                    }
+                  >
+                    OpenStack
+                  </p>
+                </div>
+              </foreignObject>
+              <foreignObject
+                className="node-center-img-icon"
+                height={76}
+                width={86}
+                x={32}
+                y={21}
+              >
+                <i
+                  className="pf pficon-network"
+                  style={
+                    Object {
+                      "fontSize": "76px",
+                    }
+                  }
+                />
+              </foreignObject>
+            </g>
+          </g>
+          <g
+            onClick={[Function]}
+            transform="translate(595, 290)"
+          >
+            <g>
+              <rect
+                className="node-rect"
+                fill="#fff"
+                fillOpacity="1.0"
+                height={150}
+                rx={0}
+                ry={0}
+                width={150}
+                x="0"
+                y="0"
+              />
+              <foreignObject
+                height={42}
+                width={150}
+                x="0"
+                y={108}
+              >
+                <div
+                  className="node-header"
+                  style={
+                    Object {
+                      "width": 150,
+                    }
+                  }
+                >
+                  <p
+                    className=""
+                    style={
+                      Object {
+                        "width": undefined,
+                      }
+                    }
+                  >
+                    Storage
+                  </p>
+                </div>
+              </foreignObject>
+              <foreignObject
+                className="node-center-img-icon"
+                height={76}
+                width={81}
+                x={34.5}
+                y={21}
+              >
+                <i
+                  className="pf pficon-storage-domain"
+                  style={
+                    Object {
+                      "fontSize": "76px",
+                    }
+                  }
+                />
+              </foreignObject>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CanvasLayout renders properly 1`] = `
+<div
+  className="canvas-editor-container"
+>
+  <span>
+    Jest snapshots are always deterministic. Finding unexpected code changes is now a breeze.
+  </span>
+</div>
+`;
+
+exports[`CanvasNode renders properly 1`] = `
+<g>
+  <rect
+    className="node-rect"
+    fill="#fff"
+    fillOpacity="1.0"
+    height={100}
+    rx={0}
+    ry={0}
+    width={100}
+    x="0"
+    y="0"
+  />
+  <text
+    alignmentBaseline="middle"
+    className="node-header node-rect"
+    textAnchor="middle"
+    x={50}
+    y={76}
+  >
+    Nuage
+  </text>
+  <image
+    className="node-center-img"
+    height="80px"
+    href="img/OpenShift-logo.svg"
+    width="80px"
+    x={10}
+    xlinkHref="img/OpenShift-logo.svg"
+    y="20"
+  />
+  <text
+    className="bundle-icon"
+    style={
+      Object {
+        "fontFamily": "PatternFlyIcons-webfont",
+        "fontSize": 20,
+      }
+    }
+    x="6"
+    y="22"
+  >
+    
+  </text>
+</g>
+`;
+
+exports[`CanvasPanel renders properly 1`] = `
+<div>
+  <span>
+    Jest snapshots are always deterministic. Finding unexpected code changes is now a breeze.
+  </span>
+</div>
+`;
+
+exports[`CanvasToolbar renders properly 1`] = `
+<div
+  className="canvas-editor-toolbar"
+>
+  <button
+    className="btn btn-primary"
+    onClick={[Function]}
+  >
+    Toolbox
+      
+    <span
+      className="fa fa-angle-double-up"
+    />
+  </button>
+  <span>
+    <span
+      className="more-actions"
+    >
+      <a
+        className="disabled"
+        onClick={[Function]}
+      >
+        <span
+          className="pficon fa fa-copy"
+        />
+      </a>
+      <a
+        className="disabled"
+        onClick={[Function]}
+      >
+        <span
+          className="pficon pficon-delete"
+        />
+      </a>
+    </span>
+  </span>
+  <span
+    className="right-aligned-controls"
+  >
+    <a
+      className="disabled"
+      onClick={[Function]}
+    >
+      <span
+        className="pficon fa fa-minus"
+      />
+    </a>
+    <a
+      className="disabled"
+      onClick={[Function]}
+    >
+      <span
+        className="pficon fa fa-plus"
+      />
+    </a>
+  </span>
+</div>
+`;
+
+exports[`CanvasTopAlignedToolbox renders properly 1`] = `
+<div
+  className="canvas-editor-toolbox"
+>
+  <a
+    className="close-toolbox"
+    onClick={[Function]}
+  >
+    <span
+      className="pficon pficon-close"
+    />
+  </a>
+  <div>
+    <span>
+      Jest snapshots are always deterministic. Finding unexpected code changes is now a breeze.
+    </span>
+  </div>
+</div>
+`;

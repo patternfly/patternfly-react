@@ -19,7 +19,10 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
     "classnames": "^2.2.5",
-    "react-bootstrap": "^0.30.8"
+    "react-bootstrap": "^0.30.8",
+    "immutability-helper": "^2.1.2",
+    "react-dnd": "^2.3.0",
+    "react-dnd-mouse-backend": "^0.1.1"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.1.2",
@@ -68,8 +71,8 @@
     "prepublish": "npm run build",
     "test": "npm run lint && jest",
     "test:watch": "jest --watchAll",
-    "storybook": "start-storybook -c storybook -p 6006",
-    "build-storybook": "build-storybook -c storybook -o .out",
+    "storybook": "start-storybook -c storybook -s ./public -p 6006",
+    "build-storybook": "build-storybook -c storybook -s ./public -o .out",
     "storybook:deploy": "storybook-to-ghpages",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
