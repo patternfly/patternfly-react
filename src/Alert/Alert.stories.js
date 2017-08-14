@@ -17,7 +17,9 @@ stories.addDecorator(
 
 stories.addWithInfo('with danger', `This is the Alert with danger type.`, () =>
   <Alert type="danger" onDismiss={action('onDismiss')}>
-    <span>{text('Label', 'Danger Will Robinson!')}</span>
+    <span>
+      {text('Label', 'Danger Will Robinson!')}
+    </span>
   </Alert>
 )
 

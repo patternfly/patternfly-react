@@ -1,6 +1,7 @@
 import ClassNames from 'classnames'
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ALERT_TYPES } from '../common/constants'
 
 /**
  * Alert Component for Patternfly React
@@ -42,8 +43,7 @@ Alert.propTypes = {
   /** callback when alert is dismissed  */
   onDismiss: PropTypes.func,
   /** the type of alert  */
-  type: PropTypes.oneOf(['danger', 'error', 'warning', 'success', 'info'])
-    .isRequired,
+  type: PropTypes.oneOf(ALERT_TYPES).isRequired,
   /** children nodes  */
   children: PropTypes.node
 }
