@@ -1,0 +1,967 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Justified Tabs renders properly 1`] = `
+<div>
+  <ul
+    className="nav nav-tabs nav-justified"
+    role="tablist"
+  >
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls="justified-one"
+        aria-selected={true}
+        href="/home"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={undefined}
+      >
+        Tab One
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls="justified-two"
+        aria-selected={false}
+        href="#"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={-1}
+        title="Item"
+      >
+        Tab Two
+      </a>
+    </li>
+  </ul>
+  <div
+    activeKey="1"
+    aria-labelledby="justified-one"
+    className="active"
+    eventKey="1"
+    role="tabpanel"
+    style={
+      Object {
+        "fontSize": 14,
+        "padding": 15,
+      }
+    }
+  >
+    <p>
+      tab one contents
+    </p>
+  </div>
+  <div
+    activeKey="1"
+    aria-labelledby="justified-two"
+    className="hidden"
+    eventKey="2"
+    role="tabpanel"
+    style={
+      Object {
+        "fontSize": 14,
+        "padding": 15,
+      }
+    }
+  >
+    <p>
+      tab two contents
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Patternfly Justified Tabs renders properly 1`] = `
+<ul
+  className="nav nav-tabs nav-justified nav-tabs-pf"
+  role="tablist"
+>
+  <li
+    className="active"
+    role="presentation"
+    style={undefined}
+  >
+    <a
+      aria-controls={undefined}
+      aria-selected={true}
+      href="/home"
+      id={undefined}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      tabIndex={undefined}
+    >
+      Tab One
+    </a>
+  </li>
+  <li
+    className=""
+    role="presentation"
+    style={undefined}
+  >
+    <a
+      aria-controls={undefined}
+      aria-selected={false}
+      href="#"
+      id={undefined}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      tabIndex={-1}
+      title="Item"
+    >
+      Tab Two
+    </a>
+  </li>
+  <li
+    className="disabled"
+    role="presentation"
+    style={undefined}
+  >
+    <a
+      aria-controls={undefined}
+      aria-selected={false}
+      href="#"
+      id={undefined}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      style={
+        Object {
+          "pointerEvents": "none",
+        }
+      }
+      tabIndex={-1}
+    >
+      Tab Three
+    </a>
+  </li>
+  <li
+    className="dropdown"
+    style={undefined}
+  >
+    <a
+      aria-controls={undefined}
+      aria-expanded={false}
+      aria-haspopup={true}
+      className="dropdown-toggle"
+      href="#"
+      id="nav-dropdown"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={-1}
+    >
+      Dropdown
+       
+      <span
+        className="caret"
+      />
+    </a>
+    <ul
+      aria-labelledby="nav-dropdown"
+      className="dropdown-menu"
+      role="menu"
+    >
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Action
+        </a>
+      </li>
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Another action
+        </a>
+      </li>
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Something else here
+        </a>
+      </li>
+      <li
+        className="divider"
+        onKeyDown={[Function]}
+        role="separator"
+        style={undefined}
+      />
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Separated link
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+`;
+
+exports[`Patternfly Secondary Tabs renders properly 1`] = `
+<div>
+  <ul
+    className="nav nav-tabs"
+    role="tablist"
+  >
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls={undefined}
+        aria-selected={true}
+        href="/home"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={undefined}
+      >
+        Tab One
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls={undefined}
+        aria-selected={false}
+        href="#"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={-1}
+        title="Item"
+      >
+        Tab Two
+      </a>
+    </li>
+    <li
+      className="disabled"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls={undefined}
+        aria-selected={false}
+        href="#"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }
+        tabIndex={-1}
+      >
+        Tab Three
+      </a>
+    </li>
+    <li
+      className="dropdown"
+      style={undefined}
+    >
+      <a
+        aria-controls={undefined}
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle"
+        href="#"
+        id="nav-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={-1}
+      >
+        Dropdown
+         
+        <span
+          className="caret"
+        />
+      </a>
+      <ul
+        aria-labelledby="nav-dropdown"
+        className="dropdown-menu"
+        role="menu"
+      >
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Action
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Another action
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Something else here
+          </a>
+        </li>
+        <li
+          className="divider"
+          onKeyDown={[Function]}
+          role="separator"
+          style={undefined}
+        />
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Separated link
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <ul
+    className="nav nav-tabs nav-tabs-pf"
+    role="tablist"
+  >
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls={undefined}
+        aria-selected={true}
+        href="/home"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={undefined}
+      >
+        Tab One
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls={undefined}
+        aria-selected={false}
+        href="#"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={-1}
+        title="Item"
+      >
+        Tab Two
+      </a>
+    </li>
+    <li
+      className="disabled"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls={undefined}
+        aria-selected={false}
+        href="#"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        style={
+          Object {
+            "pointerEvents": "none",
+          }
+        }
+        tabIndex={-1}
+      >
+        Tab Three
+      </a>
+    </li>
+    <li
+      className="dropdown"
+      style={undefined}
+    >
+      <a
+        aria-controls={undefined}
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle"
+        href="#"
+        id="nav-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={-1}
+      >
+        Dropdown
+         
+        <span
+          className="caret"
+        />
+      </a>
+      <ul
+        aria-labelledby="nav-dropdown"
+        className="dropdown-menu"
+        role="menu"
+      >
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Action
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Another action
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Something else here
+          </a>
+        </li>
+        <li
+          className="divider"
+          onKeyDown={[Function]}
+          role="separator"
+          style={undefined}
+        />
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Separated link
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Patternfly Tabs renders properly 1`] = `
+<ul
+  className="nav nav-tabs nav-tabs-pf"
+  role="tablist"
+>
+  <li
+    className="active"
+    role="presentation"
+    style={undefined}
+  >
+    <a
+      aria-controls={undefined}
+      aria-selected={true}
+      href="/home"
+      id={undefined}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      tabIndex={undefined}
+    >
+      Tab One
+    </a>
+  </li>
+  <li
+    className=""
+    role="presentation"
+    style={undefined}
+  >
+    <a
+      aria-controls={undefined}
+      aria-selected={false}
+      href="#"
+      id={undefined}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      tabIndex={-1}
+      title="Item"
+    >
+      Tab Two
+    </a>
+  </li>
+  <li
+    className="disabled"
+    role="presentation"
+    style={undefined}
+  >
+    <a
+      aria-controls={undefined}
+      aria-selected={false}
+      href="#"
+      id={undefined}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="tab"
+      style={
+        Object {
+          "pointerEvents": "none",
+        }
+      }
+      tabIndex={-1}
+    >
+      Tab Three
+    </a>
+  </li>
+  <li
+    className="dropdown"
+    style={undefined}
+  >
+    <a
+      aria-controls={undefined}
+      aria-expanded={false}
+      aria-haspopup={true}
+      className="dropdown-toggle"
+      href="#"
+      id="nav-dropdown"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={-1}
+    >
+      Dropdown
+       
+      <span
+        className="caret"
+      />
+    </a>
+    <ul
+      aria-labelledby="nav-dropdown"
+      className="dropdown-menu"
+      role="menu"
+    >
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Action
+        </a>
+      </li>
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Another action
+        </a>
+      </li>
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Something else here
+        </a>
+      </li>
+      <li
+        className="divider"
+        onKeyDown={[Function]}
+        role="separator"
+        style={undefined}
+      />
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Separated link
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+`;
+
+exports[`Tabs renders properly 1`] = `
+<div>
+  <ul
+    className="nav nav-tabs pf-tabrow"
+    role="tablist"
+  >
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls="contents-one"
+        aria-selected={true}
+        href="/home"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={undefined}
+      >
+        Tab One
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        aria-controls="contents-two"
+        aria-selected={false}
+        href="#"
+        id={undefined}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="tab"
+        tabIndex={-1}
+        title="Item"
+      >
+        <span>
+          Tab Two
+        </span>
+         
+        <i
+          className="fa fa-bell"
+        />
+      </a>
+    </li>
+    <li
+      className="dropdown"
+      style={undefined}
+    >
+      <a
+        aria-controls="contents-four"
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle"
+        href="#"
+        id="nav-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={-1}
+      >
+        Dropdown
+         
+        <span
+          className="caret"
+        />
+      </a>
+      <ul
+        aria-labelledby="nav-dropdown"
+        className="dropdown-menu"
+        role="menu"
+      >
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Action
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Another action
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Something else here
+          </a>
+        </li>
+        <li
+          className="divider"
+          onKeyDown={[Function]}
+          role="separator"
+          style={undefined}
+        />
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            Separated link
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li
+      active={undefined}
+      activeHref={undefined}
+      activeKey="1"
+      aria-controls={undefined}
+      className="pf-tabrow-contents"
+      id={undefined}
+      onKeyDown={[Function]}
+      onSelect={[Function]}
+      role="tab"
+      tabIndex={-1}
+    >
+      <button
+        className="btn btn-default"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "marginLeft": 5,
+          }
+        }
+        type="button"
+      >
+        Secondary
+      </button>
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "marginLeft": 5,
+          }
+        }
+        type="button"
+      >
+        Primary
+      </button>
+      <button
+        className="btn btn-danger"
+        disabled={false}
+        onClick={[Function]}
+        style={
+          Object {
+            "marginLeft": 5,
+          }
+        }
+        type="button"
+      >
+        Destructive
+      </button>
+    </li>
+  </ul>
+  <div
+    activeKey="1"
+    aria-labelledby="contents-one"
+    className="active"
+    eventKey="1"
+    role="tabpanel"
+    style={
+      Object {
+        "fontSize": 14,
+        "padding": 15,
+      }
+    }
+  >
+    <p>
+      tab one contents
+    </p>
+  </div>
+  <div
+    activeKey="1"
+    aria-labelledby="contents-two"
+    className="hidden"
+    eventKey="2"
+    role="tabpanel"
+    style={
+      Object {
+        "fontSize": 14,
+        "padding": 15,
+      }
+    }
+  >
+    <p>
+      tab two contents
+    </p>
+  </div>
+</div>
+`;
