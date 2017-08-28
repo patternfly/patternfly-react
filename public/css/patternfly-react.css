@@ -1,0 +1,17 @@
+/** 
+  Important: The CSS defined here should be temporary until it is 
+  entirely contributed upstream to Patternfly / Patternfly CSS.
+
+  https://github.com/patternfly/patternfly
+  https://github.com/patternfly/patternfly-css 
+*/
+.pf-tabrow {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+.pf-tabrow > li {
+  float: none;
+}
+.pf-tabrow > .pf-tabrow-contents {
+  margin-left: auto;
+}

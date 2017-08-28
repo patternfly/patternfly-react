@@ -3,12 +3,13 @@ import React from 'react'
 export const defaultTemplate = config => story =>
   <div style={{ padding: '0 20px' }}>
     <header className="page-header">
-      <h2>{config.title}</h2>
+      <h2>
+        {config.title}
+      </h2>
     </header>
     {!config.documentationLink &&
       <p>
-        This pattern does not yet exist in
-        {' '}
+        This pattern does not yet exist in{' '}
         <a href="http://www.patternfly.org/pattern-library/">PatternFly</a>
         .
       </p>}
