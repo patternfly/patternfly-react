@@ -54,7 +54,7 @@
     "semantic-release": "^6.3.6"
   },
   "peerDependencies": {
-    "patternfly": "~3.3",
+    "patternfly": "^3.27.4",
     "prop-types": "^15.5.10",
     "react": "^15.5.0"
   },
