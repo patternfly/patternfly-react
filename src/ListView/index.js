@@ -80,7 +80,6 @@ export const ListGroupItem = ({
   expanded,
   ...rest
 }) => {
-  console.log(expanded)
   const classes = cx(
     'list-group-item',
     {
