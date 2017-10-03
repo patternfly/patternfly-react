@@ -1,5 +1,6 @@
 import { configure, setAddon } from '@storybook/react'
 import infoAddon from '@storybook/addon-info'
+import './less/base.less'
 
 setAddon(infoAddon)
 
