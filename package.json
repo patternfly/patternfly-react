@@ -68,7 +68,7 @@
   },
   "scripts": {
     "commit": "git-cz",
-    "build": "babel src --out-dir lib --ignore test.js,__mocks__  && less",
+    "build": "babel src --out-dir lib --ignore test.js,__mocks__  && npm run less",
     "less": "mkdir -p lib/styles/less && cp -r less/ lib/styles/less",
     "lint": "eslint --max-warnings 0 src storybook",
     "prettier": "prettier --write --single-quote --no-semi '{src,storybook}/**/*.js'",

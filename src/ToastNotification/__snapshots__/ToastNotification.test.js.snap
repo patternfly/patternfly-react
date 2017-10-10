@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TimedToastNotification renders properly 1`] = `
+<div
+  className="alert toast-pf alert-danger alert-dismissable"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  paused={false}
+  timerdelay={8000}
+>
+  <button
+    aria-hidden="true"
+    className="close close-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="pficon pficon-close"
+    />
+  </button>
+  <span
+    className="pficon pficon-error-circle-o"
+  />
+  <span>
+    Danger Will Robinson!
+  </span>
+</div>
+`;
+
+exports[`ToastNotification renders properly 1`] = `
+<div
+  className="alert toast-pf alert-danger alert-dismissable"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <button
+    aria-hidden="true"
+    className="close close-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="pficon pficon-close"
+    />
+  </button>
+  <span
+    className="pficon pficon-error-circle-o"
+  />
+  <span>
+    Danger Will Robinson!
+  </span>
+</div>
+`;
