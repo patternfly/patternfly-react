@@ -24,40 +24,30 @@ const ListViewRow = ({
   leftContent,
   heading,
   description
-}) =>
+}) => (
   <div style={{ display: 'flex', flex: 1 }}>
-    {checkboxInput &&
-      <ListViewCheckbox>
-        {checkboxInput}
-      </ListViewCheckbox>}
-    {actions &&
-      <ListViewActions>
-        {actions}
-      </ListViewActions>}
+    {checkboxInput && <ListViewCheckbox>{checkboxInput}</ListViewCheckbox>}
+    {actions && <ListViewActions>{actions}</ListViewActions>}
     <ListViewMainInfo>
-      {leftContent &&
-        <ListViewLeft>
-          {leftContent}
-        </ListViewLeft>}
+      {leftContent && <ListViewLeft>{leftContent}</ListViewLeft>}
       <ListViewBody>
-        {(heading || description) &&
+        {(heading || description) && (
           <ListViewDescription>
-            {heading &&
-              <ListViewDescriptionHeading>
-                {heading}
-              </ListViewDescriptionHeading>}
-            {description &&
-              <ListViewDescriptionText>
-                {description}
-              </ListViewDescriptionText>}
-          </ListViewDescription>}
-        {additionalInfo &&
-          <ListViewAdditionalInfo>
-            {additionalInfo}
-          </ListViewAdditionalInfo>}
+            {heading && (
+              <ListViewDescriptionHeading>{heading}</ListViewDescriptionHeading>
+            )}
+            {description && (
+              <ListViewDescriptionText>{description}</ListViewDescriptionText>
+            )}
+          </ListViewDescription>
+        )}
+        {additionalInfo && (
+          <ListViewAdditionalInfo>{additionalInfo}</ListViewAdditionalInfo>
+        )}
       </ListViewBody>
     </ListViewMainInfo>
   </div>
+)
 
 ListViewRow.propTypes = {
   /** Node which renders right-positioned actions (e.g. Buttons, DropdownKebab...) */

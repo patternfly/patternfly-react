@@ -15,16 +15,20 @@ stories.addDecorator(
   })
 )
 
-stories.addWithInfo('with danger', `This is the Alert with danger type.`, () =>
-  <Alert type="danger" onDismiss={action('onDismiss')}>
-    <span>{text('Label', 'Danger Will Robinson!')}</span>
-  </Alert>
+stories.addWithInfo(
+  'with danger',
+  `This is the Alert with danger type.`,
+  () => (
+    <Alert type="danger" onDismiss={action('onDismiss')}>
+      <span>{text('Label', 'Danger Will Robinson!')}</span>
+    </Alert>
+  )
 )
 
 stories.addWithInfo(
   'with warning',
   `This is the Alert with warning type.`,
-  () =>
+  () => (
     <Alert type="warning" onDismiss={action('onDismiss')}>
       <span>
         {text(
@@ -33,9 +37,10 @@ stories.addWithInfo(
         )}
       </span>
     </Alert>
+  )
 )
 
-stories.addWithInfo('with info', `This is the Alert with info type.`, () =>
+stories.addWithInfo('with info', `This is the Alert with info type.`, () => (
   <Alert type="info" onDismiss={action('onDismiss')}>
     <span>
       {text(
@@ -44,12 +49,12 @@ stories.addWithInfo('with info', `This is the Alert with info type.`, () =>
       )}
     </span>
   </Alert>
-)
+))
 
 stories.addWithInfo(
   'with success',
   `This is the Alert with success type.`,
-  () =>
+  () => (
     <Alert type="success" onDismiss={action('onDismiss')}>
       <span>
         {text(
@@ -58,12 +63,13 @@ stories.addWithInfo(
         )}
       </span>
     </Alert>
+  )
 )
 
 stories.addWithInfo(
   'without dismiss',
   `This is the Alert without a dismiss icon.`,
-  () =>
+  () => (
     <Alert type="success">
       <span>
         {text(
@@ -72,4 +78,5 @@ stories.addWithInfo(
         )}
       </span>
     </Alert>
+  )
 )

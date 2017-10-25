@@ -42,10 +42,11 @@ export const mockListItems = [
   }
 ]
 
-export const renderActions = () =>
+export const renderActions = () => (
   <div>
     <Button>Details</Button>
   </div>
+)
 
 export const renderAdditionalInfoItems = itemProperties => {
   return (

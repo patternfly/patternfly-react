@@ -8,13 +8,11 @@ const stories = storiesOf('MenuItem', module)
 
 const description = (
   <p>
-    This component is based on React Bootstrap MenuItem component.
-    This component represents a menu item in a dropdown. See
-    {' '}
+    This component is based on React Bootstrap MenuItem component. This
+    component represents a menu item in a dropdown. See{' '}
     <a href="https://react-bootstrap.github.io/components.html#menu-items">
       React Bootstrap Docs
-    </a>
-    {' '}
+    </a>{' '}
     for complete MenuItem component documentation.
   </p>
 )
@@ -26,7 +24,7 @@ stories.addDecorator(
   })
 )
 
-stories.addWithInfo('MenuItem', '', () =>
+stories.addWithInfo('MenuItem', '', () => (
   <div>
     <Dropdown.Menu style={{ display: 'block' }}>
       <MenuItem header>Header</MenuItem>
@@ -35,9 +33,7 @@ stories.addWithInfo('MenuItem', '', () =>
       <MenuItem header>Header</MenuItem>
       <MenuItem>link</MenuItem>
       <MenuItem disabled>disabled</MenuItem>
-      <MenuItem title="See? I have a title.">
-        link with title
-      </MenuItem>
+      <MenuItem title="See? I have a title.">link with title</MenuItem>
       <MenuItem
         eventKey={1}
         href="#someHref"
@@ -47,4 +43,4 @@ stories.addWithInfo('MenuItem', '', () =>
       </MenuItem>
     </Dropdown.Menu>
   </div>
-)
+))

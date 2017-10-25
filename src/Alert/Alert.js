@@ -25,7 +25,7 @@ const Alert = ({ children, onDismiss, type }) => {
 
   return (
     <div className={alertClass}>
-      {onDismiss &&
+      {onDismiss && (
         <button
           type="button"
           className="close"
@@ -33,7 +33,8 @@ const Alert = ({ children, onDismiss, type }) => {
           onClick={onDismiss}
         >
           <span className="pficon pficon-close" />
-        </button>}
+        </button>
+      )}
       <span className={iconClass} />
       {children}
     </div>

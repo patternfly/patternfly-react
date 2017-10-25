@@ -44,7 +44,7 @@ stories.addWithInfo(
             dismissEnabled && !menuEnabled ? action('onDismiss') : null
           }
         >
-          {menuEnabled &&
+          {menuEnabled && (
             <DropdownKebab id="dropdownKebab" pullRight className="pull-right">
               <MenuItem>Action</MenuItem>
               <MenuItem>Another Action</MenuItem>
@@ -52,11 +52,13 @@ stories.addWithInfo(
               <MenuItem divider />
               <MenuItem>Separated link</MenuItem>
               {dismissEnabled && <MenuItem>Close</MenuItem>}
-            </DropdownKebab>}
-          {actionEnabled &&
+            </DropdownKebab>
+          )}
+          {actionEnabled && (
             <div className="pull-right toast-pf-action">
               <a href="#">Start Server</a>
-            </div>}
+            </div>
+          )}
           <span>
             <strong>{header}</strong> &nbsp;
             {message}
@@ -110,7 +112,7 @@ class ToastNotificationStoryWrapper extends React.Component {
           onMouseEnter={action('notification list: onMouseEnter fired')}
           onMouseLeave={action('notification list: onMouseLeave fired')}
         >
-          {!this.state.infoNotificationDismissed &&
+          {!this.state.infoNotificationDismissed && (
             <TimedToastNotification
               timerdelay={8000}
               type="info"
@@ -124,9 +126,10 @@ class ToastNotificationStoryWrapper extends React.Component {
                   "By default, a toast notification's timer expires after eight seconds."
                 )}
               </span>
-            </TimedToastNotification>}
+            </TimedToastNotification>
+          )}
           <br />
-          {!this.state.warningNotificationDismissed &&
+          {!this.state.warningNotificationDismissed && (
             <TimedToastNotification
               timerdelay={8000}
               type="warning"
@@ -138,8 +141,9 @@ class ToastNotificationStoryWrapper extends React.Component {
                 Additionally, if the user hovers any toast notification each
                 timer is reset.
               </span>
-            </TimedToastNotification>}
-          {!this.state.persistentNotificationDismissed &&
+            </TimedToastNotification>
+          )}
+          {!this.state.persistentNotificationDismissed && (
             <TimedToastNotification
               persistent
               type="success"
@@ -155,7 +159,8 @@ class ToastNotificationStoryWrapper extends React.Component {
                 A persistent notification will remain on the screen until
                 closed.
               </span>
-            </TimedToastNotification>}
+            </TimedToastNotification>
+          )}
         </ToastNotificationList>
       </div>
     )

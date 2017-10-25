@@ -150,10 +150,11 @@ export const ListGroupItemContainer = ({ children, expanded, onClose }) => {
   })
   return (
     <div className={classes}>
-      {onClose &&
+      {onClose && (
         <div className="close">
           <span className="pficon pficon-close" onClick={onClose} />
-        </div>}
+        </div>
+      )}
       {expanded && children}
     </div>
   )
@@ -175,10 +176,9 @@ ListGroupItemContainer.defaultProps = {
  * on the form solution the consuming application uses (e.g. Field component
  * in case of redux-form)
  */
-export const ListViewCheckbox = ({ children, className }) =>
-  <div className={cx('list-view-pf-checkbox', className)}>
-    {children}
-  </div>
+export const ListViewCheckbox = ({ children, className }) => (
+  <div className={cx('list-view-pf-checkbox', className)}>{children}</div>
+)
 
 ListViewCheckbox.propTypes = {
   /** Child node - form input component */
@@ -222,10 +222,9 @@ ListViewExpand.defaultProps = {
 }
 
 /** ListViewActions wraps ListViewItem actions and positions them to the right */
-export const ListViewActions = ({ children }) =>
-  <div className="list-view-pf-actions">
-    {children}
-  </div>
+export const ListViewActions = ({ children }) => (
+  <div className="list-view-pf-actions">{children}</div>
+)
 ListViewActions.propTypes = {
   /** Child nodes which render individual actions - Buttons, DropdownKebab... */
   children: PropTypes.node
@@ -234,20 +233,18 @@ ListViewActions.propTypes = {
 /**
  * ListViewMainInfo wraps the informational content of the ListViewItem
  */
-export const ListViewMainInfo = ({ children }) =>
-  <div className="list-view-pf-main-info">
-    {children}
-  </div>
+export const ListViewMainInfo = ({ children }) => (
+  <div className="list-view-pf-main-info">{children}</div>
+)
 ListViewMainInfo.propTypes = {
   /** Child nodes - instances of ListViewLeft and ListViewBody */
   children: PropTypes.node
 }
 
 /** ListViewLeft renders nodes positioned on the left side of ListViewItem row */
-export const ListViewLeft = ({ children }) =>
-  <div className="list-view-pf-left">
-    {children}
-  </div>
+export const ListViewLeft = ({ children }) => (
+  <div className="list-view-pf-left">{children}</div>
+)
 ListViewLeft.propTypes = {
   /** Child nodes - usually ListViewIcon instance */
   children: PropTypes.node
@@ -270,10 +267,9 @@ ListViewIcon.defaultProps = {
 /** 
  * ListViewBody wraps the central section of ListViewItem
  */
-export const ListViewBody = ({ children }) =>
-  <div className="list-view-pf-body">
-    {children}
-  </div>
+export const ListViewBody = ({ children }) => (
+  <div className="list-view-pf-body">{children}</div>
+)
 ListViewBody.propTypes = {
   /** Child nodes - ListViewDescription or ListViewAdditionalInfo instances */
   children: PropTypes.node
@@ -282,10 +278,9 @@ ListViewBody.propTypes = {
 /** 
  * ListViewDescription wraps Heading and Text
  */
-export const ListViewDescription = ({ children }) =>
-  <div className="list-view-pf-description">
-    {children}
-  </div>
+export const ListViewDescription = ({ children }) => (
+  <div className="list-view-pf-description">{children}</div>
+)
 ListViewDescription.propTypes = {
   /** Child nodes - ListViewDescriptionHeading or ListViewDescriptionText instances */
   children: PropTypes.node
@@ -294,10 +289,9 @@ ListViewDescription.propTypes = {
 /** 
  * ListViewDescriptionHeading renders ListViewItem heading
  */
-export const ListViewDescriptionHeading = ({ children }) =>
-  <div className="list-group-item-heading">
-    {children}
-  </div>
+export const ListViewDescriptionHeading = ({ children }) => (
+  <div className="list-group-item-heading">{children}</div>
+)
 ListViewDescriptionHeading.propTypes = {
   /** Child node - content rendered as heading */
   children: PropTypes.node
@@ -306,20 +300,18 @@ ListViewDescriptionHeading.propTypes = {
 /**
  * ListViewDescriptionText renders text content of ListViewItem
  */
-export const ListViewDescriptionText = ({ children }) =>
-  <div className="list-group-item-text">
-    {children}
-  </div>
+export const ListViewDescriptionText = ({ children }) => (
+  <div className="list-group-item-text">{children}</div>
+)
 ListViewDescriptionText.propTypes = {
   /** Child node - content rendered in text section of ListViewItem */
   children: PropTypes.node
 }
 
 /** ListViewAdditionalInfo defines additional info section */
-export const ListViewAdditionalInfo = ({ children }) =>
-  <div className="list-view-pf-additional-info">
-    {children}
-  </div>
+export const ListViewAdditionalInfo = ({ children }) => (
+  <div className="list-view-pf-additional-info">{children}</div>
+)
 ListViewAdditionalInfo.propTypes = {
   /** Child nodes - an array of ListViewInfoItem instances */
   children: PropTypes.arrayOf(PropTypes.node)
