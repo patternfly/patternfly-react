@@ -23,7 +23,7 @@ DropdownKebab.propTypes = {
   /** children nodes  */
   children: PropTypes.node,
   /** kebab dropdown id */
-  id: PropTypes.string.isRequired,
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   /** menu right aligned */
   pullRight: PropTypes.bool
 }
