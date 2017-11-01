@@ -12,7 +12,7 @@ import {
 test('ListView renders properly', () => {
   const component = renderer.create(
     <ListView>
-      {mockListItems.map((item, index) =>
+      {mockListItems.map((item, index) => (
         <ListViewItem
           key={index}
           actions={renderActions(item.actions)}
@@ -24,12 +24,10 @@ test('ListView renders properly', () => {
           stacked
         >
           <Row>
-            <Col sm={11}>
-              {item.expandedContentText}
-            </Col>
+            <Col sm={11}>{item.expandedContentText}</Col>
           </Row>
         </ListViewItem>
-      )}
+      ))}
     </ListView>
   )
 

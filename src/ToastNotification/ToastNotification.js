@@ -43,10 +43,11 @@ const ToastNotification = ({
       onMouseLeave={onMouseLeave}
       {...props}
     >
-      {onDismiss &&
+      {onDismiss && (
         <Button bsClass="close" aria-hidden="true" onClick={onDismiss}>
           <span className="pficon pficon-close" />
-        </Button>}
+        </Button>
+      )}
       <span className={iconClass} />
       {children}
     </div>

@@ -26,10 +26,11 @@ stories.addDecorator(
   })
 )
 
-const renderActions = () =>
+const renderActions = () => (
   <div>
     <Button>Details</Button>
   </div>
+)
 
 const renderAdditionalInfoItems = itemProperties => {
   return (
@@ -57,7 +58,7 @@ stories.addWithInfo(
   () => {
     return (
       <ListView>
-        {mockListItems.map((item, index) =>
+        {mockListItems.map((item, index) => (
           <ListViewItem
             key={index}
             actions={renderActions(item.actions)}
@@ -69,18 +70,16 @@ stories.addWithInfo(
             stacked={boolean('Stacked', false)}
           >
             <Row>
-              <Col sm={11}>
-                {item.expandedContentText}
-              </Col>
+              <Col sm={11}>{item.expandedContentText}</Col>
             </Row>
           </ListViewItem>
-        )}
+        ))}
       </ListView>
     )
   }
 )
 
-stories.addWithInfo('ListItem variants', `ListView usage example.`, () =>
+stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
   <ListView
     id="listView--listItemVariants"
     className="listView--listItemVariants"
@@ -190,4 +189,4 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () =>
       stacked={boolean('Stacked', false)}
     />
   </ListView>
-)
+))
