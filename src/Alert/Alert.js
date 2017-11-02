@@ -6,8 +6,8 @@ import { ALERT_TYPES } from '../common/constants'
 /**
  * Alert Component for Patternfly React
  */
-const Alert = ({ children, onDismiss, type }) => {
-  const alertClass = ClassNames({
+const Alert = ({ children, className, onDismiss, type, ...props }) => {
+  const alertClass = ClassNames(className, {
     alert: true,
     'alert-danger': type === 'danger' || type === 'error',
     'alert-warning': type === 'warning',
@@ -24,7 +24,7 @@ const Alert = ({ children, onDismiss, type }) => {
   })
 
   return (
-    <div className={alertClass}>
+    <div className={alertClass} {...props}>
       {onDismiss && (
         <button
           type="button"
@@ -41,6 +41,8 @@ const Alert = ({ children, onDismiss, type }) => {
   )
 }
 Alert.propTypes = {
+  /** additional alert classes */
+  className: PropTypes.string,
   /** callback when alert is dismissed  */
   onDismiss: PropTypes.func,
   /** the type of alert  */

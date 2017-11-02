@@ -11,8 +11,6 @@ const ToastNotification = ({
   className,
   onDismiss,
   type,
-  onMouseEnter,
-  onMouseLeave,
   children,
   ...props
 }) => {
@@ -37,12 +35,7 @@ const ToastNotification = ({
   })
 
   return (
-    <div
-      className={notificationClasses}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      {...props}
-    >
+    <div className={notificationClasses} {...props}>
       {onDismiss && (
         <Button bsClass="close" aria-hidden="true" onClick={onDismiss}>
           <span className="pficon pficon-close" />
@@ -60,10 +53,6 @@ ToastNotification.propTypes = {
   onDismiss: PropTypes.func,
   /** the type of alert  */
   type: PropTypes.oneOf(TOAST_NOTIFICATION_TYPES).isRequired,
-  /** onMouseEnter callback */
-  onMouseEnter: PropTypes.func,
-  /** onMouseLeave callback */
-  onMouseLeave: PropTypes.func,
   /** children nodes  */
   children: PropTypes.node
 }
