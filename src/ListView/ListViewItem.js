@@ -11,7 +11,7 @@ import ListViewRow from './ListViewRow'
 
 /**
  * ListViewItem - main ListViewItem component which handles the expansion logic.
- * ListViewItem is considered expandable if it has child props. In that case it
+ * ListViewItem is considered expandable if it has children. In that case it
  * renders ListGroupItemHeader and ListGroupItemContainer
  */
 export default class ListViewItem extends React.Component {
@@ -20,7 +20,7 @@ export default class ListViewItem extends React.Component {
     this.state = { expanded: false }
   }
 
-  toggleExpanded(index) {
+  toggleExpanded() {
     const { onExpand, onExpandClose } = this.props
     if (this.state.expanded) {
       onExpandClose && onExpandClose()
