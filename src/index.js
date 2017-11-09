@@ -1,4 +1,5 @@
 export { default as Alert } from './Alert/Alert'
+export { default as Breadcrumb } from './Breadcrumb/Breadcrumb'
 export { default as Button } from './Button/Button'
 export { default as DropdownKebab } from './DropdownKebab/DropdownKebab'
 export {
