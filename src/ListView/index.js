@@ -2,7 +2,7 @@ import cx from 'classnames'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-/** 
+/**
  * Components in this module are used as building blocks for ListViewItem and
  * ListViewRow. If needed, components can be used to create custom ListViewItem
  *
@@ -42,11 +42,11 @@ import PropTypes from 'prop-types'
  *         </ListViewBody>
  *       </ListViewMainInfo>
  *     </ListGroupItemHeader>
- * 
+ *
  *     <ListGroupItemContainer onClose={functionWhichClosesMe} expanded>
  *       <Row>Some content goes here</Row>
  *     </ListGroupItemContainer>
- * 
+ *
  *   </ListGroupItem>
  *   ...
  * </ListView>
@@ -109,7 +109,7 @@ ListGroupItem.defaultProps = {
   stacked: false
 }
 
-/** 
+/**
  * ListGroupItemHeader is used with expandable ListViewItem, wraps everything
  * that is displayed in non expanded state. Handles the toggling of the expanded
  * state
@@ -264,7 +264,7 @@ ListViewIcon.defaultProps = {
   size: 'sm'
 }
 
-/** 
+/**
  * ListViewBody wraps the central section of ListViewItem
  */
 export const ListViewBody = ({ children }) => (
@@ -275,7 +275,7 @@ ListViewBody.propTypes = {
   children: PropTypes.node
 }
 
-/** 
+/**
  * ListViewDescription wraps Heading and Text
  */
 export const ListViewDescription = ({ children }) => (
@@ -286,7 +286,7 @@ ListViewDescription.propTypes = {
   children: PropTypes.node
 }
 
-/** 
+/**
  * ListViewDescriptionHeading renders ListViewItem heading
  */
 export const ListViewDescriptionHeading = ({ children }) => (
