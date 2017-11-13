@@ -1,7 +1,7 @@
-import { Dropdown } from 'react-bootstrap'
 import ClassNames from 'classnames'
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Dropdown, Icon } from '../index'
 
 /**
  * DropdownKebab Component for Patternfly React
@@ -11,7 +11,7 @@ const DropdownKebab = ({ className, children, id, pullRight }) => {
   return (
     <Dropdown className={kebabClass} id={id} pullRight={pullRight}>
       <Dropdown.Toggle bsStyle="link" noCaret>
-        <span className="fa fa-ellipsis-v" />
+        <Icon name="ellipsis-v" />
       </Dropdown.Toggle>
       <Dropdown.Menu>{children}</Dropdown.Menu>
     </Dropdown>

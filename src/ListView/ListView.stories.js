@@ -5,15 +5,7 @@ import { Row, Col } from 'react-bootstrap'
 import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { defaultTemplate } from '../../storybook/decorators/storyTemplates'
 
-import {
-  Button,
-  DropdownKebab,
-  ListView,
-  ListViewInfoItem,
-  ListViewItem,
-  ListViewIcon,
-  MenuItem
-} from '../index'
+import { Button, DropdownKebab, Icon, ListView, MenuItem } from '../index'
 import { mockListItems } from './__mocks__/mockListItems'
 
 const stories = storiesOf('ListView', module)
@@ -43,10 +35,10 @@ const renderAdditionalInfoItems = itemProperties => {
         'pficon-image': prop === 'images'
       })
       return (
-        <ListViewInfoItem key={prop}>
+        <ListView.InfoItem key={prop}>
           <span className={classNames} />
           <strong>{itemProperties[prop]}</strong> {prop}
-        </ListViewInfoItem>
+        </ListView.InfoItem>
       )
     })
   )
@@ -59,11 +51,11 @@ stories.addWithInfo(
     return (
       <ListView>
         {mockListItems.map((item, index) => (
-          <ListViewItem
+          <ListView.Item
             key={index}
             actions={renderActions(item.actions)}
             checkboxInput={<input type="checkbox" />}
-            leftContent={<ListViewIcon icon="fa fa-plane" />}
+            leftContent={<ListView.Icon name="plane" />}
             additionalInfo={renderAdditionalInfoItems(item.properties)}
             heading={item.title}
             description={item.description}
@@ -72,7 +64,7 @@ stories.addWithInfo(
             <Row>
               <Col sm={11}>{item.expandedContentText}</Col>
             </Row>
-          </ListViewItem>
+          </ListView.Item>
         ))}
       </ListView>
     )
@@ -84,21 +76,21 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
     id="listView--listItemVariants"
     className="listView--listItemVariants"
   >
-    <ListViewItem
+    <ListView.Item
       id="item1"
       className="listViewItem--listItemVariants"
       key="item1"
       description="Expandable item with description, additional items and actions"
       heading="Event One"
       checkboxInput={<input type="checkbox" />}
-      leftContent={<ListViewIcon icon="fa fa-plane" />}
+      leftContent={<ListView.Icon name="plane" />}
       additionalInfo={[
-        <ListViewInfoItem key="1">
-          <span className="pficon pficon-flavor" /> Item 1
-        </ListViewInfoItem>,
-        <ListViewInfoItem key="2">
-          <span className="fa fa-bug" /> Item 2
-        </ListViewInfoItem>
+        <ListView.InfoItem key="1">
+          <Icon type="pf" name="flavor" /> Item 1
+        </ListView.InfoItem>,
+        <ListView.InfoItem key="2">
+          <Icon name="bug" /> Item 2
+        </ListView.InfoItem>
       ]}
       actions={
         <div>
@@ -111,10 +103,10 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
       stacked={boolean('Stacked', false)}
     >
       Expanded Content
-    </ListViewItem>
-    <ListViewItem
+    </ListView.Item>
+    <ListView.Item
       key="item2"
-      leftContent={<ListViewIcon size="lg" icon="fa fa-plane" />}
+      leftContent={<ListView.Icon size="lg" name="plane" />}
       heading={
         <span>
           This is EVENT One that is with very LONG and should not overflow and
@@ -129,7 +121,7 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
       }
       stacked={boolean('Stacked', false)}
     />
-    <ListViewItem
+    <ListView.Item
       key="item3"
       checkboxInput={<input type="checkbox" />}
       heading="Stacked Additional Info items"
@@ -139,36 +131,38 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
         </span>
       }
       additionalInfo={[
-        <ListViewInfoItem key="1" stacked>
+        <ListView.InfoItem key="1" stacked>
           <strong>113,735</strong>
           <span>Service One</span>
-        </ListViewInfoItem>,
-        <ListViewInfoItem key="2" stacked>
+        </ListView.InfoItem>,
+        <ListView.InfoItem key="2" stacked>
           <strong>35%</strong>
           <span>Service Two</span>
-        </ListViewInfoItem>
+        </ListView.InfoItem>
       ]}
       stacked={boolean('Stacked', false)}
     />
-    <ListViewItem
+    <ListView.Item
       key="item4"
       additionalInfo={[
-        <ListViewInfoItem key="1">
-          <span className="pficon pficon-screen" /> Only Additional
-        </ListViewInfoItem>,
-        <ListViewInfoItem key="2">
-          <span className="pficon pficon-cluster" /> Info Items
-        </ListViewInfoItem>
+        <ListView.InfoItem key="1">
+          <Icon type="pf" name="screen" /> Only Additional
+        </ListView.InfoItem>,
+        <ListView.InfoItem key="2">
+          <Icon type="pf" name="cluster" /> Info Items
+        </ListView.InfoItem>
       ]}
       stacked={boolean('Stacked', false)}
     />
-    <ListViewItem
+    <ListView.Item
       key="item5"
       heading="Custom Event Icon"
       leftContent={
-        <ListViewIcon
+        <ListView.Icon
+          type="pf"
+          name="ok"
           size="md"
-          icon="pficon pficon-ok list-view-pf-icon-success"
+          className="list-view-pf-icon-success"
         />
       }
       description={
@@ -177,14 +171,14 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
         </span>
       }
       additionalInfo={[
-        <ListViewInfoItem key="1">
-          <span className="pficon pficon-screen" />
+        <ListView.InfoItem key="1">
+          <Icon type="pf" name="screen" />
           <strong>108</strong> Hosts
-        </ListViewInfoItem>,
-        <ListViewInfoItem key="2">
-          <span className="pficon pficon-cluster" />
+        </ListView.InfoItem>,
+        <ListView.InfoItem key="2">
+          <Icon type="pf" name="cluster" />
           <strong>28</strong> Clusters
-        </ListViewInfoItem>
+        </ListView.InfoItem>
       ]}
       stacked={boolean('Stacked', false)}
     />

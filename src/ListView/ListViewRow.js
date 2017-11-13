@@ -1,17 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {
-  ListViewActions,
-  ListViewAdditionalInfo,
-  ListViewCheckbox,
-  ListViewLeft,
-  ListViewBody,
-  ListViewDescription,
-  ListViewDescriptionHeading,
-  ListViewDescriptionText,
-  ListViewMainInfo
-} from './index'
+import ListViewActions from './ListViewActions'
+import ListViewAdditionalInfo from './ListViewAdditionalInfo'
+import ListViewCheckbox from './ListViewCheckbox'
+import ListViewLeft from './ListViewLeft'
+import ListViewBody from './ListViewBody'
+import ListViewDescription from './ListViewDescription'
+import ListViewDescriptionHeading from './ListViewDescriptionHeading'
+import ListViewDescriptionText from './ListViewDescriptionText'
+import ListViewMainInfo from './ListViewMainInfo'
 
 /**
  * ListViewRow wraps the ListViewItem row, conditionally renders sections

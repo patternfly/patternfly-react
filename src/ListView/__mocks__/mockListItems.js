@@ -1,7 +1,7 @@
 import cx from 'classnames'
 import React from 'react'
 
-import { Button, ListViewInfoItem } from '../../index'
+import { Button, ListView } from '../../index'
 
 export const mockListItems = [
   {
@@ -59,10 +59,10 @@ export const renderAdditionalInfoItems = itemProperties => {
         'pficon-image': prop === 'images'
       })
       return (
-        <ListViewInfoItem key={prop}>
+        <ListView.InfoItem key={prop}>
           <span className={classNames} />
           <strong>{itemProperties[prop]}</strong> {prop}
-        </ListViewInfoItem>
+        </ListView.InfoItem>
       )
     })
   )

@@ -54,7 +54,8 @@ exports[`ListView renders properly 1`] = `
             className="list-view-pf-left"
           >
             <span
-              className="list-view-pf-icon-sm fa fa-plane"
+              aria-hidden={true}
+              className="fa fa-plane list-view-pf-icon-sm"
             />
           </div>
           <div
@@ -197,7 +198,8 @@ exports[`ListView renders properly 1`] = `
             className="list-view-pf-left"
           >
             <span
-              className="list-view-pf-icon-sm fa fa-plane"
+              aria-hidden={true}
+              className="fa fa-plane list-view-pf-icon-sm"
             />
           </div>
           <div
@@ -340,7 +342,8 @@ exports[`ListView renders properly 1`] = `
             className="list-view-pf-left"
           >
             <span
-              className="list-view-pf-icon-sm fa fa-plane"
+              aria-hidden={true}
+              className="fa fa-plane list-view-pf-icon-sm"
             />
           </div>
           <div
@@ -483,7 +486,8 @@ exports[`ListView renders properly 1`] = `
             className="list-view-pf-left"
           >
             <span
-              className="list-view-pf-icon-sm fa fa-plane"
+              aria-hidden={true}
+              className="fa fa-plane list-view-pf-icon-sm"
             />
           </div>
           <div
@@ -565,7 +569,8 @@ exports[`ListView renders properly 1`] = `
             className="list-view-pf-left"
           >
             <span
-              className="list-view-pf-icon-sm fa fa-plane"
+              aria-hidden={true}
+              className="fa fa-plane list-view-pf-icon-sm"
             />
           </div>
           <div
@@ -694,7 +699,8 @@ exports[`ListView renders properly 1`] = `
             className="list-view-pf-left"
           >
             <span
-              className="list-view-pf-icon-sm fa fa-plane"
+              aria-hidden={true}
+              className="fa fa-plane list-view-pf-icon-sm"
             />
           </div>
           <div
