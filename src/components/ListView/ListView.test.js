@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col } from '../Grid';
 
 import { ListView } from './index';
 import {
