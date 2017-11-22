@@ -16,6 +16,7 @@ exports[`Kebab dropdown renders properly 1`] = `
     type="button"
   >
     <span
+      aria-hidden={true}
       className="fa fa-ellipsis-v"
     />
   </button>

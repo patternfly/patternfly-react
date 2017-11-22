@@ -1,27 +1,13 @@
 export { default as Alert } from './Alert/Alert'
+export { default as Badge } from './Badge/Badge'
 export { default as Breadcrumb } from './Breadcrumb/Breadcrumb'
 export { default as Button } from './Button/Button'
+export { default as Dropdown } from './Dropdown/Dropdown'
 export { default as DropdownKebab } from './DropdownKebab/DropdownKebab'
-export {
-  ListView,
-  ListGroupItem,
-  ListGroupItemHeader,
-  ListGroupItemContainer,
-  ListViewCheckbox,
-  ListViewExpand,
-  ListViewActions,
-  ListViewMainInfo,
-  ListViewLeft,
-  ListViewIcon,
-  ListViewBody,
-  ListViewDescription,
-  ListViewDescriptionHeading,
-  ListViewDescriptionText,
-  ListViewAdditionalInfo,
-  ListViewInfoItem
-} from './ListView'
-export { default as ListViewItem } from './ListView/ListViewItem'
-export { default as ListViewRow } from './ListView/ListViewRow'
+export { default as ListGroup } from './ListGroup/ListGroup'
+export { default as ListGroupItem } from './ListGroup/ListGroupItem'
+export { default as ListView } from './ListView/ListView'
+export { default as Icon } from './Icon/Icon'
 export { default as MenuItem } from './MenuItem/MenuItem'
 export {
   default as ToastNotification
