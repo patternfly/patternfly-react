@@ -9,6 +9,8 @@ export { default as ListGroupItem } from './ListGroup/ListGroupItem'
 export { default as ListView } from './ListView/ListView'
 export { default as Icon } from './Icon/Icon'
 export { default as MenuItem } from './MenuItem/MenuItem'
+export { default as OverlayTrigger } from './OverlayTrigger/OverlayTrigger'
+export { default as Popover } from './Popover/Popover'
 export {
   default as ToastNotification
 } from './ToastNotification/ToastNotification'
