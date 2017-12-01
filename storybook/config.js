@@ -1,13 +1,13 @@
-import { configure, setAddon } from '@storybook/react'
-import infoAddon from '@storybook/addon-info'
-import './less/base.less'
+import { configure, setAddon } from '@storybook/react';
+import infoAddon from '@storybook/addon-info';
+import './less/base.less';
 
-setAddon(infoAddon)
+setAddon(infoAddon);
 
-const req = require.context('../src', true, /.stories.js$/)
+const req = require.context('../src', true, /.stories.js$/);
 
 function loadStories() {
-  req.keys().forEach(filename => req(filename))
+  req.keys().forEach(filename => req(filename));
 }
 
-configure(loadStories, module)
+configure(loadStories, module);

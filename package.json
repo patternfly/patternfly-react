@@ -68,17 +68,21 @@
     "react-dom": "^15.6.2 || ^16.0.0"
   },
   "scripts": {
+    "start": "npm run storybook:run",
     "commit": "git-cz",
-    "build": "babel src --out-dir lib --ignore test.js,__mocks__  && npm run less",
-    "less": "mkdir -p lib/styles/less && cp -r less/ lib/styles/less",
+    "build": "npm run build:scripts && npm run build:less",
+    "build:scripts": "babel src --out-dir lib --ignore test.js,__mocks__",
+    "build:less": "mkdir -p lib/styles/less && cp -r less/ lib/styles/less",
     "lint": "eslint --max-warnings 0 src storybook",
-    "prettier": "prettier --write --single-quote --no-semi '{src,storybook}/**/*.js'",
+    "prettier": "prettier --write --single-quote --trailing-comma=all '{src,storybook}/**/*.js'",
     "prepublish": "npm run build",
     "test": "npm run lint && jest",
     "test:watch": "jest --watchAll",
-    "storybook": "start-storybook -c storybook -p 6006",
-    "build-storybook": "build-storybook -c storybook -o .out",
+    "storybook": "npm run storybook:run",
+    "storybook:run": "start-storybook -c storybook -p 6006",
+    "storybook:build": "build-storybook -c storybook -o .out",
     "storybook:deploy": "storybook-to-ghpages",
+    "build-storybook": "build-storybook -c storybook -o .out",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "czConfig": {

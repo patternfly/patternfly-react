@@ -1,6 +1,6 @@
 {
   "rules": {
-    "prettier/prettier": ["error", { "semi": false, "singleQuote": true }]
+    "prettier/prettier": ["error", { "singleQuote": true, "trailingComma": "all" }]
   },
   "extends": [
     "standard",

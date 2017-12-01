@@ -21,12 +21,12 @@ This project uses [React Storybook](https://getstorybook.io/) to test and demo n
 How to use Storybook locally:
 ```
 npm i
-npm run storybook
+npm start
 ```
 
 How to deploy storybook to github pages in your fork:
 ```
-npm run build-storybook
+npm run storybook:build
 npm run storybook:deploy
 ```
 
