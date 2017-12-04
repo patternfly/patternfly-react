@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const defaultTemplate = config => story => (
   <div style={{ padding: '0 20px' }}>
@@ -29,4 +29,4 @@ export const defaultTemplate = config => story => (
     <br />
     <div style={config.style}>{story()}</div>
   </div>
-)
+);

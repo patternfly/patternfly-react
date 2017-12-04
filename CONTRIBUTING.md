@@ -51,6 +51,30 @@ when possible and accept [props](https://facebook.github.io/react/docs/component
 **Note:** If your component does not yet have PatternFly design documentation, the PatternFly React design team will first confirm that the pattern passes the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) and then start the process for generating design documentation.
 * Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `npm run prettier` and run the project's linter with `npm run lint`.
 
+### Code Consistency
+
+* All files and folders under `src/components` should name with PascalCase except `index.js` files
+* Each component should treat as a standalone package and live under its own folder
+* Single file per component with **default export**
+* When component is a set of components (e.g., ListGroup and ListGroupItem),
+  they should live in the same folder named on the parent component (e.g., ListGroup)
+* Each component folder should have an `index.js` file with **named exports** of all the relevant components in the folder
+* Always prefer **default imports** between components in the same folder
+* Components that are not getting exported (to consumers) from
+  the `index.js` file should be in a subfolder named `InnerComponents`
+* Exporting components from other libraries (without manipulating them)
+  to consumers is a common task, use:
+  ```js
+  # Badge/Badge.js
+  export { Badge as default } from 'react-bootstrap';
+
+  # Badge/index.js
+  export { default as Badge } from './Badge';
+
+  # index.js
+  export * from './Badge';
+  ```
+
 ## Code Contribution Guidelines
 
 Adhering to the following process is the best way to get your work included in the project:
@@ -112,7 +136,7 @@ Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure a
 Lastly, you'll want to export Storybook in your fork and note the Storybook url generated.
 
   ```text
-  $ npm run build-storybook
+  $ npm run storybook:build
   $ npm run storybook:deploy
   ```
 
