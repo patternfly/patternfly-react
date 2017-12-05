@@ -14,3 +14,4 @@ export * from './components/OverlayTrigger';
 export * from './components/Popover';
 export * from './components/ToastNotification';
 export * from './components/Tooltip';
+export * from './components/Wizard';
