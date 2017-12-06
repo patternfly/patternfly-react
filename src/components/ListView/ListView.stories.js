@@ -1,7 +1,7 @@
 import cx from 'classnames';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col } from '../Grid';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 
