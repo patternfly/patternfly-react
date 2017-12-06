@@ -55,6 +55,7 @@
     "less-loader": "^4.0.5",
     "patternfly": "^3.27.4",
     "prettier": "^1.7.4",
+    "raf": "^3.4.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
@@ -84,6 +85,11 @@
     "storybook:deploy": "storybook-to-ghpages",
     "build-storybook": "build-storybook -c storybook -o .out",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "jest": {
+    "setupFiles": [
+      "./src/test.env.js"
+    ]
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
