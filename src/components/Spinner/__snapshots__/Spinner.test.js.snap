@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner should not render children when loading 1`] = `
+<div
+  className="spinner spinner-md"
+/>
+`;
+
+exports[`Spinner should render children when not loading 1`] = `
+<span>
+  Children should be rendered.
+</span>
+`;
