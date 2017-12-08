@@ -1,0 +1,123 @@
+import React from 'react';
+
+import { patternfly } from '../../common/patternfly';
+import { BarChart, GroupedBarChart, StackedBarChart } from './index';
+
+/**
+ * BarChart constants
+ */
+
+const categories = ['Q1', 'Q2', 'Q3', 'Q4'];
+const columnsData = [['data1', 400, 360, 320, 175]];
+const barChartConfigAxis = {
+  x: {
+    categories: categories,
+    type: 'category',
+  },
+};
+const barChartConfigData = {
+  columns: columnsData,
+};
+
+const groupedcCategories = ['2013', '2014', '2015'];
+const groupedColumnsData = [
+  ['Q1', 400, 250, 375],
+  ['Q2', 355, 305, 300],
+  ['Q3', 315, 340, 276],
+  ['Q4', 180, 390, 190],
+];
+const groupedColors = {
+  pattern: [
+    patternfly.pfPaletteColors.red,
+    patternfly.pfPaletteColors.blue,
+    patternfly.pfPaletteColors.orange,
+    patternfly.pfPaletteColors.green,
+  ],
+};
+const groupedBarChartConfigAxis = {
+  x: {
+    categories: groupedcCategories,
+    type: 'category',
+  },
+};
+const groupedBarChartConfigData = {
+  columns: groupedColumnsData,
+  order: null,
+};
+const groupedBarChartConfigColor = groupedColors;
+
+const stackedBarChartConfigAxis = {
+  x: {
+    categories: groupedcCategories,
+    type: 'category',
+  },
+};
+const stackedBarChartConfigData = {
+  groups: [categories],
+  columns: groupedColumnsData,
+  order: null,
+};
+
+const horizontalBarChartConfigAxis = {
+  rotated: true,
+  x: {
+    categories: groupedcCategories,
+    type: 'category',
+  },
+};
+
+/**
+ * BarChart stories
+ */
+
+const barChartAddWithInfo = stories => {
+  stories.addWithInfo('Bar Charts', '', () => (
+    <div>
+      <h2> Bar Chart</h2>
+      <div>
+        <BarChart
+          id="bar-chart-1"
+          size={{ width: 400 }}
+          axis={barChartConfigAxis}
+          data={barChartConfigData}
+          categories={categories}
+        />
+      </div>
+
+      <h2>Grouped Bar Chart</h2>
+      <div>
+        <GroupedBarChart
+          id="bar-chart-2"
+          size={{ width: 400 }}
+          axis={groupedBarChartConfigAxis}
+          data={groupedBarChartConfigData}
+          color={groupedBarChartConfigColor}
+        />
+      </div>
+
+      <h2>Stacked Bar Chart</h2>
+      <div>
+        <StackedBarChart
+          id="bar-chart-3"
+          size={{ width: 400 }}
+          axis={stackedBarChartConfigAxis}
+          data={stackedBarChartConfigData}
+          color={groupedBarChartConfigColor}
+        />
+      </div>
+
+      <h2>Horizontal Bar Chart</h2>
+      <div>
+        <GroupedBarChart
+          id="bar-chart-4"
+          size={{ width: 400 }}
+          axis={horizontalBarChartConfigAxis}
+          data={groupedBarChartConfigData}
+          color={groupedBarChartConfigColor}
+        />
+      </div>
+    </div>
+  ));
+};
+
+export default barChartAddWithInfo;
