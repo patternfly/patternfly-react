@@ -35,11 +35,11 @@ For example, to deploy to your `upstream` remote:
 ```
 npm run storybook:deploy -- --remote=upstream
 ```
-To deploy Storybook to a target branch and serve with rawgit instead of gh-pages, pass `--branch` flag
-to `npm run storybook:deploy`.
-For example, to deploy to `feature-branch` target:
+To deploy Storybook to a target branch and serve with rawgit instead of gh-pages, pass `--branch` flag to `npm run storybook:deploy`. This will create a new branch to serve your Storybook (and will be useful if you have multiple open pull requests).
+
+For example, say you have `feature-branch`, you can deploy the storybook to a rawgit branch with:
 ```
-npm run storybook:deploy -- --branch=feature-branch
+npm run storybook:deploy -- --branch=feature-branch-storybook
 ```
 
 ## Meeting Notes

@@ -8,14 +8,14 @@ Please fill out the information below to expedite the review and (hopefully)
 merge of your pull request!
 -->
 
-<!-- What changes are being made? (What feature/bug is being fixed here?) -->
+<!-- What changes are being made? (What issue is being addressed here?) -->
 **What**:
 
-<!-- Why are these changes necessary? -->
-**Why**:
+<!-- Please provide a link to your fork's Storybook. See README notes on how to do this. -->
+**Link to Storybook**:
 
-<!-- How were these changes implemented? -->
-**How**:
+<!-- Are there any upstream issues or separate issues you need to reference? -->
+**Additional issues**:
 
 
 <!-- feel free to add additional comments -->
