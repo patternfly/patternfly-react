@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
-import { Button } from './index';
+import { Button, ButtonGroup } from './index';
+import { Grid, Row, Col } from '../../index';
 
 const stories = storiesOf('Button', module);
 
@@ -40,3 +41,100 @@ stories.addWithInfo('Button', '', () => (
     </p>
   </div>
 ));
+
+stories.addWithInfo('ButtonGroup', () => {
+  return (
+    <Grid>
+      <Row style={{ marginBottom: '20px' }}>
+        <Col xs={12} md={3}>
+          <ButtonGroup>
+            <Button>Left</Button>
+            <Button>Middle</Button>
+            <Button>Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup>
+            <Button bsStyle="danger">Left</Button>
+            <Button bsStyle="danger">Middle</Button>
+            <Button bsStyle="danger">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup>
+            <Button bsStyle="primary">Left</Button>
+            <Button bsStyle="primary">Middle</Button>
+            <Button bsStyle="primary">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup>
+            <Button bsStyle="link">Left</Button>
+            <Button bsStyle="link">Middle</Button>
+            <Button bsStyle="link">Right</Button>
+          </ButtonGroup>
+        </Col>
+      </Row>
+      <Row style={{ marginBottom: '20px' }}>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="large">
+            <Button>Left</Button>
+            <Button>Middle</Button>
+            <Button>Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="large">
+            <Button bsStyle="danger">Left</Button>
+            <Button bsStyle="danger">Middle</Button>
+            <Button bsStyle="danger">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="large">
+            <Button bsStyle="primary">Left</Button>
+            <Button bsStyle="primary">Middle</Button>
+            <Button bsStyle="primary">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="large">
+            <Button bsStyle="link">Left</Button>
+            <Button bsStyle="link">Middle</Button>
+            <Button bsStyle="link">Right</Button>
+          </ButtonGroup>
+        </Col>
+      </Row>
+      <Row style={{ marginBottom: '20px' }}>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="xsmall">
+            <Button>Left</Button>
+            <Button>Middle</Button>
+            <Button>Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="xsmall">
+            <Button bsStyle="danger">Left</Button>
+            <Button bsStyle="danger">Middle</Button>
+            <Button bsStyle="danger">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="xsmall">
+            <Button bsStyle="primary">Left</Button>
+            <Button bsStyle="primary">Middle</Button>
+            <Button bsStyle="primary">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="xsmall">
+            <Button bsStyle="link">Left</Button>
+            <Button bsStyle="link">Middle</Button>
+            <Button bsStyle="link">Right</Button>
+          </ButtonGroup>
+        </Col>
+      </Row>
+    </Grid>
+  );
+});
