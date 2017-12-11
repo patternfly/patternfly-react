@@ -50,20 +50,11 @@ stories.addWithInfo('Badges', '', () => (
 ));
 
 stories.addWithInfo('Linked Items', '', () => {
-  const handleClick = e => {
-    e.preventDefault();
-  };
   return (
     <ListGroup>
-      <ListGroupItem href="#" onClick={handleClick}>
-        Cras justo odio
-      </ListGroupItem>
-      <ListGroupItem href="#" onClick={handleClick}>
-        Dapibus ac facilisis in
-      </ListGroupItem>
-      <ListGroupItem href="#" onClick={handleClick}>
-        Morbi leo risus
-      </ListGroupItem>
+      <ListGroupItem href="#">Cras justo odio</ListGroupItem>
+      <ListGroupItem href="#">Dapibus ac facilisis in</ListGroupItem>
+      <ListGroupItem href="#">Morbi leo risus</ListGroupItem>
     </ListGroup>
   );
 });
@@ -78,27 +69,25 @@ stories.addWithInfo('Contextual classes', '', () => (
 ));
 
 stories.addWithInfo('Custom content', '', () => {
-  const handleClick = e => {
-    e.preventDefault();
-  };
   return (
     <ListGroup>
-      <ListGroupItem href="#" onClick={handleClick} className="active">
-        <h4 className="list-group-item-heading">List group item heading</h4>
+      <ListGroupItem
+        href="#"
+        header="List group item heading"
+        className="active"
+      >
         <p className="list-group-item-text">
           Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
           eget risus varius blandit.
         </p>
       </ListGroupItem>
-      <ListGroupItem href="#" onClick={handleClick}>
-        <h4 className="list-group-item-heading">List group item heading</h4>
+      <ListGroupItem href="#" header="List group item heading">
         <p className="list-group-item-text">
           Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
           eget risus varius blandit.
         </p>
       </ListGroupItem>
-      <ListGroupItem href="#" onClick={handleClick}>
-        <h4 className="list-group-item-heading">List group item heading</h4>
+      <ListGroupItem href="#" header="List group item heading">
         <p className="list-group-item-text">
           Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
           eget risus varius blandit.
