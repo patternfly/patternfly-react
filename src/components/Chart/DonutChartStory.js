@@ -6,13 +6,23 @@ import { DonutChart } from './index';
  * DonutChart constants
  */
 
+const pfGetUtilizationDonutTooltipContents = d => {
+  return (
+    '<span class="donut-tooltip-pf" style="white-space: nowrap;">' +
+    Math.round(d[0].ratio * 1000) / 10 +
+    ' ' +
+    d[0].name +
+    '</span>'
+  );
+};
+
 const donutConfigData = {
   columns: [['MHz Used', 60], ['MHz Available', 40]],
   groups: [['used', 'available']],
   order: null,
 };
 const donutConfigTooltip = {
-  contents: patternfly.pfGetUtilizationDonutTooltipContentsFn('MHz'),
+  contents: pfGetUtilizationDonutTooltipContents,
 };
 const donutData = {
   colors: {
@@ -52,7 +62,7 @@ const donutChartAddWithInfo = stories => {
           }}
           data={donutConfigData}
           tooltip={donutConfigTooltip}
-          title={{ type: 'percent' }}
+          title={{ type: 'max' }}
         />
       </div>
 

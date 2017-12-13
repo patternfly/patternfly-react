@@ -28,6 +28,10 @@ const setDonutTitle = obj => {
       primary = Math.round(100 * columns[iMax][1] / sum).toString() + '%';
       secondary = columns[iMax][0];
       break;
+    case 'max':
+      primary = Math.round(columns[iMax][1]).toString();
+      secondary = columns[iMax][0];
+      break;
     case 'total':
     default:
       primary = Math.round(sum).toString();
