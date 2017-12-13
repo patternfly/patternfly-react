@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
-import Spinner from './index';
+import { Spinner } from './index';
 
 const stories = storiesOf('Widgets', module);
 
