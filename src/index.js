@@ -13,6 +13,7 @@ export * from './components/MenuItem';
 export * from './components/Modal';
 export * from './components/OverlayTrigger';
 export * from './components/Popover';
+export * from './components/Spinner';
 export * from './components/ToastNotification';
 export * from './components/Tooltip';
 export * from './components/Wizard';
