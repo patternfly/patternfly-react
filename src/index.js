@@ -6,6 +6,7 @@ export * from './components/Dropdown';
 export * from './components/DropdownKebab';
 export * from './components/Grid';
 export * from './components/Icon';
+export * from './components/Label';
 export * from './components/ListGroup';
 export * from './components/ListView';
 export * from './components/MenuItem';
