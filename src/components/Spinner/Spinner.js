@@ -20,11 +20,7 @@ const Spinner = ({
     return <div className={classes} {...props} />;
   }
 
-  if (children) {
-    return children;
-  }
-
-  return null;
+  return children || null;
 };
 
 Spinner.propTypes = {
