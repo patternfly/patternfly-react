@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AreaChart renders properly 1`] = `
+<mapProps(Component)
+  axis={
+    Object {
+      "x": Object {
+        "show": true,
+      },
+      "y": Object {
+        "show": true,
+      },
+    }
+  }
+  className="area-chart-pf"
+  color={
+    Object {
+      "pattern": Array [
+        "#0088ce",
+        "#39a5dc",
+        "#3f9c35",
+        "#ec7a08",
+        "#cc0000",
+      ],
+    }
+  }
+  data={
+    Object {
+      "columns": Array [
+        Array [
+          "data",
+          42,
+        ],
+      ],
+    }
+  }
+  grid={
+    Object {
+      "x": Object {
+        "show": false,
+      },
+      "y": Object {
+        "show": true,
+      },
+    }
+  }
+  id="area-1"
+  legend={
+    Object {
+      "show": true,
+    }
+  }
+  point={
+    Object {
+      "focus": Object {
+        "expand": Object {
+          "r": 5,
+        },
+      },
+      "r": 3,
+    }
+  }
+  type="area"
+/>
+`;
+
+exports[`SingleAreaChart renders properly 1`] = `
+<mapProps(Component)
+  axis={
+    Object {
+      "x": Object {
+        "show": true,
+      },
+      "y": Object {
+        "show": true,
+      },
+    }
+  }
+  className="area-chart-pf"
+  color={
+    Object {
+      "pattern": Array [
+        "#0088ce",
+        "#39a5dc",
+        "#3f9c35",
+        "#ec7a08",
+        "#cc0000",
+      ],
+    }
+  }
+  data={
+    Object {
+      "columns": Array [
+        Array [
+          "data",
+          42,
+        ],
+      ],
+    }
+  }
+  grid={
+    Object {
+      "x": Object {
+        "show": false,
+      },
+      "y": Object {
+        "show": true,
+      },
+    }
+  }
+  id="area-2"
+  legend={
+    Object {
+      "show": false,
+    }
+  }
+  point={
+    Object {
+      "focus": Object {
+        "expand": Object {
+          "r": 5,
+        },
+      },
+      "r": 3,
+    }
+  }
+  tooltip={
+    Object {
+      "contents": [Function],
+    }
+  }
+  type="area"
+/>
+`;
