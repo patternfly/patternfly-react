@@ -1,6 +1,6 @@
 import React from 'react';
-import { patternfly } from '../../common/patternfly';
-import { DonutChart } from './index';
+import { patternfly } from '../../../common/patternfly';
+import { DonutChart } from '../index';
 
 /**
  * DonutChart constants
