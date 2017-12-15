@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { patternfly } from '../../common/patternfly';
-import { BarChart, GroupedBarChart, StackedBarChart } from './index';
+import { patternfly } from '../../../common/patternfly';
+import { BarChart, GroupedBarChart, StackedBarChart } from '../index';
 
 /**
  * BarChart constants

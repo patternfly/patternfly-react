@@ -62,6 +62,10 @@ when possible and accept [props](https://facebook.github.io/react/docs/component
 * Always prefer **default imports** between components in the same folder
 * Components that are not getting exported (to consumers) from
   the `index.js` file should be in a subfolder named `InnerComponents`
+* Storybooks
+  * Provide a storybook with your component named on the parent component with a `.stories.js` suffix (e.g., `ListGroup.stories.js`)
+  * When your stories contain multiple files, put them in a subfolder named `Stories`
+  * `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
 * Exporting components from other libraries (without manipulating them)
   to consumers is a common task, use:
   ```js

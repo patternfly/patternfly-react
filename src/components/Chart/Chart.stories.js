@@ -8,7 +8,7 @@ import {
   donutChartAddWithInfo,
   lineChartAddWithInfo,
   pieChartAddWithInfo,
-} from './MyChartStory';
+} from './Stories';
 
 const stories = storiesOf('Chart', module);
 const description = (

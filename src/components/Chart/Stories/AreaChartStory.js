@@ -1,5 +1,5 @@
 import React from 'react';
-import { AreaChart, SingleAreaChart } from './index';
+import { AreaChart, SingleAreaChart } from '../index';
 
 /**
  * Story constants

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, SingleLineChart, SparklineChart } from './index';
+import { LineChart, SingleLineChart, SparklineChart } from '../index';
 
 /**
  * LineChart constants
