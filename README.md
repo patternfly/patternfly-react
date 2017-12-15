@@ -15,6 +15,9 @@ Then import Patternfly React UI modules as ES6 modules:
 import { Alert } from 'patternfly-react'
 ```
 
+## Using patterfly-react Sass files
+As an alernative to consuming the `patternfly-react.css` file (found in `dist/css`), you can build patternfly-react styles into your css by including the Sass partials from `dist/sass`. The partial `_patternfly-react.scss` will pull in all the partials required for the patternfly-react components. When using the patternfly-react Sass files, you **MUST** include bootstrap and patternfly variables and mixins. An example of the required imports can be found in [patternfly-react.scss](./sass/patternfly-react.scss).
+
 ## Storybook UI Development
 This project uses [React Storybook](https://getstorybook.io/) to test and demo new React UI components. You can view our current storybook [here](https://rawgit.com/patternfly/patternfly-react/gh-pages/index.html).
 
