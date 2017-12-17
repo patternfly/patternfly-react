@@ -1,2 +1,1 @@
-import { ButtonGroup } from 'react-bootstrap';
-export default ButtonGroup;
+export { ButtonGroup as default } from 'react-bootstrap';
