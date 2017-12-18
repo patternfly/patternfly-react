@@ -11,10 +11,12 @@ exports[`Alert renders properly 1`] = `
     type="button"
   >
     <span
+      aria-hidden="true"
       className="pficon pficon-close"
     />
   </button>
   <span
+    aria-hidden="true"
     className="pficon pficon-error-circle-o"
   />
   <span>
