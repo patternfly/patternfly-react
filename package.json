@@ -55,6 +55,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^19.0.2",
     "node-sass": "^4.7.2",
+    "nvmrc-check": "^1.0.2",
     "patternfly": "^3.31.0",
     "prettier": "^1.7.4",
     "raf": "^3.4.0",
@@ -76,6 +77,7 @@
     "fontAwesome": "--include-path node_modules/patternfly/node_modules/font-awesome-sass/assets/stylesheets"
   },
   "scripts": {
+    "postinstall": "nvmrc-check --node $(cat .nvmrc)",
     "start": "npm run storybook:run",
     "commit": "git-cz",
     "build": "npm run build:scripts && npm run build:sass && npm run build:less",

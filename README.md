@@ -18,6 +18,16 @@ import { Alert } from 'patternfly-react'
 ## Using patterfly-react Sass files
 As an alernative to consuming the `patternfly-react.css` file (found in `dist/css`), you can build patternfly-react styles into your css by including the Sass partials from `dist/sass`. The partial `_patternfly-react.scss` will pull in all the partials required for the patternfly-react components. When using the patternfly-react Sass files, you **MUST** include bootstrap and patternfly variables and mixins. An example of the required imports can be found in [patternfly-react.scss](./sass/patternfly-react.scss).
 
+## Node Environment
+
+To build you **must** use Node 8. If you are not using Node 8, you will get an error at `npm install` time. Please install and use via:
+```
+nvm install 8
+nvm use 8
+```
+
+Run `npm install` again. If you then get an error with `Node Sass`, remove the `node_modules` and `npm install` again (to pull the correct version of node-sass).
+
 ## Storybook UI Development
 This project uses [React Storybook](https://getstorybook.io/) to test and demo new React UI components. You can view our current storybook [here](https://rawgit.com/patternfly/patternfly-react/gh-pages/index.html).
 
