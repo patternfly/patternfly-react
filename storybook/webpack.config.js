@@ -12,14 +12,29 @@ module.exports = {
           path.resolve(__dirname, './'),
         ],
       },
-      // Less
+      // Sass
       {
-        test: /\.less$/,
-        loaders: ['style-loader', 'css-loader', 'less-loader'],
-        include: [
-          path.resolve(__dirname, '../less'),
-          path.resolve(__dirname, '../src'),
-          path.resolve(__dirname, './'),
+        test: /\.scss$/,
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [
+                path.resolve(__dirname, '../sass/patternfly-react'),
+                path.resolve(__dirname, '../node_modules/patternfly/dist/sass'),
+                path.resolve(
+                  __dirname,
+                  '../node_modules/patternfly/node_modules/bootstrap-sass/assets/stylesheets',
+                ),
+                path.resolve(
+                  __dirname,
+                  '../node_modules/patternfly/node_modules/font-awesome-sass/assets/stylesheets',
+                ),
+              ],
+            },
+          },
         ],
       },
       // Images
