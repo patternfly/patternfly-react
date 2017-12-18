@@ -89,11 +89,6 @@ const mapChartProps = (name, props) => {
     newProps.data.type = props.type;
   }
 
-  // Set Bar Chart tooltip
-  if (name === 'BAR_CHART' && props.categories) {
-    newProps.tooltip = c3ChartDefaults.getDefaultBarTooltip(props.categories);
-  }
-
   return newProps;
 };
 

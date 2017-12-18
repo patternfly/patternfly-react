@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BarChart renders properly 1`] = `
-<mapProps(Component)
+<mapProps(mapProps(Component))
   className="bar-chart-pf"
   color={
     Object {

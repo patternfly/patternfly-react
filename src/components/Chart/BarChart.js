@@ -1,8 +1,22 @@
 import React from 'react';
 import C3Chart from 'react-c3js';
 import { getComposer } from './constants';
+import { compose, mapProps } from 'recompose';
 
-const BarChart = getComposer('BAR_CHART')(
+import { c3ChartDefaults } from '../../common/patternfly';
+
+const mapBarChartProps = props => {
+  const newProps = Object.assign({}, props);
+
+  // Set Bar Chart tooltip
+  if (props.categories) {
+    newProps.tooltip = c3ChartDefaults.getDefaultBarTooltip(props.categories);
+  }
+
+  return newProps;
+};
+
+const BarChart = compose(getComposer('BAR_CHART'), mapProps(mapBarChartProps))(
   ({ className, type, data, ...props }) => (
     <C3Chart className={className} type={type} data={data} {...props} />
   ),
