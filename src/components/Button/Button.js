@@ -5,9 +5,10 @@ import { BUTTON_BS_STYLES } from './constants';
 
 const Button = props => <BsButton {...props} />;
 
-Button.propTypes = Object.assign(BsButton.propTypes, {
+Button.propTypes = {
+  ...BsButton.propTypes,
   bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES),
-});
+};
 
 Button.BUTTON_BS_STYLES = BUTTON_BS_STYLES;
 

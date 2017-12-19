@@ -1,8 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { withKnobs, select } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
-import { Button, ButtonGroup } from './index';
-import { Grid, Row, Col } from '../../index';
+import { Grid, Row, Col, MenuItem } from '../../index';
+import { Button, ButtonGroup, DropdownButton, SplitButton } from './index';
+import { BUTTON_BS_STYLES } from './constants';
 
 const stories = storiesOf('Button', module);
 
@@ -16,6 +19,7 @@ const description = (
   </p>
 );
 
+stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Button',
@@ -136,5 +140,45 @@ stories.addWithInfo('ButtonGroup', () => {
         </Col>
       </Row>
     </Grid>
+  );
+});
+
+stories.addWithInfo('DropdownButton', '', () => {
+  const bsStyle = select('Style', BUTTON_BS_STYLES, 'default');
+  const bsSize = select('Size', [undefined, 'xsmall', 'small', 'large']);
+
+  const props = { bsStyle, title: bsStyle, id: 'dropdown-example' };
+  if (bsSize) props.bsSize = bsSize;
+
+  return (
+    <DropdownButton {...props} onClick={action('onClick')}>
+      <MenuItem eventKey="1">Action</MenuItem>
+      <MenuItem eventKey="2">Another action</MenuItem>
+      <MenuItem eventKey="3" active>
+        Active Item
+      </MenuItem>
+      <MenuItem divider />
+      <MenuItem eventKey="4">Separated link</MenuItem>
+    </DropdownButton>
+  );
+});
+
+stories.addWithInfo('SplitButton', '', () => {
+  const bsStyle = select('Style', BUTTON_BS_STYLES, 'default');
+  const bsSize = select('Size', [undefined, 'xsmall', 'small', 'large']);
+
+  const props = { bsStyle, title: bsStyle, id: 'dropdown-example' };
+  if (bsSize) props.bsSize = bsSize;
+
+  return (
+    <SplitButton {...props} onClick={action('onClick')}>
+      <MenuItem eventKey="1">Action</MenuItem>
+      <MenuItem eventKey="2">Another action</MenuItem>
+      <MenuItem eventKey="3" active>
+        Active Item
+      </MenuItem>
+      <MenuItem divider />
+      <MenuItem eventKey="4">Separated link</MenuItem>
+    </SplitButton>
   );
 });
