@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter renders properly 1`] = `
+<div
+  className="filter-pf"
+>
+  <div
+    className="filter-pf-fields"
+  >
+    <div
+      className="input-group form-group"
+    >
+      <div
+        className="input-group-btn"
+      >
+        <div
+          className="dropdown btn-group"
+        >
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="filter-pf-fields dropdown-toggle btn btn-default"
+            disabled={false}
+            id="filterFieldMenu"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            type="button"
+          >
+            Name
+             
+            <span
+              className="caret"
+            />
+          </button>
+          <ul
+            aria-labelledby="filterFieldMenu"
+            className="dropdown-menu"
+            role="menu"
+          >
+            <li
+              className="selected"
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Name
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Address
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Birth Month
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Car
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Filter by Name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
