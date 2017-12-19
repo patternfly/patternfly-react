@@ -1,4 +1,12 @@
-
 /**
   Patternfly React Partials
 */
+.react-bs-container-header table {
+  margin-bottom: 0;
+}
+.react-bs-container-body > table {
+  border-top: 0;
+  & tbody > tr > td {
+    border-top: 0;
+  }
+}
