@@ -1,27 +1,19 @@
 import ClassNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ALERT_TYPES } from './constants';
+import { Icon } from '../Icon';
+import { getClassName, getIconName } from './helpers';
+import { ALERT_TYPES, ALERT_TYPE_ERROR } from './constants';
 
 /**
  * Alert Component for Patternfly React
  */
 const Alert = ({ children, className, onDismiss, type, ...props }) => {
-  const alertClass = ClassNames(className, {
-    alert: true,
-    'alert-danger': type === 'danger' || type === 'error',
-    'alert-warning': type === 'warning',
-    'alert-success': type === 'success',
-    'alert-info': type === 'info',
+  const alertClass = ClassNames(className, 'alert', getClassName(type), {
     'alert-dismissable': onDismiss,
   });
-  const iconClass = ClassNames({
-    pficon: true,
-    'pficon-error-circle-o': type === 'danger' || type === 'error',
-    'pficon-warning-triangle-o': type === 'warning',
-    'pficon-ok': type === 'success',
-    'pficon-info': type === 'info',
-  });
+
+  const iconName = getIconName(type);
 
   return (
     <div className={alertClass} {...props}>
@@ -32,10 +24,10 @@ const Alert = ({ children, className, onDismiss, type, ...props }) => {
           aria-hidden="true"
           onClick={onDismiss}
         >
-          <span className="pficon pficon-close" />
+          <Icon type="pf" name="close" />
         </button>
       )}
-      <span className={iconClass} />
+      <Icon type="pf" name={iconName} />
       {children}
     </div>
   );
@@ -51,7 +43,7 @@ Alert.propTypes = {
   children: PropTypes.node,
 };
 Alert.defaultProps = {
-  type: 'error',
+  type: ALERT_TYPE_ERROR,
 };
 Alert.ALERT_TYPES = ALERT_TYPES;
 
