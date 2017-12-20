@@ -56,16 +56,18 @@ class TimedToastNotification extends React.Component {
     onMouseLeave && onMouseLeave();
   }
   render() {
-    const { children } = this.props;
-    return (
-      <ToastNotification
-        {...this.props}
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-      >
-        {children}
-      </ToastNotification>
-    );
+    const { children, className, type, onDismiss } = this.props;
+    const { onMouseEnter, onMouseLeave } = this;
+
+    const toastProps = {
+      className,
+      type,
+      onDismiss,
+      onMouseEnter,
+      onMouseLeave
+    };
+
+    return <ToastNotification {...toastProps}>{children}</ToastNotification>;
   }
 }
 
@@ -77,7 +79,7 @@ TimedToastNotification.propTypes = {
   /** timer delay until dismiss */
   timerdelay: PropTypes.number,
   /** additional notification classes */
-  className: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
+  className: PropTypes.string,
   /** callback when alert is dismissed  */
   onDismiss: PropTypes.func,
   /** onMouseEnter callback */
@@ -85,7 +87,7 @@ TimedToastNotification.propTypes = {
   /** onMouseLeave callback */
   onMouseLeave: PropTypes.func,
   /** the type of alert  */
-  type: PropTypes.oneOf(TOAST_NOTIFICATION_TYPES).isRequired, // eslint-disable-line react/no-unused-prop-types
+  type: PropTypes.oneOf(TOAST_NOTIFICATION_TYPES).isRequired,
   /** children nodes  */
   children: PropTypes.node
 };

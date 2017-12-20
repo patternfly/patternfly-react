@@ -5,8 +5,6 @@ exports[`TimedToastNotification renders properly 1`] = `
   className="alert toast-pf alert-danger alert-dismissable"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  paused={false}
-  timerdelay={8000}
 >
   <button
     aria-hidden="true"
