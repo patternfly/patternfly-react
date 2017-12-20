@@ -19,7 +19,7 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
     "classnames": "^2.2.5",
-    "patternfly": "^3.35.0",
+    "patternfly": "^3.35.1",
     "react-bootstrap": "^0.31.5",
     "react-c3js": "^0.1.20",
     "react-fontawesome": "^1.6.1",
