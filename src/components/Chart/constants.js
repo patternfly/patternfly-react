@@ -4,7 +4,7 @@ import {
   setDisplayName,
   mapProps,
   defaultProps,
-  setPropTypes,
+  setPropTypes
 } from 'recompose';
 import C3Chart from 'react-c3js';
 
@@ -19,62 +19,62 @@ const CHART_CONFIG = {
     type: 'area',
     displayName: 'AreaChart',
     className: 'area-chart-pf',
-    defaultConfig: c3ChartDefaults.getDefaultAreaConfig(),
+    defaultConfig: c3ChartDefaults.getDefaultAreaConfig()
   },
   BAR_CHART: {
     type: 'bar',
     displayName: 'BarChart',
     className: 'bar-chart-pf',
-    defaultConfig: c3ChartDefaults.getDefaultBarConfig(),
+    defaultConfig: c3ChartDefaults.getDefaultBarConfig()
   },
   DONUT_CHART: {
     type: 'donut',
     displayName: 'DonutChart',
     className: 'donut-chart-pf',
-    defaultConfig: c3ChartDefaults.getDefaultDonutConfig(),
+    defaultConfig: c3ChartDefaults.getDefaultDonutConfig()
   },
   GROUPED_BAR_CHART: {
     type: 'bar',
     displayName: 'GroupedBarChart',
     className: 'bar-chart-pf',
-    defaultConfig: c3ChartDefaults.getDefaultGroupedBarConfig(),
+    defaultConfig: c3ChartDefaults.getDefaultGroupedBarConfig()
   },
   LINE_CHART: {
     type: 'line',
     displayName: 'LineChart',
     className: 'line-chart-pf',
-    defaultConfig: c3ChartDefaults.getDefaultLineConfig(),
+    defaultConfig: c3ChartDefaults.getDefaultLineConfig()
   },
   PIE_CHART: {
     type: 'pie',
     displayName: 'PieChart',
     className: 'pie-chart-pf',
-    defaultConfig: c3ChartDefaults.getDefaultPieConfig(),
+    defaultConfig: c3ChartDefaults.getDefaultPieConfig()
   },
   SINGLE_AREA_CHART: {
     type: 'area',
     displayName: 'SingleAreaChart',
     className: 'area-chart-pf',
-    defaultConfig: c3ChartDefaults.getDefaultSingleAreaConfig(),
+    defaultConfig: c3ChartDefaults.getDefaultSingleAreaConfig()
   },
   SINGLE_LINE_CHART: {
     type: 'line',
     displayName: 'SingleLineChart',
     className: 'line-chart-pf',
-    defaultConfig: c3ChartDefaults.getDefaultSingleLineConfig(),
+    defaultConfig: c3ChartDefaults.getDefaultSingleLineConfig()
   },
   SPARKLINE_CHART: {
     type: 'area',
     displayName: 'SparklineChart',
     className: 'chart-pf-sparkline',
-    defaultConfig: c3ChartDefaults.getDefaultSparklineConfig(),
+    defaultConfig: c3ChartDefaults.getDefaultSparklineConfig()
   },
   STACKED_BAR_CHART: {
     type: 'bar',
     displayName: 'StackedBarChart',
     className: 'bar-chart-pf',
-    defaultConfig: c3ChartDefaults.getDefaultStackedBarConfig(),
-  },
+    defaultConfig: c3ChartDefaults.getDefaultStackedBarConfig()
+  }
 };
 
 /**
@@ -99,14 +99,14 @@ const getComposer = name => {
     setDisplayName(config.displayName),
     setPropTypes({
       data: PropTypes.object.isRequired,
-      ...C3Chart.propTypes,
+      ...C3Chart.propTypes
     }),
     defaultProps({
       type: config.type,
       className: config.className,
-      ...config.defaultConfig,
+      ...config.defaultConfig
     }),
-    mapProps(props => mapChartProps(name, props)),
+    mapProps(props => mapChartProps(name, props))
   );
 };
 

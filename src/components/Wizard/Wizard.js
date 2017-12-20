@@ -10,7 +10,7 @@ const Wizard = ({ children, className, embedded, ...rest }) => {
     return React.Children.map(children, child => {
       if (child && child.type === WizardHeader) {
         return React.cloneElement(child, {
-          embedded: embedded,
+          embedded: embedded
         });
       } else {
         return child;
@@ -30,6 +30,6 @@ Wizard.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** Embedded wizard */
-  embedded: PropTypes.bool,
+  embedded: PropTypes.bool
 };
 export default Wizard;

@@ -87,12 +87,12 @@ TimedToastNotification.propTypes = {
   /** the type of alert  */
   type: PropTypes.oneOf(TOAST_NOTIFICATION_TYPES).isRequired, // eslint-disable-line react/no-unused-prop-types
   /** children nodes  */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 TimedToastNotification.defaultProps = {
   paused: false,
   type: 'error',
-  timerdelay: 8000,
+  timerdelay: 8000
 };
 
 TimedToastNotification.TOAST_NOTIFICATION_TYPES = TOAST_NOTIFICATION_TYPES;

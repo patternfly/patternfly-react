@@ -24,10 +24,10 @@ ListViewIcon.propTypes = {
   /** additional classes */
   className: PropTypes.string,
   /** Icon size (sm, md, lg), defaults to 'sm' */
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg'])
 };
 ListViewIcon.defaultProps = {
   type: 'fa',
-  size: 'sm',
+  size: 'sm'
 };
 export default ListViewIcon;

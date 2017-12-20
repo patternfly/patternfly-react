@@ -10,7 +10,7 @@ import { ALERT_TYPES, ALERT_TYPE_ERROR } from './constants';
  */
 const Alert = ({ children, className, onDismiss, type, ...props }) => {
   const alertClass = ClassNames(className, 'alert', getClassName(type), {
-    'alert-dismissable': onDismiss,
+    'alert-dismissable': onDismiss
   });
 
   const iconName = getIconName(type);
@@ -40,10 +40,10 @@ Alert.propTypes = {
   /** the type of alert  */
   type: PropTypes.oneOf(ALERT_TYPES).isRequired,
   /** children nodes  */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 Alert.defaultProps = {
-  type: ALERT_TYPE_ERROR,
+  type: ALERT_TYPE_ERROR
 };
 Alert.ALERT_TYPES = ALERT_TYPES;
 

@@ -19,29 +19,29 @@ const pfGetUtilizationDonutTooltipContents = d => {
 const donutConfigData = {
   columns: [['MHz Used', 60], ['MHz Available', 40]],
   groups: [['used', 'available']],
-  order: null,
+  order: null
 };
 const donutConfigTooltip = {
-  contents: pfGetUtilizationDonutTooltipContents,
+  contents: pfGetUtilizationDonutTooltipContents
 };
 const donutData = {
   colors: {
     Cats: patternfly.pfPaletteColors.blue,
     Hamsters: patternfly.pfPaletteColors.green,
     Fish: patternfly.pfPaletteColors.orange,
-    Dogs: patternfly.pfPaletteColors.red,
+    Dogs: patternfly.pfPaletteColors.red
   },
-  columns: [['Dogs', 2], ['Cats', 2], ['Fish', 3], ['Hamsters', 1]],
+  columns: [['Dogs', 2], ['Cats', 2], ['Fish', 3], ['Hamsters', 1]]
 };
 
 const donutRightConfigData = donutData;
 const donutRightConfigLegend = {
   show: true,
-  position: 'right',
+  position: 'right'
 };
 const donutRightConfigTooltip = {
   show: true,
-  contents: patternfly.pfDonutTooltipContents,
+  contents: patternfly.pfDonutTooltipContents
 };
 const donutRightConfigTitle = { type: 'total', secondary: 'Animals' };
 
@@ -58,7 +58,7 @@ const donutChartAddWithInfo = stories => {
           id="donunt-chart-1"
           size={{
             width: 210,
-            height: 210,
+            height: 210
           }}
           data={donutConfigData}
           tooltip={donutConfigTooltip}
@@ -72,7 +72,7 @@ const donutChartAddWithInfo = stories => {
           id="donunt-chart-2"
           size={{
             width: 210,
-            height: 210,
+            height: 210
           }}
           data={donutRightConfigData}
           tooltip={donutRightConfigTooltip}

@@ -55,7 +55,6 @@
     "eslint-plugin-standard": "^3.0.1",
     "jest": "^19.0.2",
     "node-sass": "^4.7.2",
-    "nvmrc-check": "^1.0.2",
     "patternfly": "^3.31.0",
     "prettier": "^1.7.4",
     "raf": "^3.4.0",
@@ -77,7 +76,6 @@
     "fontAwesome": "--include-path node_modules/patternfly/node_modules/font-awesome-sass/assets/stylesheets"
   },
   "scripts": {
-    "postinstall": "nvmrc-check --node $(cat .nvmrc)",
     "start": "npm run storybook:run",
     "commit": "git-cz",
     "build": "npm run build:scripts && npm run build:sass && npm run build:less",
@@ -85,7 +83,7 @@
     "build:less": "mkdir -p dist/less && cp -r less/* dist/less",
     "build:sass": "mkdir -p dist/sass && cp -r sass/patternfly-react/* dist/sass && node-sass --output-style compressed --include-path sass $npm_package_sassIncludes_patternfly $npm_package_sassIncludes_bootstrap $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react.scss",
     "lint": "eslint --max-warnings 0 src storybook",
-    "prettier": "prettier --write --single-quote --trailing-comma=all '{src,storybook}/**/*.js'",
+    "prettier": "prettier --write --single-quote --trailing-comma=none '{src,storybook}/**/*.js'",
     "prepublish": "npm run build",
     "test": "npm run lint && jest",
     "test:watch": "jest --watchAll",

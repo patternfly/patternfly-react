@@ -9,8 +9,8 @@ module.exports = {
         loaders: ['style-loader', 'css-loader'],
         include: [
           path.resolve(__dirname, '../src'),
-          path.resolve(__dirname, './'),
-        ],
+          path.resolve(__dirname, './')
+        ]
       },
       // Sass
       {
@@ -26,16 +26,16 @@ module.exports = {
                 path.resolve(__dirname, '../node_modules/patternfly/dist/sass'),
                 path.resolve(
                   __dirname,
-                  '../node_modules/patternfly/node_modules/bootstrap-sass/assets/stylesheets',
+                  '../node_modules/patternfly/node_modules/bootstrap-sass/assets/stylesheets'
                 ),
                 path.resolve(
                   __dirname,
-                  '../node_modules/patternfly/node_modules/font-awesome-sass/assets/stylesheets',
-                ),
-              ],
-            },
-          },
-        ],
+                  '../node_modules/patternfly/node_modules/font-awesome-sass/assets/stylesheets'
+                )
+              ]
+            }
+          }
+        ]
       },
       // Images
       {
@@ -43,8 +43,8 @@ module.exports = {
         loader: 'url-loader',
         query: {
           limit: 8192, // inline base64 URLs for <=8k images, direct URLs for the rest
-          name: '[name].[ext]',
-        },
+          name: '[name].[ext]'
+        }
       },
 
       // Fonts and svg images
@@ -54,8 +54,8 @@ module.exports = {
         query: {
           limit: 8192,
           mimetype: 'application/font-woff',
-          name: '[name].[ext]',
-        },
+          name: '[name].[ext]'
+        }
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
@@ -63,13 +63,13 @@ module.exports = {
         query: {
           limit: 8192,
           mimetype: 'application/octet-stream',
-          name: '[name].[ext]',
-        },
+          name: '[name].[ext]'
+        }
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader',
-        query: { name: '[name].[ext]' },
+        query: { name: '[name].[ext]' }
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
@@ -77,9 +77,9 @@ module.exports = {
         query: {
           limit: 8192,
           mimetype: 'image/svg+xml',
-          name: '[name].[ext]',
-        },
-      },
-    ],
-  },
+          name: '[name].[ext]'
+        }
+      }
+    ]
+  }
 };

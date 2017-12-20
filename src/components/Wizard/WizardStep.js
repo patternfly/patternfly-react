@@ -19,7 +19,7 @@ const WizardStep = ({
   const classes = cx(
     'wizard-pf-step',
     { active: step === activeStep },
-    className,
+    className
   );
   return (
     <li className={classes} {...rest}>
@@ -53,6 +53,6 @@ WizardStep.propTypes = {
   /** The active step */
   activeStep: PropTypes.string,
   /** Step click handler */
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 export default WizardStep;

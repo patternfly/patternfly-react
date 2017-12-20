@@ -56,5 +56,5 @@ export {
   WizardSidebarGroupItem,
   WizardStep,
   WizardSteps,
-  WizardSubStep,
+  WizardSubStep
 };

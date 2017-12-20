@@ -30,6 +30,6 @@ WizardHeader.propTypes = {
   /** Embedded wizard */
   embedded: PropTypes.bool,
   /** The wizard title */
-  title: PropTypes.string,
+  title: PropTypes.string
 };
 export default WizardHeader;

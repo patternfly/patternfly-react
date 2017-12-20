@@ -16,9 +16,9 @@ const ListViewGroupItem = ({
     'list-group-item',
     {
       'list-view-pf-expand-active': expanded,
-      'list-view-pf-stacked': stacked,
+      'list-view-pf-stacked': stacked
     },
-    className,
+    className
   );
   return (
     <div className={classes} {...rest}>
@@ -34,10 +34,10 @@ ListViewGroupItem.propTypes = {
   /** Toggles the item expanded */
   expanded: PropTypes.bool.isRequired,
   /** Toggles the item stacked */
-  stacked: PropTypes.bool.isRequired,
+  stacked: PropTypes.bool.isRequired
 };
 ListViewGroupItem.defaultProps = {
   expanded: false,
-  stacked: false,
+  stacked: false
 };
 export default ListViewGroupItem;

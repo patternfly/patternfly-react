@@ -9,7 +9,7 @@ import { MenuItem } from '../MenuItem';
 import {
   ToastNotification,
   TimedToastNotification,
-  ToastNotificationList,
+  ToastNotificationList
 } from './index';
 
 const stories = storiesOf('ToastNotification', module);
@@ -18,8 +18,8 @@ stories.addDecorator(
   defaultTemplate({
     title: 'Toast Notification',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/communication/toast-notifications/',
-  }),
+      'http://www.patternfly.org/pattern-library/communication/toast-notifications/'
+  })
 );
 
 stories.addWithInfo(
@@ -31,7 +31,7 @@ stories.addWithInfo(
     const type = select(
       'Type',
       ['success', 'danger', 'warning', 'info'],
-      'success',
+      'success'
     );
     const dismissEnabled = boolean('Dismiss', false);
     const menuEnabled = boolean('Menu', true);
@@ -66,7 +66,7 @@ stories.addWithInfo(
         </ToastNotification>
       </div>
     );
-  },
+  }
 );
 
 class ToastNotificationStoryWrapper extends React.Component {
@@ -75,7 +75,7 @@ class ToastNotificationStoryWrapper extends React.Component {
     this.state = {
       infoNotificationDismissed: false,
       warningNotificationDismissed: false,
-      successNotificationDismissed: false,
+      successNotificationDismissed: false
     };
 
     this.infoNotificationDismissed = () => {
@@ -97,7 +97,7 @@ class ToastNotificationStoryWrapper extends React.Component {
       this.setState({
         infoNotificationDismissed: false,
         warningNotificationDismissed: false,
-        persistentNotificationDismissed: false,
+        persistentNotificationDismissed: false
       });
     };
   }
@@ -123,7 +123,7 @@ class ToastNotificationStoryWrapper extends React.Component {
               <span>
                 {text(
                   'Message',
-                  "By default, a toast notification's timer expires after eight seconds.",
+                  "By default, a toast notification's timer expires after eight seconds."
                 )}
               </span>
             </TimedToastNotification>
@@ -149,10 +149,10 @@ class ToastNotificationStoryWrapper extends React.Component {
               type="success"
               onDismiss={this.persistentNotificationDismissed}
               onMouseEnter={action(
-                'persistent notification: onMouseEnter fired',
+                'persistent notification: onMouseEnter fired'
               )}
               onMouseLeave={action(
-                'persistent notification: onMouseLeave fired',
+                'persistent notification: onMouseLeave fired'
               )}
             >
               <span>
@@ -172,5 +172,5 @@ stories.addWithInfo(
   `This is the Toast Notification List with a custom timer delay supplied.`,
   () => {
     return <ToastNotificationStoryWrapper />;
-  },
+  }
 );

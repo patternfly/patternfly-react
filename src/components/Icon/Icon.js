@@ -15,9 +15,9 @@ Icon.propTypes = {
   /** Icon type */
   type: PropTypes.oneOf(['fa', 'pf']),
   /** Font awesome icon rendered if name prop is provided */
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 Icon.defaultProps = {
-  type: 'fa',
+  type: 'fa'
 };
 export default Icon;

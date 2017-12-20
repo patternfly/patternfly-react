@@ -7,7 +7,7 @@ import Button from './Button';
 
 test('Button renders properly', () => {
   const component = renderer.create(
-    <Button id="button1">Default button</Button>,
+    <Button id="button1">Default button</Button>
   );
 
   let tree = component.toJSON();
@@ -18,7 +18,7 @@ test('Button allows to specify size and style', () => {
   const component = renderer.create(
     <Button id="button1" bsStyle="primary" bsSize="large">
       Large Primary button
-    </Button>,
+    </Button>
   );
 
   let tree = component.toJSON();

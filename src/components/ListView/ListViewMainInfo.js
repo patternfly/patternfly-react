@@ -9,6 +9,6 @@ const ListViewMainInfo = ({ children }) => (
 );
 ListViewMainInfo.propTypes = {
   /** Child nodes - instances of ListViewLeft and ListViewBody */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 export default ListViewMainInfo;

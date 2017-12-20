@@ -50,6 +50,6 @@ class MockWizardDeployContents extends React.Component {
   }
 }
 MockWizardDeployContents.propTypes = {
-  active: PropTypes.bool,
+  active: PropTypes.bool
 };
 export default MockWizardDeployContents;

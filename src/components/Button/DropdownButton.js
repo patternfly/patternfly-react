@@ -7,7 +7,7 @@ const DropdownButton = props => <BsDropdownButton {...props} />;
 
 DropdownButton.propTypes = {
   ...BsDropdownButton.propTypes,
-  bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES),
+  bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES)
 };
 
 DropdownButton.BUTTON_BS_STYLES = BUTTON_BS_STYLES;

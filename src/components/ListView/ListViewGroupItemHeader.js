@@ -28,6 +28,6 @@ ListViewGroupItemHeader.propTypes = {
   /** Children nodes */
   children: PropTypes.node,
   /** Function to execute to trigger toggle */
-  toggleExpanded: PropTypes.func.isRequired,
+  toggleExpanded: PropTypes.func.isRequired
 };
 export default ListViewGroupItemHeader;

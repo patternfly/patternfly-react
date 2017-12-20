@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const ListViewExpand = ({ children, expanded, toggleExpanded }) => {
   const classes = cx({
     'fa fa-angle-right': true,
-    'fa-angle-down': expanded,
+    'fa-angle-down': expanded
   });
   return (
     <div
@@ -30,9 +30,9 @@ ListViewExpand.propTypes = {
   /** Expanded state toggle */
   expanded: PropTypes.bool.isRequired,
   /** Function to execute to trigger toggle */
-  toggleExpanded: PropTypes.func.isRequired,
+  toggleExpanded: PropTypes.func.isRequired
 };
 ListViewExpand.defaultProps = {
-  expanded: false,
+  expanded: false
 };
 export default ListViewExpand;

@@ -25,8 +25,8 @@ stories.addDecorator(
     title: 'Button',
     documentationLink:
       'http://www.patternfly.org/pattern-library/widgets/#buttons',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.addWithInfo('Button', '', () => (

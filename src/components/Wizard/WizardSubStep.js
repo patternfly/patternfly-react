@@ -15,7 +15,7 @@ const WizardSubStep = ({
   const classes = cx(
     'wizard-pf-step-title-substep',
     { active: subStep === activeSubStep },
-    className,
+    className
   );
   return (
     <span className={classes} {...rest}>
@@ -31,6 +31,6 @@ WizardSubStep.propTypes = {
   /** The wizard sub step title */
   title: PropTypes.string,
   /** The active step */
-  activeSubStep: PropTypes.string,
+  activeSubStep: PropTypes.string
 };
 export default WizardSubStep;

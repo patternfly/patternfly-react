@@ -12,8 +12,8 @@ stories.addDecorator(
   defaultTemplate({
     title: 'Spinner',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#spinner',
-  }),
+      'http://www.patternfly.org/pattern-library/widgets/#spinner'
+  })
 );
 
 stories.addWithInfo('Spinner', () => {
@@ -25,14 +25,14 @@ stories.addWithInfo('Spinner', () => {
   const wrapperStyle = {
     backgroundColor: inverse ? 'black' : 'white',
     color: inverse ? 'white' : 'black',
-    padding: '15px',
+    padding: '15px'
   };
 
   const spinnerProps = {
     loading,
     size,
     inline,
-    inverse,
+    inverse
   };
 
   if (inline) {

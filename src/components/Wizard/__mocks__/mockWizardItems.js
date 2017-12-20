@@ -25,8 +25,8 @@ export const mockWizardItems = [
         title: 'Details',
         contents: {
           label1: 'Name',
-          label2: 'Description',
-        },
+          label2: 'Description'
+        }
       },
       {
         subStep: '1.2',
@@ -34,10 +34,10 @@ export const mockWizardItems = [
         title: 'Settings',
         contents: {
           label1: 'Lorem ipsum',
-          label2: 'Dolor',
-        },
-      },
-    ],
+          label2: 'Dolor'
+        }
+      }
+    ]
   },
   {
     step: '2',
@@ -50,8 +50,8 @@ export const mockWizardItems = [
         title: 'Details',
         contents: {
           label1: 'Aliquam',
-          label2: 'Fermentum',
-        },
+          label2: 'Fermentum'
+        }
       },
       {
         subStep: '2.2',
@@ -59,10 +59,10 @@ export const mockWizardItems = [
         title: 'Settings',
         contents: {
           label1: 'Consectetur',
-          label2: 'Adipiscing',
-        },
-      },
-    ],
+          label2: 'Adipiscing'
+        }
+      }
+    ]
   },
   {
     step: '3',
@@ -72,15 +72,15 @@ export const mockWizardItems = [
       {
         subStep: '3.1',
         label: '3A.',
-        title: 'Summary',
+        title: 'Summary'
       },
       {
         subStep: '3.2',
         label: '3B.',
-        title: 'Progress',
-      },
-    ],
-  },
+        title: 'Progress'
+      }
+    ]
+  }
 ];
 
 export const mockWizardFormContents = (label1, label2) => {

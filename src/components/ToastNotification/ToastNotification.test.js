@@ -18,7 +18,7 @@ test('ToastNotification renders properly', () => {
       onMouseLeave={handleOnMouseLeave}
     >
       <span>Danger Will Robinson!</span>
-    </ToastNotification>,
+    </ToastNotification>
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
@@ -37,7 +37,7 @@ test('TimedToastNotification renders properly', () => {
       paused={false}
     >
       <span>Danger Will Robinson!</span>
-    </TimedToastNotification>,
+    </TimedToastNotification>
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();

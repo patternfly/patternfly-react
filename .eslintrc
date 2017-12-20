@@ -1,6 +1,9 @@
 {
   "rules": {
-    "prettier/prettier": ["error", { "singleQuote": true, "trailingComma": "all" }]
+    "prettier/prettier": [
+      "error",
+      { "singleQuote": true, "trailingComma": "none" }
+    ]
   },
   "extends": [
     "standard",
@@ -19,9 +22,6 @@
     "jsx": true,
     "experimentalObjectRestSpread": true
   },
-  "plugins": [
-    "prettier",
-    "react"
-  ],
+  "plugins": ["prettier", "react"],
   "parser": "babel-eslint"
 }

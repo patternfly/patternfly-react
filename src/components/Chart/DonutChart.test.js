@@ -10,7 +10,7 @@ const renderer = new ShallowRenderer();
 test('DonutChart renders properly', () => {
   expect(
     renderer.render(
-      <DonutChart id="area-1" data={{ columns: [['data', 42]] }} />,
-    ),
+      <DonutChart id="area-1" data={{ columns: [['data', 42]] }} />
+    )
   ).toMatchSnapshot();
 });

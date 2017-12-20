@@ -8,7 +8,7 @@ test('Spinner should not render children when loading', () => {
   const component = renderer.create(
     <Spinner loading>
       <span>Children should not render.</span>
-    </Spinner>,
+    </Spinner>
   );
 
   let tree = component.toJSON();
@@ -19,7 +19,7 @@ test('Spinner should render children when not loading', () => {
   const component = renderer.create(
     <Spinner size="lg">
       <span>Children should be rendered.</span>
-    </Spinner>,
+    </Spinner>
   );
 
   let tree = component.toJSON();

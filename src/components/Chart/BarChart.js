@@ -19,7 +19,7 @@ const mapBarChartProps = props => {
 const BarChart = compose(getComposer('BAR_CHART'), mapProps(mapBarChartProps))(
   ({ className, type, data, ...props }) => (
     <C3Chart className={className} type={type} data={data} {...props} />
-  ),
+  )
 );
 
 export default BarChart;

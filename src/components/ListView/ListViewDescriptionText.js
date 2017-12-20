@@ -9,6 +9,6 @@ const ListViewDescriptionText = ({ children }) => (
 );
 ListViewDescriptionText.propTypes = {
   /** Child node - content rendered in text section of ListViewItem */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 export default ListViewDescriptionText;

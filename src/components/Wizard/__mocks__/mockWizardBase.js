@@ -7,19 +7,19 @@ class MockWizardBase extends React.Component {
     super(props);
     this.state = {
       activeStepIndex: props.initialStepIndex || 0,
-      activeSubStepIndex: props.initialSubStepIndex || 0,
+      activeSubStepIndex: props.initialSubStepIndex || 0
     };
     bindMethods(this, [
       'onSidebarItemClick',
       'onStepClick',
       'onNextButtonClick',
-      'onBackButtonClick',
+      'onBackButtonClick'
     ]);
   }
   onSidebarItemClick(stepIndex, subStepIndex) {
     this.setState({
       activeStepIndex: stepIndex,
-      activeSubStepIndex: subStepIndex,
+      activeSubStepIndex: subStepIndex
     });
   }
   onStepClick(stepIndex) {
@@ -28,7 +28,7 @@ class MockWizardBase extends React.Component {
     }
     this.setState({
       activeStepIndex: stepIndex,
-      activeSubStepIndex: 0,
+      activeSubStepIndex: 0
     });
   }
   onNextButtonClick() {
@@ -38,12 +38,12 @@ class MockWizardBase extends React.Component {
 
     if (activeSubStepIndex < activeStep.subSteps.length - 1) {
       this.setState(prevState => ({
-        activeSubStepIndex: prevState.activeSubStepIndex + 1,
+        activeSubStepIndex: prevState.activeSubStepIndex + 1
       }));
     } else if (activeStepIndex < steps.length - 1) {
       this.setState(prevState => ({
         activeStepIndex: prevState.activeStepIndex + 1,
-        activeSubStepIndex: 0,
+        activeSubStepIndex: 0
       }));
     }
   }
@@ -53,13 +53,13 @@ class MockWizardBase extends React.Component {
 
     if (activeSubStepIndex > 0) {
       this.setState(prevState => ({
-        activeSubStepIndex: prevState.activeSubStepIndex - 1,
+        activeSubStepIndex: prevState.activeSubStepIndex - 1
       }));
     } else if (activeStepIndex > 0) {
       this.setState(prevState => ({
         activeStepIndex: prevState.activeStepIndex - 1,
         activeSubStepIndex:
-          steps[prevState.activeStepIndex - 1].subSteps.length - 1,
+          steps[prevState.activeStepIndex - 1].subSteps.length - 1
       }));
     }
   }
@@ -73,6 +73,6 @@ MockWizardBase.propTypes = {
   /** Initial sub step index */
   initialSubStepIndex: PropTypes.number,
   /** Wizard steps */
-  steps: PropTypes.array,
+  steps: PropTypes.array
 };
 export default MockWizardBase;

@@ -21,8 +21,8 @@ stories.addDecorator(
     title: 'ListGroup',
     documentationLink:
       'http://www.patternfly.org/pattern-library/widgets/#list-group',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.addWithInfo('Basic Example', '', () => (

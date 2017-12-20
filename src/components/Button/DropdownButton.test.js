@@ -17,7 +17,7 @@ test('DropdownButton should renders properly', () => {
         </MenuItem>
         <MenuItem divider />
         <MenuItem eventKey="4">Separated link</MenuItem>
-      </DropdownButton>,
+      </DropdownButton>
     );
 
     const tree = component.toJSON();

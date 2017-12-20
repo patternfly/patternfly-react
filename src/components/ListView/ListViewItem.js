@@ -103,9 +103,9 @@ ListViewItem.propTypes = {
   /** Contents for left section of ListViewItem (usually ListViewIcon) */
   leftContent: PropTypes.node,
   /** Checkbox form input component */
-  checkboxInput: PropTypes.node,
+  checkboxInput: PropTypes.node
 };
 ListViewItem.defaultProps = {
-  stacked: false,
+  stacked: false
 };
 export default ListViewItem;

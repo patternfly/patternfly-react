@@ -5,12 +5,12 @@ import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 
 import {
   MockModalManager,
-  basicExampleSource,
+  basicExampleSource
 } from './__mocks__/mockModalManager';
 
 import {
   MockAboutModalManager,
-  aboutExampleSource,
+  aboutExampleSource
 } from './__mocks__/mockAboutModalManager';
 
 const stories = storiesOf('Modal Overlay', module);
@@ -30,8 +30,8 @@ stories.addDecorator(
     title: 'Modal Overlay',
     documentationLink:
       'http://www.patternfly.org/pattern-library/forms-and-controls/modal-overlay/',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.add(
@@ -44,8 +44,8 @@ stories.add(
         <h1>Story Source</h1>
         <pre>{basicExampleSource}</pre>
       </div>
-    ),
-  })(() => <MockModalManager />),
+    )
+  })(() => <MockModalManager />)
 );
 
 stories.add(
@@ -58,6 +58,6 @@ stories.add(
         <h1>Story Source</h1>
         <pre>{aboutExampleSource}</pre>
       </div>
-    ),
-  })(() => <MockAboutModalManager />),
+    )
+  })(() => <MockAboutModalManager />)
 );

@@ -14,7 +14,7 @@ const Spinner = ({
   if (loading) {
     const classes = cx(className, 'spinner', `spinner-${size}`, {
       'spinner-inline': inline,
-      'spinner-inverse': inverse,
+      'spinner-inverse': inverse
     });
 
     return <div className={classes} {...props} />;
@@ -29,7 +29,7 @@ Spinner.propTypes = {
   inverse: PropTypes.bool,
   size: PropTypes.oneOf(['lg', 'md', 'sm', 'xs']),
   children: PropTypes.node,
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 
 Spinner.defaultProps = {
@@ -37,7 +37,7 @@ Spinner.defaultProps = {
   size: 'md',
   inline: false,
   inverse: false,
-  className: '',
+  className: ''
 };
 
 export default Spinner;

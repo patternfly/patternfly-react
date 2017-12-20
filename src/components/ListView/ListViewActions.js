@@ -9,6 +9,6 @@ const ListViewActions = ({ children }) => (
 );
 ListViewActions.propTypes = {
   /** Child nodes which render individual actions - Buttons, DropdownKebab... */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 export default ListViewActions;

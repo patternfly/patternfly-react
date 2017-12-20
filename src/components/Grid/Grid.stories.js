@@ -29,14 +29,14 @@ const dummySentences = [
   'Nullam tristique diam non turpis.',
   'Cras placerat accumsan nulla.',
   'Nullam rutrum.',
-  'Nam vestibulum accumsan nisl.',
+  'Nam vestibulum accumsan nisl.'
 ];
 
 stories.addDecorator(
   defaultTemplate({
     title: 'Grid',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.addWithInfo('Basic Grid', '', () => (

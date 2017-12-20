@@ -10,7 +10,7 @@ const pfSetDonutChartTitle = patternfly.pfSetDonutChartTitle;
 const colIndexOfMaxValue = columns => {
   return columns.reduce(
     (iMax, x, i, arr) => (x[1] > arr[iMax][1] ? i : iMax),
-    0,
+    0
   );
 };
 
@@ -41,7 +41,7 @@ const setDonutTitle = obj => {
   pfSetDonutChartTitle(
     findDOMNode(obj),
     title.primary || primary,
-    title.secondary || secondary,
+    title.secondary || secondary
   );
 };
 
@@ -51,13 +51,13 @@ const addDonutTitle = lifecycle({
   },
   componentDidUpdate(prevProps) {
     setDonutTitle(this);
-  },
+  }
 });
 
 const DonutChart = compose(getComposer('DONUT_CHART'), addDonutTitle)(
   ({ className, type, data, ...props }) => (
     <C3Chart className={className} type={type} data={data} {...props} />
-  ),
+  )
 );
 
 export default DonutChart;
