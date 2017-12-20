@@ -5,7 +5,7 @@ import { getComposer } from './constants';
 const SparklineChart = getComposer('SPARKLINE_CHART')(
   ({ className, type, data, ...props }) => (
     <C3Chart className={className} type={type} data={data} {...props} />
-  ),
+  )
 );
 
 export default SparklineChart;

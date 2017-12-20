@@ -7,7 +7,7 @@ const SplitButton = props => <BsSplitButton {...props} />;
 
 SplitButton.propTypes = {
   ...BsSplitButton.propTypes,
-  bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES),
+  bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES)
 };
 
 SplitButton.BUTTON_BS_STYLES = BUTTON_BS_STYLES;

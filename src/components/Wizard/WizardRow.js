@@ -17,6 +17,6 @@ WizardRow.propTypes = {
   /** Children nodes  */
   children: PropTypes.node,
   /** Additional css classes */
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 export default WizardRow;

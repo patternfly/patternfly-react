@@ -26,6 +26,6 @@ DropdownKebab.propTypes = {
   /** kebab dropdown id */
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   /** menu right aligned */
-  pullRight: PropTypes.bool,
+  pullRight: PropTypes.bool
 };
 export default DropdownKebab;

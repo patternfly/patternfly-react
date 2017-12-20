@@ -9,6 +9,6 @@ const ListViewDescription = ({ children }) => (
 );
 ListViewDescription.propTypes = {
   /** Child nodes - ListViewDescriptionHeading or ListViewDescriptionText instances */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 export default ListViewDescription;

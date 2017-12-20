@@ -9,7 +9,7 @@ const ListViewAdditionalInfo = ({ children }) => (
 );
 ListViewAdditionalInfo.propTypes = {
   /** Child nodes - an array of ListViewInfoItem instances */
-  children: PropTypes.arrayOf(PropTypes.node),
+  children: PropTypes.arrayOf(PropTypes.node)
 };
 
 export default ListViewAdditionalInfo;

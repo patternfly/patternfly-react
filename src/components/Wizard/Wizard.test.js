@@ -6,13 +6,13 @@ import { Wizard } from './index';
 
 import {
   mockWizardItems,
-  mockLoadingContents,
+  mockLoadingContents
 } from './__mocks__/mockWizardItems';
 
 import {
   renderWizardSteps,
   renderSidebarItems,
-  renderWizardContents,
+  renderWizardContents
 } from './__mocks__/mockWizardRenderers';
 
 test('Wizard loading renders properly', () => {
@@ -39,7 +39,7 @@ test('Wizard loading renders properly', () => {
           </Wizard.Footer>
         </Wizard>
       </Col>
-    </Row>,
+    </Row>
   );
 
   const tree = component.toJSON();
@@ -67,14 +67,14 @@ test('Wizard embedded renders properly', () => {
               mockWizardItems,
               activeStepIndex,
               activeSubStepIndex,
-              onSidebarItemClick,
+              onSidebarItemClick
             )}
           />
           <Wizard.Main>
             {renderWizardContents(
               mockWizardItems,
               activeStepIndex,
-              activeSubStepIndex,
+              activeSubStepIndex
             )}
           </Wizard.Main>
         </Wizard.Row>
@@ -91,7 +91,7 @@ test('Wizard embedded renders properly', () => {
           Next<span className="i fa fa-angle-right" />
         </Button>
       </Wizard.Footer>
-    </Wizard>,
+    </Wizard>
   );
 
   const tree = component.toJSON();

@@ -12,7 +12,7 @@ class Modal extends BsModal {
 
 Modal.defaultProps = {
   ...BsModal.defaultProps,
-  dialogComponentClass: CustomModalDialog,
+  dialogComponentClass: CustomModalDialog
 };
 
 export default Modal;

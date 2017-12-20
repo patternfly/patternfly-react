@@ -49,6 +49,6 @@ WizardSidebarGroupItem.propTypes = {
   /** The currently active wizard substep */
   activeSubStep: PropTypes.string,
   /** Sidebar group item click handler */
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 export default WizardSidebarGroupItem;

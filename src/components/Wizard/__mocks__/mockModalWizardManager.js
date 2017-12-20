@@ -11,7 +11,7 @@ import { mockWizardItems } from './mockWizardItems';
 import {
   renderWizardSteps,
   renderSidebarItems,
-  renderWizardContents,
+  renderWizardContents
 } from './mockWizardRenderers';
 
 export class MockModalWizardManager extends MockWizardBase {
@@ -57,7 +57,7 @@ export class MockModalWizardManager extends MockWizardBase {
                   mockWizardItems,
                   activeStepIndex,
                   activeSubStepIndex,
-                  this.onStepClick,
+                  this.onStepClick
                 )}
               />
               <Wizard.Row>
@@ -66,14 +66,14 @@ export class MockModalWizardManager extends MockWizardBase {
                     mockWizardItems,
                     activeStepIndex,
                     activeSubStepIndex,
-                    this.onSidebarItemClick,
+                    this.onSidebarItemClick
                   )}
                 />
                 <Wizard.Main>
                   {renderWizardContents(
                     mockWizardItems,
                     activeStepIndex,
-                    activeSubStepIndex,
+                    activeSubStepIndex
                   )}
                 </Wizard.Main>
               </Wizard.Row>

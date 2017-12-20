@@ -12,11 +12,11 @@ const columnsData = [['data1', 400, 360, 320, 175]];
 const barChartConfigAxis = {
   x: {
     categories: categories,
-    type: 'category',
-  },
+    type: 'category'
+  }
 };
 const barChartConfigData = {
-  columns: columnsData,
+  columns: columnsData
 };
 
 const groupedcCategories = ['2013', '2014', '2015'];
@@ -24,46 +24,46 @@ const groupedColumnsData = [
   ['Q1', 400, 250, 375],
   ['Q2', 355, 305, 300],
   ['Q3', 315, 340, 276],
-  ['Q4', 180, 390, 190],
+  ['Q4', 180, 390, 190]
 ];
 const groupedColors = {
   pattern: [
     patternfly.pfPaletteColors.red,
     patternfly.pfPaletteColors.blue,
     patternfly.pfPaletteColors.orange,
-    patternfly.pfPaletteColors.green,
-  ],
+    patternfly.pfPaletteColors.green
+  ]
 };
 const groupedBarChartConfigAxis = {
   x: {
     categories: groupedcCategories,
-    type: 'category',
-  },
+    type: 'category'
+  }
 };
 const groupedBarChartConfigData = {
   columns: groupedColumnsData,
-  order: null,
+  order: null
 };
 const groupedBarChartConfigColor = groupedColors;
 
 const stackedBarChartConfigAxis = {
   x: {
     categories: groupedcCategories,
-    type: 'category',
-  },
+    type: 'category'
+  }
 };
 const stackedBarChartConfigData = {
   groups: [categories],
   columns: groupedColumnsData,
-  order: null,
+  order: null
 };
 
 const horizontalBarChartConfigAxis = {
   rotated: true,
   x: {
     categories: groupedcCategories,
-    type: 'category',
-  },
+    type: 'category'
+  }
 };
 
 /**

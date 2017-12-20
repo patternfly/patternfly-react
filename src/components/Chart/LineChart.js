@@ -5,7 +5,7 @@ import { getComposer } from './constants';
 const LineChart = getComposer('LINE_CHART')(
   ({ className, type, data, ...props }) => (
     <C3Chart className={className} type={type} data={data} {...props} />
-  ),
+  )
 );
 
 export default LineChart;

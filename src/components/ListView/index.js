@@ -53,5 +53,5 @@ export {
   ListViewItem,
   ListViewLeft,
   ListViewMainInfo,
-  ListViewRow,
+  ListViewRow
 };

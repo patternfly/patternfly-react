@@ -21,9 +21,9 @@ const WizardContents = ({
       // OR if we have sub steps and this sub step is not active
       hidden:
         activeStepIndex !== stepIndex ||
-        (activeSubStepIndex !== null && activeSubStepIndex !== subStepIndex),
+        (activeSubStepIndex !== null && activeSubStepIndex !== subStepIndex)
     },
-    className,
+    className
   );
   return (
     <div className={classes} {...rest}>
@@ -43,6 +43,6 @@ WizardContents.propTypes = {
   /** The active wizard step index */
   activeStepIndex: PropTypes.number,
   /** The active wizard sub step index */
-  activeSubStepIndex: PropTypes.number,
+  activeSubStepIndex: PropTypes.number
 };
 export default WizardContents;

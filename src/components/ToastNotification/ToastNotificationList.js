@@ -33,7 +33,7 @@ class ToastNotificationList extends React.Component {
          * all child notifications from dismissing
          */
         return React.cloneElement(child, {
-          paused: paused,
+          paused: paused
         });
       } else {
         return child;
@@ -61,10 +61,10 @@ ToastNotificationList.propTypes = {
   /** onMouseLeave callback */
   onMouseLeave: PropTypes.func,
   /** children nodes  */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 ToastNotificationList.defaultProps = {
-  className: 'toast-notifications-list-pf',
+  className: 'toast-notifications-list-pf'
 };
 
 export default ToastNotificationList;

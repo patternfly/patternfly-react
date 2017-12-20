@@ -9,7 +9,7 @@ const ListViewInfoItem = ({ children, className, stacked, ...rest }) => {
   const classes = cx(
     { 'list-view-pf-additional-info-item-stacked': stacked },
     'list-view-pf-additional-info-item',
-    className,
+    className
   );
   return (
     <div className={classes} onClick={e => e.stopPropagation()} {...rest}>
@@ -23,9 +23,9 @@ ListViewInfoItem.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** Toggle the InfoItem contents stacking */
-  stacked: PropTypes.bool.isRequired,
+  stacked: PropTypes.bool.isRequired
 };
 ListViewInfoItem.defaultProps = {
-  stacked: false,
+  stacked: false
 };
 export default ListViewInfoItem;

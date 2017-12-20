@@ -6,7 +6,7 @@ import { ListView } from './index';
 import {
   mockListItems,
   renderActions,
-  renderAdditionalInfoItems,
+  renderAdditionalInfoItems
 } from './__mocks__/mockListItems';
 
 test('ListView renders properly', () => {
@@ -28,7 +28,7 @@ test('ListView renders properly', () => {
           </Row>
         </ListView.Item>
       ))}
-    </ListView>,
+    </ListView>
   );
 
   const tree = component.toJSON();

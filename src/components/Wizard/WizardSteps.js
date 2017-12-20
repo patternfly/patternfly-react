@@ -17,6 +17,6 @@ WizardSteps.propTypes = {
   /** WizardStep nodes */
   steps: PropTypes.node,
   /** Additional css classes */
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 export default WizardSteps;

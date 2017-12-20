@@ -20,7 +20,7 @@ const splitBsProps = utils.bootstrapUtils.splitBsProps;
 // React Bootstrap utils/StyleConfig Size is currently not exported
 const Size = {
   LARGE: 'large',
-  SMALL: 'small',
+  SMALL: 'small'
 };
 
 class CustomModalDialog extends React.Component {
@@ -42,7 +42,7 @@ class CustomModalDialog extends React.Component {
     const dialogClasses = {
       ...getClassSet(bsProps),
       [bsClassName]: false,
-      [prefix(bsProps, 'dialog')]: true,
+      [prefix(bsProps, 'dialog')]: true
     };
 
     return (
@@ -76,10 +76,10 @@ CustomModalDialog.propTypes = {
   /** additional modal styles */
   style: PropTypes.object,
   /** Children nodes */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 
 export default bsClass(
   'modal',
-  bsSizes([Size.LARGE, Size.SMALL], CustomModalDialog),
+  bsSizes([Size.LARGE, Size.SMALL], CustomModalDialog)
 );

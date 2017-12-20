@@ -3,5 +3,5 @@ export const TOAST_NOTIFICATION_TYPES = [
   'error',
   'warning',
   'success',
-  'info',
+  'info'
 ];

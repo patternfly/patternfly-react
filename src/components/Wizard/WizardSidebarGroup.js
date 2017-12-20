@@ -28,6 +28,6 @@ WizardSidebarGroup.propTypes = {
   /** The wizard step number for this step */
   step: PropTypes.string,
   /** The active step */
-  activeStep: PropTypes.string,
+  activeStep: PropTypes.string
 };
 export default WizardSidebarGroup;

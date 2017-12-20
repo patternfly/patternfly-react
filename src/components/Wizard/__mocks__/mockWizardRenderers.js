@@ -8,7 +8,7 @@ export const renderWizardSteps = (
   wizardSteps,
   activeStepIndex,
   activeSubStepIndex,
-  onStepClick,
+  onStepClick
 ) => {
   const activeStep = wizardSteps[activeStepIndex];
   const activeSubStep = activeStep.subSteps[activeSubStepIndex];
@@ -43,7 +43,7 @@ export const renderSidebarItems = (
   wizardSteps,
   activeStepIndex,
   activeSubStepIndex,
-  onSidebarItemClick,
+  onSidebarItemClick
 ) => {
   const activeStep = wizardSteps[activeStepIndex];
   const activeSubStep = activeStep.subSteps[activeSubStepIndex];
@@ -77,7 +77,7 @@ export const renderSidebarItems = (
 export const renderWizardContents = (
   wizardSteps,
   activeStepIndex,
-  activeSubStepIndex,
+  activeSubStepIndex
 ) => {
   return wizardSteps.map((step, stepIndex) => {
     return step.subSteps.map((sub, subStepIndex) => {

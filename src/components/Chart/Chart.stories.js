@@ -7,7 +7,7 @@ import {
   barChartAddWithInfo,
   donutChartAddWithInfo,
   lineChartAddWithInfo,
-  pieChartAddWithInfo,
+  pieChartAddWithInfo
 } from './Stories';
 
 const stories = storiesOf('Chart', module);
@@ -26,8 +26,8 @@ stories.addDecorator(
     title: 'Chart',
     documentationLink:
       'http://www.patternfly.org/pattern-library/data-visualization/line-chart/',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 /**

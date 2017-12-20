@@ -21,7 +21,7 @@ const ListViewRow = ({
   checkboxInput,
   leftContent,
   heading,
-  description,
+  description
 }) => (
   <div style={{ display: 'flex', flex: 1 }}>
     {checkboxInput && <ListViewCheckbox>{checkboxInput}</ListViewCheckbox>}
@@ -59,6 +59,6 @@ ListViewRow.propTypes = {
   /** Contents for left section of ListViewItem (usually ListViewIcon) */
   leftContent: PropTypes.node,
   /** Checkbox form input component */
-  checkboxInput: PropTypes.node,
+  checkboxInput: PropTypes.node
 };
 export default ListViewRow;

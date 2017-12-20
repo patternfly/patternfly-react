@@ -20,8 +20,8 @@ const description = (
 stories.addDecorator(
   defaultTemplate({
     title: 'MenuItem',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.addWithInfo('MenuItem', '', () => (

@@ -11,13 +11,13 @@ const pieChartRightConfigData = {
     Cats: patternfly.pfPaletteColors.blue,
     Hamsters: patternfly.pfPaletteColors.green,
     Fish: patternfly.pfPaletteColors.orange,
-    Dogs: patternfly.pfPaletteColors.red,
+    Dogs: patternfly.pfPaletteColors.red
   },
-  columns: [['Dogs', 2], ['Cats', 2], ['Fish', 3], ['Hamsters', 1]],
+  columns: [['Dogs', 2], ['Cats', 2], ['Fish', 3], ['Hamsters', 1]]
 };
 const pieChartRightConfigLegend = {
   show: true,
-  position: 'right',
+  position: 'right'
 };
 
 /**
@@ -33,7 +33,7 @@ const pieChartAddWithInfo = stories => {
           id="pie-chart-1"
           size={{
             width: 251,
-            height: 161,
+            height: 161
           }}
           data={pieChartRightConfigData}
           legend={pieChartRightConfigLegend}

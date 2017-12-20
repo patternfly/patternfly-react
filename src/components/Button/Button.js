@@ -7,7 +7,7 @@ const Button = props => <BsButton {...props} />;
 
 Button.propTypes = {
   ...BsButton.propTypes,
-  bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES),
+  bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES)
 };
 
 Button.BUTTON_BS_STYLES = BUTTON_BS_STYLES;

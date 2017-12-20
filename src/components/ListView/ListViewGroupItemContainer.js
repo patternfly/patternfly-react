@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const ListViewGroupItemContainer = ({ children, expanded, onClose }) => {
   const classes = cx({
     'list-group-item-container container-fluid': true,
-    hidden: !expanded,
+    hidden: !expanded
   });
   return (
     <div className={classes}>
@@ -28,9 +28,9 @@ ListViewGroupItemContainer.propTypes = {
   /** Boolean indicating whether expandable content is visible */
   expanded: PropTypes.bool.isRequired,
   /** Function to call when 'close icon' is clicked */
-  onClose: PropTypes.func,
+  onClose: PropTypes.func
 };
 ListViewGroupItemContainer.defaultProps = {
-  expanded: false,
+  expanded: false
 };
 export default ListViewGroupItemContainer;

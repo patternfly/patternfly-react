@@ -9,7 +9,7 @@ test('Alert renders properly', () => {
   const component = renderer.create(
     <Alert type="danger" onDismiss={handleAlertClose}>
       <span>Danger Will Robinson!</span>
-    </Alert>,
+    </Alert>
   );
 
   let tree = component.toJSON();

@@ -9,12 +9,12 @@ import { mockWizardItems } from './__mocks__/mockWizardItems';
 
 import {
   MockLoadingWizardManager,
-  mockLoadingWizardSource,
+  mockLoadingWizardSource
 } from './__mocks__/mockLoadingWizardManager';
 
 import {
   MockModalWizardManager,
-  mockModalWizardSource,
+  mockModalWizardSource
 } from './__mocks__/mockModalWizardManager';
 
 // import {
@@ -28,8 +28,8 @@ stories.addDecorator(
   defaultTemplate({
     title: 'Wizard',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/communication/wizard/#/overview',
-  }),
+      'http://www.patternfly.org/pattern-library/communication/wizard/#/overview'
+  })
 );
 
 stories.add(
@@ -42,14 +42,14 @@ stories.add(
         <h1>Story Source</h1>
         <pre>{mockLoadingWizardSource}</pre>
       </div>
-    ),
+    )
   })(() => (
     <Row>
       <Col sm={12}>
         <MockLoadingWizardManager steps={mockWizardItems} />
       </Col>
     </Row>
-  )),
+  ))
 );
 
 stories.add(
@@ -62,14 +62,14 @@ stories.add(
         <h1>Story Source</h1>
         <pre>{mockModalWizardSource}</pre>
       </div>
-    ),
+    )
   })(() => (
     <Row>
       <Col sm={12}>
         <MockModalWizardManager steps={mockWizardItems} />
       </Col>
     </Row>
-  )),
+  ))
 );
 
 /**

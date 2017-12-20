@@ -17,6 +17,6 @@ WizardSidebar.propTypes = {
   /** Wizard sidebar items */
   items: PropTypes.node,
   /** Additional css classes */
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 export default WizardSidebar;

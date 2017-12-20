@@ -20,8 +20,8 @@ stories.addDecorator(
     title: 'Popover',
     documentationLink:
       'http://www.patternfly.org/pattern-library/widgets/#popover',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.addWithInfo('Popover', () => {
@@ -35,8 +35,8 @@ stories.addWithInfo('Popover', () => {
       dangerouslySetInnerHTML={{
         __html: text(
           'Popover Content',
-          '<strong>Holy guacamole!</strong> Check this info.',
-        ),
+          '<strong>Holy guacamole!</strong> Check this info.'
+        )
       }}
     />
   );
@@ -48,12 +48,12 @@ stories.addWithInfo('Popover', () => {
   const placement = select(
     'Placement',
     ['top', 'bottom', 'left', 'right'],
-    'right',
+    'right'
   );
   const trigger = select(
     'Trigger',
     ['hover', 'focus', 'hover focus', 'click'],
-    'click',
+    'click'
   );
   const rootClose = boolean('Root Close', true);
 

@@ -17,7 +17,7 @@ test('SplitButton should renders properly', () => {
         </MenuItem>
         <MenuItem divider />
         <MenuItem eventKey="4">Separated link</MenuItem>
-      </SplitButton>,
+      </SplitButton>
     );
 
     const tree = component.toJSON();

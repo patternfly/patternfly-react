@@ -21,8 +21,8 @@ stories.addDecorator(
     title: 'Badges',
     documentationLink:
       'http://www.patternfly.org/pattern-library/widgets/#badges',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.addWithInfo('Badges', '', () => (

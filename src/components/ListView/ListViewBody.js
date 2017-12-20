@@ -9,6 +9,6 @@ const ListViewBody = ({ children }) => (
 );
 ListViewBody.propTypes = {
   /** Child nodes - ListViewDescription or ListViewAdditionalInfo instances */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 export default ListViewBody;

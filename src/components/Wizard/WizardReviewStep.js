@@ -23,6 +23,6 @@ WizardReviewStep.propTypes = {
   /** Step title */
   title: PropTypes.string,
   /** Step collapsed */
-  collapsed: PropTypes.bool,
+  collapsed: PropTypes.bool
 };
 export default WizardReviewStep;

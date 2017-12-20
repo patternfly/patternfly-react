@@ -13,8 +13,8 @@ stories.addDecorator(
   defaultTemplate({
     title: 'Kebab Dropdown',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#kebabs',
-  }),
+      'http://www.patternfly.org/pattern-library/widgets/#kebabs'
+  })
 );
 
 stories.addWithInfo(
@@ -32,5 +32,5 @@ stories.addWithInfo(
         <MenuItem>Separated link</MenuItem>
       </DropdownKebab>
     </div>
-  ),
+  )
 );

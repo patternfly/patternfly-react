@@ -11,8 +11,8 @@ stories.addDecorator(
   defaultTemplate({
     title: 'Alert / Inline Notification',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/communication/inline-notifications/',
-  }),
+      'http://www.patternfly.org/pattern-library/communication/inline-notifications/'
+  })
 );
 
 stories.addWithInfo(
@@ -22,7 +22,7 @@ stories.addWithInfo(
     <Alert type="danger" onDismiss={action('onDismiss')}>
       <span>{text('Label', 'Danger Will Robinson!')}</span>
     </Alert>
-  ),
+  )
 );
 
 stories.addWithInfo(
@@ -33,11 +33,11 @@ stories.addWithInfo(
       <span>
         {text(
           'Label',
-          'Warning! Better check yourself, you are not looking too good.',
+          'Warning! Better check yourself, you are not looking too good.'
         )}
       </span>
     </Alert>
-  ),
+  )
 );
 
 stories.addWithInfo('with info', `This is the Alert with info type.`, () => (
@@ -45,7 +45,7 @@ stories.addWithInfo('with info', `This is the Alert with info type.`, () => (
     <span>
       {text(
         'Label',
-        'Heads up! This alert needs your attention, but it is not super important.',
+        'Heads up! This alert needs your attention, but it is not super important.'
       )}
     </span>
   </Alert>
@@ -59,11 +59,11 @@ stories.addWithInfo(
       <span>
         {text(
           'Label',
-          'Well done! You successfully read this important alert message.',
+          'Well done! You successfully read this important alert message.'
         )}
       </span>
     </Alert>
-  ),
+  )
 );
 
 stories.addWithInfo(
@@ -74,9 +74,9 @@ stories.addWithInfo(
       <span>
         {text(
           'Label',
-          'Well done! You successfully read this important alert message.',
+          'Well done! You successfully read this important alert message.'
         )}
       </span>
     </Alert>
-  ),
+  )
 );

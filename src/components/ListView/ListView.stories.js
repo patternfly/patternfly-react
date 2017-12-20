@@ -18,8 +18,8 @@ stories.addDecorator(
   defaultTemplate({
     title: 'ListView',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/content-views/list-view/',
-  }),
+      'http://www.patternfly.org/pattern-library/content-views/list-view/'
+  })
 );
 
 const renderActions = () => (
@@ -36,7 +36,7 @@ const renderAdditionalInfoItems = itemProperties => {
         'pficon-flavor': prop === 'hosts',
         'pficon-cluster': prop === 'clusters',
         'pficon-container-node': prop === 'nodes',
-        'pficon-image': prop === 'images',
+        'pficon-image': prop === 'images'
       });
       return (
         <ListView.InfoItem key={prop}>
@@ -72,7 +72,7 @@ stories.addWithInfo(
         ))}
       </ListView>
     );
-  },
+  }
 );
 
 stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
@@ -94,7 +94,7 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
         </ListView.InfoItem>,
         <ListView.InfoItem key="2">
           <Icon name="bug" /> Item 2
-        </ListView.InfoItem>,
+        </ListView.InfoItem>
       ]}
       actions={
         <div>
@@ -142,7 +142,7 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
         <ListView.InfoItem key="2" stacked>
           <strong>35%</strong>
           <span>Service Two</span>
-        </ListView.InfoItem>,
+        </ListView.InfoItem>
       ]}
       stacked={boolean('Stacked', false)}
     />
@@ -154,7 +154,7 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
         </ListView.InfoItem>,
         <ListView.InfoItem key="2">
           <Icon type="pf" name="cluster" /> Info Items
-        </ListView.InfoItem>,
+        </ListView.InfoItem>
       ]}
       stacked={boolean('Stacked', false)}
     />
@@ -182,7 +182,7 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
         <ListView.InfoItem key="2">
           <Icon type="pf" name="cluster" />
           <strong>28</strong> Clusters
-        </ListView.InfoItem>,
+        </ListView.InfoItem>
       ]}
       stacked={boolean('Stacked', false)}
     />

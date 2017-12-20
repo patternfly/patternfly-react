@@ -19,8 +19,8 @@ stories.addDecorator(
     title: 'Label',
     documentationLink:
       'http://www.patternfly.org/pattern-library/widgets/#labels',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.addWithInfo('Label', () => {

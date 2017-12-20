@@ -22,16 +22,16 @@ const ToastNotification = ({
       'alert-warning': type === 'warning',
       'alert-success': type === 'success',
       'alert-info': type === 'info',
-      'alert-dismissable': onDismiss,
+      'alert-dismissable': onDismiss
     },
-    className,
+    className
   );
   const iconClass = ClassNames({
     pficon: true,
     'pficon-error-circle-o': type === 'danger' || type === 'error',
     'pficon-warning-triangle-o': type === 'warning',
     'pficon-ok': type === 'success',
-    'pficon-info': type === 'info',
+    'pficon-info': type === 'info'
   });
 
   return (
@@ -54,10 +54,10 @@ ToastNotification.propTypes = {
   /** the type of alert  */
   type: PropTypes.oneOf(TOAST_NOTIFICATION_TYPES).isRequired,
   /** children nodes  */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 ToastNotification.defaultProps = {
-  type: 'error',
+  type: 'error'
 };
 
 ToastNotification.TOAST_NOTIFICATION_TYPES = TOAST_NOTIFICATION_TYPES;

@@ -15,6 +15,6 @@ ListViewCheckbox.propTypes = {
   /** Child node - form input component */
   children: PropTypes.node.isRequired,
   /** Additional css classes */
-  className: PropTypes.string,
+  className: PropTypes.string
 };
 export default ListViewCheckbox;

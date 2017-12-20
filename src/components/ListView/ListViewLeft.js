@@ -9,6 +9,6 @@ const ListViewLeft = ({ children }) => (
 );
 ListViewLeft.propTypes = {
   /** Child nodes - usually ListViewIcon instance */
-  children: PropTypes.node,
+  children: PropTypes.node
 };
 export default ListViewLeft;

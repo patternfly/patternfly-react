@@ -3,7 +3,7 @@ import {
   ALERT_TYPE_ERROR,
   ALERT_TYPE_WARNING,
   ALERT_TYPE_SUCCESS,
-  ALERT_TYPE_INFO,
+  ALERT_TYPE_INFO
 } from './constants';
 
 export const getIconName = type => {

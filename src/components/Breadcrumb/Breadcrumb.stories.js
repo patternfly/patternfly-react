@@ -21,8 +21,8 @@ stories.addDecorator(
     title: 'Breadcrumb',
     documentationLink:
       'http://www.patternfly.org/pattern-library/navigation/breadcrumbs/',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.addWithInfo('Breadcrumb', '', () => (

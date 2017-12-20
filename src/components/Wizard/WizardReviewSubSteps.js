@@ -10,7 +10,7 @@ const WizardReviewSubSteps = ({ children, className, collapsed, ...rest }) => {
   const classes = cx(
     'wizard-pf-review-substeps',
     { collapse: collapsed },
-    className,
+    className
   );
   return (
     <div className={classes} {...rest}>
@@ -24,6 +24,6 @@ WizardReviewSubSteps.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** Step collapsed */
-  collapsed: PropTypes.bool,
+  collapsed: PropTypes.bool
 };
 export default WizardReviewSubSteps;

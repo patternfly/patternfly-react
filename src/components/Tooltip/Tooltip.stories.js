@@ -20,8 +20,8 @@ stories.addDecorator(
     title: 'Tooltip',
     documentationLink:
       'http://www.patternfly.org/pattern-library/widgets/#tooltip',
-    description: description,
-  }),
+    description: description
+  })
 );
 
 stories.addWithInfo('Tooltip', () => {
@@ -31,8 +31,8 @@ stories.addWithInfo('Tooltip', () => {
         dangerouslySetInnerHTML={{
           __html: text(
             'Tooltip',
-            '<strong>Holy guacamole!</strong> Check this info.',
-          ),
+            '<strong>Holy guacamole!</strong> Check this info.'
+          )
         }}
       />
     </Tooltip>
@@ -40,12 +40,12 @@ stories.addWithInfo('Tooltip', () => {
   const placement = select(
     'Placement',
     ['top', 'bottom', 'left', 'right'],
-    'right',
+    'right'
   );
   const trigger = select(
     'Trigger',
     ['hover', 'focus', 'hover focus', 'click'],
-    'hover focus',
+    'hover focus'
   );
   const rootClose = boolean('Root Close', false);
 

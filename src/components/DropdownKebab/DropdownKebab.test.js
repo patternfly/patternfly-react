@@ -14,7 +14,7 @@ test('Kebab dropdown renders properly', () => {
       <MenuItem>Something else here</MenuItem>
       <MenuItem divider />
       <MenuItem>Separated link</MenuItem>
-    </DropdownKebab>,
+    </DropdownKebab>
   );
 
   let tree = component.toJSON();

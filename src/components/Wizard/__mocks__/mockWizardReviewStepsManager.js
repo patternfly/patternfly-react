@@ -7,7 +7,7 @@ class MockWizardReviewStepsManager extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      steps: [...props.steps],
+      steps: [...props.steps]
     };
     bindMethods(this, ['stepClicked', 'subStepClicked']);
   }
@@ -16,7 +16,7 @@ class MockWizardReviewStepsManager extends React.Component {
     const updated = [...this.state.steps];
     updated[stepIndex].collapsed = !updated[stepIndex].collapsed;
     this.setState({
-      steps: updated,
+      steps: updated
     });
   }
   subStepClicked(e, stepIndex, subStepIndex) {
@@ -25,7 +25,7 @@ class MockWizardReviewStepsManager extends React.Component {
     updated[stepIndex].subSteps[subStepIndex].collapsed = !updated[stepIndex]
       .subSteps[subStepIndex].collapsed;
     this.setState({
-      steps: updated,
+      steps: updated
     });
   }
   render() {
@@ -86,6 +86,6 @@ class MockWizardReviewStepsManager extends React.Component {
 }
 MockWizardReviewStepsManager.propTypes = {
   /** Wizard steps */
-  steps: PropTypes.array,
+  steps: PropTypes.array
 };
 export default MockWizardReviewStepsManager;

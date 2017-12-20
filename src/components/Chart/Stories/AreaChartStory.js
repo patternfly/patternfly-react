@@ -9,17 +9,17 @@ const areaChartDataColumns = [
   ['data1', 350, 400, 350, 0],
   ['data2', 140, 100, 150, 205, 145, 50],
   ['data3', 10, 60, 90, 10, 325, 400],
-  ['data4', 260, 10, 305, 100, 50, 150],
+  ['data4', 260, 10, 305, 100, 50, 150]
 ];
 const areaChartData = {
   columns: areaChartDataColumns,
-  type: 'area-spline',
+  type: 'area-spline'
 };
 
 const singleAreaChartDataColumns = [['data2', 140, 100, 150, 205, 145, 50]];
 const singleAreaChartData = {
   columns: singleAreaChartDataColumns,
-  type: 'area-spline',
+  type: 'area-spline'
 };
 
 /**
