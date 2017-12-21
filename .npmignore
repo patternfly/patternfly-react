@@ -1,4 +1,4 @@
 src
 storybook
-less
-sass
+/less
+/sass
