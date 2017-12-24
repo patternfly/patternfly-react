@@ -1,12 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert renders properly 1`] = `
+exports[`Alert danger renders properly 1`] = `
+<div
+  className="alert alert-danger"
+>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-error-circle-o"
+  />
+  <span>
+    Alert Message!
+  </span>
+</div>
+`;
+
+exports[`Alert danger renders properly with dismiss button 1`] = `
 <div
   className="alert alert-danger alert-dismissable"
 >
   <button
     aria-hidden="true"
-    className="close"
+    className="close close-default"
+    disabled={false}
     onClick={[Function]}
     type="button"
   >
@@ -20,7 +35,167 @@ exports[`Alert renders properly 1`] = `
     className="pficon pficon-error-circle-o"
   />
   <span>
-    Danger Will Robinson!
+    Alert Message!
+  </span>
+</div>
+`;
+
+exports[`Alert error renders properly 1`] = `
+<div
+  className="alert alert-danger"
+>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-error-circle-o"
+  />
+  <span>
+    Alert Message!
+  </span>
+</div>
+`;
+
+exports[`Alert error renders properly with dismiss button 1`] = `
+<div
+  className="alert alert-danger alert-dismissable"
+>
+  <button
+    aria-hidden="true"
+    className="close close-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      className="pficon pficon-close"
+    />
+  </button>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-error-circle-o"
+  />
+  <span>
+    Alert Message!
+  </span>
+</div>
+`;
+
+exports[`Alert info renders properly 1`] = `
+<div
+  className="alert alert-info"
+>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-info"
+  />
+  <span>
+    Alert Message!
+  </span>
+</div>
+`;
+
+exports[`Alert info renders properly with dismiss button 1`] = `
+<div
+  className="alert alert-info alert-dismissable"
+>
+  <button
+    aria-hidden="true"
+    className="close close-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      className="pficon pficon-close"
+    />
+  </button>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-info"
+  />
+  <span>
+    Alert Message!
+  </span>
+</div>
+`;
+
+exports[`Alert success renders properly 1`] = `
+<div
+  className="alert alert-success"
+>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-ok"
+  />
+  <span>
+    Alert Message!
+  </span>
+</div>
+`;
+
+exports[`Alert success renders properly with dismiss button 1`] = `
+<div
+  className="alert alert-success alert-dismissable"
+>
+  <button
+    aria-hidden="true"
+    className="close close-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      className="pficon pficon-close"
+    />
+  </button>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-ok"
+  />
+  <span>
+    Alert Message!
+  </span>
+</div>
+`;
+
+exports[`Alert warning renders properly 1`] = `
+<div
+  className="alert alert-warning"
+>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-warning-triangle-o"
+  />
+  <span>
+    Alert Message!
+  </span>
+</div>
+`;
+
+exports[`Alert warning renders properly with dismiss button 1`] = `
+<div
+  className="alert alert-warning alert-dismissable"
+>
+  <button
+    aria-hidden="true"
+    className="close close-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      className="pficon pficon-close"
+    />
+  </button>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-warning-triangle-o"
+  />
+  <span>
+    Alert Message!
   </span>
 </div>
 `;

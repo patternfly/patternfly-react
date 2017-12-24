@@ -1,6 +1,7 @@
 import ClassNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { getClassName, getIconName } from './helpers';
 import { ALERT_TYPES, ALERT_TYPE_ERROR } from './constants';
@@ -9,7 +10,7 @@ import { ALERT_TYPES, ALERT_TYPE_ERROR } from './constants';
  * Alert Component for Patternfly React
  */
 const Alert = ({ children, className, onDismiss, type, ...props }) => {
-  const alertClass = ClassNames(className, 'alert', getClassName(type), {
+  const alertClass = ClassNames('alert', className, getClassName(type), {
     'alert-dismissable': onDismiss
   });
 
@@ -18,14 +19,9 @@ const Alert = ({ children, className, onDismiss, type, ...props }) => {
   return (
     <div className={alertClass} {...props}>
       {onDismiss && (
-        <button
-          type="button"
-          className="close"
-          aria-hidden="true"
-          onClick={onDismiss}
-        >
+        <Button bsClass="close" aria-hidden="true" onClick={onDismiss}>
           <Icon type="pf" name="close" />
-        </button>
+        </Button>
       )}
       <Icon type="pf" name={iconName} />
       {children}
