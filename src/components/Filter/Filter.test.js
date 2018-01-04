@@ -1,18 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  Filter,
-  FilterTypeSelector,
-  FilterValueSelector,
-  FilterCategorySelector,
-  FilterCategoryValueSelector
-} from '../../index';
+import { Filter, Toolbar } from '../../index';
 import { mockFilterExampleFields } from './__mocks__/mockFilterExample';
 
 test('Filter input renders properly', () => {
   const component = renderer.create(
     <Filter>
-      <FilterTypeSelector
+      <Filter.TypeSelector
         filterTypes={mockFilterExampleFields}
         currentFilterType={mockFilterExampleFields[0]}
       />
@@ -32,11 +26,11 @@ test('Filter input renders properly', () => {
 test('Filter select renders properly', () => {
   const component = renderer.create(
     <Filter>
-      <FilterTypeSelector
+      <Filter.TypeSelector
         filterTypes={mockFilterExampleFields}
         currentFilterType={mockFilterExampleFields[2]}
       />
-      <FilterValueSelector
+      <Filter.ValueSelector
         filterValues={mockFilterExampleFields[2].filterValues}
         currentValue={mockFilterExampleFields[2].filterValues[4]}
       />
@@ -50,16 +44,16 @@ test('Filter select renders properly', () => {
 test('Filter categories renders properly', () => {
   const component = renderer.create(
     <Filter>
-      <FilterTypeSelector
+      <Filter.TypeSelector
         filterTypes={mockFilterExampleFields}
         currentFilterType={mockFilterExampleFields[3]}
       />
-      <FilterCategorySelector
+      <Filter.CategorySelector
         filterCategories={mockFilterExampleFields[3].filterCategories}
         currentCategory={mockFilterExampleFields[3].filterCategories[0]}
         placeholder={mockFilterExampleFields[3].placeholder}
       >
-        <FilterCategoryValueSelector
+        <Filter.CategoryValueSelector
           categoryValues={
             mockFilterExampleFields[3].filterCategories[0].filterValues
           }
@@ -68,8 +62,45 @@ test('Filter categories renders properly', () => {
           }
           placeholder={mockFilterExampleFields[3].filterCategoriesPlaceholder}
         />
-      </FilterCategorySelector>
+      </Filter.CategorySelector>
     </Filter>
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Filter renders properly in a Toolbar', () => {
+  const component = renderer.create(
+    <Toolbar>
+      <Filter>
+        <Filter.TypeSelector
+          filterTypes={mockFilterExampleFields}
+          currentFilterType={mockFilterExampleFields[0]}
+        />
+        <input
+          className="form-control"
+          type={mockFilterExampleFields[0].filterType}
+          value=""
+          placeholder="Filter by Name"
+        />
+      </Filter>
+    </Toolbar>
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Filter active components render properly', () => {
+  const component = renderer.create(
+    <Toolbar.Results>
+      <Filter.ActiveLabel title="Active Filters:" />
+      <Filter.List>
+        <Filter.Item label={'Name: John'} />
+        <Filter.Item label={'Address: Westford'} />
+      </Filter.List>
+    </Toolbar.Results>
   );
 
   const tree = component.toJSON();

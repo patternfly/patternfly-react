@@ -1,81 +1,25 @@
 import React from 'react';
-import { Filter, Toolbar } from '../../../index';
+
+import {
+  Button,
+  DropdownKebab,
+  Filter,
+  Icon,
+  MenuItem,
+  Sort,
+  Toolbar
+} from '../../../index';
+
+import { mockFilterExampleFields } from '../../Filter/__mocks__/mockFilterExample';
+import { mockSortFields } from '../../Sort/__mocks__/mockSortExample';
 
 const bindMethods = (context, methods) => {
   methods.forEach(method => {
     context[method] = context[method].bind(context);
   });
 };
-export const mockFilterExampleFields = [
-  {
-    id: 'name',
-    title: 'Name',
-    placeholder: 'Filter by Name',
-    filterType: 'text'
-  },
-  {
-    id: 'address',
-    title: 'Address',
-    placeholder: 'Filter by Address',
-    filterType: 'text'
-  },
-  {
-    id: 'birthMonth',
-    title: 'Birth Month',
-    placeholder: 'Filter by Birth Month',
-    filterType: 'select',
-    filterValues: [
-      { title: 'January', id: 'jan' },
-      { title: 'February', id: 'feb' },
-      { title: 'March', id: 'mar' },
-      { title: 'April', id: 'apr' },
-      { title: 'May', id: 'may' },
-      { title: 'June', id: 'jun' },
-      { title: 'July', id: 'jul' },
-      { title: 'August', id: 'aug' },
-      { title: 'September', id: 'sep' },
-      { title: 'October', id: 'oct' },
-      { title: 'November', id: 'nov' },
-      { title: 'December', id: 'dec' }
-    ]
-  },
-  {
-    id: 'car',
-    title: 'Car',
-    placeholder: 'Filter by Car Make',
-    filterType: 'complex-select',
-    filterValues: [{ title: 'Subaru', id: 'subie' }, 'Toyota'],
-    filterCategoriesPlaceholder: 'Filter by Car Model',
-    filterCategories: [
-      {
-        id: 'subie',
-        title: 'Subaru',
-        filterValues: [
-          {
-            title: 'Outback',
-            id: 'out'
-          },
-          'Crosstrek',
-          'Impreza'
-        ]
-      },
-      {
-        id: 'toyota',
-        title: 'Toyota',
-        filterValues: [
-          {
-            title: 'Prius',
-            id: 'pri'
-          },
-          'Corolla',
-          'Echo'
-        ]
-      }
-    ]
-  }
-];
 
-export class MockFilterExample extends React.Component {
+export class MockToolbarExample extends React.Component {
   constructor() {
     super();
 
@@ -87,13 +31,19 @@ export class MockFilterExample extends React.Component {
       'filterCategorySelected',
       'categoryValueSelected',
       'removeFilter',
-      'clearFilters'
+      'clearFilters',
+      'updateCurrentSortType',
+      'toggleCurrentSortDirection'
     ]);
 
     this.state = {
       currentFilterType: mockFilterExampleFields[0],
       activeFilters: [],
-      currentValue: ''
+      currentValue: '',
+      currentSortType: mockSortFields[0],
+      isSortNumeric: mockSortFields[0].isNumeric,
+      isSortAscending: true,
+      currentViewType: 'list'
     };
   }
 
@@ -197,6 +147,27 @@ export class MockFilterExample extends React.Component {
     this.setState({ activeFilters: [] });
   }
 
+  updateCurrentSortType(sortType) {
+    const { currentSortType } = this.state;
+    if (currentSortType !== sortType) {
+      this.setState({
+        currentSortType: sortType,
+        isSortNumeric: sortType.isNumeric,
+        isSortAscending: true
+      });
+    }
+  }
+
+  toggleCurrentSortDirection() {
+    const { isSortAscending } = this.state;
+
+    this.setState({ isSortAscending: !isSortAscending });
+  }
+
+  setViewType(viewType) {
+    this.setState({ currentViewType: viewType });
+  }
+
   renderInput() {
     const { currentFilterType, currentValue, filterCategory } = this.state;
     if (!currentFilterType) {
@@ -242,23 +213,97 @@ export class MockFilterExample extends React.Component {
   }
 
   render() {
-    const { currentFilterType, activeFilters } = this.state;
+    const {
+      currentFilterType,
+      activeFilters,
+      currentSortType,
+      isSortNumeric,
+      isSortAscending,
+      currentViewType
+    } = this.state;
 
     return (
-      <div>
-        <div style={{ width: 300 }}>
-          <Filter>
-            <Filter.TypeSelector
-              filterTypes={mockFilterExampleFields}
-              currentFilterType={currentFilterType}
-              onFilterTypeSelected={this.selectFilterType}
-            />
-            {this.renderInput()}
-          </Filter>
+      <Toolbar>
+        <Filter>
+          <Filter.TypeSelector
+            filterTypes={mockFilterExampleFields}
+            currentFilterType={currentFilterType}
+            onFilterTypeSelected={this.selectFilterType}
+          />
+          {this.renderInput()}
+        </Filter>
+        <Sort>
+          <Sort.TypeSelector
+            sortTypes={mockSortFields}
+            currentSortType={currentSortType}
+            onSortTypeSelected={this.updateCurrentSortType}
+          />
+          <Sort.DirectionSelector
+            isNumeric={isSortNumeric}
+            isAscending={isSortAscending}
+            onClick={() => this.toggleCurrentSortDirection()}
+          />
+        </Sort>
+        <div className="form-group">
+          <Button>Action 1</Button>
+          <Button>Action 2</Button>
+          <DropdownKebab id="toolbarActionKebab">
+            <MenuItem>Action</MenuItem>
+            <MenuItem>Another Action</MenuItem>
+            <MenuItem>Something Else Here</MenuItem>
+            <MenuItem role="separator" className="divider" />
+            <MenuItem>Separated Link</MenuItem>
+          </DropdownKebab>
         </div>
+        <Toolbar.RightContent>
+          <Toolbar.Find
+            placeholder="Find By Keyword..."
+            currentIndex={1}
+            totalCount={3}
+          />
+          <Toolbar.ViewSelector>
+            <Button
+              title="List View"
+              bsStyle="link"
+              className={{ active: currentViewType === 'list' }}
+              onClick={() => {
+                this.setViewType('list');
+              }}
+            >
+              <Icon type="fa" name="th-list" />
+            </Button>
+            <Button
+              title="Card View"
+              bsStyle="link"
+              className={{ active: currentViewType === 'card' }}
+              onClick={() => {
+                this.setViewType('card');
+              }}
+            >
+              <Icon type="fa" name="th" />
+            </Button>
+            <Button
+              title="Table View"
+              bsStyle="link"
+              className={{ active: currentViewType === 'table' }}
+              onClick={() => {
+                this.setViewType('table');
+              }}
+            >
+              <Icon type="fa" name="table" />
+            </Button>
+          </Toolbar.ViewSelector>
+        </Toolbar.RightContent>
+        {!activeFilters ||
+          (activeFilters.length === 0 && (
+            <Toolbar.Results>
+              <h5>40 Results</h5>
+            </Toolbar.Results>
+          ))}
         {activeFilters &&
           activeFilters.length > 0 && (
             <Toolbar.Results>
+              <h5>40 Results</h5>
               <Filter.ActiveLabel title={'Active Filters:'} />
               <Filter.List>
                 {activeFilters.map((item, index) => {
@@ -283,90 +328,34 @@ export class MockFilterExample extends React.Component {
               </a>
             </Toolbar.Results>
           )}
-      </div>
+      </Toolbar>
     );
   }
 }
 
-export const mockFilterExampleSource = `
+export const mockToolbarExampleSource = `
 import React from 'react';
-import { Filter, Toolbar } from '../../../index';
+
+import {
+  Button,
+  DropdownKebab,
+  Filter,
+  Icon,
+  MenuItem,
+  Sort,
+  Toolbar
+} from '../../../index';
+
+import { mockFilterExampleFields } from '../../Filter/__mocks__/mockFilterExample';
+import { mockSortFields } from '../../Sort/__mocks__/mockSortExample';
 
 const bindMethods = (context, methods) => {
   methods.forEach(method => {
     context[method] = context[method].bind(context);
   });
 };
-export const mockFilterExampleFields = [
-  {
-    id: 'name',
-    title: 'Name',
-    placeholder: 'Filter by Name',
-    filterType: 'text'
-  },
-  {
-    id: 'address',
-    title: 'Address',
-    placeholder: 'Filter by Address',
-    filterType: 'text'
-  },
-  {
-    id: 'birthMonth',
-    title: 'Birth Month',
-    placeholder: 'Filter by Birth Month',
-    filterType: 'select',
-    filterValues: [
-      { title: 'January', id: 'jan' },
-      { title: 'February', id: 'feb' },
-      { title: 'March', id: 'mar' },
-      { title: 'April', id: 'apr' },
-      { title: 'May', id: 'may' },
-      { title: 'June', id: 'jun' },
-      { title: 'July', id: 'jul' },
-      { title: 'August', id: 'aug' },
-      { title: 'September', id: 'sep' },
-      { title: 'October', id: 'oct' },
-      { title: 'November', id: 'nov' },
-      { title: 'December', id: 'dec' }
-    ]
-  },
-  {
-    id: 'car',
-    title: 'Car',
-    placeholder: 'Filter by Car Make',
-    filterType: 'complex-select',
-    filterValues: [{ title: 'Subaru', id: 'subie' }, 'Toyota'],
-    filterCategoriesPlaceholder: 'Filter by Car Model',
-    filterCategories: [
-      {
-        id: 'subie',
-        title: 'Subaru',
-        filterValues: [
-          {
-            title: 'Outback',
-            id: 'out'
-          },
-          'Crosstrek',
-          'Impreza'
-        ]
-      },
-      {
-        id: 'toyota',
-        title: 'Toyota',
-        filterValues: [
-          {
-            title: 'Prius',
-            id: 'pri'
-          },
-          'Corolla',
-          'Echo'
-        ]
-      }
-    ]
-  }
-];
 
-export class MockFilterExample extends React.Component {
+export class MockToolbarExample extends React.Component {
   constructor() {
     super();
 
@@ -378,13 +367,19 @@ export class MockFilterExample extends React.Component {
       'filterCategorySelected',
       'categoryValueSelected',
       'removeFilter',
-      'clearFilters'
+      'clearFilters',
+      'updateCurrentSortType',
+      'toggleCurrentSortDirection'
     ]);
 
     this.state = {
       currentFilterType: mockFilterExampleFields[0],
       activeFilters: [],
-      currentValue: ''
+      currentValue: '',
+      currentSortType: mockSortFields[0],
+      isSortNumeric: mockSortFields[0].isNumeric,
+      isSortAscending: true,
+      currentViewType: 'list'
     };
   }
 
@@ -488,6 +483,27 @@ export class MockFilterExample extends React.Component {
     this.setState({ activeFilters: [] });
   }
 
+  updateCurrentSortType(sortType) {
+    const { currentSortType } = this.state;
+    if (currentSortType !== sortType) {
+      this.setState({
+        currentSortType: sortType,
+        isSortNumeric: sortType.isNumeric,
+        isSortAscending: true
+      });
+    }
+  }
+
+  toggleCurrentSortDirection() {
+    const { isSortAscending } = this.state;
+
+    this.setState({ isSortAscending: !isSortAscending });
+  }
+
+  setViewType(viewType) {
+    this.setState({ currentViewType: viewType });
+  }
+
   renderInput() {
     const { currentFilterType, currentValue, filterCategory } = this.state;
     if (!currentFilterType) {
@@ -533,23 +549,97 @@ export class MockFilterExample extends React.Component {
   }
 
   render() {
-    const { currentFilterType, activeFilters } = this.state;
+    const {
+      currentFilterType,
+      activeFilters,
+      currentSortType,
+      isSortNumeric,
+      isSortAscending,
+      currentViewType
+    } = this.state;
 
     return (
-      <div>
-        <div style={{ width: 300 }}>
-          <Filter>
-            <Filter.TypeSelector
-              filterTypes={mockFilterExampleFields}
-              currentFilterType={currentFilterType}
-              onFilterTypeSelected={this.selectFilterType}
-            />
-            {this.renderInput()}
-          </Filter>
+      <Toolbar>
+        <Filter>
+          <Filter.TypeSelector
+            filterTypes={mockFilterExampleFields}
+            currentFilterType={currentFilterType}
+            onFilterTypeSelected={this.selectFilterType}
+          />
+          {this.renderInput()}
+        </Filter>
+        <Sort>
+          <Sort.TypeSelector
+            sortTypes={mockSortFields}
+            currentSortType={currentSortType}
+            onSortTypeSelected={this.updateCurrentSortType}
+          />
+          <Sort.DirectionSelector
+            isNumeric={isSortNumeric}
+            isAscending={isSortAscending}
+            onClick={() => this.toggleCurrentSortDirection()}
+          />
+        </Sort>
+        <div className="form-group">
+          <Button>Action 1</Button>
+          <Button>Action 2</Button>
+          <DropdownKebab id="toolbarActionKebab">
+            <MenuItem>Action</MenuItem>
+            <MenuItem>Another Action</MenuItem>
+            <MenuItem>Something Else Here</MenuItem>
+            <MenuItem role="separator" className="divider" />
+            <MenuItem>Separated Link</MenuItem>
+          </DropdownKebab>
         </div>
+        <Toolbar.RightContent>
+          <Toolbar.Find
+            placeholder="Find By Keyword..."
+            currentIndex={1}
+            totalCount={3}
+          />
+          <Toolbar.ViewSelector>
+            <Button
+              title="List View"
+              bsStyle="link"
+              className={{ active: currentViewType === 'list' }}
+              onClick={() => {
+                this.setViewType('list');
+              }}
+            >
+              <Icon type="fa" name="th-list" />
+            </Button>
+            <Button
+              title="Card View"
+              bsStyle="link"
+              className={{ active: currentViewType === 'card' }}
+              onClick={() => {
+                this.setViewType('card');
+              }}
+            >
+              <Icon type="fa" name="th" />
+            </Button>
+            <Button
+              title="Table View"
+              bsStyle="link"
+              className={{ active: currentViewType === 'table' }}
+              onClick={() => {
+                this.setViewType('table');
+              }}
+            >
+              <Icon type="fa" name="table" />
+            </Button>
+          </Toolbar.ViewSelector>
+        </Toolbar.RightContent>
+        {!activeFilters ||
+          (activeFilters.length === 0 && (
+            <Toolbar.Results>
+              <h5>40 Results</h5>
+            </Toolbar.Results>
+          ))}
         {activeFilters &&
           activeFilters.length > 0 && (
             <Toolbar.Results>
+              <h5>40 Results</h5>
               <Filter.ActiveLabel title={'Active Filters:'} />
               <Filter.List>
                 {activeFilters.map((item, index) => {
@@ -574,7 +664,7 @@ export class MockFilterExample extends React.Component {
               </a>
             </Toolbar.Results>
           )}
-      </div>
+      </Toolbar>
     );
   }
 }

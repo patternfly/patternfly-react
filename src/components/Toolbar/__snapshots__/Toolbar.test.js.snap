@@ -1,0 +1,496 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toolbar renders properly 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="toolbar-pf row"
+  >
+    <div
+      className="col-sm-12"
+    >
+      <form
+        className="toolbar-pf-actions"
+      >
+        <div
+          className="filter-pf form-group toolbar-pf-filter"
+        >
+          <div
+            className="filter-pf-fields"
+          >
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-btn"
+              >
+                <div
+                  className="dropdown btn-group"
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    className="dropdown-toggle btn btn-default"
+                    disabled={false}
+                    id="filterFieldTypeMenu"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    type="button"
+                  >
+                    Name
+                     
+                    <span
+                      className="caret"
+                    />
+                  </button>
+                  <ul
+                    aria-labelledby="filterFieldTypeMenu"
+                    className="dropdown-menu"
+                    role="menu"
+                  >
+                    <li
+                      className="selected"
+                      role="presentation"
+                      style={undefined}
+                    >
+                      <a
+                        href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="-1"
+                      >
+                        Name
+                      </a>
+                    </li>
+                    <li
+                      className=""
+                      role="presentation"
+                      style={undefined}
+                    >
+                      <a
+                        href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="-1"
+                      >
+                        Address
+                      </a>
+                    </li>
+                    <li
+                      className=""
+                      role="presentation"
+                      style={undefined}
+                    >
+                      <a
+                        href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="-1"
+                      >
+                        Birth Month
+                      </a>
+                    </li>
+                    <li
+                      className=""
+                      role="presentation"
+                      style={undefined}
+                    >
+                      <a
+                        href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="-1"
+                      >
+                        Car
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <input
+                className="form-control"
+                placeholder="Filter by Name"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="form-group"
+        >
+          <div
+            className="dropdown btn-group"
+          >
+            <button
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-default"
+              disabled={false}
+              id="sortTypeMenu"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              type="button"
+            >
+              Name
+               
+              <span
+                className="caret"
+              />
+            </button>
+            <ul
+              aria-labelledby="sortTypeMenu"
+              className="dropdown-menu"
+              role="menu"
+            >
+              <li
+                className="selected"
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Name
+                </a>
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Address
+                </a>
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Birth Month
+                </a>
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Car
+                </a>
+              </li>
+            </ul>
+          </div>
+          <button
+            className="btn btn-link"
+            disabled={false}
+            type="button"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-sort-alpha-asc sort-direction"
+            />
+          </button>
+        </div>
+        <div
+          className="form-group"
+        >
+          <button
+            className="btn btn-default"
+            disabled={false}
+            type="button"
+          >
+            Action 1
+          </button>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            type="button"
+          >
+            Action 2
+          </button>
+          <div
+            className="dropdown-kebab-pf dropdown btn-group"
+          >
+            <button
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-link"
+              disabled={false}
+              id="toolbarActionKebab"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-ellipsis-v"
+              />
+            </button>
+            <ul
+              aria-labelledby="toolbarActionKebab"
+              className="dropdown-menu"
+              role="menu"
+            >
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Action
+                </a>
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Another Action
+                </a>
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Something Else Here
+                </a>
+              </li>
+              <li
+                className="divider"
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                />
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}
+              >
+                <a
+                  href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1"
+                >
+                  Separated Link
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          className="toolbar-pf-action-right"
+        >
+          <div
+            className="form-group toolbar-pf-find"
+          >
+            <button
+              className="btn-find btn btn-link"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-search"
+              />
+            </button>
+            <div
+              className="find-pf-dropdown-container"
+            >
+              <input
+                className="form-control"
+                id="find"
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                placeholder="Find By Keyword..."
+                type="text"
+                value=""
+              />
+              <div
+                className="find-pf-buttons"
+              >
+                <button
+                  className="btn-find-close btn btn-link"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="pficon pficon-close"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="form-group toolbar-pf-view-selector"
+          >
+            <button
+              className="active btn btn-link"
+              disabled={false}
+              title="List View"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-th-list"
+              />
+            </button>
+            <button
+              className="btn btn-link"
+              disabled={false}
+              title="Card View"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-th"
+              />
+            </button>
+            <button
+              className="btn btn-link"
+              disabled={false}
+              title="Table View"
+              type="button"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-table"
+              />
+            </button>
+          </div>
+        </div>
+      </form>
+      <div
+        className="toolbar-pf-results row"
+      >
+        <div
+          className="col-sm-12"
+        >
+          <h5>
+            40 Results
+          </h5>
+          <p
+            className="filter-pf-active-label"
+          >
+            Active Filters:
+          </p>
+          <ul
+            className="list-inline"
+          >
+            <li
+              className=""
+            >
+              <span
+                className="label label-info"
+              >
+                Name: John
+                <a
+                  href="#"
+                  onClick={[Function]}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="pficon pficon-close"
+                  />
+                  <span
+                    className="sr-only"
+                  >
+                    Remove
+                  </span>
+                </a>
+              </span>
+            </li>
+            <li
+              className=""
+            >
+              <span
+                className="label label-info"
+              >
+                Address: Westford
+                <a
+                  href="#"
+                  onClick={[Function]}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="pficon pficon-close"
+                  />
+                  <span
+                    className="sr-only"
+                  >
+                    Remove
+                  </span>
+                </a>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

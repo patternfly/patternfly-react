@@ -8,7 +8,10 @@ import {
   FilterTypeSelector,
   FilterValueSelector,
   FilterCategorySelector,
-  FilterCategoryValueSelector
+  FilterCategoryValueSelector,
+  FilterActiveLabel,
+  FilterList,
+  FilterItem
 } from '../../index';
 
 import {
@@ -34,7 +37,10 @@ stories.add(
       FilterTypeSelector,
       FilterValueSelector,
       FilterCategorySelector,
-      FilterCategoryValueSelector
+      FilterCategoryValueSelector,
+      FilterActiveLabel,
+      FilterList,
+      FilterItem
     ],
     propTablesExclude: [MockFilterExample],
     text: (

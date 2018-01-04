@@ -1,5 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Filter active components render properly 1`] = `
+<div
+  className="toolbar-pf-results row"
+>
+  <div
+    className="col-sm-12"
+  >
+    <p
+      className="filter-pf-active-label"
+    >
+      Active Filters:
+    </p>
+    <ul
+      className="list-inline"
+    >
+      <li
+        className=""
+      >
+        <span
+          className="label label-info"
+        >
+          Name: John
+          <a
+            href="#"
+            onClick={[Function]}
+          >
+            <span
+              aria-hidden="true"
+              className="pficon pficon-close"
+            />
+            <span
+              className="sr-only"
+            >
+              Remove
+            </span>
+          </a>
+        </span>
+      </li>
+      <li
+        className=""
+      >
+        <span
+          className="label label-info"
+        >
+          Address: Westford
+          <a
+            href="#"
+            onClick={[Function]}
+          >
+            <span
+              aria-hidden="true"
+              className="pficon pficon-close"
+            />
+            <span
+              className="sr-only"
+            >
+              Remove
+            </span>
+          </a>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
 exports[`Filter categories renders properly 1`] = `
 <div
   className="filter-pf form-group"
@@ -386,6 +452,134 @@ exports[`Filter input renders properly 1`] = `
         type="text"
         value=""
       />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Filter renders properly in a Toolbar 1`] = `
+<div
+  className="container-fluid"
+>
+  <div
+    className="toolbar-pf row"
+  >
+    <div
+      className="col-sm-12"
+    >
+      <form
+        className="toolbar-pf-actions"
+      >
+        <div
+          className="filter-pf form-group toolbar-pf-filter"
+        >
+          <div
+            className="filter-pf-fields"
+          >
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-btn"
+              >
+                <div
+                  className="dropdown btn-group"
+                >
+                  <button
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    className="dropdown-toggle btn btn-default"
+                    disabled={false}
+                    id="filterFieldTypeMenu"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    type="button"
+                  >
+                    Name
+                     
+                    <span
+                      className="caret"
+                    />
+                  </button>
+                  <ul
+                    aria-labelledby="filterFieldTypeMenu"
+                    className="dropdown-menu"
+                    role="menu"
+                  >
+                    <li
+                      className="selected"
+                      role="presentation"
+                      style={undefined}
+                    >
+                      <a
+                        href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="-1"
+                      >
+                        Name
+                      </a>
+                    </li>
+                    <li
+                      className=""
+                      role="presentation"
+                      style={undefined}
+                    >
+                      <a
+                        href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="-1"
+                      >
+                        Address
+                      </a>
+                    </li>
+                    <li
+                      className=""
+                      role="presentation"
+                      style={undefined}
+                    >
+                      <a
+                        href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="-1"
+                      >
+                        Birth Month
+                      </a>
+                    </li>
+                    <li
+                      className=""
+                      role="presentation"
+                      style={undefined}
+                    >
+                      <a
+                        href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="-1"
+                      >
+                        Car
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <input
+                className="form-control"
+                placeholder="Filter by Name"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
