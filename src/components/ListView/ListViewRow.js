@@ -22,11 +22,21 @@ const ListViewRow = ({
   leftContent,
   heading,
   description
-}) => (
-  <div style={{ display: 'flex', flex: 1 }}>
-    {checkboxInput && <ListViewCheckbox>{checkboxInput}</ListViewCheckbox>}
-    {actions && <ListViewActions>{actions}</ListViewActions>}
-    <ListViewMainInfo>
+}) => {
+  const items = [];
+
+  if (checkboxInput) {
+    items.push(
+      <ListViewCheckbox key="checkbox">{checkboxInput}</ListViewCheckbox>
+    );
+  }
+
+  if (actions) {
+    items.push(<ListViewActions key="actions">{actions}</ListViewActions>);
+  }
+
+  items.push(
+    <ListViewMainInfo key="main_info">
       {leftContent && <ListViewLeft>{leftContent}</ListViewLeft>}
       <ListViewBody>
         {(heading || description) && (
@@ -44,8 +54,10 @@ const ListViewRow = ({
         )}
       </ListViewBody>
     </ListViewMainInfo>
-  </div>
-);
+  );
+
+  return items;
+};
 
 ListViewRow.propTypes = {
   /** Node which renders right-positioned actions (e.g. Buttons, DropdownKebab...) */
