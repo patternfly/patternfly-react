@@ -715,7 +715,7 @@ exports[`Wizard embedded renders properly 1`] = `
     <button
       className="btn btn-default"
       disabled={false}
-      onClick={[Function]}
+      onClick={[MockFunction]}
       type="button"
     >
       <span
@@ -726,7 +726,7 @@ exports[`Wizard embedded renders properly 1`] = `
     <button
       className="btn btn-primary"
       disabled={false}
-      onClick={[Function]}
+      onClick={[MockFunction]}
       type="button"
     >
       Next

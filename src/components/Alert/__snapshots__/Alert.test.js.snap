@@ -22,7 +22,7 @@ exports[`Alert danger renders properly with dismiss button 1`] = `
     aria-hidden="true"
     className="close close-default"
     disabled={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
@@ -62,7 +62,7 @@ exports[`Alert error renders properly with dismiss button 1`] = `
     aria-hidden="true"
     className="close close-default"
     disabled={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
@@ -102,7 +102,7 @@ exports[`Alert info renders properly with dismiss button 1`] = `
     aria-hidden="true"
     className="close close-default"
     disabled={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
@@ -142,7 +142,7 @@ exports[`Alert success renders properly with dismiss button 1`] = `
     aria-hidden="true"
     className="close close-default"
     disabled={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
@@ -182,7 +182,7 @@ exports[`Alert warning renders properly with dismiss button 1`] = `
     aria-hidden="true"
     className="close close-default"
     disabled={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
