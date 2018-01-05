@@ -73,19 +73,17 @@ export class ToolbarFind extends React.Component {
     const { currentIndex, totalCount } = this.props;
 
     if (currentValue && currentValue !== '') {
-      return (
-        <span>
-          <span className="find-pf-nums">
-            {currentIndex || 0} of {totalCount}
-          </span>
-          <Button bsStyle="link">
-            <Icon type="fa" name="angle-up" />
-          </Button>
-          <Button bsStyle="link">
-            <Icon type="fa" name="angle-down" />
-          </Button>
-        </span>
-      );
+      return [
+        <span className="find-pf-nums">
+          {currentIndex || 0} of {totalCount}
+        </span>,
+        <Button bsStyle="link">
+          <Icon type="fa" name="angle-up" />
+        </Button>,
+        <Button bsStyle="link">
+          <Icon type="fa" name="angle-down" />
+        </Button>
+      ];
     } else {
       return null;
     }
