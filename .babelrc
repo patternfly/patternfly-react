@@ -1,8 +1,9 @@
 {
-  "presets": ["es2015", "stage-0", "react"],
-  "ignore": [
-    "src/**/__snapshots__",
-    "src/**/*.stories.js",
-    "src/**/Stories"
-  ]
+  "presets": ["env", "react"],
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "transform-object-assign"
+  ],
+  "ignore": ["src/**/__snapshots__", "src/**/*.stories.js", "src/**/Stories"]
 }

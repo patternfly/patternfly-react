@@ -18,10 +18,6 @@
     "node": true,
     "jest": true
   },
-  "ecmaFeatures": {
-    "jsx": true,
-    "experimentalObjectRestSpread": true
-  },
   "plugins": ["prettier", "react"],
   "parser": "babel-eslint"
 }

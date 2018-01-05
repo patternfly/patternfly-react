@@ -10,7 +10,7 @@ exports[`TimedToastNotification renders properly 1`] = `
     aria-hidden="true"
     className="close close-default"
     disabled={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
@@ -31,14 +31,14 @@ exports[`TimedToastNotification renders properly 1`] = `
 exports[`ToastNotification renders properly 1`] = `
 <div
   className="alert toast-pf alert-danger alert-dismissable"
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
+  onMouseEnter={[MockFunction]}
+  onMouseLeave={[MockFunction]}
 >
   <button
     aria-hidden="true"
     className="close close-default"
     disabled={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
