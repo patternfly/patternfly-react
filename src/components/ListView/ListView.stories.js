@@ -118,6 +118,14 @@ stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
           <small>Feb 23, 2015 12:32 am</small>
         </span>
       }
+      actions={
+        <div>
+          <Button>Action 1</Button>
+          <DropdownKebab id="action2kebab" pullRight>
+            <MenuItem>Action 2</MenuItem>
+          </DropdownKebab>
+        </div>
+      }
       description={
         <span>
           The following snippet of text is rendered as <a href="">link text</a>.

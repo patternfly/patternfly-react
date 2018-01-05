@@ -20,116 +20,107 @@ exports[`ListView renders properly 1`] = `
         />
       </div>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flex": 1,
-          }
-        }
+        className="list-view-pf-checkbox"
+      >
+        <input
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="list-view-pf-actions"
+      >
+        <div>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            type="button"
+          >
+            Details
+          </button>
+        </div>
+      </div>
+      <div
+        className="list-view-pf-main-info"
       >
         <div
-          className="list-view-pf-checkbox"
+          className="list-view-pf-left"
         >
-          <input
-            type="checkbox"
+          <span
+            aria-hidden={true}
+            className="fa fa-plane list-view-pf-icon-sm"
           />
         </div>
         <div
-          className="list-view-pf-actions"
-        >
-          <div>
-            <button
-              className="btn btn-default"
-              disabled={false}
-              type="button"
-            >
-              Details
-            </button>
-          </div>
-        </div>
-        <div
-          className="list-view-pf-main-info"
+          className="list-view-pf-body"
         >
           <div
-            className="list-view-pf-left"
-          >
-            <span
-              aria-hidden={true}
-              className="fa fa-plane list-view-pf-icon-sm"
-            />
-          </div>
-          <div
-            className="list-view-pf-body"
+            className="list-view-pf-description"
           >
             <div
-              className="list-view-pf-description"
+              className="list-group-item-heading"
             >
-              <div
-                className="list-group-item-heading"
-              >
-                Item 1
-              </div>
-              <div
-                className="list-group-item-text"
-              >
-                This is Item 1 description
-              </div>
+              Item 1
             </div>
             <div
-              className="list-view-pf-additional-info"
+              className="list-group-item-text"
             >
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-flavor"
-                />
-                <strong>
-                  3
-                </strong>
-                 
-                hosts
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-cluster"
-                />
-                <strong>
-                  1
-                </strong>
-                 
-                clusters
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-container-node"
-                />
-                <strong>
-                  7
-                </strong>
-                 
-                nodes
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-image"
-                />
-                <strong>
-                  4
-                </strong>
-                 
-                images
-              </div>
+              This is Item 1 description
+            </div>
+          </div>
+          <div
+            className="list-view-pf-additional-info"
+          >
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-flavor"
+              />
+              <strong>
+                3
+              </strong>
+               
+              hosts
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-cluster"
+              />
+              <strong>
+                1
+              </strong>
+               
+              clusters
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-container-node"
+              />
+              <strong>
+                7
+              </strong>
+               
+              nodes
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-image"
+              />
+              <strong>
+                4
+              </strong>
+               
+              images
             </div>
           </div>
         </div>
@@ -164,116 +155,107 @@ exports[`ListView renders properly 1`] = `
         />
       </div>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flex": 1,
-          }
-        }
+        className="list-view-pf-checkbox"
+      >
+        <input
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="list-view-pf-actions"
+      >
+        <div>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            type="button"
+          >
+            Details
+          </button>
+        </div>
+      </div>
+      <div
+        className="list-view-pf-main-info"
       >
         <div
-          className="list-view-pf-checkbox"
+          className="list-view-pf-left"
         >
-          <input
-            type="checkbox"
+          <span
+            aria-hidden={true}
+            className="fa fa-plane list-view-pf-icon-sm"
           />
         </div>
         <div
-          className="list-view-pf-actions"
-        >
-          <div>
-            <button
-              className="btn btn-default"
-              disabled={false}
-              type="button"
-            >
-              Details
-            </button>
-          </div>
-        </div>
-        <div
-          className="list-view-pf-main-info"
+          className="list-view-pf-body"
         >
           <div
-            className="list-view-pf-left"
-          >
-            <span
-              aria-hidden={true}
-              className="fa fa-plane list-view-pf-icon-sm"
-            />
-          </div>
-          <div
-            className="list-view-pf-body"
+            className="list-view-pf-description"
           >
             <div
-              className="list-view-pf-description"
+              className="list-group-item-heading"
             >
-              <div
-                className="list-group-item-heading"
-              >
-                Item 2
-              </div>
-              <div
-                className="list-group-item-text"
-              >
-                This is Item 2 description
-              </div>
+              Item 2
             </div>
             <div
-              className="list-view-pf-additional-info"
+              className="list-group-item-text"
             >
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-flavor"
-                />
-                <strong>
-                  2
-                </strong>
-                 
-                hosts
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-cluster"
-                />
-                <strong>
-                  1
-                </strong>
-                 
-                clusters
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-container-node"
-                />
-                <strong>
-                  11
-                </strong>
-                 
-                nodes
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-image"
-                />
-                <strong>
-                  8
-                </strong>
-                 
-                images
-              </div>
+              This is Item 2 description
+            </div>
+          </div>
+          <div
+            className="list-view-pf-additional-info"
+          >
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-flavor"
+              />
+              <strong>
+                2
+              </strong>
+               
+              hosts
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-cluster"
+              />
+              <strong>
+                1
+              </strong>
+               
+              clusters
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-container-node"
+              />
+              <strong>
+                11
+              </strong>
+               
+              nodes
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-image"
+              />
+              <strong>
+                8
+              </strong>
+               
+              images
             </div>
           </div>
         </div>
@@ -308,116 +290,107 @@ exports[`ListView renders properly 1`] = `
         />
       </div>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flex": 1,
-          }
-        }
+        className="list-view-pf-checkbox"
+      >
+        <input
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="list-view-pf-actions"
+      >
+        <div>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            type="button"
+          >
+            Details
+          </button>
+        </div>
+      </div>
+      <div
+        className="list-view-pf-main-info"
       >
         <div
-          className="list-view-pf-checkbox"
+          className="list-view-pf-left"
         >
-          <input
-            type="checkbox"
+          <span
+            aria-hidden={true}
+            className="fa fa-plane list-view-pf-icon-sm"
           />
         </div>
         <div
-          className="list-view-pf-actions"
-        >
-          <div>
-            <button
-              className="btn btn-default"
-              disabled={false}
-              type="button"
-            >
-              Details
-            </button>
-          </div>
-        </div>
-        <div
-          className="list-view-pf-main-info"
+          className="list-view-pf-body"
         >
           <div
-            className="list-view-pf-left"
-          >
-            <span
-              aria-hidden={true}
-              className="fa fa-plane list-view-pf-icon-sm"
-            />
-          </div>
-          <div
-            className="list-view-pf-body"
+            className="list-view-pf-description"
           >
             <div
-              className="list-view-pf-description"
+              className="list-group-item-heading"
             >
-              <div
-                className="list-group-item-heading"
-              >
-                Item 3
-              </div>
-              <div
-                className="list-group-item-text"
-              >
-                This is Item 3 description
-              </div>
+              Item 3
             </div>
             <div
-              className="list-view-pf-additional-info"
+              className="list-group-item-text"
             >
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-flavor"
-                />
-                <strong>
-                  4
-                </strong>
-                 
-                hosts
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-cluster"
-                />
-                <strong>
-                  2
-                </strong>
-                 
-                clusters
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-container-node"
-                />
-                <strong>
-                  9
-                </strong>
-                 
-                nodes
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-image"
-                />
-                <strong>
-                  8
-                </strong>
-                 
-                images
-              </div>
+              This is Item 3 description
+            </div>
+          </div>
+          <div
+            className="list-view-pf-additional-info"
+          >
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-flavor"
+              />
+              <strong>
+                4
+              </strong>
+               
+              hosts
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-cluster"
+              />
+              <strong>
+                2
+              </strong>
+               
+              clusters
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-container-node"
+              />
+              <strong>
+                9
+              </strong>
+               
+              nodes
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-image"
+              />
+              <strong>
+                8
+              </strong>
+               
+              images
             </div>
           </div>
         </div>
@@ -452,55 +425,46 @@ exports[`ListView renders properly 1`] = `
         />
       </div>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flex": 1,
-          }
-        }
+        className="list-view-pf-checkbox"
+      >
+        <input
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="list-view-pf-actions"
+      >
+        <div>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            type="button"
+          >
+            Details
+          </button>
+        </div>
+      </div>
+      <div
+        className="list-view-pf-main-info"
       >
         <div
-          className="list-view-pf-checkbox"
+          className="list-view-pf-left"
         >
-          <input
-            type="checkbox"
+          <span
+            aria-hidden={true}
+            className="fa fa-plane list-view-pf-icon-sm"
           />
         </div>
         <div
-          className="list-view-pf-actions"
-        >
-          <div>
-            <button
-              className="btn btn-default"
-              disabled={false}
-              type="button"
-            >
-              Details
-            </button>
-          </div>
-        </div>
-        <div
-          className="list-view-pf-main-info"
+          className="list-view-pf-body"
         >
           <div
-            className="list-view-pf-left"
-          >
-            <span
-              aria-hidden={true}
-              className="fa fa-plane list-view-pf-icon-sm"
-            />
-          </div>
-          <div
-            className="list-view-pf-body"
+            className="list-view-pf-description"
           >
             <div
-              className="list-view-pf-description"
+              className="list-group-item-text"
             >
-              <div
-                className="list-group-item-text"
-              >
-                This is Item without heading
-              </div>
+              This is Item without heading
             </div>
           </div>
         </div>
@@ -535,102 +499,93 @@ exports[`ListView renders properly 1`] = `
         />
       </div>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flex": 1,
-          }
-        }
+        className="list-view-pf-checkbox"
+      >
+        <input
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="list-view-pf-actions"
+      >
+        <div>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            type="button"
+          >
+            Details
+          </button>
+        </div>
+      </div>
+      <div
+        className="list-view-pf-main-info"
       >
         <div
-          className="list-view-pf-checkbox"
+          className="list-view-pf-left"
         >
-          <input
-            type="checkbox"
+          <span
+            aria-hidden={true}
+            className="fa fa-plane list-view-pf-icon-sm"
           />
         </div>
         <div
-          className="list-view-pf-actions"
-        >
-          <div>
-            <button
-              className="btn btn-default"
-              disabled={false}
-              type="button"
-            >
-              Details
-            </button>
-          </div>
-        </div>
-        <div
-          className="list-view-pf-main-info"
+          className="list-view-pf-body"
         >
           <div
-            className="list-view-pf-left"
-          >
-            <span
-              aria-hidden={true}
-              className="fa fa-plane list-view-pf-icon-sm"
-            />
-          </div>
-          <div
-            className="list-view-pf-body"
+            className="list-view-pf-additional-info"
           >
             <div
-              className="list-view-pf-additional-info"
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
             >
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-flavor"
-                />
-                <strong>
-                  4
-                </strong>
-                 
-                hosts
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-cluster"
-                />
-                <strong>
-                  2
-                </strong>
-                 
-                clusters
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-container-node"
-                />
-                <strong>
-                  9
-                </strong>
-                 
-                nodes
-              </div>
-              <div
-                className="list-view-pf-additional-info-item"
-                onClick={[Function]}
-              >
-                <span
-                  className="pficon pficon-image"
-                />
-                <strong>
-                  8
-                </strong>
-                 
-                images
-              </div>
+              <span
+                className="pficon pficon-flavor"
+              />
+              <strong>
+                4
+              </strong>
+               
+              hosts
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-cluster"
+              />
+              <strong>
+                2
+              </strong>
+               
+              clusters
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-container-node"
+              />
+              <strong>
+                9
+              </strong>
+               
+              nodes
+            </div>
+            <div
+              className="list-view-pf-additional-info-item"
+              onClick={[Function]}
+            >
+              <span
+                className="pficon pficon-image"
+              />
+              <strong>
+                8
+              </strong>
+               
+              images
             </div>
           </div>
         </div>
@@ -665,55 +620,46 @@ exports[`ListView renders properly 1`] = `
         />
       </div>
       <div
-        style={
-          Object {
-            "display": "flex",
-            "flex": 1,
-          }
-        }
+        className="list-view-pf-checkbox"
+      >
+        <input
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="list-view-pf-actions"
+      >
+        <div>
+          <button
+            className="btn btn-default"
+            disabled={false}
+            type="button"
+          >
+            Details
+          </button>
+        </div>
+      </div>
+      <div
+        className="list-view-pf-main-info"
       >
         <div
-          className="list-view-pf-checkbox"
+          className="list-view-pf-left"
         >
-          <input
-            type="checkbox"
+          <span
+            aria-hidden={true}
+            className="fa fa-plane list-view-pf-icon-sm"
           />
         </div>
         <div
-          className="list-view-pf-actions"
-        >
-          <div>
-            <button
-              className="btn btn-default"
-              disabled={false}
-              type="button"
-            >
-              Details
-            </button>
-          </div>
-        </div>
-        <div
-          className="list-view-pf-main-info"
+          className="list-view-pf-body"
         >
           <div
-            className="list-view-pf-left"
-          >
-            <span
-              aria-hidden={true}
-              className="fa fa-plane list-view-pf-icon-sm"
-            />
-          </div>
-          <div
-            className="list-view-pf-body"
+            className="list-view-pf-description"
           >
             <div
-              className="list-view-pf-description"
+              className="list-group-item-heading"
             >
-              <div
-                className="list-group-item-heading"
-              >
-                Item without description
-              </div>
+              Item without description
             </div>
           </div>
         </div>
