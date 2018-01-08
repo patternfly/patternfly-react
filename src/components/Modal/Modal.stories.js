@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 
 import {
   MockModalManager,
@@ -15,25 +16,6 @@ import {
 
 const stories = storiesOf('Modal Overlay', module);
 
-const description = (
-  <p>
-    This component is based on React Bootstrap Modal component. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#modals">
-      React Bootstrap Docs
-    </a>{' '}
-    for complete Modal component documentation.
-  </p>
-);
-
-stories.addDecorator(
-  defaultTemplate({
-    title: 'Modal Overlay',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/forms-and-controls/modal-overlay/',
-    description: description
-  })
-);
-
 stories.add(
   'Basic example',
   withInfo({
@@ -45,7 +27,17 @@ stories.add(
         <pre>{basicExampleSource}</pre>
       </div>
     )
-  })(() => <MockModalManager />)
+  })(() => {
+    let story = <MockModalManager />;
+    return inlineTemplate({
+      title: 'Basic Example',
+      documentationLink:
+        DOCUMENTATION_URL.PATTERNFLY_ORG_FORMS + 'modal-overlay/',
+      reactBootstrapDocumentationLink:
+        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'modal/',
+      story: story
+    });
+  })
 );
 
 stories.add(
@@ -59,5 +51,15 @@ stories.add(
         <pre>{aboutExampleSource}</pre>
       </div>
     )
-  })(() => <MockAboutModalManager />)
+  })(() => {
+    let story = <MockAboutModalManager />;
+    return inlineTemplate({
+      title: 'About Modal',
+      documentationLink:
+        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'about-modal/',
+      reactBootstrapDocumentationLink:
+        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'modal/',
+      story: story
+    });
+  })
 );

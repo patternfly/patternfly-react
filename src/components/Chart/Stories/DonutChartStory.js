@@ -2,6 +2,9 @@ import React from 'react';
 import { patternfly } from '../../../common/patternfly';
 import { DonutChart } from '../index';
 
+import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../../storybook/constants';
+
 /**
  * DonutChart constants
  */
@@ -50,38 +53,47 @@ const donutRightConfigTitle = { type: 'total', secondary: 'Animals' };
  */
 
 const donutChartAddWithInfo = stories => {
-  stories.addWithInfo('Donut Charts', '', () => (
-    <div>
-      <h2>Donut Chart - Utilization</h2>
+  stories.addWithInfo('Donut Charts', '', () => {
+    let story = (
       <div>
-        <DonutChart
-          id="donunt-chart-1"
-          size={{
-            width: 210,
-            height: 210
-          }}
-          data={donutConfigData}
-          tooltip={donutConfigTooltip}
-          title={{ type: 'max' }}
-        />
-      </div>
+        <h2>Donut Chart - Utilization</h2>
+        <div>
+          <DonutChart
+            id="donunt-chart-1"
+            size={{
+              width: 210,
+              height: 210
+            }}
+            data={donutConfigData}
+            tooltip={donutConfigTooltip}
+            title={{ type: 'max' }}
+          />
+        </div>
 
-      <h2>Donut Chart - Relationship to a Whole</h2>
-      <div>
-        <DonutChart
-          id="donunt-chart-2"
-          size={{
-            width: 210,
-            height: 210
-          }}
-          data={donutRightConfigData}
-          tooltip={donutRightConfigTooltip}
-          title={donutRightConfigTitle}
-          legend={donutRightConfigLegend}
-        />
+        <h2>Donut Chart - Relationship to a Whole</h2>
+        <div>
+          <DonutChart
+            id="donunt-chart-2"
+            size={{
+              width: 210,
+              height: 210
+            }}
+            data={donutRightConfigData}
+            tooltip={donutRightConfigTooltip}
+            title={donutRightConfigTitle}
+            legend={donutRightConfigLegend}
+          />
+        </div>
       </div>
-    </div>
-  ));
+    );
+
+    return inlineTemplate({
+      title: 'Donut Charts',
+      documentationLink:
+        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION + 'donut-chart/',
+      story: story
+    });
+  });
 };
 
 export default donutChartAddWithInfo;

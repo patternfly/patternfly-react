@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
-import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Button } from '../Button';
 import { DropdownKebab } from '../DropdownKebab';
 import { MenuItem } from '../MenuItem';
@@ -14,13 +15,6 @@ import {
 
 const stories = storiesOf('ToastNotification', module);
 stories.addDecorator(withKnobs);
-stories.addDecorator(
-  defaultTemplate({
-    title: 'Toast Notification',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/communication/toast-notifications/'
-  })
-);
 
 stories.addWithInfo(
   'Toast Notification',
@@ -36,7 +30,8 @@ stories.addWithInfo(
     const dismissEnabled = boolean('Dismiss', false);
     const menuEnabled = boolean('Menu', true);
     const actionEnabled = boolean('Action', true);
-    return (
+
+    let story = (
       <div>
         <ToastNotification
           type={type}
@@ -66,6 +61,13 @@ stories.addWithInfo(
         </ToastNotification>
       </div>
     );
+
+    return inlineTemplate({
+      title: 'Toast Notification',
+      documentationLink:
+        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'toast-notifications/',
+      story: story
+    });
   }
 );
 
@@ -171,6 +173,12 @@ stories.addWithInfo(
   'Toast Notification List',
   `This is the Toast Notification List with a custom timer delay supplied.`,
   () => {
-    return <ToastNotificationStoryWrapper />;
+    let story = <ToastNotificationStoryWrapper />;
+    return inlineTemplate({
+      title: 'Toast Notification List',
+      documentationLink:
+        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'toast-notifications/',
+      story: story
+    });
   }
 );

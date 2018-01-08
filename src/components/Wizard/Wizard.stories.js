@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import { Row, Col } from 'react-bootstrap';
 import { withKnobs } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
-
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { mockWizardItems } from './__mocks__/mockWizardItems';
 
 import {
@@ -28,7 +28,7 @@ stories.addDecorator(
   defaultTemplate({
     title: 'Wizard',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/communication/wizard/#/overview'
+      DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'wizard/#/overview'
   })
 );
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Breadcrumb } from './index';
 
 const stories = storiesOf('Breadcrumb', module);
@@ -9,7 +10,7 @@ const description = (
   <p>
     This component is based on React Bootstrap Breadcrumb component. Breadcrumbs
     are used to indicate the current page's location. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#breadcrumbs">
+    <a href={DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'breadcrumb/'}>
       React Bootstrap Docs
     </a>{' '}
     for complete Breadcrumb component documentation.
@@ -20,7 +21,7 @@ stories.addDecorator(
   defaultTemplate({
     title: 'Breadcrumb',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/navigation/breadcrumbs/',
+      DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION + 'breadcrumbs/',
     description: description
   })
 );

@@ -2,25 +2,17 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Button, OverlayTrigger, Popover } from '../../index';
 
 const stories = storiesOf('Popover', module);
-const description = (
-  <p>
-    This component is based on React Bootstrap Popover component. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#popovers">
-      React Bootstrap Docs
-    </a>{' '}
-    for complete Popover component documentation.
-  </p>
-);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Popover',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#popover',
-    description: description
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#popover',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'popovers/'
   })
 );
 

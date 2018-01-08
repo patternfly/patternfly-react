@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Alert } from './index';
 
 const stories = storiesOf('Alert', module);
@@ -11,7 +12,7 @@ stories.addDecorator(
   defaultTemplate({
     title: 'Alert / Inline Notification',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/communication/inline-notifications/'
+      DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'inline-notifications/'
   })
 );
 

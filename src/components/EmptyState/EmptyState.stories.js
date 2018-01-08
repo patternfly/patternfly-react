@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Button } from '../Button';
 import { EmptyState } from './index';
 
@@ -11,7 +12,7 @@ stories.addDecorator(
   defaultTemplate({
     title: 'Empty State',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/communication/empty-state/'
+      DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'empty-state/'
   })
 );
 

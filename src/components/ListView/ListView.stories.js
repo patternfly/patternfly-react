@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Row, Col } from '../Grid';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
-
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Button } from '../Button';
 import { DropdownKebab } from '../DropdownKebab';
 import { Icon } from '../Icon';
@@ -18,7 +18,7 @@ stories.addDecorator(
   defaultTemplate({
     title: 'ListView',
     documentationLink:
-      'http://www.patternfly.org/pattern-library/content-views/list-view/'
+      DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'list-view/'
   })
 );
 

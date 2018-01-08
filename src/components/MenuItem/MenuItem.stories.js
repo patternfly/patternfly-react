@@ -2,6 +2,7 @@ import { Dropdown } from 'react-bootstrap';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { MenuItem } from './index';
 
 const stories = storiesOf('MenuItem', module);
@@ -10,7 +11,11 @@ const description = (
   <p>
     This component is based on React Bootstrap MenuItem component. This
     component represents a menu item in a dropdown. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#menu-items">
+    <a
+      href={
+        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'dropdowns/#menu-items'
+      }
+    >
       React Bootstrap Docs
     </a>{' '}
     for complete MenuItem component documentation.

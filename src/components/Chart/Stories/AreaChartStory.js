@@ -1,5 +1,7 @@
 import React from 'react';
 import { AreaChart, SingleAreaChart } from '../index';
+import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../../storybook/constants';
 
 /**
  * Story constants
@@ -27,27 +29,35 @@ const singleAreaChartData = {
  */
 
 const areaChartAddWithInfo = stories => {
-  stories.addWithInfo('Area Charts', '', () => (
-    <div>
-      <h2>Area Chart</h2>
+  stories.addWithInfo('Area Charts', '', () => {
+    let story = (
       <div>
-        <AreaChart
-          id="area-chart-1"
-          size={{ width: 600 }}
-          data={areaChartData}
-        />
-      </div>
+        <h2>Area Chart</h2>
+        <div>
+          <AreaChart
+            id="area-chart-1"
+            size={{ width: 600 }}
+            data={areaChartData}
+          />
+        </div>
 
-      <h2>Single Area Chart</h2>
-      <div>
-        <SingleAreaChart
-          id="area-chart-2"
-          size={{ width: 600 }}
-          data={singleAreaChartData}
-        />
+        <h2>Single Area Chart</h2>
+        <div>
+          <SingleAreaChart
+            id="area-chart-2"
+            size={{ width: 600 }}
+            data={singleAreaChartData}
+          />
+        </div>
       </div>
-    </div>
-  ));
+    );
+    return inlineTemplate({
+      title: 'Area Charts',
+      documentationLink:
+        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION + 'area-chart/',
+      story: story
+    });
+  });
 };
 
 export default areaChartAddWithInfo;
