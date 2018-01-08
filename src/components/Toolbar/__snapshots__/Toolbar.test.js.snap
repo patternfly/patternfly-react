@@ -435,19 +435,17 @@ exports[`Toolbar renders properly 1`] = `
           </h5>
           <p
             className="filter-pf-active-label"
-          >
-            Active Filters:
-          </p>
+          />
           <ul
             className="list-inline"
           >
             <li
               className=""
+              label="Name: John"
             >
               <span
                 className="label label-info"
               >
-                Name: John
                 <a
                   href="#"
                   onClick={[Function]}
@@ -466,11 +464,11 @@ exports[`Toolbar renders properly 1`] = `
             </li>
             <li
               className=""
+              label="Address: Westford"
             >
               <span
                 className="label label-info"
               >
-                Address: Westford
                 <a
                   href="#"
                   onClick={[Function]}

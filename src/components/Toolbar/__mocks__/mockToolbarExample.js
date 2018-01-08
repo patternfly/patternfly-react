@@ -9,15 +9,10 @@ import {
   Sort,
   Toolbar
 } from '../../../index';
+import { bindMethods } from '../../../common/helpers';
 
 import { mockFilterExampleFields } from '../../Filter/__mocks__/mockFilterExample';
 import { mockSortFields } from '../../Sort/__mocks__/mockSortExample';
-
-const bindMethods = (context, methods) => {
-  methods.forEach(method => {
-    context[method] = context[method].bind(context);
-  });
-};
 
 export class MockToolbarExample extends React.Component {
   constructor() {
@@ -304,16 +299,17 @@ export class MockToolbarExample extends React.Component {
           activeFilters.length > 0 && (
             <Toolbar.Results>
               <h5>40 Results</h5>
-              <Filter.ActiveLabel title={'Active Filters:'} />
+              <Filter.ActiveLabel>{'Active Filters:'}</Filter.ActiveLabel>
               <Filter.List>
                 {activeFilters.map((item, index) => {
                   return (
                     <Filter.Item
-                      label={item.label}
                       key={index}
                       onRemove={this.removeFilter}
                       filterData={item}
-                    />
+                    >
+                      label={item.label}
+                    </Filter.Item>
                   );
                 })}
               </Filter.List>
@@ -345,15 +341,10 @@ import {
   Sort,
   Toolbar
 } from '../../../index';
+import { bindMethods } from '../../../common/helpers';
 
 import { mockFilterExampleFields } from '../../Filter/__mocks__/mockFilterExample';
 import { mockSortFields } from '../../Sort/__mocks__/mockSortExample';
-
-const bindMethods = (context, methods) => {
-  methods.forEach(method => {
-    context[method] = context[method].bind(context);
-  });
-};
 
 export class MockToolbarExample extends React.Component {
   constructor() {
@@ -640,16 +631,17 @@ export class MockToolbarExample extends React.Component {
           activeFilters.length > 0 && (
             <Toolbar.Results>
               <h5>40 Results</h5>
-              <Filter.ActiveLabel title={'Active Filters:'} />
+              <Filter.ActiveLabel>{'Active Filters:'}</Filter.ActiveLabel>
               <Filter.List>
                 {activeFilters.map((item, index) => {
                   return (
                     <Filter.Item
-                      label={item.label}
                       key={index}
                       onRemove={this.removeFilter}
                       filterData={item}
-                    />
+                    >
+                      label={item.label}
+                    </Filter.Item>
                   );
                 })}
               </Filter.List>

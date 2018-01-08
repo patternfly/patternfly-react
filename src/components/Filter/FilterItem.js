@@ -2,13 +2,13 @@ import cx from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FilterItem = ({ className, label, onRemove, filterData, ...rest }) => {
+const FilterItem = ({ children, className, onRemove, filterData, ...rest }) => {
   const classes = cx(className);
 
   return (
     <li className={classes} {...rest}>
       <span className="label label-info">
-        {label}
+        {children}
         <a
           href="#"
           onClick={e => {
@@ -25,10 +25,10 @@ const FilterItem = ({ className, label, onRemove, filterData, ...rest }) => {
 };
 
 FilterItem.propTypes = {
+  /** Children nodes */
+  children: PropTypes.node,
   /** additional filter item classes */
   className: PropTypes.string,
-  /** Label to show for the filter item */
-  label: PropTypes.string.isRequired,
   /** callback when filter is removed  */
   onRemove: PropTypes.func,
   /** Data to pass to onRemove function */

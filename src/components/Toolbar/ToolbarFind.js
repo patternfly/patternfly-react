@@ -23,8 +23,9 @@ export class ToolbarFind extends React.Component {
   }
 
   toggleDropdownShown() {
-    const { dropdownShown } = this.state;
-    this.setState({ dropdownShown: !dropdownShown });
+    this.setState(prevState => {
+      return { dropdownShown: !prevState.dropdownShown };
+    });
   }
 
   hideDropdown() {

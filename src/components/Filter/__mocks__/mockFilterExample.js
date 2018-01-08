@@ -1,11 +1,7 @@
 import React from 'react';
 import { Filter, Toolbar } from '../../../index';
+import { bindMethods } from '../../../common/helpers';
 
-const bindMethods = (context, methods) => {
-  methods.forEach(method => {
-    context[method] = context[method].bind(context);
-  });
-};
 export const mockFilterExampleFields = [
   {
     id: 'name',
@@ -124,11 +120,20 @@ export class MockFilterExample extends React.Component {
   selectFilterType(filterType) {
     const { currentFilterType } = this.state;
     if (currentFilterType !== filterType) {
-      this.setState({ currentValue: '', currentFilterType: filterType });
-
-      if (filterType.filterType === 'complex-select') {
-        this.setState({ filterCategory: undefined, categoryValue: '' });
-      }
+      this.setState(prevState => {
+        return {
+          currentValue: '',
+          currentFilterType: filterType,
+          filterCategory:
+            filterType.filterType === 'complex-select'
+              ? undefined
+              : prevState.filterCategory,
+          categoryValue:
+            filterType.filterType === 'complex-select'
+              ? ''
+              : prevState.categoryValue
+        };
+      });
     }
   }
 
@@ -146,7 +151,7 @@ export class MockFilterExample extends React.Component {
   filterCategorySelected(category) {
     const { filterCategory } = this.state;
     if (filterCategory !== category) {
-      this.setState({ filterCategory: category, categoryValue: '' });
+      this.setState({ filterCategory: category, currentValue: '' });
     }
   }
 
@@ -207,6 +212,7 @@ export class MockFilterExample extends React.Component {
       return (
         <Filter.ValueSelector
           filterValues={currentFilterType.filterValues}
+          placeholder={currentFilterType.placeholder}
           currentValue={currentValue}
           onFilterValueSelected={this.filterValueSelected}
         />
@@ -259,16 +265,17 @@ export class MockFilterExample extends React.Component {
         {activeFilters &&
           activeFilters.length > 0 && (
             <Toolbar.Results>
-              <Filter.ActiveLabel title={'Active Filters:'} />
+              <Filter.ActiveLabel>{'Active Filters:'}</Filter.ActiveLabel>
               <Filter.List>
                 {activeFilters.map((item, index) => {
                   return (
                     <Filter.Item
-                      label={item.label}
                       key={index}
                       onRemove={this.removeFilter}
                       filterData={item}
-                    />
+                    >
+                      {item.label}
+                    </Filter.Item>
                   );
                 })}
               </Filter.List>
@@ -291,12 +298,8 @@ export class MockFilterExample extends React.Component {
 export const mockFilterExampleSource = `
 import React from 'react';
 import { Filter, Toolbar } from '../../../index';
+import { bindMethods } from '../../../common/helpers';
 
-const bindMethods = (context, methods) => {
-  methods.forEach(method => {
-    context[method] = context[method].bind(context);
-  });
-};
 export const mockFilterExampleFields = [
   {
     id: 'name',
@@ -415,11 +418,20 @@ export class MockFilterExample extends React.Component {
   selectFilterType(filterType) {
     const { currentFilterType } = this.state;
     if (currentFilterType !== filterType) {
-      this.setState({ currentValue: '', currentFilterType: filterType });
-
-      if (filterType.filterType === 'complex-select') {
-        this.setState({ filterCategory: undefined, categoryValue: '' });
-      }
+      this.setState(prevState => {
+        return {
+          currentValue: '',
+          currentFilterType: filterType,
+          filterCategory:
+            filterType.filterType === 'complex-select'
+              ? undefined
+              : prevState.filterCategory,
+          categoryValue:
+            filterType.filterType === 'complex-select'
+              ? ''
+              : prevState.categoryValue
+        };
+      });
     }
   }
 
@@ -437,7 +449,7 @@ export class MockFilterExample extends React.Component {
   filterCategorySelected(category) {
     const { filterCategory } = this.state;
     if (filterCategory !== category) {
-      this.setState({ filterCategory: category, categoryValue: '' });
+      this.setState({ filterCategory: category, currentValue: '' });
     }
   }
 
@@ -498,6 +510,7 @@ export class MockFilterExample extends React.Component {
       return (
         <Filter.ValueSelector
           filterValues={currentFilterType.filterValues}
+          placeholder={currentFilterType.placeholder}
           currentValue={currentValue}
           onFilterValueSelected={this.filterValueSelected}
         />
@@ -550,16 +563,17 @@ export class MockFilterExample extends React.Component {
         {activeFilters &&
           activeFilters.length > 0 && (
             <Toolbar.Results>
-              <Filter.ActiveLabel title={'Active Filters:'} />
+              <Filter.ActiveLabel>{'Active Filters:'}</Filter.ActiveLabel>
               <Filter.List>
                 {activeFilters.map((item, index) => {
                   return (
                     <Filter.Item
-                      label={item.label}
                       key={index}
                       onRemove={this.removeFilter}
                       filterData={item}
-                    />
+                    >
+                      {item.label}
+                    </Filter.Item>
                   );
                 })}
               </Filter.List>

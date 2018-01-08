@@ -1,11 +1,6 @@
 import React from 'react';
 import { Sort, Toolbar } from '../../../index';
-
-const bindMethods = (context, methods) => {
-  methods.forEach(method => {
-    context[method] = context[method].bind(context);
-  });
-};
+import { bindMethods } from '../../../common/helpers';
 
 export const mockSortFields = [
   {
@@ -79,10 +74,11 @@ export class MockSortExample extends React.Component {
   }
 
   toggleCurrentSortDirection() {
-    const { isSortAscending } = this.state;
-
-    this.setState({ isSortAscending: !isSortAscending });
+    this.setState(prevState => {
+      return { isSortAscending: !prevState.isSortAscending };
+    });
   }
+
   render() {
     const { currentSortType, isSortNumeric, isSortAscending } = this.state;
 
@@ -106,13 +102,9 @@ export class MockSortExample extends React.Component {
 }
 
 export const mockSortExampleSource = `
+import React from 'react';
 import { Sort, Toolbar } from '../../../index';
-
-const bindMethods = (context, methods) => {
-  methods.forEach(method => {
-    context[method] = context[method].bind(context);
-  });
-};
+import { bindMethods } from '../../../common/helpers';
 
 export const mockSortFields = [
   {
@@ -186,10 +178,11 @@ export class MockSortExample extends React.Component {
   }
 
   toggleCurrentSortDirection() {
-    const { isSortAscending } = this.state;
-
-    this.setState({ isSortAscending: !isSortAscending });
+    this.setState(prevState => {
+      return { isSortAscending: !prevState.isSortAscending };
+    });
   }
+
   render() {
     const { currentSortType, isSortNumeric, isSortAscending } = this.state;
 

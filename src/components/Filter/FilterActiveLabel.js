@@ -2,16 +2,16 @@ import cx from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FilterActiveLabel = ({ className, title, ...rest }) => {
+const FilterActiveLabel = ({ children, className, ...rest }) => {
   const classes = cx('filter-pf-active-label', className);
-  return <p className={classes}>{title}</p>;
+  return <p className={classes}>{children}</p>;
 };
 
 FilterActiveLabel.propTypes = {
+  /** Children nodes */
+  children: PropTypes.node,
   /** Additional css classes */
-  className: PropTypes.string,
-  /** Title for the list (ie. 'Active Filters:') */
-  title: PropTypes.string.isRequired
+  className: PropTypes.string
 };
 
 export default FilterActiveLabel;
