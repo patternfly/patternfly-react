@@ -4,6 +4,7 @@ export * from './components/Breadcrumb';
 export * from './components/Button';
 export * from './components/Dropdown';
 export * from './components/DropdownKebab';
+export * from './components/EmptyState';
 export * from './components/Filter';
 export * from './components/Form';
 export * from './components/Grid';
