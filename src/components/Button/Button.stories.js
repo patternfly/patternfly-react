@@ -2,52 +2,44 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, select } from '@storybook/addon-knobs';
-import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Grid, Row, Col, MenuItem } from '../../index';
 import { Button, ButtonGroup, DropdownButton, SplitButton } from './index';
 import { BUTTON_BS_STYLES } from './constants';
 
 const stories = storiesOf('Button', module);
 
-const description = (
-  <p>
-    This component is based on React Bootstrap Button component. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#buttons">
-      React Bootstrap Docs
-    </a>{' '}
-    for complete Button component documentation.
-  </p>
-);
-
 stories.addDecorator(withKnobs);
-stories.addDecorator(
-  defaultTemplate({
-    title: 'Button',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#buttons',
-    description: description
-  })
-);
 
-stories.addWithInfo('Button', '', () => (
-  <div>
-    <p>
-      <Button>Default Button</Button>{' '}
-      <Button bsStyle="primary">Primary Button</Button>{' '}
-      <Button bsStyle="danger">Danger Button</Button>{' '}
-      <Button bsStyle="link">Link Button</Button>
-    </p>
-    <p>
-      <Button bsSize="large">Large Button</Button>{' '}
-      <Button>Default Button</Button>{' '}
-      <Button bsSize="small">Small Button</Button>{' '}
-      <Button bsSize="xsmall">Extra Small Button</Button>
-    </p>
-  </div>
-));
+stories.addWithInfo('Button', '', () => {
+  let story = (
+    <div>
+      <p>
+        <Button>Default Button</Button>{' '}
+        <Button bsStyle="primary">Primary Button</Button>{' '}
+        <Button bsStyle="danger">Danger Button</Button>{' '}
+        <Button bsStyle="link">Link Button</Button>
+      </p>
+      <p>
+        <Button bsSize="large">Large Button</Button>{' '}
+        <Button>Default Button</Button>{' '}
+        <Button bsSize="small">Small Button</Button>{' '}
+        <Button bsSize="xsmall">Extra Small Button</Button>
+      </p>
+    </div>
+  );
+  return inlineTemplate({
+    title: 'Button',
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#buttons',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'buttons/',
+    story: story
+  });
+});
 
 stories.addWithInfo('ButtonGroup', () => {
-  return (
+  let story = (
     <Grid>
       <Row style={{ marginBottom: '20px' }}>
         <Col xs={12} md={3}>
@@ -141,6 +133,14 @@ stories.addWithInfo('ButtonGroup', () => {
       </Row>
     </Grid>
   );
+  return inlineTemplate({
+    title: 'ButtonGroup',
+    documentationLink:
+      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#button-groups',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'button-group/',
+    story: story
+  });
 });
 
 stories.addWithInfo('DropdownButton', '', () => {
@@ -150,7 +150,7 @@ stories.addWithInfo('DropdownButton', '', () => {
   const props = { bsStyle, title: bsStyle, id: 'dropdown-example' };
   if (bsSize) props.bsSize = bsSize;
 
-  return (
+  let story = (
     <DropdownButton {...props} onClick={action('onClick')}>
       <MenuItem eventKey="1">Action</MenuItem>
       <MenuItem eventKey="2">Another action</MenuItem>
@@ -161,6 +161,12 @@ stories.addWithInfo('DropdownButton', '', () => {
       <MenuItem eventKey="4">Separated link</MenuItem>
     </DropdownButton>
   );
+  return inlineTemplate({
+    title: 'DropdownButton',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'dropdowns/',
+    story: story
+  });
 });
 
 stories.addWithInfo('SplitButton', '', () => {
@@ -170,7 +176,7 @@ stories.addWithInfo('SplitButton', '', () => {
   const props = { bsStyle, title: bsStyle, id: 'dropdown-example' };
   if (bsSize) props.bsSize = bsSize;
 
-  return (
+  let story = (
     <SplitButton {...props} onClick={action('onClick')}>
       <MenuItem eventKey="1">Action</MenuItem>
       <MenuItem eventKey="2">Another action</MenuItem>
@@ -181,4 +187,11 @@ stories.addWithInfo('SplitButton', '', () => {
       <MenuItem eventKey="4">Separated link</MenuItem>
     </SplitButton>
   );
+
+  return inlineTemplate({
+    title: 'SplitButton',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'dropdowns/',
+    story: story
+  });
 });

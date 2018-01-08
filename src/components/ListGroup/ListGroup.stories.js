@@ -1,27 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Badge } from '../Badge';
 import { ListGroup, ListGroupItem } from './index';
 
 const stories = storiesOf('ListGroup', module);
 
-const description = (
-  <p>
-    This component is based on React Bootstrap ListGroup component. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#listgroup">
-      React Bootstrap Docs
-    </a>{' '}
-    for complete ListGroup component documentation.
-  </p>
-);
-
 stories.addDecorator(
   defaultTemplate({
     title: 'ListGroup',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#list-group',
-    description: description
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#list-group',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'list-group/'
   })
 );
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { withInfo } from '@storybook/addon-info/dist/index';
 import {
   Filter,
@@ -20,8 +21,7 @@ const stories = storiesOf('Filter', module);
 stories.addDecorator(
   defaultTemplate({
     title: 'Filter',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/forms-and-controls/filter/'
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_FORMS + 'filter/'
   })
 );
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
-
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Button } from '../Button';
 import { MenuItem } from '../MenuItem';
 import { DropdownKebab } from './index';
@@ -12,8 +12,7 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Kebab Dropdown',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#kebabs'
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#kebabs'
   })
 );
 

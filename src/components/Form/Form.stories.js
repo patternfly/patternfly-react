@@ -4,7 +4,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
-import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Icon } from '../Icon';
 import { Col, Row, Grid } from '../Grid';
 import { Button } from '../Button';
@@ -38,24 +39,24 @@ const stories = storiesOf('Forms', module);
 
 stories.addDecorator(withKnobs);
 
-const description = (
-  <p>
-    Those components are based on React Bootstrap Form components. See{' '}
-    <a href="https://react-bootstrap.github.io/components/forms/">
-      React Bootstrap Docs
-    </a>{' '}
-    for complete Form components documentation.
-  </p>
-);
+// const description = (
+//   <p>
+//     Those components are based on React Bootstrap Form components. See{' '}
+//     <a href="https://react-bootstrap.github.io/components/forms/">
+//       React Bootstrap Docs
+//     </a>{' '}
+//     for complete Form components documentation.
+//   </p>
+// );
 
-stories.addDecorator(
-  defaultTemplate({
-    title: 'Forms',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#forms',
-    description: description
-  })
-);
+// stories.addDecorator(
+//   defaultTemplate({
+//     title: 'Forms',
+//     documentationLink:
+//       'http://www.patternfly.org/pattern-library/widgets/#forms',
+//     description: description
+//   })
+// );
 
 stories.addWithInfo('Inline Form', '', () => {
   const formFieldsKnobs = getInlineFormKnobs();
@@ -77,13 +78,20 @@ stories.addWithInfo('Inline Form', '', () => {
     </Button>
   ));
 
-  return (
+  let story = (
     <Grid>
       <Form inline>
         {formFields} {formButtons}
       </Form>
     </Grid>
   );
+  return inlineTemplate({
+    title: 'Inline Form',
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
+    story: story
+  });
 });
 
 stories.addWithInfo('Horizontal Form', '', () => {
@@ -108,7 +116,7 @@ stories.addWithInfo('Horizontal Form', '', () => {
     </span>
   ));
 
-  return (
+  let story = (
     <Grid>
       <Form horizontal>
         {formFields}
@@ -127,6 +135,14 @@ stories.addWithInfo('Horizontal Form', '', () => {
       </Form>
     </Grid>
   );
+
+  return inlineTemplate({
+    title: 'Horizontal Form',
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
+    story: story
+  });
 });
 
 stories.addWithInfo('Vertical Form', '', () => {
@@ -151,7 +167,7 @@ stories.addWithInfo('Vertical Form', '', () => {
     </span>
   ));
 
-  return (
+  let story = (
     <Grid>
       <Form>
         <Row>
@@ -168,6 +184,13 @@ stories.addWithInfo('Vertical Form', '', () => {
       </Form>
     </Grid>
   );
+  return inlineTemplate({
+    title: 'Vertical Form',
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
+    story: story
+  });
 });
 
 stories.addWithInfo('Modal Form', '', () => {
@@ -197,7 +220,7 @@ stories.addWithInfo('Modal Form', '', () => {
     </div>
   );
 
-  return (
+  let story = (
     <Modal show={showModal}>
       <Modal.Header>
         <button
@@ -219,6 +242,13 @@ stories.addWithInfo('Modal Form', '', () => {
       </Modal.Footer>
     </Modal>
   );
+  return inlineTemplate({
+    title: 'Modal Form',
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
+    story: story
+  });
 });
 
 stories.addWithInfo('Supported Controls', '', () => {
@@ -228,11 +258,19 @@ stories.addWithInfo('Supported Controls', '', () => {
     VerticalFormField({ ...formField, ...formFieldsKnobs })
   );
 
-  return (
+  let story = (
     <Grid>
       <Form>{formFields}</Form>
     </Grid>
   );
+
+  return inlineTemplate({
+    title: 'Supported Controls',
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
+    story: story
+  });
 });
 
 stories.addWithInfo('Input Groups', '', () => {
@@ -242,7 +280,7 @@ stories.addWithInfo('Input Groups', '', () => {
     VerticalFormField({ ...formField, ...formFieldsKnobs })
   );
 
-  return (
+  let story = (
     <Grid>
       <Form>
         <Row>
@@ -251,4 +289,11 @@ stories.addWithInfo('Input Groups', '', () => {
       </Form>
     </Grid>
   );
+  return inlineTemplate({
+    title: 'Input Groups',
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
+    reactBootstrapDocumentationLink:
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
+    story: story
+  });
 });

@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
-
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Spinner } from './index';
 
 const stories = storiesOf('Widgets', module);
@@ -11,8 +11,7 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Spinner',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#spinner'
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#spinner'
   })
 );
 

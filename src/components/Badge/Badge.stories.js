@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Badge } from './index';
 
 const stories = storiesOf('Badges', module);
@@ -9,7 +10,7 @@ const description = (
   <p>
     This component is based on React Bootstrap Badge component. Badges easily
     highlight new or unread items. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#badges">
+    <a href={DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'badge/'}>
       React Bootstrap Docs
     </a>{' '}
     for complete Badge component documentation.
@@ -19,8 +20,7 @@ const description = (
 stories.addDecorator(
   defaultTemplate({
     title: 'Badges',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#badges',
+    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#badges',
     description: description
   })
 );

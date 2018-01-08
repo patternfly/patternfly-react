@@ -2,6 +2,9 @@ import React from 'react';
 import { patternfly } from '../../../common/patternfly';
 import { PieChart } from '../index';
 
+import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../../storybook/constants';
+
 /**
  * PieChart constants
  */
@@ -25,22 +28,30 @@ const pieChartRightConfigLegend = {
  */
 
 const pieChartAddWithInfo = stories => {
-  stories.addWithInfo('Pie Charts', '', () => (
-    <div>
-      <h2>Pie Chart - Relationship to a Whole</h2>
+  stories.addWithInfo('Pie Charts', '', () => {
+    let story = (
       <div>
-        <PieChart
-          id="pie-chart-1"
-          size={{
-            width: 251,
-            height: 161
-          }}
-          data={pieChartRightConfigData}
-          legend={pieChartRightConfigLegend}
-        />
+        <h2>Pie Chart - Relationship to a Whole</h2>
+        <div>
+          <PieChart
+            id="pie-chart-1"
+            size={{
+              width: 251,
+              height: 161
+            }}
+            data={pieChartRightConfigData}
+            legend={pieChartRightConfigLegend}
+          />
+        </div>
       </div>
-    </div>
-  ));
+    );
+    return inlineTemplate({
+      title: 'Pie Charts',
+      documentationLink:
+        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION + 'pie-chart/',
+      story: story
+    });
+  });
 };
 
 export default pieChartAddWithInfo;

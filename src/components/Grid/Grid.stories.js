@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
+import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Grid, Row, Col, Clearfix } from './index';
 
 const stories = storiesOf('Grid', module);
@@ -11,7 +12,7 @@ const description = (
   <p>
     This component is based on React Bootstrap Grid component. Grids are used to
     structure and present data. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#grid">
+    <a href={DOCUMENTATION_URL.REACT_BOOTSTRAP_LAYOUT + 'grid/'}>
       React Bootstrap Docs
     </a>{' '}
     for complete Grid component documentation.
