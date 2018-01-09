@@ -78,10 +78,14 @@ export class ToolbarFind extends React.Component {
         <span className="find-pf-nums" key="findCountText">
           {currentIndex || 0} of {totalCount}
         </span>,
-        <Button bsStyle="link" key="findPrevious">
+        <Button
+          bsStyle="link"
+          key="findPrevious"
+          onClick={this.handleFindPrevious}
+        >
           <Icon type="fa" name="angle-up" />
         </Button>,
-        <Button bsStyle="link" key="findNext">
+        <Button bsStyle="link" key="findNext" onClick={this.handleFindNext}>
           <Icon type="fa" name="angle-down" />
         </Button>
       ];

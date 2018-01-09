@@ -46,9 +46,15 @@ stories.add(
       </div>
     )
   })(() => {
-    const filterChanged = decorateAction([args => args]);
+    const logAction = decorateAction([args => args]);
     return (
-      <MockToolbarExample onFiltersChanged={filterChanged('filterChanged')} />
+      <MockToolbarExample
+        onFiltersChanged={logAction('filterChanged')}
+        onSortChanged={logAction('sortChanged')}
+        onViewChanged={logAction('viewChanged')}
+        onActionPerformed={logAction('actionPerformed')}
+        onFindAction={logAction('findAction')}
+      />
     );
   })
 );

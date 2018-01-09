@@ -152,6 +152,8 @@ export class MockToolbarExample extends React.Component {
 
   updateCurrentSortType(sortType) {
     const { currentSortType } = this.state;
+    const { onSortChanged } = this.props;
+
     if (currentSortType !== sortType) {
       this.setState({
         currentSortType: sortType,
@@ -159,16 +161,21 @@ export class MockToolbarExample extends React.Component {
         isSortAscending: true
       });
     }
+    onSortChanged && onSortChanged('sort type: ' + sortType.title);
   }
 
   toggleCurrentSortDirection() {
     const { isSortAscending } = this.state;
+    const { onSortChanged } = this.props;
 
     this.setState({ isSortAscending: !isSortAscending });
+    onSortChanged && onSortChanged('sort ascending: ' + !isSortAscending);
   }
 
   setViewType(viewType) {
+    const { onViewChanged } = this.props;
     this.setState({ currentViewType: viewType });
+    onViewChanged && onViewChanged(viewType);
   }
 
   renderInput() {
@@ -224,6 +231,8 @@ export class MockToolbarExample extends React.Component {
       currentViewType
     } = this.state;
 
+    const { onActionPerformed, onFindAction } = this.props;
+
     return (
       <Toolbar>
         <Filter>
@@ -247,14 +256,53 @@ export class MockToolbarExample extends React.Component {
           />
         </Sort>
         <div className="form-group">
-          <Button>Action 1</Button>
-          <Button>Action 2</Button>
+          <Button
+            onClick={() => {
+              onActionPerformed && onActionPerformed('Action: Action 1');
+            }}
+          >
+            Action 1
+          </Button>
+          <Button
+            onClick={() => {
+              onActionPerformed && onActionPerformed('Action: Action 2');
+            }}
+          >
+            Action 2
+          </Button>
           <DropdownKebab id="toolbarActionKebab">
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Another Action</MenuItem>
-            <MenuItem>Something Else Here</MenuItem>
+            <MenuItem
+              onClick={() => {
+                onActionPerformed && onActionPerformed('Action: Action');
+              }}
+            >
+              Action
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                onActionPerformed &&
+                  onActionPerformed('Action: Another Action');
+              }}
+            >
+              Another Action
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                onActionPerformed &&
+                  onActionPerformed('Action: Something Else Here');
+              }}
+            >
+              Something Else Here
+            </MenuItem>
             <MenuItem role="separator" className="divider" />
-            <MenuItem>Separated Link</MenuItem>
+            <MenuItem
+              onClick={() => {
+                onActionPerformed &&
+                  onActionPerformed('Action: Separated Link');
+              }}
+            >
+              Separated Link
+            </MenuItem>
           </DropdownKebab>
         </div>
         <Toolbar.RightContent>
@@ -262,6 +310,16 @@ export class MockToolbarExample extends React.Component {
             placeholder="Find By Keyword..."
             currentIndex={1}
             totalCount={3}
+            onChange={value => onFindAction && onFindAction('Find: ' + value)}
+            onEnter={value =>
+              onFindAction && onFindAction('Find again: ' + value)
+            }
+            onFindNext={value =>
+              onFindAction && onFindAction('Find Next: ' + value)
+            }
+            onFindPrevious={value =>
+              onFindAction && onFindAction('Find Previous: ' + value)
+            }
           />
           <Toolbar.ViewSelector>
             <Button
@@ -337,7 +395,11 @@ export class MockToolbarExample extends React.Component {
 }
 
 MockToolbarExample.propTypes = {
-  onFiltersChanged: PropTypes.func
+  onFiltersChanged: PropTypes.func,
+  onSortChanged: PropTypes.func,
+  onViewChanged: PropTypes.func,
+  onActionPerformed: PropTypes.func,
+  onFindAction: PropTypes.func
 };
 
 export const mockToolbarExampleSource = `
@@ -495,6 +557,8 @@ export class MockToolbarExample extends React.Component {
 
   updateCurrentSortType(sortType) {
     const { currentSortType } = this.state;
+    const { onSortChanged } = this.props;
+
     if (currentSortType !== sortType) {
       this.setState({
         currentSortType: sortType,
@@ -502,16 +566,21 @@ export class MockToolbarExample extends React.Component {
         isSortAscending: true
       });
     }
+    onSortChanged && onSortChanged('sort type: ' + sortType.title);
   }
 
   toggleCurrentSortDirection() {
     const { isSortAscending } = this.state;
+    const { onSortChanged } = this.props;
 
     this.setState({ isSortAscending: !isSortAscending });
+    onSortChanged && onSortChanged('sort ascending: ' + !isSortAscending);
   }
 
   setViewType(viewType) {
+    const { onViewChanged } = this.props;
     this.setState({ currentViewType: viewType });
+    onViewChanged && onViewChanged(viewType);
   }
 
   renderInput() {
@@ -567,6 +636,8 @@ export class MockToolbarExample extends React.Component {
       currentViewType
     } = this.state;
 
+    const { onActionPerformed, onFindAction } = this.props;
+
     return (
       <Toolbar>
         <Filter>
@@ -590,14 +661,53 @@ export class MockToolbarExample extends React.Component {
           />
         </Sort>
         <div className="form-group">
-          <Button>Action 1</Button>
-          <Button>Action 2</Button>
+          <Button
+            onClick={() => {
+              onActionPerformed && onActionPerformed('Action: Action 1');
+            }}
+          >
+            Action 1
+          </Button>
+          <Button
+            onClick={() => {
+              onActionPerformed && onActionPerformed('Action: Action 2');
+            }}
+          >
+            Action 2
+          </Button>
           <DropdownKebab id="toolbarActionKebab">
-            <MenuItem>Action</MenuItem>
-            <MenuItem>Another Action</MenuItem>
-            <MenuItem>Something Else Here</MenuItem>
+            <MenuItem
+              onClick={() => {
+                onActionPerformed && onActionPerformed('Action: Action');
+              }}
+            >
+              Action
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                onActionPerformed &&
+                  onActionPerformed('Action: Another Action');
+              }}
+            >
+              Another Action
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                onActionPerformed &&
+                  onActionPerformed('Action: Something Else Here');
+              }}
+            >
+              Something Else Here
+            </MenuItem>
             <MenuItem role="separator" className="divider" />
-            <MenuItem>Separated Link</MenuItem>
+            <MenuItem
+              onClick={() => {
+                onActionPerformed &&
+                  onActionPerformed('Action: Separated Link');
+              }}
+            >
+              Separated Link
+            </MenuItem>
           </DropdownKebab>
         </div>
         <Toolbar.RightContent>
@@ -605,6 +715,14 @@ export class MockToolbarExample extends React.Component {
             placeholder="Find By Keyword..."
             currentIndex={1}
             totalCount={3}
+            onChange={value => onFindAction && onFindAction('Find: ' + value)}
+            onEnter={value => onFindAction && onFindAction('Find again: ' + value)}
+            onFindNext={value =>
+              onFindAction && onFindAction('Find Next: ' + value)
+            }
+            onFindPrevious={value =>
+              onFindAction && onFindAction('Find Previous: ' + value)
+            }
           />
           <Toolbar.ViewSelector>
             <Button
@@ -680,6 +798,10 @@ export class MockToolbarExample extends React.Component {
 }
 
 MockToolbarExample.propTypes = {
-  onFiltersChanged: PropTypes.func
+  onFiltersChanged: PropTypes.func,
+  onSortChanged: PropTypes.func,
+  onViewChanged: PropTypes.func,
+  onActionPerformed: PropTypes.func,
+  onFindAction: PropTypes.func
 };
 `;
