@@ -446,6 +446,7 @@ exports[`Filter input renders properly 1`] = `
       </div>
       <input
         className="form-control"
+        id="filterInput"
         placeholder="Filter by Name"
         type="text"
         value=""
@@ -570,6 +571,7 @@ exports[`Filter renders properly in a Toolbar 1`] = `
               </div>
               <input
                 className="form-control"
+                id="filterInput"
                 placeholder="Filter by Name"
                 type="text"
                 value=""

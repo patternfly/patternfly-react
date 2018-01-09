@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { decorateAction } from '@storybook/addon-actions';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import {
   Toolbar,
@@ -44,5 +45,10 @@ stories.add(
         <pre>{mockToolbarExampleSource}</pre>
       </div>
     )
-  })(() => <MockToolbarExample />)
+  })(() => {
+    const filterChanged = decorateAction([args => args]);
+    return (
+      <MockToolbarExample onFiltersChanged={filterChanged('filterChanged')} />
+    );
+  })
 );

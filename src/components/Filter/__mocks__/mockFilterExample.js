@@ -1,5 +1,5 @@
 import React from 'react';
-import { Filter, Toolbar } from '../../../index';
+import { Filter, FormControl, Toolbar } from '../../../index';
 import { bindMethods } from '../../../common/helpers';
 
 export const mockFilterExampleFields = [
@@ -235,8 +235,7 @@ export class MockFilterExample extends React.Component {
       );
     } else {
       return (
-        <input
-          className="form-control"
+        <FormControl
           type={currentFilterType.filterType}
           value={currentValue}
           placeholder={currentFilterType.placeholder}
@@ -297,7 +296,7 @@ export class MockFilterExample extends React.Component {
 
 export const mockFilterExampleSource = `
 import React from 'react';
-import { Filter, Toolbar } from '../../../index';
+import { Filter, FormControl, Toolbar } from '../../../index';
 import { bindMethods } from '../../../common/helpers';
 
 export const mockFilterExampleFields = [
@@ -533,8 +532,7 @@ export class MockFilterExample extends React.Component {
       );
     } else {
       return (
-        <input
-          className="form-control"
+        <FormControl
           type={currentFilterType.filterType}
           value={currentValue}
           placeholder={currentFilterType.placeholder}

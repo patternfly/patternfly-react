@@ -4,6 +4,7 @@ import {
   Button,
   DropdownKebab,
   Filter,
+  FormControl,
   Icon,
   MenuItem,
   Sort,
@@ -21,9 +22,9 @@ test('Toolbar renders properly', () => {
           filterTypes={mockFilterExampleFields}
           currentFilterType={mockFilterExampleFields[0]}
         />
-        <input
-          className="form-control"
+        <FormControl
           type={mockFilterExampleFields[0].filterType}
+          id="filterInput"
           placeholder="Filter by Name"
         />
       </Filter>

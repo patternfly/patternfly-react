@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Filter, Toolbar } from '../../index';
+import { Filter, FormControl, Toolbar } from '../../index';
 import { mockFilterExampleFields } from './__mocks__/mockFilterExample';
 
 test('Filter input renders properly', () => {
@@ -10,9 +10,9 @@ test('Filter input renders properly', () => {
         filterTypes={mockFilterExampleFields}
         currentFilterType={mockFilterExampleFields[0]}
       />
-      <input
-        className="form-control"
+      <FormControl
         type={mockFilterExampleFields[0].filterType}
+        id="filterInput"
         value=""
         placeholder="Filter by Name"
       />
@@ -78,9 +78,9 @@ test('Filter renders properly in a Toolbar', () => {
           filterTypes={mockFilterExampleFields}
           currentFilterType={mockFilterExampleFields[0]}
         />
-        <input
-          className="form-control"
+        <FormControl
           type={mockFilterExampleFields[0].filterType}
+          id="filterInput"
           value=""
           placeholder="Filter by Name"
         />

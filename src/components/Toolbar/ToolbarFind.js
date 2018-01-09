@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Button, Icon } from '../../index';
+import { Button, Icon, FormControl } from '../../index';
 import { bindMethods } from '../../common/helpers';
 
 export class ToolbarFind extends React.Component {
@@ -75,13 +75,13 @@ export class ToolbarFind extends React.Component {
 
     if (currentValue && currentValue !== '') {
       return [
-        <span className="find-pf-nums">
+        <span className="find-pf-nums" key="findCountText">
           {currentIndex || 0} of {totalCount}
         </span>,
-        <Button bsStyle="link">
+        <Button bsStyle="link" key="findPrevious">
           <Icon type="fa" name="angle-up" />
         </Button>,
-        <Button bsStyle="link">
+        <Button bsStyle="link" key="findNext">
           <Icon type="fa" name="angle-down" />
         </Button>
       ];
@@ -110,9 +110,8 @@ export class ToolbarFind extends React.Component {
           <Icon type="fa" name="search" />
         </Button>
         <div className={dropdownClasses}>
-          <input
+          <FormControl
             type="text"
-            className="form-control"
             id="find"
             value={currentValue}
             placeholder={placeholder}

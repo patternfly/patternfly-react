@@ -4,7 +4,11 @@ import cx from 'classnames';
 
 const ToolbarViewSelector = ({ children, className, ...rest }) => {
   const classes = cx('form-group toolbar-pf-view-selector', className);
-  return <div className={classes}>{children}</div>;
+  return (
+    <div className={classes} {...rest}>
+      {children}
+    </div>
+  );
 };
 
 ToolbarViewSelector.propTypes = {

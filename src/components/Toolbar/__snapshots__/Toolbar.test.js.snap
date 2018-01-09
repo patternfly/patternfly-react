@@ -115,6 +115,7 @@ exports[`Toolbar renders properly 1`] = `
               </div>
               <input
                 className="form-control"
+                id="filterInput"
                 placeholder="Filter by Name"
                 type="text"
               />

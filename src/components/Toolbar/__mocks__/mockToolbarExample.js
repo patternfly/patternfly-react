@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Button,
   DropdownKebab,
   Filter,
+  FormControl,
   Icon,
   MenuItem,
   Sort,
@@ -43,6 +45,7 @@ export class MockToolbarExample extends React.Component {
   }
 
   filterAdded = (field, value) => {
+    const { onFiltersChanged } = this.props;
     let filterText = '';
     if (field.title) {
       filterText = field.title;
@@ -64,6 +67,7 @@ export class MockToolbarExample extends React.Component {
 
     let activeFilters = [...this.state.activeFilters, { label: filterText }];
     this.setState({ activeFilters: activeFilters });
+    onFiltersChanged && onFiltersChanged('Filter Added: ' + filterText);
   };
 
   selectFilterType(filterType) {
@@ -126,6 +130,7 @@ export class MockToolbarExample extends React.Component {
   }
 
   removeFilter(filter) {
+    const { onFiltersChanged } = this.props;
     const { activeFilters } = this.state;
 
     let index = activeFilters.indexOf(filter);
@@ -136,10 +141,13 @@ export class MockToolbarExample extends React.Component {
       ];
       this.setState({ activeFilters: updated });
     }
+    onFiltersChanged && onFiltersChanged('Filter Removed: ' + filter.label);
   }
 
   clearFilters() {
+    const { onFiltersChanged } = this.props;
     this.setState({ activeFilters: [] });
+    onFiltersChanged && onFiltersChanged('Filters cleared.');
   }
 
   updateCurrentSortType(sortType) {
@@ -195,8 +203,7 @@ export class MockToolbarExample extends React.Component {
       );
     } else {
       return (
-        <input
-          className="form-control"
+        <FormControl
           type={currentFilterType.filterType}
           value={currentValue}
           placeholder={currentFilterType.placeholder}
@@ -328,14 +335,20 @@ export class MockToolbarExample extends React.Component {
     );
   }
 }
+
+MockToolbarExample.propTypes = {
+  onFiltersChanged: PropTypes.func
+};
 
 export const mockToolbarExampleSource = `
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Button,
   DropdownKebab,
   Filter,
+  FormControl,
   Icon,
   MenuItem,
   Sort,
@@ -375,6 +388,7 @@ export class MockToolbarExample extends React.Component {
   }
 
   filterAdded = (field, value) => {
+    const { onFiltersChanged } = this.props;
     let filterText = '';
     if (field.title) {
       filterText = field.title;
@@ -396,6 +410,7 @@ export class MockToolbarExample extends React.Component {
 
     let activeFilters = [...this.state.activeFilters, { label: filterText }];
     this.setState({ activeFilters: activeFilters });
+    onFiltersChanged && onFiltersChanged('Filter Added: ' + filterText);
   };
 
   selectFilterType(filterType) {
@@ -458,6 +473,7 @@ export class MockToolbarExample extends React.Component {
   }
 
   removeFilter(filter) {
+    const { onFiltersChanged } = this.props;
     const { activeFilters } = this.state;
 
     let index = activeFilters.indexOf(filter);
@@ -468,10 +484,13 @@ export class MockToolbarExample extends React.Component {
       ];
       this.setState({ activeFilters: updated });
     }
+    onFiltersChanged && onFiltersChanged('Filter Removed: ' + filter.label);
   }
 
   clearFilters() {
+    const { onFiltersChanged } = this.props;
     this.setState({ activeFilters: [] });
+    onFiltersChanged && onFiltersChanged('Filters cleared.');
   }
 
   updateCurrentSortType(sortType) {
@@ -527,8 +546,7 @@ export class MockToolbarExample extends React.Component {
       );
     } else {
       return (
-        <input
-          className="form-control"
+        <FormControl
           type={currentFilterType.filterType}
           value={currentValue}
           placeholder={currentFilterType.placeholder}
@@ -660,4 +678,8 @@ export class MockToolbarExample extends React.Component {
     );
   }
 }
+
+MockToolbarExample.propTypes = {
+  onFiltersChanged: PropTypes.func
+};
 `;

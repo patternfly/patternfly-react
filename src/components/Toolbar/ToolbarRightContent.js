@@ -4,7 +4,11 @@ import cx from 'classnames';
 
 const ToolbarRightContent = ({ children, className, ...rest }) => {
   const classes = cx('toolbar-pf-action-right', className);
-  return <div className={classes}>{children}</div>;
+  return (
+    <div className={classes} {...rest}>
+      {children}
+    </div>
+  );
 };
 
 ToolbarRightContent.propTypes = {
