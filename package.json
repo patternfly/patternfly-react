@@ -66,8 +66,9 @@
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",
-    "semantic-release": "^11.0.2",
-    "style-loader": "^0.19.1"
+    "semantic-release": "^12.2.0",
+    "style-loader": "^0.19.1",
+    "travis-deploy-once": "^4.3.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.0",
@@ -96,7 +97,8 @@
     "storybook:run": "start-storybook -c storybook -p 6006",
     "storybook:build": "build-storybook -c storybook -o .out",
     "storybook:deploy": "storybook-to-ghpages '--script=storybook:build'",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "jest": {
     "setupFiles": [
