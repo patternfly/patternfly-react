@@ -1,11 +1,7 @@
 import React from 'react';
-import { Grid, Col, Row, Filter } from '../../../index';
+import { Filter, FormControl, Toolbar } from '../../../index';
+import { bindMethods } from '../../../common/helpers';
 
-const bindMethods = (context, methods) => {
-  methods.forEach(method => {
-    context[method] = context[method].bind(context);
-  });
-};
 export const mockFilterExampleFields = [
   {
     id: 'name',
@@ -85,13 +81,15 @@ export class MockFilterExample extends React.Component {
       'selectFilterType',
       'filterValueSelected',
       'filterCategorySelected',
-      'categoryValueSelected'
+      'categoryValueSelected',
+      'removeFilter',
+      'clearFilters'
     ]);
 
     this.state = {
       currentFilterType: mockFilterExampleFields[0],
-      currentValue: '',
-      filtersText: ''
+      activeFilters: [],
+      currentValue: ''
     };
   }
 
@@ -114,18 +112,28 @@ export class MockFilterExample extends React.Component {
     } else {
       filterText += value;
     }
-    filterText += '\n';
-    this.setState({ filtersText: this.state.filtersText + filterText });
+
+    let activeFilters = [...this.state.activeFilters, { label: filterText }];
+    this.setState({ activeFilters: activeFilters });
   };
 
   selectFilterType(filterType) {
     const { currentFilterType } = this.state;
     if (currentFilterType !== filterType) {
-      this.setState({ currentValue: '', currentFilterType: filterType });
-
-      if (filterType.filterType === 'complex-select') {
-        this.setState({ filterCategory: undefined, categoryValue: '' });
-      }
+      this.setState(prevState => {
+        return {
+          currentValue: '',
+          currentFilterType: filterType,
+          filterCategory:
+            filterType.filterType === 'complex-select'
+              ? undefined
+              : prevState.filterCategory,
+          categoryValue:
+            filterType.filterType === 'complex-select'
+              ? ''
+              : prevState.categoryValue
+        };
+      });
     }
   }
 
@@ -143,7 +151,7 @@ export class MockFilterExample extends React.Component {
   filterCategorySelected(category) {
     const { filterCategory } = this.state;
     if (filterCategory !== category) {
-      this.setState({ filterCategory: category, categoryValue: '' });
+      this.setState({ filterCategory: category, currentValue: '' });
     }
   }
 
@@ -177,6 +185,23 @@ export class MockFilterExample extends React.Component {
     }
   }
 
+  removeFilter(filter) {
+    const { activeFilters } = this.state;
+
+    let index = activeFilters.indexOf(filter);
+    if (index > -1) {
+      let updated = [
+        ...activeFilters.slice(0, index),
+        ...activeFilters.slice(index + 1)
+      ];
+      this.setState({ activeFilters: updated });
+    }
+  }
+
+  clearFilters() {
+    this.setState({ activeFilters: [] });
+  }
+
   renderInput() {
     const { currentFilterType, currentValue, filterCategory } = this.state;
     if (!currentFilterType) {
@@ -187,6 +212,7 @@ export class MockFilterExample extends React.Component {
       return (
         <Filter.ValueSelector
           filterValues={currentFilterType.filterValues}
+          placeholder={currentFilterType.placeholder}
           currentValue={currentValue}
           onFilterValueSelected={this.filterValueSelected}
         />
@@ -209,8 +235,7 @@ export class MockFilterExample extends React.Component {
       );
     } else {
       return (
-        <input
-          className="form-control"
+        <FormControl
           type={currentFilterType.filterType}
           value={currentValue}
           placeholder={currentFilterType.placeholder}
@@ -222,51 +247,58 @@ export class MockFilterExample extends React.Component {
   }
 
   render() {
-    const { currentFilterType } = this.state;
+    const { currentFilterType, activeFilters } = this.state;
 
     return (
-      <Grid fluid>
-        <Row>
-          <Col xs={12} sm={4}>
-            <Filter>
-              <Filter.TypeSelector
-                filterTypes={mockFilterExampleFields}
-                currentFilterType={currentFilterType}
-                onFilterTypeSelected={this.selectFilterType}
-              />
-              {this.renderInput()}
-            </Filter>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={12}>
-            <hr />
-          </Col>
-          <Col sm={12}>
-            <label className="events-label pull-left">Current Filters: </label>
-          </Col>
-          <Col sm={12}>
-            <textarea
-              rows="5"
-              style={{ width: '100%' }}
-              value={this.state.filtersText}
+      <div>
+        <div style={{ width: 300 }}>
+          <Filter>
+            <Filter.TypeSelector
+              filterTypes={mockFilterExampleFields}
+              currentFilterType={currentFilterType}
+              onFilterTypeSelected={this.selectFilterType}
             />
-          </Col>
-        </Row>
-      </Grid>
+            {this.renderInput()}
+          </Filter>
+        </div>
+        {activeFilters &&
+          activeFilters.length > 0 && (
+            <Toolbar.Results>
+              <Filter.ActiveLabel>{'Active Filters:'}</Filter.ActiveLabel>
+              <Filter.List>
+                {activeFilters.map((item, index) => {
+                  return (
+                    <Filter.Item
+                      key={index}
+                      onRemove={this.removeFilter}
+                      filterData={item}
+                    >
+                      {item.label}
+                    </Filter.Item>
+                  );
+                })}
+              </Filter.List>
+              <a
+                href="#"
+                onClick={e => {
+                  e.preventDefault();
+                  this.clearFilters();
+                }}
+              >
+                Clear All Filters
+              </a>
+            </Toolbar.Results>
+          )}
+      </div>
     );
   }
 }
 
 export const mockFilterExampleSource = `
 import React from 'react';
-import { Grid, Col, Row, Filter } from '../../../index';
+import { Filter, FormControl, Toolbar } from '../../../index';
+import { bindMethods } from '../../../common/helpers';
 
-const bindMethods = (context, methods) => {
-  methods.forEach(method => {
-    context[method] = context[method].bind(context);
-  });
-};
 export const mockFilterExampleFields = [
   {
     id: 'name',
@@ -346,13 +378,15 @@ export class MockFilterExample extends React.Component {
       'selectFilterType',
       'filterValueSelected',
       'filterCategorySelected',
-      'categoryValueSelected'
+      'categoryValueSelected',
+      'removeFilter',
+      'clearFilters'
     ]);
 
     this.state = {
       currentFilterType: mockFilterExampleFields[0],
-      currentValue: '',
-      filtersText: ''
+      activeFilters: [],
+      currentValue: ''
     };
   }
 
@@ -375,18 +409,28 @@ export class MockFilterExample extends React.Component {
     } else {
       filterText += value;
     }
-    filterText += '\\n';
-    this.setState({ filtersText: this.state.filtersText + filterText });
+
+    let activeFilters = [...this.state.activeFilters, { label: filterText }];
+    this.setState({ activeFilters: activeFilters });
   };
 
   selectFilterType(filterType) {
     const { currentFilterType } = this.state;
     if (currentFilterType !== filterType) {
-      this.setState({ currentValue: '', currentFilterType: filterType });
-
-      if (filterType.filterType === 'complex-select') {
-        this.setState({ filterCategory: undefined, categoryValue: '' });
-      }
+      this.setState(prevState => {
+        return {
+          currentValue: '',
+          currentFilterType: filterType,
+          filterCategory:
+            filterType.filterType === 'complex-select'
+              ? undefined
+              : prevState.filterCategory,
+          categoryValue:
+            filterType.filterType === 'complex-select'
+              ? ''
+              : prevState.categoryValue
+        };
+      });
     }
   }
 
@@ -404,7 +448,7 @@ export class MockFilterExample extends React.Component {
   filterCategorySelected(category) {
     const { filterCategory } = this.state;
     if (filterCategory !== category) {
-      this.setState({ filterCategory: category, categoryValue: '' });
+      this.setState({ filterCategory: category, currentValue: '' });
     }
   }
 
@@ -438,6 +482,23 @@ export class MockFilterExample extends React.Component {
     }
   }
 
+  removeFilter(filter) {
+    const { activeFilters } = this.state;
+
+    let index = activeFilters.indexOf(filter);
+    if (index > -1) {
+      let updated = [
+        ...activeFilters.slice(0, index),
+        ...activeFilters.slice(index + 1)
+      ];
+      this.setState({ activeFilters: updated });
+    }
+  }
+
+  clearFilters() {
+    this.setState({ activeFilters: [] });
+  }
+
   renderInput() {
     const { currentFilterType, currentValue, filterCategory } = this.state;
     if (!currentFilterType) {
@@ -448,6 +509,7 @@ export class MockFilterExample extends React.Component {
       return (
         <Filter.ValueSelector
           filterValues={currentFilterType.filterValues}
+          placeholder={currentFilterType.placeholder}
           currentValue={currentValue}
           onFilterValueSelected={this.filterValueSelected}
         />
@@ -470,8 +532,7 @@ export class MockFilterExample extends React.Component {
       );
     } else {
       return (
-        <input
-          className="form-control"
+        <FormControl
           type={currentFilterType.filterType}
           value={currentValue}
           placeholder={currentFilterType.placeholder}
@@ -483,38 +544,49 @@ export class MockFilterExample extends React.Component {
   }
 
   render() {
-    const { currentFilterType } = this.state;
+    const { currentFilterType, activeFilters } = this.state;
 
     return (
-      <Grid fluid>
-        <Row>
-          <Col xs={12} sm={4}>
-            <Filter>
-              <Filter.TypeSelector
-                filterTypes={mockFilterExampleFields}
-                currentFilterType={currentFilterType}
-                onFilterTypeSelected={this.selectFilterType}
-              />
-              {this.renderInput()}
-            </Filter>
-          </Col>
-        </Row>
-        <Row>
-          <Col sm={12}>
-            <hr />
-          </Col>
-          <Col sm={12}>
-            <label className="events-label pull-left">Current Filters: </label>
-          </Col>
-          <Col sm={12}>
-            <textarea
-              rows="5"
-              style={{ width: '100%' }}
-              value={this.state.filtersText}
+      <div>
+        <div style={{ width: 300 }}>
+          <Filter>
+            <Filter.TypeSelector
+              filterTypes={mockFilterExampleFields}
+              currentFilterType={currentFilterType}
+              onFilterTypeSelected={this.selectFilterType}
             />
-          </Col>
-        </Row>
-      </Grid>
+            {this.renderInput()}
+          </Filter>
+        </div>
+        {activeFilters &&
+          activeFilters.length > 0 && (
+            <Toolbar.Results>
+              <Filter.ActiveLabel>{'Active Filters:'}</Filter.ActiveLabel>
+              <Filter.List>
+                {activeFilters.map((item, index) => {
+                  return (
+                    <Filter.Item
+                      key={index}
+                      onRemove={this.removeFilter}
+                      filterData={item}
+                    >
+                      {item.label}
+                    </Filter.Item>
+                  );
+                })}
+              </Filter.List>
+              <a
+                href="#"
+                onClick={e => {
+                  e.preventDefault();
+                  this.clearFilters();
+                }}
+              >
+                Clear All Filters
+              </a>
+            </Toolbar.Results>
+          )}
+      </div>
     );
   }
 }
