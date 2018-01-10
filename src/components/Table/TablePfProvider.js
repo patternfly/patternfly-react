@@ -22,6 +22,10 @@ const TablePfProvider = ({
   const tableCell = cellProps => {
     return cellProps.children;
   };
+  let mergedComponents = Object.assign(
+    { header: { cell: headerCell }, body: { cell: tableCell } },
+    components
+  );
   const classes = cx(
     {
       table: true,
@@ -33,16 +37,17 @@ const TablePfProvider = ({
     },
     className
   );
+  let attributes = {};
+  if (dataTable) {
+    attributes.role = 'grid';
+  }
+
   return (
     <Table.Provider
       className={classes}
-      components={
-        components || {
-          header: { cell: headerCell },
-          body: { cell: tableCell }
-        }
-      }
+      components={mergedComponents}
       {...props}
+      {...attributes}
     >
       {children}
     </Table.Provider>

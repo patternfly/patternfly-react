@@ -215,15 +215,15 @@ export class MockSortableTable extends React.Component {
         sortingColumns[column.property] &&
         sortingColumns[column.property].direction;
       return (
-        <Table.Heading sort sortDirection={sortDirection} {...cellProps}>
+        <Table.Heading
+          sort
+          sortDirection={sortDirection}
+          aria-label={column.header.label}
+          {...cellProps}
+        >
           {column.header.label}
         </Table.Heading>
       );
-    };
-
-    const customTableCell = cellProps => {
-      // just return the cell formatters `td` content and remove the default cell wrapper
-      return cellProps.children;
     };
 
     return (
@@ -235,12 +235,19 @@ export class MockSortableTable extends React.Component {
           dataTable
           columns={columns}
           components={{
-            header: { cell: customHeaderCell },
-            body: { cell: customTableCell }
+            header: { cell: customHeaderCell }
           }}
         >
           <Table.Header headerRows={resolve.headerRows({ columns })} />
-          <Table.Body rows={sortedRows} rowKey="id" />
+          <Table.Body
+            rows={sortedRows}
+            rowKey="id"
+            onRow={() => {
+              return {
+                role: 'row'
+              };
+            }}
+          />
         </Table.PfProvider>
       </div>
     );

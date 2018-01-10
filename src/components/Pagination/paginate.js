@@ -2,7 +2,7 @@
  * Client Side Pagination helper which returns amountOfPages, itemCount,
  * itemsStart, itemsEnd, and paginated rows
  */
-export default function paginate({ page, perPage, perPageOptions }) {
+export default function paginate({ page, perPage }) {
   return (rows = []) => {
     // adapt to zero indexed logic
     const p = page - 1 || 0;

@@ -1,10 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import orderBy from 'lodash.orderby';
+import cx from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { bindMethods } from '../../../common/helpers';
 import { defaultSortingOrder } from '../index';
 import { Table } from '../../Table';
+import { ControlLabel } from '../../Form';
 import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
@@ -48,9 +51,76 @@ export class MockPaginationTable extends React.Component {
       strategy: sort.strategies.byProperty
     });
 
+    // sortable header cell custom formatter
+    const sortableHeaderCell = ({ column, cellProps }) => {
+      const { sortingColumns } = this.state;
+      const sortDirection =
+        sortingColumns[column.property] &&
+        sortingColumns[column.property].direction;
+      return (
+        <Table.Heading
+          sort
+          sortDirection={sortDirection}
+          aria-label={column.header.label}
+          {...cellProps}
+        >
+          {column.header.label}
+        </Table.Heading>
+      );
+    };
+
+    // selection header cell custom formatter
+    const selectionHeaderCell = ({ column, cellProps }) => {
+      const currentRows = this.currentRows().rows;
+      const unselectedRows = currentRows.filter(r => !r.selected).length > 0;
+      return (
+        <Table.SelectionHeading aria-label={column.header.label} {...cellProps}>
+          <ControlLabel srOnly htmlFor="selectAll">
+            Select all rows
+          </ControlLabel>
+          <input
+            type="checkbox"
+            id="selectAll"
+            checked={!unselectedRows}
+            onChange={this.onSelectAllRows}
+          />
+        </Table.SelectionHeading>
+      );
+    };
+
+    // action header cell custom formatter
+    const actionHeaderCell = ({ column, cellProps }) => {
+      return (
+        <Table.Heading aria-label={column.header.label} {...cellProps}>
+          {column.header.label}
+        </Table.Heading>
+      );
+    };
+
     // cell formatter
     const cellFormat = value => {
       return <Table.Cell>{value}</Table.Cell>;
+    };
+
+    // selection cell formatter
+    const selectionCellFormat = (value, { rowData, rowIndex }) => {
+      const id = `select${rowIndex}`;
+      const label = `Select row ${rowIndex}`;
+      return (
+        <Table.SelectionCell>
+          <ControlLabel srOnly htmlFor={id}>
+            {label}
+          </ControlLabel>
+          <input
+            type="checkbox"
+            id={id}
+            checked={rowData.selected}
+            onChange={e => {
+              this.onSelectRow(e, rowData);
+            }}
+          />
+        </Table.SelectionCell>
+      );
     };
 
     this.state = {
@@ -61,37 +131,39 @@ export class MockPaginationTable extends React.Component {
           position: 0
         }
       },
+
+      // column definitions
       columns: [
         {
-          property: 'name',
+          property: 'select',
           header: {
-            label: 'Name',
+            label: 'Select all rows',
             props: {
               index: 0,
               rowSpan: 1,
               colSpan: 1
             },
-            transforms: [sortable],
-            formatters: [sortingFormat]
+            customFormatters: [selectionHeaderCell]
           },
           cell: {
             props: {
               index: 0
             },
-            formatters: [cellFormat]
+            formatters: [selectionCellFormat]
           }
         },
         {
-          property: 'height',
+          property: 'name',
           header: {
-            label: 'Height',
+            label: 'Name',
             props: {
               index: 1,
               rowSpan: 1,
               colSpan: 1
             },
             transforms: [sortable],
-            formatters: [sortingFormat]
+            formatters: [sortingFormat],
+            customFormatters: [sortableHeaderCell]
           },
           cell: {
             props: {
@@ -101,16 +173,17 @@ export class MockPaginationTable extends React.Component {
           }
         },
         {
-          property: 'eye_color',
+          property: 'height',
           header: {
-            label: 'Eye Color',
+            label: 'Height',
             props: {
               index: 2,
               rowSpan: 1,
               colSpan: 1
             },
             transforms: [sortable],
-            formatters: [sortingFormat]
+            formatters: [sortingFormat],
+            customFormatters: [sortableHeaderCell]
           },
           cell: {
             props: {
@@ -120,16 +193,17 @@ export class MockPaginationTable extends React.Component {
           }
         },
         {
-          property: 'gender',
+          property: 'eye_color',
           header: {
-            label: 'Gender',
+            label: 'Eye Color',
             props: {
               index: 3,
               rowSpan: 1,
               colSpan: 1
             },
             transforms: [sortable],
-            formatters: [sortingFormat]
+            formatters: [sortingFormat],
+            customFormatters: [sortableHeaderCell]
           },
           cell: {
             props: {
@@ -139,16 +213,17 @@ export class MockPaginationTable extends React.Component {
           }
         },
         {
-          property: 'birth_year',
+          property: 'gender',
           header: {
-            label: 'Birth Year',
+            label: 'Gender',
             props: {
               index: 4,
               rowSpan: 1,
               colSpan: 1
             },
             transforms: [sortable],
-            formatters: [sortingFormat]
+            formatters: [sortingFormat],
+            customFormatters: [sortableHeaderCell]
           },
           cell: {
             props: {
@@ -158,18 +233,39 @@ export class MockPaginationTable extends React.Component {
           }
         },
         {
-          property: 'actions',
+          property: 'birth_year',
           header: {
-            label: 'Actions',
+            label: 'Birth Year',
             props: {
               index: 5,
               rowSpan: 1,
-              colSpan: 2
-            }
+              colSpan: 1
+            },
+            transforms: [sortable],
+            formatters: [sortingFormat],
+            customFormatters: [sortableHeaderCell]
           },
           cell: {
             props: {
               index: 5
+            },
+            formatters: [cellFormat]
+          }
+        },
+        {
+          property: 'actions',
+          header: {
+            label: 'Actions',
+            props: {
+              index: 6,
+              rowSpan: 1,
+              colSpan: 2
+            },
+            customFormatters: [actionHeaderCell]
+          },
+          cell: {
+            props: {
+              index: 6
             },
             formatters: [
               (value, { rowData }) => {
@@ -196,7 +292,12 @@ export class MockPaginationTable extends React.Component {
           }
         }
       ],
+
+      // rows and row selection state
       rows: mockRows,
+      selectedRows: [],
+
+      // pagination default states
       pagination: {
         page: 1,
         perPage: 6,
@@ -210,7 +311,10 @@ export class MockPaginationTable extends React.Component {
       'onFirstPage',
       'onPreviousPage',
       'onNextPage',
-      'onLastPage'
+      'onLastPage',
+      'onRow',
+      'onSelectAllRows',
+      'onSelectRow'
     ]);
   }
   onPageInput(e) {
@@ -255,10 +359,71 @@ export class MockPaginationTable extends React.Component {
       this.setState({ pagination: newPaginationState });
     }
   }
-  render() {
-    const { rows, sortingColumns, columns, pagination } = this.state;
+  onSelectRow(event, row) {
+    const { onRowsLogger } = this.props;
+    const { rows, selectedRows } = this.state;
+    const selectedRowIndex = rows.findIndex(r => r.id === row.id);
+    if (selectedRowIndex > -1) {
+      let updatedSelectedRows, updatedRow;
+      if (row.selected) {
+        updatedSelectedRows = selectedRows.filter(r => !(r === row.id));
+        updatedRow = this.deselectRow(row);
+      } else {
+        selectedRows.push(row.id);
+        updatedSelectedRows = selectedRows;
+        updatedRow = this.selectRow(row);
+      }
+      rows[selectedRowIndex] = updatedRow;
+      this.setState({
+        rows: rows,
+        selectedRows: updatedSelectedRows
+      });
+      onRowsLogger(rows.filter(r => r.selected));
+    }
+  }
+  onSelectAllRows(event) {
+    const { onRowsLogger } = this.props;
+    const { rows, selectedRows } = this.state;
+    const checked = event.target.checked;
+    const currentRows = this.currentRows().rows;
 
-    const sortedPaginatedRows = compose(
+    if (checked) {
+      const updatedSelections = [
+        ...new Set([...currentRows.map(r => r.id), ...selectedRows])
+      ];
+      const updatedRows = rows.map(r => {
+        return updatedSelections.indexOf(r.id) > -1 ? this.selectRow(r) : r;
+      });
+      this.setState({
+        // important: you must update `rows` to force a re-render and trigger `onRow` hook
+        rows: updatedRows,
+        selectedRows: updatedSelections
+      });
+      onRowsLogger(updatedRows.filter(r => r.selected));
+    } else {
+      const ids = currentRows.map(r => r.id);
+      const updatedSelections = selectedRows.filter(r => {
+        return !(ids.indexOf(r) > -1);
+      });
+      const updatedRows = rows.map(r => {
+        return updatedSelections.indexOf(r.id) > -1 ? r : this.deselectRow(r);
+      });
+      this.setState({
+        rows: updatedRows,
+        selectedRows: updatedSelections
+      });
+      onRowsLogger(updatedRows.filter(r => r.selected));
+    }
+  }
+  selectRow(row) {
+    return Object.assign({}, row, { selected: true });
+  }
+  deselectRow(row) {
+    return Object.assign({}, row, { selected: false });
+  }
+  currentRows() {
+    const { rows, sortingColumns, columns, pagination } = this.state;
+    return compose(
       paginate(pagination),
       sort.sorter({
         columns: columns,
@@ -267,22 +432,29 @@ export class MockPaginationTable extends React.Component {
         strategy: sort.strategies.byProperty
       })
     )(rows);
+  }
+  onRow(row, { rowIndex }) {
+    const selected = this.state.selectedRows.indexOf(row.id) > -1;
+    return {
+      className: cx({ selected: selected }),
+      role: 'row'
+    };
+  }
+  render() {
+    const { columns, pagination } = this.state;
+    const sortedPaginatedRows = this.currentRows();
 
     const customHeaderCell = cellProps => {
       const { index } = cellProps;
       const column = columns[index];
-      const sortDirection =
-        sortingColumns[column.property] &&
-        sortingColumns[column.property].direction;
-      return (
-        <Table.Heading sort sortDirection={sortDirection} {...cellProps}>
-          {column.header.label}
-        </Table.Heading>
-      );
-    };
+      const customFormatters = column.header.customFormatters;
 
-    const customTableCell = cellProps => {
-      return cellProps.children;
+      return customFormatters.reduce(
+        (params, formatter) => ({
+          value: formatter(params)
+        }),
+        { column, cellProps }
+      ).value;
     };
 
     return (
@@ -294,12 +466,15 @@ export class MockPaginationTable extends React.Component {
           dataTable
           columns={columns}
           components={{
-            header: { cell: customHeaderCell },
-            body: { cell: customTableCell }
+            header: { cell: customHeaderCell }
           }}
         >
           <Table.Header headerRows={resolve.headerRows({ columns })} />
-          <Table.Body rows={sortedPaginatedRows.rows} rowKey="id" />
+          <Table.Body
+            rows={sortedPaginatedRows.rows}
+            rowKey="id"
+            onRow={this.onRow}
+          />
         </Table.PfProvider>
         <Paginator
           className="content-view-pf-pagination table-view-pf-pagination clearfix"
@@ -319,3 +494,6 @@ export class MockPaginationTable extends React.Component {
     );
   }
 }
+MockPaginationTable.propTypes = {
+  onRowsLogger: PropTypes.func
+};

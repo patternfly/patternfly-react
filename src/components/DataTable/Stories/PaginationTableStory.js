@@ -1,5 +1,6 @@
 import React from 'react';
 import { withInfo } from '@storybook/addon-info';
+import { decorateAction } from '@storybook/addon-actions';
 import { MockPaginationTable } from '../__mocks__/mockPaginationTable';
 
 /**
@@ -13,7 +14,10 @@ const paginationTableAddWithInfo = stories => {
       source: false,
       propTablesExclude: [MockPaginationTable],
       text: <div />
-    })(() => <MockPaginationTable />)
+    })(() => {
+      const logAction = decorateAction([args => args]);
+      return <MockPaginationTable onRowsLogger={logAction('onRowsLogger')} />;
+    })
   );
 };
 
