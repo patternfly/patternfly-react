@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withContext } from 'recompose';
-import { Grid, Col, Row, ToolbarResults } from '../../index';
+import { Grid, ToolbarResults } from '../../index';
 
 import {
   toolbarContextTypes,
@@ -25,12 +25,12 @@ const Toolbar = ({ children, className, ...rest }) => {
   return (
     <ToolbarContextProvider isDescendantOfToolbar>
       <Grid fluid className={className}>
-        <Row className="toolbar-pf">
-          <Col sm={12}>
+        <Grid.Row className="toolbar-pf">
+          <Grid.Col sm={12}>
             <form className="toolbar-pf-actions">{toolbarChildren}</form>
             {resultsChildren}
-          </Col>
-        </Row>
+          </Grid.Col>
+        </Grid.Row>
       </Grid>
     </ToolbarContextProvider>
   );

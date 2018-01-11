@@ -1,4 +1,10 @@
-export { default as Grid } from './Grid';
-export { default as Row } from './Row';
-export { default as Col } from './Col';
-export { default as Clearfix } from './Clearfix';
+import { default as Grid } from './Grid';
+import { default as Row } from './Row';
+import { default as Col } from './Col';
+import { default as Clearfix } from './Clearfix';
+
+Grid.Row = Row;
+Grid.Col = Col;
+Grid.Clearfix = Clearfix;
+
+export { Grid, Row, Col, Clearfix };
