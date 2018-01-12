@@ -1,8 +1,8 @@
 /* eslint react/prop-types: 0 */
 
 import React from 'react';
-import { Col } from '../../Grid';
-import { FormGroup, ControlLabel, HelpBlock } from '../index';
+import { Grid } from '../../Grid';
+import { Form } from '../index';
 
 export const HorizontalFormField = ({
   controlId,
@@ -22,14 +22,14 @@ export const HorizontalFormField = ({
   const formGroupProps = { key: controlId, controlId, ...controlProps };
 
   return (
-    <FormGroup {...formGroupProps}>
-      <Col componentClass={ControlLabel} sm={3}>
+    <Form.FormGroup {...formGroupProps}>
+      <Grid.Col componentClass={Form.ControlLabel} sm={3}>
         {label}
-      </Col>
-      <Col sm={9}>
+      </Grid.Col>
+      <Grid.Col sm={9}>
         {formControl(controlProps)}
-        {showHelp && help && <HelpBlock>{help}</HelpBlock>}
-      </Col>
-    </FormGroup>
+        {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
+      </Grid.Col>
+    </Form.FormGroup>
   );
 };

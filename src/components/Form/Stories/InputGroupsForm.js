@@ -5,7 +5,7 @@ import { select, boolean } from '@storybook/addon-knobs';
 import { Button, DropdownButton } from '../../Button';
 import { Icon } from '../../Icon';
 import { MenuItem } from '../../MenuItem';
-import { FormControl, InputGroup } from '../index';
+import { Form } from '../index';
 
 export const InputGroupsFormFields = [
   {
@@ -15,10 +15,10 @@ export const InputGroupsFormFields = [
       disabled = false,
       ...props
     }) => (
-      <InputGroup {...props}>
-        <InputGroup.Addon>@</InputGroup.Addon>
-        <FormControl type="text" disabled={disabled} />
-      </InputGroup>
+      <Form.InputGroup {...props}>
+        <Form.InputGroup.Addon>@</Form.InputGroup.Addon>
+        <Form.FormControl type="text" disabled={disabled} />
+      </Form.InputGroup>
     )
   },
   {
@@ -28,10 +28,10 @@ export const InputGroupsFormFields = [
       disabled = false,
       ...props
     }) => (
-      <InputGroup {...props}>
-        <FormControl type="text" disabled={disabled} />
-        <InputGroup.Addon>.00</InputGroup.Addon>
-      </InputGroup>
+      <Form.InputGroup {...props}>
+        <Form.FormControl type="text" disabled={disabled} />
+        <Form.InputGroup.Addon>.00</Form.InputGroup.Addon>
+      </Form.InputGroup>
     )
   },
   {
@@ -41,11 +41,11 @@ export const InputGroupsFormFields = [
       disabled = false,
       ...props
     }) => (
-      <InputGroup {...props}>
-        <InputGroup.Addon>$</InputGroup.Addon>
-        <FormControl type="text" disabled={disabled} />
-        <InputGroup.Addon>.00</InputGroup.Addon>
-      </InputGroup>
+      <Form.InputGroup {...props}>
+        <Form.InputGroup.Addon>$</Form.InputGroup.Addon>
+        <Form.FormControl type="text" disabled={disabled} />
+        <Form.InputGroup.Addon>.00</Form.InputGroup.Addon>
+      </Form.InputGroup>
     )
   },
   {
@@ -55,12 +55,12 @@ export const InputGroupsFormFields = [
       disabled = false,
       ...props
     }) => (
-      <InputGroup {...props}>
-        <FormControl type="text" disabled={disabled} />
-        <InputGroup.Addon>
+      <Form.InputGroup {...props}>
+        <Form.FormControl type="text" disabled={disabled} />
+        <Form.InputGroup.Addon>
           <Icon name="music" />
-        </InputGroup.Addon>
-      </InputGroup>
+        </Form.InputGroup.Addon>
+      </Form.InputGroup>
     )
   },
   {
@@ -70,12 +70,12 @@ export const InputGroupsFormFields = [
       disabled = false,
       ...props
     }) => (
-      <InputGroup {...props}>
-        <InputGroup.Button>
+      <Form.InputGroup {...props}>
+        <Form.InputGroup.Button>
           <Button disabled={disabled}>Before</Button>
-        </InputGroup.Button>
-        <FormControl type="text" disabled={disabled} />
-      </InputGroup>
+        </Form.InputGroup.Button>
+        <Form.FormControl type="text" disabled={disabled} />
+      </Form.InputGroup>
     )
   },
   {
@@ -85,17 +85,17 @@ export const InputGroupsFormFields = [
       disabled = false,
       ...props
     }) => (
-      <InputGroup {...props}>
-        <FormControl type="text" disabled={disabled} />
+      <Form.InputGroup {...props}>
+        <Form.FormControl type="text" disabled={disabled} />
         <DropdownButton
-          componentClass={InputGroup.Button}
+          componentClass={Form.InputGroup.Button}
           id="input-dropdown-addon"
           title="Action"
           disabled={disabled}
         >
           <MenuItem key="1">Item</MenuItem>
         </DropdownButton>
-      </InputGroup>
+      </Form.InputGroup>
     )
   },
   {
@@ -105,12 +105,12 @@ export const InputGroupsFormFields = [
       disabled = false,
       ...props
     }) => (
-      <InputGroup {...props}>
-        <InputGroup.Addon>
+      <Form.InputGroup {...props}>
+        <Form.InputGroup.Addon>
           <input type="radio" disabled={disabled} />
-        </InputGroup.Addon>
-        <FormControl type="text" disabled={disabled} />
-      </InputGroup>
+        </Form.InputGroup.Addon>
+        <Form.FormControl type="text" disabled={disabled} />
+      </Form.InputGroup>
     )
   },
   {
@@ -120,12 +120,12 @@ export const InputGroupsFormFields = [
       disabled = false,
       ...props
     }) => (
-      <InputGroup {...props}>
-        <InputGroup.Addon>
+      <Form.InputGroup {...props}>
+        <Form.InputGroup.Addon>
           <input type="checkbox" disabled={disabled} />
-        </InputGroup.Addon>
-        <FormControl type="text" disabled={disabled} />
-      </InputGroup>
+        </Form.InputGroup.Addon>
+        <Form.FormControl type="text" disabled={disabled} />
+      </Form.InputGroup>
     )
   }
 ];

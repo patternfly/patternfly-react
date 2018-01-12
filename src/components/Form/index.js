@@ -1,8 +1,27 @@
-export { default as Checkbox } from './Checkbox';
-export { default as ControlLabel } from './ControlLabel';
-export { default as Form } from './Form';
-export { default as FormControl } from './FormControl';
-export { default as FormGroup } from './FormGroup';
-export { default as HelpBlock } from './HelpBlock';
-export { default as InputGroup } from './InputGroup';
-export { default as Radio } from './Radio';
+import { default as Checkbox } from './Checkbox';
+import { default as ControlLabel } from './ControlLabel';
+import { default as Form } from './Form';
+import { default as FormControl } from './FormControl';
+import { default as FormGroup } from './FormGroup';
+import { default as HelpBlock } from './HelpBlock';
+import { default as InputGroup } from './InputGroup';
+import { default as Radio } from './Radio';
+
+Form.Checkbox = Checkbox;
+Form.ControlLabel = ControlLabel;
+Form.FormControl = FormControl;
+Form.FormGroup = FormGroup;
+Form.HelpBlock = HelpBlock;
+Form.InputGroup = InputGroup;
+Form.Radio = Radio;
+
+export {
+  Checkbox,
+  ControlLabel,
+  Form,
+  FormControl,
+  FormGroup,
+  HelpBlock,
+  InputGroup,
+  Radio
+};

@@ -1,7 +1,7 @@
 /* eslint react/prop-types: 0 */
 
 import React from 'react';
-import { FormGroup, ControlLabel } from '../index';
+import { Form } from '../index';
 
 export const InlineFormField = ({
   controlId,
@@ -20,9 +20,9 @@ export const InlineFormField = ({
   const formGroupProps = { key: controlId, controlId, ...controlProps };
 
   return (
-    <FormGroup {...formGroupProps}>
-      {showLabel && label && <ControlLabel>{label}</ControlLabel>}{' '}
+    <Form.FormGroup {...formGroupProps}>
+      {showLabel && label && <Form.ControlLabel>{label}</Form.ControlLabel>}{' '}
       {formControl(controlProps)}
-    </FormGroup>
+    </Form.FormGroup>
   );
 };
