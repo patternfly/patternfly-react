@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, FormControl, FormGroup, ControlLabel } from '../Form';
 import { DropdownButton } from '../Button';
-import { ListGroup, ListGroupItem } from '../ListGroup';
 import { MenuItem } from '../MenuItem';
 import { Icon } from '../Icon';
 
@@ -16,6 +15,7 @@ const Paginator = ({
   itemCount,
   itemsStart,
   itemsEnd,
+  messages,
   onPerPageSelect,
   onFirstPage,
   onPreviousPage,
@@ -44,25 +44,21 @@ const Paginator = ({
               );
             })}
         </DropdownButton>
-        <span> per page </span>
+        <span> {messages.perPage} </span>
       </FormGroup>
       <FormGroup>
         <span>
           <span className="pagination-pf-items-current">
             {itemsStart}-{itemsEnd}
           </span>
-          &nbsp;of&nbsp;
+          &nbsp;{messages.of}&nbsp;
           <span className="pagination-pf-items-total">{itemCount}</span>
         </span>
-        <ListGroup componentClass="ul" bsClass="pagination pagination-pf-back">
-          <ListGroupItem
-            bsClass=" "
-            listItem
-            className={page === 1 ? 'disabled' : ''}
-          >
+        <ul className="pagination pagination-pf-back">
+          <li className={page === 1 ? 'disabled' : ''}>
             <a
               href="#"
-              title="First Page"
+              title={messages.firstPage}
               onClick={e => {
                 e.preventDefault();
                 onFirstPage(e);
@@ -70,15 +66,11 @@ const Paginator = ({
             >
               <Icon type="fa" name="angle-double-left" />
             </a>
-          </ListGroupItem>
-          <ListGroupItem
-            bsClass=" "
-            listItem
-            className={page === 1 ? 'disabled' : ''}
-          >
+          </li>
+          <li className={page === 1 ? 'disabled' : ''}>
             <a
               href="#"
-              title="Previous Page"
+              title={messages.previousPage}
               onClick={e => {
                 e.preventDefault();
                 onPreviousPage(e);
@@ -86,8 +78,8 @@ const Paginator = ({
             >
               <Icon type="fa" name="angle-left" />
             </a>
-          </ListGroupItem>
-        </ListGroup>
+          </li>
+        </ul>
         <ControlLabel className="sr-only">Current Page</ControlLabel>
         <FormControl
           className="pagination-pf-page"
@@ -96,21 +88,14 @@ const Paginator = ({
           onChange={onPageInput}
         />
         <span>
-          &nbsp;of&nbsp;
+          &nbsp;{messages.of}&nbsp;
           <span className="pagination-pf-pages">{amountOfPages}</span>
         </span>
-        <ListGroup
-          componentClass="ul"
-          bsClass="pagination pagination-pf-forward"
-        >
-          <ListGroupItem
-            bsClass=" "
-            listItem
-            className={page === amountOfPages ? 'disabled' : ''}
-          >
+        <ul className="pagination pagination-pf-forward">
+          <li className={page === amountOfPages ? 'disabled' : ''}>
             <a
               href="#"
-              title="Next Page"
+              title={messages.nextPage}
               onClick={e => {
                 e.preventDefault();
                 onNextPage(e);
@@ -118,15 +103,11 @@ const Paginator = ({
             >
               <Icon type="fa" name="angle-right" />
             </a>
-          </ListGroupItem>
-          <ListGroupItem
-            bsClass=" "
-            listItem
-            className={page === amountOfPages ? 'disabled' : ''}
-          >
+          </li>
+          <li className={page === amountOfPages ? 'disabled' : ''}>
             <a
               href="#"
-              title="Last Page"
+              title={messages.lastPage}
               onClick={e => {
                 e.preventDefault();
                 onLastPage(e);
@@ -134,8 +115,8 @@ const Paginator = ({
             >
               <Icon type="fa" name="angle-double-right" />
             </a>
-          </ListGroupItem>
-        </ListGroup>
+          </li>
+        </ul>
       </FormGroup>
     </Form>
   );
@@ -153,6 +134,15 @@ Paginator.propTypes = {
   itemsStart: PropTypes.number,
   /** calculated items end */
   itemsEnd: PropTypes.number,
+  /** message text inputs for i18n */
+  messages: PropTypes.shape({
+    firstPage: PropTypes.string,
+    previousPage: PropTypes.string,
+    nextPage: PropTypes.string,
+    lastPage: PropTypes.string,
+    perPage: PropTypes.string,
+    of: PropTypes.string
+  }),
   /** per page selection callback */
   onPerPageSelect: PropTypes.func,
   /** first page callback */
@@ -165,5 +155,15 @@ Paginator.propTypes = {
   onNextPage: PropTypes.func,
   /** last page callback */
   onLastPage: PropTypes.func
+};
+Paginator.defaultProps = {
+  messages: {
+    firstPage: 'First Page',
+    previousPage: 'Previous Page',
+    nextPage: 'Next Page',
+    lastPage: 'Last Page',
+    perPage: 'per page',
+    of: 'of'
+  }
 };
 export default Paginator;

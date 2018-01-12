@@ -1,1 +1,5 @@
-export { defaultSortingOrder } from './constants';
+export {
+  actionHeaderCellFormatter,
+  defaultSortingOrder,
+  tableCellFormatter
+} from './constants';

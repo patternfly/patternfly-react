@@ -5,7 +5,11 @@ import cx from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { bindMethods } from '../../../common/helpers';
-import { defaultSortingOrder } from '../index';
+import {
+  actionHeaderCellFormatter,
+  defaultSortingOrder,
+  tableCellFormatter
+} from '../index';
 import { Table } from '../../Table';
 import { ControlLabel } from '../../Form';
 import { DropdownKebab } from '../../DropdownKebab';
@@ -28,8 +32,7 @@ export class MockPaginationTable extends React.Component {
     // but you can use a state manager as well.
     const getSortingColumns = () => this.state.sortingColumns || {};
 
-    // sortable transform
-    const sortable = sort.sort({
+    const sortableTransform = sort.sort({
       getSortingColumns,
       onSort: selectedColumn => {
         this.setState({
@@ -44,15 +47,13 @@ export class MockPaginationTable extends React.Component {
       strategy: sort.strategies.byProperty
     });
 
-    // sorting fortmatter
-    const sortingFormat = sort.header({
-      sortable,
+    const sortingFormatter = sort.header({
+      sortableTransform,
       getSortingColumns,
       strategy: sort.strategies.byProperty
     });
 
-    // sortable header cell custom formatter
-    const sortableHeaderCell = ({ column, cellProps }) => {
+    const sortableTransformHeaderCellFormatter = ({ column, cellProps }) => {
       const { sortingColumns } = this.state;
       const sortDirection =
         sortingColumns[column.property] &&
@@ -69,8 +70,7 @@ export class MockPaginationTable extends React.Component {
       );
     };
 
-    // selection header cell custom formatter
-    const selectionHeaderCell = ({ column, cellProps }) => {
+    const selectionHeaderCellFormatter = ({ column, cellProps }) => {
       const currentRows = this.currentRows().rows;
       const unselectedRows = currentRows.filter(r => !r.selected).length > 0;
       return (
@@ -88,22 +88,7 @@ export class MockPaginationTable extends React.Component {
       );
     };
 
-    // action header cell custom formatter
-    const actionHeaderCell = ({ column, cellProps }) => {
-      return (
-        <Table.Heading aria-label={column.header.label} {...cellProps}>
-          {column.header.label}
-        </Table.Heading>
-      );
-    };
-
-    // cell formatter
-    const cellFormat = value => {
-      return <Table.Cell>{value}</Table.Cell>;
-    };
-
-    // selection cell formatter
-    const selectionCellFormat = (value, { rowData, rowIndex }) => {
+    const selectionCellFormatter = (value, { rowData, rowIndex }) => {
       const id = `select${rowIndex}`;
       const label = `Select row ${rowIndex}`;
       return (
@@ -143,13 +128,13 @@ export class MockPaginationTable extends React.Component {
               rowSpan: 1,
               colSpan: 1
             },
-            customFormatters: [selectionHeaderCell]
+            customFormatters: [selectionHeaderCellFormatter]
           },
           cell: {
             props: {
               index: 0
             },
-            formatters: [selectionCellFormat]
+            formatters: [selectionCellFormatter]
           }
         },
         {
@@ -161,15 +146,15 @@ export class MockPaginationTable extends React.Component {
               rowSpan: 1,
               colSpan: 1
             },
-            transforms: [sortable],
-            formatters: [sortingFormat],
-            customFormatters: [sortableHeaderCell]
+            transforms: [sortableTransform],
+            formatters: [sortingFormatter],
+            customFormatters: [sortableTransformHeaderCellFormatter]
           },
           cell: {
             props: {
               index: 1
             },
-            formatters: [cellFormat]
+            formatters: [tableCellFormatter]
           }
         },
         {
@@ -181,15 +166,15 @@ export class MockPaginationTable extends React.Component {
               rowSpan: 1,
               colSpan: 1
             },
-            transforms: [sortable],
-            formatters: [sortingFormat],
-            customFormatters: [sortableHeaderCell]
+            transforms: [sortableTransform],
+            formatters: [sortingFormatter],
+            customFormatters: [sortableTransformHeaderCellFormatter]
           },
           cell: {
             props: {
               index: 2
             },
-            formatters: [cellFormat]
+            formatters: [tableCellFormatter]
           }
         },
         {
@@ -201,15 +186,15 @@ export class MockPaginationTable extends React.Component {
               rowSpan: 1,
               colSpan: 1
             },
-            transforms: [sortable],
-            formatters: [sortingFormat],
-            customFormatters: [sortableHeaderCell]
+            transforms: [sortableTransform],
+            formatters: [sortingFormatter],
+            customFormatters: [sortableTransformHeaderCellFormatter]
           },
           cell: {
             props: {
               index: 3
             },
-            formatters: [cellFormat]
+            formatters: [tableCellFormatter]
           }
         },
         {
@@ -221,15 +206,15 @@ export class MockPaginationTable extends React.Component {
               rowSpan: 1,
               colSpan: 1
             },
-            transforms: [sortable],
-            formatters: [sortingFormat],
-            customFormatters: [sortableHeaderCell]
+            transforms: [sortableTransform],
+            formatters: [sortingFormatter],
+            customFormatters: [sortableTransformHeaderCellFormatter]
           },
           cell: {
             props: {
               index: 4
             },
-            formatters: [cellFormat]
+            formatters: [tableCellFormatter]
           }
         },
         {
@@ -241,15 +226,15 @@ export class MockPaginationTable extends React.Component {
               rowSpan: 1,
               colSpan: 1
             },
-            transforms: [sortable],
-            formatters: [sortingFormat],
-            customFormatters: [sortableHeaderCell]
+            transforms: [sortableTransform],
+            formatters: [sortingFormatter],
+            customFormatters: [sortableTransformHeaderCellFormatter]
           },
           cell: {
             props: {
               index: 5
             },
-            formatters: [cellFormat]
+            formatters: [tableCellFormatter]
           }
         },
         {
@@ -261,7 +246,7 @@ export class MockPaginationTable extends React.Component {
               rowSpan: 1,
               colSpan: 2
             },
-            customFormatters: [actionHeaderCell]
+            customFormatters: [actionHeaderCellFormatter]
           },
           cell: {
             props: {
@@ -434,7 +419,8 @@ export class MockPaginationTable extends React.Component {
     )(rows);
   }
   onRow(row, { rowIndex }) {
-    const selected = this.state.selectedRows.indexOf(row.id) > -1;
+    const { selectedRows } = this.state;
+    const selected = selectedRows.indexOf(row.id) > -1;
     return {
       className: cx({ selected: selected }),
       role: 'row'

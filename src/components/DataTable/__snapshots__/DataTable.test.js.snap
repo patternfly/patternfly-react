@@ -1,0 +1,323 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataTable renders 1`] = `
+<table
+  className="table dataTable table-striped table-bordered table-hover"
+  role="grid"
+>
+  <thead>
+    <tr>
+      <th
+        aria-label="Select all rows"
+        className="table-view-pf-select"
+        colSpan={1}
+        index={0}
+        rowSpan={1}
+      >
+        <label
+          className="control-label sr-only"
+          htmlFor="selectAll"
+        >
+          Select all rows
+        </label>
+        <input
+          checked={true}
+          id="selectAll"
+          onChange={[MockFunction]}
+          type="checkbox"
+        />
+      </th>
+      <th
+        aria-label="Name"
+        className="sorting_asc"
+        colSpan={1}
+        index={1}
+        rowSpan={1}
+      >
+        Name
+      </th>
+      <th
+        aria-label="Actions"
+        className=""
+        colSpan={2}
+        index={2}
+        rowSpan={1}
+      >
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td
+        className="table-view-pf-select"
+      >
+        <label
+          className="control-label sr-only"
+          htmlFor="select0"
+        >
+          Select row 0
+        </label>
+        <input
+          checked={true}
+          id="select0"
+          onChange={[MockFunction]}
+          type="checkbox"
+        />
+      </td>
+      <td
+        className=""
+      >
+        Luke Skywalker
+      </td>
+      <td
+        className="table-view-pf-actions"
+      >
+        <div
+          className="table-view-pf-btn"
+        >
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onClick={[MockFunction]}
+            type="button"
+          >
+            Actions
+          </button>
+        </div>
+      </td>
+      <td
+        className="table-view-pf-actions"
+      >
+        <div
+          className="dropdown-kebab-pf dropdown btn-group"
+        >
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="dropdown-toggle btn btn-link"
+            disabled={false}
+            id="myKebab"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            type="button"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-ellipsis-v"
+            />
+          </button>
+          <ul
+            aria-labelledby="myKebab"
+            className="dropdown-menu dropdown-menu-right"
+            role="menu"
+          >
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Action
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Another Action
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Something else here
+              </a>
+            </li>
+            <li
+              className="divider"
+              onKeyDown={[Function]}
+              role="separator"
+              style={undefined}
+            />
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Separated link
+              </a>
+            </li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td
+        className="table-view-pf-select"
+      >
+        <label
+          className="control-label sr-only"
+          htmlFor="select1"
+        >
+          Select row 1
+        </label>
+        <input
+          checked={true}
+          id="select1"
+          onChange={[MockFunction]}
+          type="checkbox"
+        />
+      </td>
+      <td
+        className=""
+      >
+        C-3PO
+      </td>
+      <td
+        className="table-view-pf-actions"
+      >
+        <div
+          className="table-view-pf-btn"
+        >
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onClick={[MockFunction]}
+            type="button"
+          >
+            Actions
+          </button>
+        </div>
+      </td>
+      <td
+        className="table-view-pf-actions"
+      >
+        <div
+          className="dropdown-kebab-pf dropdown btn-group"
+        >
+          <button
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="dropdown-toggle btn btn-link"
+            disabled={false}
+            id="myKebab"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            type="button"
+          >
+            <span
+              aria-hidden={true}
+              className="fa fa-ellipsis-v"
+            />
+          </button>
+          <ul
+            aria-labelledby="myKebab"
+            className="dropdown-menu dropdown-menu-right"
+            role="menu"
+          >
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Action
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Another Action
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Something else here
+              </a>
+            </li>
+            <li
+              className="divider"
+              onKeyDown={[Function]}
+              role="separator"
+              style={undefined}
+            />
+            <li
+              className=""
+              role="presentation"
+              style={undefined}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                role="menuitem"
+                tabIndex="-1"
+              >
+                Separated link
+              </a>
+            </li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
