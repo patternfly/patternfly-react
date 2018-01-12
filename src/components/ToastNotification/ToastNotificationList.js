@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { bindMethods } from '../../common/helpers';
 import TimedToastNotification from './TimedToastNotification';
 
@@ -42,11 +43,13 @@ class ToastNotificationList extends React.Component {
   }
   render() {
     const { className } = this.props;
+    const classes = cx('toast-notifications-list-pf', className);
+
     return (
       <div
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
-        className={className}
+        className={classes}
       >
         {this.renderChildren()}
       </div>
@@ -62,9 +65,6 @@ ToastNotificationList.propTypes = {
   onMouseLeave: PropTypes.func,
   /** children nodes  */
   children: PropTypes.node
-};
-ToastNotificationList.defaultProps = {
-  className: 'toast-notifications-list-pf'
 };
 
 export default ToastNotificationList;
