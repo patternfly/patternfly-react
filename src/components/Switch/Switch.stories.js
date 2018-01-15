@@ -12,7 +12,7 @@ stories.addDecorator(withKnobs);
 stories.addWithInfo('Switch', '', () => {
   const bsSize = select('Size', Switch.SWITCH_BS_SIZES, 'normal');
   const onColor = select('On Color', Switch.SWITCH_COLORS, 'primary');
-  const offColor = select('Off Collor', Switch.SWITCH_COLORS, 'default');
+  const offColor = select('Off Color', Switch.SWITCH_COLORS, 'default');
 
   const props = { bsSize, title: bsSize, id: 'bsSize-example' };
   if (onColor) props.onColor = onColor;
