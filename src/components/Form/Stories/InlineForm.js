@@ -3,20 +3,20 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { select, boolean } from '@storybook/addon-knobs';
-import { FormControl } from '../index';
+import { Form } from '../index';
 
 export const InlineFormFields = [
   {
     controlId: 'email',
     label: 'Email',
     placeholder: 'Email',
-    formControl: props => <FormControl type="email" {...props} />
+    formControl: props => <Form.FormControl type="email" {...props} />
   },
   {
     controlId: 'password',
     label: 'Password',
     placeholder: 'Password',
-    formControl: props => <FormControl type="password" {...props} />
+    formControl: props => <Form.FormControl type="password" {...props} />
   }
 ];
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { select, boolean } from '@storybook/addon-knobs';
-import { FormControl, Checkbox, Radio } from '../index';
+import { Form } from '../index';
 
 export const SupportedControlsFormFields = [
   {
@@ -10,7 +10,7 @@ export const SupportedControlsFormFields = [
     label: 'Text',
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
-      <FormControl type="text" {...props} />
+      <Form.FormControl type="text" {...props} />
     )
   },
   {
@@ -18,7 +18,7 @@ export const SupportedControlsFormFields = [
     label: 'Email',
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
-      <FormControl type="email" {...props} />
+      <Form.FormControl type="email" {...props} />
     )
   },
   {
@@ -26,7 +26,7 @@ export const SupportedControlsFormFields = [
     label: 'Password',
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
-      <FormControl type="password" {...props} />
+      <Form.FormControl type="password" {...props} />
     )
   },
   {
@@ -34,7 +34,7 @@ export const SupportedControlsFormFields = [
     label: 'File',
     help: 'Help text',
     formControl: ({ validationState, bsSize, ...props }) => (
-      <FormControl type="file" {...props} />
+      <Form.FormControl type="file" {...props} />
     )
   },
   {
@@ -42,7 +42,7 @@ export const SupportedControlsFormFields = [
     label: 'Checkbox',
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
-      <Checkbox {...props}>Checkbox</Checkbox>
+      <Form.Checkbox {...props}>Checkbox</Form.Checkbox>
     )
   },
   {
@@ -50,7 +50,7 @@ export const SupportedControlsFormFields = [
     label: 'Radio',
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
-      <Radio {...props}>Radio</Radio>
+      <Form.Radio {...props}>Radio</Form.Radio>
     )
   },
   {
@@ -59,15 +59,15 @@ export const SupportedControlsFormFields = [
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
       <div>
-        <Checkbox {...props} inline>
+        <Form.Checkbox {...props} inline>
           1
-        </Checkbox>
-        <Checkbox {...props} inline>
+        </Form.Checkbox>
+        <Form.Checkbox {...props} inline>
           2
-        </Checkbox>
-        <Checkbox {...props} inline>
+        </Form.Checkbox>
+        <Form.Checkbox {...props} inline>
           3
-        </Checkbox>
+        </Form.Checkbox>
       </div>
     )
   },
@@ -77,15 +77,15 @@ export const SupportedControlsFormFields = [
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
       <div>
-        <Radio {...props} name="radioGroup" inline>
+        <Form.Radio {...props} name="radioGroup" inline>
           1
-        </Radio>
-        <Radio {...props} name="radioGroup" inline>
+        </Form.Radio>
+        <Form.Radio {...props} name="radioGroup" inline>
           2
-        </Radio>
-        <Radio {...props} name="radioGroup" inline>
+        </Form.Radio>
+        <Form.Radio {...props} name="radioGroup" inline>
           3
-        </Radio>
+        </Form.Radio>
       </div>
     )
   },
@@ -94,7 +94,7 @@ export const SupportedControlsFormFields = [
     label: 'Textarea',
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
-      <FormControl componentClass="textarea" {...props} />
+      <Form.FormControl componentClass="textarea" {...props} />
     )
   },
   {
@@ -102,7 +102,9 @@ export const SupportedControlsFormFields = [
     label: 'Static',
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
-      <FormControl.Static {...props}>email@example.com</FormControl.Static>
+      <Form.FormControl.Static {...props}>
+        email@example.com
+      </Form.FormControl.Static>
     )
   }
 ];

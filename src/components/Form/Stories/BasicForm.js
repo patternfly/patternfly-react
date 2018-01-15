@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { select, boolean } from '@storybook/addon-knobs';
 import { Spinner } from '../../Spinner';
 import { Button } from '../../Button';
-import { FormControl, InputGroup } from '../index';
+import { Form } from '../index';
 
 export const BasicFormFields = [
   {
@@ -13,7 +13,7 @@ export const BasicFormFields = [
     label: 'Name',
     help: 'Enter your name',
     formControl: ({ validationState, ...props }) => (
-      <FormControl type="text" {...props} />
+      <Form.FormControl type="text" {...props} />
     )
   },
   {
@@ -21,7 +21,7 @@ export const BasicFormFields = [
     label: 'Address',
     help: 'Enter your address',
     formControl: ({ validationState, ...props }) => (
-      <FormControl type="address" {...props} />
+      <Form.FormControl type="address" {...props} />
     )
   },
   {
@@ -29,7 +29,7 @@ export const BasicFormFields = [
     label: 'City',
     help: 'Enter your city',
     formControl: ({ validationState, ...props }) => (
-      <FormControl type="text" {...props} />
+      <Form.FormControl type="text" {...props} />
     )
   },
   {
@@ -37,7 +37,7 @@ export const BasicFormFields = [
     label: 'Email',
     help: 'Enter a valid email address',
     formControl: ({ validationState, ...props }) => (
-      <FormControl type="email" {...props} />
+      <Form.FormControl type="email" {...props} />
     )
   },
   {
@@ -47,14 +47,14 @@ export const BasicFormFields = [
     formControl: ({ validationState, disabled, ...props }) => {
       const controlProps = { disabled };
       return (
-        <InputGroup {...props}>
-          <FormControl type="url" {...controlProps} />
-          <InputGroup.Button>
+        <Form.InputGroup {...props}>
+          <Form.FormControl type="url" {...controlProps} />
+          <Form.InputGroup.Button>
             <Button onClick={action('CopyUrl')} {...controlProps}>
               Copy URL
             </Button>
-          </InputGroup.Button>
-        </InputGroup>
+          </Form.InputGroup.Button>
+        </Form.InputGroup>
       );
     }
   }
