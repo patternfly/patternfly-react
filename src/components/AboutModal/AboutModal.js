@@ -25,6 +25,7 @@ const AboutModal = ({
       <Modal.Header>
         <Button
           className="close"
+          bsClass=" "
           onClick={onHide}
           aria-hidden="true"
           aria-label="Close"
