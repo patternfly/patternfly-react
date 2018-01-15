@@ -20,6 +20,7 @@ export * from './components/OverlayTrigger';
 export * from './components/Popover';
 export * from './components/Sort';
 export * from './components/Spinner';
+export * from './components/Switch';
 export * from './components/ToastNotification';
 export * from './components/Toolbar';
 export * from './components/Tooltip';
