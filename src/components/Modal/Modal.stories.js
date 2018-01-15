@@ -16,7 +16,13 @@ stories.add(
   'Modal',
   withInfo({
     source: false,
-    propTables: [Modal, Modal.Header, Modal.Body, Modal.Footer],
+    propTables: [
+      Modal,
+      Modal.CloseButton,
+      Modal.Header,
+      Modal.Body,
+      Modal.Footer
+    ],
     propTablesExclude: [MockModalManager],
     text: (
       <div>

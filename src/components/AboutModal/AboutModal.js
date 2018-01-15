@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button, Icon, Modal } from '../../index';
+import { Modal } from '../../index';
 
 const AboutModal = ({
   children,
@@ -12,6 +12,7 @@ const AboutModal = ({
   logo,
   altLogo,
   trademarkText,
+  closeText,
   ...rest
 }) => {
   return (
@@ -23,15 +24,7 @@ const AboutModal = ({
       {...rest}
     >
       <Modal.Header>
-        <Button
-          className="close"
-          bsClass=" "
-          onClick={onHide}
-          aria-hidden="true"
-          aria-label="Close"
-        >
-          <Icon type="pf" name="close" />
-        </Button>
+        <Modal.CloseButton onClick={onHide} closeText={closeText} />
       </Modal.Header>
       <Modal.Body>
         <h1>{productTitle}</h1>
@@ -43,6 +36,10 @@ const AboutModal = ({
       </Modal.Footer>
     </Modal>
   );
+};
+
+AboutModal.defaultProps = {
+  closeText: 'Close'
 };
 
 AboutModal.propTypes = {
@@ -57,11 +54,13 @@ AboutModal.propTypes = {
   /** Text to show for the product title */
   productTitle: PropTypes.string,
   /** Image Source for the Product logo */
-  logo: PropTypes.object,
+  logo: PropTypes.string,
   /** Alternate text if invalid logo */
   altLogo: PropTypes.string,
   /** Trademark information text */
-  trademarkText: PropTypes.string
+  trademarkText: PropTypes.string,
+  /** Alternate text for close button for screen readers (default 'Close') */
+  closeText: PropTypes.string
 };
 
 export default AboutModal;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from '../../Button';
-import { Icon } from '../../Icon';
 import { Modal } from '../index';
 
 export class MockModalManager extends React.Component {
@@ -25,14 +24,7 @@ export class MockModalManager extends React.Component {
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header>
-            <button
-              className="close"
-              onClick={this.close}
-              aria-hidden="true"
-              aria-label="Close"
-            >
-              <Icon type="pf" name="close" />
-            </button>
+            <Modal.CloseButton onClick={this.close} />
             <Modal.Title>Modal Overlay Title</Modal.Title>
           </Modal.Header>
           <Modal.Body>
