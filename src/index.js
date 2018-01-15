@@ -1,4 +1,5 @@
 export * from './components/Alert';
+export * from './components/AboutModal';
 export * from './components/Badge';
 export * from './components/Breadcrumb';
 export * from './components/Button';

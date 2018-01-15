@@ -8,18 +8,21 @@ import {
   MockModalManager,
   basicExampleSource
 } from './__mocks__/mockModalManager';
-
-import {
-  MockAboutModalManager,
-  aboutExampleSource
-} from './__mocks__/mockAboutModalManager';
+import { Modal } from '../../index';
 
 const stories = storiesOf('Modal Overlay', module);
 
 stories.add(
-  'Basic example',
+  'Modal',
   withInfo({
     source: false,
+    propTables: [
+      Modal,
+      Modal.CloseButton,
+      Modal.Header,
+      Modal.Body,
+      Modal.Footer
+    ],
     propTablesExclude: [MockModalManager],
     text: (
       <div>
@@ -30,33 +33,9 @@ stories.add(
   })(() => {
     let story = <MockModalManager />;
     return inlineTemplate({
-      title: 'Basic Example',
+      title: 'Modal Example',
       documentationLink:
         DOCUMENTATION_URL.PATTERNFLY_ORG_FORMS + 'modal-overlay/',
-      reactBootstrapDocumentationLink:
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'modal/',
-      story: story
-    });
-  })
-);
-
-stories.add(
-  'About Modal',
-  withInfo({
-    source: false,
-    propTablesExclude: [MockAboutModalManager],
-    text: (
-      <div>
-        <h1>Story Source</h1>
-        <pre>{aboutExampleSource}</pre>
-      </div>
-    )
-  })(() => {
-    let story = <MockAboutModalManager />;
-    return inlineTemplate({
-      title: 'About Modal',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'about-modal/',
       reactBootstrapDocumentationLink:
         DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'modal/',
       story: story
