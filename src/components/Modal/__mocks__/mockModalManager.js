@@ -20,7 +20,7 @@ export class MockModalManager extends React.Component {
     return (
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.open}>
-          Launch basic modal
+          Launch Modal
         </Button>
 
         <Modal show={this.state.showModal} onHide={this.close}>
