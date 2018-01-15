@@ -1,7 +1,10 @@
 import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { decorateAction } from '@storybook/addon-actions';
-import { MockClientPaginationTable } from '../__mocks__/mockClientPaginationTable';
+import {
+  MockClientPaginationTable,
+  mockClientPaginationTableSource
+} from '../__mocks__/mockClientPaginationTable';
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
 
@@ -15,7 +18,12 @@ const clientPaginationTableAddWithInfo = stories => {
     withInfo({
       source: false,
       propTablesExclude: [MockClientPaginationTable],
-      text: <div />
+      text: (
+        <div>
+          <h1>Story Source</h1>
+          <pre>{mockClientPaginationTableSource}</pre>
+        </div>
+      )
     })(() => {
       const logAction = decorateAction([args => args]);
       let story = (

@@ -1,6 +1,9 @@
 import React from 'react';
 import { withInfo } from '@storybook/addon-info';
-import { MockClientSortableTable } from '../__mocks__/mockClientSortableTable';
+import {
+  MockClientSortableTable,
+  mockClientSortableTableSource
+} from '../__mocks__/mockClientSortableTable';
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
 
@@ -14,7 +17,12 @@ const clientSortableTableAddWithInfo = stories => {
     withInfo({
       source: false,
       propTablesExclude: [MockClientSortableTable],
-      text: <div />
+      text: (
+        <div>
+          <h1>Story Source</h1>
+          <pre>{mockClientSortableTableSource}</pre>
+        </div>
+      )
     })(() => {
       let story = <MockClientSortableTable />;
       let description = (
