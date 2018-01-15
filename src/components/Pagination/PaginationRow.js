@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+import PaginationRowAmountOfPages from './PaginationRowAmountOfPages';
+import PaginationRowButtonGroup from './PaginationRowButtonGroup';
+import PaginationRowItems from './PaginationRowItems';
+import PaginationRowBack from './PaginationRowBack';
+import PaginationRowForward from './PaginationRowForward';
 import { Form, FormControl, FormGroup, ControlLabel } from '../Form';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
-import { Icon } from '../Icon';
 
 /**
- * Paginator component for Patternfly React
+ * PaginationRow component for Patternfly React
  */
-const Paginator = ({
+const PaginationRow = ({
   className,
   pagination,
   amountOfPages,
@@ -16,6 +21,11 @@ const Paginator = ({
   itemsStart,
   itemsEnd,
   messages,
+  contentViewPagination,
+  tableViewPagination,
+  listViewPagination,
+  cardViewPagination,
+  dropdownButtonId,
   onPerPageSelect,
   onFirstPage,
   onPreviousPage,
@@ -24,15 +34,25 @@ const Paginator = ({
   onLastPage
 }) => {
   const { page, perPage, perPageOptions } = pagination;
-
+  const classes = cx(
+    {
+      'content-view-pf-pagination': contentViewPagination,
+      'list-view-pf-pagination': listViewPagination,
+      'card-view-pf-pagination': cardViewPagination,
+      'table-view-pf-pagination': tableViewPagination,
+      clearfix: true
+    },
+    className
+  );
   return (
-    <Form className={className}>
+    <Form className={classes}>
       <FormGroup>
         <DropdownButton
           title={perPage}
           dropup
+          componentClass={PaginationRowButtonGroup}
           onSelect={onPerPageSelect}
-          id="paginator-dropdown"
+          id={dropdownButtonId}
         >
           {perPageOptions &&
             perPageOptions.length &&
@@ -47,39 +67,21 @@ const Paginator = ({
         <span> {messages.perPage} </span>
       </FormGroup>
       <FormGroup>
-        <span>
-          <span className="pagination-pf-items-current">
-            {itemsStart}-{itemsEnd}
-          </span>
-          &nbsp;{messages.of}&nbsp;
-          <span className="pagination-pf-items-total">{itemCount}</span>
-        </span>
-        <ul className="pagination pagination-pf-back">
-          <li className={page === 1 ? 'disabled' : ''}>
-            <a
-              href="#"
-              title={messages.firstPage}
-              onClick={e => {
-                e.preventDefault();
-                onFirstPage(e);
-              }}
-            >
-              <Icon type="fa" name="angle-double-left" />
-            </a>
-          </li>
-          <li className={page === 1 ? 'disabled' : ''}>
-            <a
-              href="#"
-              title={messages.previousPage}
-              onClick={e => {
-                e.preventDefault();
-                onPreviousPage(e);
-              }}
-            >
-              <Icon type="fa" name="angle-left" />
-            </a>
-          </li>
-        </ul>
+        <PaginationRowItems
+          itemCount={itemCount}
+          itemsStart={itemsStart}
+          itemsEnd={itemsEnd}
+          messagesOf={messages.of}
+        />
+
+        <PaginationRowBack
+          page={page}
+          messagesFirstPage={messages.firstPage}
+          messagesPreviousPage={messages.previousPage}
+          onFirstPage={onFirstPage}
+          onPreviousPage={onPreviousPage}
+        />
+
         <ControlLabel className="sr-only">Current Page</ControlLabel>
         <FormControl
           className="pagination-pf-page"
@@ -87,41 +89,25 @@ const Paginator = ({
           value={pagination.page}
           onChange={onPageInput}
         />
-        <span>
-          &nbsp;{messages.of}&nbsp;
-          <span className="pagination-pf-pages">{amountOfPages}</span>
-        </span>
-        <ul className="pagination pagination-pf-forward">
-          <li className={page === amountOfPages ? 'disabled' : ''}>
-            <a
-              href="#"
-              title={messages.nextPage}
-              onClick={e => {
-                e.preventDefault();
-                onNextPage(e);
-              }}
-            >
-              <Icon type="fa" name="angle-right" />
-            </a>
-          </li>
-          <li className={page === amountOfPages ? 'disabled' : ''}>
-            <a
-              href="#"
-              title={messages.lastPage}
-              onClick={e => {
-                e.preventDefault();
-                onLastPage(e);
-              }}
-            >
-              <Icon type="fa" name="angle-double-right" />
-            </a>
-          </li>
-        </ul>
+
+        <PaginationRowAmountOfPages
+          messagesOf={messages.of}
+          amountOfPages={amountOfPages}
+        />
+
+        <PaginationRowForward
+          page={page}
+          amountOfPages={amountOfPages}
+          messagesNextPage={messages.nextPage}
+          messagesLastPage={messages.lastPage}
+          onNextPage={onNextPage}
+          onLastPage={onLastPage}
+        />
       </FormGroup>
     </Form>
   );
 };
-Paginator.propTypes = {
+PaginationRow.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** user pagination settings */
@@ -143,6 +129,16 @@ Paginator.propTypes = {
     perPage: PropTypes.string,
     of: PropTypes.string
   }),
+  /** content view pagination row */
+  contentViewPagination: PropTypes.bool,
+  /** table view pagination row */
+  tableViewPagination: PropTypes.bool,
+  /** list view pagination row */
+  listViewPagination: PropTypes.bool,
+  /** card view pagination row */
+  cardViewPagination: PropTypes.bool,
+  /** dropdown button id */
+  dropdownButtonId: PropTypes.string,
   /** per page selection callback */
   onPerPageSelect: PropTypes.func,
   /** first page callback */
@@ -156,7 +152,7 @@ Paginator.propTypes = {
   /** last page callback */
   onLastPage: PropTypes.func
 };
-Paginator.defaultProps = {
+PaginationRow.defaultProps = {
   messages: {
     firstPage: 'First Page',
     previousPage: 'Previous Page',
@@ -164,6 +160,7 @@ Paginator.defaultProps = {
     lastPage: 'Last Page',
     perPage: 'per page',
     of: 'of'
-  }
+  },
+  dropdownButtonId: 'pagination-row-dropdown'
 };
-export default Paginator;
+export default PaginationRow;

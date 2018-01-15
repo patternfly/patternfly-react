@@ -2,8 +2,15 @@ import React from 'react';
 import orderBy from 'lodash.orderby';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
-import { defaultSortingOrder, tableCellFormatter } from '../index';
-import { Table } from '../../Table';
+import { bindMethods } from '../../../common/helpers';
+import {
+  actionHeaderCellFormatter,
+  customHeaderFormattersDefinition,
+  defaultSortingOrder,
+  sortableHeaderCellFormatter,
+  tableCellFormatter
+} from '../index';
+import { Table, TABLE_SORT_DIRECTION } from '../../Table';
 import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { compose } from 'recompose';
@@ -14,11 +21,11 @@ import { mockRows } from './mockDataTableRows';
  * https://reactabular.js.org/#/data/sorting
  */
 
-export class MockSortableTable extends React.Component {
+export class MockClientSortableTable extends React.Component {
   constructor(props) {
     super(props);
 
-    // Point the transform to your rows. React state can work for this purpose
+    // Point the transform to your sortingColumns. React state can work for this purpose
     // but you can use a state manager as well.
     const getSortingColumns = () => this.state.sortingColumns || {};
 
@@ -43,11 +50,15 @@ export class MockSortableTable extends React.Component {
       strategy: sort.strategies.byProperty
     });
 
+    // enables our custom header formatters extensions to reactabular
+    this.customHeaderFormatters = customHeaderFormattersDefinition;
+    bindMethods(this, ['customHeaderFormatters']);
+
     this.state = {
       // Sort the first column in an ascending way by default.
       sortingColumns: {
         name: {
-          direction: 'asc',
+          direction: TABLE_SORT_DIRECTION.ASC,
           position: 0
         }
       },
@@ -59,10 +70,12 @@ export class MockSortableTable extends React.Component {
             props: {
               index: 0,
               rowSpan: 1,
-              colSpan: 1
+              colSpan: 1,
+              sort: true
             },
             transforms: [sortableTransform],
-            formatters: [sortingFormatter]
+            formatters: [sortingFormatter],
+            customFormatters: [sortableHeaderCellFormatter]
           },
           cell: {
             props: {
@@ -78,10 +91,12 @@ export class MockSortableTable extends React.Component {
             props: {
               index: 1,
               rowSpan: 1,
-              colSpan: 1
+              colSpan: 1,
+              sort: true
             },
             transforms: [sortableTransform],
-            formatters: [sortingFormatter]
+            formatters: [sortingFormatter],
+            customFormatters: [sortableHeaderCellFormatter]
           },
           cell: {
             props: {
@@ -97,10 +112,12 @@ export class MockSortableTable extends React.Component {
             props: {
               index: 2,
               rowSpan: 1,
-              colSpan: 1
+              colSpan: 1,
+              sort: true
             },
             transforms: [sortableTransform],
-            formatters: [sortingFormatter]
+            formatters: [sortingFormatter],
+            customFormatters: [sortableHeaderCellFormatter]
           },
           cell: {
             props: {
@@ -116,10 +133,12 @@ export class MockSortableTable extends React.Component {
             props: {
               index: 3,
               rowSpan: 1,
-              colSpan: 1
+              colSpan: 1,
+              sort: true
             },
             transforms: [sortableTransform],
-            formatters: [sortingFormatter]
+            formatters: [sortingFormatter],
+            customFormatters: [sortableHeaderCellFormatter]
           },
           cell: {
             props: {
@@ -135,10 +154,12 @@ export class MockSortableTable extends React.Component {
             props: {
               index: 4,
               rowSpan: 1,
-              colSpan: 1
+              colSpan: 1,
+              sort: true
             },
             transforms: [sortableTransform],
-            formatters: [sortingFormatter]
+            formatters: [sortingFormatter],
+            customFormatters: [sortableHeaderCellFormatter]
           },
           cell: {
             props: {
@@ -155,7 +176,8 @@ export class MockSortableTable extends React.Component {
               index: 5,
               rowSpan: 1,
               colSpan: 2
-            }
+            },
+            formatters: [actionHeaderCellFormatter]
           },
           cell: {
             props: {
@@ -201,24 +223,6 @@ export class MockSortableTable extends React.Component {
       })
     )(rows);
 
-    const customHeaderCell = cellProps => {
-      const { index } = cellProps;
-      const column = columns[index];
-      const sortDirection =
-        sortingColumns[column.property] &&
-        sortingColumns[column.property].direction;
-      return (
-        <Table.Heading
-          sort
-          sortDirection={sortDirection}
-          aria-label={column.header.label}
-          {...cellProps}
-        >
-          {column.header.label}
-        </Table.Heading>
-      );
-    };
-
     return (
       <div>
         <Table.PfProvider
@@ -228,7 +232,15 @@ export class MockSortableTable extends React.Component {
           dataTable
           columns={columns}
           components={{
-            header: { cell: customHeaderCell }
+            header: {
+              cell: cellProps => {
+                return this.customHeaderFormatters({
+                  cellProps,
+                  columns,
+                  sortingColumns
+                });
+              }
+            }
           }}
         >
           <Table.Header headerRows={resolve.headerRows({ columns })} />

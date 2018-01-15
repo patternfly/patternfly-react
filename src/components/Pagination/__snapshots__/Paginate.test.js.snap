@@ -1,21 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Paginator renders 1`] = `
+exports[`PaginationRow renders 1`] = `
 <form
-  className="paginator "
+  className="content-view-pf-pagination list-view-pf-pagination card-view-pf-pagination table-view-pf-pagination clearfix paginator "
 >
   <div
     className="form-group"
   >
     <div
-      className="dropup btn-group"
+      className="dropup pagination-pf-pagesize btn-group"
     >
       <button
         aria-expanded={false}
         aria-haspopup={true}
         className="dropdown-toggle btn btn-default"
         disabled={false}
-        id="paginator-dropdown"
+        id="pagination-row-dropdown"
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
@@ -28,7 +28,7 @@ exports[`Paginator renders 1`] = `
         />
       </button>
       <ul
-        aria-labelledby="paginator-dropdown"
+        aria-labelledby="pagination-row-dropdown"
         className="dropdown-menu"
         role="menu"
       >
@@ -224,4 +224,113 @@ exports[`Paginator renders 1`] = `
     </ul>
   </div>
 </form>
+`;
+
+exports[`PaginationRow.AmountOfPages renders 1`] = `
+<span>
+   
+  of
+   
+  <span
+    className="pagination-pf-pages"
+  >
+    4
+  </span>
+</span>
+`;
+
+exports[`PaginationRow.Back renders 1`] = `
+<ul
+  className="pagination pagination-pf-back"
+>
+  <li
+    className="disabled"
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      title="first page"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-double-left"
+      />
+    </a>
+  </li>
+  <li
+    className="disabled"
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      title="previous page"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-left"
+      />
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`PaginationRow.ButtonGroup renders 1`] = `
+<div
+  className="custom-class pagination-pf-pagesize btn-group"
+/>
+`;
+
+exports[`PaginationRow.Forward renders 1`] = `
+<ul
+  className="pagination pagination-pf-forward"
+>
+  <li
+    className=""
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      title="Next Page"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-right"
+      />
+    </a>
+  </li>
+  <li
+    className=""
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      title="Last Page"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-double-right"
+      />
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`PaginationRow.Items renders 1`] = `
+<span>
+  <span
+    className="pagination-pf-items-current"
+  >
+    0
+    -
+    10
+  </span>
+   
+  of
+   
+  <span
+    className="pagination-pf-items-total"
+  >
+    55
+  </span>
+</span>
 `;

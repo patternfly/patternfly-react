@@ -5,7 +5,7 @@ import { withKnobs, number } from '@storybook/addon-knobs';
 import { bindMethods } from '../../common/helpers';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
-import { Paginator } from './index';
+import { PaginationRow } from './index';
 
 const stories = storiesOf('Pagination', module);
 stories.addDecorator(withKnobs);
@@ -41,7 +41,7 @@ class PaginationStoryWrapper extends React.Component {
   }
   render() {
     return (
-      <Paginator
+      <PaginationRow
         className="content-view-pf-pagination clearfix"
         pagination={this.state.pagination}
         amountOfPages={number('Number of Pages', 5)}

@@ -1,2 +1,9 @@
-export { default as sortableTableAddWithInfo } from './SortableTableStory';
-export { default as paginationTableAddWithInfo } from './PaginationTableStory';
+export {
+  default as clientSortableTableAddWithInfo
+} from './ClientSortableTableStory';
+export {
+  default as clientPaginationTableAddWithInfo
+} from './ClientPaginationTableStory';
+export {
+  default as serverPaginationTableAddWithInfo
+} from './ServerPaginationTableStory.js';
