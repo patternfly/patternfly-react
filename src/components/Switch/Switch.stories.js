@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
 import { Switch } from './index';
-import { boolean, select, withKnobs } from '@storybook/addon-knobs/dist/index';
+import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 
 const stories = storiesOf('Widgets', module);
