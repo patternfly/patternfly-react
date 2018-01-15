@@ -20,7 +20,7 @@ export class MockAboutModal extends React.Component {
     return (
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.open}>
-          Launch about modal
+          Launch About Modal
         </Button>
 
         <AboutModal
@@ -66,7 +66,7 @@ export class MockAboutModal extends React.Component {
     return (
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.open}>
-          Launch about modal
+          Launch About Modal
         </Button>
 
         <AboutModal
