@@ -24,7 +24,7 @@ stories.addWithInfo(
     const message = text('Message', 'This is really working out.');
     const type = select(
       'Type',
-      ['success', 'danger', 'warning', 'info'],
+      ToastNotification.TOAST_NOTIFICATION_TYPES,
       'success'
     );
     const dismissEnabled = boolean('Dismiss', false);

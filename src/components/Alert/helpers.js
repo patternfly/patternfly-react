@@ -6,6 +6,15 @@ import {
   ALERT_TYPE_INFO
 } from './constants';
 
+export const warnIfDeprecatedType = type => {
+  if (type === ALERT_TYPE_DANGER) {
+    console.warn(`
+      Warning: Deprecated Alert.type='${ALERT_TYPE_DANGER}'.
+      Please migrate to Alert.type='${ALERT_TYPE_ERROR}'
+    `);
+  }
+};
+
 export const getIconName = type => {
   switch (type) {
     case ALERT_TYPE_DANGER:
