@@ -1,5 +1,10 @@
 import { Table } from './Table';
-import { TABLE_ALIGN, TABLE_SORT_DIRECTION } from './constants';
+import {
+  TABLE_ALIGN,
+  TABLE_ALIGNMENT_TYPES,
+  TABLE_SORT_DIRECTION,
+  TABLE_SORT_DIRECTIONS
+} from './constants';
 import TableActions from './TableActions';
 import TableButton from './TableButton';
 import TableCell from './TableCell';
@@ -17,6 +22,10 @@ Table.Heading = TableHeading;
 Table.PfProvider = TablePfProvider;
 Table.SelectionCell = TableSelectionCell;
 Table.SelectionHeading = TableSelectionHeading;
+Table.TABLE_ALIGN = TABLE_ALIGN;
+Table.TABLE_ALIGNMENT_TYPES = TABLE_ALIGNMENT_TYPES;
+Table.TABLE_SORT_DIRECTION = TABLE_SORT_DIRECTION;
+Table.TABLE_SORT_DIRECTIONS = TABLE_SORT_DIRECTIONS;
 
 export {
   Table,
@@ -26,5 +35,7 @@ export {
   TableSelectionCell,
   TableSelectionHeading,
   TABLE_ALIGN,
-  TABLE_SORT_DIRECTION
+  TABLE_ALIGNMENT_TYPES,
+  TABLE_SORT_DIRECTION,
+  TABLE_SORT_DIRECTIONS
 };

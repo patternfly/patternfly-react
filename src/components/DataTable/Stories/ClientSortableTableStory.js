@@ -4,6 +4,12 @@ import {
   MockClientSortableTable,
   mockClientSortableTableSource
 } from '../__mocks__/mockClientSortableTable';
+import {
+  actionHeaderCellFormatter,
+  customHeaderFormattersDefinition,
+  sortableHeaderCellFormatter,
+  tableCellFormatter
+} from '../index';
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
 
@@ -17,6 +23,12 @@ const clientSortableTableAddWithInfo = stories => {
     withInfo({
       source: false,
       propTablesExclude: [MockClientSortableTable],
+      propTables: [
+        actionHeaderCellFormatter,
+        customHeaderFormattersDefinition,
+        sortableHeaderCellFormatter,
+        tableCellFormatter
+      ],
       text: (
         <div>
           <h1>Story Source</h1>

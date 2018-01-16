@@ -6,6 +6,7 @@ import PaginationRowButtonGroup from './PaginationRowButtonGroup';
 import PaginationRowItems from './PaginationRowItems';
 import PaginationRowBack from './PaginationRowBack';
 import PaginationRowForward from './PaginationRowForward';
+import { PAGINATION_VIEW_TYPES, PAGINATION_VIEW } from './constants';
 import { Form, FormControl, FormGroup, ControlLabel } from '../Form';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
@@ -15,16 +16,14 @@ import { MenuItem } from '../MenuItem';
  */
 const PaginationRow = ({
   className,
+  contentView,
+  viewType,
   pagination,
   amountOfPages,
   itemCount,
   itemsStart,
   itemsEnd,
   messages,
-  contentViewPagination,
-  tableViewPagination,
-  listViewPagination,
-  cardViewPagination,
   dropdownButtonId,
   onPerPageSelect,
   onFirstPage,
@@ -36,10 +35,10 @@ const PaginationRow = ({
   const { page, perPage, perPageOptions } = pagination;
   const classes = cx(
     {
-      'content-view-pf-pagination': contentViewPagination,
-      'list-view-pf-pagination': listViewPagination,
-      'card-view-pf-pagination': cardViewPagination,
-      'table-view-pf-pagination': tableViewPagination,
+      'content-view-pf-pagination': contentView,
+      'list-view-pf-pagination': viewType === PAGINATION_VIEW.LIST,
+      'card-view-pf-pagination': viewType === PAGINATION_VIEW.CARD,
+      'table-view-pf-pagination': viewType === PAGINATION_VIEW.TABLE,
       clearfix: true
     },
     className
@@ -110,6 +109,10 @@ const PaginationRow = ({
 PaginationRow.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
+  /** content view pagination row */
+  contentView: PropTypes.bool,
+  /** pagination row view type */
+  viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES),
   /** user pagination settings */
   pagination: PropTypes.object,
   /** calculated amount of pages */
@@ -129,14 +132,6 @@ PaginationRow.propTypes = {
     perPage: PropTypes.string,
     of: PropTypes.string
   }),
-  /** content view pagination row */
-  contentViewPagination: PropTypes.bool,
-  /** table view pagination row */
-  tableViewPagination: PropTypes.bool,
-  /** list view pagination row */
-  listViewPagination: PropTypes.bool,
-  /** card view pagination row */
-  cardViewPagination: PropTypes.bool,
   /** dropdown button id */
   dropdownButtonId: PropTypes.string,
   /** per page selection callback */

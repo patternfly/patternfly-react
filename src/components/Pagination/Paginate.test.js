@@ -1,15 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { PaginationRow, PAGINATION_VIEW_TYPES } from './index';
 
-import { PaginationRow } from './index';
-
-test('PaginationRow renders', () => {
+const testPaginationRowSnapshot = viewType => {
   const component = renderer.create(
     <PaginationRow
       contentViewPagination
-      listViewPagination
-      cardViewPagination
-      tableViewPagination
+      viewType={viewType}
       className="paginator"
       pagination={{
         page: 1,
@@ -38,6 +35,12 @@ test('PaginationRow renders', () => {
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+};
+
+PAGINATION_VIEW_TYPES.forEach(viewType => {
+  test(`PaginationRow ${viewType} renders properly`, () => {
+    testPaginationRowSnapshot(viewType);
+  });
 });
 
 test('PaginationRow.Items renders', () => {

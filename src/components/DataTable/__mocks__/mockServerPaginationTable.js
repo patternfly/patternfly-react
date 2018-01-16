@@ -15,7 +15,7 @@ import { Table, TABLE_SORT_DIRECTION } from '../../Table';
 import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
-import { PaginationRow } from '../../Pagination';
+import { PaginationRow, PAGINATION_VIEW } from '../../Pagination';
 import MockServerApi from './mockServerApi';
 
 export class MockServerPaginationTable extends React.Component {
@@ -381,8 +381,8 @@ export class MockServerPaginationTable extends React.Component {
           <Table.Body rows={rows} rowKey="id" onRow={this.onRow} />
         </Table.PfProvider>
         <PaginationRow
-          contentViewPagination
-          tableViewPagination
+          contentView
+          viewType={PAGINATION_VIEW.TABLE}
           pagination={pagination}
           amountOfPages={amountOfPages}
           itemCount={itemCount}
@@ -421,7 +421,7 @@ import { Table, TABLE_SORT_DIRECTION } from '../../Table';
 import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
-import { PaginationRow } from '../../Pagination';
+import { PaginationRow, PAGINATION_VIEW } from '../../Pagination';
 import MockServerApi from './mockServerApi';
 
 export class MockServerPaginationTable extends React.Component {
@@ -787,8 +787,8 @@ export class MockServerPaginationTable extends React.Component {
           <Table.Body rows={rows} rowKey="id" onRow={this.onRow} />
         </Table.PfProvider>
         <PaginationRow
-          contentViewPagination
-          tableViewPagination
+          contentView
+          viewType={PAGINATION_VIEW.TABLE}
           pagination={pagination}
           amountOfPages={amountOfPages}
           itemCount={itemCount}

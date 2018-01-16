@@ -5,6 +5,14 @@ import {
   MockServerPaginationTable,
   mockServerPaginationTableSource
 } from '../__mocks__/mockServerPaginationTable';
+import {
+  actionHeaderCellFormatter,
+  customHeaderFormattersDefinition,
+  selectionCellFormatter,
+  selectionHeaderCellFormatter,
+  sortableHeaderCellFormatter,
+  tableCellFormatter
+} from '../index';
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
 
@@ -18,6 +26,14 @@ const serverPaginationTableAddWithInfo = stories => {
     withInfo({
       source: false,
       propTablesExclude: [MockServerPaginationTable],
+      propTables: [
+        actionHeaderCellFormatter,
+        customHeaderFormattersDefinition,
+        selectionCellFormatter,
+        selectionHeaderCellFormatter,
+        sortableHeaderCellFormatter,
+        tableCellFormatter
+      ],
       text: (
         <div>
           <h1>Story Source</h1>

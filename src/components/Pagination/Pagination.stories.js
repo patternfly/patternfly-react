@@ -1,11 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { withKnobs, number } from '@storybook/addon-knobs';
-import { bindMethods } from '../../common/helpers';
+import { withInfo } from '@storybook/addon-info';
+import { withKnobs, number, boolean, select } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
-import { PaginationRow } from './index';
+import { PaginationRow, PAGINATION_VIEW_TYPES } from './index';
+import {
+  MockPaginationRow,
+  mockPaginationSource
+} from './__mocks__/mockPaginationRow';
 
 const stories = storiesOf('Pagination', module);
 stories.addDecorator(withKnobs);
@@ -17,50 +21,41 @@ stories.addDecorator(
   })
 );
 
-class PaginationStoryWrapper extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pagination: {
-        page: 1,
-        perPage: 6,
-        perPageOptions: [6, 10, 15, 25, 50]
-      }
-    };
-    bindMethods(this, ['onPageInput', 'onPerPageSelect']);
-  }
-  onPageInput(e) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
-    newPaginationState.page = e.target.value;
-    this.setState({ pagination: newPaginationState });
-  }
-  onPerPageSelect(eventKey, e) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
-    newPaginationState.perPage = eventKey;
-    this.setState({ pagination: newPaginationState });
-  }
-  render() {
-    return (
-      <PaginationRow
-        className="content-view-pf-pagination clearfix"
-        pagination={this.state.pagination}
-        amountOfPages={number('Number of Pages', 5)}
-        itemCount={number('Item Count:', 75)}
-        itemsStart={number('Items Start:', 1)}
-        itemsEnd={number('Items End', 15)}
-        onPerPageSelect={this.onPerPageSelect}
-        onFirstPage={action('onFirstPage')}
-        onPreviousPage={action('onPreviousPage')}
-        onPageInput={this.onPageInput}
-        onNextPage={action('onNextPage')}
-        onLastPage={action('onLastPage')}
-      />
-    );
-  }
-}
-
-stories.addWithInfo(
+stories.add(
   'Pagination row',
-  `Pagination row for card, list, and table views`,
-  () => <PaginationStoryWrapper />
+  withInfo({
+    source: false,
+    propTables: [
+      PaginationRow,
+      PaginationRow.AmountOfPages,
+      PaginationRow.Back,
+      PaginationRow.ButtonGroup,
+      PaginationRow.Forward,
+      PaginationRow.Items
+    ],
+    propTablesExclude: [MockPaginationRow],
+    text: (
+      <div>
+        <h1>Story Source</h1>
+        <pre>{mockPaginationSource}</pre>
+      </div>
+    )
+  })(() => (
+    <MockPaginationRow
+      contentView={boolean('Content View:', true)}
+      viewType={select(
+        'View Type:',
+        PAGINATION_VIEW_TYPES,
+        PAGINATION_VIEW_TYPES[0]
+      )}
+      amountOfPages={number('Number of Pages', 5)}
+      itemCount={number('Item Count:', 75)}
+      itemsStart={number('Items Start:', 1)}
+      itemsEnd={number('Items End', 15)}
+      onFirstPage={action('onFirstPage')}
+      onPreviousPage={action('onPreviousPage')}
+      onNextPage={action('onNextPage')}
+      onLastPage={action('onLastPage')}
+    />
+  ))
 );
