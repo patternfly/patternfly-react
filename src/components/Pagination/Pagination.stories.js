@@ -2,10 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, number, boolean, select } from '@storybook/addon-knobs';
+import { withKnobs, text, number, select } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
-import { PaginationRow, PAGINATION_VIEW_TYPES } from './index';
+import { PaginationRow, Paginator, PAGINATION_VIEW_TYPES } from './index';
 import {
   MockPaginationRow,
   mockPaginationSource
@@ -42,7 +42,6 @@ stories.add(
     )
   })(() => (
     <MockPaginationRow
-      contentView={boolean('Content View:', true)}
       viewType={select(
         'View Type:',
         PAGINATION_VIEW_TYPES,
@@ -59,3 +58,31 @@ stories.add(
     />
   ))
 );
+
+stories.addWithInfo('Pagination row w/ state manager', '', () => {
+  const page = select('Page', ['1', '3', '8'], '1');
+  const totalCount = select('Total items', ['75', '80', '81'], '75');
+  var messages = {};
+  for (var key in PaginationRow.defaultProps.messages) {
+    messages[key] = text(key, PaginationRow.defaultProps.messages[key]);
+  }
+
+  return (
+    <Paginator
+      viewType={select(
+        'View Type:',
+        PAGINATION_VIEW_TYPES,
+        PAGINATION_VIEW_TYPES[0]
+      )}
+      pagination={{
+        page: Number(page),
+        perPage: 10,
+        perPageOptions: [5, 10, 15]
+      }}
+      itemCount={Number(totalCount)}
+      onPageSet={action('page set')}
+      onPerPageSelect={action('per page value set')}
+      messages={messages}
+    />
+  );
+});

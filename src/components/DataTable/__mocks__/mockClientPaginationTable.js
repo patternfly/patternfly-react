@@ -417,7 +417,6 @@ export class MockClientPaginationTable extends React.Component {
           />
         </Table.PfProvider>
         <PaginationRow
-          contentView
           viewType={PAGINATION_VIEW.TABLE}
           tableViewPagination
           pagination={pagination}
@@ -860,7 +859,6 @@ export class MockClientPaginationTable extends React.Component {
           />
         </Table.PfProvider>
         <PaginationRow
-          contentView
           viewType={PAGINATION_VIEW.TABLE}
           pagination={pagination}
           amountOfPages={sortedPaginatedRows.amountOfPages}

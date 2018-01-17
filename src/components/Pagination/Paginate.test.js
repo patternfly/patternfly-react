@@ -1,11 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { PaginationRow, PAGINATION_VIEW_TYPES } from './index';
+import { Paginator, PaginationRow, PAGINATION_VIEW_TYPES } from './index';
 
 const testPaginationRowSnapshot = viewType => {
   const component = renderer.create(
     <PaginationRow
-      contentViewPagination
       viewType={viewType}
       className="paginator"
       pagination={{
@@ -25,6 +24,7 @@ const testPaginationRowSnapshot = viewType => {
         perPage: 'לדף',
         of: 'שֶׁל'
       }}
+      onSubmit={jest.fn()}
       onPerPageSelect={jest.fn()}
       onFirstPage={jest.fn()}
       onPreviousPage={jest.fn()}
@@ -97,6 +97,54 @@ test('PaginationRow.AmountOfPages renders', () => {
   const component = renderer.create(
     <PaginationRow.AmountOfPages messagesOf={'of'} amountOfPages={4} />
   );
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Paginator renders properly the first page', () => {
+  const component = renderer.create(
+    <Paginator
+      itemCount={75}
+      pagination={{
+        page: 1,
+        perPage: 10,
+        perPageOptions: [5, 10, 15]
+      }}
+    />
+  );
+
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Paginator renders properly a middle page', () => {
+  const component = renderer.create(
+    <Paginator
+      itemCount={75}
+      pagination={{
+        page: 4,
+        perPage: 10,
+        perPageOptions: [5, 10, 15]
+      }}
+    />
+  );
+
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Paginator renders properly the last page', () => {
+  const component = renderer.create(
+    <Paginator
+      itemCount={75}
+      pagination={{
+        page: 8,
+        perPage: 10,
+        perPageOptions: [5, 10, 15]
+      }}
+    />
+  );
+
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

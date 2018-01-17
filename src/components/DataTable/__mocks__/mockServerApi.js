@@ -27,10 +27,7 @@ class MockServerApi {
       resolve({
         rows: this.mockRows.slice(startPage * perPage, endOfPage),
         amountOfPages: amountOfPages,
-        itemCount: this.mockRows.length,
-        itemsStart: startPage * perPage + 1,
-        itemsEnd:
-          endOfPage > this.mockRows.length ? this.mockRows.length : endOfPage
+        itemCount: this.mockRows.length
       });
     });
   }

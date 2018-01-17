@@ -16,7 +16,6 @@ import { MenuItem } from '../MenuItem';
  */
 const PaginationRow = ({
   className,
-  contentView,
   viewType,
   pagination,
   amountOfPages,
@@ -25,6 +24,7 @@ const PaginationRow = ({
   itemsEnd,
   messages,
   dropdownButtonId,
+  onSubmit,
   onPerPageSelect,
   onFirstPage,
   onPreviousPage,
@@ -33,18 +33,20 @@ const PaginationRow = ({
   onLastPage
 }) => {
   const { page, perPage, perPageOptions } = pagination;
-  const classes = cx(
-    {
-      'content-view-pf-pagination': contentView,
-      'list-view-pf-pagination': viewType === PAGINATION_VIEW.LIST,
-      'card-view-pf-pagination': viewType === PAGINATION_VIEW.CARD,
-      'table-view-pf-pagination': viewType === PAGINATION_VIEW.TABLE,
-      clearfix: true
-    },
-    className
-  );
+  const classes = cx(className, {
+    'list-view-pf-pagination': viewType === PAGINATION_VIEW.LIST,
+    'card-view-pf-pagination': viewType === PAGINATION_VIEW.CARD,
+    'table-view-pf-pagination': viewType === PAGINATION_VIEW.TABLE,
+    clearfix: true
+  });
   return (
-    <Form className={classes}>
+    <Form
+      className={classes}
+      onSubmit={e => {
+        e.preventDefault();
+        onSubmit && onSubmit(e);
+      }}
+    >
       <FormGroup>
         <DropdownButton
           title={perPage}
@@ -81,7 +83,7 @@ const PaginationRow = ({
           onPreviousPage={onPreviousPage}
         />
 
-        <ControlLabel className="sr-only">Current Page</ControlLabel>
+        <ControlLabel className="sr-only">{messages.currentPage}</ControlLabel>
         <FormControl
           className="pagination-pf-page"
           type="text"
@@ -109,12 +111,17 @@ const PaginationRow = ({
 PaginationRow.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
-  /** content view pagination row */
-  contentView: PropTypes.bool,
   /** pagination row view type */
   viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES),
   /** user pagination settings */
-  pagination: PropTypes.object,
+  pagination: PropTypes.shape({
+    /** the current page */
+    page: PropTypes.number.isRequired,
+    /** the current per page setting */
+    perPage: PropTypes.number.isRequired,
+    /** per page options */
+    perPageOptions: PropTypes.array
+  }),
   /** calculated amount of pages */
   amountOfPages: PropTypes.number,
   /** calculated number of rows */
@@ -134,6 +141,8 @@ PaginationRow.propTypes = {
   }),
   /** dropdown button id */
   dropdownButtonId: PropTypes.string,
+  /** onSubmit callback */
+  onSubmit: PropTypes.func,
   /** per page selection callback */
   onPerPageSelect: PropTypes.func,
   /** first page callback */
@@ -151,11 +160,13 @@ PaginationRow.defaultProps = {
   messages: {
     firstPage: 'First Page',
     previousPage: 'Previous Page',
+    currentPage: 'Current Page',
     nextPage: 'Next Page',
     lastPage: 'Last Page',
     perPage: 'per page',
     of: 'of'
   },
+  className: 'content-view-pf-pagination',
   dropdownButtonId: 'pagination-row-dropdown'
 };
 export default PaginationRow;

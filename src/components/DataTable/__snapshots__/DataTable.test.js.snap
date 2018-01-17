@@ -1044,6 +1044,7 @@ exports[`Mock Client Pagination DataTable renders 1`] = `
   </table>
   <form
     className="content-view-pf-pagination table-view-pf-pagination clearfix "
+    onSubmit={[Function]}
   >
     <div
       className="form-group"
@@ -1159,7 +1160,7 @@ exports[`Mock Client Pagination DataTable renders 1`] = `
           >
             <span
               aria-hidden={true}
-              className="fa fa-angle-double-left"
+              className="fa fa-angle-double-left i"
             />
           </a>
         </li>
@@ -1173,7 +1174,7 @@ exports[`Mock Client Pagination DataTable renders 1`] = `
           >
             <span
               aria-hidden={true}
-              className="fa fa-angle-left"
+              className="fa fa-angle-left i"
             />
           </a>
         </li>
@@ -1214,7 +1215,7 @@ exports[`Mock Client Pagination DataTable renders 1`] = `
           >
             <span
               aria-hidden={true}
-              className="fa fa-angle-right"
+              className="fa fa-angle-right i"
             />
           </a>
         </li>
@@ -1228,7 +1229,7 @@ exports[`Mock Client Pagination DataTable renders 1`] = `
           >
             <span
               aria-hidden={true}
-              className="fa fa-angle-double-right"
+              className="fa fa-angle-double-right i"
             />
           </a>
         </li>
@@ -1333,6 +1334,7 @@ exports[`Mock Server Pagination DataTable renders 1`] = `
   </table>
   <form
     className="content-view-pf-pagination table-view-pf-pagination clearfix "
+    onSubmit={[Function]}
   >
     <div
       className="form-group"
@@ -1422,7 +1424,7 @@ exports[`Mock Server Pagination DataTable renders 1`] = `
         <span
           className="pagination-pf-items-current"
         >
-          0
+          1
           -
           0
         </span>
@@ -1448,7 +1450,7 @@ exports[`Mock Server Pagination DataTable renders 1`] = `
           >
             <span
               aria-hidden={true}
-              className="fa fa-angle-double-left"
+              className="fa fa-angle-double-left i"
             />
           </a>
         </li>
@@ -1462,7 +1464,7 @@ exports[`Mock Server Pagination DataTable renders 1`] = `
           >
             <span
               aria-hidden={true}
-              className="fa fa-angle-left"
+              className="fa fa-angle-left i"
             />
           </a>
         </li>
@@ -1503,7 +1505,7 @@ exports[`Mock Server Pagination DataTable renders 1`] = `
           >
             <span
               aria-hidden={true}
-              className="fa fa-angle-right"
+              className="fa fa-angle-right i"
             />
           </a>
         </li>
@@ -1517,7 +1519,7 @@ exports[`Mock Server Pagination DataTable renders 1`] = `
           >
             <span
               aria-hidden={true}
-              className="fa fa-angle-double-right"
+              className="fa fa-angle-double-right i"
             />
           </a>
         </li>

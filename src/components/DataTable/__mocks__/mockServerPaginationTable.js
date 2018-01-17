@@ -15,7 +15,7 @@ import { Table, TABLE_SORT_DIRECTION } from '../../Table';
 import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
-import { PaginationRow, PAGINATION_VIEW } from '../../Pagination';
+import { Paginator, PAGINATION_VIEW } from '../../Pagination';
 import MockServerApi from './mockServerApi';
 
 export class MockServerPaginationTable extends React.Component {
@@ -27,12 +27,8 @@ export class MockServerPaginationTable extends React.Component {
 
     bindMethods(this, [
       'customHeaderFormatters',
-      'onPageInput',
       'onPerPageSelect',
-      'onFirstPage',
-      'onPreviousPage',
-      'onNextPage',
-      'onLastPage',
+      'onPageSet',
       'onRow',
       'onSelectAllRows',
       'onSelectRow',
@@ -219,10 +215,7 @@ export class MockServerPaginationTable extends React.Component {
       },
 
       // server side pagination values
-      amountOfPages: 0,
-      itemCount: 0,
-      itemsStart: 0,
-      itemsEnd: 0
+      itemCount: 0
     };
   }
 
@@ -248,10 +241,7 @@ export class MockServerPaginationTable extends React.Component {
         sortingColumns: sortingColumns,
         pagination: pagination,
         rows: response.rows,
-        amountOfPages: response.amountOfPages,
-        itemCount: response.itemCount,
-        itemsStart: response.itemsStart,
-        itemsEnd: response.itemsEnd
+        itemCount: response.itemCount
       });
     });
   }
@@ -295,44 +285,16 @@ export class MockServerPaginationTable extends React.Component {
     });
   }
 
-  onPageInput(e) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
-    newPaginationState.page = e.target.value;
-    this.getPage(this.state.sortingColumns, newPaginationState);
-  }
   onPerPageSelect(eventKey, e) {
     let newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     newPaginationState.page = 1;
     this.getPage(this.state.sortingColumns, newPaginationState);
   }
-  onFirstPage() {
+  onPageSet(page) {
     let newPaginationState = Object.assign({}, this.state.pagination);
-    newPaginationState.page = 1;
+    newPaginationState.page = page;
     this.getPage(this.state.sortingColumns, newPaginationState);
-  }
-  onPreviousPage() {
-    if (this.state.pagination.page > 1) {
-      let newPaginationState = Object.assign({}, this.state.pagination);
-      newPaginationState.page--;
-      this.getPage(this.state.sortingColumns, newPaginationState);
-    }
-  }
-  onNextPage() {
-    const { pagination, amountOfPages } = this.state;
-    if (pagination.page < amountOfPages) {
-      let newPaginationState = Object.assign({}, pagination);
-      newPaginationState.page++;
-      this.getPage(this.state.sortingColumns, newPaginationState);
-    }
-  }
-  onLastPage() {
-    const { pagination, amountOfPages } = this.state;
-    if (pagination.page < amountOfPages) {
-      let newPaginationState = Object.assign({}, pagination);
-      newPaginationState.page = amountOfPages;
-      this.getPage(this.state.sortingColumns, newPaginationState);
-    }
   }
 
   onRow(row, { rowIndex }) {
@@ -343,16 +305,7 @@ export class MockServerPaginationTable extends React.Component {
   }
 
   render() {
-    const {
-      columns,
-      pagination,
-      sortingColumns,
-      rows,
-      amountOfPages,
-      itemCount,
-      itemsStart,
-      itemsEnd
-    } = this.state;
+    const { columns, pagination, sortingColumns, rows, itemCount } = this.state;
 
     return (
       <Grid fluid>
@@ -380,20 +333,12 @@ export class MockServerPaginationTable extends React.Component {
           <Table.Header headerRows={resolve.headerRows({ columns })} />
           <Table.Body rows={rows} rowKey="id" onRow={this.onRow} />
         </Table.PfProvider>
-        <PaginationRow
-          contentView
+        <Paginator
           viewType={PAGINATION_VIEW.TABLE}
           pagination={pagination}
-          amountOfPages={amountOfPages}
           itemCount={itemCount}
-          itemsStart={itemsStart}
-          itemsEnd={itemsEnd}
+          onPageSet={this.onPageSet}
           onPerPageSelect={this.onPerPageSelect}
-          onFirstPage={this.onFirstPage}
-          onPreviousPage={this.onPreviousPage}
-          onPageInput={this.onPageInput}
-          onNextPage={this.onNextPage}
-          onLastPage={this.onLastPage}
         />
       </Grid>
     );
@@ -421,7 +366,7 @@ import { Table, TABLE_SORT_DIRECTION } from '../../Table';
 import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
-import { PaginationRow, PAGINATION_VIEW } from '../../Pagination';
+import { Paginator, PAGINATION_VIEW } from '../../Pagination';
 import MockServerApi from './mockServerApi';
 
 export class MockServerPaginationTable extends React.Component {
@@ -433,12 +378,8 @@ export class MockServerPaginationTable extends React.Component {
 
     bindMethods(this, [
       'customHeaderFormatters',
-      'onPageInput',
       'onPerPageSelect',
-      'onFirstPage',
-      'onPreviousPage',
-      'onNextPage',
-      'onLastPage',
+      'onPageSet',
       'onRow',
       'onSelectAllRows',
       'onSelectRow',
@@ -625,10 +566,7 @@ export class MockServerPaginationTable extends React.Component {
       },
 
       // server side pagination values
-      amountOfPages: 0,
-      itemCount: 0,
-      itemsStart: 0,
-      itemsEnd: 0
+      itemCount: 0
     };
   }
 
@@ -654,10 +592,7 @@ export class MockServerPaginationTable extends React.Component {
         sortingColumns: sortingColumns,
         pagination: pagination,
         rows: response.rows,
-        amountOfPages: response.amountOfPages,
-        itemCount: response.itemCount,
-        itemsStart: response.itemsStart,
-        itemsEnd: response.itemsEnd
+        itemCount: response.itemCount
       });
     });
   }
@@ -701,44 +636,16 @@ export class MockServerPaginationTable extends React.Component {
     });
   }
 
-  onPageInput(e) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
-    newPaginationState.page = e.target.value;
-    this.getPage(this.state.sortingColumns, newPaginationState);
-  }
   onPerPageSelect(eventKey, e) {
     let newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     newPaginationState.page = 1;
     this.getPage(this.state.sortingColumns, newPaginationState);
   }
-  onFirstPage() {
+  onPageSet(page) {
     let newPaginationState = Object.assign({}, this.state.pagination);
-    newPaginationState.page = 1;
+    newPaginationState.page = page;
     this.getPage(this.state.sortingColumns, newPaginationState);
-  }
-  onPreviousPage() {
-    if (this.state.pagination.page > 1) {
-      let newPaginationState = Object.assign({}, this.state.pagination);
-      newPaginationState.page--;
-      this.getPage(this.state.sortingColumns, newPaginationState);
-    }
-  }
-  onNextPage() {
-    const { pagination, amountOfPages } = this.state;
-    if (pagination.page < amountOfPages) {
-      let newPaginationState = Object.assign({}, pagination);
-      newPaginationState.page++;
-      this.getPage(this.state.sortingColumns, newPaginationState);
-    }
-  }
-  onLastPage() {
-    const { pagination, amountOfPages } = this.state;
-    if (pagination.page < amountOfPages) {
-      let newPaginationState = Object.assign({}, pagination);
-      newPaginationState.page = amountOfPages;
-      this.getPage(this.state.sortingColumns, newPaginationState);
-    }
   }
 
   onRow(row, { rowIndex }) {
@@ -749,16 +656,7 @@ export class MockServerPaginationTable extends React.Component {
   }
 
   render() {
-    const {
-      columns,
-      pagination,
-      sortingColumns,
-      rows,
-      amountOfPages,
-      itemCount,
-      itemsStart,
-      itemsEnd
-    } = this.state;
+    const { columns, pagination, sortingColumns, rows, itemCount } = this.state;
 
     return (
       <Grid fluid>
@@ -786,20 +684,12 @@ export class MockServerPaginationTable extends React.Component {
           <Table.Header headerRows={resolve.headerRows({ columns })} />
           <Table.Body rows={rows} rowKey="id" onRow={this.onRow} />
         </Table.PfProvider>
-        <PaginationRow
-          contentView
+        <Paginator
           viewType={PAGINATION_VIEW.TABLE}
           pagination={pagination}
-          amountOfPages={amountOfPages}
           itemCount={itemCount}
-          itemsStart={itemsStart}
-          itemsEnd={itemsEnd}
+          onPageSet={this.onPageSet}
           onPerPageSelect={this.onPerPageSelect}
-          onFirstPage={this.onFirstPage}
-          onPreviousPage={this.onPreviousPage}
-          onPageInput={this.onPageInput}
-          onNextPage={this.onNextPage}
-          onLastPage={this.onLastPage}
         />
       </Grid>
     );

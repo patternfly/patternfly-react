@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { Icon } from '../Icon';
+import PaginationRowArrowIcon from './PaginationRowArrowIcon';
 
 /**
  * PaginationRowForward component for Patternfly React
@@ -28,7 +28,7 @@ const PaginationRowForward = ({
             onNextPage(e);
           }}
         >
-          <Icon type="fa" name="angle-right" />
+          <PaginationRowArrowIcon name="right" />
         </a>
       </li>
       <li className={page === amountOfPages ? 'disabled' : ''}>
@@ -40,7 +40,7 @@ const PaginationRowForward = ({
             onLastPage(e);
           }}
         >
-          <Icon type="fa" name="angle-double-right" />
+          <PaginationRowArrowIcon name="double-right" />
         </a>
       </li>
     </ul>

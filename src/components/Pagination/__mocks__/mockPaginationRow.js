@@ -27,7 +27,6 @@ export class MockPaginationRow extends React.Component {
   }
   render() {
     const {
-      contentView,
       viewType,
       amountOfPages,
       itemCount,
@@ -41,7 +40,6 @@ export class MockPaginationRow extends React.Component {
 
     return (
       <PaginationRow
-        contentView={contentView}
         viewType={viewType}
         pagination={this.state.pagination}
         amountOfPages={amountOfPages}
@@ -59,7 +57,6 @@ export class MockPaginationRow extends React.Component {
   }
 }
 MockPaginationRow.propTypes = {
-  contentView: PropTypes.bool,
   viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES),
   amountOfPages: PropTypes.number,
   itemCount: PropTypes.number,
@@ -101,7 +98,6 @@ export class MockPaginationRow extends React.Component {
   }
   render() {
     const {
-      contentView,
       viewType,
       amountOfPages,
       itemCount,
@@ -115,7 +111,6 @@ export class MockPaginationRow extends React.Component {
 
     return (
       <PaginationRow
-        contentView={contentView}
         viewType={viewType}
         pagination={this.state.pagination}
         amountOfPages={amountOfPages}
@@ -133,7 +128,6 @@ export class MockPaginationRow extends React.Component {
   }
 }
 MockPaginationRow.propTypes = {
-  contentView: PropTypes.bool,
   viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES),
   amountOfPages: PropTypes.number,
   itemCount: PropTypes.number,
