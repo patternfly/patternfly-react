@@ -8,13 +8,14 @@ import {
   customHeaderFormattersDefinition,
   defaultSortingOrder,
   sortableHeaderCellFormatter,
-  tableCellFormatter
+  tableCellFormatter,
+  Table,
+  TABLE_SORT_DIRECTION
 } from '../index';
-import { Table, TABLE_SORT_DIRECTION } from '../../Table';
 import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { compose } from 'recompose';
-import { mockRows } from './mockDataTableRows';
+import { mockRows } from './mockRows';
 
 /**
  * Reactabular client side data sorting based on the following api docs:
@@ -270,13 +271,14 @@ import {
   customHeaderFormattersDefinition,
   defaultSortingOrder,
   sortableHeaderCellFormatter,
-  tableCellFormatter
+  tableCellFormatter,
+  Table,
+  TABLE_SORT_DIRECTION
 } from '../index';
-import { Table, TABLE_SORT_DIRECTION } from '../../Table';
 import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { compose } from 'recompose';
-import { mockRows } from './mockDataTableRows';
+import { mockRows } from './mockRows';
 
 /**
  * Reactabular client side data sorting based on the following api docs:

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table } from '../Table';
+import { Table } from '../index';
 
 const selectionCellFormatter = (value, { rowData, rowIndex }, onSelectRow) => {
   const id = `select${rowIndex}`;

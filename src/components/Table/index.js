@@ -1,5 +1,13 @@
+import actionHeaderCellFormatter from './Formatters/actionHeaderCellFormatter';
+import customHeaderFormattersDefinition from './Formatters/customHeaderFormattersDefinition';
+import selectionCellFormatter from './Formatters/selectionCellFormatter';
+import selectionHeaderCellFormatter from './Formatters/selectionHeaderCellFormatter';
+import sortableHeaderCellFormatter from './Formatters/sortableHeaderCellFormatter';
+import tableCellFormatter from './Formatters/tableCellFormatter';
+
 import { Table } from './Table';
 import {
+  defaultSortingOrder,
   TABLE_ALIGN,
   TABLE_ALIGNMENT_TYPES,
   TABLE_SORT_DIRECTION,
@@ -13,6 +21,14 @@ import TableHeading from './TableHeading';
 import TablePfProvider from './TablePfProvider';
 import TableSelectionCell from './TableSelectionCell';
 import TableSelectionHeading from './TableSelectionHeading';
+
+Table.actionHeaderCellFormatter = actionHeaderCellFormatter;
+Table.customHeaderFormattersDefinition = customHeaderFormattersDefinition;
+Table.defaultSortingOrder = defaultSortingOrder;
+Table.selectionCellFormatter = selectionCellFormatter;
+Table.selectionHeaderCellFormatter = selectionHeaderCellFormatter;
+Table.sortableHeaderCellFormatter = sortableHeaderCellFormatter;
+Table.tableCellFormatter = tableCellFormatter;
 
 Table.Actions = TableActions;
 Table.Button = TableButton;
@@ -28,6 +44,13 @@ Table.TABLE_SORT_DIRECTION = TABLE_SORT_DIRECTION;
 Table.TABLE_SORT_DIRECTIONS = TABLE_SORT_DIRECTIONS;
 
 export {
+  actionHeaderCellFormatter,
+  customHeaderFormattersDefinition,
+  defaultSortingOrder,
+  selectionCellFormatter,
+  selectionHeaderCellFormatter,
+  sortableHeaderCellFormatter,
+  tableCellFormatter,
   Table,
   TableCell,
   TableHeading,

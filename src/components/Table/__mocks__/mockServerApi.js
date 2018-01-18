@@ -1,4 +1,4 @@
-import { mockRows } from './mockDataTableRows';
+import { mockRows } from './mockRows';
 
 /**
  * simple singleton mockServer API for server paginated table story

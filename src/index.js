@@ -3,7 +3,6 @@ export * from './components/AboutModal';
 export * from './components/Badge';
 export * from './components/Breadcrumb';
 export * from './components/Button';
-export * from './components/DataTable';
 export * from './components/Dropdown';
 export * from './components/DropdownKebab';
 export * from './components/EmptyState';

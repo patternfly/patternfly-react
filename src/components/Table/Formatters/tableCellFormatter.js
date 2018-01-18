@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table } from '../Table';
+import { Table } from '../index';
 
 const tableCellFormatter = value => {
   return <Table.Cell>{value}</Table.Cell>;
