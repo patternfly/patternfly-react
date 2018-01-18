@@ -1,8 +1,11 @@
 /* eslint-env jest */
 
 import React from 'react';
-import Alert from './Alert';
 import renderer from 'react-test-renderer';
+import Alert from './Alert';
+import { ALERT_TYPES, DEPRECATED_ALERT_TYPES } from './constants';
+
+const ALL_ALERT_TYPES = [...ALERT_TYPES, ...DEPRECATED_ALERT_TYPES];
 
 const testAlertSnapshot = (type, onDismiss) => {
   const component = renderer.create(
@@ -15,7 +18,10 @@ const testAlertSnapshot = (type, onDismiss) => {
   expect(tree).toMatchSnapshot();
 };
 
-Alert.ALERT_TYPES.forEach(type => {
+ALL_ALERT_TYPES.forEach(type => {
+  beforeAll(() => jest.spyOn(console, 'warn').mockImplementation(() => {}));
+  afterAll(() => console.warn.mockRestore());
+
   test(`Alert ${type} renders properly`, () => {
     testAlertSnapshot(type);
   });

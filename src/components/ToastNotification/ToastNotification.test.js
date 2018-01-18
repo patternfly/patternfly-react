@@ -12,7 +12,7 @@ const testToastNotificationSnapshot = Component => {
   const handleOnMouseLeave = jest.fn();
   const component = renderer.create(
     <Component
-      type="danger"
+      type="error"
       onDismiss={handleNotificationClose}
       onMouseEnter={handleOnMouseEnter}
       onMouseLeave={handleOnMouseLeave}
