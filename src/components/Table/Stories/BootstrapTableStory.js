@@ -5,6 +5,7 @@ import { mockBootstrapColumns } from '../__mocks__/mockBootstrapColumns';
 
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
+import { reactabularDescription } from './tableStoryDescriptions';
 
 /**
  * Bootstrap Table stories
@@ -14,7 +15,6 @@ const bootstrapTableAddWithInfo = stories => {
   stories.addWithInfo('Bootstrap Table Styles', '', () => {
     let story = (
       <div>
-        <h2>Boostrap examples</h2>
         <h3>Basic example</h3>
         <Table.PfProvider columns={mockBootstrapColumns}>
           <caption>Optional table caption.</caption>
@@ -78,10 +78,11 @@ const bootstrapTableAddWithInfo = stories => {
     );
 
     return inlineTemplate({
-      title: 'Table',
+      title: 'Bootstrap Table Styles',
       documentationLink:
         DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'table-view/',
-      story: story
+      story: story,
+      description: reactabularDescription
     });
   });
 };

@@ -13,7 +13,6 @@ import {
   Table,
   TABLE_SORT_DIRECTION
 } from '../index';
-import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
 import { Paginator, PAGINATION_VIEW } from '../../Pagination';
@@ -65,7 +64,6 @@ export class MockServerPaginationTable extends React.Component {
             formatters: [
               (value, { rowData, rowIndex }) => {
                 return selectionCellFormatter(
-                  value,
                   { rowData, rowIndex },
                   this.onSelectRow
                 );
@@ -189,13 +187,13 @@ export class MockServerPaginationTable extends React.Component {
                     </Table.Button>
                   </Table.Actions>,
                   <Table.Actions key="1">
-                    <DropdownKebab id="myKebab" pullRight>
+                    <Table.DropdownKebab id="myKebab" pullRight>
                       <MenuItem>Action</MenuItem>
                       <MenuItem>Another Action</MenuItem>
                       <MenuItem>Something else here</MenuItem>
                       <MenuItem divider />
                       <MenuItem>Separated link</MenuItem>
-                    </DropdownKebab>
+                    </Table.DropdownKebab>
                   </Table.Actions>
                 ];
               }
@@ -248,7 +246,7 @@ export class MockServerPaginationTable extends React.Component {
   }
 
   onSort(e, column, sortDirection) {
-    // Clearing existing `sortingColumns` does simple single column sort. To do multisort,
+    // Clearing existing sortingColumns does simple single column sort. To do multisort,
     // set each column based on existing sorts specified and set sort position.
     const updatedSortingColumns = {
       [column.property]: {
@@ -365,7 +363,6 @@ import {
   Table,
   TABLE_SORT_DIRECTION
 } from '../index';
-import { DropdownKebab } from '../../DropdownKebab';
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
 import { Paginator, PAGINATION_VIEW } from '../../Pagination';
@@ -417,7 +414,6 @@ export class MockServerPaginationTable extends React.Component {
             formatters: [
               (value, { rowData, rowIndex }) => {
                 return selectionCellFormatter(
-                  value,
                   { rowData, rowIndex },
                   this.onSelectRow
                 );
@@ -541,13 +537,13 @@ export class MockServerPaginationTable extends React.Component {
                     </Table.Button>
                   </Table.Actions>,
                   <Table.Actions key="1">
-                    <DropdownKebab id="myKebab" pullRight>
+                    <Table.DropdownKebab id="myKebab" pullRight>
                       <MenuItem>Action</MenuItem>
                       <MenuItem>Another Action</MenuItem>
                       <MenuItem>Something else here</MenuItem>
                       <MenuItem divider />
                       <MenuItem>Separated link</MenuItem>
-                    </DropdownKebab>
+                    </Table.DropdownKebab>
                   </Table.Actions>
                 ];
               }

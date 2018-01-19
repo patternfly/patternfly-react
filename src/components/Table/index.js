@@ -17,6 +17,7 @@ import TableActions from './TableActions';
 import TableButton from './TableButton';
 import TableCell from './TableCell';
 import TableCheckbox from './TableCheckbox';
+import TableDropdownKebab from './TableDropdownKebab';
 import TableHeading from './TableHeading';
 import TablePfProvider from './TablePfProvider';
 import TableSelectionCell from './TableSelectionCell';
@@ -34,6 +35,7 @@ Table.Actions = TableActions;
 Table.Button = TableButton;
 Table.Cell = TableCell;
 Table.Checkbox = TableCheckbox;
+Table.DropdownKebab = TableDropdownKebab;
 Table.Heading = TableHeading;
 Table.PfProvider = TablePfProvider;
 Table.SelectionCell = TableSelectionCell;
@@ -52,7 +54,11 @@ export {
   sortableHeaderCellFormatter,
   tableCellFormatter,
   Table,
+  TableActions,
+  TableButton,
   TableCell,
+  TableCheckbox,
+  TableDropdownKebab,
   TableHeading,
   TablePfProvider,
   TableSelectionCell,

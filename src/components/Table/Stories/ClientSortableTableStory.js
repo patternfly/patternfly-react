@@ -8,10 +8,12 @@ import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
   sortableHeaderCellFormatter,
-  tableCellFormatter
+  tableCellFormatter,
+  Table
 } from '../index';
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
+import { reactabularDescription } from './tableStoryDescriptions';
 
 /**
  * Client Sortable Table stories
@@ -24,6 +26,12 @@ const clientSortableTableAddWithInfo = stories => {
       source: false,
       propTablesExclude: [MockClientSortableTable],
       propTables: [
+        Table.Actions,
+        Table.Button,
+        Table.Cell,
+        Table.DropdownKebab,
+        Table.Heading,
+        Table.PfProvider,
         actionHeaderCellFormatter,
         customHeaderFormattersDefinition,
         sortableHeaderCellFormatter,
@@ -37,20 +45,12 @@ const clientSortableTableAddWithInfo = stories => {
       )
     })(() => {
       let story = <MockClientSortableTable />;
-      let description = (
-        <div>
-          Client side sorting for PatternFly React Data Tables is based on
-          Sortabular. See the following{' '}
-          <a href="https://reactabular.js.org/#/data/sorting">API docs</a> for
-          more details.
-        </div>
-      );
       return inlineTemplate({
         title: 'Client Sortable Table',
         documentationLink:
           DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'table-view/',
         story: story,
-        description: description
+        description: reactabularDescription
       });
     })
   );

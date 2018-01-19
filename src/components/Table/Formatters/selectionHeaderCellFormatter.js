@@ -9,11 +9,12 @@ const selectionHeaderCellFormatter = ({
   onSelectAllRows
 }) => {
   const unselectedRows = rows.filter(r => !r.selected).length > 0;
+  const id = cellProps.id || 'selectAll';
   return (
     <Table.SelectionHeading aria-label={column.header.label} {...cellProps}>
       <Table.Checkbox
-        id="selectAll"
-        label="Select all rows"
+        id={id}
+        label={column.header.label}
         checked={!unselectedRows}
         onChange={onSelectAllRows}
       />

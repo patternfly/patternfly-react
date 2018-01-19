@@ -2,7 +2,7 @@
 
 exports[`PaginationRow card renders properly 1`] = `
 <form
-  className="paginator card-view-pf-pagination clearfix "
+  className="content-view-pf-pagination paginator card-view-pf-pagination clearfix "
   onSubmit={[Function]}
 >
   <div
@@ -227,7 +227,7 @@ exports[`PaginationRow card renders properly 1`] = `
 
 exports[`PaginationRow list renders properly 1`] = `
 <form
-  className="paginator list-view-pf-pagination clearfix "
+  className="content-view-pf-pagination paginator list-view-pf-pagination clearfix "
   onSubmit={[Function]}
 >
   <div
@@ -452,7 +452,7 @@ exports[`PaginationRow list renders properly 1`] = `
 
 exports[`PaginationRow table renders properly 1`] = `
 <form
-  className="paginator table-view-pf-pagination clearfix "
+  className="content-view-pf-pagination paginator table-view-pf-pagination clearfix "
   onSubmit={[Function]}
 >
   <div

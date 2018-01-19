@@ -807,21 +807,22 @@ exports[`Mock Client Pagination table renders 1`] = `
     <thead>
       <tr>
         <th
-          aria-label="Select all rows"
+          aria-label="Vyberte všechny řádky"
           className="table-view-pf-select"
           colSpan={1}
+          id="vybrat vše"
           index={0}
           rowSpan={1}
         >
           <label
             className="control-label sr-only"
-            htmlFor="selectAll"
+            htmlFor="vybrat vše"
           >
-            Select all rows
+            Vyberte všechny řádky
           </label>
           <input
             checked={false}
-            id="selectAll"
+            id="vybrat vše"
             onChange={[Function]}
             type="checkbox"
           />
@@ -897,13 +898,13 @@ exports[`Mock Client Pagination table renders 1`] = `
         >
           <label
             className="control-label sr-only"
-            htmlFor="select0"
+            htmlFor="vybrat0"
           >
-            Select row 0
+            vyberte řádek 0
           </label>
           <input
             checked={undefined}
-            id="select0"
+            id="vybrat0"
             onChange={[Function]}
             type="checkbox"
           />
@@ -953,12 +954,12 @@ exports[`Mock Client Pagination table renders 1`] = `
           className="table-view-pf-actions"
         >
           <div
-            className="dropdown-kebab-pf dropdown btn-group"
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
               aria-expanded={false}
               aria-haspopup={true}
-              className="dropdown-toggle btn btn-link"
+              className="dropdown-toggle btn btn-default"
               disabled={false}
               id="myKebab"
               onClick={[Function]}
@@ -1055,13 +1056,13 @@ exports[`Mock Client Pagination table renders 1`] = `
         >
           <label
             className="control-label sr-only"
-            htmlFor="select1"
+            htmlFor="vybrat1"
           >
-            Select row 1
+            vyberte řádek 1
           </label>
           <input
             checked={undefined}
-            id="select1"
+            id="vybrat1"
             onChange={[Function]}
             type="checkbox"
           />
@@ -1111,12 +1112,12 @@ exports[`Mock Client Pagination table renders 1`] = `
           className="table-view-pf-actions"
         >
           <div
-            className="dropdown-kebab-pf dropdown btn-group"
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
               aria-expanded={false}
               aria-haspopup={true}
-              className="dropdown-toggle btn btn-link"
+              className="dropdown-toggle btn btn-default"
               disabled={false}
               id="myKebab"
               onClick={[Function]}
@@ -1213,13 +1214,13 @@ exports[`Mock Client Pagination table renders 1`] = `
         >
           <label
             className="control-label sr-only"
-            htmlFor="select2"
+            htmlFor="vybrat2"
           >
-            Select row 2
+            vyberte řádek 2
           </label>
           <input
             checked={undefined}
-            id="select2"
+            id="vybrat2"
             onChange={[Function]}
             type="checkbox"
           />
@@ -1269,12 +1270,12 @@ exports[`Mock Client Pagination table renders 1`] = `
           className="table-view-pf-actions"
         >
           <div
-            className="dropdown-kebab-pf dropdown btn-group"
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
               aria-expanded={false}
               aria-haspopup={true}
-              className="dropdown-toggle btn btn-link"
+              className="dropdown-toggle btn btn-default"
               disabled={false}
               id="myKebab"
               onClick={[Function]}
@@ -1371,13 +1372,13 @@ exports[`Mock Client Pagination table renders 1`] = `
         >
           <label
             className="control-label sr-only"
-            htmlFor="select3"
+            htmlFor="vybrat3"
           >
-            Select row 3
+            vyberte řádek 3
           </label>
           <input
             checked={undefined}
-            id="select3"
+            id="vybrat3"
             onChange={[Function]}
             type="checkbox"
           />
@@ -1427,12 +1428,12 @@ exports[`Mock Client Pagination table renders 1`] = `
           className="table-view-pf-actions"
         >
           <div
-            className="dropdown-kebab-pf dropdown btn-group"
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
               aria-expanded={false}
               aria-haspopup={true}
-              className="dropdown-toggle btn btn-link"
+              className="dropdown-toggle btn btn-default"
               disabled={false}
               id="myKebab"
               onClick={[Function]}
@@ -1529,13 +1530,13 @@ exports[`Mock Client Pagination table renders 1`] = `
         >
           <label
             className="control-label sr-only"
-            htmlFor="select4"
+            htmlFor="vybrat4"
           >
-            Select row 4
+            vyberte řádek 4
           </label>
           <input
             checked={undefined}
-            id="select4"
+            id="vybrat4"
             onChange={[Function]}
             type="checkbox"
           />
@@ -1585,12 +1586,12 @@ exports[`Mock Client Pagination table renders 1`] = `
           className="table-view-pf-actions"
         >
           <div
-            className="dropdown-kebab-pf dropdown btn-group"
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
               aria-expanded={false}
               aria-haspopup={true}
-              className="dropdown-toggle btn btn-link"
+              className="dropdown-toggle btn btn-default"
               disabled={false}
               id="myKebab"
               onClick={[Function]}
@@ -1687,13 +1688,13 @@ exports[`Mock Client Pagination table renders 1`] = `
         >
           <label
             className="control-label sr-only"
-            htmlFor="select5"
+            htmlFor="vybrat5"
           >
-            Select row 5
+            vyberte řádek 5
           </label>
           <input
             checked={undefined}
-            id="select5"
+            id="vybrat5"
             onChange={[Function]}
             type="checkbox"
           />
@@ -1743,12 +1744,12 @@ exports[`Mock Client Pagination table renders 1`] = `
           className="table-view-pf-actions"
         >
           <div
-            className="dropdown-kebab-pf dropdown btn-group"
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
               aria-expanded={false}
               aria-haspopup={true}
-              className="dropdown-toggle btn btn-link"
+              className="dropdown-toggle btn btn-default"
               disabled={false}
               id="myKebab"
               onClick={[Function]}

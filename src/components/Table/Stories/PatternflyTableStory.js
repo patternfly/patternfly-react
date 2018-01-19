@@ -5,6 +5,7 @@ import { mockPatternflyColumns } from '../__mocks__/mockBootstrapColumns';
 
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
+import { reactabularDescription } from './tableStoryDescriptions';
 
 /**
  * Patternfly Table stories
@@ -30,10 +31,11 @@ const patternflyTableAddWithInfo = stories => {
       </div>
     );
     return inlineTemplate({
-      title: 'Table',
+      title: 'PatternFly Table Styles',
       documentationLink:
         DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'table-view/',
-      story: story
+      story: story,
+      description: reactabularDescription
     });
   });
 };

@@ -11,10 +11,12 @@ import {
   selectionCellFormatter,
   selectionHeaderCellFormatter,
   sortableHeaderCellFormatter,
-  tableCellFormatter
+  tableCellFormatter,
+  Table
 } from '../index';
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
+import { reactabularDescription } from './tableStoryDescriptions';
 
 /**
  * Server Pagination Table stories
@@ -27,6 +29,15 @@ const serverPaginationTableAddWithInfo = stories => {
       source: false,
       propTablesExclude: [MockServerPaginationTable],
       propTables: [
+        Table.Actions,
+        Table.Button,
+        Table.Cell,
+        Table.Checkbox,
+        Table.DropdownKebab,
+        Table.Heading,
+        Table.PfProvider,
+        Table.SelectionCell,
+        Table.SelectionHeading,
         actionHeaderCellFormatter,
         customHeaderFormattersDefinition,
         selectionCellFormatter,
@@ -47,19 +58,12 @@ const serverPaginationTableAddWithInfo = stories => {
           onServerPageLogger={logAction('Server page requested')}
         />
       );
-      let description = (
-        <div>
-          Server side sorting for PatternFly React Data Tables is based on
-          Reactabular. See the following{' '}
-          <a href="https://reactabular.js.org/#/">API docs</a> for more details.
-        </div>
-      );
       return inlineTemplate({
         title: 'Server Paginated Table',
         documentationLink:
           DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'table-view/',
         story: story,
-        description: description
+        description: reactabularDescription
       });
     })
   );

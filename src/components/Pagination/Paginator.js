@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PaginationRow from './PaginationRow';
+import { bindMethods } from '../../common/helpers';
 import { PAGINATION_VIEW_TYPES } from './constants';
 
 class Paginator extends React.Component {
   constructor(props) {
     super(props);
 
+    bindMethods(this, ['handleFormSubmit']);
+
     this.initPagination(props);
 
     this.state = {
-      pagination: props.pagination
+      pagination: props.pagination,
+      pageChangeValue: props.pagination.page
     };
   }
 
@@ -18,9 +22,14 @@ class Paginator extends React.Component {
     const { pagination } = nextProps;
     if (
       this.props.pagination.page !== pagination.page ||
-      this.props.pagination.perPage !== pagination.perPage
+      this.props.pagination.perPage !== pagination.perPage ||
+      this.props.pagination.perPageOptions.toString() !==
+        pagination.perPageOptions.toString()
     ) {
-      this.setState({ pagination: pagination });
+      this.setState({
+        pagination: pagination,
+        pageChangeValue: pagination.page
+      });
     }
 
     this.initPagination(nextProps);
@@ -40,37 +49,31 @@ class Paginator extends React.Component {
   setPageRelative(diff) {
     const { pagination } = this.props;
     const page = Number(pagination.page) + diff;
-    if (page > 0 && page <= this.totalPages()) {
-      this.setPage(page);
-    }
+    this.setPage(page);
   }
 
-  setPage(page) {
-    if (page !== '') {
-      this.props.onPageSet(Number(page));
-    } else {
-      console.error("Page can't be blank");
+  setPage(value) {
+    const page = Number(value);
+    if (
+      !isNaN(value) &&
+      value !== '' &&
+      page > 0 &&
+      page <= this.totalPages()
+    ) {
+      this.props.onPageSet(page);
     }
   }
 
   handlePageChange(e) {
-    const value = Number(e.target.value);
-    if (value === parseInt(value, 10)) {
-      const newPagination = Object.assign({}, this.state.pagination);
-      newPagination.page = value;
-      this.setState({ pagination: newPagination });
-      if (value <= this.totalPages() && value > 0) {
-        this.setPage(value);
-      }
-    }
+    this.setState({ pageChangeValue: e.target.value });
   }
 
   handleFormSubmit(e) {
-    this.setPage(this.state.pagination.page);
+    this.setPage(this.state.pageChangeValue);
   }
 
   render() {
-    const { pagination } = this.state;
+    const { pagination, pageChangeValue } = this.state;
 
     const {
       className,
@@ -91,6 +94,7 @@ class Paginator extends React.Component {
         onSubmit={this.handleFormSubmit}
         viewType={viewType}
         pagination={pagination}
+        pageInputValue={pageChangeValue}
         amountOfPages={this.totalPages()}
         itemCount={itemCount}
         itemsStart={itemsStart}

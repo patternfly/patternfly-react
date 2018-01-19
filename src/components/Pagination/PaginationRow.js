@@ -15,9 +15,11 @@ import { MenuItem } from '../MenuItem';
  * PaginationRow component for Patternfly React
  */
 const PaginationRow = ({
+  baseClassName,
   className,
   viewType,
   pagination,
+  pageInputValue,
   amountOfPages,
   itemCount,
   itemsStart,
@@ -33,12 +35,13 @@ const PaginationRow = ({
   onLastPage
 }) => {
   const { page, perPage, perPageOptions } = pagination;
-  const classes = cx(className, {
+  const classes = cx(baseClassName, className, {
     'list-view-pf-pagination': viewType === PAGINATION_VIEW.LIST,
     'card-view-pf-pagination': viewType === PAGINATION_VIEW.CARD,
     'table-view-pf-pagination': viewType === PAGINATION_VIEW.TABLE,
     clearfix: true
   });
+  const pageValue = pageInputValue !== undefined ? pageInputValue : page;
   return (
     <Form
       className={classes}
@@ -87,7 +90,7 @@ const PaginationRow = ({
         <FormControl
           className="pagination-pf-page"
           type="text"
-          value={pagination.page}
+          value={pageValue}
           onChange={onPageInput}
         />
 
@@ -109,6 +112,8 @@ const PaginationRow = ({
   );
 };
 PaginationRow.propTypes = {
+  /** Base css class */
+  baseClassName: PropTypes.string,
   /** Additional css classes */
   className: PropTypes.string,
   /** pagination row view type */
@@ -122,6 +127,8 @@ PaginationRow.propTypes = {
     /** per page options */
     perPageOptions: PropTypes.array
   }),
+  /** page input (optional override for page input) */
+  pageInputValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** calculated amount of pages */
   amountOfPages: PropTypes.number,
   /** calculated number of rows */
@@ -166,7 +173,7 @@ PaginationRow.defaultProps = {
     perPage: 'per page',
     of: 'of'
   },
-  className: 'content-view-pf-pagination',
+  baseClassName: 'content-view-pf-pagination',
   dropdownButtonId: 'pagination-row-dropdown'
 };
 export default PaginationRow;
