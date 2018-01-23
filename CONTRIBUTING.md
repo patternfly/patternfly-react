@@ -91,7 +91,7 @@ Adhering to the following process is the best way to get your work included in t
   # Navigate to the newly cloned directory
   cd patternfly-react
   # Assign the original repo to a remote called "upstream"
-  git remote add upstream https://github.com/patternfly-react/patternfly-react.git
+  git remote add upstream https://github.com/patternfly/patternfly-react.git
   ```
 2. Create a branch:
 
