@@ -20,7 +20,17 @@ stories.addWithInfo(
   'with Popover',
   'FieldLevelHelp',
   () => (
-    <FieldLevelHelp popoverContent={'Enter the hostname in a valid format <br>  <a href="http://www.test.example.com">Click here for examples of valid hostnames</a>'}>
+    <FieldLevelHelp contentType='popover' content={'Enter the hostname in a valid format <br>  <a href="http://www.test.example.com">Click here for examples of valid hostnames</a>'}>
+      Hostname
+    </FieldLevelHelp>
+  )
+);
+
+stories.addWithInfo(
+  'with Tooltip',
+  'FieldLevelHelp',
+  () => (
+    <FieldLevelHelp contentType='tooltip' content={'Enter the hostname in a valid format'}>
       Hostname
     </FieldLevelHelp>
   )
