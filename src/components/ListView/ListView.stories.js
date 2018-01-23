@@ -54,22 +54,35 @@ stories.addWithInfo(
   () => {
     return (
       <ListView>
-        {mockListItems.map((item, index) => (
-          <ListView.Item
-            key={index}
-            actions={renderActions(item.actions)}
-            checkboxInput={<input type="checkbox" />}
-            leftContent={<ListView.Icon name="plane" />}
-            additionalInfo={renderAdditionalInfoItems(item.properties)}
-            heading={item.title}
-            description={item.description}
-            stacked={boolean('Stacked', false)}
-          >
-            <Row>
-              <Col sm={11}>{item.expandedContentText}</Col>
-            </Row>
-          </ListView.Item>
-        ))}
+        {mockListItems.map(
+          (
+            {
+              actions,
+              properties,
+              title,
+              description,
+              expandedContentText,
+              ...rest
+            },
+            index
+          ) => (
+            <ListView.Item
+              key={index}
+              actions={renderActions(actions)}
+              checkboxInput={<input type="checkbox" />}
+              leftContent={<ListView.Icon name="plane" />}
+              additionalInfo={renderAdditionalInfoItems(properties)}
+              heading={title}
+              description={description}
+              stacked={boolean('Stacked', false)}
+              {...rest}
+            >
+              <Row>
+                <Col sm={11}>{expandedContentText}</Col>
+              </Row>
+            </ListView.Item>
+          )
+        )}
       </ListView>
     );
   }

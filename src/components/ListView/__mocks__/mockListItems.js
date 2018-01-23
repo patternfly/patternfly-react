@@ -37,9 +37,9 @@ export const mockListItems = [
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
   },
   {
-    title: 'Item without description',
-    expandedContentText:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry'
+    title: 'Item without description or close icon',
+    expandedContentText: 'There is no close `x` on the right of this box.',
+    hideCloseIcon: true
   }
 ];
 

@@ -38,6 +38,7 @@ class ListViewItem extends React.Component {
       heading,
       leftContent,
       checkboxInput,
+      hideCloseIcon,
       ...other
     } = this.props;
     const { expanded } = this.state;
@@ -61,7 +62,7 @@ class ListViewItem extends React.Component {
           </ListViewGroupItemHeader>
           <ListViewGroupItemContainer
             expanded={expanded}
-            onClose={() => this.toggleExpanded()}
+            onClose={hideCloseIcon ? undefined : () => this.toggleExpanded()}
           >
             {children}
           </ListViewGroupItemContainer>
@@ -103,9 +104,12 @@ ListViewItem.propTypes = {
   /** Contents for left section of ListViewItem (usually ListViewIcon) */
   leftContent: PropTypes.node,
   /** Checkbox form input component */
-  checkboxInput: PropTypes.node
+  checkboxInput: PropTypes.node,
+  /** Optionally hide the close icon in expanded content */
+  hideCloseIcon: PropTypes.bool
 };
 ListViewItem.defaultProps = {
-  stacked: false
+  stacked: false,
+  hideCloseIcon: false
 };
 export default ListViewItem;

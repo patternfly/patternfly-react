@@ -659,7 +659,7 @@ exports[`ListView renders properly 1`] = `
             <div
               className="list-group-item-heading"
             >
-              Item without description
+              Item without description or close icon
             </div>
           </div>
         </div>
