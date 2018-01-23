@@ -9,8 +9,7 @@ import { OverlayTrigger } from '../OverlayTrigger';
  * FieldLevelHelp Component for Patternfly React
  */
 const FieldLevelHelp = ({ children, contentType, content, ...props }) => {
-  const placement = 'top';
-  const rootClose = true;
+  const trigger = contentType === 'popover' ? 'click' : 'hover focus';
   const htmlContent = (
     <div
       dangerouslySetInnerHTML={{
@@ -18,50 +17,23 @@ const FieldLevelHelp = ({ children, contentType, content, ...props }) => {
       }}
     />
   );
+  const overlay = contentType === 'popover' ?
+    <Popover id={contentType}>{htmlContent}</Popover> : 
+    <Tooltip id={contentType}>{htmlContent}</Tooltip>;
 
-  if (contentType === 'popover') {
-    const popover = (
-      <Popover id="popover" >
-        {htmlContent}
-      </Popover>
-    );
-    const trigger = 'click';
-
-    return (
-      <OverlayTrigger
-        overlay={popover}
-        placement={placement}
-        trigger={trigger.split(' ')}
-        rootClose={rootClose}
-      >
-        <label>
-          {children + ' '}
-          <Icon type="pf" name={'info'} style={{ color: '#0088ce' }} />
-        </label>
-      </OverlayTrigger>
-    );
-  } else if (contentType === 'tooltip') {
-    const tooltip = (
-      <Tooltip id="tooltip">
-        {htmlContent}
-      </Tooltip>
-    );
-    const trigger = 'hover focus';
-
-    return (
-      <OverlayTrigger
-        overlay={tooltip}
-        placement={placement}
-        trigger={trigger.split(' ')}
-        rootClose={rootClose}
-      >
-        <label>
-          {children + ' '}
-          <Icon type="pf" name={'info'} style={{ color: '#0088ce' }} />
-        </label>
-      </OverlayTrigger>
-    );
-  }
+  return (
+    <OverlayTrigger
+      overlay={overlay}
+      placement={'top'}
+      trigger={trigger.split(' ')}
+      rootClose={true}
+    >
+      <label>
+        {children + ' '}
+        <Icon type="pf" name={'info'} style={{ color: '#0088ce' }} />
+      </label>
+    </OverlayTrigger>
+  );
 };
 
 FieldLevelHelp.propTypes = {
