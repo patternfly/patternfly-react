@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PaginationRow from './PaginationRow';
-import { bindMethods } from '../../common/helpers';
+import { bindMethods, noop } from '../../common/helpers';
 import { PAGINATION_VIEW_TYPES } from './constants';
 
 class Paginator extends React.Component {
@@ -143,6 +143,9 @@ Paginator.propTypes = {
   onPageSet: PropTypes.func,
   /** per page selection callback */
   onPerPageSelect: PropTypes.func
+};
+Paginator.defaultProps = {
+  onPageSet: noop
 };
 
 export default Paginator;

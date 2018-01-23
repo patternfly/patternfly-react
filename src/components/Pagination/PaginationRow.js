@@ -6,6 +6,7 @@ import PaginationRowButtonGroup from './PaginationRowButtonGroup';
 import PaginationRowItems from './PaginationRowItems';
 import PaginationRowBack from './PaginationRowBack';
 import PaginationRowForward from './PaginationRowForward';
+import { noop } from '../../common/helpers';
 import { PAGINATION_VIEW_TYPES, PAGINATION_VIEW } from './constants';
 import { Form, FormControl, FormGroup, ControlLabel } from '../Form';
 import { DropdownButton } from '../Button';
@@ -34,7 +35,7 @@ const PaginationRow = ({
   onNextPage,
   onLastPage
 }) => {
-  const { page, perPage, perPageOptions } = pagination;
+  const { page, perPage, perPageOptions = [] } = pagination;
   const classes = cx(baseClassName, className, {
     'list-view-pf-pagination': viewType === PAGINATION_VIEW.LIST,
     'card-view-pf-pagination': viewType === PAGINATION_VIEW.CARD,
@@ -47,7 +48,7 @@ const PaginationRow = ({
       className={classes}
       onSubmit={e => {
         e.preventDefault();
-        onSubmit && onSubmit(e);
+        onSubmit(e);
       }}
     >
       <FormGroup>
@@ -58,15 +59,13 @@ const PaginationRow = ({
           onSelect={onPerPageSelect}
           id={dropdownButtonId}
         >
-          {perPageOptions &&
-            perPageOptions.length &&
-            perPageOptions.map((option, i) => {
-              return (
-                <MenuItem eventKey={option} active={option === perPage} key={i}>
-                  {option}
-                </MenuItem>
-              );
-            })}
+          {perPageOptions.map((option, i) => {
+            return (
+              <MenuItem eventKey={option} active={option === perPage} key={i}>
+                {option}
+              </MenuItem>
+            );
+          })}
         </DropdownButton>
         <span> {messages.perPage} </span>
       </FormGroup>
@@ -164,6 +163,7 @@ PaginationRow.propTypes = {
   onLastPage: PropTypes.func
 };
 PaginationRow.defaultProps = {
+  baseClassName: 'content-view-pf-pagination',
   messages: {
     firstPage: 'First Page',
     previousPage: 'Previous Page',
@@ -173,7 +173,13 @@ PaginationRow.defaultProps = {
     perPage: 'per page',
     of: 'of'
   },
-  baseClassName: 'content-view-pf-pagination',
+  onSubmit: noop,
+  onPerPageSelect: noop,
+  onFirstPage: noop,
+  onPreviousPage: noop,
+  onPageInput: noop,
+  onNextPage: noop,
+  onLastPage: noop,
   dropdownButtonId: 'pagination-row-dropdown'
 };
 export default PaginationRow;

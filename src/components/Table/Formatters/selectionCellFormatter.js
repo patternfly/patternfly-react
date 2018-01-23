@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { noop } from '../../../common/helpers';
 import { Table } from '../index';
 
 const selectionCellFormatter = (
   { rowData, rowIndex },
-  onSelectRow,
+  onSelectRow = noop,
   id,
   label
 ) => {
@@ -17,7 +18,7 @@ const selectionCellFormatter = (
         label={checkboxLabel}
         checked={rowData.selected}
         onChange={e => {
-          onSelectRow && onSelectRow(e, rowData);
+          onSelectRow(e, rowData);
         }}
       />
     </Table.SelectionCell>
@@ -35,4 +36,5 @@ selectionCellFormatter.propTypes = {
   /** checkbox label override */
   label: PropTypes.string // eslint-disable-line react/no-unused-prop-types
 };
+
 export default selectionCellFormatter;

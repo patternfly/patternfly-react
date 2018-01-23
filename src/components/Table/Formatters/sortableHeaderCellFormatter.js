@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { noop } from '../../../common/helpers';
 import { Table } from '../index';
 
 const sortableHeaderCellFormatter = ({
@@ -14,7 +15,7 @@ const sortableHeaderCellFormatter = ({
   return (
     <Table.Heading
       onClick={e => {
-        onSort && onSort(e, column, sortDirection);
+        onSort(e, column, sortDirection);
       }}
       sort
       sortDirection={sortDirection}
@@ -34,6 +35,9 @@ sortableHeaderCellFormatter.propTypes = {
   sortingColumns: PropTypes.object,
   /** onSort callback */
   onSort: PropTypes.func
+};
+sortableHeaderCellFormatter.defaultProps = {
+  onSort: noop
 };
 
 export default sortableHeaderCellFormatter;
