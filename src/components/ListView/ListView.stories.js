@@ -3,6 +3,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Row, Col } from '../Grid';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info/dist/index';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Button } from '../Button';
@@ -10,6 +11,10 @@ import { DropdownKebab } from '../DropdownKebab';
 import { Icon } from '../Icon';
 import { MenuItem } from '../MenuItem';
 import { ListView } from './index';
+import {
+  MockCompoundExpansion,
+  MockCompoundExpansionSource
+} from './__mocks__/mockCompoundExpansionExample';
 import { mockListItems } from './__mocks__/mockListItems';
 
 const stories = storiesOf('ListView', module);
@@ -86,6 +91,38 @@ stories.addWithInfo(
       </ListView>
     );
   }
+);
+
+stories.add(
+  'List with Compound Expansion',
+  withInfo({
+    source: false,
+    propTables: [
+      ListView,
+      ListView.Icon,
+      ListView.InfoItem,
+      ListView.Expand,
+      ListView.Actions,
+      ListView.AdditionalInfo,
+      ListView.Body,
+      ListView.Checkbox,
+      ListView.Description,
+      ListView.DescriptionHeading,
+      ListView.GroupItem,
+      ListView.GroupItemContainer,
+      ListView.GroupItemHeader,
+      ListView.Left,
+      ListView.MainInfo,
+      ListView.Row
+    ],
+    propTablesExclude: [MockCompoundExpansion],
+    text: (
+      <div>
+        <h1>Story Source</h1>
+        <pre>{MockCompoundExpansionSource}</pre>
+      </div>
+    )
+  })(() => <MockCompoundExpansion />)
 );
 
 stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (

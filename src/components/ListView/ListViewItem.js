@@ -39,18 +39,21 @@ class ListViewItem extends React.Component {
       leftContent,
       checkboxInput,
       hideCloseIcon,
+      compoundExpand,
+      compoundExpanded,
+      onCloseCompoundExpand,
       ...other
     } = this.props;
     const { expanded } = this.state;
 
     if (children) {
-      return (
-        <ListViewGroupItem expanded={expanded} stacked={stacked} {...other}>
-          <ListViewGroupItemHeader toggleExpanded={() => this.toggleExpanded()}>
-            <ListViewExpand
-              expanded={expanded}
-              toggleExpanded={() => this.toggleExpanded()}
-            />
+      if (compoundExpand) {
+        return (
+          <ListViewGroupItem
+            expanded={compoundExpanded}
+            stacked={stacked}
+            {...other}
+          >
             <ListViewRow
               checkboxInput={checkboxInput}
               leftContent={leftContent}
@@ -59,15 +62,42 @@ class ListViewItem extends React.Component {
               additionalInfo={additionalInfo}
               actions={actions}
             />
-          </ListViewGroupItemHeader>
-          <ListViewGroupItemContainer
-            expanded={expanded}
-            onClose={hideCloseIcon ? undefined : () => this.toggleExpanded()}
-          >
-            {children}
-          </ListViewGroupItemContainer>
-        </ListViewGroupItem>
-      );
+            <ListViewGroupItemContainer
+              expanded={compoundExpanded}
+              onClose={hideCloseIcon ? undefined : onCloseCompoundExpand}
+            >
+              {children}
+            </ListViewGroupItemContainer>
+          </ListViewGroupItem>
+        );
+      } else {
+        return (
+          <ListViewGroupItem expanded={expanded} stacked={stacked} {...other}>
+            <ListViewGroupItemHeader
+              toggleExpanded={() => this.toggleExpanded()}
+            >
+              <ListViewExpand
+                expanded={expanded}
+                toggleExpanded={() => this.toggleExpanded()}
+              />
+              <ListViewRow
+                checkboxInput={checkboxInput}
+                leftContent={leftContent}
+                heading={heading}
+                description={description}
+                additionalInfo={additionalInfo}
+                actions={actions}
+              />
+            </ListViewGroupItemHeader>
+            <ListViewGroupItemContainer
+              expanded={expanded}
+              onClose={hideCloseIcon ? undefined : this.toggleExpanded}
+            >
+              {children}
+            </ListViewGroupItemContainer>
+          </ListViewGroupItem>
+        );
+      }
     } else {
       return (
         <ListViewGroupItem stacked={stacked} {...other}>
@@ -106,7 +136,13 @@ ListViewItem.propTypes = {
   /** Checkbox form input component */
   checkboxInput: PropTypes.node,
   /** Optionally hide the close icon in expanded content */
-  hideCloseIcon: PropTypes.bool
+  hideCloseIcon: PropTypes.bool,
+  /** Flag to use compound expansion contents */
+  compoundExpand: PropTypes.bool,
+  /** Flag to show compound expansion contents */
+  compoundExpanded: PropTypes.bool,
+  /** Function triggered when compound expandable content is closed */
+  onCloseCompoundExpand: PropTypes.func
 };
 ListViewItem.defaultProps = {
   stacked: false,
