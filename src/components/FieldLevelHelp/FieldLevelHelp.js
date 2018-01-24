@@ -17,16 +17,20 @@ const FieldLevelHelp = ({ children, contentType, content, ...props }) => {
       }}
     />
   );
-  const overlay = contentType === 'popover' ?
-    <Popover id={contentType}>{htmlContent}</Popover> : 
-    <Tooltip id={contentType}>{htmlContent}</Tooltip>;
+  const overlay =
+    contentType === 'popover' ? (
+      <Popover id="{contentType}">{htmlContent}</Popover>
+    ) : (
+      <Tooltip id="{contentType}">{htmlContent}</Tooltip>
+    );
+  const rootClose = true;
 
   return (
     <OverlayTrigger
       overlay={overlay}
       placement={'top'}
       trigger={trigger.split(' ')}
-      rootClose={true}
+      rootClose={rootClose}
     >
       <label>
         {children + ' '}
