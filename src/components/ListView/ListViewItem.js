@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { bindMethods, noop } from '../../common/helpers';
+
 import ListViewExpand from './ListViewExpand';
 import ListViewGroupItem from './ListViewGroupItem';
 import ListViewGroupItemContainer from './ListViewGroupItemContainer';
@@ -16,14 +18,15 @@ class ListViewItem extends React.Component {
   constructor() {
     super();
     this.state = { expanded: false };
+    bindMethods(this, ['toggleExpanded']);
   }
 
-  toggleExpanded(index) {
+  toggleExpanded() {
     const { onExpand, onExpandClose } = this.props;
     if (this.state.expanded) {
-      onExpandClose && onExpandClose();
+      onExpandClose();
     } else {
-      onExpand && onExpand();
+      onExpand();
     }
     this.setState(prevState => ({ expanded: !prevState.expanded }));
   }
@@ -73,12 +76,10 @@ class ListViewItem extends React.Component {
       } else {
         return (
           <ListViewGroupItem expanded={expanded} stacked={stacked} {...other}>
-            <ListViewGroupItemHeader
-              toggleExpanded={() => this.toggleExpanded()}
-            >
+            <ListViewGroupItemHeader toggleExpanded={this.toggleExpanded}>
               <ListViewExpand
                 expanded={expanded}
-                toggleExpanded={() => this.toggleExpanded()}
+                toggleExpanded={this.toggleExpanded}
               />
               <ListViewRow
                 checkboxInput={checkboxInput}
@@ -146,6 +147,9 @@ ListViewItem.propTypes = {
 };
 ListViewItem.defaultProps = {
   stacked: false,
-  hideCloseIcon: false
+  hideCloseIcon: false,
+  onExpand: noop,
+  onExpandClose: noop,
+  onCloseCompoundExpand: noop
 };
 export default ListViewItem;
