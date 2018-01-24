@@ -35,6 +35,8 @@ class ListViewItem extends React.Component {
     const {
       children,
       stacked,
+      onExpand,
+      onExpandClose,
       actions,
       additionalInfo,
       description,

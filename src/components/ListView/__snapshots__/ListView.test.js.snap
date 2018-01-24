@@ -6,8 +6,6 @@ exports[`ListView renders properly 1`] = `
 >
   <div
     className="list-group-item list-view-pf-stacked"
-    onExpand={[Function]}
-    onExpandClose={[Function]}
   >
     <div
       className="list-group-item-header"
@@ -143,8 +141,6 @@ exports[`ListView renders properly 1`] = `
   </div>
   <div
     className="list-group-item list-view-pf-stacked"
-    onExpand={[Function]}
-    onExpandClose={[Function]}
   >
     <div
       className="list-group-item-header"
@@ -280,8 +276,6 @@ exports[`ListView renders properly 1`] = `
   </div>
   <div
     className="list-group-item list-view-pf-stacked"
-    onExpand={[Function]}
-    onExpandClose={[Function]}
   >
     <div
       className="list-group-item-header"
@@ -417,8 +411,6 @@ exports[`ListView renders properly 1`] = `
   </div>
   <div
     className="list-group-item list-view-pf-stacked"
-    onExpand={[Function]}
-    onExpandClose={[Function]}
   >
     <div
       className="list-group-item-header"
@@ -493,8 +485,6 @@ exports[`ListView renders properly 1`] = `
   </div>
   <div
     className="list-group-item list-view-pf-stacked"
-    onExpand={[Function]}
-    onExpandClose={[Function]}
   >
     <div
       className="list-group-item-header"
@@ -616,8 +606,6 @@ exports[`ListView renders properly 1`] = `
   </div>
   <div
     className="list-group-item list-view-pf-stacked"
-    onExpand={[Function]}
-    onExpandClose={[Function]}
   >
     <div
       className="list-group-item-header"

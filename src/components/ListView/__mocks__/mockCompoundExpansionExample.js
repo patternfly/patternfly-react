@@ -11,7 +11,7 @@ export class MockCompoundExpansion extends React.Component {
   constructor() {
     super();
 
-    bindMethods(this, ['toggleExpand']);
+    bindMethods(this, ['renderItem', 'toggleExpand']);
     this.state = {
       listItems: []
     };
@@ -71,34 +71,32 @@ export class MockCompoundExpansion extends React.Component {
     );
   }
 
+  renderItem(item, index) {
+    let expandText = item.compoundExpandText[item.expandType];
+    return (
+      <ListView.Item
+        key={index}
+        actions={this.renderActions(item.actions)}
+        checkboxInput={<input type="checkbox" />}
+        leftContent={<ListView.Icon name="plane" />}
+        additionalInfo={this.renderAdditionalInfoExpandItems(item)}
+        heading={item.title}
+        description={item.description}
+        stacked={boolean('Stacked', false)}
+        compoundExpand
+        compoundExpanded={item.expanded}
+        onCloseCompoundExpand={() => this.closeExpand(item)}
+      >
+        <Grid.Row>
+          <Grid.Col sm={11}>{expandText}</Grid.Col>
+        </Grid.Row>
+      </ListView.Item>
+    );
+  }
   render() {
     const { listItems } = this.state;
 
-    return (
-      <ListView>
-        {listItems.map((item, index) => (
-          <ListView.Item
-            key={index}
-            actions={this.renderActions(item.actions)}
-            checkboxInput={<input type="checkbox" />}
-            leftContent={<ListView.Icon name="plane" />}
-            additionalInfo={this.renderAdditionalInfoExpandItems(item)}
-            heading={item.title}
-            description={item.description}
-            stacked={boolean('Stacked', false)}
-            compoundExpand
-            compoundExpanded={item.expanded}
-            onCloseCompoundExpand={() => this.closeExpand(item)}
-          >
-            <Grid.Row>
-              <Grid.Col sm={11}>
-                {item.compoundExpandText[item.expandType]}
-              </Grid.Col>
-            </Grid.Row>
-          </ListView.Item>
-        ))}
-      </ListView>
-    );
+    return <ListView>{listItems.map(this.renderItem)}</ListView>;
   }
 }
 
@@ -116,7 +114,7 @@ export class MockCompoundExpansion extends React.Component {
   constructor() {
     super();
 
-    bindMethods(this, ['toggleExpand']);
+    bindMethods(this, ['renderItem', 'toggleExpand']);
     this.state = {
       listItems: []
     };
@@ -125,7 +123,6 @@ export class MockCompoundExpansion extends React.Component {
   componentDidMount() {
     this.setState({ listItems: mockListItems });
   }
-
 
   toggleExpand(item, expandProp) {
     if (expandProp === item.expandType) {
@@ -177,30 +174,36 @@ export class MockCompoundExpansion extends React.Component {
     );
   }
 
+  renderItem(item, index) {
+    let expandText = item.compoundExpandText[item.expandType];
+    return (
+      <ListView.Item
+        key={index}
+        actions={this.renderActions(item.actions)}
+        checkboxInput={<input type="checkbox" />}
+        leftContent={<ListView.Icon name="plane" />}
+        additionalInfo={this.renderAdditionalInfoExpandItems(item)}
+        heading={item.title}
+        description={item.description}
+        stacked={boolean('Stacked', false)}
+        compoundExpand
+        compoundExpanded={item.expanded}
+        onCloseCompoundExpand={() => this.closeExpand(item)}
+      >
+        <Grid.Row>
+          <Grid.Col sm={11}>
+            {expandText}
+          </Grid.Col>
+        </Grid.Row>
+      </ListView.Item>
+    );
+  }
   render() {
     const { listItems } = this.state;
 
     return (
       <ListView>
-        {listItems.map((item, index) => (
-          <ListView.Item
-            key={index}
-            actions={this.renderActions(item.actions)}
-            checkboxInput={<input type="checkbox" />}
-            leftContent={<ListView.Icon name="plane" />}
-            additionalInfo={this.renderAdditionalInfoExpandItems(item)}
-            heading={item.title}
-            description={item.description}
-            stacked={boolean('Stacked', false)}
-            compoundExpand
-            compoundExpanded={item.expanded}
-            onCloseCompoundExpand={() => this.closeExpand(item)}
-          >
-            <Grid.Row>
-              <Grid.Col sm={11}>{item.compoundExpandText[item.expandType]}</Grid.Col>
-            </Grid.Row>
-          </ListView.Item>
-        ))}
+        {listItems.map(this.renderItem)}
       </ListView>
     );
   }
