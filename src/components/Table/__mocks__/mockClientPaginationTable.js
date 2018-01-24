@@ -747,7 +747,7 @@ export class MockClientPaginationTable extends React.Component {
     ) {
       let newPaginationState = Object.assign({}, this.state.pagination);
       newPaginationState.page = page;
-      this.setState({ pagination: newPaginationState });
+      this.setState({ pagination: newPaginationState, pageChangeValue: page });
     }
   }
   onPerPageSelect(eventKey, e) {

@@ -13,22 +13,15 @@ class Paginator extends React.Component {
     this.initPagination(props);
 
     this.state = {
-      pagination: props.pagination,
       pageChangeValue: props.pagination.page
     };
   }
 
   componentWillReceiveProps(nextProps) {
     const { pagination } = nextProps;
-    if (
-      this.props.pagination.page !== pagination.page ||
-      this.props.pagination.perPage !== pagination.perPage ||
-      this.props.pagination.perPageOptions.toString() !==
-        pagination.perPageOptions.toString()
-    ) {
+    if (this.state.pageChangeValue !== pagination.page) {
       this.setState({
-        pagination: pagination,
-        pageChangeValue: pagination.page
+        pageChangeValue: Number(pagination.page)
       });
     }
 
@@ -73,7 +66,7 @@ class Paginator extends React.Component {
   }
 
   render() {
-    const { pagination, pageChangeValue } = this.state;
+    const { pageChangeValue } = this.state;
 
     const {
       className,
@@ -81,7 +74,8 @@ class Paginator extends React.Component {
       itemCount,
       messages,
       dropdownButtonId,
-      onPerPageSelect
+      onPerPageSelect,
+      pagination
     } = this.props;
 
     const itemsStart = (this.currentPage - 1) * this.perPage + 1;
