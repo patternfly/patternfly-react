@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FieldLevelHelp allows to specify contentType and content 1`] = `
+<div>
+  <label>
+    Port Number 
+  </label>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-info fa-fw"
+    onClick={[Function]}
+    style={
+      Object {
+        "color": "#0088ce",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`FieldLevelHelp renders properly 1`] = `
+<div>
+  <label>
+    Port Number 
+  </label>
+  <span
+    aria-hidden="true"
+    className="pficon pficon-info fa-fw"
+    onBlur={[Function]}
+    onClick={null}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    style={
+      Object {
+        "color": "#0088ce",
+      }
+    }
+  />
+</div>
+`;
