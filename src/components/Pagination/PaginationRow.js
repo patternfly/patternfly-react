@@ -67,7 +67,8 @@ const PaginationRow = ({
             );
           })}
         </DropdownButton>
-        <span> {messages.perPage} </span>
+        &nbsp;
+        <span>{messages.perPage}</span>
       </FormGroup>
       <FormGroup>
         <PaginationRowItems
