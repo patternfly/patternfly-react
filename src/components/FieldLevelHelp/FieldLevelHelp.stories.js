@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { FieldLevelHelp } from './index';
@@ -15,22 +15,33 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('with Popover', 'FieldLevelHelp', () => (
-  <FieldLevelHelp
-    contentType="popover"
-    content={
-      'Enter the hostname in a valid format <br>  <a href="http://www.test.example.com">Click here for examples of valid hostnames</a>'
-    }
-  >
-    Hostname
-  </FieldLevelHelp>
-));
+stories.addWithInfo('with Popover', 'FieldLevelHelp', () => {
+  const contentType = select('contentType', ['popover', 'tooltip'], 'popover');
+  const content = text(
+    'content',
+    'Enter the hostname in a valid format <br>  <a target="_blank" href="http://www.test.example.com">Click here for examples of valid hostnames</a>'
+  );
+  const fieldLabel = text('Field Label', 'Hostname');
 
-stories.addWithInfo('with Tooltip', 'FieldLevelHelp', () => (
-  <FieldLevelHelp
-    contentType="tooltip"
-    content={'Enter the hostname in a valid format'}
-  >
-    Hostname
-  </FieldLevelHelp>
-));
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <FieldLevelHelp contentType={contentType} content={content}>
+        {fieldLabel}
+      </FieldLevelHelp>
+    </div>
+  );
+});
+
+stories.addWithInfo('with Tooltip', 'FieldLevelHelp', () => {
+  const contentType = select('contentType', ['popover', 'tooltip'], 'tooltip');
+  const content = text('content', 'Enter the hostname in a valid format');
+  const fieldLabel = text('Field Label', 'Hostname');
+
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <FieldLevelHelp contentType={contentType} content={content}>
+        {fieldLabel}
+      </FieldLevelHelp>
+    </div>
+  );
+});
