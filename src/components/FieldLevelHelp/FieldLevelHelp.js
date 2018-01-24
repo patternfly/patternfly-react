@@ -26,17 +26,22 @@ const FieldLevelHelp = ({ children, contentType, content, ...props }) => {
   const rootClose = true;
 
   return (
-    <OverlayTrigger
-      overlay={overlay}
-      placement={'top'}
-      trigger={trigger.split(' ')}
-      rootClose={rootClose}
-    >
-      <label>
-        {children + ' '}
-        <Icon type="pf" name={'info'} style={{ color: '#0088ce' }} />
-      </label>
-    </OverlayTrigger>
+    <div>
+      <label>{children + ' '}</label>
+      <OverlayTrigger
+        overlay={overlay}
+        placement={'top'}
+        trigger={trigger.split(' ')}
+        rootClose={rootClose}
+      >
+        <Icon
+          className="fa-fw"
+          type="pf"
+          name={'info'}
+          style={{ color: '#0088ce' }}
+        />
+      </OverlayTrigger>
+    </div>
   );
 };
 
