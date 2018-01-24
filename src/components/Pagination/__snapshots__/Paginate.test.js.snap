@@ -110,10 +110,9 @@ exports[`PaginationRow card renders properly 1`] = `
         </li>
       </ul>
     </div>
+     
     <span>
-       
       לדף
-       
     </span>
   </div>
   <div
@@ -335,10 +334,9 @@ exports[`PaginationRow list renders properly 1`] = `
         </li>
       </ul>
     </div>
+     
     <span>
-       
       לדף
-       
     </span>
   </div>
   <div
@@ -560,10 +558,9 @@ exports[`PaginationRow table renders properly 1`] = `
         </li>
       </ul>
     </div>
+     
     <span>
-       
       לדף
-       
     </span>
   </div>
   <div
@@ -864,10 +861,9 @@ exports[`Paginator renders properly a middle page 1`] = `
         </li>
       </ul>
     </div>
+     
     <span>
-       
       per page
-       
     </span>
   </div>
   <div
@@ -1061,10 +1057,9 @@ exports[`Paginator renders properly the first page 1`] = `
         </li>
       </ul>
     </div>
+     
     <span>
-       
       per page
-       
     </span>
   </div>
   <div
@@ -1258,10 +1253,9 @@ exports[`Paginator renders properly the last page 1`] = `
         </li>
       </ul>
     </div>
+     
     <span>
-       
       per page
-       
     </span>
   </div>
   <div
