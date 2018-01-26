@@ -1918,7 +1918,6 @@ exports[`Mock Client Pagination table renders 1`] = `
           </li>
         </ul>
       </div>
-       
       <span>
         per page
       </span>
@@ -2207,7 +2206,6 @@ exports[`Mock Server Pagination table renders 1`] = `
           </li>
         </ul>
       </div>
-       
       <span>
         per page
       </span>
