@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import Downshift from 'downshift';
-import {
-  Dropdown,
-  MenuItem,
-  InputGroup,
-  FormControl,
-  Button
-} from '../../index';
+import { Dropdown, MenuItem, InputGroup, Button } from '../../index';
 import PropTypes from 'prop-types';
+
+import AutoCompleteInput from './AutoCompleteInput';
 
 export const renderItems = ({
   items,
@@ -123,12 +119,40 @@ class AutoComplete extends Component {
           inputValue,
           highlightedIndex,
           getRootProps,
-          selectedItem
+          selectedItem,
+          selectItem
         }) => (
           <div>
             {labelText && <label {...getLabelProps()}>{labelText}</label>}
             <InputGroup>
-              <FormControl type="text" {...getInputProps()} />
+              <AutoCompleteInput
+                onKeyPress={e => {
+                  const TAB_KEY = 9;
+                  const ENTER_KEY = 13;
+
+                  switch (e.keyCode) {
+                    case TAB_KEY:
+                      if (isOpen && activeItems[highlightedIndex]) {
+                        selectItem(activeItems[highlightedIndex]);
+                        e.preventDefault();
+                      }
+
+                      break;
+
+                    case ENTER_KEY:
+                      if (!isOpen || !activeItems[highlightedIndex]) {
+                        onSearch(this.state.inputValue);
+                        e.preventDefault();
+                      }
+
+                      break;
+
+                    default:
+                      break;
+                  }
+                }}
+                passedProps={getInputProps()}
+              />
               <InputGroup.Button>
                 <Button onClick={() => onSearch(inputValue)}>
                   {actionText}
