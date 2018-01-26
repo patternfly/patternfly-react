@@ -8,8 +8,8 @@ import { OverlayTrigger } from '../OverlayTrigger';
 /**
  * FieldLevelHelp Component for Patternfly React
  */
-const FieldLevelHelp = ({ children, contentType, content, ...props }) => {
-  const trigger = contentType === 'popover' ? 'click' : 'hover focus';
+const FieldLevelHelp = ({ children, mode, content, ...props }) => {
+  const trigger = mode === 'popover' ? 'click' : 'hover focus';
   const htmlContent = (
     <div
       dangerouslySetInnerHTML={{
@@ -18,10 +18,10 @@ const FieldLevelHelp = ({ children, contentType, content, ...props }) => {
     />
   );
   const overlay =
-    contentType === 'popover' ? (
-      <Popover id="{contentType}">{htmlContent}</Popover>
+    mode === 'popover' ? (
+      <Popover id="{mode}">{htmlContent}</Popover>
     ) : (
-      <Tooltip id="{contentType}">{htmlContent}</Tooltip>
+      <Tooltip id="{mode}">{htmlContent}</Tooltip>
     );
   const rootClose = true;
 
@@ -48,7 +48,7 @@ const FieldLevelHelp = ({ children, contentType, content, ...props }) => {
 FieldLevelHelp.propTypes = {
   /** additional fieldlevelhelp classes */
   /** Content type: popover or tooltip  */
-  contentType: PropTypes.string,
+  mode: PropTypes.string,
   /** Contents displayed with popover or tooltip  */
   content: PropTypes.string,
   /** children nodes  */

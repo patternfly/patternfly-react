@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FieldLevelHelp allows to specify contentType and content 1`] = `
+exports[`FieldLevelHelp allows to specify mode and content 1`] = `
 <div>
   <label>
     Port Number 
