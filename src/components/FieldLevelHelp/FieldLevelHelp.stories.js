@@ -17,6 +17,7 @@ stories.addDecorator(
 
 stories.addWithInfo('with Popover', 'FieldLevelHelp', () => {
   const mode = select('mode', ['popover', 'tooltip'], 'popover');
+  const close = select('Close Popover', ['true', 'false']);
   const content = text(
     'content',
     'Enter the hostname in a valid format <br>  <a target="_blank" href="http://www.test.example.com">Click here for examples of valid hostnames</a>'
@@ -25,7 +26,7 @@ stories.addWithInfo('with Popover', 'FieldLevelHelp', () => {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <FieldLevelHelp mode={mode} content={content}>
+      <FieldLevelHelp mode={mode} content={content} close={close}>
         {fieldLabel}
       </FieldLevelHelp>
     </div>

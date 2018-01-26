@@ -14,12 +14,13 @@ test('FieldLevelHelp renders properly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('FieldLevelHelp allows to specify mode and content', () => {
+test('FieldLevelHelp allows to specify mode content and close', () => {
   const component = renderer.create(
     <FieldLevelHelp
       id="fieldlevelname1"
       mode="popover"
       content="Enter Port number between the 4000-5000 range"
+      close="true"
     >
       Port Number
     </FieldLevelHelp>

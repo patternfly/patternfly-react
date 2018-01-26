@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FieldLevelHelp allows to specify mode and content 1`] = `
+exports[`FieldLevelHelp allows to specify mode content and close 1`] = `
 <div>
   <label>
     Port Number 
@@ -26,11 +26,7 @@ exports[`FieldLevelHelp renders properly 1`] = `
   <span
     aria-hidden="true"
     className="pficon pficon-info fa-fw"
-    onBlur={[Function]}
-    onClick={null}
-    onFocus={[Function]}
-    onMouseOut={[Function]}
-    onMouseOver={[Function]}
+    onClick={[Function]}
     style={
       Object {
         "color": "#0088ce",

@@ -8,7 +8,7 @@ import { OverlayTrigger } from '../OverlayTrigger';
 /**
  * FieldLevelHelp Component for Patternfly React
  */
-const FieldLevelHelp = ({ children, mode, content, ...props }) => {
+const FieldLevelHelp = ({ children, mode, content, close, ...props }) => {
   const trigger = mode === 'popover' ? 'click' : 'hover focus';
   const htmlContent = (
     <div
@@ -23,7 +23,7 @@ const FieldLevelHelp = ({ children, mode, content, ...props }) => {
     ) : (
       <Tooltip id="{mode}">{htmlContent}</Tooltip>
     );
-  const rootClose = true;
+  const rootClose = close === 'true';
 
   return (
     <div>
@@ -51,8 +51,14 @@ FieldLevelHelp.propTypes = {
   mode: PropTypes.string,
   /** Contents displayed with popover or tooltip  */
   content: PropTypes.string,
+  /** leave popover/tooltip open  */
+  close: PropTypes.string,
   /** children nodes  */
   children: PropTypes.node
+};
+FieldLevelHelp.defaultProps = {
+  mode: 'popover',
+  close: 'true'
 };
 
 export default FieldLevelHelp;
