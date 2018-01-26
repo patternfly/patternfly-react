@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Row, Col } from '../../index';
 
 import AutoComplete from './AutoComplete';
-import { searchItems } from './AutoComplete.fixtures';
+import { getSearchItems } from './AutoComplete.fixtures';
 
 export class AutoCompleteExample extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ export class AutoCompleteExample extends Component {
     searchTerm = searchTerm.trimLeft();
 
     this.setState({
-      items: searchItems(searchTerm)
+      items: getSearchItems(searchTerm)
     });
   };
 

@@ -11,9 +11,10 @@ import PropTypes from 'prop-types';
 
 export const renderItems = ({
   items,
+  activeItems,
+  getItemProps,
   highlightedIndex,
-  selectedItem,
-  getItemProps
+  selectedItem
 }) => (
   <Dropdown.Menu
     style={{
@@ -24,30 +25,53 @@ export const renderItems = ({
       top: 'auto'
     }}
   >
-    {items.map((item, index) => (
-      <MenuItem
-        {...getItemProps({
-          index,
-          item,
-          active: highlightedIndex === index,
-          onClick: e => {
-            // At this point the event.defaultPrevented
-            // is already set to true by react-bootstrap
-            // MenuItem. We need to set it back to false
-            // So downshift will execute it's own handler
-            e.defaultPrevented = false;
-          }
-        })}
-        key={item}
-      >
-        {item}
-      </MenuItem>
-    ))}
+    {items.map(({ text, type, disabled = false }, index, items) => {
+      if (type === 'header') {
+        return (
+          <MenuItem key={text} header>
+            {text}
+          </MenuItem>
+        );
+      }
+
+      if (type === 'divider') {
+        return <MenuItem key={index} divider />;
+      }
+
+      if (disabled) {
+        return (
+          <MenuItem key={text} disabled>
+            {text}
+          </MenuItem>
+        );
+      }
+
+      return (
+        <MenuItem
+          {...getItemProps({
+            index: activeItems.indexOf(text),
+            item: text,
+            active: activeItems[highlightedIndex] === text,
+            onClick: e => {
+              // At this point the event.defaultPrevented
+              // is already set to true by react-bootstrap
+              // MenuItem. We need to set it back to false
+              // So downshift will execute it's own handler
+              e.defaultPrevented = false;
+            }
+          })}
+          key={text}
+        >
+          {text}
+        </MenuItem>
+      );
+    })}
   </Dropdown.Menu>
 );
 
 renderItems.propTypes = {
   items: PropTypes.array.isRequired,
+  activeItems: PropTypes.array.isRequired,
   highlightedIndex: PropTypes.number.isRequired,
   selectedItem: PropTypes.number.isRequired,
   getItemProps: PropTypes.func.isRequired
@@ -72,9 +96,16 @@ class AutoComplete extends Component {
       ...rest
     } = this.props;
 
+    const activeItems = items
+      .filter(
+        ({ disabled, type }) =>
+          !disabled && !['header', 'divider'].includes(type)
+      )
+      .map(({ text }) => text);
+
     return (
       <Downshift
-        onStateChange={({ inputValue }) => {
+        onStateChange={({ inputValue, ...rest }) => {
           if (typeof inputValue === 'string') {
             onInputUpdate(inputValue);
             this.setState({ inputValue });
@@ -110,7 +141,8 @@ class AutoComplete extends Component {
                   items,
                   highlightedIndex,
                   selectedItem,
-                  getItemProps
+                  getItemProps,
+                  activeItems
                 })
               : null}
           </div>
@@ -121,7 +153,7 @@ class AutoComplete extends Component {
 }
 
 AutoComplete.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
   onInputUpdate: PropTypes.func.isRequired,
   onSearch: PropTypes.func.isRequired,
   labelText: PropTypes.string,

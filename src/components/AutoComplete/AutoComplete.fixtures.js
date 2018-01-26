@@ -24,7 +24,7 @@ const autoCompleteTerms = colors
   .map(color => adjectives.map(adj => `${color} is ${adj}`))
   .reduce((terms, colorItems) => terms.concat(colorItems, []));
 
-const limitWords = (searchTerm, i) => {
+const limitWordCount = (searchTerm, i) => {
   const wordCount = searchTerm.split(' ').length;
   return i
     .split(' ')
@@ -39,9 +39,27 @@ const includesTerm = (searchTerm, i) =>
 
 const limitResults = (i, index) => index < 10;
 
-export const searchItems = searchTerm =>
-  autoCompleteTerms
-    .map(limitWords.bind(null, searchTerm))
+const stringsToConfig = item => ({
+  text: item,
+  disabled: item.includes('Red')
+});
+
+export const getSearchItems = searchTerm => {
+  const items = autoCompleteTerms
+    .map(limitWordCount.bind(null, searchTerm))
     .filter(removeDuplicates)
     .filter(includesTerm.bind(null, searchTerm))
-    .filter(limitResults);
+    .filter(limitResults)
+    .map(stringsToConfig);
+
+  if (items.length > 2) {
+    items.splice(
+      2,
+      0,
+      { type: 'header', text: 'This is a Header' },
+      { type: 'divider' }
+    );
+  }
+
+  return items;
+};
