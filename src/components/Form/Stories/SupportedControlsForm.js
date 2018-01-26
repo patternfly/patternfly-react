@@ -3,6 +3,7 @@
 import React from 'react';
 import { select, boolean } from '@storybook/addon-knobs';
 import { Form } from '../index';
+import { FieldLevelHelp } from '../../FieldLevelHelp/index';
 
 export const SupportedControlsFormFields = [
   {
@@ -86,6 +87,22 @@ export const SupportedControlsFormFields = [
         <Form.Radio {...props} name="radioGroup" inline>
           3
         </Form.Radio>
+      </div>
+    )
+  },
+  {
+    controlId: 'FieldLevelHelp',
+    label: 'FieldLevelHelp',
+    help: 'Help text',
+    formControl: ({ validationState, ...props }) => (
+      <div>
+        <FieldLevelHelp
+          {...props}
+          content="Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>"
+          inline
+        >
+          Phone
+        </FieldLevelHelp>
       </div>
     )
   },
