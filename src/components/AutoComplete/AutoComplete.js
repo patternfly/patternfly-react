@@ -1,77 +1,10 @@
 import React, { Component } from 'react';
 import Downshift from 'downshift';
-import { Dropdown, MenuItem, InputGroup, Button } from '../../index';
+import { InputGroup, Button } from '../../index';
 import PropTypes from 'prop-types';
 
 import AutoCompleteInput from './AutoCompleteInput';
-
-export const renderItems = ({
-  items,
-  activeItems,
-  getItemProps,
-  highlightedIndex,
-  selectedItem
-}) => (
-  <Dropdown.Menu
-    style={{
-      display: 'block',
-      position: 'absolute',
-      left: 'inherit',
-      marginTop: 0,
-      top: 'auto'
-    }}
-  >
-    {items.map(({ text, type, disabled = false }, index, items) => {
-      if (type === 'header') {
-        return (
-          <MenuItem key={text} header>
-            {text}
-          </MenuItem>
-        );
-      }
-
-      if (type === 'divider') {
-        return <MenuItem key={index} divider />;
-      }
-
-      if (disabled) {
-        return (
-          <MenuItem key={text} disabled>
-            {text}
-          </MenuItem>
-        );
-      }
-
-      return (
-        <MenuItem
-          {...getItemProps({
-            index: activeItems.indexOf(text),
-            item: text,
-            active: activeItems[highlightedIndex] === text,
-            onClick: e => {
-              // At this point the event.defaultPrevented
-              // is already set to true by react-bootstrap
-              // MenuItem. We need to set it back to false
-              // So downshift will execute it's own handler
-              e.defaultPrevented = false;
-            }
-          })}
-          key={text}
-        >
-          {text}
-        </MenuItem>
-      );
-    })}
-  </Dropdown.Menu>
-);
-
-renderItems.propTypes = {
-  items: PropTypes.array.isRequired,
-  activeItems: PropTypes.array.isRequired,
-  highlightedIndex: PropTypes.number.isRequired,
-  selectedItem: PropTypes.number.isRequired,
-  getItemProps: PropTypes.func.isRequired
-};
+import AutoCompleteItems from './AutoCompleteItems';
 
 class AutoComplete extends Component {
   constructor(props) {
@@ -160,15 +93,17 @@ class AutoComplete extends Component {
               </InputGroup.Button>
             </InputGroup>
 
-            {isOpen && items.length
-              ? renderItems({
+            {isOpen && items.length ? (
+              <AutoCompleteItems
+                {...{
                   items,
                   highlightedIndex,
                   selectedItem,
                   getItemProps,
                   activeItems
-                })
-              : null}
+                }}
+              />
+            ) : null}
           </div>
         )}
       </Downshift>
