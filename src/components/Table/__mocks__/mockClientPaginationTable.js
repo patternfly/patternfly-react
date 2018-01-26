@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import orderBy from 'lodash.orderby';
+import { orderBy } from 'lodash';
 import classNames from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
@@ -463,7 +463,7 @@ MockClientPaginationTable.propTypes = {
 export const mockClientPaginationTableSource = `
 import React from 'react';
 import PropTypes from 'prop-types';
-import orderBy from 'lodash.orderby';
+import { orderBy } from 'lodash';
 import classNames from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';

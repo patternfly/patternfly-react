@@ -11,6 +11,7 @@ const TablePfProvider = ({
   dataTable,
   striped,
   bordered,
+  inlineEdit,
   hover,
   condensed,
   components,
@@ -18,10 +19,18 @@ const TablePfProvider = ({
 }) => {
   const headerCell = cellProps => cellProps.children;
   const tableCell = cellProps => cellProps.children;
-  const mergedComponents = Object.assign(
-    { header: { cell: headerCell }, body: { cell: tableCell } },
-    components
+  const tableRow = rowProps => <tr {...rowProps}>{rowProps.children}</tr>;
+  tableRow.shouldComponentUpdate = true;
+
+  components.header = Object.assign(
+    { cell: headerCell },
+    components.header || {}
   );
+  components.body = Object.assign(
+    { cell: tableCell, row: tableRow },
+    components.body || {}
+  );
+
   const classes = classNames(
     {
       table: true,
@@ -29,7 +38,8 @@ const TablePfProvider = ({
       'table-striped': striped,
       'table-bordered': bordered,
       'table-hover': hover,
-      'table-condensed': condensed
+      'table-condensed': condensed,
+      'pf-table-inline-edit': inlineEdit
     },
     className
   );
@@ -41,7 +51,7 @@ const TablePfProvider = ({
   return (
     <Table.Provider
       className={classes}
-      components={mergedComponents}
+      components={components}
       {...props}
       {...attributes}
     >
@@ -64,6 +74,8 @@ TablePfProvider.propTypes = {
   hover: PropTypes.bool,
   /** apply Condensed class */
   condensed: PropTypes.bool,
+  /** apply pf-table-inline-edit class */
+  inlineEdit: PropTypes.bool,
   /** reactabular components override */
   components: PropTypes.object
 };
@@ -75,6 +87,7 @@ TablePfProvider.defaultProps = {
   bordered: false,
   hover: false,
   condensed: false,
+  inlineEdit: false,
   components: {}
 };
 export default TablePfProvider;

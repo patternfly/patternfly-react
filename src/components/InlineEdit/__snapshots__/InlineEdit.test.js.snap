@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineEdit it renders edit input 1`] = `
+<div>
+  edit: VALUE
+  <br />
+  additionalData: {"some":"data"}
+</div>
+`;
+
+exports[`InlineEdit it renders value 1`] = `
+<div>
+  value: VALUE
+  <br />
+  additionalData: {"some":"data"}
+</div>
+`;

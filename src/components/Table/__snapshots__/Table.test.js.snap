@@ -2434,3 +2434,348 @@ exports[`Patternfly table renders properly 1`] = `
   </tbody>
 </table>
 `;
+
+exports[`inline edit Inline edit header row renders 1`] = `
+<div>
+  <div
+    class="inline-edit-buttons top bold"
+    style="bottom: -3px; right: 10px;"
+  >
+    <button
+      aria-label="Save"
+      class="btn btn-primary"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="fa fa-check"
+      />
+    </button>
+    <button
+      aria-label="Cancel"
+      class="btn btn-default"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="pficon pficon-close"
+      />
+    </button>
+  </div>
+  <table
+    class="table dataTable table-striped table-bordered table-hover pf-table-inline-edit"
+    role="grid"
+  >
+    <thead>
+      <tr
+        class="editing"
+      >
+        <th
+          class=""
+        >
+          First Name
+        </th>
+        <th
+          class=""
+        >
+          Last Name
+        </th>
+        <th
+          class=""
+        >
+          Username
+        </th>
+        <th
+          class="text-right"
+        >
+          Commits
+        </th>
+        <th
+          class="text-right"
+        >
+          Additions
+        </th>
+        <th
+          class="text-center"
+        >
+          Location
+        </th>
+        <th
+          class=""
+        >
+          Gender
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          class=""
+        >
+          Dan
+        </td>
+        <td
+          class=""
+        >
+          Abramov
+        </td>
+        <td
+          class=""
+        >
+          gaearon
+        </td>
+        <td
+          class="text-right"
+        >
+          711
+        </td>
+        <td
+          class="text-right"
+        >
+          272635
+        </td>
+        <td
+          class="text-center"
+        >
+          London, UK
+        </td>
+        <td
+          class=""
+        >
+          male
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`inline edit Inline edit last row renders properly last row 1`] = `
+<div>
+  <div
+    class="inline-edit-buttons top"
+    style="bottom: -1px; right: 10px;"
+  >
+    <button
+      aria-label="Save"
+      class="btn btn-primary"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="fa fa-check"
+      />
+    </button>
+    <button
+      aria-label="Cancel"
+      class="btn btn-default"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="pficon pficon-close"
+      />
+    </button>
+  </div>
+  <table
+    class="table dataTable table-striped table-bordered table-hover pf-table-inline-edit"
+    role="grid"
+  >
+    <thead>
+      <tr>
+        <th
+          class=""
+        >
+          First Name
+        </th>
+        <th
+          class=""
+        >
+          Last Name
+        </th>
+        <th
+          class=""
+        >
+          Username
+        </th>
+        <th
+          class="text-right"
+        >
+          Commits
+        </th>
+        <th
+          class="text-right"
+        >
+          Additions
+        </th>
+        <th
+          class="text-center"
+        >
+          Location
+        </th>
+        <th
+          class=""
+        >
+          Gender
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="editing"
+      >
+        <td
+          class=""
+        >
+          Dan
+        </td>
+        <td
+          class=""
+        >
+          Abramov
+        </td>
+        <td
+          class=""
+        >
+          gaearon
+        </td>
+        <td
+          class="text-right"
+        >
+          711
+        </td>
+        <td
+          class="text-right"
+        >
+          272635
+        </td>
+        <td
+          class="text-center"
+        >
+          London, UK
+        </td>
+        <td
+          class=""
+        >
+          male
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`inline edit Inline edit row renders properly 1`] = `
+<div>
+  <div
+    class="inline-edit-buttons bottom"
+    style="top: -1px; right: 10px;"
+  >
+    <button
+      aria-label="Save"
+      class="btn btn-primary"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="fa fa-check"
+      />
+    </button>
+    <button
+      aria-label="Cancel"
+      class="btn btn-default"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="pficon pficon-close"
+      />
+    </button>
+  </div>
+  <table
+    class="table dataTable table-striped table-bordered table-hover pf-table-inline-edit"
+    role="grid"
+  >
+    <thead>
+      <tr>
+        <th
+          class=""
+        >
+          First Name
+        </th>
+        <th
+          class=""
+        >
+          Last Name
+        </th>
+        <th
+          class=""
+        >
+          Username
+        </th>
+        <th
+          class="text-right"
+        >
+          Commits
+        </th>
+        <th
+          class="text-right"
+        >
+          Additions
+        </th>
+        <th
+          class="text-center"
+        >
+          Location
+        </th>
+        <th
+          class=""
+        >
+          Gender
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="editing"
+      >
+        <td
+          class=""
+        >
+          Dan
+        </td>
+        <td
+          class=""
+        >
+          Abramov
+        </td>
+        <td
+          class=""
+        >
+          gaearon
+        </td>
+        <td
+          class="text-right"
+        >
+          711
+        </td>
+        <td
+          class="text-right"
+        >
+          272635
+        </td>
+        <td
+          class="text-center"
+        >
+          London, UK
+        </td>
+        <td
+          class=""
+        >
+          male
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
