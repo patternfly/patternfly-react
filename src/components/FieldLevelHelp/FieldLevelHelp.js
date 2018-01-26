@@ -27,7 +27,7 @@ const FieldLevelHelp = ({ children, mode, content, ...props }) => {
 
   return (
     <div>
-      <label>{children + ' '}</label>
+      <label>{`${children} `}</label>
       <OverlayTrigger
         overlay={overlay}
         placement={'top'}

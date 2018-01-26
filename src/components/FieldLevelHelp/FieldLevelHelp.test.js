@@ -25,6 +25,6 @@ test('FieldLevelHelp allows to specify mode and content', () => {
     </FieldLevelHelp>
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
