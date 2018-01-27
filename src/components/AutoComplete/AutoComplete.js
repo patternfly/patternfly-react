@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import AutoCompleteInput from './AutoCompleteInput';
 import AutoCompleteItems from './AutoCompleteItems';
+import { KEY_CODES } from '../../common/helpers';
 
 class AutoComplete extends Component {
   constructor(props) {
@@ -60,11 +61,8 @@ class AutoComplete extends Component {
             <InputGroup>
               <AutoCompleteInput
                 onKeyPress={e => {
-                  const TAB_KEY = 9;
-                  const ENTER_KEY = 13;
-
                   switch (e.keyCode) {
-                    case TAB_KEY:
+                    case KEY_CODES.TAB_KEY:
                       if (isOpen && activeItems[highlightedIndex]) {
                         selectItem(activeItems[highlightedIndex]);
                         e.preventDefault();
@@ -72,7 +70,7 @@ class AutoComplete extends Component {
 
                       break;
 
-                    case ENTER_KEY:
+                    case KEY_CODES.ENTER_KEY:
                       if (!isOpen || !activeItems[highlightedIndex]) {
                         onSearch(this.state.inputValue);
                         e.preventDefault();
