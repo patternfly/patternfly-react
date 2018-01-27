@@ -44,7 +44,7 @@ const stringsToConfig = item => ({
   disabled: item.includes('Red')
 });
 
-export const getSearchItems = searchTerm => {
+export const getSearchItems = (searchTerm = '') => {
   const items = autoCompleteTerms
     .map(limitWordCount.bind(null, searchTerm))
     .filter(removeDuplicates)

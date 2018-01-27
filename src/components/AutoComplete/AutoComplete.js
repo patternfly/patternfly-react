@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import Downshift from 'downshift';
-import { InputGroup, Button } from '../../index';
 import PropTypes from 'prop-types';
 
+import { InputGroup, Button } from '../../index';
 import AutoCompleteInput from './AutoCompleteInput';
 import AutoCompleteItems from './AutoCompleteItems';
 import { KEY_CODES } from '../../common/helpers';
+
+export const getActiveItems = items =>
+  items
+    .filter(
+      ({ disabled, type }) => !disabled && !['header', 'divider'].includes(type)
+    )
+    .map(({ text }) => text);
 
 class AutoComplete extends Component {
   constructor(props) {
@@ -26,12 +33,7 @@ class AutoComplete extends Component {
       ...rest
     } = this.props;
 
-    const activeItems = items
-      .filter(
-        ({ disabled, type }) =>
-          !disabled && !['header', 'divider'].includes(type)
-      )
-      .map(({ text }) => text);
+    const activeItems = getActiveItems(items);
 
     return (
       <Downshift
