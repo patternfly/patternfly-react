@@ -1,0 +1,1364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaginationRow card renders properly 1`] = `
+<form
+  className="content-view-pf-pagination paginator card-view-pf-pagination clearfix "
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="dropup pagination-pf-pagesize btn-group"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-default"
+        disabled={false}
+        id="pagination-row-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        type="button"
+      >
+        6
+         
+        <span
+          className="caret"
+        />
+      </button>
+      <ul
+        aria-labelledby="pagination-row-dropdown"
+        className="dropdown-menu"
+        role="menu"
+      >
+        <li
+          className="active"
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            6
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            10
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            15
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            25
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            50
+          </a>
+        </li>
+      </ul>
+    </div>
+    <span>
+      לדף
+    </span>
+  </div>
+  <div
+    className="form-group"
+  >
+    <span>
+      <span
+        className="pagination-pf-items-current"
+      >
+        1
+        -
+        15
+      </span>
+       
+      שֶׁל
+       
+      <span
+        className="pagination-pf-items-total"
+      >
+        75
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-back"
+    >
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד ראשון"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-left i"
+          />
+        </a>
+      </li>
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד קודם"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-left i"
+          />
+        </a>
+      </li>
+    </ul>
+    <label
+      className="sr-only control-label"
+      htmlFor={undefined}
+    />
+    <input
+      className="pagination-pf-page form-control"
+      id={undefined}
+      onChange={[MockFunction]}
+      type="text"
+      value={1}
+    />
+    <span>
+       
+      שֶׁל
+       
+      <span
+        className="pagination-pf-pages"
+      >
+        5
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-forward"
+    >
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד הבא"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-right i"
+          />
+        </a>
+      </li>
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד אחרון"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-right i"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</form>
+`;
+
+exports[`PaginationRow list renders properly 1`] = `
+<form
+  className="content-view-pf-pagination paginator list-view-pf-pagination clearfix "
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="dropup pagination-pf-pagesize btn-group"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-default"
+        disabled={false}
+        id="pagination-row-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        type="button"
+      >
+        6
+         
+        <span
+          className="caret"
+        />
+      </button>
+      <ul
+        aria-labelledby="pagination-row-dropdown"
+        className="dropdown-menu"
+        role="menu"
+      >
+        <li
+          className="active"
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            6
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            10
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            15
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            25
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            50
+          </a>
+        </li>
+      </ul>
+    </div>
+    <span>
+      לדף
+    </span>
+  </div>
+  <div
+    className="form-group"
+  >
+    <span>
+      <span
+        className="pagination-pf-items-current"
+      >
+        1
+        -
+        15
+      </span>
+       
+      שֶׁל
+       
+      <span
+        className="pagination-pf-items-total"
+      >
+        75
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-back"
+    >
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד ראשון"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-left i"
+          />
+        </a>
+      </li>
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד קודם"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-left i"
+          />
+        </a>
+      </li>
+    </ul>
+    <label
+      className="sr-only control-label"
+      htmlFor={undefined}
+    />
+    <input
+      className="pagination-pf-page form-control"
+      id={undefined}
+      onChange={[MockFunction]}
+      type="text"
+      value={1}
+    />
+    <span>
+       
+      שֶׁל
+       
+      <span
+        className="pagination-pf-pages"
+      >
+        5
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-forward"
+    >
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד הבא"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-right i"
+          />
+        </a>
+      </li>
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד אחרון"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-right i"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</form>
+`;
+
+exports[`PaginationRow table renders properly 1`] = `
+<form
+  className="content-view-pf-pagination paginator table-view-pf-pagination clearfix "
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="dropup pagination-pf-pagesize btn-group"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-default"
+        disabled={false}
+        id="pagination-row-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        type="button"
+      >
+        6
+         
+        <span
+          className="caret"
+        />
+      </button>
+      <ul
+        aria-labelledby="pagination-row-dropdown"
+        className="dropdown-menu"
+        role="menu"
+      >
+        <li
+          className="active"
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            6
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            10
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            15
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            25
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            50
+          </a>
+        </li>
+      </ul>
+    </div>
+    <span>
+      לדף
+    </span>
+  </div>
+  <div
+    className="form-group"
+  >
+    <span>
+      <span
+        className="pagination-pf-items-current"
+      >
+        1
+        -
+        15
+      </span>
+       
+      שֶׁל
+       
+      <span
+        className="pagination-pf-items-total"
+      >
+        75
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-back"
+    >
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד ראשון"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-left i"
+          />
+        </a>
+      </li>
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד קודם"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-left i"
+          />
+        </a>
+      </li>
+    </ul>
+    <label
+      className="sr-only control-label"
+      htmlFor={undefined}
+    />
+    <input
+      className="pagination-pf-page form-control"
+      id={undefined}
+      onChange={[MockFunction]}
+      type="text"
+      value={1}
+    />
+    <span>
+       
+      שֶׁל
+       
+      <span
+        className="pagination-pf-pages"
+      >
+        5
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-forward"
+    >
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד הבא"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-right i"
+          />
+        </a>
+      </li>
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="עמוד אחרון"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-right i"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</form>
+`;
+
+exports[`PaginationRow.AmountOfPages renders 1`] = `
+<span>
+   
+  of
+   
+  <span
+    className="pagination-pf-pages"
+  >
+    4
+  </span>
+</span>
+`;
+
+exports[`PaginationRow.Back renders 1`] = `
+<ul
+  className="pagination pagination-pf-back"
+>
+  <li
+    className="disabled"
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      title="first page"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-double-left i"
+      />
+    </a>
+  </li>
+  <li
+    className="disabled"
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      title="previous page"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-left i"
+      />
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`PaginationRow.ButtonGroup renders 1`] = `
+<div
+  className="custom-class pagination-pf-pagesize btn-group"
+/>
+`;
+
+exports[`PaginationRow.Forward renders 1`] = `
+<ul
+  className="pagination pagination-pf-forward"
+>
+  <li
+    className=""
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      title="Next Page"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-right i"
+      />
+    </a>
+  </li>
+  <li
+    className=""
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      title="Last Page"
+    >
+      <span
+        aria-hidden={true}
+        className="fa fa-angle-double-right i"
+      />
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`PaginationRow.Items renders 1`] = `
+<span>
+  <span
+    className="pagination-pf-items-current"
+  >
+    0
+    -
+    10
+  </span>
+   
+  of
+   
+  <span
+    className="pagination-pf-items-total"
+  >
+    55
+  </span>
+</span>
+`;
+
+exports[`Paginator renders properly a middle page 1`] = `
+<form
+  className="content-view-pf-pagination clearfix "
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="dropup pagination-pf-pagesize btn-group"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-default"
+        disabled={false}
+        id="pagination-row-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        type="button"
+      >
+        10
+         
+        <span
+          className="caret"
+        />
+      </button>
+      <ul
+        aria-labelledby="pagination-row-dropdown"
+        className="dropdown-menu"
+        role="menu"
+      >
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            5
+          </a>
+        </li>
+        <li
+          className="active"
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            10
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            15
+          </a>
+        </li>
+      </ul>
+    </div>
+    <span>
+      per page
+    </span>
+  </div>
+  <div
+    className="form-group"
+  >
+    <span>
+      <span
+        className="pagination-pf-items-current"
+      >
+        31
+        -
+        40
+      </span>
+       
+      of
+       
+      <span
+        className="pagination-pf-items-total"
+      >
+        75
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-back"
+    >
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="First Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-left i"
+          />
+        </a>
+      </li>
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="Previous Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-left i"
+          />
+        </a>
+      </li>
+    </ul>
+    <label
+      className="sr-only control-label"
+      htmlFor={undefined}
+    >
+      Current Page
+    </label>
+    <input
+      className="pagination-pf-page form-control"
+      id={undefined}
+      onChange={[Function]}
+      type="text"
+      value={4}
+    />
+    <span>
+       
+      of
+       
+      <span
+        className="pagination-pf-pages"
+      >
+        8
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-forward"
+    >
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="Next Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-right i"
+          />
+        </a>
+      </li>
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="Last Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-right i"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</form>
+`;
+
+exports[`Paginator renders properly the first page 1`] = `
+<form
+  className="content-view-pf-pagination clearfix "
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="dropup pagination-pf-pagesize btn-group"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-default"
+        disabled={false}
+        id="pagination-row-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        type="button"
+      >
+        10
+         
+        <span
+          className="caret"
+        />
+      </button>
+      <ul
+        aria-labelledby="pagination-row-dropdown"
+        className="dropdown-menu"
+        role="menu"
+      >
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            5
+          </a>
+        </li>
+        <li
+          className="active"
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            10
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            15
+          </a>
+        </li>
+      </ul>
+    </div>
+    <span>
+      per page
+    </span>
+  </div>
+  <div
+    className="form-group"
+  >
+    <span>
+      <span
+        className="pagination-pf-items-current"
+      >
+        1
+        -
+        10
+      </span>
+       
+      of
+       
+      <span
+        className="pagination-pf-items-total"
+      >
+        75
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-back"
+    >
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="First Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-left i"
+          />
+        </a>
+      </li>
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="Previous Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-left i"
+          />
+        </a>
+      </li>
+    </ul>
+    <label
+      className="sr-only control-label"
+      htmlFor={undefined}
+    >
+      Current Page
+    </label>
+    <input
+      className="pagination-pf-page form-control"
+      id={undefined}
+      onChange={[Function]}
+      type="text"
+      value={1}
+    />
+    <span>
+       
+      of
+       
+      <span
+        className="pagination-pf-pages"
+      >
+        8
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-forward"
+    >
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="Next Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-right i"
+          />
+        </a>
+      </li>
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="Last Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-right i"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</form>
+`;
+
+exports[`Paginator renders properly the last page 1`] = `
+<form
+  className="content-view-pf-pagination clearfix "
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <div
+      className="dropup pagination-pf-pagesize btn-group"
+    >
+      <button
+        aria-expanded={false}
+        aria-haspopup={true}
+        className="dropdown-toggle btn btn-default"
+        disabled={false}
+        id="pagination-row-dropdown"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        type="button"
+      >
+        10
+         
+        <span
+          className="caret"
+        />
+      </button>
+      <ul
+        aria-labelledby="pagination-row-dropdown"
+        className="dropdown-menu"
+        role="menu"
+      >
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            5
+          </a>
+        </li>
+        <li
+          className="active"
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            10
+          </a>
+        </li>
+        <li
+          className=""
+          role="presentation"
+          style={undefined}
+        >
+          <a
+            href="#"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="-1"
+          >
+            15
+          </a>
+        </li>
+      </ul>
+    </div>
+    <span>
+      per page
+    </span>
+  </div>
+  <div
+    className="form-group"
+  >
+    <span>
+      <span
+        className="pagination-pf-items-current"
+      >
+        71
+        -
+        75
+      </span>
+       
+      of
+       
+      <span
+        className="pagination-pf-items-total"
+      >
+        75
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-back"
+    >
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="First Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-left i"
+          />
+        </a>
+      </li>
+      <li
+        className=""
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="Previous Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-left i"
+          />
+        </a>
+      </li>
+    </ul>
+    <label
+      className="sr-only control-label"
+      htmlFor={undefined}
+    >
+      Current Page
+    </label>
+    <input
+      className="pagination-pf-page form-control"
+      id={undefined}
+      onChange={[Function]}
+      type="text"
+      value={8}
+    />
+    <span>
+       
+      of
+       
+      <span
+        className="pagination-pf-pages"
+      >
+        8
+      </span>
+    </span>
+    <ul
+      className="pagination pagination-pf-forward"
+    >
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="Next Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-right i"
+          />
+        </a>
+      </li>
+      <li
+        className="disabled"
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          title="Last Page"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-angle-double-right i"
+          />
+        </a>
+      </li>
+    </ul>
+  </div>
+</form>
+`;

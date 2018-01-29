@@ -3,15 +3,28 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '../Icon';
 import { Dropdown } from '../Dropdown';
+import { ButtonGroup } from '../Button';
 
 /**
  * DropdownKebab Component for Patternfly React
  */
-const DropdownKebab = ({ className, children, id, pullRight }) => {
+const DropdownKebab = ({
+  className,
+  children,
+  id,
+  pullRight,
+  componentClass,
+  toggleStyle
+}) => {
   const kebabClass = ClassNames('dropdown-kebab-pf', className);
   return (
-    <Dropdown className={kebabClass} id={id} pullRight={pullRight}>
-      <Dropdown.Toggle bsStyle="link" noCaret>
+    <Dropdown
+      className={kebabClass}
+      id={id}
+      pullRight={pullRight}
+      componentClass={componentClass}
+    >
+      <Dropdown.Toggle bsStyle={toggleStyle} noCaret>
         <Icon name="ellipsis-v" />
       </Dropdown.Toggle>
       <Dropdown.Menu>{children}</Dropdown.Menu>
@@ -26,6 +39,14 @@ DropdownKebab.propTypes = {
   /** kebab dropdown id */
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   /** menu right aligned */
-  pullRight: PropTypes.bool
+  pullRight: PropTypes.bool,
+  /** dropdown component class */
+  componentClass: PropTypes.func,
+  /** toggle style */
+  toggleStyle: PropTypes.string
+};
+DropdownKebab.defaultProps = {
+  componentClass: ButtonGroup,
+  toggleStyle: 'link'
 };
 export default DropdownKebab;
