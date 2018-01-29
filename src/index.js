@@ -19,6 +19,7 @@ export * from './components/Modal';
 export * from './components/Nav';
 export * from './components/OverlayTrigger';
 export * from './components/Popover';
+export * from './components/ProgressBar';
 export * from './components/Sort';
 export * from './components/Spinner';
 export * from './components/Switch';
