@@ -39,22 +39,21 @@ const AutoCompleteItems = ({
         );
       }
 
+      const itemProps = getItemProps({
+        index: activeItems.indexOf(text),
+        item: text,
+        active: activeItems[highlightedIndex] === text,
+        onClick: e => {
+          // At this point the event.defaultPrevented
+          // is already set to true by react-bootstrap
+          // MenuItem. We need to set it back to false
+          // So downshift will execute it's own handler
+          e.defaultPrevented = false;
+        }
+      });
+
       return (
-        <MenuItem
-          {...getItemProps({
-            index: activeItems.indexOf(text),
-            item: text,
-            active: activeItems[highlightedIndex] === text,
-            onClick: e => {
-              // At this point the event.defaultPrevented
-              // is already set to true by react-bootstrap
-              // MenuItem. We need to set it back to false
-              // So downshift will execute it's own handler
-              e.defaultPrevented = false;
-            }
-          })}
-          key={text}
-        >
+        <MenuItem {...itemProps} key={text}>
           {text}
         </MenuItem>
       );

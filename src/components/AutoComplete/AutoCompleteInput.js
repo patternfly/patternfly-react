@@ -4,14 +4,14 @@ import { FormControl } from '../../index';
 
 class AutoCompleteInput extends Component {
   componentDidMount() {
-    this.ref && this.ref.addEventListener('keydown', this.handeKeyPress);
+    this.ref && this.ref.addEventListener('keydown', this.handleKeyPress);
   }
 
   componentWillUnmount() {
-    this.ref && this.ref.removeEventListener('keydown', this.handeKeyPress);
+    this.ref && this.ref.removeEventListener('keydown', this.handleKeyPress);
   }
 
-  handeKeyPress = e => {
+  handleKeyPress = e => {
     this.props.onKeyPress(e);
   };
 

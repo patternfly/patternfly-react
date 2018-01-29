@@ -6,13 +6,7 @@ import { InputGroup, Button } from '../../index';
 import AutoCompleteInput from './AutoCompleteInput';
 import AutoCompleteItems from './AutoCompleteItems';
 import { KEY_CODES } from '../../common/helpers';
-
-export const getActiveItems = items =>
-  items
-    .filter(
-      ({ disabled, type }) => !disabled && !['header', 'divider'].includes(type)
-    )
-    .map(({ text }) => text);
+import { getActiveItems } from './helpers';
 
 class AutoComplete extends Component {
   constructor(props) {
@@ -46,8 +40,7 @@ class AutoComplete extends Component {
         defaultHighlightedIndex={0}
         selectedItem={this.state.inputValue}
         {...rest}
-      >
-        {({
+        render={({
           getInputProps,
           getItemProps,
           getLabelProps,
@@ -57,62 +50,74 @@ class AutoComplete extends Component {
           getRootProps,
           selectedItem,
           selectItem
-        }) => (
-          <div>
-            {labelText && <label {...getLabelProps()}>{labelText}</label>}
-            <InputGroup>
-              <AutoCompleteInput
-                onKeyPress={e => {
-                  switch (e.keyCode) {
-                    case KEY_CODES.TAB_KEY:
-                      if (isOpen && activeItems[highlightedIndex]) {
-                        selectItem(activeItems[highlightedIndex]);
-                        e.preventDefault();
-                      }
+        }) => {
+          const shouldShowItems = isOpen && items.length > 0;
+          const autoCompleteItemsProps = {
+            items,
+            highlightedIndex,
+            selectedItem,
+            getItemProps,
+            activeItems
+          };
 
-                      break;
+          return (
+            <div>
+              {labelText && <label {...getLabelProps()}>{labelText}</label>}
+              <InputGroup>
+                <AutoCompleteInput
+                  onKeyPress={e => {
+                    switch (e.keyCode) {
+                      case KEY_CODES.TAB_KEY:
+                        if (isOpen && activeItems[highlightedIndex]) {
+                          selectItem(activeItems[highlightedIndex]);
+                          e.preventDefault();
+                        }
 
-                    case KEY_CODES.ENTER_KEY:
-                      if (!isOpen || !activeItems[highlightedIndex]) {
-                        onSearch(this.state.inputValue);
-                        e.preventDefault();
-                      }
+                        break;
 
-                      break;
+                      case KEY_CODES.ENTER_KEY:
+                        if (!isOpen || !activeItems[highlightedIndex]) {
+                          onSearch(this.state.inputValue);
+                          e.preventDefault();
+                        }
 
-                    default:
-                      break;
-                  }
-                }}
-                passedProps={getInputProps()}
-              />
-              <InputGroup.Button>
-                <Button onClick={() => onSearch(inputValue)}>
-                  {actionText}
-                </Button>
-              </InputGroup.Button>
-            </InputGroup>
+                        break;
 
-            {isOpen && items.length ? (
-              <AutoCompleteItems
-                {...{
-                  items,
-                  highlightedIndex,
-                  selectedItem,
-                  getItemProps,
-                  activeItems
-                }}
-              />
-            ) : null}
-          </div>
-        )}
-      </Downshift>
+                      default:
+                        break;
+                    }
+                  }}
+                  passedProps={getInputProps()}
+                />
+                <InputGroup.Button>
+                  <Button onClick={() => onSearch(inputValue)}>
+                    {actionText}
+                  </Button>
+                </InputGroup.Button>
+              </InputGroup>
+
+              {shouldShowItems && (
+                <AutoCompleteItems {...autoCompleteItemsProps} />
+              )}
+            </div>
+          );
+        }}
+      />
     );
   }
 }
 
 AutoComplete.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      /* text to display in MenuItem  */
+      text: PropTypes.string,
+      /* item can be a header or divider or undefined for regular item */
+      type: PropTypes.oneOf(['header', 'divider']),
+      /* optionally disable a regular item */
+      disabled: PropTypes.bool
+    })
+  ).isRequired,
   onInputUpdate: PropTypes.func.isRequired,
   onSearch: PropTypes.func.isRequired,
   labelText: PropTypes.string,

@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Row, Col } from '../../index';
