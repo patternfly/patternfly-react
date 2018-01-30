@@ -46,7 +46,6 @@ export const BasicFormFields = [
     useFieldLevelHelp: true,
     content:
       "Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>",
-    mode: 'popover',
     close: 'true',
     help: 'Enter a valid phone number',
     formControl: ({ validationState, ...props }) => (
@@ -104,9 +103,8 @@ export const getBasicFormKnobs = () => ({
   bsSize: select('Size', [null, 'small', 'large']),
   showHelp: boolean('Show Help', true),
   disabled: boolean('Disabled', false),
-  mode: select('Popover/Tooltip', ['popover', 'tooltip'], 'popover'),
   content: text(
-    'Popover/Tooltip Content',
+    'FieldLevelHelp Content',
     "Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>"
   ),
   close: select('Close Popover', ['true', 'false'], 'true')

@@ -9,12 +9,6 @@ exports[`FieldLevelHelp allows to specify mode content and close 1`] = `
     className="btn btn-link"
     disabled={false}
     onClick={[Function]}
-    style={
-      Object {
-        "outline": "none",
-        "textDecoration": "none",
-      }
-    }
     type="button"
   >
     <span
@@ -30,12 +24,6 @@ exports[`FieldLevelHelp renders properly 1`] = `
   className="btn btn-link"
   disabled={false}
   onClick={[Function]}
-  style={
-    Object {
-      "outline": "none",
-      "textDecoration": "none",
-    }
-  }
   type="button"
 >
   <span

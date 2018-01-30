@@ -15,7 +15,6 @@ export const HorizontalFormField = ({
   showHelp,
   useFieldLevelHelp,
   content,
-  mode,
   close,
   ...props
 }) => {
@@ -23,9 +22,6 @@ export const HorizontalFormField = ({
 
   if (bsSize) controlProps.bsSize = bsSize;
   if (validationState) controlProps.validationState = validationState;
-  if (mode) controlProps.mode = mode;
-  if (content) controlProps.content = content;
-  if (close) controlProps.close = close;
 
   const formGroupProps = { key: controlId, controlId, ...controlProps };
 
@@ -33,13 +29,8 @@ export const HorizontalFormField = ({
     return (
       <Form.FormGroup {...formGroupProps}>
         <Grid.Col componentClass={Form.ControlLabel} sm={3}>
-          <FieldLevelHelp
-            mode={controlProps.mode}
-            content={controlProps.content}
-            close={controlProps.close}
-          >
-            {label}
-          </FieldLevelHelp>
+          {label}
+          <FieldLevelHelp content={content} close={close} />
         </Grid.Col>
         <Grid.Col sm={9}>
           {formControl(controlProps)}
