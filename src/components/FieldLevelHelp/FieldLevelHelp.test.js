@@ -16,14 +16,15 @@ test('FieldLevelHelp renders properly', () => {
 
 test('FieldLevelHelp allows to specify mode content and close', () => {
   const component = renderer.create(
-    <FieldLevelHelp
-      id="fieldlevelname1"
-      mode="popover"
-      content="Enter Port number between the 4000-5000 range"
-      close="true"
-    >
-      Port Number
-    </FieldLevelHelp>
+    <div>
+      <label>Port Number</label>
+      <FieldLevelHelp
+        id="fieldlevelname1"
+        mode="popover"
+        content="Enter Port number between the 4000-5000 range"
+        close="true"
+      />
+    </div>
   );
 
   const tree = component.toJSON();

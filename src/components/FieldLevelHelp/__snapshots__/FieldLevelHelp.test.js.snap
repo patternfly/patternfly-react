@@ -3,35 +3,44 @@
 exports[`FieldLevelHelp allows to specify mode content and close 1`] = `
 <div>
   <label>
-    Port Number 
+    Port Number
   </label>
-  <span
-    aria-hidden="true"
-    className="pficon pficon-info fa-fw"
+  <button
+    className="btn btn-link"
+    disabled={false}
     onClick={[Function]}
     style={
       Object {
-        "color": "#0088ce",
+        "outline": "none",
+        "textDecoration": "none",
       }
     }
-  />
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      className="pficon pficon-info"
+    />
+  </button>
 </div>
 `;
 
 exports[`FieldLevelHelp renders properly 1`] = `
-<div>
-  <label>
-    Port Number 
-  </label>
+<button
+  className="btn btn-link"
+  disabled={false}
+  onClick={[Function]}
+  style={
+    Object {
+      "outline": "none",
+      "textDecoration": "none",
+    }
+  }
+  type="button"
+>
   <span
     aria-hidden="true"
-    className="pficon pficon-info fa-fw"
-    onClick={[Function]}
-    style={
-      Object {
-        "color": "#0088ce",
-      }
-    }
+    className="pficon pficon-info"
   />
-</div>
+</button>
 `;

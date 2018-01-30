@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '../Icon';
+import { Button } from '../Button';
 import { Popover } from '../Popover';
-import { Tooltip } from '../Tooltip';
 import { OverlayTrigger } from '../OverlayTrigger';
 
 /**
  * FieldLevelHelp Component for Patternfly React
  */
-const FieldLevelHelp = ({ children, mode, content, close, ...props }) => {
-  const trigger = mode === 'popover' ? 'click' : 'hover focus';
+const FieldLevelHelp = ({ children, content, close, ...props }) => {
+  const trigger = 'click';
   const htmlContent = (
     <div
       dangerouslySetInnerHTML={{
@@ -17,39 +17,28 @@ const FieldLevelHelp = ({ children, mode, content, close, ...props }) => {
       }}
     />
   );
-  const overlay =
-    mode === 'popover' ? (
-      <Popover id="{mode}">{htmlContent}</Popover>
-    ) : (
-      <Tooltip id="{mode}">{htmlContent}</Tooltip>
-    );
+  const overlay = <Popover id="popover">{htmlContent}</Popover>;
   const rootClose = close === 'true';
 
   return (
-    <div>
-      <label>{`${children} `}</label>
-      <OverlayTrigger
-        overlay={overlay}
-        placement={'top'}
-        trigger={trigger.split(' ')}
-        rootClose={rootClose}
+    <OverlayTrigger
+      overlay={overlay}
+      placement={'top'}
+      trigger={trigger.split(' ')}
+      rootClose={rootClose}
+    >
+      <Button
+        bsStyle="link"
+        style={{ textDecoration: 'none', outline: 'none' }}
       >
-        <Icon
-          className="fa-fw"
-          type="pf"
-          name={'info'}
-          style={{ color: '#0088ce' }}
-        />
-      </OverlayTrigger>
-    </div>
+        <Icon type="pf" name={'info'} />
+      </Button>
+    </OverlayTrigger>
   );
 };
 
 FieldLevelHelp.propTypes = {
   /** additional fieldlevelhelp classes */
-  /** Content type: popover or tooltip  */
-  mode: PropTypes.string,
-  /** Contents displayed with popover or tooltip  */
   content: PropTypes.string,
   /** leave popover/tooltip open  */
   close: PropTypes.string,
@@ -57,7 +46,6 @@ FieldLevelHelp.propTypes = {
   children: PropTypes.node
 };
 FieldLevelHelp.defaultProps = {
-  mode: 'popover',
   close: 'true'
 };
 

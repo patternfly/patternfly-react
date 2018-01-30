@@ -15,8 +15,7 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('with Popover', 'FieldLevelHelp', () => {
-  const mode = select('mode', ['popover', 'tooltip'], 'popover');
+stories.addWithInfo('FieldLevelHelp', 'FieldLevelHelp', () => {
   const close = select('Close Popover', ['true', 'false']);
   const content = text(
     'content',
@@ -26,23 +25,8 @@ stories.addWithInfo('with Popover', 'FieldLevelHelp', () => {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <FieldLevelHelp mode={mode} content={content} close={close}>
-        {fieldLabel}
-      </FieldLevelHelp>
-    </div>
-  );
-});
-
-stories.addWithInfo('with Tooltip', 'FieldLevelHelp', () => {
-  const mode = select('mode', ['popover', 'tooltip'], 'tooltip');
-  const content = text('content', 'Enter the hostname in a valid format');
-  const fieldLabel = text('Field Label', 'Hostname');
-
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <FieldLevelHelp mode={mode} content={content}>
-        {fieldLabel}
-      </FieldLevelHelp>
+      {fieldLabel}
+      <FieldLevelHelp content={content} close={close} />
     </div>
   );
 });
