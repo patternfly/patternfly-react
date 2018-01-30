@@ -51,8 +51,8 @@ AboutModal.propTypes = {
   show: PropTypes.bool.isRequired,
   /** Function to call when modal is closed */
   onHide: PropTypes.func.isRequired,
-  /** Text to show for the product title */
-  productTitle: PropTypes.string,
+  /** Text or Element to show for the product title */
+  productTitle: PropTypes.node,
   /** Image Source for the Product logo */
   logo: PropTypes.string,
   /** Alternate text if invalid logo */

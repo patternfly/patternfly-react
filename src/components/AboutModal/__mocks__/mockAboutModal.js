@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../../Button';
 import { AboutModal } from '../index';
 import logo from 'patternfly/dist/img/logo-alt.svg';
+import productTitle from 'patternfly/dist/img/brand-alt.svg';
 
 export class MockAboutModal extends React.Component {
   constructor() {
@@ -26,7 +27,7 @@ export class MockAboutModal extends React.Component {
         <AboutModal
           show={this.state.showModal}
           onHide={this.close}
-          productTitle="Product Title"
+          productTitle={<img src={productTitle} alt="Product Title" />}
           logo={logo}
           altLogo="Patternfly Logo"
           trademarkText="Trademark and Copyright Information"
