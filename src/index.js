@@ -31,6 +31,7 @@ export * from './components/Table';
 export * from './components/ToastNotification';
 export * from './components/Toolbar';
 export * from './components/Tooltip';
+export * from './components/TreeView';
 export * from './components/Wizard';
 export * from './components/VerticalNav';
 export { patternfly } from './common/patternfly';
