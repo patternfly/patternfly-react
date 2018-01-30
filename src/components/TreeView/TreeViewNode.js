@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import TreeViewExpand from './TreeViewExpand';
 import TreeViewIcon from './TreeViewIcon';
@@ -16,16 +17,27 @@ class TreeViewNode extends Component {
     this.toggleExpand = this.toggleExpand.bind(this);
   }
 
+  // Collapse the current node if any of its parents is collapsed. This should
+  // only fire for nodes that are level 2 or greater
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.visible) {
+      this.setState(() => ({ expanded: false }));
+    }
+  }
+
   toggleExpand() {
     this.setState(prevState => ({ expanded: !prevState.expanded }));
   }
 
   render() {
-    const { node, level } = this.props;
+    const { node, level, visible } = this.props;
     const { expanded } = this.state;
+    const classes = cx('list-group-item', {
+      'node-hidden': level > 1 ? !visible : false
+    });
     return (
       <React.Fragment>
-        <li className="list-group-item">
+        <li className={classes}>
           <TreeViewIndents level={level} />
           <TreeViewExpand
             nodes={node.nodes}
@@ -36,9 +48,13 @@ class TreeViewNode extends Component {
           {node.text}
         </li>
         {node.nodes &&
-          expanded &&
           node.nodes.map((node, index) => (
-            <TreeViewNode node={node} key={index} level={level + 1} />
+            <TreeViewNode
+              node={node}
+              key={index}
+              level={level + 1}
+              visible={expanded}
+            />
           ))}
       </React.Fragment>
     );
@@ -47,7 +63,8 @@ class TreeViewNode extends Component {
 
 TreeViewNode.propTypes = {
   node: PropTypes.object,
-  level: PropTypes.number
+  level: PropTypes.number,
+  visible: PropTypes.bool
 };
 
 export default TreeViewNode;

@@ -20,6 +20,126 @@ exports[`TreeView renders properly 1`] = `
       Parent 1
     </li>
     <li
+      className="list-group-item node-hidden"
+    >
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="icon indent expand-icon fa fa-angle-right"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-file-o"
+      />
+      Child 1
+    </li>
+    <li
+      className="list-group-item node-hidden"
+    >
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-file-o"
+      />
+      Grandchild 1
+    </li>
+    <li
+      className="list-group-item node-hidden"
+    >
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-file-o"
+      />
+      Grandchild 2
+    </li>
+    <li
+      className="list-group-item node-hidden"
+    >
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-file-o"
+      />
+      Child 2
+    </li>
+    <li
       className="list-group-item"
     >
       <span
