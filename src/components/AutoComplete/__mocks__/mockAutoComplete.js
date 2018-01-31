@@ -25,7 +25,7 @@ export class MockAutoComplete extends Component {
     return (
       <AutoComplete
         items={this.state.items}
-        labelText="Type your favorite color"
+        labelText="Type typing 'Orange is '"
         onInputUpdate={this.onInputUpdate}
         onSearch={selection => alert(`You selected ${selection}!`)}
       />

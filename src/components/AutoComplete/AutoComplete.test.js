@@ -1,7 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AutoComplete, { getActiveItems } from './AutoComplete';
+import AutoComplete from './AutoComplete';
+import { getActiveItems } from './helpers';
 import AutoCompleteItems from './AutoCompleteItems';
 import { getSearchItems } from './AutoComplete.fixtures';
 
