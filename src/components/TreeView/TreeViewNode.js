@@ -10,8 +10,11 @@ class TreeViewNode extends Component {
   constructor(props) {
     super(props);
 
+    // A node can be set to be expanded by default
     this.state = {
-      expanded: false
+      expanded:
+        (props.node.hasOwnProperty('state') && props.node.state.expanded) ||
+        false
     };
 
     this.toggleExpand = this.toggleExpand.bind(this);
@@ -20,7 +23,7 @@ class TreeViewNode extends Component {
   // Collapse the current node if any of its parents is collapsed. This should
   // only fire for nodes that are level 2 or greater
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.visible) {
+    if (!nextProps.visible && nextProps.level > 1) {
       this.setState(() => ({ expanded: false }));
     }
   }

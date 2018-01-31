@@ -4,7 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { TreeView } from './index';
-import { data } from './__mocks__/data';
+import { basic, expandedByDefault } from './__mocks__/data';
 
 const stories = storiesOf('TreeView', module);
 stories.addDecorator(withKnobs);
@@ -17,5 +17,11 @@ stories.addDecorator(
 );
 
 stories.addWithInfo('TreeView', `TreeView usage example`, () => (
-  <TreeView data={data} />
+  <TreeView data={basic} />
 ));
+
+stories.addWithInfo(
+  'TreeView expanded by default',
+  `TreeView usage example`,
+  () => <TreeView data={expandedByDefault} />
+);
