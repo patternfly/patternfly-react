@@ -27,10 +27,7 @@ const FieldLevelHelp = ({ children, content, close, ...props }) => {
       trigger={trigger.split(' ')}
       rootClose={rootClose}
     >
-      <Button
-        bsStyle="link"
-        style={{ textDecoration: 'none', outline: 'none' }}
-      >
+      <Button bsStyle="link">
         <Icon type="pf" name={'info'} />
       </Button>
     </OverlayTrigger>
