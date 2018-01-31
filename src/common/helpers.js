@@ -5,3 +5,5 @@ export const bindMethods = (context, methods) => {
 };
 
 export const noop = Function.prototype;
+
+export const KEY_CODES = { TAB_KEY: 9, ENTER_KEY: 13, ESCAPE_KEY: 27 };

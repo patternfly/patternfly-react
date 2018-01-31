@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InfoTip renders properly with a default MenuItemIcon 1`] = `
+<li
+  className="dropdown"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+>
+  <a
+    aria-expanded={false}
+    className={undefined}
+    disabled={undefined}
+    href="#"
+    id="infotip-widget"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role={undefined}
+  >
+    <span
+      aria-hidden="true"
+      className="pficon pficon-info"
+    />
+     
+    Messages: 2
+  </a>
+  <div
+    className="dropdown-menu infotip bottom-right"
+    onClose={[Function]}
+    onSelect={[Function]}
+    open={false}
+    style={
+      Object {
+        "padding": "",
+      }
+    }
+  >
+    <div
+      className="arrow"
+    />
+    <ul
+      className="list-group"
+    >
+      <li
+        className="list-group-item"
+      >
+        <span
+          aria-hidden="true"
+          className="pficon pficon-info i"
+        />
+         Added Datasources TestDS
+      </li>
+      <li
+        className="list-group-item"
+      >
+        <span
+          aria-hidden="true"
+          className="pficon pficon-info i"
+        />
+         Modified Datasources ExampleDS
+      </li>
+    </ul>
+    <div
+      className="footer"
+    >
+      <a
+        href="#"
+      >
+        Clear Messages
+      </a>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`InfoTip renders properly with another MenuItemIcon 1`] = `
+<li
+  className="dropdown"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+>
+  <a
+    aria-expanded={false}
+    className={undefined}
+    disabled={undefined}
+    href="#"
+    id="infotip-widget"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role={undefined}
+  >
+    <span
+      aria-hidden="true"
+      className="pficon pficon-info"
+    />
+     
+    Messages: 2
+  </a>
+  <div
+    className="dropdown-menu infotip bottom-right"
+    onClose={[Function]}
+    onSelect={[Function]}
+    open={false}
+    style={
+      Object {
+        "padding": "",
+      }
+    }
+  >
+    <div
+      className="arrow"
+    />
+    <ul
+      className="list-group"
+    >
+      <li
+        className="list-group-item"
+      >
+        <span
+          aria-hidden="true"
+          className="pficon pficon-cube i"
+        />
+         Added Datasources TestDS
+      </li>
+      <li
+        className="list-group-item"
+      >
+        <span
+          aria-hidden="true"
+          className="pficon pficon-check i"
+        />
+         Modified Datasources ExampleDS
+      </li>
+    </ul>
+    <div
+      className="footer"
+    >
+      <a
+        href="#"
+      >
+        Clear Messages
+      </a>
+    </div>
+  </div>
+</li>
+`;
+
+exports[`InfoTip renders properly with item children 1`] = `
+<li
+  className="dropdown"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+>
+  <a
+    aria-expanded={false}
+    className={undefined}
+    disabled={undefined}
+    href="#"
+    id="infotip-widget"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role={undefined}
+  >
+    <span
+      aria-hidden="true"
+      className="pficon pficon-info"
+    />
+     
+    Messages: 2
+  </a>
+  <div
+    className="dropdown-menu infotip bottom-right"
+    onClose={[Function]}
+    onSelect={[Function]}
+    open={false}
+    style={
+      Object {
+        "padding": "",
+      }
+    }
+  >
+    <div
+      className="arrow"
+    />
+    <ul
+      className="list-group"
+    >
+      <li
+        className="list-group-item"
+      >
+        <span
+          aria-hidden="true"
+          className="pficon pficon-info i"
+        />
+         Added Datasources TestDS
+      </li>
+      <li
+        className="list-group-item"
+      >
+        <span
+          aria-hidden="true"
+          className="pficon pficon-info i"
+        />
+         Modified Datasources ExampleDS
+      </li>
+    </ul>
+    <div
+      className="footer"
+    >
+      <a
+        href="#"
+      >
+        Clear Messages
+      </a>
+    </div>
+  </div>
+</li>
+`;
