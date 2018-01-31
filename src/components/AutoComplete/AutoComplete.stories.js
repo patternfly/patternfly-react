@@ -1,53 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Row, Col } from '../../index';
+import { withInfo } from '@storybook/addon-info';
+import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
 
 import AutoComplete from './AutoComplete';
-import { getSearchItems } from './AutoComplete.fixtures';
+import {
+  MockAutoComplete,
+  basicExampleSource
+} from './__mocks__/mockAutoComplete';
 
-export class AutoCompleteExample extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { items: [] };
-  }
-
-  componentDidMount() {
-    this.onInputUpdate();
-  }
-
-  onInputUpdate = (searchTerm = '') => {
-    searchTerm = searchTerm.trimLeft();
-
-    this.setState({
-      items: getSearchItems(searchTerm)
+storiesOf('AutoComplete', module).add(
+  'AutoComplete',
+  withInfo({
+    source: false,
+    propTables: [AutoComplete],
+    propTablesExclude: [MockAutoComplete],
+    text: (
+      <div>
+        <h1>Story Source</h1>
+        <pre>{basicExampleSource}</pre>
+      </div>
+    )
+  })(() => {
+    let story = <MockAutoComplete />;
+    return inlineTemplate({
+      title: 'AutoComplete Example',
+      story
     });
-  };
-
-  render() {
-    return (
-      <AutoComplete
-        items={this.state.items}
-        labelText="Type your favorite color"
-        onInputUpdate={this.onInputUpdate}
-        onSearch={selection => alert(`You selected ${selection}!`)}
-      />
-    );
-  }
-}
-
-storiesOf('AutoComplete', module)
-  .addDecorator(getStory => (
-    <div style={{ padding: 20 }}>
-      <Row>
-        <Col sm={3} />
-        <Col sm={6}>{getStory()}</Col>
-      </Row>
-      <Row>
-        <Col sm={3} />
-        <Col sm={6}>
-          <p>The dropdown should overlay this text.</p>
-        </Col>
-      </Row>
-    </div>
-  ))
-  .add('AutoComplete', () => <AutoCompleteExample />);
+  })
+);

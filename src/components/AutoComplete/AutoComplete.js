@@ -17,6 +17,13 @@ class AutoComplete extends Component {
     };
   }
 
+  handleStateChange = ({ inputValue, ...rest }) => {
+    if (typeof inputValue === 'string') {
+      this.props.onInputUpdate(inputValue);
+      this.setState({ inputValue });
+    }
+  };
+
   render() {
     const {
       onSearch,
@@ -31,12 +38,7 @@ class AutoComplete extends Component {
 
     return (
       <Downshift
-        onStateChange={({ inputValue, ...rest }) => {
-          if (typeof inputValue === 'string') {
-            onInputUpdate(inputValue);
-            this.setState({ inputValue });
-          }
-        }}
+        onStateChange={this.handleStateChange}
         defaultHighlightedIndex={0}
         selectedItem={this.state.inputValue}
         {...rest}
