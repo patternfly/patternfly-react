@@ -80,9 +80,9 @@ To create an issue for adding a new component to the repo, please observe the fo
 
 1. If the component does not yet exist as a PatternFly component, check the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) to see if your component meets the criteria for an addition to PatternFly. If you're unsure, reach out to us on the patternfly@redhat.com mailing list.
 2. If the component exists in PatternFly or passes the Decision Tree, then create an issue with the following details:
-  1. Assign the label `enhancement` to the issue
-  2. Include the text “Component -“ in the beginning of the title if the issue captures a new component
-  3. If the component currently exists in patternfly, include a link to it.
+  - Assign the label `enhancement` to the issue
+  - Include the text “Component -“ in the beginning of the title if the issue captures a new component
+  - If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
 
 ### Contributing Components
 
@@ -105,8 +105,10 @@ Ideally, all the styles that are needed for the components in patternfly-react w
 
 When it is necessary to add styling in the patternfly-react repo, the styling should be done in both Less and Sass (in the future a converter will be provided, see [Issue #169](https://github.com/patternfly/patternfly-react/issues/169)).  
 
-- Less files should be added to the `less` directory and the file should be `<component>.less`
-- Sass files should be added to the `sass/patternfly-react/` directory and the file should be `_<component>.scss`
+- Add a Less file to the `less` directory and use the file name `<component>.less`
+- Import the Less file into `less/paternfly-react.less` using `@import "<component>";`
+- Add a Sass file to the `sass/patternfly-react/` directory and use the file name `_<component>.scss`
+- Import the Sass file into `sass/patternfly-react/_patternfly-react.scss` using `@import "<component>";`
 
 ## Guidelines and Requirements
 
