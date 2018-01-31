@@ -69,10 +69,10 @@ Issues can be manually added to the project board from either the issue page or 
 If you find a bug within the repo, please help us track the issue by following these steps:
 
 1. In the issue tracker, check if the bug has already been reported.
-  - If it does exist, but doesn’t capture key details that you have noticed, please add a comment to the existing bug.
+    - If it does exist, but doesn’t capture key details that you have noticed, please add a comment to the existing bug.
 2. Create an issue if one doesn’t already exist.
-  - Provide details like what component is affected, steps to reproduce, and any other information that is critical to addressing the issue
-  - Assign the label “bug” to the issue
+    - Provide details like what component is affected, steps to reproduce, and any other information that is critical to addressing the issue
+    - Assign the label “bug” to the issue
 
 ### Creating Issues for New Components
 
@@ -80,9 +80,9 @@ To create an issue for adding a new component to the repo, please observe the fo
 
 1. If the component does not yet exist as a PatternFly component, check the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) to see if your component meets the criteria for an addition to PatternFly. If you're unsure, reach out to us on the patternfly@redhat.com mailing list.
 2. If the component exists in PatternFly or passes the Decision Tree, then create an issue with the following details:
-  - Assign the label `enhancement` to the issue
-  - Include the text “Component -“ in the beginning of the title if the issue captures a new component
-  - If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
+    - Assign the label `enhancement` to the issue
+    - Include the text “Component -“ in the beginning of the title if the issue captures a new component
+    - If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
 
 ### Contributing Components
 
