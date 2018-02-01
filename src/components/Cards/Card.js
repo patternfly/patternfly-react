@@ -21,7 +21,7 @@ Card.propTypes = {
   children: PropTypes.node.isRequired,
   /** Additional element css classes */
   className: PropTypes.string,
-  /** Accent bool */
+  /** Accent & Aggregate bool */
   accented: PropTypes.bool,
   aggregated: PropTypes.bool
 };

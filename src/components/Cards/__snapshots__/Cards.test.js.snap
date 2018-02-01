@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Body is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <p
+    className="p card-pf-body"
+  >
+    This is a Card Body
+  </p>
+</div>
+`;
+
+exports[`Card Container is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="container-fluid container-cards-pf"
+  />
+</div>
+`;
+
+exports[`Card Footer is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="card-pf-footer"
+  >
+    This is a Card Footer
+  </div>
+</div>
+`;
+
+exports[`Card Header is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="card-pf-heading"
+  >
+    <div
+      className="dropdown card-pf-time-frame-filter"
+    >
+      <button
+        className="btn btn-default"
+        disabled={false}
+        type="button"
+      >
+        Button
+        <span
+          className="caret"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Link with Icon is working properly 1`] = `
+<div>
+  <p>
+    <a
+      className="card-pf-link-with-icon"
+      href="https://github.com/patternfly/patternfly-react/pull/203"
+    >
+      <span
+        aria-hidden="true"
+        className="pficon pficon-add-circle-o"
+      />
+       Add New Cluster
+    </a>
+  </p>
+</div>
+`;
+
+exports[`Card Title is working properly 1`] = `
+<div
+  className="card-pf some-class"
+>
+  <h4
+    className="h2 card-pf-title"
+  >
+    Card Title
+  </h4>
+</div>
+`;

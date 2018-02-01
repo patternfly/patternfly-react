@@ -1,11 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
-import { Card, CardContainer, CardHeading } from './index';
+import { Card, CardContainer, CardHeading, CardLinkWithIcon } from './index';
 import { Icon } from '../Icon';
-import { Button } from '../Button';
+import { DropdownButton } from '../Button';
+import { MenuItem } from '../MenuItem';
 import { Grid, Row, Col } from '../Grid';
 
 const stories = storiesOf('Cards', module);
@@ -15,6 +17,15 @@ stories.addWithInfo('Base Card', () => {
   const accentedBool = boolean('Accent', false);
   const aggregatedBool = boolean('Aggregate', false);
 
+  // const bsStyle = select(
+  //   'Style',
+  //   ['danger', 'default', 'primary', 'link'],
+  //   'default'
+  // );
+  // const bsSize = select('Size', [undefined, 'xsmall', 'small', 'large']);
+  // const props = { bsStyle, title: bsStyle, id: 'dropdown-example' };
+  // if (bsSize) props.bsSize = bsSize;
+
   let story = (
     <Grid>
       <Row style={{ marginBottom: '20px' }}>
@@ -22,27 +33,32 @@ stories.addWithInfo('Base Card', () => {
           <CardContainer>
             <Card accented={accentedBool} aggregated={aggregatedBool}>
               <CardHeading>
-                <div className="dropdown card-pf-time-frame-filter">
-                  <Button>
-                    Button
-                    <span className="caret" />
-                  </Button>
-                </div>
+                <DropdownButton
+                  className="card-pf-time-frame-filter"
+                  title="Dropdown"
+                  onClick={action('onClick')}
+                  bsStyle="primary"
+                >
+                  <MenuItem eventKey="1">Action</MenuItem>
+                  <MenuItem eventKey="2">Another action</MenuItem>
+                  <MenuItem eventKey="3" active>
+                    Active Item
+                  </MenuItem>
+                  <MenuItem divider />
+                  <MenuItem eventKey="4">Separated link</MenuItem>
+                </DropdownButton>
                 <Card.Title>
-                  <span>
-                    <Icon name="shield" /> Card Title
-                  </span>
+                  <Icon name="shield" /> Card Title
                 </Card.Title>
                 <Card.Body>Card Body</Card.Body>
                 <Card.Footer>
-                  <div>
-                    <p>
-                      <a href="#" className="card-pf-link-with-icon">
-                        <span className="pficon pficon-add-circle-o" />Add New
-                        Cluster
-                      </a>
-                    </p>
-                  </div>
+                  <CardLinkWithIcon
+                    href={
+                      'https://github.com/patternfly/patternfly-react/pull/203'
+                    }
+                  >
+                    <Icon type="pf" name="add-circle-o" /> Add New Cluster
+                  </CardLinkWithIcon>
                 </Card.Footer>
               </CardHeading>
             </Card>
@@ -58,3 +74,13 @@ stories.addWithInfo('Base Card', () => {
     story: story
   });
 });
+
+/*                 <div>
+        <p>
+          <a href="#" className="card-pf-link-with-icon">
+            <span className="pficon pficon-add-circle-o" />Add New
+                        Cluster
+                      </a>
+        </p>
+      </div>
+      */
