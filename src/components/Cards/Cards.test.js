@@ -78,3 +78,14 @@ test('Card Link with Icon is working properly', () => {
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('Card Time Frame Filter is working properly', () => {
+  const component = renderer.create(
+    <Card>
+      <Card.TimeFrameFilter />
+    </Card>
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});

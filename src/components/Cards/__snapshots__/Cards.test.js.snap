@@ -76,6 +76,16 @@ exports[`Card Link with Icon is working properly 1`] = `
 </div>
 `;
 
+exports[`Card Time Frame Filter is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="dropdown card-pf-time-frame-filter"
+  />
+</div>
+`;
+
 exports[`Card Title is working properly 1`] = `
 <div
   className="card-pf some-class"
