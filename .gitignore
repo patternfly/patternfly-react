@@ -3,6 +3,7 @@ npm-debug.log
 dist
 .out
 .DS_Store
+coverage
 
 # IDEs and editors
 /.idea

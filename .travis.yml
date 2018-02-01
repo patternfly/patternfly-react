@@ -19,6 +19,7 @@ before_script:
 - npm prune
 script:
 - npm run test
+- npm run coveralls
 after_success:
 - npm run travis-deploy-once "npm run semantic-release"
 - ./release.sh
