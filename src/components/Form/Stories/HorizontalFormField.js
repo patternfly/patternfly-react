@@ -26,11 +26,18 @@ export const HorizontalFormField = ({
   const formGroupProps = { key: controlId, controlId, ...controlProps };
 
   if (useFieldLevelHelp) {
+    const htmlContent = (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: content
+        }}
+      />
+    );
     return (
       <Form.FormGroup {...formGroupProps}>
         <Grid.Col componentClass={Form.ControlLabel} sm={3}>
           {label}
-          <FieldLevelHelp content={content} close={close} />
+          <FieldLevelHelp content={htmlContent} close={close} />
         </Grid.Col>
         <Grid.Col sm={9}>
           {formControl(controlProps)}

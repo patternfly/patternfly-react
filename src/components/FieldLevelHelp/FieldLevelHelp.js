@@ -10,14 +10,7 @@ import { OverlayTrigger } from '../OverlayTrigger';
  */
 const FieldLevelHelp = ({ children, content, close, ...props }) => {
   const trigger = 'click';
-  const htmlContent = (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: content
-      }}
-    />
-  );
-  const overlay = <Popover id="popover">{htmlContent}</Popover>;
+  const overlay = <Popover id="popover">{content}</Popover>;
   const rootClose = close === 'true';
 
   return (
@@ -36,7 +29,7 @@ const FieldLevelHelp = ({ children, content, close, ...props }) => {
 
 FieldLevelHelp.propTypes = {
   /** additional fieldlevelhelp classes */
-  content: PropTypes.string,
+  content: PropTypes.node,
   /** leave popover/tooltip open  */
   close: PropTypes.string,
   /** children nodes  */

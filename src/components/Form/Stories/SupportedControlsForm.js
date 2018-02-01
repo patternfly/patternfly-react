@@ -97,11 +97,7 @@ export const SupportedControlsFormFields = [
     formControl: ({ validationState, ...props }) => (
       <div>
         Phone
-        <FieldLevelHelp
-          {...props}
-          content="Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>"
-          inline
-        />
+        <FieldLevelHelp {...props} content="More info here" inline />
       </div>
     )
   },

@@ -23,10 +23,18 @@ stories.addWithInfo('FieldLevelHelp', 'FieldLevelHelp', () => {
   );
   const fieldLabel = text('Field Label', 'Hostname');
 
+  const htmlContent = (
+    <div
+      dangerouslySetInnerHTML={{
+        __html: content
+      }}
+    />
+  );
+
   return (
     <div style={{ textAlign: 'center' }}>
       {fieldLabel}
-      <FieldLevelHelp content={content} close={close} />
+      <FieldLevelHelp content={htmlContent} close={close} />
     </div>
   );
 });
