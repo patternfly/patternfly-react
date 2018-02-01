@@ -9,15 +9,7 @@ const AutoCompleteItems = ({
   highlightedIndex,
   selectedItem
 }) => (
-  <Dropdown.Menu
-    style={{
-      display: 'block',
-      position: 'absolute',
-      left: 'inherit',
-      marginTop: 0,
-      top: 'auto'
-    }}
-  >
+  <Dropdown.Menu className="autocomplete-dropdown">
     {items.map(({ text, type, disabled = false }, index, items) => {
       if (type === 'header') {
         return (

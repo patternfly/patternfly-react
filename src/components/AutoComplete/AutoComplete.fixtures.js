@@ -22,7 +22,7 @@ const adjectives = [
 
 const autoCompleteTerms = colors
   .map(color => adjectives.map(adj => `${color} is ${adj}`))
-  .reduce((terms, colorItems) => terms.concat(colorItems, []));
+  .reduce((terms, colorItems) => terms.concat(colorItems));
 
 const limitWordCount = (searchTerm, i) => {
   const wordCount = searchTerm.split(' ').length;

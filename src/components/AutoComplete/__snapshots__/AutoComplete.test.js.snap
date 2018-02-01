@@ -3,17 +3,8 @@
 exports[`Autocomplete component renderItems should render the items 1`] = `
 <ul
   aria-labelledby={undefined}
-  className="dropdown-menu"
+  className="autocomplete-dropdown dropdown-menu"
   role="menu"
-  style={
-    Object {
-      "display": "block",
-      "left": "inherit",
-      "marginTop": 0,
-      "position": "absolute",
-      "top": "auto",
-    }
-  }
 >
   <li
     className="disabled"
