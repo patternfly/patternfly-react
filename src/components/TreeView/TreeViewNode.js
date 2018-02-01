@@ -4,6 +4,7 @@ import cx from 'classnames';
 
 import TreeViewExpand from './TreeViewExpand';
 import TreeViewIcon from './TreeViewIcon';
+import TreeViewTextAndIconWrapper from './TreeViewTextAndIconWrapper';
 import TreeViewIndents from './TreeViewIndents';
 
 class TreeViewNode extends Component {
@@ -18,6 +19,7 @@ class TreeViewNode extends Component {
     };
 
     this.toggleExpand = this.toggleExpand.bind(this);
+    this.handleSelect = this.handleSelect.bind(this);
   }
 
   // Collapse the current node if any of its parents is collapsed. This should
@@ -32,8 +34,15 @@ class TreeViewNode extends Component {
     this.setState(prevState => ({ expanded: !prevState.expanded }));
   }
 
+  handleSelect() {
+    const { node, selectNode } = this.props;
+    if (node.selectable) {
+      selectNode(node);
+    }
+  }
+
   render() {
-    const { node, level, visible } = this.props;
+    const { node, level, visible, selectNode } = this.props;
     const { expanded } = this.state;
     const classes = cx('list-group-item', {
       'node-hidden': level > 1 ? !visible : false
@@ -47,8 +56,10 @@ class TreeViewNode extends Component {
             expanded={expanded}
             toggleExpand={this.toggleExpand}
           />
-          <TreeViewIcon icon={node.icon} />
-          {node.text}
+          <TreeViewTextAndIconWrapper handleSelect={this.handleSelect}>
+            <TreeViewIcon icon={node.icon} />
+            {node.text}
+          </TreeViewTextAndIconWrapper>
         </li>
         {node.nodes &&
           node.nodes.map((node, index) => (
@@ -57,6 +68,7 @@ class TreeViewNode extends Component {
               key={index}
               level={level + 1}
               visible={expanded}
+              selectNode={selectNode}
             />
           ))}
       </React.Fragment>
@@ -67,7 +79,8 @@ class TreeViewNode extends Component {
 TreeViewNode.propTypes = {
   node: PropTypes.object,
   level: PropTypes.number,
-  visible: PropTypes.bool
+  visible: PropTypes.bool,
+  selectNode: PropTypes.func
 };
 
 export default TreeViewNode;

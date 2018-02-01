@@ -122,3 +122,44 @@ export const expandedByDefault = [
     ]
   }
 ];
+
+export const selectableNodes = [
+  {
+    text: 'Parent 1',
+    href: '#parent1',
+    tags: ['4'],
+    selectable: true,
+    nodes: [
+      {
+        text: 'Child 1',
+        href: '#child1',
+        icon: 'fa fa-file-o',
+        tags: ['2'],
+        selectable: true,
+        nodes: [
+          {
+            text: 'Grandchild 1',
+            href: '#grandchild1',
+            icon: 'fa fa-file-o',
+            tags: ['0'],
+            selectable: true
+          },
+          {
+            text: 'Grandchild 2',
+            href: '#grandchild2',
+            icon: 'fa fa-file-o',
+            tags: ['0'],
+            selectable: true
+          }
+        ]
+      },
+      {
+        text: 'Child 2',
+        href: '#child2',
+        icon: 'fa fa-file-o',
+        tags: ['0'],
+        selectable: true
+      }
+    ]
+  }
+];

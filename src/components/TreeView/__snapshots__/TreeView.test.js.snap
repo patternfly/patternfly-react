@@ -15,9 +15,13 @@ exports[`TreeView renders properly 1`] = `
         onClick={[Function]}
       />
       <span
-        className="icon node-icon indent fa fa-folder"
-      />
-      Parent 1
+        onClick={[Function]}
+      >
+        <span
+          className="icon node-icon indent fa fa-folder"
+        />
+        Parent 1
+      </span>
     </li>
     <li
       className="list-group-item node-hidden"
@@ -39,9 +43,13 @@ exports[`TreeView renders properly 1`] = `
         onClick={[Function]}
       />
       <span
-        className="icon node-icon indent fa fa-file-o"
-      />
-      Child 1
+        onClick={[Function]}
+      >
+        <span
+          className="icon node-icon indent fa fa-file-o"
+        />
+        Child 1
+      </span>
     </li>
     <li
       className="list-group-item node-hidden"
@@ -75,9 +83,13 @@ exports[`TreeView renders properly 1`] = `
         onClick={[Function]}
       />
       <span
-        className="icon node-icon indent fa fa-file-o"
-      />
-      Grandchild 1
+        onClick={[Function]}
+      >
+        <span
+          className="icon node-icon indent fa fa-file-o"
+        />
+        Grandchild 1
+      </span>
     </li>
     <li
       className="list-group-item node-hidden"
@@ -111,9 +123,13 @@ exports[`TreeView renders properly 1`] = `
         onClick={[Function]}
       />
       <span
-        className="icon node-icon indent fa fa-file-o"
-      />
-      Grandchild 2
+        onClick={[Function]}
+      >
+        <span
+          className="icon node-icon indent fa fa-file-o"
+        />
+        Grandchild 2
+      </span>
     </li>
     <li
       className="list-group-item node-hidden"
@@ -135,9 +151,13 @@ exports[`TreeView renders properly 1`] = `
         onClick={[Function]}
       />
       <span
-        className="icon node-icon indent fa fa-file-o"
-      />
-      Child 2
+        onClick={[Function]}
+      >
+        <span
+          className="icon node-icon indent fa fa-file-o"
+        />
+        Child 2
+      </span>
     </li>
     <li
       className="list-group-item"
@@ -147,9 +167,13 @@ exports[`TreeView renders properly 1`] = `
         onClick={[Function]}
       />
       <span
-        className="icon node-icon indent fa fa-folder"
-      />
-      Parent 2
+        onClick={[Function]}
+      >
+        <span
+          className="icon node-icon indent fa fa-folder"
+        />
+        Parent 2
+      </span>
     </li>
     <li
       className="list-group-item"
@@ -159,9 +183,13 @@ exports[`TreeView renders properly 1`] = `
         onClick={[Function]}
       />
       <span
-        className="icon node-icon indent fa fa-folder"
-      />
-      Parent 3
+        onClick={[Function]}
+      >
+        <span
+          className="icon node-icon indent fa fa-folder"
+        />
+        Parent 3
+      </span>
     </li>
     <li
       className="list-group-item"
@@ -171,9 +199,13 @@ exports[`TreeView renders properly 1`] = `
         onClick={[Function]}
       />
       <span
-        className="icon node-icon indent fa fa-folder"
-      />
-      Parent 4
+        onClick={[Function]}
+      >
+        <span
+          className="icon node-icon indent fa fa-folder"
+        />
+        Parent 4
+      </span>
     </li>
     <li
       className="list-group-item"
@@ -183,9 +215,13 @@ exports[`TreeView renders properly 1`] = `
         onClick={[Function]}
       />
       <span
-        className="icon node-icon indent fa fa-folder"
-      />
-      Parent 5
+        onClick={[Function]}
+      >
+        <span
+          className="icon node-icon indent fa fa-folder"
+        />
+        Parent 5
+      </span>
     </li>
   </ul>
 </div>
