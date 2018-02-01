@@ -9,6 +9,7 @@ import { Icon } from '../Icon';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
 import { Grid, Row, Col } from '../Grid';
+import CardTimeFrameFilter from './CardTimeFrameFilter';
 
 const stories = storiesOf('Cards', module);
 stories.addDecorator(withKnobs);
@@ -33,20 +34,22 @@ stories.addWithInfo('Base Card', () => {
           <CardContainer>
             <Card accented={accentedBool} aggregated={aggregatedBool}>
               <CardHeading>
-                <DropdownButton
-                  className="card-pf-time-frame-filter"
-                  title="Dropdown"
-                  onClick={action('onClick')}
-                  bsStyle="primary"
-                >
-                  <MenuItem eventKey="1">Action</MenuItem>
-                  <MenuItem eventKey="2">Another action</MenuItem>
-                  <MenuItem eventKey="3" active>
-                    Active Item
-                  </MenuItem>
-                  <MenuItem divider />
-                  <MenuItem eventKey="4">Separated link</MenuItem>
-                </DropdownButton>
+                <CardTimeFrameFilter>
+                  <DropdownButton
+                    className="card-pf-time-frame-filter"
+                    title="Dropdown"
+                    onClick={action('onClick')}
+                    bsStyle="primary"
+                  >
+                    <MenuItem eventKey="1">Action</MenuItem>
+                    <MenuItem eventKey="2">Another action</MenuItem>
+                    <MenuItem eventKey="3" active>
+                      Active Item
+                    </MenuItem>
+                    <MenuItem divider />
+                    <MenuItem eventKey="4">Separated link</MenuItem>
+                  </DropdownButton>
+                </CardTimeFrameFilter>
                 <Card.Title>
                   <Icon name="shield" /> Card Title
                 </Card.Title>
