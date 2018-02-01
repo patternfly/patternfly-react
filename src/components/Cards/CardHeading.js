@@ -2,19 +2,19 @@ import ClassNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CardTitle = ({ children, className, ...props }) => {
-  const classes = ClassNames('h2', 'card-pf-title', className);
+const CardHeading = ({ children, className, ...props }) => {
+  const classes = ClassNames('card-pf-heading', className);
 
   return (
-    <h4 className={classes} {...props}>
+    <div className={classes} {...props}>
       {children}
-    </h4>
+    </div>
   );
 };
-CardTitle.propTypes = {
+CardHeading.propTypes = {
   /** Child node - contents of the element */
   children: PropTypes.node.isRequired,
   /** Additional element css classes */
   className: PropTypes.string
 };
-export default CardTitle;
+export default CardHeading;
