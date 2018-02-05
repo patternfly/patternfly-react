@@ -2,11 +2,19 @@ import ClassNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ({ children, className, accented, aggregated, ...props }) => {
+const Card = ({
+  children,
+  className,
+  accented,
+  aggregated,
+  aggregatedMini,
+  ...props
+}) => {
   const classes = ClassNames(
     'card-pf',
     { 'card-pf-accented': accented },
     { 'card-pf-aggregate-status': aggregated },
+    { 'card-pf-aggregate-status-mini': aggregatedMini },
     className
   );
 
@@ -21,13 +29,10 @@ Card.propTypes = {
   children: PropTypes.node.isRequired,
   /** Additional element css classes */
   className: PropTypes.string,
-  /** Accent & Aggregate bool */
+  /** Accent & Aggregate/Mini bool */
   accented: PropTypes.bool,
-  aggregated: PropTypes.bool
+  aggregated: PropTypes.bool,
+  aggregatedMini: PropTypes.bool
 };
 
-// Card.defaultProps = {
-//   accented: false,
-//   aggregated: false
-// };
 export default Card;
