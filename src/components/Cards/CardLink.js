@@ -2,7 +2,7 @@ import ClassNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CardLinkWithIcon = ({ href, children, className, ...props }) => {
+const CardLink = ({ href, children, className, ...props }) => {
   const classes = ClassNames('card-pf-link-with-icon', className);
 
   return (
@@ -15,12 +15,12 @@ const CardLinkWithIcon = ({ href, children, className, ...props }) => {
     </div>
   );
 };
-CardLinkWithIcon.propTypes = {
+CardLink.propTypes = {
   /** Child node - contents of the element */
   children: PropTypes.node.isRequired,
   /** Additional element css classes */
   className: PropTypes.string,
-
+  /** href definition */
   href: PropTypes.string
 };
-export default CardLinkWithIcon;
+export default CardLink;

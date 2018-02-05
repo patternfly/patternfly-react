@@ -26,8 +26,8 @@ Card.propTypes = {
   aggregated: PropTypes.bool
 };
 
-Card.defaultProps = {
-  accented: false,
-  aggregated: false
-};
+// Card.defaultProps = {
+//   accented: false,
+//   aggregated: false
+// };
 export default Card;

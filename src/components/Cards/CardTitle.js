@@ -3,12 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CardTitle = ({ children, className, ...props }) => {
-  const classes = ClassNames('h2', 'card-pf-title', className);
+  const classes = ClassNames('card-pf-title', className);
 
   return (
-    <h4 className={classes} {...props}>
+    <h2 className={classes} {...props}>
       {children}
-    </h4>
+    </h2>
   );
 };
 CardTitle.propTypes = {

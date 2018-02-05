@@ -1,14 +1,15 @@
 import ClassNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ButtonGroup } from '../Button/';
 
 const CardTimeFrameFilter = ({ children, className, ...props }) => {
   const classes = ClassNames('dropdown card-pf-time-frame-filter', className);
 
   return (
-    <div className={classes} {...props}>
+    <ButtonGroup className={classes} {...props} bsClass=" ">
       {children}
-    </div>
+    </ButtonGroup>
   );
 };
 CardTimeFrameFilter.propTypes = {
