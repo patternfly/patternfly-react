@@ -4,11 +4,11 @@ exports[`Card Body is working properly 1`] = `
 <div
   className="card-pf"
 >
-  <p
-    className="p card-pf-body"
+  <div
+    className="card-pf-body"
   >
     This is a Card Body
-  </p>
+  </div>
 </div>
 `;
 
@@ -19,6 +19,39 @@ exports[`Card Container is working properly 1`] = `
   <div
     className="container-fluid container-cards-pf"
   />
+</div>
+`;
+
+exports[`Card Drop Down Button is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="dropdown btn-group btn-group-primary"
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      className="card-pf-time-frame-filter dropdown-toggle btn btn-primary"
+      disabled={false}
+      id={undefined}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      type="button"
+    >
+      Dropdown
+       
+      <span
+        className="caret"
+      />
+    </button>
+    <ul
+      aria-labelledby={undefined}
+      className="dropdown-menu"
+      role="menu"
+    />
+  </div>
 </div>
 `;
 
@@ -59,7 +92,7 @@ exports[`Card Header is working properly 1`] = `
 </div>
 `;
 
-exports[`Card Link with Icon is working properly 1`] = `
+exports[`Card Link is working properly 1`] = `
 <div>
   <p>
     <a
@@ -81,7 +114,7 @@ exports[`Card Time Frame Filter is working properly 1`] = `
   className="card-pf"
 >
   <div
-    className="dropdown card-pf-time-frame-filter"
+    className="dropdown card-pf-time-frame-filter  "
   />
 </div>
 `;
@@ -90,10 +123,10 @@ exports[`Card Title is working properly 1`] = `
 <div
   className="card-pf some-class"
 >
-  <h4
-    className="h2 card-pf-title"
+  <h2
+    className="card-pf-title"
   >
     Card Title
-  </h4>
+  </h2>
 </div>
 `;

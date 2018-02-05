@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Card, CardLinkWithIcon } from './index';
+import { Card, CardLink, CardDropdownButton } from './index';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 
@@ -66,13 +66,11 @@ test('Card Body is working properly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Card Link with Icon is working properly', () => {
+test('Card Link is working properly', () => {
   const component = renderer.create(
-    <CardLinkWithIcon
-      href={'https://github.com/patternfly/patternfly-react/pull/203'}
-    >
+    <CardLink href={'https://github.com/patternfly/patternfly-react/pull/203'}>
       <Icon type="pf" name="add-circle-o" /> Add New Cluster
-    </CardLinkWithIcon>
+    </CardLink>
   );
 
   const tree = component.toJSON();
@@ -83,6 +81,17 @@ test('Card Time Frame Filter is working properly', () => {
   const component = renderer.create(
     <Card>
       <Card.TimeFrameFilter />
+    </Card>
+  );
+
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('Card Drop Down Button is working properly', () => {
+  const component = renderer.create(
+    <Card>
+      <CardDropdownButton title="Dropdown" bsStyle="primary" />
     </Card>
   );
 
