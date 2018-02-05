@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Body is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="card-pf-body"
+  >
+    This is a Card Body
+  </div>
+</div>
+`;
+
+exports[`Card Container is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="container-fluid container-cards-pf"
+  />
+</div>
+`;
+
+exports[`Card Drop Down Button is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="dropdown btn-group btn-group-primary"
+  >
+    <button
+      aria-expanded={false}
+      aria-haspopup={true}
+      className="card-pf-time-frame-filter dropdown-toggle btn btn-primary"
+      disabled={false}
+      id={undefined}
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      type="button"
+    >
+      Dropdown
+       
+      <span
+        className="caret"
+      />
+    </button>
+    <ul
+      aria-labelledby={undefined}
+      className="dropdown-menu"
+      role="menu"
+    />
+  </div>
+</div>
+`;
+
+exports[`Card Footer is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="card-pf-footer"
+  >
+    This is a Card Footer
+  </div>
+</div>
+`;
+
+exports[`Card Header is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="card-pf-heading"
+  >
+    <div
+      className="dropdown card-pf-time-frame-filter"
+    >
+      <button
+        className="btn btn-default"
+        disabled={false}
+        type="button"
+      >
+        Button
+        <span
+          className="caret"
+        />
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Card Link is working properly 1`] = `
+<div>
+  <p>
+    <a
+      className="card-pf-link-with-icon"
+      href="https://github.com/patternfly/patternfly-react/pull/203"
+    >
+      <span
+        aria-hidden="true"
+        className="pficon pficon-add-circle-o"
+      />
+       Add New Cluster
+    </a>
+  </p>
+</div>
+`;
+
+exports[`Card Time Frame Filter is working properly 1`] = `
+<div
+  className="card-pf"
+>
+  <div
+    className="dropdown card-pf-time-frame-filter  "
+  />
+</div>
+`;
+
+exports[`Card Title is working properly 1`] = `
+<div
+  className="card-pf some-class"
+>
+  <h2
+    className="card-pf-title"
+  >
+    Card Title
+  </h2>
+</div>
+`;
