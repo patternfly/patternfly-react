@@ -20,7 +20,7 @@ CardLink.propTypes = {
   children: PropTypes.node.isRequired,
   /** Additional element css classes */
   className: PropTypes.string,
-  /** href definition */
+  /** href prop */
   href: PropTypes.string
 };
 export default CardLink;
