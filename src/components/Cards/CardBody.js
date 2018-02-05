@@ -3,12 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CardBody = ({ children, className, ...props }) => {
-  const classes = ClassNames('p', 'card-pf-body', className);
+  const classes = ClassNames('card-pf-body', className);
 
   return (
-    <p className={classes} {...props}>
+    <div className={classes} {...props}>
       {children}
-    </p>
+    </div>
   );
 };
 CardBody.propTypes = {
