@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Form } from '../index';
+import { FieldLevelHelp } from '../../FieldLevelHelp/index';
 
 export const VerticalFormField = ({
   controlId,
@@ -11,6 +12,9 @@ export const VerticalFormField = ({
   validationState,
   bsSize,
   showHelp,
+  useFieldLevelHelp,
+  content,
+  close,
   ...props
 }) => {
   const controlProps = { ...props };
@@ -20,11 +24,31 @@ export const VerticalFormField = ({
 
   const formGroupProps = { key: controlId, controlId, ...controlProps };
 
-  return (
-    <Form.FormGroup {...formGroupProps}>
-      {label && <Form.ControlLabel>{label}</Form.ControlLabel>}
-      {formControl(controlProps)}
-      {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
-    </Form.FormGroup>
-  );
+  if (useFieldLevelHelp) {
+    const htmlContent = (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: content
+        }}
+      />
+    );
+    return (
+      <Form.FormGroup {...formGroupProps}>
+        {label && <Form.ControlLabel>{label}</Form.ControlLabel>}
+        <Form.ControlLabel>
+          <FieldLevelHelp content={htmlContent} close={close} />
+        </Form.ControlLabel>
+        {formControl(controlProps)}
+        {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
+      </Form.FormGroup>
+    );
+  } else {
+    return (
+      <Form.FormGroup {...formGroupProps}>
+        {label && <Form.ControlLabel>{label}</Form.ControlLabel>}
+        {formControl(controlProps)}
+        {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
+      </Form.FormGroup>
+    );
+  }
 };

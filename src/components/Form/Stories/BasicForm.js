@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { select, boolean } from '@storybook/addon-knobs';
+import { select, boolean, text } from '@storybook/addon-knobs';
 import { Spinner } from '../../Spinner';
 import { Button } from '../../Button';
 import { Form } from '../index';
@@ -38,6 +38,18 @@ export const BasicFormFields = [
     help: 'Enter a valid email address',
     formControl: ({ validationState, ...props }) => (
       <Form.FormControl type="email" {...props} />
+    )
+  },
+  {
+    controlId: 'phone',
+    label: 'Phone',
+    useFieldLevelHelp: true,
+    content:
+      "Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>",
+    close: 'true',
+    help: 'Enter a valid phone number',
+    formControl: ({ validationState, ...props }) => (
+      <Form.FormControl type="phone" {...props} />
     )
   },
   {
@@ -90,5 +102,10 @@ export const getBasicFormKnobs = () => ({
   ]),
   bsSize: select('Size', [null, 'small', 'large']),
   showHelp: boolean('Show Help', true),
-  disabled: boolean('Disabled', false)
+  disabled: boolean('Disabled', false),
+  content: text(
+    'Field Level Help Content',
+    "Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>"
+  ),
+  close: select('Close Popover', ['true', 'false'], 'true')
 });

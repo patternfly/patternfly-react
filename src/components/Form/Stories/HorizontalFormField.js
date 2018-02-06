@@ -3,6 +3,7 @@
 import React from 'react';
 import { Grid } from '../../Grid';
 import { Form } from '../index';
+import { FieldLevelHelp } from '../../FieldLevelHelp/index';
 
 export const HorizontalFormField = ({
   controlId,
@@ -12,6 +13,9 @@ export const HorizontalFormField = ({
   validationState,
   bsSize,
   showHelp,
+  useFieldLevelHelp,
+  content,
+  close,
   ...props
 }) => {
   const controlProps = { ...props };
@@ -21,15 +25,37 @@ export const HorizontalFormField = ({
 
   const formGroupProps = { key: controlId, controlId, ...controlProps };
 
-  return (
-    <Form.FormGroup {...formGroupProps}>
-      <Grid.Col componentClass={Form.ControlLabel} sm={3}>
-        {label}
-      </Grid.Col>
-      <Grid.Col sm={9}>
-        {formControl(controlProps)}
-        {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
-      </Grid.Col>
-    </Form.FormGroup>
-  );
+  if (useFieldLevelHelp) {
+    const htmlContent = (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: content
+        }}
+      />
+    );
+    return (
+      <Form.FormGroup {...formGroupProps}>
+        <Grid.Col componentClass={Form.ControlLabel} sm={3}>
+          {label}
+          <FieldLevelHelp content={htmlContent} close={close} />
+        </Grid.Col>
+        <Grid.Col sm={9}>
+          {formControl(controlProps)}
+          {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
+        </Grid.Col>
+      </Form.FormGroup>
+    );
+  } else {
+    return (
+      <Form.FormGroup {...formGroupProps}>
+        <Grid.Col componentClass={Form.ControlLabel} sm={3}>
+          {label}
+        </Grid.Col>
+        <Grid.Col sm={9}>
+          {formControl(controlProps)}
+          {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
+        </Grid.Col>
+      </Form.FormGroup>
+    );
+  }
 };
