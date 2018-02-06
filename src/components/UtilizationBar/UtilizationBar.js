@@ -5,21 +5,22 @@ import { OverlayTrigger } from '../OverlayTrigger';
 import React from 'react';
 //import PropTypes from 'prop-types';
 
+const availableTooltip = (props) => {
+    return (
+        <Tooltip id="availableTooltip">
+            Available {props.max - props.now} %
+        </Tooltip>
+    );
+};
+const usedTooltip = (props) => {
+    return (
+        <Tooltip id="usedTooltip">
+            Used {props.now} %
+        </Tooltip>
+    );
+};
+
 const UtilizationBar = ({...props}) => {
-    const availableTooltip = () => {
-      return (
-          <Tooltip id="availableTooltip">
-              Available {props.max - props.now} %
-          </Tooltip>
-      );
-    };
-    const usedTooltip = () => {
-        return (
-            <Tooltip id="usedTooltip">
-              Used {props.now} %
-            </Tooltip>
-        );
-    };
     const barStyle = () => {
       if(props.thresholdWarning && props.thresholdError) {
           var style = "success";
@@ -38,10 +39,10 @@ const UtilizationBar = ({...props}) => {
 
     return (
         <div className="progress">
-          <OverlayTrigger overlay={usedTooltip()} placement="top" trigger={["hover", "focus"]} rootClose={false}>
+          <OverlayTrigger overlay={props.usedTooltipFunction(props)} placement="top" trigger={["hover", "focus"]} rootClose={false}>
             <ProgressBar bsStyle={barStyle()} min={props.min} max={props.max} now={props.now} key={1} isChild={true}></ProgressBar>
           </OverlayTrigger>
-          <OverlayTrigger overlay={availableTooltip()} placement="top" trigger={["hover", "focus"]} rootClose={false}>
+          <OverlayTrigger overlay={props.availableTooltipFunction(props)} placement="top" trigger={["hover", "focus"]} rootClose={false}>
             <ProgressBar min={props.min} max={props.max} now={props.max - props.now} key={2} bsClass="progress-bar progress-bar-remaining" isChild={true}></ProgressBar>
           </OverlayTrigger>
         </div>
@@ -54,11 +55,15 @@ UtilizationBar.propTypes = {
     now: PropTypes.number,
     thresholdWarning: PropTypes.number,
     thresholdError: PropTypes.number,
+    availableTooltipFunction: PropTypes.func,
+    usedTooltipFunction: PropTypes.func,
 };
 
 UtilizationBar.defaultProps = {
     min: 0,
     max: 100,
+    availableTooltipFunction: availableTooltip,
+    usedTooltipFunction: usedTooltip,
 };
 
 export default UtilizationBar;
