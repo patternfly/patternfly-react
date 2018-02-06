@@ -4,7 +4,6 @@ import cx from 'classnames';
 
 import TreeViewExpand from './TreeViewExpand';
 import TreeViewIcon from './TreeViewIcon';
-import TreeViewTextAndIconWrapper from './TreeViewTextAndIconWrapper';
 import TreeViewIndents from './TreeViewIndents';
 
 class TreeViewNode extends Component {
@@ -30,7 +29,8 @@ class TreeViewNode extends Component {
     }
   }
 
-  toggleExpand() {
+  toggleExpand(e) {
+    e.stopPropagation();
     this.setState(prevState => ({ expanded: !prevState.expanded }));
   }
 
@@ -45,21 +45,20 @@ class TreeViewNode extends Component {
     const { node, level, visible, selectNode } = this.props;
     const { expanded } = this.state;
     const classes = cx('list-group-item', {
-      'node-hidden': level > 1 ? !visible : false
+      'node-hidden': level > 1 ? !visible : false,
+      'node-selected': node.selected
     });
     return (
       <React.Fragment>
-        <li className={classes}>
+        <li className={classes} onClick={this.handleSelect}>
           <TreeViewIndents level={level} />
           <TreeViewExpand
             nodes={node.nodes}
             expanded={expanded}
             toggleExpand={this.toggleExpand}
           />
-          <TreeViewTextAndIconWrapper handleSelect={this.handleSelect}>
-            <TreeViewIcon icon={node.icon} />
-            {node.text}
-          </TreeViewTextAndIconWrapper>
+          <TreeViewIcon icon={node.icon} />
+          {node.text}
         </li>
         {node.nodes &&
           node.nodes.map((node, index) => (
