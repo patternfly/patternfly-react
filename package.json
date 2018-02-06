@@ -52,6 +52,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "commitizen": "^2.9.6",
+    "coveralls": "^3.0.0",
     "css-loader": "^0.28.8",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.14.0",
@@ -103,6 +104,7 @@
     "test": "npm run lint && jest",
     "test:watch": "jest --watchAll",
     "test:current": "jest --watch",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "storybook": "npm run storybook:run",
     "storybook:run": "start-storybook -c storybook -p 6006",
     "storybook:build": "build-storybook -c storybook -o .out",
@@ -111,6 +113,10 @@
     "travis-deploy-once": "travis-deploy-once"
   },
   "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov"
+    ],
     "setupFiles": [
       "./src/test.env.js"
     ]
