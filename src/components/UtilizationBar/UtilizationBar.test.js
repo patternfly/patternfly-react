@@ -3,10 +3,33 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ProgressBar from './ProgressBar';
+import UtilizationBar from './UtilizationBar';
 
-test('ProgressBar renders properly', () => {
-  const component = renderer.create(<ProgressBar now={60} />);
+test('basic UtilizationBar renders properly', () => {
+  const component = renderer.create(<UtilizationBar now={60} />);
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('UtilizationBar with custom tooltips renders properly', () => {
+  const overriddenTooltip = () => {
+    return <strong>This tooltip is overridden.</strong>;
+  };
+  const component = renderer.create(
+    <UtilizationBar
+      now={60}
+      availableTooltipFunction={overriddenTooltip}
+      usedTooltipFunction={overriddenTooltip}
+    />
+  );
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test('UtilizationBar with thresholds renders properly', () => {
+  const component = renderer.create(
+    <UtilizationBar now={60} thresholdWarning={10} thresholdError={40} />
+  );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
