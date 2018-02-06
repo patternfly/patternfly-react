@@ -6,7 +6,7 @@ import { basicData } from '../__mocks__/data';
 
 const basicTreeView = stories => {
   stories.addWithInfo('Basic TreeView', '', () => {
-    const story = <TreeView data={basicData} />;
+    const story = <TreeView nodes={basicData} />;
 
     return template('Basic TreeView', story);
   });
