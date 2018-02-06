@@ -104,7 +104,7 @@ export const getBasicFormKnobs = () => ({
   showHelp: boolean('Show Help', true),
   disabled: boolean('Disabled', false),
   content: text(
-    'FieldLevelHelp Content',
+    'Field Level Help Content',
     "Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>"
   ),
   close: select('Close Popover', ['true', 'false'], 'true')

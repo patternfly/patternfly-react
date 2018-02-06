@@ -92,7 +92,7 @@ export const SupportedControlsFormFields = [
   },
   {
     controlId: 'FieldLevelHelp',
-    label: 'FieldLevelHelp',
+    label: 'Field Level Help',
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
       <div>
