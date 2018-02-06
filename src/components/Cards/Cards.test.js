@@ -1,13 +1,23 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Card, CardLink, CardDropdownButton } from './index';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
+import { MenuItem } from '../MenuItem';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardContainer,
+  CardHeading,
+  CardFooter,
+  CardLink,
+  CardDropdownButton
+} from './index';
 
 test('Card Title is working properly', () => {
   const component = renderer.create(
     <Card className="some-class">
-      <Card.Title>Card Title</Card.Title>
+      <CardTitle>Card Title</CardTitle>
     </Card>
   );
 
@@ -18,7 +28,7 @@ test('Card Title is working properly', () => {
 test('Card Footer is working properly', () => {
   const component = renderer.create(
     <Card>
-      <Card.Footer>This is a Card Footer</Card.Footer>
+      <CardFooter>This is a Card Footer</CardFooter>
     </Card>
   );
 
@@ -29,7 +39,7 @@ test('Card Footer is working properly', () => {
 test('Card Container is working properly', () => {
   const component = renderer.create(
     <Card>
-      <Card.Container />
+      <CardContainer />
     </Card>
   );
 
@@ -40,14 +50,14 @@ test('Card Container is working properly', () => {
 test('Card Header is working properly', () => {
   const component = renderer.create(
     <Card>
-      <Card.Heading>
+      <CardHeading>
         <div className="dropdown card-pf-time-frame-filter">
           <Button>
             Button
             <span className="caret" />
           </Button>
         </div>
-      </Card.Heading>
+      </CardHeading>
     </Card>
   );
 
@@ -58,7 +68,7 @@ test('Card Header is working properly', () => {
 test('Card Body is working properly', () => {
   const component = renderer.create(
     <Card>
-      <Card.Body>This is a Card Body</Card.Body>
+      <CardBody>This is a Card Body</CardBody>
     </Card>
   );
 
@@ -77,21 +87,20 @@ test('Card Link is working properly', () => {
   expect(tree).toMatchSnapshot();
 });
 
-test('Card Time Frame Filter is working properly', () => {
-  const component = renderer.create(
-    <Card>
-      <Card.TimeFrameFilter />
-    </Card>
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
 test('Card Drop Down Button is working properly', () => {
   const component = renderer.create(
     <Card>
-      <CardDropdownButton title="Dropdown" bsStyle="primary" />
+      <CardDropdownButton
+        id="cardDropdownButton1"
+        title="Last 30 Days"
+        onClick={jest.fn()}
+      >
+        <MenuItem eventKey="1" active>
+          Last 30 Days
+        </MenuItem>
+        <MenuItem eventKey="2">Last 60 Days</MenuItem>
+        <MenuItem eventKey="3">Last 90 Days</MenuItem>
+      </CardDropdownButton>
     </Card>
   );
 

@@ -4,13 +4,19 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
-import { Card, CardContainer, CardHeading, CardLink, CardTitle } from './index';
+import {
+  Card,
+  CardTitle,
+  CardBody,
+  CardContainer,
+  CardHeading,
+  CardFooter,
+  CardLink,
+  CardDropdownButton
+} from './index';
 import { Icon } from '../Icon';
 import { MenuItem } from '../MenuItem';
 import { Grid, Row, Col } from '../Grid';
-import CardTimeFrameFilter from './CardTimeFrameFilter';
-import CardDropdownButton from './CardDropdownButton';
-import CardBody from './CardBody';
 import {
   AggregateStatusCount,
   AggregateStatusNotification,
@@ -35,34 +41,31 @@ stories.addWithInfo('Base Card', () => {
               aggregatedMini={aggregatedMiniBool}
             >
               <CardHeading>
-                <CardTimeFrameFilter>
-                  <CardDropdownButton
-                    title="Dropdown"
-                    onClick={action('onClick')}
-                    bsStyle="primary"
-                  >
-                    <MenuItem eventKey="1">Action</MenuItem>
-                    <MenuItem eventKey="2">Another action</MenuItem>
-                    <MenuItem eventKey="3" active>
-                      Active Item
-                    </MenuItem>
-                    <MenuItem divider />
-                    <MenuItem eventKey="4">Separated link</MenuItem>
-                  </CardDropdownButton>
-                </CardTimeFrameFilter>
+                <CardDropdownButton
+                  id="cardDropdownButton1"
+                  title="Last 30 Days"
+                  onClick={action('onClick')}
+                >
+                  <MenuItem eventKey="1" active>
+                    Last 30 Days
+                  </MenuItem>
+                  <MenuItem eventKey="2">Last 60 Days</MenuItem>
+                  <MenuItem eventKey="3">Last 90 Days</MenuItem>
+                </CardDropdownButton>
                 <CardTitle>
                   <Icon name="shield" /> Card Title
                 </CardTitle>
-                <Card.Body>[card contents]</Card.Body>
-                <Card.Footer>
+                <CardBody>[card contents]</CardBody>
+                <CardFooter>
                   <CardLink
                     href={
                       'https://github.com/patternfly/patternfly-react/pull/203'
                     }
+                    icon={<Icon type="pf" name="add-circle-o" />}
                   >
-                    <Icon type="pf" name="add-circle-o" /> Add New Cluster
+                    Add New Cluster
                   </CardLink>
-                </Card.Footer>
+                </CardFooter>
               </CardHeading>
             </Card>
           </CardContainer>

@@ -27,30 +27,76 @@ exports[`Card Drop Down Button is working properly 1`] = `
   className="card-pf"
 >
   <div
-    className="dropdown btn-group btn-group-primary"
+    className="card-pf-time-frame-filter dropdown  "
   >
     <button
       aria-expanded={false}
       aria-haspopup={true}
-      className="card-pf-time-frame-filter dropdown-toggle btn btn-primary"
+      className="dropdown-toggle btn btn-default"
       disabled={false}
-      id={undefined}
+      id="cardDropdownButton1"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="button"
       type="button"
     >
-      Dropdown
+      Last 30 Days
        
       <span
         className="caret"
       />
     </button>
     <ul
-      aria-labelledby={undefined}
-      className="dropdown-menu"
+      aria-labelledby="cardDropdownButton1"
+      className="dropdown-menu dropdown-menu-right"
       role="menu"
-    />
+    >
+      <li
+        className="active"
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Last 30 Days
+        </a>
+      </li>
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Last 60 Days
+        </a>
+      </li>
+      <li
+        className=""
+        role="presentation"
+        style={undefined}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+          onKeyDown={[Function]}
+          role="menuitem"
+          tabIndex="-1"
+        >
+          Last 90 Days
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 `;
@@ -93,30 +139,18 @@ exports[`Card Header is working properly 1`] = `
 `;
 
 exports[`Card Link is working properly 1`] = `
-<div>
-  <p>
-    <a
-      className="card-pf-link-with-icon"
-      href="https://github.com/patternfly/patternfly-react/pull/203"
-    >
-      <span
-        aria-hidden="true"
-        className="pficon pficon-add-circle-o"
-      />
-       Add New Cluster
-    </a>
-  </p>
-</div>
-`;
-
-exports[`Card Time Frame Filter is working properly 1`] = `
-<div
-  className="card-pf"
->
-  <div
-    className="dropdown card-pf-time-frame-filter  "
-  />
-</div>
+<p>
+  <a
+    className=""
+    href="https://github.com/patternfly/patternfly-react/pull/203"
+  >
+    <span
+      aria-hidden="true"
+      className="pficon pficon-add-circle-o"
+    />
+     Add New Cluster
+  </a>
+</p>
 `;
 
 exports[`Card Title is working properly 1`] = `

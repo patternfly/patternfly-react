@@ -13,7 +13,7 @@ const CardContainer = ({ children, className, ...props }) => {
 };
 CardContainer.propTypes = {
   /** Child node - contents of the element */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   /** Additional element css classes */
   className: PropTypes.string
 };
