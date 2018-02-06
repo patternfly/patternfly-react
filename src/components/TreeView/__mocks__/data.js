@@ -53,3 +53,53 @@ export const basicData = [
     tags: ['0']
   }
 ];
+
+export const MockTreeViewManagerData = [
+  {
+    id: 1,
+    text: 'Parent 1',
+    selectable: true,
+    selected: false,
+    state: {
+      expanded: true
+    },
+    nodes: [
+      {
+        id: 2,
+        text: 'Child 1',
+        icon: 'fa fa-file-o'
+      },
+      {
+        id: 3,
+        text: 'Child 1',
+        icon: 'fa fa-file-o'
+      }
+    ]
+  },
+  {
+    id: 4,
+    text: 'Parent 2',
+    selectable: true,
+    selected: false,
+    state: {
+      expanded: true
+    },
+    nodes: [
+      {
+        id: 5,
+        text: 'Child 1',
+        icon: 'fa fa-file-o'
+      },
+      {
+        id: 6,
+        text: 'Child 1',
+        icon: 'fa fa-file-o'
+      },
+      {
+        id: 7,
+        text: 'Child 1',
+        icon: 'fa fa-file-o'
+      }
+    ]
+  }
+];
