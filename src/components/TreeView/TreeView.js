@@ -33,10 +33,19 @@ const TreeView = ({
 };
 
 TreeView.propTypes = {
+  /** Array of node objects */
   nodes: PropTypes.array,
+  /** Function that will be triggered when a selectable node is clicked */
   selectNode: PropTypes.func,
+  /** Highlight node row on hover */
   highlightOnHover: PropTypes.bool,
+  /** Highlight node row when clicked */
   highlightOnSelect: PropTypes.bool
+};
+
+TreeView.defaultProps = {
+  highlightOnHover: false,
+  highlightOnSelect: false
 };
 
 export default TreeView;
