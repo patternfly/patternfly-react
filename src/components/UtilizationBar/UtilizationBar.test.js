@@ -7,7 +7,7 @@ import UtilizationBar from './UtilizationBar';
 
 test('basic UtilizationBar renders properly', () => {
   const component = renderer.create(<UtilizationBar now={60} />);
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -22,7 +22,7 @@ test('UtilizationBar with custom tooltips renders properly', () => {
       usedTooltipFunction={overriddenTooltip}
     />
   );
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -30,6 +30,6 @@ test('UtilizationBar with thresholds renders properly', () => {
   const component = renderer.create(
     <UtilizationBar now={60} thresholdWarning={10} thresholdError={40} />
   );
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

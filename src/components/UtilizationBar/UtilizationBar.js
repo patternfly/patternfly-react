@@ -1,22 +1,21 @@
 import { ProgressBar } from '../ProgressBar';
 import PropTypes from 'prop-types';
-import { Tooltip } from '../Tooltip';
 import { OverlayTrigger } from '../OverlayTrigger';
+import { Tooltip } from '../Tooltip';
 import React from 'react';
 
-const availableTooltip = props => {
-  return (
-    <Tooltip id="availableTooltip">Available {props.max - props.now} %</Tooltip>
-  );
-};
-const usedTooltip = props => {
-  return <Tooltip id="usedTooltip">Used {props.now} %</Tooltip>;
+const AvailableTooltipFunction = (max, now) => {
+  return <Tooltip id={Math.random()}>Available {max - now} %</Tooltip>;
 };
 
-const UtilizationBar = ({ ...props }) => {
+const UsedTooltipFunction = now => {
+  return <Tooltip id={Math.random()}>Used {now} %</Tooltip>;
+};
+
+const UtilizationBar = props => {
   const barStyle = () => {
     if (props.thresholdWarning && props.thresholdError) {
-      var style = 'success';
+      let style = 'success';
       if (props.thresholdWarning <= props.now) {
         style = 'warning';
       }
@@ -32,7 +31,7 @@ const UtilizationBar = ({ ...props }) => {
   return (
     <div className="progress">
       <OverlayTrigger
-        overlay={props.usedTooltipFunction(props)}
+        overlay={props.usedTooltipFunction(props.now)}
         placement="top"
         trigger={['hover', 'focus']}
         rootClose={false}
@@ -47,7 +46,7 @@ const UtilizationBar = ({ ...props }) => {
         />
       </OverlayTrigger>
       <OverlayTrigger
-        overlay={props.availableTooltipFunction(props)}
+        overlay={props.availableTooltipFunction(props.max, props.now)}
         placement="top"
         trigger={['hover', 'focus']}
         rootClose={false}
@@ -78,17 +77,8 @@ UtilizationBar.propTypes = {
 UtilizationBar.defaultProps = {
   min: 0,
   max: 100,
-  availableTooltipFunction: availableTooltip,
-  usedTooltipFunction: usedTooltip
-};
-
-availableTooltip.propTypes = {
-  max: PropTypes.number.isRequired,
-  now: PropTypes.number.isRequired
-};
-
-usedTooltip.propTypes = {
-  now: PropTypes.number.isRequired
+  availableTooltipFunction: AvailableTooltipFunction,
+  usedTooltipFunction: UsedTooltipFunction
 };
 
 export default UtilizationBar;
