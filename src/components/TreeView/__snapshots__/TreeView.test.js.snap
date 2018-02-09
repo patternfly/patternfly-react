@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TreeView renders properly 1`] = `
+<div
+  className="treeview"
+>
+  <ul
+    className="list-group"
+  >
+    <li
+      className="list-group-item"
+      onClick={[Function]}
+    >
+      <span
+        className="icon indent expand-icon fa fa-angle-right"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-folder"
+      />
+      Parent 1
+    </li>
+    <li
+      className="list-group-item node-hidden"
+      onClick={[Function]}
+    >
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="icon indent expand-icon fa fa-angle-right"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-file-o"
+      />
+      Child 1
+    </li>
+    <li
+      className="list-group-item node-hidden"
+      onClick={[Function]}
+    >
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-file-o"
+      />
+      Grandchild 1
+    </li>
+    <li
+      className="list-group-item node-hidden"
+      onClick={[Function]}
+    >
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-file-o"
+      />
+      Grandchild 2
+    </li>
+    <li
+      className="list-group-item node-hidden"
+      onClick={[Function]}
+    >
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="indent"
+      />
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-file-o"
+      />
+      Child 2
+    </li>
+    <li
+      className="list-group-item"
+      onClick={[Function]}
+    >
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-folder"
+      />
+      Parent 2
+    </li>
+    <li
+      className="list-group-item"
+      onClick={[Function]}
+    >
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-folder"
+      />
+      Parent 3
+    </li>
+    <li
+      className="list-group-item"
+      onClick={[Function]}
+    >
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-folder"
+      />
+      Parent 4
+    </li>
+    <li
+      className="list-group-item"
+      onClick={[Function]}
+    >
+      <span
+        className="icon indent glyphicon"
+        onClick={[Function]}
+      />
+      <span
+        className="icon node-icon indent fa fa-folder"
+      />
+      Parent 5
+    </li>
+  </ul>
+</div>
+`;
