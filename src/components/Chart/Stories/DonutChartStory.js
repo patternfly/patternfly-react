@@ -9,15 +9,10 @@ import { DOCUMENTATION_URL } from '../../../../storybook/constants';
  * DonutChart constants
  */
 
-const pfGetUtilizationDonutTooltipContents = d => {
-  return (
-    '<span class="donut-tooltip-pf" style="white-space: nowrap;">' +
-    Math.round(d[0].ratio * 1000) / 10 +
-    ' ' +
-    d[0].name +
-    '</span>'
-  );
-};
+const pfGetUtilizationDonutTooltipContents = d =>
+  `<span class="donut-tooltip-pf" style="white-space: nowrap;">${Math.round(
+    d[0].ratio * 1000
+  ) / 10} ${d[0].name}</span>`;
 
 const donutConfigData = {
   columns: [['MHz Used', 60], ['MHz Available', 40]],
@@ -54,7 +49,7 @@ const donutRightConfigTitle = { type: 'total', secondary: 'Animals' };
 
 const donutChartAddWithInfo = stories => {
   stories.addWithInfo('Donut Charts', '', () => {
-    let story = (
+    const story = (
       <div>
         <h2>Donut Chart - Utilization</h2>
         <div>
@@ -89,9 +84,10 @@ const donutChartAddWithInfo = stories => {
 
     return inlineTemplate({
       title: 'Donut Charts',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION + 'donut-chart/',
-      story: story
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
+      }donut-chart/`,
+      story
     });
   });
 };

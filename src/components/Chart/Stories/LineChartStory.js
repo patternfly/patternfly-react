@@ -40,7 +40,7 @@ const singleSplineChartConfigData = {
 
 const lineChartAddWithInfo = stories => {
   stories.addWithInfo('Line Charts', '', () => {
-    let story = (
+    const story = (
       <div>
         <h2>Sparkline</h2>
         <div>
@@ -92,9 +92,10 @@ const lineChartAddWithInfo = stories => {
 
     return inlineTemplate({
       title: 'Line Charts',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION + 'line-chart/',
-      story: story
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
+      }line-chart/`,
+      story
     });
   });
 };

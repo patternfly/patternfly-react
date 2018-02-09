@@ -8,6 +8,7 @@ import {
 
 export const warnIfDeprecatedType = type => {
   if (type === ALERT_TYPE_DANGER) {
+    // eslint-disable-next-line no-console
     console.warn(`
       Warning: Deprecated Alert.type='${ALERT_TYPE_DANGER}'.
       Please migrate to Alert.type='${ALERT_TYPE_ERROR}'

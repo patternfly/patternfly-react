@@ -42,13 +42,12 @@ export const VerticalFormField = ({
         {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
       </Form.FormGroup>
     );
-  } else {
-    return (
-      <Form.FormGroup {...formGroupProps}>
-        {label && <Form.ControlLabel>{label}</Form.ControlLabel>}
-        {formControl(controlProps)}
-        {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
-      </Form.FormGroup>
-    );
   }
+  return (
+    <Form.FormGroup {...formGroupProps}>
+      {label && <Form.ControlLabel>{label}</Form.ControlLabel>}
+      {formControl(controlProps)}
+      {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
+    </Form.FormGroup>
+  );
 };

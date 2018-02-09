@@ -14,7 +14,7 @@ const categories = ['Q1', 'Q2', 'Q3', 'Q4'];
 const columnsData = [['data1', 400, 360, 320, 175]];
 const barChartConfigAxis = {
   x: {
-    categories: categories,
+    categories,
     type: 'category'
   }
 };
@@ -75,7 +75,7 @@ const horizontalBarChartConfigAxis = {
 
 const barChartAddWithInfo = stories => {
   stories.addWithInfo('Bar Charts', '', () => {
-    let story = (
+    const story = (
       <div>
         <h2> Bar Chart</h2>
         <div>
@@ -124,9 +124,10 @@ const barChartAddWithInfo = stories => {
     );
     return inlineTemplate({
       title: 'Bar Charts',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION + 'bar-chart/',
-      story: story
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
+      }bar-chart/`,
+      story
     });
   });
 };

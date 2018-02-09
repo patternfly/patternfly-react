@@ -10,9 +10,10 @@ const stories = storiesOf('ListGroup', module);
 stories.addDecorator(
   defaultTemplate({
     title: 'ListGroup',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#list-group',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'list-group/'
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#list-group`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }list-group/`
   })
 );
 
@@ -40,15 +41,13 @@ stories.addWithInfo('Badges', '', () => (
   </ListGroup>
 ));
 
-stories.addWithInfo('Linked Items', '', () => {
-  return (
-    <ListGroup>
-      <ListGroupItem href="#">Cras justo odio</ListGroupItem>
-      <ListGroupItem href="#">Dapibus ac facilisis in</ListGroupItem>
-      <ListGroupItem href="#">Morbi leo risus</ListGroupItem>
-    </ListGroup>
-  );
-});
+stories.addWithInfo('Linked Items', '', () => (
+  <ListGroup>
+    <ListGroupItem href="#">Cras justo odio</ListGroupItem>
+    <ListGroupItem href="#">Dapibus ac facilisis in</ListGroupItem>
+    <ListGroupItem href="#">Morbi leo risus</ListGroupItem>
+  </ListGroup>
+));
 
 stories.addWithInfo('Contextual classes', '', () => (
   <ListGroup>
@@ -59,31 +58,25 @@ stories.addWithInfo('Contextual classes', '', () => (
   </ListGroup>
 ));
 
-stories.addWithInfo('Custom content', '', () => {
-  return (
-    <ListGroup>
-      <ListGroupItem
-        href="#"
-        header="List group item heading"
-        className="active"
-      >
-        <p className="list-group-item-text">
-          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-          eget risus varius blandit.
-        </p>
-      </ListGroupItem>
-      <ListGroupItem href="#" header="List group item heading">
-        <p className="list-group-item-text">
-          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-          eget risus varius blandit.
-        </p>
-      </ListGroupItem>
-      <ListGroupItem href="#" header="List group item heading">
-        <p className="list-group-item-text">
-          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-          eget risus varius blandit.
-        </p>
-      </ListGroupItem>
-    </ListGroup>
-  );
-});
+stories.addWithInfo('Custom content', '', () => (
+  <ListGroup>
+    <ListGroupItem href="#" header="List group item heading" className="active">
+      <p className="list-group-item-text">
+        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+        risus varius blandit.
+      </p>
+    </ListGroupItem>
+    <ListGroupItem href="#" header="List group item heading">
+      <p className="list-group-item-text">
+        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+        risus varius blandit.
+      </p>
+    </ListGroupItem>
+    <ListGroupItem href="#" header="List group item heading">
+      <p className="list-group-item-text">
+        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+        risus varius blandit.
+      </p>
+    </ListGroupItem>
+  </ListGroup>
+));

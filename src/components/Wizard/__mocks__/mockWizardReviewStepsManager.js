@@ -34,7 +34,7 @@ class MockWizardReviewStepsManager extends React.Component {
       <Wizard.ReviewSteps>
         {steps.map((step, stepIndex) => {
           if (stepIndex === 2) {
-            return;
+            return null;
           }
           return (
             <Wizard.ReviewStep
@@ -44,38 +44,36 @@ class MockWizardReviewStepsManager extends React.Component {
               key={stepIndex}
             >
               <Wizard.ReviewSubSteps collapsed={step.collapsed}>
-                {step.subSteps.map((sub, subStepIndex) => {
-                  return (
-                    <Wizard.ReviewSubStep
-                      label={sub.label}
-                      title={sub.title}
-                      collapsed={sub.collapsed}
-                      onClick={e =>
-                        this.subStepClicked(e, stepIndex, subStepIndex)
-                      }
-                      key={subStepIndex}
-                    >
-                      <Wizard.ReviewContent collapsed={sub.collapsed}>
-                        <Wizard.ReviewItem>
-                          <span className="wizard-pf-review-item-label">
-                            {sub.contents.label1}:
-                          </span>
-                          <span className="wizard-pf-review-item-value">
-                            Brian Johnson
-                          </span>
-                        </Wizard.ReviewItem>
-                        <Wizard.ReviewItem>
-                          <span className="wizard-pf-review-item-label">
-                            {sub.contents.label2}:
-                          </span>
-                          <span className="wizard-pf-review-item-value">
-                            This is the description.
-                          </span>
-                        </Wizard.ReviewItem>
-                      </Wizard.ReviewContent>
-                    </Wizard.ReviewSubStep>
-                  );
-                })}
+                {step.subSteps.map((sub, subStepIndex) => (
+                  <Wizard.ReviewSubStep
+                    label={sub.label}
+                    title={sub.title}
+                    collapsed={sub.collapsed}
+                    onClick={e =>
+                      this.subStepClicked(e, stepIndex, subStepIndex)
+                    }
+                    key={subStepIndex}
+                  >
+                    <Wizard.ReviewContent collapsed={sub.collapsed}>
+                      <Wizard.ReviewItem>
+                        <span className="wizard-pf-review-item-label">
+                          {sub.contents.label1}:
+                        </span>
+                        <span className="wizard-pf-review-item-value">
+                          Brian Johnson
+                        </span>
+                      </Wizard.ReviewItem>
+                      <Wizard.ReviewItem>
+                        <span className="wizard-pf-review-item-label">
+                          {sub.contents.label2}:
+                        </span>
+                        <span className="wizard-pf-review-item-value">
+                          This is the description.
+                        </span>
+                      </Wizard.ReviewItem>
+                    </Wizard.ReviewContent>
+                  </Wizard.ReviewSubStep>
+                ))}
               </Wizard.ReviewSubSteps>
             </Wizard.ReviewStep>
           );

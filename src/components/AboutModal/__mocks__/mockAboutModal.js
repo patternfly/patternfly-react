@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from '../../Button';
-import { AboutModal } from '../index';
 import logo from 'patternfly/dist/img/logo-alt.svg';
 import productTitle from 'patternfly/dist/img/brand-alt.svg';
+import { Button } from '../../Button';
+import { AboutModal } from '../index';
 
 export class MockAboutModal extends React.Component {
   constructor() {

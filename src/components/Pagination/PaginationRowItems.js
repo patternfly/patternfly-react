@@ -10,17 +10,15 @@ const PaginationRowItems = ({
   itemsEnd,
   messagesOf,
   ...props
-}) => {
-  return (
-    <span {...props}>
-      <span className="pagination-pf-items-current">
-        {itemsStart}-{itemsEnd}
-      </span>
-      &nbsp;{messagesOf}&nbsp;
-      <span className="pagination-pf-items-total">{itemCount}</span>
+}) => (
+  <span {...props}>
+    <span className="pagination-pf-items-current">
+      {itemsStart}-{itemsEnd}
     </span>
-  );
-};
+    &nbsp;{messagesOf}&nbsp;
+    <span className="pagination-pf-items-total">{itemCount}</span>
+  </span>
+);
 PaginationRowItems.propTypes = {
   /** calculated number of rows */
   itemCount: PropTypes.number,

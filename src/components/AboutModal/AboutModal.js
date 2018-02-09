@@ -14,29 +14,27 @@ const AboutModal = ({
   trademarkText,
   closeText,
   ...rest
-}) => {
-  return (
-    <Modal
-      className={className}
-      contentClassName="about-modal-pf"
-      show={show}
-      onHide={onHide}
-      {...rest}
-    >
-      <Modal.Header>
-        <Modal.CloseButton onClick={onHide} closeText={closeText} />
-      </Modal.Header>
-      <Modal.Body>
-        <h1>{productTitle}</h1>
-        {children}
-        <div className="trademark-pf">{trademarkText}</div>
-      </Modal.Body>
-      <Modal.Footer>
-        <img src={logo} alt={altLogo} />
-      </Modal.Footer>
-    </Modal>
-  );
-};
+}) => (
+  <Modal
+    className={className}
+    contentClassName="about-modal-pf"
+    show={show}
+    onHide={onHide}
+    {...rest}
+  >
+    <Modal.Header>
+      <Modal.CloseButton onClick={onHide} closeText={closeText} />
+    </Modal.Header>
+    <Modal.Body>
+      <h1>{productTitle}</h1>
+      {children}
+      <div className="trademark-pf">{trademarkText}</div>
+    </Modal.Body>
+    <Modal.Footer>
+      <img src={logo} alt={altLogo} />
+    </Modal.Footer>
+  </Modal>
+);
 
 AboutModal.defaultProps = {
   closeText: 'Close'

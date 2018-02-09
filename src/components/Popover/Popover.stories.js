@@ -10,9 +10,10 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Popover',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#popover',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'popovers/'
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#popover`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }popovers/`
   })
 );
 

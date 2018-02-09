@@ -10,9 +10,10 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Tooltip',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#tooltip',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'tooltips/'
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#tooltip`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }tooltips/`
   })
 );
 

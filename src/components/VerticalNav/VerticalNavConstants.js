@@ -131,6 +131,7 @@ const componentForDepth = depth => {
 const wrongDepth = (props, expectedDepth) => {
   if (props.depth !== expectedDepth) {
     const componentUsed = componentForDepth(expectedDepth).displayName;
+    // eslint-disable-next-line no-console
     console.warn(
       `Warning: ${componentUsed} was used at ${
         props.depth
@@ -141,6 +142,7 @@ const wrongDepth = (props, expectedDepth) => {
 
 const correctDepth = props => {
   const Component = componentForDepth(props.depth);
+  // eslint-disable-next-line no-console
   console.warn(`Rendering with ${Component.displayName} instead.`);
   return <Component {...props} />;
 };
@@ -179,9 +181,8 @@ const NavContextProvider = withContext(navContextTypes, providerProps => {
 // WARNING: HACK! HAAAACK HACK HACK HACK WARNING THIS IS A HACK.
 // We only use this to apply magic body classes when the prop `dynamicBodyClasses` is used.
 // And only for consistency-- the better solution is to manage these classes yourself in the application.
-const getBodyContentElement = () => {
-  return document.querySelector('.container-pf-nav-pf-vertical');
-};
+const getBodyContentElement = () =>
+  document.querySelector('.container-pf-nav-pf-vertical');
 
 const setBodyClassIf = (condition, className) => {
   const body = getBodyContentElement();

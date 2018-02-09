@@ -12,17 +12,15 @@ const WizardReviewSubStep = ({
   title,
   collapsed,
   ...rest
-}) => {
-  return (
-    <ListGroupItem listItem {...rest}>
-      <a href="#" onClick={onClick} className={collapsed ? 'collapsed' : ''}>
-        <span className="wizard-pf-substep-number">{label}</span>
-        <span className="wizard-pf-substep-title">{title}</span>
-      </a>
-      {children}
-    </ListGroupItem>
-  );
-};
+}) => (
+  <ListGroupItem listItem {...rest}>
+    <a href="#" onClick={onClick} className={collapsed ? 'collapsed' : ''}>
+      <span className="wizard-pf-substep-number">{label}</span>
+      <span className="wizard-pf-substep-title">{title}</span>
+    </a>
+    {children}
+  </ListGroupItem>
+);
 WizardReviewSubStep.propTypes = {
   /** Children nodes */
   children: PropTypes.node,

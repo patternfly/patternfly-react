@@ -68,9 +68,10 @@ stories.addWithInfo('Inline Form', '', () => {
 
   const formFields = InlineFormFields.map(formField =>
     InlineFormField({ ...formField, ...formFieldsKnobs })
-  ).reduce((result = [], element) => {
-    return [...result, element, ' ']; // create spacing betwwen elements
-  }, []);
+  ).reduce(
+    (result = [], element) => [...result, element, ' '], // create spacing betwwen elements
+    []
+  );
 
   const formButtons = InlineFormButtons.map(({ text, ...props }) => (
     <Button key={text} {...props} {...buttonsProps}>
@@ -78,7 +79,7 @@ stories.addWithInfo('Inline Form', '', () => {
     </Button>
   ));
 
-  let story = (
+  const story = (
     <Grid>
       <Form inline>
         {formFields} {formButtons}
@@ -87,10 +88,11 @@ stories.addWithInfo('Inline Form', '', () => {
   );
   return inlineTemplate({
     title: 'Inline Form',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
-    story: story
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }forms/`,
+    story
   });
 });
 
@@ -116,7 +118,7 @@ stories.addWithInfo('Horizontal Form', '', () => {
     </span>
   ));
 
-  let story = (
+  const story = (
     <Grid>
       <Form horizontal>
         {formFields}
@@ -138,10 +140,11 @@ stories.addWithInfo('Horizontal Form', '', () => {
 
   return inlineTemplate({
     title: 'Horizontal Form',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
-    story: story
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }forms/`,
+    story
   });
 });
 
@@ -167,7 +170,7 @@ stories.addWithInfo('Vertical Form', '', () => {
     </span>
   ));
 
-  let story = (
+  const story = (
     <Grid>
       <Form>
         <Row>
@@ -186,10 +189,11 @@ stories.addWithInfo('Vertical Form', '', () => {
   );
   return inlineTemplate({
     title: 'Vertical Form',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
-    story: story
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }forms/`,
+    story
   });
 });
 
@@ -220,7 +224,7 @@ stories.addWithInfo('Modal Form', '', () => {
     </div>
   );
 
-  let story = (
+  const story = (
     <Modal show={showModal}>
       <Modal.Header>
         <button
@@ -244,10 +248,11 @@ stories.addWithInfo('Modal Form', '', () => {
   );
   return inlineTemplate({
     title: 'Modal Form',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
-    story: story
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }forms/`,
+    story
   });
 });
 
@@ -258,7 +263,7 @@ stories.addWithInfo('Supported Controls', '', () => {
     VerticalFormField({ ...formField, ...formFieldsKnobs })
   );
 
-  let story = (
+  const story = (
     <Grid>
       <Form>{formFields}</Form>
     </Grid>
@@ -266,10 +271,11 @@ stories.addWithInfo('Supported Controls', '', () => {
 
   return inlineTemplate({
     title: 'Supported Controls',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
-    story: story
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }forms/`,
+    story
   });
 });
 
@@ -280,7 +286,7 @@ stories.addWithInfo('Input Groups', '', () => {
     VerticalFormField({ ...formField, ...formFieldsKnobs })
   );
 
-  let story = (
+  const story = (
     <Grid>
       <Form>
         <Row>
@@ -291,9 +297,10 @@ stories.addWithInfo('Input Groups', '', () => {
   );
   return inlineTemplate({
     title: 'Input Groups',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#forms',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'forms/',
-    story: story
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }forms/`,
+    story
   });
 });

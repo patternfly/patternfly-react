@@ -13,7 +13,7 @@ import { reactabularDescription } from './tableStoryDescriptions';
 
 const patternflyTableAddWithInfo = stories => {
   stories.addWithInfo('PatternFly Table Styles', '', () => {
-    let story = (
+    const story = (
       <div>
         <h2>
           PatternFly recommendation: Bootstrap striped, bordered, hover, and
@@ -32,9 +32,10 @@ const patternflyTableAddWithInfo = stories => {
     );
     return inlineTemplate({
       title: 'PatternFly Table Styles',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'table-view/',
-      story: story,
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
+      }table-view/`,
+      story,
       description: reactabularDescription
     });
   });

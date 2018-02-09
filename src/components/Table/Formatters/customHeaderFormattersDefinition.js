@@ -20,9 +20,8 @@ const customHeaderFormattersDefinition = ({
       }),
       { cellProps, column, sortingColumns, rows, onSelectAllRows, onSort }
     ).value;
-  } else {
-    return cellProps.children;
   }
+  return cellProps.children;
 };
 customHeaderFormattersDefinition.propTypes = {
   /** column header cell props */

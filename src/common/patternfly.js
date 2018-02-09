@@ -2,7 +2,7 @@ import 'patternfly/dist/js/patternfly-settings';
 import 'patternfly/dist/js/patternfly-settings-charts';
 import Break from 'breakjs';
 
-const patternfly = window.patternfly;
+const { patternfly } = window;
 const c3ChartDefaults = patternfly.c3ChartDefaults();
 
 const mockLayout = {

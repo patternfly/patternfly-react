@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
-import cx from 'classnames';
 
 const FilterTypeSelector = ({
   className,
@@ -38,7 +38,7 @@ const FilterTypeSelector = ({
             </MenuItem>
           )}
           {filterTypes.map((item, index) => {
-            let classes = {
+            const classes = {
               selected: item === currentFilterType
             };
             return (
@@ -56,9 +56,8 @@ const FilterTypeSelector = ({
         </DropdownButton>
       </div>
     );
-  } else {
-    return null;
   }
+  return null;
 };
 
 FilterTypeSelector.propTypes = {

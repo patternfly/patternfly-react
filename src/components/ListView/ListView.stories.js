@@ -1,9 +1,9 @@
 import cx from 'classnames';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Row, Col } from '../Grid';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info/dist/index';
+import { Row, Col } from '../Grid';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Button } from '../Button';
@@ -22,8 +22,9 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'ListView',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'list-view/'
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
+    }list-view/`
   })
 );
 
@@ -33,64 +34,59 @@ const renderActions = () => (
   </div>
 );
 
-const renderAdditionalInfoItems = itemProperties => {
-  return (
-    itemProperties &&
-    Object.keys(itemProperties).map(prop => {
-      const classNames = cx('pficon', {
-        'pficon-flavor': prop === 'hosts',
-        'pficon-cluster': prop === 'clusters',
-        'pficon-container-node': prop === 'nodes',
-        'pficon-image': prop === 'images'
-      });
-      return (
-        <ListView.InfoItem key={prop}>
-          <span className={classNames} />
-          <strong>{itemProperties[prop]}</strong> {prop}
-        </ListView.InfoItem>
-      );
-    })
-  );
-};
+const renderAdditionalInfoItems = itemProperties =>
+  itemProperties &&
+  Object.keys(itemProperties).map(prop => {
+    const classNames = cx('pficon', {
+      'pficon-flavor': prop === 'hosts',
+      'pficon-cluster': prop === 'clusters',
+      'pficon-container-node': prop === 'nodes',
+      'pficon-image': prop === 'images'
+    });
+    return (
+      <ListView.InfoItem key={prop}>
+        <span className={classNames} />
+        <strong>{itemProperties[prop]}</strong> {prop}
+      </ListView.InfoItem>
+    );
+  });
 
 stories.addWithInfo(
   'List of expandable items',
   `ListView usage example.`,
-  () => {
-    return (
-      <ListView>
-        {mockListItems.map(
-          (
-            {
-              actions,
-              properties,
-              title,
-              description,
-              expandedContentText,
-              ...rest
-            },
-            index
-          ) => (
-            <ListView.Item
-              key={index}
-              actions={renderActions(actions)}
-              checkboxInput={<input type="checkbox" />}
-              leftContent={<ListView.Icon name="plane" />}
-              additionalInfo={renderAdditionalInfoItems(properties)}
-              heading={title}
-              description={description}
-              stacked={boolean('Stacked', false)}
-              {...rest}
-            >
-              <Row>
-                <Col sm={11}>{expandedContentText}</Col>
-              </Row>
-            </ListView.Item>
-          )
-        )}
-      </ListView>
-    );
-  }
+  () => (
+    <ListView>
+      {mockListItems.map(
+        (
+          {
+            actions,
+            properties,
+            title,
+            description,
+            expandedContentText,
+            ...rest
+          },
+          index
+        ) => (
+          <ListView.Item
+            key={index}
+            actions={renderActions(actions)}
+            checkboxInput={<input type="checkbox" />}
+            leftContent={<ListView.Icon name="plane" />}
+            additionalInfo={renderAdditionalInfoItems(properties)}
+            heading={title}
+            description={description}
+            stacked={boolean('Stacked', false)}
+            {...rest}
+          >
+            <Row>
+              <Col sm={11}>{expandedContentText}</Col>
+            </Row>
+          </ListView.Item>
+        )
+      )}
+    </ListView>
+  )
 );
 
 stories.add(

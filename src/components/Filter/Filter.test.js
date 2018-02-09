@@ -97,8 +97,8 @@ test('Filter active components render properly', () => {
     <Toolbar.Results>
       <Filter.ActiveLabel title="Active Filters:" />
       <Filter.List>
-        <Filter.Item label={'Name: John'} />
-        <Filter.Item label={'Address: Westford'} />
+        <Filter.Item label="Name: John" />
+        <Filter.Item label="Address: Westford" />
       </Filter.List>
     </Toolbar.Results>
   );

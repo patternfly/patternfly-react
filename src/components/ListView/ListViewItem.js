@@ -75,46 +75,44 @@ class ListViewItem extends React.Component {
             </ListViewGroupItemContainer>
           </ListViewGroupItem>
         );
-      } else {
-        return (
-          <ListViewGroupItem expanded={expanded} stacked={stacked} {...other}>
-            <ListViewGroupItemHeader toggleExpanded={this.toggleExpanded}>
-              <ListViewExpand
-                expanded={expanded}
-                toggleExpanded={this.toggleExpanded}
-              />
-              <ListViewRow
-                checkboxInput={checkboxInput}
-                leftContent={leftContent}
-                heading={heading}
-                description={description}
-                additionalInfo={additionalInfo}
-                actions={actions}
-              />
-            </ListViewGroupItemHeader>
-            <ListViewGroupItemContainer
-              expanded={expanded}
-              onClose={hideCloseIcon ? undefined : this.toggleExpanded}
-            >
-              {children}
-            </ListViewGroupItemContainer>
-          </ListViewGroupItem>
-        );
       }
-    } else {
       return (
-        <ListViewGroupItem stacked={stacked} {...other}>
-          <ListViewRow
-            checkboxInput={checkboxInput}
-            leftContent={leftContent}
-            heading={heading}
-            description={description}
-            additionalInfo={additionalInfo}
-            actions={actions}
-          />
+        <ListViewGroupItem expanded={expanded} stacked={stacked} {...other}>
+          <ListViewGroupItemHeader toggleExpanded={this.toggleExpanded}>
+            <ListViewExpand
+              expanded={expanded}
+              toggleExpanded={this.toggleExpanded}
+            />
+            <ListViewRow
+              checkboxInput={checkboxInput}
+              leftContent={leftContent}
+              heading={heading}
+              description={description}
+              additionalInfo={additionalInfo}
+              actions={actions}
+            />
+          </ListViewGroupItemHeader>
+          <ListViewGroupItemContainer
+            expanded={expanded}
+            onClose={hideCloseIcon ? undefined : this.toggleExpanded}
+          >
+            {children}
+          </ListViewGroupItemContainer>
         </ListViewGroupItem>
       );
     }
+    return (
+      <ListViewGroupItem stacked={stacked} {...other}>
+        <ListViewRow
+          checkboxInput={checkboxInput}
+          leftContent={leftContent}
+          heading={heading}
+          description={description}
+          additionalInfo={additionalInfo}
+          actions={actions}
+        />
+      </ListViewGroupItem>
+    );
   }
 }
 ListViewItem.propTypes = {

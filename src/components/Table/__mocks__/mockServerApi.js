@@ -26,7 +26,7 @@ class MockServerApi {
       // items start, items end
       resolve({
         rows: this.mockRows.slice(startPage * perPage, endOfPage),
-        amountOfPages: amountOfPages,
+        amountOfPages,
         itemCount: this.mockRows.length
       });
     });
@@ -45,7 +45,7 @@ class MockServerApi {
     return new Promise(resolve => {
       // server api returns updated row
       resolve({
-        row: row
+        row
       });
     });
   }
@@ -68,7 +68,7 @@ class MockServerApi {
     return new Promise(resolve => {
       // server api returns updated rows
       resolve({
-        rows: rows
+        rows
       });
     });
   }

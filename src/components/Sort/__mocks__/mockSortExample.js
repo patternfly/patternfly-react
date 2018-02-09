@@ -48,18 +48,16 @@ export class MockSortExample extends React.Component {
     filterText += ': ';
 
     if (value.filterCategory) {
-      filterText +=
-        (value.filterCategory.title || value.filterCategory) +
-        '-' +
-        (value.filterValue.title || value.filterValue);
+      filterText += `${value.filterCategory.title ||
+        value.filterCategory}-${value.filterValue.title || value.filterValue}`;
     } else if (value.title) {
       filterText += value.title;
     } else {
       filterText += value;
     }
 
-    let activeFilters = [...this.state.activeFilters, { label: filterText }];
-    this.setState({ activeFilters: activeFilters });
+    const activeFilters = [...this.state.activeFilters, { label: filterText }];
+    this.setState({ activeFilters });
   };
 
   updateCurrentSortType(sortType) {
@@ -74,9 +72,9 @@ export class MockSortExample extends React.Component {
   }
 
   toggleCurrentSortDirection() {
-    this.setState(prevState => {
-      return { isSortAscending: !prevState.isSortAscending };
-    });
+    this.setState(prevState => ({
+      isSortAscending: !prevState.isSortAscending
+    }));
   }
 
   render() {

@@ -14,6 +14,7 @@ import pfLogo from '../../../storybook/img/logo-alt.svg';
 import pfBrand from '../../../storybook/img/brand-alt.svg';
 
 import { VerticalNav, Icon, MenuItem, Dropdown } from '../../index';
+
 const { Masthead, Brand, IconBar, Item } = VerticalNav;
 
 // Vertical Nav CSS uses position: fixed, but storybook doesn't render components at the top of the page body.
@@ -79,16 +80,14 @@ the component will track its own active item state internally.\n
 * Item, SecondaryItem and TertiaryItem will throw console warnings if used at the wrong depth.\n
 * Items can also be expressed as JavaScript objects, see the 'Items as Objects' story.\n
 ${propTypesAreBroke}`
-  })(() => {
-    return (
-      <MockFixedLayout>
-        <div className="layout-pf layout-pf-fixed faux-layout">
-          {basicExample({ sessionKey: 'storybookItemsAsJsx' })}
-          {mockBodyContainer('nav-pf-vertical-with-badges')}
-        </div>
-      </MockFixedLayout>
-    );
-  })
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        {basicExample({ sessionKey: 'storybookItemsAsJsx' })}
+        {mockBodyContainer('nav-pf-vertical-with-badges')}
+      </div>
+    </MockFixedLayout>
+  ))
 );
 
 stories.add(
@@ -106,22 +105,20 @@ instead of having to map out and write JSX for all three levels.\n
 Example items array (pretty-printed version of what's in the Story Source below):
 \`\`\`\nconst items = ${JSON.stringify(mockNavItems, null, 2)}\n\`\`\`\n
 ${propTypesAreBroke}`
-  })(() => {
-    return (
-      <MockFixedLayout>
-        <div className="layout-pf layout-pf-fixed faux-layout">
-          <VerticalNav
-            sessionKey="storybookItemsAsObjects"
-            items={mockNavItems}
-            showBadges
-          >
-            <Masthead title="Patternfly React" />
-          </VerticalNav>
-          {mockBodyContainer('nav-pf-vertical-with-badges')}
-        </div>
-      </MockFixedLayout>
-    );
-  })
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        <VerticalNav
+          sessionKey="storybookItemsAsObjects"
+          items={mockNavItems}
+          showBadges
+        >
+          <Masthead title="Patternfly React" />
+        </VerticalNav>
+        {mockBodyContainer('nav-pf-vertical-with-badges')}
+      </div>
+    </MockFixedLayout>
+  ))
 );
 
 stories.add(
@@ -135,20 +132,18 @@ the component will fall back on appropriate stateful behavior.\n
 Controlled State props for VerticalNav: **isMobile, showMobileNav, navCollapsed, activePath, hoverPath, mobilePath**.\n
 Controlled State props for Item, SecondaryItem and TertiaryItem: **active, hovered, selectedOnMobile, pinned**.\n
 ${propTypesAreBroke}`
-  })(() => {
-    return (
-      <MockFixedLayout>
-        <div className="layout-pf layout-pf-fixed faux-layout">
-          <VerticalNav sessionKey="storybookControlledState">
-            <Masthead title="Patternfly React" />
-            <Item title="Item 1" active />
-            <Item title="Item 2" />
-          </VerticalNav>
-          {mockBodyContainer()}
-        </div>
-      </MockFixedLayout>
-    );
-  })
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        <VerticalNav sessionKey="storybookControlledState">
+          <Masthead title="Patternfly React" />
+          <Item title="Item 1" active />
+          <Item title="Item 2" />
+        </VerticalNav>
+        {mockBodyContainer()}
+      </div>
+    </MockFixedLayout>
+  ))
 );
 
 stories.add(
@@ -156,19 +151,17 @@ stories.add(
   withInfo({
     propTablesExclude: [MockFixedLayout],
     text: `Example using the **pinnableMenus** prop. (items from 'Items as JSX')\n\n${propTypesAreBroke}`
-  })(() => {
-    return (
-      <MockFixedLayout>
-        <div className="layout-pf layout-pf-fixed faux-layout">
-          {basicExample({
-            sessionKey: 'storybookPinnableMenus',
-            pinnableMenus: true
-          })}
-          {mockBodyContainer('nav-pf-vertical-with-badges')}
-        </div>
-      </MockFixedLayout>
-    );
-  })
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        {basicExample({
+          sessionKey: 'storybookPinnableMenus',
+          pinnableMenus: true
+        })}
+        {mockBodyContainer('nav-pf-vertical-with-badges')}
+      </div>
+    </MockFixedLayout>
+  ))
 );
 
 stories.add(
@@ -176,19 +169,17 @@ stories.add(
   withInfo({
     propTablesExclude: [MockFixedLayout],
     text: `Example using the **hoverDelay** prop set to 0. (items from 'Items as JSX')\n\n${propTypesAreBroke}`
-  })(() => {
-    return (
-      <MockFixedLayout>
-        <div className="layout-pf layout-pf-fixed faux-layout">
-          {basicExample({
-            sessionKey: 'storybookNoHoverDelay',
-            hoverDelay: 0
-          })}
-          {mockBodyContainer('nav-pf-vertical-with-badges')}
-        </div>
-      </MockFixedLayout>
-    );
-  })
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        {basicExample({
+          sessionKey: 'storybookNoHoverDelay',
+          hoverDelay: 0
+        })}
+        {mockBodyContainer('nav-pf-vertical-with-badges')}
+      </div>
+    </MockFixedLayout>
+  ))
 );
 
 stories.add(
@@ -196,19 +187,17 @@ stories.add(
   withInfo({
     propTablesExclude: [MockFixedLayout],
     text: `Example using the **hoverDisabled** prop. (items from 'Items as JSX')\n\n${propTypesAreBroke}`
-  })(() => {
-    return (
-      <MockFixedLayout>
-        <div className="layout-pf layout-pf-fixed faux-layout">
-          {basicExample({
-            sessionKey: 'storybookHoverDisabled',
-            hoverDisabled: true
-          })}
-          {mockBodyContainer('nav-pf-vertical-with-badges')}
-        </div>
-      </MockFixedLayout>
-    );
-  })
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        {basicExample({
+          sessionKey: 'storybookHoverDisabled',
+          hoverDisabled: true
+        })}
+        {mockBodyContainer('nav-pf-vertical-with-badges')}
+      </div>
+    </MockFixedLayout>
+  ))
 );
 
 stories.add(
@@ -223,23 +212,21 @@ stories.add(
       Dropdown.Toggle
     ],
     text: `Example using the **Masthead**, **Brand** and **IconBar** components with images. (items from 'Items as Objects').`
-  })(() => {
-    return (
-      <MockFixedLayout>
-        <div className="layout-pf layout-pf-fixed faux-layout">
-          <VerticalNav
-            sessionKey="storybookCustomMasthead"
-            items={mockNavItems}
-            showBadges
-          >
-            <Masthead>
-              <Brand iconImg={pfLogo} titleImg={pfBrand} />
-              <IconBar>{mockIconBarChildren}</IconBar>
-            </Masthead>
-          </VerticalNav>
-          {mockBodyContainer('nav-pf-vertical-with-badges')}
-        </div>
-      </MockFixedLayout>
-    );
-  })
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        <VerticalNav
+          sessionKey="storybookCustomMasthead"
+          items={mockNavItems}
+          showBadges
+        >
+          <Masthead>
+            <Brand iconImg={pfLogo} titleImg={pfBrand} />
+            <IconBar>{mockIconBarChildren}</IconBar>
+          </Masthead>
+        </VerticalNav>
+        {mockBodyContainer('nav-pf-vertical-with-badges')}
+      </div>
+    </MockFixedLayout>
+  ))
 );

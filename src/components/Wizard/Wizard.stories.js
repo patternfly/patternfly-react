@@ -27,8 +27,9 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Wizard',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'wizard/#/overview'
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
+    }wizard/#/overview`
   })
 );
 

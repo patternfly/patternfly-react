@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
-import cx from 'classnames';
 
 const FilterValueSelector = ({
   className,
@@ -13,7 +13,7 @@ const FilterValueSelector = ({
   onFilterValueSelected,
   ...rest
 }) => {
-  let classes = cx('filter-pf-select', className);
+  const classes = cx('filter-pf-select', className);
 
   if (placeholder || (filterValues && filterValues.length > 1)) {
     let title;
@@ -44,7 +44,7 @@ const FilterValueSelector = ({
           )}
           {filterValues &&
             filterValues.map((item, index) => {
-              let classes = {
+              const classes = {
                 selected: item === currentValue
               };
               return (
@@ -62,9 +62,8 @@ const FilterValueSelector = ({
         </DropdownButton>
       </div>
     );
-  } else {
-    return null;
   }
+  return null;
 };
 
 FilterValueSelector.propTypes = {

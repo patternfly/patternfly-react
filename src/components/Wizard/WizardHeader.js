@@ -14,13 +14,12 @@ const WizardHeader = ({ children, className, embedded, title, ...rest }) => {
         {title}
       </h2>
     );
-  } else {
-    return (
-      <div className={classes} {...rest}>
-        <h4 className="wizard-pf-title">{title}</h4>
-      </div>
-    );
   }
+  return (
+    <div className={classes} {...rest}>
+      <h4 className="wizard-pf-title">{title}</h4>
+    </div>
+  );
 };
 WizardHeader.propTypes = {
   /** Children nodes  */

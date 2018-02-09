@@ -45,17 +45,16 @@ export const HorizontalFormField = ({
         </Grid.Col>
       </Form.FormGroup>
     );
-  } else {
-    return (
-      <Form.FormGroup {...formGroupProps}>
-        <Grid.Col componentClass={Form.ControlLabel} sm={3}>
-          {label}
-        </Grid.Col>
-        <Grid.Col sm={9}>
-          {formControl(controlProps)}
-          {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
-        </Grid.Col>
-      </Form.FormGroup>
-    );
   }
+  return (
+    <Form.FormGroup {...formGroupProps}>
+      <Grid.Col componentClass={Form.ControlLabel} sm={3}>
+        {label}
+      </Grid.Col>
+      <Grid.Col sm={9}>
+        {formControl(controlProps)}
+        {showHelp && help && <Form.HelpBlock>{help}</Form.HelpBlock>}
+      </Grid.Col>
+    </Form.FormGroup>
+  );
 };

@@ -34,11 +34,10 @@ class ToastNotificationList extends React.Component {
          * all child notifications from dismissing
          */
         return React.cloneElement(child, {
-          paused: paused
+          paused
         });
-      } else {
-        return child;
       }
+      return child;
     });
   }
   render() {

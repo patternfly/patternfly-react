@@ -12,15 +12,16 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Alert / Inline Notification',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'inline-notifications/'
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
+    }inline-notifications/`
   })
 );
 
 stories.addWithInfo('Alert types', 'Those are the available alert types', () =>
   ALERT_TYPES.map(type => (
     <Alert type={type} onDismiss={action(`${type}Dismissed`)}>
-      I am an Alert with type="{type}"
+      I am an Alert with type=&quot;{type}&quot;
     </Alert>
   ))
 );

@@ -16,12 +16,12 @@ export class MockPaginationRow extends React.Component {
     bindMethods(this, ['onPageInput', 'onPerPageSelect']);
   }
   onPageInput(e) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
+    const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.page = e.target.value;
     this.setState({ pagination: newPaginationState });
   }
   onPerPageSelect(eventKey, e) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
+    const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     this.setState({ pagination: newPaginationState });
   }

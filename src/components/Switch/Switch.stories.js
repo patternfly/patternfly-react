@@ -18,7 +18,7 @@ stories.addWithInfo('Switch', '', () => {
   if (onColor) props.onColor = onColor;
   if (offColor) props.offColor = offColor;
 
-  let story = (
+  const story = (
     <div>
       <Switch
         {...props}
@@ -33,10 +33,11 @@ stories.addWithInfo('Switch', '', () => {
   );
   return inlineTemplate({
     title: 'Switch',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#bootstrap-switch',
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
+    }#bootstrap-switch`,
     reactBootstrapDocumentationLink:
       'https://www.npmjs.com/package/react-bootstrap-switch',
-    story: story
+    story
   });
 });

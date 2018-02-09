@@ -15,7 +15,7 @@ test('Mock Client Pagination table renders', () => {
   const component = renderer.create(
     <MockClientPaginationTable onRowsLogger={jest.fn()} />
   );
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -23,7 +23,7 @@ test('Mock Server Pagination table renders', () => {
   const component = renderer.create(
     <MockServerPaginationTable onServerPageLogger={jest.fn()} />
   );
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 

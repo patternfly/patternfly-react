@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info/dist/index';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
-import { withInfo } from '@storybook/addon-info/dist/index';
 import {
   Filter,
   FilterTypeSelector,
@@ -24,7 +24,7 @@ const stories = storiesOf('Filter', module);
 stories.addDecorator(
   defaultTemplate({
     title: 'Filter',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_FORMS + 'filter/'
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_FORMS}filter/`
   })
 );
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { withInfo } from '@storybook/addon-info/dist/index';
+import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { Sort, SortTypeSelector, SortDirectionSelector } from '../../index';
 import {
   MockSortExample,

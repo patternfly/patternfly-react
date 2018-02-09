@@ -23,9 +23,7 @@ export class ToolbarFind extends React.Component {
   }
 
   toggleDropdownShown() {
-    this.setState(prevState => {
-      return { dropdownShown: !prevState.dropdownShown };
-    });
+    this.setState(prevState => ({ dropdownShown: !prevState.dropdownShown }));
   }
 
   hideDropdown() {
@@ -89,9 +87,8 @@ export class ToolbarFind extends React.Component {
           <Icon type="fa" name="angle-down" />
         </Button>
       ];
-    } else {
-      return null;
     }
+    return null;
   }
 
   render() {

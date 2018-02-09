@@ -16,12 +16,12 @@ const FieldLevelHelp = ({ children, content, close, ...props }) => {
   return (
     <OverlayTrigger
       overlay={overlay}
-      placement={'top'}
+      placement="top"
       trigger={trigger.split(' ')}
       rootClose={rootClose}
     >
       <Button bsStyle="link">
-        <Icon type="pf" name={'info'} />
+        <Icon type="pf" name="info" />
       </Button>
     </OverlayTrigger>
   );

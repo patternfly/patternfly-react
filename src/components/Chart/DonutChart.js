@@ -6,13 +6,9 @@ import { lifecycle, compose } from 'recompose';
 import { patternfly } from '../../common/patternfly';
 import { getComposer } from './ChartConstants';
 
-const pfSetDonutChartTitle = patternfly.pfSetDonutChartTitle;
-const colIndexOfMaxValue = columns => {
-  return columns.reduce(
-    (iMax, x, i, arr) => (x[1] > arr[iMax][1] ? i : iMax),
-    0
-  );
-};
+const { pfSetDonutChartTitle } = patternfly;
+const colIndexOfMaxValue = columns =>
+  columns.reduce((iMax, x, i, arr) => (x[1] > arr[iMax][1] ? i : iMax), 0);
 
 const setDonutTitle = obj => {
   let primary;
@@ -25,7 +21,7 @@ const setDonutTitle = obj => {
 
   switch (title.type) {
     case 'percent':
-      primary = Math.round(100 * columns[iMax][1] / sum).toString() + '%';
+      primary = `${Math.round(100 * columns[iMax][1] / sum).toString()}%`;
       secondary = columns[iMax][0];
       break;
     case 'max':

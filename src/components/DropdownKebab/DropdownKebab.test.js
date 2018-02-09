@@ -17,6 +17,6 @@ test('Kebab dropdown renders properly', () => {
     </DropdownKebab>
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

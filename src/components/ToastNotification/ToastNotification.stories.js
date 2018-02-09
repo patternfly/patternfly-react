@@ -31,7 +31,7 @@ stories.addWithInfo(
     const menuEnabled = boolean('Menu', true);
     const actionEnabled = boolean('Action', true);
 
-    let story = (
+    const story = (
       <div>
         <ToastNotification
           type={type}
@@ -64,9 +64,10 @@ stories.addWithInfo(
 
     return inlineTemplate({
       title: 'Toast Notification',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'toast-notifications/',
-      story: story
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
+      }toast-notifications/`,
+      story
     });
   }
 );
@@ -173,12 +174,13 @@ stories.addWithInfo(
   'Toast Notification List',
   `This is the Toast Notification List with a custom timer delay supplied.`,
   () => {
-    let story = <ToastNotificationStoryWrapper />;
+    const story = <ToastNotificationStoryWrapper />;
     return inlineTemplate({
       title: 'Toast Notification List',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'toast-notifications/',
-      story: story
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
+      }toast-notifications/`,
+      story
     });
   }
 );

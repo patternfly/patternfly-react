@@ -399,7 +399,7 @@ class BaseVerticalNav extends React.Component {
 
     return (
       <NavContextProvider
-        idPath={'/'}
+        idPath="/"
         updateNavOnMenuToggleClick={this.updateNavOnMenuToggleClick}
         updateNavOnItemHover={this.updateNavOnItemHover}
         updateNavOnItemBlur={this.updateNavOnItemBlur}

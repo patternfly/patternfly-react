@@ -44,12 +44,13 @@ const clientSortableTableAddWithInfo = stories => {
         </div>
       )
     })(() => {
-      let story = <MockClientSortableTable />;
+      const story = <MockClientSortableTable />;
       return inlineTemplate({
         title: 'Client Sortable Table',
-        documentationLink:
-          DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'table-view/',
-        story: story,
+        documentationLink: `${
+          DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
+        }table-view/`,
+        story,
         description: reactabularDescription
       });
     })

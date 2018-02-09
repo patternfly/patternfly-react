@@ -6,17 +6,15 @@ import WizardHeader from './WizardHeader';
  * Wizard - main Wizard component.
  */
 const Wizard = ({ children, className, embedded, ...rest }) => {
-  const renderChildren = () => {
-    return React.Children.map(children, child => {
+  const renderChildren = () =>
+    React.Children.map(children, child => {
       if (child && child.type === WizardHeader) {
         return React.cloneElement(child, {
-          embedded: embedded
+          embedded
         });
-      } else {
-        return child;
       }
+      return child;
     });
-  };
 
   return (
     <div className={className} {...rest}>

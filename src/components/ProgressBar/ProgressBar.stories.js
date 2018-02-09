@@ -8,8 +8,9 @@ const stories = storiesOf('ProgressBar', module);
 stories.addDecorator(
   defaultTemplate({
     title: 'Progress Bar',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '/#progress-bars/'
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
+    }/#progress-bars/`
   })
 );
 

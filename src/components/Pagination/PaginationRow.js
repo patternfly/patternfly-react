@@ -60,13 +60,11 @@ const PaginationRow = ({
           onSelect={onPerPageSelect}
           id={dropdownButtonId}
         >
-          {perPageOptions.map((option, i) => {
-            return (
-              <MenuItem eventKey={option} active={option === perPage} key={i}>
-                {option}
-              </MenuItem>
-            );
-          })}
+          {perPageOptions.map((option, i) => (
+            <MenuItem eventKey={option} active={option === perPage} key={i}>
+              {option}
+            </MenuItem>
+          ))}
         </DropdownButton>
         <span>{messages.perPage}</span>
       </FormGroup>

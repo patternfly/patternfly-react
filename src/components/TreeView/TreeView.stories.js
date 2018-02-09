@@ -14,8 +14,9 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'TreeView',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#bootstrap-tree-view'
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
+    }#bootstrap-tree-view`
   })
 );
 

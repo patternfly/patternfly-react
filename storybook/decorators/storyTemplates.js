@@ -9,24 +9,22 @@ const patternflyDocumentationTemplate = documentationLink => {
         <a href={documentationLink}> design documentation on patternfly.org.</a>
       </p>
     );
-  } else
-    return (
-      <p>
-        This pattern does not yet exist in{' '}
-        <a href="http://www.patternfly.org/pattern-library/">PatternFly</a>.
-      </p>
-    );
-};
-
-const reactBootstrapDocumentationTemplate = (documentationLink, title) => {
+  }
   return (
     <p>
-      This component is based on React Bootstrap {title} component. See{' '}
-      <a href={documentationLink}>React Bootstrap Docs</a> for complete {title}{' '}
-      component documentation.
+      This pattern does not yet exist in{' '}
+      <a href="http://www.patternfly.org/pattern-library/">PatternFly</a>.
     </p>
   );
 };
+
+const reactBootstrapDocumentationTemplate = (documentationLink, title) => (
+  <p>
+    This component is based on React Bootstrap {title} component. See{' '}
+    <a href={documentationLink}>React Bootstrap Docs</a> for complete {title}{' '}
+    component documentation.
+  </p>
+);
 
 export const defaultTemplate = config => story => (
   <div style={{ padding: '0 20px' }}>

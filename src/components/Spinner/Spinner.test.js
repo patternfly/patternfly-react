@@ -11,7 +11,7 @@ test('Spinner should not render children when loading', () => {
     </Spinner>
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -22,6 +22,6 @@ test('Spinner should render children when not loading', () => {
     </Spinner>
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -55,7 +55,7 @@ test('Empty state main action renders properly', () => {
   const component = renderer.create(
     <EmptyState>
       <EmptyState.Action>
-        <Button className={'btn-primary btn-lg'}>Main Action</Button>
+        <Button className="btn-primary btn-lg">Main Action</Button>
       </EmptyState.Action>
     </EmptyState>
   );

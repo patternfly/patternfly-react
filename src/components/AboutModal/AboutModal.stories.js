@@ -36,7 +36,5 @@ stories.add(
         <pre>{MockAboutModalSource}</pre>
       </div>
     )
-  })(() => {
-    return <MockAboutModal />;
-  })
+  })(() => <MockAboutModal />)
 );

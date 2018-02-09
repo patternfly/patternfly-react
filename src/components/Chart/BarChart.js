@@ -2,7 +2,7 @@ import React from 'react';
 import C3Chart from 'react-c3js';
 import { getComposer } from './ChartConstants';
 import { compose, mapProps } from 'recompose';
-
+import { getComposer } from './constants';
 import { c3ChartDefaults } from '../../common/patternfly';
 
 const mapBarChartProps = props => {

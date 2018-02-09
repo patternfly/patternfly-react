@@ -10,7 +10,7 @@ test('FieldLevelHelp renders properly', () => {
     <FieldLevelHelp id="fieldlevelname1">Port Number</FieldLevelHelp>
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 

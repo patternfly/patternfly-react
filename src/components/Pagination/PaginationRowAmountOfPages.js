@@ -8,14 +8,12 @@ const PaginationRowAmountOfPages = ({
   messagesOf,
   amountOfPages,
   ...props
-}) => {
-  return (
-    <span {...props}>
-      &nbsp;{messagesOf}&nbsp;
-      <span className="pagination-pf-pages">{amountOfPages}</span>
-    </span>
-  );
-};
+}) => (
+  <span {...props}>
+    &nbsp;{messagesOf}&nbsp;
+    <span className="pagination-pf-pages">{amountOfPages}</span>
+  </span>
+);
 PaginationRowAmountOfPages.propTypes = {
   /** messages of */
   messagesOf: PropTypes.string,

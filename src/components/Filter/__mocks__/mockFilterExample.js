@@ -103,37 +103,33 @@ export class MockFilterExample extends React.Component {
     filterText += ': ';
 
     if (value.filterCategory) {
-      filterText +=
-        (value.filterCategory.title || value.filterCategory) +
-        '-' +
-        (value.filterValue.title || value.filterValue);
+      filterText += `${value.filterCategory.title ||
+        value.filterCategory}-${value.filterValue.title || value.filterValue}`;
     } else if (value.title) {
       filterText += value.title;
     } else {
       filterText += value;
     }
 
-    let activeFilters = [...this.state.activeFilters, { label: filterText }];
-    this.setState({ activeFilters: activeFilters });
+    const activeFilters = [...this.state.activeFilters, { label: filterText }];
+    this.setState({ activeFilters });
   };
 
   selectFilterType(filterType) {
     const { currentFilterType } = this.state;
     if (currentFilterType !== filterType) {
-      this.setState(prevState => {
-        return {
-          currentValue: '',
-          currentFilterType: filterType,
-          filterCategory:
-            filterType.filterType === 'complex-select'
-              ? undefined
-              : prevState.filterCategory,
-          categoryValue:
-            filterType.filterType === 'complex-select'
-              ? ''
-              : prevState.categoryValue
-        };
-      });
+      this.setState(prevState => ({
+        currentValue: '',
+        currentFilterType: filterType,
+        filterCategory:
+          filterType.filterType === 'complex-select'
+            ? undefined
+            : prevState.filterCategory,
+        categoryValue:
+          filterType.filterType === 'complex-select'
+            ? ''
+            : prevState.categoryValue
+      }));
     }
   }
 
@@ -161,8 +157,8 @@ export class MockFilterExample extends React.Component {
     if (filterCategory && currentValue !== value) {
       this.setState({ currentValue: value });
       if (value) {
-        let filterValue = {
-          filterCategory: filterCategory,
+        const filterValue = {
+          filterCategory,
           filterValue: value
         };
         this.filterAdded(currentFilterType, filterValue);
@@ -188,9 +184,9 @@ export class MockFilterExample extends React.Component {
   removeFilter(filter) {
     const { activeFilters } = this.state;
 
-    let index = activeFilters.indexOf(filter);
+    const index = activeFilters.indexOf(filter);
     if (index > -1) {
-      let updated = [
+      const updated = [
         ...activeFilters.slice(0, index),
         ...activeFilters.slice(index + 1)
       ];
@@ -233,17 +229,16 @@ export class MockFilterExample extends React.Component {
           />
         </Filter.CategorySelector>
       );
-    } else {
-      return (
-        <FormControl
-          type={currentFilterType.filterType}
-          value={currentValue}
-          placeholder={currentFilterType.placeholder}
-          onChange={e => this.updateCurrentValue(e)}
-          onKeyPress={e => this.onValueKeyPress(e)}
-        />
-      );
     }
+    return (
+      <FormControl
+        type={currentFilterType.filterType}
+        value={currentValue}
+        placeholder={currentFilterType.placeholder}
+        onChange={e => this.updateCurrentValue(e)}
+        onKeyPress={e => this.onValueKeyPress(e)}
+      />
+    );
   }
 
   render() {
@@ -264,19 +259,17 @@ export class MockFilterExample extends React.Component {
         {activeFilters &&
           activeFilters.length > 0 && (
             <Toolbar.Results>
-              <Filter.ActiveLabel>{'Active Filters:'}</Filter.ActiveLabel>
+              <Filter.ActiveLabel>Active Filters:</Filter.ActiveLabel>
               <Filter.List>
-                {activeFilters.map((item, index) => {
-                  return (
-                    <Filter.Item
-                      key={index}
-                      onRemove={this.removeFilter}
-                      filterData={item}
-                    >
-                      {item.label}
-                    </Filter.Item>
-                  );
-                })}
+                {activeFilters.map((item, index) => (
+                  <Filter.Item
+                    key={index}
+                    onRemove={this.removeFilter}
+                    filterData={item}
+                  >
+                    {item.label}
+                  </Filter.Item>
+                ))}
               </Filter.List>
               <a
                 href="#"

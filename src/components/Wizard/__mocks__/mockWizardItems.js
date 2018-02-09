@@ -1,17 +1,15 @@
 import React from 'react';
 
-export const mockLoadingContents = () => {
-  return (
-    <div className="blank-slate-pf">
-      <div className="spinner spinner-lg blank-slate-pf-icon" />
-      <h3 className="blank-slate-pf-main-action">Loading Wizard</h3>
-      <p className="blank-slate-pf-secondary-action">
-        Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi vivamus,
-        lorem sociosqu eget nunc amet.{' '}
-      </p>
-    </div>
-  );
-};
+export const mockLoadingContents = () => (
+  <div className="blank-slate-pf">
+    <div className="spinner spinner-lg blank-slate-pf-icon" />
+    <h3 className="blank-slate-pf-main-action">Loading Wizard</h3>
+    <p className="blank-slate-pf-secondary-action">
+      Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi vivamus,
+      lorem sociosqu eget nunc amet.{' '}
+    </p>
+  </div>
+);
 
 export const mockWizardItems = [
   {
@@ -83,21 +81,19 @@ export const mockWizardItems = [
   }
 ];
 
-export const mockWizardFormContents = (label1, label2) => {
-  return (
-    <form className="form-horizontal">
-      <div className="form-group required">
-        <label className="col-sm-2 control-label">{label1}</label>
-        <div className="col-sm-10">
-          <input type="text" className="form-control" />
-        </div>
+export const mockWizardFormContents = (label1, label2) => (
+  <form className="form-horizontal">
+    <div className="form-group required">
+      <label className="col-sm-2 control-label">{label1}</label>
+      <div className="col-sm-10">
+        <input type="text" className="form-control" />
       </div>
-      <div className="form-group">
-        <label className="col-sm-2 control-label">{label2}</label>
-        <div className="col-sm-10">
-          <textarea className="form-control" rows="2" />
-        </div>
+    </div>
+    <div className="form-group">
+      <label className="col-sm-2 control-label">{label2}</label>
+      <div className="col-sm-10">
+        <textarea className="form-control" rows="2" />
       </div>
-    </form>
-  );
-};
+    </div>
+  </form>
+);

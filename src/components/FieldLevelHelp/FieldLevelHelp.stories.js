@@ -10,8 +10,9 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'FieldLevelHelp',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION + 'inline-notifications/'
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
+    }inline-notifications/`
   })
 );
 

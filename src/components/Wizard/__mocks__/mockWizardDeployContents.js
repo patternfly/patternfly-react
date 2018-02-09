@@ -28,25 +28,24 @@ class MockWizardDeployContents extends React.Component {
           </p>
         </div>
       );
-    } else {
-      return (
-        <div className="wizard-pf-complete blank-slate-pf">
-          <div className="wizard-pf-success-icon">
-            <span className="glyphicon glyphicon-ok-circle" />
-          </div>
-          <h3 className="blank-slate-pf-main-action">
-            Deployment was successful
-          </h3>
-          <p className="blank-slate-pf-secondary-action">
-            Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi
-            vivamus, lorem sociosqu eget nunc amet.{' '}
-          </p>
-          <button type="button" className="btn btn-lg btn-primary">
-            View Deployment
-          </button>
-        </div>
-      );
     }
+    return (
+      <div className="wizard-pf-complete blank-slate-pf">
+        <div className="wizard-pf-success-icon">
+          <span className="glyphicon glyphicon-ok-circle" />
+        </div>
+        <h3 className="blank-slate-pf-main-action">
+          Deployment was successful
+        </h3>
+        <p className="blank-slate-pf-secondary-action">
+          Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi vivamus,
+          lorem sociosqu eget nunc amet.{' '}
+        </p>
+        <button type="button" className="btn btn-lg btn-primary">
+          View Deployment
+        </button>
+      </div>
+    );
   }
 }
 MockWizardDeployContents.propTypes = {

@@ -4,6 +4,7 @@ import orderBy from 'lodash.orderby';
 import cx from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
+import { compose } from 'recompose';
 import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
@@ -19,7 +20,6 @@ import {
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
 import { PaginationRow, paginate, PAGINATION_VIEW } from '../../Pagination';
-import { compose } from 'recompose';
 import { mockRows } from './mockRows';
 
 /**
@@ -101,14 +101,13 @@ export class MockClientPaginationTable extends React.Component {
               index: 0
             },
             formatters: [
-              (value, { rowData, rowIndex }) => {
-                return selectionCellFormatter(
+              (value, { rowData, rowIndex }) =>
+                selectionCellFormatter(
                   { rowData, rowIndex },
                   this.onSelectRow,
                   `vybrat${rowIndex}`,
                   `vyberte řádek ${rowIndex}`
-                );
-              }
+                )
             ]
           }
         },
@@ -228,26 +227,24 @@ export class MockClientPaginationTable extends React.Component {
               index: 6
             },
             formatters: [
-              (value, { rowData }) => {
-                return [
-                  <Table.Actions key="0">
-                    <Table.Button
-                      onClick={() => alert('clicked ' + rowData.name)}
-                    >
-                      Actions
-                    </Table.Button>
-                  </Table.Actions>,
-                  <Table.Actions key="1">
-                    <Table.DropdownKebab id="myKebab" pullRight>
-                      <MenuItem>Action</MenuItem>
-                      <MenuItem>Another Action</MenuItem>
-                      <MenuItem>Something else here</MenuItem>
-                      <MenuItem divider />
-                      <MenuItem>Separated link</MenuItem>
-                    </Table.DropdownKebab>
-                  </Table.Actions>
-                ];
-              }
+              (value, { rowData }) => [
+                <Table.Actions key="0">
+                  <Table.Button
+                    onClick={() => alert(`clicked ${rowData.name}`)}
+                  >
+                    Actions
+                  </Table.Button>
+                </Table.Actions>,
+                <Table.Actions key="1">
+                  <Table.DropdownKebab id="myKebab" pullRight>
+                    <MenuItem>Action</MenuItem>
+                    <MenuItem>Another Action</MenuItem>
+                    <MenuItem>Something else here</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem>Separated link</MenuItem>
+                  </Table.DropdownKebab>
+                </Table.Actions>
+              ]
             ]
           }
         }
@@ -286,13 +283,13 @@ export class MockClientPaginationTable extends React.Component {
       page > 0 &&
       page <= this.totalPages()
     ) {
-      let newPaginationState = Object.assign({}, this.state.pagination);
+      const newPaginationState = Object.assign({}, this.state.pagination);
       newPaginationState.page = page;
       this.setState({ pagination: newPaginationState, pageChangeValue: page });
     }
   }
   onPerPageSelect(eventKey, e) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
+    const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     newPaginationState.page = 1;
     this.setState({ pagination: newPaginationState });
@@ -334,7 +331,7 @@ export class MockClientPaginationTable extends React.Component {
       }
       rows[selectedRowIndex] = updatedRow;
       this.setState({
-        rows: rows,
+        rows,
         selectedRows: updatedSelectedRows
       });
       onRowsLogger(rows.filter(r => r.selected));
@@ -350,9 +347,9 @@ export class MockClientPaginationTable extends React.Component {
       const updatedSelections = [
         ...new Set([...currentRows.map(r => r.id), ...selectedRows])
       ];
-      const updatedRows = rows.map(r => {
-        return updatedSelections.indexOf(r.id) > -1 ? this.selectRow(r) : r;
-      });
+      const updatedRows = rows.map(
+        r => (updatedSelections.indexOf(r.id) > -1 ? this.selectRow(r) : r)
+      );
       this.setState({
         // important: you must update rows to force a re-render and trigger onRow hook
         rows: updatedRows,
@@ -361,12 +358,12 @@ export class MockClientPaginationTable extends React.Component {
       onRowsLogger(updatedRows.filter(r => r.selected));
     } else {
       const ids = currentRows.map(r => r.id);
-      const updatedSelections = selectedRows.filter(r => {
-        return !(ids.indexOf(r) > -1);
-      });
-      const updatedRows = rows.map(r => {
-        return updatedSelections.indexOf(r.id) > -1 ? r : this.deselectRow(r);
-      });
+      const updatedSelections = selectedRows.filter(
+        r => !(ids.indexOf(r) > -1)
+      );
+      const updatedRows = rows.map(
+        r => (updatedSelections.indexOf(r.id) > -1 ? r : this.deselectRow(r))
+      );
       this.setState({
         rows: updatedRows,
         selectedRows: updatedSelections
@@ -385,7 +382,7 @@ export class MockClientPaginationTable extends React.Component {
     return compose(
       paginate(pagination),
       sort.sorter({
-        columns: columns,
+        columns,
         sortingColumns,
         sort: orderBy,
         strategy: sort.strategies.byProperty
@@ -396,7 +393,7 @@ export class MockClientPaginationTable extends React.Component {
     const { selectedRows } = this.state;
     const selected = selectedRows.indexOf(row.id) > -1;
     return {
-      className: cx({ selected: selected }),
+      className: cx({ selected }),
       role: 'row'
     };
   }
@@ -414,15 +411,14 @@ export class MockClientPaginationTable extends React.Component {
           columns={columns}
           components={{
             header: {
-              cell: cellProps => {
-                return this.customHeaderFormatters({
+              cell: cellProps =>
+                this.customHeaderFormatters({
                   cellProps,
                   columns,
                   sortingColumns,
                   rows: sortedPaginatedRows.rows,
                   onSelectAllRows: this.onSelectAllRows
-                });
-              }
+                })
             }
           }}
         >

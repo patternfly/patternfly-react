@@ -62,12 +62,8 @@ export class MockServerPaginationTable extends React.Component {
               index: 0
             },
             formatters: [
-              (value, { rowData, rowIndex }) => {
-                return selectionCellFormatter(
-                  { rowData, rowIndex },
-                  this.onSelectRow
-                );
-              }
+              (value, { rowData, rowIndex }) =>
+                selectionCellFormatter({ rowData, rowIndex }, this.onSelectRow)
             ]
           }
         },
@@ -177,26 +173,24 @@ export class MockServerPaginationTable extends React.Component {
               index: 6
             },
             formatters: [
-              (value, { rowData }) => {
-                return [
-                  <Table.Actions key="0">
-                    <Table.Button
-                      onClick={() => alert('clicked ' + rowData.name)}
-                    >
-                      Actions
-                    </Table.Button>
-                  </Table.Actions>,
-                  <Table.Actions key="1">
-                    <Table.DropdownKebab id="myKebab" pullRight>
-                      <MenuItem>Action</MenuItem>
-                      <MenuItem>Another Action</MenuItem>
-                      <MenuItem>Something else here</MenuItem>
-                      <MenuItem divider />
-                      <MenuItem>Separated link</MenuItem>
-                    </Table.DropdownKebab>
-                  </Table.Actions>
-                ];
-              }
+              (value, { rowData }) => [
+                <Table.Actions key="0">
+                  <Table.Button
+                    onClick={() => alert(`clicked ${rowData.name}`)}
+                  >
+                    Actions
+                  </Table.Button>
+                </Table.Actions>,
+                <Table.Actions key="1">
+                  <Table.DropdownKebab id="myKebab" pullRight>
+                    <MenuItem>Action</MenuItem>
+                    <MenuItem>Another Action</MenuItem>
+                    <MenuItem>Something else here</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem>Separated link</MenuItem>
+                  </Table.DropdownKebab>
+                </Table.Actions>
+              ]
             ]
           }
         }
@@ -237,8 +231,8 @@ export class MockServerPaginationTable extends React.Component {
 
     MockServerApi.getPage(getPageArgs).then(response => {
       this.setState({
-        sortingColumns: sortingColumns,
-        pagination: pagination,
+        sortingColumns,
+        pagination,
         rows: response.rows,
         itemCount: response.itemCount
       });
@@ -259,10 +253,9 @@ export class MockServerPaginationTable extends React.Component {
     };
 
     alert(
-      'Server API called with: sort by ' +
-        column.property +
-        ' ' +
+      `Server API called with: sort by ${column.property} ${
         updatedSortingColumns[column.property].direction
+      }`
     );
 
     this.getPage(updatedSortingColumns, this.state.pagination);
@@ -285,13 +278,13 @@ export class MockServerPaginationTable extends React.Component {
   }
 
   onPerPageSelect(eventKey, e) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
+    const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     newPaginationState.page = 1;
     this.getPage(this.state.sortingColumns, newPaginationState);
   }
   onPageSet(page) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
+    const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.page = page;
     this.getPage(this.state.sortingColumns, newPaginationState);
   }
@@ -316,16 +309,15 @@ export class MockServerPaginationTable extends React.Component {
           columns={columns}
           components={{
             header: {
-              cell: cellProps => {
-                return this.customHeaderFormatters({
+              cell: cellProps =>
+                this.customHeaderFormatters({
                   cellProps,
                   columns,
                   sortingColumns,
-                  rows: rows,
+                  rows,
                   onSelectAllRows: this.onSelectAllRows,
                   onSort: this.onSort
-                });
-              }
+                })
             }
           }}
         >

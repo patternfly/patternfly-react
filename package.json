@@ -56,12 +56,14 @@
     "css-loader": "^0.28.8",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.14.0",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-jsx": "^4.0.2",
     "eslint-config-standard-react": "^5.0.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jest": "^21.5.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-prettier": "^2.4.0",
     "eslint-plugin-promise": "^3.6.0",
@@ -71,6 +73,7 @@
     "jest-cli": "^22.0.4",
     "node-sass": "^4.7.2",
     "prettier": "^1.9.2",
+    "prettier-eslint": "^8.8.1",
     "prop-types": "^15.6.0",
     "raf": "^3.4.0",
     "react": "^16.2.0",
@@ -79,6 +82,8 @@
     "sass-loader": "^6.0.6",
     "semantic-release": "^12.2.0",
     "style-loader": "^0.19.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
     "travis-deploy-once": "^4.3.0"
   },
   "peerDependencies": {
@@ -98,7 +103,7 @@
     "build:scripts": "babel src --out-dir dist/js --ignore test*.js,__mocks__",
     "build:less": "mkdir -p dist/less && cp -r less/* dist/less",
     "build:sass": "mkdir -p dist/sass && cp -r sass/patternfly-react/* dist/sass && node-sass --output-style compressed --include-path sass $npm_package_sassIncludes_patternfly $npm_package_sassIncludes_bootstrap $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react.scss",
-    "lint": "eslint --max-warnings 0 src storybook",
+    "lint": "eslint --fix --max-warnings 0 src storybook && npm run stylelint",
     "prettier": "prettier --write --single-quote --trailing-comma=none '{src,storybook}/**/*.js'",
     "prepare": "npm run build",
     "test": "npm run lint && jest",
@@ -110,6 +115,7 @@
     "storybook:build": "build-storybook -c storybook -o .out",
     "storybook:deploy": "storybook-to-ghpages '--script=storybook:build'",
     "semantic-release": "semantic-release",
+    "stylelint": "stylelint 'sass/**/*.scss'",
     "travis-deploy-once": "travis-deploy-once"
   },
   "jest": {

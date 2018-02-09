@@ -24,7 +24,7 @@ const SortTypeSelector = ({
     return (
       <DropdownButton className={className} title={title} id={menuId} {...rest}>
         {sortTypes.map((item, index) => {
-          let classes = {
+          const classes = {
             selected: item === currentSortType
           };
           return (
@@ -39,9 +39,8 @@ const SortTypeSelector = ({
         })}
       </DropdownButton>
     );
-  } else {
-    return null;
   }
+  return null;
 };
 
 SortTypeSelector.propTypes = {

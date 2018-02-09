@@ -256,6 +256,7 @@ class BaseVerticalNavItemHelper extends React.Component {
         )));
 
     if (!childItemComponents && !href && !onClick) {
+      // eslint-disable-next-line
       console.warn(
         'Warning: Non-navigable item at',
         this.idPath(),

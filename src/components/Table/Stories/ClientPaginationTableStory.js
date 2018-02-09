@@ -53,14 +53,15 @@ const clientPaginationTableAddWithInfo = stories => {
       )
     })(() => {
       const logAction = decorateAction([args => args]);
-      let story = (
+      const story = (
         <MockClientPaginationTable onRowsLogger={logAction('onRowsLogger')} />
       );
       return inlineTemplate({
         title: 'Client Paginated Table',
-        documentationLink:
-          DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'table-view/',
-        story: story,
+        documentationLink: `${
+          DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
+        }table-view/`,
+        story,
         description: reactabularDescription
       });
     })

@@ -20,7 +20,7 @@ const testToastNotificationSnapshot = Component => {
       <span>Danger Will Robinson!</span>
     </Component>
   );
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 };
 

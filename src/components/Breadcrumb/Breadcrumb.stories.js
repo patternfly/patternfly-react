@@ -10,7 +10,7 @@ const description = (
   <p>
     This component is based on React Bootstrap Breadcrumb component. Breadcrumbs
     are used to indicate the current page's location. See{' '}
-    <a href={DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'breadcrumb/'}>
+    <a href={`${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}breadcrumb/`}>
       React Bootstrap Docs
     </a>{' '}
     for complete Breadcrumb component documentation.
@@ -20,9 +20,10 @@ const description = (
 stories.addDecorator(
   defaultTemplate({
     title: 'Breadcrumb',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION + 'breadcrumbs/',
-    description: description
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION
+    }breadcrumbs/`,
+    description
   })
 );
 

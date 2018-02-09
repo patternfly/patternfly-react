@@ -1,10 +1,8 @@
 import React from 'react';
-import { bindMethods } from '../../../common/helpers';
-
-import { mockListItems } from './mockListItems';
-import { boolean } from '@storybook/addon-knobs/dist/index';
 import cx from 'classnames';
-
+import { boolean } from '@storybook/addon-knobs/dist/index';
+import { bindMethods } from '../../../common/helpers';
+import { mockListItems } from './mockListItems';
 import { Button, Grid, ListView } from '../../../index';
 
 export class MockCompoundExpansion extends React.Component {
@@ -13,12 +11,8 @@ export class MockCompoundExpansion extends React.Component {
 
     bindMethods(this, ['renderItem', 'toggleExpand']);
     this.state = {
-      listItems: []
+      listItems: mockListItems
     };
-  }
-
-  componentDidMount() {
-    this.setState({ listItems: mockListItems });
   }
 
   toggleExpand(item, expandProp) {
@@ -72,7 +66,7 @@ export class MockCompoundExpansion extends React.Component {
   }
 
   renderItem(item, index) {
-    let expandText = item.compoundExpandText[item.expandType];
+    const expandText = item.compoundExpandText[item.expandType];
     return (
       <ListView.Item
         key={index}

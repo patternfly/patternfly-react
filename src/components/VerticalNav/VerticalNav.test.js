@@ -26,8 +26,8 @@ test('VerticalNav renders properly with item objects', () => {
     <VerticalNav items={mockNavItems} pinnableMenus>
       <Masthead>
         <Brand
-          iconImg={'../../../storybook/img/logo-alt.svg'}
-          titleImg={'../../../storybook/img/brand-alt.svg'}
+          iconImg="../../../storybook/img/logo-alt.svg"
+          titleImg="../../../storybook/img/brand-alt.svg"
         />
         <IconBar>{mockIconBarChildren}</IconBar>
       </Masthead>
