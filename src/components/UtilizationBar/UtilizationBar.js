@@ -28,8 +28,16 @@ const UtilizationBar = props => {
     }
   };
 
+const mainDivClasses = mainDivClasses => {
+  if (mainDivClasses) {
+    return mainDivClasses + " progress";
+  } else {
+    return "progress";
+  }
+};
+
   return (
-    <div className="progress">
+    <div className={mainDivClasses(props.mainDivClasses)}>
       <OverlayTrigger
         overlay={props.usedTooltipFunction(props.now)}
         placement="top"
@@ -71,7 +79,8 @@ UtilizationBar.propTypes = {
   thresholdWarning: PropTypes.number,
   thresholdError: PropTypes.number,
   availableTooltipFunction: PropTypes.func,
-  usedTooltipFunction: PropTypes.func
+  usedTooltipFunction: PropTypes.func,
+  mainDivClasses: PropTypes.string
 };
 
 UtilizationBar.defaultProps = {
