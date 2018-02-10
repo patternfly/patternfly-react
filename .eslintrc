@@ -16,6 +16,8 @@
     "import/prefer-default-export": "off",
     "no-alert": "off",
     "no-param-reassign": "off",
+    "no-plusplus": "off",
+    "no-prototype-builtins": "off",
     "no-underscore-dangle": "off",
     "no-unused-expressions": [
       "error",

@@ -27,6 +27,8 @@ export const getIconName = type => {
       return 'ok';
     case ALERT_TYPE_INFO:
       return 'info';
+    default:
+      throw new Error(`Unsupported alert type=${type}`);
   }
 };
 
@@ -41,5 +43,7 @@ export const getClassName = type => {
       return 'alert-success';
     case ALERT_TYPE_INFO:
       return 'alert-info';
+    default:
+      throw new Error(`Unsupported alert type=${type}`);
   }
 };

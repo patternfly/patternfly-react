@@ -23,6 +23,7 @@ const Size = {
   SMALL: 'small'
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class CustomModalDialog extends React.Component {
   render() {
     const {

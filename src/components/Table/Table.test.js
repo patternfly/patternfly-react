@@ -105,6 +105,8 @@ test('Bootstrap contextual classes table renders properly', () => {
               return { className: 'warning' };
             case 6:
               return { className: 'danger' };
+            default:
+              return null;
           }
         }}
       />
