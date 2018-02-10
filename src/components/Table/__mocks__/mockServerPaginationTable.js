@@ -217,28 +217,41 @@ export class MockServerPaginationTable extends React.Component {
     this.getPage(sortingColumns, pagination);
   }
 
-  getPage(sortingColumns, pagination) {
-    const { onServerPageLogger } = this.props;
+  onPageSet(page) {
+    const newPaginationState = Object.assign({}, this.state.pagination);
+    newPaginationState.page = page;
+    this.getPage(this.state.sortingColumns, newPaginationState);
+  }
 
-    // call our mock server with next sorting/paging arguments
-    const getPageArgs = {
-      sortingColumns,
-      page: pagination.page,
-      perPage: pagination.perPage
+  onPerPageSelect(eventKey, e) {
+    const newPaginationState = Object.assign({}, this.state.pagination);
+    newPaginationState.perPage = eventKey;
+    newPaginationState.page = 1;
+    this.getPage(this.state.sortingColumns, newPaginationState);
+  }
+
+  onRow(row, { rowIndex }) {
+    return {
+      className: cx({ selected: row.selected }),
+      role: 'row'
     };
-
-    onServerPageLogger(getPageArgs);
-
-    MockServerApi.getPage(getPageArgs).then(response => {
-      this.setState({
-        sortingColumns,
-        pagination,
-        rows: response.rows,
-        itemCount: response.itemCount
-      });
+  }
+  onSelectAllRows(event) {
+    const { sortingColumns, pagination, rows } = this.state;
+    const checked = event.target.checked;
+    MockServerApi.selectAllRows({ rows, checked }).then(response => {
+      // refresh rows after all rows selected
+      this.getPage(sortingColumns, pagination);
     });
   }
 
+  onSelectRow(event, row) {
+    const { sortingColumns, pagination } = this.state;
+    MockServerApi.selectRow({ row }).then(response => {
+      // refresh rows after row is selected
+      this.getPage(sortingColumns, pagination);
+    });
+  }
   onSort(e, column, sortDirection) {
     // Clearing existing sortingColumns does simple single column sort. To do multisort,
     // set each column based on existing sorts specified and set sort position.
@@ -261,39 +274,26 @@ export class MockServerPaginationTable extends React.Component {
     this.getPage(updatedSortingColumns, this.state.pagination);
   }
 
-  onSelectRow(event, row) {
-    const { sortingColumns, pagination } = this.state;
-    MockServerApi.selectRow({ row }).then(response => {
-      // refresh rows after row is selected
-      this.getPage(sortingColumns, pagination);
-    });
-  }
-  onSelectAllRows(event) {
-    const { sortingColumns, pagination, rows } = this.state;
-    const checked = event.target.checked;
-    MockServerApi.selectAllRows({ rows, checked }).then(response => {
-      // refresh rows after all rows selected
-      this.getPage(sortingColumns, pagination);
-    });
-  }
+  getPage(sortingColumns, pagination) {
+    const { onServerPageLogger } = this.props;
 
-  onPerPageSelect(eventKey, e) {
-    const newPaginationState = Object.assign({}, this.state.pagination);
-    newPaginationState.perPage = eventKey;
-    newPaginationState.page = 1;
-    this.getPage(this.state.sortingColumns, newPaginationState);
-  }
-  onPageSet(page) {
-    const newPaginationState = Object.assign({}, this.state.pagination);
-    newPaginationState.page = page;
-    this.getPage(this.state.sortingColumns, newPaginationState);
-  }
-
-  onRow(row, { rowIndex }) {
-    return {
-      className: cx({ selected: row.selected }),
-      role: 'row'
+    // call our mock server with next sorting/paging arguments
+    const getPageArgs = {
+      sortingColumns,
+      page: pagination.page,
+      perPage: pagination.perPage
     };
+
+    onServerPageLogger(getPageArgs);
+
+    MockServerApi.getPage(getPageArgs).then(response => {
+      this.setState({
+        sortingColumns,
+        pagination,
+        rows: response.rows,
+        itemCount: response.itemCount
+      });
+    });
   }
 
   render() {

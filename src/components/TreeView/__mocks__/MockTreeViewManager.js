@@ -30,6 +30,21 @@ class MockTreeViewManager extends React.Component {
     ]);
   }
 
+  addMappings() {
+    this.setState(() => ({ mappings: MockTreeViewManagerData }));
+  }
+
+  removeAll() {
+    this.setState(() => ({ mappings: [] }));
+  }
+
+  removeMapping() {
+    this.setState(prevState => ({
+      mappings: prevState.mappings.filter(node => !node.selected),
+      selectedNode: null
+    }));
+  }
+
   selectNode(selectedNode) {
     this.setState(prevState => ({
       mappings: prevState.mappings.map(node => {
@@ -45,21 +60,6 @@ class MockTreeViewManager extends React.Component {
           ? null
           : selectedNode
     }));
-  }
-
-  addMappings() {
-    this.setState(() => ({ mappings: MockTreeViewManagerData }));
-  }
-
-  removeMapping() {
-    this.setState(prevState => ({
-      mappings: prevState.mappings.filter(node => !node.selected),
-      selectedNode: null
-    }));
-  }
-
-  removeAll() {
-    this.setState(() => ({ mappings: [] }));
   }
 
   render() {

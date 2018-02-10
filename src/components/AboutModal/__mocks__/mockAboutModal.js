@@ -11,11 +11,11 @@ export class MockAboutModal extends React.Component {
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
   }
-  open() {
-    this.setState({ showModal: true });
-  }
   close() {
     this.setState({ showModal: false });
+  }
+  open() {
+    this.setState({ showModal: true });
   }
   render() {
     return (

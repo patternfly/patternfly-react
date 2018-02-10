@@ -89,6 +89,84 @@ class BaseVerticalNavItemHelper extends React.Component {
     }
   }
 
+  onItemBlur(noDelay) {
+    const { primary, secondary, tertiary } = this.getContextNavItems();
+    const { updateNavOnItemBlur, idPath, onBlur } = this.props;
+    updateNavOnItemBlur(
+      primary,
+      secondary,
+      tertiary,
+      this.idPath(),
+      idPath,
+      noDelay,
+      onBlur
+    );
+  }
+
+  onItemClick(event) {
+    const { primary, secondary, tertiary } = this.getContextNavItems();
+    const { isMobile, updateNavOnItemClick, idPath } = this.props;
+    const { href, onClick } = this.navItem();
+    event.preventDefault();
+    updateNavOnItemClick(primary, secondary, tertiary, this.idPath(), idPath); // Clears all mobile selections
+    if (isMobile) {
+      this.onMobileSelection(primary, secondary, tertiary); // Applies new mobile selection here
+    }
+    this.setActive();
+    onClick && onClick(primary, secondary, tertiary);
+    if (href) {
+      window.location = href; // Note: This should become router-aware later on.
+    }
+  }
+
+  onItemHover() {
+    const { primary, secondary, tertiary } = this.getContextNavItems();
+    const { updateNavOnItemHover, idPath, onHover } = this.props;
+    updateNavOnItemHover(
+      primary,
+      secondary,
+      tertiary,
+      this.idPath(),
+      idPath,
+      onHover
+    );
+  }
+
+  onMobileSelection(primary, secondary, tertiary) {
+    const { setMobilePath, updateNavOnMobileSelection } = this.props;
+    setMobilePath(this.idPath());
+    updateNavOnMobileSelection(primary, secondary, tertiary);
+  }
+
+  getContextNavItems() {
+    // We have primary, secondary, and tertiary items as props if they are part of the parent context,
+    // but we also want to include the current item when calling handlers.
+    const { depth, primaryItem, secondaryItem, tertiaryItem } = this.props;
+    const navItem = this.navItem();
+    return {
+      primary: depth === 'primary' ? navItem : primaryItem,
+      secondary: depth === 'secondary' ? navItem : secondaryItem,
+      tertiary: depth === 'tertiary' ? navItem : tertiaryItem
+    };
+  }
+
+  setActive() {
+    this.props.setActivePath(this.idPath());
+  }
+
+  setHovered() {
+    this.props.setHoverPath(this.idPath());
+  }
+
+  id() {
+    const { id, title } = this.navItem(null, true); // Need to ignorePath here so we don't get an infinite call stack...
+    return id || title || this.props.index;
+  }
+
+  idPath() {
+    return `${this.props.idPath}${this.id()}/`;
+  }
+
   navItem(oldProps, ignorePath) {
     const props = oldProps || this.props;
     // Properties of the item object take priority over individual item props
@@ -103,35 +181,6 @@ class BaseVerticalNavItemHelper extends React.Component {
       hovered: valOrOnPath(item.hovered, props.hoverPath),
       selectedOnMobile: valOrOnPath(item.selectedOnMobile, props.mobilePath),
       pinned: valOrOnPath(item.pinned, props.pinnedPath)
-    };
-  }
-
-  id() {
-    const { id, title } = this.navItem(null, true); // Need to ignorePath here so we don't get an infinite call stack...
-    return id || title || this.props.index;
-  }
-
-  idPath() {
-    return `${this.props.idPath}${this.id()}/`;
-  }
-
-  setActive() {
-    this.props.setActivePath(this.idPath());
-  }
-
-  setHovered() {
-    this.props.setHoverPath(this.idPath());
-  }
-
-  getContextNavItems() {
-    // We have primary, secondary, and tertiary items as props if they are part of the parent context,
-    // but we also want to include the current item when calling handlers.
-    const { depth, primaryItem, secondaryItem, tertiaryItem } = this.props;
-    const navItem = this.navItem();
-    return {
-      primary: depth === 'primary' ? navItem : primaryItem,
-      secondary: depth === 'secondary' ? navItem : secondaryItem,
-      tertiary: depth === 'tertiary' ? navItem : tertiaryItem
     };
   }
 
@@ -164,55 +213,6 @@ class BaseVerticalNavItemHelper extends React.Component {
       }
     }
     updateNavOnPin(this.navItem(), nextDepth, !pinnedPath);
-  }
-
-  onItemHover() {
-    const { primary, secondary, tertiary } = this.getContextNavItems();
-    const { updateNavOnItemHover, idPath, onHover } = this.props;
-    updateNavOnItemHover(
-      primary,
-      secondary,
-      tertiary,
-      this.idPath(),
-      idPath,
-      onHover
-    );
-  }
-
-  onItemBlur(noDelay) {
-    const { primary, secondary, tertiary } = this.getContextNavItems();
-    const { updateNavOnItemBlur, idPath, onBlur } = this.props;
-    updateNavOnItemBlur(
-      primary,
-      secondary,
-      tertiary,
-      this.idPath(),
-      idPath,
-      noDelay,
-      onBlur
-    );
-  }
-
-  onItemClick(event) {
-    const { primary, secondary, tertiary } = this.getContextNavItems();
-    const { isMobile, updateNavOnItemClick, idPath } = this.props;
-    const { href, onClick } = this.navItem();
-    event.preventDefault();
-    updateNavOnItemClick(primary, secondary, tertiary, this.idPath(), idPath); // Clears all mobile selections
-    if (isMobile) {
-      this.onMobileSelection(primary, secondary, tertiary); // Applies new mobile selection here
-    }
-    this.setActive();
-    onClick && onClick(primary, secondary, tertiary);
-    if (href) {
-      window.location = href; // Note: This should become router-aware later on.
-    }
-  }
-
-  onMobileSelection(primary, secondary, tertiary) {
-    const { setMobilePath, updateNavOnMobileSelection } = this.props;
-    setMobilePath(this.idPath());
-    updateNavOnMobileSelection(primary, secondary, tertiary);
   }
 
   render() {

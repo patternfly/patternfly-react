@@ -22,30 +22,12 @@ export class ToolbarFind extends React.Component {
     ]);
   }
 
-  toggleDropdownShown() {
-    this.setState(prevState => ({ dropdownShown: !prevState.dropdownShown }));
-  }
-
-  hideDropdown() {
-    this.setState({ dropdownShown: false });
-  }
-
   onValueKeyPress(keyEvent) {
     const { onEnter } = this.props;
     const { currentValue } = this.state;
 
     if (keyEvent.key === 'Enter' && onEnter) {
       onEnter(currentValue);
-    }
-  }
-
-  handleValueChange(event) {
-    const { onChange } = this.props;
-
-    this.setState({ currentValue: event.target.value });
-
-    if (onChange) {
-      onChange(event.target.value);
     }
   }
 
@@ -65,6 +47,24 @@ export class ToolbarFind extends React.Component {
     if (onFindPrevious) {
       onFindPrevious(currentValue);
     }
+  }
+
+  handleValueChange(event) {
+    const { onChange } = this.props;
+
+    this.setState({ currentValue: event.target.value });
+
+    if (onChange) {
+      onChange(event.target.value);
+    }
+  }
+
+  hideDropdown() {
+    this.setState({ dropdownShown: false });
+  }
+
+  toggleDropdownShown() {
+    this.setState(prevState => ({ dropdownShown: !prevState.dropdownShown }));
   }
 
   renderCounts() {

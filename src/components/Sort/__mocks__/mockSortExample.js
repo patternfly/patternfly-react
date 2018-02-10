@@ -60,6 +60,12 @@ export class MockSortExample extends React.Component {
     this.setState({ activeFilters });
   };
 
+  toggleCurrentSortDirection() {
+    this.setState(prevState => ({
+      isSortAscending: !prevState.isSortAscending
+    }));
+  }
+
   updateCurrentSortType(sortType) {
     const { currentSortType } = this.state;
     if (currentSortType !== sortType) {
@@ -69,12 +75,6 @@ export class MockSortExample extends React.Component {
         isSortAscending: true
       });
     }
-  }
-
-  toggleCurrentSortDirection() {
-    this.setState(prevState => ({
-      isSortAscending: !prevState.isSortAscending
-    }));
   }
 
   render() {

@@ -29,16 +29,16 @@ class TreeViewNode extends Component {
     }
   }
 
-  toggleExpand(e) {
-    e.stopPropagation();
-    this.setState(prevState => ({ expanded: !prevState.expanded }));
-  }
-
   handleSelect() {
     const { node, selectNode } = this.props;
     if (node.selectable) {
       selectNode(node);
     }
+  }
+
+  toggleExpand(e) {
+    e.stopPropagation();
+    this.setState(prevState => ({ expanded: !prevState.expanded }));
   }
 
   render() {

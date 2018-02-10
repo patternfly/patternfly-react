@@ -44,6 +44,44 @@ export class MockToolbarExample extends React.Component {
     };
   }
 
+  onValueKeyPress(keyEvent) {
+    const { currentValue, currentFilterType } = this.state;
+
+    if (keyEvent.key === 'Enter' && currentValue && currentValue.length > 0) {
+      this.setState({ currentValue: '' });
+      this.filterAdded(currentFilterType, currentValue);
+      keyEvent.stopPropagation();
+      keyEvent.preventDefault();
+    }
+  }
+
+  setViewType(viewType) {
+    const { onViewChanged } = this.props;
+    this.setState({ currentViewType: viewType });
+    onViewChanged && onViewChanged(viewType);
+  }
+
+  categoryValueSelected(value) {
+    const { currentValue, currentFilterType, filterCategory } = this.state;
+
+    if (filterCategory && currentValue !== value) {
+      this.setState({ currentValue: value });
+      if (value) {
+        const filterValue = {
+          filterCategory,
+          filterValue: value
+        };
+        this.filterAdded(currentFilterType, filterValue);
+      }
+    }
+  }
+
+  clearFilters() {
+    const { onFiltersChanged } = this.props;
+    this.setState({ activeFilters: [] });
+    onFiltersChanged && onFiltersChanged('Filters cleared.');
+  }
+
   filterAdded = (field, value) => {
     const { onFiltersChanged } = this.props;
     let filterText = '';
@@ -68,14 +106,10 @@ export class MockToolbarExample extends React.Component {
     onFiltersChanged && onFiltersChanged(`Filter Added: ${filterText}`);
   };
 
-  selectFilterType(filterType) {
-    const { currentFilterType } = this.state;
-    if (currentFilterType !== filterType) {
-      this.setState({ currentValue: '', currentFilterType: filterType });
-
-      if (filterType.filterType === 'complex-select') {
-        this.setState({ filterCategory: undefined, categoryValue: '' });
-      }
+  filterCategorySelected(category) {
+    const { filterCategory } = this.state;
+    if (filterCategory !== category) {
+      this.setState({ filterCategory: category, categoryValue: '' });
     }
   }
 
@@ -87,43 +121,6 @@ export class MockToolbarExample extends React.Component {
       if (filterValue) {
         this.filterAdded(currentFilterType, filterValue);
       }
-    }
-  }
-
-  filterCategorySelected(category) {
-    const { filterCategory } = this.state;
-    if (filterCategory !== category) {
-      this.setState({ filterCategory: category, categoryValue: '' });
-    }
-  }
-
-  categoryValueSelected(value) {
-    const { currentValue, currentFilterType, filterCategory } = this.state;
-
-    if (filterCategory && currentValue !== value) {
-      this.setState({ currentValue: value });
-      if (value) {
-        const filterValue = {
-          filterCategory,
-          filterValue: value
-        };
-        this.filterAdded(currentFilterType, filterValue);
-      }
-    }
-  }
-
-  updateCurrentValue(event) {
-    this.setState({ currentValue: event.target.value });
-  }
-
-  onValueKeyPress(keyEvent) {
-    const { currentValue, currentFilterType } = this.state;
-
-    if (keyEvent.key === 'Enter' && currentValue && currentValue.length > 0) {
-      this.setState({ currentValue: '' });
-      this.filterAdded(currentFilterType, currentValue);
-      keyEvent.stopPropagation();
-      keyEvent.preventDefault();
     }
   }
 
@@ -142,10 +139,23 @@ export class MockToolbarExample extends React.Component {
     onFiltersChanged && onFiltersChanged(`Filter Removed: ${filter.label}`);
   }
 
-  clearFilters() {
-    const { onFiltersChanged } = this.props;
-    this.setState({ activeFilters: [] });
-    onFiltersChanged && onFiltersChanged('Filters cleared.');
+  selectFilterType(filterType) {
+    const { currentFilterType } = this.state;
+    if (currentFilterType !== filterType) {
+      this.setState({ currentValue: '', currentFilterType: filterType });
+
+      if (filterType.filterType === 'complex-select') {
+        this.setState({ filterCategory: undefined, categoryValue: '' });
+      }
+    }
+  }
+
+  toggleCurrentSortDirection() {
+    const { isSortAscending } = this.state;
+    const { onSortChanged } = this.props;
+
+    this.setState({ isSortAscending: !isSortAscending });
+    onSortChanged && onSortChanged(`sort ascending: ${!isSortAscending}`);
   }
 
   updateCurrentSortType(sortType) {
@@ -162,18 +172,8 @@ export class MockToolbarExample extends React.Component {
     onSortChanged && onSortChanged(`sort type: ${sortType.title}`);
   }
 
-  toggleCurrentSortDirection() {
-    const { isSortAscending } = this.state;
-    const { onSortChanged } = this.props;
-
-    this.setState({ isSortAscending: !isSortAscending });
-    onSortChanged && onSortChanged(`sort ascending: ${!isSortAscending}`);
-  }
-
-  setViewType(viewType) {
-    const { onViewChanged } = this.props;
-    this.setState({ currentViewType: viewType });
-    onViewChanged && onViewChanged(viewType);
+  updateCurrentValue(event) {
+    this.setState({ currentValue: event.target.value });
   }
 
   renderInput() {

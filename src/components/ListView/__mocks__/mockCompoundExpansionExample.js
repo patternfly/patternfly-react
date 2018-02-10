@@ -15,6 +15,11 @@ export class MockCompoundExpansion extends React.Component {
     };
   }
 
+  closeExpand(item) {
+    item.expanded = false;
+    this.setState({ listItems: mockListItems });
+  }
+
   toggleExpand(item, expandProp) {
     if (expandProp === item.expandType) {
       item.expanded = !item.expanded;
@@ -22,11 +27,6 @@ export class MockCompoundExpansion extends React.Component {
       item.expanded = true;
       item.expandType = expandProp;
     }
-    this.setState({ listItems: mockListItems });
-  }
-
-  closeExpand(item) {
-    item.expanded = false;
     this.setState({ listItems: mockListItems });
   }
 

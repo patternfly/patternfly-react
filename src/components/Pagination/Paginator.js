@@ -28,23 +28,6 @@ class Paginator extends React.Component {
     this.initPagination(nextProps);
   }
 
-  initPagination(props) {
-    const { pagination } = props;
-    this.perPage = Number(pagination.perPage);
-    this.currentPage = Number(pagination.page);
-    this.itemCount = Number(props.itemCount);
-  }
-
-  totalPages() {
-    return Math.ceil(this.props.itemCount / this.perPage);
-  }
-
-  setPageRelative(diff) {
-    const { pagination } = this.props;
-    const page = Number(pagination.page) + diff;
-    this.setPage(page);
-  }
-
   setPage(value) {
     const page = Number(value);
     if (
@@ -57,12 +40,29 @@ class Paginator extends React.Component {
     }
   }
 
-  handlePageChange(e) {
-    this.setState({ pageChangeValue: e.target.value });
+  setPageRelative(diff) {
+    const { pagination } = this.props;
+    const page = Number(pagination.page) + diff;
+    this.setPage(page);
   }
 
   handleFormSubmit(e) {
     this.setPage(this.state.pageChangeValue);
+  }
+
+  handlePageChange(e) {
+    this.setState({ pageChangeValue: e.target.value });
+  }
+
+  initPagination(props) {
+    const { pagination } = props;
+    this.perPage = Number(pagination.perPage);
+    this.currentPage = Number(pagination.page);
+    this.itemCount = Number(props.itemCount);
+  }
+
+  totalPages() {
+    return Math.ceil(this.props.itemCount / this.perPage);
   }
 
   render() {

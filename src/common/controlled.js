@@ -55,8 +55,18 @@ const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
         window.removeEventListener('beforeunload', this.savePersistent);
     }
 
-    sessionKey() {
-      return this.props.sessionKey || JSON.stringify(persist);
+    setControlledState(updater) {
+      this.setState(updater);
+    }
+
+    loadPersistent() {
+      if (persist && persist.length > 0) {
+        const fromPersisted =
+          window &&
+          window.sessionStorage &&
+          window.sessionStorage.getItem(this.sessionKey());
+        fromPersisted && this.setState(JSON.parse(fromPersisted));
+      }
     }
 
     savePersistent() {
@@ -71,18 +81,8 @@ const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
       }
     }
 
-    loadPersistent() {
-      if (persist && persist.length > 0) {
-        const fromPersisted =
-          window &&
-          window.sessionStorage &&
-          window.sessionStorage.getItem(this.sessionKey());
-        fromPersisted && this.setState(JSON.parse(fromPersisted));
-      }
-    }
-
-    setControlledState(updater) {
-      this.setState(updater);
+    sessionKey() {
+      return this.props.sessionKey || JSON.stringify(persist);
     }
 
     render() {

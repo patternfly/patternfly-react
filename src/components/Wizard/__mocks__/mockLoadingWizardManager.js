@@ -13,11 +13,11 @@ export class MockLoadingWizardManager extends React.Component {
     this.state = { showModal: false };
     bindMethods(this, ['open', 'close']);
   }
-  open() {
-    this.setState({ showModal: true });
-  }
   close() {
     this.setState({ showModal: false });
+  }
+  open() {
+    this.setState({ showModal: true });
   }
   render() {
     const { showModal } = this.state;

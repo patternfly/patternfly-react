@@ -16,20 +16,21 @@ class MockWizardBase extends React.Component {
       'onBackButtonClick'
     ]);
   }
-  onSidebarItemClick(stepIndex, subStepIndex) {
-    this.setState({
-      activeStepIndex: stepIndex,
-      activeSubStepIndex: subStepIndex
-    });
-  }
-  onStepClick(stepIndex) {
-    if (stepIndex === this.state.activeStepIndex) {
-      return;
+  onBackButtonClick() {
+    const { steps } = this.props;
+    const { activeStepIndex, activeSubStepIndex } = this.state;
+
+    if (activeSubStepIndex > 0) {
+      this.setState(prevState => ({
+        activeSubStepIndex: prevState.activeSubStepIndex - 1
+      }));
+    } else if (activeStepIndex > 0) {
+      this.setState(prevState => ({
+        activeStepIndex: prevState.activeStepIndex - 1,
+        activeSubStepIndex:
+          steps[prevState.activeStepIndex - 1].subSteps.length - 1
+      }));
     }
-    this.setState({
-      activeStepIndex: stepIndex,
-      activeSubStepIndex: 0
-    });
   }
   onNextButtonClick() {
     const { steps } = this.props;
@@ -47,21 +48,20 @@ class MockWizardBase extends React.Component {
       }));
     }
   }
-  onBackButtonClick() {
-    const { steps } = this.props;
-    const { activeStepIndex, activeSubStepIndex } = this.state;
-
-    if (activeSubStepIndex > 0) {
-      this.setState(prevState => ({
-        activeSubStepIndex: prevState.activeSubStepIndex - 1
-      }));
-    } else if (activeStepIndex > 0) {
-      this.setState(prevState => ({
-        activeStepIndex: prevState.activeStepIndex - 1,
-        activeSubStepIndex:
-          steps[prevState.activeStepIndex - 1].subSteps.length - 1
-      }));
+  onSidebarItemClick(stepIndex, subStepIndex) {
+    this.setState({
+      activeStepIndex: stepIndex,
+      activeSubStepIndex: subStepIndex
+    });
+  }
+  onStepClick(stepIndex) {
+    if (stepIndex === this.state.activeStepIndex) {
+      return;
     }
+    this.setState({
+      activeStepIndex: stepIndex,
+      activeSubStepIndex: 0
+    });
   }
   render() {
     return false;

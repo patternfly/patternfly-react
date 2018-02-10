@@ -21,16 +21,6 @@ export class MockTreeView extends React.Component {
     bindMethods(this, ['selectNode', 'nodeSelector']);
   }
 
-  selectNode(selectedNode) {
-    this.setState(prevState => ({
-      nodes: this.nodeSelector(prevState.nodes, selectedNode),
-      selectedNode:
-        prevState.selectedNode && prevState.selectedNode.id === selectedNode.id
-          ? null
-          : selectedNode
-    }));
-  }
-
   nodeSelector(nodes, targetNode) {
     return nodes.map(node => {
       if (node.nodes) {
@@ -46,6 +36,16 @@ export class MockTreeView extends React.Component {
       }
       return node;
     });
+  }
+
+  selectNode(selectedNode) {
+    this.setState(prevState => ({
+      nodes: this.nodeSelector(prevState.nodes, selectedNode),
+      selectedNode:
+        prevState.selectedNode && prevState.selectedNode.id === selectedNode.id
+          ? null
+          : selectedNode
+    }));
   }
 
   render() {

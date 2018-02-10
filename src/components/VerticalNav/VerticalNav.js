@@ -73,14 +73,6 @@ class BaseVerticalNav extends React.Component {
     addBodyEventListener('mousedown', this.handleBodyClick);
   }
 
-  componentWillUnmount() {
-    // Clear any timers so they don't trigger while the component is unmounted.
-    this.hoverTimer.clearTimer();
-    this.clearBodyClasses();
-    layout.removeChangeListener(this.onLayoutChange);
-    removeBodyEventListener('mousedown', this.handleBodyClick);
-  }
-
   componentDidUpdate(oldProps) {
     const bodyClassProps = [
       'navCollapsed',
@@ -93,9 +85,12 @@ class BaseVerticalNav extends React.Component {
     }
   }
 
-  handleBodyClick() {
-    // Clear hover state on body click. Helps especially when using blurDisabled prop.
-    this.setHoverPath(null);
+  componentWillUnmount() {
+    // Clear any timers so they don't trigger while the component is unmounted.
+    this.hoverTimer.clearTimer();
+    this.clearBodyClasses();
+    layout.removeChangeListener(this.onLayoutChange);
+    removeBodyEventListener('mousedown', this.handleBodyClick);
   }
 
   updateBodyClasses() {
@@ -121,12 +116,6 @@ class BaseVerticalNav extends React.Component {
     }
   }
 
-  onLayoutChange(newLayout) {
-    const { onLayoutChange, setControlledState } = this.props;
-    setControlledState({ isMobile: newLayout === 'mobile' });
-    onLayoutChange && onLayoutChange(newLayout);
-  }
-
   collapseMenu() {
     const { onCollapse, setControlledState } = this.props;
     setControlledState({ navCollapsed: true });
@@ -139,60 +128,37 @@ class BaseVerticalNav extends React.Component {
     onExpand && onExpand();
   }
 
-  updateNavOnMenuToggleClick() {
-    const {
-      onMenuToggleClick,
-      isMobile,
-      showMobileNav,
-      navCollapsed,
-      setControlledState
-    } = this.props;
-    if (isMobile) {
-      if (showMobileNav) {
-        setControlledState({ showMobileNav: false });
-      } else {
-        this.setMobilePath(null);
-        setControlledState({ showMobileNav: true });
-      }
-    } else if (navCollapsed) {
-      this.expandMenu();
-    } else {
-      this.collapseMenu();
-    }
-    onMenuToggleClick && onMenuToggleClick();
+  forceHideSecondaryMenu() {
+    this.setState({ forceHidden: true });
+    setTimeout(() => {
+      this.setState({ forceHidden: false });
+    }, 500);
   }
 
-  updateNavOnItemHover(
-    primary,
-    secondary,
-    tertiary,
-    idPath,
-    parentPath,
-    callback
-  ) {
+  handleBodyClick() {
+    // Clear hover state on body click. Helps especially when using blurDisabled prop.
+    this.setHoverPath(null);
+  }
+
+  navigateToItem(item) {
+    const { onNavigate } = this.props;
+    onNavigate && onNavigate(item);
+    // Note: This should become router-aware later on.
+  }
+
+  updateBodyClasses() {
+    // Note: Updating the body element classes from here like this is a hacky, non-react-y pattern.
+    // It's only here for consistency. See comments on getBodyContentElement in ./constants.js.
     const {
-      onItemHover,
-      hoverPath,
-      hoverDelay,
-      hoverDisabled,
+      dynamicBodyClasses,
+      navCollapsed,
+      pinnedPath,
       isMobile
     } = this.props;
-    const item = deepestOf(primary, secondary, tertiary);
-    const hovered = hoverPath && hoverPath.startsWith(idPath);
-    const targetPath =
-      item.subItems && item.subItems.length > 0 ? idPath : parentPath;
-    const that = this;
-    if (!isMobile) {
-      this.hoverTimer.clearTimer();
-      if (!hovered) {
-        this.hoverTimer.startTimer(skipped => {
-          if (skipped || !hoverDisabled) {
-            that.setHoverPath(targetPath);
-            callback && callback(primary, secondary, tertiary);
-            onItemHover && onItemHover(primary, secondary, tertiary);
-          }
-        }, hoverDelay);
-      }
+    const collapsed = navCollapsed && pinnedPath === null;
+    if (dynamicBodyClasses) {
+      setBodyClassIf(!isMobile && collapsed, 'collapsed-nav');
+      setBodyClassIf(isMobile, 'hidden-nav');
     }
   }
 
@@ -256,11 +222,61 @@ class BaseVerticalNav extends React.Component {
     onItemClick && onItemClick(primary, secondary, tertiary);
   }
 
-  updateNavOnPin(item, depth, pinned) {
-    const { onItemPin, isMobile } = this.props;
+  updateNavOnItemHover(
+    primary,
+    secondary,
+    tertiary,
+    idPath,
+    parentPath,
+    callback
+  ) {
+    const {
+      onItemHover,
+      hoverPath,
+      hoverDelay,
+      hoverDisabled,
+      isMobile
+    } = this.props;
+    const item = deepestOf(primary, secondary, tertiary);
+    const hovered = hoverPath && hoverPath.startsWith(idPath);
+    const targetPath =
+      item.subItems && item.subItems.length > 0 ? idPath : parentPath;
+    const that = this;
     if (!isMobile) {
-      onItemPin && onItemPin(item, depth, pinned);
+      this.hoverTimer.clearTimer();
+      if (!hovered) {
+        this.hoverTimer.startTimer(skipped => {
+          if (skipped || !hoverDisabled) {
+            that.setHoverPath(targetPath);
+            callback && callback(primary, secondary, tertiary);
+            onItemHover && onItemHover(primary, secondary, tertiary);
+          }
+        }, hoverDelay);
+      }
     }
+  }
+
+  updateNavOnMenuToggleClick() {
+    const {
+      onMenuToggleClick,
+      isMobile,
+      showMobileNav,
+      navCollapsed,
+      setControlledState
+    } = this.props;
+    if (isMobile) {
+      if (showMobileNav) {
+        setControlledState({ showMobileNav: false });
+      } else {
+        this.setMobilePath(null);
+        setControlledState({ showMobileNav: true });
+      }
+    } else if (navCollapsed) {
+      this.expandMenu();
+    } else {
+      this.collapseMenu();
+    }
+    onMenuToggleClick && onMenuToggleClick();
   }
 
   updateNavOnMobileSelection(primary, secondary, tertiary) {
@@ -270,60 +286,11 @@ class BaseVerticalNav extends React.Component {
     onMobileSelection && onMobileSelection(primary, secondary, tertiary);
   }
 
-  setActivePath(activePath) {
-    if (!this.state.controlledActivePath) {
-      this.props.setControlledState({ activePath });
+  updateNavOnPin(item, depth, pinned) {
+    const { onItemPin, isMobile } = this.props;
+    if (!isMobile) {
+      onItemPin && onItemPin(item, depth, pinned);
     }
-  }
-
-  setHoverPath(hoverPath) {
-    if (!this.state.controlledHoverPath) {
-      this.props.setControlledState({
-        hoverPath,
-        ...(hoverPath === null ? { showMobileNav: false } : {})
-      });
-    }
-  }
-
-  setMobilePath(mobilePath) {
-    if (!this.state.controlledMobilePath) {
-      this.props.setControlledState({ mobilePath });
-    }
-  }
-
-  setPinnedPath(pinnedPath) {
-    if (!this.state.controlledPinnedPath) {
-      this.props.setControlledState({ pinnedPath });
-    }
-  }
-
-  setControlledActivePath(controlledActivePath) {
-    this.setState({ controlledActivePath });
-  }
-
-  setControlledHoverPath(controlledHoverPath) {
-    this.setState({ controlledHoverPath });
-  }
-
-  setControlledMobilePath(controlledMobilePath) {
-    this.setState({ controlledMobilePath });
-  }
-
-  setControlledPinnedPath(controlledPinnedPath) {
-    this.setState({ controlledPinnedPath });
-  }
-
-  forceHideSecondaryMenu() {
-    this.setState({ forceHidden: true });
-    setTimeout(() => {
-      this.setState({ forceHidden: false });
-    }, 500);
-  }
-
-  navigateToItem(item) {
-    const { onNavigate } = this.props;
-    onNavigate && onNavigate(item);
-    // Note: This should become router-aware later on.
   }
 
   render() {

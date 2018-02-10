@@ -93,6 +93,36 @@ export class MockFilterExample extends React.Component {
     };
   }
 
+  onValueKeyPress(keyEvent) {
+    const { currentValue, currentFilterType } = this.state;
+
+    if (keyEvent.key === 'Enter' && currentValue && currentValue.length > 0) {
+      this.setState({ currentValue: '' });
+      this.filterAdded(currentFilterType, currentValue);
+      keyEvent.stopPropagation();
+      keyEvent.preventDefault();
+    }
+  }
+
+  categoryValueSelected(value) {
+    const { currentValue, currentFilterType, filterCategory } = this.state;
+
+    if (filterCategory && currentValue !== value) {
+      this.setState({ currentValue: value });
+      if (value) {
+        const filterValue = {
+          filterCategory,
+          filterValue: value
+        };
+        this.filterAdded(currentFilterType, filterValue);
+      }
+    }
+  }
+
+  clearFilters() {
+    this.setState({ activeFilters: [] });
+  }
+
   filterAdded = (field, value) => {
     let filterText = '';
     if (field.title) {
@@ -115,6 +145,37 @@ export class MockFilterExample extends React.Component {
     this.setState({ activeFilters });
   };
 
+  filterCategorySelected(category) {
+    const { filterCategory } = this.state;
+    if (filterCategory !== category) {
+      this.setState({ filterCategory: category, currentValue: '' });
+    }
+  }
+
+  filterValueSelected(filterValue) {
+    const { currentFilterType, currentValue } = this.state;
+
+    if (filterValue !== currentValue) {
+      this.setState({ currentValue: filterValue });
+      if (filterValue) {
+        this.filterAdded(currentFilterType, filterValue);
+      }
+    }
+  }
+
+  removeFilter(filter) {
+    const { activeFilters } = this.state;
+
+    const index = activeFilters.indexOf(filter);
+    if (index > -1) {
+      const updated = [
+        ...activeFilters.slice(0, index),
+        ...activeFilters.slice(index + 1)
+      ];
+      this.setState({ activeFilters: updated });
+    }
+  }
+
   selectFilterType(filterType) {
     const { currentFilterType } = this.state;
     if (currentFilterType !== filterType) {
@@ -133,69 +194,8 @@ export class MockFilterExample extends React.Component {
     }
   }
 
-  filterValueSelected(filterValue) {
-    const { currentFilterType, currentValue } = this.state;
-
-    if (filterValue !== currentValue) {
-      this.setState({ currentValue: filterValue });
-      if (filterValue) {
-        this.filterAdded(currentFilterType, filterValue);
-      }
-    }
-  }
-
-  filterCategorySelected(category) {
-    const { filterCategory } = this.state;
-    if (filterCategory !== category) {
-      this.setState({ filterCategory: category, currentValue: '' });
-    }
-  }
-
-  categoryValueSelected(value) {
-    const { currentValue, currentFilterType, filterCategory } = this.state;
-
-    if (filterCategory && currentValue !== value) {
-      this.setState({ currentValue: value });
-      if (value) {
-        const filterValue = {
-          filterCategory,
-          filterValue: value
-        };
-        this.filterAdded(currentFilterType, filterValue);
-      }
-    }
-  }
-
   updateCurrentValue(event) {
     this.setState({ currentValue: event.target.value });
-  }
-
-  onValueKeyPress(keyEvent) {
-    const { currentValue, currentFilterType } = this.state;
-
-    if (keyEvent.key === 'Enter' && currentValue && currentValue.length > 0) {
-      this.setState({ currentValue: '' });
-      this.filterAdded(currentFilterType, currentValue);
-      keyEvent.stopPropagation();
-      keyEvent.preventDefault();
-    }
-  }
-
-  removeFilter(filter) {
-    const { activeFilters } = this.state;
-
-    const index = activeFilters.indexOf(filter);
-    if (index > -1) {
-      const updated = [
-        ...activeFilters.slice(0, index),
-        ...activeFilters.slice(index + 1)
-      ];
-      this.setState({ activeFilters: updated });
-    }
-  }
-
-  clearFilters() {
-    this.setState({ activeFilters: [] });
   }
 
   renderInput() {
