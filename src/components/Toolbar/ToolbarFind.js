@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { Button, Icon, FormControl } from '../../index';
 import { bindMethods } from '../../common/helpers';
 
-export class ToolbarFind extends React.Component {
+class ToolbarFind extends React.Component {
   constructor() {
     super();
     this.state = {
