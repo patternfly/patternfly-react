@@ -9,7 +9,7 @@ const stories = storiesOf('Breadcrumb', module);
 const description = (
   <p>
     This component is based on React Bootstrap Breadcrumb component. Breadcrumbs
-    are used to indicate the current page's location. See{' '}
+    are used to indicate the current page&apos;s location. See{' '}
     <a href={`${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}breadcrumb/`}>
       React Bootstrap Docs
     </a>{' '}
