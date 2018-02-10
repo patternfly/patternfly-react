@@ -6,6 +6,14 @@ import { mockListItems } from './mockListItems';
 import { Button, Grid, ListView } from '../../../index';
 
 export class MockCompoundExpansion extends React.Component {
+  static renderActions() {
+    return (
+      <div>
+        <Button>Details</Button>
+      </div>
+    );
+  }
+
   constructor() {
     super();
 
@@ -28,14 +36,6 @@ export class MockCompoundExpansion extends React.Component {
       item.expandType = expandProp;
     }
     this.setState({ listItems: mockListItems });
-  }
-
-  renderActions() {
-    return (
-      <div>
-        <Button>Details</Button>
-      </div>
-    );
   }
 
   renderAdditionalInfoExpandItems(item) {
@@ -70,7 +70,7 @@ export class MockCompoundExpansion extends React.Component {
     return (
       <ListView.Item
         key={index}
-        actions={this.renderActions(item.actions)}
+        actions={MockCompoundExpansion.renderActions(item.actions)}
         checkboxInput={<input type="checkbox" />}
         leftContent={<ListView.Icon name="plane" />}
         additionalInfo={this.renderAdditionalInfoExpandItems(item)}

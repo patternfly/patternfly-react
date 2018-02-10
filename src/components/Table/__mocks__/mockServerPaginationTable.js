@@ -19,6 +19,13 @@ import { Paginator, PAGINATION_VIEW } from '../../Pagination';
 import MockServerApi from './mockServerApi';
 
 export class MockServerPaginationTable extends React.Component {
+  static onRow(row, { rowIndex }) {
+    return {
+      className: cx({ selected: row.selected }),
+      role: 'row'
+    };
+  }
+
   constructor(props) {
     super(props);
 
@@ -29,7 +36,6 @@ export class MockServerPaginationTable extends React.Component {
       'customHeaderFormatters',
       'onPerPageSelect',
       'onPageSet',
-      'onRow',
       'onSelectAllRows',
       'onSelectRow',
       'onSort'
@@ -198,7 +204,6 @@ export class MockServerPaginationTable extends React.Component {
 
       // rows and row selection state
       rows: [],
-      selectedRows: [],
 
       // pagination default states
       pagination: {
@@ -230,12 +235,6 @@ export class MockServerPaginationTable extends React.Component {
     this.getPage(this.state.sortingColumns, newPaginationState);
   }
 
-  onRow(row, { rowIndex }) {
-    return {
-      className: cx({ selected: row.selected }),
-      role: 'row'
-    };
-  }
   onSelectAllRows(event) {
     const { sortingColumns, pagination, rows } = this.state;
     const { checked } = event.target;
@@ -322,7 +321,11 @@ export class MockServerPaginationTable extends React.Component {
           }}
         >
           <Table.Header headerRows={resolve.headerRows({ columns })} />
-          <Table.Body rows={rows} rowKey="id" onRow={this.onRow} />
+          <Table.Body
+            rows={rows}
+            rowKey="id"
+            onRow={MockServerPaginationTable.onRow}
+          />
         </Table.PfProvider>
         <Paginator
           viewType={PAGINATION_VIEW.TABLE}
@@ -361,6 +364,13 @@ import { Paginator, PAGINATION_VIEW } from '../../Pagination';
 import MockServerApi from './mockServerApi';
 
 export class MockServerPaginationTable extends React.Component {
+  static onRow(row, { rowIndex }) {
+    return {
+      className: cx({ selected: row.selected }),
+      role: 'row'
+    };
+  }
+  
   constructor(props) {
     super(props);
 
@@ -371,7 +381,6 @@ export class MockServerPaginationTable extends React.Component {
       'customHeaderFormatters',
       'onPerPageSelect',
       'onPageSet',
-      'onRow',
       'onSelectAllRows',
       'onSelectRow',
       'onSort'
@@ -546,7 +555,6 @@ export class MockServerPaginationTable extends React.Component {
 
       // rows and row selection state
       rows: [],
-      selectedRows: [],
 
       // pagination default states
       pagination: {
@@ -638,13 +646,6 @@ export class MockServerPaginationTable extends React.Component {
     this.getPage(this.state.sortingColumns, newPaginationState);
   }
 
-  onRow(row, { rowIndex }) {
-    return {
-      className: cx({ selected: row.selected }),
-      role: 'row'
-    };
-  }
-
   render() {
     const { columns, pagination, sortingColumns, rows, itemCount } = this.state;
 
@@ -672,7 +673,7 @@ export class MockServerPaginationTable extends React.Component {
           }}
         >
           <Table.Header headerRows={resolve.headerRows({ columns })} />
-          <Table.Body rows={rows} rowKey="id" onRow={this.onRow} />
+          <Table.Body rows={rows} rowKey="id" onRow={MockServerPaginationTable.onRow} />
         </Table.PfProvider>
         <Paginator
           viewType={PAGINATION_VIEW.TABLE}

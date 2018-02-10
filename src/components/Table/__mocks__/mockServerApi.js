@@ -7,6 +7,10 @@ import { mockRows } from './mockRows';
  * and pass data via a redux connected component.
  */
 class MockServerApi {
+  static toggleRow(row) {
+    return Object.assign({}, row, { selected: !row.selected });
+  }
+
   constructor() {
     this.mockRows = mockRows;
   }
@@ -39,7 +43,7 @@ class MockServerApi {
     // mock server logic to update `mockRows`
     const index = this.mockRows.findIndex(r => r.id === row.id);
     if (index > -1) {
-      this.mockRows[index] = this.toggleRow(this.mockRows[index]);
+      this.mockRows[index] = MockServerApi.toggleRow(this.mockRows[index]);
     }
 
     return new Promise(resolve => {
@@ -71,10 +75,6 @@ class MockServerApi {
         rows
       });
     });
-  }
-
-  toggleRow(row) {
-    return Object.assign({}, row, { selected: !row.selected });
   }
 }
 export default new MockServerApi();

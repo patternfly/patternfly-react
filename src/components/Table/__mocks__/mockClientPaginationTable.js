@@ -28,6 +28,12 @@ import { mockRows } from './mockRows';
  */
 
 export class MockClientPaginationTable extends React.Component {
+  static deselectRow(row) {
+    return Object.assign({}, row, { selected: false });
+  }
+  static selectRow(row) {
+    return Object.assign({}, row, { selected: true });
+  }
   constructor(props) {
     super(props);
 
@@ -314,7 +320,10 @@ export class MockClientPaginationTable extends React.Component {
         ...new Set([...currentRows.map(r => r.id), ...selectedRows])
       ];
       const updatedRows = rows.map(
-        r => (updatedSelections.indexOf(r.id) > -1 ? this.selectRow(r) : r)
+        r =>
+          updatedSelections.indexOf(r.id) > -1
+            ? MockClientPaginationTable.selectRow(r)
+            : r
       );
       this.setState({
         // important: you must update rows to force a re-render and trigger onRow hook
@@ -328,7 +337,10 @@ export class MockClientPaginationTable extends React.Component {
         r => !(ids.indexOf(r) > -1)
       );
       const updatedRows = rows.map(
-        r => (updatedSelections.indexOf(r.id) > -1 ? r : this.deselectRow(r))
+        r =>
+          updatedSelections.indexOf(r.id) > -1
+            ? r
+            : MockClientPaginationTable.deselectRow(r)
       );
       this.setState({
         rows: updatedRows,
@@ -345,11 +357,11 @@ export class MockClientPaginationTable extends React.Component {
       let updatedSelectedRows, updatedRow;
       if (row.selected) {
         updatedSelectedRows = selectedRows.filter(r => !(r === row.id));
-        updatedRow = this.deselectRow(row);
+        updatedRow = MockClientPaginationTable.deselectRow(row);
       } else {
         selectedRows.push(row.id);
         updatedSelectedRows = selectedRows;
-        updatedRow = this.selectRow(row);
+        updatedRow = MockClientPaginationTable.selectRow(row);
       }
       rows[selectedRowIndex] = updatedRow;
       this.setState({
@@ -386,12 +398,6 @@ export class MockClientPaginationTable extends React.Component {
         strategy: sort.strategies.byProperty
       })
     )(rows);
-  }
-  deselectRow(row) {
-    return Object.assign({}, row, { selected: false });
-  }
-  selectRow(row) {
-    return Object.assign({}, row, { selected: true });
   }
   totalPages() {
     const { perPage } = this.state.pagination;
@@ -484,6 +490,13 @@ import { mockRows } from './mockRows';
  */
 
 export class MockClientPaginationTable extends React.Component {
+  static selectRow(row) {
+    return Object.assign({}, row, { selected: true });
+  }
+  static deselectRow(row) {
+    return Object.assign({}, row, { selected: false });
+  }
+
   constructor(props) {
     super(props);
 
@@ -781,11 +794,11 @@ export class MockClientPaginationTable extends React.Component {
       let updatedSelectedRows, updatedRow;
       if (row.selected) {
         updatedSelectedRows = selectedRows.filter(r => !(r === row.id));
-        updatedRow = this.deselectRow(row);
+        updatedRow = MockClientPaginationTable.deselectRow(row);
       } else {
         selectedRows.push(row.id);
         updatedSelectedRows = selectedRows;
-        updatedRow = this.selectRow(row);
+        updatedRow = MockClientPaginationTable.selectRow(row);
       }
       rows[selectedRowIndex] = updatedRow;
       this.setState({
@@ -806,7 +819,7 @@ export class MockClientPaginationTable extends React.Component {
         ...new Set([...currentRows.map(r => r.id), ...selectedRows])
       ];
       const updatedRows = rows.map(r => {
-        return updatedSelections.indexOf(r.id) > -1 ? this.selectRow(r) : r;
+        return updatedSelections.indexOf(r.id) > -1 ? MockClientPaginationTable.selectRow(r) : r;
       });
       this.setState({
         // important: you must update rows to force a re-render and trigger onRow hook
@@ -820,7 +833,7 @@ export class MockClientPaginationTable extends React.Component {
         return !(ids.indexOf(r) > -1);
       });
       const updatedRows = rows.map(r => {
-        return updatedSelections.indexOf(r.id) > -1 ? r : this.deselectRow(r);
+        return updatedSelections.indexOf(r.id) > -1 ? r : MockClientPaginationTable.deselectRow(r);
       });
       this.setState({
         rows: updatedRows,
@@ -828,12 +841,6 @@ export class MockClientPaginationTable extends React.Component {
       });
       onRowsLogger(updatedRows.filter(r => r.selected));
     }
-  }
-  selectRow(row) {
-    return Object.assign({}, row, { selected: true });
-  }
-  deselectRow(row) {
-    return Object.assign({}, row, { selected: false });
   }
   currentRows() {
     const { rows, sortingColumns, columns, pagination } = this.state;
