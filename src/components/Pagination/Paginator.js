@@ -31,7 +31,7 @@ class Paginator extends React.Component {
   setPage(value) {
     const page = Number(value);
     if (
-      !isNaN(value) &&
+      !Number.isNaN(value) &&
       value !== '' &&
       page > 0 &&
       page <= this.totalPages()
