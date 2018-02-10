@@ -354,7 +354,8 @@ export class MockClientPaginationTable extends React.Component {
     const { rows, selectedRows } = this.state;
     const selectedRowIndex = rows.findIndex(r => r.id === row.id);
     if (selectedRowIndex > -1) {
-      let updatedSelectedRows, updatedRow;
+      let updatedSelectedRows;
+      let updatedRow;
       if (row.selected) {
         updatedSelectedRows = selectedRows.filter(r => !(r === row.id));
         updatedRow = MockClientPaginationTable.deselectRow(row);

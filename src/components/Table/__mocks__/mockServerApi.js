@@ -59,7 +59,7 @@ class MockServerApi {
     // callServerApi(rows)
 
     // mock server logic to update `mockRows`
-    rows.map(row => {
+    for (const row of rows) {
       const index = this.mockRows.findIndex(r => r.id === row.id);
       if (index > -1) {
         const updated = Object.assign({}, this.mockRows[index], {
@@ -67,7 +67,7 @@ class MockServerApi {
         });
         this.mockRows[index] = updated;
       }
-    });
+    }
 
     return new Promise(resolve => {
       // server api returns updated rows
