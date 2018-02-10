@@ -36,6 +36,7 @@ const setDonutTitle = obj => {
   }
 
   pfSetDonutChartTitle(
+    // eslint-disable-next-line react/no-find-dom-node
     findDOMNode(obj),
     title.primary || primary,
     title.secondary || secondary
