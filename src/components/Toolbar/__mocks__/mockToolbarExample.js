@@ -109,7 +109,7 @@ export class MockToolbarExample extends React.Component {
   filterCategorySelected(category) {
     const { filterCategory } = this.state;
     if (filterCategory !== category) {
-      this.setState({ filterCategory: category, categoryValue: '' });
+      this.setState({ filterCategory: category });
     }
   }
 
@@ -145,7 +145,7 @@ export class MockToolbarExample extends React.Component {
       this.setState({ currentValue: '', currentFilterType: filterType });
 
       if (filterType.filterType === 'complex-select') {
-        this.setState({ filterCategory: undefined, categoryValue: '' });
+        this.setState({ filterCategory: undefined });
       }
     }
   }
@@ -476,7 +476,7 @@ export class MockToolbarExample extends React.Component {
       this.setState({ currentValue: '', currentFilterType: filterType });
 
       if (filterType.filterType === 'complex-select') {
-        this.setState({ filterCategory: undefined, categoryValue: '' });
+        this.setState({ filterCategory: undefined });
       }
     }
   }
@@ -495,7 +495,7 @@ export class MockToolbarExample extends React.Component {
   filterCategorySelected(category) {
     const { filterCategory } = this.state;
     if (filterCategory !== category) {
-      this.setState({ filterCategory: category, categoryValue: '' });
+      this.setState({ filterCategory: category });
     }
   }
 

@@ -1,8 +1,6 @@
-/* eslint-env jest */
-
 import React from 'react';
-import { Spinner } from './index';
 import renderer from 'react-test-renderer';
+import { Spinner } from './index';
 
 test('Spinner should not render children when loading', () => {
   const component = renderer.create(

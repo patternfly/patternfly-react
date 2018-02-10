@@ -2,6 +2,7 @@ import React from 'react';
 import orderBy from 'lodash.orderby';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
+import { compose } from 'recompose';
 import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
@@ -13,7 +14,6 @@ import {
   TABLE_SORT_DIRECTION
 } from '../index';
 import { MenuItem } from '../../MenuItem';
-import { compose } from 'recompose';
 import { mockRows } from './mockRows';
 
 /**
