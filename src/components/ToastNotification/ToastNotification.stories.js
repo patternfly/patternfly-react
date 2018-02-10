@@ -78,7 +78,7 @@ class ToastNotificationStoryWrapper extends React.Component {
     this.state = {
       infoNotificationDismissed: false,
       warningNotificationDismissed: false,
-      successNotificationDismissed: false
+      persistentNotificationDismissed: false
     };
 
     this.infoNotificationDismissed = () => {
