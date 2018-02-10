@@ -11,7 +11,7 @@ const customHeaderFormattersDefinition = ({
 }) => {
   const { index } = cellProps;
   const column = columns[index];
-  const customFormatters = column.header.customFormatters;
+  const { customFormatters } = column.header;
 
   if (customFormatters) {
     return customFormatters.reduce(

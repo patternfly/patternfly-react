@@ -238,7 +238,7 @@ export class MockServerPaginationTable extends React.Component {
   }
   onSelectAllRows(event) {
     const { sortingColumns, pagination, rows } = this.state;
-    const checked = event.target.checked;
+    const { checked } = event.target;
     MockServerApi.selectAllRows({ rows, checked }).then(response => {
       // refresh rows after all rows selected
       this.getPage(sortingColumns, pagination);

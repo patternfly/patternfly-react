@@ -306,7 +306,7 @@ export class MockClientPaginationTable extends React.Component {
   onSelectAllRows(event) {
     const { onRowsLogger } = this.props;
     const { rows, selectedRows } = this.state;
-    const checked = event.target.checked;
+    const { checked } = event.target;
     const currentRows = this.currentRows().rows;
 
     if (checked) {

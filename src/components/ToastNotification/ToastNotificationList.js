@@ -26,7 +26,7 @@ class ToastNotificationList extends React.Component {
   }
 
   renderChildren() {
-    const paused = this.state.paused;
+    const { paused } = this.state;
     return React.Children.map(this.props.children, child => {
       if (child && child.type === TimedToastNotification) {
         /**

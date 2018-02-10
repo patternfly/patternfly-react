@@ -14,19 +14,20 @@ const setDonutTitle = obj => {
   let primary;
   let secondary;
 
-  const title = obj.props.title || {};
-  const columns = obj.props.data.columns;
-  const sum = columns.reduce((sum, x) => sum + x[1], 0);
+  const { props } = obj;
+  const { data, title = {} } = props;
+  const { columns } = data;
+  const sum = columns.reduce((acc, x) => acc + x[1], 0);
   const iMax = colIndexOfMaxValue(columns);
 
   switch (title.type) {
     case 'percent':
       primary = `${Math.round(100 * columns[iMax][1] / sum).toString()}%`;
-      secondary = columns[iMax][0];
+      [secondary] = columns[iMax];
       break;
     case 'max':
       primary = Math.round(columns[iMax][1]).toString();
-      secondary = columns[iMax][0];
+      [secondary] = columns[iMax];
       break;
     case 'total':
     default:
