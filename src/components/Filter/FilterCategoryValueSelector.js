@@ -46,12 +46,12 @@ const FilterCategoryValueSelector = ({
           )}
           {categoryValues &&
             categoryValues.map((item, index) => {
-              const menuClasses = {
+              const menuItemClasses = {
                 selected: item === currentValue
               };
               return (
                 <MenuItem
-                  className={menuClasses}
+                  className={menuItemClasses}
                   key={item.id || index}
                   onSelect={() =>
                     onCategoryValueSelected && onCategoryValueSelected(item)

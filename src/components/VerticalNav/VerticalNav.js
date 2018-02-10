@@ -311,13 +311,13 @@ class BaseVerticalNav extends React.Component {
           key={`primary_${primaryItem.title}`}
         >
           {primaryItem.subItems &&
-            primaryItem.subItems.map((secondaryItem, j) => (
+            primaryItem.subItems.map(secondaryItem => (
               <VerticalNavSecondaryItem
                 item={secondaryItem}
                 key={`secondary_${secondaryItem.title}`}
               >
                 {secondaryItem.subItems &&
-                  secondaryItem.subItems.map((tertiaryItem, j) => (
+                  secondaryItem.subItems.map(tertiaryItem => (
                     <VerticalNavTertiaryItem
                       item={tertiaryItem}
                       key={`tertiary_${tertiaryItem.title}`}

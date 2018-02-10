@@ -61,9 +61,9 @@ class TreeViewNode extends Component {
           {node.text}
         </li>
         {node.nodes &&
-          node.nodes.map((node, index) => (
+          node.nodes.map((childNode, index) => (
             <TreeViewNode
-              node={node}
+              node={childNode}
               key={index}
               level={level + 1}
               visible={expanded}

@@ -48,12 +48,12 @@ const FilterCategorySelector = ({
             )}
             {filterCategories &&
               filterCategories.map((item, index) => {
-                const classes = {
+                const menuItemClasses = {
                   selected: item === currentCategory
                 };
                 return (
                   <MenuItem
-                    className={classes}
+                    className={menuItemClasses}
                     key={item.id || index}
                     onSelect={() =>
                       onFilterCategorySelected && onFilterCategorySelected(item)

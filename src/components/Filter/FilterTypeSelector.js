@@ -38,12 +38,12 @@ const FilterTypeSelector = ({
             </MenuItem>
           )}
           {filterTypes.map((item, index) => {
-            const classes = {
+            const menuItemClasses = {
               selected: item === currentFilterType
             };
             return (
               <MenuItem
-                className={classes}
+                className={menuItemClasses}
                 key={item.id || index}
                 onSelect={() =>
                   onFilterTypeSelected && onFilterTypeSelected(item)
