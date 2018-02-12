@@ -14,8 +14,7 @@ export class MockTreeView extends React.Component {
     super(props);
 
     this.state = {
-      nodes: basicData,
-      selectedNode: null
+      nodes: basicData
     };
 
     bindMethods(this, ['selectNode', 'nodeSelector']);
@@ -40,11 +39,7 @@ export class MockTreeView extends React.Component {
 
   selectNode(selectedNode) {
     this.setState(prevState => ({
-      nodes: this.nodeSelector(prevState.nodes, selectedNode),
-      selectedNode:
-        prevState.selectedNode && prevState.selectedNode.id === selectedNode.id
-          ? null
-          : selectedNode
+      nodes: this.nodeSelector(prevState.nodes, selectedNode)
     }));
   }
 
@@ -80,8 +75,7 @@ export class MockTreeView extends React.Component {
     super(props);
 
     this.state = {
-      nodes: [],
-      selectedNode: null
+      nodes: []
     };
 
     bindMethods(this, ['selectNode', 'nodeSelector']);
@@ -94,12 +88,7 @@ export class MockTreeView extends React.Component {
   selectNode(selectedNode) {
     this.setState(prevState => {
       return {
-        nodes: this.nodeSelector(prevState.nodes, selectedNode),
-        selectedNode:
-          prevState.selectedNode &&
-          prevState.selectedNode.id === selectedNode.id
-            ? null
-            : selectedNode
+        nodes: this.nodeSelector(prevState.nodes, selectedNode)
       };
     });
   }
