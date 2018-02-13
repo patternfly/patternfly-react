@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { OverlayTrigger } from '../OverlayTrigger';
 import { Tooltip } from '../Tooltip';
 import React from 'react';
+import './UtilizationBar.css';
 
 const AvailableTooltipFunction = (max, now) => {
   return <Tooltip id={Math.random()}>Available {max - now} %</Tooltip>;
@@ -32,7 +33,9 @@ const UtilizationBar = props => {
   const labelClasses = top => {
     return ClassNames(
       { 'progress-label-top-right': top, 'progress-label-right': !top },
-      'pull-right'
+      'pull-right',
+      'label-text',
+      'display-inline-block'
     );
   };
 
@@ -54,21 +57,15 @@ const UtilizationBar = props => {
     >
       <div className={props.descriptionPlacementTop ? null : 'progress-bar'}>
         {props.label && (
-          <span
-            className={labelClasses(props.descriptionPlacementTop)}
-            style={{ display: 'inline-block', fontSize: '12px' }}
-          >
-            <strong style={{ fontWeight: 600 }}>
+          <span className={labelClasses(props.descriptionPlacementTop)}>
+            <strong className="label-strong label-text">
               {props.now + ' of ' + props.max}
             </strong>{' '}
             {props.label}
           </span>
         )}
         {props.description && (
-          <div
-            className="progress-description"
-            style={{ color: 'black', fontSize: '12px' }}
-          >
+          <div className="progress-description label-text">
             {props.description}
           </div>
         )}
