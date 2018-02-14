@@ -2,7 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs, text, number, select } from '@storybook/addon-knobs';
+import {
+  withKnobs,
+  text,
+  number,
+  select,
+  boolean
+} from '@storybook/addon-knobs';
 import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 
@@ -43,6 +49,7 @@ stories.add(
           PAGINATION_VIEW_TYPES[0]
         )}
         amountOfPages={number('Number of Pages', 5)}
+        pageSizeDropUp={boolean('Page Size Drop Up', true)}
         itemCount={number('Item Count:', 75)}
         itemsStart={number('Items Start:', 1)}
         itemsEnd={number('Items End', 15)}

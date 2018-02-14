@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { Paginator, PaginationRow, PAGINATION_VIEW_TYPES } from './index';
 
-const testPaginationRowSnapshot = viewType => {
+const testPaginationRowSnapshot = (viewType, pageSizeDropUp = true) => {
   const component = renderer.create(
     <PaginationRow
       viewType={viewType}
@@ -13,6 +13,7 @@ const testPaginationRowSnapshot = viewType => {
         perPageOptions: [6, 10, 15, 25, 50]
       }}
       amountOfPages={5}
+      pageSizeDropUp={pageSizeDropUp}
       itemCount={75}
       itemsStart={1}
       itemsEnd={15}
@@ -54,6 +55,10 @@ test('PaginationRow.Items renders', () => {
   );
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('PaginationRow renders with dropdown page size selector', () => {
+  testPaginationRowSnapshot(PAGINATION_VIEW_TYPES.List, false);
 });
 
 test('PaginationRow.Back renders', () => {
