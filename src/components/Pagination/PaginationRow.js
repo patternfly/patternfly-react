@@ -20,6 +20,7 @@ const PaginationRow = ({
   className,
   viewType,
   pagination,
+  pageSizeDropUp,
   pageInputValue,
   amountOfPages,
   itemCount,
@@ -54,7 +55,7 @@ const PaginationRow = ({
       <FormGroup>
         <DropdownButton
           title={perPage}
-          dropup
+          dropup={pageSizeDropUp}
           componentClass={PaginationRowButtonGroup}
           onSelect={onPerPageSelect}
           id={dropdownButtonId}
@@ -126,6 +127,8 @@ PaginationRow.propTypes = {
     /** per page options */
     perPageOptions: PropTypes.array
   }),
+  /** Page size button drops up */
+  pageSizeDropUp: PropTypes.bool,
   /** page input (optional override for page input) */
   pageInputValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** calculated amount of pages */
@@ -173,6 +176,7 @@ PaginationRow.defaultProps = {
     perPage: 'per page',
     of: 'of'
   },
+  pageSizeDropUp: true,
   onSubmit: noop,
   onPerPageSelect: noop,
   onFirstPage: noop,

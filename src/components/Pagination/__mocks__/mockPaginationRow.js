@@ -29,6 +29,7 @@ export class MockPaginationRow extends React.Component {
     const {
       viewType,
       amountOfPages,
+      pageSizeDropUp,
       itemCount,
       itemsStart,
       itemsEnd,
@@ -43,6 +44,7 @@ export class MockPaginationRow extends React.Component {
         viewType={viewType}
         pagination={this.state.pagination}
         amountOfPages={amountOfPages}
+        pageSizeDropUp={pageSizeDropUp}
         itemCount={itemCount}
         itemsStart={itemsStart}
         itemsEnd={itemsEnd}
@@ -59,6 +61,7 @@ export class MockPaginationRow extends React.Component {
 MockPaginationRow.propTypes = {
   viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES),
   amountOfPages: PropTypes.number,
+  pageSizeDropUp: PropTypes.bool,
   itemCount: PropTypes.number,
   itemsStart: PropTypes.number,
   itemsEnd: PropTypes.number,
