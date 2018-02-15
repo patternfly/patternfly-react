@@ -8,7 +8,7 @@ import {
   ALERT_TYPES,
   DEPRECATED_ALERT_TYPES,
   ALERT_TYPE_ERROR
-} from './constants';
+} from './AlertConstants';
 
 /**
  * Alert Component for Patternfly React

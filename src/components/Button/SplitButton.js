@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { SplitButton as BsSplitButton } from 'react-bootstrap';
-import { BUTTON_BS_STYLES } from './constants';
+import { BUTTON_BS_STYLES } from './ButtonConstants';
 
 const SplitButton = props => <BsSplitButton {...props} />;
 

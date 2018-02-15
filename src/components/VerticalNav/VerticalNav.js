@@ -20,7 +20,7 @@ import {
   addBodyEventListener,
   removeBodyEventListener,
   setBodyClassIf
-} from './constants';
+} from './VerticalNavConstants';
 import VerticalNavSecondaryItem from './VerticalNavSecondaryItem';
 import VerticalNavTertiaryItem from './VerticalNavTertiaryItem';
 
@@ -100,7 +100,7 @@ class BaseVerticalNav extends React.Component {
 
   updateBodyClasses() {
     // Note: Updating the body element classes from here like this is a hacky, non-react-y pattern.
-    // It's only here for consistency. See comments on getBodyContentElement in ./constants.js.
+    // It's only here for consistency. See comments on getBodyContentElement in ./VerticalNavConstants.js.
     const {
       dynamicBodyClasses,
       navCollapsed,

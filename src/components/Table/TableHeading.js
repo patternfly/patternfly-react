@@ -6,7 +6,7 @@ import {
   TABLE_ALIGNMENT_TYPES,
   TABLE_SORT_DIRECTION,
   TABLE_SORT_DIRECTIONS
-} from './constants';
+} from './TableConstants';
 
 /**
  * TableHeading component for Patternfly React

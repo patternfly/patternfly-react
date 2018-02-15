@@ -1,7 +1,7 @@
 import { Button as BsButton } from 'react-bootstrap';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BUTTON_BS_STYLES } from './constants';
+import { BUTTON_BS_STYLES } from './ButtonConstants';
 
 const Button = props => <BsButton {...props} />;
 

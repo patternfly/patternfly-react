@@ -1,6 +1,10 @@
 import React from 'react';
 import { getContext } from 'recompose';
-import { wrongDepth, correctDepth, navContextTypes } from './constants';
+import {
+  wrongDepth,
+  correctDepth,
+  navContextTypes
+} from './VerticalNavConstants';
 import VerticalNavItemHelper from './VerticalNavItemHelper';
 
 /**

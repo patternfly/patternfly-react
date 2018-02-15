@@ -4,7 +4,7 @@ import {
   ALERT_TYPE_WARNING,
   ALERT_TYPE_SUCCESS,
   ALERT_TYPE_INFO
-} from './constants';
+} from './AlertConstants';
 
 export const warnIfDeprecatedType = type => {
   if (type === ALERT_TYPE_DANGER) {

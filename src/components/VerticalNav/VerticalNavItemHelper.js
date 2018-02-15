@@ -15,7 +15,7 @@ import {
   getItemProps,
   itemObjectTypes,
   navContextTypes
-} from './constants';
+} from './VerticalNavConstants';
 
 class BaseVerticalNavItemHelper extends React.Component {
   constructor(props) {

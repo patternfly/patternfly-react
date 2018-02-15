@@ -4,7 +4,7 @@ import { findDOMNode } from 'react-dom';
 import { lifecycle, compose } from 'recompose';
 
 import { patternfly } from '../../common/patternfly';
-import { getComposer } from './constants';
+import { getComposer } from './ChartConstants';
 
 const pfSetDonutChartTitle = patternfly.pfSetDonutChartTitle;
 const colIndexOfMaxValue = columns => {

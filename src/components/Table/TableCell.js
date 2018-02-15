@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { TABLE_ALIGN, TABLE_ALIGNMENT_TYPES } from './constants';
+import { TABLE_ALIGN, TABLE_ALIGNMENT_TYPES } from './TableConstants';
 /**
  * TableCell component for Patternfly React
  */

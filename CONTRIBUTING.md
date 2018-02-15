@@ -54,6 +54,7 @@ when possible and accept [props](https://facebook.github.io/react/docs/component
 ### Code Consistency
 
 * All files and folders under `src/components` should name with PascalCase except `index.js` files
+* If you need a constant file, it should be called `{Component_Name}Constants.js` (Component_Name with PascalCase)
 * Each component should treat as a standalone package and live under its own folder
 * Single file per component with **default export**
 * When component is a set of components (e.g., ListGroup and ListGroupItem),

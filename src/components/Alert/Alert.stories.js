@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text, select } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
-import { ALERT_TYPES } from './constants';
+import { ALERT_TYPES } from './AlertConstants';
 import { Alert } from './index';
 
 const stories = storiesOf('Alert', module);

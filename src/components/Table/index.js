@@ -12,7 +12,7 @@ import {
   TABLE_ALIGNMENT_TYPES,
   TABLE_SORT_DIRECTION,
   TABLE_SORT_DIRECTIONS
-} from './constants';
+} from './TableConstants';
 import TableActions from './TableActions';
 import TableButton from './TableButton';
 import TableCell from './TableCell';

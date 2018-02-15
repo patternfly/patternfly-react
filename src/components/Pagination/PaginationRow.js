@@ -7,7 +7,7 @@ import PaginationRowItems from './PaginationRowItems';
 import PaginationRowBack from './PaginationRowBack';
 import PaginationRowForward from './PaginationRowForward';
 import { noop } from '../../common/helpers';
-import { PAGINATION_VIEW_TYPES, PAGINATION_VIEW } from './constants';
+import { PAGINATION_VIEW_TYPES, PAGINATION_VIEW } from './PaginationConstants';
 import { Form, FormControl, FormGroup, ControlLabel } from '../Form';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
