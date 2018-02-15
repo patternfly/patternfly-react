@@ -6,7 +6,7 @@ import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Grid, Row, Col, MenuItem } from '../../index';
 import { Button, ButtonGroup, DropdownButton, SplitButton } from './index';
-import { BUTTON_BS_STYLES } from './constants';
+import { BUTTON_BS_STYLES } from './ButtonConstants';
 
 const stories = storiesOf('Button', module);
 

@@ -1,5 +1,5 @@
 import paginate from './paginate';
-import { PAGINATION_VIEW, PAGINATION_VIEW_TYPES } from './constants';
+import { PAGINATION_VIEW, PAGINATION_VIEW_TYPES } from './PaginationConstants';
 import Paginator from './Paginator';
 import PaginationRow from './PaginationRow';
 import PaginationRowAmountOfPages from './PaginationRowAmountOfPages';

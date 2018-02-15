@@ -3,7 +3,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Alert from './Alert';
-import { ALERT_TYPES, DEPRECATED_ALERT_TYPES } from './constants';
+import { ALERT_TYPES, DEPRECATED_ALERT_TYPES } from './AlertConstants';
 
 const ALL_ALERT_TYPES = [...ALERT_TYPES, ...DEPRECATED_ALERT_TYPES];
 

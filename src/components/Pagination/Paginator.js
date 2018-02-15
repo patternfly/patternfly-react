@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PaginationRow from './PaginationRow';
 import { bindMethods, noop } from '../../common/helpers';
-import { PAGINATION_VIEW_TYPES } from './constants';
+import { PAGINATION_VIEW_TYPES } from './PaginationConstants';
 
 class Paginator extends React.Component {
   constructor(props) {

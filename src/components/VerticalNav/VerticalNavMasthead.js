@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { getContext } from 'recompose';
 import { Navbar } from 'react-bootstrap';
 import VerticalNavBrand from './VerticalNavBrand';
-import { navContextTypes } from './constants';
+import { navContextTypes } from './VerticalNavConstants';
 
 /**
  * VerticalNavMasthead - the first child of a VerticalNav component
