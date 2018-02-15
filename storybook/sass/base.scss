@@ -2,13 +2,13 @@
   PatternFly React Storybook Included Stylesheets
 */
 $font-path:      '~patternfly/dist/fonts/';
-$img-path:        '~patternfly/dist/img/';
+$img-path:       '~patternfly/dist/img/';
 $icon-font-path: '~patternfly/dist/fonts/';
 
 @import 'patternfly';
 
 /**
-  Third Party / Dependency LESS imports here
+  Third Party / Dependency imports here
 */
 @import 'show-grid';
 
