@@ -21,6 +21,7 @@ exports[`Filter active components render properly 1`] = `
           className="label label-info"
         >
           <a
+            className="pf-remove-button"
             href="#"
             onClick={[Function]}
           >
@@ -44,6 +45,7 @@ exports[`Filter active components render properly 1`] = `
           className="label label-info"
         >
           <a
+            className="pf-remove-button"
             href="#"
             onClick={[Function]}
           >
