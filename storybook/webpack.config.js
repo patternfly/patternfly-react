@@ -9,7 +9,8 @@ module.exports = {
         loaders: ['style-loader', 'css-loader'],
         include: [
           path.resolve(__dirname, '../src'),
-          path.resolve(__dirname, './')
+          path.resolve(__dirname, './'),
+          path.resolve(__dirname, '../node_modules')
         ]
       },
       // Sass
@@ -21,8 +22,9 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
+              importer: require('../sass-loader.js'),
               includePaths: [
-                path.resolve(__dirname, '../sass/patternfly-react'),
+                path.resolve(__dirname, '../sass'),
                 path.resolve(__dirname, '../node_modules/patternfly/dist/sass'),
                 path.resolve(
                   __dirname,
