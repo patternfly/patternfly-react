@@ -1,57 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TimedToastNotification renders properly 1`] = `
+exports[`TimedToastNotification persisted and paused renders properly 1`] = `
 <div
-  className="alert toast-pf alert-danger alert-dismissable"
+  className="toast-notifications-list-pf"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >
-  <button
-    aria-hidden="true"
-    className="close close-default"
-    disabled={false}
-    onClick={[MockFunction]}
-    type="button"
+  <div
+    className="alert toast-pf alert-success alert-dismissable"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
   >
+    <button
+      aria-hidden="true"
+      className="close close-default"
+      disabled={false}
+      onClick={[MockFunction]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        className="pficon pficon-close"
+      />
+    </button>
     <span
       aria-hidden="true"
-      className="pficon pficon-close"
+      className="pficon pficon-ok"
     />
-  </button>
-  <span
-    aria-hidden="true"
-    className="pficon pficon-error-circle-o"
-  />
-  <span>
-    Danger Will Robinson!
-  </span>
+    <span>
+      Success Will Robinson!
+    </span>
+  </div>
 </div>
 `;
 
 exports[`ToastNotification renders properly 1`] = `
 <div
-  className="alert toast-pf alert-danger alert-dismissable"
-  onMouseEnter={[MockFunction]}
-  onMouseLeave={[MockFunction]}
+  className="toast-notifications-list-pf"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
-  <button
-    aria-hidden="true"
-    className="close close-default"
-    disabled={false}
-    onClick={[MockFunction]}
-    type="button"
+  <div
+    className="alert toast-pf alert-danger alert-dismissable"
+    onMouseEnter={[MockFunction]}
+    onMouseLeave={[MockFunction]}
   >
+    <button
+      aria-hidden="true"
+      className="close close-default"
+      disabled={false}
+      onClick={[MockFunction]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        className="pficon pficon-close"
+      />
+    </button>
     <span
       aria-hidden="true"
-      className="pficon pficon-close"
+      className="pficon pficon-error-circle-o"
     />
-  </button>
-  <span
-    aria-hidden="true"
-    className="pficon pficon-error-circle-o"
-  />
-  <span>
-    Danger Will Robinson!
-  </span>
+    <span>
+      Success Will Robinson!
+    </span>
+  </div>
 </div>
 `;

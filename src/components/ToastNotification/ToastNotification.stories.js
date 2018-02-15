@@ -32,7 +32,7 @@ stories.addWithInfo(
     const actionEnabled = boolean('Action', true);
 
     const story = (
-      <div>
+      <ToastNotificationList>
         <ToastNotification
           type={type}
           onDismiss={
@@ -59,7 +59,7 @@ stories.addWithInfo(
             {message}
           </span>
         </ToastNotification>
-      </div>
+      </ToastNotificationList>
     );
 
     return inlineTemplate({
