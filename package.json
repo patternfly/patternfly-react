@@ -115,7 +115,7 @@
     "storybook:build": "build-storybook -c storybook -o .out",
     "storybook:deploy": "storybook-to-ghpages '--script=storybook:build'",
     "semantic-release": "semantic-release",
-    "stylelint": "stylelint 'sass/**/*.scss'",
+    "stylelint": "stylelint --fix 'sass/**/*.scss'",
     "travis-deploy-once": "travis-deploy-once"
   },
   "jest": {
