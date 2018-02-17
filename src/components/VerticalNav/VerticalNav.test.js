@@ -9,6 +9,8 @@ import { basicExample } from './__mocks__/basicExample';
 
 const { Masthead, Brand, IconBar } = VerticalNav;
 
+console.warn = jest.genMockFunction(); // eslint-disable-line no-console
+
 test('VerticalNav renders properly with item children', () => {
   const component = renderer.create(basicExample());
   const tree = component.toJSON();
