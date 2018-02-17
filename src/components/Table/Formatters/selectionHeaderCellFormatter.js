@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Table } from '../index';
+import { noop } from '../../../common/helpers';
 
 const selectionHeaderCellFormatter = ({
   cellProps,
@@ -30,5 +31,11 @@ selectionHeaderCellFormatter.propTypes = {
   rows: PropTypes.array,
   /** on select all rows callback */
   onSelectAllRows: PropTypes.func
+};
+selectionHeaderCellFormatter.defaultProps = {
+  cellProps: {},
+  column: {},
+  rows: [],
+  onSelectAllRows: noop
 };
 export default selectionHeaderCellFormatter;

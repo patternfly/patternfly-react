@@ -175,7 +175,7 @@ exports[`PaginationRow card renders properly 1`] = `
       id={undefined}
       onChange={[MockFunction]}
       type="text"
-      value={1}
+      value=""
     />
     <span>
        
@@ -398,7 +398,7 @@ exports[`PaginationRow list renders properly 1`] = `
       id={undefined}
       onChange={[MockFunction]}
       type="text"
-      value={1}
+      value=""
     />
     <span>
        
@@ -448,7 +448,7 @@ exports[`PaginationRow list renders properly 1`] = `
 
 exports[`PaginationRow renders with dropdown page size selector 1`] = `
 <form
-  className="content-view-pf-pagination paginator clearfix "
+  className="content-view-pf-pagination paginator list-view-pf-pagination clearfix "
   onSubmit={[Function]}
 >
   <div
@@ -621,7 +621,7 @@ exports[`PaginationRow renders with dropdown page size selector 1`] = `
       id={undefined}
       onChange={[MockFunction]}
       type="text"
-      value={1}
+      value=""
     />
     <span>
        
@@ -844,7 +844,7 @@ exports[`PaginationRow table renders properly 1`] = `
       id={undefined}
       onChange={[MockFunction]}
       type="text"
-      value={1}
+      value=""
     />
     <span>
        
@@ -1003,7 +1003,7 @@ exports[`PaginationRow.Items renders 1`] = `
 
 exports[`Paginator renders properly a middle page 1`] = `
 <form
-  className="content-view-pf-pagination clearfix "
+  className="content-view-pf-pagination list-view-pf-pagination clearfix "
   onSubmit={[Function]}
 >
   <div
@@ -1198,7 +1198,7 @@ exports[`Paginator renders properly a middle page 1`] = `
 
 exports[`Paginator renders properly the first page 1`] = `
 <form
-  className="content-view-pf-pagination clearfix "
+  className="content-view-pf-pagination list-view-pf-pagination clearfix "
   onSubmit={[Function]}
 >
   <div
@@ -1393,7 +1393,7 @@ exports[`Paginator renders properly the first page 1`] = `
 
 exports[`Paginator renders properly the last page 1`] = `
 <form
-  className="content-view-pf-pagination clearfix "
+  className="content-view-pf-pagination list-view-pf-pagination clearfix "
   onSubmit={[Function]}
 >
   <div

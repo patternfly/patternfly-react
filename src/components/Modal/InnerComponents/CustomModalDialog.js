@@ -80,6 +80,14 @@ CustomModalDialog.propTypes = {
   children: PropTypes.node
 };
 
+CustomModalDialog.defaultProps = {
+  dialogClassName: '',
+  contentClassName: '',
+  className: '',
+  style: {},
+  children: null
+};
+
 export default bsClass(
   'modal',
   bsSizes([Size.LARGE, Size.SMALL], CustomModalDialog)

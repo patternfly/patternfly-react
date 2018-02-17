@@ -23,9 +23,11 @@ ListViewInfoItem.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** Toggle the InfoItem contents stacking */
-  stacked: PropTypes.bool.isRequired
+  stacked: PropTypes.bool
 };
 ListViewInfoItem.defaultProps = {
+  children: null,
+  className: '',
   stacked: false
 };
 export default ListViewInfoItem;

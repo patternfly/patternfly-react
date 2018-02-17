@@ -339,7 +339,7 @@ export class MockServerPaginationTable extends React.Component {
   }
 }
 MockServerPaginationTable.propTypes = {
-  onServerPageLogger: PropTypes.func
+  onServerPageLogger: PropTypes.func.isRequired
 };
 
 export const mockServerPaginationTableSource = `
@@ -687,6 +687,6 @@ export class MockServerPaginationTable extends React.Component {
   }
 }
 MockServerPaginationTable.propTypes = {
-  onServerPageLogger: PropTypes.func
+  onServerPageLogger: PropTypes.func.isRequired
 };
 `;

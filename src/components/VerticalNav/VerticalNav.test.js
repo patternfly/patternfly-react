@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import { VerticalNav } from './index';
 
 import { mockNavItems } from './__mocks__/mockNavItems';
-import { mockIconBarChildren } from './__mocks__/mockIconBarChildren';
+import { MockIconBarChildren } from './__mocks__/mockIconBarChildren';
 import { basicExample } from './__mocks__/basicExample';
 
 const { Masthead, Brand, IconBar } = VerticalNav;
@@ -29,7 +29,9 @@ test('VerticalNav renders properly with item objects', () => {
           iconImg="../../../storybook/img/logo-alt.svg"
           titleImg="../../../storybook/img/brand-alt.svg"
         />
-        <IconBar>{mockIconBarChildren}</IconBar>
+        <IconBar>
+          <MockIconBarChildren />
+        </IconBar>
       </Masthead>
     </VerticalNav>
   );

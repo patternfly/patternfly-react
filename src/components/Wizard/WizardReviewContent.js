@@ -25,4 +25,9 @@ WizardReviewContent.propTypes = {
   /** Step collapsed */
   collapsed: PropTypes.bool
 };
+WizardReviewContent.defaultProps = {
+  children: null,
+  className: '',
+  collapsed: false
+};
 export default WizardReviewContent;

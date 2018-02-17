@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Button, Icon, FormControl } from '../../index';
-import { bindMethods } from '../../common/helpers';
+import { bindMethods, noop } from '../../common/helpers';
 
 class ToolbarFind extends React.Component {
   constructor() {
@@ -141,7 +141,7 @@ ToolbarFind.propTypes = {
   /** index of current item */
   currentIndex: PropTypes.number,
   /** total number of items */
-  totalCount: PropTypes.number,
+  totalCount: PropTypes.number.isRequired,
   /** Placeholder text when empty */
   placeholder: PropTypes.string,
   /** Callback function when user hits the enter key */
@@ -152,6 +152,16 @@ ToolbarFind.propTypes = {
   onFindNext: PropTypes.func,
   /** Callback function when the find previous is selected */
   onFindPrevious: PropTypes.func
+};
+
+ToolbarFind.defaultProps = {
+  className: '',
+  currentIndex: 0,
+  placeholder: '',
+  onEnter: noop,
+  onChange: noop,
+  onFindNext: noop,
+  onFindPrevious: noop
 };
 
 export default ToolbarFind;

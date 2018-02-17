@@ -28,4 +28,8 @@ EmptyStateAction.propTypes = {
   /** Turn on secondary container styling */
   secondary: PropTypes.bool
 };
+EmptyStateAction.defaultProps = {
+  className: '',
+  secondary: false
+};
 export default EmptyStateAction;

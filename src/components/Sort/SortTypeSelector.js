@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
+import { noop } from '../../common/helpers';
 
 const SortTypeSelector = ({
   className,
@@ -54,6 +55,13 @@ SortTypeSelector.propTypes = {
   currentSortType: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   /** function(field, value) - Callback to call when a sort type is selected */
   onSortTypeSelected: PropTypes.func
+};
+
+SortTypeSelector.defaultProps = {
+  className: '',
+  id: '',
+  currentSortType: null,
+  onSortTypeSelected: noop
 };
 
 export default SortTypeSelector;

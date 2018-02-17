@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { ListGroupItem } from '../ListGroup';
+import { noop } from '../../common/helpers';
 
 /**
  * WizardSidebarGroupItem component for Patternfly React
@@ -35,9 +36,9 @@ const WizardSidebarGroupItem = ({
 };
 WizardSidebarGroupItem.propTypes = {
   /** The wizard parent step index */
-  stepIndex: PropTypes.number,
+  stepIndex: PropTypes.number.isRequired,
   /** The wizard sub step index */
-  subStepIndex: PropTypes.number,
+  subStepIndex: PropTypes.number.isRequired,
   /** Additional css classes */
   className: PropTypes.string,
   /** This wizard sub step name */
@@ -50,5 +51,13 @@ WizardSidebarGroupItem.propTypes = {
   activeSubStep: PropTypes.string,
   /** Sidebar group item click handler */
   onClick: PropTypes.func
+};
+WizardSidebarGroupItem.defaultProps = {
+  className: '',
+  subStep: '',
+  label: '',
+  title: '',
+  activeSubStep: '',
+  onClick: noop
 };
 export default WizardSidebarGroupItem;

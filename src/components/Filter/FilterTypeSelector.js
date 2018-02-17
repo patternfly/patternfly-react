@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
+import { noop } from '../../common/helpers';
 
 const FilterTypeSelector = ({
   className,
@@ -32,7 +33,7 @@ const FilterTypeSelector = ({
             <MenuItem
               title={placeholder}
               key="Placeholder"
-              onSelect={() => onFilterTypeSelected && onFilterTypeSelected()}
+              onSelect={onFilterTypeSelected}
             >
               {placeholder}
             </MenuItem>
@@ -45,9 +46,7 @@ const FilterTypeSelector = ({
               <MenuItem
                 className={menuItemClasses}
                 key={item.id || index}
-                onSelect={() =>
-                  onFilterTypeSelected && onFilterTypeSelected(item)
-                }
+                onSelect={() => onFilterTypeSelected(item)}
               >
                 {item.title || item}
               </MenuItem>
@@ -73,6 +72,14 @@ FilterTypeSelector.propTypes = {
   placeholder: PropTypes.string,
   /** function(field, value) - Callback to call when a filter type is selected */
   onFilterTypeSelected: PropTypes.func
+};
+
+FilterTypeSelector.defaultProps = {
+  className: '',
+  id: '',
+  currentFilterType: '',
+  placeholder: '',
+  onFilterTypeSelected: noop
 };
 
 export default FilterTypeSelector;

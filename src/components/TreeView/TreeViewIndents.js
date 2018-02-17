@@ -15,7 +15,7 @@ const TreeViewIndents = ({ level }) => {
 };
 
 TreeViewIndents.propTypes = {
-  level: PropTypes.number
+  level: PropTypes.number.isRequired
 };
 
 export default TreeViewIndents;

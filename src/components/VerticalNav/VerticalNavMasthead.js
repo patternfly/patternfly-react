@@ -4,6 +4,7 @@ import { getContext } from 'recompose';
 import { Navbar } from 'react-bootstrap';
 import VerticalNavBrand from './VerticalNavBrand';
 import { navContextTypes } from './VerticalNavConstants';
+import { noop } from '../../common/helpers';
 
 /**
  * VerticalNavMasthead - the first child of a VerticalNav component
@@ -61,6 +62,14 @@ BaseVerticalNavMasthead.propTypes = {
   updateNavOnMenuToggleClick: PropTypes.func,
   /** If any non-Brand children are passed, they will be rendered after the .navbar-header */
   children: PropTypes.node
+};
+BaseVerticalNavMasthead.defaultProps = {
+  title: '',
+  titleImg: '',
+  iconImg: '',
+  href: '',
+  updateNavOnMenuToggleClick: noop,
+  children: null
 };
 
 const VerticalNavMasthead = getContext(navContextTypes)(

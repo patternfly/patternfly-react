@@ -73,6 +73,10 @@ MockWizardBase.propTypes = {
   /** Initial sub step index */
   initialSubStepIndex: PropTypes.number,
   /** Wizard steps */
-  steps: PropTypes.array
+  steps: PropTypes.array.isRequired
+};
+MockWizardBase.defaultProps = {
+  initialStepIndex: 0,
+  initialSubStepIndex: 0
 };
 export default MockWizardBase;

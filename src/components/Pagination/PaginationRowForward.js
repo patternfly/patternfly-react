@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import PaginationRowArrowIcon from './PaginationRowArrowIcon';
+import { noop } from '../../common/helpers';
 
 /**
  * PaginationRowForward component for Patternfly React
@@ -50,16 +51,21 @@ PaginationRowForward.propTypes = {
   /** additional class names */
   className: PropTypes.string,
   /** pagination page */
-  page: PropTypes.number,
+  page: PropTypes.number.isRequired,
   /** calculated amount of pages */
-  amountOfPages: PropTypes.number,
+  amountOfPages: PropTypes.number.isRequired,
   /** messages next page */
-  messagesNextPage: PropTypes.string,
+  messagesNextPage: PropTypes.string.isRequired,
   /** messages last page */
-  messagesLastPage: PropTypes.string,
+  messagesLastPage: PropTypes.string.isRequired,
   /** next page callback */
   onNextPage: PropTypes.func,
   /** last page callback */
   onLastPage: PropTypes.func
+};
+PaginationRowForward.defaultProps = {
+  className: '',
+  onNextPage: noop,
+  onLastPage: noop
 };
 export default PaginationRowForward;

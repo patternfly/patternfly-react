@@ -19,4 +19,8 @@ WizardMain.propTypes = {
   /** Additional css classes */
   className: PropTypes.string
 };
+WizardMain.defaultProps = {
+  children: null,
+  className: ''
+};
 export default WizardMain;

@@ -13,4 +13,8 @@ actionHeaderCellFormatter.propTypes = {
   /** column definition */
   column: PropTypes.object
 };
+actionHeaderCellFormatter.defaultProps = {
+  value: null,
+  column: {}
+};
 export default actionHeaderCellFormatter;

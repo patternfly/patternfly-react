@@ -43,10 +43,15 @@ TableHeading.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** Heading alignment */
-  align: PropTypes.oneOf(TABLE_ALIGNMENT_TYPES),
+  align: PropTypes.oneOf(TABLE_ALIGNMENT_TYPES), // eslint-disable-line react/require-default-props
   /** sortable heading */
   sort: PropTypes.bool,
   /** sort direction */
-  sortDirection: PropTypes.oneOf(TABLE_SORT_DIRECTIONS)
+  sortDirection: PropTypes.oneOf(TABLE_SORT_DIRECTIONS) // eslint-disable-line react/require-default-props
+};
+TableHeading.defaultProps = {
+  children: null,
+  className: '',
+  sort: false
 };
 export default TableHeading;

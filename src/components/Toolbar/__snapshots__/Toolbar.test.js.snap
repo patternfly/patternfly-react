@@ -50,6 +50,7 @@ exports[`Toolbar renders properly 1`] = `
                     className="dropdown-menu"
                     role="menu"
                   >
+                    
                     <li
                       className="selected"
                       role="presentation"

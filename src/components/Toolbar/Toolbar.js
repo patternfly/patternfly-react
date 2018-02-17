@@ -43,4 +43,9 @@ Toolbar.propTypes = {
   className: PropTypes.string
 };
 
+Toolbar.defaultProps = {
+  children: null,
+  className: ''
+};
+
 export default withContext(toolbarContextTypes, getToolbarContext)(Toolbar);

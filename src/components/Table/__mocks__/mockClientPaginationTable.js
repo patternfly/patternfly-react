@@ -457,7 +457,7 @@ export class MockClientPaginationTable extends React.Component {
   }
 }
 MockClientPaginationTable.propTypes = {
-  onRowsLogger: PropTypes.func
+  onRowsLogger: PropTypes.func.isRequired
 };
 
 export const mockClientPaginationTableSource = `
@@ -917,6 +917,6 @@ export class MockClientPaginationTable extends React.Component {
   }
 }
 MockClientPaginationTable.propTypes = {
-  onRowsLogger: PropTypes.func
+  onRowsLogger: PropTypes.func.isRequired
 };
 `;

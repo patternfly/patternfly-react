@@ -17,4 +17,7 @@ ListViewCheckbox.propTypes = {
   /** Additional css classes */
   className: PropTypes.string
 };
+ListViewCheckbox.defaultProps = {
+  className: ''
+};
 export default ListViewCheckbox;

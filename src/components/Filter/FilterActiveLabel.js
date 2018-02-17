@@ -14,4 +14,9 @@ FilterActiveLabel.propTypes = {
   className: PropTypes.string
 };
 
+FilterActiveLabel.defaultProps = {
+  children: null,
+  className: ''
+};
+
 export default FilterActiveLabel;

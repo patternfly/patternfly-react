@@ -16,8 +16,8 @@ const PaginationRowAmountOfPages = ({
 );
 PaginationRowAmountOfPages.propTypes = {
   /** messages of */
-  messagesOf: PropTypes.string,
+  messagesOf: PropTypes.string.isRequired,
   /** calculated amount of pages */
-  amountOfPages: PropTypes.number
+  amountOfPages: PropTypes.number.isRequired
 };
 export default PaginationRowAmountOfPages;

@@ -147,6 +147,9 @@ const correctDepth = props => {
   return <Component {...props} />;
 };
 correctDepth.propTypes = { depth: PropTypes.string };
+correctDepth.defaultProps = {
+  depth: 'primary'
+};
 
 const isNavItem = node =>
   node.type.displayName &&

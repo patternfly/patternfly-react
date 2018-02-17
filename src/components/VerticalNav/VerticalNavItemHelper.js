@@ -361,10 +361,13 @@ BaseVerticalNavItemHelper.propTypes = {
    * Sub-items, passed as JSX children (SecondaryItem, TertiaryItem).
    * Can alternatively pass subItems array as part of item or as its own prop.
    */
-  children: PropTypes.node
+  children: PropTypes.node,
+  title: PropTypes.string
 };
 
 BaseVerticalNavItemHelper.defaultProps = {
+  item: {},
+  children: null,
   title: ''
 };
 

@@ -102,6 +102,7 @@ exports[`Filter categories renders properly 1`] = `
             className="dropdown-menu"
             role="menu"
           >
+            
             <li
               className=""
               role="presentation"
@@ -381,6 +382,7 @@ exports[`Filter input renders properly 1`] = `
             className="dropdown-menu"
             role="menu"
           >
+            
             <li
               className="selected"
               role="presentation"
@@ -506,6 +508,7 @@ exports[`Filter renders properly in a Toolbar 1`] = `
                     className="dropdown-menu"
                     role="menu"
                   >
+                    
                     <li
                       className="selected"
                       role="presentation"
@@ -623,6 +626,7 @@ exports[`Filter select renders properly 1`] = `
             className="dropdown-menu"
             role="menu"
           >
+            
             <li
               className=""
               role="presentation"
@@ -714,6 +718,7 @@ exports[`Filter select renders properly 1`] = `
             className="dropdown-menu"
             role="menu"
           >
+            
             <li
               className=""
               role="presentation"

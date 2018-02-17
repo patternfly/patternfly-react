@@ -11,4 +11,7 @@ ListViewDescriptionHeading.propTypes = {
   /** Child node - content rendered as heading */
   children: PropTypes.node
 };
+ListViewDescriptionHeading.defaultProps = {
+  children: null
+};
 export default ListViewDescriptionHeading;

@@ -16,4 +16,8 @@ AboutModalVersionItem.propTypes = {
   versionText: PropTypes.string.isRequired
 };
 
+AboutModalVersionItem.defaultProps = {
+  className: ''
+};
+
 export default AboutModalVersionItem;

@@ -16,4 +16,8 @@ PatternflyIcon.propTypes = {
   /** additional classes */
   className: PropTypes.string
 };
+
+PatternflyIcon.defaultProps = {
+  className: ''
+};
 export default PatternflyIcon;

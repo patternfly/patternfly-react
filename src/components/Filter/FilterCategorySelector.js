@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
+import { noop } from '../../common/helpers';
 
 const FilterCategorySelector = ({
   children,
@@ -39,9 +40,7 @@ const FilterCategorySelector = ({
               <MenuItem
                 title={placeholder}
                 key="Placeholder"
-                onSelect={() =>
-                  onFilterCategorySelected && onFilterCategorySelected()
-                }
+                onSelect={onFilterCategorySelected}
               >
                 {placeholder}
               </MenuItem>
@@ -55,9 +54,7 @@ const FilterCategorySelector = ({
                   <MenuItem
                     className={menuItemClasses}
                     key={item.id || index}
-                    onSelect={() =>
-                      onFilterCategorySelected && onFilterCategorySelected(item)
-                    }
+                    onSelect={() => onFilterCategorySelected(item)}
                   >
                     {item.title || item}
                   </MenuItem>
@@ -87,6 +84,15 @@ FilterCategorySelector.propTypes = {
   placeholder: PropTypes.string,
   /** function(field, value) - Callback to call when a category is added */
   onFilterCategorySelected: PropTypes.func
+};
+
+FilterCategorySelector.defaultProps = {
+  children: null,
+  className: '',
+  id: '',
+  currentCategory: '',
+  placeholder: '',
+  onFilterCategorySelected: noop
 };
 
 export default FilterCategorySelector;

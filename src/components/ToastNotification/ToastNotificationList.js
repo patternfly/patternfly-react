@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { bindMethods } from '../../common/helpers';
+import { bindMethods, noop } from '../../common/helpers';
 import TimedToastNotification from './TimedToastNotification';
 
 /**
@@ -65,5 +65,10 @@ ToastNotificationList.propTypes = {
   /** children nodes  */
   children: PropTypes.node
 };
-
+ToastNotificationList.defaultProps = {
+  className: '',
+  onMouseEnter: noop,
+  onMouseLeave: noop,
+  children: null
+};
 export default ToastNotificationList;

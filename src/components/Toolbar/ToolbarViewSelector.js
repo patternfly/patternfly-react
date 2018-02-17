@@ -18,4 +18,9 @@ ToolbarViewSelector.propTypes = {
   className: PropTypes.string
 };
 
+ToolbarViewSelector.defaultProps = {
+  children: null,
+  className: ''
+};
+
 export default ToolbarViewSelector;

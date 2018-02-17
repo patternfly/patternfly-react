@@ -2,7 +2,7 @@
 
 exports[`Wizard embedded renders properly 1`] = `
 <div
-  className={undefined}
+  className=""
 >
   <h2
     className=""
@@ -746,7 +746,7 @@ exports[`Wizard loading renders properly 1`] = `
     className="col-sm-12"
   >
     <div
-      className={undefined}
+      className=""
     >
       <div
         className="wizard-pf-header"

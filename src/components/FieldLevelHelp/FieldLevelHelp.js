@@ -36,7 +36,9 @@ FieldLevelHelp.propTypes = {
   children: PropTypes.node
 };
 FieldLevelHelp.defaultProps = {
-  close: 'true'
+  content: null,
+  close: 'true',
+  children: null
 };
 
 export default FieldLevelHelp;

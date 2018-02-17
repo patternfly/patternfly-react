@@ -7,6 +7,7 @@ const DropdownButton = props => <BsDropdownButton {...props} />;
 
 DropdownButton.propTypes = {
   ...BsDropdownButton.propTypes,
+  // eslint-disable-next-line react/require-default-props
   bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES)
 };
 

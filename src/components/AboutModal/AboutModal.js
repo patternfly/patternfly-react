@@ -60,5 +60,13 @@ AboutModal.propTypes = {
   /** Alternate text for close button for screen readers (default 'Close') */
   closeText: PropTypes.string
 };
+AboutModal.defaultProps = {
+  children: null,
+  className: '',
+  productTitle: null,
+  logo: '',
+  altLogo: '',
+  trademarkText: ''
+};
 
 export default AboutModal;

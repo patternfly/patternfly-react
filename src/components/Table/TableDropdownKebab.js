@@ -23,5 +23,8 @@ TableDropdownKebab.propTypes = {
   /** children nodes */
   children: PropTypes.node
 };
+TableDropdownKebab.defaultProps = {
+  children: null
+};
 
 export default TableDropdownKebab;

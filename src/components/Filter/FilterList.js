@@ -17,4 +17,9 @@ FilterList.propTypes = {
   className: PropTypes.string
 };
 
+FilterList.defaultProps = {
+  children: null,
+  className: ''
+};
+
 export default FilterList;

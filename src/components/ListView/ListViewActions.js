@@ -11,4 +11,7 @@ ListViewActions.propTypes = {
   /** Child nodes which render individual actions - Buttons, DropdownKebab... */
   children: PropTypes.node
 };
+ListViewActions.defaultProps = {
+  children: null
+};
 export default ListViewActions;

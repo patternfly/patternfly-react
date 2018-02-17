@@ -30,4 +30,10 @@ WizardSidebarGroup.propTypes = {
   /** The active step */
   activeStep: PropTypes.string
 };
+WizardSidebarGroup.defaultProps = {
+  children: null,
+  className: '',
+  step: '',
+  activeStep: ''
+};
 export default WizardSidebarGroup;

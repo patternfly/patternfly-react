@@ -82,3 +82,10 @@ inlineTemplate.propTypes = {
   /** story content */
   story: PropTypes.node
 };
+inlineTemplate.defaultProps = {
+  documentationLink: '',
+  reactBootstrapDocumentationLink: '',
+  description: null,
+  style: {},
+  story: null
+};

@@ -31,4 +31,8 @@ Filter.propTypes = {
   className: PropTypes.string
 };
 
+Filter.defaultProps = {
+  children: null,
+  className: ''
+};
 export default getContext(toolbarContextTypes)(Filter);

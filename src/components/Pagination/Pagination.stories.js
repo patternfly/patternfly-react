@@ -48,6 +48,7 @@ stories.add(
           PAGINATION_VIEW_TYPES,
           PAGINATION_VIEW_TYPES[0]
         )}
+        pageInputValue={number('Page', 1)}
         amountOfPages={number('Number of Pages', 5)}
         pageSizeDropUp={boolean('Page Size Drop Up', true)}
         itemCount={number('Item Count:', 75)}

@@ -46,6 +46,9 @@ DropdownKebab.propTypes = {
   toggleStyle: PropTypes.string
 };
 DropdownKebab.defaultProps = {
+  className: '',
+  children: null,
+  pullRight: false,
   componentClass: ButtonGroup,
   toggleStyle: 'link'
 };

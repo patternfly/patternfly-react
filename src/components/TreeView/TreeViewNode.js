@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-
+import { noop } from '../../common/helpers';
 import TreeViewExpand from './TreeViewExpand';
 import TreeViewIcon from './TreeViewIcon';
 import TreeViewIndents from './TreeViewIndents';
@@ -77,9 +77,15 @@ class TreeViewNode extends Component {
 
 TreeViewNode.propTypes = {
   node: PropTypes.object,
-  level: PropTypes.number,
+  level: PropTypes.number.isRequired,
   visible: PropTypes.bool,
   selectNode: PropTypes.func
+};
+
+TreeViewNode.defaultProps = {
+  node: {},
+  visible: false,
+  selectNode: noop
 };
 
 export default TreeViewNode;

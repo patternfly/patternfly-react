@@ -110,7 +110,7 @@ Paginator.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** pagination row view type */
-  viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES),
+  viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES).isRequired,
   /** user pagination settings */
   pagination: PropTypes.shape({
     /** the current page */
@@ -119,7 +119,7 @@ Paginator.propTypes = {
     perPage: PropTypes.number.isRequired,
     /** per page options */
     perPageOptions: PropTypes.array
-  }),
+  }).isRequired,
   /** calculated number of rows */
   itemCount: PropTypes.number.isRequired,
   /** message text inputs for i18n */
@@ -139,6 +139,18 @@ Paginator.propTypes = {
   onPerPageSelect: PropTypes.func
 };
 Paginator.defaultProps = {
+  className: '',
+  messages: {
+    firstPage: 'First Page',
+    previousPage: 'Previous Page',
+    currentPage: 'Current Page',
+    nextPage: 'Next Page',
+    lastPage: 'Last Page',
+    perPage: 'per page',
+    of: 'of'
+  },
+  dropdownButtonId: 'pagination-row-dropdown',
+  onPerPageSelect: noop,
   onPageSet: noop
 };
 

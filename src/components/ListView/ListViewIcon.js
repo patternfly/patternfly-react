@@ -26,6 +26,7 @@ ListViewIcon.propTypes = {
 };
 ListViewIcon.defaultProps = {
   type: 'fa',
-  size: 'sm'
+  size: 'sm',
+  className: ''
 };
 export default ListViewIcon;

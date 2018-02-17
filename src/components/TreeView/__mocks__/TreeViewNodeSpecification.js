@@ -33,7 +33,11 @@ TreeViewNodeSpecification.propTypes = {
 };
 
 TreeViewNodeSpecification.defaultProps = {
-  icon: 'fa fa-folder'
+  icon: 'fa fa-folder',
+  text: '',
+  selectable: false,
+  state: {},
+  nodes: []
 };
 
 export default TreeViewNodeSpecification;

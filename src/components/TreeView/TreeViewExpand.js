@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { noop } from '../../common/helpers';
 
 const TreeViewExpand = ({ nodes, expanded, toggleExpand }) => {
   const hasChildren = nodes.length > 0;
@@ -21,7 +22,9 @@ TreeViewExpand.propTypes = {
 };
 
 TreeViewExpand.defaultProps = {
-  nodes: []
+  nodes: [],
+  expanded: false,
+  toggleExpand: noop
 };
 
 export default TreeViewExpand;

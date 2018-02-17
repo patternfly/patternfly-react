@@ -7,4 +7,7 @@ tableCellFormatter.propTypes = {
   /** cell value */
   value: PropTypes.node // eslint-disable-line react/no-unused-prop-types
 };
+tableCellFormatter.defaultProps = {
+  value: null
+};
 export default tableCellFormatter;

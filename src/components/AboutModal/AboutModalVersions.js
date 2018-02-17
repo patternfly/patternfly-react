@@ -19,4 +19,9 @@ AboutModalVersions.propTypes = {
   className: PropTypes.string
 };
 
+AboutModalVersions.defaultProps = {
+  children: null,
+  className: ''
+};
+
 export default AboutModalVersions;

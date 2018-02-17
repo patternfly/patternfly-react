@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { noop } from '../../../common/helpers';
 
 // wraps the default header definitions and adds support for `customFormatters`
 const customHeaderFormattersDefinition = ({
@@ -36,5 +37,11 @@ customHeaderFormattersDefinition.propTypes = {
   onSelectAllRows: PropTypes.func,
   /** onSort callback */
   onSort: PropTypes.func
+};
+customHeaderFormattersDefinition.defaultProps = {
+  cellProps: {},
+  columns: [],
+  sortingColumns: {},
+  onSort: noop
 };
 export default customHeaderFormattersDefinition;

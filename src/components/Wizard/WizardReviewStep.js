@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ListGroupItem } from '../ListGroup';
+import { noop } from '../../common/helpers';
 
 /**
  * WizardReviewStep component for Patternfly React
@@ -22,5 +23,11 @@ WizardReviewStep.propTypes = {
   title: PropTypes.string,
   /** Step collapsed */
   collapsed: PropTypes.bool
+};
+WizardReviewStep.defaultProps = {
+  children: null,
+  onClick: noop,
+  title: '',
+  collapsed: false
 };
 export default WizardReviewStep;

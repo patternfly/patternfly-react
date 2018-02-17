@@ -8,6 +8,7 @@ import {
   bindMethods,
   filterChildren,
   findChild,
+  noop,
   propsChanged
 } from '../../common/helpers';
 import Timer from '../../common/Timer';
@@ -34,7 +35,7 @@ class BaseVerticalNav extends React.Component {
     // More state is defined in controlledStateTypes.
     // These ones just don't need to be able to be controlled by props.
     this.state = {
-      forceHidden: false,
+      forceHidden: false, // eslint-disable-line react/no-unused-state
       controlledActivePath: false,
       controlledHoverPath: false,
       controlledMobilePath: false,
@@ -93,19 +94,52 @@ class BaseVerticalNav extends React.Component {
     removeBodyEventListener('mousedown', this.handleBodyClick);
   }
 
-  updateBodyClasses() {
-    // Note: Updating the body element classes from here like this is a hacky, non-react-y pattern.
-    // It's only here for consistency. See comments on getBodyContentElement in ./VerticalNavConstants.js.
-    const {
-      dynamicBodyClasses,
-      navCollapsed,
-      pinnedPath,
-      isMobile
-    } = this.props;
-    const collapsed = navCollapsed && pinnedPath === null;
-    if (dynamicBodyClasses) {
-      setBodyClassIf(!isMobile && collapsed, 'collapsed-nav');
-      setBodyClassIf(isMobile, 'hidden-nav');
+  onLayoutChange(newLayout) {
+    const { onLayoutChange, setControlledState } = this.props;
+    setControlledState({ isMobile: newLayout === 'mobile' });
+    onLayoutChange && onLayoutChange(newLayout);
+  }
+
+  setActivePath(activePath) {
+    if (!this.state.controlledActivePath) {
+      this.props.setControlledState({ activePath });
+    }
+  }
+
+  setControlledActivePath(controlledActivePath) {
+    this.setState({ controlledActivePath });
+  }
+
+  setControlledHoverPath(controlledHoverPath) {
+    this.setState({ controlledHoverPath });
+  }
+
+  setControlledMobilePath(controlledMobilePath) {
+    this.setState({ controlledMobilePath });
+  }
+
+  setControlledPinnedPath(controlledPinnedPath) {
+    this.setState({ controlledPinnedPath });
+  }
+
+  setHoverPath(hoverPath) {
+    if (!this.state.controlledHoverPath) {
+      this.props.setControlledState({
+        hoverPath,
+        ...(hoverPath === null ? { showMobileNav: false } : {})
+      });
+    }
+  }
+
+  setMobilePath(mobilePath) {
+    if (!this.state.controlledMobilePath) {
+      this.props.setControlledState({ mobilePath });
+    }
+  }
+
+  setPinnedPath(pinnedPath) {
+    if (!this.state.controlledPinnedPath) {
+      this.props.setControlledState({ pinnedPath });
     }
   }
 
@@ -129,9 +163,9 @@ class BaseVerticalNav extends React.Component {
   }
 
   forceHideSecondaryMenu() {
-    this.setState({ forceHidden: true });
+    this.setState({ forceHidden: true }); // eslint-disable-line react/no-unused-state
     setTimeout(() => {
-      this.setState({ forceHidden: false });
+      this.setState({ forceHidden: false }); // eslint-disable-line react/no-unused-state
     }, 500);
   }
 
@@ -142,7 +176,7 @@ class BaseVerticalNav extends React.Component {
 
   navigateToItem(item) {
     const { onNavigate } = this.props;
-    onNavigate && onNavigate(item);
+    onNavigate(item);
     // Note: This should become router-aware later on.
   }
 
@@ -482,7 +516,7 @@ BaseVerticalNav.propTypes = {
   /** Delay between mouse blur and menu hide in ms */
   blurDelay: PropTypes.number,
   /** Optional callback for updating isMobile prop */
-  onLayoutChange: PropTypes.func,
+  onLayoutChange: PropTypes.func, // eslint-disable-line react/require-default-props
   /** Optional callback for updating navCollapsed and showMobileNav props (option 1) */
   onMenuToggleClick: PropTypes.func,
   /** Optional callback for updating navCollapsed and showMobileNav props (option 2) */
@@ -504,7 +538,7 @@ BaseVerticalNav.propTypes = {
   /** Navigation items, passed as Item, SecondaryItem and TertiaryItem children. */
   children: PropTypes.node,
   /** Helper injected by `controlled()` to manage controlledStateTypes values */
-  setControlledState: PropTypes.func
+  setControlledState: PropTypes.func // eslint-disable-line react/require-default-props
 };
 
 BaseVerticalNav.defaultProps = {
@@ -518,7 +552,6 @@ BaseVerticalNav.defaultProps = {
   forceHidden: false,
   hideMasthead: false,
   persistentSecondary: true,
-  isMobile: null,
   hoverDelay: 500,
   blurDelay: 700,
   onMenuToggleClick: null,
@@ -528,7 +561,9 @@ BaseVerticalNav.defaultProps = {
   onItemHover: null,
   onItemBlur: null,
   onItemPin: null,
-  onMobileSelection: null
+  onMobileSelection: null,
+  onNavigate: noop,
+  children: null
 };
 
 const VerticalNav = controlled(controlledState)(BaseVerticalNav);

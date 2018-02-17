@@ -40,12 +40,15 @@ Alert.propTypes = {
   /** callback when alert is dismissed  */
   onDismiss: PropTypes.func,
   /** the type of alert  */
-  type: PropTypes.oneOf([...ALERT_TYPES, ...DEPRECATED_ALERT_TYPES]).isRequired,
+  type: PropTypes.oneOf([...ALERT_TYPES, ...DEPRECATED_ALERT_TYPES]),
   /** children nodes  */
   children: PropTypes.node
 };
 Alert.defaultProps = {
-  type: ALERT_TYPE_ERROR
+  className: '',
+  onDismiss: null, // we do not want to default noop b/c of conditional dismiss button
+  type: ALERT_TYPE_ERROR,
+  children: null
 };
 Alert.ALERT_TYPES = ALERT_TYPES;
 

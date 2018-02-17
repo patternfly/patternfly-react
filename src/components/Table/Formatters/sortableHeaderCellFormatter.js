@@ -37,6 +37,9 @@ sortableHeaderCellFormatter.propTypes = {
   onSort: PropTypes.func
 };
 sortableHeaderCellFormatter.defaultProps = {
+  cellProps: {},
+  column: {},
+  sortingColumns: {},
   onSort: noop
 };
 

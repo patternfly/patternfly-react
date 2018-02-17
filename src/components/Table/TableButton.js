@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Button } from '../Button';
+import { noop } from '../../common/helpers';
 
 /**
  * TableButton component for Patternfly React
@@ -21,5 +22,10 @@ TableButton.propTypes = {
   className: PropTypes.string,
   /** onClick callback for button */
   onClick: PropTypes.func
+};
+TableButton.defaultProps = {
+  children: null,
+  className: '',
+  onClick: noop
 };
 export default TableButton;

@@ -10,5 +10,8 @@ PaginationRowButtonGroup.propTypes = {
   /** additional classes */
   className: PropTypes.string
 };
+PaginationRowButtonGroup.defaultProps = {
+  className: ''
+};
 
 export default PaginationRowButtonGroup;

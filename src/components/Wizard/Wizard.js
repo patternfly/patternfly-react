@@ -30,4 +30,9 @@ Wizard.propTypes = {
   /** Embedded wizard */
   embedded: PropTypes.bool
 };
+Wizard.defaultProps = {
+  children: null,
+  className: '',
+  embedded: false
+};
 export default Wizard;

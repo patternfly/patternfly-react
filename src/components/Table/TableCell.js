@@ -25,6 +25,10 @@ TableCell.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** Cell alignment */
-  align: PropTypes.oneOf(TABLE_ALIGNMENT_TYPES)
+  align: PropTypes.oneOf(TABLE_ALIGNMENT_TYPES) // eslint-disable-line react/require-default-props
+};
+TableCell.defaultProps = {
+  children: null,
+  className: ''
 };
 export default TableCell;

@@ -7,7 +7,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 
 import { mockNavItems } from './__mocks__/mockNavItems';
-import { mockIconBarChildren } from './__mocks__/mockIconBarChildren';
+import { MockIconBarChildren } from './__mocks__/mockIconBarChildren';
 import { basicExample } from './__mocks__/basicExample';
 
 import pfLogo from '../../../storybook/img/logo-alt.svg';
@@ -28,7 +28,7 @@ const MockFixedLayout = props => (
     {props.children}
   </div>
 );
-MockFixedLayout.propTypes = { children: PropTypes.node };
+MockFixedLayout.propTypes = { children: PropTypes.node.isRequired };
 
 const mockBodyContainer = className => (
   <div
@@ -205,6 +205,7 @@ stories.add(
   withInfo({
     propTablesExclude: [
       MockFixedLayout,
+      MockIconBarChildren,
       Icon,
       MenuItem,
       Dropdown,
@@ -222,7 +223,9 @@ stories.add(
         >
           <Masthead>
             <Brand iconImg={pfLogo} titleImg={pfBrand} />
-            <IconBar>{mockIconBarChildren}</IconBar>
+            <IconBar>
+              <MockIconBarChildren />
+            </IconBar>
           </Masthead>
         </VerticalNav>
         {mockBodyContainer('nav-pf-vertical-with-badges')}

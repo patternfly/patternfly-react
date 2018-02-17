@@ -67,4 +67,14 @@ TablePfProvider.propTypes = {
   /** reactabular components override */
   components: PropTypes.object
 };
+TablePfProvider.defaultProps = {
+  children: null,
+  className: '',
+  dataTable: false,
+  striped: false,
+  bordered: false,
+  hover: false,
+  condensed: false,
+  components: {}
+};
 export default TablePfProvider;

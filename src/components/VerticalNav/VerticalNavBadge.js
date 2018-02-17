@@ -31,6 +31,12 @@ VerticalNavBadge.propTypes = {
   tooltip: PropTypes.string,
   count: PropTypes.number
 };
+VerticalNavBadge.defaultProps = {
+  badgeClass: '',
+  iconClass: '',
+  tooltip: '',
+  count: undefined
+};
 
 VerticalNavBadge.displayName = 'VerticalNav.Badge';
 

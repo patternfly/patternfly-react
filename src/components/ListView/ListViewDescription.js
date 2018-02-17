@@ -11,4 +11,7 @@ ListViewDescription.propTypes = {
   /** Child nodes - ListViewDescriptionHeading or ListViewDescriptionText instances */
   children: PropTypes.node
 };
+ListViewDescription.defaultProps = {
+  children: null
+};
 export default ListViewDescription;

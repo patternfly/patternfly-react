@@ -31,4 +31,10 @@ WizardHeader.propTypes = {
   /** The wizard title */
   title: PropTypes.string
 };
+WizardHeader.defaultProps = {
+  children: null,
+  className: '',
+  embedded: false,
+  title: ''
+};
 export default WizardHeader;

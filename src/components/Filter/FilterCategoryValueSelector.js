@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
+import { noop } from '../../common/helpers';
 
 const FilterCategoryValueSelector = ({
   className,
@@ -37,9 +38,7 @@ const FilterCategoryValueSelector = ({
             <MenuItem
               title={placeholder}
               key="Placeholder"
-              onSelect={() =>
-                onCategoryValueSelected && onCategoryValueSelected()
-              }
+              onSelect={() => onCategoryValueSelected()}
             >
               {placeholder}
             </MenuItem>
@@ -53,9 +52,7 @@ const FilterCategoryValueSelector = ({
                 <MenuItem
                   className={menuItemClasses}
                   key={item.id || index}
-                  onSelect={() =>
-                    onCategoryValueSelected && onCategoryValueSelected(item)
-                  }
+                  onSelect={() => onCategoryValueSelected(item)}
                 >
                   {item.title || item}
                 </MenuItem>
@@ -81,6 +78,15 @@ FilterCategoryValueSelector.propTypes = {
   placeholder: PropTypes.string,
   /** function(field, value) - Callback to call when a category value is selected */
   onCategoryValueSelected: PropTypes.func
+};
+
+FilterCategoryValueSelector.defaultProps = {
+  className: '',
+  id: '',
+  categoryValues: null,
+  currentValue: '',
+  placeholder: '',
+  onCategoryValueSelected: noop
 };
 
 export default FilterCategoryValueSelector;

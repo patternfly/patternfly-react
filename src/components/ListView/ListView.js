@@ -69,5 +69,9 @@ ListView.propTypes = {
   /** Children nodes - ListViewGroupItem or ListViewItem instances */
   children: PropTypes.node
 };
+ListView.defaultProps = {
+  className: '',
+  children: null
+};
 
 export default ListView;

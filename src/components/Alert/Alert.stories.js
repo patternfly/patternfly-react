@@ -19,8 +19,8 @@ stories.addDecorator(
 );
 
 stories.addWithInfo('Alert types', 'Those are the available alert types', () =>
-  ALERT_TYPES.map(type => (
-    <Alert type={type} onDismiss={action(`${type}Dismissed`)}>
+  ALERT_TYPES.map((type, index) => (
+    <Alert key={index} type={type} onDismiss={action(`${type}Dismissed`)}>
       I am an Alert with type=&quot;{type}&quot;
     </Alert>
   ))

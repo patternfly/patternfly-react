@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ControlLabel } from '../Form';
+import { noop } from '../../common/helpers';
 
 /**
  * TableCheckbox component for Patternfly React
@@ -28,5 +29,11 @@ TableCheckbox.propTypes = {
   checked: PropTypes.bool,
   /** onChange callback */
   onChange: PropTypes.func
+};
+TableCheckbox.defaultProps = {
+  id: '',
+  label: '',
+  checked: false,
+  onChange: noop
 };
 export default TableCheckbox;

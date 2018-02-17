@@ -11,6 +11,7 @@ const ModalCloseButton = ({ className, closeText, ...rest }) => (
 );
 
 ModalCloseButton.defaultProps = {
+  className: '',
   closeText: 'Close'
 };
 

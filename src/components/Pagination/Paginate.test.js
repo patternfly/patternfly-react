@@ -1,6 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Paginator, PaginationRow, PAGINATION_VIEW_TYPES } from './index';
+import {
+  Paginator,
+  PaginationRow,
+  PAGINATION_VIEW,
+  PAGINATION_VIEW_TYPES
+} from './index';
 
 const testPaginationRowSnapshot = (viewType, pageSizeDropUp = true) => {
   const component = renderer.create(
@@ -58,7 +63,7 @@ test('PaginationRow.Items renders', () => {
 });
 
 test('PaginationRow renders with dropdown page size selector', () => {
-  testPaginationRowSnapshot(PAGINATION_VIEW_TYPES.List, false);
+  testPaginationRowSnapshot(PAGINATION_VIEW.LIST, false);
 });
 
 test('PaginationRow.Back renders', () => {
@@ -115,6 +120,7 @@ test('Paginator renders properly the first page', () => {
         perPage: 10,
         perPageOptions: [5, 10, 15]
       }}
+      viewType={PAGINATION_VIEW.LIST}
     />
   );
 
@@ -131,6 +137,7 @@ test('Paginator renders properly a middle page', () => {
         perPage: 10,
         perPageOptions: [5, 10, 15]
       }}
+      viewType={PAGINATION_VIEW.LIST}
     />
   );
 
@@ -147,6 +154,7 @@ test('Paginator renders properly the last page', () => {
         perPage: 10,
         perPageOptions: [5, 10, 15]
       }}
+      viewType={PAGINATION_VIEW.LIST}
     />
   );
 

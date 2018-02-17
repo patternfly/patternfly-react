@@ -7,6 +7,7 @@ const SplitButton = props => <BsSplitButton {...props} />;
 
 SplitButton.propTypes = {
   ...BsSplitButton.propTypes,
+  // eslint-disable-next-line react/require-default-props
   bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES)
 };
 

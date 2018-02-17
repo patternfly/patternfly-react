@@ -84,6 +84,6 @@ class MockWizardReviewStepsManager extends React.Component {
 }
 MockWizardReviewStepsManager.propTypes = {
   /** Wizard steps */
-  steps: PropTypes.array
+  steps: PropTypes.array.isRequired
 };
 export default MockWizardReviewStepsManager;
