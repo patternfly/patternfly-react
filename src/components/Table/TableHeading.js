@@ -43,15 +43,17 @@ TableHeading.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** Heading alignment */
-  align: PropTypes.oneOf(TABLE_ALIGNMENT_TYPES), // eslint-disable-line react/require-default-props
+  align: PropTypes.oneOf(TABLE_ALIGNMENT_TYPES),
   /** sortable heading */
   sort: PropTypes.bool,
   /** sort direction */
-  sortDirection: PropTypes.oneOf(TABLE_SORT_DIRECTIONS) // eslint-disable-line react/require-default-props
+  sortDirection: PropTypes.oneOf(TABLE_SORT_DIRECTIONS)
 };
 TableHeading.defaultProps = {
   children: null,
   className: '',
-  sort: false
+  sort: false,
+  align: TABLE_ALIGN.DEFAULT,
+  sortDirection: TABLE_SORT_DIRECTION.DEFAULT
 };
 export default TableHeading;
