@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 import { OverlayTrigger } from '../OverlayTrigger';
 import { Tooltip } from '../Tooltip';
 import React from 'react';
-import './UtilizationBar.css';
+
+const randomId = () => {
+  return Date.now();
+};
 
 const AvailableTooltipFunction = (max, now) => {
-  return <Tooltip id={Math.random()}>Available {max - now} %</Tooltip>;
+  return <Tooltip id={randomId()}>Available {max - now} %</Tooltip>;
 };
 
 const UsedTooltipFunction = now => {
-  return <Tooltip id={Math.random()}>Used {now} %</Tooltip>;
+  return <Tooltip id={randomId()}>Used {now} %</Tooltip>;
 };
 
 const UtilizationBar = props => {
