@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
 import { Switch } from './index';
-import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 
 const stories = storiesOf('Widgets', module);
@@ -18,7 +18,7 @@ stories.addWithInfo('Switch', '', () => {
   if (onColor) props.onColor = onColor;
   if (offColor) props.offColor = offColor;
 
-  let story = (
+  const story = (
     <div>
       <Switch
         {...props}
@@ -33,10 +33,11 @@ stories.addWithInfo('Switch', '', () => {
   );
   return inlineTemplate({
     title: 'Switch',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#bootstrap-switch',
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
+    }#bootstrap-switch`,
     reactBootstrapDocumentationLink:
       'https://www.npmjs.com/package/react-bootstrap-switch',
-    story: story
+    story
   });
 });

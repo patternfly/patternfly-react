@@ -18,4 +18,9 @@ Sort.propTypes = {
   className: PropTypes.string
 };
 
+Sort.defaultProps = {
+  children: null,
+  className: ''
+};
+
 export default Sort;

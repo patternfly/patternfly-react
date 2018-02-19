@@ -43,7 +43,15 @@ VerticalNavBrand.propTypes = {
   /** Custom children components to render instead. If passed, above props are ignored. */
   children: PropTypes.node
 };
-
+VerticalNavBrand.defaultProps = {
+  title: '',
+  titleImg: '',
+  img: '',
+  iconImg: '',
+  href: '',
+  onClick: null, // noop should not be used b/c onClick differentiates render
+  children: null
+};
 VerticalNavBrand.displayName = 'VerticalNav.Brand';
 
 export default VerticalNavBrand;

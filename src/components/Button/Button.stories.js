@@ -13,7 +13,7 @@ const stories = storiesOf('Button', module);
 stories.addDecorator(withKnobs);
 
 stories.addWithInfo('Button', '', () => {
-  let story = (
+  const story = (
     <div>
       <p>
         <Button>Default Button</Button>{' '}
@@ -31,15 +31,16 @@ stories.addWithInfo('Button', '', () => {
   );
   return inlineTemplate({
     title: 'Button',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#buttons',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'buttons/',
-    story: story
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#buttons`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }buttons/`,
+    story
   });
 });
 
 stories.addWithInfo('ButtonGroup', () => {
-  let story = (
+  const story = (
     <Grid>
       <Row style={{ marginBottom: '20px' }}>
         <Col xs={12} md={3}>
@@ -135,11 +136,13 @@ stories.addWithInfo('ButtonGroup', () => {
   );
   return inlineTemplate({
     title: 'ButtonGroup',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#button-groups',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'button-group/',
-    story: story
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
+    }#button-groups`,
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }button-group/`,
+    story
   });
 });
 
@@ -150,7 +153,7 @@ stories.addWithInfo('DropdownButton', '', () => {
   const props = { bsStyle, title: bsStyle, id: 'dropdown-example' };
   if (bsSize) props.bsSize = bsSize;
 
-  let story = (
+  const story = (
     <DropdownButton {...props} onClick={action('onClick')}>
       <MenuItem eventKey="1">Action</MenuItem>
       <MenuItem eventKey="2">Another action</MenuItem>
@@ -163,9 +166,10 @@ stories.addWithInfo('DropdownButton', '', () => {
   );
   return inlineTemplate({
     title: 'DropdownButton',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'dropdowns/',
-    story: story
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }dropdowns/`,
+    story
   });
 });
 
@@ -176,7 +180,7 @@ stories.addWithInfo('SplitButton', '', () => {
   const props = { bsStyle, title: bsStyle, id: 'dropdown-example' };
   if (bsSize) props.bsSize = bsSize;
 
-  let story = (
+  const story = (
     <SplitButton {...props} onClick={action('onClick')}>
       <MenuItem eventKey="1">Action</MenuItem>
       <MenuItem eventKey="2">Another action</MenuItem>
@@ -190,8 +194,9 @@ stories.addWithInfo('SplitButton', '', () => {
 
   return inlineTemplate({
     title: 'SplitButton',
-    reactBootstrapDocumentationLink:
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'dropdowns/',
-    story: story
+    reactBootstrapDocumentationLink: `${
+      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+    }dropdowns/`,
+    story
   });
 });

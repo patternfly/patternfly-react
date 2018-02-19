@@ -10,7 +10,7 @@ test('Button renders properly', () => {
     <Button id="button1">Default button</Button>
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -21,6 +21,6 @@ test('Button allows to specify size and style', () => {
     </Button>
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

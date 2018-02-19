@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { noop } from '../../../common/helpers';
 
 // wraps the default header definitions and adds support for `customFormatters`
 const customHeaderFormattersDefinition = ({
@@ -11,7 +12,7 @@ const customHeaderFormattersDefinition = ({
 }) => {
   const { index } = cellProps;
   const column = columns[index];
-  const customFormatters = column.header.customFormatters;
+  const { customFormatters } = column.header;
 
   if (customFormatters) {
     return customFormatters.reduce(
@@ -20,9 +21,8 @@ const customHeaderFormattersDefinition = ({
       }),
       { cellProps, column, sortingColumns, rows, onSelectAllRows, onSort }
     ).value;
-  } else {
-    return cellProps.children;
   }
+  return cellProps.children;
 };
 customHeaderFormattersDefinition.propTypes = {
   /** column header cell props */
@@ -37,5 +37,11 @@ customHeaderFormattersDefinition.propTypes = {
   onSelectAllRows: PropTypes.func,
   /** onSort callback */
   onSort: PropTypes.func
+};
+customHeaderFormattersDefinition.defaultProps = {
+  cellProps: {},
+  columns: [],
+  sortingColumns: {},
+  onSort: noop
 };
 export default customHeaderFormattersDefinition;

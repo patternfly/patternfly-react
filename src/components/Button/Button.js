@@ -7,6 +7,7 @@ const Button = props => <BsButton {...props} />;
 
 Button.propTypes = {
   ...BsButton.propTypes,
+  // eslint-disable-next-line react/require-default-props
   bsStyle: PropTypes.oneOf(BUTTON_BS_STYLES)
 };
 

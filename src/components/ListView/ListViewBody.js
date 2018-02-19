@@ -11,4 +11,7 @@ ListViewBody.propTypes = {
   /** Child nodes - ListViewDescription or ListViewAdditionalInfo instances */
   children: PropTypes.node
 };
+ListViewBody.defaultProps = {
+  children: null
+};
 export default ListViewBody;

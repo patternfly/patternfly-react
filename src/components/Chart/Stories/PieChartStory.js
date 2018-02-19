@@ -29,7 +29,7 @@ const pieChartRightConfigLegend = {
 
 const pieChartAddWithInfo = stories => {
   stories.addWithInfo('Pie Charts', '', () => {
-    let story = (
+    const story = (
       <div>
         <h2>Pie Chart - Relationship to a Whole</h2>
         <div>
@@ -47,9 +47,10 @@ const pieChartAddWithInfo = stories => {
     );
     return inlineTemplate({
       title: 'Pie Charts',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION + 'pie-chart/',
-      story: story
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
+      }pie-chart/`,
+      story
     });
   });
 };

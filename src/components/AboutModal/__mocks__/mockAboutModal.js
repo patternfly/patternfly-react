@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from '../../Button';
-import { AboutModal } from '../index';
 import logo from 'patternfly/dist/img/logo-alt.svg';
 import productTitle from 'patternfly/dist/img/brand-alt.svg';
+import { Button } from '../../Button';
+import { AboutModal } from '../index';
 
 export class MockAboutModal extends React.Component {
   constructor() {
@@ -11,11 +11,11 @@ export class MockAboutModal extends React.Component {
     this.open = this.open.bind(this);
     this.close = this.close.bind(this);
   }
-  open() {
-    this.setState({ showModal: true });
-  }
   close() {
     this.setState({ showModal: false });
+  }
+  open() {
+    this.setState({ showModal: true });
   }
   render() {
     return (

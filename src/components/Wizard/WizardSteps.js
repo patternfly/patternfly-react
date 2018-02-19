@@ -19,4 +19,8 @@ WizardSteps.propTypes = {
   /** Additional css classes */
   className: PropTypes.string
 };
+WizardSteps.defaultProps = {
+  steps: null,
+  className: ''
+};
 export default WizardSteps;

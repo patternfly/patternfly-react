@@ -11,11 +11,11 @@ import PropTypes from 'prop-types';
 
 import { utils } from 'react-bootstrap';
 
-const bsClass = utils.bootstrapUtils.bsClass;
-const bsSizes = utils.bootstrapUtils.bsSizes;
-const getClassSet = utils.bootstrapUtils.getClassSet;
-const prefix = utils.bootstrapUtils.prefix;
-const splitBsProps = utils.bootstrapUtils.splitBsProps;
+const { bsClass } = utils.bootstrapUtils;
+const { bsSizes } = utils.bootstrapUtils;
+const { getClassSet } = utils.bootstrapUtils;
+const { prefix } = utils.bootstrapUtils;
+const { splitBsProps } = utils.bootstrapUtils;
 
 // React Bootstrap utils/StyleConfig Size is currently not exported
 const Size = {
@@ -23,6 +23,7 @@ const Size = {
   SMALL: 'small'
 };
 
+// eslint-disable-next-line react/prefer-stateless-function
 class CustomModalDialog extends React.Component {
   render() {
     const {
@@ -77,6 +78,14 @@ CustomModalDialog.propTypes = {
   style: PropTypes.object,
   /** Children nodes */
   children: PropTypes.node
+};
+
+CustomModalDialog.defaultProps = {
+  dialogClassName: '',
+  contentClassName: '',
+  className: '',
+  style: {},
+  children: null
 };
 
 export default bsClass(

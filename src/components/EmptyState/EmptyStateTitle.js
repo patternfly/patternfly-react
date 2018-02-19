@@ -19,4 +19,7 @@ EmptyStateTitle.propTypes = {
   /** Additional element css classes */
   className: PropTypes.string
 };
+EmptyStateTitle.defaultProps = {
+  className: ''
+};
 export default EmptyStateTitle;

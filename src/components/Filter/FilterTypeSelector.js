@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
-import cx from 'classnames';
+import { noop } from '../../common/helpers';
 
 const FilterTypeSelector = ({
   className,
@@ -32,22 +33,20 @@ const FilterTypeSelector = ({
             <MenuItem
               title={placeholder}
               key="Placeholder"
-              onSelect={() => onFilterTypeSelected && onFilterTypeSelected()}
+              onSelect={onFilterTypeSelected}
             >
               {placeholder}
             </MenuItem>
           )}
           {filterTypes.map((item, index) => {
-            let classes = {
+            const menuItemClasses = {
               selected: item === currentFilterType
             };
             return (
               <MenuItem
-                className={classes}
+                className={menuItemClasses}
                 key={item.id || index}
-                onSelect={() =>
-                  onFilterTypeSelected && onFilterTypeSelected(item)
-                }
+                onSelect={() => onFilterTypeSelected(item)}
               >
                 {item.title || item}
               </MenuItem>
@@ -56,9 +55,8 @@ const FilterTypeSelector = ({
         </DropdownButton>
       </div>
     );
-  } else {
-    return null;
   }
+  return null;
 };
 
 FilterTypeSelector.propTypes = {
@@ -74,6 +72,14 @@ FilterTypeSelector.propTypes = {
   placeholder: PropTypes.string,
   /** function(field, value) - Callback to call when a filter type is selected */
   onFilterTypeSelected: PropTypes.func
+};
+
+FilterTypeSelector.defaultProps = {
+  className: '',
+  id: '',
+  currentFilterType: '',
+  placeholder: '',
+  onFilterTypeSelected: noop
 };
 
 export default FilterTypeSelector;

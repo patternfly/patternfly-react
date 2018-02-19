@@ -11,4 +11,7 @@ ListViewLeft.propTypes = {
   /** Child nodes - usually ListViewIcon instance */
   children: PropTypes.node
 };
+ListViewLeft.defaultProps = {
+  children: null
+};
 export default ListViewLeft;

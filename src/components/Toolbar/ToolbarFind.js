@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Button, Icon, FormControl } from '../../index';
-import { bindMethods } from '../../common/helpers';
+import { bindMethods, noop } from '../../common/helpers';
 
-export class ToolbarFind extends React.Component {
+class ToolbarFind extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -22,32 +22,12 @@ export class ToolbarFind extends React.Component {
     ]);
   }
 
-  toggleDropdownShown() {
-    this.setState(prevState => {
-      return { dropdownShown: !prevState.dropdownShown };
-    });
-  }
-
-  hideDropdown() {
-    this.setState({ dropdownShown: false });
-  }
-
   onValueKeyPress(keyEvent) {
     const { onEnter } = this.props;
     const { currentValue } = this.state;
 
     if (keyEvent.key === 'Enter' && onEnter) {
       onEnter(currentValue);
-    }
-  }
-
-  handleValueChange(event) {
-    const { onChange } = this.props;
-
-    this.setState({ currentValue: event.target.value });
-
-    if (onChange) {
-      onChange(event.target.value);
     }
   }
 
@@ -67,6 +47,24 @@ export class ToolbarFind extends React.Component {
     if (onFindPrevious) {
       onFindPrevious(currentValue);
     }
+  }
+
+  handleValueChange(event) {
+    const { onChange } = this.props;
+
+    this.setState({ currentValue: event.target.value });
+
+    if (onChange) {
+      onChange(event.target.value);
+    }
+  }
+
+  hideDropdown() {
+    this.setState({ dropdownShown: false });
+  }
+
+  toggleDropdownShown() {
+    this.setState(prevState => ({ dropdownShown: !prevState.dropdownShown }));
   }
 
   renderCounts() {
@@ -89,9 +87,8 @@ export class ToolbarFind extends React.Component {
           <Icon type="fa" name="angle-down" />
         </Button>
       ];
-    } else {
-      return null;
     }
+    return null;
   }
 
   render() {
@@ -144,7 +141,7 @@ ToolbarFind.propTypes = {
   /** index of current item */
   currentIndex: PropTypes.number,
   /** total number of items */
-  totalCount: PropTypes.number,
+  totalCount: PropTypes.number.isRequired,
   /** Placeholder text when empty */
   placeholder: PropTypes.string,
   /** Callback function when user hits the enter key */
@@ -155,6 +152,16 @@ ToolbarFind.propTypes = {
   onFindNext: PropTypes.func,
   /** Callback function when the find previous is selected */
   onFindPrevious: PropTypes.func
+};
+
+ToolbarFind.defaultProps = {
+  className: '',
+  currentIndex: 0,
+  placeholder: '',
+  onEnter: noop,
+  onChange: noop,
+  onFindNext: noop,
+  onFindPrevious: noop
 };
 
 export default ToolbarFind;

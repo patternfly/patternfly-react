@@ -1,8 +1,6 @@
-/* eslint-env jest */
-
 import React from 'react';
-import { Spinner } from './index';
 import renderer from 'react-test-renderer';
+import { Spinner } from './index';
 
 test('Spinner should not render children when loading', () => {
   const component = renderer.create(
@@ -11,7 +9,7 @@ test('Spinner should not render children when loading', () => {
     </Spinner>
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -22,6 +20,6 @@ test('Spinner should render children when not loading', () => {
     </Spinner>
   );
 
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

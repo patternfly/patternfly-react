@@ -19,4 +19,8 @@ WizardReviewItem.propTypes = {
   /** Additional css classes */
   className: PropTypes.string
 };
+WizardReviewItem.defaultProps = {
+  children: null,
+  className: ''
+};
 export default WizardReviewItem;

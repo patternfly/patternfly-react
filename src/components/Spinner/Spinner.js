@@ -37,6 +37,7 @@ Spinner.defaultProps = {
   size: 'md',
   inline: false,
   inverse: false,
+  children: null,
   className: ''
 };
 

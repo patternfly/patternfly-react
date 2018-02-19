@@ -33,4 +33,10 @@ WizardSubStep.propTypes = {
   /** The active step */
   activeSubStep: PropTypes.string
 };
+WizardSubStep.defaultProps = {
+  className: '',
+  subStep: '',
+  title: '',
+  activeSubStep: ''
+};
 export default WizardSubStep;

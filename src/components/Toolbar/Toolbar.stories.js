@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { decorateAction } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info/dist/index';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import {
   Toolbar,
@@ -14,8 +15,6 @@ import {
   MockToolbarExample,
   mockToolbarExampleSource
 } from './__mocks__/mockToolbarExample';
-
-import { withInfo } from '@storybook/addon-info/dist/index';
 
 const stories = storiesOf('Toolbar', module);
 

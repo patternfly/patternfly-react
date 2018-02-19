@@ -93,6 +93,36 @@ export class MockFilterExample extends React.Component {
     };
   }
 
+  onValueKeyPress(keyEvent) {
+    const { currentValue, currentFilterType } = this.state;
+
+    if (keyEvent.key === 'Enter' && currentValue && currentValue.length > 0) {
+      this.setState({ currentValue: '' });
+      this.filterAdded(currentFilterType, currentValue);
+      keyEvent.stopPropagation();
+      keyEvent.preventDefault();
+    }
+  }
+
+  categoryValueSelected(value) {
+    const { currentValue, currentFilterType, filterCategory } = this.state;
+
+    if (filterCategory && currentValue !== value) {
+      this.setState({ currentValue: value });
+      if (value) {
+        const filterValue = {
+          filterCategory,
+          filterValue: value
+        };
+        this.filterAdded(currentFilterType, filterValue);
+      }
+    }
+  }
+
+  clearFilters() {
+    this.setState({ activeFilters: [] });
+  }
+
   filterAdded = (field, value) => {
     let filterText = '';
     if (field.title) {
@@ -103,37 +133,22 @@ export class MockFilterExample extends React.Component {
     filterText += ': ';
 
     if (value.filterCategory) {
-      filterText +=
-        (value.filterCategory.title || value.filterCategory) +
-        '-' +
-        (value.filterValue.title || value.filterValue);
+      filterText += `${value.filterCategory.title ||
+        value.filterCategory}-${value.filterValue.title || value.filterValue}`;
     } else if (value.title) {
       filterText += value.title;
     } else {
       filterText += value;
     }
 
-    let activeFilters = [...this.state.activeFilters, { label: filterText }];
-    this.setState({ activeFilters: activeFilters });
+    const activeFilters = [...this.state.activeFilters, { label: filterText }];
+    this.setState({ activeFilters });
   };
 
-  selectFilterType(filterType) {
-    const { currentFilterType } = this.state;
-    if (currentFilterType !== filterType) {
-      this.setState(prevState => {
-        return {
-          currentValue: '',
-          currentFilterType: filterType,
-          filterCategory:
-            filterType.filterType === 'complex-select'
-              ? undefined
-              : prevState.filterCategory,
-          categoryValue:
-            filterType.filterType === 'complex-select'
-              ? ''
-              : prevState.categoryValue
-        };
-      });
+  filterCategorySelected(category) {
+    const { filterCategory } = this.state;
+    if (filterCategory !== category) {
+      this.setState({ filterCategory: category, currentValue: '' });
     }
   }
 
@@ -148,49 +163,12 @@ export class MockFilterExample extends React.Component {
     }
   }
 
-  filterCategorySelected(category) {
-    const { filterCategory } = this.state;
-    if (filterCategory !== category) {
-      this.setState({ filterCategory: category, currentValue: '' });
-    }
-  }
-
-  categoryValueSelected(value) {
-    const { currentValue, currentFilterType, filterCategory } = this.state;
-
-    if (filterCategory && currentValue !== value) {
-      this.setState({ currentValue: value });
-      if (value) {
-        let filterValue = {
-          filterCategory: filterCategory,
-          filterValue: value
-        };
-        this.filterAdded(currentFilterType, filterValue);
-      }
-    }
-  }
-
-  updateCurrentValue(event) {
-    this.setState({ currentValue: event.target.value });
-  }
-
-  onValueKeyPress(keyEvent) {
-    const { currentValue, currentFilterType } = this.state;
-
-    if (keyEvent.key === 'Enter' && currentValue && currentValue.length > 0) {
-      this.setState({ currentValue: '' });
-      this.filterAdded(currentFilterType, currentValue);
-      keyEvent.stopPropagation();
-      keyEvent.preventDefault();
-    }
-  }
-
   removeFilter(filter) {
     const { activeFilters } = this.state;
 
-    let index = activeFilters.indexOf(filter);
+    const index = activeFilters.indexOf(filter);
     if (index > -1) {
-      let updated = [
+      const updated = [
         ...activeFilters.slice(0, index),
         ...activeFilters.slice(index + 1)
       ];
@@ -198,8 +176,26 @@ export class MockFilterExample extends React.Component {
     }
   }
 
-  clearFilters() {
-    this.setState({ activeFilters: [] });
+  selectFilterType(filterType) {
+    const { currentFilterType } = this.state;
+    if (currentFilterType !== filterType) {
+      this.setState(prevState => ({
+        currentValue: '',
+        currentFilterType: filterType,
+        filterCategory:
+          filterType.filterType === 'complex-select'
+            ? undefined
+            : prevState.filterCategory,
+        categoryValue:
+          filterType.filterType === 'complex-select'
+            ? ''
+            : prevState.categoryValue
+      }));
+    }
+  }
+
+  updateCurrentValue(event) {
+    this.setState({ currentValue: event.target.value });
   }
 
   renderInput() {
@@ -233,17 +229,16 @@ export class MockFilterExample extends React.Component {
           />
         </Filter.CategorySelector>
       );
-    } else {
-      return (
-        <FormControl
-          type={currentFilterType.filterType}
-          value={currentValue}
-          placeholder={currentFilterType.placeholder}
-          onChange={e => this.updateCurrentValue(e)}
-          onKeyPress={e => this.onValueKeyPress(e)}
-        />
-      );
     }
+    return (
+      <FormControl
+        type={currentFilterType.filterType}
+        value={currentValue}
+        placeholder={currentFilterType.placeholder}
+        onChange={e => this.updateCurrentValue(e)}
+        onKeyPress={e => this.onValueKeyPress(e)}
+      />
+    );
   }
 
   render() {
@@ -264,19 +259,17 @@ export class MockFilterExample extends React.Component {
         {activeFilters &&
           activeFilters.length > 0 && (
             <Toolbar.Results>
-              <Filter.ActiveLabel>{'Active Filters:'}</Filter.ActiveLabel>
+              <Filter.ActiveLabel>Active Filters:</Filter.ActiveLabel>
               <Filter.List>
-                {activeFilters.map((item, index) => {
-                  return (
-                    <Filter.Item
-                      key={index}
-                      onRemove={this.removeFilter}
-                      filterData={item}
-                    >
-                      {item.label}
-                    </Filter.Item>
-                  );
-                })}
+                {activeFilters.map((item, index) => (
+                  <Filter.Item
+                    key={index}
+                    onRemove={this.removeFilter}
+                    filterData={item}
+                  >
+                    {item.label}
+                  </Filter.Item>
+                ))}
               </Filter.List>
               <a
                 href="#"

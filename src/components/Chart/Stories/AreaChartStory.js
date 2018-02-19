@@ -30,7 +30,7 @@ const singleAreaChartData = {
 
 const areaChartAddWithInfo = stories => {
   stories.addWithInfo('Area Charts', '', () => {
-    let story = (
+    const story = (
       <div>
         <h2>Area Chart</h2>
         <div>
@@ -53,9 +53,10 @@ const areaChartAddWithInfo = stories => {
     );
     return inlineTemplate({
       title: 'Area Charts',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION + 'area-chart/',
-      story: story
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
+      }area-chart/`,
+      story
     });
   });
 };

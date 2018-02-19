@@ -903,7 +903,7 @@ exports[`Mock Client Pagination table renders 1`] = `
             vyberte řádek 0
           </label>
           <input
-            checked={undefined}
+            checked={false}
             id="vybrat0"
             onChange={[Function]}
             type="checkbox"
@@ -1061,7 +1061,7 @@ exports[`Mock Client Pagination table renders 1`] = `
             vyberte řádek 1
           </label>
           <input
-            checked={undefined}
+            checked={false}
             id="vybrat1"
             onChange={[Function]}
             type="checkbox"
@@ -1219,7 +1219,7 @@ exports[`Mock Client Pagination table renders 1`] = `
             vyberte řádek 2
           </label>
           <input
-            checked={undefined}
+            checked={false}
             id="vybrat2"
             onChange={[Function]}
             type="checkbox"
@@ -1377,7 +1377,7 @@ exports[`Mock Client Pagination table renders 1`] = `
             vyberte řádek 3
           </label>
           <input
-            checked={undefined}
+            checked={false}
             id="vybrat3"
             onChange={[Function]}
             type="checkbox"
@@ -1535,7 +1535,7 @@ exports[`Mock Client Pagination table renders 1`] = `
             vyberte řádek 4
           </label>
           <input
-            checked={undefined}
+            checked={false}
             id="vybrat4"
             onChange={[Function]}
             type="checkbox"
@@ -1693,7 +1693,7 @@ exports[`Mock Client Pagination table renders 1`] = `
             vyberte řádek 5
           </label>
           <input
-            checked={undefined}
+            checked={false}
             id="vybrat5"
             onChange={[Function]}
             type="checkbox"

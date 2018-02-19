@@ -60,13 +60,11 @@ const PaginationRow = ({
           onSelect={onPerPageSelect}
           id={dropdownButtonId}
         >
-          {perPageOptions.map((option, i) => {
-            return (
-              <MenuItem eventKey={option} active={option === perPage} key={i}>
-                {option}
-              </MenuItem>
-            );
-          })}
+          {perPageOptions.map((option, i) => (
+            <MenuItem eventKey={option} active={option === perPage} key={i}>
+              {option}
+            </MenuItem>
+          ))}
         </DropdownButton>
         <span>{messages.perPage}</span>
       </FormGroup>
@@ -117,7 +115,7 @@ PaginationRow.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** pagination row view type */
-  viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES),
+  viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES).isRequired,
   /** user pagination settings */
   pagination: PropTypes.shape({
     /** the current page */
@@ -126,19 +124,19 @@ PaginationRow.propTypes = {
     perPage: PropTypes.number.isRequired,
     /** per page options */
     perPageOptions: PropTypes.array
-  }),
+  }).isRequired,
   /** Page size button drops up */
   pageSizeDropUp: PropTypes.bool,
   /** page input (optional override for page input) */
   pageInputValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** calculated amount of pages */
-  amountOfPages: PropTypes.number,
+  amountOfPages: PropTypes.number.isRequired,
   /** calculated number of rows */
-  itemCount: PropTypes.number,
+  itemCount: PropTypes.number.isRequired,
   /** calculated items start */
-  itemsStart: PropTypes.number,
+  itemsStart: PropTypes.number.isRequired,
   /** calculated items end */
-  itemsEnd: PropTypes.number,
+  itemsEnd: PropTypes.number.isRequired,
   /** message text inputs for i18n */
   messages: PropTypes.shape({
     firstPage: PropTypes.string,
@@ -167,6 +165,7 @@ PaginationRow.propTypes = {
 };
 PaginationRow.defaultProps = {
   baseClassName: 'content-view-pf-pagination',
+  className: '',
   messages: {
     firstPage: 'First Page',
     previousPage: 'Previous Page',
@@ -176,6 +175,7 @@ PaginationRow.defaultProps = {
     perPage: 'per page',
     of: 'of'
   },
+  pageInputValue: '',
   pageSizeDropUp: true,
   onSubmit: noop,
   onPerPageSelect: noop,

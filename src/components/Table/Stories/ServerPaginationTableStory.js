@@ -53,16 +53,17 @@ const serverPaginationTableAddWithInfo = stories => {
       )
     })(() => {
       const logAction = decorateAction([args => args]);
-      let story = (
+      const story = (
         <MockServerPaginationTable
           onServerPageLogger={logAction('Server page requested')}
         />
       );
       return inlineTemplate({
         title: 'Server Paginated Table',
-        documentationLink:
-          DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'table-view/',
-        story: story,
+        documentationLink: `${
+          DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
+        }table-view/`,
+        story,
         description: reactabularDescription
       });
     })

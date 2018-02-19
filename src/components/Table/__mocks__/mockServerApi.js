@@ -7,6 +7,10 @@ import { mockRows } from './mockRows';
  * and pass data via a redux connected component.
  */
 class MockServerApi {
+  static toggleRow(row) {
+    return Object.assign({}, row, { selected: !row.selected });
+  }
+
   constructor() {
     this.mockRows = mockRows;
   }
@@ -26,7 +30,7 @@ class MockServerApi {
       // items start, items end
       resolve({
         rows: this.mockRows.slice(startPage * perPage, endOfPage),
-        amountOfPages: amountOfPages,
+        amountOfPages,
         itemCount: this.mockRows.length
       });
     });
@@ -39,13 +43,13 @@ class MockServerApi {
     // mock server logic to update `mockRows`
     const index = this.mockRows.findIndex(r => r.id === row.id);
     if (index > -1) {
-      this.mockRows[index] = this.toggleRow(this.mockRows[index]);
+      this.mockRows[index] = MockServerApi.toggleRow(this.mockRows[index]);
     }
 
     return new Promise(resolve => {
       // server api returns updated row
       resolve({
-        row: row
+        row
       });
     });
   }
@@ -55,7 +59,7 @@ class MockServerApi {
     // callServerApi(rows)
 
     // mock server logic to update `mockRows`
-    rows.map(row => {
+    for (const row of rows) {
       const index = this.mockRows.findIndex(r => r.id === row.id);
       if (index > -1) {
         const updated = Object.assign({}, this.mockRows[index], {
@@ -63,18 +67,14 @@ class MockServerApi {
         });
         this.mockRows[index] = updated;
       }
-    });
+    }
 
     return new Promise(resolve => {
       // server api returns updated rows
       resolve({
-        rows: rows
+        rows
       });
     });
-  }
-
-  toggleRow(row) {
-    return Object.assign({}, row, { selected: !row.selected });
   }
 }
 export default new MockServerApi();

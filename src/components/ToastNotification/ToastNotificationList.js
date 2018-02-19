@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { bindMethods } from '../../common/helpers';
+import { bindMethods, noop } from '../../common/helpers';
 import TimedToastNotification from './TimedToastNotification';
 
 /**
@@ -26,7 +26,7 @@ class ToastNotificationList extends React.Component {
   }
 
   renderChildren() {
-    const paused = this.state.paused;
+    const { paused } = this.state;
     return React.Children.map(this.props.children, child => {
       if (child && child.type === TimedToastNotification) {
         /**
@@ -34,11 +34,10 @@ class ToastNotificationList extends React.Component {
          * all child notifications from dismissing
          */
         return React.cloneElement(child, {
-          paused: paused
+          paused
         });
-      } else {
-        return child;
       }
+      return child;
     });
   }
   render() {
@@ -66,5 +65,10 @@ ToastNotificationList.propTypes = {
   /** children nodes  */
   children: PropTypes.node
 };
-
+ToastNotificationList.defaultProps = {
+  className: '',
+  onMouseEnter: noop,
+  onMouseLeave: noop,
+  children: null
+};
 export default ToastNotificationList;

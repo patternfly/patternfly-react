@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
-import cx from 'classnames';
+import { noop } from '../../common/helpers';
 
 const FilterCategoryValueSelector = ({
   className,
@@ -13,7 +14,7 @@ const FilterCategoryValueSelector = ({
   onCategoryValueSelected,
   ...rest
 }) => {
-  let classes = cx('filter-pf-select', className);
+  const classes = cx('filter-pf-select', className);
 
   if (placeholder || (categoryValues && categoryValues.length > 1)) {
     let title;
@@ -37,25 +38,21 @@ const FilterCategoryValueSelector = ({
             <MenuItem
               title={placeholder}
               key="Placeholder"
-              onSelect={() =>
-                onCategoryValueSelected && onCategoryValueSelected()
-              }
+              onSelect={() => onCategoryValueSelected()}
             >
               {placeholder}
             </MenuItem>
           )}
           {categoryValues &&
             categoryValues.map((item, index) => {
-              let classes = {
+              const menuItemClasses = {
                 selected: item === currentValue
               };
               return (
                 <MenuItem
-                  className={classes}
+                  className={menuItemClasses}
                   key={item.id || index}
-                  onSelect={() =>
-                    onCategoryValueSelected && onCategoryValueSelected(item)
-                  }
+                  onSelect={() => onCategoryValueSelected(item)}
                 >
                   {item.title || item}
                 </MenuItem>
@@ -64,9 +61,8 @@ const FilterCategoryValueSelector = ({
         </DropdownButton>
       </div>
     );
-  } else {
-    return null;
   }
+  return null;
 };
 
 FilterCategoryValueSelector.propTypes = {
@@ -82,6 +78,15 @@ FilterCategoryValueSelector.propTypes = {
   placeholder: PropTypes.string,
   /** function(field, value) - Callback to call when a category value is selected */
   onCategoryValueSelected: PropTypes.func
+};
+
+FilterCategoryValueSelector.defaultProps = {
+  className: '',
+  id: '',
+  categoryValues: null,
+  currentValue: '',
+  placeholder: '',
+  onCategoryValueSelected: noop
 };
 
 export default FilterCategoryValueSelector;

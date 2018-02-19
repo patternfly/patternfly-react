@@ -49,4 +49,11 @@ TableHeading.propTypes = {
   /** sort direction */
   sortDirection: PropTypes.oneOf(TABLE_SORT_DIRECTIONS)
 };
+TableHeading.defaultProps = {
+  children: null,
+  className: '',
+  sort: false,
+  align: TABLE_ALIGN.DEFAULT,
+  sortDirection: TABLE_SORT_DIRECTION.DEFAULT
+};
 export default TableHeading;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon, Dropdown, MenuItem } from '../../../index';
 
-export const mockIconBarChildren = (
+export const MockIconBarChildren = props => (
   <React.Fragment>
     <li className="drawer-pf-trigger">
       <a className="nav-item-iconic">

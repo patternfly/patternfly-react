@@ -12,9 +12,9 @@ const description = (
     This component is based on React Bootstrap MenuItem component. This
     component represents a menu item in a dropdown. See{' '}
     <a
-      href={
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'dropdowns/#menu-items'
-      }
+      href={`${
+        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+      }dropdowns/#menu-items`}
     >
       React Bootstrap Docs
     </a>{' '}
@@ -25,7 +25,7 @@ const description = (
 stories.addDecorator(
   defaultTemplate({
     title: 'MenuItem',
-    description: description
+    description
   })
 );
 

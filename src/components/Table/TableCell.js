@@ -27,4 +27,9 @@ TableCell.propTypes = {
   /** Cell alignment */
   align: PropTypes.oneOf(TABLE_ALIGNMENT_TYPES)
 };
+TableCell.defaultProps = {
+  children: null,
+  className: '',
+  align: TABLE_ALIGN.DEFAULT
+};
 export default TableCell;

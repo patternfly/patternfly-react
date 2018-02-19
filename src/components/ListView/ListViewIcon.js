@@ -6,16 +6,14 @@ import { Icon } from '../Icon';
 /**
  * ListViewIcon used as a default content for ListViewLeft
  */
-const ListViewIcon = ({ type, name, className, size, ...props }) => {
-  return (
-    <Icon
-      type={type}
-      name={name}
-      className={cx(`list-view-pf-icon-${size}`, className)}
-      {...props}
-    />
-  );
-};
+const ListViewIcon = ({ type, name, className, size, ...props }) => (
+  <Icon
+    type={type}
+    name={name}
+    className={cx(`list-view-pf-icon-${size}`, className)}
+    {...props}
+  />
+);
 ListViewIcon.propTypes = {
   /** Icon type (pf or fa) */
   type: PropTypes.string,
@@ -28,6 +26,7 @@ ListViewIcon.propTypes = {
 };
 ListViewIcon.defaultProps = {
   type: 'fa',
-  size: 'sm'
+  size: 'sm',
+  className: ''
 };
 export default ListViewIcon;

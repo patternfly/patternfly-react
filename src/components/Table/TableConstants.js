@@ -1,18 +1,25 @@
 export const TABLE_ALIGN = {
   CENTER: 'center',
-  RIGHT: 'right'
+  RIGHT: 'right',
+  DEFAULT: ''
 };
 
-export const TABLE_ALIGNMENT_TYPES = [TABLE_ALIGN.CENTER, TABLE_ALIGN.RIGHT];
+export const TABLE_ALIGNMENT_TYPES = [
+  TABLE_ALIGN.CENTER,
+  TABLE_ALIGN.RIGHT,
+  TABLE_ALIGN.DEFAULT
+];
 
 export const TABLE_SORT_DIRECTION = {
   ASC: 'asc',
-  DESC: 'desc'
+  DESC: 'desc',
+  DEFAULT: ''
 };
 
 export const TABLE_SORT_DIRECTIONS = [
   TABLE_SORT_DIRECTION.ASC,
-  TABLE_SORT_DIRECTION.DESC
+  TABLE_SORT_DIRECTION.DESC,
+  TABLE_SORT_DIRECTION.DEFAULT
 ];
 
 // Reactabular sorting order allows you to specifiy sort asc/desc only and removes

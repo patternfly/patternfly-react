@@ -25,6 +25,7 @@ EmptyStateIcon.propTypes = {
 };
 EmptyStateIcon.defaultProps = {
   type: 'pf',
-  name: 'add-circle-o'
+  name: 'add-circle-o',
+  className: ''
 };
 export default EmptyStateIcon;

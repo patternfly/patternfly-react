@@ -26,4 +26,9 @@ WizardReviewSubSteps.propTypes = {
   /** Step collapsed */
   collapsed: PropTypes.bool
 };
+WizardReviewSubSteps.defaultProps = {
+  children: null,
+  className: '',
+  collapsed: false
+};
 export default WizardReviewSubSteps;

@@ -41,13 +41,14 @@ stories.add(
       </div>
     )
   })(() => {
-    let story = (
+    const story = (
       <MockPaginationRow
         viewType={select(
           'View Type:',
           PAGINATION_VIEW_TYPES,
           PAGINATION_VIEW_TYPES[0]
         )}
+        pageInputValue={number('Page', 1)}
         amountOfPages={number('Number of Pages', 5)}
         pageSizeDropUp={boolean('Page Size Drop Up', true)}
         itemCount={number('Item Count:', 75)}
@@ -61,9 +62,10 @@ stories.add(
     );
     return inlineTemplate({
       title: 'Pagination Row',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION + 'pagination/',
-      story: story,
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION
+      }pagination/`,
+      story,
       description: (
         <div>
           Pagination Row is a stateless functional component which exposes all
@@ -79,12 +81,12 @@ stories.add(
 stories.addWithInfo('Pagination row w/ state manager', '', () => {
   const page = select('Page', ['1', '3', '8'], '1');
   const totalCount = select('Total items', ['75', '80', '81'], '75');
-  var messages = {};
-  for (let key of Object.keys(PaginationRow.defaultProps.messages)) {
+  const messages = {};
+  for (const key of Object.keys(PaginationRow.defaultProps.messages)) {
     messages[key] = text(key, PaginationRow.defaultProps.messages[key]);
   }
 
-  let story = (
+  const story = (
     <Paginator
       viewType={select(
         'View Type:',
@@ -104,9 +106,10 @@ stories.addWithInfo('Pagination row w/ state manager', '', () => {
   );
   return inlineTemplate({
     title: 'Pagination Row with State Manager, a.k.a. Paginator',
-    documentationLink:
-      DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION + 'pagination/',
-    story: story,
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION
+    }pagination/`,
+    story,
     description: (
       <div>
         Paginator is a stateful component which manages pagination state for you

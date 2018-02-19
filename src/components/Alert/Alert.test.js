@@ -20,7 +20,10 @@ const testAlertSnapshot = (type, onDismiss) => {
 
 ALL_ALERT_TYPES.forEach(type => {
   beforeAll(() => jest.spyOn(console, 'warn').mockImplementation(() => {}));
-  afterAll(() => console.warn.mockRestore());
+  afterAll(() => {
+    // eslint-disable-next-line no-console
+    console.warn.mockRestore();
+  });
 
   test(`Alert ${type} renders properly`, () => {
     testAlertSnapshot(type);

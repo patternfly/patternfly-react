@@ -2,6 +2,7 @@ import React from 'react';
 import orderBy from 'lodash.orderby';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
+import { compose } from 'recompose';
 import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
@@ -13,7 +14,6 @@ import {
   TABLE_SORT_DIRECTION
 } from '../index';
 import { MenuItem } from '../../MenuItem';
-import { compose } from 'recompose';
 import { mockRows } from './mockRows';
 
 /**
@@ -184,26 +184,24 @@ export class MockClientSortableTable extends React.Component {
               index: 5
             },
             formatters: [
-              (value, { rowData }) => {
-                return [
-                  <Table.Actions key="0">
-                    <Table.Button
-                      onClick={() => alert('clicked ' + rowData.name)}
-                    >
-                      Actions
-                    </Table.Button>
-                  </Table.Actions>,
-                  <Table.Actions key="1">
-                    <Table.DropdownKebab id="myKebab" pullRight>
-                      <MenuItem>Action</MenuItem>
-                      <MenuItem>Another Action</MenuItem>
-                      <MenuItem>Something else here</MenuItem>
-                      <MenuItem divider />
-                      <MenuItem>Separated link</MenuItem>
-                    </Table.DropdownKebab>
-                  </Table.Actions>
-                ];
-              }
+              (value, { rowData }) => [
+                <Table.Actions key="0">
+                  <Table.Button
+                    onClick={() => alert(`clicked ${rowData.name}`)}
+                  >
+                    Actions
+                  </Table.Button>
+                </Table.Actions>,
+                <Table.Actions key="1">
+                  <Table.DropdownKebab id="myKebab" pullRight>
+                    <MenuItem>Action</MenuItem>
+                    <MenuItem>Another Action</MenuItem>
+                    <MenuItem>Something else here</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem>Separated link</MenuItem>
+                  </Table.DropdownKebab>
+                </Table.Actions>
+              ]
             ]
           }
         }
@@ -216,7 +214,7 @@ export class MockClientSortableTable extends React.Component {
 
     const sortedRows = compose(
       sort.sorter({
-        columns: columns,
+        columns,
         sortingColumns,
         sort: orderBy,
         strategy: sort.strategies.byProperty
@@ -233,13 +231,12 @@ export class MockClientSortableTable extends React.Component {
           columns={columns}
           components={{
             header: {
-              cell: cellProps => {
-                return this.customHeaderFormatters({
+              cell: cellProps =>
+                this.customHeaderFormatters({
                   cellProps,
                   columns,
                   sortingColumns
-                });
-              }
+                })
             }
           }}
         >
@@ -247,11 +244,9 @@ export class MockClientSortableTable extends React.Component {
           <Table.Body
             rows={sortedRows}
             rowKey="id"
-            onRow={() => {
-              return {
-                role: 'row'
-              };
-            }}
+            onRow={() => ({
+              role: 'row'
+            })}
           />
         </Table.PfProvider>
       </div>

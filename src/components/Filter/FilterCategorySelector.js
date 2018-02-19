@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
-import cx from 'classnames';
+import { noop } from '../../common/helpers';
 
 const FilterCategorySelector = ({
   children,
@@ -14,7 +15,7 @@ const FilterCategorySelector = ({
   onFilterCategorySelected,
   ...rest
 }) => {
-  let classes = cx('filter-pf-category-select', className);
+  const classes = cx('filter-pf-category-select', className);
 
   if (placeholder || (filterCategories && filterCategories.length > 1)) {
     let title;
@@ -39,25 +40,21 @@ const FilterCategorySelector = ({
               <MenuItem
                 title={placeholder}
                 key="Placeholder"
-                onSelect={() =>
-                  onFilterCategorySelected && onFilterCategorySelected()
-                }
+                onSelect={onFilterCategorySelected}
               >
                 {placeholder}
               </MenuItem>
             )}
             {filterCategories &&
               filterCategories.map((item, index) => {
-                let classes = {
+                const menuItemClasses = {
                   selected: item === currentCategory
                 };
                 return (
                   <MenuItem
-                    className={classes}
+                    className={menuItemClasses}
                     key={item.id || index}
-                    onSelect={() =>
-                      onFilterCategorySelected && onFilterCategorySelected(item)
-                    }
+                    onSelect={() => onFilterCategorySelected(item)}
                   >
                     {item.title || item}
                   </MenuItem>
@@ -68,9 +65,8 @@ const FilterCategorySelector = ({
         {children}
       </div>
     );
-  } else {
-    return null;
   }
+  return null;
 };
 
 FilterCategorySelector.propTypes = {
@@ -88,6 +84,15 @@ FilterCategorySelector.propTypes = {
   placeholder: PropTypes.string,
   /** function(field, value) - Callback to call when a category is added */
   onFilterCategorySelected: PropTypes.func
+};
+
+FilterCategorySelector.defaultProps = {
+  children: null,
+  className: '',
+  id: '',
+  currentCategory: '',
+  placeholder: '',
+  onFilterCategorySelected: noop
 };
 
 export default FilterCategorySelector;

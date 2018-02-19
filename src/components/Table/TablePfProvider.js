@@ -16,20 +16,16 @@ const TablePfProvider = ({
   components,
   ...props
 }) => {
-  const headerCell = cellProps => {
-    return cellProps.children;
-  };
-  const tableCell = cellProps => {
-    return cellProps.children;
-  };
-  let mergedComponents = Object.assign(
+  const headerCell = cellProps => cellProps.children;
+  const tableCell = cellProps => cellProps.children;
+  const mergedComponents = Object.assign(
     { header: { cell: headerCell }, body: { cell: tableCell } },
     components
   );
   const classes = cx(
     {
       table: true,
-      dataTable: dataTable,
+      dataTable,
       'table-striped': striped,
       'table-bordered': bordered,
       'table-hover': hover,
@@ -37,7 +33,7 @@ const TablePfProvider = ({
     },
     className
   );
-  let attributes = {};
+  const attributes = {};
   if (dataTable) {
     attributes.role = 'grid';
   }
@@ -70,5 +66,15 @@ TablePfProvider.propTypes = {
   condensed: PropTypes.bool,
   /** reactabular components override */
   components: PropTypes.object
+};
+TablePfProvider.defaultProps = {
+  children: null,
+  className: '',
+  dataTable: false,
+  striped: false,
+  bordered: false,
+  hover: false,
+  condensed: false,
+  components: {}
 };
 export default TablePfProvider;

@@ -32,6 +32,8 @@ Array [
         className="navbar-brand"
       >
         <span>
+          
+          
           <span
             className="navbar-brand-txt"
           >
@@ -71,6 +73,7 @@ Array [
             <div
               className="badge"
             >
+              
               <span>
                 42
               </span>
@@ -142,6 +145,7 @@ Array [
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
                   >
+                    
                     <span>
                       9999
                     </span>
@@ -381,6 +385,8 @@ Array [
         className="navbar-brand"
       >
         <span>
+          
+          
           <span
             className="navbar-brand-txt"
           >
@@ -420,6 +426,7 @@ Array [
             <div
               className="badge"
             >
+              
               <span>
                 42
               </span>
@@ -487,6 +494,7 @@ Array [
                     onMouseOut={[Function]}
                     onMouseOver={[Function]}
                   >
+                    
                     <span>
                       9999
                     </span>
@@ -719,12 +727,12 @@ Array [
       >
         <span>
           <img
-            alt={undefined}
+            alt=""
             className="navbar-brand-icon"
             src="../../../storybook/img/logo-alt.svg"
           />
           <img
-            alt={undefined}
+            alt=""
             className="navbar-brand-name"
             src="../../../storybook/img/brand-alt.svg"
           />

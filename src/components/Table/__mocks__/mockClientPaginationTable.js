@@ -4,6 +4,7 @@ import orderBy from 'lodash.orderby';
 import cx from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
+import { compose } from 'recompose';
 import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
@@ -19,7 +20,6 @@ import {
 import { MenuItem } from '../../MenuItem';
 import { Grid } from '../../Grid';
 import { PaginationRow, paginate, PAGINATION_VIEW } from '../../Pagination';
-import { compose } from 'recompose';
 import { mockRows } from './mockRows';
 
 /**
@@ -28,6 +28,12 @@ import { mockRows } from './mockRows';
  */
 
 export class MockClientPaginationTable extends React.Component {
+  static deselectRow(row) {
+    return Object.assign({}, row, { selected: false });
+  }
+  static selectRow(row) {
+    return Object.assign({}, row, { selected: true });
+  }
   constructor(props) {
     super(props);
 
@@ -101,14 +107,13 @@ export class MockClientPaginationTable extends React.Component {
               index: 0
             },
             formatters: [
-              (value, { rowData, rowIndex }) => {
-                return selectionCellFormatter(
+              (value, { rowData, rowIndex }) =>
+                selectionCellFormatter(
                   { rowData, rowIndex },
                   this.onSelectRow,
                   `vybrat${rowIndex}`,
                   `vyberte řádek ${rowIndex}`
-                );
-              }
+                )
             ]
           }
         },
@@ -228,26 +233,24 @@ export class MockClientPaginationTable extends React.Component {
               index: 6
             },
             formatters: [
-              (value, { rowData }) => {
-                return [
-                  <Table.Actions key="0">
-                    <Table.Button
-                      onClick={() => alert('clicked ' + rowData.name)}
-                    >
-                      Actions
-                    </Table.Button>
-                  </Table.Actions>,
-                  <Table.Actions key="1">
-                    <Table.DropdownKebab id="myKebab" pullRight>
-                      <MenuItem>Action</MenuItem>
-                      <MenuItem>Another Action</MenuItem>
-                      <MenuItem>Something else here</MenuItem>
-                      <MenuItem divider />
-                      <MenuItem>Separated link</MenuItem>
-                    </Table.DropdownKebab>
-                  </Table.Actions>
-                ];
-              }
+              (value, { rowData }) => [
+                <Table.Actions key="0">
+                  <Table.Button
+                    onClick={() => alert(`clicked ${rowData.name}`)}
+                  >
+                    Actions
+                  </Table.Button>
+                </Table.Actions>,
+                <Table.Actions key="1">
+                  <Table.DropdownKebab id="myKebab" pullRight>
+                    <MenuItem>Action</MenuItem>
+                    <MenuItem>Another Action</MenuItem>
+                    <MenuItem>Something else here</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem>Separated link</MenuItem>
+                  </Table.DropdownKebab>
+                </Table.Actions>
+              ]
             ]
           }
         }
@@ -268,48 +271,8 @@ export class MockClientPaginationTable extends React.Component {
       pageChangeValue: 1
     };
   }
-  totalPages() {
-    const { perPage } = this.state.pagination;
-    return Math.ceil(mockRows.length / perPage);
-  }
-  onPageInput(e) {
-    this.setState({ pageChangeValue: e.target.value });
-  }
-  onSubmit() {
-    this.setPage(this.state.pageChangeValue);
-  }
-  setPage(value) {
-    const page = Number(value);
-    if (
-      !isNaN(value) &&
-      value !== '' &&
-      page > 0 &&
-      page <= this.totalPages()
-    ) {
-      let newPaginationState = Object.assign({}, this.state.pagination);
-      newPaginationState.page = page;
-      this.setState({ pagination: newPaginationState, pageChangeValue: page });
-    }
-  }
-  onPerPageSelect(eventKey, e) {
-    let newPaginationState = Object.assign({}, this.state.pagination);
-    newPaginationState.perPage = eventKey;
-    newPaginationState.page = 1;
-    this.setState({ pagination: newPaginationState });
-  }
   onFirstPage() {
     this.setPage(1);
-  }
-  onPreviousPage() {
-    if (this.state.pagination.page > 1) {
-      this.setPage(this.state.pagination.page - 1);
-    }
-  }
-  onNextPage() {
-    const { page } = this.state.pagination;
-    if (page < this.totalPages()) {
-      this.setPage(this.state.pagination.page + 1);
-    }
   }
   onLastPage() {
     const { page } = this.state.pagination;
@@ -318,41 +281,50 @@ export class MockClientPaginationTable extends React.Component {
       this.setPage(totalPages);
     }
   }
-  onSelectRow(event, row) {
-    const { onRowsLogger } = this.props;
-    const { rows, selectedRows } = this.state;
-    const selectedRowIndex = rows.findIndex(r => r.id === row.id);
-    if (selectedRowIndex > -1) {
-      let updatedSelectedRows, updatedRow;
-      if (row.selected) {
-        updatedSelectedRows = selectedRows.filter(r => !(r === row.id));
-        updatedRow = this.deselectRow(row);
-      } else {
-        selectedRows.push(row.id);
-        updatedSelectedRows = selectedRows;
-        updatedRow = this.selectRow(row);
-      }
-      rows[selectedRowIndex] = updatedRow;
-      this.setState({
-        rows: rows,
-        selectedRows: updatedSelectedRows
-      });
-      onRowsLogger(rows.filter(r => r.selected));
+  onNextPage() {
+    const { page } = this.state.pagination;
+    if (page < this.totalPages()) {
+      this.setPage(this.state.pagination.page + 1);
     }
+  }
+  onPageInput(e) {
+    this.setState({ pageChangeValue: e.target.value });
+  }
+  onPerPageSelect(eventKey, e) {
+    const newPaginationState = Object.assign({}, this.state.pagination);
+    newPaginationState.perPage = eventKey;
+    newPaginationState.page = 1;
+    this.setState({ pagination: newPaginationState });
+  }
+  onPreviousPage() {
+    if (this.state.pagination.page > 1) {
+      this.setPage(this.state.pagination.page - 1);
+    }
+  }
+  onRow(row, { rowIndex }) {
+    const { selectedRows } = this.state;
+    const selected = selectedRows.indexOf(row.id) > -1;
+    return {
+      className: cx({ selected }),
+      role: 'row'
+    };
   }
   onSelectAllRows(event) {
     const { onRowsLogger } = this.props;
     const { rows, selectedRows } = this.state;
-    const checked = event.target.checked;
+    const { checked } = event.target;
     const currentRows = this.currentRows().rows;
 
     if (checked) {
       const updatedSelections = [
         ...new Set([...currentRows.map(r => r.id), ...selectedRows])
       ];
-      const updatedRows = rows.map(r => {
-        return updatedSelections.indexOf(r.id) > -1 ? this.selectRow(r) : r;
-      });
+      const updatedRows = rows.map(
+        r =>
+          updatedSelections.indexOf(r.id) > -1
+            ? MockClientPaginationTable.selectRow(r)
+            : r
+      );
       this.setState({
         // important: you must update rows to force a re-render and trigger onRow hook
         rows: updatedRows,
@@ -361,12 +333,15 @@ export class MockClientPaginationTable extends React.Component {
       onRowsLogger(updatedRows.filter(r => r.selected));
     } else {
       const ids = currentRows.map(r => r.id);
-      const updatedSelections = selectedRows.filter(r => {
-        return !(ids.indexOf(r) > -1);
-      });
-      const updatedRows = rows.map(r => {
-        return updatedSelections.indexOf(r.id) > -1 ? r : this.deselectRow(r);
-      });
+      const updatedSelections = selectedRows.filter(
+        r => !(ids.indexOf(r) > -1)
+      );
+      const updatedRows = rows.map(
+        r =>
+          updatedSelections.indexOf(r.id) > -1
+            ? r
+            : MockClientPaginationTable.deselectRow(r)
+      );
       this.setState({
         rows: updatedRows,
         selectedRows: updatedSelections
@@ -374,31 +349,60 @@ export class MockClientPaginationTable extends React.Component {
       onRowsLogger(updatedRows.filter(r => r.selected));
     }
   }
-  selectRow(row) {
-    return Object.assign({}, row, { selected: true });
+  onSelectRow(event, row) {
+    const { onRowsLogger } = this.props;
+    const { rows, selectedRows } = this.state;
+    const selectedRowIndex = rows.findIndex(r => r.id === row.id);
+    if (selectedRowIndex > -1) {
+      let updatedSelectedRows;
+      let updatedRow;
+      if (row.selected) {
+        updatedSelectedRows = selectedRows.filter(r => !(r === row.id));
+        updatedRow = MockClientPaginationTable.deselectRow(row);
+      } else {
+        selectedRows.push(row.id);
+        updatedSelectedRows = selectedRows;
+        updatedRow = MockClientPaginationTable.selectRow(row);
+      }
+      rows[selectedRowIndex] = updatedRow;
+      this.setState({
+        rows,
+        selectedRows: updatedSelectedRows
+      });
+      onRowsLogger(rows.filter(r => r.selected));
+    }
   }
-  deselectRow(row) {
-    return Object.assign({}, row, { selected: false });
+  onSubmit() {
+    this.setPage(this.state.pageChangeValue);
+  }
+  setPage(value) {
+    const page = Number(value);
+    if (
+      !Number.isNaN(value) &&
+      value !== '' &&
+      page > 0 &&
+      page <= this.totalPages()
+    ) {
+      const newPaginationState = Object.assign({}, this.state.pagination);
+      newPaginationState.page = page;
+      this.setState({ pagination: newPaginationState, pageChangeValue: page });
+    }
   }
   currentRows() {
     const { rows, sortingColumns, columns, pagination } = this.state;
     return compose(
       paginate(pagination),
       sort.sorter({
-        columns: columns,
+        columns,
         sortingColumns,
         sort: orderBy,
         strategy: sort.strategies.byProperty
       })
     )(rows);
   }
-  onRow(row, { rowIndex }) {
-    const { selectedRows } = this.state;
-    const selected = selectedRows.indexOf(row.id) > -1;
-    return {
-      className: cx({ selected: selected }),
-      role: 'row'
-    };
+  totalPages() {
+    const { perPage } = this.state.pagination;
+    return Math.ceil(mockRows.length / perPage);
   }
   render() {
     const { columns, pagination, sortingColumns, pageChangeValue } = this.state;
@@ -414,15 +418,14 @@ export class MockClientPaginationTable extends React.Component {
           columns={columns}
           components={{
             header: {
-              cell: cellProps => {
-                return this.customHeaderFormatters({
+              cell: cellProps =>
+                this.customHeaderFormatters({
                   cellProps,
                   columns,
                   sortingColumns,
                   rows: sortedPaginatedRows.rows,
                   onSelectAllRows: this.onSelectAllRows
-                });
-              }
+                })
             }
           }}
         >
@@ -454,7 +457,7 @@ export class MockClientPaginationTable extends React.Component {
   }
 }
 MockClientPaginationTable.propTypes = {
-  onRowsLogger: PropTypes.func
+  onRowsLogger: PropTypes.func.isRequired
 };
 
 export const mockClientPaginationTableSource = `
@@ -488,6 +491,13 @@ import { mockRows } from './mockRows';
  */
 
 export class MockClientPaginationTable extends React.Component {
+  static selectRow(row) {
+    return Object.assign({}, row, { selected: true });
+  }
+  static deselectRow(row) {
+    return Object.assign({}, row, { selected: false });
+  }
+
   constructor(props) {
     super(props);
 
@@ -740,7 +750,7 @@ export class MockClientPaginationTable extends React.Component {
   setPage(value) {
     const page = Number(value);
     if (
-      !isNaN(value) &&
+      !Number.isNaN(value) &&
       value !== '' &&
       page > 0 &&
       page <= this.totalPages()
@@ -785,11 +795,11 @@ export class MockClientPaginationTable extends React.Component {
       let updatedSelectedRows, updatedRow;
       if (row.selected) {
         updatedSelectedRows = selectedRows.filter(r => !(r === row.id));
-        updatedRow = this.deselectRow(row);
+        updatedRow = MockClientPaginationTable.deselectRow(row);
       } else {
         selectedRows.push(row.id);
         updatedSelectedRows = selectedRows;
-        updatedRow = this.selectRow(row);
+        updatedRow = MockClientPaginationTable.selectRow(row);
       }
       rows[selectedRowIndex] = updatedRow;
       this.setState({
@@ -810,7 +820,7 @@ export class MockClientPaginationTable extends React.Component {
         ...new Set([...currentRows.map(r => r.id), ...selectedRows])
       ];
       const updatedRows = rows.map(r => {
-        return updatedSelections.indexOf(r.id) > -1 ? this.selectRow(r) : r;
+        return updatedSelections.indexOf(r.id) > -1 ? MockClientPaginationTable.selectRow(r) : r;
       });
       this.setState({
         // important: you must update rows to force a re-render and trigger onRow hook
@@ -824,7 +834,7 @@ export class MockClientPaginationTable extends React.Component {
         return !(ids.indexOf(r) > -1);
       });
       const updatedRows = rows.map(r => {
-        return updatedSelections.indexOf(r.id) > -1 ? r : this.deselectRow(r);
+        return updatedSelections.indexOf(r.id) > -1 ? r : MockClientPaginationTable.deselectRow(r);
       });
       this.setState({
         rows: updatedRows,
@@ -832,12 +842,6 @@ export class MockClientPaginationTable extends React.Component {
       });
       onRowsLogger(updatedRows.filter(r => r.selected));
     }
-  }
-  selectRow(row) {
-    return Object.assign({}, row, { selected: true });
-  }
-  deselectRow(row) {
-    return Object.assign({}, row, { selected: false });
   }
   currentRows() {
     const { rows, sortingColumns, columns, pagination } = this.state;
@@ -913,6 +917,6 @@ export class MockClientPaginationTable extends React.Component {
   }
 }
 MockClientPaginationTable.propTypes = {
-  onRowsLogger: PropTypes.func
+  onRowsLogger: PropTypes.func.isRequired
 };
 `;

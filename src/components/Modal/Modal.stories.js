@@ -31,14 +31,16 @@ stories.add(
       </div>
     )
   })(() => {
-    let story = <MockModalManager />;
+    const story = <MockModalManager />;
     return inlineTemplate({
       title: 'Modal Example',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_FORMS + 'modal-overlay/',
-      reactBootstrapDocumentationLink:
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT + 'modal/',
-      story: story
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_FORMS
+      }modal-overlay/`,
+      reactBootstrapDocumentationLink: `${
+        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
+      }modal/`,
+      story
     });
   })
 );

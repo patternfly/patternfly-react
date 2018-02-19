@@ -22,4 +22,9 @@ ToolbarResults.propTypes = {
   className: PropTypes.string
 };
 
+ToolbarResults.defaultProps = {
+  children: null,
+  className: ''
+};
+
 export default ToolbarResults;

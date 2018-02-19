@@ -5,7 +5,7 @@ import { Table } from '../index';
 
 const selectionCellFormatter = (
   { rowData, rowIndex },
-  onSelectRow = noop,
+  onSelectRow,
   id,
   label
 ) => {
@@ -26,9 +26,9 @@ const selectionCellFormatter = (
 };
 selectionCellFormatter.propTypes = {
   /** rowData for this row */
-  rowData: PropTypes.object, // eslint-disable-line react/no-unused-prop-types
+  rowData: PropTypes.object,
   /** rowIndex for this row */
-  rowIndex: PropTypes.number, // eslint-disable-line react/no-unused-prop-types
+  rowIndex: PropTypes.number.isRequired,
   /** row selected callback */
   onSelectRow: PropTypes.func, // eslint-disable-line react/no-unused-prop-types
   /** checkbox id override */
@@ -36,5 +36,10 @@ selectionCellFormatter.propTypes = {
   /** checkbox label override */
   label: PropTypes.string // eslint-disable-line react/no-unused-prop-types
 };
-
+selectionCellFormatter.defaultProps = {
+  rowData: {},
+  onSelectRow: noop,
+  id: '',
+  label: ''
+};
 export default selectionCellFormatter;

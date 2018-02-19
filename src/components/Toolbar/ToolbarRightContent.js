@@ -17,5 +17,8 @@ ToolbarRightContent.propTypes = {
   /** Additional css classes */
   className: PropTypes.string
 };
-
+ToolbarRightContent.defaultProps = {
+  children: null,
+  className: ''
+};
 export default ToolbarRightContent;

@@ -30,7 +30,7 @@ stories.addDecorator(
     title: 'Tabs',
     documentationLink:
       'http://www.patternfly.org/pattern-library/widgets/#tabs',
-    description: description
+    description
   })
 );
 

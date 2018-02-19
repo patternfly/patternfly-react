@@ -4,10 +4,12 @@ import renderer from 'react-test-renderer';
 import { VerticalNav } from './index';
 
 import { mockNavItems } from './__mocks__/mockNavItems';
-import { mockIconBarChildren } from './__mocks__/mockIconBarChildren';
+import { MockIconBarChildren } from './__mocks__/mockIconBarChildren';
 import { basicExample } from './__mocks__/basicExample';
 
 const { Masthead, Brand, IconBar } = VerticalNav;
+
+console.warn = jest.genMockFunction(); // eslint-disable-line no-console
 
 test('VerticalNav renders properly with item children', () => {
   const component = renderer.create(basicExample());
@@ -26,10 +28,12 @@ test('VerticalNav renders properly with item objects', () => {
     <VerticalNav items={mockNavItems} pinnableMenus>
       <Masthead>
         <Brand
-          iconImg={'../../../storybook/img/logo-alt.svg'}
-          titleImg={'../../../storybook/img/brand-alt.svg'}
+          iconImg="../../../storybook/img/logo-alt.svg"
+          titleImg="../../../storybook/img/brand-alt.svg"
         />
-        <IconBar>{mockIconBarChildren}</IconBar>
+        <IconBar>
+          <MockIconBarChildren />
+        </IconBar>
       </Masthead>
     </VerticalNav>
   );

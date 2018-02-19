@@ -1,23 +1,30 @@
 import React from 'react';
-import { bindMethods } from '../../../common/helpers';
-
-import { mockListItems } from './mockListItems';
-import { boolean } from '@storybook/addon-knobs/dist/index';
 import cx from 'classnames';
-
+import { boolean } from '@storybook/addon-knobs/dist/index';
+import { bindMethods } from '../../../common/helpers';
+import { mockListItems } from './mockListItems';
 import { Button, Grid, ListView } from '../../../index';
 
 export class MockCompoundExpansion extends React.Component {
+  static renderActions() {
+    return (
+      <div>
+        <Button>Details</Button>
+      </div>
+    );
+  }
+
   constructor() {
     super();
 
     bindMethods(this, ['renderItem', 'toggleExpand']);
     this.state = {
-      listItems: []
+      listItems: mockListItems
     };
   }
 
-  componentDidMount() {
+  closeExpand(item) {
+    item.expanded = false;
     this.setState({ listItems: mockListItems });
   }
 
@@ -29,19 +36,6 @@ export class MockCompoundExpansion extends React.Component {
       item.expandType = expandProp;
     }
     this.setState({ listItems: mockListItems });
-  }
-
-  closeExpand(item) {
-    item.expanded = false;
-    this.setState({ listItems: mockListItems });
-  }
-
-  renderActions() {
-    return (
-      <div>
-        <Button>Details</Button>
-      </div>
-    );
   }
 
   renderAdditionalInfoExpandItems(item) {
@@ -72,11 +66,11 @@ export class MockCompoundExpansion extends React.Component {
   }
 
   renderItem(item, index) {
-    let expandText = item.compoundExpandText[item.expandType];
+    const expandText = item.compoundExpandText[item.expandType];
     return (
       <ListView.Item
         key={index}
-        actions={this.renderActions(item.actions)}
+        actions={MockCompoundExpansion.renderActions(item.actions)}
         checkboxInput={<input type="checkbox" />}
         leftContent={<ListView.Icon name="plane" />}
         additionalInfo={this.renderAdditionalInfoExpandItems(item)}

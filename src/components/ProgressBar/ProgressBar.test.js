@@ -7,6 +7,6 @@ import ProgressBar from './ProgressBar';
 
 test('ProgressBar renders properly', () => {
   const component = renderer.create(<ProgressBar now={60} />);
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

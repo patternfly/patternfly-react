@@ -13,7 +13,7 @@ import { reactabularDescription } from './tableStoryDescriptions';
 
 const bootstrapTableAddWithInfo = stories => {
   stories.addWithInfo('Bootstrap Table Styles', '', () => {
-    let story = (
+    const story = (
       <div>
         <h3>Basic example</h3>
         <Table.PfProvider columns={mockBootstrapColumns}>
@@ -62,6 +62,8 @@ const bootstrapTableAddWithInfo = stories => {
                   return { className: 'warning' };
                 case 6:
                   return { className: 'danger' };
+                default:
+                  return null;
               }
             }}
           />
@@ -79,9 +81,10 @@ const bootstrapTableAddWithInfo = stories => {
 
     return inlineTemplate({
       title: 'Bootstrap Table Styles',
-      documentationLink:
-        DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS + 'table-view/',
-      story: story,
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
+      }table-view/`,
+      story,
       description: reactabularDescription
     });
   });

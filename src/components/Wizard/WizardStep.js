@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { noop } from '../../common/helpers';
 
 /**
  * WizardStep component for Patternfly React
@@ -43,7 +44,7 @@ WizardStep.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** The wizard step index */
-  stepIndex: PropTypes.number,
+  stepIndex: PropTypes.number.isRequired,
   /** The wizard step for this step */
   step: PropTypes.string,
   /** The wizard step number label */
@@ -54,5 +55,14 @@ WizardStep.propTypes = {
   activeStep: PropTypes.string,
   /** Step click handler */
   onClick: PropTypes.func
+};
+WizardStep.defaultProps = {
+  children: null,
+  className: '',
+  step: '',
+  label: '',
+  title: '',
+  activeStep: '',
+  onClick: noop
 };
 export default WizardStep;

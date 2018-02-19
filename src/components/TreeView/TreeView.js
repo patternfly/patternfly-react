@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { noop } from '../../common/helpers';
 
 import TreeViewNode from './TreeViewNode';
 
@@ -45,7 +46,9 @@ TreeView.propTypes = {
 
 TreeView.defaultProps = {
   highlightOnHover: false,
-  highlightOnSelect: false
+  highlightOnSelect: false,
+  nodes: [],
+  selectNode: noop
 };
 
 export default TreeView;

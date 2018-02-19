@@ -71,8 +71,8 @@ test('Toolbar renders properly', () => {
         <h5>40 Results</h5>
         <Filter.ActiveLabel title="Active Filters:" />
         <Filter.List>
-          <Filter.Item label={'Name: John'} />
-          <Filter.Item label={'Address: Westford'} />
+          <Filter.Item label="Name: John" />
+          <Filter.Item label="Address: Westford" />
         </Filter.List>
       </Toolbar.Results>
     </Toolbar>

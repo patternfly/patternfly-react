@@ -85,22 +85,19 @@ export const renderActions = () => (
   </div>
 );
 
-export const renderAdditionalInfoItems = itemProperties => {
-  return (
-    itemProperties &&
-    Object.keys(itemProperties).map(prop => {
-      const classNames = cx('pficon', {
-        'pficon-flavor': prop === 'hosts',
-        'pficon-cluster': prop === 'clusters',
-        'pficon-container-node': prop === 'nodes',
-        'pficon-image': prop === 'images'
-      });
-      return (
-        <ListView.InfoItem key={prop}>
-          <span className={classNames} />
-          <strong>{itemProperties[prop]}</strong> {prop}
-        </ListView.InfoItem>
-      );
-    })
-  );
-};
+export const renderAdditionalInfoItems = itemProperties =>
+  itemProperties &&
+  Object.keys(itemProperties).map(prop => {
+    const classNames = cx('pficon', {
+      'pficon-flavor': prop === 'hosts',
+      'pficon-cluster': prop === 'clusters',
+      'pficon-container-node': prop === 'nodes',
+      'pficon-image': prop === 'images'
+    });
+    return (
+      <ListView.InfoItem key={prop}>
+        <span className={classNames} />
+        <strong>{itemProperties[prop]}</strong> {prop}
+      </ListView.InfoItem>
+    );
+  });

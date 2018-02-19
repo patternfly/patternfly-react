@@ -32,6 +32,7 @@ SortDirectionSelector.propTypes = {
 };
 
 SortDirectionSelector.defaultProps = {
+  className: '',
   isNumeric: true,
   isAscending: true
 };

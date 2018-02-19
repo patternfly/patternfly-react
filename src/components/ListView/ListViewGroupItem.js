@@ -32,12 +32,14 @@ ListViewGroupItem.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** Toggles the item expanded */
-  expanded: PropTypes.bool.isRequired,
+  expanded: PropTypes.bool,
   /** Toggles the item stacked */
-  stacked: PropTypes.bool.isRequired
+  stacked: PropTypes.bool
 };
 ListViewGroupItem.defaultProps = {
+  children: null,
   expanded: false,
-  stacked: false
+  stacked: false,
+  className: ''
 };
 export default ListViewGroupItem;

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
-import cx from 'classnames';
+import { noop } from '../../common/helpers';
 
 const FilterValueSelector = ({
   className,
@@ -13,7 +14,7 @@ const FilterValueSelector = ({
   onFilterValueSelected,
   ...rest
 }) => {
-  let classes = cx('filter-pf-select', className);
+  const classes = cx('filter-pf-select', className);
 
   if (placeholder || (filterValues && filterValues.length > 1)) {
     let title;
@@ -37,23 +38,21 @@ const FilterValueSelector = ({
             <MenuItem
               title={placeholder}
               key="Placeholder"
-              onSelect={() => onFilterValueSelected && onFilterValueSelected()}
+              onSelect={onFilterValueSelected}
             >
               {placeholder}
             </MenuItem>
           )}
           {filterValues &&
             filterValues.map((item, index) => {
-              let classes = {
+              const menuItemClasses = {
                 selected: item === currentValue
               };
               return (
                 <MenuItem
-                  className={classes}
+                  className={menuItemClasses}
                   key={item.id || index}
-                  onSelect={() =>
-                    onFilterValueSelected && onFilterValueSelected(item)
-                  }
+                  onSelect={() => onFilterValueSelected(item)}
                 >
                   {item.title || item}
                 </MenuItem>
@@ -62,9 +61,8 @@ const FilterValueSelector = ({
         </DropdownButton>
       </div>
     );
-  } else {
-    return null;
   }
+  return null;
 };
 
 FilterValueSelector.propTypes = {
@@ -80,6 +78,14 @@ FilterValueSelector.propTypes = {
   placeholder: PropTypes.string,
   /** function(field, value) - Callback to call when a value is selected */
   onFilterValueSelected: PropTypes.func
+};
+
+FilterValueSelector.defaultProps = {
+  className: '',
+  id: '',
+  currentValue: '',
+  placeholder: '',
+  onFilterValueSelected: noop
 };
 
 export default FilterValueSelector;

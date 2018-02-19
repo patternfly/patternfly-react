@@ -11,4 +11,7 @@ ListViewDescriptionText.propTypes = {
   /** Child node - content rendered in text section of ListViewItem */
   children: PropTypes.node
 };
+ListViewDescriptionText.defaultProps = {
+  children: null
+};
 export default ListViewDescriptionText;

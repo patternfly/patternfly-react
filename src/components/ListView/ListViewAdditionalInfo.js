@@ -11,5 +11,8 @@ ListViewAdditionalInfo.propTypes = {
   /** Child nodes - an array of ListViewInfoItem instances */
   children: PropTypes.arrayOf(PropTypes.node)
 };
+ListViewAdditionalInfo.defaultProps = {
+  children: null
+};
 
 export default ListViewAdditionalInfo;

@@ -1,6 +1,7 @@
 import cx from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { noop } from '../../common/helpers';
 
 const FilterItem = ({ children, className, onRemove, filterData, ...rest }) => {
   const classes = cx(className);
@@ -13,7 +14,7 @@ const FilterItem = ({ children, className, onRemove, filterData, ...rest }) => {
           href="#"
           onClick={e => {
             e.preventDefault();
-            onRemove && onRemove(filterData);
+            onRemove(filterData);
           }}
         >
           <span className="pficon pficon-close" aria-hidden="true" />
@@ -35,4 +36,10 @@ FilterItem.propTypes = {
   filterData: PropTypes.object
 };
 
+FilterItem.defaultProps = {
+  children: null,
+  className: '',
+  onRemove: noop,
+  filterData: {}
+};
 export default FilterItem;

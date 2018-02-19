@@ -19,4 +19,8 @@ TableSelectionHeading.propTypes = {
   /** Additional css classes */
   className: PropTypes.string
 };
+TableSelectionHeading.defaultProps = {
+  children: null,
+  className: ''
+};
 export default TableSelectionHeading;

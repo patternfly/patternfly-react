@@ -13,30 +13,26 @@ export const renderWizardSteps = (
   const activeStep = wizardSteps[activeStepIndex];
   const activeSubStep = activeStep.subSteps[activeSubStepIndex];
 
-  return wizardSteps.map((step, stepIndex) => {
-    return (
-      <Wizard.Step
-        key={stepIndex}
-        stepIndex={stepIndex}
-        step={step.step}
-        label={step.label}
-        title={step.title}
-        activeStep={activeStep && activeStep.step}
-        onClick={onStepClick}
-      >
-        {step.subSteps.map((sub, subStepIndex) => {
-          return (
-            <Wizard.SubStep
-              key={subStepIndex}
-              subStep={sub.subStep}
-              title={sub.title}
-              activeSubStep={activeSubStep && activeSubStep.subStep}
-            />
-          );
-        })}
-      </Wizard.Step>
-    );
-  });
+  return wizardSteps.map((step, stepIndex) => (
+    <Wizard.Step
+      key={stepIndex}
+      stepIndex={stepIndex}
+      step={step.step}
+      label={step.label}
+      title={step.title}
+      activeStep={activeStep && activeStep.step}
+      onClick={onStepClick}
+    >
+      {step.subSteps.map((sub, subStepIndex) => (
+        <Wizard.SubStep
+          key={subStepIndex}
+          subStep={sub.subStep}
+          title={sub.title}
+          activeSubStep={activeSubStep && activeSubStep.subStep}
+        />
+      ))}
+    </Wizard.Step>
+  ));
 };
 
 export const renderSidebarItems = (
@@ -48,39 +44,35 @@ export const renderSidebarItems = (
   const activeStep = wizardSteps[activeStepIndex];
   const activeSubStep = activeStep.subSteps[activeSubStepIndex];
 
-  return wizardSteps.map((step, stepIndex) => {
-    return (
-      <Wizard.SidebarGroup
-        key={stepIndex}
-        step={step.step}
-        activeStep={activeStep.step}
-      >
-        {step.subSteps.map((sub, subStepIndex) => {
-          return (
-            <Wizard.SidebarGroupItem
-              key={subStepIndex}
-              stepIndex={stepIndex}
-              subStepIndex={subStepIndex}
-              subStep={sub.subStep}
-              label={sub.label}
-              title={sub.title}
-              activeSubStep={activeSubStep.subStep}
-              onClick={onSidebarItemClick}
-            />
-          );
-        })}
-      </Wizard.SidebarGroup>
-    );
-  });
+  return wizardSteps.map((step, stepIndex) => (
+    <Wizard.SidebarGroup
+      key={stepIndex}
+      step={step.step}
+      activeStep={activeStep.step}
+    >
+      {step.subSteps.map((sub, subStepIndex) => (
+        <Wizard.SidebarGroupItem
+          key={subStepIndex}
+          stepIndex={stepIndex}
+          subStepIndex={subStepIndex}
+          subStep={sub.subStep}
+          label={sub.label}
+          title={sub.title}
+          activeSubStep={activeSubStep.subStep}
+          onClick={onSidebarItemClick}
+        />
+      ))}
+    </Wizard.SidebarGroup>
+  ));
 };
 
 export const renderWizardContents = (
   wizardSteps,
   activeStepIndex,
   activeSubStepIndex
-) => {
-  return wizardSteps.map((step, stepIndex) => {
-    return step.subSteps.map((sub, subStepIndex) => {
+) =>
+  wizardSteps.map((step, stepIndex) =>
+    step.subSteps.map((sub, subStepIndex) => {
       if (stepIndex === 0 || stepIndex === 1) {
         // render steps 1 and 2 mock contents
         return (
@@ -126,6 +118,6 @@ export const renderWizardContents = (
           </Wizard.Contents>
         );
       }
-    });
-  });
-};
+      return null;
+    })
+  );

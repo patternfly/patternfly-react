@@ -1,12 +1,8 @@
 import React from 'react';
 import { Table } from '../index';
 
-const headerFormat = value => {
-  return <Table.Heading>{value}</Table.Heading>;
-};
-const cellFormat = value => {
-  return <Table.Cell>{value}</Table.Cell>;
-};
+const headerFormat = value => <Table.Heading>{value}</Table.Heading>;
+const cellFormat = value => <Table.Cell>{value}</Table.Cell>;
 
 export const mockBootstrapColumns = [
   {
@@ -51,12 +47,12 @@ export const mockBootstrapColumns = [
   }
 ];
 
-const headerFormatRightAlign = value => {
-  return <Table.Heading align="right">{value}</Table.Heading>;
-};
-const cellFormatRightAlign = value => {
-  return <Table.Cell align="right">{value}</Table.Cell>;
-};
+const headerFormatRightAlign = value => (
+  <Table.Heading align="right">{value}</Table.Heading>
+);
+const cellFormatRightAlign = value => (
+  <Table.Cell align="right">{value}</Table.Cell>
+);
 
 export const mockPatternflyColumns = [
   {
@@ -113,17 +109,11 @@ export const mockPatternflyColumns = [
     header: {
       label: 'Location',
       formatters: [
-        value => {
-          return <Table.Heading align="center">{value}</Table.Heading>;
-        }
+        value => <Table.Heading align="center">{value}</Table.Heading>
       ]
     },
     cell: {
-      formatters: [
-        value => {
-          return <Table.Cell align="center">{value}</Table.Cell>;
-        }
-      ]
+      formatters: [value => <Table.Cell align="center">{value}</Table.Cell>]
     },
     property: 'location'
   },

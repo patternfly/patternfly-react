@@ -19,4 +19,8 @@ TableSelectionCell.propTypes = {
   /** Additional css classes */
   className: PropTypes.string
 };
+TableSelectionCell.defaultProps = {
+  children: null,
+  className: ''
+};
 export default TableSelectionCell;

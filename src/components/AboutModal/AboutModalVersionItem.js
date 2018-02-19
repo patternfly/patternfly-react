@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AboutModalVersionItem = ({ className, label, versionText, ...rest }) => {
-  return (
-    <li className={className} {...rest}>
-      <strong>{label}</strong> {versionText}
-    </li>
-  );
-};
+const AboutModalVersionItem = ({ className, label, versionText, ...rest }) => (
+  <li className={className} {...rest}>
+    <strong>{label}</strong> {versionText}
+  </li>
+);
 
 AboutModalVersionItem.propTypes = {
   /** Additional css classes */
@@ -16,6 +14,10 @@ AboutModalVersionItem.propTypes = {
   label: PropTypes.string.isRequired,
   /** Text for the version */
   versionText: PropTypes.string.isRequired
+};
+
+AboutModalVersionItem.defaultProps = {
+  className: ''
 };
 
 export default AboutModalVersionItem;

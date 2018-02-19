@@ -19,4 +19,8 @@ TableActions.propTypes = {
   /** Additional css classes */
   className: PropTypes.string
 };
+TableActions.defaultProps = {
+  children: null,
+  className: ''
+};
 export default TableActions;

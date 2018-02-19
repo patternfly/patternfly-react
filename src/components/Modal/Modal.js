@@ -1,5 +1,5 @@
-import CustomModalDialog from './InnerComponents/CustomModalDialog';
 import { Modal as BsModal } from 'react-bootstrap';
+import CustomModalDialog from './InnerComponents/CustomModalDialog';
 
 /**
  * Modal Component for Patternfly React

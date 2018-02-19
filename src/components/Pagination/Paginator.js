@@ -28,6 +28,32 @@ class Paginator extends React.Component {
     this.initPagination(nextProps);
   }
 
+  setPage(value) {
+    const page = Number(value);
+    if (
+      !Number.isNaN(value) &&
+      value !== '' &&
+      page > 0 &&
+      page <= this.totalPages()
+    ) {
+      this.props.onPageSet(page);
+    }
+  }
+
+  setPageRelative(diff) {
+    const { pagination } = this.props;
+    const page = Number(pagination.page) + diff;
+    this.setPage(page);
+  }
+
+  handleFormSubmit(e) {
+    this.setPage(this.state.pageChangeValue);
+  }
+
+  handlePageChange(e) {
+    this.setState({ pageChangeValue: e.target.value });
+  }
+
   initPagination(props) {
     const { pagination } = props;
     this.perPage = Number(pagination.perPage);
@@ -37,32 +63,6 @@ class Paginator extends React.Component {
 
   totalPages() {
     return Math.ceil(this.props.itemCount / this.perPage);
-  }
-
-  setPageRelative(diff) {
-    const { pagination } = this.props;
-    const page = Number(pagination.page) + diff;
-    this.setPage(page);
-  }
-
-  setPage(value) {
-    const page = Number(value);
-    if (
-      !isNaN(value) &&
-      value !== '' &&
-      page > 0 &&
-      page <= this.totalPages()
-    ) {
-      this.props.onPageSet(page);
-    }
-  }
-
-  handlePageChange(e) {
-    this.setState({ pageChangeValue: e.target.value });
-  }
-
-  handleFormSubmit(e) {
-    this.setPage(this.state.pageChangeValue);
   }
 
   render() {
@@ -110,7 +110,7 @@ Paginator.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** pagination row view type */
-  viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES),
+  viewType: PropTypes.oneOf(PAGINATION_VIEW_TYPES).isRequired,
   /** user pagination settings */
   pagination: PropTypes.shape({
     /** the current page */
@@ -119,7 +119,7 @@ Paginator.propTypes = {
     perPage: PropTypes.number.isRequired,
     /** per page options */
     perPageOptions: PropTypes.array
-  }),
+  }).isRequired,
   /** calculated number of rows */
   itemCount: PropTypes.number.isRequired,
   /** message text inputs for i18n */
@@ -139,6 +139,18 @@ Paginator.propTypes = {
   onPerPageSelect: PropTypes.func
 };
 Paginator.defaultProps = {
+  className: '',
+  messages: {
+    firstPage: 'First Page',
+    previousPage: 'Previous Page',
+    currentPage: 'Current Page',
+    nextPage: 'Next Page',
+    lastPage: 'Last Page',
+    perPage: 'per page',
+    of: 'of'
+  },
+  dropdownButtonId: 'pagination-row-dropdown',
+  onPerPageSelect: noop,
   onPageSet: noop
 };
 

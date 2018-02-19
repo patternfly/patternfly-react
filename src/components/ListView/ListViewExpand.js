@@ -28,11 +28,12 @@ ListViewExpand.propTypes = {
   /** Child nodes which render additional content - used in expandable ListViewInfoItem */
   children: PropTypes.node,
   /** Expanded state toggle */
-  expanded: PropTypes.bool.isRequired,
+  expanded: PropTypes.bool,
   /** Function to execute to trigger toggle */
   toggleExpanded: PropTypes.func.isRequired
 };
 ListViewExpand.defaultProps = {
+  children: null,
   expanded: false
 };
 export default ListViewExpand;

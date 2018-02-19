@@ -8,6 +8,7 @@ import {
 
 export const warnIfDeprecatedType = type => {
   if (type === ALERT_TYPE_DANGER) {
+    // eslint-disable-next-line no-console
     console.warn(`
       Warning: Deprecated Alert.type='${ALERT_TYPE_DANGER}'.
       Please migrate to Alert.type='${ALERT_TYPE_ERROR}'
@@ -26,6 +27,8 @@ export const getIconName = type => {
       return 'ok';
     case ALERT_TYPE_INFO:
       return 'info';
+    default:
+      throw new Error(`Unsupported alert type=${type}`);
   }
 };
 
@@ -40,5 +43,7 @@ export const getClassName = type => {
       return 'alert-success';
     case ALERT_TYPE_INFO:
       return 'alert-info';
+    default:
+      throw new Error(`Unsupported alert type=${type}`);
   }
 };

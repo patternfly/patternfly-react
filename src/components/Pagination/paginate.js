@@ -10,7 +10,7 @@ export default function paginate({ page, perPage }) {
     const startPage = p < amountOfPages ? p : 0;
     const endOfPage = startPage * perPage + perPage;
     return {
-      amountOfPages: amountOfPages,
+      amountOfPages,
       itemCount: rows.length,
       itemsStart: startPage * perPage + 1,
       itemsEnd: endOfPage > rows.length ? rows.length : endOfPage,

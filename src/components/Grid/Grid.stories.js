@@ -12,7 +12,7 @@ const description = (
   <p>
     This component is based on React Bootstrap Grid component. Grids are used to
     structure and present data. See{' '}
-    <a href={DOCUMENTATION_URL.REACT_BOOTSTRAP_LAYOUT + 'grid/'}>
+    <a href={`${DOCUMENTATION_URL.REACT_BOOTSTRAP_LAYOUT}grid/`}>
       React Bootstrap Docs
     </a>{' '}
     for complete Grid component documentation.
@@ -36,7 +36,7 @@ const dummySentences = [
 stories.addDecorator(
   defaultTemplate({
     title: 'Grid',
-    description: description
+    description
   })
 );
 

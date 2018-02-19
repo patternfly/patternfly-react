@@ -14,28 +14,10 @@ export class MockTreeView extends React.Component {
     super(props);
 
     this.state = {
-      nodes: [],
-      selectedNode: null
+      nodes: basicData
     };
 
     bindMethods(this, ['selectNode', 'nodeSelector']);
-  }
-
-  componentDidMount() {
-    this.setState(() => ({ nodes: basicData }));
-  }
-
-  selectNode(selectedNode) {
-    this.setState(prevState => {
-      return {
-        nodes: this.nodeSelector(prevState.nodes, selectedNode),
-        selectedNode:
-          prevState.selectedNode &&
-          prevState.selectedNode.id === selectedNode.id
-            ? null
-            : selectedNode
-      };
-    });
   }
 
   nodeSelector(nodes, targetNode) {
@@ -50,10 +32,15 @@ export class MockTreeView extends React.Component {
         return { ...node, selected: !node.selected };
       } else if (node.id !== targetNode.id && node.selected) {
         return { ...node, selected: false };
-      } else {
-        return node;
       }
+      return node;
     });
+  }
+
+  selectNode(selectedNode) {
+    this.setState(prevState => ({
+      nodes: this.nodeSelector(prevState.nodes, selectedNode)
+    }));
   }
 
   render() {
@@ -88,8 +75,7 @@ export class MockTreeView extends React.Component {
     super(props);
 
     this.state = {
-      nodes: [],
-      selectedNode: null
+      nodes: []
     };
 
     bindMethods(this, ['selectNode', 'nodeSelector']);
@@ -102,12 +88,7 @@ export class MockTreeView extends React.Component {
   selectNode(selectedNode) {
     this.setState(prevState => {
       return {
-        nodes: this.nodeSelector(prevState.nodes, selectedNode),
-        selectedNode:
-          prevState.selectedNode &&
-          prevState.selectedNode.id === selectedNode.id
-            ? null
-            : selectedNode
+        nodes: this.nodeSelector(prevState.nodes, selectedNode)
       };
     });
   }

@@ -20,4 +20,7 @@ EmptyStateInfo.propTypes = {
   /** Additional element css classes */
   className: PropTypes.string
 };
+EmptyStateInfo.defaultProps = {
+  className: ''
+};
 export default EmptyStateInfo;

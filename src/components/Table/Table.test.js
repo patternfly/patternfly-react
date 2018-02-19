@@ -15,7 +15,7 @@ test('Mock Client Pagination table renders', () => {
   const component = renderer.create(
     <MockClientPaginationTable onRowsLogger={jest.fn()} />
   );
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -23,7 +23,7 @@ test('Mock Server Pagination table renders', () => {
   const component = renderer.create(
     <MockServerPaginationTable onServerPageLogger={jest.fn()} />
   );
-  let tree = component.toJSON();
+  const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
@@ -105,6 +105,8 @@ test('Bootstrap contextual classes table renders properly', () => {
               return { className: 'warning' };
             case 6:
               return { className: 'danger' };
+            default:
+              return null;
           }
         }}
       />

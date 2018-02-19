@@ -19,4 +19,8 @@ WizardFooter.propTypes = {
   /** Additional css classes */
   className: PropTypes.string
 };
+WizardFooter.defaultProps = {
+  children: null,
+  className: ''
+};
 export default WizardFooter;

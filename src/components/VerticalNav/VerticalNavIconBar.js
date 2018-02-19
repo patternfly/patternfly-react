@@ -23,7 +23,8 @@ VerticalNavIconBar.propTypes = {
 };
 
 VerticalNavIconBar.defaultProps = {
-  collapse: true
+  collapse: true,
+  children: null
 };
 
 VerticalNavIconBar.displayName = 'VerticalNav.IconBar';
