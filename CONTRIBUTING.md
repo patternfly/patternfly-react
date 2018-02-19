@@ -1,44 +1,118 @@
 # Contributing to PatternFly React
 
+## Outline
+
+- [Code of Conduct](#code-of-conduct)
+- [Issues and Project Board](#issues-and-project-board)
+  - [Issue Labels](#issue-labels)
+  - [PR Labels](#pr-labels)
+  - [Project Board Columns](#project-board-columns)
+- [Contribution Process](#contribution-process)
+  - [Creating Issues for Bugs](#creating-issues-for-bugs)
+  - [Creating Issues for New Components](#creating-issues-for-new-components)
+  - [Contributing Components](#contributing-components)
+  - [Adding Styling for your Components](#adding-styling-for-your-components)
+- [Guidelines and Requirements](#guidelines-and-requirements)
+  - [React Component Requirements](#react-component-requirements)
+  - [Code Consistency](#code-consistency)
+  - [Code Contribution Guidelines](#code-contribution-guidelines)
+
+
 ## Code of Conduct
 
 This project is governed by the [Contributor Covenant version 1.4][1].  All contributors and participants
 agree to abide by its terms. To report violations, send an email to [patternfly@redhat.com][2].
 
-## Issue Contributions
+## Issues and Project Board
 
-The [issue tracker](https://github.com/patternfly/patternfly-react/issues) is the preferred channel for bug reports, features requests, and submitting pull requests.
+We use issues to track work items, such as bug reports and feature requests. Issues can be found in the  [issue tracker](https://github.com/patternfly/patternfly-react/issues) or [project board](https://github.com/patternfly/patternfly-react/projects/1).  We use the project board to help visualize and manage status of an issue, and we use labels to help prioritize and identify issues.
 
-### Issues and labels
+### Issue Labels
 
 Our issue tracker utilizes several labels to help organize and identify issues. Here's what they represent and how we use them:
 
 - `bug` - A bug is a _demonstrable problem_ that is caused by the code in the repository. Please check if the issue has already been reported before reporting a new bug.
 - `duplicate` - A duplicate signifies that another issue encapsulates or restates this issue. Duplicates will be closed and referenced as such.
 - `enhancement` - An enhancement is a feature request. Please provide as much detail as possible and consider whether your idea fits the scope and aims of this project.
+- `good first issue` - Issues that are ideal for new contributors.
 - `help wanted` - Issues we need or would love help from the community to resolve.
 - `pending response` - This label indicates that the issue is awaiting reply from a contributor or a maintainer.
 - `question` - Use the question label to indicate you are having a problem with something and would like feedback from the community.
 - `wontfix` - The issue is legitimate, but it is not something the team is currently able or willing to fix or implement. Issues with this label may be revisited in the future.
+- `p1`, `p2`, `p3` - These are priority labels.
 
-## React Component Contribution Process
+### PR Labels
 
-React component contributions should observe the following high level process:
+Since the components in patternfly-react are based on patternfly, we want to make sure these components stay in sync with the core patternfly components as documented on [patternfly.org](http://www.patternfly.org/pattern-library/). To help make sure component contributions are consistent with the [design documentation](http://www.patternfly.org/pattern-library/) and [html/css implementation](https://rawgit.com/patternfly/patternfly/master-dist/dist/tests/), we use the following labels during the PR review process.
 
-1. Check the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) to see if your component meets the criteria for an addition to PatternFly. If you're unsure, reach out to us on the mailing list!
-2. Create an `enhancement` issue to indicate you'd like to contribute this component to PatternFly React.
-  - At this time, the PatternFly React design team will review the enhancement issue and verify that the component passes the decision tree. Only components that pass will be accepted into the repo. If the component does not pass, the team will work with you on identifying any sub-components that can be extracted that would be needed by more than one project.
+- `css review` - The issue requires css review. Add this label when you are working on a component, and the html and css are ready for review against the core patternfly implementation.
+- `ux review` - The issue requires ux design review. Add this label when you are working on a component, and the storybook example is ready for review by a ux designer.
+- `css approved` - The issue has been reviewed and approved by a member of the css team.  
+- `ux approved` - The issue has been reviewed and approved by a member of the ux team.
+
+### Project Board Columns
+
+The project board uses the following columns to track issues:
+
+- `Backlog` - Issues that are ready to be worked and available for any contributor to take.
+- `Needs CSS/Design/Research` - Issues that require any work that would be completed outside of this repo related to css, design or research. For example some component contributions will require updates to css in the core [patternfly](https://github.com/patternfly/patternfly) repo.
+- `Assigned` - Issues that are ready to be worked and are already assigned.
+- `In Progress` - Issues that are actively being worked.
+- `PR in Review` - Issues for which a PR is open and are ready for review.
+
+Issues can be manually added to the project board from either the issue page or the project board page.
+
+## Contribution Process
+
+### Creating Issues for Bugs
+
+If you find a bug within the repo, please help us track the issue by following these steps:
+
+1. In the issue tracker, check if the bug has already been reported.
+    - If it does exist, but doesn’t capture key details that you have noticed, please add a comment to the existing bug.
+2. Create an issue if one doesn’t already exist.
+    - Provide details like what component is affected, steps to reproduce, and any other information that is critical to addressing the issue
+    - Assign the label “bug” to the issue
+
+### Creating Issues for New Components
+
+To create an issue for adding a new component to the repo, please observe the following process:
+
+1. If the component does not yet exist as a PatternFly component, check the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) to see if your component meets the criteria for an addition to PatternFly. If you're unsure, reach out to us on the patternfly@redhat.com mailing list.
+2. If the component exists in PatternFly or passes the Decision Tree, then create an issue with the following details:
+    - Assign the label `enhancement` to the issue
+    - Include the text “Component -“ in the beginning of the title if the issue captures a new component
+    - If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
+
+### Contributing Components
+
+Components that are ready to be contributed can be found on the project board in the backlog column. They are identified with the text “Component” in the issue title.
+
+Once you’ve identified a component to contribute, component contributions should observe the following high level process:
+
+1. On the Issue page for the component, click the link “assign yourself” if it is visible. If not, then add a comment to the issue stating that you are working the issue. A member of the admin team can invite you to the contributors group later.
+2. In the project board, move the issue to **In Progress**
 3. Implement the component observing our [react component requirements](#react-component-requirements)
 and [code contribution guidelines](#code-contribution-guidelines).
 4. Submit your pull request and be sure to reference the `enhancement` issue so that others interested in this component may discuss.
 5. Test your component. Once the pull request is merged, please test the component can successfully be used as intended downstream.
-6. If you submit a pull request, then please also contribute by reviewing other pull requests. Please remember that reviewing other contributions is just as important!
 
-### Adding CSS for your Component contribution
+If you submit a pull request, then please also contribute by reviewing other pull requests. Please remember that reviewing other contributions is just as important!
 
-Ideally, all the css that is needed for the components in patternfly-react would be defined in the core css [patternfly](https://github.com/patternfly/patternfly) repo. However, there may be cases where additional css is needed to complete the patternfly-react component contribution. In the case where the css is specific to the component implementation in the patternfly-react repo, then the css would remain in the repo. In the case where the component does not exist yet in the core css  repo and css is needed in the patternfly-react repo to style the component, then the css would only remain in the patternfly-react repo until the component is added to the core css repo. Once the css is available as part of core css repo, it will be removed from the patternfly-react repo.
+### Adding Styling for your Components
 
-## React Component Requirements
+Ideally, all the styles that are needed for the components in patternfly-react would be defined in the core [patternfly](https://github.com/patternfly/patternfly) repo. However, there may be cases where additional styles are needed to complete the patternfly-react component contribution. In the case where the styles are specific to the component implementation in the patternfly-react repo, then the styles would remain in the repo. In the case where the component does not exist yet in the core pattenrfly repo and styles are needed for the component in the patternfly-react repo, then the styles would only remain in the patternfly-react repo until the component is added to the core patternfly repo. Once the styles are available as part of core patternfly repo, it will be removed from the patternfly-react repo.
+
+When it is necessary to add styling in the patternfly-react repo, the styling should be done in both Less and Sass (in the future a converter will be provided, see [Issue #169](https://github.com/patternfly/patternfly-react/issues/169)).  
+
+- Add a Less file to the `less` directory and use the file name `<component>.less`
+- Import the Less file into `less/paternfly-react.less` using `@import "<component>";`
+- Add a Sass file to the `sass/patternfly-react/` directory and use the file name `_<component>.scss`
+- Import the Sass file into `sass/patternfly-react/_patternfly-react.scss` using `@import "<component>";`
+
+## Guidelines and Requirements
+
+### React Component Requirements
 
 Please ensure that all React UI components contributed meet the following guidelines:
 
@@ -80,7 +154,7 @@ when possible and accept [props](https://facebook.github.io/react/docs/component
   export * from './Badge';
   ```
 
-## Code Contribution Guidelines
+### Code Contribution Guidelines
 
 Adhering to the following process is the best way to get your work included in the project:
 
@@ -97,7 +171,7 @@ Adhering to the following process is the best way to get your work included in t
 2. Create a branch:
 
   ```text
-  $ git checkout -b my-branch -t origin/master
+  $ git checkout -b my-branch -t upstream/master
   ```
 
 3. Develop your component. After development is complete, ensure tests and lint standards pass.
@@ -149,12 +223,12 @@ Lastly, you'll want to export Storybook in your fork and note the Storybook url 
 
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `master` branch. Please be sure to include all of the following in your PR:
 
-  * Any relevant issues associated with this pull request (`enhacement` issues, `bug` issues, etc.)
+  * Any relevant issues associated with this pull request (`enhancement` issues, `bug` issues, etc.)
   * Storybook documentation
      * Include a link to the design documentation in the [PatternFly Pattern Library](http://www.patternfly.org/pattern-library/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
      * Include the generated Storybook url (from **Step 7**)
 
-Once your pull request has been reveiwed, if all conditions above have been met your pull request will be approved and merged.
+Once your pull request has been reviewed, if all conditions above have been met your pull request will be approved and merged.
 
 Please help in ensuring all relevant issues are closed and that any subsequent issues needed have been noted with this pull request.
 
