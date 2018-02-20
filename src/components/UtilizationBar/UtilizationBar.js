@@ -1,9 +1,9 @@
-import { ProgressBar } from '../ProgressBar';
+import React from 'react';
 import ClassNames from 'classnames';
 import PropTypes from 'prop-types';
+import { ProgressBar } from '../ProgressBar';
 import { OverlayTrigger } from '../OverlayTrigger';
 import { Tooltip } from '../Tooltip';
-import React from 'react';
 
 const randomId = () => {
   return Date.now();
@@ -42,13 +42,14 @@ const UtilizationBar = props => {
     );
   };
 
-  const mainDivClasses = (onSide, mainDivClasses) => {
+  const mainDivClasses = (onSide, userClasses) => {
     return ClassNames({
-      'progress-container': onSide && props.description,
-      'progress-description-left': onSide && props.description,
-      'progress-label-right': onSide && props.label,
-      mainDivClasses: mainDivClasses
-    });
+        'progress-container': onSide && props.description,
+        'progress-description-left': onSide && props.description,
+        'progress-label-right': onSide && props.label,
+       },
+       userClasses
+    );
   };
 
   return (
@@ -139,7 +140,12 @@ UtilizationBar.defaultProps = {
   max: 100,
   availableTooltipFunction: AvailableTooltipFunction,
   usedTooltipFunction: UsedTooltipFunction,
-  descriptionPlacementTop: false
+  descriptionPlacementTop: false,
+  mainDivClasses: null,
+  thresholdWarning: null,
+  thresholdError: null,
+  description: null,
+  label: null
 };
 
 export default UtilizationBar;

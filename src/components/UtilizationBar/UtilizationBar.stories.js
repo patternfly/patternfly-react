@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { withKnobs, number, boolean, text } from '@storybook/addon-knobs';
+import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { UtilizationBar } from './index';
 
 const stories = storiesOf('UtilizationBar', module);
