@@ -52,6 +52,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "commitizen": "^2.9.6",
+    "concurrently": "^3.5.1",
     "coveralls": "^3.0.0",
     "css-loader": "^0.28.8",
     "cz-conventional-changelog": "^2.1.0",
@@ -77,6 +78,7 @@
     "prop-types": "^15.6.0",
     "raf": "^3.4.0",
     "react": "^16.2.0",
+    "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",
@@ -97,7 +99,7 @@
     "fontAwesome": "--include-path node_modules/patternfly/node_modules/font-awesome-sass/assets/stylesheets"
   },
   "scripts": {
-    "start": "npm run storybook:run",
+    "start": "concurrently \"npm run storybook:run\" \"npm run storybook:openurl\"",
     "commit": "git-cz",
     "build": "npm run build:scripts && npm run build:sass && npm run build:less",
     "build:scripts": "babel src --out-dir dist/js --ignore test*.js,__mocks__",
@@ -116,7 +118,8 @@
     "storybook:deploy": "storybook-to-ghpages '--script=storybook:build'",
     "semantic-release": "semantic-release",
     "stylelint": "stylelint --fix 'sass/**/*.scss'",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "storybook:openurl": "node ./storybook/openBrowser.js"
   },
   "jest": {
     "collectCoverage": true,
