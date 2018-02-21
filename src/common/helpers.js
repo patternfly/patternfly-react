@@ -36,3 +36,6 @@ export const propsChanged = (propNames, oldProps, newProps) =>
 export const nullValues = obj => selectKeys(obj, Object.keys(obj), () => null);
 
 export const noop = Function.prototype;
+
+export const getDisplayName = Component =>
+  Component.displayName || Component.name || 'Component';
