@@ -12,7 +12,12 @@ import {
 import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 
-import { PaginationRow, Paginator, PAGINATION_VIEW_TYPES } from './index';
+import {
+  Pager,
+  PaginationRow,
+  Paginator,
+  PAGINATION_VIEW_TYPES
+} from './index';
 import {
   MockPaginationRow,
   mockPaginationSource
@@ -20,6 +25,49 @@ import {
 
 const stories = storiesOf('Pagination', module);
 stories.addDecorator(withKnobs);
+
+stories.add(
+  'Pager',
+  withInfo()(() => {
+    const story = (
+      <div>
+        <h2>Default size</h2>
+        <Pager
+          onNextPage={action('onNextPage')}
+          onPreviousPage={action('onPreviousPage')}
+          disableNext={boolean('Next button disabled', true)}
+          disablePrevious={boolean('Previous button disabled', false)}
+        />
+        <hr />
+        <h2>Mini size</h2>
+        <Pager
+          className="pager-sm"
+          messages={{
+            nextPage: 'The Next Page',
+            previousPage: 'The Previous Page'
+          }}
+          onNextPage={action('onNextPage')}
+          onPreviousPage={action('onPreviousPage')}
+          disableNext={boolean('Next button disabled', true)}
+          disablePrevious={boolean('Previous button disabled', false)}
+        />
+      </div>
+    );
+    return inlineTemplate({
+      title: 'Pager',
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
+      }#pagination`,
+      story,
+      description: (
+        <div>
+          Pager is a stateless functional component which previous and next
+          links. See Action Logger for details.
+        </div>
+      )
+    });
+  })
+);
 
 stories.add(
   'Pagination row',
