@@ -12,9 +12,7 @@ test('basic UtilizationBar renders properly', () => {
 });
 
 test('UtilizationBar with custom tooltips renders properly', () => {
-  const overriddenTooltip = () => {
-    return <strong>This tooltip is overridden.</strong>;
-  };
+  const overriddenTooltip = () => <strong>This tooltip is overridden.</strong>;
   const component = renderer.create(
     <UtilizationBar
       now={60}

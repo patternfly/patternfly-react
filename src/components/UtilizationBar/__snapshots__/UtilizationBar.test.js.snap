@@ -2,7 +2,7 @@
 
 exports[`UtilizationBar with custom tooltips renders properly 1`] = `
 <div
-  className=""
+  className="utilization-bar-pf"
 >
   <div
     className="progress-bar"
@@ -50,7 +50,7 @@ exports[`UtilizationBar with custom tooltips renders properly 1`] = `
 
 exports[`UtilizationBar with thresholds renders properly 1`] = `
 <div
-  className=""
+  className="utilization-bar-pf"
 >
   <div
     className="progress-bar"
@@ -98,7 +98,7 @@ exports[`UtilizationBar with thresholds renders properly 1`] = `
 
 exports[`basic UtilizationBar renders properly 1`] = `
 <div
-  className=""
+  className="utilization-bar-pf"
 >
   <div
     className="progress-bar"

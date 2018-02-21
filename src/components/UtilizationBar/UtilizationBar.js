@@ -1,114 +1,88 @@
 import React from 'react';
-import ClassNames from 'classnames';
 import PropTypes from 'prop-types';
 import { ProgressBar } from '../ProgressBar';
 import { OverlayTrigger } from '../OverlayTrigger';
 import { Tooltip } from '../Tooltip';
+import { labelClasses, mainDivClasses, barStyle } from './helpers';
 
-const randomId = () => {
-  return Date.now();
-};
+const randomId = () => Date.now();
 
-const AvailableTooltipFunction = (max, now) => {
-  return <Tooltip id={randomId()}>Available {max - now} %</Tooltip>;
-};
+const AvailableTooltipFunction = (max, now) => (
+  <Tooltip id={randomId()}>Available {max - now} %</Tooltip>
+);
 
-const UsedTooltipFunction = now => {
-  return <Tooltip id={randomId()}>Used {now} %</Tooltip>;
-};
+const UsedTooltipFunction = now => (
+  <Tooltip id={randomId()}>Used {now} %</Tooltip>
+);
 
-const UtilizationBar = props => {
-  const barStyle = () => {
-    if (props.thresholdWarning && props.thresholdError) {
-      let style = 'success';
-      if (props.thresholdWarning <= props.now) {
-        style = 'warning';
-      }
-      if (props.thresholdError <= props.now) {
-        style = 'danger';
-      }
-      return style;
-    } else {
-      return null;
-    }
-  };
-
-  const labelClasses = top => {
-    return ClassNames(
-      { 'progress-label-top-right': top, 'progress-label-right': !top },
-      'pull-right',
-      'label-text',
-      'display-inline-block'
-    );
-  };
-
-  const mainDivClasses = (onSide, userClasses) => {
-    return ClassNames({
-        'progress-container': onSide && props.description,
-        'progress-description-left': onSide && props.description,
-        'progress-label-right': onSide && props.label,
-       },
-       userClasses
-    );
-  };
-
-  return (
-    <div
-      className={mainDivClasses(
-        !props.descriptionPlacementTop,
-        props.mainDivClasses
+const UtilizationBar = ({
+  min,
+  max,
+  now,
+  availableTooltipFunction,
+  usedTooltipFunction,
+  descriptionPlacementTop,
+  description,
+  thresholdWarning,
+  thresholdError,
+  label,
+  className
+}) => (
+  <div
+    className={mainDivClasses(
+      !descriptionPlacementTop,
+      className,
+      description,
+      label
+    )}
+  >
+    <div className={descriptionPlacementTop ? null : 'progress-bar'}>
+      {label && (
+        <span className={labelClasses(descriptionPlacementTop)}>
+          <strong className="label-strong label-text">
+            {`${now} of ${max}`}
+          </strong>{' '}
+          {label}
+        </span>
       )}
-    >
-      <div className={props.descriptionPlacementTop ? null : 'progress-bar'}>
-        {props.label && (
-          <span className={labelClasses(props.descriptionPlacementTop)}>
-            <strong className="label-strong label-text">
-              {props.now + ' of ' + props.max}
-            </strong>{' '}
-            {props.label}
-          </span>
-        )}
-        {props.description && (
-          <div className="progress-description label-text">
-            {props.description}
-          </div>
-        )}
-      </div>
-      <div className="progress">
-        <OverlayTrigger
-          overlay={props.usedTooltipFunction(props.now)}
-          placement="top"
-          trigger={['hover', 'focus']}
-          rootClose={false}
-        >
-          <ProgressBar
-            bsStyle={barStyle()}
-            min={props.min}
-            max={props.max}
-            now={props.now}
-            key={1}
-            isChild
-          />
-        </OverlayTrigger>
-        <OverlayTrigger
-          overlay={props.availableTooltipFunction(props.max, props.now)}
-          placement="top"
-          trigger={['hover', 'focus']}
-          rootClose={false}
-        >
-          <ProgressBar
-            min={props.min}
-            max={props.max}
-            now={props.max - props.now}
-            key={2}
-            bsClass="progress-bar progress-bar-remaining"
-            isChild
-          />
-        </OverlayTrigger>
-      </div>
+      {description && (
+        <div className="progress-description label-text">{description}</div>
+      )}
     </div>
-  );
-};
+    <div className="progress">
+      <OverlayTrigger
+        overlay={usedTooltipFunction(now)}
+        placement="top"
+        trigger={['hover', 'focus']}
+        rootClose={false}
+      >
+        <ProgressBar
+          bsStyle={barStyle(thresholdWarning, thresholdError, now)}
+          min={min}
+          max={max}
+          now={now}
+          key={1}
+          isChild
+        />
+      </OverlayTrigger>
+      <OverlayTrigger
+        overlay={availableTooltipFunction(max, now)}
+        placement="top"
+        trigger={['hover', 'focus']}
+        rootClose={false}
+      >
+        <ProgressBar
+          min={min}
+          max={max}
+          now={max - now}
+          key={2}
+          bsClass="progress-bar progress-bar-remaining"
+          isChild
+        />
+      </OverlayTrigger>
+    </div>
+  </div>
+);
 
 UtilizationBar.propTypes = {
   /** Minimal value */
@@ -125,14 +99,14 @@ UtilizationBar.propTypes = {
   availableTooltipFunction: PropTypes.func,
   /** Function that renders tooltip for used part of bar. */
   usedTooltipFunction: PropTypes.func,
-  /** Classes for main div */
-  mainDivClasses: PropTypes.string,
   /** Description that is displayed on the right side */
   description: PropTypes.string,
   /** Units */
   label: PropTypes.string,
   /** If set labels will be placed above utilization bar */
-  descriptionPlacementTop: PropTypes.bool
+  descriptionPlacementTop: PropTypes.bool,
+  /** User's custom classes */
+  className: PropTypes.string
 };
 
 UtilizationBar.defaultProps = {
@@ -141,11 +115,11 @@ UtilizationBar.defaultProps = {
   availableTooltipFunction: AvailableTooltipFunction,
   usedTooltipFunction: UsedTooltipFunction,
   descriptionPlacementTop: false,
-  mainDivClasses: null,
   thresholdWarning: null,
   thresholdError: null,
   description: null,
-  label: null
+  label: null,
+  className: null
 };
 
 export default UtilizationBar;
