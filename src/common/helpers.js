@@ -36,3 +36,5 @@ export const propsChanged = (propNames, oldProps, newProps) =>
 export const nullValues = obj => selectKeys(obj, Object.keys(obj), () => null);
 
 export const noop = Function.prototype;
+
+export const KEY_CODES = { TAB_KEY: 9, ENTER_KEY: 13, ESCAPE_KEY: 27 };
