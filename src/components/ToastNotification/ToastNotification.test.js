@@ -77,7 +77,7 @@ test('TimedToastNotification expectedly executes mouse enter/leave and dismiss f
   expect(eventCount).toBe(3);
 });
 
-test('ToastNotificationList expectedly executes mouse enter/leave functions', () => {
+test('ToastNotificationList expectedly executes mouse enter/leave/over functions', () => {
   let eventCount = 0;
   const component = ReactTestUtils.renderIntoDocument(
     testToastNotificationSnapshot(
@@ -85,7 +85,8 @@ test('ToastNotificationList expectedly executes mouse enter/leave functions', ()
       { type: 'warning' },
       {
         onMouseEnter: () => eventCount++,
-        onMouseLeave: () => eventCount++
+        onMouseLeave: () => eventCount++,
+        onMouseOver: () => eventCount++
       }
     )
   );
@@ -95,5 +96,6 @@ test('ToastNotificationList expectedly executes mouse enter/leave functions', ()
   );
   ReactTestUtils.Simulate.mouseEnter(notification);
   ReactTestUtils.Simulate.mouseLeave(notification);
-  expect(eventCount).toBe(2);
+  ReactTestUtils.Simulate.mouseOver(notification);
+  expect(eventCount).toBe(3);
 });
