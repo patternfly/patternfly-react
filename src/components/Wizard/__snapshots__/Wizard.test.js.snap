@@ -229,7 +229,7 @@ exports[`Wizard embedded renders properly 1`] = `
               <span
                 className="wizard-pf-substep-number"
               >
-                3B.
+                4A.
               </span>
               <span
                 className="wizard-pf-substep-title"
