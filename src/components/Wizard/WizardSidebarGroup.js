@@ -13,7 +13,7 @@ const WizardSidebarGroup = ({
   activeStep,
   ...rest
 }) => {
-  const classes = cx({ hidden: step !== activeStep }, className);
+  const classes = cx({ hidden: `${step}` !== `${activeStep}` }, className);
   return (
     <ListGroup componentClass="ul" className={classes} {...rest}>
       {children}
@@ -26,9 +26,9 @@ WizardSidebarGroup.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** The wizard step number for this step */
-  step: PropTypes.string,
+  step: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** The active step */
-  activeStep: PropTypes.string
+  activeStep: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 WizardSidebarGroup.defaultProps = {
   children: null,

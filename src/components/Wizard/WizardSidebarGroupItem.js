@@ -18,7 +18,10 @@ const WizardSidebarGroupItem = ({
   onClick,
   ...rest
 }) => {
-  const classes = cx({ active: subStep === activeSubStep }, className);
+  const classes = cx(
+    { active: `${subStep}` === `${activeSubStep}` },
+    className
+  );
   return (
     <ListGroupItem className={classes} listItem {...rest}>
       <a
@@ -42,13 +45,13 @@ WizardSidebarGroupItem.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** This wizard sub step name */
-  subStep: PropTypes.string,
+  subStep: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** This wizard sub step label */
   label: PropTypes.string,
   /** This wizard sub step title */
   title: PropTypes.string,
   /** The currently active wizard substep */
-  activeSubStep: PropTypes.string,
+  activeSubStep: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Sidebar group item click handler */
   onClick: PropTypes.func
 };

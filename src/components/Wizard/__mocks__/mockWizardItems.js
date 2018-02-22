@@ -13,7 +13,7 @@ export const mockLoadingContents = () => (
 
 export const mockWizardItems = [
   {
-    step: '1',
+    step: 1,
     label: '1',
     title: 'First Step',
     subSteps: [
@@ -63,7 +63,7 @@ export const mockWizardItems = [
     ]
   },
   {
-    step: '3',
+    step: 3,
     label: '3',
     title: 'Review',
     subSteps: [
@@ -73,8 +73,8 @@ export const mockWizardItems = [
         title: 'Summary'
       },
       {
-        subStep: '3.2',
-        label: '3B.',
+        subStep: 4,
+        label: '4A.',
         title: 'Progress'
       }
     ]

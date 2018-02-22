@@ -19,7 +19,7 @@ const WizardStep = ({
 }) => {
   const classes = cx(
     'wizard-pf-step',
-    { active: step === activeStep },
+    { active: `${step}` === `${activeStep}` },
     className
   );
   return (
@@ -46,13 +46,13 @@ WizardStep.propTypes = {
   /** The wizard step index */
   stepIndex: PropTypes.number.isRequired,
   /** The wizard step for this step */
-  step: PropTypes.string,
+  step: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** The wizard step number label */
   label: PropTypes.string,
   /** The wizard step title */
   title: PropTypes.string,
   /** The active step */
-  activeStep: PropTypes.string,
+  activeStep: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Step click handler */
   onClick: PropTypes.func
 };
