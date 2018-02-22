@@ -103,13 +103,13 @@ const component = renderer.create(
 );
 
 test('InfoTip is a instance', () => {
-  var instance = component.getInstance();
+  const instance = component.getInstance();
   expect(instance).toBeTruthy();
 });
 
 test('InfoTip handleEnterKeyDown', () => {
-  var instance = component.getInstance();
-  var event = {
+  const instance = component.getInstance();
+  const event = {
     preventDefault() {},
     key: 'Enter',
     keyCode: 13,
@@ -124,8 +124,8 @@ test('InfoTip handleEnterKeyDown', () => {
 });
 
 test('InfoTip handleTabKeyDown', () => {
-  var instance = component.getInstance();
-  var event = {
+  const instance = component.getInstance();
+  const event = {
     stopPropagation() {},
     nativeEvent: {
       stopImmediatePropagation() {}
@@ -146,8 +146,8 @@ test('InfoTip handleTabKeyDown', () => {
 });
 
 test('InfoTip handleClick', () => {
-  var instance = component.getInstance();
-  var event = {
+  const instance = component.getInstance();
+  const event = {
     preventDefault() {}
   };
   instance.state.open = false;
@@ -162,7 +162,7 @@ test('InfoTip handleClick', () => {
 });
 
 test('InfoTip handleBackFocus', () => {
-  var instance = component.getInstance();
+  const instance = component.getInstance();
   instance.state.open = true;
 
   // Should close the menu
@@ -175,8 +175,8 @@ test('InfoTip handleBackFocus', () => {
 });
 
 test('InfoTip handleKeyDown', () => {
-  var instance = component.getInstance();
-  var eventEnterKey = {
+  const instance = component.getInstance();
+  const eventEnterKey = {
     preventDefault() {},
     key: 'Enter',
     keyCode: 13,
@@ -186,7 +186,7 @@ test('InfoTip handleKeyDown', () => {
   instance.handleKeyDown(eventEnterKey);
   expect(instance.state.open).toBeFalsy();
 
-  var eventTabKey = {
+  const eventTabKey = {
     stopPropagation() {},
     nativeEvent: {
       stopImmediatePropagation() {}
@@ -202,7 +202,7 @@ test('InfoTip handleKeyDown', () => {
   expect(instance.state.open).toBeFalsy();
   expect(instance.state.footerFocused).toBeFalsy();
 
-  var eventEscKey = {
+  const eventEscKey = {
     stopPropagation() {},
     nativeEvent: {
       stopImmediatePropagation() {}

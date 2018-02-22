@@ -42,6 +42,7 @@ class InfoTip extends React.Component {
       case KEY_CODES.ESCAPE_KEY:
         return this.setState({ open: false });
       default:
+        return null;
     }
   }
 

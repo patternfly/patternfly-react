@@ -11,12 +11,12 @@ const stories = storiesOf('InfoTip', module);
 stories.addDecorator(
   defaultTemplate({
     title: 'InfoTip',
-    documentationLink: DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS + '#info-tip'
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#info-tip`
   })
 );
 
 stories.addWithInfo('InfoTip', '', () => (
-  <nav className="navbar navbar-default navbar-pf" role="navigation">
+  <nav className="navbar navbar-default navbar-pf">
     <div className="navbar-header">
       <button
         type="button"
