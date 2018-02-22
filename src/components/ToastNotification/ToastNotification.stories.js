@@ -114,6 +114,8 @@ class ToastNotificationStoryWrapper extends React.Component {
         <ToastNotificationList
           onMouseEnter={action('notification list: onMouseEnter fired')}
           onMouseLeave={action('notification list: onMouseLeave fired')}
+          onMouseOver={action('notification list: onMouseOver fired')}
+          onFocus={action('notification list: onFocus fired')}
         >
           {!this.state.infoNotificationDismissed && (
             <TimedToastNotification

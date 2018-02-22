@@ -11,18 +11,29 @@ class ToastNotificationList extends React.Component {
   constructor(props) {
     super(props);
     this.state = { paused: false };
-    bindMethods(this, ['onMouseEnter', 'onMouseLeave']);
+    bindMethods(this, ['onMouseEnter', 'onMouseLeave', 'onMouseOver']);
   }
+
+  componentWillReceiveProps() {
+    this.setState({ paused: false });
+  }
+
   onMouseEnter() {
     this.setState({ paused: true });
     const { onMouseEnter } = this.props;
-    onMouseEnter && onMouseEnter();
+    onMouseEnter();
   }
 
   onMouseLeave() {
     this.setState({ paused: false });
     const { onMouseLeave } = this.props;
-    onMouseLeave && onMouseLeave();
+    onMouseLeave();
+  }
+
+  onMouseOver() {
+    this.setState({ paused: true });
+    const { onMouseOver } = this.props;
+    onMouseOver();
   }
 
   renderChildren() {
@@ -48,6 +59,8 @@ class ToastNotificationList extends React.Component {
       <div
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
+        onMouseOver={this.onMouseOver}
+        onFocus={this.onMouseOver}
         className={classes}
       >
         {this.renderChildren()}
@@ -62,6 +75,8 @@ ToastNotificationList.propTypes = {
   onMouseEnter: PropTypes.func,
   /** onMouseLeave callback */
   onMouseLeave: PropTypes.func,
+  /** onMouseOver callback */
+  onMouseOver: PropTypes.func,
   /** children nodes  */
   children: PropTypes.node
 };
@@ -69,6 +84,7 @@ ToastNotificationList.defaultProps = {
   className: '',
   onMouseEnter: noop,
   onMouseLeave: noop,
+  onMouseOver: noop,
   children: null
 };
 export default ToastNotificationList;
