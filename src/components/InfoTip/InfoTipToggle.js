@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Dropdown } from '../Dropdown';
 import { Icon } from '../Icon';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class InfoTipToggle extends React.Component {
   render() {
     const { children, className, bsRole, bsClass, open, ...props } = this.props;
@@ -23,7 +24,10 @@ InfoTipToggle.propTypes = {
 };
 
 InfoTipToggle.defaultProps = {
-  bsRole: 'toggle'
+  bsRole: 'toggle', // eslint-disable-line react/default-props-match-prop-types
+  children: null,
+  open: false,
+  className: ''
 };
 
 export default InfoTipToggle;

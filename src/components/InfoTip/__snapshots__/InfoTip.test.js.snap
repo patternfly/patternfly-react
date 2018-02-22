@@ -9,7 +9,7 @@ exports[`InfoTip renders properly with a default MenuItemIcon 1`] = `
 >
   <a
     aria-expanded={false}
-    className={undefined}
+    className=""
     disabled={undefined}
     href="#"
     id="infotip-widget"
@@ -82,7 +82,7 @@ exports[`InfoTip renders properly with another MenuItemIcon 1`] = `
 >
   <a
     aria-expanded={false}
-    className={undefined}
+    className=""
     disabled={undefined}
     href="#"
     id="infotip-widget"
@@ -155,7 +155,7 @@ exports[`InfoTip renders properly with item children 1`] = `
 >
   <a
     aria-expanded={false}
-    className={undefined}
+    className=""
     disabled={undefined}
     href="#"
     id="infotip-widget"

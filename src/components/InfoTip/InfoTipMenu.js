@@ -2,6 +2,7 @@ import React from 'react';
 import ClassNames from 'classnames';
 import PropTypes from 'prop-types';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class InfoTipMenu extends React.Component {
   render() {
     const {
@@ -9,9 +10,9 @@ class InfoTipMenu extends React.Component {
       className,
       bsRole,
       rootCloseEvent,
-      labelledBy,
-      pullRight,
-      bsClass,
+      labelledBy, // eslint-disable-line react/prop-types
+      pullRight, // eslint-disable-line react/prop-types
+      bsClass, // eslint-disable-line react/prop-types
       ...props
     } = this.props;
 
@@ -24,7 +25,6 @@ class InfoTipMenu extends React.Component {
     return (
       <div className={infoTipMenuClass} style={{ padding: '' }} {...props}>
         <div className="arrow" />
-
         {children}
       </div>
     );
@@ -35,12 +35,11 @@ InfoTipMenu.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
   bsRole: PropTypes.string,
-  rootCloseEvent: PropTypes.oneOf(['click', 'mousedown']),
-  labelledBy: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  pullRight: PropTypes.bool,
-  bsClass: PropTypes.string
+  rootCloseEvent: PropTypes.oneOf(['click', 'mousedown'])
 };
 InfoTipMenu.defaultProps = {
-  bsRole: 'menu'
+  bsRole: 'menu',
+  className: '',
+  rootCloseEvent: 'click'
 };
 export default InfoTipMenu;
