@@ -18,7 +18,10 @@ stories.addWithInfo('Button', '', () => {
       <p>
         <Button>Default Button</Button>{' '}
         <Button bsStyle="primary">Primary Button</Button>{' '}
+        <Button bsStyle="success">Success Button</Button>
+        <Button bsStyle="warning">Warning Button</Button>
         <Button bsStyle="danger">Danger Button</Button>{' '}
+        <Button bsStyle="info">Info Button</Button>{' '}
         <Button bsStyle="link">Link Button</Button>
       </p>
       <p>
@@ -52,6 +55,27 @@ stories.addWithInfo('ButtonGroup', () => {
         </Col>
         <Col xs={12} md={3}>
           <ButtonGroup>
+            <Button bsStyle="primary">Left</Button>
+            <Button bsStyle="primary">Middle</Button>
+            <Button bsStyle="primary">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup>
+            <Button bsStyle="success">Left</Button>
+            <Button bsStyle="success">Middle</Button>
+            <Button bsStyle="success">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup>
+            <Button bsStyle="warning">Left</Button>
+            <Button bsStyle="warning">Middle</Button>
+            <Button bsStyle="warning">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup>
             <Button bsStyle="danger">Left</Button>
             <Button bsStyle="danger">Middle</Button>
             <Button bsStyle="danger">Right</Button>
@@ -59,9 +83,9 @@ stories.addWithInfo('ButtonGroup', () => {
         </Col>
         <Col xs={12} md={3}>
           <ButtonGroup>
-            <Button bsStyle="primary">Left</Button>
-            <Button bsStyle="primary">Middle</Button>
-            <Button bsStyle="primary">Right</Button>
+            <Button bsStyle="info">Left</Button>
+            <Button bsStyle="info">Middle</Button>
+            <Button bsStyle="info">Right</Button>
           </ButtonGroup>
         </Col>
         <Col xs={12} md={3}>
@@ -82,6 +106,27 @@ stories.addWithInfo('ButtonGroup', () => {
         </Col>
         <Col xs={12} md={3}>
           <ButtonGroup bsSize="large">
+            <Button bsStyle="primary">Left</Button>
+            <Button bsStyle="primary">Middle</Button>
+            <Button bsStyle="primary">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="large">
+            <Button bsStyle="success">Left</Button>
+            <Button bsStyle="success">Middle</Button>
+            <Button bsStyle="success">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="large">
+            <Button bsStyle="warning">Left</Button>
+            <Button bsStyle="warning">Middle</Button>
+            <Button bsStyle="warning">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="large">
             <Button bsStyle="danger">Left</Button>
             <Button bsStyle="danger">Middle</Button>
             <Button bsStyle="danger">Right</Button>
@@ -89,9 +134,9 @@ stories.addWithInfo('ButtonGroup', () => {
         </Col>
         <Col xs={12} md={3}>
           <ButtonGroup bsSize="large">
-            <Button bsStyle="primary">Left</Button>
-            <Button bsStyle="primary">Middle</Button>
-            <Button bsStyle="primary">Right</Button>
+            <Button bsStyle="info">Left</Button>
+            <Button bsStyle="info">Middle</Button>
+            <Button bsStyle="info">Right</Button>
           </ButtonGroup>
         </Col>
         <Col xs={12} md={3}>
@@ -112,6 +157,27 @@ stories.addWithInfo('ButtonGroup', () => {
         </Col>
         <Col xs={12} md={3}>
           <ButtonGroup bsSize="xsmall">
+            <Button bsStyle="primary">Left</Button>
+            <Button bsStyle="primary">Middle</Button>
+            <Button bsStyle="primary">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="xsmall">
+            <Button bsStyle="success">Left</Button>
+            <Button bsStyle="success">Middle</Button>
+            <Button bsStyle="success">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="xsmall">
+            <Button bsStyle="warning">Left</Button>
+            <Button bsStyle="warning">Middle</Button>
+            <Button bsStyle="warning">Right</Button>
+          </ButtonGroup>
+        </Col>
+        <Col xs={12} md={3}>
+          <ButtonGroup bsSize="xsmall">
             <Button bsStyle="danger">Left</Button>
             <Button bsStyle="danger">Middle</Button>
             <Button bsStyle="danger">Right</Button>
@@ -119,9 +185,9 @@ stories.addWithInfo('ButtonGroup', () => {
         </Col>
         <Col xs={12} md={3}>
           <ButtonGroup bsSize="xsmall">
-            <Button bsStyle="primary">Left</Button>
-            <Button bsStyle="primary">Middle</Button>
-            <Button bsStyle="primary">Right</Button>
+            <Button bsStyle="info">Left</Button>
+            <Button bsStyle="info">Middle</Button>
+            <Button bsStyle="info">Right</Button>
           </ButtonGroup>
         </Col>
         <Col xs={12} md={3}>
