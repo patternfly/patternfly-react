@@ -9,102 +9,6 @@ exports[`DropdownButton should renders properly 1`] = `
     aria-haspopup={true}
     className="dropdown-toggle btn btn-default"
     disabled={false}
-    id="dropdown-button-test-danger"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    role="button"
-    type="button"
-  >
-    danger
-     
-    <span
-      className="caret"
-    />
-  </button>
-  <ul
-    aria-labelledby="dropdown-button-test-danger"
-    className="dropdown-menu"
-    role="menu"
-  >
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
-    >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Action
-      </a>
-    </li>
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
-    >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Another action
-      </a>
-    </li>
-    <li
-      className="active"
-      role="presentation"
-      style={undefined}
-    >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Active Item
-      </a>
-    </li>
-    <li
-      className="divider"
-      onKeyDown={[Function]}
-      role="separator"
-      style={undefined}
-    />
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
-    >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Separated link
-      </a>
-    </li>
-  </ul>
-</div>
-`;
-
-exports[`DropdownButton should renders properly 2`] = `
-<div
-  className="dropdown btn-group"
->
-  <button
-    aria-expanded={false}
-    aria-haspopup={true}
-    className="dropdown-toggle btn btn-default"
-    disabled={false}
     id="dropdown-button-test-default"
     onClick={[Function]}
     onKeyDown={[Function]}
@@ -192,7 +96,7 @@ exports[`DropdownButton should renders properly 2`] = `
 </div>
 `;
 
-exports[`DropdownButton should renders properly 3`] = `
+exports[`DropdownButton should renders properly 2`] = `
 <div
   className="dropdown btn-group"
 >
@@ -288,7 +192,391 @@ exports[`DropdownButton should renders properly 3`] = `
 </div>
 `;
 
+exports[`DropdownButton should renders properly 3`] = `
+<div
+  className="dropdown btn-group"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-default"
+    disabled={false}
+    id="dropdown-button-test-success"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    type="button"
+  >
+    success
+     
+    <span
+      className="caret"
+    />
+  </button>
+  <ul
+    aria-labelledby="dropdown-button-test-success"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Action
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Another action
+      </a>
+    </li>
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Active Item
+      </a>
+    </li>
+    <li
+      className="divider"
+      onKeyDown={[Function]}
+      role="separator"
+      style={undefined}
+    />
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Separated link
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`DropdownButton should renders properly 4`] = `
+<div
+  className="dropdown btn-group"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-default"
+    disabled={false}
+    id="dropdown-button-test-warning"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    type="button"
+  >
+    warning
+     
+    <span
+      className="caret"
+    />
+  </button>
+  <ul
+    aria-labelledby="dropdown-button-test-warning"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Action
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Another action
+      </a>
+    </li>
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Active Item
+      </a>
+    </li>
+    <li
+      className="divider"
+      onKeyDown={[Function]}
+      role="separator"
+      style={undefined}
+    />
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Separated link
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DropdownButton should renders properly 5`] = `
+<div
+  className="dropdown btn-group"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-default"
+    disabled={false}
+    id="dropdown-button-test-danger"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    type="button"
+  >
+    danger
+     
+    <span
+      className="caret"
+    />
+  </button>
+  <ul
+    aria-labelledby="dropdown-button-test-danger"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Action
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Another action
+      </a>
+    </li>
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Active Item
+      </a>
+    </li>
+    <li
+      className="divider"
+      onKeyDown={[Function]}
+      role="separator"
+      style={undefined}
+    />
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Separated link
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DropdownButton should renders properly 6`] = `
+<div
+  className="dropdown btn-group"
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-default"
+    disabled={false}
+    id="dropdown-button-test-info"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    type="button"
+  >
+    info
+     
+    <span
+      className="caret"
+    />
+  </button>
+  <ul
+    aria-labelledby="dropdown-button-test-info"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Action
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Another action
+      </a>
+    </li>
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Active Item
+      </a>
+    </li>
+    <li
+      className="divider"
+      onKeyDown={[Function]}
+      role="separator"
+      style={undefined}
+    />
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Separated link
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`DropdownButton should renders properly 7`] = `
 <div
   className="dropdown btn-group"
 >

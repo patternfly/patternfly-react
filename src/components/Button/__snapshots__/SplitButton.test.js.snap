@@ -9,109 +9,6 @@ exports[`SplitButton should renders properly 1`] = `
     disabled={false}
     type="button"
   >
-    danger
-  </button>
-  <button
-    aria-expanded={false}
-    aria-haspopup={true}
-    aria-label="danger"
-    className="dropdown-toggle btn btn-default"
-    disabled={false}
-    id="dropdown-button-test-danger"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    role="button"
-    type="button"
-  >
-     
-    <span
-      className="caret"
-    />
-  </button>
-  <ul
-    aria-labelledby="dropdown-button-test-danger"
-    className="dropdown-menu"
-    role="menu"
-  >
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
-    >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Action
-      </a>
-    </li>
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
-    >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Another action
-      </a>
-    </li>
-    <li
-      className="active"
-      role="presentation"
-      style={undefined}
-    >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Active Item
-      </a>
-    </li>
-    <li
-      className="divider"
-      onKeyDown={[Function]}
-      role="separator"
-      style={undefined}
-    />
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
-    >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Separated link
-      </a>
-    </li>
-  </ul>
-</div>
-`;
-
-exports[`SplitButton should renders properly 2`] = `
-<div
-  className="dropdown btn-group"
->
-  <button
-    className="btn btn-default"
-    disabled={false}
-    type="button"
-  >
     default
   </button>
   <button
@@ -206,7 +103,7 @@ exports[`SplitButton should renders properly 2`] = `
 </div>
 `;
 
-exports[`SplitButton should renders properly 3`] = `
+exports[`SplitButton should renders properly 2`] = `
 <div
   className="dropdown btn-group"
 >
@@ -309,7 +206,419 @@ exports[`SplitButton should renders properly 3`] = `
 </div>
 `;
 
+exports[`SplitButton should renders properly 3`] = `
+<div
+  className="dropdown btn-group"
+>
+  <button
+    className="btn btn-default"
+    disabled={false}
+    type="button"
+  >
+    success
+  </button>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    aria-label="success"
+    className="dropdown-toggle btn btn-default"
+    disabled={false}
+    id="dropdown-button-test-success"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    type="button"
+  >
+     
+    <span
+      className="caret"
+    />
+  </button>
+  <ul
+    aria-labelledby="dropdown-button-test-success"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Action
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Another action
+      </a>
+    </li>
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Active Item
+      </a>
+    </li>
+    <li
+      className="divider"
+      onKeyDown={[Function]}
+      role="separator"
+      style={undefined}
+    />
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Separated link
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`SplitButton should renders properly 4`] = `
+<div
+  className="dropdown btn-group"
+>
+  <button
+    className="btn btn-default"
+    disabled={false}
+    type="button"
+  >
+    warning
+  </button>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    aria-label="warning"
+    className="dropdown-toggle btn btn-default"
+    disabled={false}
+    id="dropdown-button-test-warning"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    type="button"
+  >
+     
+    <span
+      className="caret"
+    />
+  </button>
+  <ul
+    aria-labelledby="dropdown-button-test-warning"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Action
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Another action
+      </a>
+    </li>
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Active Item
+      </a>
+    </li>
+    <li
+      className="divider"
+      onKeyDown={[Function]}
+      role="separator"
+      style={undefined}
+    />
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Separated link
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`SplitButton should renders properly 5`] = `
+<div
+  className="dropdown btn-group"
+>
+  <button
+    className="btn btn-default"
+    disabled={false}
+    type="button"
+  >
+    danger
+  </button>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    aria-label="danger"
+    className="dropdown-toggle btn btn-default"
+    disabled={false}
+    id="dropdown-button-test-danger"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    type="button"
+  >
+     
+    <span
+      className="caret"
+    />
+  </button>
+  <ul
+    aria-labelledby="dropdown-button-test-danger"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Action
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Another action
+      </a>
+    </li>
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Active Item
+      </a>
+    </li>
+    <li
+      className="divider"
+      onKeyDown={[Function]}
+      role="separator"
+      style={undefined}
+    />
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Separated link
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`SplitButton should renders properly 6`] = `
+<div
+  className="dropdown btn-group"
+>
+  <button
+    className="btn btn-default"
+    disabled={false}
+    type="button"
+  >
+    info
+  </button>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    aria-label="info"
+    className="dropdown-toggle btn btn-default"
+    disabled={false}
+    id="dropdown-button-test-info"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    type="button"
+  >
+     
+    <span
+      className="caret"
+    />
+  </button>
+  <ul
+    aria-labelledby="dropdown-button-test-info"
+    className="dropdown-menu"
+    role="menu"
+  >
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Action
+      </a>
+    </li>
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Another action
+      </a>
+    </li>
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Active Item
+      </a>
+    </li>
+    <li
+      className="divider"
+      onKeyDown={[Function]}
+      role="separator"
+      style={undefined}
+    />
+    <li
+      className=""
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Separated link
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`SplitButton should renders properly 7`] = `
 <div
   className="dropdown btn-group"
 >
