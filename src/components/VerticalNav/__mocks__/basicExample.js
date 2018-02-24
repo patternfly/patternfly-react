@@ -1,7 +1,7 @@
 import React from 'react';
 import { VerticalNav } from '../../../index';
 
-export const basicExample = props => (
+export const basicExample = (props, firstItemClass) => (
   <VerticalNav {...props} showBadges>
     <VerticalNav.Masthead title="Patternfly React" />
     <VerticalNav.Item
@@ -9,6 +9,7 @@ export const basicExample = props => (
       iconClass="fa fa-home"
       initialActive
       onClick={() => alert('Item 1!')}
+      className={firstItemClass}
     >
       <VerticalNav.Badge count={42} />
     </VerticalNav.Item>

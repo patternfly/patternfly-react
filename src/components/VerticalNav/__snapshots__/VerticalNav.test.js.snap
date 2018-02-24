@@ -353,6 +353,347 @@ Array [
 ]
 `;
 
+exports[`VerticalNav renders properly with a custom className on a nav item 1`] = `
+Array [
+  <nav
+    className="navbar navbar-pf-vertical"
+  >
+    <div
+      className="navbar-header"
+    >
+      <button
+        className="navbar-toggle collapsed"
+        onClick={[Function]}
+        type="button"
+      >
+        <span
+          className="sr-only"
+        >
+          Toggle navigation
+        </span>
+        <span
+          className="icon-bar"
+        />
+        <span
+          className="icon-bar"
+        />
+        <span
+          className="icon-bar"
+        />
+      </button>
+      <span
+        className="navbar-brand"
+      >
+        <span>
+          
+          
+          <span
+            className="navbar-brand-txt"
+          >
+            Patternfly React
+          </span>
+        </span>
+      </span>
+    </div>
+  </nav>,
+  <div
+    className="nav-pf-vertical nav-pf-vertical-with-sub-menus nav-pf-vertical-with-badges nav-pf-persistent-secondary"
+  >
+    <ul
+      className="list-group"
+    >
+      <li
+        className="active my-custom-item list-group-item"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+        >
+          <span
+            className="fa fa-home"
+            title="Item 1"
+          />
+          <span
+            className="list-group-item-value"
+          >
+            Item 1
+          </span>
+          <div
+            className="badge-container-pf"
+          >
+            <div
+              className="badge"
+            >
+              
+              <span>
+                42
+              </span>
+            </div>
+          </div>
+        </a>
+      </li>
+      <li
+        className="secondary-nav-item-pf list-group-item"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+        >
+          <span
+            className="fa fa-star"
+            title="Item 2"
+          />
+          <span
+            className="list-group-item-value"
+          >
+            Item 2
+          </span>
+          <div
+            className="badge-container-pf"
+          />
+        </a>
+        <div
+          className="nav-pf-secondary-nav"
+        >
+          <div
+            className="nav-item-pf-header"
+          >
+            <span>
+              Item 2
+            </span>
+          </div>
+          <ul
+            className="list-group"
+          >
+            <li
+              className="list-group-item"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+              >
+                <span
+                  className="list-group-item-value"
+                >
+                  Item 2-A
+                </span>
+                <div
+                  className="badge-container-pf"
+                >
+                  <div
+                    className="badge"
+                    onBlur={[Function]}
+                    onClick={null}
+                    onFocus={[Function]}
+                    onMouseOut={[Function]}
+                    onMouseOver={[Function]}
+                  >
+                    
+                    <span>
+                      9999
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li
+              className="list-group-item"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+              >
+                <span
+                  className="list-group-item-value"
+                >
+                  Item 2-B (external link)
+                </span>
+              </a>
+            </li>
+            <li
+              className="list-group-item"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+              >
+                <span
+                  className="list-group-item-value"
+                >
+                  Item 2-C
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li
+        className="secondary-nav-item-pf list-group-item"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <a
+          href="#"
+          onClick={[Function]}
+        >
+          <span
+            className="fa fa-info-circle"
+            title="Item 3"
+          />
+          <span
+            className="list-group-item-value"
+          >
+            Item 3
+          </span>
+          <div
+            className="badge-container-pf"
+          />
+        </a>
+        <div
+          className="nav-pf-secondary-nav"
+        >
+          <div
+            className="nav-item-pf-header"
+          >
+            <span>
+              Item 3
+            </span>
+          </div>
+          <ul
+            className="list-group"
+          >
+            <li
+              className="list-group-item"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+              >
+                <span
+                  className="list-group-item-value"
+                >
+                  Item 3-A
+                </span>
+              </a>
+            </li>
+            <li
+              className="tertiary-nav-item-pf list-group-item"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+              >
+                <span
+                  className="list-group-item-value"
+                >
+                  Item 3-B
+                </span>
+                <div
+                  className="badge-container-pf"
+                />
+              </a>
+              <div
+                className="nav-pf-tertiary-nav"
+              >
+                <div
+                  className="nav-item-pf-header"
+                >
+                  <span>
+                    Item 3-B
+                  </span>
+                </div>
+                <ul
+                  className="list-group"
+                >
+                  <li
+                    className="list-group-item"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <a
+                      href="#"
+                      onClick={[Function]}
+                    >
+                      <span
+                        className="list-group-item-value"
+                      >
+                        Item 3-B-i
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    className="list-group-item"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <a
+                      href="#"
+                      onClick={[Function]}
+                    >
+                      <span
+                        className="list-group-item-value"
+                      >
+                        Item 3-B-ii
+                      </span>
+                    </a>
+                  </li>
+                  <li
+                    className="list-group-item"
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <a
+                      href="#"
+                      onClick={[Function]}
+                    >
+                      <span
+                        className="list-group-item-value"
+                      >
+                        Item 3-B-iii
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li
+              className="list-group-item"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <a
+                href="#"
+                onClick={[Function]}
+              >
+                <span
+                  className="list-group-item-value"
+                >
+                  Item 3-C
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>,
+]
+`;
+
 exports[`VerticalNav renders properly with item children 1`] = `
 Array [
   <nav
