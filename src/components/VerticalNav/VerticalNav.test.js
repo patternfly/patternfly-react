@@ -23,6 +23,12 @@ test('VerticalNav renders properly in mobile mode', () => {
   expect(tree).toMatchSnapshot();
 });
 
+test('VerticalNav renders properly with a custom className on a nav item', () => {
+  const component = renderer.create(basicExample(null, 'my-custom-item'));
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 test('VerticalNav renders properly with item objects', () => {
   const component = renderer.create(
     <VerticalNav items={mockNavItems} pinnableMenus>

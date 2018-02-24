@@ -43,7 +43,9 @@ const itemObjectTypes = {
   /** Optional callback for updating hovered prop */
   onBlur: PropTypes.func,
   /** Optional callback for updating active prop */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /** Optional additional className(s) to be applied to the item */
+  className: PropTypes.string
 };
 
 // Props that can be passed to a NavContextProvider
@@ -134,7 +136,7 @@ const wrongDepth = (props, expectedDepth) => {
     // eslint-disable-next-line no-console
     console.warn(
       `Warning: ${componentUsed} was used at ${
-        props.depth
+      props.depth
       } depth, but it is for ${expectedDepth} items.`
     );
   }

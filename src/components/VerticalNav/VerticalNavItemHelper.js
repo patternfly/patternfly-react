@@ -240,7 +240,8 @@ class BaseVerticalNavItemHelper extends React.Component {
       badges,
       subItems,
       href,
-      onClick
+      onClick,
+      className
     } = navItem;
 
     const depth = this.props.depth || 'primary';
@@ -300,7 +301,7 @@ class BaseVerticalNavItemHelper extends React.Component {
           'mobile-secondary-item-pf':
             selectedOnMobile && depth === 'primary' && showMobileTertiary
           // I don't know, that's just how this stuff was in patternfly-ng...
-        })}
+        }, className)}
         onMouseEnter={this.onItemHover}
         // NOTE onItemBlur takes a boolean, we want to prevent it being passed a truthy event.
         onMouseLeave={e => this.onItemBlur(false)}
@@ -316,8 +317,8 @@ class BaseVerticalNavItemHelper extends React.Component {
                 {icon}
               </OverlayTrigger>
             ) : (
-              icon
-            ))}
+                icon
+              ))}
           <span className="list-group-item-value">{title}</span>
           {showBadges &&
             childBadgeComponents && (
