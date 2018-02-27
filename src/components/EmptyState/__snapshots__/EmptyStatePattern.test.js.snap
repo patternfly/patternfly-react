@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should renderer a full EmptyStatePattern 1`] = `
+<EmptyState
+  className=""
+>
+  <EmptyStateIcon
+    className=""
+    name="add-circle-o"
+    type="pf"
+  />
+  <EmptyStateTitle
+    className=""
+  >
+    some title
+  </EmptyStateTitle>
+  <EmptyStateInfo
+    className=""
+  >
+    some info
+  </EmptyStateInfo>
+  <EmptyStateHelp
+    className=""
+  >
+    some help
+  </EmptyStateHelp>
+  <EmptyStateAction
+    className=""
+    secondary={false}
+  >
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsSize="large"
+      bsStyle="primary"
+      disabled={false}
+      onClick={[MockFunction]}
+      title="Main Action Title"
+    >
+      Main Action Children
+    </Button>
+  </EmptyStateAction>
+  <EmptyStateAction
+    className=""
+    secondary={true}
+  >
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      disabled={false}
+      onClick={[MockFunction]}
+      title="Secondary Action 1 Title"
+    >
+      Secondary Action 1 Children
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      disabled={false}
+      onClick={[MockFunction]}
+      title="Secondary Action 2 Title"
+    >
+      Secondary Action 2 Children
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      disabled={false}
+      onClick={[MockFunction]}
+      title="Secondary Action 3 Title"
+    >
+      Secondary Action 3 Children
+    </Button>
+  </EmptyStateAction>
+</EmptyState>
+`;
+
+exports[`should renderer a minimal EmptyStatePattern 1`] = `
+<EmptyState
+  className=""
+>
+  <EmptyStateIcon
+    className=""
+    name="add-circle-o"
+    type="pf"
+  />
+</EmptyState>
+`;
