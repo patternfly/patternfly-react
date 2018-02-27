@@ -39,10 +39,7 @@ const UtilizationBar = ({
     <div className={descriptionPlacementTop ? null : 'progress-bar'}>
       {label && (
         <span className={labelClasses(descriptionPlacementTop)}>
-          <strong className="label-strong label-text">
-            {`${now} of ${max}`}
-          </strong>{' '}
-          {label}
+          <strong className="label-strong">{`${now} of ${max}`}</strong> {label}
         </span>
       )}
       {description && (

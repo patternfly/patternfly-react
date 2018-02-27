@@ -4,7 +4,6 @@ export const labelClasses = top =>
   ClassNames(
     { 'progress-label-top-right': top, 'progress-label-right': !top },
     'pull-right',
-    'label-text',
     'display-inline-block'
   );
 
