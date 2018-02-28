@@ -1,17 +1,15 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import { Icon } from './index';
 
 test('patternfly Icon is working', () => {
-  const component = renderer.create(<Icon type="pf" name="ok" />);
+  const component = mount(<Icon type="pf" name="ok" />);
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('fontawesome Icon is working', () => {
-  const component = renderer.create(<Icon name="angle-down" />);
+  const component = mount(<Icon name="angle-down" />);
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });

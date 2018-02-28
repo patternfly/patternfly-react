@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 
 import { VerticalNav } from './index';
 
@@ -12,25 +12,25 @@ const { Masthead, Brand, IconBar } = VerticalNav;
 console.warn = jest.genMockFunction(); // eslint-disable-line no-console
 
 test('VerticalNav renders properly with item children', () => {
-  const component = renderer.create(basicExample());
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const component = mount(basicExample());
+
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('VerticalNav renders properly in mobile mode', () => {
-  const component = renderer.create(basicExample({ isMobile: true }));
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const component = mount(basicExample({ isMobile: true }));
+
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('VerticalNav renders properly with a custom className on a nav item', () => {
-  const component = renderer.create(basicExample(null, 'my-custom-item'));
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  const component = mount(basicExample(null, 'my-custom-item'));
+
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('VerticalNav renders properly with item objects', () => {
-  const component = renderer.create(
+  const component = mount(
     <VerticalNav items={mockNavItems} pinnableMenus>
       <Masthead>
         <Brand
@@ -43,8 +43,8 @@ test('VerticalNav renders properly with item objects', () => {
       </Masthead>
     </VerticalNav>
   );
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+
+  expect(component.render()).toMatchSnapshot();
 });
 
 // Note: in the future it would be nice to unit test all those component class methods too...
