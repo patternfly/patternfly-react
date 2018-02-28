@@ -5,30 +5,119 @@ exports[`FieldLevelHelp allows to specify mode content and close 1`] = `
   <label>
     Port Number
   </label>
-  <button
-    className="btn btn-link"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
+  <FieldLevelHelp
+    close="true"
+    content="Enter Port number between the 4000-5000 range"
+    id="fieldlevelname1"
+    mode="popover"
   >
-    <span
-      aria-hidden="true"
-      className="pficon pficon-info"
-    />
-  </button>
+    <OverlayTrigger
+      defaultOverlayShown={false}
+      overlay={
+        <Popover
+          bsClass="popover"
+          id="popover"
+          placement="right"
+        >
+          Enter Port number between the 4000-5000 range
+        </Popover>
+      }
+      placement="top"
+      rootClose={true}
+      trigger={
+        Array [
+          "click",
+        ]
+      }
+    >
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="link"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <Icon
+            name="info"
+            type="pf"
+          >
+            <PatternflyIcon
+              className=""
+              name="info"
+            >
+              <span
+                aria-hidden="true"
+                className="pficon pficon-info"
+              />
+            </PatternflyIcon>
+          </Icon>
+        </button>
+      </Button>
+    </OverlayTrigger>
+  </FieldLevelHelp>
 </div>
 `;
 
 exports[`FieldLevelHelp renders properly 1`] = `
-<button
-  className="btn btn-link"
-  disabled={false}
-  onClick={[Function]}
-  type="button"
+<FieldLevelHelp
+  close="true"
+  content={null}
+  id="fieldlevelname1"
 >
-  <span
-    aria-hidden="true"
-    className="pficon pficon-info"
-  />
-</button>
+  <OverlayTrigger
+    defaultOverlayShown={false}
+    overlay={
+      <Popover
+        bsClass="popover"
+        id="popover"
+        placement="right"
+      />
+    }
+    placement="top"
+    rootClose={true}
+    trigger={
+      Array [
+        "click",
+      ]
+    }
+  >
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="link"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <button
+        className="btn btn-link"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        <Icon
+          name="info"
+          type="pf"
+        >
+          <PatternflyIcon
+            className=""
+            name="info"
+          >
+            <span
+              aria-hidden="true"
+              className="pficon pficon-info"
+            />
+          </PatternflyIcon>
+        </Icon>
+      </button>
+    </Button>
+  </OverlayTrigger>
+</FieldLevelHelp>
 `;

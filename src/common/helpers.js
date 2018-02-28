@@ -6,6 +6,17 @@ export const bindMethods = (context, methods) => {
   });
 };
 
+// Implementation of the debounce function
+export const debounce = (func, wait) => {
+  let timeout;
+  function innerFunc(...args) {
+    const context = this;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
+  }
+  return innerFunc;
+};
+
 // Returns a subset of the given object including only the given keys, with values optionally replaced by a fn.
 export const selectKeys = (obj, keys, fn = val => val) =>
   keys.reduce((values, key) => ({ ...values, [key]: fn(obj[key]) }), {});
@@ -36,3 +47,5 @@ export const propsChanged = (propNames, oldProps, newProps) =>
 export const nullValues = obj => selectKeys(obj, Object.keys(obj), () => null);
 
 export const noop = Function.prototype;
+
+export const KEY_CODES = { TAB_KEY: 9, ENTER_KEY: 13, ESCAPE_KEY: 27 };

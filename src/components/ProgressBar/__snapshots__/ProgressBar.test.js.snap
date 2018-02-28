@@ -2,19 +2,15 @@
 
 exports[`ProgressBar renders properly 1`] = `
 <div
-  className="progress"
+  class="progress"
 >
   <div
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={60}
-    className="progress-bar"
+    aria-valuemax="100"
+    aria-valuemin="0"
+    aria-valuenow="60"
+    class="progress-bar"
     role="progressbar"
-    style={
-      Object {
-        "width": "60%",
-      }
-    }
+    style="width: 60%;"
   />
 </div>
 `;

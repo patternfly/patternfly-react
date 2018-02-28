@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fontawesome Icon is working 1`] = `
+<span
+  aria-hidden="true"
+  class="fa fa-angle-down"
+/>
+`;
+
+exports[`patternfly Icon is working 1`] = `
+<span
+  aria-hidden="true"
+  class="pficon pficon-ok"
+/>
+`;

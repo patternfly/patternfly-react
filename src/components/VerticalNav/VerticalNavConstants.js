@@ -43,7 +43,9 @@ const itemObjectTypes = {
   /** Optional callback for updating hovered prop */
   onBlur: PropTypes.func,
   /** Optional callback for updating active prop */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /** Optional additional className(s) to be applied to the item */
+  className: PropTypes.string
 };
 
 // Props that can be passed to a NavContextProvider

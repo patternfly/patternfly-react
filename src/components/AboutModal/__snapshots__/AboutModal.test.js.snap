@@ -1,3 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AboutModal renders correctly when hidden 1`] = `null`;
+
+exports[`AboutModal renders correctly when shown 1`] = `
+<div
+  role="dialog"
+>
+  <div
+    class="modal-backdrop fade in"
+  />
+  <div
+    class="fade in modal"
+    role="dialog"
+    style="display: block; padding-right: 0px;"
+    tabindex="-1"
+  >
+    <div
+      class="modal-dialog"
+    >
+      <div
+        class="modal-content about-modal-pf"
+        role="document"
+      >
+        <div
+          class="modal-header"
+        >
+          <button
+            class="close"
+          >
+            <span
+              aria-hidden="true"
+              class="pficon pficon-close"
+              title="Close"
+            />
+            <span
+              class="sr-only"
+            >
+              Close
+            </span>
+          </button>
+        </div>
+        <div
+          class="modal-body"
+        >
+          <h1>
+            Product Title
+          </h1>
+          <div
+            class="product-versions-pf"
+          >
+            <ul
+              class="list-unstyled"
+            >
+              <li
+                class=""
+              >
+                <strong>
+                  Label
+                </strong>
+                 Version
+              </li>
+            </ul>
+          </div>
+          <div
+            class="trademark-pf"
+          >
+            Trademark and Copyright Information
+          </div>
+        </div>
+        <div
+          class="modal-footer"
+        >
+          <img
+            alt="Patternfly Logo"
+            src=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

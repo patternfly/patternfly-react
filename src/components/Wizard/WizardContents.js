@@ -39,14 +39,16 @@ WizardContents.propTypes = {
   /** The wizard step index for these contents */
   stepIndex: PropTypes.number.isRequired,
   /** The wizard sub step index for these contents */
-  subStepIndex: PropTypes.number.isRequired,
+  subStepIndex: PropTypes.number,
   /** The active wizard step index */
   activeStepIndex: PropTypes.number.isRequired,
   /** The active wizard sub step index */
-  activeSubStepIndex: PropTypes.number.isRequired
+  activeSubStepIndex: PropTypes.number
 };
 WizardContents.defaultProps = {
   children: null,
-  className: ''
+  className: '',
+  subStepIndex: null,
+  activeSubStepIndex: null
 };
 export default WizardContents;
