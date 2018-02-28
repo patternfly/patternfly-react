@@ -12,9 +12,11 @@ const Icon = ({ type, ...props }) => {
   throw new Error(`Unsupported prop type=${type}`);
 };
 Icon.propTypes = {
-  /** Icon type */
+  /** Icon type can be 'fa' or 'pf'.
+   'fa' is the default type. */
   type: PropTypes.oneOf(['fa', 'pf']),
-  /** Font awesome icon rendered if name prop is provided */
+  /** Icon name is the pf-name or fa-name without the prefix.
+   e.g.: As for 'pf-ok' name will be 'ok' */
   name: PropTypes.string.isRequired
 };
 Icon.defaultProps = {

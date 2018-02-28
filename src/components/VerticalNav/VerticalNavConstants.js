@@ -136,7 +136,7 @@ const wrongDepth = (props, expectedDepth) => {
     // eslint-disable-next-line no-console
     console.warn(
       `Warning: ${componentUsed} was used at ${
-      props.depth
+        props.depth
       } depth, but it is for ${expectedDepth} items.`
     );
   }
