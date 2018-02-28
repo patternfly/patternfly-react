@@ -23,8 +23,8 @@ stories.addWithInfo('Utilization Bar', 'Utilization Bar', () => (
       max={number('Maximal value', 100)}
       thresholdWarning={number('Warning threshold value', 40)}
       thresholdError={number('Error threshold value', 80)}
-      description={text('Description', 'Label')}
-      label={text('Label', '%')}
+      description={text('Description', 'Description')}
+      label={text('Label', 'Label')}
       descriptionPlacementTop={boolean('Description placement', false)}
     />
   </div>

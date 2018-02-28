@@ -1,8 +1,4 @@
 .utilization-bar-pf {
-  .label-strong {
-    font-weight: 600;
-  }
-
   .display-inline-block {
     display: inline-block;
     font-size: 11px;
@@ -10,5 +6,6 @@
 
   .label-text.progress-description {
     color: $color-pf-black;
+    font-size: 12px;
   }
 }

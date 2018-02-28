@@ -11,7 +11,7 @@ const AvailableTooltipFunction = (max, now) => (
   <Tooltip id={randomId()}>Available {max - now} %</Tooltip>
 );
 
-const UsedTooltipFunction = now => (
+const UsedTooltipFunction = (max, now) => (
   <Tooltip id={randomId()}>Used {now} %</Tooltip>
 );
 
@@ -39,7 +39,7 @@ const UtilizationBar = ({
     <div className={descriptionPlacementTop ? null : 'progress-bar'}>
       {label && (
         <span className={labelClasses(descriptionPlacementTop)}>
-          <strong className="label-strong">{`${now} of ${max}`}</strong> {label}
+          {label}
         </span>
       )}
       {description && (
@@ -48,7 +48,7 @@ const UtilizationBar = ({
     </div>
     <div className="progress">
       <OverlayTrigger
-        overlay={usedTooltipFunction(now)}
+        overlay={usedTooltipFunction(max, now)}
         placement="top"
         trigger={['hover', 'focus']}
         rootClose={false}
@@ -92,14 +92,14 @@ UtilizationBar.propTypes = {
   thresholdWarning: PropTypes.number,
   /** Threshold value. Bar will change value to red if it's surpassed.  */
   thresholdError: PropTypes.number,
-  /** Function that renders tooltip for available part of bar. */
+  /** Function that renders tooltip for available part of bar. Takes params max and now.*/
   availableTooltipFunction: PropTypes.func,
-  /** Function that renders tooltip for used part of bar. */
+  /** Function that renders tooltip for used part of bar. Takes params max and now.*/
   usedTooltipFunction: PropTypes.func,
   /** Description that is displayed on the right side */
-  description: PropTypes.string,
+  description: PropTypes.node,
   /** Units */
-  label: PropTypes.string,
+  label: PropTypes.node,
   /** If set labels will be placed above utilization bar */
   descriptionPlacementTop: PropTypes.bool,
   /** User's custom classes */
