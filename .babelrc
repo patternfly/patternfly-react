@@ -6,5 +6,5 @@
     "transform-object-rest-spread",
     "transform-object-assign"
   ],
-  "ignore": ["src/**/__snapshots__", "src/**/*.stories.js", "src/**/Stories"]
+  "ignore": ["**/src/**/__snapshots__", "**/src/**/*.stories.js", "**/src/**/Stories"]
 }

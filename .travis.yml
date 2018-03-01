@@ -15,14 +15,14 @@ notifications:
 node_js:
 - '8'
 - '6'
-before_script:
-- npm prune
+before_install: scripts/travis/before_install.sh
+before_script: npm prune
 script:
 - npm run test
 - npm run coveralls
 after_success:
-- npm run travis-deploy-once "npm run semantic-release"
-- ./release.sh
+- ./scripts/travis/after_success.sh
+- ./scripts/travis/release.sh
 branches:
   except:
   - "/^v\\d+\\.\\d+\\.\\d+$/"
