@@ -16,7 +16,9 @@ const Card = ({
     'card-pf',
     { 'card-pf-accented': accented },
     { 'card-pf-aggregate-status': aggregated },
-    { 'card-pf-aggregate-status-mini': aggregatedMini },
+    {
+      'card-pf-aggregate-status card-pf-aggregate-status-mini': aggregatedMini
+    },
     { 'card-pf-match-height': matchHeight },
     className
   );
@@ -39,7 +41,7 @@ Card.propTypes = {
   aggregated: PropTypes.bool,
   /** Aggregate Mini Card Bool */
   aggregatedMini: PropTypes.bool,
-  /** is matchHeight Prop */
+  /** Match Height Bool */
   matchHeight: PropTypes.bool,
   /** Reference prop */
   cardRef: PropTypes.func

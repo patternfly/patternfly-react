@@ -6,7 +6,7 @@ import { Grid } from '../Grid/index';
 
 const CardGrid = ({ matchHeight, children, className, ...props }) => {
   const classes = ClassNames('container-cards-pf', className);
-  const cardSelector = ['.card-pf'];
+  const cardSelector = ['.card-pf-match-height'];
 
   if (matchHeight) {
     return (

@@ -1,6 +1,7 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
+import { Button } from '../../Button';
 import {
   Card,
   CardGrid,
@@ -19,7 +20,8 @@ import {
   EmptyState,
   EmptyStateTitle,
   EmptyStateIcon,
-  EmptyStateInfo
+  EmptyStateInfo,
+  EmptyStateAction
 } from '../../../index';
 
 const handleClick = e => {
@@ -34,7 +36,7 @@ const baseCardHeightMatchingStory = stories => {
       <body className="cards-pf">
         <CardGrid matchHeight={matchHeightBool}>
           <CardGrid.Row style={{ marginBottom: '20px', marginTop: '20px' }}>
-            <CardGrid.Col xs={6} sm={4} md={4}>
+            <CardGrid.Col xs={6} sm={3} md={3}>
               <Card matchHeight={matchHeightBool} accented>
                 <CardHeading>
                   <CardDropdownButton
@@ -64,7 +66,7 @@ const baseCardHeightMatchingStory = stories => {
                 </CardFooter>
               </Card>
             </CardGrid.Col>
-            <CardGrid.Col xs={6} sm={4} md={4}>
+            <CardGrid.Col xs={6} sm={3} md={3}>
               <Card matchHeight={matchHeightBool} accented>
                 <CardTitle>Card Title</CardTitle>
                 <CardBody>[card contents]</CardBody>
@@ -90,7 +92,7 @@ const baseCardHeightMatchingStory = stories => {
                 </CardFooter>
               </Card>
             </CardGrid.Col>
-            <CardGrid.Col xs={6} sm={4} md={4}>
+            <CardGrid.Col xs={6} sm={3} md={3}>
               <Card matchHeight={matchHeightBool}>
                 <CardHeading>
                   <CardTitle>Empty Card</CardTitle>
@@ -100,6 +102,28 @@ const baseCardHeightMatchingStory = stories => {
                     <EmptyStateIcon />
                     <EmptyStateTitle>Empty Card</EmptyStateTitle>
                     <EmptyStateInfo>No Data</EmptyStateInfo>
+                    <EmptyStateAction>
+                      <Button
+                        bsStyle="primary"
+                        bsSize="large"
+                        onClick={action('Click')()}
+                      >
+                        Upload Data
+                      </Button>
+                    </EmptyStateAction>
+                  </EmptyState>
+                </CardBody>
+              </Card>
+            </CardGrid.Col>
+            <CardGrid.Col xs={6} sm={3} md={3}>
+              <Card matchHeight={matchHeightBool}>
+                <CardHeading>
+                  <CardTitle>Empty Card</CardTitle>
+                </CardHeading>
+                <CardBody>
+                  <EmptyState>
+                    <EmptyStateIcon name="info" />
+                    <EmptyStateTitle>No Data Available</EmptyStateTitle>
                   </EmptyState>
                 </CardBody>
               </Card>

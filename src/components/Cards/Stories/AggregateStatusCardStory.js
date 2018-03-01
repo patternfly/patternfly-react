@@ -50,7 +50,7 @@ const aggregateCardAddWithInfo = stories => {
                 <CardTitle onClick={handleClick}>
                   <a href="#">
                     <Icon name="shield" />
-                    <AggregateStatusCount> 20 </AggregateStatusCount>
+                    <AggregateStatusCount>20 </AggregateStatusCount>
                     Amet{' '}
                   </a>
                 </CardTitle>
@@ -59,7 +59,7 @@ const aggregateCardAddWithInfo = stories => {
                     <AggregateStatusNotification onClick={handleClick}>
                       <a href="#">
                         <Icon type="pf" name="error-circle-o" />4
-                      </a>
+                      </a>{' '}
                     </AggregateStatusNotification>
                     <AggregateStatusNotification onClick={handleClick}>
                       <a href="#">
@@ -94,7 +94,7 @@ const aggregateCardAddWithInfo = stories => {
           </div>
           <CardGrid.Row>
             <CardGrid.Col xs={6} sm={3} md={3}>
-              <Card accented aggregated aggregatedMini>
+              <Card accented aggregatedMini>
                 <CardTitle>
                   <Icon name="rebel" />
                   <AggregateStatusCount> 0 </AggregateStatusCount>
@@ -114,7 +114,7 @@ const aggregateCardAddWithInfo = stories => {
               </Card>
             </CardGrid.Col>
             <CardGrid.Col xs={6} sm={3} md={3}>
-              <Card accented aggregated aggregatedMini>
+              <Card accented aggregatedMini>
                 <CardTitle onClick={handleClick}>
                   <a href="#">
                     <Icon name="paper-plane" />
@@ -136,7 +136,7 @@ const aggregateCardAddWithInfo = stories => {
               </Card>
             </CardGrid.Col>
             <CardGrid.Col xs={6} sm={3} md={3}>
-              <Card accented aggregated aggregatedMini>
+              <Card accented aggregatedMini>
                 <CardTitle onClick={handleClick}>
                   <a href="#">
                     <Icon type="pf" name="cluster" />
