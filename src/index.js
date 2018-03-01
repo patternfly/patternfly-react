@@ -11,6 +11,7 @@ export * from './components/Filter';
 export * from './components/Form';
 export * from './components/Grid';
 export * from './components/Icon';
+export * from './components/InfoTip';
 export * from './components/Chart';
 export * from './components/Label';
 export * from './components/ListGroup';
