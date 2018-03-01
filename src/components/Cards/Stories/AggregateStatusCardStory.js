@@ -50,7 +50,7 @@ const aggregateCardAddWithInfo = stories => {
                 <CardTitle onClick={handleClick}>
                   <a href="#">
                     <Icon name="shield" />
-                    <AggregateStatusCount> 20 </AggregateStatusCount>
+                    <AggregateStatusCount>20 </AggregateStatusCount>
                     Amet{' '}
                   </a>
                 </CardTitle>
@@ -59,7 +59,7 @@ const aggregateCardAddWithInfo = stories => {
                     <AggregateStatusNotification onClick={handleClick}>
                       <a href="#">
                         <Icon type="pf" name="error-circle-o" />4
-                      </a>
+                      </a>{' '}
                     </AggregateStatusNotification>
                     <AggregateStatusNotification onClick={handleClick}>
                       <a href="#">
