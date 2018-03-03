@@ -38,9 +38,7 @@ const UtilizationBar = ({
   >
     <div className={descriptionPlacementTop ? null : 'progress-bar'}>
       {label && (
-        <span className={labelClasses(descriptionPlacementTop)}>
-          {label}
-        </span>
+        <span className={labelClasses(descriptionPlacementTop)}>{label}</span>
       )}
       {description && (
         <div className="progress-description label-text">{description}</div>
@@ -92,9 +90,9 @@ UtilizationBar.propTypes = {
   thresholdWarning: PropTypes.number,
   /** Threshold value. Bar will change value to red if it's surpassed.  */
   thresholdError: PropTypes.number,
-  /** Function that renders tooltip for available part of bar. Takes params max and now.*/
+  /** Function that renders tooltip for available part of bar. Takes params max and now. */
   availableTooltipFunction: PropTypes.func,
-  /** Function that renders tooltip for used part of bar. Takes params max and now.*/
+  /** Function that renders tooltip for used part of bar. Takes params max and now. */
   usedTooltipFunction: PropTypes.func,
   /** Description that is displayed on the right side */
   description: PropTypes.node,
