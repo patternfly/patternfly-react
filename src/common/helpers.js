@@ -37,4 +37,11 @@ export const nullValues = obj => selectKeys(obj, Object.keys(obj), () => null);
 
 export const noop = Function.prototype;
 
-export const KEY_CODES = { TAB_KEY: 9, ENTER_KEY: 13, ESCAPE_KEY: 27 };
+export const KEY_CODES = {
+  TAB_KEY: 9,
+  ENTER_KEY: 13,
+  ESCAPE_KEY: 27,
+  SPACE_KEY: 32,
+  ARROW_UP_KEY: 38,
+  ARROW_DOWN_KEY: 40
+};

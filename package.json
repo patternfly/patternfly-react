@@ -26,7 +26,8 @@
     "react-c3js": "^0.1.20",
     "react-fontawesome": "^1.6.1",
     "reactabular-table": "^8.12.0",
-    "recompose": "^0.26.0"
+    "recompose": "^0.26.0",
+    "uniqid": "^4.1.1"
   },
   "optionalDependencies": {
     "lodash.orderby": "^4.6.0",
