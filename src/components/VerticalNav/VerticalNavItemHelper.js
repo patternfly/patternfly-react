@@ -284,24 +284,27 @@ class BaseVerticalNavItemHelper extends React.Component {
     return (
       <ListGroupItem
         listItem // Renders as <li>. Other props can change this, see logic in react-bootstrap's ListGroupItem.
-        className={cx({
-          [`${nextDepth}-nav-item-pf`]:
-            depth !== 'tertiary' &&
-            childItemComponents &&
-            childItemComponents.length > 0,
-          active: active || pinned, // This is the only class we have at the tertiary depth.
-          'is-hover': onPinnedPath || (depth !== 'tertiary' && hovered),
-          // This class is present at primary and secondary depths if selectedOnMobile is true,
-          // except for the primary depth, where it is only present if showMobileSecondary is also true.
-          'mobile-nav-item-pf':
-            selectedOnMobile &&
-            ((depth === 'primary' && showMobileSecondary) ||
-              depth === 'secondary'),
-          // This class is confusingly named, but the logic is more readable.
-          'mobile-secondary-item-pf':
-            selectedOnMobile && depth === 'primary' && showMobileTertiary
-          // I don't know, that's just how this stuff was in patternfly-ng...
-        }, className)}
+        className={cx(
+          {
+            [`${nextDepth}-nav-item-pf`]:
+              depth !== 'tertiary' &&
+              childItemComponents &&
+              childItemComponents.length > 0,
+            active: active || pinned, // This is the only class we have at the tertiary depth.
+            'is-hover': onPinnedPath || (depth !== 'tertiary' && hovered),
+            // This class is present at primary and secondary depths if selectedOnMobile is true,
+            // except for the primary depth, where it is only present if showMobileSecondary is also true.
+            'mobile-nav-item-pf':
+              selectedOnMobile &&
+              ((depth === 'primary' && showMobileSecondary) ||
+                depth === 'secondary'),
+            // This class is confusingly named, but the logic is more readable.
+            'mobile-secondary-item-pf':
+              selectedOnMobile && depth === 'primary' && showMobileTertiary
+            // I don't know, that's just how this stuff was in patternfly-ng...
+          },
+          className
+        )}
         onMouseEnter={this.onItemHover}
         // NOTE onItemBlur takes a boolean, we want to prevent it being passed a truthy event.
         onMouseLeave={e => this.onItemBlur(false)}
@@ -317,8 +320,8 @@ class BaseVerticalNavItemHelper extends React.Component {
                 {icon}
               </OverlayTrigger>
             ) : (
-                icon
-              ))}
+              icon
+            ))}
           <span className="list-group-item-value">{title}</span>
           {showBadges &&
             childBadgeComponents && (
