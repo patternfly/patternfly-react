@@ -36,3 +36,13 @@ stories.addWithInfo('Breadcrumb', '', () => (
     <Breadcrumb.Item active>Data</Breadcrumb.Item>
   </Breadcrumb>
 ));
+
+stories.addWithInfo('Breadcrumb combined with page title', '', () => (
+  <Breadcrumb title>
+    <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+    <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
+      Library
+    </Breadcrumb.Item>
+    <Breadcrumb.Item active>Data</Breadcrumb.Item>
+  </Breadcrumb>
+));

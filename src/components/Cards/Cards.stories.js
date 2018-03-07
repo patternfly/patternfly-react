@@ -6,7 +6,8 @@ import {
   baseCardHeightMatchingStory,
   aggregateCardAddWithInfo,
   trendCardAddWithInfo,
-  utilizationCardAddWithInfo
+  utilizationCardAddWithInfo,
+  utilizationBarCardStory
 } from './Stories/index';
 
 const stories = storiesOf('Cards', module);
@@ -16,4 +17,5 @@ baseCardAddWithInfo(stories);
 baseCardHeightMatchingStory(stories);
 aggregateCardAddWithInfo(stories);
 trendCardAddWithInfo(stories);
+utilizationBarCardStory(stories);
 utilizationCardAddWithInfo(stories);

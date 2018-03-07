@@ -7,3 +7,4 @@ export { default as utilizationCardAddWithInfo } from './UtilizationCardStory';
 export {
   default as baseCardHeightMatchingStory
 } from './BaseCardHeightMatchingStory';
+export { default as utilizationBarCardStory } from './UtilizationBarCardStory';

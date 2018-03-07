@@ -14,7 +14,7 @@ import {
 
 test('Card is working properly', () => {
   const component = renderer.create(
-    <Card accented aggregated aggregatedMini>
+    <Card accented aggregatedMini>
       Card Content
     </Card>
   );

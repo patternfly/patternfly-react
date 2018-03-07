@@ -25,7 +25,9 @@ const PaginationRowBack = ({
           title={messagesFirstPage}
           onClick={e => {
             e.preventDefault();
-            onFirstPage(e);
+            if (page !== 1) {
+              onFirstPage(e);
+            }
           }}
         >
           <PaginationRowArrowIcon name="double-left" />
@@ -37,7 +39,9 @@ const PaginationRowBack = ({
           title={messagesPreviousPage}
           onClick={e => {
             e.preventDefault();
-            onPreviousPage(e);
+            if (page !== 1) {
+              onPreviousPage(e);
+            }
           }}
         >
           <PaginationRowArrowIcon name="left" />
