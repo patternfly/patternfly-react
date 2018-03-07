@@ -36,6 +36,7 @@ export * from './components/TreeView';
 export * from './components/UtilizationBar';
 export * from './components/Wizard';
 export * from './components/VerticalNav';
+export * from './patterns/TreeView2';
 export { patternfly } from './common/patternfly';
 export { default as controlled } from './common/controlled';
 export * from './common/helpers';
