@@ -26,7 +26,9 @@ const PaginationRowForward = ({
           title={messagesNextPage}
           onClick={e => {
             e.preventDefault();
-            onNextPage(e);
+            if (page !== amountOfPages) {
+              onNextPage(e);
+            }
           }}
         >
           <PaginationRowArrowIcon name="right" />
@@ -38,7 +40,9 @@ const PaginationRowForward = ({
           title={messagesLastPage}
           onClick={e => {
             e.preventDefault();
-            onLastPage(e);
+            if (page !== amountOfPages) {
+              onLastPage(e);
+            }
           }}
         >
           <PaginationRowArrowIcon name="double-right" />

@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrum combined with page title 1`] = `
+<ol
+  aria-label="breadcrumbs"
+  className="breadcrumbs-pf-title breadcrumb"
+  role="navigation"
+>
+  <li
+    className=""
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      target={undefined}
+      title={undefined}
+    >
+      Home
+    </a>
+  </li>
+  <li
+    className=""
+  >
+    <a
+      href="http://getbootstrap.com/components/#breadcrumbs"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      target={undefined}
+      title={undefined}
+    >
+      Library
+    </a>
+  </li>
+  <li
+    className="active"
+  >
+    <span>
+      Data
+    </span>
+  </li>
+</ol>
+`;
+
+exports[`Breadcrumb icon renders properly 1`] = `
+<ol
+  aria-label="breadcrumbs"
+  className="breadcrumb"
+  role="navigation"
+>
+  <li
+    className=""
+  >
+    <a
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      target={undefined}
+      title={undefined}
+    >
+      Home
+    </a>
+  </li>
+  <li
+    className=""
+  >
+    <a
+      href="http://getbootstrap.com/components/#breadcrumbs"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      target={undefined}
+      title={undefined}
+    >
+      Library
+    </a>
+  </li>
+  <li
+    className="active"
+  >
+    <span>
+      Data
+    </span>
+  </li>
+</ol>
+`;
