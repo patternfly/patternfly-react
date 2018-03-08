@@ -228,13 +228,23 @@ export class MockToolbarExample extends React.Component {
       currentViewType
     } = this.state;
 
-    const { onActionPerformed, onFindAction } = this.props;
+    const {
+      onActionPerformed,
+      onFindAction,
+      singleFilter,
+      singleSort
+    } = this.props;
+
+    const filterTypes = singleFilter
+      ? [mockFilterExampleFields[0]]
+      : [...mockFilterExampleFields];
+    const sortTypes = singleSort ? [mockSortFields[0]] : mockSortFields;
 
     return (
       <Toolbar>
         <Filter>
           <Filter.TypeSelector
-            filterTypes={mockFilterExampleFields}
+            filterTypes={filterTypes}
             currentFilterType={currentFilterType}
             onFilterTypeSelected={this.selectFilterType}
           />
@@ -242,7 +252,7 @@ export class MockToolbarExample extends React.Component {
         </Filter>
         <Sort>
           <Sort.TypeSelector
-            sortTypes={mockSortFields}
+            sortTypes={sortTypes}
             currentSortType={currentSortType}
             onSortTypeSelected={this.updateCurrentSortType}
           />
@@ -394,7 +404,9 @@ MockToolbarExample.propTypes = {
   onSortChanged: PropTypes.func,
   onViewChanged: PropTypes.func,
   onActionPerformed: PropTypes.func,
-  onFindAction: PropTypes.func
+  onFindAction: PropTypes.func,
+  singleFilter: PropTypes.bool,
+  singleSort: PropTypes.bool
 };
 
 MockToolbarExample.defaultProps = {
@@ -402,7 +414,9 @@ MockToolbarExample.defaultProps = {
   onSortChanged: noop,
   onViewChanged: noop,
   onActionPerformed: noop,
-  onFindAction: noop
+  onFindAction: noop,
+  singleFilter: false,
+  singleSort: false
 };
 
 export const mockToolbarExampleSource = `

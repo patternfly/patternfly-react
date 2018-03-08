@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DropdownButton } from '../Button';
+import { ButtonGroup, DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
 import { noop } from '../../common/helpers';
 
@@ -14,12 +14,20 @@ const SortTypeSelector = ({
 }) => {
   let menuId = 'sortTypeMenu';
   menuId += id ? `_${id}` : '';
-  if (sortTypes && sortTypes.length > 1) {
+  if (sortTypes && sortTypes.length > 0) {
     let title;
     if (currentSortType) {
       title = currentSortType.title || currentSortType;
     } else {
       title = currentSortType[0].title || currentSortType[0];
+    }
+
+    if (sortTypes.length === 1) {
+      return (
+        <ButtonGroup className={className} {...rest}>
+          <span className="single-sort-select-pf">{title}</span>
+        </ButtonGroup>
+      );
     }
 
     return (
