@@ -2,6 +2,10 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { decorateAction } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info/dist/index';
+import {
+  withKnobs,
+  boolean
+} from '@storybook/addon-knobs';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import {
   Toolbar,
@@ -17,6 +21,7 @@ import {
 } from './__mocks__/mockToolbarExample';
 
 const stories = storiesOf('Toolbar', module);
+stories.addDecorator(withKnobs);
 
 stories.addDecorator(
   defaultTemplate({
@@ -53,6 +58,8 @@ stories.add(
         onViewChanged={logAction('viewChanged')}
         onActionPerformed={logAction('actionPerformed')}
         onFindAction={logAction('findAction')}
+        singleFilter={boolean('Single Filter:', false)}
+        singleSort={boolean('Single Sort:', false)}
       />
     );
   })

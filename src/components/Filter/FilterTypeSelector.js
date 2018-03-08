@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import { DropdownButton } from '../Button';
+import { ButtonGroup, DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
 import { noop } from '../../common/helpers';
 
@@ -15,7 +15,7 @@ const FilterTypeSelector = ({
   ...rest
 }) => {
   const classes = cx('input-group-btn', className);
-  if (placeholder || (filterTypes && filterTypes.length > 1)) {
+  if (placeholder || (filterTypes && filterTypes.length > 0)) {
     let title;
     if (currentFilterType) {
       title = currentFilterType.title || currentFilterType;
@@ -25,6 +25,16 @@ const FilterTypeSelector = ({
 
     let menuId = 'filterFieldTypeMenu';
     menuId += id ? `_${id}` : '';
+
+    if (filterTypes.length === 1) {
+      return (
+        <div className={classes} {...rest}>
+          <ButtonGroup>
+            <span className="single-filter-select-pf">{title}</span>
+          </ButtonGroup>
+        </div>
+      );
+    }
 
     return (
       <div className={classes} {...rest}>
