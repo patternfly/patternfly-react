@@ -449,6 +449,7 @@ exports[`Toolbar renders properly 1`] = `
                 className="label label-info"
               >
                 <a
+                  className="pf-remove-button"
                   href="#"
                   onClick={[Function]}
                 >
@@ -472,6 +473,7 @@ exports[`Toolbar renders properly 1`] = `
                 className="label label-info"
               >
                 <a
+                  className="pf-remove-button"
                   href="#"
                   onClick={[Function]}
                 >
