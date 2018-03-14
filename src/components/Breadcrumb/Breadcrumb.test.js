@@ -1,11 +1,9 @@
-/* eslint-env jest */
-
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import { Breadcrumb } from './index';
 
 test('Breadcrumb icon renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Breadcrumb>
       <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
       <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
@@ -15,12 +13,11 @@ test('Breadcrumb icon renders properly', () => {
     </Breadcrumb>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });
 
 test('Breadcrum combined with page title', () => {
-  const component = renderer.create(
+  const component = mount(
     <Breadcrumb title>
       <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
       <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
@@ -30,6 +27,5 @@ test('Breadcrum combined with page title', () => {
     </Breadcrumb>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });

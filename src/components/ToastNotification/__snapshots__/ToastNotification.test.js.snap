@@ -2,32 +2,24 @@
 
 exports[`TimedToastNotification persisted and paused renders properly 1`] = `
 <div
-  className="toast-notifications-list-pf"
-  onFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
+  class="toast-notifications-list-pf"
 >
   <div
-    className="alert toast-pf alert-success alert-dismissable"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    class="alert toast-pf alert-success alert-dismissable"
   >
     <button
       aria-hidden="true"
-      className="close close-default"
-      disabled={false}
-      onClick={[MockFunction]}
+      class="close close-default"
       type="button"
     >
       <span
         aria-hidden="true"
-        className="pficon pficon-close"
+        class="pficon pficon-close"
       />
     </button>
     <span
       aria-hidden="true"
-      className="pficon pficon-ok"
+      class="pficon pficon-ok"
     />
     <span>
       Success Will Robinson!
@@ -38,32 +30,24 @@ exports[`TimedToastNotification persisted and paused renders properly 1`] = `
 
 exports[`ToastNotification renders properly 1`] = `
 <div
-  className="toast-notifications-list-pf"
-  onFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
-  onMouseOver={[Function]}
+  class="toast-notifications-list-pf"
 >
   <div
-    className="alert toast-pf alert-danger alert-dismissable"
-    onMouseEnter={[MockFunction]}
-    onMouseLeave={[MockFunction]}
+    class="alert toast-pf alert-danger alert-dismissable"
   >
     <button
       aria-hidden="true"
-      className="close close-default"
-      disabled={false}
-      onClick={[MockFunction]}
+      class="close close-default"
       type="button"
     >
       <span
         aria-hidden="true"
-        className="pficon pficon-close"
+        class="pficon pficon-close"
       />
     </button>
     <span
       aria-hidden="true"
-      className="pficon pficon-error-circle-o"
+      class="pficon pficon-error-circle-o"
     />
     <span>
       Success Will Robinson!

@@ -1,13 +1,11 @@
-/* eslint-env jest */
-
 import { MenuItem } from 'react-bootstrap';
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import DropdownKebab from './DropdownKebab';
 
 test('Kebab dropdown renders properly', () => {
-  const component = renderer.create(
+  const component = shallow(
     <DropdownKebab id="myKebab">
       <MenuItem>Action</MenuItem>
       <MenuItem>Another Action</MenuItem>
@@ -17,6 +15,5 @@ test('Kebab dropdown renders properly', () => {
     </DropdownKebab>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });

@@ -1,21 +1,18 @@
-/* eslint-env jest */
-
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 
 import FieldLevelHelp from './FieldLevelHelp';
 
 test('FieldLevelHelp renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <FieldLevelHelp id="fieldlevelname1">Port Number</FieldLevelHelp>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });
 
 test('FieldLevelHelp allows to specify mode content and close', () => {
-  const component = renderer.create(
+  const component = mount(
     <div>
       <label>Port Number</label>
       <FieldLevelHelp
@@ -27,6 +24,5 @@ test('FieldLevelHelp allows to specify mode content and close', () => {
     </div>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component).toMatchSnapshot();
 });

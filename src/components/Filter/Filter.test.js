@@ -1,10 +1,10 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import { Filter, FormControl, Toolbar } from '../../index';
 import { mockFilterExampleFields } from './__mocks__/mockFilterExample';
 
 test('Filter input renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Filter>
       <Filter.TypeSelector
         filterTypes={mockFilterExampleFields}
@@ -19,12 +19,11 @@ test('Filter input renders properly', () => {
     </Filter>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
-test('Filter select renders properly', () => {
-  const component = renderer.create(
+test('Filter select renders propeurly', () => {
+  const component = mount(
     <Filter>
       <Filter.TypeSelector
         filterTypes={mockFilterExampleFields}
@@ -37,12 +36,11 @@ test('Filter select renders properly', () => {
     </Filter>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Filter categories renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Filter>
       <Filter.TypeSelector
         filterTypes={mockFilterExampleFields}
@@ -66,12 +64,11 @@ test('Filter categories renders properly', () => {
     </Filter>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Filter renders properly in a Toolbar', () => {
-  const component = renderer.create(
+  const component = mount(
     <Toolbar>
       <Filter>
         <Filter.TypeSelector
@@ -88,12 +85,11 @@ test('Filter renders properly in a Toolbar', () => {
     </Toolbar>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Filter active components render properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Toolbar.Results>
       <Filter.ActiveLabel title="Active Filters:" />
       <Filter.List>
@@ -103,6 +99,5 @@ test('Filter active components render properly', () => {
     </Toolbar.Results>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
