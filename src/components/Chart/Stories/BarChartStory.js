@@ -1,8 +1,7 @@
 import React from 'react';
-
+import { withInfo } from '@storybook/addon-info';
 import { patternfly } from '../../../common/patternfly';
 import { BarChart, GroupedBarChart, StackedBarChart } from '../index';
-
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
 
@@ -73,63 +72,66 @@ const horizontalBarChartConfigAxis = {
  * BarChart stories
  */
 
-const barChartAddWithInfo = stories => {
-  stories.addWithInfo('Bar Charts', '', () => {
-    const story = (
-      <div>
-        <h2> Bar Chart</h2>
+const barChart = stories => {
+  stories.add(
+    'Bar Charts',
+    withInfo()(() => {
+      const story = (
         <div>
-          <BarChart
-            id="bar-chart-1"
-            size={{ width: 400 }}
-            axis={barChartConfigAxis}
-            data={barChartConfigData}
-            categories={categories}
-          />
-        </div>
+          <h2> Bar Chart</h2>
+          <div>
+            <BarChart
+              id="bar-chart-1"
+              size={{ width: 400 }}
+              axis={barChartConfigAxis}
+              data={barChartConfigData}
+              categories={categories}
+            />
+          </div>
 
-        <h2>Grouped Bar Chart</h2>
-        <div>
-          <GroupedBarChart
-            id="bar-chart-2"
-            size={{ width: 400 }}
-            axis={groupedBarChartConfigAxis}
-            data={groupedBarChartConfigData}
-            color={groupedBarChartConfigColor}
-          />
-        </div>
+          <h2>Grouped Bar Chart</h2>
+          <div>
+            <GroupedBarChart
+              id="bar-chart-2"
+              size={{ width: 400 }}
+              axis={groupedBarChartConfigAxis}
+              data={groupedBarChartConfigData}
+              color={groupedBarChartConfigColor}
+            />
+          </div>
 
-        <h2>Stacked Bar Chart</h2>
-        <div>
-          <StackedBarChart
-            id="bar-chart-3"
-            size={{ width: 400 }}
-            axis={stackedBarChartConfigAxis}
-            data={stackedBarChartConfigData}
-            color={groupedBarChartConfigColor}
-          />
-        </div>
+          <h2>Stacked Bar Chart</h2>
+          <div>
+            <StackedBarChart
+              id="bar-chart-3"
+              size={{ width: 400 }}
+              axis={stackedBarChartConfigAxis}
+              data={stackedBarChartConfigData}
+              color={groupedBarChartConfigColor}
+            />
+          </div>
 
-        <h2>Horizontal Bar Chart</h2>
-        <div>
-          <GroupedBarChart
-            id="bar-chart-4"
-            size={{ width: 400 }}
-            axis={horizontalBarChartConfigAxis}
-            data={groupedBarChartConfigData}
-            color={groupedBarChartConfigColor}
-          />
+          <h2>Horizontal Bar Chart</h2>
+          <div>
+            <GroupedBarChart
+              id="bar-chart-4"
+              size={{ width: 400 }}
+              axis={horizontalBarChartConfigAxis}
+              data={groupedBarChartConfigData}
+              color={groupedBarChartConfigColor}
+            />
+          </div>
         </div>
-      </div>
-    );
-    return inlineTemplate({
-      title: 'Bar Charts',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
-      }bar-chart/`,
-      story
-    });
-  });
+      );
+      return inlineTemplate({
+        title: 'Bar Charts',
+        documentationLink: `${
+          DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
+        }bar-chart/`,
+        story
+      });
+    })
+  );
 };
 
-export default barChartAddWithInfo;
+export default barChart;

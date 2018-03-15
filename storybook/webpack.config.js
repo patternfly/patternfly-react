@@ -3,6 +3,12 @@ const path = require('path');
 module.exports = {
   module: {
     rules: [
+      // Storysource Addon
+      {
+        test: /\.stories\.jsx?$/,
+        loaders: [require.resolve('@storybook/addon-storysource/loader')],
+        enforce: 'pre'
+      },
       // Css
       {
         test: /\.css$/,

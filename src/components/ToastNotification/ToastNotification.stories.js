@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { inlineTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Button } from '../Button';
@@ -16,10 +17,11 @@ import {
 const stories = storiesOf('ToastNotification', module);
 stories.addDecorator(withKnobs);
 
-stories.addWithInfo(
+stories.add(
   'Toast Notification',
-  `Toast Notifications pop onto the screen to notify the user of a system occurrence`,
-  () => {
+  withInfo(
+    `Toast Notifications pop onto the screen to notify the user of a system occurrence`
+  )(() => {
     const header = text('Header', 'Great job!');
     const message = text('Message', 'This is really working out.');
     const type = select(
@@ -69,7 +71,7 @@ stories.addWithInfo(
       }toast-notifications/`,
       story
     });
-  }
+  })
 );
 
 class ToastNotificationStoryWrapper extends React.Component {
@@ -172,10 +174,11 @@ class ToastNotificationStoryWrapper extends React.Component {
   }
 }
 
-stories.addWithInfo(
+stories.add(
   'Toast Notification List',
-  `This is the Toast Notification List with a custom timer delay supplied.`,
-  () => {
+  withInfo(
+    `This is the Toast Notification List with a custom timer delay supplied.`
+  )(() => {
     const story = <ToastNotificationStoryWrapper />;
     return inlineTemplate({
       title: 'Toast Notification List',
@@ -184,5 +187,5 @@ stories.addWithInfo(
       }toast-notifications/`,
       story
     });
-  }
+  })
 );

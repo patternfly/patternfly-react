@@ -1,6 +1,7 @@
 import { Dropdown } from 'react-bootstrap';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { MenuItem } from './index';
@@ -29,23 +30,26 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('MenuItem', '', () => (
-  <div>
-    <Dropdown.Menu style={{ display: 'block' }}>
-      <MenuItem header>Header</MenuItem>
-      <MenuItem>link</MenuItem>
-      <MenuItem divider />
-      <MenuItem header>Header</MenuItem>
-      <MenuItem>link</MenuItem>
-      <MenuItem disabled>disabled</MenuItem>
-      <MenuItem title="See? I have a title.">link with title</MenuItem>
-      <MenuItem
-        eventKey={1}
-        href="#someHref"
-        onSelect={eventKey => alert(`Alert from menu item ${eventKey}`)}
-      >
-        link that alerts
-      </MenuItem>
-    </Dropdown.Menu>
-  </div>
-));
+stories.add(
+  'MenuItem',
+  withInfo()(() => (
+    <div>
+      <Dropdown.Menu style={{ display: 'block' }}>
+        <MenuItem header>Header</MenuItem>
+        <MenuItem>link</MenuItem>
+        <MenuItem divider />
+        <MenuItem header>Header</MenuItem>
+        <MenuItem>link</MenuItem>
+        <MenuItem disabled>disabled</MenuItem>
+        <MenuItem title="See? I have a title.">link with title</MenuItem>
+        <MenuItem
+          eventKey={1}
+          href="#someHref"
+          onSelect={eventKey => alert(`Alert from menu item ${eventKey}`)}
+        >
+          link that alerts
+        </MenuItem>
+      </Dropdown.Menu>
+    </div>
+  ))
+);

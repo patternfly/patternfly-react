@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import {
-  bootstrapTableAddWithInfo,
-  clientSortableTableAddWithInfo,
-  clientPaginationTableAddWithInfo,
-  patternflyTableAddWithInfo,
-  serverPaginationTableAddWithInfo
+  bootstrapTable,
+  clientSortableTable,
+  clientPaginationTable,
+  patternflyTable,
+  serverPaginationTable
 } from './Stories';
 
 const stories = storiesOf('Table', module);
@@ -15,8 +15,8 @@ stories.addDecorator(withKnobs);
  * Table stories
  */
 
-bootstrapTableAddWithInfo(stories);
-patternflyTableAddWithInfo(stories);
-clientSortableTableAddWithInfo(stories);
-clientPaginationTableAddWithInfo(stories);
-serverPaginationTableAddWithInfo(stories);
+bootstrapTable(stories);
+patternflyTable(stories);
+clientSortableTable(stories);
+clientPaginationTable(stories);
+serverPaginationTable(stories);

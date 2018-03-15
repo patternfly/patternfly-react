@@ -1,7 +1,7 @@
 import React from 'react';
+import { withInfo } from '@storybook/addon-info';
 import { patternfly } from '../../../common/patternfly';
 import { DonutChart } from '../index';
-
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../../storybook/constants';
 
@@ -47,49 +47,52 @@ const donutRightConfigTitle = { type: 'total', secondary: 'Animals' };
  * DonutChart stories
  */
 
-const donutChartAddWithInfo = stories => {
-  stories.addWithInfo('Donut Charts', '', () => {
-    const story = (
-      <div>
-        <h2>Donut Chart - Utilization</h2>
+const donutChart = stories => {
+  stories.add(
+    'Donut Charts',
+    withInfo()(() => {
+      const story = (
         <div>
-          <DonutChart
-            id="donunt-chart-1"
-            size={{
-              width: 210,
-              height: 210
-            }}
-            data={donutConfigData}
-            tooltip={donutConfigTooltip}
-            title={{ type: 'max' }}
-          />
-        </div>
+          <h2>Donut Chart - Utilization</h2>
+          <div>
+            <DonutChart
+              id="donunt-chart-1"
+              size={{
+                width: 210,
+                height: 210
+              }}
+              data={donutConfigData}
+              tooltip={donutConfigTooltip}
+              title={{ type: 'max' }}
+            />
+          </div>
 
-        <h2>Donut Chart - Relationship to a Whole</h2>
-        <div>
-          <DonutChart
-            id="donunt-chart-2"
-            size={{
-              width: 210,
-              height: 210
-            }}
-            data={donutRightConfigData}
-            tooltip={donutRightConfigTooltip}
-            title={donutRightConfigTitle}
-            legend={donutRightConfigLegend}
-          />
+          <h2>Donut Chart - Relationship to a Whole</h2>
+          <div>
+            <DonutChart
+              id="donunt-chart-2"
+              size={{
+                width: 210,
+                height: 210
+              }}
+              data={donutRightConfigData}
+              tooltip={donutRightConfigTooltip}
+              title={donutRightConfigTitle}
+              legend={donutRightConfigLegend}
+            />
+          </div>
         </div>
-      </div>
-    );
+      );
 
-    return inlineTemplate({
-      title: 'Donut Charts',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
-      }donut-chart/`,
-      story
-    });
-  });
+      return inlineTemplate({
+        title: 'Donut Charts',
+        documentationLink: `${
+          DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
+        }donut-chart/`,
+        story
+      });
+    })
+  );
 };
 
-export default donutChartAddWithInfo;
+export default donutChart;

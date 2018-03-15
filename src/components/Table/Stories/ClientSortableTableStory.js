@@ -19,7 +19,7 @@ import { reactabularDescription } from './tableStoryDescriptions';
  * Client Sortable Table stories
  */
 
-const clientSortableTableAddWithInfo = stories => {
+const clientSortableTable = stories => {
   stories.add(
     'Client Sortable Table',
     withInfo({
@@ -57,4 +57,4 @@ const clientSortableTableAddWithInfo = stories => {
   );
 };
 
-export default clientSortableTableAddWithInfo;
+export default clientSortableTable;

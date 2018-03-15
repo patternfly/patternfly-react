@@ -126,44 +126,47 @@ stories.add(
   })
 );
 
-stories.addWithInfo('Pagination row w/ state manager', '', () => {
-  const page = select('Page', ['1', '3', '8'], '1');
-  const totalCount = select('Total items', ['75', '80', '81'], '75');
-  const messages = {};
-  for (const key of Object.keys(PaginationRow.defaultProps.messages)) {
-    messages[key] = text(key, PaginationRow.defaultProps.messages[key]);
-  }
+stories.add(
+  'Pagination row w/ state manager',
+  withInfo()(() => {
+    const page = select('Page', ['1', '3', '8'], '1');
+    const totalCount = select('Total items', ['75', '80', '81'], '75');
+    const messages = {};
+    for (const key of Object.keys(PaginationRow.defaultProps.messages)) {
+      messages[key] = text(key, PaginationRow.defaultProps.messages[key]);
+    }
+    const story = (
+      <Paginator
+        viewType={select(
+          'View Type:',
+          PAGINATION_VIEW_TYPES,
+          PAGINATION_VIEW_TYPES[0]
+        )}
+        pagination={{
+          page: Number(page),
+          perPage: 10,
+          perPageOptions: [5, 10, 15]
+        }}
+        itemCount={Number(totalCount)}
+        onPageSet={action('page set')}
+        onPerPageSelect={action('per page value set')}
+        messages={messages}
+      />
+    );
 
-  const story = (
-    <Paginator
-      viewType={select(
-        'View Type:',
-        PAGINATION_VIEW_TYPES,
-        PAGINATION_VIEW_TYPES[0]
-      )}
-      pagination={{
-        page: Number(page),
-        perPage: 10,
-        perPageOptions: [5, 10, 15]
-      }}
-      itemCount={Number(totalCount)}
-      onPageSet={action('page set')}
-      onPerPageSelect={action('per page value set')}
-      messages={messages}
-    />
-  );
-  return inlineTemplate({
-    title: 'Pagination Row with State Manager, a.k.a. Paginator',
-    documentationLink: `${
-      DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION
-    }pagination/`,
-    story,
-    description: (
-      <div>
-        Paginator is a stateful component which manages pagination state for you
-        and exposes a single <i>onPageSet</i> callback. See Action Logger for
-        details.
-      </div>
-    )
-  });
-});
+    return inlineTemplate({
+      title: 'Pagination Row with State Manager, a.k.a. Paginator',
+      documentationLink: `${
+        DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION
+      }pagination/`,
+      story,
+      description: (
+        <div>
+          Paginator is a stateful component which manages pagination state for
+          you and exposes a single <i>onPageSet</i> callback. See Action Logger
+          for details.
+        </div>
+      )
+    });
+  })
+);
