@@ -1,0 +1,7 @@
+.page_logo{
+  content: url("./img/login-screen-logo.svg");
+}
+
+.page_bg{
+  background: url('./img/login-screen-bg.jpg');
+}
