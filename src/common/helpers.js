@@ -9,11 +9,11 @@ export const bindMethods = (context, methods) => {
 // Implementation of the debounce function
 export const debounce = (func, wait) => {
   let timeout;
-  const innerFunc = (...args) => {
+  function innerFunc(...args) {
     const context = this;
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(context, args), wait);
-  };
+  }
   return innerFunc;
 };
 
