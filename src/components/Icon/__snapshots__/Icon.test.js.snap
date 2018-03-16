@@ -2,14 +2,14 @@
 
 exports[`fontawesome Icon is working 1`] = `
 <span
-  aria-hidden={true}
-  className="fa fa-angle-down"
+  aria-hidden="true"
+  class="fa fa-angle-down"
 />
 `;
 
 exports[`patternfly Icon is working 1`] = `
 <span
   aria-hidden="true"
-  className="pficon pficon-ok"
+  class="pficon pficon-ok"
 />
 `;

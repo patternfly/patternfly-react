@@ -2,111 +2,94 @@
 
 exports[`Toolbar renders properly 1`] = `
 <div
-  className="container-fluid"
+  class="container-fluid"
 >
   <div
-    className="toolbar-pf row"
+    class="toolbar-pf row"
   >
     <div
-      className="col-sm-12"
+      class="col-sm-12"
     >
       <form
-        className="toolbar-pf-actions"
+        class="toolbar-pf-actions"
       >
         <div
-          className="filter-pf form-group toolbar-pf-filter"
+          class="filter-pf form-group toolbar-pf-filter"
         >
           <div
-            className="filter-pf-fields"
+            class="filter-pf-fields"
           >
             <div
-              className="input-group"
+              class="input-group"
             >
               <div
-                className="input-group-btn"
+                class="input-group-btn"
               >
                 <div
-                  className="dropdown btn-group"
+                  class="dropdown btn-group"
                 >
                   <button
-                    aria-expanded={false}
-                    aria-haspopup={true}
-                    className="dropdown-toggle btn btn-default"
-                    disabled={false}
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                    class="dropdown-toggle btn btn-default"
                     id="filterFieldTypeMenu"
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
                     role="button"
                     type="button"
                   >
-                    Name
-                     
+                    Name 
                     <span
-                      className="caret"
+                      class="caret"
                     />
                   </button>
                   <ul
                     aria-labelledby="filterFieldTypeMenu"
-                    className="dropdown-menu"
+                    class="dropdown-menu"
                     role="menu"
                   >
-                    
                     <li
-                      className="selected"
+                      class="selected"
                       role="presentation"
-                      style={undefined}
                     >
                       <a
                         href="#"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         role="menuitem"
-                        tabIndex="-1"
+                        tabindex="-1"
                       >
                         Name
                       </a>
                     </li>
                     <li
-                      className=""
+                      class=""
                       role="presentation"
-                      style={undefined}
                     >
                       <a
                         href="#"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         role="menuitem"
-                        tabIndex="-1"
+                        tabindex="-1"
                       >
                         Address
                       </a>
                     </li>
                     <li
-                      className=""
+                      class=""
                       role="presentation"
-                      style={undefined}
                     >
                       <a
                         href="#"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         role="menuitem"
-                        tabIndex="-1"
+                        tabindex="-1"
                       >
                         Birth Month
                       </a>
                     </li>
                     <li
-                      className=""
+                      class=""
                       role="presentation"
-                      style={undefined}
                     >
                       <a
                         href="#"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
                         role="menuitem"
-                        tabIndex="-1"
+                        tabindex="-1"
                       >
                         Car
                       </a>
@@ -115,7 +98,7 @@ exports[`Toolbar renders properly 1`] = `
                 </div>
               </div>
               <input
-                className="form-control"
+                class="form-control"
                 id="filterInput"
                 placeholder="Filter by Name"
                 type="text"
@@ -124,89 +107,73 @@ exports[`Toolbar renders properly 1`] = `
           </div>
         </div>
         <div
-          className="form-group"
+          class="form-group"
         >
           <div
-            className="dropdown btn-group"
+            class="dropdown btn-group"
           >
             <button
-              aria-expanded={false}
-              aria-haspopup={true}
-              className="dropdown-toggle btn btn-default"
-              disabled={false}
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="dropdown-toggle btn btn-default"
               id="sortTypeMenu"
-              onClick={[Function]}
-              onKeyDown={[Function]}
               role="button"
               type="button"
             >
-              Name
-               
+              Name 
               <span
-                className="caret"
+                class="caret"
               />
             </button>
             <ul
               aria-labelledby="sortTypeMenu"
-              className="dropdown-menu"
+              class="dropdown-menu"
               role="menu"
             >
               <li
-                className="selected"
+                class="selected"
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 >
                   Name
                 </a>
               </li>
               <li
-                className=""
+                class=""
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 >
                   Address
                 </a>
               </li>
               <li
-                className=""
+                class=""
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 >
                   Birth Month
                 </a>
               </li>
               <li
-                className=""
+                class=""
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 >
                   Car
                 </a>
@@ -214,126 +181,105 @@ exports[`Toolbar renders properly 1`] = `
             </ul>
           </div>
           <button
-            className="btn btn-link"
-            disabled={false}
+            class="btn btn-link"
             type="button"
           >
             <span
-              aria-hidden={true}
-              className="fa fa-sort-alpha-asc sort-direction"
+              aria-hidden="true"
+              class="fa fa-sort-alpha-asc sort-direction"
             />
           </button>
         </div>
         <div
-          className="form-group"
+          class="form-group"
         >
           <button
-            className="btn btn-default"
-            disabled={false}
+            class="btn btn-default"
             type="button"
           >
             Action 1
           </button>
           <button
-            className="btn btn-default"
-            disabled={false}
+            class="btn btn-default"
             type="button"
           >
             Action 2
           </button>
           <div
-            className="dropdown-kebab-pf dropdown btn-group"
+            class="dropdown-kebab-pf dropdown btn-group"
           >
             <button
-              aria-expanded={false}
-              aria-haspopup={true}
-              className="dropdown-toggle btn btn-link"
-              disabled={false}
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="dropdown-toggle btn btn-link"
               id="toolbarActionKebab"
-              onClick={[Function]}
-              onKeyDown={[Function]}
               role="button"
               type="button"
             >
               <span
-                aria-hidden={true}
-                className="fa fa-ellipsis-v"
+                aria-hidden="true"
+                class="fa fa-ellipsis-v"
               />
             </button>
             <ul
               aria-labelledby="toolbarActionKebab"
-              className="dropdown-menu"
+              class="dropdown-menu"
               role="menu"
             >
               <li
-                className=""
+                class=""
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 >
                   Action
                 </a>
               </li>
               <li
-                className=""
+                class=""
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 >
                   Another Action
                 </a>
               </li>
               <li
-                className=""
+                class=""
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 >
                   Something Else Here
                 </a>
               </li>
               <li
-                className="divider"
+                class="divider"
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 />
               </li>
               <li
-                className=""
+                class=""
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 >
                   Separated Link
                 </a>
@@ -342,122 +288,113 @@ exports[`Toolbar renders properly 1`] = `
           </div>
         </div>
         <div
-          className="toolbar-pf-action-right"
+          class="toolbar-pf-action-right"
         >
           <div
-            className="form-group toolbar-pf-find"
+            class="form-group toolbar-pf-find"
           >
             <button
-              className="btn-find btn btn-link"
-              disabled={false}
-              onClick={[Function]}
+              class="btn-find btn btn-link"
               type="button"
             >
               <span
-                aria-hidden={true}
-                className="fa fa-search"
+                aria-hidden="true"
+                class="fa fa-search"
               />
             </button>
             <div
-              className="find-pf-dropdown-container"
+              class="find-pf-dropdown-container"
             >
               <input
-                className="form-control"
+                class="form-control"
                 id="find"
-                onChange={[Function]}
-                onKeyPress={[Function]}
                 placeholder="Find By Keyword..."
                 type="text"
                 value=""
               />
               <div
-                className="find-pf-buttons"
+                class="find-pf-buttons"
               >
                 <button
-                  className="btn-find-close btn btn-link"
-                  disabled={false}
-                  onClick={[Function]}
+                  class="btn-find-close btn btn-link"
                   type="button"
                 >
                   <span
                     aria-hidden="true"
-                    className="pficon pficon-close"
+                    class="pficon pficon-close"
                   />
                 </button>
               </div>
             </div>
           </div>
           <div
-            className="form-group toolbar-pf-view-selector"
+            class="form-group toolbar-pf-view-selector"
           >
             <button
-              className="active btn btn-link"
-              disabled={false}
+              class="active btn btn-link"
               title="List View"
               type="button"
             >
               <span
-                aria-hidden={true}
-                className="fa fa-th-list"
+                aria-hidden="true"
+                class="fa fa-th-list"
               />
             </button>
             <button
-              className="btn btn-link"
-              disabled={false}
+              class="btn btn-link"
               title="Card View"
               type="button"
             >
               <span
-                aria-hidden={true}
-                className="fa fa-th"
+                aria-hidden="true"
+                class="fa fa-th"
               />
             </button>
             <button
-              className="btn btn-link"
-              disabled={false}
+              class="btn btn-link"
               title="Table View"
               type="button"
             >
               <span
-                aria-hidden={true}
-                className="fa fa-table"
+                aria-hidden="true"
+                class="fa fa-table"
               />
             </button>
           </div>
         </div>
       </form>
       <div
-        className="toolbar-pf-results row"
+        class="toolbar-pf-results row"
       >
         <div
-          className="col-sm-12"
+          class="col-sm-12"
         >
           <h5>
             40 Results
           </h5>
           <p
-            className="filter-pf-active-label"
+            class="filter-pf-active-label"
           />
           <ul
-            className="list-inline"
+            class="list-inline"
           >
             <li
-              className=""
+              class=""
               label="Name: John"
             >
               <span
-                className="label label-info"
+                class="label label-info"
               >
                 <a
+                  class="pf-remove-button"
                   href="#"
-                  onClick={[Function]}
                 >
                   <span
                     aria-hidden="true"
-                    className="pficon pficon-close"
+                    class="pficon pficon-close"
                   />
                   <span
-                    className="sr-only"
+                    class="sr-only"
                   >
                     Remove
                   </span>
@@ -465,22 +402,22 @@ exports[`Toolbar renders properly 1`] = `
               </span>
             </li>
             <li
-              className=""
+              class=""
               label="Address: Westford"
             >
               <span
-                className="label label-info"
+                class="label label-info"
               >
                 <a
+                  class="pf-remove-button"
                   href="#"
-                  onClick={[Function]}
                 >
                   <span
                     aria-hidden="true"
-                    className="pficon pficon-close"
+                    class="pficon pficon-close"
                   />
                   <span
-                    className="sr-only"
+                    class="sr-only"
                   >
                     Remove
                   </span>

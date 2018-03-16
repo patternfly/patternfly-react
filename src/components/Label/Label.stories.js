@@ -2,7 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
-import { Label } from './index';
+import { Label, DisposableLabel, RemoveButton } from './index';
+import {
+  MockLabelRemove,
+  mockLabelRemoveSource
+} from './__mocks__/mockLabelExamples';
 
 const stories = storiesOf('Label', module);
 
@@ -25,3 +29,15 @@ stories.addWithInfo('Label', () => (
     <Label bsStyle="danger">Danger</Label>
   </div>
 ));
+
+stories.addWithInfo('Label with remove', () => <MockLabelRemove />, {
+  source: false,
+  propTables: [DisposableLabel, RemoveButton],
+  propTablesExclude: [MockLabelRemove],
+  text: (
+    <div>
+      <h1>Story Source</h1>
+      <pre>{mockLabelRemoveSource}</pre>
+    </div>
+  )
+});
