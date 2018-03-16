@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ResizeSensor } from 'css-element-queries';
-import debounce from 'lodash/debounce';
+import { debounce } from '../../common/helpers';
 
 class CardHeightMatching extends React.Component {
   constructor(props) {
@@ -20,9 +20,7 @@ class CardHeightMatching extends React.Component {
       this._resizeSensors.push(
         new ResizeSensor(
           elements,
-          debounce(() => {
-            this._matchHeights([selector]);
-          }, 200)
+          debounce(this._matchHeights([selector]), 200)
         )
       );
     });
