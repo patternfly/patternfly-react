@@ -36,7 +36,7 @@ const baseCardHeightMatchingStory = stories => {
       <body className="cards-pf">
         <CardGrid matchHeight={matchHeightBool}>
           <CardGrid.Row style={{ marginBottom: '20px', marginTop: '20px' }}>
-            <CardGrid.Col xs={6} sm={3} md={3}>
+            <CardGrid.Col xs={6} sm={4} md={4}>
               <Card matchHeight={matchHeightBool} accented>
                 <CardHeading>
                   <CardDropdownButton
@@ -66,7 +66,7 @@ const baseCardHeightMatchingStory = stories => {
                 </CardFooter>
               </Card>
             </CardGrid.Col>
-            <CardGrid.Col xs={6} sm={3} md={3}>
+            <CardGrid.Col xs={6} sm={4} md={4}>
               <Card matchHeight={matchHeightBool} accented>
                 <CardTitle>Card Title</CardTitle>
                 <CardBody>[card contents]</CardBody>
@@ -92,7 +92,7 @@ const baseCardHeightMatchingStory = stories => {
                 </CardFooter>
               </Card>
             </CardGrid.Col>
-            <CardGrid.Col xs={6} sm={3} md={3}>
+            <CardGrid.Col xs={6} sm={4} md={4}>
               <Card matchHeight={matchHeightBool}>
                 <CardHeading>
                   <CardTitle>Empty Card</CardTitle>
@@ -111,19 +111,6 @@ const baseCardHeightMatchingStory = stories => {
                         Upload Data
                       </Button>
                     </EmptyStateAction>
-                  </EmptyState>
-                </CardBody>
-              </Card>
-            </CardGrid.Col>
-            <CardGrid.Col xs={6} sm={3} md={3}>
-              <Card matchHeight={matchHeightBool}>
-                <CardHeading>
-                  <CardTitle>Empty Card</CardTitle>
-                </CardHeading>
-                <CardBody>
-                  <EmptyState>
-                    <EmptyStateIcon name="info" />
-                    <EmptyStateTitle>No Data Available</EmptyStateTitle>
                   </EmptyState>
                 </CardBody>
               </Card>
