@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import {
   Button,
   DropdownKebab,
@@ -15,7 +15,7 @@ import { mockFilterExampleFields } from '../Filter/__mocks__/mockFilterExample';
 import { mockSortFields } from '../Sort/__mocks__/mockSortExample';
 
 test('Toolbar renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Toolbar>
       <Filter>
         <Filter.TypeSelector
@@ -78,6 +78,5 @@ test('Toolbar renders properly', () => {
     </Toolbar>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
