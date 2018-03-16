@@ -20,6 +20,7 @@
   "dependencies": {
     "breakjs": "^1.0.0",
     "classnames": "^2.2.5",
+    "css-element-queries": "^1.0.1",
     "patternfly": "^3.38.0",
     "react-bootstrap": "^0.31.5",
     "react-bootstrap-switch": "^15.5.3",

@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Body is working properly 1`] = `
+<div
+  className="card-pf-body"
+>
+  This is a Card Body
+</div>
+`;
+
+exports[`Card Drop Down Button is working properly 1`] = `
+<div
+  className="card-pf-time-frame-filter dropdown  "
+>
+  <button
+    aria-expanded={false}
+    aria-haspopup={true}
+    className="dropdown-toggle btn btn-default"
+    disabled={false}
+    id="cardDropdownButton1"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    type="button"
+  >
+    Last 30 Days
+     
+    <span
+      className="caret"
+    />
+  </button>
+  <ul
+    aria-labelledby="cardDropdownButton1"
+    className="dropdown-menu dropdown-menu-right"
+    role="menu"
+  >
+    <li
+      className="active"
+      role="presentation"
+      style={undefined}
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Last 30 Days
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Card Footer is working properly 1`] = `
+<div
+  className="card-pf-footer"
+>
+  This is a Card Footer
+</div>
+`;
+
+exports[`Card Grid is working properly 1`] = `
+<div
+  className="container-cards-pf container"
+>
+  Grid Content
+</div>
+`;
+
+exports[`Card Header is working properly 1`] = `
+<div
+  className="card-pf-heading"
+>
+  Card Content
+</div>
+`;
+
+exports[`Card Link is working properly 1`] = `
+<p>
+  <a
+    className="disabled"
+    href="https://github.com/patternfly/patternfly-react/pull/203"
+  >
+    Card Content
+  </a>
+</p>
+`;
+
+exports[`Card Title is working properly 1`] = `
+<h2
+  className="card-pf-title"
+>
+  Card Title
+</h2>
+`;
+
+exports[`Card is working properly 1`] = `
+<div
+  className="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini"
+>
+  Card Content
+</div>
+`;
