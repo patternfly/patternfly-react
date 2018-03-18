@@ -2,89 +2,73 @@
 
 exports[`Sort renders alpha ascending properly 1`] = `
 <div
-  className="form-group"
+  class="form-group"
 >
   <div
-    className="dropdown btn-group"
+    class="dropdown btn-group"
   >
     <button
-      aria-expanded={false}
-      aria-haspopup={true}
-      className="dropdown-toggle btn btn-default"
-      disabled={false}
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="dropdown-toggle btn btn-default"
       id="sortTypeMenu"
-      onClick={[Function]}
-      onKeyDown={[Function]}
       role="button"
       type="button"
     >
-      Name
-       
+      Name 
       <span
-        className="caret"
+        class="caret"
       />
     </button>
     <ul
       aria-labelledby="sortTypeMenu"
-      className="dropdown-menu"
+      class="dropdown-menu"
       role="menu"
     >
       <li
-        className="selected"
+        class="selected"
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Name
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Address
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Birth Month
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Car
         </a>
@@ -92,13 +76,12 @@ exports[`Sort renders alpha ascending properly 1`] = `
     </ul>
   </div>
   <button
-    className="btn btn-link"
-    disabled={false}
+    class="btn btn-link"
     type="button"
   >
     <span
-      aria-hidden={true}
-      className="fa fa-sort-alpha-asc sort-direction"
+      aria-hidden="true"
+      class="fa fa-sort-alpha-asc sort-direction"
     />
   </button>
 </div>
@@ -106,89 +89,73 @@ exports[`Sort renders alpha ascending properly 1`] = `
 
 exports[`Sort renders alpha descending properly 1`] = `
 <div
-  className="form-group"
+  class="form-group"
 >
   <div
-    className="dropdown btn-group"
+    class="dropdown btn-group"
   >
     <button
-      aria-expanded={false}
-      aria-haspopup={true}
-      className="dropdown-toggle btn btn-default"
-      disabled={false}
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="dropdown-toggle btn btn-default"
       id="sortTypeMenu"
-      onClick={[Function]}
-      onKeyDown={[Function]}
       role="button"
       type="button"
     >
-      Name
-       
+      Name 
       <span
-        className="caret"
+        class="caret"
       />
     </button>
     <ul
       aria-labelledby="sortTypeMenu"
-      className="dropdown-menu"
+      class="dropdown-menu"
       role="menu"
     >
       <li
-        className="selected"
+        class="selected"
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Name
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Address
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Birth Month
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Car
         </a>
@@ -196,13 +163,12 @@ exports[`Sort renders alpha descending properly 1`] = `
     </ul>
   </div>
   <button
-    className="btn btn-link"
-    disabled={false}
+    class="btn btn-link"
     type="button"
   >
     <span
-      aria-hidden={true}
-      className="fa fa-sort-alpha-desc sort-direction"
+      aria-hidden="true"
+      class="fa fa-sort-alpha-desc sort-direction"
     />
   </button>
 </div>
@@ -210,89 +176,73 @@ exports[`Sort renders alpha descending properly 1`] = `
 
 exports[`Sort renders numeric ascending properly 1`] = `
 <div
-  className="form-group"
+  class="form-group"
 >
   <div
-    className="dropdown btn-group"
+    class="dropdown btn-group"
   >
     <button
-      aria-expanded={false}
-      aria-haspopup={true}
-      className="dropdown-toggle btn btn-default"
-      disabled={false}
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="dropdown-toggle btn btn-default"
       id="sortTypeMenu"
-      onClick={[Function]}
-      onKeyDown={[Function]}
       role="button"
       type="button"
     >
-      Name
-       
+      Name 
       <span
-        className="caret"
+        class="caret"
       />
     </button>
     <ul
       aria-labelledby="sortTypeMenu"
-      className="dropdown-menu"
+      class="dropdown-menu"
       role="menu"
     >
       <li
-        className="selected"
+        class="selected"
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Name
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Address
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Birth Month
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Car
         </a>
@@ -300,13 +250,12 @@ exports[`Sort renders numeric ascending properly 1`] = `
     </ul>
   </div>
   <button
-    className="btn btn-link"
-    disabled={false}
+    class="btn btn-link"
     type="button"
   >
     <span
-      aria-hidden={true}
-      className="fa fa-sort-numeric-asc sort-direction"
+      aria-hidden="true"
+      class="fa fa-sort-numeric-asc sort-direction"
     />
   </button>
 </div>
@@ -314,89 +263,73 @@ exports[`Sort renders numeric ascending properly 1`] = `
 
 exports[`Sort renders numeric descending properly 1`] = `
 <div
-  className="form-group"
+  class="form-group"
 >
   <div
-    className="dropdown btn-group"
+    class="dropdown btn-group"
   >
     <button
-      aria-expanded={false}
-      aria-haspopup={true}
-      className="dropdown-toggle btn btn-default"
-      disabled={false}
+      aria-expanded="false"
+      aria-haspopup="true"
+      class="dropdown-toggle btn btn-default"
       id="sortTypeMenu"
-      onClick={[Function]}
-      onKeyDown={[Function]}
       role="button"
       type="button"
     >
-      Name
-       
+      Name 
       <span
-        className="caret"
+        class="caret"
       />
     </button>
     <ul
       aria-labelledby="sortTypeMenu"
-      className="dropdown-menu"
+      class="dropdown-menu"
       role="menu"
     >
       <li
-        className="selected"
+        class="selected"
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Name
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Address
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Birth Month
         </a>
       </li>
       <li
-        className=""
+        class=""
         role="presentation"
-        style={undefined}
       >
         <a
           href="#"
-          onClick={[Function]}
-          onKeyDown={[Function]}
           role="menuitem"
-          tabIndex="-1"
+          tabindex="-1"
         >
           Car
         </a>
@@ -404,13 +337,12 @@ exports[`Sort renders numeric descending properly 1`] = `
     </ul>
   </div>
   <button
-    className="btn btn-link"
-    disabled={false}
+    class="btn btn-link"
     type="button"
   >
     <span
-      aria-hidden={true}
-      className="fa fa-sort-numeric-desc sort-direction"
+      aria-hidden="true"
+      class="fa fa-sort-numeric-desc sort-direction"
     />
   </button>
 </div>

@@ -10,7 +10,11 @@ const ImportFileStory = stories => {
       <Grid>
         <Grid.Row style={{ marginBottom: '20px', marginTop: '20px' }}>
           <Grid.Col xs={12} sm={9} md={9}>
-            <ImportFile />
+            <ImportFile
+              maxSize={10485760}
+              maxAmount={3}
+              acceptedTypes="image/jpeg, image/png"
+            />
           </Grid.Col>
         </Grid.Row>
       </Grid>

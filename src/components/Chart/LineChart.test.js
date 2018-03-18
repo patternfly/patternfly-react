@@ -1,32 +1,28 @@
-/* eslint-env jest */
-
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow } from 'enzyme';
 
 import { LineChart, SingleLineChart, SparklineChart } from './index';
 
-const renderer = new ShallowRenderer();
-
 test('LineChart renders properly', () => {
   expect(
-    renderer.render(
+    shallow(
       <LineChart id="area-1" data={{ columns: [['data', 42]] }} />
-    )
+    ).getElement()
   ).toMatchSnapshot();
 });
 
 test('SingleLineChart renders properly', () => {
   expect(
-    renderer.render(
+    shallow(
       <SingleLineChart id="area-2" data={{ columns: [['data', 42]] }} />
-    )
+    ).getElement()
   ).toMatchSnapshot();
 });
 
 test('SparklineChart renders properly', () => {
   expect(
-    renderer.render(
+    shallow(
       <SparklineChart id="area-3" data={{ columns: [['data', 42]] }} />
-    )
+    ).getElement()
   ).toMatchSnapshot();
 });
