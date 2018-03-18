@@ -1,25 +1,23 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import { Spinner } from './index';
 
 test('Spinner should not render children when loading', () => {
-  const component = renderer.create(
+  const component = mount(
     <Spinner loading>
       <span>Children should not render.</span>
     </Spinner>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Spinner should render children when not loading', () => {
-  const component = renderer.create(
+  const component = mount(
     <Spinner size="lg">
       <span>Children should be rendered.</span>
     </Spinner>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });

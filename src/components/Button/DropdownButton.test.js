@@ -1,14 +1,12 @@
-/* eslint-env jest */
-
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 
 import DropdownButton from './DropdownButton';
 import { MenuItem } from '../MenuItem';
 
 test('DropdownButton should renders properly', () => {
   DropdownButton.BUTTON_BS_STYLES.forEach(bsStyle => {
-    const component = renderer.create(
+    const component = shallow(
       <DropdownButton title={bsStyle} id={`dropdown-button-test-${bsStyle}`}>
         <MenuItem eventKey="1">Action</MenuItem>
         <MenuItem eventKey="2">Another action</MenuItem>
@@ -20,7 +18,6 @@ test('DropdownButton should renders properly', () => {
       </DropdownButton>
     );
 
-    const tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
   });
 });

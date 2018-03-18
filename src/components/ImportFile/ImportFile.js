@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
-import ImportFileText from './ImportFileText';
+import ImportFileContent from './ImportFileContent';
 
 /** onDrop onDragOver onDragLeave dropEffect targetAlwaysVisible onFrameDragEnter onFrameDragLeave onFrameDrop */
 
@@ -12,37 +12,75 @@ class ImportFile extends React.Component {
     this.state = {
       accepted: [],
       rejected: [],
+      dropzoneRef: '',
+      dropzoneState: 'static',
       disabled: props.disabled,
-      text: 'or Drag & Drop',
-      hideButton: props.hideButton
+      text: 'or Drag & Drop'
     };
   }
-  onBrowseClick = () => {
-    console.log('browse clicked', this.state.accepted, this.state.rejected);
-  };
 
   onDragEnter = () => {
-    this.setState({ text: 'Drop Files Here', hideButton: true });
+    this.setState({ text: 'Drop Files Here', dropzoneState: 'active' });
+  };
+  onDragStart = () => {
+    this.setState({ text: 'Drop Files Here', dropzoneState: 'active' });
   };
   onDragLeave = () => {
-    this.setState({ text: 'or Drag & Drop', hideButton: false });
+    this.setState({ text: 'or Drag & Drop', dropzoneState: 'static' });
+  };
+
+  onDropAccepted = () => {
+    this.setState({ text: 'Uploading...', dropzoneState: 'accept' });
+  };
+
+  onDropRejected = () => {
+    this.setState({
+      text: 'File type is not supported',
+      dropzoneState: 'reject'
+    });
+  };
+
+  onDrop = (accepted, rejected) => {
+    this.setState({ accepted, rejected }, () => {
+      if (this.state.accepted.length > this.props.maxAmount) {
+        this.setState({
+          text: 'File Amount size exceeded',
+          dropzoneState: 'reject'
+        });
+      } else this.onDropAccepted();
+    });
   };
 
   render() {
     return (
       <Dropzone
-        className="import-file-pf"
-        activeClassName="import-file-pf-active"
         disabled={this.state.disabled}
+        disableClick={this.props.disableClick}
+        className="import-file-pf"
+        activeClassName="import-file-active-pf"
+        acceptClassName="import-file-accept-pf"
         onDragEnter={this.onDragEnter}
         onDragLeave={this.onDragLeave}
+        onDragStart={this.onDragStart}
         onDrop={(accepted, rejected) => {
-          this.setState({ accepted, rejected });
+          this.onDrop(accepted, rejected);
         }}
+        ref={node => {
+          this.state.dropzoneRef = node;
+        }}
+        onDropRejected={this.onDropRejected}
+        maxSize={this.props.maxSize}
+        accept={this.props.acceptedTypes}
       >
-        <ImportFileText
-          hideButton={this.state.hideButton}
+        <ImportFileContent
+          state={this.state.dropzoneState}
           text={this.state.text}
+          dropzoneRef={this.state.dropzoneRef}
+          maxAmount={this.props.maxAmount}
+          maxSize={this.props.maxSize}
+          acceptedTypes={this.props.acceptedTypes}
+          acceptedFiles={this.state.accepted}
+          rejectedFiles={this.state.rejected}
         />
       </Dropzone>
     );
@@ -52,11 +90,18 @@ class ImportFile extends React.Component {
 ImportFile.propTypes = {
   /** disabled bool */
   disabled: PropTypes.bool,
-  /** hideButton bool */
-  hideButton: PropTypes.bool
+  /** Maximum Amount of Files */
+  maxAmount: PropTypes.number.isRequired,
+  /** Maximum size of a single file */
+  maxSize: PropTypes.number.isRequired,
+  /** accepted file types */
+  acceptedTypes: PropTypes.string,
+  /** disable Click on Dropzone that triggers browse */
+  disableClick: PropTypes.bool
 };
 ImportFile.defaultProps = {
   disabled: false,
-  hideButton: false
+  acceptedTypes: '',
+  disableClick: true
 };
 export default ImportFile;

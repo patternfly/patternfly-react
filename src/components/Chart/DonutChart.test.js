@@ -1,16 +1,12 @@
-/* eslint-env jest */
-
 import React from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import { shallow } from 'enzyme';
 
 import { DonutChart } from './index';
 
-const renderer = new ShallowRenderer();
-
 test('DonutChart renders properly', () => {
   expect(
-    renderer.render(
+    shallow(
       <DonutChart id="area-1" data={{ columns: [['data', 42]] }} />
-    )
+    ).getElement()
   ).toMatchSnapshot();
 });

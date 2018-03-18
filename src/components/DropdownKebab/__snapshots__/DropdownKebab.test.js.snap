@@ -1,96 +1,68 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Kebab dropdown renders properly 1`] = `
-<div
-  className="dropdown-kebab-pf dropdown btn-group"
+<Uncontrolled(Dropdown)
+  className="dropdown-kebab-pf"
+  componentClass={[Function]}
+  id="myKebab"
+  pullRight={false}
 >
-  <button
-    aria-expanded={false}
-    aria-haspopup={true}
-    className="dropdown-toggle btn btn-link"
-    disabled={false}
-    id="myKebab"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    role="button"
-    type="button"
+  <DropdownToggle
+    bsClass="dropdown-toggle"
+    bsRole="toggle"
+    bsStyle="link"
+    noCaret={true}
+    open={false}
+    useAnchor={false}
   >
-    <span
-      aria-hidden={true}
-      className="fa fa-ellipsis-v"
+    <Icon
+      name="ellipsis-v"
+      type="fa"
     />
-  </button>
-  <ul
-    aria-labelledby="myKebab"
-    className="dropdown-menu"
-    role="menu"
+  </DropdownToggle>
+  <DropdownMenu
+    bsClass="dropdown-menu"
+    bsRole="menu"
+    pullRight={false}
   >
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
+    <MenuItem
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      header={false}
     >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Action
-      </a>
-    </li>
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
+      Action
+    </MenuItem>
+    <MenuItem
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      header={false}
     >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Another Action
-      </a>
-    </li>
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
+      Another Action
+    </MenuItem>
+    <MenuItem
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      header={false}
     >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Something else here
-      </a>
-    </li>
-    <li
-      className="divider"
-      onKeyDown={[Function]}
-      role="separator"
-      style={undefined}
+      Something else here
+    </MenuItem>
+    <MenuItem
+      bsClass="dropdown"
+      disabled={false}
+      divider={true}
+      header={false}
     />
-    <li
-      className=""
-      role="presentation"
-      style={undefined}
+    <MenuItem
+      bsClass="dropdown"
+      disabled={false}
+      divider={false}
+      header={false}
     >
-      <a
-        href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="menuitem"
-        tabIndex="-1"
-      >
-        Separated link
-      </a>
-    </li>
-  </ul>
-</div>
+      Separated link
+    </MenuItem>
+  </DropdownMenu>
+</Uncontrolled(Dropdown)>
 `;

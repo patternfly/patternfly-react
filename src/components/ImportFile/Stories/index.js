@@ -1,3 +1,3 @@
-import ImportFileStory from './DragNDropImportFileStory';
+import ImportFileStory from './ImportFileStory';
 
 export { ImportFileStory };
