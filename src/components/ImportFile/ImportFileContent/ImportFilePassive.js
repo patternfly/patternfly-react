@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import { Icon } from '../../Icon';
 import { Button } from '../../Button';
 
-const ImportFileStatic = ({
+const ImportFilePassive = ({
+  acceptedTypes,
   maxSize,
   maxAmount,
   dropzoneRef,
@@ -31,13 +32,14 @@ const ImportFileStatic = ({
         </Button>
         {text}
       </h1>
-      <h5>
+      <h5 className="max-amount">
         Max: {maxAmount} files ({maxAmount * maxSize / 1024}KB Total)
       </h5>
+      <h5>Supported File types: {acceptedTypes}</h5>
     </div>
   );
 };
-ImportFileStatic.propTypes = {
+ImportFilePassive.propTypes = {
   /** dropzone reference */
   dropzoneRef: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   /** Additional element css classes */
@@ -49,14 +51,17 @@ ImportFileStatic.propTypes = {
   /** maxSize prop */
   maxSize: PropTypes.number,
   /** max Amount of files prop */
-  maxAmount: PropTypes.number
+  maxAmount: PropTypes.number,
+  /** accepted file types */
+  acceptedTypes: PropTypes.string
 };
-ImportFileStatic.defaultProps = {
+ImportFilePassive.defaultProps = {
   className: '',
   dropzoneRef: null,
   text: null,
   icon: null,
+  acceptedTypes: null,
   maxAmount: 0,
   maxSize: 0
 };
-export default ImportFileStatic;
+export default ImportFilePassive;

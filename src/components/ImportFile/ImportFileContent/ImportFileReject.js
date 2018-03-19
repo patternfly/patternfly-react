@@ -19,7 +19,7 @@ const ImportFileReject = ({
       </h1>
       <h1>{text}</h1>
       {rejectedFiles.map((file, i) => (
-        <div>
+        <div key={i}>
           <h5 key={i}>Rejected {file.name}</h5>
         </div>
       ))}

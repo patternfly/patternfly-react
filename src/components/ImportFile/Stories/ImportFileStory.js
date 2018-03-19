@@ -9,7 +9,7 @@ const ImportFileStory = stories => {
     const story = (
       <Grid>
         <Grid.Row style={{ marginBottom: '20px', marginTop: '20px' }}>
-          <Grid.Col xs={12} sm={9} md={9}>
+          <Grid.Col xs={12} sm={6} md={6}>
             <ImportFile
               maxSize={10485760}
               maxAmount={3}
@@ -20,7 +20,7 @@ const ImportFileStory = stories => {
       </Grid>
     );
     return inlineTemplate({
-      title: 'DragNDrop Import File',
+      title: 'Import File',
       documentationLink: `${
         DOCUMENTATION_URL.PATTERNFLY_ORG_CARDS
       }base-card/#code`,

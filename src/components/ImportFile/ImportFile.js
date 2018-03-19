@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import Dropzone from 'react-dropzone';
 import ImportFileContent from './ImportFileContent';
 
-/** onDrop onDragOver onDragLeave dropEffect targetAlwaysVisible onFrameDragEnter onFrameDragLeave onFrameDrop */
-
 class ImportFile extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +26,7 @@ class ImportFile extends React.Component {
   };
 
   onDropAccepted = () => {
-    this.setState({ text: 'Uploading...', dropzoneState: 'accept' });
+    this.setState({ text: 'Uploading', dropzoneState: 'accept' });
   };
 
   onDropRejected = () => {
@@ -43,7 +41,7 @@ class ImportFile extends React.Component {
       if (this.state.accepted.length > 0) {
         if (this.state.accepted.length > this.props.maxAmount) {
           this.setState({
-            text: 'File Amount exceeded',
+            text: 'File Amount limit exceeded',
             dropzoneState: 'reject'
           });
         } else this.onDropAccepted();
@@ -81,6 +79,7 @@ class ImportFile extends React.Component {
           acceptedTypes={this.props.acceptedTypes}
           acceptedFiles={this.state.accepted}
           rejectedFiles={this.state.rejected}
+          progressDone={21}
         />
       </Dropzone>
     );

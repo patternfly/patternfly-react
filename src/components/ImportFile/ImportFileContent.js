@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ImportFileStatic from './ImportFileContent/ImportFileStatic';
+import ImportFilePassive from './ImportFileContent/ImportFilePassive';
 import ImportFileActive from './ImportFileContent/ImportFileActive';
 import ImportFileReject from './ImportFileContent/ImportFileReject';
+import ImportFileAccept from './ImportFileContent/ImportFileAccept';
 
 const ImportFileContent = ({
   text,
@@ -12,25 +13,35 @@ const ImportFileContent = ({
   maxSize,
   acceptedTypes,
   acceptedFiles,
-  rejectedFiles
+  rejectedFiles,
+  progressDone
 }) => {
   switch (state) {
     default:
       return null;
     case 'static':
       return (
-        <ImportFileStatic
+        <ImportFilePassive
           text={text}
+          acceptedTypes={acceptedTypes}
           maxAmount={maxAmount}
           maxSize={maxSize}
           dropzoneRef={dropzoneRef}
-          icon="plus-square"
+          icon="plus-circle"
         />
       );
     case 'active':
-      return <ImportFileActive text={text} icon="plus-square" />;
+      return <ImportFileActive text={text} icon="plus-circle" />;
     case 'accept':
-      return <div>ACCEPTED</div>;
+      return (
+        <ImportFileAccept
+          text={text}
+          icon="chevron-circle-up"
+          acceptedFiles={acceptedFiles}
+          rejectedFiles={rejectedFiles}
+          progressDone={progressDone}
+        />
+      );
     case 'reject':
       return (
         <ImportFileReject
@@ -47,7 +58,8 @@ ImportFileContent.propTypes = {
   state: PropTypes.string.isRequired,
   dropzoneRef: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   maxAmount: PropTypes.number.isRequired,
-  maxSize: PropTypes.number.isRequired // in Bytes
+  maxSize: PropTypes.number.isRequired, // in Bytes
+  progressDone: PropTypes.number.isRequired
 };
 
 export default ImportFileContent;
