@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
+    "bootstrap-slider": "^10.0.0",
     "breakjs": "^1.0.0",
     "classnames": "^2.2.5",
     "css-element-queries": "^1.0.1",
