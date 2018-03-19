@@ -1,17 +1,26 @@
-import ClassNames from 'classnames';
+import cx from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from '../../common/helpers';
-import { DisposableLabel } from '../Label';
 
 const FilterItem = ({ children, className, onRemove, filterData, ...rest }) => {
-  const classes = ClassNames(className);
+  const classes = cx(className);
 
   return (
     <li className={classes} {...rest}>
-      <DisposableLabel type="info" onRemoveClick={() => onRemove(filterData)}>
+      <span className="label label-info">
         {children}
-      </DisposableLabel>
+        <a
+          href="#"
+          onClick={e => {
+            e.preventDefault();
+            onRemove(filterData);
+          }}
+        >
+          <span className="pficon pficon-close" aria-hidden="true" />
+          <span className="sr-only">Remove</span>
+        </a>
+      </span>
     </li>
   );
 };

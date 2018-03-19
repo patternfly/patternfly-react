@@ -2,7 +2,7 @@
 
 exports[`Spinner should not render children when loading 1`] = `
 <div
-  class="spinner spinner-md"
+  className="spinner spinner-md"
 />
 `;
 

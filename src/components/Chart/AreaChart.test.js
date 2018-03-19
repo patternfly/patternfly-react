@@ -1,20 +1,24 @@
+/* eslint-env jest */
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 import { AreaChart, SingleAreaChart } from './index';
 
+const renderer = new ShallowRenderer();
+
 test('AreaChart renders properly', () => {
   expect(
-    shallow(
+    renderer.render(
       <AreaChart id="area-1" data={{ columns: [['data', 42]] }} />
-    ).getElement()
+    )
   ).toMatchSnapshot();
 });
 
 test('SingleAreaChart renders properly', () => {
   expect(
-    shallow(
+    renderer.render(
       <SingleAreaChart id="area-2" data={{ columns: [['data', 42]] }} />
-    ).getElement()
+    )
   ).toMatchSnapshot();
 });

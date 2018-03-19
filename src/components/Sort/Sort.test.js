@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 import { Sort } from '../../index';
 
 const mockSortFields = [
@@ -26,7 +26,7 @@ const mockSortFields = [
 ];
 
 test('Sort renders numeric ascending properly', () => {
-  const component = mount(
+  const component = renderer.create(
     <Sort>
       <Sort.TypeSelector
         sortTypes={mockSortFields}
@@ -36,11 +36,12 @@ test('Sort renders numeric ascending properly', () => {
     </Sort>
   );
 
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('Sort renders numeric descending properly', () => {
-  const component = mount(
+  const component = renderer.create(
     <Sort>
       <Sort.TypeSelector
         sortTypes={mockSortFields}
@@ -50,11 +51,12 @@ test('Sort renders numeric descending properly', () => {
     </Sort>
   );
 
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('Sort renders alpha ascending properly', () => {
-  const component = mount(
+  const component = renderer.create(
     <Sort>
       <Sort.TypeSelector
         sortTypes={mockSortFields}
@@ -64,11 +66,12 @@ test('Sort renders alpha ascending properly', () => {
     </Sort>
   );
 
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('Sort renders alpha descending properly', () => {
-  const component = mount(
+  const component = renderer.create(
     <Sort>
       <Sort.TypeSelector
         sortTypes={mockSortFields}
@@ -78,5 +81,6 @@ test('Sort renders alpha descending properly', () => {
     </Sort>
   );
 
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });

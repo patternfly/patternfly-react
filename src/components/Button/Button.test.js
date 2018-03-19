@@ -1,21 +1,26 @@
+/* eslint-env jest */
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
+
 import Button from './Button';
 
 test('Button renders properly', () => {
-  const component = shallow(
+  const component = renderer.create(
     <Button id="button1">Default button</Button>
-  ).getElement();
+  );
 
-  expect(component).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('Button allows to specify size and style', () => {
-  const component = shallow(
+  const component = renderer.create(
     <Button id="button1" bsStyle="primary" bsSize="large">
       Large Primary button
     </Button>
-  ).getElement();
+  );
 
-  expect(component).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });

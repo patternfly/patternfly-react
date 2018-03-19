@@ -1,14 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert correctly throws error given unsupported type 1`] = `"Unsupported alert type=foo"`;
-
 exports[`Alert danger renders properly 1`] = `
 <div
-  class="alert alert-danger"
+  className="alert alert-danger"
 >
   <span
     aria-hidden="true"
-    class="pficon pficon-error-circle-o"
+    className="pficon pficon-error-circle-o"
   />
   <span>
     Alert Message!
@@ -18,21 +16,23 @@ exports[`Alert danger renders properly 1`] = `
 
 exports[`Alert danger renders properly with dismiss button 1`] = `
 <div
-  class="alert alert-danger alert-dismissable"
+  className="alert alert-danger alert-dismissable"
 >
   <button
     aria-hidden="true"
-    class="close close-default"
+    className="close close-default"
+    disabled={false}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
       aria-hidden="true"
-      class="pficon pficon-close"
+      className="pficon pficon-close"
     />
   </button>
   <span
     aria-hidden="true"
-    class="pficon pficon-error-circle-o"
+    className="pficon pficon-error-circle-o"
   />
   <span>
     Alert Message!
@@ -42,11 +42,11 @@ exports[`Alert danger renders properly with dismiss button 1`] = `
 
 exports[`Alert error renders properly 1`] = `
 <div
-  class="alert alert-danger"
+  className="alert alert-danger"
 >
   <span
     aria-hidden="true"
-    class="pficon pficon-error-circle-o"
+    className="pficon pficon-error-circle-o"
   />
   <span>
     Alert Message!
@@ -56,21 +56,23 @@ exports[`Alert error renders properly 1`] = `
 
 exports[`Alert error renders properly with dismiss button 1`] = `
 <div
-  class="alert alert-danger alert-dismissable"
+  className="alert alert-danger alert-dismissable"
 >
   <button
     aria-hidden="true"
-    class="close close-default"
+    className="close close-default"
+    disabled={false}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
       aria-hidden="true"
-      class="pficon pficon-close"
+      className="pficon pficon-close"
     />
   </button>
   <span
     aria-hidden="true"
-    class="pficon pficon-error-circle-o"
+    className="pficon pficon-error-circle-o"
   />
   <span>
     Alert Message!
@@ -80,11 +82,11 @@ exports[`Alert error renders properly with dismiss button 1`] = `
 
 exports[`Alert info renders properly 1`] = `
 <div
-  class="alert alert-info"
+  className="alert alert-info"
 >
   <span
     aria-hidden="true"
-    class="pficon pficon-info"
+    className="pficon pficon-info"
   />
   <span>
     Alert Message!
@@ -94,21 +96,23 @@ exports[`Alert info renders properly 1`] = `
 
 exports[`Alert info renders properly with dismiss button 1`] = `
 <div
-  class="alert alert-info alert-dismissable"
+  className="alert alert-info alert-dismissable"
 >
   <button
     aria-hidden="true"
-    class="close close-default"
+    className="close close-default"
+    disabled={false}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
       aria-hidden="true"
-      class="pficon pficon-close"
+      className="pficon pficon-close"
     />
   </button>
   <span
     aria-hidden="true"
-    class="pficon pficon-info"
+    className="pficon pficon-info"
   />
   <span>
     Alert Message!
@@ -118,11 +122,11 @@ exports[`Alert info renders properly with dismiss button 1`] = `
 
 exports[`Alert success renders properly 1`] = `
 <div
-  class="alert alert-success"
+  className="alert alert-success"
 >
   <span
     aria-hidden="true"
-    class="pficon pficon-ok"
+    className="pficon pficon-ok"
   />
   <span>
     Alert Message!
@@ -132,21 +136,23 @@ exports[`Alert success renders properly 1`] = `
 
 exports[`Alert success renders properly with dismiss button 1`] = `
 <div
-  class="alert alert-success alert-dismissable"
+  className="alert alert-success alert-dismissable"
 >
   <button
     aria-hidden="true"
-    class="close close-default"
+    className="close close-default"
+    disabled={false}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
       aria-hidden="true"
-      class="pficon pficon-close"
+      className="pficon pficon-close"
     />
   </button>
   <span
     aria-hidden="true"
-    class="pficon pficon-ok"
+    className="pficon pficon-ok"
   />
   <span>
     Alert Message!
@@ -156,11 +162,11 @@ exports[`Alert success renders properly with dismiss button 1`] = `
 
 exports[`Alert warning renders properly 1`] = `
 <div
-  class="alert alert-warning"
+  className="alert alert-warning"
 >
   <span
     aria-hidden="true"
-    class="pficon pficon-warning-triangle-o"
+    className="pficon pficon-warning-triangle-o"
   />
   <span>
     Alert Message!
@@ -170,21 +176,23 @@ exports[`Alert warning renders properly 1`] = `
 
 exports[`Alert warning renders properly with dismiss button 1`] = `
 <div
-  class="alert alert-warning alert-dismissable"
+  className="alert alert-warning alert-dismissable"
 >
   <button
     aria-hidden="true"
-    class="close close-default"
+    className="close close-default"
+    disabled={false}
+    onClick={[MockFunction]}
     type="button"
   >
     <span
       aria-hidden="true"
-      class="pficon pficon-close"
+      className="pficon pficon-close"
     />
   </button>
   <span
     aria-hidden="true"
-    class="pficon pficon-warning-triangle-o"
+    className="pficon pficon-warning-triangle-o"
   />
   <span>
     Alert Message!

@@ -1,28 +1,30 @@
+/* eslint-env jest */
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 import { BarChart, GroupedBarChart, StackedBarChart } from './index';
 
+const renderer = new ShallowRenderer();
+
 test('BarChart renders properly', () => {
   expect(
-    shallow(
-      <BarChart id="area-1" data={{ columns: [['data', 42]] }} />
-    ).getElement()
+    renderer.render(<BarChart id="area-1" data={{ columns: [['data', 42]] }} />)
   ).toMatchSnapshot();
 });
 
 test('GroupedBarChart renders properly', () => {
   expect(
-    shallow(
+    renderer.render(
       <GroupedBarChart id="area-2" data={{ columns: [['data', 42]] }} />
-    ).getElement()
+    )
   ).toMatchSnapshot();
 });
 
 test('StackedBarChart renders properly', () => {
   expect(
-    shallow(
+    renderer.render(
       <StackedBarChart id="area-3" data={{ columns: [['data', 42]] }} />
-    ).getElement()
+    )
   ).toMatchSnapshot();
 });

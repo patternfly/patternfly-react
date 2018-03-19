@@ -1,5 +1,8 @@
+/* eslint-env jest */
+
 import React from 'react';
-import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
+import ReactTestUtils from 'react-dom/test-utils';
 
 import ToastNotification from './ToastNotification';
 import TimedToastNotification from './TimedToastNotification';
@@ -20,26 +23,24 @@ const testToastNotificationSnapshot = (Component, props, rest) => (
 );
 
 test('ToastNotification renders properly', () => {
-  const component = mount(
+  const component = renderer.create(
     testToastNotificationSnapshot(ToastNotification, { type: 'error' })
   );
-
-  expect(component.render()).toMatchSnapshot();
+  expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('TimedToastNotification persisted and paused renders properly', () => {
-  const component = mount(
+  const component = renderer.create(
     testToastNotificationSnapshot(TimedToastNotification, {
       persisted: true,
       paused: true
     })
   );
-
-  expect(component.render()).toMatchSnapshot();
+  expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('TimedToastNotification expectedly sets pause', () => {
-  const component = mount(
+  const component = ReactTestUtils.renderIntoDocument(
     <TimedToastNotification
       type="success"
       onDismiss={jest.fn()}
@@ -48,13 +49,12 @@ test('TimedToastNotification expectedly sets pause', () => {
       paused
     />
   );
-
-  expect(component.props().paused).toBe(true);
+  expect(component.props.paused).toBe(true);
 });
 
 test('TimedToastNotification expectedly executes mouse enter/leave and dismiss functions', () => {
   let eventCount = 0;
-  const component = mount(
+  const component = ReactTestUtils.renderIntoDocument(
     testToastNotificationSnapshot(TimedToastNotification, {
       type: 'info',
       persisted: true,
@@ -63,18 +63,23 @@ test('TimedToastNotification expectedly executes mouse enter/leave and dismiss f
       onMouseLeave: () => eventCount++
     })
   );
-  const notification = component.find('.alert-info');
-  const close = component.find('button');
-  notification.simulate('mouseEnter');
-  notification.simulate('mouseLeave');
-  close.simulate('click');
-
+  const notification = ReactTestUtils.findRenderedDOMComponentWithClass(
+    component,
+    'alert-info'
+  );
+  ReactTestUtils.Simulate.mouseEnter(notification);
+  ReactTestUtils.Simulate.mouseLeave(notification);
+  const close = ReactTestUtils.findRenderedDOMComponentWithTag(
+    component,
+    'button'
+  );
+  ReactTestUtils.Simulate.click(close);
   expect(eventCount).toBe(3);
 });
 
 test('ToastNotificationList expectedly executes mouse enter/leave/over functions', () => {
   let eventCount = 0;
-  const component = mount(
+  const component = ReactTestUtils.renderIntoDocument(
     testToastNotificationSnapshot(
       TimedToastNotification,
       { type: 'warning' },
@@ -85,10 +90,12 @@ test('ToastNotificationList expectedly executes mouse enter/leave/over functions
       }
     )
   );
-  const notification = component.find('.toast-notifications-list-pf');
-  notification.simulate('mouseEnter');
-  notification.simulate('mouseLeave');
-  notification.simulate('mouseOver');
-
+  const notification = ReactTestUtils.findRenderedDOMComponentWithClass(
+    component,
+    'toast-notifications-list-pf'
+  );
+  ReactTestUtils.Simulate.mouseEnter(notification);
+  ReactTestUtils.Simulate.mouseLeave(notification);
+  ReactTestUtils.Simulate.mouseOver(notification);
   expect(eventCount).toBe(3);
 });

@@ -1,10 +1,12 @@
+/* eslint-env jest */
+
 import React from 'react';
-import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import ProgressBar from './ProgressBar';
 
 test('ProgressBar renders properly', () => {
-  const component = mount(<ProgressBar now={60} />);
-
-  expect(component.render()).toMatchSnapshot();
+  const component = renderer.create(<ProgressBar now={60} />);
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });

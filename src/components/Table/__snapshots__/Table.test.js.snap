@@ -2,7 +2,7 @@
 
 exports[`Bootstrap basic table renders properly 1`] = `
 <table
-  class="table"
+  className="table"
 >
   <caption>
     Optional table caption.
@@ -10,22 +10,22 @@ exports[`Bootstrap basic table renders properly 1`] = `
   <thead>
     <tr>
       <th
-        class=""
+        className=""
       >
         #
       </th>
       <th
-        class=""
+        className=""
       >
         First Name
       </th>
       <th
-        class=""
+        className=""
       >
         Last Name
       </th>
       <th
-        class=""
+        className=""
       >
         Username
       </th>
@@ -34,66 +34,66 @@ exports[`Bootstrap basic table renders properly 1`] = `
   <tbody>
     <tr>
       <td
-        class=""
+        className=""
       >
         0
       </td>
       <td
-        class=""
+        className=""
       >
         Dan
       </td>
       <td
-        class=""
+        className=""
       >
         Abramov
       </td>
       <td
-        class=""
+        className=""
       >
         gaearon
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         1
       </td>
       <td
-        class=""
+        className=""
       >
         Sebastian
       </td>
       <td
-        class=""
+        className=""
       >
         Markbåge
       </td>
       <td
-        class=""
+        className=""
       >
         sebmarkbage
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         2
       </td>
       <td
-        class=""
+        className=""
       >
         Sophie
       </td>
       <td
-        class=""
+        className=""
       >
         Alpert
       </td>
       <td
-        class=""
+        className=""
       >
         sophiebits
       </td>
@@ -104,27 +104,27 @@ exports[`Bootstrap basic table renders properly 1`] = `
 
 exports[`Bootstrap bordered table renders properly 1`] = `
 <table
-  class="table table-bordered"
+  className="table table-bordered"
 >
   <thead>
     <tr>
       <th
-        class=""
+        className=""
       >
         #
       </th>
       <th
-        class=""
+        className=""
       >
         First Name
       </th>
       <th
-        class=""
+        className=""
       >
         Last Name
       </th>
       <th
-        class=""
+        className=""
       >
         Username
       </th>
@@ -133,66 +133,66 @@ exports[`Bootstrap bordered table renders properly 1`] = `
   <tbody>
     <tr>
       <td
-        class=""
+        className=""
       >
         0
       </td>
       <td
-        class=""
+        className=""
       >
         Dan
       </td>
       <td
-        class=""
+        className=""
       >
         Abramov
       </td>
       <td
-        class=""
+        className=""
       >
         gaearon
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         1
       </td>
       <td
-        class=""
+        className=""
       >
         Sebastian
       </td>
       <td
-        class=""
+        className=""
       >
         Markbåge
       </td>
       <td
-        class=""
+        className=""
       >
         sebmarkbage
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         2
       </td>
       <td
-        class=""
+        className=""
       >
         Sophie
       </td>
       <td
-        class=""
+        className=""
       >
         Alpert
       </td>
       <td
-        class=""
+        className=""
       >
         sophiebits
       </td>
@@ -203,27 +203,27 @@ exports[`Bootstrap bordered table renders properly 1`] = `
 
 exports[`Bootstrap condensed table renders properly 1`] = `
 <table
-  class="table table-condensed"
+  className="table table-condensed"
 >
   <thead>
     <tr>
       <th
-        class=""
+        className=""
       >
         #
       </th>
       <th
-        class=""
+        className=""
       >
         First Name
       </th>
       <th
-        class=""
+        className=""
       >
         Last Name
       </th>
       <th
-        class=""
+        className=""
       >
         Username
       </th>
@@ -232,66 +232,66 @@ exports[`Bootstrap condensed table renders properly 1`] = `
   <tbody>
     <tr>
       <td
-        class=""
+        className=""
       >
         0
       </td>
       <td
-        class=""
+        className=""
       >
         Dan
       </td>
       <td
-        class=""
+        className=""
       >
         Abramov
       </td>
       <td
-        class=""
+        className=""
       >
         gaearon
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         1
       </td>
       <td
-        class=""
+        className=""
       >
         Sebastian
       </td>
       <td
-        class=""
+        className=""
       >
         Markbåge
       </td>
       <td
-        class=""
+        className=""
       >
         sebmarkbage
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         2
       </td>
       <td
-        class=""
+        className=""
       >
         Sophie
       </td>
       <td
-        class=""
+        className=""
       >
         Alpert
       </td>
       <td
-        class=""
+        className=""
       >
         sophiebits
       </td>
@@ -302,27 +302,27 @@ exports[`Bootstrap condensed table renders properly 1`] = `
 
 exports[`Bootstrap contextual classes table renders properly 1`] = `
 <table
-  class="table table-condensed"
+  className="table table-condensed"
 >
   <thead>
     <tr>
       <th
-        class=""
+        className=""
       >
         #
       </th>
       <th
-        class=""
+        className=""
       >
         First Name
       </th>
       <th
-        class=""
+        className=""
       >
         Last Name
       </th>
       <th
-        class=""
+        className=""
       >
         Username
       </th>
@@ -330,163 +330,163 @@ exports[`Bootstrap contextual classes table renders properly 1`] = `
   </thead>
   <tbody>
     <tr
-      class="active"
+      className="active"
     >
       <td
-        class=""
+        className=""
       >
         0
       </td>
       <td
-        class=""
+        className=""
       >
         Dan
       </td>
       <td
-        class=""
+        className=""
       >
         Abramov
       </td>
       <td
-        class=""
+        className=""
       >
         gaearon
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         1
       </td>
       <td
-        class=""
+        className=""
       >
         Sebastian
       </td>
       <td
-        class=""
+        className=""
       >
         Markbåge
       </td>
       <td
-        class=""
+        className=""
       >
         sebmarkbage
       </td>
     </tr>
     <tr
-      class="success"
+      className="success"
     >
       <td
-        class=""
+        className=""
       >
         2
       </td>
       <td
-        class=""
+        className=""
       >
         Sophie
       </td>
       <td
-        class=""
+        className=""
       >
         Alpert
       </td>
       <td
-        class=""
+        className=""
       >
         sophiebits
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         3
       </td>
       <td
-        class=""
+        className=""
       >
         Paul
       </td>
       <td
-        class=""
+        className=""
       >
         O’Shannessy
       </td>
       <td
-        class=""
+        className=""
       >
         zpao
       </td>
     </tr>
     <tr
-      class="warning"
+      className="warning"
     >
       <td
-        class=""
+        className=""
       >
         4
       </td>
       <td
-        class=""
+        className=""
       >
         Pete
       </td>
       <td
-        class=""
+        className=""
       >
         Hunt
       </td>
       <td
-        class=""
+        className=""
       >
         petehunt
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         5
       </td>
       <td
-        class=""
+        className=""
       >
         Andrew
       </td>
       <td
-        class=""
+        className=""
       >
         Clark
       </td>
       <td
-        class=""
+        className=""
       >
         acdlite
       </td>
     </tr>
     <tr
-      class="danger"
+      className="danger"
     >
       <td
-        class=""
+        className=""
       >
         6
       </td>
       <td
-        class=""
+        className=""
       >
         Nathan
       </td>
       <td
-        class=""
+        className=""
       >
         Hunzaker
       </td>
       <td
-        class=""
+        className=""
       >
         nhunzaker
       </td>
@@ -497,27 +497,27 @@ exports[`Bootstrap contextual classes table renders properly 1`] = `
 
 exports[`Bootstrap hover table renders properly 1`] = `
 <table
-  class="table table-hover"
+  className="table table-hover"
 >
   <thead>
     <tr>
       <th
-        class=""
+        className=""
       >
         #
       </th>
       <th
-        class=""
+        className=""
       >
         First Name
       </th>
       <th
-        class=""
+        className=""
       >
         Last Name
       </th>
       <th
-        class=""
+        className=""
       >
         Username
       </th>
@@ -526,66 +526,66 @@ exports[`Bootstrap hover table renders properly 1`] = `
   <tbody>
     <tr>
       <td
-        class=""
+        className=""
       >
         0
       </td>
       <td
-        class=""
+        className=""
       >
         Dan
       </td>
       <td
-        class=""
+        className=""
       >
         Abramov
       </td>
       <td
-        class=""
+        className=""
       >
         gaearon
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         1
       </td>
       <td
-        class=""
+        className=""
       >
         Sebastian
       </td>
       <td
-        class=""
+        className=""
       >
         Markbåge
       </td>
       <td
-        class=""
+        className=""
       >
         sebmarkbage
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         2
       </td>
       <td
-        class=""
+        className=""
       >
         Sophie
       </td>
       <td
-        class=""
+        className=""
       >
         Alpert
       </td>
       <td
-        class=""
+        className=""
       >
         sophiebits
       </td>
@@ -596,30 +596,30 @@ exports[`Bootstrap hover table renders properly 1`] = `
 
 exports[`Bootstrap responsive table renders properly 1`] = `
 <div
-  class="table-responsive"
+  className="table-responsive"
 >
   <table
-    class="table"
+    className="table"
   >
     <thead>
       <tr>
         <th
-          class=""
+          className=""
         >
           #
         </th>
         <th
-          class=""
+          className=""
         >
           First Name
         </th>
         <th
-          class=""
+          className=""
         >
           Last Name
         </th>
         <th
-          class=""
+          className=""
         >
           Username
         </th>
@@ -628,66 +628,66 @@ exports[`Bootstrap responsive table renders properly 1`] = `
     <tbody>
       <tr>
         <td
-          class=""
+          className=""
         >
           0
         </td>
         <td
-          class=""
+          className=""
         >
           Dan
         </td>
         <td
-          class=""
+          className=""
         >
           Abramov
         </td>
         <td
-          class=""
+          className=""
         >
           gaearon
         </td>
       </tr>
       <tr>
         <td
-          class=""
+          className=""
         >
           1
         </td>
         <td
-          class=""
+          className=""
         >
           Sebastian
         </td>
         <td
-          class=""
+          className=""
         >
           Markbåge
         </td>
         <td
-          class=""
+          className=""
         >
           sebmarkbage
         </td>
       </tr>
       <tr>
         <td
-          class=""
+          className=""
         >
           2
         </td>
         <td
-          class=""
+          className=""
         >
           Sophie
         </td>
         <td
-          class=""
+          className=""
         >
           Alpert
         </td>
         <td
-          class=""
+          className=""
         >
           sophiebits
         </td>
@@ -699,27 +699,27 @@ exports[`Bootstrap responsive table renders properly 1`] = `
 
 exports[`Bootstrap striped table renders properly 1`] = `
 <table
-  class="table table-striped"
+  className="table table-striped"
 >
   <thead>
     <tr>
       <th
-        class=""
+        className=""
       >
         #
       </th>
       <th
-        class=""
+        className=""
       >
         First Name
       </th>
       <th
-        class=""
+        className=""
       >
         Last Name
       </th>
       <th
-        class=""
+        className=""
       >
         Username
       </th>
@@ -728,66 +728,66 @@ exports[`Bootstrap striped table renders properly 1`] = `
   <tbody>
     <tr>
       <td
-        class=""
+        className=""
       >
         0
       </td>
       <td
-        class=""
+        className=""
       >
         Dan
       </td>
       <td
-        class=""
+        className=""
       >
         Abramov
       </td>
       <td
-        class=""
+        className=""
       >
         gaearon
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         1
       </td>
       <td
-        class=""
+        className=""
       >
         Sebastian
       </td>
       <td
-        class=""
+        className=""
       >
         Markbåge
       </td>
       <td
-        class=""
+        className=""
       >
         sebmarkbage
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         2
       </td>
       <td
-        class=""
+        className=""
       >
         Sophie
       </td>
       <td
-        class=""
+        className=""
       >
         Alpert
       </td>
       <td
-        class=""
+        className=""
       >
         sophiebits
       </td>
@@ -798,85 +798,91 @@ exports[`Bootstrap striped table renders properly 1`] = `
 
 exports[`Mock Client Pagination table renders 1`] = `
 <div
-  class="container-fluid"
+  className="container-fluid"
 >
   <table
-    class="table dataTable table-striped table-bordered table-hover"
+    className="table dataTable table-striped table-bordered table-hover"
     role="grid"
   >
     <thead>
       <tr>
         <th
           aria-label="Vyberte všechny řádky"
-          class="table-view-pf-select"
-          colspan="1"
+          className="table-view-pf-select"
+          colSpan={1}
           id="vybrat vše"
-          index="0"
-          rowspan="1"
+          index={0}
+          rowSpan={1}
         >
           <label
-            class="control-label sr-only"
-            for="vybrat vše"
+            className="control-label sr-only"
+            htmlFor="vybrat vše"
           >
             Vyberte všechny řádky
           </label>
           <input
+            checked={false}
             id="vybrat vše"
+            onChange={[Function]}
             type="checkbox"
-            value="on"
           />
         </th>
         <th
           aria-label="Name"
-          class="sorting_asc sort sort-asc"
-          colspan="1"
-          index="1"
-          rowspan="1"
+          className="sorting_asc sort sort-asc"
+          colSpan={1}
+          index={1}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Name
         </th>
         <th
           aria-label="Height"
-          class="sorting sort sort-none"
-          colspan="1"
-          index="2"
-          rowspan="1"
+          className="sorting sort sort-none"
+          colSpan={1}
+          index={2}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Height
         </th>
         <th
           aria-label="Eye Color"
-          class="sorting sort sort-none"
-          colspan="1"
-          index="3"
-          rowspan="1"
+          className="sorting sort sort-none"
+          colSpan={1}
+          index={3}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Eye Color
         </th>
         <th
           aria-label="Gender"
-          class="sorting sort sort-none"
-          colspan="1"
-          index="4"
-          rowspan="1"
+          className="sorting sort sort-none"
+          colSpan={1}
+          index={4}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Gender
         </th>
         <th
           aria-label="Birth Year"
-          class="sorting sort sort-none"
-          colspan="1"
-          index="5"
-          rowspan="1"
+          className="sorting sort sort-none"
+          colSpan={1}
+          index={5}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Birth Year
         </th>
         <th
           aria-label="Actions"
-          class=""
-          colspan="2"
-          index="6"
-          rowspan="1"
+          className=""
+          colSpan={2}
+          index={6}
+          rowSpan={1}
         >
           Actions
         </th>
@@ -884,57 +890,60 @@ exports[`Mock Client Pagination table renders 1`] = `
     </thead>
     <tbody>
       <tr
-        class=""
+        className=""
         role="row"
       >
         <td
-          class="table-view-pf-select"
+          className="table-view-pf-select"
         >
           <label
-            class="control-label sr-only"
-            for="vybrat0"
+            className="control-label sr-only"
+            htmlFor="vybrat0"
           >
             vyberte řádek 0
           </label>
           <input
+            checked={false}
             id="vybrat0"
+            onChange={[Function]}
             type="checkbox"
-            value="on"
           />
         </td>
         <td
-          class=""
+          className=""
         >
           Anakin Skywalker
         </td>
         <td
-          class=""
+          className=""
         >
           188
         </td>
         <td
-          class=""
+          className=""
         >
           blue
         </td>
         <td
-          class=""
+          className=""
         >
           male
         </td>
         <td
-          class=""
+          className=""
         >
           41.9BBY
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="table-view-pf-btn"
+            className="table-view-pf-btn"
           >
             <button
-              class="btn btn-default"
+              className="btn btn-default"
+              disabled={false}
+              onClick={[Function]}
               type="button"
             >
               Actions
@@ -942,77 +951,94 @@ exports[`Mock Client Pagination table renders 1`] = `
           </div>
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="dropdown-toggle btn btn-default"
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-default"
+              disabled={false}
               id="myKebab"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="button"
               type="button"
             >
               <span
-                aria-hidden="true"
-                class="fa fa-ellipsis-v"
+                aria-hidden={true}
+                className="fa fa-ellipsis-v"
               />
             </button>
             <ul
               aria-labelledby="myKebab"
-              class="dropdown-menu dropdown-menu-right"
+              className="dropdown-menu dropdown-menu-right"
               role="menu"
             >
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Another Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Something else here
                 </a>
               </li>
               <li
-                class="divider"
+                className="divider"
+                onKeyDown={[Function]}
                 role="separator"
+                style={undefined}
               />
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Separated link
                 </a>
@@ -1022,57 +1048,60 @@ exports[`Mock Client Pagination table renders 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        className=""
         role="row"
       >
         <td
-          class="table-view-pf-select"
+          className="table-view-pf-select"
         >
           <label
-            class="control-label sr-only"
-            for="vybrat1"
+            className="control-label sr-only"
+            htmlFor="vybrat1"
           >
             vyberte řádek 1
           </label>
           <input
+            checked={false}
             id="vybrat1"
+            onChange={[Function]}
             type="checkbox"
-            value="on"
           />
         </td>
         <td
-          class=""
+          className=""
         >
           Beru Whitesun lars
         </td>
         <td
-          class=""
+          className=""
         >
           165
         </td>
         <td
-          class=""
+          className=""
         >
           blue
         </td>
         <td
-          class=""
+          className=""
         >
           female
         </td>
         <td
-          class=""
+          className=""
         >
           47BBY
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="table-view-pf-btn"
+            className="table-view-pf-btn"
           >
             <button
-              class="btn btn-default"
+              className="btn btn-default"
+              disabled={false}
+              onClick={[Function]}
               type="button"
             >
               Actions
@@ -1080,77 +1109,94 @@ exports[`Mock Client Pagination table renders 1`] = `
           </div>
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="dropdown-toggle btn btn-default"
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-default"
+              disabled={false}
               id="myKebab"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="button"
               type="button"
             >
               <span
-                aria-hidden="true"
-                class="fa fa-ellipsis-v"
+                aria-hidden={true}
+                className="fa fa-ellipsis-v"
               />
             </button>
             <ul
               aria-labelledby="myKebab"
-              class="dropdown-menu dropdown-menu-right"
+              className="dropdown-menu dropdown-menu-right"
               role="menu"
             >
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Another Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Something else here
                 </a>
               </li>
               <li
-                class="divider"
+                className="divider"
+                onKeyDown={[Function]}
                 role="separator"
+                style={undefined}
               />
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Separated link
                 </a>
@@ -1160,57 +1206,60 @@ exports[`Mock Client Pagination table renders 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        className=""
         role="row"
       >
         <td
-          class="table-view-pf-select"
+          className="table-view-pf-select"
         >
           <label
-            class="control-label sr-only"
-            for="vybrat2"
+            className="control-label sr-only"
+            htmlFor="vybrat2"
           >
             vyberte řádek 2
           </label>
           <input
+            checked={false}
             id="vybrat2"
+            onChange={[Function]}
             type="checkbox"
-            value="on"
           />
         </td>
         <td
-          class=""
+          className=""
         >
           Biggs Darklighter
         </td>
         <td
-          class=""
+          className=""
         >
           183
         </td>
         <td
-          class=""
+          className=""
         >
           brown
         </td>
         <td
-          class=""
+          className=""
         >
           male
         </td>
         <td
-          class=""
+          className=""
         >
           24BBY
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="table-view-pf-btn"
+            className="table-view-pf-btn"
           >
             <button
-              class="btn btn-default"
+              className="btn btn-default"
+              disabled={false}
+              onClick={[Function]}
               type="button"
             >
               Actions
@@ -1218,77 +1267,94 @@ exports[`Mock Client Pagination table renders 1`] = `
           </div>
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="dropdown-toggle btn btn-default"
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-default"
+              disabled={false}
               id="myKebab"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="button"
               type="button"
             >
               <span
-                aria-hidden="true"
-                class="fa fa-ellipsis-v"
+                aria-hidden={true}
+                className="fa fa-ellipsis-v"
               />
             </button>
             <ul
               aria-labelledby="myKebab"
-              class="dropdown-menu dropdown-menu-right"
+              className="dropdown-menu dropdown-menu-right"
               role="menu"
             >
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Another Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Something else here
                 </a>
               </li>
               <li
-                class="divider"
+                className="divider"
+                onKeyDown={[Function]}
                 role="separator"
+                style={undefined}
               />
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Separated link
                 </a>
@@ -1298,57 +1364,60 @@ exports[`Mock Client Pagination table renders 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        className=""
         role="row"
       >
         <td
-          class="table-view-pf-select"
+          className="table-view-pf-select"
         >
           <label
-            class="control-label sr-only"
-            for="vybrat3"
+            className="control-label sr-only"
+            htmlFor="vybrat3"
           >
             vyberte řádek 3
           </label>
           <input
+            checked={false}
             id="vybrat3"
+            onChange={[Function]}
             type="checkbox"
-            value="on"
           />
         </td>
         <td
-          class=""
+          className=""
         >
           C-3PO
         </td>
         <td
-          class=""
+          className=""
         >
           167
         </td>
         <td
-          class=""
+          className=""
         >
           yellow
         </td>
         <td
-          class=""
+          className=""
         >
           n/a
         </td>
         <td
-          class=""
+          className=""
         >
           112BBY
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="table-view-pf-btn"
+            className="table-view-pf-btn"
           >
             <button
-              class="btn btn-default"
+              className="btn btn-default"
+              disabled={false}
+              onClick={[Function]}
               type="button"
             >
               Actions
@@ -1356,77 +1425,94 @@ exports[`Mock Client Pagination table renders 1`] = `
           </div>
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="dropdown-toggle btn btn-default"
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-default"
+              disabled={false}
               id="myKebab"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="button"
               type="button"
             >
               <span
-                aria-hidden="true"
-                class="fa fa-ellipsis-v"
+                aria-hidden={true}
+                className="fa fa-ellipsis-v"
               />
             </button>
             <ul
               aria-labelledby="myKebab"
-              class="dropdown-menu dropdown-menu-right"
+              className="dropdown-menu dropdown-menu-right"
               role="menu"
             >
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Another Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Something else here
                 </a>
               </li>
               <li
-                class="divider"
+                className="divider"
+                onKeyDown={[Function]}
                 role="separator"
+                style={undefined}
               />
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Separated link
                 </a>
@@ -1436,57 +1522,60 @@ exports[`Mock Client Pagination table renders 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        className=""
         role="row"
       >
         <td
-          class="table-view-pf-select"
+          className="table-view-pf-select"
         >
           <label
-            class="control-label sr-only"
-            for="vybrat4"
+            className="control-label sr-only"
+            htmlFor="vybrat4"
           >
             vyberte řádek 4
           </label>
           <input
+            checked={false}
             id="vybrat4"
+            onChange={[Function]}
             type="checkbox"
-            value="on"
           />
         </td>
         <td
-          class=""
+          className=""
         >
           Chewbacca
         </td>
         <td
-          class=""
+          className=""
         >
           228
         </td>
         <td
-          class=""
+          className=""
         >
           blue
         </td>
         <td
-          class=""
+          className=""
         >
           male
         </td>
         <td
-          class=""
+          className=""
         >
           200BBY
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="table-view-pf-btn"
+            className="table-view-pf-btn"
           >
             <button
-              class="btn btn-default"
+              className="btn btn-default"
+              disabled={false}
+              onClick={[Function]}
               type="button"
             >
               Actions
@@ -1494,77 +1583,94 @@ exports[`Mock Client Pagination table renders 1`] = `
           </div>
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="dropdown-toggle btn btn-default"
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-default"
+              disabled={false}
               id="myKebab"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="button"
               type="button"
             >
               <span
-                aria-hidden="true"
-                class="fa fa-ellipsis-v"
+                aria-hidden={true}
+                className="fa fa-ellipsis-v"
               />
             </button>
             <ul
               aria-labelledby="myKebab"
-              class="dropdown-menu dropdown-menu-right"
+              className="dropdown-menu dropdown-menu-right"
               role="menu"
             >
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Another Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Something else here
                 </a>
               </li>
               <li
-                class="divider"
+                className="divider"
+                onKeyDown={[Function]}
                 role="separator"
+                style={undefined}
               />
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Separated link
                 </a>
@@ -1574,57 +1680,60 @@ exports[`Mock Client Pagination table renders 1`] = `
         </td>
       </tr>
       <tr
-        class=""
+        className=""
         role="row"
       >
         <td
-          class="table-view-pf-select"
+          className="table-view-pf-select"
         >
           <label
-            class="control-label sr-only"
-            for="vybrat5"
+            className="control-label sr-only"
+            htmlFor="vybrat5"
           >
             vyberte řádek 5
           </label>
           <input
+            checked={false}
             id="vybrat5"
+            onChange={[Function]}
             type="checkbox"
-            value="on"
           />
         </td>
         <td
-          class=""
+          className=""
         >
           Darth Vader
         </td>
         <td
-          class=""
+          className=""
         >
           202
         </td>
         <td
-          class=""
+          className=""
         >
           yellow
         </td>
         <td
-          class=""
+          className=""
         >
           male
         </td>
         <td
-          class=""
+          className=""
         >
           41.9BBY
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="table-view-pf-btn"
+            className="table-view-pf-btn"
           >
             <button
-              class="btn btn-default"
+              className="btn btn-default"
+              disabled={false}
+              onClick={[Function]}
               type="button"
             >
               Actions
@@ -1632,77 +1741,94 @@ exports[`Mock Client Pagination table renders 1`] = `
           </div>
         </td>
         <td
-          class="table-view-pf-actions"
+          className="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            className="dropdown-kebab-pf dropdown  "
           >
             <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="dropdown-toggle btn btn-default"
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-default"
+              disabled={false}
               id="myKebab"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="button"
               type="button"
             >
               <span
-                aria-hidden="true"
-                class="fa fa-ellipsis-v"
+                aria-hidden={true}
+                className="fa fa-ellipsis-v"
               />
             </button>
             <ul
               aria-labelledby="myKebab"
-              class="dropdown-menu dropdown-menu-right"
+              className="dropdown-menu dropdown-menu-right"
               role="menu"
             >
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Another Action
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Something else here
                 </a>
               </li>
               <li
-                class="divider"
+                className="divider"
+                onKeyDown={[Function]}
                 role="separator"
+                style={undefined}
               />
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Separated link
                 </a>
@@ -1714,64 +1840,78 @@ exports[`Mock Client Pagination table renders 1`] = `
     </tbody>
   </table>
   <form
-    class="content-view-pf-pagination table-view-pf-pagination clearfix "
+    className="content-view-pf-pagination table-view-pf-pagination clearfix "
+    onSubmit={[Function]}
   >
     <div
-      class="form-group"
+      className="form-group"
     >
       <div
-        class="dropup pagination-pf-pagesize btn-group"
+        className="dropup pagination-pf-pagesize btn-group"
       >
         <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          class="dropdown-toggle btn btn-default"
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle btn btn-default"
+          disabled={false}
           id="pagination-row-dropdown"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="button"
           type="button"
         >
-          6 
+          6
+           
           <span
-            class="caret"
+            className="caret"
           />
         </button>
         <ul
           aria-labelledby="pagination-row-dropdown"
-          class="dropdown-menu"
+          className="dropdown-menu"
           role="menu"
         >
           <li
-            class="active"
+            className="active"
             role="presentation"
+            style={undefined}
           >
             <a
               href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
-              tabindex="-1"
+              tabIndex="-1"
             >
               6
             </a>
           </li>
           <li
-            class=""
+            className=""
             role="presentation"
+            style={undefined}
           >
             <a
               href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
-              tabindex="-1"
+              tabIndex="-1"
             >
               10
             </a>
           </li>
           <li
-            class=""
+            className=""
             role="presentation"
+            style={undefined}
           >
             <a
               href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
-              tabindex="-1"
+              tabIndex="-1"
             >
               15
             </a>
@@ -1783,95 +1923,108 @@ exports[`Mock Client Pagination table renders 1`] = `
       </span>
     </div>
     <div
-      class="form-group"
+      className="form-group"
     >
       <span>
         <span
-          class="pagination-pf-items-current"
+          className="pagination-pf-items-current"
         >
-          1-6
+          1
+          -
+          6
         </span>
-         of 
+         
+        of
+         
         <span
-          class="pagination-pf-items-total"
+          className="pagination-pf-items-total"
         >
           20
         </span>
       </span>
       <ul
-        class="pagination pagination-pf-back"
+        className="pagination pagination-pf-back"
       >
         <li
-          class="disabled"
+          className="disabled"
         >
           <a
             href="#"
+            onClick={[Function]}
             title="First Page"
           >
             <span
-              aria-hidden="true"
-              class="fa fa-angle-double-left i"
+              aria-hidden={true}
+              className="fa fa-angle-double-left i"
             />
           </a>
         </li>
         <li
-          class="disabled"
+          className="disabled"
         >
           <a
             href="#"
+            onClick={[Function]}
             title="Previous Page"
           >
             <span
-              aria-hidden="true"
-              class="fa fa-angle-left i"
+              aria-hidden={true}
+              className="fa fa-angle-left i"
             />
           </a>
         </li>
       </ul>
       <label
-        class="sr-only control-label"
+        className="sr-only control-label"
+        htmlFor={undefined}
       >
         Current Page
       </label>
       <input
-        class="pagination-pf-page form-control"
+        className="pagination-pf-page form-control"
+        id={undefined}
+        onChange={[Function]}
         type="text"
-        value="1"
+        value={1}
       />
       <span>
-         of 
+         
+        of
+         
         <span
-          class="pagination-pf-pages"
+          className="pagination-pf-pages"
         >
           4
         </span>
       </span>
       <ul
-        class="pagination pagination-pf-forward"
+        className="pagination pagination-pf-forward"
       >
         <li
-          class=""
+          className=""
         >
           <a
             href="#"
+            onClick={[Function]}
             title="Next Page"
           >
             <span
-              aria-hidden="true"
-              class="fa fa-angle-right i"
+              aria-hidden={true}
+              className="fa fa-angle-right i"
             />
           </a>
         </li>
         <li
-          class=""
+          className=""
         >
           <a
             href="#"
+            onClick={[Function]}
             title="Last Page"
           >
             <span
-              aria-hidden="true"
-              class="fa fa-angle-double-right i"
+              aria-hidden={true}
+              className="fa fa-angle-double-right i"
             />
           </a>
         </li>
@@ -1883,84 +2036,90 @@ exports[`Mock Client Pagination table renders 1`] = `
 
 exports[`Mock Server Pagination table renders 1`] = `
 <div
-  class="container-fluid"
+  className="container-fluid"
 >
   <table
-    class="table dataTable table-striped table-bordered table-hover"
+    className="table dataTable table-striped table-bordered table-hover"
     role="grid"
   >
     <thead>
       <tr>
         <th
           aria-label="Select all rows"
-          class="table-view-pf-select"
-          colspan="1"
-          index="0"
-          rowspan="1"
+          className="table-view-pf-select"
+          colSpan={1}
+          index={0}
+          rowSpan={1}
         >
           <label
-            class="control-label sr-only"
-            for="selectAll"
+            className="control-label sr-only"
+            htmlFor="selectAll"
           >
             Select all rows
           </label>
           <input
+            checked={true}
             id="selectAll"
+            onChange={[Function]}
             type="checkbox"
-            value="on"
           />
         </th>
         <th
           aria-label="Name"
-          class="sorting_asc"
-          colspan="1"
-          index="1"
-          rowspan="1"
+          className="sorting_asc"
+          colSpan={1}
+          index={1}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Name
         </th>
         <th
           aria-label="Height"
-          class="sorting"
-          colspan="1"
-          index="2"
-          rowspan="1"
+          className="sorting"
+          colSpan={1}
+          index={2}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Height
         </th>
         <th
           aria-label="Eye Color"
-          class="sorting"
-          colspan="1"
-          index="3"
-          rowspan="1"
+          className="sorting"
+          colSpan={1}
+          index={3}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Eye Color
         </th>
         <th
           aria-label="Gender"
-          class="sorting"
-          colspan="1"
-          index="4"
-          rowspan="1"
+          className="sorting"
+          colSpan={1}
+          index={4}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Gender
         </th>
         <th
           aria-label="Birth Year"
-          class="sorting"
-          colspan="1"
-          index="5"
-          rowspan="1"
+          className="sorting"
+          colSpan={1}
+          index={5}
+          onClick={[Function]}
+          rowSpan={1}
         >
           Birth Year
         </th>
         <th
           aria-label="Actions"
-          class=""
-          colspan="2"
-          index="6"
-          rowspan="1"
+          className=""
+          colSpan={2}
+          index={6}
+          rowSpan={1}
         >
           Actions
         </th>
@@ -1969,64 +2128,78 @@ exports[`Mock Server Pagination table renders 1`] = `
     <tbody />
   </table>
   <form
-    class="content-view-pf-pagination table-view-pf-pagination clearfix "
+    className="content-view-pf-pagination table-view-pf-pagination clearfix "
+    onSubmit={[Function]}
   >
     <div
-      class="form-group"
+      className="form-group"
     >
       <div
-        class="dropup pagination-pf-pagesize btn-group"
+        className="dropup pagination-pf-pagesize btn-group"
       >
         <button
-          aria-expanded="false"
-          aria-haspopup="true"
-          class="dropdown-toggle btn btn-default"
+          aria-expanded={false}
+          aria-haspopup={true}
+          className="dropdown-toggle btn btn-default"
+          disabled={false}
           id="pagination-row-dropdown"
+          onClick={[Function]}
+          onKeyDown={[Function]}
           role="button"
           type="button"
         >
-          6 
+          6
+           
           <span
-            class="caret"
+            className="caret"
           />
         </button>
         <ul
           aria-labelledby="pagination-row-dropdown"
-          class="dropdown-menu"
+          className="dropdown-menu"
           role="menu"
         >
           <li
-            class="active"
+            className="active"
             role="presentation"
+            style={undefined}
           >
             <a
               href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
-              tabindex="-1"
+              tabIndex="-1"
             >
               6
             </a>
           </li>
           <li
-            class=""
+            className=""
             role="presentation"
+            style={undefined}
           >
             <a
               href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
-              tabindex="-1"
+              tabIndex="-1"
             >
               10
             </a>
           </li>
           <li
-            class=""
+            className=""
             role="presentation"
+            style={undefined}
           >
             <a
               href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="menuitem"
-              tabindex="-1"
+              tabIndex="-1"
             >
               15
             </a>
@@ -2038,95 +2211,108 @@ exports[`Mock Server Pagination table renders 1`] = `
       </span>
     </div>
     <div
-      class="form-group"
+      className="form-group"
     >
       <span>
         <span
-          class="pagination-pf-items-current"
+          className="pagination-pf-items-current"
         >
-          1-0
+          1
+          -
+          0
         </span>
-         of 
+         
+        of
+         
         <span
-          class="pagination-pf-items-total"
+          className="pagination-pf-items-total"
         >
           0
         </span>
       </span>
       <ul
-        class="pagination pagination-pf-back"
+        className="pagination pagination-pf-back"
       >
         <li
-          class="disabled"
+          className="disabled"
         >
           <a
             href="#"
+            onClick={[Function]}
             title="First Page"
           >
             <span
-              aria-hidden="true"
-              class="fa fa-angle-double-left i"
+              aria-hidden={true}
+              className="fa fa-angle-double-left i"
             />
           </a>
         </li>
         <li
-          class="disabled"
+          className="disabled"
         >
           <a
             href="#"
+            onClick={[Function]}
             title="Previous Page"
           >
             <span
-              aria-hidden="true"
-              class="fa fa-angle-left i"
+              aria-hidden={true}
+              className="fa fa-angle-left i"
             />
           </a>
         </li>
       </ul>
       <label
-        class="sr-only control-label"
+        className="sr-only control-label"
+        htmlFor={undefined}
       >
         Current Page
       </label>
       <input
-        class="pagination-pf-page form-control"
+        className="pagination-pf-page form-control"
+        id={undefined}
+        onChange={[Function]}
         type="text"
-        value="1"
+        value={1}
       />
       <span>
-         of 
+         
+        of
+         
         <span
-          class="pagination-pf-pages"
+          className="pagination-pf-pages"
         >
           0
         </span>
       </span>
       <ul
-        class="pagination pagination-pf-forward"
+        className="pagination pagination-pf-forward"
       >
         <li
-          class=""
+          className=""
         >
           <a
             href="#"
+            onClick={[Function]}
             title="Next Page"
           >
             <span
-              aria-hidden="true"
-              class="fa fa-angle-right i"
+              aria-hidden={true}
+              className="fa fa-angle-right i"
             />
           </a>
         </li>
         <li
-          class=""
+          className=""
         >
           <a
             href="#"
+            onClick={[Function]}
             title="Last Page"
           >
             <span
-              aria-hidden="true"
-              class="fa fa-angle-double-right i"
+              aria-hidden={true}
+              className="fa fa-angle-double-right i"
             />
           </a>
         </li>
@@ -2138,42 +2324,42 @@ exports[`Mock Server Pagination table renders 1`] = `
 
 exports[`Patternfly table renders properly 1`] = `
 <table
-  class="table table-striped table-bordered table-hover"
+  className="table table-striped table-bordered table-hover"
 >
   <thead>
     <tr>
       <th
-        class=""
+        className=""
       >
         First Name
       </th>
       <th
-        class=""
+        className=""
       >
         Last Name
       </th>
       <th
-        class=""
+        className=""
       >
         Username
       </th>
       <th
-        class="text-right"
+        className="text-right"
       >
         Commits
       </th>
       <th
-        class="text-right"
+        className="text-right"
       >
         Additions
       </th>
       <th
-        class="text-center"
+        className="text-center"
       >
         Location
       </th>
       <th
-        class=""
+        className=""
       >
         Gender
       </th>
@@ -2182,259 +2368,259 @@ exports[`Patternfly table renders properly 1`] = `
   <tbody>
     <tr>
       <td
-        class=""
+        className=""
       >
         Dan
       </td>
       <td
-        class=""
+        className=""
       >
         Abramov
       </td>
       <td
-        class=""
+        className=""
       >
         gaearon
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         711
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         272635
       </td>
       <td
-        class="text-center"
+        className="text-center"
       >
         London, UK
       </td>
       <td
-        class=""
+        className=""
       >
         male
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         Sebastian
       </td>
       <td
-        class=""
+        className=""
       >
         Markbåge
       </td>
       <td
-        class=""
+        className=""
       >
         sebmarkbage
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         476
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         203610
       </td>
       <td
-        class="text-center"
+        className="text-center"
       >
         San Francisco, CA
       </td>
       <td
-        class=""
+        className=""
       >
         male
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         Sophie
       </td>
       <td
-        class=""
+        className=""
       >
         Alpert
       </td>
       <td
-        class=""
+        className=""
       >
         sophiebits
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         828
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         114467
       </td>
       <td
-        class="text-center"
+        className="text-center"
       >
         California
       </td>
       <td
-        class=""
+        className=""
       >
         female
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         Paul
       </td>
       <td
-        class=""
+        className=""
       >
         O’Shannessy
       </td>
       <td
-        class=""
+        className=""
       >
         zpao
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         820
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         87324
       </td>
       <td
-        class="text-center"
+        className="text-center"
       >
         Seattle, WA
       </td>
       <td
-        class=""
+        className=""
       >
         male
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         Pete
       </td>
       <td
-        class=""
+        className=""
       >
         Hunt
       </td>
       <td
-        class=""
+        className=""
       >
         petehunt
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         205
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         86685
       </td>
       <td
-        class="text-center"
+        className="text-center"
       >
         San Francisco, CA
       </td>
       <td
-        class=""
+        className=""
       >
         male
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         Andrew
       </td>
       <td
-        class=""
+        className=""
       >
         Clark
       </td>
       <td
-        class=""
+        className=""
       >
         acdlite
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         320
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         74162
       </td>
       <td
-        class="text-center"
+        className="text-center"
       >
         Redwood City, CA
       </td>
       <td
-        class=""
+        className=""
       >
         male
       </td>
     </tr>
     <tr>
       <td
-        class=""
+        className=""
       >
         Nathan
       </td>
       <td
-        class=""
+        className=""
       >
         Hunzaker
       </td>
       <td
-        class=""
+        className=""
       >
         nhunzaker
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         77
       </td>
       <td
-        class="text-right"
+        className="text-right"
       >
         34504
       </td>
       <td
-        class="text-center"
+        className="text-center"
       >
         Durham, NC
       </td>
       <td
-        class=""
+        className=""
       >
         male
       </td>

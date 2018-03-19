@@ -2,34 +2,34 @@
 
 exports[`Filter active components render properly 1`] = `
 <div
-  class="toolbar-pf-results row"
+  className="toolbar-pf-results row"
 >
   <div
-    class="col-sm-12"
+    className="col-sm-12"
   >
     <p
-      class="filter-pf-active-label"
+      className="filter-pf-active-label"
     />
     <ul
-      class="list-inline"
+      className="list-inline"
     >
       <li
-        class=""
+        className=""
         label="Name: John"
       >
         <span
-          class="label label-info"
+          className="label label-info"
         >
           <a
-            class="pf-remove-button"
             href="#"
+            onClick={[Function]}
           >
             <span
               aria-hidden="true"
-              class="pficon pficon-close"
+              className="pficon pficon-close"
             />
             <span
-              class="sr-only"
+              className="sr-only"
             >
               Remove
             </span>
@@ -37,22 +37,22 @@ exports[`Filter active components render properly 1`] = `
         </span>
       </li>
       <li
-        class=""
+        className=""
         label="Address: Westford"
       >
         <span
-          class="label label-info"
+          className="label label-info"
         >
           <a
-            class="pf-remove-button"
             href="#"
+            onClick={[Function]}
           >
             <span
               aria-hidden="true"
-              class="pficon pficon-close"
+              className="pficon pficon-close"
             />
             <span
-              class="sr-only"
+              className="sr-only"
             >
               Remove
             </span>
@@ -66,82 +66,99 @@ exports[`Filter active components render properly 1`] = `
 
 exports[`Filter categories renders properly 1`] = `
 <div
-  class="filter-pf form-group"
+  className="filter-pf form-group"
 >
   <div
-    class="filter-pf-fields"
+    className="filter-pf-fields"
   >
     <div
-      class="input-group"
+      className="input-group"
     >
       <div
-        class="input-group-btn"
+        className="input-group-btn"
       >
         <div
-          class="dropdown btn-group"
+          className="dropdown btn-group"
         >
           <button
-            aria-expanded="false"
-            aria-haspopup="true"
-            class="dropdown-toggle btn btn-default"
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="dropdown-toggle btn btn-default"
+            disabled={false}
             id="filterFieldTypeMenu"
+            onClick={[Function]}
+            onKeyDown={[Function]}
             role="button"
             type="button"
           >
-            Car 
+            Car
+             
             <span
-              class="caret"
+              className="caret"
             />
           </button>
           <ul
             aria-labelledby="filterFieldTypeMenu"
-            class="dropdown-menu"
+            className="dropdown-menu"
             role="menu"
           >
+            
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Name
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Address
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Birth Month
               </a>
             </li>
             <li
-              class="selected"
+              className="selected"
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Car
               </a>
@@ -150,65 +167,78 @@ exports[`Filter categories renders properly 1`] = `
         </div>
       </div>
       <div
-        class="filter-pf-category-select"
+        className="filter-pf-category-select"
       >
         <div
-          class="filter-pf-select"
+          className="filter-pf-select"
         >
           <div
-            class="dropdown btn-group"
+            className="dropdown btn-group"
           >
             <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="filter-pf-select-dropdown dropdown-toggle btn btn-default"
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="filter-pf-select-dropdown dropdown-toggle btn btn-default"
+              disabled={false}
               id="filterCategoryMenu"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="button"
               type="button"
             >
-              Subaru 
+              Subaru
+               
               <span
-                class="caret"
+                className="caret"
               />
             </button>
             <ul
               aria-labelledby="filterCategoryMenu"
-              class="dropdown-menu"
+              className="dropdown-menu"
               role="menu"
             >
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                   title="Filter by Car Make"
                 >
                   Filter by Car Make
                 </a>
               </li>
               <li
-                class="selected"
+                className="selected"
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Subaru
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Toyota
                 </a>
@@ -217,74 +247,90 @@ exports[`Filter categories renders properly 1`] = `
           </div>
         </div>
         <div
-          class="filter-pf-select"
+          className="filter-pf-select"
         >
           <div
-            class="dropdown btn-group"
+            className="dropdown btn-group"
           >
             <button
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="filter-pf-category-select-value filter-pf-select-dropdown dropdown-toggle btn btn-default"
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="filter-pf-category-select-value filter-pf-select-dropdown dropdown-toggle btn btn-default"
+              disabled={false}
               id="filterCategoryMenu"
+              onClick={[Function]}
+              onKeyDown={[Function]}
               role="button"
               type="button"
             >
-              Outback 
+              Outback
+               
               <span
-                class="caret"
+                className="caret"
               />
             </button>
             <ul
               aria-labelledby="filterCategoryMenu"
-              class="dropdown-menu"
+              className="dropdown-menu"
               role="menu"
             >
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                   title="Filter by Car Model"
                 >
                   Filter by Car Model
                 </a>
               </li>
               <li
-                class="selected"
+                className="selected"
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Outback
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Crosstrek
                 </a>
               </li>
               <li
-                class=""
+                className=""
                 role="presentation"
+                style={undefined}
               >
                 <a
                   href="#"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabindex="-1"
+                  tabIndex="-1"
                 >
                   Impreza
                 </a>
@@ -300,82 +346,99 @@ exports[`Filter categories renders properly 1`] = `
 
 exports[`Filter input renders properly 1`] = `
 <div
-  class="filter-pf form-group"
+  className="filter-pf form-group"
 >
   <div
-    class="filter-pf-fields"
+    className="filter-pf-fields"
   >
     <div
-      class="input-group"
+      className="input-group"
     >
       <div
-        class="input-group-btn"
+        className="input-group-btn"
       >
         <div
-          class="dropdown btn-group"
+          className="dropdown btn-group"
         >
           <button
-            aria-expanded="false"
-            aria-haspopup="true"
-            class="dropdown-toggle btn btn-default"
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="dropdown-toggle btn btn-default"
+            disabled={false}
             id="filterFieldTypeMenu"
+            onClick={[Function]}
+            onKeyDown={[Function]}
             role="button"
             type="button"
           >
-            Name 
+            Name
+             
             <span
-              class="caret"
+              className="caret"
             />
           </button>
           <ul
             aria-labelledby="filterFieldTypeMenu"
-            class="dropdown-menu"
+            className="dropdown-menu"
             role="menu"
           >
+            
             <li
-              class="selected"
+              className="selected"
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Name
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Address
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Birth Month
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Car
               </a>
@@ -384,7 +447,7 @@ exports[`Filter input renders properly 1`] = `
         </div>
       </div>
       <input
-        class="form-control"
+        className="form-control"
         id="filterInput"
         placeholder="Filter by Name"
         type="text"
@@ -397,94 +460,111 @@ exports[`Filter input renders properly 1`] = `
 
 exports[`Filter renders properly in a Toolbar 1`] = `
 <div
-  class="container-fluid"
+  className="container-fluid"
 >
   <div
-    class="toolbar-pf row"
+    className="toolbar-pf row"
   >
     <div
-      class="col-sm-12"
+      className="col-sm-12"
     >
       <form
-        class="toolbar-pf-actions"
+        className="toolbar-pf-actions"
       >
         <div
-          class="filter-pf form-group toolbar-pf-filter"
+          className="filter-pf form-group toolbar-pf-filter"
         >
           <div
-            class="filter-pf-fields"
+            className="filter-pf-fields"
           >
             <div
-              class="input-group"
+              className="input-group"
             >
               <div
-                class="input-group-btn"
+                className="input-group-btn"
               >
                 <div
-                  class="dropdown btn-group"
+                  className="dropdown btn-group"
                 >
                   <button
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                    class="dropdown-toggle btn btn-default"
+                    aria-expanded={false}
+                    aria-haspopup={true}
+                    className="dropdown-toggle btn btn-default"
+                    disabled={false}
                     id="filterFieldTypeMenu"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
                     role="button"
                     type="button"
                   >
-                    Name 
+                    Name
+                     
                     <span
-                      class="caret"
+                      className="caret"
                     />
                   </button>
                   <ul
                     aria-labelledby="filterFieldTypeMenu"
-                    class="dropdown-menu"
+                    className="dropdown-menu"
                     role="menu"
                   >
+                    
                     <li
-                      class="selected"
+                      className="selected"
                       role="presentation"
+                      style={undefined}
                     >
                       <a
                         href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                       >
                         Name
                       </a>
                     </li>
                     <li
-                      class=""
+                      className=""
                       role="presentation"
+                      style={undefined}
                     >
                       <a
                         href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                       >
                         Address
                       </a>
                     </li>
                     <li
-                      class=""
+                      className=""
                       role="presentation"
+                      style={undefined}
                     >
                       <a
                         href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                       >
                         Birth Month
                       </a>
                     </li>
                     <li
-                      class=""
+                      className=""
                       role="presentation"
+                      style={undefined}
                     >
                       <a
                         href="#"
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                       >
                         Car
                       </a>
@@ -493,7 +573,7 @@ exports[`Filter renders properly in a Toolbar 1`] = `
                 </div>
               </div>
               <input
-                class="form-control"
+                className="form-control"
                 id="filterInput"
                 placeholder="Filter by Name"
                 type="text"
@@ -508,84 +588,101 @@ exports[`Filter renders properly in a Toolbar 1`] = `
 </div>
 `;
 
-exports[`Filter select renders propeurly 1`] = `
+exports[`Filter select renders properly 1`] = `
 <div
-  class="filter-pf form-group"
+  className="filter-pf form-group"
 >
   <div
-    class="filter-pf-fields"
+    className="filter-pf-fields"
   >
     <div
-      class="input-group"
+      className="input-group"
     >
       <div
-        class="input-group-btn"
+        className="input-group-btn"
       >
         <div
-          class="dropdown btn-group"
+          className="dropdown btn-group"
         >
           <button
-            aria-expanded="false"
-            aria-haspopup="true"
-            class="dropdown-toggle btn btn-default"
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="dropdown-toggle btn btn-default"
+            disabled={false}
             id="filterFieldTypeMenu"
+            onClick={[Function]}
+            onKeyDown={[Function]}
             role="button"
             type="button"
           >
-            Birth Month 
+            Birth Month
+             
             <span
-              class="caret"
+              className="caret"
             />
           </button>
           <ul
             aria-labelledby="filterFieldTypeMenu"
-            class="dropdown-menu"
+            className="dropdown-menu"
             role="menu"
           >
+            
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Name
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Address
               </a>
             </li>
             <li
-              class="selected"
+              className="selected"
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Birth Month
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 Car
               </a>
@@ -594,169 +691,210 @@ exports[`Filter select renders propeurly 1`] = `
         </div>
       </div>
       <div
-        class="filter-pf-select"
+        className="filter-pf-select"
       >
         <div
-          class="dropdown btn-group"
+          className="dropdown btn-group"
         >
           <button
-            aria-expanded="false"
-            aria-haspopup="true"
-            class="filter-pf-select-dropdown dropdown-toggle btn btn-default"
+            aria-expanded={false}
+            aria-haspopup={true}
+            className="filter-pf-select-dropdown dropdown-toggle btn btn-default"
+            disabled={false}
             id="filterCategoryMenu"
+            onClick={[Function]}
+            onKeyDown={[Function]}
             role="button"
             type="button"
           >
-            May 
+            May
+             
             <span
-              class="caret"
+              className="caret"
             />
           </button>
           <ul
             aria-labelledby="filterCategoryMenu"
-            class="dropdown-menu"
+            className="dropdown-menu"
             role="menu"
           >
+            
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 January
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 February
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 March
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 April
               </a>
             </li>
             <li
-              class="selected"
+              className="selected"
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 May
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 June
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 July
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 August
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 September
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 October
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 November
               </a>
             </li>
             <li
-              class=""
+              className=""
               role="presentation"
+              style={undefined}
             >
               <a
                 href="#"
+                onClick={[Function]}
+                onKeyDown={[Function]}
                 role="menuitem"
-                tabindex="-1"
+                tabIndex="-1"
               >
                 December
               </a>

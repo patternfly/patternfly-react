@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 import { Row, Col } from '../Grid';
 
 import { ListView } from './index';
@@ -10,7 +10,7 @@ import {
 } from './__mocks__/mockListItems';
 
 test('ListView renders properly', () => {
-  const component = mount(
+  const component = renderer.create(
     <ListView>
       {mockListItems.map((item, index) => (
         <ListView.Item
@@ -31,5 +31,6 @@ test('ListView renders properly', () => {
     </ListView>
   );
 
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });

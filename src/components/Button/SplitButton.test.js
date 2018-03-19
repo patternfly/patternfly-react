@@ -1,12 +1,14 @@
+/* eslint-env jest */
+
 import React from 'react';
-import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 
 import SplitButton from './SplitButton';
 import { MenuItem } from '../MenuItem';
 
 test('SplitButton should renders properly', () => {
   SplitButton.BUTTON_BS_STYLES.forEach(bsStyle => {
-    const component = shallow(
+    const component = renderer.create(
       <SplitButton title={bsStyle} id={`dropdown-button-test-${bsStyle}`}>
         <MenuItem eventKey="1">Action</MenuItem>
         <MenuItem eventKey="2">Another action</MenuItem>
@@ -18,6 +20,7 @@ test('SplitButton should renders properly', () => {
       </SplitButton>
     );
 
-    expect(component).toMatchSnapshot();
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

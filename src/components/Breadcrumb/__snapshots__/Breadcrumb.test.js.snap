@@ -1,145 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrum combined with page title 1`] = `
-<Breadcrumb
-  title={true}
+<ol
+  aria-label="breadcrumbs"
+  className="breadcrumbs-pf-title breadcrumb"
+  role="navigation"
 >
-  <Breadcrumb
-    bsClass="breadcrumb"
-    className="breadcrumbs-pf-title"
+  <li
+    className=""
   >
-    <ol
-      aria-label="breadcrumbs"
-      className="breadcrumbs-pf-title breadcrumb"
-      role="navigation"
+    <a
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      target={undefined}
+      title={undefined}
     >
-      <BreadcrumbItem
-        active={false}
-        href="#"
-      >
-        <li
-          className=""
-        >
-          <SafeAnchor
-            componentClass="a"
-            href="#"
-          >
-            <a
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-            >
-              Home
-            </a>
-          </SafeAnchor>
-        </li>
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        active={false}
-        href="http://getbootstrap.com/components/#breadcrumbs"
-      >
-        <li
-          className=""
-        >
-          <SafeAnchor
-            componentClass="a"
-            href="http://getbootstrap.com/components/#breadcrumbs"
-          >
-            <a
-              href="http://getbootstrap.com/components/#breadcrumbs"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-            >
-              Library
-            </a>
-          </SafeAnchor>
-        </li>
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        active={true}
-      >
-        <li
-          className="active"
-        >
-          <span>
-            Data
-          </span>
-        </li>
-      </BreadcrumbItem>
-    </ol>
-  </Breadcrumb>
-</Breadcrumb>
+      Home
+    </a>
+  </li>
+  <li
+    className=""
+  >
+    <a
+      href="http://getbootstrap.com/components/#breadcrumbs"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      target={undefined}
+      title={undefined}
+    >
+      Library
+    </a>
+  </li>
+  <li
+    className="active"
+  >
+    <span>
+      Data
+    </span>
+  </li>
+</ol>
 `;
 
 exports[`Breadcrumb icon renders properly 1`] = `
-<Breadcrumb
-  title={false}
+<ol
+  aria-label="breadcrumbs"
+  className="breadcrumb"
+  role="navigation"
 >
-  <Breadcrumb
-    bsClass="breadcrumb"
+  <li
     className=""
   >
-    <ol
-      aria-label="breadcrumbs"
-      className="breadcrumb"
-      role="navigation"
+    <a
+      href="#"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      target={undefined}
+      title={undefined}
     >
-      <BreadcrumbItem
-        active={false}
-        href="#"
-      >
-        <li
-          className=""
-        >
-          <SafeAnchor
-            componentClass="a"
-            href="#"
-          >
-            <a
-              href="#"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-            >
-              Home
-            </a>
-          </SafeAnchor>
-        </li>
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        active={false}
-        href="http://getbootstrap.com/components/#breadcrumbs"
-      >
-        <li
-          className=""
-        >
-          <SafeAnchor
-            componentClass="a"
-            href="http://getbootstrap.com/components/#breadcrumbs"
-          >
-            <a
-              href="http://getbootstrap.com/components/#breadcrumbs"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-            >
-              Library
-            </a>
-          </SafeAnchor>
-        </li>
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        active={true}
-      >
-        <li
-          className="active"
-        >
-          <span>
-            Data
-          </span>
-        </li>
-      </BreadcrumbItem>
-    </ol>
-  </Breadcrumb>
-</Breadcrumb>
+      Home
+    </a>
+  </li>
+  <li
+    className=""
+  >
+    <a
+      href="http://getbootstrap.com/components/#breadcrumbs"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      target={undefined}
+      title={undefined}
+    >
+      Library
+    </a>
+  </li>
+  <li
+    className="active"
+  >
+    <span>
+      Data
+    </span>
+  </li>
+</ol>
 `;

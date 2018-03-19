@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import renderer from 'react-test-renderer';
 import {
   Paginator,
   PaginationRow,
@@ -8,7 +8,7 @@ import {
 } from './index';
 
 const testPaginationRowSnapshot = (viewType, pageSizeDropUp = true) => {
-  const component = mount(
+  const component = renderer.create(
     <PaginationRow
       viewType={viewType}
       className="paginator"
@@ -39,8 +39,8 @@ const testPaginationRowSnapshot = (viewType, pageSizeDropUp = true) => {
       onLastPage={jest.fn()}
     />
   );
-
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 };
 
 PAGINATION_VIEW_TYPES.forEach(viewType => {
@@ -50,7 +50,7 @@ PAGINATION_VIEW_TYPES.forEach(viewType => {
 });
 
 test('PaginationRow.Items renders', () => {
-  const component = mount(
+  const component = renderer.create(
     <PaginationRow.Items
       itemCount={55}
       itemsStart={0}
@@ -58,8 +58,8 @@ test('PaginationRow.Items renders', () => {
       messagesOf="of"
     />
   );
-
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('PaginationRow renders with dropdown page size selector', () => {
@@ -67,7 +67,7 @@ test('PaginationRow renders with dropdown page size selector', () => {
 });
 
 test('PaginationRow.Back renders', () => {
-  const component = mount(
+  const component = renderer.create(
     <PaginationRow.Back
       page={1}
       messagesFirstPage="first page"
@@ -76,20 +76,20 @@ test('PaginationRow.Back renders', () => {
       onPreviousPage={jest.fn()}
     />
   );
-
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('PaginationRow.ButtonGroup renders', () => {
-  const component = mount(
+  const component = renderer.create(
     <PaginationRow.ButtonGroup className="custom-class" />
   );
-
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('PaginationRow.Forward renders', () => {
-  const component = mount(
+  const component = renderer.create(
     <PaginationRow.Forward
       page={1}
       amountOfPages={4}
@@ -99,20 +99,20 @@ test('PaginationRow.Forward renders', () => {
       onLastPage={jest.fn()}
     />
   );
-
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('PaginationRow.AmountOfPages renders', () => {
-  const component = mount(
+  const component = renderer.create(
     <PaginationRow.AmountOfPages messagesOf="of" amountOfPages={4} />
   );
-
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('Paginator renders properly the first page', () => {
-  const component = mount(
+  const component = renderer.create(
     <Paginator
       itemCount={75}
       pagination={{
@@ -124,11 +124,12 @@ test('Paginator renders properly the first page', () => {
     />
   );
 
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('Paginator renders properly a middle page', () => {
-  const component = mount(
+  const component = renderer.create(
     <Paginator
       itemCount={75}
       pagination={{
@@ -140,11 +141,12 @@ test('Paginator renders properly a middle page', () => {
     />
   );
 
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
 
 test('Paginator renders properly the last page', () => {
-  const component = mount(
+  const component = renderer.create(
     <Paginator
       itemCount={75}
       pagination={{
@@ -156,5 +158,6 @@ test('Paginator renders properly the last page', () => {
     />
   );
 
-  expect(component.render()).toMatchSnapshot();
+  const tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
 });
