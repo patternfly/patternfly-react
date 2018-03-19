@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pager default renders properly 1`] = `
+<ul
+  class="pager"
+>
+  <li
+    class="previous"
+  >
+    <a
+      class=""
+      href="#"
+    >
+      <span
+        aria-hidden="true"
+        class="fa fa-angle-left i"
+      />
+      Previous
+    </a>
+  </li>
+  <li
+    class="next"
+  >
+    <a
+      class=""
+      href="#"
+    >
+      Next
+      <span
+        aria-hidden="true"
+        class="fa fa-angle-right i"
+      />
+    </a>
+  </li>
+</ul>
+`;
+
+exports[`Pager mini size renders properly 1`] = `
+<ul
+  class="pager pager-sm"
+>
+  <li
+    class="disabled previous"
+  >
+    <a
+      class="disabled"
+      href="#"
+    >
+      <span
+        aria-hidden="true"
+        class="fa fa-angle-left i"
+      />
+      The Previous Page
+    </a>
+  </li>
+  <li
+    class="disabled next"
+  >
+    <a
+      class="disabled"
+      href="#"
+    >
+      The Next Page
+      <span
+        aria-hidden="true"
+        class="fa fa-angle-right i"
+      />
+    </a>
+  </li>
+</ul>
+`;
