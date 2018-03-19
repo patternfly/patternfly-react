@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * EmptyStateAction renders contents of the element
  */
 const EmptyStateAction = ({ children, className, secondary, ...props }) => {
-  const classes = ClassNames(
+  const classes = classNames(
     {
       'blank-slate-pf-main-action': !secondary,
       'blank-slate-pf-secondary-action': secondary

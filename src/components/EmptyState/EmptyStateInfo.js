@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * EmptyStateInfo renders contents of the element
  */
 const EmptyStateInfo = ({ children, className, ...props }) => {
-  const classes = ClassNames('blank-slate-pf-info', className);
+  const classes = classNames('blank-slate-pf-info', className);
 
   return (
     <p className={classes} {...props}>

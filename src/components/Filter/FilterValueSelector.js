@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
 import { noop } from '../../common/helpers';
@@ -14,7 +14,7 @@ const FilterValueSelector = ({
   onFilterValueSelected,
   ...rest
 }) => {
-  const classes = cx('filter-pf-select', className);
+  const classes = classNames('filter-pf-select', className);
 
   if (placeholder || (filterValues && filterValues.length > 1)) {
     let title;

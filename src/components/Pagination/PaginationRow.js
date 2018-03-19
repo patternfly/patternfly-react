@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import PaginationRowAmountOfPages from './PaginationRowAmountOfPages';
 import PaginationRowButtonGroup from './PaginationRowButtonGroup';
 import PaginationRowItems from './PaginationRowItems';
@@ -37,7 +37,7 @@ const PaginationRow = ({
   onLastPage
 }) => {
   const { page, perPage, perPageOptions = [] } = pagination;
-  const classes = cx(baseClassName, className, {
+  const classes = classNames(baseClassName, className, {
     'list-view-pf-pagination': viewType === PAGINATION_VIEW.LIST,
     'card-view-pf-pagination': viewType === PAGINATION_VIEW.CARD,
     'table-view-pf-pagination': viewType === PAGINATION_VIEW.TABLE,

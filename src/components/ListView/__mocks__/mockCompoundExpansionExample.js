@@ -1,5 +1,5 @@
 import React from 'react';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { boolean } from '@storybook/addon-knobs/dist/index';
 import { bindMethods } from '../../../common/helpers';
 import { mockListItems } from './mockListItems';
@@ -42,7 +42,7 @@ export class MockCompoundExpansion extends React.Component {
     return (
       item.properties &&
       Object.keys(item.properties).map(prop => {
-        const classNames = cx('pficon', {
+        const cssClassNames = classNames('pficon', {
           'pficon-flavor': prop === 'hosts',
           'pficon-cluster': prop === 'clusters',
           'pficon-container-node': prop === 'nodes',
@@ -56,7 +56,7 @@ export class MockCompoundExpansion extends React.Component {
                 this.toggleExpand(item, prop);
               }}
             >
-              <span className={classNames} />
+              <span className={cssClassNames} />
               <strong>{item.properties[prop]}</strong> {prop}
             </ListView.Expand>
           </ListView.InfoItem>
@@ -100,7 +100,7 @@ import { bindMethods } from '../../../common/helpers';
 
 import { mockListItems } from './mockListItems';
 import { boolean } from '@storybook/addon-knobs/dist/index';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 import { Button, Grid, ListView } from '../../../index';
 
@@ -145,7 +145,7 @@ export class MockCompoundExpansion extends React.Component {
     return (
       item.properties &&
       Object.keys(item.properties).map(prop => {
-        const classNames = cx('pficon', {
+        const classNames = classNames('pficon', {
           'pficon-flavor': prop === 'hosts',
           'pficon-cluster': prop === 'clusters',
           'pficon-container-node': prop === 'nodes',

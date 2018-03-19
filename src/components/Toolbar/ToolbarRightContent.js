@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 const ToolbarRightContent = ({ children, className, ...rest }) => {
-  const classes = cx('toolbar-pf-action-right', className);
+  const classes = classNames('toolbar-pf-action-right', className);
   return (
     <div className={classes} {...rest}>
       {children}

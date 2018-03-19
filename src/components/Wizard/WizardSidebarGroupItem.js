@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { ListGroupItem } from '../ListGroup';
 import { noop } from '../../common/helpers';
 
@@ -18,7 +18,7 @@ const WizardSidebarGroupItem = ({
   onClick,
   ...rest
 }) => {
-  const classes = cx(
+  const classes = classNames(
     { active: `${subStep}` === `${activeSubStep}` },
     className
   );

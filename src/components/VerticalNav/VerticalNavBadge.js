@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { OverlayTrigger, Tooltip } from '../../index';
 
 const VerticalNavBadge = props => {
   const { badgeClass, iconClass, tooltip, count } = props;
   const key = badgeClass || iconClass || count;
   const badgeDiv = (
-    <div className={cx('badge', badgeClass)}>
+    <div className={classNames('badge', badgeClass)}>
       {count && iconClass && <span className={iconClass} />}
       {count && <span>{count}</span>}
     </div>

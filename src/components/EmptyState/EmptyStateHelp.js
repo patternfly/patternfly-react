@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * EmptyStateHelp renders contents of the element
  */
 const EmptyStateHelp = ({ children, className, ...props }) => {
-  const classes = ClassNames('blank-slate-pf-helpLink', className);
+  const classes = classNames('blank-slate-pf-helpLink', className);
 
   return (
     <p className={classes} {...props}>

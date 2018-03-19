@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardReviewContent component for Patternfly React
  */
 const WizardReviewContent = ({ children, className, collapsed, ...rest }) => {
-  const classes = cx(
+  const classes = classNames(
     'wizard-pf-review-content',
     { collapse: collapsed },
     className

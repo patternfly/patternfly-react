@@ -1,10 +1,10 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from '../../common/helpers';
 
 const RemoveButton = ({ className, title, onRemoveClick, ...rest }) => {
-  const classes = ClassNames('pficon pficon-close', className);
+  const classes = classNames('pficon pficon-close', className);
 
   return (
     <a

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * TableSelectionCell component for Patternfly React
  */
 const TableSelectionCell = ({ children, className, ...props }) => {
-  const classes = cx('table-view-pf-select', className);
+  const classes = classNames('table-view-pf-select', className);
   return (
     <td className={classes} {...props}>
       {children}

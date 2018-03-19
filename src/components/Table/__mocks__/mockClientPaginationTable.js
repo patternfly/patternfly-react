@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import orderBy from 'lodash.orderby';
-import cx from 'classnames';
+import classNames from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { compose } from 'recompose';
@@ -305,7 +305,7 @@ export class MockClientPaginationTable extends React.Component {
     const { selectedRows } = this.state;
     const selected = selectedRows.indexOf(row.id) > -1;
     return {
-      className: cx({ selected }),
+      className: classNames({ selected }),
       role: 'row'
     };
   }
@@ -464,7 +464,7 @@ export const mockClientPaginationTableSource = `
 import React from 'react';
 import PropTypes from 'prop-types';
 import orderBy from 'lodash.orderby';
-import cx from 'classnames';
+import classNames from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { bindMethods } from '../../../common/helpers';
@@ -859,7 +859,7 @@ export class MockClientPaginationTable extends React.Component {
     const { selectedRows } = this.state;
     const selected = selectedRows.indexOf(row.id) > -1;
     return {
-      className: cx({ selected: selected }),
+      className: classNames({ selected: selected }),
       role: 'row'
     };
   }

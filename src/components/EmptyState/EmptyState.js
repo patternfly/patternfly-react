@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * Empty State Component for Patternfly React
  */
 const EmptyState = ({ children, className, ...props }) => {
-  const classes = ClassNames('blank-slate-pf', className);
+  const classes = classNames('blank-slate-pf', className);
 
   return (
     <div className={classes} {...props}>

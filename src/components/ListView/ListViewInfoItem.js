@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * ListViewInfoItem renders contents of individual Info item
  */
 const ListViewInfoItem = ({ children, className, stacked, ...rest }) => {
-  const classes = cx(
+  const classes = classNames(
     { 'list-view-pf-additional-info-item-stacked': stacked },
     'list-view-pf-additional-info-item',
     className

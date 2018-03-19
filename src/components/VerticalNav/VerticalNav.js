@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { ListGroup } from '../ListGroup';
 import VerticalNavItem from './VerticalNavItem';
 import VerticalNavMasthead from './VerticalNavMasthead';
@@ -430,26 +430,29 @@ class BaseVerticalNav extends React.Component {
         hoverDelay={hoverDelay}
         blurDelay={blurDelay}
       >
-        <nav className={cx('navbar navbar-pf-vertical')}>
+        <nav className={classNames('navbar navbar-pf-vertical')}>
           {!hideMasthead && masthead}
         </nav>
         <div
-          className={cx('nav-pf-vertical nav-pf-vertical-with-sub-menus', {
-            'nav-pf-vertical-collapsible-menus': pinnableMenus,
-            'hidden-icons-pf': hiddenIcons,
-            'nav-pf-vertical-with-badges': showBadges,
-            'nav-pf-persistent-secondary': persistentSecondary,
-            'show-mobile-secondary': showMobileSecondary,
-            'show-mobile-tertiary': showMobileTertiary,
-            'hover-secondary-nav-pf': hoverSecondaryNav,
-            'hover-tertiary-nav-pf': hoverTertiaryNav,
-            'collapsed-secondary-nav-pf': pinnedSecondaryNav,
-            'collapsed-tertiary-nav-pf': pinnedTertiaryNav,
-            hidden: isMobile,
-            collapsed: !isMobile && navCollapsed,
-            'force-hide-secondary-nav-pf': forceHidden,
-            'show-mobile-nav': showMobileNav
-          })}
+          className={classNames(
+            'nav-pf-vertical nav-pf-vertical-with-sub-menus',
+            {
+              'nav-pf-vertical-collapsible-menus': pinnableMenus,
+              'hidden-icons-pf': hiddenIcons,
+              'nav-pf-vertical-with-badges': showBadges,
+              'nav-pf-persistent-secondary': persistentSecondary,
+              'show-mobile-secondary': showMobileSecondary,
+              'show-mobile-tertiary': showMobileTertiary,
+              'hover-secondary-nav-pf': hoverSecondaryNav,
+              'hover-tertiary-nav-pf': hoverTertiaryNav,
+              'collapsed-secondary-nav-pf': pinnedSecondaryNav,
+              'collapsed-tertiary-nav-pf': pinnedTertiaryNav,
+              hidden: isMobile,
+              collapsed: !isMobile && navCollapsed,
+              'force-hide-secondary-nav-pf': forceHidden,
+              'show-mobile-nav': showMobileNav
+            }
+          )}
         >
           <ListGroup componentClass="ul">{itemComponents}</ListGroup>
         </div>

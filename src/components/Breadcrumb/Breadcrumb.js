@@ -1,10 +1,10 @@
 import React from 'react';
-import cx from 'classnames';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Breadcrumb as BsBreadcrumb } from 'react-bootstrap';
 
 const Breadcrumb = ({ title, ...props }) => {
-  const breadcrumbClass = cx({
+  const breadcrumbClass = classNames({
     'breadcrumbs-pf-title': title
   });
   return <BsBreadcrumb className={breadcrumbClass} {...props} />;

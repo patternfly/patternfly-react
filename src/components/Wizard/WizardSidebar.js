@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardSidebar component for Patternfly React
  */
 const WizardSidebar = ({ items, className, ...rest }) => {
-  const classes = cx('wizard-pf-sidebar', className);
+  const classes = classNames('wizard-pf-sidebar', className);
   return (
     <div className={classes} {...rest}>
       {items}

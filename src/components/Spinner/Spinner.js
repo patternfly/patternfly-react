@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 const Spinner = ({
   loading,
@@ -12,7 +12,7 @@ const Spinner = ({
   ...props
 }) => {
   if (loading) {
-    const classes = cx(className, 'spinner', `spinner-${size}`, {
+    const classes = classNames(className, 'spinner', `spinner-${size}`, {
       'spinner-inline': inline,
       'spinner-inverse': inverse
     });

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { bindMethods, noop } from '../../common/helpers';
 import TimedToastNotification from './TimedToastNotification';
 
@@ -53,7 +53,7 @@ class ToastNotificationList extends React.Component {
   }
   render() {
     const { className } = this.props;
-    const classes = cx('toast-notifications-list-pf', className);
+    const classes = classNames('toast-notifications-list-pf', className);
 
     return (
       <div

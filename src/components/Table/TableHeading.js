@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import {
   TABLE_ALIGN,
   TABLE_ALIGNMENT_TYPES,
@@ -19,11 +19,11 @@ const TableHeading = ({
   sortDirection,
   ...props
 }) => {
-  const sortingClass = cx({
+  const sortingClass = classNames({
     sorting_asc: sortDirection === TABLE_SORT_DIRECTION.ASC,
     sorting_desc: sortDirection === TABLE_SORT_DIRECTION.DESC
   });
-  const classes = cx(
+  const classes = classNames(
     {
       'text-right': align === TABLE_ALIGN.RIGHT,
       'text-center': align === TABLE_ALIGN.CENTER

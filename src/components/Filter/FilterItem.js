@@ -1,11 +1,11 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from '../../common/helpers';
 import { DisposableLabel } from '../Label';
 
 const FilterItem = ({ children, className, onRemove, filterData, ...rest }) => {
-  const classes = ClassNames(className);
+  const classes = classNames(className);
 
   return (
     <li className={classes} {...rest}>

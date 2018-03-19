@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import PaginationRowArrowIcon from './PaginationRowArrowIcon';
 import { noop } from '../../common/helpers';
 
@@ -16,7 +16,7 @@ const PaginationRowBack = ({
   onPreviousPage,
   ...props
 }) => {
-  const classes = cx('pagination', 'pagination-pf-back', className);
+  const classes = classNames('pagination', 'pagination-pf-back', className);
   return (
     <ul className={classes} {...props}>
       <li className={page === 1 ? 'disabled' : ''}>

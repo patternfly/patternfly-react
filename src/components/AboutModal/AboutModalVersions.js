@@ -1,9 +1,9 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const AboutModalVersions = ({ children, className, ...rest }) => {
-  const classes = cx('product-versions-pf', className);
+  const classes = classNames('product-versions-pf', className);
 
   return (
     <div className={classes} {...rest}>

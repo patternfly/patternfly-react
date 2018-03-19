@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import * as resolve from 'table-resolver';
 import { bindMethods } from '../../../common/helpers';
 import {
@@ -21,7 +21,7 @@ import MockServerApi from './mockServerApi';
 export class MockServerPaginationTable extends React.Component {
   static onRow(row, { rowIndex }) {
     return {
-      className: cx({ selected: row.selected }),
+      className: classNames({ selected: row.selected }),
       role: 'row'
     };
   }
@@ -345,7 +345,7 @@ MockServerPaginationTable.propTypes = {
 export const mockServerPaginationTableSource = `
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import * as resolve from 'table-resolver';
 import { bindMethods } from '../../../common/helpers';
 import {
@@ -366,7 +366,7 @@ import MockServerApi from './mockServerApi';
 export class MockServerPaginationTable extends React.Component {
   static onRow(row, { rowIndex }) {
     return {
-      className: cx({ selected: row.selected }),
+      className: classNames({ selected: row.selected }),
       role: 'row'
     };
   }

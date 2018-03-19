@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { ListGroup } from '../ListGroup';
 
 /**
@@ -13,7 +13,10 @@ const WizardSidebarGroup = ({
   activeStep,
   ...rest
 }) => {
-  const classes = cx({ hidden: `${step}` !== `${activeStep}` }, className);
+  const classes = classNames(
+    { hidden: `${step}` !== `${activeStep}` },
+    className
+  );
   return (
     <ListGroup componentClass="ul" className={classes} {...rest}>
       {children}

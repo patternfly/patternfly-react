@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,7 @@ const FilterList = ({ children, className, ...rest }) => {
   if (!children) {
     return null;
   }
-  const classes = cx('list-inline', className);
+  const classes = classNames('list-inline', className);
   return <ul className={classes}>{children}</ul>;
 };
 

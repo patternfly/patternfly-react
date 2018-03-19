@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,13 +7,13 @@ import PropTypes from 'prop-types';
  * The caret icon points to the right when it is closed and down when it is expanded.
  */
 const ListViewExpand = ({ children, expanded, toggleExpanded }) => {
-  const classes = cx({
+  const classes = classNames({
     'fa fa-angle-right': true,
     'fa-angle-down': expanded
   });
   return (
     <div
-      className={cx('list-view-pf-expand', { active: expanded })}
+      className={classNames('list-view-pf-expand', { active: expanded })}
       onClick={e => {
         e.stopPropagation();
         toggleExpanded();

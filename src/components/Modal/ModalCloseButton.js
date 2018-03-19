@@ -1,10 +1,10 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '../../index';
 
 const ModalCloseButton = ({ className, closeText, ...rest }) => (
-  <button className={cx(`close`, className)} {...rest}>
+  <button className={classNames(`close`, className)} {...rest}>
     <Icon type="pf" name="close" aria-hidden="true" title={closeText} />
     <span className="sr-only">{closeText}</span>
   </button>

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 const ToolbarViewSelector = ({ children, className, ...rest }) => {
-  const classes = cx('form-group toolbar-pf-view-selector', className);
+  const classes = classNames('form-group toolbar-pf-view-selector', className);
   return (
     <div className={classes} {...rest}>
       {children}

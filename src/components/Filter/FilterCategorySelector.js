@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
 import { noop } from '../../common/helpers';
@@ -15,7 +15,7 @@ const FilterCategorySelector = ({
   onFilterCategorySelected,
   ...rest
 }) => {
-  const classes = cx('filter-pf-category-select', className);
+  const classes = classNames('filter-pf-category-select', className);
 
   if (placeholder || (filterCategories && filterCategories.length > 1)) {
     let title;
