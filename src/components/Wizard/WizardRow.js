@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardRow component for Patternfly React
  */
 const WizardRow = ({ children, className, ...rest }) => {
-  const classes = cx('wizard-pf-row', className);
+  const classes = classNames('wizard-pf-row', className);
   return (
     <section className={classes} {...rest}>
       {children}

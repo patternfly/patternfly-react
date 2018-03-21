@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '../Icon';
@@ -16,7 +16,7 @@ const DropdownKebab = ({
   componentClass,
   toggleStyle
 }) => {
-  const kebabClass = ClassNames('dropdown-kebab-pf', className);
+  const kebabClass = classNames('dropdown-kebab-pf', className);
   return (
     <Dropdown
       className={kebabClass}

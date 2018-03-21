@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { noop } from '../../common/helpers';
 
 /**
@@ -17,7 +17,7 @@ const WizardStep = ({
   onClick,
   ...rest
 }) => {
-  const classes = cx(
+  const classes = classNames(
     'wizard-pf-step',
     { active: `${step}` === `${activeStep}` },
     className

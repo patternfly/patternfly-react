@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 
 import { Button } from '../../Button';
@@ -88,7 +88,7 @@ export const renderActions = () => (
 export const renderAdditionalInfoItems = itemProperties =>
   itemProperties &&
   Object.keys(itemProperties).map(prop => {
-    const classNames = cx('pficon', {
+    const cssClassNames = classNames('pficon', {
       'pficon-flavor': prop === 'hosts',
       'pficon-cluster': prop === 'clusters',
       'pficon-container-node': prop === 'nodes',
@@ -96,7 +96,7 @@ export const renderAdditionalInfoItems = itemProperties =>
     });
     return (
       <ListView.InfoItem key={prop}>
-        <span className={classNames} />
+        <span className={cssClassNames} />
         <strong>{itemProperties[prop]}</strong> {prop}
       </ListView.InfoItem>
     );

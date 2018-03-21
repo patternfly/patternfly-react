@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { getContext } from 'recompose';
 import { ListGroup, ListGroupItem } from '../ListGroup';
 import { OverlayTrigger } from '../OverlayTrigger';
@@ -278,13 +278,16 @@ class BaseVerticalNavItemHelper extends React.Component {
     const onPinnedPath = pinnedPath && pinnedPath.startsWith(this.idPath());
 
     const icon = iconClass && (
-      <span className={cx(iconClass, { hidden: hiddenIcons })} title={title} />
+      <span
+        className={classNames(iconClass, { hidden: hiddenIcons })}
+        title={title}
+      />
     );
 
     return (
       <ListGroupItem
         listItem // Renders as <li>. Other props can change this, see logic in react-bootstrap's ListGroupItem.
-        className={cx(
+        className={classNames(
           {
             [`${nextDepth}-nav-item-pf`]:
               depth !== 'tertiary' &&
@@ -334,7 +337,7 @@ class BaseVerticalNavItemHelper extends React.Component {
               <div className="nav-item-pf-header">
                 {(pinnableMenus || isMobile) && (
                   <a
-                    className={cx(`${nextDepth}-collapse-toggle-pf`, {
+                    className={classNames(`${nextDepth}-collapse-toggle-pf`, {
                       collapsed: onPinnedPath
                     })}
                     onClick={this.pinNextDepth}

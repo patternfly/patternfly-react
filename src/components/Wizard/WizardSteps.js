@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardSteps component for Patternfly React
  */
 const WizardSteps = ({ steps, className, ...rest }) => {
-  const classes = cx('wizard-pf-steps', className);
+  const classes = classNames('wizard-pf-steps', className);
   return (
     <div className={classes} {...rest}>
       <ul className="wizard-pf-steps-indicator">{steps}</ul>

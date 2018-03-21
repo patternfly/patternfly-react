@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { noop } from '../../common/helpers';
 import TreeViewExpand from './TreeViewExpand';
 import TreeViewIcon from './TreeViewIcon';
@@ -44,7 +44,7 @@ class TreeViewNode extends Component {
   render() {
     const { node, level, visible, selectNode } = this.props;
     const { expanded } = this.state;
-    const classes = cx('list-group-item', {
+    const classes = classNames('list-group-item', {
       'node-hidden': level > 1 ? !visible : false,
       'node-selected': node.selected
     });

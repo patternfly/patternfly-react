@@ -141,6 +141,7 @@ when possible and accept [props](https://facebook.github.io/react/docs/component
   * Provide a storybook with your component named on the parent component with a `.stories.js` suffix (e.g., `ListGroup.stories.js`)
   * When your stories contain multiple files, put them in a subfolder named `Stories`
   * `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
+* When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - ` import classNames from 'classnames' `
 * Exporting components from other libraries (without manipulating them)
   to consumers is a common task, use:
   ```js

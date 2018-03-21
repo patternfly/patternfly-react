@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '../Icon';
@@ -10,7 +10,7 @@ const ListViewIcon = ({ type, name, className, size, ...props }) => (
   <Icon
     type={type}
     name={name}
-    className={cx(`list-view-pf-icon-${size}`, className)}
+    className={classNames(`list-view-pf-icon-${size}`, className)}
     {...props}
   />
 );

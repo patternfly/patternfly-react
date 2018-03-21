@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
@@ -32,7 +32,7 @@ MockFixedLayout.propTypes = { children: PropTypes.node.isRequired };
 
 const mockBodyContainer = className => (
   <div
-    className={cx(
+    className={classNames(
       'container-fluid container-cards-pf container-pf-nav-pf-vertical nav-pf-persistent-secondary',
       className
     )}

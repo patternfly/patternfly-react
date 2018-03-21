@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { noop } from '../../common/helpers';
 
 import TreeViewNode from './TreeViewNode';
@@ -11,7 +11,7 @@ const TreeView = ({
   highlightOnSelect,
   highlightOnHover
 }) => {
-  const classes = cx('list-group', {
+  const classes = classNames('list-group', {
     'treeview-pf-select': highlightOnSelect,
     'treeview-pf-hover': highlightOnHover
   });

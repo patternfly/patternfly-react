@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * TableActions component for Patternfly React
  */
 const TableActions = ({ children, className, ...props }) => {
-  const classes = cx('table-view-pf-actions', className);
+  const classes = classNames('table-view-pf-actions', className);
   return (
     <td className={classes} {...props}>
       {children}

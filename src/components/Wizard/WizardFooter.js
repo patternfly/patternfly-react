@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardFooter component for Patternfly React
  */
 const WizardFooter = ({ children, className, ...rest }) => {
-  const classes = cx('wizard-pf-footer', className);
+  const classes = classNames('wizard-pf-footer', className);
   return (
     <div className={classes} {...rest}>
       {children}

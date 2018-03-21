@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardBody component for Patternfly React
  */
 const WizardBody = ({ children, className, ...rest }) => {
-  const classes = cx('wizard-pf-body', className);
+  const classes = classNames('wizard-pf-body', className);
   return (
     <div className={classes} {...rest}>
       {children}

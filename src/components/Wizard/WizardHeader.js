@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardHeader component for Patternfly React
  */
 const WizardHeader = ({ children, className, embedded, title, ...rest }) => {
-  const classes = cx({ 'wizard-pf-header': !embedded }, className);
+  const classes = classNames({ 'wizard-pf-header': !embedded }, className);
 
   if (embedded) {
     return (

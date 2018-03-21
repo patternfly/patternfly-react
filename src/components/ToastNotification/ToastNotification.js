@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import { Alert } from '../Alert';
 
@@ -6,7 +6,7 @@ import { Alert } from '../Alert';
  * ToastNotification Component for Patternfly React
  */
 const ToastNotification = ({ children, className, ...props }) => {
-  const notificationClasses = ClassNames('toast-pf', className);
+  const notificationClasses = classNames('toast-pf', className);
 
   return (
     <Alert className={notificationClasses} {...props}>

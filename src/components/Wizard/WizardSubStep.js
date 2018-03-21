@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardSubStep component for Patternfly React
@@ -12,7 +12,7 @@ const WizardSubStep = ({
   activeSubStep,
   ...rest
 }) => {
-  const classes = cx(
+  const classes = classNames(
     'wizard-pf-step-title-substep',
     { active: `${subStep}` === `${activeSubStep}` },
     className

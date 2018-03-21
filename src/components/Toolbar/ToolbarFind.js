@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { Button, Icon, FormControl } from '../../index';
 import { bindMethods, noop } from '../../common/helpers';
 
@@ -95,9 +95,9 @@ class ToolbarFind extends React.Component {
     const { dropdownShown, currentValue } = this.state;
     const { className, placeholder } = this.props;
 
-    const classes = cx('form-group toolbar-pf-find', className);
+    const classes = classNames('form-group toolbar-pf-find', className);
 
-    const dropdownClasses = cx('find-pf-dropdown-container', {
+    const dropdownClasses = classNames('find-pf-dropdown-container', {
       show: dropdownShown
     });
 

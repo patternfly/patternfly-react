@@ -1,9 +1,9 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const Sort = ({ children, className, ...rest }) => {
-  const classes = cx('form-group', className);
+  const classes = classNames('form-group', className);
   return (
     <div className={classes} {...rest}>
       {children}

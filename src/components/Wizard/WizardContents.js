@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
 /**
  * WizardContents component for Patternfly React
@@ -14,7 +14,7 @@ const WizardContents = ({
   activeSubStepIndex,
   ...rest
 }) => {
-  const classes = cx(
+  const classes = classNames(
     'wizard-pf-contents',
     {
       // hide contents if the step is not active

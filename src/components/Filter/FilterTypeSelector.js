@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
 import { noop } from '../../common/helpers';
@@ -14,7 +14,7 @@ const FilterTypeSelector = ({
   onFilterTypeSelected,
   ...rest
 }) => {
-  const classes = cx('input-group-btn', className);
+  const classes = classNames('input-group-btn', className);
   if (placeholder || (filterTypes && filterTypes.length > 1)) {
     let title;
     if (currentFilterType) {

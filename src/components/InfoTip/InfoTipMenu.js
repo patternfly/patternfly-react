@@ -1,5 +1,5 @@
 import React from 'react';
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -16,7 +16,7 @@ class InfoTipMenu extends React.Component {
       ...props
     } = this.props;
 
-    const infoTipMenuClass = ClassNames(
+    const infoTipMenuClass = classNames(
       'dropdown-menu',
       'infotip',
       'bottom-right',

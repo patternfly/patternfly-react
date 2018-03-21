@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { noop } from '../../common/helpers';
 
 const TreeViewExpand = ({ nodes, expanded, toggleExpand }) => {
   const hasChildren = nodes.length > 0;
-  const classes = cx(
+  const classes = classNames(
     'icon indent',
     { 'expand-icon fa fa-angle-right': hasChildren && !expanded },
     { 'expand-icon fa fa-angle-down': hasChildren && expanded },

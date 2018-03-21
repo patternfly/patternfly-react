@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '../Icon';
@@ -7,7 +7,7 @@ import { Icon } from '../Icon';
  * EmptyStateIcon renders element
  */
 const EmptyStateIcon = ({ className, type, name, ...props }) => {
-  const classes = ClassNames('blank-slate-pf-icon', className);
+  const classes = classNames('blank-slate-pf-icon', className);
 
   return (
     <div className={classes}>

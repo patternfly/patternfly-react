@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import PaginationRowArrowIcon from './PaginationRowArrowIcon';
 import { noop } from '../../common/helpers';
 
@@ -17,7 +17,7 @@ const PaginationRowForward = ({
   onLastPage,
   ...props
 }) => {
-  const classes = cx('pagination', 'pagination-pf-forward', className);
+  const classes = classNames('pagination', 'pagination-pf-forward', className);
   return (
     <ul className={classes}>
       <li className={page === amountOfPages ? 'disabled' : ''}>

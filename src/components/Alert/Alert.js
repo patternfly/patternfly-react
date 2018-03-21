@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '../Button';
@@ -16,7 +16,7 @@ import {
 const Alert = ({ children, className, onDismiss, type, ...props }) => {
   warnIfDeprecatedType(type);
 
-  const alertClass = ClassNames('alert', className, getClassName(type), {
+  const alertClass = classNames('alert', className, getClassName(type), {
     'alert-dismissable': onDismiss
   });
 

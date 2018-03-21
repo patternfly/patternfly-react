@@ -1,9 +1,9 @@
 import React from 'react';
-import cx from 'classnames';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
 const TreeViewIcon = ({ icon }) => {
-  const classes = cx('icon node-icon indent', icon);
+  const classes = classNames('icon node-icon indent', icon);
   return <span className={classes} />;
 };
 

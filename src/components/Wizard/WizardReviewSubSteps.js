@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { ListGroup } from '../ListGroup';
 
 /**
  * WizardReviewSubSteps component for Patternfly React
  */
 const WizardReviewSubSteps = ({ children, className, collapsed, ...rest }) => {
-  const classes = cx(
+  const classes = classNames(
     'wizard-pf-review-substeps',
     { collapse: collapsed },
     className

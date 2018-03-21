@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from '../../common/helpers';
@@ -8,7 +8,7 @@ import { noop } from '../../common/helpers';
  * expanded content
  */
 const ListViewGroupItemContainer = ({ children, expanded, onClose }) => {
-  const classes = cx({
+  const classes = classNames({
     'list-group-item-container container-fluid': true,
     hidden: !expanded
   });

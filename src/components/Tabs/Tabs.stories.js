@@ -1,5 +1,5 @@
 import React from 'react';
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
@@ -35,7 +35,7 @@ stories.addDecorator(
 );
 
 stories.addWithInfo('Basic Tabs', () => {
-  const bsClass = ClassNames('nav nav-tabs', {
+  const bsClass = classNames('nav nav-tabs', {
     'nav-justified': boolean('Justified', false)
   });
   const t1Disabled = boolean('Tab 1 Disabled', false);
@@ -88,7 +88,7 @@ stories.addWithInfo('Basic Tabs', () => {
 });
 
 stories.addWithInfo('Basic Tabs - PF style', () => {
-  const bsClass = ClassNames('nav nav-tabs nav-tabs-pf', {
+  const bsClass = classNames('nav nav-tabs nav-tabs-pf', {
     'nav-justified': boolean('Justified', false)
   });
   const t1Disabled = boolean('Tab 1 Disabled', false);
@@ -141,7 +141,7 @@ stories.addWithInfo('Basic Tabs - PF style', () => {
 });
 
 stories.addWithInfo('Tabs with Dropdown', () => {
-  const bsClass = ClassNames('nav nav-tabs', {
+  const bsClass = classNames('nav nav-tabs', {
     'nav-justified': boolean('Justified', false)
   });
 
@@ -178,7 +178,7 @@ stories.addWithInfo('Tabs with Dropdown', () => {
 });
 
 stories.addWithInfo('Tabs with Dropdown - PF style', () => {
-  const bsClass = ClassNames('nav nav-tabs nav-tabs-pf', {
+  const bsClass = classNames('nav nav-tabs nav-tabs-pf', {
     'nav-justified': boolean('Justified', false)
   });
 
@@ -215,7 +215,7 @@ stories.addWithInfo('Tabs with Dropdown - PF style', () => {
 });
 
 stories.addWithInfo('Secondary Tabs', () => {
-  const bsClass = ClassNames('nav nav-tabs nav-tabs-pf nav-tabs-pf-secondary', {
+  const bsClass = classNames('nav nav-tabs nav-tabs-pf nav-tabs-pf-secondary', {
     'nav-justified': boolean('Secondary Tabs Justified', false)
   });
 

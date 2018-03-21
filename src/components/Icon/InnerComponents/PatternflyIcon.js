@@ -1,11 +1,11 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const PatternflyIcon = ({ name, className, ...props }) => (
   <span
     aria-hidden="true"
-    className={cx('pficon', `pficon-${name}`, className)}
+    className={classNames('pficon', `pficon-${name}`, className)}
     {...props}
   />
 );

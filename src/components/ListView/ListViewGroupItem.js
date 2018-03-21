@@ -1,4 +1,4 @@
-import cx from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -12,7 +12,7 @@ const ListViewGroupItem = ({
   expanded,
   ...rest
 }) => {
-  const classes = cx(
+  const classes = classNames(
     'list-group-item',
     {
       'list-view-pf-expand-active': expanded,

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 import { Table } from './index';
 /**
  * TablePfProvider component for Patternfly React
@@ -22,7 +22,7 @@ const TablePfProvider = ({
     { header: { cell: headerCell }, body: { cell: tableCell } },
     components
   );
-  const classes = cx(
+  const classes = classNames(
     {
       table: true,
       dataTable,

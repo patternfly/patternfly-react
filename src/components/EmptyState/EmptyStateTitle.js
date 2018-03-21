@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * EmptyStateTitle renders contents of the element
  */
 const EmptyStateTitle = ({ children, className, ...props }) => {
-  const classes = ClassNames('h1', 'blank-slate-pf-title', className);
+  const classes = classNames('h1', 'blank-slate-pf-title', className);
   return (
     <h4 className={classes} {...props}>
       {children}
