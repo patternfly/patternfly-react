@@ -2,15 +2,15 @@
 
 exports[`Utilization Card Details Description is working properly 1`] = `
 <span
-  className="card-pf-utilization-card-details-description"
+  class="card-pf-utilization-card-details-description"
 >
   <span
-    className="card-pf-utilization-card-details-line-1"
+    class="card-pf-utilization-card-details-line-1"
   >
     Available
   </span>
   <span
-    className="card-pf-utilization-card-details-line-2"
+    class="card-pf-utilization-card-details-line-2"
   >
     of 1300 Gbps
   </span>
@@ -20,12 +20,12 @@ exports[`Utilization Card Details Description is working properly 1`] = `
 exports[`Utilization Card Details Line1,2 is working properly 1`] = `
 <div>
   <span
-    className="card-pf-utilization-card-details-line-1"
+    class="card-pf-utilization-card-details-line-1"
   >
     Available
   </span>
   <span
-    className="card-pf-utilization-card-details-line-2"
+    class="card-pf-utilization-card-details-line-2"
   >
     of 1300 Gbps
   </span>
@@ -34,23 +34,23 @@ exports[`Utilization Card Details Line1,2 is working properly 1`] = `
 
 exports[`Utilization Card Details is working properly 1`] = `
 <p
-  className="card-pf-utilization-details"
+  class="card-pf-utilization-details"
 >
   <span
-    className="card-pf-utilization-card-details-count"
+    class="card-pf-utilization-card-details-count"
   >
     200
   </span>
   <span
-    className="card-pf-utilization-card-details-description"
+    class="card-pf-utilization-card-details-description"
   >
     <span
-      className="card-pf-utilization-card-details-line-1"
+      class="card-pf-utilization-card-details-line-1"
     >
       Available
     </span>
     <span
-      className="card-pf-utilization-card-details-line-2"
+      class="card-pf-utilization-card-details-line-2"
     >
       of 1300 Gbps
     </span>
@@ -60,10 +60,10 @@ exports[`Utilization Card Details is working properly 1`] = `
 
 exports[`Utilization Card is working properly 1`] = `
 <div
-  className="card-pf card-pf-utilization"
+  class="card-pf card-pf-utilization"
 >
   <h2
-    className="card-pf-title"
+    class="card-pf-title"
   >
     Card Title
   </h2>

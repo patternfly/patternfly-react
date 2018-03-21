@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import { Row, Col } from 'react-bootstrap';
 import { Button } from '../Button';
 import { Wizard } from './index';
@@ -16,7 +16,7 @@ import {
 } from './__mocks__/mockWizardRenderers';
 
 test('Wizard loading renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Row>
       <Col sm={12}>
         <Wizard>
@@ -42,8 +42,7 @@ test('Wizard loading renders properly', () => {
     </Row>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Wizard embedded renders properly', () => {
@@ -54,7 +53,7 @@ test('Wizard embedded renders properly', () => {
   const onNextButtonClick = jest.fn();
   const onBackButtonClick = jest.fn();
 
-  const component = renderer.create(
+  const component = mount(
     <Wizard embedded>
       <Wizard.Header title="Wizard Title" />
       <Wizard.Body>
@@ -94,6 +93,5 @@ test('Wizard embedded renders properly', () => {
     </Wizard>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });

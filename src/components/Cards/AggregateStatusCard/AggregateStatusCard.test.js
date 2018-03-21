@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import { Icon } from '../../Icon';
 import {
   AggregateStatusCount,
@@ -8,16 +8,15 @@ import {
 } from './index';
 
 test('Aggregate Status Card Count is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <AggregateStatusCount> 9 </AggregateStatusCount>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Aggregate Status Notification is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <AggregateStatusNotification>
       {' '}
       <a
@@ -32,15 +31,13 @@ test('Aggregate Status Notification is working properly', () => {
     </AggregateStatusNotification>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Aggregate Status Notifications is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <AggregateStatusNotifications>Card Content</AggregateStatusNotifications>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });

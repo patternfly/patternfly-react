@@ -2,104 +2,101 @@
 
 exports[`Wizard embedded renders properly 1`] = `
 <div
-  className=""
+  class=""
 >
   <h2
-    className=""
+    class=""
   >
     Wizard Title
   </h2>
   <div
-    className="wizard-pf-body"
+    class="wizard-pf-body"
   >
     <div
-      className="wizard-pf-steps"
+      class="wizard-pf-steps"
     >
       <ul
-        className="wizard-pf-steps-indicator"
+        class="wizard-pf-steps-indicator"
       >
         <li
-          className="wizard-pf-step active"
+          class="wizard-pf-step active"
         >
           <a
             href="#"
-            onClick={[Function]}
           >
             <span
-              className="wizard-pf-step-number"
+              class="wizard-pf-step-number"
             >
               1
             </span>
             <span
-              className="wizard-pf-step-title"
+              class="wizard-pf-step-title"
             >
               First Step
             </span>
             <span
-              className="wizard-pf-step-title-substep active"
+              class="wizard-pf-step-title-substep active"
             >
               Details
             </span>
             <span
-              className="wizard-pf-step-title-substep"
+              class="wizard-pf-step-title-substep"
             >
               Settings
             </span>
           </a>
         </li>
         <li
-          className="wizard-pf-step"
+          class="wizard-pf-step"
         >
           <a
             href="#"
-            onClick={[Function]}
           >
             <span
-              className="wizard-pf-step-number"
+              class="wizard-pf-step-number"
             >
               2
             </span>
             <span
-              className="wizard-pf-step-title"
+              class="wizard-pf-step-title"
             >
               Second Step
             </span>
             <span
-              className="wizard-pf-step-title-substep"
+              class="wizard-pf-step-title-substep"
             >
               Details
             </span>
             <span
-              className="wizard-pf-step-title-substep"
+              class="wizard-pf-step-title-substep"
             >
               Settings
             </span>
           </a>
         </li>
         <li
-          className="wizard-pf-step"
+          class="wizard-pf-step"
         >
           <a
             href="#"
-            onClick={[Function]}
           >
             <span
-              className="wizard-pf-step-number"
+              class="wizard-pf-step-number"
             >
               3
             </span>
             <span
-              className="wizard-pf-step-title"
+              class="wizard-pf-step-title"
             >
               Review
             </span>
             <span
-              className="wizard-pf-step-title-substep"
+              class="wizard-pf-step-title-substep"
             >
               Summary
             </span>
             <span
-              className="wizard-pf-step-title-substep"
+              class="wizard-pf-step-title-substep"
             >
               Progress
             </span>
@@ -108,47 +105,45 @@ exports[`Wizard embedded renders properly 1`] = `
       </ul>
     </div>
     <section
-      className="wizard-pf-row"
+      class="wizard-pf-row"
     >
       <div
-        className="wizard-pf-sidebar"
+        class="wizard-pf-sidebar"
       >
         <ul
-          className="list-group"
+          class="list-group"
         >
           <li
-            className="active list-group-item"
+            class="active list-group-item"
           >
             <a
               href="#"
-              onClick={[Function]}
             >
               <span
-                className="wizard-pf-substep-number"
+                class="wizard-pf-substep-number"
               >
                 1A.
               </span>
               <span
-                className="wizard-pf-substep-title"
+                class="wizard-pf-substep-title"
               >
                 Details
               </span>
             </a>
           </li>
           <li
-            className="list-group-item"
+            class="list-group-item"
           >
             <a
               href="#"
-              onClick={[Function]}
             >
               <span
-                className="wizard-pf-substep-number"
+                class="wizard-pf-substep-number"
               >
                 1B.
               </span>
               <span
-                className="wizard-pf-substep-title"
+                class="wizard-pf-substep-title"
               >
                 Settings
               </span>
@@ -156,41 +151,39 @@ exports[`Wizard embedded renders properly 1`] = `
           </li>
         </ul>
         <ul
-          className="hidden list-group"
+          class="hidden list-group"
         >
           <li
-            className="list-group-item"
+            class="list-group-item"
           >
             <a
               href="#"
-              onClick={[Function]}
             >
               <span
-                className="wizard-pf-substep-number"
+                class="wizard-pf-substep-number"
               >
                 2A.
               </span>
               <span
-                className="wizard-pf-substep-title"
+                class="wizard-pf-substep-title"
               >
                 Details
               </span>
             </a>
           </li>
           <li
-            className="list-group-item"
+            class="list-group-item"
           >
             <a
               href="#"
-              onClick={[Function]}
             >
               <span
-                className="wizard-pf-substep-number"
+                class="wizard-pf-substep-number"
               >
                 2B.
               </span>
               <span
-                className="wizard-pf-substep-title"
+                class="wizard-pf-substep-title"
               >
                 Settings
               </span>
@@ -198,41 +191,39 @@ exports[`Wizard embedded renders properly 1`] = `
           </li>
         </ul>
         <ul
-          className="hidden list-group"
+          class="hidden list-group"
         >
           <li
-            className="list-group-item"
+            class="list-group-item"
           >
             <a
               href="#"
-              onClick={[Function]}
             >
               <span
-                className="wizard-pf-substep-number"
+                class="wizard-pf-substep-number"
               >
                 3A.
               </span>
               <span
-                className="wizard-pf-substep-title"
+                class="wizard-pf-substep-title"
               >
                 Summary
               </span>
             </a>
           </li>
           <li
-            className="list-group-item"
+            class="list-group-item"
           >
             <a
               href="#"
-              onClick={[Function]}
             >
               <span
-                className="wizard-pf-substep-number"
+                class="wizard-pf-substep-number"
               >
                 4A.
               </span>
               <span
-                className="wizard-pf-substep-title"
+                class="wizard-pf-substep-title"
               >
                 Progress
               </span>
@@ -241,44 +232,44 @@ exports[`Wizard embedded renders properly 1`] = `
         </ul>
       </div>
       <div
-        className="wizard-pf-main"
+        class="wizard-pf-main"
       >
         <div
-          className="wizard-pf-contents"
+          class="wizard-pf-contents"
         >
           <form
-            className="form-horizontal"
+            class="form-horizontal"
           >
             <div
-              className="form-group required"
+              class="form-group required"
             >
               <label
-                className="col-sm-2 control-label"
+                class="col-sm-2 control-label"
               >
                 Name
               </label>
               <div
-                className="col-sm-10"
+                class="col-sm-10"
               >
                 <input
-                  className="form-control"
+                  class="form-control"
                   type="text"
                 />
               </div>
             </div>
             <div
-              className="form-group"
+              class="form-group"
             >
               <label
-                className="col-sm-2 control-label"
+                class="col-sm-2 control-label"
               >
                 Description
               </label>
               <div
-                className="col-sm-10"
+                class="col-sm-10"
               >
                 <textarea
-                  className="form-control"
+                  class="form-control"
                   rows="2"
                 />
               </div>
@@ -286,41 +277,41 @@ exports[`Wizard embedded renders properly 1`] = `
           </form>
         </div>
         <div
-          className="wizard-pf-contents hidden"
+          class="wizard-pf-contents hidden"
         >
           <form
-            className="form-horizontal"
+            class="form-horizontal"
           >
             <div
-              className="form-group required"
+              class="form-group required"
             >
               <label
-                className="col-sm-2 control-label"
+                class="col-sm-2 control-label"
               >
                 Lorem ipsum
               </label>
               <div
-                className="col-sm-10"
+                class="col-sm-10"
               >
                 <input
-                  className="form-control"
+                  class="form-control"
                   type="text"
                 />
               </div>
             </div>
             <div
-              className="form-group"
+              class="form-group"
             >
               <label
-                className="col-sm-2 control-label"
+                class="col-sm-2 control-label"
               >
                 Dolor
               </label>
               <div
-                className="col-sm-10"
+                class="col-sm-10"
               >
                 <textarea
-                  className="form-control"
+                  class="form-control"
                   rows="2"
                 />
               </div>
@@ -328,41 +319,41 @@ exports[`Wizard embedded renders properly 1`] = `
           </form>
         </div>
         <div
-          className="wizard-pf-contents hidden"
+          class="wizard-pf-contents hidden"
         >
           <form
-            className="form-horizontal"
+            class="form-horizontal"
           >
             <div
-              className="form-group required"
+              class="form-group required"
             >
               <label
-                className="col-sm-2 control-label"
+                class="col-sm-2 control-label"
               >
                 Aliquam
               </label>
               <div
-                className="col-sm-10"
+                class="col-sm-10"
               >
                 <input
-                  className="form-control"
+                  class="form-control"
                   type="text"
                 />
               </div>
             </div>
             <div
-              className="form-group"
+              class="form-group"
             >
               <label
-                className="col-sm-2 control-label"
+                class="col-sm-2 control-label"
               >
                 Fermentum
               </label>
               <div
-                className="col-sm-10"
+                class="col-sm-10"
               >
                 <textarea
-                  className="form-control"
+                  class="form-control"
                   rows="2"
                 />
               </div>
@@ -370,41 +361,41 @@ exports[`Wizard embedded renders properly 1`] = `
           </form>
         </div>
         <div
-          className="wizard-pf-contents hidden"
+          class="wizard-pf-contents hidden"
         >
           <form
-            className="form-horizontal"
+            class="form-horizontal"
           >
             <div
-              className="form-group required"
+              class="form-group required"
             >
               <label
-                className="col-sm-2 control-label"
+                class="col-sm-2 control-label"
               >
                 Consectetur
               </label>
               <div
-                className="col-sm-10"
+                class="col-sm-10"
               >
                 <input
-                  className="form-control"
+                  class="form-control"
                   type="text"
                 />
               </div>
             </div>
             <div
-              className="form-group"
+              class="form-group"
             >
               <label
-                className="col-sm-2 control-label"
+                class="col-sm-2 control-label"
               >
                 Adipiscing
               </label>
               <div
-                className="col-sm-10"
+                class="col-sm-10"
               >
                 <textarea
-                  className="form-control"
+                  class="form-control"
                   rows="2"
                 />
               </div>
@@ -412,78 +403,74 @@ exports[`Wizard embedded renders properly 1`] = `
           </form>
         </div>
         <div
-          className="wizard-pf-contents hidden"
+          class="wizard-pf-contents hidden"
         >
           <div
-            className="wizard-pf-review-steps"
+            class="wizard-pf-review-steps"
           >
             <ul
-              className="list-group"
+              class="list-group"
             >
               <li
-                className="list-group-item"
+                class="list-group-item"
               >
                 <a
-                  className=""
+                  class=""
                   href="#"
-                  onClick={[Function]}
                 >
                   First Step
                 </a>
                 <div
-                  className="wizard-pf-review-substeps"
+                  class="wizard-pf-review-substeps"
                 >
                   <ul
-                    className="list-group"
+                    class="list-group"
                   >
                     <li
-                      className="list-group-item"
+                      class="list-group-item"
                     >
                       <a
-                        className=""
+                        class=""
                         href="#"
-                        onClick={[Function]}
                       >
                         <span
-                          className="wizard-pf-substep-number"
+                          class="wizard-pf-substep-number"
                         >
                           1A.
                         </span>
                         <span
-                          className="wizard-pf-substep-title"
+                          class="wizard-pf-substep-title"
                         >
                           Details
                         </span>
                       </a>
                       <div
-                        className="wizard-pf-review-content"
+                        class="wizard-pf-review-content"
                       >
                         <div
-                          className="wizard-pf-review-item"
+                          class="wizard-pf-review-item"
                         >
                           <span
-                            className="wizard-pf-review-item-label"
+                            class="wizard-pf-review-item-label"
                           >
-                            Name
-                            :
+                            Name:
                           </span>
                           <span
-                            className="wizard-pf-review-item-value"
+                            class="wizard-pf-review-item-value"
                           >
                             Brian Johnson
                           </span>
                         </div>
                         <div
-                          className="wizard-pf-review-item"
+                          class="wizard-pf-review-item"
                         >
                           <span
-                            className="wizard-pf-review-item-label"
+                            class="wizard-pf-review-item-label"
                           >
-                            Description
-                            :
+                            Description:
                           </span>
                           <span
-                            className="wizard-pf-review-item-value"
+                            class="wizard-pf-review-item-value"
                           >
                             This is the description.
                           </span>
@@ -491,53 +478,50 @@ exports[`Wizard embedded renders properly 1`] = `
                       </div>
                     </li>
                     <li
-                      className="list-group-item"
+                      class="list-group-item"
                     >
                       <a
-                        className=""
+                        class=""
                         href="#"
-                        onClick={[Function]}
                       >
                         <span
-                          className="wizard-pf-substep-number"
+                          class="wizard-pf-substep-number"
                         >
                           1B.
                         </span>
                         <span
-                          className="wizard-pf-substep-title"
+                          class="wizard-pf-substep-title"
                         >
                           Settings
                         </span>
                       </a>
                       <div
-                        className="wizard-pf-review-content"
+                        class="wizard-pf-review-content"
                       >
                         <div
-                          className="wizard-pf-review-item"
+                          class="wizard-pf-review-item"
                         >
                           <span
-                            className="wizard-pf-review-item-label"
+                            class="wizard-pf-review-item-label"
                           >
-                            Lorem ipsum
-                            :
+                            Lorem ipsum:
                           </span>
                           <span
-                            className="wizard-pf-review-item-value"
+                            class="wizard-pf-review-item-value"
                           >
                             Brian Johnson
                           </span>
                         </div>
                         <div
-                          className="wizard-pf-review-item"
+                          class="wizard-pf-review-item"
                         >
                           <span
-                            className="wizard-pf-review-item-label"
+                            class="wizard-pf-review-item-label"
                           >
-                            Dolor
-                            :
+                            Dolor:
                           </span>
                           <span
-                            className="wizard-pf-review-item-value"
+                            class="wizard-pf-review-item-value"
                           >
                             This is the description.
                           </span>
@@ -548,69 +532,65 @@ exports[`Wizard embedded renders properly 1`] = `
                 </div>
               </li>
               <li
-                className="list-group-item"
+                class="list-group-item"
               >
                 <a
-                  className=""
+                  class=""
                   href="#"
-                  onClick={[Function]}
                 >
                   Second Step
                 </a>
                 <div
-                  className="wizard-pf-review-substeps"
+                  class="wizard-pf-review-substeps"
                 >
                   <ul
-                    className="list-group"
+                    class="list-group"
                   >
                     <li
-                      className="list-group-item"
+                      class="list-group-item"
                     >
                       <a
-                        className=""
+                        class=""
                         href="#"
-                        onClick={[Function]}
                       >
                         <span
-                          className="wizard-pf-substep-number"
+                          class="wizard-pf-substep-number"
                         >
                           2A.
                         </span>
                         <span
-                          className="wizard-pf-substep-title"
+                          class="wizard-pf-substep-title"
                         >
                           Details
                         </span>
                       </a>
                       <div
-                        className="wizard-pf-review-content"
+                        class="wizard-pf-review-content"
                       >
                         <div
-                          className="wizard-pf-review-item"
+                          class="wizard-pf-review-item"
                         >
                           <span
-                            className="wizard-pf-review-item-label"
+                            class="wizard-pf-review-item-label"
                           >
-                            Aliquam
-                            :
+                            Aliquam:
                           </span>
                           <span
-                            className="wizard-pf-review-item-value"
+                            class="wizard-pf-review-item-value"
                           >
                             Brian Johnson
                           </span>
                         </div>
                         <div
-                          className="wizard-pf-review-item"
+                          class="wizard-pf-review-item"
                         >
                           <span
-                            className="wizard-pf-review-item-label"
+                            class="wizard-pf-review-item-label"
                           >
-                            Fermentum
-                            :
+                            Fermentum:
                           </span>
                           <span
-                            className="wizard-pf-review-item-value"
+                            class="wizard-pf-review-item-value"
                           >
                             This is the description.
                           </span>
@@ -618,53 +598,50 @@ exports[`Wizard embedded renders properly 1`] = `
                       </div>
                     </li>
                     <li
-                      className="list-group-item"
+                      class="list-group-item"
                     >
                       <a
-                        className=""
+                        class=""
                         href="#"
-                        onClick={[Function]}
                       >
                         <span
-                          className="wizard-pf-substep-number"
+                          class="wizard-pf-substep-number"
                         >
                           2B.
                         </span>
                         <span
-                          className="wizard-pf-substep-title"
+                          class="wizard-pf-substep-title"
                         >
                           Settings
                         </span>
                       </a>
                       <div
-                        className="wizard-pf-review-content"
+                        class="wizard-pf-review-content"
                       >
                         <div
-                          className="wizard-pf-review-item"
+                          class="wizard-pf-review-item"
                         >
                           <span
-                            className="wizard-pf-review-item-label"
+                            class="wizard-pf-review-item-label"
                           >
-                            Consectetur
-                            :
+                            Consectetur:
                           </span>
                           <span
-                            className="wizard-pf-review-item-value"
+                            class="wizard-pf-review-item-value"
                           >
                             Brian Johnson
                           </span>
                         </div>
                         <div
-                          className="wizard-pf-review-item"
+                          class="wizard-pf-review-item"
                         >
                           <span
-                            className="wizard-pf-review-item-label"
+                            class="wizard-pf-review-item-label"
                           >
-                            Adipiscing
-                            :
+                            Adipiscing:
                           </span>
                           <span
-                            className="wizard-pf-review-item-value"
+                            class="wizard-pf-review-item-value"
                           >
                             This is the description.
                           </span>
@@ -678,24 +655,23 @@ exports[`Wizard embedded renders properly 1`] = `
           </div>
         </div>
         <div
-          className="wizard-pf-contents hidden"
+          class="wizard-pf-contents hidden"
         >
           <div
-            className="wizard-pf-process blank-slate-pf"
+            class="wizard-pf-process blank-slate-pf"
           >
             <div
-              className="spinner spinner-lg blank-slate-pf-icon"
+              class="spinner spinner-lg blank-slate-pf-icon"
             />
             <h3
-              className="blank-slate-pf-main-action"
+              class="blank-slate-pf-main-action"
             >
               Deployment in progress
             </h3>
             <p
-              className="blank-slate-pf-secondary-action"
+              class="blank-slate-pf-secondary-action"
             >
-              Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi vivamus, lorem sociosqu eget nunc amet.
-               
+              Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi vivamus, lorem sociosqu eget nunc amet. 
             </p>
           </div>
         </div>
@@ -703,35 +679,30 @@ exports[`Wizard embedded renders properly 1`] = `
     </section>
   </div>
   <div
-    className="wizard-pf-footer"
+    class="wizard-pf-footer"
   >
     <button
-      className="btn-cancel btn btn-default"
-      disabled={false}
+      class="btn-cancel btn btn-default"
       type="button"
     >
       Cancel
     </button>
     <button
-      className="btn btn-default"
-      disabled={false}
-      onClick={[MockFunction]}
+      class="btn btn-default"
       type="button"
     >
       <span
-        className="i fa fa-angle-left"
+        class="i fa fa-angle-left"
       />
       Back
     </button>
     <button
-      className="btn btn-primary"
-      disabled={false}
-      onClick={[MockFunction]}
+      class="btn btn-primary"
       type="button"
     >
       Next
       <span
-        className="i fa fa-angle-right"
+        class="i fa fa-angle-right"
       />
     </button>
   </div>
@@ -740,81 +711,79 @@ exports[`Wizard embedded renders properly 1`] = `
 
 exports[`Wizard loading renders properly 1`] = `
 <div
-  className="row"
+  class="row"
 >
   <div
-    className="col-sm-12"
+    class="col-sm-12"
   >
     <div
-      className=""
+      class=""
     >
       <div
-        className="wizard-pf-header"
+        class="wizard-pf-header"
       >
         <h4
-          className="wizard-pf-title"
+          class="wizard-pf-title"
         >
           Wizard Title
         </h4>
       </div>
       <div
-        className="wizard-pf-body"
+        class="wizard-pf-body"
       >
         <section
-          className="wizard-pf-row"
+          class="wizard-pf-row"
         >
           <div
-            className="wizard-pf-main"
+            class="wizard-pf-main"
           >
             <div
-              className="blank-slate-pf"
+              class="blank-slate-pf"
             >
               <div
-                className="spinner spinner-lg blank-slate-pf-icon"
+                class="spinner spinner-lg blank-slate-pf-icon"
               />
               <h3
-                className="blank-slate-pf-main-action"
+                class="blank-slate-pf-main-action"
               >
                 Loading Wizard
               </h3>
               <p
-                className="blank-slate-pf-secondary-action"
+                class="blank-slate-pf-secondary-action"
               >
-                Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi vivamus, lorem sociosqu eget nunc amet.
-                 
+                Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi vivamus, lorem sociosqu eget nunc amet. 
               </p>
             </div>
           </div>
         </section>
       </div>
       <div
-        className="wizard-pf-footer"
+        class="wizard-pf-footer"
       >
         <button
-          className="btn-cancel btn btn-default"
-          disabled={false}
+          class="btn-cancel btn btn-default"
           type="button"
         >
           Cancel
         </button>
         <button
-          className="btn btn-default"
-          disabled={true}
+          class="btn btn-default"
+          disabled=""
           type="button"
         >
           <span
-            className="i fa fa-angle-left"
+            class="i fa fa-angle-left"
           />
           Back
         </button>
         <button
-          className="btn btn-primary"
-          disabled={true}
+          class="btn btn-primary"
+          disabled=""
           type="button"
         >
           Next
           <span
-            className="i fa fa-angle-right"
+            class="i fa fa-angle-right"
           />
         </button>
       </div>

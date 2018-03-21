@@ -86,7 +86,6 @@
     "react": "^16.2.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
-    "react-test-renderer": "^16.2.0",
     "sass-loader": "^6.0.6",
     "semantic-release": "^12.2.0",
     "style-loader": "^0.19.1",

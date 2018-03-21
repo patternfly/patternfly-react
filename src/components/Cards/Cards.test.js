@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import { MenuItem } from '../MenuItem';
 import {
   Card,
@@ -13,55 +13,49 @@ import {
 } from './index';
 
 test('Card is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Card accented aggregatedMini>
       Card Content
     </Card>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Card Title is working properly', () => {
-  const component = renderer.create(<CardTitle>Card Title</CardTitle>);
+  const component = mount(<CardTitle>Card Title</CardTitle>);
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Card Footer is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <CardFooter>This is a Card Footer</CardFooter>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Card Grid is working properly', () => {
-  const component = renderer.create(<CardGrid>Grid Content</CardGrid>);
+  const component = mount(<CardGrid>Grid Content</CardGrid>);
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Card Header is working properly', () => {
-  const component = renderer.create(<CardHeading>Card Content</CardHeading>);
+  const component = mount(<CardHeading>Card Content</CardHeading>);
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Card Body is working properly', () => {
-  const component = renderer.create(<CardBody>This is a Card Body</CardBody>);
+  const component = mount(<CardBody>This is a Card Body</CardBody>);
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Card Link is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <CardLink
       disabled
       href="https://github.com/patternfly/patternfly-react/pull/203"
@@ -70,12 +64,11 @@ test('Card Link is working properly', () => {
     </CardLink>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Card Drop Down Button is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <CardDropdownButton
       id="cardDropdownButton1"
       title="Last 30 Days"
@@ -87,6 +80,5 @@ test('Card Drop Down Button is working properly', () => {
     </CardDropdownButton>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });

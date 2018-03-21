@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import {
   UtilizationCard,
   UtilizationCardDetails,
@@ -12,17 +12,16 @@ import {
 import { CardTitle } from '../index';
 
 test('Utilization Card is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <UtilizationCard>
       <CardTitle>Card Title</CardTitle>
     </UtilizationCard>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 test('Utilization Card Details is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <UtilizationCardDetails>
       <UtilizationCardDetailsCount>200</UtilizationCardDetailsCount>
       <UtilizationCardDetailsDesc>
@@ -32,28 +31,25 @@ test('Utilization Card Details is working properly', () => {
     </UtilizationCardDetails>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 test('Utilization Card Details Description is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <UtilizationCardDetailsDesc>
       <UtilizationCardDetailsLine1>Available</UtilizationCardDetailsLine1>
       <UtilizationCardDetailsLine2>of 1300 Gbps</UtilizationCardDetailsLine2>
     </UtilizationCardDetailsDesc>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 test('Utilization Card Details Line1,2 is working properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <div>
       <UtilizationCardDetailsLine1>Available</UtilizationCardDetailsLine1>
       <UtilizationCardDetailsLine2>of 1300 Gbps</UtilizationCardDetailsLine2>
     </div>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });

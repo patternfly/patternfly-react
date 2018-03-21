@@ -2,20 +2,19 @@
 
 exports[`Label renders properly 1`] = `
 <span
-  className="label label-default"
+  class="label label-default"
 >
   Some text
   <a
-    className="pf-remove-button"
+    class="pf-remove-button"
     href="#"
-    onClick={[Function]}
   >
     <span
       aria-hidden="true"
-      className="pficon pficon-close"
+      class="pficon pficon-close"
     />
     <span
-      className="sr-only"
+      class="sr-only"
     >
       Remove
     </span>
