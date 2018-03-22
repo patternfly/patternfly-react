@@ -12,6 +12,14 @@ import {
   AggregateStatusNotifications,
   AggregateStatusNotification
 } from './AggregateStatusCard';
+import {
+  UtilizationCard,
+  UtilizationCardDetails,
+  UtilizationCardDetailsCount,
+  UtilizationCardDetailsDesc,
+  UtilizationCardDetailsLine1,
+  UtilizationCardDetailsLine2
+} from './UtilizationTrendCard';
 
 import { default as Row } from '../Grid/Row';
 import { default as Col } from '../Grid/Col';
@@ -40,5 +48,11 @@ export {
   CardHeightMatching,
   AggregateStatusCount,
   AggregateStatusNotifications,
-  AggregateStatusNotification
+  AggregateStatusNotification,
+  UtilizationCard,
+  UtilizationCardDetails,
+  UtilizationCardDetailsCount,
+  UtilizationCardDetailsDesc,
+  UtilizationCardDetailsLine1,
+  UtilizationCardDetailsLine2
 };
