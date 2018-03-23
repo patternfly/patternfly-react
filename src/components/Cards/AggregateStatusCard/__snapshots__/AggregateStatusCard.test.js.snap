@@ -2,7 +2,7 @@
 
 exports[`Aggregate Status Card Count is working properly 1`] = `
 <span
-  className="card-pf-aggregate-status-count"
+  class="card-pf-aggregate-status-count"
 >
    9 
 </span>
@@ -10,11 +10,11 @@ exports[`Aggregate Status Card Count is working properly 1`] = `
 
 exports[`Aggregate Status Notification is working properly 1`] = `
 <span
-  className="card-pf-aggregate-status-notification"
+  class="card-pf-aggregate-status-notification"
 >
    
   <a
-    className="add"
+    class="add"
     data-placement="top"
     data-toggle="tooltip"
     href="#"
@@ -22,7 +22,7 @@ exports[`Aggregate Status Notification is working properly 1`] = `
   >
     <span
       aria-hidden="true"
-      className="pficon pficon-add-circle-o"
+      class="pficon pficon-add-circle-o"
     />
   </a>
    
@@ -31,7 +31,7 @@ exports[`Aggregate Status Notification is working properly 1`] = `
 
 exports[`Aggregate Status Notifications is working properly 1`] = `
 <p
-  className="card-pf-aggregate-status-notifications"
+  class="card-pf-aggregate-status-notifications"
 >
   Card Content
 </p>

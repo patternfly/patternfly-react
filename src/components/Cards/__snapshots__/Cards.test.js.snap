@@ -2,7 +2,7 @@
 
 exports[`Card Body is working properly 1`] = `
 <div
-  className="card-pf-body"
+  class="card-pf-body"
 >
   This is a Card Body
 </div>
@@ -10,41 +10,34 @@ exports[`Card Body is working properly 1`] = `
 
 exports[`Card Drop Down Button is working properly 1`] = `
 <div
-  className="card-pf-time-frame-filter dropdown  "
+  class="card-pf-time-frame-filter dropdown  "
 >
   <button
-    aria-expanded={false}
-    aria-haspopup={true}
-    className="dropdown-toggle btn btn-default"
-    disabled={false}
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="dropdown-toggle btn btn-default"
     id="cardDropdownButton1"
-    onClick={[Function]}
-    onKeyDown={[Function]}
     role="button"
     type="button"
   >
-    Last 30 Days
-     
+    Last 30 Days 
     <span
-      className="caret"
+      class="caret"
     />
   </button>
   <ul
     aria-labelledby="cardDropdownButton1"
-    className="dropdown-menu dropdown-menu-right"
+    class="dropdown-menu dropdown-menu-right"
     role="menu"
   >
     <li
-      className="active"
+      class="active"
       role="presentation"
-      style={undefined}
     >
       <a
         href="#"
-        onClick={[Function]}
-        onKeyDown={[Function]}
         role="menuitem"
-        tabIndex="-1"
+        tabindex="-1"
       >
         Last 30 Days
       </a>
@@ -55,7 +48,7 @@ exports[`Card Drop Down Button is working properly 1`] = `
 
 exports[`Card Footer is working properly 1`] = `
 <div
-  className="card-pf-footer"
+  class="card-pf-footer"
 >
   This is a Card Footer
 </div>
@@ -63,7 +56,7 @@ exports[`Card Footer is working properly 1`] = `
 
 exports[`Card Grid is working properly 1`] = `
 <div
-  className="container-cards-pf container"
+  class="container-cards-pf container"
 >
   Grid Content
 </div>
@@ -71,7 +64,7 @@ exports[`Card Grid is working properly 1`] = `
 
 exports[`Card Header is working properly 1`] = `
 <div
-  className="card-pf-heading"
+  class="card-pf-heading"
 >
   Card Content
 </div>
@@ -80,7 +73,7 @@ exports[`Card Header is working properly 1`] = `
 exports[`Card Link is working properly 1`] = `
 <p>
   <a
-    className="disabled"
+    class="disabled"
     href="https://github.com/patternfly/patternfly-react/pull/203"
   >
     Card Content
@@ -90,7 +83,7 @@ exports[`Card Link is working properly 1`] = `
 
 exports[`Card Title is working properly 1`] = `
 <h2
-  className="card-pf-title"
+  class="card-pf-title"
 >
   Card Title
 </h2>
@@ -98,7 +91,7 @@ exports[`Card Title is working properly 1`] = `
 
 exports[`Card is working properly 1`] = `
 <div
-  className="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini"
+  class="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini"
 >
   Card Content
 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 
 import {
   Button,
@@ -12,7 +12,7 @@ import {
 } from '../../index';
 
 test('Inline Form renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Form inline>
       <Form.FormGroup controlId="email" placeholder="Email">
         <Form.FormControl type="email" placeholder="Email" />
@@ -24,12 +24,11 @@ test('Inline Form renders properly', () => {
     </Form>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Horizontal Form renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Form horizontal>
       <Form.FormGroup controlId="name">
         <Grid.Col componentClass={Form.ControlLabel} sm={3}>
@@ -94,12 +93,11 @@ test('Horizontal Form renders properly', () => {
     </Form>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Vertical Form renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Form>
       <Grid.Row>
         <Grid.Col>
@@ -148,12 +146,11 @@ test('Vertical Form renders properly', () => {
     </Form>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Modal Form renders properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Modal>
       <Modal.Header>
         <Button className="close" aria-hidden="true" aria-label="Close">
@@ -222,12 +219,11 @@ test('Modal Form renders properly', () => {
     </Modal>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Supported controls render properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Form>
       <Form.FormGroup controlId="text">
         <Form.ControlLabel>Text</Form.ControlLabel>
@@ -296,12 +292,11 @@ test('Supported controls render properly', () => {
     </Form>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });
 
 test('Input Groups render properly', () => {
-  const component = renderer.create(
+  const component = mount(
     <Form>
       <Grid.Row>
         <Grid.Col>
@@ -373,6 +368,5 @@ test('Input Groups render properly', () => {
     </Form>
   );
 
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(component.render()).toMatchSnapshot();
 });

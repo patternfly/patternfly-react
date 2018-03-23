@@ -1,87 +1,9 @@
-/* eslint-env jest */
-
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mount } from 'enzyme';
 import { InfoTip } from './index';
 import { ListGroup, ListGroupItem } from '../ListGroup';
 
-test('InfoTip renders properly with item children', () => {
-  const component = renderer.create(
-    <InfoTip id="infotip-widget">
-      <InfoTip.Toggle>Messages: 2</InfoTip.Toggle>
-      <InfoTip.Menu>
-        <ListGroup>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon type="pf" name="info" /> Added Datasources
-            TestDS
-          </ListGroupItem>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon type="pf" name="info" /> Modified Datasources
-            ExampleDS
-          </ListGroupItem>
-        </ListGroup>
-        <InfoTip.MenuFooter>
-          <a href="#">Clear Messages</a>
-        </InfoTip.MenuFooter>
-      </InfoTip.Menu>
-    </InfoTip>
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('InfoTip renders properly with a default MenuItemIcon', () => {
-  const component = renderer.create(
-    <InfoTip id="infotip-widget">
-      <InfoTip.Toggle>Messages: 2</InfoTip.Toggle>
-      <InfoTip.Menu>
-        <ListGroup>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon /> Added Datasources TestDS
-          </ListGroupItem>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon /> Modified Datasources ExampleDS
-          </ListGroupItem>
-        </ListGroup>
-        <InfoTip.MenuFooter>
-          <a href="#">Clear Messages</a>
-        </InfoTip.MenuFooter>
-      </InfoTip.Menu>
-    </InfoTip>
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-test('InfoTip renders properly with another MenuItemIcon', () => {
-  const component = renderer.create(
-    <InfoTip id="infotip-widget">
-      <InfoTip.Toggle bsRole="toggle">Messages: 2</InfoTip.Toggle>
-      <InfoTip.Menu bsRole="menu">
-        <ListGroup>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon type="pf" name="cube" /> Added Datasources
-            TestDS
-          </ListGroupItem>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon type="pf" name="check" /> Modified Datasources
-            ExampleDS
-          </ListGroupItem>
-        </ListGroup>
-        <InfoTip.MenuFooter>
-          <a href="#">Clear Messages</a>
-        </InfoTip.MenuFooter>
-      </InfoTip.Menu>
-    </InfoTip>
-  );
-
-  const tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
-});
-
-const component = renderer.create(
+const testInfoTip = () => (
   <InfoTip id="infotip-widget">
     <InfoTip.Toggle>Messages: 2</InfoTip.Toggle>
     <InfoTip.Menu>
@@ -102,29 +24,108 @@ const component = renderer.create(
   </InfoTip>
 );
 
+test('InfoTip renders properly with item children', () => {
+  const component = mount(
+    <InfoTip id="infotip-widget">
+      <InfoTip.Toggle>Messages: 2</InfoTip.Toggle>
+      <InfoTip.Menu>
+        <ListGroup>
+          <ListGroupItem>
+            <InfoTip.MenuItemIcon type="pf" name="info" /> Added Datasources
+            TestDS
+          </ListGroupItem>
+          <ListGroupItem>
+            <InfoTip.MenuItemIcon type="pf" name="info" /> Modified Datasources
+            ExampleDS
+          </ListGroupItem>
+        </ListGroup>
+        <InfoTip.MenuFooter>
+          <a href="#">Clear Messages</a>
+        </InfoTip.MenuFooter>
+      </InfoTip.Menu>
+    </InfoTip>
+  );
+
+  expect(component.render()).toMatchSnapshot();
+});
+
+test('InfoTip renders properly with a default MenuItemIcon', () => {
+  const component = mount(
+    <InfoTip id="infotip-widget">
+      <InfoTip.Toggle>Messages: 2</InfoTip.Toggle>
+      <InfoTip.Menu>
+        <ListGroup>
+          <ListGroupItem>
+            <InfoTip.MenuItemIcon /> Added Datasources TestDS
+          </ListGroupItem>
+          <ListGroupItem>
+            <InfoTip.MenuItemIcon /> Modified Datasources ExampleDS
+          </ListGroupItem>
+        </ListGroup>
+        <InfoTip.MenuFooter>
+          <a href="#">Clear Messages</a>
+        </InfoTip.MenuFooter>
+      </InfoTip.Menu>
+    </InfoTip>
+  );
+
+  expect(component.render()).toMatchSnapshot();
+});
+
+test('InfoTip renders properly with another MenuItemIcon', () => {
+  const component = mount(
+    <InfoTip id="infotip-widget">
+      <InfoTip.Toggle bsRole="toggle">Messages: 2</InfoTip.Toggle>
+      <InfoTip.Menu bsRole="menu">
+        <ListGroup>
+          <ListGroupItem>
+            <InfoTip.MenuItemIcon type="pf" name="cube" /> Added Datasources
+            TestDS
+          </ListGroupItem>
+          <ListGroupItem>
+            <InfoTip.MenuItemIcon type="pf" name="check" /> Modified Datasources
+            ExampleDS
+          </ListGroupItem>
+        </ListGroup>
+        <InfoTip.MenuFooter>
+          <a href="#">Clear Messages</a>
+        </InfoTip.MenuFooter>
+      </InfoTip.Menu>
+    </InfoTip>
+  );
+
+  expect(component.render()).toMatchSnapshot();
+});
+
 test('InfoTip is a instance', () => {
-  const instance = component.getInstance();
-  expect(instance).toBeTruthy();
+  const component = mount(testInfoTip());
+
+  expect(component.instance()).toBeTruthy();
 });
 
 test('InfoTip handleEnterKeyDown', () => {
-  const instance = component.getInstance();
+  const component = mount(testInfoTip());
   const event = {
     preventDefault() {},
     key: 'Enter',
     keyCode: 13,
     which: 13
   };
-  expect(instance.state.wasEnabled).toBeFalsy();
-  expect(instance.state.open).toBeFalsy();
-  instance.handleEnterKeyDown(event);
-  expect(instance.state.open).toBeTruthy();
-  instance.handleEnterKeyDown(event);
-  expect(instance.state.open).toBeFalsy();
+
+  expect(component.state('wasEnabled')).toBeFalsy();
+  expect(component.state('open')).toBeFalsy();
+
+  component.simulate('keyDown', event);
+
+  expect(component.state('open')).toBeTruthy();
+
+  component.simulate('keyDown', event);
+
+  expect(component.state('open')).toBeFalsy();
 });
 
 test('InfoTip handleTabKeyDown', () => {
-  const instance = component.getInstance();
+  const component = mount(testInfoTip());
   const event = {
     stopPropagation() {},
     nativeEvent: {
@@ -134,57 +135,64 @@ test('InfoTip handleTabKeyDown', () => {
     keyCode: 9,
     which: 9
   };
-  expect(instance.state.footerFocused).toBeFalsy();
+
+  expect(component.state('footerFocused')).toBeFalsy();
+
   // Should focus the Footer
-  instance.handleTabKeyDown(event);
-  expect(instance.state.footerFocused).toBeTruthy();
-  instance.state.open = true;
+  component.simulate('keyDown', event);
+
+  expect(component.state('footerFocused')).toBeTruthy();
+
+  component.setState({ open: true });
   // Should close the menu
-  instance.handleTabKeyDown(event);
-  expect(instance.state.footerFocused).toBeFalsy();
-  expect(instance.state.open).toBeFalsy();
+  component.simulate('keyDown', event);
+
+  expect(component.state('footerFocused')).toBeFalsy();
+  expect(component.state('open')).toBeFalsy();
 });
 
 test('InfoTip handleClick', () => {
-  const instance = component.getInstance();
-  const event = {
-    preventDefault() {}
-  };
-  instance.state.open = false;
+  const component = mount(testInfoTip());
+
+  expect(component.state.open).toBeFalsy();
 
   // Should open the menu
-  instance.handleClick(event);
-  expect(instance.state.open).toBeTruthy();
+  component.find('a#infotip-widget').simulate('click');
+
+  expect(component.state('open')).toBeTruthy();
 
   // Should close the menu
-  instance.handleClick(event);
-  expect(instance.state.open).toBeFalsy();
+  component.find('a#infotip-widget').simulate('click');
+
+  expect(component.state('open')).toBeFalsy();
 });
 
 test('InfoTip handleBackFocus', () => {
-  const instance = component.getInstance();
-  instance.state.open = true;
+  const component = mount(testInfoTip());
+  component.setState({ open: true });
 
   // Should close the menu
-  instance.handleBackFocus();
-  expect(instance.state.open).toBeFalsy();
+  component.instance().handleBackFocus();
+  expect(component.state('open')).toBeFalsy();
 
   // Should do nothing if the menus is not open
-  instance.handleBackFocus();
-  expect(instance.state.open).toBeFalsy();
+  component.instance().handleBackFocus();
+  expect(component.state('open')).toBeFalsy();
 });
 
 test('InfoTip handleKeyDown', () => {
-  const instance = component.getInstance();
+  const component = mount(testInfoTip());
   const eventEnterKey = {
     preventDefault() {},
     key: 'Enter',
     keyCode: 13,
     which: 13
   };
-  instance.state.open = true;
-  instance.handleKeyDown(eventEnterKey);
-  expect(instance.state.open).toBeFalsy();
+
+  component.setState({ open: true });
+  component.simulate('keyDown', eventEnterKey);
+
+  expect(component.state('open')).toBeFalsy();
 
   const eventTabKey = {
     stopPropagation() {},
@@ -195,12 +203,15 @@ test('InfoTip handleKeyDown', () => {
     keyCode: 9,
     which: 9
   };
-  instance.state.footerFocused = false;
-  instance.handleKeyDown(eventTabKey);
-  expect(instance.state.footerFocused).toBeTruthy();
-  instance.handleKeyDown(eventTabKey);
-  expect(instance.state.open).toBeFalsy();
-  expect(instance.state.footerFocused).toBeFalsy();
+  component.setState({ footerFocused: false });
+  component.simulate('keyDown', eventTabKey);
+
+  expect(component.state('footerFocused')).toBeTruthy();
+
+  component.simulate('keyDown', eventTabKey);
+
+  expect(component.state('open')).toBeFalsy();
+  expect(component.state('footerFocused')).toBeFalsy();
 
   const eventEscKey = {
     stopPropagation() {},
@@ -211,7 +222,8 @@ test('InfoTip handleKeyDown', () => {
     keyCode: 27,
     which: 27
   };
-  instance.state.open = true;
-  instance.handleKeyDown(eventEscKey);
-  expect(instance.state.open).toBeFalsy();
+  component.setState({ open: true });
+  component.simulate('keyDown', eventEscKey);
+
+  expect(component.state('open')).toBeFalsy();
 });

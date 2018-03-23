@@ -2,133 +2,132 @@
 
 exports[`Horizontal Form renders properly 1`] = `
 <form
-  className="form-horizontal"
+  class="form-horizontal"
 >
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="col-sm-3 control-label"
-      htmlFor="name"
+      class="col-sm-3 control-label"
+      for="name"
     >
       Name
     </label>
     <div
-      className="col-sm-9"
+      class="col-sm-9"
     >
       <input
-        className="form-control"
+        class="form-control"
         id="name"
         type="text"
       />
       <span
-        className="help-block"
+        class="help-block"
       >
         Enter your name
       </span>
     </div>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="col-sm-3 control-label"
-      htmlFor="address"
+      class="col-sm-3 control-label"
+      for="address"
     >
       Address
     </label>
     <div
-      className="col-sm-9"
+      class="col-sm-9"
     >
       <input
-        className="form-control"
-        disabled={true}
+        class="form-control"
+        disabled=""
         id="address"
         type="address"
       />
       <span
-        className="help-block"
+        class="help-block"
       >
         Enter your address
       </span>
     </div>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="col-sm-3 control-label"
-      htmlFor="city"
+      class="col-sm-3 control-label"
+      for="city"
     >
       City
     </label>
     <div
-      className="col-sm-9"
+      class="col-sm-9"
     >
       <input
-        className="form-control"
-        disabled={true}
+        class="form-control"
+        disabled=""
         id="city"
         type="text"
       />
       <span
-        className="help-block"
+        class="help-block"
       >
         Enter your city
       </span>
     </div>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="col-sm-3 control-label"
-      htmlFor="email"
+      class="col-sm-3 control-label"
+      for="email"
     >
       Email
     </label>
     <div
-      className="col-sm-9"
+      class="col-sm-9"
     >
       <input
-        className="form-control"
-        disabled={true}
+        class="form-control"
+        disabled=""
         id="email"
         type="email"
       />
       <span
-        className="help-block"
+        class="help-block"
       >
         Enter a valid email address
       </span>
     </div>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="col-sm-3 control-label"
-      htmlFor="url"
+      class="col-sm-3 control-label"
+      for="url"
     >
       My meeting URL
     </label>
     <div
-      className="col-sm-9"
+      class="col-sm-9"
     >
       <span
-        className="input-group"
+        class="input-group"
       >
         <input
-          className="form-control"
+          class="form-control"
           id="url"
           type="url"
         />
         <span
-          className="input-group-btn"
+          class="input-group-btn"
         >
           <button
-            className="btn btn-default"
-            disabled={false}
+            class="btn btn-default"
             type="button"
           >
             Copy URL
@@ -136,28 +135,22 @@ exports[`Horizontal Form renders properly 1`] = `
         </span>
       </span>
       <span
-        className="help-block"
+        class="help-block"
       >
         Enter a valid URL
       </span>
     </div>
   </div>
   <div
-    className="row"
-    style={
-      Object {
-        "paddingBottom": "10px",
-        "paddingTop": "10px",
-      }
-    }
+    class="row"
+    style="padding-top: 10px; padding-bottom: 10px;"
   >
     <div
-      className="col-sm-9 col-sm-offset-3"
+      class="col-sm-9 col-sm-offset-3"
     >
       <span>
         <button
-          className="btn btn-primary"
-          disabled={false}
+          class="btn btn-primary"
           type="button"
         >
           Save
@@ -165,8 +158,7 @@ exports[`Horizontal Form renders properly 1`] = `
       </span>
       <span>
         <button
-          className="btn btn-default"
-          disabled={false}
+          class="btn btn-default"
           type="button"
         >
           Cancel
@@ -179,33 +171,32 @@ exports[`Horizontal Form renders properly 1`] = `
 
 exports[`Inline Form renders properly 1`] = `
 <form
-  className="form-inline"
+  class="form-inline"
 >
   <div
-    className="form-group"
+    class="form-group"
     placeholder="Email"
   >
     <input
-      className="form-control"
+      class="form-control"
       id="email"
       placeholder="Email"
       type="email"
     />
   </div>
   <div
-    className="form-group"
+    class="form-group"
     placeholder="Password"
   >
     <input
-      className="form-control"
+      class="form-control"
       id="password"
       placeholder="Password"
       type="password"
     />
   </div>
   <button
-    className="btn btn-primary"
-    disabled={false}
+    class="btn btn-primary"
     type="button"
   >
     Log In
@@ -215,165 +206,157 @@ exports[`Inline Form renders properly 1`] = `
 
 exports[`Input Groups render properly 1`] = `
 <form
-  className=""
+  class=""
 >
   <div
-    className="row"
+    class="row"
   >
     <div
-      className=""
+      class=""
     >
       <div
-        className="form-group"
+        class="form-group"
       >
         <span
-          className="input-group"
+          class="input-group"
         >
           <span
-            className="input-group-addon"
+            class="input-group-addon"
           >
             @
           </span>
           <input
-            className="form-control"
+            class="form-control"
             id="control-1"
             type="text"
           />
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <span
-          className="input-group"
+          class="input-group"
         >
           <input
-            className="form-control"
+            class="form-control"
             id="control-2"
             type="text"
           />
           <span
-            className="input-group-addon"
+            class="input-group-addon"
           >
             .00
           </span>
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <span
-          className="input-group"
+          class="input-group"
         >
           <span
-            className="input-group-addon"
+            class="input-group-addon"
           >
             $
           </span>
           <input
-            className="form-control"
+            class="form-control"
             id="control-3"
             type="text"
           />
           <span
-            className="input-group-addon"
+            class="input-group-addon"
           >
             .00
           </span>
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <span
-          className="input-group"
+          class="input-group"
         >
           <input
-            className="form-control"
+            class="form-control"
             id="control-4"
             type="text"
           />
           <span
-            className="input-group-addon"
+            class="input-group-addon"
           >
             <span
-              aria-hidden={true}
-              className="fa fa-music"
+              aria-hidden="true"
+              class="fa fa-music"
             />
           </span>
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <span
-          className="input-group"
+          class="input-group"
         >
           <span
-            className="input-group-btn"
+            class="input-group-btn"
           >
             <button
-              className="btn btn-default"
-              disabled={false}
+              class="btn btn-default"
               type="button"
             >
               Before
             </button>
           </span>
           <input
-            className="form-control"
+            class="form-control"
             id="control-5"
             type="text"
           />
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <span
-          className="input-group"
+          class="input-group"
         >
           <input
-            className="form-control"
+            class="form-control"
             id="control-6"
             type="text"
           />
           <span
-            className="dropdown input-group-btn"
+            class="dropdown input-group-btn"
           >
             <button
-              aria-expanded={false}
-              aria-haspopup={true}
-              className="dropdown-toggle btn btn-default"
-              disabled={false}
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="dropdown-toggle btn btn-default"
               id="input-dropdown-addon"
-              onClick={[Function]}
-              onKeyDown={[Function]}
               role="button"
               type="button"
             >
-              Action
-               
+              Action 
               <span
-                className="caret"
+                class="caret"
               />
             </button>
             <ul
               aria-labelledby="input-dropdown-addon"
-              className="dropdown-menu"
+              class="dropdown-menu"
               role="menu"
             >
               <li
-                className=""
+                class=""
                 role="presentation"
-                style={undefined}
               >
                 <a
                   href="#"
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
                   role="menuitem"
-                  tabIndex="-1"
+                  tabindex="-1"
                 >
                   Item
                 </a>
@@ -383,40 +366,42 @@ exports[`Input Groups render properly 1`] = `
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <span
-          className="input-group"
+          class="input-group"
         >
           <span
-            className="input-group-addon"
+            class="input-group-addon"
           >
             <input
               type="radio"
+              value="on"
             />
           </span>
           <input
-            className="form-control"
+            class="form-control"
             id="control-7"
             type="text"
           />
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <span
-          className="input-group"
+          class="input-group"
         >
           <span
-            className="input-group-addon"
+            class="input-group-addon"
           >
             <input
               type="checkbox"
+              value="on"
             />
           </span>
           <input
-            className="form-control"
+            class="form-control"
             id="control-8"
             type="text"
           />
@@ -431,285 +416,276 @@ exports[`Modal Form renders properly 1`] = `null`;
 
 exports[`Supported controls render properly 1`] = `
 <form
-  className=""
+  class=""
 >
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="text"
+      class="control-label"
+      for="text"
     >
       Text
     </label>
     <input
-      className="form-control"
+      class="form-control"
       id="text"
       type="text"
     />
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="email"
+      class="control-label"
+      for="email"
     >
       Email
     </label>
     <input
-      className="form-control"
+      class="form-control"
       id="email"
       type="email"
     />
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="password"
+      class="control-label"
+      for="password"
     >
       Password
     </label>
     <input
-      className="form-control"
+      class="form-control"
       id="password"
       type="password"
     />
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="file"
+      class="control-label"
+      for="file"
     >
       File
     </label>
     <input
-      className=""
+      class=""
       id="file"
       type="file"
     />
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="checkbox"
+      class="control-label"
+      for="checkbox"
     >
       Checkbox
     </label>
     <div
-      className="checkbox"
-      style={undefined}
+      class="checkbox"
     >
       <label
         title=""
       >
         <input
-          disabled={false}
           type="checkbox"
+          value="on"
         />
         Checkbox
       </label>
     </div>
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="radio"
+      class="control-label"
+      for="radio"
     >
       Radio
     </label>
     <div
-      className="radio"
-      style={undefined}
+      class="radio"
     >
       <label
         title=""
       >
         <input
-          disabled={false}
           type="radio"
+          value="on"
         />
         Radio
       </label>
     </div>
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="checkboxGroup"
+      class="control-label"
+      for="checkboxGroup"
     >
       Checkbox Group
     </label>
     <div>
       <label
-        className="checkbox-inline"
-        style={undefined}
+        class="checkbox-inline"
         title=""
       >
         <input
-          disabled={false}
           type="checkbox"
+          value="on"
         />
         1
       </label>
       <label
-        className="checkbox-inline"
-        style={undefined}
+        class="checkbox-inline"
         title=""
       >
         <input
-          disabled={false}
           type="checkbox"
+          value="on"
         />
         2
       </label>
       <label
-        className="checkbox-inline"
-        style={undefined}
+        class="checkbox-inline"
         title=""
       >
         <input
-          disabled={false}
           type="checkbox"
+          value="on"
         />
         3
       </label>
     </div>
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="radioGroup"
+      class="control-label"
+      for="radioGroup"
     >
       Radio Group
     </label>
     <div>
       <label
-        className="radio-inline"
-        style={undefined}
+        class="radio-inline"
         title=""
       >
         <input
-          disabled={false}
           name="radioGroup"
           type="radio"
+          value="on"
         />
         1
       </label>
       <label
-        className="radio-inline"
-        style={undefined}
+        class="radio-inline"
         title=""
       >
         <input
-          disabled={false}
           name="radioGroup"
           type="radio"
+          value="on"
         />
         2
       </label>
       <label
-        className="radio-inline"
-        style={undefined}
+        class="radio-inline"
         title=""
       >
         <input
-          disabled={false}
           name="radioGroup"
           type="radio"
+          value="on"
         />
         3
       </label>
     </div>
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="textarea"
+      class="control-label"
+      for="textarea"
     >
       Textarea
     </label>
     <textarea
-      className="form-control"
+      class="form-control"
       id="textarea"
-      type={undefined}
     />
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
   </div>
   <div
-    className="form-group"
+    class="form-group"
   >
     <label
-      className="control-label"
-      htmlFor="static"
+      class="control-label"
+      for="static"
     >
       Static
     </label>
     <p
-      className="form-control-static"
+      class="form-control-static"
     >
       email@example.com
     </p>
     <span
-      className="help-block"
+      class="help-block"
     >
       Help text
     </span>
@@ -719,117 +695,116 @@ exports[`Supported controls render properly 1`] = `
 
 exports[`Vertical Form renders properly 1`] = `
 <form
-  className=""
+  class=""
 >
   <div
-    className="row"
+    class="row"
   >
     <div
-      className=""
+      class=""
     >
       <div
-        className="form-group"
+        class="form-group"
       >
         <label
-          className="control-label"
-          htmlFor="name"
+          class="control-label"
+          for="name"
         >
           Name
         </label>
         <input
-          className="form-control"
+          class="form-control"
           id="name"
           type="text"
         />
         <span
-          className="help-block"
+          class="help-block"
         >
           Enter your name
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <label
-          className="control-label"
-          htmlFor="address"
+          class="control-label"
+          for="address"
         >
           Address
         </label>
         <input
-          className="form-control"
+          class="form-control"
           id="address"
           type="address"
         />
         <span
-          className="help-block"
+          class="help-block"
         >
           Enter your address
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <label
-          className="control-label"
-          htmlFor="city"
+          class="control-label"
+          for="city"
         >
           City
         </label>
         <input
-          className="form-control"
+          class="form-control"
           id="city"
           type="text"
         />
         <span
-          className="help-block"
+          class="help-block"
         >
           Enter your city
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <label
-          className="control-label"
-          htmlFor="email"
+          class="control-label"
+          for="email"
         >
           Email
         </label>
         <input
-          className="form-control"
+          class="form-control"
           id="email"
           type="email"
         />
         <span
-          className="help-block"
+          class="help-block"
         >
           Enter a valid email address
         </span>
       </div>
       <div
-        className="form-group"
+        class="form-group"
       >
         <label
-          className="control-label"
-          htmlFor="url"
+          class="control-label"
+          for="url"
         >
           My meeting URL
         </label>
         <span
-          className="input-group"
+          class="input-group"
         >
           <input
-            className="form-control"
+            class="form-control"
             id="url"
             type="url"
           />
           <span
-            className="input-group-btn"
+            class="input-group-btn"
           >
             <button
-              className="btn btn-default"
-              disabled={false}
+              class="btn btn-default"
               type="button"
             >
               Copy URL
@@ -837,7 +812,7 @@ exports[`Vertical Form renders properly 1`] = `
           </span>
         </span>
         <span
-          className="help-block"
+          class="help-block"
         >
           Enter a valid URL
         </span>
@@ -845,21 +820,15 @@ exports[`Vertical Form renders properly 1`] = `
     </div>
   </div>
   <div
-    className="row"
-    style={
-      Object {
-        "paddingBottom": "10px",
-        "paddingTop": "10px",
-      }
-    }
+    class="row"
+    style="padding-top: 10px; padding-bottom: 10px;"
   >
     <div
-      className=""
+      class=""
     >
       <span>
         <button
-          className="btn btn-primary"
-          disabled={false}
+          class="btn btn-primary"
           type="button"
         >
           Save
@@ -867,8 +836,7 @@ exports[`Vertical Form renders properly 1`] = `
       </span>
       <span>
         <button
-          className="btn btn-default"
-          disabled={false}
+          class="btn btn-default"
           type="button"
         >
           Cancel

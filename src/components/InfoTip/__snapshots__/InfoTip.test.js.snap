@@ -2,66 +2,50 @@
 
 exports[`InfoTip renders properly with a default MenuItemIcon 1`] = `
 <li
-  className="dropdown"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onKeyDown={[Function]}
+  class="dropdown"
 >
   <a
-    aria-expanded={false}
-    className=""
-    disabled={undefined}
+    aria-expanded="false"
+    class=""
     href="#"
     id="infotip-widget"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    role={undefined}
   >
     <span
       aria-hidden="true"
-      className="pficon pficon-info"
+      class="pficon pficon-info"
     />
-     
-    Messages: 2
+     Messages: 2
   </a>
   <div
-    className="dropdown-menu infotip bottom-right"
-    onClose={[Function]}
-    onSelect={[Function]}
-    open={false}
-    style={
-      Object {
-        "padding": "",
-      }
-    }
+    class="dropdown-menu infotip bottom-right"
   >
     <div
-      className="arrow"
+      class="arrow"
     />
     <ul
-      className="list-group"
+      class="list-group"
     >
       <li
-        className="list-group-item"
+        class="list-group-item"
       >
         <span
           aria-hidden="true"
-          className="pficon pficon-info i"
+          class="pficon pficon-info i"
         />
          Added Datasources TestDS
       </li>
       <li
-        className="list-group-item"
+        class="list-group-item"
       >
         <span
           aria-hidden="true"
-          className="pficon pficon-info i"
+          class="pficon pficon-info i"
         />
          Modified Datasources ExampleDS
       </li>
     </ul>
     <div
-      className="footer"
+      class="footer"
     >
       <a
         href="#"
@@ -75,66 +59,50 @@ exports[`InfoTip renders properly with a default MenuItemIcon 1`] = `
 
 exports[`InfoTip renders properly with another MenuItemIcon 1`] = `
 <li
-  className="dropdown"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onKeyDown={[Function]}
+  class="dropdown"
 >
   <a
-    aria-expanded={false}
-    className=""
-    disabled={undefined}
+    aria-expanded="false"
+    class=""
     href="#"
     id="infotip-widget"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    role={undefined}
   >
     <span
       aria-hidden="true"
-      className="pficon pficon-info"
+      class="pficon pficon-info"
     />
-     
-    Messages: 2
+     Messages: 2
   </a>
   <div
-    className="dropdown-menu infotip bottom-right"
-    onClose={[Function]}
-    onSelect={[Function]}
-    open={false}
-    style={
-      Object {
-        "padding": "",
-      }
-    }
+    class="dropdown-menu infotip bottom-right"
   >
     <div
-      className="arrow"
+      class="arrow"
     />
     <ul
-      className="list-group"
+      class="list-group"
     >
       <li
-        className="list-group-item"
+        class="list-group-item"
       >
         <span
           aria-hidden="true"
-          className="pficon pficon-cube i"
+          class="pficon pficon-cube i"
         />
          Added Datasources TestDS
       </li>
       <li
-        className="list-group-item"
+        class="list-group-item"
       >
         <span
           aria-hidden="true"
-          className="pficon pficon-check i"
+          class="pficon pficon-check i"
         />
          Modified Datasources ExampleDS
       </li>
     </ul>
     <div
-      className="footer"
+      class="footer"
     >
       <a
         href="#"
@@ -148,66 +116,50 @@ exports[`InfoTip renders properly with another MenuItemIcon 1`] = `
 
 exports[`InfoTip renders properly with item children 1`] = `
 <li
-  className="dropdown"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onKeyDown={[Function]}
+  class="dropdown"
 >
   <a
-    aria-expanded={false}
-    className=""
-    disabled={undefined}
+    aria-expanded="false"
+    class=""
     href="#"
     id="infotip-widget"
-    onClick={[Function]}
-    onKeyDown={[Function]}
-    role={undefined}
   >
     <span
       aria-hidden="true"
-      className="pficon pficon-info"
+      class="pficon pficon-info"
     />
-     
-    Messages: 2
+     Messages: 2
   </a>
   <div
-    className="dropdown-menu infotip bottom-right"
-    onClose={[Function]}
-    onSelect={[Function]}
-    open={false}
-    style={
-      Object {
-        "padding": "",
-      }
-    }
+    class="dropdown-menu infotip bottom-right"
   >
     <div
-      className="arrow"
+      class="arrow"
     />
     <ul
-      className="list-group"
+      class="list-group"
     >
       <li
-        className="list-group-item"
+        class="list-group-item"
       >
         <span
           aria-hidden="true"
-          className="pficon pficon-info i"
+          class="pficon pficon-info i"
         />
          Added Datasources TestDS
       </li>
       <li
-        className="list-group-item"
+        class="list-group-item"
       >
         <span
           aria-hidden="true"
-          className="pficon pficon-info i"
+          class="pficon pficon-info i"
         />
          Modified Datasources ExampleDS
       </li>
     </ul>
     <div
-      className="footer"
+      class="footer"
     >
       <a
         href="#"
