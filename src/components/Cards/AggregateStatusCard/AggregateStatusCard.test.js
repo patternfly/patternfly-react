@@ -8,9 +8,7 @@ import {
 } from './index';
 
 test('Aggregate Status Card Count is working properly', () => {
-  const component = mount(
-    <AggregateStatusCount> 9 </AggregateStatusCount>
-  );
+  const component = mount(<AggregateStatusCount> 9 </AggregateStatusCount>);
 
   expect(component.render()).toMatchSnapshot();
 });

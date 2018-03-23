@@ -29,9 +29,7 @@ test('Card Title is working properly', () => {
 });
 
 test('Card Footer is working properly', () => {
-  const component = mount(
-    <CardFooter>This is a Card Footer</CardFooter>
-  );
+  const component = mount(<CardFooter>This is a Card Footer</CardFooter>);
 
   expect(component.render()).toMatchSnapshot();
 });

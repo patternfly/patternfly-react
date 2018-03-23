@@ -1,9 +1,9 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const CardHeading = ({ children, className, ...props }) => {
-  const classes = ClassNames('card-pf-heading', className);
+  const classes = classNames('card-pf-heading', className);
 
   return (
     <div className={classes} {...props}>

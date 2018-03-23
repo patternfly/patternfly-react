@@ -1,4 +1,4 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from '../Dropdown';
@@ -12,7 +12,7 @@ const CardDropdownButton = ({
   pullRight,
   ...props
 }) => {
-  const classes = ClassNames('card-pf-time-frame-filter', className);
+  const classes = classNames('card-pf-time-frame-filter', className);
   const CustomButtonGroup = customGroup => (
     <ButtonGroup {...customGroup} bsClass=" " />
   );

@@ -1,9 +1,9 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const CardBody = ({ children, className, ...props }) => {
-  const classes = ClassNames('card-pf-body', className);
+  const classes = classNames('card-pf-body', className);
 
   return (
     <div className={classes} {...props}>

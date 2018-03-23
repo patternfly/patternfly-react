@@ -1,9 +1,9 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const CardFooter = ({ children, className, ...props }) => {
-  const classes = ClassNames('card-pf-footer', className);
+  const classes = classNames('card-pf-footer', className);
 
   return (
     <div className={classes} {...props}>

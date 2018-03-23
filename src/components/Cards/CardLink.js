@@ -1,9 +1,9 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const CardLink = ({ disabled, children, className, icon, ...props }) => {
-  const classes = ClassNames(
+  const classes = classNames(
     {
       'card-pf-link-with-icon': icon,
       disabled

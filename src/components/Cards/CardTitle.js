@@ -1,9 +1,9 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const CardTitle = ({ children, className, ...props }) => {
-  const classes = ClassNames('card-pf-title', className);
+  const classes = classNames('card-pf-title', className);
 
   return (
     <h2 className={classes} {...props}>

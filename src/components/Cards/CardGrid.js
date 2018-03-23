@@ -1,11 +1,11 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import CardHeightMatching from './CardHeightMatching';
 import { Grid } from '../Grid/index';
 
 const CardGrid = ({ matchHeight, children, className, ...props }) => {
-  const classes = ClassNames('container-cards-pf', className);
+  const classes = classNames('container-cards-pf', className);
   const cardSelector = ['.card-pf-match-height'];
 
   if (matchHeight) {
