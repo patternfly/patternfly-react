@@ -4,6 +4,7 @@ import EmptyStateTitle from './EmptyStateTitle';
 import EmptyStateInfo from './EmptyStateInfo';
 import EmptyStateHelp from './EmptyStateHelp';
 import EmptyStateAction from './EmptyStateAction';
+import EmptyStatePattern from './EmptyStatePattern';
 
 EmptyState.Title = EmptyStateTitle;
 EmptyState.Icon = EmptyStateIcon;
@@ -17,5 +18,6 @@ export {
   EmptyStateTitle,
   EmptyStateInfo,
   EmptyStateHelp,
-  EmptyStateAction
+  EmptyStateAction,
+  EmptyStatePattern
 };
