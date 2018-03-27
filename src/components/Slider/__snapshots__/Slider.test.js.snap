@@ -62,6 +62,35 @@ exports[`horizontal slider match snapshot and respond to simulated events 1`] = 
         orientation="horizontal"
         reversed={false}
         showBoundaries={true}
+        slider={
+          <BootstrapSlider
+            dropdownList={
+              Array [
+                "MB",
+                "GB",
+              ]
+            }
+            dropup={true}
+            formatter={[Function]}
+            icon={null}
+            id="slider-pf"
+            input={true}
+            inputFormat="MB"
+            label="Size"
+            labelClass={null}
+            max={100}
+            min={0}
+            onSlide={[Function]}
+            orientation="horizontal"
+            showBoundaries={true}
+            sliderClass={null}
+            step={1}
+            ticks_labels={Array []}
+            toolTip={false}
+            tooltip="show"
+            value={50}
+          />
+        }
         sliderClass={null}
         step={1}
         toolTip={false}

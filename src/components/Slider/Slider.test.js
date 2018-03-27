@@ -1,11 +1,7 @@
 import React from 'react';
-import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import toJSON from 'enzyme-to-json';
+import { mount } from 'enzyme';
 import { Slider } from './index';
 import BootstrapSlider from './BootstrapSlider';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 test('horizontal slider match snapshot and respond to simulated events', () => {
   const props = {
@@ -15,28 +11,26 @@ test('horizontal slider match snapshot and respond to simulated events', () => {
     min: 0,
     max: 100,
     tooltip: 'show',
-    showBoundaries: true,
-    input: true,
     inputFormat: 'MB',
-    dropdownList: ['MB', 'GB'],
-    dropup: true
+    dropdownList: ['MB', 'GB']
   };
-  const wrapper = mount(<Slider {...props} />);
-  expect(toJSON(wrapper)).toMatchSnapshot();
+  const wrapper = mount(<Slider dropup input showBoundaries {...props} />);
+  expect(wrapper).toMatchSnapshot();
 
+  const inputValue = 5;
   wrapper
     .find('.slider-input-pf')
     .at(0)
-    .simulate('change', { target: { value: 5 } });
+    .simulate('change', { target: { value: inputValue } });
 
   const { value } = wrapper.state();
-  expect(value).toEqual(5);
+  expect(value).toEqual(inputValue);
 
-  const innerSlider = mount(<BootstrapSlider {...props} />);
-  const componentWillUpdate = jest.spyOn(
-    innerSlider.instance(),
-    'componentWillUpdate'
+  const BSSlider = mount(<BootstrapSlider {...props} />);
+  const componentWillReceiveProps = jest.spyOn(
+    BSSlider.instance(),
+    'componentWillReceiveProps'
   );
-  innerSlider.setProps({ value: 60 });
-  expect(componentWillUpdate).toHaveBeenCalled();
+  BSSlider.setProps({ value: 60 });
+  expect(componentWillReceiveProps).toHaveBeenCalled();
 });

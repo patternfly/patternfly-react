@@ -62,7 +62,7 @@ class Slider extends React.Component {
       );
     }
 
-    const inputElement = this.props.input ? (
+    const inputElement = this.props.input && (
       <FormControl
         bsClass="slider-input-pf"
         type="number"
@@ -71,19 +71,22 @@ class Slider extends React.Component {
         max={this.props.max}
         onChange={this.onInputChange}
       />
-    ) : null;
+    );
+
+    const BSSlider = (
+      <BootstrapSlider
+        {...this.props}
+        formatter={this.formatter}
+        value={this.state.value}
+        onSlide={this.onSlide}
+      />
+    );
 
     return (
       <div>
         {label}
         <div className={sliderClass}>
-          <Boundaries {...this.props}>
-            <BootstrapSlider
-              {...this.props}
-              formatter={this.formatter}
-              value={this.state.value}
-              onSlide={this.onSlide}
-            />
+          <Boundaries slider={BSSlider} {...this.props}>
             {inputElement}
             {formatElement}
           </Boundaries>
