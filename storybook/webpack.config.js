@@ -1,4 +1,15 @@
 const path = require('path');
+const rootPckg = require('../package.json');
+const {
+  flatten,
+  filterSassIncludes,
+  readPackage,
+  listPackages
+} = require('./helperFunctions');
+
+const folderLocation = '../packages';
+
+const packages = listPackages(folderLocation);
 
 module.exports = {
   module: {
@@ -8,7 +19,7 @@ module.exports = {
         test: /\.css$/,
         loaders: ['style-loader', 'css-loader'],
         include: [
-          path.resolve(__dirname, '../src'),
+          ...packages.map(onePck => `${onePck}/src'`),
           path.resolve(__dirname, './')
         ]
       },
@@ -22,16 +33,13 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               includePaths: [
-                path.resolve(__dirname, '../sass/patternfly-react'),
-                path.resolve(__dirname, '../node_modules/patternfly/dist/sass'),
-                path.resolve(
-                  __dirname,
-                  '../node_modules/patternfly/node_modules/bootstrap-sass/assets/stylesheets'
+                ...flatten(
+                  packages.map(onePkg => [
+                    `${onePkg}/sass`,
+                    ...filterSassIncludes(readPackage(onePkg))
+                  ])
                 ),
-                path.resolve(
-                  __dirname,
-                  '../node_modules/patternfly/node_modules/font-awesome-sass/assets/stylesheets'
-                )
+                ...filterSassIncludes(rootPckg)
               ]
             }
           }
