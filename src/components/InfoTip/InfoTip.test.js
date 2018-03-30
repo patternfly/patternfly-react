@@ -1,229 +1,119 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { InfoTip } from './index';
-import { ListGroup, ListGroupItem } from '../ListGroup';
+import { shallow } from 'enzyme';
+import InfoTip from './InfoTip';
+import { KEY_CODES } from '../../common/helpers';
+import { Dropdown } from '../Dropdown';
 
-const testInfoTip = () => (
-  <InfoTip id="infotip-widget">
-    <InfoTip.Toggle>Messages: 2</InfoTip.Toggle>
-    <InfoTip.Menu>
-      <ListGroup>
-        <ListGroupItem>
-          <InfoTip.MenuItemIcon type="pf" name="info" /> Added Datasources
-          TestDS
-        </ListGroupItem>
-        <ListGroupItem>
-          <InfoTip.MenuItemIcon type="pf" name="info" /> Modified Datasources
-          ExampleDS
-        </ListGroupItem>
-      </ListGroup>
-      <InfoTip.MenuFooter>
-        <a href="#">Clear Messages</a>
-      </InfoTip.MenuFooter>
-    </InfoTip.Menu>
-  </InfoTip>
-);
+const props = {
+  id: 'InfoTip',
+  children: 'children'
+};
 
-test('InfoTip renders properly with item children', () => {
-  const component = mount(
-    <InfoTip id="infotip-widget">
-      <InfoTip.Toggle>Messages: 2</InfoTip.Toggle>
-      <InfoTip.Menu>
-        <ListGroup>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon type="pf" name="info" /> Added Datasources
-            TestDS
-          </ListGroupItem>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon type="pf" name="info" /> Modified Datasources
-            ExampleDS
-          </ListGroupItem>
-        </ListGroup>
-        <InfoTip.MenuFooter>
-          <a href="#">Clear Messages</a>
-        </InfoTip.MenuFooter>
-      </InfoTip.Menu>
-    </InfoTip>
-  );
-
-  expect(component.render()).toMatchSnapshot();
+test('renders Dropdown', () => {
+  const view = shallow(<InfoTip {...props} />);
+  expect(view).toMatchSnapshot('dropdown is rendered');
 });
 
-test('InfoTip renders properly with a default MenuItemIcon', () => {
-  const component = mount(
-    <InfoTip id="infotip-widget">
-      <InfoTip.Toggle>Messages: 2</InfoTip.Toggle>
-      <InfoTip.Menu>
-        <ListGroup>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon /> Added Datasources TestDS
-          </ListGroupItem>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon /> Modified Datasources ExampleDS
-          </ListGroupItem>
-        </ListGroup>
-        <InfoTip.MenuFooter>
-          <a href="#">Clear Messages</a>
-        </InfoTip.MenuFooter>
-      </InfoTip.Menu>
-    </InfoTip>
-  );
-
-  expect(component.render()).toMatchSnapshot();
+test('removes onToggle from passed props', () => {
+  const onToggle = jest.fn();
+  const view = shallow(<InfoTip {...props} onToggle={onToggle} />);
+  expect(getDropdown(view).props().onToggle).not.toBe(onToggle);
 });
 
-test('InfoTip renders properly with another MenuItemIcon', () => {
-  const component = mount(
-    <InfoTip id="infotip-widget">
-      <InfoTip.Toggle bsRole="toggle">Messages: 2</InfoTip.Toggle>
-      <InfoTip.Menu bsRole="menu">
-        <ListGroup>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon type="pf" name="cube" /> Added Datasources
-            TestDS
-          </ListGroupItem>
-          <ListGroupItem>
-            <InfoTip.MenuItemIcon type="pf" name="check" /> Modified Datasources
-            ExampleDS
-          </ListGroupItem>
-        </ListGroup>
-        <InfoTip.MenuFooter>
-          <a href="#">Clear Messages</a>
-        </InfoTip.MenuFooter>
-      </InfoTip.Menu>
-    </InfoTip>
-  );
-
-  expect(component.render()).toMatchSnapshot();
+test('toggles open and closed when keydown is enter', () => {
+  const event = getMockKeyEvent(KEY_CODES.ENTER_KEY);
+  const view = shallow(<InfoTip {...props} />);
+  getDropdown(view).simulate('keydown', event);
+  expect(getDropdown(view).props().open).toBe(true);
+  getDropdown(view).simulate('keydown', event);
+  expect(getDropdown(view).props().open).toBe(false);
+  expect(event.preventDefault).toHaveBeenCalledTimes(2);
 });
 
-test('InfoTip is a instance', () => {
-  const component = mount(testInfoTip());
-
-  expect(component.instance()).toBeTruthy();
+test('tab keydown focuses footer and closes if footer is focused', () => {
+  const tabKeyEvent = getMockKeyEvent(KEY_CODES.TAB_KEY);
+  const enterKeyEvent = getMockKeyEvent(KEY_CODES.ENTER_KEY);
+  const view = shallow(<InfoTip {...props} />);
+  getDropdown(view).simulate('keydown', enterKeyEvent); // open dropdown
+  getDropdown(view).simulate('keydown', tabKeyEvent); // focus footer
+  expect(getDropdown(view).props().open).toBe(true);
+  getDropdown(view).simulate('keydown', tabKeyEvent); // close and unfocus footer
+  expect(getDropdown(view).props().open).toBe(false);
 });
 
-test('InfoTip handleEnterKeyDown', () => {
-  const component = mount(testInfoTip());
-  const event = {
-    preventDefault() {},
-    key: 'Enter',
-    keyCode: 13,
-    which: 13
-  };
-
-  expect(component.state('wasEnabled')).toBeFalsy();
-  expect(component.state('open')).toBeFalsy();
-
-  component.simulate('keyDown', event);
-
-  expect(component.state('open')).toBeTruthy();
-
-  component.simulate('keyDown', event);
-
-  expect(component.state('open')).toBeFalsy();
+test('tab keydown calls stopPropagation and stopImmediatePropagation', () => {
+  const event = getMockKeyEvent(KEY_CODES.TAB_KEY);
+  const view = shallow(<InfoTip {...props} />);
+  getDropdown(view).simulate('keydown', event); // focus footer
+  expect(event.stopPropagation).toBeCalled();
+  expect(event.nativeEvent.stopImmediatePropagation).toBeCalled();
 });
 
-test('InfoTip handleTabKeyDown', () => {
-  const component = mount(testInfoTip());
-  const event = {
-    stopPropagation() {},
+test('closes on escape keydown', () => {
+  const escKeyEvent = getMockKeyEvent(KEY_CODES.ESCAPE_KEY);
+  const enterKeyEvent = getMockKeyEvent(KEY_CODES.ENTER_KEY);
+  const view = shallow(<InfoTip {...props} />);
+  getDropdown(view).simulate('keydown', enterKeyEvent); // open dropdown
+  getDropdown(view).simulate('keydown', escKeyEvent);
+  expect(getDropdown(view).props().open).toBe(false);
+});
+
+test('closes if keydown includes shift key and a keycode', () => {
+  const shiftKeyEvent = getMockKeyEvent(1, true);
+  const view = shallow(<InfoTip {...props} />);
+  getDropdown(view).simulate('keydown', getMockKeyEvent(KEY_CODES.ENTER_KEY)); // open dropdown
+  getDropdown(view).simulate('keydown', shiftKeyEvent);
+  expect(getDropdown(view).props().open).toBe(false);
+  getDropdown(view).simulate('keydown', shiftKeyEvent);
+  expect(getDropdown(view).props().open).toBe(false);
+});
+
+test('does not close if keydown includes shift key and does not have a keycode', () => {
+  const shiftKeyEvent = getMockKeyEvent(null, true);
+  const view = shallow(<InfoTip {...props} />);
+  getDropdown(view).simulate('keydown', getMockKeyEvent(KEY_CODES.ENTER_KEY)); // open dropdown
+  getDropdown(view).simulate('keydown', shiftKeyEvent);
+  expect(getDropdown(view).props().open).toBe(true);
+});
+
+test('onClick toggles Dropdown open', () => {
+  const preventDefault = jest.fn();
+  const view = shallow(<InfoTip {...props} />);
+  getDropdown(view).simulate('click', { preventDefault });
+  expect(getDropdown(view).props().open).toBe(true);
+  getDropdown(view).simulate('click', { preventDefault });
+  expect(getDropdown(view).props().open).toBe(false);
+  expect(preventDefault).toHaveBeenCalledTimes(2);
+});
+
+test('onBlur closes Dropdown', () => {
+  const view = shallow(<InfoTip {...props} />);
+  getDropdown(view).simulate('click', { preventDefault: jest.fn() }); // open dropdown
+  getDropdown(view).simulate('blur');
+  expect(getDropdown(view).props().open).toBe(false);
+});
+
+test(`onBlur clicks related target`, () => {
+  const relatedTargetClick = jest.fn();
+  const view = shallow(<InfoTip {...props} />);
+  getDropdown(view).simulate('blur', {
+    relatedTarget: { click: relatedTargetClick }
+  });
+  expect(relatedTargetClick).toBeCalled();
+});
+
+function getDropdown(view) {
+  return view.find(Dropdown);
+}
+
+function getMockKeyEvent(keyCode, shiftKey = false) {
+  return {
+    keyCode,
+    shiftKey,
+    preventDefault: jest.fn(),
+    stopPropagation: jest.fn(),
     nativeEvent: {
-      stopImmediatePropagation() {}
-    },
-    key: 'Tab',
-    keyCode: 9,
-    which: 9
+      stopImmediatePropagation: jest.fn()
+    }
   };
-
-  expect(component.state('footerFocused')).toBeFalsy();
-
-  // Should focus the Footer
-  component.simulate('keyDown', event);
-
-  expect(component.state('footerFocused')).toBeTruthy();
-
-  component.setState({ open: true });
-  // Should close the menu
-  component.simulate('keyDown', event);
-
-  expect(component.state('footerFocused')).toBeFalsy();
-  expect(component.state('open')).toBeFalsy();
-});
-
-test('InfoTip handleClick', () => {
-  const component = mount(testInfoTip());
-
-  expect(component.state.open).toBeFalsy();
-
-  // Should open the menu
-  component.find('a#infotip-widget').simulate('click');
-
-  expect(component.state('open')).toBeTruthy();
-
-  // Should close the menu
-  component.find('a#infotip-widget').simulate('click');
-
-  expect(component.state('open')).toBeFalsy();
-});
-
-test('InfoTip handleBackFocus', () => {
-  const component = mount(testInfoTip());
-  component.setState({ open: true });
-
-  // Should close the menu
-  component.instance().handleBackFocus();
-  expect(component.state('open')).toBeFalsy();
-
-  // Should do nothing if the menus is not open
-  component.instance().handleBackFocus();
-  expect(component.state('open')).toBeFalsy();
-});
-
-test('InfoTip handleKeyDown', () => {
-  const component = mount(testInfoTip());
-  const eventEnterKey = {
-    preventDefault() {},
-    key: 'Enter',
-    keyCode: 13,
-    which: 13
-  };
-
-  component.setState({ open: true });
-  component.simulate('keyDown', eventEnterKey);
-
-  expect(component.state('open')).toBeFalsy();
-
-  const eventTabKey = {
-    stopPropagation() {},
-    nativeEvent: {
-      stopImmediatePropagation() {}
-    },
-    key: 'Tab',
-    keyCode: 9,
-    which: 9
-  };
-  component.setState({ footerFocused: false });
-  component.simulate('keyDown', eventTabKey);
-
-  expect(component.state('footerFocused')).toBeTruthy();
-
-  component.simulate('keyDown', eventTabKey);
-
-  expect(component.state('open')).toBeFalsy();
-  expect(component.state('footerFocused')).toBeFalsy();
-
-  const eventEscKey = {
-    stopPropagation() {},
-    nativeEvent: {
-      stopImmediatePropagation() {}
-    },
-    key: 'Escape',
-    keyCode: 27,
-    which: 27
-  };
-  component.setState({ open: true });
-  component.simulate('keyDown', eventEscKey);
-
-  expect(component.state('open')).toBeFalsy();
-});
+}

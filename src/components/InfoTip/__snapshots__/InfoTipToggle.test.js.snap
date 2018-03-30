@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`defaults props: props are defaulted to expected values 1`] = `
+<a
+  aria-expanded={false}
+  className=""
+  href="#"
+>
+  <Icon
+    name="info"
+    type="pf"
+  />
+   
+</a>
+`;

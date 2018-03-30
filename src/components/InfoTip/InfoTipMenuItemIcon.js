@@ -3,17 +3,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Icon } from '../Icon';
 
-const InfoTipMenuItemIcon = ({ type, name, className, ...props }) => {
+const InfoTipMenuItemIcon = ({ className, ...props }) => {
   const infoTipMenuItemIconClass = classNames('i', className);
 
-  return (
-    <Icon
-      type={type}
-      name={name}
-      className={infoTipMenuItemIconClass}
-      {...props}
-    />
-  );
+  return <Icon className={infoTipMenuItemIconClass} {...props} />;
 };
 
 InfoTipMenuItemIcon.propTypes = {
