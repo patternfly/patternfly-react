@@ -5,10 +5,10 @@ import './sass/base.scss';
 
 setAddon(infoAddon);
 
-const req = require.context('../src', true, /.stories.js$/);
+const req = require.context('../src', true, /\.stories\.js$/);
 
 function loadStories() {
-  req.keys().forEach(filename => req(filename));
+  req.keys().forEach(req);
 }
 
 setOptions({
