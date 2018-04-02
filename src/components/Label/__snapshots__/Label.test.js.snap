@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`spreads additional props to Bootstrap Label: Bootstrap label has correct props. 1`] = `
+Object {
+  "another": "another",
+  "bsClass": "label",
+  "bsStyle": "default",
+  "children": Array [
+    null,
+    false,
+  ],
+  "id": "id",
+}
+`;

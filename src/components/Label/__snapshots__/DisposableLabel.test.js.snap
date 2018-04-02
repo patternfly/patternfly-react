@@ -1,23 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Label renders properly 1`] = `
-<span
-  class="label label-default"
->
-  Some text
-  <a
-    class="pf-remove-button"
-    href="#"
-  >
-    <span
-      aria-hidden="true"
-      class="pficon pficon-close"
-    />
-    <span
-      class="sr-only"
-    >
-      Remove
-    </span>
-  </a>
-</span>
+exports[`defaults props 1`] = `
+<Label
+  onRemoveClick={[Function]}
+  type="default"
+/>
 `;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`spreads additional props and className to icon: Icon has correct props. 1`] = `
+<a
+  className="pf-remove-button"
+  href="#"
+  onClick={[Function]}
+>
+  <span
+    another="another"
+    aria-hidden="true"
+    className="pficon pficon-close additional classes"
+    id="id"
+  />
+  <span
+    className="sr-only"
+  >
+    Remove
+  </span>
+</a>
+`;
