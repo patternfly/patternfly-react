@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { ProgressBar } from './index';
@@ -14,10 +15,9 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo(
+stories.add(
   'Progress Bar types',
-  'Those are the available progress bar types',
-  () => (
+  withInfo('Those are the available progress bar types')(() => (
     <div>
       <h1>Default progress bar</h1>
       <ProgressBar now={60} />
@@ -41,5 +41,5 @@ stories.addWithInfo(
         <ProgressBar bsStyle="danger" now={90} key={3} />
       </ProgressBar>
     </div>
-  )
+  ))
 );

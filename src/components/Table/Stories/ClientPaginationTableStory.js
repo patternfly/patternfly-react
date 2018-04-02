@@ -22,7 +22,7 @@ import { reactabularDescription } from './tableStoryDescriptions';
  * Client Pagination Table stories
  */
 
-const clientPaginationTableAddWithInfo = stories => {
+const clientPaginationTable = stories => {
   stories.add(
     'Client Paginated Table',
     withInfo({
@@ -68,4 +68,4 @@ const clientPaginationTableAddWithInfo = stories => {
   );
 };
 
-export default clientPaginationTableAddWithInfo;
+export default clientPaginationTable;

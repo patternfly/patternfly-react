@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Spinner } from './index';
@@ -15,41 +16,42 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('Spinner', () => {
-  const loading = boolean('Loading', true);
-  const inline = boolean('Inline', false);
-  const inverse = boolean('Inverse', false);
-  const size = select('Size', ['lg', 'md', 'sm', 'xs'], 'md');
+stories.add(
+  'Spinner',
+  withInfo()(() => {
+    const loading = boolean('Loading', true);
+    const inline = boolean('Inline', false);
+    const inverse = boolean('Inverse', false);
+    const size = select('Size', ['lg', 'md', 'sm', 'xs'], 'md');
+    const wrapperStyle = {
+      backgroundColor: inverse ? 'black' : 'white',
+      color: inverse ? 'white' : 'black',
+      padding: '15px'
+    };
+    const spinnerProps = {
+      loading,
+      size,
+      inline,
+      inverse
+    };
 
-  const wrapperStyle = {
-    backgroundColor: inverse ? 'black' : 'white',
-    color: inverse ? 'white' : 'black',
-    padding: '15px'
-  };
+    if (inline) {
+      return (
+        <div style={wrapperStyle}>
+          <Spinner {...spinnerProps} />
+          Some inline text here.
+        </div>
+      );
+    }
 
-  const spinnerProps = {
-    loading,
-    size,
-    inline,
-    inverse
-  };
-
-  if (inline) {
     return (
       <div style={wrapperStyle}>
-        <Spinner {...spinnerProps} />
-        Some inline text here.
+        <Spinner {...spinnerProps}>
+          <strong>
+            Show chilren when <code>loading</code> is <code>false</code>.
+          </strong>
+        </Spinner>
       </div>
     );
-  }
-
-  return (
-    <div style={wrapperStyle}>
-      <Spinner {...spinnerProps}>
-        <strong>
-          Show chilren when <code>loading</code> is <code>false</code>.
-        </strong>
-      </Spinner>
-    </div>
-  );
-});
+  })
+);

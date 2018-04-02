@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Badge } from '../Badge';
@@ -17,66 +18,85 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('Basic Example', '', () => (
-  <ListGroup>
-    <ListGroupItem>Cras justo odio</ListGroupItem>
-    <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-    <ListGroupItem>Morbi leo risus</ListGroupItem>
-    <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
-    <ListGroupItem>Vestibulum at eros</ListGroupItem>
-  </ListGroup>
-));
+stories.add(
+  'Basic Example',
+  withInfo()(() => (
+    <ListGroup>
+      <ListGroupItem>Cras justo odio</ListGroupItem>
+      <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+      <ListGroupItem>Morbi leo risus</ListGroupItem>
+      <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+      <ListGroupItem>Vestibulum at eros</ListGroupItem>
+    </ListGroup>
+  ))
+);
 
-stories.addWithInfo('Badges', '', () => (
-  <ListGroup>
-    <ListGroupItem>
-      Cras justo odio <Badge>14</Badge>
-    </ListGroupItem>
-    <ListGroupItem>
-      Dapibus ac facilisis in <Badge>2</Badge>
-    </ListGroupItem>
-    <ListGroupItem>
-      Morbi leo risus <Badge>1</Badge>
-    </ListGroupItem>
-  </ListGroup>
-));
+stories.add(
+  'Badges',
+  withInfo()(() => (
+    <ListGroup>
+      <ListGroupItem>
+        Cras justo odio <Badge>14</Badge>
+      </ListGroupItem>
+      <ListGroupItem>
+        Dapibus ac facilisis in <Badge>2</Badge>
+      </ListGroupItem>
+      <ListGroupItem>
+        Morbi leo risus <Badge>1</Badge>
+      </ListGroupItem>
+    </ListGroup>
+  ))
+);
 
-stories.addWithInfo('Linked Items', '', () => (
-  <ListGroup>
-    <ListGroupItem href="#">Cras justo odio</ListGroupItem>
-    <ListGroupItem href="#">Dapibus ac facilisis in</ListGroupItem>
-    <ListGroupItem href="#">Morbi leo risus</ListGroupItem>
-  </ListGroup>
-));
+stories.add(
+  'Linked Items',
+  withInfo()(() => (
+    <ListGroup>
+      <ListGroupItem href="#">Cras justo odio</ListGroupItem>
+      <ListGroupItem href="#">Dapibus ac facilisis in</ListGroupItem>
+      <ListGroupItem href="#">Morbi leo risus</ListGroupItem>
+    </ListGroup>
+  ))
+);
 
-stories.addWithInfo('Contextual classes', '', () => (
-  <ListGroup>
-    <ListGroupItem bsStyle="success">Dapibus ac facilisis in</ListGroupItem>
-    <ListGroupItem bsStyle="info">Cras sit amet nibh libero</ListGroupItem>
-    <ListGroupItem bsStyle="warning">Porta ac consectetur ac</ListGroupItem>
-    <ListGroupItem bsStyle="danger">Vestibulum at eros</ListGroupItem>
-  </ListGroup>
-));
+stories.add(
+  'Contextual classes',
+  withInfo()(() => (
+    <ListGroup>
+      <ListGroupItem bsStyle="success">Dapibus ac facilisis in</ListGroupItem>
+      <ListGroupItem bsStyle="info">Cras sit amet nibh libero</ListGroupItem>
+      <ListGroupItem bsStyle="warning">Porta ac consectetur ac</ListGroupItem>
+      <ListGroupItem bsStyle="danger">Vestibulum at eros</ListGroupItem>
+    </ListGroup>
+  ))
+);
 
-stories.addWithInfo('Custom content', '', () => (
-  <ListGroup>
-    <ListGroupItem href="#" header="List group item heading" className="active">
-      <p className="list-group-item-text">
-        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-        risus varius blandit.
-      </p>
-    </ListGroupItem>
-    <ListGroupItem href="#" header="List group item heading">
-      <p className="list-group-item-text">
-        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-        risus varius blandit.
-      </p>
-    </ListGroupItem>
-    <ListGroupItem href="#" header="List group item heading">
-      <p className="list-group-item-text">
-        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-        risus varius blandit.
-      </p>
-    </ListGroupItem>
-  </ListGroup>
-));
+stories.add(
+  'Custom content',
+  withInfo()(() => (
+    <ListGroup>
+      <ListGroupItem
+        href="#"
+        header="List group item heading"
+        className="active"
+      >
+        <p className="list-group-item-text">
+          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+          eget risus varius blandit.
+        </p>
+      </ListGroupItem>
+      <ListGroupItem href="#" header="List group item heading">
+        <p className="list-group-item-text">
+          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+          eget risus varius blandit.
+        </p>
+      </ListGroupItem>
+      <ListGroupItem href="#" header="List group item heading">
+        <p className="list-group-item-text">
+          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+          eget risus varius blandit.
+        </p>
+      </ListGroupItem>
+    </ListGroup>
+  ))
+);

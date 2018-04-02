@@ -1,5 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
+
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Badge } from './index';
@@ -25,8 +27,11 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('Badges', '', () => (
-  <a href="#">
-    Inbox <Badge>42</Badge>
-  </a>
-));
+stories.add(
+  'Badges',
+  withInfo()(() => (
+    <a href="#">
+      Inbox <Badge>42</Badge>
+    </a>
+  ))
+);

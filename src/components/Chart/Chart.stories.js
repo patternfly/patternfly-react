@@ -1,10 +1,10 @@
 import { storiesOf } from '@storybook/react';
 import {
-  areaChartAddWithInfo,
-  barChartAddWithInfo,
-  donutChartAddWithInfo,
-  lineChartAddWithInfo,
-  pieChartAddWithInfo
+  areaChart,
+  barChart,
+  donutChart,
+  lineChart,
+  pieChart
 } from './Stories';
 
 const stories = storiesOf('Chart', module);
@@ -13,8 +13,8 @@ const stories = storiesOf('Chart', module);
  * Chart stories
  */
 
-areaChartAddWithInfo(stories);
-barChartAddWithInfo(stories);
-donutChartAddWithInfo(stories);
-lineChartAddWithInfo(stories);
-pieChartAddWithInfo(stories);
+areaChart(stories);
+barChart(stories);
+donutChart(stories);
+lineChart(stories);
+pieChart(stories);

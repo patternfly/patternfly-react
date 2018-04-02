@@ -51,10 +51,9 @@ const renderAdditionalInfoItems = itemProperties =>
     );
   });
 
-stories.addWithInfo(
+stories.add(
   'List of expandable items',
-  `ListView usage example.`,
-  () => (
+  withInfo(`ListView usage example.`)(() => (
     <ListView>
       {mockListItems.map(
         (
@@ -78,7 +77,7 @@ stories.addWithInfo(
         )
       )}
     </ListView>
-  )
+  ))
 );
 
 stories.add(
@@ -113,124 +112,130 @@ stories.add(
   })(() => <MockCompoundExpansion />)
 );
 
-stories.addWithInfo('ListItem variants', `ListView usage example.`, () => (
-  <ListView
-    id="listView--listItemVariants"
-    className="listView--listItemVariants"
-  >
-    <ListView.Item
-      id="item1"
-      className="listViewItem--listItemVariants"
-      key="item1"
-      description="Expandable item with description, additional items and actions"
-      heading="Event One"
-      checkboxInput={<input type="checkbox" />}
-      leftContent={<ListView.Icon name="plane" />}
-      additionalInfo={[
-        <ListView.InfoItem key="1">
-          <Icon type="pf" name="flavor" /> Item 1
-        </ListView.InfoItem>,
-        <ListView.InfoItem key="2">
-          <Icon name="bug" /> Item 2
-        </ListView.InfoItem>
-      ]}
-      actions={
-        <div>
-          <Button>Action 1</Button>
-          <DropdownKebab id="action2kebab" pullRight>
-            <MenuItem>Action 2</MenuItem>
-          </DropdownKebab>
-        </div>
-      }
-      stacked={boolean('Stacked', false)}
+stories.add(
+  'ListItem variants',
+  withInfo(`ListView usage example.`)(() => (
+    <ListView
+      id="listView--listItemVariants"
+      className="listView--listItemVariants"
     >
-      Expanded Content
-    </ListView.Item>
-    <ListView.Item
-      key="item2"
-      leftContent={<ListView.Icon size="lg" name="plane" />}
-      heading={
-        <span>
-          This is EVENT One that is with very LONG and should not overflow and
-          push other elements out of the bounding box.
-          <small>Feb 23, 2015 12:32 am</small>
-        </span>
-      }
-      actions={
-        <div>
-          <Button>Action 1</Button>
-          <DropdownKebab id="action2kebab" pullRight>
-            <MenuItem>Action 2</MenuItem>
-          </DropdownKebab>
-        </div>
-      }
-      description={
-        <span>
-          The following snippet of text is rendered as <a href="">link text</a>.
-        </span>
-      }
-      stacked={boolean('Stacked', false)}
-    />
-    <ListView.Item
-      key="item3"
-      checkboxInput={<input type="checkbox" />}
-      heading="Stacked Additional Info items"
-      description={
-        <span>
-          The following snippet of text is rendered as <a href="">link text</a>.
-        </span>
-      }
-      additionalInfo={[
-        <ListView.InfoItem key="1" stacked>
-          <strong>113,735</strong>
-          <span>Service One</span>
-        </ListView.InfoItem>,
-        <ListView.InfoItem key="2" stacked>
-          <strong>35%</strong>
-          <span>Service Two</span>
-        </ListView.InfoItem>
-      ]}
-      stacked={boolean('Stacked', false)}
-    />
-    <ListView.Item
-      key="item4"
-      additionalInfo={[
-        <ListView.InfoItem key="1">
-          <Icon type="pf" name="screen" /> Only Additional
-        </ListView.InfoItem>,
-        <ListView.InfoItem key="2">
-          <Icon type="pf" name="cluster" /> Info Items
-        </ListView.InfoItem>
-      ]}
-      stacked={boolean('Stacked', false)}
-    />
-    <ListView.Item
-      key="item5"
-      heading="Custom Event Icon"
-      leftContent={
-        <ListView.Icon
-          type="pf"
-          name="ok"
-          size="md"
-          className="list-view-pf-icon-success"
-        />
-      }
-      description={
-        <span>
-          The following snippet of text is rendered as <a href="">link text</a>.
-        </span>
-      }
-      additionalInfo={[
-        <ListView.InfoItem key="1">
-          <Icon type="pf" name="screen" />
-          <strong>108</strong> Hosts
-        </ListView.InfoItem>,
-        <ListView.InfoItem key="2">
-          <Icon type="pf" name="cluster" />
-          <strong>28</strong> Clusters
-        </ListView.InfoItem>
-      ]}
-      stacked={boolean('Stacked', false)}
-    />
-  </ListView>
-));
+      <ListView.Item
+        id="item1"
+        className="listViewItem--listItemVariants"
+        key="item1"
+        description="Expandable item with description, additional items and actions"
+        heading="Event One"
+        checkboxInput={<input type="checkbox" />}
+        leftContent={<ListView.Icon name="plane" />}
+        additionalInfo={[
+          <ListView.InfoItem key="1">
+            <Icon type="pf" name="flavor" /> Item 1
+          </ListView.InfoItem>,
+          <ListView.InfoItem key="2">
+            <Icon name="bug" /> Item 2
+          </ListView.InfoItem>
+        ]}
+        actions={
+          <div>
+            <Button>Action 1</Button>
+            <DropdownKebab id="action2kebab" pullRight>
+              <MenuItem>Action 2</MenuItem>
+            </DropdownKebab>
+          </div>
+        }
+        stacked={boolean('Stacked', false)}
+      >
+        Expanded Content
+      </ListView.Item>
+      <ListView.Item
+        key="item2"
+        leftContent={<ListView.Icon size="lg" name="plane" />}
+        heading={
+          <span>
+            This is EVENT One that is with very LONG and should not overflow and
+            push other elements out of the bounding box.
+            <small>Feb 23, 2015 12:32 am</small>
+          </span>
+        }
+        actions={
+          <div>
+            <Button>Action 1</Button>
+            <DropdownKebab id="action2kebab" pullRight>
+              <MenuItem>Action 2</MenuItem>
+            </DropdownKebab>
+          </div>
+        }
+        description={
+          <span>
+            The following snippet of text is rendered as{' '}
+            <a href="">link text</a>.
+          </span>
+        }
+        stacked={boolean('Stacked', false)}
+      />
+      <ListView.Item
+        key="item3"
+        checkboxInput={<input type="checkbox" />}
+        heading="Stacked Additional Info items"
+        description={
+          <span>
+            The following snippet of text is rendered as{' '}
+            <a href="">link text</a>.
+          </span>
+        }
+        additionalInfo={[
+          <ListView.InfoItem key="1" stacked>
+            <strong>113,735</strong>
+            <span>Service One</span>
+          </ListView.InfoItem>,
+          <ListView.InfoItem key="2" stacked>
+            <strong>35%</strong>
+            <span>Service Two</span>
+          </ListView.InfoItem>
+        ]}
+        stacked={boolean('Stacked', false)}
+      />
+      <ListView.Item
+        key="item4"
+        additionalInfo={[
+          <ListView.InfoItem key="1">
+            <Icon type="pf" name="screen" /> Only Additional
+          </ListView.InfoItem>,
+          <ListView.InfoItem key="2">
+            <Icon type="pf" name="cluster" /> Info Items
+          </ListView.InfoItem>
+        ]}
+        stacked={boolean('Stacked', false)}
+      />
+      <ListView.Item
+        key="item5"
+        heading="Custom Event Icon"
+        leftContent={
+          <ListView.Icon
+            type="pf"
+            name="ok"
+            size="md"
+            className="list-view-pf-icon-success"
+          />
+        }
+        description={
+          <span>
+            The following snippet of text is rendered as{' '}
+            <a href="">link text</a>.
+          </span>
+        }
+        additionalInfo={[
+          <ListView.InfoItem key="1">
+            <Icon type="pf" name="screen" />
+            <strong>108</strong> Hosts
+          </ListView.InfoItem>,
+          <ListView.InfoItem key="2">
+            <Icon type="pf" name="cluster" />
+            <strong>28</strong> Clusters
+          </ListView.InfoItem>
+        ]}
+        stacked={boolean('Stacked', false)}
+      />
+    </ListView>
+  ))
+);

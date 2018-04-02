@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Button } from '../Button';
@@ -16,10 +17,9 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo(
+stories.add(
   'DropdownKebab',
-  `pullRight prop is used to align the dropdown to the right.`,
-  () => (
+  withInfo(`pullRight prop is used to align the dropdown to the right.`)(() => (
     <div>
       <Button bsStyle="primary">Some Button</Button>{' '}
       <Button>Another Button</Button>
@@ -31,5 +31,5 @@ stories.addWithInfo(
         <MenuItem>Separated link</MenuItem>
       </DropdownKebab>
     </div>
-  )
+  ))
 );

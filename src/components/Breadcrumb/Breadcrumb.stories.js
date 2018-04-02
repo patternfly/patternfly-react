@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Breadcrumb } from './index';
@@ -27,22 +28,28 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('Breadcrumb', '', () => (
-  <Breadcrumb>
-    <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-    <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
-      Library
-    </Breadcrumb.Item>
-    <Breadcrumb.Item active>Data</Breadcrumb.Item>
-  </Breadcrumb>
-));
+stories.add(
+  'Breadcrumb',
+  withInfo()(() => (
+    <Breadcrumb>
+      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
+        Library
+      </Breadcrumb.Item>
+      <Breadcrumb.Item active>Data</Breadcrumb.Item>
+    </Breadcrumb>
+  ))
+);
 
-stories.addWithInfo('Breadcrumb combined with page title', '', () => (
-  <Breadcrumb title>
-    <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-    <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
-      Library
-    </Breadcrumb.Item>
-    <Breadcrumb.Item active>Data</Breadcrumb.Item>
-  </Breadcrumb>
-));
+stories.add(
+  'Breadcrumb combined with page title',
+  withInfo()(() => (
+    <Breadcrumb title>
+      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
+        Library
+      </Breadcrumb.Item>
+      <Breadcrumb.Item active>Data</Breadcrumb.Item>
+    </Breadcrumb>
+  ))
+);

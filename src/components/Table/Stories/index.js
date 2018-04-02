@@ -1,11 +1,5 @@
-export { default as bootstrapTableAddWithInfo } from './BootstrapTableStory';
-export { default as patternflyTableAddWithInfo } from './PatternflyTableStory';
-export {
-  default as clientSortableTableAddWithInfo
-} from './ClientSortableTableStory';
-export {
-  default as clientPaginationTableAddWithInfo
-} from './ClientPaginationTableStory';
-export {
-  default as serverPaginationTableAddWithInfo
-} from './ServerPaginationTableStory.js';
+export { default as bootstrapTable } from './BootstrapTableStory';
+export { default as patternflyTable } from './PatternflyTableStory';
+export { default as clientSortableTable } from './ClientSortableTableStory';
+export { default as clientPaginationTable } from './ClientPaginationTableStory';
+export { default as serverPaginationTable } from './ServerPaginationTableStory';

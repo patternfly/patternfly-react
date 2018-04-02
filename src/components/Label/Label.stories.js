@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from '../../../storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from '../../../storybook/constants';
 import { Label, DisposableLabel, RemoveButton } from './index';
@@ -20,24 +21,31 @@ stories.addDecorator(
   })
 );
 
-stories.addWithInfo('Label', () => (
-  <div>
-    <Label bsStyle="default">Default</Label>{' '}
-    <Label bsStyle="primary">Primary</Label>{' '}
-    <Label bsStyle="success">Success</Label> <Label bsStyle="info">Info</Label>{' '}
-    <Label bsStyle="warning">Warning</Label>{' '}
-    <Label bsStyle="danger">Danger</Label>
-  </div>
-));
-
-stories.addWithInfo('Label with remove', () => <MockLabelRemove />, {
-  source: false,
-  propTables: [DisposableLabel, RemoveButton],
-  propTablesExclude: [MockLabelRemove],
-  text: (
+stories.add(
+  'Label',
+  withInfo()(() => (
     <div>
-      <h1>Story Source</h1>
-      <pre>{mockLabelRemoveSource}</pre>
+      <Label bsStyle="default">Default</Label>{' '}
+      <Label bsStyle="primary">Primary</Label>{' '}
+      <Label bsStyle="success">Success</Label>{' '}
+      <Label bsStyle="info">Info</Label>{' '}
+      <Label bsStyle="warning">Warning</Label>{' '}
+      <Label bsStyle="danger">Danger</Label>
     </div>
-  )
-});
+  ))
+);
+
+stories.add(
+  'Label with remove',
+  withInfo()(() => <MockLabelRemove />, {
+    source: false,
+    propTables: [DisposableLabel, RemoveButton],
+    propTablesExclude: [MockLabelRemove],
+    text: (
+      <div>
+        <h1>Story Source</h1>
+        <pre>{mockLabelRemoveSource}</pre>
+      </div>
+    )
+  })
+);
