@@ -1,9 +1,9 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const AggregateStatusCount = ({ children, className, ...props }) => {
-  const classes = ClassNames('card-pf-aggregate-status-count', className);
+  const classes = classNames('card-pf-aggregate-status-count', className);
 
   return (
     <span className={classes} {...props}>

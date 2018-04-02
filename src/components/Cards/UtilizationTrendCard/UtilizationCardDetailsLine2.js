@@ -1,9 +1,9 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const UtilizationCardDetailsLine2 = ({ children, className, ...props }) => {
-  const classes = ClassNames(
+  const classes = classNames(
     'card-pf-utilization-card-details-line-2',
     className
   );

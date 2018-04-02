@@ -1,10 +1,10 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card } from '../index';
 
 const UtilizationCard = ({ children, className, ...props }) => {
-  const classes = ClassNames('card-pf-utilization', className);
+  const classes = classNames('card-pf-utilization', className);
 
   return (
     <Card className={classes} {...props}>

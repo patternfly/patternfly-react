@@ -1,9 +1,9 @@
-import ClassNames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 const UtilizationCardDetails = ({ children, className, ...props }) => {
-  const classes = ClassNames('card-pf-utilization-details', className);
+  const classes = classNames('card-pf-utilization-details', className);
 
   return (
     <p className={classes} {...props}>
