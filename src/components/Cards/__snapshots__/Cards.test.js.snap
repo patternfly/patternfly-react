@@ -10,7 +10,7 @@ exports[`Card Body is working properly 1`] = `
 
 exports[`Card Drop Down Button is working properly 1`] = `
 <div
-  class="card-pf-time-frame-filter dropdown  "
+  class="card-pf-time-frame-filter dropdown "
 >
   <button
     aria-expanded="false"

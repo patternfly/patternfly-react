@@ -823,7 +823,6 @@ exports[`Mock Client Pagination table renders 1`] = `
           <input
             id="vybrat vše"
             type="checkbox"
-            value="on"
           />
         </th>
         <th
@@ -899,7 +898,6 @@ exports[`Mock Client Pagination table renders 1`] = `
           <input
             id="vybrat0"
             type="checkbox"
-            value="on"
           />
         </td>
         <td
@@ -945,7 +943,7 @@ exports[`Mock Client Pagination table renders 1`] = `
           class="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            class="dropdown-kebab-pf dropdown "
           >
             <button
               aria-expanded="false"
@@ -1037,7 +1035,6 @@ exports[`Mock Client Pagination table renders 1`] = `
           <input
             id="vybrat1"
             type="checkbox"
-            value="on"
           />
         </td>
         <td
@@ -1083,7 +1080,7 @@ exports[`Mock Client Pagination table renders 1`] = `
           class="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            class="dropdown-kebab-pf dropdown "
           >
             <button
               aria-expanded="false"
@@ -1175,7 +1172,6 @@ exports[`Mock Client Pagination table renders 1`] = `
           <input
             id="vybrat2"
             type="checkbox"
-            value="on"
           />
         </td>
         <td
@@ -1221,7 +1217,7 @@ exports[`Mock Client Pagination table renders 1`] = `
           class="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            class="dropdown-kebab-pf dropdown "
           >
             <button
               aria-expanded="false"
@@ -1313,7 +1309,6 @@ exports[`Mock Client Pagination table renders 1`] = `
           <input
             id="vybrat3"
             type="checkbox"
-            value="on"
           />
         </td>
         <td
@@ -1359,7 +1354,7 @@ exports[`Mock Client Pagination table renders 1`] = `
           class="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            class="dropdown-kebab-pf dropdown "
           >
             <button
               aria-expanded="false"
@@ -1451,7 +1446,6 @@ exports[`Mock Client Pagination table renders 1`] = `
           <input
             id="vybrat4"
             type="checkbox"
-            value="on"
           />
         </td>
         <td
@@ -1497,7 +1491,7 @@ exports[`Mock Client Pagination table renders 1`] = `
           class="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            class="dropdown-kebab-pf dropdown "
           >
             <button
               aria-expanded="false"
@@ -1589,7 +1583,6 @@ exports[`Mock Client Pagination table renders 1`] = `
           <input
             id="vybrat5"
             type="checkbox"
-            value="on"
           />
         </td>
         <td
@@ -1635,7 +1628,7 @@ exports[`Mock Client Pagination table renders 1`] = `
           class="table-view-pf-actions"
         >
           <div
-            class="dropdown-kebab-pf dropdown  "
+            class="dropdown-kebab-pf dropdown "
           >
             <button
               aria-expanded="false"
@@ -1907,7 +1900,6 @@ exports[`Mock Server Pagination table renders 1`] = `
           <input
             id="selectAll"
             type="checkbox"
-            value="on"
           />
         </th>
         <th
