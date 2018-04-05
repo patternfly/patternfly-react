@@ -30,9 +30,9 @@ module.exports = {
             options: {
               includePaths: [
                 path.resolve(__dirname, '../sass/patternfly-react'),
-                path.resolve(__dirname, `../${pkg.sassIncludes.patternfly}`),
-                path.resolve(__dirname, `../${pkg.sassIncludes.bootstrap}`),
-                path.resolve(__dirname, `../${pkg.sassIncludes.fontAwesome}`)
+                ...Object.values(pkg.sassIncludes).map(includePath =>
+                  path.resolve(__dirname, `../${includePath}`)
+                )
               ]
             }
           }
