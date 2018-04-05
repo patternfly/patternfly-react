@@ -45,20 +45,22 @@ class CardHeightMatching extends React.Component {
   }
 
   _matchHeights(selectors = this._selectors) {
-    const arrayMap = elements =>
-      Array.prototype.map
-        .call(elements, el => el.scrollHeight)
-        .reduce((pre, cur) => Math.max(pre, cur), -Infinity);
-    selectors.forEach(selector => {
-      const elements = this._container.querySelectorAll(selector);
-      elements.forEach(el => {
-        el.style.height = null;
+    if (this._container) {
+      const arrayMap = elements =>
+        Array.prototype.map
+          .call(elements, el => el.scrollHeight)
+          .reduce((pre, cur) => Math.max(pre, cur), -Infinity);
+      selectors.forEach(selector => {
+        const elements = this._container.querySelectorAll(selector);
+        elements.forEach(el => {
+          el.style.height = null;
+        });
+        const maxHeight = arrayMap(elements);
+        elements.forEach(el => {
+          el.style.height = `${maxHeight}px`;
+        });
       });
-      const maxHeight = arrayMap(elements);
-      elements.forEach(el => {
-        el.style.height = `${maxHeight}px`;
-      });
-    });
+    }
   }
 
   render() {
