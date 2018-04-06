@@ -7,14 +7,14 @@ import { noop } from '../../common/helpers';
  * ListViewGroupItemContainer is used with expandable ListViewItem, wraps the
  * expanded content
  */
-const ListViewGroupItemContainer = ({ children, expanded, onClose }) => {
+const ListViewGroupItemContainer = ({ children, expanded, onClose, hideCloseIcon }) => {
   const classes = classNames({
     'list-group-item-container container-fluid': true,
     hidden: !expanded
   });
   return (
     <div className={classes}>
-      {onClose && (
+      {!hideCloseIcon && onClose && (
         <div className="close">
           <span className="pficon pficon-close" onClick={onClose} />
         </div>
@@ -29,11 +29,14 @@ ListViewGroupItemContainer.propTypes = {
   /** Boolean indicating whether expandable content is visible */
   expanded: PropTypes.bool,
   /** Function to call when 'close icon' is clicked */
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  /** Boolean to optionally hide the close icon in expanded content */
+  hideCloseIcon: PropTypes.bool
 };
 ListViewGroupItemContainer.defaultProps = {
   children: null,
   onClose: noop,
+  hideCloseIcon: false,
   expanded: false
 };
 export default ListViewGroupItemContainer;

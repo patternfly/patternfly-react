@@ -69,6 +69,7 @@ stories.add(
             heading={title}
             description={description}
             stacked={boolean('Stacked', false)}
+            hideCloseIcon={false}
           >
             <Row>
               <Col sm={11}>{expandedContentText}</Col>

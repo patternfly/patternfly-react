@@ -70,6 +70,7 @@ class ListViewItem extends React.Component {
             <ListViewGroupItemContainer
               expanded={compoundExpanded}
               onClose={hideCloseIcon ? undefined : onCloseCompoundExpand}
+              hideCloseIcon={hideCloseIcon}
             >
               {children}
             </ListViewGroupItemContainer>
@@ -95,6 +96,7 @@ class ListViewItem extends React.Component {
           <ListViewGroupItemContainer
             expanded={expanded}
             onClose={hideCloseIcon ? undefined : this.toggleExpanded}
+            hideCloseIcon={hideCloseIcon}
           >
             {children}
           </ListViewGroupItemContainer>
