@@ -1,18 +1,17 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { DisposableLabel } from './index';
-import { MockLabelRemove } from './__mocks__/mockLabelExamples';
+import { shallow } from 'enzyme';
+import DisposableLabel from './DisposableLabel';
+import Label from './Label';
+import { noop } from '../../common/helpers';
 
-test('Label renders properly', () => {
-  const component = mount(
-    <DisposableLabel type="default">Some text</DisposableLabel>
-  );
-  expect(component.render()).toMatchSnapshot();
+test('defaults props', () => {
+  const view = shallow(<DisposableLabel />);
+  expect(view).toMatchSnapshot();
+  expect(view.find(Label).props().onRemoveClick).toBe(noop);
 });
 
-test('Label is removed via function', () => {
-  const component = mount(<MockLabelRemove />);
-  expect(component.instance().state.types).toHaveLength(5);
-  component.instance().removeMe(1);
-  expect(component.instance().state.types).toHaveLength(4);
+test('onRemoveClick is passed to the Label', () => {
+  const onRemoveClick = jest.fn();
+  const component = shallow(<DisposableLabel onRemoveClick={onRemoveClick} />);
+  expect(component.find(Label).props().onRemoveClick).toBe(onRemoveClick);
 });
