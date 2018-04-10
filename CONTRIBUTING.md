@@ -253,7 +253,7 @@ Maintainers are members of the PatternFly community who exhibit most of the foll
 
 If you want to become a maintainer, we expect you to:
 
-- Review and test pull requests submitted by others .
+- Review and test pull requests submitted by others.
 - Encourage and ensure design remains an integral part of the review process and pull in designers for review as needed (you can leverage @patternfly/pf-<framework>-design if there is no known associated designer).
 - Maintain sustained activity versus sporadic.
 - Support users and other developers on [PatternFly Slack](https://patternfly.slack.com/) and the [mailing list](mailto:patternfly@redhat.com).
