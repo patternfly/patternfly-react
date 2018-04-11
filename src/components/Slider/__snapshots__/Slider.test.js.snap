@@ -1,358 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`horizontal slider match snapshot and respond to simulated events 1`] = `
-<Slider
-  dropdownList={
-    Array [
-      "MB",
-      "GB",
-    ]
-  }
-  dropup={true}
-  icon={null}
-  id="slider-pf"
-  input={true}
-  inputFormat="MB"
-  label="Size"
-  labelClass={null}
-  max={100}
-  min={0}
-  onSlide={[Function]}
-  orientation="horizontal"
-  showBoundaries={true}
-  sliderClass={null}
-  step={1}
-  toolTip={false}
-  tooltip="show"
-  value={50}
->
-  <div>
-    <ControlLabel
-      bsClass="col-xs-2 col-sm-2 col-md-2"
-      htmlFor="slider-pf"
-      srOnly={false}
+exports[`Slider match snapshot 1`] = `
+<div>
+  <ControlLabel
+    bsClass="col-xs-2 col-sm-2 col-md-2"
+    htmlFor="slider-pf"
+    srOnly={false}
+  >
+    Size
+  </ControlLabel>
+  <div
+    className="col-xs-10 col-sm-10 col-md-10"
+  >
+    <Boundaries
+      dropdownList={
+        Array [
+          "MB",
+          "GB",
+        ]
+      }
+      icon={null}
+      id="slider-pf"
+      input={false}
+      inputFormat="MB"
+      label="Size"
+      labelClass={null}
+      max={100}
+      min={0}
+      onSlide={[Function]}
+      orientation="horizontal"
+      reversed={false}
+      showBoundaries={false}
+      slider={
+        <BootstrapSlider
+          dropdownList={
+            Array [
+              "MB",
+              "GB",
+            ]
+          }
+          formatter={[Function]}
+          icon={null}
+          id="slider-pf"
+          input={false}
+          inputFormat="MB"
+          label="Size"
+          labelClass={null}
+          max={100}
+          min={0}
+          onSlide={[Function]}
+          orientation="horizontal"
+          sliderClass={null}
+          step={1}
+          ticks_labels={Array []}
+          toolTip={false}
+          tooltip="show"
+          value={50}
+        />
+      }
+      sliderClass={null}
+      step={1}
+      toolTip={false}
+      tooltip="show"
+      value={50}
     >
-      <label
-        className="col-xs-2 col-sm-2 col-md-2"
-        htmlFor="slider-pf"
-      >
-        Size
-      </label>
-    </ControlLabel>
-    <div
-      className="col-xs-10 col-sm-10 col-md-10"
-    >
-      <Boundaries
+      <DropdownMenu
         dropdownList={
           Array [
             "MB",
             "GB",
           ]
         }
-        dropup={true}
+        dropup={false}
         icon={null}
         id="slider-pf"
-        input={true}
+        input={false}
         inputFormat="MB"
         label="Size"
         labelClass={null}
         max={100}
         min={0}
+        onFormatChange={[Function]}
         onSlide={[Function]}
         orientation="horizontal"
-        reversed={false}
-        showBoundaries={true}
-        slider={
-          <BootstrapSlider
-            dropdownList={
-              Array [
-                "MB",
-                "GB",
-              ]
-            }
-            dropup={true}
-            formatter={[Function]}
-            icon={null}
-            id="slider-pf"
-            input={true}
-            inputFormat="MB"
-            label="Size"
-            labelClass={null}
-            max={100}
-            min={0}
-            onSlide={[Function]}
-            orientation="horizontal"
-            showBoundaries={true}
-            sliderClass={null}
-            step={1}
-            ticks_labels={Array []}
-            toolTip={false}
-            tooltip="show"
-            value={50}
-          />
-        }
         sliderClass={null}
         step={1}
+        title="MB"
         toolTip={false}
         tooltip="show"
         value={50}
-      >
-        <div
-          className="slider-pf"
-        >
-          <b>
-            0
-          </b>
-          <BootstrapSlider
-            dropdownList={
-              Array [
-                "MB",
-                "GB",
-              ]
-            }
-            dropup={true}
-            formatter={[Function]}
-            icon={null}
-            id="slider-pf"
-            input={true}
-            inputFormat="MB"
-            label="Size"
-            labelClass={null}
-            max={100}
-            min={0}
-            onSlide={[Function]}
-            orientation="horizontal"
-            showBoundaries={true}
-            sliderClass={null}
-            step={1}
-            ticks_labels={Array []}
-            toolTip={false}
-            tooltip="show"
-            value={50}
-          >
-            <input
-              className="slider-pf"
-              type="range"
-            />
-          </BootstrapSlider>
-          <b>
-            100
-          </b>
-          <FormControl
-            bsClass="slider-input-pf"
-            componentClass="input"
-            max={100}
-            min={0}
-            onChange={[Function]}
-            type="number"
-            value={50}
-          >
-            <input
-              className="slider-input-pf"
-              max={100}
-              min={0}
-              onChange={[Function]}
-              type="number"
-              value={50}
-            />
-          </FormControl>
-          <DropdownMenu
-            dropdownList={
-              Array [
-                "MB",
-                "GB",
-              ]
-            }
-            dropup={true}
-            icon={null}
-            id="slider-pf"
-            input={true}
-            inputFormat="MB"
-            label="Size"
-            labelClass={null}
-            max={100}
-            min={0}
-            onFormatChange={[Function]}
-            onSlide={[Function]}
-            orientation="horizontal"
-            showBoundaries={true}
-            sliderClass={null}
-            step={1}
-            title="MB"
-            toolTip={false}
-            tooltip="show"
-            value={50}
-          >
-            <Uncontrolled(Dropdown)
-              dropup={true}
-              id="slider_dropdown"
-              pullRight={true}
-            >
-              <Dropdown
-                bsClass="dropdown"
-                componentClass={[Function]}
-                dropup={true}
-                id="slider_dropdown"
-                onToggle={[Function]}
-                pullRight={true}
-              >
-                <ButtonGroup
-                  block={false}
-                  bsClass="btn-group"
-                  className="dropup"
-                  justified={false}
-                  vertical={false}
-                >
-                  <div
-                    className="dropup btn-group"
-                  >
-                    <DropdownToggle
-                      bsClass="dropdown-toggle"
-                      bsRole="toggle"
-                      id="slider_dropdown"
-                      key=".0"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      open={false}
-                      useAnchor={false}
-                    >
-                      <Button
-                        active={false}
-                        aria-expanded={false}
-                        aria-haspopup={true}
-                        block={false}
-                        bsClass="btn"
-                        bsStyle="default"
-                        className="dropdown-toggle"
-                        disabled={false}
-                        id="slider_dropdown"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        role="button"
-                      >
-                        <button
-                          aria-expanded={false}
-                          aria-haspopup={true}
-                          className="dropdown-toggle btn btn-default"
-                          disabled={false}
-                          id="slider_dropdown"
-                          onClick={[Function]}
-                          onKeyDown={[Function]}
-                          role="button"
-                          type="button"
-                        >
-                          <span>
-                            MB
-                          </span>
-                           
-                          <span
-                            className="caret"
-                          />
-                        </button>
-                      </Button>
-                    </DropdownToggle>
-                    <DropdownMenu
-                      bsClass="dropdown-menu"
-                      bsRole="menu"
-                      key=".1"
-                      labelledBy="slider_dropdown"
-                      onClose={[Function]}
-                      onSelect={[Function]}
-                      pullRight={true}
-                    >
-                      <RootCloseWrapper
-                        disabled={true}
-                        event="click"
-                        onRootClose={[Function]}
-                      >
-                        <ul
-                          aria-labelledby="slider_dropdown"
-                          className="dropdown-menu dropdown-menu-right"
-                          role="menu"
-                        >
-                          <MenuItem
-                            bsClass="slider_menuitem"
-                            disabled={false}
-                            divider={false}
-                            header={false}
-                            key=".$0"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onSelect={[Function]}
-                            value="MB"
-                          >
-                            <li
-                              className=""
-                              role="presentation"
-                            >
-                              <SafeAnchor
-                                componentClass="a"
-                                onClick={[Function]}
-                                onKeyDown={[Function]}
-                                role="menuitem"
-                                tabIndex="-1"
-                                value="MB"
-                              >
-                                <a
-                                  href="#"
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  role="menuitem"
-                                  tabIndex="-1"
-                                  value="MB"
-                                >
-                                  MB
-                                </a>
-                              </SafeAnchor>
-                            </li>
-                          </MenuItem>
-                          <MenuItem
-                            bsClass="slider_menuitem"
-                            disabled={false}
-                            divider={false}
-                            header={false}
-                            key=".$1"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onSelect={[Function]}
-                            value="GB"
-                          >
-                            <li
-                              className=""
-                              role="presentation"
-                            >
-                              <SafeAnchor
-                                componentClass="a"
-                                onClick={[Function]}
-                                onKeyDown={[Function]}
-                                role="menuitem"
-                                tabIndex="-1"
-                                value="GB"
-                              >
-                                <a
-                                  href="#"
-                                  onClick={[Function]}
-                                  onKeyDown={[Function]}
-                                  role="menuitem"
-                                  tabIndex="-1"
-                                  value="GB"
-                                >
-                                  GB
-                                </a>
-                              </SafeAnchor>
-                            </li>
-                          </MenuItem>
-                        </ul>
-                      </RootCloseWrapper>
-                    </DropdownMenu>
-                  </div>
-                </ButtonGroup>
-              </Dropdown>
-            </Uncontrolled(Dropdown)>
-          </DropdownMenu>
-        </div>
-      </Boundaries>
-    </div>
+      />
+    </Boundaries>
   </div>
-</Slider>
+</div>
 `;
