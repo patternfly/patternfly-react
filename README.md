@@ -9,8 +9,16 @@ This project will provide a set of React UI components for the [PatternFly proje
 
 ## Getting Started
 
+First, add `patternfly-react` dependency to your project. If you use Yarn:
+
 ```
 yarn add patternfly-react
+```
+
+Alternatively, if you use npm:
+
+```
+npm install --save patternfly-react
 ```
 
 Then import Patternfly React UI modules as ES6 modules:
