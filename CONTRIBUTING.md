@@ -123,7 +123,7 @@ when possible and accept [props](https://facebook.github.io/react/docs/component
 * Provide a [jest snapshot test](https://facebook.github.io/jest/docs/snapshot-testing.html) to ensure your UI markup does not change unexpectedly.
 * Ensure the component's rendered design and Storybook stories meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
 **Note:** If your component does not yet have PatternFly design documentation, the PatternFly React design team will first confirm that the pattern passes the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) and then start the process for generating design documentation.
-* Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `npm run prettier` and run the project's linter with `npm run lint`.
+* Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `yarn prettier` and run the project's linter with `yarn lint`.
 
 ### Code Consistency
 
@@ -178,11 +178,11 @@ Adhering to the following process is the best way to get your work included in t
 3. Develop your component. After development is complete, ensure tests and lint standards pass.
 
   ```text
-  $ npm run test
+  $ yarn test
   ```
-Ensure no lint errors are introduced in `npm-debug.log` after running this command.
+Ensure no lint errors are introduced in `yarn-error.log` after running this command.
 
-4. Add a commit using `npm run commit`:
+4. Add a commit using `yarn commit`:
 
 This project uses [`semantic-release`](https://npmjs.com/package/semantic-release) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
 
@@ -192,7 +192,7 @@ Once you are ready to commit the changes, please use the below commands:
 
   ```text
   $ git add <files to be committed>
-  $ npm run commit
+  $ yarn commit
   ```
 ... and follow the instruction of the interactive prompt.
 
@@ -216,8 +216,8 @@ Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure a
 Lastly, you'll want to export Storybook in your fork and note the Storybook url generated.
 
   ```text
-  $ npm run storybook:build
-  $ npm run storybook:deploy
+  $ yarn storybook:build
+  $ yarn storybook:deploy
   ```
 
 8. Create a Pull Request
