@@ -1,4 +1,5 @@
 const path = require('path');
+const pkg = require('../package.json');
 
 module.exports = {
   module: {
@@ -29,14 +30,8 @@ module.exports = {
             options: {
               includePaths: [
                 path.resolve(__dirname, '../sass/patternfly-react'),
-                path.resolve(__dirname, '../node_modules/patternfly/dist/sass'),
-                path.resolve(
-                  __dirname,
-                  '../node_modules/patternfly/node_modules/bootstrap-sass/assets/stylesheets'
-                ),
-                path.resolve(
-                  __dirname,
-                  '../node_modules/patternfly/node_modules/font-awesome-sass/assets/stylesheets'
+                ...Object.values(pkg.sassIncludes).map(includePath =>
+                  path.resolve(__dirname, `../${includePath}`)
                 )
               ]
             }

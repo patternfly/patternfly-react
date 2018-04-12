@@ -1,9 +1,11 @@
 node_modules
-npm-debug.log
 dist
 .out
 .DS_Store
 coverage
+
+# package managers
+yarn-error.log
 
 # IDEs and editors
 /.idea

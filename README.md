@@ -9,6 +9,14 @@ This project will provide a set of React UI components for the [PatternFly proje
 
 ## Getting Started
 
+First, add `patternfly-react` dependency to your project. If you use Yarn:
+
+```
+yarn add patternfly-react
+```
+
+Alternatively, if you use npm:
+
 ```
 npm install --save patternfly-react
 ```
@@ -41,30 +49,30 @@ This project uses [React Storybook](https://storybook.js.org/) to test and demo 
 How to use Storybook locally:
 
 ```
-npm i
-npm start
+yarn install
+yarn start
 ```
 
 How to deploy storybook to github pages in your fork:
 
 ```
-npm run storybook:build
-npm run storybook:deploy
+yarn storybook:build
+yarn storybook:deploy
 ```
 
-To deploy Storybook to a remote other than `origin`, pass a `--remote` flag to `npm run storybook:deploy`.
+To deploy Storybook to a remote other than `origin`, pass a `--remote` flag to `yarn storybook:deploy`.
 For example, to deploy to your `upstream` remote:
 
 ```
-npm run storybook:deploy -- --remote=upstream
+yarn storybook:deploy --remote=upstream
 ```
 
-To deploy Storybook to a target branch and serve with rawgit instead of gh-pages, pass `--branch` flag to `npm run storybook:deploy`. This will create a new branch to serve your Storybook (and will be useful if you have multiple open pull requests).
+To deploy Storybook to a target branch and serve with rawgit instead of gh-pages, pass `--branch` flag to `yarn storybook:deploy`. This will create a new branch to serve your Storybook (and will be useful if you have multiple open pull requests).
 
 For example, say you have `feature-branch`, you can deploy the storybook to a rawgit branch with:
 
 ```
-npm run storybook:deploy -- --branch=feature-branch-storybook
+yarn storybook:deploy --branch=feature-branch-storybook
 ```
 
 ## Meeting Notes

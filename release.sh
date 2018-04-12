@@ -30,7 +30,7 @@ if [ "${TRAVIS_REPO_SLUG}" != "${TRIGGER_REPO_SLUG}" -o "${TRAVIS_BRANCH}" != "$
 fi
 
 getDeployKey
-npm run storybook:build
+yarn storybook:build
 cd .out
 git config --global user.email $COMMIT_AUTHOR_EMAIL
 git config --global user.name $COMMIT_AUTHOR_USERNAME
