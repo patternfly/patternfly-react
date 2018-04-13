@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationDrawer Accordion is working properly 1`] = `
+<div
+  class="panel-group"
+  id="notification-drawer-accordion"
+>
+  <div>
+    Child
+  </div>
+</div>
+`;
+
+exports[`NotificationDrawer Dropdown is working properly 1`] = `
+<div
+  class="dropdown pull-right dropdown-kebab-pf dropdown btn-group"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    class="dropdown-toggle btn btn-link"
+    id="1"
+    role="button"
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      class="fa fa-ellipsis-v"
+    />
+  </button>
+  <ul
+    aria-labelledby="1"
+    class="dropdown-menu-right dropdown-menu"
+    role="menu"
+  >
+    <div>
+      Child
+    </div>
+  </ul>
+</div>
+`;
+
+exports[`NotificationDrawer Panel Action and Link is working properly 1`] = `
+<div
+  class="drawer-pf-action"
+>
+  <div
+    class="drawer-pf-action-link"
+  >
+    <div>
+      Child
+    </div>
+  </div>
+</div>
+`;
+
+exports[`NotificationDrawer Panel Body is working properly 1`] = `
+<div
+  class="panel-body"
+  style="max-height: 350px;"
+>
+  <div>
+    Child
+  </div>
+</div>
+`;
+
+exports[`NotificationDrawer Panel Collapse is working properly 1`] = `
+<div
+  class="panel-collapse collapse in"
+>
+  <div>
+    Child
+  </div>
+</div>
+`;
+
+exports[`NotificationDrawer Panel Counter is working properly 1`] = `
+<span
+  class="panel-counter"
+/>
+`;
+
+exports[`NotificationDrawer Panel Heading is working properly 1`] = `
+<div
+  class="panel-heading"
+>
+  <div>
+    Child
+  </div>
+</div>
+`;
+
+exports[`NotificationDrawer Panel Title is working properly 1`] = `
+<h4
+  class="panel-title"
+/>
+`;
+
+exports[`NotificationDrawer Panel is working properly 1`] = `
+<div
+  class="panel panel-default expanded"
+>
+  <div>
+    Child
+  </div>
+</div>
+`;
+
+exports[`NotificationDrawer Title is working properly 1`] = `
+<div
+  class="drawer-pf-title"
+>
+  <a
+    class="drawer-pf-toggle-expand"
+  />
+  <a
+    class="drawer-pf-close"
+  >
+    <span
+      aria-hidden="true"
+      class="fa fa-close"
+    />
+  </a>
+  <h3
+    class="text-center"
+  >
+    Notifications
+  </h3>
+</div>
+`;
+
+exports[`NotificationDrawer Toggle is working properly 1`] = `
+<button
+  class="nav-item-iconic btn btn-link"
+  type="button"
+>
+  <span
+    aria-describedby="tooltip"
+    aria-hidden="true"
+    class="fa fa-bell"
+  />
+</button>
+`;
+
+exports[`NotificationDrawer is working properly 1`] = `
+<div
+  class="drawer-pf drawer-alt-pf drawer-pf-notifications"
+>
+  <div>
+    Child
+  </div>
+</div>
+`;
