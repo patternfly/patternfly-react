@@ -57,7 +57,7 @@ stories.add(
     <ListView>
       {mockListItems.map(
         (
-          { actions, properties, title, description, expandedContentText },
+          { actions, properties, title, description, expandedContentText, hideCloseIcon },
           index
         ) => (
           <ListView.Item
@@ -69,6 +69,7 @@ stories.add(
             heading={title}
             description={description}
             stacked={boolean('Stacked', false)}
+            hideCloseIcon={boolean('Hide close icon', false)}
           >
             <Row>
               <Col sm={11}>{expandedContentText}</Col>

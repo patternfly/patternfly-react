@@ -14,7 +14,7 @@ const ListViewGroupItemContainer = ({ children, expanded, onClose }) => {
   });
   return (
     <div className={classes}>
-      {onClose && (
+      {onClose !== noop && (
         <div className="close">
           <span className="pficon pficon-close" onClick={onClose} />
         </div>
