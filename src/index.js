@@ -21,6 +21,8 @@ export * from './components/MenuItem';
 export * from './components/Modal';
 export * from './components/Nav';
 export * from './components/Navbar';
+export * from './components/Notification';
+export * from './components/Notification/NotificationDrawer';
 export * from './components/OverlayTrigger';
 export * from './components/Pagination';
 export * from './components/Popover';
