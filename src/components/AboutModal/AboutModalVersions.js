@@ -2,11 +2,11 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AboutModalVersions = ({ children, className, ...rest }) => {
+const AboutModalVersions = ({ children, className, ...props }) => {
   const classes = classNames('product-versions-pf', className);
 
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       <ul className="list-unstyled">{children}</ul>
     </div>
   );

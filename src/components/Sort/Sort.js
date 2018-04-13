@@ -2,10 +2,10 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Sort = ({ children, className, ...rest }) => {
+const Sort = ({ children, className, ...props }) => {
   const classes = classNames('form-group', className);
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

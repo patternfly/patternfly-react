@@ -5,8 +5,8 @@ import ToastNotification from './ToastNotification';
 import TimedToastNotification from './TimedToastNotification';
 import ToastNotificationList from './ToastNotificationList';
 
-const testToastNotificationSnapshot = (Component, props, rest) => (
-  <ToastNotificationList {...rest}>
+const testToastNotificationSnapshot = (Component, props, notificationProps) => (
+  <ToastNotificationList {...notificationProps}>
     <Component
       type="success"
       onDismiss={jest.fn()}

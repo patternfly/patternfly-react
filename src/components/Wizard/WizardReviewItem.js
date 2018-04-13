@@ -5,10 +5,10 @@ import classNames from 'classnames';
 /**
  * WizardReviewItem component for Patternfly React
  */
-const WizardReviewItem = ({ children, className, ...rest }) => {
+const WizardReviewItem = ({ children, className, ...props }) => {
   const classes = classNames('wizard-pf-review-item', className);
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

@@ -5,10 +5,10 @@ import classNames from 'classnames';
 /**
  * WizardBody component for Patternfly React
  */
-const WizardBody = ({ children, className, ...rest }) => {
+const WizardBody = ({ children, className, ...props }) => {
   const classes = classNames('wizard-pf-body', className);
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

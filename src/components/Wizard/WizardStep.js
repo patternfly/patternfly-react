@@ -15,7 +15,7 @@ const WizardStep = ({
   title,
   activeStep,
   onClick,
-  ...rest
+  ...props
 }) => {
   const classes = classNames(
     'wizard-pf-step',
@@ -23,7 +23,7 @@ const WizardStep = ({
     className
   );
   return (
-    <li className={classes} {...rest}>
+    <li className={classes} {...props}>
       <a
         href="#"
         onClick={e => {

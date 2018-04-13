@@ -6,7 +6,7 @@ const SortDirectionSelector = ({
   className,
   isNumeric,
   isAscending,
-  ...rest
+  ...props
 }) => {
   let directionName;
   if (isNumeric) {
@@ -16,7 +16,7 @@ const SortDirectionSelector = ({
   }
 
   return (
-    <Button bsStyle="link" className={className} {...rest}>
+    <Button bsStyle="link" className={className} {...props}>
       <Icon type="fa" className="sort-direction" name={directionName} />
     </Button>
   );

@@ -13,14 +13,14 @@ const AboutModal = ({
   altLogo,
   trademarkText,
   closeText,
-  ...rest
+  ...props
 }) => (
   <Modal
     className={className}
     contentClassName="about-modal-pf"
     show={show}
     onHide={onHide}
-    {...rest}
+    {...props}
   >
     <Modal.Header>
       <Modal.CloseButton onClick={onHide} closeText={closeText} />

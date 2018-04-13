@@ -12,7 +12,7 @@ const FilterTypeSelector = ({
   currentFilterType,
   placeholder,
   onFilterTypeSelected,
-  ...rest
+  ...props
 }) => {
   const classes = classNames('input-group-btn', className);
   if (placeholder || (filterTypes && filterTypes.length > 1)) {
@@ -27,7 +27,7 @@ const FilterTypeSelector = ({
     menuId += id ? `_${id}` : '';
 
     return (
-      <div className={classes} {...rest}>
+      <div className={classes} {...props}>
         <DropdownButton title={title} id={menuId}>
           {placeholder && (
             <MenuItem

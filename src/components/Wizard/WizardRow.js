@@ -5,10 +5,10 @@ import classNames from 'classnames';
 /**
  * WizardRow component for Patternfly React
  */
-const WizardRow = ({ children, className, ...rest }) => {
+const WizardRow = ({ children, className, ...props }) => {
   const classes = classNames('wizard-pf-row', className);
   return (
-    <section className={classes} {...rest}>
+    <section className={classes} {...props}>
       {children}
     </section>
   );

@@ -12,7 +12,7 @@ const WizardContents = ({
   subStepIndex,
   activeStepIndex,
   activeSubStepIndex,
-  ...rest
+  ...props
 }) => {
   const classes = classNames(
     'wizard-pf-contents',
@@ -26,7 +26,7 @@ const WizardContents = ({
     className
   );
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

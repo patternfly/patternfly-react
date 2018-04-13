@@ -6,7 +6,7 @@ import { toolbarContextTypes } from '../Toolbar/ToolbarConstants';
 
 // Disabled eslint due to `isDescendantOfToolbar` being a context property we don't want passed by consumers
 // eslint-disable-next-line react/prop-types
-const Filter = ({ children, className, isDescendantOfToolbar, ...rest }) => {
+const Filter = ({ children, className, isDescendantOfToolbar, ...props }) => {
   const classes = classNames(
     {
       'filter-pf form-group': true,
@@ -16,7 +16,7 @@ const Filter = ({ children, className, isDescendantOfToolbar, ...rest }) => {
   );
 
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       <div className="filter-pf-fields">
         <div className="input-group">{children}</div>
       </div>

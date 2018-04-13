@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const ToolbarViewSelector = ({ children, className, ...rest }) => {
+const ToolbarViewSelector = ({ children, className, ...props }) => {
   const classes = classNames('form-group toolbar-pf-view-selector', className);
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

@@ -5,10 +5,10 @@ import classNames from 'classnames';
 /**
  * WizardSidebar component for Patternfly React
  */
-const WizardSidebar = ({ items, className, ...rest }) => {
+const WizardSidebar = ({ items, className, ...props }) => {
   const classes = classNames('wizard-pf-sidebar', className);
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       {items}
     </div>
   );

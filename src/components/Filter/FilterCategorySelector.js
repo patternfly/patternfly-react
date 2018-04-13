@@ -13,7 +13,7 @@ const FilterCategorySelector = ({
   currentCategory,
   placeholder,
   onFilterCategorySelected,
-  ...rest
+  ...props
 }) => {
   const classes = classNames('filter-pf-category-select', className);
 
@@ -29,7 +29,7 @@ const FilterCategorySelector = ({
     menuId += id ? `_${id}` : '';
 
     return (
-      <div className={classes} {...rest}>
+      <div className={classes} {...props}>
         <div className="filter-pf-select">
           <DropdownButton
             title={title}

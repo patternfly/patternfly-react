@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AboutModalVersionItem = ({ className, label, versionText, ...rest }) => (
-  <li className={className} {...rest}>
+const AboutModalVersionItem = ({ className, label, versionText, ...props }) => (
+  <li className={className} {...props}>
     <strong>{label}</strong> {versionText}
   </li>
 );

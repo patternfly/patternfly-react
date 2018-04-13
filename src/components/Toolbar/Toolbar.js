@@ -9,7 +9,7 @@ import {
   ToolbarContextProvider
 } from './ToolbarConstants';
 
-const Toolbar = ({ children, className, ...rest }) => {
+const Toolbar = ({ children, className, ...props }) => {
   const childrenArray =
     children &&
     React.Children.count(children) > 0 &&

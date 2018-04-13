@@ -5,18 +5,18 @@ import classNames from 'classnames';
 /**
  * WizardHeader component for Patternfly React
  */
-const WizardHeader = ({ children, className, embedded, title, ...rest }) => {
+const WizardHeader = ({ children, className, embedded, title, ...props }) => {
   const classes = classNames({ 'wizard-pf-header': !embedded }, className);
 
   if (embedded) {
     return (
-      <h2 className={classes} {...rest}>
+      <h2 className={classes} {...props}>
         {title}
       </h2>
     );
   }
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       <h4 className="wizard-pf-title">{title}</h4>
     </div>
   );

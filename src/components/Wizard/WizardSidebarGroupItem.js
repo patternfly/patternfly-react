@@ -16,14 +16,14 @@ const WizardSidebarGroupItem = ({
   title,
   activeSubStep,
   onClick,
-  ...rest
+  ...props
 }) => {
   const classes = classNames(
     { active: `${subStep}` === `${activeSubStep}` },
     className
   );
   return (
-    <ListGroupItem className={classes} listItem {...rest}>
+    <ListGroupItem className={classes} listItem {...props}>
       <a
         href="#"
         onClick={e => {
