@@ -254,9 +254,9 @@ Maintainers are members of the PatternFly community who exhibit most of the foll
 If you want to become a maintainer, we expect you to:
 
 - Review and test pull requests submitted by others.
-- Encourage and ensure design remains an integral part of the review process and pull in designers for review as needed (you can leverage @patternfly/pf-<framework>-design if there is no known associated designer).
+- Encourage and ensure design remains an integral part of the review process and pull in designers for review as needed (you can leverage @patternfly/patternfly-react-ux if there is no known associated designer).
 - Maintain sustained activity versus sporadic.
-- Support users and other developers on [PatternFly Slack](https://patternfly.slack.com/) and the [mailing list](mailto:patternfly@redhat.com).
+- Support users and other developers on [PatternFly Slack](https://patternfly.slack.com/) (there is a channel dedicated to PatternFly React) and the [mailing list](mailto:patternfly@redhat.com).
 
 Other things that are nice to do:
 
@@ -277,13 +277,13 @@ Regardless, while objections are discussed either in private or public, the nomi
 
 ### How do I lose maintainers status?
 
-If you are inactive in the community for one year, we will remove you from the maintainers list and revoke your permission, but we will make a mention of you on a  list of previous maintainers.
+The maintainers team will be reevaluated periodically to ensure it remains up to date. If you are inactive in the community for six months, we will remove you from the maintainers list and revoke your permission, but we will make a mention of you on a list of previous maintainers. In the event that a maintainer continues to disregard good citizenship (or actively disrupts the project), we may need to revoke that person’s status.
 
-In the event that a maintainer continues to disregard good citizenship (or actively disrupts the project), we may need to revoke that person’s status. The process is the same as for nominating a new maintainer: someone suggests the revocation with a good reason, two people second the motion, and a vote may be called if consensus cannot be reached. We hope that’s simple enough, and that we never have to test it in practice.
+The process for revoking someone's maintainer status is a discussion limited to the maintainer team given the sensitive nature of this conversation. The maintainer being discussed should be made aware of the reasons their membership is being discussed and why. It may be that this person simply does not have time and agrees to opt out of this role without any further discussion. If more is required, the process is similar to a nomination. A member should suggest the revocation with a good reason, two people second the motion, and a vote may be called if consensus cannot be reached. Someone from the maintainer team is required to follow up with the person being removed to update them and pass along constructive feedback. Again, care should be taken to do this sensitively.  
 
 ### Quick tips for new maintainers
 
-- If something you merged broke something, it’s your responsibility to provide a fix.
+- If something you merged broke something, it’s your responsibility to resolve or coordinate how to resolve the issue.
 - Do not merge your own commits
 - Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look
 - Do not merge if the build is failing. Wait until tests are green to merge.
