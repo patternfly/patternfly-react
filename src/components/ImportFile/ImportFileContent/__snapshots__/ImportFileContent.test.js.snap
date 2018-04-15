@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImportFileAccept is working properly 1`] = `
+<div
+  className="import-file-accept-text-pf"
+  key="accept"
+>
+  <h1>
+    <Icon
+      name="info"
+      size="2x"
+      type="fa"
+    />
+  </h1>
+  <h1>
+    warning
+  </h1>
+  <div>
+    <h5>
+      1 File
+    </h5>
+  </div>
+  <ProgressBar
+    active={true}
+    bsClass="progress-bar"
+    isChild={false}
+    max={100}
+    min={0}
+    now={21}
+    srOnly={false}
+    striped={false}
+  />
+  <div>
+    <h6>
+      1 File rejected.
+    </h6>
+  </div>
+</div>
+`;
+
+exports[`ImportFileActive is working properly 1`] = `
+<ImportFileActive
+  className=""
+  icon="info"
+  text="warning"
+>
+  <div
+    className="import-file-active-text-pf"
+  >
+    <h1>
+      <Icon
+        name="info"
+        size="2x"
+        type="fa"
+      >
+        <FontAwesome
+          name="info"
+          size="2x"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-info fa-2x"
+          />
+        </FontAwesome>
+      </Icon>
+    </h1>
+    <h1>
+      warning
+    </h1>
+  </div>
+</ImportFileActive>
+`;
+
+exports[`ImportFilePassive is working properly 1`] = `
+<ImportFilePassive
+  acceptedTypes="image/png"
+  browseClicked={null}
+  className=""
+  icon="info"
+  maxAmount={4}
+  maxSize={4000}
+  progressDone={21}
+  text="warning"
+>
+  <div
+    className="import-file-text-pf"
+  >
+    <h1>
+      <Icon
+        name="info"
+        size="2x"
+        type="fa"
+      >
+        <FontAwesome
+          name="info"
+          size="2x"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-info fa-2x"
+          />
+        </FontAwesome>
+      </Icon>
+    </h1>
+    <h1>
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="link"
+        disabled={false}
+        onClick={null}
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={null}
+          type="button"
+        >
+          <h1>
+            Browse
+          </h1>
+        </button>
+      </Button>
+      warning
+    </h1>
+    <h5
+      className="max-amount"
+    >
+      Max: 
+      4
+       files (
+      15.625
+      KB Total)
+    </h5>
+    <h5>
+      Supported File types: 
+      image/png
+    </h5>
+  </div>
+</ImportFilePassive>
+`;
+
+exports[`ImportFileReject is working properly 1`] = `
+<ImportFileReject
+  className=""
+  icon="info"
+  rejectedFiles={
+    Array [
+      "rejected",
+    ]
+  }
+  reset={null}
+  text="warning"
+>
+  <div
+    className="import-file-reject-text-pf"
+  >
+    <h1>
+      <Icon
+        name="info"
+        size="2x"
+        type="fa"
+      >
+        <FontAwesome
+          name="info"
+          size="2x"
+        >
+          <span
+            aria-hidden={true}
+            className="fa fa-info fa-2x"
+          />
+        </FontAwesome>
+      </Icon>
+    </h1>
+    <h1>
+      warning
+    </h1>
+    <div>
+      <Button
+        active={false}
+        block={false}
+        bsClass="warning"
+        bsStyle="default"
+        disabled={false}
+        onClick={null}
+      >
+        <button
+          className="warning warning-default"
+          disabled={false}
+          onClick={null}
+          type="button"
+        >
+          Try Again
+        </button>
+      </Button>
+    </div>
+  </div>
+</ImportFileReject>
+`;

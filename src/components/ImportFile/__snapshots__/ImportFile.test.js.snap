@@ -1,0 +1,389 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImportFile is working properly 1`] = `
+<t
+  accept="image/png"
+  acceptClassName="import-file-accept-pf"
+  activeClassName="import-file-active-pf"
+  className="import-file-pf"
+  disableClick={true}
+  disablePreview={false}
+  disabled={false}
+  maxSize={4000}
+  minSize={0}
+  multiple={true}
+  onDragEnter={[Function]}
+  onDragLeave={[Function]}
+  onDragStart={[Function]}
+  onDrop={[Function]}
+  onDropRejected={[Function]}
+  preventDropOnDocument={true}
+>
+  <ImportFileContent
+    acceptedFiles={Array []}
+    acceptedTypes="image/png"
+    browseClicked={[Function]}
+    icons={
+      Object {
+        "accept": "chevron-circle-up",
+        "active": "plus-circle",
+        "passive": "plus-circle",
+        "reject": "exclamation-circle",
+        "rejectAmount": "exclamation-circle",
+      }
+    }
+    maxAmount={0}
+    maxSize={4000}
+    progressDone={21}
+    rejectedFiles={Array []}
+    reset={[Function]}
+    state="passive"
+    text={
+      Object {
+        "accept": "Uploading",
+        "active": "Drop files here",
+        "reject": "File type is not supported",
+        "rejectAmount": "File amount limit exceeded",
+        "static": "or Drag & Drop",
+      }
+    }
+  />
+</t>
+`;
+
+exports[`ImportFileContent is working properly 1`] = `
+<div>
+  <ImportFileContent
+    acceptedFiles={Array []}
+    acceptedTypes="image/png"
+    browseClicked={null}
+    icons={
+      Object {
+        "accept": "chevron-circle-up",
+        "active": "plus-circle",
+        "passive": "plus-circle",
+        "reject": "exclamation-circle",
+        "rejectAmount": "exclamation-circle",
+      }
+    }
+    maxAmount={4}
+    maxSize={4000}
+    progressDone={21}
+    rejectedFiles={Array []}
+    reset={null}
+    state="passive"
+    text={
+      Object {
+        "accept": "Uploading",
+        "active": "Drop files here",
+        "reject": "File type is not supported",
+        "rejectAmount": "File amount limit exceeded",
+        "static": "or Drag & Drop",
+      }
+    }
+  >
+    <ImportFilePassive
+      acceptedTypes="image/png"
+      browseClicked={null}
+      className=""
+      icon="plus-circle"
+      maxAmount={4}
+      maxSize={4000}
+      text={null}
+    >
+      <div
+        className="import-file-text-pf"
+      >
+        <h1>
+          <Icon
+            name="plus-circle"
+            size="2x"
+            type="fa"
+          >
+            <FontAwesome
+              name="plus-circle"
+              size="2x"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-plus-circle fa-2x"
+              />
+            </FontAwesome>
+          </Icon>
+        </h1>
+        <h1>
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsStyle="link"
+            disabled={false}
+            onClick={null}
+          >
+            <button
+              className="btn btn-link"
+              disabled={false}
+              onClick={null}
+              type="button"
+            >
+              <h1>
+                Browse
+              </h1>
+            </button>
+          </Button>
+        </h1>
+        <h5
+          className="max-amount"
+        >
+          Max: 
+          4
+           files (
+          15.625
+          KB Total)
+        </h5>
+        <h5>
+          Supported File types: 
+          image/png
+        </h5>
+      </div>
+    </ImportFilePassive>
+  </ImportFileContent>
+  <ImportFileContent
+    acceptedFiles={Array []}
+    acceptedTypes="image/png"
+    browseClicked={null}
+    icons={
+      Object {
+        "accept": "chevron-circle-up",
+        "active": "plus-circle",
+        "passive": "plus-circle",
+        "reject": "exclamation-circle",
+        "rejectAmount": "exclamation-circle",
+      }
+    }
+    maxAmount={4}
+    maxSize={4000}
+    progressDone={21}
+    rejectedFiles={Array []}
+    reset={null}
+    state="active"
+    text={
+      Object {
+        "accept": "Uploading",
+        "active": "Drop files here",
+        "reject": "File type is not supported",
+        "rejectAmount": "File amount limit exceeded",
+        "static": "or Drag & Drop",
+      }
+    }
+  >
+    <ImportFileActive
+      className=""
+      icon="plus-circle"
+      text="Drop files here"
+    >
+      <div
+        className="import-file-active-text-pf"
+      >
+        <h1>
+          <Icon
+            name="plus-circle"
+            size="2x"
+            type="fa"
+          >
+            <FontAwesome
+              name="plus-circle"
+              size="2x"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-plus-circle fa-2x"
+              />
+            </FontAwesome>
+          </Icon>
+        </h1>
+        <h1>
+          Drop files here
+        </h1>
+      </div>
+    </ImportFileActive>
+  </ImportFileContent>
+  <ImportFileContent
+    acceptedFiles={Array []}
+    acceptedTypes="image/png"
+    browseClicked={null}
+    icons={
+      Object {
+        "accept": "chevron-circle-up",
+        "active": "plus-circle",
+        "passive": "plus-circle",
+        "reject": "exclamation-circle",
+        "rejectAmount": "exclamation-circle",
+      }
+    }
+    maxAmount={4}
+    maxSize={4000}
+    progressDone={21}
+    rejectedFiles={Array []}
+    reset={null}
+    state="accept"
+    text={
+      Object {
+        "accept": "Uploading",
+        "active": "Drop files here",
+        "reject": "File type is not supported",
+        "rejectAmount": "File amount limit exceeded",
+        "static": "or Drag & Drop",
+      }
+    }
+  >
+    <ImportFileAccept
+      acceptedFiles={Array []}
+      className=""
+      icon="chevron-circle-up"
+      progressDone={21}
+      rejectedFiles={Array []}
+      text="Uploading"
+    >
+      <div
+        className="import-file-accept-text-pf"
+        key="accept"
+      >
+        <h1>
+          <Icon
+            name="chevron-circle-up"
+            size="2x"
+            type="fa"
+          >
+            <FontAwesome
+              name="chevron-circle-up"
+              size="2x"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-chevron-circle-up fa-2x"
+              />
+            </FontAwesome>
+          </Icon>
+        </h1>
+        <h1>
+          Uploading
+        </h1>
+        <div>
+          <h5>
+            0 Files
+          </h5>
+        </div>
+        <ProgressBar
+          active={true}
+          bsClass="progress-bar"
+          isChild={false}
+          max={100}
+          min={0}
+          now={21}
+          srOnly={false}
+          striped={false}
+        >
+          <div
+            className="progress"
+          >
+            <div
+              aria-valuemax={100}
+              aria-valuemin={0}
+              aria-valuenow={21}
+              className="progress-bar active progress-bar-striped"
+              role="progressbar"
+              style={
+                Object {
+                  "width": "21%",
+                }
+              }
+            />
+          </div>
+        </ProgressBar>
+      </div>
+    </ImportFileAccept>
+  </ImportFileContent>
+  <ImportFileContent
+    acceptedFiles={Array []}
+    acceptedTypes="image/png"
+    browseClicked={null}
+    icons={
+      Object {
+        "accept": "chevron-circle-up",
+        "active": "plus-circle",
+        "passive": "plus-circle",
+        "reject": "exclamation-circle",
+        "rejectAmount": "exclamation-circle",
+      }
+    }
+    maxAmount={4}
+    maxSize={4000}
+    progressDone={21}
+    rejectedFiles={Array []}
+    reset={null}
+    state="reject"
+    text={
+      Object {
+        "accept": "Uploading",
+        "active": "Drop files here",
+        "reject": "File type is not supported",
+        "rejectAmount": "File amount limit exceeded",
+        "static": "or Drag & Drop",
+      }
+    }
+  >
+    <ImportFileReject
+      className=""
+      icon="exclamation-circle"
+      rejectedFiles={Array []}
+      reset={null}
+      text="File type is not supported"
+    >
+      <div
+        className="import-file-reject-text-pf"
+      >
+        <h1>
+          <Icon
+            name="exclamation-circle"
+            size="2x"
+            type="fa"
+          >
+            <FontAwesome
+              name="exclamation-circle"
+              size="2x"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-exclamation-circle fa-2x"
+              />
+            </FontAwesome>
+          </Icon>
+        </h1>
+        <h1>
+          File type is not supported
+        </h1>
+        <div>
+          <Button
+            active={false}
+            block={false}
+            bsClass="warning"
+            bsStyle="default"
+            disabled={false}
+            onClick={null}
+          >
+            <button
+              className="warning warning-default"
+              disabled={false}
+              onClick={null}
+              type="button"
+            >
+              Try Again
+            </button>
+          </Button>
+        </div>
+      </div>
+    </ImportFileReject>
+  </ImportFileContent>
+</div>
+`;
