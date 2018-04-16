@@ -10,7 +10,7 @@ const WizardSubStep = ({
   subStep,
   title,
   activeSubStep,
-  ...rest
+  ...props
 }) => {
   const classes = classNames(
     'wizard-pf-step-title-substep',
@@ -18,7 +18,7 @@ const WizardSubStep = ({
     className
   );
   return (
-    <span className={classes} {...rest}>
+    <span className={classes} {...props}>
       {title}
     </span>
   );

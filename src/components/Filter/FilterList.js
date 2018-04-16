@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FilterList = ({ children, className, ...rest }) => {
+const FilterList = ({ children, className, ...props }) => {
   if (!children) {
     return null;
   }

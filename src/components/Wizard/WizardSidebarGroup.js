@@ -11,14 +11,14 @@ const WizardSidebarGroup = ({
   className,
   step,
   activeStep,
-  ...rest
+  ...props
 }) => {
   const classes = classNames(
     { hidden: `${step}` !== `${activeStep}` },
     className
   );
   return (
-    <ListGroup componentClass="ul" className={classes} {...rest}>
+    <ListGroup componentClass="ul" className={classes} {...props}>
       {children}
     </ListGroup>
   );

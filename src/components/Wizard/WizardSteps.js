@@ -5,10 +5,10 @@ import classNames from 'classnames';
 /**
  * WizardSteps component for Patternfly React
  */
-const WizardSteps = ({ steps, className, ...rest }) => {
+const WizardSteps = ({ steps, className, ...props }) => {
   const classes = classNames('wizard-pf-steps', className);
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       <ul className="wizard-pf-steps-indicator">{steps}</ul>
     </div>
   );

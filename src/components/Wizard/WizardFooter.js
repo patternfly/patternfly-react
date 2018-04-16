@@ -5,10 +5,10 @@ import classNames from 'classnames';
 /**
  * WizardFooter component for Patternfly React
  */
-const WizardFooter = ({ children, className, ...rest }) => {
+const WizardFooter = ({ children, className, ...props }) => {
   const classes = classNames('wizard-pf-footer', className);
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

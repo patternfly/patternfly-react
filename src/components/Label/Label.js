@@ -3,8 +3,8 @@ import { Label as BsLabel } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import RemoveButton from './RemoveButton';
 
-const Label = ({ children, onRemoveClick, type, ...rest }) => (
-  <BsLabel bsStyle={type} {...rest}>
+const Label = ({ children, onRemoveClick, type, ...props }) => (
+  <BsLabel bsStyle={type} {...props}>
     {children}
     {!!onRemoveClick && (
       <RemoveButton onRemoveClick={onRemoveClick} title="Remove" />

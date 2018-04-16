@@ -10,7 +10,7 @@ const ListViewGroupItem = ({
   className,
   stacked,
   expanded,
-  ...rest
+  ...props
 }) => {
   const classes = classNames(
     'list-group-item',
@@ -21,7 +21,7 @@ const ListViewGroupItem = ({
     className
   );
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

@@ -12,9 +12,9 @@ const WizardReviewSubStep = ({
   label,
   title,
   collapsed,
-  ...rest
+  ...props
 }) => (
-  <ListGroupItem listItem {...rest}>
+  <ListGroupItem listItem {...props}>
     <a href="#" onClick={onClick} className={collapsed ? 'collapsed' : ''}>
       <span className="wizard-pf-substep-number">{label}</span>
       <span className="wizard-pf-substep-title">{title}</span>

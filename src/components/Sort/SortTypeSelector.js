@@ -10,7 +10,7 @@ const SortTypeSelector = ({
   sortTypes,
   currentSortType,
   onSortTypeSelected,
-  ...rest
+  ...props
 }) => {
   let menuId = 'sortTypeMenu';
   menuId += id ? `_${id}` : '';
@@ -23,7 +23,7 @@ const SortTypeSelector = ({
     }
 
     return (
-      <DropdownButton className={className} title={title} id={menuId} {...rest}>
+      <DropdownButton className={className} title={title} id={menuId} {...props}>
         {sortTypes.map((item, index) => {
           const classes = {
             selected: item === currentSortType

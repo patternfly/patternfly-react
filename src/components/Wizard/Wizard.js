@@ -5,7 +5,7 @@ import WizardHeader from './WizardHeader';
 /**
  * Wizard - main Wizard component.
  */
-const Wizard = ({ children, className, embedded, ...rest }) => {
+const Wizard = ({ children, className, embedded, ...props }) => {
   const renderChildren = () =>
     React.Children.map(children, child => {
       if (child && child.type === WizardHeader) {
@@ -17,7 +17,7 @@ const Wizard = ({ children, className, embedded, ...rest }) => {
     });
 
   return (
-    <div className={className} {...rest}>
+    <div className={className} {...props}>
       {renderChildren()}
     </div>
   );

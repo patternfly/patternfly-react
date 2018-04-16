@@ -12,7 +12,7 @@ const FilterValueSelector = ({
   currentValue,
   placeholder,
   onFilterValueSelected,
-  ...rest
+  ...props
 }) => {
   const classes = classNames('filter-pf-select', className);
 
@@ -28,7 +28,7 @@ const FilterValueSelector = ({
     menuId += id ? `_${id}` : '';
 
     return (
-      <div className={classes} {...rest}>
+      <div className={classes} {...props}>
         <DropdownButton
           title={title}
           id={menuId}

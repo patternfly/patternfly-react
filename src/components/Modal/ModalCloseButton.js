@@ -3,8 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '../../index';
 
-const ModalCloseButton = ({ className, closeText, ...rest }) => (
-  <button className={classNames(`close`, className)} {...rest}>
+const ModalCloseButton = ({ className, closeText, ...props }) => (
+  <button className={classNames(`close`, className)} {...props}>
     <Icon type="pf" name="close" aria-hidden="true" title={closeText} />
     <span className="sr-only">{closeText}</span>
   </button>

@@ -142,6 +142,7 @@ when possible and accept [props](https://facebook.github.io/react/docs/component
   * When your stories contain multiple files, put them in a subfolder named `Stories`
   * `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
 * When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - ` import classNames from 'classnames' `
+* When destructuring or spreading expressions , use ...props as the variable name.
 * Exporting components from other libraries (without manipulating them)
   to consumers is a common task, use:
   ```js

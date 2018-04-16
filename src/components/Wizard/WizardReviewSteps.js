@@ -6,10 +6,10 @@ import { ListGroup } from '../ListGroup';
 /**
  * WizardReviewSteps component for Patternfly React
  */
-const WizardReviewSteps = ({ children, className, ...rest }) => {
+const WizardReviewSteps = ({ children, className, ...props }) => {
   const classes = classNames('wizard-pf-review-steps', className);
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       <ListGroup componentClass="ul">{children}</ListGroup>
     </div>
   );

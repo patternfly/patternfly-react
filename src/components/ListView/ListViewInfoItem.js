@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 /**
  * ListViewInfoItem renders contents of individual Info item
  */
-const ListViewInfoItem = ({ children, className, stacked, ...rest }) => {
+const ListViewInfoItem = ({ children, className, stacked, ...props }) => {
   const classes = classNames(
     { 'list-view-pf-additional-info-item-stacked': stacked },
     'list-view-pf-additional-info-item',
     className
   );
   return (
-    <div className={classes} onClick={e => e.stopPropagation()} {...rest}>
+    <div className={classes} onClick={e => e.stopPropagation()} {...props}>
       {children}
     </div>
   );

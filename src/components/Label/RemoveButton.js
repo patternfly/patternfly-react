@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from '../../common/helpers';
 
-const RemoveButton = ({ className, title, onRemoveClick, ...rest }) => {
+const RemoveButton = ({ className, title, onRemoveClick, ...props }) => {
   const classes = classNames('pficon pficon-close', className);
 
   return (
@@ -15,7 +15,7 @@ const RemoveButton = ({ className, title, onRemoveClick, ...rest }) => {
       }}
       className="pf-remove-button"
     >
-      <span className={classes} {...rest} aria-hidden="true" />
+      <span className={classes} {...props} aria-hidden="true" />
       <span className="sr-only">{title}</span>
     </a>
   );

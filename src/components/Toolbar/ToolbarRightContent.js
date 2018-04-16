@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const ToolbarRightContent = ({ children, className, ...rest }) => {
+const ToolbarRightContent = ({ children, className, ...props }) => {
   const classes = classNames('toolbar-pf-action-right', className);
   return (
-    <div className={classes} {...rest}>
+    <div className={classes} {...props}>
       {children}
     </div>
   );

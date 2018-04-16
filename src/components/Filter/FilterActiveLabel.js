@@ -2,9 +2,9 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FilterActiveLabel = ({ children, className, ...rest }) => {
+const FilterActiveLabel = ({ children, className, ...props }) => {
   const classes = classNames('filter-pf-active-label', className);
-  return <p className={classes}>{children}</p>;
+  return <p className={classes} {...props}>{children}</p>;
 };
 
 FilterActiveLabel.propTypes = {

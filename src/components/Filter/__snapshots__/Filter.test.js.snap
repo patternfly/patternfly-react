@@ -9,6 +9,7 @@ exports[`Filter active components render properly 1`] = `
   >
     <p
       class="filter-pf-active-label"
+      title="Active Filters:"
     />
     <ul
       class="list-inline"

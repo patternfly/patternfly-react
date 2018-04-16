@@ -374,6 +374,7 @@ exports[`Toolbar renders properly 1`] = `
           </h5>
           <p
             class="filter-pf-active-label"
+            title="Active Filters:"
           />
           <ul
             class="list-inline"
