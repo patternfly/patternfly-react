@@ -23,7 +23,12 @@ const SortTypeSelector = ({
     }
 
     return (
-      <DropdownButton className={className} title={title} id={menuId} {...props}>
+      <DropdownButton
+        className={className}
+        title={title}
+        id={menuId}
+        {...props}
+      >
         {sortTypes.map((item, index) => {
           const classes = {
             selected: item === currentSortType

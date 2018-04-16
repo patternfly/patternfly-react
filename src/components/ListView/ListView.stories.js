@@ -57,7 +57,14 @@ stories.add(
     <ListView>
       {mockListItems.map(
         (
-          { actions, properties, title, description, expandedContentText, hideCloseIcon },
+          {
+            actions,
+            properties,
+            title,
+            description,
+            expandedContentText,
+            hideCloseIcon
+          },
           index
         ) => (
           <ListView.Item

@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 import { noop } from '../../common/helpers';
 import { DisposableLabel } from '../Label';
 
-const FilterItem = ({ children, className, onRemove, filterData, ...props }) => {
+const FilterItem = ({
+  children,
+  className,
+  onRemove,
+  filterData,
+  ...props
+}) => {
   const classes = classNames(className);
 
   return (
