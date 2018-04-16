@@ -18,6 +18,10 @@ import WizardStep from './WizardStep';
 import WizardSteps from './WizardSteps';
 import WizardSubStep from './WizardSubStep';
 
+import WizardPattern from './Patterns/WizardPattern';
+import WizardPatternBody from './Patterns/WizardPatternBody';
+import StatefulWizardPattern from './Patterns/StatefulWizardPattern';
+
 Wizard.Body = WizardBody;
 Wizard.Contents = WizardContents;
 Wizard.Footer = WizardFooter;
@@ -36,6 +40,10 @@ Wizard.SidebarGroupItem = WizardSidebarGroupItem;
 Wizard.Step = WizardStep;
 Wizard.Steps = WizardSteps;
 Wizard.SubStep = WizardSubStep;
+
+Wizard.Pattern = WizardPattern;
+Wizard.Pattern.Body = WizardPatternBody;
+Wizard.Pattern.Stateful = StatefulWizardPattern;
 
 export {
   Wizard,
@@ -56,5 +64,8 @@ export {
   WizardSidebarGroupItem,
   WizardStep,
   WizardSteps,
-  WizardSubStep
+  WizardSubStep,
+  WizardPattern,
+  WizardPatternBody,
+  StatefulWizardPattern
 };
