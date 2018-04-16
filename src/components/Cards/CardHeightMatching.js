@@ -20,7 +20,7 @@ class CardHeightMatching extends React.Component {
       this._resizeSensors.push(
         new ResizeSensor(
           elements,
-          debounce(this._matchHeights([selector]), 200)
+          debounce(() => this._matchHeights([selector]), 200)
         )
       );
     });
@@ -45,6 +45,10 @@ class CardHeightMatching extends React.Component {
   }
 
   _matchHeights(selectors = this._selectors) {
+    if (!this._container) {
+      return;
+    }
+
     const arrayMap = elements =>
       Array.prototype.map
         .call(elements, el => el.scrollHeight)
