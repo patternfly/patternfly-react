@@ -2024,6 +2024,10 @@ bootstrap-select@^1.12.2:
   dependencies:
     jquery ">=1.8"
 
+bootstrap-slider-without-jquery@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/bootstrap-slider-without-jquery/-/bootstrap-slider-without-jquery-10.0.0.tgz#5c304461b3b915037c7c118806c8ca08102f5de3"
+
 bootstrap-slider@^9.9.0:
   version "9.10.0"
   resolved "https://registry.npmjs.org/bootstrap-slider/-/bootstrap-slider-9.10.0.tgz#1103d6bc00cfbfa8cfc9a2599ab518c55643da3f"
