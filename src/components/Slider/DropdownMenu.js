@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dropdown, MenuItem } from 'react-bootstrap';
+import { Dropdown, MenuItem } from '../../index';
 
 const DropdownMenu = props => {
   const { dropup, dropdownList, onFormatChange, title } = props;
-  if (!dropdownList) {
-    return null;
-  }
   const menuItems = dropdownList.map((item, index) => (
     <MenuItem
       bsClass="slider_menuitem"
@@ -18,9 +15,8 @@ const DropdownMenu = props => {
     </MenuItem>
   ));
 
-  const isDropup = !!dropup;
   return (
-    <Dropdown id="slider_dropdown" dropup={isDropup} pullRight>
+    <Dropdown id="slider_dropdown" dropup={dropup} pullRight>
       <Dropdown.Toggle>
         <span>{title || dropdownList[0]}</span>
       </Dropdown.Toggle>
@@ -39,7 +35,7 @@ DropdownMenu.propTypes = {
 DropdownMenu.defaultProps = {
   dropup: false,
   dropdownList: null,
-  onFormatChange: v => v,
+  onFormatChange: null,
   title: null
 };
 

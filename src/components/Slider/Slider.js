@@ -122,7 +122,7 @@ Slider.defaultProps = {
   value: 0,
   step: 1,
   toolTip: false,
-  onSlide: event => event,
+  onSlide: null,
   label: null,
   labelClass: null,
   input: false,

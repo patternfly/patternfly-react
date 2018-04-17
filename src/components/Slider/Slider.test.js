@@ -49,6 +49,18 @@ test('listens for input change', () => {
   expect(value).toEqual(inputValue);
 });
 
+test('listens for dropdown change', () => {
+  const wrapper = mount(<Slider dropup input showBoundaries {...props} />);
+  const formatValue = 'ZB';
+  wrapper
+    .find('a[role="menuitem"]')
+    .at(0)
+    .simulate('click', { target: { text: formatValue } });
+
+  const { tooltipFormat } = wrapper.state();
+  expect(tooltipFormat).toEqual(formatValue);
+});
+
 test('Slider match snapshot', () => {
   const wrapper = shallow(<Slider {...props} />);
   expect(wrapper).toMatchSnapshot();
