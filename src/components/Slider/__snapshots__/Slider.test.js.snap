@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider match snapshot 1`] = `
+<div>
+  <ControlLabel
+    bsClass="col-xs-2 col-sm-2 col-md-2"
+    htmlFor="slider-pf"
+    srOnly={false}
+  >
+    Size
+  </ControlLabel>
+  <div
+    className="col-xs-10 col-sm-10 col-md-10"
+  >
+    <Boundaries
+      dropdownList={
+        Array [
+          "MB",
+          "GB",
+        ]
+      }
+      icon={null}
+      id="slider-pf"
+      input={false}
+      inputFormat="MB"
+      label="Size"
+      labelClass={null}
+      max={100}
+      min={0}
+      onSlide={null}
+      orientation="horizontal"
+      reversed={false}
+      showBoundaries={false}
+      slider={
+        <BootstrapSlider
+          dropdownList={
+            Array [
+              "MB",
+              "GB",
+            ]
+          }
+          formatter={[Function]}
+          icon={null}
+          id="slider-pf"
+          input={false}
+          inputFormat="MB"
+          label="Size"
+          labelClass={null}
+          max={100}
+          min={0}
+          onSlide={[Function]}
+          orientation="horizontal"
+          sliderClass={null}
+          step={1}
+          ticks_labels={Array []}
+          toolTip={false}
+          tooltip="show"
+          value={50}
+        />
+      }
+      sliderClass={null}
+      step={1}
+      toolTip={false}
+      tooltip="show"
+      value={50}
+    >
+      <DropdownMenu
+        dropdownList={
+          Array [
+            "MB",
+            "GB",
+          ]
+        }
+        dropup={false}
+        icon={null}
+        id="slider-pf"
+        input={false}
+        inputFormat="MB"
+        label="Size"
+        labelClass={null}
+        max={100}
+        min={0}
+        onFormatChange={[Function]}
+        onSlide={null}
+        orientation="horizontal"
+        sliderClass={null}
+        step={1}
+        title="MB"
+        toolTip={false}
+        tooltip="show"
+        value={50}
+      />
+    </Boundaries>
+  </div>
+</div>
+`;

@@ -28,6 +28,7 @@ export * from './components/Pagination';
 export * from './components/Popover';
 export * from './components/ProgressBar';
 export * from './components/Sort';
+export * from './components/Slider';
 export * from './components/Spinner';
 export * from './components/Switch';
 export * from './components/Tabs';
