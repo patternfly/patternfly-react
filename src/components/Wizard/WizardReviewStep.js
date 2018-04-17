@@ -6,7 +6,13 @@ import { noop } from '../../common/helpers';
 /**
  * WizardReviewStep component for Patternfly React
  */
-const WizardReviewStep = ({ children, onClick, title, collapsed, ...props }) => (
+const WizardReviewStep = ({
+  children,
+  onClick,
+  title,
+  collapsed,
+  ...props
+}) => (
   <ListGroupItem listItem {...props}>
     <a href="#" onClick={onClick} className={collapsed ? 'collapsed' : ''}>
       {title}
