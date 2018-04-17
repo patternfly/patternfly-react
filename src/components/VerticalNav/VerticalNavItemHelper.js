@@ -293,8 +293,10 @@ class BaseVerticalNavItemHelper extends React.Component {
               depth !== 'tertiary' &&
               childItemComponents &&
               childItemComponents.length > 0,
-            active: active || pinned, // This is the only class we have at the tertiary depth.
-            'is-hover': onPinnedPath || (depth !== 'tertiary' && hovered),
+            active: active || (pinned && pinnableMenus), // This is the only class we have at the tertiary depth.
+            'is-hover':
+              (pinnableMenus && onPinnedPath) ||
+              (depth !== 'tertiary' && hovered),
             // This class is present at primary and secondary depths if selectedOnMobile is true,
             // except for the primary depth, where it is only present if showMobileSecondary is also true.
             'mobile-nav-item-pf':
