@@ -1,0 +1,43 @@
+{
+  "name": "@patternfly-react/console",
+  "version": "0.0.0",
+  "description": "This library provides a set of Console React components for use with the PatternFly reference implementation.",
+  "main": "dist/cjs/index.js",
+  "sideEffects": false,
+  "files": [
+    "./dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/src/console/README.md",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "node ../../scripts/runScript.js build:console",
+    "prepublish": "yarn build"
+  },
+  "dependencies": {
+    "@novnc/novnc": "^1.0.0",
+    "patternfly": "^3.45.0",
+    "patternfly-react": "^1.19.1",
+    "xterm": "^3.3.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  }
+}

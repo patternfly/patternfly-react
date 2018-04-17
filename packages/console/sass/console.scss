@@ -1,0 +1,28 @@
+/**
+  Styling shared by both VncConsole and SerialConsole.
+*/
+// Bootstrap Core variables and mixins
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+// Patternfly Core variables and mixins
+@import 'patternfly/variables';
+@import 'patternfly/bootstrap-mixin-overrides';
+@import 'patternfly/mixins';
+
+// Console StyleSheets
+@import "serial-console";
+@import "vnc-console";
+
+/**
+  Styling shared by both VncConsole and SerialConsole.
+*/
+.console-actions-pf {
+  float: right;
+  position: relative;
+  top: -2em;
+}
+
+.console-actions-buttons-pf {
+  margin-left: 5px;
+}
