@@ -40,10 +40,7 @@
       }
     ],
     "no-use-before-define": "off",
-    "prettier/prettier": [
-      "error",
-      { "singleQuote": true, "trailingComma": "none" }
-    ],
+    "prettier/prettier": "error",
     "react/no-array-index-key": "off",
     "react/forbid-prop-types": "off",
     "react/jsx-filename-extension": "off",
