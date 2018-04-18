@@ -4,7 +4,6 @@ import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
 import { compose } from 'recompose';
-import { bindMethods } from '../../../common/helpers';
 import {
   customHeaderFormattersDefinition,
   defaultSortingOrder,
@@ -53,7 +52,6 @@ export class MockInlineEditColumnTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-    bindMethods(this, ['customHeaderFormatters']);
 
     const inlineEditController = {
       isEditing: ({ columnIndex }) => {
@@ -298,7 +296,6 @@ import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
 import { compose } from 'recompose';
-import { bindMethods } from '../../../common/helpers';
 import {
   customHeaderFormattersDefinition,
   defaultSortingOrder,
@@ -347,7 +344,6 @@ export class MockInlineEditColumnTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-    bindMethods(this, ['customHeaderFormatters']);
 
     const inlineEditController = {
       isEditing: ({ columnIndex }) => columnIndex === this.state.editingColumn,

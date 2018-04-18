@@ -5,7 +5,6 @@ import { ListGroup } from '../ListGroup';
 import VerticalNavItem from './VerticalNavItem';
 import VerticalNavMasthead from './VerticalNavMasthead';
 import {
-  bindMethods,
   filterChildren,
   findChild,
   noop,
@@ -30,43 +29,15 @@ import VerticalNavTertiaryItem from './VerticalNavTertiaryItem';
  * http://www.patternfly.org/pattern-library/navigation/vertical-navigation/
  */
 class BaseVerticalNav extends React.Component {
-  constructor(props) {
-    super(props);
-    // More state is defined in controlledStateTypes.
-    // These ones just don't need to be able to be controlled by props.
-    this.state = {
-      forceHidden: false, // eslint-disable-line react/no-unused-state
-      controlledActivePath: false,
-      controlledHoverPath: false,
-      controlledMobilePath: false,
-      controlledPinnedPath: false
-    };
-    this.hoverTimer = new Timer();
-    bindMethods(this, [
-      'handleBodyClick',
-      'updateBodyClasses',
-      'clearBodyClasses',
-      'onLayoutChange',
-      'collapseMenu',
-      'expandMenu',
-      'updateNavOnMenuToggleClick',
-      'updateNavOnItemHover',
-      'updateNavOnItemBlur',
-      'updateNavOnItemClick',
-      'updateNavOnPin',
-      'updateNavOnMobileSelection',
-      'setActivePath',
-      'setHoverPath',
-      'setMobilePath',
-      'setPinnedPath',
-      'setControlledActivePath',
-      'setControlledHoverPath',
-      'setControlledMobilePath',
-      'setControlledPinnedPath',
-      'forceHideSecondaryMenu',
-      'navigateToItem'
-    ]);
-  }
+  // More state is defined in controlledStateTypes.
+  // These ones just don't need to be able to be controlled by props.
+  state = {
+    forceHidden: false, // eslint-disable-line react/no-unused-state
+    controlledActivePath: false,
+    controlledHoverPath: false,
+    controlledMobilePath: false,
+    controlledPinnedPath: false
+  };
 
   componentDidMount() {
     this.updateBodyClasses();
@@ -94,93 +65,93 @@ class BaseVerticalNav extends React.Component {
     removeBodyEventListener('mousedown', this.handleBodyClick);
   }
 
-  onLayoutChange(newLayout) {
+  onLayoutChange = newLayout => {
     const { onLayoutChange, setControlledState } = this.props;
     setControlledState({ isMobile: newLayout === 'mobile' });
     onLayoutChange && onLayoutChange(newLayout);
-  }
+  };
 
-  setActivePath(activePath) {
+  setActivePath = activePath => {
     if (!this.state.controlledActivePath) {
       this.props.setControlledState({ activePath });
     }
-  }
+  };
 
-  setControlledActivePath(controlledActivePath) {
+  setControlledActivePath = controlledActivePath => {
     this.setState({ controlledActivePath });
-  }
+  };
 
-  setControlledHoverPath(controlledHoverPath) {
+  setControlledHoverPath = controlledHoverPath => {
     this.setState({ controlledHoverPath });
-  }
+  };
 
-  setControlledMobilePath(controlledMobilePath) {
+  setControlledMobilePath = controlledMobilePath => {
     this.setState({ controlledMobilePath });
-  }
+  };
 
-  setControlledPinnedPath(controlledPinnedPath) {
+  setControlledPinnedPath = controlledPinnedPath => {
     this.setState({ controlledPinnedPath });
-  }
+  };
 
-  setHoverPath(hoverPath) {
+  setHoverPath = hoverPath => {
     if (!this.state.controlledHoverPath) {
       this.props.setControlledState({
         hoverPath,
         ...(hoverPath === null ? { showMobileNav: false } : {})
       });
     }
-  }
+  };
 
-  setMobilePath(mobilePath) {
+  setMobilePath = mobilePath => {
     if (!this.state.controlledMobilePath) {
       this.props.setControlledState({ mobilePath });
     }
-  }
+  };
 
-  setPinnedPath(pinnedPath) {
+  setPinnedPath = pinnedPath => {
     if (!this.state.controlledPinnedPath) {
       this.props.setControlledState({ pinnedPath });
     }
-  }
-
-  clearBodyClasses() {
+  };
+  hoverTimer = new Timer();
+  clearBodyClasses = () => {
     if (this.props.dynamicBodyClasses) {
       setBodyClassIf(false, 'collapsed-nav');
       setBodyClassIf(false, 'hidden-nav');
     }
-  }
+  };
 
-  collapseMenu() {
+  collapseMenu = () => {
     const { onCollapse, setControlledState } = this.props;
     setControlledState({ navCollapsed: true });
     onCollapse && onCollapse();
-  }
+  };
 
-  expandMenu() {
+  expandMenu = () => {
     const { onExpand, setControlledState } = this.props;
     setControlledState({ navCollapsed: false });
     onExpand && onExpand();
-  }
+  };
 
-  forceHideSecondaryMenu() {
+  forceHideSecondaryMenu = () => {
     this.setState({ forceHidden: true }); // eslint-disable-line react/no-unused-state
     setTimeout(() => {
       this.setState({ forceHidden: false }); // eslint-disable-line react/no-unused-state
     }, 500);
-  }
+  };
 
-  handleBodyClick() {
+  handleBodyClick = () => {
     // Clear hover state on body click. Helps especially when using blurDisabled prop.
     this.setHoverPath(null);
-  }
+  };
 
-  navigateToItem(item) {
+  navigateToItem = item => {
     const { onNavigate } = this.props;
     onNavigate(item);
     // Note: This should become router-aware later on.
-  }
+  };
 
-  updateBodyClasses() {
+  updateBodyClasses = () => {
     // Note: Updating the body element classes from here like this is a hacky, non-react-y pattern.
     // It's only here for consistency. See comments on getBodyContentElement in ./constants.js.
     const {
@@ -194,9 +165,9 @@ class BaseVerticalNav extends React.Component {
       setBodyClassIf(!isMobile && collapsed, 'collapsed-nav');
       setBodyClassIf(isMobile, 'hidden-nav');
     }
-  }
+  };
 
-  updateNavOnItemBlur(
+  updateNavOnItemBlur = (
     primary,
     secondary,
     tertiary,
@@ -204,7 +175,7 @@ class BaseVerticalNav extends React.Component {
     parentPath,
     noDelay,
     callback
-  ) {
+  ) => {
     const {
       hoverPath,
       blurDelay,
@@ -234,9 +205,9 @@ class BaseVerticalNav extends React.Component {
         }
       }
     }
-  }
+  };
 
-  updateNavOnItemClick(primary, secondary, tertiary, idPath, parentPath) {
+  updateNavOnItemClick = (primary, secondary, tertiary, idPath, parentPath) => {
     const { onItemClick, hoverPath, hoverDisabled, isMobile } = this.props;
     this.hoverTimer.skipTimer();
     const item = deepestOf(primary, secondary, tertiary);
@@ -254,16 +225,16 @@ class BaseVerticalNav extends React.Component {
       this.navigateToItem(item);
     }
     onItemClick && onItemClick(primary, secondary, tertiary);
-  }
+  };
 
-  updateNavOnItemHover(
+  updateNavOnItemHover = (
     primary,
     secondary,
     tertiary,
     idPath,
     parentPath,
     callback
-  ) {
+  ) => {
     const {
       onItemHover,
       hoverPath,
@@ -288,9 +259,9 @@ class BaseVerticalNav extends React.Component {
         }, hoverDelay);
       }
     }
-  }
+  };
 
-  updateNavOnMenuToggleClick() {
+  updateNavOnMenuToggleClick = () => {
     const {
       onMenuToggleClick,
       isMobile,
@@ -311,21 +282,21 @@ class BaseVerticalNav extends React.Component {
       this.collapseMenu();
     }
     onMenuToggleClick && onMenuToggleClick();
-  }
+  };
 
-  updateNavOnMobileSelection(primary, secondary, tertiary) {
+  updateNavOnMobileSelection = (primary, secondary, tertiary) => {
     const { onMobileSelection } = this.props;
     // All the behavior here is handled by mobilePath and setMobilePath,
     // but we still make a callback available here.
     onMobileSelection && onMobileSelection(primary, secondary, tertiary);
-  }
+  };
 
-  updateNavOnPin(item, depth, pinned) {
+  updateNavOnPin = (item, depth, pinned) => {
     const { onItemPin, isMobile } = this.props;
     if (!isMobile) {
       onItemPin && onItemPin(item, depth, pinned);
     }
-  }
+  };
 
   render() {
     const { items, children } = this.props;

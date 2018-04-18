@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { compose } from 'recompose';
-import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
@@ -62,23 +61,6 @@ export class MockClientPaginationTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-
-    bindMethods(this, [
-      'customHeaderFormatters',
-      'onPageInput',
-      'onSubmit',
-      'onPerPageSelect',
-      'onFirstPage',
-      'onPreviousPage',
-      'onNextPage',
-      'onLastPage',
-      'onRow',
-      'onSelectAllRows',
-      'onSelectRow',
-      'setPage',
-      'totalPages'
-    ]);
-
     this.state = {
       // Sort the first column in an ascending way by default.
       sortingColumns: {
@@ -271,45 +253,45 @@ export class MockClientPaginationTable extends React.Component {
       pageChangeValue: 1
     };
   }
-  onFirstPage() {
+  onFirstPage = () => {
     this.setPage(1);
-  }
-  onLastPage() {
+  };
+  onLastPage = () => {
     const { page } = this.state.pagination;
     const totalPages = this.totalPages();
     if (page < totalPages) {
       this.setPage(totalPages);
     }
-  }
-  onNextPage() {
+  };
+  onNextPage = () => {
     const { page } = this.state.pagination;
     if (page < this.totalPages()) {
       this.setPage(this.state.pagination.page + 1);
     }
-  }
-  onPageInput(e) {
+  };
+  onPageInput = e => {
     this.setState({ pageChangeValue: e.target.value });
-  }
-  onPerPageSelect(eventKey, e) {
+  };
+  onPerPageSelect = (eventKey, e) => {
     const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     newPaginationState.page = 1;
     this.setState({ pagination: newPaginationState });
-  }
-  onPreviousPage() {
+  };
+  onPreviousPage = () => {
     if (this.state.pagination.page > 1) {
       this.setPage(this.state.pagination.page - 1);
     }
-  }
-  onRow(row, { rowIndex }) {
+  };
+  onRow = (row, { rowIndex }) => {
     const { selectedRows } = this.state;
     const selected = selectedRows.indexOf(row.id) > -1;
     return {
       className: classNames({ selected }),
       role: 'row'
     };
-  }
-  onSelectAllRows(event) {
+  };
+  onSelectAllRows = event => {
     const { onRowsLogger } = this.props;
     const { rows, selectedRows } = this.state;
     const { checked } = event.target;
@@ -348,8 +330,8 @@ export class MockClientPaginationTable extends React.Component {
       });
       onRowsLogger(updatedRows.filter(r => r.selected));
     }
-  }
-  onSelectRow(event, row) {
+  };
+  onSelectRow = (event, row) => {
     const { onRowsLogger } = this.props;
     const { rows, selectedRows } = this.state;
     const selectedRowIndex = rows.findIndex(r => r.id === row.id);
@@ -371,11 +353,11 @@ export class MockClientPaginationTable extends React.Component {
       });
       onRowsLogger(rows.filter(r => r.selected));
     }
-  }
-  onSubmit() {
+  };
+  onSubmit = () => {
     this.setPage(this.state.pageChangeValue);
-  }
-  setPage(value) {
+  };
+  setPage = value => {
     const page = Number(value);
     if (
       !Number.isNaN(value) &&
@@ -387,7 +369,7 @@ export class MockClientPaginationTable extends React.Component {
       newPaginationState.page = page;
       this.setState({ pagination: newPaginationState, pageChangeValue: page });
     }
-  }
+  };
   currentRows() {
     const { rows, sortingColumns, columns, pagination } = this.state;
     return compose(
@@ -400,10 +382,10 @@ export class MockClientPaginationTable extends React.Component {
       })
     )(rows);
   }
-  totalPages() {
+  totalPages = () => {
     const { perPage } = this.state.pagination;
     return Math.ceil(mockRows.length / perPage);
-  }
+  };
   render() {
     const { columns, pagination, sortingColumns, pageChangeValue } = this.state;
     const sortedPaginatedRows = this.currentRows();
@@ -467,7 +449,6 @@ import { orderBy } from 'lodash';
 import classNames from 'classnames';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
-import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
@@ -526,22 +507,6 @@ export class MockClientPaginationTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-
-    bindMethods(this, [
-      'customHeaderFormatters',
-      'onPageInput',
-      'onSubmit',
-      'onPerPageSelect',
-      'onFirstPage',
-      'onPreviousPage',
-      'onNextPage',
-      'onLastPage',
-      'onRow',
-      'onSelectAllRows',
-      'onSelectRow',
-      'setPage',
-      'totalPages'
-    ]);
 
     this.state = {
       // Sort the first column in an ascending way by default.
@@ -737,17 +702,17 @@ export class MockClientPaginationTable extends React.Component {
       pageChangeValue: 1
     };
   }
-  totalPages() {
+  totalPages = () => {
     const { perPage } = this.state.pagination;
     return Math.ceil(mockRows.length / perPage);
-  }
-  onPageInput(e) {
+  };
+  onPageInput = e => {
     this.setState({ pageChangeValue: e.target.value });
-  }
-  onSubmit() {
+  };
+  onSubmit = () => {
     this.setPage(this.state.pageChangeValue);
-  }
-  setPage(value) {
+  };
+  setPage = value => {
     const page = Number(value);
     if (
       !Number.isNaN(value) &&
@@ -760,34 +725,34 @@ export class MockClientPaginationTable extends React.Component {
       this.setState({ pagination: newPaginationState, pageChangeValue: page });
     }
   }
-  onPerPageSelect(eventKey, e) {
+  onPerPageSelect = (eventKey, e) => {
     let newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     newPaginationState.page = 1;
     this.setState({ pagination: newPaginationState });
-  }
-  onFirstPage() {
+  };
+  onFirstPage = () => {
     this.setPage(1);
-  }
-  onPreviousPage() {
+  };
+  onPreviousPage = () => {
     if (this.state.pagination.page > 1) {
       this.setPage(this.state.pagination.page - 1);
     }
-  }
-  onNextPage() {
+  };
+  onNextPage () => {
     const { page } = this.state.pagination;
     if (page < this.totalPages()) {
       this.setPage(this.state.pagination.page + 1);
     }
-  }
-  onLastPage() {
+  };
+  onLastPage = () => {
     const { page } = this.state.pagination;
     const totalPages = this.totalPages();
     if (page < totalPages) {
       this.setPage(totalPages);
     }
-  }
-  onSelectRow(event, row) {
+  };
+  onSelectRow = (event, row) => {
     const { onRowsLogger } = this.props;
     const { rows, selectedRows } = this.state;
     const selectedRowIndex = rows.findIndex(r => r.id === row.id);
@@ -808,8 +773,8 @@ export class MockClientPaginationTable extends React.Component {
       });
       onRowsLogger(rows.filter(r => r.selected));
     }
-  }
-  onSelectAllRows(event) {
+  };
+  onSelectAllRows = event => {
     const { onRowsLogger } = this.props;
     const { rows, selectedRows } = this.state;
     const checked = event.target.checked;
@@ -842,7 +807,7 @@ export class MockClientPaginationTable extends React.Component {
       });
       onRowsLogger(updatedRows.filter(r => r.selected));
     }
-  }
+  };
   currentRows() {
     const { rows, sortingColumns, columns, pagination } = this.state;
     return compose(

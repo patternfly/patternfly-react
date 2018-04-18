@@ -6,7 +6,7 @@ import { ListGroup, ListGroupItem } from '../ListGroup';
 import { OverlayTrigger } from '../OverlayTrigger';
 import { Tooltip } from '../Tooltip';
 import VerticalNavBadge from './VerticalNavBadge';
-import { bindMethods, filterChildren } from '../../common/helpers';
+import { filterChildren } from '../../common/helpers';
 import {
   NavContextProvider,
   getNextDepth,
@@ -18,22 +18,6 @@ import {
 } from './VerticalNavConstants';
 
 class BaseVerticalNavItemHelper extends React.Component {
-  constructor(props) {
-    super(props);
-    bindMethods(this, [
-      'navItem',
-      'id',
-      'idPath',
-      'setActive',
-      'getContextNavItems',
-      'pinNextDepth',
-      'onItemHover',
-      'onItemBlur',
-      'onItemClick',
-      'onMobileSelection'
-    ]);
-  }
-
   componentDidMount() {
     if (this.props.active) {
       this.props.setControlledActivePath(true);
@@ -89,7 +73,7 @@ class BaseVerticalNavItemHelper extends React.Component {
     }
   }
 
-  onItemBlur(noDelay) {
+  onItemBlur = noDelay => {
     const { primary, secondary, tertiary } = this.getContextNavItems();
     const { updateNavOnItemBlur, idPath, onBlur } = this.props;
     updateNavOnItemBlur(
@@ -101,9 +85,9 @@ class BaseVerticalNavItemHelper extends React.Component {
       noDelay,
       onBlur
     );
-  }
+  };
 
-  onItemClick(event) {
+  onItemClick = event => {
     const { primary, secondary, tertiary } = this.getContextNavItems();
     const { isMobile, updateNavOnItemClick, idPath } = this.props;
     const { href, onClick } = this.navItem();
@@ -117,9 +101,9 @@ class BaseVerticalNavItemHelper extends React.Component {
     if (href) {
       window.location = href; // Note: This should become router-aware later on.
     }
-  }
+  };
 
-  onItemHover() {
+  onItemHover = () => {
     const { primary, secondary, tertiary } = this.getContextNavItems();
     const { updateNavOnItemHover, idPath, onHover } = this.props;
     updateNavOnItemHover(
@@ -130,15 +114,15 @@ class BaseVerticalNavItemHelper extends React.Component {
       idPath,
       onHover
     );
-  }
+  };
 
-  onMobileSelection(primary, secondary, tertiary) {
+  onMobileSelection = (primary, secondary, tertiary) => {
     const { setMobilePath, updateNavOnMobileSelection } = this.props;
     setMobilePath(this.idPath());
     updateNavOnMobileSelection(primary, secondary, tertiary);
-  }
+  };
 
-  getContextNavItems() {
+  getContextNavItems = () => {
     // We have primary, secondary, and tertiary items as props if they are part of the parent context,
     // but we also want to include the current item when calling handlers.
     const { depth, primaryItem, secondaryItem, tertiaryItem } = this.props;
@@ -148,26 +132,24 @@ class BaseVerticalNavItemHelper extends React.Component {
       secondary: depth === 'secondary' ? navItem : secondaryItem,
       tertiary: depth === 'tertiary' ? navItem : tertiaryItem
     };
-  }
+  };
 
-  setActive() {
+  setActive = () => {
     this.props.setActivePath(this.idPath());
-  }
+  };
 
   setHovered() {
     this.props.setHoverPath(this.idPath());
   }
 
-  id() {
+  id = () => {
     const { id, title } = this.navItem(null, true); // Need to ignorePath here so we don't get an infinite call stack...
     return id || title || this.props.index;
-  }
+  };
 
-  idPath() {
-    return `${this.props.idPath}${this.id()}/`;
-  }
+  idPath = () => `${this.props.idPath}${this.id()}/`;
 
-  navItem(oldProps, ignorePath) {
+  navItem = (oldProps, ignorePath) => {
     const props = oldProps || this.props;
     // Properties of the item object take priority over individual item props
     const item = { ...getItemProps(props), ...props.item };
@@ -182,9 +164,9 @@ class BaseVerticalNavItemHelper extends React.Component {
       selectedOnMobile: valOrOnPath(item.selectedOnMobile, props.mobilePath),
       pinned: valOrOnPath(item.pinned, props.pinnedPath)
     };
-  }
+  };
 
-  pinNextDepth() {
+  pinNextDepth = () => {
     const {
       isMobile,
       depth,
@@ -213,7 +195,7 @@ class BaseVerticalNavItemHelper extends React.Component {
       }
     }
     updateNavOnPin(this.navItem(), nextDepth, !pinnedPath);
-  }
+  };
 
   render() {
     const {

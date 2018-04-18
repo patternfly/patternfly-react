@@ -135,6 +135,7 @@ when possible and accept [props](https://facebook.github.io/react/docs/component
 * If you need a constant file, it should be called `{Component_Name}Constants.js` (Component_Name with PascalCase)
 * Each component should treat as a standalone package and live under its own folder
 * Single file per component with **default export**
+* Avoid using the bindMethods syntax for attaching methods to a class.  Instead use class properties for example ```testMethod = () => { return 'test'} ```
 * When component is a set of components (e.g., ListGroup and ListGroupItem),
   they should live in the same folder named on the parent component (e.g., ListGroup)
 * Each component folder should have an `index.js` file with **named exports** of all the relevant components in the folder

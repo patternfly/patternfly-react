@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindMethods } from '../../../common/helpers';
 
 class MockWizardBase extends React.Component {
   constructor(props) {
@@ -9,14 +8,8 @@ class MockWizardBase extends React.Component {
       activeStepIndex: props.initialStepIndex || 0,
       activeSubStepIndex: props.initialSubStepIndex || 0
     };
-    bindMethods(this, [
-      'onSidebarItemClick',
-      'onStepClick',
-      'onNextButtonClick',
-      'onBackButtonClick'
-    ]);
   }
-  onBackButtonClick() {
+  onBackButtonClick = () => {
     const { steps } = this.props;
     const { activeStepIndex, activeSubStepIndex } = this.state;
 
@@ -31,8 +24,8 @@ class MockWizardBase extends React.Component {
           steps[prevState.activeStepIndex - 1].subSteps.length - 1
       }));
     }
-  }
-  onNextButtonClick() {
+  };
+  onNextButtonClick = () => {
     const { steps } = this.props;
     const { activeStepIndex, activeSubStepIndex } = this.state;
     const activeStep = steps[activeStepIndex];
@@ -47,14 +40,14 @@ class MockWizardBase extends React.Component {
         activeSubStepIndex: 0
       }));
     }
-  }
-  onSidebarItemClick(stepIndex, subStepIndex) {
+  };
+  onSidebarItemClick = (stepIndex, subStepIndex) => {
     this.setState({
       activeStepIndex: stepIndex,
       activeSubStepIndex: subStepIndex
     });
-  }
-  onStepClick(stepIndex) {
+  };
+  onStepClick = stepIndex => {
     if (stepIndex === this.state.activeStepIndex) {
       return;
     }
@@ -62,7 +55,7 @@ class MockWizardBase extends React.Component {
       activeStepIndex: stepIndex,
       activeSubStepIndex: 0
     });
-  }
+  };
   render() {
     return false;
   }

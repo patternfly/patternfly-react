@@ -3,7 +3,6 @@ import { orderBy } from 'lodash';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { compose } from 'recompose';
-import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
@@ -52,7 +51,6 @@ export class MockClientSortableTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-    bindMethods(this, ['customHeaderFormatters']);
 
     this.state = {
       // Sort the first column in an ascending way by default.
@@ -259,7 +257,6 @@ import React from 'react';
 import { orderBy } from 'lodash';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
-import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
@@ -309,7 +306,6 @@ export class MockClientSortableTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-    bindMethods(this, ['customHeaderFormatters']);
 
     this.state = {
       // Sort the first column in an ascending way by default.

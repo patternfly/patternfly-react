@@ -2,54 +2,42 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Button, Icon, FormControl } from '../../index';
-import { bindMethods, noop } from '../../common/helpers';
+import { noop } from '../../common/helpers';
 
 class ToolbarFind extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      dropdownShown: false,
-      currentValue: ''
-    };
+  state = {
+    dropdownShown: false,
+    currentValue: ''
+  };
 
-    bindMethods(this, [
-      'toggleDropdownShown',
-      'hideDropdown',
-      'onValueKeyPress',
-      'handleValueChange',
-      'handleFindNext',
-      'handleFindPrevious'
-    ]);
-  }
-
-  onValueKeyPress(keyEvent) {
+  onValueKeyPress = keyEvent => {
     const { onEnter } = this.props;
     const { currentValue } = this.state;
 
     if (keyEvent.key === 'Enter' && onEnter) {
       onEnter(currentValue);
     }
-  }
+  };
 
-  handleFindNext() {
+  handleFindNext = () => {
     const { currentValue } = this.state;
     const { onFindNext } = this.props;
 
     if (onFindNext) {
       onFindNext(currentValue);
     }
-  }
+  };
 
-  handleFindPrevious() {
+  handleFindPrevious = () => {
     const { currentValue } = this.state;
     const { onFindPrevious } = this.props;
 
     if (onFindPrevious) {
       onFindPrevious(currentValue);
     }
-  }
+  };
 
-  handleValueChange(event) {
+  handleValueChange = event => {
     const { onChange } = this.props;
 
     this.setState({ currentValue: event.target.value });
@@ -57,15 +45,15 @@ class ToolbarFind extends React.Component {
     if (onChange) {
       onChange(event.target.value);
     }
-  }
+  };
 
-  hideDropdown() {
+  hideDropdown = () => {
     this.setState({ dropdownShown: false });
-  }
+  };
 
-  toggleDropdownShown() {
+  toggleDropdownShown = () => {
     this.setState(prevState => ({ dropdownShown: !prevState.dropdownShown }));
-  }
+  };
 
   renderCounts() {
     const { currentValue } = this.state;

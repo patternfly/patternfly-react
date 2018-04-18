@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 import { boolean } from '@storybook/addon-knobs/dist/index';
-import { bindMethods } from '../../../common/helpers';
 import { mockListItems } from './mockListItems';
 import { Button, Grid, ListView } from '../../../index';
 
@@ -14,21 +13,16 @@ export class MockCompoundExpansion extends React.Component {
     );
   }
 
-  constructor() {
-    super();
-
-    bindMethods(this, ['renderItem', 'toggleExpand']);
-    this.state = {
-      listItems: mockListItems
-    };
-  }
+  state = {
+    listItems: mockListItems
+  };
 
   closeExpand(item) {
     item.expanded = false;
     this.setState({ listItems: mockListItems });
   }
 
-  toggleExpand(item, expandProp) {
+  toggleExpand = (item, expandProp) => {
     if (expandProp === item.expandType) {
       item.expanded = !item.expanded;
     } else {
@@ -36,7 +30,7 @@ export class MockCompoundExpansion extends React.Component {
       item.expandType = expandProp;
     }
     this.setState({ listItems: mockListItems });
-  }
+  };
 
   renderAdditionalInfoExpandItems(item) {
     return (
@@ -65,7 +59,7 @@ export class MockCompoundExpansion extends React.Component {
     );
   }
 
-  renderItem(item, index) {
+  renderItem = (item, index) => {
     const expandText = item.compoundExpandText[item.expandType];
     return (
       <ListView.Item
@@ -86,7 +80,7 @@ export class MockCompoundExpansion extends React.Component {
         </Grid.Row>
       </ListView.Item>
     );
-  }
+  };
   render() {
     const { listItems } = this.state;
 
@@ -96,7 +90,6 @@ export class MockCompoundExpansion extends React.Component {
 
 export const MockCompoundExpansionSource = `
 import React from 'react';
-import { bindMethods } from '../../../common/helpers';
 
 import { mockListItems } from './mockListItems';
 import { boolean } from '@storybook/addon-knobs/dist/index';
@@ -105,20 +98,15 @@ import classNames from 'classnames';
 import { Button, Grid, ListView } from '../../../index';
 
 export class MockCompoundExpansion extends React.Component {
-  constructor() {
-    super();
-
-    bindMethods(this, ['renderItem', 'toggleExpand']);
-    this.state = {
+    state = {
       listItems: []
     };
-  }
 
   componentDidMount() {
     this.setState({ listItems: mockListItems });
   }
 
-  toggleExpand(item, expandProp) {
+  toggleExpand = (item, expandProp) => {
     if (expandProp === item.expandType) {
       item.expanded = !item.expanded;
     } else {
@@ -126,7 +114,7 @@ export class MockCompoundExpansion extends React.Component {
       item.expandType = expandProp;
     }
     this.setState({ listItems: mockListItems });
-  }
+  };
 
   closeExpand(item) {
     item.expanded = false;
@@ -168,7 +156,7 @@ export class MockCompoundExpansion extends React.Component {
     );
   }
 
-  renderItem(item, index) {
+  renderItem = (item, index) => {
     let expandText = item.compoundExpandText[item.expandType];
     return (
       <ListView.Item
@@ -191,7 +179,7 @@ export class MockCompoundExpansion extends React.Component {
         </Grid.Row>
       </ListView.Item>
     );
-  }
+  };
   render() {
     const { listItems } = this.state;
 

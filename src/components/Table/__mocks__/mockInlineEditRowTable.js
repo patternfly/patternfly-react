@@ -3,7 +3,6 @@ import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
 import { compose } from 'recompose';
-import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
@@ -55,7 +54,6 @@ export class MockInlineEditRowTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-    bindMethods(this, ['customHeaderFormatters']);
 
     const inlineEditController = {
       isEditing: ({ rowData }) => rowData.editing !== undefined,
@@ -332,7 +330,6 @@ import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
 import { compose } from 'recompose';
-import { bindMethods } from '../../../common/helpers';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
@@ -384,7 +381,6 @@ export class MockInlineEditRowTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-    bindMethods(this, ['customHeaderFormatters']);
 
     const inlineEditController = {
       isEditing: ({ rowData }) => rowData.backup !== undefined,

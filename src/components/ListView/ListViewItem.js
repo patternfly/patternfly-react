@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { bindMethods, noop } from '../../common/helpers';
+import { noop } from '../../common/helpers';
 
 import ListViewExpand from './ListViewExpand';
 import ListViewGroupItem from './ListViewGroupItem';
@@ -15,13 +15,8 @@ import ListViewRow from './ListViewRow';
  * renders ListViewGroupItemHeader and ListViewGroupItemContainer
  */
 class ListViewItem extends React.Component {
-  constructor() {
-    super();
-    this.state = { expanded: false };
-    bindMethods(this, ['toggleExpanded']);
-  }
-
-  toggleExpanded() {
+  state = { expanded: false };
+  toggleExpanded = () => {
     const { onExpand, onExpandClose } = this.props;
     if (this.state.expanded) {
       onExpandClose();
@@ -29,7 +24,7 @@ class ListViewItem extends React.Component {
       onExpand();
     }
     this.setState(prevState => ({ expanded: !prevState.expanded }));
-  }
+  };
 
   render() {
     const {
