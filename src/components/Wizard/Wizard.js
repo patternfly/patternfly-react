@@ -1,38 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WizardHeader from './WizardHeader';
+import { noop, Modal } from '../../index';
 
 /**
  * Wizard - main Wizard component.
  */
-const Wizard = ({ children, className, embedded, ...props }) => {
-  const renderChildren = () =>
-    React.Children.map(children, child => {
-      if (child && child.type === WizardHeader) {
-        return React.cloneElement(child, {
-          embedded
-        });
-      }
-      return child;
-    });
-
-  return (
-    <div className={className} {...props}>
-      {renderChildren()}
-    </div>
-  );
-};
+const Wizard = ({
+  children,
+  className,
+  dialogClassName,
+  show,
+  onClose,
+  ...rest
+}) => (
+  <Modal
+    show={show}
+    onHide={onClose}
+    dialogClassName={dialogClassName || 'modal-lg wizard-pf'}
+    {...rest}
+  >
+    <div className={className}>{children}</div>
+  </Modal>
+);
 Wizard.propTypes = {
   /** Children nodes */
   children: PropTypes.node,
   /** Additional css classes */
   className: PropTypes.string,
-  /** Embedded wizard */
-  embedded: PropTypes.bool
+  /** Wizard dialog class */
+  dialogClassName: PropTypes.string,
+  /** show modal */
+  show: PropTypes.bool,
+  /** on close callback */
+  onClose: PropTypes.func
 };
 Wizard.defaultProps = {
   children: null,
   className: '',
-  embedded: false
+  dialogClassName: '',
+  show: false,
+  onClose: noop
 };
 export default Wizard;

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Modal } from '../../index';
 
 /**
  * WizardFooter component for Patternfly React
@@ -8,9 +9,9 @@ import classNames from 'classnames';
 const WizardFooter = ({ children, className, ...props }) => {
   const classes = classNames('wizard-pf-footer', className);
   return (
-    <div className={classes} {...props}>
+    <Modal.Footer className={classes} {...props}>
       {children}
-    </div>
+    </Modal.Footer>
   );
 };
 WizardFooter.propTypes = {

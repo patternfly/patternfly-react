@@ -1,793 +1,552 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Wizard embedded renders properly 1`] = `
-<div
-  class=""
+exports[`Wizard Pattern renders properly: Wizard pattern snapshot 1`] = `
+<Wizard
+  className=""
+  dialogClassName=""
+  onClose={[Function]}
+  onExited={[MockFunction]}
+  onHide={[Function]}
+  show={true}
 >
-  <h2
-    class=""
+  <WizardHeader
+    onClose={[Function]}
+    title="Wizard Pattern Example"
+  />
+  <WizardBody
+    className=""
   >
-    Wizard Title
-  </h2>
-  <div
-    class="wizard-pf-body"
+    <WizardPatternBody
+      activeStepIndex={0}
+      activeStepStr="1"
+      goToStep={[Function]}
+      loading={false}
+      loadingMessage="This may take a minute."
+      loadingTitle="Loading..."
+      nextStepDisabled={false}
+      stepButtonsDisabled={false}
+      steps={
+        Array [
+          Object {
+            "render": [Function],
+            "title": "General",
+          },
+          Object {
+            "render": [Function],
+            "title": "Step Two",
+          },
+          Object {
+            "render": [Function],
+            "title": "Step Three",
+          },
+        ]
+      }
+    />
+  </WizardBody>
+  <WizardFooter
+    className=""
   >
-    <div
-      class="wizard-pf-steps"
-    >
-      <ul
-        class="wizard-pf-steps-indicator"
-      >
-        <li
-          class="wizard-pf-step active"
-        >
-          <a
-            href="#"
-          >
-            <span
-              class="wizard-pf-step-number"
-            >
-              1
-            </span>
-            <span
-              class="wizard-pf-step-title"
-            >
-              First Step
-            </span>
-            <span
-              class="wizard-pf-step-title-substep active"
-            >
-              Details
-            </span>
-            <span
-              class="wizard-pf-step-title-substep"
-            >
-              Settings
-            </span>
-          </a>
-        </li>
-        <li
-          class="wizard-pf-step"
-        >
-          <a
-            href="#"
-          >
-            <span
-              class="wizard-pf-step-number"
-            >
-              2
-            </span>
-            <span
-              class="wizard-pf-step-title"
-            >
-              Second Step
-            </span>
-            <span
-              class="wizard-pf-step-title-substep"
-            >
-              Details
-            </span>
-            <span
-              class="wizard-pf-step-title-substep"
-            >
-              Settings
-            </span>
-          </a>
-        </li>
-        <li
-          class="wizard-pf-step"
-        >
-          <a
-            href="#"
-          >
-            <span
-              class="wizard-pf-step-number"
-            >
-              3
-            </span>
-            <span
-              class="wizard-pf-step-title"
-            >
-              Review
-            </span>
-            <span
-              class="wizard-pf-step-title-substep"
-            >
-              Summary
-            </span>
-            <span
-              class="wizard-pf-step-title-substep"
-            >
-              Progress
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <section
-      class="wizard-pf-row"
-    >
-      <div
-        class="wizard-pf-sidebar"
-      >
-        <ul
-          class="list-group"
-        >
-          <li
-            class="active list-group-item"
-          >
-            <a
-              href="#"
-            >
-              <span
-                class="wizard-pf-substep-number"
-              >
-                1A.
-              </span>
-              <span
-                class="wizard-pf-substep-title"
-              >
-                Details
-              </span>
-            </a>
-          </li>
-          <li
-            class="list-group-item"
-          >
-            <a
-              href="#"
-            >
-              <span
-                class="wizard-pf-substep-number"
-              >
-                1B.
-              </span>
-              <span
-                class="wizard-pf-substep-title"
-              >
-                Settings
-              </span>
-            </a>
-          </li>
-        </ul>
-        <ul
-          class="hidden list-group"
-        >
-          <li
-            class="list-group-item"
-          >
-            <a
-              href="#"
-            >
-              <span
-                class="wizard-pf-substep-number"
-              >
-                2A.
-              </span>
-              <span
-                class="wizard-pf-substep-title"
-              >
-                Details
-              </span>
-            </a>
-          </li>
-          <li
-            class="list-group-item"
-          >
-            <a
-              href="#"
-            >
-              <span
-                class="wizard-pf-substep-number"
-              >
-                2B.
-              </span>
-              <span
-                class="wizard-pf-substep-title"
-              >
-                Settings
-              </span>
-            </a>
-          </li>
-        </ul>
-        <ul
-          class="hidden list-group"
-        >
-          <li
-            class="list-group-item"
-          >
-            <a
-              href="#"
-            >
-              <span
-                class="wizard-pf-substep-number"
-              >
-                3A.
-              </span>
-              <span
-                class="wizard-pf-substep-title"
-              >
-                Summary
-              </span>
-            </a>
-          </li>
-          <li
-            class="list-group-item"
-          >
-            <a
-              href="#"
-            >
-              <span
-                class="wizard-pf-substep-number"
-              >
-                4A.
-              </span>
-              <span
-                class="wizard-pf-substep-title"
-              >
-                Progress
-              </span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div
-        class="wizard-pf-main"
-      >
-        <div
-          class="wizard-pf-contents"
-        >
-          <form
-            class="form-horizontal"
-          >
-            <div
-              class="form-group required"
-            >
-              <label
-                class="col-sm-2 control-label"
-              >
-                Name
-              </label>
-              <div
-                class="col-sm-10"
-              >
-                <input
-                  class="form-control"
-                  type="text"
-                />
-              </div>
-            </div>
-            <div
-              class="form-group"
-            >
-              <label
-                class="col-sm-2 control-label"
-              >
-                Description
-              </label>
-              <div
-                class="col-sm-10"
-              >
-                <textarea
-                  class="form-control"
-                  rows="2"
-                />
-              </div>
-            </div>
-          </form>
-        </div>
-        <div
-          class="wizard-pf-contents hidden"
-        >
-          <form
-            class="form-horizontal"
-          >
-            <div
-              class="form-group required"
-            >
-              <label
-                class="col-sm-2 control-label"
-              >
-                Lorem ipsum
-              </label>
-              <div
-                class="col-sm-10"
-              >
-                <input
-                  class="form-control"
-                  type="text"
-                />
-              </div>
-            </div>
-            <div
-              class="form-group"
-            >
-              <label
-                class="col-sm-2 control-label"
-              >
-                Dolor
-              </label>
-              <div
-                class="col-sm-10"
-              >
-                <textarea
-                  class="form-control"
-                  rows="2"
-                />
-              </div>
-            </div>
-          </form>
-        </div>
-        <div
-          class="wizard-pf-contents hidden"
-        >
-          <form
-            class="form-horizontal"
-          >
-            <div
-              class="form-group required"
-            >
-              <label
-                class="col-sm-2 control-label"
-              >
-                Aliquam
-              </label>
-              <div
-                class="col-sm-10"
-              >
-                <input
-                  class="form-control"
-                  type="text"
-                />
-              </div>
-            </div>
-            <div
-              class="form-group"
-            >
-              <label
-                class="col-sm-2 control-label"
-              >
-                Fermentum
-              </label>
-              <div
-                class="col-sm-10"
-              >
-                <textarea
-                  class="form-control"
-                  rows="2"
-                />
-              </div>
-            </div>
-          </form>
-        </div>
-        <div
-          class="wizard-pf-contents hidden"
-        >
-          <form
-            class="form-horizontal"
-          >
-            <div
-              class="form-group required"
-            >
-              <label
-                class="col-sm-2 control-label"
-              >
-                Consectetur
-              </label>
-              <div
-                class="col-sm-10"
-              >
-                <input
-                  class="form-control"
-                  type="text"
-                />
-              </div>
-            </div>
-            <div
-              class="form-group"
-            >
-              <label
-                class="col-sm-2 control-label"
-              >
-                Adipiscing
-              </label>
-              <div
-                class="col-sm-10"
-              >
-                <textarea
-                  class="form-control"
-                  rows="2"
-                />
-              </div>
-            </div>
-          </form>
-        </div>
-        <div
-          class="wizard-pf-contents hidden"
-        >
-          <div
-            class="wizard-pf-review-steps"
-          >
-            <ul
-              class="list-group"
-            >
-              <li
-                class="list-group-item"
-              >
-                <a
-                  class=""
-                  href="#"
-                >
-                  First Step
-                </a>
-                <div
-                  class="wizard-pf-review-substeps"
-                >
-                  <ul
-                    class="list-group"
-                  >
-                    <li
-                      class="list-group-item"
-                    >
-                      <a
-                        class=""
-                        href="#"
-                      >
-                        <span
-                          class="wizard-pf-substep-number"
-                        >
-                          1A.
-                        </span>
-                        <span
-                          class="wizard-pf-substep-title"
-                        >
-                          Details
-                        </span>
-                      </a>
-                      <div
-                        class="wizard-pf-review-content"
-                      >
-                        <div
-                          class="wizard-pf-review-item"
-                        >
-                          <span
-                            class="wizard-pf-review-item-label"
-                          >
-                            Name:
-                          </span>
-                          <span
-                            class="wizard-pf-review-item-value"
-                          >
-                            Brian Johnson
-                          </span>
-                        </div>
-                        <div
-                          class="wizard-pf-review-item"
-                        >
-                          <span
-                            class="wizard-pf-review-item-label"
-                          >
-                            Description:
-                          </span>
-                          <span
-                            class="wizard-pf-review-item-value"
-                          >
-                            This is the description.
-                          </span>
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      class="list-group-item"
-                    >
-                      <a
-                        class=""
-                        href="#"
-                      >
-                        <span
-                          class="wizard-pf-substep-number"
-                        >
-                          1B.
-                        </span>
-                        <span
-                          class="wizard-pf-substep-title"
-                        >
-                          Settings
-                        </span>
-                      </a>
-                      <div
-                        class="wizard-pf-review-content"
-                      >
-                        <div
-                          class="wizard-pf-review-item"
-                        >
-                          <span
-                            class="wizard-pf-review-item-label"
-                          >
-                            Lorem ipsum:
-                          </span>
-                          <span
-                            class="wizard-pf-review-item-value"
-                          >
-                            Brian Johnson
-                          </span>
-                        </div>
-                        <div
-                          class="wizard-pf-review-item"
-                        >
-                          <span
-                            class="wizard-pf-review-item-label"
-                          >
-                            Dolor:
-                          </span>
-                          <span
-                            class="wizard-pf-review-item-value"
-                          >
-                            This is the description.
-                          </span>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li
-                class="list-group-item"
-              >
-                <a
-                  class=""
-                  href="#"
-                >
-                  Second Step
-                </a>
-                <div
-                  class="wizard-pf-review-substeps"
-                >
-                  <ul
-                    class="list-group"
-                  >
-                    <li
-                      class="list-group-item"
-                    >
-                      <a
-                        class=""
-                        href="#"
-                      >
-                        <span
-                          class="wizard-pf-substep-number"
-                        >
-                          2A.
-                        </span>
-                        <span
-                          class="wizard-pf-substep-title"
-                        >
-                          Details
-                        </span>
-                      </a>
-                      <div
-                        class="wizard-pf-review-content"
-                      >
-                        <div
-                          class="wizard-pf-review-item"
-                        >
-                          <span
-                            class="wizard-pf-review-item-label"
-                          >
-                            Aliquam:
-                          </span>
-                          <span
-                            class="wizard-pf-review-item-value"
-                          >
-                            Brian Johnson
-                          </span>
-                        </div>
-                        <div
-                          class="wizard-pf-review-item"
-                        >
-                          <span
-                            class="wizard-pf-review-item-label"
-                          >
-                            Fermentum:
-                          </span>
-                          <span
-                            class="wizard-pf-review-item-value"
-                          >
-                            This is the description.
-                          </span>
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      class="list-group-item"
-                    >
-                      <a
-                        class=""
-                        href="#"
-                      >
-                        <span
-                          class="wizard-pf-substep-number"
-                        >
-                          2B.
-                        </span>
-                        <span
-                          class="wizard-pf-substep-title"
-                        >
-                          Settings
-                        </span>
-                      </a>
-                      <div
-                        class="wizard-pf-review-content"
-                      >
-                        <div
-                          class="wizard-pf-review-item"
-                        >
-                          <span
-                            class="wizard-pf-review-item-label"
-                          >
-                            Consectetur:
-                          </span>
-                          <span
-                            class="wizard-pf-review-item-value"
-                          >
-                            Brian Johnson
-                          </span>
-                        </div>
-                        <div
-                          class="wizard-pf-review-item"
-                        >
-                          <span
-                            class="wizard-pf-review-item-label"
-                          >
-                            Adipiscing:
-                          </span>
-                          <span
-                            class="wizard-pf-review-item-value"
-                          >
-                            This is the description.
-                          </span>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          class="wizard-pf-contents hidden"
-        >
-          <div
-            class="wizard-pf-process blank-slate-pf"
-          >
-            <div
-              class="spinner spinner-lg blank-slate-pf-icon"
-            />
-            <h3
-              class="blank-slate-pf-main-action"
-            >
-              Deployment in progress
-            </h3>
-            <p
-              class="blank-slate-pf-secondary-action"
-            >
-              Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi vivamus, lorem sociosqu eget nunc amet. 
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <div
-    class="wizard-pf-footer"
-  >
-    <button
-      class="btn-cancel btn btn-default"
-      type="button"
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      className="btn-cancel"
+      disabled={false}
+      onClick={[Function]}
     >
       Cancel
-    </button>
-    <button
-      class="btn btn-default"
-      type="button"
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="default"
+      disabled={true}
+      onClick={[Function]}
     >
-      <span
-        class="i fa fa-angle-left"
+      <Icon
+        name="angle-left"
+        type="fa"
       />
       Back
-    </button>
-    <button
-      class="btn btn-primary"
-      type="button"
+    </Button>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="primary"
+      disabled={false}
+      onClick={[Function]}
     >
-      Next
-      <span
-        class="i fa fa-angle-right"
-      />
-    </button>
-  </div>
+      <React.Fragment>
+        Next
+        <Icon
+          name="angle-right"
+          type="fa"
+        />
+      </React.Fragment>
+    </Button>
+  </WizardFooter>
+</Wizard>
+`;
+
+exports[`Wizard Stateful Pattern renders properly: Wizard stateful pattern snapshot 1`] = `
+<WizardPattern
+  activeStepIndex={0}
+  backText="Back"
+  bodyHeader={null}
+  cancelText="Cancel"
+  closeText="Close"
+  loading={false}
+  loadingMessage="This may take a minute."
+  loadingTitle="Loading..."
+  nextButtonRef={[Function]}
+  nextStepDisabled={false}
+  nextText="Next"
+  onBack={[Function]}
+  onExited={[MockFunction]}
+  onHide={[MockFunction]}
+  onNext={[Function]}
+  onStepChanged={[Function]}
+  shouldPreventStepChange={[Function]}
+  show={true}
+  stepButtonsDisabled={false}
+  steps={
+    Array [
+      Object {
+        "render": [Function],
+        "title": "General",
+      },
+      Object {
+        "render": [Function],
+        "title": "Step Two",
+      },
+      Object {
+        "render": [Function],
+        "title": "Step Three",
+      },
+    ]
+  }
+  title="Wizard Pattern Stateful Example"
+/>
+`;
+
+exports[`Wizard body renders properly: Wizard body snapshot 1`] = `
+<ModalBody
+  bsClass="modal-body"
+  className="wizard-pf-body clearfix someAdditionalClass"
+  componentClass="div"
+>
+  Some Children
+</ModalBody>
+`;
+
+exports[`Wizard contents renders hidden class when not active: Wizard contents hidden snapshot 1`] = `
+<div
+  className="wizard-pf-contents hidden someAdditionalClass"
+>
+  Some Children
 </div>
 `;
 
-exports[`Wizard loading renders properly 1`] = `
+exports[`Wizard contents renders properly: Wizard contents snapshot 1`] = `
 <div
-  class="row"
+  className="wizard-pf-contents someAdditionalClass"
 >
-  <div
-    class="col-sm-12"
-  >
-    <div
-      class=""
-    >
-      <div
-        class="wizard-pf-header"
-      >
-        <h4
-          class="wizard-pf-title"
-        >
-          Wizard Title
-        </h4>
-      </div>
-      <div
-        class="wizard-pf-body"
-      >
-        <section
-          class="wizard-pf-row"
-        >
-          <div
-            class="wizard-pf-main"
-          >
-            <div
-              class="blank-slate-pf"
-            >
-              <div
-                class="spinner spinner-lg blank-slate-pf-icon"
-              />
-              <h3
-                class="blank-slate-pf-main-action"
-              >
-                Loading Wizard
-              </h3>
-              <p
-                class="blank-slate-pf-secondary-action"
-              >
-                Lorem ipsum dolor sit amet, porta at suspendisse ac, ut wisi vivamus, lorem sociosqu eget nunc amet. 
-              </p>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div
-        class="wizard-pf-footer"
-      >
-        <button
-          class="btn-cancel btn btn-default"
-          type="button"
-        >
-          Cancel
-        </button>
-        <button
-          class="btn btn-default"
-          disabled=""
-          type="button"
-        >
-          <span
-            class="i fa fa-angle-left"
-          />
-          Back
-        </button>
-        <button
-          class="btn btn-primary"
-          disabled=""
-          type="button"
-        >
-          Next
-          <span
-            class="i fa fa-angle-right"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
+  Some Children
 </div>
+`;
+
+exports[`Wizard footer renders properly: Wizard footer snapshot 1`] = `
+<ModalFooter
+  bsClass="modal-footer"
+  className="wizard-pf-footer someAdditionalClass"
+  componentClass="div"
+>
+  Some Children
+</ModalFooter>
+`;
+
+exports[`Wizard header renders properly: Wizard header snapshot 1`] = `
+<ModalHeader
+  bsClass="modal-header"
+  closeButton={false}
+  closeLabel="Close"
+>
+  <button
+    aria-hidden="true"
+    aria-label="Close"
+    className="close"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+      }
+    }
+  >
+    <Icon
+      name="close"
+      type="pf"
+    />
+  </button>
+  <ModalTitle
+    bsClass="modal-title"
+    componentClass="h4"
+  >
+    Wizard Title
+  </ModalTitle>
+</ModalHeader>
+`;
+
+exports[`Wizard main renders properly: Wizard main snapshot 1`] = `
+<div
+  className="wizard-pf-main someAdditionalClass"
+>
+  Some Children
+</div>
+`;
+
+exports[`Wizard pattern body renders active step: Wizard pattern body renders active step snapshot 1`] = `
+<React.Fragment>
+  <WizardSteps
+    className=""
+    steps={
+      Array [
+        <WizardStep
+          activeStep="1"
+          className=""
+          label="1"
+          onClick={[Function]}
+          step="1"
+          stepIndex={0}
+          title="General"
+        />,
+        <WizardStep
+          activeStep="1"
+          className=""
+          label="2"
+          onClick={[Function]}
+          step="2"
+          stepIndex={1}
+          title="Step Two"
+        />,
+        <WizardStep
+          activeStep="1"
+          className=""
+          label="3"
+          onClick={[Function]}
+          step="3"
+          stepIndex={2}
+          title="Step Three"
+        />,
+      ]
+    }
+  />
+  <WizardRow
+    className=""
+  >
+    <WizardMain
+      className=""
+    >
+      <WizardContents
+        activeStepIndex={0}
+        activeSubStepIndex={null}
+        className=""
+        stepIndex={0}
+        subStepIndex={null}
+      >
+        <p>
+          General
+        </p>
+      </WizardContents>
+    </WizardMain>
+  </WizardRow>
+</React.Fragment>
+`;
+
+exports[`Wizard pattern body renders empty if no steps and not loading: Wizard pattern body renders empty snapshot 1`] = `""`;
+
+exports[`Wizard pattern body renders properly while loading: Wizard pattern body loading snapshot 1`] = `
+<WizardRow
+  className=""
+>
+  <WizardMain
+    className=""
+  >
+    <EmptyState
+      className=""
+    >
+      <Spinner
+        className="blank-slate-pf-icon"
+        inline={false}
+        inverse={false}
+        loading={true}
+        size="lg"
+      />
+      <EmptyStateAction
+        className=""
+        secondary={false}
+      >
+        <h3>
+          Wizard Title
+        </h3>
+      </EmptyStateAction>
+      <EmptyStateAction
+        className=""
+        secondary={true}
+      >
+        <p>
+          Wizard loading...
+        </p>
+      </EmptyStateAction>
+    </EmptyState>
+  </WizardMain>
+</WizardRow>
+`;
+
+exports[`Wizard review content renders properly: Wizard review content snapshot 1`] = `
+<div
+  className="wizard-pf-review-content collapse someAdditionalClass"
+>
+  Some Children
+</div>
+`;
+
+exports[`Wizard review item renders properly: Wizard review item snapshot 1`] = `
+<div
+  className="wizard-pf-review-item someAdditionalClass"
+>
+  Some Children
+</div>
+`;
+
+exports[`Wizard review step renders properly: Wizard review step snapshot 1`] = `
+<ListGroupItem
+  bsClass="list-group-item"
+  listItem={true}
+>
+  <a
+    className="collapsed"
+    href="#"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+      }
+    }
+  >
+    Step One
+  </a>
+  Some Children
+</ListGroupItem>
+`;
+
+exports[`Wizard review steps renders properly: Wizard review steps snapshot 1`] = `
+<div
+  className="wizard-pf-review-steps someAdditionalClass"
+>
+  <ListGroup
+    bsClass="list-group"
+    componentClass="ul"
+  >
+    Some Children
+  </ListGroup>
+</div>
+`;
+
+exports[`Wizard review sub step renders properly: Wizard review sub step snapshot 1`] = `
+<ListGroupItem
+  bsClass="list-group-item"
+  listItem={true}
+>
+  <a
+    className="collapsed"
+    href="#"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+      }
+    }
+  >
+    <span
+      className="wizard-pf-substep-number"
+    >
+      1.1
+    </span>
+    <span
+      className="wizard-pf-substep-title"
+    >
+      1.1
+    </span>
+  </a>
+  Some Children
+</ListGroupItem>
+`;
+
+exports[`Wizard review sub steps renders properly: Wizard review sub steps snapshot 1`] = `
+<div
+  className="wizard-pf-review-substeps collapse someAdditionalClass"
+>
+  <ListGroup
+    bsClass="list-group"
+    componentClass="ul"
+  >
+    Some Children
+  </ListGroup>
+</div>
+`;
+
+exports[`Wizard row renders properly: Wizard row snapshot 1`] = `
+<section
+  className="wizard-pf-row someAdditionalClass"
+>
+  Some Children
+</section>
+`;
+
+exports[`Wizard sidebar group item renders properly: Wizard sidebar group item snapshot 1`] = `
+<ListGroupItem
+  bsClass="list-group-item"
+  className="active wizard-sidebar-group-item"
+  listItem={true}
+>
+  <a
+    href="#"
+    onClick={[Function]}
+  >
+    <span
+      className="wizard-pf-substep-number"
+    >
+      1A.
+    </span>
+    <span
+      className="wizard-pf-substep-title"
+    >
+      Details
+    </span>
+  </a>
+</ListGroupItem>
+`;
+
+exports[`Wizard sidebar group renders properly: Wizard sidebar group snapshot 1`] = `
+<ListGroup
+  bsClass="list-group"
+  className="someAdditionalClass"
+  componentClass="ul"
+>
+  Some Children
+</ListGroup>
+`;
+
+exports[`Wizard sidebar renders properly: Wizard sidebar snapshot 1`] = `
+<div
+  className="wizard-pf-sidebar someAdditionalClass"
+>
+  item1
+  item2
+</div>
+`;
+
+exports[`Wizard step renders properly: Wizard step snapshot 1`] = `
+<li
+  className="wizard-pf-step active"
+>
+  <a
+    href="#"
+    onClick={[Function]}
+  >
+    <span
+      className="wizard-pf-step-number"
+    >
+      Step 1
+    </span>
+    <span
+      className="wizard-pf-step-title"
+    >
+      Step 1
+    </span>
+    <WizardSubStep
+      activeSubStep={0}
+      className=""
+      subStep="1.1"
+      title="Step 1.1"
+    />
+    <WizardSubStep
+      activeSubStep={0}
+      className=""
+      subStep="1.2"
+      title="Step 1.2"
+    />
+  </a>
+</li>
+`;
+
+exports[`Wizard steps renders properly: Wizard steps snapshot 1`] = `
+<div
+  className="wizard-pf-steps someAdditionalClass"
+>
+  <ul
+    className="wizard-pf-steps-indicator"
+  >
+    <WizardStep
+      activeStep={0}
+      className=""
+      key="0"
+      label="Step 1"
+      onClick={[MockFunction]}
+      step={0}
+      stepIndex={0}
+      title="Step 1"
+    >
+      <WizardSubStep
+        activeSubStep={0}
+        className=""
+        subStep="1.1"
+        title="Step 1.1"
+      />
+      <WizardSubStep
+        activeSubStep={0}
+        className=""
+        subStep="1.2"
+        title="Step 1.2"
+      />
+    </WizardStep>
+    <WizardStep
+      activeStep={0}
+      className=""
+      key="1"
+      label="Step 2"
+      onClick={[MockFunction]}
+      step={1}
+      stepIndex={1}
+      title="Step 2"
+    >
+      <WizardSubStep
+        activeSubStep={0}
+        className=""
+        subStep="2.1"
+        title="Step 2.1"
+      />
+      <WizardSubStep
+        activeSubStep={0}
+        className=""
+        subStep="2.2"
+        title="Step 2.2"
+      />
+    </WizardStep>
+  </ul>
+</div>
+`;
+
+exports[`Wizard sub step renders properly: Wizard sub step snapshot 1`] = `
+<span
+  className="wizard-pf-step-title-substep"
+>
+  Step 1.1
+</span>
 `;

@@ -5,6 +5,11 @@ import { nullValues, bindMethods, selectKeys, filterKeys } from './helpers';
 /*
   controlled(stateTypes, defaults)(WrappedComponent)
 
+  *** NOTE / BEWARE! *******************************************************************************
+  This is already deprecated, even as new as it is, because we now have getDerivedStateFromProps!
+  It remains here for now because of its additional "persist" feature, which we should factor out.
+  **************************************************************************************************
+
   This Higher Order Component provides the controlled component pattern on a prop-by-prop basis.
   It's a nice way for components to implement internal state so they "just work" out of the box,
   but also give users the option of lifting some or all of that state up into their application.

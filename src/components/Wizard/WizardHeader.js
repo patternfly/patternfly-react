@@ -1,40 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { Modal, Icon } from '../../index';
 
 /**
  * WizardHeader component for Patternfly React
  */
-const WizardHeader = ({ children, className, embedded, title, ...props }) => {
-  const classes = classNames({ 'wizard-pf-header': !embedded }, className);
-
-  if (embedded) {
-    return (
-      <h2 className={classes} {...props}>
-        {title}
-      </h2>
-    );
-  }
-  return (
-    <div className={classes} {...props}>
-      <h4 className="wizard-pf-title">{title}</h4>
-    </div>
-  );
-};
+const WizardHeader = ({ onClose, title, ...props }) => (
+  <Modal.Header {...props}>
+    <button
+      className="close"
+      onClick={onClose}
+      aria-hidden="true"
+      aria-label="Close"
+    >
+      <Icon type="pf" name="close" />
+    </button>
+    <Modal.Title>{title}</Modal.Title>
+  </Modal.Header>
+);
 WizardHeader.propTypes = {
-  /** Children nodes  */
-  children: PropTypes.node,
-  /** Additional css classes */
-  className: PropTypes.string,
-  /** Embedded wizard */
-  embedded: PropTypes.bool,
+  /** onClose callback */
+  onClose: PropTypes.func.isRequired,
   /** The wizard title */
-  title: PropTypes.string
+  title: PropTypes.node
 };
 WizardHeader.defaultProps = {
-  children: null,
-  className: '',
-  embedded: false,
-  title: ''
+  title: null
 };
 export default WizardHeader;
