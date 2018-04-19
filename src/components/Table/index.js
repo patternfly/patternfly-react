@@ -4,6 +4,7 @@ import selectionCellFormatter from './Formatters/selectionCellFormatter';
 import selectionHeaderCellFormatter from './Formatters/selectionHeaderCellFormatter';
 import sortableHeaderCellFormatter from './Formatters/sortableHeaderCellFormatter';
 import tableCellFormatter from './Formatters/tableCellFormatter';
+import inlineEditFormatterFactory from './Formatters/inlineEditFormatterFactory';
 
 import { Table } from './Table';
 import {
@@ -19,6 +20,8 @@ import TableCell from './TableCell';
 import TableCheckbox from './TableCheckbox';
 import TableDropdownKebab from './TableDropdownKebab';
 import TableHeading from './TableHeading';
+import TableInlineEditRow from './TableInlineEditRow';
+import TableInlineEditHeaderRow from './TableInlineEditHeaderRow';
 import TablePfProvider from './TablePfProvider';
 import TableSelectionCell from './TableSelectionCell';
 import TableSelectionHeading from './TableSelectionHeading';
@@ -30,6 +33,7 @@ Table.selectionCellFormatter = selectionCellFormatter;
 Table.selectionHeaderCellFormatter = selectionHeaderCellFormatter;
 Table.sortableHeaderCellFormatter = sortableHeaderCellFormatter;
 Table.tableCellFormatter = tableCellFormatter;
+Table.inlineEditFormatterFactory = inlineEditFormatterFactory;
 
 Table.Actions = TableActions;
 Table.Button = TableButton;
@@ -38,6 +42,8 @@ Table.Checkbox = TableCheckbox;
 Table.DropdownKebab = TableDropdownKebab;
 Table.Heading = TableHeading;
 Table.PfProvider = TablePfProvider;
+Table.InlineEditRow = TableInlineEditRow;
+Table.TableInlineEditHeaderRow = TableInlineEditHeaderRow;
 Table.SelectionCell = TableSelectionCell;
 Table.SelectionHeading = TableSelectionHeading;
 Table.TABLE_ALIGN = TABLE_ALIGN;
@@ -53,6 +59,7 @@ export {
   selectionHeaderCellFormatter,
   sortableHeaderCellFormatter,
   tableCellFormatter,
+  inlineEditFormatterFactory,
   Table,
   TableActions,
   TableButton,
@@ -61,6 +68,8 @@ export {
   TableDropdownKebab,
   TableHeading,
   TablePfProvider,
+  TableInlineEditRow,
+  TableInlineEditHeaderRow,
   TableSelectionCell,
   TableSelectionHeading,
   TABLE_ALIGN,

@@ -1,27 +1,28 @@
 import React from 'react';
-import { orderBy } from 'lodash';
+import PropTypes from 'prop-types';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
+import { cloneDeep, findIndex, orderBy } from 'lodash';
 import { compose } from 'recompose';
 import { bindMethods } from '../../../common/helpers';
 import {
-  actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
   defaultSortingOrder,
   sortableHeaderCellFormatter,
   tableCellFormatter,
+  inlineEditFormatterFactory,
   Table,
   TABLE_SORT_DIRECTION
 } from '../index';
-import { MenuItem } from '../../MenuItem';
+
 import { mockRows } from './mockRows';
+import { FormControl } from '../../../index';
 
 /**
  * Reactabular client side data sorting based on the following api docs:
  * https://reactabular.js.org/#/data/sorting
  */
-
-export class MockClientSortableTable extends React.Component {
+export class MockInlineEditColumnTable extends React.Component {
   constructor(props) {
     super(props);
 
@@ -54,6 +55,76 @@ export class MockClientSortableTable extends React.Component {
     this.customHeaderFormatters = customHeaderFormattersDefinition;
     bindMethods(this, ['customHeaderFormatters']);
 
+    const inlineEditController = {
+      isEditing: ({ columnIndex }) => {
+        if (this.props.fullTableEdit) {
+          return this.state.editingColumn !== undefined;
+        }
+        return columnIndex === this.state.editingColumn;
+      },
+      onActivate: additionalData => {
+        const { columnIndex } = additionalData;
+        const editedRows = cloneDeep(this.state.rows);
+
+        this.setState({ editingColumn: columnIndex, editedRows });
+      },
+      onConfirm: () => {
+        const rows = cloneDeep(this.state.editedRows);
+        this.setState({
+          editingColumn: undefined,
+          editedRows: undefined,
+          rows
+        });
+      },
+      onCancel: () => {
+        this.setState({
+          editingColumn: undefined,
+          editedRows: undefined
+        });
+      },
+      onChange: (value, { rowData, property }) => {
+        const editedRows = cloneDeep(this.state.editedRows);
+        const index = findIndex(editedRows, { id: rowData.id });
+
+        editedRows[index][property] = value;
+
+        this.setState({ editedRows });
+      }
+    };
+    this.inlineEditController = inlineEditController;
+
+    const inlineEditFormatter = inlineEditFormatterFactory({
+      isEditing: additionalData =>
+        inlineEditController.isEditing(additionalData),
+      // renderValue: (value, additionalData) => <span>{value}</span>,
+      renderValue: (value, additionalData) => (
+        <td className="editable">
+          <div
+            onClick={e => inlineEditController.onActivate(additionalData)}
+            className="input"
+          >
+            {value}
+          </div>
+        </td>
+      ),
+      renderEdit: (value, additionalData) => {
+        const { property, rowData } = additionalData;
+        const index = findIndex(this.state.editedRows, { id: rowData.id });
+        const defaultValue = this.state.editedRows[index][property];
+        return (
+          <td className="editable editing">
+            <FormControl
+              type="text"
+              defaultValue={defaultValue}
+              onBlur={e =>
+                inlineEditController.onChange(e.target.value, additionalData)
+              }
+            />
+          </td>
+        );
+      }
+    });
+
     this.state = {
       // Sort the first column in an ascending way by default.
       sortingColumns: {
@@ -69,19 +140,17 @@ export class MockClientSortableTable extends React.Component {
             label: 'Name',
             props: {
               index: 0,
-              rowSpan: 1,
-              colSpan: 1,
-              sort: true
+              sort: true,
+              style: {
+                width: '20%'
+              }
             },
             transforms: [sortableTransform],
             formatters: [sortingFormatter],
             customFormatters: [sortableHeaderCellFormatter]
           },
           cell: {
-            props: {
-              index: 0
-            },
-            formatters: [tableCellFormatter]
+            formatters: [inlineEditFormatter]
           }
         },
         {
@@ -90,9 +159,10 @@ export class MockClientSortableTable extends React.Component {
             label: 'Height',
             props: {
               index: 1,
-              rowSpan: 1,
-              colSpan: 1,
-              sort: true
+              sort: true,
+              style: {
+                width: '20%'
+              }
             },
             transforms: [sortableTransform],
             formatters: [sortingFormatter],
@@ -102,7 +172,7 @@ export class MockClientSortableTable extends React.Component {
             props: {
               index: 1
             },
-            formatters: [tableCellFormatter]
+            formatters: [inlineEditFormatter]
           }
         },
         {
@@ -111,8 +181,6 @@ export class MockClientSortableTable extends React.Component {
             label: 'Eye Color',
             props: {
               index: 2,
-              rowSpan: 1,
-              colSpan: 1,
               sort: true
             },
             transforms: [sortableTransform],
@@ -132,8 +200,6 @@ export class MockClientSortableTable extends React.Component {
             label: 'Gender',
             props: {
               index: 3,
-              rowSpan: 1,
-              colSpan: 1,
               sort: true
             },
             transforms: [sortableTransform],
@@ -153,9 +219,10 @@ export class MockClientSortableTable extends React.Component {
             label: 'Birth Year',
             props: {
               index: 4,
-              rowSpan: 1,
-              colSpan: 1,
-              sort: true
+              sort: true,
+              style: {
+                width: '15%'
+              }
             },
             transforms: [sortableTransform],
             formatters: [sortingFormatter],
@@ -165,50 +232,14 @@ export class MockClientSortableTable extends React.Component {
             props: {
               index: 4
             },
-            formatters: [tableCellFormatter]
-          }
-        },
-        {
-          property: 'actions',
-          header: {
-            label: 'Actions',
-            props: {
-              index: 5,
-              rowSpan: 1,
-              colSpan: 2
-            },
-            formatters: [actionHeaderCellFormatter]
-          },
-          cell: {
-            props: {
-              index: 5
-            },
-            formatters: [
-              (value, { rowData }) => [
-                <Table.Actions key="0">
-                  <Table.Button
-                    onClick={() => alert(`clicked ${rowData.name}`)}
-                  >
-                    Actions
-                  </Table.Button>
-                </Table.Actions>,
-                <Table.Actions key="1">
-                  <Table.DropdownKebab id="myKebab" pullRight>
-                    <MenuItem>Action</MenuItem>
-                    <MenuItem>Another Action</MenuItem>
-                    <MenuItem>Something else here</MenuItem>
-                    <MenuItem divider />
-                    <MenuItem>Separated link</MenuItem>
-                  </Table.DropdownKebab>
-                </Table.Actions>
-              ]
-            ]
+            formatters: [inlineEditFormatter]
           }
         }
       ],
       rows: mockRows.slice(0, 6)
     };
   }
+
   render() {
     const { rows, sortingColumns, columns } = this.state;
 
@@ -228,6 +259,7 @@ export class MockClientSortableTable extends React.Component {
           bordered
           hover
           dataTable
+          inlineEdit
           columns={columns}
           components={{
             header: {
@@ -236,49 +268,55 @@ export class MockClientSortableTable extends React.Component {
                   cellProps,
                   columns,
                   sortingColumns
-                })
+                }),
+              row: Table.TableInlineEditHeaderRow
             }
           }}
         >
-          <Table.Header headerRows={resolve.headerRows({ columns })} />
-          <Table.Body
-            rows={sortedRows}
-            rowKey="id"
+          <Table.Header
+            headerRows={resolve.headerRows({ columns })}
             onRow={() => ({
-              role: 'row'
+              role: 'row',
+              isEditing: () => this.state.editingColumn !== undefined,
+              onCancel: () => this.inlineEditController.onCancel(),
+              onConfirm: () => this.inlineEditController.onConfirm()
             })}
           />
+          <Table.Body rows={sortedRows} rowKey="id" />
         </Table.PfProvider>
       </div>
     );
   }
 }
+MockInlineEditColumnTable.propTypes = {
+  fullTableEdit: PropTypes.bool.isRequired
+};
 
-export const mockClientSortableTableSource = `
+export const mockInlineEditColumnTableSource = `
 import React from 'react';
-import { orderBy } from 'lodash';
 import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
+import { cloneDeep, findIndex, orderBy } from 'lodash';
+import { compose } from 'recompose';
 import { bindMethods } from '../../../common/helpers';
 import {
-  actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
   defaultSortingOrder,
   sortableHeaderCellFormatter,
   tableCellFormatter,
+  inlineEditFormatterFactory,
   Table,
   TABLE_SORT_DIRECTION
 } from '../index';
-import { MenuItem } from '../../MenuItem';
-import { compose } from 'recompose';
+
 import { mockRows } from './mockRows';
+import { FormControl } from '../../../index';
 
 /**
  * Reactabular client side data sorting based on the following api docs:
  * https://reactabular.js.org/#/data/sorting
  */
-
-export class MockClientSortableTable extends React.Component {
+export class MockInlineEditColumnTable extends React.Component {
   constructor(props) {
     super(props);
 
@@ -311,6 +349,66 @@ export class MockClientSortableTable extends React.Component {
     this.customHeaderFormatters = customHeaderFormattersDefinition;
     bindMethods(this, ['customHeaderFormatters']);
 
+    const inlineEditController = {
+      isEditing: ({ columnIndex }) => columnIndex === this.state.editingColumn,
+      onActivate: additionalData => {
+        const { columnIndex } = additionalData;
+        const backup = cloneDeep(this.state.rows);
+
+        this.setState({ editingColumn: columnIndex, backup });
+      },
+      onConfirm: () => {
+        this.setState({
+          editingColumn: undefined,
+          backup: undefined
+        });
+      },
+      onCancel: () => {
+        const rows = cloneDeep(this.state.backup);
+        this.setState({
+          editingColumn: undefined,
+          backup: undefined,
+          rows
+        });
+      },
+      onChange: (value, { rowData, property }) => {
+        const rows = cloneDeep(this.state.rows);
+        const index = findIndex(rows, { id: rowData.id });
+
+        rows[index][property] = value;
+
+        this.setState({ rows });
+      }
+    };
+    this.inlineEditController = inlineEditController;
+
+    const inlineEditFormatter = inlineEditFormatterFactory({
+      isEditing: additionalData =>
+        inlineEditController.isEditing(additionalData),
+      // renderValue: (value, additionalData) => <span>{value}</span>,
+      renderValue: (value, additionalData) => (
+        <td className="editable">
+          <div
+            onClick={e => inlineEditController.onActivate(additionalData)}
+            className="input"
+          >
+            {value}
+          </div>
+        </td>
+      ),
+      renderEdit: (value, additionalData) => (
+        <td className="editable editing">
+          <FormControl
+            type="text"
+            defaultValue={value}
+            onBlur={e =>
+              inlineEditController.onChange(e.target.value, additionalData)
+            }
+          />
+        </td>
+      )
+    });
+
     this.state = {
       // Sort the first column in an ascending way by default.
       sortingColumns: {
@@ -326,19 +424,17 @@ export class MockClientSortableTable extends React.Component {
             label: 'Name',
             props: {
               index: 0,
-              rowSpan: 1,
-              colSpan: 1,
-              sort: true
+              sort: true,
+              style: {
+                width: '20%'
+              }
             },
             transforms: [sortableTransform],
             formatters: [sortingFormatter],
             customFormatters: [sortableHeaderCellFormatter]
           },
           cell: {
-            props: {
-              index: 0
-            },
-            formatters: [tableCellFormatter]
+            formatters: [inlineEditFormatter]
           }
         },
         {
@@ -347,9 +443,10 @@ export class MockClientSortableTable extends React.Component {
             label: 'Height',
             props: {
               index: 1,
-              rowSpan: 1,
-              colSpan: 1,
-              sort: true
+              sort: true,
+              style: {
+                width: '20%'
+              }
             },
             transforms: [sortableTransform],
             formatters: [sortingFormatter],
@@ -359,7 +456,7 @@ export class MockClientSortableTable extends React.Component {
             props: {
               index: 1
             },
-            formatters: [tableCellFormatter]
+            formatters: [inlineEditFormatter]
           }
         },
         {
@@ -368,8 +465,6 @@ export class MockClientSortableTable extends React.Component {
             label: 'Eye Color',
             props: {
               index: 2,
-              rowSpan: 1,
-              colSpan: 1,
               sort: true
             },
             transforms: [sortableTransform],
@@ -389,8 +484,6 @@ export class MockClientSortableTable extends React.Component {
             label: 'Gender',
             props: {
               index: 3,
-              rowSpan: 1,
-              colSpan: 1,
               sort: true
             },
             transforms: [sortableTransform],
@@ -410,9 +503,10 @@ export class MockClientSortableTable extends React.Component {
             label: 'Birth Year',
             props: {
               index: 4,
-              rowSpan: 1,
-              colSpan: 1,
-              sort: true
+              sort: true,
+              style: {
+                width: '15%'
+              }
             },
             transforms: [sortableTransform],
             formatters: [sortingFormatter],
@@ -422,58 +516,20 @@ export class MockClientSortableTable extends React.Component {
             props: {
               index: 4
             },
-            formatters: [tableCellFormatter]
-          }
-        },
-        {
-          property: 'actions',
-          header: {
-            label: 'Actions',
-            props: {
-              index: 5,
-              rowSpan: 1,
-              colSpan: 2
-            },
-            formatters: [actionHeaderCellFormatter]
-          },
-          cell: {
-            props: {
-              index: 5
-            },
-            formatters: [
-              (value, { rowData }) => {
-                return [
-                  <Table.Actions key="0">
-                    <Table.Button
-                      onClick={() => alert('clicked ' + rowData.name)}
-                    >
-                      Actions
-                    </Table.Button>
-                  </Table.Actions>,
-                  <Table.Actions key="1">
-                    <Table.DropdownKebab id="myKebab" pullRight>
-                      <MenuItem>Action</MenuItem>
-                      <MenuItem>Another Action</MenuItem>
-                      <MenuItem>Something else here</MenuItem>
-                      <MenuItem divider />
-                      <MenuItem>Separated link</MenuItem>
-                    </Table.DropdownKebab>
-                  </Table.Actions>
-                ];
-              }
-            ]
+            formatters: [inlineEditFormatter]
           }
         }
       ],
       rows: mockRows.slice(0, 6)
     };
   }
+
   render() {
     const { rows, sortingColumns, columns } = this.state;
 
     const sortedRows = compose(
       sort.sorter({
-        columns: columns,
+        columns,
         sortingColumns,
         sort: orderBy,
         strategy: sort.strategies.byProperty
@@ -487,29 +543,30 @@ export class MockClientSortableTable extends React.Component {
           bordered
           hover
           dataTable
+          inlineEdit
           columns={columns}
           components={{
             header: {
-              cell: cellProps => {
-                return this.customHeaderFormatters({
+              cell: cellProps =>
+                this.customHeaderFormatters({
                   cellProps,
                   columns,
                   sortingColumns
-                });
-              }
+                }),
+              row: Table.TableInlineEditHeaderRow
             }
           }}
         >
-          <Table.Header headerRows={resolve.headerRows({ columns })} />
-          <Table.Body
-            rows={sortedRows}
-            rowKey="id"
-            onRow={() => {
-              return {
-                role: 'row'
-              };
-            }}
+          <Table.Header
+            headerRows={resolve.headerRows({ columns })}
+            onRow={() => ({
+              role: 'row',
+              isEditing: () => this.state.editingColumn !== undefined,
+              onCancel: () => this.inlineEditController.onCancel(),
+              onConfirm: () => this.inlineEditController.onConfirm()
+            })}
           />
+          <Table.Body rows={sortedRows} rowKey="id" />
         </Table.PfProvider>
       </div>
     );

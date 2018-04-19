@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Table } from './index';
+import { noop } from '../../common/helpers';
 
 import { mockBootstrapRows } from './__mocks__/mockBootstrapRows';
 import {
@@ -133,4 +134,96 @@ test('Patternfly table renders properly', () => {
   );
 
   expect(component.render()).toMatchSnapshot();
+});
+
+describe('inline edit', () => {
+  const getTable = options => (
+    <Table.PfProvider
+      striped
+      bordered
+      hover
+      dataTable
+      inlineEdit
+      columns={mockPatternflyColumns}
+      components={options.components}
+    >
+      <Table.Header onRow={options.onHeaderRow || noop} />
+      <Table.Body
+        rows={[mockBootstrapRows[0]]}
+        rowKey="id"
+        onRow={options.onRow || noop}
+      />
+    </Table.PfProvider>
+  );
+
+  test('Inline edit row renders properly', () => {
+    const wrapper = mount(<div />);
+    const wrapperNode = wrapper.getDOMNode();
+    const tableComponent = getTable({
+      components: {
+        body: {
+          row: Table.InlineEditRow,
+          cell: cellProps => cellProps.children
+        }
+      },
+      onRow: (rowData, { rowIndex }) => ({
+        role: 'row',
+        isEditing: () => rowIndex === 0,
+        onCancel: noop,
+        onConfirm: noop,
+        last: false,
+        buttonsMountpoint: wrapperNode
+      })
+    });
+    mount(tableComponent, { attachTo: wrapperNode });
+
+    expect(wrapper.render()).toMatchSnapshot();
+  });
+
+  test('Inline edit last row renders properly last row', () => {
+    const wrapper = mount(<div />);
+    const wrapperNode = wrapper.getDOMNode();
+    const tableComponent = getTable({
+      components: {
+        body: {
+          row: Table.InlineEditRow,
+          cell: cellProps => cellProps.children
+        }
+      },
+      onRow: (rowData, { rowIndex }) => ({
+        role: 'row',
+        isEditing: () => rowIndex === 0,
+        onCancel: noop,
+        onConfirm: noop,
+        last: true,
+        buttonsMountpoint: wrapperNode
+      })
+    });
+    mount(tableComponent, { attachTo: wrapperNode });
+
+    expect(wrapper.render()).toMatchSnapshot();
+  });
+
+  test('Inline edit header row renders', () => {
+    const wrapper = mount(<div />);
+    const wrapperNode = wrapper.getDOMNode();
+    const tableComponent = getTable({
+      components: {
+        header: {
+          row: Table.TableInlineEditHeaderRow,
+          cell: cellProps => cellProps.children
+        }
+      },
+      onHeaderRow: () => ({
+        role: 'row',
+        isEditing: () => true,
+        onCancel: noop,
+        onConfirm: noop,
+        buttonsMountpoint: wrapperNode
+      })
+    });
+    mount(tableComponent, { attachTo: wrapperNode });
+
+    expect(wrapper.render()).toMatchSnapshot();
+  });
 });

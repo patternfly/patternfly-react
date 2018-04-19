@@ -5,7 +5,10 @@ import {
   clientSortableTable,
   clientPaginationTable,
   patternflyTable,
-  serverPaginationTable
+  serverPaginationTable,
+  inlineEditRowTable,
+  inlineEditColumnTable,
+  inlineEditCellTable
 } from './Stories';
 
 const stories = storiesOf('Table', module);
@@ -20,3 +23,6 @@ patternflyTable(stories);
 clientSortableTable(stories);
 clientPaginationTable(stories);
 serverPaginationTable(stories);
+inlineEditRowTable(stories);
+inlineEditColumnTable(stories);
+inlineEditCellTable(stories);
