@@ -201,6 +201,23 @@ stories.add(
 );
 
 stories.add(
+  'Persistence Disabled',
+  withInfo({
+    propTablesExclude: [MockFixedLayout],
+    text: `Example using the **persist** prop. (items from 'Items as JSX')\n\n${propTypesAreBroke}`
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        {basicExample({
+          persist: false
+        })}
+        {mockBodyContainer('nav-pf-vertical-with-badges')}
+      </div>
+    </MockFixedLayout>
+  ))
+);
+
+stories.add(
   'Custom Masthead',
   withInfo({
     propTablesExclude: [

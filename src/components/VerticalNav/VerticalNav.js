@@ -488,8 +488,7 @@ const controlledState = {
     hoverPath: null,
     mobilePath: null,
     pinnedPath: null
-  },
-  persist: ['navCollapsed', 'pinnedPath']
+  }
 };
 
 BaseVerticalNav.propTypes = {
@@ -569,12 +568,28 @@ BaseVerticalNav.defaultProps = {
   children: null
 };
 
-const VerticalNav = controlled(controlledState)(BaseVerticalNav);
+const NoPersist = controlled(controlledState)(BaseVerticalNav);
+const WithPersist = controlled({
+  ...controlledState,
+  persist: ['navCollapsed', 'pinnedPath']
+})(BaseVerticalNav);
+
+const VerticalNav = ({ persist, ...props }) =>
+  persist ? <WithPersist {...props} /> : <NoPersist {...props} />;
 
 VerticalNav.propTypes = {
-  ...BaseVerticalNav.propTypes
+  ...BaseVerticalNav.propTypes,
+  persist: PropTypes.bool
+};
+
+VerticalNav.defaultProps = {
+  ...BaseVerticalNav.defaultProps,
+  persist: true
 };
 
 VerticalNav.displayName = 'VerticalNav';
+
+VerticalNav.NoPersist = NoPersist;
+VerticalNav.WithPersist = WithPersist;
 
 export default VerticalNav;

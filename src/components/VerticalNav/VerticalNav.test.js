@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 
 import { VerticalNav } from './index';
 
@@ -21,6 +21,16 @@ test('VerticalNav renders properly in mobile mode', () => {
   const component = mount(basicExample({ isMobile: true }));
 
   expect(component.render()).toMatchSnapshot();
+});
+
+test('VerticalNav renders without errors with persistence on', () => {
+  const component = shallow(<VerticalNav persist />);
+  expect(component.find(VerticalNav.WithPersist).exists()).toBe(true);
+});
+
+test('VerticalNav renders without errors with persistence off', () => {
+  const component = shallow(<VerticalNav persist={false} />);
+  expect(component.find(VerticalNav.NoPersist).exists()).toBe(true);
 });
 
 test('VerticalNav renders properly with a custom className on a nav item', () => {
