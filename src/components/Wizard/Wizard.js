@@ -11,11 +11,13 @@ const Wizard = ({
   dialogClassName,
   show,
   onClose,
+  onExited,
   ...rest
 }) => (
   <Modal
     show={show}
     onHide={onClose}
+    onExited={onExited}
     dialogClassName={dialogClassName || 'modal-lg wizard-pf'}
     {...rest}
   >
@@ -32,13 +34,16 @@ Wizard.propTypes = {
   /** show modal */
   show: PropTypes.bool,
   /** on close callback */
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  /** on exited callback */
+  onExited: PropTypes.func
 };
 Wizard.defaultProps = {
   children: null,
   className: '',
   dialogClassName: '',
   show: false,
-  onClose: noop
+  onClose: noop,
+  onExited: noop
 };
 export default Wizard;
