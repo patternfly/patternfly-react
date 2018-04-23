@@ -1,0 +1,48 @@
+/**
+  SerialConsole styles
+ */
+
+.console-pf > .terminal {
+  color: @color-pf-white;
+  text-align: left;
+  outline: medium none;
+  background-color: @color-pf-black;
+  border: 1px solid @color-pf-black;
+  padding: 10px;
+}
+
+.console-pf {
+  font-family: @font-family-monospace;
+  font-size: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  line-height: normal;
+}
+
+.console-pf .terminal .terminal-cursor {
+  border: 1px solid @color-pf-white;
+}
+
+.console-pf .terminal:focus .terminal-cursor {
+  border: none;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from {
+    color: @color-pf-black;
+    background: @color-pf-white;
+  }
+
+  50% {
+    color: @color-pf-white;
+    background: @color-pf-black;
+  }
+}
+
+.console-terminal-pf {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+}
