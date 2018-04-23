@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { createPortal } from 'react-dom';
 import { ConfirmButton, CancelButton } from '../InlineEdit';
-import { noop, bindMethods, debounce } from '../../common/helpers';
+import { noop, debounce } from '../../common/helpers';
 import '../../common/closestPolyfill';
 
 class TableConfirmButtonsRow extends React.Component {
@@ -10,7 +10,6 @@ class TableConfirmButtonsRow extends React.Component {
     super(props);
     this.state = {};
 
-    bindMethods(this, ['saveRowDimensions', 'handleScroll', 'handleResize']);
     this.handleScroll = debounce(this.handleScroll, 100);
     this.handleResize = debounce(this.handleResize, 100);
   }
@@ -26,7 +25,7 @@ class TableConfirmButtonsRow extends React.Component {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  saveRowDimensions(element) {
+  saveRowDimensions = element => {
     if (element) {
       this.element = element;
     }
@@ -35,16 +34,16 @@ class TableConfirmButtonsRow extends React.Component {
         rowDimensions: this.element.getBoundingClientRect()
       });
     }
-  }
+  };
 
-  handleScroll(event) {
+  handleScroll = event => {
     this.saveRowDimensions();
-  }
+  };
 
-  handleResize(event) {
+  handleResize = event => {
     this.fetchClientDimensions();
     this.saveRowDimensions();
-  }
+  };
 
   fetchClientDimensions() {
     this.setState({

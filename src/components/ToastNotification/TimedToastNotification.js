@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindMethods } from '../../common/helpers';
 import Timer from '../../common/Timer';
 import ToastNotification from './ToastNotification';
 
@@ -8,11 +7,6 @@ import ToastNotification from './ToastNotification';
  * TimedToastNotification Component for Patternfly React
  */
 class TimedToastNotification extends React.Component {
-  constructor(props) {
-    super(props);
-    bindMethods(this, ['onMouseEnter', 'onMouseLeave']);
-  }
-
   componentDidMount() {
     const { paused, persistent, onDismiss, timerdelay } = this.props;
 
@@ -45,15 +39,15 @@ class TimedToastNotification extends React.Component {
     this.timer && this.timer.clearTimer();
   }
 
-  onMouseEnter() {
+  onMouseEnter = () => {
     const { onMouseEnter } = this.props;
     onMouseEnter && onMouseEnter();
-  }
+  };
 
-  onMouseLeave() {
+  onMouseLeave = () => {
     const { onMouseLeave } = this.props;
     onMouseLeave && onMouseLeave();
-  }
+  };
   render() {
     const { children, className, type, onDismiss } = this.props;
     const { onMouseEnter, onMouseLeave } = this;

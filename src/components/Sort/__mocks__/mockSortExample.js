@@ -1,6 +1,5 @@
 import React from 'react';
 import { Sort, Toolbar } from '../../../index';
-import { bindMethods } from '../../../common/helpers';
 
 export const mockSortFields = [
   {
@@ -26,17 +25,11 @@ export const mockSortFields = [
 ];
 
 export class MockSortExample extends React.Component {
-  constructor() {
-    super();
-
-    bindMethods(this, ['updateCurrentSortType', 'toggleCurrentSortDirection']);
-
-    this.state = {
-      currentSortType: mockSortFields[0],
-      isSortNumeric: mockSortFields[0].isNumeric,
-      isSortAscending: true
-    };
-  }
+  state = {
+    currentSortType: mockSortFields[0],
+    isSortNumeric: mockSortFields[0].isNumeric,
+    isSortAscending: true
+  };
 
   filterAdded = (field, value) => {
     let filterText = '';
@@ -60,13 +53,13 @@ export class MockSortExample extends React.Component {
     this.setState({ activeFilters });
   };
 
-  toggleCurrentSortDirection() {
+  toggleCurrentSortDirection = () => {
     this.setState(prevState => ({
       isSortAscending: !prevState.isSortAscending
     }));
-  }
+  };
 
-  updateCurrentSortType(sortType) {
+  updateCurrentSortType = sortType => {
     const { currentSortType } = this.state;
     if (currentSortType !== sortType) {
       this.setState({
@@ -75,7 +68,7 @@ export class MockSortExample extends React.Component {
         isSortAscending: true
       });
     }
-  }
+  };
 
   render() {
     const { currentSortType, isSortNumeric, isSortAscending } = this.state;
@@ -102,7 +95,6 @@ export class MockSortExample extends React.Component {
 export const mockSortExampleSource = `
 import React from 'react';
 import { Sort, Toolbar } from '../../../index';
-import { bindMethods } from '../../../common/helpers';
 
 export const mockSortFields = [
   {
@@ -128,17 +120,11 @@ export const mockSortFields = [
 ];
 
 export class MockSortExample extends React.Component {
-  constructor() {
-    super();
-
-    bindMethods(this, ['updateCurrentSortType', 'toggleCurrentSortDirection']);
-
-    this.state = {
+    state = {
       currentSortType: mockSortFields[0],
       isSortNumeric: mockSortFields[0].isNumeric,
       isSortAscending: true
     };
-  }
 
   filterAdded = (field, value) => {
     let filterText = '';
@@ -164,7 +150,7 @@ export class MockSortExample extends React.Component {
     this.setState({ activeFilters: activeFilters });
   };
 
-  updateCurrentSortType(sortType) {
+  updateCurrentSortType = sortType => {
     const { currentSortType } = this.state;
     if (currentSortType !== sortType) {
       this.setState({
@@ -175,7 +161,7 @@ export class MockSortExample extends React.Component {
     }
   }
 
-  toggleCurrentSortDirection() {
+  toggleCurrentSortDirection = () => {
     this.setState(prevState => {
       return { isSortAscending: !prevState.isSortAscending };
     });

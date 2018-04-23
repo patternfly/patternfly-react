@@ -1,6 +1,5 @@
 import React from 'react';
 import MockWizardBase from './mockWizardBase';
-import { bindMethods } from '../../../common/helpers';
 import { Button } from '../../Button';
 import { Icon } from '../../Icon';
 import { Wizard } from '../index';
@@ -14,16 +13,12 @@ import {
 } from './mockWizardRenderers';
 
 export class WizardExample extends MockWizardBase {
-  constructor(props) {
-    super(props);
-    bindMethods(this, ['open', 'close']);
-  }
-  open() {
+  open = () => {
     this.setState({ showModal: true });
-  }
-  close() {
+  };
+  close = () => {
     this.setState({ showModal: false });
-  }
+  };
   render() {
     const { showModal, activeStepIndex, activeSubStepIndex } = this.state;
 

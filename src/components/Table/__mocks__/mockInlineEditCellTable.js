@@ -4,7 +4,7 @@ import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { compose } from 'recompose';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
-import { bindMethods, KEY_CODES } from '../../../common/helpers';
+import { KEY_CODES } from '../../../common/helpers';
 import {
   customHeaderFormattersDefinition,
   defaultSortingOrder,
@@ -78,7 +78,6 @@ export class MockInlineEditCellTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-    bindMethods(this, ['customHeaderFormatters']);
 
     const inlineEditController = {
       isEditing: ({ rowIndex, columnIndex, rowData, property }) =>
@@ -358,7 +357,7 @@ import * as sort from 'sortabular';
 import * as resolve from 'table-resolver';
 import { compose } from 'recompose';
 import { cloneDeep, findIndex, orderBy } from 'lodash';
-import { bindMethods } from '../../../common/helpers';
+import { KEY_CODES } from '../../../common/helpers';
 import {
   customHeaderFormattersDefinition,
   defaultSortingOrder,
@@ -420,7 +419,6 @@ export class MockInlineEditCellTable extends React.Component {
 
     // enables our custom header formatters extensions to reactabular
     this.customHeaderFormatters = customHeaderFormattersDefinition;
-    bindMethods(this, ['customHeaderFormatters']);
 
     const inlineEditController = {
       isEditing: ({ rowIndex, columnIndex, rowData, property }) =>

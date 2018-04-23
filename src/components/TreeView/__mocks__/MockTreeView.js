@@ -1,6 +1,5 @@
 import React from 'react';
 import { boolean } from '@storybook/addon-knobs';
-import { bindMethods } from '../../../common/helpers';
 
 import TreeView from '../TreeView';
 import { basicData } from './data';
@@ -10,18 +9,12 @@ const treeViewContainerStyles = {
 };
 
 export class MockTreeView extends React.Component {
-  constructor(props) {
-    super(props);
+  state = {
+    nodes: basicData
+  };
 
-    this.state = {
-      nodes: basicData
-    };
-
-    bindMethods(this, ['selectNode', 'nodeSelector']);
-  }
-
-  nodeSelector(nodes, targetNode) {
-    return nodes.map(node => {
+  nodeSelector = (nodes, targetNode) =>
+    nodes.map(node => {
       if (node.nodes) {
         return {
           ...node,
@@ -35,13 +28,12 @@ export class MockTreeView extends React.Component {
       }
       return node;
     });
-  }
 
-  selectNode(selectedNode) {
+  selectNode = selectedNode => {
     this.setState(prevState => ({
       nodes: this.nodeSelector(prevState.nodes, selectedNode)
     }));
-  }
+  };
 
   render() {
     const { nodes } = this.state;
@@ -61,7 +53,6 @@ export class MockTreeView extends React.Component {
 export const MockTreeViewSource = `
 import React from 'react';
 import { boolean } from '@storybook/addon-knobs';
-import { bindMethods } from '../../../common/helpers';
 
 import TreeView from '../TreeView';
 import { basicData } from './data';
@@ -78,7 +69,6 @@ export class MockTreeView extends React.Component {
       nodes: []
     };
 
-    bindMethods(this, ['selectNode', 'nodeSelector']);
   }
 
   componentDidMount() {

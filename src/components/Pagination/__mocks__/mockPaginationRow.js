@@ -1,30 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindMethods, noop } from '../../../common/helpers';
+import { noop } from '../../../common/helpers';
 import { PaginationRow, PAGINATION_VIEW_TYPES } from '../index';
 
 export class MockPaginationRow extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      pagination: {
-        page: 1,
-        perPage: 6,
-        perPageOptions: [6, 10, 15, 25, 50]
-      }
-    };
-    bindMethods(this, ['onPageInput', 'onPerPageSelect']);
-  }
-  onPageInput(e) {
+  state = {
+    pagination: {
+      page: 1,
+      perPage: 6,
+      perPageOptions: [6, 10, 15, 25, 50]
+    }
+  };
+
+  onPageInput = e => {
     const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.page = e.target.value;
     this.setState({ pagination: newPaginationState });
-  }
-  onPerPageSelect(eventKey, e) {
+  };
+  onPerPageSelect = (eventKey, e) => {
     const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     this.setState({ pagination: newPaginationState });
-  }
+  };
   render() {
     const {
       viewType,
@@ -84,27 +81,24 @@ MockPaginationRow.defaultProps = {
 export const mockPaginationSource = `
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindMethods, noop } from '../../../common/helpers';
+import { noop } from '../../../common/helpers';
 import { PaginationRow, PAGINATION_VIEW_TYPES } from '../index';
 
 export class MockPaginationRow extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+    state = {
       pagination: {
         page: 1,
         perPage: 6,
         perPageOptions: [6, 10, 15, 25, 50]
       }
     };
-    bindMethods(this, ['onPageInput', 'onPerPageSelect']);
-  }
-  onPageInput(e) {
+
+  onPageInput = e => {
     const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.page = e.target.value;
     this.setState({ pagination: newPaginationState });
   }
-  onPerPageSelect(eventKey, e) {
+  onPerPageSelect = (eventKey, e) => {
     const newPaginationState = Object.assign({}, this.state.pagination);
     newPaginationState.perPage = eventKey;
     this.setState({ pagination: newPaginationState });

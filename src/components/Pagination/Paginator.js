@@ -1,14 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PaginationRow from './PaginationRow';
-import { bindMethods, noop } from '../../common/helpers';
+import { noop } from '../../common/helpers';
 import { PAGINATION_VIEW_TYPES } from './PaginationConstants';
 
 class Paginator extends React.Component {
   constructor(props) {
     super(props);
-
-    bindMethods(this, ['handleFormSubmit']);
 
     this.initPagination(props);
 
@@ -46,9 +44,9 @@ class Paginator extends React.Component {
     this.setPage(page);
   }
 
-  handleFormSubmit(e) {
+  handleFormSubmit = e => {
     this.setPage(this.state.pageChangeValue);
-  }
+  };
 
   handlePageChange(e) {
     this.setState({ pageChangeValue: e.target.value });

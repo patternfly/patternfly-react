@@ -1,26 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from '../Dropdown';
-import { bindMethods, KEY_CODES } from '../../common/helpers';
+import { KEY_CODES } from '../../common/helpers';
 
 class InfoTip extends React.Component {
-  constructor(props) {
-    super(props);
-    bindMethods(this, [
-      'handleKeyDown',
-      'handleClick',
-      'handleBackFocus',
-      'handleBlur'
-    ]);
-    this.state = { open: false, footerFocused: false };
-  }
+  state = { open: false, footerFocused: false };
 
-  handleEnterKeyDown(event) {
+  handleEnterKeyDown = event => {
     this.setState({ open: !this.state.open });
     event.preventDefault();
-  }
+  };
 
-  handleTabKeyDown(event) {
+  handleTabKeyDown = event => {
     if (this.state.footerFocused) {
       this.setState({ open: false, footerFocused: false });
     } else {
@@ -28,9 +19,9 @@ class InfoTip extends React.Component {
     }
     event.stopPropagation();
     event.nativeEvent.stopImmediatePropagation();
-  }
+  };
 
-  handleKeyDown(event) {
+  handleKeyDown = event => {
     if (event.shiftKey && event.keyCode) {
       return this.handleBackFocus();
     }
@@ -44,24 +35,24 @@ class InfoTip extends React.Component {
       default:
         return null;
     }
-  }
+  };
 
-  handleBackFocus() {
+  handleBackFocus = () => {
     if (this.state.open) {
       this.setState({ open: false });
     }
-  }
+  };
 
-  handleClick(event) {
+  handleClick = event => {
     event.preventDefault();
     this.setState({ open: !this.state.open });
-  }
-  handleBlur(event) {
+  };
+  handleBlur = event => {
     if (event && event.relatedTarget) {
       event.relatedTarget.click();
     }
     this.setState({ open: false });
-  }
+  };
 
   render() {
     const { children, onToggle, ...props } = this.props;

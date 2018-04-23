@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { bindMethods } from '../../../common/helpers';
 import { Wizard } from '../index';
 
 class MockWizardReviewStepsManager extends React.Component {
@@ -9,17 +8,16 @@ class MockWizardReviewStepsManager extends React.Component {
     this.state = {
       steps: [...props.steps]
     };
-    bindMethods(this, ['stepClicked', 'subStepClicked']);
   }
-  stepClicked(e, stepIndex) {
+  stepClicked = (e, stepIndex) => {
     e.preventDefault();
     const updated = [...this.state.steps];
     updated[stepIndex].collapsed = !updated[stepIndex].collapsed;
     this.setState({
       steps: updated
     });
-  }
-  subStepClicked(e, stepIndex, subStepIndex) {
+  };
+  subStepClicked = (e, stepIndex, subStepIndex) => {
     e.preventDefault();
     const updated = [...this.state.steps];
     updated[stepIndex].subSteps[subStepIndex].collapsed = !updated[stepIndex]
@@ -27,7 +25,7 @@ class MockWizardReviewStepsManager extends React.Component {
     this.setState({
       steps: updated
     });
-  }
+  };
   render() {
     const { steps } = this.state;
     return (

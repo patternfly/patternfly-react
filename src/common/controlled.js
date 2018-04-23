@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { nullValues, bindMethods, selectKeys, filterKeys } from './helpers';
+import { nullValues, selectKeys, filterKeys } from './helpers';
 
 /*
   controlled(stateTypes, defaults)(WrappedComponent)
@@ -35,16 +35,7 @@ import { nullValues, bindMethods, selectKeys, filterKeys } from './helpers';
 */
 const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
   class ControlledComponent extends React.Component {
-    constructor() {
-      super();
-      this.state = { ...nullValues(types), ...defaults };
-      bindMethods(this, [
-        'sessionKey',
-        'savePersistent',
-        'loadPersistent',
-        'setControlledState'
-      ]);
-    }
+    state = { ...nullValues(types), ...defaults };
 
     componentDidMount() {
       this.loadPersistent();
@@ -60,11 +51,11 @@ const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
         window.removeEventListener('beforeunload', this.savePersistent);
     }
 
-    setControlledState(updater) {
+    setControlledState = updater => {
       this.setState(updater);
-    }
+    };
 
-    loadPersistent() {
+    loadPersistent = () => {
       if (persist && persist.length > 0) {
         const fromPersisted =
           window &&
@@ -72,9 +63,9 @@ const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
           window.sessionStorage.getItem(this.sessionKey());
         fromPersisted && this.setState(JSON.parse(fromPersisted));
       }
-    }
+    };
 
-    savePersistent() {
+    savePersistent = () => {
       if (persist && persist.length > 0) {
         const toPersist = selectKeys(this.state, persist);
         window &&
@@ -84,11 +75,9 @@ const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
             JSON.stringify(toPersist)
           );
       }
-    }
+    };
 
-    sessionKey() {
-      return this.props.sessionKey || JSON.stringify(persist);
-    }
+    sessionKey = () => this.props.sessionKey || JSON.stringify(persist);
 
     render() {
       const controlledStateProps = filterKeys(

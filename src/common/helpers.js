@@ -2,6 +2,11 @@ import React from 'react';
 
 /** Equivalent to calling `this.someMethod = this.someMethod.bind(this)` for every method name in the methods array. */
 export const bindMethods = (context, methods) => {
+  // eslint-disable-next-line no-console
+  console.warn(`
+   bindMethods usage is deprecated in favor of class methods.
+   bindMethods will be removed in the next major release
+   `);
   methods.forEach(method => {
     context[method] = context[method].bind(context);
   });
