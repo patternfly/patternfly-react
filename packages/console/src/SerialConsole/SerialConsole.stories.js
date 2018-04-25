@@ -1,19 +1,148 @@
-/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
-import SerialConsole from './SerialConsole';
+import { defaultTemplate } from '../../../../storybook/decorators/storyTemplates';
 
-const stories = storiesOf('@patternfly-react/console', module);
+import { SerialConsole } from './index';
+import { CONNECTED, DISCONNECTED, LOADING } from './constants';
 
-stories.add(
-  'SerialConsole',
-  withInfo()(() => {
-    const story = <SerialConsole />;
-    return inlineTemplate({
-      story,
-      title: 'SerialConsole'
-    });
+const stories = storiesOf('SerialConsole', module);
+stories.addDecorator(
+  defaultTemplate({
+    title: 'SerialConsole',
+    description:
+      'This is an example of the SerialConsole component. For the purpose of this example, there is just a mock backend.'
   })
 );
+
+/* eslint no-console: ["warn", { allow: ["log"] }] */
+const { log } = console; // let's keep these trace messages for tutoring purposes
+
+const timeoutIds = [];
+/**
+ * The SerialConsoleConnector component is consumer-specific and wraps the communication with backend.
+ * For the purpose of this storybook, the backend is just mimicked.
+ */
+class SerialConsoleConnector extends React.Component {
+  state = { status: LOADING, passKeys: false };
+
+  onBackendDisconnected = () => {
+    log('Backend has disconnected, pass the info to the UI component');
+    if (this.childSerialconsole) {
+      this.childSerialconsole.onConnectionClosed(
+        'Reason for disconnect provided by backend.'
+      );
+    }
+
+    this.setState({
+      passKeys: false,
+      status: DISCONNECTED // will close the terminal window
+    });
+  };
+
+  onConnect = () => {
+    log('SerialConsoleConnector.onConnect(), ', this.state);
+    this.setConnected();
+    this.tellFairyTale();
+  };
+
+  onData = data => {
+    log(
+      'UI terminal component produced data, i.e. a key was pressed, pass it to backend. [',
+      data,
+      ']'
+    );
+
+    // Normally, the "data" shall be passed to the backend which might send them back via onData() call
+    // Since there is no backend, let;s pass them to UI component immediately.
+    if (this.state.passKeys) {
+      this.onDataFromBackend(data);
+    }
+  };
+
+  onDataFromBackend = data => {
+    log('Backend sent data, pass them to the UI component. [', data, ']');
+    if (this.childSerialconsole) {
+      this.childSerialconsole.onDataReceived(data);
+    }
+  };
+
+  onDisconnect = () => {
+    this.setState({
+      status: DISCONNECTED
+    });
+    timeoutIds.forEach(id => clearTimeout(id));
+  };
+
+  onResize = (rows, cols) => {
+    log(
+      'UI has been resized, pass this info to backend. [',
+      rows,
+      ', ',
+      cols,
+      ']'
+    );
+  };
+
+  setConnected = () => {
+    this.setState({
+      status: CONNECTED,
+      passKeys: true
+    });
+  };
+
+  tellFairyTale = () => {
+    let time = 1000;
+    timeoutIds.push(
+      setTimeout(
+        () => this.onDataFromBackend(' This is a mock terminal. '),
+        time
+      )
+    );
+
+    time += 1000;
+    timeoutIds.push(
+      setTimeout(
+        () => this.onDataFromBackend(' Something is happening! '),
+        time
+      )
+    );
+
+    time += 1000;
+    timeoutIds.push(
+      setTimeout(
+        () => this.onDataFromBackend(' Something is happening! '),
+        time
+      )
+    );
+
+    time += 1000;
+    timeoutIds.push(
+      setTimeout(
+        () => this.onDataFromBackend(' Backend will be disconnected shortly. '),
+        time
+      )
+    );
+
+    time += 5000;
+    timeoutIds.push(setTimeout(this.onBackendDisconnected, time));
+  };
+
+  render() {
+    return (
+      <SerialConsole
+        onConnect={this.onConnect}
+        onDisconnect={this.onDisconnect}
+        onResize={this.onResize()}
+        onData={this.onData}
+        id="my-serialconsole"
+        status={this.state.status}
+        ref={c => {
+          this.childSerialconsole = c;
+        }}
+      />
+    );
+  }
+}
+
+stories.addWithInfo('SerialConsole', () => <SerialConsoleConnector />);

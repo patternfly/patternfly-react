@@ -19,9 +19,19 @@ npm install @patternfly-react/console --save
 ### Usage
 
 ```javascript
-import { VncConsole, SerialConsole } from '@patternfly-react/console
+import { VncConsole, SerialConsole } from '@patternfly-react/console'
 ```
 
+#### Styling:
+Example with LESS:
+```
+@import "~bootstrap/less/variables";
+@import "~patternfly/dist/less/variables";
+@import "~patternfly-react/dist/less/patternfly-react.less";
+@import "~xterm/dist/xterm.css";
+@import "~@patternfly-react/console/dist/less/console.less";
+```
+  
 ### Building
 
 ```
