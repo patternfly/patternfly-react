@@ -51,7 +51,7 @@ Since the components in patternfly-react are based on patternfly, we want to mak
 
 - `css review` - The issue requires css review. Add this label when you are working on a component, and the html and css are ready for review against the core patternfly implementation.
 - `ux review` - The issue requires ux design review. Add this label when you are working on a component, and the storybook example is ready for review by a ux designer.
-- `css approved` - The issue has been reviewed and approved by a member of the css team.  
+- `css approved` - The issue has been reviewed and approved by a member of the css team.
 - `ux approved` - The issue has been reviewed and approved by a member of the ux team.
 
 ### Project Board Columns
@@ -107,12 +107,30 @@ If you submit a pull request, then please also contribute by reviewing other pul
 
 Ideally, all the styles that are needed for the components in patternfly-react would be defined in the core [patternfly](https://github.com/patternfly/patternfly) repo. However, there may be cases where additional styles are needed to complete the patternfly-react component contribution. In the case where the styles are specific to the component implementation in the patternfly-react repo, then the styles would remain in the repo. In the case where the component does not exist yet in the core pattenrfly repo and styles are needed for the component in the patternfly-react repo, then the styles would only remain in the patternfly-react repo until the component is added to the core patternfly repo. Once the styles are available as part of core patternfly repo, it will be removed from the patternfly-react repo.
 
-When it is necessary to add styling in the patternfly-react repo, the styling should be done in both Less and Sass (in the future a converter will be provided, see [Issue #169](https://github.com/patternfly/patternfly-react/issues/169)).  
+When it is necessary to add styling in the patternfly-react repo, the styling should be done in both Less and Sass (in the future a converter will be provided, see [Issue #169](https://github.com/patternfly/patternfly-react/issues/169)).
 
 - Add a Less file to the `less` directory and use the file name `<component>.less`
 - Import the Less file into `less/paternfly-react.less` using `@import "<component>";`
 - Add a Sass file to the `sass/patternfly-react/` directory and use the file name `_<component>.scss`
 - Import the Sass file into `sass/patternfly-react/_patternfly-react.scss` using `@import "<component>";`
+
+### Adding TypeScript Definitions
+In an effort to enable using TypeScript with patternfly-react we offer TypeScript definitions along with each component. As new components are created or existing components are modified it is important to keep the provided TypeScript definitions current. To achieve this a contributor can do 1 of 3 things.
+1. Contribute back the typings (d.ts file) in the same PR yourself.
+2. Request someone else to add the typings in the same PR.
+3. Create an issue to update/add typings for the given component with reference to the PR and with the label [typescript](https://github.com/patternfly/patternfly-react/issues?q=is%3Aopen+is%3Aissue+label%3Atypescript)
+
+For an example of some common typings you can reference the files below:
+- Alert:
+  - [Alert.d.ts](src/components/Alert/Alert.d.ts)
+  - [index.d.ts](src/components/Alert/index.d.ts)
+- Button:
+  - [Button.d.ts](src/components/Button/Button.d.ts)
+  - [index.d.ts](src/components/Button/index.d.ts)
+- Grid:
+  - [index.d.ts](src/components/Grid/index.d.ts)
+
+For a basic introduction to React + TypeScript, you can follow the starter project here: https://github.com/Microsoft/TypeScript-React-Starter#typescript-react-starter
 
 ## Guidelines and Requirements
 
@@ -281,7 +299,7 @@ Regardless, while objections are discussed either in private or public, the nomi
 
 The maintainers team will be reevaluated periodically to ensure it remains up to date. If you are inactive in the community for six months, we will remove you from the maintainers list and revoke your permission, but we will make a mention of you on a list of previous maintainers. In the event that a maintainer continues to disregard good citizenship (or actively disrupts the project), we may need to revoke that person’s status.
 
-The process for revoking someone's maintainer status is a discussion limited to the maintainer team given the sensitive nature of this conversation. The maintainer being discussed should be made aware of the reasons their membership is being discussed and why. It may be that this person simply does not have time and agrees to opt out of this role without any further discussion. If more is required, the process is similar to a nomination. A member should suggest the revocation with a good reason, two people second the motion, and a vote may be called if consensus cannot be reached. Someone from the maintainer team is required to follow up with the person being removed to update them and pass along constructive feedback. Again, care should be taken to do this sensitively.  
+The process for revoking someone's maintainer status is a discussion limited to the maintainer team given the sensitive nature of this conversation. The maintainer being discussed should be made aware of the reasons their membership is being discussed and why. It may be that this person simply does not have time and agrees to opt out of this role without any further discussion. If more is required, the process is similar to a nomination. A member should suggest the revocation with a good reason, two people second the motion, and a vote may be called if consensus cannot be reached. Someone from the maintainer team is required to follow up with the person being removed to update them and pass along constructive feedback. Again, care should be taken to do this sensitively.
 
 ### Quick tips for new maintainers
 
