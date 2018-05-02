@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly-react/console",
+  "name": "@patternfly/react-console",
   "version": "0.0.0",
   "description": "This library provides a set of Console React components for use with the PatternFly reference implementation.",
   "main": "dist/cjs/index.js",
