@@ -10,6 +10,9 @@ env:
   - TRIGGER_REPO_BRANCH: "master"
 notifications:
   email: false
+before_install:
+- yarn install
+- cd packages/console ; yarn install ; cd -
 script:
 - yarn test
 - yarn coveralls

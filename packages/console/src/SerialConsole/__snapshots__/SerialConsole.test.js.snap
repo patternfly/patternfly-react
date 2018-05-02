@@ -1,7 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`placeholder render test 1`] = `
-<div>
-  Serial Console
+<div
+  className=""
+  id=""
+>
+  <SerialConsoleActions
+    idPrefix="id-serialconsole"
+    isDisconnectEnabled={false}
+    onDisconnect={[Function]}
+    onReset={[Function]}
+    textDisconnect="Disconnect"
+    textReconnect="Reconnect"
+  />
+  <div
+    className="panel-body console-terminal-pf"
+  >
+    <span>
+      Loading ...
+    </span>
+  </div>
 </div>
 `;
