@@ -36,7 +36,7 @@ class TimedToastNotification extends React.Component {
   }
 
   componentWillUnmount() {
-    this.timer && this.timer.clearTimer();
+    this.timer && clearTimeout(this.timer);
   }
 
   onMouseEnter = () => {
