@@ -26,6 +26,7 @@
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-switch": "^15.5.3",
     "react-c3js": "^0.1.20",
+    "react-dropzone": "^4.2.9",
     "react-fontawesome": "^1.6.1",
     "reactabular-table": "^8.12.1",
     "recompose": "^0.26.0"
