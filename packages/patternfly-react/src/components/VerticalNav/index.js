@@ -6,6 +6,7 @@ import VerticalNavTertiaryItem from './VerticalNavTertiaryItem';
 import VerticalNavBrand from './VerticalNavBrand';
 import VerticalNavIconBar from './VerticalNavIconBar';
 import VerticalNavBadge from './VerticalNavBadge';
+import VerticalNavDividerItem from './VerticalNavDividerItem';
 
 VerticalNav.Masthead = VerticalNavMasthead;
 VerticalNav.Item = VerticalNavItem;
@@ -14,6 +15,7 @@ VerticalNav.TertiaryItem = VerticalNavTertiaryItem;
 VerticalNav.Brand = VerticalNavBrand;
 VerticalNav.IconBar = VerticalNavIconBar;
 VerticalNav.Badge = VerticalNavBadge;
+VerticalNav.Divider = VerticalNavDividerItem;
 
 export {
   VerticalNav,
@@ -23,5 +25,6 @@ export {
   VerticalNavTertiaryItem,
   VerticalNavBrand,
   VerticalNavIconBar,
-  VerticalNavBadge
+  VerticalNavBadge,
+  VerticalNavDividerItem
 };
