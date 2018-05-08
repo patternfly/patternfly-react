@@ -77,20 +77,25 @@ stories.add(
 class ToastNotificationStoryWrapper extends React.Component {
   constructor(props) {
     super(props);
+    const notificationList = [
+      {
+        key: 1,
+        type: 'info',
+        persistent: false,
+        timerdelay: 8000,
+        message: `By default, a toast notification's timer expires after eight seconds.`
+      },
+      {
+        key: 2,
+        type: 'warning',
+        persistent: false,
+        message: `Additionally, if the user hovers any toast notification each timer is reset.`
+      }
+    ];
+
     this.state = {
-      infoNotificationDismissed: false,
-      warningNotificationDismissed: false,
+      notifications: notificationList,
       persistentNotificationDismissed: false
-    };
-
-    this.infoNotificationDismissed = () => {
-      action('info notification: onDismiss fired')();
-      this.setState({ infoNotificationDismissed: true });
-    };
-
-    this.warningNotificationDismissed = () => {
-      action('warning notification: onDismiss fired')();
-      this.setState({ warningNotificationDismissed: true });
     };
 
     this.persistentNotificationDismissed = () => {
@@ -100,9 +105,17 @@ class ToastNotificationStoryWrapper extends React.Component {
 
     this.resetStateClicked = () => {
       this.setState({
-        infoNotificationDismissed: false,
-        warningNotificationDismissed: false,
+        notifications: notificationList,
         persistentNotificationDismissed: false
+      });
+    };
+
+    this.removeNotificationAction = notificationToRemove => {
+      action(`${notificationToRemove.type} notification: onDismiss fired`)();
+      this.setState({
+        notifications: this.state.notifications.filter(
+          notification => notificationToRemove.key !== notification.key
+        )
       });
     };
   }
@@ -119,37 +132,20 @@ class ToastNotificationStoryWrapper extends React.Component {
           onMouseOver={action('notification list: onMouseOver fired')}
           onFocus={action('notification list: onFocus fired')}
         >
-          {!this.state.infoNotificationDismissed && (
+          {this.state.notifications.map(notification => (
             <TimedToastNotification
-              timerdelay={8000}
-              type="info"
-              onDismiss={this.infoNotificationDismissed}
-              onMouseEnter={action('info notification: onMouseEnter fired')}
-              onMouseLeave={action('info notification: onMouseLeave fired')}
+              key={notification.key}
+              type={notification.type}
+              persistent={notification.persistent}
+              onDismiss={() => this.removeNotificationAction(notification)}
+              timerdelay={notification.timerdelay}
             >
               <span>
-                {text(
-                  'Message',
-                  "By default, a toast notification's timer expires after eight seconds."
-                )}
+                {notification.header && <strong>{notification.header}</strong>}
+                {notification.message}
               </span>
             </TimedToastNotification>
-          )}
-          <br />
-          {!this.state.warningNotificationDismissed && (
-            <TimedToastNotification
-              timerdelay={8000}
-              type="warning"
-              onDismiss={this.warningNotificationDismissed}
-              onMouseEnter={action('warning notification: onMouseEnter fired')}
-              onMouseLeave={action('warning notification: onMouseLeave fired')}
-            >
-              <span>
-                Additionally, if the user hovers any toast notification each
-                timer is reset.
-              </span>
-            </TimedToastNotification>
-          )}
+          ))}
           {!this.state.persistentNotificationDismissed && (
             <TimedToastNotification
               persistent
