@@ -2,6 +2,9 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Card Component for PatternFly React
+ */
 const Card = ({
   children,
   className,
