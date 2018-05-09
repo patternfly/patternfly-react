@@ -138,7 +138,10 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "roots": ["<rootDir>/packages", "<rootDir>/scripts"]
+    "roots": [
+      "<rootDir>/packages",
+      "<rootDir>/scripts"
+    ]
   },
   "config": {
     "commitizen": {
