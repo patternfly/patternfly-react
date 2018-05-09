@@ -2,7 +2,10 @@ import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { AreaChart, SingleAreaChart } from '../index';
 import { inlineTemplate } from '../../../../storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from '../../../../storybook/constants';
+import {
+  DOCUMENTATION_URL,
+  DESCRIPTION
+} from '../../../../storybook/constants';
 
 /**
  * Story constants
@@ -59,6 +62,11 @@ const areaChart = stories => {
         documentationLink: `${
           DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
         }area-chart/`,
+        description: (
+          <span>
+            {DESCRIPTION.C3JS_TEXT} <a>{DESCRIPTION.C3JS_URL}</a>
+          </span>
+        ),
         story
       });
     })
