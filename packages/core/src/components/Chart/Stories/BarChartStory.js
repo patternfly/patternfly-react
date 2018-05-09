@@ -3,7 +3,10 @@ import { withInfo } from '@storybook/addon-info';
 import { patternfly } from '../../../common/patternfly';
 import { BarChart, GroupedBarChart, StackedBarChart } from '../index';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  DOCUMENTATION_URL,
+  DESCRIPTION
+} from 'storybook/constants/siteConstants';
 
 /**
  * BarChart constants
@@ -128,6 +131,11 @@ const barChart = stories => {
         documentationLink: `${
           DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
         }bar-chart/`,
+        description: (
+          <span>
+            {DESCRIPTION.C3JS_TEXT} <a>{DESCRIPTION.C3JS_URL}</a>
+          </span>
+        ),
         story
       });
     })

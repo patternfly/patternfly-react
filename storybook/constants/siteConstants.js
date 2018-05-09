@@ -23,3 +23,9 @@ export const DOCUMENTATION_URL = {
   REACT_BOOTSTRAP_COMPONENT: `${BASE_URL.REACT_BOOTSTRAP}components/`,
   REACT_BOOTSTRAP_LAYOUT: `${BASE_URL.REACT_BOOTSTRAP}layout/`
 };
+
+export const DESCRIPTION = {
+  C3JS_URL: 'http://c3js.org/reference.html',
+  C3JS_TEXT:
+    'This component is based on c3js graph, to see full documentation follow'
+};
