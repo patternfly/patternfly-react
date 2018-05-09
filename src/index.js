@@ -1,5 +1,6 @@
 export { default as controlled } from './common/controlled';
 export * from './common/helpers';
+export * from './components/Accordion';
 export * from './components/Alert';
 export * from './components/AboutModal';
 export * from './components/Badge';

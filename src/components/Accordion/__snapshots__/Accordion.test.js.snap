@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion renders 1`] = `
+<div
+  class="panel-group"
+  id="test"
+  role="tablist"
+>
+  <div
+    class="panel panel-default"
+  >
+    <div
+      class="panel-heading"
+      id="test-heading-1"
+      role="tab"
+    >
+      <div
+        class="panel-title"
+      >
+        <a
+          aria-controls="test-body-1"
+          aria-expanded="true"
+          class=""
+          href="#"
+          role="button"
+        >
+          Panel 1
+        </a>
+      </div>
+    </div>
+    <div
+      aria-expanded="true"
+      aria-labelledby="test-heading-1"
+      class="panel-collapse collapse in"
+      id="test-body-1"
+      role="tabpanel"
+    >
+      <div
+        class="panel-body"
+      >
+        <div>
+          test blahs
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion with custom scroll selector 1`] = `
+<div
+  class="panel-group"
+  id="test"
+  role="tablist"
+  style="height: 200px;"
+>
+  <div
+    class="panel panel-default"
+  >
+    <div
+      class="panel-heading"
+      id="test-heading-1"
+      role="tab"
+    >
+      <div
+        class="panel-title"
+      >
+        <a
+          aria-controls="test-body-1"
+          aria-expanded="false"
+          class="collapsed"
+          href="#"
+          role="button"
+        >
+          Panel 1
+        </a>
+      </div>
+    </div>
+    <div
+      aria-expanded="false"
+      aria-labelledby="test-heading-1"
+      class="panel-collapse collapsing"
+      id="test-body-1"
+      role="tabpanel"
+      style="height: 0px;"
+    >
+      <div
+        class="panel-body"
+      >
+        <div>
+          test blahs
+        </div>
+        <div
+          class="scrollSelector"
+          style="max-height: 25px; overflow-y: auto;"
+        >
+          scrolling content test
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`fixed accordion renders 1`] = `
+<div
+  class="panel-group"
+  id="test"
+  role="tablist"
+  style="height: 200px;"
+>
+  <div
+    class="panel panel-default"
+  >
+    <div
+      class="panel-heading"
+      id="test-heading-1"
+      role="tab"
+    >
+      <div
+        class="panel-title"
+      >
+        <a
+          aria-controls="test-body-1"
+          aria-expanded="true"
+          class=""
+          href="#"
+          role="button"
+        >
+          Panel 1
+        </a>
+      </div>
+    </div>
+    <div
+      aria-expanded="true"
+      aria-labelledby="test-heading-1"
+      class="panel-collapse collapse in"
+      id="test-body-1"
+      role="tabpanel"
+    >
+      <div
+        class="panel-body"
+        style="max-height: 25px; overflow-y: auto;"
+      >
+        <div>
+          test blahs
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`testing properties get added to panel body after click 1`] = `"<div class=\\"panel-body\\" style=\\"max-height: 25px; overflow-y: auto;\\"><div>Test content</div></div>"`;
