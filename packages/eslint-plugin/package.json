@@ -2,7 +2,7 @@
   "name": "eslint-plugin-patternfly-react",
   "version": "0.0.1",
   "private": false,
-  "main": "./dist/cjs/index.js",
+  "main": "./dist/js/index.js",
   "module": "./dist/esm/index.js",
   "license": "Apache-2.0",
   "publishConfig": {

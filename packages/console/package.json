@@ -3,7 +3,8 @@
   "version": "1.0.1",
   "private": false,
   "description": "This library provides a set of Console React components for use with the PatternFly reference implementation.",
-  "main": "dist/cjs/index.js",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
   "sideEffects": false,
   "publishConfig": {
     "access": "public"
@@ -31,8 +32,7 @@
     "fontAwesome": "../../node_modules/font-awesome-sass/assets/stylesheets"
   },
   "scripts": {
-    "prebuild": "yarn build:scripts && yarn build:sass && yarn build:less",
-    "build:scripts": "babel src --out-dir dist/js --ignore .test.js,__mocks__",
+    "prebuild": "yarn build:sass && yarn build:less",
     "build:less": "mkdir -p dist/less && cp -r less/* dist/less",
     "build:sass": "mkdir -p dist/sass && cp -r sass/* dist/sass && node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/console.scss"
   },
