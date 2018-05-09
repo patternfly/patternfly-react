@@ -6,6 +6,7 @@ coverage
 
 # package managers
 yarn-error.log
+lerna-debug.log
 
 # IDEs and editors
 /.idea

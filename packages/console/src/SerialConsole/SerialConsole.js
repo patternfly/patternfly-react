@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { EmptyState } from 'patternfly-react';
-import { Button } from 'patternfly-react';
-import { noop } from 'patternfly-react';
+import { EmptyState, Button, noop } from 'patternfly-react';
 import { CONNECTED, DISCONNECTED, LOADING } from './constants';
 
 import XTerm from './XTerm';
 import SerialConsoleActions from './SerialConsoleActions';
 
+/**
+ * SerialConsole Component for PatternFly React
+ */
 class SerialConsole extends React.Component {
   componentDidMount() {
     this.props.onConnect();
@@ -18,7 +19,7 @@ class SerialConsole extends React.Component {
     this.props.onDisconnect();
   }
 
-  onResetClick = (event) => {
+  onResetClick = event => {
     if (event.button !== 0) return;
 
     this.props.onDisconnect();
@@ -27,7 +28,7 @@ class SerialConsole extends React.Component {
     this.focusTerminal();
   };
 
-  onDisconnectClick = (event) => {
+  onDisconnectClick = event => {
     if (event.button !== 0) return;
 
     this.props.onDisconnect();
