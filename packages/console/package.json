@@ -1,9 +1,14 @@
 {
   "name": "@patternfly/react-console",
-  "version": "0.0.0",
+  "version": "1.0.1",
+  "private": false,
   "description": "This library provides a set of Console React components for use with the PatternFly reference implementation.",
-  "main": "dist/cjs/index.js",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
   "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "./dist"
   ],
@@ -21,20 +26,23 @@
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
   "homepage": "https://github.com/patternfly/patternfly-react/blob/master/src/console/README.md",
-  "publishConfig": {
-    "access": "public"
+  "sassIncludes": {
+    "patternfly": "../../node_modules/patternfly/dist/sass",
+    "bootstrap": "../../node_modules/bootstrap-sass/assets/stylesheets",
+    "fontAwesome": "../../node_modules/font-awesome-sass/assets/stylesheets"
   },
   "scripts": {
-    "build": "node ../../scripts/runScript.js build:console",
-    "prepublish": "yarn build"
+    "prebuild": "yarn build:sass && yarn build:less",
+    "build:less": "mkdir -p dist/less && cp -r less/* dist/less",
+    "build:sass": "mkdir -p dist/sass && cp -r sass/* dist/sass && node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/console.scss"
   },
   "dependencies": {
     "@novnc/novnc": "^1.0.0",
+    "classnames": "^2.2.5",
     "patternfly": "^3.45.0",
     "patternfly-react": "^1.19.1",
     "xterm": "^3.3.0"
   },
-  "devDependencies": {},
   "peerDependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.3.2",

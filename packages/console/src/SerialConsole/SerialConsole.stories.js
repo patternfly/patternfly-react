@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { defaultTemplate } from '../../../../storybook/decorators/storyTemplates';
+import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 
 import { SerialConsole } from './index';
 import { CONNECTED, DISCONNECTED, LOADING } from './constants';

@@ -11,14 +11,16 @@ env:
 notifications:
   email: false
 before_install:
+- .travis/before_install.sh
 - yarn install
-- cd packages/console ; yarn install ; cd -
 script:
 - yarn test
 - yarn coveralls
 after_success:
-- yarn travis-deploy-once "yarn semantic-release"
-- ./release.sh
+- .travis/after_success.sh
+- .travis/release.sh
+git:
+  depth: 1
 branches:
   except:
   - "/^v\\d+\\.\\d+\\.\\d+$/"

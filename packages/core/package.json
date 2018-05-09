@@ -1,0 +1,58 @@
+{
+  "name": "patternfly-react",
+  "version": "2.3.0",
+  "private": false,
+  "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "dependencies": {
+    "bootstrap-slider-without-jquery": "^10.0.0",
+    "breakjs": "^1.0.0",
+    "classnames": "^2.2.5",
+    "css-element-queries": "^1.0.1",
+    "patternfly": "^3.42.0",
+    "react-bootstrap": "^0.32.1",
+    "react-bootstrap-switch": "^15.5.3",
+    "react-c3js": "^0.1.20",
+    "react-fontawesome": "^1.6.1",
+    "reactabular-table": "^8.12.1",
+    "recompose": "^0.26.0"
+  },
+  "optionalDependencies": {
+    "sortabular": "^1.5.1",
+    "table-resolver": "^3.2.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.3.1",
+    "react-dom": "^15.6.2 || ^16.2.0"
+  },
+  "sassIncludes": {
+    "patternfly": "../../node_modules/patternfly/dist/sass",
+    "bootstrap": "../../node_modules/bootstrap-sass/assets/stylesheets",
+    "fontAwesome": "../../node_modules/font-awesome-sass/assets/stylesheets"
+  },
+  "scripts": {
+    "prebuild": "yarn build:sass && yarn build:less",
+    "build:less": "mkdir -p dist/less && cp -r less/* dist/less",
+    "build:sass": "mkdir -p dist/sass && cp -r sass/patternfly-react/* dist/sass && node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react.scss"
+  }
+}

@@ -5,6 +5,8 @@ import SerialConsole from './SerialConsole';
 import { noop } from 'patternfly-react';
 
 test('placeholder render test', () => {
-  const view = shallow(<SerialConsole onConnect={noop} onDisconnect={noop} status='loading'/>);
+  const view = shallow(
+    <SerialConsole onConnect={noop} onDisconnect={noop} status="loading" />
+  );
   expect(view).toMatchSnapshot();
 });

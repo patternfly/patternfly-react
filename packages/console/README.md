@@ -2,8 +2,6 @@
 
 This package provides VncConsole and SerialConsole React components to be used alongside patternfly-react.
 
-**_The below commands are temporary and will be replaced once this repo starts using Lerna._**
-
 ### Installing
 
 ```
@@ -19,11 +17,13 @@ npm install @patternfly-react/console --save
 ### Usage
 
 ```javascript
-import { VncConsole, SerialConsole } from '@patternfly-react/console'
+import { VncConsole, SerialConsole } from '@patternfly-react/console';
 ```
 
 #### Styling:
+
 Example with LESS:
+
 ```
 @import "~bootstrap/less/variables";
 @import "~patternfly/dist/less/variables";
@@ -31,14 +31,14 @@ Example with LESS:
 @import "~xterm/dist/xterm.css";
 @import "~@patternfly-react/console/dist/less/console.less";
 ```
-  
+
 ### Building
 
 ```
 yarn build
 ```
 
-Note the build scripts for this are located in the root package.json under `build:console:*`.
+Note the build scripts for this are located in the root package.json under `yarn build`.
 
 ### Testing
 
