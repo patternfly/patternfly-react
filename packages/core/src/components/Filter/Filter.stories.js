@@ -18,8 +18,9 @@ import {
   MockFilterExample,
   mockFilterExampleSource
 } from './__mocks__/mockFilterExample';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Filter', module);
+const stories = storiesOf(`${name}/Filter`, module);
 
 stories.addDecorator(
   defaultTemplate({

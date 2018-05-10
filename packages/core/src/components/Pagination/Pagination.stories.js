@@ -22,8 +22,9 @@ import {
   MockPaginationRow,
   mockPaginationSource
 } from './__mocks__/mockPaginationRow';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Pagination', module);
+const stories = storiesOf(`${name}/Pagination`, module);
 stories.addDecorator(withKnobs);
 
 stories.add(

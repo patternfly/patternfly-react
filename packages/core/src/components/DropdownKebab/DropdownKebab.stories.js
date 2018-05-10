@@ -7,8 +7,9 @@ import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Button } from '../Button';
 import { MenuItem } from '../MenuItem';
 import { DropdownKebab } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('DropdownKebab', module);
+const stories = storiesOf(`${name}/DropdownKebab`, module);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({

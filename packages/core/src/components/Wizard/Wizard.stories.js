@@ -5,15 +5,17 @@ import {
   wizardPatternExampleAddWithInfo
 } from './Stories';
 
+import { name } from '../../../package.json';
+
 /**
  * Wizard Component stories
  */
-const componentStories = storiesOf('Wizard/Components', module);
+const componentStories = storiesOf(`${name}/Wizard/Components`, module);
 loadingWizardExampleWithInfo(componentStories);
 wizardExampleWithInfo(componentStories);
 
 /**
  * Wizard Pattern stories
  */
-const patternStories = storiesOf('Wizard/Patterns', module);
+const patternStories = storiesOf(`${name}/Wizard/Patterns`, module);
 wizardPatternExampleAddWithInfo(patternStories);

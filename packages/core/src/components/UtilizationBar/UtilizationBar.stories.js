@@ -4,8 +4,9 @@ import { withKnobs, number, boolean, text } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { UtilizationBar } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('UtilizationBar', module);
+const stories = storiesOf(`${name}/UtilizationBar`, module);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({

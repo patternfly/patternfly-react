@@ -8,8 +8,9 @@ import {
   MockLabelRemove,
   mockLabelRemoveSource
 } from './__mocks__/mockLabelExamples';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Label', module);
+const stories = storiesOf(`${name}/Label`, module);
 
 stories.addDecorator(
   defaultTemplate({

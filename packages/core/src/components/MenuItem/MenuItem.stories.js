@@ -6,7 +6,9 @@ import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { MenuItem } from './index';
 
-const stories = storiesOf('MenuItem', module);
+import { name } from '../../../package.json';
+
+const stories = storiesOf(`${name}/MenuItem`, module);
 
 const description = (
   <p>

@@ -5,8 +5,9 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { FieldLevelHelp } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('FieldLevelHelp', module);
+const stories = storiesOf(`${name}/FieldLevelHelp`, module);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({

@@ -5,8 +5,9 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Icon } from './index';
+import { name } from '../../../package.json';
 
-const IconStories = storiesOf('Icon', module);
+const IconStories = storiesOf(`${name}/Icon`, module);
 
 IconStories.addDecorator(withKnobs);
 IconStories.addDecorator(

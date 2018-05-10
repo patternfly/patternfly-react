@@ -5,8 +5,9 @@ import {
   WrapperNotificationDrawerStory,
   StatefulNotificationDrawerStory
 } from './Stories/index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('NotificationDrawer', module);
+const stories = storiesOf(`${name}/NotificationDrawer`, module);
 stories.addDecorator(withKnobs);
 
 basicNotificationDrawerStory(stories);

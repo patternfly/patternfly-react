@@ -10,8 +10,9 @@ import {
   inlineEditColumnTable,
   inlineEditCellTable
 } from './Stories';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Table', module);
+const stories = storiesOf(`${name}/Table`, module);
 stories.addDecorator(withKnobs);
 
 /**

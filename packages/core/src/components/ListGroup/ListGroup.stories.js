@@ -5,8 +5,9 @@ import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Badge } from '../Badge';
 import { ListGroup, ListGroupItem } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('ListGroup', module);
+const stories = storiesOf(`${name}/ListGroup`, module);
 
 stories.addDecorator(
   defaultTemplate({

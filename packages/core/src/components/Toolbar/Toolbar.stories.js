@@ -17,7 +17,9 @@ import {
   mockToolbarExampleSource
 } from './__mocks__/mockToolbarExample';
 
-const stories = storiesOf('Toolbar', module);
+import { name } from '../../../package.json';
+
+const stories = storiesOf(`${name}/Toolbar`, module);
 
 stories.addDecorator(
   defaultTemplate({

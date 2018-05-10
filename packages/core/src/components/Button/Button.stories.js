@@ -8,8 +8,9 @@ import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Grid, Row, Col, MenuItem } from '../../index';
 import { Button, ButtonGroup, DropdownButton, SplitButton } from './index';
 import { BUTTON_BS_STYLES } from './ButtonConstants';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Button', module);
+const stories = storiesOf(`${name}/Button`, module);
 
 stories.addDecorator(withKnobs);
 

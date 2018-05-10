@@ -6,8 +6,9 @@ import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Button } from '../Button';
 import { EmptyState } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('EmptyState', module);
+const stories = storiesOf(`${name}/EmptyState`, module);
 
 stories.addDecorator(
   defaultTemplate({
