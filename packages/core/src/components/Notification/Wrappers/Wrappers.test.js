@@ -9,6 +9,8 @@ import {
 import { Icon } from '../../Icon';
 import getIconClass from './Icon.consts';
 
+jest.unmock('./NotificationDrawerPanelWrapper');
+
 const p1Notifications = [
   {
     id: 12,

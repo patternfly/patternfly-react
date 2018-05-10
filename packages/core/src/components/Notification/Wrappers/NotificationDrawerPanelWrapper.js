@@ -6,7 +6,6 @@ import { NotificationDrawer } from '../NotificationDrawer/index';
 import { Icon } from '../../Icon';
 import { Button } from '../../Button';
 import { MenuItem } from '../../MenuItem';
-import { EmptyState, EmptyStateTitle, EmptyStateIcon } from '../../../index';
 import { noop } from '../../../common/helpers';
 import getIconClass from './Icon.consts';
 
@@ -23,14 +22,15 @@ const NotificationDrawerPanelWrapper = ({
   onMarkPanelAsRead,
   onClickedLink,
   onMarkPanelAsClear,
-  showLoading
+  showLoading,
+  translations
 }) => {
   const unreadCount = notifications.filter(notification => !notification.seen)
     .length;
 
   const getUnread = () => {
-    if (unreadCount !== 1) return `${unreadCount} Unread Events`;
-    return '1 Unread Event';
+    if (unreadCount !== 1) return `${unreadCount} ${translations.unreadEvents}`;
+    return `1 ${translations.unreadEvent}`;
   };
 
   const notificationClickHandler = (panel, notification, seen) => {
@@ -65,7 +65,7 @@ const NotificationDrawerPanelWrapper = ({
             id="notification-kebab-hide"
             onClick={() => onNotificationHide(panelkey, notification.id)}
           >
-            Hide this notification
+            {translations.deleteNotification}
           </MenuItem>
         </NotificationDrawer.Dropdown>
       )}
@@ -100,26 +100,21 @@ const NotificationDrawerPanelWrapper = ({
           data-toggle="mark-all-read"
         >
           <Button bsStyle="link" onClick={() => onMarkPanelAsRead(panelkey)}>
-            Mark All Read
+            {translations.readAll}
           </Button>
         </NotificationDrawer.PanelActionLink>
       )}
       <NotificationDrawer.PanelActionLink data-toggle="clear-all">
         <Button bsStyle="link" onClick={() => onMarkPanelAsClear(panelkey)}>
           <Icon type="pf" name="close" />
-          Clear All
+          {translations.clearAll}
         </Button>
       </NotificationDrawer.PanelActionLink>
     </NotificationDrawer.PanelAction>
   );
 
   const noNotificationsMessage = (
-    <NotificationDrawer.PanelBody key="noNotifications">
-      <EmptyState>
-        <EmptyStateIcon name="info" />
-        <EmptyStateTitle>No Notifications Available</EmptyStateTitle>
-      </EmptyState>
-    </NotificationDrawer.PanelBody>
+    <NotificationDrawer.EmptyState title={translations.emptyState} />
   );
 
   return (
@@ -166,7 +161,17 @@ NotificationDrawerPanelWrapper.propTypes = {
   /** function() togglePanel Click */
   togglePanel: PropTypes.func,
   /** show Loading notification Bool */
-  showLoading: PropTypes.bool
+  showLoading: PropTypes.bool,
+  /** translations for Title, EmptyState, Read/Clear */
+  translations: PropTypes.shape({
+    title: PropTypes.string,
+    unreadEvent: PropTypes.string,
+    unreadEvents: PropTypes.string,
+    emptyState: PropTypes.string,
+    readAll: PropTypes.string,
+    clearAll: PropTypes.string,
+    deleteNotification: PropTypes.string
+  })
 };
 NotificationDrawerPanelWrapper.defaultProps = {
   panelkey: '1',
@@ -181,7 +186,16 @@ NotificationDrawerPanelWrapper.defaultProps = {
   onNotificationHide: noop,
   onMarkPanelAsClear: noop,
   togglePanel: noop,
-  showLoading: false
+  showLoading: false,
+  translations: {
+    title: 'Notifications',
+    unreadEvent: 'Unread Event',
+    unreadEvents: 'Unread Events',
+    emptyState: 'No Notifications Available',
+    readAll: 'Mark All Read',
+    clearAll: 'Clear All',
+    deleteNotification: 'Hide this notification'
+  }
 };
 
 export default NotificationDrawerPanelWrapper;

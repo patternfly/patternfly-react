@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NotificationDrawer } from '../NotificationDrawer/index';
 import { NotificationDrawerPanelWrapper } from './index';
-import { EmptyState, EmptyStateIcon, EmptyStateTitle } from '../../EmptyState';
 import { noop } from '../../../common/helpers';
 
 const NotificationDrawerWrapper = ({
   panels,
+  translations,
   toggleDrawerHide,
   toggleDrawerExpand,
   isExpandable,
@@ -20,6 +20,11 @@ const NotificationDrawerWrapper = ({
   onMarkPanelAsClear,
   onClickedLink
 }) => {
+  const translationsWrapper = {
+    ...NotificationDrawerPanelWrapper.defaultProps.translations,
+    ...translations
+  };
+
   const notificationPanels = panels.map((panel, i) => (
     <NotificationDrawerPanelWrapper
       key={i}
@@ -35,19 +40,17 @@ const NotificationDrawerWrapper = ({
       onMarkPanelAsRead={onMarkPanelAsRead}
       onMarkPanelAsClear={onMarkPanelAsClear}
       showLoading={panel.showLoading}
+      translations={translationsWrapper}
     />
   ));
   const noNotificationsMessage = (
-    <EmptyState>
-      <EmptyStateIcon name="info" />
-      <EmptyStateTitle>No Notifications Available</EmptyStateTitle>
-    </EmptyState>
+    <NotificationDrawer.EmptyState title={translations.emptyState} />
   );
 
   return (
     <NotificationDrawer expanded={isExpanded}>
       <NotificationDrawer.Title
-        title="Notifications"
+        title={translations.title}
         onCloseClick={() => toggleDrawerHide()}
         expandable={isExpandable}
         onExpandClick={toggleDrawerExpand}
@@ -86,7 +89,17 @@ NotificationDrawerWrapper.propTypes = {
   /** show Loading notification Bool */
   isExpandable: PropTypes.bool,
   /** expanded Panel */
-  expandedPanel: PropTypes.string
+  expandedPanel: PropTypes.string,
+  /** translations for Title, EmptyState, Read/Clear */
+  translations: PropTypes.shape({
+    title: PropTypes.string,
+    unreadEvent: PropTypes.string,
+    unreadEvents: PropTypes.string,
+    emptyState: PropTypes.string,
+    readAll: PropTypes.string,
+    clearAll: PropTypes.string,
+    deleteNotification: PropTypes.string
+  })
 };
 
 NotificationDrawerWrapper.defaultProps = {
@@ -102,7 +115,8 @@ NotificationDrawerWrapper.defaultProps = {
   onNotificationHide: noop,
   onMarkPanelAsClear: noop,
   isExpandable: true,
-  expandedPanel: null
+  expandedPanel: null,
+  translations: {}
 };
 
 export default NotificationDrawerWrapper;

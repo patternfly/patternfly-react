@@ -11,6 +11,7 @@ import NotificationDrawerPanelHeading from './NotificationDrawerAccordion/Notifi
 import NotificationDrawerPanelTitle from './NotificationDrawerAccordion/NotificationDrawerPanelTitle';
 import NotificationDrawerDropDown from './NotificationDrawerAccordion/NotificationDrawerDropDown';
 import NotificationDrawerToggle from './NotificationDrawerToggle';
+import NotificationDrawerEmptyState from './NotificationDrawerEmptyState';
 
 import NotificationDrawerWrapper from '../Wrappers/NotificationDrawerWrapper';
 import NotificationDrawerPanelWrapper from '../Wrappers/NotificationDrawerPanelWrapper';
@@ -29,6 +30,7 @@ NotificationDrawer.PanelTitle = NotificationDrawerPanelTitle;
 NotificationDrawer.Title = NotificationDrawerTitle;
 NotificationDrawer.Dropdown = NotificationDrawerDropDown;
 NotificationDrawer.Toggle = NotificationDrawerToggle;
+NotificationDrawer.EmptyState = NotificationDrawerEmptyState;
 
 export {
   NotificationDrawer,
