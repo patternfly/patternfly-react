@@ -7,6 +7,7 @@ import { Icon } from '../../Icon';
 import { Button } from '../../Button';
 import { MenuItem } from '../../MenuItem';
 import { EmptyState, EmptyStateTitle, EmptyStateIcon } from '../../../index';
+import { noop } from '../../../common/helpers';
 import getIconClass from './Icon.consts';
 
 const NotificationDrawerPanelWrapper = ({
@@ -17,6 +18,7 @@ const NotificationDrawerPanelWrapper = ({
   isExpanded,
   togglePanel,
   onNotificationClick,
+  onNotificationAsRead,
   onNotificationHide,
   onMarkPanelAsRead,
   onClickedLink,
@@ -31,11 +33,21 @@ const NotificationDrawerPanelWrapper = ({
     return '1 Unread Event';
   };
 
+  const notificationClickHandler = (panel, notification, seen) => {
+    onNotificationClick(panel, notification);
+
+    if (!seen) {
+      onNotificationAsRead(panel, notification);
+    }
+  };
+
   const notificationsMap = notifications.map((notification, i) => (
     <Notification
       key={i}
       seen={notification.seen}
-      onClick={() => onNotificationClick(panelkey, notification.id)}
+      onClick={() =>
+        notificationClickHandler(panelkey, notification.id, notification.seen)
+      }
     >
       {Object.keys(notification.actions).length > 0 && (
         <NotificationDrawer.Dropdown pullRight id={i}>
@@ -140,12 +152,15 @@ NotificationDrawerPanelWrapper.propTypes = {
   isExpanded: PropTypes.bool,
   /** function(panelkey, notificationkey) on Notification Click */
   onNotificationClick: PropTypes.func,
+  /** function(panelkey, notificationkey) on Notification Mark as Read Click */
+  onNotificationAsRead: PropTypes.func,
   /** on function(panelkey) Panel Read All Click */
   onMarkPanelAsRead: PropTypes.func,
   /** function(url) on Dropdown Link Click */
   onClickedLink: PropTypes.func,
   /** function(panelkey, notificationkey) on Notification Hide Click */
   onNotificationHide: PropTypes.func,
+
   /** function(panelkey) Panel Clear All Click */
   onMarkPanelAsClear: PropTypes.func,
   /** function() togglePanel Click */
@@ -159,12 +174,13 @@ NotificationDrawerPanelWrapper.defaultProps = {
   isExpanded: false,
   className: null,
   panelName: null,
-  onNotificationClick: null,
-  onMarkPanelAsRead: null,
-  onClickedLink: null,
-  onNotificationHide: null,
-  onMarkPanelAsClear: null,
-  togglePanel: null,
+  onNotificationClick: noop,
+  onNotificationAsRead: noop,
+  onMarkPanelAsRead: noop,
+  onClickedLink: noop,
+  onNotificationHide: noop,
+  onMarkPanelAsClear: noop,
+  togglePanel: noop,
   showLoading: false
 };
 

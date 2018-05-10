@@ -97,6 +97,7 @@ test('NotificationDrawerPanelWraper is working properly', () => {
       isExpanded
       togglePanel={jest.fn()}
       onNotificationClick={jest.fn()}
+      onNotificationAsRead={jest.fn()}
       onNotificationHide={jest.fn()}
       onMarkPanelAsRead={jest.fn()}
       onClickedLink={jest.fn()}
@@ -118,6 +119,7 @@ test('DrawerWraper is working properly', () => {
       isExpandable
       isExpanded
       onNotificationClick={jest.fn()}
+      onNotificationAsRead={jest.fn()}
       onNotificationHide={jest.fn()}
       onMarkPanelAsRead={jest.fn()}
       onMarkPanelAsClear={jest.fn()}
