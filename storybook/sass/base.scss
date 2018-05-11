@@ -16,3 +16,9 @@ $icon-font-path: '~patternfly/dist/fonts/';
   Patternfly React Specific Extensions
 */
 @import 'patternfly-react';
+
+/**
+  @patternfly/react-console
+ */
+@import "~xterm/dist/xterm.css";
+@import 'console';
