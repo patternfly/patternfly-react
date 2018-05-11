@@ -9,7 +9,9 @@ import { MockTreeView, MockTreeViewSource } from './__mocks__/MockTreeView';
 import TreeViewNodeSpecification from './__mocks__/TreeViewNodeSpecification';
 import TreeView from './TreeView';
 
-const stories = storiesOf('TreeView', module);
+import { name } from '../../../package.json';
+
+const stories = storiesOf(`${name}/TreeView`, module);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({

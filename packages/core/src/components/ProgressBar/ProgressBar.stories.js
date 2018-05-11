@@ -4,8 +4,9 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { ProgressBar } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('ProgressBar', module);
+const stories = storiesOf(`${name}/ProgressBar`, module);
 stories.addDecorator(
   defaultTemplate({
     title: 'Progress Bar',

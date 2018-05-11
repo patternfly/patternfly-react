@@ -35,8 +35,9 @@ import {
 import { InlineFormField } from './Stories/InlineFormField';
 import { HorizontalFormField } from './Stories/HorizontalFormField';
 import { VerticalFormField } from './Stories/VerticalFormField';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Forms', module);
+const stories = storiesOf(`${name}/Forms`, module);
 
 stories.addDecorator(withKnobs);
 

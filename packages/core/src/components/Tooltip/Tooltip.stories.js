@@ -5,8 +5,9 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Button, OverlayTrigger, Tooltip } from '../../index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Tooltip', module);
+const stories = storiesOf(`${name}/Tooltip`, module);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({

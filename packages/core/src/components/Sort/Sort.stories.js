@@ -7,8 +7,9 @@ import {
   MockSortExample,
   mockSortExampleSource
 } from './__mocks__/mockSortExample';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Sort', module);
+const stories = storiesOf(`${name}/Sort`, module);
 
 export const mockSortFields = [
   {

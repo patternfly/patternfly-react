@@ -7,7 +7,9 @@ import {
   pieChart
 } from './Stories';
 
-const stories = storiesOf('Chart', module);
+import { name } from '../../../package.json';
+
+const stories = storiesOf(`${name}/Chart`, module);
 
 /**
  * Chart stories

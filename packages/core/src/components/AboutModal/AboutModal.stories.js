@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
+import { name } from '../../../package.json';
 
 import {
   AboutModal,
@@ -14,7 +15,7 @@ import {
   MockAboutModalSource
 } from './__mocks__/mockAboutModal';
 
-const stories = storiesOf('About Modal', module);
+const stories = storiesOf(`${name}/AboutModal`, module);
 
 stories.addDecorator(
   defaultTemplate({

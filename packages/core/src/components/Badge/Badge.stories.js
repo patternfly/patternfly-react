@@ -5,8 +5,9 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Badge } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Badges', module);
+const stories = storiesOf(`${name}/Badges`, module);
 
 const description = (
   <p>

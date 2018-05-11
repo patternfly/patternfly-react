@@ -6,8 +6,9 @@ import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Switch } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Widgets', module);
+const stories = storiesOf(`${name}/Widgets`, module);
 stories.addDecorator(withKnobs);
 
 stories.add(

@@ -14,8 +14,9 @@ import {
   TabPane,
   TabContent
 } from '../../index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Tabs', module);
+const stories = storiesOf(`${name}/Tabs`, module);
 const description = (
   <p>
     This component is based on React Bootstrap Tabs component. See{' '}

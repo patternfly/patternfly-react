@@ -5,8 +5,9 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Grid } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Grid', module);
+const stories = storiesOf(`${name}/Grid`, module);
 stories.addDecorator(withKnobs);
 
 const description = (

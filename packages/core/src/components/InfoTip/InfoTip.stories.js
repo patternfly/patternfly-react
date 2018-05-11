@@ -4,10 +4,10 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { ListGroup, ListGroupItem } from '../ListGroup';
-
+import { name } from '../../../package.json';
 import { InfoTip } from './index';
 
-const stories = storiesOf('InfoTip', module);
+const stories = storiesOf(`${name}/InfoTip`, module);
 
 stories.addDecorator(
   defaultTemplate({

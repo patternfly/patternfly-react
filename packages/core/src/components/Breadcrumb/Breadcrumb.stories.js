@@ -4,8 +4,9 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Breadcrumb } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Breadcrumb', module);
+const stories = storiesOf(`${name}/Breadcrumb`, module);
 
 const description = (
   <p>

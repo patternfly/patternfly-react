@@ -13,8 +13,9 @@ import {
   TimedToastNotification,
   ToastNotificationList
 } from './index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('ToastNotification', module);
+const stories = storiesOf(`${name}/ToastNotification`, module);
 stories.addDecorator(withKnobs);
 
 stories.add(

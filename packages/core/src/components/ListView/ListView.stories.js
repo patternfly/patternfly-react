@@ -16,8 +16,9 @@ import {
   MockCompoundExpansionSource
 } from './__mocks__/mockCompoundExpansionExample';
 import { mockListItems } from './__mocks__/mockListItems';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('ListView', module);
+const stories = storiesOf(`${name}/ListView`, module);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({

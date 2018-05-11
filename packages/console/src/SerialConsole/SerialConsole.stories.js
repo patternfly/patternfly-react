@@ -6,7 +6,9 @@ import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { SerialConsole } from './index';
 import { CONNECTED, DISCONNECTED, LOADING } from './constants';
 
-const stories = storiesOf('SerialConsole', module);
+import { name } from '../../package.json';
+
+const stories = storiesOf(`${name}/SerialConsole`, module);
 stories.addDecorator(
   defaultTemplate({
     title: 'SerialConsole',

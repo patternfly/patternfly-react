@@ -9,8 +9,9 @@ import {
   basicExampleSource
 } from './__mocks__/mockModalManager';
 import { Modal } from '../../index';
+import { name } from '../../../package.json';
 
-const stories = storiesOf('Modal Overlay', module);
+const stories = storiesOf(`${name}/Modal Overlay`, module);
 
 stories.add(
   'Modal',
