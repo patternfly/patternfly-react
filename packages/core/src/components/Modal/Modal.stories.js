@@ -2,7 +2,11 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 
 import {
   MockModalManager,
@@ -11,7 +15,10 @@ import {
 import { Modal } from '../../index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/Modal Overlay`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Modal Overlay`,
+  module
+);
 
 stories.add(
   'Modal',

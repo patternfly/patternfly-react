@@ -1,5 +1,10 @@
 import { storiesOf } from '@storybook/react';
 import {
+  storybookPackageName,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
+import { name } from '../../../package.json';
+import {
   areaChart,
   barChart,
   donutChart,
@@ -7,9 +12,12 @@ import {
   pieChart
 } from './Stories';
 
-import { name } from '../../../package.json';
-
-const stories = storiesOf(`${name}/Chart`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${
+    STORYBOOK_CATEGORY.DATA_VISUALIZATION
+  }/Charts`,
+  module
+);
 
 /**
  * Chart stories

@@ -2,12 +2,19 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { ListGroup, ListGroupItem } from '../ListGroup';
 import { name } from '../../../package.json';
 import { InfoTip } from './index';
 
-const stories = storiesOf(`${name}/InfoTip`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Info Tip`,
+  module
+);
 
 stories.addDecorator(
   defaultTemplate({

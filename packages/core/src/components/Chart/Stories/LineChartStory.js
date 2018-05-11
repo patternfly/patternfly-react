@@ -43,7 +43,7 @@ const singleSplineChartConfigData = {
 
 const lineChart = stories => {
   stories.add(
-    'Line Charts',
+    'Line Chart',
     withInfo()(() => {
       const story = (
         <div>

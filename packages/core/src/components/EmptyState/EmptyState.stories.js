@@ -3,12 +3,21 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { Button } from '../Button';
 import { EmptyState } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/EmptyState`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${
+    STORYBOOK_CATEGORY.COMMUNICATION
+  }/Empty State`,
+  module
+);
 
 stories.addDecorator(
   defaultTemplate({

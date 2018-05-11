@@ -3,16 +3,27 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, number, boolean, text } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { UtilizationBar } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/UtilizationBar`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${
+    STORYBOOK_CATEGORY.DATA_VISUALIZATION
+  }/Charts`,
+  module
+);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Utilization Bar',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/cards/utilization-bar-card/'
+    documentationLink: `${
+      DOCUMENTATION_URL.PATTERNFLY_ORG_CARDS
+    }utilization-bar-card/`
   })
 );
 

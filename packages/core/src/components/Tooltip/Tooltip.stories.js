@@ -3,11 +3,18 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { Button, OverlayTrigger, Tooltip } from '../../index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/Tooltip`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Tooltip`,
+  module
+);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({

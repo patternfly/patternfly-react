@@ -3,11 +3,18 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { Icon } from './index';
 import { name } from '../../../package.json';
 
-const IconStories = storiesOf(`${name}/Icon`, module);
+const IconStories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Icon`,
+  module
+);
 
 IconStories.addDecorator(withKnobs);
 IconStories.addDecorator(
@@ -18,9 +25,9 @@ IconStories.addDecorator(
 );
 
 IconStories.add(
-  'Patternfly Icons',
+  'Icons',
   withInfo()(() => {
-    const iconNames = [
+    const pfIconNames = [
       'ok',
       'error-circle-o',
       'warning-triangle-o',
@@ -31,13 +38,34 @@ IconStories.add(
       'on',
       'print'
     ];
-    const iconsList = iconNames.map((iconName, index) => (
+    const pfIconsList = pfIconNames.map((iconName, index) => (
       <tr key={index}>
         <td>
           <Icon type="pf" name={iconName} />
         </td>
         <td>{iconName}</td>
         <td>pf</td>
+      </tr>
+    ));
+
+    const faIconNames = [
+      'arrow-circle-o-down',
+      'angle-down',
+      'ban',
+      'cube',
+      'clock-o',
+      'check',
+      'envelope',
+      'filter',
+      'refresh'
+    ];
+    const faIconsList = faIconNames.map((iconName, index) => (
+      <tr key={index}>
+        <td>
+          <Icon type="fa" name={iconName} />
+        </td>
+        <td>{iconName}</td>
+        <td>fa</td>
       </tr>
     ));
     const tableHeaders = (
@@ -56,52 +84,14 @@ IconStories.add(
         </h3>
         <table className="table table-striped" style={tableStyle}>
           <thead>{tableHeaders}</thead>
-          <tbody>{iconsList}</tbody>
+          <tbody>{pfIconsList}</tbody>
         </table>
-      </div>
-    );
-  })
-);
-
-IconStories.add(
-  'Font-Awesome Icons',
-  withInfo()(() => {
-    const iconNames = [
-      'arrow-circle-o-down',
-      'angle-down',
-      'ban',
-      'cube',
-      'clock-o',
-      'check',
-      'envelope',
-      'filter',
-      'refresh'
-    ];
-    const iconsList = iconNames.map((iconName, index) => (
-      <tr key={index}>
-        <td>
-          <Icon type="fa" name={iconName} />
-        </td>
-        <td>{iconName}</td>
-        <td>fa</td>
-      </tr>
-    ));
-    const tableHeaders = (
-      <tr>
-        <th>Icon</th>
-        <th>Name</th>
-        <th>Type</th>
-      </tr>
-    );
-
-    return (
-      <div>
         <h3>
-          <u>Patternfly Icon Examples:</u>
+          <u>FontAwesome Icon Examples:</u>
         </h3>
         <table className="table table-striped" style={{ maxWidth: '300px' }}>
           <thead>{tableHeaders}</thead>
-          <tbody>{iconsList}</tbody>
+          <tbody>{faIconsList}</tbody>
         </table>
         <br />
         <h3>

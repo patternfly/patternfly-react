@@ -2,11 +2,18 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { ProgressBar } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/ProgressBar`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Progress Bar`,
+  module
+);
 stories.addDecorator(
   defaultTemplate({
     title: 'Progress Bar',
@@ -17,9 +24,10 @@ stories.addDecorator(
 );
 
 stories.add(
-  'Progress Bar types',
-  withInfo('Those are the available progress bar types')(() => (
+  'Progress Bar',
+  withInfo('These are the available progress bar types')(() => (
     <div>
+      <p>These are the available progress bar types</p>
       <h1>Default progress bar</h1>
       <ProgressBar now={60} />
       <h1>Progress bar with label</h1>

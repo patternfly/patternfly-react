@@ -34,7 +34,7 @@ const singleAreaChartData = {
 
 const areaChart = stories => {
   stories.add(
-    'Area Charts',
+    'Area Chart',
     withInfo()(() => {
       const story = (
         <div>

@@ -10,7 +10,11 @@ import {
   boolean
 } from '@storybook/addon-knobs';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 
 import {
   Pager,
@@ -24,7 +28,10 @@ import {
 } from './__mocks__/mockPaginationRow';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/Pagination`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Pagination`,
+  module
+);
 stories.addDecorator(withKnobs);
 
 stories.add(

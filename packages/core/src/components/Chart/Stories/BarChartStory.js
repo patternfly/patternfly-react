@@ -77,7 +77,7 @@ const horizontalBarChartConfigAxis = {
 
 const barChart = stories => {
   stories.add(
-    'Bar Charts',
+    'Bar Chart',
     withInfo()(() => {
       const story = (
         <div>

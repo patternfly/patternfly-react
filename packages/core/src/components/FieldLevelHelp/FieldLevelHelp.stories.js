@@ -3,11 +3,20 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, text, select } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { FieldLevelHelp } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/FieldLevelHelp`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${
+    STORYBOOK_CATEGORY.FORMS_AND_CONTROLS
+  }/Help On Forms`,
+  module
+);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({

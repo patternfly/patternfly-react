@@ -2,12 +2,19 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { Badge } from '../Badge';
 import { ListGroup, ListGroupItem } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/ListGroup`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/List Group`,
+  module
+);
 
 stories.addDecorator(
   defaultTemplate({
@@ -20,84 +27,67 @@ stories.addDecorator(
 );
 
 stories.add(
-  'Basic Example',
+  'List Group',
   withInfo()(() => (
-    <ListGroup>
-      <ListGroupItem>Cras justo odio</ListGroupItem>
-      <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
-      <ListGroupItem>Morbi leo risus</ListGroupItem>
-      <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
-      <ListGroupItem>Vestibulum at eros</ListGroupItem>
-    </ListGroup>
-  ))
-);
-
-stories.add(
-  'Badges',
-  withInfo()(() => (
-    <ListGroup>
-      <ListGroupItem>
-        Cras justo odio <Badge>14</Badge>
-      </ListGroupItem>
-      <ListGroupItem>
-        Dapibus ac facilisis in <Badge>2</Badge>
-      </ListGroupItem>
-      <ListGroupItem>
-        Morbi leo risus <Badge>1</Badge>
-      </ListGroupItem>
-    </ListGroup>
-  ))
-);
-
-stories.add(
-  'Linked Items',
-  withInfo()(() => (
-    <ListGroup>
-      <ListGroupItem href="#">Cras justo odio</ListGroupItem>
-      <ListGroupItem href="#">Dapibus ac facilisis in</ListGroupItem>
-      <ListGroupItem href="#">Morbi leo risus</ListGroupItem>
-    </ListGroup>
-  ))
-);
-
-stories.add(
-  'Contextual classes',
-  withInfo()(() => (
-    <ListGroup>
-      <ListGroupItem bsStyle="success">Dapibus ac facilisis in</ListGroupItem>
-      <ListGroupItem bsStyle="info">Cras sit amet nibh libero</ListGroupItem>
-      <ListGroupItem bsStyle="warning">Porta ac consectetur ac</ListGroupItem>
-      <ListGroupItem bsStyle="danger">Vestibulum at eros</ListGroupItem>
-    </ListGroup>
-  ))
-);
-
-stories.add(
-  'Custom content',
-  withInfo()(() => (
-    <ListGroup>
-      <ListGroupItem
-        href="#"
-        header="List group item heading"
-        className="active"
-      >
-        <p className="list-group-item-text">
-          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-          eget risus varius blandit.
-        </p>
-      </ListGroupItem>
-      <ListGroupItem href="#" header="List group item heading">
-        <p className="list-group-item-text">
-          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-          eget risus varius blandit.
-        </p>
-      </ListGroupItem>
-      <ListGroupItem href="#" header="List group item heading">
-        <p className="list-group-item-text">
-          Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-          eget risus varius blandit.
-        </p>
-      </ListGroupItem>
-    </ListGroup>
+    <div>
+      <h2>Basic</h2>
+      <ListGroup>
+        <ListGroupItem>Cras justo odio</ListGroupItem>
+        <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+        <ListGroupItem>Morbi leo risus</ListGroupItem>
+        <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+        <ListGroupItem>Vestibulum at eros</ListGroupItem>
+      </ListGroup>
+      <h2>With Badges</h2>
+      <ListGroup>
+        <ListGroupItem>
+          Cras justo odio <Badge>14</Badge>
+        </ListGroupItem>
+        <ListGroupItem>
+          Dapibus ac facilisis in <Badge>2</Badge>
+        </ListGroupItem>
+        <ListGroupItem>
+          Morbi leo risus <Badge>1</Badge>
+        </ListGroupItem>
+      </ListGroup>
+      <h2>with Links</h2>
+      <ListGroup>
+        <ListGroupItem href="#">Cras justo odio</ListGroupItem>
+        <ListGroupItem href="#">Dapibus ac facilisis in</ListGroupItem>
+        <ListGroupItem href="#">Morbi leo risus</ListGroupItem>
+      </ListGroup>
+      <h2>Contextual classes</h2>
+      <ListGroup>
+        <ListGroupItem bsStyle="success">Dapibus ac facilisis in</ListGroupItem>
+        <ListGroupItem bsStyle="info">Cras sit amet nibh libero</ListGroupItem>
+        <ListGroupItem bsStyle="warning">Porta ac consectetur ac</ListGroupItem>
+        <ListGroupItem bsStyle="danger">Vestibulum at eros</ListGroupItem>
+      </ListGroup>
+      <h2>Custom content</h2>
+      <ListGroup>
+        <ListGroupItem
+          href="#"
+          header="List group item heading"
+          className="active"
+        >
+          <p className="list-group-item-text">
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+            eget risus varius blandit.
+          </p>
+        </ListGroupItem>
+        <ListGroupItem href="#" header="List group item heading">
+          <p className="list-group-item-text">
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+            eget risus varius blandit.
+          </p>
+        </ListGroupItem>
+        <ListGroupItem href="#" header="List group item heading">
+          <p className="list-group-item-text">
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
+            eget risus varius blandit.
+          </p>
+        </ListGroupItem>
+      </ListGroup>
+    </div>
   ))
 );

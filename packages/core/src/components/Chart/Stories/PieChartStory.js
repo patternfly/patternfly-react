@@ -32,7 +32,7 @@ const pieChartRightConfigLegend = {
 
 const pieChart = stories => {
   stories.add(
-    'Pie Charts',
+    'Pie Chart',
     withInfo()(() => {
       const story = (
         <div>

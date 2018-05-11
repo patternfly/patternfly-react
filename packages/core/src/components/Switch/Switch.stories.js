@@ -4,11 +4,19 @@ import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
 import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Switch } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/Widgets`, module);
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
+
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Switch`,
+  module
+);
 stories.addDecorator(withKnobs);
 
 stories.add(

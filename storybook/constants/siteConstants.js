@@ -24,8 +24,29 @@ export const DOCUMENTATION_URL = {
   REACT_BOOTSTRAP_LAYOUT: `${BASE_URL.REACT_BOOTSTRAP}layout/`
 };
 
+export const STORYBOOK_CATEGORY = {
+  APPLICATION_FRAMEWORK: 'Application Framework',
+  CARDS: 'Cards',
+  COMMUNICATION: 'Communication',
+  CONTENT_VIEWS: 'Content Views',
+  DASHBOARD: 'Dashboard',
+  DATA_VISUALIZATION: 'Data Visualization',
+  FORMS_AND_CONTROLS: 'Forms and Controls',
+  LAYOUTS: 'Layouts',
+  NAVIGATION: 'Navigation',
+  WIDGETS: 'Widgets'
+};
+
 export const DESCRIPTION = {
   C3JS_URL: 'http://c3js.org/reference.html',
   C3JS_TEXT:
     'This component is based on c3js graph, to see full documentation follow'
+};
+
+export const storybookPackageName = pkg => {
+  if (pkg.startsWith('@')) {
+    const subs = pkg.split('/');
+    return `${subs[1]} (${subs[0]})`;
+  }
+  return pkg;
 };

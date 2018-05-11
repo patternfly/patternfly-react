@@ -52,7 +52,7 @@ const donutRightConfigTitle = { type: 'total', secondary: 'Animals' };
 
 const donutChart = stories => {
   stories.add(
-    'Donut Charts',
+    'Donut Chart',
     withInfo()(() => {
       const story = (
         <div>

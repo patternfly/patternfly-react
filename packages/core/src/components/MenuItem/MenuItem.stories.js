@@ -2,13 +2,21 @@ import { Dropdown } from 'react-bootstrap';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { MenuItem } from './index';
 
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/MenuItem`, module);
+import { defaultTemplate } from 'storybook/decorators/storyTemplates';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
+
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Menu Item`,
+  module
+);
 
 const description = (
   <p>

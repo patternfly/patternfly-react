@@ -4,13 +4,21 @@ import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
+
 import { Grid, Row, Col, MenuItem } from '../../index';
 import { Button, ButtonGroup, DropdownButton, SplitButton } from './index';
 import { BUTTON_BS_STYLES } from './ButtonConstants';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/Button`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Button`,
+  module
+);
 
 stories.addDecorator(withKnobs);
 

@@ -3,13 +3,21 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { Sort, SortTypeSelector, SortDirectionSelector } from '../../index';
+import { name } from '../../../package.json';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import {
   MockSortExample,
   mockSortExampleSource
 } from './__mocks__/mockSortExample';
-import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/Sort`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/Sort`,
+  module
+);
 
 export const mockSortFields = [
   {
@@ -37,8 +45,7 @@ export const mockSortFields = [
 stories.addDecorator(
   defaultTemplate({
     title: 'Sort',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/forms-and-controls/sort/'
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_FORMS}sort/`
   })
 );
 
