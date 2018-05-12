@@ -30,6 +30,9 @@
         display: block;
         .dropdown-menu-right {
           position: absolute;
+          .btn-group {
+            z-index: 1;
+          }
         }
       }
     }
@@ -43,6 +46,7 @@
     position: -ms-sticky;
     position: -o-sticky;
     bottom: 0px;
+    z-index: 10;
     background-color: $color-pf-white;
     border-top: 1px solid $card-pf-border-color;
   }
