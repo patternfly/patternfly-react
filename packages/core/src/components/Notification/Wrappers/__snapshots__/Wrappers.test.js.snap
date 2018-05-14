@@ -891,25 +891,21 @@ exports[`StatefulNotificationDrawerWrapper is working properly 1`] = `
         id="1"
       >
         <div
-          class="panel-body"
+          class="blank-slate-pf"
         >
           <div
-            class="blank-slate-pf"
+            class="blank-slate-pf-icon"
           >
-            <div
-              class="blank-slate-pf-icon"
-            >
-              <span
-                aria-hidden="true"
-                class="pficon pficon-info"
-              />
-            </div>
-            <h4
-              class="h1 blank-slate-pf-title"
-            >
-              No Notifications Available
-            </h4>
+            <span
+              aria-hidden="true"
+              class="pficon pficon-info"
+            />
           </div>
+          <h4
+            class="h1 blank-slate-pf-title"
+          >
+            No Notifications Available
+          </h4>
         </div>
       </div>
     </div>
@@ -984,25 +980,21 @@ exports[`StatefulToggleNotificationDrawerWrapper is working properly 1`] = `
           id="1"
         >
           <div
-            class="panel-body"
+            class="blank-slate-pf"
           >
             <div
-              class="blank-slate-pf"
+              class="blank-slate-pf-icon"
             >
-              <div
-                class="blank-slate-pf-icon"
-              >
-                <span
-                  aria-hidden="true"
-                  class="pficon pficon-info"
-                />
-              </div>
-              <h4
-                class="h1 blank-slate-pf-title"
-              >
-                No Notifications Available
-              </h4>
+              <span
+                aria-hidden="true"
+                class="pficon pficon-info"
+              />
             </div>
+            <h4
+              class="h1 blank-slate-pf-title"
+            >
+              No Notifications Available
+            </h4>
           </div>
         </div>
       </div>
