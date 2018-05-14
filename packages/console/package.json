@@ -9,9 +9,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "./dist"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/patternfly/patternfly-react.git"
