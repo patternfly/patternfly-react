@@ -6,10 +6,13 @@ exports[`TreeView renders properly 1`] = `
 >
   <ul
     class="list-group"
+    role="tree"
   >
     <li
+      aria-expanded="false"
       class="list-group-item"
       id="1-0"
+      role="group"
       tabindex="0"
     >
       <span
@@ -21,8 +24,10 @@ exports[`TreeView renders properly 1`] = `
       Parent 1
     </li>
     <li
+      aria-expanded="false"
       class="list-group-item node-hidden"
       id="2-0"
+      role="group"
       tabindex="-1"
     >
       <span
@@ -48,6 +53,7 @@ exports[`TreeView renders properly 1`] = `
     <li
       class="list-group-item node-hidden"
       id="3-0"
+      role="treeitem"
       tabindex="-1"
     >
       <span
@@ -85,6 +91,7 @@ exports[`TreeView renders properly 1`] = `
     <li
       class="list-group-item node-hidden"
       id="3-1"
+      role="treeitem"
       tabindex="-1"
     >
       <span
@@ -122,6 +129,7 @@ exports[`TreeView renders properly 1`] = `
     <li
       class="list-group-item node-hidden"
       id="2-1"
+      role="treeitem"
       tabindex="-1"
     >
       <span
@@ -147,6 +155,7 @@ exports[`TreeView renders properly 1`] = `
     <li
       class="list-group-item"
       id="1-1"
+      role="treeitem"
       tabindex="-1"
     >
       <span
@@ -160,6 +169,7 @@ exports[`TreeView renders properly 1`] = `
     <li
       class="list-group-item"
       id="1-2"
+      role="treeitem"
       tabindex="-1"
     >
       <span
@@ -173,6 +183,7 @@ exports[`TreeView renders properly 1`] = `
     <li
       class="list-group-item"
       id="1-3"
+      role="treeitem"
       tabindex="-1"
     >
       <span
@@ -186,6 +197,7 @@ exports[`TreeView renders properly 1`] = `
     <li
       class="list-group-item"
       id="1-4"
+      role="treeitem"
       tabindex="-1"
     >
       <span
