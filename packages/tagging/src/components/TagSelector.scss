@@ -1,0 +1,17 @@
+.selected-option {
+  .Select-value {
+    width: calc(100% - 20px);
+    .pficon {
+      line-height: 34px !important;
+    }
+    .Select-value-label{
+      span:first-child {
+        float: left;
+      }
+    }
+  }
+}
+
+.tag-icon {
+  line-height: 18px;
+}

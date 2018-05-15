@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tagging modifier match snapshot 1`] = `
+Array [
+  <div
+    className="row"
+  >
+    <div
+      className="col-lg-12"
+    >
+      <h2>
+        Add/Modify tag
+      </h2>
+    </div>
+  </div>,
+  <form
+    className="form-horizontal"
+  />,
+]
+`;

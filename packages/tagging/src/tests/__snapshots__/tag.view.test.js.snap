@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag view match snapshot 1`] = `
+Array [
+  <div
+    className="row"
+  >
+    <div
+      className="col-lg-12"
+    >
+      <h2>
+        Assigned tags
+      </h2>
+    </div>
+  </div>,
+  <div
+    className="row"
+  >
+    <div
+      className="col-lg-12"
+    >
+      <ul
+        className="list-inline"
+      >
+        <ul
+          className="tag-category list-inline"
+        >
+          <div
+            className="category-label"
+          >
+            Name
+          </div>
+          <li
+            className="tag"
+          >
+            <span
+              className="label label-primary"
+              style={
+                Object {
+                  "color": "defaultColor",
+                }
+              }
+            >
+              Pepa
+              <a
+                className="pf-remove-button"
+                href="#"
+                onClick={[Function]}
+              >
+                <span
+                  aria-hidden="true"
+                  className="pficon pficon-close"
+                />
+                <span
+                  className="sr-only"
+                >
+                  Remove
+                </span>
+              </a>
+            </span>
+          </li>
+        </ul>
+      </ul>
+    </div>
+  </div>,
+]
+`;

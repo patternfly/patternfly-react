@@ -1,0 +1,21 @@
+@import '~patternfly/dist/sass/patternfly/variables';
+
+ul.tag-category.list-inline {
+  background-color: $color-pf-blue-500;
+  padding: 3px 10px 3px 15px !important;
+  color: $color-pf-white;
+  margin-left: 5px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  display: table;
+  float: left;
+  li a span {
+    color: $color-pf-white;
+  }
+}
+
+.category-label {
+  padding-right: 15px;
+}
