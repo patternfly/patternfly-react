@@ -25,6 +25,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
       loaders: ['style-loader', 'css-loader'],
       include: [
         ...packages.map(onePck => `${onePck}/src'`),
+        ...packages.map(onePck => `${onePck}/'`),
         path.resolve(__dirname, './')
       ]
     },
