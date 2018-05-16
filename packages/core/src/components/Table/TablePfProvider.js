@@ -51,7 +51,7 @@ const TablePfProvider = ({
   return (
     <Table.Provider
       className={classes}
-      components={components}
+      renderers={components}
       {...props}
       {...attributes}
     >
