@@ -10,7 +10,7 @@ import { noop } from '../../common/helpers';
  * VerticalNavMasthead - the first child of a VerticalNav component
  */
 const BaseVerticalNavMasthead = props => {
-  const { children, href, iconImg, titleImg, title } = props;
+  const { children, href, mastHeadOnly, iconImg, titleImg, title } = props;
 
   const childrenArray =
     children &&
@@ -26,12 +26,14 @@ const BaseVerticalNavMasthead = props => {
   return (
     <React.Fragment>
       <Navbar.Header>
-        <Navbar.Toggle onClick={props.updateNavOnMenuToggleClick}>
-          <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar" />
-          <span className="icon-bar" />
-          <span className="icon-bar" />
-        </Navbar.Toggle>
+        {!mastHeadOnly && (
+          <Navbar.Toggle onClick={props.updateNavOnMenuToggleClick}>
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+            <span className="icon-bar" />
+          </Navbar.Toggle>
+        )}
         {brandChildren && brandChildren.length > 0 ? (
           brandChildren
         ) : (
@@ -54,6 +56,8 @@ BaseVerticalNavMasthead.propTypes = {
   title: PropTypes.string,
   /** See VerticalNavBrand.propTypes */
   titleImg: PropTypes.string,
+  /** Hide iconBars (hamburger menu) */
+  mastHeadOnly: PropTypes.bool,
   /** See VerticalNavBrand.propTypes */
   iconImg: PropTypes.string,
   /** See VerticalNavBrand.propTypes */
@@ -66,6 +70,7 @@ BaseVerticalNavMasthead.propTypes = {
 BaseVerticalNavMasthead.defaultProps = {
   title: '',
   titleImg: '',
+  mastHeadOnly: false,
   iconImg: '',
   href: '',
   updateNavOnMenuToggleClick: noop,

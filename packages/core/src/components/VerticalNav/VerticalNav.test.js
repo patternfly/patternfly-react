@@ -23,6 +23,12 @@ test('VerticalNav renders properly in mobile mode', () => {
   expect(component.render()).toMatchSnapshot();
 });
 
+test('VerticalNav renders as masthead only', () => {
+  const component = mount(basicExample({ mastHeadOnly: true }));
+
+  expect(component.render()).toMatchSnapshot();
+});
+
 test('VerticalNav renders without errors with persistence on', () => {
   const component = shallow(<VerticalNav persist />);
   expect(component.find(VerticalNav.WithPersist).exists()).toBe(true);
