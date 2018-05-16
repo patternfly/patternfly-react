@@ -16,7 +16,9 @@ class XTerm extends React.Component {
     const term = new Terminal({
       cols: this.props.cols,
       rows: this.props.rows,
-      screenKeys: true
+      screenKeys: true,
+      fontFamily: this.props.fontFamily,
+      fontSize: this.props.fontSize
     });
 
     if (this.props.onData) {
@@ -142,6 +144,9 @@ XTerm.propTypes = {
   cols: PropTypes.number,
   rows: PropTypes.number,
 
+  fontFamily: PropTypes.string,
+  fontSize: PropTypes.number,
+
   onTitleChanged: PropTypes.func, // (title) => {}
   onData: PropTypes.func, // Data to be sent from terminal to backend; (data) => {}
   onResize: PropTypes.func // (rows, cols) => {}
@@ -150,6 +155,9 @@ XTerm.propTypes = {
 XTerm.defaultProps = {
   cols: 80,
   rows: 25,
+
+  fontFamily: undefined,
+  fontSize: undefined,
 
   onTitleChanged: noop,
   onData: noop,

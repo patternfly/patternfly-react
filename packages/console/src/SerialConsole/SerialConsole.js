@@ -73,6 +73,8 @@ class SerialConsole extends React.Component {
             }}
             cols={this.props.cols}
             rows={this.props.rows}
+            fontFamily={this.props.fontFamily}
+            fontSize={this.props.fontSize}
             onConnect={this.props.onConnect}
             onDisconnect={this.props.onDisconnect}
             onData={this.props.onData}
@@ -143,6 +145,10 @@ SerialConsole.propTypes = {
   rows: PropTypes.number,
   cols: PropTypes.number,
 
+  /** Font for text rendered to xterm canvas */
+  fontFamily: PropTypes.string,
+  fontSize: PropTypes.number,
+
   /** Enable customization */
   topClassName: PropTypes.string,
 
@@ -161,6 +167,9 @@ SerialConsole.defaultProps = {
   id: '',
   rows: 25,
   cols: 80,
+
+  fontFamily: undefined /** Use xterm default: 'courier-new, courier, monospace' */,
+  fontSize: undefined /** Use xterm default: 15 */,
 
   onTitleChanged: noop,
   onData: noop,
