@@ -220,6 +220,41 @@ stories.add(
 );
 
 stories.add(
+  'Custom Masthead Only',
+  withInfo({
+    propTablesExclude: [
+      MockFixedLayout,
+      MockIconBarChildren,
+      Icon,
+      MenuItem,
+      Dropdown,
+      Dropdown.Menu,
+      Dropdown.Toggle
+    ],
+    text: `Example display the **Masthead** only, using the **Masthead**, **Brand** and **IconBar** components with images. (items from 'Items as Objects').`
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        <VerticalNav
+          sessionKey="storybookCustomMasthead"
+          items={mockNavItems}
+          showBadges
+          mastHeadOnly
+        >
+          <Masthead>
+            <Brand iconImg={pfLogo} titleImg={pfBrand} />
+            <IconBar>
+              <MockIconBarChildren />
+            </IconBar>
+          </Masthead>
+        </VerticalNav>
+        {mockBodyContainer('nav-pf-vertical-with-badges')}
+      </div>
+    </MockFixedLayout>
+  ))
+);
+
+stories.add(
   'Custom Masthead',
   withInfo({
     propTablesExclude: [

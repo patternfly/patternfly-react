@@ -158,12 +158,14 @@ class BaseVerticalNav extends React.Component {
       dynamicBodyClasses,
       navCollapsed,
       pinnedPath,
-      isMobile
+      isMobile,
+      mastHeadOnly
     } = this.props;
     const collapsed = navCollapsed && pinnedPath === null;
+
     if (dynamicBodyClasses) {
       setBodyClassIf(!isMobile && collapsed, 'collapsed-nav');
-      setBodyClassIf(isMobile, 'hidden-nav');
+      setBodyClassIf(isMobile || mastHeadOnly, 'hidden-nav');
     }
   };
 
@@ -354,7 +356,8 @@ class BaseVerticalNav extends React.Component {
       activePath,
       hoverPath,
       mobilePath,
-      pinnedPath
+      pinnedPath,
+      mastHeadOnly
     } = this.props;
 
     const getPathDepth = path =>
@@ -400,33 +403,37 @@ class BaseVerticalNav extends React.Component {
         forceHideSecondaryMenu={this.forceHideSecondaryMenu}
         hoverDelay={hoverDelay}
         blurDelay={blurDelay}
+        mastHeadOnly={mastHeadOnly}
       >
         <nav className={classNames('navbar navbar-pf-vertical')}>
           {!hideMasthead && masthead}
         </nav>
-        <div
-          className={classNames(
-            'nav-pf-vertical nav-pf-vertical-with-sub-menus',
-            {
-              'nav-pf-vertical-collapsible-menus': pinnableMenus,
-              'hidden-icons-pf': hiddenIcons,
-              'nav-pf-vertical-with-badges': showBadges,
-              'nav-pf-persistent-secondary': persistentSecondary,
-              'show-mobile-secondary': showMobileSecondary,
-              'show-mobile-tertiary': showMobileTertiary,
-              'hover-secondary-nav-pf': hoverSecondaryNav,
-              'hover-tertiary-nav-pf': hoverTertiaryNav,
-              'collapsed-secondary-nav-pf': pinnableMenus && pinnedSecondaryNav,
-              'collapsed-tertiary-nav-pf': pinnableMenus && pinnedTertiaryNav,
-              hidden: isMobile,
-              collapsed: !isMobile && navCollapsed,
-              'force-hide-secondary-nav-pf': forceHidden,
-              'show-mobile-nav': showMobileNav
-            }
-          )}
-        >
-          <ListGroup componentClass="ul">{itemComponents}</ListGroup>
-        </div>
+        {!mastHeadOnly && (
+          <div
+            className={classNames(
+              'nav-pf-vertical nav-pf-vertical-with-sub-menus',
+              {
+                'nav-pf-vertical-collapsible-menus': pinnableMenus,
+                'hidden-icons-pf': hiddenIcons,
+                'nav-pf-vertical-with-badges': showBadges,
+                'nav-pf-persistent-secondary': persistentSecondary,
+                'show-mobile-secondary': showMobileSecondary,
+                'show-mobile-tertiary': showMobileTertiary,
+                'hover-secondary-nav-pf': hoverSecondaryNav,
+                'hover-tertiary-nav-pf': hoverTertiaryNav,
+                'collapsed-secondary-nav-pf':
+                  pinnableMenus && pinnedSecondaryNav,
+                'collapsed-tertiary-nav-pf': pinnableMenus && pinnedTertiaryNav,
+                hidden: isMobile,
+                collapsed: !isMobile && navCollapsed,
+                'force-hide-secondary-nav-pf': forceHidden,
+                'show-mobile-nav': showMobileNav
+              }
+            )}
+          >
+            <ListGroup componentClass="ul">{itemComponents}</ListGroup>
+          </div>
+        )}
       </NavContextProvider>
     );
   }
@@ -511,7 +518,9 @@ BaseVerticalNav.propTypes = {
   /** Navigation items, passed as Item, SecondaryItem and TertiaryItem children. */
   children: PropTypes.node,
   /** Helper injected by `controlled()` to manage controlledStateTypes values */
-  setControlledState: PropTypes.func // eslint-disable-line react/require-default-props
+  setControlledState: PropTypes.func, // eslint-disable-line react/require-default-props
+  /** Only display navigation masthead */
+  mastHeadOnly: PropTypes.bool
 };
 
 BaseVerticalNav.defaultProps = {
@@ -536,7 +545,8 @@ BaseVerticalNav.defaultProps = {
   onItemPin: null,
   onMobileSelection: null,
   onNavigate: noop,
-  children: null
+  children: null,
+  mastHeadOnly: false
 };
 
 const NoPersist = controlled(controlledState)(BaseVerticalNav);

@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`VerticalNav renders as masthead only 1`] = `
+<nav
+  class="navbar navbar-pf-vertical"
+>
+  <div
+    class="navbar-header"
+  >
+    <span
+      class="navbar-brand"
+    >
+      <span>
+        <span
+          class="navbar-brand-txt"
+        >
+          Patternfly React
+        </span>
+      </span>
+    </span>
+  </div>
+</nav>
+`;
+
 exports[`VerticalNav renders properly in mobile mode 1`] = `
 <nav
   class="navbar navbar-pf-vertical"

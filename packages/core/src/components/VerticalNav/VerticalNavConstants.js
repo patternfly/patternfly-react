@@ -108,6 +108,8 @@ const navContextTypes = {
   setControlledMobilePath: PropTypes.func,
   /** Notifies the main component that an item has used the selectedOnMobile prop. */
   setControlledPinnedPath: PropTypes.func,
+  /** Only display navigation masthead */
+  mastHeadOnly: PropTypes.bool,
   /** Reference to method of the same name in the VerticalNav container. */
   forceHideSecondaryMenu: PropTypes.func,
   /** (Internal helper value) */
