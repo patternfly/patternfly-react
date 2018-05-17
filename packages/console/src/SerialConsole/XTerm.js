@@ -89,11 +89,11 @@ class XTerm extends React.Component {
     }
   }
 
-  onFocusIn = () => {
+  onFocus = () => {
     window.addEventListener('beforeunload', this.onBeforeUnload);
   };
 
-  onFocusOut = () => {
+  onBlur = () => {
     window.removeEventListener('beforeunload', this.onBeforeUnload);
   };
 
@@ -131,8 +131,8 @@ class XTerm extends React.Component {
         }}
         key={this.state.terminal}
         className="console-pf"
-        onFocusIn={this.onFocusIn}
-        onFocusOut={this.onFocusOut}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
       />
     );
   }
