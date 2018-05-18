@@ -41,6 +41,7 @@ class TreeView extends React.Component {
       highlightOnHover,
       highlightOnSelect
     } = this.props;
+    const { focusedNodeId } = this.state;
     const classes = classNames('list-group', {
       'treeview-select': highlightOnSelect,
       'treeview-hover': highlightOnHover
@@ -63,6 +64,7 @@ class TreeView extends React.Component {
                 level={1}
                 selectNode={selectNode}
                 onFocus={this.onFocus}
+                focusedNodeId={focusedNodeId}
               />
             ))}
         </ul>

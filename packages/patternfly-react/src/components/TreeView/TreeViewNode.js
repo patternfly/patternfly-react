@@ -7,12 +7,24 @@ import TreeViewIcon from './TreeViewIcon';
 import TreeViewIndents from './TreeViewIndents';
 
 class TreeViewNode extends Component {
-  static getDerivedStateFromProps(nextProps) {
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const updatedState = {};
     // Collapse the current node if any of its parents is collapsed. This should
     // only fire for nodes that are level 2 or greater
     if (!nextProps.visible && nextProps.level > 1) {
       return { expanded: false };
     }
+
+    const tabIndex =
+      nextProps.focusedNodeId === prevState.nodeId ||
+      (!nextProps.focusedNodeId && prevState.nodeId === '1-0')
+        ? 0
+        : -1;
+
+    if (tabIndex !== prevState.tabIndex) {
+      return { tabIndex };
+    }
+
     return null;
   }
 
@@ -22,7 +34,9 @@ class TreeViewNode extends Component {
       (this.props.node.hasOwnProperty('state') &&
         this.props.node.state.expanded) ||
       false,
-    focused: false
+    focused: false,
+    tabIndex: -1,
+    nodeId: `${this.props.level}-${this.props.index}`
   };
 
   onKeyPress = e => {
@@ -67,8 +81,16 @@ class TreeViewNode extends Component {
   nodeRef = React.createRef();
 
   render() {
-    const { node, level, visible, selectNode, index, onFocus } = this.props;
-    const { expanded, focused } = this.state;
+    const {
+      node,
+      level,
+      visible,
+      selectNode,
+      index,
+      onFocus,
+      focusedNodeId
+    } = this.props;
+    const { expanded, focused, tabIndex, nodeId } = this.state;
     const treeitemClasses = classNames('list-group-item', {
       'node-hidden': level > 1 ? !visible : false,
       'node-selected': node.selected
@@ -76,7 +98,6 @@ class TreeViewNode extends Component {
     const treeitemRowClasses = classNames('treeitem-row', {
       focus: focused
     });
-    const tabIndex = index === 0 && level === 1 ? 0 : -1;
 
     return (
       <li
@@ -87,7 +108,7 @@ class TreeViewNode extends Component {
         onKeyPress={this.onKeyPress}
         ref={this.nodeRef}
         tabIndex={tabIndex}
-        id={`${level}-${index}`}
+        id={nodeId}
         role="treeitem"
         aria-expanded={node.nodes && expanded}
       >
@@ -112,6 +133,7 @@ class TreeViewNode extends Component {
                 visible={expanded}
                 selectNode={selectNode}
                 onFocus={onFocus}
+                focusedNodeId={focusedNodeId}
               />
             ))}
           </ul>
