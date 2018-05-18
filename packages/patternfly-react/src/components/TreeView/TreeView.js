@@ -39,8 +39,8 @@ class TreeView extends React.Component {
       highlightOnSelect
     } = this.props;
     const classes = classNames('list-group', {
-      'treeview-pf-select': highlightOnSelect,
-      'treeview-pf-hover': highlightOnHover
+      'treeview-select': highlightOnSelect,
+      'treeview-hover': highlightOnHover
     });
 
     return (

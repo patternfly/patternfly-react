@@ -42,8 +42,11 @@ class TreeViewNode extends Component {
     this.toggleExpandedState();
   };
 
-  handleSelect = () => {
+  handleSelect = e => {
     const { node, selectNode } = this.props;
+
+    e.stopPropagation();
+
     if (node.selectable) {
       this.nodeRef.current.focus();
       selectNode(node);
@@ -62,18 +65,18 @@ class TreeViewNode extends Component {
     const tabIndex = index === 0 && level === 1 ? 0 : -1;
 
     return (
-      <React.Fragment>
-        <li
-          className={classes}
-          onClick={this.handleSelect}
-          onFocus={() => onFocus(this.nodeRef.current)}
-          onKeyPress={this.onKeyPress}
-          ref={this.nodeRef}
-          tabIndex={tabIndex}
-          id={`${level}-${index}`}
-          role={node.nodes ? 'group' : 'treeitem'}
-          aria-expanded={node.nodes && expanded}
-        >
+      <li
+        className={classes}
+        onClick={this.handleSelect}
+        onFocus={() => onFocus(this.nodeRef.current)}
+        onKeyPress={this.onKeyPress}
+        ref={this.nodeRef}
+        tabIndex={tabIndex}
+        id={`${level}-${index}`}
+        role="treeitem"
+        aria-expanded={node.nodes && expanded}
+      >
+        <span className="treeitem-row">
           <TreeViewIndents level={level} />
           <TreeViewExpand
             nodes={node.nodes}
@@ -82,20 +85,23 @@ class TreeViewNode extends Component {
           />
           <TreeViewIcon icon={node.icon} />
           {node.text}
-        </li>
-        {node.nodes &&
-          node.nodes.map((childNode, idx) => (
-            <TreeViewNode
-              node={childNode}
-              key={idx}
-              index={idx}
-              level={level + 1}
-              visible={expanded}
-              selectNode={selectNode}
-              onFocus={onFocus}
-            />
-          ))}
-      </React.Fragment>
+        </span>
+        {node.nodes && (
+          <ul className="list-group" role="group">
+            {node.nodes.map((childNode, idx) => (
+              <TreeViewNode
+                node={childNode}
+                key={idx}
+                index={idx}
+                level={level + 1}
+                visible={expanded}
+                selectNode={selectNode}
+                onFocus={onFocus}
+              />
+            ))}
+          </ul>
+        )}
+      </li>
     );
   }
 }

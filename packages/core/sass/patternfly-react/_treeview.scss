@@ -1,0 +1,31 @@
+.treeview .list-group {
+  margin-bottom: 0;
+}
+
+.treeview .list-group-item {
+  padding: 0;
+}
+
+.treeview .treeitem-row {
+  display: block;
+}
+
+.treeview-hover .treeitem-row {
+  cursor: pointer;
+  &:hover {
+    background-color: $dropdown-link-hover-bg;
+    border-color: $dropdown-link-hover-border-color;
+  }
+}
+
+.treeview-select .treeitem-row {
+  cursor: pointer;
+}
+
+.treeview-select .list-group-item.node-selected {
+  & > .treeitem-row {
+    background: $dropdown-link-active-bg;
+    border-color: $dropdown-link-active-border-color;
+    color: $dropdown-link-active-color;
+  }
+}
