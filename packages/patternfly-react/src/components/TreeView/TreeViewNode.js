@@ -21,7 +21,8 @@ class TreeViewNode extends Component {
     expanded:
       (this.props.node.hasOwnProperty('state') &&
         this.props.node.state.expanded) ||
-      false
+      false,
+    focused: false
   };
 
   onKeyPress = e => {
@@ -29,7 +30,7 @@ class TreeViewNode extends Component {
     if (e.key === ' ') {
       this.toggleExpandedState();
     } else if (e.key === 'Enter') {
-      this.handleSelect();
+      this.handleSelect(e);
     }
   };
 
@@ -53,22 +54,36 @@ class TreeViewNode extends Component {
     }
   };
 
+  onFocus = e => {
+    e.stopPropagation();
+    this.props.onFocus(this.nodeRef.current);
+    this.setState(() => ({ focused: true }));
+  };
+
+  onBlur = () => {
+    this.setState(() => ({ focused: false }));
+  };
+
   nodeRef = React.createRef();
 
   render() {
     const { node, level, visible, selectNode, index, onFocus } = this.props;
-    const { expanded } = this.state;
-    const classes = classNames('list-group-item', {
+    const { expanded, focused } = this.state;
+    const treeitemClasses = classNames('list-group-item', {
       'node-hidden': level > 1 ? !visible : false,
       'node-selected': node.selected
+    });
+    const treeitemRowClasses = classNames('treeitem-row', {
+      focus: focused
     });
     const tabIndex = index === 0 && level === 1 ? 0 : -1;
 
     return (
       <li
-        className={classes}
+        className={treeitemClasses}
         onClick={this.handleSelect}
-        onFocus={() => onFocus(this.nodeRef.current)}
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
         onKeyPress={this.onKeyPress}
         ref={this.nodeRef}
         tabIndex={tabIndex}
@@ -76,7 +91,7 @@ class TreeViewNode extends Component {
         role="treeitem"
         aria-expanded={node.nodes && expanded}
       >
-        <span className="treeitem-row">
+        <span className={treeitemRowClasses}>
           <TreeViewIndents level={level} />
           <TreeViewExpand
             nodes={node.nodes}

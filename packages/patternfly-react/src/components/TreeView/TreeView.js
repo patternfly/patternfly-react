@@ -15,10 +15,13 @@ class TreeView extends React.Component {
   };
 
   onKeyDown = event => {
-    const nodes = this.getVisibleNodes([...this.treeRef.current.children]);
+    const nodes = this.getVisibleNodes([
+      ...this.treeRef.current.getElementsByTagName('li')
+    ]);
     const currentNodePosition = nodes.findIndex(
       element => element.id === this.state.focusedNodeId
     );
+
     if (event.key === 'ArrowDown' && currentNodePosition !== nodes.length - 1) {
       nodes[currentNodePosition + 1].focus();
     } else if (event.key === 'ArrowUp' && currentNodePosition !== 0) {
