@@ -39,11 +39,26 @@ class TreeViewNode extends Component {
     nodeId: `${this.props.level}-${this.props.index}`
   };
 
-  onKeyPress = e => {
-    e.stopPropagation();
-    if (e.key === ' ') {
-      this.toggleExpandedState();
-    } else if (e.key === 'Enter') {
+  onKeyDown = e => {
+    const { node, focusedNodeId } = this.props;
+    const { nodeId } = this.state;
+    const { key } = e;
+
+    if (
+      node.nodes &&
+      focusedNodeId === nodeId &&
+      (key === 'ArrowRight' || key === 'ArrowLeft')
+    ) {
+      e.stopPropagation();
+      if (key === 'ArrowRight') {
+        this.setState(() => ({ expanded: true }));
+      } else {
+        this.setState(() => ({ expanded: false }));
+      }
+    }
+
+    if (key === ' ' || key === 'Enter') {
+      e.stopPropagation();
       this.handleSelect(e);
     }
   };
@@ -106,7 +121,7 @@ class TreeViewNode extends Component {
         onClick={this.handleSelect}
         onFocus={this.onFocus}
         onBlur={this.onBlur}
-        onKeyPress={this.onKeyPress}
+        onKeyDown={this.onKeyDown}
         ref={this.nodeRef}
         tabIndex={tabIndex}
         data-id={nodeId}

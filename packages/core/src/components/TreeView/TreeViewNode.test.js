@@ -19,19 +19,13 @@ beforeEach(() => {
 });
 
 describe('#onKeyPress', () => {
-  test('hitting the space key toggles expanded', () => {
-    const wrapper = shallow(<TreeViewNode {...props} />);
-    wrapper.instance().onKeyPress({ ...e, key: ' ' });
-
-    expect(wrapper.state('expanded')).toBe(true);
-  });
-
-  test('hitting the enter key triggers the selectNode callback', () => {
+  test('hitting the enter or space key triggers the selectNode callback', () => {
     const selectNode = jest.fn();
     const wrapper = mount(<TreeViewNode {...props} selectNode={selectNode} />);
 
-    wrapper.instance().onKeyPress({ ...e, key: 'Enter' });
-
+    wrapper.instance().onKeyDown({ ...e, key: 'Enter' });
+    wrapper.instance().onKeyDown({ ...e, key: ' ' });
+    expect(selectNode).toHaveBeenCalledTimes(2);
     expect(selectNode).toHaveBeenLastCalledWith(props.node);
   });
 
@@ -40,7 +34,7 @@ describe('#onKeyPress', () => {
     const nodeRef = wrapper.instance().nodeRef.current;
     const spy = jest.spyOn(nodeRef, 'focus');
 
-    wrapper.instance().onKeyPress({ ...e, key: 'Enter' });
+    wrapper.instance().onKeyDown({ ...e, key: 'Enter' });
 
     expect(spy).toHaveBeenCalled();
   });
