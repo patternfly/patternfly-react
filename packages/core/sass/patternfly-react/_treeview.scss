@@ -12,21 +12,23 @@
   display: block;
   border: 1px solid transparent;
   padding-left: 10px;
+
   &.focus {
     border: 1px solid $input-border-focus;
   }
 }
 
+.treeview-select .treeitem-row {
+  cursor: pointer;
+}
+
 .treeview-hover .treeitem-row {
   cursor: pointer;
+
   &:hover {
     background-color: $dropdown-link-hover-bg;
     border-color: $dropdown-link-hover-border-color;
   }
-}
-
-.treeview-select .treeitem-row {
-  cursor: pointer;
 }
 
 .treeview-select .list-group-item.node-selected {

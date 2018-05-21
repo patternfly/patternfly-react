@@ -8,7 +8,9 @@ const props = {
   node: basicData[0],
   key: 1,
   index: 1,
-  level: 1
+  level: 1,
+  focusedNodeId: '',
+  setSize: basicData.length
 };
 
 let e;

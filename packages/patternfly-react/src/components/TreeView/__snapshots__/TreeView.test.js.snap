@@ -10,203 +10,276 @@ exports[`TreeView renders properly 1`] = `
   >
     <li
       aria-expanded="false"
+      aria-level="1"
+      aria-posinset="1"
+      aria-setsize="5"
       class="list-group-item"
       id="1-0"
-      role="group"
+      role="treeitem"
       tabindex="0"
     >
       <span
-        class="icon indent expand-icon fa fa-angle-right"
-      />
-      <span
-        class="icon node-icon indent fa fa-folder"
-      />
-      Parent 1
+        class="treeitem-row"
+      >
+        <span
+          class="icon indent expand-icon fa fa-angle-right"
+        />
+        <span
+          class="icon node-icon indent fa fa-folder"
+        />
+        Parent 1
+      </span>
+      <ul
+        class="list-group"
+        role="group"
+      >
+        <li
+          aria-expanded="false"
+          aria-level="2"
+          aria-posinset="1"
+          aria-setsize="2"
+          class="list-group-item node-hidden"
+          id="2-0"
+          role="treeitem"
+          tabindex="-1"
+        >
+          <span
+            class="treeitem-row"
+          >
+            <span
+              class="indent"
+            />
+            <span
+              class="indent"
+            />
+            <span
+              class="indent"
+            />
+            <span
+              class="indent"
+            />
+            <span
+              class="icon indent expand-icon fa fa-angle-right"
+            />
+            <span
+              class="icon node-icon indent fa fa-file-o"
+            />
+            Child 1
+          </span>
+          <ul
+            class="list-group"
+            role="group"
+          >
+            <li
+              aria-level="3"
+              aria-posinset="1"
+              aria-setsize="2"
+              class="list-group-item node-hidden"
+              id="3-0"
+              role="treeitem"
+              tabindex="-1"
+            >
+              <span
+                class="treeitem-row"
+              >
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="icon indent glyphicon"
+                />
+                <span
+                  class="icon node-icon indent fa fa-file-o"
+                />
+                Grandchild 1
+              </span>
+            </li>
+            <li
+              aria-level="3"
+              aria-posinset="2"
+              aria-setsize="2"
+              class="list-group-item node-hidden"
+              id="3-1"
+              role="treeitem"
+              tabindex="-1"
+            >
+              <span
+                class="treeitem-row"
+              >
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="icon indent glyphicon"
+                />
+                <span
+                  class="icon node-icon indent fa fa-file-o"
+                />
+                Grandchild 2
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li
+          aria-level="2"
+          aria-posinset="2"
+          aria-setsize="2"
+          class="list-group-item node-hidden"
+          id="2-1"
+          role="treeitem"
+          tabindex="-1"
+        >
+          <span
+            class="treeitem-row"
+          >
+            <span
+              class="indent"
+            />
+            <span
+              class="indent"
+            />
+            <span
+              class="indent"
+            />
+            <span
+              class="indent"
+            />
+            <span
+              class="icon indent glyphicon"
+            />
+            <span
+              class="icon node-icon indent fa fa-file-o"
+            />
+            Child 2
+          </span>
+        </li>
+      </ul>
     </li>
     <li
-      aria-expanded="false"
-      class="list-group-item node-hidden"
-      id="2-0"
-      role="group"
-      tabindex="-1"
-    >
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="icon indent expand-icon fa fa-angle-right"
-      />
-      <span
-        class="icon node-icon indent fa fa-file-o"
-      />
-      Child 1
-    </li>
-    <li
-      class="list-group-item node-hidden"
-      id="3-0"
-      role="treeitem"
-      tabindex="-1"
-    >
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="icon indent glyphicon"
-      />
-      <span
-        class="icon node-icon indent fa fa-file-o"
-      />
-      Grandchild 1
-    </li>
-    <li
-      class="list-group-item node-hidden"
-      id="3-1"
-      role="treeitem"
-      tabindex="-1"
-    >
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="icon indent glyphicon"
-      />
-      <span
-        class="icon node-icon indent fa fa-file-o"
-      />
-      Grandchild 2
-    </li>
-    <li
-      class="list-group-item node-hidden"
-      id="2-1"
-      role="treeitem"
-      tabindex="-1"
-    >
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="indent"
-      />
-      <span
-        class="icon indent glyphicon"
-      />
-      <span
-        class="icon node-icon indent fa fa-file-o"
-      />
-      Child 2
-    </li>
-    <li
+      aria-level="1"
+      aria-posinset="2"
+      aria-setsize="5"
       class="list-group-item"
       id="1-1"
       role="treeitem"
       tabindex="-1"
     >
       <span
-        class="icon indent glyphicon"
-      />
-      <span
-        class="icon node-icon indent fa fa-folder"
-      />
-      Parent 2
+        class="treeitem-row"
+      >
+        <span
+          class="icon indent glyphicon"
+        />
+        <span
+          class="icon node-icon indent fa fa-folder"
+        />
+        Parent 2
+      </span>
     </li>
     <li
+      aria-level="1"
+      aria-posinset="3"
+      aria-setsize="5"
       class="list-group-item"
       id="1-2"
       role="treeitem"
       tabindex="-1"
     >
       <span
-        class="icon indent glyphicon"
-      />
-      <span
-        class="icon node-icon indent fa fa-folder"
-      />
-      Parent 3
+        class="treeitem-row"
+      >
+        <span
+          class="icon indent glyphicon"
+        />
+        <span
+          class="icon node-icon indent fa fa-folder"
+        />
+        Parent 3
+      </span>
     </li>
     <li
+      aria-level="1"
+      aria-posinset="4"
+      aria-setsize="5"
       class="list-group-item"
       id="1-3"
       role="treeitem"
       tabindex="-1"
     >
       <span
-        class="icon indent glyphicon"
-      />
-      <span
-        class="icon node-icon indent fa fa-folder"
-      />
-      Parent 4
+        class="treeitem-row"
+      >
+        <span
+          class="icon indent glyphicon"
+        />
+        <span
+          class="icon node-icon indent fa fa-folder"
+        />
+        Parent 4
+      </span>
     </li>
     <li
+      aria-level="1"
+      aria-posinset="5"
+      aria-setsize="5"
       class="list-group-item"
       id="1-4"
       role="treeitem"
       tabindex="-1"
     >
       <span
-        class="icon indent glyphicon"
-      />
-      <span
-        class="icon node-icon indent fa fa-folder"
-      />
-      Parent 5
+        class="treeitem-row"
+      >
+        <span
+          class="icon indent glyphicon"
+        />
+        <span
+          class="icon node-icon indent fa fa-folder"
+        />
+        Parent 5
+      </span>
     </li>
   </ul>
 </div>

@@ -8,13 +8,13 @@ import TreeViewIndents from './TreeViewIndents';
 
 class TreeViewNode extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
-    const updatedState = {};
     // Collapse the current node if any of its parents is collapsed. This should
     // only fire for nodes that are level 2 or greater
     if (!nextProps.visible && nextProps.level > 1) {
       return { expanded: false };
     }
 
+    // Roving tab index
     const tabIndex =
       nextProps.focusedNodeId === prevState.nodeId ||
       (!nextProps.focusedNodeId && prevState.nodeId === '1-0')
@@ -48,13 +48,14 @@ class TreeViewNode extends Component {
     }
   };
 
-  toggleExpandedState = () => {
-    this.setState(prevState => ({ expanded: !prevState.expanded }));
+  onFocus = e => {
+    e.stopPropagation();
+    this.props.onFocus(this.nodeRef.current);
+    this.setState(() => ({ focused: true }));
   };
 
-  toggleExpand = e => {
-    e.stopPropagation();
-    this.toggleExpandedState();
+  onBlur = () => {
+    this.setState(() => ({ focused: false }));
   };
 
   handleSelect = e => {
@@ -68,14 +69,13 @@ class TreeViewNode extends Component {
     }
   };
 
-  onFocus = e => {
+  toggleExpand = e => {
     e.stopPropagation();
-    this.props.onFocus(this.nodeRef.current);
-    this.setState(() => ({ focused: true }));
+    this.toggleExpandedState();
   };
 
-  onBlur = () => {
-    this.setState(() => ({ focused: false }));
+  toggleExpandedState = () => {
+    this.setState(prevState => ({ expanded: !prevState.expanded }));
   };
 
   nodeRef = React.createRef();
@@ -154,7 +154,9 @@ TreeViewNode.propTypes = {
   visible: PropTypes.bool,
   selectNode: PropTypes.func,
   index: PropTypes.number.isRequired,
-  onFocus: PropTypes.func
+  onFocus: PropTypes.func,
+  focusedNodeId: PropTypes.string.isRequired,
+  setSize: PropTypes.number.isRequired
 };
 
 TreeViewNode.defaultProps = {

@@ -31,7 +31,7 @@ describe('keyboard navigation', () => {
     const spy = jest.spyOn(nextNode, 'focus');
 
     firstNode.prop('onFocus')(firstNode.instance().nodeRef.current);
-    wrapper.find('ul').simulate('keyDown', { key: 'ArrowDown' });
+    wrapper.find({ role: 'tree' }).simulate('keyDown', { key: 'ArrowDown' });
 
     expect(spy).toHaveBeenCalled();
   });
@@ -43,7 +43,7 @@ describe('keyboard navigation', () => {
     const spy = jest.spyOn(previousNode, 'focus');
 
     firstNode.prop('onFocus')(firstNode.instance().nodeRef.current);
-    wrapper.find('ul').simulate('keyDown', { key: 'ArrowUp' });
+    wrapper.find({ role: 'tree' }).simulate('keyDown', { key: 'ArrowUp' });
 
     expect(spy).toHaveBeenCalled();
   });
