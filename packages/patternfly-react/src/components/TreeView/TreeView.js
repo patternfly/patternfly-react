@@ -11,7 +11,7 @@ class TreeView extends React.Component {
   };
 
   onFocus = node => {
-    this.setState(() => ({ focusedNodeId: node.id }));
+    this.setState(() => ({ focusedNodeId: node.dataset.id }));
   };
 
   onKeyDown = event => {
@@ -19,7 +19,7 @@ class TreeView extends React.Component {
       ...this.treeRef.current.getElementsByTagName('li')
     ]);
     const currentNodePosition = nodes.findIndex(
-      element => element.id === this.state.focusedNodeId
+      element => element.dataset.id === this.state.focusedNodeId
     );
 
     if (event.key === 'ArrowDown' && currentNodePosition !== nodes.length - 1) {

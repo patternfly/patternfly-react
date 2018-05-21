@@ -109,7 +109,7 @@ class TreeViewNode extends Component {
         onKeyPress={this.onKeyPress}
         ref={this.nodeRef}
         tabIndex={tabIndex}
-        id={nodeId}
+        data-id={nodeId}
         role="treeitem"
         aria-expanded={node.nodes && expanded}
         aria-level={level}
