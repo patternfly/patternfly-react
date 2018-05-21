@@ -65,6 +65,7 @@ class TreeView extends React.Component {
                 selectNode={selectNode}
                 onFocus={this.onFocus}
                 focusedNodeId={focusedNodeId}
+                setSize={nodes.length}
               />
             ))}
         </ul>

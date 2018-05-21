@@ -88,7 +88,8 @@ class TreeViewNode extends Component {
       selectNode,
       index,
       onFocus,
-      focusedNodeId
+      focusedNodeId,
+      setSize
     } = this.props;
     const { expanded, focused, tabIndex, nodeId } = this.state;
     const treeitemClasses = classNames('list-group-item', {
@@ -111,6 +112,9 @@ class TreeViewNode extends Component {
         id={nodeId}
         role="treeitem"
         aria-expanded={node.nodes && expanded}
+        aria-level={level}
+        aria-posinset={index + 1}
+        aria-setsize={setSize}
       >
         <span className={treeitemRowClasses}>
           <TreeViewIndents level={level} />
@@ -134,6 +138,7 @@ class TreeViewNode extends Component {
                 selectNode={selectNode}
                 onFocus={onFocus}
                 focusedNodeId={focusedNodeId}
+                setSize={node.nodes.length}
               />
             ))}
           </ul>
