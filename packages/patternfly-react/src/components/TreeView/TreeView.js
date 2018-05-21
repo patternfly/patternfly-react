@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { noop } from '../../common/helpers';
+import { noop, KEYS } from '../../common/helpers';
 
 import TreeViewNode from './TreeViewNode';
 
@@ -22,9 +22,12 @@ class TreeView extends React.Component {
       element => element.dataset.id === this.state.focusedNodeId
     );
 
-    if (event.key === 'ArrowDown' && currentNodePosition !== nodes.length - 1) {
+    if (
+      event.key === KEYS.ARROW_DOWN &&
+      currentNodePosition !== nodes.length - 1
+    ) {
       nodes[currentNodePosition + 1].focus();
-    } else if (event.key === 'ArrowUp' && currentNodePosition !== 0) {
+    } else if (event.key === KEYS.ARROW_UP && currentNodePosition !== 0) {
       nodes[currentNodePosition - 1].focus();
     }
   };

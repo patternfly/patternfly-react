@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { noop } from '../../common/helpers';
+import { noop, KEYS } from '../../common/helpers';
 import TreeViewExpand from './TreeViewExpand';
 import TreeViewIcon from './TreeViewIcon';
 import TreeViewIndents from './TreeViewIndents';
@@ -15,6 +15,10 @@ class TreeViewNode extends Component {
     }
 
     // Roving tab index
+    // When a treeview is first rendered and not interacted with, the first
+    // node should have a tabindex of 0, while the rest of the nodes have a
+    // tabindex of -1. Subsequently, the tabindex "roves" to whatever node has
+    // gained focus
     const tabIndex =
       nextProps.focusedNodeId === prevState.nodeId ||
       (!nextProps.focusedNodeId && prevState.nodeId === '1-0')
@@ -47,17 +51,17 @@ class TreeViewNode extends Component {
     if (
       node.nodes &&
       focusedNodeId === nodeId &&
-      (key === 'ArrowRight' || key === 'ArrowLeft')
+      (key === KEYS.ARROW_RIGHT || key === KEYS.ARROW_LEFT)
     ) {
       e.stopPropagation();
-      if (key === 'ArrowRight') {
+      if (key === KEYS.ARROW_RIGHT) {
         this.setState(() => ({ expanded: true }));
       } else {
         this.setState(() => ({ expanded: false }));
       }
     }
 
-    if (key === ' ' || key === 'Enter') {
+    if (key === KEYS.SPACE || key === KEYS.ENTER) {
       e.stopPropagation();
       this.handleSelect(e);
     }
