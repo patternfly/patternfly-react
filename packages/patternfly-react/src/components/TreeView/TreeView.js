@@ -32,6 +32,31 @@ class TreeView extends React.Component {
     }
   };
 
+  onKeyPress = event => {
+    const nodes = this.getVisibleNodes([
+      ...this.treeRef.current.getElementsByTagName('li')
+    ]);
+    const currentNodePosition = nodes.findIndex(
+      element => element.dataset.id === this.state.focusedNodeId
+    );
+    const { key } = event;
+
+    if (key.match(/[a-zA-Z]/)) {
+      const searchableNodes = nodes.slice(currentNodePosition + 1);
+      const firstMatchingNode = searchableNodes.find(node => {
+        const nodeText = node.querySelector('.treeitem-row').textContent;
+        const [firstLetter] = nodeText;
+        return firstLetter === key;
+      });
+      if (firstMatchingNode) {
+        firstMatchingNode.focus();
+      } else {
+        const [firstNode] = nodes;
+        firstNode.focus();
+      }
+    }
+  };
+
   getVisibleNodes = nodes =>
     nodes.filter(node => !node.className.match(/node-hidden/));
 
@@ -56,6 +81,7 @@ class TreeView extends React.Component {
           className={classes}
           ref={this.treeRef}
           onKeyDown={this.onKeyDown}
+          onKeyPress={this.onKeyPress}
           role="tree"
         >
           {nodes &&
