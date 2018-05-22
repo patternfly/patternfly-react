@@ -1,6 +1,128 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`placeholder render test 1`] = `
+exports[`Render SerialConsole in the CONNECTED state 1`] = `
+<div
+  class=""
+  id="myidprefix"
+>
+  <div
+    class="console-actions-pf"
+  >
+    <button
+      class="btn btn-default console-actions-buttons-pf"
+      id="myidprefix-serialconsole-disconnect"
+    >
+      My text for Disconnect
+    </button>
+    <button
+      class="btn btn-default console-actions-buttons-pf"
+      id="myidprefix-serialconsole-reconnect"
+    >
+      My text for Reconnect
+    </button>
+  </div>
+  <div
+    class="panel-body console-terminal-pf"
+  >
+    <div
+      class="console-pf"
+    />
+  </div>
+</div>
+`;
+
+exports[`SerialConsole in the CONNECTED state 1`] = `
+<div
+  className=""
+  id="myidprefix"
+>
+  <SerialConsoleActions
+    idPrefix="myidprefix-serialconsole"
+    isDisconnectEnabled={true}
+    onDisconnect={[Function]}
+    onReset={[Function]}
+    textDisconnect="My text for Disconnect"
+    textReconnect="My text for Reconnect"
+  />
+  <div
+    className="panel-body console-terminal-pf"
+  >
+    <XTerm
+      cols={33}
+      onConnect={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+        }
+      }
+      onData={[Function]}
+      onDisconnect={[MockFunction]}
+      onResize={[Function]}
+      onTitleChanged={[Function]}
+      rows={44}
+    />
+  </div>
+</div>
+`;
+
+exports[`SerialConsole in the DISCONNECTED state 1`] = `
+<div
+  className=""
+  id="myidprefix"
+>
+  <SerialConsoleActions
+    idPrefix="myidprefix-serialconsole"
+    isDisconnectEnabled={false}
+    onDisconnect={[Function]}
+    onReset={[Function]}
+    textDisconnect="Disconnect"
+    textReconnect="Reconnect"
+  />
+  <div
+    className="panel-body console-terminal-pf"
+  >
+    <EmptyState
+      className=""
+    >
+      <EmptyStateTitle
+        className=""
+      >
+        My title for Disconnected
+      </EmptyStateTitle>
+      <EmptyStateInfo
+        className=""
+      >
+        My text for Disconnected
+      </EmptyStateInfo>
+      <EmptyStateAction
+        className=""
+        secondary={false}
+      >
+        <Button
+          active={false}
+          block={false}
+          bsClass="btn"
+          bsSize="large"
+          bsStyle="primary"
+          disabled={false}
+          onClick={
+            [MockFunction] {
+              "calls": Array [
+                Array [],
+              ],
+            }
+          }
+        >
+          My text for Connect
+        </Button>
+      </EmptyStateAction>
+    </EmptyState>
+  </div>
+</div>
+`;
+
+exports[`SerialConsole in the LOADING state 1`] = `
 <div
   className=""
   id=""
@@ -17,7 +139,7 @@ exports[`placeholder render test 1`] = `
     className="panel-body console-terminal-pf"
   >
     <span>
-      Loading ...
+      My text for Loading
     </span>
   </div>
 </div>
