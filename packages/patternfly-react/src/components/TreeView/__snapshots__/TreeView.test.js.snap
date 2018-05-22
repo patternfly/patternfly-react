@@ -15,7 +15,7 @@ exports[`TreeView renders properly 1`] = `
       aria-posinset="1"
       aria-setsize="5"
       class="list-group-item"
-      data-id="1-0"
+      data-id="0"
       role="treeitem"
       tabindex="0"
     >
@@ -40,7 +40,7 @@ exports[`TreeView renders properly 1`] = `
           aria-posinset="1"
           aria-setsize="2"
           class="list-group-item node-hidden"
-          data-id="2-0"
+          data-id="0-0"
           role="treeitem"
           tabindex="-1"
         >
@@ -76,7 +76,7 @@ exports[`TreeView renders properly 1`] = `
               aria-posinset="1"
               aria-setsize="2"
               class="list-group-item node-hidden"
-              data-id="3-0"
+              data-id="0-0-0"
               role="treeitem"
               tabindex="-1"
             >
@@ -121,7 +121,7 @@ exports[`TreeView renders properly 1`] = `
               aria-posinset="2"
               aria-setsize="2"
               class="list-group-item node-hidden"
-              data-id="3-1"
+              data-id="0-0-1"
               role="treeitem"
               tabindex="-1"
             >
@@ -164,11 +164,167 @@ exports[`TreeView renders properly 1`] = `
           </ul>
         </li>
         <li
+          aria-expanded="false"
           aria-level="2"
           aria-posinset="2"
           aria-setsize="2"
           class="list-group-item node-hidden"
-          data-id="2-1"
+          data-id="0-1"
+          role="treeitem"
+          tabindex="-1"
+        >
+          <span
+            class="treeitem-row"
+          >
+            <span
+              class="indent"
+            />
+            <span
+              class="indent"
+            />
+            <span
+              class="indent"
+            />
+            <span
+              class="indent"
+            />
+            <span
+              class="icon indent expand-icon fa fa-angle-right"
+            />
+            <span
+              class="icon node-icon indent fa fa-file-o"
+            />
+            Child 2
+          </span>
+          <ul
+            class="list-group"
+            role="group"
+          >
+            <li
+              aria-level="3"
+              aria-posinset="1"
+              aria-setsize="2"
+              class="list-group-item node-hidden"
+              data-id="0-1-0"
+              role="treeitem"
+              tabindex="-1"
+            >
+              <span
+                class="treeitem-row"
+              >
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="icon indent glyphicon"
+                />
+                <span
+                  class="icon node-icon indent fa fa-file-o"
+                />
+                Grandchild 1
+              </span>
+            </li>
+            <li
+              aria-level="3"
+              aria-posinset="2"
+              aria-setsize="2"
+              class="list-group-item node-hidden"
+              data-id="0-1-1"
+              role="treeitem"
+              tabindex="-1"
+            >
+              <span
+                class="treeitem-row"
+              >
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="indent"
+                />
+                <span
+                  class="icon indent glyphicon"
+                />
+                <span
+                  class="icon node-icon indent fa fa-file-o"
+                />
+                Grandchild 2
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li
+      aria-expanded="false"
+      aria-level="1"
+      aria-posinset="2"
+      aria-setsize="5"
+      class="list-group-item"
+      data-id="1"
+      role="treeitem"
+      tabindex="-1"
+    >
+      <span
+        class="treeitem-row"
+      >
+        <span
+          class="icon indent expand-icon fa fa-angle-right"
+        />
+        <span
+          class="icon node-icon indent fa fa-folder"
+        />
+        Parent 2
+      </span>
+      <ul
+        class="list-group"
+        role="group"
+      >
+        <li
+          aria-level="2"
+          aria-posinset="1"
+          aria-setsize="1"
+          class="list-group-item node-hidden"
+          data-id="1-0"
           role="treeitem"
           tabindex="-1"
         >
@@ -193,38 +349,17 @@ exports[`TreeView renders properly 1`] = `
             <span
               class="icon node-icon indent fa fa-file-o"
             />
-            Child 2
+            Child 1
           </span>
         </li>
       </ul>
     </li>
     <li
       aria-level="1"
-      aria-posinset="2"
-      aria-setsize="5"
-      class="list-group-item"
-      data-id="1-1"
-      role="treeitem"
-      tabindex="-1"
-    >
-      <span
-        class="treeitem-row"
-      >
-        <span
-          class="icon indent glyphicon"
-        />
-        <span
-          class="icon node-icon indent fa fa-folder"
-        />
-        Parent 2
-      </span>
-    </li>
-    <li
-      aria-level="1"
       aria-posinset="3"
       aria-setsize="5"
       class="list-group-item"
-      data-id="1-2"
+      data-id="2"
       role="treeitem"
       tabindex="-1"
     >
@@ -245,7 +380,7 @@ exports[`TreeView renders properly 1`] = `
       aria-posinset="4"
       aria-setsize="5"
       class="list-group-item"
-      data-id="1-3"
+      data-id="3"
       role="treeitem"
       tabindex="-1"
     >
@@ -266,7 +401,7 @@ exports[`TreeView renders properly 1`] = `
       aria-posinset="5"
       aria-setsize="5"
       class="list-group-item"
-      data-id="1-4"
+      data-id="4"
       role="treeitem"
       tabindex="-1"
     >

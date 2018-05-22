@@ -21,12 +21,21 @@ class TreeViewNode extends Component {
     // gained focus
     const tabIndex =
       nextProps.focusedNodeId === prevState.nodeId ||
-      (!nextProps.focusedNodeId && prevState.nodeId === '1-0')
+      (!nextProps.focusedNodeId && prevState.nodeId === '0')
         ? 0
         : -1;
 
     if (tabIndex !== prevState.tabIndex) {
       return { tabIndex };
+    }
+
+    // * keyboard action
+    if (nextProps.expandSiblings) {
+      const siblingsLevel = nextProps.expandSiblings.split('-').length;
+      if (parseInt(siblingsLevel, 10) === nextProps.level) {
+        nextProps.clearExpandSiblings();
+        return { expanded: true };
+      }
     }
 
     return null;
@@ -40,12 +49,12 @@ class TreeViewNode extends Component {
       false,
     focused: false,
     tabIndex: -1,
-    nodeId: `${this.props.level}-${this.props.index}`
+    nodeId: this.props.nodeId
   };
 
   onKeyDown = e => {
-    const { node, focusedNodeId } = this.props;
     const { nodeId } = this.state;
+    const { node, focusedNodeId } = this.props;
     const { key } = e;
 
     if (
@@ -108,7 +117,9 @@ class TreeViewNode extends Component {
       index,
       onFocus,
       focusedNodeId,
-      setSize
+      setSize,
+      expandSiblings,
+      clearExpandSiblings
     } = this.props;
     const { expanded, focused, tabIndex, nodeId } = this.state;
     const treeitemClasses = classNames('list-group-item', {
@@ -158,6 +169,9 @@ class TreeViewNode extends Component {
                 onFocus={onFocus}
                 focusedNodeId={focusedNodeId}
                 setSize={node.nodes.length}
+                expandSiblings={expandSiblings}
+                clearExpandSiblings={clearExpandSiblings}
+                nodeId={`${nodeId}-${idx}`}
               />
             ))}
           </ul>
@@ -175,14 +189,20 @@ TreeViewNode.propTypes = {
   index: PropTypes.number.isRequired,
   onFocus: PropTypes.func,
   focusedNodeId: PropTypes.string.isRequired,
-  setSize: PropTypes.number.isRequired
+  setSize: PropTypes.number.isRequired,
+  expandSiblings: PropTypes.string,
+  clearExpandSiblings: PropTypes.func,
+  nodeId: PropTypes.string
 };
 
 TreeViewNode.defaultProps = {
   node: {},
   visible: false,
   selectNode: noop,
-  onFocus: noop
+  onFocus: noop,
+  expandSiblings: '',
+  clearExpandSiblings: noop,
+  nodeId: ''
 };
 
 export default TreeViewNode;

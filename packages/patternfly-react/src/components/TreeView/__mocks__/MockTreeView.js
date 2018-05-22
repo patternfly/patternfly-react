@@ -148,5 +148,15 @@ export const keyboardNavigation = (
       </li>
       <li>Ignores nodes that are descendants of closed nodes</li>
     </ul>
+    <li>
+      <code>*</code> (asterisk)
+    </li>
+    <ul>
+      <li>
+        Expands all closed sibling nodes that are at the same level as the
+        focused node
+      </li>
+      <li>Focus does not move</li>
+    </ul>
   </ul>
 );

@@ -7,7 +7,8 @@ import TreeViewNode from './TreeViewNode';
 
 class TreeView extends React.Component {
   state = {
-    focusedNodeId: ''
+    focusedNodeId: '',
+    expandSiblings: ''
   };
 
   onFocus = node => {
@@ -41,7 +42,7 @@ class TreeView extends React.Component {
     );
     const { key } = event;
 
-    if (key.match(/[a-zA-Z]/)) {
+    if (/[a-zA-Z]{1}/.test(key) && key.length === 1) {
       const searchableNodes = nodes.slice(currentNodePosition + 1);
       const firstMatchingNode = searchableNodes.find(node => {
         const nodeText = node.querySelector('.treeitem-row').textContent;
@@ -55,10 +56,18 @@ class TreeView extends React.Component {
         firstNode.focus();
       }
     }
+
+    if (key === '*') {
+      this.setState(prevState => ({ expandSiblings: prevState.focusedNodeId }));
+    }
   };
 
   getVisibleNodes = nodes =>
     nodes.filter(node => !node.className.match(/node-hidden/));
+
+  clearExpandSiblings = () => {
+    this.setState(() => ({ expandSiblings: '' }));
+  };
 
   treeRef = React.createRef();
 
@@ -70,7 +79,7 @@ class TreeView extends React.Component {
       highlightOnSelect,
       accessibleName
     } = this.props;
-    const { focusedNodeId } = this.state;
+    const { focusedNodeId, expandSiblings } = this.state;
     const classes = classNames('list-group', {
       'treeview-select': highlightOnSelect,
       'treeview-hover': highlightOnHover
@@ -92,11 +101,14 @@ class TreeView extends React.Component {
                 node={node}
                 key={index}
                 index={index}
+                nodeId={String(index)}
                 level={1}
                 selectNode={selectNode}
                 onFocus={this.onFocus}
                 focusedNodeId={focusedNodeId}
                 setSize={nodes.length}
+                expandSiblings={expandSiblings}
+                clearExpandSiblings={this.clearExpandSiblings}
               />
             ))}
         </ul>
