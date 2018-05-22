@@ -9,7 +9,11 @@ import {
   STORYBOOK_CATEGORY
 } from 'storybook/constants/siteConstants';
 
-import { MockTreeView, MockTreeViewSource } from './__mocks__/MockTreeView';
+import {
+  MockTreeView,
+  MockTreeViewSource,
+  keyboardNavigation
+} from './__mocks__/MockTreeView';
 import TreeViewNodeSpecification from './__mocks__/TreeViewNodeSpecification';
 import TreeView from './TreeView';
 import { name } from '../../../package.json';
@@ -36,6 +40,8 @@ stories.add(
     propTablesExclude: [MockTreeView],
     text: (
       <div>
+        <h1>Keyboard Navigation</h1>
+        {keyboardNavigation}
         <h1>Story Source</h1>
         <pre>{MockTreeViewSource}</pre>
       </div>
