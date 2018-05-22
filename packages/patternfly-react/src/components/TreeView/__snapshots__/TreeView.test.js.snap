@@ -5,6 +5,7 @@ exports[`TreeView renders properly 1`] = `
   class="treeview"
 >
   <ul
+    aria-label=""
     class="list-group"
     role="tree"
   >

@@ -44,6 +44,7 @@ export class MockTreeView extends React.Component {
           highlightOnHover={boolean('Highlight on hover', true)}
           highlightOnSelect={boolean('Highlight on select', true)}
           selectNode={this.selectNode}
+          accessibleName="Tree"
         />
       </div>
     );

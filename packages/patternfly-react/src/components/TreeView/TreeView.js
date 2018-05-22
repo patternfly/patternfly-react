@@ -67,7 +67,8 @@ class TreeView extends React.Component {
       nodes,
       selectNode,
       highlightOnHover,
-      highlightOnSelect
+      highlightOnSelect,
+      accessibleName
     } = this.props;
     const { focusedNodeId } = this.state;
     const classes = classNames('list-group', {
@@ -83,6 +84,7 @@ class TreeView extends React.Component {
           onKeyDown={this.onKeyDown}
           onKeyPress={this.onKeyPress}
           role="tree"
+          aria-label={accessibleName}
         >
           {nodes &&
             nodes.map((node, index) => (
@@ -111,14 +113,17 @@ TreeView.propTypes = {
   /** Highlight node row on hover */
   highlightOnHover: PropTypes.bool,
   /** Highlight node row when clicked */
-  highlightOnSelect: PropTypes.bool
+  highlightOnSelect: PropTypes.bool,
+  /** Identification for assistive devices */
+  accessibleName: PropTypes.string
 };
 
 TreeView.defaultProps = {
   highlightOnHover: false,
   highlightOnSelect: false,
   nodes: [],
-  selectNode: noop
+  selectNode: noop,
+  accessibleName: ''
 };
 
 export default TreeView;
