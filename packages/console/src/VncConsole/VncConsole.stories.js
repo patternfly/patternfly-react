@@ -4,10 +4,11 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
 import { name } from '../../package.json';
+import { storybookPackageName } from 'storybook/constants/siteConstants';
 
 import VncConsole from './VncConsole';
 
-const stories = storiesOf(`${name}/vncConsole`, module);
+const stories = storiesOf(`${storybookPackageName(name)}/Vnc Console`, module);
 
 stories.add(
   'VncConsole',

@@ -3,15 +3,21 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info/dist/index';
 import { withKnobs } from '@storybook/addon-knobs';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 
 import { MockTreeView, MockTreeViewSource } from './__mocks__/MockTreeView';
 import TreeViewNodeSpecification from './__mocks__/TreeViewNodeSpecification';
 import TreeView from './TreeView';
-
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/TreeView`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Tree View`,
+  module
+);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
@@ -23,7 +29,7 @@ stories.addDecorator(
 );
 
 stories.add(
-  'TreeView with Selectable Nodes',
+  'TreeView',
   withInfo({
     source: false,
     propTables: [TreeView, TreeViewNodeSpecification],

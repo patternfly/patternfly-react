@@ -5,7 +5,11 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info/dist/index';
 import { Row, Col } from '../Grid';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { Button } from '../Button';
 import { DropdownKebab } from '../DropdownKebab';
 import { Icon } from '../Icon';
@@ -18,7 +22,10 @@ import {
 import { mockListItems } from './__mocks__/mockListItems';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/ListView`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.CONTENT_VIEWS}/List View`,
+  module
+);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({

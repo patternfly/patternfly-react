@@ -3,11 +3,18 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
 import { Spinner } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/Widgets`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Spinner`,
+  module
+);
 
 stories.addDecorator(withKnobs);
 stories.addDecorator(

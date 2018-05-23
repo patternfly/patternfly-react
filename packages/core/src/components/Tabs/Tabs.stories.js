@@ -6,6 +6,11 @@ import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
+import {
   TabContainer,
   Nav,
   NavItem,
@@ -16,7 +21,10 @@ import {
 } from '../../index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/Tabs`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Tabs`,
+  module
+);
 const description = (
   <p>
     This component is based on React Bootstrap Tabs component. See{' '}
@@ -30,8 +38,7 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Tabs',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/widgets/#tabs',
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#tabs`,
     description
   })
 );

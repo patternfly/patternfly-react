@@ -5,6 +5,11 @@ import { withInfo } from '@storybook/addon-info/dist/index';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 
 import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
+import {
   Toolbar,
   ToolbarResults,
   ToolbarRightContent,
@@ -16,16 +21,19 @@ import {
   MockToolbarExample,
   mockToolbarExampleSource
 } from './__mocks__/mockToolbarExample';
-
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${name}/Toolbar`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${
+    STORYBOOK_CATEGORY.FORMS_AND_CONTROLS
+  }/Toolbar`,
+  module
+);
 
 stories.addDecorator(
   defaultTemplate({
     title: 'Toolbar',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/forms-and-controls/toolbar/'
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_FORMS}toolbar/`
   })
 );
 
