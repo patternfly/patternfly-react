@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 
 import TreeViewNode from './TreeViewNode';
 import { basicData } from './__mocks__/data';
+import { KEYS } from '../../common/helpers';
 
 const props = {
   node: basicData[0],
@@ -29,14 +30,16 @@ describe('#onKeyPress', () => {
     expect(selectNode).toHaveBeenLastCalledWith(props.node);
   });
 
-  test('hitting the enter key focuses the node', () => {
-    const wrapper = mount(<TreeViewNode {...props} />);
-    const nodeRef = wrapper.instance().nodeRef.current;
-    const spy = jest.spyOn(nodeRef, 'focus');
+  test('hitting the ArrowRight key expands the node', () => {
+    const wrapper = shallow(<TreeViewNode {...props} />);
+    wrapper.instance().onKeyDown({ ...e, key: KEYS.ARROW_RIGHT });
+    expect(wrapper.state('expanded')).toBe(true);
+  });
 
-    wrapper.instance().onKeyDown({ ...e, key: 'Enter' });
-
-    expect(spy).toHaveBeenCalled();
+  test('hitting the LeftArrow key collapses the node', () => {
+    const wrapper = shallow(<TreeViewNode {...props} />);
+    wrapper.instance().onKeyDown({ ...e, key: KEYS.ARROW_LEFT });
+    expect(wrapper.state('expanded')).toBe(false);
   });
 });
 

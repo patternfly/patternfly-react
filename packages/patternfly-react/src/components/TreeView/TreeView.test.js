@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import { TreeView } from './index';
 import { basicData } from './__mocks__/data';
@@ -46,5 +46,25 @@ describe('keyboard navigation', () => {
     wrapper.find({ role: 'tree' }).simulate('keyDown', { key: 'ArrowUp' });
 
     expect(spy).toHaveBeenCalled();
+  });
+
+  test('pressing an alpha key moves focus to the next node whose text starts with that letter', () => {
+    const firstNode = visibleNodes.at(0);
+    const nextNode = visibleNodes.at(1).instance().nodeRef.current;
+
+    const spy = jest.spyOn(nextNode, 'focus');
+
+    firstNode.prop('onFocus')(firstNode.instance().nodeRef.current);
+    wrapper.find({ role: 'tree' }).simulate('keyPress', { key: 'P' });
+
+    expect(spy).toHaveBeenCalled();
+  });
+});
+
+describe('clearExpandSiblings', () => {
+  test('clears the expandSiblings state', () => {
+    const wrapper = shallow(<TreeView nodes={basicData} />);
+    wrapper.instance().clearExpandSiblings();
+    expect(wrapper.state('expandSiblings')).toBe('');
   });
 });
