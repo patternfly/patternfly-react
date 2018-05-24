@@ -1,0 +1,39 @@
+{
+  "name": "@patternfly/simple-redux",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Redux helpers to enable adding and removing reducers on the fly",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "./dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react/tree/master/packages/simple-redux"
+  },
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/src/simple-redux/README.md",
+  "keywords": [
+    "patternfly",
+    "redux",
+    "react"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "react-redux": "^5.0.7"
+  },
+  "optionalDependencies": {
+    "redux-logger": "^3.0.6"
+  }
+}

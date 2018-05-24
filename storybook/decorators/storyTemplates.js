@@ -44,6 +44,30 @@ export const defaultTemplate = config => story => (
   </div>
 );
 
+export const templateWithoutPatternfly = ({
+  title,
+  documentationLink,
+  description,
+  style,
+  story
+}) => (
+  <div style={{ padding: '0 20px' }}>
+    <header className="page-header">
+      <h2>{title}</h2>
+    </header>
+    {documentationLink && (
+      <p>
+        Documentation of this non standard library can be found at{' '}
+        <a href={documentationLink}>Repository documentation</a>
+      </p>
+    )}
+    {description && <div>{description}</div>}
+    <br />
+    <br />
+    <div style={style}>{story}</div>
+  </div>
+);
+
 export const inlineTemplate = ({
   title,
   documentationLink,
@@ -68,6 +92,7 @@ export const inlineTemplate = ({
     <div style={style}>{story}</div>
   </div>
 );
+
 inlineTemplate.propTypes = {
   /** template title */
   title: PropTypes.string.isRequired,
@@ -89,3 +114,6 @@ inlineTemplate.defaultProps = {
   style: {},
   story: null
 };
+
+templateWithoutPatternfly.propTypes = inlineTemplate.propTypes;
+templateWithoutPatternfly.defaultProps = inlineTemplate.defaultProps;
