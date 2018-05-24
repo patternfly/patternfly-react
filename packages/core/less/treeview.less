@@ -1,0 +1,40 @@
+.treeview .list-group {
+  margin-bottom: 0;
+}
+
+.treeview .list-group-item {
+  padding: 0;
+  outline: 0;
+  border: none !important;
+}
+
+.treeview .treeitem-row {
+  display: block;
+  border: 1px solid transparent;
+  padding-left: 10px;
+
+  &.focus {
+    border: 1px solid $input-border-focus;
+  }
+}
+
+.treeview-select .treeitem-row {
+  cursor: pointer;
+}
+
+.treeview-hover .treeitem-row {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $dropdown-link-hover-bg;
+    border-color: $dropdown-link-hover-border-color;
+  }
+}
+
+.treeview-select .list-group-item.node-selected {
+  & > .treeitem-row {
+    background: $dropdown-link-active-bg;
+    border-color: $dropdown-link-active-border-color;
+    color: $dropdown-link-active-color;
+  }
+}
