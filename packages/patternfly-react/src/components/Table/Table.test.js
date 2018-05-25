@@ -11,6 +11,13 @@ import {
 
 import { MockClientPaginationTable } from './__mocks__/mockClientPaginationTable';
 import { MockServerPaginationTable } from './__mocks__/mockServerPaginationTable';
+import MockTreeGrid from './__mocks__/mockTreeGridTable';
+import {
+  filterVisible,
+  setVisibleChildren,
+  defaultRowValues,
+  getShowingChildren
+} from './TreeGridTableHelpers';
 
 test('Mock Client Pagination table renders', () => {
   const component = mount(
@@ -134,6 +141,69 @@ test('Patternfly table renders properly', () => {
   );
 
   expect(component.render()).toMatchSnapshot();
+});
+
+describe('TreeGridTable', () => {
+  test('renders correctly', () => {
+    const component = mount(<MockTreeGrid />);
+
+    expect(component.render()).toMatchSnapshot();
+  });
+
+  test('filterVisible', () => {
+    expect(
+      filterVisible([{ visible: true }, { visible: false }, { visible: true }])
+    ).toHaveLength(2);
+  });
+
+  test('setVisibleChildren should hide all if first is collapsed', () => {
+    const rows = [
+      { visible: true, id: 0, _index: 0 },
+      { visible: true, id: 1, _index: 1, parent: 0, collapsed: true },
+      { visible: true, id: 2, _index: 2, parent: 1 },
+      { visible: true, id: 3, _index: 3, parent: 2 }
+    ];
+    setVisibleChildren(1, rows);
+    expect(rows[1].visible).toBe(true);
+    expect(rows[2].visible).toBe(false);
+  });
+
+  test('setVisibleChildren should not hide all if first is not collapsed', () => {
+    const rows = [
+      { visible: true, id: 0, _index: 0 },
+      { visible: true, id: 1, _index: 1, parent: 0 },
+      { visible: true, id: 2, _index: 2, parent: 1 },
+      { visible: true, id: 3, _index: 3, parent: 2 }
+    ];
+    setVisibleChildren(1, rows);
+    expect(rows[1].visible).toBe(true);
+    expect(rows[2].visible).toBe(true);
+  });
+
+  test('defaultRowValues', () => {
+    const rows = defaultRowValues([
+      { visible: true, id: 0 },
+      { visible: true, id: 2, parent: 1 },
+      { visible: true, id: 1, parent: 0 },
+      { visible: true, id: 3, parent: 2 }
+    ]);
+    expect(rows[0]).toMatchObject({
+      visible: true,
+      id: 0,
+      _index: 0,
+      collapsed: false
+    });
+    expect(rows[1]).toMatchObject({
+      visible: true,
+      id: 1,
+      _index: 1,
+      collapsed: false
+    });
+  });
+
+  test('getShowingChildren', () => {
+    expect(getShowingChildren({ rowData: { collapsed: true } })).toBe(true);
+  });
 });
 
 describe('inline edit', () => {

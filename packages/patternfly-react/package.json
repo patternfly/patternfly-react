@@ -36,7 +36,8 @@
     "react-click-outside": "^3.0.1",
     "react-fontawesome": "^1.6.1",
     "reactabular-table": "^8.14.0",
-    "recompose": "^0.26.0"
+    "recompose": "^0.26.0",
+    "treetabular": "^3.5.0"
   },
   "optionalDependencies": {
     "sortabular": "^1.5.1",

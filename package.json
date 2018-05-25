@@ -195,5 +195,8 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "reactabular-visibility-toggles": "^6.0.0"
   }
 }
