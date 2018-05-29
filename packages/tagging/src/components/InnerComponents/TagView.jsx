@@ -13,13 +13,14 @@ class TagView extends React.Component {
     />);
 
   render() {
+    let assignedTags = [...this.props.assignedTags];
     return (
       <React.Fragment>
         <Row><Col lg={12}><h2>{this.props.header}</h2></Col></Row>
         <Row>
           <Col lg={12}>
             <ul className="list-inline">
-              {this.props.assignedTags.map(this.generateTagCategories)}
+              {assignedTags.sort((a, b) => a.tagCategory.description < b.tagCategory.description ? -1 : 1).map(this.generateTagCategories)}
             </ul>
           </Col>
         </Row>

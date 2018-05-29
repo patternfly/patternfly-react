@@ -1,5 +1,5 @@
 import React from 'react';
-import ValueModifier from '../components/ValueModifier';
+import ValueModifier from '../components/InnerComponents/ValueModifier';
 import renderer from 'react-test-renderer';
 
 const selectedTagValue = { description: 'Duck', id: 1 };

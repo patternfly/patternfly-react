@@ -1,5 +1,5 @@
 import React from 'react';
-import ValueSelector from '../components/ValueSelector';
+import ValueSelector from '../components/InnerComponents/ValueSelector';
 import renderer from 'react-test-renderer';
 
 const tagValues = [

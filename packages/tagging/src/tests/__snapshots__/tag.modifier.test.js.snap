@@ -15,6 +15,223 @@ Array [
   </div>,
   <form
     className="form-horizontal"
-  />,
+  >
+    <div
+      className="form-group"
+    >
+      <div
+        className="col-lg-6 col-md-4 col-xs-12"
+      >
+        <label
+          className="control-label"
+          htmlFor={undefined}
+        >
+          Category
+        </label>
+      </div>
+      <div
+        className="col-lg-6 col-md-8 col-xs-12"
+      >
+        <div
+          className="Select selected-option has-value is-searchable Select--single"
+          style={undefined}
+        >
+          <input
+            disabled={false}
+            name="form-field-name"
+            type="hidden"
+            value="1"
+          />
+          <div
+            className="Select-control"
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            style={undefined}
+          >
+            <span
+              className="Select-multi-value-wrapper"
+              id="react-select-2--value"
+            >
+              <div
+                className="Select-value"
+                style={undefined}
+                title={undefined}
+              >
+                <span
+                  aria-selected="true"
+                  className="Select-value-label"
+                  id="react-select-2--value-item"
+                  role="option"
+                >
+                  Name
+                </span>
+              </div>
+              <div
+                className="Select-input"
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant="react-select-2--value"
+                  aria-describedby={undefined}
+                  aria-expanded="false"
+                  aria-haspopup="false"
+                  aria-label={undefined}
+                  aria-labelledby={undefined}
+                  aria-owns=""
+                  className={undefined}
+                  foo="bar"
+                  id={undefined}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  required={false}
+                  role="combobox"
+                  style={
+                    Object {
+                      "boxSizing": "content-box",
+                      "width": "5px",
+                    }
+                  }
+                  tabIndex={undefined}
+                  value=""
+                />
+                <div
+                  style={
+                    Object {
+                      "height": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "top": 0,
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  
+                </div>
+              </div>
+            </span>
+            <span
+              className="Select-arrow-zone"
+              onMouseDown={[Function]}
+            >
+              <span
+                className="Select-arrow"
+                onMouseDown={[Function]}
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="form-group"
+    >
+      <div
+        className="col-lg-6 col-md-4 col-xs-12"
+      >
+        <label
+          className="control-label"
+          htmlFor={undefined}
+        >
+          Value
+        </label>
+      </div>
+      <div
+        className="col-lg-6 col-md-8 col-xs-12"
+      >
+        <div
+          className="Select is-searchable Select--single"
+          style={undefined}
+        >
+          <div
+            className="Select-control"
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            style={undefined}
+          >
+            <span
+              className="Select-multi-value-wrapper"
+              id="react-select-3--value"
+            >
+              <div
+                className="Select-placeholder"
+              >
+                Select...
+              </div>
+              <div
+                className="Select-input"
+                style={
+                  Object {
+                    "display": "inline-block",
+                  }
+                }
+              >
+                <input
+                  aria-activedescendant="react-select-3--value"
+                  aria-describedby={undefined}
+                  aria-expanded="false"
+                  aria-haspopup="false"
+                  aria-label={undefined}
+                  aria-labelledby={undefined}
+                  aria-owns=""
+                  className={undefined}
+                  id={undefined}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  required={false}
+                  role="combobox"
+                  style={
+                    Object {
+                      "boxSizing": "content-box",
+                      "width": "5px",
+                    }
+                  }
+                  tabIndex={undefined}
+                  value=""
+                />
+                <div
+                  style={
+                    Object {
+                      "height": 0,
+                      "left": 0,
+                      "overflow": "scroll",
+                      "position": "absolute",
+                      "top": 0,
+                      "visibility": "hidden",
+                      "whiteSpace": "pre",
+                    }
+                  }
+                >
+                  
+                </div>
+              </div>
+            </span>
+            <span
+              className="Select-arrow-zone"
+              onMouseDown={[Function]}
+            >
+              <span
+                className="Select-arrow"
+                onMouseDown={[Function]}
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>,
 ]
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import TaggingStoryComponent from '../components/TaggingStoryComponent';
+import TaggingStoryComponent from '../components/InnerComponents/TaggingStoryComponent';
 import { name } from '../../package.json';
 import './index.scss';
 

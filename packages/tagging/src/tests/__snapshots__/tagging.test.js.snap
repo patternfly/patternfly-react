@@ -94,6 +94,7 @@ exports[`Tagging component without redux mapping match snapshot 1`] = `
                       aria-labelledby={undefined}
                       aria-owns=""
                       className={undefined}
+                      foo="bar"
                       id={undefined}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -276,12 +277,7 @@ exports[`Tagging component without redux mapping match snapshot 1`] = `
                 className="tag"
               >
                 <span
-                  className="label label-primary"
-                  style={
-                    Object {
-                      "color": "defaultColor",
-                    }
-                  }
+                  className="tagColor label label-primary"
                 >
                   Pepa
                   <a

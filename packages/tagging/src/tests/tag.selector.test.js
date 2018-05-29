@@ -1,5 +1,5 @@
 import React from 'react';
-import TagSelector from '../components/TagSelector';
+import TagSelector from '../components/InnerComponents/TagSelector';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 

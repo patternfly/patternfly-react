@@ -27,5 +27,15 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-select": "^1.2.1"
+  },
+  "sassIncludes": {
+    "patternfly": "../../node_modules/patternfly/dist/sass",
+    "bootstrap": "../../node_modules/bootstrap-sass/assets/stylesheets",
+    "fontAwesome": "../../node_modules/font-awesome-sass/assets/stylesheets"
+  },
+  "scripts": {
+    "prebuild": "yarn build:sass && yarn build:less",
+    "build:less": "mkdir -p dist/less && cp -r less/* dist/less",
+    "build:sass": "mkdir -p dist/sass && cp -r sass/* dist/sass && node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/tagging.scss"
   }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'patternfly-react';
-import TagModifier from './TagModifier';
-import TagView from './TagView';
-import CategoryModifier from './CategoryModifier';
-import ValueModifier from './ValueModifier';
+import TagModifier from '../InnerComponents/TagModifier';
+import TagView from '../InnerComponents/TagView';
+import CategoryModifier from '../InnerComponents/CategoryModifier';
+import ValueModifier from '../InnerComponents/ValueModifier';
 
 class Tagging extends React.Component {
   onTagValueChange = (selectedTagValue) => {

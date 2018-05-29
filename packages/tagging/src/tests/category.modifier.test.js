@@ -1,5 +1,5 @@
 import React from 'react';
-import CategoryModifier from '../components/CategoryModifier';
+import CategoryModifier from '../components/InnerComponents/CategoryModifier';
 import renderer from 'react-test-renderer';
 
 const selectedTagCategory = { description: 'animal', id: 1 };

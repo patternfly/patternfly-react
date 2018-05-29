@@ -34,12 +34,7 @@ Array [
             className="tag"
           >
             <span
-              className="label label-primary"
-              style={
-                Object {
-                  "color": "defaultColor",
-                }
-              }
+              className="tagColor label label-primary"
             >
               Pepa
               <a

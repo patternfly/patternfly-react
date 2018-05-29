@@ -1,0 +1,13 @@
+// Bootstrap Core variables and mixins
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+
+// Patternfly Core variables and mixins
+@import 'patternfly/variables';
+@import 'patternfly/bootstrap-mixin-overrides';
+@import 'patternfly/mixins';
+
+// Tag StyleSheets
+@import "tag-category";
+@import "tag-selector";
+@import "tag";

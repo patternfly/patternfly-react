@@ -1,5 +1,5 @@
 import React from 'react';
-import TagView from '../components/TagView';
+import TagView from '../components/InnerComponents/TagView';
 import renderer from 'react-test-renderer';
 
 const assignedTags = [

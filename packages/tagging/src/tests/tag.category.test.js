@@ -1,5 +1,5 @@
 import React from 'react';
-import TagCategory from '../components/TagCategory';
+import TagCategory from '../components/InnerComponents/TagCategory';
 import renderer from 'react-test-renderer';
 
 const tagCategory = { description: 'animal', id: 1 };

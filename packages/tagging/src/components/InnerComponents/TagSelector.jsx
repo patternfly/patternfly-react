@@ -1,7 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
 import PropTypes from 'prop-types';
-import './TagSelector.scss';
 
 class TagSelector extends React.Component {
   handleChange = (selectedOption) => {
@@ -39,6 +38,7 @@ class TagSelector extends React.Component {
         name="form-field-name"
         value={value}
         label={label}
+        inputProps={{'foo' : 'bar'}}
         onChange={this.handleChange}
         options={this.tagCategories}
         clearable={false}

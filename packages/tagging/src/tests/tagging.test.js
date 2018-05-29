@@ -1,5 +1,5 @@
 import React from 'react';
-import Tagging from '../components/Tagging';
+import Tagging from '../components/Tagging/Tagging';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
@@ -69,6 +69,7 @@ describe('Tagging component without redux mapping', () => {
         tags={tags}
         assignedTags={assignedTags}
         onTagValueChange={onChange}
+        onTagMultiValueChange={onChange}
         onTagCategoryChange={onChange}
         onTagDeleteClick={onDelete}
         selectedTagCategory={selectedTagCategory}
@@ -83,11 +84,13 @@ describe('Tagging component without redux mapping', () => {
     const onTagCategoryChange = jest.fn();
     const onTagValueChange = jest.fn();
     const onTagDeleteClick = jest.fn();
+    const onTagMultiValueChange = jest.fn();
     const wrapper = shallow(
       <Tagging
         tags={tags}
         assignedTags={assignedTags}
         onTagValueChange={onTagValueChange}
+        onTagMultiValueChange={onTagMultiValueChange}
         onTagCategoryChange={onTagCategoryChange}
         onTagDeleteClick={onTagDeleteClick}
         selectedTagCategory={selectedTagCategory}

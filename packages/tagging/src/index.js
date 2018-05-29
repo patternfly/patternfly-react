@@ -1,1 +1,1 @@
-export Tagging from './components/Tagging';
+export Tagging from './components/Tagging/Tagging';

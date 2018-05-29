@@ -1,5 +1,5 @@
 import React from 'react';
-import Tagging from './Tagging';
+import Tagging from '../Tagging/Tagging';
 
 class TaggingStoryComponent extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class TaggingStoryComponent extends React.Component {
       { description: 'Animal', id: 3, values: [{ description: 'Duck', id: 31 }, { description: 'Cat', id: 32 }, { description: 'Dog', id: 33 }] },
       { description: 'Food', id: 4, values: [{ description: 'Steak', id: 41 }, { description: 'Duck', id: 42 }, { description: 'Salad', id: 43 }] },
       {
-        description: 'Something',
+        description: 'Something very, very looooooooong',
         id: 5,
         values: [{ description: 'Knedlik', id: 51 },
           { description: 'Daenerys Stormborn of the House Targaryen, First of Her Name,...and Mother of Dragons', id: 52 }],
