@@ -386,7 +386,6 @@ const testStatefulWizardPattern = props => {
       ]}
       loadingTitle="Loading..."
       loadingMessage="This may take a minute."
-      activeStepIndex={0}
       onStepChanged={onStepChanged}
       {...props}
     />
