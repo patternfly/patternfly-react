@@ -7,6 +7,7 @@ import { name } from '../../../package.json';
 import {
   areaChart,
   barChart,
+  bulletChart,
   donutChart,
   lineChart,
   pieChart
@@ -25,6 +26,7 @@ const stories = storiesOf(
 
 areaChart(stories);
 barChart(stories);
+bulletChart(stories);
 donutChart(stories);
 lineChart(stories);
 pieChart(stories);
