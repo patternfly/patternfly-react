@@ -59,6 +59,24 @@ describe('keyboard navigation', () => {
 
     expect(spy).toHaveBeenCalled();
   });
+
+  test('the home key focuses the first node', () => {
+    const firstNode = visibleNodes.at(0).instance().nodeRef.current;
+    const spy = jest.spyOn(firstNode, 'focus');
+
+    wrapper.find({ role: 'tree' }).simulate('keyDown', { key: 'Home' });
+
+    expect(spy).toHaveBeenCalled();
+  });
+
+  test('the end key focuses the last visible node', () => {
+    const lastNode = visibleNodes.last().instance().nodeRef.current;
+    const spy = jest.spyOn(lastNode, 'focus');
+
+    wrapper.find({ role: 'tree' }).simulate('keyDown', { key: 'End' });
+
+    expect(spy).toHaveBeenCalled();
+  });
 });
 
 describe('clearExpandSiblings', () => {

@@ -30,6 +30,12 @@ class TreeView extends React.Component {
       nodes[currentNodePosition + 1].focus();
     } else if (event.key === KEYS.ARROW_UP && currentNodePosition !== 0) {
       nodes[currentNodePosition - 1].focus();
+    } else if (event.key === KEYS.HOME) {
+      const [firstNode] = nodes;
+      firstNode.focus();
+    } else if (event.key === KEYS.END) {
+      const [lastVisibleNode] = nodes.slice(-1);
+      lastVisibleNode.focus();
     }
   };
 
