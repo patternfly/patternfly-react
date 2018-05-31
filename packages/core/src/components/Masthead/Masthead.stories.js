@@ -74,7 +74,7 @@ stories.add(
             </span>
           }
         >
-          <MenuItem eventKey="1">Preferences</MenuItem>
+          <MenuItem eventKey="1">User Preferences</MenuItem>
           <MenuItem eventKey="2">Logout</MenuItem>
         </Masthead.Dropdown>
       </Masthead.Collapse>
