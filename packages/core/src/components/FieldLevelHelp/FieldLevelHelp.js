@@ -20,7 +20,7 @@ const FieldLevelHelp = ({ children, content, close, ...props }) => {
       trigger={trigger.split(' ')}
       rootClose={rootClose}
     >
-      <Button bsStyle="link">
+      <Button bsStyle="link" className="popover-pf-info">
         <Icon type="pf" name="info" />
       </Button>
     </OverlayTrigger>
