@@ -42,9 +42,7 @@ const Masthead = ({
           href={href}
           role="button"
           className="navbar-brand"
-          onClick={e => {
-            handleTitleClick(e);
-          }}
+          onClick={handleTitleClick}
         >
           <img className="navbar-brand-icon" src={iconImg} alt="" />
           <img className="navbar-brand-name" src={titleImg} alt={title} />
@@ -73,6 +71,8 @@ Masthead.propTypes = {
   href: PropTypes.string,
   /** Alternative to href, callback to call when the brand link is clicked */
   onTitleClick: PropTypes.func,
+  /** Option to have the nav toggle (hamburger), default is true */
+  navToggle: PropTypes.bool,
   /** Callback when the nav toggle (hamburger) is clicked */
   onNavToggleClick: PropTypes.func,
   /** Context selector */
@@ -88,6 +88,7 @@ Masthead.defaultProps = {
   iconImg: '',
   href: '#',
   onTitleClick: noop,
+  navToggle: true,
   onNavToggleClick: noop,
   contextSelector: null,
   children: null
