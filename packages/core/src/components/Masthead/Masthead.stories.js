@@ -2,8 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 
-import { DropdownButton, MenuItem } from '../../index';
+import { MenuItem } from '../../index';
 import { Masthead } from './index';
 
 import { name } from '../../../package.json';
@@ -33,6 +34,8 @@ stories.addDecorator(
   })
 );
 
+stories.addDecorator(withKnobs);
+
 const handleNavToggle = e => {
   action('nav toggle click')();
 };
@@ -44,31 +47,26 @@ const handleTitleClick = e => {
 stories.add(
   'Masthead',
   withInfo({
-    propTablesExclude: [DropdownButton, MenuItem]
+    propTablesExclude: [MenuItem]
   })(() => (
     <Masthead
       iconImg={pfLogo}
       titleImg={pfBrand}
       title="Patternfly React"
+      navToggle={boolean('Nav Toggle', true)}
       onTitleClick={handleTitleClick}
       onNavToggleClick={handleNavToggle}
     >
-      <li className="dropdown">
-        <DropdownButton
+      <Masthead.Collapse>
+        <Masthead.Dropdown
           id="app-help-dropdown"
-          className="dropdown-toggle nav-item-iconic"
-          bsStyle="link"
           title={<span title="Help" className="pficon pficon-help" />}
         >
           <MenuItem eventKey="1">Help</MenuItem>
           <MenuItem eventKey="2">About</MenuItem>
-        </DropdownButton>
-      </li>
-      <li className="dropdown">
-        <DropdownButton
+        </Masthead.Dropdown>
+        <Masthead.Dropdown
           id="app-user-dropdown"
-          className="dropdown-toggle nav-item-iconic"
-          bsStyle="link"
           title={
             <span>
               <span title="Help" className="pficon pficon-user" />
@@ -78,8 +76,8 @@ stories.add(
         >
           <MenuItem eventKey="1">Preferences</MenuItem>
           <MenuItem eventKey="2">Logout</MenuItem>
-        </DropdownButton>
-      </li>
+        </Masthead.Dropdown>
+      </Masthead.Collapse>
     </Masthead>
   ))
 );

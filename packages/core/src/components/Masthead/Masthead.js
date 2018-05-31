@@ -13,8 +13,9 @@ const Masthead = ({
   iconImg,
   href,
   onTitleClick,
+  navToggle,
   onNavToggleClick,
-  contextSelector,
+  middleContent,
   children,
   ...props
 }) => {
@@ -32,12 +33,14 @@ const Masthead = ({
   return (
     <nav className={mastheadClasses} {...props}>
       <div className="navbar-header">
-        <button className="navbar-toggle" onClick={onNavToggleClick}>
-          <span className="sr-only">Toggle navigation</span>
-          <span aria-hidden="true" className="icon-bar" />
-          <span aria-hidden="true" className="icon-bar" />
-          <span aria-hidden="true" className="icon-bar" />
-        </button>
+        {navToggle && (
+          <button className="navbar-toggle" onClick={onNavToggleClick}>
+            <span className="sr-only">Toggle navigation</span>
+            <span aria-hidden="true" className="icon-bar" />
+            <span aria-hidden="true" className="icon-bar" />
+            <span aria-hidden="true" className="icon-bar" />
+          </button>
+        )}
         <a
           href={href}
           role="button"
@@ -47,13 +50,9 @@ const Masthead = ({
           <img className="navbar-brand-icon" src={iconImg} alt="" />
           <img className="navbar-brand-name" src={titleImg} alt={title} />
         </a>
-        {contextSelector}
+        {middleContent}
       </div>
-      <nav className="collapse navbar-collapse">
-        <ul className="nav navbar-nav navbar-right navbar-iconic navbar-utility">
-          {children}
-        </ul>
-      </nav>
+      {children}
     </nav>
   );
 };
@@ -75,9 +74,9 @@ Masthead.propTypes = {
   navToggle: PropTypes.bool,
   /** Callback when the nav toggle (hamburger) is clicked */
   onNavToggleClick: PropTypes.func,
-  /** Context selector */
-  contextSelector: PropTypes.node,
-  /** Children displayed in the navbar utility area, array of <li> elements expected */
+  /** Content for the center area of the masthead (context selector) */
+  middleContent: PropTypes.node,
+  /** Children (typically MastheadCollapse) */
   children: PropTypes.node
 };
 
@@ -90,7 +89,7 @@ Masthead.defaultProps = {
   onTitleClick: noop,
   navToggle: true,
   onNavToggleClick: noop,
-  contextSelector: null,
+  middleContent: null,
   children: null
 };
 
