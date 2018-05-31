@@ -31,6 +31,7 @@
     "patternfly": "^3.42.0",
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-switch": "^15.5.3",
+    "react-bootstrap-typeahead": "^3.1.3",
     "react-c3js": "^0.1.20",
     "react-fontawesome": "^1.6.1",
     "reactabular-table": "^8.14.0",

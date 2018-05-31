@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutoComplete is working !! 1`] = `
+<OnClickOutside(TypeaheadContainer(WrappedTypeahead))
+  align="justify"
+  allowNew={true}
+  bsSize={null}
+  caseSensitive={false}
+  clearButton={true}
+  defaultSelected={Array []}
+  disabled={false}
+  dropup={false}
+  eventTypes={
+    Array [
+      "mousedown",
+      "touchstart",
+    ]
+  }
+  excludeScrollbar={false}
+  filterBy={Array []}
+  highlightOnlyResult={false}
+  labelKey="label"
+  maxHeight="300px"
+  maxResults={100}
+  minLength={0}
+  multiple={true}
+  options={
+    Array [
+      "One",
+      "Two",
+      "Three",
+    ]
+  }
+  outsideClickIgnoreClass="ignore-react-onclickoutside"
+  placeholder={null}
+  preventDefault={false}
+  selectHintOnEnter={false}
+  stopPropagation={false}
+/>
+`;

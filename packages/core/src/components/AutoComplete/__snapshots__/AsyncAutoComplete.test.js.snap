@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AsyncAutoComplete is working !! 1`] = `
+<AsyncContainer(OnClickOutside(TypeaheadContainer(WrappedTypeahead)))
+  delay={200}
+  isLoading={false}
+  labelKey="login"
+  minLength={0}
+  onSearch={[Function]}
+  options={Array []}
+  placeholder="Search someone who have forked Patternfly-react.."
+  promptText={
+    <span>
+      Type to search...
+    </span>
+  }
+  renderMenuItemChildren={[Function]}
+  searchText={
+    <span>
+      Searching...
+    </span>
+  }
+  useCache={true}
+/>
+`;
