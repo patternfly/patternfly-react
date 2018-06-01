@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Table } from './index';
+import { Table } from './Table';
 /**
  * TablePfProvider component for Patternfly React
  */

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table } from '../index';
+import TableHeading from '../TableHeading';
 
 const actionHeaderCellFormatter = (value, { column }) => (
-  <Table.Heading aria-label={column.header.label} {...column.header.props}>
+  <TableHeading aria-label={column.header.label} {...column.header.props}>
     {column.header.label}
-  </Table.Heading>
+  </TableHeading>
 );
 actionHeaderCellFormatter.propTypes = {
   /** cell value */
