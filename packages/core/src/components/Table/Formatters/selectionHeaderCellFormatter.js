@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Table } from '../index';
 import { noop } from '../../../common/helpers';
+import TableSelectionHeading from '../TableSelectionHeading';
+import TableCheckbox from '../TableCheckbox';
 
 const selectionHeaderCellFormatter = ({
   cellProps,
@@ -12,14 +13,14 @@ const selectionHeaderCellFormatter = ({
   const unselectedRows = rows.filter(r => !r.selected).length > 0;
   const id = cellProps.id || 'selectAll';
   return (
-    <Table.SelectionHeading aria-label={column.header.label} {...cellProps}>
-      <Table.Checkbox
+    <TableSelectionHeading aria-label={column.header.label} {...cellProps}>
+      <TableCheckbox
         id={id}
         label={column.header.label}
         checked={!unselectedRows}
         onChange={onSelectAllRows}
       />
-    </Table.SelectionHeading>
+    </TableSelectionHeading>
   );
 };
 selectionHeaderCellFormatter.propTypes = {

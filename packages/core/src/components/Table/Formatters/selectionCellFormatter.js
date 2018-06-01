@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from '../../../common/helpers';
-import { Table } from '../index';
+import TableSelectionCell from '../TableSelectionCell';
+import TableCheckbox from '../TableCheckbox';
 
 const selectionCellFormatter = (
   { rowData, rowIndex },
@@ -12,8 +13,8 @@ const selectionCellFormatter = (
   const checkboxId = id || `select${rowIndex}`;
   const checkboxLabel = label || `Select row ${rowIndex}`;
   return (
-    <Table.SelectionCell>
-      <Table.Checkbox
+    <TableSelectionCell>
+      <TableCheckbox
         id={checkboxId}
         label={checkboxLabel}
         checked={rowData.selected}
@@ -21,7 +22,7 @@ const selectionCellFormatter = (
           onSelectRow(e, rowData);
         }}
       />
-    </Table.SelectionCell>
+    </TableSelectionCell>
   );
 };
 selectionCellFormatter.propTypes = {

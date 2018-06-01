@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from '../../../common/helpers';
-import { Table } from '../index';
+import TableHeading from '../TableHeading';
 
 const sortableHeaderCellFormatter = ({
   cellProps,
@@ -13,7 +13,7 @@ const sortableHeaderCellFormatter = ({
     sortingColumns[column.property] &&
     sortingColumns[column.property].direction;
   return (
-    <Table.Heading
+    <TableHeading
       onClick={e => {
         onSort(e, column, sortDirection);
       }}
@@ -23,7 +23,7 @@ const sortableHeaderCellFormatter = ({
       {...cellProps}
     >
       {column.header.label}
-    </Table.Heading>
+    </TableHeading>
   );
 };
 sortableHeaderCellFormatter.propTypes = {
