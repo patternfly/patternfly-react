@@ -21,7 +21,7 @@ const Tag = ({
 
 Tag.propTypes = {
   onTagDeleteClick: PropTypes.func.isRequired,
-  tagCategory: PropTypes.object.isRequired,
+  tagCategory: PropTypes.PropTypes.shape({ id: PropTypes.number, description: PropTypes.string }).isRequired,
   tagValue: PropTypes.object.isRequired,
   truncate: PropTypes.func,
 };

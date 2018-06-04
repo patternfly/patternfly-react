@@ -6,8 +6,8 @@ import TagCategory from './TagCategory';
 class TagView extends React.Component {
   generateTagCategories = tag =>
     (<TagCategory
-      key={tag.tagCategory.id}
-      tagCategory={tag.tagCategory}
+      key={tag.id}
+      tagCategory={{ id: tag.id, description: tag.description }}
       tagValues={tag.tagValues}
       onTagDeleteClick={this.props.onTagDeleteClick}
     />);
@@ -20,7 +20,7 @@ class TagView extends React.Component {
         <Row>
           <Col lg={12}>
             <ul className="list-inline">
-              {assignedTags.sort((a, b) => a.tagCategory.description < b.tagCategory.description ? -1 : 1).map(this.generateTagCategories)}
+              {assignedTags.sort((a, b) => a.description < b.description ? -1 : 1).map(this.generateTagCategories)}
             </ul>
           </Col>
         </Row>
@@ -28,12 +28,17 @@ class TagView extends React.Component {
     );
   }
 }
-
 TagView.propTypes = {
-  assignedTags: PropTypes.arrayOf(PropTypes.object),
+  assignedTags: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    tagValues: PropTypes.arrayOf(PropTypes.shape(
+      { id: PropTypes.number.isRequired, description: PropTypes.string.isRequired }).isRequired).isRequired
+  })),
   onTagDeleteClick: PropTypes.func.isRequired,
   header: PropTypes.string,
 };
+
 
 TagView.defaultProps = {
   header: 'Assigned tags',

@@ -17,16 +17,17 @@ const ValueModifier = ({
 );
 
 ValueModifier.propTypes = {
-  selectedTagValue: PropTypes.object.isRequired,
+  selectedTagValue:PropTypes.shape({ id: PropTypes.number, description: PropTypes.string }),
   onTagValueChange: PropTypes.func.isRequired,
   valueLabel: PropTypes.string,
   multiValue: PropTypes.bool,
-  tagValues: PropTypes.arrayOf(PropTypes.object),
+  tagValues:PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number.isRequired, description: PropTypes.string.isRequired }).isRequired).isRequired,
 };
 
 ValueModifier.defaultProps = {
   valueLabel: 'Value',
   multiValue: true,
+  selectedOption: {},
 };
 
 export default ValueModifier;

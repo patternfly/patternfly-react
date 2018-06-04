@@ -48,14 +48,15 @@ class TagSelector extends React.Component {
   }
 }
 TagSelector.propTypes = {
-  tagCategories: PropTypes.arrayOf(PropTypes.object),
-  selectedOption: PropTypes.object.isRequired,
+  tagCategories: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number, description: PropTypes.string.isRequired }).isRequired).isRequired,
+  selectedOption: PropTypes.shape({ id: PropTypes.number, description: PropTypes.string }),
   onTagCategoryChange: PropTypes.func.isRequired,
   infoText: PropTypes.string,
 };
 
 TagSelector.defaultProps = {
   infoText: 'Only a single value can be assigned from these categories',
+  selectedOption: {},
 };
 
 export default TagSelector;

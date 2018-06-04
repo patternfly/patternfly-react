@@ -29,32 +29,32 @@ class TaggingStoryComponent extends React.Component {
 
   onTagValueChange = ({ tagValue, tagCategory }) => {
     const assignedTags = [...this.state.assignedTags];
-    const filteredTags = assignedTags.filter(tag => (tag.tagCategory.id !== tagCategory.id));
-    this.setState({assignedTags: [...filteredTags, { tagCategory: tagCategory, tagValues: [tagValue] } ]});
+    const filteredTags = assignedTags.filter(tag => (tag.id !== tagCategory.id));
+    this.setState({assignedTags: [...filteredTags, { ...tagCategory, tagValues: [tagValue] } ]});
     this.setState({selectedTagValue: tagValue});
   };
 
   onTagMultiValueChange = ({ tagValue, tagCategory }) => {
     const assignedTags = [...this.state.assignedTags];
-    const filteredTags = assignedTags.filter(tag => (tag.tagCategory.id !== tagCategory.id));
-    const selectedItem = assignedTags.find(tag => (tag.tagCategory.id === tagCategory.id)) || { tagValues: [] };
+    const filteredTags = assignedTags.filter(tag => (tag.id !== tagCategory.id));
+    const selectedItem = assignedTags.find(tag => (tag.id === tagCategory.id)) || { tagValues: [] };
     const oldValues = selectedItem.tagValues.filter(value => (value.id !== tagValue.id));
     this.setState({ assignedTags : [...filteredTags, {
-      tagCategory: { description: tagCategory.description, id: tagCategory.id },
-      tagValues: [...oldValues].concat([tagValue]),
-    }]});
+      description: tagCategory.description, id: tagCategory.id,
+      tagValues: [...oldValues].concat([tagValue])}
+    ]});
     this.setState({selectedTagValue: tagValue});
   };
 
   onTagDeleteClick = ({ tagCategory, tagValue }) => {
     const assignedTags = [...this.state.assignedTags];
-    const filteredTags = assignedTags.filter(tag => (tag.tagCategory.id !== tagCategory.id));
-    const selectedItem = assignedTags.find(tag => (tag.tagCategory.id === tagCategory.id)) || { tagValues: [] };
+    const filteredTags = assignedTags.filter(tag => (tag.id !== tagCategory.id));
+    const selectedItem = assignedTags.find(tag => (tag.id === tagCategory.id)) || { tagValues: [] };
     const filteredTagValues = selectedItem.tagValues.filter(value => (value.id !== tagValue.id));
 
     this.setState({ assignedTags: [...filteredTags,
       {
-        tagCategory: tagCategory,
+        ...tagCategory,
         tagValues: [...filteredTagValues],
       },
     ].filter(tag => (tag.tagValues.length !== 0))});

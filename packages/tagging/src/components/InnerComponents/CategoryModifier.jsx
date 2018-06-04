@@ -17,14 +17,15 @@ const CategoryModifier = ({
 );
 
 CategoryModifier.propTypes = {
-  tagCategories: PropTypes.arrayOf(PropTypes.object),
-  selectedTagCategory: PropTypes.object.isRequired,
+  tagCategories: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number, description: PropTypes.string.isRequired }).isRequired).isRequired,
+  selectedTagCategory: PropTypes.shape({ id: PropTypes.number, description: PropTypes.string }),
   onTagCategoryChange: PropTypes.func.isRequired,
   categoryLabel: PropTypes.string,
 };
 
 CategoryModifier.defaultProps = {
   categoryLabel: 'Category',
+  selectedTagCategory: {},
 };
 
 export default CategoryModifier;

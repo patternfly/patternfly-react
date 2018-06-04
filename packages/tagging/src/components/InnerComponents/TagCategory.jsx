@@ -27,7 +27,7 @@ class TagCategory extends React.Component {
 TagCategory.propTypes = {
   onTagDeleteClick: PropTypes.func.isRequired,
   tagCategory: PropTypes.object.isRequired,
-  tagValues: PropTypes.arrayOf(PropTypes.object).isRequired,
+  tagValues: PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number.isRequired, description: PropTypes.string.isRequired }).isRequired).isRequired,
   categoryTruncate: PropTypes.func,
   valueTruncate: PropTypes.func,
 };

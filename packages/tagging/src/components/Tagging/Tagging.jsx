@@ -62,10 +62,20 @@ class Tagging extends React.Component {
 }
 
 Tagging.propTypes = {
-  selectedTagCategory: PropTypes.object.isRequired,
-  selectedTagValue: PropTypes.object.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.object),
-  assignedTags: PropTypes.arrayOf(PropTypes.object),
+  selectedTagCategory: PropTypes.shape({ id: PropTypes.number, description: PropTypes.string }),
+  selectedTagValue: PropTypes.shape({ id: PropTypes.number, description: PropTypes.string }),
+  tags: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    values: PropTypes.arrayOf(PropTypes.shape(
+      { id: PropTypes.number.isRequired, description: PropTypes.string.isRequired }).isRequired).isRequired
+  })),
+  assignedTags: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    tagValues: PropTypes.arrayOf(PropTypes.shape(
+      { id: PropTypes.number.isRequired, description: PropTypes.string.isRequired }).isRequired).isRequired
+  })),
   onTagDeleteClick: PropTypes.func.isRequired,
   onTagCategoryChange: PropTypes.func.isRequired,
   onTagValueChange: PropTypes.func.isRequired,

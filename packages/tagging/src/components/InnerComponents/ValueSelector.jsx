@@ -26,9 +26,13 @@ class ValueSelector extends React.Component {
 }
 
 ValueSelector.propTypes = {
-  selectedOption: PropTypes.object.isRequired,
-  tagValues: PropTypes.arrayOf(PropTypes.object),
+  selectedOption: PropTypes.shape({ id: PropTypes.number, description: PropTypes.string }),
+  tagValues:PropTypes.arrayOf(PropTypes.shape({ id: PropTypes.number.isRequired, description: PropTypes.string.isRequired }).isRequired).isRequired,
   onTagValueChange: PropTypes.func.isRequired,
 };
+
+ValueSelector.defaultProps = {
+  selectedOption: {},
+}
 
 export default ValueSelector;
