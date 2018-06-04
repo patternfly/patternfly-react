@@ -27,6 +27,7 @@ Array [
         >
           <div
             className="category-label"
+            title="Name"
           >
             Name
           </div>
@@ -35,6 +36,7 @@ Array [
           >
             <span
               className="tagColor label label-primary"
+              title="Pepa"
             >
               Pepa
               <a

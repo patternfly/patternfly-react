@@ -4,7 +4,8 @@ import renderer from 'react-test-renderer';
 
 const assignedTags = [
   {
-    tagCategory: { description: 'Name', id: 1 },
+    description: 'Name',
+    id: 1,
     tagValues: [{ description: 'Pepa', id: 11 }]
   }
 ];

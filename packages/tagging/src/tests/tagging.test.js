@@ -50,7 +50,8 @@ const selectedTagCategory = { description: 'animal', id: 1 };
 const selectedTagValue = { description: 'duck', id: 1 };
 const assignedTags = [
   {
-    tagCategory: { description: 'Name', id: 1 },
+    description: 'Name',
+    id: 1,
     tagValues: [{ description: 'Pepa', id: 11 }]
   }
 ];

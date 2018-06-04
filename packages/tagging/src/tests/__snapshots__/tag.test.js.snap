@@ -6,8 +6,8 @@ exports[`Tag Component match snapshot 1`] = `
 >
   <span
     className="tagColor label label-primary"
+    title="duck"
   >
-    duck
     <a
       className="pf-remove-button"
       href="#"

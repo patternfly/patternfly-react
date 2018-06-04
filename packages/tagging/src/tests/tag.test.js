@@ -15,6 +15,7 @@ describe('Tag Component', () => {
         tagCategory={tagCategory}
         tagValue={tagValue}
         onTagDeleteClick={onDelete}
+        truncate={jest.fn()}
       />
     );
     const tree = component.toJSON();
