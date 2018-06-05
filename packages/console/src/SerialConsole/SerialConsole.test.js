@@ -53,3 +53,27 @@ test('Render SerialConsole in the CONNECTED state', () => {
   const view = render(connectedState);
   expect(view).toMatchSnapshot();
 });
+
+test('Pass class to SerialConsole', () => {
+  const view = shallow(
+    <SerialConsole
+      onConnect={jest.fn()}
+      onDisconnect={jest.fn()}
+      status={LOADING}
+      topClassName="my-top-class"
+    />
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('Enable autoFit for SerialConsole', () => {
+  const view = shallow(
+    <SerialConsole
+      onConnect={jest.fn()}
+      onDisconnect={jest.fn()}
+      status={CONNECTED}
+      autoFit
+    />
+  );
+  expect(view).toMatchSnapshot();
+});
