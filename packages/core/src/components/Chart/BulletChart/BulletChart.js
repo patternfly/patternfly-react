@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { patternfly } from '../../../common/patternfly';
+import { Tooltip } from '../../Tooltip/index';
 
 import BulletChartValue from './BulletChartValue';
 import BulletChartRange from './BulletChartRange';
@@ -11,6 +12,8 @@ import BulletChartLegend from './BulletChartLegend';
 import BulletChartLegendItem from './BulletChartLegendItem';
 import BulletChartThreshold from './BulletChartThreshold';
 import BulletChartTitle from './BulletChartTitle';
+
+const randomId = () => Date.now();
 
 const defaultPrimaryColors = [
   patternfly.pfPaletteColors.blue300,
@@ -98,9 +101,9 @@ const BulletChart = ({
 
     return (
       <div className="bullet-chart-pf-values-container">
-        {displayValues.map(value => (
+        {displayValues.map((value, index) => (
           <BulletChartValue
-            key={value.title}
+            key={`${value.title}-${index}`}
             value={value}
             prevValue={getPrevValue(value.value)}
             dot={useDots}
@@ -119,22 +122,56 @@ const BulletChart = ({
 
       return (
         <BulletChartLegend>
-          {displayValues.map((value, index) => (
-            <BulletChartLegendItem
-              key={index}
-              title={value.title}
-              value={value.value}
-              color={value.color}
-            />
-          ))}
-          {rangeValues.map((range, index) => (
-            <BulletChartLegendItem
-              key={`range-${index}`}
-              title={range.title}
-              value={range.value}
-              boxClassName={`range-${index}`}
-            />
-          ))}
+          {displayValues.map((value, index) => {
+            const tooltipFunction = () => {
+              if (value.tooltipFunction) {
+                return value.tooltipFunction(value.value, value.title);
+              }
+
+              return (
+                <Tooltip id={value.tooltipId || randomId()}>
+                  {`${value.title}: ${value.value}%`}
+                </Tooltip>
+              );
+            };
+
+            return (
+              <BulletChartLegendItem
+                key={`value-${index}`}
+                title={value.title}
+                value={value.value}
+                color={value.color}
+                tooltipFunction={tooltipFunction}
+              />
+            );
+          })}
+          {rangeValues.map((range, index) => {
+            if (range.value > 0 && range.value <= 100) {
+              const tooltipFunction = () => {
+                if (range.tooltipFunction) {
+                  return range.tooltipFunction(range.value, range.title);
+                }
+
+                return (
+                  <Tooltip id={range.tooltipId || randomId()}>
+                    {`${range.title}: ${range.value}%`}
+                  </Tooltip>
+                );
+              };
+
+              return (
+                <BulletChartLegendItem
+                  key={`range-${index}`}
+                  title={range.title}
+                  value={range.value}
+                  boxClassName={`range-${index}`}
+                  tooltipFunction={tooltipFunction}
+                />
+              );
+            }
+
+            return null;
+          })}
         </BulletChartLegend>
       );
     }
@@ -249,6 +286,7 @@ BulletChart.propTypes = {
     PropTypes.shape({
       value: PropTypes.number.isRequired,
       title: PropTypes.string,
+      /** tooltip function(value, title) */
       tooltipFunction: PropTypes.func
     })
   ),
