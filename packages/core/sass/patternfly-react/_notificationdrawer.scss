@@ -23,19 +23,31 @@
     }
 
     .panel-collapse.in {
-      display: flex;
-      flex-direction: column;
-      flex: 1 1 auto;
       min-height: 0;
+      overflow-y: auto;
 
       .panel-body {
-        flex: 1 1 auto;
-        overflow-y: auto;
+        display: block;
+        .dropdown-menu-right {
+          position: absolute;
+          .btn-group {
+            z-index: 1;
+          }
+        }
       }
     }
   }
 
   .drawer-pf-action {
-    flex: none;
+    position: relative;
+    position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    bottom: 0px;
+    z-index: 10;
+    background-color: $color-pf-white;
+    border-top: 1px solid $card-pf-border-color;
   }
 }
