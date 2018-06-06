@@ -108,7 +108,7 @@ exports[`BulletChart renders custom Axis properly 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -117,7 +117,7 @@ exports[`BulletChart renders custom Axis properly 1`] = `
       className=""
       color="#0088ce"
       title="data2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={20}
     />
@@ -126,7 +126,7 @@ exports[`BulletChart renders custom Axis properly 1`] = `
       className=""
       color={undefined}
       title="Range 1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -135,7 +135,7 @@ exports[`BulletChart renders custom Axis properly 1`] = `
       className=""
       color={undefined}
       title="Range 2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -144,7 +144,7 @@ exports[`BulletChart renders custom Axis properly 1`] = `
       className=""
       color={undefined}
       title="Range 3"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
@@ -1122,7 +1122,7 @@ exports[`BulletChart renders properly with all fields 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -1131,7 +1131,7 @@ exports[`BulletChart renders properly with all fields 1`] = `
       className=""
       color="#0088ce"
       title="data2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={20}
     />
@@ -1140,7 +1140,7 @@ exports[`BulletChart renders properly with all fields 1`] = `
       className=""
       color={undefined}
       title="Range 1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -1149,7 +1149,7 @@ exports[`BulletChart renders properly with all fields 1`] = `
       className=""
       color={undefined}
       title="Range 2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -1158,7 +1158,7 @@ exports[`BulletChart renders properly with all fields 1`] = `
       className=""
       color={undefined}
       title="Range 3"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
@@ -1623,7 +1623,7 @@ exports[`BulletChart renders properly with only value in the legend 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -1632,7 +1632,7 @@ exports[`BulletChart renders properly with only value in the legend 1`] = `
       className=""
       color={undefined}
       title=""
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -1641,7 +1641,7 @@ exports[`BulletChart renders properly with only value in the legend 1`] = `
       className=""
       color={undefined}
       title=""
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -1650,7 +1650,7 @@ exports[`BulletChart renders properly with only value in the legend 1`] = `
       className=""
       color={undefined}
       title=""
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
@@ -2113,7 +2113,7 @@ exports[`BulletChart renders properly without axis 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -2122,7 +2122,7 @@ exports[`BulletChart renders properly without axis 1`] = `
       className=""
       color="#0088ce"
       title="data2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={20}
     />
@@ -2131,7 +2131,7 @@ exports[`BulletChart renders properly without axis 1`] = `
       className=""
       color={undefined}
       title="Range 1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -2140,7 +2140,7 @@ exports[`BulletChart renders properly without axis 1`] = `
       className=""
       color={undefined}
       title="Range 2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -2149,7 +2149,7 @@ exports[`BulletChart renders properly without axis 1`] = `
       className=""
       color={undefined}
       title="Range 3"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
@@ -2283,7 +2283,7 @@ exports[`BulletChart renders stacked chart properly 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -2292,7 +2292,7 @@ exports[`BulletChart renders stacked chart properly 1`] = `
       className=""
       color="#0088ce"
       title="data2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={20}
     />
@@ -2301,7 +2301,7 @@ exports[`BulletChart renders stacked chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -2310,7 +2310,7 @@ exports[`BulletChart renders stacked chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -2319,7 +2319,7 @@ exports[`BulletChart renders stacked chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 3"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
@@ -2453,7 +2453,7 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -2462,7 +2462,7 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
       className=""
       color="#0088ce"
       title="data2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={20}
     />
@@ -2471,7 +2471,7 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -2480,7 +2480,7 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -2489,7 +2489,7 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 3"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
@@ -2627,7 +2627,7 @@ exports[`BulletChart renders vertical chart properly 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -2636,7 +2636,7 @@ exports[`BulletChart renders vertical chart properly 1`] = `
       className=""
       color="#0088ce"
       title="data2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={20}
     />
@@ -2645,7 +2645,7 @@ exports[`BulletChart renders vertical chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -2654,7 +2654,7 @@ exports[`BulletChart renders vertical chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -2663,7 +2663,7 @@ exports[`BulletChart renders vertical chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 3"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
@@ -2801,7 +2801,7 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -2810,7 +2810,7 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
       className=""
       color="#0088ce"
       title="data2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={20}
     />
@@ -2819,7 +2819,7 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -2828,7 +2828,7 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -2837,7 +2837,7 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 3"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
@@ -2975,7 +2975,7 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -2984,7 +2984,7 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
       className=""
       color="#0088ce"
       title="data2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={20}
     />
@@ -2993,7 +2993,7 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -3002,7 +3002,7 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -3011,7 +3011,7 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 3"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
@@ -3149,7 +3149,7 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
       className=""
       color="#39a5dc"
       title="data1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={10}
     />
@@ -3158,7 +3158,7 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
       className=""
       color="#0088ce"
       title="data2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={20}
     />
@@ -3167,7 +3167,7 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 1"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={50}
     />
@@ -3176,7 +3176,7 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 2"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={70}
     />
@@ -3185,7 +3185,7 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
       className=""
       color={undefined}
       title="Range 3"
-      tooltipFunction={undefined}
+      tooltipFunction={[Function]}
       tooltipId={undefined}
       value={100}
     />
