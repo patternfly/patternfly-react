@@ -45,7 +45,8 @@ export default {
     'react/forbid-prop-types': 'off',
     'react/jsx-filename-extension': 'off',
     'react/jsx-uses-vars': 'error',
-    'react/no-danger': 'off'
+    'react/no-danger': 'off',
+    'react/sort-comp': 'off'
   },
   extends: [
     'standard',
