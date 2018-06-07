@@ -7,9 +7,7 @@
     }
 
     .Select-value-label{
-      span:first-child {
-        float: left;
-      }
+      .tag-icon{display: none};
     }
   }
 }

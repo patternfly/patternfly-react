@@ -10,38 +10,39 @@ class TagSelector extends React.Component {
     });
   }
 
-
-  tagCategories = this.props.tagCategories.map(category => ((category.singleValue &&
-        {
-          value: category.id,
-          label:
-  <div>
+  labelWithIcon = (description, infoText) => (<div>
     <span>
-      {category.description}
+      {description}
     </span>
     <span
       className="pull-right pficon pficon-info tag-icon"
       aria-hidden="true"
-      title={this.props.infoText}
+      title={infoText}
     />
-    <span className="sr-only">{this.props.infoText}</span>
-  </div>,
-        }) ||
-        { value: category.id, label: category.description }));
+    <span className="sr-only">{infoText}</span>
+  </div>)
+
+
+  tagCategories = this.props.tagCategories.map(category => ({
+          keyWord: category.description.toLowerCase(),
+          value: category.id,
+          label: category.singleValue ? this.labelWithIcon(category.description, this.props.infoText) : category.description,
+        }));
 
   render() {
+    const id = this.props.selectedOption.id;
     const label = this.props.selectedOption.description;
-    const value = this.props.selectedOption.id;
     return (
       <Select
+        value={id}
+        label={label}
+        options={this.tagCategories}
+        onChange={this.handleChange}
         className="selected-option"
         name="form-field-name"
-        value={value}
-        label={label}
-        inputProps={{'foo' : 'bar'}}
-        onChange={this.handleChange}
-        options={this.tagCategories}
+        filterOptions={(options, filter) => options.filter(item => item.keyWord.includes(filter.toLowerCase())) }
         clearable={false}
+
       />
 
     );

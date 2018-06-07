@@ -17,6 +17,7 @@ class ValueSelector extends React.Component {
     onChange={this.handleChange}
     options={tagValues}
     clearable={false}
+    ignoreCase
   />)
 
 
