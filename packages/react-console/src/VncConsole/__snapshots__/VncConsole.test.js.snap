@@ -1,7 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`placeholder render test 1`] = `
-<div>
-  VncConsole
-</div>
+<withContext(Toolbar)
+  className="vnc-console"
+>
+  <ToolbarResults
+    className=""
+  >
+    <div
+      className="vnc-console-connecting"
+    >
+      Connecting
+    </div>
+    <div />
+  </ToolbarResults>
+</withContext(Toolbar)>
 `;
