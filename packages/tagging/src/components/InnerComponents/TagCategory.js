@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { OverlayTrigger, Tooltip } from 'patternfly-react';
 import Tag from './Tag';
+
+
 
 class TagCategory extends React.Component {
 
@@ -15,9 +18,16 @@ class TagCategory extends React.Component {
 
   render() {
     let values = [...this.props.tagValues];
+    const categoryTooltip = (
+      <Tooltip id="tooltip">
+        {this.props.tagCategory.description}
+      </Tooltip>
+    );
     return (
       <ul className="tag-category list-inline">
-        <div className="category-label" title={this.props.tagCategory.description}>{this.props.categoryTruncate(this.props.tagCategory.description)}</div>
+        <OverlayTrigger placement="bottom" overlay={categoryTooltip}>
+          <div className="category-label" >{this.props.categoryTruncate(this.props.tagCategory.description)}</div>
+        </OverlayTrigger>
         {values.sort((a,b) => a.description < b.description ? -1 : 1).map(tagValue => this.generateTag(tagValue))}
       </ul>
     );
