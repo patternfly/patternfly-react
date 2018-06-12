@@ -1,0 +1,6 @@
+{
+  "extends": "../../.eslintrc.js",
+  "globals": {
+    "graphql": true
+  }
+}

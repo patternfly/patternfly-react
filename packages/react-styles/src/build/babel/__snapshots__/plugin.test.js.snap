@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ignores none css imports 1`] = `"import something from 'something';"`;
+
+exports[`updates the import path 1`] = `"import styles from 'something.css.js';"`;
+
+exports[`validates class reference 1`] = `"unknown: doesNotExist does not exist"`;
+
+exports[`validates modifier reference 1`] = `"unknown: doesNotExist is not a valid modifier"`;

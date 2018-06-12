@@ -5,16 +5,10 @@ import './sass/base.scss';
 
 setAddon(infoAddon);
 
-const coreContext = require.context('../packages/core', true, /\.stories\.js$/);
-const consoleContext = require.context(
-  '../packages/console',
-  true,
-  /\.stories\.js$/
-);
+const storyContext = require.context('../packages', true, /\.stories\.js$/);
 
 function loadStories() {
-  coreContext.keys().forEach(coreContext);
-  consoleContext.keys().forEach(consoleContext);
+  storyContext.keys().forEach(storyContext);
 }
 
 setOptions({

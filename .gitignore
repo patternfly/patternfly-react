@@ -3,6 +3,8 @@ dist
 .out
 .DS_Store
 coverage
+public/
+.cache
 
 # package managers
 yarn-error.log

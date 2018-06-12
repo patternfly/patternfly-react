@@ -2,7 +2,7 @@ const babelENV = process.env.BABEL_ENV || 'development';
 const modules = babelENV !== 'production:esm' ? 'commonjs' : false;
 
 module.exports = {
-  presets: [['env', { modules: modules }], 'react'],
+  presets: [['env', { modules }], 'react'],
   plugins: [
     'transform-class-properties',
     'transform-export-extensions',

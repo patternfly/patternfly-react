@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`converts a css string into an object 1`] = `
+Object {
+  "alert": Object {
+    "__className": "pf-c-alert",
+    "__inject": [Function],
+  },
+  "button": Object {
+    "__className": "pf-c-button",
+    "__inject": [Function],
+  },
+  "modifiers": Object {},
+}
+`;
+
+exports[`places modifers in the modifers object 1`] = `
+Object {
+  "modifiers": Object {
+    "active": Object {
+      "__className": "pf-m-active",
+      "__inject": [Function],
+    },
+    "secondaryAlt": Object {
+      "__className": "pf-m-secondary-alt",
+      "__inject": [Function],
+    },
+  },
+}
+`;

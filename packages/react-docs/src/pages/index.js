@@ -1,0 +1,38 @@
+import React from 'react';
+import Content from '../components/content';
+import { Title } from '@patternfly/react-core';
+import { StyleSheet, css } from '@patternfly/react-styles';
+import packageJson from '../../../react-core/package.json';
+import {
+  global_Color_dark_100 as heroBackgrounColor,
+  global_Color_light_100 as heroTextColor
+} from '@patternfly/react-tokens';
+
+const styles = StyleSheet.create({
+  hero: {
+    height: '100vh',
+    backgroundColor: heroBackgrounColor.var,
+    display: 'flex',
+    alignItems: 'center'
+  },
+  heroText: {
+    color: heroTextColor.var
+  }
+});
+
+const IndexPage = () => (
+  <div>
+    <div className={css(styles.hero)}>
+      <Content>
+        <Title size="xxxxl" withMargins className={css(styles.heroText)}>
+          Patternfly React
+        </Title>
+        <Title size="md" className={css(styles.heroText)}>
+          Version: {packageJson.version}
+        </Title>
+      </Content>
+    </div>
+  </div>
+);
+
+export default IndexPage;
