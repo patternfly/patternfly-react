@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AsyncTypeAheadSelect is working !! 1`] = `
+<AsyncContainer(OnClickOutside(TypeaheadContainer(WrappedTypeahead)))
+  delay={200}
+  isLoading={false}
+  labelKey="login"
+  minLength={0}
+  onSearch={[Function]}
+  options={Array []}
+  placeholder="Search someone who have forked Patternfly-react.."
+  promptText="Type to search..."
+  renderMenuItemChildren={[Function]}
+  searchText="Searching..."
+  useCache={true}
+/>
+`;
