@@ -158,5 +158,8 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "react-select": "^1.2.1"
   }
 }

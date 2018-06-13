@@ -3,15 +3,13 @@ import { storiesOf } from '@storybook/react';
 import TaggingStoryComponent from '../components/InnerComponents/TaggingStoryComponent';
 import { name } from '../../package.json';
 import './index.scss';
-import { withInfo } from '@storybook/addon-info';
-import { defaultTemplate, inlineTemplate } from 'storybook/decorators/storyTemplates';
+import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 
 const stories = storiesOf(`${name}/Tagging`, module);
 stories.addDecorator(
   defaultTemplate({
     title: 'Tagging',
-    description:
-      'This is an example of the Tagging component.'
+    description: 'This is an example of the Tagging component.'
   })
 );
 

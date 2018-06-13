@@ -6,7 +6,11 @@ exports[`TagCategory Component match snapshot 1`] = `
 >
   <div
     className="category-label"
-    title="animal"
+    onBlur={[Function]}
+    onClick={null}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     animal
   </div>
@@ -15,7 +19,11 @@ exports[`TagCategory Component match snapshot 1`] = `
   >
     <span
       className="tagColor label label-primary"
-      title="duck"
+      onBlur={[Function]}
+      onClick={null}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
     >
       duck
       <a
@@ -40,7 +48,11 @@ exports[`TagCategory Component match snapshot 1`] = `
   >
     <span
       className="tagColor label label-primary"
-      title="lion"
+      onBlur={[Function]}
+      onClick={null}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
     >
       lion
       <a

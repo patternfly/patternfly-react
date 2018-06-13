@@ -86,7 +86,6 @@ Array [
                   aria-labelledby={undefined}
                   aria-owns=""
                   className={undefined}
-                  foo="bar"
                   id={undefined}
                   onBlur={[Function]}
                   onChange={[Function]}

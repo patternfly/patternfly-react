@@ -94,7 +94,6 @@ exports[`Tagging component without redux mapping match snapshot 1`] = `
                       aria-labelledby={undefined}
                       aria-owns=""
                       className={undefined}
-                      foo="bar"
                       id={undefined}
                       onBlur={[Function]}
                       onChange={[Function]}
@@ -270,7 +269,11 @@ exports[`Tagging component without redux mapping match snapshot 1`] = `
             >
               <div
                 className="category-label"
-                title="Name"
+                onBlur={[Function]}
+                onClick={null}
+                onFocus={[Function]}
+                onMouseOut={[Function]}
+                onMouseOver={[Function]}
               >
                 Name
               </div>
@@ -279,7 +282,11 @@ exports[`Tagging component without redux mapping match snapshot 1`] = `
               >
                 <span
                   className="tagColor label label-primary"
-                  title="Pepa"
+                  onBlur={[Function]}
+                  onClick={null}
+                  onFocus={[Function]}
+                  onMouseOut={[Function]}
+                  onMouseOver={[Function]}
                 >
                   Pepa
                   <a

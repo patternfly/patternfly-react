@@ -1,22 +1,12 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Label } from 'patternfly-react';
-import { OverlayTrigger, Tooltip } from 'patternfly-react';
+import { Label, OverlayTrigger, Tooltip } from 'patternfly-react';
 
+const tooltip = text => <Tooltip id="tooltip">{text}</Tooltip>;
 
-const tooltip = (text) => (
-  <Tooltip id="tooltip">
-    {text}
-  </Tooltip>
-);
-
-const Tag = ({
-  onTagDeleteClick, tagCategory, tagValue, truncate,
-}) => (
+const Tag = ({ onTagDeleteClick, tagCategory, tagValue, truncate }) => (
   <li key={tagValue.id} className="tag">
-    <OverlayTrigger
-      placement="bottom"
-      overlay={tooltip(tagValue.description)}>
+    <OverlayTrigger placement="bottom" overlay={tooltip(tagValue.description)}>
       <Label
         key={tagValue.id}
         bsStyle="primary"
@@ -31,9 +21,12 @@ const Tag = ({
 
 Tag.propTypes = {
   onTagDeleteClick: PropTypes.func.isRequired,
-  tagCategory: PropTypes.PropTypes.shape({ id: PropTypes.number, description: PropTypes.string }).isRequired,
+  tagCategory: PropTypes.PropTypes.shape({
+    id: PropTypes.number,
+    description: PropTypes.string
+  }).isRequired,
   tagValue: PropTypes.object.isRequired,
-  truncate: PropTypes.func,
+  truncate: PropTypes.func.isRequired
 };
 
 export default Tag;

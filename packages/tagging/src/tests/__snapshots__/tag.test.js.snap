@@ -6,7 +6,11 @@ exports[`Tag Component match snapshot 1`] = `
 >
   <span
     className="tagColor label label-primary"
-    title="duck"
+    onBlur={[Function]}
+    onClick={null}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
   >
     <a
       className="pf-remove-button"

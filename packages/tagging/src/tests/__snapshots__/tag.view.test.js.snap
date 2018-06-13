@@ -27,7 +27,11 @@ Array [
         >
           <div
             className="category-label"
-            title="Name"
+            onBlur={[Function]}
+            onClick={null}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
           >
             Name
           </div>
@@ -36,7 +40,11 @@ Array [
           >
             <span
               className="tagColor label label-primary"
-              title="Pepa"
+              onBlur={[Function]}
+              onClick={null}
+              onFocus={[Function]}
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
             >
               Pepa
               <a
