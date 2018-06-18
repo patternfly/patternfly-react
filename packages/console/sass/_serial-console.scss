@@ -2,6 +2,10 @@
   SerialConsole styles
 */
 
+.serial-console-pf {
+  height: 100%;
+}
+
 .console-pf > .terminal {
   color: $color-pf-white;
   text-align: left;
@@ -18,6 +22,7 @@
   margin-bottom: 0;
   text-align: center;
   line-height: normal;
+  height: 100%;
 }
 
 .console-pf .terminal .terminal-cursor {
@@ -43,7 +48,7 @@
 
 .console-terminal-pf {
   width: 100%;
-  height: 40%;
+  height: 100%;
   padding-right: 0;
   padding-left: 0;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { storiesOf } from '@storybook/react';
+import { withKnobs, boolean, number } from '@storybook/addon-knobs';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName } from 'storybook/constants/siteConstants';
 
@@ -20,6 +22,7 @@ stories.addDecorator(
       'This is an example of the SerialConsole component. For the purpose of this example, there is just a mock backend.'
   })
 );
+stories.addDecorator(withKnobs);
 
 /* eslint no-console: ["warn", { allow: ["log"] }] */
 const { log } = console; // let's keep these trace messages for tutoring purposes
@@ -139,16 +142,37 @@ class SerialConsoleConnector extends React.Component {
       <SerialConsole
         onConnect={this.onConnect}
         onDisconnect={this.onDisconnect}
-        onResize={this.onResize()}
+        onResize={this.onResize}
         onData={this.onData}
         id="my-serialconsole"
         status={this.state.status}
         ref={c => {
           this.childSerialconsole = c;
         }}
+        autoFit={this.props.autoFit}
+        cols={this.props.cols}
+        rows={this.props.rows}
       />
     );
   }
 }
 
-stories.addWithInfo('SerialConsole', () => <SerialConsoleConnector />);
+SerialConsoleConnector.propTypes = {
+  autoFit: PropTypes.bool,
+  rows: PropTypes.number,
+  cols: PropTypes.number
+};
+
+SerialConsoleConnector.defaultProps = {
+  autoFit: false,
+  rows: undefined,
+  cols: undefined
+};
+
+stories.addWithInfo('SerialConsole', () => {
+  const autoFit = boolean('Auto fit', true);
+  const cols = autoFit ? undefined : number('Columns', 90);
+  const rows = autoFit ? undefined : number('Rows', 35);
+
+  return <SerialConsoleConnector autoFit={autoFit} cols={cols} rows={rows} />;
+});

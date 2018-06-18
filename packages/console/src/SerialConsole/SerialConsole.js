@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import { EmptyState, Button, noop } from 'patternfly-react';
 import { CONNECTED, DISCONNECTED, LOADING } from './constants';
@@ -71,8 +72,10 @@ class SerialConsole extends React.Component {
             ref={c => {
               this.childTerminal = c;
             }}
+            className="serial-console-pf"
             cols={this.props.cols}
             rows={this.props.rows}
+            autoFit={this.props.autoFit}
             fontFamily={this.props.fontFamily}
             fontSize={this.props.fontSize}
             onConnect={this.props.onConnect}
@@ -109,8 +112,10 @@ class SerialConsole extends React.Component {
         break;
     }
 
+    const classes = classNames('serial-console-pf', topClassName);
+
     return (
-      <div className={topClassName} id={id}>
+      <div className={classes} id={id}>
         <SerialConsoleActions
           idPrefix={idPrefix}
           isDisconnectEnabled={isDisconnectEnabled}
@@ -144,6 +149,7 @@ SerialConsole.propTypes = {
   /** Size of the terminal component */
   rows: PropTypes.number,
   cols: PropTypes.number,
+  autoFit: PropTypes.bool,
 
   /** Font for text rendered to xterm canvas */
   fontFamily: PropTypes.string,
@@ -167,6 +173,7 @@ SerialConsole.defaultProps = {
   id: '',
   rows: 25,
   cols: 80,
+  autoFit: false,
 
   fontFamily: undefined /** Use xterm default: 'courier-new, courier, monospace' */,
   fontSize: undefined /** Use xterm default: 15 */,

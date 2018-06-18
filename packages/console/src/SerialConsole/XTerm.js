@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Terminal } from 'xterm';
+import { proposeGeometry } from 'xterm/lib/addons/fit/fit';
 
 import { noop } from 'patternfly-react';
+import { debounce } from '../common/helpers';
 
 /**
  * Wraps terminal to a React Component.
  * Based on cockpit-components-terminal.jsx from the Cockpit project (https://github.com/cockpit-project/cockpit)
  */
 class XTerm extends React.Component {
-  state = { terminal: null, rows: null, cols: null };
+  state = { terminal: null, rows: null, cols: null, autoFit: false };
 
   componentWillMount() {
     const term = new Terminal({
@@ -28,25 +30,55 @@ class XTerm extends React.Component {
       term.on('title', this.props.onTitleChanged);
     }
 
-    this.setState({ terminal: term });
+    this.setState({
+      terminal: term,
+      cols: this.props.cols,
+      rows: this.props.rows,
+      autoFit: this.props.autoFit
+    });
   }
 
   componentDidMount() {
     this.state.terminal.open(this.childTerminal);
 
-    if (!this.props.rows) {
-      window.addEventListener('resize', this.onWindowResize);
-      this.onWindowResize();
+    window.addEventListener(
+      'resize',
+      debounce(this.onWindowResize.bind(this), 100)
+    );
+    this.onWindowResize();
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (
+      newProps.cols !== this.state.cols ||
+      newProps.rows !== this.state.rows ||
+      newProps.autoFit !== this.state.autoFit
+    ) {
+      this.setState({
+        cols: newProps.cols,
+        rows: newProps.rows,
+        autoFit: newProps.autoFit
+      });
     }
   }
 
   componentWillUpdate(nextProps, nextState) {
     if (
       nextState.cols !== this.state.cols ||
-      nextState.rows !== this.state.rows
+      nextState.rows !== this.state.rows ||
+      nextState.autoFit !== this.state.autoFit
     ) {
-      this.state.terminal.resize(nextState.cols, nextState.rows);
-      this.props.onResize(nextState.rows, nextState.cols);
+      if (nextState.autoFit) {
+        // If it is autoFit, get the computed size and set it
+        this.removeMinWidth();
+        const geometry = proposeGeometry(this.state.terminal);
+        this.state.terminal.resize(geometry.cols, geometry.rows);
+        this.props.onResize(geometry.rows, geometry.cols);
+      } else {
+        this.addMinWidth(nextState.cols);
+        this.state.terminal.resize(nextState.cols, nextState.rows);
+        this.props.onResize(nextState.rows, nextState.cols);
+      }
     }
   }
 
@@ -99,26 +131,47 @@ class XTerm extends React.Component {
     window.removeEventListener('beforeunload', this.onBeforeUnload);
   };
 
-  onWindowResize = () => {
-    const padding = 2 * 11;
-    const node = this.getDOMNode();
-    const terminal = this.childTerminal.querySelector('.terminal');
+  /**
+   * If autoFit is enabled, compute the size and set it
+   * Otherwise set the min-width on the console
+   */
+  onWindowResize() {
+    if (this.state.autoFit) {
+      this.removeMinWidth();
+      const geometry = proposeGeometry(this.state.terminal);
+      if (geometry) {
+        this.setState({
+          rows: geometry.rows,
+          cols: geometry.cols
+        });
+      }
+    } else {
+      this.addMinWidth(this.state.cols);
+    }
+  }
 
-    const ch = document.createElement('span');
-    ch.textContent = 'M';
-    ch.style.position = 'absolute';
-    terminal.appendChild(ch);
-    const rect = ch.getBoundingClientRect();
-    terminal.removeChild(ch);
+  /**
+   * Calculate the minimum width of the terminal based on the number of columns
+   *
+   * @param {Number} cols Number of columns
+   */
+  addMinWidth(cols) {
+    if (this.childTerminal) {
+      const padding = 2 * 11;
+      const { actualCellWidth } = this.state.terminal.renderer.dimensions;
+      const minWidth = actualCellWidth * cols + padding;
+      this.childTerminal.style.minWidth = `${minWidth}px`;
+    }
+  }
 
-    const state = {
-      rows: Math.floor(
-        (node.parentElement.clientHeight - padding) / rect.height
-      ),
-      cols: Math.floor((node.parentElement.clientWidth - padding) / rect.width)
-    };
-    this.setState(state);
-  };
+  /**
+   * Remove the min-width on the console
+   */
+  removeMinWidth() {
+    if (this.childTerminal) {
+      this.childTerminal.style.minWidth = '';
+    }
+  }
 
   focus = () => {
     if (this.state.terminal) this.state.terminal.focus();
@@ -143,6 +196,7 @@ class XTerm extends React.Component {
 XTerm.propTypes = {
   cols: PropTypes.number,
   rows: PropTypes.number,
+  autoFit: PropTypes.bool,
 
   fontFamily: PropTypes.string,
   fontSize: PropTypes.number,
@@ -155,6 +209,7 @@ XTerm.propTypes = {
 XTerm.defaultProps = {
   cols: 80,
   rows: 25,
+  autoFit: false,
 
   fontFamily: undefined,
   fontSize: undefined,
