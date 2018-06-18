@@ -115,12 +115,6 @@
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.4.tgz#e95ccf5aa8f3fabbc96bca06ccb271715eda1df2"
 
-"@patternfly/react-core@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-0.0.1.tgz#9594d05aed3bcb5eba95992fbe4a7de879b1eab9"
-  dependencies:
-    "@patternfly/react-styles" "^1.0.0"
-
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
