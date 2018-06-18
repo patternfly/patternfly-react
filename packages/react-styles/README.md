@@ -141,7 +141,7 @@ const Buttton = ({ isActive, isDisabled, children }) => (
 
 ### `getModifier(styles: { [key: string]: PFStyleObject }, modifier: string, defaultModifer?: string): PFStyleObject | null;`
 
-Since pf-next-core is maintaining a pattern of using `pf-m-modifier` for modifiers we will provide a utility for consumers to easily get the modifier given the style object and the desired modifier. A default can be provided as well if the given variant does not exist.  Returns `null` if none are found.
+Since PatternFly 4 Core is maintaining a pattern of using `pf-m-modifier` for modifiers we will provide a utility for consumers to easily get the modifier given the style object and the desired modifier. A default can be provided as well if the given variant does not exist.  Returns `null` if none are found.
 
 #### Example
 
