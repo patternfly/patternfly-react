@@ -1,0 +1,43 @@
+{
+  "name": "@patternfly/react-docs",
+  "private": true,
+  "description": "Patternfly React Docs",
+  "version": "1.0.0",
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@patternfly/patternfly-next": "^1.0.4",
+    "@patternfly/react-core": "^0.0.1",
+    "@patternfly/react-styles": "^1.0.0",
+    "@patternfly/react-tokens": "^0.0.1",
+    "gatsby": "^1.9.247",
+    "gatsby-link": "^1.6.40",
+    "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-plugin-react-next": "^1.0.11",
+    "gatsby-source-filesystem": "^1.5.36",
+    "gatsby-transformer-react-docgen": "^1.0.17",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop"
+  },
+  "workspaces": {
+    "nohoist": [
+      "@patternfly/patternfly-next",
+      "gatsby",
+      "react",
+      "react-dom"
+    ]
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not ie <= 11"
+  ]
+}

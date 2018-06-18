@@ -10,7 +10,11 @@ function outputGlobForPackages(packages) {
 
 function getBabelGlobPackages() {
   const babelENV = process.env.BABEL_ENV || 'production:cjs';
-  const allIgnore = ['@patternfly/react-codemods'];
+  const allIgnore = [
+    '@patternfly/react-codemods',
+    '@patternfly/react-docs',
+    '@patternfly/react-tokens'
+  ];
   const ignoreMap = {
     esm: [...allIgnore],
     cjs: [...allIgnore]

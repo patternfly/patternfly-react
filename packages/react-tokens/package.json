@@ -1,0 +1,35 @@
+{
+  "name": "@patternfly/react-tokens",
+  "version": "0.0.1",
+  "description": "This library provides access to the design tokens of Patternfly 4 from JavaScript",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/js/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "scripts": {
+    "build": "node build/generateTokens.js"
+  },
+  "devDependencies": {
+    "@patternfly/patternfly-next": "^1.0.4",
+    "css": "^2.2.3",
+    "fs-extra": "^6.0.1",
+    "glob": "^7.1.2"
+  }
+}

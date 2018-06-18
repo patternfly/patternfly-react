@@ -1,0 +1,42 @@
+{
+  "name": "@patternfly/react-core",
+  "version": "0.0.1",
+  "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/js/index.d.ts",
+  "patternfly:src": "src/",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "dependencies": {
+    "@patternfly/react-styles": "^1.0.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^15.6.2 || ^16.4.0"
+  },
+  "scripts": {
+    "postbuild": "node ./build/copyStyles.js"
+  },
+  "devDependencies": {
+    "@patternfly/patternfly-next": "^1.0.4",
+    "fs-extra": "^6.0.1"
+  }
+}
