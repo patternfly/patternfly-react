@@ -24,6 +24,10 @@ export const mockNavItems = [
         ]
       },
       {
+        title: 'Divider 1',
+        isDivider: true
+      },
+      {
         title: 'Item 1-B',
         iconClass: 'fa fa-bell',
         subItems: [
@@ -39,7 +43,38 @@ export const mockNavItems = [
         ]
       },
       {
-        title: 'Item 1-C'
+        title: 'Item 1-B-2',
+        iconClass: 'fa fa-bell',
+        subItems: [
+          {
+            title: 'Item 1-B-i'
+          },
+          {
+            title: 'Item 1-B-ii'
+          },
+          {
+            title: 'Item 1-B-iii'
+          }
+        ]
+      },
+      {
+        title: 'Divider 2',
+        isDivider: true
+      },
+      {
+        title: 'Item 1-D',
+        iconClass: 'fa fa-bell',
+        subItems: [
+          {
+            title: 'Item 1-D-i'
+          },
+          {
+            title: 'Item 1-D-ii'
+          },
+          {
+            title: 'Item 1-D-iii'
+          }
+        ]
       }
     ]
   },

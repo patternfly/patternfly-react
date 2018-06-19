@@ -7,6 +7,7 @@ import { OverlayTrigger } from '../OverlayTrigger';
 import { Tooltip } from '../Tooltip';
 import VerticalNavBadge from './VerticalNavBadge';
 import { filterChildren } from '../../common/helpers';
+import VerticalNavDividerItem from './VerticalNavDividerItem';
 import {
   NavContextProvider,
   getNextDepth,
@@ -201,6 +202,7 @@ class BaseVerticalNavItemHelper extends React.Component {
     const {
       pinnableMenus,
       hiddenIcons,
+      isDivider,
       navCollapsed,
       showMobileSecondary,
       showMobileTertiary,
@@ -266,7 +268,7 @@ class BaseVerticalNavItemHelper extends React.Component {
       />
     );
 
-    return (
+    const item = (
       <ListGroupItem
         listItem // Renders as <li>. Other props can change this, see logic in react-bootstrap's ListGroupItem.
         className={classNames(
@@ -340,6 +342,14 @@ class BaseVerticalNavItemHelper extends React.Component {
           )}
       </ListGroupItem>
     );
+
+    const divider = (
+      <ListGroupItem listItem>
+        <VerticalNavDividerItem title={title} />
+      </ListGroupItem>
+    );
+
+    return isDivider ? divider : item;
   }
 }
 
@@ -353,13 +363,16 @@ BaseVerticalNavItemHelper.propTypes = {
    * Can alternatively pass subItems array as part of item or as its own prop.
    */
   children: PropTypes.node,
-  title: PropTypes.string
+  title: PropTypes.string,
+  /** Divider bool */
+  isDivider: PropTypes.bool
 };
 
 BaseVerticalNavItemHelper.defaultProps = {
   item: {},
   children: null,
-  title: ''
+  title: '',
+  isDivider: false
 };
 
 const VerticalNavItemHelper = getContext(navContextTypes)(
