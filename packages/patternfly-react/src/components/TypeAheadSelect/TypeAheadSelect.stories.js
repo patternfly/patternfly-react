@@ -1,16 +1,52 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select, boolean, number } from '@storybook/addon-knobs';
+import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import {
   storybookPackageName,
   STORYBOOK_CATEGORY
 } from 'storybook/constants/siteConstants';
 import { name } from '../../../package.json';
-import TypeAheadSelect from './TypeAheadSelect';
-import AsyncTypeAheadSelect from './AsyncTypeAheadSelect';
-import { Form, FormGroup, Button } from '../../index';
+import {
+  Form,
+  FormGroup,
+  Button,
+  TypeAheadSelect,
+  AsyncTypeAheadSelect
+} from '../../index';
 import Mocks from './mock';
 import GithubMenuItem from './GithubMenuItem';
+
+const storyDescription = (
+  <React.Fragment>
+    <p>
+      This component is based on the react-bootstrap-typeahead component. Please
+      visit the following for complete documentation
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/ericgio/react-bootstrap-typeahead">
+          React-bootstrap-typeahead github page
+        </a>
+      </li>
+      <li>
+        <a href="http://ericgio.github.io/react-bootstrap-typeahead/">
+          Examples
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/ericgio/react-bootstrap-typeahead/blob/master/docs/Props.md">
+          Props documentation
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/ericgio/react-bootstrap-typeahead/blob/master/docs/API.md">
+          API documentation
+        </a>
+      </li>
+    </ul>
+  </React.Fragment>
+);
 
 const TypeAheadSelectStories = storiesOf(
   `${storybookPackageName(name)}/${
@@ -20,6 +56,11 @@ const TypeAheadSelectStories = storiesOf(
 );
 
 TypeAheadSelectStories.addDecorator(withKnobs);
+TypeAheadSelectStories.addDecorator(
+  defaultTemplate({
+    description: storyDescription
+  })
+);
 
 TypeAheadSelectStories.addWithInfo('Menu Alignment', () => {
   const align = select('Alignment', [undefined, 'justify', 'left', 'right']);
@@ -215,3 +256,23 @@ TypeAheadSelectStories.addWithInfo('Using Async Calls', () => {
     </div>
   );
 });
+
+TypeAheadSelectStories.addWithInfo('Controlled input value', () => (
+  <div className="container">
+    <br />
+    <br />
+    <br />
+    <h2>Controlled input value</h2>
+    <p>
+      <strong>
+        A default value will be shown when the component is rendered.
+      </strong>
+    </p>
+    <TypeAheadSelect
+      defaultInputValue="Denmark"
+      options={Mocks.countries}
+      labelKey="name"
+      placeholder="Choose a state..."
+    />
+  </div>
+));
