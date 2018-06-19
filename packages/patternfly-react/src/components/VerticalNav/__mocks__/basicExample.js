@@ -24,10 +24,12 @@ export const basicExample = (props, firstItemClass) => (
         title="Item 2-B (external link)"
         href="http://www.patternfly.org"
       />
+      <VerticalNav.SecondaryItem title="Divider" isDivider />
       <VerticalNav.SecondaryItem title="Item 2-C" />
     </VerticalNav.Item>
     <VerticalNav.Item title="Item 3" iconClass="fa fa-info-circle">
       <VerticalNav.SecondaryItem title="Item 3-A" />
+      <VerticalNav.SecondaryItem title="Divider" isDivider />
       <VerticalNav.SecondaryItem title="Item 3-B">
         <VerticalNav.TertiaryItem title="Item 3-B-i" />
         <VerticalNav.TertiaryItem title="Item 3-B-ii" />
