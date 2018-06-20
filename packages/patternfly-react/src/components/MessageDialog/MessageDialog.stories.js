@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info/dist/index';
 import { withKnobs } from '@storybook/addon-knobs';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
+import LinkTo from '@storybook/addon-links/react';
 
 import {
   storybookPackageName,
@@ -37,6 +38,31 @@ import MessageDialogSuccess, {
   MessageDialogSuccessSource
 } from './Stories/MessageDialogSuccess';
 
+const modalStoryKind = `${storybookPackageName(name)}/${
+  STORYBOOK_CATEGORY.WIDGETS
+}/Modal Overlay`;
+
+const storyDescription = (
+  <React.Fragment>
+    <p>
+      This component is based on the React Bootstrap Modal component. Please
+      visit the following for complete documentation
+    </p>
+    <ul>
+      <li>
+        <a href="https://react-bootstrap.github.io/components/modal/">
+          React-Bootstrap Modal
+        </a>
+      </li>
+      <li>
+        <LinkTo kind={modalStoryKind} story="Modal">
+          Patternfly-React Modal
+        </LinkTo>
+      </li>
+    </ul>
+  </React.Fragment>
+);
+
 const stories = storiesOf(
   `${storybookPackageName(name)}/${
     STORYBOOK_CATEGORY.COMMUNICATION
@@ -46,7 +72,8 @@ const stories = storiesOf(
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
-    title: 'MessageDialog'
+    title: 'MessageDialog',
+    description: storyDescription
   })
 );
 

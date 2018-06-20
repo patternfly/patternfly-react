@@ -22,8 +22,8 @@ class MessageDialogWarning extends Component {
   };
 
   render() {
-    const primaryText = <p className="lead">Main Dialog Text</p>;
-    const secondaryText = <p>{lorem}</p>;
+    const primaryContent = <p className="lead">Main Dialog Text</p>;
+    const secondaryContent = <p>{lorem}</p>;
     const icon = <Icon type="pf" name="warning-triangle-o" />;
 
     return (
@@ -40,8 +40,8 @@ class MessageDialogWarning extends Component {
           secondaryActionButtonContent="Cancel"
           title="Modal Title Here"
           icon={icon}
-          primaryText={primaryText}
-          secondaryText={secondaryText}
+          primaryContent={primaryContent}
+          secondaryContent={secondaryContent}
         />
       </React.Fragment>
     );
@@ -75,8 +75,8 @@ class MessageDialogWarning extends Component {
   };
 
   render() {
-    const primaryText = <p className="lead">Main Dialog Text</p>;
-    const secondaryText = <p>{lorem}</p>;
+    const primaryContent = <p className="lead">Main Dialog Text</p>;
+    const secondaryContent = <p>{lorem}</p>;
     const icon = <Icon type="pf" name="warning-triangle-o" />;
 
     return (
@@ -93,8 +93,8 @@ class MessageDialogWarning extends Component {
           secondaryActionButtonContent="Cancel"
           title="Modal Title Here"
           icon={icon}
-          primaryText={primaryText}
-          secondaryText={secondaryText}
+          primaryContent={primaryContent}
+          secondaryContent={secondaryContent}
         />
       </React.Fragment>
     );

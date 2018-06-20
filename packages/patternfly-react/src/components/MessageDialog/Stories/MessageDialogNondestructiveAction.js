@@ -22,8 +22,8 @@ class MessageDialogNondestructiveAction extends Component {
   };
 
   render() {
-    const primaryText = <p className="lead">Main Dialog Text</p>;
-    const secondaryText = <p>{lorem}</p>;
+    const primaryContent = <p className="lead">Main Dialog Text</p>;
+    const secondaryContent = <p>{lorem}</p>;
 
     return (
       <React.Fragment>
@@ -38,8 +38,8 @@ class MessageDialogNondestructiveAction extends Component {
           primaryActionButtonContent="Action"
           secondaryActionButtonContent="Cancel"
           title="Modal Title Here"
-          primaryText={primaryText}
-          secondaryText={secondaryText}
+          primaryContent={primaryContent}
+          secondaryContent={secondaryContent}
         />
       </React.Fragment>
     );
@@ -73,8 +73,8 @@ class MessageDialogNondestructiveAction extends Component {
   };
 
   render() {
-    const primaryText = <p className="lead">Main Dialog Text</p>;
-    const secondaryText = <p>{lorem}</p>;
+    const primaryContent = <p className="lead">Main Dialog Text</p>;
+    const secondaryContent = <p>{lorem}</p>;
 
     return (
       <React.Fragment>
@@ -89,8 +89,8 @@ class MessageDialogNondestructiveAction extends Component {
           primaryActionButtonContent="Action"
           secondaryActionButtonContent="Cancel"
           title="Modal Title Here"
-          primaryText={primaryText}
-          secondaryText={secondaryText}
+          primaryContent={primaryContent}
+          secondaryContent={secondaryContent}
         />
       </React.Fragment>
     );

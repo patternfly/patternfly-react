@@ -57,31 +57,31 @@ describe('rendering with options', () => {
   });
 
   test('renders with the provided primary text', () => {
-    const primaryText = <h1>Modal Heading</h1>;
+    const primaryContent = <h1>Modal Heading</h1>;
     const wrapper = shallow(
       <MessageDialog
         {...baseProps}
         onHide={onHide}
         primaryAction={primaryAction}
-        primaryText={primaryText}
+        primaryContent={primaryContent}
       />
     );
 
-    expect(wrapper.contains(primaryText)).toBe(true);
+    expect(wrapper.contains(primaryContent)).toBe(true);
   });
 
   test('renders with the provided secondary text', () => {
-    const secondaryText = <div>Modal Body</div>;
+    const secondaryContent = <div>Modal Body</div>;
     const wrapper = shallow(
       <MessageDialog
         {...baseProps}
         onHide={onHide}
         primaryAction={primaryAction}
-        secondaryText={secondaryText}
+        secondaryContent={secondaryContent}
       />
     );
 
-    expect(wrapper.contains(secondaryText)).toBe(true);
+    expect(wrapper.contains(secondaryContent)).toBe(true);
   });
 
   test('renders with a custom footer', () => {

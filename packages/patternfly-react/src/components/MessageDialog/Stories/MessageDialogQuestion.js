@@ -22,10 +22,10 @@ class MessageDialogQuestion extends Component {
   };
 
   render() {
-    const primaryText = (
+    const primaryContent = (
       <p className="lead">Main Dialog Text. Are you sure you want to xxxxx?</p>
     );
-    const secondaryText = <p>{lorem}</p>;
+    const secondaryContent = <p>{lorem}</p>;
     const icon = <Icon type="pf" name="warning-triangle-o" />;
 
     return (
@@ -42,8 +42,8 @@ class MessageDialogQuestion extends Component {
           secondaryActionButtonContent="No"
           title="Modal Title Here"
           icon={icon}
-          primaryText={primaryText}
-          secondaryText={secondaryText}
+          primaryContent={primaryContent}
+          secondaryContent={secondaryContent}
         />
       </React.Fragment>
     );
@@ -77,8 +77,8 @@ class MessageDialogQuestion extends Component {
   };
 
   render() {
-    const primaryText = <p className="lead">Main Dialog Text. Are you sure you want to xxxxx?</p>;
-    const secondaryText = <p>{lorem}</p>;
+    const primaryContent = <p className="lead">Main Dialog Text. Are you sure you want to xxxxx?</p>;
+    const secondaryContent = <p>{lorem}</p>;
     const icon = <Icon type="pf" name="warning-triangle-o" />;
 
     return (
@@ -95,8 +95,8 @@ class MessageDialogQuestion extends Component {
           secondaryActionButtonContent="No"
           title="Modal Title Here"
           icon={icon}
-          primaryText={primaryText}
-          secondaryText={secondaryText}
+          primaryContent={primaryContent}
+          secondaryContent={secondaryContent}
         />
       </React.Fragment>
     );

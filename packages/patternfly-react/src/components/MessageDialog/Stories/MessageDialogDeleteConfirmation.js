@@ -22,8 +22,8 @@ class MessageDialogDeleteConfirmation extends Component {
   };
 
   render() {
-    const primaryText = <p className="lead">Main Dialog Text</p>;
-    const secondaryText = <p>{lorem}</p>;
+    const primaryContent = <p className="lead">Main Dialog Text</p>;
+    const secondaryContent = <p>{lorem}</p>;
     const icon = <Icon type="pf" name="error-circle-o" />;
 
     return (
@@ -41,8 +41,8 @@ class MessageDialogDeleteConfirmation extends Component {
           primaryActionButtonBsStyle="danger"
           title="Modal Title Here"
           icon={icon}
-          primaryText={primaryText}
-          secondaryText={secondaryText}
+          primaryContent={primaryContent}
+          secondaryContent={secondaryContent}
         />
       </React.Fragment>
     );
@@ -76,8 +76,8 @@ class MessageDialogDeleteConfirmation extends Component {
   };
 
   render() {
-    const primaryText = <p className="lead">Main Dialog Text</p>;
-    const secondaryText = <p>{lorem}</p>;
+    const primaryContent = <p className="lead">Main Dialog Text</p>;
+    const secondaryContent = <p>{lorem}</p>;
     const icon = <Icon type="pf" name="error-circle-o" />;
 
     return (
@@ -95,8 +95,8 @@ class MessageDialogDeleteConfirmation extends Component {
           primaryActionButtonBsStyle="danger"
           title="Modal Title Here"
           icon={icon}
-          primaryText={primaryText}
-          secondaryText={secondaryText}
+          primaryContent={primaryContent}
+          secondaryContent={secondaryContent}
         />
       </React.Fragment>
     );

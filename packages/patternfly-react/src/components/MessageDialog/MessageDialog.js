@@ -12,8 +12,8 @@ const MessageDialog = ({
   secondaryAction,
   title,
   icon,
-  primaryText,
-  secondaryText,
+  primaryContent,
+  secondaryContent,
   primaryActionButtonBsStyle,
   secondaryActionButtonBsStyle,
   primaryActionButtonContent,
@@ -26,6 +26,7 @@ const MessageDialog = ({
     className={classNames('message-dialog-pf', className)}
     show={show}
     onHide={onHide}
+    enforceFocus
     {...props}
   >
     <Modal.Header>
@@ -35,8 +36,8 @@ const MessageDialog = ({
     <Modal.Body>
       {icon && icon}
       <div>
-        {primaryText && primaryText}
-        {secondaryText && secondaryText}
+        {primaryContent && primaryContent}
+        {secondaryContent && secondaryContent}
       </div>
     </Modal.Body>
     <Modal.Footer>
@@ -88,10 +89,10 @@ MessageDialog.propTypes = {
   title: PropTypes.string,
   /** modal body icon */
   icon: PropTypes.node,
-  /** primary message text */
-  primaryText: PropTypes.node,
-  /** secondary message text */
-  secondaryText: PropTypes.node,
+  /** modal body primary content */
+  primaryContent: PropTypes.node,
+  /** modal body secondary content */
+  secondaryContent: PropTypes.node,
   /** custom footer */
   footer: PropTypes.node
 };
@@ -104,8 +105,8 @@ MessageDialog.defaultProps = {
   secondaryActionButtonContent: null,
   title: '',
   icon: null,
-  primaryText: null,
-  secondaryText: null,
+  primaryContent: null,
+  secondaryContent: null,
   footer: null
 };
 

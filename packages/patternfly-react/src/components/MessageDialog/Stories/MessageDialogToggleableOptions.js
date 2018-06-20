@@ -32,7 +32,7 @@ class MessageDialogToggleableOptions extends Component {
       'info'
     );
     const title = boolean('With Title', true) ? 'Modal Title' : '';
-    const primaryText = boolean('With Primary Text', true) ? (
+    const primaryContent = boolean('With Primary Content', true) ? (
       <p className="lead">Main Dialog Text</p>
     ) : null;
     const secondaryActionButtonContent = boolean('With Secondary Button', true)
@@ -40,7 +40,7 @@ class MessageDialogToggleableOptions extends Component {
       : null;
     // *************************************************************************
 
-    const secondaryText = (
+    const secondaryContent = (
       <React.Fragment>
         <p>You are about to do something</p>
         <ul>
@@ -81,9 +81,9 @@ class MessageDialogToggleableOptions extends Component {
           secondaryActionButtonContent={secondaryActionButtonContent}
           title={title}
           icon={boolean('With Icon', true) ? icon : null}
-          primaryText={primaryText}
-          secondaryText={
-            boolean('With Secondary Text', true) ? secondaryText : null
+          primaryContent={primaryContent}
+          secondaryContent={
+            boolean('With Secondary Content', true) ? secondaryContent : null
           }
           footer={boolean('Custom Footer', false) ? customFooter : null}
         />
@@ -129,7 +129,7 @@ class MessageDialogToggleableOptions extends Component {
       'info'
     );
     const title = boolean('With Title', true) ? 'Modal Title' : '';
-    const primaryText = boolean('With Primary Text', true)
+    const primaryContent = boolean('With Primary Text', true)
       ? 'Primary Text'
       : '';
     const secondaryActionButtonContent = boolean('With Secondary Button', true)
@@ -137,7 +137,7 @@ class MessageDialogToggleableOptions extends Component {
       : null;
     // *************************************************************************
 
-    const secondaryText = (
+    const secondaryContent = (
       <React.Fragment>
         <p>You are about to do something</p>
         <ul>
@@ -178,9 +178,9 @@ class MessageDialogToggleableOptions extends Component {
           secondaryActionButtonContent={secondaryActionButtonContent}
           title={title}
           icon={boolean('With Icon', true) ? icon : null}
-          primaryText={primaryText}
-          secondaryText={
-            boolean('With Secondary Text', true) ? secondaryText : null
+          primaryContent={primaryContent}
+          secondaryContent={
+            boolean('With Secondary Text', true) ? secondaryContent : null
           }
           footer={boolean('Custom Footer', false) ? customFooter : null}
         />
