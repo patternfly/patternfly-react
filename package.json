@@ -180,6 +180,10 @@
   "workspaces": {
     "packages": [
       "packages/*"
+    ],
+    "nohoist": [
+      "**/gatsby*",
+      "@patternfly/react-docs/react*"
     ]
   },
   "lint-staged": {

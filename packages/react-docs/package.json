@@ -1,8 +1,7 @@
 {
   "name": "@patternfly/react-docs",
-  "private": true,
   "description": "Patternfly React Docs",
-  "version": "6.0.0",
+  "version": "1.0.0",
   "author": "Red Hat",
   "license": "Apache-2.0",
   "dependencies": {
@@ -27,14 +26,6 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop"
-  },
-  "workspaces": {
-    "nohoist": [
-      "@patternfly/patternfly-next",
-      "gatsby",
-      "react",
-      "react-dom"
-    ]
   },
   "browserslist": [
     "last 2 versions",
