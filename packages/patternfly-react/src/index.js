@@ -21,6 +21,7 @@ export * from './components/ListGroup';
 export * from './components/ListView';
 export * from './components/Masthead';
 export * from './components/MenuItem';
+export * from './components/MessageDialog';
 export * from './components/Modal';
 export * from './components/Nav';
 export * from './components/Navbar';
