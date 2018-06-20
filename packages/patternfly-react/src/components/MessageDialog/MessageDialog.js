@@ -21,6 +21,8 @@ const MessageDialog = ({
   className,
   footer,
   enforceFocus,
+  accessibleName,
+  accessibleDescription,
   ...props
 }) => (
   <Modal
@@ -28,15 +30,18 @@ const MessageDialog = ({
     show={show}
     onHide={onHide}
     enforceFocus={enforceFocus}
+    aria-modal
+    aria-labelledby={accessibleName}
+    aria-describedby={accessibleDescription}
     {...props}
   >
     <Modal.Header>
       <Modal.CloseButton onClick={onHide} />
-      <Modal.Title>{title}</Modal.Title>
+      <Modal.Title id={accessibleName}>{title}</Modal.Title>
     </Modal.Header>
     <Modal.Body>
       {icon && icon}
-      <div>
+      <div id={accessibleDescription}>
         {primaryContent && primaryContent}
         {secondaryContent && secondaryContent}
       </div>
@@ -97,7 +102,11 @@ MessageDialog.propTypes = {
   /** custom footer */
   footer: PropTypes.node,
   /** When true the modal will prevent focus from leaving the Modal while open */
-  enforceFocus: PropTypes.bool
+  enforceFocus: PropTypes.bool,
+  /** Gives the modal an accessible name by referring to the element that provides the dialog title. Must be unique, as this sets an id */
+  accessibleName: PropTypes.string,
+  /** Gives the modal an accessible description by referring to the modal content that describes the primary message or purpose of the dialog. Not used if there is no static text that describes the modal. Must be unique, as this sets an id */
+  accessibleDescription: PropTypes.string
 };
 
 MessageDialog.defaultProps = {
@@ -111,7 +120,9 @@ MessageDialog.defaultProps = {
   primaryContent: null,
   secondaryContent: null,
   footer: null,
-  enforceFocus: true
+  enforceFocus: true,
+  accessibleName: '',
+  accessibleDescription: ''
 };
 
 export default MessageDialog;
