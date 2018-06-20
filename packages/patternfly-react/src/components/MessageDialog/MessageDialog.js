@@ -20,13 +20,14 @@ const MessageDialog = ({
   secondaryActionButtonContent,
   className,
   footer,
+  enforceFocus,
   ...props
 }) => (
   <Modal
     className={classNames('message-dialog-pf', className)}
     show={show}
     onHide={onHide}
-    enforceFocus
+    enforceFocus={enforceFocus}
     {...props}
   >
     <Modal.Header>
@@ -94,7 +95,9 @@ MessageDialog.propTypes = {
   /** modal body secondary content */
   secondaryContent: PropTypes.node,
   /** custom footer */
-  footer: PropTypes.node
+  footer: PropTypes.node,
+  /** When true the modal will prevent focus from leaving the Modal while open */
+  enforceFocus: PropTypes.bool
 };
 
 MessageDialog.defaultProps = {
@@ -107,7 +110,8 @@ MessageDialog.defaultProps = {
   icon: null,
   primaryContent: null,
   secondaryContent: null,
-  footer: null
+  footer: null,
+  enforceFocus: true
 };
 
 export default MessageDialog;
