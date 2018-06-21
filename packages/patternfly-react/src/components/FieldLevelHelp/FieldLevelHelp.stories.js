@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, text, select } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import {
@@ -30,10 +30,15 @@ stories.addDecorator(
 stories.add(
   'FieldLevelHelp',
   withInfo()(() => {
-    const close = select('Close Popover', ['true', 'false']);
+    const rootClose = boolean('Root Close', true);
     const content = text(
       'content',
       'Enter the hostname in a valid format <br>  <a target="_blank" href="http://www.test.example.com">Click here for examples of valid hostnames</a>'
+    );
+    const placement = select(
+      'Placement',
+      ['top', 'bottom', 'left', 'right'],
+      'top'
     );
     const fieldLabel = text('Field Label', 'Hostname');
 
@@ -48,7 +53,11 @@ stories.add(
     return (
       <div style={{ textAlign: 'center' }}>
         {fieldLabel}
-        <FieldLevelHelp content={htmlContent} close={close} />
+        <FieldLevelHelp
+          content={htmlContent}
+          rootClose={rootClose}
+          placement={placement}
+        />
       </div>
     );
   })
