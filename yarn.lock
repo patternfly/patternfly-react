@@ -10850,9 +10850,9 @@ patternfly-bootstrap-treeview@~2.1.0:
     bootstrap "3.3.x"
     jquery ">= 2.1.x"
 
-patternfly@^3.45.0, patternfly@^3.48.0:
-  version "3.48.1"
-  resolved "https://registry.yarnpkg.com/patternfly/-/patternfly-3.48.1.tgz#e00fb8f3cb9e53385085eaa81ed1c5a4226ec8d3"
+patternfly@^3.51.0:
+  version "3.51.0"
+  resolved "https://registry.yarnpkg.com/patternfly/-/patternfly-3.51.0.tgz#210deac861e0734927fb5d61d7353a5a40d9c0ff"
   dependencies:
     bootstrap "~3.3.7"
     font-awesome "^4.7.0"

@@ -36,7 +36,7 @@
   "dependencies": {
     "@novnc/novnc": "^1.0.0",
     "classnames": "^2.2.5",
-    "patternfly": "^3.45.0",
+    "patternfly": "^3.51.0",
     "patternfly-react": "^2.3.4",
     "xterm": "^3.3.0"
   },
