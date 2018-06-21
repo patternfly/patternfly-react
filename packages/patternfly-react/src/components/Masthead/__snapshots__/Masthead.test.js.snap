@@ -59,6 +59,7 @@ exports[`Masthead renders properly: Masthead snapshot 1`] = `
     <MastheadDropdown
       className=""
       id="app-help-dropdown"
+      noCaret={false}
       title={
         <span
           className="pficon pficon-help"
@@ -88,6 +89,7 @@ exports[`Masthead renders properly: Masthead snapshot 1`] = `
     <MastheadDropdown
       className=""
       id="app-user-dropdown"
+      noCaret={false}
       title={
         <span>
           <span
@@ -156,6 +158,7 @@ exports[`Masthead without nav toggle renders properly: Masthead without nav togg
     <MastheadDropdown
       className=""
       id="app-help-dropdown"
+      noCaret={false}
       title={
         <span
           className="pficon pficon-help"
@@ -185,6 +188,7 @@ exports[`Masthead without nav toggle renders properly: Masthead without nav togg
     <MastheadDropdown
       className=""
       id="app-user-dropdown"
+      noCaret={false}
       title={
         <span>
           <span
@@ -232,6 +236,7 @@ exports[`MastheadCollapse renders properly: MastheadCollapse snapshot 1`] = `
     <MastheadDropdown
       className=""
       id="app-help-dropdown"
+      noCaret={false}
       title={
         <span
           className="pficon pficon-help"
@@ -261,6 +266,7 @@ exports[`MastheadCollapse renders properly: MastheadCollapse snapshot 1`] = `
     <MastheadDropdown
       className=""
       id="app-user-dropdown"
+      noCaret={false}
       title={
         <span>
           <span
@@ -306,6 +312,7 @@ exports[`MastheadDropdown renders properly: MastheadDropdown snapshot 1`] = `
     bsStyle="link"
     className="dropdown-toggle nav-item-iconic"
     id="app-help-dropdown"
+    noCaret={false}
     title={
       <span
         className="pficon pficon-help"

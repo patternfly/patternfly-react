@@ -16,11 +16,19 @@ const Masthead = ({
   navToggle,
   onNavToggleClick,
   middleContent,
+  thin,
   children,
   ...props
 }) => {
-  const mastheadClasses = classNames('navbar', 'navbar-pf-vertical', className);
-
+  const mastheadClasses = classNames(
+    {
+      navbar: true,
+      'navbar-default': thin,
+      'navbar-pf': thin,
+      'navbar-pf-vertical': !thin
+    },
+    className
+  );
   const handleTitleClick = e => {
     if (onTitleClick !== noop) {
       if (e) {
@@ -47,8 +55,12 @@ const Masthead = ({
           className="navbar-brand"
           onClick={handleTitleClick}
         >
-          <img className="navbar-brand-icon" src={iconImg} alt="" />
-          <img className="navbar-brand-name" src={titleImg} alt={title} />
+          {iconImg && (
+            <img className="navbar-brand-icon" src={iconImg} alt="" />
+          )}
+          {titleImg && (
+            <img className="navbar-brand-name" src={titleImg} alt={title} />
+          )}
         </a>
         {middleContent}
       </div>
@@ -72,6 +84,8 @@ Masthead.propTypes = {
   onTitleClick: PropTypes.func,
   /** Option to have the nav toggle (hamburger), default is true */
   navToggle: PropTypes.bool,
+  /** Option to have the fit nav, default is false */
+  thin: PropTypes.bool,
   /** Callback when the nav toggle (hamburger) is clicked */
   onNavToggleClick: PropTypes.func,
   /** Content for the center area of the masthead (context selector) */
@@ -88,6 +102,7 @@ Masthead.defaultProps = {
   href: '#',
   onTitleClick: noop,
   navToggle: true,
+  thin: false,
   onNavToggleClick: noop,
   middleContent: null,
   children: null
