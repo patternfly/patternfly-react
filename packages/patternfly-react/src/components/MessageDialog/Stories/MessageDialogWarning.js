@@ -42,6 +42,8 @@ class MessageDialogWarning extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="warningDialog"
+          accessibleDescription="warningDialogContent"
         />
       </React.Fragment>
     );
@@ -95,6 +97,8 @@ class MessageDialogWarning extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="warningDialog"
+          accessibleDescription="warningDialogContent"
         />
       </React.Fragment>
     );

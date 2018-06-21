@@ -40,6 +40,8 @@ class MessageDialogInfo extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="infoDialog"
+          accessibleDescription="infoDialogContent"
         />
       </React.Fragment>
     );
@@ -91,6 +93,8 @@ class MessageDialogInfo extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="infoDialog"
+          accessibleDescription="infoDialogContent"
         />
       </React.Fragment>
     );

@@ -40,6 +40,8 @@ class MessageDialogNondestructiveAction extends Component {
           title="Modal Title Here"
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="nondestructiveActionDialog"
+          accessibleDescription="nondestructiveActionDialogContent"
         />
       </React.Fragment>
     );
@@ -91,6 +93,8 @@ class MessageDialogNondestructiveAction extends Component {
           title="Modal Title Here"
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="nondestructiveActionDialog"
+          accessibleDescription="nondestructiveActionDialogContent"
         />
       </React.Fragment>
     );

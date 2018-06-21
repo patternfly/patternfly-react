@@ -86,6 +86,8 @@ class MessageDialogToggleableOptions extends Component {
             boolean('With Secondary Content', true) ? secondaryContent : null
           }
           footer={boolean('Custom Footer', false) ? customFooter : null}
+          accessibleName="toggleableDialog"
+          accessibleDescription="toggleableDialogContent"
         />
       </React.Fragment>
     );
@@ -129,9 +131,9 @@ class MessageDialogToggleableOptions extends Component {
       'info'
     );
     const title = boolean('With Title', true) ? 'Modal Title' : '';
-    const primaryContent = boolean('With Primary Text', true)
-      ? 'Primary Text'
-      : '';
+    const primaryContent = boolean('With Primary Content', true) ? (
+      <p className="lead">Main Dialog Text</p>
+    ) : null;
     const secondaryActionButtonContent = boolean('With Secondary Button', true)
       ? 'Cancel'
       : null;
@@ -180,9 +182,11 @@ class MessageDialogToggleableOptions extends Component {
           icon={boolean('With Icon', true) ? icon : null}
           primaryContent={primaryContent}
           secondaryContent={
-            boolean('With Secondary Text', true) ? secondaryContent : null
+            boolean('With Secondary Content', true) ? secondaryContent : null
           }
           footer={boolean('Custom Footer', false) ? customFooter : null}
+          accessibleName="toggleableDialog"
+          accessibleDescription="toggleableDialogContent"
         />
       </React.Fragment>
     );

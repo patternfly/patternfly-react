@@ -7,6 +7,7 @@ import LinkTo from '@storybook/addon-links/react';
 
 import {
   storybookPackageName,
+  DOCUMENTATION_URL,
   STORYBOOK_CATEGORY
 } from 'storybook/constants/siteConstants';
 import { name } from '../../../package.json';
@@ -50,7 +51,7 @@ const storyDescription = (
     </p>
     <ul>
       <li>
-        <a href="https://react-bootstrap.github.io/components/modal/">
+        <a href={`${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}modal/`}>
           React-Bootstrap Modal
         </a>
       </li>

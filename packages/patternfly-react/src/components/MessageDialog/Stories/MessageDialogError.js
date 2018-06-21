@@ -42,6 +42,8 @@ class MessageDialogError extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="errorDialog"
+          accessibleDescription="errorDialogContent"
         />
       </React.Fragment>
     );
@@ -51,6 +53,12 @@ class MessageDialogError extends Component {
 export default MessageDialogError;
 
 export const MessageDialogErrorSource = `
+import React, { Component } from 'react';
+
+import { Button, Icon } from '../../../index';
+import lorem from './lorem';
+import MessageDialog from '../MessageDialog';
+
 class MessageDialogError extends Component {
   state = {
     show: false
@@ -89,6 +97,8 @@ class MessageDialogError extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="errorDialog"
+          accessibleDescription="errorDialogContent"
         />
       </React.Fragment>
     );

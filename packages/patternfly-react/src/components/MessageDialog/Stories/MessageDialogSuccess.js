@@ -40,6 +40,8 @@ class MessageDialogSuccess extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="successDialog"
+          accessibleDescription="successDialogContent"
         />
       </React.Fragment>
     );
@@ -91,6 +93,8 @@ class MessageDialogSuccess extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="successDialog"
+          accessibleDescription="successDialogContent"
         />
       </React.Fragment>
     );

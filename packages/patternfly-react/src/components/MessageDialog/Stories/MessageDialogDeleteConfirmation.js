@@ -43,6 +43,8 @@ class MessageDialogDeleteConfirmation extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="deleteConfirmationDialog"
+          accessibleDescription="deleteConfirmationDialogContent"
         />
       </React.Fragment>
     );
@@ -97,6 +99,8 @@ class MessageDialogDeleteConfirmation extends Component {
           icon={icon}
           primaryContent={primaryContent}
           secondaryContent={secondaryContent}
+          accessibleName="deleteConfirmationDialog"
+          accessibleDescription="deleteConfirmationDialogContent"
         />
       </React.Fragment>
     );
