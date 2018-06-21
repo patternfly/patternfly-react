@@ -41,6 +41,7 @@ export * from './components/ToastNotification';
 export * from './components/Toolbar';
 export * from './components/Tooltip';
 export * from './components/TreeView';
+export * from './components/TypeAheadSelect';
 export * from './components/UtilizationBar';
 export * from './components/Wizard';
 export * from './components/VerticalNav';
