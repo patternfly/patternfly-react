@@ -20,8 +20,9 @@ test('FieldLevelHelp allows to specify mode content and close', () => {
         mode="popover"
         content="Enter Port number between the 4000-5000 range"
         rootClose
+        close
         placement="top"
-        buttonClass="popover-pf-info"
+        buttonClass="additionl-button-class"
       />
     </div>
   );

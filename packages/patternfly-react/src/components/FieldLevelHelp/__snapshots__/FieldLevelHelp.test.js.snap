@@ -6,7 +6,8 @@ exports[`FieldLevelHelp allows to specify mode content and close 1`] = `
     Port Number
   </label>
   <FieldLevelHelp
-    buttonClass="popover-pf-info"
+    buttonClass="additionl-button-class"
+    close={true}
     content="Enter Port number between the 4000-5000 range"
     id="fieldlevelname1"
     mode="popover"
@@ -37,12 +38,12 @@ exports[`FieldLevelHelp allows to specify mode content and close 1`] = `
         block={false}
         bsClass="btn"
         bsStyle="link"
-        className="popover-pf-info"
+        className="popover-pf-info additionl-button-class"
         disabled={false}
         onClick={[Function]}
       >
         <button
-          className="popover-pf-info btn btn-link"
+          className="popover-pf-info additionl-button-class btn btn-link"
           disabled={false}
           onClick={[Function]}
           type="button"
@@ -70,7 +71,7 @@ exports[`FieldLevelHelp allows to specify mode content and close 1`] = `
 
 exports[`FieldLevelHelp renders properly 1`] = `
 <FieldLevelHelp
-  buttonClass="popover-pf-info"
+  buttonClass=""
   content={null}
   id="fieldlevelname1"
   placement="top"
