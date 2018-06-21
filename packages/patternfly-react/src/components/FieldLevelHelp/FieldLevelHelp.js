@@ -8,19 +8,24 @@ import { OverlayTrigger } from '../OverlayTrigger';
 /**
  * FieldLevelHelp Component for Patternfly React
  */
-const FieldLevelHelp = ({ children, content, close, ...props }) => {
-  const trigger = 'click';
+const FieldLevelHelp = ({
+  children,
+  content,
+  rootClose,
+  placement,
+  buttonClass,
+  ...props
+}) => {
   const overlay = <Popover id="popover">{content}</Popover>;
-  const rootClose = close === 'true';
 
   return (
     <OverlayTrigger
       overlay={overlay}
-      placement="top"
-      trigger={trigger.split(' ')}
+      placement={placement}
+      trigger={['click']}
       rootClose={rootClose}
     >
-      <Button bsStyle="link" className="popover-pf-info">
+      <Button bsStyle="link" className={buttonClass}>
         <Icon type="pf" name="info" />
       </Button>
     </OverlayTrigger>
@@ -31,13 +36,19 @@ FieldLevelHelp.propTypes = {
   /** additional fieldlevelhelp classes */
   content: PropTypes.node,
   /** leave popover/tooltip open  */
-  close: PropTypes.string,
+  rootClose: PropTypes.bool,
+  /** overlay placement */
+  placement: PropTypes.string,
+  /** button class */
+  buttonClass: PropTypes.string,
   /** children nodes  */
   children: PropTypes.node
 };
 FieldLevelHelp.defaultProps = {
   content: null,
-  close: 'true',
+  rootClose: true,
+  placement: 'top',
+  buttonClass: 'popover-pf-info',
   children: null
 };
 
