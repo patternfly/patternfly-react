@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   rules: {
     'patternfly-react/import-default-name': [
       'error',

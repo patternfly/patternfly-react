@@ -4,6 +4,9 @@
   "version": "2.0.0",
   "author": "Red Hat",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@patternfly/patternfly-next": "^1.0.4",
     "@patternfly/react-core": "^0.x",

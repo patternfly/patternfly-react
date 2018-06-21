@@ -5247,26 +5247,6 @@ eslint-plugin-node@^6.0.1:
     resolve "^1.3.3"
     semver "^5.4.1"
 
-eslint-plugin-patternfly-react@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-patternfly-react/-/eslint-plugin-patternfly-react-0.0.1.tgz#4558f866f5d7c7601eac288d65d98a641996407a"
-  dependencies:
-    babel-eslint "^8.2.2"
-    eslint-config-airbnb "^16.1.0"
-    eslint-config-prettier "^2.9.0"
-    eslint-config-standard "^11.0.0"
-    eslint-config-standard-jsx "^5.0.0"
-    eslint-config-standard-react "^6.0.0"
-    eslint-plugin-import "^2.10.0"
-    eslint-plugin-jest "^21.15.0"
-    eslint-plugin-jsx-a11y "^6.0.3"
-    eslint-plugin-node "^6.0.1"
-    eslint-plugin-prettier "^2.6.0"
-    eslint-plugin-promise "^3.7.0"
-    eslint-plugin-react "^7.7.0"
-    eslint-plugin-rulesdir "^0.1.0"
-    eslint-plugin-standard "^3.0.1"
-
 eslint-plugin-prettier@^2.4.0, eslint-plugin-prettier@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.6.0.tgz#33e4e228bdb06142d03c560ce04ec23f6c767dd7"
@@ -6511,10 +6491,6 @@ git-head@^1.2.1:
   resolved "https://registry.yarnpkg.com/git-head/-/git-head-1.20.1.tgz#036d16a4b374949e4e3daf15827903686d3ccd52"
   dependencies:
     git-refs "^1.1.3"
-
-git-hooks@^1.1.10:
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/git-hooks/-/git-hooks-1.1.10.tgz#c3113a8506593ac703bffc3bc77badbe8c9e1536"
 
 git-log-parser@^1.2.0:
   version "1.2.0"

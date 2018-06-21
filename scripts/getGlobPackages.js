@@ -11,6 +11,7 @@ function outputGlobForPackages(packages) {
 function getBabelGlobPackages() {
   const babelENV = process.env.BABEL_ENV || 'production:cjs';
   const allIgnore = [
+    'eslint-plugin-patternfly-react',
     '@patternfly/react-codemods',
     '@patternfly/react-docs',
     '@patternfly/react-tokens'
