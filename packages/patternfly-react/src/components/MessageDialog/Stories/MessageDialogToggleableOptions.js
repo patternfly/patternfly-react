@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { select, boolean } from '@storybook/addon-knobs';
 
-import { Button, Icon } from 'patternfly-react';
+import { Button, Icon } from '../../../index';
 import MessageDialog from '../MessageDialog';
 
 class MessageDialogToggleableOptions extends Component {
