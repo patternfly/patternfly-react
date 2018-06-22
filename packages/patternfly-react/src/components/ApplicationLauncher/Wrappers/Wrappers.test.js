@@ -43,13 +43,31 @@ const Apps = [
 ];
 
 test('ApplicationLauncherWrapper is working properly as Grid', () => {
-  const component = mount(<ApplicationLauncherWrapper apps={Apps} grid />);
+  const component = mount(
+    <ApplicationLauncherWrapper apps={Apps} grid open={false} />
+  );
 
   expect(component.render()).toMatchSnapshot();
 });
 
 test('ApplicationLauncherWrapper is working properly as List with no Icons', () => {
-  const component = mount(<ApplicationLauncherWrapper apps={Apps} noIcons />);
+  const component = mount(
+    <ApplicationLauncherWrapper apps={Apps} noIcons open={false} />
+  );
+
+  expect(component.render()).toMatchSnapshot();
+});
+
+test('ApplicationLauncherWrapper is working properly as Grid when open', () => {
+  const component = mount(<ApplicationLauncherWrapper apps={Apps} grid open />);
+
+  expect(component.render()).toMatchSnapshot();
+});
+
+test('ApplicationLauncherWrapper is working properly as List with no Icons when open', () => {
+  const component = mount(
+    <ApplicationLauncherWrapper apps={Apps} noIcons open />
+  );
 
   expect(component.render()).toMatchSnapshot();
 });

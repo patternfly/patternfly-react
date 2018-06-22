@@ -103,6 +103,33 @@ exports[`ApplicationLauncherItem without tooltip is working properly 1`] = `
 
 exports[`ApplicationLauncherToggle is working properly 1`] = `
 <button
+  aria-expanded="false"
+  class="nav-item-iconic dropdown-toggle btn btn-link"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+    class="fa fa-th applauncher-pf-icon"
+  />
+  <span
+    class="dropdown-title"
+  >
+    <span
+      class="applauncher-pf-title"
+    >
+      Application Launcher
+      <span
+        aria-hidden="true"
+        class="caret"
+      />
+    </span>
+  </span>
+</button>
+`;
+
+exports[`ApplicationLauncherToggle is working properly when open 1`] = `
+<button
+  aria-expanded="true"
   class="nav-item-iconic dropdown-toggle btn btn-link"
   type="button"
 >
