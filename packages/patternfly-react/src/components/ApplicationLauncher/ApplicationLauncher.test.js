@@ -52,7 +52,23 @@ test('ApplicationLauncherItem without tooltip is working properly', () => {
 
 test('ApplicationLauncherToggle is working properly', () => {
   const component = mount(
-    <ApplicationLauncherToggle tooltipPlacement="left" onClick={handleClick} />
+    <ApplicationLauncherToggle
+      tooltipPlacement="left"
+      onClick={handleClick}
+      open={false}
+    />
+  );
+
+  expect(component.render()).toMatchSnapshot();
+});
+
+test('ApplicationLauncherToggle is working properly when open', () => {
+  const component = mount(
+    <ApplicationLauncherToggle
+      tooltipPlacement="left"
+      onClick={handleClick}
+      open
+    />
   );
 
   expect(component.render()).toMatchSnapshot();
