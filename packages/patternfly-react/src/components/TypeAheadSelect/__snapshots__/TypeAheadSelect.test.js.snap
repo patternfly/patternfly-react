@@ -1,26 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TypeAheadSelect is working !! 1`] = `
-<OnClickOutside(TypeaheadContainer(WrappedTypeahead))
-  allowNew={true}
-  clearButton={true}
-  eventTypes={
-    Array [
-      "mousedown",
-      "touchstart",
-    ]
-  }
-  excludeScrollbar={false}
-  multiple={true}
-  options={
-    Array [
-      "One",
-      "Two",
-      "Three",
-    ]
-  }
-  outsideClickIgnoreClass="ignore-react-onclickoutside"
-  preventDefault={false}
-  stopPropagation={false}
-/>
+<p>
+  <OnClickOutside(TypeaheadContainer(WrappedTypeahead))
+    allowNew={true}
+    clearButton={true}
+    eventTypes={
+      Array [
+        "mousedown",
+        "touchstart",
+      ]
+    }
+    excludeScrollbar={false}
+    multiple={true}
+    options={
+      Array [
+        "One",
+        "Two",
+        "Three",
+      ]
+    }
+    outsideClickIgnoreClass="ignore-react-onclickoutside"
+    preventDefault={false}
+    stopPropagation={false}
+  />
+</p>
 `;
