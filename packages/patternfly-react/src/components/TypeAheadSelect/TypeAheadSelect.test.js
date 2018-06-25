@@ -1,15 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TypeAheadSelect from './TypeAheadSelect';
+import { TypeAheadSelect } from './TypeAheadSelect';
 
 test('TypeAheadSelect is working !!', () => {
   const component = shallow(
-    <TypeAheadSelect
-      clearButton
-      multiple
-      allowNew
-      options={['One', 'Two', 'Three']}
-    />
+    <p>
+      <TypeAheadSelect
+        clearButton
+        multiple
+        allowNew
+        options={['One', 'Two', 'Three']}
+      />
+    </p>
   );
 
   expect(component).toMatchSnapshot();
