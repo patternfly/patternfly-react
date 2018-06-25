@@ -9,15 +9,16 @@ import NavigationItem from './navigationItem';
 import ValueToggle from '../valueToggle';
 
 const propTypes = {
-  components: PropTypes.arrayOf(
+  componentRoutes: PropTypes.arrayOf(
     PropTypes.shape({
-      displayName: PropTypes.string.isRequired
+      to: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired
     })
   )
 };
 
 const defaultProps = {
-  components: []
+  componentRoutes: []
 };
 class Navigation extends React.Component {
   static propTypes = propTypes;
@@ -34,12 +35,12 @@ class Navigation extends React.Component {
   };
 
   render() {
-    const { components } = this.props;
+    const { componentRoutes } = this.props;
     const { searchValue } = this.state;
     const searchRE = new RegExp(searchValue, 'i');
 
-    const filteredComponents = components.filter(c =>
-      searchRE.test(c.displayName)
+    const filteredComponentRoutes = componentRoutes.filter(c =>
+      searchRE.test(c.label)
     );
 
     return (
@@ -77,12 +78,9 @@ class Navigation extends React.Component {
                 onToggleExpand={toggle}
                 title="Components"
               >
-                {filteredComponents.map(comp => (
-                  <NavigationItem
-                    key={comp.displayName}
-                    to={`/components/${comp.displayName}`}
-                  >
-                    {comp.displayName}
+                {filteredComponentRoutes.map(route => (
+                  <NavigationItem key={route.label} to={route.to}>
+                    {route.label}
                   </NavigationItem>
                 ))}
               </NavigationItemGroup>

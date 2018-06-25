@@ -122,9 +122,9 @@
     lodash "^4.17.4"
     url-template "^2.0.8"
 
-"@patternfly/patternfly-next@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.4.tgz#e95ccf5aa8f3fabbc96bca06ccb271715eda1df2"
+"@patternfly/patternfly-next@1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.8.tgz#336f0692f84bbde486ec8ea144d9baa633873fcd"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -3005,7 +3005,7 @@ camelcase-keys@^4.0.0:
     map-obj "^2.0.0"
     quick-lru "^1.0.0"
 
-camelcase@5.0.0, camelcase@^5.0.0:
+camelcase@5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
 
@@ -10888,7 +10888,7 @@ parseurl@~1.3.2:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.2.tgz#fc289d4ed8993119460c156253262cdc8de65bf3"
 
-pascal-case@^2.0.0:
+pascal-case@^2.0.0, pascal-case@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/pascal-case/-/pascal-case-2.0.1.tgz#2d578d3455f660da65eca18ef95b4e0de912761e"
   dependencies:

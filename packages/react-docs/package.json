@@ -8,7 +8,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@patternfly/patternfly-next": "^1.0.4",
     "@patternfly/react-core": "^0.x",
     "@patternfly/react-styles": "^2.0.0",
     "@patternfly/react-tokens": "^1.0.0",
@@ -18,6 +17,7 @@
     "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-source-filesystem": "^1.5.36",
     "gatsby-transformer-react-docgen": "^1.0.17",
+    "pascal-case": "^2.0.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
