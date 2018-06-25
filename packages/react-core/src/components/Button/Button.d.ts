@@ -1,18 +1,19 @@
 import { HTMLProps } from 'react';
+import { OneOf } from '../../typeUtils';
 
-export enum ButtonVariant {
-  primary = 'primary',
-  secondary = 'secondary',
-  tertiary = 'tertiary',
-  danger = 'danger',
-  link = 'link',
-  action = 'action'
-}
+export const ButtonVariant: {
+  primary: 'primary';
+  secondary: 'secondary';
+  tertiary: 'tertiary';
+  danger: 'danger';
+  link: 'link';
+  action: 'action';
+};
 
-export enum ButtonType {
-  button = 'button',
-  submit = 'submit'
-}
+export const ButtonType: {
+  button: 'button';
+  submit: 'submit';
+};
 
 export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   children?: React.ReactNode;
@@ -21,8 +22,8 @@ export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   isDisabled?: boolean;
   isFocus?: boolean;
   isHover?: boolean;
-  variant?: ButtonVariant;
-  type?: ButtonType;
+  variant?: OneOf<typeof ButtonVariant, keyof typeof ButtonVariant>;
+  type?: OneOf<typeof ButtonType, keyof typeof ButtonType>;
 }
 
 declare const Button: React.SFC<ButtonProps>;
