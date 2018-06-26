@@ -13,6 +13,13 @@ module.exports = {
         path: resolve(__dirname, '../react-core/src/components')
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `layouts`,
+        path: resolve(__dirname, '../react-core/src/layouts')
+      }
+    },
     'gatsby-transformer-react-docgen'
   ]
 };

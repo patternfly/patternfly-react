@@ -1,5 +1,5 @@
 import { SFC, HTMLProps, ReactNode } from 'react';
-import { Omit, OneOf } from '../../util';
+import { Omit, OneOf } from '../../typeUtils';
 
 export const TitleSize: {
   xxxxl: 'xxxxl';
