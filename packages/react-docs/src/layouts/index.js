@@ -19,6 +19,11 @@ const Layout = ({ children, data }) => {
     label: e.node.fields.label
   }));
 
+  const layoutRoutes = data.layoutPages.edges.map(e => ({
+    to: e.node.path,
+    label: e.node.fields.label
+  }));
+
   return (
     <React.Fragment>
       <Helmet
@@ -29,7 +34,12 @@ const Layout = ({ children, data }) => {
       />
       <Page
         title="Patternfly React"
-        navigation={<Navigation componentRoutes={componentRoutes} />}
+        navigation={
+          <Navigation
+            componentRoutes={componentRoutes}
+            layoutRoutes={layoutRoutes}
+          />
+        }
       >
         {children()}
       </Page>
@@ -44,6 +54,16 @@ export default Layout;
 export const query = graphql`
   query SiteLayoutQuery {
     componentPages: allSitePage(filter: { path: { regex: "/components/" } }) {
+      edges {
+        node {
+          path
+          fields {
+            label
+          }
+        }
+      }
+    }
+    layoutPages: allSitePage(filter: { path: { regex: "/layouts/" } }) {
       edges {
         node {
           path
