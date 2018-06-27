@@ -421,3 +421,35 @@ test('Wizard Stateful Pattern should return on shouldPreventStepChange', () => {
 
   expect(component.state().activeStepIndex).toBe(0);
 });
+
+const testDisableNextStepWizard = props => {
+  const onHide = jest.fn();
+  const onExited = jest.fn();
+  const onStepChanged = jest.fn();
+  return (
+    <Wizard.Pattern.Stateful
+      show
+      onHide={onHide}
+      onExited={onExited}
+      onStepChanged={onStepChanged}
+      title="Wizard Disable Next Step"
+      shouldDisableNextStep={() => true}
+      steps={[
+        { title: '1', render: () => <p>1</p> },
+        { title: '2', render: () => <p>2</p> },
+        { title: '3', render: () => <p>3</p> }
+      ]}
+      {...props}
+    />
+  );
+};
+
+test('Wizard Stateful with shouldDisableNextStep should disable next step', () => {
+  const component = mount(testDisableNextStepWizard());
+  expect(
+    component
+      .find('.wizard-pf-footer .btn')
+      .at(2)
+      .getDOMNode().disabled
+  ).toBe(true);
+});
