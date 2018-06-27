@@ -1,0 +1,38 @@
+{
+  "name": "{{name}}",
+  "version": "1.0.0",
+  "description": "{{description}}",
+  {{#if buildsWithBabel }}
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  {{#if includeTypings}}
+  "types": "dist/js/index.d.ts",
+  {{/if}}
+  {{else}}
+  "main": "lib/index.js",
+  {{#if includeTypings}}
+  "types": "lib/index.d.ts",
+  {{/if}}
+  {{/if}}
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}

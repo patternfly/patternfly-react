@@ -12,6 +12,7 @@
   * [Creating Issues for New Components](#creating-issues-for-new-components)
   * [Contributing Components](#contributing-components)
   * [Adding Styling for your Components](#adding-styling-for-your-components)
+  * [Using Generators](#using-generators)
 * [Guidelines and Requirements](#guidelines-and-requirements)
   * [React Component Requirements](#react-component-requirements)
   * [Code Consistency](#code-consistency)
@@ -114,6 +115,23 @@ Inside the package directory:
 * Import the Less file into `less/paternfly-react.less` using `@import "<component>";`
 * Add a Sass file to the `sass/patternfly-react/` directory and use the file name `_<component>.scss`
 * Import the Sass file into `sass/patternfly-react/_patternfly-react.scss` using `@import "<component>";`
+
+### Using Generators
+
+To make contributing components and packages easier a generator utilty has been provided.
+
+To start the generator run:
+
+```bash
+yarn generate
+```
+
+Follow the prompts to generate the desired component or package.
+
+Currently the following generators are provided
+
+* PatternFly 4 Component
+* Package
 
 ## Guidelines and Requirements
 
