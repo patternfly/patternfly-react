@@ -52,7 +52,10 @@ class StatefulWizardPattern extends React.Component {
 }
 
 StatefulWizardPattern.propTypes = {
-  ...excludeKeys(WizardPattern.propTypes, ['activeStepIndex']),
+  ...excludeKeys(WizardPattern.propTypes, [
+    'activeStepIndex',
+    'nextStepDisabled'
+  ]),
   steps: PropTypes.arrayOf(
     PropTypes.shape({
       ...wizardStepShape,
@@ -65,7 +68,10 @@ StatefulWizardPattern.propTypes = {
 };
 
 StatefulWizardPattern.defaultProps = {
-  ...excludeKeys(WizardPattern.defaultProps, ['activeStepIndex']),
+  ...excludeKeys(WizardPattern.defaultProps, [
+    'activeStepIndex',
+    'nextStepDisabled'
+  ]),
   shouldDisableNextStep: noop,
   shouldPreventStepChange: noop
 };
