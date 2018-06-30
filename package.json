@@ -197,5 +197,8 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "babel-plugin-transform-imports": "^1.5.0"
   }
 }
