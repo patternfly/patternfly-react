@@ -14,6 +14,10 @@ import {
 import { mockNavItems } from './__mocks__/mockNavItems';
 import { MockIconBarChildren } from './__mocks__/mockIconBarChildren';
 import { basicExample } from './__mocks__/basicExample';
+import {
+  MockWithMastHeadComponent,
+  mockWithMastHeadSource
+} from './__mocks__/mockWithMastHeadComponent';
 
 import pfLogo from 'storybook/img/logo-alt.svg';
 import pfBrand from 'storybook/img/brand-alt.svg';
@@ -258,6 +262,27 @@ stories.add(
             </IconBar>
           </Masthead>
         </VerticalNav>
+        {mockBodyContainer('nav-pf-vertical-with-badges')}
+      </div>
+    </MockFixedLayout>
+  ))
+);
+
+stories.add(
+  'With Masthead component no collapse',
+  withInfo({
+    propTablesExclude: [MockFixedLayout],
+    text: (
+      <div>
+        <h1>Example using the **Masthead** component</h1>
+        <h2>Story Source</h2>
+        <pre>{mockWithMastHeadSource}</pre>
+      </div>
+    )
+  })(() => (
+    <MockFixedLayout>
+      <div className="layout-pf layout-pf-fixed faux-layout">
+        <MockWithMastHeadComponent />
         {mockBodyContainer('nav-pf-vertical-with-badges')}
       </div>
     </MockFixedLayout>

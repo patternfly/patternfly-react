@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 
 import { VerticalNav } from './index';
+import { Masthead as MastheadPf } from '../Masthead';
 
 import { mockNavItems } from './__mocks__/mockNavItems';
 import { MockIconBarChildren } from './__mocks__/mockIconBarChildren';
@@ -57,4 +58,11 @@ test('VerticalNav renders properly with item objects', () => {
   expect(component.render()).toMatchSnapshot();
 });
 
+test('VerticalNav renders properly with masthead PF component', () => {
+  const component = mount(
+    <VerticalNav items={mockNavItems} masthead={<MastheadPf />} />
+  );
+
+  expect(component.render()).toMatchSnapshot();
+});
 // Note: in the future it would be nice to unit test all those component class methods too...
