@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#Tag render correctly with data should render tag 1`] = `
+<span
+  className="tag-pair"
+>
+  <Label
+    bsStyle="primary"
+    className="tag-key"
+    type="default"
+  >
+    Patternfly-react version
+  </Label>
+  <Label
+    bsStyle="primary"
+    className="tag-value"
+    type="default"
+  >
+    2.10
+  </Label>
+</span>
+`;
