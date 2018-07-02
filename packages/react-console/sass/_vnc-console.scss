@@ -6,4 +6,8 @@
   .vnc-console-disconnected {
     background-color: $color-pf-red;
   }
+
+  .toolbar-pf-action-right .dropdown-menu {
+    min-width: 102px;
+  }
 }

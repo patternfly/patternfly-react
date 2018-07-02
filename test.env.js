@@ -4,4 +4,10 @@ import Adapter from 'enzyme-adapter-react-16';
 import { preventInjection } from './packages/react-styles';
 
 preventInjection();
+
+const MutationObserverPolyfill = require('mutation-observer');
+// referenced from '@novnc/nvnc/core/util/events.js'
+// The MutationObserver is available in supported browsers, this is workaround for "jest"
+global.MutationObserver = global.MutationObserver || MutationObserverPolyfill;
+
 configure({ adapter: new Adapter() });

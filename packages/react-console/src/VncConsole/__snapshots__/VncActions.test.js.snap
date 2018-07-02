@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VncActions renders correctly component hierarchy 1`] = `
+<DropdownButton
+  bsStyle="default"
+  id="console-send-shortcut"
+  onClick={[Function]}
+  title="My Send Shortcut description"
+>
+  <MenuItem
+    bsClass="dropdown"
+    disabled={false}
+    divider={false}
+    eventKey="1"
+    header={false}
+    onClick={[MockFunction]}
+  >
+    foobar
+  </MenuItem>
+</DropdownButton>
+`;
+
+exports[`VncActions renders correctly html 1`] = `"<div class=\\"dropdown btn-group btn-group-default\\"><button id=\\"console-send-shortcut\\" role=\\"button\\" aria-haspopup=\\"true\\" aria-expanded=\\"false\\" type=\\"button\\" class=\\"dropdown-toggle btn btn-default\\">My Send Shortcut description <span class=\\"caret\\"></span></button><ul role=\\"menu\\" class=\\"dropdown-menu\\" aria-labelledby=\\"console-send-shortcut\\"><li role=\\"presentation\\" class=\\"\\"><a role=\\"menuitem\\" tabindex=\\"-1\\" href=\\"#\\">foobar</a></li></ul></div>"`;
+
+exports[`placeholder render test 1`] = `
+<DropdownButton
+  bsStyle="default"
+  id="console-send-shortcut"
+  onClick={[Function]}
+  title="Send Key"
+>
+  <MenuItem
+    bsClass="dropdown"
+    disabled={false}
+    divider={false}
+    eventKey="1"
+    header={false}
+    onClick={[Function]}
+  >
+    Ctrl+Alt+Del
+  </MenuItem>
+</DropdownButton>
+`;

@@ -79,6 +79,7 @@
     "lerna-semantic-release": "^9.1.0",
     "lint-staged": "^7.0.4",
     "lodash": "^4.17.0",
+    "mutation-observer": "^1.0.3",
     "node-sass": "^4.8.3",
     "npmlog": "^4.1.2",
     "plop": "^2.0.0",
@@ -168,7 +169,7 @@
       "<rootDir>/scripts/generators/"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!@patternfly)"
+      "node_modules/(?!@patternfly|@novnc)"
     ],
     "roots": [
       "<rootDir>/packages",
