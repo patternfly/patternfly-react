@@ -5,6 +5,9 @@ dist
 coverage
 public/
 .cache
+packages/react-icons/src/icons/
+packages/react-icons/src/index.js
+packages/react-icons/src/index.d.ts
 
 # package managers
 yarn-error.log

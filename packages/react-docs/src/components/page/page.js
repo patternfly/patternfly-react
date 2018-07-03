@@ -11,7 +11,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  title: 'Patternfly',
+  title: 'PatternFly',
   children: null,
   navigation: null
 };
