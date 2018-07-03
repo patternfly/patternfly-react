@@ -18,11 +18,9 @@ function setPF3Generators(plop) {
         message: 'What name should the component have?'
       }
     ],
-    actions: ({ name, type }) => {
+    actions: ({ name }) => {
       const base = join(templatesDir, './component');
-      const typeValue = 'components';
       const data = {
-        typeDir: typeValue,
         componentName: pascalCase(name)
       };
       return [
@@ -32,7 +30,7 @@ function setPF3Generators(plop) {
           type: 'addMany',
           destination: join(
             patternflyReactRoot,
-            './src/{{typeDir}}/{{componentName}}/'
+            './src/components/{{componentName}}/'
           ),
           templateFiles: join(base, '*.js')
         },
