@@ -64,7 +64,8 @@ const areaChart = stories => {
         }area-chart/`,
         description: (
           <span>
-            {DESCRIPTION.C3JS_TEXT} <a>{DESCRIPTION.C3JS_URL}</a>
+            {DESCRIPTION.C3JS_TEXT}{' '}
+            <a href={DESCRIPTION.C3JS_URL}>{DESCRIPTION.C3JS_URL}</a>
           </span>
         ),
         story
