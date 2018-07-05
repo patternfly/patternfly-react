@@ -36,7 +36,8 @@
     "postbuild": "node ./build/copyStyles.js"
   },
   "devDependencies": {
-    "@patternfly/patternfly-next": "^1.0.4",
+    "@patternfly/patternfly-next": "1.0.8",
+    "css": "^2.2.3",
     "fs-extra": "^6.0.1"
   }
 }

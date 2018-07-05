@@ -8,7 +8,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@patternfly/patternfly-next": "^1.0.4",
     "@patternfly/react-core": "^0.x",
     "@patternfly/react-styles": "^2.0.0",
     "@patternfly/react-tokens": "^1.0.0",

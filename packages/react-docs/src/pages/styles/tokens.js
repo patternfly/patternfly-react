@@ -24,7 +24,7 @@ const isColorRegex = /^(#|rgb)/;
 function Tokens() {
   return (
     <Content>
-      <Title size="xxxl" withMargins>
+      <Title size="3xl" withMargins>
         Tokens
       </Title>
       <Table>

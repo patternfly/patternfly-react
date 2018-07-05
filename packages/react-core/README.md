@@ -22,7 +22,7 @@ npm install @patternfly/react-core --save
 It's strongly advised to use the Patternfly Base CSS in your whole project, or some components may diverge in appearance:
 
 ```javascript
-import '@patternfly/react-core/styles/patternfly.css';
+import '@patternfly/react-core/dist/styles/base.css'
 ```
 
 #### Example Component Usage

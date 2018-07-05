@@ -1,6 +1,6 @@
 // This is a gatsby limitation will be fixed in newer version
 // eslint-disable-next-line
-import '@patternfly/react-core/../dist/styles/patternfly.css';
+import '@patternfly/react-core/../dist/styles/base.css';
 import './index.css';
 import React from 'react';
 import Helmet from 'react-helmet';
