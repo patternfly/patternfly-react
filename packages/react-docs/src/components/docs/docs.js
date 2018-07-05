@@ -19,7 +19,7 @@ const defaultProps = {
 
 const Docs = ({ title, description, children, props }) => (
   <Content>
-    <Title size="xxxl" withMargins>
+    <Title size="3xl" withMargins>
       {title}
     </Title>
     <p className={css(styles.description)}>{description}</p>

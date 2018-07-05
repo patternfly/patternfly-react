@@ -3,17 +3,17 @@
 exports[`action button 1`] = `
 .pf-c-button.pf-m-action {
   display: inline-block;
+  position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1;
+  color: #292e34;
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
-  box-shadow: none;
-  color: #292e34;
 }
 
 <button
@@ -30,17 +30,17 @@ exports[`action button 1`] = `
 exports[`danger button 1`] = `
 .pf-c-button.pf-m-danger {
   display: inline-block;
+  position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #ffffff;
   text-align: center;
   white-space: nowrap;
   background-color: #a30000;
   border: 0px;
   border-radius: 30em;
-  box-shadow: inset 0 0 0 2px #a30000;
-  color: #ffffff;
 }
 
 <button
@@ -57,17 +57,17 @@ exports[`danger button 1`] = `
 exports[`isBlock 1`] = `
 .pf-c-button.pf-m-primary.pf-m-block {
   display: block;
+  position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #ffffff;
   text-align: center;
   white-space: nowrap;
   background-color: #00659c;
   border: 0px;
   border-radius: 30em;
-  box-shadow: inset 0 0 0 2px #00659c;
-  color: #ffffff;
   width: 100%;
 }
 
@@ -84,17 +84,17 @@ exports[`isBlock 1`] = `
 exports[`isDisabled 1`] = `
 .pf-c-button.pf-m-primary.pf-m-disabled {
   display: inline-block;
+  position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #72767b;
   text-align: center;
   white-space: nowrap;
-  background-color: #00659c;
+  background-color: #d1d1d1;
   border: 0px;
   border-radius: 30em;
-  box-shadow: inset 0 0 0 1px undefined;
-  color: #ffffff;
   pointer-events: none;
 }
 
@@ -111,17 +111,17 @@ exports[`isDisabled 1`] = `
 exports[`isFocus 1`] = `
 .pf-c-button.pf-m-primary.pf-m-focus {
   display: inline-block;
+  position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #ffffff;
   text-align: center;
   white-space: nowrap;
   background-color: #00659c;
   border: 0px;
   border-radius: 30em;
-  box-shadow: inset 0 0 0 2px #00659c;
-  color: #ffffff;
 }
 
 <button
@@ -137,17 +137,17 @@ exports[`isFocus 1`] = `
 exports[`isHover 1`] = `
 .pf-c-button.pf-m-primary.pf-m-hover {
   display: inline-block;
+  position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #ffffff;
   text-align: center;
   white-space: nowrap;
   background-color: #00659c;
   border: 0px;
   border-radius: 30em;
-  box-shadow: inset 0 0 0 2px #00659c;
-  color: #ffffff;
 }
 
 <button
@@ -163,17 +163,17 @@ exports[`isHover 1`] = `
 exports[`link button 1`] = `
 .pf-c-button.pf-m-link {
   display: inline-block;
+  position: relative;
   padding: 0.25rem 0.25rem 0.25rem 0.25rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #00486e;
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
-  box-shadow: none;
-  color: #00486e;
 }
 
 <button
@@ -190,17 +190,17 @@ exports[`link button 1`] = `
 exports[`primary button 1`] = `
 .pf-c-button.pf-m-primary {
   display: inline-block;
+  position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #ffffff;
   text-align: center;
   white-space: nowrap;
   background-color: #00659c;
   border: 0px;
   border-radius: 30em;
-  box-shadow: inset 0 0 0 2px #00659c;
-  color: #ffffff;
 }
 
 <button
@@ -217,17 +217,17 @@ exports[`primary button 1`] = `
 exports[`secondary button 1`] = `
 .pf-c-button.pf-m-secondary {
   display: inline-block;
+  position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #00659c;
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
-  box-shadow: inset 0 0 0 2px #00659c;
-  color: #00659c;
 }
 
 <button
@@ -244,17 +244,17 @@ exports[`secondary button 1`] = `
 exports[`tertiary button 1`] = `
 .pf-c-button.pf-m-tertiary {
   display: inline-block;
+  position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #292e34;
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
-  box-shadow: inset 0 0 0 2px #72767b;
-  color: #00659c;
 }
 
 <button
