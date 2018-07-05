@@ -1,4 +1,4 @@
-import camelcase from 'camelcase';
+import camelcase from 'camel-case';
 import { inject } from './inject';
 
 export function isValidStyleDeclaration(styleObj) {
