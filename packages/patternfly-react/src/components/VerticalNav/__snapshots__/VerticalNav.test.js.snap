@@ -290,3 +290,40 @@ exports[`VerticalNav renders properly with item objects 1`] = `
   </nav>
 </nav>
 `;
+
+exports[`VerticalNav renders properly with masthead PF component 1`] = `
+<nav
+  class="navbar navbar-pf-vertical"
+>
+  <div
+    class="navbar-header"
+  >
+    <button
+      class="navbar-toggle"
+    >
+      <span
+        class="sr-only"
+      >
+        Toggle navigation
+      </span>
+      <span
+        aria-hidden="true"
+        class="icon-bar"
+      />
+      <span
+        aria-hidden="true"
+        class="icon-bar"
+      />
+      <span
+        aria-hidden="true"
+        class="icon-bar"
+      />
+    </button>
+    <a
+      class="navbar-brand"
+      href="#"
+      role="button"
+    />
+  </div>
+</nav>
+`;

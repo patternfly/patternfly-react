@@ -335,11 +335,6 @@ class BaseVerticalNav extends React.Component {
       ));
     const itemComponents = itemsFromProps || itemsFromChildren || [];
 
-    const masthead = findChild(
-      children,
-      child => child.type === VerticalNavMasthead
-    );
-
     const {
       hiddenIcons,
       pinnableMenus,
@@ -351,12 +346,19 @@ class BaseVerticalNav extends React.Component {
       blurDelay,
       isMobile,
       showMobileNav,
+      masthead,
       navCollapsed,
       activePath,
       hoverPath,
       mobilePath,
       pinnedPath
     } = this.props;
+
+    const mastheadElem = masthead || (
+      <nav className={classNames('navbar navbar-pf-vertical')}>
+        {findChild(children, child => child.type === VerticalNavMasthead)}
+      </nav>
+    );
 
     const getPathDepth = path =>
       path && path.split('/').filter(s => s !== '').length;
@@ -402,9 +404,7 @@ class BaseVerticalNav extends React.Component {
         hoverDelay={hoverDelay}
         blurDelay={blurDelay}
       >
-        <nav className={classNames('navbar navbar-pf-vertical')}>
-          {!hideMasthead && masthead}
-        </nav>
+        {!hideMasthead && mastheadElem}
         <div
           className={classNames(
             'nav-pf-vertical nav-pf-vertical-with-sub-menus',
@@ -489,6 +489,8 @@ BaseVerticalNav.propTypes = {
   hoverDelay: PropTypes.number,
   /** Delay between mouse blur and menu hide in ms */
   blurDelay: PropTypes.number,
+  /**  */
+  masthead: PropTypes.node,
   /** Optional callback for updating isMobile prop */
   onLayoutChange: PropTypes.func, // eslint-disable-line react/require-default-props
   /** Optional callback for updating navCollapsed and showMobileNav props (option 1) */
@@ -528,6 +530,7 @@ BaseVerticalNav.defaultProps = {
   persistentSecondary: true,
   hoverDelay: 500,
   blurDelay: 700,
+  masthead: null,
   onMenuToggleClick: null,
   onCollapse: null,
   onExpand: null,
