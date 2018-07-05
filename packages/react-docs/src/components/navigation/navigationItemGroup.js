@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
+import { AngleRight, AngleDown } from '@patternfly/react-icons';
 import styles from './navigationItemGroup.styles';
 
 const propTypes = {
@@ -28,7 +29,15 @@ class NavigationItemGroup extends React.Component {
           className={css(styles.title)}
           onClick={onToggleExpand}
         >
-          <div>{title}</div>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
+          >
+            {title} {isExpanded ? <AngleDown /> : <AngleRight />}
+          </div>
         </button>
         <ul
           id={this.contentId}

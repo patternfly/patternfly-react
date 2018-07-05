@@ -1,11 +1,6 @@
 import { SFC, HTMLProps, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
-
-export const GutterSize: {
-  sm: 'sm';
-  md: 'md';
-  lg: 'lg';
-};
+import { GutterSize } from '../../styles/gutters';
 
 export interface GalleryProps extends HTMLProps<HTMLDivElement> {
   gutter: OneOf<typeof GutterSize, keyof typeof GutterSize>;

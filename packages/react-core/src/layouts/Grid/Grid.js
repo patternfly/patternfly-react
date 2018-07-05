@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '@patternfly/patternfly-next/layouts/Grid/styles.css';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/layouts/Gallery/styles.css';
 import { GutterSize, getGutterModifier } from '../../styles/gutters';
 
 const propTypes = {
@@ -16,11 +16,11 @@ const defaultProps = {
   gutter: null
 };
 
-const Gallery = ({ children, className, gutter, ...props }) => (
+const Grid = ({ children, className, gutter, ...props }) => (
   <div
     className={css(
-      styles.gallery,
-      gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter),
+      styles.grid,
+      gutter && getGutterModifier(styles, gutter, styles.modifiers.gutters),
       className
     )}
     {...props}
@@ -29,7 +29,7 @@ const Gallery = ({ children, className, gutter, ...props }) => (
   </div>
 );
 
-Gallery.propTypes = propTypes;
-Gallery.defaultProps = defaultProps;
+Grid.propTypes = propTypes;
+Grid.defaultProps = defaultProps;
 
-export default Gallery;
+export default Grid;
