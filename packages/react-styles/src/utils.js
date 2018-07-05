@@ -28,7 +28,9 @@ export function isModifier(className) {
 
 export function getModifier(styleObj, modifier, defaultModifier) {
   const modifiers = styleObj.modifiers || styleObj;
-  return modifiers[modifier] || defaultModifier;
+  return (
+    modifiers[modifier] || modifiers[camelcase(modifier)] || defaultModifier
+  );
 }
 
 export function formatClassName(className) {

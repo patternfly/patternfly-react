@@ -8,18 +8,21 @@ import NavigationItemGroup from './navigationItemGroup';
 import NavigationItem from './navigationItem';
 import ValueToggle from '../valueToggle';
 
+const routeShape = PropTypes.shape({
+  to: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired
+});
+
 const propTypes = {
-  componentRoutes: PropTypes.arrayOf(
-    PropTypes.shape({
-      to: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired
-    })
-  )
+  componentRoutes: PropTypes.arrayOf(routeShape),
+  layoutRoutes: PropTypes.arrayOf(routeShape)
 };
 
 const defaultProps = {
-  componentRoutes: []
+  componentRoutes: [],
+  layoutRoutes: []
 };
+
 class Navigation extends React.Component {
   static propTypes = propTypes;
   static defaultProps = defaultProps;
@@ -35,11 +38,15 @@ class Navigation extends React.Component {
   };
 
   render() {
-    const { componentRoutes } = this.props;
+    const { componentRoutes, layoutRoutes } = this.props;
     const { searchValue } = this.state;
     const searchRE = new RegExp(searchValue, 'i');
 
     const filteredComponentRoutes = componentRoutes.filter(c =>
+      searchRE.test(c.label)
+    );
+
+    const filteredLayoutRoutes = layoutRoutes.filter(c =>
       searchRE.test(c.label)
     );
 
@@ -71,21 +78,40 @@ class Navigation extends React.Component {
               </NavigationItemGroup>
             )}
           </ValueToggle>
-          <ValueToggle defaultValue>
-            {({ value, toggle }) => (
-              <NavigationItemGroup
-                isExpanded={value}
-                onToggleExpand={toggle}
-                title="Components"
-              >
-                {filteredComponentRoutes.map(route => (
-                  <NavigationItem key={route.label} to={route.to}>
-                    {route.label}
-                  </NavigationItem>
-                ))}
-              </NavigationItemGroup>
-            )}
-          </ValueToggle>
+          {Boolean(filteredComponentRoutes.length) && (
+            <ValueToggle defaultValue>
+              {({ value, toggle }) => (
+                <NavigationItemGroup
+                  isExpanded={value}
+                  onToggleExpand={toggle}
+                  title="Components"
+                >
+                  {filteredComponentRoutes.map(route => (
+                    <NavigationItem key={route.label} to={route.to}>
+                      {route.label}
+                    </NavigationItem>
+                  ))}
+                </NavigationItemGroup>
+              )}
+            </ValueToggle>
+          )}
+          {Boolean(filteredLayoutRoutes.length) && (
+            <ValueToggle defaultValue>
+              {({ value, toggle }) => (
+                <NavigationItemGroup
+                  isExpanded={value}
+                  onToggleExpand={toggle}
+                  title="Layouts"
+                >
+                  {filteredLayoutRoutes.map(route => (
+                    <NavigationItem key={route.label} to={route.to}>
+                      {route.label}
+                    </NavigationItem>
+                  ))}
+                </NavigationItemGroup>
+              )}
+            </ValueToggle>
+          )}
         </div>
       </div>
     );

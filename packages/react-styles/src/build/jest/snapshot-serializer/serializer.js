@@ -1,8 +1,10 @@
 import { getSelectors, getStyles } from './cssUtils';
 import { getNodes } from './reactUtils';
 import { getBufferedStyles } from '../../../inject';
+import { addOverrides } from './cssPropertyOverrides';
 
 export function createSerializer() {
+  addOverrides();
   function test(val) {
     return (
       val && !val.withStyles && val.$$typeof === Symbol.for('react.test.json')
