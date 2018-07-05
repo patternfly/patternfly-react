@@ -2,25 +2,25 @@
 
 ## Outline
 
-* [Code of Conduct](#code-of-conduct)
-* [Issues and Project Board](#issues-and-project-board)
-  * [Issue Labels](#issue-labels)
-  * [PR Labels](#pr-labels)
-  * [Project Board Columns](#project-board-columns)
-* [Contribution Process](#contribution-process)
-  * [Creating Issues for Bugs](#creating-issues-for-bugs)
-  * [Creating Issues for New Components](#creating-issues-for-new-components)
-  * [Contributing Components](#contributing-components)
-  * [Adding Styling for your Components](#adding-styling-for-your-components)
-  * [Using Generators](#using-generators)
-* [Guidelines and Requirements](#guidelines-and-requirements)
-  * [React Component Requirements](#react-component-requirements)
-  * [Code Consistency](#code-consistency)
-  * [Code Contribution Guidelines](#code-contribution-guidelines)
-* [Becoming a Maintainer](#becoming-a-maintainer)
-  * [How do I become a maintainer?](how-do-i-become-a-maintainer?)
-  * [How do I lose maintainers status?](how-do-i-lose-maintainers-status?)
-  * [Quick Tips for New Maintainers](quick-tips-for-new-maintainers)
+- [Code of Conduct](#code-of-conduct)
+- [Issues and Project Board](#issues-and-project-board)
+  - [Issue Labels](#issue-labels)
+  - [PR Labels](#pr-labels)
+  - [Project Board Columns](#project-board-columns)
+- [Contribution Process](#contribution-process)
+  - [Creating Issues for Bugs](#creating-issues-for-bugs)
+  - [Creating Issues for New Components](#creating-issues-for-new-components)
+  - [Contributing Components](#contributing-components)
+  - [Adding Styling for your Components](#adding-styling-for-your-components)
+  - [Using Generators](#using-generators)
+- [Guidelines and Requirements](#guidelines-and-requirements)
+  - [React Component Requirements](#react-component-requirements)
+  - [Code Consistency](#code-consistency)
+  - [Code Contribution Guidelines](#code-contribution-guidelines)
+- [Becoming a Maintainer](#becoming-a-maintainer)
+  - [How do I become a maintainer?](how-do-i-become-a-maintainer?)
+  - [How do I lose maintainers status?](how-do-i-lose-maintainers-status?)
+  - [Quick Tips for New Maintainers](quick-tips-for-new-maintainers)
 
 ## Code of Conduct
 
@@ -35,34 +35,34 @@ We use issues to track work items, such as bug reports and feature requests. Iss
 
 Our issue tracker utilizes several labels to help organize and identify issues. Here's what they represent and how we use them:
 
-* `bug` - A bug is a _demonstrable problem_ that is caused by the code in the repository. Please check if the issue has already been reported before reporting a new bug.
-* `duplicate` - A duplicate signifies that another issue encapsulates or restates this issue. Duplicates will be closed and referenced as such.
-* `enhancement` - An enhancement is a feature request. Please provide as much detail as possible and consider whether your idea fits the scope and aims of this project.
-* `good first issue` - Issues that are ideal for new contributors.
-* `help wanted` - Issues we need or would love help from the community to resolve.
-* `pending response` - This label indicates that the issue is awaiting reply from a contributor or a maintainer.
-* `question` - Use the question label to indicate you are having a problem with something and would like feedback from the community.
-* `wontfix` - The issue is legitimate, but it is not something the team is currently able or willing to fix or implement. Issues with this label may be revisited in the future.
-* `p1`, `p2`, `p3` - These are priority labels.
+- `bug` - A bug is a _demonstrable problem_ that is caused by the code in the repository. Please check if the issue has already been reported before reporting a new bug.
+- `duplicate` - A duplicate signifies that another issue encapsulates or restates this issue. Duplicates will be closed and referenced as such.
+- `enhancement` - An enhancement is a feature request. Please provide as much detail as possible and consider whether your idea fits the scope and aims of this project.
+- `good first issue` - Issues that are ideal for new contributors.
+- `help wanted` - Issues we need or would love help from the community to resolve.
+- `pending response` - This label indicates that the issue is awaiting reply from a contributor or a maintainer.
+- `question` - Use the question label to indicate you are having a problem with something and would like feedback from the community.
+- `wontfix` - The issue is legitimate, but it is not something the team is currently able or willing to fix or implement. Issues with this label may be revisited in the future.
+- `p1`, `p2`, `p3` - These are priority labels.
 
 ### PR Labels
 
 Since the components in patternfly-react are based on patternfly, we want to make sure these components stay in sync with the core patternfly components as documented on [patternfly.org](http://www.patternfly.org/pattern-library/). To help make sure component contributions are consistent with the [design documentation](http://www.patternfly.org/pattern-library/) and [html/css implementation](https://rawgit.com/patternfly/patternfly/master-dist/dist/tests/), we use the following labels during the PR review process.
 
-* `css review` - The issue requires css review. Add this label when you are working on a component, and the html and css are ready for review against the core patternfly implementation.
-* `ux review` - The issue requires ux design review. Add this label when you are working on a component, and the storybook example is ready for review by a ux designer.
-* `css approved` - The issue has been reviewed and approved by a member of the css team.
-* `ux approved` - The issue has been reviewed and approved by a member of the ux team.
+- `css review` - The issue requires css review. Add this label when you are working on a component, and the html and css are ready for review against the core patternfly implementation.
+- `ux review` - The issue requires ux design review. Add this label when you are working on a component, and the storybook example is ready for review by a ux designer.
+- `css approved` - The issue has been reviewed and approved by a member of the css team.
+- `ux approved` - The issue has been reviewed and approved by a member of the ux team.
 
 ### Project Board Columns
 
 The project board uses the following columns to track issues:
 
-* `Backlog` - Issues that are ready to be worked and available for any contributor to take.
-* `Needs CSS/Design/Research` - Issues that require any work that would be completed outside of this repo related to css, design or research. For example some component contributions will require updates to css in the core [patternfly](https://github.com/patternfly/patternfly) repo.
-* `Assigned` - Issues that are ready to be worked and are already assigned.
-* `In Progress` - Issues that are actively being worked.
-* `PR in Review` - Issues for which a PR is open and are ready for review.
+- `Backlog` - Issues that are ready to be worked and available for any contributor to take.
+- `Needs CSS/Design/Research` - Issues that require any work that would be completed outside of this repo related to css, design or research. For example some component contributions will require updates to css in the core [patternfly](https://github.com/patternfly/patternfly) repo.
+- `Assigned` - Issues that are ready to be worked and are already assigned.
+- `In Progress` - Issues that are actively being worked.
+- `PR in Review` - Issues for which a PR is open and are ready for review.
 
 Issues can be manually added to the project board from either the issue page or the project board page.
 
@@ -73,10 +73,10 @@ Issues can be manually added to the project board from either the issue page or 
 If you find a bug within the repo, please help us track the issue by following these steps:
 
 1.  In the issue tracker, check if the bug has already been reported.
-    * If it does exist, but doesn’t capture key details that you have noticed, please add a comment to the existing bug.
+    - If it does exist, but doesn’t capture key details that you have noticed, please add a comment to the existing bug.
 2.  Create an issue if one doesn’t already exist.
-    * Provide details like what component is affected, steps to reproduce, and any other information that is critical to addressing the issue
-    * Assign the label “bug” to the issue
+    - Provide details like what component is affected, steps to reproduce, and any other information that is critical to addressing the issue
+    - Assign the label “bug” to the issue
 
 ### Creating Issues for New Components
 
@@ -84,9 +84,9 @@ To create an issue for adding a new component to the repo, please observe the fo
 
 1.  If the component does not yet exist as a PatternFly component, check the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) to see if your component meets the criteria for an addition to PatternFly. If you're unsure, reach out to us on the patternfly@redhat.com mailing list.
 2.  If the component exists in PatternFly or passes the Decision Tree, then create an issue with the following details:
-    * Assign the label `enhancement` to the issue
-    * Include the text “Component -“ in the beginning of the title if the issue captures a new component
-    * If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
+    - Assign the label `enhancement` to the issue
+    - Include the text “Component -“ in the beginning of the title if the issue captures a new component
+    - If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
 
 ### Contributing Components
 
@@ -111,10 +111,10 @@ When it is necessary to add styling in the patternfly-react repo, the styling sh
 
 Inside the package directory:
 
-* Add a Less file to the `less` directory and use the file name `<component>.less`
-* Import the Less file into `less/paternfly-react.less` using `@import "<component>";`
-* Add a Sass file to the `sass/patternfly-react/` directory and use the file name `_<component>.scss`
-* Import the Sass file into `sass/patternfly-react/_patternfly-react.scss` using `@import "<component>";`
+- Add a Less file to the `less` directory and use the file name `<component>.less`
+- Import the Less file into `less/paternfly-react.less` using `@import "<component>";`
+- Add a Sass file to the `sass/patternfly-react/` directory and use the file name `_<component>.scss`
+- Import the Sass file into `sass/patternfly-react/_patternfly-react.scss` using `@import "<component>";`
 
 ### Using Generators
 
@@ -130,8 +130,9 @@ Follow the prompts to generate the desired component or package.
 
 Currently the following generators are provided
 
-* PatternFly 4 Component
-* Package
+- PatternFly 4 Component
+- PatternFly 3 Component
+- Package
 
 ## Guidelines and Requirements
 
@@ -139,35 +140,35 @@ Currently the following generators are provided
 
 Please ensure that all React UI components contributed meet the following guidelines:
 
-* This repository serves as a UI / presentational component library only. This means we should not be introducing container components which subscribe to state updates or handle data fetching (i.e. redux aware components). Prefer [stateless functional components](http://buildwithreact.com/article/stateless-functional-components)
+- This repository serves as a UI / presentational component library only. This means we should not be introducing container components which subscribe to state updates or handle data fetching (i.e. redux aware components). Prefer [stateless functional components](http://buildwithreact.com/article/stateless-functional-components)
   when possible and accept [props](https://facebook.github.io/react/docs/components-and-props.html) as UI display parameters.
-* Provide a [single default export](http://exploringjs.com/es6/ch_modules.html#_single-default-export) for exporting your React UI component as an ES6 Module in your component's jsx definition.
-* Provide an associated `.stories.js` [story](https://getstorybook.io/docs/react-storybook/basics/writing-stories) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybooks/storybook-addon-knobs) to enable dynamic visualizations of your component's props.
-* Provide a [jest snapshot test](https://facebook.github.io/jest/docs/snapshot-testing.html) to ensure your UI markup does not change unexpectedly.
-* Ensure the component's rendered design and Storybook stories meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
+- Provide a [single default export](http://exploringjs.com/es6/ch_modules.html#_single-default-export) for exporting your React UI component as an ES6 Module in your component's jsx definition.
+- Provide an associated `.stories.js` [story](https://getstorybook.io/docs/react-storybook/basics/writing-stories) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybooks/storybook-addon-knobs) to enable dynamic visualizations of your component's props.
+- Provide a [jest snapshot test](https://facebook.github.io/jest/docs/snapshot-testing.html) to ensure your UI markup does not change unexpectedly.
+- Ensure the component's rendered design and Storybook stories meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
   **Note:** If your component does not yet have PatternFly design documentation, the PatternFly React design team will first confirm that the pattern passes the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) and then start the process for generating design documentation.
-* Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `yarn prettier` and run the project's linter with `yarn lint`.
+- Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `yarn prettier` and run the project's linter with `yarn lint`.
 
 ### Code Consistency
 
-* All files and folders under your package's `src/components` should name with PascalCase except `index.js` files
-* If you need a constant file, it should be called `{Component_Name}Constants.js` (Component_Name with PascalCase)
-* Each component should treat as a standalone package and live under its own folder. If you think your component can be made completely independent from other components, create it as a new package. This reduces the dependency tree and improves performance downstream. It also makes exported bundles lighter.
-* Single file per component with **default export**
-* Avoid using the bindMethods syntax for attaching methods to a class. Instead use class properties for example `testMethod = () => { return 'test'}`
-* When component is a set of components (e.g., ListGroup and ListGroupItem),
+- All files and folders under your package's `src/components` should name with PascalCase except `index.js` files
+- If you need a constant file, it should be called `{Component_Name}Constants.js` (Component_Name with PascalCase)
+- Each component should treat as a standalone package and live under its own folder. If you think your component can be made completely independent from other components, create it as a new package. This reduces the dependency tree and improves performance downstream. It also makes exported bundles lighter.
+- Single file per component with **default export**
+- Avoid using the bindMethods syntax for attaching methods to a class. Instead use class properties for example `testMethod = () => { return 'test'}`
+- When component is a set of components (e.g., ListGroup and ListGroupItem),
   they should live in the same folder named on the parent component (e.g., ListGroup)
-* Each component folder should have an `index.js` file with **named exports** of all the relevant components in the folder
-* Always prefer **default imports** between components in the same folder
-* Components that are not getting exported (to consumers) from
+- Each component folder should have an `index.js` file with **named exports** of all the relevant components in the folder
+- Always prefer **default imports** between components in the same folder
+- Components that are not getting exported (to consumers) from
   the `index.js` file should be in a subfolder named `InnerComponents`
-* Storybooks
-  * Provide a storybook with your component named on the parent component with a `.stories.js` suffix (e.g., `ListGroup.stories.js`)
-  * When your stories contain multiple files, put them in a subfolder named `Stories`
-  * `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
-* When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
-* When destructuring or spreading expressions , use ...props as the variable name.
-* Exporting components from other libraries (without manipulating them)
+- Storybooks
+  - Provide a storybook with your component named on the parent component with a `.stories.js` suffix (e.g., `ListGroup.stories.js`)
+  - When your stories contain multiple files, put them in a subfolder named `Stories`
+  - `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
+- When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
+- When destructuring or spreading expressions , use ...props as the variable name.
+- Exporting components from other libraries (without manipulating them)
   to consumers is a common task, use:
 
   ```js
@@ -253,10 +254,10 @@ $ yarn storybook:deploy
 
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `master` branch. Please be sure to include all of the following in your PR:
 
-* Any relevant issues associated with this pull request (`enhancement` issues, `bug` issues, etc.)
-* Storybook documentation
-  * Include a link to the design documentation in the [PatternFly Pattern Library](http://www.patternfly.org/pattern-library/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
-  * Include the generated Storybook url (from **Step 7**)
+- Any relevant issues associated with this pull request (`enhancement` issues, `bug` issues, etc.)
+- Storybook documentation
+  - Include a link to the design documentation in the [PatternFly Pattern Library](http://www.patternfly.org/pattern-library/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
+  - Include the generated Storybook url (from **Step 7**)
 
 Once your pull request has been reviewed, if all conditions above have been met your pull request will be approved and merged.
 
@@ -270,29 +271,29 @@ As a maintainer, it is your responsibility to help manage and maintain the healt
 
 Maintainers are members of the PatternFly community who exhibit most of the following behaviors:
 
-* Review and merge code and documentation.
-* Help triaging bugs and testing pull requests.
-* Make well formed pull requests.
-* Have a sense of duty about the project.
-* Play well with others, are respectful, show gratitude.
+- Review and merge code and documentation.
+- Help triaging bugs and testing pull requests.
+- Make well formed pull requests.
+- Have a sense of duty about the project.
+- Play well with others, are respectful, show gratitude.
 
 If you want to become a maintainer, we expect you to:
 
-* Review and test pull requests submitted by others.
-* Encourage and ensure design remains an integral part of the review process and pull in designers for review as needed (you can leverage @patternfly/patternfly-react-ux if there is no known associated designer).
-* Maintain sustained activity versus sporadic.
-* Support users and other developers on [PatternFly Slack](https://patternfly.slack.com/) (there is a channel dedicated to PatternFly React) and the [mailing list](mailto:patternfly@redhat.com).
+- Review and test pull requests submitted by others.
+- Encourage and ensure design remains an integral part of the review process and pull in designers for review as needed (you can leverage @patternfly/patternfly-react-ux if there is no known associated designer).
+- Maintain sustained activity versus sporadic.
+- Support users and other developers on [PatternFly Slack](https://patternfly.slack.com/) (there is a channel dedicated to PatternFly React) and the [mailing list](mailto:patternfly@redhat.com).
 
 Other things that are nice to do:
 
-* Participate in (or even initiate) real-world events such as user/developer meetups, papers/talks at conferences, etc.
+- Participate in (or even initiate) real-world events such as user/developer meetups, papers/talks at conferences, etc.
 
 ### How do I become a maintainer?
 
 One person has to nominate you to the group of existing maintainers. The person who nominates you has to:
 
-* Submit ten examples that prove this person behaves like a maintainer.
-* Explain how the nominee is involved in the community and cares about the future of the project
+- Submit ten examples that prove this person behaves like a maintainer.
+- Explain how the nominee is involved in the community and cares about the future of the project
 
 This nomination is public and should be sent to the PatternFly mailing list. After the nomination is submitted, two other maintainers have to second the nomination. If no one objects in one week, the nomination is accepted.
 
@@ -308,10 +309,10 @@ The process for revoking someone's maintainer status is a discussion limited to 
 
 ### Quick tips for new maintainers
 
-* If something you merged broke something, it’s your responsibility to resolve or coordinate how to resolve the issue.
-* Do not merge your own commits
-* Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look
-* Do not merge if the build is failing. Wait until tests are green to merge.
+- If something you merged broke something, it’s your responsibility to resolve or coordinate how to resolve the issue.
+- Do not merge your own commits
+- Do not merge commits blindly. If you do not fully understand a pull request, ask existing maintainers to take a look
+- Do not merge if the build is failing. Wait until tests are green to merge.
 
 [1]: http://contributor-covenant.org/version/1/4/code_of_conduct.md
 [2]: mailto:patternfly@redhat.com
