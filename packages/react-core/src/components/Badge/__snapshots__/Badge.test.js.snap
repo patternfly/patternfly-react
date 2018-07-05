@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`false Badge 1`] = `
+.pf-c-badge.pf-m-unread {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 30em;
+  color: #ffffff;
+  background-color: #00659c;
+}
+
+<span
+  className="pf-c-badge pf-m-unread"
+>
+  unread
+   Badge
+</span>
+`;
+
+exports[`true Badge 1`] = `
+.pf-c-badge.pf-m-read {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 30em;
+  color: #292e34;
+  background-color: #ededed;
+}
+
+<span
+  className="pf-c-badge pf-m-read"
+>
+  read
+   Badge
+</span>
+`;

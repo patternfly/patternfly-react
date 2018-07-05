@@ -9,12 +9,12 @@ const propTypes = {
   title: PropTypes.string.isRequired
 };
 
-const Example = ({ children, title }) => (
+const Example = ({ children, title, ...props }) => (
   <div>
     <Title size="lg" withMargins>
       {title}
     </Title>
-    <div className={css(styles.example)}>
+    <div className={css(styles.example)} {...props}>
       {React.Children.map(
         children,
         child =>
