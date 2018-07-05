@@ -13,37 +13,43 @@ const propTypes = {
   data: PropTypes.any.isRequired
 };
 
-const Layout = ({ children, data }) => (
-  <React.Fragment>
-    <Helmet
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' }
-      ]}
-    />
-    <Page
-      title="Patternfly React"
-      navigation={
-        <Navigation
-          components={data.allComponentMetadata.edges.map(e => e.node)}
-        />
-      }
-    >
-      {children()}
-    </Page>
-  </React.Fragment>
-);
+const Layout = ({ children, data }) => {
+  const componentRoutes = data.componentPages.edges.map(e => ({
+    to: e.node.path,
+    label: e.node.fields.label
+  }));
+
+  return (
+    <React.Fragment>
+      <Helmet
+        meta={[
+          { name: 'description', content: 'PatternFly React Documentation' },
+          { name: 'keywords', content: 'React, PatternFly, Red Hat' }
+        ]}
+      />
+      <Page
+        title="Patternfly React"
+        navigation={<Navigation componentRoutes={componentRoutes} />}
+      >
+        {children()}
+      </Page>
+    </React.Fragment>
+  );
+};
 
 Layout.propTypes = propTypes;
 
 export default Layout;
 
 export const query = graphql`
-  query SiteTitleQuery {
-    allComponentMetadata(sort: { fields: [displayName], order: ASC }) {
+  query SiteLayoutQuery {
+    componentPages: allSitePage(filter: { path: { regex: "/components/" } }) {
       edges {
         node {
-          displayName
+          path
+          fields {
+            label
+          }
         }
       }
     }
