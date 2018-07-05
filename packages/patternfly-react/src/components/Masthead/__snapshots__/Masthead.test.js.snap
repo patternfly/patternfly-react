@@ -305,20 +305,29 @@ exports[`MastheadCollapse renders properly: MastheadCollapse snapshot 1`] = `
 `;
 
 exports[`MastheadDropdown renders properly: MastheadDropdown snapshot 1`] = `
-<li
-  className="dropdown"
+<Uncontrolled(Dropdown)
+  className=""
+  componentClass={[Function]}
+  id="app-help-dropdown"
 >
-  <DropdownButton
+  <DropdownToggle
+    bsClass="dropdown-toggle"
+    bsRole="toggle"
     bsStyle="link"
-    className="dropdown-toggle nav-item-iconic"
-    id="app-help-dropdown"
+    className="nav-item-iconic"
     noCaret={false}
-    title={
-      <span
-        className="pficon pficon-help"
-        title="Help"
-      />
-    }
+    open={false}
+    useAnchor={false}
+  >
+    <span
+      className="pficon pficon-help"
+      title="Help"
+    />
+  </DropdownToggle>
+  <DropdownMenu
+    bsClass="dropdown-menu"
+    bsRole="menu"
+    pullRight={false}
   >
     <MenuItem
       bsClass="dropdown"
@@ -338,6 +347,6 @@ exports[`MastheadDropdown renders properly: MastheadDropdown snapshot 1`] = `
     >
       About
     </MenuItem>
-  </DropdownButton>
-</li>
+  </DropdownMenu>
+</Uncontrolled(Dropdown)>
 `;

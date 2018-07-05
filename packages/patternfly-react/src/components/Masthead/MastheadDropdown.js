@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import { DropdownButton } from '../Button';
+import { Dropdown } from '../Dropdown';
 
 /**
  * Masthead
@@ -14,24 +13,26 @@ const MastheadDropdown = ({
   children,
   ...props
 }) => {
-  const dropdownClasses = classNames(
-    'dropdown-toggle',
-    'nav-item-iconic',
-    className
+  const dropdownComponentClass = dropdownProps => (
+    <li className={dropdownProps.className}>{dropdownProps.children}</li>
   );
 
   return (
-    <li className="dropdown" {...props}>
-      <DropdownButton
-        id={id}
-        className={dropdownClasses}
+    <Dropdown
+      id={id}
+      componentClass={dropdownComponentClass}
+      className={className}
+      {...props}
+    >
+      <Dropdown.Toggle
+        className="nav-item-iconic"
         bsStyle="link"
-        title={title}
         noCaret={noCaret}
       >
-        {children}
-      </DropdownButton>
-    </li>
+        {title}
+      </Dropdown.Toggle>
+      <Dropdown.Menu>{children}</Dropdown.Menu>
+    </Dropdown>
   );
 };
 
