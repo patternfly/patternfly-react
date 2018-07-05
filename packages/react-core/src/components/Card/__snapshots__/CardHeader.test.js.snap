@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`className is added to the root element 1`] = `"pf-c-card__header extra-class"`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+.pf-c-card__header {
+  display: block;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+<div
+  className="pf-c-card__header"
+/>
+`;
