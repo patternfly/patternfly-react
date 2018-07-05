@@ -1,4 +1,5 @@
 const path = require(`path`);
+const pascalCase = require('pascal-case');
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   const oldCSSLoader = config._loaders.css;
@@ -41,4 +42,22 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   });
 
   return config;
+};
+
+const componentPathRegEx = /components\//;
+
+exports.onCreateNode = ({ node, boundActionCreators }) => {
+  const { createNodeField } = boundActionCreators;
+  if (node.internal.type === 'SitePage' && componentPathRegEx.test(node.path)) {
+    const pathLabel = node.path
+      .split('/')
+      .filter(Boolean)
+      .pop();
+
+    createNodeField({
+      node,
+      name: 'label',
+      value: pascalCase(pathLabel)
+    });
+  }
 };

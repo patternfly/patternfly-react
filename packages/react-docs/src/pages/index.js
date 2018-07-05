@@ -24,8 +24,8 @@ const IndexPage = () => (
   <div>
     <div className={css(styles.hero)}>
       <Content>
-        <Title size="xxxxl" withMargins className={css(styles.heroText)}>
-          Patternfly React
+        <Title size="4xl" withMargins className={css(styles.heroText)}>
+          PatternFly React
         </Title>
         <Title size="md" className={css(styles.heroText)}>
           Version: {packageJson.version}
