@@ -4,6 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 
+import { Icon } from '../Icon';
 import { MenuItem } from '../../index';
 import { Masthead } from './index';
 
@@ -65,6 +66,7 @@ stories.add(
       <Masthead.Collapse>
         <Masthead.Dropdown
           id="app-help-dropdown"
+          noCaret
           title={<span title="Help" className="pficon pficon-help" />}
         >
           <MenuItem eventKey="1">Help</MenuItem>
@@ -72,12 +74,12 @@ stories.add(
         </Masthead.Dropdown>
         <Masthead.Dropdown
           id="app-user-dropdown"
-          title={
-            <span>
-              <span title="Help" className="pficon pficon-user" />
-              <span className="dropdown-title"> Brian Johnson</span>
+          title={[
+            <Icon type="pf" name="user" key="user-icon" />,
+            <span className="dropdown-title" key="dropdown-title">
+              Brian Johnson
             </span>
-          }
+          ]}
         >
           <MenuItem eventKey="1">User Preferences</MenuItem>
           <MenuItem eventKey="2">Logout</MenuItem>

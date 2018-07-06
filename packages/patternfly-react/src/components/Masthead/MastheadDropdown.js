@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from '../Dropdown';
+import CustomMastheadDropdown from './InnerComponents/CustomMastheadDropdown';
 
 /**
  * Masthead
@@ -12,29 +13,23 @@ const MastheadDropdown = ({
   noCaret,
   children,
   ...props
-}) => {
-  const dropdownComponentClass = dropdownProps => (
-    <li className={dropdownProps.className}>{dropdownProps.children}</li>
-  );
-
-  return (
-    <Dropdown
-      id={id}
-      componentClass={dropdownComponentClass}
-      className={className}
-      {...props}
+}) => (
+  <Dropdown
+    id={id}
+    componentClass={CustomMastheadDropdown}
+    className={className}
+    {...props}
+  >
+    <Dropdown.Toggle
+      className="nav-item-iconic"
+      bsStyle="link"
+      noCaret={noCaret}
     >
-      <Dropdown.Toggle
-        className="nav-item-iconic"
-        bsStyle="link"
-        noCaret={noCaret}
-      >
-        {title}
-      </Dropdown.Toggle>
-      <Dropdown.Menu>{children}</Dropdown.Menu>
-    </Dropdown>
-  );
-};
+      {title}
+    </Dropdown.Toggle>
+    <Dropdown.Menu>{children}</Dropdown.Menu>
+  </Dropdown>
+);
 
 MastheadDropdown.propTypes = {
   /** Additional element css classes */
@@ -51,7 +46,7 @@ MastheadDropdown.propTypes = {
 
 MastheadDropdown.defaultProps = {
   className: '',
-  title: '',
+  title: null,
   children: null,
   noCaret: false
 };

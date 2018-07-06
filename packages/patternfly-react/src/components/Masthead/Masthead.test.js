@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { MenuItem } from '../../index';
 import { Masthead } from './index';
+import CustomMastheadDropdown from './InnerComponents/CustomMastheadDropdown';
 
 test('Masthead renders properly', () => {
   const onNavToggleMock = jest.fn();
@@ -126,4 +127,13 @@ test('MastheadDropdown renders properly', () => {
     </Masthead.Dropdown>
   );
   expect(component).toMatchSnapshot('MastheadDropdown snapshot');
+});
+
+test('CustomMastheadDropdown renders properly', () => {
+  const component = shallow(
+    <CustomMastheadDropdown className="dropdown">
+      children
+    </CustomMastheadDropdown>
+  );
+  expect(component).toMatchSnapshot('CustomMastheadDropdown snapshot');
 });
