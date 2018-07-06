@@ -1,7 +1,7 @@
 {
-  "name": "@patternfly/react-tokens",
+  "name": "@patternfly/react-icons",
   "version": "1.0.0",
-  "description": "This library provides access to the design tokens of PatternFly 4 from JavaScript",
+  "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
@@ -24,12 +24,15 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build": "node build/generateTokens.js"
+    "prebuild": "node ./build/generateIcons.js"
   },
   "devDependencies": {
-    "@patternfly/patternfly-next": "1.0.8",
-    "css": "^2.2.3",
-    "fs-extra": "^6.0.1",
-    "glob": "^7.1.2"
+    "@fortawesome/free-solid-svg-icons": "^5.1.0",
+    "node-plop": "^0.15.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^15.6.2 || ^16.4.0"
   }
 }

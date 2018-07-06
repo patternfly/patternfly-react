@@ -2,7 +2,7 @@ const { resolve } = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: 'Patternfly React'
+    title: 'PatternFly React'
   },
   plugins: [
     'gatsby-plugin-react-helmet',

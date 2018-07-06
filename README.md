@@ -22,7 +22,7 @@ Alternatively, if you use npm:
 npm install --save patternfly-react
 ```
 
-Then import Patternfly React UI modules as ES6 modules:
+Then import PatternFly React UI modules as ES6 modules:
 
 ```
 import { Alert } from 'patternfly-react'
@@ -80,4 +80,4 @@ yarn storybook:deploy --branch=feature-branch-storybook
 
 ## Meeting Notes
 
-You can find all Patternfly React Community Meeting notes [here](http://www.patternfly.org/community/monthly-community-meeting/).
+You can find all PatternFly React Community Meeting notes [here](http://www.patternfly.org/community/monthly-community-meeting/).

@@ -96,6 +96,16 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@fortawesome/fontawesome-common-types@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.0.tgz#6bcf6481030f59e7ffd1a40a67cd464d47780f6a"
+
+"@fortawesome/free-solid-svg-icons@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.1.0.tgz#1a4b43027104d63c7862fd39333f6ed6d8bb2c9a"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -8076,6 +8086,10 @@ isarray@2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-2.0.1.tgz#a37d94ed9cda2d59865c9f76fe596ee1f338741e"
 
+isbinaryfile@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/isbinaryfile/-/isbinaryfile-3.0.2.tgz#4a3e974ec0cba9004d3fc6cde7209ea69368a621"
+
 isemail@2.x.x:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/isemail/-/isemail-2.2.1.tgz#0353d3d9a62951080c262c2aa0a42b8ea8e9e2a6"
@@ -10114,6 +10128,24 @@ node-plop@=0.13.0:
     globby "^8.0.0"
     handlebars "^4.0.5"
     inquirer "^5.0.0"
+    lodash.get "^4.4.2"
+    mkdirp "^0.5.1"
+    pify "^3.0.0"
+    resolve "^1.2.0"
+
+node-plop@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/node-plop/-/node-plop-0.15.0.tgz#b2b9c6f6e3674b8aec9db1d56885475cd15d6058"
+  dependencies:
+    change-case "^3.0.1"
+    co "^4.6.0"
+    colors "^1.1.2"
+    core-js "^2.4.1"
+    del "^3.0.0"
+    globby "^8.0.0"
+    handlebars "^4.0.5"
+    inquirer "^5.0.0"
+    isbinaryfile "^3.0.2"
     lodash.get "^4.4.2"
     mkdirp "^0.5.1"
     pify "^3.0.0"

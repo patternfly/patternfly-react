@@ -31,6 +31,10 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     resolve: {
       alias: {
         '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
+        '@patternfly/react-icons': path.resolve(
+          __dirname,
+          '../react-icons/src'
+        ),
         '@patternfly/react-styles': path.resolve(
           __dirname,
           '../react-styles/src'

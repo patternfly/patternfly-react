@@ -55,7 +55,7 @@ class Navigation extends React.Component {
         <div className={css(styles.navigationContent)}>
           <div className={css(styles.logo)}>
             <Link to="/">
-              <img src={logo} alt="Patternfly Logo" />
+              <img src={logo} alt="PatternFly Logo" />
             </Link>
           </div>
           <div className={css(styles.search)}>
@@ -75,6 +75,7 @@ class Navigation extends React.Component {
                 title="Style"
               >
                 <NavigationItem to="/styles/tokens">Tokens</NavigationItem>
+                <NavigationItem to="/styles/icons">Icons</NavigationItem>
               </NavigationItemGroup>
             )}
           </ValueToggle>
