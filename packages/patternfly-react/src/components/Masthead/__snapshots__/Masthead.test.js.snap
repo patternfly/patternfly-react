@@ -1,5 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CustomMastheadDropdown renders properly: CustomMastheadDropdown snapshot 1`] = `
+<li
+  className="dropdown"
+>
+  children
+</li>
+`;
+
 exports[`Masthead renders properly: Masthead snapshot 1`] = `
 <nav
   className="navbar navbar-pf-vertical"
