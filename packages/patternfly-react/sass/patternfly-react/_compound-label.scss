@@ -1,0 +1,43 @@
+@import 'patternfly/variables';
+
+.pf-remove-button {
+  color: $color-pf-white;
+  vertical-align: middle;
+}
+
+.tag {
+  font-size: 0.8em;
+  display: table-cell !important;
+  vertical-align: middle;
+
+  span {
+    background-color: $color-pf-blue-400;
+  }
+}
+
+.tagColor {
+  color: $color-pf-white;
+  max-width: 150px;
+}
+
+.category.list-inline {
+  background-color: $color-pf-blue-500;
+  padding: 3px 10px 3px 15px !important;
+  color: $color-pf-white;
+  margin-left: 5px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  display: table;
+  float: left;
+
+  li a span {
+    color: $color-pf-white;
+  }
+}
+
+.category-label {
+  padding-right: 15px;
+  max-width: 200px;
+}

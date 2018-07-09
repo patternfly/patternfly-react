@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test 1`] = `
+<li
+  className="tag"
+  key="11"
+>
+  <OverlayTrigger
+    defaultOverlayShown={false}
+    overlay={
+      <Tooltip
+        bsClass="tooltip"
+        id="tooltip"
+        placement="right"
+      >
+        Salad
+      </Tooltip>
+    }
+    placement="bottom"
+    trigger={
+      Array [
+        "hover",
+        "focus",
+      ]
+    }
+  >
+    <Label
+      bsStyle="primary"
+      className="tagColor"
+      key="11"
+      onRemoveClick={[Function]}
+      type="default"
+    />
+  </OverlayTrigger>
+</li>
+`;

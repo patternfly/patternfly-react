@@ -2,9 +2,20 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
-import { Label, DisposableLabel, RemoveButton } from './index';
-import { MockLabelRemove, mockLabelRemoveSource } from './__mocks__/mockLabelExamples';
+import {
+  storybookPackageName,
+  DOCUMENTATION_URL,
+  STORYBOOK_CATEGORY
+} from 'storybook/constants/siteConstants';
+import { Label, DisposableLabel, RemoveButton, CompoundLabel } from './index';
+import {
+  MockCompoundLabel,
+  mockCompoundLabelSource
+} from './__mocks__/mockCompoundLabel';
+import {
+  MockLabelRemove,
+  mockLabelRemoveSource
+} from './__mocks__/mockLabelExamples';
 import { name } from '../../../package.json';
 
 const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Label`, module);
@@ -29,7 +40,7 @@ stories.add(
 );
 
 stories.add(
-  'Label with remove',
+  'Label with Remove',
   withInfo()(() => <MockLabelRemove />, {
     source: false,
     propTables: [DisposableLabel, RemoveButton],
@@ -38,6 +49,21 @@ stories.add(
       <div>
         <h1>Story Source</h1>
         <pre>{mockLabelRemoveSource}</pre>
+      </div>
+    )
+  })
+);
+
+stories.add(
+  'Compound Label',
+  withInfo()(() => <MockCompoundLabel />, {
+    source: false,
+    propTables: [CompoundLabel],
+    propTablesExclude: [MockCompoundLabel],
+    text: (
+      <div>
+        <h1>Story Source</h1>
+        <pre>{mockCompoundLabelSource}</pre>
       </div>
     )
   })

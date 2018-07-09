@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot test 1`] = `
+<ul
+  className="category list-inline"
+>
+  <OverlayTrigger
+    defaultOverlayShown={false}
+    overlay={
+      <Tooltip
+        bsClass="tooltip"
+        id="tooltip"
+        placement="right"
+      >
+        Food - category with very long description
+      </Tooltip>
+    }
+    placement="bottom"
+    trigger={
+      Array [
+        "hover",
+        "focus",
+      ]
+    }
+  >
+    <div
+      className="category-label"
+    >
+      Food - category wi...
+    </div>
+  </OverlayTrigger>
+  <LabelWithTooltip
+    category={
+      Object {
+        "id": 1,
+        "label": "Food - category with very long description",
+      }
+    }
+    key="12"
+    onDeleteClick={[Function]}
+    truncate={[Function]}
+    value={
+      Object {
+        "id": 12,
+        "label": "Bloody Steak from the famous Purple Cow",
+      }
+    }
+  />
+  <LabelWithTooltip
+    category={
+      Object {
+        "id": 1,
+        "label": "Food - category with very long description",
+      }
+    }
+    key="11"
+    onDeleteClick={[Function]}
+    truncate={[Function]}
+    value={
+      Object {
+        "id": 11,
+        "label": "Cake",
+      }
+    }
+  />
+  <LabelWithTooltip
+    category={
+      Object {
+        "id": 1,
+        "label": "Food - category with very long description",
+      }
+    }
+    key="13"
+    onDeleteClick={[Function]}
+    truncate={[Function]}
+    value={
+      Object {
+        "id": 13,
+        "label": "Pineapple Pizza",
+      }
+    }
+  />
+</ul>
+`;
