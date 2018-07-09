@@ -1,6 +1,4 @@
-import SessionTimeout, {
-  SessionTimeoutModal,
-  CountDownSessionTimeout
-} from './SessionTimeout';
+import SessionTimeout from './SessionTimeout';
+import CountDownSessionTimeout from './CountDownSessionTimeout';
 
-export { SessionTimeout, SessionTimeoutModal, CountDownSessionTimeout };
+export { SessionTimeout, CountDownSessionTimeout };

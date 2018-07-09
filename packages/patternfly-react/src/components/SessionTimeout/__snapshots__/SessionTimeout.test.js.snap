@@ -1,128 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SessionTimeout Dialog in minutes 1`] = `
-<div
-  role="dialog"
->
-  <div
-    class="fade modal-backdrop in"
-  />
-  <div
-    class="fade in modal"
-    role="dialog"
-    style="display: block; padding-right: 0px;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog"
-    >
-      <div
-        class="modal-content"
-        role="document"
-      >
-        <div
-          class="session-timeout-body modal-body"
-        >
-          <div
-            class="session-timeout-warning-icon col-md-2"
-          >
-            <span
-              aria-hidden="true"
-              class="pficon pficon-warning-triangle-o"
-            />
-          </div>
-          <div
-            class="session-timeout-message col-md-10"
-          >
-            <div>
-              <p>
-                Your session is about to expire.
-              </p>
-              <p>
-                You will be logged out in 5 minutes.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          class="modal-footer"
-        >
-          <button
-            class="btn btn-default"
-            type="button"
-          >
-            Log Out
-          </button>
-          <button
-            class="btn btn-primary"
-            type="button"
-          >
-            Continue Session
-          </button>
-        </div>
-      </div>
+exports[`SessionTimeout render session timeout message dialog 1`] = `
+<MessageDialog
+  accessibleDescription=""
+  accessibleName=""
+  className=""
+  enforceFocus={true}
+  footer={null}
+  icon={
+    <Icon
+      name="warning-triangle-o"
+      type="pf"
+    />
+  }
+  onHide={[Function]}
+  primaryAction={[Function]}
+  primaryActionButtonBsStyle="primary"
+  primaryActionButtonContent="continue button"
+  primaryContent={
+    <div>
+      Session Timeout
     </div>
-  </div>
-</div>
-`;
-
-exports[`SessionTimeoutModal 1`] = `
-<div
-  role="dialog"
->
-  <div
-    class="fade modal-backdrop in"
-  />
-  <div
-    class="fade in modal"
-    role="dialog"
-    style="display: block; padding-right: 0px;"
-    tabindex="-1"
-  >
-    <div
-      class="modal-dialog"
-    >
-      <div
-        class="modal-content"
-        role="document"
-      >
-        <div
-          class="session-timeout-body modal-body"
-        >
-          <div
-            class="session-timeout-warning-icon col-md-2"
-          >
-            <span
-              aria-hidden="true"
-              class="pficon pficon-warning-triangle-o"
-            />
-          </div>
-          <div
-            class="session-timeout-message col-md-10"
-          >
-            <div>
-              Session timeout ...
-            </div>
-          </div>
-        </div>
-        <div
-          class="modal-footer"
-        >
-          <button
-            class="btn btn-default"
-            type="button"
-          >
-            Log Out
-          </button>
-          <button
-            class="btn btn-primary"
-            type="button"
-          >
-            Continue Session
-          </button>
-        </div>
-      </div>
+  }
+  secondaryAction={[Function]}
+  secondaryActionButtonBsStyle="default"
+  secondaryActionButtonContent="logout button"
+  secondaryContent={
+    <div>
+      This session is about to be terminated in 3..2..1..
     </div>
-  </div>
-</div>
+  }
+  show={true}
+  title=""
+/>
 `;

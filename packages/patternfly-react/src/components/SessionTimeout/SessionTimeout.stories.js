@@ -7,11 +7,7 @@ import {
   STORYBOOK_CATEGORY
 } from 'storybook/constants/siteConstants';
 import { name } from '../../../package.json';
-import {
-  SessionTimeout,
-  SessionTimeoutModal,
-  CountDownSessionTimeout
-} from './index';
+import { SessionTimeout, CountDownSessionTimeout } from './index';
 
 const stories = storiesOf(
   `${storybookPackageName(name)}/${
@@ -29,23 +25,25 @@ stories.addDecorator(withKnobs).addDecorator(
 );
 
 stories
-  .add('Session Timeout Modal', () => (
-    <SessionTimeoutModal
-      show
-      continueText={text('Continue button label', 'Continue')}
-      logoutText={text('LogOut Label', 'Logout...')}
-      logoutFnc={() => {}}
-      continueFnc={() => {}}
-    >
-      <p>You are about to be logged out.</p>
-    </SessionTimeoutModal>
-  ))
   .add('Session Timeout', () => (
     <SessionTimeout
       logoutFnc={() => {}}
       continueFnc={() => {}}
       displayBefore={number('displayBefore', 30)}
       timeLeft={number('timeLeft', 30)}
+      primaryContent={
+        <p className="lead">
+          {text('primary content', 'Your session is about to expire')}
+        </p>
+      }
+      secondaryContent={
+        <div>
+          {text(
+            'secondary content',
+            `to continue click on "Continue Session".`
+          )}
+        </div>
+      }
     />
   ))
   .add('Count Down Session Timeout', () => (
@@ -54,5 +52,6 @@ stories
       displayBefore={7}
       sessionTime={10}
       units="seconds"
+      secondaryContent={<p>You will be logged out in 3 seconds.</p>}
     />
   ));
