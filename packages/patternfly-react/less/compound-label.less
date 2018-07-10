@@ -1,11 +1,9 @@
-@import 'patternfly/variables';
-
-.pf-remove-button {
+.compound-label-pf.compound-label-pf-text-color.pf-remove-button {
   color: $color-pf-white;
   vertical-align: middle;
 }
 
-.tag {
+.compound-label-pf {
   font-size: 0.8em;
   display: table-cell !important;
   vertical-align: middle;
@@ -15,13 +13,16 @@
   }
 }
 
-.tagColor {
+.compound-label-pf-text-color {
   color: $color-pf-white;
+  .pf-remove-button {
+    vertical-align: middle;
+  }
 }
 
 .category.list-inline {
   background-color: $color-pf-blue-500;
-  padding: 3px 10px 3px 15px !important;
+  padding: 3px 10px 3px 15px;
   color: $color-pf-white;
   margin-left: 5px;
   margin-right: 10px;
@@ -38,5 +39,4 @@
 
 .category-label {
   padding-right: 15px;
-  max-width: 50px;
 }

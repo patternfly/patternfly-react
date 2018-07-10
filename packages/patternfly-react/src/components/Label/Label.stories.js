@@ -41,7 +41,7 @@ stories.add(
 
 stories.add(
   'Label with Remove',
-  withInfo()(() => <MockLabelRemove />, {
+  withInfo({
     source: false,
     propTables: [DisposableLabel, RemoveButton],
     propTablesExclude: [MockLabelRemove],
@@ -51,12 +51,12 @@ stories.add(
         <pre>{mockLabelRemoveSource}</pre>
       </div>
     )
-  })
+  })(() => <MockLabelRemove />)
 );
 
 stories.add(
   'Compound Label',
-  withInfo()(() => <MockCompoundLabel />, {
+  withInfo({
     source: false,
     propTables: [CompoundLabel],
     propTablesExclude: [MockCompoundLabel],
@@ -66,5 +66,5 @@ stories.add(
         <pre>{mockCompoundLabelSource}</pre>
       </div>
     )
-  })
+  })(() => <MockCompoundLabel />)
 );

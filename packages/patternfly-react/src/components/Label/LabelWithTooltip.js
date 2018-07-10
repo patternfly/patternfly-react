@@ -7,13 +7,13 @@ import { Tooltip } from '../Tooltip';
 const tooltip = text => <Tooltip id="tooltip">{text}</Tooltip>;
 
 const LabelWithTooltip = ({ onDeleteClick, category, value, truncate }) => (
-  <li key={value.id} className="tag">
+  <li key={value.id} className="compound-label-pf">
     <OverlayTrigger placement="bottom" overlay={tooltip(value.label)}>
       <Label
         key={value.id}
         bsStyle="primary"
         onRemoveClick={() => onDeleteClick(category, value)}
-        className="tagColor"
+        className="compound-label-pf-text-color"
       >
         {truncate(value.label)}
       </Label>
