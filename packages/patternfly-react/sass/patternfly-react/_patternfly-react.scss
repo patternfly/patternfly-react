@@ -1,4 +1,12 @@
 /**
+  Patternfly React special functions
+ */
+
+@function em($pixels, $context: $font-size-base) {
+  @return #{$pixels/$context}em;
+}
+
+/**
   Patternfly React Partials
 */
 @import 'card';
@@ -10,3 +18,4 @@
 @import 'field-level-help';
 @import 'type-ahead-select';
 @import 'verticalnavdivider';
+@import 'treegrid-table';

@@ -2435,6 +2435,104 @@ exports[`Patternfly table renders properly 1`] = `
 </table>
 `;
 
+exports[`TreeGridTable renders correctly 1`] = `
+<div>
+  <table
+    class="pure-table pure-table-striped tree-grid-table"
+  >
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Age
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div
+            class="has-children  "
+            style="padding-left: 0em;"
+          >
+            <span
+              class="show-more"
+            />
+            <i
+              class="item-icon pficon pficon-folder-close"
+            />
+            Demo
+          </div>
+        </td>
+        <td>
+          20
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            class="has-children has-parent "
+            style="padding-left: 1em;"
+          >
+            <span
+              class="show-more"
+            />
+            <i
+              class="item-icon fa fa-file-o"
+            />
+            Another
+          </div>
+        </td>
+        <td>
+          20
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            class=" has-parent "
+            style="padding-left: 2em;"
+          >
+            Foobar2
+          </div>
+        </td>
+        <td>
+          20
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            class=" has-parent "
+            style="padding-left: 1em;"
+          >
+            Yet Another
+          </div>
+        </td>
+        <td>
+          20
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div
+            class="  "
+            style="padding-left: 0em;"
+          >
+            Foobar
+          </div>
+        </td>
+        <td>
+          20
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`inline edit Inline edit header row renders 1`] = `
 <div>
   <div

@@ -12,7 +12,8 @@ import {
   serverPaginationTable,
   inlineEditRowTable,
   inlineEditColumnTable,
-  inlineEditCellTable
+  inlineEditCellTable,
+  treeGridTable
 } from './Stories';
 import { name } from '../../../package.json';
 
@@ -36,3 +37,4 @@ serverPaginationTable(stories);
 inlineEditRowTable(stories);
 inlineEditColumnTable(stories);
 inlineEditCellTable(stories);
+treeGridTable(stories);

@@ -12536,6 +12536,10 @@ reactabular-table@^8.14.0:
   dependencies:
     classnames "^2.2.5"
 
+reactabular-visibility-toggles@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/reactabular-visibility-toggles/-/reactabular-visibility-toggles-6.0.0.tgz#907d4b96441eb5b7ea287f1ece899cb1670233b4"
+
 reactcss@^1.2.0:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/reactcss/-/reactcss-1.2.3.tgz#c00013875e557b1cf0dfd9a368a1c3dab3b548dd"
@@ -14902,6 +14906,10 @@ travis-deploy-once@^4.4.1:
 tree-kill@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.0.tgz#5846786237b4239014f05db156b643212d4c6f36"
+
+treetabular@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/treetabular/-/treetabular-3.5.0.tgz#290f2ef3ebadebcbcd25075059cf50196ab3db03"
 
 trim-newlines@^1.0.0:
   version "1.0.0"

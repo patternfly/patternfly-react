@@ -5,6 +5,7 @@ import selectionHeaderCellFormatter from './Formatters/selectionHeaderCellFormat
 import sortableHeaderCellFormatter from './Formatters/sortableHeaderCellFormatter';
 import tableCellFormatter from './Formatters/tableCellFormatter';
 import inlineEditFormatterFactory from './Formatters/inlineEditFormatterFactory';
+import addIcon from './Formatters/iconToCell';
 
 import { Table } from './Table';
 import {
@@ -25,6 +26,14 @@ import TableInlineEditHeaderRow from './TableInlineEditHeaderRow';
 import TablePfProvider from './TablePfProvider';
 import TableSelectionCell from './TableSelectionCell';
 import TableSelectionHeading from './TableSelectionHeading';
+import TreeGridTable from './TreeGridTable';
+import CollapsibleTreeGridTable from './CollapsibleTreeGridTable';
+import {
+  defaultRowValues,
+  filterVisible,
+  getShowingChildren,
+  setVisibleChildren
+} from './TreeGridTableHelpers';
 
 Table.actionHeaderCellFormatter = actionHeaderCellFormatter;
 Table.customHeaderFormattersDefinition = customHeaderFormattersDefinition;
@@ -46,12 +55,20 @@ Table.InlineEditRow = TableInlineEditRow;
 Table.TableInlineEditHeaderRow = TableInlineEditHeaderRow;
 Table.SelectionCell = TableSelectionCell;
 Table.SelectionHeading = TableSelectionHeading;
+Table.TreeGridTable = TreeGridTable;
 Table.TABLE_ALIGN = TABLE_ALIGN;
 Table.TABLE_ALIGNMENT_TYPES = TABLE_ALIGNMENT_TYPES;
 Table.TABLE_SORT_DIRECTION = TABLE_SORT_DIRECTION;
 Table.TABLE_SORT_DIRECTIONS = TABLE_SORT_DIRECTIONS;
 
 export {
+  TreeGridTable,
+  CollapsibleTreeGridTable,
+  filterVisible,
+  addIcon,
+  setVisibleChildren,
+  defaultRowValues,
+  getShowingChildren,
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
   defaultSortingOrder,
