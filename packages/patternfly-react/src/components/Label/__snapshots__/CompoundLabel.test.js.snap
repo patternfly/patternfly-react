@@ -2,7 +2,7 @@
 
 exports[`snapshot test 1`] = `
 <ul
-  className="category list-inline"
+  className="category list-inline "
 >
   <OverlayTrigger
     defaultOverlayShown={false}
