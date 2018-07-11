@@ -8,7 +8,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@patternfly/react-core": "^0.x",
+    "@patternfly/react-core": "*",
     "@patternfly/react-icons": "*",
     "@patternfly/react-styles": "^2.0.0",
     "@patternfly/react-tokens": "^1.0.0",
