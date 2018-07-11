@@ -1,6 +1,6 @@
 # @patternfly/react-codemods
 
-_PatternFly React codemods are currently experimental only. These may be useful in the future after package namespaces are changed for PatternFly Next._
+_PatternFly React codemods are currently experimental only._
 
 This repository contains a collection of codemod scripts for use with
 [JSCodeshift](https://github.com/facebook/jscodeshift) that help update Patternfly React projects.
@@ -19,22 +19,55 @@ This repository contains a collection of codemod scripts for use with
 
 ## Included Scripts
 
-### `patternfly-react-to-react-core`
+## `pf3-pf4`
 
-Converts imports of `patternfly-react` to compatible `@patternfly/react-core`;
+Converts PF3 components of `patternfly-react` to compatible PF4 `@patternfly/react-core` components;
 
 ```sh
-jscodeshift -t node_modules/@patternfly/react-codemods/transforms/patternfly-react-to-react-core.js <path>
+jscodeshift -t node_modules/@patternfly/react-codemods/transforms/pf3-pf4.js <path> [--component]=comma,separated,components
 ```
+
+## Options
+```text
+--components     Comma separated list of components to transform. Defaults to "*". EX: --components=Button,Alert
+```
+
+## Components
+
+### `Button`
+
+### Supported Props
+|  In Prop         | Out Prop     | Value Tranforms           |
+|------------------|--------------|---------------------------|
+| `block`          | `isBlock`    | n/a                       |
+| `active`         | `isActive`   | n/a                       |
+| `disabled`       | `isDisabled` | n/a                       |
+| `componentClass` | `component`  | n/a                       |
+| `bsClass`        | `undefined`  | n/a (removed)             |
+| `bsStyle`        | `variant`    | primary     -> primary    |
+|                  |              | secondary   -> secondary  |
+|                  |              | danger      -> danger     |
+|                  |              | link        -> link       |
+|                  |              | info        -> secondary  |
+|                  |              | `undefined` -> secondary  |
+
+### Unsupported props
+* `componentClass`
+* `href`
+
 
 #### Before
 
 ```jsx
-import { Button, Alert } from 'patternfly-react';
+import { Button } from 'patternfly-react';
+
+const primary = <Button bsStyle="primary">Primary Button</Button>;
 ```
 
 #### After
 
 ```jsx
-import { Button, Alert } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core';
+
+const primary = <Button variant="primary">Primary Button</Button>;
 ```
