@@ -1,6 +1,6 @@
 import { getSelectors, getStyles } from './cssUtils';
 import { getNodes } from './reactUtils';
-import { getBufferedStyles } from '../../../inject';
+import { getBufferedStyles } from '../../../testUtils';
 import { addOverrides } from './cssPropertyOverrides';
 
 export function createSerializer() {
