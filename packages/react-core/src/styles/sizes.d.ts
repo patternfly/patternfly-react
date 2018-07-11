@@ -8,3 +8,8 @@ export const BaseSizes: {
   '3xl': '3xl';
   '4xl': '4xl';
 };
+
+export const DeviceSizes: Pick<
+  typeof BaseSizes,
+  'xs' | 'sm' | 'md' | 'lg' | 'xl'
+>;

@@ -1,9 +1,8 @@
 import React from 'react';
 import Content from '../../components/content';
-import { Title } from '@patternfly/react-core';
+import { Title, Grid, GridItem } from '@patternfly/react-core';
 import { iconMap } from '@patternfly/react-icons/icons';
 import { css, StyleSheet } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/layouts/Grid/styles.css'; //eslint-disable-line
 import {
   global_spacer_md as spacerMd,
   global_FontSize_sm as labelFontSize
@@ -11,7 +10,7 @@ import {
 
 const allIcons = Array.from(iconMap.entries());
 
-const extraStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   iconCell: {
     display: 'flex',
     flexDirection: 'column',
@@ -30,23 +29,20 @@ function Icons() {
       <Title size="3xl" withMargins>
         Icons
       </Title>
-      <div className={css(styles.grid)}>
+      <Grid>
         {allIcons.map(([id, Icon]) => (
-          <div
+          <GridItem
             key={id}
-            className={css(
-              styles.gridItem,
-              styles.modifiers['2ColOnLg'],
-              styles.modifiers['4ColOnMd'],
-              styles.modifiers['6ColOnSm'],
-              extraStyles.iconCell
-            )}
+            className={css(styles.iconCell)}
+            sm={6}
+            md={4}
+            lg={2}
           >
             <Icon size="xl" key={id} title={id} />
-            <div className={css(extraStyles.label)}>{id}</div>
-          </div>
+            <div className={css(styles.label)}>{id}</div>
+          </GridItem>
         ))}
-      </div>
+      </Grid>
     </Content>
   );
 }

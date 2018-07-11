@@ -8,3 +8,11 @@ export const BaseSizes = {
   '3xl': '3xl',
   '4xl': '4xl'
 };
+
+export const DeviceSizes = {
+  [BaseSizes.xs]: BaseSizes.xs,
+  [BaseSizes.sm]: BaseSizes.sm,
+  [BaseSizes.md]: BaseSizes.md,
+  [BaseSizes.lg]: BaseSizes.lg,
+  [BaseSizes.xl]: BaseSizes.xl
+};
