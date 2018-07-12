@@ -1,7 +1,7 @@
 import React from 'react';
 import Content from '../../components/content';
 import { Title, Grid, GridItem } from '@patternfly/react-core';
-import { iconMap } from '@patternfly/react-icons/icons';
+import { iconMap } from '@patternfly/react-icons/src/icons';
 import { css, StyleSheet } from '@patternfly/react-styles';
 import {
   global_spacer_md as spacerMd,
