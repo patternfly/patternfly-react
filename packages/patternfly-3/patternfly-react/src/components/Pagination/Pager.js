@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Icon } from '../Icon';
+import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
 import { noop } from '../../common/helpers';
 
 /**
@@ -22,7 +22,7 @@ const Pager = ({ baseClassName, className, messages, disableNext, onNextPage, di
             }
           }}
         >
-          <Icon className="i" name="angle-left" />
+          <AngleLeftIcon className="i" />
           {messages.previousPage}
         </a>
       </li>
@@ -38,7 +38,7 @@ const Pager = ({ baseClassName, className, messages, disableNext, onNextPage, di
           }}
         >
           {messages.nextPage}
-          <Icon className="i" name="angle-right" />
+          <AngleRightIcon className="i" />
         </a>
       </li>
     </ul>

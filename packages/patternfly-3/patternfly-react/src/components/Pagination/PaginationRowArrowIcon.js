@@ -1,16 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '../Icon';
+import { AngleLeftIcon, AngleDoubleLeftIcon, AngleRightIcon, AngleDoubleRightIcon } from '@patternfly/react-icons';
+
+const arrowIcon = {
+  left: AngleLeftIcon,
+  'double-left': AngleDoubleLeftIcon,
+  right: AngleRightIcon,
+  'double-right': AngleDoubleRightIcon
+};
 
 /**
  * PaginationRowArrowIcon component for Patternfly React
  */
 const PaginationRowArrowIcon = ({ name, ...props }) => {
-  const iconName = `angle-${name}`;
-  return <Icon type="fa" name={iconName} className="i" />;
+  const Icon = arrowIcon[name];
+  return <Icon className="i" />;
 };
 PaginationRowArrowIcon.propTypes = {
   /** icon name */
-  name: PropTypes.oneOf(['left', 'double-left', 'right', 'double-right']).isRequired
+  name: PropTypes.oneOf(Object.keys(arrowIcon)).isRequired
 };
 export default PaginationRowArrowIcon;

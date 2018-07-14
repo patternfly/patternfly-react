@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
+    "@patternfly/react-icons": "^2.4.0",
     "bootstrap-slider-without-jquery": "^10.0.0",
     "breakjs": "^1.0.0",
     "classnames": "^2.2.5",
