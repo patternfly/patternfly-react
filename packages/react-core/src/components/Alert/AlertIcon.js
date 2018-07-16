@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly-next/components/Alert/styles.css';
 
 import {
-  CheckCircle,
-  ExclamationCircle,
-  ExclamationTriangle,
-  InfoCircle
+  CheckCircleIcon,
+  ExclamationCircleIcon,
+  ExclamationTriangleIcon,
+  InfoCircleIcon
 } from '@patternfly/react-icons';
 
 export const variantIcons = {
-  success: CheckCircle,
-  danger: ExclamationCircle,
-  warning: ExclamationTriangle,
-  info: InfoCircle
+  success: CheckCircleIcon,
+  danger: ExclamationCircleIcon,
+  warning: ExclamationTriangleIcon,
+  info: InfoCircleIcon
 };
 
 const propTypes = {

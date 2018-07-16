@@ -19,7 +19,7 @@ function getFontAwesomeIcon(name) {
 
   return {
     id: name,
-    name: pascalCase(name),
+    name: pascalCase(`${name}-icon`),
     width: faIconDef.width,
     height: faIconDef.height,
     svgPath: faIconDef.svgPathData

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import { AngleRight, AngleDown } from '@patternfly/react-icons';
+import { AngleRightIcon, AngleDownIcon } from '@patternfly/react-icons';
 import styles from './navigationItemGroup.styles';
 
 const propTypes = {
@@ -36,7 +36,7 @@ class NavigationItemGroup extends React.Component {
               justifyContent: 'space-between'
             }}
           >
-            {title} {isExpanded ? <AngleDown /> : <AngleRight />}
+            {title} {isExpanded ? <AngleRightIcon /> : <AngleDownIcon />}
           </div>
         </button>
         <ul
