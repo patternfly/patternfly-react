@@ -11,7 +11,9 @@ Object.values(ButtonVariant).forEach(variant => {
 
 test('it adds an aria-label to action buttons', () => {
   const label = 'aria-label test';
-  const view = shallow(<Button variant={ButtonVariant.action} label={label} />);
+  const view = shallow(
+    <Button variant={ButtonVariant.action} ariaLabel={label} />
+  );
   expect(view.find('button').props()['aria-label']).toBe(label);
 });
 
@@ -32,5 +34,26 @@ test('isFocus', () => {
 
 test('isHover', () => {
   const view = shallow(<Button isHover>Hovered Button</Button>);
+  expect(view).toMatchSnapshot();
+});
+
+test('allows passing in a string as the component', () => {
+  const component = 'a';
+  const view = shallow(<Button component={component} />);
+  expect(view.type()).toBe(component);
+});
+
+test('allows passing in a React Component as the component', () => {
+  const Component = () => null;
+  const view = shallow(<Button component={Component} />);
+  expect(view.type()).toBe(Component);
+});
+
+test('aria-disabled is set to true and tabIndex to -1 if component is not a button and is disabled', () => {
+  const view = shallow(
+    <Button component="a" isDisabled>
+      Disabled Anchor Button
+    </Button>
+  );
   expect(view).toMatchSnapshot();
 });

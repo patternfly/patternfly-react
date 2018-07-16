@@ -16,20 +16,6 @@ exports[`Alert - danger Action 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -41,21 +27,7 @@ exports[`Alert - danger Action 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   className=""
   title=""
   variant="danger"
@@ -130,26 +102,7 @@ exports[`Alert - danger Action 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -172,20 +125,6 @@ exports[`Alert - danger Action and Title 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -197,21 +136,7 @@ exports[`Alert - danger Action and Title 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   className=""
   title="Some title"
   variant="danger"
@@ -287,26 +212,7 @@ exports[`Alert - danger Action and Title 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -425,20 +331,6 @@ exports[`Alert - danger Custom aria label 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -450,21 +342,7 @@ exports[`Alert - danger Custom aria label 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   ariaLabel="Custom aria label for danger"
   className=""
   title="Some title"
@@ -541,26 +419,7 @@ exports[`Alert - danger Custom aria label 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -680,20 +539,6 @@ exports[`Alert - info Action 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -705,21 +550,7 @@ exports[`Alert - info Action 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   className=""
   title=""
   variant="info"
@@ -794,26 +625,7 @@ exports[`Alert - info Action 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -836,20 +648,6 @@ exports[`Alert - info Action and Title 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -861,21 +659,7 @@ exports[`Alert - info Action and Title 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   className=""
   title="Some title"
   variant="info"
@@ -951,26 +735,7 @@ exports[`Alert - info Action and Title 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -1089,20 +854,6 @@ exports[`Alert - info Custom aria label 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -1114,21 +865,7 @@ exports[`Alert - info Custom aria label 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   ariaLabel="Custom aria label for info"
   className=""
   title="Some title"
@@ -1205,26 +942,7 @@ exports[`Alert - info Custom aria label 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -1344,20 +1062,6 @@ exports[`Alert - success Action 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -1369,21 +1073,7 @@ exports[`Alert - success Action 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   className=""
   title=""
   variant="success"
@@ -1458,26 +1148,7 @@ exports[`Alert - success Action 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -1500,20 +1171,6 @@ exports[`Alert - success Action and Title 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -1525,21 +1182,7 @@ exports[`Alert - success Action and Title 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   className=""
   title="Some title"
   variant="success"
@@ -1615,26 +1258,7 @@ exports[`Alert - success Action and Title 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -1753,20 +1377,6 @@ exports[`Alert - success Custom aria label 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -1778,21 +1388,7 @@ exports[`Alert - success Custom aria label 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   ariaLabel="Custom aria label for success"
   className=""
   title="Some title"
@@ -1869,26 +1465,7 @@ exports[`Alert - success Custom aria label 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -2008,20 +1585,6 @@ exports[`Alert - warning Action 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -2033,21 +1596,7 @@ exports[`Alert - warning Action 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   className=""
   title=""
   variant="warning"
@@ -2122,26 +1671,7 @@ exports[`Alert - warning Action 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -2164,20 +1694,6 @@ exports[`Alert - warning Action and Title 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -2189,21 +1705,7 @@ exports[`Alert - warning Action and Title 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   className=""
   title="Some title"
   variant="warning"
@@ -2279,26 +1781,7 @@ exports[`Alert - warning Action and Title 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>
@@ -2417,20 +1900,6 @@ exports[`Alert - warning Custom aria label 1`] = `
   display: block;
   padding: 1rem;
 }
-.pf-c-button.pf-m-secondary {
-  display: inline-block;
-  position: relative;
-  padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #00659c;
-  text-align: center;
-  white-space: nowrap;
-  background-color: transparent;
-  border: 0px;
-  border-radius: 30em;
-}
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
@@ -2442,21 +1911,7 @@ exports[`Alert - warning Custom aria label 1`] = `
 }
 
 <Alert
-  action={
-    <Button
-      className=""
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      label=""
-      type="button"
-      variant="secondary"
-    >
-      Title
-    </Button>
-  }
+  action="action"
   ariaLabel="Custom aria label for warning"
   className=""
   title="Some title"
@@ -2533,26 +1988,7 @@ exports[`Alert - warning Custom aria label 1`] = `
       <div
         className="pf-c-alert__action"
       >
-        <Button
-          className=""
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          label=""
-          type="button"
-          variant="secondary"
-        >
-          <button
-            aria-label={null}
-            className="pf-c-button pf-m-secondary"
-            disabled={false}
-            type="button"
-          >
-            Title
-          </button>
-        </Button>
+        action
       </div>
     </AlertAction>
   </div>

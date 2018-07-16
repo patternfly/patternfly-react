@@ -13,5 +13,8 @@ export default StyleSheet.create({
   },
   spacing: {
     margin: spacerSm.var
+  },
+  description: {
+    marginBottom: spacerMd.var
   }
 });

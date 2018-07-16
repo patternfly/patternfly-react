@@ -6,14 +6,22 @@ import { Title } from '@patternfly/react-core';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string
 };
 
-const Example = ({ children, title, ...props }) => (
+const defaultProps = {
+  description: ''
+};
+
+const Example = ({ children, title, description, ...props }) => (
   <div>
     <Title size="lg" withMargins>
       {title}
     </Title>
+    {Boolean(description) && (
+      <p className={css(styles.description)}>{description}</p>
+    )}
     <div className={css(styles.example)} {...props}>
       {React.Children.map(
         children,
@@ -28,5 +36,6 @@ const Example = ({ children, title, ...props }) => (
 );
 
 Example.propTypes = propTypes;
+Example.defaultProps = defaultProps;
 
 export default Example;

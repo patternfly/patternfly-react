@@ -20,7 +20,7 @@ const Grid = ({ children, className, gutter, ...props }) => (
   <div
     className={css(
       styles.grid,
-      gutter && getGutterModifier(styles, gutter, styles.modifiers.gutters),
+      gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter),
       className
     )}
     {...props}

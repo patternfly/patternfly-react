@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import Alert, { AlertVariant } from './Alert';
-import Button, { ButtonVariant } from '../Button/Button';
 import { StyleSheetTestUtils } from 'aphrodite';
 
 beforeEach(() => {
@@ -30,10 +29,7 @@ Object.keys(AlertVariant).forEach(variant => {
 
     test('Action', () => {
       const view = mount(
-        <Alert
-          variant={variant}
-          action={<Button variant={ButtonVariant.secondary}>Title</Button>}
-        >
+        <Alert variant={variant} action="action">
           Some alert
         </Alert>
       );
@@ -42,11 +38,7 @@ Object.keys(AlertVariant).forEach(variant => {
 
     test('Action and Title', () => {
       const view = mount(
-        <Alert
-          variant={variant}
-          action={<Button variant={ButtonVariant.secondary}>Title</Button>}
-          title="Some title"
-        >
+        <Alert variant={variant} action="action" title="Some title">
           Some alert
         </Alert>
       );
@@ -58,7 +50,7 @@ Object.keys(AlertVariant).forEach(variant => {
         <Alert
           variant={variant}
           ariaLabel={`Custom aria label for ${variant}`}
-          action={<Button variant={ButtonVariant.secondary}>Title</Button>}
+          action="action"
           title="Some title"
         >
           Some alert
