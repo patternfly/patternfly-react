@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalBox Test 1`] = `
+.pf-c-modal-box {
+  display: flex;
+  z-index: 600;
+  flex-direction: column;
+  max-width: 35rem;
+  min-height: calc(undefined + undefined + undefined + undefined + undefined + undefined + calc(1rem * 4 * 1.5));
+  max-height: calc(100vh - (2 * (4rem)));
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
+<div
+  aria-describedby="modal-description"
+  aria-label="test label"
+  aria-modal="true"
+  className="pf-c-modal-box"
+  role="dialog"
+>
+  This is a ModalBox 
+</div>
+`;

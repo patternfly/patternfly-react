@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalBoxCloseButton Test 1`] = `
+<div
+  className="pf-c-modal-box__close"
+>
+  <Button
+    className=""
+    isActive={false}
+    isBlock={false}
+    isDisabled={false}
+    isFocus={false}
+    isHover={false}
+    label=""
+    onClick={[Function]}
+    type="button"
+    variant="action"
+  >
+    <Times
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </Button>
+</div>
+`;
