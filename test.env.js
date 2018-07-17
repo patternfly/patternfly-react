@@ -1,9 +1,9 @@
 import 'raf/polyfill';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { preventInjection } from './packages/react-styles';
+import { suppressStyleInjection } from './packages/react-styles/testUtils';
 
-preventInjection();
+suppressStyleInjection();
 
 const MutationObserverPolyfill = require('mutation-observer');
 // referenced from '@novnc/nvnc/core/util/events.js'

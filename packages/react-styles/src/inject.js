@@ -17,6 +17,7 @@ export function preventInjection() {
 }
 
 export function startInjection() {
+  injectionBuffer.clear();
   shouldInject = true;
 }
 
