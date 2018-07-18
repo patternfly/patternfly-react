@@ -17,7 +17,7 @@ const defaultProps = {
 
 const ModalBoxHeader = ({ children, className, ...props }) => (
   <header {...props} className={css(styles.modalBoxHeader, className)}>
-    <h1 className={css(styles.modalBoxHeader, className)} id="modal-title">
+    <h1 className={css(styles.modalBoxHeaderTitle, className)} id="modal-title">
       {children}
     </h1>
   </header>

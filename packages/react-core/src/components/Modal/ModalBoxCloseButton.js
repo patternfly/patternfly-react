@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-// import styles from '@patternfly/patternfly-next/components/ModalBox/styles.css';
+import styles from '@patternfly/patternfly-next/components/ModalBox/styles.css';
 import Button from '../Button/Button';
-import { Times } from '@patternfly/react-icons';
+import { TimesIcon } from '@patternfly/react-icons';
 
 const propTypes = {
   /** additional classes added to the close button */
@@ -17,11 +17,10 @@ const defaultProps = {
   onClose: () => undefined
 };
 
-// TODO: update this to not use hard coded once once style is available
 const ModalBoxCloseButton = ({ className, onClose, ...props }) => (
-  <div {...props} className={css('pf-c-modal-box__close', className)}>
+  <div {...props} className={css(styles.modalBoxClose, className)}>
     <Button variant="action" onClick={onClose}>
-      <Times />
+      <TimesIcon />
     </Button>
   </div>
 );

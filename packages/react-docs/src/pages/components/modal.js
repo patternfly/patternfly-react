@@ -61,7 +61,9 @@ class ModalDocs extends React.Component {
             onClose={this.hideModal}
             label="Modal Header"
           >
-            Modal Body
+            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
+            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
+            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
           </Modal>
         </Example>
         <Example title="Large Modal Box">
@@ -80,7 +82,9 @@ class ModalDocs extends React.Component {
             isLarge
             label="Modal Header"
           >
-            Modal Body
+            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
+            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
+            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
           </Modal>
         </Example>
       </ComponentDocs>
