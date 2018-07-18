@@ -4,7 +4,13 @@ import PropTypes from 'prop-types';
 import { Modal, Button } from '@patternfly/react-core';
 import Example from '../../components/example';
 
+const propTypes = {
+  data: PropTypes.any.isRequired
+};
+
 class ModalDocs extends React.Component {
+  static propTypes = propTypes;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -91,12 +97,6 @@ class ModalDocs extends React.Component {
     );
   }
 }
-
-const propTypes = {
-  data: PropTypes.any.isRequired
-};
-
-ModalDocs.propTypes = propTypes;
 
 export const query = graphql`
   query ModalDocsQuery {

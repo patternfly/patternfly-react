@@ -1,3 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal Test 1`] = `""`;
+exports[`Modal Content Test only body 1`] = `""`;
+
+exports[`Modal Content Test show 1`] = `
+<div>
+  <Backdrop
+    className=""
+  >
+    <Bullseye
+      className=""
+      component="div"
+    >
+      <ModalBox
+        className=""
+        isLarge={false}
+        label="Test Modal Content label"
+      >
+        <ModalBoxCloseButton
+          className=""
+          onClose={[Function]}
+        />
+        <ModalBoxBody
+          className=""
+        >
+           
+          This is a ModalBox header
+           
+        </ModalBoxBody>
+      </ModalBox>
+    </Bullseye>
+  </Backdrop>
+</div>
+`;
+
+exports[`Modal Content Test with footer 1`] = `""`;
+
+exports[`Modal Content Test with header 1`] = `""`;
+
+exports[`Modal Content Test with header and footer 1`] = `""`;
+
+exports[`Modal Content Test with onlose 1`] = `""`;

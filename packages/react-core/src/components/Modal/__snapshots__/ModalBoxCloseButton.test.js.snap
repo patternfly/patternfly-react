@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxCloseButton Test 1`] = `
+.pf-c-modal-box__close {
+  display: block;
+}
+
 <div
   className="pf-c-modal-box__close"
 >
@@ -16,7 +20,7 @@ exports[`ModalBoxCloseButton Test 1`] = `
     type="button"
     variant="action"
   >
-    <Times
+    <TimesIcon
       color="currentColor"
       size="sm"
       title={null}

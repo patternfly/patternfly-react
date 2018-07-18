@@ -8,3 +8,21 @@ test('ModalBox Test', () => {
   );
   expect(view).toMatchSnapshot();
 });
+
+test('ModalBox Test isLarge', () => {
+  const view = shallow(
+    <ModalBox label="Test Modal label" isLarge>
+      This is a ModalBox header
+    </ModalBox>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('ModalBox Test show', () => {
+  const view = shallow(
+    <ModalBox label="Test Modal label" isLarge show>
+      This is a ModalBox header
+    </ModalBox>
+  );
+  expect(view).toMatchSnapshot();
+});
