@@ -8,7 +8,8 @@ import {
   Form,
   Grid,
   MenuItem,
-  Modal
+  Modal,
+  Password
 } from '../../index';
 
 test('Inline Form renders properly', () => {
@@ -293,6 +294,13 @@ test('Supported controls render properly', () => {
   );
 
   expect(component.render()).toMatchSnapshot();
+});
+
+test('Password field behaves correctly', () => {
+  expect(() => mount(<Password value={null} />)).toThrowError(
+    'The `value` property is forbidden for password fields'
+  );
+  expect(mount(<Password />).render()).toMatchSnapshot();
 });
 
 test('Input Groups render properly', () => {

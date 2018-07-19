@@ -5,6 +5,7 @@ import { default as FormControl } from './FormControl';
 import { default as FormGroup } from './FormGroup';
 import { default as HelpBlock } from './HelpBlock';
 import { default as InputGroup } from './InputGroup';
+import { default as Password } from './Password';
 import { default as Radio } from './Radio';
 
 Form.Checkbox = Checkbox;
@@ -14,6 +15,7 @@ Form.FormGroup = FormGroup;
 Form.HelpBlock = HelpBlock;
 Form.InputGroup = InputGroup;
 Form.Radio = Radio;
+Form.Password = Password;
 
 export {
   Checkbox,
@@ -23,5 +25,6 @@ export {
   FormGroup,
   HelpBlock,
   InputGroup,
+  Password,
   Radio
 };

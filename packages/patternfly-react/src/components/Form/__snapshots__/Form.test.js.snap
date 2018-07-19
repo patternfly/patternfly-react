@@ -412,6 +412,13 @@ exports[`Input Groups render properly 1`] = `
 
 exports[`Modal Form renders properly 1`] = `null`;
 
+exports[`Password field behaves correctly 1`] = `
+<input
+  class="form-control"
+  type="password"
+/>
+`;
+
 exports[`Supported controls render properly 1`] = `
 <form
   class=""

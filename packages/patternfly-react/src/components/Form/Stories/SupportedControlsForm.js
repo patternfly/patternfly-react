@@ -26,9 +26,7 @@ export const SupportedControlsFormFields = [
     controlId: 'password',
     label: 'Password',
     help: 'Help text',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl type="password" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.Password {...props} />
   },
   {
     controlId: 'file',
