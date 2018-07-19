@@ -29,6 +29,7 @@ exports[`Alert - danger Action 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -185,6 +186,7 @@ exports[`Alert - danger Action and Title 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -438,6 +440,7 @@ exports[`Alert - danger Custom aria label 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -693,6 +696,7 @@ exports[`Alert - info Action 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -849,6 +853,7 @@ exports[`Alert - info Action and Title 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -1102,6 +1107,7 @@ exports[`Alert - info Custom aria label 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -1357,6 +1363,7 @@ exports[`Alert - success Action 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -1513,6 +1520,7 @@ exports[`Alert - success Action and Title 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -1766,6 +1774,7 @@ exports[`Alert - success Custom aria label 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -2021,6 +2030,7 @@ exports[`Alert - warning Action 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -2177,6 +2187,7 @@ exports[`Alert - warning Action and Title 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;
@@ -2430,6 +2441,7 @@ exports[`Alert - warning Custom aria label 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 .pf-c-alert__action {
   display: block;

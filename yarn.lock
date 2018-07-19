@@ -132,9 +132,9 @@
     lodash "^4.17.4"
     url-template "^2.0.8"
 
-"@patternfly/patternfly-next@1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.8.tgz#336f0692f84bbde486ec8ea144d9baa633873fcd"
+"@patternfly/patternfly-next@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.11.tgz#f8e44873e64f710700909ec9a676fc7a43c216e5"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"

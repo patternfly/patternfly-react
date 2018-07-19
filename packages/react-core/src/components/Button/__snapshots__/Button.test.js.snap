@@ -14,6 +14,7 @@ exports[`action button 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 
 <button
@@ -41,6 +42,7 @@ exports[`danger button 1`] = `
   background-color: #a30000;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 
 <button
@@ -68,6 +70,7 @@ exports[`isBlock 1`] = `
   background-color: #00659c;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
   width: 100%;
 }
 
@@ -95,6 +98,7 @@ exports[`isDisabled 1`] = `
   background-color: #d1d1d1;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
   pointer-events: none;
 }
 
@@ -122,6 +126,7 @@ exports[`isFocus 1`] = `
   background-color: #00659c;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 
 <button
@@ -148,6 +153,7 @@ exports[`isHover 1`] = `
   background-color: #00659c;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 
 <button
@@ -174,6 +180,7 @@ exports[`link button 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 
 <button
@@ -201,6 +208,7 @@ exports[`primary button 1`] = `
   background-color: #00659c;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 
 <button
@@ -228,6 +236,7 @@ exports[`secondary button 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 
 <button
@@ -255,6 +264,7 @@ exports[`tertiary button 1`] = `
   background-color: transparent;
   border: 0px;
   border-radius: 30em;
+  text-decoration: none;
 }
 
 <button
