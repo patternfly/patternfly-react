@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { TypeAheadSelect } from './TypeAheadSelect';
+import { TypeAheadSelect } from './index';
 
 test('TypeAheadSelect is working !!', () => {
   const component = shallow(
