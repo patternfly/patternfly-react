@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gutter lg 1`] = `
+.pf-l-stack__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-stack__item.pf-m-primary {
+  display: block;
+}
+.pf-l-stack__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-stack.pf-m-gutter {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+<Stack
+  className=""
+  component="div"
+  gutter="lg"
+>
+  <div
+    className="pf-l-stack pf-m-gutter"
+  >
+    <StackItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </StackItem>
+    <StackItem
+      className=""
+      variant="primary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-primary"
+      >
+        Primary content
+      </div>
+    </StackItem>
+    <StackItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </StackItem>
+  </div>
+</Stack>
+`;
+
+exports[`Gutter md 1`] = `
+.pf-l-stack__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-stack__item.pf-m-primary {
+  display: block;
+}
+.pf-l-stack__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-stack.pf-m-gutter {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+<Stack
+  className=""
+  component="div"
+  gutter="md"
+>
+  <div
+    className="pf-l-stack pf-m-gutter"
+  >
+    <StackItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </StackItem>
+    <StackItem
+      className=""
+      variant="primary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-primary"
+      >
+        Primary content
+      </div>
+    </StackItem>
+    <StackItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </StackItem>
+  </div>
+</Stack>
+`;
+
+exports[`Gutter sm 1`] = `
+.pf-l-stack__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-stack__item.pf-m-primary {
+  display: block;
+}
+.pf-l-stack__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-stack.pf-m-gutter {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+<Stack
+  className=""
+  component="div"
+  gutter="sm"
+>
+  <div
+    className="pf-l-stack pf-m-gutter"
+  >
+    <StackItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </StackItem>
+    <StackItem
+      className=""
+      variant="primary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-primary"
+      >
+        Primary content
+      </div>
+    </StackItem>
+    <StackItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </StackItem>
+  </div>
+</Stack>
+`;
+
+exports[`Secondary and primary 1`] = `
+.pf-l-stack__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-stack__item.pf-m-primary {
+  display: block;
+}
+.pf-l-stack__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-stack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+<Stack
+  className=""
+  component="div"
+  gutter={null}
+>
+  <div
+    className="pf-l-stack"
+  >
+    <StackItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </StackItem>
+    <StackItem
+      className=""
+      variant="primary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-primary"
+      >
+        Primary content
+      </div>
+    </StackItem>
+    <StackItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-stack__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </StackItem>
+  </div>
+</Stack>
+`;
