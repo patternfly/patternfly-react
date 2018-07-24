@@ -16,7 +16,7 @@ export const AlertVariant = {
 };
 
 const propTypes = {
-  variant: PropTypes.oneOf(Object.keys(AlertVariant)).isRequired,
+  variant: PropTypes.oneOf(Object.values(AlertVariant)).isRequired,
   action: PropTypes.node,
   title: PropTypes.string,
   children: PropTypes.node,

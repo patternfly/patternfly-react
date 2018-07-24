@@ -23,9 +23,7 @@ const styles = StyleSheet.create({
 function Icons() {
   return (
     <Content>
-      <Title size="3xl" withMargins>
-        Icons
-      </Title>
+      <Title size="3xl">Icons</Title>
       <Grid>
         {allIcons.map(([id, Icon]) => (
           <GridItem key={id} className={css(styles.iconCell)} sm={6} md={4} lg={2}>

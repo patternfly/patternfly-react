@@ -152,8 +152,9 @@
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/packages/*.*/dist/*.*",
-      "<rootDir>/packages/*.*/public/*.*",
-      "<rootDir>/packages/*.*/.cache/*.*"
+      "<rootDir>/packages/*.*/examples/*.*",
+      "<rootDir>/packages/*.docs.*",
+      "<rootDir>/packages/react-docs/*.*"
     ],
     "setupFiles": [
       "./test.env.js"

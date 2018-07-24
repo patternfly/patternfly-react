@@ -37,6 +37,9 @@
   "scripts": {
     "postbuild": "node ./build/copyStyles.js"
   },
+  "optionalDependencies": {
+    "@patternfly/react-tokens": "^1.0.0"
+  },
   "devDependencies": {
     "@patternfly/patternfly-next": "1.0.22",
     "css": "^2.2.3",

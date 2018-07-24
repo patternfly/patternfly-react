@@ -36,11 +36,7 @@ module.exports = {
     ]
   ].filter(Boolean),
   ignore: (() => {
-    const ignore = [
-      'src/**/__snapshots__',
-      'src/**/*.stories.js',
-      'src/**/Stories'
-    ];
+    const ignore = ['src/**/__snapshots__', 'src/**/*.stories.js', 'src/**/Stories'];
     if (babelENV.includes('production')) {
       ignore.push('test.js', '__mocks__');
     }

@@ -12,26 +12,24 @@ import {
   gridSpans
 } from './gridUtils';
 
-const gridItemSpanValueShape = PropTypes.oneOf(gridSpans);
-
 const propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
-  span: gridItemSpanValueShape,
-  rowSpan: gridItemSpanValueShape,
-  offset: gridItemSpanValueShape,
-  sm: gridItemSpanValueShape,
-  smRowSpan: gridItemSpanValueShape,
-  smOffset: gridItemSpanValueShape,
-  md: gridItemSpanValueShape,
-  mdRowSpan: gridItemSpanValueShape,
-  mdOffset: gridItemSpanValueShape,
-  lg: gridItemSpanValueShape,
-  lgRowSpan: gridItemSpanValueShape,
-  lgOffset: gridItemSpanValueShape,
-  xl: gridItemSpanValueShape,
-  xlRowSpan: gridItemSpanValueShape,
-  xlOffset: gridItemSpanValueShape
+  span: PropTypes.oneOf(gridSpans),
+  rowSpan: PropTypes.oneOf(gridSpans),
+  offset: PropTypes.oneOf(gridSpans),
+  sm: PropTypes.oneOf(gridSpans),
+  smRowSpan: PropTypes.oneOf(gridSpans),
+  smOffset: PropTypes.oneOf(gridSpans),
+  md: PropTypes.oneOf(gridSpans),
+  mdRowSpan: PropTypes.oneOf(gridSpans),
+  mdOffset: PropTypes.oneOf(gridSpans),
+  lg: PropTypes.oneOf(gridSpans),
+  lgRowSpan: PropTypes.oneOf(gridSpans),
+  lgOffset: PropTypes.oneOf(gridSpans),
+  xl: PropTypes.oneOf(gridSpans),
+  xlRowSpan: PropTypes.oneOf(gridSpans),
+  xlOffset: PropTypes.oneOf(gridSpans)
 };
 
 const defaultProps = {

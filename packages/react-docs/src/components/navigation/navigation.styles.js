@@ -16,6 +16,7 @@ export default StyleSheet.create({
     position: 'fixed',
     width: 'inherit',
     height: '100vh',
+    overflowY: 'auto',
     backgroundColor: navBackgroundColor.var
   },
   logo: {

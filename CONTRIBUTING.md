@@ -1,5 +1,7 @@
 # Contributing to PatternFly React
 
+> ## Looking for PatternFly 4 React Contribution Guide? [Go Here](./packages/react-core/CONTRIBUTING.md)
+
 ## Outline
 
 - [Code of Conduct](#code-of-conduct)

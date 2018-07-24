@@ -8,10 +8,11 @@ export default StyleSheet.create({
   },
   nav: {
     position: 'relative',
-    zIndex: 2
+    flexShrink: 0
   },
   main: {
     position: 'relative',
-    flex: '1 1 auto'
+    flex: '1 1 auto',
+    overflowX: 'hidden'
   }
 });

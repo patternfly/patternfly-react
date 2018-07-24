@@ -25,11 +25,19 @@ test('Modal creates a container element once', () => {
 });
 
 test('modal closes with escape', () => {
-  shallow(<Modal {...props} />);
+  shallow(<Modal {...props} isOpen />);
   const [event, handler] = document.addEventListener.mock.calls[0];
   expect(event).toBe('keydown');
   handler({ keyCode: KEY_CODES.ESCAPE_KEY });
   expect(props.onClose).toBeCalled();
+});
+
+test('modal does not call onClose for esc key if it is not open', () => {
+  shallow(<Modal {...props} />);
+  const [event, handler] = document.addEventListener.mock.calls[0];
+  expect(event).toBe('keydown');
+  handler({ keyCode: KEY_CODES.ESCAPE_KEY });
+  expect(props.onClose).not.toBeCalled();
 });
 
 test('Each modal is given a new id', () => {

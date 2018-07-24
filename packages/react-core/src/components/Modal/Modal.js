@@ -42,7 +42,7 @@ class Modal extends React.Component {
   id = `pf-modal-${currentId++}`;
 
   handleEscKeyClick = event => {
-    if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
+    if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
       this.props.onClose();
     }
   };
