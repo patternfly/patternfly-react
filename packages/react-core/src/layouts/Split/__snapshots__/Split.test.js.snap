@@ -1,0 +1,296 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gutter lg 1`] = `
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split.pf-m-gutter {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+<Split
+  className=""
+  component="div"
+  gutter="lg"
+>
+  <div
+    className="pf-l-split pf-m-gutter"
+  >
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Primary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+  </div>
+</Split>
+`;
+
+exports[`Gutter md 1`] = `
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split.pf-m-gutter {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+<Split
+  className=""
+  component="div"
+  gutter="md"
+>
+  <div
+    className="pf-l-split pf-m-gutter"
+  >
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Primary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+  </div>
+</Split>
+`;
+
+exports[`Gutter sm 1`] = `
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split.pf-m-gutter {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+<Split
+  className=""
+  component="div"
+  gutter="sm"
+>
+  <div
+    className="pf-l-split pf-m-gutter"
+  >
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Primary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+  </div>
+</Split>
+`;
+
+exports[`No variant set 1`] = `
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split__item {
+  display: block;
+}
+.pf-l-split {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+<Split
+  className=""
+  component="div"
+  gutter={null}
+>
+  <div
+    className="pf-l-split"
+  >
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Primary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant={null}
+    >
+      <div
+        className="pf-l-split__item"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+  </div>
+</Split>
+`;
+
+exports[`Secondary and primary set 1`] = `
+.pf-l-split__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-split__item.pf-m-primary {
+  display: block;
+}
+.pf-l-split__item.pf-m-secondary {
+  display: block;
+}
+.pf-l-split {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0px;
+  margin: 0px;
+}
+
+<Split
+  className=""
+  component="div"
+  gutter={null}
+>
+  <div
+    className="pf-l-split"
+  >
+    <SplitItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-split__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant="primary"
+    >
+      <div
+        className="pf-l-split__item pf-m-primary"
+      >
+        Primary content
+      </div>
+    </SplitItem>
+    <SplitItem
+      className=""
+      variant="secondary"
+    >
+      <div
+        className="pf-l-split__item pf-m-secondary"
+      >
+        Secondary content
+      </div>
+    </SplitItem>
+  </div>
+</Split>
+`;
