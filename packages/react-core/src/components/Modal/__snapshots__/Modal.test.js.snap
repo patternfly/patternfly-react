@@ -4,4 +4,4 @@ exports[`Modal Test 1`] = `undefined`;
 
 exports[`Modal Test isLarge 1`] = `undefined`;
 
-exports[`Modal Test show 1`] = `undefined`;
+exports[`Modal Test isOpen 1`] = `undefined`;

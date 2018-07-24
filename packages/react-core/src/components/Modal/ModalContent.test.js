@@ -11,9 +11,9 @@ test('Modal Content Test only body', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('Modal Content Test show', () => {
+test('Modal Content Test isOpen', () => {
   const view = shallow(
-    <ModalContent label="Test Modal Content label" show>
+    <ModalContent label="Test Modal Content label" isOpen>
       This is a ModalBox header
     </ModalContent>
   );

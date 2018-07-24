@@ -10,8 +10,10 @@ const propTypes = {
   className: PropTypes.string,
   /** Creates a large version of the ModalBox */
   isLarge: PropTypes.bool,
-  /* Aria label used for Modal Box Header */
-  label: PropTypes.string.isRequired
+  /* Header title used for Modal Box Header */
+  title: PropTypes.string.isRequired,
+  /** id to use for Modal Box description */
+  id: PropTypes.string.isRequired
 };
 
 const defaultProps = {
@@ -19,12 +21,12 @@ const defaultProps = {
   isLarge: false
 };
 
-const ModalBox = ({ children, className, isLarge, label, ...props }) => (
+const ModalBox = ({ children, className, isLarge, title, id, ...props }) => (
   <div
     {...props}
     role="dialog"
-    aria-label={label}
-    aria-describedby="modal-description"
+    aria-label={title}
+    aria-describedby={id}
     aria-modal="true"
     className={css(styles.modalBox, className, isLarge && styles.modifiers.lg)}
   >

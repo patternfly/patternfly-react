@@ -18,9 +18,9 @@ test('ModalBox Test isLarge', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('ModalBox Test show', () => {
+test('ModalBox Test isOpen', () => {
   const view = shallow(
-    <ModalBox label="Test Modal label" isLarge show>
+    <ModalBox label="Test Modal label" isLarge isOpen>
       This is a ModalBox header
     </ModalBox>
   );

@@ -17,80 +17,86 @@ class ModalDocs extends React.Component {
       showModal: false,
       showLargeModal: false
     };
-
-    this.hideModal = this.hideModal.bind(this);
-    this.showModal = this.showModal.bind(this);
-    this.hideLargeModal = this.hideLargeModal.bind(this);
-    this.showLargeModal = this.showLargeModal.bind(this);
   }
 
-  showModal() {
+  showModal = () => {
     this.setState({
       showModal: true
     });
-  }
+  };
 
-  hideModal() {
+  hideModal = () => {
     this.setState({
       showModal: false
     });
-  }
+  };
 
-  showLargeModal() {
+  showLargeModal = () => {
     this.setState({
       showLargeModal: true
     });
-  }
+  };
 
-  hideLargeModal() {
+  hideLargeModal = () => {
     this.setState({
       showLargeModal: false
     });
-  }
+  };
 
   render() {
     const { data } = this.props;
+
+    const actionButtons = (
+      <Button variant="primary" onClick={this.hideModal}>
+        Close
+      </Button>
+    );
+
+    const actionButtonsLargeModal = (
+      <Button variant="primary" onClick={this.hideLargeModal}>
+        OK
+      </Button>
+    );
+
     return (
       <ComponentDocs data={data}>
         <Example title="Simple Modal Box">
-          <Button
-            variant="primary"
-            label="Simple Modal Example"
-            onClick={this.showModal}
-          >
+          <Button variant="primary" onClick={this.showModal}>
             Show Modal
           </Button>
           <Modal
-            show={this.state.showModal}
-            header="Modal Header"
-            footer="Modal Footer"
+            isOpen={this.state.showModal}
+            actions={actionButtons}
             onClose={this.hideModal}
-            label="Modal Header"
+            title="Modal Header"
           >
-            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
-            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
-            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </Modal>
         </Example>
         <Example title="Large Modal Box">
-          <Button
-            variant="primary"
-            label="Large Modal Example"
-            onClick={this.showLargeModal}
-          >
+          <Button variant="primary" onClick={this.showLargeModal}>
             Show Large Modal
           </Button>
           <Modal
-            show={this.state.showLargeModal}
-            header="Modal Header"
-            footer="Modal Footer"
+            isOpen={this.state.showLargeModal}
+            actions={actionButtonsLargeModal}
             onClose={this.hideLargeModal}
             isLarge
-            label="Modal Header"
+            title="Modal Header"
           >
-            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
-            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
-            Modal Body Modal Body Modal Body Modal Body Modal Body Modal Body
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </Modal>
         </Example>
       </ComponentDocs>

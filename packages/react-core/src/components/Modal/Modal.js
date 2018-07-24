@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import ModalContent from './ModalContent';
+import { KEY_CODES } from '../../internal/constants';
 
 const propTypes = {
   /** content rendered inside the Modal. */
@@ -9,59 +10,60 @@ const propTypes = {
   /** additional classes added to the button */
   className: PropTypes.string,
   /** Flag to show the modal */
-  show: PropTypes.bool,
+  isOpen: PropTypes.bool,
   /** Content of the Modal Header */
-  header: PropTypes.any,
-  /** Content of the Modal Footer */
-  footer: PropTypes.any,
+  title: PropTypes.string.isRequired,
+  /** Flag to show the title */
+  hideTitle: PropTypes.bool,
+  /** Action buttons to put in the Modal Footer */
+  actions: PropTypes.any,
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
   /** Creates a large version of the Modal */
-  isLarge: PropTypes.bool,
-  /* Aria label used for Modal Box Header */
-  label: PropTypes.string.isRequired
+  isLarge: PropTypes.bool
 };
 
 const defaultProps = {
   className: '',
-  show: false,
-  header: null,
-  footer: null,
+  isOpen: false,
+  hideTitle: false,
+  actions: [],
   onClose: () => undefined,
   isLarge: false
 };
 
-// create a node for the modal and render it to the DOM
-const modalRoot = document.createElement('div');
-modalRoot.setAttribute('id', 'modal-root');
-document.body.appendChild(modalRoot);
+let currentId = 0;
 
 class Modal extends React.Component {
   static propTypes = propTypes;
   static defaultProps = defaultProps;
 
-  constructor(props) {
-    super(props);
-    this.container = document.createElement('div');
-  }
+  id = `pf-modal-${currentId++}`;
+
+  container = document.createElement('div');
+
+  handleEscKeyClick = event => {
+    if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
+      this.props.onClose();
+    }
+  };
 
   componentDidMount() {
-    modalRoot.appendChild(this.container);
+    document.body.appendChild(this.container);
+    document.addEventListener('keydown', this.handleEscKeyClick, false);
   }
 
   componentWillUnmount() {
-    modalRoot.removeChild(this.container);
+    document.body.removeChild(this.container);
+    document.removeEventListener('keydown', this.handleEscKeyClick, false);
   }
 
   render() {
     return ReactDOM.createPortal(
-      <ModalContent {...this.props} />,
+      <ModalContent {...this.props} id={this.id} />,
       this.container
     );
   }
 }
-
-Modal.propTypes = propTypes;
-Modal.defaultProps = defaultProps;
 
 export default Modal;

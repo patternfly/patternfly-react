@@ -14,24 +14,26 @@ const propTypes = {
   /** additional classes added to the button */
   className: PropTypes.string,
   /** Flag to show the modal */
-  show: PropTypes.bool,
+  isOpen: PropTypes.bool,
   /** Content of the Modal Header */
-  header: PropTypes.any,
+  title: PropTypes.string.isRequired,
+  /** Flag to show the title */
+  hideTitle: PropTypes.bool,
   /** Content of the Modal Footer */
-  footer: PropTypes.any,
+  actions: PropTypes.any,
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
   /** Creates a large version of the Modal */
   isLarge: PropTypes.bool,
-  /* Aria label used for Modal Box Header */
-  label: PropTypes.string.isRequired
+  /** id to use for Modal Box description */
+  id: PropTypes.string.isRequired
 };
 
 const defaultProps = {
   className: '',
-  show: false,
-  header: null,
-  footer: null,
+  isOpen: false,
+  hideTitle: false,
+  actions: [],
   onClose: () => undefined,
   isLarge: false
 };
@@ -39,37 +41,36 @@ const defaultProps = {
 const ModalContent = ({
   children,
   className,
-  show,
-  header,
-  footer,
+  isOpen,
+  title,
+  hideTitle,
+  actions,
   onClose,
   isLarge,
-  label,
+  id,
   ...props
 }) => {
-  const modalBoxHeader = header ? (
-    <ModalBoxHeader> {header} </ModalBoxHeader>
-  ) : null;
-  const modalBoxFooter = footer ? (
-    <ModalBoxFooter> {footer} </ModalBoxFooter>
-  ) : null;
-  if (show) {
-    return (
-      <div {...props}>
-        <Backdrop>
-          <Bullseye>
-            <ModalBox className={className} isLarge={isLarge} label={label}>
-              <ModalBoxHCloseButton onClose={onClose} />
-              {modalBoxHeader}
-              <ModalBoxBody> {children} </ModalBoxBody>
-              {modalBoxFooter}
-            </ModalBox>
-          </Bullseye>
-        </Backdrop>
-      </div>
-    );
+  const modalBoxHeader = title && <ModalBoxHeader> {title} </ModalBoxHeader>;
+  const modalBoxFooter = actions && (
+    <ModalBoxFooter> {actions} </ModalBoxFooter>
+  );
+  if (!isOpen) {
+    return null;
   }
-  return null;
+  return (
+    <Backdrop>
+      <Bullseye>
+        <ModalBox className={className} isLarge={isLarge} title={title} id={id}>
+          <ModalBoxHCloseButton onClose={onClose} />
+          {modalBoxHeader}
+          <ModalBoxBody {...props} id={id}>
+            {children}
+          </ModalBoxBody>
+          {modalBoxFooter}
+        </ModalBox>
+      </Bullseye>
+    </Backdrop>
+  );
 };
 
 ModalContent.propTypes = propTypes;

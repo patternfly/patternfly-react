@@ -7,7 +7,9 @@ const propTypes = {
   /** content rendered inside the ModalBoxBody */
   children: PropTypes.node,
   /** additional classes added to the ModalBoxBody */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** id to use for Modal Box description */
+  id: PropTypes.string.isRequired
 };
 
 const defaultProps = {
@@ -15,12 +17,8 @@ const defaultProps = {
   className: ''
 };
 
-const ModalBoxBody = ({ children, className, ...props }) => (
-  <div
-    {...props}
-    className={css(styles.modalBoxBody, className)}
-    id="modal-description"
-  >
+const ModalBoxBody = ({ children, className, id, ...props }) => (
+  <div {...props} className={css(styles.modalBoxBody, className)} id={id}>
     {children}
   </div>
 );
