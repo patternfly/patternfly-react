@@ -91,7 +91,7 @@
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.3.0",
     "sass-loader": "^6.0.6",
-    "semantic-release": "^12.2.0",
+    "semantic-release": "^15.0.0",
     "style-loader": "^0.20.3",
     "stylelint": "^8.4.0",
     "stylelint-config-standard": "^18.2.0",
