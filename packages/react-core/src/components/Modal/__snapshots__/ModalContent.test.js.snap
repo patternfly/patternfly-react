@@ -10,15 +10,24 @@ exports[`Modal Content Test isOpen 1`] = `
   >
     <ModalBox
       className=""
+      id="id"
       isLarge={false}
+      title="Test Modal Content title"
     >
       <ModalBoxCloseButton
         className=""
         onClose={[Function]}
       />
+      <ModalBoxHeader
+        className=""
+      >
+         
+        Test Modal Content title
+         
+      </ModalBoxHeader>
       <ModalBoxBody
         className=""
-        label="Test Modal Content label"
+        id="id"
       >
         This is a ModalBox header
       </ModalBoxBody>

@@ -13,7 +13,6 @@ exports[`ModalBoxHeader Test 1`] = `
 >
   <h1
     className="pf-c-modal-box__header-title"
-    id="modal-title"
   >
     This is a ModalBox header
   </h1>

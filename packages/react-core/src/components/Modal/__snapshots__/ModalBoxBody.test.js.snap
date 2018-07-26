@@ -7,6 +7,7 @@ exports[`ModalBoxBody Test 1`] = `
 
 <div
   className="pf-c-modal-box__body"
+  id="id"
 >
   This is a ModalBox header
 </div>
