@@ -18,7 +18,7 @@ function getFontAwesomeIcon(name) {
   const faIconDef = require(`@fortawesome/free-solid-svg-icons/${faIconName}`); // eslint-disable-line
 
   return {
-    id: name,
+    id: `${name}-icon`,
     name: pascalCase(`${name}-icon`),
     width: faIconDef.width,
     height: faIconDef.height,
