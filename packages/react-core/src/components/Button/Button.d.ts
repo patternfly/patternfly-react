@@ -1,4 +1,4 @@
-import { HTMLProps, SFC } from 'react';
+import { HTMLProps, SFC, ReactType, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
 
 export const ButtonVariant: {
@@ -16,7 +16,9 @@ export const ButtonType: {
 };
 
 export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
-  children?: React.ReactNode;
+  ariaLabel?: string;
+  children?: ReactNode;
+  component?: ReactType<ButtonProps>;
   isActive?: boolean;
   isBlock?: boolean;
   isDisabled?: boolean;
