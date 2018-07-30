@@ -1,14 +1,16 @@
 import React from 'react';
 import Content from '../../components/content';
 import { Title, Grid, GridItem } from '@patternfly/react-core';
-import { iconMap } from '@patternfly/react-icons/src/icons';
+import * as icons from '@patternfly/react-icons';
 import { css, StyleSheet } from '@patternfly/react-styles';
 import {
   global_spacer_md as spacerMd,
   global_FontSize_sm as labelFontSize
 } from '@patternfly/react-tokens';
 
-const allIcons = Array.from(iconMap.entries());
+const allIcons = Object.entries(icons).filter(([name]) =>
+  name.endsWith('Icon')
+);
 
 const styles = StyleSheet.create({
   iconCell: {
