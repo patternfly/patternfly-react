@@ -153,15 +153,12 @@ exports[`Component matches snapshot 1`] = `
               />
                Keep me logged in for 30 days
             </label>
-            <span
+            <a
               class="forgot-password"
+              href="#"
             >
-              <a
-                href="#"
-              >
-                Forgot password?
-              </a>
-            </span>
+              Forgot password?
+            </a>
           </div>
           <button
             class="btn btn-lg btn-primary btn-block"

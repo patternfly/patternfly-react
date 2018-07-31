@@ -51,191 +51,180 @@ exports[`Component matches snapshot 1`] = `
             </p>
           </header>
           <div
-            class="container-fluid"
+            class="row"
           >
             <div
-              class="row"
+              class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"
             >
               <div
-                class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"
+                class="card-pf"
               >
-                <div
-                  class="card-pf"
+                <header
+                  class="login-pf-header "
                 >
-                  <header
-                    class="login-pf-header "
+                  <div
+                    class="bootstrap-select "
                   >
                     <div
-                      class="bootstrap-select "
+                      class="dropdown btn-group"
                     >
-                      <div
-                        class="dropdown btn-group"
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="dropdown-toggle btn btn-default"
+                        id="language-picker"
+                        role="button"
+                        type="button"
                       >
-                        <button
-                          aria-expanded="false"
-                          aria-haspopup="true"
-                          class="dropdown-toggle btn btn-default"
-                          id="language-picker"
-                          role="button"
-                          type="button"
-                        >
-                          English 
-                          <span
-                            class="caret"
-                          />
-                        </button>
-                        <ul
-                          aria-labelledby="language-picker"
-                          class="dropdown-menu dropdown-menu-right"
-                          role="menu"
-                        >
-                          <li
-                            class="active"
-                            role="presentation"
-                          >
-                            <a
-                              href="#"
-                              role="menuitem"
-                              tabindex="-1"
-                              value="en"
-                            >
-                              English
-                            </a>
-                          </li>
-                          <li
-                            class=""
-                            role="presentation"
-                          >
-                            <a
-                              href="#"
-                              role="menuitem"
-                              tabindex="-1"
-                              value="fr"
-                            >
-                              French
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <h1>
-                      Log In to Your Account
-                    </h1>
-                  </header>
-                  <div
-                    class="card-pf-body"
-                  >
-                    <form
-                      class=""
-                      novalidate=""
-                    >
-                      <div
-                        class="login-form-error "
-                      />
-                      <div
-                        class="login_card_input  form-group"
-                      >
-                        <input
-                          autocomplete=""
-                          class="form-control input-lg"
-                          id="card_email"
-                          placeholder="Email address"
-                          type="email"
-                        />
-                        <div
-                          class="fade"
-                        />
-                      </div>
-                      <div
-                        class="login_card_input  form-group"
-                      >
-                        <input
-                          autocomplete=""
-                          class="form-control input-lg"
-                          id="card_password"
-                          placeholder="Password"
-                          type="password"
-                        />
-                        <div
-                          class="fade"
-                        />
-                      </div>
-                      <div
-                        class="login-pf-settings  form-group"
-                      >
-                        <label
-                          class="checkbox-label "
-                        >
-                          <input
-                            type="checkbox"
-                          />
-                           Keep me logged in for 30 days
-                        </label>
+                        English 
                         <span
-                          class="forgot-password"
+                          class="caret"
+                        />
+                      </button>
+                      <ul
+                        aria-labelledby="language-picker"
+                        class="dropdown-menu dropdown-menu-right"
+                        role="menu"
+                      >
+                        <li
+                          class="active"
+                          role="presentation"
                         >
                           <a
                             href="#"
+                            role="menuitem"
+                            tabindex="-1"
+                            value="en"
                           >
-                            Forgot password?
+                            English
                           </a>
-                        </span>
-                      </div>
-                      <button
-                        class="btn btn-lg btn-primary btn-block"
-                        type="submit"
-                      >
-                        Log In
-                      </button>
-                    </form>
+                        </li>
+                        <li
+                          class=""
+                          role="presentation"
+                        >
+                          <a
+                            href="#"
+                            role="menuitem"
+                            tabindex="-1"
+                            value="fr"
+                          >
+                            French
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <h1>
+                    Log In to Your Account
+                  </h1>
+                </header>
+                <form
+                  class=""
+                  novalidate=""
+                >
+                  <div
+                    class="login-form-error "
+                  />
+                  <div
+                    class="login_card_input  form-group"
+                  >
+                    <input
+                      autocomplete=""
+                      class="form-control input-lg"
+                      id="card_email"
+                      placeholder="Email address"
+                      type="email"
+                    />
+                    <div
+                      class="fade"
+                    />
                   </div>
                   <div
-                    class="login-pf-signup "
+                    class="login_card_input  form-group"
                   >
-                    <p>
-                      Need an account?
-                      <a
-                        href="#"
-                        label="Sign up"
-                      />
-                    </p>
+                    <input
+                      autocomplete=""
+                      class="form-control input-lg"
+                      id="card_password"
+                      placeholder="Password"
+                      type="password"
+                    />
+                    <div
+                      class="fade"
+                    />
                   </div>
+                  <div
+                    class="login-pf-settings  form-group"
+                  >
+                    <label
+                      class="checkbox-label "
+                    >
+                      <input
+                        type="checkbox"
+                      />
+                       Keep me logged in for 30 days
+                    </label>
+                    <a
+                      class="forgot-password"
+                      href="#"
+                    >
+                      Forgot password?
+                    </a>
+                  </div>
+                  <button
+                    class="btn btn-lg btn-primary btn-block"
+                    type="submit"
+                  >
+                    Log In
+                  </button>
+                </form>
+                <div
+                  class="login-pf-signup "
+                >
+                  <p>
+                    Need an account?
+                    <a
+                      href="#"
+                      label="Sign up"
+                    />
+                  </p>
                 </div>
               </div>
+              <footer
+                class="login-pf-page-footer"
+              >
+                <ul
+                  class="login-pf-page-footer-links list-unstyled"
+                >
+                  <li>
+                    <a
+                      class="login-pf-page-footer-link"
+                      href="#"
+                    >
+                      Terms of Use
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="login-pf-page-footer-link"
+                      href="#"
+                    >
+                      Help
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="login-pf-page-footer-link"
+                      href="#"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                </ul>
+              </footer>
             </div>
           </div>
-          <footer
-            class="login-pf-page-footer"
-          >
-            <ul
-              class="login-pf-page-footer-links list-unstyled"
-            >
-              <li>
-                <a
-                  class="login-pf-page-footer-link"
-                  href="#"
-                >
-                  Terms of Use
-                </a>
-              </li>
-              <li>
-                <a
-                  class="login-pf-page-footer-link"
-                  href="#"
-                >
-                  Help
-                </a>
-              </li>
-              <li>
-                <a
-                  class="login-pf-page-footer-link"
-                  href="#"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-            </ul>
-          </footer>
         </div>
       </div>
     </div>

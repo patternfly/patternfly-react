@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ForgotPassword = ({ href, onClick, label, className, ...props }) => (
-  <span className={className}>
-    <a {...props} href={href} onClick={onClick}>
-      {label}
-    </a>
-  </span>
+const ForgotPassword = ({ href, onClick, label, ...props }) => (
+  <a {...props} href={href} onClick={onClick}>
+    {label}
+  </a>
 );
 
 ForgotPassword.propTypes = {

@@ -26,15 +26,13 @@ const LoginPagePattern = ({ container, header, footerLinks, card }) => (
             />
             <h1>{card.title}</h1>
           </LoginCard.Header>
-          <LoginCard.Body>
-            <LoginCard.WithValidation {...card.form}>
-              <LoginCard.Form />
-            </LoginCard.WithValidation>
-          </LoginCard.Body>
+          <LoginCard.WithValidation {...card.form}>
+            <LoginCard.Form />
+          </LoginCard.WithValidation>
           <LoginCard.SignUp {...card.signUp} />
         </LoginCard>
+        <LoginPage.Footer links={footerLinks} />
       </LoginCard.BasicLayout>
-      <LoginPage.Footer links={footerLinks} />
     </LoginPage.BasicLayout>
   </LoginPage.Container>
 );
