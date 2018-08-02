@@ -1,25 +1,3 @@
-.compound-label-pf.compound-label-pf-text-color.pf-remove-button {
-  color: $color-pf-white;
-  vertical-align: middle;
-}
-
-.compound-label-pf {
-  font-size: 0.8em;
-  display: table-cell !important;
-  vertical-align: middle;
-
-  span {
-    background-color: $color-pf-blue-400;
-  }
-}
-
-.compound-label-pf-text-color {
-  color: $color-pf-white;
-  .pf-remove-button {
-    vertical-align: middle;
-  }
-}
-
 .category.list-inline {
   background-color: $color-pf-blue-500;
   padding: 3px 10px 3px 15px;
@@ -29,11 +7,26 @@
   margin-bottom: 5px;
   font-size: 14px;
   line-height: 24px;
-  display: table;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
   float: left;
 
+  li.value {
+    font-size: 0.8em;
+    display: table-cell;
+    vertical-align: middle;
+    span {
+      background-color: $color-pf-blue-400;
+    }
+  }
   li a span {
     color: $color-pf-white;
+    .pf-remove-button {
+      color: $color-pf-white;
+      vertical-align: middle;
+    }
   }
 }
 

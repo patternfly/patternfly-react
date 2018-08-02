@@ -4,38 +4,44 @@ exports[`snapshot test 1`] = `
 <ul
   className="category list-inline "
 >
-  <OverlayTrigger
-    defaultOverlayShown={false}
-    overlay={
-      <Tooltip
-        bsClass="tooltip"
-        id="tooltip"
-        placement="right"
-      >
-        Food - category with very long description
-      </Tooltip>
-    }
-    placement="bottom"
-    trigger={
-      Array [
-        "hover",
-        "focus",
-      ]
-    }
+  <li
+    key="1"
   >
-    <div
-      className="category-label"
+    <OverlayTrigger
+      defaultOverlayShown={false}
+      overlay={
+        <Tooltip
+          bsClass="tooltip"
+          id="tooltip"
+          placement="right"
+        >
+          Food - category with very long description
+        </Tooltip>
+      }
+      placement="bottom"
+      trigger={
+        Array [
+          "hover",
+          "focus",
+        ]
+      }
     >
-      Food - category wi...
-    </div>
-  </OverlayTrigger>
+      <div
+        className="category-label"
+      >
+        Food - category wi...
+      </div>
+    </OverlayTrigger>
+  </li>
   <LabelWithTooltip
+    bsStyle="info"
     category={
       Object {
         "id": 1,
         "label": "Food - category with very long description",
       }
     }
+    className=""
     key="12"
     onDeleteClick={[Function]}
     truncate={[Function]}
@@ -47,12 +53,14 @@ exports[`snapshot test 1`] = `
     }
   />
   <LabelWithTooltip
+    bsStyle="info"
     category={
       Object {
         "id": 1,
         "label": "Food - category with very long description",
       }
     }
+    className=""
     key="11"
     onDeleteClick={[Function]}
     truncate={[Function]}
@@ -64,12 +72,14 @@ exports[`snapshot test 1`] = `
     }
   />
   <LabelWithTooltip
+    bsStyle="info"
     category={
       Object {
         "id": 1,
         "label": "Food - category with very long description",
       }
     }
+    className=""
     key="13"
     onDeleteClick={[Function]}
     truncate={[Function]}

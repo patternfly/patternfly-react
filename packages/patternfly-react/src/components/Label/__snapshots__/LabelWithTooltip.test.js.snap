@@ -2,7 +2,7 @@
 
 exports[`snapshot test 1`] = `
 <li
-  className="compound-label-pf"
+  className="value"
   key="11"
 >
   <OverlayTrigger
@@ -25,8 +25,8 @@ exports[`snapshot test 1`] = `
     }
   >
     <Label
-      bsStyle="primary"
-      className="compound-label-pf-text-color"
+      bsStyle=""
+      className=""
       key="11"
       onRemoveClick={[Function]}
       type="default"

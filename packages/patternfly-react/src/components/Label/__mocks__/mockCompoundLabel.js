@@ -7,11 +7,12 @@ export class MockCompoundLabel extends React.Component {
     this.state = {
       tag: {
         id: 1,
-        label: 'Food - category with very long description',
+        label: 'Most delicious food you will ever eat',
         values: [
-          { id: 11, label: 'Cake' },
-          { id: 12, label: 'Bloody Steak from the famous Purple Cow' },
-          { id: 13, label: 'Pineapple Pizza' }
+          { id: 11, label: 'Strawberries harvested under full moon light' },
+          { id: 12, label: 'Argentinian beef steak from hand massaged cow' },
+          { id: 13, label: 'Enchanted cookies baked by insane chef' },
+          { id: 14, label: 'Dumplings' }
         ]
       }
     };
@@ -45,11 +46,12 @@ export class MockCompoundLabel extends React.Component {
     this.state = {
       tag: {
         id: 1,
-        label: 'Food - category with very long description',
+        label: 'Most delicious food you will ever eat',
         values: [
-          { id: 11, label: 'Cake' },
-          { id: 12, label: 'Bloody Steak from the famous Purple Cow' },
-          { id: 13, label: 'Pineapple Pizza' }
+          { id: 11, label: 'Strawberries harvested under full moon light' },
+          { id: 12, label: 'Argentinian beef steak from hand massaged cow' },
+          { id: 13, label: 'Enchanted cookies baked by insane chef' },
+          { id: 14, label: 'Dumplings' }
         ]
       }
     };

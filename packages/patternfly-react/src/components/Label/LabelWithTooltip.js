@@ -6,14 +6,21 @@ import { Tooltip } from '../Tooltip';
 
 const tooltip = text => <Tooltip id="tooltip">{text}</Tooltip>;
 
-const LabelWithTooltip = ({ onDeleteClick, category, value, truncate }) => (
-  <li key={value.id} className="compound-label-pf">
+const LabelWithTooltip = ({
+  onDeleteClick,
+  category,
+  value,
+  truncate,
+  bsStyle,
+  className
+}) => (
+  <li key={value.id} className="value">
     <OverlayTrigger placement="bottom" overlay={tooltip(value.label)}>
       <Label
         key={value.id}
-        bsStyle="primary"
+        bsStyle={bsStyle}
         onRemoveClick={() => onDeleteClick(category, value)}
-        className="compound-label-pf-text-color"
+        className={`${className}`}
       >
         {truncate(value.label)}
       </Label>
@@ -31,7 +38,13 @@ LabelWithTooltip.propTypes = {
     id: PropTypes.any.isRequired,
     label: PropTypes.string.isRequired
   }).isRequired,
-  truncate: PropTypes.func.isRequired
+  truncate: PropTypes.func.isRequired,
+  className: PropTypes.string,
+  bsStyle: PropTypes.string
 };
 
+LabelWithTooltip.defaultProps = {
+  className: '',
+  bsStyle: 'primary'
+};
 export default LabelWithTooltip;

@@ -12,22 +12,26 @@ class CompoundLabel extends React.Component {
       value={value}
       onDeleteClick={this.props.onDeleteClick}
       truncate={this.props.valueTruncate}
+      bsStyle={this.props.bsStyle}
+      className={this.props.valueClassName}
     />
   );
 
   render() {
     const values = [...this.props.values];
-    if (values.length === 0) return null;
+    if (values.length === 0) return <div />;
     const categoryTooltip = (
       <Tooltip id="tooltip">{this.props.category.label}</Tooltip>
     );
     return (
       <ul className={`category list-inline ${this.props.className}`}>
-        <OverlayTrigger placement="bottom" overlay={categoryTooltip}>
-          <div className="category-label">
-            {this.props.categoryTruncate(this.props.category.label)}
-          </div>
-        </OverlayTrigger>
+        <li key={this.props.category.id}>
+          <OverlayTrigger placement="bottom" overlay={categoryTooltip}>
+            <div className="category-label">
+              {this.props.categoryTruncate(this.props.category.label)}
+            </div>
+          </OverlayTrigger>
+        </li>
         {values
           .sort((a, b) => (a.label < b.label ? -1 : 1))
           .map(tagValue => this.generateTag(tagValue))}
@@ -37,33 +41,31 @@ class CompoundLabel extends React.Component {
 }
 
 CompoundLabel.propTypes = {
-  /** Category, the key part in key:values pair */
   category: PropTypes.shape({
     id: PropTypes.any.isRequired,
     label: PropTypes.string.isRequired
   }).isRequired,
-  /** Values, the values part in key:values pair */
   values: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.any.isRequired,
       label: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,
-  /** Callback when remove button is clicked */
   onDeleteClick: PropTypes.func.isRequired,
-  /** Truncate function used for category label */
   categoryTruncate: PropTypes.func,
-  /** Truncate function used for value label */
   valueTruncate: PropTypes.func,
-  /** Used for asign additional css classes */
-  className: PropTypes.string
+  className: PropTypes.string,
+  bsStyle: PropTypes.string,
+  valueClassName: PropTypes.string
 };
 
 CompoundLabel.defaultProps = {
   categoryTruncate: str =>
     str.length > 18 ? `${str.substring(0, 18)}...` : str,
   valueTruncate: str => (str.length > 18 ? `${str.substring(0, 18)}...` : str),
-  className: ''
+  className: '',
+  bsStyle: 'primary',
+  valueClassName: ''
 };
 
 export default CompoundLabel;
