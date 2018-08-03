@@ -17,10 +17,14 @@ const Toolbar = ({ children, className, ...props }) => {
 
   const toolbarChildren =
     childrenArray &&
-    childrenArray.filter(child => child.type !== ToolbarResults);
+    childrenArray.filter(
+      child => child.type.displayName !== ToolbarResults.displayName
+    );
   const resultsChildren =
     childrenArray &&
-    childrenArray.filter(child => child.type === ToolbarResults);
+    childrenArray.filter(
+      child => child.type.displayName === ToolbarResults.displayName
+    );
 
   return (
     <ToolbarContextProvider isDescendantOfToolbar>

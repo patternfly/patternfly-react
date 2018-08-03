@@ -27,4 +27,6 @@ ToolbarResults.defaultProps = {
   className: ''
 };
 
+ToolbarResults.displayName = 'ToolbarResults';
+
 export default ToolbarResults;
