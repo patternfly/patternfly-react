@@ -305,7 +305,7 @@ class BaseVerticalNav extends React.Component {
     // If the items prop is not present, items must be expressed as VerticalNavItem children instead.
     const itemsFromChildren = filterChildren(
       children,
-      child => child.type === VerticalNavItem
+      child => child.type.displayName === VerticalNavItem.displayName
     );
     const itemsFromProps =
       items &&
@@ -356,7 +356,10 @@ class BaseVerticalNav extends React.Component {
 
     const mastheadElem = masthead || (
       <nav className={classNames('navbar navbar-pf-vertical')}>
-        {findChild(children, child => child.type === VerticalNavMasthead)}
+        {findChild(
+          children,
+          child => child.type.displayName === VerticalNavMasthead.displayName
+        )}
       </nav>
     );
 
