@@ -14,6 +14,11 @@ export const getSpanModifier: (
   size?: OneOf<typeof DeviceSizes, keyof typeof DeviceSizes>
 ) => string;
 
+export const getGridSpanModifier: (
+  value: number,
+  size?: OneOf<typeof DeviceSizes, keyof typeof DeviceSizes>
+) => string;
+
 export const getRowSpanModifier: (
   value: number,
   size?: OneOf<typeof DeviceSizes, keyof typeof DeviceSizes>
