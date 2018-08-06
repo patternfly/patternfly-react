@@ -36,7 +36,7 @@ class NavigationItemGroup extends React.Component {
               justifyContent: 'space-between'
             }}
           >
-            {title} {isExpanded ? <AngleRightIcon /> : <AngleDownIcon />}
+            {title} {isExpanded ? <AngleDownIcon /> : <AngleRightIcon />}
           </div>
         </button>
         <ul

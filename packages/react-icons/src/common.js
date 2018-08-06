@@ -22,14 +22,14 @@ export const defaultProps = {
 export const getSize = size => {
   switch (size) {
     case IconSize.sm:
-      return '1rem';
+      return '1em';
     case IconSize.md:
-      return '1.5rem';
+      return '1.5em';
     case IconSize.lg:
-      return '2rem';
+      return '2em';
     case IconSize.xl:
-      return '3rem';
+      return '3em';
     default:
-      return '1rem';
+      return '1em';
   }
 };

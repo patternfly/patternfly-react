@@ -30,7 +30,7 @@ const AlertIcon = ({ variant, className, ...props }) => {
   const Icon = variantIcons[variant];
   return (
     <div {...props} className={css(styles.alertIcon, className)}>
-      <Icon size="md" />
+      <Icon />
     </div>
   );
 };

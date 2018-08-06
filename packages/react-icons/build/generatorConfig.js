@@ -30,20 +30,6 @@ module.exports = plop => {
       actions.push({
         type: 'add',
         force: true,
-        path: path.join(iconsDir, './index.js'),
-        templateFile: path.join(templatesDir, 'iconBarrelFile.hbs')
-      });
-
-      actions.push({
-        type: 'add',
-        force: true,
-        path: path.join(iconsDir, './index.d.ts'),
-        templateFile: path.join(templatesDir, 'iconBarrelFileTS.hbs')
-      });
-
-      actions.push({
-        type: 'add',
-        force: true,
         path: path.join(srcDir, './index.js'),
         templateFile: path.join(templatesDir, 'mainBarrelFile.hbs')
       });
