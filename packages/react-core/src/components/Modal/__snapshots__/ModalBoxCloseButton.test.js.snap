@@ -9,13 +9,14 @@ exports[`ModalBoxCloseButton Test 1`] = `
   className="pf-c-modal-box__close"
 >
   <Button
+    ariaLabel={null}
     className=""
+    component="button"
     isActive={false}
     isBlock={false}
     isDisabled={false}
     isFocus={false}
     isHover={false}
-    label=""
     onClick={[Function]}
     type="button"
     variant="action"
