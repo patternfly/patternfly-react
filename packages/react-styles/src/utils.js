@@ -34,7 +34,7 @@ export function getModifier(styleObj, modifier, defaultModifier) {
 }
 
 export function formatClassName(className) {
-  return camelcase(className.replace(/pf-((c|l|m|is|has)-)?/g, ''));
+  return camelcase(className.replace(/pf-((c|l|m|u|is|has)-)?/g, ''));
 }
 
 export function getCSSClasses(cssString) {

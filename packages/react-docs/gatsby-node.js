@@ -3,7 +3,7 @@ const pascalCase = require('pascal-case');
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   const oldCSSLoader = config._loaders.css;
-  const pfStylesTest = /patternfly-next.*(components|layouts).*\.css$/;
+  const pfStylesTest = /patternfly-next.*(components|layouts|utilities).*\.css$/;
   config.removeLoader('css');
   if (
     oldCSSLoader.config.loaders &&
