@@ -286,7 +286,7 @@ const testWizardPattern = props => {
       onHide={onHide}
       onExited={onExited}
       title="Wizard Pattern Example"
-      shouldDisableNextStep={false}
+      nextStepDisabled={false}
       steps={[
         { title: 'General', render: () => <p>General</p> },
         { title: 'Step Two', render: () => <p>Step Two</p> },

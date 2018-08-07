@@ -28,7 +28,8 @@ const WizardPattern = ({
   loading,
   nextButtonRef,
   bodyHeader,
-  children
+  children,
+  ...props
 }) => {
   const onFirstStep = activeStepIndex === 0;
   const onFinalStep = activeStepIndex === steps.length - 1;
@@ -100,7 +101,7 @@ const WizardPattern = ({
     getNextStep().preventEnter;
 
   return (
-    <Wizard show={show} onHide={onHideClick} onExited={onExited}>
+    <Wizard show={show} onHide={onHideClick} onExited={onExited} {...props}>
       <Wizard.Header onClose={onHideClick} title={title} />
       <Wizard.Body>
         {bodyHeader}
