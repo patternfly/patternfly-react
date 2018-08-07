@@ -1,38 +1,44 @@
-.category.list-inline {
+.compound-label-pf {
   background-color: $color-pf-blue-500;
-  padding: 3px 10px 3px 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   color: $color-pf-white;
   margin-left: 5px;
   margin-right: 10px;
   margin-bottom: 5px;
   font-size: 14px;
-  line-height: 24px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  display: inline-block;
+  margin-bottom: 0.5em;
+  // for wrapping:
+  white-space: normal;
+  text-align: left;
   float: left;
 
-  li.value {
-    font-size: 0.8em;
-    display: table-cell;
-    vertical-align: middle;
-
-    span {
-      background-color: $color-pf-blue-400;
-    }
+  .list-inline {
+    margin-bottom: 0;
   }
 
-  li a span {
-    color: $color-pf-white;
+  .label {
+    display: inline-block;
+    font-size: 0.8em;
+    vertical-align: middle;
+  }
 
-    .pf-remove-button {
-      color: $color-pf-white;
-      vertical-align: middle;
+  .list-inline {
+    display: inline-block;
+
+    &>li {
+      margin-top: 0.1em; // added for case when wrapping
+      margin-bottom: 0.1em; // added for case when wrapping
     }
   }
 }
 
-.category-label {
+.category-label-pf {
   padding-right: 15px;
+  vertical-align: text-bottom;
+}
+
+.compound-label-inner-color-pf {
+  background-color: $color-pf-blue-400;
 }

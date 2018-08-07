@@ -14,13 +14,13 @@ const LabelWithTooltip = ({
   bsStyle,
   className
 }) => (
-  <li key={value.id} className="value">
+  <li key={value.id}>
     <OverlayTrigger placement="bottom" overlay={tooltip(value.label)}>
       <Label
         key={value.id}
-        bsStyle={bsStyle}
         onRemoveClick={() => onDeleteClick(category, value)}
-        className={`${className}`}
+        bsStyle={bsStyle}
+        className={`compound-label-inner-color-pf ${className}`}
       >
         {truncate(value.label)}
       </Label>

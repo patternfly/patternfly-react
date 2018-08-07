@@ -13,7 +13,7 @@ class CompoundLabel extends React.Component {
       onDeleteClick={this.props.onDeleteClick}
       truncate={this.props.valueTruncate}
       bsStyle={this.props.bsStyle}
-      className={this.props.valueClassName}
+      className={this.props.innerClassName}
     />
   );
 
@@ -24,18 +24,18 @@ class CompoundLabel extends React.Component {
       <Tooltip id="tooltip">{this.props.category.label}</Tooltip>
     );
     return (
-      <ul className={`category list-inline ${this.props.className}`}>
-        <li key={this.props.category.id}>
-          <OverlayTrigger placement="bottom" overlay={categoryTooltip}>
-            <div className="category-label">
-              {this.props.categoryTruncate(this.props.category.label)}
-            </div>
-          </OverlayTrigger>
-        </li>
-        {values
-          .sort((a, b) => (a.label < b.label ? -1 : 1))
-          .map(tagValue => this.generateTag(tagValue))}
-      </ul>
+      <span className="label label-primary compound-label-pf">
+        <OverlayTrigger placement="bottom" overlay={categoryTooltip}>
+          <span className="category-label-pf">
+            {this.props.categoryTruncate(this.props.category.label)}
+          </span>
+        </OverlayTrigger>
+        <ul className={`list-inline ${this.props.className}`}>
+          {values
+            .sort((a, b) => (a.label < b.label ? -1 : 1))
+            .map(tagValue => this.generateTag(tagValue))}
+        </ul>
+      </span>
     );
   }
 }
@@ -56,7 +56,7 @@ CompoundLabel.propTypes = {
   valueTruncate: PropTypes.func,
   className: PropTypes.string,
   bsStyle: PropTypes.string,
-  valueClassName: PropTypes.string
+  innerClassName: PropTypes.string
 };
 
 CompoundLabel.defaultProps = {
@@ -65,7 +65,7 @@ CompoundLabel.defaultProps = {
   valueTruncate: str => (str.length > 18 ? `${str.substring(0, 18)}...` : str),
   className: '',
   bsStyle: 'primary',
-  valueClassName: ''
+  innerClassName: ''
 };
 
 export default CompoundLabel;

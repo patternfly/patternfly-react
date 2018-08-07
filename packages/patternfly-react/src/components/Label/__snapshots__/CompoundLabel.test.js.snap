@@ -1,94 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`snapshot test 1`] = `
-<ul
-  className="category list-inline "
+<span
+  className="label label-primary compound-label-pf"
 >
-  <li
-    key="1"
-  >
-    <OverlayTrigger
-      defaultOverlayShown={false}
-      overlay={
-        <Tooltip
-          bsClass="tooltip"
-          id="tooltip"
-          placement="right"
-        >
-          Food - category with very long description
-        </Tooltip>
-      }
-      placement="bottom"
-      trigger={
-        Array [
-          "hover",
-          "focus",
-        ]
-      }
-    >
-      <div
-        className="category-label"
+  <OverlayTrigger
+    defaultOverlayShown={false}
+    overlay={
+      <Tooltip
+        bsClass="tooltip"
+        id="tooltip"
+        placement="right"
       >
-        Food - category wi...
-      </div>
-    </OverlayTrigger>
-  </li>
-  <LabelWithTooltip
-    bsStyle="info"
-    category={
-      Object {
-        "id": 1,
-        "label": "Food - category with very long description",
-      }
+        Food - category with very long description
+      </Tooltip>
     }
-    className=""
-    key="12"
-    onDeleteClick={[Function]}
-    truncate={[Function]}
-    value={
-      Object {
-        "id": 12,
-        "label": "Bloody Steak from the famous Purple Cow",
-      }
+    placement="bottom"
+    trigger={
+      Array [
+        "hover",
+        "focus",
+      ]
     }
-  />
-  <LabelWithTooltip
-    bsStyle="info"
-    category={
-      Object {
-        "id": 1,
-        "label": "Food - category with very long description",
+  >
+    <span
+      className="category-label-pf"
+    >
+      Food - category wi...
+    </span>
+  </OverlayTrigger>
+  <ul
+    className="list-inline "
+  >
+    <LabelWithTooltip
+      bsStyle="primary"
+      category={
+        Object {
+          "id": 1,
+          "label": "Food - category with very long description",
+        }
       }
-    }
-    className=""
-    key="11"
-    onDeleteClick={[Function]}
-    truncate={[Function]}
-    value={
-      Object {
-        "id": 11,
-        "label": "Cake",
+      className=""
+      key="12"
+      onDeleteClick={[Function]}
+      truncate={[Function]}
+      value={
+        Object {
+          "id": 12,
+          "label": "Bloody Steak from the famous Purple Cow",
+        }
       }
-    }
-  />
-  <LabelWithTooltip
-    bsStyle="info"
-    category={
-      Object {
-        "id": 1,
-        "label": "Food - category with very long description",
+    />
+    <LabelWithTooltip
+      bsStyle="primary"
+      category={
+        Object {
+          "id": 1,
+          "label": "Food - category with very long description",
+        }
       }
-    }
-    className=""
-    key="13"
-    onDeleteClick={[Function]}
-    truncate={[Function]}
-    value={
-      Object {
-        "id": 13,
-        "label": "Pineapple Pizza",
+      className=""
+      key="11"
+      onDeleteClick={[Function]}
+      truncate={[Function]}
+      value={
+        Object {
+          "id": 11,
+          "label": "Cake",
+        }
       }
-    }
-  />
-</ul>
+    />
+    <LabelWithTooltip
+      bsStyle="primary"
+      category={
+        Object {
+          "id": 1,
+          "label": "Food - category with very long description",
+        }
+      }
+      className=""
+      key="13"
+      onDeleteClick={[Function]}
+      truncate={[Function]}
+      value={
+        Object {
+          "id": 13,
+          "label": "Pineapple Pizza",
+        }
+      }
+    />
+  </ul>
+</span>
 `;
