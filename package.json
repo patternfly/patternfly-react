@@ -175,7 +175,8 @@
     "roots": [
       "<rootDir>/packages",
       "<rootDir>/scripts"
-    ]
+    ],
+    "testURL": "http://localhost"
   },
   "config": {
     "commitizen": {
