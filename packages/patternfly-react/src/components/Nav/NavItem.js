@@ -1,1 +1,3 @@
-export { NavItem as default } from 'react-bootstrap';
+import { NavItem } from 'react-bootstrap';
+
+export default NavItem;

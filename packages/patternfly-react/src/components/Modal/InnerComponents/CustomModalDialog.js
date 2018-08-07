@@ -9,7 +9,7 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { utils } from 'react-bootstrap';
+import * as utils from 'react-bootstrap/lib/utils';
 
 const { bsClass } = utils.bootstrapUtils;
 const { bsSizes } = utils.bootstrapUtils;

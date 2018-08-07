@@ -1,1 +1,3 @@
-export { TabPane as default } from 'react-bootstrap';
+import { TabPane } from 'react-bootstrap';
+
+export default TabPane;

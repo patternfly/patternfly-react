@@ -1,1 +1,3 @@
-export { Tab as default } from 'react-bootstrap';
+import { Tab } from 'react-bootstrap';
+
+export default Tab;

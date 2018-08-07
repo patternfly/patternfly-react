@@ -1,1 +1,3 @@
-export { Popover as default } from 'react-bootstrap';
+import { Popover } from 'react-bootstrap';
+
+export default Popover;

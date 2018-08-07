@@ -1,1 +1,3 @@
-export { TabContainer as default } from 'react-bootstrap';
+import { TabContainer } from 'react-bootstrap';
+
+export default TabContainer;

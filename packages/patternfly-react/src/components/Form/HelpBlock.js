@@ -1,1 +1,3 @@
-export { HelpBlock as default } from 'react-bootstrap';
+import { HelpBlock } from 'react-bootstrap';
+
+export default HelpBlock;

@@ -173,7 +173,8 @@ Please ensure that all React UI components contributed meet the following guidel
 
   ```js
   # Badge/Badge.js
-  export { Badge as default } from 'react-bootstrap';
+  import { Badge } from 'react-bootstrap';
+  export default Badge;
 
   # Badge/index.js
   export { default as Badge } from './Badge';

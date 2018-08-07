@@ -1,1 +1,3 @@
-export { MenuItem as default } from 'react-bootstrap';
+import { MenuItem } from 'react-bootstrap';
+
+export default MenuItem;

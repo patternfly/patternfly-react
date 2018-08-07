@@ -1,4 +1,4 @@
-import { MenuItem } from 'react-bootstrap';
+import MenuItem from '../MenuItem/MenuItem';
 import React from 'react';
 import { shallow } from 'enzyme';
 

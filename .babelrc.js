@@ -24,6 +24,13 @@ module.exports = {
             }
             return `@patternfly/react-icons/dist/js/${importPath}`;
           }
+        },
+        'react-bootstrap': {
+          preventFullImport: true,
+          transform: importName => {
+            const moduleDir = !modules ? 'es' : 'lib';
+            return `react-bootstrap/${moduleDir}/${importName}`;
+          }
         }
       }
     ]

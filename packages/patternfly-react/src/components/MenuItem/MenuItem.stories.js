@@ -1,4 +1,4 @@
-import { Dropdown } from 'react-bootstrap';
+import Dropdown from '../Dropdown/Dropdown';
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';

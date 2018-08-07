@@ -1,1 +1,3 @@
-export { ControlLabel as default } from 'react-bootstrap';
+import { ControlLabel } from 'react-bootstrap';
+
+export default ControlLabel;

@@ -1,1 +1,3 @@
-export { FormGroup as default } from 'react-bootstrap';
+import { FormGroup } from 'react-bootstrap';
+
+export default FormGroup;

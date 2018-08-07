@@ -1,1 +1,3 @@
-export { InputGroup as default } from 'react-bootstrap';
+import { InputGroup } from 'react-bootstrap';
+
+export default InputGroup;

@@ -1,1 +1,3 @@
-export { Dropdown as default } from 'react-bootstrap';
+import { Dropdown } from 'react-bootstrap';
+
+export default Dropdown;
