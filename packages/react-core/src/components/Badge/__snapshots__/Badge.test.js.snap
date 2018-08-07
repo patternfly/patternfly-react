@@ -6,7 +6,7 @@ exports[`false Badge 1`] = `
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 30em;
   color: #ffffff;
   background-color: #00659c;
@@ -26,9 +26,9 @@ exports[`true Badge 1`] = `
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   border-radius: 30em;
-  color: #292e34;
+  color: #282d33;
   background-color: #ededed;
 }
 

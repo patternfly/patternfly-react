@@ -29,9 +29,3 @@ exports[`adds xl offset classes 1`] = `"pf-l-grid__item pf-m-offset-1-col-on-xl"
 exports[`adds xl row classes 1`] = `"pf-l-grid__item pf-m-1-row-on-xl"`;
 
 exports[`adds xl span class 1`] = `"pf-l-grid__item pf-m-4-col-on-xl"`;
-
-exports[`adds xs offset classes 1`] = `"pf-l-grid__item pf-m-offset-1-col-on-xs"`;
-
-exports[`adds xs row classes 1`] = `"pf-l-grid__item pf-m-1-row-on-xs"`;
-
-exports[`adds xs span class 1`] = `"pf-l-grid__item pf-m-4-col-on-xs"`;

@@ -1,6 +1,6 @@
 import { SFC, HTMLProps, ReactNode } from 'react';
 import { Omit, OneOf } from '../../typeUtils';
-import { GutterSize, getGutterModifier } from '../../styles/gutters';
+import { GutterSize } from '../../styles/gutters';
 
 export interface LevelProps extends HTMLProps<HTMLDivElement> {
   gutter: OneOf<typeof GutterSize, keyof typeof GutterSize>;
