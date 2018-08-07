@@ -9,7 +9,4 @@ export const BaseSizes: {
   '4xl': '4xl';
 };
 
-export const DeviceSizes: Pick<
-  typeof BaseSizes,
-  'xs' | 'sm' | 'md' | 'lg' | 'xl'
->;
+export const DeviceSizes: Pick<typeof BaseSizes, 'sm' | 'md' | 'lg' | 'xl'>;

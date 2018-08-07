@@ -6,9 +6,6 @@ export interface GridItemProps extends HTMLProps<HTMLDivElement> {
   span?: GridItemSpanValue;
   rowSpan?: GridItemSpanValue;
   offset?: GridItemSpanValue;
-  xs?: GridItemSpanValue;
-  xsRowSpan?: GridItemSpanValue;
-  xsOffset?: GridItemSpanValue;
   sm?: GridItemSpanValue;
   smRowSpan?: GridItemSpanValue;
   smOffset?: GridItemSpanValue;

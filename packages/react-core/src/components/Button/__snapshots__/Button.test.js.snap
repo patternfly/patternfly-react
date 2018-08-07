@@ -6,9 +6,9 @@ exports[`action button 1`] = `
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1;
-  color: #292e34;
+  color: #282d33;
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
@@ -36,7 +36,7 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
   position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #72767b;
   text-align: center;
@@ -66,7 +66,7 @@ exports[`danger button 1`] = `
   position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #ffffff;
   text-align: center;
@@ -96,7 +96,7 @@ exports[`isBlock 1`] = `
   position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #ffffff;
   text-align: center;
@@ -126,7 +126,7 @@ exports[`isDisabled 1`] = `
   position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #72767b;
   text-align: center;
@@ -156,7 +156,7 @@ exports[`isFocus 1`] = `
   position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #ffffff;
   text-align: center;
@@ -185,7 +185,7 @@ exports[`isHover 1`] = `
   position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #ffffff;
   text-align: center;
@@ -214,7 +214,7 @@ exports[`link button 1`] = `
   position: relative;
   padding: 0.25rem 0.25rem 0.25rem 0.25rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #00486e;
   text-align: center;
@@ -244,7 +244,7 @@ exports[`primary button 1`] = `
   position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #ffffff;
   text-align: center;
@@ -274,7 +274,7 @@ exports[`secondary button 1`] = `
   position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   color: #00659c;
   text-align: center;
@@ -304,9 +304,9 @@ exports[`tertiary button 1`] = `
   position: relative;
   padding: 0.25rem 1.5rem 0.25rem 1.5rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
-  color: #292e34;
+  color: #282d33;
   text-align: center;
   white-space: nowrap;
   background-color: transparent;
