@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`controlled 1`] = `
+.pf-c-check {
+  display: block;
+  cursor: pointer;
+}
+
+<input
+  aria-invalid={false}
+  checked={true}
+  className="pf-c-check"
+  disabled={false}
+  onChange={[Function]}
+  type="checkbox"
+/>
+`;
+
+exports[`isDisabled 1`] = `
+.pf-c-check.pf-m-disabled {
+  display: block;
+  cursor: not-allowed;
+}
+
+<input
+  aria-invalid={false}
+  className="pf-c-check pf-m-disabled"
+  disabled={true}
+  onChange={[Function]}
+  type="checkbox"
+/>
+`;
+
+exports[`uncontrolled 1`] = `
+.pf-c-check {
+  display: block;
+  cursor: pointer;
+}
+
+<input
+  aria-invalid={false}
+  className="pf-c-check"
+  disabled={false}
+  onChange={[Function]}
+  type="checkbox"
+/>
+`;
