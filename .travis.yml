@@ -13,15 +13,18 @@ notifications:
 before_install:
 - .travis/before_install.sh
 - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.7.0
+- wget -qO- 'https://cli.netlify.com/download/latest/linux' | tar xz
 - export PATH=$HOME/.yarn/bin:$PATH
 - yarn install
 script:
 - yarn build
 - yarn test
+- yarn build:docs
 - yarn coveralls
 after_success:
 - .travis/after_success.sh
 - .travis/release.sh
+- ./netlifyctl deploy -A $NETLIFY_ACCESS_TOKEN -m "$TRAVIS_COMMIT_MESSAGE" -s $NETLIFY_SITE_ID $ $([[ $TRAVIS_BRANCH = "master" ]] && echo "" || echo "-d")
 git:
   depth: 1
 branches:

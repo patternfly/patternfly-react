@@ -1,0 +1,6 @@
+[Settings]
+  ID = ""
+
+[Build]
+  Publish = "packages/react-docs/public"
+  Functions = ""
