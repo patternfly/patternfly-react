@@ -1,1 +1,3 @@
-export { ListGroup as default } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
+
+export default ListGroup;

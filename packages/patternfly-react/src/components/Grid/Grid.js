@@ -1,1 +1,3 @@
-export { Grid as default } from 'react-bootstrap';
+import { Grid } from 'react-bootstrap';
+
+export default Grid;

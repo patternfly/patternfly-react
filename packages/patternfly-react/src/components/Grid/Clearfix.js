@@ -1,1 +1,3 @@
-export { Clearfix as default } from 'react-bootstrap';
+import { Clearfix } from 'react-bootstrap';
+
+export default Clearfix;

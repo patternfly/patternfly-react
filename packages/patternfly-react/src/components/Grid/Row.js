@@ -1,1 +1,3 @@
-export { Row as default } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+
+export default Row;

@@ -1,1 +1,3 @@
-export { Nav as default } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
+
+export default Nav;

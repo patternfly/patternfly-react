@@ -1,1 +1,3 @@
-export { TabContent as default } from 'react-bootstrap';
+import { TabContent } from 'react-bootstrap';
+
+export default TabContent;

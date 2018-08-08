@@ -1,1 +1,3 @@
-export { Button as default } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+
+export default Button;

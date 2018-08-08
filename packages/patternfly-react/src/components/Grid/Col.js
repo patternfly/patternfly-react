@@ -1,1 +1,3 @@
-export { Col as default } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+
+export default Col;

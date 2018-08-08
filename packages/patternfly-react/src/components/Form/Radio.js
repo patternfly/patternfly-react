@@ -1,1 +1,3 @@
-export { Radio as default } from 'react-bootstrap';
+import { Radio } from 'react-bootstrap';
+
+export default Radio;

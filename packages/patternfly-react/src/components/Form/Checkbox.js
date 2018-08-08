@@ -1,1 +1,3 @@
-export { Checkbox as default } from 'react-bootstrap';
+import { Checkbox } from 'react-bootstrap';
+
+export default Checkbox;

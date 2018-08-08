@@ -1,1 +1,3 @@
-export { Tooltip as default } from 'react-bootstrap';
+import { Tooltip } from 'react-bootstrap';
+
+export default Tooltip;

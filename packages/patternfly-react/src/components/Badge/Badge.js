@@ -1,1 +1,3 @@
-export { Badge as default } from 'react-bootstrap';
+import { Badge } from 'react-bootstrap';
+
+export default Badge;

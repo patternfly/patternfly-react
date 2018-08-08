@@ -1,1 +1,3 @@
-export { OverlayTrigger as default } from 'react-bootstrap';
+import { OverlayTrigger } from 'react-bootstrap';
+
+export default OverlayTrigger;

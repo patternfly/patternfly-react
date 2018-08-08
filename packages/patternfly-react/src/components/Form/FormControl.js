@@ -1,1 +1,3 @@
-export { FormControl as default } from 'react-bootstrap';
+import { FormControl } from 'react-bootstrap';
+
+export default FormControl;
