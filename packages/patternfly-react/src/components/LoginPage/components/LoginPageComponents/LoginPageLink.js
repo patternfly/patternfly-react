@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { noop } from '../../../../common/helpers';
 
 const LoginCardSignUp = ({ onClick, href, children, ...props }) => (
   <a href={href} onClick={onClick} {...props}>
@@ -16,7 +17,7 @@ LoginCardSignUp.propTypes = {
 LoginCardSignUp.defaultProps = {
   children: null,
   href: '#',
-  onClick: e => null
+  onClick: noop
 };
 
 export default LoginCardSignUp;

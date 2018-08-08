@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Fade } from 'react-bootstrap';
 import LoginInputWarning from './LoginInputWarning';
 import { FormControl, FormGroup, HelpBlock } from '../../../../index';
+import { noop } from '../../../../common/helpers';
 
 const LoginCardInput = ({
   id,
@@ -17,7 +18,6 @@ const LoginCardInput = ({
   onMouseEnter,
   showError,
   showWarning,
-  showWarningOnCapsLock,
   className,
   autoComplete
 }) => {
@@ -62,7 +62,6 @@ LoginCardInput.propTypes = {
   onFocus: PropTypes.func,
   onMouseEnter: PropTypes.func,
   showError: PropTypes.bool,
-  showWarningOnCapsLock: PropTypes.bool,
   className: PropTypes.string,
   autoComplete: PropTypes.string
 };
@@ -74,13 +73,12 @@ LoginCardInput.defaultProps = {
   size: 'lg',
   error: null,
   warning: null,
-  onChange: null,
+  onChange: noop,
   showWarning: false,
-  onBlur: null,
-  onFocus: null,
-  onMouseEnter: null,
+  onBlur: noop,
+  onFocus: noop,
+  onMouseEnter: noop,
   showError: false,
-  showWarningOnCapsLock: false,
   className: '',
   autoComplete: ''
 };

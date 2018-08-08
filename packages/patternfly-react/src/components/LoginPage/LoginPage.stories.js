@@ -17,7 +17,9 @@ import logos from './assets/img/logos';
 import { name } from '../../../package.json';
 
 const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Login Page`,
+  `${storybookPackageName(name)}/${
+    STORYBOOK_CATEGORY.APPLICATION_FRAMEWORK
+  }/Login Page`,
   module
 );
 

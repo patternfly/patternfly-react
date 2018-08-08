@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { noop } from '../../../../common/helpers';
 
 const ForgotPassword = ({ href, onClick, label, ...props }) => (
   <a {...props} href={href} onClick={onClick}>
@@ -18,7 +19,7 @@ ForgotPassword.defaultProps = {
   label: 'Forgot password?',
   href: '#',
   className: 'forgot-password',
-  onClick: e => null
+  onClick: noop
 };
 
 export default ForgotPassword;

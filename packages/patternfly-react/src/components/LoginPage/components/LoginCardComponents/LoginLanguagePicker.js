@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DropdownButton, MenuItem } from '../../../../index';
+import { noop } from '../../../../common/helpers';
 
 class LoginLanguagePicker extends React.Component {
   constructor(props) {
@@ -60,7 +61,7 @@ LoginLanguagePicker.propTypes = {
 LoginLanguagePicker.defaultProps = {
   selectedLanguage: { value: 'en', text: 'English' },
   availableLanguages: [{ value: 'en', text: 'English' }],
-  onLanguageChange: e => null,
+  onLanguageChange: noop,
   className: '',
   id: 'language-picker'
 };

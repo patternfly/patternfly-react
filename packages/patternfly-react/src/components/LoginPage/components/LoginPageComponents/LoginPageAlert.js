@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Alert } from '../../../Alert';
+import { noop } from '../../../../common/helpers';
 
 class LoginPageAlert extends React.Component {
   state = { show: this.props.show };
 
   closeAlert = e => {
-    this.props.onDismiss && this.props.onDismiss(e);
+    this.props.onDismiss(e);
     if (!this.state.show) {
       return;
     }
@@ -32,7 +33,7 @@ LoginPageAlert.propTypes = {
 
 LoginPageAlert.defaultProps = {
   type: 'warning',
-  onDismiss: e => null,
+  onDismiss: noop,
   message: null,
   show: false
 };

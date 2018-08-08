@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoginCardInput from './LoginCardInput';
 
-class WithValidation extends React.Component {
+class LoginCardWithValidation extends React.Component {
   state = {
     usernameField: {
       value: null,
@@ -63,11 +63,6 @@ class WithValidation extends React.Component {
         showError: false
       }
     });
-  };
-
-  onInputKeyUp = (e, inputType) => {
-    this.props[inputType].onKeyUp && this.props[inputType].onKeyUp(e);
-    this.onCapsLockAsModifier(e);
   };
 
   onInputMouseEnter = (e, inputType) => {
@@ -226,7 +221,7 @@ class WithValidation extends React.Component {
   }
 }
 
-WithValidation.propTypes = {
+LoginCardWithValidation.propTypes = {
   validate: PropTypes.bool,
   children: PropTypes.node.isRequired,
   usernameField: PropTypes.shape({
@@ -243,7 +238,7 @@ WithValidation.propTypes = {
   submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 
-WithValidation.defaultProps = {
+LoginCardWithValidation.defaultProps = {
   validate: true,
   usernameField: { ...LoginCardInput.defaultProps.usernameField },
   passwordField: { ...LoginCardInput.defaultProps.passwordField },
@@ -251,4 +246,4 @@ WithValidation.defaultProps = {
   submitError: null
 };
 
-export default WithValidation;
+export default LoginCardWithValidation;

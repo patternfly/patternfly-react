@@ -4,6 +4,7 @@ import LoginCardInput from './LoginCardInput';
 import LoginCardSettings from './LoginCardSettings';
 import LoginFormError from './LoginFormError';
 import { Button, Form } from '../../../../index';
+import { noop } from '../../../../common/helpers';
 
 const LoginCardForm = ({
   usernameField,
@@ -64,11 +65,11 @@ LoginCardForm.defaultProps = {
   },
   submitText: null,
   disableSubmit: false,
-  onSubmit: e => null,
+  onSubmit: noop,
   forgotPassword: {
     label: null,
     href: '#',
-    onClick: e => null
+    onClick: noop
   },
   rememberMe: { label: null },
   submitError: null,
