@@ -9,6 +9,7 @@ import { noop } from '../../../../common/helpers';
 const LoginCardForm = ({
   usernameField,
   passwordField,
+  additionalFields,
   submitText,
   disableSubmit,
   onSubmit,
@@ -21,6 +22,7 @@ const LoginCardForm = ({
     <LoginFormError show={showError}>{submitError}</LoginFormError>
     <LoginCardInput {...usernameField} />
     <LoginCardInput {...passwordField} />
+    {additionalFields}
     <LoginCardSettings
       rememberMe={rememberMe}
       forgotPassword={forgotPassword}
@@ -40,6 +42,7 @@ const LoginCardForm = ({
 LoginCardForm.propTypes = {
   usernameField: PropTypes.shape({ ...LoginCardInput.propTypes }),
   passwordField: PropTypes.shape({ ...LoginCardInput.propTypes }),
+  additionalFields: PropTypes.node,
   submitText: PropTypes.string,
   disableSubmit: PropTypes.bool,
   onSubmit: PropTypes.func,
@@ -63,6 +66,7 @@ LoginCardForm.defaultProps = {
     placeholder: 'Password',
     minLength: 8
   },
+  additionalFields: null,
   submitText: null,
   disableSubmit: false,
   onSubmit: noop,

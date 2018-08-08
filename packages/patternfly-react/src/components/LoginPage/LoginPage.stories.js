@@ -94,6 +94,7 @@ const createProps = () => {
           warning: card.passwordField.warnings.capsLock,
           showWarning: true
         },
+        additionalFields: null,
         rememberMe: {
           label: card.rememberMe,
           onClick: e => action('remember me checkbox was clicked')()
