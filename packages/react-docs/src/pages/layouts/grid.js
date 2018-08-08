@@ -49,6 +49,24 @@ const GridDocs = ({ data }) => {
     </React.Fragment>
   );
 
+  const GalleryItemsGridLevelColumns = (
+    <React.Fragment>
+      <StyledGridItem span={8}>span = 8</StyledGridItem>
+      <StyledGridItem span={3} rowSpan={2}>
+        span = 3 rowSpan= 2
+      </StyledGridItem>
+      <StyledGridItem>span = 4</StyledGridItem>
+      <StyledGridItem>span = 4</StyledGridItem>
+      <StyledGridItem>span = 4</StyledGridItem>
+      <StyledGridItem>span = 4</StyledGridItem>
+      <StyledGridItem>span = 4</StyledGridItem>
+      <StyledGridItem>span = 4</StyledGridItem>
+      <StyledGridItem>span = 4</StyledGridItem>
+      <StyledGridItem>span = 4</StyledGridItem>
+      <StyledGridItem>span = 4</StyledGridItem>
+    </React.Fragment>
+  );
+
   return (
     <ComponentDocs data={data}>
       <Example title="Simple Grid">
@@ -59,6 +77,9 @@ const GridDocs = ({ data }) => {
       </Example>
       <Example title="Grid Playground">
         <GridPlayground />
+      </Example>
+      <Example title="Grid with overides">
+        <Grid span={4}> {GalleryItemsGridLevelColumns} </Grid>
       </Example>
     </ComponentDocs>
   );
