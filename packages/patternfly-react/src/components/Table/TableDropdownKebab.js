@@ -7,16 +7,10 @@ import { DropdownKebab } from '../DropdownKebab';
  * TableDropdownKebab component for Patternfly React
  */
 const TableDropdownKebab = ({ children, ...props }) => {
-  const CustomButtonGroup = buttonProps => (
-    <ButtonGroup {...buttonProps} bsClass=" " />
-  );
+  const CustomButtonGroup = buttonProps => <ButtonGroup {...buttonProps} bsClass=" " />;
 
   return (
-    <DropdownKebab
-      componentClass={CustomButtonGroup}
-      toggleStyle="default"
-      {...props}
-    >
+    <DropdownKebab componentClass={CustomButtonGroup} toggleStyle="default" {...props}>
       {children}
     </DropdownKebab>
   );

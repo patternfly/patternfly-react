@@ -6,25 +6,9 @@ import CustomMastheadDropdown from './InnerComponents/CustomMastheadDropdown';
 /**
  * Masthead
  */
-const MastheadDropdown = ({
-  className,
-  id,
-  title,
-  noCaret,
-  children,
-  ...props
-}) => (
-  <Dropdown
-    id={id}
-    componentClass={CustomMastheadDropdown}
-    className={className}
-    {...props}
-  >
-    <Dropdown.Toggle
-      className="nav-item-iconic"
-      bsStyle="link"
-      noCaret={noCaret}
-    >
+const MastheadDropdown = ({ className, id, title, noCaret, children, ...props }) => (
+  <Dropdown id={id} componentClass={CustomMastheadDropdown} className={className} {...props}>
+    <Dropdown.Toggle className="nav-item-iconic" bsStyle="link" noCaret={noCaret}>
       {title}
     </Dropdown.Toggle>
     <Dropdown.Menu>{children}</Dropdown.Menu>

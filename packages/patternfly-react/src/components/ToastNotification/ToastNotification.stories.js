@@ -4,53 +4,32 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { Button } from '../Button';
 import { DropdownKebab } from '../DropdownKebab';
 import { MenuItem } from '../MenuItem';
-import {
-  ToastNotification,
-  TimedToastNotification,
-  ToastNotificationList
-} from './index';
+import { ToastNotification, TimedToastNotification, ToastNotificationList } from './index';
 import { name } from '../../../package.json';
 
 const stories = storiesOf(
-  `${storybookPackageName(name)}/${
-    STORYBOOK_CATEGORY.COMMUNICATION
-  }/Toast Notifications`,
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.COMMUNICATION}/Toast Notifications`,
   module
 );
 stories.addDecorator(withKnobs);
 
 stories.add(
   'Toast Notification',
-  withInfo(
-    `Toast Notifications pop onto the screen to notify the user of a system occurrence`
-  )(() => {
+  withInfo(`Toast Notifications pop onto the screen to notify the user of a system occurrence`)(() => {
     const header = text('Header', 'Great job!');
     const message = text('Message', 'This is really working out.');
-    const type = select(
-      'Type',
-      ToastNotification.TOAST_NOTIFICATION_TYPES,
-      'success'
-    );
+    const type = select('Type', ToastNotification.TOAST_NOTIFICATION_TYPES, 'success');
     const dismissEnabled = boolean('Dismiss', false);
     const menuEnabled = boolean('Menu', true);
     const actionEnabled = boolean('Action', true);
 
     const story = (
       <ToastNotificationList>
-        <ToastNotification
-          type={type}
-          onDismiss={
-            dismissEnabled && !menuEnabled ? action('onDismiss') : null
-          }
-        >
+        <ToastNotification type={type} onDismiss={dismissEnabled && !menuEnabled ? action('onDismiss') : null}>
           {menuEnabled && (
             <DropdownKebab id="dropdownKebab" pullRight className="pull-right">
               <MenuItem>Action</MenuItem>
@@ -76,9 +55,7 @@ stories.add(
 
     return inlineTemplate({
       title: 'Toast Notification',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
-      }toast-notifications/`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION}toast-notifications/`,
       story
     });
   })
@@ -123,9 +100,7 @@ class ToastNotificationStoryWrapper extends React.Component {
     this.removeNotificationAction = notificationToRemove => {
       action(`${notificationToRemove.type} notification: onDismiss fired`)();
       this.setState({
-        notifications: this.state.notifications.filter(
-          notification => notificationToRemove.key !== notification.key
-        )
+        notifications: this.state.notifications.filter(notification => notificationToRemove.key !== notification.key)
       });
     };
   }
@@ -161,17 +136,10 @@ class ToastNotificationStoryWrapper extends React.Component {
               persistent
               type="success"
               onDismiss={this.persistentNotificationDismissed}
-              onMouseEnter={action(
-                'persistent notification: onMouseEnter fired'
-              )}
-              onMouseLeave={action(
-                'persistent notification: onMouseLeave fired'
-              )}
+              onMouseEnter={action('persistent notification: onMouseEnter fired')}
+              onMouseLeave={action('persistent notification: onMouseLeave fired')}
             >
-              <span>
-                A persistent notification will remain on the screen until
-                closed.
-              </span>
+              <span>A persistent notification will remain on the screen until closed.</span>
             </TimedToastNotification>
           )}
         </ToastNotificationList>
@@ -182,15 +150,11 @@ class ToastNotificationStoryWrapper extends React.Component {
 
 stories.add(
   'Toast Notification List',
-  withInfo(
-    `This is the Toast Notification List with a custom timer delay supplied.`
-  )(() => {
+  withInfo(`This is the Toast Notification List with a custom timer delay supplied.`)(() => {
     const story = <ToastNotificationStoryWrapper />;
     return inlineTemplate({
       title: 'Toast Notification List',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
-      }toast-notifications/`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION}toast-notifications/`,
       story
     });
   })

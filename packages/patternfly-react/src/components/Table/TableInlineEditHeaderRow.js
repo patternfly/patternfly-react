@@ -36,10 +36,7 @@ TableInlineEditHeaderRow.propTypes = {
   /** Cancel edit callback */
   onCancel: PropTypes.func,
   /** Row cells */
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /** Message text inputs for i18n */
   messages: PropTypes.shape({
     confirmButtonLabel: PropTypes.string,

@@ -9,8 +9,7 @@ export const mockListItems = [
     title: 'Item 1',
     description: 'This is Item 1 description',
     properties: { hosts: 3, clusters: 1, nodes: 7, images: 4 },
-    expandedContentText:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    expandedContentText: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
     compoundExpandText: {
       hosts: "Text describing Item 1's hosts",
       clusters: "Text describing Item 1's clusters",
@@ -22,8 +21,7 @@ export const mockListItems = [
     title: 'Item 2',
     description: 'This is Item 2 description',
     properties: { hosts: 2, clusters: 1, nodes: 11, images: 8 },
-    expandedContentText:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    expandedContentText: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
     compoundExpandText: {
       hosts: "Text describing Item 2's hosts",
       clusters: "Text describing Item 2's clusters",
@@ -35,8 +33,7 @@ export const mockListItems = [
     title: 'Item 3',
     description: 'This is Item 3 description',
     properties: { hosts: 4, clusters: 2, nodes: 9, images: 8 },
-    expandedContentText:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    expandedContentText: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
     compoundExpandText: {
       hosts: "Text describing Item 3's hosts",
       clusters: "Text describing Item 3's clusters",
@@ -46,8 +43,7 @@ export const mockListItems = [
   },
   {
     description: 'This is Item without heading',
-    expandedContentText:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    expandedContentText: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
     compoundExpandText: {
       hosts: "Text describing Item 4's hosts",
       clusters: "Text describing Item 4's clusters",
@@ -57,8 +53,7 @@ export const mockListItems = [
   },
   {
     properties: { hosts: 4, clusters: 2, nodes: 9, images: 8 },
-    expandedContentText:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
+    expandedContentText: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
     compoundExpandText: {
       hosts: "Text describing Item 5's hosts",
       clusters: "Text describing Item 5's clusters",

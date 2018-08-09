@@ -184,11 +184,7 @@ export class MockClientSortableTable extends React.Component {
             formatters: [
               (value, { rowData }) => [
                 <Table.Actions key="0">
-                  <Table.Button
-                    onClick={() => alert(`clicked ${rowData.name}`)}
-                  >
-                    Actions
-                  </Table.Button>
+                  <Table.Button onClick={() => alert(`clicked ${rowData.name}`)}>Actions</Table.Button>
                 </Table.Actions>,
                 <Table.Actions key="1">
                   <Table.DropdownKebab id="myKebab" pullRight>

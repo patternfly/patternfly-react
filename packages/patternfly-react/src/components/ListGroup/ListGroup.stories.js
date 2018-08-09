@@ -2,27 +2,18 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { Badge } from '../Badge';
 import { ListGroup, ListGroupItem } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/List Group`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/List Group`, module);
 
 stories.addDecorator(
   defaultTemplate({
     title: 'ListGroup',
     documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#list-group`,
-    reactBootstrapDocumentationLink: `${
-      DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-    }list-group/`
+    reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}list-group/`
   })
 );
 
@@ -65,26 +56,19 @@ stories.add(
       </ListGroup>
       <h2>Custom content</h2>
       <ListGroup>
-        <ListGroupItem
-          href="#"
-          header="List group item heading"
-          className="active"
-        >
+        <ListGroupItem href="#" header="List group item heading" className="active">
           <p className="list-group-item-text">
-            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-            eget risus varius blandit.
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
           </p>
         </ListGroupItem>
         <ListGroupItem href="#" header="List group item heading">
           <p className="list-group-item-text">
-            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-            eget risus varius blandit.
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
           </p>
         </ListGroupItem>
         <ListGroupItem href="#" header="List group item heading">
           <p className="list-group-item-text">
-            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam
-            eget risus varius blandit.
+            Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
           </p>
         </ListGroupItem>
       </ListGroup>

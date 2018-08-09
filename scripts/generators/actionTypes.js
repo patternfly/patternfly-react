@@ -12,9 +12,7 @@ async function addToBarrelFile(answers, config, plop) {
     ...answers,
     ...config.data
   });
-  const pathToFile = path.isAbsolute(renderedPath)
-    ? renderedPath
-    : path.resolve(plop.getPlopfilePath(), renderedPath);
+  const pathToFile = path.isAbsolute(renderedPath) ? renderedPath : path.resolve(plop.getPlopfilePath(), renderedPath);
   let fileContents = '';
   try {
     fileContents = await fs.readFile(pathToFile, 'utf8');

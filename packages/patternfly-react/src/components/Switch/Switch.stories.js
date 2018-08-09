@@ -7,16 +7,9 @@ import { inlineTemplate } from 'storybook/decorators/storyTemplates';
 import { Switch } from './index';
 import { name } from '../../../package.json';
 
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Switch`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Switch`, module);
 stories.addDecorator(withKnobs);
 
 stories.add(
@@ -46,11 +39,8 @@ stories.add(
 
     return inlineTemplate({
       title: 'Switch',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
-      }#bootstrap-switch`,
-      reactBootstrapDocumentationLink:
-        'https://www.npmjs.com/package/react-bootstrap-switch',
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#bootstrap-switch`,
+      reactBootstrapDocumentationLink: 'https://www.npmjs.com/package/react-bootstrap-switch',
       story
     });
   })

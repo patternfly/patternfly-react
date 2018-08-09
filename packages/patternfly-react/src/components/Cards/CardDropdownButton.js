@@ -4,25 +4,11 @@ import PropTypes from 'prop-types';
 import { Dropdown } from '../Dropdown';
 import { ButtonGroup } from '../Button';
 
-const CardDropdownButton = ({
-  id,
-  children,
-  title,
-  className,
-  pullRight,
-  ...props
-}) => {
+const CardDropdownButton = ({ id, children, title, className, pullRight, ...props }) => {
   const classes = classNames('card-pf-time-frame-filter', className);
-  const CustomButtonGroup = customGroup => (
-    <ButtonGroup {...customGroup} bsClass=" " />
-  );
+  const CustomButtonGroup = customGroup => <ButtonGroup {...customGroup} bsClass=" " />;
   return (
-    <Dropdown
-      className={classes}
-      id={id}
-      pullRight={pullRight}
-      componentClass={CustomButtonGroup}
-    >
+    <Dropdown className={classes} id={id} pullRight={pullRight} componentClass={CustomButtonGroup}>
       <Dropdown.Toggle>{title}</Dropdown.Toggle>
       <Dropdown.Menu>{children}</Dropdown.Menu>
     </Dropdown>

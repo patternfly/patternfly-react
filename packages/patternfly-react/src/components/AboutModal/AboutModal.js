@@ -18,13 +18,7 @@ const AboutModal = ({
   closeText,
   ...props
 }) => (
-  <Modal
-    className={className}
-    contentClassName="about-modal-pf"
-    show={show}
-    onHide={onHide}
-    {...props}
-  >
+  <Modal className={className} contentClassName="about-modal-pf" show={show} onHide={onHide} {...props}>
     <Modal.Header>
       <Modal.CloseButton onClick={onHide} closeText={closeText} />
     </Modal.Header>

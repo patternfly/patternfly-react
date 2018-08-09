@@ -3,10 +3,7 @@ import ComponentDocs from '../../components/componentDocs';
 import PropTypes from 'prop-types';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 import { StyleSheet, css } from '@patternfly/react-styles';
-import {
-  global_BorderColor as borderColor,
-  global_BorderWidth_md as borderWidth
-} from '@patternfly/react-tokens';
+import { global_BorderColor as borderColor, global_BorderWidth_md as borderWidth } from '@patternfly/react-tokens';
 import Example from '../../components/example';
 
 const styles = StyleSheet.create({
@@ -16,9 +13,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const StyledGalleryItem = props => (
-  <GalleryItem {...props} className={css(styles.item)} />
-);
+const StyledGalleryItem = props => <GalleryItem {...props} className={css(styles.item)} />;
 
 const propTypes = {
   data: PropTypes.any.isRequired

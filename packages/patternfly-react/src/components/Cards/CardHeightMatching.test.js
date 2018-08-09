@@ -32,10 +32,7 @@ beforeEach(() => {
 test('creates a ResizeSensor for each selector', () => {
   mount(<CardHeightMatching {...props} />);
   expect(ResizeSensor).toHaveBeenCalledTimes(props.selector.length);
-  expect(ResizeSensor).toBeCalledWith(
-    expect.arrayContaining([mockElement]),
-    expect.any(Function)
-  );
+  expect(ResizeSensor).toBeCalledWith(expect.arrayContaining([mockElement]), expect.any(Function));
 });
 
 test('allows selector to be a string', () => {

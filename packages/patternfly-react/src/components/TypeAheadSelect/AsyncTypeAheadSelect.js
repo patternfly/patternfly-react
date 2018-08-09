@@ -15,9 +15,7 @@ class AsyncTypeAheadSelect extends React.Component {
   // query is the text string entered by the user.
   handleSearch = query => {
     this.onSearchStart();
-    Promise.resolve(this.props.onSearch(query)).then(options =>
-      this.onSearchEnd(options)
-    );
+    Promise.resolve(this.props.onSearch(query)).then(options => this.onSearchEnd(options));
   };
 
   render = () => (

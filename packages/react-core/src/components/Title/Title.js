@@ -29,12 +29,7 @@ const defaultProps = {
 const Title = ({ size, withMargins, className, children, ...props }) => (
   <h1
     {...props}
-    className={css(
-      styles.title,
-      getModifier(styles, size),
-      withMargins && styles.modifiers.margin,
-      className
-    )}
+    className={css(styles.title, getModifier(styles, size), withMargins && styles.modifiers.margin, className)}
   >
     {children}
   </h1>

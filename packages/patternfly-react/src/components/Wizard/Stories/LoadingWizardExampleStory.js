@@ -4,10 +4,7 @@ import { inlineTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { Row, Col } from '../../../index';
 
-import {
-  LoadingWizardExample,
-  loadingWizardExampleSource
-} from './LoadingWizardExample';
+import { LoadingWizardExample, loadingWizardExampleSource } from './LoadingWizardExample';
 
 import { mockWizardItems } from './mockWizardItems';
 
@@ -37,11 +34,8 @@ const loadingWizardExampleWithInfo = stories => {
       );
       return inlineTemplate({
         title: 'Loading Wizard',
-        description:
-          'The loading wizard shows loading wizard contents within a wizard.',
-        documentationLink: `${
-          DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
-        }wizard/#design`,
+        description: 'The loading wizard shows loading wizard contents within a wizard.',
+        documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION}wizard/#design`,
         story
       });
     })

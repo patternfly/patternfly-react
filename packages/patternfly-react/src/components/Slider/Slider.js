@@ -11,9 +11,7 @@ class Slider extends React.Component {
 
     this.state = {
       value: this.props.value,
-      tooltipFormat:
-        (this.props.dropdownList && this.props.dropdownList[0]) ||
-        this.props.inputFormat
+      tooltipFormat: (this.props.dropdownList && this.props.dropdownList[0]) || this.props.inputFormat
     };
   }
 
@@ -54,11 +52,7 @@ class Slider extends React.Component {
 
     if (this.props.dropdownList) {
       formatElement = (
-        <DropdownMenu
-          {...this.props}
-          onFormatChange={this.onFormatChange}
-          title={this.state.tooltipFormat}
-        />
+        <DropdownMenu {...this.props} onFormatChange={this.onFormatChange} title={this.state.tooltipFormat} />
       );
     }
 
@@ -74,12 +68,7 @@ class Slider extends React.Component {
     );
 
     const BSSlider = (
-      <BootstrapSlider
-        {...this.props}
-        formatter={this.formatter}
-        value={this.state.value}
-        onSlide={this.onSlide}
-      />
+      <BootstrapSlider {...this.props} formatter={this.formatter} value={this.state.value} onSlide={this.onSlide} />
     );
 
     return (

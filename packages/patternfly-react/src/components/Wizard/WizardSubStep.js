@@ -5,13 +5,7 @@ import classNames from 'classnames';
 /**
  * WizardSubStep component for Patternfly React
  */
-const WizardSubStep = ({
-  className,
-  subStep,
-  title,
-  activeSubStep,
-  ...props
-}) => {
+const WizardSubStep = ({ className, subStep, title, activeSubStep, ...props }) => {
   const classes = classNames(
     'wizard-pf-step-title-substep',
     { active: `${subStep}` === `${activeSubStep}` },

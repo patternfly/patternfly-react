@@ -5,16 +5,7 @@ import PropTypes from 'prop-types';
 /**
  * Card Component for PatternFly React
  */
-const Card = ({
-  children,
-  className,
-  accented,
-  aggregated,
-  aggregatedMini,
-  matchHeight,
-  cardRef,
-  ...props
-}) => {
+const Card = ({ children, className, accented, aggregated, aggregatedMini, matchHeight, cardRef, ...props }) => {
   const classes = classNames(
     'card-pf',
     { 'card-pf-accented': accented },

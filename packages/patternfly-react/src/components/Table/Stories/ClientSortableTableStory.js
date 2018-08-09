@@ -1,9 +1,6 @@
 import React from 'react';
 import { withInfo } from '@storybook/addon-info';
-import {
-  MockClientSortableTable,
-  mockClientSortableTableSource
-} from '../__mocks__/mockClientSortableTable';
+import { MockClientSortableTable, mockClientSortableTableSource } from '../__mocks__/mockClientSortableTable';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,
@@ -47,9 +44,7 @@ const clientSortableTable = stories => {
       const story = <MockClientSortableTable />;
       return inlineTemplate({
         title: 'Client Sortable Table',
-        documentationLink: `${
-          DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
-        }table-view/`,
+        documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS}table-view/`,
         story,
         description: reactabularDescription
       });

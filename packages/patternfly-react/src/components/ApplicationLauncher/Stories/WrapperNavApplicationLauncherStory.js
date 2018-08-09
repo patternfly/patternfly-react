@@ -46,11 +46,7 @@ const Apps = [
 
 const WrapperNavApplicationLauncherStory = stories => {
   stories.addWithInfo('Stateful Launcher', '', () => {
-    const type = select(
-      'Launcher Type',
-      { true: 'Grid', false: 'List' },
-      'true'
-    );
+    const type = select('Launcher Type', { true: 'Grid', false: 'List' }, 'true');
     const iconBool = boolean('Icons', true);
 
     const story = (
@@ -69,9 +65,7 @@ const WrapperNavApplicationLauncherStory = stories => {
     );
     return inlineTemplate({
       title: 'WrapperApplicationLauncher',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_APPLICATION_FRAMEWORK
-      }launcher/`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_APPLICATION_FRAMEWORK}launcher/`,
       story
     });
   });

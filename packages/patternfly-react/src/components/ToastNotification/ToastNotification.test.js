@@ -7,22 +7,14 @@ import ToastNotificationList from './ToastNotificationList';
 
 const testToastNotificationSnapshot = (Component, props, notificationProps) => (
   <ToastNotificationList {...notificationProps}>
-    <Component
-      type="success"
-      onDismiss={jest.fn()}
-      onMouseEnter={jest.fn()}
-      onMouseLeave={jest.fn()}
-      {...props}
-    >
+    <Component type="success" onDismiss={jest.fn()} onMouseEnter={jest.fn()} onMouseLeave={jest.fn()} {...props}>
       <span>Success Will Robinson!</span>
     </Component>
   </ToastNotificationList>
 );
 
 test('ToastNotification renders properly', () => {
-  const component = mount(
-    testToastNotificationSnapshot(ToastNotification, { type: 'error' })
-  );
+  const component = mount(testToastNotificationSnapshot(ToastNotification, { type: 'error' }));
 
   expect(component.render()).toMatchSnapshot();
 });

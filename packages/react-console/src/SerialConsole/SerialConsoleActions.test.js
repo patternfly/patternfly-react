@@ -4,20 +4,13 @@ import { shallow } from 'enzyme';
 import SerialConsoleActions from './SerialConsoleActions';
 
 test('placeholder render test', () => {
-  const view = shallow(
-    <SerialConsoleActions idPrefix="serial-console-actions" />
-  );
+  const view = shallow(<SerialConsoleActions idPrefix="serial-console-actions" />);
   expect(view).toMatchSnapshot();
 });
 
 test('Render SerialConsoleActions with the Disconnect button enabled', () => {
   const view = shallow(
-    <SerialConsoleActions
-      idPrefix="idPrefix"
-      isDisconnectEnabled
-      onDisconnect={jest.fn()}
-      onReset={jest.fn()}
-    />
+    <SerialConsoleActions idPrefix="idPrefix" isDisconnectEnabled onDisconnect={jest.fn()} onReset={jest.fn()} />
   );
   expect(view).toMatchSnapshot();
 });

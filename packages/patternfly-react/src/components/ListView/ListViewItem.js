@@ -49,11 +49,7 @@ class ListViewItem extends React.Component {
     if (children) {
       if (compoundExpand) {
         return (
-          <ListViewGroupItem
-            expanded={compoundExpanded}
-            stacked={stacked}
-            {...other}
-          >
+          <ListViewGroupItem expanded={compoundExpanded} stacked={stacked} {...other}>
             <ListViewRow
               checkboxInput={checkboxInput}
               leftContent={leftContent}
@@ -74,10 +70,7 @@ class ListViewItem extends React.Component {
       return (
         <ListViewGroupItem expanded={expanded} stacked={stacked} {...other}>
           <ListViewGroupItemHeader toggleExpanded={this.toggleExpanded}>
-            <ListViewExpand
-              expanded={expanded}
-              toggleExpanded={this.toggleExpanded}
-            />
+            <ListViewExpand expanded={expanded} toggleExpanded={this.toggleExpanded} />
             <ListViewRow
               checkboxInput={checkboxInput}
               leftContent={leftContent}
@@ -87,10 +80,7 @@ class ListViewItem extends React.Component {
               actions={actions}
             />
           </ListViewGroupItemHeader>
-          <ListViewGroupItemContainer
-            expanded={expanded}
-            onClose={hideCloseIcon ? undefined : this.toggleExpanded}
-          >
+          <ListViewGroupItemContainer expanded={expanded} onClose={hideCloseIcon ? undefined : this.toggleExpanded}>
             {children}
           </ListViewGroupItemContainer>
         </ListViewGroupItem>

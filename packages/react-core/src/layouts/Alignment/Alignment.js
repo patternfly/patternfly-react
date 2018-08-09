@@ -24,17 +24,8 @@ const defaultProps = {
   align: AlignVariant.left
 };
 
-const Alignment = ({
-  children,
-  className,
-  align,
-  component: Component,
-  ...props
-}) => (
-  <Component
-    className={css(styles.alignment, className, getModifier(styles, align))}
-    {...props}
-  >
+const Alignment = ({ children, className, align, component: Component, ...props }) => (
+  <Component className={css(styles.alignment, className, getModifier(styles, align))} {...props}>
     {children}
   </Component>
 );

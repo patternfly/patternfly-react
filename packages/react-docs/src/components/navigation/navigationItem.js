@@ -11,11 +11,7 @@ const propTypes = {
 
 const NavigationItem = ({ to, children }) => (
   <li>
-    <Link
-      className={css(styles.navigationItem)}
-      activeClassName={css(styles.active)}
-      to={to}
-    >
+    <Link className={css(styles.navigationItem)} activeClassName={css(styles.active)} to={to}>
       {children}
     </Link>
   </li>

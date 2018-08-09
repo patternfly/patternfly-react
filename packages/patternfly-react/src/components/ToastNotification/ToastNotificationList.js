@@ -35,10 +35,7 @@ class ToastNotificationList extends React.Component {
   renderChildren() {
     const { paused } = this.state;
     return React.Children.map(this.props.children, child => {
-      if (
-        child &&
-        child.type.displayName === TimedToastNotification.displayName
-      ) {
+      if (child && child.type.displayName === TimedToastNotification.displayName) {
         /**
          * If any of the notifications are hovered, pause
          * all child notifications from dismissing

@@ -4,31 +4,13 @@ import { decorateAction } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info/dist/index';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
-import {
-  Toolbar,
-  ToolbarResults,
-  ToolbarRightContent,
-  ToolbarFind,
-  ToolbarViewSelector
-} from '../../index';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
+import { Toolbar, ToolbarResults, ToolbarRightContent, ToolbarFind, ToolbarViewSelector } from '../../index';
 
-import {
-  MockToolbarExample,
-  mockToolbarExampleSource
-} from './__mocks__/mockToolbarExample';
+import { MockToolbarExample, mockToolbarExampleSource } from './__mocks__/mockToolbarExample';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${
-    STORYBOOK_CATEGORY.FORMS_AND_CONTROLS
-  }/Toolbar`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/Toolbar`, module);
 
 stories.addDecorator(
   defaultTemplate({
@@ -41,13 +23,7 @@ stories.add(
   'Toolbar',
   withInfo({
     source: false,
-    propTables: [
-      Toolbar,
-      ToolbarResults,
-      ToolbarRightContent,
-      ToolbarFind,
-      ToolbarViewSelector
-    ],
+    propTables: [Toolbar, ToolbarResults, ToolbarRightContent, ToolbarFind, ToolbarViewSelector],
     propTablesExclude: [MockToolbarExample],
     text: (
       <div>

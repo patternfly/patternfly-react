@@ -21,23 +21,15 @@ const styles = StyleSheet.create({
   }
 });
 
-const StyledSplitItem = props => (
-  <SplitItem {...props} className={css(styles.item)} />
-);
+const StyledSplitItem = props => <SplitItem {...props} className={css(styles.item)} />;
 
 const SplitDocs = ({ data }) => (
   <ComponentDocs data={data}>
     <Example title="Split with variant">
       <Split>
-        <StyledSplitItem variant={SplitItemVariant.secondary}>
-          Secondary content
-        </StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.primary}>
-          Primary content
-        </StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.secondary}>
-          Secondary content
-        </StyledSplitItem>
+        <StyledSplitItem variant={SplitItemVariant.secondary}>Secondary content</StyledSplitItem>
+        <StyledSplitItem variant={SplitItemVariant.primary}>Primary content</StyledSplitItem>
+        <StyledSplitItem variant={SplitItemVariant.secondary}>Secondary content</StyledSplitItem>
       </Split>
     </Example>
     <Example title="Split with gutter">
@@ -56,18 +48,10 @@ const SplitDocs = ({ data }) => (
     </Example>
     <Example title="Multiple primary">
       <Split>
-        <StyledSplitItem variant={SplitItemVariant.secondary}>
-          Secondary content
-        </StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.primary}>
-          Primary content
-        </StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.primary}>
-          Primary content
-        </StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.primary}>
-          Primary content
-        </StyledSplitItem>
+        <StyledSplitItem variant={SplitItemVariant.secondary}>Secondary content</StyledSplitItem>
+        <StyledSplitItem variant={SplitItemVariant.primary}>Primary content</StyledSplitItem>
+        <StyledSplitItem variant={SplitItemVariant.primary}>Primary content</StyledSplitItem>
+        <StyledSplitItem variant={SplitItemVariant.primary}>Primary content</StyledSplitItem>
       </Split>
     </Example>
   </ComponentDocs>

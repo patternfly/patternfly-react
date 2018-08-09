@@ -15,11 +15,7 @@ const VerticalNavBadge = props => {
   return !tooltip ? (
     badgeDiv
   ) : (
-    <OverlayTrigger
-      key={key}
-      placement="right"
-      overlay={<Tooltip id={key}>{tooltip}</Tooltip>}
-    >
+    <OverlayTrigger key={key} placement="right" overlay={<Tooltip id={key}>{tooltip}</Tooltip>}>
       {badgeDiv}
     </OverlayTrigger>
   );

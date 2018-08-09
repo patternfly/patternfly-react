@@ -43,17 +43,13 @@ const Apps = [
 ];
 
 test('ApplicationLauncherWrapper is working properly as Grid', () => {
-  const component = mount(
-    <ApplicationLauncherWrapper apps={Apps} grid open={false} />
-  );
+  const component = mount(<ApplicationLauncherWrapper apps={Apps} grid open={false} />);
 
   expect(component.render()).toMatchSnapshot();
 });
 
 test('ApplicationLauncherWrapper is working properly as List with no Icons', () => {
-  const component = mount(
-    <ApplicationLauncherWrapper apps={Apps} noIcons open={false} />
-  );
+  const component = mount(<ApplicationLauncherWrapper apps={Apps} noIcons open={false} />);
 
   expect(component.render()).toMatchSnapshot();
 });
@@ -65,17 +61,13 @@ test('ApplicationLauncherWrapper is working properly as Grid when open', () => {
 });
 
 test('ApplicationLauncherWrapper is working properly as List with no Icons when open', () => {
-  const component = mount(
-    <ApplicationLauncherWrapper apps={Apps} noIcons open />
-  );
+  const component = mount(<ApplicationLauncherWrapper apps={Apps} noIcons open />);
 
   expect(component.render()).toMatchSnapshot();
 });
 
 test('StatefulApplicationLauncherWrapper is working properly as Grid', () => {
-  const component = mount(
-    <StatefulApplicationLauncherWrapper grid apps={Apps} />
-  );
+  const component = mount(<StatefulApplicationLauncherWrapper grid apps={Apps} />);
 
   expect(component.render()).toMatchSnapshot();
 });

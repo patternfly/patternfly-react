@@ -25,8 +25,7 @@ const NotificationDrawerPanelWrapper = ({
   showLoading,
   translations
 }) => {
-  const unreadCount = notifications.filter(notification => !notification.seen)
-    .length;
+  const unreadCount = notifications.filter(notification => !notification.seen).length;
 
   const getUnread = () => {
     if (unreadCount !== 1) return `${unreadCount} ${translations.unreadEvents}`;
@@ -45,35 +44,22 @@ const NotificationDrawerPanelWrapper = ({
     <Notification
       key={i}
       seen={notification.seen}
-      onClick={() =>
-        notificationClickHandler(panelkey, notification.id, notification.seen)
-      }
+      onClick={() => notificationClickHandler(panelkey, notification.id, notification.seen)}
     >
       {Object.keys(notification.actions).length > 0 && (
         <NotificationDrawer.Dropdown pullRight id={i}>
           {notification.actions.links.map((link, j) => (
-            <MenuItem
-              key={j}
-              id={`notification-kebab-${j}`}
-              onClick={() => onClickedLink(link)}
-            >
+            <MenuItem key={j} id={`notification-kebab-${j}`} onClick={() => onClickedLink(link)}>
               {link.title}
             </MenuItem>
           ))}
           <MenuItem divider />
-          <MenuItem
-            id="notification-kebab-hide"
-            onClick={() => onNotificationHide(panelkey, notification.id)}
-          >
+          <MenuItem id="notification-kebab-hide" onClick={() => onNotificationHide(panelkey, notification.id)}>
             {translations.deleteNotification}
           </MenuItem>
         </NotificationDrawer.Dropdown>
       )}
-      <Icon
-        className="pull-left"
-        type="pf"
-        name={getIconClass(notification.level)}
-      />
+      <Icon className="pull-left" type="pf" name={getIconClass(notification.level)} />
       <Notification.Content>
         <Notification.Message>{notification.text}</Notification.Message>
         <Notification.Info
@@ -86,19 +72,14 @@ const NotificationDrawerPanelWrapper = ({
 
   const renderNotifications = (
     <NotificationDrawer.PanelBody key="containsNotifications">
-      {showLoading
-        ? [notificationsMap, <Notification key="loading" type="loading" />]
-        : notificationsMap}
+      {showLoading ? [notificationsMap, <Notification key="loading" type="loading" />] : notificationsMap}
     </NotificationDrawer.PanelBody>
   );
 
   const renderClearReadButtons = (
     <NotificationDrawer.PanelAction key={panelkey}>
       {unreadCount > 0 && (
-        <NotificationDrawer.PanelActionLink
-          className="drawer-pf-action-link"
-          data-toggle="mark-all-read"
-        >
+        <NotificationDrawer.PanelActionLink className="drawer-pf-action-link" data-toggle="mark-all-read">
           <Button bsStyle="link" onClick={() => onMarkPanelAsRead(panelkey)}>
             {translations.readAll}
           </Button>
@@ -113,9 +94,7 @@ const NotificationDrawerPanelWrapper = ({
     </NotificationDrawer.PanelAction>
   );
 
-  const noNotificationsMessage = (
-    <NotificationDrawer.EmptyState title={translations.emptyState} />
-  );
+  const noNotificationsMessage = <NotificationDrawer.EmptyState title={translations.emptyState} />;
 
   return (
     <NotificationDrawer.Panel className={className} expanded={isExpanded}>
@@ -127,9 +106,7 @@ const NotificationDrawerPanelWrapper = ({
       </NotificationDrawer.PanelHeading>
       <Collapse in={isExpanded}>
         <NotificationDrawer.PanelCollapse id={panelkey}>
-          {notifications.length > 0
-            ? [renderNotifications, renderClearReadButtons]
-            : noNotificationsMessage}
+          {notifications.length > 0 ? [renderNotifications, renderClearReadButtons] : noNotificationsMessage}
         </NotificationDrawer.PanelCollapse>
       </Collapse>
     </NotificationDrawer.Panel>

@@ -24,21 +24,13 @@ class CheckboxDocs extends React.Component {
     return (
       <ComponentDocs data={data}>
         <Example title="Controlled checkbox example">
-          <Checkbox
-            checked={checked}
-            onChange={this.handleCheckboxChange}
-            aria-label="controlled checkbox example"
-          />
+          <Checkbox checked={checked} onChange={this.handleCheckboxChange} aria-label="controlled checkbox example" />
         </Example>
         <Example title="Uncontrolled checkbox example">
           <Checkbox aria-label="uncontrolled checkbox example" />
         </Example>
         <Example title="Disabled checkbox example">
-          <Checkbox
-            aria-label="disabled checkbox example"
-            defaultChecked
-            isDisabled
-          />
+          <Checkbox aria-label="disabled checkbox example" defaultChecked isDisabled />
         </Example>
       </ComponentDocs>
     );

@@ -4,18 +4,14 @@ import { Wizard } from '../../index';
 
 test('Wizard header renders properly', () => {
   const onCloseMock = jest.fn();
-  const component = shallow(
-    <Wizard.Header onClose={onCloseMock} title="Wizard Title" />
-  );
+  const component = shallow(<Wizard.Header onClose={onCloseMock} title="Wizard Title" />);
   component.find('.close').simulate('click');
   expect(onCloseMock).toBeCalled();
   expect(component).toMatchSnapshot('Wizard header snapshot');
 });
 
 test('Wizard body renders properly', () => {
-  const component = shallow(
-    <Wizard.Body className="someAdditionalClass">Some Children</Wizard.Body>
-  );
+  const component = shallow(<Wizard.Body className="someAdditionalClass">Some Children</Wizard.Body>);
   expect(component).toMatchSnapshot('Wizard body snapshot');
 });
 
@@ -24,27 +20,11 @@ test('Wizard steps renders properly', () => {
     <Wizard.Steps
       className="someAdditionalClass"
       steps={[
-        <Wizard.Step
-          key={0}
-          stepIndex={0}
-          step={0}
-          activeStep={0}
-          label="Step 1"
-          title="Step 1"
-          onClick={jest.fn()}
-        >
+        <Wizard.Step key={0} stepIndex={0} step={0} activeStep={0} label="Step 1" title="Step 1" onClick={jest.fn()}>
           <Wizard.SubStep subStep="1.1" title="Step 1.1" activeSubStep={0} />
           <Wizard.SubStep subStep="1.2" title="Step 1.2" activeSubStep={0} />
         </Wizard.Step>,
-        <Wizard.Step
-          key={1}
-          stepIndex={1}
-          step={1}
-          label="Step 2"
-          title="Step 2"
-          activeStep={0}
-          onClick={jest.fn()}
-        >
+        <Wizard.Step key={1} stepIndex={1} step={1} label="Step 2" title="Step 2" activeStep={0} onClick={jest.fn()}>
           <Wizard.SubStep subStep="2.1" title="Step 2.1" activeSubStep={0} />
           <Wizard.SubStep subStep="2.2" title="Step 2.2" activeSubStep={0} />
         </Wizard.Step>
@@ -56,15 +36,7 @@ test('Wizard steps renders properly', () => {
 
 test('Wizard step renders properly', () => {
   const component = shallow(
-    <Wizard.Step
-      key={0}
-      stepIndex={0}
-      step={0}
-      activeStep={0}
-      label="Step 1"
-      title="Step 1"
-      onClick={jest.fn()}
-    >
+    <Wizard.Step key={0} stepIndex={0} step={0} activeStep={0} label="Step 1" title="Step 1" onClick={jest.fn()}>
       <Wizard.SubStep subStep="1.1" title="Step 1.1" activeSubStep={0} />
       <Wizard.SubStep subStep="1.2" title="Step 1.2" activeSubStep={0} />
     </Wizard.Step>
@@ -73,36 +45,23 @@ test('Wizard step renders properly', () => {
 });
 
 test('Wizard sub step renders properly', () => {
-  const component = shallow(
-    <Wizard.SubStep subStep="1.1" title="Step 1.1" activeSubStep={0} />
-  );
+  const component = shallow(<Wizard.SubStep subStep="1.1" title="Step 1.1" activeSubStep={0} />);
   expect(component).toMatchSnapshot('Wizard sub step snapshot');
 });
 
 test('Wizard row renders properly', () => {
-  const component = shallow(
-    <Wizard.Row className="someAdditionalClass">Some Children</Wizard.Row>
-  );
+  const component = shallow(<Wizard.Row className="someAdditionalClass">Some Children</Wizard.Row>);
   expect(component).toMatchSnapshot('Wizard row snapshot');
 });
 
 test('Wizard sidebar renders properly', () => {
-  const component = shallow(
-    <Wizard.Sidebar
-      className="someAdditionalClass"
-      items={['item1', 'item2']}
-    />
-  );
+  const component = shallow(<Wizard.Sidebar className="someAdditionalClass" items={['item1', 'item2']} />);
   expect(component).toMatchSnapshot('Wizard sidebar snapshot');
 });
 
 test('Wizard sidebar group renders properly', () => {
   const component = shallow(
-    <Wizard.SidebarGroup
-      className="someAdditionalClass"
-      step="1"
-      activeStep="1"
-    >
+    <Wizard.SidebarGroup className="someAdditionalClass" step="1" activeStep="1">
       Some Children
     </Wizard.SidebarGroup>
   );
@@ -133,9 +92,7 @@ test('Wizard sidebar group item renders properly', () => {
 });
 
 test('Wizard main renders properly', () => {
-  const component = shallow(
-    <Wizard.Main className="someAdditionalClass">Some Children</Wizard.Main>
-  );
+  const component = shallow(<Wizard.Main className="someAdditionalClass">Some Children</Wizard.Main>);
   expect(component).toMatchSnapshot('Wizard main snapshot');
 });
 
@@ -170,11 +127,7 @@ test('Wizard contents renders hidden class when not active', () => {
 });
 
 test('Wizard review steps renders properly', () => {
-  const component = shallow(
-    <Wizard.ReviewSteps className="someAdditionalClass">
-      Some Children
-    </Wizard.ReviewSteps>
-  );
+  const component = shallow(<Wizard.ReviewSteps className="someAdditionalClass">Some Children</Wizard.ReviewSteps>);
   expect(component).toMatchSnapshot('Wizard review steps snapshot');
 });
 
@@ -202,12 +155,7 @@ test('Wizard review sub steps renders properly', () => {
 test('Wizard review sub step renders properly', () => {
   const onClickMock = jest.fn();
   const component = shallow(
-    <Wizard.ReviewSubStep
-      onClick={onClickMock}
-      label="1.1"
-      title="1.1"
-      collapsed
-    >
+    <Wizard.ReviewSubStep onClick={onClickMock} label="1.1" title="1.1" collapsed>
       Some Children
     </Wizard.ReviewSubStep>
   );
@@ -226,28 +174,18 @@ test('Wizard review content renders properly', () => {
 });
 
 test('Wizard review item renders properly', () => {
-  const component = shallow(
-    <Wizard.ReviewItem className="someAdditionalClass">
-      Some Children
-    </Wizard.ReviewItem>
-  );
+  const component = shallow(<Wizard.ReviewItem className="someAdditionalClass">Some Children</Wizard.ReviewItem>);
   expect(component).toMatchSnapshot('Wizard review item snapshot');
 });
 
 test('Wizard footer renders properly', () => {
-  const component = shallow(
-    <Wizard.Footer className="someAdditionalClass">Some Children</Wizard.Footer>
-  );
+  const component = shallow(<Wizard.Footer className="someAdditionalClass">Some Children</Wizard.Footer>);
   expect(component).toMatchSnapshot('Wizard footer snapshot');
 });
 
 test('Wizard pattern body renders properly while loading', () => {
   const component = shallow(
-    <Wizard.Pattern.Body
-      loading
-      loadingTitle="Wizard Title"
-      loadingMessage="Wizard loading..."
-    />
+    <Wizard.Pattern.Body loading loadingTitle="Wizard Title" loadingMessage="Wizard loading..." />
   );
   expect(component).toMatchSnapshot('Wizard pattern body loading snapshot');
 });
@@ -264,16 +202,12 @@ test('Wizard pattern body renders active step', () => {
       activeStepIndex={0}
     />
   );
-  expect(component).toMatchSnapshot(
-    'Wizard pattern body renders active step snapshot'
-  );
+  expect(component).toMatchSnapshot('Wizard pattern body renders active step snapshot');
 });
 
 test('Wizard pattern body renders empty if no steps and not loading', () => {
   const component = shallow(<Wizard.Pattern.Body loading={false} />);
-  expect(component).toMatchSnapshot(
-    'Wizard pattern body renders empty snapshot'
-  );
+  expect(component).toMatchSnapshot('Wizard pattern body renders empty snapshot');
 });
 
 const testWizardPattern = props => {

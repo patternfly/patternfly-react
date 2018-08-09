@@ -48,25 +48,18 @@ const WizardPatternBody = ({
   if (steps && steps.length) {
     const step = steps[activeStepIndex];
 
-    const renderedStep =
-      step && step.render && step.render(activeStepIndex, step.title);
+    const renderedStep = step && step.render && step.render(activeStepIndex, step.title);
 
     return (
       <React.Fragment>
         <Wizard.Steps
           steps={steps.map((stepObj, index) => (
-            <Wizard.Step
-              {...stepProps(index, stepObj.title)}
-              onClick={() => goToStep(index)}
-            />
+            <Wizard.Step {...stepProps(index, stepObj.title)} onClick={() => goToStep(index)} />
           ))}
         />
         <Wizard.Row>
           <Wizard.Main>
-            <Wizard.Contents
-              stepIndex={activeStepIndex}
-              activeStepIndex={activeStepIndex}
-            >
+            <Wizard.Contents stepIndex={activeStepIndex} activeStepIndex={activeStepIndex}>
               {renderedStep}
             </Wizard.Contents>
           </Wizard.Main>

@@ -27,10 +27,7 @@ module.exports = {
     'no-prototype-builtins': 'off',
     'no-restricted-syntax': 'off',
     'no-underscore-dangle': 'off',
-    'no-unused-expressions': [
-      'error',
-      { allowShortCircuit: true, allowTernary: true }
-    ],
+    'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
     'no-unused-vars': [
       'error',
       {
@@ -40,7 +37,7 @@ module.exports = {
       }
     ],
     'no-use-before-define': 'off',
-    'prettier/prettier': 'error',
+    'prettier/prettier': ['error', { singleQuote: true, trailingComma: 'none', printWidth: 120 }],
     'react/no-array-index-key': 'off',
     'react/forbid-prop-types': 'off',
     'react/jsx-filename-extension': 'off',

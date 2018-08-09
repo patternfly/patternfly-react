@@ -2,11 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NotificationDrawerPanelActionLink = ({
-  children,
-  className,
-  ...props
-}) => {
+const NotificationDrawerPanelActionLink = ({ children, className, ...props }) => {
   const classes = classNames('drawer-pf-action-link', className);
 
   return (

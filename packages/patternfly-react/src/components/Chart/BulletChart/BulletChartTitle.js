@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const BulletChartTitle = ({ className, label, details, ...props }) => {
-  const titleContainerClasses = classNames(
-    'bullet-chart-pf-title-container',
-    className
-  );
+  const titleContainerClasses = classNames('bullet-chart-pf-title-container', className);
 
   return (
     <div className={titleContainerClasses} {...props}>

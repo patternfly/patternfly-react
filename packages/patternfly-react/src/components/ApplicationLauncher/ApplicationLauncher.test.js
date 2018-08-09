@@ -1,10 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import {
-  ApplicationLauncher,
-  ApplicationLauncherItem,
-  ApplicationLauncherToggle
-} from './index';
+import { ApplicationLauncher, ApplicationLauncherItem, ApplicationLauncherToggle } from './index';
 
 const handleClick = e => {
   e.preventDefault();
@@ -40,36 +36,20 @@ test('ApplicationLauncherItem with tooltip is working properly', () => {
 
 test('ApplicationLauncherItem without tooltip is working properly', () => {
   const component = mount(
-    <ApplicationLauncherItem
-      icon="pficon pficon-storage-domain"
-      title="Recteque"
-      onClick={handleClick}
-    />
+    <ApplicationLauncherItem icon="pficon pficon-storage-domain" title="Recteque" onClick={handleClick} />
   );
 
   expect(component.render()).toMatchSnapshot();
 });
 
 test('ApplicationLauncherToggle is working properly', () => {
-  const component = mount(
-    <ApplicationLauncherToggle
-      tooltipPlacement="left"
-      onClick={handleClick}
-      open={false}
-    />
-  );
+  const component = mount(<ApplicationLauncherToggle tooltipPlacement="left" onClick={handleClick} open={false} />);
 
   expect(component.render()).toMatchSnapshot();
 });
 
 test('ApplicationLauncherToggle is working properly when open', () => {
-  const component = mount(
-    <ApplicationLauncherToggle
-      tooltipPlacement="left"
-      onClick={handleClick}
-      open
-    />
-  );
+  const component = mount(<ApplicationLauncherToggle tooltipPlacement="left" onClick={handleClick} open />);
 
   expect(component.render()).toMatchSnapshot();
 });

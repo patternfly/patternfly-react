@@ -12,33 +12,25 @@ export const BasicFormFields = [
     controlId: 'name',
     label: 'Name',
     help: 'Enter your name',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl type="text" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.FormControl type="text" {...props} />
   },
   {
     controlId: 'address',
     label: 'Address',
     help: 'Enter your address',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl type="address" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.FormControl type="address" {...props} />
   },
   {
     controlId: 'city',
     label: 'City',
     help: 'Enter your city',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl type="text" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.FormControl type="text" {...props} />
   },
   {
     controlId: 'email',
     label: 'Email',
     help: 'Enter a valid email address',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl type="email" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.FormControl type="email" {...props} />
   },
   {
     controlId: 'phone',
@@ -48,9 +40,7 @@ export const BasicFormFields = [
       "Please specify Country code <br> <a target='_blank' href='https://countrycode.org/'>Click here for a list of Country codes</a>",
     close: 'true',
     help: 'Enter a valid phone number',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl type="phone" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.FormControl type="phone" {...props} />
   },
   {
     controlId: 'url',
@@ -88,18 +78,11 @@ export const BasicFormButtons = [
 export const BasicFormSpinner = [
   <Spinner key="spinner" size="xs" loading inline />,
   ' ',
-  <span key="text">
-    Do not refresh this page. This request may take a minute...
-  </span>
+  <span key="text">Do not refresh this page. This request may take a minute...</span>
 ];
 
 export const getBasicFormKnobs = () => ({
-  validationState: select('Validation State', [
-    null,
-    'success',
-    'warning',
-    'error'
-  ]),
+  validationState: select('Validation State', [null, 'success', 'warning', 'error']),
   bsSize: select('Size', [null, 'small', 'large']),
   showHelp: boolean('Show Help', true),
   disabled: boolean('Disabled', false),

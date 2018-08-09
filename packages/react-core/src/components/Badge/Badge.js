@@ -17,14 +17,7 @@ export const defaultProps = {
 };
 
 const Badge = ({ isRead, className, children, ...props }) => (
-  <span
-    {...props}
-    className={css(
-      styles.badge,
-      isRead ? styles.modifiers.read : styles.modifiers.unread,
-      className
-    )}
-  >
+  <span {...props} className={css(styles.badge, isRead ? styles.modifiers.read : styles.modifiers.unread, className)}>
     {children}
   </span>
 );

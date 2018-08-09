@@ -2,19 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { ListGroup, ListGroupItem } from '../ListGroup';
 import { name } from '../../../package.json';
 import { InfoTip } from './index';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Info Tip`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Info Tip`, module);
 
 stories.addDecorator(
   defaultTemplate({
@@ -28,22 +21,14 @@ stories.add(
   withInfo()(() => (
     <nav className="navbar navbar-default navbar-pf">
       <div className="navbar-header">
-        <button
-          type="button"
-          className="navbar-toggle"
-          data-toggle="collapse"
-          data-target=".navbar-collapse-1"
-        >
+        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
           <span className="sr-only">Toggle navigation</span>
           <span className="icon-bar" />
           <span className="icon-bar" />
           <span className="icon-bar" />
         </button>
         <a className="navbar-brand" href="/">
-          <img
-            src="http://www.patternfly.org/assets/img/brand.svg"
-            alt="PatternFly Enterprise Application"
-          />
+          <img src="http://www.patternfly.org/assets/img/brand.svg" alt="PatternFly Enterprise Application" />
         </a>
       </div>
       <div className="collapse navbar-collapse navbar-collapse-1">
@@ -53,12 +38,10 @@ stories.add(
             <InfoTip.Menu>
               <ListGroup>
                 <ListGroupItem>
-                  <InfoTip.MenuItemIcon type="pf" name="info" /> Added
-                  Datasources TestDS
+                  <InfoTip.MenuItemIcon type="pf" name="info" /> Added Datasources TestDS
                 </ListGroupItem>
                 <ListGroupItem>
-                  <InfoTip.MenuItemIcon type="pf" name="info" /> Modified
-                  Datasources ExampleDS
+                  <InfoTip.MenuItemIcon type="pf" name="info" /> Modified Datasources ExampleDS
                 </ListGroupItem>
               </ListGroup>
               <InfoTip.MenuFooter>

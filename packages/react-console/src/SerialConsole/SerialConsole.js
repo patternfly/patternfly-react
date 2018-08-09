@@ -90,16 +90,10 @@ class SerialConsole extends React.Component {
       case DISCONNECTED:
         terminal = (
           <EmptyState>
-            <EmptyState.Title>
-              {this.props.textDisconnectedTitle}
-            </EmptyState.Title>
+            <EmptyState.Title>{this.props.textDisconnectedTitle}</EmptyState.Title>
             <EmptyState.Info>{this.props.textDisconnected}</EmptyState.Info>
             <EmptyState.Action>
-              <Button
-                bsStyle="primary"
-                bsSize="large"
-                onClick={this.props.onConnect}
-              >
+              <Button bsStyle="primary" bsSize="large" onClick={this.props.onConnect}>
                 {this.props.textConnect}
               </Button>
             </EmptyState.Action>

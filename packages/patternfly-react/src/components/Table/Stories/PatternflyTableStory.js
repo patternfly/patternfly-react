@@ -17,16 +17,8 @@ const patternflyTable = stories => {
     withInfo()(() => {
       const story = (
         <div>
-          <h2>
-            PatternFly recommendation: Bootstrap striped, bordered, hover, and
-            responsive
-          </h2>
-          <Table.PfProvider
-            striped
-            bordered
-            hover
-            columns={mockPatternflyColumns}
-          >
+          <h2>PatternFly recommendation: Bootstrap striped, bordered, hover, and responsive</h2>
+          <Table.PfProvider striped bordered hover columns={mockPatternflyColumns}>
             <Table.Header />
             <Table.Body rows={mockBootstrapRows} rowKey="id" />
           </Table.PfProvider>
@@ -34,9 +26,7 @@ const patternflyTable = stories => {
       );
       return inlineTemplate({
         title: 'PatternFly Table Styles',
-        documentationLink: `${
-          DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
-        }table-view/`,
+        documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS}table-view/`,
         story,
         description: reactabularDescription
       });

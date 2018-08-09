@@ -5,15 +5,7 @@ import { noop, Modal } from '../../index';
 /**
  * Wizard - main Wizard component.
  */
-const Wizard = ({
-  children,
-  className,
-  dialogClassName,
-  show,
-  onClose,
-  onExited,
-  ...rest
-}) => (
+const Wizard = ({ children, className, dialogClassName, show, onClose, onExited, ...rest }) => (
   <Modal
     show={show}
     onHide={onClose}

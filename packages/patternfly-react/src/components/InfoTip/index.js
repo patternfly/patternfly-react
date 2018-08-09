@@ -9,10 +9,4 @@ InfoTip.Menu = InfoTipMenu;
 InfoTip.MenuItemIcon = InfoTipMenuItemIcon;
 InfoTip.MenuFooter = InfoTipMenuFooter;
 
-export {
-  InfoTip,
-  InfoTipToggle,
-  InfoTipMenu,
-  InfoTipMenuItemIcon,
-  InfoTipMenuFooter
-};
+export { InfoTip, InfoTipToggle, InfoTipMenu, InfoTipMenuItemIcon, InfoTipMenuFooter };

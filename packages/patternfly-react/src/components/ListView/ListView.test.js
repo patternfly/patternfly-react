@@ -3,11 +3,7 @@ import { mount } from 'enzyme';
 import { Row, Col } from '../Grid';
 
 import { ListView } from './index';
-import {
-  mockListItems,
-  renderActions,
-  renderAdditionalInfoItems
-} from './__mocks__/mockListItems';
+import { mockListItems, renderActions, renderAdditionalInfoItems } from './__mocks__/mockListItems';
 
 test('ListView renders properly', () => {
   const component = mount(

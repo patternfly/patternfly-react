@@ -47,12 +47,7 @@ Object.keys(AlertVariant).forEach(variant => {
 
     test('Custom aria label', () => {
       const view = mount(
-        <Alert
-          variant={variant}
-          ariaLabel={`Custom aria label for ${variant}`}
-          action="action"
-          title="Some title"
-        >
+        <Alert variant={variant} ariaLabel={`Custom aria label for ${variant}`} action="action" title="Some title">
           Some alert
         </Alert>
       );

@@ -44,18 +44,12 @@ const Alert = ({
 }) => {
   const readerTitle = (
     <React.Fragment>
-      <span className={css(accessibleStyles.srOnly)}>
-        {capitalize(AlertVariant[variant])}:{' '}
-      </span>
+      <span className={css(accessibleStyles.srOnly)}>{capitalize(AlertVariant[variant])}: </span>
       {title}
     </React.Fragment>
   );
 
-  const customClassName = css(
-    styles.alert,
-    getModifier(styles, variant, styles.modifiers.info),
-    className
-  );
+  const customClassName = css(styles.alert, getModifier(styles, variant, styles.modifiers.info), className);
 
   return (
     <div {...props} className={customClassName} aria-label={ariaLabel}>

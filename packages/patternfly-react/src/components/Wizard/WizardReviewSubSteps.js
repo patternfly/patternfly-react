@@ -7,11 +7,7 @@ import { ListGroup } from '../ListGroup';
  * WizardReviewSubSteps component for Patternfly React
  */
 const WizardReviewSubSteps = ({ children, className, collapsed, ...props }) => {
-  const classes = classNames(
-    'wizard-pf-review-substeps',
-    { collapse: collapsed },
-    className
-  );
+  const classes = classNames('wizard-pf-review-substeps', { collapse: collapsed }, className);
   return (
     <div className={classes} {...props}>
       <ListGroup componentClass="ul">{children}</ListGroup>

@@ -19,19 +19,14 @@ const BulletChartLegendItem = ({
 }) => {
   const classes = classNames('bullet-chart-pf-legend-item', className);
 
-  const boxClasses = classNames(
-    'bullet-chart-pf-legend-item-box',
-    boxClassName
-  );
+  const boxClasses = classNames('bullet-chart-pf-legend-item-box', boxClassName);
 
   const TooltipFunction = () => {
     if (tooltipFunction) {
       return tooltipFunction(title, value, color);
     }
 
-    return (
-      <Tooltip id={tooltipId || randomId()}>{`${title}: ${value}%`}</Tooltip>
-    );
+    return <Tooltip id={tooltipId || randomId()}>{`${title}: ${value}%`}</Tooltip>;
   };
 
   return (

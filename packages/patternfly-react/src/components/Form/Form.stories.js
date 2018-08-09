@@ -6,47 +6,23 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { Icon } from '../Icon';
 import { Col, Row, Grid } from '../Grid';
 import { Button } from '../Button';
 import { Modal } from '../Modal';
 import { Form } from './index';
 
-import {
-  InlineFormFields,
-  InlineFormButtons,
-  getInlineFormKnobs
-} from './Stories/InlineForm';
-import {
-  BasicFormFields,
-  BasicFormButtons,
-  BasicFormSpinner,
-  getBasicFormKnobs
-} from './Stories/BasicForm';
-import {
-  SupportedControlsFormFields,
-  getSupportedControlsFormKnobs
-} from './Stories/SupportedControlsForm';
-import {
-  InputGroupsFormFields,
-  getInputGroupsFormKnobs
-} from './Stories/InputGroupsForm';
+import { InlineFormFields, InlineFormButtons, getInlineFormKnobs } from './Stories/InlineForm';
+import { BasicFormFields, BasicFormButtons, BasicFormSpinner, getBasicFormKnobs } from './Stories/BasicForm';
+import { SupportedControlsFormFields, getSupportedControlsFormKnobs } from './Stories/SupportedControlsForm';
+import { InputGroupsFormFields, getInputGroupsFormKnobs } from './Stories/InputGroupsForm';
 import { InlineFormField } from './Stories/InlineFormField';
 import { HorizontalFormField } from './Stories/HorizontalFormField';
 import { VerticalFormField } from './Stories/VerticalFormField';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${
-    STORYBOOK_CATEGORY.FORMS_AND_CONTROLS
-  }/Forms`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/Forms`, module);
 
 stories.addDecorator(withKnobs);
 
@@ -79,9 +55,7 @@ stories.add(
     if (bsSize) buttonsProps.bsSize = bsSize;
     if (disabled) buttonsProps.disabled = disabled;
 
-    const formFields = InlineFormFields.map(formField =>
-      InlineFormField({ ...formField, ...formFieldsKnobs })
-    ).reduce(
+    const formFields = InlineFormFields.map(formField => InlineFormField({ ...formField, ...formFieldsKnobs })).reduce(
       (result = [], element) => [...result, element, ' '], // create spacing betwwen elements
       []
     );
@@ -101,9 +75,7 @@ stories.add(
     return inlineTemplate({
       title: 'Inline Form',
       documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }forms/`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}forms/`,
       story
     });
   })
@@ -120,9 +92,7 @@ stories.add(
     if (disabled) buttonsProps.disabled = disabled;
 
     const showLoading = boolean('Show Loading', false);
-    const formFields = BasicFormFields.map(formField =>
-      HorizontalFormField({ ...formField, ...formFieldsKnobs })
-    );
+    const formFields = BasicFormFields.map(formField => HorizontalFormField({ ...formField, ...formFieldsKnobs }));
     const formButtons = BasicFormButtons.map(({ text, ...props }) => (
       <span key={text}>
         <Button {...props} {...buttonsProps}>
@@ -153,9 +123,7 @@ stories.add(
     return inlineTemplate({
       title: 'Horizontal Form',
       documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }forms/`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}forms/`,
       story
     });
   })
@@ -172,9 +140,7 @@ stories.add(
     if (disabled) buttonsProps.disabled = disabled;
 
     const showLoading = boolean('Show Loading', false);
-    const formFields = BasicFormFields.map(formField =>
-      VerticalFormField({ ...formField, ...formFieldsKnobs })
-    );
+    const formFields = BasicFormFields.map(formField => VerticalFormField({ ...formField, ...formFieldsKnobs }));
     const formButtons = BasicFormButtons.map(({ text, ...props }) => (
       <span key={text}>
         <Button {...props} {...buttonsProps}>
@@ -203,9 +169,7 @@ stories.add(
     return inlineTemplate({
       title: 'Vertical Form',
       documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }forms/`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}forms/`,
       story
     });
   })
@@ -223,28 +187,19 @@ stories.add(
 
     const showModal = boolean('Show Modal', true);
     const showLoading = boolean('Show Loading', false);
-    const formFields = BasicFormFields.map(formField =>
-      HorizontalFormField({ ...formField, ...formFieldsKnobs })
-    );
+    const formFields = BasicFormFields.map(formField => HorizontalFormField({ ...formField, ...formFieldsKnobs }));
     const formButtons = BasicFormButtons.map(({ text, ...props }) => (
       <Button key={text} {...props} {...buttonsProps}>
         {text}
       </Button>
     )).reverse();
     const formSpinner = (
-      <div style={{ paddingTop: '20px', paddingBottom: '10px' }}>
-        {[...BasicFormSpinner].reverse()}
-      </div>
+      <div style={{ paddingTop: '20px', paddingBottom: '10px' }}>{[...BasicFormSpinner].reverse()}</div>
     );
     const story = (
       <Modal show={showModal}>
         <Modal.Header>
-          <button
-            className="close"
-            onClick={action('Close')}
-            aria-hidden="true"
-            aria-label="Close"
-          >
+          <button className="close" onClick={action('Close')} aria-hidden="true" aria-label="Close">
             <Icon type="pf" name="close" />
           </button>
           <Modal.Title>Basic Settings</Modal.Title>
@@ -262,9 +217,7 @@ stories.add(
     return inlineTemplate({
       title: 'Modal Form',
       documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }forms/`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}forms/`,
       story
     });
   })
@@ -286,9 +239,7 @@ stories.add(
     return inlineTemplate({
       title: 'Supported Controls',
       documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }forms/`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}forms/`,
       story
     });
   })
@@ -298,9 +249,7 @@ stories.add(
   'Input Groups',
   withInfo()(() => {
     const formFieldsKnobs = getInputGroupsFormKnobs();
-    const formFields = InputGroupsFormFields.map(formField =>
-      VerticalFormField({ ...formField, ...formFieldsKnobs })
-    );
+    const formFields = InputGroupsFormFields.map(formField => VerticalFormField({ ...formField, ...formFieldsKnobs }));
     const story = (
       <Grid>
         <Form>
@@ -314,9 +263,7 @@ stories.add(
     return inlineTemplate({
       title: 'Input Groups',
       documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }forms/`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}forms/`,
       story
     });
   })

@@ -4,12 +4,7 @@ import { Wizard } from '../index';
 import { mockWizardFormContents } from './mockWizardItems';
 import MockWizardReviewStepsManager from './mockWizardReviewStepsManager';
 
-export const renderWizardSteps = (
-  wizardSteps,
-  activeStepIndex,
-  activeSubStepIndex,
-  onStepClick
-) => {
+export const renderWizardSteps = (wizardSteps, activeStepIndex, activeSubStepIndex, onStepClick) => {
   const activeStep = wizardSteps[activeStepIndex];
   const activeSubStep = activeStep.subSteps[activeSubStepIndex];
 
@@ -35,21 +30,12 @@ export const renderWizardSteps = (
   ));
 };
 
-export const renderSidebarItems = (
-  wizardSteps,
-  activeStepIndex,
-  activeSubStepIndex,
-  onSidebarItemClick
-) => {
+export const renderSidebarItems = (wizardSteps, activeStepIndex, activeSubStepIndex, onSidebarItemClick) => {
   const activeStep = wizardSteps[activeStepIndex];
   const activeSubStep = activeStep.subSteps[activeSubStepIndex];
 
   return wizardSteps.map((step, stepIndex) => (
-    <Wizard.SidebarGroup
-      key={stepIndex}
-      step={step.step}
-      activeStep={activeStep.step}
-    >
+    <Wizard.SidebarGroup key={stepIndex} step={step.step} activeStep={activeStep.step}>
       {step.subSteps.map((sub, subStepIndex) => (
         <Wizard.SidebarGroupItem
           key={subStepIndex}
@@ -66,11 +52,7 @@ export const renderSidebarItems = (
   ));
 };
 
-export const renderWizardContents = (
-  wizardSteps,
-  activeStepIndex,
-  activeSubStepIndex
-) =>
+export const renderWizardContents = (wizardSteps, activeStepIndex, activeSubStepIndex) =>
   wizardSteps.map((step, stepIndex) =>
     step.subSteps.map((sub, subStepIndex) => {
       if (stepIndex === 0 || stepIndex === 1) {
@@ -109,12 +91,7 @@ export const renderWizardContents = (
             activeStepIndex={activeStepIndex}
             activeSubStepIndex={activeSubStepIndex}
           >
-            <MockWizardDeployContents
-              active={
-                stepIndex === activeStepIndex &&
-                subStepIndex === activeSubStepIndex
-              }
-            />
+            <MockWizardDeployContents active={stepIndex === activeStepIndex && subStepIndex === activeSubStepIndex} />
           </Wizard.Contents>
         );
       }

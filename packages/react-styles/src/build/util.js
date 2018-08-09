@@ -20,10 +20,7 @@ module.exports = ${styleSheetToken}.parse(\`${cssString}\`);
 }
 
 export function getCSS(pathToCSSFile) {
-  const rawCss = readFileSync(pathToCSSFile, 'utf8').replace(
-    '@charset "UTF-8";',
-    ''
-  );
+  const rawCss = readFileSync(pathToCSSFile, 'utf8').replace('@charset "UTF-8";', '');
   return minifyCSS(rawCss);
 }
 
@@ -33,12 +30,7 @@ export function minifyCSS(cssString) {
   });
 }
 
-export function writeCSSJSFile(
-  rootPath,
-  originalPath,
-  destinationPath,
-  contents
-) {
+export function writeCSSJSFile(rootPath, originalPath, destinationPath, contents) {
   outputFileSync(destinationPath, contents);
   const removeRE = new RegExp(`${rootPath}/?`);
   const inFormatted = originalPath.replace(removeRE, '');
@@ -48,17 +40,12 @@ export function writeCSSJSFile(
 
 export function getRelativeImportPath(from, to) {
   const parsedTo = path.parse(to);
-  const newImportPath = path.normalize(
-    path.join(relative(from, parsedTo.dir), parsedTo.base).replace(/\\/g, '')
-  );
+  const newImportPath = path.normalize(path.join(relative(from, parsedTo.dir), parsedTo.base).replace(/\\/g, ''));
   return newImportPath.startsWith('.') ? newImportPath : `./${newImportPath}`;
 }
 
 export function getCSSOutputPath(outDir, rootPath, pathToCSSFile) {
-  return path.join(
-    path.resolve(rootPath, outDir),
-    getFormattedCSSOutputPath(pathToCSSFile)
-  );
+  return path.join(path.resolve(rootPath, outDir), getFormattedCSSOutputPath(pathToCSSFile));
 }
 
 function getFormattedCSSOutputPath(pathToCSSFile) {

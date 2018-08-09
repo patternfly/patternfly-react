@@ -41,10 +41,7 @@ class XTerm extends React.Component {
   componentDidMount() {
     this.state.terminal.open(this.childTerminal);
 
-    window.addEventListener(
-      'resize',
-      debounce(this.onWindowResize.bind(this), 100)
-    );
+    window.addEventListener('resize', debounce(this.onWindowResize.bind(this), 100));
     this.onWindowResize();
   }
 

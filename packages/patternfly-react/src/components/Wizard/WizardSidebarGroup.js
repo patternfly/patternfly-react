@@ -6,17 +6,8 @@ import { ListGroup } from '../ListGroup';
 /**
  * WizardSidebarGroup component for Patternfly React
  */
-const WizardSidebarGroup = ({
-  children,
-  className,
-  step,
-  activeStep,
-  ...props
-}) => {
-  const classes = classNames(
-    { hidden: `${step}` !== `${activeStep}` },
-    className
-  );
+const WizardSidebarGroup = ({ children, className, step, activeStep, ...props }) => {
+  const classes = classNames({ hidden: `${step}` !== `${activeStep}` }, className);
   return (
     <ListGroup componentClass="ul" className={classes} {...props}>
       {children}

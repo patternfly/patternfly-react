@@ -1,10 +1,5 @@
 import { StyleSheet as AphroditeStyleSheet } from 'aphrodite';
-import {
-  formatClassName,
-  getCSSClasses,
-  isModifier,
-  createStyleDeclaration
-} from './utils';
+import { formatClassName, getCSSClasses, isModifier, createStyleDeclaration } from './utils';
 
 export const StyleSheet = {
   create: AphroditeStyleSheet.create,

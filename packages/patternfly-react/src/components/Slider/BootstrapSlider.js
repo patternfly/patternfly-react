@@ -32,14 +32,12 @@ class BootstrapSlider extends React.Component {
     // Adjust the tooltip to "sit" ontop of the slider's handle. #LibraryBug
     // check
     if (this.props.orientation === orientation.horizontal) {
-      this.slider.tooltip.style.marginLeft = `-${this.slider.tooltip
-        .offsetWidth / 2}px`;
+      this.slider.tooltip.style.marginLeft = `-${this.slider.tooltip.offsetWidth / 2}px`;
       if (this.props.ticks_labels && this.slider.tickLabelContainer) {
         this.slider.tickLabelContainer.style.marginTop = '0px';
       }
     } else {
-      this.slider.tooltip.style.marginTop = `-${this.slider.tooltip
-        .offsetHeight / 2}px`;
+      this.slider.tooltip.style.marginTop = `-${this.slider.tooltip.offsetHeight / 2}px`;
     }
   }
 

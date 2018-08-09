@@ -10,9 +10,7 @@ test('defaults props', () => {
 
 test('adds classname to the Icon', () => {
   const view = shallow(<InfoTipMenuItemIcon className="extra-classname" />);
-  expect(view.find(Icon).props().className).toMatchSnapshot(
-    'Icon className includes additional className from props.'
-  );
+  expect(view.find(Icon).props().className).toMatchSnapshot('Icon className includes additional className from props.');
 });
 
 test('passes additional props through', () => {

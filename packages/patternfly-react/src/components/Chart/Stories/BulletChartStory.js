@@ -1,12 +1,6 @@
 import React from 'react';
 import { withInfo } from '@storybook/addon-info';
-import {
-  withKnobs,
-  boolean,
-  number,
-  select,
-  text
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, select, text } from '@storybook/addon-knobs';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
 import { DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { patternfly } from '../../../common/patternfly';
@@ -72,12 +66,7 @@ const bulletChart = stories => {
         'Value'
       );
       const valueTitle = text('Value Title', 'Data1', 'Legend');
-      const valueColor = select(
-        'Value Color',
-        colorOptions,
-        patternfly.pfPaletteColors.blue,
-        'Value'
-      );
+      const valueColor = select('Value Color', colorOptions, patternfly.pfPaletteColors.blue, 'Value');
 
       const showValue2 = boolean('Show Value 2', true, 'Value');
       const value2 = number(
@@ -92,12 +81,7 @@ const bulletChart = stories => {
         'Value'
       );
       const valueTitle2 = text('Value 2 Title', 'Data2', 'Legend');
-      const valueColor2 = select(
-        'Value Color 2',
-        colorOptions,
-        patternfly.pfPaletteColors.green,
-        'Value'
-      );
+      const valueColor2 = select('Value Color 2', colorOptions, patternfly.pfPaletteColors.green, 'Value');
 
       const showValue3 = boolean('Show Value 3', false, 'Value');
       const value3 = number(
@@ -112,12 +96,7 @@ const bulletChart = stories => {
         'Value'
       );
       const valueTitle3 = text('Value 3 Title', 'Data3', 'Legend');
-      const valueColor3 = select(
-        'Value Color 3',
-        colorOptions,
-        patternfly.pfPaletteColors.gold,
-        'Value'
-      );
+      const valueColor3 = select('Value Color 3', colorOptions, patternfly.pfPaletteColors.gold, 'Value');
 
       const showValue4 = boolean('Show Value 4', false, 'Value');
       const value4 = number(
@@ -132,12 +111,7 @@ const bulletChart = stories => {
         'Value'
       );
       const valueTitle4 = text('Value 4 Title', 'Data4', 'Legend');
-      const valueColor4 = select(
-        'Value Color 4',
-        colorOptions,
-        patternfly.pfPaletteColors.red,
-        'Value'
-      );
+      const valueColor4 = select('Value Color 4', colorOptions, patternfly.pfPaletteColors.red, 'Value');
 
       const showValue5 = boolean('Show Value 5', false, 'Value');
       const value5 = number(
@@ -152,20 +126,11 @@ const bulletChart = stories => {
         'Value'
       );
       const valueTitle5 = text('Value 5 Title', 'Data5', 'Legend');
-      const valueColor5 = select(
-        'Value Color 5',
-        colorOptions,
-        patternfly.pfPaletteColors.orange,
-        'Value'
-      );
+      const valueColor5 = select('Value Color 5', colorOptions, patternfly.pfPaletteColors.orange, 'Value');
 
       const useDots = boolean('Use Dots', false, 'Value');
 
-      const showWarnThreshold = boolean(
-        'Show Warning Threshold',
-        true,
-        'Thresholds'
-      );
+      const showWarnThreshold = boolean('Show Warning Threshold', true, 'Thresholds');
       const thresholdWarning = number(
         'Warning Threshold',
         70,
@@ -178,11 +143,7 @@ const bulletChart = stories => {
         'Thresholds'
       );
 
-      const showErrorThreshold = boolean(
-        'Show Error Threshold',
-        true,
-        'Thresholds'
-      );
+      const showErrorThreshold = boolean('Show Error Threshold', true, 'Thresholds');
       const thresholdError = number(
         'Error Threshold',
         90,
@@ -325,9 +286,7 @@ const bulletChart = stories => {
       );
       return inlineTemplate({
         title: 'Bullet Chart',
-        documentationLink: `${
-          DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
-        }bullet-chart/`,
+        documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION}bullet-chart/`,
         story
       });
     })

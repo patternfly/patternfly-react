@@ -2,24 +2,15 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { ProgressBar } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Progress Bar`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Progress Bar`, module);
 stories.addDecorator(
   defaultTemplate({
     title: 'Progress Bar',
-    documentationLink: `${
-      DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
-    }/#progress-bars/`
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}/#progress-bars/`
   })
 );
 

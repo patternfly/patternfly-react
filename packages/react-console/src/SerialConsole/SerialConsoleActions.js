@@ -15,24 +15,15 @@ const SerialConsoleActions = ({
   <div className="console-actions-pf">
     <button
       id={`${idPrefix}-disconnect`}
-      className={classNames(
-        'btn',
-        'btn-default',
-        'console-actions-buttons-pf',
-        {
-          disabled: !isDisconnectEnabled
-        }
-      )}
+      className={classNames('btn', 'btn-default', 'console-actions-buttons-pf', {
+        disabled: !isDisconnectEnabled
+      })}
       onClick={onDisconnect}
     >
       {textDisconnect}
     </button>
 
-    <button
-      id={`${idPrefix}-reconnect`}
-      className="btn btn-default console-actions-buttons-pf"
-      onClick={onReset}
-    >
+    <button id={`${idPrefix}-reconnect`} className="btn btn-default console-actions-buttons-pf" onClick={onReset}>
       {textReconnect}
     </button>
   </div>

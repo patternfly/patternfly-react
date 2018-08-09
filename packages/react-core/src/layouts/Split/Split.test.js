@@ -7,13 +7,9 @@ import { GutterSize } from '../../styles/gutters';
 test('Secondary and primary set', () => {
   const view = mount(
     <Split>
-      <SplitItem variant={SplitItemVariant.secondary}>
-        Secondary content
-      </SplitItem>
+      <SplitItem variant={SplitItemVariant.secondary}>Secondary content</SplitItem>
       <SplitItem variant={SplitItemVariant.primary}>Primary content</SplitItem>
-      <SplitItem variant={SplitItemVariant.secondary}>
-        Secondary content
-      </SplitItem>
+      <SplitItem variant={SplitItemVariant.secondary}>Secondary content</SplitItem>
     </Split>
   );
   // Add a useful assertion here.

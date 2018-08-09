@@ -10,49 +10,37 @@ export const SupportedControlsFormFields = [
     controlId: 'text',
     label: 'Text',
     help: 'Help text',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl type="text" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.FormControl type="text" {...props} />
   },
   {
     controlId: 'email',
     label: 'Email',
     help: 'Help text',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl type="email" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.FormControl type="email" {...props} />
   },
   {
     controlId: 'password',
     label: 'Password',
     help: 'Help text',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl type="password" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.FormControl type="password" {...props} />
   },
   {
     controlId: 'file',
     label: 'File',
     help: 'Help text',
-    formControl: ({ validationState, bsSize, ...props }) => (
-      <Form.FormControl type="file" {...props} />
-    )
+    formControl: ({ validationState, bsSize, ...props }) => <Form.FormControl type="file" {...props} />
   },
   {
     controlId: 'checkbox',
     label: 'Checkbox',
     help: 'Help text',
-    formControl: ({ validationState, ...props }) => (
-      <Form.Checkbox {...props}>Checkbox</Form.Checkbox>
-    )
+    formControl: ({ validationState, ...props }) => <Form.Checkbox {...props}>Checkbox</Form.Checkbox>
   },
   {
     controlId: 'radio',
     label: 'Radio',
     help: 'Help text',
-    formControl: ({ validationState, ...props }) => (
-      <Form.Radio {...props}>Radio</Form.Radio>
-    )
+    formControl: ({ validationState, ...props }) => <Form.Radio {...props}>Radio</Form.Radio>
   },
   {
     controlId: 'checkboxGroup',
@@ -105,29 +93,20 @@ export const SupportedControlsFormFields = [
     controlId: 'textarea',
     label: 'Textarea',
     help: 'Help text',
-    formControl: ({ validationState, ...props }) => (
-      <Form.FormControl componentClass="textarea" {...props} />
-    )
+    formControl: ({ validationState, ...props }) => <Form.FormControl componentClass="textarea" {...props} />
   },
   {
     controlId: 'static',
     label: 'Static',
     help: 'Help text',
     formControl: ({ validationState, ...props }) => (
-      <Form.FormControl.Static {...props}>
-        email@example.com
-      </Form.FormControl.Static>
+      <Form.FormControl.Static {...props}>email@example.com</Form.FormControl.Static>
     )
   }
 ];
 
 export const getSupportedControlsFormKnobs = () => ({
-  validationState: select('Validation State', [
-    null,
-    'success',
-    'warning',
-    'error'
-  ]),
+  validationState: select('Validation State', [null, 'success', 'warning', 'error']),
   bsSize: select('Size', [null, 'small', 'large']),
   showHelp: boolean('Show Help', true),
   disabled: boolean('Disabled', false)

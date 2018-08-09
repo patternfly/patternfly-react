@@ -5,16 +5,7 @@ import { Tooltip } from '../Tooltip';
 import { OverlayTrigger } from '../OverlayTrigger';
 import { Icon } from '../Icon';
 
-const ApplicationLauncherItem = ({
-  onClick,
-  tooltip,
-  tooltipPlacement,
-  title,
-  icon,
-  noIcons,
-  className,
-  ...props
-}) => {
+const ApplicationLauncherItem = ({ onClick, tooltip, tooltipPlacement, title, icon, noIcons, className, ...props }) => {
   const classes = classNames('applauncher-pf-item', className);
 
   if (tooltip !== null) {
@@ -26,19 +17,8 @@ const ApplicationLauncherItem = ({
         rootClose={false}
       >
         <li className={classes} role="presentation">
-          <a
-            className="applauncher-pf-link"
-            href="#"
-            onClick={e => onClick(e)}
-            role="menuitem"
-          >
-            {!noIcons && (
-              <Icon
-                type="pf"
-                name={icon}
-                className="applauncher-pf-link-icon"
-              />
-            )}
+          <a className="applauncher-pf-link" href="#" onClick={e => onClick(e)} role="menuitem">
+            {!noIcons && <Icon type="pf" name={icon} className="applauncher-pf-link-icon" />}
             <span className="applauncher-pf-link-title">{title}</span>
           </a>
         </li>
@@ -47,15 +27,8 @@ const ApplicationLauncherItem = ({
   }
   return (
     <li className={classes} role="presentation">
-      <a
-        className="applauncher-pf-link"
-        href="#"
-        onClick={e => onClick(e)}
-        role="menuitem"
-      >
-        {!noIcons && (
-          <Icon type="pf" name={icon} className="applauncher-pf-link-icon" />
-        )}
+      <a className="applauncher-pf-link" href="#" onClick={e => onClick(e)} role="menuitem">
+        {!noIcons && <Icon type="pf" name={icon} className="applauncher-pf-link-icon" />}
         <span className="applauncher-pf-link-title">{title}</span>
       </a>
     </li>

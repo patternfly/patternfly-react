@@ -22,9 +22,7 @@ class MessageDialogQuestion extends Component {
   };
 
   render() {
-    const primaryContent = (
-      <p className="lead">Main Dialog Text. Are you sure you want to xxxxx?</p>
-    );
+    const primaryContent = <p className="lead">Main Dialog Text. Are you sure you want to xxxxx?</p>;
     const secondaryContent = <p>{lorem}</p>;
     const icon = <Icon type="pf" name="warning-triangle-o" />;
 

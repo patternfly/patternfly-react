@@ -1,15 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import {
-  Button,
-  DropdownKebab,
-  Filter,
-  FormControl,
-  Icon,
-  MenuItem,
-  Sort,
-  Toolbar
-} from '../../index';
+import { Button, DropdownKebab, Filter, FormControl, Icon, MenuItem, Sort, Toolbar } from '../../index';
 
 import { mockFilterExampleFields } from '../Filter/__mocks__/mockFilterExample';
 import { mockSortFields } from '../Sort/__mocks__/mockSortExample';
@@ -18,25 +9,12 @@ test('Toolbar renders properly', () => {
   const component = mount(
     <Toolbar>
       <Filter>
-        <Filter.TypeSelector
-          filterTypes={mockFilterExampleFields}
-          currentFilterType={mockFilterExampleFields[0]}
-        />
-        <FormControl
-          type={mockFilterExampleFields[0].filterType}
-          id="filterInput"
-          placeholder="Filter by Name"
-        />
+        <Filter.TypeSelector filterTypes={mockFilterExampleFields} currentFilterType={mockFilterExampleFields[0]} />
+        <FormControl type={mockFilterExampleFields[0].filterType} id="filterInput" placeholder="Filter by Name" />
       </Filter>
       <Sort>
-        <Sort.TypeSelector
-          sortTypes={mockSortFields}
-          currentSortType={mockSortFields[0]}
-        />
-        <Sort.DirectionSelector
-          isNumeric={mockSortFields[0].isNumeric}
-          isAscending
-        />
+        <Sort.TypeSelector sortTypes={mockSortFields} currentSortType={mockSortFields[0]} />
+        <Sort.DirectionSelector isNumeric={mockSortFields[0].isNumeric} isAscending />
       </Sort>
       <div className="form-group">
         <Button>Action 1</Button>
@@ -50,11 +28,7 @@ test('Toolbar renders properly', () => {
         </DropdownKebab>
       </div>
       <Toolbar.RightContent>
-        <Toolbar.Find
-          placeholder="Find By Keyword..."
-          currentIndex={1}
-          totalCount={3}
-        />
+        <Toolbar.Find placeholder="Find By Keyword..." currentIndex={1} totalCount={3} />
         <Toolbar.ViewSelector>
           <Button title="List View" bsStyle="link" className="active">
             <Icon type="fa" name="th-list" />

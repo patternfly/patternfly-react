@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 /**
  * PaginationRowAmountOfPages component for Patternfly React
  */
-const PaginationRowAmountOfPages = ({
-  messagesOf,
-  amountOfPages,
-  ...props
-}) => (
+const PaginationRowAmountOfPages = ({ messagesOf, amountOfPages, ...props }) => (
   <span {...props}>
-    &nbsp;{messagesOf}&nbsp;
+    &nbsp;
+    {messagesOf}
+    &nbsp;
     <span className="pagination-pf-pages">{amountOfPages}</span>
   </span>
 );

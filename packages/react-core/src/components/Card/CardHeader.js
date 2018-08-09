@@ -16,12 +16,7 @@ const defaultProps = {
   component: 'div'
 };
 
-const CardHeader = ({
-  children,
-  className,
-  component: Component,
-  ...props
-}) => (
+const CardHeader = ({ children, className, component: Component, ...props }) => (
   <Component className={css(styles.cardHeader, className)} {...props}>
     {children}
   </Component>

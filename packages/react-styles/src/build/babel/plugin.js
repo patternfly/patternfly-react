@@ -23,11 +23,7 @@ export default declare(({ types: t }) => {
   const outputFiles = new Set();
 
   function getVariableName(path) {
-    if (
-      path.node.specifiers &&
-      path.node.specifiers[0] &&
-      path.node.specifiers[0].local
-    ) {
+    if (path.node.specifiers && path.node.specifiers[0] && path.node.specifiers[0].local) {
       return path.node.specifiers[0].local.name;
     }
     return null;
@@ -44,19 +40,12 @@ export default declare(({ types: t }) => {
   }
 
   function getPackageImportIndex(path) {
-    return path.container.findIndex(
-      p => t.isImportDeclaration(p) && p.source.value === packageName
-    );
+    return path.container.findIndex(p => t.isImportDeclaration(p) && p.source.value === packageName);
   }
 
   function createStyleSheetImport(path) {
     return t.importDeclaration(
-      [
-        t.importSpecifier(
-          t.identifier(`__PF__${styleSheetToken}`),
-          t.identifier(styleSheetToken)
-        )
-      ],
+      [t.importSpecifier(t.identifier(`__PF__${styleSheetToken}`), t.identifier(styleSheetToken))],
       t.stringLiteral(packageName)
     );
   }
@@ -78,9 +67,7 @@ export default declare(({ types: t }) => {
         const nestedPropertyName = nestedNode.property.name;
         if (!styleObject[propName][nestedPropertyName]) {
           throw rp.buildCodeFrameError(
-            `${nestedPropertyName} is not a valid ${
-              propName === nestedProperties.modifier ? 'modifier' : 'property'
-            }`
+            `${nestedPropertyName} is not a valid ${propName === nestedProperties.modifier ? 'modifier' : 'property'}`
           );
         }
       } else if (!styleObject[propName]) {
@@ -111,9 +98,7 @@ export default declare(({ types: t }) => {
             let pfStylesImportIndex = getPackageImportIndex(path);
 
             if (pfStylesImportIndex === -1) {
-              path
-                .getSibling(lastImportIndex)
-                .insertAfter(createStyleSheetImport());
+              path.getSibling(lastImportIndex).insertAfter(createStyleSheetImport());
               lastImportIndex++;
               pfStylesImportIndex = lastImportIndex;
             }
@@ -133,10 +118,7 @@ export default declare(({ types: t }) => {
               t.variableDeclarator(
                 t.identifier(varName),
                 t.callExpression(
-                  t.memberExpression(
-                    t.identifier(styleSheetSpecifier.local.name),
-                    t.identifier('parse')
-                  ),
+                  t.memberExpression(t.identifier(styleSheetSpecifier.local.name), t.identifier('parse')),
                   [t.stringLiteral(cssString)]
                 )
               )
@@ -145,31 +127,16 @@ export default declare(({ types: t }) => {
             path.remove();
           } else {
             const { srcDir, outDir } = options;
-            const cssOutputPath = getCSSOutputPath(
-              outDir,
-              rootPath,
-              cssfilePath
-            );
+            const cssOutputPath = getCSSOutputPath(outDir, rootPath, cssfilePath);
 
-            const scriptOutputPath = resolve(file.opts.filename).replace(
-              resolve(srcDir),
-              outDir
-            );
+            const scriptOutputPath = resolve(file.opts.filename).replace(resolve(srcDir), outDir);
 
             if (!outputFiles.has(cssOutputPath)) {
-              writeCSSJSFile(
-                rootPath,
-                cssfilePath,
-                cssOutputPath,
-                cssToJS(cssString, options.useModules)
-              );
+              writeCSSJSFile(rootPath, cssfilePath, cssOutputPath, cssToJS(cssString, options.useModules));
               outputFiles.add(cssOutputPath);
             }
 
-            path.node.source.value = getRelativeImportPath(
-              scriptOutputPath,
-              cssOutputPath
-            );
+            path.node.source.value = getRelativeImportPath(scriptOutputPath, cssOutputPath);
           }
         }
       }

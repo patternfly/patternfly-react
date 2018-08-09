@@ -29,17 +29,9 @@ const FilterCategoryValueSelector = ({
 
     return (
       <div className={classes} {...props}>
-        <DropdownButton
-          className="filter-pf-category-select-value filter-pf-select-dropdown"
-          title={title}
-          id={menuId}
-        >
+        <DropdownButton className="filter-pf-category-select-value filter-pf-select-dropdown" title={title} id={menuId}>
           {placeholder && (
-            <MenuItem
-              title={placeholder}
-              key="Placeholder"
-              onSelect={() => onCategoryValueSelected()}
-            >
+            <MenuItem title={placeholder} key="Placeholder" onSelect={() => onCategoryValueSelected()}>
               {placeholder}
             </MenuItem>
           )}

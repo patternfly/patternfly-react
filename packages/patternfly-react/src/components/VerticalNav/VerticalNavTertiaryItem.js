@@ -1,10 +1,6 @@
 import React from 'react';
 import { getContext } from 'recompose';
-import {
-  wrongDepth,
-  correctDepth,
-  navContextTypes
-} from './VerticalNavConstants';
+import { wrongDepth, correctDepth, navContextTypes } from './VerticalNavConstants';
 import VerticalNavItemHelper from './VerticalNavItemHelper';
 
 /**
@@ -21,9 +17,7 @@ BaseVerticalNavTertiaryItem.propTypes = {
   ...VerticalNavItemHelper.propTypes
 };
 
-const VerticalNavTertiaryItem = getContext(navContextTypes)(
-  BaseVerticalNavTertiaryItem
-);
+const VerticalNavTertiaryItem = getContext(navContextTypes)(BaseVerticalNavTertiaryItem);
 
 VerticalNavTertiaryItem.propTypes = {
   ...BaseVerticalNavTertiaryItem.propTypes

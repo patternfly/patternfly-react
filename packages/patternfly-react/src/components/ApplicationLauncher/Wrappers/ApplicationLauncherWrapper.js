@@ -4,15 +4,7 @@ import ApplicationLauncher from '../ApplicationLauncher';
 import ApplicationLauncherItem from '../ApplicationLauncherItem';
 import { noop } from '../../../common/helpers';
 
-const ApplicationLauncherWrapper = ({
-  apps,
-  noIcons,
-  grid,
-  tooltip,
-  tooltipPlacement,
-  toggleLauncher,
-  open
-}) => {
+const ApplicationLauncherWrapper = ({ apps, noIcons, grid, tooltip, tooltipPlacement, toggleLauncher, open }) => {
   const renderApps = apps.map((app, i) => (
     <ApplicationLauncherItem
       key={i}

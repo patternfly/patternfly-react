@@ -25,9 +25,9 @@ const utilizationCardAddWithInfo = stories => {
       order: null
     };
     const pfGetUtilizationDonutTooltipContents = d =>
-      `<span class="donut-tooltip-pf" style="white-space: nowrap;">${Math.round(
-        d[0].ratio * 1000
-      ) / 10} ${d[0].name}</span>`;
+      `<span class="donut-tooltip-pf" style="white-space: nowrap;">${Math.round(d[0].ratio * 1000) / 10} ${
+        d[0].name
+      }</span>`;
 
     const donutConfigTooltip = {
       contents: pfGetUtilizationDonutTooltipContents
@@ -46,16 +46,10 @@ const utilizationCardAddWithInfo = stories => {
                 <CardTitle>Network</CardTitle>
                 <CardBody>
                   <UtilizationCardDetails>
-                    <UtilizationCardDetailsCount>
-                      200
-                    </UtilizationCardDetailsCount>
+                    <UtilizationCardDetailsCount>200</UtilizationCardDetailsCount>
                     <UtilizationCardDetailsDesc>
-                      <UtilizationCardDetailsLine1>
-                        Available
-                      </UtilizationCardDetailsLine1>
-                      <UtilizationCardDetailsLine2>
-                        of 1300 Gbps
-                      </UtilizationCardDetailsLine2>
+                      <UtilizationCardDetailsLine1>Available</UtilizationCardDetailsLine1>
+                      <UtilizationCardDetailsLine2>of 1300 Gbps</UtilizationCardDetailsLine2>
                     </UtilizationCardDetailsDesc>
                   </UtilizationCardDetails>
                   <DonutChart
@@ -64,10 +58,7 @@ const utilizationCardAddWithInfo = stories => {
                     title={{ type: 'max' }}
                     tooltip={donutConfigTooltip}
                   />
-                  <SparklineChart
-                    id="line-chart-1"
-                    data={singleLineChartConfigData}
-                  />
+                  <SparklineChart id="line-chart-1" data={singleLineChartConfigData} />
                 </CardBody>
               </UtilizationCard>
             </CardGrid.Col>
@@ -78,9 +69,7 @@ const utilizationCardAddWithInfo = stories => {
 
     return inlineTemplate({
       title: 'Utilization Trend Card',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_CARDS
-      }utilization-trend-card/#code`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_CARDS}utilization-trend-card/#code`,
       story
     });
   });

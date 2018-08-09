@@ -12,8 +12,7 @@ const patternflyDocumentationTemplate = documentationLink => {
   }
   return (
     <p>
-      This pattern does not yet exist in{' '}
-      <a href="http://www.patternfly.org/pattern-library/">PatternFly</a>.
+      This pattern does not yet exist in <a href="http://www.patternfly.org/pattern-library/">PatternFly</a>.
     </p>
   );
 };
@@ -21,8 +20,7 @@ const patternflyDocumentationTemplate = documentationLink => {
 const reactBootstrapDocumentationTemplate = (documentationLink, title) => (
   <p>
     This component is based on React Bootstrap {title} component. See{' '}
-    <a href={documentationLink}>React Bootstrap Docs</a> for complete {title}{' '}
-    component documentation.
+    <a href={documentationLink}>React Bootstrap Docs</a> for complete {title} component documentation.
   </p>
 );
 
@@ -33,10 +31,7 @@ export const defaultTemplate = config => story => (
     </header>
     {patternflyDocumentationTemplate(config.documentationLink)}
     {config.reactBootstrapDocumentationLink &&
-      reactBootstrapDocumentationTemplate(
-        config.reactBootstrapDocumentationLink,
-        config.title
-      )}
+      reactBootstrapDocumentationTemplate(config.reactBootstrapDocumentationLink, config.title)}
     {config.description && <div>{config.description}</div>}
     <br />
     <br />
@@ -57,11 +52,7 @@ export const inlineTemplate = ({
       <h2>{title}</h2>
     </header>
     {patternflyDocumentationTemplate(documentationLink)}
-    {reactBootstrapDocumentationLink &&
-      reactBootstrapDocumentationTemplate(
-        reactBootstrapDocumentationLink,
-        title
-      )}
+    {reactBootstrapDocumentationLink && reactBootstrapDocumentationTemplate(reactBootstrapDocumentationLink, title)}
     {description && <div>{description}</div>}
     <br />
     <br />

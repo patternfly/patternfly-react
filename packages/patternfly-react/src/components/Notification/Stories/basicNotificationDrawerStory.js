@@ -18,10 +18,7 @@ const basicNotificationDrawerStory = stories => {
       <nav className="navbar navbar-pf-vertical">
         <nav className="collapse navbar-collapse">
           <ul className="nav navbar-nav navbar-right navbar-iconic">
-            <NotificationDrawer.Toggle
-              hasUnreadMessages
-              onClick={handleClick}
-            />
+            <NotificationDrawer.Toggle hasUnreadMessages onClick={handleClick} />
           </ul>
         </nav>
         <NotificationDrawer>
@@ -36,10 +33,7 @@ const basicNotificationDrawerStory = stories => {
                 </NotificationDrawer.PanelTitle>
                 <NotificationDrawer.PanelCounter text="3 Unread Events" />
               </NotificationDrawer.PanelHeading>
-              <NotificationDrawer.PanelCollapse
-                id="fixedCollapseOne"
-                collapseIn
-              >
+              <NotificationDrawer.PanelCollapse id="fixedCollapseOne" collapseIn>
                 <NotificationDrawer.PanelBody>
                   <Notification seen>
                     <NotificationDrawer.Dropdown pullRight id="Dropdown1">
@@ -55,13 +49,8 @@ const basicNotificationDrawerStory = stories => {
                     </NotificationDrawer.Dropdown>
                     <Icon className="pull-left" type="pf" name="info" />
                     <Notification.Content>
-                      <Notification.Message>
-                        Info Notification
-                      </Notification.Message>
-                      <Notification.Info
-                        leftText="3/31/16"
-                        rightText="12:12:44 PM"
-                      />
+                      <Notification.Message>Info Notification</Notification.Message>
+                      <Notification.Info leftText="3/31/16" rightText="12:12:44 PM" />
                     </Notification.Content>
                   </Notification>
                   <Notification seen={false}>
@@ -78,13 +67,8 @@ const basicNotificationDrawerStory = stories => {
                     </NotificationDrawer.Dropdown>
                     <Icon className="pull-left" type="pf" name="ok" />
                     <Notification.Content>
-                      <Notification.Message>
-                        Unread Notification
-                      </Notification.Message>
-                      <Notification.Info
-                        leftText="3/31/16"
-                        rightText="12:12:44 PM"
-                      />
+                      <Notification.Message>Unread Notification</Notification.Message>
+                      <Notification.Info leftText="3/31/16" rightText="12:12:44 PM" />
                     </Notification.Content>
                   </Notification>
                   <Notification>
@@ -99,20 +83,12 @@ const basicNotificationDrawerStory = stories => {
                         Delete
                       </MenuItem>
                     </NotificationDrawer.Dropdown>
-                    <Icon
-                      className="pull-left"
-                      type="pf"
-                      name="warning-triangle-o"
-                    />
+                    <Icon className="pull-left" type="pf" name="warning-triangle-o" />
                     <Notification.Content>
                       <Notification.Message>
-                        Another Event Notification that is really long to see
-                        how it reacts on smaller screens sizes.
+                        Another Event Notification that is really long to see how it reacts on smaller screens sizes.
                       </Notification.Message>
-                      <Notification.Info
-                        leftText="3/31/16"
-                        rightText="12:12:44 PM"
-                      />
+                      <Notification.Info leftText="3/31/16" rightText="12:12:44 PM" />
                     </Notification.Content>
                   </Notification>
                   <Notification>
@@ -127,27 +103,15 @@ const basicNotificationDrawerStory = stories => {
                         Delete
                       </MenuItem>
                     </NotificationDrawer.Dropdown>
-                    <Icon
-                      className="pull-left"
-                      type="pf"
-                      name="error-circle-o"
-                    />
+                    <Icon className="pull-left" type="pf" name="error-circle-o" />
                     <Notification.Content>
-                      <Notification.Message>
-                        Error Notification
-                      </Notification.Message>
-                      <Notification.Info
-                        leftText="3/31/16"
-                        rightText="12:12:44 PM"
-                      />
+                      <Notification.Message>Error Notification</Notification.Message>
+                      <Notification.Info leftText="3/31/16" rightText="12:12:44 PM" />
                     </Notification.Content>
                   </Notification>
                 </NotificationDrawer.PanelBody>
                 <NotificationDrawer.PanelAction>
-                  <NotificationDrawer.PanelActionLink
-                    className="drawer-pf-action-link"
-                    data-toggle="mark-all-read"
-                  >
+                  <NotificationDrawer.PanelActionLink className="drawer-pf-action-link" data-toggle="mark-all-read">
                     <Button bsStyle="link">Mark All Read</Button>
                   </NotificationDrawer.PanelActionLink>
                   <NotificationDrawer.PanelActionLink data-toggle="clear-all">
@@ -162,11 +126,7 @@ const basicNotificationDrawerStory = stories => {
             <NotificationDrawer.Panel>
               <NotificationDrawer.PanelHeading>
                 <NotificationDrawer.PanelTitle>
-                  <a
-                    onClick={handleClick}
-                    aria-expanded="false"
-                    className="collapsed"
-                  >
+                  <a onClick={handleClick} aria-expanded="false" className="collapsed">
                     Notification Tab 2
                   </a>
                 </NotificationDrawer.PanelTitle>
@@ -179,9 +139,7 @@ const basicNotificationDrawerStory = stories => {
     );
     return inlineTemplate({
       title: 'Notification Drawer',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
-      }notification-drawer`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION}notification-drawer`,
       story
     });
   });

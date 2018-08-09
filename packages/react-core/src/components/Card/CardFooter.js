@@ -16,12 +16,7 @@ const defaultProps = {
   component: 'div'
 };
 
-const CardFooter = ({
-  children,
-  className,
-  component: Component,
-  ...props
-}) => (
+const CardFooter = ({ children, className, component: Component, ...props }) => (
   <Component className={css(styles.cardFooter, className)} {...props}>
     {children}
   </Component>

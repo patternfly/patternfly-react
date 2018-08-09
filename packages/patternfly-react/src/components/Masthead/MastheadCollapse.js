@@ -10,9 +10,7 @@ const MastheadCollapse = ({ className, children, ...props }) => {
 
   return (
     <nav className={menusClasses} {...props}>
-      <ul className="nav navbar-nav navbar-right navbar-iconic navbar-utility">
-        {children}
-      </ul>
+      <ul className="nav navbar-nav navbar-right navbar-iconic navbar-utility">{children}</ul>
     </nav>
   );
 };

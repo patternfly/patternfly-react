@@ -29,17 +29,9 @@ const FilterValueSelector = ({
 
     return (
       <div className={classes} {...props}>
-        <DropdownButton
-          title={title}
-          id={menuId}
-          className="filter-pf-select-dropdown"
-        >
+        <DropdownButton title={title} id={menuId} className="filter-pf-select-dropdown">
           {placeholder && (
-            <MenuItem
-              title={placeholder}
-              key="Placeholder"
-              onSelect={onFilterValueSelected}
-            >
+            <MenuItem title={placeholder} key="Placeholder" onSelect={onFilterValueSelected}>
               {placeholder}
             </MenuItem>
           )}

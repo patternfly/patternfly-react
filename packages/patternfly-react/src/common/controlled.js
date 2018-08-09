@@ -39,16 +39,12 @@ const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
 
     componentDidMount() {
       this.loadPersistent();
-      window &&
-        window.addEventListener &&
-        window.addEventListener('beforeunload', this.savePersistent);
+      window && window.addEventListener && window.addEventListener('beforeunload', this.savePersistent);
     }
 
     componentWillUnmount() {
       this.savePersistent();
-      window &&
-        window.removeEventListener &&
-        window.removeEventListener('beforeunload', this.savePersistent);
+      window && window.removeEventListener && window.removeEventListener('beforeunload', this.savePersistent);
     }
 
     setControlledState = updater => {
@@ -57,10 +53,7 @@ const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
 
     loadPersistent = () => {
       if (persist && persist.length > 0) {
-        const fromPersisted =
-          window &&
-          window.sessionStorage &&
-          window.sessionStorage.getItem(this.sessionKey());
+        const fromPersisted = window && window.sessionStorage && window.sessionStorage.getItem(this.sessionKey());
         fromPersisted && this.setState(JSON.parse(fromPersisted));
       }
     };
@@ -68,26 +61,15 @@ const controlled = ({ types, defaults = {}, persist }) => WrappedComponent => {
     savePersistent = () => {
       if (persist && persist.length > 0) {
         const toPersist = selectKeys(this.state, persist);
-        window &&
-          window.sessionStorage &&
-          window.sessionStorage.setItem(
-            this.sessionKey(),
-            JSON.stringify(toPersist)
-          );
+        window && window.sessionStorage && window.sessionStorage.setItem(this.sessionKey(), JSON.stringify(toPersist));
       }
     };
 
     sessionKey = () => this.props.sessionKey || JSON.stringify(persist);
 
     render() {
-      const controlledStateProps = filterKeys(
-        this.props,
-        key => types.hasOwnProperty(key) && this.props[key] !== null
-      );
-      const otherProps = filterKeys(
-        this.props,
-        key => !types.hasOwnProperty(key)
-      );
+      const controlledStateProps = filterKeys(this.props, key => types.hasOwnProperty(key) && this.props[key] !== null);
+      const otherProps = filterKeys(this.props, key => !types.hasOwnProperty(key));
       return (
         <WrappedComponent
           setControlledState={this.setControlledState}

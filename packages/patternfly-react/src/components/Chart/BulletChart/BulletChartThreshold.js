@@ -4,10 +4,7 @@ import classNames from 'classnames';
 
 const BulletChartThreshold = ({ className, threshold, vertical, ...props }) => {
   if (threshold > 0 && threshold <= 100) {
-    const thresholdClasses = classNames(
-      'bullet-chart-pf-threshold-indicator',
-      className
-    );
+    const thresholdClasses = classNames('bullet-chart-pf-threshold-indicator', className);
     return (
       <div
         className={thresholdClasses}

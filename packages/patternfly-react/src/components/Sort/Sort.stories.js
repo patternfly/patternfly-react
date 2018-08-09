@@ -4,20 +4,10 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { Sort, SortTypeSelector, SortDirectionSelector } from '../../index';
 import { name } from '../../../package.json';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
-import {
-  MockSortExample,
-  mockSortExampleSource
-} from './__mocks__/mockSortExample';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
+import { MockSortExample, mockSortExampleSource } from './__mocks__/mockSortExample';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/Sort`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/Sort`, module);
 
 export const mockSortFields = [
   {

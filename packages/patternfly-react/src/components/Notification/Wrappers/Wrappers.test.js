@@ -21,8 +21,7 @@ const p1Notifications = [
     actions: {
       links: [
         {
-          href:
-            'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
+          href: 'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
           title: 'Open',
           external: true
         }
@@ -38,8 +37,7 @@ const p1Notifications = [
     actions: {
       links: [
         {
-          href:
-            'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
+          href: 'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
           title: 'Open',
           external: true
         }
@@ -55,8 +53,7 @@ const p1Notifications = [
     actions: {
       links: [
         {
-          href:
-            'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
+          href: 'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
           title: 'Open',
           external: true
         }
@@ -72,8 +69,7 @@ const p1Notifications = [
     actions: {
       links: [
         {
-          href:
-            'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
+          href: 'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
           title: 'Open',
           external: true
         }
@@ -138,11 +134,7 @@ test('StatefulNotificationDrawerWrapper is working properly', () => {
     return success;
   };
   const component = shallow(
-    <StatefulNotificationDrawerWrapper
-      panels={panel}
-      isExpanded
-      updateUnreadCount={mockFunc}
-    />
+    <StatefulNotificationDrawerWrapper panels={panel} isExpanded updateUnreadCount={mockFunc} />
   );
   component.instance().onMarkPanelAsRead('1'); // panelKey
   component.instance().onMarkPanelAsClear('1');
@@ -156,13 +148,7 @@ test('StatefulNotificationDrawerWrapper is working properly', () => {
 });
 
 test('StatefulToggleNotificationDrawerWrapper is working properly', () => {
-  const component = shallow(
-    <StatefulToggleNotificationDrawerWrapper
-      panels={panel}
-      isDrawerOpen
-      hasUnreadMessages
-    />
-  );
+  const component = shallow(<StatefulToggleNotificationDrawerWrapper panels={panel} isDrawerOpen hasUnreadMessages />);
   component.instance().toggleDrawer();
   component.instance().updateUnreadCount(true);
 

@@ -10,21 +10,15 @@ const defaultProps = {
   children: null
 };
 
-export const TD = ({ children }) => (
-  <td className={css(styles.cell)}>{children}</td>
-);
+export const TD = ({ children }) => <td className={css(styles.cell)}>{children}</td>;
 TD.propTypes = propTypes;
 TD.defaultProps = defaultProps;
 
-export const TH = ({ children }) => (
-  <th className={css(styles.cell)}>{children}</th>
-);
+export const TH = ({ children }) => <th className={css(styles.cell)}>{children}</th>;
 TH.propTypes = propTypes;
 TH.defaultProps = defaultProps;
 
-export const Row = ({ children }) => (
-  <tr className={css(styles.row)}>{children}</tr>
-);
+export const Row = ({ children }) => <tr className={css(styles.row)}>{children}</tr>;
 Row.propTypes = propTypes;
 Row.defaultProps = defaultProps;
 
@@ -40,8 +34,6 @@ export const Body = ({ children }) => <tbody>{children}</tbody>;
 Body.propTypes = propTypes;
 Body.defaultProps = defaultProps;
 
-export const Table = ({ children }) => (
-  <table className={css(styles.table)}>{children}</table>
-);
+export const Table = ({ children }) => <table className={css(styles.table)}>{children}</table>;
 Table.propTypes = propTypes;
 Table.defaultProps = defaultProps;

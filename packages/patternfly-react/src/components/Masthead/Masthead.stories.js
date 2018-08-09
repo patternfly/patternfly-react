@@ -10,33 +10,19 @@ import { Masthead } from './index';
 
 import { name } from '../../../package.json';
 
-import {
-  MockHorizontalMasthead,
-  mockHorizontalMastheadSource
-} from './__mocks__/mockHorizontalMasthead';
+import { MockHorizontalMasthead, mockHorizontalMastheadSource } from './__mocks__/mockHorizontalMasthead';
 import pfLogo from 'storybook/img/logo-alt.svg';
 import pfBrand from 'storybook/img/brand-alt.svg';
 
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${
-    STORYBOOK_CATEGORY.APPLICATION_FRAMEWORK
-  }/Masthead`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.APPLICATION_FRAMEWORK}/Masthead`, module);
 
 stories.addDecorator(
   defaultTemplate({
     title: 'Masthead',
-    documentationLink: `${
-      DOCUMENTATION_URL.PATTERNFLY_ORG_APPLICATION_FRAMEWORK
-    }/masthead/`
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_APPLICATION_FRAMEWORK}/masthead/`
   })
 );
 
@@ -64,11 +50,7 @@ stories.add(
       onNavToggleClick={handleNavToggle}
     >
       <Masthead.Collapse>
-        <Masthead.Dropdown
-          id="app-help-dropdown"
-          noCaret
-          title={<span title="Help" className="pficon pficon-help" />}
-        >
+        <Masthead.Dropdown id="app-help-dropdown" noCaret title={<span title="Help" className="pficon pficon-help" />}>
           <MenuItem eventKey="1">Help</MenuItem>
           <MenuItem eventKey="2">About</MenuItem>
         </Masthead.Dropdown>

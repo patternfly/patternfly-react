@@ -50,18 +50,11 @@ const MessageDialog = ({
       {!footer ? (
         <React.Fragment>
           {secondaryActionButtonContent && (
-            <Button
-              bsStyle={secondaryActionButtonBsStyle}
-              onClick={secondaryAction}
-            >
+            <Button bsStyle={secondaryActionButtonBsStyle} onClick={secondaryAction}>
               {secondaryActionButtonContent}
             </Button>
           )}
-          <Button
-            autoFocus
-            bsStyle={primaryActionButtonBsStyle}
-            onClick={primaryAction}
-          >
+          <Button autoFocus bsStyle={primaryActionButtonBsStyle} onClick={primaryAction}>
             {primaryActionButtonContent}
           </Button>
         </React.Fragment>

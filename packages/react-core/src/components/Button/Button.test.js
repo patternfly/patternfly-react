@@ -11,9 +11,7 @@ Object.values(ButtonVariant).forEach(variant => {
 
 test('it adds an aria-label to action buttons', () => {
   const label = 'aria-label test';
-  const view = shallow(
-    <Button variant={ButtonVariant.action} ariaLabel={label} />
-  );
+  const view = shallow(<Button variant={ButtonVariant.action} ariaLabel={label} />);
   expect(view.find('button').props()['aria-label']).toBe(label);
 });
 

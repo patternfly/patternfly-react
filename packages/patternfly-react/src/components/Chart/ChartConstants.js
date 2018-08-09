@@ -1,11 +1,5 @@
 import PropTypes from 'prop-types';
-import {
-  compose,
-  setDisplayName,
-  mapProps,
-  defaultProps,
-  setPropTypes
-} from 'recompose';
+import { compose, setDisplayName, mapProps, defaultProps, setPropTypes } from 'recompose';
 import C3Chart from 'react-c3js';
 
 import { c3ChartDefaults } from '../../common/patternfly';

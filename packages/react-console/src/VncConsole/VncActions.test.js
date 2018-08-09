@@ -10,22 +10,14 @@ test('placeholder render test', () => {
 
 test('VncActions renders correctly component hierarchy', () => {
   const view = shallow(
-    <VncActions
-      textSendShortcut="My Send Shortcut description"
-      textCtrlAltDel="foobar"
-      onCtrlAltDel={jest.fn()}
-    />
+    <VncActions textSendShortcut="My Send Shortcut description" textCtrlAltDel="foobar" onCtrlAltDel={jest.fn()} />
   );
   expect(view).toMatchSnapshot();
 });
 
 test('VncActions renders correctly html', () => {
   const view = shallow(
-    <VncActions
-      textSendShortcut="My Send Shortcut description"
-      textCtrlAltDel="foobar"
-      onCtrlAltDel={jest.fn()}
-    />
+    <VncActions textSendShortcut="My Send Shortcut description" textCtrlAltDel="foobar" onCtrlAltDel={jest.fn()} />
   );
   expect(view.html()).toMatchSnapshot();
 });

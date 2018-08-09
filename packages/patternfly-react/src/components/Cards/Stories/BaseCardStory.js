@@ -1,16 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { boolean } from '@storybook/addon-knobs';
-import {
-  Card,
-  CardGrid,
-  CardHeading,
-  CardDropdownButton,
-  CardTitle,
-  CardBody,
-  CardFooter,
-  CardLink
-} from '../index';
+import { Card, CardGrid, CardHeading, CardDropdownButton, CardTitle, CardBody, CardFooter, CardLink } from '../index';
 import { Icon } from '../../Icon';
 import { MenuItem } from '../../MenuItem';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
@@ -34,22 +25,14 @@ const baseCardAddWithInfo = stories => {
                 <CardTitle>Card Title</CardTitle>
                 <CardBody>[card contents]</CardBody>
                 <CardFooter>
-                  <CardDropdownButton
-                    id="cardDropdownButton1"
-                    title="Last 30 Days"
-                    onClick={action('onClick')}
-                  >
+                  <CardDropdownButton id="cardDropdownButton1" title="Last 30 Days" onClick={action('onClick')}>
                     <MenuItem eventKey="1" active>
                       Last 30 Days
                     </MenuItem>
                     <MenuItem eventKey="2">Last 60 Days</MenuItem>
                     <MenuItem eventKey="3">Last 90 Days</MenuItem>
                   </CardDropdownButton>
-                  <CardLink
-                    disabled
-                    onClick={handleClick}
-                    icon={<Icon type="pf" name="flag" />}
-                  >
+                  <CardLink disabled onClick={handleClick} icon={<Icon type="pf" name="flag" />}>
                     View CPU Events
                   </CardLink>
                 </CardFooter>
@@ -60,22 +43,14 @@ const baseCardAddWithInfo = stories => {
                 <CardTitle>Card Title</CardTitle>
                 <CardBody>[card contents]</CardBody>
                 <CardFooter>
-                  <CardDropdownButton
-                    id="cardDropdownButton1"
-                    title="Last 30 Days"
-                    onClick={action('onClick')}
-                  >
+                  <CardDropdownButton id="cardDropdownButton1" title="Last 30 Days" onClick={action('onClick')}>
                     <MenuItem eventKey="1" active>
                       Last 30 Days
                     </MenuItem>
                     <MenuItem eventKey="2">Last 60 Days</MenuItem>
                     <MenuItem eventKey="3">Last 90 Days</MenuItem>
                   </CardDropdownButton>
-                  <CardLink
-                    onClick={handleClick}
-                    href="#"
-                    icon={<Icon type="pf" name="add-circle-o" />}
-                  >
+                  <CardLink onClick={handleClick} href="#" icon={<Icon type="pf" name="add-circle-o" />}>
                     Add New Cluster
                   </CardLink>
                 </CardFooter>
@@ -84,11 +59,7 @@ const baseCardAddWithInfo = stories => {
             <CardGrid.Col xs={12} md={5}>
               <Card accented={accentedBool}>
                 <CardHeading>
-                  <CardDropdownButton
-                    id="cardDropdownButton1"
-                    title="Last 30 Days"
-                    onClick={action('onClick')}
-                  >
+                  <CardDropdownButton id="cardDropdownButton1" title="Last 30 Days" onClick={action('onClick')}>
                     <MenuItem eventKey="1" active>
                       Last 30 Days
                     </MenuItem>
@@ -114,9 +85,7 @@ const baseCardAddWithInfo = stories => {
     );
     return inlineTemplate({
       title: 'Base Card',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_CARDS
-      }base-card/#code`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_CARDS}base-card/#code`,
       story
     });
   });

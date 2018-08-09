@@ -7,8 +7,7 @@ import { patternfly } from '../../common/patternfly';
 import { getComposer } from './ChartConstants';
 
 const { pfSetDonutChartTitle } = patternfly;
-const colIndexOfMaxValue = columns =>
-  columns.reduce((iMax, x, i, arr) => (x[1] > arr[iMax][1] ? i : iMax), 0);
+const colIndexOfMaxValue = columns => columns.reduce((iMax, x, i, arr) => (x[1] > arr[iMax][1] ? i : iMax), 0);
 
 const setDonutTitle = obj => {
   let primary;
@@ -55,8 +54,6 @@ const addDonutTitle = lifecycle({
 const DonutChart = compose(
   getComposer('DONUT_CHART'),
   addDonutTitle
-)(({ className, type, data, ...props }) => (
-  <C3Chart className={className} type={type} data={data} {...props} />
-));
+)(({ className, type, data, ...props }) => <C3Chart className={className} type={type} data={data} {...props} />);
 
 export default DonutChart;

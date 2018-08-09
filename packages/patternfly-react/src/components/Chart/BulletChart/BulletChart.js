@@ -51,11 +51,7 @@ const BulletChart = ({
   customLegend,
   className
 }) => {
-  const classes = classNames(
-    'bullet-chart-pf',
-    { 'bullet-chart-pf-vertical': vertical },
-    className
-  );
+  const classes = classNames('bullet-chart-pf', { 'bullet-chart-pf-vertical': vertical }, className);
 
   // Order the ranges into an array of 3 ranges lowest to highest, insert 0's if necessary
   // this is to keep darkest as highest and use darkest colors first (ie. 1 range still uses darkest)
@@ -73,9 +69,7 @@ const BulletChart = ({
 
   const displayValues = [...values];
 
-  const defaultColors = useExtendedColors
-    ? defaultExtendedColors
-    : defaultPrimaryColors;
+  const defaultColors = useExtendedColors ? defaultExtendedColors : defaultPrimaryColors;
   displayValues.forEach((value, index) => {
     if (!value.color && defaultColors[index]) {
       value.color = defaultColors[index];
@@ -128,11 +122,7 @@ const BulletChart = ({
                 return value.tooltipFunction(value.value, value.title);
               }
 
-              return (
-                <Tooltip id={value.tooltipId || randomId()}>
-                  {`${value.title}: ${value.value}%`}
-                </Tooltip>
-              );
+              return <Tooltip id={value.tooltipId || randomId()}>{`${value.title}: ${value.value}%`}</Tooltip>;
             };
 
             return (
@@ -152,11 +142,7 @@ const BulletChart = ({
                   return range.tooltipFunction(range.value, range.title);
                 }
 
-                return (
-                  <Tooltip id={range.tooltipId || randomId()}>
-                    {`${range.title}: ${range.value}%`}
-                  </Tooltip>
-                );
+                return <Tooltip id={range.tooltipId || randomId()}>{`${range.title}: ${range.value}%`}</Tooltip>;
               };
 
               return (
@@ -182,23 +168,10 @@ const BulletChart = ({
   const renderChartData = () => (
     <div className="bullet-chart-pf-data-container">
       {renderValues()}
-      <BulletChartThreshold
-        className="warning"
-        threshold={thresholdWarning}
-        vertical={vertical}
-      />
-      <BulletChartThreshold
-        className="error"
-        threshold={thresholdError}
-        vertical={vertical}
-      />
+      <BulletChartThreshold className="warning" threshold={thresholdWarning} vertical={vertical} />
+      <BulletChartThreshold className="error" threshold={thresholdError} vertical={vertical} />
       {rangeValues.map((range, index) => (
-        <BulletChartRange
-          key={range.value}
-          value={range.value}
-          index={index + 1}
-          vertical={vertical}
-        />
+        <BulletChartRange key={range.value} value={range.value} index={index + 1} vertical={vertical} />
       ))}
     </div>
   );
@@ -231,11 +204,7 @@ const BulletChart = ({
     );
 
     if (vertical) {
-      return (
-        <div className="bullet-chart-pf-vertical-data-container">
-          {chartContainer}
-        </div>
-      );
+      return <div className="bullet-chart-pf-vertical-data-container">{chartContainer}</div>;
     }
 
     return chartContainer;

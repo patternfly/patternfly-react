@@ -19,10 +19,7 @@ test('Masthead renders properly', () => {
       onTitleClick={onTitleClickMock}
     >
       <Masthead.Collapse>
-        <Masthead.Dropdown
-          id="app-help-dropdown"
-          title={<span title="Help" className="pficon pficon-help" />}
-        >
+        <Masthead.Dropdown id="app-help-dropdown" title={<span title="Help" className="pficon pficon-help" />}>
           <MenuItem eventKey="1">Help</MenuItem>
           <MenuItem eventKey="2">About</MenuItem>
         </Masthead.Dropdown>
@@ -62,10 +59,7 @@ test('Masthead without nav toggle renders properly', () => {
       onTitleClick={onTitleClickMock}
     >
       <Masthead.Collapse>
-        <Masthead.Dropdown
-          id="app-help-dropdown"
-          title={<span title="Help" className="pficon pficon-help" />}
-        >
+        <Masthead.Dropdown id="app-help-dropdown" title={<span title="Help" className="pficon pficon-help" />}>
           <MenuItem eventKey="1">Help</MenuItem>
           <MenuItem eventKey="2">About</MenuItem>
         </Masthead.Dropdown>
@@ -92,10 +86,7 @@ test('Masthead without nav toggle renders properly', () => {
 test('MastheadCollapse renders properly', () => {
   const component = shallow(
     <Masthead.Collapse>
-      <Masthead.Dropdown
-        id="app-help-dropdown"
-        title={<span title="Help" className="pficon pficon-help" />}
-      >
+      <Masthead.Dropdown id="app-help-dropdown" title={<span title="Help" className="pficon pficon-help" />}>
         <MenuItem eventKey="1">Help</MenuItem>
         <MenuItem eventKey="2">About</MenuItem>
       </Masthead.Dropdown>
@@ -118,10 +109,7 @@ test('MastheadCollapse renders properly', () => {
 
 test('MastheadDropdown renders properly', () => {
   const component = shallow(
-    <Masthead.Dropdown
-      id="app-help-dropdown"
-      title={<span title="Help" className="pficon pficon-help" />}
-    >
+    <Masthead.Dropdown id="app-help-dropdown" title={<span title="Help" className="pficon pficon-help" />}>
       <MenuItem eventKey="1">Help</MenuItem>
       <MenuItem eventKey="2">About</MenuItem>
     </Masthead.Dropdown>
@@ -130,10 +118,6 @@ test('MastheadDropdown renders properly', () => {
 });
 
 test('CustomMastheadDropdown renders properly', () => {
-  const component = shallow(
-    <CustomMastheadDropdown className="dropdown">
-      children
-    </CustomMastheadDropdown>
-  );
+  const component = shallow(<CustomMastheadDropdown className="dropdown">children</CustomMastheadDropdown>);
   expect(component).toMatchSnapshot('CustomMastheadDropdown snapshot');
 });

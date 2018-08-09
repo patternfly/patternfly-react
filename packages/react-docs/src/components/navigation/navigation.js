@@ -42,13 +42,9 @@ class Navigation extends React.Component {
     const { searchValue } = this.state;
     const searchRE = new RegExp(searchValue, 'i');
 
-    const filteredComponentRoutes = componentRoutes.filter(c =>
-      searchRE.test(c.label)
-    );
+    const filteredComponentRoutes = componentRoutes.filter(c => searchRE.test(c.label));
 
-    const filteredLayoutRoutes = layoutRoutes.filter(c =>
-      searchRE.test(c.label)
-    );
+    const filteredLayoutRoutes = layoutRoutes.filter(c => searchRE.test(c.label));
 
     return (
       <div className={css(styles.navigation)}>
@@ -69,11 +65,7 @@ class Navigation extends React.Component {
           </div>
           <ValueToggle defaultValue>
             {({ value, toggle }) => (
-              <NavigationItemGroup
-                isExpanded={value}
-                onToggleExpand={toggle}
-                title="Style"
-              >
+              <NavigationItemGroup isExpanded={value} onToggleExpand={toggle} title="Style">
                 <NavigationItem to="/styles/tokens">Tokens</NavigationItem>
                 <NavigationItem to="/styles/icons">Icons</NavigationItem>
               </NavigationItemGroup>
@@ -82,11 +74,7 @@ class Navigation extends React.Component {
           {Boolean(filteredComponentRoutes.length) && (
             <ValueToggle defaultValue>
               {({ value, toggle }) => (
-                <NavigationItemGroup
-                  isExpanded={value}
-                  onToggleExpand={toggle}
-                  title="Components"
-                >
+                <NavigationItemGroup isExpanded={value} onToggleExpand={toggle} title="Components">
                   {filteredComponentRoutes.map(route => (
                     <NavigationItem key={route.label} to={route.to}>
                       {route.label}
@@ -99,11 +87,7 @@ class Navigation extends React.Component {
           {Boolean(filteredLayoutRoutes.length) && (
             <ValueToggle defaultValue>
               {({ value, toggle }) => (
-                <NavigationItemGroup
-                  isExpanded={value}
-                  onToggleExpand={toggle}
-                  title="Layouts"
-                >
+                <NavigationItemGroup isExpanded={value} onToggleExpand={toggle} title="Layouts">
                   {filteredLayoutRoutes.map(route => (
                     <NavigationItem key={route.label} to={route.to}>
                       {route.label}

@@ -3,18 +3,11 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { Icon } from './index';
 import { name } from '../../../package.json';
 
-const IconStories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Icon`,
-  module
-);
+const IconStories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Icon`, module);
 
 IconStories.addDecorator(withKnobs);
 IconStories.addDecorator(
@@ -27,17 +20,7 @@ IconStories.addDecorator(
 IconStories.add(
   'Icons',
   withInfo()(() => {
-    const pfIconNames = [
-      'ok',
-      'error-circle-o',
-      'warning-triangle-o',
-      'close',
-      'edit',
-      'key',
-      'info',
-      'on',
-      'print'
-    ];
+    const pfIconNames = ['ok', 'error-circle-o', 'warning-triangle-o', 'close', 'edit', 'key', 'info', 'on', 'print'];
     const pfIconsList = pfIconNames.map((iconName, index) => (
       <tr key={index}>
         <td>
@@ -143,10 +126,7 @@ IconStories.add(
         </table>
         <h4>
           For more classes and effects you can also check:&nbsp;
-          <a
-            target="blank"
-            href="https://fontawesome.com/how-to-use/svg-with-js"
-          >
+          <a target="blank" href="https://fontawesome.com/how-to-use/svg-with-js">
             https://fontawesome.com/how-to-use/svg-with-js
           </a>
         </h4>

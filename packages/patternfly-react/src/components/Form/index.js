@@ -15,13 +15,4 @@ Form.HelpBlock = HelpBlock;
 Form.InputGroup = InputGroup;
 Form.Radio = Radio;
 
-export {
-  Checkbox,
-  ControlLabel,
-  Form,
-  FormControl,
-  FormGroup,
-  HelpBlock,
-  InputGroup,
-  Radio
-};
+export { Checkbox, ControlLabel, Form, FormControl, FormGroup, HelpBlock, InputGroup, Radio };

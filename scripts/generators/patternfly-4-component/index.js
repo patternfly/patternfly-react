@@ -6,11 +6,7 @@ const templatesDir = resolve(__dirname, './templates');
 const reactCoreRoot = resolve(__dirname, '../../../packages/react-core');
 const reactDocsRoot = resolve(__dirname, '../../../packages/react-docs');
 
-const componentTypes = new Map([
-  ['component', 'components'],
-  ['layout', 'layouts'],
-  ['internal', 'internal']
-]);
+const componentTypes = new Map([['component', 'components'], ['layout', 'layouts'], ['internal', 'internal']]);
 
 function setPF4Generators(plop) {
   plop.setGenerator('PatternFly 4 Component', {
@@ -40,10 +36,7 @@ function setPF4Generators(plop) {
           base,
           data,
           type: 'addMany',
-          destination: join(
-            reactCoreRoot,
-            './src/{{typeDir}}/{{componentName}}/'
-          ),
+          destination: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/'),
           templateFiles: join(base, '*.js')
         },
         {
@@ -55,10 +48,7 @@ function setPF4Generators(plop) {
         typeValue !== componentTypes.get('internal') && {
           data,
           type: 'add',
-          path: join(
-            reactDocsRoot,
-            './src/pages/{{typeDir}}/{{dashCase componentName}}.js'
-          ),
+          path: join(reactDocsRoot, './src/pages/{{typeDir}}/{{dashCase componentName}}.js'),
           templateFile: join(templatesDir, './docs.hbs')
         }
       ].filter(Boolean);

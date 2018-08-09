@@ -9,14 +9,10 @@ export const getOffsetKey = size => `${size}Offset`;
 
 export const getSizeSuffix = size => (size ? `-on-${size}` : '');
 
-export const getSpanModifier = (value, size) =>
-  getModifier(styles, `${value}-col${getSizeSuffix(size)}`);
+export const getSpanModifier = (value, size) => getModifier(styles, `${value}-col${getSizeSuffix(size)}`);
 
-export const getGridSpanModifier = (value, size) =>
-  getModifier(styles, `-all-${value}-col${getSizeSuffix(size)}`);
+export const getGridSpanModifier = (value, size) => getModifier(styles, `-all-${value}-col${getSizeSuffix(size)}`);
 
-export const getRowSpanModifier = (value, size) =>
-  getModifier(styles, `${value}-row${getSizeSuffix(size)}`);
+export const getRowSpanModifier = (value, size) => getModifier(styles, `${value}-row${getSizeSuffix(size)}`);
 
-export const getOffsetModifier = (value, size) =>
-  getModifier(styles, `offset-${value}-col${getSizeSuffix(size)}`);
+export const getOffsetModifier = (value, size) => getModifier(styles, `offset-${value}-col${getSizeSuffix(size)}`);

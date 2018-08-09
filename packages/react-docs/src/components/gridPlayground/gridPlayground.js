@@ -17,12 +17,7 @@ function createGridItem() {
 
 class GridPlayground extends React.Component {
   state = {
-    gridItems: [
-      createGridItem(),
-      createGridItem(),
-      createGridItem(),
-      createGridItem()
-    ]
+    gridItems: [createGridItem(), createGridItem(), createGridItem(), createGridItem()]
   };
 
   handleAddGridItem = () => {
@@ -63,11 +58,7 @@ class GridPlayground extends React.Component {
           </Button>
           <div className={css(styles.controlList)}>
             {this.state.gridItems.map(item => (
-              <ItemControl
-                key={item.id}
-                onUpdateItem={this.handleGridItemUpdate}
-                {...item}
-              />
+              <ItemControl key={item.id} onUpdateItem={this.handleGridItemUpdate} {...item} />
             ))}
           </div>
         </GridItem>

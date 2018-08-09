@@ -14,16 +14,10 @@ export const basicExample = (props, firstItemClass) => (
       <VerticalNav.Badge count={42} />
     </VerticalNav.Item>
     <VerticalNav.Item title="Item 2" iconClass="fa fa-star">
-      <VerticalNav.SecondaryItem
-        title="Item 2-A"
-        onClick={() => alert('Item 2-A!')}
-      >
+      <VerticalNav.SecondaryItem title="Item 2-A" onClick={() => alert('Item 2-A!')}>
         <VerticalNav.Badge count={9999} tooltip="Whoa, that's a lot" />
       </VerticalNav.SecondaryItem>
-      <VerticalNav.SecondaryItem
-        title="Item 2-B (external link)"
-        href="http://www.patternfly.org"
-      />
+      <VerticalNav.SecondaryItem title="Item 2-B (external link)" href="http://www.patternfly.org" />
       <VerticalNav.SecondaryItem title="Divider" isDivider />
       <VerticalNav.SecondaryItem title="Item 2-C" />
     </VerticalNav.Item>

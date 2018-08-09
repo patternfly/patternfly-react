@@ -56,11 +56,7 @@ export class MockModalManager extends React.Component {
             </form>
           </Modal.Body>
           <Modal.Footer>
-            <Button
-              bsStyle="default"
-              className="btn-cancel"
-              onClick={this.close}
-            >
+            <Button bsStyle="default" className="btn-cancel" onClick={this.close}>
               Cancel
             </Button>
             <Button bsStyle="primary" onClick={this.close}>

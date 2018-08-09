@@ -5,9 +5,7 @@ const { parse: parseCSS, stringify: stringifyCSS } = require('css');
 
 const baseCSSFilename = 'patternfly-base.css';
 const stylesDir = resolve(__dirname, '../dist/styles');
-const pfDir = dirname(
-  require.resolve(`@patternfly/patternfly-next/${baseCSSFilename}`)
-);
+const pfDir = dirname(require.resolve(`@patternfly/patternfly-next/${baseCSSFilename}`));
 
 const css = readFileSync(join(pfDir, baseCSSFilename), 'utf8');
 const ast = parseCSS(css);
@@ -28,9 +26,7 @@ ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
     case 'comment':
       return false;
     case 'font-face':
-      const fontFamilyDecl = rule.declarations.find(
-        decl => decl.property === 'font-family'
-      );
+      const fontFamilyDecl = rule.declarations.find(decl => decl.property === 'font-family');
       return !unusedFontFamilyRegEx.test(fontFamilyDecl.value);
     default:
       return true;

@@ -19,16 +19,12 @@ describe('InlineEdit', () => {
   };
 
   test('it renders value', () => {
-    const component = render(
-      <InlineEdit {...baseProps} isEditing={() => false} />
-    );
+    const component = render(<InlineEdit {...baseProps} isEditing={() => false} />);
     expect(component).toMatchSnapshot();
   });
 
   test('it renders edit input', () => {
-    const component = render(
-      <InlineEdit {...baseProps} isEditing={() => true} />
-    );
+    const component = render(<InlineEdit {...baseProps} isEditing={() => true} />);
     expect(component).toMatchSnapshot();
   });
 });

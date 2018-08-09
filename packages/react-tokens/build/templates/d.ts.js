@@ -6,10 +6,7 @@ module.exports = {
     Object.keys(tokens).reduce((acc, key) => {
       const token = tokens[key];
       const tokenTypeValue = Object.keys(token)
-        .map(
-          tokenKey =>
-            `${JSON.stringify(tokenKey)}: ${JSON.stringify(token[tokenKey])};`
-        )
+        .map(tokenKey => `${JSON.stringify(tokenKey)}: ${JSON.stringify(token[tokenKey])};`)
         .join(' ');
       return `${acc}export const ${key}: { ${tokenTypeValue} }\n`;
     }, '')

@@ -19,20 +19,10 @@ const defaultProps = {
   component: 'div'
 };
 
-const Split = ({
-  gutter,
-  className,
-  children,
-  component: Component,
-  ...props
-}) => (
+const Split = ({ gutter, className, children, component: Component, ...props }) => (
   <Component
     {...props}
-    className={css(
-      styles.split,
-      gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter),
-      className
-    )}
+    className={css(styles.split, gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter), className)}
   >
     {children}
   </Component>

@@ -5,11 +5,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import LinkTo from '@storybook/addon-links/react';
 
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { name } from '../../../package.json';
 
 import MessageDialog from './MessageDialog';
@@ -20,40 +16,26 @@ import MessageDialogToggleableOptions, {
 import MessageDialogNondestructiveAction, {
   MessageDialogNondestructiveActionSource
 } from './Stories/MessageDialogNondestructiveAction';
-import MessageDialogError, {
-  MessageDialogErrorSource
-} from './Stories/MessageDialogError';
+import MessageDialogError, { MessageDialogErrorSource } from './Stories/MessageDialogError';
 import MessageDialogDeleteConfirmation, {
   MessageDialogDeleteConfirmationSource
 } from './Stories/MessageDialogDeleteConfirmation';
-import MessageDialogWarning, {
-  MessageDialogWarningSource
-} from './Stories/MessageDialogWarning';
-import MessageDialogQuestion, {
-  MessageDialogQuestionSource
-} from './Stories/MessageDialogQuestion';
-import MessageDialogInfo, {
-  MessageDialogInfoSource
-} from './Stories/MessageDialogInfo';
-import MessageDialogSuccess, {
-  MessageDialogSuccessSource
-} from './Stories/MessageDialogSuccess';
+import MessageDialogWarning, { MessageDialogWarningSource } from './Stories/MessageDialogWarning';
+import MessageDialogQuestion, { MessageDialogQuestionSource } from './Stories/MessageDialogQuestion';
+import MessageDialogInfo, { MessageDialogInfoSource } from './Stories/MessageDialogInfo';
+import MessageDialogSuccess, { MessageDialogSuccessSource } from './Stories/MessageDialogSuccess';
 
-const modalStoryKind = `${storybookPackageName(name)}/${
-  STORYBOOK_CATEGORY.WIDGETS
-}/Modal Overlay`;
+const modalStoryKind = `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Modal Overlay`;
 
 const storyDescription = (
   <React.Fragment>
     <p>
-      This component is based on the React Bootstrap Modal component. Please
-      visit the following for complete documentation
+      This component is based on the React Bootstrap Modal component. Please visit the following for complete
+      documentation
     </p>
     <ul>
       <li>
-        <a href={`${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}modal/`}>
-          React-Bootstrap Modal
-        </a>
+        <a href={`${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}modal/`}>React-Bootstrap Modal</a>
       </li>
       <li>
         <LinkTo kind={modalStoryKind} story="Modal">
@@ -64,12 +46,7 @@ const storyDescription = (
   </React.Fragment>
 );
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${
-    STORYBOOK_CATEGORY.COMMUNICATION
-  }/Message Dialog`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.COMMUNICATION}/Message Dialog`, module);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
