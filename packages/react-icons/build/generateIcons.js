@@ -4,9 +4,9 @@ const nodePlop = require('node-plop');
 
 const plop = nodePlop(path.resolve(__dirname, './generatorConfig.js'));
 const pascalCase = plop.getHelper('pascalCase');
-const camelCase = plop.getHelper('camelCase');
+const kebabCase = plop.getHelper('kebabCase');
 
-const allIcons = icons.fontAwesome.map(getFontAwesomeIcon);
+const allIcons = icons.fontAwesome.solid.map(getFontAwesomeIcon);
 
 plop
   .getGenerator('icons')
@@ -14,12 +14,12 @@ plop
   .catch(console.log); // eslint-disable-line
 
 function getFontAwesomeIcon(name) {
-  const faIconName = camelCase(`fa-${name}`);
-  const faIconDef = require(`@fortawesome/free-solid-svg-icons/${faIconName}`); // eslint-disable-line
+  const faIconDef = require(`@fortawesome/free-solid-svg-icons/${name}`); // eslint-disable-line
+  const iconName = kebabCase(name.substr(2)); // remove fa and make name kebab cased
 
   return {
-    id: `${name}-icon`,
-    name: pascalCase(`${name}-icon`),
+    id: `${iconName}-icon`,
+    name: pascalCase(`${iconName}-icon`),
     width: faIconDef.width,
     height: faIconDef.height,
     svgPath: faIconDef.svgPathData
