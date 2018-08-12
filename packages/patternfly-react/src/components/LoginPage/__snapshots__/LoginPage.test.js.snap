@@ -63,7 +63,7 @@ exports[`Component matches snapshot 1`] = `
                   class="login-pf-header "
                 >
                   <div
-                    class="bootstrap-select "
+                    class="bootstrap-select btn-group "
                   >
                     <div
                       class="dropdown btn-group"
@@ -83,7 +83,7 @@ exports[`Component matches snapshot 1`] = `
                       </button>
                       <ul
                         aria-labelledby="language-picker"
-                        class="dropdown-menu dropdown-menu-right"
+                        class="dropdown-menu"
                         role="menu"
                       >
                         <li

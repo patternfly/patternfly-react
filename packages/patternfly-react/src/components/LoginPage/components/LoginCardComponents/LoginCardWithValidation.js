@@ -61,23 +61,14 @@ class LoginCardWithValidation extends React.Component {
         ...this.state[inputType],
         isFocused: false,
         showError: false
-      }
+      },
+      isCapsLock: false
     });
   };
 
-  onInputMouseEnter = (e, inputType) => {
+  onKeyPress = (e, inputType) => {
     this.props[inputType].onMouseEnter && this.props[inputType].onMouseEnter(e);
-    this.onCapsLockAsModifier(e);
-  };
-
-  onCapsLockAsModifier = e => {
-    this.setState({
-      isCapsLock: e.getModifierState && e.getModifierState('CapsLock'),
-      passwordField: {
-        ...this.state.passwordField,
-        warningType: 'capsLock'
-      }
-    });
+    this.handleCapsLock(e);
   };
 
   onSubmit = e => {
@@ -100,13 +91,16 @@ class LoginCardWithValidation extends React.Component {
 
   getModifiedProps = () => {
     const { usernameField, passwordField } = this.props;
+    const passwordFieldWarningType = this.state.isCapsLock
+      ? 'capsLock'
+      : this.state.passwordField.warningType;
     return {
       usernameField: {
         ...usernameField,
         onChange: e => this.onInputChange(e, 'usernameField'),
         onFocus: e => this.onInputFocus(e, 'usernameField'),
         onBlur: e => this.onInputBlur(e, 'usernameField'),
-        onMouseEnter: e => this.onInputMouseEnter(e, 'usernameField'),
+        onKeyPress: e => this.onKeyPress(e, 'usernameField'),
         error: usernameField.errors[this.state.usernameField.errorType],
         showError: this.state.usernameField.showError
       },
@@ -115,8 +109,8 @@ class LoginCardWithValidation extends React.Component {
         onChange: e => this.onInputChange(e, 'passwordField'),
         onFocus: e => this.onInputFocus(e, 'passwordField'),
         onBlur: e => this.onInputBlur(e, 'passwordField'),
-        onMouseEnter: e => this.onInputMouseEnter(e, 'passwordField'),
-        warning: passwordField.warnings[this.state.passwordField.warningType],
+        onKeyPress: e => this.onKeyPress(e, 'passwordField'),
+        warning: passwordField.warnings[passwordFieldWarningType],
         showWarning:
           this.state.passwordField.isFocused && this.state.isCapsLock,
         error: passwordField.errors[this.state.passwordField.errorType],
@@ -193,14 +187,24 @@ class LoginCardWithValidation extends React.Component {
   };
 
   toggleCapsLock = e => {
+    if (!this.state.passwordField.value) {
+      return;
+    }
     e.key === 'CapsLock' &&
       this.setState({
-        isCapsLock: !this.state.isCapsLock,
-        passwordField: {
-          ...this.state.passwordField,
-          warningType: 'capsLock'
-        }
+        isCapsLock: !this.state.isCapsLock
       });
+  };
+
+  handleCapsLock = e => {
+    const keyCode = e.keyCode ? e.keyCode : e.which;
+    const shiftKey = e.shiftKey ? e.shiftKey : keyCode === 16;
+    const isCapsLock =
+      (keyCode >= 65 && keyCode <= 90 && !shiftKey) ||
+      (keyCode >= 97 && keyCode <= 122 && shiftKey);
+    this.setState({
+      isCapsLock
+    });
   };
 
   isUserNameValid = () => {

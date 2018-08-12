@@ -121,7 +121,7 @@ test('Toggle Caps lock warning in password field by the events: focus, blur and 
 
   passwordElement
     .simulate('focus')
-    .simulate('mouseEnter', { getModifierState: () => true });
+    .simulate('keypress', { keyCode: 80, shiftKey: false });
 
   expect(
     component
@@ -139,7 +139,7 @@ test('Toggle Caps lock warning in password field by the events: focus, blur and 
 
   passwordElement
     .simulate('blur')
-    .simulate('mouseEnter', { getModifierState: () => true });
+    .simulate('keypress', { keyCode: 80, shiftKey: false });
 
   expect(
     component
@@ -149,7 +149,7 @@ test('Toggle Caps lock warning in password field by the events: focus, blur and 
   ).toEqual(false);
 
   passwordElement
-    .simulate('mouseEnter', { getModifierState: () => true })
+    .simulate('keypress', { keyCode: 80, shiftKey: false })
     .simulate('focus');
 
   expect(
@@ -160,8 +160,11 @@ test('Toggle Caps lock warning in password field by the events: focus, blur and 
   ).toEqual(true);
 });
 
-test('Toggle CapsLock in WithValidation cause warning to show under password field when focused', () => {
+test('Toggle CapsLock cause warning to show under password field when focused', () => {
   const component = mount(<LoginPage {...createProps()} />);
+  component
+    .find('input[type="password"]')
+    .simulate('change', { target: { value: 'test' } });
   component
     .find(WithValidation)
     .instance()

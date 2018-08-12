@@ -15,7 +15,7 @@ const LoginCardInput = ({
   onChange,
   onFocus,
   onBlur,
-  onMouseEnter,
+  onKeyPress,
   showError,
   showWarning,
   className,
@@ -38,7 +38,7 @@ const LoginCardInput = ({
         onChange={onChange}
         onFocus={onFocus}
         onBlur={onBlur}
-        onMouseEnter={onMouseEnter}
+        onKeyPress={onKeyPress}
         autoComplete={autoComplete}
       />
 
@@ -60,7 +60,7 @@ LoginCardInput.propTypes = {
   showWarning: PropTypes.bool,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
-  onMouseEnter: PropTypes.func,
+  onKeyPress: PropTypes.func,
   showError: PropTypes.bool,
   className: PropTypes.string,
   autoComplete: PropTypes.string
@@ -77,7 +77,7 @@ LoginCardInput.defaultProps = {
   showWarning: false,
   onBlur: noop,
   onFocus: noop,
-  onMouseEnter: noop,
+  onKeyPress: noop,
   showError: false,
   className: '',
   autoComplete: ''

@@ -1,11 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Collapse from 'react-collapse';
 import { Button, Icon } from '../../../../index';
 import LoginCardSocialLink from './LoginCardSocialLink';
 
 class LoginCardSocialColumns extends React.Component {
-  state = { expend: false };
+  state = {
+    expend: false,
+    width: window.innerWidth
+  };
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateWindowWidth);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowWidth);
+  }
+
+  updateWindowWidth = () => {
+    this.setState({
+      width: window.innerWidth
+    });
+  };
 
   getListItems = () => {
     this.hiddenLinks = [];
@@ -40,30 +56,28 @@ class LoginCardSocialColumns extends React.Component {
     if (!links) {
       return null;
     }
-    const { expend } = this.state;
-    const expendButton = links.length > shownButtons && (
-      <Button
-        bsStyle="link"
-        bsClass="btn btn-link login-pf-social-toggle"
-        onClick={e => this.toggleExpend(e)}
-      >
-        {expend ? 'Less' : 'More'} &nbsp;
-        <Icon name={`angle-${expend ? 'up' : 'down'}`} />
-      </Button>
-    );
+    const { expend, width } = this.state;
+    const expendButton = width > 768 &&
+      links.length > shownButtons && (
+        <Button
+          bsStyle="link"
+          bsClass="btn btn-link login-pf-social-toggle"
+          onClick={e => this.toggleExpend(e)}
+        >
+          {expend ? 'Less' : 'More'} &nbsp;
+          <Icon name={`angle-${expend ? 'up' : 'down'}`} />
+        </Button>
+      );
 
     const doubleColumn = links.length > 4 ? 'login-pf-social-double-col' : '';
+    const moreItems = expend || width < 768 ? this.getHiddenListItems() : null;
     return (
       <div>
         <hr className="login-pf-social-divider visible-xs" />
         <ul className={`login-pf-social list-unstyled ${doubleColumn}`}>
           {this.getListItems()}
+          {moreItems}
         </ul>
-        <Collapse isOpened={expend}>
-          <ul className={`login-pf-social list-unstyled ${doubleColumn}`}>
-            {this.getHiddenListItems()}
-          </ul>
-        </Collapse>
         {expendButton}
       </div>
     );

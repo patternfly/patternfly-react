@@ -41,8 +41,8 @@ class LoginLanguagePicker extends React.Component {
     ));
 
     return (
-      <div className={`bootstrap-select ${this.props.className}`}>
-        <DropdownButton pullRight title={this.state.title} id={this.props.id}>
+      <div className={`bootstrap-select btn-group ${this.props.className}`}>
+        <DropdownButton title={this.state.title} id={this.props.id}>
           {menuItems}
         </DropdownButton>
       </div>
