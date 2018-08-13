@@ -16,10 +16,7 @@ const footerLinks = [
 const cardHeader = {
   title: 'Log In to Your Account',
   selectedLanguage: { value: 'en', text: 'English' },
-  availableLanguages: [
-    { value: 'en', text: 'English' },
-    { value: 'fr', text: 'French' }
-  ]
+  availableLanguages: [{ value: 'en', text: 'English' }, { value: 'fr', text: 'French' }]
 };
 
 const signUp = {
@@ -34,8 +31,7 @@ const rememberMe = 'Keep me logged in for 30 days';
 const forgotPassword = 'Forgot password?';
 
 const form = {
-  error:
-    'Your account has been blocked. Contact your administrator to unblock it.',
+  error: 'Your account has been blocked. Contact your administrator to unblock it.',
   submitText: 'Log In'
 };
 

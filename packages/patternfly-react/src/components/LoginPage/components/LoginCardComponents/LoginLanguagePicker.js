@@ -15,9 +15,7 @@ class LoginLanguagePicker extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { selectedLanguage, availableLanguages } = nextProps;
-    const title =
-      (selectedLanguage && selectedLanguage.text) ||
-      (availableLanguages && availableLanguages[0].text);
+    const title = (selectedLanguage && selectedLanguage.text) || (availableLanguages && availableLanguages[0].text);
 
     this.setState({ title });
   }

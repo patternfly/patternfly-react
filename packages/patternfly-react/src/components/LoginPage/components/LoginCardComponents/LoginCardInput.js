@@ -26,11 +26,7 @@ const LoginCardInput = ({
     (showWarning && <LoginCardInputWarning>{warning}</LoginCardInputWarning>);
 
   return (
-    <FormGroup
-      className={`login_card_input ${className}`}
-      controlId={id}
-      validationState={showError ? 'error' : null}
-    >
+    <FormGroup className={`login_card_input ${className}`} controlId={id} validationState={showError ? 'error' : null}>
       <FormControl
         type={type}
         placeholder={placeholder}

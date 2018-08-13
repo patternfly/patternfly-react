@@ -17,9 +17,7 @@ import LoginCardSocialColumns from './LoginCardSocialColumns';
 import SocialLoginCard from './SocialLoginCard';
 import BasicLoginCardLayout from './BasicLoginCardLayout';
 
-const LoginCard = ({ children, ...props }) => (
-  <Card {...props}>{children}</Card>
-);
+const LoginCard = ({ children, ...props }) => <Card {...props}>{children}</Card>;
 
 LoginCard.propTypes = {
   children: PropTypes.node

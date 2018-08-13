@@ -4,12 +4,7 @@ import RememberMe from './LoginCardRememberMe';
 import { FormGroup } from '../../../../index';
 import ForgotPassword from './LoginCardForgotPassword';
 
-const LoginCardSettings = ({
-  rememberMe,
-  forgotPassword,
-  className,
-  ...props
-}) => (
+const LoginCardSettings = ({ rememberMe, forgotPassword, className, ...props }) => (
   <FormGroup {...props} className={`login-pf-settings ${className}`}>
     <RememberMe {...rememberMe} />
     <ForgotPassword {...forgotPassword} />

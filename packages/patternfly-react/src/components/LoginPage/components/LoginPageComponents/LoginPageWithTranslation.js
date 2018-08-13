@@ -11,9 +11,7 @@ class LoginPageWithTranslation extends React.Component {
     this.state = {
       language:
         (selectedLanguage && selectedLanguage.value) ||
-        (availableLanguages &&
-          availableLanguages[0] &&
-          availableLanguages[0].value),
+        (availableLanguages && availableLanguages[0] && availableLanguages[0].value),
       passwordValue: null,
       usernameValue: null,
       translatedProps: {}

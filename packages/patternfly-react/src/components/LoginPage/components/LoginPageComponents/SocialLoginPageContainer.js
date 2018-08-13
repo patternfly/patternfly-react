@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import LoginPageContainer from './LoginPageContainer';
 
 const SocialLoginPageContainer = ({ children, className, ...props }) => (
-  <LoginPageContainer
-    {...props}
-    className={`${className} login-pf-page-accounts`}
-  >
+  <LoginPageContainer {...props} className={`${className} login-pf-page-accounts`}>
     {children}
   </LoginPageContainer>
 );
