@@ -23,9 +23,11 @@ exports[`TreeView renders properly 1`] = `
         class="treeitem-row"
       >
         <span
+          aria-hidden="true"
           class="icon indent expand-icon fa fa-angle-right"
         />
         <span
+          aria-hidden="true"
           class="icon node-icon indent fa fa-folder"
         />
         Parent 1
@@ -60,9 +62,11 @@ exports[`TreeView renders properly 1`] = `
               class="indent"
             />
             <span
+              aria-hidden="true"
               class="icon indent expand-icon fa fa-angle-right"
             />
             <span
+              aria-hidden="true"
               class="icon node-icon indent fa fa-file-o"
             />
             Child 1
@@ -108,9 +112,11 @@ exports[`TreeView renders properly 1`] = `
                   class="indent"
                 />
                 <span
+                  aria-hidden="true"
                   class="icon indent glyphicon"
                 />
                 <span
+                  aria-hidden="true"
                   class="icon node-icon indent fa fa-file-o"
                 />
                 Grandchild 1
@@ -153,9 +159,11 @@ exports[`TreeView renders properly 1`] = `
                   class="indent"
                 />
                 <span
+                  aria-hidden="true"
                   class="icon indent glyphicon"
                 />
                 <span
+                  aria-hidden="true"
                   class="icon node-icon indent fa fa-file-o"
                 />
                 Grandchild 2
@@ -189,9 +197,11 @@ exports[`TreeView renders properly 1`] = `
               class="indent"
             />
             <span
+              aria-hidden="true"
               class="icon indent expand-icon fa fa-angle-right"
             />
             <span
+              aria-hidden="true"
               class="icon node-icon indent fa fa-file-o"
             />
             Child 2
@@ -237,9 +247,11 @@ exports[`TreeView renders properly 1`] = `
                   class="indent"
                 />
                 <span
+                  aria-hidden="true"
                   class="icon indent glyphicon"
                 />
                 <span
+                  aria-hidden="true"
                   class="icon node-icon indent fa fa-file-o"
                 />
                 Grandchild 1
@@ -282,9 +294,11 @@ exports[`TreeView renders properly 1`] = `
                   class="indent"
                 />
                 <span
+                  aria-hidden="true"
                   class="icon indent glyphicon"
                 />
                 <span
+                  aria-hidden="true"
                   class="icon node-icon indent fa fa-file-o"
                 />
                 Grandchild 2
@@ -308,9 +322,11 @@ exports[`TreeView renders properly 1`] = `
         class="treeitem-row"
       >
         <span
+          aria-hidden="true"
           class="icon indent expand-icon fa fa-angle-right"
         />
         <span
+          aria-hidden="true"
           class="icon node-icon indent fa fa-folder"
         />
         Parent 2
@@ -344,9 +360,11 @@ exports[`TreeView renders properly 1`] = `
               class="indent"
             />
             <span
+              aria-hidden="true"
               class="icon indent glyphicon"
             />
             <span
+              aria-hidden="true"
               class="icon node-icon indent fa fa-file-o"
             />
             Child 1
@@ -367,9 +385,11 @@ exports[`TreeView renders properly 1`] = `
         class="treeitem-row"
       >
         <span
+          aria-hidden="true"
           class="icon indent glyphicon"
         />
         <span
+          aria-hidden="true"
           class="icon node-icon indent fa fa-folder"
         />
         Parent 3
@@ -388,9 +408,11 @@ exports[`TreeView renders properly 1`] = `
         class="treeitem-row"
       >
         <span
+          aria-hidden="true"
           class="icon indent glyphicon"
         />
         <span
+          aria-hidden="true"
           class="icon node-icon indent fa fa-folder"
         />
         Parent 4
@@ -409,9 +431,11 @@ exports[`TreeView renders properly 1`] = `
         class="treeitem-row"
       >
         <span
+          aria-hidden="true"
           class="icon indent glyphicon"
         />
         <span
+          aria-hidden="true"
           class="icon node-icon indent fa fa-folder"
         />
         Parent 5
