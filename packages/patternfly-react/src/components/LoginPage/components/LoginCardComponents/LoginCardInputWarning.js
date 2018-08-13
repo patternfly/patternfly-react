@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '../../../../index';
 
-const LoginInputWarning = ({ children, className, ...props }) =>
+const LoginCardInputWarning = ({ children, className, ...props }) =>
   children && (
     <div style={{ marginTop: '5px' }} className={className} {...props}>
       <Icon type="pf" name="warning-triangle-o" />
@@ -10,12 +10,12 @@ const LoginInputWarning = ({ children, className, ...props }) =>
     </div>
   );
 
-LoginInputWarning.propTypes = {
+LoginCardInputWarning.propTypes = {
   children: PropTypes.string
 };
 
-LoginInputWarning.defaultProps = {
+LoginCardInputWarning.defaultProps = {
   children: null
 };
 
-export default LoginInputWarning;
+export default LoginCardInputWarning;

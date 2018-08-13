@@ -7,6 +7,7 @@ import FooterLinks from './components/LoginPageComponents/LoginFooterLinks';
 import LoginCard from './components/LoginCardComponents/LoginCard';
 import WithTranslation from './components/LoginPageComponents/LoginPageWithTranslation';
 import LoginPageAlert from './components/LoginPageComponents/LoginPageAlert';
+import LoginPageLink from './components/LoginPageComponents/LoginPageLink';
 import SocialLoginPage from './SocialLoginPage';
 import SocialLoginPageContainer from './components/LoginPageComponents/SocialLoginPageContainer';
 import BasicLoginPageLayout from './components/LoginPageComponents/BasicLoginPageLayout';
@@ -54,6 +55,7 @@ LoginPage.Pattern = LoginPagePattern;
 LoginPage.Social = SocialLoginPage;
 LoginPage.SocialContainer = SocialLoginPageContainer;
 LoginPage.BasicLayout = BasicLoginPageLayout;
+LoginPage.Link = LoginPageLink;
 
 LoginPagePattern.propTypes = {
   container: PropTypes.shape({ ...LoginPage.Container.propTypes }),

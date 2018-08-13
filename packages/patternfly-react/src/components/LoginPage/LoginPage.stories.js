@@ -11,9 +11,7 @@ import {
 import LoginPage from './LoginPage';
 import englishMessages from './mocks/messages.en';
 import frenchMessages from './mocks/messages.fr';
-import logoSrc from './assets/img/login-screen-logo.svg';
-import backgroundUrl from './assets/img/login-screen-bg.jpg';
-import logos from './assets/img/logos';
+import images from './assets/img';
 import { name } from '../../../package.json';
 
 const stories = storiesOf(
@@ -45,7 +43,7 @@ const createProps = () => {
   });
   return {
     container: {
-      backgroundUrl,
+      backgroundUrl: images.background,
       translations: { en: englishMessages, fr: frenchMessages },
       className: '',
       alert: {
@@ -55,7 +53,7 @@ const createProps = () => {
       }
     },
     header: {
-      logoSrc,
+      logoSrc: images.brand,
       logoTitle: header.logo,
       caption: header.caption
     },
@@ -117,75 +115,89 @@ const createProps = () => {
 
 const createLogoList = () => {
   const socialLinkClick = e => storyAction(e, 'Social Link was clicked');
+  const {
+    google,
+    facebook,
+    linkedin,
+    github,
+    instagram,
+    stackExchange,
+    twitter,
+    git,
+    openID,
+    dropbox,
+    fedora,
+    skype
+  } = images;
   return [
     {
-      src: logos.google,
+      src: google,
       alt: 'Google',
       text: 'Google',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.facebook,
+      src: facebook,
       alt: 'Facebook',
       text: 'Facebook',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.linkedin,
+      src: linkedin,
       alt: 'Linkedin',
       text: 'Linkedin',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.github,
+      src: github,
       alt: 'Github',
       text: 'Github',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.instagram,
+      src: instagram,
       alt: 'Instagram',
       text: 'Instagram',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.git,
+      src: git,
       alt: 'Git',
       text: 'Git',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.openID,
+      src: openID,
       alt: 'OpenID',
       text: 'OpenID',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.dropbox,
+      src: dropbox,
       alt: 'Dropbox',
       text: 'Dropbox',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.fedora,
+      src: fedora,
       alt: 'Fedora',
       text: 'Fedora',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.skype,
+      src: skype,
       alt: 'Skype',
       text: 'Skype',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.twitter,
+      src: twitter,
       alt: 'Twitter',
       text: 'Twitter',
       onClick: e => socialLinkClick(e)
     },
     {
-      src: logos.stackExchange,
+      src: stackExchange,
       alt: 'StackExchange',
       text: 'StackExchange',
       onClick: e => socialLinkClick(e)

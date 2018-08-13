@@ -3,8 +3,7 @@ import { mount } from 'enzyme';
 import { DropdownButton } from 'react-bootstrap';
 import englishMessages from './mocks/messages.en';
 import frenchMessages from './mocks/messages.fr';
-import LoginPage from './LoginPage';
-import WithValidation from './components/LoginCardComponents/LoginCardWithValidation';
+import { LoginPage, LoginCardWithValidation } from './index';
 
 const { Input, ForgotPassword, SignUp } = LoginPage.Card;
 const { FooterLinks } = LoginPage;
@@ -166,7 +165,7 @@ test('Toggle CapsLock cause warning to show under password field when focused', 
     .find('input[type="password"]')
     .simulate('change', { target: { value: 'test' } });
   component
-    .find(WithValidation)
+    .find(LoginCardWithValidation)
     .instance()
     .toggleCapsLock({ key: 'CapsLock' });
 

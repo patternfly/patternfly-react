@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import englishMessages from './mocks/messages.en';
 import frenchMessages from './mocks/messages.fr';
-import SocialLoginPage from './SocialLoginPage';
+import { SocialLoginPage } from './index';
 
 const mockFunction = jest.fn();
 const logoList = [

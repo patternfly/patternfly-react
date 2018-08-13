@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Fade } from 'react-bootstrap';
-import LoginInputWarning from './LoginInputWarning';
+import LoginCardInputWarning from './LoginCardInputWarning';
 import { FormControl, FormGroup, HelpBlock } from '../../../../index';
 import { noop } from '../../../../common/helpers';
 
@@ -23,7 +23,7 @@ const LoginCardInput = ({
 }) => {
   const helpBlock =
     (showError && <HelpBlock>{error}</HelpBlock>) ||
-    (showWarning && <LoginInputWarning>{warning}</LoginInputWarning>);
+    (showWarning && <LoginCardInputWarning>{warning}</LoginCardInputWarning>);
 
   return (
     <FormGroup
