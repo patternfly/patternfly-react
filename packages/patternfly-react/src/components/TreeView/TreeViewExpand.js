@@ -12,7 +12,7 @@ const TreeViewExpand = ({ nodes, expanded, toggleExpand }) => {
     { glyphicon: !hasChildren }
   );
 
-  return <span onClick={toggleExpand} className={classes} />;
+  return <span onClick={toggleExpand} className={classes} aria-hidden />;
 };
 
 TreeViewExpand.propTypes = {

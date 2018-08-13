@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const TreeViewIcon = ({ icon }) => {
   const classes = classNames('icon node-icon indent', icon);
-  return <span className={classes} />;
+  return <span className={classes} aria-hidden />;
 };
 
 TreeViewIcon.propTypes = {

@@ -71,3 +71,13 @@ export const nullValues = obj => selectKeys(obj, Object.keys(obj), () => null);
 export const noop = Function.prototype;
 
 export const KEY_CODES = { TAB_KEY: 9, ENTER_KEY: 13, ESCAPE_KEY: 27 };
+export const KEYS = {
+  ENTER: 'Enter',
+  SPACE: ' ',
+  ARROW_LEFT: 'ArrowLeft',
+  ARROW_RIGHT: 'ArrowRight',
+  ARROW_DOWN: 'ArrowDown',
+  ARROW_UP: 'ArrowUp',
+  HOME: 'Home',
+  END: 'End'
+};

@@ -33,7 +33,23 @@ export const basicData = [
         text: 'Child 2',
         icon: 'fa fa-file-o',
         selected: false,
-        selectable: true
+        selectable: true,
+        nodes: [
+          {
+            id: 11,
+            text: 'Grandchild 1',
+            icon: 'fa fa-file-o',
+            selectable: true,
+            selected: false
+          },
+          {
+            id: 12,
+            text: 'Grandchild 2',
+            icon: 'fa fa-file-o',
+            selected: false,
+            selectable: true
+          }
+        ]
       }
     ]
   },
@@ -41,7 +57,16 @@ export const basicData = [
     id: 6,
     text: 'Parent 2',
     selected: false,
-    selectable: true
+    selectable: true,
+    nodes: [
+      {
+        id: 10,
+        text: 'Child 1',
+        icon: 'fa fa-file-o',
+        selectable: true,
+        selected: false
+      }
+    ]
   },
   {
     id: 7,
