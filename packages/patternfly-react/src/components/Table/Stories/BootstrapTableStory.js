@@ -83,9 +83,7 @@ const bootstrapTable = stories => {
 
       return inlineTemplate({
         title: 'Bootstrap Table Styles',
-        documentationLink: `${
-          DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
-        }table-view/`,
+        documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS}table-view/`,
         story,
         description: reactabularDescription
       });

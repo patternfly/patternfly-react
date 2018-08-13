@@ -32,8 +32,7 @@ const foremanNotifications = [
     actions: {
       links: [
         {
-          href:
-            'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
+          href: 'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
           title: 'Open',
           external: true
         }
@@ -49,8 +48,7 @@ const foremanNotifications = [
     actions: {
       links: [
         {
-          href:
-            'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
+          href: 'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
           title: 'Open',
           external: true
         }
@@ -66,8 +64,7 @@ const foremanNotifications = [
     actions: {
       links: [
         {
-          href:
-            'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
+          href: 'http://theforeman.org/2018/01/foreman-community-newsletter-january-2018.html',
           title: 'Open',
           external: true
         }
@@ -96,10 +93,7 @@ const WrapperNotificationDrawerStory = stories => {
       <nav className="navbar navbar-pf-vertical">
         <nav className="collapse navbar-collapse">
           <ul className="nav navbar-nav navbar-right navbar-iconic">
-            <NotificationDrawer.Toggle
-              hasUnreadMessages
-              onClick={handleClick}
-            />
+            <NotificationDrawer.Toggle hasUnreadMessages onClick={handleClick} />
           </ul>
         </nav>
         <NotificationDrawerWrapper
@@ -118,9 +112,7 @@ const WrapperNotificationDrawerStory = stories => {
     );
     return inlineTemplate({
       title: 'Drawer Wrapper',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION
-      }notification-drawer`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_COMMUNICATION}notification-drawer`,
       story
     });
   });

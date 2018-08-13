@@ -3,28 +3,15 @@ import PropTypes from 'prop-types';
 import { withContext } from 'recompose';
 import { Grid, ToolbarResults } from '../../index';
 
-import {
-  toolbarContextTypes,
-  getToolbarContext,
-  ToolbarContextProvider
-} from './ToolbarConstants';
+import { toolbarContextTypes, getToolbarContext, ToolbarContextProvider } from './ToolbarConstants';
 
 const Toolbar = ({ children, className, ...props }) => {
-  const childrenArray =
-    children &&
-    React.Children.count(children) > 0 &&
-    React.Children.toArray(children);
+  const childrenArray = children && React.Children.count(children) > 0 && React.Children.toArray(children);
 
   const toolbarChildren =
-    childrenArray &&
-    childrenArray.filter(
-      child => child.type.displayName !== ToolbarResults.displayName
-    );
+    childrenArray && childrenArray.filter(child => child.type.displayName !== ToolbarResults.displayName);
   const resultsChildren =
-    childrenArray &&
-    childrenArray.filter(
-      child => child.type.displayName === ToolbarResults.displayName
-    );
+    childrenArray && childrenArray.filter(child => child.type.displayName === ToolbarResults.displayName);
 
   return (
     <ToolbarContextProvider isDescendantOfToolbar>

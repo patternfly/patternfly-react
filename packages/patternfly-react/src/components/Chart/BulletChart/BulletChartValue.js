@@ -11,21 +11,10 @@ const TooltipFunction = value => {
     return value.tooltipFunction(value.value, value.title);
   }
 
-  return (
-    <Tooltip id={value.tooltipId || randomId()}>{`${value.title}: ${
-      value.value
-    }%`}</Tooltip>
-  );
+  return <Tooltip id={value.tooltipId || randomId()}>{`${value.title}: ${value.value}%`}</Tooltip>;
 };
 
-const BulletChartValue = ({
-  className,
-  value,
-  prevValue,
-  dot,
-  vertical,
-  ...props
-}) => {
+const BulletChartValue = ({ className, value, prevValue, dot, vertical, ...props }) => {
   const showValue = Math.min(Math.max(value.value + prevValue, 0), 120);
 
   const valueClasses = classNames(

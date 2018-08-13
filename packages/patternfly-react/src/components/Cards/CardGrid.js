@@ -11,9 +11,7 @@ const CardGrid = ({ matchHeight, children, className, ...props }) => {
   if (matchHeight) {
     return (
       <Grid className={classes} {...props}>
-        <CardHeightMatching selector={cardSelector}>
-          {children}
-        </CardHeightMatching>
+        <CardHeightMatching selector={cardSelector}>{children}</CardHeightMatching>
       </Grid>
     );
   }

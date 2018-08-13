@@ -9,12 +9,8 @@ const VerticalNavBrand = props => {
 
   const brandChildren = children || (
     <span>
-      {iconImg && (
-        <img className="navbar-brand-icon" src={iconImg} alt={title} />
-      )}
-      {titleImg && (
-        <img className="navbar-brand-name" src={titleImg} alt={title} />
-      )}
+      {iconImg && <img className="navbar-brand-icon" src={iconImg} alt={title} />}
+      {titleImg && <img className="navbar-brand-name" src={titleImg} alt={title} />}
       {!titleImg && title && <span className="navbar-brand-txt">{title}</span>}
     </span>
   );

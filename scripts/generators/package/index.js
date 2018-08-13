@@ -16,9 +16,7 @@ function setPackageGenerators(plop) {
         validate(input) {
           const packages = PackageUtilities.getPackages(new Repository());
           const matchingPackage = packages.find(p => p.name === input);
-          return matchingPackage
-            ? `Packages already exits at ${matchingPackage.location}`
-            : true;
+          return matchingPackage ? `Packages already exits at ${matchingPackage.location}` : true;
         }
       },
       {
@@ -33,10 +31,7 @@ function setPackageGenerators(plop) {
       }
     ],
     actions: answers => {
-      const packageBaseTemplate = join(
-        packagesRoot,
-        `./{{${REMOVE_NPM_SCOPE} name}}/`
-      );
+      const packageBaseTemplate = join(packagesRoot, `./{{${REMOVE_NPM_SCOPE} name}}/`);
       return [
         {
           type: 'add',

@@ -19,9 +19,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const StyledGridItem = props => (
-  <GridItem {...props} className={css(styles.item)} />
-);
+const StyledGridItem = props => <GridItem {...props} className={css(styles.item)} />;
 
 const propTypes = {
   data: PropTypes.any.isRequired

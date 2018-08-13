@@ -18,11 +18,7 @@ const defaultProps = {
 
 const Gallery = ({ children, className, gutter, ...props }) => (
   <div
-    className={css(
-      styles.gallery,
-      gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter),
-      className
-    )}
+    className={css(styles.gallery, gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter), className)}
     {...props}
   >
     {children}

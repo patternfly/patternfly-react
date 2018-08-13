@@ -19,9 +19,7 @@ const WizardContents = ({
     {
       // hide contents if the step is not active
       // OR if we have sub steps and this sub step is not active
-      hidden:
-        activeStepIndex !== stepIndex ||
-        (activeSubStepIndex !== null && activeSubStepIndex !== subStepIndex)
+      hidden: activeStepIndex !== stepIndex || (activeSubStepIndex !== null && activeSubStepIndex !== subStepIndex)
     },
     className
   );

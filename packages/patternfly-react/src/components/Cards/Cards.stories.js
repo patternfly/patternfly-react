@@ -1,9 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
-import {
-  storybookPackageName,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 
 import {
   baseCardAddWithInfo,
@@ -15,10 +12,7 @@ import {
 } from './Stories/index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.CARDS}`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.CARDS}`, module);
 stories.addDecorator(withKnobs);
 
 baseCardAddWithInfo(stories);

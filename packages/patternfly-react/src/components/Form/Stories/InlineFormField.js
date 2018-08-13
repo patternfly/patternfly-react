@@ -3,15 +3,7 @@
 import React from 'react';
 import { Form } from '../index';
 
-export const InlineFormField = ({
-  controlId,
-  label,
-  formControl,
-  validationState,
-  bsSize,
-  showLabel,
-  ...props
-}) => {
+export const InlineFormField = ({ controlId, label, formControl, validationState, bsSize, showLabel, ...props }) => {
   const controlProps = { ...props };
 
   if (bsSize) controlProps.bsSize = bsSize;
@@ -21,8 +13,7 @@ export const InlineFormField = ({
 
   return (
     <Form.FormGroup {...formGroupProps}>
-      {showLabel && label && <Form.ControlLabel>{label}</Form.ControlLabel>}{' '}
-      {formControl(controlProps)}
+      {showLabel && label && <Form.ControlLabel>{label}</Form.ControlLabel>} {formControl(controlProps)}
     </Form.FormGroup>
   );
 };

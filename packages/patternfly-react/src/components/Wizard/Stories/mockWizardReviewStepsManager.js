@@ -20,8 +20,7 @@ class MockWizardReviewStepsManager extends React.Component {
   subStepClicked = (e, stepIndex, subStepIndex) => {
     e.preventDefault();
     const updated = [...this.state.steps];
-    updated[stepIndex].subSteps[subStepIndex].collapsed = !updated[stepIndex]
-      .subSteps[subStepIndex].collapsed;
+    updated[stepIndex].subSteps[subStepIndex].collapsed = !updated[stepIndex].subSteps[subStepIndex].collapsed;
     this.setState({
       steps: updated
     });
@@ -47,27 +46,17 @@ class MockWizardReviewStepsManager extends React.Component {
                     label={sub.label}
                     title={sub.title}
                     collapsed={sub.collapsed}
-                    onClick={e =>
-                      this.subStepClicked(e, stepIndex, subStepIndex)
-                    }
+                    onClick={e => this.subStepClicked(e, stepIndex, subStepIndex)}
                     key={subStepIndex}
                   >
                     <Wizard.ReviewContent collapsed={sub.collapsed}>
                       <Wizard.ReviewItem>
-                        <span className="wizard-pf-review-item-label">
-                          {sub.contents.label1}:
-                        </span>
-                        <span className="wizard-pf-review-item-value">
-                          Brian Johnson
-                        </span>
+                        <span className="wizard-pf-review-item-label">{sub.contents.label1}:</span>
+                        <span className="wizard-pf-review-item-value">Brian Johnson</span>
                       </Wizard.ReviewItem>
                       <Wizard.ReviewItem>
-                        <span className="wizard-pf-review-item-label">
-                          {sub.contents.label2}:
-                        </span>
-                        <span className="wizard-pf-review-item-value">
-                          This is the description.
-                        </span>
+                        <span className="wizard-pf-review-item-label">{sub.contents.label2}:</span>
+                        <span className="wizard-pf-review-item-value">This is the description.</span>
                       </Wizard.ReviewItem>
                     </Wizard.ReviewContent>
                   </Wizard.ReviewSubStep>

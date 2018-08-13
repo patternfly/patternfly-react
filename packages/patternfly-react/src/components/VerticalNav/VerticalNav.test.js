@@ -44,10 +44,7 @@ test('VerticalNav renders properly with item objects', () => {
   const component = mount(
     <VerticalNav items={mockNavItems} pinnableMenus>
       <Masthead>
-        <Brand
-          iconImg="../../../storybook/img/logo-alt.svg"
-          titleImg="../../../storybook/img/brand-alt.svg"
-        />
+        <Brand iconImg="../../../storybook/img/logo-alt.svg" titleImg="../../../storybook/img/brand-alt.svg" />
         <IconBar>
           <MockIconBarChildren />
         </IconBar>
@@ -59,9 +56,7 @@ test('VerticalNav renders properly with item objects', () => {
 });
 
 test('VerticalNav renders properly with masthead PF component', () => {
-  const component = mount(
-    <VerticalNav items={mockNavItems} masthead={<MastheadPf />} />
-  );
+  const component = mount(<VerticalNav items={mockNavItems} masthead={<MastheadPf />} />);
 
   expect(component.render()).toMatchSnapshot();
 });

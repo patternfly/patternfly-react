@@ -4,9 +4,7 @@ const pkg = require('../package.json');
 const PackageUtilities = require('lerna/lib/PackageUtilities');
 const Repository = require('lerna/lib/Repository');
 
-const packages = PackageUtilities.getPackages(new Repository()).map(
-  p => p.location
-);
+const packages = PackageUtilities.getPackages(new Repository()).map(p => p.location);
 
 module.exports = (baseConfig, env, defaultConfig) => {
   // add the root path so root references can be used in stories
@@ -40,9 +38,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
           options: {
             includePaths: [
               ...packages.map(onePck => `${onePck}/sass/`),
-              ...Object.values(pkg.sassIncludes).map(includePath =>
-                path.resolve(__dirname, `../${includePath}`)
-              )
+              ...Object.values(pkg.sassIncludes).map(includePath => path.resolve(__dirname, `../${includePath}`))
             ]
           }
         }
@@ -52,10 +48,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
 
   defaultConfig.resolve.alias = {
     ...defaultConfig.resolve.alias,
-    'patternfly-react': path.resolve(
-      __dirname,
-      '../packages/patternfly-react/src'
-    )
+    'patternfly-react': path.resolve(__dirname, '../packages/patternfly-react/src')
   };
 
   return defaultConfig;

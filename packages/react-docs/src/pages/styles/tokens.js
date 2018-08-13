@@ -13,9 +13,7 @@ const styles = StyleSheet.create({
     display: 'inline-block',
     height: 15,
     width: 15,
-    border: `${tokensModule.global_BorderWidth_sm.var} solid ${
-      tokensModule.global_BorderColor.var
-    }`,
+    border: `${tokensModule.global_BorderWidth_sm.var} solid ${tokensModule.global_BorderColor.var}`,
     marginRight: tokensModule.global_spacer_sm.var
   }
 });
@@ -48,10 +46,7 @@ function Tokens() {
                 </TD>
                 <TD>
                   {isColorRegex.test(token.value) && (
-                    <span
-                      className={css(styles.color)}
-                      style={{ backgroundColor: token.value }}
-                    />
+                    <span className={css(styles.color)} style={{ backgroundColor: token.value }} />
                   )}
                   {token.value}
                 </TD>

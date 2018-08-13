@@ -41,10 +41,7 @@ class LoginCardSocialColumns extends React.Component {
   getHiddenListItems = () =>
     this.hiddenLinks &&
     this.hiddenLinks.map((link, index) => (
-      <LoginCardSocialLink
-        link={link}
-        key={link.key || index + this.props.shownButtons}
-      />
+      <LoginCardSocialLink link={link} key={link.key || index + this.props.shownButtons} />
     ));
 
   toggleExpend = () => {
@@ -59,11 +56,7 @@ class LoginCardSocialColumns extends React.Component {
     const { expend, width } = this.state;
     const expendButton = width > 768 &&
       links.length > shownButtons && (
-        <Button
-          bsStyle="link"
-          bsClass="btn btn-link login-pf-social-toggle"
-          onClick={e => this.toggleExpend(e)}
-        >
+        <Button bsStyle="link" bsClass="btn btn-link login-pf-social-toggle" onClick={e => this.toggleExpend(e)}>
           {expend ? 'Less' : 'More'} &nbsp;
           <Icon name={`angle-${expend ? 'up' : 'down'}`} />
         </Button>

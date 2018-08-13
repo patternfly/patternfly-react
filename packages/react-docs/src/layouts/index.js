@@ -34,12 +34,7 @@ const Layout = ({ children, data }) => {
       />
       <Page
         title="Patternfly React"
-        navigation={
-          <Navigation
-            componentRoutes={componentRoutes}
-            layoutRoutes={layoutRoutes}
-          />
-        }
+        navigation={<Navigation componentRoutes={componentRoutes} layoutRoutes={layoutRoutes} />}
       >
         {children()}
       </Page>

@@ -12,9 +12,7 @@ it('sets bsStyle to type', () => {
 
 it('spreads additional props to Bootstrap Label', () => {
   const view = shallow(<Label id="id" another="another" />);
-  expect(view.find(BsLabel).props()).toMatchSnapshot(
-    'Bootstrap label has correct props.'
-  );
+  expect(view.find(BsLabel).props()).toMatchSnapshot('Bootstrap label has correct props.');
 });
 
 it('does not render RemoveButton if onRemoveClick is not present', () => {

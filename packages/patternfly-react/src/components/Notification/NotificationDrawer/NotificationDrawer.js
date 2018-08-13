@@ -2,13 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NotificationDrawer = ({
-  hide,
-  expanded,
-  children,
-  className,
-  ...props
-}) => {
+const NotificationDrawer = ({ hide, expanded, children, className, ...props }) => {
   const classes = classNames(
     'drawer-pf drawer-alt-pf drawer-pf-notifications',
     { 'drawer-pf-expanded': expanded },

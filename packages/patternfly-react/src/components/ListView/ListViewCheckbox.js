@@ -8,9 +8,7 @@ import PropTypes from 'prop-types';
  * in case of redux-form)
  */
 const ListViewCheckbox = ({ children, className }) => (
-  <div className={classNames('list-view-pf-checkbox', className)}>
-    {children}
-  </div>
+  <div className={classNames('list-view-pf-checkbox', className)}>{children}</div>
 );
 
 ListViewCheckbox.propTypes = {

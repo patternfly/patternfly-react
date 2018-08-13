@@ -3,28 +3,18 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { Grid } from './index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.LAYOUTS}/Grid`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.LAYOUTS}/Grid`, module);
 stories.addDecorator(withKnobs);
 
 const description = (
   <p>
-    This component is based on React Bootstrap Grid component. Grids are used to
-    structure and present data. See{' '}
-    <a href={`${DOCUMENTATION_URL.REACT_BOOTSTRAP_LAYOUT}grid/`}>
-      React Bootstrap Docs
-    </a>{' '}
-    for complete Grid component documentation.
+    This component is based on React Bootstrap Grid component. Grids are used to structure and present data. See{' '}
+    <a href={`${DOCUMENTATION_URL.REACT_BOOTSTRAP_LAYOUT}grid/`}>React Bootstrap Docs</a> for complete Grid component
+    documentation.
   </p>
 );
 
@@ -55,34 +45,58 @@ stories.add(
     <Grid fluid={boolean('fluid', true)}>
       <Grid.Row className="show-grid">
         <Grid.Col xs={12} md={8}>
-          <code>&lt;{'Col xs={12} md={8}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col xs={12} md={8}'} /&gt;
+          </code>
         </Grid.Col>
         <Grid.Col xs={6} md={4}>
-          <code>&lt;{'Col xs={6} md={4}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col xs={6} md={4}'} /&gt;
+          </code>
         </Grid.Col>
       </Grid.Row>
       <Grid.Row className="show-grid">
         <Grid.Col xs={6} md={4}>
-          <code>&lt;{'Col xs={6} md={4}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col xs={6} md={4}'} /&gt;
+          </code>
         </Grid.Col>
         <Grid.Col xs={6} md={4}>
-          <code>&lt;{'Col xs={6} md={4}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col xs={6} md={4}'} /&gt;
+          </code>
         </Grid.Col>
         <Grid.Col xsHidden md={4}>
-          <code>&lt;{'Col xsHidden md={4}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col xsHidden md={4}'} /&gt;
+          </code>
         </Grid.Col>
       </Grid.Row>
       <Grid.Row className="show-grid">
         <Grid.Col xs={6} xsOffset={6}>
-          <code>&lt;{'Col xs={6} xsOffset={6}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col xs={6} xsOffset={6}'} /&gt;
+          </code>
         </Grid.Col>
       </Grid.Row>
       <Grid.Row className="show-grid">
         <Grid.Col md={6} mdPush={6}>
-          <code>&lt;{'Col md={6} mdPush={6}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col md={6} mdPush={6}'} /&gt;
+          </code>
         </Grid.Col>
         <Grid.Col md={6} mdPull={6}>
-          <code>&lt;{'Col md={6} mdPull={6}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col md={6} mdPull={6}'} /&gt;
+          </code>
         </Grid.Col>
       </Grid.Row>
     </Grid>
@@ -95,27 +109,42 @@ stories.add(
     <Grid fluid={boolean('fluid', true)}>
       <Grid.Row className="show-grid">
         <Grid.Col sm={6} md={3}>
-          <code>&lt;{'Col sm={6} md={3}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col sm={6} md={3}'} /&gt;
+          </code>
           <br />
           {dummySentences.slice(0, 10).join(' ')}
         </Grid.Col>
         <Grid.Col sm={6} md={3}>
-          <code>&lt;{'Col sm={6} md={3}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col sm={6} md={3}'} /&gt;
+          </code>
           <br />
           {dummySentences.slice(0, 4).join(' ')}
         </Grid.Col>
         {boolean('ShowClearfix', true) && (
           <Grid.Clearfix visibleSmBlock>
-            <code>&lt;{'Clearfix visibleSmBlock'} /&gt;</code>
+            <code>
+              &lt;
+              {'Clearfix visibleSmBlock'} /&gt;
+            </code>
           </Grid.Clearfix>
         )}
         <Grid.Col sm={6} md={3}>
-          <code>&lt;{'Col sm={6} md={3}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col sm={6} md={3}'} /&gt;
+          </code>
           <br />
           {dummySentences.slice(0, 2).join(' ')}
         </Grid.Col>
         <Grid.Col sm={6} md={3}>
-          <code>&lt;{'Col sm={6} md={3}'} /&gt;</code>
+          <code>
+            &lt;
+            {'Col sm={6} md={3}'} /&gt;
+          </code>
           <br />
           {dummySentences.slice(0, 6).join(' ')}
         </Grid.Col>

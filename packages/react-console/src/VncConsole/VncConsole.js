@@ -90,12 +90,7 @@ class VncConsole extends React.Component {
   };
 
   render() {
-    const {
-      textDisconnected,
-      textConnecting,
-      textSendShortcut,
-      textCtrlAltDel
-    } = this.props;
+    const { textDisconnected, textConnecting, textSendShortcut, textCtrlAltDel } = this.props;
 
     let status = null;
     let rightContent = null;
@@ -112,9 +107,7 @@ class VncConsole extends React.Component {
         );
         break;
       case DISCONNECTED:
-        status = (
-          <div className="vnc-console-disconnected">{textDisconnected}</div>
-        );
+        status = <div className="vnc-console-disconnected">{textDisconnected}</div>;
         break;
       case CONNECTING:
       default:
@@ -145,14 +138,11 @@ VncConsole.propTypes = {
   host: PropTypes.string.isRequired /** FQDN or IP to connect to */,
   port: PropTypes.string /** TCP Port */,
   path: PropTypes.string /** host:port/path */,
-  encrypt:
-    PropTypes.bool /** For all following, see: https://github.com/novnc/noVNC/blob/master/docs/API.md */,
-  resizeSession:
-    PropTypes.bool /** Change remote session size according to local HTML container */,
+  encrypt: PropTypes.bool /** For all following, see: https://github.com/novnc/noVNC/blob/master/docs/API.md */,
+  resizeSession: PropTypes.bool /** Change remote session size according to local HTML container */,
   viewOnly: PropTypes.bool,
   shared: PropTypes.bool,
-  credentials:
-    PropTypes.object /** { username: '', password: '', target: ''} */,
+  credentials: PropTypes.object /** { username: '', password: '', target: ''} */,
   repeaterID: PropTypes.string,
   vncLogging: PropTypes.string /** log-level for noVNC */,
 

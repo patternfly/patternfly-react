@@ -3,10 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const AggregateStatusNotifications = ({ children, className, ...props }) => {
-  const classes = classNames(
-    'card-pf-aggregate-status-notifications',
-    className
-  );
+  const classes = classNames('card-pf-aggregate-status-notifications', className);
 
   return (
     <p className={classes} {...props}>

@@ -5,8 +5,4 @@ import ApplicationLauncherItem from './ApplicationLauncherItem';
 ApplicationLauncher.Toggle = ApplicationLauncherToggle;
 ApplicationLauncher.Item = ApplicationLauncherItem;
 
-export {
-  ApplicationLauncher,
-  ApplicationLauncherItem,
-  ApplicationLauncherToggle
-};
+export { ApplicationLauncher, ApplicationLauncherItem, ApplicationLauncherToggle };

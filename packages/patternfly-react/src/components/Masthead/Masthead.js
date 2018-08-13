@@ -49,18 +49,9 @@ const Masthead = ({
             <span aria-hidden="true" className="icon-bar" />
           </button>
         )}
-        <a
-          href={href}
-          role="button"
-          className="navbar-brand"
-          onClick={handleTitleClick}
-        >
-          {iconImg && (
-            <img className="navbar-brand-icon" src={iconImg} alt="" />
-          )}
-          {titleImg && (
-            <img className="navbar-brand-name" src={titleImg} alt={title} />
-          )}
+        <a href={href} role="button" className="navbar-brand" onClick={handleTitleClick}>
+          {iconImg && <img className="navbar-brand-icon" src={iconImg} alt="" />}
+          {titleImg && <img className="navbar-brand-name" src={titleImg} alt={title} />}
         </a>
         {middleContent}
       </div>

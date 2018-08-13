@@ -159,9 +159,7 @@ const aggregateCardAddWithInfo = stories => {
     );
     return inlineTemplate({
       title: 'Aggregate Status Card',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_CARDS
-      }aggregate-status-card/#code`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_CARDS}aggregate-status-card/#code`,
       story
     });
   });

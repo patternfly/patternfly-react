@@ -1,16 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { MenuItem } from '../MenuItem';
-import {
-  Card,
-  CardTitle,
-  CardBody,
-  CardGrid,
-  CardHeading,
-  CardFooter,
-  CardLink,
-  CardDropdownButton
-} from './index';
+import { Card, CardTitle, CardBody, CardGrid, CardHeading, CardFooter, CardLink, CardDropdownButton } from './index';
 
 test('Card is working properly', () => {
   const component = mount(
@@ -54,10 +45,7 @@ test('Card Body is working properly', () => {
 
 test('Card Link is working properly', () => {
   const component = mount(
-    <CardLink
-      disabled
-      href="https://github.com/patternfly/patternfly-react/pull/203"
-    >
+    <CardLink disabled href="https://github.com/patternfly/patternfly-react/pull/203">
       Card Content
     </CardLink>
   );
@@ -67,11 +55,7 @@ test('Card Link is working properly', () => {
 
 test('Card Drop Down Button is working properly', () => {
   const component = mount(
-    <CardDropdownButton
-      id="cardDropdownButton1"
-      title="Last 30 Days"
-      onClick={jest.fn()}
-    >
+    <CardDropdownButton id="cardDropdownButton1" title="Last 30 Days" onClick={jest.fn()}>
       <MenuItem eventKey="1" active>
         Last 30 Days
       </MenuItem>

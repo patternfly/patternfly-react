@@ -8,11 +8,7 @@ const VerticalNavIconBar = props => {
       {props.children}
     </Nav>
   );
-  return props.collapse ? (
-    <nav className="collapse navbar-collapse">{iconBar}</nav>
-  ) : (
-    iconBar
-  );
+  return props.collapse ? <nav className="collapse navbar-collapse">{iconBar}</nav> : iconBar;
 };
 
 VerticalNavIconBar.propTypes = {

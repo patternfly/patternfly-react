@@ -1,12 +1,6 @@
 import PropTypes from 'prop-types';
 
-const InlineEdit = ({
-  value,
-  isEditing,
-  additionalData,
-  renderValue,
-  renderEdit
-}) => {
+const InlineEdit = ({ value, isEditing, additionalData, renderValue, renderEdit }) => {
   if (isEditing(additionalData)) {
     return renderEdit(value, additionalData);
   }

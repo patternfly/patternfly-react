@@ -56,10 +56,7 @@ import PropTypes from 'prop-types';
  * ListView component wraps ListViewItems
  */
 const ListView = ({ children, className, ...props }) => {
-  const classes = classNames(
-    'list-group list-view-pf list-view-pf-view',
-    className
-  );
+  const classes = classNames('list-group list-view-pf list-view-pf-view', className);
   return (
     <div className={classes} {...props}>
       {children}

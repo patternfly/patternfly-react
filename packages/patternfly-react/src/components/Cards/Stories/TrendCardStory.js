@@ -1,15 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import {
-  Card,
-  CardGrid,
-  CardHeading,
-  CardDropdownButton,
-  CardTitle,
-  CardBody,
-  CardFooter,
-  CardLink
-} from '../index';
+import { Card, CardGrid, CardHeading, CardDropdownButton, CardTitle, CardBody, CardFooter, CardLink } from '../index';
 import { SparklineChart } from '../../Chart/index';
 import {
   UtilizationCardDetails,
@@ -44,22 +35,13 @@ const trendCardAddWithInfo = stories => {
                 <CardTitle>Network</CardTitle>
                 <CardBody>
                   <UtilizationCardDetails>
-                    <UtilizationCardDetailsCount>
-                      35%
-                    </UtilizationCardDetailsCount>
+                    <UtilizationCardDetailsCount>35%</UtilizationCardDetailsCount>
                     <UtilizationCardDetailsDesc>
-                      <UtilizationCardDetailsLine1>
-                        Available
-                      </UtilizationCardDetailsLine1>
-                      <UtilizationCardDetailsLine2>
-                        of 1000Mhz
-                      </UtilizationCardDetailsLine2>
+                      <UtilizationCardDetailsLine1>Available</UtilizationCardDetailsLine1>
+                      <UtilizationCardDetailsLine2>of 1000Mhz</UtilizationCardDetailsLine2>
                     </UtilizationCardDetailsDesc>
                   </UtilizationCardDetails>
-                  <SparklineChart
-                    id="line-chart-1"
-                    data={singleLineChartConfigData}
-                  />
+                  <SparklineChart id="line-chart-1" data={singleLineChartConfigData} />
                 </CardBody>
               </Card>
             </CardGrid.Col>
@@ -74,28 +56,17 @@ const trendCardAddWithInfo = stories => {
                   <div>
                     <h2> Data </h2>
                   </div>
-                  <SparklineChart
-                    id="line-chart-1"
-                    data={singleLineChartConfigData}
-                  />
+                  <SparklineChart id="line-chart-1" data={singleLineChartConfigData} />
                 </CardBody>
                 <CardFooter>
-                  <CardDropdownButton
-                    id="cardDropdownButton2"
-                    title="Last 30 Days"
-                    onClick={action('onClick')}
-                  >
+                  <CardDropdownButton id="cardDropdownButton2" title="Last 30 Days" onClick={action('onClick')}>
                     <MenuItem eventKey="1" active>
                       Last 30 Days
                     </MenuItem>
                     <MenuItem eventKey="2">Last 60 Days</MenuItem>
                     <MenuItem eventKey="3">Last 90 Days</MenuItem>
                   </CardDropdownButton>
-                  <CardLink
-                    onClick={handleClick}
-                    href="#"
-                    icon={<Icon type="pf" name="add-circle-o" />}
-                  >
+                  <CardLink onClick={handleClick} href="#" icon={<Icon type="pf" name="add-circle-o" />}>
                     {' '}
                     Add New Cluster
                   </CardLink>

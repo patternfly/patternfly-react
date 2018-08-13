@@ -4,12 +4,7 @@ import { noop } from '../../../common/helpers';
 import TableSelectionCell from '../TableSelectionCell';
 import TableCheckbox from '../TableCheckbox';
 
-const selectionCellFormatter = (
-  { rowData, rowIndex },
-  onSelectRow,
-  id,
-  label
-) => {
+const selectionCellFormatter = ({ rowData, rowIndex }, onSelectRow, id, label) => {
   const checkboxId = id || `select${rowIndex}`;
   const checkboxLabel = label || `Select row ${rowIndex}`;
   return (

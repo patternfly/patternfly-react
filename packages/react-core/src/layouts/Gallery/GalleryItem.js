@@ -9,9 +9,7 @@ const defaultProps = {
   children: null
 };
 
-const GalleryItem = ({ children, ...props }) => (
-  <div {...props}>{children}</div>
-);
+const GalleryItem = ({ children, ...props }) => <div {...props}>{children}</div>;
 
 GalleryItem.propTypes = propTypes;
 GalleryItem.defaultProps = defaultProps;

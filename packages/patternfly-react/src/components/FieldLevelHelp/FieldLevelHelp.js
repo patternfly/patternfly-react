@@ -9,27 +9,14 @@ import { OverlayTrigger } from '../OverlayTrigger';
 /**
  * FieldLevelHelp Component for Patternfly React
  */
-const FieldLevelHelp = ({
-  children,
-  content,
-  close,
-  rootClose,
-  placement,
-  buttonClass,
-  ...props
-}) => {
+const FieldLevelHelp = ({ children, content, close, rootClose, placement, buttonClass, ...props }) => {
   // backwards compatibility of the existing `close` prop - use that prop if it exists
   const closeProp = typeof close !== 'undefined' ? close : rootClose;
   const overlay = <Popover id="popover">{content}</Popover>;
   const buttonClasses = classNames('popover-pf-info', buttonClass);
 
   return (
-    <OverlayTrigger
-      overlay={overlay}
-      placement={placement}
-      trigger={['click']}
-      rootClose={closeProp}
-    >
+    <OverlayTrigger overlay={overlay} placement={placement} trigger={['click']} rootClose={closeProp}>
       <Button bsStyle="link" className={buttonClasses}>
         <Icon type="pf" name="info" />
       </Button>

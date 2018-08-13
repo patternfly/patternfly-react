@@ -18,11 +18,7 @@ const defaultProps = {
 const Level = ({ gutter, className, children, ...props }) => (
   <div
     {...props}
-    className={css(
-      styles.level,
-      gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter),
-      className
-    )}
+    className={css(styles.level, gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter), className)}
   >
     {children}
   </div>

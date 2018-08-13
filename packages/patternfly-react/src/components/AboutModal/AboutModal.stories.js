@@ -4,33 +4,17 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { name } from '../../../package.json';
 
-import {
-  storybookPackageName,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
-import {
-  AboutModal,
-  AboutModalVersions,
-  AboutModalVersionItem
-} from '../../index';
+import { storybookPackageName, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
+import { AboutModal, AboutModalVersions, AboutModalVersionItem } from '../../index';
 
-import {
-  MockAboutModal,
-  MockAboutModalSource
-} from './__mocks__/mockAboutModal';
+import { MockAboutModal, MockAboutModalSource } from './__mocks__/mockAboutModal';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${
-    STORYBOOK_CATEGORY.COMMUNICATION
-  }/About Modal`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.COMMUNICATION}/About Modal`, module);
 
 stories.addDecorator(
   defaultTemplate({
     title: 'About Modal',
-    documentationLink:
-      'http://www.patternfly.org/pattern-library/communication/about-modal/'
+    documentationLink: 'http://www.patternfly.org/pattern-library/communication/about-modal/'
   })
 );
 

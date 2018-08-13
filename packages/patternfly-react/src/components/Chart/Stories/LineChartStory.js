@@ -2,10 +2,7 @@ import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { LineChart, SingleLineChart, SparklineChart } from '../index';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  DOCUMENTATION_URL,
-  DESCRIPTION
-} from 'storybook/constants/siteConstants';
+import { DOCUMENTATION_URL, DESCRIPTION } from 'storybook/constants/siteConstants';
 
 /**
  * LineChart constants
@@ -49,61 +46,38 @@ const lineChart = stories => {
         <div>
           <h2>Sparkline</h2>
           <div>
-            <SparklineChart
-              id="line-chart-1"
-              data={singleLineChartConfigData}
-              size={{ width: 200, height: 40 }}
-            />
+            <SparklineChart id="line-chart-1" data={singleLineChartConfigData} size={{ width: 200, height: 40 }} />
           </div>
           <div>Less than one year remaining</div>
 
           <h2>Line Chart</h2>
           <div>
-            <LineChart
-              id="line-chart-2"
-              data={lineChartConfigData}
-              size={{ width: 600 }}
-            />
+            <LineChart id="line-chart-2" data={lineChartConfigData} size={{ width: 600 }} />
           </div>
 
           <h2>Single Line Chart</h2>
           <div>
-            <SingleLineChart
-              id="line-chart-3"
-              data={singleLineChartConfigData}
-              size={{ width: 600 }}
-            />
+            <SingleLineChart id="line-chart-3" data={singleLineChartConfigData} size={{ width: 600 }} />
           </div>
 
           <h2>Spline Chart</h2>
           <div>
-            <LineChart
-              id="line-chart-4"
-              data={splineChartConfigData}
-              size={{ width: 600 }}
-            />
+            <LineChart id="line-chart-4" data={splineChartConfigData} size={{ width: 600 }} />
           </div>
 
           <h2>Single Spline Chart</h2>
           <div>
-            <SingleLineChart
-              id="line-chart-5"
-              data={singleSplineChartConfigData}
-              size={{ width: 600 }}
-            />
+            <SingleLineChart id="line-chart-5" data={singleSplineChartConfigData} size={{ width: 600 }} />
           </div>
         </div>
       );
 
       return inlineTemplate({
         title: 'Line Charts',
-        documentationLink: `${
-          DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
-        }line-chart/`,
+        documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION}line-chart/`,
         description: (
           <span>
-            {DESCRIPTION.C3JS_TEXT}{' '}
-            <a href={DESCRIPTION.C3JS_URL}>{DESCRIPTION.C3JS_URL}</a>
+            {DESCRIPTION.C3JS_TEXT} <a href={DESCRIPTION.C3JS_URL}>{DESCRIPTION.C3JS_URL}</a>
           </span>
         ),
         story

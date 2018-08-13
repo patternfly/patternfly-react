@@ -4,22 +4,12 @@ import { noop } from '../../../common/helpers';
 import TableSelectionHeading from '../TableSelectionHeading';
 import TableCheckbox from '../TableCheckbox';
 
-const selectionHeaderCellFormatter = ({
-  cellProps,
-  column,
-  rows,
-  onSelectAllRows
-}) => {
+const selectionHeaderCellFormatter = ({ cellProps, column, rows, onSelectAllRows }) => {
   const unselectedRows = rows.filter(r => !r.selected).length > 0;
   const id = cellProps.id || 'selectAll';
   return (
     <TableSelectionHeading aria-label={column.header.label} {...cellProps}>
-      <TableCheckbox
-        id={id}
-        label={column.header.label}
-        checked={!unselectedRows}
-        onChange={onSelectAllRows}
-      />
+      <TableCheckbox id={id} label={column.header.label} checked={!unselectedRows} onChange={onSelectAllRows} />
     </TableSelectionHeading>
   );
 };

@@ -5,34 +5,22 @@ import { withKnobs, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info/dist/index';
 import { Row, Col } from '../Grid';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { Button } from '../Button';
 import { DropdownKebab } from '../DropdownKebab';
 import { Icon } from '../Icon';
 import { MenuItem } from '../MenuItem';
 import { ListView } from './index';
-import {
-  MockCompoundExpansion,
-  MockCompoundExpansionSource
-} from './__mocks__/mockCompoundExpansionExample';
+import { MockCompoundExpansion, MockCompoundExpansionSource } from './__mocks__/mockCompoundExpansionExample';
 import { mockListItems } from './__mocks__/mockListItems';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.CONTENT_VIEWS}/List View`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.CONTENT_VIEWS}/List View`, module);
 stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'ListView',
-    documentationLink: `${
-      DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS
-    }list-view/`
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_CONTENT_VIEWS}list-view/`
   })
 );
 
@@ -63,35 +51,23 @@ stories.add(
   'List of expandable items',
   withInfo(`ListView usage example.`)(() => (
     <ListView>
-      {mockListItems.map(
-        (
-          {
-            actions,
-            properties,
-            title,
-            description,
-            expandedContentText,
-            hideCloseIcon
-          },
-          index
-        ) => (
-          <ListView.Item
-            key={index}
-            actions={renderActions(actions)}
-            checkboxInput={<input type="checkbox" />}
-            leftContent={<ListView.Icon name="plane" />}
-            additionalInfo={renderAdditionalInfoItems(properties)}
-            heading={title}
-            description={description}
-            stacked={boolean('Stacked', false)}
-            hideCloseIcon={boolean('Hide close icon', false)}
-          >
-            <Row>
-              <Col sm={11}>{expandedContentText}</Col>
-            </Row>
-          </ListView.Item>
-        )
-      )}
+      {mockListItems.map(({ actions, properties, title, description, expandedContentText, hideCloseIcon }, index) => (
+        <ListView.Item
+          key={index}
+          actions={renderActions(actions)}
+          checkboxInput={<input type="checkbox" />}
+          leftContent={<ListView.Icon name="plane" />}
+          additionalInfo={renderAdditionalInfoItems(properties)}
+          heading={title}
+          description={description}
+          stacked={boolean('Stacked', false)}
+          hideCloseIcon={boolean('Hide close icon', false)}
+        >
+          <Row>
+            <Col sm={11}>{expandedContentText}</Col>
+          </Row>
+        </ListView.Item>
+      ))}
     </ListView>
   ))
 );
@@ -131,10 +107,7 @@ stories.add(
 stories.add(
   'ListItem variants',
   withInfo(`ListView usage example.`)(() => (
-    <ListView
-      id="listView--listItemVariants"
-      className="listView--listItemVariants"
-    >
+    <ListView id="listView--listItemVariants" className="listView--listItemVariants">
       <ListView.Item
         id="item1"
         className="listViewItem--listItemVariants"
@@ -168,8 +141,8 @@ stories.add(
         leftContent={<ListView.Icon size="lg" name="plane" />}
         heading={
           <span>
-            This is EVENT One that is with very LONG and should not overflow and
-            push other elements out of the bounding box.
+            This is EVENT One that is with very LONG and should not overflow and push other elements out of the bounding
+            box.
             <small>Feb 23, 2015 12:32 am</small>
           </span>
         }
@@ -183,8 +156,7 @@ stories.add(
         }
         description={
           <span>
-            The following snippet of text is rendered as{' '}
-            <a href="">link text</a>.
+            The following snippet of text is rendered as <a href="">link text</a>.
           </span>
         }
         stacked={boolean('Stacked', false)}
@@ -195,8 +167,7 @@ stories.add(
         heading="Stacked Additional Info items"
         description={
           <span>
-            The following snippet of text is rendered as{' '}
-            <a href="">link text</a>.
+            The following snippet of text is rendered as <a href="">link text</a>.
           </span>
         }
         additionalInfo={[
@@ -226,18 +197,10 @@ stories.add(
       <ListView.Item
         key="item5"
         heading="Custom Event Icon"
-        leftContent={
-          <ListView.Icon
-            type="pf"
-            name="ok"
-            size="md"
-            className="list-view-pf-icon-success"
-          />
-        }
+        leftContent={<ListView.Icon type="pf" name="ok" size="md" className="list-view-pf-icon-success" />}
         description={
           <span>
-            The following snippet of text is rendered as{' '}
-            <a href="">link text</a>.
+            The following snippet of text is rendered as <a href="">link text</a>.
           </span>
         }
         additionalInfo={[

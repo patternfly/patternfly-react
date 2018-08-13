@@ -92,15 +92,11 @@ export class MockInlineEditColumnTable extends React.Component {
     this.inlineEditController = inlineEditController;
 
     const inlineEditFormatter = inlineEditFormatterFactory({
-      isEditing: additionalData =>
-        inlineEditController.isEditing(additionalData),
+      isEditing: additionalData => inlineEditController.isEditing(additionalData),
       // renderValue: (value, additionalData) => <span>{value}</span>,
       renderValue: (value, additionalData) => (
         <td className="editable">
-          <div
-            onClick={e => inlineEditController.onActivate(additionalData)}
-            className="input"
-          >
+          <div onClick={e => inlineEditController.onActivate(additionalData)} className="input">
             {value}
           </div>
         </td>
@@ -114,9 +110,7 @@ export class MockInlineEditColumnTable extends React.Component {
             <FormControl
               type="text"
               defaultValue={defaultValue}
-              onBlur={e =>
-                inlineEditController.onChange(e.target.value, additionalData)
-              }
+              onBlur={e => inlineEditController.onChange(e.target.value, additionalData)}
             />
           </td>
         );

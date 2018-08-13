@@ -1,9 +1,6 @@
 import React from 'react';
 import { withInfo } from '@storybook/addon-info';
-import {
-  MockInlineEditRowTable,
-  mockInlineEditRowTableSource
-} from '../__mocks__/mockInlineEditRowTable';
+import { MockInlineEditRowTable, mockInlineEditRowTableSource } from '../__mocks__/mockInlineEditRowTable';
 import {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,

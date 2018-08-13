@@ -4,26 +4,19 @@ import { Table } from './index';
 import { noop } from '../../common/helpers';
 
 import { mockBootstrapRows } from './__mocks__/mockBootstrapRows';
-import {
-  mockBootstrapColumns,
-  mockPatternflyColumns
-} from './__mocks__/mockBootstrapColumns';
+import { mockBootstrapColumns, mockPatternflyColumns } from './__mocks__/mockBootstrapColumns';
 
 import { MockClientPaginationTable } from './__mocks__/mockClientPaginationTable';
 import { MockServerPaginationTable } from './__mocks__/mockServerPaginationTable';
 
 test('Mock Client Pagination table renders', () => {
-  const component = mount(
-    <MockClientPaginationTable onRowsLogger={jest.fn()} />
-  );
+  const component = mount(<MockClientPaginationTable onRowsLogger={jest.fn()} />);
 
   expect(component.render()).toMatchSnapshot();
 });
 
 test('Mock Server Pagination table renders', () => {
-  const component = mount(
-    <MockServerPaginationTable onServerPageLogger={jest.fn()} />
-  );
+  const component = mount(<MockServerPaginationTable onServerPageLogger={jest.fn()} />);
 
   expect(component.render()).toMatchSnapshot();
 });
@@ -148,11 +141,7 @@ describe('inline edit', () => {
       components={options.components}
     >
       <Table.Header onRow={options.onHeaderRow || noop} />
-      <Table.Body
-        rows={[mockBootstrapRows[0]]}
-        rowKey="id"
-        onRow={options.onRow || noop}
-      />
+      <Table.Body rows={[mockBootstrapRows[0]]} rowKey="id" onRow={options.onRow || noop} />
     </Table.PfProvider>
   );
 

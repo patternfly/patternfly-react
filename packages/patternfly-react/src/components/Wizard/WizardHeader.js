@@ -7,12 +7,7 @@ import { Modal, Icon } from '../../index';
  */
 const WizardHeader = ({ onClose, title, ...props }) => (
   <Modal.Header {...props}>
-    <button
-      className="close"
-      onClick={onClose}
-      aria-hidden="true"
-      aria-label="Close"
-    >
+    <button className="close" onClick={onClose} aria-hidden="true" aria-label="Close">
       <Icon type="pf" name="close" />
     </button>
     <Modal.Title>{title}</Modal.Title>

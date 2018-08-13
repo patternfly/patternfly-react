@@ -14,9 +14,7 @@ const Icon = createIcon(iconDef);
 
 test('sets correct viewBox', () => {
   const view = shallow(<Icon />);
-  expect(view.find('svg').prop('viewBox')).toBe(
-    `0 0 ${iconDef.width} ${iconDef.height}`
-  );
+  expect(view.find('svg').prop('viewBox')).toBe(`0 0 ${iconDef.width} ${iconDef.height}`);
 });
 
 test('sets correct svgPath', () => {
@@ -65,9 +63,7 @@ test('aria-labelledby matches title id', () => {
 test('ids should be unique for each rendered icon', () => {
   const first = shallow(<Icon title="icon title" />);
   const second = shallow(<Icon title="icon title" />);
-  expect(first.find('title').prop('id')).not.toBe(
-    second.find('title').prop('id')
-  );
+  expect(first.find('title').prop('id')).not.toBe(second.find('title').prop('id'));
 });
 
 test('additional props should be spread to the root svg element', () => {

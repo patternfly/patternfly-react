@@ -48,8 +48,7 @@ const WizardPattern = ({
 
   const getStep = (index = activeStepIndex) => steps[index];
 
-  const getPrevStep = (relativeToIndex = activeStepIndex) =>
-    relativeToIndex > 0 && steps[relativeToIndex - 1];
+  const getPrevStep = (relativeToIndex = activeStepIndex) => relativeToIndex > 0 && steps[relativeToIndex - 1];
 
   const getNextStep = (relativeToIndex = activeStepIndex) =>
     relativeToIndex < steps.length - 1 && steps[relativeToIndex + 1];
@@ -61,8 +60,7 @@ const WizardPattern = ({
     if (newStepIndex === activeStepIndex + 1) {
       const stepOnNextResult = activeStep.onNext && activeStep.onNext();
       const propOnNextResult = onNext(newStepIndex);
-      const stepFailed =
-        stepOnNextResult === false || propOnNextResult === false;
+      const stepFailed = stepOnNextResult === false || propOnNextResult === false;
       if (stepFailed) return;
     }
     if (newStepIndex === activeStepIndex - 1) {
@@ -77,28 +75,18 @@ const WizardPattern = ({
     const stepBeforeTarget = getPrevStep(newStepIndex);
 
     const preventExitActive = activeStep.preventExit;
-    const preventEnterTarget =
-      targetStep.preventEnter ||
-      (stepBeforeTarget && stepBeforeTarget.isInvalid);
+    const preventEnterTarget = targetStep.preventEnter || (stepBeforeTarget && stepBeforeTarget.isInvalid);
     const nextStepClicked = newStepIndex === activeStepIndex + 1;
 
-    return (
-      preventExitActive ||
-      preventEnterTarget ||
-      (nextStepClicked && nextStepDisabled)
-    );
+    return preventExitActive || preventEnterTarget || (nextStepClicked && nextStepDisabled);
   };
 
   const activeStepStr = (activeStepIndex + 1).toString();
 
-  const prevStepUnreachable =
-    onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
+  const prevStepUnreachable = onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
   // nextStepUnreachable is still true onFinalStep, because the Next button turns into a Close button
   const nextStepUnreachable =
-    nextStepDisabled ||
-    activeStep.isInvalid ||
-    activeStep.preventExit ||
-    getNextStep().preventEnter;
+    nextStepDisabled || activeStep.isInvalid || activeStep.preventExit || getNextStep().preventEnter;
 
   return (
     <Wizard show={show} onHide={onHideClick} onExited={onExited} {...props}>
@@ -121,11 +109,7 @@ const WizardPattern = ({
         <Button bsStyle="default" className="btn-cancel" onClick={onHideClick}>
           {cancelText}
         </Button>
-        <Button
-          bsStyle="default"
-          onClick={onBackClick}
-          disabled={prevStepUnreachable}
-        >
+        <Button bsStyle="default" onClick={onBackClick} disabled={prevStepUnreachable}>
           <Icon type="fa" name="angle-left" />
           {backText}
         </Button>

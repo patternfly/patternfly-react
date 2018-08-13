@@ -17,13 +17,7 @@ const TableInlineEditRow = props => {
 
   const buttonsClassName = props.last ? 'top' : 'bottom';
 
-  return (
-    <TableConfirmButtonsRow
-      {...props}
-      buttonsPosition={buttonsPosition}
-      buttonsClassName={buttonsClassName}
-    />
-  );
+  return <TableConfirmButtonsRow {...props} buttonsPosition={buttonsPosition} buttonsClassName={buttonsClassName} />;
 };
 
 TableInlineEditRow.shouldComponentUpdate = true;
@@ -43,10 +37,7 @@ TableInlineEditRow.propTypes = {
   /** Flag to indicate last row */
   last: PropTypes.bool,
   /** Row cells */
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /** Message text inputs for i18n */
   messages: PropTypes.shape({
     confirmButtonLabel: PropTypes.string,

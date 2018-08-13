@@ -30,11 +30,7 @@ const FilterTypeSelector = ({
       <div className={classes} {...props}>
         <DropdownButton title={title} id={menuId}>
           {placeholder && (
-            <MenuItem
-              title={placeholder}
-              key="Placeholder"
-              onSelect={onFilterTypeSelected}
-            >
+            <MenuItem title={placeholder} key="Placeholder" onSelect={onFilterTypeSelected}>
               {placeholder}
             </MenuItem>
           )}
@@ -43,11 +39,7 @@ const FilterTypeSelector = ({
               selected: item === currentFilterType
             };
             return (
-              <MenuItem
-                className={menuItemClasses}
-                key={item.id || index}
-                onSelect={() => onFilterTypeSelected(item)}
-              >
+              <MenuItem className={menuItemClasses} key={item.id || index} onSelect={() => onFilterTypeSelected(item)}>
                 {item.title || item}
               </MenuItem>
             );

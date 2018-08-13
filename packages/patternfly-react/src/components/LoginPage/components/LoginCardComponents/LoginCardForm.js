@@ -23,17 +23,8 @@ const LoginCardForm = ({
     <LoginCardInput {...usernameField} />
     <LoginCardInput {...passwordField} />
     {additionalFields}
-    <LoginCardSettings
-      rememberMe={rememberMe}
-      forgotPassword={forgotPassword}
-    />
-    <Button
-      type="submit"
-      bsStyle="primary"
-      bsSize="large"
-      block
-      disabled={disableSubmit}
-    >
+    <LoginCardSettings rememberMe={rememberMe} forgotPassword={forgotPassword} />
+    <Button type="submit" bsStyle="primary" bsSize="large" block disabled={disableSubmit}>
       {submitText}
     </Button>
   </Form>

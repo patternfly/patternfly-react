@@ -1,11 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import {
-  Paginator,
-  PaginationRow,
-  PAGINATION_VIEW,
-  PAGINATION_VIEW_TYPES
-} from './index';
+import { Paginator, PaginationRow, PAGINATION_VIEW, PAGINATION_VIEW_TYPES } from './index';
 
 const testPaginationRowSnapshot = (viewType, pageSizeDropUp = true) => {
   const component = mount(
@@ -50,14 +45,7 @@ PAGINATION_VIEW_TYPES.forEach(viewType => {
 });
 
 test('PaginationRow.Items renders', () => {
-  const component = mount(
-    <PaginationRow.Items
-      itemCount={55}
-      itemsStart={0}
-      itemsEnd={10}
-      messagesOf="of"
-    />
-  );
+  const component = mount(<PaginationRow.Items itemCount={55} itemsStart={0} itemsEnd={10} messagesOf="of" />);
 
   expect(component.render()).toMatchSnapshot();
 });
@@ -81,9 +69,7 @@ test('PaginationRow.Back renders', () => {
 });
 
 test('PaginationRow.ButtonGroup renders', () => {
-  const component = mount(
-    <PaginationRow.ButtonGroup className="custom-class" />
-  );
+  const component = mount(<PaginationRow.ButtonGroup className="custom-class" />);
 
   expect(component.render()).toMatchSnapshot();
 });
@@ -104,9 +90,7 @@ test('PaginationRow.Forward renders', () => {
 });
 
 test('PaginationRow.AmountOfPages renders', () => {
-  const component = mount(
-    <PaginationRow.AmountOfPages messagesOf="of" amountOfPages={4} />
-  );
+  const component = mount(<PaginationRow.AmountOfPages messagesOf="of" amountOfPages={4} />);
 
   expect(component.render()).toMatchSnapshot();
 });

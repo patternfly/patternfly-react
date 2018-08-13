@@ -7,11 +7,7 @@ import CardFooter from './CardFooter';
 import CardLink from './CardLink';
 import CardDropdownButton from './CardDropdownButton';
 import CardHeightMatching from './CardHeightMatching';
-import {
-  AggregateStatusCount,
-  AggregateStatusNotifications,
-  AggregateStatusNotification
-} from './AggregateStatusCard';
+import { AggregateStatusCount, AggregateStatusNotifications, AggregateStatusNotification } from './AggregateStatusCard';
 import {
   UtilizationCard,
   UtilizationCardDetails,

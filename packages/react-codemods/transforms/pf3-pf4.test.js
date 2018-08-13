@@ -3,8 +3,7 @@ import { defineInlineTest, runInlineTest } from 'jscodeshift/dist/testUtils';
 import transform from './pf3-pf4';
 
 const prettierConfig = prettier.resolveConfig.sync(process.cwd());
-const pretty = src =>
-  prettier.format(src, { parser: 'babylon', ...prettierConfig });
+const pretty = src => prettier.format(src, { parser: 'babylon', ...prettierConfig });
 
 global.console.log = jest.fn();
 

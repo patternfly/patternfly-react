@@ -56,10 +56,7 @@ class TableConfirmButtonsRow extends React.Component {
 
   renderConfirmButtons() {
     const divStyle = this.state.rowDimensions
-      ? this.props.buttonsPosition(
-          this.state.window,
-          this.element.getBoundingClientRect()
-        )
+      ? this.props.buttonsPosition(this.state.window, this.element.getBoundingClientRect())
       : {};
 
     const buttonsClass = `inline-edit-buttons ${this.props.buttonsClassName}`;
@@ -96,8 +93,7 @@ class TableConfirmButtonsRow extends React.Component {
         // mount the confirm buttons below the table
         createPortal(
           this.renderConfirmButtons(),
-          this.props.buttonsMountpoint ||
-            this.element.closest('table').parentNode
+          this.props.buttonsMountpoint || this.element.closest('table').parentNode
         )
       );
     }
@@ -134,10 +130,7 @@ TableConfirmButtonsRow.propTypes = {
   /** Additional confirm buttons classes */
   buttonsClassName: PropTypes.string,
   /** Row cells */
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   /** Message text inputs for i18n */
   messages: PropTypes.shape({
     confirmButtonLabel: PropTypes.string,

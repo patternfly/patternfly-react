@@ -83,8 +83,7 @@ exports[`Alert - danger Action 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
           
         </UNDEFINED>
@@ -100,8 +99,7 @@ exports[`Alert - danger Action 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
         </h4>
         Some alert
@@ -203,8 +201,7 @@ exports[`Alert - danger Action and Title 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -220,8 +217,7 @@ exports[`Alert - danger Action and Title 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -320,8 +316,7 @@ exports[`Alert - danger Body 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
           
         </UNDEFINED>
@@ -337,8 +332,7 @@ exports[`Alert - danger Body 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
         </h4>
         Some alert
@@ -432,8 +426,7 @@ exports[`Alert - danger Custom aria label 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -449,8 +442,7 @@ exports[`Alert - danger Custom aria label 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -549,8 +541,7 @@ exports[`Alert - danger Title 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -566,8 +557,7 @@ exports[`Alert - danger Title 1`] = `
             className="pf-u-sr-only"
           >
             Danger
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -661,8 +651,7 @@ exports[`Alert - info Action 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
           
         </UNDEFINED>
@@ -678,8 +667,7 @@ exports[`Alert - info Action 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
         </h4>
         Some alert
@@ -781,8 +769,7 @@ exports[`Alert - info Action and Title 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -798,8 +785,7 @@ exports[`Alert - info Action and Title 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -898,8 +884,7 @@ exports[`Alert - info Body 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
           
         </UNDEFINED>
@@ -915,8 +900,7 @@ exports[`Alert - info Body 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
         </h4>
         Some alert
@@ -1010,8 +994,7 @@ exports[`Alert - info Custom aria label 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -1027,8 +1010,7 @@ exports[`Alert - info Custom aria label 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -1127,8 +1109,7 @@ exports[`Alert - info Title 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -1144,8 +1125,7 @@ exports[`Alert - info Title 1`] = `
             className="pf-u-sr-only"
           >
             Info
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -1239,8 +1219,7 @@ exports[`Alert - success Action 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
           
         </UNDEFINED>
@@ -1256,8 +1235,7 @@ exports[`Alert - success Action 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
         </h4>
         Some alert
@@ -1359,8 +1337,7 @@ exports[`Alert - success Action and Title 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -1376,8 +1353,7 @@ exports[`Alert - success Action and Title 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -1476,8 +1452,7 @@ exports[`Alert - success Body 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
           
         </UNDEFINED>
@@ -1493,8 +1468,7 @@ exports[`Alert - success Body 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
         </h4>
         Some alert
@@ -1588,8 +1562,7 @@ exports[`Alert - success Custom aria label 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -1605,8 +1578,7 @@ exports[`Alert - success Custom aria label 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -1705,8 +1677,7 @@ exports[`Alert - success Title 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -1722,8 +1693,7 @@ exports[`Alert - success Title 1`] = `
             className="pf-u-sr-only"
           >
             Success
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -1817,8 +1787,7 @@ exports[`Alert - warning Action 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
           
         </UNDEFINED>
@@ -1834,8 +1803,7 @@ exports[`Alert - warning Action 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
         </h4>
         Some alert
@@ -1937,8 +1905,7 @@ exports[`Alert - warning Action and Title 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -1954,8 +1921,7 @@ exports[`Alert - warning Action and Title 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -2054,8 +2020,7 @@ exports[`Alert - warning Body 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
           
         </UNDEFINED>
@@ -2071,8 +2036,7 @@ exports[`Alert - warning Body 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
         </h4>
         Some alert
@@ -2166,8 +2130,7 @@ exports[`Alert - warning Custom aria label 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -2183,8 +2146,7 @@ exports[`Alert - warning Custom aria label 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
           Some title
         </h4>
@@ -2283,8 +2245,7 @@ exports[`Alert - warning Title 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
           Some title
         </UNDEFINED>
@@ -2300,8 +2261,7 @@ exports[`Alert - warning Title 1`] = `
             className="pf-u-sr-only"
           >
             Warning
-            :
-             
+            : 
           </span>
           Some title
         </h4>

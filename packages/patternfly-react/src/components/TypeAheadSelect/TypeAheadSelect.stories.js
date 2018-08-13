@@ -2,56 +2,37 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select, boolean, number } from '@storybook/addon-knobs';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { name } from '../../../package.json';
-import {
-  Form,
-  FormGroup,
-  Button,
-  TypeAheadSelect,
-  AsyncTypeAheadSelect
-} from '../../index';
+import { Form, FormGroup, Button, TypeAheadSelect, AsyncTypeAheadSelect } from '../../index';
 import Mocks from './mock';
 import GithubMenuItem from './GithubMenuItem';
 
 const storyDescription = (
   <React.Fragment>
     <p>
-      This component is based on the react-bootstrap-typeahead component. Please
-      visit the following for complete documentation
+      This component is based on the react-bootstrap-typeahead component. Please visit the following for complete
+      documentation
     </p>
     <ul>
       <li>
-        <a href="https://github.com/ericgio/react-bootstrap-typeahead">
-          React-bootstrap-typeahead github page
-        </a>
+        <a href="https://github.com/ericgio/react-bootstrap-typeahead">React-bootstrap-typeahead github page</a>
       </li>
       <li>
-        <a href="http://ericgio.github.io/react-bootstrap-typeahead/">
-          Examples
-        </a>
+        <a href="http://ericgio.github.io/react-bootstrap-typeahead/">Examples</a>
       </li>
       <li>
-        <a href="https://github.com/ericgio/react-bootstrap-typeahead/blob/master/docs/Props.md">
-          Props documentation
-        </a>
+        <a href="https://github.com/ericgio/react-bootstrap-typeahead/blob/master/docs/Props.md">Props documentation</a>
       </li>
       <li>
-        <a href="https://github.com/ericgio/react-bootstrap-typeahead/blob/master/docs/API.md">
-          API documentation
-        </a>
+        <a href="https://github.com/ericgio/react-bootstrap-typeahead/blob/master/docs/API.md">API documentation</a>
       </li>
     </ul>
   </React.Fragment>
 );
 
 const TypeAheadSelectStories = storiesOf(
-  `${storybookPackageName(name)}/${
-    STORYBOOK_CATEGORY.FORMS_AND_CONTROLS
-  }/TypeAhead Select`,
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/TypeAhead Select`,
   module
 );
 
@@ -71,12 +52,7 @@ TypeAheadSelectStories.addWithInfo('Menu Alignment', () => {
       <br />
       <br />
       <h2>Menu Alignment</h2>
-      <TypeAheadSelect
-        align={align}
-        options={Mocks.countries}
-        labelKey="country"
-        placeholder="Choose a state..."
-      />
+      <TypeAheadSelect align={align} options={Mocks.countries} labelKey="country" placeholder="Choose a state..." />
     </div>
   );
 });
@@ -90,12 +66,7 @@ TypeAheadSelectStories.addWithInfo('Input Size', () => {
       <br />
       <br />
       <h2>Input Size</h2>
-      <TypeAheadSelect
-        bsSize={bsSize}
-        options={Mocks.countries}
-        labelKey="name"
-        placeholder="Choose a state..."
-      />
+      <TypeAheadSelect bsSize={bsSize} options={Mocks.countries} labelKey="name" placeholder="Choose a state..." />
     </div>
   );
 });
@@ -153,10 +124,7 @@ TypeAheadSelectStories.addWithInfo('Allow Adding New Items', () => {
       <br />
       <h2>Allow Adding New Items</h2>
       <p>
-        <strong>
-          If a search result doesn&apos;t exist, allow the user to add a custom
-          input.
-        </strong>
+        <strong>If a search result doesn&apos;t exist, allow the user to add a custom input.</strong>
       </p>
       <TypeAheadSelect
         multiple
@@ -249,9 +217,7 @@ TypeAheadSelectStories.addWithInfo('Using Async Calls', () => {
         multiple
         clearButton
         highlightOnlyResult
-        renderMenuItemChildren={(option, props) => (
-          <GithubMenuItem {...props} option={option} />
-        )}
+        renderMenuItemChildren={(option, props) => <GithubMenuItem {...props} option={option} />}
       />
     </div>
   );
@@ -264,9 +230,7 @@ TypeAheadSelectStories.addWithInfo('Controlled input value', () => (
     <br />
     <h2>Controlled input value</h2>
     <p>
-      <strong>
-        A default value will be shown when the component is rendered.
-      </strong>
+      <strong>A default value will be shown when the component is rendered.</strong>
     </p>
     <TypeAheadSelect
       defaultInputValue="Denmark"

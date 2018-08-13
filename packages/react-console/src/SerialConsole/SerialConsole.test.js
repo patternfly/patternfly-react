@@ -6,12 +6,7 @@ import { CONNECTED, DISCONNECTED, LOADING } from './constants';
 
 test('SerialConsole in the LOADING state', () => {
   const view = shallow(
-    <SerialConsole
-      onConnect={jest.fn()}
-      onDisconnect={jest.fn()}
-      status={LOADING}
-      textLoading="My text for Loading"
-    />
+    <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} textLoading="My text for Loading" />
   );
   expect(view).toMatchSnapshot();
 });
@@ -56,24 +51,12 @@ test('Render SerialConsole in the CONNECTED state', () => {
 
 test('Pass class to SerialConsole', () => {
   const view = shallow(
-    <SerialConsole
-      onConnect={jest.fn()}
-      onDisconnect={jest.fn()}
-      status={LOADING}
-      topClassName="my-top-class"
-    />
+    <SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={LOADING} topClassName="my-top-class" />
   );
   expect(view).toMatchSnapshot();
 });
 
 test('Enable autoFit for SerialConsole', () => {
-  const view = shallow(
-    <SerialConsole
-      onConnect={jest.fn()}
-      onDisconnect={jest.fn()}
-      status={CONNECTED}
-      autoFit
-    />
-  );
+  const view = shallow(<SerialConsole onConnect={jest.fn()} onDisconnect={jest.fn()} status={CONNECTED} autoFit />);
   expect(view).toMatchSnapshot();
 });

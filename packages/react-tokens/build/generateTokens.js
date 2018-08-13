@@ -6,9 +6,7 @@ const { readFileSync, readdirSync } = require('fs');
 const { outputFileSync } = require('fs-extra');
 
 const outDir = resolve(__dirname, '../dist');
-const pfStylesDir = dirname(
-  require.resolve('@patternfly/patternfly-next/patternfly.css')
-);
+const pfStylesDir = dirname(require.resolve('@patternfly/patternfly-next/patternfly.css'));
 const templateDir = resolve(__dirname, './templates');
 
 const cssFiles = glob.sync('**/*.css', {
@@ -16,8 +14,7 @@ const cssFiles = glob.sync('**/*.css', {
   ignore: ['assets/**']
 });
 
-const formatCustomPropertyName = key =>
-  key.replace('--pf-', '').replace(/-+/g, '_');
+const formatCustomPropertyName = key => key.replace('--pf-', '').replace(/-+/g, '_');
 
 const tokens = {};
 cssFiles.forEach(filePath => {
@@ -34,13 +31,10 @@ cssFiles.forEach(filePath => {
       const { property, value } = decl;
       if (decl.property.startsWith('--')) {
         const key = formatCustomPropertyName(property);
-        const populatedValue = value.replace(
-          /var\(([\w|-]*)\)/g,
-          (full, match) => {
-            const computedValue = tokens[formatCustomPropertyName(match)];
-            return computedValue ? computedValue.value : `var(${match})`;
-          }
-        );
+        const populatedValue = value.replace(/var\(([\w|-]*)\)/g, (full, match) => {
+          const computedValue = tokens[formatCustomPropertyName(match)];
+          return computedValue ? computedValue.value : `var(${match})`;
+        });
         tokens[key] = {
           name: property,
           value: populatedValue,
@@ -53,8 +47,5 @@ cssFiles.forEach(filePath => {
 
 readdirSync(templateDir).forEach(templateFile => {
   const template = require(join(templateDir, templateFile));
-  outputFileSync(
-    template.getOutputPath({ outDir }),
-    template.getContent({ tokens })
-  );
+  outputFileSync(template.getOutputPath({ outDir }), template.getContent({ tokens }));
 });

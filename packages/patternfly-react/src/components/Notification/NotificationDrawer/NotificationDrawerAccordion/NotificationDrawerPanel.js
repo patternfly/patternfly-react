@@ -2,12 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NotificationDrawerPanel = ({
-  children,
-  expanded,
-  className,
-  ...props
-}) => {
+const NotificationDrawerPanel = ({ children, expanded, className, ...props }) => {
   const classes = classNames('panel panel-default', { expanded }, className);
 
   return (

@@ -91,9 +91,7 @@ class LoginCardWithValidation extends React.Component {
 
   getModifiedProps = () => {
     const { usernameField, passwordField } = this.props;
-    const passwordFieldWarningType = this.state.isCapsLock
-      ? 'capsLock'
-      : this.state.passwordField.warningType;
+    const passwordFieldWarningType = this.state.isCapsLock ? 'capsLock' : this.state.passwordField.warningType;
     return {
       usernameField: {
         ...usernameField,
@@ -111,8 +109,7 @@ class LoginCardWithValidation extends React.Component {
         onBlur: e => this.onInputBlur(e, 'passwordField'),
         onKeyPress: e => this.onKeyPress(e, 'passwordField'),
         warning: passwordField.warnings[passwordFieldWarningType],
-        showWarning:
-          this.state.passwordField.isFocused && this.state.isCapsLock,
+        showWarning: this.state.passwordField.isFocused && this.state.isCapsLock,
         error: passwordField.errors[this.state.passwordField.errorType],
         showError: this.state.passwordField.showError
       },
@@ -144,8 +141,7 @@ class LoginCardWithValidation extends React.Component {
     !this.isPasswordShort() &&
     this.isUserNameValid();
 
-  isPasswordShort = () =>
-    this.state.passwordField.value.length < this.props.passwordField.minLength;
+  isPasswordShort = () => this.state.passwordField.value.length < this.props.passwordField.minLength;
 
   hideSubmitError = () => {
     this.setState({
@@ -199,9 +195,7 @@ class LoginCardWithValidation extends React.Component {
   handleCapsLock = e => {
     const keyCode = e.keyCode ? e.keyCode : e.which;
     const shiftKey = e.shiftKey ? e.shiftKey : keyCode === 16;
-    const isCapsLock =
-      (keyCode >= 65 && keyCode <= 90 && !shiftKey) ||
-      (keyCode >= 97 && keyCode <= 122 && shiftKey);
+    const isCapsLock = (keyCode >= 65 && keyCode <= 90 && !shiftKey) || (keyCode >= 97 && keyCode <= 122 && shiftKey);
     this.setState({
       isCapsLock
     });

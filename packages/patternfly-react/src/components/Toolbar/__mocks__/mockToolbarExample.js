@@ -1,16 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {
-  Button,
-  DropdownKebab,
-  Filter,
-  FormControl,
-  Icon,
-  MenuItem,
-  Sort,
-  Toolbar
-} from '../../../index';
+import { Button, DropdownKebab, Filter, FormControl, Icon, MenuItem, Sort, Toolbar } from '../../../index';
 import { noop } from '../../../common/helpers';
 
 import { mockFilterExampleFields } from '../../Filter/__mocks__/mockFilterExample';
@@ -75,8 +66,8 @@ export class MockToolbarExample extends React.Component {
     filterText += ': ';
 
     if (value.filterCategory) {
-      filterText += `${value.filterCategory.title ||
-        value.filterCategory}-${value.filterValue.title || value.filterValue}`;
+      filterText += `${value.filterCategory.title || value.filterCategory}-${value.filterValue.title ||
+        value.filterValue}`;
     } else if (value.title) {
       filterText += value.title;
     } else {
@@ -112,10 +103,7 @@ export class MockToolbarExample extends React.Component {
 
     const index = activeFilters.indexOf(filter);
     if (index > -1) {
-      const updated = [
-        ...activeFilters.slice(0, index),
-        ...activeFilters.slice(index + 1)
-      ];
+      const updated = [...activeFilters.slice(0, index), ...activeFilters.slice(index + 1)];
       this.setState({ activeFilters: updated });
     }
     onFiltersChanged && onFiltersChanged(`Filter Removed: ${filter.label}`);
@@ -259,16 +247,14 @@ export class MockToolbarExample extends React.Component {
             </MenuItem>
             <MenuItem
               onClick={() => {
-                onActionPerformed &&
-                  onActionPerformed('Action: Another Action');
+                onActionPerformed && onActionPerformed('Action: Another Action');
               }}
             >
               Another Action
             </MenuItem>
             <MenuItem
               onClick={() => {
-                onActionPerformed &&
-                  onActionPerformed('Action: Something Else Here');
+                onActionPerformed && onActionPerformed('Action: Something Else Here');
               }}
             >
               Something Else Here
@@ -276,8 +262,7 @@ export class MockToolbarExample extends React.Component {
             <MenuItem role="separator" className="divider" />
             <MenuItem
               onClick={() => {
-                onActionPerformed &&
-                  onActionPerformed('Action: Separated Link');
+                onActionPerformed && onActionPerformed('Action: Separated Link');
               }}
             >
               Separated Link
@@ -290,15 +275,9 @@ export class MockToolbarExample extends React.Component {
             currentIndex={1}
             totalCount={3}
             onChange={value => onFindAction && onFindAction(`Find: ${value}`)}
-            onEnter={value =>
-              onFindAction && onFindAction(`Find again: ${value}`)
-            }
-            onFindNext={value =>
-              onFindAction && onFindAction(`Find Next: ${value}`)
-            }
-            onFindPrevious={value =>
-              onFindAction && onFindAction(`Find Previous: ${value}`)
-            }
+            onEnter={value => onFindAction && onFindAction(`Find again: ${value}`)}
+            onFindNext={value => onFindAction && onFindAction(`Find Next: ${value}`)}
+            onFindPrevious={value => onFindAction && onFindAction(`Find Previous: ${value}`)}
           />
           <Toolbar.ViewSelector>
             <Button
@@ -346,12 +325,9 @@ export class MockToolbarExample extends React.Component {
               <Filter.ActiveLabel>Active Filters:</Filter.ActiveLabel>
               <Filter.List>
                 {activeFilters.map((item, index) => (
-                  <Filter.Item
-                    key={index}
-                    onRemove={this.removeFilter}
-                    filterData={item}
-                  >
-                    label={item.label}
+                  <Filter.Item key={index} onRemove={this.removeFilter} filterData={item}>
+                    label=
+                    {item.label}
                   </Filter.Item>
                 ))}
               </Filter.List>

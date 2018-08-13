@@ -101,8 +101,7 @@ export class MockInlineEditCellTable extends React.Component {
         const index = findIndex(rows, { id: rowData.id });
 
         if (rowData.editing && rowData.editing[property] !== undefined) {
-          rows[index][property] =
-            value !== null ? value : rows[index].editing[property];
+          rows[index][property] = value !== null ? value : rows[index].editing[property];
           delete rows[index].editing[property];
         }
 
@@ -129,14 +128,10 @@ export class MockInlineEditCellTable extends React.Component {
     };
 
     const inlineEditFormatter = inlineEditFormatterFactory({
-      isEditing: additionalData =>
-        inlineEditController.isEditing(additionalData),
+      isEditing: additionalData => inlineEditController.isEditing(additionalData),
       renderValue: (value, additionalData) => (
         <td className="editable">
-          <div
-            onMouseUp={e => inlineEditController.onActivate(e, additionalData)}
-            className="input"
-          >
+          <div onMouseUp={e => inlineEditController.onActivate(e, additionalData)} className="input">
             {value}
           </div>
         </td>
@@ -144,10 +139,7 @@ export class MockInlineEditCellTable extends React.Component {
       renderEdit: (value, additionalData) => {
         const { rowData, property, rowIndex, columnIndex } = additionalData;
         const { lastSelected } = this.state;
-        const selected =
-          lastSelected &&
-          lastSelected.rowIndex === rowIndex &&
-          lastSelected.columnIndex === columnIndex;
+        const selected = lastSelected && lastSelected.rowIndex === rowIndex && lastSelected.columnIndex === columnIndex;
 
         return (
           <td className="editable editing">
@@ -156,15 +148,10 @@ export class MockInlineEditCellTable extends React.Component {
                 type="text"
                 selected={selected}
                 defaultValue={rowData.editing[property]}
-                onBlur={e =>
-                  inlineEditController.onChange(e.target.value, additionalData)
-                }
+                onBlur={e => inlineEditController.onChange(e.target.value, additionalData)}
                 onKeyUp={e => {
                   if (e.keyCode === KEY_CODES.ENTER_KEY) {
-                    inlineEditController.onConfirm(
-                      e.target.value,
-                      additionalData
-                    );
+                    inlineEditController.onConfirm(e.target.value, additionalData);
                   } else if (e.keyCode === KEY_CODES.ESCAPE_KEY) {
                     inlineEditController.onCancel(additionalData);
                   }
@@ -174,16 +161,12 @@ export class MockInlineEditCellTable extends React.Component {
                 <ConfirmButton
                   bsStyle="primary"
                   key="confirm"
-                  onMouseUp={() =>
-                    inlineEditController.onConfirm(null, additionalData)
-                  }
+                  onMouseUp={() => inlineEditController.onConfirm(null, additionalData)}
                 />
                 <CancelButton
                   bsStyle="default"
                   key="cancel"
-                  onMouseUp={() =>
-                    inlineEditController.onCancel(additionalData)
-                  }
+                  onMouseUp={() => inlineEditController.onCancel(additionalData)}
                 />
               </Form.InputGroup.Button>
             </InputGroup>

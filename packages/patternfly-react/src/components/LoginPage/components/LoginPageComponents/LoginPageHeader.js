@@ -3,12 +3,7 @@ import PropTypes from 'prop-types';
 
 const LoginPageHeader = ({ logoSrc, logoTitle, caption }) => (
   <header className="login-pf-page-header">
-    <img
-      className="login-pf-brand"
-      src={logoSrc}
-      title={logoTitle}
-      alt="logo"
-    />
+    <img className="login-pf-brand" src={logoSrc} title={logoTitle} alt="logo" />
     <p>{caption}</p>
   </header>
 );

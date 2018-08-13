@@ -2,12 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icon } from '../../index';
 
-const SortDirectionSelector = ({
-  className,
-  isNumeric,
-  isAscending,
-  ...props
-}) => {
+const SortDirectionSelector = ({ className, isNumeric, isAscending, ...props }) => {
   let directionName;
   if (isNumeric) {
     directionName = isAscending ? 'sort-numeric-asc' : 'sort-numeric-desc';

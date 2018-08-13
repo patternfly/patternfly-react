@@ -6,9 +6,7 @@ import RemoveButton from './RemoveButton';
 const Label = ({ children, onRemoveClick, type, ...props }) => (
   <BsLabel bsStyle={type} {...props}>
     {children}
-    {!!onRemoveClick && (
-      <RemoveButton onRemoveClick={onRemoveClick} title="Remove" />
-    )}
+    {!!onRemoveClick && <RemoveButton onRemoveClick={onRemoveClick} title="Remove" />}
   </BsLabel>
 );
 

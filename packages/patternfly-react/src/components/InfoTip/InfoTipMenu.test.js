@@ -8,14 +8,7 @@ const props = {
 
 test('forwards only valid props to the root element', () => {
   const view = shallow(
-    <InfoTipMenu
-      {...props}
-      id="id"
-      bsRole="bsRole"
-      bsClass="bsClass"
-      pullRight="pullRight"
-      labelledBy="labeledBy"
-    />
+    <InfoTipMenu {...props} id="id" bsRole="bsRole" bsClass="bsClass" pullRight="pullRight" labelledBy="labeledBy" />
   );
   expect(view).toMatchSnapshot('props are forwarded to root element');
 });

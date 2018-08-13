@@ -4,13 +4,9 @@ import { shallow } from 'enzyme';
 import { BulletChart } from '../index';
 import { Tooltip } from '../../Tooltip/index';
 
-const customTooltipFunction = (value, title) => (
-  <Tooltip id="bullet-tip-1">{`${title}: ${value}%`}</Tooltip>
-);
+const customTooltipFunction = (value, title) => <Tooltip id="bullet-tip-1">{`${title}: ${value}%`}</Tooltip>;
 
-const customTooltipFunction2 = (value, title) => (
-  <Tooltip id="bullet-tip-2">{`${title} - ${value}%`}</Tooltip>
-);
+const customTooltipFunction2 = (value, title) => <Tooltip id="bullet-tip-2">{`${title} - ${value}%`}</Tooltip>;
 
 const goodRanges = [
   { value: 50, title: 'Range 1', tooltipFunction: customTooltipFunction },
@@ -78,9 +74,7 @@ const singleValue = [
 ];
 
 test('BulletChart renders properly with defaults', () => {
-  expect(
-    shallow(<BulletChart id="bullet-all" values={values} />).getElement()
-  ).toMatchSnapshot();
+  expect(shallow(<BulletChart id="bullet-all" values={values} />).getElement()).toMatchSnapshot();
 });
 
 test('BulletChart renders properly with all fields', () => {
@@ -527,12 +521,7 @@ test('BulletChart renders custom legend properly', () => {
 test('BulletChartTitle renders properly', () => {
   expect(
     shallow(
-      <BulletChart.Title
-        id="my-bullet-title"
-        className="my-bullet-title"
-        label="test label"
-        details="test details"
-      />
+      <BulletChart.Title id="my-bullet-title" className="my-bullet-title" label="test label" details="test details" />
     ).getElement()
   ).toMatchSnapshot();
 });
@@ -540,11 +529,7 @@ test('BulletChartTitle renders properly', () => {
 test('BulletChartThreshold renders properly', () => {
   expect(
     shallow(
-      <BulletChart.Threshold
-        id="my-bullet-threshold"
-        className="my-bullet-threshold"
-        threshold={40}
-      />
+      <BulletChart.Threshold id="my-bullet-threshold" className="my-bullet-threshold" threshold={40} />
     ).getElement()
   ).toMatchSnapshot();
   expect(
@@ -579,13 +564,7 @@ test('BulletChartThreshold renders properly', () => {
 
 test('BulletChartValue renders properly', () => {
   expect(
-    shallow(
-      <BulletChart.Value
-        id="my-bullet-value"
-        className="my-bullet-value"
-        value={values[0]}
-      />
-    ).getElement()
+    shallow(<BulletChart.Value id="my-bullet-value" className="my-bullet-value" value={values[0]} />).getElement()
   ).toMatchSnapshot();
   expect(
     shallow(
@@ -610,12 +589,7 @@ test('BulletChartValue renders properly', () => {
   ).toMatchSnapshot();
   expect(
     shallow(
-      <BulletChart.Value
-        id="my-bullet-value-dot"
-        className="my-bullet-value-dot"
-        value={values[1]}
-        dot
-      />
+      <BulletChart.Value id="my-bullet-value-dot" className="my-bullet-value-dot" value={values[1]} dot />
     ).getElement()
   ).toMatchSnapshot();
   expect(
@@ -645,14 +619,7 @@ test('BulletChartValue renders properly', () => {
 
 test('BulletChartRange renders properly', () => {
   expect(
-    shallow(
-      <BulletChart.Range
-        id="my-bullet-range"
-        className="my-bullet-range"
-        value={20}
-        index={1}
-      />
-    ).getElement()
+    shallow(<BulletChart.Range id="my-bullet-range" className="my-bullet-range" value={20} index={1} />).getElement()
   ).toMatchSnapshot();
   expect(
     shallow(
@@ -667,22 +634,12 @@ test('BulletChartRange renders properly', () => {
   ).toMatchSnapshot();
   expect(
     shallow(
-      <BulletChart.Range
-        id="my-bullet-range-negative"
-        className="my-bullet-range-negative"
-        value={-10}
-        index={1}
-      />
+      <BulletChart.Range id="my-bullet-range-negative" className="my-bullet-range-negative" value={-10} index={1} />
     ).getElement()
   ).toMatchSnapshot();
   expect(
     shallow(
-      <BulletChart.Range
-        id="my-bullet-range-invalid"
-        className="my-bullet-range-invalid"
-        value={160}
-        index={1}
-      />
+      <BulletChart.Range id="my-bullet-range-invalid" className="my-bullet-range-invalid" value={160} index={1} />
     ).getElement()
   ).toMatchSnapshot();
 });
@@ -704,10 +661,7 @@ test('BulletChartAxis renders properly', () => {
 test('BulletChartAxis renders vertical properly', () => {
   expect(
     shallow(
-      <BulletChart.Axis
-        id="my-bullet-vertical-axis"
-        className="my-bullet-vertical-axis"
-      >
+      <BulletChart.Axis id="my-bullet-vertical-axis" className="my-bullet-vertical-axis">
         <BulletChart.AxisTic value={0} vertical />
         <BulletChart.AxisTic value={25} vertical />
         <BulletChart.AxisTic value={50} vertical />
@@ -734,13 +688,7 @@ test('BulletChartAxis renders properly with custom text', () => {
 
 test('BulletChartAxisTic renders properly', () => {
   expect(
-    shallow(
-      <BulletChart.AxisTic
-        id="my-bullet-axis-tic"
-        className="my-bullet-axis-tic"
-        value={25}
-      />
-    ).getElement()
+    shallow(<BulletChart.AxisTic id="my-bullet-axis-tic" className="my-bullet-axis-tic" value={25} />).getElement()
   ).toMatchSnapshot();
 });
 
@@ -778,16 +726,8 @@ test('BulletChartLegend renders properly', () => {
   expect(
     shallow(
       <BulletChart.Legend id="my-bullet-legend" className="my-bullet-legend">
-        <BulletChart.LegendItem
-          title={values[0].title}
-          value={values[0].value}
-          color={values[0].color}
-        />
-        <BulletChart.LegendItem
-          title={values[1].title}
-          value={values[1].value}
-          color={values[1].color}
-        />
+        <BulletChart.LegendItem title={values[0].title} value={values[0].value} color={values[0].color} />
+        <BulletChart.LegendItem title={values[1].title} value={values[1].value} color={values[1].color} />
       </BulletChart.Legend>
     ).getElement()
   ).toMatchSnapshot();

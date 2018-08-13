@@ -25,8 +25,7 @@ export const PropsTable = ({ props }) => (
           <TD>
             <div className={css(styles.enumValues)}>
               {p.type.name}
-              {Array.isArray(p.type.value) &&
-                `: ${p.type.value.map(v => v.value).join(' |\n')}`}
+              {Array.isArray(p.type.value) && `: ${p.type.value.map(v => v.value).join(' |\n')}`}
             </div>
           </TD>
           <TD>{p.required && '✨'}</TD>

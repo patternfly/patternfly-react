@@ -4,10 +4,7 @@ import classNames from 'classnames';
 import { ButtonGroup } from '../Button';
 
 const PaginationRowButtonGroup = ({ className, ...props }) => (
-  <ButtonGroup
-    {...props}
-    className={classNames(className, 'pagination-pf-pagesize')}
-  />
+  <ButtonGroup {...props} className={classNames(className, 'pagination-pf-pagesize')} />
 );
 PaginationRowButtonGroup.propTypes = {
   /** additional classes */

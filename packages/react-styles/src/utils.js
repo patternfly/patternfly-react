@@ -2,11 +2,7 @@ import camelcase from 'camel-case';
 import { inject } from './inject';
 
 export function isValidStyleDeclaration(styleObj) {
-  return (
-    styleObj &&
-    typeof styleObj.__className === 'string' &&
-    typeof styleObj.__inject === 'function'
-  );
+  return styleObj && typeof styleObj.__className === 'string' && typeof styleObj.__inject === 'function';
 }
 
 export function createStyleDeclaration(className, rawCss) {
@@ -28,9 +24,7 @@ export function isModifier(className) {
 
 export function getModifier(styleObj, modifier, defaultModifier) {
   const modifiers = styleObj.modifiers || styleObj;
-  return (
-    modifiers[modifier] || modifiers[camelcase(modifier)] || defaultModifier
-  );
+  return modifiers[modifier] || modifiers[camelcase(modifier)] || defaultModifier;
 }
 
 export function formatClassName(className) {

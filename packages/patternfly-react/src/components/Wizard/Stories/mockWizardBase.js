@@ -20,8 +20,7 @@ class MockWizardBase extends React.Component {
     } else if (activeStepIndex > 0) {
       this.setState(prevState => ({
         activeStepIndex: prevState.activeStepIndex - 1,
-        activeSubStepIndex:
-          steps[prevState.activeStepIndex - 1].subSteps.length - 1
+        activeSubStepIndex: steps[prevState.activeStepIndex - 1].subSteps.length - 1
       }));
     }
   };

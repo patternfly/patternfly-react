@@ -9,10 +9,4 @@ Toolbar.RightContent = ToolbarRightContent;
 Toolbar.Find = ToolbarFind;
 Toolbar.ViewSelector = ToolbarViewSelector;
 
-export {
-  Toolbar,
-  ToolbarResults,
-  ToolbarRightContent,
-  ToolbarFind,
-  ToolbarViewSelector
-};
+export { Toolbar, ToolbarResults, ToolbarRightContent, ToolbarFind, ToolbarViewSelector };

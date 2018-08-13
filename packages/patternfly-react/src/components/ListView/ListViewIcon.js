@@ -7,12 +7,7 @@ import { Icon } from '../Icon';
  * ListViewIcon used as a default content for ListViewLeft
  */
 const ListViewIcon = ({ type, name, className, size, ...props }) => (
-  <Icon
-    type={type}
-    name={name}
-    className={classNames(`list-view-pf-icon-${size}`, className)}
-    {...props}
-  />
+  <Icon type={type} name={name} className={classNames(`list-view-pf-icon-${size}`, className)} {...props} />
 );
 ListViewIcon.propTypes = {
   /** Icon type (pf or fa) */

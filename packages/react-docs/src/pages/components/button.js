@@ -31,12 +31,7 @@ const ButtonDocs = ({ data }) => (
       <Button component="a" href="https://pf-next.com/" target="_blank">
         Link to Core Docs
       </Button>
-      <Button
-        component="a"
-        isDisabled
-        href="https://pf-next.com/"
-        target="_blank"
-      >
+      <Button component="a" isDisabled href="https://pf-next.com/" target="_blank">
         Disabled Link
       </Button>
     </Example>

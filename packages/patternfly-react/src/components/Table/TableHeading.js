@@ -1,24 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import {
-  TABLE_ALIGN,
-  TABLE_ALIGNMENT_TYPES,
-  TABLE_SORT_DIRECTION,
-  TABLE_SORT_DIRECTIONS
-} from './TableConstants';
+import { TABLE_ALIGN, TABLE_ALIGNMENT_TYPES, TABLE_SORT_DIRECTION, TABLE_SORT_DIRECTIONS } from './TableConstants';
 
 /**
  * TableHeading component for Patternfly React
  */
-const TableHeading = ({
-  children,
-  className,
-  align,
-  sort,
-  sortDirection,
-  ...props
-}) => {
+const TableHeading = ({ children, className, align, sort, sortDirection, ...props }) => {
   const sortingClass = classNames({
     sorting_asc: sortDirection === TABLE_SORT_DIRECTION.ASC,
     sorting_desc: sortDirection === TABLE_SORT_DIRECTION.DESC

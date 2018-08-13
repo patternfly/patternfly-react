@@ -15,20 +15,11 @@ import ListViewMainInfo from './ListViewMainInfo';
  * ListViewRow wraps the ListViewItem row, conditionally renders sections
  * based on availability of individual props, maintains the ListItem row structure
  */
-const ListViewRow = ({
-  actions,
-  additionalInfo,
-  checkboxInput,
-  leftContent,
-  heading,
-  description
-}) => {
+const ListViewRow = ({ actions, additionalInfo, checkboxInput, leftContent, heading, description }) => {
   const items = [];
 
   if (checkboxInput) {
-    items.push(
-      <ListViewCheckbox key="checkbox">{checkboxInput}</ListViewCheckbox>
-    );
+    items.push(<ListViewCheckbox key="checkbox">{checkboxInput}</ListViewCheckbox>);
   }
 
   if (actions) {
@@ -41,17 +32,11 @@ const ListViewRow = ({
       <ListViewBody>
         {(heading || description) && (
           <ListViewDescription>
-            {heading && (
-              <ListViewDescriptionHeading>{heading}</ListViewDescriptionHeading>
-            )}
-            {description && (
-              <ListViewDescriptionText>{description}</ListViewDescriptionText>
-            )}
+            {heading && <ListViewDescriptionHeading>{heading}</ListViewDescriptionHeading>}
+            {description && <ListViewDescriptionText>{description}</ListViewDescriptionText>}
           </ListViewDescription>
         )}
-        {additionalInfo && (
-          <ListViewAdditionalInfo>{additionalInfo}</ListViewAdditionalInfo>
-        )}
+        {additionalInfo && <ListViewAdditionalInfo>{additionalInfo}</ListViewAdditionalInfo>}
       </ListViewBody>
     </ListViewMainInfo>
   );

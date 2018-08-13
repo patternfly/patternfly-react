@@ -21,14 +21,7 @@ const defaultProps = {
 };
 
 const StackItem = ({ variant, className, children, ...props }) => (
-  <div
-    {...props}
-    className={css(
-      styles.stackItem,
-      getModifier(styles.modifiers, variant),
-      className
-    )}
-  >
+  <div {...props} className={css(styles.stackItem, getModifier(styles.modifiers, variant), className)}>
     {children}
   </div>
 );

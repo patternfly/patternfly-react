@@ -74,8 +74,7 @@ class StatefulNotificationDrawerWrapper extends React.Component {
   };
 
   togglePanel = key => {
-    if (this.state.expandedPanel === key)
-      this.setState({ expandedPanel: '-1' });
+    if (this.state.expandedPanel === key) this.setState({ expandedPanel: '-1' });
     else this.setState({ expandedPanel: key });
   };
 

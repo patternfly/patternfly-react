@@ -16,10 +16,7 @@ const AlertDocs = ({ data }) => (
   <ComponentDocs data={data}>
     {Object.values(AlertVariant).map((type, key) => (
       <Example title={`Notification - ${type}`} key={key}>
-        <Alert
-          variant={type}
-          title={`${capitalizeFirstLetter(type)} notification title`}
-        >
+        <Alert variant={type} title={`${capitalizeFirstLetter(type)} notification title`}>
           This is a description of the notification content
         </Alert>
         <Alert
@@ -27,10 +24,7 @@ const AlertDocs = ({ data }) => (
           action={<Button variant="secondary">Button</Button>}
           title={`${capitalizeFirstLetter(type)} notification title`}
         />
-        <Alert
-          variant={type}
-          title={`${capitalizeFirstLetter(type)} notification title`}
-        />
+        <Alert variant={type} title={`${capitalizeFirstLetter(type)} notification title`} />
       </Example>
     ))}
   </ComponentDocs>

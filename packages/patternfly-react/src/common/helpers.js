@@ -24,8 +24,7 @@ export const debounce = (func, wait) => {
 };
 
 /** Returns true if propName is a non-null, defined property of the props object (can be any object, not just React props). */
-export const propExists = (props, propName) =>
-  props && props.hasOwnProperty(propName) && props[propName] != null;
+export const propExists = (props, propName) => props && props.hasOwnProperty(propName) && props[propName] != null;
 
 /** Given two objects (props and state), returns the value of propName from props if present, or from state otherwise. */
 export const propOrState = (props, state, propName) =>
@@ -36,18 +35,14 @@ export const selectKeys = (obj, keys, fn = val => val) =>
   keys.reduce((values, key) => ({ ...values, [key]: fn(obj[key]) }), {});
 
 /** Returns a subset of the given object with a validator function applied to its keys. */
-export const filterKeys = (obj, validator) =>
-  selectKeys(obj, Object.keys(obj).filter(validator));
+export const filterKeys = (obj, validator) => selectKeys(obj, Object.keys(obj).filter(validator));
 
 /** Returns a subset of the given object with the given keys left out. */
-export const excludeKeys = (obj, keys) =>
-  filterKeys(obj, key => !keys.includes(key));
+export const excludeKeys = (obj, keys) => filterKeys(obj, key => !keys.includes(key));
 
 /** Returns the given React children prop as a regular array of React nodes. */
 export const childrenToArray = children =>
-  children &&
-  React.Children.count(children) > 0 &&
-  React.Children.toArray(children);
+  children && React.Children.count(children) > 0 && React.Children.toArray(children);
 
 /** Filters the given React children prop with the given validator function. Returns an array of nodes. */
 export const filterChildren = (children, validator) => {

@@ -23,18 +23,12 @@ const props = {
 
 test('listens for slide', () => {
   shallow(<BSSliderWrapper {...props} />);
-  expect(BSSlider.mock.instances[0].on).toBeCalledWith(
-    'slide',
-    expect.any(Function)
-  );
+  expect(BSSlider.mock.instances[0].on).toBeCalledWith('slide', expect.any(Function));
 });
 
 test('listens for slideStop', () => {
   shallow(<BSSliderWrapper {...props} />);
-  expect(BSSlider.mock.instances[0].on).toBeCalledWith(
-    'slideStop',
-    expect.any(Function)
-  );
+  expect(BSSlider.mock.instances[0].on).toBeCalledWith('slideStop', expect.any(Function));
 });
 
 test('listens for input change', () => {

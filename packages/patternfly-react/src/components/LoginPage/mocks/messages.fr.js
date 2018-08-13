@@ -13,10 +13,7 @@ const footerLinks = [
 const cardHeader = {
   title: 'Connectez-vous à votre compte',
   selectedLanguage: { value: 'fr', text: 'Français' },
-  availableLanguages: [
-    { value: 'en', text: 'Anglais' },
-    { value: 'fr', text: 'Français' }
-  ]
+  availableLanguages: [{ value: 'en', text: 'Anglais' }, { value: 'fr', text: 'Français' }]
 };
 
 const signUp = {
@@ -31,8 +28,7 @@ const rememberMe = 'Restez connecté pendant 30 jours';
 const forgotPassword = 'mot de passe oublié?';
 
 const form = {
-  error:
-    'Votre compte a été bloqué Contactez votre administrateur pour le débloquer.',
+  error: 'Votre compte a été bloqué Contactez votre administrateur pour le débloquer.',
   submitText: "S'identifier"
 };
 

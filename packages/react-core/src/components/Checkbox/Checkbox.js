@@ -25,21 +25,10 @@ class Checkbox extends React.Component {
   };
 
   render() {
-    const {
-      className,
-      children,
-      onChange,
-      isValid,
-      isDisabled,
-      ...props
-    } = this.props;
+    const { className, children, onChange, isValid, isDisabled, ...props } = this.props;
     return (
       <input
-        className={css(
-          styles.check,
-          isDisabled && styles.modifiers.disabled,
-          className
-        )}
+        className={css(styles.check, isDisabled && styles.modifiers.disabled, className)}
         type="checkbox"
         onChange={this.handleChange}
         aria-invalid={!isValid}

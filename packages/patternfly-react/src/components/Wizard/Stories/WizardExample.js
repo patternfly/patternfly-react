@@ -6,11 +6,7 @@ import { Wizard } from '../index';
 
 import { mockWizardItems } from './mockWizardItems';
 
-import {
-  renderWizardSteps,
-  renderSidebarItems,
-  renderWizardContents
-} from './mockWizardRenderers';
+import { renderWizardSteps, renderSidebarItems, renderWizardContents } from './mockWizardRenderers';
 
 export class WizardExample extends MockWizardBase {
   open = () => {
@@ -32,12 +28,7 @@ export class WizardExample extends MockWizardBase {
           <Wizard.Header onClose={this.close} title="Wizard Title" />
           <Wizard.Body>
             <Wizard.Steps
-              steps={renderWizardSteps(
-                mockWizardItems,
-                activeStepIndex,
-                activeSubStepIndex,
-                this.onStepClick
-              )}
+              steps={renderWizardSteps(mockWizardItems, activeStepIndex, activeSubStepIndex, this.onStepClick)}
             />
             <Wizard.Row>
               <Wizard.Sidebar
@@ -48,21 +39,11 @@ export class WizardExample extends MockWizardBase {
                   this.onSidebarItemClick
                 )}
               />
-              <Wizard.Main>
-                {renderWizardContents(
-                  mockWizardItems,
-                  activeStepIndex,
-                  activeSubStepIndex
-                )}
-              </Wizard.Main>
+              <Wizard.Main>{renderWizardContents(mockWizardItems, activeStepIndex, activeSubStepIndex)}</Wizard.Main>
             </Wizard.Row>
           </Wizard.Body>
           <Wizard.Footer>
-            <Button
-              bsStyle="default"
-              className="btn-cancel"
-              onClick={this.close}
-            >
+            <Button bsStyle="default" className="btn-cancel" onClick={this.close}>
               Cancel
             </Button>
             <Button
@@ -70,23 +51,27 @@ export class WizardExample extends MockWizardBase {
               disabled={activeStepIndex === 0 && activeSubStepIndex === 0}
               onClick={this.onBackButtonClick}
             >
-              <Icon type="fa" name="angle-left" />Back
+              <Icon type="fa" name="angle-left" />
+              Back
             </Button>
             {(activeStepIndex === 0 || activeStepIndex === 1) && (
               <Button bsStyle="primary" onClick={this.onNextButtonClick}>
-                Next<Icon type="fa" name="angle-right" />
+                Next
+                <Icon type="fa" name="angle-right" />
               </Button>
             )}
             {activeStepIndex === 2 &&
               activeSubStepIndex === 0 && (
                 <Button bsStyle="primary" onClick={this.onNextButtonClick}>
-                  Deploy<Icon type="fa" name="angle-right" />
+                  Deploy
+                  <Icon type="fa" name="angle-right" />
                 </Button>
               )}
             {activeStepIndex === 2 &&
               activeSubStepIndex === 1 && (
                 <Button bsStyle="primary" onClick={this.close}>
-                  Close<Icon type="fa" name="angle-right" />
+                  Close
+                  <Icon type="fa" name="angle-right" />
                 </Button>
               )}
           </Wizard.Footer>

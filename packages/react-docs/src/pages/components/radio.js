@@ -24,21 +24,13 @@ class RadioDocs extends React.Component {
     return (
       <ComponentDocs data={data}>
         <Example title="Controlled radio example">
-          <Radio
-            checked={checked}
-            onChange={this.handleRadioChange}
-            aria-label="controlled radio example"
-          />
+          <Radio checked={checked} onChange={this.handleRadioChange} aria-label="controlled radio example" />
         </Example>
         <Example title="Uncontrolled radio example">
           <Radio aria-label="uncontrolled radio example" />
         </Example>
         <Example title="Disabled radio example">
-          <Radio
-            aria-label="disabled radio example"
-            defaultChecked
-            isDisabled
-          />
+          <Radio aria-label="disabled radio example" defaultChecked isDisabled />
         </Example>
       </ComponentDocs>
     );

@@ -7,15 +7,7 @@ import { noop } from '../../common/helpers';
 /**
  * Pager component for Patternfly React
  */
-const Pager = ({
-  baseClassName,
-  className,
-  messages,
-  disableNext,
-  onNextPage,
-  disablePrevious,
-  onPreviousPage
-}) => {
+const Pager = ({ baseClassName, className, messages, disableNext, onNextPage, disablePrevious, onPreviousPage }) => {
   const classes = classNames('pager', className);
   return (
     <ul className={classes}>

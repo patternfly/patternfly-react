@@ -3,11 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  STORYBOOK_CATEGORY,
-  DOCUMENTATION_URL
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, STORYBOOK_CATEGORY, DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import LoginPage from './LoginPage';
 import englishMessages from './mocks/messages.en';
 import frenchMessages from './mocks/messages.fr';
@@ -15,9 +11,7 @@ import images from './assets/img';
 import { name } from '../../../package.json';
 
 const stories = storiesOf(
-  `${storybookPackageName(name)}/${
-    STORYBOOK_CATEGORY.APPLICATION_FRAMEWORK
-  }/Login Page`,
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.APPLICATION_FRAMEWORK}/Login Page`,
   module
 );
 
@@ -25,9 +19,7 @@ stories.addDecorator(withKnobs);
 stories.addDecorator(
   defaultTemplate({
     title: 'Login Page',
-    documentationLink: `${
-      DOCUMENTATION_URL.PATTERNFLY_ORG_APP_FRAMEWORK
-    }login-page`
+    documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_APP_FRAMEWORK}login-page`
   })
 );
 
@@ -205,9 +197,7 @@ const createLogoList = () => {
   ];
 };
 
-stories.addWithInfo('Managed Basic Login Page', () => (
-  <LoginPage {...createProps()} />
-));
+stories.addWithInfo('Managed Basic Login Page', () => <LoginPage {...createProps()} />);
 
 stories.addWithInfo('Build Your own Basic Login Page', () => {
   const props = { ...createProps() };

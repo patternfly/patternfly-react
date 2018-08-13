@@ -3,8 +3,7 @@
 const tool = process.argv[2];
 
 function outputGlobForPackages(packages) {
-  const ignoreglob =
-    packages.length === 1 ? packages[0] : `{${packages.join(',')}}`;
+  const ignoreglob = packages.length === 1 ? packages[0] : `{${packages.join(',')}}`;
   console.log(ignoreglob);
 }
 

@@ -11,11 +11,4 @@ EmptyState.Info = EmptyStateInfo;
 EmptyState.Help = EmptyStateHelp;
 EmptyState.Action = EmptyStateAction;
 
-export {
-  EmptyState,
-  EmptyStateIcon,
-  EmptyStateTitle,
-  EmptyStateInfo,
-  EmptyStateHelp,
-  EmptyStateAction
-};
+export { EmptyState, EmptyStateIcon, EmptyStateTitle, EmptyStateInfo, EmptyStateHelp, EmptyStateAction };

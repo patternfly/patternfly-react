@@ -6,9 +6,7 @@ import { addOverrides } from './cssPropertyOverrides';
 export function createSerializer() {
   addOverrides();
   function test(val) {
-    return (
-      val && !val.withStyles && val.$$typeof === Symbol.for('react.test.json')
-    );
+    return val && !val.withStyles && val.$$typeof === Symbol.for('react.test.json');
   }
 
   function print(val, printer) {

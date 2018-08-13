@@ -21,14 +21,7 @@ const defaultProps = {
 };
 
 const SplitItem = ({ variant, className, children, ...props }) => (
-  <div
-    {...props}
-    className={css(
-      styles.splitItem,
-      getModifier(styles.modifiers, variant),
-      className
-    )}
-  >
+  <div {...props} className={css(styles.splitItem, getModifier(styles.modifiers, variant), className)}>
     {children}
   </div>
 );

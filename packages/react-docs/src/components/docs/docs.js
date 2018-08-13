@@ -33,9 +33,7 @@ const Docs = ({ title, description, children, props }) => (
       <Title size="xl" withMargins>
         Props
       </Title>
-      <p className={css(styles.description)}>
-        The {title} component accepts the following props:
-      </p>
+      <p className={css(styles.description)}>The {title} component accepts the following props:</p>
       <PropsTable props={props} />
     </section>
   </Content>

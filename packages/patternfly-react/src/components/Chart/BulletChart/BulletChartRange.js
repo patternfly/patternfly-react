@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const BulletChartRange = ({ className, value, index, vertical, ...props }) => {
-  const rangeClasses = classNames(
-    'bullet-chart-pf-range-bar',
-    `range-${index}`,
-    className
-  );
+  const rangeClasses = classNames('bullet-chart-pf-range-bar', `range-${index}`, className);
 
   if (value > 0 && value <= 100) {
     return (

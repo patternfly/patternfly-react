@@ -21,52 +21,30 @@ const styles = StyleSheet.create({
   }
 });
 
-const StyledStackItem = props => (
-  <StackItem {...props} className={css(styles.item)} />
-);
+const StyledStackItem = props => <StackItem {...props} className={css(styles.item)} />;
 
 const StackDocs = ({ data }) => (
   <ComponentDocs data={data}>
     <Example title="Stack with variant">
       <Stack style={{ height: '200px' }}>
-        <StyledStackItem variant={StackItemVariant.secondary}>
-          Secondary content
-        </StyledStackItem>
-        <StyledStackItem variant={StackItemVariant.primary}>
-          Primary content
-        </StyledStackItem>
-        <StyledStackItem variant={StackItemVariant.secondary}>
-          Secondary content
-        </StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.secondary}>Secondary content</StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.primary}>Primary content</StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.secondary}>Secondary content</StyledStackItem>
       </Stack>
     </Example>
     <Example title="Stack with gutter">
       <Stack gutter="sm" style={{ height: '200px' }}>
-        <StyledStackItem variant={StackItemVariant.secondary}>
-          Secondary content
-        </StyledStackItem>
-        <StyledStackItem variant={StackItemVariant.primary}>
-          Primary content
-        </StyledStackItem>
-        <StyledStackItem variant={StackItemVariant.secondary}>
-          Secondary content
-        </StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.secondary}>Secondary content</StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.primary}>Primary content</StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.secondary}>Secondary content</StyledStackItem>
       </Stack>
     </Example>
     <Example title="Multiple primary">
       <Stack style={{ height: '400px' }}>
-        <StyledStackItem variant={StackItemVariant.secondary}>
-          Secondary content
-        </StyledStackItem>
-        <StyledStackItem variant={StackItemVariant.primary}>
-          Primary content
-        </StyledStackItem>
-        <StyledStackItem variant={StackItemVariant.primary}>
-          Primary content
-        </StyledStackItem>
-        <StyledStackItem variant={StackItemVariant.primary}>
-          Primary content
-        </StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.secondary}>Secondary content</StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.primary}>Primary content</StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.primary}>Primary content</StyledStackItem>
+        <StyledStackItem variant={StackItemVariant.primary}>Primary content</StyledStackItem>
       </Stack>
     </Example>
   </ComponentDocs>

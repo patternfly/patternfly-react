@@ -4,21 +4,14 @@ import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 
 import { Grid, Row, Col, MenuItem } from '../../index';
 import { Button, ButtonGroup, DropdownButton, SplitButton } from './index';
 import { BUTTON_BS_STYLES } from './ButtonConstants';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Button`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Button`, module);
 
 stories.addDecorator(withKnobs);
 
@@ -28,28 +21,22 @@ stories.add(
     const story = (
       <div>
         <p>
-          <Button>Default Button</Button>{' '}
-          <Button bsStyle="primary">Primary Button</Button>{' '}
+          <Button>Default Button</Button> <Button bsStyle="primary">Primary Button</Button>{' '}
           <Button bsStyle="success">Success Button</Button>
           <Button bsStyle="warning">Warning Button</Button>
-          <Button bsStyle="danger">Danger Button</Button>{' '}
-          <Button bsStyle="info">Info Button</Button>{' '}
+          <Button bsStyle="danger">Danger Button</Button> <Button bsStyle="info">Info Button</Button>{' '}
           <Button bsStyle="link">Link Button</Button>
         </p>
         <p>
-          <Button bsSize="large">Large Button</Button>{' '}
-          <Button>Default Button</Button>{' '}
-          <Button bsSize="small">Small Button</Button>{' '}
-          <Button bsSize="xsmall">Extra Small Button</Button>
+          <Button bsSize="large">Large Button</Button> <Button>Default Button</Button>{' '}
+          <Button bsSize="small">Small Button</Button> <Button bsSize="xsmall">Extra Small Button</Button>
         </p>
       </div>
     );
     return inlineTemplate({
       title: 'Button',
       documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#buttons`,
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }buttons/`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}buttons/`,
       story
     });
   })
@@ -217,12 +204,8 @@ stories.add(
     );
     return inlineTemplate({
       title: 'ButtonGroup',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
-      }#button-groups`,
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }button-group/`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#button-groups`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}button-group/`,
       story
     });
   })
@@ -249,9 +232,7 @@ stories.add(
     );
     return inlineTemplate({
       title: 'DropdownButton',
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }dropdowns/`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}dropdowns/`,
       story
     });
   })
@@ -280,9 +261,7 @@ stories.add(
 
     return inlineTemplate({
       title: 'SplitButton',
-      reactBootstrapDocumentationLink: `${
-        DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT
-      }dropdowns/`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}dropdowns/`,
       story
     });
   })

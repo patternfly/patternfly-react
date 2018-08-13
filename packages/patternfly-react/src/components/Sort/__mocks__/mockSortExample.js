@@ -41,8 +41,8 @@ export class MockSortExample extends React.Component {
     filterText += ': ';
 
     if (value.filterCategory) {
-      filterText += `${value.filterCategory.title ||
-        value.filterCategory}-${value.filterValue.title || value.filterValue}`;
+      filterText += `${value.filterCategory.title || value.filterCategory}-${value.filterValue.title ||
+        value.filterValue}`;
     } else if (value.title) {
       filterText += value.title;
     } else {

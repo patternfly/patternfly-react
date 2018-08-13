@@ -13,22 +13,14 @@ const handleClick = e => {
 
 const NavApplicationLauncherStory = stories => {
   stories.addWithInfo('Launcher', '', () => {
-    const type = select(
-      'Launcher Type',
-      { true: 'Grid', false: 'List' },
-      'true'
-    );
+    const type = select('Launcher Type', { true: 'Grid', false: 'List' }, 'true');
     const iconBool = boolean('Icons', true);
 
     const story = (
       <nav className="navbar navbar-pf-vertical">
         <nav className="collapse navbar-collapse">
           <ul className="nav navbar-nav navbar-right navbar-iconic">
-            <ApplicationLauncher
-              grid={type === 'true'}
-              tooltipPlacement="left"
-              open
-            >
+            <ApplicationLauncher grid={type === 'true'} tooltipPlacement="left" open>
               <ApplicationLauncherItem
                 key="app1"
                 icon="storage-domain"
@@ -70,9 +62,7 @@ const NavApplicationLauncherStory = stories => {
     );
     return inlineTemplate({
       title: 'ApplicationLauncher',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_APPLICATION_FRAMEWORK
-      }launcher/`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_APPLICATION_FRAMEWORK}launcher/`,
       story
     });
   });

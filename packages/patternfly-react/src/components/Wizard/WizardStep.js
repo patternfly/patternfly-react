@@ -6,22 +6,8 @@ import { noop } from '../../common/helpers';
 /**
  * WizardStep component for Patternfly React
  */
-const WizardStep = ({
-  children,
-  className,
-  stepIndex,
-  step,
-  label,
-  title,
-  activeStep,
-  onClick,
-  ...props
-}) => {
-  const classes = classNames(
-    'wizard-pf-step',
-    { active: `${step}` === `${activeStep}` },
-    className
-  );
+const WizardStep = ({ children, className, stepIndex, step, label, title, activeStep, onClick, ...props }) => {
+  const classes = classNames('wizard-pf-step', { active: `${step}` === `${activeStep}` }, className);
   return (
     <li className={classes} {...props}>
       <a

@@ -11,11 +11,7 @@ Creates a reactabular formatter:
   columnIndex: <number>,
   rowIndex: <number> }) => <string|React element>
 */
-const inlineEditFormatterFactory = ({
-  isEditing,
-  renderValue,
-  renderEdit
-} = {}) => (value, additionalData) => (
+const inlineEditFormatterFactory = ({ isEditing, renderValue, renderEdit } = {}) => (value, additionalData) => (
   <InlineEdit
     value={value}
     additionalData={additionalData}

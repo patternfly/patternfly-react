@@ -1,10 +1,7 @@
 import React from 'react';
 import { Level, LevelItem } from '@patternfly/react-core';
 import PropTypes from 'prop-types';
-import {
-  global_BorderColor as borderColor,
-  global_BorderWidth_md as borderWidth
-} from '@patternfly/react-tokens';
+import { global_BorderColor as borderColor, global_BorderWidth_md as borderWidth } from '@patternfly/react-tokens';
 
 import ComponentDocs from '../../components/componentDocs';
 import Example from '../../components/example';

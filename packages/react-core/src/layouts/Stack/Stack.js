@@ -19,20 +19,10 @@ const defaultProps = {
   component: 'div'
 };
 
-const Stack = ({
-  gutter,
-  className,
-  children,
-  component: Component,
-  ...props
-}) => (
+const Stack = ({ gutter, className, children, component: Component, ...props }) => (
   <Component
     {...props}
-    className={css(
-      styles.stack,
-      gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter),
-      className
-    )}
+    className={css(styles.stack, gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter), className)}
   >
     {children}
   </Component>

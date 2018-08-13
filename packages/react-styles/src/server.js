@@ -3,9 +3,7 @@ import { preventInjection, getBufferedStyles, dataAttribute } from './inject';
 
 export function renderStatic(renderFn) {
   preventInjection();
-  const { html, css: aphroditeCss } = StyleSheetServer.renderStatic(() =>
-    renderFn()
-  );
+  const { html, css: aphroditeCss } = StyleSheetServer.renderStatic(() => renderFn());
   const css = getBufferedStyles().join('');
   return {
     html,

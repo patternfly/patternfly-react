@@ -77,15 +77,7 @@ class BaseVerticalNavItemHelper extends React.Component {
   onItemBlur = noDelay => {
     const { primary, secondary, tertiary } = this.getContextNavItems();
     const { updateNavOnItemBlur, idPath, onBlur } = this.props;
-    updateNavOnItemBlur(
-      primary,
-      secondary,
-      tertiary,
-      this.idPath(),
-      idPath,
-      noDelay,
-      onBlur
-    );
+    updateNavOnItemBlur(primary, secondary, tertiary, this.idPath(), idPath, noDelay, onBlur);
   };
 
   onItemClick = event => {
@@ -107,14 +99,7 @@ class BaseVerticalNavItemHelper extends React.Component {
   onItemHover = () => {
     const { primary, secondary, tertiary } = this.getContextNavItems();
     const { updateNavOnItemHover, idPath, onHover } = this.props;
-    updateNavOnItemHover(
-      primary,
-      secondary,
-      tertiary,
-      this.idPath(),
-      idPath,
-      onHover
-    );
+    updateNavOnItemHover(primary, secondary, tertiary, this.idPath(), idPath, onHover);
   };
 
   onMobileSelection = (primary, secondary, tertiary) => {
@@ -156,8 +141,7 @@ class BaseVerticalNavItemHelper extends React.Component {
     const item = { ...getItemProps(props), ...props.item };
     // Automatically set the active, hovered, and selectedOnMobile properties based on current path...
     // ...But don't call idPath() when called from inside id(), or there will be an infinite loop.
-    const valOrOnPath = (val, path) =>
-      val || (ignorePath ? null : path && path.startsWith(this.idPath()));
+    const valOrOnPath = (val, path) => val || (ignorePath ? null : path && path.startsWith(this.idPath()));
     return {
       ...item,
       active: valOrOnPath(item.active, props.activePath),
@@ -236,9 +220,7 @@ class BaseVerticalNavItemHelper extends React.Component {
       filterChildren(children, isNavItem) ||
       (subItems &&
         subItems.length > 0 &&
-        subItems.map(childItem => (
-          <NextDepthItem item={childItem} key={childItem.title} />
-        )));
+        subItems.map(childItem => <NextDepthItem item={childItem} key={childItem.title} />));
 
     if (!childItemComponents && !href && !onClick) {
       // eslint-disable-next-line
@@ -250,49 +232,32 @@ class BaseVerticalNavItemHelper extends React.Component {
     }
 
     const childBadgeComponents =
-      filterChildren(
-        children,
-        child => child.type.displayName === VerticalNavBadge.displayName
-      ) ||
+      filterChildren(children, child => child.type.displayName === VerticalNavBadge.displayName) ||
       (badges &&
         badges.length > 0 &&
         badges.map(badge => {
-          const badgeKey =
-            badge.badgeClass || badge.iconClass || badge.tooltip || badge.count;
+          const badgeKey = badge.badgeClass || badge.iconClass || badge.tooltip || badge.count;
           return <VerticalNavBadge {...badge} key={badgeKey} />;
         }));
 
     const onPinnedPath = pinnedPath && pinnedPath.startsWith(this.idPath());
 
-    const icon = iconClass && (
-      <span
-        className={classNames(iconClass, { hidden: hiddenIcons })}
-        title={title}
-      />
-    );
+    const icon = iconClass && <span className={classNames(iconClass, { hidden: hiddenIcons })} title={title} />;
 
     const item = (
       <ListGroupItem
         listItem // Renders as <li>. Other props can change this, see logic in react-bootstrap's ListGroupItem.
         className={classNames(
           {
-            [`${nextDepth}-nav-item-pf`]:
-              depth !== 'tertiary' &&
-              childItemComponents &&
-              childItemComponents.length > 0,
+            [`${nextDepth}-nav-item-pf`]: depth !== 'tertiary' && childItemComponents && childItemComponents.length > 0,
             active: active || (pinned && pinnableMenus), // This is the only class we have at the tertiary depth.
-            'is-hover':
-              (pinnableMenus && onPinnedPath) ||
-              (depth !== 'tertiary' && hovered),
+            'is-hover': (pinnableMenus && onPinnedPath) || (depth !== 'tertiary' && hovered),
             // This class is present at primary and secondary depths if selectedOnMobile is true,
             // except for the primary depth, where it is only present if showMobileSecondary is also true.
             'mobile-nav-item-pf':
-              selectedOnMobile &&
-              ((depth === 'primary' && showMobileSecondary) ||
-                depth === 'secondary'),
+              selectedOnMobile && ((depth === 'primary' && showMobileSecondary) || depth === 'secondary'),
             // This class is confusingly named, but the logic is more readable.
-            'mobile-secondary-item-pf':
-              selectedOnMobile && depth === 'primary' && showMobileTertiary
+            'mobile-secondary-item-pf': selectedOnMobile && depth === 'primary' && showMobileTertiary
             // I don't know, that's just how this stuff was in patternfly-ng...
           },
           className
@@ -305,20 +270,14 @@ class BaseVerticalNavItemHelper extends React.Component {
           {depth === 'primary' &&
             icon &&
             (!isMobile && navCollapsed ? (
-              <OverlayTrigger
-                placement="bottom"
-                overlay={<Tooltip id={title}>{title}</Tooltip>}
-              >
+              <OverlayTrigger placement="bottom" overlay={<Tooltip id={title}>{title}</Tooltip>}>
                 {icon}
               </OverlayTrigger>
             ) : (
               icon
             ))}
           <span className="list-group-item-value">{title}</span>
-          {showBadges &&
-            childBadgeComponents && (
-              <div className="badge-container-pf">{childBadgeComponents}</div>
-            )}
+          {showBadges && childBadgeComponents && <div className="badge-container-pf">{childBadgeComponents}</div>}
         </a>
         {childItemComponents &&
           childItemComponents.length > 0 && (
@@ -334,11 +293,7 @@ class BaseVerticalNavItemHelper extends React.Component {
                 )}
                 <span>{title}</span>
               </div>
-              <NavContextProvider
-                {...this.props}
-                idPath={this.idPath()}
-                item={navItem}
-              >
+              <NavContextProvider {...this.props} idPath={this.idPath()} item={navItem}>
                 <ListGroup componentClass="ul">{childItemComponents}</ListGroup>
               </NavContextProvider>
             </div>
@@ -378,9 +333,7 @@ BaseVerticalNavItemHelper.defaultProps = {
   isDivider: false
 };
 
-const VerticalNavItemHelper = getContext(navContextTypes)(
-  BaseVerticalNavItemHelper
-);
+const VerticalNavItemHelper = getContext(navContextTypes)(BaseVerticalNavItemHelper);
 
 VerticalNavItemHelper.displayName = 'VerticalNavItemHelper';
 VerticalNavItemHelper.propTypes = {

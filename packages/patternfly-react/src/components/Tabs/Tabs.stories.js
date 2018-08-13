@@ -5,33 +5,16 @@ import { withKnobs, text, boolean } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
-import {
-  TabContainer,
-  Nav,
-  NavItem,
-  NavDropdown,
-  MenuItem,
-  TabPane,
-  TabContent
-} from '../../index';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
+import { TabContainer, Nav, NavItem, NavDropdown, MenuItem, TabPane, TabContent } from '../../index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Tabs`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Tabs`, module);
 const description = (
   <p>
     This component is based on React Bootstrap Tabs component. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#tabs">
-      React Bootstrap Docs
-    </a>{' '}
-    for complete Tabs component documentation.
+    <a href="https://react-bootstrap.github.io/components.html#tabs">React Bootstrap Docs</a> for complete Tabs
+    component documentation.
   </p>
 );
 stories.addDecorator(withKnobs);
@@ -165,8 +148,7 @@ stories.add(
     return [
       <p>
         <b>Note:</b>
-        This variation is not keyboard accessible and is not recommended for use
-        where accessibility is a priority.
+        This variation is not keyboard accessible and is not recommended for use where accessibility is a priority.
       </p>,
       <TabContainer id="tabs-with-dropdown" defaultActiveKey="first">
         <div>
@@ -205,8 +187,7 @@ stories.add(
     return [
       <p>
         <b>Note:</b>
-        This variation is not keyboard accessible and is not recommended for use
-        where accessibility is a priority.
+        This variation is not keyboard accessible and is not recommended for use where accessibility is a priority.
       </p>,
       <TabContainer id="tabs-with-dropdown-pf" defaultActiveKey="first">
         <div>
@@ -238,12 +219,9 @@ stories.add(
 stories.add(
   'Secondary Tabs',
   withInfo()(() => {
-    const bsClass = classNames(
-      'nav nav-tabs nav-tabs-pf nav-tabs-pf-secondary',
-      {
-        'nav-justified': boolean('Secondary Tabs Justified', false)
-      }
-    );
+    const bsClass = classNames('nav nav-tabs nav-tabs-pf nav-tabs-pf-secondary', {
+      'nav-justified': boolean('Secondary Tabs Justified', false)
+    });
 
     return (
       <TabContainer id="secondary-tabs" defaultActiveKey={1}>

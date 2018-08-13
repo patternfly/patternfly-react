@@ -5,12 +5,7 @@ import { Dropdown, MenuItem } from '../../index';
 const DropdownMenu = props => {
   const { dropup, dropdownList, onFormatChange, title } = props;
   const menuItems = dropdownList.map((item, index) => (
-    <MenuItem
-      bsClass="slider_menuitem"
-      onClick={event => onFormatChange(event.target.text)}
-      key={index}
-      value={item}
-    >
+    <MenuItem bsClass="slider_menuitem" onClick={event => onFormatChange(event.target.text)} key={index} value={item}>
       {item}
     </MenuItem>
   ));

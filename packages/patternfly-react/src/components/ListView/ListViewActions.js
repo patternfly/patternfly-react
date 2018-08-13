@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * ListViewActions wraps ListViewItem actions and positions them to the right
  */
-const ListViewActions = ({ children }) => (
-  <div className="list-view-pf-actions">{children}</div>
-);
+const ListViewActions = ({ children }) => <div className="list-view-pf-actions">{children}</div>;
 ListViewActions.propTypes = {
   /** Child nodes which render individual actions - Buttons, DropdownKebab... */
   children: PropTypes.node

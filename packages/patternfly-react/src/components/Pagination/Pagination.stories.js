@@ -2,36 +2,15 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
-import {
-  withKnobs,
-  text,
-  number,
-  select,
-  boolean
-} from '@storybook/addon-knobs';
+import { withKnobs, text, number, select, boolean } from '@storybook/addon-knobs';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  storybookPackageName,
-  DOCUMENTATION_URL,
-  STORYBOOK_CATEGORY
-} from 'storybook/constants/siteConstants';
+import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 
-import {
-  Pager,
-  PaginationRow,
-  Paginator,
-  PAGINATION_VIEW_TYPES
-} from './index';
-import {
-  MockPaginationRow,
-  mockPaginationSource
-} from './__mocks__/mockPaginationRow';
+import { Pager, PaginationRow, Paginator, PAGINATION_VIEW_TYPES } from './index';
+import { MockPaginationRow, mockPaginationSource } from './__mocks__/mockPaginationRow';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(
-  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Pagination`,
-  module
-);
+const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Pagination`, module);
 stories.addDecorator(withKnobs);
 
 stories.add(
@@ -63,14 +42,11 @@ stories.add(
     );
     return inlineTemplate({
       title: 'Pager',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS
-      }#pagination`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#pagination`,
       story,
       description: (
         <div>
-          Pager is a stateless functional component which previous and next
-          links. See Action Logger for details.
+          Pager is a stateless functional component which previous and next links. See Action Logger for details.
         </div>
       )
     });
@@ -99,11 +75,7 @@ stories.add(
   })(() => {
     const story = (
       <MockPaginationRow
-        viewType={select(
-          'View Type:',
-          PAGINATION_VIEW_TYPES,
-          PAGINATION_VIEW_TYPES[0]
-        )}
+        viewType={select('View Type:', PAGINATION_VIEW_TYPES, PAGINATION_VIEW_TYPES[0])}
         pageInputValue={number('Page', 1)}
         amountOfPages={number('Number of Pages', 5)}
         pageSizeDropUp={boolean('Page Size Drop Up', true)}
@@ -118,16 +90,13 @@ stories.add(
     );
     return inlineTemplate({
       title: 'Pagination Row',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION
-      }pagination/`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION}pagination/`,
       story,
       description: (
         <div>
-          Pagination Row is a stateless functional component which exposes all
-          pagination callbacks (i.e.:{' '}
-          <i>onFirstPage, onPreviousPage, onNextPage, onLastPage</i>). See
-          Action Logger for details.
+          Pagination Row is a stateless functional component which exposes all pagination callbacks (i.e.:{' '}
+          <i>onFirstPage, onPreviousPage, onNextPage, onLastPage</i>
+          ). See Action Logger for details.
         </div>
       )
     });
@@ -145,11 +114,7 @@ stories.add(
     }
     const story = (
       <Paginator
-        viewType={select(
-          'View Type:',
-          PAGINATION_VIEW_TYPES,
-          PAGINATION_VIEW_TYPES[0]
-        )}
+        viewType={select('View Type:', PAGINATION_VIEW_TYPES, PAGINATION_VIEW_TYPES[0])}
         pagination={{
           page: Number(page),
           perPage: 10,
@@ -164,15 +129,12 @@ stories.add(
 
     return inlineTemplate({
       title: 'Pagination Row with State Manager, a.k.a. Paginator',
-      documentationLink: `${
-        DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION
-      }pagination/`,
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_NAVIGATION}pagination/`,
       story,
       description: (
         <div>
-          Paginator is a stateful component which manages pagination state for
-          you and exposes a single <i>onPageSet</i> callback. See Action Logger
-          for details.
+          Paginator is a stateful component which manages pagination state for you and exposes a single <i>onPageSet</i>{' '}
+          callback. See Action Logger for details.
         </div>
       )
     });

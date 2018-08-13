@@ -19,9 +19,7 @@ const Example = ({ children, title, description, ...props }) => (
     <Title size="lg" withMargins>
       {title}
     </Title>
-    {Boolean(description) && (
-      <p className={css(styles.description)}>{description}</p>
-    )}
+    {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
     <div className={css(styles.example)} {...props}>
       {React.Children.map(
         children,

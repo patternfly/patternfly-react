@@ -7,9 +7,7 @@ const propTypes = {
   children: PropTypes.node.isRequired
 };
 
-const Content = ({ children }) => (
-  <div className={css(styles.content)}>{children}</div>
-);
+const Content = ({ children }) => <div className={css(styles.content)}>{children}</div>;
 
 Content.propTypes = propTypes;
 

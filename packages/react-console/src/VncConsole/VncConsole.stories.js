@@ -12,8 +12,8 @@ const stories = storiesOf(`${storybookPackageName(name)}/Vnc Console`, module);
 
 const VncConsoleConnector = () => (
   <div>
-    There is recently no mock VNC backend implemented, so preview of the{' '}
-    <strong>VncConsole</strong> component is not available.
+    There is recently no mock VNC backend implemented, so preview of the <strong>VncConsole</strong> component is not
+    available.
   </div>
 );
 

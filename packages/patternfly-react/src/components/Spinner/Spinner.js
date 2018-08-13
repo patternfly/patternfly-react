@@ -2,15 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Spinner = ({
-  loading,
-  size,
-  inline,
-  children,
-  inverse,
-  className,
-  ...props
-}) => {
+const Spinner = ({ loading, size, inline, children, inverse, className, ...props }) => {
   if (loading) {
     const classes = classNames(className, 'spinner', `spinner-${size}`, {
       'spinner-inline': inline,

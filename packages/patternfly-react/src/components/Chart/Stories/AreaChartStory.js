@@ -2,10 +2,7 @@ import React from 'react';
 import { withInfo } from '@storybook/addon-info';
 import { AreaChart, SingleAreaChart } from '../index';
 import { inlineTemplate } from 'storybook/decorators/storyTemplates';
-import {
-  DOCUMENTATION_URL,
-  DESCRIPTION
-} from 'storybook/constants/siteConstants';
+import { DOCUMENTATION_URL, DESCRIPTION } from 'storybook/constants/siteConstants';
 
 /**
  * Story constants
@@ -40,32 +37,21 @@ const areaChart = stories => {
         <div>
           <h2>Area Chart</h2>
           <div>
-            <AreaChart
-              id="area-chart-1"
-              size={{ width: 600 }}
-              data={areaChartData}
-            />
+            <AreaChart id="area-chart-1" size={{ width: 600 }} data={areaChartData} />
           </div>
 
           <h2>Single Area Chart</h2>
           <div>
-            <SingleAreaChart
-              id="area-chart-2"
-              size={{ width: 600 }}
-              data={singleAreaChartData}
-            />
+            <SingleAreaChart id="area-chart-2" size={{ width: 600 }} data={singleAreaChartData} />
           </div>
         </div>
       );
       return inlineTemplate({
         title: 'Area Charts',
-        documentationLink: `${
-          DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION
-        }area-chart/`,
+        documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_DATA_VISUALIZATION}area-chart/`,
         description: (
           <span>
-            {DESCRIPTION.C3JS_TEXT}{' '}
-            <a href={DESCRIPTION.C3JS_URL}>{DESCRIPTION.C3JS_URL}</a>
+            {DESCRIPTION.C3JS_TEXT} <a href={DESCRIPTION.C3JS_URL}>{DESCRIPTION.C3JS_URL}</a>
           </span>
         ),
         story

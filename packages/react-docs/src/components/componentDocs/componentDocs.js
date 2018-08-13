@@ -8,10 +8,7 @@ const propTypes = {
 };
 
 const ComponentDocs = ({ data, children }) => (
-  <Docs
-    title={data.componentMetadata.displayName}
-    props={data.componentMetadata.props}
-  >
+  <Docs title={data.componentMetadata.displayName} props={data.componentMetadata.props}>
     {children}
   </Docs>
 );

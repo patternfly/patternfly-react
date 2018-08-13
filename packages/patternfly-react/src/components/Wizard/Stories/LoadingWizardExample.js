@@ -33,18 +33,16 @@ export class LoadingWizardExample extends React.Component {
             </Wizard.Row>
           </Wizard.Body>
           <Wizard.Footer>
-            <Button
-              bsStyle="default"
-              className="btn-cancel"
-              onClick={this.close}
-            >
+            <Button bsStyle="default" className="btn-cancel" onClick={this.close}>
               Cancel
             </Button>
             <Button bsStyle="default" disabled>
-              <Icon type="fa" name="angle-left" />Back
+              <Icon type="fa" name="angle-left" />
+              Back
             </Button>
             <Button bsStyle="primary" disabled>
-              Next<Icon type="fa" name="angle-right" />
+              Next
+              <Icon type="fa" name="angle-right" />
             </Button>
           </Wizard.Footer>
         </Wizard>
