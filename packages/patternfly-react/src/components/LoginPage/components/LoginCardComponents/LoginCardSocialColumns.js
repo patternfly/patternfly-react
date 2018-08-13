@@ -73,7 +73,6 @@ class LoginCardSocialColumns extends React.Component {
     const moreItems = expend || width < 768 ? this.getHiddenListItems() : null;
     return (
       <div>
-        <hr className="login-pf-social-divider visible-xs" />
         <ul className={`login-pf-social list-unstyled ${doubleColumn}`}>
           {this.getListItems()}
           {moreItems}

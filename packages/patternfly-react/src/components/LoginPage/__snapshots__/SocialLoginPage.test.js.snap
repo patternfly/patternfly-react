@@ -172,9 +172,6 @@ exports[`Component matches snapshot 1`] = `
         class="login-pf-social-section "
       >
         <div>
-          <hr
-            class="login-pf-social-divider visible-xs"
-          />
           <ul
             class="login-pf-social list-unstyled "
           />
