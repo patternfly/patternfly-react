@@ -80,7 +80,7 @@ const WizardPattern = ({
     const preventEnterTarget =
       targetStep.preventEnter ||
       (stepBeforeTarget && stepBeforeTarget.isInvalid);
-    const nextStepClicked = newStepIndex === activeStepIndex + 1;
+    const nextStepClicked = newStepIndex > activeStepIndex;
 
     return (
       preventExitActive ||
