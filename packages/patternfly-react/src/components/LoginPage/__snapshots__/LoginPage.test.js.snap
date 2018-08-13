@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component matches snapshot 1`] = `
+<div
+  class="login-pf"
+  style="background-image: url(null);"
+>
+  <div
+    class="login-pf-page "
+  >
+    <div
+      class="alert alert-warning alert-dismissable"
+    >
+      <button
+        aria-hidden="true"
+        class="close close-default"
+        type="button"
+      >
+        <span
+          aria-hidden="true"
+          class="pficon pficon-close"
+        />
+      </button>
+      <span
+        aria-hidden="true"
+        class="pficon pficon-warning-triangle-o"
+      />
+      Patternfly will be updated to 2.13.5 at 00:00 AM, 23th Sep 2018 (UTC). This Update will last for 8-12 hours, please plan in advance for this outage.
+    </div>
+    <div
+      class="container-fluid"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2"
+        >
+          <header
+            class="login-pf-page-header"
+          >
+            <img
+              alt="logo"
+              class="login-pf-brand"
+              title="Patternfly"
+            />
+            <p>
+              This is placeholder text, only. Use this area to place any information or
+    introductory message about your application that may be relevant for
+    users.
+            </p>
+          </header>
+          <div
+            class="row"
+          >
+            <div
+              class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"
+            >
+              <div
+                class="card-pf"
+              >
+                <header
+                  class="login-pf-header "
+                >
+                  <div
+                    class="bootstrap-select btn-group "
+                  >
+                    <div
+                      class="dropdown btn-group"
+                    >
+                      <button
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        class="dropdown-toggle btn btn-default"
+                        id="language-picker"
+                        role="button"
+                        type="button"
+                      >
+                        English 
+                        <span
+                          class="caret"
+                        />
+                      </button>
+                      <ul
+                        aria-labelledby="language-picker"
+                        class="dropdown-menu"
+                        role="menu"
+                      >
+                        <li
+                          class="active"
+                          role="presentation"
+                        >
+                          <a
+                            href="#"
+                            role="menuitem"
+                            tabindex="-1"
+                            value="en"
+                          >
+                            English
+                          </a>
+                        </li>
+                        <li
+                          class=""
+                          role="presentation"
+                        >
+                          <a
+                            href="#"
+                            role="menuitem"
+                            tabindex="-1"
+                            value="fr"
+                          >
+                            French
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <h1>
+                    Log In to Your Account
+                  </h1>
+                </header>
+                <form
+                  class=""
+                  novalidate=""
+                >
+                  <div
+                    class="login-form-error "
+                  />
+                  <div
+                    class="login_card_input  form-group"
+                  >
+                    <input
+                      autocomplete=""
+                      class="form-control input-lg"
+                      id="card_email"
+                      placeholder="Email address"
+                      type="email"
+                    />
+                    <div
+                      class="fade"
+                    />
+                  </div>
+                  <div
+                    class="login_card_input  form-group"
+                  >
+                    <input
+                      autocomplete=""
+                      class="form-control input-lg"
+                      id="card_password"
+                      placeholder="Password"
+                      type="password"
+                    />
+                    <div
+                      class="fade"
+                    />
+                  </div>
+                  <div
+                    class="login-pf-settings  form-group"
+                  >
+                    <label
+                      class="checkbox-label "
+                    >
+                      <input
+                        type="checkbox"
+                      />
+                       Keep me logged in for 30 days
+                    </label>
+                    <a
+                      class="forgot-password"
+                      href="#"
+                    >
+                      Forgot password?
+                    </a>
+                  </div>
+                  <button
+                    class="btn btn-lg btn-primary btn-block"
+                    type="submit"
+                  >
+                    Log In
+                  </button>
+                </form>
+                <div
+                  class="login-pf-signup "
+                >
+                  <p>
+                    Need an account?
+                    <a
+                      href="#"
+                      label="Sign up"
+                    />
+                  </p>
+                </div>
+              </div>
+              <footer
+                class="login-pf-page-footer"
+              >
+                <ul
+                  class="login-pf-page-footer-links list-unstyled"
+                >
+                  <li>
+                    <a
+                      class="login-pf-page-footer-link"
+                      href="#"
+                    >
+                      Terms of Use
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="login-pf-page-footer-link"
+                      href="#"
+                    >
+                      Help
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="login-pf-page-footer-link"
+                      href="#"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

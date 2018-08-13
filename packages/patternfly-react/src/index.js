@@ -19,6 +19,7 @@ export * from './components/Chart';
 export * from './components/Label';
 export * from './components/ListGroup';
 export * from './components/ListView';
+export * from './components/LoginPage';
 export * from './components/Masthead';
 export * from './components/MenuItem';
 export * from './components/MessageDialog';
