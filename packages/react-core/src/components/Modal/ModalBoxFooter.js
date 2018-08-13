@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly-next/components/ModalBox/styles.css';
-
+// const styles = {};
 const propTypes = {
   /** content rendered inside the Footer */
   children: PropTypes.node,

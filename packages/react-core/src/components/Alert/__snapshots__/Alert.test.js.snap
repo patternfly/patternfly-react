@@ -381,7 +381,7 @@ exports[`Alert - danger Custom aria label 1`] = `
 
 <Alert
   action="action"
-  ariaLabel="Custom aria label for danger"
+  aria-label="Custom aria label for danger"
   className=""
   title="Some title"
   variant="danger"
@@ -949,7 +949,7 @@ exports[`Alert - info Custom aria label 1`] = `
 
 <Alert
   action="action"
-  ariaLabel="Custom aria label for info"
+  aria-label="Custom aria label for info"
   className=""
   title="Some title"
   variant="info"
@@ -1517,7 +1517,7 @@ exports[`Alert - success Custom aria label 1`] = `
 
 <Alert
   action="action"
-  ariaLabel="Custom aria label for success"
+  aria-label="Custom aria label for success"
   className=""
   title="Some title"
   variant="success"
@@ -2085,7 +2085,7 @@ exports[`Alert - warning Custom aria label 1`] = `
 
 <Alert
   action="action"
-  ariaLabel="Custom aria label for warning"
+  aria-label="Custom aria label for warning"
   className=""
   title="Some title"
   variant="warning"

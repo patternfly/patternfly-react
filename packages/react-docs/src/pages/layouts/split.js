@@ -1,7 +1,7 @@
 import React from 'react';
 import ComponentDocs from '../../components/componentDocs';
 import PropTypes from 'prop-types';
-import { Split, SplitItem, SplitItemVariant } from '@patternfly/react-core';
+import { Split, SplitItem } from '@patternfly/react-core';
 import {
   global_BorderColor as borderColor,
   global_BorderWidth_md as borderWidth,
@@ -25,33 +25,26 @@ const StyledSplitItem = props => <SplitItem {...props} className={css(styles.ite
 
 const SplitDocs = ({ data }) => (
   <ComponentDocs data={data}>
-    <Example title="Split with variant">
+    <Example title="Split with Main Content">
       <Split>
-        <StyledSplitItem variant={SplitItemVariant.secondary}>Secondary content</StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.primary}>Primary content</StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.secondary}>Secondary content</StyledSplitItem>
+        <StyledSplitItem>Secondary content</StyledSplitItem>
+        <StyledSplitItem isMain>Main Content</StyledSplitItem>
+        <StyledSplitItem>Secondary content</StyledSplitItem>
       </Split>
     </Example>
     <Example title="Split with gutter">
       <Split gutter="sm">
-        <StyledSplitItem>Secondary content</StyledSplitItem>
-        <StyledSplitItem>Primary content</StyledSplitItem>
-        <StyledSplitItem>Secondary content</StyledSplitItem>
+        <StyledSplitItem>Content</StyledSplitItem>
+        <StyledSplitItem>Content</StyledSplitItem>
+        <StyledSplitItem>Content</StyledSplitItem>
       </Split>
     </Example>
-    <Example title="Split without variant">
+    <Example title="Multiple Main Content">
       <Split>
         <StyledSplitItem>Secondary content</StyledSplitItem>
-        <StyledSplitItem>Primary content</StyledSplitItem>
-        <StyledSplitItem>Secondary content</StyledSplitItem>
-      </Split>
-    </Example>
-    <Example title="Multiple primary">
-      <Split>
-        <StyledSplitItem variant={SplitItemVariant.secondary}>Secondary content</StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.primary}>Primary content</StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.primary}>Primary content</StyledSplitItem>
-        <StyledSplitItem variant={SplitItemVariant.primary}>Primary content</StyledSplitItem>
+        <StyledSplitItem isMain>Main Content</StyledSplitItem>
+        <StyledSplitItem isMain>Main Content</StyledSplitItem>
+        <StyledSplitItem isMain>Main Content</StyledSplitItem>
       </Split>
     </Example>
   </ComponentDocs>

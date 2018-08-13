@@ -17,14 +17,14 @@ exports[`controlled 1`] = `
 `;
 
 exports[`isDisabled 1`] = `
-.pf-c-check.pf-m-disabled {
+.pf-c-check {
   display: block;
-  cursor: not-allowed;
+  cursor: pointer;
 }
 
 <input
   aria-invalid={false}
-  className="pf-c-check pf-m-disabled"
+  className="pf-c-check"
   disabled={true}
   onChange={[Function]}
   type="checkbox"

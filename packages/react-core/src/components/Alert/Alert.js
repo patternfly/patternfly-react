@@ -3,7 +3,6 @@ import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly-next/components/Alert/styles.css';
 import accessibleStyles from '@patternfly/patternfly-next/utilities/Accessibility/styles.css';
-
 import AlertIcon from './AlertIcon';
 import AlertBody from './AlertBody';
 import AlertAction from './AlertAction';
@@ -19,23 +18,25 @@ export const AlertVariant = {
 const propTypes = {
   variant: PropTypes.oneOf(Object.keys(AlertVariant)).isRequired,
   action: PropTypes.node,
-  ariaLabel: PropTypes.string,
   title: PropTypes.string,
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
+  'aria-label': PropTypes.string
 };
 
 const defaultProps = {
-  ariaLabel: undefined,
+  'aria-label': undefined,
   action: null,
   title: '',
   children: '',
   className: ''
 };
 
+const getDefaultAriaLabel = variant => `${capitalize(AlertVariant[variant])} Notification`;
+
 const Alert = ({
   variant,
-  ariaLabel = `${capitalize(AlertVariant[variant])} Notification`,
+  'aria-label': ariaLabel = getDefaultAriaLabel(variant),
   action,
   title,
   children,

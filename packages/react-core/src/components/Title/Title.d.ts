@@ -10,7 +10,6 @@ export const TitleSize: Pick<
 export interface TitleProps
   extends Omit<HTMLProps<HTMLHeadingElement>, 'size'> {
   size: OneOf<typeof TitleSize, keyof typeof TitleSize>;
-  withMargins?: boolean;
   children?: ReactNode;
 }
 

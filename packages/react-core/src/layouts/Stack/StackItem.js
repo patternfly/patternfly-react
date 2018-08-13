@@ -1,27 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly-next/layouts/Stack/styles.css';
-import { css, getModifier } from '@patternfly/react-styles';
-
-export const StackItemVariant = {
-  primary: 'primary',
-  secondary: 'secondary'
-};
+import { css } from '@patternfly/react-styles';
 
 const propTypes = {
-  variant: PropTypes.oneOf(Object.keys(StackItemVariant)),
+  isMain: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string
 };
 
 const defaultProps = {
-  variant: null,
+  isMain: false,
   className: '',
   children: null
 };
 
-const StackItem = ({ variant, className, children, ...props }) => (
-  <div {...props} className={css(styles.stackItem, getModifier(styles.modifiers, variant), className)}>
+const StackItem = ({ isMain, className, children, ...props }) => (
+  <div {...props} className={css(styles.stackItem, isMain && styles.modifiers.main, className)}>
     {children}
   </div>
 );

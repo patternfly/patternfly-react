@@ -28,12 +28,12 @@ class Radio extends React.Component {
     const { className, children, onChange, isValid, isDisabled, ...props } = this.props;
     return (
       <input
-        className={css(styles.check, isDisabled && styles.modifiers.disabled, className)}
+        {...props}
+        className={css(styles.check, className)}
         type="radio"
         onChange={onChange ? this.handleChange : null}
         aria-invalid={!isValid}
         disabled={isDisabled}
-        {...props}
       />
     );
   }

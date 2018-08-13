@@ -199,6 +199,9 @@
       "git add"
     ]
   },
+  "resolutions": {
+    "cssom": "0.3.4"
+  },
   "dependencies": {
     "babel-plugin-transform-imports": "^1.5.0"
   }

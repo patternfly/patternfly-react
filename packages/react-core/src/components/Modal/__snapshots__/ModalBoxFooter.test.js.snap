@@ -2,7 +2,9 @@
 
 exports[`ModalBoxFooter Test 1`] = `
 .pf-c-modal-box__footer {
-  display: block;
+  display: flex;
+  align-items: center;
+  padding: 2rem 2rem 2rem 2rem;
 }
 
 <div

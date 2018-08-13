@@ -1,27 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly-next/layouts/Split/styles.css';
-import { css, getModifier } from '@patternfly/react-styles';
-
-export const SplitItemVariant = {
-  primary: 'primary',
-  secondary: 'secondary'
-};
+import { css } from '@patternfly/react-styles';
 
 const propTypes = {
-  variant: PropTypes.oneOf(Object.keys(SplitItemVariant)),
+  isMain: PropTypes.bool,
   children: PropTypes.node,
   className: PropTypes.string
 };
 
 const defaultProps = {
-  variant: null,
+  isMain: false,
   className: '',
   children: null
 };
 
-const SplitItem = ({ variant, className, children, ...props }) => (
-  <div {...props} className={css(styles.splitItem, getModifier(styles.modifiers, variant), className)}>
+const SplitItem = ({ isMain, className, children, ...props }) => (
+  <div {...props} className={css(styles.splitItem, isMain && styles.modifiers.main, className)}>
     {children}
   </div>
 );

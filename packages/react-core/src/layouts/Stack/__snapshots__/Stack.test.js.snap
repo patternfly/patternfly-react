@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Gutter lg 1`] = `
-.pf-l-stack__item.pf-m-secondary {
-  display: block;
-}
-.pf-l-stack__item.pf-m-primary {
-  display: block;
-}
-.pf-l-stack__item.pf-m-secondary {
+.pf-l-stack__item {
   display: block;
 }
 .pf-l-stack.pf-m-gutter {
@@ -26,32 +20,12 @@ exports[`Gutter lg 1`] = `
   >
     <StackItem
       className=""
-      variant="secondary"
+      isMain={false}
     >
       <div
-        className="pf-l-stack__item pf-m-secondary"
+        className="pf-l-stack__item"
       >
-        Secondary content
-      </div>
-    </StackItem>
-    <StackItem
-      className=""
-      variant="primary"
-    >
-      <div
-        className="pf-l-stack__item pf-m-primary"
-      >
-        Primary content
-      </div>
-    </StackItem>
-    <StackItem
-      className=""
-      variant="secondary"
-    >
-      <div
-        className="pf-l-stack__item pf-m-secondary"
-      >
-        Secondary content
+        Basic content
       </div>
     </StackItem>
   </div>
@@ -59,13 +33,7 @@ exports[`Gutter lg 1`] = `
 `;
 
 exports[`Gutter md 1`] = `
-.pf-l-stack__item.pf-m-secondary {
-  display: block;
-}
-.pf-l-stack__item.pf-m-primary {
-  display: block;
-}
-.pf-l-stack__item.pf-m-secondary {
+.pf-l-stack__item {
   display: block;
 }
 .pf-l-stack.pf-m-gutter {
@@ -84,32 +52,12 @@ exports[`Gutter md 1`] = `
   >
     <StackItem
       className=""
-      variant="secondary"
+      isMain={false}
     >
       <div
-        className="pf-l-stack__item pf-m-secondary"
+        className="pf-l-stack__item"
       >
-        Secondary content
-      </div>
-    </StackItem>
-    <StackItem
-      className=""
-      variant="primary"
-    >
-      <div
-        className="pf-l-stack__item pf-m-primary"
-      >
-        Primary content
-      </div>
-    </StackItem>
-    <StackItem
-      className=""
-      variant="secondary"
-    >
-      <div
-        className="pf-l-stack__item pf-m-secondary"
-      >
-        Secondary content
+        Basic content
       </div>
     </StackItem>
   </div>
@@ -117,13 +65,7 @@ exports[`Gutter md 1`] = `
 `;
 
 exports[`Gutter sm 1`] = `
-.pf-l-stack__item.pf-m-secondary {
-  display: block;
-}
-.pf-l-stack__item.pf-m-primary {
-  display: block;
-}
-.pf-l-stack__item.pf-m-secondary {
+.pf-l-stack__item {
   display: block;
 }
 .pf-l-stack.pf-m-gutter {
@@ -142,46 +84,20 @@ exports[`Gutter sm 1`] = `
   >
     <StackItem
       className=""
-      variant="secondary"
+      isMain={false}
     >
       <div
-        className="pf-l-stack__item pf-m-secondary"
+        className="pf-l-stack__item"
       >
-        Secondary content
-      </div>
-    </StackItem>
-    <StackItem
-      className=""
-      variant="primary"
-    >
-      <div
-        className="pf-l-stack__item pf-m-primary"
-      >
-        Primary content
-      </div>
-    </StackItem>
-    <StackItem
-      className=""
-      variant="secondary"
-    >
-      <div
-        className="pf-l-stack__item pf-m-secondary"
-      >
-        Secondary content
+        Basic content
       </div>
     </StackItem>
   </div>
 </Stack>
 `;
 
-exports[`Secondary and primary 1`] = `
-.pf-l-stack__item.pf-m-secondary {
-  display: block;
-}
-.pf-l-stack__item.pf-m-primary {
-  display: block;
-}
-.pf-l-stack__item.pf-m-secondary {
+exports[`isMain defaults to false 1`] = `
+.pf-l-stack__item {
   display: block;
 }
 .pf-l-stack {
@@ -200,32 +116,44 @@ exports[`Secondary and primary 1`] = `
   >
     <StackItem
       className=""
-      variant="secondary"
+      isMain={false}
     >
       <div
-        className="pf-l-stack__item pf-m-secondary"
+        className="pf-l-stack__item"
       >
-        Secondary content
+        Basic content
       </div>
     </StackItem>
+  </div>
+</Stack>
+`;
+
+exports[`isMain set to true 1`] = `
+.pf-l-stack__item.pf-m-main {
+  display: block;
+}
+.pf-l-stack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+<Stack
+  className=""
+  component="div"
+  gutter={null}
+>
+  <div
+    className="pf-l-stack"
+  >
     <StackItem
       className=""
-      variant="primary"
+      isMain={true}
     >
       <div
-        className="pf-l-stack__item pf-m-primary"
+        className="pf-l-stack__item pf-m-main"
       >
-        Primary content
-      </div>
-    </StackItem>
-    <StackItem
-      className=""
-      variant="secondary"
-    >
-      <div
-        className="pf-l-stack__item pf-m-secondary"
-      >
-        Secondary content
+        Main content
       </div>
     </StackItem>
   </div>
