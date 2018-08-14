@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModalBoxFooter Test 1`] = `
+.pf-c-modal-box__footer {
+  display: block;
+}
+
+<div
+  className="pf-c-modal-box__footer"
+>
+  This is a ModalBox Footer
+</div>
+`;

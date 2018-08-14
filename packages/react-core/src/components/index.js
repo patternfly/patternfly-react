@@ -5,3 +5,4 @@ export * from './Title';
 export * from './Alert';
 export * from './Checkbox';
 export * from './Radio';
+export * from './Modal';
