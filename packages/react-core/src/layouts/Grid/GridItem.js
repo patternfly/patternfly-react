@@ -37,7 +37,7 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  span: null,
+  span: 1,
   rowSpan: null,
   offset: null,
   sm: null,
