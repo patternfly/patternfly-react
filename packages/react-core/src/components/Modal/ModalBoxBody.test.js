@@ -11,8 +11,6 @@ afterEach(() => {
 });
 
 test('ModalBoxBody Test', () => {
-  const view = shallow(
-    <ModalBoxBody id="id">This is a ModalBox header</ModalBoxBody>
-  );
+  const view = shallow(<ModalBoxBody id="id">This is a ModalBox header</ModalBoxBody>);
   expect(view).toMatchSnapshot();
 });

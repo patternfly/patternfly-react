@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import ModalContent from './ModalContent';
+import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../internal/constants';
 
 const propTypes = {
@@ -40,8 +41,6 @@ class Modal extends React.Component {
 
   id = `pf-modal-${currentId++}`;
 
-  container = document.createElement('div');
-
   handleEscKeyClick = event => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
       this.props.onClose();
@@ -59,10 +58,15 @@ class Modal extends React.Component {
   }
 
   render() {
-    return ReactDOM.createPortal(
-      <ModalContent {...this.props} id={this.id} />,
-      this.container
-    );
+    if (!canUseDOM) {
+      return null;
+    }
+
+    if (!this.container) {
+      this.container = document.createElement('div');
+    }
+
+    return ReactDOM.createPortal(<ModalContent {...this.props} id={this.id} />, this.container);
   }
 }
 

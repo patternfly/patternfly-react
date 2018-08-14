@@ -40,12 +40,7 @@ test('Modal Content Test with footer', () => {
 
 test('Modal Content Test with header and footer', () => {
   const view = shallow(
-    <ModalContent
-      title="Test Modal Content title"
-      header="Testing header"
-      footer="Testing footer"
-      id="id"
-    >
+    <ModalContent title="Test Modal Content title" header="Testing header" footer="Testing footer" id="id">
       This is a ModalBox header
     </ModalContent>
   );
