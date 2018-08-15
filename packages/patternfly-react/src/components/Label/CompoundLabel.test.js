@@ -15,12 +15,7 @@ const tag = {
 
 test('snapshot test', () => {
   const view = shallow(
-    <CompoundLabel
-      key={tag.id}
-      category={{ id: tag.id, label: tag.label }}
-      values={tag.values}
-      onDeleteClick={noop}
-    />
+    <CompoundLabel key={tag.id} category={{ id: tag.id, label: tag.label }} values={tag.values} onDeleteClick={noop} />
   );
   expect(view).toMatchSnapshot();
 });

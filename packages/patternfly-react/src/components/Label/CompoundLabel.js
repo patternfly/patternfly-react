@@ -21,23 +21,14 @@ class CompoundLabel extends React.Component {
   render() {
     const values = [...this.props.values];
     if (values.length === 0) return null;
-    const categoryTooltip = (
-      <Tooltip id="tooltip">{this.props.category.label}</Tooltip>
-    );
+    const categoryTooltip = <Tooltip id="tooltip">{this.props.category.label}</Tooltip>;
     return (
       <span className="label label-primary compound-label-pf">
-        <OverlayTrigger
-          placement={this.props.overlayPlacement}
-          overlay={categoryTooltip}
-        >
-          <span className="category-label-pf">
-            {this.props.categoryTruncate(this.props.category.label)}
-          </span>
+        <OverlayTrigger placement={this.props.overlayPlacement} overlay={categoryTooltip}>
+          <span className="category-label-pf">{this.props.categoryTruncate(this.props.category.label)}</span>
         </OverlayTrigger>
         <ul className={`list-inline ${this.props.className}`}>
-          {values
-            .sort((a, b) => (a.label < b.label ? -1 : 1))
-            .map(tagValue => this.generateTag(tagValue))}
+          {values.sort((a, b) => (a.label < b.label ? -1 : 1)).map(tagValue => this.generateTag(tagValue))}
         </ul>
       </span>
     );
@@ -76,8 +67,7 @@ CompoundLabel.propTypes = {
 };
 
 CompoundLabel.defaultProps = {
-  categoryTruncate: str =>
-    str.length > 18 ? `${str.substring(0, 18)}...` : str,
+  categoryTruncate: str => (str.length > 18 ? `${str.substring(0, 18)}...` : str),
   valueTruncate: str => (str.length > 18 ? `${str.substring(0, 18)}...` : str),
   className: '',
   bsStyle: 'primary',
