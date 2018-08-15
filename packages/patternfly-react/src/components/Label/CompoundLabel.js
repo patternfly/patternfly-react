@@ -20,7 +20,7 @@ class CompoundLabel extends React.Component {
 
   render() {
     const values = [...this.props.values];
-    if (values.length === 0) return <div />;
+    if (values.length === 0) return null;
     const categoryTooltip = (
       <Tooltip id="tooltip">{this.props.category.label}</Tooltip>
     );
