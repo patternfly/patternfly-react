@@ -2,7 +2,7 @@ import React from 'react';
 import ComponentDocs from '../../components/componentDocs';
 import Example from '../../components/example';
 import PropTypes from 'prop-types';
-import { Title, TitleSize } from '@patternfly/react-core';
+import { Title } from '@patternfly/react-core';
 
 const propTypes = {
   data: PropTypes.any.isRequired
@@ -11,11 +11,12 @@ const propTypes = {
 const TitleDocs = ({ data }) => (
   <ComponentDocs data={data}>
     <Example title="Sizes">
-      {Object.values(TitleSize).map(size => (
-        <Title key={size} size={size}>
-          {size} Title
-        </Title>
-      ))}
+      <Title size="md">MD Title</Title>
+      <Title size="lg">LG Title</Title>
+      <Title size="xl">XL Title</Title>
+      <Title size="2xl">2XL Title</Title>
+      <Title size="3xl">3XL Title</Title>
+      <Title size="4xl">4XL Title</Title>
     </Example>
   </ComponentDocs>
 );

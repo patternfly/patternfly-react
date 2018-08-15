@@ -3,13 +3,15 @@
 exports[`ModalBoxCloseButton Test 1`] = `
 .pf-c-modal-box__close {
   display: block;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
 }
 
 <div
   className="pf-c-modal-box__close"
 >
   <Button
-    ariaLabel={null}
     className=""
     component="button"
     isActive={false}
@@ -19,7 +21,7 @@ exports[`ModalBoxCloseButton Test 1`] = `
     isHover={false}
     onClick={[Function]}
     type="button"
-    variant="action"
+    variant="plain"
   >
     <TimesIcon
       color="currentColor"

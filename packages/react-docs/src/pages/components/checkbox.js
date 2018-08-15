@@ -31,6 +31,7 @@ class CheckboxDocs extends React.Component {
         </Example>
         <Example title="Disabled checkbox example">
           <Checkbox aria-label="disabled checkbox example" defaultChecked isDisabled />
+          <Checkbox aria-label="disabled checkbox example" isDisabled />
         </Example>
       </ComponentDocs>
     );

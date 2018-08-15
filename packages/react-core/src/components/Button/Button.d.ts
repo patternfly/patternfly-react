@@ -7,7 +7,7 @@ export const ButtonVariant: {
   tertiary: 'tertiary';
   danger: 'danger';
   link: 'link';
-  action: 'action';
+  plain: 'plain';
 };
 
 export const ButtonType: {
@@ -16,7 +16,6 @@ export const ButtonType: {
 };
 
 export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
-  ariaLabel?: string;
   children?: ReactNode;
   component?: ReactType<ButtonProps>;
   isActive?: boolean;

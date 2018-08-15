@@ -4,12 +4,6 @@ exports[`Gutter lg 1`] = `
 .pf-l-split__item {
   display: block;
 }
-.pf-l-split__item {
-  display: block;
-}
-.pf-l-split__item {
-  display: block;
-}
 .pf-l-split.pf-m-gutter {
   display: flex;
   flex-wrap: nowrap;
@@ -27,32 +21,12 @@ exports[`Gutter lg 1`] = `
   >
     <SplitItem
       className=""
-      variant={null}
+      isMain={false}
     >
       <div
         className="pf-l-split__item"
       >
-        Secondary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant={null}
-    >
-      <div
-        className="pf-l-split__item"
-      >
-        Primary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant={null}
-    >
-      <div
-        className="pf-l-split__item"
-      >
-        Secondary content
+        Basic Content
       </div>
     </SplitItem>
   </div>
@@ -60,12 +34,6 @@ exports[`Gutter lg 1`] = `
 `;
 
 exports[`Gutter md 1`] = `
-.pf-l-split__item {
-  display: block;
-}
-.pf-l-split__item {
-  display: block;
-}
 .pf-l-split__item {
   display: block;
 }
@@ -86,32 +54,12 @@ exports[`Gutter md 1`] = `
   >
     <SplitItem
       className=""
-      variant={null}
+      isMain={false}
     >
       <div
         className="pf-l-split__item"
       >
-        Secondary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant={null}
-    >
-      <div
-        className="pf-l-split__item"
-      >
-        Primary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant={null}
-    >
-      <div
-        className="pf-l-split__item"
-      >
-        Secondary content
+        Basic Content
       </div>
     </SplitItem>
   </div>
@@ -119,12 +67,6 @@ exports[`Gutter md 1`] = `
 `;
 
 exports[`Gutter sm 1`] = `
-.pf-l-split__item {
-  display: block;
-}
-.pf-l-split__item {
-  display: block;
-}
 .pf-l-split__item {
   display: block;
 }
@@ -145,45 +87,52 @@ exports[`Gutter sm 1`] = `
   >
     <SplitItem
       className=""
-      variant={null}
+      isMain={false}
     >
       <div
         className="pf-l-split__item"
       >
-        Secondary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant={null}
-    >
-      <div
-        className="pf-l-split__item"
-      >
-        Primary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant={null}
-    >
-      <div
-        className="pf-l-split__item"
-      >
-        Secondary content
+        Basic Content
       </div>
     </SplitItem>
   </div>
 </Split>
 `;
 
-exports[`No variant set 1`] = `
-.pf-l-split__item {
+exports[`isMain 1`] = `
+.pf-l-split__item.pf-m-main {
   display: block;
 }
-.pf-l-split__item {
-  display: block;
+.pf-l-split {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0px;
+  margin: 0px;
 }
+
+<Split
+  className=""
+  component="div"
+  gutter={null}
+>
+  <div
+    className="pf-l-split"
+  >
+    <SplitItem
+      className=""
+      isMain={true}
+    >
+      <div
+        className="pf-l-split__item pf-m-main"
+      >
+        Main content
+      </div>
+    </SplitItem>
+  </div>
+</Split>
+`;
+
+exports[`isMain defaults to false 1`] = `
 .pf-l-split__item {
   display: block;
 }
@@ -204,91 +153,12 @@ exports[`No variant set 1`] = `
   >
     <SplitItem
       className=""
-      variant={null}
+      isMain={false}
     >
       <div
         className="pf-l-split__item"
       >
-        Secondary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant={null}
-    >
-      <div
-        className="pf-l-split__item"
-      >
-        Primary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant={null}
-    >
-      <div
-        className="pf-l-split__item"
-      >
-        Secondary content
-      </div>
-    </SplitItem>
-  </div>
-</Split>
-`;
-
-exports[`Secondary and primary set 1`] = `
-.pf-l-split__item.pf-m-secondary {
-  display: block;
-}
-.pf-l-split__item.pf-m-primary {
-  display: block;
-}
-.pf-l-split__item.pf-m-secondary {
-  display: block;
-}
-.pf-l-split {
-  display: flex;
-  flex-wrap: nowrap;
-  padding: 0px;
-  margin: 0px;
-}
-
-<Split
-  className=""
-  component="div"
-  gutter={null}
->
-  <div
-    className="pf-l-split"
-  >
-    <SplitItem
-      className=""
-      variant="secondary"
-    >
-      <div
-        className="pf-l-split__item pf-m-secondary"
-      >
-        Secondary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant="primary"
-    >
-      <div
-        className="pf-l-split__item pf-m-primary"
-      >
-        Primary content
-      </div>
-    </SplitItem>
-    <SplitItem
-      className=""
-      variant="secondary"
-    >
-      <div
-        className="pf-l-split__item pf-m-secondary"
-      >
-        Secondary content
+        Basic content
       </div>
     </SplitItem>
   </div>

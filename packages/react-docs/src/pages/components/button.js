@@ -17,7 +17,7 @@ const ButtonDocs = ({ data }) => (
       <Button variant="tertiary">Tertiary</Button>
       <Button variant="danger">Danger</Button>
       <Button variant="link">Link</Button>
-      <Button variant="action" ariaLabel="Action Button">
+      <Button variant="plain" aria-label="Plain Button">
         <TimesIcon />
       </Button>
     </Example>

@@ -10,7 +10,7 @@ export const ButtonVariant = {
   tertiary: 'tertiary',
   danger: 'danger',
   link: 'link',
-  action: 'action'
+  plain: 'plain'
 };
 
 export const ButtonType = {
@@ -35,8 +35,6 @@ const propTypes = {
   isFocus: PropTypes.bool,
   /** Adds hove styling to the button */
   isHover: PropTypes.bool,
-  /* Aria label used for action buttons that only use icons */
-  ariaLabel: PropTypes.string,
   /** Sets button type */
   type: PropTypes.oneOf(Object.keys(ButtonType)),
   /* Adds button variant styles */
@@ -52,13 +50,11 @@ const defaultProps = {
   isDisabled: false,
   isFocus: false,
   isHover: false,
-  ariaLabel: null,
   type: ButtonType.button,
   variant: ButtonVariant.primary
 };
 
 const Button = ({
-  ariaLabel,
   children,
   className,
   component: Component,
@@ -76,7 +72,6 @@ const Button = ({
   return (
     <Component
       {...props}
-      aria-label={ariaLabel}
       aria-disabled={isButtonElement ? null : isDisabled}
       className={css(
         styles.button,

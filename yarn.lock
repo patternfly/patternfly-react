@@ -134,9 +134,9 @@
     node-fetch "^2.1.1"
     url-template "^2.0.8"
 
-"@patternfly/patternfly-next@1.0.15":
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.15.tgz#ce11f53ae02246225177708290ba88570f31a30d"
+"@patternfly/patternfly-next@1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.22.tgz#55d8e0ee47e60201b0285d2b35481cddc9e501ac"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -4382,9 +4382,9 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.2.tgz#b8036170c79f07a90ff2f16e22284027a243848b"
+cssom@0.3.4, cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0", cssom@^0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.4.tgz#8cd52e8a3acfd68d3aed38ee0a640177d2f9d797"
 
 "cssstyle@>= 0.3.1 < 0.4.0", cssstyle@^0.3.1:
   version "0.3.1"
@@ -5681,7 +5681,7 @@ execall@^1.0.0:
   dependencies:
     clone-regexp "^1.0.0"
 
-exenv@^1.2.0, exenv@^1.2.1:
+exenv@^1.2.0, exenv@^1.2.1, exenv@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
 

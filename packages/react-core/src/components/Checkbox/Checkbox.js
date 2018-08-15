@@ -28,12 +28,12 @@ class Checkbox extends React.Component {
     const { className, children, onChange, isValid, isDisabled, ...props } = this.props;
     return (
       <input
-        className={css(styles.check, isDisabled && styles.modifiers.disabled, className)}
+        {...props}
+        className={css(styles.check, className)}
         type="checkbox"
         onChange={this.handleChange}
         aria-invalid={!isValid}
         disabled={isDisabled}
-        {...props}
       />
     );
   }

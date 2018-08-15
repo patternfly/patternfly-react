@@ -8,12 +8,3 @@ Object.values(TitleSize).forEach(size => {
     expect(view).toMatchSnapshot();
   });
 });
-
-test('hasMargin', () => {
-  const view = shallow(
-    <Title size="xl" withMargins>
-      With margin
-    </Title>
-  );
-  expect(view).toMatchSnapshot();
-});

@@ -3,6 +3,8 @@
 exports[`2xl Title 1`] = `
 .pf-c-title.pf-m-2xl {
   display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.3;
@@ -19,6 +21,8 @@ exports[`2xl Title 1`] = `
 exports[`3xl Title 1`] = `
 .pf-c-title.pf-m-3xl {
   display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 1.75rem;
   font-weight: 400;
   line-height: 1.3;
@@ -35,6 +39,8 @@ exports[`3xl Title 1`] = `
 exports[`4xl Title 1`] = `
 .pf-c-title.pf-m-4xl {
   display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 2.25rem;
   font-weight: 400;
   line-height: 1.3;
@@ -48,26 +54,11 @@ exports[`4xl Title 1`] = `
 </h1>
 `;
 
-exports[`hasMargin 1`] = `
-.pf-c-title.pf-m-xl.pf-m-margin {
-  display: block;
-  font-size: 1.3125rem;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-<h1
-  className="pf-c-title pf-m-xl pf-m-margin"
->
-  With margin
-</h1>
-`;
-
 exports[`lg Title 1`] = `
 .pf-c-title.pf-m-lg {
   display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.5;
@@ -84,6 +75,8 @@ exports[`lg Title 1`] = `
 exports[`md Title 1`] = `
 .pf-c-title.pf-m-md {
   display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -100,6 +93,8 @@ exports[`md Title 1`] = `
 exports[`xl Title 1`] = `
 .pf-c-title.pf-m-xl {
   display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   font-size: 1.3125rem;
   font-weight: 400;
   line-height: 1.5;

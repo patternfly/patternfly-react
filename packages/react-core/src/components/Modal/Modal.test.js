@@ -1,30 +1,39 @@
 import Modal from './Modal';
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
+import { KEY_CODES } from '../../internal/constants';
 
-test('Modal Test', () => {
-  const view = shallow(
-    <Modal title="Test Modal title" id="id">
-      This is a ModalBox header
-    </Modal>
-  );
-  expect(view).toMatchSnapshot();
+jest.spyOn(ReactDOM, 'createPortal');
+jest.spyOn(document, 'createElement');
+jest.spyOn(document, 'addEventListener');
+
+ReactDOM.createPortal.mockImplementation(v => v);
+
+const props = {
+  title: 'Modal',
+  onClose: jest.fn(),
+  isOpen: false,
+  children: 'modal content'
+};
+
+test('Modal creates a container element once', () => {
+  const view = shallow(<Modal {...props} />);
+  view.update();
+  expect(document.createElement).toBeCalledWith('div');
+  expect(document.createElement).toHaveBeenCalledTimes(1);
 });
 
-test('Modal Test isLarge', () => {
-  const view = shallow(
-    <Modal title="Test Modal title" id="id" isLarge>
-      This is a ModalBox header
-    </Modal>
-  );
-  expect(view).toMatchSnapshot();
+test('modal closes with escape', () => {
+  shallow(<Modal {...props} />);
+  const [event, handler] = document.addEventListener.mock.calls[0];
+  expect(event).toBe('keydown');
+  handler({ keyCode: KEY_CODES.ESCAPE_KEY });
+  expect(props.onClose).toBeCalled();
 });
 
-test('Modal Test isOpen', () => {
-  const view = shallow(
-    <Modal title="Test Modal title" id="id" isOpen>
-      This is a ModalBox header
-    </Modal>
-  );
-  expect(view).toMatchSnapshot();
+test('Each modal is given a new id', () => {
+  const first = shallow(<Modal {...props} />);
+  const second = shallow(<Modal {...props} />);
+  expect(first.props().id).not.toBe(second.props().id);
 });

@@ -16,21 +16,16 @@ export const TitleSize = {
 const propTypes = {
   size: PropTypes.oneOf(Object.values(TitleSize)).isRequired,
   children: PropTypes.node,
-  className: PropTypes.string,
-  withMargins: PropTypes.bool
+  className: PropTypes.string
 };
 
 const defaultProps = {
   children: '',
-  className: '',
-  withMargins: false
+  className: ''
 };
 
-const Title = ({ size, withMargins, className, children, ...props }) => (
-  <h1
-    {...props}
-    className={css(styles.title, getModifier(styles, size), withMargins && styles.modifiers.margin, className)}
-  >
+const Title = ({ size, className, children, ...props }) => (
+  <h1 {...props} className={css(styles.title, getModifier(styles, size), className)}>
     {children}
   </h1>
 );
