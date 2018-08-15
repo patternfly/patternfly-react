@@ -1,8 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from '../../Button';
 import { Modal } from '../index';
 
 export class MockModalManager extends React.Component {
+  propTypes = {
+    children: PropTypes.node
+  };
+
   constructor() {
     super();
     this.state = { showModal: false };
@@ -16,6 +21,36 @@ export class MockModalManager extends React.Component {
     this.setState({ showModal: true });
   }
   render() {
+    const { children } = this.props;
+    const defaultBody = (
+      <form className="form-horizontal">
+        <div className="form-group">
+          <label className="col-sm-3 control-label" htmlFor="textInput">
+            Field One
+          </label>
+          <div className="col-sm-9">
+            <input type="text" id="textInput" className="form-control" />
+          </div>
+        </div>
+        <div className="form-group">
+          <label className="col-sm-3 control-label" htmlFor="textInput2">
+            Field Two
+          </label>
+          <div className="col-sm-9">
+            <input type="text" id="textInput2" className="form-control" />
+          </div>
+        </div>
+        <div className="form-group">
+          <label className="col-sm-3 control-label" htmlFor="textInput3">
+            Field Three
+          </label>
+          <div className="col-sm-9">
+            <input type="text" id="textInput3" className="form-control" />
+          </div>
+        </div>
+      </form>
+    );
+
     return (
       <div>
         <Button bsStyle="primary" bsSize="large" onClick={this.open}>
@@ -27,34 +62,7 @@ export class MockModalManager extends React.Component {
             <Modal.CloseButton onClick={this.close} />
             <Modal.Title>Modal Overlay Title</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            <form className="form-horizontal">
-              <div className="form-group">
-                <label className="col-sm-3 control-label" htmlFor="textInput">
-                  Field One
-                </label>
-                <div className="col-sm-9">
-                  <input type="text" id="textInput" className="form-control" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label className="col-sm-3 control-label" htmlFor="textInput2">
-                  Field Two
-                </label>
-                <div className="col-sm-9">
-                  <input type="text" id="textInput2" className="form-control" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label className="col-sm-3 control-label" htmlFor="textInput3">
-                  Field Three
-                </label>
-                <div className="col-sm-9">
-                  <input type="text" id="textInput3" className="form-control" />
-                </div>
-              </div>
-            </form>
-          </Modal.Body>
+          <Modal.Body>{children || defaultBody}</Modal.Body>
           <Modal.Footer>
             <Button bsStyle="default" className="btn-cancel" onClick={this.close}>
               Cancel

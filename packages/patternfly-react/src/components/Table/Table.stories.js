@@ -8,6 +8,7 @@ import {
   patternflyTable,
   serverPaginationTable,
   inlineEditRowTable,
+  inlineEditRowInModalTable,
   inlineEditColumnTable,
   inlineEditCellTable
 } from './Stories';
@@ -26,5 +27,6 @@ clientSortableTable(stories);
 clientPaginationTable(stories);
 serverPaginationTable(stories);
 inlineEditRowTable(stories);
+inlineEditRowInModalTable(stories);
 inlineEditColumnTable(stories);
 inlineEditCellTable(stories);
