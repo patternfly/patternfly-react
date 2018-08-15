@@ -39,7 +39,7 @@ export class MockLabelRemove extends React.Component {
 export const mockLabelRemoveSource = `
   import React from 'react';
   import { Label } from '../index';
-  
+
   export class MockLabelRemove extends React.Component {
     constructor(props) {
       super(props);
@@ -56,7 +56,7 @@ export const mockLabelRemoveSource = `
     removeMe = index => {
       this.setState(this.state.types.splice(index, 1));
     };
-    
+
     render() {
       return (
         <div>
