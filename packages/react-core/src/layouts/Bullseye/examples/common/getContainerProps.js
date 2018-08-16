@@ -5,13 +5,13 @@ const bullseyeClass = '.pf-l-bullseye';
 
 const styles = StyleSheet.create({
   demoLayout: {
-    [`:not(foo) ${bullseyeClass}`]: {
+    [`& ${bullseyeClass}`]: {
       height: 250,
       borderWidth: borderWidth.var,
       borderStyle: 'dashed',
       borderColor: borderColor.var
     },
-    [`:not(foo) ${bullseyeClass} > div`]: {
+    [`& ${bullseyeClass} > div`]: {
       borderWidth: borderWidth.var,
       borderStyle: 'dashed',
       borderColor: borderColor.var

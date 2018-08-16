@@ -1,8 +1,22 @@
-import { StyleSheet as AphroditeStyleSheet } from 'aphrodite';
-import { formatClassName, getCSSClasses, isModifier, createStyleDeclaration } from './utils';
+import { css as emotionCSS, cx, injectGlobal } from 'emotion';
+import {
+  formatClassName,
+  getCSSClasses,
+  isModifier,
+  createStyleDeclaration,
+  isValidStyleDeclaration,
+  getClassName
+} from './utils';
 
 export const StyleSheet = {
-  create: AphroditeStyleSheet.create,
+  create: styleObj =>
+    Object.keys(styleObj).reduce(
+      (prev, key) => ({
+        ...prev,
+        [key]: emotionCSS(styleObj[key])
+      }),
+      {}
+    ),
   parse(input) {
     const classes = getCSSClasses(input);
     if (!classes) {
@@ -27,8 +41,23 @@ export const StyleSheet = {
         return map;
       },
       {
-        modifiers: {}
+        modifiers: {},
+        inject: () => injectGlobal(input)
       }
     );
   }
 };
+
+export function css(...styles) {
+  const filteredStyles = [];
+  styles.forEach(style => {
+    if (isValidStyleDeclaration(style)) {
+      style.__inject();
+      filteredStyles.push(getClassName(style));
+      return;
+    }
+    filteredStyles.push(style);
+  });
+
+  return cx(...filteredStyles);
+}

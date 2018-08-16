@@ -3,7 +3,7 @@ import { global_BorderColor as borderColor, global_BorderWidth_md as borderWidth
 
 const styles = StyleSheet.create({
   demoLayout: {
-    [`:not(foo) .pf-l-level > div`]: {
+    '& .pf-l-level > div': {
       borderWidth: borderWidth.var,
       borderStyle: 'dashed',
       borderColor: borderColor.var

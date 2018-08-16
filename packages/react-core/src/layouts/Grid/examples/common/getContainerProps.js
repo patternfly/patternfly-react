@@ -6,7 +6,7 @@ const gridItemClass = '.pf-l-grid__item';
 
 const styles = StyleSheet.create({
   demoLayout: {
-    [`:not(foo)  ${gridClass} > ${gridItemClass}`]: {
+    [`& ${gridClass} > ${gridItemClass}`]: {
       minHeight: 75,
       padding: '1rem',
       borderWidth: borderWidth.var,

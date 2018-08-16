@@ -81,12 +81,11 @@ function formatComputedStyles(nodeSelectors, computedStyles) {
   return css.stringify(css.parse(cssString));
 }
 
-function getStyles(nodeSelectors, getBufferedStyles) {
+function getStyles(nodeSelectors, insertedStyles) {
   if (!nodeSelectors.length) {
     return '';
   }
-  const rawCSS = getBufferedStyles().join(' ');
-  const ast = getStylesAST(rawCSS);
+  const ast = getStylesAST(insertedStyles);
   return nodeSelectors
     .reduce((acc, sel) => {
       if (!sel.length) {
@@ -94,7 +93,7 @@ function getStyles(nodeSelectors, getBufferedStyles) {
       }
 
       const re = new RegExp(`(${sel.join('|')})`, 'g');
-      if (!re.test(rawCSS)) {
+      if (!re.test(insertedStyles)) {
         return acc;
       }
 

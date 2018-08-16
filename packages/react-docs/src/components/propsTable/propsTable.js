@@ -1,7 +1,5 @@
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Title } from '@patternfly/react-core';
 import styles from './propsTable.styles';
 import { css } from '@patternfly/react-styles';
 import { Table, Row, TD, TH, Body, Heading } from '../table';
@@ -12,7 +10,7 @@ const docGenPropValueShape = PropTypes.shape({ value: PropTypes.string });
 const docGenPropShape = PropTypes.shape({
   type: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.arrayOf(docGenPropValueShape)
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(docGenPropValueShape)])
   }),
   required: PropTypes.bool,
   description: PropTypes.string,
@@ -26,16 +24,12 @@ const propTypes = {
 };
 
 const defaultProps = {
-  description: '',
   props: [],
   enumValues: {}
 };
 
 export const PropsTable = ({ name, props, enumValues }) => (
-  <Section
-    title={`${name} Props`}
-    description={`The ${name} component accepts the following props.`}
-  >
+  <Section title={`${name} Props`} description={`The ${name} component accepts the following props.`}>
     <Table>
       <Heading>
         <TH>Name</TH>
@@ -54,12 +48,8 @@ export const PropsTable = ({ name, props, enumValues }) => (
                 {getEnumValue(propDef, enumValues)}
               </div>
             </TD>
-            <TD align="center">
-              {propDef.required && <ExclamationCircleIcon />}
-            </TD>
-            <TD>
-              {Boolean(propDef.defaultValue) && propDef.defaultValue.value}
-            </TD>
+            <TD align="center">{propDef.required && <ExclamationCircleIcon />}</TD>
+            <TD>{Boolean(propDef.defaultValue) && propDef.defaultValue.value}</TD>
             <TD>{propDef.description}</TD>
           </Row>
         ))}
@@ -69,9 +59,7 @@ export const PropsTable = ({ name, props, enumValues }) => (
 );
 
 function getEnumValue(prop, enumValues) {
-  const values = Array.isArray(prop.type.value)
-    ? prop.type.value.map(v => v.value)
-    : enumValues[prop.type.value];
+  const values = Array.isArray(prop.type.value) ? prop.type.value.map(v => v.value) : enumValues[prop.type.value];
   if (!values) {
     return '';
   }

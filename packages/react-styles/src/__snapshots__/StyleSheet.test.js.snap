@@ -10,12 +10,20 @@ Object {
     "__className": "pf-c-button",
     "__inject": [Function],
   },
+  "inject": [Function],
   "modifiers": Object {},
 }
 `;
 
+exports[`css concatenates values together 1`] = `"parseValue css-0 value"`;
+
+exports[`css handles values from StyleSheet.create 1`] = `"css-0"`;
+
+exports[`css handles values from StyleSheet.parse 1`] = `"parseValue"`;
+
 exports[`places modifers in the modifers object 1`] = `
 Object {
+  "inject": [Function],
   "modifiers": Object {
     "active": Object {
       "__className": "pf-m-active",
