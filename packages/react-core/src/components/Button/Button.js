@@ -36,9 +36,9 @@ const propTypes = {
   /** Adds hove styling to the button */
   isHover: PropTypes.bool,
   /** Sets button type */
-  type: PropTypes.oneOf(Object.keys(ButtonType)),
+  type: PropTypes.oneOf(Object.values(ButtonType)),
   /* Adds button variant styles */
-  variant: PropTypes.oneOf(Object.keys(ButtonVariant))
+  variant: PropTypes.oneOf(Object.values(ButtonVariant))
 };
 
 const defaultProps = {

@@ -4,7 +4,6 @@ const { ADD_TO_BARREL_FILE } = require('../actionTypes');
 
 const templatesDir = resolve(__dirname, './templates');
 const reactCoreRoot = resolve(__dirname, '../../../packages/react-core');
-const reactDocsRoot = resolve(__dirname, '../../../packages/react-docs');
 
 const componentTypes = new Map([['component', 'components'], ['layout', 'layouts'], ['internal', 'internal']]);
 
@@ -37,21 +36,15 @@ function setPF4Generators(plop) {
           data,
           type: 'addMany',
           destination: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/'),
-          templateFiles: join(base, '*.js')
+          templateFiles: join(base, '**/*.js')
         },
         {
           data,
           type: ADD_TO_BARREL_FILE,
           template: `export * from './{{componentName}}';`,
           path: join(reactCoreRoot, './src/{{typeDir}}/index.js')
-        },
-        typeValue !== componentTypes.get('internal') && {
-          data,
-          type: 'add',
-          path: join(reactDocsRoot, './src/pages/{{typeDir}}/{{dashCase componentName}}.js'),
-          templateFile: join(templatesDir, './docs.hbs')
         }
-      ].filter(Boolean);
+      ];
     }
   });
 }

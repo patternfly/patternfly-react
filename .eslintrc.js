@@ -12,6 +12,16 @@ module.exports = {
       rules: {
         'import/no-extraneous-dependencies': 'off'
       }
+    },
+    {
+      files: ['**/*.docs.js', '**/examples/**'],
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          // docs and examples are copied to react-docs
+          { packageDir: './packages/react-docs' }
+        ]
+      }
     }
   ],
   settings: {

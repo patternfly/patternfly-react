@@ -4,7 +4,8 @@ import { css } from '@patternfly/react-styles';
 import { Title } from '@patternfly/react-core';
 import Content from '../content';
 import PropTypes from 'prop-types';
-import PropsTable from '../propsTable';
+
+const PropsTable = () => null;
 
 const propTypes = {
   title: PropTypes.string.isRequired,
@@ -19,20 +20,14 @@ const defaultProps = {
 
 const Docs = ({ title, description, children, props }) => (
   <Content>
-    <Title size="3xl" withMargins>
-      {title}
-    </Title>
+    <Title size="3xl">{title}</Title>
     <p className={css(styles.description)}>{description}</p>
     <section>
-      <Title size="xl" withMargins>
-        Examples
-      </Title>
+      <Title size="xl">Examples</Title>
       <div>{children}</div>
     </section>
     <section>
-      <Title size="xl" withMargins>
-        Props
-      </Title>
+      <Title size="xl">Props</Title>
       <p className={css(styles.description)}>The {title} component accepts the following props:</p>
       <PropsTable props={props} />
     </section>

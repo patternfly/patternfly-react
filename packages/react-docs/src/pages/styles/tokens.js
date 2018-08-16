@@ -15,6 +15,9 @@ const styles = StyleSheet.create({
     width: 15,
     border: `${tokensModule.global_BorderWidth_sm.var} solid ${tokensModule.global_BorderColor.var}`,
     marginRight: tokensModule.global_spacer_sm.var
+  },
+  tokenCell: {
+    whiteSpace: 'nowrap'
   }
 });
 const isColorRegex = /^(#|rgb)/;
@@ -22,9 +25,7 @@ const isColorRegex = /^(#|rgb)/;
 function Tokens() {
   return (
     <Content>
-      <Title size="3xl" withMargins>
-        Tokens
-      </Title>
+      <Title size="3xl">Tokens</Title>
       <Table>
         <Heading>
           <TH>Variable</TH>
@@ -40,8 +41,8 @@ function Tokens() {
             return [
               ...acc,
               <Row key={key}>
-                <TD>{key}</TD>
-                <TD>
+                <TD className={css(styles.tokenCell)}>{key}</TD>
+                <TD className={css(styles.tokenCell)}>
                   <span className={css(styles.name)}>{token.name}</span>
                 </TD>
                 <TD>

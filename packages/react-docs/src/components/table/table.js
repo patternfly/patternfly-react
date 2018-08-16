@@ -4,17 +4,28 @@ import styles from './table.styles';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {
-  children: PropTypes.any
-};
-const defaultProps = {
-  children: null
+  children: PropTypes.any,
+  align: PropTypes.oneOf(['left', 'center', 'right']), // eslint-disable-line
+  className: PropTypes.string // eslint-disable-line
 };
 
-export const TD = ({ children }) => <td className={css(styles.cell)}>{children}</td>;
+const defaultProps = {
+  children: null,
+  align: null,
+  className: ''
+};
+
+export const TD = ({ children, align, className, ...props }) => (
+  <td {...props} className={css(className, styles.cell, align && styles[`${align}Align`])}>
+    {children}
+  </td>
+);
 TD.propTypes = propTypes;
 TD.defaultProps = defaultProps;
 
-export const TH = ({ children }) => <th className={css(styles.cell)}>{children}</th>;
+export const TH = ({ children, align }) => (
+  <th className={css(styles.cell, align && styles[`${align}Align`])}>{children}</th>
+);
 TH.propTypes = propTypes;
 TH.defaultProps = defaultProps;
 

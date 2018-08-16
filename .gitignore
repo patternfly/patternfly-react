@@ -5,6 +5,7 @@ dist
 coverage
 public/
 .cache
+.tmp
 packages/react-icons/src/icons/
 packages/react-icons/src/index.js
 packages/react-icons/src/index.d.ts

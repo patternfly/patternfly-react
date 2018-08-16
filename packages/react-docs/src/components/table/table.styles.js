@@ -20,5 +20,14 @@ export default StyleSheet.create({
   },
   enumValues: {
     whiteSpace: 'pre'
+  },
+  leftAlign: {
+    textAlign: 'left'
+  },
+  centerAlign: {
+    textAlign: 'center'
+  },
+  rightAlign: {
+    textAlign: 'right'
   }
 });

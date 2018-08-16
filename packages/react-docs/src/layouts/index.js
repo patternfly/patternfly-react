@@ -48,7 +48,10 @@ export default Layout;
 
 export const query = graphql`
   query SiteLayoutQuery {
-    componentPages: allSitePage(filter: { path: { regex: "/components/" } }) {
+    componentPages: allSitePage(
+      filter: { path: { glob: "**/components/*" } }
+      sort: { fields: [fields___label], order: ASC }
+    ) {
       edges {
         node {
           path
@@ -58,7 +61,10 @@ export const query = graphql`
         }
       }
     }
-    layoutPages: allSitePage(filter: { path: { regex: "/layouts/" } }) {
+    layoutPages: allSitePage(
+      filter: { path: { glob: "**/layouts/*" } }
+      sort: { fields: [fields___label], order: ASC }
+    ) {
       edges {
         node {
           path
