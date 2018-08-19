@@ -6,3 +6,4 @@ export * from './Checkbox';
 export * from './Modal';
 export * from './Radio';
 export * from './Title';
+export * from './TextInput';
