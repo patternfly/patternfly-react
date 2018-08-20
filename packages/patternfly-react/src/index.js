@@ -46,4 +46,4 @@ export * from './components/TypeAheadSelect';
 export * from './components/UtilizationBar';
 export * from './components/Wizard';
 export * from './components/VerticalNav';
-export { patternfly } from './common/patternfly';
+export { patternfly, layout } from './common/patternfly';
