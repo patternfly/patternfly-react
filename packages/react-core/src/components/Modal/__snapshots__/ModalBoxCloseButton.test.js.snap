@@ -12,6 +12,7 @@ exports[`ModalBoxCloseButton Test 1`] = `
   className="pf-c-modal-box__close"
 >
   <Button
+    aria-label="Close"
     className=""
     component="button"
     isActive={false}

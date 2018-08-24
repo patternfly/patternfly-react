@@ -22,6 +22,7 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
 
 <a
   aria-disabled={true}
+  aria-label={null}
   className="pf-c-button pf-m-primary pf-m-disabled"
   disabled={null}
   tabIndex={-1}
@@ -52,6 +53,7 @@ exports[`danger button 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label="danger"
   className="pf-c-button pf-m-danger"
   disabled={false}
   tabIndex={null}
@@ -84,6 +86,7 @@ exports[`isBlock 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label={null}
   className="pf-c-button pf-m-primary pf-m-block"
   disabled={false}
   tabIndex={null}
@@ -115,6 +118,7 @@ exports[`isDisabled 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label={null}
   className="pf-c-button pf-m-primary pf-m-disabled"
   disabled={true}
   tabIndex={null}
@@ -145,6 +149,7 @@ exports[`isFocus 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label={null}
   className="pf-c-button pf-m-primary pf-m-focus"
   disabled={false}
   tabIndex={null}
@@ -175,6 +180,7 @@ exports[`isHover 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label={null}
   className="pf-c-button pf-m-primary pf-m-hover"
   disabled={false}
   tabIndex={null}
@@ -205,6 +211,7 @@ exports[`link button 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label="link"
   className="pf-c-button pf-m-link"
   disabled={false}
   tabIndex={null}
@@ -236,6 +243,7 @@ exports[`plain button 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label="plain"
   className="pf-c-button pf-m-plain"
   disabled={false}
   tabIndex={null}
@@ -267,6 +275,7 @@ exports[`primary button 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label="primary"
   className="pf-c-button pf-m-primary"
   disabled={false}
   tabIndex={null}
@@ -298,6 +307,7 @@ exports[`secondary button 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label="secondary"
   className="pf-c-button pf-m-secondary"
   disabled={false}
   tabIndex={null}
@@ -329,6 +339,7 @@ exports[`tertiary button 1`] = `
 
 <button
   aria-disabled={null}
+  aria-label="tertiary"
   className="pf-c-button pf-m-tertiary"
   disabled={false}
   tabIndex={null}

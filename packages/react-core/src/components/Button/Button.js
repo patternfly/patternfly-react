@@ -37,8 +37,15 @@ const propTypes = {
   isHover: PropTypes.bool,
   /** Sets button type */
   type: PropTypes.oneOf(Object.values(ButtonType)),
-  /* Adds button variant styles */
-  variant: PropTypes.oneOf(Object.values(ButtonVariant))
+  /** Adds button variant styles */
+  variant: PropTypes.oneOf(Object.values(ButtonVariant)),
+  /** Adds accessible text to the button. Required for plain buttons */
+  'aria-label': props => {
+    if (props.variant === ButtonVariant.plain && !props['aria-label']) {
+      return new Error('aria-label is required for Buttons with the plain variant');
+    }
+    return null;
+  }
 };
 
 const defaultProps = {
@@ -51,7 +58,8 @@ const defaultProps = {
   isFocus: false,
   isHover: false,
   type: ButtonType.button,
-  variant: ButtonVariant.primary
+  variant: ButtonVariant.primary,
+  'aria-label': null
 };
 
 const Button = ({

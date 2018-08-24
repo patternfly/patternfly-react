@@ -4,7 +4,11 @@ import { shallow } from 'enzyme';
 
 Object.values(ButtonVariant).forEach(variant => {
   test(`${variant} button`, () => {
-    const view = shallow(<Button variant={variant}>{variant} Button</Button>);
+    const view = shallow(
+      <Button variant={variant} aria-label={variant}>
+        {variant} Button
+      </Button>
+    );
     expect(view).toMatchSnapshot();
   });
 });
