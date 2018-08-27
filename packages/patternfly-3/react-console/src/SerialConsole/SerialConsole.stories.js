@@ -29,7 +29,7 @@ const timeoutIds = [];
  * The SerialConsoleConnector component is consumer-specific and wraps the communication with backend.
  * For the purpose of this storybook, the backend is just mimicked.
  */
-class SerialConsoleConnector extends React.Component {
+export class SerialConsoleConnector extends React.Component {
   state = { status: LOADING, passKeys: false };
 
   onBackendDisconnected = () => {
