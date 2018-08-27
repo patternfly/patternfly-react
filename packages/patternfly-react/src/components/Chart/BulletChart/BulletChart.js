@@ -291,4 +291,13 @@ BulletChart.defaultProps = {
 BulletChart.DEFAULT_PRIMARY_COLORS = defaultPrimaryColors;
 BulletChart.DEFAULT_EXTENDED_COLORS = defaultExtendedColors;
 
+BulletChart.Title = BulletChartTitle;
+BulletChart.Value = BulletChartValue;
+BulletChart.Range = BulletChartRange;
+BulletChart.Axis = BulletChartAxis;
+BulletChart.AxisTic = BulletChartAxisTic;
+BulletChart.Legend = BulletChartLegend;
+BulletChart.LegendItem = BulletChartLegendItem;
+BulletChart.Threshold = BulletChartThreshold;
+
 export default BulletChart;

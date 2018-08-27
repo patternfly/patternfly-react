@@ -8,15 +8,6 @@ import BulletChartLegend from './BulletChartLegend';
 import BulletChartLegendItem from './BulletChartLegendItem';
 import BulletChartThreshold from './BulletChartThreshold';
 
-BulletChart.Title = BulletChartTitle;
-BulletChart.Value = BulletChartValue;
-BulletChart.Range = BulletChartRange;
-BulletChart.Axis = BulletChartAxis;
-BulletChart.AxisTic = BulletChartAxisTic;
-BulletChart.Legend = BulletChartLegend;
-BulletChart.LegendItem = BulletChartLegendItem;
-BulletChart.Threshold = BulletChartThreshold;
-
 export {
   BulletChart,
   BulletChartTitle,

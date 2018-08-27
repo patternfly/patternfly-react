@@ -14,9 +14,11 @@ const BaseVerticalNavMasthead = props => {
 
   const childrenArray = children && React.Children.count(children) > 0 && React.Children.toArray(children);
   const brandChildren =
-    childrenArray && childrenArray.filter(child => child.type.displayName === VerticalNavBrand.displayName);
+    childrenArray &&
+    childrenArray.filter(child => child.type && child.type.displayName === VerticalNavBrand.displayName);
   const otherChildren =
-    childrenArray && childrenArray.filter(child => child.type.displayName !== VerticalNavBrand.displayName);
+    childrenArray &&
+    childrenArray.filter(child => !child.type || child.type.displayName !== VerticalNavBrand.displayName);
 
   return (
     <React.Fragment>

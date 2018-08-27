@@ -26,31 +26,6 @@ import TablePfProvider from './TablePfProvider';
 import TableSelectionCell from './TableSelectionCell';
 import TableSelectionHeading from './TableSelectionHeading';
 
-Table.actionHeaderCellFormatter = actionHeaderCellFormatter;
-Table.customHeaderFormattersDefinition = customHeaderFormattersDefinition;
-Table.defaultSortingOrder = defaultSortingOrder;
-Table.selectionCellFormatter = selectionCellFormatter;
-Table.selectionHeaderCellFormatter = selectionHeaderCellFormatter;
-Table.sortableHeaderCellFormatter = sortableHeaderCellFormatter;
-Table.tableCellFormatter = tableCellFormatter;
-Table.inlineEditFormatterFactory = inlineEditFormatterFactory;
-
-Table.Actions = TableActions;
-Table.Button = TableButton;
-Table.Cell = TableCell;
-Table.Checkbox = TableCheckbox;
-Table.DropdownKebab = TableDropdownKebab;
-Table.Heading = TableHeading;
-Table.PfProvider = TablePfProvider;
-Table.InlineEditRow = TableInlineEditRow;
-Table.TableInlineEditHeaderRow = TableInlineEditHeaderRow;
-Table.SelectionCell = TableSelectionCell;
-Table.SelectionHeading = TableSelectionHeading;
-Table.TABLE_ALIGN = TABLE_ALIGN;
-Table.TABLE_ALIGNMENT_TYPES = TABLE_ALIGNMENT_TYPES;
-Table.TABLE_SORT_DIRECTION = TABLE_SORT_DIRECTION;
-Table.TABLE_SORT_DIRECTIONS = TABLE_SORT_DIRECTIONS;
-
 export {
   actionHeaderCellFormatter,
   customHeaderFormattersDefinition,

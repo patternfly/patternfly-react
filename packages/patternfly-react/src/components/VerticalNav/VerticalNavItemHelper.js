@@ -232,7 +232,7 @@ class BaseVerticalNavItemHelper extends React.Component {
     }
 
     const childBadgeComponents =
-      filterChildren(children, child => child.type.displayName === VerticalNavBadge.displayName) ||
+      filterChildren(children, child => child.type && child.type.displayName === VerticalNavBadge.displayName) ||
       (badges &&
         badges.length > 0 &&
         badges.map(badge => {
