@@ -153,7 +153,7 @@ class XTerm extends React.Component {
    * @param {Number} cols Number of columns
    */
   addMinWidth(cols) {
-    if (this.childTerminal) {
+    if (this.childTerminal && this.state.terminal.renderer) {
       const padding = 2 * 11;
       const { actualCellWidth } = this.state.terminal.renderer.dimensions;
       const minWidth = actualCellWidth * cols + padding;
