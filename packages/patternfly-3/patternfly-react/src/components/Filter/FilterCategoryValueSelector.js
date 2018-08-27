@@ -27,14 +27,13 @@ const FilterCategoryValueSelector = ({
     let menuId = 'filterCategoryMenu';
     menuId += id ? `_${id}` : '';
 
+    const dropdownClasses = classNames('filter-pf-category-select-value', 'filter-pf-select-dropdown', {
+      'filter-selected': title !== placeholder
+    });
+
     return (
       <div className={classes} {...props}>
-        <DropdownButton className="filter-pf-category-select-value filter-pf-select-dropdown" title={title} id={menuId}>
-          {placeholder && (
-            <MenuItem title={placeholder} key="Placeholder" onSelect={() => onCategoryValueSelected()}>
-              {placeholder}
-            </MenuItem>
-          )}
+        <DropdownButton className={dropdownClasses} title={title} id={menuId}>
           {categoryValues &&
             categoryValues.map((item, index) => {
               const menuItemClasses = {

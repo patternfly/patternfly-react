@@ -28,7 +28,7 @@
     "breakjs": "^1.0.0",
     "classnames": "^2.2.5",
     "css-element-queries": "^1.0.1",
-    "patternfly": "^3.52.1",
+    "patternfly": "^3.52.4",
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-switch": "^15.5.3",
     "react-bootstrap-typeahead": "^3.1.3",

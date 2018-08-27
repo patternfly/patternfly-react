@@ -162,7 +162,7 @@ exports[`Filter categories renders properly 1`] = `
             <button
               aria-expanded="false"
               aria-haspopup="true"
-              class="filter-pf-select-dropdown dropdown-toggle btn btn-default"
+              class="filter-pf-select-dropdown filter-selected dropdown-toggle btn btn-default"
               id="filterCategoryMenu"
               role="button"
               type="button"
@@ -177,19 +177,6 @@ exports[`Filter categories renders properly 1`] = `
               class="dropdown-menu"
               role="menu"
             >
-              <li
-                class=""
-                role="presentation"
-              >
-                <a
-                  href="#"
-                  role="menuitem"
-                  tabindex="-1"
-                  title="Filter by Car Make"
-                >
-                  Filter by Car Make
-                </a>
-              </li>
               <li
                 class="selected"
                 role="presentation"
@@ -226,7 +213,7 @@ exports[`Filter categories renders properly 1`] = `
             <button
               aria-expanded="false"
               aria-haspopup="true"
-              class="filter-pf-category-select-value filter-pf-select-dropdown dropdown-toggle btn btn-default"
+              class="filter-pf-category-select-value filter-pf-select-dropdown filter-selected dropdown-toggle btn btn-default"
               id="filterCategoryMenu"
               role="button"
               type="button"
@@ -241,19 +228,6 @@ exports[`Filter categories renders properly 1`] = `
               class="dropdown-menu"
               role="menu"
             >
-              <li
-                class=""
-                role="presentation"
-              >
-                <a
-                  href="#"
-                  role="menuitem"
-                  tabindex="-1"
-                  title="Filter by Car Model"
-                >
-                  Filter by Car Model
-                </a>
-              </li>
               <li
                 class="selected"
                 role="presentation"
@@ -509,7 +483,7 @@ exports[`Filter renders properly in a Toolbar 1`] = `
 </div>
 `;
 
-exports[`Filter select renders propeurly 1`] = `
+exports[`Filter select renders properly 1`] = `
 <div
   class="filter-pf form-group"
 >
@@ -603,7 +577,7 @@ exports[`Filter select renders propeurly 1`] = `
           <button
             aria-expanded="false"
             aria-haspopup="true"
-            class="filter-pf-select-dropdown dropdown-toggle btn btn-default"
+            class="filter-pf-select-dropdown filter-selected dropdown-toggle btn btn-default"
             id="filterCategoryMenu"
             role="button"
             type="button"
