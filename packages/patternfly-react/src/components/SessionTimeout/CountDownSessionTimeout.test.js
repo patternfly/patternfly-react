@@ -6,13 +6,7 @@ import { MessageDialog } from '../../index';
 test('CountDownSessionTimeout init timeLeft > displayBefore', () => {
   jest.useFakeTimers();
   const sessionTime = 15;
-  let component = mount(
-    <CountDownSessionTimeout
-      timeLeft={10}
-      displayBefore={3}
-      sessionTime={sessionTime}
-    />
-  );
+  let component = mount(<CountDownSessionTimeout timeLeft={10} displayBefore={3} sessionTime={sessionTime} />);
   expect(component.find(MessageDialog).prop('show')).toBe(false);
   jest.advanceTimersByTime(7000);
   component = component.update();
@@ -40,13 +34,7 @@ test('CountDownSessionTimeout init timeLeft > displayBefore', () => {
 test('CountDownSessionTimeout init timeLeft < displayBefore', () => {
   jest.useFakeTimers();
   const sessionTime = 15;
-  let component = mount(
-    <CountDownSessionTimeout
-      timeLeft={5}
-      displayBefore={10}
-      sessionTime={sessionTime}
-    />
-  );
+  let component = mount(<CountDownSessionTimeout timeLeft={5} displayBefore={10} sessionTime={sessionTime} />);
   expect(component.find(MessageDialog).prop('show')).toBe(true);
   jest.advanceTimersByTime(5000);
   component = component.update();
@@ -57,13 +45,7 @@ test('CountDownSessionTimeout init timeLeft < displayBefore', () => {
 test('CountDownSessionTimeout clicking logout terminates session', () => {
   jest.useFakeTimers();
   const sessionTime = 15;
-  const component = mount(
-    <CountDownSessionTimeout
-      timeLeft={4}
-      displayBefore={4}
-      sessionTime={sessionTime}
-    />
-  );
+  const component = mount(<CountDownSessionTimeout timeLeft={4} displayBefore={4} sessionTime={sessionTime} />);
   expect(component.find(MessageDialog).prop('show')).toBe(true);
   component.find('.btn-default').simulate('click');
   expect(component.find(MessageDialog).prop('show')).toBe(false);
