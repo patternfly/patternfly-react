@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withContext } from 'recompose';
+import { hasDisplayName, filterChildren } from '../../common/helpers';
 import { Grid } from '../Grid';
 import ToolbarResults from './ToolbarResults';
 import ToolbarRightContent from './ToolbarRightContent';
@@ -9,14 +10,9 @@ import ToolbarViewSelector from './ToolbarViewSelector';
 
 import { toolbarContextTypes, getToolbarContext, ToolbarContextProvider } from './ToolbarConstants';
 
-const ToolbarContext = ({ children, className, ...props }) => {
-  const childrenArray = children && React.Children.count(children) > 0 && React.Children.toArray(children);
-
-  const toolbarChildren =
-    childrenArray &&
-    childrenArray.filter(child => !child.type || child.type.displayName !== ToolbarResults.displayName);
-  const resultsChildren =
-    childrenArray && childrenArray.filter(child => child.type && child.type.displayName === ToolbarResults.displayName);
+const ContextualToolbar = ({ children, className, ...props }) => {
+  const toolbarChildren = filterChildren(children, child => !hasDisplayName(child, ToolbarResults.displayName));
+  const resultsChildren = filterChildren(children, child => hasDisplayName(child, ToolbarResults.displayName));
 
   return (
     <ToolbarContextProvider isDescendantOfToolbar>
@@ -32,19 +28,19 @@ const ToolbarContext = ({ children, className, ...props }) => {
   );
 };
 
-ToolbarContext.propTypes = {
+ContextualToolbar.propTypes = {
   /** Children nodes */
   children: PropTypes.node,
   /** Additional css classes */
   className: PropTypes.string
 };
 
-ToolbarContext.defaultProps = {
+ContextualToolbar.defaultProps = {
   children: null,
   className: ''
 };
 
-const Toolbar = withContext(toolbarContextTypes, getToolbarContext)(ToolbarContext);
+const Toolbar = withContext(toolbarContextTypes, getToolbarContext)(ContextualToolbar);
 
 Toolbar.Results = ToolbarResults;
 Toolbar.RightContent = ToolbarRightContent;

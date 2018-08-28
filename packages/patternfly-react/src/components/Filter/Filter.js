@@ -13,7 +13,7 @@ import FilterItem from './FilterItem';
 
 // Disabled eslint due to `isDescendantOfToolbar` being a context property we don't want passed by consumers
 // eslint-disable-next-line react/prop-types
-const FilterContext = ({ children, className, isDescendantOfToolbar, ...props }) => {
+const ContextualFilter = ({ children, className, isDescendantOfToolbar, ...props }) => {
   const classes = classNames(
     {
       'filter-pf form-group': true,
@@ -31,19 +31,19 @@ const FilterContext = ({ children, className, isDescendantOfToolbar, ...props })
   );
 };
 
-FilterContext.propTypes = {
+ContextualFilter.propTypes = {
   /** Children nodes */
   children: PropTypes.node,
   /** Additional css classes */
   className: PropTypes.string
 };
 
-FilterContext.defaultProps = {
+ContextualFilter.defaultProps = {
   children: null,
   className: ''
 };
 
-const Filter = getContext(toolbarContextTypes)(FilterContext);
+const Filter = getContext(toolbarContextTypes)(ContextualFilter);
 
 Filter.TypeSelector = FilterTypeSelector;
 Filter.ValueSelector = FilterValueSelector;

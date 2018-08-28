@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, Icon, FormControl } from '../../index';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
+import { FormControl } from '../Form';
 import { noop } from '../../common/helpers';
 
 class ToolbarFind extends React.Component {

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { noop, Modal } from '../../index';
+import { noop } from '../../common/helpers';
+import { Modal } from '../Modal';
 import WizardBody from './WizardBody';
 import WizardContents from './WizardContents';
 import WizardFooter from './WizardFooter';
