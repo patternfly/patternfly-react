@@ -32,10 +32,7 @@ const defaultProps = {
 };
 
 export const PropsTable = ({ name, props, enumValues }) => (
-  <Section
-    title={`${name} Props`}
-    description={`The ${name} component accepts the following props.`}
-  >
+  <Section title={`${name} Props`} description={`The ${name} component accepts the following props.`}>
     <Table>
       <Heading>
         <TH>Name</TH>
@@ -54,12 +51,8 @@ export const PropsTable = ({ name, props, enumValues }) => (
                 {getEnumValue(propDef, enumValues)}
               </div>
             </TD>
-            <TD align="center">
-              {propDef.required && <ExclamationCircleIcon />}
-            </TD>
-            <TD>
-              {Boolean(propDef.defaultValue) && propDef.defaultValue.value}
-            </TD>
+            <TD align="center">{propDef.required && <ExclamationCircleIcon />}</TD>
+            <TD>{Boolean(propDef.defaultValue) && propDef.defaultValue.value}</TD>
             <TD>{propDef.description}</TD>
           </Row>
         ))}
@@ -69,9 +62,7 @@ export const PropsTable = ({ name, props, enumValues }) => (
 );
 
 function getEnumValue(prop, enumValues) {
-  const values = Array.isArray(prop.type.value)
-    ? prop.type.value.map(v => v.value)
-    : enumValues[prop.type.value];
+  const values = Array.isArray(prop.type.value) ? prop.type.value.map(v => v.value) : enumValues[prop.type.value];
   if (!values) {
     return '';
   }
