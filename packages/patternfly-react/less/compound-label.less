@@ -12,10 +12,6 @@
   white-space: normal;
   text-align: left;
 
-  .list-inline {
-    margin-bottom: 0;
-  }
-
   .label {
     display: inline-block;
     font-size: 0.8em;
@@ -24,7 +20,8 @@
 
   .list-inline {
     display: inline-block;
-    &>li {
+    margin-bottom: 0;
+    & > li {
       margin-top: .1em; // added for case when wrapping
       margin-bottom: .1em; // added for case when wrapping
     }

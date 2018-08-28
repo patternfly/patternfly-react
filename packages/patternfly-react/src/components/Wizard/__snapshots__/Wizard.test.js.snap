@@ -109,7 +109,6 @@ exports[`Wizard Stateful Pattern renders properly: Wizard stateful pattern snaps
   onHide={[MockFunction]}
   onNext={[Function]}
   onStepChanged={[Function]}
-  shouldPreventStepChange={[Function]}
   show={true}
   stepButtonsDisabled={false}
   steps={

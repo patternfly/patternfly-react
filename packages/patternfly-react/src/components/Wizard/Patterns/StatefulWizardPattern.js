@@ -43,7 +43,7 @@ class StatefulWizardPattern extends React.Component {
     return (
       <WizardPattern
         nextStepDisabled={shouldDisableNextStep(activeStepIndex)}
-        {...otherProps}
+        {...excludeKeys(otherProps, ['shouldPreventStepChange'])}
         activeStepIndex={activeStepIndex} // Value from state, as set by getDerivedStateFromProps
         onStepChanged={this.onStepChanged}
       />
