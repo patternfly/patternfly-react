@@ -18,6 +18,7 @@ const p1Notifications = [
     level: 'info',
     text: 'Foreman Community Newsletter - January 2019',
     group: 'Community',
+    created_at: 'bad_date',
     actions: {
       links: [
         {
