@@ -4,8 +4,25 @@ import { TextInput } from '@patternfly/react-core';
 class DisabledTextInput extends React.Component {
   static title = 'Disabled TextInput';
 
+  state = {
+    value: ''
+  };
+
+  handleDisabledTextInputChange = value => {
+    this.setState({ value });
+  };
+
   render() {
-    return <TextInput type="text" aria-label="disabled text input example" isDisabled />;
+    const { value } = this.state;
+    return (
+      <TextInput
+        type="text"
+        value={value}
+        onChange={this.handleDisabledTextInputChange}
+        aria-label="disabled text input example"
+        isDisabled
+      />
+    );
   }
 }
 
