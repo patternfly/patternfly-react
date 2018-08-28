@@ -113,7 +113,7 @@
     "build:icons": "lerna run prebuild --scope=@patternfly/react-icons --stream",
     "build:ts": "node ./scripts/copyTS.js",
     "clean": "yarn clean:build",
-    "clean:build": "rm -rf packages/*/dist",
+    "clean:build": "rm -rf packages/*/dist && rm -rf packages/patternfly-?/*/dist",
     "commit": "git-cz",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "generate": "yarn plop",
@@ -133,7 +133,7 @@
     "storybook:openurl": "node ./storybook/openBrowser.js",
     "storybook:run": "start-storybook -c storybook -p 6006",
     "storybook": "yarn storybook:run",
-    "stylelint": "stylelint --fix 'packages/*/sass/**/*.scss'",
+    "stylelint": "stylelint --fix 'packages/**/sass/**/*.scss'",
     "test": "yarn lint && jest",
     "test:current": "jest --watch",
     "test:watch": "jest --watchAll",
@@ -161,11 +161,11 @@
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer",
-      "<rootDir>/packages/react-styles/snapshot-serializer"
+      "<rootDir>/packages/patternfly-4/react-styles/snapshot-serializer"
     ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest",
-      "\\.(css)$": "<rootDir>/packages/react-styles/jest-transform.js"
+      "\\.(css)$": "<rootDir>/packages/patternfly-4/react-styles/jest-transform.js"
     },
     "testPathIgnorePatterns": [
       "<rootDir>/scripts/generators/"
@@ -187,7 +187,7 @@
   },
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/**"
     ],
     "nohoist": [
       "**/gatsby*",

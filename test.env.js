@@ -1,7 +1,7 @@
 import 'raf/polyfill';
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { suppressStyleInjection } from './packages/react-styles/testUtils';
+import { suppressStyleInjection } from './packages/patternfly-4/react-styles/testUtils';
 
 suppressStyleInjection();
 
