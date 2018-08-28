@@ -5,7 +5,7 @@ import WizardPatternBody from './WizardPatternBody';
 import { wizardStepShape } from './WizardPatternConstants';
 
 /**
- * WizardPattern - the Wizard Pattern Body component.
+ * WizardPattern - the Wizard Pattern component.
  */
 const WizardPattern = ({
   steps,
