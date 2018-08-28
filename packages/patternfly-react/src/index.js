@@ -36,6 +36,7 @@ export * from './components/Sort';
 export * from './components/Slider';
 export * from './components/Spinner';
 export * from './components/Switch';
+export * from './components/Tag';
 export * from './components/Tabs';
 export * from './components/Table';
 export * from './components/ToastNotification';
