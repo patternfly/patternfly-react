@@ -64,10 +64,12 @@ const NotificationDrawerPanelWrapper = ({
       <Icon className="pull-left" type="pf" name={getIconClass(notification.level)} />
       <Notification.Content>
         <Notification.Message>{notification.text}</Notification.Message>
-        <Notification.Info
-          leftText={new Date(notification.created_at).toLocaleDateString()}
-          rightText={new Date(notification.created_at).toLocaleTimeString()}
-        />
+        {notification.created_at && (
+          <Notification.Info
+            leftText={new Date(notification.created_at).toLocaleDateString()}
+            rightText={new Date(notification.created_at).toLocaleTimeString()}
+          />
+        )}
       </Notification.Content>
     </Notification>
   ));

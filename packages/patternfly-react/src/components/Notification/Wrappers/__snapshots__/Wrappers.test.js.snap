@@ -208,20 +208,6 @@ exports[`DrawerWraper is working properly 1`] = `
               >
                 Foreman Community Newsletter - January 2019
               </span>
-              <div
-                class="drawer-pf-notification-info"
-              >
-                <span
-                  class="date"
-                >
-                  Invalid Date
-                </span>
-                <span
-                  class="time"
-                >
-                  Invalid Date
-                </span>
-              </div>
             </div>
           </div>
           <div
@@ -292,20 +278,6 @@ exports[`DrawerWraper is working properly 1`] = `
               >
                 Foreman Community Newsletter - January 2029
               </span>
-              <div
-                class="drawer-pf-notification-info"
-              >
-                <span
-                  class="date"
-                >
-                  Invalid Date
-                </span>
-                <span
-                  class="time"
-                >
-                  Invalid Date
-                </span>
-              </div>
             </div>
           </div>
           <div
@@ -376,20 +348,6 @@ exports[`DrawerWraper is working properly 1`] = `
               >
                 Foreman Community Newsletter - January 2029
               </span>
-              <div
-                class="drawer-pf-notification-info"
-              >
-                <span
-                  class="date"
-                >
-                  Invalid Date
-                </span>
-                <span
-                  class="time"
-                >
-                  Invalid Date
-                </span>
-              </div>
             </div>
           </div>
         </div>
@@ -610,20 +568,6 @@ exports[`NotificationDrawerPanelWraper is working properly 1`] = `
           >
             Foreman Community Newsletter - January 2019
           </span>
-          <div
-            class="drawer-pf-notification-info"
-          >
-            <span
-              class="date"
-            >
-              Invalid Date
-            </span>
-            <span
-              class="time"
-            >
-              Invalid Date
-            </span>
-          </div>
         </div>
       </div>
       <div
@@ -694,20 +638,6 @@ exports[`NotificationDrawerPanelWraper is working properly 1`] = `
           >
             Foreman Community Newsletter - January 2029
           </span>
-          <div
-            class="drawer-pf-notification-info"
-          >
-            <span
-              class="date"
-            >
-              Invalid Date
-            </span>
-            <span
-              class="time"
-            >
-              Invalid Date
-            </span>
-          </div>
         </div>
       </div>
       <div
@@ -778,20 +708,6 @@ exports[`NotificationDrawerPanelWraper is working properly 1`] = `
           >
             Foreman Community Newsletter - January 2029
           </span>
-          <div
-            class="drawer-pf-notification-info"
-          >
-            <span
-              class="date"
-            >
-              Invalid Date
-            </span>
-            <span
-              class="time"
-            >
-              Invalid Date
-            </span>
-          </div>
         </div>
       </div>
       <div
