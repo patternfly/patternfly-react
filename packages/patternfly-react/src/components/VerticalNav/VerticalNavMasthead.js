@@ -4,7 +4,7 @@ import { getContext } from 'recompose';
 import { Navbar } from 'react-bootstrap';
 import VerticalNavBrand from './VerticalNavBrand';
 import { navContextTypes } from './VerticalNavConstants';
-import { noop } from '../../common/helpers';
+import { noop, hasDisplayName, filterChildren } from '../../common/helpers';
 
 /**
  * VerticalNavMasthead - the first child of a VerticalNav component
@@ -12,11 +12,8 @@ import { noop } from '../../common/helpers';
 const BaseVerticalNavMasthead = props => {
   const { children, href, iconImg, titleImg, title } = props;
 
-  const childrenArray = children && React.Children.count(children) > 0 && React.Children.toArray(children);
-  const brandChildren =
-    childrenArray && childrenArray.filter(child => child.type.displayName === VerticalNavBrand.displayName);
-  const otherChildren =
-    childrenArray && childrenArray.filter(child => child.type.displayName !== VerticalNavBrand.displayName);
+  const brandChildren = filterChildren(children, child => hasDisplayName(child, VerticalNavBrand.displayName));
+  const otherChildren = filterChildren(children, child => !hasDisplayName(child, VerticalNavBrand.displayName));
 
   return (
     <React.Fragment>

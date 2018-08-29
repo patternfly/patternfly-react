@@ -60,6 +60,10 @@ export const findChild = (children, validator) => {
 export const propsChanged = (propNames, oldProps, newProps) =>
   propNames.some(propName => oldProps[propName] !== newProps[propName]);
 
+/** Returns true if the component has the desired displayName value */
+export const hasDisplayName = (component, displayName) =>
+  component && component.type && component.type.displayName === displayName;
+
 /** Returns an object with the same keys as the given one, but all null values. */
 export const nullValues = obj => selectKeys(obj, Object.keys(obj), () => null);
 

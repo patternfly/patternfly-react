@@ -17,24 +17,6 @@ import ListViewLeft from './ListViewLeft';
 import ListViewMainInfo from './ListViewMainInfo';
 import ListViewRow from './ListViewRow';
 
-ListView.Actions = ListViewActions;
-ListView.AdditionalInfo = ListViewAdditionalInfo;
-ListView.Body = ListViewBody;
-ListView.Checkbox = ListViewCheckbox;
-ListView.Description = ListViewDescription;
-ListView.DescriptionHeading = ListViewDescriptionHeading;
-ListView.DescriptionText = ListViewDescriptionText;
-ListView.Expand = ListViewExpand;
-ListView.GroupItem = ListViewGroupItem;
-ListView.GroupItemContainer = ListViewGroupItemContainer;
-ListView.GroupItemHeader = ListViewGroupItemHeader;
-ListView.Icon = ListViewIcon;
-ListView.InfoItem = ListViewInfoItem;
-ListView.Item = ListViewItem;
-ListView.Left = ListViewLeft;
-ListView.MainInfo = ListViewMainInfo;
-ListView.Row = ListViewRow;
-
 export {
   ListView,
   ListViewActions,

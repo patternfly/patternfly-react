@@ -6,7 +6,7 @@ import { ListGroup, ListGroupItem } from '../ListGroup';
 import { OverlayTrigger } from '../OverlayTrigger';
 import { Tooltip } from '../Tooltip';
 import VerticalNavBadge from './VerticalNavBadge';
-import { filterChildren } from '../../common/helpers';
+import { filterChildren, hasDisplayName } from '../../common/helpers';
 import VerticalNavDividerItem from './VerticalNavDividerItem';
 import {
   NavContextProvider,
@@ -232,7 +232,7 @@ class BaseVerticalNavItemHelper extends React.Component {
     }
 
     const childBadgeComponents =
-      filterChildren(children, child => child.type.displayName === VerticalNavBadge.displayName) ||
+      filterChildren(children, child => hasDisplayName(child, VerticalNavBadge.displayName)) ||
       (badges &&
         badges.length > 0 &&
         badges.map(badge => {

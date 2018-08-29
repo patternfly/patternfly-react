@@ -17,21 +17,6 @@ import {
   UtilizationCardDetailsLine2
 } from './UtilizationTrendCard';
 
-import { default as Row } from '../Grid/Row';
-import { default as Col } from '../Grid/Col';
-import { default as Clearfix } from '../Grid/Clearfix';
-
-Card.Title = CardTitle;
-Card.Body = CardBody;
-Card.Heading = CardHeading;
-Card.Footer = CardFooter;
-Card.Link = CardLink;
-Card.DropdownButton = CardDropdownButton;
-Card.HeightMatching = CardHeightMatching;
-CardGrid.Row = Row;
-CardGrid.Col = Col;
-CardGrid.Clearfix = Clearfix;
-
 export {
   Card,
   CardTitle,

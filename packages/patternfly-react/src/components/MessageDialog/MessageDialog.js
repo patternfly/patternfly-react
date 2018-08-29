@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { noop } from '../../common/helpers';
-import { Modal, Button } from '../../index';
+import { Modal } from '../Modal';
+import { Button } from '../Button';
 
 const MessageDialog = ({
   show,

@@ -5,10 +5,11 @@ import NotificationMessage from './NotificationMessage';
 import NotificationInfoRight from './NotificationInfoRight';
 import NotificationInfoLeft from './NotificationInfoLeft';
 
-Notification.Content = NotificationContent;
-Notification.Info = NotificationInfo;
-Notification.InfoRight = NotificationInfoRight;
-Notification.InfoLeft = NotificationInfoLeft;
-Notification.Message = NotificationMessage;
-
-export { Notification };
+export {
+  Notification,
+  NotificationContent,
+  NotificationInfo,
+  NotificationMessage,
+  NotificationInfoRight,
+  NotificationInfoLeft
+};

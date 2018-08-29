@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '../../index';
+import { Icon } from '../Icon';
 
 const ModalCloseButton = ({ className, closeText, ...props }) => (
   <button className={classNames(`close`, className)} {...props}>

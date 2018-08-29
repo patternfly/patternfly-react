@@ -7,12 +7,4 @@ import { default as HelpBlock } from './HelpBlock';
 import { default as InputGroup } from './InputGroup';
 import { default as Radio } from './Radio';
 
-Form.Checkbox = Checkbox;
-Form.ControlLabel = ControlLabel;
-Form.FormControl = FormControl;
-Form.FormGroup = FormGroup;
-Form.HelpBlock = HelpBlock;
-Form.InputGroup = InputGroup;
-Form.Radio = Radio;
-
 export { Checkbox, ControlLabel, Form, FormControl, FormGroup, HelpBlock, InputGroup, Radio };

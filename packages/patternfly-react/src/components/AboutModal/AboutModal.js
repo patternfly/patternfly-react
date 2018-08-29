@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Modal } from '../../index';
+import { Modal } from '../Modal';
+
+import AboutModalVersions from './AboutModalVersions';
+import AboutModalVersionItem from './AboutModalVersionItem';
 
 /**
  * AboutModal Component for PatternFly
@@ -65,5 +68,8 @@ AboutModal.defaultProps = {
   altLogo: '',
   trademarkText: ''
 };
+
+AboutModal.Versions = AboutModalVersions;
+AboutModal.VersionItem = AboutModalVersionItem;
 
 export default AboutModal;

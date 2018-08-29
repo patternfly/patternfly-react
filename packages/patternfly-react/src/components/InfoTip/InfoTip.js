@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Dropdown } from '../Dropdown';
 import { KEY_CODES } from '../../common/helpers';
+import { default as InfoTipToggle } from './InfoTipToggle';
+import { default as InfoTipMenu } from './InfoTipMenu';
+import { default as InfoTipMenuFooter } from './InfoTipMenuFooter';
+import { default as InfoTipMenuItemIcon } from './InfoTipMenuItemIcon';
 
 class InfoTip extends React.Component {
   state = { open: false, footerFocused: false };
@@ -78,5 +82,10 @@ InfoTip.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string.isRequired
 };
+
+InfoTip.Toggle = InfoTipToggle;
+InfoTip.Menu = InfoTipMenu;
+InfoTip.MenuItemIcon = InfoTipMenuItemIcon;
+InfoTip.MenuFooter = InfoTipMenuFooter;
 
 export default InfoTip;

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BootstrapSlider from './BootstrapSlider';
-import { Icon, ControlLabel, FormControl } from '../../index';
+import { Icon } from '../Icon';
+import { ControlLabel, FormControl } from '../Form';
 import Boundaries from './Boundaries';
 import DropdownMenu from './DropdownMenu';
 

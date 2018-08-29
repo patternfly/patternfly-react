@@ -22,29 +22,6 @@ import WizardPattern from './Patterns/WizardPattern';
 import WizardPatternBody from './Patterns/WizardPatternBody';
 import StatefulWizardPattern from './Patterns/StatefulWizardPattern';
 
-Wizard.Body = WizardBody;
-Wizard.Contents = WizardContents;
-Wizard.Footer = WizardFooter;
-Wizard.Header = WizardHeader;
-Wizard.Main = WizardMain;
-Wizard.ReviewContent = WizardReviewContent;
-Wizard.ReviewItem = WizardReviewItem;
-Wizard.ReviewStep = WizardReviewStep;
-Wizard.ReviewSteps = WizardReviewSteps;
-Wizard.ReviewSubStep = WizardReviewSubStep;
-Wizard.ReviewSubSteps = WizardReviewSubSteps;
-Wizard.Row = WizardRow;
-Wizard.Sidebar = WizardSidebar;
-Wizard.SidebarGroup = WizardSidebarGroup;
-Wizard.SidebarGroupItem = WizardSidebarGroupItem;
-Wizard.Step = WizardStep;
-Wizard.Steps = WizardSteps;
-Wizard.SubStep = WizardSubStep;
-
-Wizard.Pattern = WizardPattern;
-Wizard.Pattern.Body = WizardPatternBody;
-Wizard.Pattern.Stateful = StatefulWizardPattern;
-
 export {
   Wizard,
   WizardBody,

@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import ApplicationLauncherToggle from './ApplicationLauncherToggle';
 import { Dropdown } from '../Dropdown';
 import { noop } from '../../common/helpers';
+import ApplicationLauncherToggle from './ApplicationLauncherToggle';
+import ApplicationLauncherItem from './ApplicationLauncherItem';
 
 const ApplicationLauncher = ({
   open,
@@ -59,5 +60,8 @@ ApplicationLauncher.defaultProps = {
   grid: false,
   open: false
 };
+
+ApplicationLauncher.Toggle = ApplicationLauncherToggle;
+ApplicationLauncher.Item = ApplicationLauncherItem;
 
 export default ApplicationLauncher;

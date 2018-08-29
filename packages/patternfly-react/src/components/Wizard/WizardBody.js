@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Modal } from '../../index';
+import { Modal } from '../Modal';
 
 /**
  * WizardBody component for Patternfly React

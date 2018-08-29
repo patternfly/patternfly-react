@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Icon } from '../../index';
+import { Icon } from '../Icon';
+import { Modal } from '../Modal';
 
 /**
  * WizardHeader component for Patternfly React
