@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LoginCardInput from './LoginCardInput';
+import { KEY_CODES, KEYS } from '../../../../common/helpers';
 
 class LoginCardWithValidation extends React.Component {
   state = {
@@ -186,7 +187,7 @@ class LoginCardWithValidation extends React.Component {
     if (!this.state.passwordField.value) {
       return;
     }
-    e.key === 'CapsLock' &&
+    e.key === KEYS.CAPSLOCK &&
       this.setState({
         isCapsLock: !this.state.isCapsLock
       });
@@ -194,8 +195,10 @@ class LoginCardWithValidation extends React.Component {
 
   handleCapsLock = e => {
     const keyCode = e.keyCode ? e.keyCode : e.which;
-    const shiftKey = e.shiftKey ? e.shiftKey : keyCode === 16;
-    const isCapsLock = (keyCode >= 65 && keyCode <= 90 && !shiftKey) || (keyCode >= 97 && keyCode <= 122 && shiftKey);
+    const shiftKey = e.shiftKey ? e.shiftKey : keyCode === KEY_CODES.SHIFT;
+    const isCapsLock =
+      (keyCode >= KEY_CODES.A && keyCode <= KEY_CODES.Z && !shiftKey) ||
+      (keyCode >= KEY_CODES.NUMPAD['0'] && keyCode <= KEY_CODES.F11 && shiftKey);
     this.setState({
       isCapsLock
     });
