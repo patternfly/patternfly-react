@@ -39,7 +39,7 @@ const propTypes = {
   /** Custom flag to show that the input requires an associated id or aria-label. */
   'aria-label': props => {
     if (!props.id && !props['aria-label']) {
-      return new Error('TextInput requires either an id or label to be specified');
+      return new Error('TextInput requires either an id or aria-label to be specified');
     }
     return null;
   }
