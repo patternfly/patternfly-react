@@ -50,9 +50,9 @@
     "react-dom": "^15.6.2 || ^16.2.0"
   },
   "sassIncludes": {
-    "patternfly": "../../node_modules/patternfly/dist/sass",
-    "bootstrap": "../../node_modules/bootstrap-sass/assets/stylesheets",
-    "fontAwesome": "../../node_modules/font-awesome-sass/assets/stylesheets"
+    "patternfly": "../../../node_modules/patternfly/dist/sass",
+    "bootstrap": "../../../node_modules/bootstrap-sass/assets/stylesheets",
+    "fontAwesome": "../../../node_modules/font-awesome-sass/assets/stylesheets"
   },
   "scripts": {
     "prebuild": "yarn build:sass && yarn build:less",

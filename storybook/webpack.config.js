@@ -48,7 +48,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
 
   defaultConfig.resolve.alias = {
     ...defaultConfig.resolve.alias,
-    'patternfly-react': path.resolve(__dirname, '../packages/patternfly-react/src')
+    'patternfly-react': path.resolve(__dirname, '../packages/patternfly-3/patternfly-react/src')
   };
 
   return defaultConfig;

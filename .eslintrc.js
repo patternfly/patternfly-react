@@ -19,7 +19,7 @@ module.exports = {
         'import/no-extraneous-dependencies': [
           'error',
           // docs and examples are copied to react-docs
-          { packageDir: './packages/react-docs' }
+          { packageDir: './packages/patternfly-4/react-docs' }
         ]
       }
     }
