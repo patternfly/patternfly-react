@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`concatenates values together 1`] = `"parseValue value createValue_3hmsj"`;
-
-exports[`handles values from StyleSheet.create 1`] = `"createValue_3hmsj"`;
-
-exports[`handles values from StyleSheet.parse 1`] = `"parseValue"`;

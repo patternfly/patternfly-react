@@ -103,12 +103,29 @@ const styles = StyleSheet.parse(`
 const btn = document.createElement('button');
 btn.classList.add(css(styles.button, styles.modifiers.active));
 // <button class="pf-c-button pf-is-active" />
+
+// If you just need to inject all of the styles manually you can do this by calling the inject method on the styles object.
+// Note: using css() does this in a more efficient manner and this should be only be used as an escape hatch.
+styles.inject()
 ```
 
-### `StyleSheet.create`
+### `StyleSheet.create({ [key: string]: object | string | Array<object> }): { [key: string]: string }`
 
-As a utility this package also reexports `StyleSheet.create` from [aphrodite][aphrodite]. For documentation please reference their [README][aphrodite-readme].
+StyleSheet.create takes an object with each property calling `css` from emotion. This is largely provided for backwards compatibility, and will likely be removed in the future.
 
+#### Example
+```js
+import { StyleSheet } from '@patternfly/react-styles';
+
+
+const styles = StyleSheet.create({
+  first: { backgroundColor: 'red' },
+  second: `background-color: red`,
+  third: [{ color: 'red' }, { backgroundColor: 'green' }]
+});
+```
+
+For more info on how each property is handled see [emotion css docs](https://emotion.sh/docs/css).
 
 ### `css(...styles: Array<PFStyleObject | string | void>): string`
 
@@ -244,8 +261,6 @@ This is similar to the utilities [jest-aphrodite-react][jest-aphrodite-react], [
 [classnames]: https://github.com/JedWatson/classnames
 [css-modules]: https://github.com/css-modules/css-modules
 [babel]: https://github.com/babel/babel
-[aphrodite]: https://github.com/Khan/aphrodite
-[aphrodite-readme]: https://github.com/Khan/aphrodite/blob/master/README.md
 [jest-styled-components]: https://github.com/styled-components/jest-styled-components#snapshot-testing
 [jest-glamor-react]: https://github.com/kentcdodds/jest-glamor-react
 [jest-aphrodite-react]: https://github.com/dmiller9911/jest-aphrodite-react

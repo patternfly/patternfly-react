@@ -3,7 +3,7 @@ import { css, StyleSheet } from '@patternfly/react-styles';
 const styles = StyleSheet.create({
   demoLayout: {
     backgroundColor: '#fff',
-    ':not(foobar) > span': {
+    '& > span': {
       margin: '0.5rem'
     }
   }

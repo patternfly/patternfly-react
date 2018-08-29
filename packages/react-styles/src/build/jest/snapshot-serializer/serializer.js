@@ -1,6 +1,6 @@
 import { getSelectors, getStyles } from './cssUtils';
 import { getNodes } from './reactUtils';
-import { getBufferedStyles } from '../../../testUtils';
+import { getInsertedStyles } from '../../../utils';
 import { addOverrides } from './cssPropertyOverrides';
 
 export function createSerializer() {
@@ -16,7 +16,7 @@ export function createSerializer() {
     });
 
     const selectors = getSelectors(nodes);
-    const styles = getStyles(selectors, getBufferedStyles);
+    const styles = getStyles(selectors, getInsertedStyles().join(''));
     const code = printer(val);
     if (styles) {
       return `${styles}\n\n${code}`;

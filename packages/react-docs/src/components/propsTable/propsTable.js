@@ -1,7 +1,5 @@
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Title } from '@patternfly/react-core';
 import styles from './propsTable.styles';
 import { css } from '@patternfly/react-styles';
 import { Table, Row, TD, TH, Body, Heading } from '../table';
@@ -12,7 +10,7 @@ const docGenPropValueShape = PropTypes.shape({ value: PropTypes.string });
 const docGenPropShape = PropTypes.shape({
   type: PropTypes.shape({
     name: PropTypes.string,
-    value: PropTypes.arrayOf(docGenPropValueShape)
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(docGenPropValueShape)])
   }),
   required: PropTypes.bool,
   description: PropTypes.string,
@@ -26,7 +24,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  description: '',
   props: [],
   enumValues: {}
 };
