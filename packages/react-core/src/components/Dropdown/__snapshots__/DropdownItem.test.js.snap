@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dropdown items a 1`] = `
+<a
+  aria-disabled={false}
+  className=""
+  href="#"
+  role="menuitem"
+>
+  Something
+</a>
+`;
+
+exports[`dropdown items button 1`] = `
+<button
+  className=""
+  disabled={false}
+  href="#"
+  role="menuitem"
+>
+  Something
+</button>
+`;
+
+exports[`dropdown items disabled a 1`] = `
+.pf-m-disabled {
+  display: block;
+}
+
+<a
+  aria-disabled={true}
+  className="pf-m-disabled"
+  href="#"
+  role="menuitem"
+  tabIndex={-1}
+>
+  Something
+</a>
+`;
+
+exports[`dropdown items disabled button 1`] = `
+.pf-m-disabled {
+  display: block;
+}
+
+<button
+  className="pf-m-disabled"
+  disabled={true}
+  href="#"
+  role="menuitem"
+>
+  Something
+</button>
+`;
+
+exports[`dropdown items hover a 1`] = `
+.pf-m-hover {
+  display: block;
+}
+
+<a
+  aria-disabled={false}
+  className="pf-m-hover"
+  href="#"
+  role="menuitem"
+>
+  Something
+</a>
+`;
+
+exports[`dropdown items hover button 1`] = `
+.pf-m-hover {
+  display: block;
+}
+
+<button
+  className="pf-m-hover"
+  disabled={false}
+  href="#"
+  role="menuitem"
+>
+  Something
+</button>
+`;
+
+exports[`dropdown items separator 1`] = `
+.pf-c-dropdown__separator {
+  display: block;
+  height: 1px;
+  background-color: #ededed;
+}
+
+<DropdownItem
+  className="pf-c-dropdown__separator"
+  component="div"
+  href="#"
+  isDisabled={false}
+  isHovered={false}
+  role="separator"
+/>
+`;
