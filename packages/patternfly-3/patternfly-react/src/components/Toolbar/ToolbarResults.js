@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col } from '../../index';
+import { Row, Col } from '../Grid';
 
 const ToolbarResults = ({ children, className, ...props }) => {
   const classes = classNames('toolbar-pf-results', className);

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Icon } from '../../index';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 
 const CancelButton = props => (
   <Button {...props}>

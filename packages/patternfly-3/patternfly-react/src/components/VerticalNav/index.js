@@ -8,15 +8,6 @@ import VerticalNavIconBar from './VerticalNavIconBar';
 import VerticalNavBadge from './VerticalNavBadge';
 import VerticalNavDividerItem from './VerticalNavDividerItem';
 
-VerticalNav.Masthead = VerticalNavMasthead;
-VerticalNav.Item = VerticalNavItem;
-VerticalNav.SecondaryItem = VerticalNavSecondaryItem;
-VerticalNav.TertiaryItem = VerticalNavTertiaryItem;
-VerticalNav.Brand = VerticalNavBrand;
-VerticalNav.IconBar = VerticalNavIconBar;
-VerticalNav.Badge = VerticalNavBadge;
-VerticalNav.Divider = VerticalNavDividerItem;
-
 export {
   VerticalNav,
   VerticalNavMasthead,

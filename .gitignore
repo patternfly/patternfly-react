@@ -6,9 +6,9 @@ coverage
 public/
 .cache
 .tmp
-packages/patternfly-4/react-icons/src/icons/
-packages/patternfly-4/react-icons/src/index.js
-packages/patternfly-4/react-icons/src/index.d.ts
+packages/react-icons/src/icons/
+packages/react-icons/src/index.js
+packages/react-icons/src/index.d.ts
 
 # package managers
 yarn-error.log

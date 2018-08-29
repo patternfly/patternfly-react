@@ -10,15 +10,6 @@ import PaginationRowButtonGroup from './PaginationRowButtonGroup';
 import PaginationRowForward from './PaginationRowForward';
 import PaginationRowItems from './PaginationRowItems';
 
-PaginationRow.AmountOfPages = PaginationRowAmountOfPages;
-PaginationRow.ArrowIcon = PaginationRowArrowIcon;
-PaginationRow.Back = PaginationRowBack;
-PaginationRow.ButtonGroup = PaginationRowButtonGroup;
-PaginationRow.Forward = PaginationRowForward;
-PaginationRow.Items = PaginationRowItems;
-PaginationRow.PAGINATION_VIEW = PAGINATION_VIEW;
-PaginationRow.PAGINATION_VIEW_TYPES = PAGINATION_VIEW_TYPES;
-
 export {
   paginate,
   Pager,

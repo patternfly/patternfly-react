@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { noop } from '../../common/helpers';
+import { noop, hasDisplayName } from '../../common/helpers';
 import TimedToastNotification from './TimedToastNotification';
 
 /**
@@ -35,7 +35,7 @@ class ToastNotificationList extends React.Component {
   renderChildren() {
     const { paused } = this.state;
     return React.Children.map(this.props.children, child => {
-      if (child && child.type.displayName === TimedToastNotification.displayName) {
+      if (hasDisplayName(child, TimedToastNotification.displayName)) {
         /**
          * If any of the notifications are hovered, pause
          * all child notifications from dismissing

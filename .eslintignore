@@ -2,5 +2,5 @@ node_modules
 dist
 public
 scripts/generators/*/templates/*
-packages/patternfly-4/react-icons/src/icons/
-packages/patternfly-4/react-icons/src/index.js
+packages/react-icons/src/icons/
+packages/react-icons/src/index.js

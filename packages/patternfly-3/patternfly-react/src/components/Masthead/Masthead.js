@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { noop } from '../../common/helpers';
+import MastheadCollapse from './MastheadCollapse';
+import MastheadDropdown from './MastheadDropdown';
 
 /**
  * Masthead
@@ -98,5 +100,8 @@ Masthead.defaultProps = {
   middleContent: null,
   children: null
 };
+
+Masthead.Collapse = MastheadCollapse;
+Masthead.Dropdown = MastheadDropdown;
 
 export default Masthead;

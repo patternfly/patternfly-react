@@ -11,6 +11,7 @@ import { PAGINATION_VIEW_TYPES, PAGINATION_VIEW } from './PaginationConstants';
 import { Form, FormControl, FormGroup, ControlLabel } from '../Form';
 import { DropdownButton } from '../Button';
 import { MenuItem } from '../MenuItem';
+import PaginationRowArrowIcon from './PaginationRowArrowIcon';
 
 /**
  * PaginationRow component for Patternfly React
@@ -178,4 +179,14 @@ PaginationRow.defaultProps = {
   onLastPage: noop,
   dropdownButtonId: 'pagination-row-dropdown'
 };
+
+PaginationRow.AmountOfPages = PaginationRowAmountOfPages;
+PaginationRow.ArrowIcon = PaginationRowArrowIcon;
+PaginationRow.Back = PaginationRowBack;
+PaginationRow.ButtonGroup = PaginationRowButtonGroup;
+PaginationRow.Forward = PaginationRowForward;
+PaginationRow.Items = PaginationRowItems;
+PaginationRow.PAGINATION_VIEW = PAGINATION_VIEW;
+PaginationRow.PAGINATION_VIEW_TYPES = PAGINATION_VIEW_TYPES;
+
 export default PaginationRow;

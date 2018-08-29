@@ -13,11 +13,9 @@ export default StyleSheet.create({
     display: 'block',
     color: itemColor.var,
     textDecoration: 'none',
-    ':hover': {
-      backgroundColor: bgColorHover.var
-    },
-    ':focus': {
-      backgroundColor: bgColorHover.var
+    ':hover,:focus': {
+      backgroundColor: bgColorHover.var,
+      textDecoration: 'none'
     }
   },
   active: {

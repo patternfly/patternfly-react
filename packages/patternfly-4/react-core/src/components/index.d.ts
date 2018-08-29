@@ -5,3 +5,5 @@ export * from './Card';
 export * from './Checkbox';
 export * from './Radio';
 export * from './Title';
+export * from './Alert';
+export * from './Dropdown';

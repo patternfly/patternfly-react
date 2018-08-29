@@ -46,26 +46,30 @@ const NotificationDrawerPanelWrapper = ({
       seen={notification.seen}
       onClick={() => notificationClickHandler(panelkey, notification.id, notification.seen)}
     >
-      {Object.keys(notification.actions).length > 0 && (
-        <NotificationDrawer.Dropdown pullRight id={i}>
-          {notification.actions.links.map((link, j) => (
-            <MenuItem key={j} id={`notification-kebab-${j}`} onClick={() => onClickedLink(link)}>
-              {link.title}
-            </MenuItem>
-          ))}
-          <MenuItem divider />
-          <MenuItem id="notification-kebab-hide" onClick={() => onNotificationHide(panelkey, notification.id)}>
-            {translations.deleteNotification}
-          </MenuItem>
-        </NotificationDrawer.Dropdown>
-      )}
+      {notification.actions
+        ? Object.keys(notification.actions).length > 0 && (
+            <NotificationDrawer.Dropdown pullRight id={i}>
+              {notification.actions.links.map((link, j) => (
+                <MenuItem key={j} id={`notification-kebab-${j}`} onClick={() => onClickedLink(link)}>
+                  {link.title}
+                </MenuItem>
+              ))}
+              <MenuItem divider />
+              <MenuItem id="notification-kebab-hide" onClick={() => onNotificationHide(panelkey, notification.id)}>
+                {translations.deleteNotification}
+              </MenuItem>
+            </NotificationDrawer.Dropdown>
+          )
+        : null}
       <Icon className="pull-left" type="pf" name={getIconClass(notification.level)} />
       <Notification.Content>
         <Notification.Message>{notification.text}</Notification.Message>
-        <Notification.Info
-          leftText={new Date(notification.created_at).toLocaleDateString()}
-          rightText={new Date(notification.created_at).toLocaleTimeString()}
-        />
+        {notification.created_at && (
+          <Notification.Info
+            leftText={new Date(notification.created_at).toLocaleDateString()}
+            rightText={new Date(notification.created_at).toLocaleTimeString()}
+          />
+        )}
       </Notification.Content>
     </Notification>
   ));

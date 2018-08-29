@@ -60,14 +60,28 @@ export const findChild = (children, validator) => {
 export const propsChanged = (propNames, oldProps, newProps) =>
   propNames.some(propName => oldProps[propName] !== newProps[propName]);
 
+/** Returns true if the component has the desired displayName value */
+export const hasDisplayName = (component, displayName) =>
+  component && component.type && component.type.displayName === displayName;
+
 /** Returns an object with the same keys as the given one, but all null values. */
 export const nullValues = obj => selectKeys(obj, Object.keys(obj), () => null);
 
 export const noop = Function.prototype;
 
-export const KEY_CODES = { TAB_KEY: 9, ENTER_KEY: 13, ESCAPE_KEY: 27 };
+export const KEY_CODES = {
+  TAB_KEY: 9,
+  ENTER_KEY: 13,
+  ESCAPE_KEY: 27,
+  SHIFT: 16,
+  A: 65,
+  Z: 90,
+  NUMPAD: { 0: 97 },
+  F11: 122
+};
 export const KEYS = {
   ENTER: 'Enter',
+  CAPSLOCK: 'CapsLock',
   SPACE: ' ',
   ARROW_LEFT: 'ArrowLeft',
   ARROW_RIGHT: 'ArrowRight',

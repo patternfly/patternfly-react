@@ -1,4 +1,2 @@
-export { css } from './css';
-export { StyleSheet } from './StyleSheet';
-export { isValidStyleDeclaration, getModifier, isModifier } from './utils';
-export { getBufferedStyles, startInjection, preventInjection, rehydrate } from './inject';
+export { StyleSheet, css } from './StyleSheet';
+export { isValidStyleDeclaration, getModifier, isModifier, getInsertedStyles, getClassName } from './utils';

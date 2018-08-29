@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { OverlayTrigger, Tooltip } from '../../index';
+import { OverlayTrigger } from '../OverlayTrigger';
+import { Tooltip } from '../Tooltip';
 
 const VerticalNavBadge = props => {
   const { badgeClass, iconClass, tooltip, count } = props;

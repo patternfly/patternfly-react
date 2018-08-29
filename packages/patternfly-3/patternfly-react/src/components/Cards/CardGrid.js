@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import CardHeightMatching from './CardHeightMatching';
-import { Grid } from '../Grid/index';
+import { Grid, Row, Col, Clearfix } from '../Grid';
 
 const CardGrid = ({ matchHeight, children, className, ...props }) => {
   const classes = classNames('container-cards-pf', className);
@@ -34,4 +34,9 @@ CardGrid.defaultProps = {
   className: '',
   matchHeight: false
 };
+
+CardGrid.Row = Row;
+CardGrid.Col = Col;
+CardGrid.Clearfix = Clearfix;
+
 export default CardGrid;

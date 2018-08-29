@@ -2,6 +2,14 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import CardTitle from './CardTitle';
+import CardBody from './CardBody';
+import CardHeading from './CardHeading';
+import CardFooter from './CardFooter';
+import CardLink from './CardLink';
+import CardDropdownButton from './CardDropdownButton';
+import CardHeightMatching from './CardHeightMatching';
+
 /**
  * Card Component for PatternFly React
  */
@@ -49,5 +57,13 @@ Card.defaultProps = {
   matchHeight: false,
   cardRef: null
 };
+
+Card.Title = CardTitle;
+Card.Body = CardBody;
+Card.Heading = CardHeading;
+Card.Footer = CardFooter;
+Card.Link = CardLink;
+Card.DropdownButton = CardDropdownButton;
+Card.HeightMatching = CardHeightMatching;
 
 export default Card;

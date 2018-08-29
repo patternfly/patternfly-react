@@ -3,7 +3,7 @@ import { global_BorderColor as borderColor, global_BorderWidth_md as borderWidth
 
 const styles = StyleSheet.create({
   demoLayout: {
-    [`:not(foo) .pf-l-stack > .pf-l-stack__item`]: {
+    '& .pf-l-stack > .pf-l-stack__item': {
       minHeight: 35,
       borderWidth: borderWidth.var,
       borderStyle: 'dashed',

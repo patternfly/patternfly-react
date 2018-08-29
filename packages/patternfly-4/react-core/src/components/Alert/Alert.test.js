@@ -2,14 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import Alert, { AlertVariant } from './Alert';
-import { StyleSheetTestUtils } from 'aphrodite';
-
-beforeEach(() => {
-  StyleSheetTestUtils.suppressStyleInjection();
-});
-afterEach(() => {
-  StyleSheetTestUtils.clearBufferAndResumeStyleInjection();
-});
 
 Object.keys(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { ListGroup } from '../ListGroup';
 import VerticalNavItem from './VerticalNavItem';
 import VerticalNavMasthead from './VerticalNavMasthead';
-import { filterChildren, findChild, noop, propsChanged } from '../../common/helpers';
+import { filterChildren, findChild, hasDisplayName, noop, propsChanged } from '../../common/helpers';
 import Timer from '../../common/Timer';
 import controlled from '../../common/controlled';
 import { layout } from '../../common/patternfly';
@@ -18,6 +18,10 @@ import {
 } from './VerticalNavConstants';
 import VerticalNavSecondaryItem from './VerticalNavSecondaryItem';
 import VerticalNavTertiaryItem from './VerticalNavTertiaryItem';
+import VerticalNavBrand from './VerticalNavBrand';
+import VerticalNavIconBar from './VerticalNavIconBar';
+import VerticalNavBadge from './VerticalNavBadge';
+import VerticalNavDividerItem from './VerticalNavDividerItem';
 
 /**
  * VerticalNav - The Vertical Navigation pattern
@@ -255,7 +259,7 @@ class BaseVerticalNav extends React.Component {
     // Nav items may be passed either as nested VerticalNavItem children, or as nested items in a prop.
     // The items prop will take priority, if present, and must be an array of item objects (not React components).
     // If the items prop is not present, items must be expressed as VerticalNavItem children instead.
-    const itemsFromChildren = filterChildren(children, child => child.type.displayName === VerticalNavItem.displayName);
+    const itemsFromChildren = filterChildren(children, child => hasDisplayName(child, VerticalNavItem.displayName));
     const itemsFromProps =
       items &&
       items.length > 0 &&
@@ -299,7 +303,7 @@ class BaseVerticalNav extends React.Component {
 
     const mastheadElem = masthead || (
       <nav className={classNames('navbar navbar-pf-vertical')}>
-        {findChild(children, child => child.type.displayName === VerticalNavMasthead.displayName)}
+        {findChild(children, child => hasDisplayName(child, VerticalNavMasthead.displayName))}
       </nav>
     );
 
@@ -504,5 +508,14 @@ VerticalNav.displayName = 'VerticalNav';
 
 VerticalNav.NoPersist = NoPersist;
 VerticalNav.WithPersist = WithPersist;
+
+VerticalNav.Masthead = VerticalNavMasthead;
+VerticalNav.Item = VerticalNavItem;
+VerticalNav.SecondaryItem = VerticalNavSecondaryItem;
+VerticalNav.TertiaryItem = VerticalNavTertiaryItem;
+VerticalNav.Brand = VerticalNavBrand;
+VerticalNav.IconBar = VerticalNavIconBar;
+VerticalNav.Badge = VerticalNavBadge;
+VerticalNav.Divider = VerticalNavDividerItem;
 
 export default VerticalNav;

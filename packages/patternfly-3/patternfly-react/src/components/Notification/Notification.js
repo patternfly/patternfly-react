@@ -2,6 +2,11 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Spinner from '../Spinner/Spinner';
+import NotificationContent from './NotificationContent';
+import NotificationInfo from './NotificationInfo';
+import NotificationMessage from './NotificationMessage';
+import NotificationInfoRight from './NotificationInfoRight';
+import NotificationInfoLeft from './NotificationInfoLeft';
 
 const Notification = ({ type, children, seen, className, ...props }) => {
   const classes = classNames(
@@ -37,5 +42,11 @@ Notification.defaultProps = {
   seen: false,
   type: 'notification'
 };
+
+Notification.Content = NotificationContent;
+Notification.Info = NotificationInfo;
+Notification.InfoRight = NotificationInfoRight;
+Notification.InfoLeft = NotificationInfoLeft;
+Notification.Message = NotificationMessage;
 
 export default Notification;

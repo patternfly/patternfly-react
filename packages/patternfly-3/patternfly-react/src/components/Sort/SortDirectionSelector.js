@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Icon } from '../../index';
+import { Button } from '../Button';
+import { Icon } from '../Icon';
 
 const SortDirectionSelector = ({ className, isNumeric, isAscending, ...props }) => {
   let directionName;
