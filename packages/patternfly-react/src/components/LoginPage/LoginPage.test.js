@@ -4,6 +4,7 @@ import { DropdownButton } from 'react-bootstrap';
 import englishMessages from './mocks/messages.en';
 import frenchMessages from './mocks/messages.fr';
 import { LoginPage, LoginCardWithValidation } from './index';
+import { KEY_CODES } from '../../common/helpers';
 
 const { Input, ForgotPassword, SignUp } = LoginPage.Card;
 const { FooterLinks } = LoginPage;
@@ -118,7 +119,7 @@ test('Toggle Caps lock warning in password field by the events: focus, blur and 
   const component = mount(<LoginPage {...createProps()} />);
   const passwordElement = component.find('input[type="password"]').at(0);
 
-  passwordElement.simulate('focus').simulate('keypress', { keyCode: 80, shiftKey: false });
+  passwordElement.simulate('focus').simulate('keypress', { keyCode: KEY_CODES.A, shiftKey: false });
 
   expect(
     component
@@ -134,7 +135,7 @@ test('Toggle Caps lock warning in password field by the events: focus, blur and 
       .props().showWarning
   ).toEqual(true);
 
-  passwordElement.simulate('blur').simulate('keypress', { keyCode: 80, shiftKey: false });
+  passwordElement.simulate('blur').simulate('keypress', { keyCode: KEY_CODES.A, shiftKey: false });
 
   expect(
     component
@@ -143,7 +144,7 @@ test('Toggle Caps lock warning in password field by the events: focus, blur and 
       .props().showWarning
   ).toEqual(false);
 
-  passwordElement.simulate('keypress', { keyCode: 80, shiftKey: false }).simulate('focus');
+  passwordElement.simulate('keypress', { keyCode: KEY_CODES.A, shiftKey: false }).simulate('focus');
 
   expect(
     component
