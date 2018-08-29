@@ -30,7 +30,9 @@ function setPackageGenerators(plop) {
         message: `What type of package is it? Options: ${typeGeneral} (General package), ${typePf3} (Patternfly 3 package), ${typePf4} (Patternfly 4 package)`,
         validate(input) {
           const validInput = input === typeGeneral || input === typePf3 || input === typePf4;
-          return validInput ? true : `Type must be one of: ${typeGeneral} (General package), ${typePf3} (Patternfly 3 package), ${typePf4} (Patternfly 4 package)`;
+          return validInput
+            ? true
+            : `Type must be one of: ${typeGeneral} (General package), ${typePf3} (Patternfly 3 package), ${typePf4} (Patternfly 4 package)`;
         }
       },
       {
@@ -45,29 +47,34 @@ function setPackageGenerators(plop) {
       }
     ],
     actions: answers => {
-      console.log(answers.packageType);
-      const packageLocation = answers.packageType === typeGeneral ? packagesRoot : (answers.packageType === typePf3 ? pf3Root : pf4Root);
+      let packageLocation;
+      if (answers.packageType === typeGeneral) {
+        packageLocation = packagesRoot;
+      } else if (answers.packageType === typePf3) {
+        packageLocation = pf3Root;
+      } else {
+        packageLocation = pf4Root;
+      }
       const packageBaseTemplate = join(packageLocation, `./{{${REMOVE_NPM_SCOPE} name}}/`);
-      if (answers.packageType)
-        return [
-          {
-            type: 'add',
-            path: join(packageBaseTemplate, `package.json`),
-            templateFile: resolve(__dirname, './package.json.hbs')
-          },
-          {
-            type: 'add',
-            template: '// placeholder\n',
-            path: answers.buildsWithBabel
-              ? join(packageBaseTemplate, 'src/index.js')
-              : join(packageBaseTemplate, 'lib/index.js')
-          },
-          {
-            type: 'add',
-            template: '# {{name}}',
-            path: join(packageBaseTemplate, 'README.md')
-          }
-        ];
+      return [
+        {
+          type: 'add',
+          path: join(packageBaseTemplate, `package.json`),
+          templateFile: resolve(__dirname, './package.json.hbs')
+        },
+        {
+          type: 'add',
+          template: '// placeholder\n',
+          path: answers.buildsWithBabel
+            ? join(packageBaseTemplate, 'src/index.js')
+            : join(packageBaseTemplate, 'lib/index.js')
+        },
+        {
+          type: 'add',
+          template: '# {{name}}',
+          path: join(packageBaseTemplate, 'README.md')
+        }
+      ];
     }
   });
 }
