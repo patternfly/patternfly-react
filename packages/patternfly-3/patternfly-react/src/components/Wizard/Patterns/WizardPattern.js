@@ -14,6 +14,7 @@ const WizardPattern = ({
   onNext,
   onBack,
   nextStepDisabled,
+  previousStepDisabled,
   title,
   loadingTitle,
   loadingMessage,
@@ -76,14 +77,15 @@ const WizardPattern = ({
 
     const preventExitActive = activeStep.preventExit;
     const preventEnterTarget = targetStep.preventEnter || (stepBeforeTarget && stepBeforeTarget.isInvalid);
-    const nextStepClicked = newStepIndex === activeStepIndex + 1;
+    const nextStepClicked = newStepIndex > activeStepIndex;
 
-    return preventExitActive || preventEnterTarget || (nextStepClicked && nextStepDisabled);
+    return preventExitActive || preventEnterTarget || nextStepClicked ? nextStepDisabled : previousStepDisabled;
   };
 
   const activeStepStr = (activeStepIndex + 1).toString();
 
-  const prevStepUnreachable = onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
+  const prevStepUnreachable =
+    previousStepDisabled || onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
   // nextStepUnreachable is still true onFinalStep, because the Next button turns into a Close button
   const nextStepUnreachable =
     nextStepDisabled || activeStep.isInvalid || activeStep.preventExit || getNextStep().preventEnter;
@@ -152,6 +154,7 @@ WizardPattern.propTypes = {
   closeText: PropTypes.string,
   steps: PropTypes.arrayOf(PropTypes.shape(wizardStepShape)),
   nextStepDisabled: PropTypes.bool,
+  previousStepDisabled: PropTypes.bool,
   stepButtonsDisabled: PropTypes.bool,
   nextButtonRef: PropTypes.func,
   bodyHeader: PropTypes.node,
@@ -175,6 +178,7 @@ WizardPattern.defaultProps = {
   closeText: 'Close',
   steps: [],
   nextStepDisabled: false,
+  previousStepDisabled: false,
   stepButtonsDisabled: false,
   nextButtonRef: noop,
   bodyHeader: null,

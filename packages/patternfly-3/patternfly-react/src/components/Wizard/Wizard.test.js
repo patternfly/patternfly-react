@@ -312,6 +312,7 @@ const testStatefulWizardPattern = props => {
       onExited={onExited}
       title="Wizard Pattern Stateful Example"
       shouldDisableNextStep={() => false}
+      shouldDisablePreviousStep={() => false}
       shouldPreventStepChange={() => false}
       steps={[
         { title: 'General', render: () => <p>General</p> },
@@ -378,12 +379,49 @@ const testDisableNextStepWizard = props => {
   );
 };
 
+const testDisablePreviousStepWizard = props => {
+  const onHide = jest.fn();
+  const onExited = jest.fn();
+  const onStepChanged = jest.fn();
+  return (
+    <Wizard.Pattern.Stateful
+      show
+      onHide={onHide}
+      onExited={onExited}
+      onStepChanged={onStepChanged}
+      title="Wizard Disable Next Step"
+      shouldDisablePreviousStep={() => true}
+      steps={[
+        { title: '1', render: () => <p>1</p> },
+        { title: '2', render: () => <p className=".step2">2</p> },
+        { title: '3', render: () => <p>3</p> }
+      ]}
+      {...props}
+    />
+  );
+};
+
 test('Wizard Stateful with shouldDisableNextStep should disable next step', () => {
   const component = mount(testDisableNextStepWizard());
   expect(
     component
       .find('.wizard-pf-footer .btn')
       .at(2)
+      .getDOMNode().disabled
+  ).toBe(true);
+});
+
+test('Wizard Stateful with shouldDisablePreviousStep should disable previous step', () => {
+  const component = mount(testDisablePreviousStepWizard());
+  component
+    .find('.wizard-pf-footer .btn')
+    .at(2)
+    .simulate('click');
+  expect(component.exists('.step2')).toEqual(true);
+  expect(
+    component
+      .find('.wizard-pf-footer .btn')
+      .at(1)
       .getDOMNode().disabled
   ).toBe(true);
 });
