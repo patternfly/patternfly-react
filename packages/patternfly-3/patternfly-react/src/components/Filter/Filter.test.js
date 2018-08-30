@@ -19,7 +19,7 @@ test('Filter input renders properly', () => {
   expect(component.render()).toMatchSnapshot();
 });
 
-test('Filter select renders propeurly', () => {
+test('Filter select renders properly', () => {
   const component = mount(
     <Filter>
       <Filter.TypeSelector filterTypes={mockFilterExampleFields} currentFilterType={mockFilterExampleFields[2]} />

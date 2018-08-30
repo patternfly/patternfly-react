@@ -1,5 +1,6 @@
 import React from 'react';
 import { Filter, FormControl, Toolbar } from '../../../index';
+import { findIndex, find, remove } from 'lodash';
 
 export const mockFilterExampleFields = [
   {
@@ -125,6 +126,10 @@ export class MockFilterExample extends React.Component {
       filterText += value;
     }
 
+    if ((field.filterType === 'select' || field.filterType === 'complex-select') && this.filterExists(field.title)) {
+      this.enforceSingleSelect(field.title);
+    }
+
     const activeFilters = [...this.state.activeFilters, { label: filterText }];
     this.setState({ activeFilters });
   };
@@ -147,6 +152,23 @@ export class MockFilterExample extends React.Component {
     }
   };
 
+  filterExists = fieldTitle => {
+    const { activeFilters } = this.state;
+    const index = findIndex(activeFilters, filter => filter.label.startsWith(fieldTitle));
+    return index !== -1;
+  };
+
+  getFilterValue = fieldTitle => {
+    const { activeFilters } = this.state;
+    const existingFilter = find(activeFilters, filter => filter.label.startsWith(fieldTitle));
+    return existingFilter.label.substring(existingFilter.label.indexOf(': ') + 2);
+  };
+
+  enforceSingleSelect = fieldTitle => {
+    const { activeFilters } = this.state;
+    remove(activeFilters, filter => filter.label.startsWith(fieldTitle));
+  };
+
   removeFilter = filter => {
     const { activeFilters } = this.state;
 
@@ -160,12 +182,26 @@ export class MockFilterExample extends React.Component {
   selectFilterType = filterType => {
     const { currentFilterType } = this.state;
     if (currentFilterType !== filterType) {
-      this.setState(prevState => ({
-        currentValue: '',
+      let newCurrentValue = '';
+      let newFilterCategory;
+      // set selected value(s) in dropdown(s) if filter exists
+      if (filterType.filterType === 'select' || filterType.filterType === 'complex-select') {
+        if (this.filterExists(filterType.title)) {
+          const filterValue = this.getFilterValue(filterType.title);
+          if (filterType.filterType === 'select') {
+            newCurrentValue = filterValue;
+          } else {
+            const categoryValues = filterValue.split('-');
+            [newFilterCategory, newCurrentValue] = categoryValues;
+            newFilterCategory = find(filterType.filterCategories, filterCat => filterCat.title === newFilterCategory);
+          }
+        }
+      }
+      this.setState({
         currentFilterType: filterType,
-        filterCategory: filterType.filterType === 'complex-select' ? undefined : prevState.filterCategory,
-        categoryValue: filterType.filterType === 'complex-select' ? '' : prevState.categoryValue
-      }));
+        currentValue: newCurrentValue,
+        filterCategory: newFilterCategory
+      });
     }
   };
 
@@ -177,6 +213,16 @@ export class MockFilterExample extends React.Component {
     const { currentFilterType, currentValue, filterCategory } = this.state;
     if (!currentFilterType) {
       return null;
+    }
+
+    if (currentFilterType.filterType === 'select' || currentFilterType.filterType === 'complex-select') {
+      // remove selected value in dropdown(s) if filter was removed
+      if (currentValue !== '' && !this.filterExists(currentFilterType.title)) {
+        this.setState({
+          currentValue: '',
+          filterCategory: currentFilterType.filterType === 'complex-select' ? '' : filterCategory
+        });
+      }
     }
 
     if (currentFilterType.filterType === 'select') {
@@ -261,6 +307,7 @@ export class MockFilterExample extends React.Component {
 export const mockFilterExampleSource = `
 import React from 'react';
 import { Filter, FormControl, Toolbar } from '../../../index';
+import { findIndex, find, remove } from 'lodash';
 
 export const mockFilterExampleFields = [
   {
@@ -359,6 +406,10 @@ export class MockFilterExample extends React.Component {
       filterText += value;
     }
 
+    if ((field.filterType === 'select' || field.filterType === 'complex-select') && this.filterExists(field.title)) {
+      this.enforceSingleSelect(field.title);
+    }
+
     let activeFilters = [...this.state.activeFilters, { label: filterText }];
     this.setState({ activeFilters: activeFilters });
   };
@@ -366,19 +417,25 @@ export class MockFilterExample extends React.Component {
   selectFilterType = filterType => {
     const { currentFilterType } = this.state;
     if (currentFilterType !== filterType) {
-      this.setState(prevState => {
-        return {
-          currentValue: '',
-          currentFilterType: filterType,
-          filterCategory:
-            filterType.filterType === 'complex-select'
-              ? undefined
-              : prevState.filterCategory,
-          categoryValue:
-            filterType.filterType === 'complex-select'
-              ? ''
-              : prevState.categoryValue
-        };
+      let newCurrentValue = '';
+      let newFilterCategory;
+      // set selected value(s) in dropdown(s) if filter exists
+      if (filterType.filterType === 'select' || filterType.filterType === 'complex-select') {
+        if (this.filterExists(filterType.title)) {
+          const filterValue = this.getFilterValue(filterType.title);
+          if (filterType.filterType === 'select') {
+            newCurrentValue = filterValue;
+          } else {
+            const categoryValues = filterValue.split('-');
+            [newFilterCategory, newCurrentValue] = categoryValues;
+            newFilterCategory = find(filterType.filterCategories, filterCat => filterCat.title === newFilterCategory);
+          }
+        }
+      }
+      this.setState({
+        currentFilterType: filterType,
+        currentValue: newCurrentValue,
+        filterCategory: newFilterCategory
       });
     }
   }
@@ -431,6 +488,23 @@ export class MockFilterExample extends React.Component {
     }
   }
 
+  filterExists = fieldTitle => {
+    const { activeFilters } = this.state;
+    const index = findIndex(activeFilters, filter => filter.label.startsWith(fieldTitle));
+    return index !== -1;
+  };
+
+  getFilterValue = fieldTitle => {
+    const { activeFilters } = this.state;
+    const existingFilter = find(activeFilters, filter => filter.label.startsWith(fieldTitle));
+    return existingFilter.label.substring(existingFilter.label.indexOf(': ') + 2);
+  };
+
+  enforceSingleSelect = fieldTitle => {
+    const { activeFilters } = this.state;
+    remove(activeFilters, filter => filter.label.startsWith(fieldTitle));
+  };
+
   removeFilter = filter => {
     const { activeFilters } = this.state;
 
@@ -452,6 +526,16 @@ export class MockFilterExample extends React.Component {
     const { currentFilterType, currentValue, filterCategory } = this.state;
     if (!currentFilterType) {
       return null;
+    }
+
+    if (currentFilterType.filterType === 'select' || currentFilterType.filterType === 'complex-select') {
+      // remove selected value in dropdown(s) if filter was removed
+      if (currentValue !== '' && !this.filterExists(currentFilterType.title)) {
+        this.setState({
+          currentValue: '',
+          filterCategory: currentFilterType.filterType === 'complex-select' ? '' : filterCategory
+        });
+      }
     }
 
     if (currentFilterType.filterType === 'select') {
