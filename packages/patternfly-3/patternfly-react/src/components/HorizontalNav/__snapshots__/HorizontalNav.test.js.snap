@@ -140,15 +140,20 @@ exports[`HorizontalNav renders properly with dropdown Levels 1`] = `
         class="dropdown"
       >
         <a
-          bsclass="dropdown-toggle"
-          bsrole="toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="dropdown-toggle"
+          href="#"
+          id="dropdown"
+          role="button"
         >
-          Dropdown
+          Dropdown 
           <span
             class="caret"
           />
         </a>
         <ul
+          aria-labelledby="dropdown"
           class="dropdown-menu"
           role="menu"
         >
@@ -214,15 +219,20 @@ exports[`HorizontalNav renders properly with dropdown Levels 1`] = `
         class="dropdown"
       >
         <a
-          bsclass="dropdown-toggle"
-          bsrole="toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="dropdown-toggle"
+          href="#"
+          id="dropdown-with-submenu"
+          role="button"
         >
-          Dropdown with Submenu
+          Dropdown with Submenu 
           <span
             class="caret"
           />
         </a>
         <ul
+          aria-labelledby="dropdown-with-submenu"
           class="dropdown-menu"
           role="menu"
         >
@@ -286,12 +296,17 @@ exports[`HorizontalNav renders properly with dropdown Levels 1`] = `
             class="dropdown-submenu dropdown"
           >
             <a
-              bsclass="dropdown-toggle"
-              bsrole="toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="dropdown-toggle"
+              href="#"
+              id="more-options"
+              role="button"
             >
               More options
             </a>
             <ul
+              aria-labelledby="more-options"
               class="dropdown-menu"
               role="menu"
             >
@@ -359,15 +374,20 @@ exports[`HorizontalNav renders properly with dropdown Levels 1`] = `
         class="dropdown"
       >
         <a
-          bsclass="dropdown-toggle"
-          bsrole="toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="dropdown-toggle"
+          href="#"
+          id="dropup-submenu"
+          role="button"
         >
-          Dropdown with Dropup Submenu
+          Dropdown with Dropup Submenu 
           <span
             class="caret"
           />
         </a>
         <ul
+          aria-labelledby="dropup-submenu"
           class="dropup dropdown-menu"
           role="menu"
         >
@@ -431,12 +451,17 @@ exports[`HorizontalNav renders properly with dropdown Levels 1`] = `
             class="dropdown-submenu dropdown"
           >
             <a
-              bsclass="dropdown-toggle"
-              bsrole="toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="dropdown-toggle"
+              href="#"
+              id="more-options"
+              role="button"
             >
               More options
             </a>
             <ul
+              aria-labelledby="more-options"
               class="dropdown-menu"
               role="menu"
             >
@@ -504,15 +529,20 @@ exports[`HorizontalNav renders properly with dropdown Levels 1`] = `
         class="dropdown"
       >
         <a
-          bsclass="dropdown-toggle"
-          bsrole="toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+          class="dropdown-toggle"
+          href="#"
+          id="pull-left"
+          role="button"
         >
-          Dropdown with Pull-left Submenu
+          Dropdown with Pull-left Submenu 
           <span
             class="caret"
           />
         </a>
         <ul
+          aria-labelledby="pull-left"
           class="dropdown-menu"
           role="menu"
         >
@@ -576,12 +606,17 @@ exports[`HorizontalNav renders properly with dropdown Levels 1`] = `
             class="dropdown-submenu pull-left dropdown"
           >
             <a
-              bsclass="dropdown-toggle"
-              bsrole="toggle"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="dropdown-toggle"
+              href="#"
+              id="left-more-options"
+              role="button"
             >
               More options
             </a>
             <ul
+              aria-labelledby="left-more-options"
               class="dropdown-menu"
               role="menu"
             >
@@ -647,6 +682,7 @@ exports[`HorizontalNav renders properly with dropdown Levels 1`] = `
       </li>
       <li
         class=""
+        id="no-dropdown"
       >
         <a
           href="#"
@@ -797,6 +833,7 @@ exports[`HorizontalNav renders properly with singleLevel 1`] = `
     >
       <li
         class=""
+        id="first"
       >
         <a
           href="#"
@@ -806,6 +843,7 @@ exports[`HorizontalNav renders properly with singleLevel 1`] = `
       </li>
       <li
         class=""
+        id="another"
       >
         <a
           href="#"
@@ -815,6 +853,7 @@ exports[`HorizontalNav renders properly with singleLevel 1`] = `
       </li>
       <li
         class=""
+        id="and-another"
       >
         <a
           href="#"
@@ -965,6 +1004,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
     >
       <li
         class=""
+        id="first"
       >
         <a
           href="#"
@@ -974,6 +1014,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
       </li>
       <li
         class=" active"
+        id="another"
       >
         <a
           href="#"
@@ -985,6 +1026,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
         >
           <li
             class=""
+            id="link"
           >
             <a
               href="#"
@@ -994,6 +1036,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
           </li>
           <li
             class=" active"
+            id="another-link"
           >
             <a
               href="#"
@@ -1003,6 +1046,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
           </li>
           <li
             class=""
+            id="something-else"
           >
             <a
               href="#"
@@ -1012,6 +1056,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
           </li>
           <li
             class=""
+            id="remember"
           >
             <a
               href="#"
@@ -1021,6 +1066,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
           </li>
           <li
             class=""
+            id="between-5-7"
           >
             <a
               href="#"
@@ -1030,6 +1076,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
           </li>
           <li
             class=""
+            id="more"
           >
             <a
               href="#"
@@ -1041,6 +1088,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
       </li>
       <li
         class=""
+        id="and-another"
       >
         <a
           href="#"
@@ -1050,6 +1098,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
       </li>
       <li
         class=""
+        id="general-rule"
       >
         <a
           href="#"
@@ -1059,6 +1108,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
       </li>
       <li
         class=""
+        id="five-to-seven"
       >
         <a
           href="#"
@@ -1068,6 +1118,7 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
       </li>
       <li
         class=""
+        id="is-good"
       >
         <a
           href="#"
