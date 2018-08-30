@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Dropdown, ListGroup, ListGroupItem } from '../../index';
 
 const HorizontalNavMenuItem = props => {
-  const { children, onItemClick, title, active, dropdown, submenu, dropup, pullLeft } = props;
+  const { children, onItemClick, title, active, dropdown, submenu, dropup, pullLeft, ...otherProps } = props;
 
   const dropdownClasses = classNames({
     'dropdown-submenu': submenu,
@@ -12,15 +12,14 @@ const HorizontalNavMenuItem = props => {
   });
 
   return dropdown ? (
-    <Dropdown componentClass="li" className={dropdownClasses}>
-      <a bsRole="toggle">
+    <Dropdown componentClass="li" className={dropdownClasses} {...otherProps}>
+      <Dropdown.Toggle useAnchor noCaret={submenu}>
         {title}
-        {!submenu && <span className="caret" />}
-      </a>
+      </Dropdown.Toggle>
       <Dropdown.Menu className={dropup ? 'dropup' : ''}>{children}</Dropdown.Menu>
     </Dropdown>
   ) : (
-    <ListGroupItem listItem bsClass="" active={active}>
+    <ListGroupItem listItem bsClass="" active={active} {...otherProps}>
       <a href="#" onClick={onItemClick}>
         {title}
       </a>

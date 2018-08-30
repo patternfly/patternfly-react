@@ -3,8 +3,8 @@ import { HorizontalNavMenu, HorizontalNavMenuItem } from '../index';
 
 export const singleLevel = (
   <HorizontalNavMenu>
-    <HorizontalNavMenuItem title="First Link" />
-    <HorizontalNavMenuItem title="Another Link" />
-    <HorizontalNavMenuItem title="And Another" />
+    <HorizontalNavMenuItem id="first" title="First Link" />
+    <HorizontalNavMenuItem id="another" title="Another Link" />
+    <HorizontalNavMenuItem id="and-another" title="And Another" />
   </HorizontalNavMenu>
 );
