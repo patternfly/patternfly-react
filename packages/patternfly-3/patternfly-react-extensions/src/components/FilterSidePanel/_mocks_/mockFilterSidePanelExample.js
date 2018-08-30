@@ -67,7 +67,12 @@ class MockFilterSidePanelExample extends React.Component {
       stars.push(<Icon key={`star_${i}`} type="fa" name="star" />);
     }
 
-    return <span>{stars}</span>;
+    return (
+      <span>
+        <span className="sr-only">{`${count} stars`}</span>
+        {stars}
+      </span>
+    );
   };
 
   render() {

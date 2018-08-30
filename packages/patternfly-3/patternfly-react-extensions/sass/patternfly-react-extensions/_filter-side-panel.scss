@@ -11,7 +11,10 @@
 }
 
 .filter-panel-pf-category-title {
+  border: 0;
   color: $color-pf-black-500;
+  font-size: inherit;
+  margin: 0;
   text-transform: uppercase;
 }
 

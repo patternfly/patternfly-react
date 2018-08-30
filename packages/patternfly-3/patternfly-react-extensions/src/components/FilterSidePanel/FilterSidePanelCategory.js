@@ -43,13 +43,13 @@ const FilterSidePanelCategory = ({
   }
 
   return (
-    <div className={classes} {...props}>
-      {title && <span className="filter-panel-pf-category-title">{title}</span>}
-      <div className="checkbox filter-panel-pf-category-items">
+    <form className={classes} {...props}>
+      <fieldset className="checkbox filter-panel-pf-category-items">
+        {title && <legend className="filter-panel-pf-category-title">{title}</legend>}
         {shownChildren}
         {showAllToggle}
-      </div>
-    </div>
+      </fieldset>
+    </form>
   );
 };
 

@@ -5,10 +5,10 @@ exports[`Filter input renders properly 1`] = `
   class="filter-panel-pf test-class"
   id="filter-panel"
 >
-  <div
+  <form
     class="filter-panel-pf-category"
   >
-    <div
+    <fieldset
       class="checkbox filter-panel-pf-category-items"
     >
       <input
@@ -16,19 +16,19 @@ exports[`Filter input renders properly 1`] = `
         placeholder="Filter by name"
         type="text"
       />
-    </div>
-  </div>
-  <div
+    </fieldset>
+  </form>
+  <form
     class="filter-panel-pf-category"
   >
-    <span
-      class="filter-panel-pf-category-title"
-    >
-      Type
-    </span>
-    <div
+    <fieldset
       class="checkbox filter-panel-pf-category-items"
     >
+      <legend
+        class="filter-panel-pf-category-title"
+      >
+        Type
+      </legend>
       <div
         class="filter-panel-pf-category-item"
       >
@@ -113,19 +113,19 @@ exports[`Filter input renders properly 1`] = `
           </label>
         </div>
       </div>
-    </div>
-  </div>
-  <div
+    </fieldset>
+  </form>
+  <form
     class="filter-panel-pf-category"
   >
-    <span
-      class="filter-panel-pf-category-title"
-    >
-      Type
-    </span>
-    <div
+    <fieldset
       class="checkbox filter-panel-pf-category-items"
     >
+      <legend
+        class="filter-panel-pf-category-title"
+      >
+        Type
+      </legend>
       <div
         class="filter-panel-pf-category-item"
       >
@@ -210,19 +210,19 @@ exports[`Filter input renders properly 1`] = `
           </label>
         </div>
       </div>
-    </div>
-  </div>
-  <div
+    </fieldset>
+  </form>
+  <form
     class="filter-panel-pf-category"
   >
-    <span
-      class="filter-panel-pf-category-title"
-    >
-      Type
-    </span>
-    <div
+    <fieldset
       class="checkbox filter-panel-pf-category-items"
     >
+      <legend
+        class="filter-panel-pf-category-title"
+      >
+        Type
+      </legend>
       <div
         class="filter-panel-pf-category-item"
       >
@@ -271,19 +271,19 @@ exports[`Filter input renders properly 1`] = `
       >
         Show 2 more
       </button>
-    </div>
-  </div>
-  <div
+    </fieldset>
+  </form>
+  <form
     class="filter-panel-pf-category"
   >
-    <span
-      class="filter-panel-pf-category-title"
-    >
-      Type
-    </span>
-    <div
+    <fieldset
       class="checkbox filter-panel-pf-category-items"
     >
+      <legend
+        class="filter-panel-pf-category-title"
+      >
+        Type
+      </legend>
       <div
         class="filter-panel-pf-category-item"
       >
@@ -332,19 +332,19 @@ exports[`Filter input renders properly 1`] = `
       >
         TEST SHOW
       </button>
-    </div>
-  </div>
-  <div
+    </fieldset>
+  </form>
+  <form
     class="filter-panel-pf-category"
   >
-    <span
-      class="filter-panel-pf-category-title"
-    >
-      Type
-    </span>
-    <div
+    <fieldset
       class="checkbox filter-panel-pf-category-items"
     >
+      <legend
+        class="filter-panel-pf-category-title"
+      >
+        Type
+      </legend>
       <div
         class="filter-panel-pf-category-item"
       >
@@ -435,7 +435,7 @@ exports[`Filter input renders properly 1`] = `
       >
         TEST HIDE
       </button>
-    </div>
-  </div>
+    </fieldset>
+  </form>
 </div>
 `;
