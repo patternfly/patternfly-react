@@ -1,0 +1,297 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Disabled Select input  1`] = `
+.pf-c-form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid #72767b;
+  border-radius: 3px;
+}
+
+<select
+  aria-invalid={false}
+  aria-label="disabled  Select"
+  className="pf-c-form-control"
+  disabled={true}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value="mrs"
+>
+  <option
+    key="0"
+  />
+  <option
+    key="1"
+  />
+  <option
+    key="2"
+  />
+  <option
+    key="3"
+  />
+  <option
+    key="4"
+  />
+  <option
+    key="5"
+  />
+  <option
+    key="6"
+  />
+</select>
+`;
+
+exports[`Grouped Select input 1`] = `
+.pf-c-form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid #72767b;
+  border-radius: 3px;
+}
+
+<select
+  aria-invalid={false}
+  aria-label=" grouped Select"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value="2"
+>
+  <optgroup
+    key="0"
+  />
+  <optgroup
+    key="1"
+  />
+</select>
+`;
+
+exports[`Select input with no aria-label or id generates console error 1`] = `
+.pf-c-form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid #72767b;
+  border-radius: 3px;
+}
+
+<select
+  aria-invalid={false}
+  aria-label={null}
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+/>
+`;
+
+exports[`Select input with only aria-label does not generate console error 1`] = `
+.pf-c-form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid #72767b;
+  border-radius: 3px;
+}
+
+<select
+  aria-invalid={false}
+  aria-label="no props Select"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+/>
+`;
+
+exports[`Select input with only id does not generate console error 1`] = `
+.pf-c-form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid #72767b;
+  border-radius: 3px;
+}
+
+<select
+  aria-invalid={false}
+  aria-label={null}
+  className="pf-c-form-control"
+  disabled={false}
+  id="id"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+/>
+`;
+
+exports[`Simple Select input 1`] = `
+.pf-c-form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid #72767b;
+  border-radius: 3px;
+}
+
+<select
+  aria-invalid={false}
+  aria-label="simple Select"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value="mrs"
+>
+  <option
+    key="0"
+  />
+  <option
+    key="1"
+  />
+  <option
+    key="2"
+  />
+  <option
+    key="3"
+  />
+  <option
+    key="4"
+  />
+  <option
+    key="5"
+  />
+  <option
+    key="6"
+  />
+</select>
+`;
+
+exports[`invalid Select input 1`] = `
+<select
+  aria-label="invalid select"
+  getOptionDisabled={[MockFunction]}
+  getOptionLabel={[MockFunction]}
+  getOptionValue={[MockFunction]}
+  isValid={false}
+  options={
+    Array [
+      Object {
+        "disabled": true,
+        "label": "Please Choose",
+        "value": "please choose",
+      },
+      Object {
+        "disabled": false,
+        "label": "Mr",
+        "value": "mr",
+      },
+      Object {
+        "disabled": false,
+        "label": "Miss",
+        "value": "miss",
+      },
+      Object {
+        "disabled": false,
+        "label": "Mrs",
+        "value": "mrs",
+      },
+      Object {
+        "disabled": false,
+        "label": "Ms",
+        "value": "ms",
+      },
+      Object {
+        "disabled": false,
+        "label": "Dr",
+        "value": "dr",
+      },
+      Object {
+        "disabled": false,
+        "label": "Other",
+        "value": "other",
+      },
+    ]
+  }
+  value="mrs"
+/>
+`;
+
+exports[`required Select input 1`] = `
+<select
+  aria-label="invalid select"
+  getOptionDisabled={[MockFunction]}
+  getOptionLabel={[MockFunction]}
+  getOptionValue={[MockFunction]}
+  options={
+    Array [
+      Object {
+        "disabled": true,
+        "label": "Please Choose",
+        "value": "please choose",
+      },
+      Object {
+        "disabled": false,
+        "label": "Mr",
+        "value": "mr",
+      },
+      Object {
+        "disabled": false,
+        "label": "Miss",
+        "value": "miss",
+      },
+      Object {
+        "disabled": false,
+        "label": "Mrs",
+        "value": "mrs",
+      },
+      Object {
+        "disabled": false,
+        "label": "Ms",
+        "value": "ms",
+      },
+      Object {
+        "disabled": false,
+        "label": "Dr",
+        "value": "dr",
+      },
+      Object {
+        "disabled": false,
+        "label": "Other",
+        "value": "other",
+      },
+    ]
+  }
+  required={true}
+  value="mrs"
+/>
+`;
