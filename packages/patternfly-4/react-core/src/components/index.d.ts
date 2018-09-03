@@ -8,3 +8,4 @@ export * from './Radio';
 export * from './Title';
 export * from './Alert';
 export * from './Dropdown';
+export * from './Select';
