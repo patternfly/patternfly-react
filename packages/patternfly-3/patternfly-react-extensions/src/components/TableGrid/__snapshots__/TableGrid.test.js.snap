@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableGrid renders properly 1`] = `
+<div
+  class="table-grid-pf bordered"
+  id="table-grid"
+>
+  <div
+    class="table-grid-pf-head row"
+  >
+    <div
+      class="table-grid-pf-column-header text-nowrap active-sort test-class "
+      id="title"
+    >
+      <button
+        class="btn btn-link"
+        type="button"
+      >
+        Column 1
+        <span
+          aria-hidden="true"
+          class="pficon pficon-sort-common-asc table-grid-pf-header-sort-arrow"
+        />
+      </button>
+    </div>
+    <div
+      class="table-grid-pf-column-header text-nowrap "
+    >
+      Column 2
+    </div>
+    <div
+      class="table-grid-pf-column-header text-nowrap descending "
+    />
+    <div
+      class="table-grid-pf-column-header text-nowrap descending "
+    >
+      <div>
+        <span>
+          test 1
+        </span>
+        <span>
+          and two
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="table-grid-pf-body test-grid-body"
+    id="test-grid-body"
+  >
+    <div
+      class="table-grid-pf-row test-grid-row row"
+      id="test-grid-row"
+    >
+      <div
+        class="test-col1 "
+        id="test-col-1"
+      >
+        item 1 column 1
+      </div>
+      <div
+        class="test-col2 "
+        id="test-col-2"
+      >
+        item 1 column 2
+      </div>
+      <div
+        class="test-col3 "
+        id="test-col-3"
+      >
+        item 1 column 3
+      </div>
+      <div
+        class="test-col4 "
+        id="test-col-4"
+      >
+        item 1 column 4
+      </div>
+    </div>
+    <div
+      class="table-grid-pf-row row"
+      id="test-grid-row-2"
+    >
+      <div
+        class=""
+        id="test-row-2-col-1"
+      >
+        item 2 column 1
+      </div>
+      <div
+        class="test-col2 "
+        id="two-children"
+      >
+        <span>
+          item 1
+        </span>
+        <span>
+          column 2
+        </span>
+      </div>
+      <div
+        class="test-col3 "
+        id="icon-name"
+      >
+        <span
+          aria-hidden="true"
+          class="pficon pficon-error-circle-o"
+        />
+        Danger
+      </div>
+      <div
+        class="test-col4 "
+        id="test-col-4"
+      >
+        item 2 column 4
+      </div>
+    </div>
+  </div>
+</div>
+`;
