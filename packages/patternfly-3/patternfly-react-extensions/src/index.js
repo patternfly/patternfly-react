@@ -1,1 +1,2 @@
-export * from './components/FilterSidePanel/index';
+export * from './components/FilterSidePanel';
+export * from './components/VerticalTabs';
