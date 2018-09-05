@@ -13,8 +13,8 @@ const props = {
     { value: 'other', label: 'Other', disabled: false }
   ],
   value: 'mrs',
-  getOptionLabel: jest.fn(),
-  getOptionValue: jest.fn(),
+  getLabel: jest.fn(),
+  getValue: jest.fn(),
   getOptionDisabled: jest.fn()
 };
 
@@ -33,33 +33,33 @@ const groupedProps = {
     }
   ],
   value: '2',
-  isOptionsGrouped: true,
-  getOptionGroupLabel: jest.fn(),
-  getOptionFromGroup: jest.fn(),
-  getOptionLabel: jest.fn(),
-  getOptionValue: jest.fn(),
+  isGrouped: true,
+  getGroupLabel: jest.fn(),
+  getGroupOptions: jest.fn(),
+  getLabel: jest.fn(),
+  getValue: jest.fn(),
   getOptionDisabled: jest.fn()
 };
 
 test('Simple Select input', () => {
   const view = shallow(<Select {...props} aria-label="simple Select" />);
   expect(view).toMatchSnapshot();
-  expect(props.getOptionLabel).toBeCalled();
-  expect(props.getOptionValue).toBeCalled();
+  expect(props.getLabel).toBeCalled();
+  expect(props.getValue).toBeCalled();
   expect(props.getOptionDisabled).toBeCalled();
 });
 
 test('Grouped Select input', () => {
   const view = shallow(<Select {...groupedProps} aria-label=" grouped Select" />);
   expect(view).toMatchSnapshot();
-  expect(groupedProps.getOptionGroupLabel).toBeCalled();
-  expect(groupedProps.getOptionFromGroup).toBeCalled();
+  expect(groupedProps.getGroupLabel).toBeCalled();
+  expect(groupedProps.getGroupOptions).toBeCalled();
 });
 
 test('Disabled Select input ', () => {
   const view = shallow(<Select {...props} isDisabled aria-label="disabled  Select" />);
   expect(view).toMatchSnapshot();
-  expect(props.getOptionLabel).toBeCalled();
+  expect(props.getLabel).toBeCalled();
   expect(props.getOptionDisabled).toBeCalled();
 });
 
@@ -88,11 +88,22 @@ test('Select input with no aria-label or id generates console error', () => {
 });
 
 test('invalid Select input', () => {
-  const view = shallow(<select {...props} isValid={false} aria-label="invalid select" />);
+  const view = shallow(<Select {...props} isValid={false} aria-label="invalid select" />);
   expect(view).toMatchSnapshot();
 });
 
 test('required Select input', () => {
-  const view = shallow(<select {...props} required aria-label="invalid select" />);
+  const view = shallow(<Select {...props} required aria-label="invalid select" />);
   expect(view).toMatchSnapshot();
+});
+
+test('Select passes value and event to onChange handler', () => {
+  const myMock = jest.fn();
+  const newValue = 1;
+  const event = {
+    currentTarget: { value: newValue }
+  };
+  const view = shallow(<Select {...props} onChange={myMock} />);
+  view.find('select').simulate('change', event);
+  expect(myMock).toBeCalledWith(newValue, event);
 });

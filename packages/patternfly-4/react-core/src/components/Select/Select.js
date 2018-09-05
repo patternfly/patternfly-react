@@ -8,19 +8,19 @@ const propTypes = {
   className: PropTypes.string,
   /** value of selected option */
   value: PropTypes.any,
-  /** Array of options OR array of option Groups available to select from.  If getOptionGroupLabel, it should be an array ofoption groups */
+  /** Array of options OR array of option Groups available to select from.  If getGroupLabel, it should be an array ofoption groups */
   options: PropTypes.array,
   /** flag indicating the options are grouped */
-  isOptionsGrouped: PropTypes.bool,
-  /** function to retrive the label for an option group */
-  getOptionGroupLabel: PropTypes.func,
-  /** function to retrive the array of options for an option group */
-  getOptionFromGroup: PropTypes.func,
-  /** function to retrive the label for an option */
-  getOptionLabel: PropTypes.func,
-  /** function to retrive the Value for an option */
-  getOptionValue: PropTypes.func,
-  /** function to retrive flag indicating if the option is disabled */
+  isGrouped: PropTypes.bool,
+  /** function to retrieve the label for an option group */
+  getGroupLabel: PropTypes.func,
+  /** function to retrieve the array of options for an option group */
+  getGroupOptions: PropTypes.func,
+  /** function to retrieve the label for an option */
+  getLabel: PropTypes.func,
+  /** function to retrieve the Value for an option */
+  getValue: PropTypes.func,
+  /** function to retrieve flag indicating if the option is disabled */
   getOptionDisabled: PropTypes.func,
   /** Flag indicating selection is valid */
   isValid: PropTypes.bool,
@@ -45,11 +45,11 @@ const defaultProps = {
   className: '',
   value: '',
   options: null,
-  isOptionsGrouped: false,
-  getOptionGroupLabel: () => undefined,
-  getOptionFromGroup: () => undefined,
-  getOptionLabel: () => undefined,
-  getOptionValue: () => undefined,
+  isGrouped: false,
+  getGroupLabel: () => undefined,
+  getGroupOptions: () => undefined,
+  getLabel: () => undefined,
+  getValue: () => undefined,
   getOptionDisabled: () => undefined,
   isValid: true,
   isDisabled: false,
@@ -60,34 +60,22 @@ const defaultProps = {
 };
 
 class Select extends React.Component {
-  /** call callback to handle selection change */
   handleChange = event => {
-    this.props.onChange(event);
+    this.props.onChange(event.currentTarget.value, event);
   };
 
-  /** call callback to handle selection change */
-  handleBlur = event => {
-    this.props.onBlur(event);
-  };
-
-  /** call callback to handle selection change */
-  handleFocus = event => {
-    this.props.onFocus(event);
-  };
-
-  /* returns the options */
   getOptions = options => {
-    const { getOptionDisabled, getOptionValue, getOptionLabel } = this.props;
+    const { getOptionDisabled, getValue, getLabel } = this.props;
     return options
       ? options.map(
           (option, index) =>
             getOptionDisabled(option) ? (
-              <option disabled key={index} value={getOptionValue(option)}>
-                {getOptionLabel(option)}
+              <option disabled key={index} value={getValue(option)}>
+                {getLabel(option)}
               </option>
             ) : (
-              <option key={index} value={getOptionValue(option)}>
-                {getOptionLabel(option)}
+              <option key={index} value={getValue(option)}>
+                {getLabel(option)}
               </option>
             )
         )
@@ -99,16 +87,14 @@ class Select extends React.Component {
       className,
       options,
       value,
-      isOptionsGrouped,
-      getOptionGroupLabel,
-      getOptionFromGroup,
+      isGrouped,
+      getGroupLabel,
+      getGroupOptions,
       getOptionDisabled,
-      getOptionValue,
-      getOptionLabel,
+      getValue,
+      getLabel,
       isValid,
       isDisabled,
-      onBlur,
-      onFocus,
       ...props
     } = this.props;
     return (
@@ -117,16 +103,14 @@ class Select extends React.Component {
         className={css(styles.formControl, className, !isValid && styles.modifiers.invalid)}
         aria-invalid={!isValid}
         onChange={this.handleChange}
-        onBlur={onBlur}
-        onFocus={onFocus}
         disabled={isDisabled}
         value={value}
       >
         {options &&
-          (isOptionsGrouped
+          (isGrouped
             ? options.map((group, index) => (
-                <optgroup key={index} label={getOptionGroupLabel(group)}>
-                  {this.getOptions(getOptionFromGroup(group))}
+                <optgroup key={index} label={getGroupLabel(group)}>
+                  {this.getOptions(getGroupOptions(group))}
                 </optgroup>
               ))
             : this.getOptions(options))}

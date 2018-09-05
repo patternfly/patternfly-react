@@ -8,8 +8,8 @@ class SelectInputDisabled extends React.Component {
     value: '1'
   };
 
-  onChange = event => {
-    this.setState({ value: event.currentTarget.value });
+  onChange = (value, event) => {
+    this.setState({ value });
   };
 
   options = [
@@ -24,17 +24,15 @@ class SelectInputDisabled extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <Select
-          value={this.state.value}
-          options={this.options}
-          getOptionLabel={this.getOptionLbl}
-          getOptionValue={this.getOptionVal}
-          onChange={this.onChange}
-          isDisabled
-          aria-label="Select Input"
-        />
-      </React.Fragment>
+      <Select
+        value={this.state.value}
+        options={this.options}
+        getLabel={this.getOptionLbl}
+        getValue={this.getOptionVal}
+        onChange={this.onChange}
+        isDisabled
+        aria-label="Select Input"
+      />
     );
   }
 }

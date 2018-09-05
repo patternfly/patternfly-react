@@ -4,11 +4,11 @@ import { Omit } from '../../typeUtils';
 export interface SelectProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
   options?: Array<any>;
   value?: any;
-  isOptionsGrouped?: boolean;
-  getOptionGroupLabel(group: any): string;
-  getOptionFromGroup(group: any): any;
-  getOptionLabel(option: any): string;
-  getOptionValue(option: any): any;
+  isGrouped?: boolean;
+  getGroupLabel(group: any): string;
+  getGroupOptions(group: any): any;
+  getLabel(option: any): string;
+  getValue(option: any): any;
   getOptionDisabled: boolean;
   isValid?: boolean;
   isDisabled?: boolean;

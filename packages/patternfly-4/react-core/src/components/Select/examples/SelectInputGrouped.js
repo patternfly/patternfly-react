@@ -8,8 +8,8 @@ class SelectInputGrouped extends React.Component {
     value: '2'
   };
 
-  onChange = event => {
-    this.setState({ value: event.currentTarget.value });
+  onChange = (value, event) => {
+    this.setState({ value });
   };
 
   options = [
@@ -28,23 +28,21 @@ class SelectInputGrouped extends React.Component {
   getOptionLbl = option => option.label;
   getOptionVal = option => option.value;
   getOptionsGroupLbl = group => group && group.groupLabel;
-  getOptionFromGroup = group => group && group.options;
+  getGroupOptions = group => group && group.options;
 
   render() {
     return (
-      <React.Fragment>
-        <Select
-          value={this.state.value}
-          options={this.options}
-          getOptionLabel={this.getOptionLbl}
-          getOptionValue={this.getOptionVal}
-          isOptionsGrouped
-          getOptionGroupLabel={this.getOptionsGroupLbl}
-          getOptionFromGroup={this.getOptionFromGroup}
-          onChange={this.onChange}
-          aria-label="Select Input"
-        />
-      </React.Fragment>
+      <Select
+        value={this.state.value}
+        options={this.options}
+        getLabel={this.getOptionLbl}
+        getValue={this.getOptionVal}
+        isGrouped
+        getGroupLabel={this.getOptionsGroupLbl}
+        getGroupOptions={this.getGroupOptions}
+        onChange={this.onChange}
+        aria-label="Select Input"
+      />
     );
   }
 }

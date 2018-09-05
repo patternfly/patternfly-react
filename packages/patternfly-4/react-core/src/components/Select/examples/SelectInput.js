@@ -8,8 +8,8 @@ class SelectInput extends React.Component {
     value: 'mrs'
   };
 
-  onChange = event => {
-    this.setState({ value: event.currentTarget.value });
+  onChange = (value, event) => {
+    this.setState({ value });
   };
 
   options = [
@@ -27,17 +27,15 @@ class SelectInput extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
-        <Select
-          value={this.state.value}
-          options={this.options}
-          getOptionLabel={this.getOptionLbl}
-          getOptionValue={this.getOptionVal}
-          getOptionDisabled={this.getOptionDisabled}
-          onChange={this.onChange}
-          aria-label="Select Input"
-        />
-      </React.Fragment>
+      <Select
+        value={this.state.value}
+        options={this.options}
+        getLabel={this.getOptionLbl}
+        getValue={this.getOptionVal}
+        getOptionDisabled={this.getOptionDisabled}
+        onChange={this.onChange}
+        aria-label="Select Input"
+      />
     );
   }
 }
