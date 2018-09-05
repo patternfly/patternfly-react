@@ -196,6 +196,83 @@ exports[`Simple Select input 1`] = `
 </select>
 `;
 
+exports[`Test default prop functions 1`] = `
+.pf-c-form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid #72767b;
+  border-radius: 3px;
+}
+
+<select
+  aria-invalid={false}
+  aria-label="test default props functions"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+>
+  <option
+    key="0"
+  />
+  <option
+    key="1"
+  />
+  <option
+    key="2"
+  />
+  <option
+    key="3"
+  />
+  <option
+    key="4"
+  />
+  <option
+    key="5"
+  />
+  <option
+    key="6"
+  />
+</select>
+`;
+
+exports[`Test default prop functions for grouped Select 1`] = `
+.pf-c-form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid #72767b;
+  border-radius: 3px;
+}
+
+<select
+  aria-invalid={false}
+  aria-label="test default props func for grouped Select"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value=""
+>
+  <optgroup
+    key="0"
+  />
+  <optgroup
+    key="1"
+  />
+</select>
+`;
+
 exports[`invalid Select input 1`] = `
 .pf-c-form-control.pf-m-invalid {
   display: block;

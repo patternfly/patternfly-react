@@ -10,7 +10,7 @@ const props = {
     { value: 'mrs', label: 'Mrs', disabled: false },
     { value: 'ms', label: 'Ms', disabled: false },
     { value: 'dr', label: 'Dr', disabled: false },
-    { value: 'other', label: 'Other', disabled: false }
+    { value: 'other', label: 'Other', disabled: true }
   ],
   value: 'mrs',
   getLabel: jest.fn(),
@@ -106,4 +106,38 @@ test('Select passes value and event to onChange handler', () => {
   const view = shallow(<Select {...props} onChange={myMock} />);
   view.find('select').simulate('change', event);
   expect(myMock).toBeCalledWith(newValue, event);
+});
+
+test('Test default prop functions', () => {
+  const testOptions = [
+    { value: 'please choose', label: 'Please Choose', disabled: true },
+    { value: 'mr', label: 'Mr', disabled: false },
+    { value: 'miss', label: 'Miss', disabled: false },
+    { value: 'mrs', label: 'Mrs', disabled: false },
+    { value: 'ms', label: 'Ms', disabled: false },
+    { value: 'dr', label: 'Dr', disabled: false },
+    { value: 'other', label: 'Other', disabled: true }
+  ];
+  const view = shallow(<Select options={testOptions} aria-label="test default props functions" />);
+  expect(view).toMatchSnapshot();
+});
+
+test('Test default prop functions for grouped Select', () => {
+  const testOptions = [
+    {
+      groupLabel: 'Group1',
+      options: [
+        { value: '1', label: 'The First Option' },
+        { value: '2', label: 'Second option is selected by default' }
+      ]
+    },
+    {
+      groupLabel: 'Group2',
+      options: [{ value: '3', label: 'The Third Option' }, { value: '4', label: 'The Fourth option' }]
+    }
+  ];
+  const view = shallow(
+    <Select options={testOptions} isGrouped aria-label="test default props func for grouped Select" />
+  );
+  expect(view).toMatchSnapshot();
 });
