@@ -1,4 +1,4 @@
-import {SFC, HTMLProps, ReactNode} from 'react';
+import { SFC, HTMLProps, ReactNode } from 'react';
 
 export interface ModalProps extends HTMLProps<HTMLDivElement> {
   actions?: any,

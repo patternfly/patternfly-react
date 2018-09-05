@@ -1,4 +1,4 @@
-import {SFC, HTMLProps, ReactNode} from 'react';
+import { SFC, HTMLProps, ReactNode } from 'react';
 
 export interface BackdropProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;

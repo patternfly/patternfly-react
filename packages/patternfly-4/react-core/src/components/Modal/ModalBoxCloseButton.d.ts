@@ -1,4 +1,4 @@
-import {SFC, HTMLProps, ReactNode} from 'react';
+import { SFC, HTMLProps } from 'react';
 
 export interface ModalBoxCloseButtonProps extends HTMLProps<HTMLDivElement> {
   className?: string;
