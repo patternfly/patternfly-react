@@ -102,7 +102,8 @@ export const mockNavItems = [
       },
       {
         title: 'Item 3-B (external link)',
-        href: 'http://www.patternfly.org'
+        href: 'http://www.patternfly.org',
+        preventHref: false
       },
       {
         title: 'Item 3-C',

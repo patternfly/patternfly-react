@@ -269,6 +269,7 @@ class BaseVerticalNav extends React.Component {
             primaryItem.subItems.map(secondaryItem => (
               <VerticalNavSecondaryItem
                 isDivider={secondaryItem.isDivider}
+                preventHref={secondaryItem.preventHref}
                 item={secondaryItem}
                 key={`secondary_${secondaryItem.title}`}
               >
