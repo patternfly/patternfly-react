@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Vertical Tabs renders properly 1`] = `
+<ul
+  class="vertical-tabs-pf test-class"
+  id="vertical-tabs"
+>
+  <li
+    class="vertical-tabs-pf-tab active"
+  >
+    <button
+      class="btn btn-link"
+      id="one"
+      type="button"
+    >
+      Tab One
+    </button>
+  </li>
+  <li
+    class="vertical-tabs-pf-tab test-tab-class"
+  >
+    <button
+      class="btn btn-link"
+      id="two"
+      type="button"
+    >
+      Tab Two
+    </button>
+  </li>
+  <li
+    class="vertical-tabs-pf-tab"
+  >
+    <button
+      class="btn btn-link"
+      id="three"
+      type="button"
+    >
+      Tab Three
+    </button>
+  </li>
+  <li
+    class="vertical-tabs-pf-tab"
+  >
+    <button
+      class="btn btn-link"
+      id="four"
+      type="button"
+    >
+      Tab Four
+    </button>
+  </li>
+  <li
+    class="vertical-tabs-pf-tab"
+  >
+    <button
+      class="btn btn-link"
+      id="five"
+      type="button"
+    >
+      Tab Five
+    </button>
+  </li>
+  <li
+    class="vertical-tabs-pf-tab"
+  >
+    <button
+      class="btn btn-link"
+      id="six"
+      type="button"
+    >
+      Tab Six
+    </button>
+  </li>
+  <li
+    class="vertical-tabs-pf-tab"
+  >
+    <button
+      class="btn btn-link"
+      id="seven"
+      type="button"
+    >
+      Tab Seven
+    </button>
+  </li>
+</ul>
+`;

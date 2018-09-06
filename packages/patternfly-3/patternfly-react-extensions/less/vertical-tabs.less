@@ -1,0 +1,44 @@
+.vertical-tabs-pf {
+  background: transparent;
+  padding: 0;
+  list-style: none;
+}
+
+.vertical-tabs-pf-tab {
+  color: @vertical-tab-pf-color;
+  margin-top: 4px;
+  position: relative;
+
+  .btn.btn-link {
+    color: initial;
+    font-size: 13px;
+    padding-left: 15px;
+
+    &:hover,
+    &:focus {
+      color: @vertical-tab-pf-active-color;
+      outline: 0;
+      text-decoration: none;
+    }
+  }
+
+  &.active {
+    .btn.btn-link {
+      color: @vertical-tab-pf-active-color;
+
+      &::before {
+        background: @vertical-tab-pf-active-color;
+        content: " ";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 3px;
+      }
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
