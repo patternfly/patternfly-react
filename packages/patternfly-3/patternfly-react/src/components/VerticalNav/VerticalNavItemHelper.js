@@ -82,18 +82,19 @@ class BaseVerticalNavItemHelper extends React.Component {
 
   onItemClick = event => {
     const { primary, secondary, tertiary } = this.getContextNavItems();
-    const { isMobile, updateNavOnItemClick, idPath } = this.props;
-    const { href, onClick } = this.navItem();
-    event.preventDefault();
+    const { isMobile, preventHref, updateNavOnItemClick, idPath } = this.props;
+    const { onClick } = this.navItem();
+
+    if (preventHref && !!onClick) {
+      event.preventDefault();
+    }
+
     updateNavOnItemClick(primary, secondary, tertiary, this.idPath(), idPath); // Clears all mobile selections
     if (isMobile) {
       this.onMobileSelection(primary, secondary, tertiary); // Applies new mobile selection here
     }
     this.setActive();
     onClick && onClick(primary, secondary, tertiary);
-    if (href) {
-      window.location = href; // Note: This should become router-aware later on.
-    }
   };
 
   onItemHover = () => {
@@ -266,7 +267,7 @@ class BaseVerticalNavItemHelper extends React.Component {
         // NOTE onItemBlur takes a boolean, we want to prevent it being passed a truthy event.
         onMouseLeave={e => this.onItemBlur(false)}
       >
-        <a href="#" onClick={this.onItemClick}>
+        <a href={href || '#'} onClick={this.onItemClick}>
           {depth === 'primary' &&
             icon &&
             (!isMobile && navCollapsed ? (
@@ -323,14 +324,17 @@ BaseVerticalNavItemHelper.propTypes = {
   children: PropTypes.node,
   title: PropTypes.string,
   /** Divider bool */
-  isDivider: PropTypes.bool
+  isDivider: PropTypes.bool,
+  /** should Prevent Href */
+  preventHref: PropTypes.bool
 };
 
 BaseVerticalNavItemHelper.defaultProps = {
   item: {},
   children: null,
   title: '',
-  isDivider: false
+  isDivider: false,
+  preventHref: true
 };
 
 const VerticalNavItemHelper = getContext(navContextTypes)(BaseVerticalNavItemHelper);
