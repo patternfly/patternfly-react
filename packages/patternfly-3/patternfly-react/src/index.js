@@ -47,3 +47,4 @@ export * from './components/UtilizationBar';
 export * from './components/Wizard';
 export * from './components/VerticalNav';
 export { patternfly, layout } from './common/patternfly';
+export * from './components/MoreInformation';

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`localized MoreInformation 1`] = `
+<div
+  className="pf-more-info"
+>
+  <div>
+    <Button
+      active={false}
+      block={false}
+      bsClass="btn"
+      bsStyle="link"
+      disabled={false}
+      onClick={[Function]}
+    >
+      <span
+        className="fa fa-angle-right"
+      />
+        
+      Additional Information
+    </Button>
+  </div>
+</div>
+`;
