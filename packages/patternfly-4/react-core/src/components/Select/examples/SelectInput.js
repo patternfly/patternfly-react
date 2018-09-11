@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select } from '@patternfly/react-core';
+import { Select, SelectOption } from '@patternfly/react-core';
 
 class SelectInput extends React.Component {
   static title = 'Select Input';
@@ -21,21 +21,14 @@ class SelectInput extends React.Component {
     { value: 'dr', label: 'Dr', disabled: false },
     { value: 'other', label: 'Other', disabled: false }
   ];
-  getOptionLbl = option => option.label;
-  getOptionVal = option => option.value;
-  getOptionDisabled = option => option.disabled;
 
   render() {
     return (
-      <Select
-        value={this.state.value}
-        options={this.options}
-        getLabel={this.getOptionLbl}
-        getValue={this.getOptionVal}
-        getOptionDisabled={this.getOptionDisabled}
-        onChange={this.onChange}
-        aria-label="Select Input"
-      />
+      <Select value={this.state.value} onChange={this.onChange} aria-label="Select Input">
+        {this.options.map((option, index) => (
+          <SelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+        ))}
+      </Select>
     );
   }
 }

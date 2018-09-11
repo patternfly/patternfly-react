@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Select from './Select';
+import SelectOption from './SelectOption';
+import SelectOptionGroup from './SelectOptionGroup';
 
 const props = {
   options: [
@@ -12,69 +14,94 @@ const props = {
     { value: 'dr', label: 'Dr', disabled: false },
     { value: 'other', label: 'Other', disabled: true }
   ],
-  value: 'mrs',
-  getLabel: jest.fn(),
-  getValue: jest.fn(),
-  getOptionDisabled: jest.fn()
+  value: 'mrs'
 };
 
 const groupedProps = {
-  options: [
+  groups: [
     {
       groupLabel: 'Group1',
+      disabled: false,
       options: [
-        { value: '1', label: 'The First Option' },
-        { value: '2', label: 'Second option is selected by default' }
+        { value: '1', label: 'The First Option', disabled: false },
+        { value: '2', label: 'Second option is selected by default', disabled: false }
       ]
     },
     {
       groupLabel: 'Group2',
-      options: [{ value: '3', label: 'The Third Option' }, { value: '4', label: 'The Fourth option' }]
+      disabled: false,
+      options: [
+        { value: '3', label: 'The Third Option', disabled: false },
+        { value: '4', label: 'The Fourth option', disabled: false }
+      ]
+    },
+    {
+      groupLabel: 'Group3',
+      disabled: true,
+      options: [
+        { value: '5', label: 'The Fifth Option', disabled: false },
+        { value: '6', label: 'The Sixth option', disabled: false }
+      ]
     }
   ],
-  value: '2',
-  isGrouped: true,
-  getGroupLabel: jest.fn(),
-  getGroupOptions: jest.fn(),
-  getLabel: jest.fn(),
-  getValue: jest.fn(),
-  getOptionDisabled: jest.fn()
+  value: '2'
 };
 
 test('Simple Select input', () => {
-  const view = shallow(<Select {...props} aria-label="simple Select" />);
+  const view = shallow(
+    <Select value={props.value} aria-label="simple Select">
+      {props.options.map((option, index) => (
+        <SelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+      ))}
+    </Select>
+  );
   expect(view).toMatchSnapshot();
-  expect(props.getLabel).toBeCalled();
-  expect(props.getValue).toBeCalled();
-  expect(props.getOptionDisabled).toBeCalled();
 });
 
 test('Grouped Select input', () => {
-  const view = shallow(<Select {...groupedProps} aria-label=" grouped Select" />);
+  const view = shallow(
+    <Select value={groupedProps.value} aria-label=" grouped Select">
+      {groupedProps.groups.map((group, index) => (
+        <SelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
+          {group.options.map((option, i) => (
+            <SelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
+          ))}
+        </SelectOptionGroup>
+      ))}
+    </Select>
+  );
   expect(view).toMatchSnapshot();
-  expect(groupedProps.getGroupLabel).toBeCalled();
-  expect(groupedProps.getGroupOptions).toBeCalled();
 });
 
 test('Disabled Select input ', () => {
-  const view = shallow(<Select {...props} isDisabled aria-label="disabled  Select" />);
+  const view = shallow(
+    <Select isDisabled aria-label="disabled  Select">
+      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </Select>
+  );
   expect(view).toMatchSnapshot();
-  expect(props.getLabel).toBeCalled();
-  expect(props.getOptionDisabled).toBeCalled();
 });
 
-test('Select input with only aria-label does not generate console error', () => {
+test('Select input with aria-label does not generate console error', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };
-  const view = shallow(<Select aria-label="no props Select" />);
+  const view = shallow(
+    <Select aria-label="Select with aria-label">
+      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </Select>
+  );
   expect(view).toMatchSnapshot();
   expect(myMock).not.toBeCalled();
 });
 
-test('Select input with only id does not generate console error', () => {
+test('Select input with id does not generate console error', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };
-  const view = shallow(<Select id="id" />);
+  const view = shallow(
+    <Select id="id">
+      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </Select>
+  );
   expect(view).toMatchSnapshot();
   expect(myMock).not.toBeCalled();
 });
@@ -82,18 +109,30 @@ test('Select input with only id does not generate console error', () => {
 test('Select input with no aria-label or id generates console error', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };
-  const view = shallow(<Select />);
+  const view = shallow(
+    <Select>
+      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </Select>
+  );
   expect(view).toMatchSnapshot();
   expect(myMock).toBeCalled();
 });
 
 test('invalid Select input', () => {
-  const view = shallow(<Select {...props} isValid={false} aria-label="invalid select" />);
+  const view = shallow(
+    <Select isValid={false} aria-label="invalid Select">
+      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </Select>
+  );
   expect(view).toMatchSnapshot();
 });
 
 test('required Select input', () => {
-  const view = shallow(<Select {...props} required aria-label="invalid select" />);
+  const view = shallow(
+    <Select required aria-label="required Select">
+      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </Select>
+  );
   expect(view).toMatchSnapshot();
 });
 
@@ -103,41 +142,11 @@ test('Select passes value and event to onChange handler', () => {
   const event = {
     currentTarget: { value: newValue }
   };
-  const view = shallow(<Select {...props} onChange={myMock} />);
+  const view = shallow(
+    <Select onChange={myMock} aria-label="onchange Select">
+      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </Select>
+  );
   view.find('select').simulate('change', event);
   expect(myMock).toBeCalledWith(newValue, event);
-});
-
-test('Test default prop functions', () => {
-  const testOptions = [
-    { value: 'please choose', label: 'Please Choose', disabled: true },
-    { value: 'mr', label: 'Mr', disabled: false },
-    { value: 'miss', label: 'Miss', disabled: false },
-    { value: 'mrs', label: 'Mrs', disabled: false },
-    { value: 'ms', label: 'Ms', disabled: false },
-    { value: 'dr', label: 'Dr', disabled: false },
-    { value: 'other', label: 'Other', disabled: true }
-  ];
-  const view = shallow(<Select options={testOptions} aria-label="test default props functions" />);
-  expect(view).toMatchSnapshot();
-});
-
-test('Test default prop functions for grouped Select', () => {
-  const testOptions = [
-    {
-      groupLabel: 'Group1',
-      options: [
-        { value: '1', label: 'The First Option' },
-        { value: '2', label: 'Second option is selected by default' }
-      ]
-    },
-    {
-      groupLabel: 'Group2',
-      options: [{ value: '3', label: 'The Third Option' }, { value: '4', label: 'The Fourth option' }]
-    }
-  ];
-  const view = shallow(
-    <Select options={testOptions} isGrouped aria-label="test default props func for grouped Select" />
-  );
-  expect(view).toMatchSnapshot();
 });
