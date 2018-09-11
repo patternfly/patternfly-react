@@ -1,11 +1,9 @@
 .vertical-tabs-pf {
-  background: transparent;
   padding: 0;
   list-style: none;
 }
 
 .vertical-tabs-pf-tab {
-  color: inherit;
   margin-top: 4px;
   position: relative;
 
@@ -23,16 +21,14 @@
   }
 
   &.active {
-    .btn.btn-link {
+    > .btn.btn-link {
       color: $vertical-tab-pf-active-color;
 
       &::before {
         background: $vertical-tab-pf-active-color;
-        content: " ";
-        height: 100%;
+        content: "\00a0"; // &nbsp;
         left: 0;
         position: absolute;
-        top: 0;
         width: 3px;
       }
     }
@@ -40,5 +36,41 @@
 
   &:first-of-type {
     margin-top: 0;
+  }
+
+  > .vertical-tabs-pf {
+    > .vertical-tabs-pf-tab {
+      position: initial;
+      padding-left: 15px;
+    }
+  }
+}
+
+.vertical-tabs-pf.restrict-tabs {
+  .vertical-tabs-pf-tab {
+    display: none;
+
+    /* Show any active tab, tab that has an active descendant, or is force shown */
+    &.active,
+    &.active-descendant,
+    &.shown {
+      display: block;
+    }
+  }
+
+  /* Show siblings of the active tab */
+  &.active-tab {
+    > .vertical-tabs-pf-tab {
+      display: block;
+    }
+  }
+
+  /* Show the direct children of an active tab */
+  .vertical-tabs-pf-tab.active {
+    > .vertical-tabs-pf {
+      > .vertical-tabs-pf-tab {
+        display: block;
+      }
+    }
   }
 }
