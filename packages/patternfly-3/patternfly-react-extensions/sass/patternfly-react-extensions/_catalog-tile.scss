@@ -1,0 +1,65 @@
+.catalog-tile-pf {
+  background: $card-pf-bg-color;
+  border: 1px solid $color-pf-black-300;
+  box-shadow: 0 1px 1px rgba(3, 3, 3, 0.175);
+  height: $catalog-tile-pf-height;
+  margin: 0 20px $catalog-tile-pf-margin-bottom 0;
+  padding: 15px;
+  width: $catalog-tile-pf-width;
+
+  &.featured {
+    border-top-color: $card-pf-accented-border-top-color;
+    border-top-width: 2px;
+  }
+}
+
+.catalog-tile-pf-header {
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+}
+
+.catalog-tile-pf-icon {
+  height: 40px;
+  width: 49px;
+}
+
+.catalog-tile-pf-badge-container {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+
+  .catalog-tile-pf-badge {
+    font-size: ($font-size-base + 1);
+    padding-left: 5px;
+
+    > .fa,
+    > .pficon {
+      vertical-align: top;
+    }
+  }
+}
+
+.catalog-tile-pf-body {
+  margin-top: 15px;
+
+  .catalog-tile-pf-title {
+    margin: 0;
+    font-size: ($font-size-base + 1);
+    font-weight: 400;
+    padding: 0;
+  }
+
+  .catalog-tile-pf-subtitle {
+    color: $color-pf-black-500;
+    font-size: $font-size-base;
+    margin: 0;
+  }
+
+  .catalog-tile-pf-description {
+    margin-top: 15px;
+    max-height: 80px;
+    overflow-y: hidden;
+  }
+}
