@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`localized ExpandCollapse 1`] = `
+<ExpandCollapse
+  align="left"
+  className=""
+  textCollapsed="Click to expand"
+  textExpanded="Click to collapse"
+>
+  <div
+    className="expand-collapse-pf"
+  >
+    <div
+      className="expand-collapse-pf-left"
+    >
+      <span
+        className="fa fa-angle-right"
+      />
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="link"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Click to expand
+        </button>
+      </Button>
+    </div>
+  </div>
+</ExpandCollapse>
+`;
+
+exports[`localized ExpandCollapse 2`] = `
+<ExpandCollapse
+  align="left"
+  className=""
+  textCollapsed="Click to expand"
+  textExpanded="Click to collapse"
+>
+  <div
+    className="expand-collapse-pf"
+  >
+    <div
+      className="expand-collapse-pf-left"
+    >
+      <span
+        className="fa fa-angle-down"
+      />
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="link"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          Click to collapse
+        </button>
+      </Button>
+    </div>
+    <div
+      id="content"
+    >
+      My text
+    </div>
+  </div>
+</ExpandCollapse>
+`;

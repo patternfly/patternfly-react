@@ -1,0 +1,15 @@
+.expand-collapse-pf {
+  .expand-collapse-pf-left {
+    text-align: left;
+  }
+
+  .expand-collapse-pf-center {
+    text-align: center;
+  }
+
+  .btn.btn-link {
+    &:focus {
+      outline: none;
+    }
+  }
+}
