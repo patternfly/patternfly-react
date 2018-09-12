@@ -1,6 +1,8 @@
 # Contributing to PatternFly React
 
-> ## Looking for PatternFly 4 React Contribution Guide? [Go Here](./packages/react-core/CONTRIBUTING.md)
+> ### Looking for a quick guide to PatternFly 3 React Contribution? [Go Here](./packages/patternfly-3/patternfly-react/CONTRIBUTING.md)
+>
+> ### Looking for a quick guide to PatternFly 4 React Contribution? [Go Here](./packages/patternfly-4/react-core/CONTRIBUTING.md)
 
 ## Outline
 
@@ -120,7 +122,7 @@ Inside the package directory:
 
 ### Using Generators
 
-To make contributing components and packages easier a generator utilty has been provided.
+To make contributing components and packages easier a generator utility has been provided.
 
 To start the generator run:
 
@@ -145,9 +147,10 @@ Please ensure that all React UI components contributed meet the following guidel
 - This repository serves as a UI / presentational component library only. This means we should not be introducing container components which subscribe to state updates or handle data fetching (i.e. redux aware components). Prefer [stateless functional components](http://buildwithreact.com/article/stateless-functional-components)
   when possible and accept [props](https://facebook.github.io/react/docs/components-and-props.html) as UI display parameters.
 - Provide a [single default export](http://exploringjs.com/es6/ch_modules.html#_single-default-export) for exporting your React UI component as an ES6 Module in your component's jsx definition.
-- Provide an associated `.stories.js` [story](https://getstorybook.io/docs/react-storybook/basics/writing-stories) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybooks/storybook-addon-knobs) to enable dynamic visualizations of your component's props.
+- For PatternFly 3 components, provide an associated `.stories.js` [story](https://getstorybook.io/docs/react-storybook/basics/writing-stories) for your component. Stories should demonstrate as many different UI states for your component as possible. Use Storybook [knobs](https://github.com/storybooks/storybook-addon-knobs) to enable dynamic visualizations of your component's props.
+  For PatternFly 4 components, provide associated examples for documentation in the examples directory for the component.
 - Provide a [jest snapshot test](https://facebook.github.io/jest/docs/snapshot-testing.html) to ensure your UI markup does not change unexpectedly.
-- Ensure the component's rendered design and Storybook stories meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
+- Ensure the component's rendered design and Storybook stories for PatternFly 3 or Documentation examples for PatternFly 4 meet [PatternFly design standard](https://github.com/patternfly/patternfly-design).
   **Note:** If your component does not yet have PatternFly design documentation, the PatternFly React design team will first confirm that the pattern passes the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) and then start the process for generating design documentation.
 - Ensure the code is properly formatted and there are no linting errors. PatternFly React uses custom eslint configuration based on [Javascript Standard Style](https://standardjs.com/) and [Prettier](https://github.com/prettier/prettier) for code formatting. You can automatically format your code with `yarn prettier` and run the project's linter with `yarn lint`.
 
@@ -164,10 +167,14 @@ Please ensure that all React UI components contributed meet the following guidel
 - Always prefer **default imports** between components in the same folder
 - Components that are not getting exported (to consumers) from
   the `index.js` file should be in a subfolder named `InnerComponents`
-- Storybooks
+- Storybooks for PatternFly 3
   - Provide a storybook with your component named on the parent component with a `.stories.js` suffix (e.g., `ListGroup.stories.js`)
   - When your stories contain multiple files, put them in a subfolder named `Stories`
   - `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
+- Documentation for PatternFly 4
+  - Provide documentation for your component with examples in the component's example directory. examples (e.g `Listgroup/examples/SimpleListGroup.js`)
+  - All examples should be added to the component's documentation file (`ComponentName.docs.js`) exports.
+    See the getting started guide for more information on [Adding documentation](./GETTING-STARTED.md#adding-component-documentation)
 - When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
 - When destructuring or spreading expressions , use ...props as the variable name.
 - Exporting components from other libraries (without manipulating them)
@@ -184,6 +191,8 @@ Please ensure that all React UI components contributed meet the following guidel
   # index.js
   export * from './Badge';
   ```
+
+  **Please see the [Getting Started Readme](./GETTING-STARTED.md) for additional information in getting started with building PatterFly 4 react components.**
 
 ### Code Contribution Guidelines
 
@@ -206,7 +215,33 @@ git remote add upstream https://github.com/patternfly/patternfly-react.git
 $ git checkout -b my-branch -t upstream/master
 ```
 
-3.  Develop your component. After development is complete, ensure tests and lint standards pass.
+3. Generate your Component
+
+```bash
+# Run the tool to Generate the component scaffolding
+ yarn generate
+```
+
+- When you select the option to generate a PatternFly 3 component, a structure resembling the following is generated
+  ```text
+  packages/patternfly-3/patternfly-react/src/components/[ComponentName]/
+    index.js - Barrel File exporting public exports
+    ComponentName.js - Component Implementation
+    ComponentName.test.js - Component Tests
+    ComponentName.stories.js - Component Stories
+  ```
+- When you select the option to generate a PatternFly 4 component, a structure resembling the following is generated
+  ```text
+  packages/patternfly-4/react-core/src/[type]/[ComponentName]/
+    index.js - Barrel File exporting public exports
+    ComponentName.js - Component Implementation
+    ComponentName.test.js - Component Tests
+    ComponentName.docs.js - Component Docs
+    examples/ - dir for all examples
+        SimpleComp
+  ```
+
+4.  Develop your component. After development is complete, ensure tests and lint standards pass.
 
 ```text
 $ yarn test
@@ -214,7 +249,7 @@ $ yarn test
 
 Ensure no lint errors are introduced in `yarn-error.log` after running this command.
 
-4.  Add a commit using `yarn commit`:
+5.  Add a commit using `yarn commit`:
 
 This project uses [`semantic-release`](https://npmjs.com/package/semantic-release) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
 
@@ -229,7 +264,7 @@ $ yarn commit
 
 ... and follow the instruction of the interactive prompt.
 
-5.  Rebase
+6.  Rebase
 
 Use `git rebase` (not `git merge`) to sync your work from time to time. Ensure all commits related to a single issue have been [squashed](https://github.com/ginatrapani/todo.txt-android/wiki/Squash-All-Commits-Related-to-a-Single-Issue-into-a-Single-Commit).
 
@@ -238,29 +273,30 @@ $ git fetch upstream
 $ git rebase upstream/master
 ```
 
-6.  Push
+7.  Push
 
 ```text
 $ git push origin my-branch
 ```
 
-7.  Export Storybook
+8.  Create a Demo Storybook
 
-Lastly, you'll want to export Storybook in your fork and note the Storybook url generated.
+    - For PatternFly 4, you can build and deploy the demo documentation to any hosting site of your choice.
 
-```text
-$ yarn storybook:build
-$ yarn storybook:deploy
-```
+    - For PatternFly 3, you'll want to export Storybook in your fork and note the Storybook url generated.
+      ```text
+      $ yarn storybook:build
+      $ yarn storybook:deploy
+      ```
 
-8.  Create a Pull Request
+9.  Create a Pull Request
 
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `master` branch. Please be sure to include all of the following in your PR:
 
 - Any relevant issues associated with this pull request (`enhancement` issues, `bug` issues, etc.)
-- Storybook documentation
+- Storybook and Documentation
   - Include a link to the design documentation in the [PatternFly Pattern Library](http://www.patternfly.org/pattern-library/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
-  - Include the generated Storybook url (from **Step 7**)
+  - for PatternFly 3, include the generated Storybook url. For for PatternFly 4, include the url for the deployed documentation. (from **Step 8**)
 
 Once your pull request has been reviewed, if all conditions above have been met your pull request will be approved and merged.
 
