@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownDirection } from '../../../../dist/js';
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownDirection } from '@patternfly/react-core';
 
 export default class ExampleDropdown extends Component {
   static title = 'Dropdown - direction up';
