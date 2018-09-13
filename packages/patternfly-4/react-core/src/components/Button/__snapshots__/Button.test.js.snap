@@ -10,13 +10,13 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #72767b;
   text-align: center;
   white-space: nowrap;
-  background-color: #d1d1d1;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #72767b;
+  background-color: #d1d1d1;
   pointer-events: none;
 }
 
@@ -42,13 +42,13 @@ exports[`danger button 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #ffffff;
   text-align: center;
   white-space: nowrap;
-  background-color: #a30000;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #ffffff;
+  background-color: #a30000;
 }
 
 <button
@@ -74,14 +74,14 @@ exports[`isBlock 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #ffffff;
   text-align: center;
   white-space: nowrap;
-  background-color: #00659c;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
   width: 100%;
+  color: #ffffff;
+  background-color: #00659c;
 }
 
 <button
@@ -106,13 +106,13 @@ exports[`isDisabled 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #72767b;
   text-align: center;
   white-space: nowrap;
-  background-color: #d1d1d1;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #72767b;
+  background-color: #d1d1d1;
   pointer-events: none;
 }
 
@@ -138,13 +138,13 @@ exports[`isFocus 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #ffffff;
   text-align: center;
   white-space: nowrap;
-  background-color: #00659c;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #ffffff;
+  background-color: #00659c;
 }
 
 <button
@@ -169,13 +169,13 @@ exports[`isHover 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #ffffff;
   text-align: center;
   white-space: nowrap;
-  background-color: #00659c;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #ffffff;
+  background-color: #00659c;
 }
 
 <button
@@ -200,13 +200,13 @@ exports[`link button 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #00486e;
   text-align: center;
   white-space: nowrap;
-  background-color: transparent;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #00486e;
+  background-color: transparent;
 }
 
 <button
@@ -232,13 +232,13 @@ exports[`plain button 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1;
-  color: #282d33;
   text-align: center;
   white-space: nowrap;
-  background-color: transparent;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #282d33;
+  background-color: transparent;
 }
 
 <button
@@ -264,13 +264,13 @@ exports[`primary button 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #ffffff;
   text-align: center;
   white-space: nowrap;
-  background-color: #00659c;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #ffffff;
+  background-color: #00659c;
 }
 
 <button
@@ -296,13 +296,13 @@ exports[`secondary button 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #00659c;
   text-align: center;
   white-space: nowrap;
-  background-color: transparent;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #00659c;
+  background-color: transparent;
 }
 
 <button
@@ -328,13 +328,13 @@ exports[`tertiary button 1`] = `
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
-  color: #282d33;
   text-align: center;
   white-space: nowrap;
-  background-color: transparent;
   border: 0px;
   border-radius: 30em;
   text-decoration: none;
+  color: #282d33;
+  background-color: transparent;
 }
 
 <button

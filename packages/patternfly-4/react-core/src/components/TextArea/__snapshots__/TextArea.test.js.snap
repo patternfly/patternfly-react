@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`invalid text input 1`] = `
-.pf-c-form-control.pf-m-invalid {
+.pf-c-form-control {
   display: block;
   width: 100%;
   font-size: 1rem;
@@ -10,16 +10,12 @@ exports[`invalid text input 1`] = `
   background-color: #ffffff;
   border: 1px solid #72767b;
   border-radius: 3px;
-  background-repeat: no-repeat;
-  background-size: 1rem 1rem;
-  border-color: #c00;
-  border-width: 2px;
 }
 
 <textarea
   aria-invalid={true}
   aria-label="invalid textarea"
-  className="pf-c-form-control pf-m-invalid"
+  className="pf-c-form-control"
   onChange={[Function]}
   required={false}
   value="test textarea"

@@ -161,7 +161,7 @@
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer",
-      "<rootDir>/packages/patternfly-4/react-styles/snapshot-serializer"
+      "<rootDir>/packages/patternfly-4/react-core/build/snapshot-serializer"
     ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest",

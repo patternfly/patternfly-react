@@ -292,7 +292,7 @@ exports[`Simple Select input 1`] = `
 `;
 
 exports[`invalid Select input 1`] = `
-.pf-c-form-control.pf-m-invalid {
+.pf-c-form-control {
   display: block;
   width: 100%;
   font-size: 1rem;
@@ -301,16 +301,12 @@ exports[`invalid Select input 1`] = `
   background-color: #ffffff;
   border: 1px solid #72767b;
   border-radius: 3px;
-  background-repeat: no-repeat;
-  background-size: 1rem 1rem;
-  border-color: #c00;
-  border-width: 2px;
 }
 
 <select
   aria-invalid={true}
   aria-label="invalid Select"
-  className="pf-c-form-control pf-m-invalid"
+  className="pf-c-form-control"
   disabled={false}
   onBlur={[Function]}
   onChange={[Function]}

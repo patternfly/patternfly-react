@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/FormControls/styles.css';
+import styles from '@patternfly/patternfly-next/components/FormControl/styles.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
@@ -79,12 +79,7 @@ class TextInput extends React.Component {
     return (
       <input
         {...props}
-        className={css(
-          styles.formControl,
-          className,
-          isAlt && styles.modifiers.formControlAlt,
-          !isValid && styles.modifiers.invalid
-        )}
+        className={css(styles.formControl, className, isAlt && styles.modifiers.formControlAlt)}
         onChange={this.handleChange}
         type={type}
         value={value}

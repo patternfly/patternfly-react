@@ -39,7 +39,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-top.pf-m-align-right {
   display: inline-block;
@@ -307,7 +307,7 @@ exports[`KebabToggle dropup 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-top {
   display: inline-block;
@@ -575,7 +575,7 @@ exports[`KebabToggle expanded 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-expanded {
   display: inline-block;
@@ -843,7 +843,7 @@ exports[`KebabToggle plain 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-plain {
   display: inline-block;
@@ -1111,7 +1111,7 @@ exports[`KebabToggle regular 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -1379,7 +1379,7 @@ exports[`KebabToggle right aligned 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-align-right {
   display: inline-block;
@@ -1653,7 +1653,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-top.pf-m-align-right {
   display: inline-block;
@@ -1928,7 +1928,7 @@ exports[`dropdown dropup 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-top {
   display: inline-block;
@@ -2203,7 +2203,7 @@ exports[`dropdown expanded 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-expanded {
   display: inline-block;
@@ -2478,7 +2478,7 @@ exports[`dropdown regular 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -2753,7 +2753,7 @@ exports[`dropdown right aligned 1`] = `
   background: #ffffff;
   background-clip: padding-box;
   border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3,3,3,0.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,0.06);
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-align-right {
   display: inline-block;

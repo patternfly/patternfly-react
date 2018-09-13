@@ -189,9 +189,9 @@
     node-fetch "^2.1.1"
     url-template "^2.0.8"
 
-"@patternfly/patternfly-next@1.0.22":
-  version "1.0.22"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.22.tgz#55d8e0ee47e60201b0285d2b35481cddc9e501ac"
+"@patternfly/patternfly-next@1.0.43":
+  version "1.0.43"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.43.tgz#64498a29c690b1713fef7e07d0eac701ef064c9a"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"

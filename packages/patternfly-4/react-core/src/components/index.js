@@ -10,3 +10,4 @@ export * from './TextInput';
 export * from './TextArea';
 export * from './Dropdown';
 export * from './Select';
+export * from './Avatar';
