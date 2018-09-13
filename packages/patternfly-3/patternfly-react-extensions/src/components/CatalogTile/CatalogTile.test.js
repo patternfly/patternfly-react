@@ -72,6 +72,18 @@ test('CatalogTile renders properly', () => {
         }
       />
       <CatalogTile
+        id="test-iconClass"
+        iconClass="fa fa-codepen"
+        badges={[
+          <CatalogTile.Badge title="USDA Approved" id="approved">
+            <Icon type="pf" name="ok" />
+          </CatalogTile.Badge>
+        ]}
+        title="CodePen"
+        vendor="provided by CodePen"
+        description="An online community for testing and showcasing user-created HTML, CSS and JavaScript code snippets."
+      />
+      <CatalogTile
         id="test-custom-truncation"
         featured
         iconImg={pfBrand}

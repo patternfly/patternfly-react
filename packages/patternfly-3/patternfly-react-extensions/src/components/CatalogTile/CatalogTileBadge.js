@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Icon, OverlayTrigger, Tooltip } from 'patternfly-react';
+import { OverlayTrigger, Tooltip } from 'patternfly-react';
 
 const CatalogTileBadge = ({ children, className, id, title, ...props }) => {
   const classes = classNames('catalog-tile-pf-badge', className);
@@ -20,7 +20,11 @@ const CatalogTileBadge = ({ children, className, id, title, ...props }) => {
     );
   }
 
-  return <Icon className={classes} {...props} />;
+  return (
+    <span className={classes} {...props}>
+      {children}
+    </span>
+  );
 };
 
 CatalogTileBadge.propTypes = {
