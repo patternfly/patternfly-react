@@ -5,7 +5,7 @@ import {
   global_spacer_xs as spacerXs,
   global_spacer_md as spacerMd,
   global_BackgroundColor_100 as navBackgroundColor,
-  l_page__sidebar_md_Width as sidebarWidth
+  c_nav_Width as sidebarWidth
 } from '@patternfly/react-tokens';
 
 export default StyleSheet.create({
