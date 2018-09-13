@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/FormControls/styles.css';
+import styles from '@patternfly/patternfly-next/components/FormControl/styles.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
@@ -50,7 +50,7 @@ class Select extends React.Component {
     return (
       <select
         {...props}
-        className={css(styles.formControl, className, !isValid && styles.modifiers.invalid)}
+        className={css(styles.formControl, className)}
         aria-invalid={!isValid}
         onChange={this.handleChange}
         disabled={isDisabled}

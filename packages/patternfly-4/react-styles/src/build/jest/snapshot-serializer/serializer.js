@@ -3,7 +3,7 @@ import { getNodes } from './reactUtils';
 import { getInsertedStyles } from '../../../utils';
 import { addOverrides } from './cssPropertyOverrides';
 
-export function createSerializer() {
+export function createSerializer({ globalCSS = '' } = {}) {
   addOverrides();
   function test(val) {
     return val && !val.withStyles && val.$$typeof === Symbol.for('react.test.json');
@@ -16,7 +16,7 @@ export function createSerializer() {
     });
 
     const selectors = getSelectors(nodes);
-    const styles = getStyles(selectors, getInsertedStyles().join(''));
+    const styles = getStyles(selectors, getInsertedStyles().join(''), globalCSS);
     const code = printer(val);
     if (styles) {
       return `${styles}\n\n${code}`;

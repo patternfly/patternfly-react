@@ -49,8 +49,8 @@ function getComputedStyles(classNames, cssStr) {
   return values;
 }
 
-function getStylesAST(bufferedStyles) {
-  const ast = css.parse(bufferedStyles);
+function getStylesAST(bufferedStyles, globalCSS = '') {
+  const ast = css.parse(`${globalCSS}\n${bufferedStyles}`);
   const vars = {};
   const getVarValue = value => value.replace(/var\(([\w|-]*)\)/g, (full, match) => vars[match]);
   ast.stylesheet.rules = ast.stylesheet.rules.map(rule => {
@@ -81,11 +81,11 @@ function formatComputedStyles(nodeSelectors, computedStyles) {
   return css.stringify(css.parse(cssString));
 }
 
-function getStyles(nodeSelectors, insertedStyles) {
+function getStyles(nodeSelectors, insertedStyles, globalCSS) {
   if (!nodeSelectors.length) {
     return '';
   }
-  const ast = getStylesAST(insertedStyles);
+  const ast = getStylesAST(insertedStyles, globalCSS);
   return nodeSelectors
     .reduce((acc, sel) => {
       if (!sel.length) {
