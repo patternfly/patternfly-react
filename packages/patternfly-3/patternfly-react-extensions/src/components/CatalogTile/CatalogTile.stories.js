@@ -3,12 +3,12 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info/dist/index';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName } from 'storybook/constants/siteConstants';
-import pfBrand from 'patternfly/dist/img/logo.svg';
-import github from 'patternfly/dist/img/github-logo.svg';
+import pfBrand from 'patternfly/dist/img/logo-alt.svg';
+import ngnix from './__images__/nginx.png';
 import { Icon } from 'patternfly-react';
-import { CatalogTile, CatalogTileBadge } from './index';
-
 import { name } from '../../../package.json';
+
+import { CatalogTile, CatalogTileBadge } from './index';
 
 const stories = storiesOf(`${storybookPackageName(name)}/Catalog Components/Catalog Tile`, module);
 
@@ -30,7 +30,11 @@ stories.add(
         id="long-description-test"
         featured
         iconImg={pfBrand}
-        badges={[<CatalogTile.Badge type="fa" name="cog" title="Certified" id="certified" />]}
+        badges={[
+          <CatalogTileBadge title="Certified" id="certified">
+            <Icon type="fa" name="cog" />
+          </CatalogTileBadge>
+        ]}
         title="Patternfly-React"
         vendor={
           <span>
@@ -44,25 +48,24 @@ stories.add(
         }
       />
       <CatalogTile
-        iconImg={github}
+        iconImg={ngnix}
+        badges={[
+          <CatalogTileBadge title="Certified" id="certified">
+            <Icon type="fa" name="cog" />
+          </CatalogTileBadge>
+        ]}
+        title="Nginx"
+        vendor={<span>provided by Nginx</span>}
+        description="The open source web server that powers 400 million websites."
+      />
+      <CatalogTile
+        iconImg={pfBrand}
         badges={[
           <CatalogTileBadge title="Certified" id="certified">
             <Icon type="fa" name="cog" />
           </CatalogTileBadge>,
           <CatalogTileBadge title="USDA Approved" id="approved">
             <Icon type="pf" name="ok" />
-          </CatalogTileBadge>
-        ]}
-        title="GitHub Desktop"
-        vendor="provided by GitHub"
-        description="Simple collaboration from your desktop."
-      />
-      <CatalogTile
-        featured
-        iconImg={pfBrand}
-        badges={[
-          <CatalogTileBadge title="Certified" id="certified">
-            <Icon type="fa" name="cog" />
           </CatalogTileBadge>
         ]}
         title="PatternFly"
