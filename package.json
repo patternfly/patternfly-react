@@ -133,7 +133,7 @@
     "storybook:openurl": "node ./storybook/openBrowser.js",
     "storybook:run": "start-storybook -c storybook -p 6006",
     "storybook": "yarn storybook:run",
-    "stylelint": "stylelint --fix 'packages/**/sass/**/*.scss'",
+    "stylelint": "stylelint --fix 'packages/**/sass/**/*.scss' !**/dist/**/*.scss",
     "test": "yarn lint && jest",
     "test:current": "jest --watch",
     "test:watch": "jest --watchAll",
