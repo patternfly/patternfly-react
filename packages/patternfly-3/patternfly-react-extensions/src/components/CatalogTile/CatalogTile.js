@@ -10,6 +10,7 @@ const CatalogTile = ({
   className,
   featured,
   iconImg,
+  iconClass,
   badges,
   title,
   vendor,
@@ -53,6 +54,7 @@ const CatalogTile = ({
     <div id={id} className={classes} {...props}>
       <div className="catalog-tile-pf-header">
         {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt="" />}
+        {iconClass && <span className={`catalog-tile-pf-icon ${iconClass}`} />}
         {renderBadges()}
       </div>
       <div className="catalog-tile-pf-body">
@@ -73,6 +75,8 @@ CatalogTile.propTypes = {
   featured: PropTypes.bool,
   /** URL of an image for the item's icon */
   iconImg: PropTypes.string,
+  /** Class for the image when an icon is to be used (exclusive from iconImg) */
+  iconClass: PropTypes.string,
   /** Array of badges */
   badges: PropTypes.arrayOf(PropTypes.node),
   /** Tile for the catalog item */
@@ -92,6 +96,7 @@ CatalogTile.defaultProps = {
   className: '',
   featured: false,
   iconImg: null,
+  iconClass: null,
   badges: [],
   vendor: null,
   description: null,

@@ -59,6 +59,17 @@ stories.add(
         description="The open source web server that powers 400 million websites."
       />
       <CatalogTile
+        iconClass="fa fa-codepen"
+        badges={[
+          <CatalogTileBadge id="approved">
+            <Icon type="pf" name="ok" />
+          </CatalogTileBadge>
+        ]}
+        title="CodePen"
+        vendor="provided by CodePen"
+        description="An online community for testing and showcasing user-created HTML, CSS and JavaScript code snippets."
+      />
+      <CatalogTile
         iconImg={pfBrand}
         badges={[
           <CatalogTileBadge title="Certified" id="certified">
