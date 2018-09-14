@@ -24,11 +24,19 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "prebuild": "node ./build/generateIcons.js"
+    "prebuild": "node ./build/generateIcons.js",
+    "build": "yarn build:babel; yarn build:ts",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
+    "build:ts": "node ./scripts/copyTS.js"
   },
   "devDependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.1.0",
-    "node-plop": "^0.15.0"
+    "node-plop": "^0.15.0",
+    "fs-extra": "^6.0.1",
+    "glob": "^7.1.2",
+    "npmlog": "^4.1.2"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
