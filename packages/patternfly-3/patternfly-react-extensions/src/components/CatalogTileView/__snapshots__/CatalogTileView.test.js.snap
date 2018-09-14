@@ -1,0 +1,470 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CatalogTile renders properly 1`] = `
+<div
+  class="catalog-tile-view-pf"
+  id="test-catalog-tile-view"
+>
+  <div
+    class="catalog-tile-view-pf-category"
+    id="category-1"
+  >
+    <div
+      class="catalog-tile-view-pf-category-header"
+    >
+      <span
+        class="catalog-tile-view-pf-category-header-title"
+      >
+        Category 1
+      </span>
+      <span
+        class="pull-right"
+      >
+        <button
+          class="catalog-tile-view-pf-category-view-all pull-right btn btn-link"
+          style="margin-right: 0px;"
+          type="button"
+        >
+          View All (4)
+        </button>
+      </span>
+    </div>
+    <div
+      class="catalog-tile-view-pf-category-body"
+    >
+      <div
+        class="catalog-tile-pf featured"
+      >
+        <div
+          class="catalog-tile-pf-header"
+        >
+          <img
+            alt=""
+            class="catalog-tile-pf-icon"
+            src="<PatternFly Brand Image here>"
+          />
+          <div
+            class="catalog-tile-pf-badge-container"
+          >
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="cog"
+                type="fa"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Certified
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="catalog-tile-pf-body"
+        >
+          <div
+            class="catalog-tile-pf-title"
+          >
+            Patternfly
+          </div>
+          <div
+            class="catalog-tile-pf-subtitle"
+          >
+            <span>
+              PatternFly is a 
+              <a
+                href="redhat.com"
+              >
+                Red Hat
+              </a>
+               sponsored project.
+            </span>
+          </div>
+          <div
+            class="catalog-tile-pf-description"
+          >
+            A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+          </div>
+        </div>
+      </div>
+      <div
+        class="catalog-tile-pf"
+      >
+        <div
+          class="catalog-tile-pf-header"
+        >
+          <img
+            alt=""
+            class="catalog-tile-pf-icon"
+            src="<GitHub Brand Image here>"
+          />
+          <div
+            class="catalog-tile-pf-badge-container"
+          >
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="cog"
+                type="fa"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Certified
+                </span>
+              </span>
+            </span>
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="ok"
+                type="pf"
+              >
+                <span
+                  class="sr-only"
+                >
+                  USDA Approved
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="catalog-tile-pf-body"
+        >
+          <div
+            class="catalog-tile-pf-title"
+          >
+            GitHub Desktop
+          </div>
+          <div
+            class="catalog-tile-pf-subtitle"
+          >
+            provided by GitHub
+          </div>
+          <div
+            class="catalog-tile-pf-description"
+          >
+            Simple collaboration from your desktop.
+          </div>
+        </div>
+      </div>
+      <div
+        class="catalog-tile-pf featured"
+      >
+        <div
+          class="catalog-tile-pf-header"
+        >
+          <img
+            alt=""
+            class="catalog-tile-pf-icon"
+            src="<PatternFly Brand Image here>"
+          />
+          <div
+            class="catalog-tile-pf-badge-container"
+          >
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="cog"
+                type="fa"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Certified
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="catalog-tile-pf-body"
+        >
+          <div
+            class="catalog-tile-pf-title"
+          >
+            Patternfly
+          </div>
+          <div
+            class="catalog-tile-pf-subtitle"
+          >
+            <span>
+              PatternFly is a 
+              <a
+                href="redhat.com"
+              >
+                Red Hat
+              </a>
+               sponsored project.
+            </span>
+          </div>
+          <div
+            class="catalog-tile-pf-description"
+          >
+            A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+          </div>
+        </div>
+      </div>
+      <div
+        class="catalog-tile-pf"
+      >
+        <div
+          class="catalog-tile-pf-header"
+        >
+          <img
+            alt=""
+            class="catalog-tile-pf-icon"
+            src="<GitHub Brand Image here>"
+          />
+          <div
+            class="catalog-tile-pf-badge-container"
+          >
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="cog"
+                type="fa"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Certified
+                </span>
+              </span>
+            </span>
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="ok"
+                type="pf"
+              >
+                <span
+                  class="sr-only"
+                >
+                  USDA Approved
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="catalog-tile-pf-body"
+        >
+          <div
+            class="catalog-tile-pf-title"
+          >
+            GitHub Desktop
+          </div>
+          <div
+            class="catalog-tile-pf-subtitle"
+          >
+            provided by GitHub
+          </div>
+          <div
+            class="catalog-tile-pf-description"
+          >
+            Simple collaboration from your desktop.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="catalog-tile-view-pf-category"
+    id="category-2"
+  >
+    <div
+      class="catalog-tile-view-pf-category-header"
+    >
+      <span
+        class="catalog-tile-view-pf-category-header-title"
+      >
+        Category 2
+      </span>
+    </div>
+    <div
+      class="catalog-tile-view-pf-category-body view-all"
+    >
+      <div
+        class="catalog-tile-pf featured"
+      >
+        <div
+          class="catalog-tile-pf-header"
+        >
+          <img
+            alt=""
+            class="catalog-tile-pf-icon"
+            src="<PatternFly Brand Image here>"
+          />
+          <div
+            class="catalog-tile-pf-badge-container"
+          >
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="cog"
+                type="fa"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Certified
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="catalog-tile-pf-body"
+        >
+          <div
+            class="catalog-tile-pf-title"
+          >
+            Patternfly
+          </div>
+          <div
+            class="catalog-tile-pf-subtitle"
+          >
+            <span>
+              PatternFly is a 
+              <a
+                href="redhat.com"
+              >
+                Red Hat
+              </a>
+               sponsored project.
+            </span>
+          </div>
+          <div
+            class="catalog-tile-pf-description"
+          >
+            A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+          </div>
+        </div>
+      </div>
+      <div
+        class="catalog-tile-pf"
+      >
+        <div
+          class="catalog-tile-pf-header"
+        >
+          <img
+            alt=""
+            class="catalog-tile-pf-icon"
+            src="<GitHub Brand Image here>"
+          />
+          <div
+            class="catalog-tile-pf-badge-container"
+          >
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="cog"
+                type="fa"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Certified
+                </span>
+              </span>
+            </span>
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="ok"
+                type="pf"
+              >
+                <span
+                  class="sr-only"
+                >
+                  USDA Approved
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="catalog-tile-pf-body"
+        >
+          <div
+            class="catalog-tile-pf-title"
+          >
+            GitHub Desktop
+          </div>
+          <div
+            class="catalog-tile-pf-subtitle"
+          >
+            provided by GitHub
+          </div>
+          <div
+            class="catalog-tile-pf-description"
+          >
+            Simple collaboration from your desktop.
+          </div>
+        </div>
+      </div>
+      <div
+        class="catalog-tile-pf featured"
+      >
+        <div
+          class="catalog-tile-pf-header"
+        >
+          <img
+            alt=""
+            class="catalog-tile-pf-icon"
+            src="<PatternFly Brand Image here>"
+          />
+          <div
+            class="catalog-tile-pf-badge-container"
+          >
+            <span>
+              <span
+                class="catalog-tile-pf-badge"
+                name="cog"
+                type="fa"
+              >
+                <span
+                  class="sr-only"
+                >
+                  Certified
+                </span>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          class="catalog-tile-pf-body"
+        >
+          <div
+            class="catalog-tile-pf-title"
+          >
+            Patternfly
+          </div>
+          <div
+            class="catalog-tile-pf-subtitle"
+          >
+            <span>
+              PatternFly is a 
+              <a
+                href="redhat.com"
+              >
+                Red Hat
+              </a>
+               sponsored project.
+            </span>
+          </div>
+          <div
+            class="catalog-tile-pf-description"
+          >
+            A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
