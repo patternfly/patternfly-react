@@ -4,7 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName, STORYBOOK_CATEGORY, DOCUMENTATION_URL } from 'storybook/constants/siteConstants';
 import { name } from '../../../package.json';
-import { select, text, withKnobs } from '@storybook/addon-knobs';
+import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 
 import { ExpandCollapse } from './index';
 import { ALIGN_TYPES } from './constants';
@@ -27,6 +27,7 @@ stories.add(
     <div style={{ width: '600px', border: '1px solid lightgray' }}>
       <ExpandCollapse
         align={select('align', ALIGN_TYPES)}
+        bordered={boolean('bordered', true)}
         textExpanded={text('textExpanded', 'Hide Advanced Options')}
         textCollapsed={text('textCollapsed', 'Show Advanced Options')}
       >

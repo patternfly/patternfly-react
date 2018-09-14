@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { Button } from '../Button';
+import { Icon } from '../Icon';
 
 import { ALIGN_LEFT, ALIGN_CENTER, ALIGN_TYPES } from './constants';
 
@@ -14,20 +15,20 @@ class ExpandCollapse extends React.Component {
   };
 
   render() {
-    const { children, textCollapsed, textExpanded, align, className } = this.props;
+    const { children, textCollapsed, textExpanded, align, className, bordered } = this.props;
+    const { expanded } = this.state;
 
-    const alignClass = classNames({
-      'expand-collapse-pf-left': align === ALIGN_LEFT,
-      'expand-collapse-pf-center': align === ALIGN_CENTER
-    });
+    const separatorClass = classNames('expand-collapse-pf-separator', { bordered });
 
     return (
-      <div className={classNames(['expand-collapse-pf', className])}>
-        <div className={alignClass}>
-          {this.state.expanded ? <span className="fa fa-angle-down" /> : <span className="fa fa-angle-right" />}
+      <div className={classNames('expand-collapse-pf', className)}>
+        <div className="expand-collapse-pf-link-container">
+          {align === ALIGN_CENTER && <span className={separatorClass} />}
           <Button bsStyle="link" onClick={this.onClick}>
-            {this.state.expanded ? textExpanded : textCollapsed}
+            <Icon type="fa" name={expanded ? 'angle-down' : 'angle-right'} />
+            {expanded ? textExpanded : textCollapsed}
           </Button>
+          <span className={separatorClass} />
         </div>
         {this.state.expanded && children}
       </div>
@@ -37,18 +38,24 @@ class ExpandCollapse extends React.Component {
 
 ExpandCollapse.propTypes = {
   children: PropTypes.any.isRequired,
-
-  className: PropTypes.string /** Top-level custom class */,
-  textCollapsed: PropTypes.string /** Text for the link in collapsed state */,
-  textExpanded: PropTypes.string /** Text for the link in expanded state */,
-  align: PropTypes.oneOf(ALIGN_TYPES) /** Align the link to the left or center. Default: left. */
+  /** Top-level custom class */
+  className: PropTypes.string,
+  /** Text for the link in collapsed state */
+  textCollapsed: PropTypes.string,
+  /** Text for the link in expanded state */
+  textExpanded: PropTypes.string,
+  /** Align the link to the left or center. Default: left. */
+  align: PropTypes.oneOf(ALIGN_TYPES),
+  /** Flag to show a separation border line */
+  bordered: PropTypes.bool
 };
 
 ExpandCollapse.defaultProps = {
   className: '',
   textCollapsed: 'Show Advanced Options',
   textExpanded: 'Hide Advanced Options',
-  align: ALIGN_LEFT
+  align: ALIGN_LEFT,
+  bordered: true
 };
 
 export default ExpandCollapse;
