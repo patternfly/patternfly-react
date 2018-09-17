@@ -47,22 +47,51 @@ test('aligned ExpandCollapse', () => {
       <div id="content">My text</div>
     </ExpandCollapse>
   );
-  expect(def.find('.expand-collapse-pf-left')).toHaveLength(1);
-  expect(def.find('.expand-collapse-pf-center')).toHaveLength(0);
+  expect(def.find('.expand-collapse-pf-separator')).toHaveLength(1);
 
   const left = render(
     <ExpandCollapse align={ALIGN_LEFT}>
       <div id="content">My text</div>
     </ExpandCollapse>
   );
-  expect(left.find('.expand-collapse-pf-left')).toHaveLength(1);
-  expect(left.find('.expand-collapse-pf-center')).toHaveLength(0);
+  expect(left.find('.expand-collapse-pf-separator')).toHaveLength(1);
 
   const center = render(
     <ExpandCollapse align={ALIGN_CENTER}>
       <div id="content">My text</div>
     </ExpandCollapse>
   );
-  expect(center.find('.expand-collapse-pf-left')).toHaveLength(0);
-  expect(center.find('.expand-collapse-pf-center')).toHaveLength(1);
+  expect(center.find('.expand-collapse-pf-separator')).toHaveLength(2);
+});
+
+test('ExpandCollapse with separator', () => {
+  const def = render(
+    <ExpandCollapse>
+      <div id="content">My text</div>
+    </ExpandCollapse>
+  );
+  expect(def.find('.expand-collapse-pf-separator.bordered')).toHaveLength(1);
+
+  const noSep = render(
+    <ExpandCollapse bordered={false}>
+      <div id="content">My text</div>
+    </ExpandCollapse>
+  );
+  expect(noSep.find('.expand-collapse-pf-separator')).toHaveLength(1);
+  expect(noSep.find('.expand-collapse-pf-separator.bordered')).toHaveLength(0);
+
+  const center = render(
+    <ExpandCollapse align={ALIGN_CENTER}>
+      <div id="content">My text</div>
+    </ExpandCollapse>
+  );
+  expect(center.find('.expand-collapse-pf-separator.bordered')).toHaveLength(2);
+
+  const centerNoSep = render(
+    <ExpandCollapse align={ALIGN_CENTER} bordered={false}>
+      <div id="content">My text</div>
+    </ExpandCollapse>
+  );
+  expect(centerNoSep.find('.expand-collapse-pf-separator')).toHaveLength(2);
+  expect(centerNoSep.find('.expand-collapse-pf-separator.bordered')).toHaveLength(0);
 });
