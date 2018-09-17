@@ -105,7 +105,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "yarn clean:build && lerna run prebuild --parallel && lerna run build --parallel && lerna run postbuild",
-    "build:docs": "yarn build && lerna run build --scope=@patternfly/react-docs --stream",
+    "build:docs": "yarn build && lerna run docbuild --scope=@patternfly/react-docs --stream",
     "clean": "yarn clean:build",
     "clean:build": "rm -rf packages/*/dist && rm -rf packages/patternfly-?/*/dist",
     "commit": "git-cz",

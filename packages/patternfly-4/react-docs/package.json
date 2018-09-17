@@ -30,7 +30,7 @@
     "gatsby"
   ],
   "scripts": {
-    "postbuild": "gatsby build && node build/copyDocs.js",
+    "docbuild": "gatsby build && node build/copyDocs.js",
     "develop": "gatsby develop"
   },
   "browserslist": [
