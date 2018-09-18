@@ -12,16 +12,8 @@ class CardHeightMatching extends React.Component {
   }
 
   componentDidMount() {
-    // setup the event listening on '_container' for our height matching selectors
-    this._selectors.forEach(selector => {
-      const elements = this._container.querySelectorAll(selector);
-      this._resizeSensors.push(new ResizeSensor(elements, debounce(() => this._matchHeights([selector]), 200)));
-    });
-
     // schedule the initial height matching
-    setTimeout(() => {
-      this._matchHeights();
-    }, 0);
+    this._matchHeights();
   }
 
   componentDidUpdate() {
@@ -32,15 +24,31 @@ class CardHeightMatching extends React.Component {
   }
 
   componentWillUnmount() {
+    this._removeSensors();
+  }
+
+  _addSensors() {
+    // setup the event listening on '_container' for our height matching selectors
+    this._selectors.forEach(selector => {
+      const elements = this._container.querySelectorAll(selector);
+      this._resizeSensors.push(new ResizeSensor(elements, debounce(() => this._matchHeights([selector]), 200)));
+    });
+  }
+
+  _removeSensors() {
     this._resizeSensors.forEach(sensor => {
       sensor.detach();
     });
+    this._resizeSensors = [];
   }
 
   _matchHeights(selectors = this._selectors) {
     if (!this._container) {
       return;
     }
+
+    // Remove any existing sensors so they do not detect changes made here
+    this._removeSensors();
 
     const arrayMap = elements =>
       Array.prototype.map.call(elements, el => el.scrollHeight).reduce((pre, cur) => Math.max(pre, cur), -Infinity);
@@ -54,6 +62,9 @@ class CardHeightMatching extends React.Component {
         el.style.height = `${maxHeight}px`;
       });
     });
+
+    // Add resize sensors to watch for resizes
+    this._addSensors();
   }
 
   render() {
