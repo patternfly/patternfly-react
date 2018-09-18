@@ -259,72 +259,80 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
     >
       Tab One
     </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="one-one"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
+    <ul
+      class="vertical-tabs-pf"
     >
-      Tab One-One
-    </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab active"
-    id="one-one-one"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
-    >
-      Tab One-One-One
-    </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="one-one-two"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
-    >
-      Tab One-One-Two
-    </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="one-one-three"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
-    >
-      Tab One-One-Three
-    </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="one-two"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
-    >
-      Tab One-Two
-    </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="one-three"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
-    >
-      Tab One-Three
-    </button>
+      <li
+        class="vertical-tabs-pf-tab"
+        id="one-one"
+      >
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          Tab One-One
+        </button>
+        <ul
+          class="vertical-tabs-pf active-tab"
+        >
+          <li
+            class="vertical-tabs-pf-tab active"
+            id="one-one-one"
+          >
+            <button
+              class="btn btn-link"
+              type="button"
+            >
+              Tab One-One-One
+            </button>
+          </li>
+          <li
+            class="vertical-tabs-pf-tab"
+            id="one-one-two"
+          >
+            <button
+              class="btn btn-link"
+              type="button"
+            >
+              Tab One-One-Two
+            </button>
+          </li>
+          <li
+            class="vertical-tabs-pf-tab"
+            id="one-one-three"
+          >
+            <button
+              class="btn btn-link"
+              type="button"
+            >
+              Tab One-One-Three
+            </button>
+          </li>
+        </ul>
+      </li>
+      <li
+        class="vertical-tabs-pf-tab"
+        id="one-two"
+      >
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          Tab One-Two
+        </button>
+      </li>
+      <li
+        class="vertical-tabs-pf-tab"
+        id="one-three"
+      >
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          Tab One-Three
+        </button>
+      </li>
+    </ul>
   </li>
   <li
     class="vertical-tabs-pf-tab test-tab-class"
@@ -336,39 +344,43 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
     >
       Tab Two
     </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="two-one"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
+    <ul
+      class="vertical-tabs-pf"
     >
-      Tab Two-One
-    </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="two-two"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
-    >
-      Tab Two-Two
-    </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="two-three"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
-    >
-      Tab Two-Three
-    </button>
+      <li
+        class="vertical-tabs-pf-tab"
+        id="two-one"
+      >
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          Tab Two-One
+        </button>
+      </li>
+      <li
+        class="vertical-tabs-pf-tab"
+        id="two-two"
+      >
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          Tab Two-Two
+        </button>
+      </li>
+      <li
+        class="vertical-tabs-pf-tab"
+        id="two-three"
+      >
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          Tab Two-Three
+        </button>
+      </li>
+    </ul>
   </li>
   <li
     class="vertical-tabs-pf-tab"
@@ -380,28 +392,32 @@ exports[`Vertical Tabs renders tabs properly 1`] = `
     >
       Tab Three
     </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="three-one"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
+    <ul
+      class="vertical-tabs-pf"
     >
-      Tab Three-One
-    </button>
-  </li>
-  <li
-    class="vertical-tabs-pf-tab"
-    id="three-two"
-  >
-    <button
-      class="btn btn-link"
-      type="button"
-    >
-      Tab Three-Two
-    </button>
+      <li
+        class="vertical-tabs-pf-tab"
+        id="three-one"
+      >
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          Tab Three-One
+        </button>
+      </li>
+      <li
+        class="vertical-tabs-pf-tab"
+        id="three-two"
+      >
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          Tab Three-Two
+        </button>
+      </li>
+    </ul>
   </li>
   <li
     class="vertical-tabs-pf-tab"
