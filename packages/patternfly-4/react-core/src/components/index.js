@@ -11,3 +11,4 @@ export * from './TextArea';
 export * from './Dropdown';
 export * from './Select';
 export * from './Avatar';
+export * from './Brand';
