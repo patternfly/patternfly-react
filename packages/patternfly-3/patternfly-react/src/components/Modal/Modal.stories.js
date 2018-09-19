@@ -8,7 +8,10 @@ import { MockModalManager, basicExampleSource } from './__mocks__/mockModalManag
 import { Modal } from '../../index';
 import { name } from '../../../package.json';
 
-const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Modal Overlay`, module);
+const stories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/Modal Overlay`,
+  module
+);
 
 stories.add(
   'Modal',

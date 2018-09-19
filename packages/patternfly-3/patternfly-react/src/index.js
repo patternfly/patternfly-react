@@ -26,6 +26,7 @@ export * from './components/Masthead';
 export * from './components/MenuItem';
 export * from './components/MessageDialog';
 export * from './components/Modal';
+export * from './components/ModelessOverlay';
 export * from './components/Nav';
 export * from './components/Navbar';
 export * from './components/Notification';
