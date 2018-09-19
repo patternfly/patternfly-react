@@ -193,6 +193,10 @@
   version "1.0.43"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.43.tgz#64498a29c690b1713fef7e07d0eac701ef064c9a"
 
+"@patternfly/patternfly-next@1.0.44":
+  version "1.0.44"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.44.tgz#556a48dcfbb24a01f65363656c725a35a731bb0c"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
