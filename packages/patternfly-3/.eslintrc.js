@@ -14,13 +14,15 @@ module.exports = {
       }
     },
     {
-      files: ['**/*.docs.js', '**/examples/**'],
+      files: ['**/*.js'],
       rules: {
-        'import/no-extraneous-dependencies': [
+        'import/no-unresolved': [
           'error',
-          // docs and examples are copied to react-docs
-          { packageDir: './packages/patternfly-4/react-docs' }
-        ]
+          {
+            ignore: ['patternfly-react']
+          }
+        ],
+        'import/extensions': 'off'
       }
     }
   ],
@@ -31,14 +33,10 @@ module.exports = {
           resolve: {
             modules: [
               path.resolve(__dirname, './'),
-              path.resolve(__dirname, './node_modules')
-            ],
-            alias: {
-              '@patternfly/react-icons': path.resolve(
-                __dirname,
-                './packages/react-icons/src'
-              )
-            }
+              path.resolve(__dirname, './node_modules'),
+              path.resolve(__dirname, '../../'),
+              path.resolve(__dirname, '../../node_modules')
+            ]
           }
         }
       }

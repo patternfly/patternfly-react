@@ -1,6 +1,0 @@
-node_modules
-dist
-public
-scripts/generators/*/templates/*
-packages/react-icons/src/icons/
-packages/react-icons/src/index.js
