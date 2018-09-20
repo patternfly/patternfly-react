@@ -11,6 +11,7 @@ env:
 notifications:
   email: false
 before_install:
+- npm install --global surge
 - .travis/before_install.sh
 - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.7.0
 - export PATH=$HOME/.yarn/bin:$PATH
@@ -22,6 +23,8 @@ script:
 after_success:
 - .travis/after_success.sh
 - .travis/release.sh
+- chmod ugo+x ./.travis/deploy_pr.sh
+- ./.travis/deploy_pr.sh
 git:
   depth: 1
 branches:
