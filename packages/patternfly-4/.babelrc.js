@@ -24,19 +24,12 @@ module.exports = {
             }
             return `@patternfly/react-icons/dist/js/${importPath}`;
           }
-        },
-        'react-bootstrap': {
-          preventFullImport: true,
-          transform: importName => {
-            const moduleDir = !modules ? 'es' : 'lib';
-            return `react-bootstrap/${moduleDir}/${importName}`;
-          }
         }
       }
     ]
   ].filter(Boolean),
   ignore: (() => {
-    const ignore = ['src/**/__snapshots__', 'src/**/*.stories.js', 'src/**/Stories'];
+    const ignore = ['src/**/__snapshots__'];
     if (babelENV.includes('production')) {
       ignore.push('test.js', '__mocks__');
     }
