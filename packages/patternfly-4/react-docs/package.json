@@ -27,15 +27,14 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-emotion": "^9.2.9",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "build": "yarn copy-docs && gatsby build",
-    "copy-docs": "node build/copyDocs.js",
+    "build": "gatsby build",
+    "postbuild": "node build/copyDocs.js",
     "develop": "gatsby develop"
   },
   "browserslist": [

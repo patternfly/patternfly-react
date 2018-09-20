@@ -45,6 +45,12 @@
     "@babel/types" "7.0.0-beta.51"
     lodash "^4.17.5"
 
+"@babel/helper-module-imports@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.0.0.tgz#96081b7111e486da4d2cd971ad1a4fe216cc2e3d"
+  dependencies:
+    "@babel/types" "^7.0.0"
+
 "@babel/helper-plugin-utils@^7.0.0-beta.48":
   version "7.0.0-beta.48"
   resolved "https://registry.yarnpkg.com/@babel/helper-plugin-utils/-/helper-plugin-utils-7.0.0-beta.48.tgz#bf310f89e91d146ac0f1369562164be45edba587"
@@ -70,6 +76,12 @@
     chalk "^2.0.0"
     esutils "^2.0.2"
     js-tokens "^3.0.0"
+
+"@babel/runtime@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0.tgz#adeb78fedfc855aa05bc041640f3f6f98e85424c"
+  dependencies:
+    regenerator-runtime "^0.12.0"
 
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
@@ -111,6 +123,14 @@
     lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
+"@babel/types@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.0.0.tgz#6e191793d3c854d19c6749989e3bc55f0e962118"
+  dependencies:
+    esutils "^2.0.2"
+    lodash "^4.17.10"
+    to-fast-properties "^2.0.0"
+
 "@emotion/babel-utils@^0.6.4":
   version "0.6.9"
   resolved "https://registry.yarnpkg.com/@emotion/babel-utils/-/babel-utils-0.6.9.tgz#bb074fadad65c443a575d3379488415fd194fc75"
@@ -142,6 +162,10 @@
 "@emotion/stylis@^0.6.10":
   version "0.6.12"
   resolved "https://registry.yarnpkg.com/@emotion/stylis/-/stylis-0.6.12.tgz#3fb58220e0fc9e380bcabbb3edde396ddc1dfe6e"
+
+"@emotion/stylis@^0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@emotion/stylis/-/stylis-0.7.0.tgz#4c30e6fccc9555e42fa6fef98b3bd0788b954684"
 
 "@emotion/unitless@^0.6.2", "@emotion/unitless@^0.6.6":
   version "0.6.6"
@@ -188,10 +212,6 @@
     lodash "^4.17.4"
     node-fetch "^2.1.1"
     url-template "^2.0.8"
-
-"@patternfly/patternfly-next@1.0.43":
-  version "1.0.43"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.43.tgz#64498a29c690b1713fef7e07d0eac701ef064c9a"
 
 "@patternfly/patternfly-next@1.0.44":
   version "1.0.44"
@@ -1783,6 +1803,24 @@ babel-plugin-check-es2015-constants@^6.22.0, babel-plugin-check-es2015-constants
   resolved "https://registry.yarnpkg.com/babel-plugin-check-es2015-constants/-/babel-plugin-check-es2015-constants-6.22.0.tgz#35157b101426fd2ffd3da3f75c7d1e91835bbf8a"
   dependencies:
     babel-runtime "^6.22.0"
+
+babel-plugin-emotion@^9.2.10:
+  version "9.2.10"
+  resolved "https://registry.yarnpkg.com/babel-plugin-emotion/-/babel-plugin-emotion-9.2.10.tgz#983c288106cece7ce761df0513683ef0d241c466"
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0"
+    "@emotion/babel-utils" "^0.6.4"
+    "@emotion/hash" "^0.6.2"
+    "@emotion/memoize" "^0.6.1"
+    "@emotion/stylis" "^0.7.0"
+    babel-core "^6.26.3"
+    babel-plugin-macros "^2.0.0"
+    babel-plugin-syntax-jsx "^6.18.0"
+    convert-source-map "^1.5.0"
+    find-root "^1.1.0"
+    mkdirp "^0.5.1"
+    source-map "^0.5.7"
+    touch "^2.0.1"
 
 babel-plugin-emotion@^9.2.6:
   version "9.2.6"
@@ -4218,6 +4256,14 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
+create-emotion-server@^9.2.10:
+  version "9.2.10"
+  resolved "https://registry.yarnpkg.com/create-emotion-server/-/create-emotion-server-9.2.10.tgz#543d36691b1153940c79c12f44cdbbe31da01ba7"
+  dependencies:
+    html-tokenize "^2.0.0"
+    multipipe "^1.0.2"
+    through "^2.3.8"
+
 create-emotion-server@^9.2.6:
   version "9.2.6"
   resolved "https://registry.yarnpkg.com/create-emotion-server/-/create-emotion-server-9.2.6.tgz#42cf8558b1c03f208503efec19cc913947bfae45"
@@ -5123,11 +5169,24 @@ emotion-server@^9.2.6:
   dependencies:
     create-emotion-server "^9.2.6"
 
+emotion-server@^9.2.9:
+  version "9.2.10"
+  resolved "https://registry.yarnpkg.com/emotion-server/-/emotion-server-9.2.10.tgz#c34090b280706a9839ffd18e3dd8b3e600ba15ee"
+  dependencies:
+    create-emotion-server "^9.2.10"
+
 emotion@^9.2.6:
   version "9.2.6"
   resolved "https://registry.yarnpkg.com/emotion/-/emotion-9.2.6.tgz#48517515e769bca6d8f7ff18425a7f133b010f22"
   dependencies:
     babel-plugin-emotion "^9.2.6"
+    create-emotion "^9.2.6"
+
+emotion@^9.2.9:
+  version "9.2.10"
+  resolved "https://registry.yarnpkg.com/emotion/-/emotion-9.2.10.tgz#9ba8e33d3dff1352af03f92d761ac6889cb0c545"
+  dependencies:
+    babel-plugin-emotion "^9.2.10"
     create-emotion "^9.2.6"
 
 encodeurl@~1.0.2:
@@ -6600,6 +6659,12 @@ gatsby-module-loader@^1.0.11:
   dependencies:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
+
+gatsby-plugin-emotion@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-2.0.5.tgz#e44d0ee58fc07bb49889a28ca51e0cb4690aeeb4"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
 
 gatsby-plugin-react-helmet@^2.0.10:
   version "2.0.11"
@@ -13233,6 +13298,10 @@ regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 
+regenerator-runtime@^0.12.0:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
+
 regenerator-transform@^0.10.0:
   version "0.10.1"
   resolved "https://registry.yarnpkg.com/regenerator-transform/-/regenerator-transform-0.10.1.tgz#1e4996837231da8b7f3cf4114d71b5691a0680dd"
@@ -15317,6 +15386,12 @@ toposort@^1.0.0:
 touch@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/touch/-/touch-1.0.0.tgz#449cbe2dbae5a8c8038e30d71fa0ff464947c4de"
+  dependencies:
+    nopt "~1.0.10"
+
+touch@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/touch/-/touch-2.0.2.tgz#ca0b2a3ae3211246a61b16ba9e6cbf1596287164"
   dependencies:
     nopt "~1.0.10"
 

@@ -3,7 +3,6 @@ import Content from '../components/content';
 import { Title } from '@patternfly/react-core';
 import { StyleSheet, css } from '@patternfly/react-styles';
 import packageJson from '../../../react-core/package.json';
-// import '@patternfly/react-core/../dist/styles/base.css';
 import {
   global_Color_dark_100 as heroBackgrounColor,
   global_Color_light_100 as heroTextColor
