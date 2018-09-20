@@ -13,6 +13,7 @@ module.exports = {
         path: resolve(__dirname, '../react-core/src')
       }
     },
-    'gatsby-transformer-react-docgen'
+    'gatsby-transformer-react-docgen',
+    'gatsby-plugin-emotion'
   ]
 };

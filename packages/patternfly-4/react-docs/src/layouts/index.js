@@ -1,12 +1,16 @@
-// This is a gatsby limitation will be fixed in newer version
-// eslint-disable-next-line
-import '@patternfly/react-core/../dist/styles/base.css';
-import './index.css';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Page from '../components/page';
 import Navigation from '../components/navigation';
 import PropTypes from 'prop-types';
+
+// This is a gatsby limitation will be fixed in newer version
+const globalStyles = require(`!raw-loader!@patternfly/react-core/../dist/styles/base.css`);
+const localStyles = require(`!raw-loader!./index.css`);
+import { injectGlobal } from 'emotion';
+
+injectGlobal(globalStyles);
+injectGlobal(localStyles);
 
 const propTypes = {
   children: PropTypes.func.isRequired,
