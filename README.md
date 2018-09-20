@@ -10,73 +10,19 @@ This project will provide a set of React UI components for the [PatternFly proje
 
 ## Getting Started
 
-First, add `patternfly-react` dependency to your project. If you use Yarn:
+[Getting Started with PatternFly 3](./packages/patternfly-3/patternfly-react/README.md)
 
-```
-yarn add patternfly-react
-```
+[Getting Started with PatternFly 4](./packages/patternfly-4/react-core/README.md)
 
-Alternatively, if you use npm:
+## Contributing to PatternFly React
 
-```
-npm install --save patternfly-react
-```
+### Code of Conduct
 
-Then import PatternFly React UI modules as ES6 modules:
+This project is governed by the Contributor Covenant version 1.4. All contributors and participants agree to abide by its terms. To report violations, send an email to patternfly@redhat.com.
 
-```
-import { Alert } from 'patternfly-react'
-```
+### Contributing Guide
 
-## Using patterfly-react Sass files
-
-As an alernative to consuming the `patternfly-react.css` file (found in `dist/css`), you can build patternfly-react styles into your css by including the Sass partials from `dist/sass`. The partial `_patternfly-react.scss` will pull in all the partials required for the patternfly-react components. When using the patternfly-react Sass files, you **MUST** include bootstrap and patternfly variables and mixins. An example of the required imports can be found in [patternfly-react.scss](./packages/patternfly-3/patternfly-react/sass/patternfly-react.scss).
-
-## Node Environment
-
-This project currently supports Node [Active LTS](https://github.com/nodejs/Release#release-schedule) releases. Please stay current with Node Active LTS when developing patternfly-react.
-
-For example, to develop with Node 8, use the following:
-
-```
-nvm install 8
-nvm use 8
-```
-
-This project also requires a Yarn version of >=1.6.0. The latest version can be installed [here](https://yarnpkg.com/).
-
-## Storybook UI Development
-
-This project uses [React Storybook](https://storybook.js.org/) to test and demo new React UI components. You can view our current storybook [here](https://rawgit.com/patternfly/patternfly-react/gh-pages/index.html).
-
-How to use Storybook locally:
-
-```
-yarn install
-yarn start
-```
-
-How to deploy storybook to github pages in your fork:
-
-```
-yarn storybook:build
-yarn storybook:deploy
-```
-
-To deploy Storybook to a remote other than `origin`, pass a `--remote` flag to `yarn storybook:deploy`.
-For example, to deploy to your `upstream` remote:
-
-```
-yarn storybook:deploy --remote=upstream
-```
-
-To deploy Storybook to a target branch and serve with rawgit instead of gh-pages, pass `--branch` flag to `yarn storybook:deploy`. This will create a new branch to serve your Storybook (and will be useful if you have multiple open pull requests).
-
-For example, say you have `feature-branch`, you can deploy the storybook to a rawgit branch with:
-
-```
-yarn storybook:deploy --branch=feature-branch-storybook
-```
+If you are interested in contributing to PatternFly React, please see the [Contributing Guide](https://github.com/patternfly/patternfly-react/blob/master/CONTRIBUTING.md).
 
 ## Meeting Notes
 
