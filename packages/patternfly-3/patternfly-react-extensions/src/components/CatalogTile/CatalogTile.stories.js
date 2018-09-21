@@ -38,7 +38,7 @@ stories.add(
         title="Patternfly-React"
         vendor={
           <span>
-            OpenSource funded by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         }
         description={
@@ -82,7 +82,7 @@ stories.add(
         title="PatternFly"
         vendor={
           <span>
-            OpenSource funded by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         }
         description="A community of designers and developers collaborating to build a UI framework for enterprise web applications."
