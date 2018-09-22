@@ -49,7 +49,7 @@ do
   DEPLOY_SUBDOMAIN=`echo "$DEPLOY_SUBDOMAIN_UNFORMATTED" | sed -r 's/[\/|\.]+/\-/g'`
   DEPLOY_DOMAIN=https://${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}.surge.sh
   echo 'Deploy domain variable: ' ${DEPLOY_DOMAIN}
-  ALREADY_DEPLOYED=`surge list | grep ${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}`
+  # ALREADY_DEPLOYED=`surge list | grep ${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}`
   echo 'Already deployed: ' ${ALREADY_DEPLOYED}
 
   surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
