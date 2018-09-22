@@ -1,6 +1,7 @@
 #!/bin/bash
 # Split on "/", ref: http://stackoverflow.com/a/5257398/689223
 REPO_SLUG_ARRAY=(${TRAVIS_REPO_SLUG//\// })
+echo 'Slug array: ' ${REPO_SLUG_ARRAY}
 REPO_OWNER=${REPO_SLUG_ARRAY[0]}
 REPO_NAME=${REPO_SLUG_ARRAY[1]}
 DEPLOY_PATH=./.public
@@ -47,8 +48,9 @@ do
   # https://en.wikipedia.org/wiki/Domain_Name_System#Domain_name_syntax
   DEPLOY_SUBDOMAIN=`echo "$DEPLOY_SUBDOMAIN_UNFORMATTED" | sed -r 's/[\/|\.]+/\-/g'`
   DEPLOY_DOMAIN=https://${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}.surge.sh
+  echo 'Deploy domain variable: ' ${DEPLOY_DOMAIN}
   ALREADY_DEPLOYED=`surge list | grep ${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}`
-  echo 'Already deployed: ' $ALREADY_DEPLOYED
+  echo 'Already deployed: ' ${ALREADY_DEPLOYED}
 
   surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
   if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -z "${ALREADY_DEPLOYED// }" ]
