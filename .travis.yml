@@ -24,7 +24,7 @@ after_success:
 - .travis/after_success.sh
 - .travis/release.sh
 - chmod ugo+x ./.travis/deploy_pr.sh
-- sh -x ./.travis/deploy_pr.sh
+- .travis/deploy_pr.sh
 git:
   depth: 1
 branches:
