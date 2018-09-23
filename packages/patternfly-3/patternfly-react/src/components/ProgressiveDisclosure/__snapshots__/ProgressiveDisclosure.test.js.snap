@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressiveDisclosure one non ProgressiveDisclosure render 1`] = `
+Array [
+  <div
+    controlButton={
+      <Checkbox
+        bsClass="checkbox"
+        checked={false}
+        disabled={false}
+        inline={false}
+        onChange={[Function]}
+        title=""
+        value={0}
+      />
+    }
+    key=".0"
+    show={false}
+  >
+    a simple div
+  </div>,
+]
+`;
+
+exports[`ProgressiveDisclosure renders a checkbox when only one progressive disclosure item exists 1`] = `
+Array [
+  <ProgressiveDisclosureItem
+    controlButton={
+      <Checkbox
+        bsClass="checkbox"
+        checked={false}
+        disabled={false}
+        inline={false}
+        onChange={[Function]}
+        title=""
+        value={0}
+      />
+    }
+    key=".0"
+    show={false}
+  >
+    <span>
+      progressive disclosure form
+    </span>
+  </ProgressiveDisclosureItem>,
+]
+`;
+
+exports[`ProgressiveDisclosure renders a radio button when more than one progressive disclosure items exist 1`] = `
+Array [
+  <ProgressiveDisclosureItem
+    controlButton={
+      <Radio
+        bsClass="radio"
+        checked={false}
+        disabled={false}
+        inline={false}
+        onChange={[Function]}
+        title=""
+        value={0}
+      />
+    }
+    key=".0"
+    show={false}
+  />,
+  <ProgressiveDisclosureItem
+    controlButton={
+      <Radio
+        bsClass="radio"
+        checked={false}
+        disabled={false}
+        inline={false}
+        onChange={[Function]}
+        title=""
+        value={1}
+      />
+    }
+    key=".1"
+    show={false}
+  />,
+]
+`;
