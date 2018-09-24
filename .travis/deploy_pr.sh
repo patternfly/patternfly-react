@@ -53,7 +53,7 @@ do
   # ALREADY_DEPLOYED=`surge list | grep ${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}`
   PR_TOKEN=`echo $GITHUB_PR_TOKEN | rev | base64 --decode`
   GITHUB_PR_COMMENTS=https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/comments
-  echo $GITHUB_PR_COMMENTS ' TOKEN: '  $SURGE_TOKEN ' Github: ' $GITHUB_PR
+  echo $GITHUB_PR_COMMENTS ' TOKEN: '  $SURGE_TOKEN ' Github: ' $PR_TOKEN
   surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
 
   if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -z "${ALREADY_DEPLOYED// }" ]
@@ -62,6 +62,7 @@ do
     # Using the Issues api instead of the PR api
     # Done so because every PR is an issue, and the issues api allows to post general comments,
     # while the PR api requires that comments are made to specific files and specific commits
+    echo `"Authorization: token ${PR_TOKEN}" --request POST ${GITHUB_PR_COMMENTS} --data '{"body":"PatternFly documentation deployment: '${DEPLOY_DOMAIN}'"}'`
     curl -H "Authorization: token ${PR_TOKEN}" --request POST ${GITHUB_PR_COMMENTS} --data '{"body":"PatternFly documentation deployment: '${DEPLOY_DOMAIN}'"}'
   fi
 done
