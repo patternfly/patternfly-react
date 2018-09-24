@@ -2,7 +2,7 @@
 
 exports[`ModelessOverlay renders properly 1`] = `
 <div
-  class="modal modeless-pf fade test-modeless-overlay-class"
+  class="modal modeless-pf fade right-side-modal-pf test-modeless-overlay-class"
   id="test-modeless-overlay-id"
   role="dialog"
   tabindex="-1"
@@ -64,7 +64,7 @@ exports[`ModelessOverlay renders properly 1`] = `
 
 exports[`ModelessOverlay renders properly when setting size 1`] = `
 <div
-  class="modal modeless-pf fade test-modeless-overlay-class"
+  class="modal modeless-pf fade right-side-modal-pf test-modeless-overlay-class"
   id="test-modeless-overlay-id"
   role="dialog"
   tabindex="-1"

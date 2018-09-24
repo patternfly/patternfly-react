@@ -1,9 +1,5 @@
-.modal.modeless-pf {
+.modal.right-side-modal-pf {
   left: initial;
-
-  &.shown {
-    display: block;
-  }
 
   .modal-dialog {
     margin: $navbar-pf-height 0 0 10px;
@@ -17,4 +13,8 @@
     -webkit-transform: translate3d(-75%, 0, 0);
     transform: translate3d(75%, 0, 0);
   }
+}
+
+.modal.modeless-pf.shown {
+  display: block;
 }

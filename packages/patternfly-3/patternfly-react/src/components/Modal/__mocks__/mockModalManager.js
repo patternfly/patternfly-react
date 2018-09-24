@@ -5,7 +5,8 @@ import { Modal } from '../index';
 
 export class MockModalManager extends React.Component {
   propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    rightSide: PropTypes.bool
   };
 
   constructor() {
@@ -21,7 +22,7 @@ export class MockModalManager extends React.Component {
     this.setState({ showModal: true });
   }
   render() {
-    const { children } = this.props;
+    const { children, rightSide } = this.props;
     const defaultBody = (
       <form className="form-horizontal">
         <div className="form-group">
@@ -57,7 +58,7 @@ export class MockModalManager extends React.Component {
           Launch Modal
         </Button>
 
-        <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal show={this.state.showModal} onHide={this.close} className={rightSide ? 'right-side-modal-pf' : ''}>
           <Modal.Header>
             <Modal.CloseButton onClick={this.close} />
             <Modal.Title>Modal Overlay Title</Modal.Title>
