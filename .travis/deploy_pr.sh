@@ -50,9 +50,9 @@ do
   DEPLOY_DOMAIN=https://${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}.surge.sh
   echo 'Deploy domain variable: ' ${DEPLOY_DOMAIN}
   # ALREADY_DEPLOYED=`surge list | grep ${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}`
-  GITHUB_PR=`echo $GITHUB_PR_TOKEN | rev | base64 -D`
+  GITHUB_PR=`echo $GITHUB_PR_TOKEN | rev | base64 --decode`
   GITHUB_PR_COMMENTS=https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/comments
-  SURGE_TOKEN=`echo $SURGE_ENC | rev | base64 -D`
+  SURGE_TOKEN=`echo $SURGE_ENC | rev | base64 --decode`
   echo $GITHUB_PR_COMMENTS ' TOKEN: '  $SURGE_TOKEN ' Github: ' $GITHUB_PR
   surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
 
