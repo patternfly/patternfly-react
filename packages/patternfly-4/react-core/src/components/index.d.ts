@@ -11,6 +11,7 @@ export * from './Dropdown';
 export * from './List';
 export * from './Modal';
 export * from './Nav';
+export * from './Progress';
 export * from './Radio';
 export * from './Select';
 export * from './TextArea';
