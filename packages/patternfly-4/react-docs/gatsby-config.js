@@ -15,5 +15,6 @@ module.exports = {
     },
     'gatsby-transformer-react-docgen',
     'gatsby-plugin-emotion'
-  ]
+  ],
+  pathPrefix: 'patternfly-4'
 };
