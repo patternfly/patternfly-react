@@ -30,5 +30,11 @@ exports[`Alert helpers should warn about deprecated types 1`] = `
     ",
     ],
   ],
+  "results": Array [
+    Object {
+      "isThrow": false,
+      "value": undefined,
+    },
+  ],
 }
 `;

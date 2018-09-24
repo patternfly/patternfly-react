@@ -183,6 +183,12 @@ exports[`Wizard header renders properly: Wizard header snapshot 1`] = `
         "calls": Array [
           Array [],
         ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
       }
     }
   >
@@ -335,6 +341,12 @@ exports[`Wizard review step renders properly: Wizard review step snapshot 1`] = 
         "calls": Array [
           Array [],
         ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
       }
     }
   >
@@ -369,6 +381,12 @@ exports[`Wizard review sub step renders properly: Wizard review sub step snapsho
       [MockFunction] {
         "calls": Array [
           Array [],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
         ],
       }
     }
