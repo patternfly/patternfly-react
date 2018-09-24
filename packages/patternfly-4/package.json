@@ -1,0 +1,30 @@
+{
+  "name": "patternfly4-react-lerna-root",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-plugin-transform-object-assign": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-imports": "^1.5.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-import-resolver-webpack": "^0.9.0",
+    "eslint-plugin-patternfly-react": "*",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "scripts": {
+    "lint": "yarn lint:js && yarn lint:styles",
+    "lint:fix": "yarn lint:js --fix && yarn lint:styles --fix",
+    "lint:js": "eslint --max-warnings 0 **/*.js",
+    "lint:styles": "yarn stylelint",
+    "stylelint": "stylelint '**/sass/**/*.scss' !**/dist/**/*.scss"
+  }
+}

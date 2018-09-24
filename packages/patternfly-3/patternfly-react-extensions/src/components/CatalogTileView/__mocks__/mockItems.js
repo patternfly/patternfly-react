@@ -78,7 +78,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:
@@ -112,7 +112,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:
@@ -144,7 +144,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:
@@ -176,7 +176,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:
@@ -208,7 +208,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:
@@ -246,7 +246,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:
@@ -269,7 +269,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:
@@ -292,7 +292,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:
@@ -315,7 +315,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:
@@ -338,7 +338,7 @@ export const mockItems = [
         image: pfBrand,
         vendor: (
           <span>
-            Provided by <a href="redhat.com">Red Hat</a>
+            provided by <a href="redhat.com">Red Hat</a>
           </span>
         ),
         description:

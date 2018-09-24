@@ -56,6 +56,10 @@
   },
   "scripts": {
     "prebuild": "yarn build:sass && yarn build:less",
+    "build": "yarn build:babel",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
     "build:less": "mkdir -p dist/less && cp -r less/* dist/less",
     "build:sass": "mkdir -p dist/sass && cp -r sass/patternfly-react/* dist/sass && node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react.scss"
   }

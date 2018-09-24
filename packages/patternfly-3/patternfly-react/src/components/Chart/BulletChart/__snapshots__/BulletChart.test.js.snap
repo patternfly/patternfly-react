@@ -109,7 +109,6 @@ exports[`BulletChart renders custom Axis properly 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
@@ -118,34 +117,27 @@ exports[`BulletChart renders custom Axis properly 1`] = `
       color="#0088ce"
       title="data2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={20}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title="Range 1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title="Range 2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title="Range 3"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -236,31 +228,26 @@ exports[`BulletChart renders custom legend properly 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -391,31 +378,26 @@ exports[`BulletChart renders default colors properly 1`] = `
         >
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={0}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={25}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={50}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={75}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={100}
             vertical={true}
           />
@@ -609,31 +591,26 @@ exports[`BulletChart renders extended colors properly 1`] = `
         >
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={0}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={25}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={50}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={75}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={100}
             vertical={true}
           />
@@ -731,31 +708,26 @@ exports[`BulletChart renders properly handling invalid data 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -852,31 +824,26 @@ exports[`BulletChart renders properly with a single range 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -959,31 +926,26 @@ exports[`BulletChart renders properly with a single value 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -1080,31 +1042,26 @@ exports[`BulletChart renders properly with all fields 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -1123,7 +1080,6 @@ exports[`BulletChart renders properly with all fields 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
@@ -1132,34 +1088,27 @@ exports[`BulletChart renders properly with all fields 1`] = `
       color="#0088ce"
       title="data2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={20}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title="Range 1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title="Range 2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title="Range 3"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -1232,31 +1181,26 @@ exports[`BulletChart renders properly with defaults 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -1353,31 +1297,26 @@ exports[`BulletChart renders properly with no thresholds 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -1474,31 +1413,26 @@ exports[`BulletChart renders properly with only error threshold 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -1581,31 +1515,26 @@ exports[`BulletChart renders properly with only value in the legend 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -1624,34 +1553,27 @@ exports[`BulletChart renders properly with only value in the legend 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title=""
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title=""
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title=""
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -1742,31 +1664,26 @@ exports[`BulletChart renders properly with only warning threshold 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -1863,31 +1780,26 @@ exports[`BulletChart renders properly with two ranges 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -1984,31 +1896,26 @@ exports[`BulletChart renders properly with unsorted ranges 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -2114,7 +2021,6 @@ exports[`BulletChart renders properly without axis 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
@@ -2123,34 +2029,27 @@ exports[`BulletChart renders properly without axis 1`] = `
       color="#0088ce"
       title="data2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={20}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title="Range 1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title="Range 2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title="Range 3"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -2241,31 +2140,26 @@ exports[`BulletChart renders stacked chart properly 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -2284,7 +2178,6 @@ exports[`BulletChart renders stacked chart properly 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
@@ -2293,34 +2186,27 @@ exports[`BulletChart renders stacked chart properly 1`] = `
       color="#0088ce"
       title="data2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={20}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title="Range 1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title="Range 2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title="Range 3"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -2411,31 +2297,26 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
       >
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={0}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={25}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={50}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={75}
           vertical={false}
         />
         <BulletChartAxisTic
           className=""
-          text={undefined}
           value={100}
           vertical={false}
         />
@@ -2454,7 +2335,6 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
@@ -2463,34 +2343,27 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
       color="#0088ce"
       title="data2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={20}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title="Range 1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title="Range 2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title="Range 3"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -2584,31 +2457,26 @@ exports[`BulletChart renders vertical chart properly 1`] = `
         >
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={0}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={25}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={50}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={75}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={100}
             vertical={true}
           />
@@ -2628,7 +2496,6 @@ exports[`BulletChart renders vertical chart properly 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
@@ -2637,34 +2504,27 @@ exports[`BulletChart renders vertical chart properly 1`] = `
       color="#0088ce"
       title="data2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={20}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title="Range 1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title="Range 2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title="Range 3"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -2758,31 +2618,26 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
         >
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={0}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={25}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={50}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={75}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={100}
             vertical={true}
           />
@@ -2802,7 +2657,6 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
@@ -2811,34 +2665,27 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
       color="#0088ce"
       title="data2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={20}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title="Range 1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title="Range 2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title="Range 3"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -2932,31 +2779,26 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
         >
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={0}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={25}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={50}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={75}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={100}
             vertical={true}
           />
@@ -2976,7 +2818,6 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
@@ -2985,34 +2826,27 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
       color="#0088ce"
       title="data2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={20}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title="Range 1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title="Range 2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title="Range 3"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -3106,31 +2940,26 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
         >
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={0}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={25}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={50}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={75}
             vertical={true}
           />
           <BulletChartAxisTic
             className=""
-            text={undefined}
             value={100}
             vertical={true}
           />
@@ -3150,7 +2979,6 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
       color="#39a5dc"
       title="data1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={10}
     />
     <BulletChartLegendItem
@@ -3159,34 +2987,27 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
       color="#0088ce"
       title="data2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={20}
     />
     <BulletChartLegendItem
       boxClassName="range-0"
       className=""
-      color={undefined}
       title="Range 1"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={50}
     />
     <BulletChartLegendItem
       boxClassName="range-1"
       className=""
-      color={undefined}
       title="Range 2"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={70}
     />
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
-      color={undefined}
       title="Range 3"
       tooltipFunction={[Function]}
-      tooltipId={undefined}
       value={100}
     />
   </BulletChartLegend>
@@ -3199,31 +3020,26 @@ exports[`BulletChartAxis renders properly 1`] = `
 >
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={0}
     vertical={false}
   />
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={25}
     vertical={false}
   />
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={50}
     vertical={false}
   />
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={75}
     vertical={false}
   />
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={100}
     vertical={false}
   />
@@ -3273,31 +3089,26 @@ exports[`BulletChartAxis renders vertical properly 1`] = `
 >
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={0}
     vertical={true}
   />
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={25}
     vertical={true}
   />
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={50}
     vertical={true}
   />
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={75}
     vertical={true}
   />
   <BulletChartAxisTic
     className=""
-    text={undefined}
     value={1000}
     vertical={true}
   />
@@ -3353,8 +3164,6 @@ exports[`BulletChartLegend renders properly 1`] = `
     className=""
     color="#39a5dc"
     title="data1"
-    tooltipFunction={undefined}
-    tooltipId={undefined}
     value={10}
   />
   <BulletChartLegendItem
@@ -3362,8 +3171,6 @@ exports[`BulletChartLegend renders properly 1`] = `
     className=""
     color="#0088ce"
     title="data2"
-    tooltipFunction={undefined}
-    tooltipId={undefined}
     value={20}
   />
 </div>

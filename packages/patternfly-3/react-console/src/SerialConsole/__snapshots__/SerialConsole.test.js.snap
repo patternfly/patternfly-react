@@ -25,6 +25,12 @@ exports[`Enable autoFit for SerialConsole 1`] = `
           "calls": Array [
             Array [],
           ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
         }
       }
       onData={[Function]}
@@ -116,6 +122,12 @@ exports[`SerialConsole in the CONNECTED state 1`] = `
           "calls": Array [
             Array [],
           ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
         }
       }
       onData={[Function]}
@@ -172,6 +184,12 @@ exports[`SerialConsole in the DISCONNECTED state 1`] = `
             [MockFunction] {
               "calls": Array [
                 Array [],
+              ],
+              "results": Array [
+                Object {
+                  "isThrow": false,
+                  "value": undefined,
+                },
               ],
             }
           }
