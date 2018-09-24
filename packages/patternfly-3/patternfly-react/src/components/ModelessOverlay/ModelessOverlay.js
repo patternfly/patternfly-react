@@ -23,7 +23,11 @@ class ModelessOverlay extends React.Component {
     const { children, className, bsSize, show, ...otherProps } = this.props;
     const { isIn } = this.state;
 
-    const classes = classNames('modal modeless-pf fade', { shown: show || isIn, in: show && isIn }, className);
+    const classes = classNames(
+      'modal modeless-pf fade right-side-modal-pf',
+      { shown: show || isIn, in: show && isIn },
+      className
+    );
 
     if (isIn !== show) {
       this.inTimer.startTimer(() => this.updateForTransitions(), show ? 0 : 150);
