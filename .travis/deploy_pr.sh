@@ -59,6 +59,6 @@ do
     # Done so because every PR is an issue, and the issues api allows to post general comments,
     # while the PR api requires that comments are made to specific files and specific commits
     GITHUB_PR_COMMENTS=https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/comments
-    curl -H "Authorization: token d6c0cb5f3960943cc73081f277b6fdcafc0f990b" --request POST ${GITHUB_PR_COMMENTS} --data '{"body":"PatternFly documentation deployment: '${DEPLOY_DOMAIN}'"}'
+    curl -H "Authorization: token d57c3c959b9e931dfe6f55088261408452a1e828" --request POST ${GITHUB_PR_COMMENTS} --data '{"body":"PatternFly documentation deployment: '${DEPLOY_DOMAIN}'"}'
   fi
 done
