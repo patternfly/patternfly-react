@@ -1,0 +1,283 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`replace with useful test name 1`] = `
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 30em;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: transparent;
+}
+.pf-l-page__header-brand-toggle {
+  display: block;
+}
+.pf-l-page__header-brand-link {
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem;
+}
+.pf-l-page__header-brand {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+}
+.pf-l-page__header-tools {
+  display: block;
+  align-items: center;
+  margin-right: 2rem;
+  margin-left: auto;
+}
+.pf-l-page__header {
+  display: flex;
+  grid-area: header;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  max-width: 100%;
+  min-height: 6.875rem;
+  overflow-x: hidden;
+}
+.pf-l-page__sidebar.pf-m-expanded {
+  display: block;
+  grid-area: 2 / 1;
+  z-index: 500;
+  width: 80%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  transform: translate3d(0,0,0);
+  box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
+}
+.pf-l-page__main-section {
+  display: block;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: #ededed;
+}
+.pf-l-page__main-section.pf-m-light {
+  display: block;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: #ffffff;
+}
+.pf-l-page__main-section.pf-m-dark-200 {
+  display: block;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: rgba(3, 3, 3, 0.32);
+}
+.pf-l-page__main-section.pf-m-dark-100 {
+  display: block;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: rgba(3, 3, 3, 0.62);
+}
+.pf-l-page__main {
+  display: flex;
+  grid-area: main;
+  flex-direction: column;
+  padding-right: 0px;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+.pf-l-page.my-page-class {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas: "header" "main";
+}
+
+<Page
+  aria-label="Page layout"
+  avatar={
+    <div>
+       | Avatar
+    </div>
+  }
+  background={null}
+  className="my-page-class"
+  id="PageId"
+  isNavOpen={true}
+  layout="vertical"
+  logo={
+    <div>
+      Brand
+    </div>
+  }
+  nav={
+    <ul>
+      <li>
+        Nav Item
+      </li>
+      <li>
+        Nav Item
+      </li>
+      <li>
+        Nav Item
+      </li>
+    </ul>
+  }
+  onNavToggle={[Function]}
+  toolbar={
+    <div>
+      Toolbar
+    </div>
+  }
+>
+  <div
+    aria-label="Page layout"
+    className="pf-l-page my-page-class"
+    id="PageId"
+  >
+    <header
+      className="pf-l-page__header"
+      role="banner"
+      style={
+        Object {
+          "overflowX": "unset",
+        }
+      }
+    >
+      <div
+        className="pf-l-page__header-brand"
+      >
+        <div
+          className="pf-l-page__header-brand-toggle"
+        >
+          <Button
+            aria-label="Toggle primary navigation"
+            className=""
+            component="button"
+            id="nav-toggle"
+            isActive={false}
+            isBlock={false}
+            isDisabled={false}
+            isFocus={false}
+            isHover={false}
+            onClick={[Function]}
+            type="button"
+            variant="plain"
+          >
+            <button
+              aria-disabled={null}
+              aria-label="Toggle primary navigation"
+              className="pf-c-button pf-m-plain"
+              disabled={false}
+              id="nav-toggle"
+              onClick={[Function]}
+              tabIndex={null}
+              type="button"
+            >
+              <BarsIcon
+                color="currentColor"
+                size="sm"
+                title={null}
+              >
+                <svg
+                  aria-hidden={true}
+                  aria-labelledby={null}
+                  fill="currentColor"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 448 512"
+                  width="1em"
+                >
+                  <path
+                    d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+                    transform=""
+                  />
+                </svg>
+              </BarsIcon>
+            </button>
+          </Button>
+        </div>
+        <a
+          className="pf-l-page__header-brand-link"
+        >
+          <div>
+            Brand
+          </div>
+        </a>
+      </div>
+      <div
+        className="pf-l-page__header-tools"
+      >
+        <div>
+          Toolbar
+        </div>
+        <div>
+           | Avatar
+        </div>
+      </div>
+    </header>
+    <aside
+      className="pf-l-page__sidebar pf-m-expanded"
+    >
+      <ul>
+        <li>
+          Nav Item
+        </li>
+        <li>
+          Nav Item
+        </li>
+        <li>
+          Nav Item
+        </li>
+      </ul>
+    </aside>
+    <main
+      className="pf-l-page__main"
+      role="main"
+    >
+      <PageSection
+        className=""
+        variant="default"
+      >
+        <section
+          className="pf-l-page__main-section"
+        >
+          Section with default background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        variant="light"
+      >
+        <section
+          className="pf-l-page__main-section pf-m-light"
+        >
+          Section with light background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        variant="dark"
+      >
+        <section
+          className="pf-l-page__main-section pf-m-dark-200"
+        >
+          Section with dark background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        variant="darker"
+      >
+        <section
+          className="pf-l-page__main-section pf-m-dark-100"
+        >
+          Section with darker background
+        </section>
+      </PageSection>
+    </main>
+  </div>
+</Page>
+`;

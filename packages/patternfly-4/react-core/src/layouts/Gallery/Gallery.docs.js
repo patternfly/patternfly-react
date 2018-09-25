@@ -1,6 +1,6 @@
 import { Gallery, GalleryItem } from '@patternfly/react-core';
-import Simple from './examples/SimpleGallery';
-import Gutters from './examples/GalleryWithGutters';
+import SimpleGallery from './examples/SimpleGallery';
+import GalleryWithGutters from './examples/GalleryWithGutters';
 
 export default {
   title: 'Gallery',
@@ -10,5 +10,5 @@ export default {
     Gallery,
     GalleryItem
   },
-  examples: [Simple, Gutters]
+  examples: [SimpleGallery, GalleryWithGutters]
 };

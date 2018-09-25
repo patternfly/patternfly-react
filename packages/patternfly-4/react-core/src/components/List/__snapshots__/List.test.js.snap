@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`list grid list 1`] = `
+.pf-c-list {
+  display: block;
+  padding-left: 1.5rem;
+  margin: 1rem 0px 1rem 1.5rem;
+  list-style: undefined;
+}
+.pf-c-list.pf-m-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+  grid-gap: 1rem;
+}
+
+<List
+  className=""
+  variant="grid"
+>
+  <ul
+    className="pf-c-list pf-m-grid"
+  >
+    <ListItems>
+      <List
+        className=""
+        variant={null}
+      >
+        <ul
+          className="pf-c-list"
+        >
+          <ListItem>
+            <li>
+              First
+            </li>
+          </ListItem>
+          <ListItem>
+            <li>
+              Second
+            </li>
+          </ListItem>
+          <ListItem>
+            <li>
+              Third
+            </li>
+          </ListItem>
+        </ul>
+      </List>
+    </ListItems>
+  </ul>
+</List>
+`;
+
+exports[`list inline list 1`] = `
+.pf-c-list {
+  display: block;
+  padding-left: 1.5rem;
+  margin: 1rem 0px 1rem 1.5rem;
+  list-style: undefined;
+}
+.pf-c-list.pf-m-inline {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+<List
+  className=""
+  variant="inline"
+>
+  <ul
+    className="pf-c-list pf-m-inline"
+  >
+    <ListItems>
+      <List
+        className=""
+        variant={null}
+      >
+        <ul
+          className="pf-c-list"
+        >
+          <ListItem>
+            <li>
+              First
+            </li>
+          </ListItem>
+          <ListItem>
+            <li>
+              Second
+            </li>
+          </ListItem>
+          <ListItem>
+            <li>
+              Third
+            </li>
+          </ListItem>
+        </ul>
+      </List>
+    </ListItems>
+  </ul>
+</List>
+`;
+
+exports[`list simple list 1`] = `
+.pf-c-list {
+  display: block;
+  padding-left: 1.5rem;
+  margin: 1rem 0px 1rem 1.5rem;
+  list-style: undefined;
+}
+.pf-c-list {
+  display: block;
+  padding-left: 1.5rem;
+  margin: 1rem 0px 1rem 1.5rem;
+  list-style: undefined;
+}
+
+<List
+  className=""
+  variant={null}
+>
+  <ul
+    className="pf-c-list"
+  >
+    <ListItems>
+      <List
+        className=""
+        variant={null}
+      >
+        <ul
+          className="pf-c-list"
+        >
+          <ListItem>
+            <li>
+              First
+            </li>
+          </ListItem>
+          <ListItem>
+            <li>
+              Second
+            </li>
+          </ListItem>
+          <ListItem>
+            <li>
+              Third
+            </li>
+          </ListItem>
+        </ul>
+      </List>
+    </ListItems>
+  </ul>
+</List>
+`;

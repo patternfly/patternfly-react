@@ -4,8 +4,8 @@ exports[`KebabToggle dropup + right aligned 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -115,6 +115,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             >
               <path
                 d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                transform=""
               />
             </svg>
           </EllipsisVIcon>
@@ -272,8 +273,8 @@ exports[`KebabToggle dropup 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -383,6 +384,7 @@ exports[`KebabToggle dropup 1`] = `
             >
               <path
                 d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                transform=""
               />
             </svg>
           </EllipsisVIcon>
@@ -540,8 +542,8 @@ exports[`KebabToggle expanded 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -651,6 +653,7 @@ exports[`KebabToggle expanded 1`] = `
             >
               <path
                 d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                transform=""
               />
             </svg>
           </EllipsisVIcon>
@@ -808,8 +811,8 @@ exports[`KebabToggle plain 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -919,6 +922,7 @@ exports[`KebabToggle plain 1`] = `
             >
               <path
                 d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                transform=""
               />
             </svg>
           </EllipsisVIcon>
@@ -1076,8 +1080,8 @@ exports[`KebabToggle regular 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -1187,6 +1191,7 @@ exports[`KebabToggle regular 1`] = `
             >
               <path
                 d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                transform=""
               />
             </svg>
           </EllipsisVIcon>
@@ -1344,8 +1349,8 @@ exports[`KebabToggle right aligned 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -1455,6 +1460,7 @@ exports[`KebabToggle right aligned 1`] = `
             >
               <path
                 d="M96 184c39.8 0 72 32.2 72 72s-32.2 72-72 72-72-32.2-72-72 32.2-72 72-72zM24 80c0 39.8 32.2 72 72 72s72-32.2 72-72S135.8 8 96 8 24 40.2 24 80zm0 352c0 39.8 32.2 72 72 72s72-32.2 72-72-32.2-72-72-72-72 32.2-72 72z"
+                transform=""
               />
             </svg>
           </EllipsisVIcon>
@@ -1618,8 +1624,8 @@ exports[`dropdown dropup + right aligned 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -1730,6 +1736,7 @@ exports[`dropdown dropup + right aligned 1`] = `
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
               />
             </svg>
           </CaretDownIcon>
@@ -1893,8 +1900,8 @@ exports[`dropdown dropup 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -2005,6 +2012,7 @@ exports[`dropdown dropup 1`] = `
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
               />
             </svg>
           </CaretDownIcon>
@@ -2168,8 +2176,8 @@ exports[`dropdown expanded 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -2280,6 +2288,7 @@ exports[`dropdown expanded 1`] = `
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
               />
             </svg>
           </CaretDownIcon>
@@ -2443,8 +2452,8 @@ exports[`dropdown regular 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -2555,6 +2564,7 @@ exports[`dropdown regular 1`] = `
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
               />
             </svg>
           </CaretDownIcon>
@@ -2718,8 +2728,8 @@ exports[`dropdown right aligned 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -2830,6 +2840,7 @@ exports[`dropdown right aligned 1`] = `
             >
               <path
                 d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                transform=""
               />
             </svg>
           </CaretDownIcon>

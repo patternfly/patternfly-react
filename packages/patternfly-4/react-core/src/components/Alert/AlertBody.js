@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/Alert/styles.css';
+import styles from '@patternfly/patternfly-next/components/Alert/alert.css';
 
 const propTypes = {
   title: PropTypes.node,

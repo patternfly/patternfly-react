@@ -36,8 +36,8 @@ class CatalogTileViewCategory extends React.Component {
         rows = 2;
       }
 
-      const numShown = Math.floor(this.categoryContainer.clientWidth / 240) * rows;
-      const rightSpacerWidth = this.categoryContainer.clientWidth % 240;
+      const numShown = Math.floor(this.categoryContainer.clientWidth / 235) * rows;
+      const rightSpacerWidth = this.categoryContainer.clientWidth % 235;
       this.setState({ numShown, rightSpacerWidth });
     }
   };

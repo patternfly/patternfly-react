@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/Title/styles.css';
+import styles from '@patternfly/patternfly-next/components/Title/title.css';
 import { BaseSizes } from '../../styles/sizes';
 
 export const TitleSize = {
@@ -14,8 +14,11 @@ export const TitleSize = {
 };
 
 const propTypes = {
+  /** the size of the Title  */
   size: PropTypes.oneOf(Object.values(TitleSize)).isRequired,
+  /** content rendered inside the Title */
   children: PropTypes.node,
+  /** additional classes added to the Title */
   className: PropTypes.string
 };
 

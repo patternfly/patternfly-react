@@ -7,7 +7,7 @@ import { VerticalTabs, VerticalTabsTab } from './index';
 import { MockVerticalTabsExample, MockVerticalTabsExampleSource } from './_mocks_/mockVerticalTabsExample';
 
 import { name } from '../../../package.json';
-import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 
 const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WIDGETS}/Vertical Tabs`, module);
 
@@ -25,6 +25,9 @@ const description = (
     <i>VerticalTab</i> as well as the <b>active</b> (this tab is active) and <b>hasActiveDescendant</b> (a child of this
     tab is active) properties on the <i>VerticalTab.Tab</i>. Setting the <b>shown</b> property on a
     <i>VerticalTab.Tab</i> will always show the tab if its parent tab is shown.
+    <br />
+    <br />
+    Note: the width and border styling is not part of the VerticalTabs component.
   </div>
 );
 stories.addDecorator(withKnobs);
@@ -42,7 +45,12 @@ stories.add(
     )
   })(() => {
     const restrictTabs = boolean('Restrict Tabs', false);
-    const story = <MockVerticalTabsExample restrictTabs={restrictTabs} />;
+    const wrapStyle = select('Wrap Style', { wrap: 'Word - Default', truncate: 'Truncate', nowrap: 'No Wrap' }, 'wrap');
+    const story = (
+      <div style={{ width: '195px', border: '1px solid grey' }}>
+        <MockVerticalTabsExample restrictTabs={restrictTabs} wrapStyle={wrapStyle} />
+      </div>
+    );
     return inlineTemplate({
       title: 'Vertical Tabs',
       description,

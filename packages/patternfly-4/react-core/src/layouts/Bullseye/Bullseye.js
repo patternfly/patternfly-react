@@ -1,12 +1,15 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/layouts/Bullseye/styles.css';
+import styles from '@patternfly/patternfly-next/layouts/Bullseye/bullseye.css';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../internal/componentShape';
 
 const propTypes = {
+  /** content rendered inside the Bullseye layout */
   children: PropTypes.any,
+  /** additional classes added to the Bullseye layout */
   className: PropTypes.string,
+  /** Sets the base component to render. defaults to div */
   component: componentShape
 };
 
