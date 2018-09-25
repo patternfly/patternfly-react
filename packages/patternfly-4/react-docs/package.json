@@ -33,7 +33,7 @@
     "gatsby"
   ],
   "scripts": {
-    "docbuild": "gatsby build && node build/copyDocs.js",
+    "docbuild": "node build/copyDocs.js && gatsby build",
     "develop": "gatsby develop"
   },
   "browserslist": [

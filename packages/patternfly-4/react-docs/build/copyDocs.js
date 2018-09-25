@@ -30,7 +30,7 @@ function copyStyles() {
 
 function copyAssets() {
   const from = path.resolve(__dirname, '../dist/styles/react-core/assets');
-  const to = path.resolve(__dirname, '../public/assets');
+  const to = path.resolve(__dirname, '../static/assets');
   fs.copySync(from, to);
 }
 
