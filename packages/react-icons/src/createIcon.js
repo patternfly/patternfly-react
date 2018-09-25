@@ -4,7 +4,8 @@ import { getSize, propTypes, defaultProps } from './common';
 let currentId = 0;
 
 const createIcon = iconDefinition => {
-  const viewBox = [0, 0, iconDefinition.width, iconDefinition.height].join(' ');
+  const viewBox = [iconDefinition.xOffset || 0, iconDefinition.yOffset || 0, iconDefinition.width, iconDefinition.height].join(' ');
+  const transform = iconDefinition.transform;
   class Icon extends React.Component {
     static displayName = iconDefinition.name;
     static propTypes = propTypes;
@@ -30,7 +31,7 @@ const createIcon = iconDefinition => {
           {...props}
         >
           {hasTitle && <title id={this.id}>{title}</title>}
-          <path d={iconDefinition.svgPath} />
+          <path d={iconDefinition.svgPath} transform={transform} />
         </svg>
       );
     }

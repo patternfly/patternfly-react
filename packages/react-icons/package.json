@@ -32,10 +32,11 @@
     "build:ts": "node ./scripts/copyTS.js"
   },
   "devDependencies": {
-    "@fortawesome/free-solid-svg-icons": "^5.1.0",
-    "node-plop": "^0.15.0",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@patternfly/patternfly-next": "1.0.55",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
+    "node-plop": "^0.15.0",
     "npmlog": "^4.1.2"
   },
   "peerDependencies": {
