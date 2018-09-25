@@ -15,7 +15,8 @@ const propTypes = {
   components: PropTypes.objectOf(PropTypes.func),
   enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
   rawExamples: PropTypes.array,
-  images: PropTypes.array
+  images: PropTypes.array,
+  fullPageOnly: PropTypes.bool
 };
 
 const defaultProps = {
@@ -24,10 +25,11 @@ const defaultProps = {
   components: {},
   enumValues: {},
   rawExamples: [],
-  images: []
+  images: [],
+  fullPageOnly: false
 };
 
-const ComponentDocs = ({ title, description, examples, components, enumValues, rawExamples, images }) => (
+const ComponentDocs = ({ title, description, examples, components, enumValues, fullPageOnly, rawExamples, images }) => (
   <Content>
     <Title size="3xl">{title}</Title>
     {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
@@ -38,10 +40,12 @@ const ComponentDocs = ({ title, description, examples, components, enumValues, r
         return (
           <Example
             key={i}
-            raw={rawExample && rawExample.file}
-            images={images}
             title={ComponentExample.title}
             description={ComponentExample.description}
+            raw={rawExample && rawExample.file}
+            images={images}
+            fullPageOnly={fullPageOnly}
+            name={ComponentExample.name}
             {...(ComponentExample.getContainerProps ? ComponentExample.getContainerProps() : {})}
           >
             <ComponentExample />
