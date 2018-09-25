@@ -5,19 +5,27 @@ import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { MockTableGridExample, MockTableGridExampleSource } from './_mocks_/mockTableGridExample';
 
-import { TableGrid, TableGridHead, TableGridColumnHeader, TableGridBody, TableGridRow } from './index';
+import { TableGrid, TableGridHead, TableGridColumnHeader, TableGridBody, TableGridRow, TableGridCol } from './index';
 
 import { name } from '../../../package.json';
-import { boolean, withKnobs } from '@storybook/addon-knobs';
+import { boolean, select, withKnobs } from '@storybook/addon-knobs';
 
 const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.CONTENT_VIEWS}/TableGrid`, module);
 
 stories.addDecorator(
   defaultTemplate({
     title: 'Table Grid',
-    description:
-      'The TableGrid is based on the Bootstrap Grid Layout. The TableGridColumnHeaders should have the same ' +
-      'bootstrap col classes as the children of the TableGridRow component in order to maintain equal widths.'
+    description: (
+      <div>
+        The TableGrid is based on the Bootstrap Grid Layout. The <b>TableGrid.ColumnHeaders</b> should have the same
+        bootstrap column classes as the children of the <b>TableGrid.Row</b> component in order to maintain equal
+        widths.
+        <br />
+        <br />
+        When using <i>cell</i> selection, the <b>TableGrid.Col</b> component should be used in place of the
+        <b> Grid.Col</b> component for correct selection styling.
+      </div>
+    )
   })
 );
 
@@ -26,7 +34,7 @@ stories.add(
   'TableGrid',
   withInfo({
     source: false,
-    propTables: [TableGrid, TableGridHead, TableGridColumnHeader, TableGridBody, TableGridRow],
+    propTables: [TableGrid, TableGridHead, TableGridColumnHeader, TableGridBody, TableGridRow, TableGridCol],
     propTablesExclude: [MockTableGridExample],
     text: (
       <div>
@@ -36,6 +44,8 @@ stories.add(
     )
   })(() => {
     const bordered = boolean('Bordered', true);
-    return <MockTableGridExample bordered={bordered} />;
+    const selectType = select('Selection Type', { none: 'None', row: 'Row', cell: 'Cell' }, 'none');
+
+    return <MockTableGridExample bordered={bordered} selectType={selectType} />;
   })
 );

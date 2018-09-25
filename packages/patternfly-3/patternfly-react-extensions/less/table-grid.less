@@ -18,7 +18,9 @@
   }
 
   .table-grid-pf-head {
+    color: @color-pf-black-600;
     font-size: 12px;
+    font-weight: 300;
     padding: 10px 0;
   }
 
@@ -28,7 +30,9 @@
     text-transform: uppercase;
 
     .btn.btn-link {
-      color: initial;
+      color: @color-pf-black-600;
+      font-size: 12px;
+      font-weight: 300;
       overflow-x: hidden;
       padding: 0;
       text-overflow: ellipsis;
@@ -57,6 +61,46 @@
     .table-grid-pf-head,
     .table-grid-pf-body .row {
       border-bottom: solid 1px #eee;
+    }
+  }
+
+  &.cell-select {
+    .table-grid-pf-body {
+      .row {
+        padding: 0;
+      }
+
+      .table-grid-pf-col {
+        cursor: pointer;
+        display: inline-block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+
+        &.active {
+          background-color: @list-view-active-bg;
+        }
+
+        &:hover {
+          background-color: @list-view-hover-bg;
+        }
+      }
+    }
+  }
+
+  &.row-select {
+    .table-grid-pf-body {
+      .row {
+        cursor: pointer;
+
+        &.active {
+          background-color: @list-view-active-bg;
+        }
+
+        &:hover {
+          background-color: @list-view-hover-bg;
+        }
+      }
     }
   }
 }

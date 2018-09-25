@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TableGrid from '../TableGrid';
-import { Grid, OverlayTrigger, Tooltip } from 'patternfly-react';
+import { OverlayTrigger, Tooltip } from 'patternfly-react';
 import { mockItems } from './mockItems';
 
 const titleColSizes = {
@@ -24,7 +24,9 @@ class MockTableGridExample extends React.Component {
   state = {
     sortField: 'title',
     isAscending: true,
-    items: mockItems
+    items: mockItems,
+    selectedItem: null,
+    selectedField: null
   };
 
   onSortToggle = id => {
@@ -55,20 +57,57 @@ class MockTableGridExample extends React.Component {
     this.setState({ items, sortField: id, isAscending: updateAscending });
   };
 
-  renderItemRow = (item, index) => (
-    <TableGrid.Row key={index}>
-      <Grid.Col {...titleColSizes}>{item.title}</Grid.Col>
-      <Grid.Col {...descrColSizes}>{item.description}</Grid.Col>
-      <Grid.Col {...countColSizes}>{item.hosts}</Grid.Col>
-      <Grid.Col {...countColSizes}>{item.clusters}</Grid.Col>
-    </TableGrid.Row>
-  );
+  onSelect = (item, field) => {
+    this.setState({ selectedItem: item, selectedField: field });
+  };
+
+  renderItemRow = (item, index) => {
+    const { selectType } = this.props;
+    const { selectedItem, selectedField } = this.state;
+    const selected = selectedItem === item;
+    return (
+      <TableGrid.Row
+        key={index}
+        onClick={() => selectType === 'row' && this.onSelect(item)}
+        selected={selectType === 'row' && selected}
+      >
+        <TableGrid.Col
+          {...titleColSizes}
+          onClick={() => selectType === 'cell' && this.onSelect(item, 'title')}
+          selected={selectType === 'cell' && selected && selectedField === 'title'}
+        >
+          {item.title}
+        </TableGrid.Col>
+        <TableGrid.Col
+          {...descrColSizes}
+          onClick={() => selectType === 'cell' && this.onSelect(item, 'description')}
+          selected={selectType === 'cell' && selected && selectedField === 'description'}
+        >
+          {item.description}
+        </TableGrid.Col>
+        <TableGrid.Col
+          {...countColSizes}
+          onClick={() => selectType === 'cell' && this.onSelect(item, 'hosts')}
+          selected={selectType === 'cell' && selected && selectedField === 'hosts'}
+        >
+          {item.hosts}
+        </TableGrid.Col>
+        <TableGrid.Col
+          {...countColSizes}
+          onClick={() => selectType === 'cell' && this.onSelect(item, 'clusters')}
+          selected={selectType === 'cell' && selected && selectedField === 'clusters'}
+        >
+          {item.clusters}
+        </TableGrid.Col>
+      </TableGrid.Row>
+    );
+  };
 
   render() {
     const { items, sortField, isAscending } = this.state;
-    const { bordered } = this.props;
+    const { bordered, selectType } = this.props;
     return (
-      <TableGrid id="table-grid" bordered={bordered}>
+      <TableGrid id="table-grid" bordered={bordered} selectType={selectType}>
         <TableGrid.Head>
           <TableGrid.ColumnHeader
             id="title"
@@ -121,11 +160,13 @@ class MockTableGridExample extends React.Component {
 }
 
 MockTableGridExample.propTypes = {
-  bordered: PropTypes.bool
+  bordered: PropTypes.bool,
+  selectType: PropTypes.oneOf(['row', 'cell', 'none'])
 };
 
 MockTableGridExample.defaultProps = {
-  bordered: false
+  bordered: false,
+  selectType: 'none'
 };
 
 export { MockTableGridExample };
@@ -134,7 +175,7 @@ export const MockTableGridExampleSource = `
 import React from 'react';
 import PropTypes from 'prop-types';
 import TableGrid from '../TableGrid';
-import { Grid, OverlayTrigger, Tooltip } from 'patternfly-react';
+import { OverlayTrigger, Tooltip } from 'patternfly-react';
 import { mockItems } from './mockItems';
 
 const titleColSizes = {
@@ -157,7 +198,9 @@ class MockTableGridExample extends React.Component {
   state = {
     sortField: 'title',
     isAscending: true,
-    items: mockItems
+    items: mockItems,
+    selectedItem: null,
+    selectedField: null
   };
 
   onSortToggle = id => {
@@ -188,20 +231,57 @@ class MockTableGridExample extends React.Component {
     this.setState({ items, sortField: id, isAscending: updateAscending });
   };
 
-  renderItemRow = (item, index) => (
-    <TableGrid.Row key={index}>
-      <Grid.Col {...titleColSizes}>{item.title}</Grid.Col>
-      <Grid.Col {...descrColSizes}>{item.description}</Grid.Col>
-      <Grid.Col {...countColSizes}>{item.hosts}</Grid.Col>
-      <Grid.Col {...countColSizes}>{item.clusters}</Grid.Col>
-    </TableGrid.Row>
-  );
+  onSelect = (item, field) => {
+    this.setState({ selectedItem: item, selectedField: field });
+  };
+
+  renderItemRow = (item, index) => {
+    const { selectType } = this.props;
+    const { selectedItem, selectedField } = this.state;
+    const selected = selectedItem === item;
+    return (
+      <TableGrid.Row
+        key={index}
+        onClick={() => selectType === 'row' && this.onSelect(item)}
+        selected={selectType === 'row' && selected}
+      >
+        <TableGrid.Col
+          {...titleColSizes}
+          onClick={() => selectType === 'cell' && this.onSelect(item, 'title')}
+          selected={selectType === 'cell' && selected && selectedField === 'title'}
+        >
+          {item.title}
+        </TableGrid.Col>
+        <TableGrid.Col
+          {...descrColSizes}
+          onClick={() => selectType === 'cell' && this.onSelect(item, 'description')}
+          selected={selectType === 'cell' && selected && selectedField === 'description'}
+        >
+          {item.description}
+        </TableGrid.Col>
+        <TableGrid.Col
+          {...countColSizes}
+          onClick={() => selectType === 'cell' && this.onSelect(item, 'hosts')}
+          selected={selectType === 'cell' && selected && selectedField === 'hosts'}
+        >
+          {item.hosts}
+        </TableGrid.Col>
+        <TableGrid.Col
+          {...countColSizes}
+          onClick={() => selectType === 'cell' && this.onSelect(item, 'clusters')}
+          selected={selectType === 'cell' && selected && selectedField === 'clusters'}
+        >
+          {item.clusters}
+        </TableGrid.Col>
+      </TableGrid.Row>
+    );
+  };
 
   render() {
     const { items, sortField, isAscending } = this.state;
-    const { bordered } = this.props;
+    const { bordered, selectType } = this.props;
     return (
-      <TableGrid id="table-grid" bordered={bordered}>
+      <TableGrid id="table-grid" bordered={bordered} selectType={selectType}>
         <TableGrid.Head>
           <TableGrid.ColumnHeader
             id="title"
@@ -254,11 +334,13 @@ class MockTableGridExample extends React.Component {
 }
 
 MockTableGridExample.propTypes = {
-  bordered: PropTypes.bool
+  bordered: PropTypes.bool,
+  selectType: PropTypes.oneOf(['row', 'cell', 'none'])
 };
 
 MockTableGridExample.defaultProps = {
-  bordered: false
+  bordered: false,
+  selectType: 'none'
 };
 
 export { MockTableGridExample };

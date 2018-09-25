@@ -5,13 +5,18 @@ import TableGridHead from './TableGridHead';
 import TableGridColumnHeader from './TableGridColumnHeader';
 import TableGridBody from './TableGridBody';
 import TableGridRow from './TableGridRow';
+import TableGridCol from './TableGridCol';
 
 /**
  * TableGrid Component for PatternFly
  */
 
-const TableGrid = ({ children, className, bordered, ...props }) => {
-  const classes = classNames('table-grid-pf', { bordered }, className);
+const TableGrid = ({ children, className, bordered, selectType, ...props }) => {
+  const classes = classNames(
+    'table-grid-pf',
+    { bordered, 'row-select': selectType === 'row', 'cell-select': selectType === 'cell' },
+    className
+  );
   return (
     <div className={classes} {...props}>
       {children}
@@ -25,17 +30,21 @@ TableGrid.propTypes = {
   /** Additional css classes */
   className: PropTypes.string,
   /** Flag to use a bordered grid */
-  bordered: PropTypes.bool
+  bordered: PropTypes.bool,
+  /** Type of selection for the grid */
+  selectType: PropTypes.oneOf(['row', 'cell', 'none'])
 };
 TableGrid.defaultProps = {
   children: null,
   className: '',
-  bordered: true
+  bordered: true,
+  selectType: 'none'
 };
 
 TableGrid.Head = TableGridHead;
 TableGrid.ColumnHeader = TableGridColumnHeader;
 TableGrid.Body = TableGridBody;
 TableGrid.Row = TableGridRow;
+TableGrid.Col = TableGridCol;
 
 export default TableGrid;
