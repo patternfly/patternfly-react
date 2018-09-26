@@ -7,6 +7,14 @@
     white-space: nowrap;
   }
 
+  .table-grid-pf-checkbox {
+    border-right: 1px solid @list-view-divider;
+    display: none;
+    left: 20px;
+    padding-right: 10px;
+    position: absolute;
+  }
+
   .table-grid-pf-body {
     min-height: 50px;
     position: relative;
@@ -92,7 +100,49 @@
     .table-grid-pf-body {
       .row {
         cursor: pointer;
+      }
+    }
+  }
 
+  &.checkbox-select {
+    .table-grid-pf-checkbox {
+      display: initial;
+    }
+
+    .table-grid-pf-head {
+      position: relative;
+      padding-left: 35px;
+
+      .table-grid-pf-checkbox {
+        width: 23px;
+
+        .btn {
+          color: @color-pf-blue-400;
+          font-size: 15px;
+          left: -1px;
+          line-height: 1;
+          padding: 0;
+          position: relative;
+
+          .fa.fa-square-o {
+            color: @color-pf-black-400;
+          }
+        }
+      }
+    }
+
+    .table-grid-pf-body {
+      .row {
+        position: relative;
+        padding-left: 35px;
+      }
+    }
+  }
+
+  &.row-select,
+  &.checkbox-select {
+    .table-grid-pf-body {
+      .row {
         &.active {
           background-color: @list-view-active-bg;
         }
