@@ -9,7 +9,9 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   config.removeLoader('css');
   if (oldCSSLoader.config.loaders && oldCSSLoader.config.loaders.includes('postcss')) {
     oldCSSLoader.config.loaders.splice(oldCSSLoader.config.loaders.indexOf('postcss'), 1);
+    oldCSSLoader.config.loaders.splice(oldCSSLoader.config.loaders.indexOf('postcss'), 1, 'resolve-url-loader');
   }
+
   config
     .loader('pf-styles', {
       test: pfStylesTest,

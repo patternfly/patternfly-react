@@ -33,7 +33,7 @@ ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
   }
 });
 
-copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
+copySync(join(pfDir, 'assets'), join(stylesDir, 'assets'), {
   filter(src) {
     return !ununsedFontFilesRegExt.test(src);
   }

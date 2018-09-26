@@ -43,6 +43,7 @@
   ],
   "devDependencies": {
     "fs-extra": "^7.0.0",
-    "glob": "^7.1.2"
+    "glob": "^7.1.2",
+    "resolve-url-loader": "^3.0.0"
   }
 }
