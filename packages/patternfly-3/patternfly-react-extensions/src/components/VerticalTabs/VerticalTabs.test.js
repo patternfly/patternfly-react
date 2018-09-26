@@ -79,3 +79,26 @@ test('Vertical Tabs renders restricted tabs properly', () => {
   );
   expect(component.render()).toMatchSnapshot();
 });
+
+test('Vertical Tabs Tab onActivate is called correctly', () => {
+  const onActivateMock = jest.fn();
+
+  const component = mount(<VerticalTabs.Tab id="text-click" title="Click Me" onActivate={onActivateMock} />);
+  component.find('#text-click > a').simulate('click');
+
+  expect(component.render()).toMatchSnapshot();
+  expect(onActivateMock).toBeCalled();
+});
+
+test('Vertical Tabs Tab wrap styling is set correctly', () => {
+  const component = mount(
+    <div>
+      <VerticalTabs.Tab id="default-wrap" title="Default Wrap" />
+      <VerticalTabs.Tab id="word-wrap" title="Word Wrap" wrapStyle="wrap" />
+      <VerticalTabs.Tab id="truncate" title="Truncate" wrapStyle="truncate" />
+      <VerticalTabs.Tab id="no-wrap" title="No Wrap" wrapStyle="nowrap" />
+    </div>
+  );
+
+  expect(component.render()).toMatchSnapshot();
+});
