@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Sort } from '../../index';
+import { Sort, DropdownButton } from '../../index';
 
 const mockSortFields = [
   {
@@ -67,4 +67,35 @@ test('Sort renders alpha descending properly', () => {
   );
 
   expect(component.render()).toMatchSnapshot();
+});
+
+test('Sort Type Selectors are rendered if at least two types exist', () => {
+  [
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: 'a',
+        sortTypes: ['a', 'b']
+      },
+      expected: 1
+    },
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: 'a',
+        sortTypes: ['a']
+      },
+      expected: 0
+    },
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: 'a',
+        sortTypes: []
+      },
+      expected: 0
+    }
+  ].forEach(({ Selector, props, expected }) =>
+    expect(mount(<Selector {...props} />).find(DropdownButton)).toHaveLength(expected)
+  );
 });
