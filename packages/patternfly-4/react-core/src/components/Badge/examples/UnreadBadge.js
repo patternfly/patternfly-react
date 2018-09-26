@@ -2,8 +2,8 @@ import React from 'react';
 import { Badge } from '@patternfly/react-core';
 import getContainerProps from './common/getContainerProps';
 
-class ReadBadge extends React.Component {
-  static title = 'Read Badge';
+class UnreadBadge extends React.Component {
+  static title = 'Unread Badge';
   static getContainerProps = getContainerProps;
 
   render() {
@@ -18,4 +18,4 @@ class ReadBadge extends React.Component {
   }
 }
 
-export default ReadBadge;
+export default UnreadBadge;
