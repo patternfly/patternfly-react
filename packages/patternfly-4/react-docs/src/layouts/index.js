@@ -32,14 +32,10 @@ const Layout = ({ children, data }) => {
 
   return (
     <React.Fragment>
-      {/* <Helmet
-        meta={[
-          { name: 'description', content: 'PatternFly React Documentation' },
-          { name: 'keywords', content: 'React, PatternFly, Red Hat' }
-        ]}
-      /> */}
       <Helmet>
         <meta charSet="utf-8" />
+        <meta name="description" content="PatternFly React Documentation" />
+        <meta name="keywords" content="React, PatternFly, Red Hat" />
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/codemirror.min.css" />
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/theme/monokai.min.css" />
       </Helmet>

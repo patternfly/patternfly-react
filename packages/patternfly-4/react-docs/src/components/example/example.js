@@ -21,11 +21,19 @@ const defaultProps = {
   images: []
 };
 
+const LIVE_EXAMPLES = /true/i.test(process.env.LIVE_EXAMPLES);
+
 const Example = ({ children, title, className, description, raw, images, ...props }) => (
   <div>
     <Title size="lg">{title}</Title>
     {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
-    <LiveDemo raw={raw.trim()} images={images} className={className} />
+    {LIVE_EXAMPLES ? (
+      <LiveDemo raw={raw.trim()} images={images} className={className} />
+    ) : (
+        <div className={css(className, styles.example)} {...props}>
+          {children}
+        </div>
+      )}
   </div>
 );
 
