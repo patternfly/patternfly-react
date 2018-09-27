@@ -13,31 +13,41 @@ const propTypes = {
   description: PropTypes.string,
   examples: PropTypes.arrayOf(PropTypes.func),
   components: PropTypes.objectOf(PropTypes.func),
-  enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any))
+  enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
+  rawExamples: PropTypes.array,
+  images: PropTypes.array
 };
 
 const defaultProps = {
   description: '',
   examples: [],
   components: {},
-  enumValues: {}
+  enumValues: {},
+  rawExamples: [],
+  images: []
 };
 
-const ComponentDocs = ({ title, description, examples, components, enumValues }) => (
+const ComponentDocs = ({ title, description, examples, components, enumValues, rawExamples, images }) => (
   <Content>
     <Title size="3xl">{title}</Title>
     {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
     <Section title="Examples">
-      {examples.map((ComponentExample, i) => (
-        <Example
-          key={i}
-          title={ComponentExample.title}
-          description={ComponentExample.description}
-          {...(ComponentExample.getContainerProps ? ComponentExample.getContainerProps() : {})}
-        >
-          <ComponentExample />
-        </Example>
-      ))}
+      {examples.map((ComponentExample, i) => {
+        const { __docgenInfo: componentDocs } = ComponentExample;
+        const rawExample = rawExamples.find(example => example.name === componentDocs.displayName);
+        return (
+          <Example
+            key={i}
+            raw={rawExample && rawExample.file}
+            images={images}
+            title={ComponentExample.title}
+            description={ComponentExample.description}
+            {...(ComponentExample.getContainerProps ? ComponentExample.getContainerProps() : {})}
+          >
+            <ComponentExample />
+          </Example>
+        );
+      })}
     </Section>
     {Object.entries(components).map(([componentName, { __docgenInfo: componentDocs }]) => (
       <PropsTable key={componentName} name={componentName} props={componentDocs.props} enumValues={enumValues} />

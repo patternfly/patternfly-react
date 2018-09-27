@@ -54,10 +54,11 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
 
 exports.createPages = async ({ boundActionCreators, graphql }) => {
   const {
-    data: { docs, examples }
+    data: { docs, examples, exampleImages }
   } = await graphql(`
     fragment DocFile on File {
       relativePath
+      relativeDirectory
       absolutePath
       base
       name
@@ -78,17 +79,47 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           }
         }
       }
+      exampleImages: allFile(filter: { extension: { regex: "/(png|svg)/" } }) {
+        edges {
+          node {
+            ...DocFile
+          }
+        }
+      }
     }
   `);
   const docsComponentPath = path.resolve(__dirname, './src/components/componentDocs');
   docs.edges.forEach(({ node: doc }) => {
     const filePath = path.resolve(__dirname, '.tmp', doc.base);
+
+    const rawExamples = [];
+    examples.edges.forEach(({ node: example }) => {
+      if (
+        example.relativeDirectory
+          .split('/')
+          .slice(0, 2)
+          .join('/') === doc.relativeDirectory
+      ) {
+        // e.g. components/Alert/examples/DangerAlert.js
+        const examplePath = `../../react-core/src/${example.relativePath}`;
+        rawExamples.push(`{name: '${example.name}', path: '${examplePath}', file: require('!!raw!${examplePath}')}`);
+      }
+    });
+    const allImages = [];
+    exampleImages.edges.forEach(({ node: image }) => {
+      const imagePath = `../../react-core/src/${image.relativePath}`;
+      allImages.push(`{name: '${image.base}', file: require('${imagePath}')}`);
+    });
+
     const content = `
     import React from 'react';
     import docs from '${doc.absolutePath}';
     import ComponentDocs from '${docsComponentPath}';
+    
+    const rawExamples = [${rawExamples}];
+    const images = [${allImages}];
 
-    export default () => <ComponentDocs {...docs} />
+    export default () => <ComponentDocs rawExamples={rawExamples} images={images} {...docs} />
     `;
     fs.outputFileSync(filePath, content);
     boundActionCreators.createPage({
