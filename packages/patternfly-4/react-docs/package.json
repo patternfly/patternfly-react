@@ -12,7 +12,7 @@
     "@patternfly/react-icons": "*",
     "@patternfly/react-styles": "^2.0.0",
     "@patternfly/react-tokens": "^1.0.0",
-    "babel-plugin-react-docgen": "^v1.9.0",
+    "babel-standalone": "^6.26.0",
     "emotion": "^9.2.9",
     "emotion-server": "^9.2.9",
     "gatsby": "^1.9.247",
@@ -27,7 +27,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-live": "^1.11.0"
   },
   "keywords": [
     "gatsby"
