@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutModalBox Test 1`] = `
+.pf-c-about-modal-box {
+  display: grid;
+  z-index: 600;
+  grid-template-rows: max-content max-content auto max-content;
+  grid-template-areas: "brand close" "header header" "content content" "logo logo";
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #030303;
+  box-shadow: 0 0 100px 0 rgba(255,255,255,0.4);
+}
+
+<div
+  aria-describedby="id2"
+  aria-labelledby="id"
+  aria-modal="true"
+  className="pf-c-about-modal-box"
+  role="dialog"
+>
+  This is a AboutModalBox
+</div>
+`;

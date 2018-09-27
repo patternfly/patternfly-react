@@ -5,7 +5,7 @@ import ModalBoxHeader from './ModalBoxHeader';
 import ModalBoxHCloseButton from './ModalBoxCloseButton';
 import ModalBox from './ModalBox';
 import ModalBoxFooter from './ModalBoxFooter';
-import Backdrop from './Backdrop';
+import Backdrop from '../Backdrop/Backdrop';
 import Bullseye from '../../layouts/Bullseye/Bullseye';
 
 const propTypes = {
