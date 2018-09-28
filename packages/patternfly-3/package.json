@@ -1,5 +1,5 @@
 {
-  "name": "patternfly3-react-lerna-root",
+  "name": "@patternfly/patternfly3-react-lerna-root",
   "version": "1.0.0",
   "private": true,
   "config": {
