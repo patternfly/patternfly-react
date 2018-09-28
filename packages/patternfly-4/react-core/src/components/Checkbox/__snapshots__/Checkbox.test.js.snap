@@ -3,7 +3,6 @@
 exports[`controlled 1`] = `
 .pf-c-check {
   display: block;
-  cursor: pointer;
 }
 
 <input
@@ -19,7 +18,6 @@ exports[`controlled 1`] = `
 exports[`isDisabled 1`] = `
 .pf-c-check {
   display: block;
-  cursor: pointer;
 }
 
 <input
@@ -34,7 +32,6 @@ exports[`isDisabled 1`] = `
 exports[`uncontrolled 1`] = `
 .pf-c-check {
   display: block;
-  cursor: pointer;
 }
 
 <input
