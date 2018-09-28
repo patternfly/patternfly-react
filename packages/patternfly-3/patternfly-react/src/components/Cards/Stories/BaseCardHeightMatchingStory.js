@@ -14,9 +14,16 @@ const handleClick = e => {
   action('some on click')();
 };
 
+const fakeContent =
+  'This is card content that is used to fill up the card. There is lots of content so it should cause ' +
+  'the card to grow in height so that we can test the match height attribute and what happens when card ' +
+  'contents change and cause the card to grow. The other cards should grow as well and it should only cause ' +
+  'the resize sensor to be called one time.';
+
 const baseCardHeightMatchingStory = stories => {
   stories.addWithInfo('Base Card w/HeightMatching', '', () => {
     const matchHeightBool = boolean('Match Height', true);
+    const content = boolean('Content', false);
     const story = (
       <body className="cards-pf">
         <CardGrid matchHeight={matchHeightBool}>
@@ -35,7 +42,7 @@ const baseCardHeightMatchingStory = stories => {
                     <Icon name="shield" /> Card Title
                   </CardTitle>
                 </CardHeading>
-                <CardBody>[card contents]</CardBody>
+                <CardBody>{content ? <span>{fakeContent}</span> : '[card contents]'}</CardBody>
                 <CardFooter>
                   <CardLink onClick={handleClick} href="#" icon={<Icon type="pf" name="add-circle-o" />}>
                     Add New Cluster

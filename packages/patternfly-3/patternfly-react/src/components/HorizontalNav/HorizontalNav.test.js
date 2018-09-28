@@ -8,8 +8,7 @@ import { singleLevel } from './__mocks__/singleLevel';
 import { twoLevel } from './__mocks__/twoLevel';
 import { dropdownLevel } from './__mocks__/dropdownLevel';
 
-console.warn = jest.genMockFunction(); // eslint-disable-line no-console
-
+console.warn = jest.fn(() => {}); // eslint-disable-line no-console
 test('HorizontalNav renders properly with singleLevel', () => {
   const component = mount(
     <HorizontalNav>

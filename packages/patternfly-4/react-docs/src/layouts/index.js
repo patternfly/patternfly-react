@@ -1,12 +1,18 @@
-// This is a gatsby limitation will be fixed in newer version
-// eslint-disable-next-line
-import '@patternfly/react-core/../dist/styles/base.css';
-import './index.css';
 import React from 'react';
 import Helmet from 'react-helmet';
 import Page from '../components/page';
 import Navigation from '../components/navigation';
 import PropTypes from 'prop-types';
+import { withPrefix } from 'gatsby-link';
+
+// This is a gatsby limitation will be fixed in newer version
+let globalStyles = require(`!raw-loader!@patternfly/react-core/../dist/styles/base.css`);
+globalStyles = globalStyles.replace(/\.\/assets\//g, withPrefix('/assets/'));
+const localStyles = require(`!raw-loader!./index.css`);
+import { injectGlobal } from 'emotion';
+
+injectGlobal(globalStyles);
+injectGlobal(localStyles);
 
 const propTypes = {
   children: PropTypes.func.isRequired,
@@ -26,12 +32,13 @@ const Layout = ({ children, data }) => {
 
   return (
     <React.Fragment>
-      <Helmet
-        meta={[
-          { name: 'description', content: 'PatternFly React Documentation' },
-          { name: 'keywords', content: 'React, PatternFly, Red Hat' }
-        ]}
-      />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta name="description" content="PatternFly React Documentation" />
+        <meta name="keywords" content="React, PatternFly, Red Hat" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/codemirror.min.css" />
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/theme/monokai.min.css" />
+      </Helmet>
       <Page
         title="Patternfly React"
         navigation={<Navigation componentRoutes={componentRoutes} layoutRoutes={layoutRoutes} />}

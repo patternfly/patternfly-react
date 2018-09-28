@@ -193,9 +193,7 @@ exports[`CatalogTile renders properly 1`] = `
       <div
         class="catalog-tile-pf-description"
       >
-        <span>
-          This is a very long description that should be truncated after 112 characters. 112 is the default but can be ...
-        </span>
+        This is a very long description that should be truncated after 112 characters. 112 is the default but can be …
       </div>
     </div>
   </div>

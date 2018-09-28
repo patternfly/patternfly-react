@@ -1,0 +1,20 @@
+.modal.right-side-modal-pf {
+  left: initial;
+
+  .modal-dialog {
+    margin: @navbar-pf-height 0 0 10px;
+
+    .modal-content {
+      height: ~'calc(100vh - @{navbar-pf-height})';
+    }
+  }
+
+  &.fade:not(.in) .modal-dialog {
+    -webkit-transform: translate3d(-75%, 0, 0);
+    transform: translate3d(75%, 0, 0);
+  }
+}
+
+.modal.modeless-pf.shown {
+  display: block;
+}

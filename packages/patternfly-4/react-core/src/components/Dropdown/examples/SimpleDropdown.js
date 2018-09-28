@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
 
-export default class ExampleDropdown extends Component {
+export default class SimpleDropdown extends Component {
   static title = 'Simple dropdown';
 
   constructor(props) {
@@ -13,14 +13,12 @@ export default class ExampleDropdown extends Component {
 
   onToggle = isOpen => {
     this.setState({
-      ...this.state,
       isOpen
     });
   };
 
   onSelect = event => {
     this.setState({
-      ...this.state,
       isOpen: !this.state.isOpen
     });
   };

@@ -25,5 +25,10 @@
     "resolve-from": "^4.0.0"
   },
   "license": "Apache-2.0",
-  "scripts": {}
+  "scripts": {
+    "prebuild": "yarn build:babel",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm"
+  }
 }

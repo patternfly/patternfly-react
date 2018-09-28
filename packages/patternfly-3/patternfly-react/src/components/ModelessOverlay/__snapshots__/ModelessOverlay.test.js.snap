@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ModelessOverlay renders properly 1`] = `
+<div
+  class="modal modeless-pf fade right-side-modal-pf test-modeless-overlay-class"
+  id="test-modeless-overlay-id"
+  role="dialog"
+  tabindex="-1"
+>
+  <div
+    class="modal-dialog"
+  >
+    <div
+      class="modal-content"
+    >
+      <div
+        class="modal-header"
+      >
+        <button
+          class="close"
+        >
+          <span
+            aria-hidden="true"
+            class="pficon pficon-close"
+            title="Close"
+          />
+          <span
+            class="sr-only"
+          >
+            Close
+          </span>
+        </button>
+        <h4
+          class="modal-title"
+        >
+          Modal Overlay Title
+        </h4>
+      </div>
+      <div
+        class="modal-body"
+      >
+        test body text
+      </div>
+      <div
+        class="modal-footer"
+      >
+        <button
+          class="btn-cancel btn btn-default"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="btn btn-primary"
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ModelessOverlay renders properly when setting size 1`] = `
+<div
+  class="modal modeless-pf fade right-side-modal-pf test-modeless-overlay-class"
+  id="test-modeless-overlay-id"
+  role="dialog"
+  tabindex="-1"
+>
+  <div
+    class="modal-dialog modal-sm"
+  >
+    <div
+      class="modal-content"
+    >
+      <div
+        class="modal-header"
+      >
+        <button
+          class="close"
+        >
+          <span
+            aria-hidden="true"
+            class="pficon pficon-close"
+            title="Close"
+          />
+          <span
+            class="sr-only"
+          >
+            Close
+          </span>
+        </button>
+        <h4
+          class="modal-title"
+        >
+          Modal Overlay Title
+        </h4>
+      </div>
+      <div
+        class="modal-body"
+      >
+        test body text
+      </div>
+      <div
+        class="modal-footer"
+      >
+        <button
+          class="btn-cancel btn btn-default"
+          type="button"
+        >
+          Cancel
+        </button>
+        <button
+          class="btn btn-primary"
+          type="button"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

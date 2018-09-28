@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { OverlayTrigger, Tooltip } from 'patternfly-react';
 
 import CatalogTileBadge from './CatalogTileBadge';
 
@@ -26,11 +25,11 @@ const CatalogTile = ({
       return text;
     }
 
-    const tooltip = <Tooltip id={`${id || Date.now()}_tooltip`}>{text}</Tooltip>;
     return (
-      <OverlayTrigger overlay={tooltip} placement="top">
-        <span>{`${text.substring(0, max - 3)}...`}</span>
-      </OverlayTrigger>
+      <React.Fragment>
+        {text.substring(0, max - 3)}
+        &hellip;
+      </React.Fragment>
     );
   };
 
