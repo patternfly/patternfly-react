@@ -7,21 +7,35 @@
   margin-top: 4px;
   position: relative;
 
-  .btn.btn-link {
+  > a {
     color: $vertical-tab-pf-color;
+    display: inline-block;
     font-size: 13px;
     padding-left: 15px;
+    vertical-align: top;
+    width: 100%;
+    word-break: break-word;
 
     &:hover,
     &:focus {
       color: $vertical-tab-pf-active-color;
-      outline: 0;
       text-decoration: none;
+    }
+
+    &.no-wrap {
+      overflow-x: hidden;
+      white-space: nowrap;
+    }
+
+    &.truncate {
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 
   &.active {
-    > .btn.btn-link {
+    > a {
       color: $vertical-tab-pf-active-color;
 
       &::before {
