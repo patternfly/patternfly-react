@@ -2,6 +2,9 @@
   "name": "patternfly4-react-lerna-root",
   "version": "0.0.0",
   "private": true,
+  "config": {
+    "access": "private"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
