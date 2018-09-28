@@ -44,7 +44,11 @@ stories.add(
     )
   })(() => {
     const bordered = boolean('Bordered', true);
-    const selectType = select('Selection Type', { none: 'None', row: 'Row', cell: 'Cell' }, 'none');
+    const selectType = select(
+      'Selection Type',
+      { none: 'None', row: 'Row', checkbox: 'Checkbox', cell: 'Cell' },
+      'none'
+    );
 
     return <MockTableGridExample bordered={bordered} selectType={selectType} />;
   })

@@ -13,8 +13,13 @@ import TableGridCol from './TableGridCol';
 
 const TableGrid = ({ children, className, bordered, selectType, ...props }) => {
   const classes = classNames(
-    'table-grid-pf',
-    { bordered, 'row-select': selectType === 'row', 'cell-select': selectType === 'cell' },
+    {
+      'table-grid-pf': true,
+      bordered,
+      'row-select': selectType === 'row',
+      'cell-select': selectType === 'cell',
+      'checkbox-select': selectType === 'checkbox'
+    },
     className
   );
   return (
@@ -32,7 +37,7 @@ TableGrid.propTypes = {
   /** Flag to use a bordered grid */
   bordered: PropTypes.bool,
   /** Type of selection for the grid */
-  selectType: PropTypes.oneOf(['row', 'cell', 'none'])
+  selectType: PropTypes.oneOf(['row', 'cell', 'checkbox', 'none'])
 };
 TableGrid.defaultProps = {
   children: null,
