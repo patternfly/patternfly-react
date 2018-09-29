@@ -19,6 +19,11 @@ beforeEach(() => {
   window.location.hash = '#link1';
 });
 
+const context = {
+  onSelect: () => undefined,
+  onToggle: () => undefined
+};
+
 test('Default Nav List', () => {
   const view = mount(
     <Nav aria-label="Test">
@@ -29,7 +34,8 @@ test('Default Nav List', () => {
           </NavItem>
         ))}
       </NavList>
-    </Nav>
+    </Nav>,
+    { context }
   );
   expect(view).toMatchSnapshot();
 });
@@ -45,7 +51,8 @@ test('Default Nav List - Trigger item active update', () => {
           </NavItem>
         ))}
       </NavList>
-    </Nav>
+    </Nav>,
+    { context }
   );
   view
     .find({ href: '#link2' })
@@ -64,7 +71,8 @@ test('Simple Nav List', () => {
           </NavItem>
         ))}
       </NavList>
-    </Nav>
+    </Nav>,
+    { context }
   );
   expect(view).toMatchSnapshot();
 });
@@ -81,7 +89,8 @@ test('Expandable Nav List', () => {
           ))}
         </NavExpandable>
       </NavList>
-    </Nav>
+    </Nav>,
+    { context }
   );
   expect(view).toMatchSnapshot();
 });
@@ -99,7 +108,8 @@ test('Expandable Nav List - Trigger toggle', () => {
           ))}
         </NavExpandable>
       </NavList>
-    </Nav>
+    </Nav>,
+    { context }
   );
   view
     .find('li.expandable-group')
@@ -120,7 +130,8 @@ test('Expandable Nav List with aria label', () => {
           ))}
         </NavExpandable>
       </NavList>
-    </Nav>
+    </Nav>,
+    { context }
   );
   expect(view).toMatchSnapshot();
 });
@@ -146,7 +157,8 @@ test('Nav Grouped List', () => {
           ))}
         </NavList>
       </NavGroup>
-    </Nav>
+    </Nav>,
+    { context }
   );
   expect(view).toMatchSnapshot();
 });
@@ -161,7 +173,8 @@ test('Horizontal Nav List', () => {
           </NavItem>
         ))}
       </NavList>
-    </Nav>
+    </Nav>,
+    { context }
   );
   expect(view).toMatchSnapshot();
 });
@@ -176,7 +189,8 @@ test('Tertiary Nav List', () => {
           </NavItem>
         ))}
       </NavList>
-    </Nav>
+    </Nav>,
+    { context }
   );
   expect(view).toMatchSnapshot();
 });
@@ -190,7 +204,8 @@ test('Nav List with custom item nodes', () => {
           <CustomNode />
         </NavItem>
       </NavList>
-    </Nav>
+    </Nav>,
+    { context }
   );
   expect(view).toMatchSnapshot();
 });
