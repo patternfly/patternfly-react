@@ -77,7 +77,32 @@ test('Sort Type Selectors are rendered if at least two types exist', () => {
         currentSortType: 'a',
         sortTypes: ['a', 'b']
       },
-      expected: 1
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: '',
+        sortTypes: [{ title: 'a' }, 'b']
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: '',
+        sortTypes: ['a', 'b']
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
     },
     {
       Selector: Sort.TypeSelector,
@@ -85,7 +110,9 @@ test('Sort Type Selectors are rendered if at least two types exist', () => {
         currentSortType: 'a',
         sortTypes: ['a']
       },
-      expected: 0
+      expected: {
+        length: 0
+      }
     },
     {
       Selector: Sort.TypeSelector,
@@ -93,9 +120,15 @@ test('Sort Type Selectors are rendered if at least two types exist', () => {
         currentSortType: 'a',
         sortTypes: []
       },
-      expected: 0
+      expected: {
+        length: 0
+      }
     }
-  ].forEach(({ Selector, props, expected }) =>
-    expect(mount(<Selector {...props} />).find(DropdownButton)).toHaveLength(expected)
-  );
+  ].forEach(({ Selector, props, expected }) => {
+    const view = mount(<Selector {...props} />).find(DropdownButton);
+    expect(view).toHaveLength(expected.length);
+    if (expected.length) {
+      expect(view.props().title).toBe(expected.title);
+    }
+  });
 });
