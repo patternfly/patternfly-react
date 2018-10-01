@@ -2,7 +2,7 @@ import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 import getContainerProps from './common/getContainerProps';
 
-class SimpleSplit extends React.Component {
+class SimpleToolbar extends React.Component {
   static title = 'Simple Toolbar Layout';
   static getContainerProps = getContainerProps;
 
@@ -24,4 +24,4 @@ class SimpleSplit extends React.Component {
   }
 }
 
-export default SimpleSplit;
+export default SimpleToolbar;

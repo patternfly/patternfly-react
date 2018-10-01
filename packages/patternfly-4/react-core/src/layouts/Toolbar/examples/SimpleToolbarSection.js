@@ -3,13 +3,13 @@ import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/
 import getContainerProps from './common/getContainerProps';
 
 class SimpleToolbarSection extends React.Component {
-  static title = 'Simple Toolbar Layout';
+  static title = 'Toolbar with sections';
   static getContainerProps = getContainerProps;
 
   render() {
     return (
       <Toolbar>
-        <ToolbarSection>
+        <ToolbarSection aria-label="First section">
           <ToolbarGroup>
             <ToolbarItem>Item 1</ToolbarItem>
           </ToolbarGroup>
@@ -18,7 +18,7 @@ class SimpleToolbarSection extends React.Component {
             <ToolbarItem>Item 3</ToolbarItem>
           </ToolbarGroup>
         </ToolbarSection>
-        <ToolbarSection>
+        <ToolbarSection aria-label="Second section">
           <ToolbarGroup>
             <ToolbarItem>Item 4</ToolbarItem>
             <ToolbarItem>Item 5</ToolbarItem>
