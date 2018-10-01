@@ -9,6 +9,7 @@ export * from './Button';
 export * from './Card';
 export * from './Checkbox';
 export * from './Dropdown';
+export * from './Form';
 export * from './List';
 export * from './LoginBox';
 export * from './Modal';

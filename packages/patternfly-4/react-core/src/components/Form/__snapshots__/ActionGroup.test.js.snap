@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionGroup component should render default action group variant 1`] = `
+.pf-c-form__group.pf-m-action {
+  display: block;
+}
+
+<ActionGroup
+  className=""
+>
+  <div
+    className="pf-c-form__group pf-m-action"
+  >
+    <div>
+      Hello
+    </div>
+  </div>
+</ActionGroup>
+`;
+
+exports[`ActionGroup component should render horizontal form ActionGroup variant 1`] = `
+.pf-c-form__horizontal-group {
+  display: block;
+}
+.pf-c-form__group.pf-m-action {
+  display: block;
+}
+.pf-c-form.pf-m-horizontal {
+  display: grid;
+  grid-gap: 1.5rem;
+}
+
+<Form
+  className=""
+  isHorizontal={true}
+>
+  <form
+    className="pf-c-form pf-m-horizontal"
+  >
+    <ActionGroup
+      className=""
+    >
+      <div
+        className="pf-c-form__group pf-m-action"
+      >
+        <div
+          className="pf-c-form__horizontal-group"
+        />
+      </div>
+    </ActionGroup>
+  </form>
+</Form>
+`;

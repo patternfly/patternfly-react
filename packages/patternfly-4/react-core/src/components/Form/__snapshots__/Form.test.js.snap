@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component should render default form variant 1`] = `
+.pf-c-form {
+  display: grid;
+  grid-gap: 1.5rem;
+}
+
+<form
+  className="pf-c-form"
+>
+  <[object Object]
+    value={
+      Object {
+        "isHorizontal": false,
+      }
+    }
+  />
+</form>
+`;
+
+exports[`Form component should render horizontal form variant 1`] = `
+.pf-c-form.pf-m-horizontal {
+  display: grid;
+  grid-gap: 1.5rem;
+}
+
+<form
+  className="pf-c-form pf-m-horizontal"
+>
+  <[object Object]
+    value={
+      Object {
+        "isHorizontal": true,
+      }
+    }
+  />
+</form>
+`;
