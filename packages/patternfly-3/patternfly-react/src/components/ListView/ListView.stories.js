@@ -61,6 +61,7 @@ stories.add(
           heading={title}
           description={description}
           stacked={boolean('Stacked', false)}
+          expanded={boolean('Expanded', false)}
           hideCloseIcon={boolean('Hide close icon', false)}
         >
           <Row>
@@ -133,6 +134,7 @@ stories.add(
           </div>
         }
         stacked={boolean('Stacked', false)}
+        expanded={boolean('Expanded', false)}
       >
         Expanded Content
       </ListView.Item>
@@ -160,6 +162,7 @@ stories.add(
           </span>
         }
         stacked={boolean('Stacked', false)}
+        expanded={boolean('Expanded', false)}
       />
       <ListView.Item
         key="item3"
@@ -181,6 +184,7 @@ stories.add(
           </ListView.InfoItem>
         ]}
         stacked={boolean('Stacked', false)}
+        expanded={boolean('Expanded', false)}
       />
       <ListView.Item
         key="item4"
@@ -193,6 +197,7 @@ stories.add(
           </ListView.InfoItem>
         ]}
         stacked={boolean('Stacked', false)}
+        expanded={boolean('Expanded', false)}
       />
       <ListView.Item
         key="item5"
@@ -214,6 +219,7 @@ stories.add(
           </ListView.InfoItem>
         ]}
         stacked={boolean('Stacked', false)}
+        expanded={boolean('Expanded', false)}
       />
     </ListView>
   ))

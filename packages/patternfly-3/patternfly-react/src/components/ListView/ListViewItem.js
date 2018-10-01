@@ -15,7 +15,12 @@ import ListViewRow from './ListViewRow';
  * renders ListViewGroupItemHeader and ListViewGroupItemContainer
  */
 class ListViewItem extends React.Component {
-  state = { expanded: false };
+  constructor(props) {
+    super(props);
+
+    this.state = { expanded: props.expanded };
+  }
+
   toggleExpanded = () => {
     const { onExpand, onExpandClose } = this.props;
     if (this.state.expanded) {
@@ -105,6 +110,8 @@ ListViewItem.propTypes = {
   children: PropTypes.node,
   /** Display the ListViewItem stacked or not */
   stacked: PropTypes.bool,
+  /** Display the ListViewItem expanded or not */
+  expanded: PropTypes.bool,
   /** Function triggered when expandable content is expanded */
   onExpand: PropTypes.func,
   /** Function triggered when expandable content is closed */
@@ -144,6 +151,7 @@ ListViewItem.defaultProps = {
   onExpand: noop,
   onExpandClose: noop,
   onCloseCompoundExpand: noop,
-  stacked: false
+  stacked: false,
+  expanded: false
 };
 export default ListViewItem;
