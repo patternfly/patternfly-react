@@ -1,6 +1,7 @@
 /** Keep alphabetically sorted */
 export * from './Alert';
 export * from './Avatar';
+export * from './BackgroundImage';
 export * from './Badge';
 export * from './Brand';
 export * from './Button';
