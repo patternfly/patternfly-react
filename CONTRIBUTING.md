@@ -42,6 +42,10 @@ Our issue tracker utilizes several labels to help organize and identify issues. 
 - `bug` - A bug is a _demonstrable problem_ that is caused by the code in the repository. Please check if the issue has already been reported before reporting a new bug.
 - `duplicate` - A duplicate signifies that another issue encapsulates or restates this issue. Duplicates will be closed and referenced as such.
 - `enhancement` - An enhancement is a feature request. Please provide as much detail as possible and consider whether your idea fits the scope and aims of this project.
+- `breaking change` - this issue warrants a major release and potentially changes APIs for downstream consumers.
+- `chore` - this issue improves internal tooling or build processes only.
+- `documentation` - this issue affects documentation only.
+- `css` - this issue affects CSS or has stylistic changes.
 - `good first issue` - Issues that are ideal for new contributors.
 - `help wanted` - Issues we need or would love help from the community to resolve.
 - `pending response` - This label indicates that the issue is awaiting reply from a contributor or a maintainer.
@@ -57,6 +61,15 @@ Since the components in patternfly-react are based on patternfly, we want to mak
 - `ux review` - The issue requires ux design review. Add this label when you are working on a component, and the storybook example is ready for review by a ux designer.
 - `css approved` - The issue has been reviewed and approved by a member of the css team.
 - `ux approved` - The issue has been reviewed and approved by a member of the ux team.
+
+The following labels also can be used to improve PatternFly React's [CHANGELOG.md](https://github.com/patternfly/patternfly-react/blob/master/CHANGELOG.md) when submitting PRs:
+
+- `bug` - this PR resolves a bug issue. Releasing will cause a patch level semantic version change.
+- `enhancement` - this PR adds a new feature and closes an `enhancement` issue. Releasing will cause a minor semantic version change.
+- `breaking change` - this PR warrants a major release and potentially changes APIs for downstream consumers. Releasing will cause a major semantic version change.
+- `chore` - this PR improves internal tooling or build processes only. These PRs do not effect release.
+- `documentation` - this PR affects documentation only. These PRs do not effect release.
+- `css` - this PR affects CSS or has minimal stylistic changes. Releasing will cause a patch level semantic version change.
 
 ### Project Board Columns
 

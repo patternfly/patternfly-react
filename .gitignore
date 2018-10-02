@@ -1,6 +1,7 @@
 node_modules
 dist
 .out
+/.changelog
 .DS_Store
 coverage
 public/

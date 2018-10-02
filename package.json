@@ -23,12 +23,15 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
     "change-case": "^3.0.2",
-    "commitizen": "^2.9.6",
+    "commitizen": "^3.0.1",
+    "commitlint-config-cz": "^0.10.1",
     "concurrently": "^3.5.1",
+    "conventional-changelog-cli": "^2.0.5",
     "coveralls": "^3.0.0",
     "cross-env": "^5.1.4",
-    "cz-lerna-changelog": "^1.2.1",
+    "cz-conventional-changelog": "^2.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-context-patch": "^0.0.9",
@@ -41,7 +44,7 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "lerna": "^2.11.0",
-    "lerna-semantic-release": "^9.1.0",
+    "lerna-changelog": "^0.8.0",
     "npmlog": "^4.1.2",
     "plop": "^2.0.0",
     "prettier": "^1.14.2",
@@ -51,7 +54,6 @@
     "react": "^16.3.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.3.0",
-    "semantic-release": "^15.0.0",
     "travis-deploy-once": "^4.4.1"
   },
   "sassIncludes": {
@@ -67,14 +69,15 @@
     "clean": "yarn clean:build",
     "clean:build": "rm -rf packages/*/dist && rm -rf packages/patternfly-?/*/dist",
     "commit": "git-cz",
+    "commitmsg": "commitlint -e",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "generate": "yarn plop",
-    "lerna-semantic-release": "lerna-semantic-release",
     "lerna": "lerna",
+    "lerna:publish": "lerna publish --yes",
+    "lerna:changelog": "lerna-changelog --from=`git rev-list --max-parents=0 HEAD` > CHANGELOG.md && git add CHANGELOG.md",
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
     "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
-    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
     "start": "yarn start:pf3",
     "start:pf3": "concurrently \"yarn storybook:run\" \"yarn storybook:openurl\"",
     "start:pf4": "lerna run develop --scope=@patternfly/react-docs --stream",
@@ -130,7 +133,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-lerna-changelog"
+      "path": "node_modules/cz-conventional-changelog"
     },
     "access": "public"
   },

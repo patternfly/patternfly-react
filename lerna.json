@@ -6,6 +6,25 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "changelog": {
+    "repo": "patternfly/patternfly-react",
+    "cacheDir": ".changelog",
+    "nextVersion": "Unreleased",
+    "labels": {
+      "breaking change :boom:": ":boom: Breaking Change",
+      "enhancement :rocket:": ":rocket: New Feature",
+      "bug :bug:": ":bug: Bug Fix",
+      "css :nail_care:": ":nail_care: CSS",
+      "documentation :memo:": ":memo: Documentation",
+      "chore :house:": ":house: Internal"
+    }
+  },
+  "command": {
+    "publish": {
+      "message": "chore(release): releasing packages",
+      "conventionalCommits": true
+    }
+  },
   "version": "independent",
   "useWorkspaces": true
 }
