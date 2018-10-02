@@ -16,7 +16,7 @@ function createGridItem() {
 }
 
 class GridPlayground extends React.Component {
-  static title = 'Grid Playgroud';
+  static title = 'Grid Playground';
 
   state = {
     gridItems: [createGridItem(), createGridItem(), createGridItem(), createGridItem()]

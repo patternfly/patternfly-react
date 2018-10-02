@@ -4,15 +4,17 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  children: PropTypes.node,
+  /** additional classes added to the Checkbox */
   className: PropTypes.string,
+  /** Flag to show if the Checkbox selection is valid or invalid. */
   isValid: PropTypes.bool,
+  /** Flag to show if the Checkbox is disabled. */
   isDisabled: PropTypes.bool,
+  /** A callback for when the Checkbox selection changes. */
   onChange: PropTypes.func
 };
 
 const defaultProps = {
-  children: null,
   className: '',
   isValid: true,
   isDisabled: false,
@@ -25,7 +27,7 @@ class Checkbox extends React.Component {
   };
 
   render() {
-    const { className, children, onChange, isValid, isDisabled, ...props } = this.props;
+    const { className, onChange, isValid, isDisabled, ...props } = this.props;
     return (
       <input
         {...props}

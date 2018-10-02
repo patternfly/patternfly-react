@@ -14,8 +14,11 @@ export const TitleSize = {
 };
 
 const propTypes = {
+  /** the size of the Title  */
   size: PropTypes.oneOf(Object.values(TitleSize)).isRequired,
+  /** content rendered inside the Title */
   children: PropTypes.node,
+  /** additional classes added to the Title */
   className: PropTypes.string
 };
 

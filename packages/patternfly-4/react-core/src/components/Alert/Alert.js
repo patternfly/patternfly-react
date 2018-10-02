@@ -16,11 +16,17 @@ export const AlertVariant = {
 };
 
 const propTypes = {
+  /** Adds Alert variant styles */
   variant: PropTypes.oneOf(Object.values(AlertVariant)).isRequired,
+  /** Action button to put in the Alert */
   action: PropTypes.node,
+  /** Title of the Alert */
   title: PropTypes.string,
+  /** content rendered inside the Alert */
   children: PropTypes.node,
+  /** additional classes added to the Alert */
   className: PropTypes.string,
+  /** Adds accessible text to the Alert */
   'aria-label': PropTypes.string
 };
 
