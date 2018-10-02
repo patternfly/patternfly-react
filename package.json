@@ -31,6 +31,7 @@
     "cz-lerna-changelog": "^1.2.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-context-patch": "^0.0.9",
     "enzyme-to-json": "^3.3.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
