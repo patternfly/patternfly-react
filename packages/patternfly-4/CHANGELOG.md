@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.2.0...patternfly4-react-lerna-root@1.2.1) (2018-10-03)
+
+
+### Bug Fixes
+
+* **pf-4:** checkboxProps to be consistent with Checkbox.propTypes ([#696](https://github.com/patternfly/patternfly-react/issues/696)) ([c690b3e](https://github.com/patternfly/patternfly-react/commit/c690b3e))
+
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.1.0...patternfly4-react-lerna-root@1.2.0) (2018-10-03)
 

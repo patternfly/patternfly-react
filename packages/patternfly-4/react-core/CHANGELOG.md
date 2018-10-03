@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.16.1"></a>
+## [1.16.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.16.0...@patternfly/react-core@1.16.1) (2018-10-03)
+
+
+### Bug Fixes
+
+* **pf-4:** checkboxProps to be consistent with Checkbox.propTypes ([#696](https://github.com/patternfly/patternfly-react/issues/696)) ([c690b3e](https://github.com/patternfly/patternfly-react/commit/c690b3e))
+
+
+
+
 <a name="1.16.0"></a>
 # [1.16.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.15.0...@patternfly/react-core@1.16.0) (2018-10-03)
 

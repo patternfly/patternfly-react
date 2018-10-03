@@ -1,5 +1,35 @@
 
-## Unreleased (2018-10-03)
+## patternfly4-react-lerna-root@1.2.0 (2018-10-03)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#697](https://github.com/patternfly/patternfly-react/pull/697) feat(pf-next update): Update location of styles for patternfly next ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-tokens@1.5.0 (2018-10-03)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#697](https://github.com/patternfly/patternfly-react/pull/697) feat(pf-next update): Update location of styles for patternfly next ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-docs@3.14.1 (2018-10-03)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#697](https://github.com/patternfly/patternfly-react/pull/697) feat(pf-next update): Update location of styles for patternfly next ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-core@1.16.0 (2018-10-03)
 
 #### :rocket: New Feature
 * `patternfly-4`
