@@ -25,6 +25,7 @@ const transformCode = code => {
     // LiveEditor doesn't work properly with these so need to remove
     code = code.replace(/^\s*import.*$/gm, '');
     code = code.replace(/^\s*export default class/gm, 'class');
+    code = code.replace(/^\s*\/\/.*$/gm, '');
     code = code.replace(/extends Component/gm, 'extends React.Component');
     code = code.replace(/^\s*export.*$/gm, '');
     code = code.replace(/^\s*static.*$/gm, '');

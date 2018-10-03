@@ -14,7 +14,8 @@ const propTypes = {
   fullPageOnly: PropTypes.bool,
   name: PropTypes.string,
   raw: PropTypes.string,
-  images: PropTypes.array
+  images: PropTypes.array,
+  live: PropTypes.bool
 };
 
 const defaultProps = {
@@ -24,12 +25,13 @@ const defaultProps = {
   title: '',
   name: '',
   raw: '',
-  images: []
+  images: [],
+  live: true
 };
 
 const LIVE_EXAMPLES = /true/i.test(process.env.LIVE_EXAMPLES);
 
-const Example = ({ children, title, className, description, name, fullPageOnly, raw, images, ...props }) => {
+const Example = ({ children, title, className, description, name, fullPageOnly, raw, images, live, ...props }) => {
   // Display full page link
   if (fullPageOnly) {
     const pathName = typeof window !== 'undefined' ? `${window.location.pathname}` : '';
@@ -50,13 +52,13 @@ const Example = ({ children, title, className, description, name, fullPageOnly, 
     <div>
       <Title size="lg">{title}</Title>
       {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
-      {LIVE_EXAMPLES ? (
+      {LIVE_EXAMPLES && live ? (
         <LiveDemo raw={raw.trim()} images={images} className={className} />
       ) : (
-        <div className={css(className, styles.example)} {...props}>
-          {children}
-        </div>
-      )}
+          <div className={css(className, styles.example)} {...props}>
+            {children}
+          </div>
+        )}
     </div>
   );
 };
