@@ -31,6 +31,7 @@ exports[`Dropdown toggle 1`] = `
 >
   <DropdownToggle
     className=""
+    focusedItemRef={null}
     isActive={false}
     isFocused={false}
     isHovered={false}
@@ -42,7 +43,9 @@ exports[`Dropdown toggle 1`] = `
       aria-expanded={false}
       aria-haspopup="true"
       className="pf-c-dropdown__toggle"
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
     >
       Dropdown
       <CaretDownIcon
@@ -99,6 +102,7 @@ exports[`Kebab toggle 1`] = `
   <DropdownToggle
     aria-label="Actions"
     className=""
+    focusedItemRef={null}
     isActive={false}
     isFocused={false}
     isHovered={false}
@@ -111,7 +115,9 @@ exports[`Kebab toggle 1`] = `
       aria-haspopup="true"
       aria-label="Actions"
       className="pf-c-dropdown__toggle"
+      onBlur={[Function]}
       onClick={[Function]}
+      onFocus={[Function]}
     >
       <EllipsisVIcon
         color="currentColor"

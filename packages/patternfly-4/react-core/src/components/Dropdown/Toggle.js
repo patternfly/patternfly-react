@@ -19,7 +19,9 @@ const propTypes = {
   /** Forces hover state */
   isHovered: PropTypes.bool,
   /** Forces active state */
-  isActive: PropTypes.bool
+  isActive: PropTypes.bool,
+  /** Focused DropdownItem */
+  focusedItemRef: PropTypes.object
 };
 
 const defaultProps = {
@@ -30,13 +32,24 @@ const defaultProps = {
   isFocused: false,
   isHovered: false,
   isActive: false,
-  onToggle: Function.prototype
+  onToggle: Function.prototype,
+  focusedItemRef: null
 };
 
 class DropdownToggle extends Component {
+  state = {
+    focused: false
+  };
+
   componentDidMount = () => {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('keydown', this.onEscPress);
+  };
+
+  componentDidUpdate = prevProps => {
+    if (this.props.focusedItemRef !== prevProps.focusedItemRef && !this.props.focusedItemRef) {
+      this.props.onToggle && this.props.onToggle(false);
+    }
   };
 
   componentWillUnmount = () => {
@@ -51,15 +64,30 @@ class DropdownToggle extends Component {
   };
 
   onEscPress = event => {
+    const { parentRef, focusedItemRef } = this.props;
     const keyCode = event.keyCode || event.which;
-    if (keyCode === 27) {
+    if (keyCode === 27 && ((parentRef && parentRef.contains(focusedItemRef)) || this.state.focused)) {
       this.props.onToggle && this.props.onToggle(false);
       this.toggle.focus();
     }
   };
 
+  handleOnFocus = () => this.setState({ focused: true });
+  handleOnBlur = () => this.setState({ focused: false });
+
   render() {
-    const { className, children, isOpen, isFocused, isActive, isHovered, onToggle, parentRef, ...props } = this.props;
+    const {
+      className,
+      children,
+      isOpen,
+      isFocused,
+      isActive,
+      isHovered,
+      onToggle,
+      parentRef,
+      focusedItemRef,
+      ...props
+    } = this.props;
     return (
       <button
         {...props}
@@ -76,6 +104,8 @@ class DropdownToggle extends Component {
         onClick={_event => onToggle && onToggle(!isOpen)}
         aria-haspopup="true"
         aria-expanded={isOpen}
+        onFocus={this.handleOnFocus}
+        onBlur={this.handleOnBlur}
       >
         {children}
       </button>

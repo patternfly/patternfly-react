@@ -18,7 +18,9 @@ const propTypes = {
   /** Accesibility role */
   role: PropTypes.string,
   /** Default hyperlink location */
-  href: PropTypes.string
+  href: PropTypes.string,
+  /** Sets focusedItemRef component state in Dropdown */
+  setFocusedItemRef: PropTypes.func
 };
 
 const defaultProps = {
@@ -28,27 +30,50 @@ const defaultProps = {
   component: 'a',
   isDisabled: false,
   href: '#',
-  role: 'menuitem'
+  role: 'menuitem',
+  setFocusedItemRef: Function.prototype
 };
 
-const DropdownItem = ({ className, children, isHovered, component: Component, isDisabled, role, ...props }) => {
-  const aditionalProps = props;
-  if (Component === 'a') {
-    aditionalProps['aria-disabled'] = isDisabled;
-    aditionalProps.tabIndex = isDisabled ? -1 : aditionalProps.tabIndex;
-  } else if (Component === 'button') {
-    aditionalProps.disabled = isDisabled;
+class DropdownItem extends React.Component {
+  handleOnFocus = e => {
+    e.stopPropagation();
+    this.props.setFocusedItemRef(this.itemRef);
+  };
+
+  render() {
+    const {
+      className,
+      children,
+      isHovered,
+      component: Component,
+      isDisabled,
+      role,
+      setFocusedItemRef,
+      ...props
+    } = this.props;
+    const aditionalProps = props;
+    if (Component === 'a') {
+      aditionalProps['aria-disabled'] = isDisabled;
+      aditionalProps.tabIndex = isDisabled ? -1 : aditionalProps.tabIndex;
+    } else if (Component === 'button') {
+      aditionalProps.disabled = isDisabled;
+    }
+
+    return (
+      <Component
+        {...aditionalProps}
+        className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
+        role={role}
+        ref={ref => {
+          this.itemRef = ref;
+        }}
+        onFocus={this.handleOnFocus}
+      >
+        {children}
+      </Component>
+    );
   }
-  return (
-    <Component
-      {...aditionalProps}
-      className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
-      role={role}
-    >
-      {children}
-    </Component>
-  );
-};
+}
 
 DropdownItem.propTypes = propTypes;
 DropdownItem.defaultProps = defaultProps;
