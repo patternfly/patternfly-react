@@ -4,8 +4,8 @@ exports[`KebabToggle dropup + right aligned 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -272,8 +272,8 @@ exports[`KebabToggle dropup 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -540,8 +540,8 @@ exports[`KebabToggle expanded 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -808,8 +808,8 @@ exports[`KebabToggle plain 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -1076,8 +1076,8 @@ exports[`KebabToggle regular 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -1344,8 +1344,8 @@ exports[`KebabToggle right aligned 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -1618,8 +1618,8 @@ exports[`dropdown dropup + right aligned 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -1893,8 +1893,8 @@ exports[`dropdown dropup 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -2168,8 +2168,8 @@ exports[`dropdown expanded 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -2443,8 +2443,8 @@ exports[`dropdown regular 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -2718,8 +2718,8 @@ exports[`dropdown right aligned 1`] = `
 .pf-c-dropdown__toggle {
   display: block;
   position: relative;
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;

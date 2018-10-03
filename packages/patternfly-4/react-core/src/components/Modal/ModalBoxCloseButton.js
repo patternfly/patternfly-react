@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/ModalBox/styles.css';
+import styles from '@patternfly/patternfly-next/components/ModalBox/modal-box.css';
 import { Button } from '../Button';
 import { TimesIcon } from '@patternfly/react-icons';
 

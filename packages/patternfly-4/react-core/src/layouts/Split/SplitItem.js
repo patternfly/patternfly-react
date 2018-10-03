@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/layouts/Split/styles.css';
+import styles from '@patternfly/patternfly-next/layouts/Split/split.css';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {

@@ -27,6 +27,7 @@ exports[`Alert - danger Action 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-danger {
   display: flex;
@@ -142,6 +143,7 @@ exports[`Alert - danger Action and Title 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-danger {
   display: flex;
@@ -360,6 +362,7 @@ exports[`Alert - danger Custom aria label 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-danger {
   display: flex;
@@ -580,6 +583,7 @@ exports[`Alert - info Action 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-info {
   display: flex;
@@ -695,6 +699,7 @@ exports[`Alert - info Action and Title 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-info {
   display: flex;
@@ -913,6 +918,7 @@ exports[`Alert - info Custom aria label 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-info {
   display: flex;
@@ -1133,6 +1139,7 @@ exports[`Alert - success Action 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-success {
   display: flex;
@@ -1248,6 +1255,7 @@ exports[`Alert - success Action and Title 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-success {
   display: flex;
@@ -1466,6 +1474,7 @@ exports[`Alert - success Custom aria label 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-success {
   display: flex;
@@ -1686,6 +1695,7 @@ exports[`Alert - warning Action 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-warning {
   display: flex;
@@ -1801,6 +1811,7 @@ exports[`Alert - warning Action and Title 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-warning {
   display: flex;
@@ -2019,6 +2030,7 @@ exports[`Alert - warning Custom aria label 1`] = `
 .pf-c-alert__action {
   display: block;
   padding: 1rem 1.5rem 1rem 1.5rem;
+  white-space: nowrap;
 }
 .pf-c-alert.pf-m-warning {
   display: flex;

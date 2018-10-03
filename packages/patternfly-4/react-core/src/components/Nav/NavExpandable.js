@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Nav/styles.css';
-import a11yStyles from '@patternfly/patternfly-next/utilities/Accessibility/styles.css';
+import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
+import a11yStyles from '@patternfly/patternfly-next/utilities/Accessibility/accessibility.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import NavToggle from './NavToggle';
