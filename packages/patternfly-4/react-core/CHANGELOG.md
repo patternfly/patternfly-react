@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.16.2"></a>
+## [1.16.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.16.1...@patternfly/react-core@1.16.2) (2018-10-03)
+
+
+### Bug Fixes
+
+* **patternfly-4/react-core:** add missing comments to component props ([#695](https://github.com/patternfly/patternfly-react/issues/695)) ([ce282c8](https://github.com/patternfly/patternfly-react/commit/ce282c8)), closes [#538](https://github.com/patternfly/patternfly-react/issues/538)
+
+
+
+
 <a name="1.16.1"></a>
 ## [1.16.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.16.0...@patternfly/react-core@1.16.1) (2018-10-03)
 

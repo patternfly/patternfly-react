@@ -1,4 +1,48 @@
 
+## Unreleased (2018-10-03)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#695](https://github.com/patternfly/patternfly-react/pull/695) fix(patternfly-4/react-core): add missing comments to component props ([@tlabaj](https://github.com/tlabaj))
+
+#### :house: Internal
+* [#700](https://github.com/patternfly/patternfly-react/pull/700) fix(deploy): add surge deployment for merged pr's ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 2
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## patternfly4-react-lerna-root@1.2.1 (2018-10-03)
+
+#### :house: Internal
+* `patternfly-4`
+  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.14.2 (2018-10-03)
+
+#### :house: Internal
+* `patternfly-4`
+  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.16.1 (2018-10-03)
+
+#### :house: Internal
+* `patternfly-4`
+  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
 ## patternfly4-react-lerna-root@1.2.0 (2018-10-03)
 
 #### :rocket: New Feature
