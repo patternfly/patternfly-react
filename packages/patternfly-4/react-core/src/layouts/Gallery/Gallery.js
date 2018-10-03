@@ -5,8 +5,11 @@ import styles from '@patternfly/patternfly-next/layouts/Gallery/gallery.css';
 import { GutterSize, getGutterModifier } from '../../styles/gutters';
 
 const propTypes = {
+  /** content rendered inside the Gallery layout */
   children: PropTypes.any,
+  /** additional classes added to the Gallery layout */
   className: PropTypes.string,
+  /** Adds space between children. Options are sm, md or lg */
   gutter: PropTypes.oneOf(Object.keys(GutterSize))
 };
 

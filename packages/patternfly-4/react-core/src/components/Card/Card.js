@@ -5,8 +5,11 @@ import styles from '@patternfly/patternfly-next/components/Card/card.css';
 import { componentShape } from '../../internal/componentShape';
 
 const propTypes = {
+  /** content rendered inside the Card */
   children: PropTypes.any,
+  /** additional classes added to the Card */
   className: PropTypes.string,
+  /** Sets the base component to render. defaults to article */
   component: componentShape
 };
 

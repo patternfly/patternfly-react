@@ -5,8 +5,11 @@ import PropTypes from 'prop-types';
 import { componentShape } from '../../internal/componentShape';
 
 const propTypes = {
+  /** content rendered inside the Bullseye layout */
   children: PropTypes.any,
+  /** additional classes added to the Bullseye layout */
   className: PropTypes.string,
+  /** Sets the base component to render. defaults to div */
   component: componentShape
 };
 

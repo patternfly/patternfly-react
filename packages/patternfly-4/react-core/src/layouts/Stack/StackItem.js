@@ -4,8 +4,11 @@ import styles from '@patternfly/patternfly-next/layouts/Stack/stack.css';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {
+  /** Flag indicating if this Stack Layout item contains the primary content */
   isMain: PropTypes.bool,
+  /** additional classes added to the Stack Layout Item */
   children: PropTypes.node,
+  /** content rendered inside the Stack Layout Item */
   className: PropTypes.string
 };
 

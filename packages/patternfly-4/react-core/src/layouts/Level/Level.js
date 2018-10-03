@@ -5,8 +5,11 @@ import styles from '@patternfly/patternfly-next/layouts/Level/level.css';
 import { GutterSize, getGutterModifier } from '../../styles/gutters';
 
 const propTypes = {
+  /** Adds space between children. Options are sm, md or lg */
   gutter: PropTypes.oneOf(Object.keys(GutterSize)),
+  /** additional classes added to the Level layout */
   className: PropTypes.string,
+  /** content rendered inside the Level layout */
   children: PropTypes.node
 };
 const defaultProps = {

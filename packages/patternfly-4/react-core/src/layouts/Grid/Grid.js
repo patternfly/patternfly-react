@@ -9,13 +9,21 @@ import { DeviceSizes } from '../../styles/sizes';
 const gridItemSpanValueShape = PropTypes.oneOf(gridSpans);
 
 const propTypes = {
+  /** content rendered inside the Grid layout */
   children: PropTypes.any,
+  /** additional classes added to the Grid layout */
   className: PropTypes.string,
+  /** Adds space between children. Options are sm, md or lg */
   gutter: PropTypes.oneOf(Object.keys(GutterSize)),
+  /** The number of rows a column in the grid should span.  Value should be a number 1-12 */
   span: gridItemSpanValueShape,
+  /** the number of columns all grid items should span on a small device */
   sm: gridItemSpanValueShape,
+  /** the number of columns all grid items should span on a medium device */
   md: gridItemSpanValueShape,
+  /** the number of columns all grid items should span on a large device */
   lg: gridItemSpanValueShape,
+  /** the number of columns all grid items should span on a xLarge device */
   xl: gridItemSpanValueShape
 };
 
