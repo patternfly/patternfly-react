@@ -1,8 +1,8 @@
 import React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/Alert/styles.css';
-import accessibleStyles from '@patternfly/patternfly-next/utilities/Accessibility/styles.css';
+import styles from '@patternfly/patternfly-next/components/Alert/alert.css';
+import accessibleStyles from '@patternfly/patternfly-next/utilities/Accessibility/accessibility.css';
 import AlertIcon from './AlertIcon';
 import AlertBody from './AlertBody';
 import AlertAction from './AlertAction';

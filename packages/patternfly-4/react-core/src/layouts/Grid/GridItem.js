@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/layouts/Grid/styles.css';
+import styles from '@patternfly/patternfly-next/layouts/Grid/grid.css';
 import { css } from '@patternfly/react-styles';
 import { DeviceSizes } from '../../styles/sizes';
 import {

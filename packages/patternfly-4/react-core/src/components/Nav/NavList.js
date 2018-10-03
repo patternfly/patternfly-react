@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavVariants } from './NavVariants';
-import styles from '@patternfly/patternfly-next/components/Nav/styles.css';
+import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {

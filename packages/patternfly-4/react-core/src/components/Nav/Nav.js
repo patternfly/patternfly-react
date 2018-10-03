@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Nav/styles.css';
+import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 

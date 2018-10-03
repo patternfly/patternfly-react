@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/Badge/styles.css';
+import styles from '@patternfly/patternfly-next/components/Badge/badge.css';
 
 export const propTypes = {
   isRead: PropTypes.bool,

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/BackgroundImage/styles.css';
+import styles from '@patternfly/patternfly-next/components/BackgroundImage/background-image.css';
 
 export const propTypes = {
   /** Content rendered inside the background */
