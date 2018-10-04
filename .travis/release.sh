@@ -24,14 +24,19 @@ getDeployKey () {
   ssh-add deploy_key
 }
 
+echo "Build all pf-react docs"
+yarn storybook:build
+yarn build:prdocs
+cp -r .out/ .public/patternfly-3
+cp -r packages/patternfly-4/react-docs/public .public/patternfly-4
+
 if [ "${TRAVIS_REPO_SLUG}" != "${TRIGGER_REPO_SLUG}" -o "${TRAVIS_BRANCH}" != "${TRIGGER_REPO_BRANCH}" ]; then
   echo -e "${RED}Exiting, this is not a production release.${NC}"
   exit 0;
 fi
 
 getDeployKey
-yarn storybook:build
-cd .out
+cd .public
 git config --global user.email $COMMIT_AUTHOR_EMAIL
 git config --global user.name $COMMIT_AUTHOR_USERNAME
 git init
