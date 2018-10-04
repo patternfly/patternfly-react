@@ -27,7 +27,7 @@ const defaultProps = {
   images: []
 };
 
-const LIVE_EXAMPLES = /true/i.test(process.env.LIVE_EXAMPLES);
+const GATSBY_LIVE_EXAMPLES = process.env.GATSBY_LIVE_EXAMPLES === 'true';
 
 const Example = ({ children, title, className, description, name, fullPageOnly, raw, images, ...props }) => {
   // Display full page link
@@ -50,7 +50,7 @@ const Example = ({ children, title, className, description, name, fullPageOnly, 
     <div>
       <Title size="lg">{title}</Title>
       {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
-      {LIVE_EXAMPLES ? (
+      {GATSBY_LIVE_EXAMPLES ? (
         <LiveDemo raw={raw.trim()} images={images} className={className} />
       ) : (
         <div className={css(className, styles.example)} {...props}>

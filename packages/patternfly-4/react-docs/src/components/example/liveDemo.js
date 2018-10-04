@@ -55,7 +55,7 @@ const LiveDemo = ({ className, raw, images, ...props }) => {
   return (
     <LiveProvider code={raw} scope={scope} transformCode={transformCode}>
       <LivePreview className={css(className, styles.example)} />
-      <LiveEditor style={{ marginBottom: '30px' }} />
+      <LiveEditor style={{ marginBottom: '30px' }} ignoreTabKey />
       <LiveError />
     </LiveProvider>
   );
