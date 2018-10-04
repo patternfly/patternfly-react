@@ -1,5 +1,49 @@
 
-## Unreleased (2018-10-03)
+## Unreleased (2018-10-04)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#694](https://github.com/patternfly/patternfly-react/pull/694) feat(Live Examples): allow users to tab past editors ([@michaelkro](https://github.com/michaelkro))
+
+#### :house: Internal
+* [#698](https://github.com/patternfly/patternfly-react/pull/698) chore(lerna-changelog): set the next version attribute appropriately ([@priley86](https://github.com/priley86))
+
+#### Committers: 4
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.2.2 (2018-10-03)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#695](https://github.com/patternfly/patternfly-react/pull/695) fix(patternfly-4/react-core): add missing comments to component props ([@tlabaj](https://github.com/tlabaj))
+
+#### :house: Internal
+* [#700](https://github.com/patternfly/patternfly-react/pull/700) fix(deploy): add surge deployment for merged pr's ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 2
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-docs@3.14.3 (2018-10-03)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#695](https://github.com/patternfly/patternfly-react/pull/695) fix(patternfly-4/react-core): add missing comments to component props ([@tlabaj](https://github.com/tlabaj))
+
+#### :house: Internal
+* [#700](https://github.com/patternfly/patternfly-react/pull/700) fix(deploy): add surge deployment for merged pr's ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 2
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-core@1.16.2 (2018-10-03)
 
 #### :memo: Documentation
 * `patternfly-4`

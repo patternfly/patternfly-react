@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.15.0"></a>
+# [3.15.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.14.3...@patternfly/react-docs@3.15.0) (2018-10-04)
+
+
+### Features
+
+* **Live Examples:** allow users to tab past editors ([#694](https://github.com/patternfly/patternfly-react/issues/694)) ([c36b53a](https://github.com/patternfly/patternfly-react/commit/c36b53a))
+
+
+
+
 <a name="3.14.3"></a>
 ## [3.14.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.14.2...@patternfly/react-docs@3.14.3) (2018-10-03)
 

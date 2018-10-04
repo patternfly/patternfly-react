@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.2.2...patternfly4-react-lerna-root@1.3.0) (2018-10-04)
+
+
+### Features
+
+* **Live Examples:** allow users to tab past editors ([#694](https://github.com/patternfly/patternfly-react/issues/694)) ([c36b53a](https://github.com/patternfly/patternfly-react/commit/c36b53a))
+
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.2.1...patternfly4-react-lerna-root@1.2.2) (2018-10-03)
 
