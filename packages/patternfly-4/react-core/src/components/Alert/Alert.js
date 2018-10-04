@@ -51,7 +51,7 @@ const Alert = ({
 }) => {
   const readerTitle = (
     <React.Fragment>
-      <span className={css(accessibleStyles.srOnly)}>{capitalize(AlertVariant[variant])}: </span>
+      <span className={css(accessibleStyles.uSrOnly)}>{capitalize(AlertVariant[variant])}: </span>
       {title}
     </React.Fragment>
   );
