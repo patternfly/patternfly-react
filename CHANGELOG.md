@@ -1,5 +1,31 @@
 
-## Unreleased (2018-10-04)
+## Unreleased (2018-10-05)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#654](https://github.com/patternfly/patternfly-react/pull/654) feat(pf-icons): add all PF icons and update font awesome pckg ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## patternfly4-react-lerna-root@1.3.0 (2018-10-04)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#694](https://github.com/patternfly/patternfly-react/pull/694) feat(Live Examples): allow users to tab past editors ([@michaelkro](https://github.com/michaelkro))
+
+#### :house: Internal
+* [#698](https://github.com/patternfly/patternfly-react/pull/698) chore(lerna-changelog): set the next version attribute appropriately ([@priley86](https://github.com/priley86))
+
+#### Committers: 4
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-docs@3.15.0 (2018-10-04)
 
 #### :memo: Documentation
 * `patternfly-4`
