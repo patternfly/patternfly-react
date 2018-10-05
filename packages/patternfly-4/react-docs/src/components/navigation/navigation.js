@@ -14,12 +14,14 @@ const routeShape = PropTypes.shape({
 
 const propTypes = {
   componentRoutes: PropTypes.arrayOf(routeShape),
-  layoutRoutes: PropTypes.arrayOf(routeShape)
+  layoutRoutes: PropTypes.arrayOf(routeShape),
+  demoRoutes: PropTypes.arrayOf(routeShape)
 };
 
 const defaultProps = {
   componentRoutes: [],
-  layoutRoutes: []
+  layoutRoutes: [],
+  demoRoutes: []
 };
 
 class Navigation extends React.Component {
@@ -37,13 +39,15 @@ class Navigation extends React.Component {
   };
 
   render() {
-    const { componentRoutes, layoutRoutes } = this.props;
+    const { componentRoutes, layoutRoutes, demoRoutes } = this.props;
     const { searchValue } = this.state;
     const searchRE = new RegExp(searchValue, 'i');
 
     const filteredComponentRoutes = componentRoutes.filter(c => searchRE.test(c.label));
 
     const filteredLayoutRoutes = layoutRoutes.filter(c => searchRE.test(c.label));
+
+    const filteredDemoRoutes = demoRoutes.filter(c => searchRE.test(c.label));
 
     return (
       <div className={css(styles.navigation)}>
@@ -78,6 +82,15 @@ class Navigation extends React.Component {
           {Boolean(filteredLayoutRoutes.length) && (
             <NavigationItemGroup title="Layouts">
               {filteredLayoutRoutes.map(route => (
+                <NavigationItem key={route.label} to={route.to}>
+                  {route.label}
+                </NavigationItem>
+              ))}
+            </NavigationItemGroup>
+          )}
+          {Boolean(filteredDemoRoutes.length) && (
+            <NavigationItemGroup title="Demos">
+              {filteredDemoRoutes.map(route => (
                 <NavigationItem key={route.label} to={route.to}>
                   {route.label}
                 </NavigationItem>

@@ -20,15 +20,26 @@ const propTypes = {
 };
 
 const Layout = ({ children, data }) => {
-  const componentRoutes = data.componentPages.edges.map(e => ({
-    to: e.node.path,
-    label: e.node.fields.label
-  }));
+  const componentRoutes = data.componentPages
+    ? data.componentPages.edges.map(e => ({
+        to: e.node.path,
+        label: e.node.fields.label
+      }))
+    : [];
 
-  const layoutRoutes = data.layoutPages.edges.map(e => ({
-    to: e.node.path,
-    label: e.node.fields.label
-  }));
+  const layoutRoutes = data.layoutPages
+    ? data.layoutPages.edges.map(e => ({
+        to: e.node.path,
+        label: e.node.fields.label
+      }))
+    : [];
+
+  const demoRoutes = data.demoPages
+    ? data.demoPages.edges.map(e => ({
+        to: e.node.path,
+        label: e.node.fields.label
+      }))
+    : [];
 
   return (
     <React.Fragment>
@@ -41,7 +52,9 @@ const Layout = ({ children, data }) => {
       </Helmet>
       <Page
         title="Patternfly React"
-        navigation={<Navigation componentRoutes={componentRoutes} layoutRoutes={layoutRoutes} />}
+        navigation={
+          <Navigation componentRoutes={componentRoutes} layoutRoutes={layoutRoutes} demoRoutes={demoRoutes} />
+        }
       >
         {children()}
       </Page>
@@ -72,6 +85,16 @@ export const query = graphql`
       filter: { path: { glob: "**/layouts/*" } }
       sort: { fields: [fields___label], order: ASC }
     ) {
+      edges {
+        node {
+          path
+          fields {
+            label
+          }
+        }
+      }
+    }
+    demoPages: allSitePage(filter: { path: { glob: "**/demos/*" } }, sort: { fields: [fields___label], order: ASC }) {
       edges {
         node {
           path
