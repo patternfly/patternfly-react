@@ -1,5 +1,25 @@
 
-## Unreleased (2018-10-05)
+## patternfly4-react-lerna-root@1.4.1 (2018-10-05)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#702](https://github.com/patternfly/patternfly-react/pull/702) docs: Update test command in PF4-React documentation ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## @patternfly/react-docs@3.15.2 (2018-10-05)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#702](https://github.com/patternfly/patternfly-react/pull/702) docs: Update test command in PF4-React documentation ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## @patternfly/react-core@1.17.1 (2018-10-05)
 
 #### :memo: Documentation
 * `patternfly-4`
