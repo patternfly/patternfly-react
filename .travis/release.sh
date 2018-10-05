@@ -24,6 +24,9 @@ getDeployKey () {
   ssh-add deploy_key
 }
 
+echo "Remove react-docs cache"
+rm -r packages/patternfly-4/react-docs/.cache/*
+
 echo "Build all pf-react docs"
 yarn storybook:build
 yarn build:prdocs
