@@ -47,7 +47,8 @@ export const StyleSheet = {
       },
       {
         modifiers: {},
-        inject: () => injectGlobal(input)
+        inject: () => injectGlobal(input),
+        raw: input
       }
     );
   }
