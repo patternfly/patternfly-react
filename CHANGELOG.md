@@ -1,6 +1,46 @@
 
 ## Unreleased (2018-10-05)
 
+#### :memo: Documentation
+* `patternfly-4`
+  * [#702](https://github.com/patternfly/patternfly-react/pull/702) docs: Update test command in PF4-React documentation ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## patternfly4-react-lerna-root@1.4.0 (2018-10-05)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#654](https://github.com/patternfly/patternfly-react/pull/654) feat(pf-icons): add all PF icons and update font awesome pckg ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-icons@2.5.0 (2018-10-05)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#654](https://github.com/patternfly/patternfly-react/pull/654) feat(pf-icons): add all PF icons and update font awesome pckg ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-docs@3.15.1 (2018-10-05)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#654](https://github.com/patternfly/patternfly-react/pull/654) feat(pf-icons): add all PF icons and update font awesome pckg ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-core@1.17.0 (2018-10-05)
+
 #### :house: Internal
 * `patternfly-4`, `react-icons`
   * [#654](https://github.com/patternfly/patternfly-react/pull/654) feat(pf-icons): add all PF icons and update font awesome pckg ([@karelhala](https://github.com/karelhala))
