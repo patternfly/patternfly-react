@@ -34,7 +34,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   return config;
 };
 
-const componentPathRegEx = /(components|layouts)\//;
+const componentPathRegEx = /(components|layouts|demos)\//;
 
 exports.onCreateNode = ({ node, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
