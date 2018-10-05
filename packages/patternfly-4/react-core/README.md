@@ -100,7 +100,7 @@ Note the build scripts for this are located in the root package.json under `yarn
 Testing is done at the root of this repo. To only run the patternfly-react tests:
 
 ```
-yarn test packages/react-core
+yarn test packages/patternfly-4/react-core
 ```
 
 [patternfly-4]: https://github.com/patternfly/patternfly-next
