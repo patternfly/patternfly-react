@@ -1,3 +1,11 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+if (process.env.NODE_ENV !== 'production') {
+  const axe = require('react-axe'); // eslint-disable-line global-require
+  axe(React, ReactDOM, 1000);
+}
+
 export { default as controlled } from './common/controlled';
 export * from './common/helpers';
 export * from './components/Alert';
