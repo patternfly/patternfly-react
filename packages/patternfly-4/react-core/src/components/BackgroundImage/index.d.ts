@@ -1,1 +1,1 @@
-export { default as BackgroundImage, BackgroundImageProps } from './BackgroundImage';
+export { default as BackgroundImage, BackgroundImageSrc } from './BackgroundImage';
