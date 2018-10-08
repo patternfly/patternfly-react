@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test About Modal Box SHero 1`] = `
+.pf-c-about-modal-box__hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.pf-c-about-modal-box__hero {
+  display: none;
+  overflow: hidden;
+}
+
+<div
+  className="pf-c-about-modal-box__hero"
+>
+  <img
+    alt="hero"
+    className="pf-c-about-modal-box__hero-image"
+    src="heroImg..."
+  />
+</div>
+`;

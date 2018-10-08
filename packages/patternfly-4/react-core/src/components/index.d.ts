@@ -1,4 +1,5 @@
 /** Keep alphabetically sorted */
+export * from './AboutModal';
 export * from './Alert';
 export * from './Avatar';
 export * from './BackgroundImage';

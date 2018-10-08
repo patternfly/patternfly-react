@@ -79,7 +79,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           }
         }
       }
-      exampleImages: allFile(filter: { extension: { regex: "/(png|svg)/" } }) {
+      exampleImages: allFile(filter: { extension: { regex: "/(png|svg|jpg)/" } }) {
         edges {
           node {
             ...DocFile
