@@ -9,7 +9,7 @@
   "changelog": {
     "repo": "patternfly/patternfly-react",
     "cacheDir": ".changelog",
-    "nextVersion": "Unreleased",
+    "nextVersion": "Change Log",
     "labels": {
       "breaking change :boom:": ":boom: Breaking Change",
       "enhancement :rocket:": ":rocket: New Feature",

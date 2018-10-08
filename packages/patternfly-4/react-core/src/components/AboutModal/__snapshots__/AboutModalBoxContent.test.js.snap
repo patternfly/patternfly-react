@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutModalBoxContent Test 1`] = `
+.pf-c-about-modal-box__content {
+  display: block;
+  grid-area: content;
+  min-height: calc(1rem * 4 * 1.5);
+  margin: 2rem 2rem 2rem 2rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+<div
+  className="pf-c-about-modal-box__content"
+  id="id"
+>
+  This is a AboutModalBoxContent 
+</div>
+`;

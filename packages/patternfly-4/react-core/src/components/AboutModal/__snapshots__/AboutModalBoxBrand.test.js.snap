@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test About Modal Brand 1`] = `
+.pf-c-about-modal-box__brand-image {
+  display: block;
+  height: 2.5rem;
+}
+.pf-c-about-modal-box__brand {
+  display: flex;
+  grid-area: brand;
+  padding: 3rem 2rem 2rem 2rem;
+}
+
+<div
+  className="pf-c-about-modal-box__brand"
+>
+  <img
+    alt="brand"
+    className="pf-c-about-modal-box__brand-image"
+    src="testimage.."
+  />
+</div>
+`;

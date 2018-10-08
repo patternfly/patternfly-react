@@ -14,5 +14,5 @@ export default {
   enumValues: {
     gridSpans: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   },
-  examples: [Simple, WithGutters, Overrides, { example: GridPlayground, live: false }]
+  examples: [Simple, WithGutters, Overrides, GridPlayground]
 };

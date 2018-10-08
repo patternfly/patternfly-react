@@ -53,7 +53,7 @@ const CatalogTile = ({
     <div id={id} className={classes} {...props}>
       <div className="catalog-tile-pf-header">
         {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt="" />}
-        {iconClass && <span className={`catalog-tile-pf-icon ${iconClass}`} />}
+        {!iconImg && iconClass && <span className={`catalog-tile-pf-icon ${iconClass}`} />}
         {renderBadges()}
       </div>
       <div className="catalog-tile-pf-body">

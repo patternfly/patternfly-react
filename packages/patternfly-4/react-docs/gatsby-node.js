@@ -34,7 +34,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   return config;
 };
 
-const componentPathRegEx = /(components|layouts)\//;
+const componentPathRegEx = /(components|layouts|demos)\//;
 
 exports.onCreateNode = ({ node, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
@@ -79,7 +79,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           }
         }
       }
-      exampleImages: allFile(filter: { extension: { regex: "/(png|svg)/" } }) {
+      exampleImages: allFile(filter: { extension: { regex: "/(png|svg|jpg)/" } }) {
         edges {
           node {
             ...DocFile

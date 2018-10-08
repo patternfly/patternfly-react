@@ -6,14 +6,6 @@ REPO_OWNER=${REPO_SLUG_ARRAY[0]}
 REPO_NAME=${REPO_SLUG_ARRAY[1]}
 DEPLOY_PATH=./.public
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]
-then
-  yarn storybook:build
-  yarn build:prdocs
-  cp -r .out/ .public/patternfly-3
-  cp -r packages/patternfly-4/react-docs/public .public/patternfly-4
-fi
-
 DEPLOY_SUBDOMAIN_UNFORMATTED_LIST=()
 if [ "$TRAVIS_PULL_REQUEST" != "false" ]
 then
@@ -53,7 +45,11 @@ do
   ALREADY_DEPLOYED=`surge list | grep ${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}`
   PR_TOKEN=`echo $GITHUB_PR_TOKEN | rev | base64 --decode`
   GITHUB_PR_COMMENTS=https://api.github.com/repos/${TRAVIS_REPO_SLUG}/issues/${TRAVIS_PULL_REQUEST}/comments
-  surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
+
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ]
+  then
+    surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
+  fi
 
   if [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -z "${ALREADY_DEPLOYED// }" ]
   then

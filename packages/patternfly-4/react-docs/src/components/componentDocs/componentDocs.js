@@ -11,7 +11,7 @@ import Section from '../section';
 const propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  examples: PropTypes.array,
+  examples: PropTypes.arrayOf(PropTypes.func),
   components: PropTypes.objectOf(PropTypes.func),
   enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
   rawExamples: PropTypes.array,
@@ -38,11 +38,9 @@ class ComponentDocs extends React.PureComponent {
         <Title size="3xl">{title}</Title>
         {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
         <Section title="Examples">
-          {examples.map((example, i) => {
-            const ComponentExample = typeof example === 'object' ? example.example : example;
-            const { live } = example || true;
+          {examples.map((ComponentExample, i) => {
             const { __docgenInfo: componentDocs } = ComponentExample;
-            const rawExample = rawExamples.find(raw => raw.name === componentDocs.displayName);
+            const rawExample = rawExamples.find(example => example.name === componentDocs.displayName);
             return (
               <Example
                 key={i}
@@ -51,7 +49,7 @@ class ComponentDocs extends React.PureComponent {
                 raw={rawExample && rawExample.file}
                 images={images}
                 fullPageOnly={fullPageOnly}
-                live={live}
+                live={ComponentExample.live}
                 name={ComponentExample.name}
                 {...(ComponentExample.getContainerProps ? ComponentExample.getContainerProps() : {})}
               >

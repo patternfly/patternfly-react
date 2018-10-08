@@ -1,4 +1,188 @@
 
+## Unreleased (2018-10-08)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#709](https://github.com/patternfly/patternfly-react/pull/709) fix(CatalogTile): Fix to show only the iconImg if given, not both the image and icon. ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly4-react-lerna-root@1.4.1 (2018-10-05)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#702](https://github.com/patternfly/patternfly-react/pull/702) docs: Update test command in PF4-React documentation ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## @patternfly/react-docs@3.15.2 (2018-10-05)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#702](https://github.com/patternfly/patternfly-react/pull/702) docs: Update test command in PF4-React documentation ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## @patternfly/react-core@1.17.1 (2018-10-05)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#702](https://github.com/patternfly/patternfly-react/pull/702) docs: Update test command in PF4-React documentation ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## patternfly4-react-lerna-root@1.4.0 (2018-10-05)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#654](https://github.com/patternfly/patternfly-react/pull/654) feat(pf-icons): add all PF icons and update font awesome pckg ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-icons@2.5.0 (2018-10-05)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#654](https://github.com/patternfly/patternfly-react/pull/654) feat(pf-icons): add all PF icons and update font awesome pckg ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-docs@3.15.1 (2018-10-05)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#654](https://github.com/patternfly/patternfly-react/pull/654) feat(pf-icons): add all PF icons and update font awesome pckg ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-core@1.17.0 (2018-10-05)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#654](https://github.com/patternfly/patternfly-react/pull/654) feat(pf-icons): add all PF icons and update font awesome pckg ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## patternfly4-react-lerna-root@1.3.0 (2018-10-04)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#694](https://github.com/patternfly/patternfly-react/pull/694) feat(Live Examples): allow users to tab past editors ([@michaelkro](https://github.com/michaelkro))
+
+#### :house: Internal
+* [#698](https://github.com/patternfly/patternfly-react/pull/698) chore(lerna-changelog): set the next version attribute appropriately ([@priley86](https://github.com/priley86))
+
+#### Committers: 4
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-docs@3.15.0 (2018-10-04)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#694](https://github.com/patternfly/patternfly-react/pull/694) feat(Live Examples): allow users to tab past editors ([@michaelkro](https://github.com/michaelkro))
+
+#### :house: Internal
+* [#698](https://github.com/patternfly/patternfly-react/pull/698) chore(lerna-changelog): set the next version attribute appropriately ([@priley86](https://github.com/priley86))
+
+#### Committers: 4
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.2.2 (2018-10-03)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#695](https://github.com/patternfly/patternfly-react/pull/695) fix(patternfly-4/react-core): add missing comments to component props ([@tlabaj](https://github.com/tlabaj))
+
+#### :house: Internal
+* [#700](https://github.com/patternfly/patternfly-react/pull/700) fix(deploy): add surge deployment for merged pr's ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 2
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-docs@3.14.3 (2018-10-03)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#695](https://github.com/patternfly/patternfly-react/pull/695) fix(patternfly-4/react-core): add missing comments to component props ([@tlabaj](https://github.com/tlabaj))
+
+#### :house: Internal
+* [#700](https://github.com/patternfly/patternfly-react/pull/700) fix(deploy): add surge deployment for merged pr's ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 2
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-core@1.16.2 (2018-10-03)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#695](https://github.com/patternfly/patternfly-react/pull/695) fix(patternfly-4/react-core): add missing comments to component props ([@tlabaj](https://github.com/tlabaj))
+
+#### :house: Internal
+* [#700](https://github.com/patternfly/patternfly-react/pull/700) fix(deploy): add surge deployment for merged pr's ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 2
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## patternfly4-react-lerna-root@1.2.1 (2018-10-03)
+
+#### :house: Internal
+* `patternfly-4`
+  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.14.2 (2018-10-03)
+
+#### :house: Internal
+* `patternfly-4`
+  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.16.1 (2018-10-03)
+
+#### :house: Internal
+* `patternfly-4`
+  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
 ## patternfly4-react-lerna-root@1.2.0 (2018-10-03)
 
 #### :rocket: New Feature

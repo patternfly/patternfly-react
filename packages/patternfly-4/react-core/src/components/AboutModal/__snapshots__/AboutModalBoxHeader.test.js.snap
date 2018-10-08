@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutModalBoxHeader Test 1`] = `
+.pf-c-title {
+  display: block;
+}
+.pf-c-about-modal-box__header-strapline {
+  display: block;
+  padding-bottom: 1rem;
+}
+.pf-c-about-modal-box__header {
+  display: flex;
+  grid-area: header;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2rem;
+}
+
+<div
+  className="pf-c-about-modal-box__header"
+>
+  <div
+    className="pf-c-about-modal-box__header-strapline"
+  >
+    <h2
+      className="pf-c-title"
+    >
+      trademark
+    </h2>
+  </div>
+  <Title
+    className=""
+    id="id"
+    size="4xl"
+  >
+    Product Name
+  </Title>
+</div>
+`;

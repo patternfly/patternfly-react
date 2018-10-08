@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly-next/components/ModalBox/modal-box.css';
 
 const propTypes = {
-  /** content rendered inside the button. */
+  /** content rendered inside the ModalBox. */
   children: PropTypes.node.isRequired,
-  /** additional classes added to the button */
+  /** additional classes added to the ModalBox */
   className: PropTypes.string,
   /** Creates a large version of the ModalBox */
   isLarge: PropTypes.bool,
