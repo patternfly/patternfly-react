@@ -1,5 +1,39 @@
 
-## Unreleased (2018-10-08)
+## patternfly4-react-lerna-root@1.5.0 (2018-10-08)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#671](https://github.com/patternfly/patternfly-react/pull/671) feat(AboutModal): Add PF4 AboutModal Component ([@tlabaj](https://github.com/tlabaj))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#722](https://github.com/patternfly/patternfly-react/pull/722) fix(test): Update the snapshot for progress bar com… ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 4
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.16.0 (2018-10-08)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#671](https://github.com/patternfly/patternfly-react/pull/671) feat(AboutModal): Add PF4 AboutModal Component ([@tlabaj](https://github.com/tlabaj))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#722](https://github.com/patternfly/patternfly-react/pull/722) fix(test): Update the snapshot for progress bar com… ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 4
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.18.0 (2018-10-08)
 
 #### :rocket: New Feature
 * `patternfly-4`
