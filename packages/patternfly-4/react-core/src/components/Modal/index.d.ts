@@ -1,4 +1,3 @@
-export { default as Backdrop, BackdropProps } from './Backdrop';
 export { default as Modal, ModalProps } from './Modal';
 export { default as ModalBox, ModalBoxProps } from './ModalBox';
 export { default as ModalBoxBody, ModalBoxBodyProps } from './ModalBoxBody';

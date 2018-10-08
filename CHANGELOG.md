@@ -1,4 +1,14 @@
 
+## Unreleased (2018-10-08)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#709](https://github.com/patternfly/patternfly-react/pull/709) fix(CatalogTile): Fix to show only the iconImg if given, not both the image and icon. ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
 ## patternfly4-react-lerna-root@1.4.1 (2018-10-05)
 
 #### :memo: Documentation

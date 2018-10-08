@@ -8,7 +8,7 @@ import { KEY_CODES } from '../../internal/constants';
 const propTypes = {
   /** content rendered inside the Modal. */
   children: PropTypes.node.isRequired,
-  /** additional classes added to the button */
+  /** additional classes added to the Modal */
   className: PropTypes.string,
   /** Flag to show the modal */
   isOpen: PropTypes.bool,

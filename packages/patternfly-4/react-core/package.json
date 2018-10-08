@@ -26,7 +26,7 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
     "@patternfly/react-icons": "^2.5.0",
-    "@patternfly/react-styles": "^2.0.0",
+    "@patternfly/react-styles": "^2.1.0",
     "exenv": "^1.2.2"
   },
   "peerDependencies": {

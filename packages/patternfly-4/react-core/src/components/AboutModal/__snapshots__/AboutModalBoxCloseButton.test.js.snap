@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutModalBoxCloseButton Test 1`] = `
+.pf-c-about-modal-box__close {
+  display: flex;
+  grid-area: close;
+  z-index: 600;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 3rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+
+<div
+  className="pf-c-about-modal-box__close"
+>
+  <Button
+    aria-label="Close Dialog"
+    className=""
+    component="button"
+    isActive={false}
+    isBlock={false}
+    isDisabled={false}
+    isFocus={false}
+    isHover={false}
+    onClick={[Function]}
+    type="button"
+    variant="plain"
+  >
+    <TimesIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </Button>
+</div>
+`;
+
+exports[`AboutModalBoxCloseButton Test onclose 1`] = `
+.pf-c-about-modal-box__close {
+  display: flex;
+  grid-area: close;
+  z-index: 600;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 3rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+
+<div
+  className="pf-c-about-modal-box__close"
+  onclose={[MockFunction]}
+>
+  <Button
+    aria-label="Close Dialog"
+    className=""
+    component="button"
+    isActive={false}
+    isBlock={false}
+    isDisabled={false}
+    isFocus={false}
+    isHover={false}
+    onClick={[Function]}
+    type="button"
+    variant="plain"
+  >
+    <TimesIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </Button>
+</div>
+`;

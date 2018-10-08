@@ -18,7 +18,7 @@ const defaultProps = {
   images: []
 };
 
-const scopePlayground = { React, ...CoreComponents, ...CoreIcons };
+const scopePlayground = { React, ...CoreComponents, ...CoreIcons, css, styles };
 
 const transformCode = code => {
   try {

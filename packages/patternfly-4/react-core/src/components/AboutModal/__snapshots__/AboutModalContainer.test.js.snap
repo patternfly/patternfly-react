@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Modal Container Test isOpen 1`] = `
+<Backdrop
+  className=""
+>
+  <Bullseye
+    className=""
+    component="div"
+  >
+    <AboutModalBox
+      aria-describedby="ariaDescribedById"
+      aria-labelledby="ariaLablledbyId"
+      className=""
+    >
+      <AboutModalBoxBrand
+        alt="Brand Image"
+        className=""
+        src="brandImg..."
+      />
+      <AboutModalBoxCloseButton
+        className=""
+        onClose={[Function]}
+      />
+      <AboutModalBoxHeader
+        className=""
+        id="ariaLablledbyId"
+        productName="Product Name"
+        trademark="Trademark and copyright information here"
+      />
+      <AboutModalBoxContent
+        className=""
+        id="ariaDescribedById"
+        title="Test Modal Container title"
+      >
+        This is ModalBox content
+      </AboutModalBoxContent>
+      <AboutModalBoxHero
+        alt=""
+        className=""
+        src="heroImg..."
+      />
+      <AboutModalBoxHero
+        alt="AboutModal Logo"
+        className=""
+        src="logoImg..."
+      />
+    </AboutModalBox>
+  </Bullseye>
+</Backdrop>
+`;
+
+exports[`About Modal Container Test simple 1`] = `""`;
+
+exports[`About Modal Container Test with onlose 1`] = `""`;
