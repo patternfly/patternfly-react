@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.16.0"></a>
+# [3.16.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.15.3...@patternfly/react-docs@3.16.0) (2018-10-08)
+
+
+### Features
+
+* **patternfly-react/patternfly-4/react-core/:** added PF4 AboutModal Component ([#671](https://github.com/patternfly/patternfly-react/issues/671)) ([1b01037](https://github.com/patternfly/patternfly-react/commit/1b01037)), closes [#482](https://github.com/patternfly/patternfly-react/issues/482)
+
+
+
+
 <a name="3.15.3"></a>
 ## [3.15.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.15.2...@patternfly/react-docs@3.15.3) (2018-10-05)
 
