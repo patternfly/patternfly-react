@@ -30,6 +30,7 @@ stories.add(
         bordered={boolean('bordered', true)}
         textExpanded={text('textExpanded', 'Hide Advanced Options')}
         textCollapsed={text('textCollapsed', 'Show Advanced Options')}
+        expanded={boolean('expanded', false)}
       >
         <p>Well done! The component takes 100% width by default and aligns the link to the left or center.</p>
         <p>And other text comes here.</p>

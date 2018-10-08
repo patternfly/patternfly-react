@@ -8,7 +8,17 @@ import { Icon } from '../Icon';
 import { ALIGN_LEFT, ALIGN_CENTER, ALIGN_TYPES } from './constants';
 
 class ExpandCollapse extends React.Component {
-  state = { expanded: false };
+  state = { expanded: false, mirroredExpanded: false };
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.mirroredExpanded !== nextProps.expanded) {
+      return {
+        expanded: nextProps.expanded,
+        mirroredExpanded: nextProps.expanded
+      };
+    }
+    return null;
+  }
 
   onClick = () => {
     this.setState(prevState => ({ expanded: !prevState.expanded }));

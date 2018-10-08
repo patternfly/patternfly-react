@@ -95,3 +95,16 @@ test('ExpandCollapse with separator', () => {
   expect(centerNoSep.find('.expand-collapse-pf-separator')).toHaveLength(2);
   expect(centerNoSep.find('.expand-collapse-pf-separator.bordered')).toHaveLength(0);
 });
+
+test('ExpandCollapse with explicit override prop', () => {
+  const view = mount(
+    <ExpandCollapse expanded>
+      <div id="content">My text</div>
+    </ExpandCollapse>
+  );
+
+  expect(view.find('#content')).toHaveLength(1);
+  expect(view.find('span.fa-angle-right')).toHaveLength(0);
+  expect(view.find('span.fa-angle-down')).toHaveLength(1);
+  expect(view.find('.btn-link').text()).toEqual('Hide Advanced Options');
+});
