@@ -9,7 +9,7 @@ const props = {
   className: 'my-page-class'
 };
 
-test('replace with useful test name', () => {
+test('Check page layout example against snapshot', () => {
   const PageLogo = <div>Brand</div>;
   const PageNav = (
     <ul>

@@ -17,19 +17,19 @@ const propTypes = {
   className: PropTypes.string,
   /** Page layout type */
   layout: PropTypes.oneOf(Object.values(PageLayouts)),
-  /** Component to render the background image */
+  /** Component to render the background image (e.g. <BackgroundImage />) */
   background: PropTypes.node,
-  /** Component to render the logo/brand */
+  /** Component to render the logo/brand (e.g. <Brand />) */
   logo: PropTypes.node,
-  /** Component to render the navigation */
+  /** Component to render the navigation (e.g. <Nav /> */
   nav: PropTypes.node,
   /** Vertical layout only: True if the nav is expanded  */
   isNavOpen: PropTypes.bool,
   /** Vertical page layout only: Callback function to handle the navigation toggle button */
   onNavToggle: PropTypes.func,
-  /** Component to render the toolbar */
+  /** Component to render the toolbar (e.g. <Toolbar />) */
   toolbar: PropTypes.node,
-  /** Component to render the avatar */
+  /** Component to render the avatar (e.g. <Avatar /> */
   avatar: PropTypes.node
 };
 
