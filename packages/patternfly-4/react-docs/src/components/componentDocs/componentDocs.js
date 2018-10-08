@@ -49,6 +49,7 @@ class ComponentDocs extends React.PureComponent {
                 raw={rawExample && rawExample.file}
                 images={images}
                 fullPageOnly={fullPageOnly}
+                live={ComponentExample.live}
                 name={ComponentExample.name}
                 {...(ComponentExample.getContainerProps ? ComponentExample.getContainerProps() : {})}
               >
