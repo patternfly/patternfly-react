@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.1.2"></a>
+## [7.1.2](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.1.1...patternfly3-react-lerna-root@7.1.2) (2018-10-08)
+
+
+### Bug Fixes
+
+* Fix [#704](https://github.com/patternfly/patternfly-react/issues/704) ([#705](https://github.com/patternfly/patternfly-react/issues/705)) ([0b99407](https://github.com/patternfly/patternfly-react/commit/0b99407))
+
+
+
+
 <a name="7.1.1"></a>
 ## [7.1.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.1.0...patternfly3-react-lerna-root@7.1.1) (2018-10-08)
 
