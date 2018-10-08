@@ -3,7 +3,7 @@ import styles from '@patternfly/patternfly-next/layouts/Page/page.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { BarsIcon } from '@patternfly/react-icons';
-import { Button, ButtonVariant } from '@patternfly/react-core';
+import { Button, ButtonVariant } from '../../components/Button';
 
 export const PageLayouts = {
   vertical: 'vertical',
