@@ -1,4 +1,14 @@
 
+## Unreleased (2018-10-08)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
 ## patternfly4-react-lerna-root@1.5.0 (2018-10-08)
 
 #### :rocket: New Feature
