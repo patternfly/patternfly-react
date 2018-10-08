@@ -1,9 +1,9 @@
 import React from 'react';
-import { Page, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 import getContainerProps from './common/getContainerProps';
 
 class VerticalPage extends React.Component {
-  static title = 'Simple Page';
+  static title = 'Vertical Page Layout';
   static getContainerProps = getContainerProps;
 
   constructor(props) {
@@ -21,26 +21,14 @@ class VerticalPage extends React.Component {
 
   render() {
     const { isNavOpen } = this.state;
-    const PageLogo = <div>Brand</div>;
-    const PageNav = (
-      <ul>
-        <li>Nav Item</li>
-        <li>Nav Item</li>
-        <li>Nav Item</li>
-      </ul>
+
+    const Header = (
+      <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" showNavToggle onNavToggle={this.onNavToggle} />
     );
-    const PageToolbar = <div>Toolbar</div>;
-    const PageAvatar = <div>&nbsp;|&nbsp;Avatar</div>;
+    const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 
     return (
-      <Page
-        logo={PageLogo}
-        toolbar={PageToolbar}
-        avatar={PageAvatar}
-        nav={PageNav}
-        isNavOpen={isNavOpen}
-        onNavToggle={this.onNavToggle}
-      >
+      <Page header={Header} sidebar={Sidebar}>
         <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
         <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
         <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
