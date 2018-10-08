@@ -1,6 +1,46 @@
 
 ## Unreleased (2018-10-08)
 
+#### :memo: Documentation
+* `patternfly-3`
+  * [#716](https://github.com/patternfly/patternfly-react/pull/716) docs(Chart): Add more examples for line/area charts: zoom/subchart ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly3-react-lerna-root@7.1.3 (2018-10-08)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly-react@2.20.2 (2018-10-08)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly-react-extensions@2.8.5 (2018-10-08)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-console@1.4.5 (2018-10-08)
+
 #### :bug: Bug Fix
 * `patternfly-3`
   * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz1337](https://github.com/boaz1337))
