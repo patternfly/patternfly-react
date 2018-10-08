@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`replace with useful test name 1`] = `
+exports[`Check page layout example against snapshot 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
