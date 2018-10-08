@@ -14,7 +14,13 @@ class ControlledCheckbox extends React.Component {
 
   render() {
     return (
-      <Checkbox checked={this.state.checked} onChange={this.handleChange} aria-label="controlled checkbox example" />
+      <Checkbox
+        label="Controlled CheckBox"
+        checked={this.state.checked}
+        onChange={this.handleChange}
+        aria-label="controlled checkbox example"
+        id="check-1"
+      />
     );
   }
 }

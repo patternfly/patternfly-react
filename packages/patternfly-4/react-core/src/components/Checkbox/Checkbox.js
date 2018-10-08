@@ -1,24 +1,31 @@
 import React from 'react';
 import styles from '@patternfly/patternfly-next/components/Check/check.css';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { css, getModifier } from '@patternfly/react-styles';
 
 const propTypes = {
-  /** additional classes added to the Checkbox */
+  /** Additional classes added to the Checkbox. */
   className: PropTypes.string,
   /** Flag to show if the Checkbox selection is valid or invalid. */
   isValid: PropTypes.bool,
   /** Flag to show if the Checkbox is disabled. */
   isDisabled: PropTypes.bool,
   /** A callback for when the Checkbox selection changes. */
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  /** Label text of the checkbox. */
+  label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /** Id of the checkbox. */
+  id: PropTypes.string.isRequired,
+  /** Aria-label of the checkbox. */
+  'aria-label': PropTypes.any.isRequired
 };
 
 const defaultProps = {
   className: '',
   isValid: true,
   isDisabled: false,
-  onChange: () => undefined
+  onChange: () => undefined,
+  label: undefined
 };
 
 class Checkbox extends React.Component {
@@ -27,16 +34,23 @@ class Checkbox extends React.Component {
   };
 
   render() {
-    const { className, onChange, isValid, isDisabled, ...props } = this.props;
+    const { className, onChange, isValid, isDisabled, label, ...props } = this.props;
     return (
-      <input
-        {...props}
-        className={css(styles.check, className)}
-        type="checkbox"
-        onChange={this.handleChange}
-        aria-invalid={!isValid}
-        disabled={isDisabled}
-      />
+      <div className={css(styles.check, className)}>
+        <input
+          {...props}
+          className={css(styles.checkInput)}
+          type="checkbox"
+          onChange={this.handleChange}
+          aria-invalid={!isValid}
+          disabled={isDisabled}
+        />
+        {label && (
+          <label className={css(styles.checkLabel, getModifier(styles, isDisabled && 'disabled'))} htmlFor={props.id}>
+            {label}
+          </label>
+        )}
+      </div>
     );
   }
 }

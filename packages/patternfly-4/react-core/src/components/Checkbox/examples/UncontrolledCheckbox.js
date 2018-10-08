@@ -4,7 +4,7 @@ import { Checkbox } from '@patternfly/react-core';
 class UncontrolledCheckbox extends React.Component {
   static title = 'Uncontrolled Checkbox';
   render() {
-    return <Checkbox aria-label="uncontrolled checkbox example" />;
+    return <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-2" />;
   }
 }
 
