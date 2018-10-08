@@ -44,6 +44,28 @@ const areaChart = stories => {
           <div>
             <SingleAreaChart id="area-chart-2" size={{ width: 600 }} data={singleAreaChartData} />
           </div>
+
+          <h2>Zoomable Area Chart</h2>
+          <small>scroll up/down to zoom out/in</small>
+          <div>
+            <SingleAreaChart
+              id="area-chart-2"
+              size={{ width: 600 }}
+              data={singleAreaChartData}
+              zoom={{ enabled: true }}
+            />
+          </div>
+
+          <h2>Subchart Area Chart</h2>
+          <small>select the desired area in the bottom chart</small>
+          <div>
+            <SingleAreaChart
+              id="area-chart-2"
+              size={{ width: 600 }}
+              data={singleAreaChartData}
+              subchart={{ show: true }}
+            />
+          </div>
         </div>
       );
       return inlineTemplate({

@@ -69,6 +69,28 @@ const lineChart = stories => {
           <div>
             <SingleLineChart id="line-chart-5" data={singleSplineChartConfigData} size={{ width: 600 }} />
           </div>
+
+          <h2>Zoomable Single Line Chart</h2>
+          <small>scroll up/down to zoom out/in</small>
+          <div>
+            <SingleLineChart
+              id="line-chart-3"
+              data={singleLineChartConfigData}
+              size={{ width: 600 }}
+              zoom={{ enabled: true }}
+            />
+          </div>
+
+          <h2>Subchart Single Line Chart</h2>
+          <small>select the desired area in the bottom chart</small>
+          <div>
+            <SingleLineChart
+              id="line-chart-3"
+              data={singleLineChartConfigData}
+              size={{ width: 600 }}
+              subchart={{ show: true }}
+            />
+          </div>
         </div>
       );
 
