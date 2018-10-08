@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Sort } from '../../index';
+import { Sort, DropdownButton } from '../../index';
 
 const mockSortFields = [
   {
@@ -67,4 +67,68 @@ test('Sort renders alpha descending properly', () => {
   );
 
   expect(component.render()).toMatchSnapshot();
+});
+
+test('Sort Type Selectors are rendered if at least two types exist', () => {
+  [
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: 'a',
+        sortTypes: ['a', 'b']
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: '',
+        sortTypes: [{ title: 'a' }, 'b']
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: '',
+        sortTypes: ['a', 'b']
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: 'a',
+        sortTypes: ['a']
+      },
+      expected: {
+        length: 0
+      }
+    },
+    {
+      Selector: Sort.TypeSelector,
+      props: {
+        currentSortType: 'a',
+        sortTypes: []
+      },
+      expected: {
+        length: 0
+      }
+    }
+  ].forEach(({ Selector, props, expected }) => {
+    const view = mount(<Selector {...props} />).find(DropdownButton);
+    expect(view).toHaveLength(expected.length);
+    if (expected.length) {
+      expect(view.props().title).toBe(expected.title);
+    }
+  });
 });

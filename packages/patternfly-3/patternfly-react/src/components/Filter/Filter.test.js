@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Filter, FormControl, Toolbar } from '../../index';
+import { Filter, FormControl, Toolbar, DropdownButton } from '../../index';
 import { mockFilterExampleFields } from './__mocks__/mockFilterExample';
 
 test('Filter input renders properly', () => {
@@ -84,4 +84,187 @@ test('Filter active components render properly', () => {
   );
 
   expect(component.render()).toMatchSnapshot();
+});
+
+test('Selectors are rendered if at least two filters exist or a placeholder is given', () => {
+  [
+    {
+      Selector: Filter.TypeSelector,
+      props: {
+        currentFilterType: 'a',
+        filterTypes: ['a']
+      },
+      expected: {
+        length: 0
+      }
+    },
+    {
+      Selector: Filter.TypeSelector,
+      props: {
+        currentFilterType: 'a',
+        filterTypes: []
+      },
+      expected: {
+        length: 0
+      }
+    },
+    {
+      Selector: Filter.TypeSelector,
+      props: {
+        currentFilterType: 'a',
+        filterTypes: ['a', 'b']
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Filter.TypeSelector,
+      props: {
+        currentFilterType: 'a',
+        filterTypes: [],
+        placeholder: 'placeholder'
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Filter.ValueSelector,
+      props: {
+        currentValue: { title: 'a' },
+        filterValues: ['a', 'b']
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Filter.ValueSelector,
+      props: {
+        currentValue: 'a',
+        filterValues: ['a']
+      },
+      expected: {
+        length: 0
+      }
+    },
+    {
+      Selector: Filter.ValueSelector,
+      props: {
+        currentValue: 'a',
+        filterValues: [],
+        placeholder: 'placeholder'
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Filter.ValueSelector,
+      props: {
+        currentValue: 'a',
+        filterValues: []
+      },
+      expected: {
+        length: 0
+      }
+    },
+    {
+      Selector: Filter.CategorySelector,
+      props: {
+        currentCategory: 'b',
+        filterCategories: ['a', 'b']
+      },
+      expected: {
+        length: 1,
+        title: 'b'
+      }
+    },
+    {
+      Selector: Filter.CategorySelector,
+      props: {
+        currentCategory: 'a',
+        filterCategories: ['a']
+      },
+      expected: {
+        length: 0
+      }
+    },
+    {
+      Selector: Filter.CategorySelector,
+      props: {
+        currentCategory: '',
+        filterCategories: [],
+        placeholder: 'placeholder'
+      },
+      expected: {
+        length: 1,
+        title: 'placeholder'
+      }
+    },
+    {
+      Selector: Filter.CategorySelector,
+      props: {
+        currentCategory: 'a',
+        filterCategories: []
+      },
+      expected: {
+        length: 0
+      }
+    },
+    {
+      Selector: Filter.CategoryValueSelector,
+      props: {
+        currentValue: 'a',
+        categoryValues: ['a', 'b']
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Filter.CategoryValueSelector,
+      props: {
+        currentValue: 'a',
+        categoryValues: ['a']
+      },
+      expected: {
+        length: 0
+      }
+    },
+    {
+      Selector: Filter.CategoryValueSelector,
+      props: {
+        currentValue: 'a',
+        categoryValues: [],
+        placeholder: 'placeholder'
+      },
+      expected: {
+        length: 1,
+        title: 'a'
+      }
+    },
+    {
+      Selector: Filter.CategoryValueSelector,
+      props: {
+        currentValue: 'a',
+        categoryValues: []
+      },
+      expected: {
+        length: 0
+      }
+    }
+  ].forEach(({ Selector, props, expected }) => {
+    const view = mount(<Selector {...props} />).find(DropdownButton);
+    expect(view).toHaveLength(expected.length);
+    if (expected.length) {
+      expect(view.props().title).toBe(expected.title);
+    }
+  });
 });

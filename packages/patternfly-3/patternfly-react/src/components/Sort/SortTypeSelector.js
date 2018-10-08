@@ -12,7 +12,7 @@ const SortTypeSelector = ({ className, id, sortTypes, currentSortType, onSortTyp
     if (currentSortType) {
       title = currentSortType.title || currentSortType;
     } else {
-      title = currentSortType[0].title || currentSortType[0];
+      title = sortTypes[0].title || sortTypes[0];
     }
 
     return (
