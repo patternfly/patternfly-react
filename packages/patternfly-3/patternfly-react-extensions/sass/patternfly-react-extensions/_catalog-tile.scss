@@ -41,8 +41,8 @@
     font-size: 16px;
     padding-left: 5px;
 
-    >.fa,
-    >.pficon {
+    > .fa,
+    > .pficon {
       vertical-align: top;
     }
   }
@@ -95,21 +95,7 @@
 .catalog-tile-view-pf-category-body {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
   margin-top: 10px;
-  max-height: calc(3 * #{$catalog-tile-pf-total-height});
-
-  @media (min-width: $screen-sm-min) {
-    max-height: calc(2 * #{$catalog-tile-pf-total-height});
-  }
-
-  @media (min-width: $screen-md-min) {
-    max-height: $catalog-tile-pf-total-height;
-  }
-
-  &.view-all {
-    max-height: initial;
-  }
 
   [class*='col-'] {
     padding: 0 20px 0 0;

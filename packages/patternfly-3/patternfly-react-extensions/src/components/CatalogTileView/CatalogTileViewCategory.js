@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, debounce, noop } from 'patternfly-react';
+import { Button, debounce, filterChildren, hasDisplayName, noop } from 'patternfly-react';
 import { ResizeSensor } from 'css-element-queries';
 import Break from 'breakjs';
+import CatalogTile from '../CatalogTile/CatalogTile';
 
 const layout =
   window && typeof window.matchMedia === 'function'
@@ -57,7 +58,12 @@ class CatalogTileViewCategory extends React.Component {
     const { children, className, title, totalItems, viewAllText, viewAll, onViewAll, ...props } = this.props;
     const { numShown, rightSpacerWidth } = this.state;
     const classes = classNames('catalog-tile-view-pf-category', className);
-    const bodyClasses = classNames('catalog-tile-view-pf-category-body', { 'view-all': viewAll });
+
+    // Only show the tiles that fit in a single row, unless viewAll is specified
+    let catalogTiles = filterChildren(children, child => hasDisplayName(child, CatalogTile.displayName));
+    if (!viewAll && numShown && numShown < totalItems) {
+      catalogTiles = catalogTiles.slice(0, numShown);
+    }
 
     return (
       <div className={classes} {...props} ref={this.handleRef}>
@@ -77,7 +83,7 @@ class CatalogTileViewCategory extends React.Component {
               </span>
             )}
         </div>
-        <div className={bodyClasses}>{children}</div>
+        <div className="catalog-tile-view-pf-category-body">{catalogTiles}</div>
       </div>
     );
   }
