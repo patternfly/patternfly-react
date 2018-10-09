@@ -43,10 +43,7 @@ export const PropsTable = ({ name, props, enumValues }) => (
           <Row key={propName}>
             <TD>{propName}</TD>
             <TD>
-              <div className={css(styles.enumValues)}>
-                {propDef.type.name}
-                {getEnumValue(propDef, enumValues)}
-              </div>
+              <div className={css(styles.enumValues)}>{getEnumValue(propDef, enumValues)}</div>
             </TD>
             <TD align="center">{propDef.required && <ExclamationCircleIcon />}</TD>
             <TD>{Boolean(propDef.defaultValue) && propDef.defaultValue.value}</TD>
@@ -59,11 +56,16 @@ export const PropsTable = ({ name, props, enumValues }) => (
 );
 
 function getEnumValue(prop, enumValues) {
-  const values = Array.isArray(prop.type.value) ? prop.type.value.map(v => v.value) : enumValues[prop.type.value];
-  if (!values) {
-    return '';
+  let returnValue = '';
+  let values;
+  if (prop.type.name === 'union') {
+    values = prop.type.value.map(v => v.name);
+    returnValue = `${values.join(' | ')}`;
+  } else {
+    values = Array.isArray(prop.type.value) ? prop.type.value.map(v => v.value) : enumValues[prop.type.value];
+    returnValue = values ? `${prop.type.name}: ${values.join(', ')}` : prop.type.name;
   }
-  return `: ${values.join(', ')}`;
+  return returnValue;
 }
 
 PropsTable.propTypes = propTypes;
