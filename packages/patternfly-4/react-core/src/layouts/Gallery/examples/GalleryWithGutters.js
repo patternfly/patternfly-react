@@ -2,7 +2,7 @@ import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
 import getContainerProps from './common/getContainerProps';
 
-class WithGutters extends React.Component {
+class GalleryWithGutters extends React.Component {
   static title = 'Gallery With Gutters';
   static getContainerProps = getContainerProps;
 
@@ -20,4 +20,4 @@ class WithGutters extends React.Component {
   }
 }
 
-export default WithGutters;
+export default GalleryWithGutters;
