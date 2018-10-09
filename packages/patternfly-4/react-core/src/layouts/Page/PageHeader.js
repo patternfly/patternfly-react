@@ -24,8 +24,8 @@ const propTypes = {
 
 const defaultProps = {
   className: '',
-  logo: 'Logo',
-  toolbar: 'Toolbar',
+  logo: null,
+  toolbar: null,
   avatar: null,
   topNav: null,
   showNavToggle: false,
