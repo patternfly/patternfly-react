@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.16.5"></a>
+## [3.16.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.16.4...@patternfly/react-docs@3.16.5) (2018-10-09)
+
+
+### Bug Fixes
+
+* **react-docs: oneoftype support:** ([#721](https://github.com/patternfly/patternfly-react/issues/721)) ([91c5f31](https://github.com/patternfly/patternfly-react/commit/91c5f31)), closes [#720](https://github.com/patternfly/patternfly-react/issues/720)
+
+
+
+
 <a name="3.16.4"></a>
 ## [3.16.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.16.3...@patternfly/react-docs@3.16.4) (2018-10-09)
 

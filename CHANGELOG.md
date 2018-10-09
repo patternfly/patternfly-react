@@ -3,6 +3,36 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
+  * [#721](https://github.com/patternfly/patternfly-react/pull/721) fix(react-docs: oneoftype support): ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly4-react-lerna-root@1.6.1 (2018-10-09)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.16.4 (2018-10-09)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.19.1 (2018-10-09)
+
+#### :bug: Bug Fix
+* `patternfly-4`
   * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz1337](https://github.com/boaz1337))
 
 #### Committers: 1
