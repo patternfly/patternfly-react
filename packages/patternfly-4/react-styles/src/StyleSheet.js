@@ -9,14 +9,19 @@ import {
 } from './utils';
 
 export const StyleSheet = {
-  create: styleObj =>
-    Object.keys(styleObj).reduce(
-      (prev, key) => ({
-        ...prev,
-        [key]: emotionCSS(styleObj[key])
-      }),
-      {}
-    ),
+  create(styleObj) {
+    const keys = Object.keys(styleObj);
+    if (keys.length > 0) {
+      return keys.reduce(
+        (prev, key) => ({
+          ...prev,
+          [key]: emotionCSS(styleObj[key])
+        }),
+        {}
+      );
+    }
+    return emotionCSS(styleObj);
+  },
   parse(input) {
     const classes = getCSSClasses(input);
     if (!classes) {

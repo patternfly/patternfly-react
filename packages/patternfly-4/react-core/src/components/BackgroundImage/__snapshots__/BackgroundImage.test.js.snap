@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BackgroundImage 1`] = `
-.pf-c-background-image {
+.pf-c-background-image.css-jrvmr5 {
   display: block;
   position: fixed;
   top: 0px;
@@ -17,12 +17,12 @@ exports[`BackgroundImage 1`] = `
 }
 
 <div
-  className="pf-c-background-image"
+  className="pf-c-background-image css-jrvmr5"
 />
 `;
 
 exports[`BackgroundImage 2`] = `
-.pf-c-background-image {
+.pf-c-background-image.css-jrvmr5 {
   display: block;
   position: fixed;
   top: 0px;
@@ -38,6 +38,27 @@ exports[`BackgroundImage 2`] = `
 }
 
 <div
-  className="pf-c-background-image"
+  className="pf-c-background-image css-jrvmr5"
+/>
+`;
+
+exports[`allows passing in a single string as the image src 1`] = `
+.pf-c-background-image.css-1eio177 {
+  display: block;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-color: #393f44;
+  background-image: url(../../assets/images/pfbg_576.jpg);
+  filter: url("../../assets/images/background-filter.svg#image_overlay");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+<div
+  className="pf-c-background-image css-1eio177"
 />
 `;
