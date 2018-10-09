@@ -1,5 +1,5 @@
 import { SFC, HTMLProps, ReactNode } from 'react';
-import { OneOf } from '../../typeUtils';
+import { OneOf, Omit } from '../../typeUtils';
 
 export const AlertVariant: {
   success: 'success';
@@ -8,9 +8,10 @@ export const AlertVariant: {
   info: 'info';
 };
 
-export interface AlertProps extends HTMLProps<HTMLDivElement> {
+export interface AlertProps extends Omit<HTMLProps<HTMLDivElement>, 'action'> {
   variant: OneOf<typeof AlertVariant, keyof typeof AlertVariant>;
   children?: ReactNode;
+  action?: ReactNode;
 }
 
 declare const Alert: SFC<AlertProps>;
