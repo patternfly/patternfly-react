@@ -57,7 +57,9 @@ ExpandCollapse.propTypes = {
   /** Align the link to the left or center. Default: left. */
   align: PropTypes.oneOf(ALIGN_TYPES),
   /** Flag to show a separation border line */
-  bordered: PropTypes.bool
+  bordered: PropTypes.bool,
+  /** Flag to control expansion state */
+  expanded: PropTypes.bool // eslint-disable-line react/no-unused-prop-types
 };
 
 ExpandCollapse.defaultProps = {
@@ -65,7 +67,8 @@ ExpandCollapse.defaultProps = {
   textCollapsed: 'Show Advanced Options',
   textExpanded: 'Hide Advanced Options',
   align: ALIGN_LEFT,
-  bordered: true
+  bordered: true,
+  expanded: false
 };
 
 export default ExpandCollapse;

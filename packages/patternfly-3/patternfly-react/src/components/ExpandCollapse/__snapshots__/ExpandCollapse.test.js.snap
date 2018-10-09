@@ -5,6 +5,7 @@ exports[`localized ExpandCollapse 1`] = `
   align="left"
   bordered={true}
   className=""
+  expanded={false}
   textCollapsed="Click to expand"
   textExpanded="Click to collapse"
 >
@@ -57,6 +58,7 @@ exports[`localized ExpandCollapse 2`] = `
   align="left"
   bordered={true}
   className=""
+  expanded={false}
   textCollapsed="Click to expand"
   textExpanded="Click to collapse"
 >
