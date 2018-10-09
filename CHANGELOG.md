@@ -1,4 +1,15 @@
 
+## Unreleased (2018-10-09)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#725](https://github.com/patternfly/patternfly-react/pull/725) fix(CatalogTileView): Fix to not render hidden tiles in catalog tile view categories ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 2
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
 ## patternfly3-react-lerna-root@7.1.4 (2018-10-08)
 
 #### :memo: Documentation
