@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.6.1"></a>
+## [1.6.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.6.0...patternfly4-react-lerna-root@1.6.1) (2018-10-09)
+
+
+### Bug Fixes
+
+* **Alert:** [TS] action type is string while it should've been node ([#727](https://github.com/patternfly/patternfly-react/issues/727)) ([f325d03](https://github.com/patternfly/patternfly-react/commit/f325d03))
+
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.5.2...patternfly4-react-lerna-root@1.6.0) (2018-10-09)
 

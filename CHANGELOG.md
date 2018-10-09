@@ -2,6 +2,38 @@
 ## Unreleased (2018-10-09)
 
 #### :bug: Bug Fix
+* `patternfly-4`
+  * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly4-react-lerna-root@1.6.0 (2018-10-09)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#725](https://github.com/patternfly/patternfly-react/pull/725) fix(CatalogTileView): Fix to not render hidden tiles in catalog tile view categories ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 2
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.16.3 (2018-10-09)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#725](https://github.com/patternfly/patternfly-react/pull/725) fix(CatalogTileView): Fix to not render hidden tiles in catalog tile view categories ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 2
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.19.0 (2018-10-09)
+
+#### :bug: Bug Fix
 * `patternfly-3`
   * [#725](https://github.com/patternfly/patternfly-react/pull/725) fix(CatalogTileView): Fix to not render hidden tiles in catalog tile view categories ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
 
