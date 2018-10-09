@@ -103,6 +103,8 @@ CatalogTile.defaultProps = {
   truncateDescriptionFn: null
 };
 
+CatalogTile.displayName = 'CatalogTile';
+
 CatalogTile.Badge = CatalogTileBadge;
 
 export default CatalogTile;

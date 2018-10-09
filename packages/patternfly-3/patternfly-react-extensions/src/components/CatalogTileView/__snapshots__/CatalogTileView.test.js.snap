@@ -286,7 +286,7 @@ exports[`CatalogTile renders properly 1`] = `
       </span>
     </div>
     <div
-      class="catalog-tile-view-pf-category-body view-all"
+      class="catalog-tile-view-pf-category-body"
     >
       <div
         class="catalog-tile-pf featured"
