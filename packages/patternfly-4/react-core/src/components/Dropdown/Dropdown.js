@@ -53,18 +53,35 @@ const defaultProps = {
 
 class Dropdown extends React.Component {
   state = {
-    focusedItemRef: null
+    focusedItemRef: null,
+    focusOnReentry: null
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.focusOnReentry !== this.state.focusOnReentry && !this.state.focusOnReentry) {
+      prevState.focusOnReentry.focus();
+    }
   };
 
   setFocusedItemRef = focusedItemRef => this.setState({ focusedItemRef });
 
-  handleOnFocus = () => this.setState({ focusedItemRef: this.parentRef });
+  handleOnFocus = () => {
+    const { focusOnReentry } = this.state;
+
+    if (focusOnReentry) {
+      this.setFocusedItemRef(focusOnReentry);
+      this.setState({ focusOnReentry: null });
+      return;
+    }
+
+    this.setState({ focusedItemRef: this.parentRef });
+  };
 
   handleOnKeyDown = e => {
     const { focusedItemRef } = this.state;
 
     if (e.key === 'Tab' && !e.shiftKey && focusedItemRef === this.menuRef.lastChild) {
-      this.setState({ focusedItemRef: null });
+      this.setState({ focusedItemRef: null, focusOnReentry: this.menuRef.lastChild });
     }
     if (e.key === 'Tab' && e.shiftKey && focusedItemRef === this.parentRef) {
       this.setState({ focusedItemRef: null });
@@ -94,7 +111,12 @@ class Dropdown extends React.Component {
       >
         {toggle &&
           Children.map(toggle, oneToggle =>
-            cloneElement(oneToggle, { parentRef: this.parentRef, focusedItemRef: this.state.focusedItemRef, isOpen })
+            cloneElement(oneToggle, {
+              parentRef: this.parentRef,
+              focusedItemRef: this.state.focusedItemRef,
+              focusOnReentry: this.state.focusOnReentry,
+              isOpen
+            })
           )}
         <DropdownMenu
           isOpen={isOpen && focusedItemRef}

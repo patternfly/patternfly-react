@@ -21,7 +21,9 @@ const propTypes = {
   /** Forces active state */
   isActive: PropTypes.bool,
   /** Focused DropdownItem */
-  focusedItemRef: PropTypes.object
+  focusedItemRef: PropTypes.object,
+  /** Element that will receive focus when reentering menu via keyboard */
+  focusOnReentry: PropTypes.any
 };
 
 const defaultProps = {
@@ -33,7 +35,8 @@ const defaultProps = {
   isHovered: false,
   isActive: false,
   onToggle: Function.prototype,
-  focusedItemRef: null
+  focusedItemRef: null,
+  focusOnReentry: null
 };
 
 class DropdownToggle extends Component {
@@ -72,7 +75,24 @@ class DropdownToggle extends Component {
     }
   };
 
-  handleOnFocus = () => this.setState({ focused: true });
+  handleOnClickCapture = event => {
+    if (!this.props.parentRef.isEqualNode(this.props.focusedItemRef)) {
+      this.toggle.focus();
+      event.stopPropagation();
+    }
+  };
+
+  handleOnFocus = () => {
+    const { focusOnReentry, onToggle } = this.props;
+
+    if (focusOnReentry) {
+      onToggle && onToggle(true);
+      return;
+    }
+
+    this.setState({ focused: true });
+  };
+
   handleOnBlur = () => this.setState({ focused: false });
 
   render() {
@@ -86,6 +106,7 @@ class DropdownToggle extends Component {
       onToggle,
       parentRef,
       focusedItemRef,
+      focusOnReentry,
       ...props
     } = this.props;
     return (
@@ -102,6 +123,7 @@ class DropdownToggle extends Component {
           className
         )}
         onClick={_event => onToggle && onToggle(!isOpen)}
+        onClickCapture={this.handleOnClickCapture}
         aria-haspopup="true"
         aria-expanded={isOpen}
         onFocus={this.handleOnFocus}

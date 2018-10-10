@@ -31,6 +31,7 @@ exports[`state active 1`] = `
 >
   <DropdownToggle
     className=""
+    focusOnReentry={null}
     focusedItemRef={null}
     isActive={true}
     isFocused={false}
@@ -45,6 +46,7 @@ exports[`state active 1`] = `
       className="pf-c-dropdown__toggle pf-m-active"
       onBlur={[Function]}
       onClick={[Function]}
+      onClickCapture={[Function]}
       onFocus={[Function]}
     >
       Dropdown
@@ -106,6 +108,7 @@ exports[`state focus 1`] = `
 >
   <DropdownToggle
     className=""
+    focusOnReentry={null}
     focusedItemRef={null}
     isActive={false}
     isFocused={true}
@@ -120,6 +123,7 @@ exports[`state focus 1`] = `
       className="pf-c-dropdown__toggle pf-m-focus"
       onBlur={[Function]}
       onClick={[Function]}
+      onClickCapture={[Function]}
       onFocus={[Function]}
     >
       Dropdown
@@ -181,6 +185,7 @@ exports[`state hover 1`] = `
 >
   <DropdownToggle
     className=""
+    focusOnReentry={null}
     focusedItemRef={null}
     isActive={false}
     isFocused={false}
@@ -195,6 +200,7 @@ exports[`state hover 1`] = `
       className="pf-c-dropdown__toggle pf-m-hover"
       onBlur={[Function]}
       onClick={[Function]}
+      onClickCapture={[Function]}
       onFocus={[Function]}
     >
       Dropdown

@@ -76,6 +76,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -88,6 +89,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -103,6 +105,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           <EllipsisVIcon
@@ -368,6 +371,7 @@ exports[`KebabToggle dropup 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -380,6 +384,7 @@ exports[`KebabToggle dropup 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -395,6 +400,7 @@ exports[`KebabToggle dropup 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           <EllipsisVIcon
@@ -660,6 +666,7 @@ exports[`KebabToggle expanded 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -672,6 +679,7 @@ exports[`KebabToggle expanded 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -687,6 +695,7 @@ exports[`KebabToggle expanded 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           <EllipsisVIcon
@@ -952,6 +961,7 @@ exports[`KebabToggle plain 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -964,6 +974,7 @@ exports[`KebabToggle plain 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -979,6 +990,7 @@ exports[`KebabToggle plain 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           <EllipsisVIcon
@@ -1244,6 +1256,7 @@ exports[`KebabToggle regular 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -1256,6 +1269,7 @@ exports[`KebabToggle regular 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -1271,6 +1285,7 @@ exports[`KebabToggle regular 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           <EllipsisVIcon
@@ -1536,6 +1551,7 @@ exports[`KebabToggle right aligned 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -1548,6 +1564,7 @@ exports[`KebabToggle right aligned 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -1563,6 +1580,7 @@ exports[`KebabToggle right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           <EllipsisVIcon
@@ -1834,6 +1852,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -1845,6 +1864,7 @@ exports[`dropdown dropup + right aligned 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -1859,6 +1879,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           Dropdown
@@ -2133,6 +2154,7 @@ exports[`dropdown dropup 1`] = `
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -2144,6 +2166,7 @@ exports[`dropdown dropup 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -2158,6 +2181,7 @@ exports[`dropdown dropup 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           Dropdown
@@ -2432,6 +2456,7 @@ exports[`dropdown expanded 1`] = `
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -2443,6 +2468,7 @@ exports[`dropdown expanded 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -2457,6 +2483,7 @@ exports[`dropdown expanded 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           Dropdown
@@ -2731,6 +2758,7 @@ exports[`dropdown regular 1`] = `
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -2742,6 +2770,7 @@ exports[`dropdown regular 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -2756,6 +2785,7 @@ exports[`dropdown regular 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           Dropdown
@@ -3030,6 +3060,7 @@ exports[`dropdown right aligned 1`] = `
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
       focusedItemRef={null}
       isActive={false}
       isFocused={false}
@@ -3041,6 +3072,7 @@ exports[`dropdown right aligned 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
         focusedItemRef={null}
         isActive={false}
         isFocused={false}
@@ -3055,6 +3087,7 @@ exports[`dropdown right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
           onFocus={[Function]}
         >
           Dropdown
