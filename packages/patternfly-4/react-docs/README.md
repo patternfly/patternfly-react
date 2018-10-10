@@ -15,7 +15,7 @@ lerna bootstrap
 ## Running
 To start the site locally.
 ```sh
-yarn start:site
+yarn build && yarn start:pf4
 ```
 
 ## Building
