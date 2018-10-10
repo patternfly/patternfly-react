@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.8.8"></a>
+## [2.8.8](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.8.6...patternfly-react-extensions@2.8.8) (2018-10-10)
+
+
+### Bug Fixes
+
+* **CatalogTileView:** Fix to not render hidden tiles in catalog tile view categories ([#725](https://github.com/patternfly/patternfly-react/issues/725)) ([5f98876](https://github.com/patternfly/patternfly-react/commit/5f98876))
+* **CatalogTileView:** Fix to render non-tile children of a category ([#730](https://github.com/patternfly/patternfly-react/issues/730)) ([c52a609](https://github.com/patternfly/patternfly-react/commit/c52a609))
+
+
+
+
 <a name="2.8.7"></a>
 ## [2.8.7](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.8.6...patternfly-react-extensions@2.8.7) (2018-10-09)
 

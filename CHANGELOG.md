@@ -1,5 +1,25 @@
 
-## Unreleased (2018-10-09)
+## Unreleased (2018-10-10)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#730](https://github.com/patternfly/patternfly-react/pull/730) fix(CatalogTileView): Fix to render non-tile children of a category ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly4-react-lerna-root@1.6.2 (2018-10-09)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#721](https://github.com/patternfly/patternfly-react/pull/721) fix(react-docs: oneoftype support): ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.16.5 (2018-10-09)
 
 #### :bug: Bug Fix
 * `patternfly-4`
