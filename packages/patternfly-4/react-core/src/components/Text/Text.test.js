@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import TextContent from './TextContent';
 import Text, { TextVariants } from './Text';
 import TextList, { TextListVariants } from './TextList';
 import TextListItem, { TextListItemVariants } from './TextListItem';
 
 test('replace with useful test name', () => {
-  const view = shallow(
+  const view = mount(
     <TextContent>
       <Text variant={TextVariants.h1}>Hello World</Text>
       <Text variant={TextVariants.p}>

@@ -1,279 +1,585 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`replace with useful test name 1`] = `
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
+.is-content {
+  display: block;
+}
 .pf-c-content {
   display: block;
   font-size: 1rem;
   line-height: 1.5;
 }
 
-<div
-  className="pf-c-content"
+<TextContent
+  className=""
 >
-  <Text
-    className=""
-    variant="h1"
+  <div
+    className="pf-c-content"
   >
-    Hello World
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub works as well!
-  </Text>
-  <Text
-    className=""
-    variant="h2"
-  >
-    Second level
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Curabitur accumsan turpis pharetra 
-    <strong>
-      augue tincidunt
-    </strong>
-     blandit. Quisque condimentum maximus mi, sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.
-  </Text>
-  <TextList
-    className=""
-    variant="ul"
-  >
-    <TextListItem
+    <Text
       className=""
-      variant="li"
+      variant="h1"
     >
-      In fermentum leo eu lectus mollis, quis dictum mi aliquet.
-    </TextListItem>
-    <TextListItem
+      <h1
+        className="is-content"
+      >
+        Hello World
+      </h1>
+    </Text>
+    <Text
       className=""
-      variant="li"
+      variant="p"
     >
-      Morbi eu nulla lobortis, lobortis est in, fringilla felis.
-    </TextListItem>
-    <TextListItem
+      <p
+        className="is-content"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub works as well!
+      </p>
+    </Text>
+    <Text
       className=""
-      variant="li"
+      variant="h2"
     >
-      Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.
-      <TextList
-        className=""
-        variant="ul"
+      <h2
+        className="is-content"
+      >
+        Second level
+      </h2>
+    </Text>
+    <Text
+      className=""
+      variant="p"
+    >
+      <p
+        className="is-content"
+      >
+        Curabitur accumsan turpis pharetra 
+        <strong>
+          augue tincidunt
+        </strong>
+         blandit. Quisque condimentum maximus mi, sit amet commodo arcu rutrum id. Proin pretium urna vel cursus venenatis. Suspendisse potenti. Etiam mattis sem rhoncus lacus dapibus facilisis. Donec at dignissim dui. Ut et neque nisl.
+      </p>
+    </Text>
+    <TextList
+      className=""
+      variant="ul"
+    >
+      <ul
+        className="is-content"
       >
         <TextListItem
           className=""
           variant="li"
         >
-          In fermentum leo eu lectus mollis, quis dictum mi aliquet.
+          <li
+            className="is-content"
+          >
+            In fermentum leo eu lectus mollis, quis dictum mi aliquet.
+          </li>
         </TextListItem>
         <TextListItem
           className=""
           variant="li"
         >
-          Morbi eu nulla lobortis, lobortis est in, fringilla felis.
+          <li
+            className="is-content"
+          >
+            Morbi eu nulla lobortis, lobortis est in, fringilla felis.
+          </li>
         </TextListItem>
-      </TextList>
-    </TextListItem>
-    <TextListItem
-      className=""
-      variant="li"
-    >
-      Ut non enim metus.
-    </TextListItem>
-  </TextList>
-  <Text
-    className=""
-    variant="h3"
-  >
-    Third level
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Quisque ante lacus, malesuada ac auctor vitae, congue
-     
+        <TextListItem
+          className=""
+          variant="li"
+        >
+          <li
+            className="is-content"
+          >
+            Aliquam nec felis in sapien venenatis viverra fermentum nec lectus.
+            <TextList
+              className=""
+              variant="ul"
+            >
+              <ul
+                className="is-content"
+              >
+                <TextListItem
+                  className=""
+                  variant="li"
+                >
+                  <li
+                    className="is-content"
+                  >
+                    In fermentum leo eu lectus mollis, quis dictum mi aliquet.
+                  </li>
+                </TextListItem>
+                <TextListItem
+                  className=""
+                  variant="li"
+                >
+                  <li
+                    className="is-content"
+                  >
+                    Morbi eu nulla lobortis, lobortis est in, fringilla felis.
+                  </li>
+                </TextListItem>
+              </ul>
+            </TextList>
+          </li>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="li"
+        >
+          <li
+            className="is-content"
+          >
+            Ut non enim metus.
+          </li>
+        </TextListItem>
+      </ul>
+    </TextList>
     <Text
       className=""
-      href="#"
-      variant="a"
+      variant="h3"
     >
-      non ante
+      <h3
+        className="is-content"
+      >
+        Third level
+      </h3>
     </Text>
-    . Phasellus lacus ex, semper ac tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.
-  </Text>
-  <TextList
-    className=""
-    variant="ol"
-  >
-    <TextListItem
+    <Text
       className=""
-      variant="li"
+      variant="p"
     >
-      Donec blandit a lorem id convallis.
-    </TextListItem>
-    <TextListItem
+      <p
+        className="is-content"
+      >
+        Quisque ante lacus, malesuada ac auctor vitae, congue
+         
+        <Text
+          className=""
+          href="#"
+          variant="a"
+        >
+          <a
+            className="is-content"
+            href="#"
+          >
+            non ante
+          </a>
+        </Text>
+        . Phasellus lacus ex, semper ac tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.
+      </p>
+    </Text>
+    <TextList
       className=""
-      variant="li"
+      variant="ol"
     >
-      Cras gravida arcu at diam gravida gravida.
-    </TextListItem>
-    <TextListItem
+      <ol
+        className="is-content"
+      >
+        <TextListItem
+          className=""
+          variant="li"
+        >
+          <li
+            className="is-content"
+          >
+            Donec blandit a lorem id convallis.
+          </li>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="li"
+        >
+          <li
+            className="is-content"
+          >
+            Cras gravida arcu at diam gravida gravida.
+          </li>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="li"
+        >
+          <li
+            className="is-content"
+          >
+            Integer in volutpat libero.
+          </li>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="li"
+        >
+          <li
+            className="is-content"
+          >
+            Donec a diam tellus.
+          </li>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="li"
+        >
+          <li
+            className="is-content"
+          >
+            Aenean nec tortor orci.
+          </li>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="li"
+        >
+          <li
+            className="is-content"
+          >
+            Quisque aliquam cursus urna, non bibendum massa viverra eget.
+          </li>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="li"
+        >
+          <li
+            className="is-content"
+          >
+            Vivamus maximus ultricies pulvinar.
+          </li>
+        </TextListItem>
+      </ol>
+    </TextList>
+    <Text
       className=""
-      variant="li"
+      variant="blockquote"
     >
-      Integer in volutpat libero.
-    </TextListItem>
-    <TextListItem
+      <blockquote
+        className="is-content"
+      >
+        Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit amet turpis.
+      </blockquote>
+    </Text>
+    <Text
       className=""
-      variant="li"
+      variant="p"
     >
-      Donec a diam tellus.
-    </TextListItem>
-    <TextListItem
+      <p
+        className="is-content"
+      >
+        Quisque at semper enim, eu hendrerit odio. Etiam auctor nisl et 
+        <em>
+          justo sodales
+        </em>
+         elementum. Maecenas ultrices lacus quis neque consectetur, et lobortis nisi molestie.
+      </p>
+    </Text>
+    <Text
       className=""
-      variant="li"
+      variant="p"
     >
-      Aenean nec tortor orci.
-    </TextListItem>
-    <TextListItem
+      <p
+        className="is-content"
+      >
+        Sed sagittis enim ac tortor maximus rutrum. Nulla facilisi. Donec mattis vulputate risus in luctus. Maecenas vestibulum interdum commodo.
+      </p>
+    </Text>
+    <TextList
       className=""
-      variant="li"
+      variant="dl"
     >
-      Quisque aliquam cursus urna, non bibendum massa viverra eget.
-    </TextListItem>
-    <TextListItem
+      <dl
+        className="is-content"
+      >
+        <TextListItem
+          className=""
+          variant="dt"
+        >
+          <dt
+            className="is-content"
+          >
+            Web
+          </dt>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="dd"
+        >
+          <dd
+            className="is-content"
+          >
+            The part of the Internet that contains websites and web pages
+          </dd>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="dt"
+        >
+          <dt
+            className="is-content"
+          >
+            HTML
+          </dt>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="dd"
+        >
+          <dd
+            className="is-content"
+          >
+            A markup language for creating web pages
+          </dd>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="dt"
+        >
+          <dt
+            className="is-content"
+          >
+            CSS
+          </dt>
+        </TextListItem>
+        <TextListItem
+          className=""
+          variant="dd"
+        >
+          <dd
+            className="is-content"
+          >
+            A technology to make HTML look better
+          </dd>
+        </TextListItem>
+      </dl>
+    </TextList>
+    <Text
       className=""
-      variant="li"
+      variant="p"
     >
-      Vivamus maximus ultricies pulvinar.
-    </TextListItem>
-  </TextList>
-  <Text
-    className=""
-    variant="blockquote"
-  >
-    Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit amet turpis.
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Quisque at semper enim, eu hendrerit odio. Etiam auctor nisl et 
-    <em>
-      justo sodales
-    </em>
-     elementum. Maecenas ultrices lacus quis neque consectetur, et lobortis nisi molestie.
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Sed sagittis enim ac tortor maximus rutrum. Nulla facilisi. Donec mattis vulputate risus in luctus. Maecenas vestibulum interdum commodo.
-  </Text>
-  <TextList
-    className=""
-    variant="dl"
-  >
-    <TextListItem
+      <p
+        className="is-content"
+      >
+        Suspendisse egestas sapien non felis placerat elementum. Morbi tortor nisl, suscipit sed mi sit amet, mollis malesuada nulla. Nulla facilisi. Nullam ac erat ante.
+      </p>
+    </Text>
+    <Text
       className=""
-      variant="dt"
+      variant="h4"
     >
-      Web
-    </TextListItem>
-    <TextListItem
+      <h4
+        className="is-content"
+      >
+        Fourth level
+      </h4>
+    </Text>
+    <Text
       className=""
-      variant="dd"
+      variant="p"
     >
-      The part of the Internet that contains websites and web pages
-    </TextListItem>
-    <TextListItem
+      <p
+        className="is-content"
+      >
+        Nulla efficitur eleifend nisi, sit amet bibendum sapien fringilla ac. Mauris euismod metus a tellus laoreet, at elementum ex efficitur.
+      </p>
+    </Text>
+    <Text
       className=""
-      variant="dt"
+      variant="p"
     >
-      HTML
-    </TextListItem>
-    <TextListItem
+      <p
+        className="is-content"
+      >
+        Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.
+      </p>
+    </Text>
+    <Text
       className=""
-      variant="dd"
+      variant="small"
     >
-      A markup language for creating web pages
-    </TextListItem>
-    <TextListItem
+      <small
+        className="is-content"
+      >
+        Sometimes you need small text to display things like date created
+      </small>
+    </Text>
+    <Text
       className=""
-      variant="dt"
+      variant="p"
     >
-      CSS
-    </TextListItem>
-    <TextListItem
+      <p
+        className="is-content"
+      >
+        Phasellus porttitor enim id metus volutpat ultricies. Ut nisi nunc, blandit sed dapibus at, vestibulum in felis. Etiam iaculis lorem ac nibh bibendum rhoncus. Nam interdum efficitur ligula sit amet ullamcorper. Etiam tristique, leo vitae porta faucibus, mi lacus laoreet metus, at cursus leo est vel tellus. Sed ac posuere est. Nunc ultricies nunc neque, vitae ultricies ex sodales quis. Aliquam eu nibh in libero accumsan pulvinar. Nullam nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel condimentum. Nam pharetra varius metus non pellentesque.
+      </p>
+    </Text>
+    <Text
       className=""
-      variant="dd"
+      variant="h5"
     >
-      A technology to make HTML look better
-    </TextListItem>
-  </TextList>
-  <Text
-    className=""
-    variant="p"
-  >
-    Suspendisse egestas sapien non felis placerat elementum. Morbi tortor nisl, suscipit sed mi sit amet, mollis malesuada nulla. Nulla facilisi. Nullam ac erat ante.
-  </Text>
-  <Text
-    className=""
-    variant="h4"
-  >
-    Fourth level
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Nulla efficitur eleifend nisi, sit amet bibendum sapien fringilla ac. Mauris euismod metus a tellus laoreet, at elementum ex efficitur.
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Maecenas eleifend sollicitudin dui, faucibus sollicitudin augue cursus non. Ut finibus eleifend arcu ut vehicula. Mauris eu est maximus est porta condimentum in eu justo. Nulla id iaculis sapien.
-  </Text>
-  <Text
-    className=""
-    variant="small"
-  >
-    Sometimes you need small text to display things like date created
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Phasellus porttitor enim id metus volutpat ultricies. Ut nisi nunc, blandit sed dapibus at, vestibulum in felis. Etiam iaculis lorem ac nibh bibendum rhoncus. Nam interdum efficitur ligula sit amet ullamcorper. Etiam tristique, leo vitae porta faucibus, mi lacus laoreet metus, at cursus leo est vel tellus. Sed ac posuere est. Nunc ultricies nunc neque, vitae ultricies ex sodales quis. Aliquam eu nibh in libero accumsan pulvinar. Nullam nec nisl placerat, pretium metus vel, euismod ipsum. Proin tempor cursus nisl vel condimentum. Nam pharetra varius metus non pellentesque.
-  </Text>
-  <Text
-    className=""
-    variant="h5"
-  >
-    Fifth level
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.
-  </Text>
-  <Text
-    className=""
-    variant="h6"
-  >
-    Sixth level
-  </Text>
-  <Text
-    className=""
-    variant="p"
-  >
-    Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim vitae, malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.
-  </Text>
-</div>
+      <h5
+        className="is-content"
+      >
+        Fifth level
+      </h5>
+    </Text>
+    <Text
+      className=""
+      variant="p"
+    >
+      <p
+        className="is-content"
+      >
+        Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula. Vestibulum at nunc elit. Praesent aliquet ligula mi, in luctus elit volutpat porta. Phasellus molestie diam vel nisi sodales, a eleifend augue laoreet. Sed nec eleifend justo. Nam et sollicitudin odio.
+      </p>
+    </Text>
+    <Text
+      className=""
+      variant="h6"
+    >
+      <h6
+        className="is-content"
+      >
+        Sixth level
+      </h6>
+    </Text>
+    <Text
+      className=""
+      variant="p"
+    >
+      <p
+        className="is-content"
+      >
+        Cras in nibh lacinia, venenatis nisi et, auctor urna. Donec pulvinar lacus sed diam dignissim, ut eleifend eros accumsan. Phasellus non tortor eros. Ut sed rutrum lacus. Etiam purus nunc, scelerisque quis enim vitae, malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.
+      </p>
+    </Text>
+  </div>
+</TextContent>
 `;
