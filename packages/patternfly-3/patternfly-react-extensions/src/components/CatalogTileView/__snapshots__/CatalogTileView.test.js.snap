@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CatalogTile renders no tiles state properly 1`] = `
+<div
+  class="catalog-tile-view-pf"
+  id="test-catalog-tile-view"
+>
+  <div
+    class="catalog-tile-view-pf-category"
+    id="category-1"
+  >
+    <div
+      class="catalog-tile-view-pf-category-header"
+    >
+      <span
+        class="catalog-tile-view-pf-category-header-title"
+      >
+        Category 1
+      </span>
+    </div>
+    <div
+      class="catalog-tile-view-pf-category-body"
+    >
+      <div
+        class="blank-slate-pf blank-slate-content-pf"
+      >
+        <p
+          class="blank-slate-pf-info"
+        >
+          There are no items in this category.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`CatalogTile renders properly 1`] = `
 <div
   class="catalog-tile-view-pf"

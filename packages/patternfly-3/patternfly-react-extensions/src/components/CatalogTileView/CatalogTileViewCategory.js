@@ -64,6 +64,7 @@ class CatalogTileViewCategory extends React.Component {
     if (!viewAll && numShown && numShown < totalItems) {
       catalogTiles = catalogTiles.slice(0, numShown);
     }
+    const nonTiles = filterChildren(children, child => !hasDisplayName(child, CatalogTile.displayName));
 
     return (
       <div className={classes} {...props} ref={this.handleRef}>
@@ -83,7 +84,10 @@ class CatalogTileViewCategory extends React.Component {
               </span>
             )}
         </div>
-        <div className="catalog-tile-view-pf-category-body">{catalogTiles}</div>
+        <div className="catalog-tile-view-pf-category-body">
+          {catalogTiles}
+          {nonTiles}
+        </div>
       </div>
     );
   }

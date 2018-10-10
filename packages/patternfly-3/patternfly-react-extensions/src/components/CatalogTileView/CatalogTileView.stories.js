@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info/dist/index';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName } from 'storybook/constants/siteConstants';
+import { boolean, withKnobs } from '@storybook/addon-knobs';
 
 import { name } from '../../../package.json';
 import { MockCatalogTileViewExample, MockCatalogTileViewExampleSource } from './__mocks__/mockCatalogTileViewExample';
@@ -21,6 +22,8 @@ stories.addDecorator(
   })
 );
 
+stories.addDecorator(withKnobs);
+
 stories.add(
   'CatalogTileView',
   withInfo({
@@ -33,5 +36,8 @@ stories.add(
         <pre>{MockCatalogTileViewExampleSource}</pre>
       </div>
     )
-  })(() => <MockCatalogTileViewExample />)
+  })(() => {
+    const emptyState = boolean('Empty State', false);
+    return <MockCatalogTileViewExample emptyState={emptyState} />;
+  })
 );

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Breadcrumb, Icon } from 'patternfly-react';
+import PropTypes from 'prop-types';
+import { Breadcrumb, EmptyState, Icon } from 'patternfly-react';
 import { mockItems } from './mockItems';
 
 import { CatalogTile } from '../../CatalogTile';
@@ -40,19 +41,27 @@ class MockCatalogTileViewExample extends React.Component {
     return badges;
   };
 
+  renderEmptyState = category => (
+    <EmptyState className="blank-slate-content-pf">
+      <EmptyState.Info>There are no items in this category.</EmptyState.Info>
+    </EmptyState>
+  );
+
   renderCategory = category => {
     const { showAll } = this.state;
+    const { emptyState } = this.props;
 
     if (!showAll || category.id === showAll) {
       return (
         <CatalogTileView.Category
           key={category.id}
           title={category.category}
-          totalItems={category.items && category.items.length}
+          totalItems={!emptyState && category.items && category.items.length}
           viewAll={showAll === category.id}
           onViewAll={() => this.onViewAll(category.id)}
         >
-          {category.items &&
+          {!emptyState &&
+            category.items &&
             category.items.map((item, index) => (
               <CatalogTile
                 id={item.id}
@@ -65,6 +74,7 @@ class MockCatalogTileViewExample extends React.Component {
                 badges={this.getBadges(item)}
               />
             ))}
+          {emptyState && this.renderEmptyState(category)}
         </CatalogTileView.Category>
       );
     }
@@ -94,12 +104,19 @@ class MockCatalogTileViewExample extends React.Component {
     );
   }
 }
+MockCatalogTileViewExample.propTypes = {
+  emptyState: PropTypes.bool
+};
+MockCatalogTileViewExample.defaultProps = {
+  emptyState: false
+};
 
 export { MockCatalogTileViewExample };
 
 export const MockCatalogTileViewExampleSource = `
 import React from 'react';
-import { Breadcrumb } from 'patternfly-react';
+import PropTypes from 'prop-types';
+import { Breadcrumb, EmptyState, Icon } from 'patternfly-react';
 import { mockItems } from './mockItems';
 
 import { CatalogTile } from '../../CatalogTile';
@@ -122,31 +139,48 @@ class MockCatalogTileViewExample extends React.Component {
     const badges = [];
 
     if (item.certified) {
-      badges.push(<CatalogTile.Badge key="certified" type="fa" name="cog" title="Certified" id="certified" />);
+      badges.push(
+        <CatalogTile.Badge key="certified" id="certified" title="Certified">
+          <Icon type="fa" name="cog" />
+        </CatalogTile.Badge>
+      );
     }
 
     if (item.approved) {
-      badges.push(<CatalogTile.Badge key="certified" type="pf" name="ok" title="USDA Approved" id="approved" />);
+      badges.push(
+        <CatalogTile.Badge key="certified" title="USDA Approved" id="approved">
+          <Icon type="pf" name="ok" />
+        </CatalogTile.Badge>
+      );
     }
 
     return badges;
   };
 
+  renderEmptyState = category => (
+    <EmptyState className="blank-slate-content-pf">
+      <EmptyState.Info>There are no items in this category.</EmptyState.Info>
+    </EmptyState>
+  );
+
   renderCategory = category => {
     const { showAll } = this.state;
+    const { emptyState } = this.props;
 
     if (!showAll || category.id === showAll) {
       return (
         <CatalogTileView.Category
           key={category.id}
           title={category.category}
-          totalItems={category.items && category.items.length}
+          totalItems={!emptyState && category.items && category.items.length}
           viewAll={showAll === category.id}
           onViewAll={() => this.onViewAll(category.id)}
         >
-          {category.items &&
+          {!emptyState &&
+            category.items &&
             category.items.map((item, index) => (
               <CatalogTile
+                id={item.id}
                 key={\`tile-\${index}\`}
                 title={item.title}
                 featured={item.featured}
@@ -156,6 +190,7 @@ class MockCatalogTileViewExample extends React.Component {
                 badges={this.getBadges(item)}
               />
             ))}
+          {emptyState && this.renderEmptyState(category)}
         </CatalogTileView.Category>
       );
     }
@@ -185,6 +220,12 @@ class MockCatalogTileViewExample extends React.Component {
     );
   }
 }
+MockCatalogTileViewExample.propTypes = {
+  emptyState: PropTypes.bool
+};
+MockCatalogTileViewExample.defaultProps = {
+  emptyState: false
+};
 
 export { MockCatalogTileViewExample };
 `;

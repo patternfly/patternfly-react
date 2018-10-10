@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { EmptyState } from 'patternfly-react';
+
 import { CatalogTileView, CatalogTileViewCategory } from './index';
 import { CatalogTile, CatalogTileBadge } from '../CatalogTile/index';
 
@@ -90,6 +92,20 @@ test('CatalogTile renders properly', () => {
           }
           description="A community of designers and developers collaborating to build a UI framework for enterprise web applications."
         />
+      </CatalogTileViewCategory>
+    </CatalogTileView>
+  );
+  expect(component.render()).toMatchSnapshot();
+  component.unmount();
+});
+
+test('CatalogTile renders no tiles state properly', () => {
+  const component = mount(
+    <CatalogTileView id="test-catalog-tile-view">
+      <CatalogTileViewCategory id="category-1" title="Category 1" totalItems={0}>
+        <EmptyState className="blank-slate-content-pf">
+          <EmptyState.Info>There are no items in this category.</EmptyState.Info>
+        </EmptyState>
       </CatalogTileViewCategory>
     </CatalogTileView>
   );
