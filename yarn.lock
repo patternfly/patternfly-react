@@ -9035,9 +9035,9 @@ left-pad@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/left-pad/-/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
 
-lerna-changelog@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/lerna-changelog/-/lerna-changelog-0.8.0.tgz#a525531e850f03ca25512acc535a712fce32cc86"
+lerna-changelog@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/lerna-changelog/-/lerna-changelog-0.8.1.tgz#bb4c8b84603ebbf56e4decde30fae66d5282be53"
   dependencies:
     chalk "^2.4.1"
     cli-highlight "^1.2.3"
