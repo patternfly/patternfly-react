@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`replace with useful test name 1`] = `
+exports[`Text example should match snapshot 1`] = `
 .pf-c-content {
   display: block;
   font-size: 1rem;
