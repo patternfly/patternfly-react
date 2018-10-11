@@ -19,6 +19,17 @@ describe('dropdown items', () => {
     expect(view).toMatchSnapshot();
   });
 
+  test('sets focusedItemRef on focus', () => {
+    const setFocusedItemRef = jest.fn();
+    const stopPropagation = jest.fn();
+    const view = shallow(<DropdownItem setFocusedItemRef={setFocusedItemRef}>Something</DropdownItem>);
+
+    view.find('a').simulate('focus', { stopPropagation });
+
+    expect(stopPropagation).toHaveBeenCalled();
+    expect(setFocusedItemRef).toHaveBeenCalled();
+  });
+
   describe('hover', () => {
     test('a', () => {
       const view = shallow(<DropdownItem isHovered>Something</DropdownItem>);

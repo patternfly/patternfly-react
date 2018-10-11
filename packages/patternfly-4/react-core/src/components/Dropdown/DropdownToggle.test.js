@@ -78,6 +78,37 @@ describe('API', () => {
   });
 });
 
+test('esc keypress fires onToggle callback if dropdown contains focus', () => {
+  const map = {};
+  const mockToggle = jest.fn();
+  const element = document.createElement('div');
+  document.addEventListener = jest.fn((event, cb) => {
+    map[event] = cb;
+  });
+  const view = mount(
+    <DropdownToggle onToggle={mockToggle} parentRef={element} focusedItemRef={element}>
+      Dropdown
+    </DropdownToggle>
+  );
+
+  map.keydown({ keyCode: 27 });
+  expect(mockToggle).toHaveBeenCalled();
+  view.unmount();
+});
+
+test('fires onToggle if keyboard user refocuses dropdown after having tabbed away', () => {
+  const mockToggle = jest.fn();
+  const element = document.createElement('div');
+  const view = mount(
+    <DropdownToggle onToggle={mockToggle} parentRef={element} focusOnReentry={element}>
+      Dropdown
+    </DropdownToggle>
+  );
+
+  view.find(DropdownToggle).simulate('focus');
+  expect(mockToggle).toHaveBeenCalledWith(true);
+});
+
 describe('state', () => {
   test('hover', () => {
     const view = mount(
