@@ -17,8 +17,8 @@ export const TextVariants = {
 };
 
 const propTypes = {
-  /** The text variant */
-  variant: PropTypes.oneOf(Object.values(TextVariants)),
+  /** The text component */
+  component: PropTypes.oneOf(Object.values(TextVariants)),
   /** Content rendered within the Text */
   children: PropTypes.node,
   /** Additional classes added to the Text */
@@ -26,16 +26,16 @@ const propTypes = {
 };
 
 const defaultProps = {
-  variant: 'p',
+  component: 'p',
   children: null,
   className: ''
 };
 
-const Text = ({ variant, children, className, ...props }) => {
-  const Component = TextVariants[variant];
+const Text = ({ component, children, className, ...props }) => {
+  const Component = TextVariants[component] || 'p';
 
   return (
-    <Component {...props} className={css('is-content', className)}>
+    <Component {...props} data-pf-content className={css(className)}>
       {children}
     </Component>
   );

@@ -9,8 +9,8 @@ export const TextListVariants = {
 };
 
 const propTypes = {
-  /** The text list variant */
-  variant: PropTypes.oneOf(Object.values(TextListVariants)),
+  /** The text list component */
+  component: PropTypes.oneOf(Object.values(TextListVariants)),
   /** Content rendered within the TextList */
   children: PropTypes.node,
   /** Additional classes added to the TextList */
@@ -18,16 +18,16 @@ const propTypes = {
 };
 
 const defaultProps = {
-  variant: 'ul',
+  component: 'ul',
   children: null,
   className: ''
 };
 
-const TextList = ({ variant, children, className, ...props }) => {
-  const Component = TextListVariants[variant];
+const TextList = ({ component, children, className, ...props }) => {
+  const Component = TextListVariants[component] || 'ul';
 
   return (
-    <Component {...props} className={css('is-content', className)}>
+    <Component {...props} data-pf-content className={css(className)}>
       {children}
     </Component>
   );

@@ -37,21 +37,21 @@ class SimpleAboutModal extends React.Component {
           heroImageSrc={heroImg}
         >
           <TextContent>
-            <TextList variant="dl">
-              <TextListItem variant="dt">CFME Version</TextListItem>
-              <TextListItem variant="dd">5.5.3.4.20102789036450</TextListItem>
-              <TextListItem variant="dt">Cloudforms Version</TextListItem>
-              <TextListItem variant="dd">4.1</TextListItem>
-              <TextListItem variant="dt">Server Name</TextListItem>
-              <TextListItem variant="dd">40DemoMaster</TextListItem>
-              <TextListItem variant="dt">User Name</TextListItem>
-              <TextListItem variant="dd">Administrator</TextListItem>
-              <TextListItem variant="dt">User Role</TextListItem>
-              <TextListItem variant="dd">EvmRole-super_administrator</TextListItem>
-              <TextListItem variant="dt">Browser Version</TextListItem>
-              <TextListItem variant="dd">601.2</TextListItem>
-              <TextListItem variant="dt">Browser OS</TextListItem>
-              <TextListItem variant="dd">Mac</TextListItem>
+            <TextList component="dl">
+              <TextListItem component="dt">CFME Version</TextListItem>
+              <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
+              <TextListItem component="dt">Cloudforms Version</TextListItem>
+              <TextListItem component="dd">4.1</TextListItem>
+              <TextListItem component="dt">Server Name</TextListItem>
+              <TextListItem component="dd">40DemoMaster</TextListItem>
+              <TextListItem component="dt">User Name</TextListItem>
+              <TextListItem component="dd">Administrator</TextListItem>
+              <TextListItem component="dt">User Role</TextListItem>
+              <TextListItem component="dd">EvmRole-super_administrator</TextListItem>
+              <TextListItem component="dt">Browser Version</TextListItem>
+              <TextListItem component="dd">601.2</TextListItem>
+              <TextListItem component="dt">Browser OS</TextListItem>
+              <TextListItem component="dd">Mac</TextListItem>
             </TextList>
           </TextContent>
         </AboutModal>

@@ -16,7 +16,7 @@ export const TextVariants: {
 };
 
 export interface TextProps extends HTMLProps<HTMLDivElement> {
-  variant?: OneOf<typeof TextVariants, keyof typeof TextVariants>;
+  component?: OneOf<typeof TextVariants, keyof typeof TextVariants>;
   children?: ReactNode;
   className?: string;
 }

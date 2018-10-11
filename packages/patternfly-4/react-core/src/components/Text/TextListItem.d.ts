@@ -8,7 +8,7 @@ export const TextListItemVariants: {
 };
 
 export interface TextListItemProps extends HTMLProps<HTMLDivElement> {
-  variant?: OneOf<typeof TextListItemVariants, keyof typeof TextListItemVariants>;
+  component?: OneOf<typeof TextListItemVariants, keyof typeof TextListItemVariants>;
   children?: ReactNode;
   className?: string;
 }
