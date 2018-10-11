@@ -43,7 +43,7 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "lerna": "^2.11.0",
-    "lerna-changelog": "^0.8.0",
+    "lerna-changelog": "^0.8.1",
     "npmlog": "^4.1.2",
     "plop": "^2.0.0",
     "prettier": "^1.14.2",
