@@ -16,6 +16,7 @@ export * from './List';
 export * from './LoginPage';
 export * from './Modal';
 export * from './Nav';
+export * from './Popover';
 export * from './Progress';
 export * from './Radio';
 export * from './Select';
