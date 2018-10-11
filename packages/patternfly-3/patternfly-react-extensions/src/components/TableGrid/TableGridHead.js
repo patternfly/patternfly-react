@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, Grid, Icon, OverlayTrigger, noop } from 'patternfly-react';
-import { Tooltip } from '../../../../patternfly-react/src/components/Tooltip';
+import { Button, Grid, Icon, OverlayTrigger, Tooltip, noop } from 'patternfly-react';
 
 /**
  * TableGridHead Component for PatternFly
