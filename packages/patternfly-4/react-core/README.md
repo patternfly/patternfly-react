@@ -64,7 +64,7 @@ Note: All commands below assume you are on the root directory in this repository
 Run to install all the dependencies
 
 ```sh
-yarn bootstrap
+yarn && yarn bootstrap && yarn build && yarn build:docs
 ```
 
 ### Running
@@ -72,7 +72,7 @@ yarn bootstrap
 To start the site locally.
 
 ```sh
-yarn start:docs
+yarn start:pf4
 ```
 
 ### Building
