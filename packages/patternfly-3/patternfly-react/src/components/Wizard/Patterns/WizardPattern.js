@@ -15,6 +15,8 @@ const WizardPattern = ({
   onBack,
   nextStepDisabled,
   previousStepDisabled,
+  previousStepHidden,
+  cancelButtonHidden,
   title,
   loadingTitle,
   loadingMessage,
@@ -90,6 +92,26 @@ const WizardPattern = ({
   const nextStepUnreachable =
     nextStepDisabled || activeStep.isInvalid || activeStep.preventExit || getNextStep().preventEnter;
 
+  let cancelButton;
+  let backButton;
+
+  if (!cancelButtonHidden) {
+    cancelButton = (
+      <Button bsStyle="default" className="btn-cancel" onClick={onHideClick}>
+        {cancelText}
+      </Button>
+    );
+  }
+
+  if (!previousStepHidden) {
+    backButton = (
+      <Button bsStyle="default" onClick={onBackClick} disabled={prevStepUnreachable}>
+        <Icon type="fa" name="angle-left" />
+        {backText}
+      </Button>
+    );
+  }
+
   return (
     <Wizard show={show} onHide={onHideClick} onExited={onExited} {...props}>
       <Wizard.Header onClose={onHideClick} title={title} />
@@ -108,13 +130,8 @@ const WizardPattern = ({
         />
       </Wizard.Body>
       <Wizard.Footer>
-        <Button bsStyle="default" className="btn-cancel" onClick={onHideClick}>
-          {cancelText}
-        </Button>
-        <Button bsStyle="default" onClick={onBackClick} disabled={prevStepUnreachable}>
-          <Icon type="fa" name="angle-left" />
-          {backText}
-        </Button>
+        {cancelButton}
+        {backButton}
         <Button
           bsStyle="primary"
           onClick={onFinalStep ? onHideClick : onNextClick}
@@ -156,6 +173,8 @@ WizardPattern.propTypes = {
   nextStepDisabled: PropTypes.bool,
   previousStepDisabled: PropTypes.bool,
   stepButtonsDisabled: PropTypes.bool,
+  previousStepHidden: PropTypes.bool,
+  cancelButtonHidden: PropTypes.bool,
   nextButtonRef: PropTypes.func,
   bodyHeader: PropTypes.node,
   children: PropTypes.node
@@ -180,6 +199,8 @@ WizardPattern.defaultProps = {
   nextStepDisabled: false,
   previousStepDisabled: false,
   stepButtonsDisabled: false,
+  previousStepHidden: false,
+  cancelButtonHidden: false,
   nextButtonRef: noop,
   bodyHeader: null,
   children: null

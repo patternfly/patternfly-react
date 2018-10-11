@@ -36,7 +36,13 @@ class StatefulWizardPattern extends React.Component {
   };
 
   render() {
-    const { shouldDisableNextStep, shouldDisablePreviousStep, ...otherProps } = this.props;
+    const {
+      shouldDisableNextStep,
+      shouldDisablePreviousStep,
+      shouldHidePreviousStep,
+      shouldHideCancelButton,
+      ...otherProps
+    } = this.props;
     const { activeStepIndex } = this.state;
     // NOTE: the steps array is passed down with ...otherProps, including any shouldPreventEnter or shouldPreventExit functions inside it.
     // These functions are for StatefulWizardPattern only and should not be used in WizardPattern despite being passed down here.
@@ -44,6 +50,8 @@ class StatefulWizardPattern extends React.Component {
       <WizardPattern
         nextStepDisabled={shouldDisableNextStep(activeStepIndex)}
         previousStepDisabled={shouldDisablePreviousStep(activeStepIndex)}
+        previousStepHidden={shouldHidePreviousStep(activeStepIndex)}
+        cancelButtonHidden={shouldHideCancelButton(activeStepIndex)}
         {...excludeKeys(otherProps, ['shouldPreventStepChange'])}
         activeStepIndex={activeStepIndex} // Value from state, as set by getDerivedStateFromProps
         onStepChanged={this.onStepChanged}
@@ -53,7 +61,13 @@ class StatefulWizardPattern extends React.Component {
 }
 
 StatefulWizardPattern.propTypes = {
-  ...excludeKeys(WizardPattern.propTypes, ['activeStepIndex', 'nextStepDisabled', 'previousStepDisabled']),
+  ...excludeKeys(WizardPattern.propTypes, [
+    'activeStepIndex',
+    'nextStepDisabled',
+    'previousStepDisabled',
+    'previousStepHidden',
+    'cancelButtonHidden'
+  ]),
   steps: PropTypes.arrayOf(
     PropTypes.shape({
       ...wizardStepShape,
@@ -63,13 +77,23 @@ StatefulWizardPattern.propTypes = {
   ),
   shouldDisableNextStep: PropTypes.func,
   shouldDisablePreviousStep: PropTypes.func,
+  shouldHidePreviousStep: PropTypes.func,
+  shouldHideCancelButton: PropTypes.func,
   shouldPreventStepChange: PropTypes.func
 };
 
 StatefulWizardPattern.defaultProps = {
-  ...excludeKeys(WizardPattern.defaultProps, ['activeStepIndex', 'nextStepDisabled', 'previousStepDisabled']),
+  ...excludeKeys(WizardPattern.defaultProps, [
+    'activeStepIndex',
+    'nextStepDisabled',
+    'previousStepDisabled',
+    'previousStepHidden',
+    'cancelButtonHidden'
+  ]),
   shouldDisableNextStep: noop,
   shouldDisablePreviousStep: noop,
+  shouldHidePreviousStep: noop,
+  shouldHideCancelButton: noop,
   shouldPreventStepChange: noop
 };
 

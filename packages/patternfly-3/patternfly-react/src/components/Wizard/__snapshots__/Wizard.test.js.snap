@@ -96,6 +96,7 @@ exports[`Wizard Stateful Pattern renders properly: Wizard stateful pattern snaps
   activeStepIndex={0}
   backText="Back"
   bodyHeader={null}
+  cancelButtonHidden={false}
   cancelText="Cancel"
   closeText="Close"
   loading={false}
@@ -110,6 +111,7 @@ exports[`Wizard Stateful Pattern renders properly: Wizard stateful pattern snaps
   onNext={[Function]}
   onStepChanged={[Function]}
   previousStepDisabled={false}
+  previousStepHidden={false}
   show={true}
   stepButtonsDisabled={false}
   steps={
