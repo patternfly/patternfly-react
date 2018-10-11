@@ -14,7 +14,6 @@ export const BackgroundImageSrc: {
 };
 
 export interface BackgroundImageProps extends HTMLProps<HTMLDivElement> {
-  children?: ReactNode;
   src: string | {
     lg?: string;
     md?: string;

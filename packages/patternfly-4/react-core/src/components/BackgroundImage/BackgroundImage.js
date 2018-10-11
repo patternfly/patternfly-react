@@ -42,8 +42,6 @@ const variableMap = {
 };
 
 export const propTypes = {
-  /** Content rendered inside the background */
-  children: PropTypes.node,
   /** Additional classes added to the background. */
   className: PropTypes.string,
   /** Override image styles using a string or BackgroundImageSrc */
@@ -64,11 +62,10 @@ export const propTypes = {
 };
 
 export const defaultProps = {
-  children: '',
   className: ''
 };
 
-const BackgroundImage = ({ className, children, src, ...props }) => {
+const BackgroundImage = ({ className, src, ...props }) => {
   // Default string value to handle all sizes
   const variableOverrides =
     typeof src === 'string'
@@ -90,11 +87,7 @@ const BackgroundImage = ({ className, children, src, ...props }) => {
     }`
   });
 
-  return (
-    <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)} >
-      {children}
-    </div>
-  );
+  return <div className={css(styles.backgroundImage, bgStyles.bgOverrides, className)} />;
 };
 
 BackgroundImage.propTypes = propTypes;
