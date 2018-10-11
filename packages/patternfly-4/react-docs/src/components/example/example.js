@@ -4,7 +4,8 @@ import styles from './example.styles';
 import PropTypes from 'prop-types';
 import { Title } from '@patternfly/react-core';
 import LiveDemo from './liveDemo';
-import Link from 'gatsby-link';
+import Link, { withPrefix } from 'gatsby-link';
+import Section from '../section';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -34,18 +35,21 @@ const GATSBY_LIVE_EXAMPLES = process.env.GATSBY_LIVE_EXAMPLES === 'true';
 const Example = ({ children, title, className, description, name, fullPageOnly, raw, images, live, ...props }) => {
   // Display full page link
   if (fullPageOnly) {
-    const pathName = typeof window !== 'undefined' ? `${window.location.pathname}` : '';
+    const pathName = typeof window !== 'undefined' ? withPrefix(window.location.pathname) : '';
     const exampleName = name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
     const separator = pathName.endsWith('/') ? '' : '/';
     const path = `${pathName}${separator}examples/${exampleName}`;
     return (
-      <div className={css(className, styles.example)} {...props}>
-        This layout can only be accessed in&nbsp;
-        <Link target="_blank" to={path}>
-          full page mode
-        </Link>
-        .
-      </div>
+      <Section>
+        <Title size="lg">{title}</Title>
+        <div className={css(className, styles.example)} {...props}>
+          This layout can only be accessed in&nbsp;
+          <Link target="_blank" to={path}>
+            full page mode
+          </Link>
+          .
+        </div>
+      </Section>
     );
   }
   return (
@@ -55,10 +59,10 @@ const Example = ({ children, title, className, description, name, fullPageOnly, 
       {GATSBY_LIVE_EXAMPLES && live ? (
         <LiveDemo raw={raw.trim()} images={images} className={className} />
       ) : (
-        <div className={css(className, styles.example)} {...props}>
-          {children}
-        </div>
-      )}
+          <div className={css(className, styles.example)} {...props}>
+            {children}
+          </div>
+        )}
     </div>
   );
 };

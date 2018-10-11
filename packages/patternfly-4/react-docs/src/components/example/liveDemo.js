@@ -23,7 +23,7 @@ const scopePlayground = { React, ...CoreComponents, ...CoreIcons, css, styles };
 const transformCode = code => {
   try {
     // LiveEditor doesn't work properly with these so need to remove
-    code = code.replace(/^\s*import.*$/gm, '');
+    code = code.replace(/^import(.|\s)*?;$/gm, '');
     code = code.replace(/^\s*export default class/gm, 'class');
     code = code.replace(/^\s*\/\/.*$/gm, '');
     code = code.replace(/extends Component/gm, 'extends React.Component');
