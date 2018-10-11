@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.21.0"></a>
+# [1.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.20.0...@patternfly/react-core@1.21.0) (2018-10-11)
+
+
+### Features
+
+* **text component:** adds the text component to PF4 ([#733](https://github.com/patternfly/patternfly-react/issues/733)) ([a02495e](https://github.com/patternfly/patternfly-react/commit/a02495e))
+
+
+
+
 <a name="1.20.0"></a>
 # [1.20.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.19.2...@patternfly/react-core@1.20.0) (2018-10-11)
 

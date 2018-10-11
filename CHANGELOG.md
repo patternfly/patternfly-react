@@ -1,5 +1,16 @@
 
-## Change Log (2018-10-11)
+## patternfly4-react-lerna-root@1.7.0 (2018-10-11)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#735](https://github.com/patternfly/patternfly-react/pull/735) docs(README.md): Update docs about running the site locally ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 2
+- Amiee Lo ([@amarie401](https://github.com/amarie401))
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.20.0 (2018-10-11)
 
 #### :memo: Documentation
 * `patternfly-4`
