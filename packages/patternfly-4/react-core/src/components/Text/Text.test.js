@@ -5,7 +5,7 @@ import Text, { TextVariants } from './Text';
 import TextList, { TextListVariants } from './TextList';
 import TextListItem, { TextListItemVariants } from './TextListItem';
 
-test('replace with useful test name', () => {
+test('Text example should match snapshot', () => {
   const view = mount(
     <TextContent>
       <Text component={TextVariants.h1}>Hello World</Text>

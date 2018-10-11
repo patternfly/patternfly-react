@@ -7,7 +7,11 @@ import {
   TextListItem,
   TextListItemVariants
 } from '@patternfly/react-core';
-import SimpleText from './examples/SimpleText';
+import BodyText from './examples/BodyText';
+import DataList from './examples/DataList';
+import Headings from './examples/Headings';
+import OrderedList from './examples/OrderedList';
+import UnorderedList from './examples/UnorderedList';
 
 export default {
   title: 'Text',
@@ -22,5 +26,5 @@ export default {
     'Object.values(TextListVariants)': Object.values(TextListVariants),
     'Object.values(TextListItemVariants)': Object.values(TextListItemVariants)
   },
-  examples: [SimpleText]
+  examples: [Headings, BodyText, UnorderedList, OrderedList, DataList]
 };
