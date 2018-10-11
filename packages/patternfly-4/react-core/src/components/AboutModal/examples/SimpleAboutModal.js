@@ -1,7 +1,5 @@
 import React from 'react';
-import { AboutModal, Button } from '@patternfly/react-core';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/Content/content.css';
+import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './pf_mini_logo_white.svg';
 import logoImg from './pf_logo.svg';
 import heroImg from './pfbg_992.jpg';
@@ -38,24 +36,24 @@ class SimpleAboutModal extends React.Component {
           logoImageAlt="AboutModal Logo"
           heroImageSrc={heroImg}
         >
-          <div className={css(styles.content)}>
-            <dl>
-              <dt>CFME Version</dt>
-              <dd>5.5.3.4.20102789036450</dd>
-              <dt>Cloudforms Version</dt>
-              <dd>4.1</dd>
-              <dt>Server Name</dt>
-              <dd>40DemoMaster</dd>
-              <dt>User Name</dt>
-              <dd>Administrator</dd>
-              <dt>User Role</dt>
-              <dd>EvmRole-super_administrator</dd>
-              <dt>Browser Version</dt>
-              <dd>601.2</dd>
-              <dt>Browser OS</dt>
-              <dd>Mac</dd>
-            </dl>
-          </div>
+          <TextContent>
+            <TextList component="dl">
+              <TextListItem component="dt">CFME Version</TextListItem>
+              <TextListItem component="dd">5.5.3.4.20102789036450</TextListItem>
+              <TextListItem component="dt">Cloudforms Version</TextListItem>
+              <TextListItem component="dd">4.1</TextListItem>
+              <TextListItem component="dt">Server Name</TextListItem>
+              <TextListItem component="dd">40DemoMaster</TextListItem>
+              <TextListItem component="dt">User Name</TextListItem>
+              <TextListItem component="dd">Administrator</TextListItem>
+              <TextListItem component="dt">User Role</TextListItem>
+              <TextListItem component="dd">EvmRole-super_administrator</TextListItem>
+              <TextListItem component="dt">Browser Version</TextListItem>
+              <TextListItem component="dd">601.2</TextListItem>
+              <TextListItem component="dt">Browser OS</TextListItem>
+              <TextListItem component="dd">Mac</TextListItem>
+            </TextList>
+          </TextContent>
         </AboutModal>
       </React.Fragment>
     );

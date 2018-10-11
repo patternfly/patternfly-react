@@ -12,6 +12,14 @@ Object {
   },
   "inject": [Function],
   "modifiers": Object {},
+  "raw": "
+  .pf-c-button {
+    color: red;
+  }
+  .pf-c-alert {
+    color: black;
+  }
+  ",
 }
 `;
 
@@ -34,5 +42,9 @@ Object {
       "__inject": [Function],
     },
   },
+  "raw": "
+  .pf-m-active {}
+  .pf-m-secondary-alt {}
+  ",
 }
 `;
