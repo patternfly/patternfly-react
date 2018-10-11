@@ -30,15 +30,15 @@ export const BackgroundImageSrc = {
 };
 
 const variableMap = {
-  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg.name,
-  [BackgroundImageSrc.md]: c_background_image_BackgroundImage_md.name,
-  [BackgroundImageSrc.md2x]: c_background_image_BackgroundImage_md_2x.name,
-  [BackgroundImageSrc.sm]: c_background_image_BackgroundImage_sm.name,
-  [BackgroundImageSrc.sm2x]: c_background_image_BackgroundImage_sm_2x.name,
-  [BackgroundImageSrc.xl]: c_background_image_BackgroundImage_xl.name,
-  [BackgroundImageSrc.xs]: c_background_image_BackgroundImage_xs.name,
-  [BackgroundImageSrc.xs2x]: c_background_image_BackgroundImage_xs_2x.name,
-  [BackgroundImageSrc.filter]: c_background_image_Filter.name
+  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name,
+  [BackgroundImageSrc.md]: c_background_image_BackgroundImage_md && c_background_image_BackgroundImage_md.name,
+  [BackgroundImageSrc.md2x]: c_background_image_BackgroundImage_md_2x && c_background_image_BackgroundImage_md_2x.name,
+  [BackgroundImageSrc.sm]: c_background_image_BackgroundImage_sm && c_background_image_BackgroundImage_sm.name,
+  [BackgroundImageSrc.sm2x]: c_background_image_BackgroundImage_sm_2x && c_background_image_BackgroundImage_sm_2x.name,
+  [BackgroundImageSrc.xl]: c_background_image_BackgroundImage_xl && c_background_image_BackgroundImage_xl.name,
+  [BackgroundImageSrc.xs]: c_background_image_BackgroundImage_xs && c_background_image_BackgroundImage_xs.name,
+  [BackgroundImageSrc.xs2x]: c_background_image_BackgroundImage_xs_2x && c_background_image_BackgroundImage_xs_2x.name,
+  [BackgroundImageSrc.filter]: c_background_image_Filter && c_background_image_Filter.name
 };
 
 export const propTypes = {
@@ -73,12 +73,12 @@ const BackgroundImage = ({ className, children, src, ...props }) => {
   const variableOverrides =
     typeof src === 'string'
       ? Object.keys(BackgroundImageSrc).reduce(
-          (prev, size) => ({
-            ...prev,
-            [BackgroundImageSrc[size]]: src
-          }),
-          {}
-        )
+        (prev, size) => ({
+          ...prev,
+          [BackgroundImageSrc[size]]: src
+        }),
+        {}
+      )
       : src;
 
   const bgStyles = StyleSheet.create({
