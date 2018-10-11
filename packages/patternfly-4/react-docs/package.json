@@ -13,6 +13,7 @@
     "@patternfly/react-styles": "^2.3.0",
     "@patternfly/react-tokens": "^1.5.2",
     "babel-standalone": "^6.26.0",
+    "clipboard-copy": "^2.0.1",
     "emotion": "^9.2.9",
     "emotion-server": "^9.2.9",
     "gatsby": "^1.9.247",

@@ -1,21 +1,28 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from './example.styles';
+import exampleStyles from './example.styles';
+import styles from './liveDemo.styles';
 import PropTypes from 'prop-types';
 import * as CoreComponents from '@patternfly/react-core';
 import * as CoreIcons from '@patternfly/react-icons';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 import { transform } from 'babel-standalone';
+import Section from '../section';
+import copy from 'clipboard-copy';
 
 const propTypes = {
   className: PropTypes.string,
   raw: PropTypes.string.isRequired,
-  images: PropTypes.array
+  path: PropTypes.string,
+  images: PropTypes.array,
+  live: PropTypes.bool
 };
 
 const defaultProps = {
   className: '',
-  images: []
+  path: '',
+  images: [],
+  live: true
 };
 
 const scopePlayground = { React, ...CoreComponents, ...CoreIcons, css, styles };
@@ -40,27 +47,79 @@ const transformCode = code => {
   }
 };
 
-const LiveDemo = ({ className, raw, images, ...props }) => {
-  const scope = {
-    ...scopePlayground
+class LiveDemo extends React.Component {
+  state = {
+    codeOpen: false
   };
-  for (const image of images) {
-    const searchIndex = raw.search(image.name);
-    if (searchIndex > -1) {
-      const startIndex = raw.lastIndexOf('import', searchIndex);
-      const importName = raw.substring(startIndex, searchIndex).split(' ')[1];
-      scope[importName] = image.file;
-    }
-  }
 
-  return (
-    <LiveProvider code={raw} scope={scope} transformCode={transformCode}>
-      <LivePreview className={css(className, styles.example)} />
-      <LiveEditor style={{ marginBottom: '30px' }} ignoreTabKey />
-      <LiveError />
-    </LiveProvider>
-  );
-};
+  handleClickCodeOpen = () => {
+    this.setState(state => ({
+      codeOpen: !state.codeOpen
+    }));
+  };
+
+  handleClickCopy = () => {
+    copy(this.props.raw);
+  };
+
+  render() {
+    const { className, raw, images, live, path } = this.props;
+    const { codeOpen } = this.state;
+
+    const GITHUB_BASE = 'https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-4';
+    const examplePath = `${GITHUB_BASE}${path.substr(5)}`;
+
+    const scope = {
+      ...scopePlayground
+    };
+    for (const image of images) {
+      const searchIndex = raw.search(image.name);
+      if (searchIndex > -1) {
+        const startIndex = raw.lastIndexOf('import', searchIndex);
+        const importName = raw.substring(startIndex, searchIndex).split(' ')[1];
+        scope[importName] = image.file;
+      }
+    }
+
+    return (
+      <Section>
+        <LiveProvider code={raw} scope={scope} transformCode={transformCode}>
+          {live && <LivePreview className={css(className, exampleStyles.example)} />}
+          <div className={css(styles.toolbar)}>
+            <CoreComponents.Button
+              onClick={this.handleClickCodeOpen}
+              variant="plain"
+              title="Toggle code"
+              aria-label="Toggle code"
+            >
+              {codeOpen ? <CoreIcons.AngleRightIcon /> : <CoreIcons.AngleDownIcon />}
+            </CoreComponents.Button>
+            <CoreComponents.Button
+              onClick={this.handleClickCopy}
+              variant="plain"
+              title="Copy code"
+              aria-label="Copy code"
+            >
+              <CoreIcons.CopyIcon />
+            </CoreComponents.Button>
+            <a href={examplePath} target="_blank">
+              <CoreComponents.Button
+                onClick={this.handleClickCopy}
+                variant="plain"
+                title="View on GitHub"
+                aria-label="View on GitHub"
+              >
+                <CoreIcons.CodeIcon />
+              </CoreComponents.Button>
+            </a>
+          </div>
+          {codeOpen && <LiveEditor className={styles.code} ignoreTabKey contentEditable={live} />}
+          {live && <LiveError />}
+        </LiveProvider>
+      </Section>
+    );
+  }
+}
 
 LiveDemo.propTypes = propTypes;
 LiveDemo.defaultProps = defaultProps;
