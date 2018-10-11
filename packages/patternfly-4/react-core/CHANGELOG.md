@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.21.1"></a>
+## [1.21.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.21.0...@patternfly/react-core@1.21.1) (2018-10-11)
+
+
+### Bug Fixes
+
+* **background image:** fix variable map for background image so when tokens are missing do not assig ([#744](https://github.com/patternfly/patternfly-react/issues/744)) ([44edab1](https://github.com/patternfly/patternfly-react/commit/44edab1))
+
+
+
+
 <a name="1.21.0"></a>
 # [1.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.20.0...@patternfly/react-core@1.21.0) (2018-10-11)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.8.1"></a>
+## [1.8.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.8.0...patternfly4-react-lerna-root@1.8.1) (2018-10-11)
+
+
+### Bug Fixes
+
+* **background image:** fix variable map for background image so when tokens are missing do not assig ([#744](https://github.com/patternfly/patternfly-react/issues/744)) ([44edab1](https://github.com/patternfly/patternfly-react/commit/44edab1))
+
+
+
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.7.0...patternfly4-react-lerna-root@1.8.0) (2018-10-11)
 
