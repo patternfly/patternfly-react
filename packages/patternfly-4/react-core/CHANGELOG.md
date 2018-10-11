@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.19.2"></a>
+## [1.19.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.19.1...@patternfly/react-core@1.19.2) (2018-10-11)
+
+
+### Bug Fixes
+
+* **doc:** list full steps required to start pf4 dev environment ([#732](https://github.com/patternfly/patternfly-react/issues/732)) ([02d6082](https://github.com/patternfly/patternfly-react/commit/02d6082))
+
+
+
+
 <a name="1.19.1"></a>
 ## [1.19.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.19.0...@patternfly/react-core@1.19.1) (2018-10-09)
 

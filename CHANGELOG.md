@@ -1,5 +1,25 @@
 
-## Unreleased (2018-10-10)
+## Unreleased (2018-10-11)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#732](https://github.com/patternfly/patternfly-react/pull/732) fix(doc): list full steps required to start pf4 dev environment ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 1
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+
+
+## patternfly3-react-lerna-root@7.1.6 (2018-10-10)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#730](https://github.com/patternfly/patternfly-react/pull/730) fix(CatalogTileView): Fix to render non-tile children of a category ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.8.8 (2018-10-10)
 
 #### :bug: Bug Fix
 * `patternfly-3`
