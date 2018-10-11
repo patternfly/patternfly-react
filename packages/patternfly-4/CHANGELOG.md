@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.8.3"></a>
+## [1.8.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.8.2...patternfly4-react-lerna-root@1.8.3) (2018-10-11)
+
+
+### Bug Fixes
+
+* **BackgroundImage:** removed children from props ([#748](https://github.com/patternfly/patternfly-react/issues/748)) ([bd32a9b](https://github.com/patternfly/patternfly-react/commit/bd32a9b))
+
+
+
+
 <a name="1.8.2"></a>
 ## [1.8.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.8.1...patternfly4-react-lerna-root@1.8.2) (2018-10-11)
 

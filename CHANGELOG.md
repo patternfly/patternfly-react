@@ -1,5 +1,45 @@
 
-## Change Log (2018-10-11)
+## patternfly4-react-lerna-root@1.8.2 (2018-10-11)
+
+#### :memo: Documentation
+* `patternfly-4`, `react-icons`
+  * [#742](https://github.com/patternfly/patternfly-react/pull/742) docs(README): Update link for PF4-React documentation page ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## @patternfly/react-tokens@1.5.2 (2018-10-11)
+
+#### :memo: Documentation
+* `patternfly-4`, `react-icons`
+  * [#742](https://github.com/patternfly/patternfly-react/pull/742) docs(README): Update link for PF4-React documentation page ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## @patternfly/react-icons@2.5.1 (2018-10-11)
+
+#### :memo: Documentation
+* `patternfly-4`, `react-icons`
+  * [#742](https://github.com/patternfly/patternfly-react/pull/742) docs(README): Update link for PF4-React documentation page ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## @patternfly/react-docs@3.16.10 (2018-10-11)
+
+#### :memo: Documentation
+* `patternfly-4`, `react-icons`
+  * [#742](https://github.com/patternfly/patternfly-react/pull/742) docs(README): Update link for PF4-React documentation page ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
+## @patternfly/react-core@1.21.2 (2018-10-11)
 
 #### :memo: Documentation
 * `patternfly-4`, `react-icons`

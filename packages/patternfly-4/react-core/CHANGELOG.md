@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.21.3"></a>
+## [1.21.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.21.2...@patternfly/react-core@1.21.3) (2018-10-11)
+
+
+### Bug Fixes
+
+* **BackgroundImage:** removed children from props ([#748](https://github.com/patternfly/patternfly-react/issues/748)) ([bd32a9b](https://github.com/patternfly/patternfly-react/commit/bd32a9b))
+
+
+
+
 <a name="1.21.2"></a>
 ## [1.21.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.21.1...@patternfly/react-core@1.21.2) (2018-10-11)
 
