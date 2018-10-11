@@ -1,5 +1,35 @@
 
-## Unreleased (2018-10-11)
+## Change Log (2018-10-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#734](https://github.com/patternfly/patternfly-react/pull/734) fix(table-grid): use package import rather than relative path in TableGrid ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## patternfly4-react-lerna-root@1.6.3 (2018-10-11)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#732](https://github.com/patternfly/patternfly-react/pull/732) fix(doc): list full steps required to start pf4 dev environment ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 1
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+
+
+## @patternfly/react-docs@3.16.6 (2018-10-11)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#732](https://github.com/patternfly/patternfly-react/pull/732) fix(doc): list full steps required to start pf4 dev environment ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 1
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+
+
+## @patternfly/react-core@1.19.2 (2018-10-11)
 
 #### :memo: Documentation
 * `patternfly-4`

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.1.7"></a>
+## [7.1.7](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.1.6...patternfly3-react-lerna-root@7.1.7) (2018-10-11)
+
+
+### Bug Fixes
+
+* **table-grid:** use package import rather than relative in TableGridHead ([#734](https://github.com/patternfly/patternfly-react/issues/734)) ([fea7d67](https://github.com/patternfly/patternfly-react/commit/fea7d67))
+
+
+
+
 <a name="7.1.6"></a>
 ## [7.1.6](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.1.4...patternfly3-react-lerna-root@7.1.6) (2018-10-10)
 
