@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`className is added to the root element 1`] = `"pf-c-login-box__header extra-class"`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+.pf-c-login-box__header {
+  display: block;
+  padding: 3rem 3rem 1rem 3rem;
+}
+
+<div
+  className="pf-c-login-box__header"
+/>
+`;
