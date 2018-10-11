@@ -1,6 +1,27 @@
 
 ## Change Log (2018-10-11)
 
+#### :memo: Documentation
+* `patternfly-4`
+  * [#735](https://github.com/patternfly/patternfly-react/pull/735) docs(README.md): Update docs about running the site locally ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 2
+- Amiee Lo ([@amarie401](https://github.com/amarie401))
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly3-react-lerna-root@7.1.7 (2018-10-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#734](https://github.com/patternfly/patternfly-react/pull/734) fix(table-grid): use package import rather than relative path in TableGrid ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## patternfly-react-extensions@2.8.9 (2018-10-11)
+
 #### :bug: Bug Fix
 * `patternfly-3`
   * [#734](https://github.com/patternfly/patternfly-react/pull/734) fix(table-grid): use package import rather than relative path in TableGrid ([@priley86](https://github.com/priley86))
