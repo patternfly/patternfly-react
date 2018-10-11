@@ -72,7 +72,7 @@ yarn && yarn bootstrap && yarn build && yarn build:docs
 To start the site locally.
 
 ```sh
-yarn start:pf4
+yarn build && yarn start:pf4
 ```
 
 ### Building
