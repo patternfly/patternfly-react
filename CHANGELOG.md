@@ -1,4 +1,14 @@
 
+## Change Log (2018-10-11)
+
+#### :memo: Documentation
+* `patternfly-4`, `react-icons`
+  * [#742](https://github.com/patternfly/patternfly-react/pull/742) docs(README): Update link for PF4-React documentation page ([@michaelkro](https://github.com/michaelkro))
+
+#### Committers: 1
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+
+
 ## patternfly4-react-lerna-root@1.7.0 (2018-10-11)
 
 #### :memo: Documentation
