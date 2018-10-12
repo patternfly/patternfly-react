@@ -7,11 +7,11 @@ class SimpleLoginLayout extends React.Component {
   static getContainerProps = getContainerProps;
 
   render() {
-    const HeaderBrand = <LoginHeaderBrand >Header Brand</LoginHeaderBrand>;
-    const Header = <LoginHeader headerBrand={HeaderBrand} >Header Text</LoginHeader>;
-    const Footer = <LoginFooter >Footer</LoginFooter>;
+    const HeaderBrand = <LoginHeaderBrand>Header Brand</LoginHeaderBrand>;
+    const Header = <LoginHeader headerBrand={HeaderBrand}>Header Text</LoginHeader>;
+    const Footer = <LoginFooter>Footer</LoginFooter>;
 
-    return <Login footer={Footer} header={Header} >Main</Login>;
+    return <Login footer={Footer} header={Header}>Main</Login>;
   }
 }
 

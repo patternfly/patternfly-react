@@ -19,7 +19,7 @@ const defaultProps = {
 };
 
 const LoginHeader = ({ className, children, headerBrand, ...props }) => (
-  <header className={css(styles.loginHeader, className)} {...props} >
+  <header className={css(styles.loginHeader, className)} {...props}>
     {headerBrand}
     {children}
   </header>
