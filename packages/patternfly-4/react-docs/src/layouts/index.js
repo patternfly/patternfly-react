@@ -49,6 +49,18 @@ const Layout = ({ children, data }) => {
         <meta name="keywords" content="React, PatternFly, Red Hat" />
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/codemirror.min.css" />
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/theme/monokai.min.css" />
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/brands.css"
+          integrity="sha384-Px1uYmw7+bCkOsNAiAV5nxGKJ0Ixn5nChyW8lCK1Li1ic9nbO5pC/iXaq27X5ENt"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.4.1/css/fontawesome.css"
+          integrity="sha384-BzCy2fixOYd0HObpx3GMefNqdbA7Qjcc91RgYeDjrHTIEXqiF00jKvgQG0+zY/7I"
+          crossOrigin="anonymous"
+        />
       </Helmet>
       <Page
         title="Patternfly React"

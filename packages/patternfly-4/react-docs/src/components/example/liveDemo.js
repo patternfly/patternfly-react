@@ -49,22 +49,31 @@ const transformCode = code => {
 
 class LiveDemo extends React.Component {
   state = {
-    codeOpen: false
+    codeOpen: false,
+    showCopyMessage: false
   };
 
   handleClickCodeOpen = () => {
-    this.setState(state => ({
-      codeOpen: !state.codeOpen
-    }));
+    this.setState({
+      codeOpen: !this.state.codeOpen
+    });
   };
 
   handleClickCopy = () => {
     copy(this.props.raw);
+    this.setState({
+      showCopyMessage: true
+    });
+    setTimeout(() => {
+      this.setState({
+        showCopyMessage: false
+      });
+    }, 2000);
   };
 
   render() {
     const { className, raw, images, live, path } = this.props;
-    const { codeOpen } = this.state;
+    const { codeOpen, showCopyMessage } = this.state;
 
     const GITHUB_BASE = 'https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-4';
     const examplePath = `${GITHUB_BASE}${path.substr(5)}`;
@@ -92,7 +101,7 @@ class LiveDemo extends React.Component {
               title="Toggle code"
               aria-label="Toggle code"
             >
-              {codeOpen ? <CoreIcons.AngleRightIcon /> : <CoreIcons.AngleDownIcon />}
+              <CoreIcons.CodeIcon />
             </CoreComponents.Button>
             <CoreComponents.Button
               onClick={this.handleClickCopy}
@@ -109,9 +118,14 @@ class LiveDemo extends React.Component {
                 title="View on GitHub"
                 aria-label="View on GitHub"
               >
-                <CoreIcons.CodeIcon />
+                <i className={css('fab fa-github', styles.icon)} />
               </CoreComponents.Button>
             </a>
+            <CoreComponents.TextContent className={css(styles.message, showCopyMessage && styles.messageShow)}>
+              <CoreComponents.Text component="pre" className={css(styles.messageText)}>
+                Copied to clipboard
+              </CoreComponents.Text>
+            </CoreComponents.TextContent>
           </div>
           {codeOpen && <LiveEditor className={styles.code} ignoreTabKey contentEditable={live} />}
           {live && <LiveError />}
