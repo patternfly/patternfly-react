@@ -1,67 +1,40 @@
 import React from 'react';
 import { Tree } from 'react-wooden-tree';
 
+require('react-wooden-tree/dist/react-wooden-tree.css');
+require('./style.css');
+
 const data = [
   {
-    text: 'Parent 1 - Expanded',
-    state: { expanded: true, checked: true },
-    attr: { 'data-random': 'notThatRandom' },
-    nodes: [
-      { text: 'Child 1 - Custom Icon', icon: 'fa fa-stop fa-fw', state: { checked: true } },
-      {
-        text: 'Child 2 - Non checkable and disabled - no icon',
-        icon: 'fa fa-fw',
-        checkable: false,
-        state: { disabled: true }
-      },
-      { text: 'Child 3 - No checkbox', hideCheckbox: true },
-      { text: 'Child 4 - LazyLoadable', lazyLoad: true, attr: { 'data-random': 'random' } }
-    ]
-  },
-  {
-    text: 'Parent 2 - Not expanded',
-    state: { expanded: false, checked: false },
-    nodes: [
-      { text: 'Child 1 - Custom Icon', icon: 'fa fa-stop' },
-      { text: 'Child 2 - No icon specified', classes: 'custom-class' },
-      { text: 'Child 3 - Image icon', image: 'https://www.wpsuperstars.net/wp-content/uploads/2015/01/59.png' }
-    ]
-  },
-  {
-    text: 'Parent 3 - Children checkboxes',
-    hideCheckbox: true,
-    state: { expanded: true },
-    attr: { 'data-random': 'random' },
-    nodes: [
-      { text: 'Child 1 - Has checkbox - checked', state: { checked: true } },
-      { text: 'Child 2 - Has checkbox - unchecked', attr: { 'data-random': 'random' } }
-    ]
-  },
-  {
-    text: 'Parent 4 - Changed icon colors',
+    text: 'Parent 1',
+    icon: 'fa fa-folder',
     nodes: [
       {
-        text: 'Child 1 - Changed icon color',
-        icon: 'fa fa-circle ',
-        iconColor: 'rgba(255,100,0,1)'
+        text: 'Child 1',
+        nodes: [{ text: 'Grandchild 1' }, { text: 'Grandchild 2' }]
       },
       {
-        text: 'Child 2 - Changed background color',
-        icon: 'fa fa-circle',
-        iconBackground: '#9800ff'
-      },
-      {
-        text: 'Child 3 - Changed both colors',
-        icon: 'fa fa-circle',
-        iconColor: 'red',
-        iconBackground: '#0d21ba'
-      },
-      {
-        text: 'Child 4 - Changed background color - with transparency',
-        icon: 'fa fa-circle',
-        iconBackground: 'rgba(0,0,0,0.5'
+        text: 'Child 2',
+        nodes: [{ text: 'Grandchild 1' }, { text: 'Grandchild 2' }]
       }
     ]
+  },
+  {
+    text: 'Parent 2',
+    icon: 'fa fa-folder',
+    nodes: [{ text: 'Child 1' }]
+  },
+  {
+    text: 'Parent 3',
+    icon: 'fa fa-folder'
+  },
+  {
+    text: 'Parent 4',
+    icon: 'fa fa-folder'
+  },
+  {
+    text: 'Parent 5',
+    icon: 'fa fa-folder'
   }
 ];
 
@@ -83,8 +56,6 @@ class App extends React.Component {
     super(props);
 
     this.data = Tree.initTree(data);
-
-    // console.log(Tree.nodeSearch(this.data, null, 'data-random', 'random'));
 
     this.state = {
       tree: this.data
@@ -141,13 +112,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Tree
-          hierarchicalCheck
-          showCheckbox
-          multiSelect
-          preventDeselect
-          allowReselect
-          checkboxFirst
-          nodeIcon="fa fa-fw fa-circle"
+          nodeIcon="fa fa-file-o"
           data={this.state.tree}
           onDataChange={this.onDataChange}
           lazyLoad={this.lazyLoad}
