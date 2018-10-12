@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Title } from '@patternfly/react-core';
 import LiveDemo from './liveDemo';
 import Link from 'gatsby-link';
+import Section from '../section';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
@@ -14,6 +15,7 @@ const propTypes = {
   fullPageOnly: PropTypes.bool,
   name: PropTypes.string,
   raw: PropTypes.string,
+  path: PropTypes.string,
   images: PropTypes.array,
   live: PropTypes.bool
 };
@@ -25,27 +27,50 @@ const defaultProps = {
   title: '',
   name: '',
   raw: '',
+  path: '',
   images: [],
   live: true
 };
 
 const GATSBY_LIVE_EXAMPLES = process.env.GATSBY_LIVE_EXAMPLES === 'true';
 
-const Example = ({ children, title, className, description, name, fullPageOnly, raw, images, live, ...props }) => {
+const Example = ({
+  children,
+  title,
+  className,
+  description,
+  name,
+  fullPageOnly,
+  raw,
+  path: examplePath,
+  images,
+  live,
+  ...props
+}) => {
   // Display full page link
   if (fullPageOnly) {
-    const pathName = typeof window !== 'undefined' ? `${window.location.pathname}` : '';
+    const pathName = typeof window !== 'undefined' ? window.location.pathname : '';
     const exampleName = name.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
     const separator = pathName.endsWith('/') ? '' : '/';
-    const path = `${pathName}${separator}examples/${exampleName}`;
+    // Grab the last 2 path pieces, e.g. components/backgroundimage, layouts/gallery, demos/pagelayout
+    const pathStart = `${pathName}${separator}`
+      .split('/')
+      .slice(-3)
+      .slice(0, 2)
+      .join('/');
+    const path = `/${pathStart}/examples/${exampleName}`;
     return (
-      <div className={css(className, styles.example)} {...props}>
-        This layout can only be accessed in&nbsp;
-        <Link target="_blank" to={path}>
-          full page mode
-        </Link>
-        .
-      </div>
+      <Section>
+        <Title size="lg">{title}</Title>
+        <div className={css(className, styles.example)} {...props}>
+          This example can only be accessed in&nbsp;
+          <Link target="_blank" to={path}>
+            full page mode
+          </Link>
+          .
+        </div>
+        <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
+      </Section>
     );
   }
   return (
@@ -53,12 +78,12 @@ const Example = ({ children, title, className, description, name, fullPageOnly, 
       <Title size="lg">{title}</Title>
       {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
       {GATSBY_LIVE_EXAMPLES && live ? (
-        <LiveDemo raw={raw.trim()} images={images} className={className} />
+        <LiveDemo raw={raw.trim()} path={examplePath} images={images} className={className} />
       ) : (
-        <div className={css(className, styles.example)} {...props}>
-          {children}
-        </div>
-      )}
+          <div className={css(className, styles.example)} {...props}>
+            {children}
+          </div>
+        )}
     </div>
   );
 };

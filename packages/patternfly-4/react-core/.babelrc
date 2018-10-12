@@ -1,6 +1,7 @@
 {
-  "presets": ["../.babelrc.js"],
-  "ignore": ["demos"],
+  "presets": [
+    "../.babelrc.js"
+  ],
   "env": {
     "production:esm": {
       "plugins": [
