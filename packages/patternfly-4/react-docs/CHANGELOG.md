@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.17.0"></a>
+# [3.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.16.12...@patternfly/react-docs@3.17.0) (2018-10-12)
+
+
+### Features
+
+* **page layout demos:** Add PF4 page layout demos ([#749](https://github.com/patternfly/patternfly-react/issues/749)) ([025d862](https://github.com/patternfly/patternfly-react/commit/025d862))
+
+
+
+
 <a name="3.16.12"></a>
 ## [3.16.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.16.11...@patternfly/react-docs@3.16.12) (2018-10-12)
 

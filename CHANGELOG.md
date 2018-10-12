@@ -1,4 +1,14 @@
 
+## Change Log (2018-10-12)
+
+#### :house: Internal
+* [#751](https://github.com/patternfly/patternfly-react/pull/751) Fix broken image paths for patternfly-4 docs hosted by surge ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 2
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
 ## patternfly4-react-lerna-root@1.8.2 (2018-10-11)
 
 #### :memo: Documentation

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.22.0"></a>
+# [1.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.21.4...@patternfly/react-core@1.22.0) (2018-10-12)
+
+
+### Features
+
+* **page layout demos:** Add PF4 page layout demos ([#749](https://github.com/patternfly/patternfly-react/issues/749)) ([025d862](https://github.com/patternfly/patternfly-react/commit/025d862))
+
+
+
+
 <a name="1.21.4"></a>
 ## [1.21.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.21.3...@patternfly/react-core@1.21.4) (2018-10-12)
 
