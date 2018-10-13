@@ -1,4 +1,5 @@
-import { HTMLProps, FormEvent } from 'react';
+import PropTypes from 'prop-types';
+import { HTMLProps, FormEvent, ReactNode } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface CheckboxProps
@@ -6,6 +7,9 @@ export interface CheckboxProps
   isDisabled?: boolean;
   isValid?: boolean;
   onChange?(checked: boolean, event: FormEvent<HTMLInputElement>): void;
+  id: string;
+  'aria-label': string;
+  label?: ReactNode;
 }
 
 declare const Checkbox: React.SFC<CheckboxProps>;
