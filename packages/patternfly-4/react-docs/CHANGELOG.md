@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.17.1"></a>
+## [3.17.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.17.0...@patternfly/react-docs@3.17.1) (2018-10-13)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 <a name="3.17.0"></a>
 # [3.17.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.16.12...@patternfly/react-docs@3.17.0) (2018-10-12)
 

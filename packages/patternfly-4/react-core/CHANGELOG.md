@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.23.0"></a>
+# [1.23.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.22.0...@patternfly/react-core@1.23.0) (2018-10-13)
+
+
+### Features
+
+* **checkboxComponent:** updated checkbox PF4 component according to demo ([#717](https://github.com/patternfly/patternfly-react/issues/717)) ([de120e3](https://github.com/patternfly/patternfly-react/commit/de120e3))
+
+
+
+
 <a name="1.22.0"></a>
 # [1.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.21.4...@patternfly/react-core@1.22.0) (2018-10-12)
 

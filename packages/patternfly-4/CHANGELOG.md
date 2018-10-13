@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.9.0...patternfly4-react-lerna-root@1.10.0) (2018-10-13)
+
+
+### Features
+
+* **checkboxComponent:** updated checkbox PF4 component according to demo ([#717](https://github.com/patternfly/patternfly-react/issues/717)) ([de120e3](https://github.com/patternfly/patternfly-react/commit/de120e3))
+
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.8.4...patternfly4-react-lerna-root@1.9.0) (2018-10-12)
 

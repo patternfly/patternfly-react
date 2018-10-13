@@ -1,5 +1,35 @@
 
-## Change Log (2018-10-12)
+## Change Log (2018-10-13)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#717](https://github.com/patternfly/patternfly-react/pull/717) feat(checkBox): updated PF4 checkBox component according to PF-next ([@rvsia](https://github.com/rvsia))
+
+#### Committers: 1
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+
+
+## patternfly4-react-lerna-root@1.9.0 (2018-10-12)
+
+#### :house: Internal
+* [#751](https://github.com/patternfly/patternfly-react/pull/751) Fix broken image paths for patternfly-4 docs hosted by surge ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 2
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.17.0 (2018-10-12)
+
+#### :house: Internal
+* [#751](https://github.com/patternfly/patternfly-react/pull/751) Fix broken image paths for patternfly-4 docs hosted by surge ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 2
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.22.0 (2018-10-12)
 
 #### :house: Internal
 * [#751](https://github.com/patternfly/patternfly-react/pull/751) Fix broken image paths for patternfly-4 docs hosted by surge ([@dlabrecq](https://github.com/dlabrecq))
