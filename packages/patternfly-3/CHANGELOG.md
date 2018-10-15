@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.2.0"></a>
+# [7.2.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.1.7...patternfly3-react-lerna-root@7.2.0) (2018-10-15)
+
+
+### Features
+
+* **ExpandCollapse:** introduce ExpandCollapse component ([#613](https://github.com/patternfly/patternfly-react/issues/613)) ([31eac90](https://github.com/patternfly/patternfly-react/commit/31eac90))
+
+
+
+
 <a name="7.1.7"></a>
 ## [7.1.7](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.1.6...patternfly3-react-lerna-root@7.1.7) (2018-10-11)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.21.0"></a>
+# [2.21.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.20.3...patternfly-react@2.21.0) (2018-10-15)
+
+
+### Features
+
+* **ExpandCollapse:** introduce ExpandCollapse component ([#613](https://github.com/patternfly/patternfly-react/issues/613)) ([31eac90](https://github.com/patternfly/patternfly-react/commit/31eac90))
+
+
+
+
 <a name="2.20.3"></a>
 ## [2.20.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.20.2...patternfly-react@2.20.3) (2018-10-08)
 

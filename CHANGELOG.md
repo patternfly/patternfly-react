@@ -1,5 +1,35 @@
 
-## Change Log (2018-10-13)
+## Change Log (2018-10-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#613](https://github.com/patternfly/patternfly-react/pull/613) feat(ExpandCollapse): introduce ExpandCollapse component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## patternfly4-react-lerna-root@1.10.0 (2018-10-13)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#717](https://github.com/patternfly/patternfly-react/pull/717) feat(checkBox): updated PF4 checkBox component according to PF-next ([@rvsia](https://github.com/rvsia))
+
+#### Committers: 1
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+
+
+## @patternfly/react-docs@3.17.1 (2018-10-13)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#717](https://github.com/patternfly/patternfly-react/pull/717) feat(checkBox): updated PF4 checkBox component according to PF-next ([@rvsia](https://github.com/rvsia))
+
+#### Committers: 1
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+
+
+## @patternfly/react-core@1.23.0 (2018-10-13)
 
 #### :rocket: New Feature
 * `patternfly-4`
