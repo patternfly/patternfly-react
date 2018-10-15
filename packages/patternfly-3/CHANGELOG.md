@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.3.0"></a>
+# [7.3.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.2.0...patternfly3-react-lerna-root@7.3.0) (2018-10-15)
+
+
+### Features
+
+* **CatalogTile:** Use a link for tiles with href or onClick props ([#763](https://github.com/patternfly/patternfly-react/issues/763)) ([f4bd91d](https://github.com/patternfly/patternfly-react/commit/f4bd91d))
+
+
+
+
 <a name="7.2.0"></a>
 # [7.2.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.1.7...patternfly3-react-lerna-root@7.2.0) (2018-10-15)
 

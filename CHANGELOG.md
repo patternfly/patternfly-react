@@ -3,6 +3,46 @@
 
 #### :rocket: New Feature
 * `patternfly-3`
+  * [#763](https://github.com/patternfly/patternfly-react/pull/763) feat(CatalogTile): Use a link for tiles with href or onClick props ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.2.0 (2018-10-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#613](https://github.com/patternfly/patternfly-react/pull/613) feat(ExpandCollapse): introduce ExpandCollapse component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## patternfly-react@2.21.0 (2018-10-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#613](https://github.com/patternfly/patternfly-react/pull/613) feat(ExpandCollapse): introduce ExpandCollapse component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## patternfly-react-extensions@2.8.10 (2018-10-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#613](https://github.com/patternfly/patternfly-react/pull/613) feat(ExpandCollapse): introduce ExpandCollapse component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## @patternfly/react-console@1.4.7 (2018-10-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
   * [#613](https://github.com/patternfly/patternfly-react/pull/613) feat(ExpandCollapse): introduce ExpandCollapse component ([@mareklibra](https://github.com/mareklibra))
 
 #### Committers: 1
