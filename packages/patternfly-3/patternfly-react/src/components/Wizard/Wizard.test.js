@@ -383,13 +383,14 @@ const testDisablePreviousStepWizard = props => {
   const onHide = jest.fn();
   const onExited = jest.fn();
   const onStepChanged = jest.fn();
+
   return (
     <Wizard.Pattern.Stateful
       show
       onHide={onHide}
       onExited={onExited}
       onStepChanged={onStepChanged}
-      title="Wizard Disable Next Step"
+      title="Wizard Disable Previous Step"
       shouldDisablePreviousStep={() => true}
       steps={[
         { title: '1', render: () => <p>1</p> },
@@ -400,6 +401,24 @@ const testDisablePreviousStepWizard = props => {
     />
   );
 };
+
+const testHideButtonsStepWizard = props => (
+  <Wizard.Pattern.Stateful
+    show
+    onHide={jest.fn()}
+    onExited={jest.fn()}
+    onStepChanged={jest.fn()}
+    title="Wizard Hide Cancel and Back Button"
+    shouldHidePreviousStep={idx => idx > 0}
+    shouldHideCancelButton={idx => idx === 2}
+    steps={[
+      { title: '1', render: () => <p>1</p> },
+      { title: '2', render: () => <p className=".step2">2</p> },
+      { title: '3', render: () => <p>3</p> }
+    ]}
+    {...props}
+  />
+);
 
 test('Wizard Stateful with shouldDisableNextStep should disable next step', () => {
   const component = mount(testDisableNextStepWizard());
@@ -424,4 +443,22 @@ test('Wizard Stateful with shouldDisablePreviousStep should disable previous ste
       .at(1)
       .getDOMNode().disabled
   ).toBe(true);
+});
+
+test('Wizard Stateful with shouldHidePreviousStep and shouldHideCancelButton should hide cancel and back Button', () => {
+  const component = mount(testHideButtonsStepWizard());
+  expect(component.find('.wizard-pf-footer .btn')).toHaveLength(3);
+
+  component
+    .find('.wizard-pf-footer .btn')
+    .at(2)
+    .simulate('click');
+  expect(component.exists('.step2')).toEqual(true);
+  expect(component.find('.wizard-pf-footer .btn')).toHaveLength(2);
+
+  component
+    .find('.wizard-pf-footer .btn')
+    .at(1)
+    .simulate('click');
+  expect(component.find('.wizard-pf-footer .btn')).toHaveLength(1);
 });
