@@ -5,7 +5,9 @@ class UncontrolledRadio extends React.Component {
   static title = 'Uncontrolled Radio';
 
   render() {
-    return <Radio aria-label="uncontrolled radio example" />;
+    return (
+      <Radio label="Uncontrolled radio example" id="radio-4" name="radio-4" aria-label="uncontrolled radio example" />
+    );
   }
 }
 

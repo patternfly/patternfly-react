@@ -7,8 +7,21 @@ class DisabledRadio extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Radio aria-label="disabled checked radio example" defaultChecked isDisabled />{' '}
-        <Radio aria-label="disabled radio example" isDisabled />
+        <Radio
+          label="Disabled checked radio example"
+          aria-label="disabled checked radio example"
+          defaultChecked
+          isDisabled
+          name="group-2"
+          id="radio-disabled"
+        />{' '}
+        <Radio
+          id="radio-disabled-2"
+          label="Disabled radio example"
+          aria-label="disabled radio example"
+          isDisabled
+          name="group-2"
+        />
       </React.Fragment>
     );
   }
