@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.9.1"></a>
+## [2.9.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.0...patternfly-react-extensions@2.9.1) (2018-10-15)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Style update for tile with focus ([#764](https://github.com/patternfly/patternfly-react/issues/764)) ([a577072](https://github.com/patternfly/patternfly-react/commit/a577072))
+
+
+
+
 <a name="2.9.0"></a>
 # [2.9.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.8.10...patternfly-react-extensions@2.9.0) (2018-10-15)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.3.1"></a>
+## [7.3.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.0...patternfly3-react-lerna-root@7.3.1) (2018-10-15)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Style update for tile with focus ([#764](https://github.com/patternfly/patternfly-react/issues/764)) ([a577072](https://github.com/patternfly/patternfly-react/commit/a577072))
+
+
+
+
 <a name="7.3.0"></a>
 # [7.3.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.2.0...patternfly3-react-lerna-root@7.3.0) (2018-10-15)
 
