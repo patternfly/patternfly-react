@@ -29,6 +29,7 @@ stories.add(
       <CatalogTile
         id="long-description-test"
         featured
+        href="https://github.com/patternfly/patternfly-react"
         iconImg={pfBrand}
         badges={[
           <CatalogTileBadge title="Certified" id="certified">
@@ -36,11 +37,7 @@ stories.add(
           </CatalogTileBadge>
         ]}
         title="Patternfly-React"
-        vendor={
-          <span>
-            provided by <a href="redhat.com">Red Hat</a>
-          </span>
-        }
+        vendor="provided by Red Hat"
         description={
           'This is a very long description that should be truncated after 112 characters. ' +
           '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +

@@ -1,5 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CatalogTile href renders properly 1`] = `
+<a
+  class="catalog-tile-pf featured"
+  href="http://patternfly.org"
+  id="test-href"
+>
+  <div
+    class="catalog-tile-pf-header"
+  >
+    <img
+      alt=""
+      class="catalog-tile-pf-icon"
+      src="<PatternFly Brand Image here>"
+    />
+  </div>
+  <div
+    class="catalog-tile-pf-body"
+  >
+    <div
+      class="catalog-tile-pf-title"
+    >
+      Patternfly
+    </div>
+    <div
+      class="catalog-tile-pf-subtitle"
+    >
+      Provided by Red Hat
+    </div>
+    <div
+      class="catalog-tile-pf-description"
+    >
+      1234567890123
+    </div>
+  </div>
+</a>
+`;
+
+exports[`CatalogTile onClick behaves properly 1`] = `
+<a
+  class="catalog-tile-pf featured test-click-class"
+  href="#"
+  id="test-on-click"
+>
+  <div
+    class="catalog-tile-pf-header"
+  >
+    <img
+      alt=""
+      class="catalog-tile-pf-icon"
+      src="<PatternFly Brand Image here>"
+    />
+  </div>
+  <div
+    class="catalog-tile-pf-body"
+  >
+    <div
+      class="catalog-tile-pf-title"
+    >
+      Patternfly
+    </div>
+    <div
+      class="catalog-tile-pf-subtitle"
+    >
+      Provided by Red Hat
+    </div>
+    <div
+      class="catalog-tile-pf-description"
+    >
+      1234567890123
+    </div>
+  </div>
+</a>
+`;
+
 exports[`CatalogTile renders properly 1`] = `
 <div>
   <div
