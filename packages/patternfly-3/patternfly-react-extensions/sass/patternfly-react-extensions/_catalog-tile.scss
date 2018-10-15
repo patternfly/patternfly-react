@@ -14,12 +14,15 @@
     border-top-width: 2px;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     box-shadow: 0 1px 10px rgba(3, 3, 3, 0.175);
+    outline-style: none;
   }
 
   &:active,
   &:hover,
+  &:focus,
   &:visited {
     color: inherit;
     text-decoration: none;
