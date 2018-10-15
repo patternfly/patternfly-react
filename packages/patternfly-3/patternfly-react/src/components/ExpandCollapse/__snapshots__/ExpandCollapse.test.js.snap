@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`localized ExpandCollapse 1`] = `
+<ExpandCollapse
+  align="left"
+  bordered={true}
+  className=""
+  expanded={false}
+  textCollapsed="Click to expand"
+  textExpanded="Click to collapse"
+>
+  <div
+    className="expand-collapse-pf"
+  >
+    <div
+      className="expand-collapse-pf-link-container"
+    >
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="link"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <Icon
+            name="angle-right"
+            type="fa"
+          >
+            <FontAwesome
+              name="angle-right"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-angle-right"
+              />
+            </FontAwesome>
+          </Icon>
+          Click to expand
+        </button>
+      </Button>
+      <span
+        className="expand-collapse-pf-separator bordered"
+      />
+    </div>
+  </div>
+</ExpandCollapse>
+`;
+
+exports[`localized ExpandCollapse 2`] = `
+<ExpandCollapse
+  align="left"
+  bordered={true}
+  className=""
+  expanded={false}
+  textCollapsed="Click to expand"
+  textExpanded="Click to collapse"
+>
+  <div
+    className="expand-collapse-pf"
+  >
+    <div
+      className="expand-collapse-pf-link-container"
+    >
+      <Button
+        active={false}
+        block={false}
+        bsClass="btn"
+        bsStyle="link"
+        disabled={false}
+        onClick={[Function]}
+      >
+        <button
+          className="btn btn-link"
+          disabled={false}
+          onClick={[Function]}
+          type="button"
+        >
+          <Icon
+            name="angle-down"
+            type="fa"
+          >
+            <FontAwesome
+              name="angle-down"
+            >
+              <span
+                aria-hidden={true}
+                className="fa fa-angle-down"
+              />
+            </FontAwesome>
+          </Icon>
+          Click to collapse
+        </button>
+      </Button>
+      <span
+        className="expand-collapse-pf-separator bordered"
+      />
+    </div>
+    <div
+      id="content"
+    >
+      My text
+    </div>
+  </div>
+</ExpandCollapse>
+`;

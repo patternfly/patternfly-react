@@ -51,3 +51,4 @@ export * from './components/UtilizationBar';
 export * from './components/VerticalNav';
 export * from './components/Wizard';
 export { patternfly, layout } from './common/patternfly';
+export * from './components/ExpandCollapse';
