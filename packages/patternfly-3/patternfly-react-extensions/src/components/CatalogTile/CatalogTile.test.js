@@ -101,3 +101,42 @@ test('CatalogTile renders properly', () => {
   );
   expect(component.render()).toMatchSnapshot();
 });
+
+test('CatalogTile href renders properly', () => {
+  const component = mount(
+    <CatalogTile
+      id="test-href"
+      href="http://patternfly.org"
+      featured
+      iconImg={pfBrand}
+      title="Patternfly"
+      vendor="Provided by Red Hat"
+      description="1234567890123"
+    />
+  );
+  expect(component.render()).toMatchSnapshot();
+});
+
+test('CatalogTile onClick behaves properly', () => {
+  const onClickMock = jest.fn();
+
+  const component = mount(
+    <CatalogTile
+      id="test-on-click"
+      className="test-click-class"
+      onClick={onClickMock}
+      featured
+      iconImg={pfBrand}
+      title="Patternfly"
+      vendor="Provided by Red Hat"
+      description="1234567890123"
+    />
+  );
+
+  component
+    .find('#test-on-click.test-click-class')
+    .hostNodes()
+    .simulate('click');
+  expect(component.render()).toMatchSnapshot();
+  expect(onClickMock).toBeCalled();
+});

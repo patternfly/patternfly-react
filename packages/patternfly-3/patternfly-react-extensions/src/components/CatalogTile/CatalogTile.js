@@ -8,6 +8,8 @@ const CatalogTile = ({
   id,
   className,
   featured,
+  href,
+  onClick,
   iconImg,
   iconClass,
   badges,
@@ -49,8 +51,8 @@ const CatalogTile = ({
 
   const truncateDescription = truncateDescriptionFn || defaultTruncateDescription;
 
-  return (
-    <div id={id} className={classes} {...props}>
+  const renderInner = () => (
+    <React.Fragment>
       <div className="catalog-tile-pf-header">
         {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt="" />}
         {!iconImg && iconClass && <span className={`catalog-tile-pf-icon ${iconClass}`} />}
@@ -61,6 +63,29 @@ const CatalogTile = ({
         <div className="catalog-tile-pf-subtitle">{vendor}</div>
         <div className="catalog-tile-pf-description">{truncateDescription(description, maxDescriptionLength, id)}</div>
       </div>
+    </React.Fragment>
+  );
+
+  const handleClick = e => {
+    if (!href) {
+      e.preventDefault();
+    }
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
+  if (href || onClick) {
+    return (
+      <a id={id} className={classes} href={href || '#'} {...props} onClick={e => handleClick(e)}>
+        {renderInner()}
+      </a>
+    );
+  }
+
+  return (
+    <div id={id} className={classes} {...props}>
+      {renderInner()}
     </div>
   );
 };
@@ -72,6 +97,10 @@ CatalogTile.propTypes = {
   className: PropTypes.string,
   /** Flag if the tile is 'featured' */
   featured: PropTypes.bool,
+  /** href for the tile if used as a link */
+  href: PropTypes.string,
+  /** Callback for a click on the tile */
+  onClick: PropTypes.func,
   /** URL of an image for the item's icon */
   iconImg: PropTypes.string,
   /** Class for the image when an icon is to be used (exclusive from iconImg) */
@@ -94,6 +123,8 @@ CatalogTile.defaultProps = {
   id: null,
   className: '',
   featured: false,
+  href: null,
+  onClick: null,
   iconImg: null,
   iconClass: null,
   badges: [],
