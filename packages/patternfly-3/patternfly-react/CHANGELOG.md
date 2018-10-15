@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.21.1"></a>
+## [2.21.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.21.0...patternfly-react@2.21.1) (2018-10-15)
+
+
+### Bug Fixes
+
+* **Masthead:** fix issue with navbar title not displaying ([#758](https://github.com/patternfly/patternfly-react/issues/758)) ([e724561](https://github.com/patternfly/patternfly-react/commit/e724561))
+
+
+
+
 <a name="2.21.0"></a>
 # [2.21.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.20.3...patternfly-react@2.21.0) (2018-10-15)
 

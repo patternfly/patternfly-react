@@ -3,6 +3,26 @@
 
 #### :bug: Bug Fix
 * `patternfly-3`
+  * [#758](https://github.com/patternfly/patternfly-react/pull/758) Show Masthead title ([@jhellar](https://github.com/jhellar))
+
+#### Committers: 1
+- [@jhellar](https://github.com/jhellar)
+
+
+## patternfly3-react-lerna-root@7.3.1 (2018-10-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#764](https://github.com/patternfly/patternfly-react/pull/764) fix(CatalogTile): Style update for tile with focus ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.9.1 (2018-10-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
   * [#764](https://github.com/patternfly/patternfly-react/pull/764) fix(CatalogTile): Style update for tile with focus ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
 
 #### Committers: 1
