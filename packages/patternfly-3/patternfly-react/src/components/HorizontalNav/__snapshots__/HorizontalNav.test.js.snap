@@ -14,7 +14,9 @@ exports[`HorizontalNav renders properly with dropdown Levels 1`] = `
         class="navbar-brand"
         href="#"
         role="button"
-      />
+      >
+        Patternfly React
+      </a>
     </div>
     <nav
       class="collapse navbar-collapse"
@@ -709,7 +711,9 @@ exports[`HorizontalNav renders properly with singleLevel 1`] = `
         class="navbar-brand"
         href="#"
         role="button"
-      />
+      >
+        Patternfly React
+      </a>
     </div>
     <nav
       class="collapse navbar-collapse"
@@ -880,7 +884,9 @@ exports[`HorizontalNav renders properly with two Levels 1`] = `
         class="navbar-brand"
         href="#"
         role="button"
-      />
+      >
+        Patternfly React
+      </a>
     </div>
     <nav
       class="collapse navbar-collapse"
