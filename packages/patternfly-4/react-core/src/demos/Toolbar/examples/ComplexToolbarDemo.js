@@ -5,13 +5,14 @@ import {
   DropdownPosition,
   DropdownToggle,
   DropdownItem,
+  KebabToggle,
   TextInput,
   Toolbar,
   ToolbarGroup,
   ToolbarItem,
   ToolbarSection
 } from '@patternfly/react-core';
-import { EllipsisVIcon, ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
+import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
 class ComplexToolbarDemo extends React.Component {
   static title = 'Toolbar Complex Example';
@@ -19,7 +20,8 @@ class ComplexToolbarDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: false,
+      isDropDownOpen: false,
+      isKebabOpen: false,
       searchValue: ''
     };
   }
@@ -28,18 +30,29 @@ class ComplexToolbarDemo extends React.Component {
     this.setState({ searchValue: value });
   };
 
-  onToggle = isOpen => {
+  onDropDownToggle = isOpen => {
     this.setState({
-      isOpen
+      isDropDownOpen: isOpen
     });
   };
 
-  onSelect = event => {
+  onDropDownSelect = event => {
     this.setState({
-      isOpen: !this.state.isOpen
+      isDropDownOpen: !this.state.isDropDownOpen
     });
   };
 
+  onKebabToggle = isOpen => {
+    this.setState({
+      isKebabOpen: isOpen
+    });
+  };
+
+  onKebabSelect = event => {
+    this.setState({
+      isKebabOpen: !this.state.isKebabOpen
+    });
+  };
   buildSearchBox = () => {
     const { value } = this.state.searchValue;
     return (
@@ -47,19 +60,39 @@ class ComplexToolbarDemo extends React.Component {
     );
   };
   buildDropdown = () => {
-    const { isOpen } = this.state;
+    const { isDropDownOpen } = this.state;
     return (
       <Dropdown
-        onToggle={this.onToggle}
-        onSelect={this.onSelect}
+        onToggle={this.onDropDownToggle}
+        onSelect={this.onDropDownSelect}
         position={DropdownPosition.right}
-        toggle={<DropdownToggle onToggle={this.onToggle}>All</DropdownToggle>}
-        isOpen={isOpen}
+        toggle={<DropdownToggle onToggle={this.onDropDownToggle}>All</DropdownToggle>}
+        isOpen={isDropDownOpen}
       >
         <DropdownItem>Item 1</DropdownItem>
         <DropdownItem>Item 2</DropdownItem>
         <DropdownItem>Item 3</DropdownItem>
         <DropdownItem isDisabled>All</DropdownItem>
+      </Dropdown>
+    );
+  };
+  buildKebab = () => {
+    const { isKebabOpen } = this.state;
+
+    return (
+      <Dropdown
+        onToggle={this.onKebabToggle}
+        onSelect={this.onKebabSelect}
+        position={DropdownPosition.right}
+        toggle={<KebabToggle onToggle={this.onKebabToggle} />}
+        isOpen={isKebabOpen}
+      >
+        <DropdownItem>Link</DropdownItem>
+        <DropdownItem component="button">Action</DropdownItem>
+        <DropdownItem isDisabled>Disabled Link</DropdownItem>
+        <DropdownItem isDisabled component="button">
+          Disabled Action
+        </DropdownItem>
       </Dropdown>
     );
   };
@@ -96,11 +129,9 @@ class ComplexToolbarDemo extends React.Component {
           <ToolbarItem>
             <Button aria-label="Action 2">Action</Button>
           </ToolbarItem>
-          <ToolbarItem>
-            <Button variant="plain" aria-label="Kebab">
-              <EllipsisVIcon />
-            </Button>
-          </ToolbarItem>
+        </ToolbarGroup>
+        <ToolbarGroup>
+          <ToolbarItem>{this.buildKebab()}</ToolbarItem>
         </ToolbarGroup>
         <ToolbarSection>
           <ToolbarGroup>
