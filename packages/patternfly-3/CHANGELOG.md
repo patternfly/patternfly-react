@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.3.3"></a>
+## [7.3.3](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.2...patternfly3-react-lerna-root@7.3.3) (2018-10-16)
+
+
+### Bug Fixes
+
+* **CatalogTileView:** Remove unused styling of CatalogTileViewCategory column children. ([#769](https://github.com/patternfly/patternfly-react/issues/769)) ([30b9327](https://github.com/patternfly/patternfly-react/commit/30b9327)), closes [#765](https://github.com/patternfly/patternfly-react/issues/765)
+
+
+
+
 <a name="7.3.2"></a>
 ## [7.3.2](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.1...patternfly3-react-lerna-root@7.3.2) (2018-10-15)
 
