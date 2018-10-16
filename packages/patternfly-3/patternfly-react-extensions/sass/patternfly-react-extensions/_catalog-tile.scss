@@ -107,8 +107,4 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 10px;
-
-  [class*='col-'] {
-    padding: 0 20px 0 0;
-  }
 }
