@@ -15,17 +15,19 @@ const propTypes = {
   raw: PropTypes.string.isRequired,
   path: PropTypes.string,
   images: PropTypes.array,
-  live: PropTypes.bool
+  live: PropTypes.bool,
+  liveScope: PropTypes.object
 };
 
 const defaultProps = {
   className: '',
   path: '',
   images: [],
-  live: true
+  live: true,
+  liveScope: {}
 };
 
-const scopePlayground = { React, ...CoreComponents, ...CoreIcons, css, styles };
+const scopePlayground = { React, ...CoreComponents, ...CoreIcons, css };
 
 const transformCode = code => {
   try {
@@ -35,7 +37,7 @@ const transformCode = code => {
     code = code.replace(/^\s*\/\/.*$/gm, '');
     code = code.replace(/extends Component/gm, 'extends React.Component');
     code = code.replace(/^\s*export.*$/gm, '');
-    code = code.replace(/^\s*static.*$/gm, '');
+    code = code.replace(/^\s*static(.|\s)*?;$/gm, '');
     const transformedCode = transform(code, {
       presets: ['react', 'stage-2']
     }).code;
@@ -72,14 +74,15 @@ class LiveDemo extends React.Component {
   };
 
   render() {
-    const { className, raw, images, live, path } = this.props;
+    const { className, raw, images, live, liveScope, path } = this.props;
     const { codeOpen, showCopyMessage } = this.state;
 
     const GITHUB_BASE = 'https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-4';
     const examplePath = `${GITHUB_BASE}${path.substr(5)}`;
 
     const scope = {
-      ...scopePlayground
+      ...scopePlayground,
+      ...liveScope
     };
     for (const image of images) {
       const searchIndex = raw.search(image.name);
@@ -126,6 +129,14 @@ class LiveDemo extends React.Component {
                 Copied to clipboard
               </CoreComponents.Text>
             </CoreComponents.TextContent>
+            {codeOpen &&
+              !live && (
+                <CoreComponents.TextContent className={css(styles.messageShow)}>
+                  <CoreComponents.Text component="pre" className={css(styles.messageText)}>
+                    Live edititing disabled
+                  </CoreComponents.Text>
+                </CoreComponents.TextContent>
+              )}
           </div>
           {codeOpen && <LiveEditor className={styles.code} ignoreTabKey contentEditable={live} />}
           {live && <LiveError />}

@@ -17,7 +17,8 @@ const propTypes = {
   raw: PropTypes.string,
   path: PropTypes.string,
   images: PropTypes.array,
-  live: PropTypes.bool
+  live: PropTypes.bool,
+  liveScope: PropTypes.object
 };
 
 const defaultProps = {
@@ -29,7 +30,8 @@ const defaultProps = {
   raw: '',
   path: '',
   images: [],
-  live: true
+  live: true,
+  liveScope: {}
 };
 
 const GATSBY_LIVE_EXAMPLES = process.env.GATSBY_LIVE_EXAMPLES === 'true';
@@ -45,6 +47,7 @@ const Example = ({
   path: examplePath,
   images,
   live,
+  liveScope,
   ...props
 }) => {
   // Display full page link
@@ -73,16 +76,34 @@ const Example = ({
       </Section>
     );
   }
+
   return (
     <div>
       <Title size="lg">{title}</Title>
       {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
-      {GATSBY_LIVE_EXAMPLES && live ? (
-        <LiveDemo raw={raw.trim()} path={examplePath} images={images} className={className} />
+      {GATSBY_LIVE_EXAMPLES ? (
+        <React.Fragment>
+          {!live && (
+            <div className={css(className, styles.example)} {...props}>
+              {children}
+            </div>
+          )}
+          <LiveDemo
+            raw={raw.trim()}
+            path={examplePath}
+            images={images}
+            className={className}
+            live={live}
+            liveScope={liveScope}
+          />
+        </React.Fragment>
       ) : (
-          <div className={css(className, styles.example)} {...props}>
-            {children}
-          </div>
+          <React.Fragment>
+            <div className={css(className, styles.example)} {...props}>
+              {children}
+            </div>
+            <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
+          </React.Fragment>
         )}
     </div>
   );

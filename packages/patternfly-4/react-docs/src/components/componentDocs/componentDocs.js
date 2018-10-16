@@ -51,6 +51,7 @@ class ComponentDocs extends React.PureComponent {
                 images={images}
                 fullPageOnly={fullPageOnly}
                 live={ComponentExample.live}
+                liveScope={ComponentExample.liveScope}
                 name={componentDocs.displayName}
                 {...(ComponentExample.getContainerProps ? ComponentExample.getContainerProps() : {})}
               >
