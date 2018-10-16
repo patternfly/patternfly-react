@@ -8,7 +8,7 @@ class ModelessOverlay extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isIn: false };
-    this.inTimer = new Timer(null, 150);
+    this.inTimer = new Timer(this.updateForTransitions, 150);
   }
 
   componentWillUnmount() {
@@ -30,7 +30,8 @@ class ModelessOverlay extends React.Component {
     );
 
     if (isIn !== show) {
-      this.inTimer.startTimer(() => this.updateForTransitions(), show ? 0 : 150);
+      this.inTimer.clearTimer();
+      this.inTimer.startTimer();
     }
 
     const dialogClasses = classNames('modal-dialog', {
