@@ -1,5 +1,35 @@
 
-## Change Log (2018-10-15)
+## patternfly3-react-lerna-root@7.3.2 (2018-10-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#758](https://github.com/patternfly/patternfly-react/pull/758) Show Masthead title ([@jhellar](https://github.com/jhellar))
+
+#### Committers: 1
+- [@jhellar](https://github.com/jhellar)
+
+
+## patternfly-react@2.21.1 (2018-10-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#758](https://github.com/patternfly/patternfly-react/pull/758) Show Masthead title ([@jhellar](https://github.com/jhellar))
+
+#### Committers: 1
+- [@jhellar](https://github.com/jhellar)
+
+
+## patternfly-react-extensions@2.9.2 (2018-10-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#758](https://github.com/patternfly/patternfly-react/pull/758) Show Masthead title ([@jhellar](https://github.com/jhellar))
+
+#### Committers: 1
+- [@jhellar](https://github.com/jhellar)
+
+
+## @patternfly/react-console@1.4.8 (2018-10-15)
 
 #### :bug: Bug Fix
 * `patternfly-3`
