@@ -34,7 +34,7 @@ stories.addDecorator(
 stories.addWithInfo('Single-Level Menu Bar', '', () => (
   <HorizontalNav>
     {mastheadMock({
-      iconImg: pfFitBrand,
+      titleImg: pfFitBrand,
       title: 'Patternfly React',
       navToggle: false,
       thin: true
@@ -46,7 +46,7 @@ stories.addWithInfo('Single-Level Menu Bar', '', () => (
 stories.addWithInfo('Two-Level Menu Bar', '', () => (
   <HorizontalNav>
     {mastheadMock({
-      iconImg: pfFitBrand,
+      titleImg: pfFitBrand,
       title: 'Patternfly React',
       navToggle: false,
       thin: true
@@ -58,7 +58,7 @@ stories.addWithInfo('Two-Level Menu Bar', '', () => (
 stories.addWithInfo('Menu Bar with Dropdowns', '', () => (
   <HorizontalNav>
     {mastheadMock({
-      iconImg: pfFitBrand,
+      titleImg: pfFitBrand,
       title: 'Patternfly React',
       navToggle: false,
       thin: true
