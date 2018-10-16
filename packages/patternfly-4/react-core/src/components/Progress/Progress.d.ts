@@ -2,7 +2,7 @@ import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
 import { OneOf, Omit } from '../../typeUtils';
 
 export const ProgressSize: {
-  xs: 'xs',
+  sm: 'sm',
   md: 'md',
   lg: 'lg'
 }
