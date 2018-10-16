@@ -73,17 +73,28 @@ const Example = ({
       </Section>
     );
   }
+
   return (
     <div>
       <Title size="lg">{title}</Title>
       {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
-      {GATSBY_LIVE_EXAMPLES && live ? (
-        <LiveDemo raw={raw.trim()} path={examplePath} images={images} className={className} />
+      {GATSBY_LIVE_EXAMPLES ? (
+        <React.Fragment>
+          {!live && (
+            <div className={css(className, styles.example)} {...props}>
+              {children}
+            </div>
+          )}
+          <LiveDemo raw={raw.trim()} path={examplePath} images={images} className={className} live={live} />
+        </React.Fragment>
       ) : (
+        <React.Fragment>
           <div className={css(className, styles.example)} {...props}>
             {children}
           </div>
-        )}
+          <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
+        </React.Fragment>
+      )}
     </div>
   );
 };
