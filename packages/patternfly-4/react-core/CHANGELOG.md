@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.24.1"></a>
+## [1.24.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.24.0...@patternfly/react-core@1.24.1) (2018-10-16)
+
+
+### Bug Fixes
+
+* **Progress:** Correct small progress size ([#790](https://github.com/patternfly/patternfly-react/issues/790)) ([c30c89f](https://github.com/patternfly/patternfly-react/commit/c30c89f))
+
+
+
+
 <a name="1.24.0"></a>
 # [1.24.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.23.1...@patternfly/react-core@1.24.0) (2018-10-16)
 

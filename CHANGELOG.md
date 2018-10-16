@@ -3,6 +3,71 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
+  * [#790](https://github.com/patternfly/patternfly-react/pull/790) fix(Progress): Correct small progress size ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## patternfly4-react-lerna-root@1.11.1 (2018-10-16)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#780](https://github.com/patternfly/patternfly-react/pull/780) fix(react-docs): Fix live mode toggling ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 2
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## patternfly3-react-lerna-root@7.3.4 (2018-10-16)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#780](https://github.com/patternfly/patternfly-react/pull/780) fix(react-docs): Fix live mode toggling ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 2
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## patternfly-react@2.21.2 (2018-10-16)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#780](https://github.com/patternfly/patternfly-react/pull/780) fix(react-docs): Fix live mode toggling ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 2
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## patternfly-react-extensions@2.9.4 (2018-10-16)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#780](https://github.com/patternfly/patternfly-react/pull/780) fix(react-docs): Fix live mode toggling ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 2
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## @patternfly/react-docs@3.17.4 (2018-10-16)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#780](https://github.com/patternfly/patternfly-react/pull/780) fix(react-docs): Fix live mode toggling ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 2
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## @patternfly/react-console@1.4.9 (2018-10-16)
+
+#### :bug: Bug Fix
+* `patternfly-4`
   * [#780](https://github.com/patternfly/patternfly-react/pull/780) fix(react-docs): Fix live mode toggling ([@jschuler](https://github.com/jschuler))
 
 #### Committers: 2

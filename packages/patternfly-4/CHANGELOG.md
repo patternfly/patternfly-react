@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.11.2"></a>
+## [1.11.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.11.1...patternfly4-react-lerna-root@1.11.2) (2018-10-16)
+
+
+### Bug Fixes
+
+* **Progress:** Correct small progress size ([#790](https://github.com/patternfly/patternfly-react/issues/790)) ([c30c89f](https://github.com/patternfly/patternfly-react/commit/c30c89f))
+
+
+
+
 <a name="1.11.1"></a>
 ## [1.11.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.11.0...patternfly4-react-lerna-root@1.11.1) (2018-10-16)
 
