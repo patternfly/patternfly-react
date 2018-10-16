@@ -1,1 +1,1 @@
-export { default as Progress, ProgressVariant, ProgressMeasureLocation, ProgressStatus, ProgressProps } from './Progress';
+export { default as Progress, ProgressVariant, ProgressMeasureLocation, ProgressSize, ProgressProps } from './Progress';
