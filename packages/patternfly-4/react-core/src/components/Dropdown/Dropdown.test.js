@@ -23,7 +23,7 @@ const DropItems = () => (
 describe('dropdown', () => {
   test('regular', () => {
     const view = mount(
-      <Dropdown id="Dropdown" toggle={<DropdownToggle>Dropdown</DropdownToggle>}>
+      <Dropdown toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
         <DropItems />
       </Dropdown>
     );
@@ -32,7 +32,10 @@ describe('dropdown', () => {
 
   test('right aligned', () => {
     const view = mount(
-      <Dropdown id="Dropdown" position={DropdownPosition.right} toggle={<DropdownToggle>Dropdown</DropdownToggle>}>
+      <Dropdown
+        position={DropdownPosition.right}
+        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
+      >
         <DropItems />
       </Dropdown>
     );
@@ -41,7 +44,10 @@ describe('dropdown', () => {
 
   test('dropup', () => {
     const view = mount(
-      <Dropdown id="Dropdown" direction={DropdownDirection.up} toggle={<DropdownToggle>Dropdown</DropdownToggle>}>
+      <Dropdown
+        direction={DropdownDirection.up}
+        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
+      >
         <DropItems />
       </Dropdown>
     );
@@ -51,10 +57,9 @@ describe('dropdown', () => {
   test('dropup + right aligned', () => {
     const view = mount(
       <Dropdown
-        id="Dropdown"
         direction={DropdownDirection.up}
         position={DropdownPosition.right}
-        toggle={<DropdownToggle>Dropdown</DropdownToggle>}
+        toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       >
         <DropItems />
       </Dropdown>
@@ -64,7 +69,7 @@ describe('dropdown', () => {
 
   test('expanded', () => {
     const view = mount(
-      <Dropdown id="Dropdown" isOpen toggle={<DropdownToggle>Dropdown</DropdownToggle>}>
+      <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
         <DropItems />
       </Dropdown>
     );
@@ -75,7 +80,7 @@ describe('dropdown', () => {
 describe('KebabToggle', () => {
   test('regular', () => {
     const view = mount(
-      <Dropdown id="Dropdown" toggle={<KebabToggle />}>
+      <Dropdown toggle={<KebabToggle id="Dropdown Toggle" />}>
         <DropItems />
       </Dropdown>
     );
@@ -84,7 +89,7 @@ describe('KebabToggle', () => {
 
   test('right aligned', () => {
     const view = mount(
-      <Dropdown id="Dropdown" position={DropdownPosition.right} toggle={<KebabToggle />}>
+      <Dropdown position={DropdownPosition.right} toggle={<KebabToggle id="Dropdown Toggle" />}>
         <DropItems />
       </Dropdown>
     );
@@ -93,7 +98,7 @@ describe('KebabToggle', () => {
 
   test('dropup', () => {
     const view = mount(
-      <Dropdown id="Dropdown" direction={DropdownDirection.up} toggle={<KebabToggle />}>
+      <Dropdown direction={DropdownDirection.up} toggle={<KebabToggle id="Dropdown Toggle" />}>
         <DropItems />
       </Dropdown>
     );
@@ -103,10 +108,9 @@ describe('KebabToggle', () => {
   test('dropup + right aligned', () => {
     const view = mount(
       <Dropdown
-        id="Dropdown"
         direction={DropdownDirection.up}
         position={DropdownPosition.right}
-        toggle={<KebabToggle />}
+        toggle={<KebabToggle id="Dropdown Toggle" />}
       >
         <DropItems />
       </Dropdown>
@@ -116,7 +120,7 @@ describe('KebabToggle', () => {
 
   test('expanded', () => {
     const view = mount(
-      <Dropdown id="Dropdown" isOpen toggle={<KebabToggle />}>
+      <Dropdown isOpen toggle={<KebabToggle id="Dropdown Toggle" />}>
         <DropItems />
       </Dropdown>
     );
@@ -125,7 +129,7 @@ describe('KebabToggle', () => {
 
   test('plain', () => {
     const view = mount(
-      <Dropdown id="Dropdown" isPlain toggle={<KebabToggle />}>
+      <Dropdown isPlain toggle={<KebabToggle id="Dropdown Toggle" />}>
         <DropItems />
       </Dropdown>
     );
@@ -138,7 +142,7 @@ describe('API', () => {
     const mockToggle = jest.fn();
     const mockSelect = jest.fn();
     const view = mount(
-      <Dropdown id="Dropdown" onSelect={mockSelect} isOpen>
+      <Dropdown onSelect={mockSelect} isOpen>
         <DropItems />
       </Dropdown>
     );

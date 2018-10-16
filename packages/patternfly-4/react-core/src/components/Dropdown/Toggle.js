@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 import { KEY_CODES } from '../../internal/constants';
 
 const propTypes = {
+  /** HTML ID of dropdown toggle */
+  id: PropTypes.string.isRequired,
   /** Anything which can be rendered as dropdown toggle */
   children: PropTypes.node,
-  /** Classess applied to root element of dropdown toggle */
+  /** Classes applied to root element of dropdown toggle */
   className: PropTypes.string,
   /** Flag to indicate if menu is opened */
   isOpen: PropTypes.bool,
@@ -61,10 +63,22 @@ class DropdownToggle extends Component {
   };
 
   render() {
-    const { className, children, isOpen, isFocused, isActive, isHovered, onToggle, parentRef, ...props } = this.props;
+    const {
+      className,
+      children,
+      isOpen,
+      isFocused,
+      isActive,
+      isHovered,
+      onToggle,
+      parentRef,
+      id,
+      ...props
+    } = this.props;
     return (
       <button
         {...props}
+        id={id}
         ref={toggle => {
           this.toggle = toggle;
         }}
@@ -76,7 +90,6 @@ class DropdownToggle extends Component {
           className
         )}
         onClick={_event => onToggle && onToggle(!isOpen)}
-        aria-haspopup="true"
         aria-expanded={isOpen}
       >
         {children}

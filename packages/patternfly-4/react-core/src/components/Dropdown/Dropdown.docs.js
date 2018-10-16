@@ -1,4 +1,5 @@
 import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator, DropdownToggle } from '@patternfly/react-core';
+import Basic from './examples/BasicDropdown';
 import Simple from './examples/SimpleDropdown';
 import Kebab from './examples/KebabDropdown';
 import PositionRigh from './examples/PositionRightDropdown';
@@ -13,5 +14,5 @@ export default {
     DropdownSeparator,
     DropdownToggle
   },
-  examples: [Simple, PositionRigh, DirectionUp, Kebab]
+  examples: [Basic, Simple, PositionRigh, DirectionUp, Kebab]
 };

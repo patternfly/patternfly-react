@@ -16,8 +16,6 @@ export const DropdownDirection = {
 };
 
 const propTypes = {
-  /** HTML ID of dropdown element */
-  id: PropTypes.string,
   /** Anything which can be rendered as dropdown items */
   children: PropTypes.node,
   /** Classess applied to root element of dropdown */
@@ -37,11 +35,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  id:
-    new Date().getTime() +
-    Math.random()
-      .toString(36)
-      .slice(2),
   toggle: null,
   children: null,
   className: '',
@@ -54,11 +47,10 @@ const defaultProps = {
 
 class Dropdown extends React.Component {
   render() {
-    const { className, children, isOpen, toggle, direction, onSelect, isPlain, position, id, ...props } = this.props;
+    const { className, children, isOpen, toggle, direction, onSelect, isPlain, position, ...props } = this.props;
     return (
       <div
         {...props}
-        id={id}
         className={css(
           styles.dropdown,
           isPlain && styles.modifiers.plain,
@@ -74,7 +66,11 @@ class Dropdown extends React.Component {
         {toggle && Children.map(toggle, oneToggle => cloneElement(oneToggle, { parentRef: this.parentRef, isOpen }))}
         {isOpen && (
           <FocusTrap>
-            <DropdownMenu isOpen={isOpen} aria-labelledby={id} onClick={event => onSelect && onSelect(event)}>
+            <DropdownMenu
+              isOpen={isOpen}
+              aria-labelledby={toggle ? toggle.props.id : ''}
+              onClick={event => onSelect && onSelect(event)}
+            >
               {children}
             </DropdownMenu>
           </FocusTrap>

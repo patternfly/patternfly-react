@@ -21,7 +21,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
 <Dropdown
   className=""
   direction="up"
-  id="Dropdown"
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -30,6 +29,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -41,11 +41,11 @@ exports[`KebabToggle dropup + right aligned 1`] = `
 >
   <div
     className="pf-c-dropdown pf-m-top pf-m-align-right"
-    id="Dropdown"
   >
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -57,6 +57,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -66,9 +67,9 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       >
         <button
           aria-expanded={false}
-          aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           <EllipsisVIcon
@@ -94,6 +95,163 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={false}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={true}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
   </div>
 </Dropdown>
 `;
@@ -119,7 +277,6 @@ exports[`KebabToggle dropup 1`] = `
 <Dropdown
   className=""
   direction="up"
-  id="Dropdown"
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -128,6 +285,7 @@ exports[`KebabToggle dropup 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -139,11 +297,11 @@ exports[`KebabToggle dropup 1`] = `
 >
   <div
     className="pf-c-dropdown pf-m-top"
-    id="Dropdown"
   >
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -155,6 +313,7 @@ exports[`KebabToggle dropup 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -164,9 +323,9 @@ exports[`KebabToggle dropup 1`] = `
       >
         <button
           aria-expanded={false}
-          aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           <EllipsisVIcon
@@ -192,6 +351,166 @@ exports[`KebabToggle dropup 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
+<<<<<<< HEAD
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={false}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={true}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -245,7 +564,6 @@ exports[`KebabToggle expanded 1`] = `
 <Dropdown
   className=""
   direction="down"
-  id="Dropdown"
   isOpen={true}
   isPlain={false}
   onSelect={[Function]}
@@ -254,6 +572,7 @@ exports[`KebabToggle expanded 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -265,11 +584,11 @@ exports[`KebabToggle expanded 1`] = `
 >
   <div
     className="pf-c-dropdown pf-m-expanded"
-    id="Dropdown"
   >
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -281,6 +600,7 @@ exports[`KebabToggle expanded 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -290,9 +610,9 @@ exports[`KebabToggle expanded 1`] = `
       >
         <button
           aria-expanded={true}
-          aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           <EllipsisVIcon
@@ -318,6 +638,7 @@ exports[`KebabToggle expanded 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
+<<<<<<< HEAD
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
@@ -471,6 +792,165 @@ exports[`KebabToggle expanded 1`] = `
         </DropdownMenu>
       </div>
     </FocusTrap>
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={true}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={false}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -496,7 +976,6 @@ exports[`KebabToggle plain 1`] = `
 <Dropdown
   className=""
   direction="down"
-  id="Dropdown"
   isOpen={false}
   isPlain={true}
   onSelect={[Function]}
@@ -505,6 +984,7 @@ exports[`KebabToggle plain 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -516,11 +996,11 @@ exports[`KebabToggle plain 1`] = `
 >
   <div
     className="pf-c-dropdown pf-m-plain"
-    id="Dropdown"
   >
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -532,6 +1012,7 @@ exports[`KebabToggle plain 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -541,9 +1022,9 @@ exports[`KebabToggle plain 1`] = `
       >
         <button
           aria-expanded={false}
-          aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           <EllipsisVIcon
@@ -569,6 +1050,166 @@ exports[`KebabToggle plain 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
+<<<<<<< HEAD
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={false}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={true}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -594,7 +1235,6 @@ exports[`KebabToggle regular 1`] = `
 <Dropdown
   className=""
   direction="down"
-  id="Dropdown"
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -603,6 +1243,7 @@ exports[`KebabToggle regular 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -614,11 +1255,11 @@ exports[`KebabToggle regular 1`] = `
 >
   <div
     className="pf-c-dropdown"
-    id="Dropdown"
   >
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -630,6 +1271,7 @@ exports[`KebabToggle regular 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -639,9 +1281,9 @@ exports[`KebabToggle regular 1`] = `
       >
         <button
           aria-expanded={false}
-          aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           <EllipsisVIcon
@@ -667,6 +1309,166 @@ exports[`KebabToggle regular 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
+<<<<<<< HEAD
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={false}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={true}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -692,7 +1494,6 @@ exports[`KebabToggle right aligned 1`] = `
 <Dropdown
   className=""
   direction="down"
-  id="Dropdown"
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -701,6 +1502,7 @@ exports[`KebabToggle right aligned 1`] = `
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -712,11 +1514,11 @@ exports[`KebabToggle right aligned 1`] = `
 >
   <div
     className="pf-c-dropdown pf-m-align-right"
-    id="Dropdown"
   >
     <Kebab
       aria-label="Actions"
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -728,6 +1530,7 @@ exports[`KebabToggle right aligned 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -737,9 +1540,9 @@ exports[`KebabToggle right aligned 1`] = `
       >
         <button
           aria-expanded={false}
-          aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           <EllipsisVIcon
@@ -765,6 +1568,166 @@ exports[`KebabToggle right aligned 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
+<<<<<<< HEAD
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={false}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={true}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -796,7 +1759,6 @@ exports[`dropdown dropup + right aligned 1`] = `
 <Dropdown
   className=""
   direction="up"
-  id="Dropdown"
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -804,6 +1766,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -817,10 +1780,10 @@ exports[`dropdown dropup + right aligned 1`] = `
 >
   <div
     className="pf-c-dropdown pf-m-top pf-m-align-right"
-    id="Dropdown"
   >
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -831,6 +1794,7 @@ exports[`dropdown dropup + right aligned 1`] = `
     >
       <DropdownToggle
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -840,8 +1804,8 @@ exports[`dropdown dropup + right aligned 1`] = `
       >
         <button
           aria-expanded={false}
-          aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           Dropdown
@@ -870,6 +1834,166 @@ exports[`dropdown dropup + right aligned 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
+<<<<<<< HEAD
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={false}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={true}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -901,7 +2025,6 @@ exports[`dropdown dropup 1`] = `
 <Dropdown
   className=""
   direction="up"
-  id="Dropdown"
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -909,6 +2032,7 @@ exports[`dropdown dropup 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -922,10 +2046,10 @@ exports[`dropdown dropup 1`] = `
 >
   <div
     className="pf-c-dropdown pf-m-top"
-    id="Dropdown"
   >
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -936,6 +2060,7 @@ exports[`dropdown dropup 1`] = `
     >
       <DropdownToggle
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -945,8 +2070,8 @@ exports[`dropdown dropup 1`] = `
       >
         <button
           aria-expanded={false}
-          aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           Dropdown
@@ -975,6 +2100,166 @@ exports[`dropdown dropup 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
+<<<<<<< HEAD
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={false}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={true}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -1034,7 +2319,6 @@ exports[`dropdown expanded 1`] = `
 <Dropdown
   className=""
   direction="down"
-  id="Dropdown"
   isOpen={true}
   isPlain={false}
   onSelect={[Function]}
@@ -1042,6 +2326,7 @@ exports[`dropdown expanded 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1055,10 +2340,10 @@ exports[`dropdown expanded 1`] = `
 >
   <div
     className="pf-c-dropdown pf-m-expanded"
-    id="Dropdown"
   >
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1069,6 +2354,7 @@ exports[`dropdown expanded 1`] = `
     >
       <DropdownToggle
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -1078,8 +2364,8 @@ exports[`dropdown expanded 1`] = `
       >
         <button
           aria-expanded={true}
-          aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           Dropdown
@@ -1108,6 +2394,7 @@ exports[`dropdown expanded 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
+<<<<<<< HEAD
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
@@ -1261,6 +2548,165 @@ exports[`dropdown expanded 1`] = `
         </DropdownMenu>
       </div>
     </FocusTrap>
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={true}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={false}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -1292,7 +2738,6 @@ exports[`dropdown regular 1`] = `
 <Dropdown
   className=""
   direction="down"
-  id="Dropdown"
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -1300,6 +2745,7 @@ exports[`dropdown regular 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1313,10 +2759,10 @@ exports[`dropdown regular 1`] = `
 >
   <div
     className="pf-c-dropdown"
-    id="Dropdown"
   >
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1327,6 +2773,7 @@ exports[`dropdown regular 1`] = `
     >
       <DropdownToggle
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -1336,8 +2783,8 @@ exports[`dropdown regular 1`] = `
       >
         <button
           aria-expanded={false}
-          aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           Dropdown
@@ -1366,6 +2813,166 @@ exports[`dropdown regular 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
+<<<<<<< HEAD
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={false}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={true}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -1397,7 +3004,6 @@ exports[`dropdown right aligned 1`] = `
 <Dropdown
   className=""
   direction="down"
-  id="Dropdown"
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -1405,6 +3011,7 @@ exports[`dropdown right aligned 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1418,10 +3025,10 @@ exports[`dropdown right aligned 1`] = `
 >
   <div
     className="pf-c-dropdown pf-m-align-right"
-    id="Dropdown"
   >
     <DropdownToggle
       className=""
+      id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1432,6 +3039,7 @@ exports[`dropdown right aligned 1`] = `
     >
       <DropdownToggle
         className=""
+        id="Dropdown Toggle"
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -1441,8 +3049,8 @@ exports[`dropdown right aligned 1`] = `
       >
         <button
           aria-expanded={false}
-          aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          id="Dropdown Toggle"
           onClick={[Function]}
         >
           Dropdown
@@ -1471,6 +3079,166 @@ exports[`dropdown right aligned 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
+<<<<<<< HEAD
+=======
+    <DropdownMenu
+      aria-labelledby="Dropdown Toggle"
+      className=""
+      isOpen={false}
+      onClick={[Function]}
+    >
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={true}
+        onClick={[Function]}
+        role="menu"
+      >
+        <DropItems>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Action
+              </button>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={true}
+                className="pf-m-disabled"
+                href="#"
+                role="menuitem"
+                tabIndex={-1}
+              >
+                Disabled Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={true}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className="pf-m-disabled"
+                disabled={true}
+                href="#"
+                role="menuitem"
+              >
+                Disabled Action
+              </button>
+            </li>
+          </DropdownItem>
+          <Separator
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <DropdownItem
+              className="pf-c-dropdown__separator"
+              component="div"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              role="separator"
+            >
+              <li>
+                <div
+                  className="pf-c-dropdown__separator"
+                  href="#"
+                  role="separator"
+                />
+              </li>
+            </DropdownItem>
+          </Separator>
+          <DropdownItem
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <a
+                aria-disabled={false}
+                className=""
+                href="#"
+                role="menuitem"
+              >
+                Separated Link
+              </a>
+            </li>
+          </DropdownItem>
+          <DropdownItem
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            role="menuitem"
+          >
+            <li>
+              <button
+                className=""
+                disabled={false}
+                href="#"
+                role="menuitem"
+              >
+                Separated Action
+              </button>
+            </li>
+          </DropdownItem>
+        </DropItems>
+      </ul>
+    </DropdownMenu>
+>>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;

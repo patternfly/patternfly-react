@@ -7,7 +7,7 @@ import { componentShape } from '../../internal/componentShape';
 const propTypes = {
   /** Anything which can be rendered as dropdown item */
   children: PropTypes.node,
-  /** Classess applied to root element of dropdown item */
+  /** Classes applied to root element of dropdown item */
   className: PropTypes.string,
   /** Indicates which component will be used as dropdown item */
   component: componentShape,
@@ -40,13 +40,15 @@ const DropdownItem = ({ className, children, isHovered, component: Component, is
     aditionalProps.disabled = isDisabled;
   }
   return (
-    <Component
-      {...aditionalProps}
-      className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
-      role={role}
-    >
-      {children}
-    </Component>
+    <li>
+      <Component
+        {...aditionalProps}
+        className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
+        role={role}
+      >
+        {children}
+      </Component>
+    </li>
   );
 };
 

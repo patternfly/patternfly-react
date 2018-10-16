@@ -19,9 +19,9 @@ const defaultProps = {
 };
 
 const DropdownMenu = ({ className, isOpen, children, ...props }) => (
-  <div {...props} className={css(styles.dropdownMenu, className)} role="menu" hidden={!isOpen}>
+  <ul {...props} className={css(styles.dropdownMenu, className)} role="menu" hidden={!isOpen}>
     {children}
-  </div>
+  </ul>
 );
 
 DropdownMenu.propTypes = propTypes;
