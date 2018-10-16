@@ -4256,6 +4256,7 @@ cli-width@^2.0.0:
 clipboard-copy@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/clipboard-copy/-/clipboard-copy-2.0.1.tgz#25214db3aabc282109cfa3429ffd885b014fc8b3"
+  integrity sha512-/JBr7ryeWwl2w33SRMYGfOZU5SWPVNtpB9oTxUzFp7olKKd2HM+cnhSMeETblJMnjgqtL581ncI/pcZX7o7Big==
 
 clipboard@^1.5.5:
   version "1.7.1"
@@ -5495,7 +5496,7 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0", cssom@^0.3.4:
+cssom@0.3.4, cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0", cssom@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.4.tgz#8cd52e8a3acfd68d3aed38ee0a640177d2f9d797"
   integrity sha512-+7prCSORpXNeR4/fUP3rL+TzqtiFfhMvTd7uEqMdgPvLPt4+uzFUeufx5RHjGTACCargg/DiEt/moMQmvnfkog==
@@ -11227,6 +11228,7 @@ left-pad@^1.2.0:
 lerna-changelog@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/lerna-changelog/-/lerna-changelog-0.8.1.tgz#bb4c8b84603ebbf56e4decde30fae66d5282be53"
+  integrity sha512-XAltJEci0i02SxIDrb0A87c15712tkUhbdRsnDdK0BFz61x/M0bYDVMQVyaQsYm3DHvHnfvb4PL9q5WjiVGoPQ==
   dependencies:
     chalk "^2.4.1"
     cli-highlight "^1.2.3"

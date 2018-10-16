@@ -38,6 +38,21 @@ const data = [
   }
 ];
 
+/**
+ * const lazyLoad(node) {
+  const isWorking = true;
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (isWorking) {
+        resolve([]);
+      } else {
+        reject(new Error('Something happened.'));
+      }
+    }, 2000);
+  });
+} */
+
 const actionMapper = {
   'state.expanded': Tree.nodeExpanded,
   'state.checked': Tree.nodeChecked,
@@ -86,26 +101,6 @@ class App extends React.Component {
     }
 
     this.setState({ tree: this.data });
-  }
-
-  /**
-   * The lazy loading function - Dummy
-   *
-   * @param {NodeProps} node The node to get children.
-   * @returns {NodeProps[]} The children.
-   */
-  lazyLoad(node) {
-    const isWorking = true;
-
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (isWorking) {
-          resolve([]);
-        } else {
-          reject(new Error('Something happened.'));
-        }
-      }, 2000);
-    });
   }
 
   render() {
