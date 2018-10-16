@@ -1,6 +1,37 @@
 
 ## Change Log (2018-10-16)
 
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#780](https://github.com/patternfly/patternfly-react/pull/780) fix(react-docs): Fix live mode toggling ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 2
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## patternfly4-react-lerna-root@1.11.0 (2018-10-16)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#667](https://github.com/patternfly/patternfly-react/pull/667) feat(formComponent): add Form, FormGroup, ActionGroup PF4 components ([@rvsia](https://github.com/rvsia))
+
+#### Committers: 1
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+
+
+## @patternfly/react-docs@3.17.3 (2018-10-16)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#667](https://github.com/patternfly/patternfly-react/pull/667) feat(formComponent): add Form, FormGroup, ActionGroup PF4 components ([@rvsia](https://github.com/rvsia))
+
+#### Committers: 1
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+
+
+## @patternfly/react-core@1.24.0 (2018-10-16)
+
 #### :rocket: New Feature
 * `patternfly-4`
   * [#667](https://github.com/patternfly/patternfly-react/pull/667) feat(formComponent): add Form, FormGroup, ActionGroup PF4 components ([@rvsia](https://github.com/rvsia))

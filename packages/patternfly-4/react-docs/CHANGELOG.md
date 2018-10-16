@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.17.4"></a>
+## [3.17.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.17.3...@patternfly/react-docs@3.17.4) (2018-10-16)
+
+
+### Bug Fixes
+
+* **react-docs:** Fix live mode toggling ([#780](https://github.com/patternfly/patternfly-react/issues/780)) ([f7cc358](https://github.com/patternfly/patternfly-react/commit/f7cc358))
+
+
+
+
 <a name="3.17.3"></a>
 ## [3.17.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.17.2...@patternfly/react-docs@3.17.3) (2018-10-16)
 

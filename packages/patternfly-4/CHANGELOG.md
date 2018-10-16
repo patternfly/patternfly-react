@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.11.1"></a>
+## [1.11.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.11.0...patternfly4-react-lerna-root@1.11.1) (2018-10-16)
+
+
+### Bug Fixes
+
+* **react-docs:** Fix live mode toggling ([#780](https://github.com/patternfly/patternfly-react/issues/780)) ([f7cc358](https://github.com/patternfly/patternfly-react/commit/f7cc358))
+
+
+
+
 <a name="1.11.0"></a>
 # [1.11.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.10.1...patternfly4-react-lerna-root@1.11.0) (2018-10-16)
 

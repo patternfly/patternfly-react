@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.21.2"></a>
+## [2.21.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.21.1...patternfly-react@2.21.2) (2018-10-16)
+
+
+### Bug Fixes
+
+* **Storybook:** Fix horizontal masthead examples using iconImg instead of titleImg ([#768](https://github.com/patternfly/patternfly-react/issues/768)) ([e4af9cf](https://github.com/patternfly/patternfly-react/commit/e4af9cf)), closes [#767](https://github.com/patternfly/patternfly-react/issues/767)
+
+
+
+
 <a name="2.21.1"></a>
 ## [2.21.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.21.0...patternfly-react@2.21.1) (2018-10-15)
 
