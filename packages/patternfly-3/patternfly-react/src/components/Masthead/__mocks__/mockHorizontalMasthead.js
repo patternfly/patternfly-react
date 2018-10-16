@@ -30,7 +30,7 @@ export class MockHorizontalMasthead extends React.Component {
       in: !menuCollapsed
     });
     return (
-      <Masthead iconImg={pfFitBrand} title="Patternfly React" navToggle thin onNavToggleClick={this.onNavToggleClick}>
+      <Masthead titleImg={pfFitBrand} title="Patternfly React" navToggle thin onNavToggleClick={this.onNavToggleClick}>
         <Masthead.Collapse>
           <Masthead.Dropdown
             id="app-help-dropdown"
@@ -116,7 +116,7 @@ export class MockHorizontalMasthead extends React.Component {
     });
     return (
       <Masthead
-        iconImg={pfFitBrand}
+        titleImg={pfFitBrand}
         title="Patternfly React"
         navToggle
         thin
