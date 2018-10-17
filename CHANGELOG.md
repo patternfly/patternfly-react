@@ -1,5 +1,25 @@
 
-## Change Log (2018-10-16)
+## patternfly4-react-lerna-root@1.11.2 (2018-10-16)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#790](https://github.com/patternfly/patternfly-react/pull/790) fix(Progress): Correct small progress size ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-docs@3.17.5 (2018-10-16)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#790](https://github.com/patternfly/patternfly-react/pull/790) fix(Progress): Correct small progress size ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-core@1.24.1 (2018-10-16)
 
 #### :bug: Bug Fix
 * `patternfly-4`
