@@ -15,6 +15,7 @@ const WizardPattern = ({
   onBack,
   nextStepDisabled,
   previousStepDisabled,
+  cancelButtonDisabled,
   title,
   loadingTitle,
   loadingMessage,
@@ -108,7 +109,7 @@ const WizardPattern = ({
         />
       </Wizard.Body>
       <Wizard.Footer>
-        <Button bsStyle="default" className="btn-cancel" onClick={onHideClick}>
+        <Button bsStyle="default" className="btn-cancel" disabled={cancelButtonDisabled} onClick={onHideClick}>
           {cancelText}
         </Button>
         <Button bsStyle="default" onClick={onBackClick} disabled={prevStepUnreachable}>
@@ -156,6 +157,7 @@ WizardPattern.propTypes = {
   nextStepDisabled: PropTypes.bool,
   previousStepDisabled: PropTypes.bool,
   stepButtonsDisabled: PropTypes.bool,
+  cancelButtonDisabled: PropTypes.bool,
   nextButtonRef: PropTypes.func,
   bodyHeader: PropTypes.node,
   children: PropTypes.node
@@ -180,6 +182,7 @@ WizardPattern.defaultProps = {
   nextStepDisabled: false,
   previousStepDisabled: false,
   stepButtonsDisabled: false,
+  cancelButtonDisabled: false,
   nextButtonRef: noop,
   bodyHeader: null,
   children: null
