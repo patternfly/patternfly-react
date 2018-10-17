@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.24.3"></a>
+## [1.24.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.24.2...@patternfly/react-core@1.24.3) (2018-10-17)
+
+
+### Bug Fixes
+
+* **react-core:** add missing component to index type definitions ([#798](https://github.com/patternfly/patternfly-react/issues/798)) ([46a2c69](https://github.com/patternfly/patternfly-react/commit/46a2c69))
+
+
+
+
 <a name="1.24.2"></a>
 ## [1.24.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.24.1...@patternfly/react-core@1.24.2) (2018-10-17)
 

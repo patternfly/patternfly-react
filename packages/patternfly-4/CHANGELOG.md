@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.11.4"></a>
+## [1.11.4](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.11.3...patternfly4-react-lerna-root@1.11.4) (2018-10-17)
+
+
+### Bug Fixes
+
+* **react-core:** add missing component to index type definitions ([#798](https://github.com/patternfly/patternfly-react/issues/798)) ([46a2c69](https://github.com/patternfly/patternfly-react/commit/46a2c69))
+
+
+
+
 <a name="1.11.3"></a>
 ## [1.11.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.11.2...patternfly4-react-lerna-root@1.11.3) (2018-10-17)
 
