@@ -17,7 +17,7 @@ const defaultProps = {
 };
 
 const ActionGroup = ({ className, children, ...props }) => {
-  const customClassName = css(styles.formGroup, getModifier(styles, 'action', styles.modifiers.info), className);
+  const customClassName = css(styles.formGroup, getModifier(styles, 'action'), className);
   const classesHorizontal = css(styles.formHorizontalGroup);
 
   return (

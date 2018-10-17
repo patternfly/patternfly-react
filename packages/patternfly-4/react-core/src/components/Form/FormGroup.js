@@ -80,33 +80,33 @@ const FormGroup = ({
   fieldId,
   ...props
 }) => (
-    <FormContext.Consumer>
-      {({ isHorizontal }) => (
-        <div {...props} className={css(styles.formGroup, getModifier(styles, isInline && 'inline'), className)}>
-          {label && (
-            <label className={css(styles.formLabel)} htmlFor={fieldId}>
-              {label}
-              {isRequired && (
-                <span className={css(styles.formLabelRequired)} aria-hidden="true">
-                  {ASTERISK}
-                </span>
-              )}
-            </label>
-          )}
-          {isHorizontal ? <div className={css(styles.formHorizontalGroup)}>{children}</div> : children}
-          {((isValid && helperText) || (!isValid && helperTextInvalid)) && (
-            <div
-              className={css(styles.formHelperText, getModifier(styles, !isValid && 'error', styles.modifiers.info))}
-              id={`${fieldId}-helper`}
-              aria-live="polite"
-            >
-              {isValid ? helperText : helperTextInvalid}
-            </div>
-          )}
-        </div>
-      )}
-    </FormContext.Consumer>
-  );
+  <FormContext.Consumer>
+    {({ isHorizontal }) => (
+      <div {...props} className={css(styles.formGroup, getModifier(styles, isInline && 'inline'), className)}>
+        {label && (
+          <label className={css(styles.formLabel)} htmlFor={fieldId}>
+            {label}
+            {isRequired && (
+              <span className={css(styles.formLabelRequired)} aria-hidden="true">
+                {ASTERISK}
+              </span>
+            )}
+          </label>
+        )}
+        {isHorizontal ? <div className={css(styles.formHorizontalGroup)}>{children}</div> : children}
+        {((isValid && helperText) || (!isValid && helperTextInvalid)) && (
+          <div
+            className={css(styles.formHelperText, getModifier(styles, !isValid && 'error'))}
+            id={`${fieldId}-helper`}
+            aria-live="polite"
+          >
+            {isValid ? helperText : helperTextInvalid}
+          </div>
+        )}
+      </div>
+    )}
+  </FormContext.Consumer>
+);
 
 FormGroup.propTypes = propTypes;
 FormGroup.defaultProps = defaultProps;
