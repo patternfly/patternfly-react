@@ -1,30 +1,22 @@
 import { SFC, HTMLProps, ReactNode } from 'react';
-import { OneOf } from '../../typeUtils';
+import { Omit, OneOf } from '../../typeUtils';
 
 export const BackgroundImageSrc: {
-  lg: 'lg',
-  md: 'md',
-  md2x: 'md2x',
-  sm: 'sm',
-  sm2x: 'sm2x',
-  xl: 'xl',
-  xs: 'xs',
-  xs2x: 'xs2x',
-  filter: 'filter'
+  lg: 'lg';
+  md: 'md';
+  md2x: 'md2x';
+  sm: 'sm';
+  sm2x: 'sm2x';
+  xl: 'xl';
+  xs: 'xs';
+  xs2x: 'xs2x';
+  filter: 'filter';
 };
 
-export interface BackgroundImageProps extends HTMLProps<HTMLDivElement> {
-  src: string | {
-    lg?: string;
-    md?: string;
-    md2x?: string;
-    sm?: string;
-    sm2x?: string;
-    xl?: string;
-    xs?: string;
-    xs2x?: string;
-    filter?: string;
-  };
+export type BackgroundImageSrcMap = { [K in keyof typeof BackgroundImageSrc]: string };
+
+export interface BackgroundImageProps extends Omit<HTMLProps<HTMLDivElement>, 'src'> {
+  src: string | BackgroundImageSrcMap;
 }
 
 declare const BackgroundImage: SFC<BackgroundImageProps>;
