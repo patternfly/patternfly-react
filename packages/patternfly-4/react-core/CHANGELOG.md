@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.25.0"></a>
+# [1.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.24.3...@patternfly/react-core@1.25.0) (2018-10-17)
+
+
+### Features
+
+* **radioComponent:** updated according to PF-next demo ([#756](https://github.com/patternfly/patternfly-react/issues/756)) ([a62ee27](https://github.com/patternfly/patternfly-react/commit/a62ee27))
+
+
+
+
 <a name="1.24.3"></a>
 ## [1.24.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.24.2...@patternfly/react-core@1.24.3) (2018-10-17)
 

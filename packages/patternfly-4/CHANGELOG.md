@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.12.0"></a>
+# [1.12.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.11.4...patternfly4-react-lerna-root@1.12.0) (2018-10-17)
+
+
+### Features
+
+* **radioComponent:** updated according to PF-next demo ([#756](https://github.com/patternfly/patternfly-react/issues/756)) ([a62ee27](https://github.com/patternfly/patternfly-react/commit/a62ee27))
+
+
+
+
 <a name="1.11.4"></a>
 ## [1.11.4](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.11.3...patternfly4-react-lerna-root@1.11.4) (2018-10-17)
 

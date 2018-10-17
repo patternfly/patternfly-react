@@ -1,6 +1,46 @@
 
 ## Change Log (2018-10-17)
 
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#756](https://github.com/patternfly/patternfly-react/pull/756) feat(radioComponent): updated according to PF-next demo ([@rvsia](https://github.com/rvsia))
+
+#### Committers: 1
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+
+
+## patternfly3-react-lerna-root@7.3.5 (2018-10-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#776](https://github.com/patternfly/patternfly-react/pull/776) fix(ModelessOverlay): Fix for animation on open in Firefox browser ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.21.3 (2018-10-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#776](https://github.com/patternfly/patternfly-react/pull/776) fix(ModelessOverlay): Fix for animation on open in Firefox browser ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.9.5 (2018-10-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#776](https://github.com/patternfly/patternfly-react/pull/776) fix(ModelessOverlay): Fix for animation on open in Firefox browser ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.4.10 (2018-10-17)
+
 #### :bug: Bug Fix
 * `patternfly-3`
   * [#776](https://github.com/patternfly/patternfly-react/pull/776) fix(ModelessOverlay): Fix for animation on open in Firefox browser ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
