@@ -21,14 +21,18 @@ class ControlledRadio extends React.Component {
           checked={this.state.value === '3'}
           name="pf-version"
           onChange={this.handleChange}
-          aria-label="Patternfly 3"
+          aria-label="Controlled radio 1"
+          label="Controlled radio 1"
+          id="radio-1"
         />{' '}
         <Radio
           value="4"
           checked={this.state.value === '4'}
           name="pf-version"
           onChange={this.handleChange}
-          aria-label="Patternfly 3"
+          aria-label="Controlled radio 2"
+          label="Controlled radio 2"
+          id="radio-2"
         />
       </React.Fragment>
     );

@@ -1,24 +1,33 @@
 import React from 'react';
 import styles from '@patternfly/patternfly-next/components/Check/check.css';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { css, getModifier } from '@patternfly/react-styles';
 
 const propTypes = {
-  /** additional classes added to the Radio */
+  /** Additional classes added to the Radio. */
   className: PropTypes.string,
   /** Flag to show if the Radio selection is valid or invalid. */
   isValid: PropTypes.bool,
   /** Flag to show if the Radio is disabled. */
   isDisabled: PropTypes.bool,
   /** A callback for when the Radio selection changes. */
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  /** Label text of the Radio. */
+  label: PropTypes.node,
+  /** Id of the Radio. */
+  id: PropTypes.string.isRequired,
+  /** Aria-label of the Radio. */
+  'aria-label': PropTypes.any.isRequired,
+  /** Name for group of Radios */
+  name: PropTypes.string.isRequired
 };
 
 const defaultProps = {
   className: '',
   isValid: true,
   isDisabled: false,
-  onChange: () => undefined
+  onChange: () => undefined,
+  label: undefined
 };
 
 class Radio extends React.Component {
@@ -27,16 +36,23 @@ class Radio extends React.Component {
   };
 
   render() {
-    const { className, onChange, isValid, isDisabled, ...props } = this.props;
+    const { className, onChange, isValid, isDisabled, label, ...props } = this.props;
     return (
-      <input
-        {...props}
-        className={css(styles.check, className)}
-        type="radio"
-        onChange={onChange ? this.handleChange : null}
-        aria-invalid={!isValid}
-        disabled={isDisabled}
-      />
+      <div className={css(styles.check, className)}>
+        <input
+          {...props}
+          className={css(styles.checkInput)}
+          type="radio"
+          onChange={this.handleChange}
+          aria-invalid={!isValid}
+          disabled={isDisabled}
+        />
+        {label && (
+          <label className={css(styles.checkLabel, getModifier(styles, isDisabled && 'disabled'))} htmlFor={props.id}>
+            {label}
+          </label>
+        )}
+      </div>
     );
   }
 }
