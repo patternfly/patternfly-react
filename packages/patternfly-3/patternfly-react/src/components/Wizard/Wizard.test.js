@@ -389,8 +389,9 @@ const testDisablePreviousStepWizard = props => {
       onHide={onHide}
       onExited={onExited}
       onStepChanged={onStepChanged}
-      title="Wizard Disable Next Step"
-      shouldDisablePreviousStep={() => true}
+      title="Wizard Disable Previous Step"
+      shouldDisablePreviousStep={idx => idx === 2}
+      shouldDisableCancelButton={idx => idx === 1}
       steps={[
         { title: '1', render: () => <p>1</p> },
         { title: '2', render: () => <p className=".step2">2</p> },
@@ -401,27 +402,39 @@ const testDisablePreviousStepWizard = props => {
   );
 };
 
-test('Wizard Stateful with shouldDisableNextStep should disable next step', () => {
-  const component = mount(testDisableNextStepWizard());
+const expectDisability = (component, buttonIndex) =>
   expect(
     component
       .find('.wizard-pf-footer .btn')
-      .at(2)
+      .at(buttonIndex)
       .getDOMNode().disabled
-  ).toBe(true);
-});
+  );
 
-test('Wizard Stateful with shouldDisablePreviousStep should disable previous step', () => {
-  const component = mount(testDisablePreviousStepWizard());
+const clickOnNext = component =>
   component
     .find('.wizard-pf-footer .btn')
     .at(2)
     .simulate('click');
+
+test('Wizard Stateful with shouldDisableNextStep should disable next step', () => {
+  const component = mount(testDisableNextStepWizard());
+  expectDisability(component, 2).toBe(true);
+});
+
+test('Wizard Stateful with shouldDisablePreviousStep and shouldDisableCancelButton', () => {
+  const component = mount(testDisablePreviousStepWizard());
+
+  expectDisability(component, 0).toBe(false);
+  expectDisability(component, 1).toBe(true); // cannot go back on the first step
+
+  clickOnNext(component);
   expect(component.exists('.step2')).toEqual(true);
-  expect(
-    component
-      .find('.wizard-pf-footer .btn')
-      .at(1)
-      .getDOMNode().disabled
-  ).toBe(true);
+
+  expectDisability(component, 0).toBe(true);
+  expectDisability(component, 1).toBe(false);
+
+  clickOnNext(component);
+
+  expectDisability(component, 0).toBe(false);
+  expectDisability(component, 1).toBe(true);
 });
