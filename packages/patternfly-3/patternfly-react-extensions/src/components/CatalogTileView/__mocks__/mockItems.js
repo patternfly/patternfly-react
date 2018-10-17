@@ -7,6 +7,7 @@ import instagram from 'patternfly/dist/img/instagram-logo.png';
 import twitter from 'patternfly/dist/img/twitter-logo.svg';
 import skype from 'patternfly/dist/img/skype-logo.svg';
 import ngnix from '../../CatalogTile/__images__/nginx.png';
+import openshift from '../../CatalogTile/__images__/OpenShift.svg';
 
 export const mockItems = [
   {
@@ -88,6 +89,19 @@ export const mockItems = [
         featured: true,
         certified: true,
         approved: true
+      },
+      {
+        title: 'JBoss BPM Suite 6.4 intelligent process server + A-MQ + MySQL (Ephemeral with https)',
+        image: openshift,
+        vendor: 'provided by Red Hat, Inc',
+        description:
+          'Praesent sagittis est et arcu fringilla placerat. Cras erat ante, dapibus non mauris ac, ' +
+          'volutpat sollicitudin ligula. Morbi gravida nisl vel risus tempor, sit amet luctus erat tempus. ' +
+          'Curabitur blandit sem non pretium bibendum. Donec eleifend non turpis vitae vestibulum. Vestibulum ' +
+          'ut sem ac nunc posuere blandit sed porta lorem. Cras rutrum velit vel leo iaculis imperdiet.',
+        featured: false,
+        certified: true,
+        approved: false
       },
       {
         title: 'GitHub Desktop',
