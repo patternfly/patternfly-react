@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.21.3"></a>
+## [2.21.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.21.2...patternfly-react@2.21.3) (2018-10-17)
+
+
+### Bug Fixes
+
+* **ModelessOverlay:** Fix for animation on open in Firefox browser ([#776](https://github.com/patternfly/patternfly-react/issues/776)) ([469ab3a](https://github.com/patternfly/patternfly-react/commit/469ab3a)), closes [#774](https://github.com/patternfly/patternfly-react/issues/774)
+
+
+
+
 <a name="2.21.2"></a>
 ## [2.21.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.21.1...patternfly-react@2.21.2) (2018-10-16)
 

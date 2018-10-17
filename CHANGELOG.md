@@ -1,4 +1,14 @@
 
+## Change Log (2018-10-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#776](https://github.com/patternfly/patternfly-react/pull/776) fix(ModelessOverlay): Fix for animation on open in Firefox browser ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
 ## patternfly4-react-lerna-root@1.11.2 (2018-10-16)
 
 #### :bug: Bug Fix
