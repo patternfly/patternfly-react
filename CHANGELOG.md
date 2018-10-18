@@ -1,4 +1,16 @@
 
+## Change Log (2018-10-18)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#805](https://github.com/patternfly/patternfly-react/pull/805) docs(formComponent): changes radios in examples to radio component ([@rvsia](https://github.com/rvsia))
+
+#### Committers: 3
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+
+
 ## patternfly4-react-lerna-root@1.12.3 (2018-10-18)
 
 #### :memo: Documentation
