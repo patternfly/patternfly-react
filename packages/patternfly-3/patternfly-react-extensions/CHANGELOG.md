@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.9.8"></a>
+## [2.9.8](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.7...patternfly-react-extensions@2.9.8) (2018-10-18)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Catalog Tiles can shrink ([#810](https://github.com/patternfly/patternfly-react/issues/810)) ([8b30aca](https://github.com/patternfly/patternfly-react/commit/8b30aca))
+
+
+
+
 <a name="2.9.7"></a>
 ## [2.9.7](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.6...patternfly-react-extensions@2.9.7) (2018-10-18)
 

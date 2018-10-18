@@ -3,6 +3,26 @@
 
 #### :bug: Bug Fix
 * `patternfly-3`
+  * [#810](https://github.com/patternfly/patternfly-react/pull/810) fix(CatalogTile): Catalog Tiles can shrink ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly3-react-lerna-root@7.3.7 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#808](https://github.com/patternfly/patternfly-react/pull/808) fix(CatalogItemHeader): Make subtitle optional ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly-react-extensions@2.9.7 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
   * [#808](https://github.com/patternfly/patternfly-react/pull/808) fix(CatalogItemHeader): Make subtitle optional ([@rhamilto](https://github.com/rhamilto))
 
 #### Committers: 1
