@@ -11,10 +11,14 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
+import { css } from '@patternfly/react-styles';
+import flexStyles from '@patternfly/patternfly-next/utilities/Flex/flex.css';
+import spacingStyles from '@patternfly/patternfly-next/utilities/Spacing/spacing.css';
 import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
 class SimpleToolbarDemo extends React.Component {
   static title = 'Toolbar Simple Example';
+  static liveScope = { flexStyles, spacingStyles };
 
   constructor(props) {
     super(props);
@@ -85,6 +89,7 @@ class SimpleToolbarDemo extends React.Component {
         position={DropdownPosition.right}
         toggle={<KebabToggle onToggle={this.onKebabToggle} />}
         isOpen={isKebabOpen}
+        isPlain
       >
         <DropdownItem>Link</DropdownItem>
         <DropdownItem component="button">Action</DropdownItem>
@@ -97,12 +102,10 @@ class SimpleToolbarDemo extends React.Component {
   };
   render() {
     return (
-      <Toolbar>
+      <Toolbar className={css(flexStyles.justifyContentSpaceBetween, spacingStyles.mxXl, spacingStyles.myMd)}>
         <ToolbarGroup>
-          <ToolbarItem>{this.buildSearchBox()}</ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
-          <ToolbarItem>{this.buildDropdown()}</ToolbarItem>
+          <ToolbarItem className={css(spacingStyles.mrXl)}>{this.buildSearchBox()}</ToolbarItem>
+          <ToolbarItem className={css(spacingStyles.mrMd)}>{this.buildDropdown()}</ToolbarItem>
           <ToolbarItem>
             <Button variant="plain" aria-label="Sort A-Z">
               <SortAlphaDownIcon />
@@ -115,7 +118,7 @@ class SimpleToolbarDemo extends React.Component {
               <TableIcon />
             </Button>
           </ToolbarItem>
-          <ToolbarItem>
+          <ToolbarItem className={css(spacingStyles.mxMd)}>
             <Button variant="plain" aria-label="Insert Bulleted List">
               <ListUlIcon />
             </Button>
@@ -125,11 +128,9 @@ class SimpleToolbarDemo extends React.Component {
               Action
             </Button>
           </ToolbarItem>
-          <ToolbarItem>
+          <ToolbarItem className={css(spacingStyles.mxMd)}>
             <Button aria-label="Action 2">Action</Button>
           </ToolbarItem>
-        </ToolbarGroup>
-        <ToolbarGroup>
           <ToolbarItem>{this.buildKebab()}</ToolbarItem>
         </ToolbarGroup>
       </Toolbar>
