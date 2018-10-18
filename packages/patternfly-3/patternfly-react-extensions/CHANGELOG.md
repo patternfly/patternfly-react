@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.9.6"></a>
+## [2.9.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.5...patternfly-react-extensions@2.9.6) (2018-10-18)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Fix to not allow the description text to overflow the tile ([#804](https://github.com/patternfly/patternfly-react/issues/804)) ([9bd4541](https://github.com/patternfly/patternfly-react/commit/9bd4541))
+
+
+
+
 <a name="2.9.5"></a>
 ## [2.9.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.4...patternfly-react-extensions@2.9.5) (2018-10-17)
 

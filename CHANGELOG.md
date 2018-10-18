@@ -1,5 +1,47 @@
 
-## Change Log (2018-10-17)
+## Change Log (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#804](https://github.com/patternfly/patternfly-react/pull/804) fix(CatalogTile): Fix to not allow the description text to overflow the tile ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#801](https://github.com/patternfly/patternfly-react/pull/801) fix(Wizard.Pattern): allow disabling cancel button ([@suomiy](https://github.com/suomiy))
+* `patternfly-4`
+  * [#800](https://github.com/patternfly/patternfly-react/pull/800) fix(typescript definitions): fix ts defs for checkbox, BackgroundImage, and Form ([@priley86](https://github.com/priley86))
+  * [#792](https://github.com/patternfly/patternfly-react/pull/792) fix(Form): Do not add any class if action modifier is missing ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#794](https://github.com/patternfly/patternfly-react/pull/794) Fix typo in story file name ([@cben](https://github.com/cben))
+
+#### Committers: 5
+- Beni Cherniavsky-Paskin ([@cben](https://github.com/cben))
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@suomiy](https://github.com/suomiy)
+
+
+## patternfly4-react-lerna-root@1.12.0 (2018-10-17)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#756](https://github.com/patternfly/patternfly-react/pull/756) feat(radioComponent): updated according to PF-next demo ([@rvsia](https://github.com/rvsia))
+
+#### Committers: 1
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+
+
+## @patternfly/react-docs@3.17.8 (2018-10-17)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#756](https://github.com/patternfly/patternfly-react/pull/756) feat(radioComponent): updated according to PF-next demo ([@rvsia](https://github.com/rvsia))
+
+#### Committers: 1
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+
+
+## @patternfly/react-core@1.25.0 (2018-10-17)
 
 #### :rocket: New Feature
 * `patternfly-4`

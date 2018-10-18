@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.25.1"></a>
+## [1.25.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.25.0...@patternfly/react-core@1.25.1) (2018-10-18)
+
+
+### Bug Fixes
+
+* **Form:** Do not add any class if action modifier is missing ([#792](https://github.com/patternfly/patternfly-react/issues/792)) ([dee29d4](https://github.com/patternfly/patternfly-react/commit/dee29d4))
+* **typescript definitions:** fix ts defs for checkbox, BackgroundImage, and Form ([#800](https://github.com/patternfly/patternfly-react/issues/800)) ([d39f596](https://github.com/patternfly/patternfly-react/commit/d39f596))
+
+
+
+
 <a name="1.25.0"></a>
 # [1.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.24.3...@patternfly/react-core@1.25.0) (2018-10-17)
 

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.3.6"></a>
+## [7.3.6](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.5...patternfly3-react-lerna-root@7.3.6) (2018-10-18)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Fix to not allow the description text to overflow the tile ([#804](https://github.com/patternfly/patternfly-react/issues/804)) ([9bd4541](https://github.com/patternfly/patternfly-react/commit/9bd4541))
+* **Wizard.Pattern:** allow disabling cancel button ([#801](https://github.com/patternfly/patternfly-react/issues/801)) ([8c0cd77](https://github.com/patternfly/patternfly-react/commit/8c0cd77))
+
+
+
+
 <a name="7.3.5"></a>
 ## [7.3.5](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.4...patternfly3-react-lerna-root@7.3.5) (2018-10-17)
 

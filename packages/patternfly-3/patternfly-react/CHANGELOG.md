@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.21.4"></a>
+## [2.21.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.21.3...patternfly-react@2.21.4) (2018-10-18)
+
+
+### Bug Fixes
+
+* **Wizard.Pattern:** allow disabling cancel button ([#801](https://github.com/patternfly/patternfly-react/issues/801)) ([8c0cd77](https://github.com/patternfly/patternfly-react/commit/8c0cd77))
+
+
+
+
 <a name="2.21.3"></a>
 ## [2.21.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.21.2...patternfly-react@2.21.3) (2018-10-17)
 
