@@ -31,6 +31,8 @@ exports[`state active 1`] = `
 >
   <DropdownToggle
     className=""
+    focusOnReentry={null}
+    focusedItemRef={null}
     isActive={true}
     isFocused={false}
     isHovered={false}
@@ -42,7 +44,10 @@ exports[`state active 1`] = `
       aria-expanded={false}
       aria-haspopup="true"
       className="pf-c-dropdown__toggle pf-m-active"
+      onBlur={[Function]}
       onClick={[Function]}
+      onClickCapture={[Function]}
+      onFocus={[Function]}
     >
       Dropdown
       <CaretDownIcon
@@ -103,6 +108,8 @@ exports[`state focus 1`] = `
 >
   <DropdownToggle
     className=""
+    focusOnReentry={null}
+    focusedItemRef={null}
     isActive={false}
     isFocused={true}
     isHovered={false}
@@ -114,7 +121,10 @@ exports[`state focus 1`] = `
       aria-expanded={false}
       aria-haspopup="true"
       className="pf-c-dropdown__toggle pf-m-focus"
+      onBlur={[Function]}
       onClick={[Function]}
+      onClickCapture={[Function]}
+      onFocus={[Function]}
     >
       Dropdown
       <CaretDownIcon
@@ -175,6 +185,8 @@ exports[`state hover 1`] = `
 >
   <DropdownToggle
     className=""
+    focusOnReentry={null}
+    focusedItemRef={null}
     isActive={false}
     isFocused={false}
     isHovered={true}
@@ -186,7 +198,10 @@ exports[`state hover 1`] = `
       aria-expanded={false}
       aria-haspopup="true"
       className="pf-c-dropdown__toggle pf-m-hover"
+      onBlur={[Function]}
       onClick={[Function]}
+      onClickCapture={[Function]}
+      onFocus={[Function]}
     >
       Dropdown
       <CaretDownIcon

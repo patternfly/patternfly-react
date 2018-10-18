@@ -52,7 +52,44 @@ const defaultProps = {
 };
 
 class Dropdown extends React.Component {
+  state = {
+    focusedItemRef: null,
+    focusOnReentry: null
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    if (prevState.focusOnReentry !== this.state.focusOnReentry && !this.state.focusOnReentry) {
+      prevState.focusOnReentry.focus();
+    }
+  };
+
+  setFocusedItemRef = focusedItemRef => this.setState({ focusedItemRef });
+
+  handleOnFocus = () => {
+    const { focusOnReentry } = this.state;
+
+    if (focusOnReentry) {
+      this.setFocusedItemRef(focusOnReentry);
+      this.setState({ focusOnReentry: null });
+      return;
+    }
+
+    this.setState({ focusedItemRef: this.parentRef });
+  };
+
+  handleOnKeyDown = e => {
+    const { focusedItemRef } = this.state;
+
+    if (e.key === 'Tab' && !e.shiftKey && focusedItemRef === this.menuRef.lastChild) {
+      this.setState({ focusedItemRef: null, focusOnReentry: this.menuRef.lastChild });
+    }
+    if (e.key === 'Tab' && e.shiftKey && focusedItemRef === this.parentRef) {
+      this.setState({ focusedItemRef: null });
+    }
+  };
+
   render() {
+    const { focusedItemRef } = this.state;
     const { className, children, isOpen, toggle, direction, onSelect, isPlain, position, id, ...props } = this.props;
     return (
       <div
@@ -63,16 +100,33 @@ class Dropdown extends React.Component {
           isPlain && styles.modifiers.plain,
           direction === DropdownDirection.up && styles.modifiers.top,
           position === DropdownPosition.right && styles.modifiers.alignRight,
-          isOpen && styles.modifiers.expanded,
+          isOpen && focusedItemRef && styles.modifiers.expanded,
           className
         )}
         ref={ref => {
           this.parentRef = ref;
         }}
+        onKeyDown={this.handleOnKeyDown}
+        onFocus={this.handleOnFocus}
       >
-        {toggle && Children.map(toggle, oneToggle => cloneElement(oneToggle, { parentRef: this.parentRef, isOpen }))}
-        <DropdownMenu isOpen={isOpen} aria-labelledby={id} onClick={event => onSelect && onSelect(event)}>
-          {children}
+        {toggle &&
+          Children.map(toggle, oneToggle =>
+            cloneElement(oneToggle, {
+              parentRef: this.parentRef,
+              focusedItemRef: this.state.focusedItemRef,
+              focusOnReentry: this.state.focusOnReentry,
+              isOpen
+            })
+          )}
+        <DropdownMenu
+          isOpen={isOpen && focusedItemRef}
+          aria-labelledby={id}
+          onClick={event => onSelect && onSelect(event)}
+          ref={ref => {
+            this.menuRef = ref;
+          }}
+        >
+          {Children.map(children, child => cloneElement(child, { setFocusedItemRef: this.setFocusedItemRef }))}
         </DropdownMenu>
       </div>
     );

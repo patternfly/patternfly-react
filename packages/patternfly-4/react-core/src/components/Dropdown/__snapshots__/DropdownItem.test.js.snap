@@ -5,6 +5,7 @@ exports[`dropdown items a 1`] = `
   aria-disabled={false}
   className=""
   href="#"
+  onFocus={[Function]}
   role="menuitem"
 >
   Something
@@ -16,6 +17,7 @@ exports[`dropdown items button 1`] = `
   className=""
   disabled={false}
   href="#"
+  onFocus={[Function]}
   role="menuitem"
 >
   Something
@@ -31,6 +33,7 @@ exports[`dropdown items disabled a 1`] = `
   aria-disabled={true}
   className="pf-m-disabled"
   href="#"
+  onFocus={[Function]}
   role="menuitem"
   tabIndex={-1}
 >
@@ -47,6 +50,7 @@ exports[`dropdown items disabled button 1`] = `
   className="pf-m-disabled"
   disabled={true}
   href="#"
+  onFocus={[Function]}
   role="menuitem"
 >
   Something
@@ -62,6 +66,7 @@ exports[`dropdown items hover a 1`] = `
   aria-disabled={false}
   className="pf-m-hover"
   href="#"
+  onFocus={[Function]}
   role="menuitem"
 >
   Something
@@ -77,6 +82,7 @@ exports[`dropdown items hover button 1`] = `
   className="pf-m-hover"
   disabled={false}
   href="#"
+  onFocus={[Function]}
   role="menuitem"
 >
   Something
@@ -97,5 +103,6 @@ exports[`dropdown items separator 1`] = `
   isDisabled={false}
   isHovered={false}
   role="separator"
+  setFocusedItemRef={[Function]}
 />
 `;

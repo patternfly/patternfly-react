@@ -70,10 +70,14 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   <div
     className="pf-c-dropdown pf-m-top pf-m-align-right"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -85,6 +89,8 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -97,7 +103,10 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           <EllipsisVIcon
             color="currentColor"
@@ -122,7 +131,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
       isOpen={false}
@@ -135,7 +144,10 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -143,11 +155,13 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -160,11 +174,13 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -177,11 +193,13 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -195,11 +213,13 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -220,10 +240,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -235,11 +257,13 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -252,11 +276,13 @@ exports[`KebabToggle dropup + right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -264,7 +290,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -339,10 +365,14 @@ exports[`KebabToggle dropup 1`] = `
   <div
     className="pf-c-dropdown pf-m-top"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -354,6 +384,8 @@ exports[`KebabToggle dropup 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -366,7 +398,10 @@ exports[`KebabToggle dropup 1`] = `
           aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           <EllipsisVIcon
             color="currentColor"
@@ -391,7 +426,7 @@ exports[`KebabToggle dropup 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
       isOpen={false}
@@ -404,7 +439,10 @@ exports[`KebabToggle dropup 1`] = `
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -412,11 +450,13 @@ exports[`KebabToggle dropup 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -429,11 +469,13 @@ exports[`KebabToggle dropup 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -446,11 +488,13 @@ exports[`KebabToggle dropup 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -464,11 +508,13 @@ exports[`KebabToggle dropup 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -489,10 +535,12 @@ exports[`KebabToggle dropup 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -504,11 +552,13 @@ exports[`KebabToggle dropup 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -521,11 +571,13 @@ exports[`KebabToggle dropup 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -533,7 +585,7 @@ exports[`KebabToggle dropup 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -579,7 +631,7 @@ exports[`KebabToggle expanded 1`] = `
   border: 1px solid transparent;
   box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
-.pf-c-dropdown.pf-m-expanded {
+.pf-c-dropdown {
   display: inline-block;
   position: relative;
 }
@@ -606,12 +658,16 @@ exports[`KebabToggle expanded 1`] = `
   }
 >
   <div
-    className="pf-c-dropdown pf-m-expanded"
+    className="pf-c-dropdown"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -623,6 +679,8 @@ exports[`KebabToggle expanded 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -635,7 +693,10 @@ exports[`KebabToggle expanded 1`] = `
           aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           <EllipsisVIcon
             color="currentColor"
@@ -660,20 +721,23 @@ exports[`KebabToggle expanded 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
-      isOpen={true}
+      isOpen={null}
       onClick={[Function]}
     >
       <div
         aria-labelledby="Dropdown"
         className="pf-c-dropdown__menu"
-        hidden={false}
+        hidden={true}
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -681,11 +745,13 @@ exports[`KebabToggle expanded 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -698,11 +764,13 @@ exports[`KebabToggle expanded 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -715,11 +783,13 @@ exports[`KebabToggle expanded 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -733,11 +803,13 @@ exports[`KebabToggle expanded 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -758,10 +830,12 @@ exports[`KebabToggle expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -773,11 +847,13 @@ exports[`KebabToggle expanded 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -790,11 +866,13 @@ exports[`KebabToggle expanded 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -802,7 +880,7 @@ exports[`KebabToggle expanded 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -877,10 +955,14 @@ exports[`KebabToggle plain 1`] = `
   <div
     className="pf-c-dropdown pf-m-plain"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -892,6 +974,8 @@ exports[`KebabToggle plain 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -904,7 +988,10 @@ exports[`KebabToggle plain 1`] = `
           aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           <EllipsisVIcon
             color="currentColor"
@@ -929,7 +1016,7 @@ exports[`KebabToggle plain 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
       isOpen={false}
@@ -942,7 +1029,10 @@ exports[`KebabToggle plain 1`] = `
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -950,11 +1040,13 @@ exports[`KebabToggle plain 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -967,11 +1059,13 @@ exports[`KebabToggle plain 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -984,11 +1078,13 @@ exports[`KebabToggle plain 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -1002,11 +1098,13 @@ exports[`KebabToggle plain 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -1027,10 +1125,12 @@ exports[`KebabToggle plain 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -1042,11 +1142,13 @@ exports[`KebabToggle plain 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -1059,11 +1161,13 @@ exports[`KebabToggle plain 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -1071,7 +1175,7 @@ exports[`KebabToggle plain 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -1146,10 +1250,14 @@ exports[`KebabToggle regular 1`] = `
   <div
     className="pf-c-dropdown"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1161,6 +1269,8 @@ exports[`KebabToggle regular 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -1173,7 +1283,10 @@ exports[`KebabToggle regular 1`] = `
           aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           <EllipsisVIcon
             color="currentColor"
@@ -1198,7 +1311,7 @@ exports[`KebabToggle regular 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
       isOpen={false}
@@ -1211,7 +1324,10 @@ exports[`KebabToggle regular 1`] = `
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -1219,11 +1335,13 @@ exports[`KebabToggle regular 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -1236,11 +1354,13 @@ exports[`KebabToggle regular 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -1253,11 +1373,13 @@ exports[`KebabToggle regular 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -1271,11 +1393,13 @@ exports[`KebabToggle regular 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -1296,10 +1420,12 @@ exports[`KebabToggle regular 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -1311,11 +1437,13 @@ exports[`KebabToggle regular 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -1328,11 +1456,13 @@ exports[`KebabToggle regular 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -1340,7 +1470,7 @@ exports[`KebabToggle regular 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -1415,10 +1545,14 @@ exports[`KebabToggle right aligned 1`] = `
   <div
     className="pf-c-dropdown pf-m-align-right"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <Kebab
       aria-label="Actions"
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1430,6 +1564,8 @@ exports[`KebabToggle right aligned 1`] = `
       <DropdownToggle
         aria-label="Actions"
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -1442,7 +1578,10 @@ exports[`KebabToggle right aligned 1`] = `
           aria-haspopup="true"
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           <EllipsisVIcon
             color="currentColor"
@@ -1467,7 +1606,7 @@ exports[`KebabToggle right aligned 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
       isOpen={false}
@@ -1480,7 +1619,10 @@ exports[`KebabToggle right aligned 1`] = `
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -1488,11 +1630,13 @@ exports[`KebabToggle right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -1505,11 +1649,13 @@ exports[`KebabToggle right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -1522,11 +1668,13 @@ exports[`KebabToggle right aligned 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -1540,11 +1688,13 @@ exports[`KebabToggle right aligned 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -1565,10 +1715,12 @@ exports[`KebabToggle right aligned 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -1580,11 +1732,13 @@ exports[`KebabToggle right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -1597,11 +1751,13 @@ exports[`KebabToggle right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -1609,7 +1765,7 @@ exports[`KebabToggle right aligned 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -1691,9 +1847,13 @@ exports[`dropdown dropup + right aligned 1`] = `
   <div
     className="pf-c-dropdown pf-m-top pf-m-align-right"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1704,6 +1864,8 @@ exports[`dropdown dropup + right aligned 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -1715,7 +1877,10 @@ exports[`dropdown dropup + right aligned 1`] = `
           aria-expanded={false}
           aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           Dropdown
           <CaretDownIcon
@@ -1743,7 +1908,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
       isOpen={false}
@@ -1756,7 +1921,10 @@ exports[`dropdown dropup + right aligned 1`] = `
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -1764,11 +1932,13 @@ exports[`dropdown dropup + right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -1781,11 +1951,13 @@ exports[`dropdown dropup + right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -1798,11 +1970,13 @@ exports[`dropdown dropup + right aligned 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -1816,11 +1990,13 @@ exports[`dropdown dropup + right aligned 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -1841,10 +2017,12 @@ exports[`dropdown dropup + right aligned 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -1856,11 +2034,13 @@ exports[`dropdown dropup + right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -1873,11 +2053,13 @@ exports[`dropdown dropup + right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -1885,7 +2067,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -1967,9 +2149,13 @@ exports[`dropdown dropup 1`] = `
   <div
     className="pf-c-dropdown pf-m-top"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -1980,6 +2166,8 @@ exports[`dropdown dropup 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -1991,7 +2179,10 @@ exports[`dropdown dropup 1`] = `
           aria-expanded={false}
           aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           Dropdown
           <CaretDownIcon
@@ -2019,7 +2210,7 @@ exports[`dropdown dropup 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
       isOpen={false}
@@ -2032,7 +2223,10 @@ exports[`dropdown dropup 1`] = `
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -2040,11 +2234,13 @@ exports[`dropdown dropup 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -2057,11 +2253,13 @@ exports[`dropdown dropup 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -2074,11 +2272,13 @@ exports[`dropdown dropup 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -2092,11 +2292,13 @@ exports[`dropdown dropup 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -2117,10 +2319,12 @@ exports[`dropdown dropup 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -2132,11 +2336,13 @@ exports[`dropdown dropup 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -2149,11 +2355,13 @@ exports[`dropdown dropup 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -2161,7 +2369,7 @@ exports[`dropdown dropup 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -2213,7 +2421,7 @@ exports[`dropdown expanded 1`] = `
   border: 1px solid transparent;
   box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
-.pf-c-dropdown.pf-m-expanded {
+.pf-c-dropdown {
   display: inline-block;
   position: relative;
 }
@@ -2241,11 +2449,15 @@ exports[`dropdown expanded 1`] = `
   }
 >
   <div
-    className="pf-c-dropdown pf-m-expanded"
+    className="pf-c-dropdown"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -2256,6 +2468,8 @@ exports[`dropdown expanded 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -2267,7 +2481,10 @@ exports[`dropdown expanded 1`] = `
           aria-expanded={true}
           aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           Dropdown
           <CaretDownIcon
@@ -2295,20 +2512,23 @@ exports[`dropdown expanded 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
-      isOpen={true}
+      isOpen={null}
       onClick={[Function]}
     >
       <div
         aria-labelledby="Dropdown"
         className="pf-c-dropdown__menu"
-        hidden={false}
+        hidden={true}
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -2316,11 +2536,13 @@ exports[`dropdown expanded 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -2333,11 +2555,13 @@ exports[`dropdown expanded 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -2350,11 +2574,13 @@ exports[`dropdown expanded 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -2368,11 +2594,13 @@ exports[`dropdown expanded 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -2393,10 +2621,12 @@ exports[`dropdown expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -2408,11 +2638,13 @@ exports[`dropdown expanded 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -2425,11 +2657,13 @@ exports[`dropdown expanded 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -2437,7 +2671,7 @@ exports[`dropdown expanded 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -2519,9 +2753,13 @@ exports[`dropdown regular 1`] = `
   <div
     className="pf-c-dropdown"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -2532,6 +2770,8 @@ exports[`dropdown regular 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -2543,7 +2783,10 @@ exports[`dropdown regular 1`] = `
           aria-expanded={false}
           aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           Dropdown
           <CaretDownIcon
@@ -2571,7 +2814,7 @@ exports[`dropdown regular 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
       isOpen={false}
@@ -2584,7 +2827,10 @@ exports[`dropdown regular 1`] = `
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -2592,11 +2838,13 @@ exports[`dropdown regular 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -2609,11 +2857,13 @@ exports[`dropdown regular 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -2626,11 +2876,13 @@ exports[`dropdown regular 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -2644,11 +2896,13 @@ exports[`dropdown regular 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -2669,10 +2923,12 @@ exports[`dropdown regular 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -2684,11 +2940,13 @@ exports[`dropdown regular 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -2701,11 +2959,13 @@ exports[`dropdown regular 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -2713,7 +2973,7 @@ exports[`dropdown regular 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;
@@ -2795,9 +3055,13 @@ exports[`dropdown right aligned 1`] = `
   <div
     className="pf-c-dropdown pf-m-align-right"
     id="Dropdown"
+    onFocus={[Function]}
+    onKeyDown={[Function]}
   >
     <DropdownToggle
       className=""
+      focusOnReentry={null}
+      focusedItemRef={null}
       isActive={false}
       isFocused={false}
       isHovered={false}
@@ -2808,6 +3072,8 @@ exports[`dropdown right aligned 1`] = `
     >
       <DropdownToggle
         className=""
+        focusOnReentry={null}
+        focusedItemRef={null}
         isActive={false}
         isFocused={false}
         isHovered={false}
@@ -2819,7 +3085,10 @@ exports[`dropdown right aligned 1`] = `
           aria-expanded={false}
           aria-haspopup="true"
           className="pf-c-dropdown__toggle"
+          onBlur={[Function]}
           onClick={[Function]}
+          onClickCapture={[Function]}
+          onFocus={[Function]}
         >
           Dropdown
           <CaretDownIcon
@@ -2847,7 +3116,7 @@ exports[`dropdown right aligned 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-    <DropdownMenu
+    <[object Object]
       aria-labelledby="Dropdown"
       className=""
       isOpen={false}
@@ -2860,7 +3129,10 @@ exports[`dropdown right aligned 1`] = `
         onClick={[Function]}
         role="menu"
       >
-        <DropItems>
+        <DropItems
+          key=".0"
+          setFocusedItemRef={[Function]}
+        >
           <DropdownItem
             className=""
             component="a"
@@ -2868,11 +3140,13 @@ exports[`dropdown right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Link
@@ -2885,11 +3159,13 @@ exports[`dropdown right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Action
@@ -2902,11 +3178,13 @@ exports[`dropdown right aligned 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={true}
               className="pf-m-disabled"
               href="#"
+              onFocus={[Function]}
               role="menuitem"
               tabIndex={-1}
             >
@@ -2920,11 +3198,13 @@ exports[`dropdown right aligned 1`] = `
             isDisabled={true}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className="pf-m-disabled"
               disabled={true}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Disabled Action
@@ -2945,10 +3225,12 @@ exports[`dropdown right aligned 1`] = `
               isDisabled={false}
               isHovered={false}
               role="separator"
+              setFocusedItemRef={[Function]}
             >
               <div
                 className="pf-c-dropdown__separator"
                 href="#"
+                onFocus={[Function]}
                 role="separator"
               />
             </DropdownItem>
@@ -2960,11 +3242,13 @@ exports[`dropdown right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <a
               aria-disabled={false}
               className=""
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Link
@@ -2977,11 +3261,13 @@ exports[`dropdown right aligned 1`] = `
             isDisabled={false}
             isHovered={false}
             role="menuitem"
+            setFocusedItemRef={[Function]}
           >
             <button
               className=""
               disabled={false}
               href="#"
+              onFocus={[Function]}
               role="menuitem"
             >
               Separated Action
@@ -2989,7 +3275,7 @@ exports[`dropdown right aligned 1`] = `
           </DropdownItem>
         </DropItems>
       </div>
-    </DropdownMenu>
+    </[object Object]>
   </div>
 </Dropdown>
 `;

@@ -150,4 +150,36 @@ describe('API', () => {
     expect(mockToggle.mock.calls).toHaveLength(0);
     expect(mockSelect.mock.calls).toHaveLength(1);
   });
+
+  test('tabbing forward out of menu closes dropdown', () => {
+    const view = mount(
+      <Dropdown id="Dropdown" isOpen>
+        <DropdownItem>Link</DropdownItem>
+      </Dropdown>
+    );
+    view
+      .find(DropdownItem)
+      .childAt(0)
+      .simulate('focus');
+    view.simulate('keydown', { key: 'Tab' });
+
+    expect(view.find('.pf-c-dropdown').hasClass('pf-m-expanded')).toBeFalsy();
+    view.unmount();
+  });
+
+  test('tabbing backward out of menu closes dropdown', () => {
+    const view = mount(
+      <Dropdown id="Dropdown" isOpen>
+        <DropdownItem>Link</DropdownItem>
+      </Dropdown>
+    );
+    view
+      .find(Dropdown)
+      .childAt(0)
+      .simulate('focus');
+    view.simulate('keydown', { key: 'Tab', shiftKey: true });
+
+    expect(view.find('.pf-c-dropdown').hasClass('pf-m-expanded')).toBeFalsy();
+    view.unmount();
+  });
 });

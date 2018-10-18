@@ -18,11 +18,11 @@ const defaultProps = {
   isOpen: true
 };
 
-const DropdownMenu = ({ className, isOpen, children, ...props }) => (
-  <div {...props} className={css(styles.dropdownMenu, className)} role="menu" hidden={!isOpen}>
+const DropdownMenu = React.forwardRef(({ className, isOpen, children, ...props }, ref) => (
+  <div {...props} className={css(styles.dropdownMenu, className)} role="menu" hidden={!isOpen} ref={ref}>
     {children}
   </div>
-);
+));
 
 DropdownMenu.propTypes = propTypes;
 DropdownMenu.defaultProps = defaultProps;
