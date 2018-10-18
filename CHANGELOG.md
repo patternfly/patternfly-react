@@ -1,6 +1,77 @@
 
 ## Change Log (2018-10-18)
 
+#### :memo: Documentation
+* `patternfly-4`
+  * [#755](https://github.com/patternfly/patternfly-react/pull/755) docs(react-core): Updated with toolbar demo ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## patternfly3-react-lerna-root@7.3.8 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#810](https://github.com/patternfly/patternfly-react/pull/810) fix(CatalogTile): Catalog Tiles can shrink ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly-react-extensions@2.9.8 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#810](https://github.com/patternfly/patternfly-react/pull/810) fix(CatalogTile): Catalog Tiles can shrink ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly3-react-lerna-root@7.3.7 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#808](https://github.com/patternfly/patternfly-react/pull/808) fix(CatalogItemHeader): Make subtitle optional ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly-react-extensions@2.9.7 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#808](https://github.com/patternfly/patternfly-react/pull/808) fix(CatalogItemHeader): Make subtitle optional ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly4-react-lerna-root@1.12.2 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#806](https://github.com/patternfly/patternfly-react/pull/806) fix(ts-definitions): fix type definitions for radio ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-docs@3.17.10 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#806](https://github.com/patternfly/patternfly-react/pull/806) fix(ts-definitions): fix type definitions for radio ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-core@1.25.2 (2018-10-18)
+
 #### :bug: Bug Fix
 * `patternfly-4`
   * [#806](https://github.com/patternfly/patternfly-react/pull/806) fix(ts-definitions): fix type definitions for radio ([@priley86](https://github.com/priley86))

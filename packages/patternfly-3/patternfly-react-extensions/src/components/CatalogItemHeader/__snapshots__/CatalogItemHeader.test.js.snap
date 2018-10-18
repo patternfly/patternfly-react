@@ -78,13 +78,6 @@ exports[`CatalogItemHeader renders properly 1`] = `
       >
         Nginx
       </h1>
-      <h5
-        class="catalog-item-header-pf-subtitle"
-      >
-        <span>
-          provided by Nginx
-        </span>
-      </h5>
     </div>
   </header>
   <header

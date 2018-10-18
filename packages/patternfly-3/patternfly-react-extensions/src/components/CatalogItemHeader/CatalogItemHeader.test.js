@@ -27,7 +27,7 @@ test('CatalogItemHeader renders properly', () => {
           </span>
         }
       />
-      <CatalogItemHeader iconImg={ngnix} title="Nginx" vendor={<span>provided by Nginx</span>} />
+      <CatalogItemHeader iconImg={ngnix} title="Nginx" />
       <CatalogItemHeader
         className="test-catalog-item-header-icon-class"
         iconClass="fa fa-codepen"
