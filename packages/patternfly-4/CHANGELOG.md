@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.12.2"></a>
+## [1.12.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.12.1...patternfly4-react-lerna-root@1.12.2) (2018-10-18)
+
+
+### Bug Fixes
+
+* **ts-definitions:** fix type definitions for radio ([#806](https://github.com/patternfly/patternfly-react/issues/806)) ([66ce547](https://github.com/patternfly/patternfly-react/commit/66ce547))
+
+
+
+
 <a name="1.12.1"></a>
 ## [1.12.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.12.0...patternfly4-react-lerna-root@1.12.1) (2018-10-18)
 

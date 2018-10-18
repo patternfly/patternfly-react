@@ -2,6 +2,148 @@
 ## Change Log (2018-10-18)
 
 #### :bug: Bug Fix
+* `patternfly-4`
+  * [#806](https://github.com/patternfly/patternfly-react/pull/806) fix(ts-definitions): fix type definitions for radio ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## patternfly4-react-lerna-root@1.12.1 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#804](https://github.com/patternfly/patternfly-react/pull/804) fix(CatalogTile): Fix to not allow the description text to overflow the tile ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#801](https://github.com/patternfly/patternfly-react/pull/801) fix(Wizard.Pattern): allow disabling cancel button ([@suomiy](https://github.com/suomiy))
+* `patternfly-4`
+  * [#800](https://github.com/patternfly/patternfly-react/pull/800) fix(typescript definitions): fix ts defs for checkbox, BackgroundImage, and Form ([@priley86](https://github.com/priley86))
+  * [#792](https://github.com/patternfly/patternfly-react/pull/792) fix(Form): Do not add any class if action modifier is missing ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#794](https://github.com/patternfly/patternfly-react/pull/794) Fix typo in story file name ([@cben](https://github.com/cben))
+
+#### Committers: 5
+- Beni Cherniavsky-Paskin ([@cben](https://github.com/cben))
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@suomiy](https://github.com/suomiy)
+
+
+## patternfly3-react-lerna-root@7.3.6 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#804](https://github.com/patternfly/patternfly-react/pull/804) fix(CatalogTile): Fix to not allow the description text to overflow the tile ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#801](https://github.com/patternfly/patternfly-react/pull/801) fix(Wizard.Pattern): allow disabling cancel button ([@suomiy](https://github.com/suomiy))
+* `patternfly-4`
+  * [#800](https://github.com/patternfly/patternfly-react/pull/800) fix(typescript definitions): fix ts defs for checkbox, BackgroundImage, and Form ([@priley86](https://github.com/priley86))
+  * [#792](https://github.com/patternfly/patternfly-react/pull/792) fix(Form): Do not add any class if action modifier is missing ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#794](https://github.com/patternfly/patternfly-react/pull/794) Fix typo in story file name ([@cben](https://github.com/cben))
+
+#### Committers: 5
+- Beni Cherniavsky-Paskin ([@cben](https://github.com/cben))
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@suomiy](https://github.com/suomiy)
+
+
+## patternfly-react@2.21.4 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#804](https://github.com/patternfly/patternfly-react/pull/804) fix(CatalogTile): Fix to not allow the description text to overflow the tile ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#801](https://github.com/patternfly/patternfly-react/pull/801) fix(Wizard.Pattern): allow disabling cancel button ([@suomiy](https://github.com/suomiy))
+* `patternfly-4`
+  * [#800](https://github.com/patternfly/patternfly-react/pull/800) fix(typescript definitions): fix ts defs for checkbox, BackgroundImage, and Form ([@priley86](https://github.com/priley86))
+  * [#792](https://github.com/patternfly/patternfly-react/pull/792) fix(Form): Do not add any class if action modifier is missing ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#794](https://github.com/patternfly/patternfly-react/pull/794) Fix typo in story file name ([@cben](https://github.com/cben))
+
+#### Committers: 5
+- Beni Cherniavsky-Paskin ([@cben](https://github.com/cben))
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@suomiy](https://github.com/suomiy)
+
+
+## patternfly-react-extensions@2.9.6 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#804](https://github.com/patternfly/patternfly-react/pull/804) fix(CatalogTile): Fix to not allow the description text to overflow the tile ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#801](https://github.com/patternfly/patternfly-react/pull/801) fix(Wizard.Pattern): allow disabling cancel button ([@suomiy](https://github.com/suomiy))
+* `patternfly-4`
+  * [#800](https://github.com/patternfly/patternfly-react/pull/800) fix(typescript definitions): fix ts defs for checkbox, BackgroundImage, and Form ([@priley86](https://github.com/priley86))
+  * [#792](https://github.com/patternfly/patternfly-react/pull/792) fix(Form): Do not add any class if action modifier is missing ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#794](https://github.com/patternfly/patternfly-react/pull/794) Fix typo in story file name ([@cben](https://github.com/cben))
+
+#### Committers: 5
+- Beni Cherniavsky-Paskin ([@cben](https://github.com/cben))
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@suomiy](https://github.com/suomiy)
+
+
+## @patternfly/react-docs@3.17.9 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#804](https://github.com/patternfly/patternfly-react/pull/804) fix(CatalogTile): Fix to not allow the description text to overflow the tile ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#801](https://github.com/patternfly/patternfly-react/pull/801) fix(Wizard.Pattern): allow disabling cancel button ([@suomiy](https://github.com/suomiy))
+* `patternfly-4`
+  * [#800](https://github.com/patternfly/patternfly-react/pull/800) fix(typescript definitions): fix ts defs for checkbox, BackgroundImage, and Form ([@priley86](https://github.com/priley86))
+  * [#792](https://github.com/patternfly/patternfly-react/pull/792) fix(Form): Do not add any class if action modifier is missing ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#794](https://github.com/patternfly/patternfly-react/pull/794) Fix typo in story file name ([@cben](https://github.com/cben))
+
+#### Committers: 5
+- Beni Cherniavsky-Paskin ([@cben](https://github.com/cben))
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@suomiy](https://github.com/suomiy)
+
+
+## @patternfly/react-core@1.25.1 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#804](https://github.com/patternfly/patternfly-react/pull/804) fix(CatalogTile): Fix to not allow the description text to overflow the tile ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#801](https://github.com/patternfly/patternfly-react/pull/801) fix(Wizard.Pattern): allow disabling cancel button ([@suomiy](https://github.com/suomiy))
+* `patternfly-4`
+  * [#800](https://github.com/patternfly/patternfly-react/pull/800) fix(typescript definitions): fix ts defs for checkbox, BackgroundImage, and Form ([@priley86](https://github.com/priley86))
+  * [#792](https://github.com/patternfly/patternfly-react/pull/792) fix(Form): Do not add any class if action modifier is missing ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#794](https://github.com/patternfly/patternfly-react/pull/794) Fix typo in story file name ([@cben](https://github.com/cben))
+
+#### Committers: 5
+- Beni Cherniavsky-Paskin ([@cben](https://github.com/cben))
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@suomiy](https://github.com/suomiy)
+
+
+## @patternfly/react-console@1.4.11 (2018-10-18)
+
+#### :bug: Bug Fix
 * `patternfly-3`
   * [#804](https://github.com/patternfly/patternfly-react/pull/804) fix(CatalogTile): Fix to not allow the description text to overflow the tile ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
   * [#801](https://github.com/patternfly/patternfly-react/pull/801) fix(Wizard.Pattern): allow disabling cancel button ([@suomiy](https://github.com/suomiy))
