@@ -46,7 +46,7 @@ stories.add(
         />
       </div>
       <div style={{ marginBottom: '40px' }}>
-        <CatalogItemHeader iconImg={ngnix} title="Nginx" vendor={<span>provided by Nginx</span>} />
+        <CatalogItemHeader iconImg={ngnix} title="Nginx" />
       </div>
       <div style={{ marginBottom: '40px' }}>
         <CatalogItemHeader iconClass="fa fa-codepen" title="CodePen" vendor="provided by CodePen" />
