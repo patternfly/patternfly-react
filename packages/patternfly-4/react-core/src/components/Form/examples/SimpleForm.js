@@ -66,24 +66,14 @@ class SimpleForm extends React.Component {
           />
         </FormGroup>
         <FormGroup isInline label="required How can we contact you?" isRequired fieldId="inline-radio1">
-          <div className="pf-c-check">
-            <Radio className="pf-c-check__input" id="inlineradio1" name="inlineradios" />
-            <label className="pf-c-check__label" htmlFor="inlineradio1">
-              Email
-            </label>{' '}
-          </div>{' '}
-          <div className="pf-c-check">
-            <Radio className="pf-c-check__input" id="inlineradio2" name="inlineradios" />
-            <label className="pf-c-check__label" htmlFor="inlineradio2">
-              Phone
-            </label>{' '}
-          </div>{' '}
-          <div className="pf-c-check">
-            <Radio className="pf-c-check__input" id="inlineradio3" name="inlineradios" />
-            <label className="pf-c-check__label" htmlFor="inlineradio3">
-              Please don't contact me
-            </label>
-          </div>
+          <Radio id="inlineradio1" name="inlineradios" label="Email" aria-label="Email" />
+          <Radio id="inlineradio2" name="inlineradios" label="Phone" aria-label="Phone" />
+          <Radio
+            id="inlineradio3"
+            name="inlineradios"
+            label="Please don't contact me"
+            aria-label="Please don't contact me"
+          />
         </FormGroup>
         <FormGroup fieldId="checkbox1">
           <Checkbox label="I'd like updates via email" id="checkbox1" name="checkbox1" aria-label="Update via email" />
