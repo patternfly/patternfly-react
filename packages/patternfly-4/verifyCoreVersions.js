@@ -8,7 +8,7 @@ const versions = new Map();
 const corePackageName = '@patternfly/patternfly-next';
 
 packages
-  .filter(({ location }) => location.match(/patternfly-4/))
+  .filter(({ location }) => location.match(/patternfly-4/) || location.match('/react-icons'))
   .forEach(({ name, dependencies = {}, devDependencies = {}, optionalDependencies = {}, peerDependencies = {} }) => {
     [
       ...Object.entries(dependencies),
