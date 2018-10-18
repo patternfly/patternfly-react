@@ -8,7 +8,6 @@ const versions = new Map();
 const corePackageName = '@patternfly/patternfly-next';
 
 packages
-  .filter(({ location }) => location.match(/patternfly-4/))
   .forEach(({ name, dependencies = {}, devDependencies = {}, optionalDependencies = {}, peerDependencies = {} }) => {
     [
       ...Object.entries(dependencies),
