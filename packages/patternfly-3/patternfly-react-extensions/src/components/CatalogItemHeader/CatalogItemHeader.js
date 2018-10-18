@@ -11,7 +11,7 @@ const CatalogItemHeader = ({ className, iconImg, iconClass, title, vendor, ...pr
       {!iconImg && iconClass && <span className={`catalog-item-header-pf-icon ${iconClass}`} />}
       <div className="catalog-item-header-pf-text">
         <h1 className="catalog-item-header-pf-title">{title}</h1>
-        <h5 className="catalog-item-header-pf-subtitle">{vendor}</h5>
+        {vendor && <h5 className="catalog-item-header-pf-subtitle">{vendor}</h5>}
       </div>
     </header>
   );
