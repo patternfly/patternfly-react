@@ -2,6 +2,36 @@
 ## Change Log (2018-10-18)
 
 #### :bug: Bug Fix
+* `patternfly-3`
+  * [#808](https://github.com/patternfly/patternfly-react/pull/808) fix(CatalogItemHeader): Make subtitle optional ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly4-react-lerna-root@1.12.2 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#806](https://github.com/patternfly/patternfly-react/pull/806) fix(ts-definitions): fix type definitions for radio ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-docs@3.17.10 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#806](https://github.com/patternfly/patternfly-react/pull/806) fix(ts-definitions): fix type definitions for radio ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-core@1.25.2 (2018-10-18)
+
+#### :bug: Bug Fix
 * `patternfly-4`
   * [#806](https://github.com/patternfly/patternfly-react/pull/806) fix(ts-definitions): fix type definitions for radio ([@priley86](https://github.com/priley86))
 

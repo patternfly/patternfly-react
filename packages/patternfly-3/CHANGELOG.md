@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.3.7"></a>
+## [7.3.7](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.6...patternfly3-react-lerna-root@7.3.7) (2018-10-18)
+
+
+### Bug Fixes
+
+* **CatalogItemHeader:** Make subtitle optional ([#808](https://github.com/patternfly/patternfly-react/issues/808)) ([b795f6c](https://github.com/patternfly/patternfly-react/commit/b795f6c))
+
+
+
+
 <a name="7.3.6"></a>
 ## [7.3.6](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.5...patternfly3-react-lerna-root@7.3.6) (2018-10-18)
 
