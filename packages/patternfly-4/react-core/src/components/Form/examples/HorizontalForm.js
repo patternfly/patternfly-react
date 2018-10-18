@@ -80,7 +80,7 @@ class HorizontalForm extends React.Component {
               <SelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
             ))}
           </Select>
-        </FormGroup>{' '}
+        </FormGroup>
         <FormGroup label="Your experience" fieldId="horizontal-form-exp">
           <TextArea
             value={value3}
@@ -90,18 +90,8 @@ class HorizontalForm extends React.Component {
           />
         </FormGroup>
         <FormGroup label="Can we follow up via email?" fieldId="horizontal-radio1">
-          <div className="pf-c-check">
-            <Radio className="pf-c-check__input" id="horizontal-radio1" name="horizontal-radios" />
-            <label className="pf-c-check__label" htmlFor="horizontal-radio1">
-              Yes
-            </label>
-          </div>
-          <div className="pf-c-check">
-            <Radio className="pf-c-check__input" id="horizontal-radio2" name="horizontal-radios" />
-            <label className="pf-c-check__label" htmlFor="horizontal-radio2">
-              No
-            </label>
-          </div>
+          <Radio label="Yes" aria-label="yes" id="horizontal-radio1" name="horizontal-radios" />
+          <Radio label="No" aria-label="no" id="horizontal-radio2" name="horizontal-radios" />
         </FormGroup>
         <ActionGroup>
           <Toolbar>
