@@ -2,6 +2,7 @@
 export * from './AboutModal';
 export * from './Alert';
 export * from './Avatar';
+export * from './Backdrop';
 export * from './BackgroundImage';
 export * from './Badge';
 export * from './Brand';
