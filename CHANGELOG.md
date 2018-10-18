@@ -1,5 +1,27 @@
 
-## Change Log (2018-10-18)
+## patternfly4-react-lerna-root@1.12.3 (2018-10-18)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#755](https://github.com/patternfly/patternfly-react/pull/755) docs(react-core): Updated with toolbar demo ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## @patternfly/react-docs@3.17.11 (2018-10-18)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#755](https://github.com/patternfly/patternfly-react/pull/755) docs(react-core): Updated with toolbar demo ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## @patternfly/react-core@1.25.3 (2018-10-18)
 
 #### :memo: Documentation
 * `patternfly-4`

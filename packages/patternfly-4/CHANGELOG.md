@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.12.4"></a>
+## [1.12.4](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.12.3...patternfly4-react-lerna-root@1.12.4) (2018-10-18)
+
+
+
+
+**Note:** Version bump only for package patternfly4-react-lerna-root
+
 <a name="1.12.3"></a>
 ## [1.12.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.12.2...patternfly4-react-lerna-root@1.12.3) (2018-10-18)
 
