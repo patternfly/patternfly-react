@@ -1,6 +1,27 @@
 
 ## Change Log (2018-10-18)
 
+#### :memo: Documentation
+* `patternfly-4`
+  * [#755](https://github.com/patternfly/patternfly-react/pull/755) docs(react-core): Updated with toolbar demo ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## patternfly3-react-lerna-root@7.3.8 (2018-10-18)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#810](https://github.com/patternfly/patternfly-react/pull/810) fix(CatalogTile): Catalog Tiles can shrink ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly-react-extensions@2.9.8 (2018-10-18)
+
 #### :bug: Bug Fix
 * `patternfly-3`
   * [#810](https://github.com/patternfly/patternfly-react/pull/810) fix(CatalogTile): Catalog Tiles can shrink ([@rhamilto](https://github.com/rhamilto))
