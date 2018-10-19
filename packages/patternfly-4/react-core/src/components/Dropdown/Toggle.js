@@ -51,8 +51,9 @@ class DropdownToggle extends Component {
   };
 
   onEscPress = event => {
+    const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
-    if (keyCode === 27) {
+    if (keyCode === 27 && parentRef && parentRef.contains(event.target)) {
       this.props.onToggle && this.props.onToggle(false);
       this.toggle.focus();
     }

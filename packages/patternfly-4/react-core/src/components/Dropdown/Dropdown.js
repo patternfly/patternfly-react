@@ -2,6 +2,7 @@ import React, { Children, cloneElement } from 'react';
 import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import FocusTrap from 'focus-trap-react';
 import DropdownMenu from './DropdownMenu';
 
 export const DropdownPosition = {
@@ -71,9 +72,13 @@ class Dropdown extends React.Component {
         }}
       >
         {toggle && Children.map(toggle, oneToggle => cloneElement(oneToggle, { parentRef: this.parentRef, isOpen }))}
-        <DropdownMenu isOpen={isOpen} aria-labelledby={id} onClick={event => onSelect && onSelect(event)}>
-          {children}
-        </DropdownMenu>
+        {isOpen && (
+          <FocusTrap>
+            <DropdownMenu isOpen={isOpen} aria-labelledby={id} onClick={event => onSelect && onSelect(event)}>
+              {children}
+            </DropdownMenu>
+          </FocusTrap>
+        )}
       </div>
     );
   }
