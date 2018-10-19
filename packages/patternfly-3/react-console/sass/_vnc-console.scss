@@ -1,4 +1,9 @@
 .vnc-console {
+  .toolbar-pf-results {
+    padding: 15px 0;
+    border-top: none;
+    margin-top: 0px;
+  }
   .vnc-console-connecting {
     background-color: $color-pf-green;
   }
