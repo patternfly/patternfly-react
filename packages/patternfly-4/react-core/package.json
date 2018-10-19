@@ -28,7 +28,8 @@
     "@patternfly/react-icons": "^2.6.0",
     "@patternfly/react-styles": "^2.3.0",
     "exenv": "^1.2.2",
-    "focus-trap-react": "^4.0.1"
+    "focus-trap-react": "^4.0.1",
+    "react-transition-group": "2.x"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",

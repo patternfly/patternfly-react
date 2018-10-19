@@ -3,6 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
 import a11yStyles from '@patternfly/patternfly-next/utilities/Accessibility/accessibility.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import Transition from 'react-transition-group/Transition';
 import NavToggle from './NavToggle';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import { NavContext } from './Nav';
@@ -58,43 +59,47 @@ class NavExpandable extends React.Component {
         {context => (
           <NavToggle defaultValue={defaultExpanded} groupId={groupId} onToggle={context.onToggle}>
             {({ value: isExpanded, toggle }) => (
-              <li
-                className={css(
-                  styles.navItem,
-                  isExpanded && styles.modifiers.expanded,
-                  isActive && styles.modifiers.current,
-                  className
+              <Transition in={isExpanded} timeout={{ enter: 50, exit: 600 }}>
+                {(transitionState) => (
+                  <li
+                    className={css(
+                      styles.navItem,
+                      transitionState === 'entered' && styles.modifiers.expanded,
+                      isActive && styles.modifiers.current,
+                      className
+                    )}
+                    onClick={toggle}
+                    {...props}
+                  >
+                    <a
+                      data-component="pf-nav-expandable"
+                      className={css(styles.navLink)}
+                      id={srText ? null : this.id}
+                      href="#"
+                      onClick={e => e.preventDefault()}
+                      onMouseDown={e => e.preventDefault()}
+                      aria-expanded={transitionState === 'entered' || transitionState === 'exiting'}
+                    >
+                      {title}
+                      <span className={css(styles.navToggle)}>
+                        <AngleRightIcon aria-hidden="true" />
+                      </span>
+                    </a>
+                    <section
+                      className={css(styles.navSubnav)}
+                      aria-labelledby={this.id}
+                      hidden={transitionState === 'exited'}
+                    >
+                      {srText && (
+                        <h2 className={css(a11yStyles.srOnly)} id={this.id}>
+                          {srText}
+                        </h2>
+                      )}
+                      <ul className={css(styles.navSimpleList)}>{children}</ul>
+                    </section>
+                  </li>
                 )}
-                onClick={toggle}
-                {...props}
-              >
-                <a
-                  data-component="pf-nav-expandable"
-                  className={css(styles.navLink)}
-                  id={srText ? null : this.id}
-                  href="#"
-                  onClick={e => e.preventDefault()}
-                  onMouseDown={e => e.preventDefault()}
-                  aria-expanded={isExpanded}
-                >
-                  {title}
-                  <span className={css(styles.navToggle)}>
-                    <AngleRightIcon aria-hidden="true" />
-                  </span>
-                </a>
-                <section
-                  className={css(styles.navSubnav)}
-                  aria-labelledby={this.id}
-                  hidden={isExpanded ? null : true}
-                >
-                  {srText && (
-                    <h2 className={css(a11yStyles.srOnly)} id={this.id}>
-                      {srText}
-                    </h2>
-                  )}
-                  <ul className={css(styles.navSimpleList)}>{children}</ul>
-                </section>
-              </li>
+              </Transition>
             )}
           </NavToggle>
         )}
