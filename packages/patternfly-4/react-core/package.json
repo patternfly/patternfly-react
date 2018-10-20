@@ -32,7 +32,9 @@
     "@patternfly/react-tokens": "^1.9.6",
     "@tippy.js/react": "^1.1.1",
     "exenv": "^1.2.2",
-    "focus-trap-react": "^4.0.1"
+    "focus-trap-react": "^4.0.1",
+    "lodash": "^4.17.11",
+    "reactabular-table": "^8.14.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
