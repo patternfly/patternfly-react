@@ -11,6 +11,7 @@ import ProgressSuccess from './examples/ProgressSuccess';
 import ProgressWithoutMeasure from './examples/ProgressWithoutMeasure';
 import SmallProgress from './examples/SmallProgress';
 import ProgressWithDynamicDescription from './examples/ProgressWithDynamicDescription';
+import LabeledProgress from './examples/LabeledProgress';
 
 export default {
   title: 'Progress',
@@ -24,6 +25,7 @@ export default {
   },
   examples: [
     Simple,
+    LabeledProgress,
     SmallProgress,
     LargeProgress,
     ProgressOutside,

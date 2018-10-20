@@ -13,6 +13,11 @@ test('no value specified', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('additional label', () => {
+  const view = mount(<Progress id="additional-label" value={33} label="Additional label" />);
+  expect(view).toMatchSnapshot();
+});
+
 test('Progress with aria-valuetext', () => {
   const view = mount(<Progress value={33} id="progress-aria-valuetext" valueText="Descriptive text here" />);
   expect(view).toMatchSnapshot();

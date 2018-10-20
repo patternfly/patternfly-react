@@ -1,6 +1,11 @@
 import React, { Fragment } from 'react';
-import styles from '@patternfly/patternfly-next/components/Progress/progress.css';
-import { css } from '@patternfly/react-styles';
+import {
+  progressDescription,
+  progressMeasure,
+  progressStatusIcon,
+  progressStatus
+} from '@patternfly/patternfly-next/components/Progress/progress.css';
+import { css, StyleSheet } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { CheckCircleIcon, TimesCircleIcon } from '@patternfly/react-icons';
 import ProgressBar from './ProgressBar';
@@ -23,6 +28,8 @@ const propTypes = {
   parentId: PropTypes.string.isRequired,
   /** Progress title. */
   title: PropTypes.string,
+  /** Label to indicate what progress is showing. */
+  label: PropTypes.node,
   /** Type of progress status. */
   variant: PropTypes.oneOf(Object.values(ProgressVariant)),
   /** Location of progress value. */
@@ -42,20 +49,22 @@ const variantToIcon = {
   [ProgressVariant.success]: CheckCircleIcon
 };
 
-const ProgressContainer = ({ value, title, parentId, variant, measureLocation }) => {
+const ProgressContainer = ({ value, title, parentId, label, variant, measureLocation }) => {
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   return (
     <Fragment>
-      <div className={css(styles.progressDescription)} id={`${parentId}-description`}>
+      <div className={css(progressDescription)} id={`${parentId}-description`}>
         {title}
       </div>
-      <div className={css(styles.progressStatus)}>
+      <div className={css(progressStatus)}>
         {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
-          <span className={css(styles.progressMeasure)}>{value}%</span>
+          <span className={css(progressMeasure)}>
+            {label || `${value}%`}
+          </span>
         )}
         {measureLocation !== ProgressMeasureLocation.none &&
           variantToIcon.hasOwnProperty(variant) && (
-            <span className={css(styles.progressStatusIcon)}>
+            <span className={css(progressStatusIcon)}>
               <StatusIcon />
             </span>
           )}
