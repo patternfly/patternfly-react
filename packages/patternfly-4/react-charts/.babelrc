@@ -12,7 +12,8 @@
             "outDir": "./dist/esm",
             "useModules": true
           }
-        ]
+        ],
+        "lodash"
       ]
     },
     "production:cjs": {
@@ -24,7 +25,8 @@
             "outDir": "./dist/js",
             "useModules": false
           }
-        ]
+        ],
+        "lodash"
       ]
     }
   }

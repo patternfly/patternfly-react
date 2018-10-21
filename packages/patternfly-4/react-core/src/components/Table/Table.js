@@ -3,6 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Table/table.css';
 import { Provider } from 'reactabular-table';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { SortByDirection } from './SortColumn';
 
 export const TableGridBreakpoint = {
   grid: 'grid',
@@ -15,6 +16,11 @@ const propTypes = {
   className: PropTypes.string,
   columns: PropTypes.array,
   gridBreakPoint: PropTypes.oneOf(Object.values(TableGridBreakpoint)),
+  sortBy: PropTypes.shape({
+    index: PropTypes.number,
+    direction: PropTypes.oneOf(Object.values(SortByDirection))
+  }),
+  onSort: PropTypes.func,
   header: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
       return new Error('Header is required if no aria-label or caption is supplied!');
@@ -53,10 +59,23 @@ class Table extends React.Component {
 
   render() {
     const { headerData } = this.state;
-    const { caption, header, className, gridBreakPoint, children, ...props } = this.props;
+    const {
+      caption,
+      header,
+      className,
+      gridBreakPoint,
+      onSort,
+      onSelect,
+      sortBy,
+      children,
+      ...props
+    } = this.props;
     return (
       <TableContext.Provider value={{
         headerData,
+        sortBy,
+        onSort,
+        onSelect,
         updateHeaderData: (headerData) => this.setState({ headerData })
       }}>
         <Provider {...props} columns={headerData} role="grid" className={css(styles.table, getModifier(styles, gridBreakPoint, styles.modifiers.grid), className)}>

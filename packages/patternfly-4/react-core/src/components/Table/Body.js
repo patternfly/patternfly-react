@@ -16,7 +16,7 @@ const defaultProps = {
 };
 
 const ContextBody = ({ className, headerData, rows, rowKey, children, ...props }) => {
-  const mappedRows = headerData.length !== 0 && rows.map((oneRow, oneRowKey) => oneRow.reduce(
+  const mappedRows = headerData.length !== 0 && rows.map((oneRow, oneRowKey) => oneRow && oneRow.reduce(
     (acc, curr, key) => ({
       ...acc,
       ...typeof curr === 'string' && headerData.hasOwnProperty(key) ? ({

@@ -9,11 +9,12 @@ const generateHeader = ({ transforms: origTransforms, header }, title) => ({
   ]
 });
 
-export const mapHeader = (column) => {
+export const mapHeader = (column, extra) => {
   const title = typeof column === 'string' ? column : column.title;
   const { transforms, props, ...rest } = column.hasOwnProperty('header') ? column.header : {};
   return ({
     property: title.toLowerCase(),
+    extraParams: extra,
     header: {
       ...generateHeader(column, title),
       ...rest,
