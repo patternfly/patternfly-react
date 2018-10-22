@@ -25,9 +25,7 @@ const Login = ({ className, children, footer, header, ...props }) => (
   <div {...props} className={css(styles.login, className)}>
     <div className={css(styles.loginContainer)}>
       {header}
-      <main className={css(styles.loginMain)}>
-        {children}
-      </main>
+      <main className={css(styles.loginMain)}>{children}</main>
       {footer}
     </div>
   </div>

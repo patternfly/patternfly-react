@@ -1,14 +1,30 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import LoginBox from './LoginBox';
 import LoginBoxBody from './LoginBoxBody';
 import LoginBoxHeader from './LoginBoxHeader';
 import LoginBoxFooter from './LoginBoxFooter';
+import { Dropdown, DropdownItem } from '../Dropdown';
+
+const subtitle = (
+  <React.Fragment>
+    Login to your account <a href="https://www.patternfly.org">Need an account?</a>
+  </React.Fragment>
+);
+const dropdownToggle = jest.fn();
+
+const myDropdown = (
+  <Dropdown toggle={dropdownToggle}>
+    <DropdownItem>English</DropdownItem>
+  </Dropdown>
+);
 
 const LoginBoxContent = () => (
   <React.Fragment>
     <LoginBox>
-      <LoginBoxHeader>LoginBox Header</LoginBoxHeader>
+      <LoginBoxHeader title="title" subtitle={subtitle} dropdown={myDropdown}>
+        LoginBox Header
+      </LoginBoxHeader>
       <LoginBoxBody>LoginBox Body</LoginBoxBody>
       <LoginBoxFooter>LoginBox Footer</LoginBoxFooter>
     </LoginBox>
@@ -16,7 +32,7 @@ const LoginBoxContent = () => (
 );
 
 test('simple LoginBox', () => {
-  const view = mount(<LoginBoxContent />);
+  const view = shallow(<LoginBoxContent />);
   expect(view).toMatchSnapshot();
 });
 

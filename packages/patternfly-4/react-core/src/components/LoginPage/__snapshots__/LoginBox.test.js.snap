@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`className is added to the root element 1`] = `"pf-c-login-box extra-class"`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+.pf-c-login-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+<div
+  className="pf-c-login-box"
+/>
+`;
+
+exports[`simple LoginBox 1`] = `
+<React.Fragment>
+  <LoginBox
+    className=""
+  >
+    <LoginBoxHeader
+      className=""
+      dropdown={
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={Array []}
+          isOpen={false}
+          isPlain={false}
+          onSelect={[Function]}
+          position="left"
+          toggle={[MockFunction]}
+        >
+          <Item
+            className=""
+            component="a"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+          >
+            English
+          </Item>
+        </Dropdown>
+      }
+      subtitle={
+        <React.Fragment>
+          Login to your account 
+          <a
+            href="https://www.patternfly.org"
+          >
+            Need an account?
+          </a>
+        </React.Fragment>
+      }
+      title="title"
+    >
+      LoginBox Header
+    </LoginBoxHeader>
+    <LoginBoxBody
+      className=""
+    >
+      LoginBox Body
+    </LoginBoxBody>
+    <LoginBoxFooter
+      className=""
+    >
+      LoginBox Footer
+    </LoginBoxFooter>
+  </LoginBox>
+</React.Fragment>
+`;
