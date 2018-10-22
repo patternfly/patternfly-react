@@ -14,7 +14,8 @@ const propTypes = {
     direction: PropTypes.oneOf(Object.values(SortByDirection))
   }),
   onSort: PropTypes.func,
-  onSelect: PropTypes.func
+  onSelect: PropTypes.func,
+  actions: PropTypes.array
 };
 
 const defaultProps = {
@@ -26,17 +27,20 @@ const defaultProps = {
 
 class ContextHeader extends React.Component {
   shouldComponentUpdate(nextProps) {
-    const { sortBy: nextSortBy } = nextProps;
-    const { sortBy } = this.props;
+    const { sortBy: nextSortBy, actions: nextAction } = nextProps;
+    const { sortBy, actions } = this.props;
     if (nextSortBy && sortBy) {
       return nextSortBy.index !== sortBy.index || nextSortBy.direction !== sortBy.direction;
+    }
+    if (nextAction && actions) {
+      return !isEqual(nextAction, actions);
     }
     return !isEqual(nextProps.headerRows, this.props.headerRows);
   }
 
   headerColumns() {
-    const { headerRows, sortBy, onSort, onSelect } = this.props;
-    return calculateColumns(headerRows, { sortBy, onSort, onSelect });
+    const { headerRows, sortBy, onSort, onSelect, actions } = this.props;
+    return calculateColumns(headerRows, { sortBy, onSort, onSelect, actions });
   }
 
   componentDidUpdate() {
@@ -48,7 +52,7 @@ class ContextHeader extends React.Component {
   }
 
   render() {
-    const { className, headerRows, sortBy, updateHeaderData, onSort, onSelect, ...props } = this.props;
+    const { className, headerRows, sortBy, updateHeaderData, onSort, onSelect, actions, ...props } = this.props;
     return (
       <Header headerRows={[this.headerColumns()]} {...props} className={className} />
     );
@@ -57,12 +61,13 @@ class ContextHeader extends React.Component {
 
 const TableHeader = ({ headerData, ...props }) => (
   <TableContext.Consumer>
-    {({ updateHeaderData, onSort, sortBy, onSelect }) => (
+    {({ updateHeaderData, onSort, sortBy, onSelect, actions }) => (
       <ContextHeader
         {...props}
         updateHeaderData={updateHeaderData}
         onSort={onSort}
         sortBy={sortBy}
+        actions={actions}
         onSelect={onSelect}
       />
     )}

@@ -1,4 +1,4 @@
-import { scopeColTransformer, selectable } from './transformers';
+import { scopeColTransformer, selectable, cellActions } from './transformers';
 import { defaultTitle } from './formatters';
 
 const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => ({
@@ -50,10 +50,18 @@ const selectableTransforms = ({ onSelect }) => [
   }] : []
 ]
 
+const actionsTransforms = ({ actions }) => [
+  ...actions ? [{
+    title: '',
+    cellTransforms: [cellActions(actions)]
+  }] : []
+]
+
 export const calculateColumns = (headerRows, extra) => {
   return headerRows && [
     ...selectableTransforms(extra),
-    ...headerRows
+    ...headerRows,
+    ...actionsTransforms(extra)
   ].map(oneCol => ({
     ...mapHeader(oneCol, extra)
   })

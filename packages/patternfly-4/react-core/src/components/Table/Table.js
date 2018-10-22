@@ -22,6 +22,7 @@ const propTypes = {
   }),
   onSelect: PropTypes.func,
   onSort: PropTypes.func,
+  actions: PropTypes.array,
   header: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
       return new Error('Header is required if no aria-label or caption is supplied!');
@@ -68,6 +69,7 @@ class Table extends React.Component {
       onSelect,
       sortBy,
       children,
+      actions,
       ...props
     } = this.props;
 
@@ -77,6 +79,7 @@ class Table extends React.Component {
         sortBy,
         onSort,
         onSelect,
+        actions,
         updateHeaderData: (headerData) => this.setState({ headerData })
       }}>
         <Provider {...props} columns={headerData} role="grid" className={css(styles.table, getModifier(styles, gridBreakPoint, styles.modifiers.grid), className)}>
