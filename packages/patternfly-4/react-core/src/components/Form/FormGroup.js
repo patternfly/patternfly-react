@@ -5,40 +5,9 @@ import { ASTERISK } from '../../internal/htmlConstants';
 import { FormContext } from '../Form/FormContext';
 import { css, getModifier } from '@patternfly/react-styles';
 
-const childrenArrayContains = (childrenArray, attribute, errorMessage) => {
-  let throwError = true;
-  childrenArray.forEach(child => {
-    if (child.props[attribute]) {
-      throwError = false;
-    }
-  });
-  if (throwError) {
-    return new Error(errorMessage);
-  }
-  return null;
-};
-
 const propTypes = {
   /** Anything that can be rendered as FormGroup content. */
-  children: props => {
-    if (!props.label) {
-      if (Array.isArray(props.children)) {
-        return childrenArrayContains(
-          props.children,
-          'aria-label',
-          `When label is not defined, at least one of Form Group children should have an aria-label attribute.`
-        );
-      } else if (!props.children.props['aria-label']) {
-        return new Error(`When label is not defined, a Form Group child should have an aria-label attribute.`);
-      }
-    }
-    if (Array.isArray(props.children)) {
-      return childrenArrayContains(props.children, 'id', `At least one of Form Group children should have an id.`);
-    } else if (!props.children.props.id) {
-      return new Error(`A child element of Form Group has to have an id.`);
-    }
-    return null;
-  },
+  children: PropTypes.node,
   /** Additional classes added to the FormGroup. */
   className: PropTypes.string,
   /** Label text before the field. */
