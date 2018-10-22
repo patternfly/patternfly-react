@@ -10,7 +10,7 @@ const images = {
   [BackgroundImageSrc.xl]: '/assets/images/pfbg_2000.jpg',
   [BackgroundImageSrc.xs]: '/assets/images/pfbg_576.jpg',
   [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
-  [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg'
+  [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg#image_overlay'
 };
 
 class SimpleBackgroundImage extends React.Component {
