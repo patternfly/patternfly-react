@@ -16,15 +16,23 @@ const defaultProps = {
 };
 
 const ContextBody = ({ className, headerData, rows, rowKey, children, ...props }) => {
-  const mappedRows = headerData.length !== 0 && rows.map((oneRow, oneRowKey) => oneRow && oneRow.reduce(
-    (acc, curr, key) => ({
-      ...acc,
-      ...typeof curr === 'string' && headerData.hasOwnProperty(key) ? ({
-        [headerData[key].property]: curr
-      }) : curr
-    }),
-    { id: oneRowKey })
-  );
+  let shiftKey = 0;
+  shiftKey += headerData[0] && headerData[0].extraParams.onSelect ? 1 : 0;
+  const mappedRows = headerData.length !== 0 && rows.map((oneRow, oneRowKey) => {
+    return {
+      ...oneRow,
+      ...oneRow && (oneRow.cells || oneRow).reduce(
+        (acc, curr, key) => ({
+          ...acc,
+          ...typeof curr === 'string' && headerData.hasOwnProperty(key) ? ({
+            [headerData[shiftKey + key].property]: {
+              title: curr
+            }
+          }) : curr
+        }),
+        { id: oneRowKey })
+    }
+  });
 
   return (
     <React.Fragment>

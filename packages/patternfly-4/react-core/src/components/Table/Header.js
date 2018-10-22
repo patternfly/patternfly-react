@@ -3,8 +3,8 @@ import { Header } from 'reactabular-table';
 import PropTypes from 'prop-types';
 import { TableContext } from './Table';
 import isEqual from 'lodash/isEqual';
-import { mapHeader } from './utils';
 import { SortByDirection } from './SortColumn';
+import { calculateColumns } from './utils/headerUtils';
 
 const propTypes = {
   className: PropTypes.string,
@@ -34,28 +34,23 @@ class ContextHeader extends React.Component {
     return !isEqual(nextProps.headerRows, this.props.headerRows);
   }
 
-  calculateColumns() {
-    const { headerRows, sortBy, onSort } = this.props;
-    return headerRows && headerRows.map(oneCol => ({
-      ...mapHeader(oneCol, { sortBy, onSort }),
-      ...typeof oneCol !== 'string' && oneCol
-    })
-    );
+  headerColumns() {
+    const { headerRows, sortBy, onSort, onSelect } = this.props;
+    return calculateColumns(headerRows, { sortBy, onSort, onSelect });
   }
 
   componentDidUpdate() {
-    this.props.updateHeaderData && this.props.updateHeaderData(this.calculateColumns());
+    this.props.updateHeaderData && this.props.updateHeaderData(this.headerColumns());
   }
 
   componentDidMount() {
-    this.props.updateHeaderData && this.props.updateHeaderData(this.calculateColumns());
+    this.props.updateHeaderData && this.props.updateHeaderData(this.headerColumns());
   }
 
   render() {
-    const { className, headerRows, sortBy, updateHeaderData, onSort, ...props } = this.props;
-
+    const { className, headerRows, sortBy, updateHeaderData, onSort, onSelect, ...props } = this.props;
     return (
-      <Header headerRows={[this.calculateColumns()]} {...props} className={className} />
+      <Header headerRows={[this.headerColumns()]} {...props} className={className} />
     );
   }
 }

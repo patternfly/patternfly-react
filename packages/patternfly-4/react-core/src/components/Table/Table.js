@@ -20,6 +20,7 @@ const propTypes = {
     index: PropTypes.number,
     direction: PropTypes.oneOf(Object.values(SortByDirection))
   }),
+  onSelect: PropTypes.func,
   onSort: PropTypes.func,
   header: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
@@ -56,7 +57,6 @@ class Table extends React.Component {
       headerData: []
     }
   }
-
   render() {
     const { headerData } = this.state;
     const {
@@ -70,6 +70,7 @@ class Table extends React.Component {
       children,
       ...props
     } = this.props;
+
     return (
       <TableContext.Provider value={{
         headerData,
@@ -83,7 +84,7 @@ class Table extends React.Component {
           {header}
           {children}
         </Provider>
-      </TableContext.Provider>
+      </TableContext.Provider >
     );
   }
 }
