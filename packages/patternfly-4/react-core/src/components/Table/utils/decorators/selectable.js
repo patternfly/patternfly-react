@@ -21,7 +21,7 @@ export default (label, { column: { extraParams: { onSelect } }, rowIndex, rowDat
   }
   return ({
     className: css(tableCheck),
-    'data-label': '',
+    component: 'td',
     scope: '',
     children: (
       <SelectColumn {...customProps} onSelect={selectClick} name={rowIndex ? `checkrow${rowIndex}` : 'check-all'}>{label}</SelectColumn>

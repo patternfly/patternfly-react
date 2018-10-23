@@ -53,6 +53,10 @@ const selectableTransforms = ({ onSelect }) => [
 const actionsTransforms = ({ actions }) => [
   ...actions ? [{
     title: '',
+    transforms: [() => ({
+      scope: '',
+      component: 'td'
+    })],
     cellTransforms: [cellActions(actions)]
   }] : []
 ]

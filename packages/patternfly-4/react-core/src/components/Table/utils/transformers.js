@@ -5,3 +5,7 @@ export { default as cellActions } from './decorators/cellActions';
 export const scopeColTransformer = () => ({
   scope: 'col'
 });
+
+export const headerCol = () => ({
+  component: 'th'
+})
