@@ -15,8 +15,6 @@ const propTypes = {
   isDisabled: PropTypes.bool,
   /** Forces display of the hover state of the element */
   isHovered: PropTypes.bool,
-  /** Accesibility role */
-  role: PropTypes.string,
   /** Default hyperlink location */
   href: PropTypes.string
 };
@@ -27,24 +25,22 @@ const defaultProps = {
   isHovered: false,
   component: 'a',
   isDisabled: false,
-  href: '#',
-  role: 'menuitem'
+  href: '#'
 };
 
-const DropdownItem = ({ className, children, isHovered, component: Component, isDisabled, role, ...props }) => {
-  const aditionalProps = props;
+const DropdownItem = ({ className, children, isHovered, component: Component, isDisabled, ...props }) => {
+  const additionalProps = props;
   if (Component === 'a') {
-    aditionalProps['aria-disabled'] = isDisabled;
-    aditionalProps.tabIndex = isDisabled ? -1 : aditionalProps.tabIndex;
+    additionalProps['aria-disabled'] = isDisabled;
+    additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
   } else if (Component === 'button') {
-    aditionalProps.disabled = isDisabled;
+    additionalProps.disabled = isDisabled;
   }
   return (
     <li>
       <Component
-        {...aditionalProps}
+        {...additionalProps}
         className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
-        role={role}
       >
         {children}
       </Component>

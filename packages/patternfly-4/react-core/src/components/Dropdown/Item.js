@@ -20,8 +20,6 @@ Item.propTypes = {
   isDisabled: PropTypes.bool,
   /** Forces display of the hover state of the element */
   isHovered: PropTypes.bool,
-  /** Accesibility role */
-  role: PropTypes.string,
   /** Default hyperlink location */
   href: PropTypes.string
 };
@@ -31,8 +29,7 @@ Item.defaultProps = {
   isHovered: false,
   component: 'a',
   isDisabled: false,
-  href: '#',
-  role: 'menuitem'
+  href: '#'
 };
 
 export default Item;

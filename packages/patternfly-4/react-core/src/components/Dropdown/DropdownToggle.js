@@ -34,11 +34,7 @@ DropdownToggle.propTypes = {
 };
 
 DropdownToggle.defaultProps = {
-  id:
-    new Date().getTime() +
-    Math.random()
-      .toString(36)
-      .slice(2),
+  id: '',
   className: '',
   isOpen: false,
   parentRef: null,

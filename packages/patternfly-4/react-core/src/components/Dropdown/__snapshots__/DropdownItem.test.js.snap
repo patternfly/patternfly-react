@@ -6,7 +6,6 @@ exports[`dropdown items a 1`] = `
     aria-disabled={false}
     className=""
     href="#"
-    role="menuitem"
   >
     Something
   </a>
@@ -19,7 +18,6 @@ exports[`dropdown items button 1`] = `
     className=""
     disabled={false}
     href="#"
-    role="menuitem"
   >
     Something
   </button>
@@ -36,7 +34,6 @@ exports[`dropdown items disabled a 1`] = `
     aria-disabled={true}
     className="pf-m-disabled"
     href="#"
-    role="menuitem"
     tabIndex={-1}
   >
     Something
@@ -54,7 +51,6 @@ exports[`dropdown items disabled button 1`] = `
     className="pf-m-disabled"
     disabled={true}
     href="#"
-    role="menuitem"
   >
     Something
   </button>
@@ -71,7 +67,6 @@ exports[`dropdown items hover a 1`] = `
     aria-disabled={false}
     className="pf-m-hover"
     href="#"
-    role="menuitem"
   >
     Something
   </a>
@@ -88,7 +83,6 @@ exports[`dropdown items hover button 1`] = `
     className="pf-m-hover"
     disabled={false}
     href="#"
-    role="menuitem"
   >
     Something
   </button>

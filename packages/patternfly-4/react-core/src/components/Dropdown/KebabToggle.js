@@ -34,11 +34,7 @@ Kebab.propTypes = {
   isActive: PropTypes.bool
 };
 Kebab.defaultProps = {
-  id:
-    new Date().getTime() +
-    Math.random()
-      .toString(36)
-      .slice(2),
+  id: '',
   children: null,
   className: '',
   isOpen: false,
