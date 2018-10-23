@@ -13,10 +13,15 @@ export const TableGridBreakpoint = {
   gridLg: 'grid-lg'
 };
 
+export const TableVariant = {
+  'compact': 'compact'
+}
+
 const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   columns: PropTypes.array,
+  variant: PropTypes.oneOf(Object.values(TableVariant)),
   gridBreakPoint: PropTypes.oneOf(Object.values(TableGridBreakpoint)),
   sortBy: PropTypes.shape({
     index: PropTypes.number,
@@ -72,6 +77,7 @@ class Table extends React.Component {
       sortBy,
       children,
       actions,
+      variant,
       ...props
     } = this.props;
 
@@ -91,7 +97,16 @@ class Table extends React.Component {
           header: {
             cell: HeaderCell
           }
-        }} columns={headerData} role="grid" className={css(styles.table, getModifier(styles, gridBreakPoint, styles.modifiers.grid), className)}>
+        }}
+          columns={headerData}
+          role="grid"
+          className={css(
+            styles.table,
+            getModifier(styles, gridBreakPoint, styles.modifiers.grid),
+            getModifier(styles, variant),
+            className
+          )}
+        >
           {caption && <caption>{caption}</caption>}
           {header}
           {children}

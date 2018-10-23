@@ -1,4 +1,4 @@
-import { scopeColTransformer, selectable, cellActions } from './transformers';
+import { scopeColTransformer, selectable, cellActions, emptyCol } from './transformers';
 import { defaultTitle } from './formatters';
 
 const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => ({
@@ -6,6 +6,7 @@ const generateHeader = ({ transforms: origTransforms, formatters: origFormatters
   label: title,
   transforms: [
     scopeColTransformer,
+    emptyCol,
     ...origTransforms || [],
     ...header && header.hasOwnProperty('transforms') ? header.transforms : []
   ],
@@ -28,15 +29,18 @@ const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
   ]
 });
 
-const mapHeader = (column, extra, ...props) => {
+const mapHeader = (column, extra, key, ...props) => {
   const title = typeof column === 'string' ? column : column.title;
+  console.log(title);
   return ({
-    property: title.toLowerCase(),
+    property: title.toLowerCase().trim().replace(/\s/g, '-') || `column-${key}`,
     extraParams: extra,
     header: generateHeader(column, title),
     cell: generateCell(column, extra),
     props: {
       'data-label': title,
+      'data-key': key,
+      ...column.hasOwnProperty('props') ? column.props : {},
       ...props
     }
   });
@@ -66,8 +70,8 @@ export const calculateColumns = (headerRows, extra) => {
     ...selectableTransforms(extra),
     ...headerRows,
     ...actionsTransforms(extra)
-  ].map(oneCol => ({
-    ...mapHeader(oneCol, extra)
+  ].map((oneCol, key) => ({
+    ...mapHeader(oneCol, extra, key)
   })
   );
 }

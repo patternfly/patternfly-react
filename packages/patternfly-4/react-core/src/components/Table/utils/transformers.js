@@ -9,3 +9,7 @@ export const scopeColTransformer = () => ({
 export const headerCol = () => ({
   component: 'th'
 })
+
+export const emptyCol = (label) => ({
+  ...label ? {} : { scope: '' }
+})

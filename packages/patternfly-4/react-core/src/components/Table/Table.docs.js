@@ -4,11 +4,12 @@ import Sortable from './examples/SortableTable';
 import Selectable from './examples/SelectableTable';
 import Actions from './examples/ActionsTable';
 import Header from './examples/CellHeader';
+import Compact from './examples/CompactTable';
 
 export default {
   title: 'Table',
   components: {
     Table,
   },
-  examples: [Simple, Sortable, Selectable, Actions, Header]
+  examples: [Simple, Sortable, Selectable, Actions, Header, Compact]
 };
