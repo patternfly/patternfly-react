@@ -31,7 +31,6 @@ const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
 
 const mapHeader = (column, extra, key, ...props) => {
   const title = typeof column === 'string' ? column : column.title;
-  console.log(title);
   return ({
     property: title.toLowerCase().trim().replace(/\s/g, '-') || `column-${key}`,
     extraParams: extra,

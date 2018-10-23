@@ -5,11 +5,12 @@ import Selectable from './examples/SelectableTable';
 import Actions from './examples/ActionsTable';
 import Header from './examples/CellHeader';
 import Compact from './examples/CompactTable';
+import Width from './examples/WidthTable';
 
 export default {
   title: 'Table',
   components: {
     Table,
   },
-  examples: [Simple, Sortable, Selectable, Actions, Header, Compact]
+  examples: [Simple, Sortable, Selectable, Actions, Header, Compact, Width]
 };
