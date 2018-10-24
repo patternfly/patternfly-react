@@ -1,3 +1,4 @@
+export * from './components/BadgedResource';
 export * from './components/CatalogItemHeader';
 export * from './components/CatalogTile';
 export * from './components/CatalogTileView';

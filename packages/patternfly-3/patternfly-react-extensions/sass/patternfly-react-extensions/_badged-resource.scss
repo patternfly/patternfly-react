@@ -1,0 +1,66 @@
+$badge-icon-height: 18px;
+
+.badged-resource-pf {
+  align-items: baseline;
+  display: flex;
+  min-width: 0;
+  overflow-wrap: break-word;
+  white-space: nowrap;
+  word-wrap: break-word;
+
+  &-icon {
+    display: inline-block;
+    font-size: $font-size-base - 1;
+    font-weight: normal;
+    flex-shrink: 0;
+    text-align: center;
+    border-radius: 10px;
+    height: $badge-icon-height;
+    min-width: $badge-icon-height;
+    padding: 0 4px;
+    line-height: $badge-icon-height;
+    color: $color-pf-white;
+    margin-right: 4px;
+    background-color: $color-pf-black;
+  }
+
+  &-resource-name {
+    line-height: normal;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-lg {
+    align-items: center;
+
+    .badged-resource-pf {
+      &-icon {
+        border-radius: 12px;
+        font-size: 16px;
+        height: 24px;
+        line-height: 24px;
+        margin-left: 0;
+        margin-right: 7px;
+        min-width: 24px;
+        padding: 0 7px;
+        position: relative;
+        top: 1px;
+      }
+
+      &-resource-name {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+a.badged-resource-pf-resource-name {
+  color: $link-color;
+  text-decoration: none;
+
+  &:focus {
+    outline-style: none;
+    text-decoration: underline;
+  }
+}
