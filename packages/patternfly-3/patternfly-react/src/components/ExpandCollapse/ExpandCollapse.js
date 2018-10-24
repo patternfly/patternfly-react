@@ -5,7 +5,10 @@ import classNames from 'classnames';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 
-import { ALIGN_LEFT, ALIGN_CENTER, ALIGN_TYPES } from './constants';
+const ALIGN_LEFT = 'left';
+const ALIGN_CENTER = 'center';
+
+const ALIGN_TYPES = [ALIGN_LEFT, ALIGN_CENTER];
 
 class ExpandCollapse extends React.Component {
   state = { expanded: false, mirroredExpanded: false };
@@ -54,7 +57,7 @@ ExpandCollapse.propTypes = {
   textCollapsed: PropTypes.string,
   /** Text for the link in expanded state */
   textExpanded: PropTypes.string,
-  /** Align the link to the left or center. Default: left. */
+  /** Align the link to the left or center. */
   align: PropTypes.oneOf(ALIGN_TYPES),
   /** Flag to show a separation border line */
   bordered: PropTypes.bool,
@@ -70,5 +73,9 @@ ExpandCollapse.defaultProps = {
   bordered: true,
   expanded: false
 };
+
+ExpandCollapse.ALIGN_LEFT = ALIGN_LEFT;
+ExpandCollapse.ALIGN_CENTER = ALIGN_CENTER;
+ExpandCollapse.ALIGN_TYPES = ALIGN_TYPES;
 
 export default ExpandCollapse;
