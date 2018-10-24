@@ -32,7 +32,7 @@ export default class BasicDropdown extends Component {
         toggle={<DropdownToggle onToggle={this.onToggle}>Expanded Dropdown</DropdownToggle>}
         isOpen={isOpen}
       >
-        Expanded Dropdown
+        <div>Expanded Dropdown</div>
       </Dropdown>
     );
   }

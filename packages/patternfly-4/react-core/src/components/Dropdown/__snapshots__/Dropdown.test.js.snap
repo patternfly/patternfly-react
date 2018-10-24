@@ -13,9 +13,6 @@ exports[`KebabToggle basic 1`] = `
   color: #282d33;
   background-color: transparent;
 }
-<<<<<<< HEAD
-.pf-c-dropdown.pf-m-top.pf-m-align-right {
-=======
 .pf-c-dropdown__menu {
   display: block;
   position: absolute;
@@ -29,7 +26,6 @@ exports[`KebabToggle basic 1`] = `
   box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-expanded {
->>>>>>> Updates to dropdpwn for Basic Dropdown and review feedback
   display: inline-block;
   position: relative;
 }
@@ -145,39 +141,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   color: #282d33;
   background-color: transparent;
 }
-<<<<<<< HEAD
-.pf-c-dropdown.pf-m-top {
-=======
-.pf-m-disabled {
-  display: block;
-}
-.pf-m-disabled {
-  display: block;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
 .pf-c-dropdown.pf-m-top.pf-m-align-right {
->>>>>>> Updates to dropdpwn for Basic Dropdown and review feedback
   display: inline-block;
   position: relative;
 }
@@ -324,155 +288,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isOpen={false}
-      onClick={[Function]}
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={true}
-        onClick={[Function]}
-      >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
-          >
-            <li>
-              <div
-                className="pf-c-dropdown__separator"
-                href="#"
-                role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
   </div>
 </Dropdown>
 `;
@@ -489,34 +304,6 @@ exports[`KebabToggle dropup 1`] = `
   line-height: 1.5;
   color: #282d33;
   background-color: transparent;
-}
-.pf-m-disabled {
-  display: block;
-}
-.pf-m-disabled {
-  display: block;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-top {
   display: inline-block;
@@ -665,310 +452,6 @@ exports[`KebabToggle dropup 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-<<<<<<< HEAD
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={true}
-      focusTrapOptions={Object {}}
-      paused={false}
-      tag="div"
-    >
-      <div>
-        <DropdownMenu
-          aria-labelledby="Dropdown"
-          className=""
-          isOpen={true}
-          onClick={[Function]}
-        >
-          <div
-            aria-labelledby="Dropdown"
-            className="pf-c-dropdown__menu"
-            hidden={false}
-            onClick={[Function]}
-            role="menu"
-          >
-            <DropItems>
-              <DropdownItem
-                className=""
-                component="a"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <a
-                  aria-disabled={false}
-                  className=""
-                  href="#"
-                  role="menuitem"
-                >
-                  Link
-                </a>
-              </DropdownItem>
-              <DropdownItem
-                className=""
-                component="button"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <button
-                  className=""
-                  disabled={false}
-                  href="#"
-                  role="menuitem"
-                >
-                  Action
-                </button>
-              </DropdownItem>
-              <DropdownItem
-                className=""
-                component="a"
-                href="#"
-                isDisabled={true}
-                isHovered={false}
-                role="menuitem"
-              >
-                <a
-                  aria-disabled={true}
-                  className="pf-m-disabled"
-                  href="#"
-                  role="menuitem"
-                  tabIndex={-1}
-                >
-                  Disabled Link
-                </a>
-              </DropdownItem>
-              <DropdownItem
-                className=""
-                component="button"
-                href="#"
-                isDisabled={true}
-                isHovered={false}
-                role="menuitem"
-              >
-                <button
-                  className="pf-m-disabled"
-                  disabled={true}
-                  href="#"
-                  role="menuitem"
-                >
-                  Disabled Action
-                </button>
-              </DropdownItem>
-              <Separator
-                className=""
-                component="a"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <DropdownItem
-                  className="pf-c-dropdown__separator"
-                  component="div"
-                  href="#"
-                  isDisabled={false}
-                  isHovered={false}
-                  role="separator"
-                >
-                  <div
-                    className="pf-c-dropdown__separator"
-                    href="#"
-                    role="separator"
-                  />
-                </DropdownItem>
-              </Separator>
-              <DropdownItem
-                className=""
-                component="a"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <a
-                  aria-disabled={false}
-                  className=""
-                  href="#"
-                  role="menuitem"
-                >
-                  Separated Link
-                </a>
-              </DropdownItem>
-              <DropdownItem
-                className=""
-                component="button"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <button
-                  className=""
-                  disabled={false}
-                  href="#"
-                  role="menuitem"
-                >
-                  Separated Action
-                </button>
-              </DropdownItem>
-            </DropItems>
-          </div>
-        </DropdownMenu>
-      </div>
-    </FocusTrap>
-=======
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isOpen={false}
-      onClick={[Function]}
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={true}
-        onClick={[Function]}
-      >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
-          >
-            <li>
-              <div
-                className="pf-c-dropdown__separator"
-                href="#"
-                role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
   </div>
 </Dropdown>
 `;
@@ -1001,6 +484,18 @@ exports[`KebabToggle expanded 1`] = `
   display: block;
   height: 1px;
   background-color: #ededed;
+}
+.pf-c-dropdown__menu {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  min-width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -1168,147 +663,159 @@ exports[`KebabToggle expanded 1`] = `
       isOpen={true}
       onClick={[Function]}
     >
-      <ul
-        aria-labelledby="Dropdown Toggle"
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={true}
         className="pf-c-dropdown__menu"
-        hidden={false}
-        onClick={[Function]}
+        focusTrapOptions={Object {}}
+        paused={false}
+        tag="div"
       >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
+        <div
+          className="pf-c-dropdown__menu"
         >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
+          <ul
+            aria-labelledby="Dropdown Toggle"
+            hidden={false}
+            onClick={[Function]}
           >
-            <li>
-              <div
+            <DropdownItem
+              className=""
+              component="a"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="link"
+            >
+              <li>
+                <a
+                  aria-disabled={false}
+                  className=""
+                  href="#"
+                >
+                  Link
+                </a>
+              </li>
+            </DropdownItem>
+            <DropdownItem
+              className=""
+              component="button"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="action"
+            >
+              <li>
+                <button
+                  className=""
+                  disabled={false}
+                  href="#"
+                >
+                  Action
+                </button>
+              </li>
+            </DropdownItem>
+            <DropdownItem
+              className=""
+              component="a"
+              href="#"
+              isDisabled={true}
+              isHovered={false}
+              key="disabled link"
+            >
+              <li>
+                <a
+                  aria-disabled={true}
+                  className="pf-m-disabled"
+                  href="#"
+                  tabIndex={-1}
+                >
+                  Disabled Link
+                </a>
+              </li>
+            </DropdownItem>
+            <DropdownItem
+              className=""
+              component="button"
+              href="#"
+              isDisabled={true}
+              isHovered={false}
+              key="disabled action"
+            >
+              <li>
+                <button
+                  className="pf-m-disabled"
+                  disabled={true}
+                  href="#"
+                >
+                  Disabled Action
+                </button>
+              </li>
+            </DropdownItem>
+            <Separator
+              className=""
+              component="a"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="separator"
+            >
+              <DropdownItem
                 className="pf-c-dropdown__separator"
+                component="div"
                 href="#"
+                isDisabled={false}
+                isHovered={false}
                 role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
+              >
+                <li>
+                  <div
+                    className="pf-c-dropdown__separator"
+                    href="#"
+                    role="separator"
+                  />
+                </li>
+              </DropdownItem>
+            </Separator>
+            <DropdownItem
               className=""
+              component="a"
               href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="separated link"
             >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
+              <li>
+                <a
+                  aria-disabled={false}
+                  className=""
+                  href="#"
+                >
+                  Separated Link
+                </a>
+              </li>
+            </DropdownItem>
+            <DropdownItem
               className=""
-              disabled={false}
+              component="button"
               href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="separated action"
             >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
+              <li>
+                <button
+                  className=""
+                  disabled={false}
+                  href="#"
+                >
+                  Separated Action
+                </button>
+              </li>
+            </DropdownItem>
+          </ul>
+        </div>
+      </FocusTrap>
     </DropdownMenu>
   </div>
 </Dropdown>
@@ -1326,34 +833,6 @@ exports[`KebabToggle plain 1`] = `
   line-height: 1.5;
   color: #282d33;
   background-color: transparent;
-}
-.pf-m-disabled {
-  display: block;
-}
-.pf-m-disabled {
-  display: block;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-plain {
   display: inline-block;
@@ -1502,156 +981,6 @@ exports[`KebabToggle plain 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isOpen={false}
-      onClick={[Function]}
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={true}
-        onClick={[Function]}
-      >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
-          >
-            <li>
-              <div
-                className="pf-c-dropdown__separator"
-                href="#"
-                role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
->>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -1669,39 +998,7 @@ exports[`KebabToggle regular 1`] = `
   color: #282d33;
   background-color: transparent;
 }
-<<<<<<< HEAD
-.pf-c-dropdown.pf-m-plain {
-=======
-.pf-m-disabled {
-  display: block;
-}
-.pf-m-disabled {
-  display: block;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
 .pf-c-dropdown {
->>>>>>> Updates to dropdpwn for Basic Dropdown and review feedback
   display: inline-block;
   position: relative;
 }
@@ -1848,158 +1145,6 @@ exports[`KebabToggle regular 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-<<<<<<< HEAD
-=======
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isOpen={false}
-      onClick={[Function]}
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={true}
-        onClick={[Function]}
-      >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
-          >
-            <li>
-              <div
-                className="pf-c-dropdown__separator"
-                href="#"
-                role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
->>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -2017,39 +1162,7 @@ exports[`KebabToggle right aligned 1`] = `
   color: #282d33;
   background-color: transparent;
 }
-<<<<<<< HEAD
-.pf-c-dropdown {
-=======
-.pf-m-disabled {
-  display: block;
-}
-.pf-m-disabled {
-  display: block;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
 .pf-c-dropdown.pf-m-align-right {
->>>>>>> Updates to dropdpwn for Basic Dropdown and review feedback
   display: inline-block;
   position: relative;
 }
@@ -2196,158 +1309,6 @@ exports[`KebabToggle right aligned 1`] = `
         </button>
       </DropdownToggle>
     </Kebab>
-<<<<<<< HEAD
-=======
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isOpen={false}
-      onClick={[Function]}
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={true}
-        onClick={[Function]}
-      >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
-          >
-            <li>
-              <div
-                className="pf-c-dropdown__separator"
-                href="#"
-                role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
->>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -2371,9 +1332,6 @@ exports[`dropdown basic 1`] = `
   color: #282d33;
   background-color: transparent;
 }
-<<<<<<< HEAD
-.pf-c-dropdown.pf-m-align-right {
-=======
 .pf-c-dropdown__menu {
   display: block;
   position: absolute;
@@ -2387,7 +1345,6 @@ exports[`dropdown basic 1`] = `
   box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown.pf-m-expanded {
->>>>>>> Updates to dropdpwn for Basic Dropdown and review feedback
   display: inline-block;
   position: relative;
 }
@@ -2470,13 +1427,7 @@ exports[`dropdown basic 1`] = `
           </CaretDownIcon>
         </button>
       </DropdownToggle>
-<<<<<<< HEAD
-    </Kebab>
-<<<<<<< HEAD
-=======
-=======
     </DropdownToggle>
->>>>>>> Updates to dropdpwn for Basic Dropdown and review feedback
     <DropdownMenu
       aria-labelledby="Dropdown Toggle"
       className=""
@@ -2493,7 +1444,6 @@ exports[`dropdown basic 1`] = `
         BASIC
       </div>
     </DropdownMenu>
->>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -2665,158 +1615,6 @@ exports[`dropdown dropup + right aligned 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-<<<<<<< HEAD
-=======
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isOpen={false}
-      onClick={[Function]}
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={true}
-        onClick={[Function]}
-      >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
-          >
-            <li>
-              <div
-                className="pf-c-dropdown__separator"
-                href="#"
-                role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
->>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -2988,158 +1786,6 @@ exports[`dropdown dropup 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-<<<<<<< HEAD
-=======
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isOpen={false}
-      onClick={[Function]}
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={true}
-        onClick={[Function]}
-      >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
-          >
-            <li>
-              <div
-                className="pf-c-dropdown__separator"
-                href="#"
-                role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
->>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -3178,6 +1824,18 @@ exports[`dropdown expanded 1`] = `
   display: block;
   height: 1px;
   background-color: #ededed;
+}
+.pf-c-dropdown__menu {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  min-width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -3339,161 +1997,6 @@ exports[`dropdown expanded 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-<<<<<<< HEAD
-    <FocusTrap
-      _createFocusTrap={[Function]}
-      active={true}
-      focusTrapOptions={Object {}}
-      paused={false}
-      tag="div"
-    >
-      <div>
-        <DropdownMenu
-          aria-labelledby="Dropdown"
-          className=""
-          isOpen={true}
-          onClick={[Function]}
-        >
-          <div
-            aria-labelledby="Dropdown"
-            className="pf-c-dropdown__menu"
-            hidden={false}
-            onClick={[Function]}
-            role="menu"
-          >
-            <DropItems>
-              <DropdownItem
-                className=""
-                component="a"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <a
-                  aria-disabled={false}
-                  className=""
-                  href="#"
-                  role="menuitem"
-                >
-                  Link
-                </a>
-              </DropdownItem>
-              <DropdownItem
-                className=""
-                component="button"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <button
-                  className=""
-                  disabled={false}
-                  href="#"
-                  role="menuitem"
-                >
-                  Action
-                </button>
-              </DropdownItem>
-              <DropdownItem
-                className=""
-                component="a"
-                href="#"
-                isDisabled={true}
-                isHovered={false}
-                role="menuitem"
-              >
-                <a
-                  aria-disabled={true}
-                  className="pf-m-disabled"
-                  href="#"
-                  role="menuitem"
-                  tabIndex={-1}
-                >
-                  Disabled Link
-                </a>
-              </DropdownItem>
-              <DropdownItem
-                className=""
-                component="button"
-                href="#"
-                isDisabled={true}
-                isHovered={false}
-                role="menuitem"
-              >
-                <button
-                  className="pf-m-disabled"
-                  disabled={true}
-                  href="#"
-                  role="menuitem"
-                >
-                  Disabled Action
-                </button>
-              </DropdownItem>
-              <Separator
-                className=""
-                component="a"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <DropdownItem
-                  className="pf-c-dropdown__separator"
-                  component="div"
-                  href="#"
-                  isDisabled={false}
-                  isHovered={false}
-                  role="separator"
-                >
-                  <div
-                    className="pf-c-dropdown__separator"
-                    href="#"
-                    role="separator"
-                  />
-                </DropdownItem>
-              </Separator>
-              <DropdownItem
-                className=""
-                component="a"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <a
-                  aria-disabled={false}
-                  className=""
-                  href="#"
-                  role="menuitem"
-                >
-                  Separated Link
-                </a>
-              </DropdownItem>
-              <DropdownItem
-                className=""
-                component="button"
-                href="#"
-                isDisabled={false}
-                isHovered={false}
-                role="menuitem"
-              >
-                <button
-                  className=""
-                  disabled={false}
-                  href="#"
-                  role="menuitem"
-                >
-                  Separated Action
-                </button>
-              </DropdownItem>
-            </DropItems>
-          </div>
-        </DropdownMenu>
-      </div>
-    </FocusTrap>
-=======
     <DropdownMenu
       aria-labelledby="Dropdown Toggle"
       className=""
@@ -3501,149 +2004,160 @@ exports[`dropdown expanded 1`] = `
       isOpen={true}
       onClick={[Function]}
     >
-      <ul
-        aria-labelledby="Dropdown Toggle"
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={true}
         className="pf-c-dropdown__menu"
-        hidden={false}
-        onClick={[Function]}
+        focusTrapOptions={Object {}}
+        paused={false}
+        tag="div"
       >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
+        <div
+          className="pf-c-dropdown__menu"
         >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
+          <ul
+            aria-labelledby="Dropdown Toggle"
+            hidden={false}
+            onClick={[Function]}
           >
-            <li>
-              <div
+            <DropdownItem
+              className=""
+              component="a"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="link"
+            >
+              <li>
+                <a
+                  aria-disabled={false}
+                  className=""
+                  href="#"
+                >
+                  Link
+                </a>
+              </li>
+            </DropdownItem>
+            <DropdownItem
+              className=""
+              component="button"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="action"
+            >
+              <li>
+                <button
+                  className=""
+                  disabled={false}
+                  href="#"
+                >
+                  Action
+                </button>
+              </li>
+            </DropdownItem>
+            <DropdownItem
+              className=""
+              component="a"
+              href="#"
+              isDisabled={true}
+              isHovered={false}
+              key="disabled link"
+            >
+              <li>
+                <a
+                  aria-disabled={true}
+                  className="pf-m-disabled"
+                  href="#"
+                  tabIndex={-1}
+                >
+                  Disabled Link
+                </a>
+              </li>
+            </DropdownItem>
+            <DropdownItem
+              className=""
+              component="button"
+              href="#"
+              isDisabled={true}
+              isHovered={false}
+              key="disabled action"
+            >
+              <li>
+                <button
+                  className="pf-m-disabled"
+                  disabled={true}
+                  href="#"
+                >
+                  Disabled Action
+                </button>
+              </li>
+            </DropdownItem>
+            <Separator
+              className=""
+              component="a"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="separator"
+            >
+              <DropdownItem
                 className="pf-c-dropdown__separator"
+                component="div"
                 href="#"
+                isDisabled={false}
+                isHovered={false}
                 role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
+              >
+                <li>
+                  <div
+                    className="pf-c-dropdown__separator"
+                    href="#"
+                    role="separator"
+                  />
+                </li>
+              </DropdownItem>
+            </Separator>
+            <DropdownItem
               className=""
+              component="a"
               href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="separated link"
             >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
+              <li>
+                <a
+                  aria-disabled={false}
+                  className=""
+                  href="#"
+                >
+                  Separated Link
+                </a>
+              </li>
+            </DropdownItem>
+            <DropdownItem
               className=""
-              disabled={false}
+              component="button"
               href="#"
+              isDisabled={false}
+              isHovered={false}
+              key="separated action"
             >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
+              <li>
+                <button
+                  className=""
+                  disabled={false}
+                  href="#"
+                >
+                  Separated Action
+                </button>
+              </li>
+            </DropdownItem>
+          </ul>
+        </div>
+      </FocusTrap>
     </DropdownMenu>
->>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -3815,158 +2329,6 @@ exports[`dropdown regular 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-<<<<<<< HEAD
-=======
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isOpen={false}
-      onClick={[Function]}
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={true}
-        onClick={[Function]}
-      >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
-          >
-            <li>
-              <div
-                className="pf-c-dropdown__separator"
-                href="#"
-                role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
->>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
@@ -4138,158 +2500,6 @@ exports[`dropdown right aligned 1`] = `
         </button>
       </DropdownToggle>
     </DropdownToggle>
-<<<<<<< HEAD
-=======
-    <DropdownMenu
-      aria-labelledby="Dropdown Toggle"
-      className=""
-      component="ul"
-      isOpen={false}
-      onClick={[Function]}
-    >
-      <ul
-        aria-labelledby="Dropdown Toggle"
-        className="pf-c-dropdown__menu"
-        hidden={true}
-        onClick={[Function]}
-      >
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Action
-            </button>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled link"
-        >
-          <li>
-            <a
-              aria-disabled={true}
-              className="pf-m-disabled"
-              href="#"
-              tabIndex={-1}
-            >
-              Disabled Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-          key="disabled action"
-        >
-          <li>
-            <button
-              className="pf-m-disabled"
-              disabled={true}
-              href="#"
-            >
-              Disabled Action
-            </button>
-          </li>
-        </DropdownItem>
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separator"
-        >
-          <DropdownItem
-            className="pf-c-dropdown__separator"
-            component="div"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-            role="separator"
-          >
-            <li>
-              <div
-                className="pf-c-dropdown__separator"
-                href="#"
-                role="separator"
-              />
-            </li>
-          </DropdownItem>
-        </Separator>
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated link"
-        >
-          <li>
-            <a
-              aria-disabled={false}
-              className=""
-              href="#"
-            >
-              Separated Link
-            </a>
-          </li>
-        </DropdownItem>
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          key="separated action"
-        >
-          <li>
-            <button
-              className=""
-              disabled={false}
-              href="#"
-            >
-              Separated Action
-            </button>
-          </li>
-        </DropdownItem>
-      </ul>
-    </DropdownMenu>
->>>>>>> refactor(patternfly-4/react-core): Updated the Dropdown component to match accessibility updates in
   </div>
 </Dropdown>
 `;
