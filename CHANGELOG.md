@@ -1,4 +1,14 @@
 
+## Change Log (2018-10-24)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#822](https://github.com/patternfly/patternfly-react/pull/822) feat(Labeled progress): allow consumers to pass additional label for progressbar ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
 ## patternfly4-react-lerna-root@1.12.5 (2018-10-18)
 
 #### :memo: Documentation

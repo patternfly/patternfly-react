@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.27.0"></a>
+# [1.27.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.26.1...@patternfly/react-core@1.27.0) (2018-10-24)
+
+
+### Features
+
+* **Labeled progress:** allow consumers to pass additional label for progressbar ([#822](https://github.com/patternfly/patternfly-react/issues/822)) ([b8ce0c9](https://github.com/patternfly/patternfly-react/commit/b8ce0c9))
+
+
+
+
 <a name="1.26.1"></a>
 ## [1.26.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.26.0...@patternfly/react-core@1.26.1) (2018-10-24)
 
