@@ -1,6 +1,36 @@
 
 ## Change Log (2018-10-24)
 
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#826](https://github.com/patternfly/patternfly-react/pull/826) fix(ExpandCollapse): Fix to export ALIGN_LEFT and ALIGN_CENTER constants ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly4-react-lerna-root@1.14.0 (2018-10-24)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#822](https://github.com/patternfly/patternfly-react/pull/822) feat(Labeled progress): allow consumers to pass additional label for progressbar ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-docs@3.17.17 (2018-10-24)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#822](https://github.com/patternfly/patternfly-react/pull/822) feat(Labeled progress): allow consumers to pass additional label for progressbar ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-core@1.27.0 (2018-10-24)
+
 #### :rocket: New Feature
 * `patternfly-4`
   * [#822](https://github.com/patternfly/patternfly-react/pull/822) feat(Labeled progress): allow consumers to pass additional label for progressbar ([@karelhala](https://github.com/karelhala))

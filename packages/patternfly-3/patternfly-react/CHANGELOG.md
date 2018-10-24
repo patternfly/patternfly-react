@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.21.5"></a>
+## [2.21.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.21.4...patternfly-react@2.21.5) (2018-10-24)
+
+
+### Bug Fixes
+
+* **ExpandCollapse:** Fix to export ALIGN_LEFT and ALIGN_CENTER constants ([#826](https://github.com/patternfly/patternfly-react/issues/826)) ([94e956a](https://github.com/patternfly/patternfly-react/commit/94e956a))
+
+
+
+
 <a name="2.21.4"></a>
 ## [2.21.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.21.3...patternfly-react@2.21.4) (2018-10-18)
 

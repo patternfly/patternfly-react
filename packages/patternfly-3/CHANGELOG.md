@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.3.9"></a>
+## [7.3.9](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.8...patternfly3-react-lerna-root@7.3.9) (2018-10-24)
+
+
+### Bug Fixes
+
+* **ExpandCollapse:** Fix to export ALIGN_LEFT and ALIGN_CENTER constants ([#826](https://github.com/patternfly/patternfly-react/issues/826)) ([94e956a](https://github.com/patternfly/patternfly-react/commit/94e956a))
+
+
+
+
 <a name="7.3.8"></a>
 ## [7.3.8](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.7...patternfly3-react-lerna-root@7.3.8) (2018-10-18)
 
