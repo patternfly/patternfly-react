@@ -4,11 +4,30 @@ const { join, resolve } = require('path');
 const { REMOVE_NPM_SCOPE } = require('../helpers');
 
 const packagesRoot = resolve(__dirname, '../../../packages');
-const pf3Root = join(packagesRoot, '/patternfly-3');
-const pf4Root = join(packagesRoot, '/patternfly-4');
-const typeGeneral = '0';
-const typePf3 = '3';
-const typePf4 = '4';
+
+const packageTypes = {
+  general: 0,
+  pf3: 3,
+  pf4: 4
+};
+
+const packageConfigs = {
+  [packageTypes.general]: {
+    name: 'General',
+    value: packageTypes.general,
+    location: packagesRoot
+  },
+  [packageTypes.pf3]: {
+    name: 'PatternFly 3',
+    value: packageTypes.pf3,
+    location: join(packagesRoot, '/patternfly-3')
+  },
+  [packageTypes.pf4]: {
+    name: 'PatternFly 4',
+    value: packageTypes.pf4,
+    location: join(packagesRoot, '/patternfly-4')
+  }
+};
 
 function setPackageGenerators(plop) {
   plop.setGenerator('Package', {
@@ -26,14 +45,14 @@ function setPackageGenerators(plop) {
       },
       {
         type: 'input',
+        name: 'description',
+        message: 'Describe this package'
+      },
+      {
+        type: 'list',
+        choices: Object.keys(packageConfigs).map(key => packageConfigs[key]),
         name: 'packageType',
-        message: `What type of package is it? Options: ${typeGeneral} (General package), ${typePf3} (Patternfly 3 package), ${typePf4} (Patternfly 4 package)`,
-        validate(input) {
-          const validInput = input === typeGeneral || input === typePf3 || input === typePf4;
-          return validInput
-            ? true
-            : `Type must be one of: ${typeGeneral} (General package), ${typePf3} (Patternfly 3 package), ${typePf4} (Patternfly 4 package)`;
-        }
+        message: 'What type of package is it?'
       },
       {
         type: 'confirm',
@@ -47,15 +66,9 @@ function setPackageGenerators(plop) {
       }
     ],
     actions: answers => {
-      let packageLocation;
-      if (answers.packageType === typeGeneral) {
-        packageLocation = packagesRoot;
-      } else if (answers.packageType === typePf3) {
-        packageLocation = pf3Root;
-      } else {
-        packageLocation = pf4Root;
-      }
-      const packageBaseTemplate = join(packageLocation, `./{{${REMOVE_NPM_SCOPE} name}}/`);
+      const packageConfig = packageConfigs[answers.packageType];
+      const packageBaseTemplate = join(packageConfig.location, `./{{${REMOVE_NPM_SCOPE} name}}/`);
+
       return [
         {
           type: 'add',
@@ -69,12 +82,22 @@ function setPackageGenerators(plop) {
             ? join(packageBaseTemplate, 'src/index.js')
             : join(packageBaseTemplate, 'lib/index.js')
         },
+        answers.buildsWithBabel && {
+          type: 'add',
+          path: join(packageBaseTemplate, `.babelrc`),
+          templateFile: resolve(__dirname, './.babelrc.hbs')
+        },
+        {
+          type: 'add',
+          path: join(packageBaseTemplate, `.npmignore`),
+          templateFile: resolve(__dirname, './.npmignore.hbs')
+        },
         {
           type: 'add',
           template: '# {{name}}',
           path: join(packageBaseTemplate, 'README.md')
         }
-      ];
+      ].filter(Boolean);
     }
   });
 }
