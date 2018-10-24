@@ -380,8 +380,7 @@ exports[`Progress measure location outside 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
         </span>
       </div>
       <ProgressBar
@@ -489,8 +488,7 @@ exports[`Progress measure location top 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
         </span>
       </div>
       <ProgressBar
@@ -598,8 +596,7 @@ exports[`Progress size lg 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
         </span>
       </div>
       <ProgressBar
@@ -707,8 +704,7 @@ exports[`Progress size md 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
         </span>
       </div>
       <ProgressBar
@@ -816,8 +812,7 @@ exports[`Progress size sm 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
         </span>
       </div>
       <ProgressBar
@@ -930,8 +925,7 @@ exports[`Progress variant danger 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
         </span>
         <span
           className="pf-c-progress__status-icon"
@@ -1063,8 +1057,7 @@ exports[`Progress variant info 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
         </span>
       </div>
       <ProgressBar
@@ -1177,8 +1170,7 @@ exports[`Progress variant success 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
         </span>
         <span
           className="pf-c-progress__status-icon"
@@ -1310,8 +1302,7 @@ exports[`Progress with aria-valuetext 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
         </span>
       </div>
       <ProgressBar
@@ -1419,8 +1410,117 @@ exports[`Simple progress 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          33
-          %
+          33%
+        </span>
+      </div>
+      <ProgressBar
+        className=""
+        value={33}
+      >
+        <div
+          className="pf-c-progress__bar"
+        >
+          <div
+            className="pf-c-progress__indicator"
+            style={
+              Object {
+                "width": "33%",
+              }
+            }
+          >
+            <span
+              className="pf-c-progress__measure"
+            />
+          </div>
+        </div>
+      </ProgressBar>
+    </ProgressContainer>
+  </div>
+</Progress>
+`;
+
+exports[`additional label 1`] = `
+.pf-c-progress__description {
+  display: block;
+  grid-column: 1 / 2;
+}
+.pf-c-progress__measure {
+  display: block;
+}
+.pf-c-progress__status {
+  display: block;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.pf-c-progress__measure {
+  display: block;
+}
+.pf-c-progress__indicator {
+  display: block;
+  position: absolute;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  min-width: 2rem;
+  max-width: 100%;
+  height: 0.5rem;
+  background-color: #cc0000;
+}
+.pf-c-progress__bar {
+  display: block;
+  position: relative;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  height: 0.5rem;
+  background-color: #ffffff;
+}
+.pf-c-progress {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+}
+
+<Progress
+  className=""
+  id="additional-label"
+  label="Additional label"
+  max={100}
+  measureLocation="top"
+  min={0}
+  size={null}
+  title=""
+  value={33}
+  valueText={null}
+  variant="info"
+>
+  <div
+    aria-describedby="additional-label-description"
+    aria-valuemax={100}
+    aria-valuemin={0}
+    aria-valuenow={33}
+    className="pf-c-progress"
+    id="additional-label"
+    role="progressbar"
+  >
+    <ProgressContainer
+      label="Additional label"
+      measureLocation="top"
+      parentId="additional-label"
+      title=""
+      value={33}
+      variant="info"
+    >
+      <div
+        className="pf-c-progress__description"
+        id="additional-label-description"
+      />
+      <div
+        className="pf-c-progress__status"
+      >
+        <span
+          className="pf-c-progress__measure"
+        >
+          Additional label
         </span>
       </div>
       <ProgressBar
@@ -1528,8 +1628,7 @@ exports[`no value specified 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          0
-          %
+          0%
         </span>
       </div>
       <ProgressBar
@@ -1637,8 +1736,7 @@ exports[`value higher than maxValue 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          60
-          %
+          60%
         </span>
       </div>
       <ProgressBar
@@ -1746,8 +1844,7 @@ exports[`value lower than minValue 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          40
-          %
+          40%
         </span>
       </div>
       <ProgressBar

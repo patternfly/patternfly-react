@@ -21,6 +21,8 @@ const propTypes = {
   variant: PropTypes.oneOf(Object.values(ProgressVariant)),
   /** Title above progress. */
   title: PropTypes.string,
+  /** Label to indicate what progress is showing. */
+  label: PropTypes.node,
   /** Actual value of progress. */
   value: PropTypes.number,
   /** DOM id for progress component. */
@@ -59,7 +61,7 @@ class Progress extends Component {
   }
 
   render() {
-    const { className, size, id, value, title, variant, measureLocation, min, max, valueText, ...props } = this.props;
+    const { className, size, id, value, title, label, variant, measureLocation, min, max, valueText, ...props } = this.props;
     const { uniqueId } = this.state;
     const additionalProps = {
       ...props,
@@ -88,6 +90,7 @@ class Progress extends Component {
           parentId={uniqueId}
           value={limitedValue}
           title={title}
+          label={label}
           variant={variant}
           measureLocation={measureLocation}
         />
