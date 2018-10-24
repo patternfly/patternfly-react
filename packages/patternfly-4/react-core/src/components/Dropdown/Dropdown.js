@@ -2,7 +2,6 @@ import React, { Children, cloneElement } from 'react';
 import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-// import FocusTrap from 'focus-trap-react';
 import DropdownMenu from './DropdownMenu';
 
 export const DropdownPosition = {
