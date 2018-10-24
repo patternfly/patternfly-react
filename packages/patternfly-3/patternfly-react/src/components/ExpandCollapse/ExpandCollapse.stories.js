@@ -7,7 +7,6 @@ import { name } from '../../../package.json';
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs';
 
 import { ExpandCollapse } from './index';
-import { ALIGN_TYPES } from './constants';
 
 const stories = storiesOf(
   `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/Expand Collapse`,
@@ -26,7 +25,7 @@ stories.add(
   withInfo(`This is the ExpandCollapse component.`)(() => (
     <div style={{ width: '600px', border: '1px solid lightgray' }}>
       <ExpandCollapse
-        align={select('align', ALIGN_TYPES)}
+        align={select('align', ExpandCollapse.ALIGN_TYPES)}
         bordered={boolean('bordered', true)}
         textExpanded={text('textExpanded', 'Hide Advanced Options')}
         textCollapsed={text('textCollapsed', 'Show Advanced Options')}

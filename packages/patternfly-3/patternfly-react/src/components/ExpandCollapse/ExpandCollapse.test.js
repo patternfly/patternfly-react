@@ -2,7 +2,6 @@ import React from 'react';
 import { mount, render } from 'enzyme';
 
 import ExpandCollapse from './ExpandCollapse';
-import { ALIGN_LEFT, ALIGN_CENTER } from './constants';
 
 test('ExpandCollapse with content', () => {
   const view = mount(
@@ -50,14 +49,14 @@ test('aligned ExpandCollapse', () => {
   expect(def.find('.expand-collapse-pf-separator')).toHaveLength(1);
 
   const left = render(
-    <ExpandCollapse align={ALIGN_LEFT}>
+    <ExpandCollapse align={ExpandCollapse.ALIGN_LEFT}>
       <div id="content">My text</div>
     </ExpandCollapse>
   );
   expect(left.find('.expand-collapse-pf-separator')).toHaveLength(1);
 
   const center = render(
-    <ExpandCollapse align={ALIGN_CENTER}>
+    <ExpandCollapse align={ExpandCollapse.ALIGN_CENTER}>
       <div id="content">My text</div>
     </ExpandCollapse>
   );
@@ -81,14 +80,14 @@ test('ExpandCollapse with separator', () => {
   expect(noSep.find('.expand-collapse-pf-separator.bordered')).toHaveLength(0);
 
   const center = render(
-    <ExpandCollapse align={ALIGN_CENTER}>
+    <ExpandCollapse align={ExpandCollapse.ALIGN_CENTER}>
       <div id="content">My text</div>
     </ExpandCollapse>
   );
   expect(center.find('.expand-collapse-pf-separator.bordered')).toHaveLength(2);
 
   const centerNoSep = render(
-    <ExpandCollapse align={ALIGN_CENTER} bordered={false}>
+    <ExpandCollapse align={ExpandCollapse.ALIGN_CENTER} bordered={false}>
       <div id="content">My text</div>
     </ExpandCollapse>
   );
