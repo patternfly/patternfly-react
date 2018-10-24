@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.26.0"></a>
+# [1.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.25.6...@patternfly/react-core@1.26.0) (2018-10-24)
+
+
+### Features
+
+* **PF4-Dropdown:** Enhance keyboard interaction for a11y ([#815](https://github.com/patternfly/patternfly-react/issues/815)) ([cc89db6](https://github.com/patternfly/patternfly-react/commit/cc89db6)), closes [#557](https://github.com/patternfly/patternfly-react/issues/557)
+
+
+
+
 <a name="1.25.6"></a>
 ## [1.25.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.25.5...@patternfly/react-core@1.25.6) (2018-10-18)
 
