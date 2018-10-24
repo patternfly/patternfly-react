@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
 import { Slider } from './index';
@@ -114,4 +115,6 @@ SliderStories.addWithInfo('Slider', () => (
       <Slider id="slider-pf" min={0} max={100} tooltip="show" showBoundaries input dropdownList={['MB', 'GB']} dropup />
     </div>
   </div>
+)).addWithInfo('onSlide function', () => (
+  <Slider id="slider-pf" min={0} max={5} onSlide={action('onSlide was called')} />
 ));

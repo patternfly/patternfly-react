@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import BootstrapSlider from './BootstrapSlider';
+import { noop } from '../../common/helpers';
 import { Icon } from '../Icon';
 import { ControlLabel, FormControl } from '../Form';
 import Boundaries from './Boundaries';
@@ -17,7 +18,7 @@ class Slider extends React.Component {
   }
 
   onSlide = value => {
-    this.setState({ value });
+    this.setState({ value }, () => this.props.onSlide(value));
   };
 
   onInputChange = event => {
@@ -112,7 +113,7 @@ Slider.defaultProps = {
   value: 0,
   step: 1,
   toolTip: false,
-  onSlide: null,
+  onSlide: noop,
   label: null,
   labelClass: null,
   input: false,
