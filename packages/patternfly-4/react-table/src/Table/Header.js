@@ -13,12 +13,14 @@ const propTypes = {
     index: PropTypes.number,
     direction: PropTypes.oneOf(Object.values(SortByDirection))
   }),
+  onCollapse: PropTypes.func,
   onSort: PropTypes.func,
   onSelect: PropTypes.func,
   actions: PropTypes.array
 };
 
 const defaultProps = {
+  onCollapse: null,
   className: '',
   sortBy: {},
   onSort: null,
@@ -28,7 +30,10 @@ const defaultProps = {
 class ContextHeader extends React.Component {
   shouldComponentUpdate(nextProps) {
     const { sortBy: nextSortBy, actions: nextAction } = nextProps;
-    const { sortBy, actions } = this.props;
+    const { sortBy, actions, onCollapse } = this.props;
+    if (nextProps.onCollapse && onCollapse) {
+      return !isEqual(nextProps.onCollapse, onCollapse);
+    }
     if (nextSortBy && sortBy) {
       return nextSortBy.index !== sortBy.index || nextSortBy.direction !== sortBy.direction;
     }
@@ -39,8 +44,8 @@ class ContextHeader extends React.Component {
   }
 
   headerColumns() {
-    const { headerRows, sortBy, onSort, onSelect, actions } = this.props;
-    return calculateColumns(headerRows, { sortBy, onSort, onSelect, actions });
+    const { headerRows, sortBy, onSort, onSelect, actions, onCollapse } = this.props;
+    return calculateColumns(headerRows, { sortBy, onSort, onSelect, actions, onCollapse });
   }
 
   componentDidUpdate() {
@@ -52,7 +57,7 @@ class ContextHeader extends React.Component {
   }
 
   render() {
-    const { className, headerRows, sortBy, updateHeaderData, onSort, onSelect, actions, ...props } = this.props;
+    const { className, headerRows, sortBy, updateHeaderData, onSort, onSelect, actions, onCollapse, ...props } = this.props;
     return (
       <Header headerRows={[this.headerColumns()]} {...props} className={className} />
     );
@@ -61,7 +66,7 @@ class ContextHeader extends React.Component {
 
 const TableHeader = ({ headerData, ...props }) => (
   <TableContext.Consumer>
-    {({ updateHeaderData, onSort, sortBy, onSelect, actions }) => (
+    {({ updateHeaderData, onSort, sortBy, onSelect, actions, onCollapse }) => (
       <ContextHeader
         {...props}
         updateHeaderData={updateHeaderData}
@@ -69,6 +74,7 @@ const TableHeader = ({ headerData, ...props }) => (
         sortBy={sortBy}
         actions={actions}
         onSelect={onSelect}
+        onCollapse={onCollapse}
       />
     )}
   </TableContext.Consumer>

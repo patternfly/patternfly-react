@@ -3,7 +3,7 @@ import PropsType from 'prop-types';
 
 const BodyCell = ({ ['data-label']: dataLabel, component: Component, ...props }) => {
   const mappedProps = {
-    ...dataLabel ? { dataLabel } : {},
+    ...dataLabel ? { 'data-label': dataLabel } : {},
     ...props
   }
   return <Component {...mappedProps} />;

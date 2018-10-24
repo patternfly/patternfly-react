@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator } from '../Dropdown';
+import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
 
 const propTypes = {
   children: PropTypes.node,

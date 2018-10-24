@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AngleUpIcon, SortIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
 import { checkInput } from '@patternfly/patternfly-next/components/Table/table.css';
 

@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { SortByDirection } from './SortColumn';
 import BodyCell from './BodyCell';
 import HeaderCell from './HeaderCell';
+import RowWrapper from './RowWrapper';
 
 export const TableGridBreakpoint = {
   grid: 'grid',
@@ -20,6 +21,7 @@ export const TableVariant = {
 const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  onCollapse: PropTypes.func,
   columns: PropTypes.array,
   variant: PropTypes.oneOf(Object.values(TableVariant)),
   gridBreakPoint: PropTypes.oneOf(Object.values(TableGridBreakpoint)),
@@ -52,6 +54,7 @@ const propTypes = {
 
 const defaultProps = {
   children: null,
+  onCollapse: null,
   className: '',
   gridBreakPoint: TableGridBreakpoint.gridMd
 };
@@ -77,6 +80,7 @@ class Table extends React.Component {
       sortBy,
       children,
       actions,
+      onCollapse,
       variant,
       ...props
     } = this.props;
@@ -88,10 +92,12 @@ class Table extends React.Component {
         onSort,
         onSelect,
         actions,
+        onCollapse,
         updateHeaderData: (headerData) => this.setState({ headerData })
       }}>
         <Provider {...props} renderers={{
           body: {
+            row: RowWrapper,
             cell: BodyCell
           },
           header: {

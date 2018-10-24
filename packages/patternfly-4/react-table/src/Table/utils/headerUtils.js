@@ -1,12 +1,12 @@
-import { scopeColTransformer, selectable, cellActions, emptyCol } from './transformers';
+import { scopeColTransformer, selectable, cellActions, emptyCol, mapProps, collapsible } from './transformers';
 import { defaultTitle } from './formatters';
 
 const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => ({
   ...header,
   label: title,
   transforms: [
-    scopeColTransformer,
-    emptyCol,
+    ...scopeColTransformer,
+    ...emptyCol,
     ...origTransforms || [],
     ...header && header.hasOwnProperty('transforms') ? header.transforms : []
   ],
@@ -19,6 +19,7 @@ const generateHeader = ({ transforms: origTransforms, formatters: origFormatters
 const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
   ...cell,
   transforms: [
+    ...mapProps,
     ...cellTransforms || [],
     ...cell && cell.hasOwnProperty('transforms') ? cell.transforms : []
   ],
@@ -64,8 +65,20 @@ const actionsTransforms = ({ actions }) => [
   }] : []
 ]
 
+const collapsibleTransfroms = ({ onCollapse }) => [
+  ...onCollapse ? [{
+    title: '',
+    transforms: [() => ({
+      scope: '',
+      component: 'td'
+    })],
+    cellTransforms: [collapsible]
+  }] : []
+]
+
 export const calculateColumns = (headerRows, extra) => {
   return headerRows && [
+    ...collapsibleTransfroms(extra),
     ...selectableTransforms(extra),
     ...headerRows,
     ...actionsTransforms(extra)

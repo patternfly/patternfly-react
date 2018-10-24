@@ -1,5 +1,9 @@
 # @patternfly/react-table
+<<<<<<< HEAD
 This package provides Table PatternFly components based on [PatternFly 4][patternfly-4]
+=======
+
+>>>>>>> Add transforms for collapsible table
 ### Prerequisite
 
 #### Node Environment

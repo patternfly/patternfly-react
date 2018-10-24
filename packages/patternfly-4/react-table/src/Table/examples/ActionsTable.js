@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, SortByDirection } from '@patternfly/react-core';
+import { Table, TableHeader, TableBody } from '@patternfly/react-core';
 
 class ActionsTable extends React.Component {
   static title = 'Actions Table';

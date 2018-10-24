@@ -1,0 +1,79 @@
+import React from 'react';
+import { Body } from 'reactabular-table';
+import PropTypes from 'prop-types';
+import { TableContext } from './Table';
+
+const propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+  rowKey: PropTypes.string
+};
+
+const defaultProps = {
+  children: null,
+  rowKey: 'id',
+  className: ''
+};
+
+class ContextBody extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onRow = this.onRow.bind(this);
+  }
+
+  onRow(row) {
+    return ({
+      isExpanded: row.isExpanded,
+      isOpen: row.isOpen
+    })
+  }
+
+  parentsExpanded(parentId) {
+    const { rows } = this.props;
+    return rows[parentId].hasOwnProperty('parent') ? this.parentsExpanded(rows[parentId].parent) : rows[parentId].isOpen;
+  }
+
+  render() {
+    const { className, headerData, rows, rowKey, children, ...props } = this.props;
+    let shiftKey = 0;
+    shiftKey += headerData[0] && headerData[0].extraParams.onSelect ? 1 : 0;
+    shiftKey += headerData[0] && headerData[0].extraParams.onCollapse ? 1 : 0;
+    const mappedRows = headerData.length !== 0 && rows.map((oneRow, oneRowKey) => {
+      return {
+        ...oneRow,
+        ...oneRow && (oneRow.cells || oneRow).reduce(
+          (acc, curr, key) => {
+            return ({
+              ...acc,
+              ...{
+                [headerData[shiftKey + key].property]: {
+                  title: curr.title || curr,
+                  props: curr.props
+                }
+              }
+            })
+          },
+          { id: oneRowKey }),
+        ...oneRow.parent ? {
+          isExpanded: this.parentsExpanded(oneRow.parent) && rows[oneRow.parent].isOpen
+        } : {},
+      }
+    });
+    return (
+      <React.Fragment>
+        {mappedRows && <Body {...props} rows={mappedRows} onRow={this.onRow} rowKey={rowKey} className={className} />}
+      </React.Fragment>
+    )
+  }
+}
+
+const TableBody = props => (
+  <TableContext.Consumer>
+    {({ headerData }) => <ContextBody {...props} headerData={headerData} />}
+  </TableContext.Consumer>
+)
+
+TableBody.propTypes = propTypes;
+TableBody.defaultProps = defaultProps;
+
+export default TableBody;
