@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.26.1"></a>
+## [1.26.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.26.0...@patternfly/react-core@1.26.1) (2018-10-24)
+
+
+### Bug Fixes
+
+* **formComponent:** removes Children props checking ([#823](https://github.com/patternfly/patternfly-react/issues/823)) ([4ef696b](https://github.com/patternfly/patternfly-react/commit/4ef696b))
+
+
+
+
 <a name="1.26.0"></a>
 # [1.26.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.25.6...@patternfly/react-core@1.26.0) (2018-10-24)
 
