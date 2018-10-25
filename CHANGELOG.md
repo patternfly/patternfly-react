@@ -1,5 +1,46 @@
 
-## Change Log (2018-10-24)
+## Change Log (2018-10-25)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#731](https://github.com/patternfly/patternfly-react/pull/731) docs(custom-icon): describe how to add custom icons ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 2
+- Doug Miller ([@dmiller9911](https://github.com/dmiller9911))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## patternfly3-react-lerna-root@7.3.9 (2018-10-24)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#826](https://github.com/patternfly/patternfly-react/pull/826) fix(ExpandCollapse): Fix to export ALIGN_LEFT and ALIGN_CENTER constants ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.21.5 (2018-10-24)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#826](https://github.com/patternfly/patternfly-react/pull/826) fix(ExpandCollapse): Fix to export ALIGN_LEFT and ALIGN_CENTER constants ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.9.9 (2018-10-24)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#826](https://github.com/patternfly/patternfly-react/pull/826) fix(ExpandCollapse): Fix to export ALIGN_LEFT and ALIGN_CENTER constants ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.4.12 (2018-10-24)
 
 #### :bug: Bug Fix
 * `patternfly-3`
