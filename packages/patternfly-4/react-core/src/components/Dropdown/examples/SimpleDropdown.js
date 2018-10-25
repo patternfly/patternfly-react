@@ -44,7 +44,6 @@ export default class SimpleDropdown extends Component {
     ];
     return (
       <Dropdown
-        onToggle={this.onToggle}
         onSelect={this.onSelect}
         toggle={<DropdownToggle onToggle={this.onToggle}>Dropdown</DropdownToggle>}
         isOpen={isOpen}

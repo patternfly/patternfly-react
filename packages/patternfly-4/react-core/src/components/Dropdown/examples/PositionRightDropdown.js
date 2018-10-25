@@ -44,7 +44,6 @@ export default class PositionRightDropdown extends Component {
     ];
     return (
       <Dropdown
-        onToggle={this.onToggle}
         onSelect={this.onSelect}
         position={DropdownPosition.right}
         toggle={<DropdownToggle onToggle={this.onToggle}>Dropdown</DropdownToggle>}

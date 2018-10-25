@@ -27,7 +27,6 @@ export default class BasicDropdown extends Component {
     const { isOpen } = this.state;
     return (
       <Dropdown
-        onToggle={this.onToggle}
         onSelect={this.onSelect}
         toggle={<DropdownToggle onToggle={this.onToggle}>Expanded Dropdown</DropdownToggle>}
         isOpen={isOpen}

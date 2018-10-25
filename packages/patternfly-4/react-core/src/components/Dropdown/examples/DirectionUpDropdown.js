@@ -44,7 +44,6 @@ export default class DirectionUpDropdown extends Component {
     ];
     return (
       <Dropdown
-        onToggle={this.onToggle}
         direction={DropdownDirection.up}
         onSelect={this.onSelect}
         toggle={<DropdownToggle onToggle={this.onToggle}>Dropdown</DropdownToggle>}

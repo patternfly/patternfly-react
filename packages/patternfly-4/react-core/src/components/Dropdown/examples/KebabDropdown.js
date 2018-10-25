@@ -44,7 +44,6 @@ export default class KebabDropdown extends Component {
     ];
     return (
       <Dropdown
-        onToggle={this.onToggle}
         onSelect={this.onSelect}
         toggle={<KebabToggle onToggle={this.onToggle} />}
         isOpen={isOpen}
