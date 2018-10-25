@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChartTooltip 1`] = `
+<VictoryPortal
+  groupComponent={<g />}
+/>
+`;
+
+exports[`ChartTooltip 2`] = `
+<VictoryPortal
+  groupComponent={<g />}
+/>
+`;

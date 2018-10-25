@@ -1,0 +1,53 @@
+{
+  "name": "@patternfly/react-charts",
+  "version": "0.0.1",
+  "description": "This library provides a set of React chart components for use with the PatternFly reference implementation.",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/js/index.d.ts",
+  "patternfly:src": "src/",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "dependencies": {
+    "@patternfly/react-styles": "^2.3.0"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0"
+  },
+  "scripts": {
+    "build": "yarn build:babel && yarn build:ts",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
+    "build:ts": "node ./scripts/copyTS.js"
+  },
+  "optionalDependencies": {
+    "@patternfly/react-tokens": "^1.0.0",
+    "@types/victory": "^0.9.19",
+    "victory": "^30.1.0"
+  },
+  "devDependencies": {
+    "@patternfly/patternfly-next": "1.0.64",
+    "css": "^2.2.3",
+    "fs-extra": "^6.0.1",
+    "glob": "^7.1.2",
+    "npmlog": "^4.1.2"
+  }
+}

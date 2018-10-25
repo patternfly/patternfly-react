@@ -1,0 +1,2707 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chart 1`] = `
+<VictoryContainer
+  className="VictoryContainer"
+  events={Object {}}
+  height={400}
+  id="pie-parent-parent"
+  index="parent"
+  key="pie-parent-parent"
+  pathFunction={[Function]}
+  portalComponent={<Portal />}
+  portalZIndex={99}
+  responsive={true}
+  slices={
+    Array [
+      Object {
+        "data": Object {
+          "_x": 1,
+          "_y": 1,
+          "eventKey": 0,
+          "x": "A",
+          "xName": "A",
+          "y": 1,
+        },
+        "endAngle": 0.7058887196954844,
+        "index": 0,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 0,
+        "value": 1,
+      },
+      Object {
+        "data": Object {
+          "_x": 2,
+          "_y": 2,
+          "eventKey": 1,
+          "x": "B",
+          "xName": "B",
+          "y": 2,
+        },
+        "endAngle": 2.1002128665665096,
+        "index": 1,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 0.7058887196954844,
+        "value": 2,
+      },
+      Object {
+        "data": Object {
+          "_x": 3,
+          "_y": 3,
+          "eventKey": 2,
+          "x": "C",
+          "xName": "C",
+          "y": 3,
+        },
+        "endAngle": 4.182972440613075,
+        "index": 2,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 2.1002128665665096,
+        "value": 3,
+      },
+      Object {
+        "data": Object {
+          "_x": 4,
+          "_y": 1,
+          "eventKey": 3,
+          "x": "D",
+          "xName": "D",
+          "y": 1,
+        },
+        "endAngle": 4.88886116030856,
+        "index": 3,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 4.182972440613075,
+        "value": 1,
+      },
+      Object {
+        "data": Object {
+          "_x": 5,
+          "_y": 2,
+          "eventKey": 4,
+          "x": "E",
+          "xName": "E",
+          "y": 2,
+        },
+        "endAngle": 6.283185307179585,
+        "index": 4,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 4.88886116030856,
+        "value": 2,
+      },
+    ]
+  }
+  standalone={true}
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+  width={400}
+>
+  <g>
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 1,
+          "_y": 1,
+          "eventKey": 0,
+          "x": "A",
+          "xName": "A",
+          "y": 1,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-0"
+      index={0}
+      key="pie-data-0"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          "endAngle": 0.7058887196954844,
+          "index": 0,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0,
+          "value": 1,
+        }
+      }
+      style={
+        Object {
+          "fill": "#007bba",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 2,
+          "_y": 2,
+          "eventKey": 1,
+          "x": "B",
+          "xName": "B",
+          "y": 2,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-1"
+      index={1}
+      key="pie-data-1"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          "endAngle": 2.1002128665665096,
+          "index": 1,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0.7058887196954844,
+          "value": 2,
+        }
+      }
+      style={
+        Object {
+          "fill": "#bee1f4",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 3,
+          "_y": 3,
+          "eventKey": 2,
+          "x": "C",
+          "xName": "C",
+          "y": 3,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-2"
+      index={2}
+      key="pie-data-2"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          "endAngle": 4.182972440613075,
+          "index": 2,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 2.1002128665665096,
+          "value": 3,
+        }
+      }
+      style={
+        Object {
+          "fill": "#39a5dc",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 4,
+          "_y": 1,
+          "eventKey": 3,
+          "x": "D",
+          "xName": "D",
+          "y": 1,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-3"
+      index={3}
+      key="pie-data-3"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          "endAngle": 4.88886116030856,
+          "index": 3,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 4.182972440613075,
+          "value": 1,
+        }
+      }
+      style={
+        Object {
+          "fill": "#0066ff",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 5,
+          "_y": 2,
+          "eventKey": 4,
+          "x": "E",
+          "xName": "E",
+          "y": 2,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-4"
+      index={4}
+      key="pie-data-4"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+          "endAngle": 6.283185307179585,
+          "index": 4,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 4.88886116030856,
+          "value": 2,
+        }
+      }
+      style={
+        Object {
+          "fill": "#007bba",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 1,
+          "_y": 1,
+          "eventKey": 0,
+          "x": "A",
+          "xName": "A",
+          "y": 1,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-0"
+      index={0}
+      key="pie-labels-0"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="top"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          "endAngle": 0.7058887196954844,
+          "index": 0,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0,
+          "value": 1,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="A"
+      textAnchor="middle"
+      verticalAnchor="end"
+      x={265}
+      y={24}
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 2,
+          "_y": 2,
+          "eventKey": 1,
+          "x": "B",
+          "xName": "B",
+          "y": 2,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-1"
+      index={1}
+      key="pie-labels-1"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="right"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          "endAngle": 2.1002128665665096,
+          "index": 1,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0.7058887196954844,
+          "value": 2,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="B"
+      textAnchor="start"
+      verticalAnchor="middle"
+      x={385}
+      y={169}
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 3,
+          "_y": 3,
+          "eventKey": 2,
+          "x": "C",
+          "xName": "C",
+          "y": 3,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-2"
+      index={2}
+      key="pie-labels-2"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="bottom"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          "endAngle": 4.182972440613075,
+          "index": 2,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 2.1002128665665096,
+          "value": 3,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="C"
+      textAnchor="middle"
+      verticalAnchor="start"
+      x={200}
+      y={388}
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 4,
+          "_y": 1,
+          "eventKey": 3,
+          "x": "D",
+          "xName": "D",
+          "y": 1,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-3"
+      index={3}
+      key="pie-labels-3"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="left"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          "endAngle": 4.88886116030856,
+          "index": 3,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 4.182972440613075,
+          "value": 1,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="D"
+      textAnchor="end"
+      verticalAnchor="middle"
+      x={15}
+      y={233}
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 5,
+          "_y": 2,
+          "eventKey": 4,
+          "x": "E",
+          "xName": "E",
+          "y": 2,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-4"
+      index={4}
+      key="pie-labels-4"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="top"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+          "endAngle": 6.283185307179585,
+          "index": 4,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 4.88886116030856,
+          "value": 2,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="E"
+      textAnchor="middle"
+      verticalAnchor="end"
+      x={79}
+      y={56}
+    />
+  </g>
+</VictoryContainer>
+`;
+
+exports[`Chart 2`] = `
+<VictoryContainer
+  className="VictoryContainer"
+  events={Object {}}
+  height={400}
+  id="pie-parent-parent"
+  index="parent"
+  key="pie-parent-parent"
+  pathFunction={[Function]}
+  portalComponent={<Portal />}
+  portalZIndex={99}
+  responsive={true}
+  slices={
+    Array [
+      Object {
+        "data": Object {
+          "_x": 1,
+          "_y": 1,
+          "eventKey": 0,
+          "x": "A",
+          "xName": "A",
+          "y": 1,
+        },
+        "endAngle": 0.7058887196954844,
+        "index": 0,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 0,
+        "value": 1,
+      },
+      Object {
+        "data": Object {
+          "_x": 2,
+          "_y": 2,
+          "eventKey": 1,
+          "x": "B",
+          "xName": "B",
+          "y": 2,
+        },
+        "endAngle": 2.1002128665665096,
+        "index": 1,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 0.7058887196954844,
+        "value": 2,
+      },
+      Object {
+        "data": Object {
+          "_x": 3,
+          "_y": 3,
+          "eventKey": 2,
+          "x": "C",
+          "xName": "C",
+          "y": 3,
+        },
+        "endAngle": 4.182972440613075,
+        "index": 2,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 2.1002128665665096,
+        "value": 3,
+      },
+      Object {
+        "data": Object {
+          "_x": 4,
+          "_y": 1,
+          "eventKey": 3,
+          "x": "D",
+          "xName": "D",
+          "y": 1,
+        },
+        "endAngle": 4.88886116030856,
+        "index": 3,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 4.182972440613075,
+        "value": 1,
+      },
+      Object {
+        "data": Object {
+          "_x": 5,
+          "_y": 2,
+          "eventKey": 4,
+          "x": "E",
+          "xName": "E",
+          "y": 2,
+        },
+        "endAngle": 6.283185307179585,
+        "index": 4,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 4.88886116030856,
+        "value": 2,
+      },
+    ]
+  }
+  standalone={true}
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+  width={400}
+>
+  <g>
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 1,
+          "_y": 1,
+          "eventKey": 0,
+          "x": "A",
+          "xName": "A",
+          "y": 1,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-0"
+      index={0}
+      key="pie-data-0"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          "endAngle": 0.7058887196954844,
+          "index": 0,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0,
+          "value": 1,
+        }
+      }
+      style={
+        Object {
+          "fill": "#007bba",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 2,
+          "_y": 2,
+          "eventKey": 1,
+          "x": "B",
+          "xName": "B",
+          "y": 2,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-1"
+      index={1}
+      key="pie-data-1"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          "endAngle": 2.1002128665665096,
+          "index": 1,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0.7058887196954844,
+          "value": 2,
+        }
+      }
+      style={
+        Object {
+          "fill": "#bee1f4",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 3,
+          "_y": 3,
+          "eventKey": 2,
+          "x": "C",
+          "xName": "C",
+          "y": 3,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-2"
+      index={2}
+      key="pie-data-2"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          "endAngle": 4.182972440613075,
+          "index": 2,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 2.1002128665665096,
+          "value": 3,
+        }
+      }
+      style={
+        Object {
+          "fill": "#39a5dc",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 4,
+          "_y": 1,
+          "eventKey": 3,
+          "x": "D",
+          "xName": "D",
+          "y": 1,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-3"
+      index={3}
+      key="pie-data-3"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          "endAngle": 4.88886116030856,
+          "index": 3,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 4.182972440613075,
+          "value": 1,
+        }
+      }
+      style={
+        Object {
+          "fill": "#0066ff",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 5,
+          "_y": 2,
+          "eventKey": 4,
+          "x": "E",
+          "xName": "E",
+          "y": 2,
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-4"
+      index={4}
+      key="pie-data-4"
+      origin={
+        Object {
+          "x": 200,
+          "y": 200,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+          "endAngle": 6.283185307179585,
+          "index": 4,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 4.88886116030856,
+          "value": 2,
+        }
+      }
+      style={
+        Object {
+          "fill": "#007bba",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 1,
+          "_y": 1,
+          "eventKey": 0,
+          "x": "A",
+          "xName": "A",
+          "y": 1,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-0"
+      index={0}
+      key="pie-labels-0"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="top"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          "endAngle": 0.7058887196954844,
+          "index": 0,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0,
+          "value": 1,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="A"
+      textAnchor="middle"
+      verticalAnchor="end"
+      x={265}
+      y={24}
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 2,
+          "_y": 2,
+          "eventKey": 1,
+          "x": "B",
+          "xName": "B",
+          "y": 2,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-1"
+      index={1}
+      key="pie-labels-1"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="right"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          "endAngle": 2.1002128665665096,
+          "index": 1,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0.7058887196954844,
+          "value": 2,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="B"
+      textAnchor="start"
+      verticalAnchor="middle"
+      x={385}
+      y={169}
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 3,
+          "_y": 3,
+          "eventKey": 2,
+          "x": "C",
+          "xName": "C",
+          "y": 3,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-2"
+      index={2}
+      key="pie-labels-2"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="bottom"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          "endAngle": 4.182972440613075,
+          "index": 2,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 2.1002128665665096,
+          "value": 3,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="C"
+      textAnchor="middle"
+      verticalAnchor="start"
+      x={200}
+      y={388}
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 4,
+          "_y": 1,
+          "eventKey": 3,
+          "x": "D",
+          "xName": "D",
+          "y": 1,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-3"
+      index={3}
+      key="pie-labels-3"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="left"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          "endAngle": 4.88886116030856,
+          "index": 3,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 4.182972440613075,
+          "value": 1,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="D"
+      textAnchor="end"
+      verticalAnchor="middle"
+      x={15}
+      y={233}
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 1,
+            "_y": 1,
+            "eventKey": 0,
+            "x": "A",
+            "xName": "A",
+            "y": 1,
+          },
+          Object {
+            "_x": 2,
+            "_y": 2,
+            "eventKey": 1,
+            "x": "B",
+            "xName": "B",
+            "y": 2,
+          },
+          Object {
+            "_x": 3,
+            "_y": 3,
+            "eventKey": 2,
+            "x": "C",
+            "xName": "C",
+            "y": 3,
+          },
+          Object {
+            "_x": 4,
+            "_y": 1,
+            "eventKey": 3,
+            "x": "D",
+            "xName": "D",
+            "y": 1,
+          },
+          Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 5,
+          "_y": 2,
+          "eventKey": 4,
+          "x": "E",
+          "xName": "E",
+          "y": 2,
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-4"
+      index={4}
+      key="pie-labels-4"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="top"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 5,
+            "_y": 2,
+            "eventKey": 4,
+            "x": "E",
+            "xName": "E",
+            "y": 2,
+          },
+          "endAngle": 6.283185307179585,
+          "index": 4,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 4.88886116030856,
+          "value": 2,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="E"
+      textAnchor="middle"
+      verticalAnchor="end"
+      x={79}
+      y={56}
+    />
+  </g>
+</VictoryContainer>
+`;
+
+exports[`renders component data 1`] = `
+<VictoryContainer
+  className="VictoryContainer"
+  events={Object {}}
+  height={50}
+  id="pie-parent-parent"
+  index="parent"
+  key="pie-parent-parent"
+  pathFunction={[Function]}
+  portalComponent={<Portal />}
+  portalZIndex={99}
+  responsive={true}
+  slices={
+    Array [
+      Object {
+        "data": Object {
+          "_x": 0,
+          "_y": Object {
+            "name": "Cats",
+          },
+          "eventKey": 0,
+          "name": "Cats",
+        },
+        "endAngle": 0.017453292519943295,
+        "index": 0,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 0,
+        "value": NaN,
+      },
+      Object {
+        "data": Object {
+          "_x": 1,
+          "_y": Object {
+            "name": "Dogs",
+          },
+          "eventKey": 1,
+          "name": "Dogs",
+        },
+        "endAngle": 0.03490658503988659,
+        "index": 1,
+        "padAngle": 0.017453292519943295,
+        "startAngle": 0.017453292519943295,
+        "value": NaN,
+      },
+    ]
+  }
+  standalone={true}
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+  width={200}
+>
+  <g>
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 0,
+            "_y": Object {
+              "name": "Cats",
+            },
+            "eventKey": 0,
+            "name": "Cats",
+          },
+          Object {
+            "_x": 1,
+            "_y": Object {
+              "name": "Dogs",
+            },
+            "eventKey": 1,
+            "name": "Dogs",
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 0,
+          "_y": Object {
+            "name": "Cats",
+          },
+          "eventKey": 0,
+          "name": "Cats",
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-0"
+      index={0}
+      key="pie-data-0"
+      origin={
+        Object {
+          "x": 100,
+          "y": 25,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 0,
+            "_y": Object {
+              "name": "Cats",
+            },
+            "eventKey": 0,
+            "name": "Cats",
+          },
+          "endAngle": 0.017453292519943295,
+          "index": 0,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0,
+          "value": NaN,
+        }
+      }
+      style={
+        Object {
+          "fill": "#007bba",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <Slice
+      data={
+        Array [
+          Object {
+            "_x": 0,
+            "_y": Object {
+              "name": "Cats",
+            },
+            "eventKey": 0,
+            "name": "Cats",
+          },
+          Object {
+            "_x": 1,
+            "_y": Object {
+              "name": "Dogs",
+            },
+            "eventKey": 1,
+            "name": "Dogs",
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 1,
+          "_y": Object {
+            "name": "Dogs",
+          },
+          "eventKey": 1,
+          "name": "Dogs",
+        }
+      }
+      events={
+        Object {
+          "onMouseOut": [Function],
+          "onMouseOver": [Function],
+          "onTouchEnd": [Function],
+          "onTouchStart": [Function],
+        }
+      }
+      id="pie-data-1"
+      index={1}
+      key="pie-data-1"
+      origin={
+        Object {
+          "x": 100,
+          "y": 25,
+        }
+      }
+      pathComponent={<Path />}
+      pathFunction={[Function]}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 1,
+            "_y": Object {
+              "name": "Dogs",
+            },
+            "eventKey": 1,
+            "name": "Dogs",
+          },
+          "endAngle": 0.03490658503988659,
+          "index": 1,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0.017453292519943295,
+          "value": NaN,
+        }
+      }
+      style={
+        Object {
+          "fill": "#bee1f4",
+          "padding": 8,
+          "stroke": "transparent",
+          "strokeWidth": 1,
+        }
+      }
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 0,
+            "_y": Object {
+              "name": "Cats",
+            },
+            "eventKey": 0,
+            "name": "Cats",
+          },
+          Object {
+            "_x": 1,
+            "_y": Object {
+              "name": "Dogs",
+            },
+            "eventKey": 1,
+            "name": "Dogs",
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 0,
+          "_y": Object {
+            "name": "Cats",
+          },
+          "eventKey": 0,
+          "name": "Cats",
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-0"
+      index={0}
+      key="pie-labels-0"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="top"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 0,
+            "_y": Object {
+              "name": "Cats",
+            },
+            "eventKey": 0,
+            "name": "Cats",
+          },
+          "endAngle": 0.017453292519943295,
+          "index": 0,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0,
+          "value": NaN,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="0"
+      textAnchor="middle"
+      verticalAnchor="end"
+      x={100}
+      y={12}
+    />
+    <VictoryTooltip
+      active={false}
+      cornerRadius={0}
+      data={
+        Array [
+          Object {
+            "_x": 0,
+            "_y": Object {
+              "name": "Cats",
+            },
+            "eventKey": 0,
+            "name": "Cats",
+          },
+          Object {
+            "_x": 1,
+            "_y": Object {
+              "name": "Dogs",
+            },
+            "eventKey": 1,
+            "name": "Dogs",
+          },
+        ]
+      }
+      datum={
+        Object {
+          "_x": 1,
+          "_y": Object {
+            "name": "Dogs",
+          },
+          "eventKey": 1,
+          "name": "Dogs",
+        }
+      }
+      events={Object {}}
+      flyoutComponent={
+        <Flyout
+          pathComponent={<Path />}
+        />
+      }
+      groupComponent={<g />}
+      id="pie-labels-1"
+      index={1}
+      key="pie-labels-1"
+      labelComponent={
+        <VictoryLabel
+          capHeight={0.71}
+          direction="inherit"
+          lineHeight={1}
+          textComponent={<Text />}
+          tspanComponent={<TSpan />}
+        />
+      }
+      orientation="top"
+      renderInPortal={true}
+      slice={
+        Object {
+          "data": Object {
+            "_x": 1,
+            "_y": Object {
+              "name": "Dogs",
+            },
+            "eventKey": 1,
+            "name": "Dogs",
+          },
+          "endAngle": 0.03490658503988659,
+          "index": 1,
+          "padAngle": 0.017453292519943295,
+          "startAngle": 0.017453292519943295,
+          "value": NaN,
+        }
+      }
+      style={
+        Object {
+          "fill": "#282d33",
+          "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
+          "fontSize": 14,
+          "letterSpacing": "normal",
+          "padding": 8,
+          "stroke": "transparent",
+        }
+      }
+      text="1"
+      textAnchor="middle"
+      verticalAnchor="end"
+      x={100}
+      y={12}
+    />
+  </g>
+</VictoryContainer>
+`;

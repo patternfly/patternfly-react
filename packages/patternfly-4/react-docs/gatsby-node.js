@@ -23,6 +23,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   config.merge({
     resolve: {
       alias: {
+        '@patternfly/react-charts': path.resolve(__dirname, '../react-charts/src'),
         '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),
         react: path.resolve(__dirname, 'node_modules/react'),
@@ -100,8 +101,8 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           .slice(0, 2)
           .join('/') === doc.relativeDirectory
       ) {
-        // e.g. components/Alert/examples/DangerAlert.js
-        const examplePath = `../../react-core/src/${example.relativePath}`;
+        const packageDir = doc.absolutePath.indexOf('react-charts') !== -1 ? 'react-charts' : 'react-core';
+        const examplePath = `../../${packageDir}/src/${example.relativePath}`;
         rawExamples.push(`{name: '${example.name}', path: '${examplePath}', file: require('!!raw!${examplePath}')}`);
       }
     });
