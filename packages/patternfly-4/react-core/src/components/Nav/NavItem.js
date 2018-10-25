@@ -3,6 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { NavContext } from './Nav';
+import { Button } from '../Button';
 
 const propTypes = {
   /** Content rendered inside the nav item */
@@ -16,47 +17,36 @@ const propTypes = {
   /** Group identifier, will be returned with the onToggle and onSelect callback passed to the Nav component */
   groupId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Item identifier, will be returned with the onToggle and onSelect callback passed to the Nav component */
-  itemId: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  itemId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** True to prevent default anchor link behavior, for example if you want to handle navigation yourself */
+  preventDefault: PropTypes.bool
 };
 
 const defaultProps = {
   children: null,
   className: '',
-  to: '#',
+  to: '',
   isActive: false,
   groupId: null,
-  itemId: null
+  itemId: null,
+  preventDefault: false
 };
 
-const NavItem = ({ className, children, to, isActive, groupId, itemId, ...props }) => {
-  const defaultLink = (
-    <NavContext.Consumer>
-      {context => (
-        <a
-          href={to}
-          onClick={e => context.onSelect(e, groupId, itemId)}
-          className={css(styles.navLink, isActive && styles.modifiers.current, className)}
-          aria-current={isActive ? 'page' : null}
-        >
-          {children}
-        </a>
-      )}
-    </NavContext.Consumer>
-  );
-  const reactElement = React.isValidElement(children);
-  const clonedChild = (
-    <NavContext.Consumer>
-      {context =>
-        React.cloneElement(children, {
-          onClick: e => context.onSelect(e, groupId, itemId),
-          className: css(styles.navLink, isActive && styles.modifiers.current, className)
-        })
-      }
-    </NavContext.Consumer>
-  );
+const NavItem = ({ className, children, to, isActive, groupId, itemId, preventDefault, ...props }) => {
   return (
     <li className={css(styles.navItem, className)} {...props}>
-      {reactElement ? clonedChild : defaultLink}
+      <NavContext.Consumer>
+        {context => (
+          <a
+            href={to}
+            onClick={e => context.onSelect(e, groupId, itemId, to, preventDefault)}
+            className={css(styles.navLink, isActive && styles.modifiers.current, className)}
+            aria-current={isActive ? 'page' : null}
+          >
+            {children}
+          </a>
+        )}
+      </NavContext.Consumer>
     </li>
   );
 };
