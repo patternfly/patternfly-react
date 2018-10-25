@@ -56,7 +56,7 @@ class MockCatalogTileViewExample extends React.Component {
         <CatalogTileView.Category
           key={category.id}
           title={category.category}
-          totalItems={!emptyState && category.items && category.items.length}
+          totalItems={emptyState ? 0 : category.items && category.items.length}
           viewAll={showAll === category.id}
           onViewAll={() => this.onViewAll(category.id)}
         >
