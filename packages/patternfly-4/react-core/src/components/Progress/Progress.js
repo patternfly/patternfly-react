@@ -3,6 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Progress/progress.css
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import ProgressContainer, { ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
+import { getUniqueId } from '../../internal/util';
 
 export const ProgressSize = {
   sm: 'sm',
@@ -49,23 +50,26 @@ const defaultProps = {
 };
 
 class Progress extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      uniqueId:
-        props.id ||
-        `progress-${new Date().getTime()}${Math.random()
-          .toString(36)
-          .slice(2)}`
-    };
-  }
+  id = this.props.id || getUniqueId();
 
   render() {
-    const { className, size, id, value, title, label, variant, measureLocation, min, max, valueText, ...props } = this.props;
-    const { uniqueId } = this.state;
+    const {
+      id,
+      className,
+      size,
+      value,
+      title,
+      label,
+      variant,
+      measureLocation,
+      min,
+      max,
+      valueText,
+      ...props
+    } = this.props;
     const additionalProps = {
       ...props,
-      ...(valueText ? { 'aria-valuetext': valueText } : { 'aria-describedby': `${id}-description` })
+      ...(valueText ? { 'aria-valuetext': valueText } : { 'aria-describedby': `${this.id}-description` })
     };
     let limitedValue;
     limitedValue = value < min ? min : value;
@@ -80,14 +84,14 @@ class Progress extends Component {
           getModifier(styles, measureLocation === ProgressMeasureLocation.inside ? ProgressSize.lg : size, ''),
           className
         )}
-        id={uniqueId}
+        id={this.id}
         role="progressbar"
         aria-valuemin={min}
         aria-valuenow={limitedValue}
         aria-valuemax={max}
       >
         <ProgressContainer
-          parentId={uniqueId}
+          parentId={this.id}
           value={limitedValue}
           title={title}
           label={label}

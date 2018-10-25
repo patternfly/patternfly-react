@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import NavToggle from './NavToggle';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import { NavContext } from './Nav';
+import { getUniqueId } from '../../internal/util';
 
 const propTypes = {
   /** Title shown for the expandable list */
@@ -37,19 +38,20 @@ const defaultProps = {
 };
 
 class NavExpandable extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.uniqueId =
-      props.id ||
-      new Date().getTime() +
-      Math.random()
-        .toString(36)
-        .slice(2);
-  }
+  id = this.props.id || getUniqueId();
 
   render() {
-    const { title, srText, isExpanded: defaultExpanded, children, className, groupId, isActive, ...props } = this.props;
+    const {
+      id,
+      title,
+      srText,
+      isExpanded: defaultExpanded,
+      children,
+      className,
+      groupId,
+      isActive,
+      ...props
+    } = this.props;
 
     return (
       <NavContext.Consumer>
@@ -68,7 +70,7 @@ class NavExpandable extends React.Component {
               >
                 <a
                   className={css(styles.navLink)}
-                  id={srText ? null : this.uniqueId}
+                  id={srText ? null : this.id}
                   href="#"
                   onClick={e => e.preventDefault()}
                   onMouseDown={e => e.preventDefault()}
@@ -81,11 +83,11 @@ class NavExpandable extends React.Component {
                 </a>
                 <section
                   className={css(styles.navSubnav)}
-                  aria-labelledby={this.uniqueId}
+                  aria-labelledby={this.id}
                   hidden={isExpanded ? null : true}
                 >
                   {srText && (
-                    <h2 className={css(a11yStyles.srOnly)} id={this.uniqueId}>
+                    <h2 className={css(a11yStyles.srOnly)} id={this.id}>
                       {srText}
                     </h2>
                   )}
