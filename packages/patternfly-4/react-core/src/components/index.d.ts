@@ -11,6 +11,7 @@ export * from './Card';
 export * from './Checkbox';
 export * from './Dropdown';
 export * from './Form';
+export * from './Label';
 export * from './List';
 export * from './Modal';
 export * from './Nav';

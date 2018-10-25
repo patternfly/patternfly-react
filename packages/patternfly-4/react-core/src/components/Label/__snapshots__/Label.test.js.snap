@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compact Label 1`] = `
+.pf-c-label.pf-m-compact {
+  display: inline-block;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #00659c;
+  border-radius: 3px;
+}
+
+<span
+  className="pf-c-label pf-m-compact"
+>
+  compact
+   Label
+</span>
+`;
+
+exports[`simple Label 1`] = `
+.pf-c-label {
+  display: inline-block;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #00659c;
+  border-radius: 3px;
+}
+
+<span
+  className="pf-c-label"
+>
+  simple Label
+</span>
+`;
