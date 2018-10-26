@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { getUniqueId } from '../../internal/util';
 
 const propTypes = {
   /** Title shown for the group */
@@ -21,23 +22,14 @@ const defaultProps = {
 };
 
 class NavGroup extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.uniqueId =
-      props.id ||
-      new Date().getTime() +
-      Math.random()
-        .toString(36)
-        .slice(2);
-  }
+  id = this.props.id || getUniqueId();
 
   render() {
-    const { title, children, className, ...props } = this.props;
+    const { id, title, children, className, ...props } = this.props;
 
     return (
-      <section className={css(styles.navSection, className)} aria-labelledby={this.uniqueId} {...props}>
-        <h2 className={css(styles.navSectionTitle)} id={this.uniqueId}>
+      <section className={css(styles.navSection, className)} aria-labelledby={this.id} {...props}>
+        <h2 className={css(styles.navSectionTitle)} id={this.id}>
           {title}
         </h2>
         <ul className={css(styles.navSimpleList)}>{children}</ul>
