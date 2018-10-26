@@ -114,6 +114,7 @@ exports[`KebabToggle basic 1`] = `
       component="div"
       isOpen={true}
       onClick={[Function]}
+      position="left"
     >
       <div
         aria-labelledby="Dropdown Toggle"
@@ -141,7 +142,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   color: #282d33;
   background-color: transparent;
 }
-.pf-c-dropdown.pf-m-top.pf-m-align-right {
+.pf-c-dropdown.pf-m-top {
   display: inline-block;
   position: relative;
 }
@@ -233,7 +234,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   }
 >
   <div
-    className="pf-c-dropdown pf-m-top pf-m-align-right"
+    className="pf-c-dropdown pf-m-top"
   >
     <Kebab
       aria-label="Actions"
@@ -497,18 +498,6 @@ exports[`KebabToggle expanded 1`] = `
   border: 1px solid transparent;
   box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
 .pf-c-dropdown.pf-m-expanded {
   display: inline-block;
   position: relative;
@@ -662,20 +651,19 @@ exports[`KebabToggle expanded 1`] = `
       component="ul"
       isOpen={true}
       onClick={[Function]}
+      position="left"
     >
       <FocusTrap
         _createFocusTrap={[Function]}
         active={true}
-        className="pf-c-dropdown__menu"
         focusTrapOptions={Object {}}
         paused={false}
         tag="div"
       >
-        <div
-          className="pf-c-dropdown__menu"
-        >
+        <div>
           <ul
             aria-labelledby="Dropdown Toggle"
+            className="pf-c-dropdown__menu"
             hidden={false}
             onClick={[Function]}
           >
@@ -1162,7 +1150,7 @@ exports[`KebabToggle right aligned 1`] = `
   color: #282d33;
   background-color: transparent;
 }
-.pf-c-dropdown.pf-m-align-right {
+.pf-c-dropdown {
   display: inline-block;
   position: relative;
 }
@@ -1254,7 +1242,7 @@ exports[`KebabToggle right aligned 1`] = `
   }
 >
   <div
-    className="pf-c-dropdown pf-m-align-right"
+    className="pf-c-dropdown"
   >
     <Kebab
       aria-label="Actions"
@@ -1434,6 +1422,7 @@ exports[`dropdown basic 1`] = `
       component="div"
       isOpen={true}
       onClick={[Function]}
+      position="left"
     >
       <div
         aria-labelledby="Dropdown Toggle"
@@ -1467,7 +1456,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   color: #282d33;
   background-color: transparent;
 }
-.pf-c-dropdown.pf-m-top.pf-m-align-right {
+.pf-c-dropdown.pf-m-top {
   display: inline-block;
   position: relative;
 }
@@ -1560,7 +1549,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   }
 >
   <div
-    className="pf-c-dropdown pf-m-top pf-m-align-right"
+    className="pf-c-dropdown pf-m-top"
   >
     <DropdownToggle
       className=""
@@ -1837,18 +1826,6 @@ exports[`dropdown expanded 1`] = `
   border: 1px solid transparent;
   box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
 .pf-c-dropdown.pf-m-expanded {
   display: inline-block;
   position: relative;
@@ -2003,20 +1980,19 @@ exports[`dropdown expanded 1`] = `
       component="ul"
       isOpen={true}
       onClick={[Function]}
+      position="left"
     >
       <FocusTrap
         _createFocusTrap={[Function]}
         active={true}
-        className="pf-c-dropdown__menu"
         focusTrapOptions={Object {}}
         paused={false}
         tag="div"
       >
-        <div
-          className="pf-c-dropdown__menu"
-        >
+        <div>
           <ul
             aria-labelledby="Dropdown Toggle"
+            className="pf-c-dropdown__menu"
             hidden={false}
             onClick={[Function]}
           >
@@ -2352,7 +2328,7 @@ exports[`dropdown right aligned 1`] = `
   color: #282d33;
   background-color: transparent;
 }
-.pf-c-dropdown.pf-m-align-right {
+.pf-c-dropdown {
   display: inline-block;
   position: relative;
 }
@@ -2445,7 +2421,7 @@ exports[`dropdown right aligned 1`] = `
   }
 >
   <div
-    className="pf-c-dropdown pf-m-align-right"
+    className="pf-c-dropdown"
   >
     <DropdownToggle
       className=""

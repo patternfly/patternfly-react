@@ -1,16 +1,7 @@
 import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
 import { DropdownToggleProps } from './DropdownToggle';
-
-export const DropdownPosition: {
-  right: 'right';
-  left: 'left';
-}
-
-export const DropdownDirection: {
-  up: 'up';
-  down: 'down';
-}
+import { DropdownPosition, DropdownDirection } from './dropdownConstants';
 
 export interface DropdownProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;

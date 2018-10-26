@@ -1,24 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Dropdown, { DropdownPosition, DropdownDirection } from './Dropdown';
+import Dropdown from './Dropdown';
+import { DropdownPosition, DropdownDirection } from './dropdownConstants';
 import DropdownItem from './DropdownItem';
 import DropdownSeparator from './Separator';
 import DropdownToggle from './DropdownToggle';
 import KebabToggle from './KebabToggle';
-
-const DropItems = () => (
-  <React.Fragment>
-    <DropdownItem>Link</DropdownItem>
-    <DropdownItem component="button">Action</DropdownItem>
-    <DropdownItem isDisabled>Disabled Link</DropdownItem>
-    <DropdownItem isDisabled component="button">
-      Disabled Action
-    </DropdownItem>
-    <DropdownSeparator />
-    <DropdownItem>Separated Link</DropdownItem>
-    <DropdownItem component="button">Separated Action</DropdownItem>
-  </React.Fragment>
-);
 
 const dropdownItems = [
   <DropdownItem key="link">Link</DropdownItem>,

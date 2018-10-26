@@ -3,16 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import DropdownMenu from './DropdownMenu';
-
-export const DropdownPosition = {
-  right: 'right',
-  left: 'left'
-};
-
-export const DropdownDirection = {
-  up: 'up',
-  down: 'down'
-};
+import { DropdownPosition, DropdownDirection } from './dropdownConstants';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -27,7 +18,7 @@ const propTypes = {
     }
     return null;
   },
-  /** Classess applied to root element of dropdown */
+  /** Classes applied to root element of dropdown */
   className: PropTypes.string,
   /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
   dropdownItems: PropTypes.array,
@@ -87,7 +78,6 @@ class Dropdown extends React.Component {
           styles.dropdown,
           isPlain && styles.modifiers.plain,
           direction === DropdownDirection.up && styles.modifiers.top,
-          position === DropdownPosition.right && styles.modifiers.alignRight,
           isOpen && styles.modifiers.expanded,
           className
         )}
@@ -100,6 +90,7 @@ class Dropdown extends React.Component {
           <DropdownMenu
             component={component}
             isOpen={isOpen}
+            position={position}
             aria-labelledby={id}
             onClick={event => onSelect && onSelect(event)}
           >
