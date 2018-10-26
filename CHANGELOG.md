@@ -1,5 +1,15 @@
 
-## Change Log (2018-10-26)
+## patternfly3-react-lerna-root@7.4.0 (2018-10-26)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#606](https://github.com/patternfly/patternfly-react/pull/606) feat(ConsoleSelector): introduce ConsoleSelector component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## @patternfly/react-console@1.5.0 (2018-10-26)
 
 #### :rocket: New Feature
 * `patternfly-3`
