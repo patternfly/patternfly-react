@@ -77,7 +77,6 @@ exports[`Check page condensed header example against snapshot 1`] = `
 <Page
   aria-label="Page layout"
   className="my-page-class"
-  condensedHeader={true}
   header={
     <PageHeader
       avatar=" | Avatar"
@@ -99,17 +98,17 @@ exports[`Check page condensed header example against snapshot 1`] = `
       nav="Navigation"
     />
   }
-  useCondensed={false}
+  useCondensed={true}
 >
   <div
     aria-label="Page layout"
     className="pf-l-page my-page-class"
-    condensedHeader={true}
     id="PageId"
   >
     <PageHeader
       avatar=" | Avatar"
       className=""
+      condensed={false}
       isCondensed={false}
       logo="Logo"
       onNavToggle={[Function]}
@@ -119,6 +118,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
     >
       <header
         className="pf-l-page__header"
+        condensed={false}
         role="banner"
         style={
           Object {

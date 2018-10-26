@@ -215,7 +215,7 @@ class PageLayoutCondensedHeader extends React.Component {
     return (
       <React.Fragment>
         <BackgroundImage src={bgImages} />
-        <Page header={Header} sidebar={Sidebar} condensedHeader>
+        <Page header={Header} sidebar={Sidebar} useCondensed>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>

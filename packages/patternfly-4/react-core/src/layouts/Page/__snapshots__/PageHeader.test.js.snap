@@ -18,7 +18,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   margin-right: 2rem;
   margin-left: auto;
 }
-.pf-l-page__header {
+.pf-l-page__header.pf-m-isCondensed {
   display: flex;
   grid-area: header;
   flex-wrap: wrap;
@@ -28,8 +28,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 
 <header
-  className="pf-l-page__header"
-  condensed={true}
+  className="pf-l-page__header pf-m-isCondensed"
   role="banner"
   style={
     Object {

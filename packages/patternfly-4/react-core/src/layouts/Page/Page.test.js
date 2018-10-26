@@ -29,7 +29,7 @@ test('Check page condensed header example against snapshot', () => {
   const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" onNavToggle={() => undefined} />;
   const Sidebar = <PageSidebar nav="Navigation" isNavOpen />;
   const view = mount(
-    <Page {...props} header={Header} sidebar={Sidebar} condensedHeader>
+    <Page {...props} header={Header} sidebar={Sidebar} useCondensed>
       <PageSection variant="default">Section with default background</PageSection>
       <PageSection variant="light">Section with light background</PageSection>
       <PageSection variant="dark">Section with dark background</PageSection>
