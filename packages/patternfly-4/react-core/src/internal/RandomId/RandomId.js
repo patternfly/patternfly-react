@@ -1,9 +1,8 @@
 /** This Component can be used to wrap a functional component in order to generate a random ID
  * Example of how to use this component
  *
- * const Component = ({ id}) => (
- *  <RandomId>
- *  {randomId => (
+ * const Component = ({id}) => (
+ *  <RandomId>{randomId => (
  *     <div id={id || randomId}>
  *       div with random ID
  *     </div>
