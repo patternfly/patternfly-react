@@ -3,6 +3,36 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
+  * [#824](https://github.com/patternfly/patternfly-react/pull/824) BackgroundImage: Add missing fragment identifier to example ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## patternfly4-react-lerna-root@1.14.1 (2018-10-26)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.17.19 (2018-10-26)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.27.2 (2018-10-26)
+
+#### :bug: Bug Fix
+* `patternfly-4`
   * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz1337](https://github.com/boaz1337))
 
 #### Committers: 1
