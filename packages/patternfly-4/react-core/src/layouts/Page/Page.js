@@ -43,6 +43,7 @@ class Page extends React.Component {
   componentDidMount() {
     const { condensedHeader } = this.props;
     if (condensedHeader) {
+      // I picked this because it's approx 1 frame (ie: 16.7ms)
       this.mainRef.current.addEventListener('scroll', debounce(this.handleScroll, 16));
     }
   }
@@ -54,15 +55,17 @@ class Page extends React.Component {
   }
 
   handleScroll = e => {
-    const { headerCondensed } = this.state;
-    const { condensedHeight } = this.props;
-    const main = e.target;
-    const mainPosition = main.scrollTop;
-    if (mainPosition > condensedHeight && !headerCondensed) {
-      this.setState({ headerCondensed: true });
-    } else if (mainPosition < condensedHeight && headerCondensed) {
-      this.setState({ headerCondensed: false });
-    }
+    window.requestAnimationFrame(() => {
+      const { headerCondensed } = this.state;
+      const { condensedHeight } = this.props;
+      const main = e.target;
+      const mainPosition = main.scrollTop;
+      if (mainPosition > condensedHeight && !headerCondensed) {
+        this.setState({ headerCondensed: true });
+      } else if (mainPosition < condensedHeight && headerCondensed) {
+        this.setState({ headerCondensed: false });
+      }
+    });
   };
 
   render() {
