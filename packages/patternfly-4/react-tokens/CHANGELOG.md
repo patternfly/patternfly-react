@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.5.5...@patternfly/react-tokens@1.6.0) (2018-10-26)
+
+
+### Features
+
+* **page layout:** adds the condensed header feature to the page header ([#843](https://github.com/patternfly/patternfly-react/issues/843)) ([0a3591a](https://github.com/patternfly/patternfly-react/commit/0a3591a))
+
+
+
+
 <a name="1.5.5"></a>
 ## [1.5.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.5.4...@patternfly/react-tokens@1.5.5) (2018-10-26)
 
