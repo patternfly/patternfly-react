@@ -1,4 +1,8 @@
 import React from 'react';
+import { default as Timer } from './Timer';
+import { closest as closestPolyfill } from './closestPolyfill';
+import { default as controlled } from './controlled';
+import { patternfly, c3ChartDefaults, layout } from './patternfly';
 
 /** Equivalent to calling `this.someMethod = this.someMethod.bind(this)` for every method name in the methods array. */
 export const bindMethods = (context, methods) => {
@@ -89,4 +93,28 @@ export const KEYS = {
   ARROW_UP: 'ArrowUp',
   HOME: 'Home',
   END: 'End'
+};
+
+export const helpers = {
+  Timer,
+  closestPolyfill,
+  controlled,
+  patternfly,
+  c3ChartDefaults,
+  layout,
+  debounce,
+  propExists,
+  propOrState,
+  selectKeys,
+  filterKeys,
+  excludeKeys,
+  childrenToArray,
+  filterChildren,
+  findChild,
+  propsChanged,
+  hasDisplayName,
+  nullValues,
+  noop,
+  KEY_CODES,
+  KEYS
 };
