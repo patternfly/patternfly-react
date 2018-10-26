@@ -18,17 +18,17 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   margin-right: 2rem;
   margin-left: auto;
 }
-.pf-l-page__header.pf-m-isCondensed {
+.pf-l-page__header.pf-m-condensed {
   display: flex;
   grid-area: header;
   flex-wrap: wrap;
   align-items: flex-end;
   max-width: 100%;
-  min-height: 6.875rem;
+  min-height: 1.25rem;
 }
 
 <header
-  className="pf-l-page__header pf-m-isCondensed"
+  className="pf-l-page__header pf-m-condensed"
   role="banner"
   style={
     Object {

@@ -108,7 +108,6 @@ exports[`Check page condensed header example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      condensed={false}
       isCondensed={false}
       logo="Logo"
       onNavToggle={[Function]}
@@ -118,7 +117,6 @@ exports[`Check page condensed header example against snapshot 1`] = `
     >
       <header
         className="pf-l-page__header"
-        condensed={false}
         role="banner"
         style={
           Object {
