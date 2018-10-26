@@ -47,7 +47,7 @@ const PageHeader = ({
   isCondensed,
   ...props
 }) => {
-  const customClassName = css(styles.pageHeader, isCondensed && 'pf-m-isCondensed', className);
+  const customClassName = css(styles.pageHeader, isCondensed && styles.modifiers.condensed, className);
   return (
     <header role="banner" className={customClassName} style={{ overflowX: 'unset' }} {...props}>
       <div className={css(styles.pageHeaderBrand)}>
