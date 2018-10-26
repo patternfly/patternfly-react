@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ConsoleSelector keeps connection when switching types 1`] = `
-<ConsoleSelector
+exports[`AccessConsoles keeps connection when switching types 1`] = `
+<AccessConsoles
   disconnectByChange={false}
   textDisconnectByChange="Disconnect before switching"
   textEmptyConsoleList="No console available"
@@ -324,11 +324,11 @@ exports[`ConsoleSelector keeps connection when switching types 1`] = `
       </Row>
     </div>
   </Grid>
-</ConsoleSelector>
+</AccessConsoles>
 `;
 
-exports[`ConsoleSelector switching SerialConsole and VncConsole 1`] = `
-<ConsoleSelector
+exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
+<AccessConsoles
   disconnectByChange={true}
   textDisconnectByChange="Disconnect before switching"
   textEmptyConsoleList="No console available"
@@ -552,10 +552,10 @@ exports[`ConsoleSelector switching SerialConsole and VncConsole 1`] = `
       </Row>
     </div>
   </Grid>
-</ConsoleSelector>
+</AccessConsoles>
 `;
 
-exports[`ConsoleSelector switching SerialConsole and VncConsole 2`] = `
+exports[`AccessConsoles switching SerialConsole and VncConsole 2`] = `
 Array [
   <li
     className=""
@@ -604,7 +604,7 @@ Array [
 ]
 `;
 
-exports[`ConsoleSelector switching SerialConsole and VncConsole 3`] = `
+exports[`AccessConsoles switching SerialConsole and VncConsole 3`] = `
 Array [
   <li
     className=""
@@ -653,7 +653,7 @@ Array [
 ]
 `;
 
-exports[`ConsoleSelector with SerialConsole and VncConsole as children 1`] = `
+exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
 <Grid
   bsClass="container"
   componentClass="div"
@@ -728,7 +728,7 @@ exports[`ConsoleSelector with SerialConsole and VncConsole as children 1`] = `
 </Grid>
 `;
 
-exports[`ConsoleSelector with SerialConsole as a single child 1`] = `
+exports[`AccessConsoles with SerialConsole as a single child 1`] = `
 <Grid
   bsClass="container"
   componentClass="div"
@@ -803,7 +803,7 @@ exports[`ConsoleSelector with SerialConsole as a single child 1`] = `
 </Grid>
 `;
 
-exports[`ConsoleSelector with VncConsole as a single child 1`] = `
+exports[`AccessConsoles with VncConsole as a single child 1`] = `
 <Grid
   bsClass="container"
   componentClass="div"
@@ -878,7 +878,7 @@ exports[`ConsoleSelector with VncConsole as a single child 1`] = `
 </Grid>
 `;
 
-exports[`ConsoleSelector with wrapped SerialConsole as a child 1`] = `
+exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
 <Grid
   bsClass="container"
   componentClass="div"
@@ -953,7 +953,454 @@ exports[`ConsoleSelector with wrapped SerialConsole as a child 1`] = `
 </Grid>
 `;
 
-exports[`Empty ConsoleSelector 1`] = `
+exports[`AccessConsoles switching SerialConsole and VncConsole 2`] = `
+Array [
+  <li
+    className=""
+    role="presentation"
+  >
+    <SafeAnchor
+      componentClass="a"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="menuitem"
+      tabIndex="-1"
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Serial Console
+      </a>
+    </SafeAnchor>
+  </li>,
+  <li
+    className=""
+    role="presentation"
+  >
+    <SafeAnchor
+      componentClass="a"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="menuitem"
+      tabIndex="-1"
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        VNC Console
+      </a>
+    </SafeAnchor>
+  </li>,
+]
+`;
+
+exports[`AccessConsoles switching SerialConsole and VncConsole 3`] = `
+Array [
+  <li
+    className=""
+    role="presentation"
+  >
+    <SafeAnchor
+      componentClass="a"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="menuitem"
+      tabIndex="-1"
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        Serial Console
+      </a>
+    </SafeAnchor>
+  </li>,
+  <li
+    className=""
+    role="presentation"
+  >
+    <SafeAnchor
+      componentClass="a"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="menuitem"
+      tabIndex="-1"
+    >
+      <a
+        href="#"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="menuitem"
+        tabIndex="-1"
+      >
+        VNC Console
+      </a>
+    </SafeAnchor>
+  </li>,
+]
+`;
+
+exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
+<Grid
+  bsClass="container"
+  componentClass="div"
+  fluid={true}
+>
+  <Form
+    bsClass="form"
+    componentClass="form"
+    horizontal={true}
+    inline={false}
+  >
+    <FormGroup
+      bsClass="form-group"
+      className="console-selector-pf"
+      controlId="console-type"
+    >
+      <Col
+        bsClass="col"
+        componentClass="div"
+      >
+        <Uncontrolled(Dropdown)
+          disabled={false}
+          id="console-type-selector"
+        >
+          <DropdownToggle
+            bsClass="dropdown-toggle"
+            bsRole="toggle"
+            open={false}
+            useAnchor={false}
+          >
+            Select Console Type
+          </DropdownToggle>
+          <DropdownMenu
+            bsClass="dropdown-menu"
+            bsRole="menu"
+            pullRight={false}
+          >
+            <MenuItem
+              bsClass="dropdown"
+              disabled={false}
+              divider={false}
+              eventKey="1"
+              header={false}
+              onClick={[Function]}
+            >
+              Serial Console
+            </MenuItem>
+            <MenuItem
+              bsClass="dropdown"
+              disabled={false}
+              divider={false}
+              eventKey="2"
+              header={false}
+              onClick={[Function]}
+            >
+              VNC Console
+            </MenuItem>
+          </DropdownMenu>
+        </Uncontrolled(Dropdown)>
+      </Col>
+    </FormGroup>
+  </Form>
+  <Row
+    bsClass="row"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+    />
+  </Row>
+</Grid>
+`;
+
+exports[`AccessConsoles with SerialConsole as a single child 1`] = `
+<Grid
+  bsClass="container"
+  componentClass="div"
+  fluid={true}
+>
+  <Form
+    bsClass="form"
+    componentClass="form"
+    horizontal={true}
+    inline={false}
+  >
+    <FormGroup
+      bsClass="form-group"
+      className="console-selector-pf"
+      controlId="console-type"
+    >
+      <Col
+        bsClass="col"
+        componentClass="div"
+      >
+        <Uncontrolled(Dropdown)
+          disabled={false}
+          id="console-type-selector"
+        >
+          <DropdownToggle
+            bsClass="dropdown-toggle"
+            bsRole="toggle"
+            open={false}
+            useAnchor={false}
+          >
+            Select Console Type
+          </DropdownToggle>
+          <DropdownMenu
+            bsClass="dropdown-menu"
+            bsRole="menu"
+            pullRight={false}
+          >
+            <MenuItem
+              bsClass="dropdown"
+              disabled={false}
+              divider={false}
+              eventKey="1"
+              header={false}
+              onClick={[Function]}
+            >
+              Serial Console
+            </MenuItem>
+            <MenuItem
+              bsClass="dropdown"
+              disabled={false}
+              divider={false}
+              eventKey="2"
+              header={false}
+              onClick={[Function]}
+            >
+              VNC Console
+            </MenuItem>
+          </DropdownMenu>
+        </Uncontrolled(Dropdown)>
+      </Col>
+    </FormGroup>
+  </Form>
+  <Row
+    bsClass="row"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+    />
+  </Row>
+</Grid>
+`;
+
+exports[`AccessConsoles with VncConsole as a single child 1`] = `
+<Grid
+  bsClass="container"
+  componentClass="div"
+  fluid={true}
+>
+  <Form
+    bsClass="form"
+    componentClass="form"
+    horizontal={true}
+    inline={false}
+  >
+    <FormGroup
+      bsClass="form-group"
+      className="console-selector-pf"
+      controlId="console-type"
+    >
+      <Col
+        bsClass="col"
+        componentClass="div"
+      >
+        <Uncontrolled(Dropdown)
+          disabled={false}
+          id="console-type-selector"
+        >
+          <DropdownToggle
+            bsClass="dropdown-toggle"
+            bsRole="toggle"
+            open={false}
+            useAnchor={false}
+          >
+            Select Console Type
+          </DropdownToggle>
+          <DropdownMenu
+            bsClass="dropdown-menu"
+            bsRole="menu"
+            pullRight={false}
+          >
+            <MenuItem
+              bsClass="dropdown"
+              disabled={false}
+              divider={false}
+              eventKey="1"
+              header={false}
+              onClick={[Function]}
+            >
+              Serial Console
+            </MenuItem>
+            <MenuItem
+              bsClass="dropdown"
+              disabled={false}
+              divider={false}
+              eventKey="2"
+              header={false}
+              onClick={[Function]}
+            >
+              VNC Console
+            </MenuItem>
+          </DropdownMenu>
+        </Uncontrolled(Dropdown)>
+      </Col>
+    </FormGroup>
+  </Form>
+  <Row
+    bsClass="row"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+    />
+  </Row>
+</Grid>
+`;
+
+exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
+<Grid
+  bsClass="container"
+  componentClass="div"
+  fluid={true}
+>
+  <Form
+    bsClass="form"
+    componentClass="form"
+    horizontal={true}
+    inline={false}
+  >
+    <FormGroup
+      bsClass="form-group"
+      className="console-selector-pf"
+      controlId="console-type"
+    >
+      <Col
+        bsClass="col"
+        componentClass="div"
+      >
+        <Uncontrolled(Dropdown)
+          disabled={false}
+          id="console-type-selector"
+        >
+          <DropdownToggle
+            bsClass="dropdown-toggle"
+            bsRole="toggle"
+            open={false}
+            useAnchor={false}
+          >
+            Select Console Type
+          </DropdownToggle>
+          <DropdownMenu
+            bsClass="dropdown-menu"
+            bsRole="menu"
+            pullRight={false}
+          >
+            <MenuItem
+              bsClass="dropdown"
+              disabled={false}
+              divider={false}
+              eventKey="1"
+              header={false}
+              onClick={[Function]}
+            >
+              Serial Console
+            </MenuItem>
+            <MenuItem
+              bsClass="dropdown"
+              disabled={false}
+              divider={false}
+              eventKey="2"
+              header={false}
+              onClick={[Function]}
+            >
+              VNC Console
+            </MenuItem>
+          </DropdownMenu>
+        </Uncontrolled(Dropdown)>
+      </Col>
+    </FormGroup>
+  </Form>
+  <Row
+    bsClass="row"
+    componentClass="div"
+  >
+    <Col
+      bsClass="col"
+      componentClass="div"
+    />
+  </Row>
+</Grid>
+`;
+
+exports[`Empty AccessConsoles 1`] = `
+<div
+  class="container-fluid"
+>
+  <form
+    class="form-horizontal"
+  >
+    <div
+      class="console-selector-pf form-group"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="dropdown disabled btn-group"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="dropdown-toggle btn btn-default"
+            disabled=""
+            id="console-type-selector"
+            role="button"
+            type="button"
+          >
+            No console available 
+            <span
+              class="caret"
+            />
+          </button>
+          <ul
+            aria-labelledby="console-type-selector"
+            class="dropdown-menu"
+            role="menu"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+  <div
+    class="row"
+  >
+    <div
+      class=""
+    />
+  </div>
+</div>
+`;
+
+exports[`Empty AccessConsoles 1`] = `
 <div
   class="container-fluid"
 >

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import { noop } from 'patternfly-react';
 
-import ConsoleSelector from './ConsoleSelector';
+import { AccessConsoles } from './index';
 import { SerialConsole } from '../SerialConsole';
 import { SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } from '../common/constants';
 import { LOADING } from '../SerialConsole/constants';
@@ -10,30 +10,30 @@ import { VncConsole } from '../VncConsole';
 
 const MyVncConsoleTestWrapper = () => <p>This can be VncConsole component or a wrapper</p>;
 
-test('ConsoleSelector with SerialConsole as a single child', () => {
+test('AccessConsoles with SerialConsole as a single child', () => {
   const view = shallow(
-    <ConsoleSelector>
+    <AccessConsoles>
       <SerialConsole onConnect={noop} onDisconnect={noop} status={LOADING} />
-    </ConsoleSelector>
+    </AccessConsoles>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('ConsoleSelector with VncConsole as a single child', () => {
+test('AccessConsoles with VncConsole as a single child', () => {
   const view = shallow(
-    <ConsoleSelector>
+    <AccessConsoles>
       <VncConsole host="foo.bar.host" textDisconnected="Disconnected state text" />
-    </ConsoleSelector>
+    </AccessConsoles>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('ConsoleSelector with SerialConsole and VncConsole as children', () => {
+test('AccessConsoles with SerialConsole and VncConsole as children', () => {
   const view = shallow(
-    <ConsoleSelector>
+    <AccessConsoles>
       <SerialConsole onConnect={noop} onDisconnect={noop} status={LOADING} />
       <VncConsole host="foo.bar.host" textDisconnected="Disconnected state text" />
-    </ConsoleSelector>
+    </AccessConsoles>
   );
   expect(view).toMatchSnapshot();
 });
@@ -44,21 +44,21 @@ const SerialConsoleConnected = () => (
   </p>
 );
 
-test('ConsoleSelector with wrapped SerialConsole as a child', () => {
+test('AccessConsoles with wrapped SerialConsole as a child', () => {
   const view = shallow(
-    <ConsoleSelector>
+    <AccessConsoles>
       <SerialConsoleConnected type={SERIAL_CONSOLE_TYPE} />
-    </ConsoleSelector>
+    </AccessConsoles>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('ConsoleSelector switching SerialConsole and VncConsole', () => {
+test('AccessConsoles switching SerialConsole and VncConsole', () => {
   const wrapper = mount(
-    <ConsoleSelector>
+    <AccessConsoles>
       <SerialConsole onConnect={noop} onDisconnect={noop} status={LOADING} />
       <MyVncConsoleTestWrapper type={VNC_CONSOLE_TYPE} />
-    </ConsoleSelector>
+    </AccessConsoles>
   );
 
   expect(wrapper).toMatchSnapshot();
@@ -91,20 +91,20 @@ test('ConsoleSelector switching SerialConsole and VncConsole', () => {
   expect(wrapper.find('MyVncConsoleTestWrapper')).toHaveLength(1);
 });
 
-test('ConsoleSelector default setting', () => {
+test('AccessConsoles default setting', () => {
   const wrapperDefault = mount(
-    <ConsoleSelector>
+    <AccessConsoles>
       <SerialConsole onConnect={noop} onDisconnect={noop} status={LOADING} />
       <MyVncConsoleTestWrapper type={VNC_CONSOLE_TYPE} />
-    </ConsoleSelector>
+    </AccessConsoles>
   );
   expect(wrapperDefault.find('.console-selector-pf-disconnect-switch')).toHaveLength(0);
 
   const wrapperKeepConnection = mount(
-    <ConsoleSelector disconnectByChange={false}>
+    <AccessConsoles disconnectByChange={false}>
       <SerialConsole onConnect={noop} onDisconnect={noop} status={LOADING} />
       <MyVncConsoleTestWrapper type={VNC_CONSOLE_TYPE} />
-    </ConsoleSelector>
+    </AccessConsoles>
   );
   expect(wrapperKeepConnection.find('.console-selector-pf-disconnect-switch')).toHaveLength(0); // not rendered when no type selected
   wrapperKeepConnection.find('button #console-type-selector').simulate('click');
@@ -116,12 +116,12 @@ test('ConsoleSelector default setting', () => {
   expect(wrapperKeepConnection.find('label.console-selector-pf-disconnect-switch')).toHaveLength(1); // switch should be rendered now
 });
 
-test('ConsoleSelector disconnects when switching types', () => {
+test('AccessConsoles disconnects when switching types', () => {
   const wrapper = mount(
-    <ConsoleSelector>
+    <AccessConsoles>
       <SerialConsole onConnect={noop} onDisconnect={noop} status={LOADING} />
       <MyVncConsoleTestWrapper type={VNC_CONSOLE_TYPE} />
-    </ConsoleSelector>
+    </AccessConsoles>
   );
 
   expect(wrapper.find('SerialConsole')).toHaveLength(0);
@@ -148,12 +148,12 @@ test('ConsoleSelector disconnects when switching types', () => {
   expect(wrapper.find('MyVncConsoleTestWrapper')).toHaveLength(1);
 });
 
-test('ConsoleSelector keeps connection when switching types', () => {
+test('AccessConsoles keeps connection when switching types', () => {
   const wrapper = mount(
-    <ConsoleSelector disconnectByChange={false}>
+    <AccessConsoles disconnectByChange={false}>
       <SerialConsole onConnect={noop} onDisconnect={noop} status={LOADING} />
       <MyVncConsoleTestWrapper type={VNC_CONSOLE_TYPE} />
-    </ConsoleSelector>
+    </AccessConsoles>
   );
 
   expect(wrapper.find('SerialConsole')).toHaveLength(0);
@@ -183,7 +183,7 @@ test('ConsoleSelector keeps connection when switching types', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('Empty ConsoleSelector', () => {
-  const view = render(<ConsoleSelector />);
+test('Empty AccessConsoles', () => {
+  const view = render(<AccessConsoles />);
   expect(view).toMatchSnapshot();
 });

@@ -5,7 +5,7 @@ import { Grid, Row, Col, Form, FormGroup, Dropdown, MenuItem, Checkbox } from 'p
 
 import { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } from '../common/constants';
 
-class ConsoleSelector extends React.Component {
+class AccessConsoles extends React.Component {
   state = {
     type: NONE_TYPE,
     disconnectByChange: this.props.disconnectByChange,
@@ -117,13 +117,13 @@ const childElementValidator = propValue => {
           (child.props && validChildrenTypes.indexOf(child.props.type) >= 0)
       )
     ) {
-      return new Error('ConsoleSelector child validation failed');
+      return new Error('AccessConsoles child validation failed');
     }
   }
   return true;
 };
 
-ConsoleSelector.propTypes = {
+AccessConsoles.propTypes = {
   /**
    * Child element can be either
    *   - <SerialConsole> or <VncConsole>
@@ -141,7 +141,7 @@ ConsoleSelector.propTypes = {
     PropTypes.bool /** Initial value of "Disconnect before switching" checkbox, "false" to disconnect when console type changed */
 };
 
-ConsoleSelector.defaultProps = {
+AccessConsoles.defaultProps = {
   children: null,
 
   textSelectConsoleType: 'Select Console Type',
@@ -153,4 +153,4 @@ ConsoleSelector.defaultProps = {
   disconnectByChange: true /** By default, console is unmounted (disconnected) when switching to other type */
 };
 
-export default ConsoleSelector;
+export default AccessConsoles;

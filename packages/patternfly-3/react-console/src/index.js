@@ -3,4 +3,4 @@ export * from './common/constants';
 
 export * from './SerialConsole';
 export * from './VncConsole';
-export * from './ConsoleSelector';
+export * from './AccessConsoles';
