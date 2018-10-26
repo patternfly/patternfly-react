@@ -9,7 +9,7 @@ export interface TextInputProps extends Omit<HTMLProps<HTMLInputElement>, 'type'
   isValid?: boolean;
   isDisabled?: boolean;
   isAlt?: boolean;
-  onChange(checked: boolean, event: FormEvent<HTMLInputElement>): void;
+  onChange?(checked: boolean, event: FormEvent<HTMLInputElement>): void;
   isReadOnly?: boolean;
   'aria-label'?: string;
 }
