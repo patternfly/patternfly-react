@@ -40,13 +40,19 @@
   "dependencies": {
     "@novnc/novnc": "^1.0.0",
     "classnames": "^2.2.5",
-    "patternfly": "^3.52.1",
-    "patternfly-react": "^2.21.5",
     "xterm": "^3.3.0"
+  },
+  "devDependencies": {
+    "patternfly": "^3.52.1",
+    "patternfly-react": "^2.21.5"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "patternfly": "^3.52.1",
+    "patternfly-react": "^2.21.5",
+    "react-bootstrap": "^0.32.1"
   }
 }
+

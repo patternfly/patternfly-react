@@ -1,4 +1,9 @@
 .vnc-console {
+  .toolbar-pf-results {
+    padding: 15px 0;
+    border-top: none;
+    margin-top: 0px;
+  }
   .vnc-console-connecting {
     background-color: $color-pf-green;
   }
@@ -7,7 +12,11 @@
     background-color: $color-pf-red;
   }
 
-  .toolbar-pf-action-right .dropdown-menu {
-    min-width: 102px;
+  .toolbar-pf-action-right {
+    padding-bottom: 5px;
+
+    .dropdown-menu {
+      min-width: 102px;
+    }
   }
 }

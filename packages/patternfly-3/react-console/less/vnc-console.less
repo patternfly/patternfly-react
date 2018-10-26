@@ -1,20 +1,22 @@
 .vnc-console {
-  padding-right: 0px;
-  padding-left: 0px;
-
+  .toolbar-pf-results {
+    padding: 15px 0;
+    border-top: none;
+    margin-top: 0px;
+  }
   .vnc-console-connecting {
     background-color: @color-pf-green;
   }
+
   .vnc-console-disconnected {
     background-color: @color-pf-red;
   }
-  .toolbar-pf {
-    border-bottom: none;
-  }
-  .toolbar-pf-results {
-    padding-top: 10px;
-  }
-  .toolbar-pf-action-right .dropdown-menu {
-    min-width: 102px; /* avoid overflow if DropdownButton is used under Toolbar.RightContent */
+
+  .toolbar-pf-action-right {
+    padding-bottom: 5px;
+
+    .dropdown-menu {
+      min-width: 102px;
+    }
   }
 }

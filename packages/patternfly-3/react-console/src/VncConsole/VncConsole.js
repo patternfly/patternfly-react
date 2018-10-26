@@ -120,14 +120,14 @@ class VncConsole extends React.Component {
     }
 
     return (
-      <Toolbar className={classNames('vnc-console', this.props.topClassName)}>
+      <div className={classNames('vnc-console', this.props.topClassName)}>
         {this.props.children}
         {rightContent}
         <Toolbar.Results>
           {status}
           {this.novncStaticComponent}
         </Toolbar.Results>
-      </Toolbar>
+      </div>
     );
   }
 }
