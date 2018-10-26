@@ -12,7 +12,7 @@ const Separator = ({ className, ...props }) => (
 Separator.propTypes = {
   /** Anything which can be rendered as dropdown item */
   children: PropTypes.node,
-  /** Classess applied to root element of dropdown item */
+  /** Classes applied to root element of dropdown item */
   className: PropTypes.string,
   /** Indicates which component will be used as dropdown item */
   component: componentShape,
@@ -20,8 +20,6 @@ Separator.propTypes = {
   isDisabled: PropTypes.bool,
   /** Forces display of the hover state of the element */
   isHovered: PropTypes.bool,
-  /** Accesibility role */
-  role: PropTypes.string,
   /** Default hyperlink location */
   href: PropTypes.string
 };
@@ -31,8 +29,7 @@ Separator.defaultProps = {
   isHovered: false,
   component: 'a',
   isDisabled: false,
-  href: '#',
-  role: 'menuitem'
+  href: '#'
 };
 
 export default Separator;

@@ -21,7 +21,7 @@ describe('API', () => {
   test('click on opened', () => {
     const mockToggle = jest.fn();
     const view = mount(
-      <DropdownToggle onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
@@ -40,7 +40,7 @@ describe('API', () => {
     });
     const mockToggle = jest.fn();
     mount(
-      <DropdownToggle onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
@@ -56,7 +56,7 @@ describe('API', () => {
     });
     const mockToggle = jest.fn();
     const view = mount(
-      <DropdownToggle onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" onToggle={mockToggle} isOpen parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
@@ -72,7 +72,7 @@ describe('API', () => {
 describe('state', () => {
   test('hover', () => {
     const view = mount(
-      <DropdownToggle isHovered parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" isHovered parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
@@ -81,7 +81,7 @@ describe('state', () => {
 
   test('active', () => {
     const view = mount(
-      <DropdownToggle isActive parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" isActive parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );
@@ -90,7 +90,7 @@ describe('state', () => {
 
   test('focus', () => {
     const view = mount(
-      <DropdownToggle isFocused parentRef={document.createElement('div')}>
+      <DropdownToggle id="Dropdown Toggle" isFocused parentRef={document.createElement('div')}>
         Dropdown
       </DropdownToggle>
     );

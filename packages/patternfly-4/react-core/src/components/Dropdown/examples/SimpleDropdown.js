@@ -25,23 +25,30 @@ export default class SimpleDropdown extends Component {
 
   render() {
     const { isOpen } = this.state;
+    const dropdownItems = [
+      <DropdownItem key="link">Link</DropdownItem>,
+      <DropdownItem key="action" component="button">
+        Action
+      </DropdownItem>,
+      <DropdownItem key="disabled link" isDisabled>
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem key="disabled action" isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator key="separator" />,
+      <DropdownItem key="separated link">Separated Link</DropdownItem>,
+      <DropdownItem key="separated action" component="button">
+        Separated Action
+      </DropdownItem>
+    ];
     return (
       <Dropdown
-        onToggle={this.onToggle}
         onSelect={this.onSelect}
         toggle={<DropdownToggle onToggle={this.onToggle}>Dropdown</DropdownToggle>}
         isOpen={isOpen}
-      >
-        <DropdownItem>Link</DropdownItem>
-        <DropdownItem component="button">Action</DropdownItem>
-        <DropdownItem isDisabled>Disabled Link</DropdownItem>
-        <DropdownItem isDisabled component="button">
-          Disabled Action
-        </DropdownItem>
-        <DropdownSeparator />
-        <DropdownItem>Separated Link</DropdownItem>
-        <DropdownItem component="button">Separated Action</DropdownItem>
-      </Dropdown>
+        dropdownItems={dropdownItems}
+      />
     );
   }
 }

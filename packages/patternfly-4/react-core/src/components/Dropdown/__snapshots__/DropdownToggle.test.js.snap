@@ -22,6 +22,7 @@ exports[`state active 1`] = `
 
 <DropdownToggle
   className=""
+  id="Dropdown Toggle"
   isActive={true}
   isFocused={false}
   isHovered={false}
@@ -31,6 +32,7 @@ exports[`state active 1`] = `
 >
   <DropdownToggle
     className=""
+    id="Dropdown Toggle"
     isActive={true}
     isFocused={false}
     isHovered={false}
@@ -40,8 +42,8 @@ exports[`state active 1`] = `
   >
     <button
       aria-expanded={false}
-      aria-haspopup="true"
       className="pf-c-dropdown__toggle pf-m-active"
+      id="Dropdown Toggle"
       onClick={[Function]}
     >
       Dropdown
@@ -94,6 +96,7 @@ exports[`state focus 1`] = `
 
 <DropdownToggle
   className=""
+  id="Dropdown Toggle"
   isActive={false}
   isFocused={true}
   isHovered={false}
@@ -103,6 +106,7 @@ exports[`state focus 1`] = `
 >
   <DropdownToggle
     className=""
+    id="Dropdown Toggle"
     isActive={false}
     isFocused={true}
     isHovered={false}
@@ -112,8 +116,8 @@ exports[`state focus 1`] = `
   >
     <button
       aria-expanded={false}
-      aria-haspopup="true"
       className="pf-c-dropdown__toggle pf-m-focus"
+      id="Dropdown Toggle"
       onClick={[Function]}
     >
       Dropdown
@@ -166,6 +170,7 @@ exports[`state hover 1`] = `
 
 <DropdownToggle
   className=""
+  id="Dropdown Toggle"
   isActive={false}
   isFocused={false}
   isHovered={true}
@@ -175,6 +180,7 @@ exports[`state hover 1`] = `
 >
   <DropdownToggle
     className=""
+    id="Dropdown Toggle"
     isActive={false}
     isFocused={false}
     isHovered={true}
@@ -184,8 +190,8 @@ exports[`state hover 1`] = `
   >
     <button
       aria-expanded={false}
-      aria-haspopup="true"
       className="pf-c-dropdown__toggle pf-m-hover"
+      id="Dropdown Toggle"
       onClick={[Function]}
     >
       Dropdown

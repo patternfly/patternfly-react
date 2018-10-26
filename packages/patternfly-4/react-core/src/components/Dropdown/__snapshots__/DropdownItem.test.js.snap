@@ -1,25 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`dropdown items a 1`] = `
-<a
-  aria-disabled={false}
-  className=""
-  href="#"
-  role="menuitem"
->
-  Something
-</a>
+<li>
+  <a
+    aria-disabled={false}
+    className=""
+    href="#"
+  >
+    Something
+  </a>
+</li>
 `;
 
 exports[`dropdown items button 1`] = `
-<button
-  className=""
-  disabled={false}
-  href="#"
-  role="menuitem"
->
-  Something
-</button>
+<li>
+  <button
+    className=""
+    disabled={false}
+    href="#"
+  >
+    Something
+  </button>
+</li>
 `;
 
 exports[`dropdown items disabled a 1`] = `
@@ -27,15 +29,16 @@ exports[`dropdown items disabled a 1`] = `
   display: block;
 }
 
-<a
-  aria-disabled={true}
-  className="pf-m-disabled"
-  href="#"
-  role="menuitem"
-  tabIndex={-1}
->
-  Something
-</a>
+<li>
+  <a
+    aria-disabled={true}
+    className="pf-m-disabled"
+    href="#"
+    tabIndex={-1}
+  >
+    Something
+  </a>
+</li>
 `;
 
 exports[`dropdown items disabled button 1`] = `
@@ -43,14 +46,15 @@ exports[`dropdown items disabled button 1`] = `
   display: block;
 }
 
-<button
-  className="pf-m-disabled"
-  disabled={true}
-  href="#"
-  role="menuitem"
->
-  Something
-</button>
+<li>
+  <button
+    className="pf-m-disabled"
+    disabled={true}
+    href="#"
+  >
+    Something
+  </button>
+</li>
 `;
 
 exports[`dropdown items hover a 1`] = `
@@ -58,14 +62,15 @@ exports[`dropdown items hover a 1`] = `
   display: block;
 }
 
-<a
-  aria-disabled={false}
-  className="pf-m-hover"
-  href="#"
-  role="menuitem"
->
-  Something
-</a>
+<li>
+  <a
+    aria-disabled={false}
+    className="pf-m-hover"
+    href="#"
+  >
+    Something
+  </a>
+</li>
 `;
 
 exports[`dropdown items hover button 1`] = `
@@ -73,14 +78,15 @@ exports[`dropdown items hover button 1`] = `
   display: block;
 }
 
-<button
-  className="pf-m-hover"
-  disabled={false}
-  href="#"
-  role="menuitem"
->
-  Something
-</button>
+<li>
+  <button
+    className="pf-m-hover"
+    disabled={false}
+    href="#"
+  >
+    Something
+  </button>
+</li>
 `;
 
 exports[`dropdown items separator 1`] = `

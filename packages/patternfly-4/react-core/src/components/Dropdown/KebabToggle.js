@@ -12,6 +12,8 @@ const Kebab = ({ ...props }) => (
 );
 
 Kebab.propTypes = {
+  /** HTML ID of dropdown toggle */
+  id: PropTypes.string,
   /** Anything which can be rendered as dropdown toggle */
   children: PropTypes.node,
   /** Classess applied to root element of dropdown toggle */
@@ -32,6 +34,7 @@ Kebab.propTypes = {
   isActive: PropTypes.bool
 };
 Kebab.defaultProps = {
+  id: '',
   children: null,
   className: '',
   isOpen: false,

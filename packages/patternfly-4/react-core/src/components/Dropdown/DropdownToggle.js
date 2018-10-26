@@ -13,9 +13,11 @@ const DropdownToggle = ({ children, ...props }) => (
 );
 
 DropdownToggle.propTypes = {
+  /** HTML ID of dropdown toggle */
+  id: PropTypes.string,
   /** Anything which can be rendered as dropdown toggle */
   children: PropTypes.node.isRequired,
-  /** Classess applied to root element of dropdown toggle */
+  /** Classes applied to root element of dropdown toggle */
   className: PropTypes.string,
   /** Flag to indicate if menu is opened */
   isOpen: PropTypes.bool,
@@ -32,6 +34,7 @@ DropdownToggle.propTypes = {
 };
 
 DropdownToggle.defaultProps = {
+  id: '',
   className: '',
   isOpen: false,
   parentRef: null,
