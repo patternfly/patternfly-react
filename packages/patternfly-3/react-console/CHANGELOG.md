@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.4.12...@patternfly/react-console@1.5.0) (2018-10-26)
+
+
+### Features
+
+* **ConsoleSelector:** introduce ConsoleSelector component ([#606](https://github.com/patternfly/patternfly-react/issues/606)) ([d876589](https://github.com/patternfly/patternfly-react/commit/d876589))
+
+
+
+
 <a name="1.4.12"></a>
 ## [1.4.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.4.11...@patternfly/react-console@1.4.12) (2018-10-24)
 

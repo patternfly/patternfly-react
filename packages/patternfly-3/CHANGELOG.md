@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.4.0"></a>
+# [7.4.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.9...patternfly3-react-lerna-root@7.4.0) (2018-10-26)
+
+
+### Features
+
+* **ConsoleSelector:** introduce ConsoleSelector component ([#606](https://github.com/patternfly/patternfly-react/issues/606)) ([d876589](https://github.com/patternfly/patternfly-react/commit/d876589))
+
+
+
+
 <a name="7.3.9"></a>
 ## [7.3.9](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.3.8...patternfly3-react-lerna-root@7.3.9) (2018-10-24)
 
