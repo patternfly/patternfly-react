@@ -61,7 +61,7 @@ class Dropdown extends React.Component {
       position,
       ...props
     } = this.props;
-    const id = toggle.props.id || `pf-toggel-id-${currentId++}`;
+    const id = toggle.props.id || `pf-toggle-id-${currentId++}`;
     let component;
     let renderedContent;
     if (dropdownItems && dropdownItems.length > 0) {
