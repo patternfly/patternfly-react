@@ -1,5 +1,37 @@
 
-## Change Log (2018-10-25)
+## Change Log (2018-10-26)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-icons@2.5.3 (2018-10-25)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#731](https://github.com/patternfly/patternfly-react/pull/731) docs(custom-icon): describe how to add custom icons ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 2
+- Doug Miller ([@dmiller9911](https://github.com/dmiller9911))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-docs@3.17.18 (2018-10-25)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#731](https://github.com/patternfly/patternfly-react/pull/731) docs(custom-icon): describe how to add custom icons ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 2
+- Doug Miller ([@dmiller9911](https://github.com/dmiller9911))
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-core@1.27.1 (2018-10-25)
 
 #### :memo: Documentation
 * `react-icons`
