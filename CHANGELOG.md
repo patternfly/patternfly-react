@@ -1,5 +1,25 @@
 
-## Change Log (2018-10-26)
+## patternfly4-react-lerna-root@1.14.2 (2018-10-26)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#824](https://github.com/patternfly/patternfly-react/pull/824) BackgroundImage: Add missing fragment identifier to example ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-docs@3.17.20 (2018-10-26)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#824](https://github.com/patternfly/patternfly-react/pull/824) BackgroundImage: Add missing fragment identifier to example ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-core@1.27.3 (2018-10-26)
 
 #### :bug: Bug Fix
 * `patternfly-4`
