@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check page vertical layout example against snapshot 1`] = `
+.pf-l-page__header-brand-link {
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem;
+}
+.pf-l-page__header-brand {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+}
+.pf-l-page__header-tools {
+  display: block;
+  align-items: center;
+  margin-right: 2rem;
+  margin-left: auto;
+}
+.pf-l-page__header.pf-m-condensed {
+  display: flex;
+  grid-area: header;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  max-width: 100%;
+  min-height: 1.25rem;
+}
+
+<header
+  className="pf-l-page__header pf-m-condensed"
+  role="banner"
+  style={
+    Object {
+      "overflowX": "unset",
+    }
+  }
+>
+  <div
+    className="pf-l-page__header-brand"
+  >
+    <a
+      className="pf-l-page__header-brand-link"
+    >
+      Logo
+    </a>
+  </div>
+  <div
+    className="pf-l-page__header-tools"
+  >
+    Toolbar
+     | Avatar
+  </div>
+</header>
+`;
