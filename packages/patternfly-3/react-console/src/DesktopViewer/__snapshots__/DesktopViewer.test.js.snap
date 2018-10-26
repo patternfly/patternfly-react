@@ -7,11 +7,14 @@ exports[`DesktopViewer custom topClassName 1`] = `
   <div
     class="remote-viewer-pf"
   >
+    <h2>
+      Desktop Client
+    </h2>
     <div
       class="remote-viewer-pf-launch"
     >
       <button
-        class="btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
         disabled=""
         type="button"
       >
@@ -42,11 +45,14 @@ exports[`DesktopViewer empty 1`] = `
   <div
     class="remote-viewer-pf"
   >
+    <h2>
+      Desktop Client
+    </h2>
     <div
       class="remote-viewer-pf-launch"
     >
       <button
-        class="btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
         disabled=""
         type="button"
       >
@@ -77,11 +83,14 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
   <div
     class="remote-viewer-pf"
   >
+    <h2>
+      Desktop Client
+    </h2>
     <div
       class="remote-viewer-pf-launch"
     >
       <button
-        class="btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
         type="button"
       >
         Launch Remote Viewer
@@ -104,7 +113,7 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
             aria-hidden="true"
             class="fa fa-angle-right"
           />
-          More Information
+          Remote Viewer Details
         </button>
         <span
           class="expand-collapse-pf-separator"
@@ -199,8 +208,375 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
 </div>
 `;
 
+exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
+<div
+  class="desktop-viewer-pf"
+>
+  <div
+    class="remote-viewer-pf"
+  >
+    <h2>
+      Desktop Client
+    </h2>
+    <div
+      class="remote-viewer-pf-launch"
+    >
+      <button
+        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
+        type="button"
+      >
+        Launch Remote Viewer
+      </button>
+      <button
+        class="remote-viewer-pf-launch-rdp btn btn-lg btn-default"
+        type="button"
+      >
+        Launch Remote Desktop
+      </button>
+    </div>
+    <div
+      class="expand-collapse-pf"
+    >
+      <div
+        class="expand-collapse-pf-link-container"
+      >
+        <span
+          class="expand-collapse-pf-separator"
+        />
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+            class="fa fa-angle-right"
+          />
+          Remote Viewer Details
+        </button>
+        <span
+          class="expand-collapse-pf-separator"
+        />
+      </div>
+    </div>
+    <div
+      class="expand-collapse-pf"
+    >
+      <div
+        class="expand-collapse-pf-link-container"
+      >
+        <span
+          class="expand-collapse-pf-separator"
+        />
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+            class="fa fa-angle-right"
+          />
+          Remote Desktop Details
+        </button>
+        <span
+          class="expand-collapse-pf-separator"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="manual-connection-pf"
+  >
+    <h2>
+      Manual Connection
+    </h2>
+    <p>
+      Connect with any viewer application for following protocols:
+    </p>
+    <form
+      class="form-horizontal"
+    >
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          Address:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          my.host.com
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          RDP Address:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          my.differenthost.com
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          SPICE Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5900
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          SPICE TLS Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5901
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          VNC Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5902
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          VNC TLS Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5903
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          RDP Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          1234
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
+<div
+  class="desktop-viewer-pf"
+>
+  <div
+    class="remote-viewer-pf"
+  >
+    <h2>
+      Desktop Client
+    </h2>
+    <div
+      class="remote-viewer-pf-launch"
+    >
+      <button
+        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
+        type="button"
+      >
+        Launch Remote Viewer
+      </button>
+      <button
+        class="remote-viewer-pf-launch-rdp btn btn-lg btn-default"
+        type="button"
+      >
+        Launch Remote Desktop
+      </button>
+    </div>
+    <div
+      class="expand-collapse-pf"
+    >
+      <div
+        class="expand-collapse-pf-link-container"
+      >
+        <span
+          class="expand-collapse-pf-separator"
+        />
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+            class="fa fa-angle-right"
+          />
+          Remote Viewer Details
+        </button>
+        <span
+          class="expand-collapse-pf-separator"
+        />
+      </div>
+    </div>
+    <div
+      class="expand-collapse-pf"
+    >
+      <div
+        class="expand-collapse-pf-link-container"
+      >
+        <span
+          class="expand-collapse-pf-separator"
+        />
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+            class="fa fa-angle-right"
+          />
+          Remote Desktop Details
+        </button>
+        <span
+          class="expand-collapse-pf-separator"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="manual-connection-pf"
+  >
+    <h2>
+      Manual Connection
+    </h2>
+    <p>
+      Connect with any viewer application for following protocols:
+    </p>
+    <form
+      class="form-horizontal"
+    >
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          Address:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          my.host.com
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          SPICE Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5900
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          SPICE TLS Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5901
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          VNC Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5902
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          VNC TLS Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5903
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          RDP Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          3389
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
 exports[`DesktopViewer with custom more-info content 1`] = `
 <DesktopViewer
+  rdp={null}
   spice={
     Object {
       "address": "my.host.com",
@@ -210,10 +586,15 @@ exports[`DesktopViewer with custom more-info content 1`] = `
   }
   textAddress="Address:"
   textConnectWith="Connect with any viewer application for following protocols:"
+  textConnectWithRDP="Launch Remote Desktop"
   textConnectWithRemoteViewer="Launch Remote Viewer"
+  textDesktopConnection="Desktop Client"
   textManualConnection="Manual Connection"
-  textMoreInfo="More Information"
+  textMoreInfo="Remote Viewer Details"
+  textMoreRDPInfo="Remote Desktop Details"
   textNoProtocol="No connection available."
+  textRDPPort="RDP Port:"
+  textRdpAddress="RDP Address:"
   textSpice="Spice"
   textSpiceAddress="SPICE Address:"
   textSpicePort="SPICE Port:"
@@ -237,6 +618,7 @@ exports[`DesktopViewer with custom more-info content 1`] = `
     <ConnectWithRemoteViewer
       onDownload={[Function]}
       onGenerate={[Function]}
+      rdp={null}
       spice={
         Object {
           "address": "my.host.com",
@@ -246,10 +628,15 @@ exports[`DesktopViewer with custom more-info content 1`] = `
       }
       textAddress="Address:"
       textConnectWith="Connect with any viewer application for following protocols:"
+      textConnectWithRDP="Launch Remote Desktop"
       textConnectWithRemoteViewer="Launch Remote Viewer"
+      textDesktopConnection="Desktop Client"
       textManualConnection="Manual Connection"
-      textMoreInfo="More Information"
+      textMoreInfo="Remote Viewer Details"
+      textMoreRDPInfo="Remote Desktop Details"
       textNoProtocol="No connection available."
+      textRDPPort="RDP Port:"
+      textRdpAddress="RDP Address:"
       textSpice="Spice"
       textSpiceAddress="SPICE Address:"
       textSpicePort="SPICE Port:"
@@ -269,6 +656,9 @@ exports[`DesktopViewer with custom more-info content 1`] = `
       <div
         className="remote-viewer-pf"
       >
+        <h2>
+          Desktop Client
+        </h2>
         <div
           className="remote-viewer-pf-launch"
         >
@@ -278,11 +668,12 @@ exports[`DesktopViewer with custom more-info content 1`] = `
             bsClass="btn"
             bsSize="large"
             bsStyle="default"
+            className="remote-viewer-pf-launch-vv"
             disabled={false}
             onClick={[Function]}
           >
             <button
-              className="btn btn-lg btn-default"
+              className="remote-viewer-pf-launch-vv btn btn-lg btn-default"
               disabled={false}
               onClick={[Function]}
               type="button"
@@ -296,8 +687,8 @@ exports[`DesktopViewer with custom more-info content 1`] = `
           bordered={false}
           className=""
           expanded={false}
-          textCollapsed="More Information"
-          textExpanded="More Information"
+          textCollapsed="Remote Viewer Details"
+          textExpanded="Remote Viewer Details"
         >
           <div
             className="expand-collapse-pf"
@@ -335,7 +726,7 @@ exports[`DesktopViewer with custom more-info content 1`] = `
                       />
                     </FontAwesome>
                   </Icon>
-                  More Information
+                  Remote Viewer Details
                 </button>
               </Button>
               <span
@@ -347,6 +738,7 @@ exports[`DesktopViewer with custom more-info content 1`] = `
       </div>
     </ConnectWithRemoteViewer>
     <ManualConnection
+      rdp={null}
       spice={
         Object {
           "address": "my.host.com",
@@ -356,10 +748,15 @@ exports[`DesktopViewer with custom more-info content 1`] = `
       }
       textAddress="Address:"
       textConnectWith="Connect with any viewer application for following protocols:"
+      textConnectWithRDP="Launch Remote Desktop"
       textConnectWithRemoteViewer="Launch Remote Viewer"
+      textDesktopConnection="Desktop Client"
       textManualConnection="Manual Connection"
-      textMoreInfo="More Information"
+      textMoreInfo="Remote Viewer Details"
+      textMoreRDPInfo="Remote Desktop Details"
       textNoProtocol="No connection available."
+      textRDPPort="RDP Port:"
+      textRdpAddress="RDP Address:"
       textSpice="Spice"
       textSpiceAddress="SPICE Address:"
       textSpicePort="SPICE Port:"
