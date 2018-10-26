@@ -72,7 +72,7 @@ class Page extends React.Component {
     const { className, children, header, sidebar, useCondensed, scrollingDistance, ...rest } = this.props;
     const { isCondensed } = this.state;
 
-    const clonedHeader = React.cloneElement(header, { condensed: isCondensed });
+    const clonedHeader = React.cloneElement(header, { isCondensed });
     return (
       <div {...rest} className={css(styles.page, className)}>
         {useCondensed ? clonedHeader : header}
