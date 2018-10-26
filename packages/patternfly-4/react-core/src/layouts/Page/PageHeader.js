@@ -20,8 +20,8 @@ const propTypes = {
   showNavToggle: PropTypes.bool,
   /** Callback function to handle the side nav toggle button */
   onNavToggle: PropTypes.func,
-  /** condensed header */
-  condensed: PropTypes.bool
+  /** header should be condensed */
+  isCondensed: PropTypes.bool
 };
 
 const defaultProps = {
@@ -32,12 +32,22 @@ const defaultProps = {
   topNav: null,
   showNavToggle: false,
   onNavToggle: () => undefined,
-  condensed: false
+  isCondensed: false
 };
 
 /* Added temporary style as a workaround to make dropdowns work until fix is made (patternfly-next #780) */
-const PageHeader = ({ className, logo, toolbar, avatar, topNav, showNavToggle, onNavToggle, condensed, ...props }) => {
-  const customClassName = css(styles.pageHeader, condensed && 'pf-m-condensed', className);
+const PageHeader = ({
+  className,
+  logo,
+  toolbar,
+  avatar,
+  topNav,
+  showNavToggle,
+  onNavToggle,
+  isCondensed,
+  ...props
+}) => {
+  const customClassName = css(styles.pageHeader, isCondensed && 'pf-m-isCondensed', className);
   return (
     <header role="banner" className={customClassName} style={{ overflowX: 'unset' }} {...props}>
       <div className={css(styles.pageHeaderBrand)}>

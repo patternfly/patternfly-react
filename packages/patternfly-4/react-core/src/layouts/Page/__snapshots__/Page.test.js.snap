@@ -78,12 +78,11 @@ exports[`Check page condensed header example against snapshot 1`] = `
   aria-label="Page layout"
   className="my-page-class"
   condensedHeader={true}
-  condensedHeight={20}
   header={
     <PageHeader
       avatar=" | Avatar"
       className=""
-      condensed={false}
+      isCondensed={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
@@ -92,6 +91,8 @@ exports[`Check page condensed header example against snapshot 1`] = `
     />
   }
   id="PageId"
+  isCondensed={false}
+  scrollingDistance={20}
   sidebar={
     <PageSidebar
       className=""
@@ -103,12 +104,13 @@ exports[`Check page condensed header example against snapshot 1`] = `
   <div
     aria-label="Page layout"
     className="pf-l-page my-page-class"
+    condensedHeader={true}
     id="PageId"
   >
     <PageHeader
       avatar=" | Avatar"
       className=""
-      condensed={false}
+      isCondensed={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
@@ -278,13 +280,11 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 <Page
   aria-label="Page layout"
   className="my-page-class"
-  condensedHeader={false}
-  condensedHeight={20}
   header={
     <PageHeader
       avatar=" | Avatar"
       className=""
-      condensed={false}
+      isCondensed={false}
       logo="Logo"
       nav="Navigation"
       onNavToggle={[Function]}
@@ -294,7 +294,9 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     />
   }
   id="PageId"
+  isCondensed={false}
   layout="horizontal"
+  scrollingDistance={20}
   sidebar={
     <PageSidebar
       className=""
@@ -312,7 +314,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      condensed={false}
+      isCondensed={false}
       logo="Logo"
       nav="Navigation"
       onNavToggle={[Function]}
@@ -482,13 +484,11 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 <Page
   aria-label="Page layout"
   className="my-page-class"
-  condensedHeader={false}
-  condensedHeight={20}
   header={
     <PageHeader
       avatar=" | Avatar"
       className=""
-      condensed={false}
+      isCondensed={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
@@ -497,6 +497,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     />
   }
   id="PageId"
+  isCondensed={false}
+  scrollingDistance={20}
   sidebar={
     <PageSidebar
       className=""
@@ -513,7 +515,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      condensed={false}
+      isCondensed={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}

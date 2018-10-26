@@ -19,9 +19,9 @@ const propTypes = {
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
   sidebar: PropTypes.node,
   /** condensed header on scroll */
-  condensedHeader: PropTypes.bool,
-  /** codensed height override */
-  condensedHeight: PropTypes.number
+  isCondensed: PropTypes.bool,
+  /** condensed height override */
+  scrollingDistance: PropTypes.number
 };
 
 const defaultProps = {
@@ -29,53 +29,53 @@ const defaultProps = {
   className: '',
   header: null,
   sidebar: null,
-  condensedHeader: false,
-  condensedHeight: 20
+  isCondensed: false,
+  scrollingDistance: 20
 };
 
 class Page extends React.Component {
-  state = { headerCondensed: false };
+  state = { isHeaderCondensed: false };
 
   constructor(props) {
     super(props);
     this.mainRef = React.createRef();
   }
   componentDidMount() {
-    const { condensedHeader } = this.props;
-    if (condensedHeader) {
+    const { isCondensed } = this.props;
+    if (isCondensed) {
       // I picked this because it's approx 1 frame (ie: 16.7ms)
       this.mainRef.current.addEventListener('scroll', debounce(this.handleScroll, 16));
     }
   }
   componentWillUnmount() {
-    const { condensedHeader } = this.props;
-    if (condensedHeader) {
+    const { isCondensed } = this.props;
+    if (isCondensed) {
       this.mainRef.current.removeEventListener('scroll', this.handleScroll);
     }
   }
 
   handleScroll = e => {
     window.requestAnimationFrame(() => {
-      const { headerCondensed } = this.state;
-      const { condensedHeight } = this.props;
+      const { isHeaderCondensed } = this.state;
+      const { scrollingDistance } = this.props;
       const main = e.target;
       const mainPosition = main.scrollTop;
-      if (mainPosition > condensedHeight && !headerCondensed) {
-        this.setState({ headerCondensed: true });
-      } else if (mainPosition < condensedHeight && headerCondensed) {
-        this.setState({ headerCondensed: false });
+      if (mainPosition > scrollingDistance && !isHeaderCondensed) {
+        this.setState({ isHeaderCondensed: true });
+      } else if (mainPosition < scrollingDistance && isHeaderCondensed) {
+        this.setState({ isHeaderCondensed: false });
       }
     });
   };
 
   render() {
-    const { className, children, header, sidebar, condensedHeader, condensedHeight, ...rest } = this.props;
-    const { headerCondensed } = this.state;
+    const { className, children, header, sidebar, isCondensed, scrollingDistance, ...rest } = this.props;
+    const { isHeaderCondensed } = this.state;
 
-    const clonedHeader = React.cloneElement(header, { condensed: headerCondensed });
+    const clonedHeader = React.cloneElement(header, { condensed: isHeaderCondensed });
     return (
       <div {...rest} className={css(styles.page, className)}>
-        {condensedHeader ? clonedHeader : header}
+        {isCondensed ? clonedHeader : header}
         {sidebar}
         <main ref={this.mainRef} role="main" className={css(styles.pageMain)}>
           {children}
