@@ -21,9 +21,9 @@ import PropTypes from 'prop-types';
 let currentId = 0;
 
 const propTypes = {
-  /** String to prefix the random ID with */
+  /** String to prefix the random id with */
   prefix: PropTypes.string,
-  /** component to be rendered with the generated id */
+  /** Component to be rendered with the generated id */
   children: PropTypes.func.isRequired
 };
 
