@@ -19,7 +19,9 @@ const propTypes = {
   /** True to show the nav toggle button (toggles side nav) */
   showNavToggle: PropTypes.bool,
   /** Callback function to handle the side nav toggle button */
-  onNavToggle: PropTypes.func
+  onNavToggle: PropTypes.func,
+  /** header should be condensed */
+  isCondensed: PropTypes.bool
 };
 
 const defaultProps = {
@@ -29,38 +31,52 @@ const defaultProps = {
   avatar: null,
   topNav: null,
   showNavToggle: false,
-  onNavToggle: () => undefined
+  onNavToggle: () => undefined,
+  isCondensed: false
 };
 
 /* Added temporary style as a workaround to make dropdowns work until fix is made (patternfly-next #780) */
-const PageHeader = ({ className, logo, toolbar, avatar, topNav, showNavToggle, onNavToggle, ...props }) => (
-  <header role="banner" className={css(styles.pageHeader, className)} style={{ overflowX: 'unset' }} {...props}>
-    <div className={css(styles.pageHeaderBrand)}>
-      {showNavToggle && (
-        <div className={css(styles.pageHeaderBrandToggle)}>
-          <Button
-            id="nav-toggle"
-            onClick={onNavToggle}
-            aria-label="Toggle primary navigation"
-            variant={ButtonVariant.plain}
-          >
-            <BarsIcon />
-          </Button>
-        </div>
-      )}
-      <a className={css(styles.pageHeaderBrandLink)}>{logo}</a>
-    </div>
-    {/* Hide for now until we have the context selector component */}
-    {/* <div className={css(styles.pageHeaderSelector)}>
-        pf-c-context-selector
-      </div> */}
-    {topNav && <div className={css(styles.pageHeaderNav)}>{topNav}</div>}
-    <div className={css(styles.pageHeaderTools)}>
-      {toolbar}
-      {avatar}
-    </div>
-  </header>
-);
+const PageHeader = ({
+  className,
+  logo,
+  toolbar,
+  avatar,
+  topNav,
+  showNavToggle,
+  onNavToggle,
+  isCondensed,
+  ...props
+}) => {
+  const customClassName = css(styles.pageHeader, isCondensed && styles.modifiers.condensed, className);
+  return (
+    <header role="banner" className={customClassName} style={{ overflowX: 'unset' }} {...props}>
+      <div className={css(styles.pageHeaderBrand)}>
+        {showNavToggle && (
+          <div className={css(styles.pageHeaderBrandToggle)}>
+            <Button
+              id="nav-toggle"
+              onClick={onNavToggle}
+              aria-label="Toggle primary navigation"
+              variant={ButtonVariant.plain}
+            >
+              <BarsIcon />
+            </Button>
+          </div>
+        )}
+        <a className={css(styles.pageHeaderBrandLink)}>{logo}</a>
+      </div>
+      {/* Hide for now until we have the context selector component */}
+      {/* <div className={css(styles.pageHeaderSelector)}>
+          pf-c-context-selector
+        </div> */}
+      {topNav && <div className={css(styles.pageHeaderNav)}>{topNav}</div>}
+      <div className={css(styles.pageHeaderTools)}>
+        {toolbar}
+        {avatar}
+      </div>
+    </header>
+  );
+};
 
 PageHeader.propTypes = propTypes;
 PageHeader.defaultProps = defaultProps;

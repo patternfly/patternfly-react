@@ -9,6 +9,7 @@ export interface PageHeaderProps extends HTMLProps<HTMLDivElement> {
   topNav?: ReactNode;
   showNavToggle?: boolean;
   onNavToggle?: Function;
+  isCondensed?: boolean;
 }
 
 declare const PageHeader: SFC<PageHeaderProps>;

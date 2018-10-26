@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Check page horizontal layout example against snapshot 1`] = `
+exports[`Check page condensed header example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
   display: flex;
   align-items: center;
@@ -25,7 +25,6 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   align-items: flex-end;
   max-width: 100%;
   min-height: 6.875rem;
-  overflow-x: hidden;
 }
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
@@ -34,7 +33,8 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   width: 80%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: #ffffff;
   transform: translate3d(0,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
@@ -65,11 +65,10 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   flex-direction: column;
   padding-right: 0px;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: auto;
 }
 .pf-l-page.my-page-class {
   display: grid;
-  min-height: 100vh;
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr;
   grid-template-areas: "header" "main";
@@ -82,6 +81,208 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
+      isCondensed={false}
+      logo="Logo"
+      onNavToggle={[Function]}
+      showNavToggle={false}
+      toolbar="Toolbar"
+      topNav={null}
+    />
+  }
+  id="PageId"
+  scrollingDistance={20}
+  sidebar={
+    <PageSidebar
+      className=""
+      isNavOpen={true}
+      nav="Navigation"
+    />
+  }
+  useCondensed={true}
+>
+  <div
+    aria-label="Page layout"
+    className="pf-l-page my-page-class"
+    id="PageId"
+  >
+    <PageHeader
+      avatar=" | Avatar"
+      className=""
+      isCondensed={false}
+      logo="Logo"
+      onNavToggle={[Function]}
+      showNavToggle={false}
+      toolbar="Toolbar"
+      topNav={null}
+    >
+      <header
+        className="pf-l-page__header"
+        role="banner"
+        style={
+          Object {
+            "overflowX": "unset",
+          }
+        }
+      >
+        <div
+          className="pf-l-page__header-brand"
+        >
+          <a
+            className="pf-l-page__header-brand-link"
+          >
+            Logo
+          </a>
+        </div>
+        <div
+          className="pf-l-page__header-tools"
+        >
+          Toolbar
+           | Avatar
+        </div>
+      </header>
+    </PageHeader>
+    <PageSidebar
+      className=""
+      isNavOpen={true}
+      nav="Navigation"
+    >
+      <aside
+        className="pf-l-page__sidebar pf-m-expanded"
+      >
+        Navigation
+      </aside>
+    </PageSidebar>
+    <main
+      className="pf-l-page__main"
+      role="main"
+    >
+      <PageSection
+        className=""
+        variant="default"
+      >
+        <section
+          className="pf-l-page__main-section"
+        >
+          Section with default background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        variant="light"
+      >
+        <section
+          className="pf-l-page__main-section pf-m-light"
+        >
+          Section with light background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        variant="dark"
+      >
+        <section
+          className="pf-l-page__main-section pf-m-dark-200"
+        >
+          Section with dark background
+        </section>
+      </PageSection>
+      <PageSection
+        className=""
+        variant="darker"
+      >
+        <section
+          className="pf-l-page__main-section pf-m-dark-100"
+        >
+          Section with darker background
+        </section>
+      </PageSection>
+    </main>
+  </div>
+</Page>
+`;
+
+exports[`Check page horizontal layout example against snapshot 1`] = `
+.pf-l-page__header-brand-link {
+  display: flex;
+  align-items: center;
+  min-height: 2.5rem;
+}
+.pf-l-page__header-brand {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+}
+.pf-l-page__header-tools {
+  display: block;
+  align-items: center;
+  margin-right: 2rem;
+  margin-left: auto;
+}
+.pf-l-page__header {
+  display: flex;
+  grid-area: header;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  max-width: 100%;
+  min-height: 6.875rem;
+}
+.pf-l-page__sidebar.pf-m-expanded {
+  display: block;
+  grid-area: 2 / 1;
+  z-index: 500;
+  width: 80%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #ffffff;
+  transform: translate3d(0,0,0);
+  box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
+}
+.pf-l-page__main-section {
+  display: block;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: #ededed;
+}
+.pf-l-page__main-section.pf-m-light {
+  display: block;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: #ffffff;
+}
+.pf-l-page__main-section.pf-m-dark-200 {
+  display: block;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: rgba(3, 3, 3, 0.32);
+}
+.pf-l-page__main-section.pf-m-dark-100 {
+  display: block;
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: rgba(3, 3, 3, 0.62);
+}
+.pf-l-page__main {
+  display: flex;
+  grid-area: main;
+  flex-direction: column;
+  padding-right: 0px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.pf-l-page.my-page-class {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas: "header" "main";
+}
+
+<Page
+  aria-label="Page layout"
+  className="my-page-class"
+  header={
+    <PageHeader
+      avatar=" | Avatar"
+      className=""
+      isCondensed={false}
       logo="Logo"
       nav="Navigation"
       onNavToggle={[Function]}
@@ -92,6 +293,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   }
   id="PageId"
   layout="horizontal"
+  scrollingDistance={20}
   sidebar={
     <PageSidebar
       className=""
@@ -99,6 +301,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       nav={null}
     />
   }
+  useCondensed={false}
 >
   <div
     aria-label="Page layout"
@@ -109,6 +312,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
+      isCondensed={false}
       logo="Logo"
       nav="Navigation"
       onNavToggle={[Function]}
@@ -226,7 +430,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   align-items: flex-end;
   max-width: 100%;
   min-height: 6.875rem;
-  overflow-x: hidden;
 }
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
@@ -235,7 +438,8 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   width: 80%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: #ffffff;
   transform: translate3d(0,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
@@ -266,11 +470,10 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   flex-direction: column;
   padding-right: 0px;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: auto;
 }
 .pf-l-page.my-page-class {
   display: grid;
-  min-height: 100vh;
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr;
   grid-template-areas: "header" "main";
@@ -283,6 +486,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
+      isCondensed={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
@@ -291,6 +495,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     />
   }
   id="PageId"
+  scrollingDistance={20}
   sidebar={
     <PageSidebar
       className=""
@@ -298,6 +503,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       nav="Navigation"
     />
   }
+  useCondensed={false}
 >
   <div
     aria-label="Page layout"
@@ -307,6 +513,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
+      isCondensed={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
