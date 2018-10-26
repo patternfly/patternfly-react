@@ -91,7 +91,6 @@ exports[`Check page condensed header example against snapshot 1`] = `
     />
   }
   id="PageId"
-  isCondensed={false}
   scrollingDistance={20}
   sidebar={
     <PageSidebar
@@ -100,6 +99,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
       nav="Navigation"
     />
   }
+  useCondensed={false}
 >
   <div
     aria-label="Page layout"
@@ -294,7 +294,6 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     />
   }
   id="PageId"
-  isCondensed={false}
   layout="horizontal"
   scrollingDistance={20}
   sidebar={
@@ -304,6 +303,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       nav={null}
     />
   }
+  useCondensed={false}
 >
   <div
     aria-label="Page layout"
@@ -497,7 +497,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     />
   }
   id="PageId"
-  isCondensed={false}
   scrollingDistance={20}
   sidebar={
     <PageSidebar
@@ -506,6 +505,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       nav="Navigation"
     />
   }
+  useCondensed={false}
 >
   <div
     aria-label="Page layout"
