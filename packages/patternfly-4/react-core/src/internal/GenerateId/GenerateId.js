@@ -2,12 +2,12 @@
  * Example of how to use this component
  *
  * const Component = ({id}) => (
- *  <RandomId>{randomId => (
+ *  <GenerateId>{randomId => (
  *     <div id={id || randomId}>
  *       div with random ID
  *     </div>
  *   )}
- *  </RandomId>
+ *  </GenerateId>
  *  );
  *
  * Component.propTypes = {
@@ -27,7 +27,7 @@ const propTypes = {
   children: PropTypes.func.isRequired
 };
 
-class RandomId extends React.Component {
+class GenerateId extends React.Component {
   static defaultProps = {
     prefix: 'pf-random-id-'
   };
@@ -39,4 +39,4 @@ class RandomId extends React.Component {
   }
 }
 
-export default RandomId;
+export default GenerateId;
