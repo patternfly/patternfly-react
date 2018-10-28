@@ -10,6 +10,8 @@ const propTypes = {
   isValid: PropTypes.bool,
   /** Flag to show if the Radio is disabled. */
   isDisabled: PropTypes.bool,
+  /** Flag to show if the Radio is checked. */
+  isChecked: PropTypes.bool,
   /** A callback for when the Radio selection changes. */
   onChange: PropTypes.func,
   /** Label text of the Radio. */
@@ -26,6 +28,7 @@ const defaultProps = {
   className: '',
   isValid: true,
   isDisabled: false,
+  isChecked: null,
   onChange: () => undefined,
   label: undefined
 };
@@ -36,7 +39,7 @@ class Radio extends React.Component {
   };
 
   render() {
-    const { className, onChange, isValid, isDisabled, label, ...props } = this.props;
+    const { className, onChange, isValid, isDisabled, isChecked, label, checked, ...props } = this.props;
     return (
       <div className={css(styles.check, className)}>
         <input
@@ -46,6 +49,7 @@ class Radio extends React.Component {
           onChange={this.handleChange}
           aria-invalid={!isValid}
           disabled={isDisabled}
+          checked={isChecked || checked}
         />
         {label && (
           <label className={css(styles.checkLabel, getModifier(styles, isDisabled && 'disabled'))} htmlFor={props.id}>
