@@ -23,7 +23,7 @@ const CatalogTile = ({
   const classes = classNames('catalog-tile-pf', { featured }, className);
 
   const defaultTruncateDescription = (text, max) => {
-    if (typeof text !== 'string' || text.length <= max) {
+    if (max === -1 || typeof text !== 'string' || text.length <= max) {
       return text;
     }
 
@@ -113,7 +113,7 @@ CatalogTile.propTypes = {
   vendor: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Description of the catalog item */
   description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  /** Max description length before applying truncation (when description is a string) */
+  /** Max description length before applying truncation (when description is a string), -1 for auto truncate to last visible line */
   maxDescriptionLength: PropTypes.number,
   /** Truncation function(description, max, id) used to truncate description when necessary (defaults to using ellipses) */
   truncateDescriptionFn: PropTypes.func
@@ -130,7 +130,7 @@ CatalogTile.defaultProps = {
   badges: [],
   vendor: null,
   description: null,
-  maxDescriptionLength: 112,
+  maxDescriptionLength: -1,
   truncateDescriptionFn: null
 };
 

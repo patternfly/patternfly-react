@@ -83,8 +83,9 @@ export const mockItems = [
           </span>
         ),
         description:
-          'This is a very long description that should be truncated after 112 characters. ' +
-          '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
+          'This is a very long description that should fade the last visible line to indicate truncation. ' +
+          'The default is the last visible line but can be overridden to truncate to a max number of characters ' +
+          'if need be. You can also provide a custom truncation function ' +
           'to truncate the description how you see fit. It will be passed the description and max length.',
         featured: true,
         certified: true,
