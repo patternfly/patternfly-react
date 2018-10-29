@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Grid, noop } from 'patternfly-react';
+import { Grid, helpers } from 'patternfly-react';
 
 /**
  * TableGridRow Component for PatternFly
@@ -36,7 +36,7 @@ TableGridRow.defaultProps = {
   children: null,
   className: '',
   selected: false,
-  onToggleSelection: noop,
+  onToggleSelection: helpers.noop,
   checkboxAriaLabel: 'Select'
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, Grid, Icon, noop } from 'patternfly-react';
+import { Button, Grid, Icon, helpers } from 'patternfly-react';
 
 /**
  * TableGridColumnHeader Component for PatternFly
@@ -55,7 +55,7 @@ TableGridColumnHeader.defaultProps = {
   sortable: false,
   isSorted: false,
   isAscending: true,
-  onSortToggle: noop,
+  onSortToggle: helpers.noop,
   ...Grid.Col.defaultProps
 };
 

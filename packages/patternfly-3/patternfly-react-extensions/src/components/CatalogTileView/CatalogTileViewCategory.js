@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, debounce, childrenToArray, hasDisplayName, noop } from 'patternfly-react';
+import { Button, helpers } from 'patternfly-react';
 import { ResizeSensor } from 'css-element-queries';
 import Break from 'breakjs';
 import CatalogTile from '../CatalogTile/CatalogTile';
@@ -51,7 +51,7 @@ class CatalogTileViewCategory extends React.Component {
     this.computeNumShown();
 
     // Watch for resizes and recompute the number shown when it does
-    this._resizeSensors.push(new ResizeSensor([this.categoryContainer], debounce(this.computeNumShown, 100)));
+    this._resizeSensors.push(new ResizeSensor([this.categoryContainer], helpers.debounce(this.computeNumShown, 100)));
   };
 
   render() {
@@ -59,16 +59,16 @@ class CatalogTileViewCategory extends React.Component {
     const { numShown, rightSpacerWidth } = this.state;
     const classes = classNames('catalog-tile-view-pf-category', className);
 
-    const tileValidator = child => hasDisplayName(child, CatalogTile.displayName);
+    const tileValidator = child => helpers.hasDisplayName(child, CatalogTile.displayName);
     const filterCatalogTiles = childrenArray =>
       childrenArray &&
       childrenArray.filter(
         child =>
           tileValidator(child) ||
-          (child.props && filterCatalogTiles(childrenToArray(child.props.children), tileValidator))
+          (child.props && filterCatalogTiles(helpers.childrenToArray(child.props.children), tileValidator))
       );
 
-    const allChildren = childrenToArray(children);
+    const allChildren = helpers.childrenToArray(children);
 
     /* Find the children that are tiles (or are wrapped tiles) and those that are not */
     let catalogTiles = filterCatalogTiles(allChildren);
@@ -130,7 +130,7 @@ CatalogTileViewCategory.defaultProps = {
   totalItems: 0,
   viewAll: true,
   viewAllText: 'View All',
-  onViewAll: noop
+  onViewAll: helpers.noop
 };
 
 export default CatalogTileViewCategory;
