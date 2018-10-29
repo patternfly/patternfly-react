@@ -42,7 +42,8 @@
     "classnames": "^2.2.5",
     "css-element-queries": "^1.0.1",
     "patternfly": "^3.52.1",
-    "patternfly-react": "^2.22.0"
+    "patternfly-react": "^2.22.0",
+    "react-virtualized": "9.x"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
