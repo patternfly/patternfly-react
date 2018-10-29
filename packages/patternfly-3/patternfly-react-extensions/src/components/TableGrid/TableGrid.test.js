@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Grid, Icon, noop } from 'patternfly-react';
+import { Grid, Icon, helpers } from 'patternfly-react';
 
 import { TableGrid } from './index';
 
@@ -12,8 +12,8 @@ test('TableGrid renders properly', () => {
           Column 1
         </TableGrid.ColumnHeader>
         <TableGrid.ColumnHeader>Column 2</TableGrid.ColumnHeader>
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop} />
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop}>
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop} />
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop}>
           <div>
             <span>test 1</span>
             <span>and two</span>
@@ -63,8 +63,8 @@ test('Bordered TableGrid renders properly', () => {
           Column 1
         </TableGrid.ColumnHeader>
         <TableGrid.ColumnHeader>Column 2</TableGrid.ColumnHeader>
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop} />
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop}>
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop} />
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop}>
           <div>
             <span>test 1</span>
             <span>and two</span>
@@ -114,8 +114,8 @@ test('TableGrid with Row select renders properly', () => {
           Column 1
         </TableGrid.ColumnHeader>
         <TableGrid.ColumnHeader>Column 2</TableGrid.ColumnHeader>
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop} />
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop}>
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop} />
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop}>
           <div>
             <span>test 1</span>
             <span>and two</span>
@@ -179,8 +179,8 @@ test('TableGrid with Cell select renders properly', () => {
           Column 1
         </TableGrid.ColumnHeader>
         <TableGrid.ColumnHeader>Column 2</TableGrid.ColumnHeader>
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop} />
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop}>
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop} />
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop}>
           <div>
             <span>test 1</span>
             <span>and two</span>
@@ -230,8 +230,8 @@ test('TableGrid with Checkbox select renders properly', () => {
           Column 1
         </TableGrid.ColumnHeader>
         <TableGrid.ColumnHeader>Column 2</TableGrid.ColumnHeader>
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop} />
-        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={noop}>
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop} />
+        <TableGrid.ColumnHeader sortable={false} isSorted={false} isAscending={false} onSortToggle={helpers.noop}>
           <div>
             <span>test 1</span>
             <span>and two</span>

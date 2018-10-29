@@ -17,6 +17,14 @@ module.exports = {
             const moduleDir = !modules ? 'es' : 'lib';
             return `react-bootstrap/${moduleDir}/${importName}`;
           }
+        },
+        'patternfly-react': {
+          preventFullImport: true,
+          transform: importName => {
+            const moduleDir = !modules ? 'esm' : 'js';
+            const srcDir = importName === 'helpers' ? 'common' : 'components';
+            return `patternfly-react/dist/${moduleDir}/${srcDir}/${importName}`;
+          }
         }
       }
     ]

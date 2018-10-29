@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, Grid, Icon, OverlayTrigger, Tooltip, noop } from 'patternfly-react';
+import { Button, Grid, Icon, OverlayTrigger, Tooltip, helpers } from 'patternfly-react';
 
 /**
  * TableGridHead Component for PatternFly
@@ -104,7 +104,7 @@ TableGridHead.defaultProps = {
   showCheckbox: false,
   allSelected: false,
   partialSelected: false,
-  onToggleSelection: noop,
+  onToggleSelection: helpers.noop,
   toggleTip: null,
   allSelectedAriaLabel: 'Click to deselect all',
   partialSelectedAriaLabel: 'Click to deselect all',

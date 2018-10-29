@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, noop, childrenToArray } from 'patternfly-react';
+import { Button, helpers } from 'patternfly-react';
 
 const FilterSidePanelCategory = ({
   children,
@@ -16,7 +16,7 @@ const FilterSidePanelCategory = ({
   ...props
 }) => {
   const classes = classNames('filter-panel-pf-category', className);
-  const childrenArray = childrenToArray(children);
+  const childrenArray = helpers.childrenToArray(children);
   const itemCount = childrenArray.length;
   const hiddenCount = itemCount - maxShowCount;
   let shownChildren;
@@ -81,7 +81,7 @@ FilterSidePanelCategory.defaultProps = {
   maxShowCount: 5,
   leeway: 2,
   showAll: false,
-  onShowAllToggle: noop,
+  onShowAllToggle: helpers.noop,
   showText: null,
   hideText: null
 };
