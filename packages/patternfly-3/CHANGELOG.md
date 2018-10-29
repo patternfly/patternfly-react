@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.5.1"></a>
+## [7.5.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.5.0...patternfly3-react-lerna-root@7.5.1) (2018-10-29)
+
+
+### Bug Fixes
+
+* **CatalogTileView:** Behave correctly when CatalogTile components are wrapped. ([#835](https://github.com/patternfly/patternfly-react/issues/835)) ([5527ae3](https://github.com/patternfly/patternfly-react/commit/5527ae3)), closes [#759](https://github.com/patternfly/patternfly-react/issues/759)
+
+
+
+
 <a name="7.5.0"></a>
 # [7.5.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.4.0...patternfly3-react-lerna-root@7.5.0) (2018-10-29)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.9.11"></a>
+## [2.9.11](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.10...patternfly-react-extensions@2.9.11) (2018-10-29)
+
+
+### Bug Fixes
+
+* **CatalogTileView:** Behave correctly when CatalogTile components are wrapped. ([#835](https://github.com/patternfly/patternfly-react/issues/835)) ([5527ae3](https://github.com/patternfly/patternfly-react/commit/5527ae3)), closes [#759](https://github.com/patternfly/patternfly-react/issues/759)
+
+
+
+
 <a name="2.9.10"></a>
 ## [2.9.10](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.9...patternfly-react-extensions@2.9.10) (2018-10-29)
 
