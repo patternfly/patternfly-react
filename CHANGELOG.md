@@ -1,5 +1,55 @@
 
-## Change Log (2018-10-26)
+## Change Log (2018-10-29)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#841](https://github.com/patternfly/patternfly-react/pull/841) fix(patternfly-4/react-core): Make the id prop for Dropdown optional … ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## patternfly4-react-lerna-root@1.15.0 (2018-10-26)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#843](https://github.com/patternfly/patternfly-react/pull/843) feat(page layout): adds the condensed header feature to the page header ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-tokens@1.6.0 (2018-10-26)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#843](https://github.com/patternfly/patternfly-react/pull/843) feat(page layout): adds the condensed header feature to the page header ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-icons@2.6.0 (2018-10-26)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#843](https://github.com/patternfly/patternfly-react/pull/843) feat(page layout): adds the condensed header feature to the page header ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-docs@3.17.24 (2018-10-26)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#843](https://github.com/patternfly/patternfly-react/pull/843) feat(page layout): adds the condensed header feature to the page header ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-core@1.28.0 (2018-10-26)
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`

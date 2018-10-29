@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.15.1"></a>
+## [1.15.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.15.0...patternfly4-react-lerna-root@1.15.1) (2018-10-29)
+
+
+### Bug Fixes
+
+* **patternfly-4/react-core:** Make the id prop for Dropdown optional in d.ts file ([#841](https://github.com/patternfly/patternfly-react/issues/841)) ([3bac80e](https://github.com/patternfly/patternfly-react/commit/3bac80e)), closes [#840](https://github.com/patternfly/patternfly-react/issues/840)
+
+
+
+
 <a name="1.15.0"></a>
 # [1.15.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.14.5...patternfly4-react-lerna-root@1.15.0) (2018-10-26)
 
