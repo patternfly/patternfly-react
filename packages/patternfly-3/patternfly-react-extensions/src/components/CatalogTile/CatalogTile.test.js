@@ -70,6 +70,7 @@ test('CatalogTile renders properly', () => {
           '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
           'to truncate the description how you see fit. It will be passed the description and max length.'
         }
+        maxDescriptionLength={112}
       />
       <CatalogTile
         id="test-iconClass"

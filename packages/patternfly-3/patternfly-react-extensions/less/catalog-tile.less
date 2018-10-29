@@ -8,6 +8,7 @@
   height: @catalog-tile-pf-height;
   margin: 0 15px @catalog-tile-pf-margin-bottom 0;
   padding: 15px;
+  position: relative;
   width: @catalog-tile-pf-width;
 
   &.featured {
@@ -79,7 +80,18 @@
   .catalog-tile-pf-description {
     flex: 1;
     margin-top: 15px;
-    overflow-y: hidden;
+    overflow: hidden;
+
+    &::after {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+      bottom: 20px;
+      content: "";
+      height: 25px;
+      position: absolute;
+      right: 15px;
+      width: 20%;
+      text-align: right;
+    }
   }
 }
 
