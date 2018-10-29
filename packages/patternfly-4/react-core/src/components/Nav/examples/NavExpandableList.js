@@ -21,9 +21,9 @@ class NavExpandableList extends React.Component {
     console.log(`Group ${result.groupId} expanded? ${result.isExpanded}`);
   };
 
-  handleItemOnclick = result => {
+  handleItemOnclick = (event, itemId, groupId) => {
     // eslint-disable-next-line no-console
-    console.log('my own click handler');
+    console.log(`my own click handler on ${itemId}`);
   };
 
   render() {
