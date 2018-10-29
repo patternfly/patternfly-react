@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.11.0"></a>
+# [2.11.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.10.0...patternfly-react-extensions@2.11.0) (2018-10-29)
+
+
+### Features
+
+* **Extensions:** Import patternfly-react components individually ([#853](https://github.com/patternfly/patternfly-react/issues/853)) ([bfe7179](https://github.com/patternfly/patternfly-react/commit/bfe7179))
+
+
+
+
 <a name="2.10.0"></a>
 # [2.10.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.10...patternfly-react-extensions@2.10.0) (2018-10-29)
 

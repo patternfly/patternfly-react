@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.7.0"></a>
+# [7.7.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.6.0...patternfly3-react-lerna-root@7.7.0) (2018-10-29)
+
+
+### Features
+
+* **Extensions:** Import patternfly-react components individually ([#853](https://github.com/patternfly/patternfly-react/issues/853)) ([bfe7179](https://github.com/patternfly/patternfly-react/commit/bfe7179))
+
+
+
+
 <a name="7.6.0"></a>
 # [7.6.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.5.0...patternfly3-react-lerna-root@7.6.0) (2018-10-29)
 
