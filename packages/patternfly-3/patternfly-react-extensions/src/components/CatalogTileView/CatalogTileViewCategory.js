@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, debounce, filterChildren, hasDisplayName, noop } from 'patternfly-react';
+import { Button, debounce, childrenToArray, hasDisplayName, noop } from 'patternfly-react';
 import { ResizeSensor } from 'css-element-queries';
 import Break from 'breakjs';
 import CatalogTile from '../CatalogTile/CatalogTile';
@@ -59,12 +59,25 @@ class CatalogTileViewCategory extends React.Component {
     const { numShown, rightSpacerWidth } = this.state;
     const classes = classNames('catalog-tile-view-pf-category', className);
 
+    const tileValidator = child => hasDisplayName(child, CatalogTile.displayName);
+    const filterCatalogTiles = childrenArray =>
+      childrenArray &&
+      childrenArray.filter(
+        child =>
+          tileValidator(child) ||
+          (child.props && filterCatalogTiles(childrenToArray(child.props.children), tileValidator))
+      );
+
+    const allChildren = childrenToArray(children);
+
+    /* Find the children that are tiles (or are wrapped tiles) and those that are not */
+    let catalogTiles = filterCatalogTiles(allChildren);
+    const nonTiles = allChildren.filter(child => !catalogTiles.includes(child));
+
     // Only show the tiles that fit in a single row, unless viewAll is specified
-    let catalogTiles = filterChildren(children, child => hasDisplayName(child, CatalogTile.displayName));
     if (!viewAll && numShown && numShown < totalItems) {
       catalogTiles = catalogTiles.slice(0, numShown);
     }
-    const nonTiles = filterChildren(children, child => !hasDisplayName(child, CatalogTile.displayName));
 
     return (
       <div className={classes} {...props} ref={this.handleRef}>
