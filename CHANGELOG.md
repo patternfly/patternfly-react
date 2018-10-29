@@ -1,6 +1,36 @@
 
 ## Change Log (2018-10-29)
 
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#842](https://github.com/patternfly/patternfly-react/pull/842) feat(helpers): Add exported helpers object containing all helper functions ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly4-react-lerna-root@1.15.1 (2018-10-29)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#841](https://github.com/patternfly/patternfly-react/pull/841) fix(patternfly-4/react-core): Make the id prop for Dropdown optional … ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-docs@3.17.25 (2018-10-29)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#841](https://github.com/patternfly/patternfly-react/pull/841) fix(patternfly-4/react-core): Make the id prop for Dropdown optional … ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-core@1.28.1 (2018-10-29)
+
 #### :bug: Bug Fix
 * `patternfly-4`
   * [#841](https://github.com/patternfly/patternfly-react/pull/841) fix(patternfly-4/react-core): Make the id prop for Dropdown optional … ([@tlabaj](https://github.com/tlabaj))
