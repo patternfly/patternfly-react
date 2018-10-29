@@ -22,19 +22,19 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  to: '#',
+  to: '',
   isActive: false,
   groupId: null,
   itemId: null
 };
 
-const NavItem = ({ className, children, to, isActive, groupId, itemId, ...props }) => {
-  const defaultLink = (
+const NavItem = ({ className, children, to, isActive, groupId, itemId, ...props }) => (
+  <li className={css(styles.navItem, className)} {...props}>
     <NavContext.Consumer>
       {context => (
         <a
           href={to}
-          onClick={e => context.onSelect(e, groupId, itemId)}
+          onClick={e => context.onSelect(e, groupId, itemId, to)}
           className={css(styles.navLink, isActive && styles.modifiers.current, className)}
           aria-current={isActive ? 'page' : null}
         >
@@ -42,24 +42,8 @@ const NavItem = ({ className, children, to, isActive, groupId, itemId, ...props 
         </a>
       )}
     </NavContext.Consumer>
-  );
-  const reactElement = React.isValidElement(children);
-  const clonedChild = (
-    <NavContext.Consumer>
-      {context =>
-        React.cloneElement(children, {
-          onClick: e => context.onSelect(e, groupId, itemId),
-          className: css(styles.navLink, isActive && styles.modifiers.current, className)
-        })
-      }
-    </NavContext.Consumer>
-  );
-  return (
-    <li className={css(styles.navItem, className)} {...props}>
-      {reactElement ? clonedChild : defaultLink}
-    </li>
-  );
-};
+  </li>
+);
 
 NavItem.propTypes = propTypes;
 NavItem.defaultProps = defaultProps;
