@@ -3,6 +3,51 @@
 
 #### :rocket: New Feature
 * `patternfly-3`
+  * [#818](https://github.com/patternfly/patternfly-react/pull/818) feat(VirtualTableGrid): Add a table grid styled component using react-virtualized ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#850](https://github.com/patternfly/patternfly-react/pull/850) fix(CatalogTile): Fade end of description text rather than truncate ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#835](https://github.com/patternfly/patternfly-react/pull/835) fix(CatalogTileView): Behave correctly when CatalogTile components are wrapped ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.5.0 (2018-10-29)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#842](https://github.com/patternfly/patternfly-react/pull/842) feat(helpers): Add exported helpers object containing all helper functions ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.22.0 (2018-10-29)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#842](https://github.com/patternfly/patternfly-react/pull/842) feat(helpers): Add exported helpers object containing all helper functions ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.9.10 (2018-10-29)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#842](https://github.com/patternfly/patternfly-react/pull/842) feat(helpers): Add exported helpers object containing all helper functions ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.5.1 (2018-10-29)
+
+#### :rocket: New Feature
+* `patternfly-3`
   * [#842](https://github.com/patternfly/patternfly-react/pull/842) feat(helpers): Add exported helpers object containing all helper functions ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
 
 #### Committers: 1

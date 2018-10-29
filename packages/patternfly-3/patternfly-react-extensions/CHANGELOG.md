@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.10.0"></a>
+# [2.10.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.10...patternfly-react-extensions@2.10.0) (2018-10-29)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Fade end of description text rather than truncate ([#850](https://github.com/patternfly/patternfly-react/issues/850)) ([5c9a52f](https://github.com/patternfly/patternfly-react/commit/5c9a52f))
+* **CatalogTileView:** Behave correctly when CatalogTile components are wrapped. ([#835](https://github.com/patternfly/patternfly-react/issues/835)) ([5527ae3](https://github.com/patternfly/patternfly-react/commit/5527ae3)), closes [#759](https://github.com/patternfly/patternfly-react/issues/759)
+
+
+### Features
+
+* **VirtualTableGrid:** Add a table grid styled component using react-virtualized ([#818](https://github.com/patternfly/patternfly-react/issues/818)) ([f8cc152](https://github.com/patternfly/patternfly-react/commit/f8cc152)), closes [#773](https://github.com/patternfly/patternfly-react/issues/773)
+
+
+
+
 <a name="2.9.10"></a>
 ## [2.9.10](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.9.9...patternfly-react-extensions@2.9.10) (2018-10-29)
 
