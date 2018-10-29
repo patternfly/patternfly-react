@@ -1,7 +1,7 @@
 import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
 
 export interface DropdownToggleProps extends HTMLProps<HTMLButtonElement> {
-  id: string;
+  id?: string;
   children?: ReactNode;
   isOpen?: Boolean;
   onToggle?: Function;
