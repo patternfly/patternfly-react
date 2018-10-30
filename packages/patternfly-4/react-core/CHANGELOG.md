@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.29.0"></a>
+# [1.29.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.28.4...@patternfly/react-core@1.29.0) (2018-10-30)
+
+
+### Features
+
+* **Label:** add Label to PF4 ([#859](https://github.com/patternfly/patternfly-react/issues/859)) ([e1c16d2](https://github.com/patternfly/patternfly-react/commit/e1c16d2))
+
+
+
+
 <a name="1.28.4"></a>
 ## [1.28.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.28.3...@patternfly/react-core@1.28.4) (2018-10-30)
 

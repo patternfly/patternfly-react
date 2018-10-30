@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.16.0"></a>
+# [1.16.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.15.4...patternfly4-react-lerna-root@1.16.0) (2018-10-30)
+
+
+### Features
+
+* **Label:** add Label to PF4 ([#859](https://github.com/patternfly/patternfly-react/issues/859)) ([e1c16d2](https://github.com/patternfly/patternfly-react/commit/e1c16d2))
+
+
+
+
 <a name="1.15.4"></a>
 ## [1.15.4](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.15.3...patternfly4-react-lerna-root@1.15.4) (2018-10-30)
 
