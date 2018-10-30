@@ -1,11 +1,6 @@
 import React, { Fragment } from 'react';
-import {
-  progressDescription,
-  progressMeasure,
-  progressStatusIcon,
-  progressStatus
-} from '@patternfly/patternfly-next/components/Progress/progress.css';
-import { css, StyleSheet } from '@patternfly/react-styles';
+import progressStyle from '@patternfly/patternfly-next/components/Progress/progress.css';
+import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { CheckCircleIcon, TimesCircleIcon } from '@patternfly/react-icons';
 import ProgressBar from './ProgressBar';
@@ -53,18 +48,16 @@ const ProgressContainer = ({ value, title, parentId, label, variant, measureLoca
   const StatusIcon = variantToIcon.hasOwnProperty(variant) && variantToIcon[variant];
   return (
     <Fragment>
-      <div className={css(progressDescription)} id={`${parentId}-description`}>
+      <div className={css(progressStyle.progressDescription)} id={`${parentId}-description`}>
         {title}
       </div>
-      <div className={css(progressStatus)}>
+      <div className={css(progressStyle.progressStatus)}>
         {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
-          <span className={css(progressMeasure)}>
-            {label || `${value}%`}
-          </span>
+          <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>
         )}
         {measureLocation !== ProgressMeasureLocation.none &&
           variantToIcon.hasOwnProperty(variant) && (
-            <span className={css(progressStatusIcon)}>
+            <span className={css(progressStyle.progressStatusIcon)}>
               <StatusIcon />
             </span>
           )}

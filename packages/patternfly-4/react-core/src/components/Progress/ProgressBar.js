@@ -1,5 +1,5 @@
 import React from 'react';
-import { progressBar, progressIndicator, progressMeasure } from '@patternfly/patternfly-next/components/Progress/progress.css';
+import progressStyle from '@patternfly/patternfly-next/components/Progress/progress.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
@@ -18,9 +18,9 @@ const defaultProps = {
 };
 
 const ProgressBar = ({ className, children, value, ...props }) => (
-  <div {...props} className={css(progressBar, className)}>
-    <div className={css(progressIndicator)} style={{ width: `${value}%` }}>
-      <span className={css(progressMeasure)}>{children}</span>
+  <div {...props} className={css(progressStyle.progressBar, className)}>
+    <div className={css(progressStyle.progressIndicator)} style={{ width: `${value}%` }}>
+      <span className={css(progressStyle.progressMeasure)}>{children}</span>
     </div>
   </div>
 );
