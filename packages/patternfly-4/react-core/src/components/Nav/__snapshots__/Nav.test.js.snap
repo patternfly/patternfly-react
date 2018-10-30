@@ -1585,18 +1585,15 @@ exports[`Nav List with custom item nodes 1`] = `
           <li
             className="pf-c-nav__item"
           >
-            <a
+            <CustomNode
               aria-current={null}
               className="pf-c-nav__link"
-              href="/components/nav#link1"
               onClick={[Function]}
             >
-              <CustomNode>
-                <div>
-                  My custom node
-                </div>
-              </CustomNode>
-            </a>
+              <div>
+                My custom node
+              </div>
+            </CustomNode>
           </li>
         </NavItem>
       </ul>
