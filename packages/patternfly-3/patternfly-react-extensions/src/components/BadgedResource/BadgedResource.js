@@ -99,7 +99,7 @@ BadgedResource.propTypes = {
 BadgedResource.defaultProps = {
   id: null,
   className: '',
-  badgeColor: BadgedResource.black,
+  badgeColor: BadgedResource.COLORS.lightBlue400,
   resourceName: '',
   large: false,
   tipDelay: 500,

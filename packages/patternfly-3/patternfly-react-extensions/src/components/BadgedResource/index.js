@@ -1,3 +1,4 @@
 import BadgedResource from './BadgedResource';
+import { resourceTypes, getResourceBadgeColor } from './ResourceTypes';
 
-export { BadgedResource };
+export { BadgedResource, resourceTypes, getResourceBadgeColor };

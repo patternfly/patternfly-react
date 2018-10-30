@@ -67,6 +67,27 @@ exports[`BadgedResource renders properly 1`] = `
       </span>
       <span
         class="badged-resource-pf-icon"
+        style="background-color: rgb(0, 185, 228);"
+      >
+        DC
+      </span>
+    </span>
+    <span
+      class="badged-resource-pf-resource-name"
+    />
+  </span>
+  <span
+    class="badged-resource-pf"
+  >
+    <span>
+      <span
+        class="sr-only"
+      >
+        Deployment Config
+      </span>
+      <span
+        class="badged-resource-pf-icon"
+        style="background-color: rgb(0, 67, 104);"
       >
         DC
       </span>
@@ -132,7 +153,7 @@ exports[`BadgedResource renders properly 1`] = `
       </span>
       <span
         class="badged-resource-pf-icon"
-        style="background-color: rgb(119, 61, 0);"
+        style="background-color: rgb(0, 92, 102);"
       >
         APIS
       </span>
@@ -154,7 +175,7 @@ exports[`BadgedResource renders properly 1`] = `
       </span>
       <span
         class="badged-resource-pf-icon"
-        style="background-color: rgb(108, 161, 0);"
+        style="background-color: rgb(0, 67, 104);"
       >
         DC
       </span>
@@ -198,7 +219,7 @@ exports[`BadgedResource renders properly 1`] = `
       </span>
       <span
         class="badged-resource-pf-icon"
-        style="background-color: rgb(64, 25, 154);"
+        style="background-color: rgb(45, 118, 35);"
       >
         SM
       </span>

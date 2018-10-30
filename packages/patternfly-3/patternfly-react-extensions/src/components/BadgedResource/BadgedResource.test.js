@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { BadgedResource } from './index';
+import { BadgedResource, getResourceBadgeColor, resourceTypes } from './index';
 
 test('BadgedResource renders properly', () => {
   const onClickMock = jest.fn();
@@ -14,10 +14,15 @@ test('BadgedResource renders properly', () => {
         kindStr="Deployment Config"
       />
       <BadgedResource
+        kindAbbr="DC"
+        kindStr="Deployment Config"
+        badgeColor={getResourceBadgeColor(resourceTypes.DEPLOYMENT_CONFIG)}
+      />
+      <BadgedResource
         kindAbbr="RB"
         kindStr="Role Binding"
         resourceName="Clickable Item"
-        badgeColor={BadgedResource.COLORS.cyan500}
+        badgeColor={getResourceBadgeColor(resourceTypes.ROLE_BINDING)}
         onClick={onClickMock}
       />
       <BadgedResource
@@ -25,35 +30,35 @@ test('BadgedResource renders properly', () => {
         kindStr="Horizontal Pod Autoscaler"
         resourceName="No Tooltip Item"
         tipDelay={-1}
-        badgeColor={BadgedResource.COLORS.lightBlue400}
+        badgeColor={getResourceBadgeColor('autoscaller')}
       />
       <BadgedResource
         kindAbbr="APIS"
         kindStr="API Service"
         resourceName="Fast Tooltip"
         tipDelay={0}
-        badgeColor={BadgedResource.COLORS.orange600}
+        badgeColor={BadgedResource.COLORS.cyan500}
       />
       <BadgedResource
         kindAbbr="DC"
         kindStr="Deployment Config"
         resourceName="Long Tooltip"
         tipDelay={1500}
-        badgeColor={BadgedResource.COLORS.lightGreen500}
+        badgeColor={getResourceBadgeColor(resourceTypes.DEPLOYMENT_CONFIG)}
       />
       <BadgedResource
         kindAbbr="PR"
         kindStr="Project"
         resourceName="Large Item"
         large
-        badgeColor={BadgedResource.COLORS.green500}
+        badgeColor={getResourceBadgeColor(resourceTypes.PROJECT)}
       />
       <BadgedResource
         kindAbbr="SM"
         kindStr="Service Model"
         resourceName="Large Clickable Item"
         large
-        badgeColor={BadgedResource.COLORS.purple600}
+        badgeColor={getResourceBadgeColor(resourceTypes.SERVICE)}
         onClick={onClickMock}
       />
     </div>
