@@ -1,5 +1,15 @@
 
-## Change Log (2018-10-29)
+## patternfly3-react-lerna-root@7.7.0 (2018-10-29)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#853](https://github.com/patternfly/patternfly-react/pull/853) feat(Extensions): Import patternfly-react components individually ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.11.0 (2018-10-29)
 
 #### :rocket: New Feature
 * `patternfly-3`

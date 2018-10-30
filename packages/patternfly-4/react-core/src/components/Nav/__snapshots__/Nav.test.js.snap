@@ -58,6 +58,8 @@ exports[`Default Nav List - Trigger item active update 1`] = `
           isActive={false}
           itemId={null}
           key="#link1"
+          onClick={null}
+          preventDefault={false}
           to="#link1"
         >
           <li
@@ -79,6 +81,8 @@ exports[`Default Nav List - Trigger item active update 1`] = `
           isActive={false}
           itemId={null}
           key="#link2"
+          onClick={null}
+          preventDefault={false}
           to="#link2"
         >
           <li
@@ -100,6 +104,8 @@ exports[`Default Nav List - Trigger item active update 1`] = `
           isActive={false}
           itemId={null}
           key="#link3"
+          onClick={null}
+          preventDefault={false}
           to="#link3"
         >
           <li
@@ -121,6 +127,8 @@ exports[`Default Nav List - Trigger item active update 1`] = `
           isActive={false}
           itemId={null}
           key="#link4"
+          onClick={null}
+          preventDefault={false}
           to="#link4"
         >
           <li
@@ -200,6 +208,8 @@ exports[`Default Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link1"
+          onClick={null}
+          preventDefault={false}
           to="#link1"
         >
           <li
@@ -221,6 +231,8 @@ exports[`Default Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link2"
+          onClick={null}
+          preventDefault={false}
           to="#link2"
         >
           <li
@@ -242,6 +254,8 @@ exports[`Default Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link3"
+          onClick={null}
+          preventDefault={false}
           to="#link3"
         >
           <li
@@ -263,6 +277,8 @@ exports[`Default Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link4"
+          onClick={null}
+          preventDefault={false}
           to="#link4"
         >
           <li
@@ -332,7 +348,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   overflow: hidden;
   opacity: 0;
 }
-.pf-c-nav__item.expandable-group {
+.pf-c-nav__item.pf-m-expanded.expandable-group {
   display: block;
 }
 .pf-c-nav__list {
@@ -377,12 +393,13 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
             onToggle={[Function]}
           >
             <li
-              className="pf-c-nav__item expandable-group"
+              className="pf-c-nav__item pf-m-expanded expandable-group"
               onClick={[Function]}
             >
               <a
-                aria-expanded={false}
+                aria-expanded={true}
                 className="pf-c-nav__link"
+                data-component="pf-nav-expandable"
                 href="#"
                 id="grp-1"
                 onClick={[Function]}
@@ -418,7 +435,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
               <section
                 aria-labelledby="grp-1"
                 className="pf-c-nav__subnav"
-                hidden={true}
+                hidden={null}
               >
                 <ul
                   className="pf-c-nav__simple-list"
@@ -429,6 +446,8 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link1"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link1"
                   >
                     <li
@@ -450,6 +469,8 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link2"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link2"
                   >
                     <li
@@ -471,6 +492,8 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link3"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link3"
                   >
                     <li
@@ -492,6 +515,8 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link4"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link4"
                   >
                     <li
@@ -617,6 +642,7 @@ exports[`Expandable Nav List 1`] = `
               <a
                 aria-expanded={false}
                 className="pf-c-nav__link"
+                data-component="pf-nav-expandable"
                 href="#"
                 id="grp-1"
                 onClick={[Function]}
@@ -663,6 +689,8 @@ exports[`Expandable Nav List 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link1"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link1"
                   >
                     <li
@@ -684,6 +712,8 @@ exports[`Expandable Nav List 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link2"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link2"
                   >
                     <li
@@ -705,6 +735,8 @@ exports[`Expandable Nav List 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link3"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link3"
                   >
                     <li
@@ -726,6 +758,8 @@ exports[`Expandable Nav List 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link4"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link4"
                   >
                     <li
@@ -859,6 +893,7 @@ exports[`Expandable Nav List with aria label 1`] = `
               <a
                 aria-expanded={false}
                 className="pf-c-nav__link"
+                data-component="pf-nav-expandable"
                 href="#"
                 id={null}
                 onClick={[Function]}
@@ -911,6 +946,8 @@ exports[`Expandable Nav List with aria label 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link1"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link1"
                   >
                     <li
@@ -932,6 +969,8 @@ exports[`Expandable Nav List with aria label 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link2"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link2"
                   >
                     <li
@@ -953,6 +992,8 @@ exports[`Expandable Nav List with aria label 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link3"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link3"
                   >
                     <li
@@ -974,6 +1015,8 @@ exports[`Expandable Nav List with aria label 1`] = `
                     isActive={false}
                     itemId={null}
                     key="#link4"
+                    onClick={null}
+                    preventDefault={false}
                     to="#link4"
                   >
                     <li
@@ -1058,6 +1101,8 @@ exports[`Horizontal Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link1"
+          onClick={null}
+          preventDefault={false}
           to="#link1"
         >
           <li
@@ -1079,6 +1124,8 @@ exports[`Horizontal Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link2"
+          onClick={null}
+          preventDefault={false}
           to="#link2"
         >
           <li
@@ -1100,6 +1147,8 @@ exports[`Horizontal Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link3"
+          onClick={null}
+          preventDefault={false}
           to="#link3"
         >
           <li
@@ -1121,6 +1170,8 @@ exports[`Horizontal Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link4"
+          onClick={null}
+          preventDefault={false}
           to="#link4"
         >
           <li
@@ -1271,6 +1322,8 @@ exports[`Nav Grouped List 1`] = `
                 isActive={false}
                 itemId={null}
                 key="section1_#link1"
+                onClick={null}
+                preventDefault={false}
                 to="#link1"
               >
                 <li
@@ -1292,6 +1345,8 @@ exports[`Nav Grouped List 1`] = `
                 isActive={false}
                 itemId={null}
                 key="section1_#link2"
+                onClick={null}
+                preventDefault={false}
                 to="#link2"
               >
                 <li
@@ -1313,6 +1368,8 @@ exports[`Nav Grouped List 1`] = `
                 isActive={false}
                 itemId={null}
                 key="section1_#link3"
+                onClick={null}
+                preventDefault={false}
                 to="#link3"
               >
                 <li
@@ -1334,6 +1391,8 @@ exports[`Nav Grouped List 1`] = `
                 isActive={false}
                 itemId={null}
                 key="section1_#link4"
+                onClick={null}
+                preventDefault={false}
                 to="#link4"
               >
                 <li
@@ -1385,6 +1444,8 @@ exports[`Nav Grouped List 1`] = `
                 isActive={false}
                 itemId={null}
                 key="section2_#link1"
+                onClick={null}
+                preventDefault={false}
                 to="#link1"
               >
                 <li
@@ -1406,6 +1467,8 @@ exports[`Nav Grouped List 1`] = `
                 isActive={false}
                 itemId={null}
                 key="section2_#link2"
+                onClick={null}
+                preventDefault={false}
                 to="#link2"
               >
                 <li
@@ -1427,6 +1490,8 @@ exports[`Nav Grouped List 1`] = `
                 isActive={false}
                 itemId={null}
                 key="section2_#link3"
+                onClick={null}
+                preventDefault={false}
                 to="#link3"
               >
                 <li
@@ -1448,6 +1513,8 @@ exports[`Nav Grouped List 1`] = `
                 isActive={false}
                 itemId={null}
                 key="section2_#link4"
+                onClick={null}
+                preventDefault={false}
                 to="#link4"
               >
                 <li
@@ -1511,12 +1578,15 @@ exports[`Nav List with custom item nodes 1`] = `
           groupId={null}
           isActive={false}
           itemId={null}
+          onClick={null}
+          preventDefault={false}
           to="/components/nav#link1"
         >
           <li
             className="pf-c-nav__item"
           >
             <CustomNode
+              aria-current={null}
               className="pf-c-nav__link"
               onClick={[Function]}
             >
@@ -1590,6 +1660,8 @@ exports[`Simple Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link1"
+          onClick={null}
+          preventDefault={false}
           to="#link1"
         >
           <li
@@ -1611,6 +1683,8 @@ exports[`Simple Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link2"
+          onClick={null}
+          preventDefault={false}
           to="#link2"
         >
           <li
@@ -1632,6 +1706,8 @@ exports[`Simple Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link3"
+          onClick={null}
+          preventDefault={false}
           to="#link3"
         >
           <li
@@ -1653,6 +1729,8 @@ exports[`Simple Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link4"
+          onClick={null}
+          preventDefault={false}
           to="#link4"
         >
           <li
@@ -1732,6 +1810,8 @@ exports[`Tertiary Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link1"
+          onClick={null}
+          preventDefault={false}
           to="#link1"
         >
           <li
@@ -1753,6 +1833,8 @@ exports[`Tertiary Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link2"
+          onClick={null}
+          preventDefault={false}
           to="#link2"
         >
           <li
@@ -1774,6 +1856,8 @@ exports[`Tertiary Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link3"
+          onClick={null}
+          preventDefault={false}
           to="#link3"
         >
           <li
@@ -1795,6 +1879,8 @@ exports[`Tertiary Nav List 1`] = `
           isActive={false}
           itemId={null}
           key="#link4"
+          onClick={null}
+          preventDefault={false}
           to="#link4"
         >
           <li

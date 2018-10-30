@@ -69,6 +69,7 @@ class NavExpandable extends React.Component {
                 {...props}
               >
                 <a
+                  data-component="pf-nav-expandable"
                   className={css(styles.navLink)}
                   id={srText ? null : this.id}
                   href="#"

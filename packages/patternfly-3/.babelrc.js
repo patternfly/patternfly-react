@@ -22,7 +22,7 @@ module.exports = {
           preventFullImport: true,
           transform: importName => {
             const moduleDir = !modules ? 'esm' : 'js';
-            const srcDir = importName === 'helpers' ? 'common' : 'components';
+            const srcDir = importName === 'helpers' ? 'common' : `components/${importName}`;
             return `patternfly-react/dist/${moduleDir}/${srcDir}/${importName}`;
           }
         }

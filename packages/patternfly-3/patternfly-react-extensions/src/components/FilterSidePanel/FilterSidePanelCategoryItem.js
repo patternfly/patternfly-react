@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Checkbox, helpers } from 'patternfly-react';
+import { helpers, Form } from 'patternfly-react';
 
 const FilterSidePanelCategoryItem = ({ children, className, icon, count, ...props }) => {
   const classes = classNames('filter-panel-pf-category-item', className);
 
   return (
     <div className={classes}>
-      <Checkbox {...props}>
+      <Form.Checkbox {...props}>
         {icon && <span className="item-icon">{icon}</span>}
         {children}
         {Number.isInteger(count) && <span className="item-count">{`(${count})`}</span>}
-      </Checkbox>
+      </Form.Checkbox>
     </div>
   );
 };
@@ -27,7 +27,7 @@ FilterSidePanelCategoryItem.propTypes = {
   /** Optional count of the items matching the filter */
   count: PropTypes.number,
   /** Properties passed on to the Checkbox */
-  ...helpers.excludeKeys(Checkbox.propTypes, ['className', 'children'])
+  ...helpers.excludeKeys(Form.Checkbox.propTypes, ['className', 'children'])
 };
 
 FilterSidePanelCategoryItem.defaultProps = {
@@ -35,7 +35,7 @@ FilterSidePanelCategoryItem.defaultProps = {
   className: '',
   icon: null,
   count: null,
-  ...helpers.excludeKeys(Checkbox.defaultProps, ['className', 'children'])
+  ...helpers.excludeKeys(Form.Checkbox.defaultProps, ['className', 'children'])
 };
 
 export default FilterSidePanelCategoryItem;

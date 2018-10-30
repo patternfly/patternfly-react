@@ -22,6 +22,10 @@ class NavToggle extends React.Component {
   };
 
   handleToggle = e => {
+    // Item events can bubble up, ignore those
+    if (e.target.getAttribute('data-component') !== 'pf-nav-expandable') {
+      return;
+    }
     const { value } = this.state;
     const { groupId, onToggle } = this.props;
     this.setState({
