@@ -28,8 +28,7 @@ export const NavContext = React.createContext();
 class Nav extends React.Component {
   // Callback from NavItem
   onSelect(event, groupId, itemId, to, preventDefault, onClick) {
-    // If there is no href target then prevent the default to block navigation
-    (preventDefault || !to) && event.preventDefault();
+    preventDefault && event.preventDefault();
     this.props.onSelect({
       event,
       itemId,
