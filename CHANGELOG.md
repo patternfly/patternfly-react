@@ -1,4 +1,14 @@
 
+## Change Log (2018-10-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#858](https://github.com/patternfly/patternfly-react/pull/858) fix(Progress): import progress style object ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
 ## patternfly3-react-lerna-root@7.7.0 (2018-10-29)
 
 #### :rocket: New Feature
