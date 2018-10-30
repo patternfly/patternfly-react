@@ -17,6 +17,8 @@ const propTypes = {
   groupId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Item identifier, will be returned with the onToggle and onSelect callback passed to the Nav component */
   itemId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** If true prevents the default anchor link action to occur. Set to true if you want to handle navigation yourself. */
+  preventDefault: PropTypes.bool,
   /** Callback for item click */
   onClick: PropTypes.func
 };
@@ -28,16 +30,17 @@ const defaultProps = {
   isActive: false,
   groupId: null,
   itemId: null,
+  preventDefault: false,
   onClick: null
 };
 
-const NavItem = ({ className, children, to, isActive, groupId, itemId, onClick, ...props }) => (
+const NavItem = ({ className, children, to, isActive, groupId, itemId, preventDefault, onClick, ...props }) => (
   <li className={css(styles.navItem, className)} {...props}>
     <NavContext.Consumer>
       {context => (
         <a
           href={to}
-          onClick={e => context.onSelect(e, groupId, itemId, to, onClick)}
+          onClick={e => context.onSelect(e, groupId, itemId, to, preventDefault, onClick)}
           className={css(styles.navLink, isActive && styles.modifiers.current, className)}
           aria-current={isActive ? 'page' : null}
         >

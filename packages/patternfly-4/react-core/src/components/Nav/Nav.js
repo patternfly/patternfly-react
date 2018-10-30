@@ -27,9 +27,9 @@ export const NavContext = React.createContext();
 
 class Nav extends React.Component {
   // Callback from NavItem
-  onSelect(event, groupId, itemId, to, onClick) {
+  onSelect(event, groupId, itemId, to, preventDefault, onClick) {
     // If there is no href target then prevent the default to block navigation
-    !to && event.preventDefault();
+    (preventDefault || !to) && event.preventDefault();
     this.props.onSelect({
       event,
       itemId,
@@ -54,7 +54,7 @@ class Nav extends React.Component {
     return (
       <NavContext.Provider
         value={{
-          onSelect: (event, groupId, itemId, to, onClick) => this.onSelect(event, groupId, itemId, to, onClick),
+          onSelect: (event, groupId, itemId, to, preventDefault, onClick) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
           onToggle: (event, groupId, expanded) => this.onToggle(event, groupId, expanded)
         }}
       >
