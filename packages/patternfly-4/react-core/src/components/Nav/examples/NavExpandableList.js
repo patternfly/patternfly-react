@@ -44,6 +44,7 @@ class NavExpandableList extends React.Component {
           </NavExpandable>
           <NavExpandable title="Link 2" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
             <NavItem
+              preventDefault
               onClick={this.handleItemOnclick}
               groupId="grp-2"
               itemId="own-item-handler"
