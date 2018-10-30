@@ -118,3 +118,5 @@ export const helpers = {
   KEY_CODES,
   KEYS
 };
+
+export default helpers;
