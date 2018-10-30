@@ -27,18 +27,19 @@ export const NavContext = React.createContext();
 
 class Nav extends React.Component {
   // Callback from NavItem
-  onSelect(event, groupId, itemId) {
-    event.stopPropagation();
+  onSelect(event, groupId, itemId, to, preventDefault, onClick) {
+    preventDefault && event.preventDefault();
     this.props.onSelect({
       event,
       itemId,
-      groupId
+      groupId,
+      to
     });
+    onClick && onClick(event, itemId, groupId, to);
   }
 
   // Callback from NavExpandable
   onToggle(event, groupId, isExpanded) {
-    event.stopPropagation();
     this.props.onToggle({
       event,
       groupId,
@@ -52,7 +53,7 @@ class Nav extends React.Component {
     return (
       <NavContext.Provider
         value={{
-          onSelect: (event, groupId, itemId) => this.onSelect(event, groupId, itemId),
+          onSelect: (event, groupId, itemId, to, preventDefault, onClick) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
           onToggle: (event, groupId, expanded) => this.onToggle(event, groupId, expanded)
         }}
       >

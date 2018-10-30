@@ -21,6 +21,11 @@ class NavExpandableList extends React.Component {
     console.log(`Group ${result.groupId} expanded? ${result.isExpanded}`);
   };
 
+  handleItemOnclick = (event, itemId, groupId) => {
+    // eslint-disable-next-line no-console
+    console.log(`my own click handler on ${itemId}`);
+  };
+
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
@@ -38,6 +43,15 @@ class NavExpandableList extends React.Component {
             </NavItem>
           </NavExpandable>
           <NavExpandable title="Link 2" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
+            <NavItem
+              preventDefault
+              onClick={this.handleItemOnclick}
+              groupId="grp-2"
+              itemId="own-item-handler"
+              isActive={activeItem === 'own-item-handler'}
+            >
+              Custom onClick
+            </NavItem>
             <NavItem to="#expandable-4" groupId="grp-2" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
               Subnav Link 1
             </NavItem>
