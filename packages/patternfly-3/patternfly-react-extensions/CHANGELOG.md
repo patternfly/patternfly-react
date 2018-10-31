@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.12.0"></a>
+# [2.12.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.11.1...patternfly-react-extensions@2.12.0) (2018-10-31)
+
+
+### Features
+
+* **BadgedResource:** Add BadgedResource component to patternfly-react-extensions ([#829](https://github.com/patternfly/patternfly-react/issues/829)) ([735b12c](https://github.com/patternfly/patternfly-react/commit/735b12c)), closes [#775](https://github.com/patternfly/patternfly-react/issues/775)
+
+
+
+
 <a name="2.11.1"></a>
 ## [2.11.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.11.0...patternfly-react-extensions@2.11.1) (2018-10-30)
 

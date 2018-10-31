@@ -1,4 +1,44 @@
 
+## Change Log (2018-10-31)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#829](https://github.com/patternfly/patternfly-react/pull/829) feat(BadgedResource): Add BadgedResource component to patternfly-react-extensions ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly4-react-lerna-root@1.16.0 (2018-10-30)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#859](https://github.com/patternfly/patternfly-react/pull/859) feat(Label): add Label to PF4 ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.17.29 (2018-10-30)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#859](https://github.com/patternfly/patternfly-react/pull/859) feat(Label): add Label to PF4 ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.29.0 (2018-10-30)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#859](https://github.com/patternfly/patternfly-react/pull/859) feat(Label): add Label to PF4 ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
 ## patternfly4-react-lerna-root@1.15.4 (2018-10-30)
 
 #### :bug: Bug Fix

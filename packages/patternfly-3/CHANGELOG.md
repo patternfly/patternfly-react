@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.8.0"></a>
+# [7.8.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.7.1...patternfly3-react-lerna-root@7.8.0) (2018-10-31)
+
+
+### Features
+
+* **BadgedResource:** Add BadgedResource component to patternfly-react-extensions ([#829](https://github.com/patternfly/patternfly-react/issues/829)) ([735b12c](https://github.com/patternfly/patternfly-react/commit/735b12c)), closes [#775](https://github.com/patternfly/patternfly-react/issues/775)
+
+
+
+
 <a name="7.7.1"></a>
 ## [7.7.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.7.0...patternfly3-react-lerna-root@7.7.1) (2018-10-30)
 
