@@ -6,6 +6,7 @@ export * from './Backdrop';
 export * from './BackgroundImage';
 export * from './Badge';
 export * from './Brand';
+export * from './Breadcrumb';
 export * from './Button';
 export * from './Card';
 export * from './Checkbox';
