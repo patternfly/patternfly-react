@@ -1,5 +1,25 @@
 
-## Change Log (2018-10-31)
+## Change Log (2018-11-01)
+
+#### :house: Internal
+* `patternfly-4`
+  * [#848](https://github.com/patternfly/patternfly-react/pull/848) refactor(Radio/Checkbox): replace checked with isChecked in API ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly3-react-lerna-root@7.8.0 (2018-10-31)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#829](https://github.com/patternfly/patternfly-react/pull/829) feat(BadgedResource): Add BadgedResource component to patternfly-react-extensions ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.12.0 (2018-10-31)
 
 #### :rocket: New Feature
 * `patternfly-3`
