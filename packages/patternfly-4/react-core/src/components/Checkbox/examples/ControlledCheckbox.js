@@ -16,7 +16,7 @@ class ControlledCheckbox extends React.Component {
     return (
       <Checkbox
         label="Controlled CheckBox"
-        checked={this.state.checked}
+        isChecked={this.state.checked}
         onChange={this.handleChange}
         aria-label="controlled checkbox example"
         id="check-1"

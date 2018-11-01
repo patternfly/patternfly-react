@@ -18,7 +18,7 @@ class ControlledRadio extends React.Component {
       <React.Fragment>
         <Radio
           value="3"
-          checked={this.state.value === '3'}
+          isChecked={this.state.value === '3'}
           name="pf-version"
           onChange={this.handleChange}
           aria-label="Controlled radio 1"
@@ -27,7 +27,7 @@ class ControlledRadio extends React.Component {
         />{' '}
         <Radio
           value="4"
-          checked={this.state.value === '4'}
+          isChecked={this.state.value === '4'}
           name="pf-version"
           onChange={this.handleChange}
           aria-label="Controlled radio 2"

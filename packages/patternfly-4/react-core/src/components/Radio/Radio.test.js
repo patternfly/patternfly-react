@@ -3,13 +3,12 @@ import Radio from './Radio';
 import { shallow } from 'enzyme';
 
 const props = {
-  onChange: jest.fn(),
-  checked: false
+  onChange: jest.fn()
 };
 
 describe('Radio check component', () => {
   test('controlled', () => {
-    const view = shallow(<Radio checked id="check" aria-label="check" name="check" />);
+    const view = shallow(<Radio isChecked id="check" aria-label="check" name="check" />);
     expect(view).toMatchSnapshot();
   });
 
@@ -24,31 +23,31 @@ describe('Radio check component', () => {
   });
 
   test('label is string', () => {
-    const view = shallow(<Radio label="Label" id="check" checked aria-label="check" name="check" />);
+    const view = shallow(<Radio label="Label" id="check" isChecked aria-label="check" name="check" />);
     expect(view).toMatchSnapshot();
   });
 
   test('label is function', () => {
     const functionLabel = () => <h1>Header</h1>;
-    const view = shallow(<Radio label={functionLabel()} id="check" checked aria-label="check" name="check" />);
+    const view = shallow(<Radio label={functionLabel()} id="check" isChecked aria-label="check" name="check" />);
     expect(view).toMatchSnapshot();
   });
 
   test('label is node', () => {
-    const view = shallow(<Radio label={<h1>Header</h1>} id="check" checked aria-label="check" name="check" />);
+    const view = shallow(<Radio label={<h1>Header</h1>} id="check" isChecked aria-label="check" name="check" />);
     expect(view).toMatchSnapshot();
   });
 
   test('passing class', () => {
     const view = shallow(
-      <Radio label="label" className="class-123" id="check" checked aria-label="check" name="check" />
+      <Radio label="label" className="class-123" id="check" isChecked aria-label="check" name="check" />
     );
     expect(view).toMatchSnapshot();
   });
 
   test('passing HTML attribute', () => {
     const view = shallow(
-      <Radio label="label" aria-labelledby="labelId" id="check" checked aria-label="check" name="check" />
+      <Radio label="label" aria-labelledby="labelId" id="check" isChecked aria-label="check" name="check" />
     );
     expect(view).toMatchSnapshot();
   });
