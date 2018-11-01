@@ -21,7 +21,78 @@ $badge-icon-height: 18px;
     line-height: $badge-icon-height;
     color: $color-pf-white;
     margin-right: 4px;
-    background-color: $color-pf-black;
+    background-color: $color-pf-light-blue-400;
+
+    &.alert {
+      background-color: $color-pf-light-blue-400;
+    }
+
+    &.alertrule,
+    &.configmap {
+      background-color: $color-pf-purple-600;
+    }
+
+    &.configmap {
+      background-color: $color-pf-purple-600;
+    }
+
+    &.daemonset,
+    &.deployment,
+    &.deploymentconfig,
+    &.job,
+    &.petset,
+    &.replicaset,
+    &.replicationcontroller {
+      background-color: $color-pf-blue-600;
+    }
+
+    &.ingress {
+      background-color: $color-pf-purple-700;
+    }
+
+    &.namespace,
+    &.project {
+      background-color: $color-pf-green-500;
+    }
+
+    &.node,
+    &.policy {
+      background-color: $color-pf-purple-400;
+    }
+
+    &.pod {
+      background-color: $color-pf-cyan-400;
+    }
+
+    &.secret {
+      background-color: $color-pf-orange-400;
+    }
+
+    &.service {
+      background-color: $color-pf-green-500;
+    }
+
+    &.serviceaccount {
+      background-color: $color-pf-purple-600;
+    }
+
+    &.servicemonitor {
+      background-color: $color-pf-light-green-500;
+    }
+
+    &.alertmanager {
+      background-color: $color-pf-orange-500;
+    }
+
+    &.role,
+    &.clusterrole {
+      background-color: $color-pf-orange-600;
+    }
+
+    &.clusterrolebinding,
+    &.rolebinding {
+      background-color: $color-pf-cyan-500;
+    }
   }
 
   &-resource-name {

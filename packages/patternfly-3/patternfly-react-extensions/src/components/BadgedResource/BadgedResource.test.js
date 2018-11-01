@@ -12,26 +12,15 @@ test('BadgedResource renders properly', () => {
         className="test-badged-resource-class"
         kindAbbr="DC"
         kindStr="Deployment Config"
+        badgeColor={getResourceBadgeColor(BadgedResource.KINDS.DEPLOYMENT_CONFIG)}
       />
+      <BadgedResource resourceKind={BadgedResource.KINDS.DEPLOYMENT_CONFIG} />
       <BadgedResource
-        kindAbbr="DC"
-        kindStr="Deployment Config"
-        badgeColor={getResourceBadgeColor(resourceTypes.DEPLOYMENT_CONFIG)}
-      />
-      <BadgedResource
-        kindAbbr="RB"
-        kindStr="Role Binding"
         resourceName="Clickable Item"
-        badgeColor={getResourceBadgeColor(resourceTypes.ROLE_BINDING)}
+        resourceKind={BadgedResource.KINDS.ROLE_BINDING}
         onClick={onClickMock}
       />
-      <BadgedResource
-        kindAbbr="HPA"
-        kindStr="Horizontal Pod Autoscaler"
-        resourceName="No Tooltip Item"
-        tipDelay={-1}
-        badgeColor={getResourceBadgeColor('autoscaller')}
-      />
+      <BadgedResource resourceKind={BadgedResource.KINDS.NAMESPACE} resourceName="No Tooltip Item" tipDelay={-1} />
       <BadgedResource
         kindAbbr="APIS"
         kindStr="API Service"
@@ -39,26 +28,16 @@ test('BadgedResource renders properly', () => {
         tipDelay={0}
         badgeColor={BadgedResource.COLORS.cyan500}
       />
+      <BadgedResource resourceName="Long Tooltip" tipDelay={1500} resourceKind={resourceTypes.DEPLOYMENT_CONFIG} />
       <BadgedResource
-        kindAbbr="DC"
-        kindStr="Deployment Config"
-        resourceName="Long Tooltip"
-        tipDelay={1500}
-        badgeColor={getResourceBadgeColor(resourceTypes.DEPLOYMENT_CONFIG)}
-      />
-      <BadgedResource
-        kindAbbr="PR"
-        kindStr="Project"
-        resourceName="Large Item"
+        resourceKind={BadgedResource.KINDS.PROJECT}
         large
-        badgeColor={getResourceBadgeColor(resourceTypes.PROJECT)}
+        badgeColor={getResourceBadgeColor(BadgedResource.KINDS.PROJECT)}
       />
       <BadgedResource
-        kindAbbr="SM"
-        kindStr="Service Model"
+        resourceKind={BadgedResource.KINDS.SERVICE_MONITOR}
         resourceName="Large Clickable Item"
         large
-        badgeColor={getResourceBadgeColor(resourceTypes.SERVICE)}
         onClick={onClickMock}
       />
     </div>
@@ -69,10 +48,8 @@ test('BadgedResource renders properly', () => {
 test('BadgedResource href renders properly', () => {
   const component = mount(
     <BadgedResource
-      kindAbbr="RB"
-      kindStr="Role Binding"
       resourceName="Clickable Item"
-      badgeColor={BadgedResource.COLORS.cyan500}
+      resourceKind={BadgedResource.KINDS.ROLE_BINDING}
       href="http://patternfly.org"
     />
   );
@@ -86,10 +63,8 @@ test('BadgedResource onClick behaves properly', () => {
     <BadgedResource
       id="test-on-click"
       className="test-click-class"
-      kindAbbr="RB"
-      kindStr="Role Binding"
+      resourceKind={BadgedResource.KINDS.ROLE_BINDING}
       resourceName="Clickable Item"
-      badgeColor={BadgedResource.COLORS.cyan500}
       onClick={onClickMock}
     />
   );
