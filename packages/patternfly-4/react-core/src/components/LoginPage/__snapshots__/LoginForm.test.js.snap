@@ -96,6 +96,7 @@ exports[`should render Login form 1`] = `
         checked={false}
         className="pf-u-m-md pf-u-align-items-center pf-u-display-flex"
         id="pf-login-remember-me-id"
+        isChecked={null}
         isDisabled={false}
         isValid={true}
         label="Remember me"
