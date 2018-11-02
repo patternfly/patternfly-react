@@ -8,8 +8,6 @@ exports[`Check page condensed header example against snapshot 1`] = `
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   padding-left: 2rem;
 }
 .pf-l-page__header-tools {
@@ -18,7 +16,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
   margin-right: 2rem;
   margin-left: auto;
 }
-.pf-l-page__header {
+.pf-l-page__header.pf-m-tall {
   display: flex;
   grid-area: header;
   flex-wrap: wrap;
@@ -81,7 +79,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      isCondensed={false}
+      isTall={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
@@ -108,7 +106,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      isCondensed={false}
+      isTall={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
@@ -116,13 +114,8 @@ exports[`Check page condensed header example against snapshot 1`] = `
       topNav={null}
     >
       <header
-        className="pf-l-page__header"
+        className="pf-l-page__header pf-m-tall"
         role="banner"
-        style={
-          Object {
-            "overflowX": "unset",
-          }
-        }
       >
         <div
           className="pf-l-page__header-brand"
@@ -209,8 +202,6 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   padding-left: 2rem;
 }
 .pf-l-page__header-tools {
@@ -225,7 +216,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   flex-wrap: wrap;
   align-items: flex-end;
   max-width: 100%;
-  min-height: 6.875rem;
+  min-height: 0;
 }
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
@@ -282,7 +273,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      isCondensed={false}
+      isTall={false}
       logo="Logo"
       nav="Navigation"
       onNavToggle={[Function]}
@@ -312,7 +303,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      isCondensed={false}
+      isTall={false}
       logo="Logo"
       nav="Navigation"
       onNavToggle={[Function]}
@@ -324,11 +315,6 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         className="pf-l-page__header"
         nav="Navigation"
         role="banner"
-        style={
-          Object {
-            "overflowX": "unset",
-          }
-        }
       >
         <div
           className="pf-l-page__header-brand"
@@ -413,8 +399,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   padding-left: 2rem;
 }
 .pf-l-page__header-tools {
@@ -429,7 +413,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   flex-wrap: wrap;
   align-items: flex-end;
   max-width: 100%;
-  min-height: 6.875rem;
+  min-height: 0;
 }
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
@@ -486,7 +470,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      isCondensed={false}
+      isTall={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
@@ -513,7 +497,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      isCondensed={false}
+      isTall={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
@@ -523,11 +507,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       <header
         className="pf-l-page__header"
         role="banner"
-        style={
-          Object {
-            "overflowX": "unset",
-          }
-        }
       >
         <div
           className="pf-l-page__header-brand"

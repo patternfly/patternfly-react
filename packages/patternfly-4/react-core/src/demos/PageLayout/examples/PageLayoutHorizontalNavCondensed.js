@@ -16,14 +16,13 @@ import {
   GalleryItem,
   KebabToggle,
   Nav,
-  NavExpandable,
   NavItem,
   NavList,
+  NavVariants,
   Page,
   PageHeader,
   PageSection,
   PageSectionVariants,
-  PageSidebar,
   TextContent,
   Text,
   Toolbar,
@@ -38,8 +37,8 @@ import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import brandImg from './l_pf-reverse-164x11.png';
 import avatarImg from './img_avatar.png';
 
-class PageLayoutCondensedHeader extends React.Component {
-  static title = 'Using condensed header';
+class PageLayoutHorizontalNavCondensed extends React.Component {
+  static title = 'Using horizontal navigation with condensed header';
 
   constructor(props) {
     super(props);
@@ -48,9 +47,8 @@ class PageLayoutCondensedHeader extends React.Component {
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
-      isNavOpen,
-      activeGroup: 'grp-1',
-      activeItem: 'grp-1_itm-1'
+      activeItem: 0,
+      isNavOpen
     };
   }
 
@@ -80,8 +78,7 @@ class PageLayoutCondensedHeader extends React.Component {
 
   onNavSelect = result => {
     this.setState({
-      activeItem: result.itemId,
-      activeGroup: result.groupId
+      activeItem: result.itemId
     });
   };
 
@@ -92,47 +89,26 @@ class PageLayoutCondensedHeader extends React.Component {
   };
 
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem, isNavOpen, activeGroup } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem, isNavOpen } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
-        <NavList>
-          <NavExpandable title="System Panel" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
-            <NavItem to="#expandable-1" groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
-              Overview
-            </NavItem>
-            <NavItem to="#expandable-2" groupId="grp-1" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
-              Resource Usage
-            </NavItem>
-            <NavItem to="#expandable-3" groupId="grp-1" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
-              Hypervisors
-            </NavItem>
-            <NavItem to="#expandable-4" groupId="grp-1" itemId="grp-1_itm-4" isActive={activeItem === 'grp-1_itm-4'}>
-              Instances
-            </NavItem>
-            <NavItem to="#expandable-5" groupId="grp-1" itemId="grp-1_itm-5" isActive={activeItem === 'grp-1_itm-5'}>
-              Volumes
-            </NavItem>
-            <NavItem to="#expandable-6" groupId="grp-1" itemId="grp-1_itm-6" isActive={activeItem === 'grp-1_itm-6'}>
-              Network
-            </NavItem>
-          </NavExpandable>
-          <NavExpandable title="Policy" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
-            <NavItem to="#expandable-4" groupId="grp-2" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
-              Subnav Link 1
-            </NavItem>
-            <NavItem to="#expandable-5" groupId="grp-2" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
-              Subnav Link 2
-            </NavItem>
-          </NavExpandable>
-          <NavExpandable title="Authentication" groupId="grp-3" isActive={activeGroup === 'grp-3'}>
-            <NavItem to="#expandable-7" groupId="grp-3" itemId="grp-3_itm-1" isActive={activeItem === 'grp-3_itm-1'}>
-              Subnav Link 1
-            </NavItem>
-            <NavItem to="#expandable-8" groupId="grp-3" itemId="grp-3_itm-2" isActive={activeItem === 'grp-3_itm-2'}>
-              Subnav Link 2
-            </NavItem>
-          </NavExpandable>
+        <NavList variant={NavVariants.horizontal}>
+          <NavItem to="#nav-link1" itemId={0} isActive={activeItem === 0}>
+            System Panel
+          </NavItem>
+          <NavItem to="#nav-link2" itemId={1} isActive={activeItem === 1}>
+            Policy
+          </NavItem>
+          <NavItem to="#nav-link3" itemId={2} isActive={activeItem === 2}>
+            Authentication
+          </NavItem>
+          <NavItem to="#nav-link4" itemId={3} isActive={activeItem === 3}>
+            Network Services
+          </NavItem>
+          <NavItem to="#nav-link5" itemId={4} isActive={activeItem === 4}>
+            Server
+          </NavItem>
         </NavList>
       </Nav>
     );
@@ -206,16 +182,14 @@ class PageLayoutCondensedHeader extends React.Component {
         logo={<Brand src={brandImg} alt="Patternfly Logo" />}
         toolbar={PageToolbar}
         avatar={<Avatar src={avatarImg} alt="Avatar image" />}
-        showNavToggle
-        onNavToggle={this.onNavToggle}
+        topNav={PageNav}
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} isNavOpen={isNavOpen} />;
 
     return (
       <React.Fragment>
         <BackgroundImage src={bgImages} />
-        <Page header={Header} sidebar={Sidebar} useCondensed>
+        <Page header={Header} useCondensed>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>
@@ -242,4 +216,4 @@ class PageLayoutCondensedHeader extends React.Component {
   }
 }
 
-export default PageLayoutCondensedHeader;
+export default PageLayoutHorizontalNavCondensed;

@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { BarsIcon } from '@patternfly/react-icons';
 import { Button, ButtonVariant } from '../../components/Button';
+import { PageContext } from './Page';
 
 const propTypes = {
   /** Additional classes added to the page header */
@@ -20,8 +21,8 @@ const propTypes = {
   showNavToggle: PropTypes.bool,
   /** Callback function to handle the side nav toggle button */
   onNavToggle: PropTypes.func,
-  /** header should be condensed */
-  isCondensed: PropTypes.bool
+  /** header should have tall modifier */
+  isTall: PropTypes.bool
 };
 
 const defaultProps = {
@@ -32,51 +33,46 @@ const defaultProps = {
   topNav: null,
   showNavToggle: false,
   onNavToggle: () => undefined,
-  isCondensed: false
+  isTall: false
 };
 
 /* Added temporary style as a workaround to make dropdowns work until fix is made (patternfly-next #780) */
-const PageHeader = ({
-  className,
-  logo,
-  toolbar,
-  avatar,
-  topNav,
-  showNavToggle,
-  onNavToggle,
-  isCondensed,
-  ...props
-}) => {
-  const customClassName = css(styles.pageHeader, isCondensed && styles.modifiers.condensed, className);
-  return (
-    <header role="banner" className={customClassName} style={{ overflowX: 'unset' }} {...props}>
-      <div className={css(styles.pageHeaderBrand)}>
-        {showNavToggle && (
-          <div className={css(styles.pageHeaderBrandToggle)}>
-            <Button
-              id="nav-toggle"
-              onClick={onNavToggle}
-              aria-label="Toggle primary navigation"
-              variant={ButtonVariant.plain}
-            >
-              <BarsIcon />
-            </Button>
-          </div>
-        )}
-        <a className={css(styles.pageHeaderBrandLink)}>{logo}</a>
-      </div>
-      {/* Hide for now until we have the context selector component */}
-      {/* <div className={css(styles.pageHeaderSelector)}>
+const PageHeader = ({ className, logo, toolbar, avatar, topNav, showNavToggle, onNavToggle, isTall, ...props }) => (
+  <PageContext.Consumer>
+    {context => (
+      <header
+        role="banner"
+        className={css(styles.pageHeader, ((context && context.isTall) || isTall) && styles.modifiers.tall, className)}
+        {...props}
+      >
+        <div className={css(styles.pageHeaderBrand)}>
+          {showNavToggle && (
+            <div className={css(styles.pageHeaderBrandToggle)}>
+              <Button
+                id="nav-toggle"
+                onClick={onNavToggle}
+                aria-label="Toggle primary navigation"
+                variant={ButtonVariant.plain}
+              >
+                <BarsIcon />
+              </Button>
+            </div>
+          )}
+          <a className={css(styles.pageHeaderBrandLink)}>{logo}</a>
+        </div>
+        {/* Hide for now until we have the context selector component */}
+        {/* <div className={css(styles.pageHeaderSelector)}>
           pf-c-context-selector
         </div> */}
-      {topNav && <div className={css(styles.pageHeaderNav)}>{topNav}</div>}
-      <div className={css(styles.pageHeaderTools)}>
-        {toolbar}
-        {avatar}
-      </div>
-    </header>
-  );
-};
+        {topNav && <div className={css(styles.pageHeaderNav)}>{topNav}</div>}
+        <div className={css(styles.pageHeaderTools)}>
+          {toolbar}
+          {avatar}
+        </div>
+      </header>
+    )}
+  </PageContext.Consumer>
+);
 
 PageHeader.propTypes = propTypes;
 PageHeader.defaultProps = defaultProps;
