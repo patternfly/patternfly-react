@@ -63,16 +63,16 @@ class Page extends React.Component {
 
   // only enable tall header if the user is using the `useCondensed` header feature and we are on desktop
   isTall = props =>
-    typeof window !== 'undefined' && window.innerWidth >= parseInt(breakpointMd.value, 10) && props.useCondensed;
+    props.useCondensed && typeof window !== 'undefined' && window.innerWidth >= parseInt(breakpointMd.value, 10);
 
   handleResize = () => {
     this.setState({ isTall: this.isTall(this.props) });
   };
 
   handleScroll = e => {
-    const { scrollingDistance, useCondensed } = this.props;
+    const { scrollingDistance } = this.props;
     const { isTall } = this.state;
-    if (useCondensed && window.innerWidth >= parseInt(breakpointMd.value, 10)) {
+    if (isTall(this.props)) {
       window.requestAnimationFrame(() => {
         const main = e.target;
         const mainPosition = main.scrollTop;

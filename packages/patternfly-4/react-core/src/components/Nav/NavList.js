@@ -12,7 +12,7 @@ const propTypes = {
   children: PropTypes.node,
   /** Additional classes added to the list */
   className: PropTypes.string,
-  /** nav should have tall modifer */
+  /** nav should have tall modifier (if true, makes the nav taller) */
   isTall: PropTypes.bool
 };
 
