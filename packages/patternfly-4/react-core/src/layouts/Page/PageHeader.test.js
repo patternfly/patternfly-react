@@ -3,9 +3,7 @@ import { shallow } from 'enzyme';
 import PageHeader from './PageHeader';
 
 test('Check page vertical layout example against snapshot', () => {
-  const Header = (
-    <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" onNavToggle={() => undefined} isCondensed />
-  );
+  const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" onNavToggle={() => undefined} isTall />;
   const view = shallow(Header);
   expect(view).toMatchSnapshot();
 });

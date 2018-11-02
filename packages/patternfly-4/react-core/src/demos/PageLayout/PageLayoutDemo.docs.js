@@ -3,7 +3,8 @@ import PageLayoutExpandableNav from './examples/PageLayoutExpandableNav';
 import PageLayoutGroupsNav from './examples/PageLayoutGroupsNav';
 import PageLayoutHorizontalNav from './examples/PageLayoutHorizontalNav';
 import PageLayoutSimpleNav from './examples/PageLayoutSimpleNav';
-import PageLayoutCondensedHeader from './examples/PageLayoutCondensedHeader';
+import PageLayoutVerticalNavCondensed from './examples/PageLayoutVerticalNavCondensed';
+import PageLayoutHorizontalNavCondensed from './examples/PageLayoutHorizontalNavCondensed';
 
 export default {
   title: 'Page Layout Demos',
@@ -13,7 +14,8 @@ export default {
     PageLayoutGroupsNav,
     PageLayoutHorizontalNav,
     PageLayoutSimpleNav,
-    PageLayoutCondensedHeader
+    PageLayoutVerticalNavCondensed,
+    PageLayoutHorizontalNavCondensed
   ],
   fullPageOnly: true
 };

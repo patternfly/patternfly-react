@@ -8,8 +8,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
   padding-left: 2rem;
 }
 .pf-l-page__header-tools {
@@ -18,23 +16,18 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   margin-right: 2rem;
   margin-left: auto;
 }
-.pf-l-page__header.pf-m-condensed {
+.pf-l-page__header.pf-m-tall {
   display: flex;
   grid-area: header;
   flex-wrap: wrap;
   align-items: flex-end;
   max-width: 100%;
-  min-height: 1.25rem;
+  min-height: 6.875rem;
 }
 
 <header
-  className="pf-l-page__header pf-m-condensed"
+  className="pf-l-page__header pf-m-tall"
   role="banner"
-  style={
-    Object {
-      "overflowX": "unset",
-    }
-  }
 >
   <div
     className="pf-l-page__header-brand"
