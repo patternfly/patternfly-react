@@ -88,11 +88,10 @@ class Page extends React.Component {
     const { className, children, header, sidebar, useCondensed, scrollingDistance, ...rest } = this.props;
     const { isTall } = this.state;
 
-    const clonedHeader = React.cloneElement(header, { isTall });
     return (
       <PageContext.Provider value={{ isTall }}>
         <div {...rest} className={css(styles.page, className)}>
-          {useCondensed ? clonedHeader : header}
+          {header}
           {sidebar}
           <main ref={this.mainRef} role="main" className={css(styles.pageMain)}>
             {children}

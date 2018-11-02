@@ -106,7 +106,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
     <PageHeader
       avatar=" | Avatar"
       className=""
-      isTall={true}
+      isTall={false}
       logo="Logo"
       onNavToggle={[Function]}
       showNavToggle={false}
