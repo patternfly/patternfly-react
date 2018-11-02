@@ -12,7 +12,8 @@ const propTypes = {
   children: PropTypes.node,
   /** Additional classes added to the list */
   className: PropTypes.string,
-  /** nav should have tall modifier (if true, makes the nav taller) */
+  /** Impacts horizontal nav only: If true makes the nav taller. If nav is within a Page layout,
+   * the layout sets this prop automatically if the Page useCondensed feature is enabled. */
   isTall: PropTypes.bool
 };
 

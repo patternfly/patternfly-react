@@ -19,7 +19,7 @@ const propTypes = {
   header: PropTypes.node,
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
   sidebar: PropTypes.node,
-  /** enable condensed header on scroll feature (for desktop only) */
+  /** enable condensed header on scroll feature (for desktop only). Adjusts the height on scroll of the page header and horizontal nav. */
   useCondensed: PropTypes.bool,
   /** condensed height override */
   scrollingDistance: PropTypes.number
