@@ -1,5 +1,35 @@
 
-## Change Log (2018-11-01)
+## Change Log (2018-11-02)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#876](https://github.com/patternfly/patternfly-react/pull/876) feat(condensed horizontal nav): updates condensed nav to match Core horizontal & vertical nav ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## patternfly4-react-lerna-root@1.16.1 (2018-11-01)
+
+#### :house: Internal
+* `patternfly-4`
+  * [#848](https://github.com/patternfly/patternfly-react/pull/848) refactor(Radio/Checkbox): replace checked with isChecked in API ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.17.30 (2018-11-01)
+
+#### :house: Internal
+* `patternfly-4`
+  * [#848](https://github.com/patternfly/patternfly-react/pull/848) refactor(Radio/Checkbox): replace checked with isChecked in API ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.29.1 (2018-11-01)
 
 #### :house: Internal
 * `patternfly-4`

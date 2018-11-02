@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.17.0"></a>
+# [1.17.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.16.1...patternfly4-react-lerna-root@1.17.0) (2018-11-02)
+
+
+### Features
+
+* **condensed horizontal nav:** updates condensed nav to match Core horizontal & vertical nav ([#876](https://github.com/patternfly/patternfly-react/issues/876)) ([760cc7b](https://github.com/patternfly/patternfly-react/commit/760cc7b))
+
+
+
+
 <a name="1.16.1"></a>
 ## [1.16.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.16.0...patternfly4-react-lerna-root@1.16.1) (2018-11-01)
 

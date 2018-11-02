@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.6.0...@patternfly/react-tokens@1.7.0) (2018-11-02)
+
+
+### Features
+
+* **condensed horizontal nav:** updates condensed nav to match Core horizontal & vertical nav ([#876](https://github.com/patternfly/patternfly-react/issues/876)) ([760cc7b](https://github.com/patternfly/patternfly-react/commit/760cc7b))
+
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.5.5...@patternfly/react-tokens@1.6.0) (2018-10-26)
 
