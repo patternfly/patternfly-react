@@ -62,7 +62,8 @@ class Page extends React.Component {
   }
 
   // only enable tall header if the user is using the `useCondensed` header feature and we are on desktop
-  isTall = props => window.innerWidth >= parseInt(breakpointMd.value, 10) && props.useCondensed;
+  isTall = props =>
+    typeof window !== 'undefined' && window.innerWidth >= parseInt(breakpointMd.value, 10) && props.useCondensed;
 
   handleResize = () => {
     this.setState({ isTall: this.isTall(this.props) });
