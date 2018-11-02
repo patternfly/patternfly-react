@@ -72,7 +72,7 @@ class Page extends React.Component {
   handleScroll = e => {
     const { scrollingDistance } = this.props;
     const { isTall } = this.state;
-    if (isTall(this.props)) {
+    if (this.isTall(this.props)) {
       window.requestAnimationFrame(() => {
         const main = e.target;
         const mainPosition = main.scrollTop;
