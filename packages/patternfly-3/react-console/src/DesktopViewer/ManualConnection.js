@@ -1,13 +1,18 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import consoleDetailPropType from './consoleDetailPropType';
+import { Form, FormGroup, Col } from 'patternfly-react';
 
 const Detail = ({ title, value }) => (
-  <Fragment>
-    <dt>{title}</dt>
-    <dd>{value}</dd>
-  </Fragment>
+  <FormGroup>
+    <Col xs={5} className="manual-connection-pf-title">
+      {title}
+    </Col>
+    <Col xs={7} className="manual-connection-pf-value">
+      {value}
+    </Col>
+  </FormGroup>
 );
 Detail.propTypes = {
   title: PropTypes.string.isRequired,
@@ -37,17 +42,15 @@ const ManualConnection = ({
     <div className="manual-connection-pf">
       <h2>{textManualConnection}</h2>
       <p>{msg}</p>
-      <div>
-        <dl className="dl-horizontal">
-          {address && <Detail title={textAddress} value={address} />}
-          {!address && spice && <Detail title={textSpiceAddress} value={spice.address} />}
-          {spice && spice.port && <Detail title={textSpicePort} value={spice.port} />}
-          {spice && spice.tlsPort && <Detail title={textSpiceTlsPort} value={spice.tlsPort} />}
-          {!address && vnc && <Detail title={textVNCAddress} value={vnc.address} />}
-          {spice && vnc.port && <Detail title={textVNCPort} value={vnc.port} />}
-          {spice && vnc.tlsPort && <Detail title={textVNCTlsPort} value={vnc.tlsPort} />}
-        </dl>
-      </div>
+      <Form horizontal>
+        {address && <Detail title={textAddress} value={address} />}
+        {!address && spice && <Detail title={textSpiceAddress} value={spice.address} />}
+        {spice && spice.port && <Detail title={textSpicePort} value={spice.port} />}
+        {spice && spice.tlsPort && <Detail title={textSpiceTlsPort} value={spice.tlsPort} />}
+        {!address && vnc && <Detail title={textVNCAddress} value={vnc.address} />}
+        {spice && vnc.port && <Detail title={textVNCPort} value={vnc.port} />}
+        {spice && vnc.tlsPort && <Detail title={textVNCTlsPort} value={vnc.tlsPort} />}
+      </Form>
     </div>
   );
 };

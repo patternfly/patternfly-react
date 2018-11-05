@@ -3,25 +3,17 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-import { Grid, Row, Col } from 'patternfly-react';
-
 import ManualConnection from './ManualConnection';
 import ConnectWithRemoteViewer from './ConnectWithRemoteViewer';
 import consoleDetailPropType from './consoleDetailPropType';
 
 const DesktopViewer = ({ children, spice, vnc, onGenerate, onDownload, topClassName, ...props }) => (
-  <Grid fluid className={classNames('desktop-viewer-pf', topClassName)}>
-    <Row>
-      <Col md={6}>
-        <ConnectWithRemoteViewer spice={spice} vnc={vnc} onGenerate={onGenerate} onDownload={onDownload} {...props}>
-          {children}
-        </ConnectWithRemoteViewer>
-      </Col>
-      <Col md={6}>
-        <ManualConnection spice={spice} vnc={vnc} {...props} />
-      </Col>
-    </Row>
-  </Grid>
+  <div className={classNames('desktop-viewer-pf', topClassName)}>
+    <ConnectWithRemoteViewer spice={spice} vnc={vnc} onGenerate={onGenerate} onDownload={onDownload} {...props}>
+      {children}
+    </ConnectWithRemoteViewer>
+    <ManualConnection spice={spice} vnc={vnc} {...props} />
+  </div>
 );
 
 DesktopViewer.propTypes = {

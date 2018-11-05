@@ -1,5 +1,10 @@
 .desktop-viewer-pf {
+  display: flex;
+  flex-wrap: wrap;
+
   .manual-connection-pf {
+    margin-left: 50px;
+
     > h2 {
       text-align: center;
     }
@@ -8,24 +13,28 @@
       text-align: center;
     }
 
-    > div {
-      margin-left: auto;
-      margin-right: auto;
-      width: 350px;
+    .form {
+      min-width: 350px;
     }
 
-    dd {
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .manual-connection-pf-title {
+      text-align: right;
+    }
+
+    .manual-connection-pf-value {
+      text-align: left;
       font-weight: bolder;
-    }
-
-    dt {
-      font-weight: normal;
     }
   }
 
   .remote-viewer-pf {
     position: relative;
     top: 15%;
+    width: 350px;
 
     .expand-collapse-pf {
       margin-top: 1em;
