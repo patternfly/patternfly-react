@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.30.2"></a>
+## [1.30.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.30.1...@patternfly/react-core@1.30.2) (2018-11-05)
+
+
+### Bug Fixes
+
+* **overlay:** add anchor tag to filter overlay ([#883](https://github.com/patternfly/patternfly-react/issues/883)) ([80e54df](https://github.com/patternfly/patternfly-react/commit/80e54df))
+
+
+
+
 <a name="1.30.1"></a>
 ## [1.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.30.0...@patternfly/react-core@1.30.1) (2018-11-05)
 

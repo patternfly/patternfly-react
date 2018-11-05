@@ -1,5 +1,25 @@
 
-## Change Log (2018-11-05)
+## patternfly4-react-lerna-root@1.17.1 (2018-11-05)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#880](https://github.com/patternfly/patternfly-react/pull/880) fix(typescript): Export LoginBox and make PageSection props optional ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.17.32 (2018-11-05)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#880](https://github.com/patternfly/patternfly-react/pull/880) fix(typescript): Export LoginBox and make PageSection props optional ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.30.1 (2018-11-05)
 
 #### :bug: Bug Fix
 * `patternfly-4`

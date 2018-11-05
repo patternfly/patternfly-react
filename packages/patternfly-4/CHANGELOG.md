@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.17.2"></a>
+## [1.17.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.17.1...patternfly4-react-lerna-root@1.17.2) (2018-11-05)
+
+
+### Bug Fixes
+
+* **overlay:** add anchor tag to filter overlay ([#883](https://github.com/patternfly/patternfly-react/issues/883)) ([80e54df](https://github.com/patternfly/patternfly-react/commit/80e54df))
+
+
+
+
 <a name="1.17.1"></a>
 ## [1.17.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.17.0...patternfly4-react-lerna-root@1.17.1) (2018-11-05)
 
