@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { withKnobs, boolean, text } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName, DOCUMENTATION_URL, STORYBOOK_CATEGORY } from 'storybook/constants/siteConstants';
@@ -23,7 +23,7 @@ stories.add(
   withInfo(`pullRight prop is used to align the dropdown to the right.`)(() => (
     <div>
       <Button bsStyle="primary">Some Button</Button> <Button>Another Button</Button>
-      <DropdownKebab id="myKebab" pullRight={boolean('Right aligned', false)}>
+      <DropdownKebab id="myKebab" pullRight={boolean('Right aligned', false)} title={text('Title', 'Kebab title')}>
         <MenuItem>Action</MenuItem>
         <MenuItem>Another Action</MenuItem>
         <MenuItem>Something else here</MenuItem>

@@ -214,6 +214,7 @@ exports[`Toolbar renders properly 1`] = `
               class="dropdown-toggle btn btn-link"
               id="toolbarActionKebab"
               role="button"
+              title=""
               type="button"
             >
               <span

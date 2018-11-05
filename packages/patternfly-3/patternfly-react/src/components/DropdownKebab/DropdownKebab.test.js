@@ -6,7 +6,7 @@ import DropdownKebab from './DropdownKebab';
 
 test('Kebab dropdown renders properly', () => {
   const component = shallow(
-    <DropdownKebab id="myKebab">
+    <DropdownKebab id="myKebab" title="Kebab title">
       <MenuItem>Action</MenuItem>
       <MenuItem>Another Action</MenuItem>
       <MenuItem>Something else here</MenuItem>
