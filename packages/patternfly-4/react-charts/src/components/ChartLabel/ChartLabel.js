@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryLabel } from 'victory';
 
 export const propTypes = {
@@ -9,10 +10,11 @@ export const propTypes = {
   '': PropTypes.any
 };
 
+// Note: VictoryLabel.role must be hoisted
 const ChartLabel = (props) => (
   <VictoryLabel {...props}/>
 );
+hoistNonReactStatics(ChartLabel, VictoryLabel);
 ChartLabel.propTypes = propTypes;
-ChartLabel.role = VictoryLabel.role;
 
 export default ChartLabel;

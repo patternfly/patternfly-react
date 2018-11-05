@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryStack } from 'victory';
 import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 
@@ -10,13 +11,13 @@ export const propTypes = {
   '': PropTypes.any
 };
 
+// Note: VictoryStack.getChildren & VictoryStack.role must be hoisted
 const ChartStack = ({children, ...props}) => (
   <VictoryStack theme={ChartTheme.default} {...props}>
     {children}
   </VictoryStack>
 );
-ChartStack.getChildren = VictoryStack.getChildren;
+hoistNonReactStatics(ChartStack, VictoryStack);
 ChartStack.propTypes = propTypes;
-ChartStack.role = VictoryStack.role;
 
 export default ChartStack;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryTooltip } from 'victory';
 
 export const propTypes = {
@@ -9,10 +10,11 @@ export const propTypes = {
   '': PropTypes.any
 };
 
+// Note: VictoryTooltip.defaultEvents must be hoisted
 const ChartTooltip = (props) => (
   <VictoryTooltip cornerRadius={0} {...props}/>
 );
-ChartTooltip.defaultEvents = VictoryTooltip.defaultEvents;
+hoistNonReactStatics(ChartTooltip, VictoryTooltip);
 ChartTooltip.propTypes = propTypes;
 
 export default ChartTooltip;

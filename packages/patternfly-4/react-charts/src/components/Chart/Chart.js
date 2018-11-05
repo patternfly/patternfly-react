@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryChart } from 'victory';
 import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 
@@ -15,6 +16,7 @@ const Chart = ({children, ...props}) => (
     {children}
   </VictoryChart>
 );
+hoistNonReactStatics(Chart, VictoryChart);
 Chart.propTypes = propTypes;
 
 export default Chart;

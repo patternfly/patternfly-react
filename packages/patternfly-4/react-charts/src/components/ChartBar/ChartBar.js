@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryBar } from 'victory';
 import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 
@@ -10,11 +11,11 @@ export const propTypes = {
   '': PropTypes.any
 };
 
+// Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
 const ChartBar = (props) => (
   <VictoryBar theme={ChartTheme.default} {...props}/>
 );
-ChartBar.getDomain = VictoryBar.getDomain;
+hoistNonReactStatics(ChartBar, VictoryBar);
 ChartBar.propTypes = propTypes;
-ChartBar.role = VictoryBar.role;
 
 export default ChartBar;

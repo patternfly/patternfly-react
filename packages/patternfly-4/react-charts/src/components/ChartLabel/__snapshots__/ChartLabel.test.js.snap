@@ -1,31 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Chart 1`] = `""`;
+exports[`Chart 1`] = `
+<VictoryLabel
+  capHeight={0.71}
+  direction="inherit"
+  lineHeight={1}
+  textComponent={<Text />}
+  tspanComponent={<TSpan />}
+/>
+`;
 
-exports[`Chart 2`] = `""`;
+exports[`Chart 2`] = `
+<VictoryLabel
+  capHeight={0.71}
+  direction="inherit"
+  lineHeight={1}
+  textComponent={<Text />}
+  tspanComponent={<TSpan />}
+/>
+`;
 
 exports[`renders component text 1`] = `
-<Text
+<VictoryLabel
+  capHeight={0.71}
   direction="inherit"
-  dx={0}
-  dy={4.97}
-  id="label-3"
-  x={0}
-  y={0}
->
-  <TSpan
-    content="This is a test"
-    dx={0}
-    key="label-3-key-0"
-    style={
-      Object {
-        "fill": "#252525",
-        "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
-        "fontSize": 14,
-        "stroke": "transparent",
-      }
-    }
-    textAnchor="start"
-  />
-</Text>
+  lineHeight={1}
+  text="This is a test"
+  textComponent={<Text />}
+  tspanComponent={<TSpan />}
+/>
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryArea } from 'victory';
 import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 
@@ -10,10 +11,11 @@ export const propTypes = {
   '': PropTypes.any
 };
 
+// Note: VictoryArea.role must be hoisted
 const ChartArea = (props) => (
   <VictoryArea theme={ChartTheme.default} {...props}/>
 );
+hoistNonReactStatics(ChartArea, VictoryArea);
 ChartArea.propTypes = propTypes;
-ChartArea.role = VictoryArea.role;
 
 export default ChartArea;
