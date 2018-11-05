@@ -315,6 +315,15 @@ Once your pull request has been reviewed, if all conditions above have been met 
 
 Please help in ensuring all relevant issues are closed and that any subsequent issues needed have been noted with this pull request.
 
+### Guidelines for React implementation from Core
+
+- PF-React components should demonstrate all states implemented in Core without adding any new states.
+- If a new state is introduced in PF-React, it should not be accepted by the reviewer until an issue is created explaining why this example/modification is needed in Core and PF-React. Tag a UX/UI designer. 
+- Textual content and styles from PF-Next and PF-React should always be consistent.
+- Larger PF-React components can be broken into sub-issues and those issues should link back to the larger issue.
+- If an issue in Core will affect a component in PF-React, this issue should link to the main PF-React issue.
+- The CSS Developers and UX Designers should be tagged to review their respective PF-React issue.
+
 ## Becoming a Maintainer
 
 The documentation for becoming a maintainer has been taken from [Foreman](https://theforeman.org/handbook.html#Becomingamaintainer) and adapted for the PatternFly project.
