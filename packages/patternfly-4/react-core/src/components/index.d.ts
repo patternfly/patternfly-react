@@ -12,6 +12,7 @@ export * from './Checkbox';
 export * from './Dropdown';
 export * from './Form';
 export * from './List';
+export * from './LoginBox';
 export * from './Modal';
 export * from './Nav';
 export * from './Progress';

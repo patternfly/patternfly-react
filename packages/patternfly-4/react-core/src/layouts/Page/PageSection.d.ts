@@ -9,9 +9,9 @@ export const PageSectionVariants: {
 };
 
 export interface PageSectionProps extends HTMLProps<HTMLDivElement> {
-  children: ReactNode;
-  className: string;
-  variant: OneOf<typeof PageSectionVariants, keyof typeof PageSectionVariants>;
+  children?: ReactNode;
+  className?: string;
+  variant?: OneOf<typeof PageSectionVariants, keyof typeof PageSectionVariants>;
 }
 
 declare const PageSection: SFC<PageSectionProps>;
