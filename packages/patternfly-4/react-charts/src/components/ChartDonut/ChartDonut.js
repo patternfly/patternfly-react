@@ -11,17 +11,10 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-export default class ChartDonut extends VictoryPie {
-  static propTypes = propTypes;
-  static defaultProps = Object.assign({}, VictoryPie.defaultProps, {
-    labelComponent: <ChartTooltip/>,
-    innerRadius: 88,
-    padAngle: 1,
-    theme: ChartTheme.default
-  });
+const ChartDonut = (props) => (
+  <VictoryPie innerRadius={88} labelComponent={<ChartTooltip/>} padAngle={1} theme={ChartTheme.default} {...props}/>
+);
+ChartDonut.propTypes = propTypes;
+ChartDonut.role = VictoryPie.role;
 
-  // Required for componentDocs
-  render() {
-    return super.render();
-  }
-}
+export default ChartDonut;

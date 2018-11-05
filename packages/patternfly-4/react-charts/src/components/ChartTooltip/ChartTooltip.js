@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { VictoryTooltip } from 'victory';
 
@@ -8,14 +9,10 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-export default class ChartTooltip extends VictoryTooltip {
-  static propTypes = propTypes;
-  static defaultProps = Object.assign({}, VictoryTooltip.defaultProps, {
-    cornerRadius: 0
-  });
+const ChartTooltip = (props) => (
+  <VictoryTooltip cornerRadius={0} {...props}/>
+);
+ChartTooltip.defaultEvents = VictoryTooltip.defaultEvents;
+ChartTooltip.propTypes = propTypes;
 
-  // Required for componentDocs
-  render() {
-    return super.render();
-  }
-}
+export default ChartTooltip;

@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { VictoryGroup } from 'victory';
 import { default as ChartTheme } from '../ChartTheme/ChartTheme';
@@ -9,14 +10,12 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-export default class ChartGroup extends VictoryGroup {
-  static propTypes = propTypes;
-  static defaultProps = Object.assign({}, VictoryGroup.defaultProps, {
-    theme: ChartTheme.default
-  });
+const ChartGroup = ({children, ...props}) => (
+  <VictoryGroup theme={ChartTheme.default} {...props}>
+    {children}
+  </VictoryGroup>
+);
+ChartGroup.propTypes = propTypes;
+ChartGroup.role = VictoryGroup.role;
 
-  // Required for componentDocs
-  render() {
-    return super.render();
-  }
-}
+export default ChartGroup;

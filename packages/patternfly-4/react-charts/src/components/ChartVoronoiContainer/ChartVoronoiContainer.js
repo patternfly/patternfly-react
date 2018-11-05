@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VictoryVoronoiContainer } from 'victory';
+import { VictoryContainer, VictoryVoronoiContainer } from 'victory';
 import ChartTooltip from '../ChartTooltip/ChartTooltip';
 
 export const propTypes = {
@@ -10,15 +10,11 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-export default class ChartVoronoiContainer extends VictoryVoronoiContainer {
-  static propTypes = propTypes;
-  static defaultProps = Object.assign({}, VictoryVoronoiContainer.defaultProps, {
-    labelComponent: <ChartTooltip/>,
-    responsive: false // True overrides absolute width and height
-  });
+const ChartVoronoiContainer = (props) => (
+  <VictoryVoronoiContainer labelComponent={<ChartTooltip/>} {...props}/>
+);
+ChartVoronoiContainer.defaultEvents = VictoryVoronoiContainer.defaultEvents;
+ChartVoronoiContainer.propTypes = propTypes;
+ChartVoronoiContainer.role = VictoryContainer.role;
 
-  // Required for componentDocs
-  render() {
-    return super.render();
-  }
-}
+export default ChartVoronoiContainer;

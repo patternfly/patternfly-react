@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { VictoryLabel } from 'victory';
 
@@ -8,12 +9,10 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-export default class ChartLabel extends VictoryLabel {
-  static propTypes = propTypes;
-  static defaultProps = Object.assign({}, VictoryLabel.defaultProps);
+const ChartLabel = (props) => (
+  <VictoryLabel {...props}/>
+);
+ChartLabel.propTypes = propTypes;
+ChartLabel.role = VictoryLabel.role;
 
-  // Required for componentDocs
-  render() {
-    return super.render();
-  }
-}
+export default ChartLabel;

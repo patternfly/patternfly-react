@@ -11,15 +11,10 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-export default class ChartPie extends VictoryPie {
-  static propTypes = propTypes;
-  static defaultProps = Object.assign({}, VictoryPie.defaultProps, {
-    labelComponent: <ChartTooltip/>,
-    theme: ChartTheme.default
-  });
+const ChartPie = (props) => (
+  <VictoryPie labelComponent={<ChartTooltip/>} theme={ChartTheme.default} {...props}/>
+);
+ChartPie.propTypes = propTypes;
+ChartPie.role = VictoryPie.role;
 
-  // Required for componentDocs
-  render() {
-    return super.render();
-  }
-}
+export default ChartPie;

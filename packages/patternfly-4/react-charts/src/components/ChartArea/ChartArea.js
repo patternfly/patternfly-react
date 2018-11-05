@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { VictoryArea } from 'victory';
 import { default as ChartTheme } from '../ChartTheme/ChartTheme';
@@ -9,14 +10,10 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-export default class ChartArea extends VictoryArea {
-  static propTypes = propTypes;
-  static defaultProps = Object.assign({}, VictoryArea.defaultProps, {
-    theme: ChartTheme.default
-  });
+const ChartArea = (props) => (
+  <VictoryArea theme={ChartTheme.default} {...props}/>
+);
+ChartArea.propTypes = propTypes;
+ChartArea.role = VictoryArea.role;
 
-  // Required for componentDocs
-  render() {
-    return super.render();
-  }
-}
+export default ChartArea;

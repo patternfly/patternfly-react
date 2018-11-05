@@ -11,15 +11,13 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-export default class ChartLegend extends VictoryLegend {
-  static propTypes = propTypes;
-  static defaultProps = Object.assign({}, VictoryLegend.defaultProps, {
-    containerComponent: <ChartContainer/>,
-    theme: ChartTheme.default
-  });
+const container = (
+  <ChartContainer responsive={false}/>
+);
+const ChartLegend = (props) => (
+  <VictoryLegend containerComponent={container} theme={ChartTheme.default} {...props}/>
+);
+ChartLegend.propTypes = propTypes;
+ChartLegend.role = VictoryLegend.role;
 
-  // Required for componentDocs
-  render() {
-    return super.render();
-  }
-}
+export default ChartLegend;

@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import { VictoryContainer } from 'victory';
 
@@ -8,14 +9,10 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-export default class ChartContainer extends VictoryContainer {
-  static propTypes = propTypes;
-  static defaultProps = Object.assign({}, VictoryContainer.defaultProps, {
-    responsive: false // True overrides absolute width and height
-  });
+const ChartContainer = (props) => (
+  <VictoryContainer {...props}/>
+);
+ChartContainer.propTypes = propTypes;
+ChartContainer.role = VictoryContainer.role;
 
-  // Required for componentDocs
-  render() {
-    return super.render();
-  }
-}
+export default ChartContainer;
