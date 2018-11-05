@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.30.1"></a>
+## [1.30.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.30.0...@patternfly/react-core@1.30.1) (2018-11-05)
+
+
+### Bug Fixes
+
+* **typescript:** Export LoginBox and make PageSection props optional ([#880](https://github.com/patternfly/patternfly-react/issues/880)) ([082bb8d](https://github.com/patternfly/patternfly-react/commit/082bb8d))
+
+
+
+
 <a name="1.30.0"></a>
 # [1.30.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.29.1...@patternfly/react-core@1.30.0) (2018-11-02)
 

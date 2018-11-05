@@ -1,5 +1,55 @@
 
-## Change Log (2018-11-02)
+## Change Log (2018-11-05)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#880](https://github.com/patternfly/patternfly-react/pull/880) fix(typescript): Export LoginBox and make PageSection props optional ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly4-react-lerna-root@1.17.0 (2018-11-02)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#876](https://github.com/patternfly/patternfly-react/pull/876) feat(condensed horizontal nav): updates condensed nav to match Core horizontal & vertical nav ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-tokens@1.7.0 (2018-11-02)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#876](https://github.com/patternfly/patternfly-react/pull/876) feat(condensed horizontal nav): updates condensed nav to match Core horizontal & vertical nav ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-icons@2.7.0 (2018-11-02)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#876](https://github.com/patternfly/patternfly-react/pull/876) feat(condensed horizontal nav): updates condensed nav to match Core horizontal & vertical nav ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-docs@3.17.31 (2018-11-02)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#876](https://github.com/patternfly/patternfly-react/pull/876) feat(condensed horizontal nav): updates condensed nav to match Core horizontal & vertical nav ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-core@1.30.0 (2018-11-02)
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
