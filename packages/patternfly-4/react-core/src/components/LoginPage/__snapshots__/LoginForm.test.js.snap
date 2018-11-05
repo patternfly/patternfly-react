@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Login form 1`] = `
+.pf-u-mr-lg-on-md.pf-u-px-xl.pf-u-align-self-stretch.pf-u-align-self-flex-start-on-md {
+  display: block;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
 .pf-u-m-md.pf-u-align-items-center.pf-u-display-flex {
   display: flex;
   align-items: center;
@@ -75,7 +80,7 @@ exports[`should render Login form 1`] = `
   >
     <Button
       aria-label={null}
-      className=""
+      className="pf-u-mr-lg-on-md pf-u-px-xl pf-u-align-self-stretch pf-u-align-self-flex-start-on-md"
       component="button"
       isActive={false}
       isBlock={false}
@@ -83,7 +88,7 @@ exports[`should render Login form 1`] = `
       isFocus={false}
       isHover={false}
       onClick={[Function]}
-      type="button"
+      type="submit"
       variant="primary"
     >
       Log In
