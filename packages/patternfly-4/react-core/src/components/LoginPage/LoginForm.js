@@ -143,7 +143,18 @@ const LoginForm = ({
         flexStyles.flexDirectionRowOnMd
       )}
     >
-      <Button variant="primary" onClick={onLoginButtonClick} isDisabled={isLoginButtonDisabled}>
+      <Button
+        className={css(
+          spacingStyles.mrLgOnMd,
+          spacingStyles.pxXl,
+          flexStyles.alignSelfStretch,
+          flexStyles.alignSelfFlexStartOnMd
+        )}
+        variant="primary"
+        type="submit"
+        onClick={onLoginButtonClick}
+        isDisabled={isLoginButtonDisabled}
+      >
         {loginButtonLabel}
       </Button>
       <div className={css(alignmentStyles.textAlignCenter, alignmentStyles.textAlignLeftOnMd)}>

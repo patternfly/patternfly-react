@@ -22,10 +22,6 @@ class SimpleLoginForm extends React.Component {
     this.setState({ isRememberMeChecked: !this.state.isRememberMeChecked });
   };
 
-  onLoginBtnClick = () => {
-    this.setState({ passwordValue: '', usernameValue: '', isRememberMeChecked: false });
-  };
-
   render() {
     return (
       <LoginForm
@@ -39,11 +35,10 @@ class SimpleLoginForm extends React.Component {
         onChangePassword={this.handlePasswordChange}
         passwordHelperTextInvalid="Password Invalid"
         isValidPassword
-        rememberMeLabel="Keep Me logged in for 30 days."
+        rememberMeLabel="Keep me logged in for 30 days."
         isRememberMeChecked={this.state.isRememberMeChecked}
         onChangeRememberMe={this.onRememberMeClick}
         rememberMeAriaLabel="Remember me Checkbox"
-        onLoginButtonClick={this.onLoginBtnClick}
       />
     );
   }
