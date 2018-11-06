@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.12.1"></a>
+## [2.12.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.12.0...patternfly-react-extensions@2.12.1) (2018-11-06)
+
+
+
+
+**Note:** Version bump only for package patternfly-react-extensions
+
 <a name="2.12.0"></a>
 # [2.12.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.11.1...patternfly-react-extensions@2.12.0) (2018-10-31)
 
