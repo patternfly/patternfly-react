@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.31.0"></a>
+# [1.31.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.30.3...@patternfly/react-core@1.31.0) (2018-11-06)
+
+
+### Features
+
+* **LoginPage:** introduce the login page component ([#863](https://github.com/patternfly/patternfly-react/issues/863)) ([c1435d9](https://github.com/patternfly/patternfly-react/commit/c1435d9))
+
+
+
+
 <a name="1.30.3"></a>
 ## [1.30.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.30.2...@patternfly/react-core@1.30.3) (2018-11-06)
 

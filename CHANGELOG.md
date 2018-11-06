@@ -1,4 +1,14 @@
 
+## Change Log (2018-11-06)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#863](https://github.com/patternfly/patternfly-react/pull/863) feat(LoginPage): introduce the login page component ([@amarie401](https://github.com/amarie401))
+
+#### Committers: 1
+- Amiee Lo ([@amarie401](https://github.com/amarie401))
+
+
 ## patternfly3-react-lerna-root@7.8.5 (2018-11-06)
 
 #### :bug: Bug Fix
