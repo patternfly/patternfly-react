@@ -4,6 +4,7 @@ import { OneOf } from '../../typeUtils';
 export interface PageHeaderProps extends HTMLProps<HTMLDivElement> {
   className?: string;
   logo?: ReactNode;
+  logoProps?: object;
   toolbar?: ReactNode;
   avatar?: ReactNode;
   topNav?: ReactNode;

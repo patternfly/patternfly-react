@@ -22,8 +22,20 @@ class VerticalPage extends React.Component {
   render() {
     const { isNavOpen } = this.state;
 
+    const logoProps = {
+      href: 'https://patternfly.org',
+      onClick: () => console.log('clicked logo'),
+      target: '_blank'
+    };
     const Header = (
-      <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" showNavToggle onNavToggle={this.onNavToggle} />
+      <PageHeader
+        logo="Logo"
+        logoProps={logoProps}
+        toolbar="Toolbar"
+        avatar=" | Avatar"
+        showNavToggle
+        onNavToggle={this.onNavToggle}
+      />
     );
     const Sidebar = <PageSidebar nav="Navigation" isNavOpen={isNavOpen} />;
 

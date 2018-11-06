@@ -7,7 +7,14 @@ class HorizontalPage extends React.Component {
   static getContainerProps = getContainerProps;
 
   render() {
-    const Header = <PageHeader logo="Logo" toolbar="Toolbar" avatar=" | Avatar" topNav="Navigation" />;
+    const logoProps = {
+      href: 'https://patternfly.org',
+      onClick: () => console.log('clicked logo'),
+      target: '_blank'
+    };
+    const Header = (
+      <PageHeader logo="Logo" logoProps={logoProps} toolbar="Toolbar" avatar=" | Avatar" topNav="Navigation" />
+    );
 
     return (
       <Page header={Header}>
