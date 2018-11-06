@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.8.2"></a>
+## [7.8.2](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.0...patternfly3-react-lerna-root@7.8.2) (2018-11-06)
+
+
+### Bug Fixes
+
+* **modal transition:** Reduce translate3d (right offset) positioning for right-side-modal-pf to 25% ([#878](https://github.com/patternfly/patternfly-react/issues/878)) ([5512ff3](https://github.com/patternfly/patternfly-react/commit/5512ff3))
+
+
+
+
 <a name="7.8.1"></a>
 ## [7.8.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.0...patternfly3-react-lerna-root@7.8.1) (2018-11-06)
 
