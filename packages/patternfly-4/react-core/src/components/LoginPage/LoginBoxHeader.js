@@ -32,7 +32,7 @@ const LoginBoxHeader = ({ children, className, dropdown, title, subtitle, ...pro
     </Title>
     <div className={css(displayStyles.displayInlineFlex, flexAlignment.alignItemsCenter)}>
       {dropdown}
-      <p className={css(spacing.mlMd)}>{subtitle}</p>
+      {subtitle && <p className={css(spacing.mlMd)}>{subtitle}</p>}
     </div>
 
     {children}

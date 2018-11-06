@@ -101,7 +101,7 @@ const LoginPage = ({
 
   return (
     <React.Fragment>
-      <BackgroundImage src={mainBackgroundImgSrc} alt={mainBackgroundImgAlt} />
+      {mainBackgroundImgSrc && <BackgroundImage src={mainBackgroundImgSrc} alt={mainBackgroundImgAlt} />}
       <Login header={Header} footer={Footer} {...props} className={css(className)}>
         <LoginBox>
           <LoginBoxHeader title={loginTitle} dropdown={loginLanguageDropdown} subtitle={loginSubtitle} />
