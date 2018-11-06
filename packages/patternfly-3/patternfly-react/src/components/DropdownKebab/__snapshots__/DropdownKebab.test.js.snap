@@ -13,6 +13,7 @@ exports[`Kebab dropdown renders properly 1`] = `
     bsStyle="link"
     noCaret={true}
     open={false}
+    title="Kebab title"
     useAnchor={false}
   >
     <Icon
