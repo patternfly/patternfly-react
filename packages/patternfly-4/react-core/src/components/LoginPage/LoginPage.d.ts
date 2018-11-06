@@ -9,16 +9,17 @@ export const LoginListVariant: {
 export interface LoginPageProps extends HTMLProps<HTMLElement> {
   children?: ReactNode;
   className?: string;
-  loginBrandImgSrc?: string;
-  loginBackgroundImgSrc?: string;
-  loginBackgroundImgAlt?: string;
-  loginLanguageDropdown?: ReactNode;
-  loginTextContent?: string;
+  mainBrandImgSrc?: string;
+  mainBrandImgAlt?: string;
+  mainBackgroundImgSrc?: string;
+  mainBackgroundImgAlt?: string;
+  mainTextContent?: string;
+  mainListItems?: ReactNode;
+  mainListVariants?: OneOf<typeof LoginListVariant, keyof typeof LoginListVariant>;
   loginTitle: string;
   loginSubtitle?: ReactNode;
-  loginListItems?: ReactNode;
+  loginLanguageDropdown?: ReactNode;
   loginFooterContent?: ReactNode;
-  loginListVariants?: OneOf<typeof LoginListVariant, keyof typeof LoginListVariant>;
 }
 
 declare const LoginPage: SFC<LoginPageProps>;

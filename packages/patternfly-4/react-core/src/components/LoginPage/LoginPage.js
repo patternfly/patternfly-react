@@ -28,80 +28,80 @@ const propTypes = {
   /** Additional classes added to the LoginPage. */
   className: PropTypes.string,
   /** Attribute that specifies the URL of the brand image for the LoginPage */
-  loginBrandImgSrc: PropTypes.string,
+  mainBrandImgSrc: PropTypes.string,
   /** Attribute that specifies the alt text of the brand image for the LoginPage. */
-  loginBrandImgAlt: PropTypes.string,
+  mainBrandImgAlt: PropTypes.string,
   /** Attribute that specifies the URL of the background image for the LoginPage */
-  loginBackgroundImgSrc: PropTypes.string,
+  mainBackgroundImgSrc: PropTypes.string,
   /** Attribute that specifies the alt text of the background image for the LoginPage. */
-  loginBackgroundImgAlt: PropTypes.string,
+  mainBackgroundImgAlt: PropTypes.string,
+  /** Content rendered inside of the Text Component of the LoginPage */
+  mainTextContent: PropTypes.string,
+  /** Items rendered inside of the List Component of the LoginPage */
+  mainListItems: PropTypes.node,
+  /** Adds list variant styles for the List component of the LoginPage */
+  mainListVariants: PropTypes.oneOf(Object.values(LoginListVariant)),
   /** Language dropdown component for the LoginBox Header of the LoginPage */
   loginLanguageDropdown: PropTypes.node,
-  /** Content rendered inside of the Text Component of the LoginPage */
-  loginTextContent: PropTypes.string,
   /** Title for the LoginBox Header of the LoginPage */
   loginTitle: PropTypes.string.isRequired,
-  /** Items rendered inside of the List Component of the LoginPage */
-  loginListItems: PropTypes.node,
   /** Login subtitle that contains the Text, URL, and URL Text for the LoginBox Header of the LoginPage */
   loginSubtitle: PropTypes.node,
   /** Content rendered inside of the LoginBox Footer of the LoginPage */
-  loginFooterContent: PropTypes.node,
-  /** Adds list variant styles for the List component of the LoginPage */
-  loginListVariants: PropTypes.oneOf(Object.values(LoginListVariant))
+  loginFooterContent: PropTypes.node
 };
 
 const defaultProps = {
   children: null,
   className: '',
-  loginBrandImgSrc: '',
-  loginBrandImgAlt: '',
-  loginBackgroundImgSrc: '',
-  loginBackgroundImgAlt: '',
+  mainBrandImgSrc: '',
+  mainBrandImgAlt: '',
+  mainBackgroundImgSrc: '',
+  mainBackgroundImgAlt: '',
+  mainListItems: null,
+  mainTextContent: '',
+  mainListVariants: null,
   loginLanguageDropdown: null,
-  loginTextContent: '',
-  loginListItems: null,
   loginSubtitle: null,
-  loginFooterContent: null,
-  loginListVariants: null
+  loginFooterContent: null
 };
 
 const LoginPage = ({
   className,
   children,
-  loginBrandImgSrc,
-  loginBrandImgAlt,
-  loginBackgroundImgSrc,
-  loginBackgroundImgAlt,
+  mainBrandImgSrc,
+  mainBrandImgAlt,
+  mainBackgroundImgSrc,
+  mainBackgroundImgAlt,
+  mainTextContent,
+  mainListItems,
+  mainListVariants,
   loginLanguageDropdown,
   loginTitle,
   loginSubtitle,
-  loginTextContent,
-  loginListItems,
   loginFooterContent,
-  loginListVariants,
   ...props
 }) => {
   const HeaderBrand = (
     <React.Fragment>
       <LoginHeaderBrand>
-        <Brand src={loginBrandImgSrc} alt={loginBrandImgAlt} />
+        <Brand src={mainBrandImgSrc} alt={mainBrandImgAlt} />
       </LoginHeaderBrand>
       <TextContent>
-        <Text>{loginTextContent}</Text>
+        <Text>{mainTextContent}</Text>
       </TextContent>
     </React.Fragment>
   );
   const Header = <LoginHeader headerBrand={HeaderBrand} />;
   const Footer = (
     <LoginFooter>
-      <List variant={loginListVariants}>{loginListItems}</List>
+      <List variant={mainListVariants}>{mainListItems}</List>
     </LoginFooter>
   );
 
   return (
     <React.Fragment>
-      <BackgroundImage src={loginBackgroundImgSrc} alt={loginBackgroundImgAlt} />
+      <BackgroundImage src={mainBackgroundImgSrc} alt={mainBackgroundImgAlt} />
       <Login header={Header} footer={Footer} {...props} className={css(className)}>
         <LoginBox>
           <LoginBoxHeader title={loginTitle} dropdown={loginLanguageDropdown} subtitle={loginSubtitle} />

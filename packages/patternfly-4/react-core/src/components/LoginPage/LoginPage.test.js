@@ -18,16 +18,16 @@ const subtitle = (
 );
 
 const props = {
-  loginListVariants: 'inline',
+  mainListVariants: 'inline',
+  mainBrandImgSrc: 'Brand src',
+  mainBrandImgAlt: 'Pf-logo',
+  mainBackgroundImgSrc: 'Background src',
+  mainBackgroundImgAlt: 'Pf-background',
+  mainListItems: 'English',
+  mainTextContent: 'This is placeholder text only.',
   loginTitle: 'Log into your account',
   loginSubtitle: subtitle,
   loginLanguageDropdown: myDropdown,
-  loginBrandImgSrc: 'Brand src',
-  loginBrandImgAlt: 'Pf-logo',
-  loginBackgroundImgSrc: 'Background src',
-  loginBackgroundImgAlt: 'Pf-background',
-  loginListItems: 'English',
-  loginTextContent: 'This is placeholder text only.',
   loginFooterContent: 'Footer'
 };
 

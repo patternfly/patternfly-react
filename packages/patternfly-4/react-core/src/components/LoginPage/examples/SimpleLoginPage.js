@@ -83,17 +83,17 @@ class SimpleLoginPage extends React.Component {
     );
     return (
       <LoginPage
-        loginListVariants="inline"
+        mainListVariants="inline"
+        mainBrandImgSrc={brandImg}
+        mainBrandImgAlt="pf-logo"
+        mainBackgroundImgSrc={images}
+        mainBackgroundImgAlt="Images"
+        mainListItems={listItem}
+        mainTextContent="This is placeholder text only. Use this area to place any information or introductory message about your
+        application that may be relevant to users."
         loginTitle="Login to your account"
-        loginLanguageDropdown={languageDropdown}
-        loginBrandImgSrc={brandImg}
-        loginBrandImgAlt="pf-logo"
-        loginBackgroundImgSrc={images}
-        loginBackgroundImgAlt="Images"
-        loginListItems={listItem}
         loginSubtitle={subtitle}
-        loginTextContent="This is placeholder text only. Use this area to place any information or introductory message about your
-          application that may be relevant to users."
+        loginLanguageDropdown={languageDropdown}
       />
     );
   }
