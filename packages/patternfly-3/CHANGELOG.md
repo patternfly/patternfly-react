@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.8.5"></a>
+## [7.8.5](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.4...patternfly3-react-lerna-root@7.8.5) (2018-11-06)
+
+
+### Bug Fixes
+
+* **ModelessOverlay:** allow vertical scrolling ([#796](https://github.com/patternfly/patternfly-react/issues/796)) ([93ed571](https://github.com/patternfly/patternfly-react/commit/93ed571))
+
+
+
+
 <a name="7.8.4"></a>
 ## [7.8.4](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.3...patternfly3-react-lerna-root@7.8.4) (2018-11-06)
 
