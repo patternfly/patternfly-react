@@ -3,7 +3,7 @@
   flex-wrap: wrap;
 
   .manual-connection-pf {
-    margin-left: 50px;
+    min-width: $desktop-viewer-pf-panel-min-width;
 
     > h2 {
       text-align: center;
@@ -34,7 +34,9 @@
   .remote-viewer-pf {
     position: relative;
     top: 15%;
-    width: 350px;
+    width: 50%;
+    min-width: $desktop-viewer-pf-panel-min-width;
+    margin-right: 50px;
 
     .expand-collapse-pf {
       margin-top: 1em;
