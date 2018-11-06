@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import 'patternfly/dist/js/patternfly-settings';
 import { OverlayTrigger, Tooltip } from 'patternfly-react';
+import { resourceTypes, kindAbbrs, kindStrings } from './ResourceTypes';
 
 const { patternfly } = window;
 
@@ -10,6 +11,7 @@ const BadgedResource = ({
   id,
   className,
   badgeColor,
+  resourceKind,
   kindAbbr,
   kindStr,
   resourceName,
@@ -28,18 +30,27 @@ const BadgedResource = ({
     }
   };
 
-  const renderBadge = showTitle => (
-    <span>
-      <span className="sr-only">{kindStr}</span>
-      <span className="badged-resource-pf-icon" title={showTitle && kindStr} style={{ backgroundColor: badgeColor }}>
-        {kindAbbr}
+  const renderBadge = showTitle => {
+    const classes = classNames('badged-resource-pf-icon', resourceKind);
+    return (
+      <span>
+        <span className="sr-only">{kindStr || kindStrings[resourceKind]}</span>
+        <span
+          className={classes}
+          title={showTitle && (kindStr || kindStrings[resourceKind])}
+          style={{ backgroundColor: badgeColor }}
+        >
+          {kindAbbr || kindAbbrs[resourceKind]}
+        </span>
       </span>
-    </span>
-  );
+    );
+  };
 
   const renderResourceType = () => {
-    if (kindStr && tipDelay >= 0) {
-      const tooltip = <Tooltip id={`${id}-tooltip`}>{kindStr}</Tooltip>;
+    const tipString = kindStr || kindStrings[resourceKind];
+
+    if (tipString && tipDelay >= 0) {
+      const tooltip = <Tooltip id={`${id}-tooltip`}>{tipString}</Tooltip>;
       return (
         <OverlayTrigger overlay={tooltip} placement="top" delay={tipDelay}>
           {renderBadge()}
@@ -72,18 +83,21 @@ const BadgedResource = ({
 };
 
 BadgedResource.COLORS = patternfly.pfPaletteColors;
+BadgedResource.KINDS = resourceTypes;
 
 BadgedResource.propTypes = {
   /** Id */
   id: PropTypes.any,
   /** Additional css classes */
   className: PropTypes.string,
-  /** Background color for the badge (choose from ResourceBadge.COLORS) */
+  /** Not Preferred: Background color for the badge (choose from ResourceBadge.COLORS) */
   badgeColor: PropTypes.any,
-  /** Abbreviation for the resource kind to display in the badge */
-  kindAbbr: PropTypes.string.isRequired,
-  /** Full name of the resource kind to display in the badge tooltip  and for screen readers */
-  kindStr: PropTypes.string.isRequired,
+  /** Preferred: css class for the badge (choose from BadgedResource.KINDS) */
+  resourceKind: PropTypes.string,
+  /** Abbreviation for the resource kind to display in the badge (defaulted if valid resourceKind is given) */
+  kindAbbr: PropTypes.string,
+  /** Full name of the resource kind to display in the badge tooltip and for screen readers (defaulted if valid resourceKind is given) */
+  kindStr: PropTypes.string,
   /** Name of the resource */
   resourceName: PropTypes.string,
   /** Flag for large version */
@@ -99,7 +113,10 @@ BadgedResource.propTypes = {
 BadgedResource.defaultProps = {
   id: null,
   className: '',
-  badgeColor: BadgedResource.COLORS.lightBlue400,
+  badgeColor: null,
+  resourceKind: '',
+  kindAbbr: '',
+  kindStr: '',
   resourceName: '',
   large: false,
   tipDelay: 500,

@@ -11,8 +11,7 @@ exports[`BadgedResource href renders properly 1`] = `
       Role Binding
     </span>
     <span
-      class="badged-resource-pf-icon"
-      style="background-color: rgb(0, 92, 102);"
+      class="badged-resource-pf-icon rolebinding"
     >
       RB
     </span>
@@ -38,8 +37,7 @@ exports[`BadgedResource onClick behaves properly 1`] = `
       Role Binding
     </span>
     <span
-      class="badged-resource-pf-icon"
-      style="background-color: rgb(0, 92, 102);"
+      class="badged-resource-pf-icon rolebinding"
     >
       RB
     </span>
@@ -67,7 +65,7 @@ exports[`BadgedResource renders properly 1`] = `
       </span>
       <span
         class="badged-resource-pf-icon"
-        style="background-color: rgb(0, 185, 228);"
+        style="background-color: rgb(0, 67, 104);"
       >
         DC
       </span>
@@ -86,8 +84,7 @@ exports[`BadgedResource renders properly 1`] = `
         Deployment Config
       </span>
       <span
-        class="badged-resource-pf-icon"
-        style="background-color: rgb(0, 67, 104);"
+        class="badged-resource-pf-icon deploymentconfig"
       >
         DC
       </span>
@@ -106,8 +103,7 @@ exports[`BadgedResource renders properly 1`] = `
         Role Binding
       </span>
       <span
-        class="badged-resource-pf-icon"
-        style="background-color: rgb(0, 92, 102);"
+        class="badged-resource-pf-icon rolebinding"
       >
         RB
       </span>
@@ -126,14 +122,13 @@ exports[`BadgedResource renders properly 1`] = `
       <span
         class="sr-only"
       >
-        Horizontal Pod Autoscaler
+        Namespace
       </span>
       <span
-        class="badged-resource-pf-icon"
-        style="background-color: rgb(0, 185, 228);"
-        title="Horizontal Pod Autoscaler"
+        class="badged-resource-pf-icon namespace"
+        title="Namespace"
       >
-        HPA
+        NS
       </span>
     </span>
     <span
@@ -174,8 +169,7 @@ exports[`BadgedResource renders properly 1`] = `
         Deployment Config
       </span>
       <span
-        class="badged-resource-pf-icon"
-        style="background-color: rgb(0, 67, 104);"
+        class="badged-resource-pf-icon deploymentconfig"
       >
         DC
       </span>
@@ -196,7 +190,7 @@ exports[`BadgedResource renders properly 1`] = `
         Project
       </span>
       <span
-        class="badged-resource-pf-icon"
+        class="badged-resource-pf-icon project"
         style="background-color: rgb(45, 118, 35);"
       >
         PR
@@ -204,9 +198,7 @@ exports[`BadgedResource renders properly 1`] = `
     </span>
     <span
       class="badged-resource-pf-resource-name"
-    >
-      Large Item
-    </span>
+    />
   </span>
   <span
     class="badged-resource-pf badged-resource-pf-lg"
@@ -215,11 +207,10 @@ exports[`BadgedResource renders properly 1`] = `
       <span
         class="sr-only"
       >
-        Service Model
+        Service Monitor
       </span>
       <span
-        class="badged-resource-pf-icon"
-        style="background-color: rgb(45, 118, 35);"
+        class="badged-resource-pf-icon servicemonitor"
       >
         SM
       </span>
