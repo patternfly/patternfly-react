@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.22.4"></a>
+## [2.22.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.22.3...patternfly-react@2.22.4) (2018-11-06)
+
+
+### Bug Fixes
+
+* **DropdownKebab:** Allow title attribute ([#885](https://github.com/patternfly/patternfly-react/issues/885)) ([be38223](https://github.com/patternfly/patternfly-react/commit/be38223))
+
+
+
+
 <a name="2.22.3"></a>
 ## [2.22.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.22.1...patternfly-react@2.22.3) (2018-11-06)
 

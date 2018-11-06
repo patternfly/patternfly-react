@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.8.4"></a>
+## [7.8.4](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.3...patternfly3-react-lerna-root@7.8.4) (2018-11-06)
+
+
+### Bug Fixes
+
+* **DropdownKebab:** Allow title attribute ([#885](https://github.com/patternfly/patternfly-react/issues/885)) ([be38223](https://github.com/patternfly/patternfly-react/commit/be38223))
+
+
+
+
 <a name="7.8.3"></a>
 ## [7.8.3](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.2...patternfly3-react-lerna-root@7.8.3) (2018-11-06)
 
