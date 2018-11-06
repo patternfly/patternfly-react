@@ -1,4 +1,15 @@
 
+## Change Log (2018-11-06)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#878](https://github.com/patternfly/patternfly-react/pull/878) fix(modal transition): Reduce translate3d (right offset) positioning for right-side-modal-pf to 25% ([@sg00dwin](https://github.com/sg00dwin))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Steve Goodwin ([@sg00dwin](https://github.com/sg00dwin))
+
+
 ## patternfly4-react-lerna-root@1.17.1 (2018-11-05)
 
 #### :bug: Bug Fix
