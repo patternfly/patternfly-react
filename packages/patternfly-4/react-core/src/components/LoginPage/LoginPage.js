@@ -28,33 +28,42 @@ const propTypes = {
   /** Additional classes added to the LoginPage. */
   className: PropTypes.string,
   /** Attribute that specifies the URL of the brand image for the LoginPage */
-  loginBrandImgSrc: PropTypes.string.isRequired,
+  loginBrandImgSrc: PropTypes.string,
   /** Attribute that specifies the alt text of the brand image for the LoginPage. */
-  loginBrandImgAlt: PropTypes.string.isRequired,
+  loginBrandImgAlt: PropTypes.string,
   /** Attribute that specifies the URL of the background image for the LoginPage */
-  loginBackgroundImgSrc: PropTypes.string.isRequired,
+  loginBackgroundImgSrc: PropTypes.string,
   /** Attribute that specifies the alt text of the background image for the LoginPage. */
-  loginBackgroundImgAlt: PropTypes.string.isRequired,
+  loginBackgroundImgAlt: PropTypes.string,
   /** Language dropdown component for the LoginBox Header of the LoginPage */
-  loginLanguageDropdown: PropTypes.node.isRequired,
+  loginLanguageDropdown: PropTypes.node,
   /** Content rendered inside of the Text Component of the LoginPage */
-  loginTextContent: PropTypes.string.isRequired,
+  loginTextContent: PropTypes.string,
   /** Title for the LoginBox Header of the LoginPage */
   loginTitle: PropTypes.string.isRequired,
   /** Items rendered inside of the List Component of the LoginPage */
-  loginListItems: PropTypes.node.isRequired,
+  loginListItems: PropTypes.node,
   /** Login subtitle that contains the Text, URL, and URL Text for the LoginBox Header of the LoginPage */
-  loginSubtitle: PropTypes.node.isRequired,
+  loginSubtitle: PropTypes.node,
   /** Content rendered inside of the LoginBox Footer of the LoginPage */
   loginFooterContent: PropTypes.node,
   /** Adds list variant styles for the List component of the LoginPage */
-  loginListVariants: PropTypes.oneOf(Object.values(LoginListVariant)).isRequired
+  loginListVariants: PropTypes.oneOf(Object.values(LoginListVariant))
 };
 
 const defaultProps = {
   children: null,
   className: '',
-  loginFooterContent: null
+  loginBrandImgSrc: '',
+  loginBrandImgAlt: '',
+  loginBackgroundImgSrc: '',
+  loginBackgroundImgAlt: '',
+  loginLanguageDropdown: null,
+  loginTextContent: '',
+  loginListItems: null,
+  loginSubtitle: null,
+  loginFooterContent: null,
+  loginListVariants: null
 };
 
 const LoginPage = ({
