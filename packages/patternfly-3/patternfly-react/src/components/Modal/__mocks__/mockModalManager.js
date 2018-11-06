@@ -49,6 +49,30 @@ export class MockModalManager extends React.Component {
             <input type="text" id="textInput3" className="form-control" />
           </div>
         </div>
+        <div className="form-group">
+          <label className="col-sm-3 control-label" htmlFor="textInput4">
+            Field Four
+          </label>
+          <div className="col-sm-9">
+            <input type="text" id="textInput3" className="form-control" />
+          </div>
+        </div>
+        <div className="form-group">
+          <label className="col-sm-3 control-label" htmlFor="textInput5">
+            Field Five
+          </label>
+          <div className="col-sm-9">
+            <input type="text" id="textInput3" className="form-control" />
+          </div>
+        </div>
+        <div className="form-group">
+          <label className="col-sm-3 control-label" htmlFor="textInput6">
+            Field Six
+          </label>
+          <div className="col-sm-9">
+            <input type="text" id="textInput3" className="form-control" />
+          </div>
+        </div>
       </form>
     );
 
