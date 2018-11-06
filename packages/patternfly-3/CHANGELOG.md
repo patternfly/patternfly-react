@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.8.3"></a>
+## [7.8.3](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.2...patternfly3-react-lerna-root@7.8.3) (2018-11-06)
+
+
+### Bug Fixes
+
+* **BadgedResource:** Use css over inlined style for bg color ([#870](https://github.com/patternfly/patternfly-react/issues/870)) ([e504964](https://github.com/patternfly/patternfly-react/commit/e504964))
+
+
+
+
 <a name="7.8.2"></a>
 ## [7.8.2](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.0...patternfly3-react-lerna-root@7.8.2) (2018-11-06)
 

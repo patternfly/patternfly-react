@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.12.3"></a>
+## [2.12.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.12.2...patternfly-react-extensions@2.12.3) (2018-11-06)
+
+
+### Bug Fixes
+
+* **BadgedResource:** Use css over inlined style for bg color ([#870](https://github.com/patternfly/patternfly-react/issues/870)) ([e504964](https://github.com/patternfly/patternfly-react/commit/e504964))
+
+
+
+
 <a name="2.12.2"></a>
 ## [2.12.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.12.0...patternfly-react-extensions@2.12.2) (2018-11-06)
 

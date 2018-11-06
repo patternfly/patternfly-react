@@ -3,6 +3,49 @@
 
 #### :bug: Bug Fix
 * `patternfly-3`
+  * [#870](https://github.com/patternfly/patternfly-react/pull/870) fix(BadgedResource): Use css over inlined style for bg color ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.8.2 (2018-11-06)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#878](https://github.com/patternfly/patternfly-react/pull/878) fix(modal transition): Reduce translate3d (right offset) positioning for right-side-modal-pf to 25% ([@sg00dwin](https://github.com/sg00dwin))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Steve Goodwin ([@sg00dwin](https://github.com/sg00dwin))
+
+
+## patternfly-react@2.22.3 (2018-11-06)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#878](https://github.com/patternfly/patternfly-react/pull/878) fix(modal transition): Reduce translate3d (right offset) positioning for right-side-modal-pf to 25% ([@sg00dwin](https://github.com/sg00dwin))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Steve Goodwin ([@sg00dwin](https://github.com/sg00dwin))
+
+
+## patternfly-react-extensions@2.12.2 (2018-11-06)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#878](https://github.com/patternfly/patternfly-react/pull/878) fix(modal transition): Reduce translate3d (right offset) positioning for right-side-modal-pf to 25% ([@sg00dwin](https://github.com/sg00dwin))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Steve Goodwin ([@sg00dwin](https://github.com/sg00dwin))
+
+
+## @patternfly/react-console@1.5.4 (2018-11-06)
+
+#### :bug: Bug Fix
+* `patternfly-3`
   * [#878](https://github.com/patternfly/patternfly-react/pull/878) fix(modal transition): Reduce translate3d (right offset) positioning for right-side-modal-pf to 25% ([@sg00dwin](https://github.com/sg00dwin))
 
 #### Committers: 2
