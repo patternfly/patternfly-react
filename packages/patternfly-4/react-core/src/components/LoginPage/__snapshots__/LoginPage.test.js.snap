@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`check loginpage example against snapshot 1`] = `
+<React.Fragment>
+  <BackgroundImage
+    alt="Pf-background"
+    className=""
+    src="Background src"
+  />
+  <Login
+    className=""
+    footer={
+      <LoginFooter
+        className=""
+      >
+        <List
+          className=""
+          variant="inline"
+        >
+          English
+        </List>
+      </LoginFooter>
+    }
+    header={
+      <LoginHeader
+        className=""
+        headerBrand={
+          <React.Fragment>
+            <LoginHeaderBrand
+              className=""
+            >
+              <Brand
+                alt="Pf-logo"
+                className=""
+                src="Brand src"
+              />
+            </LoginHeaderBrand>
+            <TextContent
+              className=""
+            >
+              <Text
+                className=""
+                component="p"
+              >
+                This is placeholder text only.
+              </Text>
+            </TextContent>
+          </React.Fragment>
+        }
+      />
+    }
+  >
+    <LoginBox
+      className=""
+    >
+      <LoginBoxHeader
+        className=""
+        dropdown={
+          <Dropdown
+            className=""
+            direction="down"
+            dropdownItems={Array []}
+            isOpen={false}
+            isPlain={false}
+            onSelect={[Function]}
+            position="left"
+            toggle={[MockFunction]}
+          >
+            <Item
+              className=""
+              component="a"
+              href="#"
+              isDisabled={false}
+              isHovered={false}
+            >
+              English
+            </Item>
+          </Dropdown>
+        }
+        subtitle={
+          <React.Fragment>
+            Login to your account 
+            <a
+              href="https://www.patternfly.org"
+            >
+              Need an account?
+            </a>
+          </React.Fragment>
+        }
+        title="Log into your account"
+      />
+      <LoginBoxBody
+        className=""
+      />
+      <LoginBoxFooter
+        className=""
+      >
+        Footer
+      </LoginBoxFooter>
+    </LoginBox>
+  </Login>
+</React.Fragment>
+`;

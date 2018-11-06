@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check login layout example against snapshot 1`] = `
+.pf-l-login__main {
+  display: block;
+  grid-area: main;
+}
+.pf-l-login__container {
+  display: block;
+  max-width: 31.25rem;
+}
+.pf-l-login {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+<div
+  className="pf-l-login"
+>
+  <div
+    className="pf-l-login__container"
+  >
+    <LoginHeader
+      className=""
+      headerBrand={
+        <LoginHeaderBrand
+          className=""
+        >
+          Header Brand
+        </LoginHeaderBrand>
+      }
+    >
+      Header Text
+    </LoginHeader>
+    <main
+      className="pf-l-login__main"
+    >
+      Main
+    </main>
+    <LoginFooter
+      className=""
+    >
+      Footer
+    </LoginFooter>
+  </div>
+</div>
+`;

@@ -3,6 +3,14 @@
 exports[`className is added to the root element 1`] = `"pf-c-login-box__header extra-class"`;
 
 exports[`renders with PatternFly Core styles 1`] = `
+.css-tc6z4j {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.pf-u-display-inline-flex.pf-u-align-items-center {
+  display: inline-flex;
+  align-items: center;
+}
 .pf-c-login-box__header {
   display: block;
   padding: 3rem 3rem 1rem 3rem;
@@ -10,5 +18,13 @@ exports[`renders with PatternFly Core styles 1`] = `
 
 <div
   className="pf-c-login-box__header"
-/>
+>
+  <Title
+    className="css-tc6z4j"
+    size="3xl"
+  />
+  <div
+    className="pf-u-display-inline-flex pf-u-align-items-center"
+  />
+</div>
 `;
