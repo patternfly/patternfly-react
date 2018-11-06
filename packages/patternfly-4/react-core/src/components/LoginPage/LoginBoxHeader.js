@@ -45,7 +45,7 @@ const LoginBoxHeader = ({ children, className, dropdown, title, subtitle, ...pro
     </Title>
     <div className={css(displayStyles.displayInlineFlex, flexAlignment.alignItemsCenter)}>
       {dropdown}
-      {subtitle && <p className={css(tokenStyles.subtitle)}>{subtitle}</p>}
+      {subtitle && <p className={css(tokenStyles.text)}>{subtitle}</p>}
     </div>
 
     {children}
