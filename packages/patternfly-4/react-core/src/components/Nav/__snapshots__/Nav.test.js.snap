@@ -308,7 +308,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: auto;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1;
   pointer-events: none;
   border: 0px;
@@ -552,7 +552,7 @@ exports[`Expandable Nav List 1`] = `
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: auto;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1;
   pointer-events: none;
   border: 0px;
@@ -796,7 +796,7 @@ exports[`Expandable Nav List with aria label 1`] = `
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: auto;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1;
   pointer-events: none;
   border: 0px;
