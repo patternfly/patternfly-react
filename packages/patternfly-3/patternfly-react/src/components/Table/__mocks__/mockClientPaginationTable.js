@@ -75,12 +75,12 @@ export class MockClientPaginationTable extends React.Component {
         {
           property: 'select',
           header: {
-            label: 'Vyberte všechny řádky',
+            label: 'Select all rows',
             props: {
               index: 0,
               rowSpan: 1,
               colSpan: 1,
-              id: 'vybrat vše'
+              id: 'Select all'
             },
             customFormatters: [selectionHeaderCellFormatter]
           },
@@ -93,8 +93,8 @@ export class MockClientPaginationTable extends React.Component {
                 selectionCellFormatter(
                   { rowData, rowIndex },
                   this.onSelectRow,
-                  `vybrat${rowIndex}`,
-                  `vyberte řádek ${rowIndex}`
+                  `Select ${rowIndex}`,
+                  `Select line ${rowIndex}`
                 )
             ]
           }
@@ -499,12 +499,12 @@ export class MockClientPaginationTable extends React.Component {
         {
           property: 'select',
           header: {
-            label: 'Vyberte všechny řádky',
+            label: 'Select all rows',
             props: {
               index: 0,
               rowSpan: 1,
               colSpan: 1,
-              id: 'vybrat vše'
+              id: 'Select all'
             },
             customFormatters: [selectionHeaderCellFormatter]
           },
@@ -517,7 +517,7 @@ export class MockClientPaginationTable extends React.Component {
                 return selectionCellFormatter(
                   { rowData, rowIndex },
                   this.onSelectRow,
-                  \`vybrat \${rowIndex}\`, \`vyberte řádek \${rowIndex}\`
+                  \`Select \${rowIndex}\`, \`Select line \${rowIndex}\`
                 );
               }
             ]
