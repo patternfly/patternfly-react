@@ -5,9 +5,11 @@ import * as NovncLog from '@novnc/novnc/core/util/logging';
 import RFB from '@novnc/novnc/core/rfb';
 
 import classNames from 'classnames';
-import { Toolbar, noop } from 'patternfly-react';
+import { Toolbar, helpers } from 'patternfly-react';
 
 import VncActions from './VncActions';
+
+const { noop } = helpers;
 
 const CONNECTING = 'connecting';
 const CONNECTED = 'connected';

@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Grid, Row, Col, Form, FormGroup, Dropdown, MenuItem, Checkbox } from 'patternfly-react';
+import { Grid, Form, Dropdown, MenuItem } from 'patternfly-react';
 
 import { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } from '../common/constants';
+
+const { Row, Col } = Grid;
+const { Checkbox, FormGroup } = Form;
 
 class AccessConsoles extends React.Component {
   state = {

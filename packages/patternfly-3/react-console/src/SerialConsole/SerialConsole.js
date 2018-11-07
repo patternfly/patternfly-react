@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { EmptyState, Button, noop } from 'patternfly-react';
+import { EmptyState, Button, helpers } from 'patternfly-react';
 import { CONNECTED, DISCONNECTED, LOADING } from './constants';
 
 import XTerm from './XTerm';
 import SerialConsoleActions from './SerialConsoleActions';
+
+const { noop } = helpers;
 
 /**
  * SerialConsole Component for PatternFly React
