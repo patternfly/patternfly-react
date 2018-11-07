@@ -7,4 +7,3 @@ export * from './components/PropertiesSidePanel';
 export * from './components/TableGrid';
 export * from './components/VerticalTabs';
 export * from './components/DiffView';
-export * from './components/TreeView';
