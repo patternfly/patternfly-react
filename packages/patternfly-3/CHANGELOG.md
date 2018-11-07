@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.8.6"></a>
+## [7.8.6](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.5...patternfly3-react-lerna-root@7.8.6) (2018-11-07)
+
+
+### Bug Fixes
+
+* **FilterSidePanel/VerticalTabs:** Adjust top and bottom spacing of filter-side-panel and vertical-t ([#877](https://github.com/patternfly/patternfly-react/issues/877)) ([abc8cc1](https://github.com/patternfly/patternfly-react/commit/abc8cc1))
+
+
+
+
 <a name="7.8.5"></a>
 ## [7.8.5](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.4...patternfly3-react-lerna-root@7.8.5) (2018-11-06)
 
