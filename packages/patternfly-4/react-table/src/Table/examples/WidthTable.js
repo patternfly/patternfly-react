@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-core';
+import { Table, TableHeader, TableBody, cellWidth } from '@patternfly/react-table';
 
 class WidthTable extends React.Component {
   static title = 'Table with Width Modifiers';

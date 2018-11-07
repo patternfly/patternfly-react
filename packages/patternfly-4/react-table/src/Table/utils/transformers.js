@@ -16,8 +16,6 @@ export const emptyCol = (label) => ({
   ...label ? {} : { scope: '' }
 })
 
-export const mapProps = (_label, { property, rowData }) => {
-  return {
-    ...rowData[property] && rowData[property].props
-  };
-}
+export const mapProps = (_label, { property, rowData }) => ({
+  ...rowData[property] && rowData[property].props
+})

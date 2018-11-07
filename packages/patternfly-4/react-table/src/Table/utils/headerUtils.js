@@ -1,25 +1,27 @@
 import { scopeColTransformer, selectable, cellActions, emptyCol, mapProps, collapsible } from './transformers';
 import { defaultTitle } from './formatters';
 
-const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => ({
-  ...header,
-  label: title,
-  transforms: [
-    ...scopeColTransformer,
-    ...emptyCol,
-    ...origTransforms || [],
-    ...header && header.hasOwnProperty('transforms') ? header.transforms : []
-  ],
-  formatters: [
-    ...origFormatters || [],
-    ...header && header.hasOwnProperty('formatters') ? header.formatters : []
-  ]
-});
+const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => {
+  return ({
+    ...header,
+    label: title,
+    transforms: [
+      scopeColTransformer,
+      emptyCol,
+      ...origTransforms || [],
+      ...header && header.hasOwnProperty('transforms') ? header.transforms : []
+    ],
+    formatters: [
+      ...origFormatters || [],
+      ...header && header.hasOwnProperty('formatters') ? header.formatters : []
+    ]
+  });
+}
 
 const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
   ...cell,
   transforms: [
-    ...mapProps,
+    mapProps,
     ...cellTransforms || [],
     ...cell && cell.hasOwnProperty('transforms') ? cell.transforms : []
   ],

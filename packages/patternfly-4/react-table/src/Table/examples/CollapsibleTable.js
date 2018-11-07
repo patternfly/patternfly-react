@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHeader, TableBody } from '@patternfly/react-core';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class CollapsibleTable extends React.Component {
   static title = 'Collapsible table';
@@ -7,12 +7,12 @@ class CollapsibleTable extends React.Component {
     super(props)
     this.state = {
       columns: [
-        { title: 'Header cell', transforms: [cellWidth(10)] },
+        { title: 'Header cell' },
         'Branches',
-        { title: 'Pull requests', transforms: [cellWidth(30)] },
+        { title: 'Pull requests' },
         'Workspaces',
         {
-          title: 'Last Commit', transforms: [cellWidth('max')]
+          title: 'Last Commit'
         }],
       rows: [{
         cells: ['one', 'two', 'three', 'four', 'five'],

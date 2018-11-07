@@ -22,6 +22,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   config.merge({
     resolve: {
       alias: {
+        '@patternfly/react-charts': path.resolve(__dirname, '../react-table/src'),
         '@patternfly/react-charts': path.resolve(__dirname, '../react-charts/src'),
         '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),
@@ -105,6 +106,8 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           .slice(0, 2)
           .join('/') === doc.relativeDirectory
       ) {
+        const getPackage = pkg => doc.absolutePath.indexOf(pkg) !== -1 && pkg;
+        const packageDir = ['react-core', 'react-charts', 'react-styled-system', 'react-table'].find(getPackage);
         const examplePath = `../../${packageDir}/src/${example.relativePath}`;
         rawExamples.push(`{name: '${example.name}', path: '${examplePath}', file: require('!!raw!${examplePath}')}`);
       }

@@ -22,7 +22,6 @@ const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   onCollapse: PropTypes.func,
-  columns: PropTypes.array,
   variant: PropTypes.oneOf(Object.values(TableVariant)),
   gridBreakPoint: PropTypes.oneOf(Object.values(TableGridBreakpoint)),
   sortBy: PropTypes.shape({
@@ -39,13 +38,13 @@ const propTypes = {
     return null;
   },
   caption: props => {
-    if (!props['aria-label'] && !props.caption) {
+    if (!props['aria-label'] && !props.caption && !props.header) {
       return new Error('Caption is required if no aria-label or header is supplied!');
     }
     return null;
   },
   'aria-label': props => {
-    if (!props['aria-label'] && !props.caption) {
+    if (!props['aria-label'] && !props.caption && !props.header) {
       return new Error('aria-label is required if no caption or header is supplied!');
     }
     return null;
@@ -95,6 +94,7 @@ class Table extends React.Component {
         onCollapse,
         updateHeaderData: (headerData) => this.setState({ headerData })
       }}>
+        {header}
         <Provider {...props} renderers={{
           body: {
             row: RowWrapper,
@@ -114,7 +114,6 @@ class Table extends React.Component {
           )}
         >
           {caption && <caption>{caption}</caption>}
-          {header}
           {children}
         </Provider>
       </TableContext.Provider >
