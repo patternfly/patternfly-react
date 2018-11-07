@@ -9,6 +9,8 @@ import AboutModalBoxCloseButton from './AboutModalBoxCloseButton';
 import AboutModalBox from './AboutModalBox';
 import Backdrop from '../Backdrop/Backdrop';
 import Bullseye from '../../layouts/Bullseye/Bullseye';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/patternfly-next/components/Backdrop/backdrop.css';
 
 const propTypes = {
   /** content rendered inside the About Modal Box Content. */
@@ -66,8 +68,10 @@ const ModalContent = ({
   ...props
 }) => {
   if (!isOpen) {
+    document.body.classList.remove(css(styles.backdropOpen));
     return null;
   }
+  document.body.classList.add(css(styles.backdropOpen));
   return (
     <Backdrop>
       <Bullseye>

@@ -7,6 +7,8 @@ import ModalBox from './ModalBox';
 import ModalBoxFooter from './ModalBoxFooter';
 import Backdrop from '../Backdrop/Backdrop';
 import Bullseye from '../../layouts/Bullseye/Bullseye';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/patternfly-next/components/Backdrop/backdrop.css';
 
 const propTypes = {
   /** content rendered inside the Modal. */
@@ -42,8 +44,10 @@ const ModalContent = ({ children, className, isOpen, title, hideTitle, actions, 
   const modalBoxHeader = title && <ModalBoxHeader> {title} </ModalBoxHeader>;
   const modalBoxFooter = actions && <ModalBoxFooter> {actions} </ModalBoxFooter>;
   if (!isOpen) {
+    document.body.classList.remove(css(styles.backdropOpen));
     return null;
   }
+  document.body.classList.add(css(styles.backdropOpen));
   return (
     <Backdrop>
       <Bullseye>
