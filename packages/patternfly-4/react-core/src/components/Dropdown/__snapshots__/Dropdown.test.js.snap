@@ -1347,8 +1347,8 @@ exports[`dropdown basic 1`] = `
   position="left"
   toggle={
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1365,8 +1365,8 @@ exports[`dropdown basic 1`] = `
     className="pf-c-dropdown pf-m-expanded"
   >
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1537,8 +1537,8 @@ exports[`dropdown dropup + right aligned 1`] = `
   position="right"
   toggle={
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1555,8 +1555,8 @@ exports[`dropdown dropup + right aligned 1`] = `
     className="pf-c-dropdown pf-m-top"
   >
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1710,8 +1710,8 @@ exports[`dropdown dropup 1`] = `
   position="left"
   toggle={
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1728,8 +1728,8 @@ exports[`dropdown dropup 1`] = `
     className="pf-c-dropdown pf-m-top"
   >
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1911,8 +1911,8 @@ exports[`dropdown expanded 1`] = `
   position="left"
   toggle={
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1929,8 +1929,8 @@ exports[`dropdown expanded 1`] = `
     className="pf-c-dropdown pf-m-expanded"
   >
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -2244,8 +2244,8 @@ exports[`dropdown regular 1`] = `
   position="left"
   toggle={
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -2262,8 +2262,8 @@ exports[`dropdown regular 1`] = `
     className="pf-c-dropdown"
   >
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -2417,8 +2417,8 @@ exports[`dropdown right aligned 1`] = `
   position="right"
   toggle={
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -2435,8 +2435,8 @@ exports[`dropdown right aligned 1`] = `
     className="pf-c-dropdown"
   >
     <DropdownToggle
-      IconComponent={[Function]}
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}

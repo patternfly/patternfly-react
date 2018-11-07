@@ -5,7 +5,7 @@ import Toggle from './Toggle';
 import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
 
-const DropdownToggle = ({ children, IconComponent, ...props }) => (
+const DropdownToggle = ({ children, iconComponent: IconComponent, ...props }) => (
   <Toggle {...props}>
     {children}
     {IconComponent && <IconComponent className={css(styles.dropdownToggleIcon)} />}
@@ -32,7 +32,7 @@ DropdownToggle.propTypes = {
   /** Forces active state */
   isActive: PropTypes.bool,
   /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
-  IconComponent: PropTypes.func
+  iconComponent: PropTypes.func
 };
 
 DropdownToggle.defaultProps = {
@@ -44,7 +44,7 @@ DropdownToggle.defaultProps = {
   isHovered: false,
   isActive: false,
   onToggle: Function.prototype,
-  IconComponent: CaretDownIcon
+  iconComponent: CaretDownIcon
 };
 
 export default DropdownToggle;

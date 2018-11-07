@@ -9,7 +9,7 @@ export interface DropdownToggleProps extends HTMLProps<HTMLButtonElement> {
   isFocused?: boolean;
   isHovered?: boolean;
   isActive?: boolean;
-  IconComponent?: Function;
+  iconComponent?: Function;
 }
 
 declare const DropdownToggle: SFC<DropdownToggleProps>;
