@@ -1353,6 +1353,7 @@ exports[`dropdown basic 1`] = `
       isFocused={false}
       isHovered={false}
       isOpen={false}
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1371,6 +1372,7 @@ exports[`dropdown basic 1`] = `
       isHovered={false}
       isOpen={true}
       key=".0"
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1541,6 +1543,7 @@ exports[`dropdown dropup + right aligned 1`] = `
       isFocused={false}
       isHovered={false}
       isOpen={false}
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1559,6 +1562,7 @@ exports[`dropdown dropup + right aligned 1`] = `
       isHovered={false}
       isOpen={false}
       key=".0"
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1712,6 +1716,7 @@ exports[`dropdown dropup 1`] = `
       isFocused={false}
       isHovered={false}
       isOpen={false}
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1730,6 +1735,7 @@ exports[`dropdown dropup 1`] = `
       isHovered={false}
       isOpen={false}
       key=".0"
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1911,6 +1917,7 @@ exports[`dropdown expanded 1`] = `
       isFocused={false}
       isHovered={false}
       isOpen={false}
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1929,6 +1936,7 @@ exports[`dropdown expanded 1`] = `
       isHovered={false}
       isOpen={true}
       key=".0"
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2242,6 +2250,7 @@ exports[`dropdown regular 1`] = `
       isFocused={false}
       isHovered={false}
       isOpen={false}
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2260,6 +2269,7 @@ exports[`dropdown regular 1`] = `
       isHovered={false}
       isOpen={false}
       key=".0"
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2413,6 +2423,7 @@ exports[`dropdown right aligned 1`] = `
       isFocused={false}
       isHovered={false}
       isOpen={false}
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2431,6 +2442,7 @@ exports[`dropdown right aligned 1`] = `
       isHovered={false}
       isOpen={false}
       key=".0"
+      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >

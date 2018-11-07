@@ -27,6 +27,7 @@ exports[`Dropdown toggle 1`] = `
   isFocused={false}
   isHovered={false}
   isOpen={false}
+  noCaret={false}
   onToggle={[Function]}
   parentRef={null}
 >
