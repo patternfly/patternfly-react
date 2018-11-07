@@ -1347,13 +1347,13 @@ exports[`dropdown basic 1`] = `
   position="left"
   toggle={
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1365,6 +1365,7 @@ exports[`dropdown basic 1`] = `
     className="pf-c-dropdown pf-m-expanded"
   >
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
@@ -1372,7 +1373,6 @@ exports[`dropdown basic 1`] = `
       isHovered={false}
       isOpen={true}
       key=".0"
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1537,13 +1537,13 @@ exports[`dropdown dropup + right aligned 1`] = `
   position="right"
   toggle={
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1555,6 +1555,7 @@ exports[`dropdown dropup + right aligned 1`] = `
     className="pf-c-dropdown pf-m-top"
   >
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
@@ -1562,7 +1563,6 @@ exports[`dropdown dropup + right aligned 1`] = `
       isHovered={false}
       isOpen={false}
       key=".0"
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1710,13 +1710,13 @@ exports[`dropdown dropup 1`] = `
   position="left"
   toggle={
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1728,6 +1728,7 @@ exports[`dropdown dropup 1`] = `
     className="pf-c-dropdown pf-m-top"
   >
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
@@ -1735,7 +1736,6 @@ exports[`dropdown dropup 1`] = `
       isHovered={false}
       isOpen={false}
       key=".0"
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1911,13 +1911,13 @@ exports[`dropdown expanded 1`] = `
   position="left"
   toggle={
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1929,6 +1929,7 @@ exports[`dropdown expanded 1`] = `
     className="pf-c-dropdown pf-m-expanded"
   >
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
@@ -1936,7 +1937,6 @@ exports[`dropdown expanded 1`] = `
       isHovered={false}
       isOpen={true}
       key=".0"
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2244,13 +2244,13 @@ exports[`dropdown regular 1`] = `
   position="left"
   toggle={
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2262,6 +2262,7 @@ exports[`dropdown regular 1`] = `
     className="pf-c-dropdown"
   >
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
@@ -2269,7 +2270,6 @@ exports[`dropdown regular 1`] = `
       isHovered={false}
       isOpen={false}
       key=".0"
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2417,13 +2417,13 @@ exports[`dropdown right aligned 1`] = `
   position="right"
   toggle={
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2435,6 +2435,7 @@ exports[`dropdown right aligned 1`] = `
     className="pf-c-dropdown"
   >
     <DropdownToggle
+      IconComponent={[Function]}
       className=""
       id="Dropdown Toggle"
       isActive={false}
@@ -2442,7 +2443,6 @@ exports[`dropdown right aligned 1`] = `
       isHovered={false}
       isOpen={false}
       key=".0"
-      noCaret={false}
       onToggle={[Function]}
       parentRef={null}
     >

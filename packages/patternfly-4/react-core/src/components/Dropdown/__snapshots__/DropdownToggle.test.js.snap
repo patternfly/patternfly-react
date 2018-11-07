@@ -21,13 +21,13 @@ exports[`state active 1`] = `
 }
 
 <DropdownToggle
+  IconComponent={[Function]}
   className=""
   id="Dropdown Toggle"
   isActive={true}
   isFocused={false}
   isHovered={false}
   isOpen={false}
-  noCaret={false}
   onToggle={[Function]}
   parentRef={<div />}
 >
@@ -96,13 +96,13 @@ exports[`state focus 1`] = `
 }
 
 <DropdownToggle
+  IconComponent={[Function]}
   className=""
   id="Dropdown Toggle"
   isActive={false}
   isFocused={true}
   isHovered={false}
   isOpen={false}
-  noCaret={false}
   onToggle={[Function]}
   parentRef={<div />}
 >
@@ -171,13 +171,13 @@ exports[`state hover 1`] = `
 }
 
 <DropdownToggle
+  IconComponent={[Function]}
   className=""
   id="Dropdown Toggle"
   isActive={false}
   isFocused={false}
   isHovered={true}
   isOpen={false}
-  noCaret={false}
   onToggle={[Function]}
   parentRef={<div />}
 >

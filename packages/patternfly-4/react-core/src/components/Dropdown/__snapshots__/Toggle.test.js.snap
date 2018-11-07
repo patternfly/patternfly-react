@@ -21,13 +21,13 @@ exports[`Dropdown toggle 1`] = `
 }
 
 <DropdownToggle
+  IconComponent={[Function]}
   className=""
   id="Dropdown Toggle"
   isActive={false}
   isFocused={false}
   isHovered={false}
   isOpen={false}
-  noCaret={false}
   onToggle={[Function]}
   parentRef={null}
 >

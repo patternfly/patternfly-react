@@ -32,7 +32,7 @@ DropdownToggle.propTypes = {
   /** Forces active state */
   isActive: PropTypes.bool,
   /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
-  IconComponent: PropTypes.node
+  IconComponent: PropTypes.func
 };
 
 DropdownToggle.defaultProps = {
