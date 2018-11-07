@@ -3,6 +3,7 @@ import { css } from '@patternfly/react-styles';
 import exampleStyles from './example.styles';
 import styles from './liveDemo.styles';
 import PropTypes from 'prop-types';
+import * as ChartComponents from '@patternfly/react-charts';
 import * as CoreComponents from '@patternfly/react-core';
 import * as CoreIcons from '@patternfly/react-icons';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
@@ -27,7 +28,7 @@ const defaultProps = {
   liveScope: {}
 };
 
-const scopePlayground = { React, ...CoreComponents, ...CoreIcons, css };
+const scopePlayground = { React, ...ChartComponents, ...CoreComponents, ...CoreIcons, css };
 
 const transformCode = code => {
   try {

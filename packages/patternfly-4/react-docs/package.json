@@ -8,6 +8,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@patternfly/react-charts": "^1.0.0",
     "@patternfly/react-core": "^1.31.0",
     "@patternfly/react-icons": "^2.7.0",
     "@patternfly/react-styles": "^2.3.0",
