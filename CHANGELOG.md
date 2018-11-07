@@ -1,5 +1,15 @@
 
-## Change Log (2018-11-07)
+## patternfly3-react-lerna-root@7.8.6 (2018-11-07)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#877](https://github.com/patternfly/patternfly-react/pull/877) fix(FilterSidePanel/VerticalTabs): Adjust top and bottom spacing of f… ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly-react-extensions@2.12.6 (2018-11-07)
 
 #### :bug: Bug Fix
 * `patternfly-3`

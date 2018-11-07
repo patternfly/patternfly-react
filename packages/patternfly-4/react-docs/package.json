@@ -1,14 +1,14 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "3.17.35",
+  "version": "3.17.36",
   "author": "Red Hat",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@patternfly/react-charts": "^1.0.0",
+    "@patternfly/react-charts": "^1.0.1",
     "@patternfly/react-core": "^1.31.0",
     "@patternfly/react-icons": "^2.7.0",
     "@patternfly/react-styles": "^2.3.0",
