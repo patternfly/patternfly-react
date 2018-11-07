@@ -18,7 +18,7 @@ const stories = storiesOf(
 stories.addDecorator(
   defaultTemplate({
     title: 'Filter Side Panel',
-    description: 'Note: the width and border styling is not part of the FilterSidePanel.'
+    description: 'Note: the width, border, and top padding styling are not part of the FilterSidePanel.'
   })
 );
 
@@ -49,7 +49,7 @@ stories.add(
       step: 1
     });
     return (
-      <div style={{ width: '195px', border: '1px solid grey' }}>
+      <div style={{ width: '195px', border: '1px solid grey', paddingTop: '20px' }}>
         <MockFilterSidePanelExample maxShowCount={maxShowCountValue} leeway={leewayValue} />
       </div>
     );
