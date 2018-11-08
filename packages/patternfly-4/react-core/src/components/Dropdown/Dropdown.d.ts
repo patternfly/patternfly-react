@@ -8,10 +8,10 @@ export interface DropdownProps extends HTMLProps<HTMLDivElement> {
   dropdownItems: ReactNode[];
   isOpen?: boolean;
   isAction?: boolean;
-  onSelect?: Function;
+  onSelect(event: React.SyntheticEvent<HTMLDivElement>): void;
   position?: OneOf<typeof DropdownPosition, keyof typeof DropdownPosition>;
   direction?: OneOf<typeof DropdownDirection, keyof typeof DropdownDirection>;
-  toggle?: DropdownToggle;
+  toggle?: OneOf<typeof DropdownToggle, keyof typeof DropdownToggle>;
 }
 
 declare const Dropdown: SFC<DropdownProps>;
