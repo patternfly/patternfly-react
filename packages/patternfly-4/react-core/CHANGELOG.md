@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.32.0"></a>
+# [1.32.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.31.2...@patternfly/react-core@1.32.0) (2018-11-08)
+
+
+### Features
+
+* **DropdownToggle - noCaret option:** Adds the noCaret option ([#893](https://github.com/patternfly/patternfly-react/issues/893)) ([21e6e64](https://github.com/patternfly/patternfly-react/commit/21e6e64))
+
+
+
+
 <a name="1.31.2"></a>
 ## [1.31.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.31.1...@patternfly/react-core@1.31.2) (2018-11-07)
 

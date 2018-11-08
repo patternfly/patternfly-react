@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.19.0"></a>
+# [1.19.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.18.3...patternfly4-react-lerna-root@1.19.0) (2018-11-08)
+
+
+### Features
+
+* **DropdownToggle - noCaret option:** Adds the noCaret option ([#893](https://github.com/patternfly/patternfly-react/issues/893)) ([21e6e64](https://github.com/patternfly/patternfly-react/commit/21e6e64))
+
+
+
+
 <a name="1.18.3"></a>
 ## [1.18.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.18.2...patternfly4-react-lerna-root@1.18.3) (2018-11-07)
 
