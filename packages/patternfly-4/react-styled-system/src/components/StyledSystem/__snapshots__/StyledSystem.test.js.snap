@@ -1,0 +1,452 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StyledBox test 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "borders": Object {
+        "lg": "3px solid",
+        "md": "2px solid",
+        "sm": "1px solid",
+      },
+      "breakpoints": Array [
+        "576px",
+        "768px",
+        "992px",
+        "1200px",
+      ],
+      "colors": Object {
+        "active_100": "#007bba",
+        "active_200": "#bee1f4",
+        "active_300": "#39a5dc",
+        "bg_100": "#fff",
+        "bg_200": "#fafafa",
+        "bg_300": "#ededed",
+        "bg_dark_100": "#282d33",
+        "bg_dark_200": "#393f44",
+        "bg_dark_transparent_100": "rgba(3,3,3,.62)",
+        "bg_dark_transparent_200": "rgba(3,3,3,.32)",
+        "bg_light_100": "#fff",
+        "bg_light_200": "#fafafa",
+        "bg_light_300": "#ededed",
+        "border": "#72767b",
+        "border_dark": "#72767b",
+        "border_light": "#bbb",
+        "border_light_200": "#ededed",
+        "color_100": "#282d33",
+        "color_200": "#72767b",
+        "danger_100": "#c00",
+        "danger_200": "#a30000",
+        "danger_300": "#470000",
+        "dark_100": "#282d33",
+        "dark_200": "#72767b",
+        "disabled_100": "#72767b",
+        "disabled_200": "#d1d1d1",
+        "info_100": "#39a5dc",
+        "info_200": "#004368",
+        "light_100": "#fff",
+        "light_200": "#ededed",
+        "link": "#007bba",
+        "link_hover": "#00486e",
+        "link_light_hover": "#1e7baa",
+        "primary_100": "#007bba",
+        "primary_200": "#00659c",
+        "primary_dark_100": "#007bba",
+        "primary_light_100": "#39a5dc",
+        "secondary_100": "#72767b",
+        "success_100": "#92d400",
+        "success_200": "#486b00",
+        "warning_100": "#f0ab00",
+        "warning_200": "#795600",
+      },
+      "fontSizes": Array [
+        "0.75rem",
+        "0.875rem",
+        "1rem",
+        "1.125rem",
+        "1.3125rem",
+        "1.5rem",
+        "1.75rem",
+        "2.25rem",
+      ],
+      "fontWeights": Object {
+        "bold": "600",
+        "light": "300",
+        "link": "500",
+        "normal": "400",
+        "semi_bold": "500",
+      },
+      "fonts": Object {
+        "monospace": "“Overpass-mono”,Overpass-mono,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
+        "sans_serif": "“Overpass”,Overpass,“open sans”,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+      },
+      "lineHeights": Object {
+        "md": "1.5",
+        "sm": "1.3",
+      },
+      "radii": Object {
+        "lg": "30em",
+        "sm": "3px",
+      },
+      "shadows": Object {
+        "inset": "inset 0 0 0.625rem 0 rgba(3,3,3,.25)",
+        "lg": "0 0.1875rem 0.4375rem 0.1875rem rgba(3,3,3,.13),0 0.6875rem 1.5rem 1rem rgba(3,3,3,.12)",
+        "lg_bottom": "0 0.75rem 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "lg_left": "-0.75rem 0 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "lg_right": "0.75rem 0 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "lg_top": "0 -0.75rem 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "md": "0 0.0625rem 0.0625rem 0rem rgba(3,3,3,.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,.06)",
+        "md_bottom": "0 0.3125rem 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "md_left": "-0.3125rem 0 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "md_right": "0.3125rem 0 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "md_top": "0 -0.3125rem 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "sm": "0 0.0625rem 0.125rem 0 rgba(3,3,3,.2)",
+        "sm_bottom": "0 0.25rem 0.625rem -0.25rem rgba(3,3,3,.12)",
+        "sm_left": "-0.25rem 0 0.625rem -0.25rem rgba(3,3,3,.12)",
+        "sm_right": "0.25rem 0 0.625rem -0.25rem rgba(3,3,3,.12)",
+        "sm_top": "0 -0.25rem 0.625rem -0.25rem rgba(3,3,3,.12)",
+      },
+      "space": Array [
+        "0.25rem",
+        "0.5rem",
+        "1rem",
+        "1.5rem",
+        "2rem",
+        "3rem",
+        "4rem",
+      ],
+    }
+  }
+>
+  <Styled(div)
+    alignSelf={null}
+    background={null}
+    backgroundImage={null}
+    backgroundPosition={null}
+    backgroundRepeat={null}
+    backgroundSize={null}
+    bg="dark_100"
+    border={null}
+    borderBottom={null}
+    borderColor={null}
+    borderLeft={null}
+    borderRadius={null}
+    borderRight={null}
+    borderTop={null}
+    bottom={null}
+    boxShadow={null}
+    className=""
+    color="light_100"
+    display={null}
+    flex={null}
+    flexBasis={null}
+    fontFamily="monospace"
+    fontSize="md"
+    height={null}
+    left={null}
+    m="md"
+    maxHeight={null}
+    maxWidth={null}
+    mb={null}
+    minHeight={null}
+    minWidth={null}
+    ml={null}
+    mr={null}
+    mt={null}
+    mx={null}
+    my={null}
+    opacity={null}
+    order={null}
+    overflow={null}
+    p="lg"
+    pb={null}
+    pl={null}
+    position={null}
+    pr={null}
+    pt={null}
+    px={null}
+    py={null}
+    ratio={null}
+    right={null}
+    top={null}
+    verticalAlign={null}
+    width={null}
+    zIndex={null}
+  >
+    Styled Box
+  </Styled(div)>
+</ThemeProvider>
+`;
+
+exports[`StyledFlex test 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "borders": Object {
+        "lg": "3px solid",
+        "md": "2px solid",
+        "sm": "1px solid",
+      },
+      "breakpoints": Array [
+        "576px",
+        "768px",
+        "992px",
+        "1200px",
+      ],
+      "colors": Object {
+        "active_100": "#007bba",
+        "active_200": "#bee1f4",
+        "active_300": "#39a5dc",
+        "bg_100": "#fff",
+        "bg_200": "#fafafa",
+        "bg_300": "#ededed",
+        "bg_dark_100": "#282d33",
+        "bg_dark_200": "#393f44",
+        "bg_dark_transparent_100": "rgba(3,3,3,.62)",
+        "bg_dark_transparent_200": "rgba(3,3,3,.32)",
+        "bg_light_100": "#fff",
+        "bg_light_200": "#fafafa",
+        "bg_light_300": "#ededed",
+        "border": "#72767b",
+        "border_dark": "#72767b",
+        "border_light": "#bbb",
+        "border_light_200": "#ededed",
+        "color_100": "#282d33",
+        "color_200": "#72767b",
+        "danger_100": "#c00",
+        "danger_200": "#a30000",
+        "danger_300": "#470000",
+        "dark_100": "#282d33",
+        "dark_200": "#72767b",
+        "disabled_100": "#72767b",
+        "disabled_200": "#d1d1d1",
+        "info_100": "#39a5dc",
+        "info_200": "#004368",
+        "light_100": "#fff",
+        "light_200": "#ededed",
+        "link": "#007bba",
+        "link_hover": "#00486e",
+        "link_light_hover": "#1e7baa",
+        "primary_100": "#007bba",
+        "primary_200": "#00659c",
+        "primary_dark_100": "#007bba",
+        "primary_light_100": "#39a5dc",
+        "secondary_100": "#72767b",
+        "success_100": "#92d400",
+        "success_200": "#486b00",
+        "warning_100": "#f0ab00",
+        "warning_200": "#795600",
+      },
+      "fontSizes": Array [
+        "0.75rem",
+        "0.875rem",
+        "1rem",
+        "1.125rem",
+        "1.3125rem",
+        "1.5rem",
+        "1.75rem",
+        "2.25rem",
+      ],
+      "fontWeights": Object {
+        "bold": "600",
+        "light": "300",
+        "link": "500",
+        "normal": "400",
+        "semi_bold": "500",
+      },
+      "fonts": Object {
+        "monospace": "“Overpass-mono”,Overpass-mono,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
+        "sans_serif": "“Overpass”,Overpass,“open sans”,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+      },
+      "lineHeights": Object {
+        "md": "1.5",
+        "sm": "1.3",
+      },
+      "radii": Object {
+        "lg": "30em",
+        "sm": "3px",
+      },
+      "shadows": Object {
+        "inset": "inset 0 0 0.625rem 0 rgba(3,3,3,.25)",
+        "lg": "0 0.1875rem 0.4375rem 0.1875rem rgba(3,3,3,.13),0 0.6875rem 1.5rem 1rem rgba(3,3,3,.12)",
+        "lg_bottom": "0 0.75rem 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "lg_left": "-0.75rem 0 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "lg_right": "0.75rem 0 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "lg_top": "0 -0.75rem 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "md": "0 0.0625rem 0.0625rem 0rem rgba(3,3,3,.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,.06)",
+        "md_bottom": "0 0.3125rem 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "md_left": "-0.3125rem 0 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "md_right": "0.3125rem 0 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "md_top": "0 -0.3125rem 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "sm": "0 0.0625rem 0.125rem 0 rgba(3,3,3,.2)",
+        "sm_bottom": "0 0.25rem 0.625rem -0.25rem rgba(3,3,3,.12)",
+        "sm_left": "-0.25rem 0 0.625rem -0.25rem rgba(3,3,3,.12)",
+        "sm_right": "0.25rem 0 0.625rem -0.25rem rgba(3,3,3,.12)",
+        "sm_top": "0 -0.25rem 0.625rem -0.25rem rgba(3,3,3,.12)",
+      },
+      "space": Array [
+        "0.25rem",
+        "0.5rem",
+        "1rem",
+        "1.5rem",
+        "2rem",
+        "3rem",
+        "4rem",
+      ],
+    }
+  }
+>
+  <Styled(div)
+    alignContent={null}
+    alignItems={null}
+    bg="dark_100"
+    className=""
+    color="light_100"
+    flexDirection={null}
+    flexWrap={null}
+    fontFamily="monospace"
+    fontSize="md"
+    justifyContent={null}
+    m="md"
+    p="lg"
+  >
+    Styled Flex
+  </Styled(div)>
+</ThemeProvider>
+`;
+
+exports[`StyledText test 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "borders": Object {
+        "lg": "3px solid",
+        "md": "2px solid",
+        "sm": "1px solid",
+      },
+      "breakpoints": Array [
+        "576px",
+        "768px",
+        "992px",
+        "1200px",
+      ],
+      "colors": Object {
+        "active_100": "#007bba",
+        "active_200": "#bee1f4",
+        "active_300": "#39a5dc",
+        "bg_100": "#fff",
+        "bg_200": "#fafafa",
+        "bg_300": "#ededed",
+        "bg_dark_100": "#282d33",
+        "bg_dark_200": "#393f44",
+        "bg_dark_transparent_100": "rgba(3,3,3,.62)",
+        "bg_dark_transparent_200": "rgba(3,3,3,.32)",
+        "bg_light_100": "#fff",
+        "bg_light_200": "#fafafa",
+        "bg_light_300": "#ededed",
+        "border": "#72767b",
+        "border_dark": "#72767b",
+        "border_light": "#bbb",
+        "border_light_200": "#ededed",
+        "color_100": "#282d33",
+        "color_200": "#72767b",
+        "danger_100": "#c00",
+        "danger_200": "#a30000",
+        "danger_300": "#470000",
+        "dark_100": "#282d33",
+        "dark_200": "#72767b",
+        "disabled_100": "#72767b",
+        "disabled_200": "#d1d1d1",
+        "info_100": "#39a5dc",
+        "info_200": "#004368",
+        "light_100": "#fff",
+        "light_200": "#ededed",
+        "link": "#007bba",
+        "link_hover": "#00486e",
+        "link_light_hover": "#1e7baa",
+        "primary_100": "#007bba",
+        "primary_200": "#00659c",
+        "primary_dark_100": "#007bba",
+        "primary_light_100": "#39a5dc",
+        "secondary_100": "#72767b",
+        "success_100": "#92d400",
+        "success_200": "#486b00",
+        "warning_100": "#f0ab00",
+        "warning_200": "#795600",
+      },
+      "fontSizes": Array [
+        "0.75rem",
+        "0.875rem",
+        "1rem",
+        "1.125rem",
+        "1.3125rem",
+        "1.5rem",
+        "1.75rem",
+        "2.25rem",
+      ],
+      "fontWeights": Object {
+        "bold": "600",
+        "light": "300",
+        "link": "500",
+        "normal": "400",
+        "semi_bold": "500",
+      },
+      "fonts": Object {
+        "monospace": "“Overpass-mono”,Overpass-mono,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace",
+        "sans_serif": "“Overpass”,Overpass,“open sans”,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+      },
+      "lineHeights": Object {
+        "md": "1.5",
+        "sm": "1.3",
+      },
+      "radii": Object {
+        "lg": "30em",
+        "sm": "3px",
+      },
+      "shadows": Object {
+        "inset": "inset 0 0 0.625rem 0 rgba(3,3,3,.25)",
+        "lg": "0 0.1875rem 0.4375rem 0.1875rem rgba(3,3,3,.13),0 0.6875rem 1.5rem 1rem rgba(3,3,3,.12)",
+        "lg_bottom": "0 0.75rem 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "lg_left": "-0.75rem 0 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "lg_right": "0.75rem 0 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "lg_top": "0 -0.75rem 0.625rem -0.25rem rgba(3,3,3,.07)",
+        "md": "0 0.0625rem 0.0625rem 0rem rgba(3,3,3,.05),0 0.25rem 0.5rem 0.25rem rgba(3,3,3,.06)",
+        "md_bottom": "0 0.3125rem 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "md_left": "-0.3125rem 0 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "md_right": "0.3125rem 0 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "md_top": "0 -0.3125rem 0.625rem -0.25rem rgba(3,3,3,.25)",
+        "sm": "0 0.0625rem 0.125rem 0 rgba(3,3,3,.2)",
+        "sm_bottom": "0 0.25rem 0.625rem -0.25rem rgba(3,3,3,.12)",
+        "sm_left": "-0.25rem 0 0.625rem -0.25rem rgba(3,3,3,.12)",
+        "sm_right": "0.25rem 0 0.625rem -0.25rem rgba(3,3,3,.12)",
+        "sm_top": "0 -0.25rem 0.625rem -0.25rem rgba(3,3,3,.12)",
+      },
+      "space": Array [
+        "0.25rem",
+        "0.5rem",
+        "1rem",
+        "1.5rem",
+        "2rem",
+        "3rem",
+        "4rem",
+      ],
+    }
+  }
+>
+  <Styled(div)
+    bg="dark_100"
+    className=""
+    color="light_100"
+    fontFamily="monospace"
+    fontSize="md"
+    fontWeight={null}
+    letterSpacing={null}
+    lineHeight={null}
+    m="md"
+    p="lg"
+    textAlign={null}
+  >
+    Styled Text
+  </Styled(div)>
+</ThemeProvider>
+`;

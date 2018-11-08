@@ -1,5 +1,45 @@
 
-## Change Log (2018-11-06)
+## patternfly3-react-lerna-root@7.8.6 (2018-11-07)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#877](https://github.com/patternfly/patternfly-react/pull/877) fix(FilterSidePanel/VerticalTabs): Adjust top and bottom spacing of f… ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly-react-extensions@2.12.6 (2018-11-07)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#877](https://github.com/patternfly/patternfly-react/pull/877) fix(FilterSidePanel/VerticalTabs): Adjust top and bottom spacing of f… ([@rhamilto](https://github.com/rhamilto))
+
+#### Committers: 1
+- Robb Hamilton ([@rhamilto](https://github.com/rhamilto))
+
+
+## patternfly4-react-lerna-root@1.18.0 (2018-11-06)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#863](https://github.com/patternfly/patternfly-react/pull/863) feat(LoginPage): introduce the login page component ([@amarie401](https://github.com/amarie401))
+
+#### Committers: 1
+- Amiee Lo ([@amarie401](https://github.com/amarie401))
+
+
+## @patternfly/react-docs@3.17.35 (2018-11-06)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#863](https://github.com/patternfly/patternfly-react/pull/863) feat(LoginPage): introduce the login page component ([@amarie401](https://github.com/amarie401))
+
+#### Committers: 1
+- Amiee Lo ([@amarie401](https://github.com/amarie401))
+
+
+## @patternfly/react-core@1.31.0 (2018-11-06)
 
 #### :rocket: New Feature
 * `patternfly-4`

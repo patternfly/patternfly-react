@@ -30,13 +30,15 @@ const defaultProps = {
 };
 
 class ComponentDocs extends React.PureComponent {
-
   render() {
     const { title, description, examples, components, enumValues, fullPageOnly, rawExamples, images } = this.props;
+    const makeDescription = html => ({ __html: html });
     return (
       <Content>
         <Title size="3xl">{title}</Title>
-        {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
+        {Boolean(description) && (
+          <p className={css(styles.description)} dangerouslySetInnerHTML={makeDescription(description)} />
+        )}
         <Section title="Examples">
           {examples.map((ComponentExample, i) => {
             const { __docgenInfo: componentDocs } = ComponentExample;
@@ -61,7 +63,13 @@ class ComponentDocs extends React.PureComponent {
           })}
         </Section>
         {Object.entries(components).map(([componentName, { __docgenInfo: componentDocs }]) => (
-          <PropsTable key={componentName} name={componentName} props={componentDocs.props} enumValues={enumValues} />
+          <PropsTable
+            key={componentName}
+            name={componentName}
+            description={componentDocs.description}
+            props={componentDocs.props}
+            enumValues={enumValues}
+          />
         ))}
       </Content>
     );

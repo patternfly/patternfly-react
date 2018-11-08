@@ -20,16 +20,18 @@ const docGenPropShape = PropTypes.shape({
 const propTypes = {
   name: PropTypes.string.isRequired,
   props: PropTypes.objectOf(docGenPropShape),
-  enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any))
+  enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
+  description: PropTypes.string
 };
 
 const defaultProps = {
   props: [],
-  enumValues: {}
+  enumValues: {},
+  description: ''
 };
 
-export const PropsTable = ({ name, props, enumValues }) => (
-  <Section title={`${name} Props`} description={`The ${name} component accepts the following props.`}>
+export const PropsTable = ({ name, description: preface, props, enumValues }) => (
+  <Section title={`${name} Props`} preface={preface} description={`The ${name} component accepts the following props.`}>
     <Table>
       <Heading>
         <TH>Name</TH>

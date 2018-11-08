@@ -5,6 +5,7 @@
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
+  "patternfly:src": "src/",
   "sideEffects": false,
   "publishConfig": {
     "access": "public"
@@ -24,10 +25,11 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build": "yarn build:babel",
+    "build": "yarn build:babel && yarn build:ts",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm"
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
+    "build:ts": "node ./scripts/copyTS.js"
   },
   "dependencies": {
     "@patternfly/react-styles": "^2.3.0",
@@ -46,5 +48,8 @@
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "npmlog": "^4.1.2"
+  },
+  "optionalDependencies": {
+    "@types/styled-system": "^3.0.7"
   }
 }
