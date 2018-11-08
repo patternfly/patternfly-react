@@ -45,33 +45,35 @@ import '@patternfly/react-core/dist/styles/base.css';
 
 ```javascript
 import React from 'react';
-import { StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 class StyledStyles extends React.Component {
    render() {
     const { fonts, space, fontWeights, fontSizes, borders, colors } = StyledConstants;
     return (
-      <React.Fragment>
-        <StyledBox m={space.md} border={borders.md}>
-          sets medium margin value
-        </StyledBox>
-        <StyledBox m={space.neg_sm} border={borders.md}>
-          sets negative medium margin value
-        </StyledBox>
-        <StyledBox m="auto" border={borders.md}>
-          sets margin auto
-        </StyledBox>
-        <StyledBox p={[space.xs, space.sm, space.md, space.lg]} height={50} border={borders.md}>
-          This box has different paddings depending on the screen width
-        </StyledBox>
-        <StyledText fontFamily={fonts.monospace}>Monospace</StyledText>
-        <StyledText fontSize={fontSizes.lg}>Large font size</StyledText>
-        <StyledFlex px={space.md} py={space.xl} alignItems="center">
-          <StyledBox color={colors.color_200}>Left Text</StyledBox>
-          <StyledBox mx="auto" />
-          <StyledBox color={colors.dark_200}>Right Text</StyledBox>
-        </StyledFlex>
-      </React.Fragment>
+      <PatternFlyThemeProvider>
+        <React.Fragment>
+          <StyledBox m={space.md} border={borders.md}>
+            sets medium margin value
+          </StyledBox>
+          <StyledBox m={space.neg_sm} border={borders.md}>
+            sets negative medium margin value
+          </StyledBox>
+          <StyledBox m="auto" border={borders.md}>
+            sets margin auto
+          </StyledBox>
+          <StyledBox p={[space.xs, space.sm, space.md, space.lg]} height={50} border={borders.md}>
+            This box has different paddings depending on the screen width
+          </StyledBox>
+          <StyledText fontFamily={fonts.monospace}>Monospace</StyledText>
+          <StyledText fontSize={fontSizes.lg}>Large font size</StyledText>
+          <StyledFlex px={space.md} py={space.xl} alignItems="center">
+            <StyledBox color={colors.color_200}>Left Text</StyledBox>
+            <StyledBox mx="auto" />
+            <StyledBox color={colors.dark_200}>Right Text</StyledBox>
+          </StyledFlex>
+        </React.Fragment>
+      </PatternFlyThemeProvider>
     );
   }
 }
