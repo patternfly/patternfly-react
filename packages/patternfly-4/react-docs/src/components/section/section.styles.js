@@ -14,6 +14,6 @@ export default StyleSheet.create({
   },
   preface: {
     marginTop: spacerSm.var,
-    marginBottom: spacerLg.var
+    marginBottom: spacerSm.var
   }
 });

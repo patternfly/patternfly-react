@@ -22,6 +22,7 @@ exports[`Dropdown toggle 1`] = `
 
 <DropdownToggle
   className=""
+  iconComponent={[Function]}
   id="Dropdown Toggle"
   isActive={false}
   isFocused={false}

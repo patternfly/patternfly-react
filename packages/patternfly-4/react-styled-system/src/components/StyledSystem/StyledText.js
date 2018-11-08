@@ -19,6 +19,9 @@ const StyledTextBase = styled(StyledBoxBase)(
   textAlign
 );
 
+/**
+ * StyledText inherits all the props from the StyledBox component.
+ */
 const StyledText = ({ className, children, component, ...props }) => {
   const StyledTextBaseWithComponent = StyledTextBase.withComponent(component);
   return (

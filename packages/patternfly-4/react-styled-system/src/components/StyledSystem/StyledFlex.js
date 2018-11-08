@@ -17,6 +17,9 @@ const StyledFlexBase = styled(StyledBoxBase)(
   justifyContent
 );
 
+/**
+ * StyledFlex inherits all the props from the StyledBox component.
+ */
 const StyledFlex = ({ className, children, component, ...props }) => {
   const StyledFlexBaseWithComponent = StyledFlexBase.withComponent(component);
   return (
