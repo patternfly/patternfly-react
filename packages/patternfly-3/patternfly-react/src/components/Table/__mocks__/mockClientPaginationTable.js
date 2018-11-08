@@ -716,7 +716,7 @@ export class MockClientPaginationTable extends React.Component {
       this.setPage(this.state.pagination.page - 1);
     }
   };
-  onNextPage () => {
+  onNextPage = () => {
     const { page } = this.state.pagination;
     if (page < this.totalPages()) {
       this.setPage(this.state.pagination.page + 1);
