@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.19.1"></a>
+## [1.19.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.19.0...patternfly4-react-lerna-root@1.19.1) (2018-11-08)
+
+
+### Bug Fixes
+
+* **dropdown props:** fix typescript typings ([#900](https://github.com/patternfly/patternfly-react/issues/900)) ([e1ae1bd](https://github.com/patternfly/patternfly-react/commit/e1ae1bd))
+
+
+
+
 <a name="1.19.0"></a>
 # [1.19.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.18.3...patternfly4-react-lerna-root@1.19.0) (2018-11-08)
 

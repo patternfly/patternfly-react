@@ -1,4 +1,14 @@
 
+## Change Log (2018-11-08)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#900](https://github.com/patternfly/patternfly-react/pull/900) fix(dropdown props): fix typescript typings ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
 ## patternfly3-react-lerna-root@7.8.6 (2018-11-07)
 
 #### :bug: Bug Fix
