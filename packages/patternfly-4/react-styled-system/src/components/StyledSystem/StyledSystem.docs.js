@@ -33,6 +33,7 @@ export default {
     OverrideTheme
   ],
   description: `
+    <strong>Warning, the StyledSystem components are experimental and in their own package @patternfly/react-styled-system. Use at your own risk!</strong><br />
     The PatternFlyThemeProvider component maps CSS to PatternFly global values that can be used with StyledBox, StyledFlex, and StyledText components.<br />
     The StyledFlex and StyledText components inherit all the props from StyledBox in addition to their own props.<br />
     To apply the PatternFly theme, use <PatternFlyThemeProvider> at the root of your application.`
