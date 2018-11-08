@@ -1,4 +1,4 @@
-import { victory } from '@types/victory';
+import * as victory from 'victory';
 
 export interface ChartVoronoiContainerProps extends
     victory.VictoryCommonProps,

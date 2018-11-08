@@ -6,10 +6,6 @@ const styles = StyleSheet.create({
       '.chart-overflow': {
         ':not(foo) svg': {
           overflow: 'visible'
-        },
-        ':not(foo) text': {
-          fontSize: '12px',
-          length: '12px'
         }
       },
       '.chart-title': {
