@@ -1,0 +1,33 @@
+{
+  "presets": [
+    "../.babelrc.js"
+  ],
+  "env": {
+    "production:esm": {
+      "plugins": [
+        [
+          "@patternfly/react-styles/babel",
+          {
+            "srcDir": "./src",
+            "outDir": "./dist/esm",
+            "useModules": true
+          }
+        ],
+        "lodash"
+      ]
+    },
+    "production:cjs": {
+      "plugins": [
+        [
+          "@patternfly/react-styles/babel",
+          {
+            "srcDir": "./src",
+            "outDir": "./dist/js",
+            "useModules": false
+          }
+        ],
+        "lodash"
+      ]
+    }
+  }
+}
