@@ -22,6 +22,7 @@ exports[`state active 1`] = `
 
 <DropdownToggle
   className=""
+  iconComponent={[Function]}
   id="Dropdown Toggle"
   isActive={true}
   isFocused={false}
@@ -96,6 +97,7 @@ exports[`state focus 1`] = `
 
 <DropdownToggle
   className=""
+  iconComponent={[Function]}
   id="Dropdown Toggle"
   isActive={false}
   isFocused={true}
@@ -170,6 +172,7 @@ exports[`state hover 1`] = `
 
 <DropdownToggle
   className=""
+  iconComponent={[Function]}
   id="Dropdown Toggle"
   isActive={false}
   isFocused={false}

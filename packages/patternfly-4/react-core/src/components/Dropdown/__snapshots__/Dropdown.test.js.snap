@@ -1348,6 +1348,7 @@ exports[`dropdown basic 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1365,6 +1366,7 @@ exports[`dropdown basic 1`] = `
   >
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1536,6 +1538,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1553,6 +1556,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   >
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1707,6 +1711,7 @@ exports[`dropdown dropup 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1724,6 +1729,7 @@ exports[`dropdown dropup 1`] = `
   >
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1906,6 +1912,7 @@ exports[`dropdown expanded 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -1923,6 +1930,7 @@ exports[`dropdown expanded 1`] = `
   >
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -2237,6 +2245,7 @@ exports[`dropdown regular 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -2254,6 +2263,7 @@ exports[`dropdown regular 1`] = `
   >
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -2408,6 +2418,7 @@ exports[`dropdown right aligned 1`] = `
   toggle={
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
@@ -2425,6 +2436,7 @@ exports[`dropdown right aligned 1`] = `
   >
     <DropdownToggle
       className=""
+      iconComponent={[Function]}
       id="Dropdown Toggle"
       isActive={false}
       isFocused={false}
