@@ -4,6 +4,7 @@ import {
   Dropdown,
   DropdownItem,
   DropdownToggle,
+  LoginForm,
   LoginPage,
   BackgroundImageSrc,
   ListItem
@@ -31,7 +32,10 @@ class SimpleLoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isDropDownOpen: false
+      isDropDownOpen: false,
+      usernameValue: '',
+      passwordValue: '',
+      isRememberMeChecked: false
     };
   }
 
@@ -45,6 +49,18 @@ class SimpleLoginPage extends React.Component {
     this.setState({
       isDropDownOpen: !this.state.isDropDownOpen
     });
+  };
+
+  handleUsernameChange = value => {
+    this.setState({ usernameValue: value });
+  };
+
+  handlePasswordChange = passwordValue => {
+    this.setState({ passwordValue });
+  };
+
+  onRememberMeClick = () => {
+    this.setState({ isRememberMeChecked: !this.state.isRememberMeChecked });
   };
 
   render() {
@@ -81,6 +97,26 @@ class SimpleLoginPage extends React.Component {
         </ListItem>
       </React.Fragment>
     );
+
+    const loginForm = (
+      <LoginForm
+        usernameLabel="Username"
+        usernameValue={this.state.usernameValue}
+        onChangeUsername={this.handleUsernameChange}
+        usernameHelperTextInvalid="Unknown Username"
+        isValidUsername
+        passwordLabel="Password"
+        passwordValue={this.state.passwordValue}
+        onChangePassword={this.handlePasswordChange}
+        passwordHelperTextInvalid="Password Invalid"
+        isValidPassword
+        rememberMeLabel="Keep me logged in for 30 days."
+        isRememberMeChecked={this.state.isRememberMeChecked}
+        onChangeRememberMe={this.onRememberMeClick}
+        rememberMeAriaLabel="Remember me Checkbox"
+      />
+    );
+
     return (
       <LoginPage
         mainListVariants="inline"
@@ -94,7 +130,9 @@ class SimpleLoginPage extends React.Component {
         loginTitle="Login to your account"
         loginSubtitle={subtitle}
         loginLanguageDropdown={languageDropdown}
-      />
+      >
+        {loginForm}
+      </LoginPage>
     );
   }
 }
