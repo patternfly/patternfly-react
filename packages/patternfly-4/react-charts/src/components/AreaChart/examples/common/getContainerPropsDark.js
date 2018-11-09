@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     backgroundSize: 'cover',
     '& > *': {
       '.chart-overflow': {
-        ':not(foo) svg': {
+        '& svg': {
           overflow: 'visible'
         }
       },

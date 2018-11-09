@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   demoLayout: {
     '& > *': {
       '.chart-overflow': {
-        ':not(foo) svg': {
+        '& svg': {
           overflow: 'visible'
         }
       },

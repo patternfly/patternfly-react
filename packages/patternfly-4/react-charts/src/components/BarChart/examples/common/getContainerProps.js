@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         marginLeft: '20px'
       },
       '.chart-overflow': {
-        ':not(foo) svg': {
+        '& svg': {
           overflow: 'visible'
         }
       },
