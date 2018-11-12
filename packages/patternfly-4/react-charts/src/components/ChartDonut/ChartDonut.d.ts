@@ -1,9 +1,7 @@
-import { HTMLProps, SFC, ReactType, ReactNode } from 'react';
-import { OneOf } from '../../typeUtils';
+import * as victory from 'victory';
 
-export interface ChartDonutProps extends HTMLProps<HTMLDivElement> {
-}
+export interface ChartDonutProps extends victory.VictoryPieProps {}
 
-declare const ChartDonut: SFC<ChartDonutProps>;
+declare const ChartDonut: React.ComponentClass<ChartDonutProps>;
 
 export default ChartDonut;

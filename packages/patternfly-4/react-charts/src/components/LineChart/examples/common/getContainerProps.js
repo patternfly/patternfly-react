@@ -15,12 +15,8 @@ const styles = StyleSheet.create({
         display: 'inline-flex'
       },
       '.chart-overflow': {
-        ':not(foo) svg': {
+        '& svg': {
           overflow: 'visible'
-        },
-        ':not(foo) text': {
-          fontSize: '12px',
-          length: '12px'
         }
       },
       '.chart-title': {
