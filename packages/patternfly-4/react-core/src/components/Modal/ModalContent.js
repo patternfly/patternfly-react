@@ -44,10 +44,8 @@ const ModalContent = ({ children, className, isOpen, title, hideTitle, actions, 
   const modalBoxHeader = title && <ModalBoxHeader> {title} </ModalBoxHeader>;
   const modalBoxFooter = actions && <ModalBoxFooter> {actions} </ModalBoxFooter>;
   if (!isOpen) {
-    document.body.classList.remove(css(styles.backdropOpen));
     return null;
   }
-  document.body.classList.add(css(styles.backdropOpen));
   return (
     <Backdrop>
       <Bullseye>
