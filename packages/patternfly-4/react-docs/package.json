@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@patternfly/react-charts": "^1.0.3",
+    "@patternfly/react-styled-system": "^1.0.0",
     "@patternfly/react-core": "^1.32.2",
     "@patternfly/react-icons": "^2.7.1",
     "@patternfly/react-styles": "^2.3.0",

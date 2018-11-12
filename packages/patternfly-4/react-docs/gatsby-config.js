@@ -20,6 +20,13 @@ module.exports = {
         path: resolve(__dirname, '../react-charts/src')
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `components`,
+        path: resolve(__dirname, '../react-styled-system/src')
+      }
+    },
     'gatsby-transformer-react-docgen',
     'gatsby-plugin-emotion'
   ],

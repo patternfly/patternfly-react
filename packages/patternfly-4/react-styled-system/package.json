@@ -1,0 +1,55 @@
+{
+  "name": "@patternfly/react-styled-system",
+  "version": "1.0.0",
+  "description": "Experimental: Styled System package with PatternFly 4 theming",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/js/index.d.ts",
+  "patternfly:src": "src/",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "scripts": {
+    "build": "yarn build:babel && yarn build:ts",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
+    "build:ts": "node ./scripts/copyTS.js"
+  },
+  "dependencies": {
+    "@patternfly/react-styles": "^2.3.0",
+    "@patternfly/react-tokens": "^1.7.0",
+    "emotion-theming": "^9.2.9",
+    "react-emotion": "^9.2.12",
+    "styled-system": "^3.1.11"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0"
+  },
+  "devDependencies": {
+    "@patternfly/patternfly-next": "1.0.69",
+    "css": "^2.2.3",
+    "fs-extra": "^6.0.1",
+    "glob": "^7.1.2",
+    "npmlog": "^4.1.2"
+  },
+  "optionalDependencies": {
+    "@types/styled-system": "^3.0.7"
+  }
+}

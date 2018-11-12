@@ -8,21 +8,24 @@ const propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.node,
-  className: PropTypes.string
+  className: PropTypes.string,
+  preface: PropTypes.string
 };
 
 const defaultProps = {
   children: null,
   className: '',
   title: '',
-  description: ''
+  description: '',
+  preface: ''
 };
 
-const Section = ({ children, className, title, description, ...props }) => (
+const Section = ({ children, className, title, description, preface, ...props }) => (
   <section className={css(styles.section, className)}>
     {Boolean(title || description) && (
       <header className={css(styles.header)}>
         {Boolean(title) && <Title size="lg">{title}</Title>}
+        {Boolean(preface) && <p className={css(styles.preface)}>{preface}</p>}
         {Boolean(description) && <p>{description}</p>}
       </header>
     )}

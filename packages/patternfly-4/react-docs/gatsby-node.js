@@ -26,6 +26,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         '@patternfly/react-charts': path.resolve(__dirname, '../react-charts/src'),
         '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),
+        '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system/src'),
         react: path.resolve(__dirname, 'node_modules/react'),
         'react-dom': path.resolve(__dirname, 'node_modules/react-dom')
       }
@@ -101,7 +102,8 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           .slice(0, 2)
           .join('/') === doc.relativeDirectory
       ) {
-        const packageDir = doc.absolutePath.indexOf('react-charts') !== -1 ? 'react-charts' : 'react-core';
+        const getPackage = pkg => doc.absolutePath.indexOf(pkg) !== -1 && pkg;
+        const packageDir = getPackage('react-core') || getPackage('react-charts') || getPackage('react-styled-system');
         const examplePath = `../../${packageDir}/src/${example.relativePath}`;
         rawExamples.push(`{name: '${example.name}', path: '${examplePath}', file: require('!!raw!${examplePath}')}`);
       }

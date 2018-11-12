@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import * as ChartComponents from '@patternfly/react-charts';
 import * as CoreComponents from '@patternfly/react-core';
 import * as CoreIcons from '@patternfly/react-icons';
+import * as StyledSystemComponents from '@patternfly/react-styled-system';
 import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
 import { transform } from 'babel-standalone';
 import Section from '../section';
@@ -28,7 +29,7 @@ const defaultProps = {
   liveScope: {}
 };
 
-const scopePlayground = { React, ...ChartComponents, ...CoreComponents, ...CoreIcons, css };
+const scopePlayground = { React, ...ChartComponents, ...StyledSystemComponents, ...CoreComponents, ...CoreIcons, css };
 
 const transformCode = code => {
   try {

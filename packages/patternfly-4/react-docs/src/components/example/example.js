@@ -50,6 +50,8 @@ const Example = ({
   liveScope,
   ...props
 }) => {
+  const makeDescription = html => ({ __html: html });
+
   // Display full page link
   if (fullPageOnly) {
     const pathName = typeof window !== 'undefined' ? window.location.pathname : '';
@@ -80,7 +82,9 @@ const Example = ({
   return (
     <div>
       <Title size="lg">{title}</Title>
-      {Boolean(description) && <p className={css(styles.description)}>{description}</p>}
+      {Boolean(description) && (
+        <p className={css(styles.description)} dangerouslySetInnerHTML={makeDescription(description)} />
+      )}
       {GATSBY_LIVE_EXAMPLES ? (
         <React.Fragment>
           {!live && (
@@ -98,13 +102,13 @@ const Example = ({
           />
         </React.Fragment>
       ) : (
-          <React.Fragment>
-            <div className={css(className, styles.example)} {...props}>
-              {children}
-            </div>
-            <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
-          </React.Fragment>
-        )}
+        <React.Fragment>
+          <div className={css(className, styles.example)} {...props}>
+            {children}
+          </div>
+          <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
+        </React.Fragment>
+      )}
     </div>
   );
 };
