@@ -50,7 +50,12 @@ const propTypes = {
   /** Function that handles the onChange event for the Remember Me Checkbox */
   onChangeRememberMe: PropTypes.func,
   /** Aria Label for the Remember me checkbox */
-  rememberMeAriaLabel: PropTypes.string.isRequired
+  rememberMeLabel: props => {
+    if (!props.rememberMeLabel && !props.rememberMeLabel) {
+      return new Error('rememberMeLabel is required with the Remember me checkbox');
+    }
+    return null;
+  }
 };
 
 const defaultProps = {
@@ -72,7 +77,8 @@ const defaultProps = {
   onLoginButtonClick: () => undefined,
   rememberMeLabel: 'Remember me',
   isRememberMeChecked: false,
-  onChangeRememberMe: () => undefined
+  onChangeRememberMe: () => undefined,
+  rememberMeAriaLabel: 'Remember me'
 };
 
 const LoginForm = ({
@@ -158,14 +164,16 @@ const LoginForm = ({
         {loginButtonLabel}
       </Button>
       <div className={css(alignmentStyles.textAlignCenter, alignmentStyles.textAlignLeftOnMd)}>
-        <Checkbox
-          className={css(spacingStyles.mMd, flexStyles.alignItemsCenter, displayStyles.displayFlex)}
-          id="pf-login-remember-me-id"
-          label={rememberMeLabel}
-          checked={isRememberMeChecked}
-          onChange={onChangeRememberMe}
-          aria-label={rememberMeAriaLabel}
-        />
+        {rememberMeLabel && (
+          <Checkbox
+            className={css(spacingStyles.mMd, flexStyles.alignItemsCenter, displayStyles.displayFlex)}
+            id="pf-login-remember-me-id"
+            label={rememberMeLabel}
+            checked={isRememberMeChecked}
+            onChange={onChangeRememberMe}
+            aria-label={rememberMeAriaLabel}
+          />
+        )}
       </div>
     </ActionGroup>
   </Form>
