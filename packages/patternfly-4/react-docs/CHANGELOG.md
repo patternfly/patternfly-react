@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.19.0"></a>
+# [3.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.18.0...@patternfly/react-docs@3.19.0) (2018-11-12)
+
+
+### Features
+
+* **styled-system:** adds styled system to pf4 as its own package ([#891](https://github.com/patternfly/patternfly-react/issues/891)) ([2888855](https://github.com/patternfly/patternfly-react/commit/2888855))
+
+
+
+
 <a name="3.18.0"></a>
 # [3.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.17.42...@patternfly/react-docs@3.18.0) (2018-11-12)
 
