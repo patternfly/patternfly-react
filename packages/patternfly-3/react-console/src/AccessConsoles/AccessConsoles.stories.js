@@ -34,18 +34,18 @@ stories.add(
 );
 
 stories.add(
-    'AccessConsoles - single',
-    withInfo()(() => {
-        const story = (
-            <AccessConsoles>
-                <SerialConsoleConnector onConnect={noop} onDisconnect={noop} status={DISCONNECTED} type={SERIAL_CONSOLE_TYPE} />
-            </AccessConsoles>
-        );
-        return inlineTemplate({
-            story,
-            title: 'AccessConsoles - single'
-        });
-    })
+  'AccessConsoles - single',
+  withInfo()(() => {
+    const story = (
+      <AccessConsoles preselectedType={SERIAL_CONSOLE_TYPE}>
+        <SerialConsoleConnector onConnect={noop} onDisconnect={noop} status={DISCONNECTED} type={SERIAL_CONSOLE_TYPE} />
+      </AccessConsoles>
+    );
+    return inlineTemplate({
+      story,
+      title: 'AccessConsoles - single'
+    });
+  })
 );
 
 stories.add(

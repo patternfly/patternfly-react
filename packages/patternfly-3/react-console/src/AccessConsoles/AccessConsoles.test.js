@@ -54,6 +54,21 @@ test('AccessConsoles with wrapped SerialConsole as a child', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('AccessConsoles with preselected SerialConsole', () => {
+  const wrapper = mount(
+    <AccessConsoles preselectedType={SERIAL_CONSOLE_TYPE}>
+      <SerialConsoleConnected type={SERIAL_CONSOLE_TYPE} />
+    </AccessConsoles>
+  );
+  expect(wrapper).toMatchSnapshot();
+  expect(wrapper.find('SerialConsoleConnected')).toHaveLength(1);
+
+  const button = wrapper.find('button #console-type-selector');
+  expect(button).toHaveLength(1);
+  const consoleItems = wrapper.find('ul li');
+  expect(consoleItems).toHaveLength(1); // single value only
+});
+
 test('AccessConsoles switching SerialConsole and VncConsole', () => {
   const wrapper = mount(
     <AccessConsoles>
