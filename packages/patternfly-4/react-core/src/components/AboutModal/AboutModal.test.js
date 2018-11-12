@@ -22,11 +22,11 @@ const props = {
   heroImageSrc: 'heroImg...'
 };
 
-test('AboutModal creates a container element once', () => {
+test('AboutModal creates a container element once for div', () => {
   const view = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
   view.update();
   expect(document.createElement).toBeCalledWith('div');
-  expect(document.createElement).toHaveBeenCalledTimes(1);
+  expect(document.createElement).toHaveBeenCalledTimes(3);
 });
 
 test('About Modal closes with escape', () => {
