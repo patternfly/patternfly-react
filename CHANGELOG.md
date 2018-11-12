@@ -1,4 +1,14 @@
 
+## Change Log (2018-11-12)
+
+#### :memo: Documentation
+* [#882](https://github.com/patternfly/patternfly-react/pull/882) update contributing guidelines ([@christiemolloy](https://github.com/christiemolloy))
+
+#### Committers: 2
+- Christie Molloy ([@christiemolloy](https://github.com/christiemolloy))
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
 ## patternfly4-react-lerna-root@1.19.1 (2018-11-08)
 
 #### :bug: Bug Fix
