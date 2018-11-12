@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.18.0"></a>
+# [3.18.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.17.42...@patternfly/react-docs@3.18.0) (2018-11-12)
+
+
+### Features
+
+* **a11y:** add accessibility checks for pf4 ([#904](https://github.com/patternfly/patternfly-react/issues/904)) ([f324be7](https://github.com/patternfly/patternfly-react/commit/f324be7))
+
+
+
+
 <a name="3.17.42"></a>
 ## [3.17.42](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.17.41...@patternfly/react-docs@3.17.42) (2018-11-12)
 

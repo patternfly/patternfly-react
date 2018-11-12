@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.20.0"></a>
+# [1.20.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.19.3...patternfly4-react-lerna-root@1.20.0) (2018-11-12)
+
+
+### Features
+
+* **a11y:** add accessibility checks for pf4 ([#904](https://github.com/patternfly/patternfly-react/issues/904)) ([f324be7](https://github.com/patternfly/patternfly-react/commit/f324be7))
+
+
+
+
 <a name="1.19.3"></a>
 ## [1.19.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.19.2...patternfly4-react-lerna-root@1.19.3) (2018-11-12)
 

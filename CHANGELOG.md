@@ -1,5 +1,25 @@
 
-## Change Log (2018-11-12)
+## patternfly4-react-lerna-root@1.19.3 (2018-11-12)
+
+#### :memo: Documentation
+* [#882](https://github.com/patternfly/patternfly-react/pull/882) update contributing guidelines ([@christiemolloy](https://github.com/christiemolloy))
+
+#### Committers: 2
+- Christie Molloy ([@christiemolloy](https://github.com/christiemolloy))
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-docs@3.17.42 (2018-11-12)
+
+#### :memo: Documentation
+* [#882](https://github.com/patternfly/patternfly-react/pull/882) update contributing guidelines ([@christiemolloy](https://github.com/christiemolloy))
+
+#### Committers: 2
+- Christie Molloy ([@christiemolloy](https://github.com/christiemolloy))
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-charts@1.0.3 (2018-11-12)
 
 #### :memo: Documentation
 * [#882](https://github.com/patternfly/patternfly-react/pull/882) update contributing guidelines ([@christiemolloy](https://github.com/christiemolloy))
