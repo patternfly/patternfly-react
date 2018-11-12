@@ -73,7 +73,7 @@ yarn publish
 
 ### Storybook UI Development
 
-This project uses [React Storybook](https://storybook.js.org/) to test and demo new PaternFly 3React UI components. You can view our current storybook [here](https://rawgit.com/patternfly/patternfly-react/gh-pages/index.html).
+This project uses [React Storybook](https://storybook.js.org/) to test and demo new PaternFly 3React UI components. You can view our current storybook [here](http://patternfly-react.surge.sh/).
 
 How to use Storybook locally:
 
