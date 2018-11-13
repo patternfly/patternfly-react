@@ -35,11 +35,13 @@ exports[`Component matches snapshot 1`] = `
         class="login-pf-brand"
         title="Patternfly"
       />
-      <p>
+      <div
+        class="login-pf-caption"
+      >
         This is placeholder text, only. Use this area to place any information or
     introductory message about your application that may be relevant for
     users.
-      </p>
+      </div>
     </header>
     <div
       class="card-pf login-pf-accounts "
@@ -161,7 +163,7 @@ exports[`Component matches snapshot 1`] = `
             </a>
           </div>
           <button
-            class="btn btn-lg btn-primary btn-block"
+            class="login-pf-submit-button btn btn-lg btn-primary btn-block"
             type="submit"
           >
             Log In

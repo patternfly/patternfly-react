@@ -16,15 +16,23 @@ const LoginCardForm = ({
   forgotPassword,
   rememberMe,
   submitError,
-  showError
+  showError,
+  attributes
 }) => (
-  <Form onSubmit={onSubmit} noValidate>
+  <Form onSubmit={onSubmit} noValidate {...attributes}>
     <LoginFormError show={showError}>{submitError}</LoginFormError>
     <LoginCardInput {...usernameField} />
     <LoginCardInput {...passwordField} />
     {additionalFields}
     <LoginCardSettings rememberMe={rememberMe} forgotPassword={forgotPassword} />
-    <Button type="submit" bsStyle="primary" bsSize="large" block disabled={disableSubmit}>
+    <Button
+      className="login-pf-submit-button"
+      type="submit"
+      bsStyle="primary"
+      bsSize="large"
+      block
+      disabled={disableSubmit}
+    >
       {submitText}
     </Button>
   </Form>
@@ -40,18 +48,19 @@ LoginCardForm.propTypes = {
   forgotPassword: PropTypes.object,
   rememberMe: PropTypes.object,
   submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  showError: PropTypes.bool
+  showError: PropTypes.bool,
+  attributes: PropTypes.object
 };
 
 LoginCardForm.defaultProps = {
   usernameField: {
-    ...LoginCardInput,
+    ...LoginCardInput.defaultProps,
     id: 'card_email',
     type: 'email',
     placeholder: 'Email Address'
   },
   passwordField: {
-    ...LoginCardInput,
+    ...LoginCardInput.defaultProps,
     id: 'card_password',
     type: 'password',
     placeholder: 'Password',
@@ -68,7 +77,8 @@ LoginCardForm.defaultProps = {
   },
   rememberMe: { label: null },
   submitError: null,
-  showError: false
+  showError: false,
+  attributes: null
 };
 
 export default LoginCardForm;

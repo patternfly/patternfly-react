@@ -19,11 +19,7 @@ LoginFooterLinks.propTypes = {
 };
 
 LoginFooterLinks.defaultProps = {
-  links: [
-    { children: 'Terms of Use', href: '#' },
-    { children: 'Help', href: '#' },
-    { children: 'Privacy Policy', href: '#' }
-  ]
+  links: []
 };
 
 export default LoginFooterLinks;

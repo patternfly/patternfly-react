@@ -4,12 +4,13 @@ import RememberMe from './LoginCardRememberMe';
 import { FormGroup } from '../../../../index';
 import ForgotPassword from './LoginCardForgotPassword';
 
-const LoginCardSettings = ({ rememberMe, forgotPassword, className, ...props }) => (
-  <FormGroup {...props} className={`login-pf-settings ${className}`}>
-    <RememberMe {...rememberMe} />
-    <ForgotPassword {...forgotPassword} />
-  </FormGroup>
-);
+const LoginCardSettings = ({ rememberMe, forgotPassword, className, ...props }) =>
+  (rememberMe || forgotPassword) && (
+    <FormGroup {...props} className={`login-pf-settings ${className}`}>
+      <RememberMe {...rememberMe} />
+      <ForgotPassword {...forgotPassword} />
+    </FormGroup>
+  );
 
 LoginCardSettings.propTypes = {
   className: PropTypes.string,
@@ -19,8 +20,8 @@ LoginCardSettings.propTypes = {
 
 LoginCardSettings.defaultProps = {
   className: '',
-  rememberMe: PropTypes.shape({ ...RememberMe.defaultProps }),
-  forgotPassword: PropTypes.shape({ ...ForgotPassword.defaultProps })
+  rememberMe: {},
+  forgotPassword: {}
 };
 
 export default LoginCardSettings;

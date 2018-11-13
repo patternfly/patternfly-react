@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { noop } from '../../../../common/helpers';
 
-const LoginCardRememberMe = ({ onClick, label, className, ...props }) => (
-  <label className={`checkbox-label ${className}`}>
-    <input {...props} type="checkbox" onClick={onClick} /> {label}
-  </label>
-);
+const LoginCardRememberMe = ({ onClick, label, className, ...props }) =>
+  label && (
+    <label className={`checkbox-label ${className}`}>
+      <input {...props} type="checkbox" onClick={onClick} /> {label}
+    </label>
+  );
 
 LoginCardRememberMe.propTypes = {
   label: PropTypes.string,
@@ -15,7 +16,7 @@ LoginCardRememberMe.propTypes = {
 };
 
 LoginCardRememberMe.defaultProps = {
-  label: 'Keep me logged in for 30 days',
+  label: null,
   className: '',
   onClick: noop
 };
