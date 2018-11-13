@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.34.0"></a>
+# [1.34.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.32.2...@patternfly/react-core@1.34.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **PF4 AboutModal and Modal:** added a class to the body when the Mod… ([#895](https://github.com/patternfly/patternfly-react/issues/895)) ([5b12b97](https://github.com/patternfly/patternfly-react/commit/5b12b97)), closes [#724](https://github.com/patternfly/patternfly-react/issues/724)
+
+
+### Features
+
+* **LoginForm:** Added the PF4 LoginForm Component    ([#874](https://github.com/patternfly/patternfly-react/issues/874)) ([befeb77](https://github.com/patternfly/patternfly-react/commit/befeb77)), closes [#825](https://github.com/patternfly/patternfly-react/issues/825) [#825](https://github.com/patternfly/patternfly-react/issues/825)
+
+
+
+
 <a name="1.33.0"></a>
 # [1.33.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.32.2...@patternfly/react-core@1.33.0) (2018-11-13)
 
