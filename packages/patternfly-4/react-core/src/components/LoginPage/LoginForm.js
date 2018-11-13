@@ -43,7 +43,7 @@ const propTypes = {
   isLoginButtonDisabled: PropTypes.bool,
   /** Function that is called when the Login button is clicked */
   onLoginButtonClick: PropTypes.func,
-  /** Label for the Remember Me Checkbox that indicates the user should be kept logged in.  Id the label is not provided, the checkbox will not show. */
+  /** Label for the Remember Me Checkbox that indicates the user should be kept logged in.  If the label is not provided, the checkbox will not show. */
   rememberMeLabel: PropTypes.string,
   /** Flag indicating if the remember me Checkbox is checked. */
   isRememberMeChecked: PropTypes.bool,
@@ -52,7 +52,7 @@ const propTypes = {
   /** Aria Label for the Remember me checkbox */
   rememberMeAriaLabel: props => {
     if (props.rememberMeLabel && !props.rememberMeAriaLabel) {
-      return new Error('rememberMeLabel is required with the Remember me checkbox');
+      return new Error('rememberMeAriaLabel is required with the Remember me checkbox');
     }
     return null;
   }
@@ -75,7 +75,7 @@ const defaultProps = {
   loginButtonLabel: 'Log In',
   isLoginButtonDisabled: false,
   onLoginButtonClick: () => undefined,
-  rememberMeLabel: undefined,
+  rememberMeLabel: '',
   isRememberMeChecked: false,
   onChangeRememberMe: () => undefined,
   rememberMeAriaLabel: ''
@@ -164,7 +164,7 @@ const LoginForm = ({
         {loginButtonLabel}
       </Button>
       <div className={css(alignmentStyles.textAlignCenter, alignmentStyles.textAlignLeftOnMd)}>
-        {rememberMeLabel && (
+        {rememberMeLabel.length > 0 && (
           <Checkbox
             className={css(spacingStyles.mMd, flexStyles.alignItemsCenter, displayStyles.displayFlex)}
             id="pf-login-remember-me-id"
