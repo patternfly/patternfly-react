@@ -1,11 +1,12 @@
-import { LoginPage } from '@patternfly/react-core';
-import Simple from './examples/SimpleLoginPage';
+import { LoginPage, LoginForm } from '@patternfly/react-core';
+import SimpleLoginPage from './examples/SimpleLoginPage';
 
 export default {
   title: 'LoginPage',
   components: {
-    LoginPage
+    LoginPage,
+    LoginForm
   },
-  examples: [Simple],
+  examples: [SimpleLoginPage],
   fullPageOnly: true
 };
