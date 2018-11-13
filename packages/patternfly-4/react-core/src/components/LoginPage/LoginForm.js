@@ -43,15 +43,15 @@ const propTypes = {
   isLoginButtonDisabled: PropTypes.bool,
   /** Function that is called when the Login button is clicked */
   onLoginButtonClick: PropTypes.func,
-  /** Label for the Remember Me Checkbox that indicates the user should be kept logged in */
+  /** Label for the Remember Me Checkbox that indicates the user should be kept logged in.  Id the label is not provided, the checkbox will not show. */
   rememberMeLabel: PropTypes.string,
   /** Flag indicating if the remember me Checkbox is checked. */
   isRememberMeChecked: PropTypes.bool,
   /** Function that handles the onChange event for the Remember Me Checkbox */
   onChangeRememberMe: PropTypes.func,
   /** Aria Label for the Remember me checkbox */
-  rememberMeLabel: props => {
-    if (!props.rememberMeLabel && !props.rememberMeLabel) {
+  rememberMeAriaLabel: props => {
+    if (props.rememberMeLabel && !props.rememberMeAriaLabel) {
       return new Error('rememberMeLabel is required with the Remember me checkbox');
     }
     return null;
@@ -75,10 +75,10 @@ const defaultProps = {
   loginButtonLabel: 'Log In',
   isLoginButtonDisabled: false,
   onLoginButtonClick: () => undefined,
-  rememberMeLabel: 'Remember me',
+  rememberMeLabel: undefined,
   isRememberMeChecked: false,
   onChangeRememberMe: () => undefined,
-  rememberMeAriaLabel: 'Remember me'
+  rememberMeAriaLabel: ''
 };
 
 const LoginForm = ({

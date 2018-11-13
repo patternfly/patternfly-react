@@ -19,7 +19,7 @@ export interface LoginFormProps extends HTMLProps<HTMLFormElement> {
   rememberMeLabel?: string;
   isRememberMeChecked?: boolean;
   onChangeRememberMe?: Function;
-  rememberMeAriaLabel: string;
+  rememberMeAriaLabel?: string;
 }
 
 declare const LoginForm: SFC<LoginFormProps>;
