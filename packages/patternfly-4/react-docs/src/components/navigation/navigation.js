@@ -6,6 +6,11 @@ import PropTypes from 'prop-types';
 import logo from '../../assets/logo.png';
 import NavigationItemGroup from './navigationItemGroup';
 import NavigationItem from './navigationItem';
+import {
+  Form,
+  FormGroup,
+  TextInput
+} from '@patternfly/react-core';
 
 const routeShape = PropTypes.shape({
   to: PropTypes.string.isRequired,
@@ -33,8 +38,8 @@ class Navigation extends React.Component {
     searchValue: ''
   };
 
-  handleSearchChange = e => {
-    const searchValue = e.target.value;
+  handleSearchChange = (checked, event) => {
+    const searchValue = event.target.value;
     this.setState(() => ({
       searchValue
     }));
@@ -65,15 +70,20 @@ class Navigation extends React.Component {
               <img src={logo} alt="PatternFly Logo" />
             </Link>
           </div>
-          <div className={css(styles.search)}>
-            <input
-              className={css(styles.input)}
-              placeholder="Search components"
-              type="text"
-              value={searchValue}
-              onChange={this.handleSearchChange}
-            />
-          </div>
+          <Form className={css(styles.search)} onSubmit={event => { event.preventDefault(); return false; }}>
+            <FormGroup
+              label="Search Components"
+              fieldId="primaryComponentSearch">
+              <TextInput
+                type="text"
+                id="primaryComponentSearch"
+                name="primaryComponentSearch"
+                placeholder="For example, &quot;button&quot;"
+                value={searchValue}
+                onChange={this.handleSearchChange}
+              />
+            </FormGroup>
+          </Form>
           <NavigationItemGroup title="Style">
             <NavigationItem to="/styles/tokens" pkg="tokens">Tokens</NavigationItem>
             <NavigationItem to="/styles/icons" pkg="icons">Icons</NavigationItem>

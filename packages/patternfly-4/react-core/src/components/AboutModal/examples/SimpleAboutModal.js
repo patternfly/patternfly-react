@@ -29,7 +29,7 @@ class SimpleAboutModal extends React.Component {
           productName="Product Name"
           trademark="Trademark and copyright information here"
           brandImageSrc={brandImg}
-          brandImageAlt="Brand Image"
+          brandImageAlt="Patternfly Logo"
           logoImageSrc={logoImg}
           logoImageAlt="AboutModal Logo"
           heroImageSrc={heroImg}
