@@ -63,7 +63,18 @@ class TextInput extends React.Component {
   };
 
   render() {
-    const { className, type, value, onChange, isValid, isReadOnly, isRequired, isDisabled, ...props } = this.props;
+    const {
+      className,
+      type,
+      value,
+      onChange,
+      isValid,
+      isReadOnly,
+      isRequired,
+      isDisabled,
+      innerRef,
+      ...props
+    } = this.props;
     return (
       <input
         {...props}
@@ -75,6 +86,7 @@ class TextInput extends React.Component {
         required={isRequired}
         disabled={isDisabled}
         readOnly={isReadOnly}
+        ref={innerRef}
       />
     );
   }

@@ -7,6 +7,7 @@ export interface TextInputProps extends Omit<HTMLProps<HTMLInputElement>, 'onCha
   isDisabled?: boolean;
   onChange?(value: string, event: FormEvent<HTMLInputElement>): void;
   isReadOnly?: boolean;
+  innerRef?: RefObject<HTMLInputElement>;
 }
 
 declare const TextInput: FunctionComponent<TextInputProps>;

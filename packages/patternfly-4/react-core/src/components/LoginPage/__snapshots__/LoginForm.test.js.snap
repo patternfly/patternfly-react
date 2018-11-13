@@ -19,11 +19,7 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
     label="Username"
   >
     <TextInput
-      aria-label={null}
-      className=""
       id="pf-login-username-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-username-id"
@@ -41,11 +37,7 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
     label="Password"
   >
     <TextInput
-      aria-label={null}
-      className=""
       id="pf-login-password-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-password-id"
@@ -114,11 +106,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
     label="Username"
   >
     <TextInput
-      aria-label={null}
-      className=""
       id="pf-login-username-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-username-id"
@@ -136,11 +124,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
     label="Password"
   >
     <TextInput
-      aria-label={null}
-      className=""
       id="pf-login-password-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-password-id"
@@ -209,11 +193,7 @@ exports[`should render Login form 1`] = `
     label="Username"
   >
     <TextInput
-      aria-label={null}
-      className=""
       id="pf-login-username-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-username-id"
@@ -231,11 +211,7 @@ exports[`should render Login form 1`] = `
     label="Password"
   >
     <TextInput
-      aria-label={null}
-      className=""
       id="pf-login-password-id"
-      isDisabled={false}
-      isReadOnly={false}
       isRequired={true}
       isValid={true}
       name="pf-login-password-id"
