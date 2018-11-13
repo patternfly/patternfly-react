@@ -1,5 +1,15 @@
 
-## Change Log (2018-11-13)
+## patternfly3-react-lerna-root@7.9.1 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#910](https://github.com/patternfly/patternfly-react/pull/910) fix(CatalogTileView): Fix to prevent category size updates after unmount ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.12.8 (2018-11-13)
 
 #### :bug: Bug Fix
 * `patternfly-3`

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.22.0"></a>
+# [1.22.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.21.0...patternfly4-react-lerna-root@1.22.0) (2018-11-13)
+
+
+### Features
+
+* **LoginForm:** Added the PF4 LoginForm Component    ([#874](https://github.com/patternfly/patternfly-react/issues/874)) ([befeb77](https://github.com/patternfly/patternfly-react/commit/befeb77)), closes [#825](https://github.com/patternfly/patternfly-react/issues/825) [#825](https://github.com/patternfly/patternfly-react/issues/825)
+
+
+
+
 <a name="1.21.0"></a>
 # [1.21.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.20.0...patternfly4-react-lerna-root@1.21.0) (2018-11-12)
 
