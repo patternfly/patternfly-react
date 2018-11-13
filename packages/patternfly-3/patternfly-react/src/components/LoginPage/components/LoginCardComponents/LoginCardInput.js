@@ -19,15 +19,16 @@ const LoginCardInput = ({
   showError,
   showWarning,
   className,
-  autoComplete
+  autoComplete,
+  attributes
 }) => {
   const helpBlock =
     (showError && <HelpBlock>{error}</HelpBlock>) ||
     (showWarning && <LoginCardInputWarning>{warning}</LoginCardInputWarning>);
-
   return (
     <FormGroup className={`login_card_input ${className}`} controlId={id} validationState={showError ? 'error' : null}>
       <FormControl
+        {...attributes}
         type={type}
         placeholder={placeholder}
         bsSize={size}
@@ -59,7 +60,8 @@ LoginCardInput.propTypes = {
   onKeyPress: PropTypes.func,
   showError: PropTypes.bool,
   className: PropTypes.string,
-  autoComplete: PropTypes.string
+  autoComplete: PropTypes.string,
+  attributes: PropTypes.object
 };
 
 LoginCardInput.defaultProps = {
@@ -76,7 +78,8 @@ LoginCardInput.defaultProps = {
   onKeyPress: noop,
   showError: false,
   className: '',
-  autoComplete: ''
+  autoComplete: '',
+  attributes: null
 };
 
 export default LoginCardInput;

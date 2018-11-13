@@ -6,13 +6,13 @@ import { KEY_CODES, KEYS } from '../../../../common/helpers';
 class LoginCardWithValidation extends React.Component {
   state = {
     usernameField: {
-      value: null,
+      value: '',
       errorType: null,
       isFocused: false,
       showError: false
     },
     passwordField: {
-      value: null,
+      value: '',
       errorType: null,
       warningType: null,
       isFocused: false,
