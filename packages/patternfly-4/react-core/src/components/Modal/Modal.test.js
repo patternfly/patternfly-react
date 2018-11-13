@@ -17,11 +17,11 @@ const props = {
   children: 'modal content'
 };
 
-test('Modal creates a container element once', () => {
+test('Modal creates a container element once for div', () => {
   const view = shallow(<Modal {...props} />);
   view.update();
   expect(document.createElement).toBeCalledWith('div');
-  expect(document.createElement).toHaveBeenCalledTimes(1);
+  expect(document.createElement).toHaveBeenCalledTimes(3);
 });
 
 test('modal closes with escape', () => {
