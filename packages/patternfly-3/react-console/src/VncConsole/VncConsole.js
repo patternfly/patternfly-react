@@ -97,13 +97,11 @@ class VncConsole extends React.Component {
     switch (this.state.status) {
       case CONNECTED:
         rightContent = (
-          <Toolbar.RightContent>
-            <VncActions
-              onCtrlAltDel={this.onCtrlAltDel}
-              textSendShortcut={textSendShortcut}
-              textCtrlAltDel={textCtrlAltDel}
-            />
-          </Toolbar.RightContent>
+          <VncActions
+            onCtrlAltDel={this.onCtrlAltDel}
+            textSendShortcut={textSendShortcut}
+            textCtrlAltDel={textCtrlAltDel}
+          />
         );
         break;
       case DISCONNECTED:
@@ -122,7 +120,7 @@ class VncConsole extends React.Component {
     return (
       <div className={classNames('vnc-console', this.props.topClassName)}>
         {this.props.children}
-        {rightContent}
+        <Toolbar.RightContent>{rightContent}</Toolbar.RightContent>
         <Toolbar.Results>
           {status}
           {this.novncStaticComponent}
