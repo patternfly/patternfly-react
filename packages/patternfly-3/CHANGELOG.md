@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.9.0"></a>
+# [7.9.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.6...patternfly3-react-lerna-root@7.9.0) (2018-11-13)
+
+
+### Features
+
+* **DesktopViewer:** introduce DesktopViewer component ([#607](https://github.com/patternfly/patternfly-react/issues/607)) ([f001ef5](https://github.com/patternfly/patternfly-react/commit/f001ef5))
+
+
+
+
 <a name="7.8.6"></a>
 ## [7.8.6](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.5...patternfly3-react-lerna-root@7.8.6) (2018-11-07)
 

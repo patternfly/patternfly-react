@@ -1,4 +1,14 @@
 
+## Change Log (2018-11-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#607](https://github.com/patternfly/patternfly-react/pull/607) feat(DesktopViewer): introduce DesktopViewer component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
 ## patternfly4-react-lerna-root@1.19.3 (2018-11-12)
 
 #### :memo: Documentation

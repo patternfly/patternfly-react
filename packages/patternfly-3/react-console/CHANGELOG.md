@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.5.6...@patternfly/react-console@1.6.0) (2018-11-13)
+
+
+### Features
+
+* **DesktopViewer:** introduce DesktopViewer component ([#607](https://github.com/patternfly/patternfly-react/issues/607)) ([f001ef5](https://github.com/patternfly/patternfly-react/commit/f001ef5))
+
+
+
+
 <a name="1.5.6"></a>
 ## [1.5.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.5.5...@patternfly/react-console@1.5.6) (2018-11-06)
 
