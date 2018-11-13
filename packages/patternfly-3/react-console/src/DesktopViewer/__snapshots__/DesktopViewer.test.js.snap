@@ -1,0 +1,656 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DesktopViewer custom topClassName 1`] = `
+<div
+  class="desktop-viewer-pf my-custom-class"
+>
+  <div
+    class="remote-viewer-pf"
+  >
+    <div
+      class="remote-viewer-pf-launch"
+    >
+      <button
+        class="btn btn-lg btn-default"
+        disabled=""
+        type="button"
+      >
+        Launch Remote Viewer
+      </button>
+    </div>
+  </div>
+  <div
+    class="manual-connection-pf"
+  >
+    <h2>
+      Manual Connection
+    </h2>
+    <p>
+      No connection available.
+    </p>
+    <form
+      class="form-horizontal"
+    />
+  </div>
+</div>
+`;
+
+exports[`DesktopViewer empty 1`] = `
+<div
+  class="desktop-viewer-pf"
+>
+  <div
+    class="remote-viewer-pf"
+  >
+    <div
+      class="remote-viewer-pf-launch"
+    >
+      <button
+        class="btn btn-lg btn-default"
+        disabled=""
+        type="button"
+      >
+        Launch Remote Viewer
+      </button>
+    </div>
+  </div>
+  <div
+    class="manual-connection-pf"
+  >
+    <h2>
+      Manual Connection
+    </h2>
+    <p>
+      No connection available.
+    </p>
+    <form
+      class="form-horizontal"
+    />
+  </div>
+</div>
+`;
+
+exports[`DesktopViewer with Spice and VNC 1`] = `
+<div
+  class="desktop-viewer-pf"
+>
+  <div
+    class="remote-viewer-pf"
+  >
+    <div
+      class="remote-viewer-pf-launch"
+    >
+      <button
+        class="btn btn-lg btn-default"
+        type="button"
+      >
+        Launch Remote Viewer
+      </button>
+    </div>
+    <div
+      class="expand-collapse-pf"
+    >
+      <div
+        class="expand-collapse-pf-link-container"
+      >
+        <span
+          class="expand-collapse-pf-separator"
+        />
+        <button
+          class="btn btn-link"
+          type="button"
+        >
+          <span
+            aria-hidden="true"
+            class="fa fa-angle-right"
+          />
+          More Information
+        </button>
+        <span
+          class="expand-collapse-pf-separator"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="manual-connection-pf"
+  >
+    <h2>
+      Manual Connection
+    </h2>
+    <p>
+      Connect with any viewer application for following protocols:
+    </p>
+    <form
+      class="form-horizontal"
+    >
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          Address:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          my.host.com
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          SPICE Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5900
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          SPICE TLS Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5901
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          VNC Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5902
+        </div>
+      </div>
+      <div
+        class="form-group"
+      >
+        <div
+          class="manual-connection-pf-title col-xs-5"
+        >
+          VNC TLS Port:
+        </div>
+        <div
+          class="manual-connection-pf-value col-xs-7"
+        >
+          5903
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`DesktopViewer with custom more-info content 1`] = `
+<DesktopViewer
+  spice={
+    Object {
+      "address": "my.host.com",
+      "port": 5900,
+      "tlsPort": "5901",
+    }
+  }
+  textAddress="Address:"
+  textConnectWith="Connect with any viewer application for following protocols:"
+  textConnectWithRemoteViewer="Launch Remote Viewer"
+  textManualConnection="Manual Connection"
+  textMoreInfo="More Information"
+  textNoProtocol="No connection available."
+  textSpice="Spice"
+  textSpiceAddress="SPICE Address:"
+  textSpicePort="SPICE Port:"
+  textSpiceTlsPort="SPICE TLS Port:"
+  textVNC="VNC"
+  textVNCAddress="VNC Address:"
+  textVNCPort="VNC Port:"
+  textVNCTlsPort="VNC TLS Port:"
+  topClassName=""
+  vnc={
+    Object {
+      "address": "my.host.com",
+      "port": 5902,
+      "tlsPort": "5903",
+    }
+  }
+>
+  <div
+    className="desktop-viewer-pf"
+  >
+    <ConnectWithRemoteViewer
+      onDownload={[Function]}
+      onGenerate={[Function]}
+      spice={
+        Object {
+          "address": "my.host.com",
+          "port": 5900,
+          "tlsPort": "5901",
+        }
+      }
+      textAddress="Address:"
+      textConnectWith="Connect with any viewer application for following protocols:"
+      textConnectWithRemoteViewer="Launch Remote Viewer"
+      textManualConnection="Manual Connection"
+      textMoreInfo="More Information"
+      textNoProtocol="No connection available."
+      textSpice="Spice"
+      textSpiceAddress="SPICE Address:"
+      textSpicePort="SPICE Port:"
+      textSpiceTlsPort="SPICE TLS Port:"
+      textVNC="VNC"
+      textVNCAddress="VNC Address:"
+      textVNCPort="VNC Port:"
+      textVNCTlsPort="VNC TLS Port:"
+      vnc={
+        Object {
+          "address": "my.host.com",
+          "port": 5902,
+          "tlsPort": "5903",
+        }
+      }
+    >
+      <div
+        className="remote-viewer-pf"
+      >
+        <div
+          className="remote-viewer-pf-launch"
+        >
+          <Button
+            active={false}
+            block={false}
+            bsClass="btn"
+            bsSize="large"
+            bsStyle="default"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <button
+              className="btn btn-lg btn-default"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Launch Remote Viewer
+            </button>
+          </Button>
+        </div>
+        <ExpandCollapse
+          align="center"
+          bordered={false}
+          className=""
+          expanded={false}
+          textCollapsed="More Information"
+          textExpanded="More Information"
+        >
+          <div
+            className="expand-collapse-pf"
+          >
+            <div
+              className="expand-collapse-pf-link-container"
+            >
+              <span
+                className="expand-collapse-pf-separator"
+              />
+              <Button
+                active={false}
+                block={false}
+                bsClass="btn"
+                bsStyle="link"
+                disabled={false}
+                onClick={[Function]}
+              >
+                <button
+                  className="btn btn-link"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <Icon
+                    name="angle-right"
+                    type="fa"
+                  >
+                    <FontAwesome
+                      name="angle-right"
+                    >
+                      <span
+                        aria-hidden={true}
+                        className="fa fa-angle-right"
+                      />
+                    </FontAwesome>
+                  </Icon>
+                  More Information
+                </button>
+              </Button>
+              <span
+                className="expand-collapse-pf-separator"
+              />
+            </div>
+          </div>
+        </ExpandCollapse>
+      </div>
+    </ConnectWithRemoteViewer>
+    <ManualConnection
+      spice={
+        Object {
+          "address": "my.host.com",
+          "port": 5900,
+          "tlsPort": "5901",
+        }
+      }
+      textAddress="Address:"
+      textConnectWith="Connect with any viewer application for following protocols:"
+      textConnectWithRemoteViewer="Launch Remote Viewer"
+      textManualConnection="Manual Connection"
+      textMoreInfo="More Information"
+      textNoProtocol="No connection available."
+      textSpice="Spice"
+      textSpiceAddress="SPICE Address:"
+      textSpicePort="SPICE Port:"
+      textSpiceTlsPort="SPICE TLS Port:"
+      textVNC="VNC"
+      textVNCAddress="VNC Address:"
+      textVNCPort="VNC Port:"
+      textVNCTlsPort="VNC TLS Port:"
+      vnc={
+        Object {
+          "address": "my.host.com",
+          "port": 5902,
+          "tlsPort": "5903",
+        }
+      }
+    >
+      <div
+        className="manual-connection-pf"
+      >
+        <h2>
+          Manual Connection
+        </h2>
+        <p>
+          Connect with any viewer application for following protocols:
+        </p>
+        <Form
+          bsClass="form"
+          componentClass="form"
+          horizontal={true}
+          inline={false}
+        >
+          <form
+            className="form-horizontal"
+          >
+            <Detail
+              title="Address:"
+              value="my.host.com"
+            >
+              <FormGroup
+                bsClass="form-group"
+              >
+                <div
+                  className="form-group"
+                >
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-title"
+                    componentClass="div"
+                    xs={5}
+                  >
+                    <div
+                      className="manual-connection-pf-title col-xs-5"
+                    >
+                      Address:
+                    </div>
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-value"
+                    componentClass="div"
+                    xs={7}
+                  >
+                    <div
+                      className="manual-connection-pf-value col-xs-7"
+                    >
+                      my.host.com
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </Detail>
+            <Detail
+              title="SPICE Port:"
+              value={5900}
+            >
+              <FormGroup
+                bsClass="form-group"
+              >
+                <div
+                  className="form-group"
+                >
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-title"
+                    componentClass="div"
+                    xs={5}
+                  >
+                    <div
+                      className="manual-connection-pf-title col-xs-5"
+                    >
+                      SPICE Port:
+                    </div>
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-value"
+                    componentClass="div"
+                    xs={7}
+                  >
+                    <div
+                      className="manual-connection-pf-value col-xs-7"
+                    >
+                      5900
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </Detail>
+            <Detail
+              title="SPICE TLS Port:"
+              value="5901"
+            >
+              <FormGroup
+                bsClass="form-group"
+              >
+                <div
+                  className="form-group"
+                >
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-title"
+                    componentClass="div"
+                    xs={5}
+                  >
+                    <div
+                      className="manual-connection-pf-title col-xs-5"
+                    >
+                      SPICE TLS Port:
+                    </div>
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-value"
+                    componentClass="div"
+                    xs={7}
+                  >
+                    <div
+                      className="manual-connection-pf-value col-xs-7"
+                    >
+                      5901
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </Detail>
+            <Detail
+              title="VNC Port:"
+              value={5902}
+            >
+              <FormGroup
+                bsClass="form-group"
+              >
+                <div
+                  className="form-group"
+                >
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-title"
+                    componentClass="div"
+                    xs={5}
+                  >
+                    <div
+                      className="manual-connection-pf-title col-xs-5"
+                    >
+                      VNC Port:
+                    </div>
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-value"
+                    componentClass="div"
+                    xs={7}
+                  >
+                    <div
+                      className="manual-connection-pf-value col-xs-7"
+                    >
+                      5902
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </Detail>
+            <Detail
+              title="VNC TLS Port:"
+              value="5903"
+            >
+              <FormGroup
+                bsClass="form-group"
+              >
+                <div
+                  className="form-group"
+                >
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-title"
+                    componentClass="div"
+                    xs={5}
+                  >
+                    <div
+                      className="manual-connection-pf-title col-xs-5"
+                    >
+                      VNC TLS Port:
+                    </div>
+                  </Col>
+                  <Col
+                    bsClass="col"
+                    className="manual-connection-pf-value"
+                    componentClass="div"
+                    xs={7}
+                  >
+                    <div
+                      className="manual-connection-pf-value col-xs-7"
+                    >
+                      5903
+                    </div>
+                  </Col>
+                </div>
+              </FormGroup>
+            </Detail>
+          </form>
+        </Form>
+      </div>
+    </ManualConnection>
+  </div>
+</DesktopViewer>
+`;
+
+exports[`default MoreInformationContent 1`] = `
+<div>
+  <p>
+    Clicking "Launch Remote Viewer" will download a .vv file and launch 
+    <i>
+      Remote Viewer
+    </i>
+  </p>
+  <p>
+    <i>
+      Remote Viewer
+    </i>
+     is available for most operating systems. To install it, search for it in GNOME Software or run the following:
+  </p>
+  <ul>
+    <li>
+      <div
+        class="more-information-pf-install"
+      >
+        <b>
+          RHEL, CentOS:
+        </b>
+        sudo yum install virt-viewer
+      </div>
+    </li>
+    <li>
+      <div
+        class="more-information-pf-install"
+      >
+        <b>
+          Fedora:
+        </b>
+        sudo dnf install virt-viewer
+      </div>
+    </li>
+    <li>
+      <div
+        class="more-information-pf-install"
+      >
+        <b>
+          Ubuntu, Debian:
+        </b>
+        sudo apt-get install virt-viewer
+      </div>
+    </li>
+    <li>
+      <div
+        class="more-information-pf-install"
+      >
+        <b>
+          Windows:
+        </b>
+        <div>
+          Download the MSI from 
+          <a
+            href="https://virt-manager.org/download/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            virt-manager.org
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
