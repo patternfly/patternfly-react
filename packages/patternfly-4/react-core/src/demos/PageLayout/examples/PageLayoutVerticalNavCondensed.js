@@ -39,8 +39,6 @@ import brandImg from './l_pf-reverse-164x11.png';
 import avatarImg from './img_avatar.png';
 
 class PageLayoutVerticalNavCondensed extends React.Component {
-  static title = 'Using vertical navigation with condensed header';
-
   constructor(props) {
     super(props);
     // Set initial isNavOpen state based on window width

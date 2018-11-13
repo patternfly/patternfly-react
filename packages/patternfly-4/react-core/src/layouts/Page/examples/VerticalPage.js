@@ -1,11 +1,7 @@
 import React from 'react';
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
-import getContainerProps from './common/getContainerProps';
 
 class VerticalPage extends React.Component {
-  static title = 'Vertical Page Layout';
-  static getContainerProps = getContainerProps;
-
   constructor(props) {
     super(props);
     this.state = {

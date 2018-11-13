@@ -2,9 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 class ResponsiveStyles extends React.Component {
-  static title = 'Responsive';
-  static description = '<em>All props accept arrays as values for responsive styling. You can specify up to 4 array values for each of the breakpoints.</em>';
-
   render() {
     const { space, colors, fontSizes, borders } = StyledConstants;
 

@@ -2,8 +2,6 @@ import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 class InvalidTextInput extends React.Component {
-  static title = 'Invalid TextInput';
-
   state = {
     value: ''
   };

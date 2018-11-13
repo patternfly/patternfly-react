@@ -2,8 +2,6 @@ import React from 'react';
 import { TextContent, TextList, TextListVariants, TextListItem, TextListItemVariants } from '@patternfly/react-core';
 
 class DataList extends React.Component {
-  static title = 'Data list example';
-
   render() {
     return (
       <TextContent>

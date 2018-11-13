@@ -5,8 +5,6 @@ import logoImg from './pf_logo.svg';
 import heroImg from './pfbg_992.jpg';
 
 class SimpleAboutModal extends React.Component {
-  static title = 'Simple AboutModal';
-
   state = {
     isModalOpen: false
   };

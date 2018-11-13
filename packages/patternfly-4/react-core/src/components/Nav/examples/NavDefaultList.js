@@ -2,8 +2,6 @@ import React from 'react';
 import { Nav, NavList, NavItem } from '@patternfly/react-core';
 
 class NavDefaultList extends React.Component {
-  static title = 'Default Nav';
-
   state = {
     activeItem: 0
   };

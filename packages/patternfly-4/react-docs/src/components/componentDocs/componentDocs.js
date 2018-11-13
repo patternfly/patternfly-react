@@ -11,7 +11,17 @@ import Section from '../section';
 const propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  examples: PropTypes.arrayOf(PropTypes.func),
+  examples: PropTypes.arrayOf(
+    PropTypes.shape({
+      component: PropTypes.func,
+      title: PropTypes.string,
+      description: PropTypes.string,
+      getContainerProps: PropTypes.func,
+      displayName: PropTypes.string,
+      live: PropTypes.bool,
+      liveScope: PropTypes.object
+    })
+  ),
   components: PropTypes.objectOf(PropTypes.func),
   enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
   rawExamples: PropTypes.array,
@@ -40,22 +50,25 @@ class ComponentDocs extends React.PureComponent {
           <p className={css(styles.description)} dangerouslySetInnerHTML={makeDescription(description)} />
         )}
         <Section title="Examples">
-          {examples.map((ComponentExample, i) => {
+          {examples.map((exampleObj, i) => {
+            const ComponentExample = exampleObj.component;
             const { __docgenInfo: componentDocs } = ComponentExample;
-            const rawExample = rawExamples.find(example => example.name === componentDocs.displayName);
+            const rawExample = rawExamples.find(
+              example => example.name === componentDocs.displayName || exampleObj.displayName
+            );
             return (
               <Example
                 key={i}
-                title={ComponentExample.title}
-                description={ComponentExample.description}
+                title={exampleObj.title}
+                description={exampleObj.description}
                 raw={rawExample.file}
                 path={rawExample.path}
                 images={images}
                 fullPageOnly={fullPageOnly}
-                live={ComponentExample.live}
-                liveScope={ComponentExample.liveScope}
+                live={exampleObj.live}
+                liveScope={exampleObj.liveScope}
                 name={componentDocs.displayName}
-                {...(ComponentExample.getContainerProps ? ComponentExample.getContainerProps() : {})}
+                {...(exampleObj.getContainerProps ? exampleObj.getContainerProps() : {})}
               >
                 <ComponentExample />
               </Example>

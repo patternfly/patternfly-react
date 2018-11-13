@@ -10,5 +10,9 @@ export default {
     SelectOption,
     SelectOptionGroup
   },
-  examples: [SelectInput, SelectInputGrouped, SelectInputDisabled]
+  examples: [
+    { component: SelectInput, title: 'Select Input' },
+    { component: SelectInputGrouped, title: 'Select Input with grouping' },
+    { component: SelectInputDisabled, title: 'Select Input Disabled' }
+  ]
 };

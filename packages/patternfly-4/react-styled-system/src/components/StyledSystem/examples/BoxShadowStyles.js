@@ -2,8 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
 
 class BoxShadowStyles extends React.Component {
-  static title = 'Box Shadow';
-
   render() {
     const { space, borders, radii, colors, shadows } = StyledConstants;
     return (

@@ -2,8 +2,6 @@ import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 class ReadOnlyTextInput extends React.Component {
-  static title = 'ReadOnly TextInput';
-
   state = {
     readOnly: 'read only text input example'
   };

@@ -5,12 +5,8 @@ import {
   ChartLegend,
   ChartVoronoiContainer
 } from '@patternfly/react-charts';
-import getContainerProps from './common/getContainerProps';
 
 class SimpleChart extends React.Component {
-  static getContainerProps = getContainerProps;
-  static title = 'Simple Chart';
-
   containerRef = React.createRef();
   state = {
     width: 0
@@ -38,7 +34,7 @@ class SimpleChart extends React.Component {
   render() {
     const { width } = this.state;
     const container = (
-      <ChartVoronoiContainer labels={this.getTooltipLabel}/>
+      <ChartVoronoiContainer labels={this.getTooltipLabel} />
     );
 
     return (

@@ -2,8 +2,6 @@ import React from 'react';
 import { Select, SelectOption, SelectOptionGroup } from '@patternfly/react-core';
 
 class SelectInputGrouped extends React.Component {
-  static title = 'Select Input with grouping';
-
   state = {
     value: '2'
   };

@@ -2,8 +2,6 @@ import React from 'react';
 import { Title } from '@patternfly/react-core';
 
 class TitleSizes extends React.Component {
-  static title = 'Title Sizes';
-
   render() {
     return (
       <React.Fragment>

@@ -2,8 +2,6 @@ import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 class SimpleTextInput extends React.Component {
-  static title = 'Simple TextInput';
-
   state = {
     value: ''
   };

@@ -2,8 +2,6 @@ import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
 class InvalidTextArea extends React.Component {
-  static title = 'Invalid TextArea';
-
   state = {
     value: ''
   };

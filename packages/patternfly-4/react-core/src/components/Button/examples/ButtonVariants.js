@@ -1,12 +1,8 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon } from '@patternfly/react-icons';
-import getContainerProps from './common/getContainerProps';
 
 class ButtonVariants extends React.Component {
-  static title = 'Button Variants';
-  static getContainerProps = getContainerProps;
-
   render() {
     return (
       <React.Fragment>

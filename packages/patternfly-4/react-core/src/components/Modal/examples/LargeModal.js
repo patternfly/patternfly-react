@@ -2,8 +2,6 @@ import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
 class LargeModal extends React.Component {
-  static title = 'Large Modal';
-
   state = {
     isModalOpen: false
   };

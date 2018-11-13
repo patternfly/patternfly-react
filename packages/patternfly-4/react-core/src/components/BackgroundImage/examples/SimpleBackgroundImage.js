@@ -17,8 +17,6 @@ const images = {
 };
 
 class SimpleBackgroundImage extends React.Component {
-  static title = 'Simple Background Image';
-
   render() {
     return <BackgroundImage src={images} />;
   }

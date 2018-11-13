@@ -2,8 +2,6 @@ import React from 'react';
 import { TextArea } from '@patternfly/react-core';
 
 class SimpleTextArea extends React.Component {
-  static title = 'Simple TextArea';
-
   state = {
     value: ''
   };

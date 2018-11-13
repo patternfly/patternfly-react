@@ -2,8 +2,6 @@ import React from 'react';
 import { TextContent, Text, TextVariants } from '@patternfly/react-core';
 
 class BodyText extends React.Component {
-  static title = 'Body text examples';
-
   render() {
     return (
       <TextContent>

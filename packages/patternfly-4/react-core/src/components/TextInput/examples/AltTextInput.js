@@ -2,8 +2,6 @@ import React from 'react';
 import { TextInput } from '@patternfly/react-core';
 
 class AltTextInput extends React.Component {
-  static title = 'Alternative TextInput';
-
   state = {
     value: ''
   };

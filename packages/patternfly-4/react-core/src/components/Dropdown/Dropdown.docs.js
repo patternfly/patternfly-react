@@ -14,5 +14,11 @@ export default {
     DropdownSeparator,
     DropdownToggle
   },
-  examples: [Basic, Simple, PositionRight, DirectionUp, Kebab]
+  examples: [
+    { component: Basic, title: 'Basic dropdown' },
+    { component: Simple, title: 'Simple dropdown' },
+    { component: PositionRight, title: 'Dropdown - position right' },
+    { component: DirectionUp, title: 'Dropdown - direction up' },
+    { component: Kebab, title: 'Kebab' }
+  ]
 };

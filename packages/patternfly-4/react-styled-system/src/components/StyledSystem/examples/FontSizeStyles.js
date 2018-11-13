@@ -2,12 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledText } from '@patternfly/react-styled-system';
 
 class FontSizeStyles extends React.Component {
-  static title = 'Font Size';
-  static description = `
-    <em>Use StyledConstants.fontSizes to set a size.<br />
-    Array values are converted into responsive values.</em>
-  `;
-
   render() {
     const { fontSizes } = StyledConstants;
     return (

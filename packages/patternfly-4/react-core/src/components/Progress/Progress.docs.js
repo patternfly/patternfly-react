@@ -24,18 +24,18 @@ export default {
     'Object.values(ProgressMeasureLocation)': Object.values(ProgressMeasureLocation)
   },
   examples: [
-    Simple,
-    LabeledProgress,
-    SmallProgress,
-    LargeProgress,
-    ProgressOutside,
-    ProgressInside,
-    ProgressSuccess,
-    ProgressFailure,
-    ProgressInsideSuccess,
-    ProgressOutsideFailure,
-    ProgressWithoutMeasure,
-    ProgressFailureWithoutMeasure,
-    ProgressWithDynamicDescription
+    { component: Simple, title: 'Simple Progress' },
+    { component: LabeledProgress, title: 'Progress with additional label' },
+    { component: SmallProgress, title: 'Progress Small' },
+    { component: LargeProgress, title: 'Progress Large' },
+    { component: ProgressOutside, title: 'Progress Outside' },
+    { component: ProgressInside, title: 'Progress Inside' },
+    { component: ProgressSuccess, title: 'Progress Success' },
+    { component: ProgressFailure, title: 'Progress Failure' },
+    { component: ProgressInsideSuccess, title: 'Progress Inside Success' },
+    { component: ProgressOutsideFailure, title: 'Progress Outside Failure' },
+    { component: ProgressWithoutMeasure, title: 'Progress Without Measure' },
+    { component: ProgressFailureWithoutMeasure, title: 'Progress Failure Without Measure' },
+    { component: ProgressWithDynamicDescription, title: 'Progress with Dynamic Description' }
   ]
 };

@@ -2,8 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledText } from '@patternfly/react-styled-system';
 
 class TypographyStyles extends React.Component {
-  static title = 'Typography';
-
   render() {
     const { fonts, lineHeights, fontWeights, fontSizes } = StyledConstants;
     return (

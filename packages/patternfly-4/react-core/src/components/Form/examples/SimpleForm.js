@@ -1,10 +1,17 @@
 import React from 'react';
-import { Form, FormGroup, TextInput, Checkbox, ActionGroup } from '@patternfly/react-core';
-import { Toolbar, ToolbarGroup, Button, Radio } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  TextInput,
+  Checkbox,
+  ActionGroup,
+  Toolbar,
+  ToolbarGroup,
+  Button,
+  Radio
+} from '@patternfly/react-core';
 
 class SimpleForm extends React.Component {
-  static title = 'Simple Form';
-
   state = {
     value1: '',
     value2: '',

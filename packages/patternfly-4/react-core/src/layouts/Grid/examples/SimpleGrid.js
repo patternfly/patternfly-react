@@ -1,12 +1,8 @@
 import React from 'react';
 import Grid from '../Grid';
 import GridItem from '../GridItem';
-import getContainerProps from './common/getContainerProps';
 
 class SimpleGrid extends React.Component {
-  static title = 'Simple Grid';
-  static getContainerProps = getContainerProps;
-
   render() {
     return (
       <Grid>

@@ -1,11 +1,7 @@
 import React from 'react';
-import getContainerProps from './common/getContainerProps';
 import { Radio, Badge } from '@patternfly/react-core';
 
 class CustomLabelRadio extends React.Component {
-  static title = 'Custom label Radio';
-  static getContainerProps = getContainerProps;
-
   render() {
     return (
       <React.Fragment>

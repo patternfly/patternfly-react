@@ -6,5 +6,11 @@ export default {
   components: {
     Avatar
   },
-  examples: [Simple]
+  examples: [
+    {
+      component: Simple,
+      displayName: 'SimpleAvatar',
+      title: 'Simple Avatar'
+    }
+  ]
 };
