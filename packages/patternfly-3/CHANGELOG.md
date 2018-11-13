@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.9.1"></a>
+## [7.9.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.9.0...patternfly3-react-lerna-root@7.9.1) (2018-11-13)
+
+
+### Bug Fixes
+
+* **CatalogTileView:** Fix to prevent category size updates after unmount ([#910](https://github.com/patternfly/patternfly-react/issues/910)) ([df5ded3](https://github.com/patternfly/patternfly-react/commit/df5ded3))
+
+
+
+
 <a name="7.9.0"></a>
 # [7.9.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.8.6...patternfly3-react-lerna-root@7.9.0) (2018-11-13)
 
