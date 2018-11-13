@@ -2,6 +2,36 @@
 ## Change Log (2018-11-13)
 
 #### :bug: Bug Fix
+* `patternfly-3`
+  * [#911](https://github.com/patternfly/patternfly-react/pull/911) fix(LoginPage): small fixes. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.23.0 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#895](https://github.com/patternfly/patternfly-react/pull/895) fix(PF4 AboutModal and Modal): added a class to the body when the Mod… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-docs@3.19.2 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#895](https://github.com/patternfly/patternfly-react/pull/895) fix(PF4 AboutModal and Modal): added a class to the body when the Mod… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-core@1.34.0 (2018-11-13)
+
+#### :bug: Bug Fix
 * `patternfly-4`
   * [#895](https://github.com/patternfly/patternfly-react/pull/895) fix(PF4 AboutModal and Modal): added a class to the body when the Mod… ([@tlabaj](https://github.com/tlabaj))
 

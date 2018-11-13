@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.23.1"></a>
+## [2.23.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.23.0...patternfly-react@2.23.1) (2018-11-13)
+
+
+### Bug Fixes
+
+* **LoginPage:** small fixes. ([#911](https://github.com/patternfly/patternfly-react/issues/911)) ([55ec079](https://github.com/patternfly/patternfly-react/commit/55ec079))
+
+
+
+
 <a name="2.23.0"></a>
 # [2.23.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.22.5...patternfly-react@2.23.0) (2018-11-13)
 
