@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Timer from '../../common/Timer';
 import ToastNotification from './ToastNotification';
+import { Alert } from '../Alert';
 
 /**
  * TimedToastNotification Component for Patternfly React
@@ -64,8 +65,9 @@ class TimedToastNotification extends React.Component {
   }
 }
 
+// WARNING: This should be kept consistent with ToastNotification.propTypes
 TimedToastNotification.propTypes = {
-  ...ToastNotification.propTypes,
+  ...Alert.propTypes,
   /** pauses notification from dismissing */
   paused: PropTypes.bool,
   /** persistent keeps the notification up endlessly until closed */
@@ -77,13 +79,14 @@ TimedToastNotification.propTypes = {
   /** onMouseLeave callback */
   onMouseLeave: PropTypes.func
 };
+// WARNING: This should be kept consistent with ToastNotification.defaultProps
 TimedToastNotification.defaultProps = {
-  ...ToastNotification.defaultProps,
+  ...Alert.defaultProps,
   paused: false,
   timerdelay: 8000
 };
 
-TimedToastNotification.TOAST_NOTIFICATION_TYPES = [...ToastNotification.TOAST_NOTIFICATION_TYPES];
+TimedToastNotification.TOAST_NOTIFICATION_TYPES = [...Alert.ALERT_TYPES];
 
 TimedToastNotification.displayName = 'TimedToastNotification';
 

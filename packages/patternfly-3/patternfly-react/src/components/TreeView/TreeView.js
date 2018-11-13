@@ -4,6 +4,9 @@ import classNames from 'classnames';
 import { noop, KEYS } from '../../common/helpers';
 
 import TreeViewNode from './TreeViewNode';
+import TreeViewExpand from './TreeViewExpand';
+import TreeViewIcon from './TreeViewIcon';
+import TreeViewIndents from './TreeViewIndents';
 
 class TreeView extends React.Component {
   state = {
@@ -125,5 +128,10 @@ TreeView.defaultProps = {
   selectNode: noop,
   accessibleName: ''
 };
+
+TreeView.Node = TreeViewNode;
+TreeView.Expand = TreeViewExpand;
+TreeView.Icon = TreeViewIcon;
+TreeView.Indents = TreeViewIndents;
 
 export default TreeView;
