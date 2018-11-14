@@ -1,5 +1,35 @@
 
-## Change Log (2018-11-13)
+## patternfly3-react-lerna-root@7.9.2 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#911](https://github.com/patternfly/patternfly-react/pull/911) fix(LoginPage): small fixes. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.23.1 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#911](https://github.com/patternfly/patternfly-react/pull/911) fix(LoginPage): small fixes. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.12.9 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#911](https://github.com/patternfly/patternfly-react/pull/911) fix(LoginPage): small fixes. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.6.1 (2018-11-13)
 
 #### :bug: Bug Fix
 * `patternfly-3`
