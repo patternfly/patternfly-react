@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.24.0"></a>
+# [1.24.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.23.0...patternfly4-react-lerna-root@1.24.0) (2018-11-14)
+
+
+### Bug Fixes
+
+* **styled-system:** check if global variables are defined before use ([#918](https://github.com/patternfly/patternfly-react/issues/918)) ([e8d1eb0](https://github.com/patternfly/patternfly-react/commit/e8d1eb0))
+
+
+### Features
+
+* **pf4-table:** Introduce new package [@patternfly](https://github.com/patternfly)/react-table for table implementation ([#899](https://github.com/patternfly/patternfly-react/issues/899)) ([9cee1ad](https://github.com/patternfly/patternfly-react/commit/9cee1ad))
+
+
+
+
 <a name="1.23.1"></a>
 ## [1.23.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.23.0...patternfly4-react-lerna-root@1.23.1) (2018-11-14)
 

@@ -1,5 +1,35 @@
 
-## Change Log (2018-11-14)
+## patternfly3-react-lerna-root@7.9.3 (2018-11-14)
+
+#### :memo: Documentation
+* `patternfly-3`
+  * [#907](https://github.com/patternfly/patternfly-react/pull/907) Updating reference link to PatternFly Storybook ([@lizsurette](https://github.com/lizsurette))
+
+#### Committers: 1
+- Liz ([@lizsurette](https://github.com/lizsurette))
+
+
+## patternfly-react@2.23.2 (2018-11-14)
+
+#### :memo: Documentation
+* `patternfly-3`
+  * [#907](https://github.com/patternfly/patternfly-react/pull/907) Updating reference link to PatternFly Storybook ([@lizsurette](https://github.com/lizsurette))
+
+#### Committers: 1
+- Liz ([@lizsurette](https://github.com/lizsurette))
+
+
+## patternfly-react-extensions@2.12.10 (2018-11-14)
+
+#### :memo: Documentation
+* `patternfly-3`
+  * [#907](https://github.com/patternfly/patternfly-react/pull/907) Updating reference link to PatternFly Storybook ([@lizsurette](https://github.com/lizsurette))
+
+#### Committers: 1
+- Liz ([@lizsurette](https://github.com/lizsurette))
+
+
+## @patternfly/react-console@1.6.2 (2018-11-14)
 
 #### :memo: Documentation
 * `patternfly-3`
