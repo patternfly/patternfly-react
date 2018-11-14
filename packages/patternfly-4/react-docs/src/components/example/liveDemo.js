@@ -40,9 +40,10 @@ const transformCode = code => {
     code = code.replace(/extends Component/gm, 'extends React.Component');
     code = code.replace(/^\s*export.*$/gm, '');
     code = code.replace(/^\s*static(.|\s)*?;$/gm, '');
-    const transformedCode = transform(code, {
+    let transformedCode = transform(code, {
       presets: ['react', 'stage-2']
     }).code;
+    transformedCode = transformedCode.replace(/"use strict";/gm, '');
     return transformedCode;
   } catch (e) {
     console.log(e);

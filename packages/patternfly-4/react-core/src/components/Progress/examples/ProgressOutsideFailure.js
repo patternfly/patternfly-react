@@ -2,8 +2,6 @@ import React from 'react';
 import { Progress, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
 
 class ProgressOutsideFailure extends React.Component {
-  static title = 'Progress Outside Failure';
-
   render() {
     return (
       <Progress

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
 
 export default class SimpleDropdown extends Component {
-  static title = 'Simple dropdown';
-
   constructor(props) {
     super(props);
     this.state = {

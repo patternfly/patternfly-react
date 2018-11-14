@@ -1,9 +1,7 @@
 import React from 'react';
-import { Nav, NavList, NavGroup, NavItem } from '@patternfly/react-core';
+import { Nav, NavGroup, NavItem } from '@patternfly/react-core';
 
 class NavGroupedList extends React.Component {
-  static title = 'Grouped Nav';
-
   state = {
     activeItem: 'grp-1_itm-1'
   };

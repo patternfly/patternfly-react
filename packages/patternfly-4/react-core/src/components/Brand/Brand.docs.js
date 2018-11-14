@@ -6,5 +6,5 @@ export default {
   components: {
     Brand
   },
-  examples: [Simple]
+  examples: [{ component: Simple, title: 'Simple Brand' }]
 };

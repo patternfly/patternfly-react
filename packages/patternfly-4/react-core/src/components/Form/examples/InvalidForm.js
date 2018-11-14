@@ -2,8 +2,6 @@ import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 
 class InvalidForm extends React.Component {
-  static title = 'Invalid form';
-
   render() {
     return (
       <Form>

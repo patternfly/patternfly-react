@@ -27,8 +27,6 @@ const images = {
 };
 
 class SimpleLoginPage extends React.Component {
-  static title = 'Simple LoginPage';
-
   constructor(props) {
     super(props);
     this.state = {

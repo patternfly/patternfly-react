@@ -11,12 +11,8 @@ import {
   Text,
   TextVariants
 } from '@patternfly/react-core';
-import getContainerProps from './common/getContainerProps';
 
 class SimpleChart extends React.Component {
-  static getContainerProps = getContainerProps;
-  static title = 'Simple Chart';
-
   // interpolation="natural"
 
   getChart = (theme) => (
@@ -27,10 +23,10 @@ class SimpleChart extends React.Component {
       width={300}
     >
       <ChartGroup>
-        <ChartLine data={[{ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 5 }, { x: 4, y: 3 }]}/>
-        <ChartLine data={[{ x: 1, y: 2 }, { x: 2, y: 1 }, { x: 3, y: 7 }, { x: 4, y: 4 }]}/>
-        <ChartLine data={[{ x: 1, y: 3 }, { x: 2, y: 4 }, { x: 3, y: 9 }, { x: 4, y: 5 }]}/>
-        <ChartLine data={[{ x: 1, y: 3 }, { x: 2, y: 3 }, { x: 3, y: 8 }, { x: 4, y: 7 }]}/>
+        <ChartLine data={[{ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 5 }, { x: 4, y: 3 }]} />
+        <ChartLine data={[{ x: 1, y: 2 }, { x: 2, y: 1 }, { x: 3, y: 7 }, { x: 4, y: 4 }]} />
+        <ChartLine data={[{ x: 1, y: 3 }, { x: 2, y: 4 }, { x: 3, y: 9 }, { x: 4, y: 5 }]} />
+        <ChartLine data={[{ x: 1, y: 3 }, { x: 2, y: 3 }, { x: 3, y: 8 }, { x: 4, y: 7 }]} />
       </ChartGroup>
     </Chart>
   );

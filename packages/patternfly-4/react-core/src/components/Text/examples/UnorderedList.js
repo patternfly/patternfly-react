@@ -2,9 +2,6 @@ import React from 'react';
 import { TextContent, TextList, TextListItem } from '@patternfly/react-core';
 
 class UnorderedList extends React.Component {
-  static title = 'Unordered list example';
-  static description = 'Text components such as Text, TextList, TextListItem need to be placed within a TextContent';
-
   render() {
     return (
       <TextContent>

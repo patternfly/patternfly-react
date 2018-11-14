@@ -2,8 +2,6 @@ import React from 'react';
 import { TextContent, TextList, TextListVariants, TextListItem } from '@patternfly/react-core';
 
 class OrderedList extends React.Component {
-  static title = 'Ordered list Example';
-
   render() {
     return (
       <TextContent>

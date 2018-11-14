@@ -2,12 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
 
 class ColorStyles extends React.Component {
-  static title = 'Colors';
-  static description = `
-    <em>Use color or bg (background) props with StyledConstants.colors to set a color.<br />
-    Array values are converted into responsive values.</em>
-  `;
-
   render() {
     const { colors } = StyledConstants;
     return (

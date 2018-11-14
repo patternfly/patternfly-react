@@ -2,9 +2,6 @@ import React from 'react';
 import { Form, FormGroup, TextInput, Badge } from '@patternfly/react-core';
 
 class VariousLabelsForm extends React.Component {
-  static description = 'Label and helperText can be a string, a function or a node.';
-  static title = 'Various labels and helper text';
-
   state = {
     value1: '',
     value2: ''

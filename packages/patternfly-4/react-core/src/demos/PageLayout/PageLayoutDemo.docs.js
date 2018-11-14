@@ -9,13 +9,13 @@ import PageLayoutHorizontalNavCondensed from './examples/PageLayoutHorizontalNav
 export default {
   title: 'Page Layout Demos',
   examples: [
-    PageLayoutDefaultNav,
-    PageLayoutExpandableNav,
-    PageLayoutGroupsNav,
-    PageLayoutHorizontalNav,
-    PageLayoutSimpleNav,
-    PageLayoutVerticalNavCondensed,
-    PageLayoutHorizontalNavCondensed
+    { component: PageLayoutDefaultNav, title: 'Using default navigation' },
+    { component: PageLayoutExpandableNav, title: 'Using expandable navigation' },
+    { component: PageLayoutGroupsNav, title: 'Using grouped navigation' },
+    { component: PageLayoutHorizontalNav, title: 'Using horizontal navigation' },
+    { component: PageLayoutSimpleNav, title: 'Using simple navigation' },
+    { component: PageLayoutVerticalNavCondensed, title: 'Using vertical navigation with condensed header' },
+    { component: PageLayoutHorizontalNavCondensed, title: 'Using horizontal navigation with condensed header' }
   ],
   fullPageOnly: true
 };

@@ -2,8 +2,6 @@ import React from 'react';
 import { Select, SelectOption } from '@patternfly/react-core';
 
 class SelectInputDisabled extends React.Component {
-  static title = 'Select Input Disabled';
-
   state = {
     value: '1'
   };

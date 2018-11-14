@@ -7,5 +7,5 @@ export default {
   components: {
     TextArea
   },
-  examples: [Simple, Invalid]
+  examples: [{ component: Simple, title: 'Simple TextArea' }, { component: Invalid, title: 'Invalid TextArea' }]
 };

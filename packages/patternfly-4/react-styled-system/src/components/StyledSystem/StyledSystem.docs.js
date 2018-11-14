@@ -20,17 +20,61 @@ export default {
     StyledText
   },
   examples: [
-    SpaceStyles,
-    WidthStyles,
-    ResponsiveStyles,
-    FlexStyles,
-    FontSizeStyles,
-    ColorStyles,
-    TypographyStyles,
-    BorderStyles,
-    BoxShadowStyles,
-    PositionStyles,
-    OverrideTheme
+    {
+      component: SpaceStyles,
+      title: 'Space',
+      description: `
+    <em>The space utility converts shorthand margin and padding props to margin and padding CSS declarations.<br />
+    Use StyledConstants.space with margin and padding props<br />
+    Negative values from StyledConstants.space (neg_*) can be used for negative margins.<br />
+    String values are passed as raw CSS values.<br />
+    Array values are converted into responsive values.</em>
+    `
+    },
+    {
+      component: WidthStyles,
+      title: 'Width',
+      description: `
+    <em>Numbers from 0-1 are converted to percentage widths.<br />
+    Numbers greater than 1 are converted to pixel values.<br />
+    String values are passed as raw CSS values.<br />
+    Array values are converted into responsive width styles.<br /></em>
+    `
+    },
+    {
+      component: ResponsiveStyles,
+      title: 'Responsive',
+      description:
+        '<em>All props accept arrays as values for responsive styling. You can specify up to 4 array values for each of the breakpoints.</em>'
+    },
+    { component: FlexStyles, title: 'Flex' },
+    {
+      component: FontSizeStyles,
+      title: 'Font Size',
+      description: `
+      <em>Use StyledConstants.fontSizes to set a size.<br />
+      Array values are converted into responsive values.</em>
+    `
+    },
+    {
+      component: ColorStyles,
+      title: 'Colors',
+      description: `
+      <em>Use color or bg (background) props with StyledConstants.colors to set a color.<br />
+      Array values are converted into responsive values.</em>
+    `
+    },
+    { component: TypographyStyles, title: 'Typography' },
+    { component: BorderStyles, title: 'Borders' },
+    { component: BoxShadowStyles, title: 'Box Shadow' },
+    { component: PositionStyles, title: 'Position' },
+    {
+      component: OverrideTheme,
+      title: 'Override Theme',
+      description: `
+    <em><p>You can override the theme by supplying a theme object.</p>
+    <p>If multiple PatternFlyThemeProviders are nested, the theme object of the lower provider will be merged into the ancestor theme.</p></em>`
+    }
   ],
   description: `
     <strong>Warning, the StyledSystem components are experimental and in their own package @patternfly/react-styled-system. Use at your own risk!</strong><br />

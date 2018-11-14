@@ -5,12 +5,8 @@ import {
   ChartLegend,
   ChartVoronoiContainer
 } from '@patternfly/react-charts';
-import getContainerProps from './common/getContainerProps';
 
 class CustomColorsChart extends React.Component {
-  static getContainerProps = getContainerProps;
-  static title = 'Custom Colors Chart';
-
   containerRef = React.createRef();
   state = {
     width: 0
@@ -38,7 +34,7 @@ class CustomColorsChart extends React.Component {
   render() {
     const { width } = this.state;
     const container = (
-      <ChartVoronoiContainer labels={this.getTooltipLabel}/>
+      <ChartVoronoiContainer labels={this.getTooltipLabel} />
     );
     const cats = {
       data: {

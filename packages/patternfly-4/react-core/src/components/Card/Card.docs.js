@@ -9,5 +9,5 @@ export default {
     CardBody,
     CardFooter
   },
-  examples: [Simple]
+  examples: [{ component: Simple, title: 'Simple Card' }]
 };

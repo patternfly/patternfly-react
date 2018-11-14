@@ -2,8 +2,6 @@ import React from 'react';
 import { Nav, NavList, NavItem, NavVariants } from '@patternfly/react-core';
 
 class NavHorizontalList extends React.Component {
-  static title = 'Horizontal List';
-
   state = {
     activeItem: 0
   };

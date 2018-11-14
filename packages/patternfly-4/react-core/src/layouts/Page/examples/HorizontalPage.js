@@ -1,11 +1,7 @@
 import React from 'react';
 import { Page, PageHeader, PageSection, PageSectionVariants } from '@patternfly/react-core';
-import getContainerProps from './common/getContainerProps';
 
 class HorizontalPage extends React.Component {
-  static title = 'Horizontal Page Layout';
-  static getContainerProps = getContainerProps;
-
   render() {
     const logoProps = {
       href: 'https://patternfly.org',

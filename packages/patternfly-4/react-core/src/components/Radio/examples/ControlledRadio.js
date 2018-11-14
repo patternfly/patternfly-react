@@ -2,8 +2,6 @@ import React from 'react';
 import { Radio } from '@patternfly/react-core';
 
 class ControlledRadio extends React.Component {
-  static title = 'Controlled Radio';
-
   state = {
     value: '4'
   };

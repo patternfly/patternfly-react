@@ -2,8 +2,6 @@ import React from 'react';
 import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
 
 class NavExpandableTitlesList extends React.Component {
-  static title = 'Expandable Nav (w/subnav titles)';
-
   state = {
     activeGroup: 'grp-1',
     activeItem: 'grp-1_itm-1'

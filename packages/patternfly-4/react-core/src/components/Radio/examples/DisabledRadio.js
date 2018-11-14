@@ -2,8 +2,6 @@ import React from 'react';
 import { Radio } from '@patternfly/react-core';
 
 class DisabledRadio extends React.Component {
-  static title = 'Disabled Radio';
-
   render() {
     return (
       <React.Fragment>

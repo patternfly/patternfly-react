@@ -2,7 +2,6 @@ import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
 class DisabledCheckbox extends React.Component {
-  static title = 'Disabled Checkbox';
   render() {
     return (
       <React.Fragment>

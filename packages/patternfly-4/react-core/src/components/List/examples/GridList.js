@@ -2,8 +2,6 @@ import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 
 class GridList extends React.Component {
-  static title = 'Grid List';
-
   render() {
     return (
       <List variant="grid">

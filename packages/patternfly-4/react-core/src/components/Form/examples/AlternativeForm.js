@@ -1,10 +1,17 @@
 import React from 'react';
-import { Form, FormGroup, TextInput, Checkbox, ActionGroup, Toolbar } from '@patternfly/react-core';
-import { ToolbarGroup, ToolbarItem, Button } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  TextInput,
+  Checkbox,
+  ActionGroup,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem,
+  Button
+} from '@patternfly/react-core';
 
 class AlternativeForm extends React.Component {
-  static title = 'Alternative Form';
-
   state = {
     value: '',
     value1: ''

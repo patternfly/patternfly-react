@@ -6,5 +6,5 @@ export default {
   components: {
     Label
   },
-  examples: [SimpleLabel]
+  examples: [{ component: SimpleLabel, title: 'Labels' }]
 };

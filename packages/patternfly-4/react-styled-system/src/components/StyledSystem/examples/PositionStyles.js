@@ -2,8 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
 
 class PositionStyles extends React.Component {
-  static title = 'Position';
-
   render() {
     const { space, borders, zIndices, colors } = StyledConstants;
     return (

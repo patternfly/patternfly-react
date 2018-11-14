@@ -7,6 +7,6 @@ export default {
     LoginPage,
     LoginForm
   },
-  examples: [SimpleLoginPage],
+  examples: [{ component: SimpleLoginPage, title: 'Simple LoginPage' }],
   fullPageOnly: true
 };

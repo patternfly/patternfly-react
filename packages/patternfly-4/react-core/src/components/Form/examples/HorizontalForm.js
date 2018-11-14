@@ -1,10 +1,21 @@
 import React from 'react';
-import { FormGroup, TextInput, TextArea, Form, SelectOption, Select, Radio } from '@patternfly/react-core';
-import { Toolbar, ToolbarItem, ToolbarGroup, Button, ActionGroup, Checkbox } from '@patternfly/react-core';
+import {
+  FormGroup,
+  TextInput,
+  TextArea,
+  Form,
+  SelectOption,
+  Select,
+  Radio,
+  Toolbar,
+  ToolbarItem,
+  ToolbarGroup,
+  Button,
+  ActionGroup,
+  Checkbox
+} from '@patternfly/react-core';
 
 class HorizontalForm extends React.Component {
-  static title = 'Horizontal form';
-
   state = {
     value: 'please choose',
     value1: '',

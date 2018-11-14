@@ -10,5 +10,11 @@ export default {
   components: {
     TextInput
   },
-  examples: [Simple, Disabled, ReadOnly, Invalid, Alt]
+  examples: [
+    { component: Simple, title: 'Simple TextInput' },
+    { component: Disabled, title: 'Disabled TextInput' },
+    { component: ReadOnly, title: 'ReadOnly TextInput' },
+    { component: Invalid, title: 'Invalid TextInput' },
+    { component: Alt, title: 'Alternative TextInput' }
+  ]
 };

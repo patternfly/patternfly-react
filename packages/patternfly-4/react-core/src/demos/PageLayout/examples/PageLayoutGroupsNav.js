@@ -34,8 +34,6 @@ import brandImg from './l_pf-reverse-164x11.png';
 import avatarImg from './img_avatar.png';
 
 class PageLayoutGroupsNav extends React.Component {
-  static title = 'Using grouped navigation';
-
   constructor(props) {
     super(props);
     // Set initial isNavOpen state based on window width

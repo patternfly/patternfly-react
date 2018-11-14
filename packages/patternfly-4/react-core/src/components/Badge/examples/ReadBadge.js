@@ -1,11 +1,7 @@
 import React from 'react';
 import { Badge } from '@patternfly/react-core';
-import getContainerProps from './common/getContainerProps';
 
 class ReadBadge extends React.Component {
-  static title = 'Read Badge';
-  static getContainerProps = getContainerProps;
-
   render() {
     return (
       <React.Fragment>

@@ -1,11 +1,7 @@
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';
-import getContainerProps from './common/getContainerProps';
 
 class SimpleToolbarSection extends React.Component {
-  static title = 'Toolbar with sections';
-  static getContainerProps = getContainerProps;
-
   render() {
     return (
       <Toolbar>

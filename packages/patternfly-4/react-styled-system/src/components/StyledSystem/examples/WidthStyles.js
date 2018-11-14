@@ -2,14 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
 
 class WidthStyles extends React.Component {
-  static title = 'Width';
-  static description = `
-  <em>Numbers from 0-1 are converted to percentage widths.<br />
-  Numbers greater than 1 are converted to pixel values.<br />
-  String values are passed as raw CSS values.<br />
-  Array values are converted into responsive width styles.<br /></em>
-  `;
-
   render() {
     const { borders, ratio } = StyledConstants;
     return (
