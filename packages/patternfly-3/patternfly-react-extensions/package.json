@@ -41,7 +41,7 @@
     "breakjs": "^1.0.0",
     "classnames": "^2.2.5",
     "css-element-queries": "^1.0.1",
-    "patternfly": "^3.52.1",
+    "patternfly": "^3.58.0",
     "patternfly-react": "^2.23.3",
     "react-virtualized": "9.x"
   },
