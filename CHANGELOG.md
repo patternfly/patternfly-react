@@ -1,4 +1,14 @@
 
+## Change Log (2018-11-14)
+
+#### :memo: Documentation
+* `patternfly-3`
+  * [#907](https://github.com/patternfly/patternfly-react/pull/907) Updating reference link to PatternFly Storybook ([@lizsurette](https://github.com/lizsurette))
+
+#### Committers: 1
+- Liz ([@lizsurette](https://github.com/lizsurette))
+
+
 ## patternfly3-react-lerna-root@7.9.2 (2018-11-13)
 
 #### :bug: Bug Fix
