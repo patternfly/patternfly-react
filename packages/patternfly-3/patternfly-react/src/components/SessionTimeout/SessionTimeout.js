@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Icon, MessageDialog } from '../../index';
+import CountDownSessionTimeout from './CountDownSessionTimeout';
 
 const SessionTimeout = props => (
   <MessageDialog
@@ -39,5 +40,7 @@ SessionTimeout.defaultProps = {
     </React.Fragment>
   )
 };
+
+SessionTimeout.CountDown = CountDownSessionTimeout;
 
 export default SessionTimeout;

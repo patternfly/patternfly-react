@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { default as ConfirmButton } from './ConfirmButton';
+import { default as CancelButton } from './CancelButton';
 
 const InlineEdit = ({ value, isEditing, additionalData, renderValue, renderEdit }) => {
   if (isEditing(additionalData)) {
@@ -18,5 +20,8 @@ InlineEdit.propTypes = {
   /** Returns edit component */
   renderEdit: PropTypes.func
 };
+
+InlineEdit.ConfirmButton = ConfirmButton;
+InlineEdit.CancelButton = CancelButton;
 
 export default InlineEdit;
