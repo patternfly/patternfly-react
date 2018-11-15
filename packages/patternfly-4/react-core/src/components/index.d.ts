@@ -10,6 +10,7 @@ export * from './Breadcrumb';
 export * from './Button';
 export * from './Card';
 export * from './Checkbox';
+export * from './DataList';
 export * from './Dropdown';
 export * from './Form';
 export * from './Label';
