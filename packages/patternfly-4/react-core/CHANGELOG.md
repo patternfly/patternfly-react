@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.35.0"></a>
+# [1.35.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.34.1...@patternfly/react-core@1.35.0) (2018-11-15)
+
+
+### Features
+
+* **component:** introduce the pf4 switch component ([#761](https://github.com/patternfly/patternfly-react/issues/761)) ([ef13fd2](https://github.com/patternfly/patternfly-react/commit/ef13fd2))
+
+
+
+
 <a name="1.34.1"></a>
 ## [1.34.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.34.0...@patternfly/react-core@1.34.1) (2018-11-14)
 

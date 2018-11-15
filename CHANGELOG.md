@@ -1,6 +1,46 @@
 
 ## Change Log (2018-11-15)
 
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#761](https://github.com/patternfly/patternfly-react/pull/761) feat(component): introduce the pf4 switch component ([@guillaumevincent](https://github.com/guillaumevincent))
+
+#### Committers: 1
+- Guillaume Vincent ([@guillaumevincent](https://github.com/guillaumevincent))
+
+
+## patternfly3-react-lerna-root@7.9.4 (2018-11-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#916](https://github.com/patternfly/patternfly-react/pull/916) fix(subcomponents): Make all subcomponents available from base component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.23.3 (2018-11-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#916](https://github.com/patternfly/patternfly-react/pull/916) fix(subcomponents): Make all subcomponents available from base component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.12.11 (2018-11-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#916](https://github.com/patternfly/patternfly-react/pull/916) fix(subcomponents): Make all subcomponents available from base component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.6.3 (2018-11-15)
+
 #### :bug: Bug Fix
 * `patternfly-3`
   * [#916](https://github.com/patternfly/patternfly-react/pull/916) fix(subcomponents): Make all subcomponents available from base component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
