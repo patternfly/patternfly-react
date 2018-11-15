@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.6.3...@patternfly/react-console@1.7.0) (2018-11-15)
+
+
+### Features
+
+* **HintBlock:** Add the HintBlock component ([#922](https://github.com/patternfly/patternfly-react/issues/922)) ([92559e6](https://github.com/patternfly/patternfly-react/commit/92559e6))
+
+
+
+
 <a name="1.6.3"></a>
 ## [1.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.6.2...@patternfly/react-console@1.6.3) (2018-11-15)
 

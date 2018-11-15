@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.13.0"></a>
+# [2.13.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.12.11...patternfly-react-extensions@2.13.0) (2018-11-15)
+
+
+### Features
+
+* **HintBlock:** Add the HintBlock component ([#922](https://github.com/patternfly/patternfly-react/issues/922)) ([92559e6](https://github.com/patternfly/patternfly-react/commit/92559e6))
+
+
+
+
 <a name="2.12.11"></a>
 ## [2.12.11](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.12.10...patternfly-react-extensions@2.12.11) (2018-11-15)
 

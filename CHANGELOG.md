@@ -2,6 +2,46 @@
 ## Change Log (2018-11-15)
 
 #### :rocket: New Feature
+* `patternfly-3`
+  * [#922](https://github.com/patternfly/patternfly-react/pull/922) feat(HintBlock): Add the HintBlock component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly4-react-lerna-root@1.25.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#761](https://github.com/patternfly/patternfly-react/pull/761) feat(component): introduce the pf4 switch component ([@guillaumevincent](https://github.com/guillaumevincent))
+
+#### Committers: 1
+- Guillaume Vincent ([@guillaumevincent](https://github.com/guillaumevincent))
+
+
+## @patternfly/react-table@0.1.1 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#761](https://github.com/patternfly/patternfly-react/pull/761) feat(component): introduce the pf4 switch component ([@guillaumevincent](https://github.com/guillaumevincent))
+
+#### Committers: 1
+- Guillaume Vincent ([@guillaumevincent](https://github.com/guillaumevincent))
+
+
+## @patternfly/react-docs@3.19.4 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#761](https://github.com/patternfly/patternfly-react/pull/761) feat(component): introduce the pf4 switch component ([@guillaumevincent](https://github.com/guillaumevincent))
+
+#### Committers: 1
+- Guillaume Vincent ([@guillaumevincent](https://github.com/guillaumevincent))
+
+
+## @patternfly/react-core@1.35.0 (2018-11-15)
+
+#### :rocket: New Feature
 * `patternfly-4`
   * [#761](https://github.com/patternfly/patternfly-react/pull/761) feat(component): introduce the pf4 switch component ([@guillaumevincent](https://github.com/guillaumevincent))
 
