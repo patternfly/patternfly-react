@@ -19,6 +19,7 @@ export * from './Nav';
 export * from './Progress';
 export * from './Radio';
 export * from './Select';
+export * from './Switch';
 export * from './TextArea';
 export * from './TextInput';
 export * from './Title';
