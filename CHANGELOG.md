@@ -1,4 +1,14 @@
 
+## Change Log (2018-11-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#916](https://github.com/patternfly/patternfly-react/pull/916) fix(subcomponents): Make all subcomponents available from base component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
 ## patternfly3-react-lerna-root@7.9.3 (2018-11-14)
 
 #### :memo: Documentation

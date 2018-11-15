@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.23.3"></a>
+## [2.23.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.23.2...patternfly-react@2.23.3) (2018-11-15)
+
+
+### Bug Fixes
+
+* **subcomponents:** Make all subcomponents avaliable from base component ([#916](https://github.com/patternfly/patternfly-react/issues/916)) ([4c4989b](https://github.com/patternfly/patternfly-react/commit/4c4989b))
+
+
+
+
 <a name="2.23.2"></a>
 ## [2.23.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.23.1...patternfly-react@2.23.2) (2018-11-14)
 
