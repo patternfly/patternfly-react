@@ -26,7 +26,7 @@ class SimpleAboutModal extends React.Component {
         <AboutModal
           isOpen={isModalOpen}
           onClose={this.handleModalToggle}
-          productName="Product Name"
+          productName="Product Name A"
           trademark="Trademark and copyright information here"
           brandImageSrc={brandImg}
           brandImageAlt="Brand Image"

@@ -1,6 +1,9 @@
 {
   "lerna": "2.11.0",
-  "nohoist": ["gatsby*", "babel*"],
+  "nohoist": [
+    "gatsby*",
+    "babel*"
+  ],
   "npmClient": "yarn",
   "publishConfig": {
     "access": "public",
@@ -22,7 +25,7 @@
   "command": {
     "publish": {
       "message": "chore(release): releasing packages",
-      "conventionalCommits": true
+      "conventionalCommits": false
     }
   },
   "version": "independent",
