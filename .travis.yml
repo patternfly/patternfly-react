@@ -1,6 +1,6 @@
 language: node_js
-sudo: required
 cache: yarn
+os: osx
 env:
   global:
   - ENCRYPTION_LABEL: "b601314e09dc"
