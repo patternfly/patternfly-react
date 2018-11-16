@@ -4,7 +4,7 @@ import Simple from './examples/Simple{{componentName}}';
 export default {
   title: '{{componentName}}',
   components: {
-    {{componentName}},
+    {{componentName}}
   },
-  examples: [Simple]
+  examples: [{component: Simple, title: 'Simple {{componentName}}'}]
 };
