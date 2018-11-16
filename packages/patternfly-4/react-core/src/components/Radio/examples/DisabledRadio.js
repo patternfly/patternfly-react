@@ -10,7 +10,7 @@ class DisabledRadio extends React.Component {
           aria-label="disabled checked radio example"
           defaultChecked
           isDisabled
-          name="group-2"
+          name="group-1"
           id="radio-disabled"
         />{' '}
         <Radio
