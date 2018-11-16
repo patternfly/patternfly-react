@@ -1,5 +1,4 @@
 const path = require(`path`);
-const pascalCase = require('pascal-case');
 const paramCase = require('param-case');
 const fs = require('fs-extra'); //eslint-disable-line
 
