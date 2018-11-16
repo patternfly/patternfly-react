@@ -1,4 +1,34 @@
 
+## Change Log (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## patternfly3-react-lerna-root@7.10.1 (2018-11-16)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#894](https://github.com/patternfly/patternfly-react/pull/894) Fix sub-component references in react-console ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## @patternfly/react-console@1.7.1 (2018-11-16)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#894](https://github.com/patternfly/patternfly-react/pull/894) Fix sub-component references in react-console ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
 ## patternfly3-react-lerna-root@7.10.0 (2018-11-15)
 
 #### :rocket: New Feature
