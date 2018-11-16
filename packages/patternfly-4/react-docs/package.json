@@ -36,9 +36,8 @@
     "gatsby"
   ],
   "scripts": {
-    "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js",
-    "docbuild": "npm run patch && node build/copyDocs.js && gatsby build",
-    "pr-build": "npm run patch && node build/copyDocs.js && gatsby build --prefix-paths",
+    "docbuild": "node build/copyDocs.js && gatsby build",
+    "pr-build": "node build/copyDocs.js && gatsby build --prefix-paths",
     "develop": "gatsby develop"
   },
   "browserslist": [
