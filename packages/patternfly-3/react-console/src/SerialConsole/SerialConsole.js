@@ -2,11 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { EmptyState, Button, noop } from 'patternfly-react';
-import { CONNECTED, DISCONNECTED, LOADING } from './constants';
+import { EmptyState, Button, helpers } from 'patternfly-react';
+import constants from '../common/constants';
 
+const { CONNECTED, DISCONNECTED, LOADING } = constants;
 import XTerm from './XTerm';
 import SerialConsoleActions from './SerialConsoleActions';
+
+const { noop } = helpers;
 
 /**
  * SerialConsole Component for PatternFly React
@@ -137,7 +140,7 @@ SerialConsole.propTypes = {
   onTitleChanged: PropTypes.func,
 
   /** Connection status, a value from [''connected', 'disconnected', 'loading']. Default is 'loading' for a not matching value. */
-  status: PropTypes.string.isRequired,
+  status: PropTypes.oneOf([CONNECTED, DISCONNECTED, LOADING]).isRequired,
   id: PropTypes.string,
 
   /** Size of the terminal component */

@@ -5,7 +5,9 @@ import { render, mount } from 'enzyme';
 import DesktopViewer from './DesktopViewer';
 import MoreInformationDefaultContent from './MoreInformationDefaultContent';
 import { generateVVFile } from './vvFileGenerator';
-import { SPICE_CONSOLE_TYPE } from '../common/constants';
+import constants from '../common/constants';
+
+const { SPICE_CONSOLE_TYPE } = constants;
 
 const spice = {
   address: 'my.host.com',

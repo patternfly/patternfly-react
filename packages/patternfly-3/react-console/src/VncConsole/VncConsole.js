@@ -5,13 +5,13 @@ import * as NovncLog from '@novnc/novnc/core/util/logging';
 import RFB from '@novnc/novnc/core/rfb';
 
 import classNames from 'classnames';
-import { Toolbar, noop } from 'patternfly-react';
+import { Toolbar, helpers } from 'patternfly-react';
 
 import VncActions from './VncActions';
+import constants from '../common/constants';
 
-const CONNECTING = 'connecting';
-const CONNECTED = 'connected';
-const DISCONNECTED = 'disconnected';
+const { CONNECTED, CONNECTING, DISCONNECTED } = constants;
+const { noop } = helpers;
 
 /* eslint no-console: ["warn", { allow: ["error"] }] */
 

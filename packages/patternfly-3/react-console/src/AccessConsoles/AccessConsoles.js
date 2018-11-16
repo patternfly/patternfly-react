@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Grid, Row, Col, Form, FormGroup, Dropdown, MenuItem, Checkbox } from 'patternfly-react';
+import { Grid, Form, Dropdown, MenuItem } from 'patternfly-react';
 
-import { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } from '../common/constants';
+import constants from '../common/constants';
+
+const { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } = constants;
+const { Row, Col } = Grid;
+const { Checkbox, FormGroup } = Form;
 
 class AccessConsoles extends React.Component {
   state = {
@@ -152,5 +156,7 @@ AccessConsoles.defaultProps = {
 
   disconnectByChange: true /** By default, console is unmounted (disconnected) when switching to other type */
 };
+
+AccessConsoles.constants = constants;
 
 export default AccessConsoles;
