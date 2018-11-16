@@ -1,5 +1,35 @@
 
-## Change Log (2018-11-15)
+## patternfly3-react-lerna-root@7.10.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#922](https://github.com/patternfly/patternfly-react/pull/922) feat(HintBlock): Add the HintBlock component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.24.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#922](https://github.com/patternfly/patternfly-react/pull/922) feat(HintBlock): Add the HintBlock component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.13.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#922](https://github.com/patternfly/patternfly-react/pull/922) feat(HintBlock): Add the HintBlock component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.7.0 (2018-11-15)
 
 #### :rocket: New Feature
 * `patternfly-3`
