@@ -123,16 +123,16 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     const rawExamples = [${rawExamples}];
     const images = [${allImages}];
 
-    export const ${doc.base.split('.')[0].toLowerCase()} = docs;
+    export const ${doc.base.split('.')[0].toLowerCase()}_docs = docs;
     export const ${doc.base.split('.')[0].toLowerCase()}_package = '${packageDir}';
 
     export default () => <ComponentDocs rawExamples={rawExamples} images={images} {...docs} />;
     `;
 
     docExports.push(
-      `export { ${doc.base.split('.')[0].toLowerCase()}, ${doc.base.split('.')[0].toLowerCase()}_package } from './${
-        doc.base
-      }';`
+      `export { ${doc.base.split('.')[0].toLowerCase()}_docs, ${doc.base
+        .split('.')[0]
+        .toLowerCase()}_package } from './${doc.base}';`
     );
 
     fs.outputFileSync(filePath, content);

@@ -22,7 +22,7 @@ const propTypes = {
 
 const Layout = ({ children, data }) => {
   const componentMapper = (path, label) => {
-    const { components } = DocsFiles[label.toLowerCase()];
+    const { components } = DocsFiles[`${label.toLowerCase()}_docs`];
     return Object.keys(components).map(k => ({
       label: k,
       to: `${path}#${k}`

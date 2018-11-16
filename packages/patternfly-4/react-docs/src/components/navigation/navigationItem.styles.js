@@ -13,7 +13,7 @@ import {
 
 export default StyleSheet.create({
   navigationItem: {
-    padding: `${spacerSm.var} ${spacerXs.var} ${spacerSm.var} ${spacerXl.var}`,
+    padding: `${spacerXs.var} ${spacerXs.var} ${spacerXs.var} ${spacerXl.var}`,
     display: 'block',
     color: itemColor.var,
     textDecoration: 'none',
@@ -38,7 +38,10 @@ export default StyleSheet.create({
   },
   badge: {
     float: 'right',
-    marginTop: '-30px !important',
+    marginTop: '-25px !important',
     marginRight: '10px !important'
+  },
+  secondaryList: {
+    paddingBottom: spacerXs.var
   }
 });

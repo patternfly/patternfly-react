@@ -32,7 +32,7 @@ const NavigationItem = ({ to, children, pkg, components }) => (
     </Badge>
     {components &&
       components.length > 0 && (
-        <ul>
+        <ul className={css(styles.secondaryList)}>
           {components.map(route => (
             <li key={route.to}>
               <Link className={css(styles.navigationItemSecondary)} to={route.to}>{`${route.label} Props`}</Link>
