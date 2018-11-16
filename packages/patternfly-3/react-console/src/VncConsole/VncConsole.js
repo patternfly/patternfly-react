@@ -8,12 +8,10 @@ import classNames from 'classnames';
 import { Toolbar, helpers } from 'patternfly-react';
 
 import VncActions from './VncActions';
+import constants from '../common/constants';
 
+const { CONNECTED, CONNECTING, DISCONNECTED } = constants;
 const { noop } = helpers;
-
-const CONNECTING = 'connecting';
-const CONNECTED = 'connected';
-const DISCONNECTED = 'disconnected';
 
 /* eslint no-console: ["warn", { allow: ["error"] }] */
 
