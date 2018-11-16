@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.10.0"></a>
+# [7.10.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.9.4...patternfly3-react-lerna-root@7.10.0) (2018-11-15)
+
+
+### Features
+
+* **HintBlock:** Add the HintBlock component ([#922](https://github.com/patternfly/patternfly-react/issues/922)) ([92559e6](https://github.com/patternfly/patternfly-react/commit/92559e6))
+
+
+
+
 <a name="7.9.4"></a>
 ## [7.9.4](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.9.3...patternfly3-react-lerna-root@7.9.4) (2018-11-15)
 

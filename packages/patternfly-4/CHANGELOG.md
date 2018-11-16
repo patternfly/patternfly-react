@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.25.0"></a>
+# [1.25.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.24.0...patternfly4-react-lerna-root@1.25.0) (2018-11-15)
+
+
+### Features
+
+* **component:** introduce the pf4 switch component ([#761](https://github.com/patternfly/patternfly-react/issues/761)) ([ef13fd2](https://github.com/patternfly/patternfly-react/commit/ef13fd2))
+
+
+
+
 <a name="1.24.0"></a>
 # [1.24.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.23.0...patternfly4-react-lerna-root@1.24.0) (2018-11-14)
 
