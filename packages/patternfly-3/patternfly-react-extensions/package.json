@@ -1,5 +1,5 @@
 {
-  "name": "patternfly-react-extensions",
+  "name": "breakaway-patternfly-react-extensions",
   "version": "2.13.0",
   "private": false,
   "description": "This library provides an extended set of React components for use with the PatternFly reference implementation.",

@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-patternfly-react",
+  "name": "breakaway-eslint-plugin-patternfly-react",
   "version": "0.2.0",
   "private": false,
   "main": "./lib/index.js",

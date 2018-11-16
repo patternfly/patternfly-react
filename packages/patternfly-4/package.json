@@ -1,5 +1,5 @@
 {
-  "name": "patternfly4-react-lerna-root",
+  "name": "breakaway-patternfly4-react-lerna-root",
   "version": "1.25.0",
   "private": true,
   "config": {

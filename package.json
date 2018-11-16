@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly/react-lerna-root",
+  "name": "@breakaway/react-lerna-root",
   "version": "0.0.0",
   "private": true,
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
@@ -63,8 +63,8 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "yarn clean:build && lerna run prebuild --parallel && lerna run build --parallel && lerna run postbuild",
-    "build:docs": "yarn build && lerna run docbuild --scope=@patternfly/react-docs --stream",
-    "build:prdocs": "lerna run pr-build --scope=@patternfly/react-docs --stream",
+    "build:docs": "yarn build && lerna run docbuild --scope=@breakaway/react-docs --stream",
+    "build:prdocs": "lerna run pr-build --scope=@breakaway/react-docs --stream",
     "clean": "yarn clean:build",
     "clean:build": "rm -rf packages/*/dist && rm -rf packages/patternfly-?/*/dist",
     "commit": "git-cz",
@@ -79,7 +79,7 @@
     "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
     "start": "yarn start:pf3",
     "start:pf3": "concurrently \"yarn storybook:run\" \"yarn storybook:openurl\"",
-    "start:pf4": "lerna run develop --scope=@patternfly/react-docs --stream",
+    "start:pf4": "lerna run develop --scope=@breakaway/react-docs --stream",
     "storybook:build": "build-storybook -c storybook -o .out",
     "storybook:deploy": "storybook-to-ghpages '--script=storybook:build'",
     "storybook:openurl": "node ./storybook/openBrowser.js",
@@ -122,7 +122,7 @@
       "<rootDir>/scripts/generators/"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!@patternfly|@novnc)"
+      "node_modules/(?!@breakaway|@novnc)"
     ],
     "roots": [
       "<rootDir>/packages",
@@ -142,7 +142,7 @@
     ],
     "nohoist": [
       "**/gatsby*",
-      "@patternfly/react-docs/react*"
+      "@breakaway/react-docs/react*"
     ]
   },
   "resolutions": {

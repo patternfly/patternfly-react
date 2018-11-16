@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly/react-icons",
+  "name": "@breakaway/react-icons",
   "version": "2.7.1",
   "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",

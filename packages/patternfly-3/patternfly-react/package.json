@@ -1,5 +1,5 @@
 {
-  "name": "patternfly-react",
+  "name": "breakaway-patternfly-react",
   "version": "2.24.0",
   "private": false,
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",

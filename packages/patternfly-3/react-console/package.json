@@ -1,5 +1,5 @@
 {
-  "name": "@patternfly/react-console",
+  "name": "@breakaway/react-console",
   "version": "1.7.0",
   "private": false,
   "description": "This library provides a set of Console React components for use with the PatternFly reference implementation.",
