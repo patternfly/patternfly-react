@@ -142,7 +142,17 @@ class LoginCardWithValidation extends React.Component {
     !this.isPasswordShort() &&
     this.isUserNameValid();
 
-  isPasswordShort = () => this.state.passwordField.value.length < this.props.passwordField.minLength;
+  isPasswordShort = () => {
+    const {
+      passwordField: { minLength: passwordMinLength }
+    } = this.props;
+    const {
+      passwordField: {
+        value: { length: currentPasswordLength }
+      }
+    } = this.state;
+    return passwordMinLength > 0 && currentPasswordLength < passwordMinLength;
+  };
 
   hideSubmitError = () => {
     this.setState({
@@ -205,10 +215,16 @@ class LoginCardWithValidation extends React.Component {
   };
 
   isUserNameValid = () => {
-    const mailAddress = this.state.usernameField.value;
-    const atPos = mailAddress.indexOf('@');
-    const dotPos = mailAddress.lastIndexOf('.');
-    return atPos > 1 && dotPos - atPos > 2 && atPos < dotPos;
+    const {
+      usernameField: { type: userType }
+    } = this.props;
+    if (userType === 'email') {
+      const mailAddress = this.state.usernameField.value;
+      const atPos = mailAddress.indexOf('@');
+      const dotPos = mailAddress.lastIndexOf('.');
+      return atPos > 1 && dotPos - atPos > 2 && atPos < dotPos;
+    }
+    return true;
   };
 
   render() {
