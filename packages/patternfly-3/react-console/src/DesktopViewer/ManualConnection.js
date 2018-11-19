@@ -2,7 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import consoleDetailPropType from './consoleDetailPropType';
-import { Form, FormGroup, Col } from 'patternfly-react';
+import { Form, Grid } from 'patternfly-react';
+
+const { Col } = Grid;
+const { FormGroup } = Form;
 
 const Detail = ({ title, value }) => (
   <FormGroup>
