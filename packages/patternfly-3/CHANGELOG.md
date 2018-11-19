@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.10.4"></a>
+## [7.10.4](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.1...patternfly3-react-lerna-root@7.10.4) (2018-11-19)
+
+
+### Bug Fixes
+
+* **CardDropdownButton:** Allow props to be passed ([#932](https://github.com/patternfly/patternfly-react/issues/932)) ([2ee5117](https://github.com/patternfly/patternfly-react/commit/2ee5117))
+* **LoginPage:** Fix background-image style ([#937](https://github.com/patternfly/patternfly-react/issues/937)) ([3307e9b](https://github.com/patternfly/patternfly-react/commit/3307e9b))
+* **LoginPage:** Improve inputs validation. ([#936](https://github.com/patternfly/patternfly-react/issues/936)) ([60c1067](https://github.com/patternfly/patternfly-react/commit/60c1067))
+
+
+
+
 <a name="7.10.3"></a>
 ## [7.10.3](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.1...patternfly3-react-lerna-root@7.10.3) (2018-11-19)
 
