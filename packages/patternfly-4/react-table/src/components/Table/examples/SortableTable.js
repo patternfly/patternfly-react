@@ -2,7 +2,6 @@ import React from 'react';
 import { Table, TableHeader, TableBody, sortable, SortByDirection } from '@patternfly/react-table';
 
 class SortableTable extends React.Component {
-  static title = 'Sortable Table';
   constructor(props) {
     super(props)
     this.state = {

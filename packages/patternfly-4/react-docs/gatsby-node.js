@@ -22,7 +22,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   config.merge({
     resolve: {
       alias: {
-        '@patternfly/react-charts': path.resolve(__dirname, '../react-table/src'),
+        '@patternfly/react-table': path.resolve(__dirname, '../react-table/src'),
         '@patternfly/react-charts': path.resolve(__dirname, '../react-charts/src'),
         '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),

@@ -2,7 +2,6 @@ import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class CollapsibleTable extends React.Component {
-  static title = 'Collapsible table';
   constructor(props) {
     super(props)
     this.state = {

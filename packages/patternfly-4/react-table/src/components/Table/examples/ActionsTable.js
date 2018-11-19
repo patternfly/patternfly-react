@@ -2,7 +2,6 @@ import React from 'react';
 import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class ActionsTable extends React.Component {
-  static title = 'Actions Table';
   constructor(props) {
     super(props)
     this.state = {

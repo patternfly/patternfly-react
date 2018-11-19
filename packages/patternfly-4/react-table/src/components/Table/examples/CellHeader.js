@@ -2,7 +2,6 @@ import React from 'react';
 import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-table';
 
 class CellHeader extends React.Component {
-  static title = 'First cell as Header';
   constructor(props) {
     super(props)
     this.state = {
