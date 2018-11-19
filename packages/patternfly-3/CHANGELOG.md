@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.10.2"></a>
+## [7.10.2](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.1...patternfly3-react-lerna-root@7.10.2) (2018-11-19)
+
+
+### Bug Fixes
+
+* **LoginPage:** Fix background-image style ([#937](https://github.com/patternfly/patternfly-react/issues/937)) ([3307e9b](https://github.com/patternfly/patternfly-react/commit/3307e9b))
+
+
+
+
 <a name="7.10.1"></a>
 ## [7.10.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.0...patternfly3-react-lerna-root@7.10.1) (2018-11-16)
 

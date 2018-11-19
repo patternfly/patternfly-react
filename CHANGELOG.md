@@ -1,5 +1,86 @@
 
-## Change Log (2018-11-16)
+## Change Log (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#938](https://github.com/patternfly/patternfly-react/pull/938) Fix sub-component references in react-console DesktopViewer ([@KKoukiou](https://github.com/KKoukiou))
+
+#### Committers: 2
+- Katerina Koukiou ([@KKoukiou](https://github.com/KKoukiou))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.25.1 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-tokens@1.7.2 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-table@0.1.2 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-styled-system@1.1.2 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-icons@2.7.2 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-docs@3.19.5 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-core@1.35.1 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-charts@1.0.5 (2018-11-16)
 
 #### :house: Internal
 * `patternfly-4`, `react-icons`
