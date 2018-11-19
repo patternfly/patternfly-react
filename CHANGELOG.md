@@ -3,6 +3,28 @@
 
 #### :bug: Bug Fix
 * `patternfly-3`
+  * [#936](https://github.com/patternfly/patternfly-react/pull/936) fix(LoginPage): Improve inputs validation ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- CD Cabrera ([@cdcabrera](https://github.com/cdcabrera))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.24.1 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#938](https://github.com/patternfly/patternfly-react/pull/938) Fix sub-component references in react-console DesktopViewer ([@KKoukiou](https://github.com/KKoukiou))
+
+#### Committers: 2
+- Katerina Koukiou ([@KKoukiou](https://github.com/KKoukiou))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.13.1 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
   * [#938](https://github.com/patternfly/patternfly-react/pull/938) Fix sub-component references in react-console DesktopViewer ([@KKoukiou](https://github.com/KKoukiou))
 
 #### Committers: 2

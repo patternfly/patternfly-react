@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.24.2"></a>
+## [2.24.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.24.1...patternfly-react@2.24.2) (2018-11-19)
+
+
+### Bug Fixes
+
+* **CardDropdownButton:** Allow props to be passed ([#932](https://github.com/patternfly/patternfly-react/issues/932)) ([2ee5117](https://github.com/patternfly/patternfly-react/commit/2ee5117))
+* **LoginPage:** Improve inputs validation. ([#936](https://github.com/patternfly/patternfly-react/issues/936)) ([60c1067](https://github.com/patternfly/patternfly-react/commit/60c1067))
+
+
+
+
 <a name="2.24.1"></a>
 ## [2.24.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.24.0...patternfly-react@2.24.1) (2018-11-19)
 
