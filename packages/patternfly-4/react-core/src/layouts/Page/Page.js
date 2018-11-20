@@ -46,7 +46,6 @@ export const PageContext = React.createContext();
 class Page extends React.Component {
   constructor(props) {
     super(props);
-    // this.mainRef = props.scrollingContainerRef || React.createRef();
     this.mainRef = React.createRef();
 
     this.state = {
