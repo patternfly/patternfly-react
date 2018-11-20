@@ -68,7 +68,7 @@ class Page extends React.Component {
     const { useCondensed, getRef } = this.props;
     if (useCondensed) {
       if (getRef) {
-        getRef().current.addEventListener('scroll', debounce(this.handleScroll));
+        getRef().current.removeEventListener('scroll', this.handleScroll);
       } else {
         this.mainRef.current.removeEventListener('scroll', this.handleScroll);
       }
