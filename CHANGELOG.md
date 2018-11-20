@@ -2,6 +2,52 @@
 ## Change Log (2018-11-20)
 
 #### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.25.2 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-table@0.1.3 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-docs@3.19.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-core@1.35.2 (2018-11-20)
+
+#### :bug: Bug Fix
 * `patternfly-4`
   * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
 

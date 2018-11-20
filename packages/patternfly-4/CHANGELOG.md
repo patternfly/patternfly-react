@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.26.0"></a>
+# [1.26.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.25.2...patternfly4-react-lerna-root@1.26.0) (2018-11-20)
+
+
+### Features
+
+* **PF4 Page:** Allow passing of custom ref for condensed header ([#941](https://github.com/patternfly/patternfly-react/issues/941)) ([889ec1a](https://github.com/patternfly/patternfly-react/commit/889ec1a))
+
+
+
+
 <a name="1.25.2"></a>
 ## [1.25.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.25.1...patternfly4-react-lerna-root@1.25.2) (2018-11-20)
 
