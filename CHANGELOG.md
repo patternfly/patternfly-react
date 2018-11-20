@@ -3,6 +3,46 @@
 
 #### :bug: Bug Fix
 * `patternfly-3`
+  * [#942](https://github.com/patternfly/patternfly-react/pull/942) fix(LoginPage): improve form's error style and behavior ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.10.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## patternfly-react@2.24.5 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## patternfly-react-extensions@2.13.5 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-console@1.7.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
   * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
 
 #### Committers: 1
