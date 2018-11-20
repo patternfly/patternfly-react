@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoginCardInput from './LoginCardInput';
 import LoginCardSettings from './LoginCardSettings';
+import LoginCardSubmitButton from './LoginCardSubmitButton';
 import LoginFormError from './LoginFormError';
-import { Button, Form } from '../../../../index';
+import { Form } from '../../../../index';
 import { noop } from '../../../../common/helpers';
 
 const LoginCardForm = ({
@@ -17,7 +18,8 @@ const LoginCardForm = ({
   rememberMe,
   submitError,
   showError,
-  attributes
+  attributes,
+  isSubmitting
 }) => (
   <Form onSubmit={onSubmit} noValidate {...attributes}>
     <LoginFormError show={showError}>{submitError}</LoginFormError>
@@ -25,16 +27,9 @@ const LoginCardForm = ({
     <LoginCardInput {...passwordField} />
     {additionalFields}
     <LoginCardSettings rememberMe={rememberMe} forgotPassword={forgotPassword} />
-    <Button
-      className="login-pf-submit-button"
-      type="submit"
-      bsStyle="primary"
-      bsSize="large"
-      block
-      disabled={disableSubmit}
-    >
+    <LoginCardSubmitButton isDisabled={disableSubmit} isLoading={isSubmitting}>
       {submitText}
-    </Button>
+    </LoginCardSubmitButton>
   </Form>
 );
 
@@ -49,7 +44,8 @@ LoginCardForm.propTypes = {
   rememberMe: PropTypes.object,
   submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   showError: PropTypes.bool,
-  attributes: PropTypes.object
+  attributes: PropTypes.object,
+  isSubmitting: PropTypes.bool
 };
 
 LoginCardForm.defaultProps = {
@@ -78,7 +74,8 @@ LoginCardForm.defaultProps = {
   rememberMe: { label: null },
   submitError: null,
   showError: false,
-  attributes: null
+  attributes: null,
+  isSubmitting: false
 };
 
 export default LoginCardForm;
