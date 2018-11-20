@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { EmptyState, Button, helpers } from 'patternfly-react';
+import { EmptyState, Button, helpers, Toolbar } from 'patternfly-react';
 import constants from '../common/constants';
 
 const { CONNECTED, DISCONNECTED, LOADING } = constants;
@@ -113,15 +113,19 @@ class SerialConsole extends React.Component {
 
     return (
       <div className={classes} id={id}>
-        <SerialConsoleActions
-          idPrefix={idPrefix}
-          isDisconnectEnabled={isDisconnectEnabled}
-          onDisconnect={this.onDisconnectClick}
-          onReset={this.onResetClick}
-          textDisconnect={this.props.textDisconnect}
-          textReconnect={this.props.textReconnect}
-        />
-        <div className="panel-body console-terminal-pf">{terminal}</div>
+        <Toolbar.RightContent>
+          <SerialConsoleActions
+            idPrefix={idPrefix}
+            isDisconnectEnabled={isDisconnectEnabled}
+            onDisconnect={this.onDisconnectClick}
+            onReset={this.onResetClick}
+            textDisconnect={this.props.textDisconnect}
+            textReconnect={this.props.textReconnect}
+          />
+        </Toolbar.RightContent>
+        <Toolbar.Results>
+          <div className="panel-body console-terminal-pf">{terminal}</div>
+        </Toolbar.Results>
       </div>
     );
   }
