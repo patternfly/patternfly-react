@@ -21,7 +21,9 @@ class LoginCardWithValidation extends React.Component {
     isCapsLock: false,
     form: {
       showError: false,
-      submitError: this.props.submitError
+      submitError: this.props.submitError,
+      disableSubmit: this.props.disableSubmit,
+      isSubmitting: this.props.isSubmitting
     }
   };
 
@@ -82,7 +84,9 @@ class LoginCardWithValidation extends React.Component {
           form: {
             ...this.state.form,
             showError: true,
-            error: submitError
+            error: submitError,
+            disableSubmit: true,
+            isSubmitting: true
           }
         });
     } else {
@@ -115,7 +119,9 @@ class LoginCardWithValidation extends React.Component {
         showError: this.state.passwordField.showError
       },
       onSubmit: e => this.onSubmit(e),
-      showError: this.state.form.showError
+      showError: this.state.form.showError,
+      disableSubmit: this.state.form.disableSubmit,
+      isSubmitting: this.state.form.isSubmitting
     };
   };
 
@@ -252,7 +258,9 @@ LoginCardWithValidation.propTypes = {
     minLength: PropTypes.number
   }),
   onSubmit: PropTypes.func,
-  submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
+  submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  disableSubmit: PropTypes.bool,
+  isSubmitting: PropTypes.bool
 };
 
 LoginCardWithValidation.defaultProps = {
@@ -260,7 +268,9 @@ LoginCardWithValidation.defaultProps = {
   usernameField: { ...LoginCardInput.defaultProps.usernameField },
   passwordField: { ...LoginCardInput.defaultProps.passwordField },
   onSubmit: e => e.target.submit(),
-  submitError: null
+  submitError: null,
+  disableSubmit: false,
+  isSubmitting: false
 };
 
 export default LoginCardWithValidation;
