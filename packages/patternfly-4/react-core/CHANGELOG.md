@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.35.2"></a>
+## [1.35.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.35.1...@patternfly/react-core@1.35.2) (2018-11-20)
+
+
+### Bug Fixes
+
+* **dropdown:** address typescript issue with toggle prop ([#935](https://github.com/patternfly/patternfly-react/issues/935)) ([8341297](https://github.com/patternfly/patternfly-react/commit/8341297))
+
+
+
+
 <a name="1.35.1"></a>
 ## [1.35.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.35.0...@patternfly/react-core@1.35.1) (2018-11-16)
 

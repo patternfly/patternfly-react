@@ -1,5 +1,48 @@
 
-## Change Log (2018-11-19)
+## Change Log (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## patternfly3-react-lerna-root@7.10.4 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#936](https://github.com/patternfly/patternfly-react/pull/936) fix(LoginPage): Improve inputs validation ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- CD Cabrera ([@cdcabrera](https://github.com/cdcabrera))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.24.3 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#936](https://github.com/patternfly/patternfly-react/pull/936) fix(LoginPage): Improve inputs validation ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- CD Cabrera ([@cdcabrera](https://github.com/cdcabrera))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.13.3 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#936](https://github.com/patternfly/patternfly-react/pull/936) fix(LoginPage): Improve inputs validation ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- CD Cabrera ([@cdcabrera](https://github.com/cdcabrera))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.7.4 (2018-11-19)
 
 #### :bug: Bug Fix
 * `patternfly-3`

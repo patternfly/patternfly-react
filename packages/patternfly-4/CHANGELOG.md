@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.25.2"></a>
+## [1.25.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.25.1...patternfly4-react-lerna-root@1.25.2) (2018-11-20)
+
+
+### Bug Fixes
+
+* **dropdown:** address typescript issue with toggle prop ([#935](https://github.com/patternfly/patternfly-react/issues/935)) ([8341297](https://github.com/patternfly/patternfly-react/commit/8341297))
+
+
+
+
 <a name="1.25.1"></a>
 ## [1.25.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.25.0...patternfly4-react-lerna-root@1.25.1) (2018-11-16)
 
