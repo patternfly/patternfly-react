@@ -3,7 +3,7 @@
 exports[`Component matches snapshot 1`] = `
 <div
   class="login-pf"
-  style="background-image: url(null);"
+  style="background-image: url(/some-background);"
 >
   <div
     class="login-pf-page "

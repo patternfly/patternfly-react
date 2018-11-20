@@ -21,8 +21,12 @@ const propTypes = {
   sidebar: PropTypes.node,
   /** enable condensed header on scroll feature (for desktop only). Adjusts the height on scroll of the page header and horizontal nav. */
   useCondensed: PropTypes.bool,
-  /** condensed height override */
-  scrollingDistance: PropTypes.number
+  /** requires useCondensed: condensed height override */
+  scrollingDistance: PropTypes.number,
+  /** requires useCondensed: Number in ms to debounce scrolling, defaults to 16ms */
+  scrollingDebounce: PropTypes.number,
+  /** requires useCondensed: An optional callback function to get the ref to a scrollable container */
+  getRef: PropTypes.func
 };
 
 const defaultProps = {
@@ -31,7 +35,10 @@ const defaultProps = {
   header: null,
   sidebar: null,
   useCondensed: false,
-  scrollingDistance: 20
+  scrollingDistance: 20,
+  // approx 1 frame (ie: 16.7ms)
+  scrollingDebounce: 16,
+  getRef: null
 };
 
 export const PageContext = React.createContext();
@@ -39,6 +46,7 @@ export const PageContext = React.createContext();
 class Page extends React.Component {
   constructor(props) {
     super(props);
+    // This ref is only used if getRef function prop is not passed in
     this.mainRef = React.createRef();
 
     this.state = {
@@ -46,17 +54,24 @@ class Page extends React.Component {
     };
   }
   componentDidMount() {
-    const { useCondensed } = this.props;
+    const { useCondensed, scrollingDebounce, getRef } = this.props;
     if (useCondensed) {
-      // I picked this because it's approx 1 frame (ie: 16.7ms)
-      this.mainRef.current.addEventListener('scroll', debounce(this.handleScroll, 16));
+      if (getRef) {
+        getRef().current.addEventListener('scroll', debounce(this.handleScroll, scrollingDebounce));
+      } else {
+        this.mainRef.current.addEventListener('scroll', debounce(this.handleScroll, scrollingDebounce));
+      }
       window.addEventListener('resize', this.handleResize);
     }
   }
   componentWillUnmount() {
-    const { useCondensed } = this.props;
+    const { useCondensed, getRef } = this.props;
     if (useCondensed) {
-      this.mainRef.current.removeEventListener('scroll', this.handleScroll);
+      if (getRef) {
+        getRef().current.removeEventListener('scroll', this.handleScroll);
+      } else {
+        this.mainRef.current.removeEventListener('scroll', this.handleScroll);
+      }
       window.removeEventListener('resize', this.handleResize);
     }
   }
@@ -86,17 +101,36 @@ class Page extends React.Component {
   };
 
   render() {
-    const { className, children, header, sidebar, useCondensed, scrollingDistance, ...rest } = this.props;
+    const {
+      className,
+      children,
+      header,
+      sidebar,
+      useCondensed,
+      scrollingDistance,
+      scrollingDebounce,
+      getRef,
+      ...rest
+    } = this.props;
     const { isTall } = this.state;
+
+    // Only set the ref on the main container if it was not passed in through getRef
+    const mainWithOptionalRef = getRef ? (
+      <main role="main" className={css(styles.pageMain)}>
+        {children}
+      </main>
+    ) : (
+        <main ref={this.mainRef} role="main" className={css(styles.pageMain)}>
+          {children}
+        </main>
+      );
 
     return (
       <PageContext.Provider value={{ isTall }}>
         <div {...rest} className={css(styles.page, className)}>
           {header}
           {sidebar}
-          <main ref={this.mainRef} role="main" className={css(styles.pageMain)}>
-            {children}
-          </main>
+          {mainWithOptionalRef}
         </div>
       </PageContext.Provider>
     );

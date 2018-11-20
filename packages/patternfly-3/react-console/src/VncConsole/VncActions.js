@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DropdownButton, MenuItem, noop } from 'patternfly-react';
+import { MenuItem, Button, helpers } from 'patternfly-react';
+
+const { Dropdown } = Button;
+const { noop } = helpers;
 
 const VncActions = ({ textSendShortcut, textCtrlAltDel, onCtrlAltDel }) => (
-  <DropdownButton bsStyle="default" title={textSendShortcut} id="console-send-shortcut" onClick={noop}>
+  <Dropdown bsStyle="default" title={textSendShortcut} id="console-send-shortcut" onClick={noop}>
     <MenuItem eventKey="1" onClick={onCtrlAltDel}>
       {textCtrlAltDel}
     </MenuItem>
-  </DropdownButton>
+  </Dropdown>
 );
 
 VncActions.propTypes = {

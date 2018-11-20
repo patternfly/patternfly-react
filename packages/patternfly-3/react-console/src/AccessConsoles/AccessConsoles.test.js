@@ -4,9 +4,10 @@ import { noop } from 'patternfly-react';
 
 import { AccessConsoles } from './index';
 import { SerialConsole } from '../SerialConsole';
-import { SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } from '../common/constants';
-import { LOADING } from '../SerialConsole/constants';
 import { VncConsole } from '../VncConsole';
+import constants from '../common/constants';
+
+const { SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, LOADING } = constants;
 
 const MyVncConsoleTestWrapper = () => <p>This can be VncConsole component or a wrapper</p>;
 

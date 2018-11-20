@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { noop } from 'patternfly-react';
+import { helpers } from 'patternfly-react';
+
+const { noop } = helpers;
 
 const SerialConsoleActions = ({
   idPrefix,

@@ -1,7 +1,8 @@
 import 'blob-polyfill';
 import { saveAs } from 'file-saver';
+import constants from '../common/constants';
 
-import { VNC_CONSOLE_TYPE, SPICE_CONSOLE_TYPE } from '../common/constants';
+const { VNC_CONSOLE_TYPE, SPICE_CONSOLE_TYPE } = constants;
 
 export function downloadFile(fileName, content, mimeType) {
   const blob = new Blob([content], { type: mimeType });
