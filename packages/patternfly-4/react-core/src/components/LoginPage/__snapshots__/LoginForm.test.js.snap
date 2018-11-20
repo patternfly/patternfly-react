@@ -39,7 +39,6 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       aria-label={null}
       className=""
       id="pf-login-username-id"
-      isAlt={false}
       isDisabled={false}
       isReadOnly={false}
       isRequired={true}
@@ -64,7 +63,6 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       aria-label={null}
       className=""
       id="pf-login-password-id"
-      isAlt={false}
       isDisabled={false}
       isReadOnly={false}
       isRequired={true}
@@ -151,7 +149,6 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       aria-label={null}
       className=""
       id="pf-login-username-id"
-      isAlt={false}
       isDisabled={false}
       isReadOnly={false}
       isRequired={true}
@@ -176,7 +173,6 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       aria-label={null}
       className=""
       id="pf-login-password-id"
-      isAlt={false}
       isDisabled={false}
       isReadOnly={false}
       isRequired={true}
@@ -258,7 +254,6 @@ exports[`should render Login form 1`] = `
       aria-label={null}
       className=""
       id="pf-login-username-id"
-      isAlt={false}
       isDisabled={false}
       isReadOnly={false}
       isRequired={true}
@@ -283,7 +278,6 @@ exports[`should render Login form 1`] = `
       aria-label={null}
       className=""
       id="pf-login-password-id"
-      isAlt={false}
       isDisabled={false}
       isReadOnly={false}
       isRequired={true}

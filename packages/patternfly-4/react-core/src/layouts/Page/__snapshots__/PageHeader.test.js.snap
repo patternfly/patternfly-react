@@ -2,18 +2,18 @@
 
 exports[`Check page vertical layout example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
-  display: flex;
+  display: none;
   align-items: center;
   min-height: 2.5rem;
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 .pf-l-page__header-tools {
   display: block;
   align-items: center;
-  margin-right: 2rem;
+  margin-right: 1rem;
   margin-left: auto;
 }
 .pf-l-page__header.pf-m-tall {
