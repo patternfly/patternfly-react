@@ -2,18 +2,18 @@
 
 exports[`Check page condensed header example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
-  display: flex;
+  display: none;
   align-items: center;
   min-height: 2.5rem;
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 .pf-l-page__header-tools {
   display: block;
   align-items: center;
-  margin-right: 2rem;
+  margin-right: 1rem;
   margin-left: auto;
 }
 .pf-l-page__header.pf-m-tall {
@@ -40,22 +40,22 @@ exports[`Check page condensed header example against snapshot 1`] = `
 }
 .pf-l-page__main-section {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: #ededed;
 }
 .pf-l-page__main-section.pf-m-light {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: #ffffff;
 }
 .pf-l-page__main-section.pf-m-dark-200 {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: rgba(3, 3, 3, 0.32);
 }
 .pf-l-page__main-section.pf-m-dark-100 {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: rgba(3, 3, 3, 0.62);
 }
 .pf-l-page__main {
@@ -202,18 +202,18 @@ exports[`Check page condensed header example against snapshot 1`] = `
 
 exports[`Check page horizontal layout example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
-  display: flex;
+  display: none;
   align-items: center;
   min-height: 2.5rem;
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 .pf-l-page__header-tools {
   display: block;
   align-items: center;
-  margin-right: 2rem;
+  margin-right: 1rem;
   margin-left: auto;
 }
 .pf-l-page__header {
@@ -240,22 +240,22 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 }
 .pf-l-page__main-section {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: #ededed;
 }
 .pf-l-page__main-section.pf-m-light {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: #ffffff;
 }
 .pf-l-page__main-section.pf-m-dark-200 {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: rgba(3, 3, 3, 0.32);
 }
 .pf-l-page__main-section.pf-m-dark-100 {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: rgba(3, 3, 3, 0.62);
 }
 .pf-l-page__main {
@@ -405,18 +405,18 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 
 exports[`Check page vertical layout example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
-  display: flex;
+  display: none;
   align-items: center;
   min-height: 2.5rem;
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 .pf-l-page__header-tools {
   display: block;
   align-items: center;
-  margin-right: 2rem;
+  margin-right: 1rem;
   margin-left: auto;
 }
 .pf-l-page__header {
@@ -443,22 +443,22 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 .pf-l-page__main-section {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: #ededed;
 }
 .pf-l-page__main-section.pf-m-light {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: #ffffff;
 }
 .pf-l-page__main-section.pf-m-dark-200 {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: rgba(3, 3, 3, 0.32);
 }
 .pf-l-page__main-section.pf-m-dark-100 {
   display: block;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1rem;
   background-color: rgba(3, 3, 3, 0.62);
 }
 .pf-l-page__main {

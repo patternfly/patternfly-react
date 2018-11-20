@@ -3,13 +3,16 @@
 exports[`Disabled Select input  1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <select
@@ -35,13 +38,16 @@ exports[`Disabled Select input  1`] = `
 exports[`Grouped Select input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <select
@@ -123,13 +129,16 @@ exports[`Grouped Select input 1`] = `
 exports[`Select input with aria-label does not generate console error 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <select
@@ -155,13 +164,16 @@ exports[`Select input with aria-label does not generate console error 1`] = `
 exports[`Select input with id does not generate console error 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <select
@@ -188,13 +200,16 @@ exports[`Select input with id does not generate console error 1`] = `
 exports[`Select input with no aria-label or id generates console error 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <select
@@ -220,13 +235,16 @@ exports[`Select input with no aria-label or id generates console error 1`] = `
 exports[`Simple Select input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <select
@@ -294,13 +312,16 @@ exports[`Simple Select input 1`] = `
 exports[`invalid Select input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <select
@@ -326,13 +347,16 @@ exports[`invalid Select input 1`] = `
 exports[`required Select input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <select

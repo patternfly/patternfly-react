@@ -127,7 +127,7 @@ exports[`FormGroup component should render form group invalid variant 1`] = `
 `;
 
 exports[`FormGroup component should render form group required variant 1`] = `
-.pf-c-form__label__required {
+.pf-c-form__label-required {
   display: block;
 }
 .pf-c-form__label {
@@ -155,7 +155,7 @@ exports[`FormGroup component should render form group required variant 1`] = `
       label
       <span
         aria-hidden="true"
-        className="pf-c-form__label__required"
+        className="pf-c-form__label-required"
       >
         *
       </span>
@@ -338,7 +338,7 @@ exports[`FormGroup component should render form group variant with node label 1`
 `;
 
 exports[`FormGroup component should render form group variant with required label 1`] = `
-.pf-c-form__label__required {
+.pf-c-form__label-required {
   display: block;
 }
 .pf-c-form__label {
@@ -366,7 +366,7 @@ exports[`FormGroup component should render form group variant with required labe
       label
       <span
         aria-hidden="true"
-        className="pf-c-form__label__required"
+        className="pf-c-form__label-required"
       >
         *
       </span>
