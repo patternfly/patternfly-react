@@ -105,7 +105,6 @@ exports[`Check page condensed header example against snapshot 1`] = `
     aria-label="Page layout"
     className="pf-l-page my-page-class"
     id="PageId"
-    scrollingDebounce={16}
   >
     <PageHeader
       avatar=" | Avatar"
@@ -307,7 +306,6 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     className="pf-l-page my-page-class"
     id="PageId"
     layout="horizontal"
-    scrollingDebounce={16}
   >
     <PageHeader
       avatar=" | Avatar"
@@ -506,7 +504,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     aria-label="Page layout"
     className="pf-l-page my-page-class"
     id="PageId"
-    scrollingDebounce={16}
   >
     <PageHeader
       avatar=" | Avatar"

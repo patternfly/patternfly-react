@@ -46,6 +46,7 @@ export const PageContext = React.createContext();
 class Page extends React.Component {
   constructor(props) {
     super(props);
+    // This ref is only used if getRef function prop is not passed in
     this.mainRef = React.createRef();
 
     this.state = {
@@ -100,7 +101,17 @@ class Page extends React.Component {
   };
 
   render() {
-    const { className, children, header, sidebar, useCondensed, scrollingDistance, getRef, ...rest } = this.props;
+    const {
+      className,
+      children,
+      header,
+      sidebar,
+      useCondensed,
+      scrollingDistance,
+      scrollingDebounce,
+      getRef,
+      ...rest
+    } = this.props;
     const { isTall } = this.state;
 
     // Only set the ref on the main container if it was not passed in through getRef
@@ -114,6 +125,7 @@ class Page extends React.Component {
         </main>
       );
 
+    // Only set the ref on the main container if it was not passed in through getRef
     return (
       <PageContext.Provider value={{ isTall }}>
         <div {...rest} className={css(styles.page, className)}>
