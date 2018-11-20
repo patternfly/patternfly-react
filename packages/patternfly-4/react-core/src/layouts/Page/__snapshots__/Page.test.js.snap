@@ -19,6 +19,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
 .pf-l-page__header.pf-m-tall {
   display: flex;
   grid-area: header;
+  z-index: 300;
   flex-wrap: wrap;
   align-items: flex-end;
   max-width: 100%;
@@ -27,7 +28,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
   grid-area: 2 / 1;
-  z-index: 500;
+  z-index: 200;
   width: 80%;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -60,6 +61,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
 .pf-l-page__main {
   display: flex;
   grid-area: main;
+  z-index: 100;
   flex-direction: column;
   padding-right: 0px;
   overflow-x: hidden;
@@ -217,6 +219,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 .pf-l-page__header {
   display: flex;
   grid-area: header;
+  z-index: 300;
   flex-wrap: wrap;
   align-items: flex-end;
   max-width: 100%;
@@ -225,7 +228,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
   grid-area: 2 / 1;
-  z-index: 500;
+  z-index: 200;
   width: 80%;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -258,6 +261,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 .pf-l-page__main {
   display: flex;
   grid-area: main;
+  z-index: 100;
   flex-direction: column;
   padding-right: 0px;
   overflow-x: hidden;
@@ -418,6 +422,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 .pf-l-page__header {
   display: flex;
   grid-area: header;
+  z-index: 300;
   flex-wrap: wrap;
   align-items: flex-end;
   max-width: 100%;
@@ -426,7 +431,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
   grid-area: 2 / 1;
-  z-index: 500;
+  z-index: 200;
   width: 80%;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -459,6 +464,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 .pf-l-page__main {
   display: flex;
   grid-area: main;
+  z-index: 100;
   flex-direction: column;
   padding-right: 0px;
   overflow-x: hidden;

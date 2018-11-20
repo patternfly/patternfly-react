@@ -125,7 +125,6 @@ class Page extends React.Component {
         </main>
       );
 
-    // Only set the ref on the main container if it was not passed in through getRef
     return (
       <PageContext.Provider value={{ isTall }}>
         <div {...rest} className={css(styles.page, className)}>
