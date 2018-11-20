@@ -114,8 +114,15 @@ exports[`Component matches snapshot 1`] = `
           novalidate=""
         >
           <div
-            class="login-form-error "
-          />
+            class="login-form-error"
+            style="overflow: hidden; height: 0px;"
+          >
+            <div
+              class="ReactCollapse--content"
+            >
+              Your account has been blocked. Contact your administrator to unblock it.
+            </div>
+          </div>
           <div
             class="login_card_input  form-group"
           >
