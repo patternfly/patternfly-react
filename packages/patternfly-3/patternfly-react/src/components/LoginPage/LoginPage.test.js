@@ -14,6 +14,7 @@ const createProps = () => {
   const { header, card } = englishMessages;
   return {
     container: {
+      backgroundUrl: '/some-background',
       translations: { en: englishMessages, fr: frenchMessages },
       alert: {
         message: header.alert,

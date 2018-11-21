@@ -2,8 +2,6 @@ import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
 
 class ControlledCheckbox extends React.Component {
-  static title = 'Controlled Checkbox';
-
   state = {
     checked: false
   };

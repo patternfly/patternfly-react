@@ -1,11 +1,7 @@
 import React from 'react';
 import { Alert, Button } from '@patternfly/react-core';
-import getContainerProps from './common/getContainerProps';
 
 class InfoAlert extends React.Component {
-  static title = 'Info Alert';
-  static getContainerProps = getContainerProps;
-
   render() {
     return (
       <React.Fragment>

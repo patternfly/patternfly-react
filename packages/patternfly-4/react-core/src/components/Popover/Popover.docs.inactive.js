@@ -23,5 +23,8 @@ export default {
   enumValues: {
     'Object.values(PopoverPosition)': Object.values(PopoverPosition)
   },
-  examples: [SimplePopover, HeadlessPopover]
+  examples: [
+    { component: SimplePopover, title: 'Closable Popover Position' },
+    { component: HeadlessPopover, title: 'Headless Popover' }
+  ]
 };

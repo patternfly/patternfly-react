@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition } from '@patternfly/react-core';
 
 export default class PositionRightDropdown extends Component {
-  static title = 'Dropdown - position right';
-
   constructor(props) {
     super(props);
     this.state = {

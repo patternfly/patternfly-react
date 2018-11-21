@@ -16,10 +16,11 @@ export * from './List';
 export * from './LoginPage';
 export * from './Modal';
 export * from './Nav';
-export * from './Popover';
+// export * from './Popover'; // Not ready yet
 export * from './Progress';
 export * from './Radio';
 export * from './Select';
+export * from './Switch';
 export * from './TextArea';
 export * from './TextInput';
 export * from './Title';

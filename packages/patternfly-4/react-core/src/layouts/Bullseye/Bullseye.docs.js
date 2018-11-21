@@ -1,5 +1,6 @@
 import { Bullseye } from '@patternfly/react-core';
 import Simple from './examples/SimpleBullseye';
+import getContainerProps from './examples/common/getContainerProps';
 
 export default {
   title: 'Bullseye',
@@ -7,5 +8,5 @@ export default {
   components: {
     Bullseye
   },
-  examples: [Simple]
+  examples: [{ component: Simple, title: 'Simple Bullseye Layout', getContainerProps }]
 };

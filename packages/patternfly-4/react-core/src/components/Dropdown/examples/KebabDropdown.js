@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
 
 export default class KebabDropdown extends Component {
-  static title = 'Kebab';
-
   constructor(props) {
     super(props);
     this.state = {

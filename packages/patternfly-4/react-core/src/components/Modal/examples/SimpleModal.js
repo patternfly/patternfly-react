@@ -2,8 +2,6 @@ import React from 'react';
 import { Modal, Button } from '@patternfly/react-core';
 
 class SimpleModal extends React.Component {
-  static title = 'Simple Modal';
-
   state = {
     isModalOpen: false
   };

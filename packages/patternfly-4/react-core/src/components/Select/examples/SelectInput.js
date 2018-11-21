@@ -2,8 +2,6 @@ import React from 'react';
 import { Select, SelectOption } from '@patternfly/react-core';
 
 class SelectInput extends React.Component {
-  static title = 'Select Input';
-
   state = {
     value: 'mrs'
   };

@@ -9,6 +9,6 @@ export default {
   enumValues: {
     'Object.values(BackgroundImageSrc)': Object.values(BackgroundImageSrc)
   },
-  examples: [SimpleBackgroundImage],
+  examples: [{ component: SimpleBackgroundImage, title: 'Simple Background Image' }],
   fullPageOnly: true
 };

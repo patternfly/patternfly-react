@@ -9,6 +9,7 @@ import {
   menuItemContainer,
   tokenContainer
 } from 'react-bootstrap-typeahead';
+import AsyncTypeAheadSelect from './AsyncTypeAheadSelect';
 
 TypeAheadSelect.Highlighter = Highlighter;
 TypeAheadSelect.Menu = Menu;
@@ -18,5 +19,7 @@ TypeAheadSelect.TypeaheadMenu = TypeaheadMenu;
 TypeAheadSelect.asyncContainer = asyncContainer;
 TypeAheadSelect.menuItemContainer = menuItemContainer;
 TypeAheadSelect.tokenContainer = tokenContainer;
+
+TypeAheadSelect.Async = AsyncTypeAheadSelect;
 
 export default TypeAheadSelect;

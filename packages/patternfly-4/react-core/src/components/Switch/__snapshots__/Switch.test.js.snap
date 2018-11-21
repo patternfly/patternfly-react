@@ -1,0 +1,223 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`no label switch is checked 1`] = `
+.pf-c-switch__input {
+  display: block;
+}
+.pf-c-switch__toggle {
+  display: block;
+}
+.pf-c-switch {
+  display: inline-block;
+  position: relative;
+  line-height: 1.5;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+<label
+  className="pf-c-switch"
+  htmlFor="no-label-switch-is-checked"
+>
+  <input
+    aria-label=""
+    checked={true}
+    className="pf-c-switch__input"
+    disabled={false}
+    id="no-label-switch-is-checked"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="pf-c-switch__toggle"
+  />
+</label>
+`;
+
+exports[`no label switch is not checked 1`] = `
+.pf-c-switch__input {
+  display: block;
+}
+.pf-c-switch__toggle {
+  display: block;
+}
+.pf-c-switch {
+  display: inline-block;
+  position: relative;
+  line-height: 1.5;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+<label
+  className="pf-c-switch"
+  htmlFor="no-label-switch-is-not-checked"
+>
+  <input
+    aria-label=""
+    checked={false}
+    className="pf-c-switch__input"
+    disabled={false}
+    id="no-label-switch-is-not-checked"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="pf-c-switch__toggle"
+  />
+</label>
+`;
+
+exports[`switch is checked 1`] = `
+.pf-c-switch__input {
+  display: block;
+}
+.pf-c-switch__toggle {
+  display: block;
+}
+.pf-c-switch__label {
+  display: block;
+}
+.pf-c-switch {
+  display: inline-block;
+  position: relative;
+  line-height: 1.5;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+<label
+  className="pf-c-switch"
+  htmlFor="switch-is-checked"
+>
+  <input
+    aria-label=""
+    checked={true}
+    className="pf-c-switch__input"
+    disabled={false}
+    id="switch-is-checked"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="pf-c-switch__toggle"
+  />
+  <span
+    aria-hidden="true"
+    className="pf-c-switch__label"
+  >
+    On
+  </span>
+</label>
+`;
+
+exports[`switch is checked and disabled 1`] = `
+.pf-c-switch__input {
+  display: block;
+}
+.pf-c-switch__toggle {
+  display: block;
+}
+.pf-c-switch {
+  display: inline-block;
+  position: relative;
+  line-height: 1.5;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+<label
+  className="pf-c-switch"
+  htmlFor="switch-is-checked-and-disabled"
+>
+  <input
+    aria-label=""
+    checked={true}
+    className="pf-c-switch__input"
+    disabled={true}
+    id="switch-is-checked-and-disabled"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="pf-c-switch__toggle"
+  />
+</label>
+`;
+
+exports[`switch is not checked 1`] = `
+.pf-c-switch__input {
+  display: block;
+}
+.pf-c-switch__toggle {
+  display: block;
+}
+.pf-c-switch__label {
+  display: block;
+}
+.pf-c-switch {
+  display: inline-block;
+  position: relative;
+  line-height: 1.5;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+<label
+  className="pf-c-switch"
+  htmlFor="switch-is-not-checked"
+>
+  <input
+    aria-label=""
+    checked={false}
+    className="pf-c-switch__input"
+    disabled={false}
+    id="switch-is-not-checked"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="pf-c-switch__toggle"
+  />
+  <span
+    aria-hidden="true"
+    className="pf-c-switch__label"
+  >
+    Off
+  </span>
+</label>
+`;
+
+exports[`switch is not checked and disabled 1`] = `
+.pf-c-switch__input {
+  display: block;
+}
+.pf-c-switch__toggle {
+  display: block;
+}
+.pf-c-switch {
+  display: inline-block;
+  position: relative;
+  line-height: 1.5;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+<label
+  className="pf-c-switch"
+  htmlFor="switch-is-not-checked-and-disabled"
+>
+  <input
+    aria-label=""
+    checked={false}
+    className="pf-c-switch__input"
+    disabled={true}
+    id="switch-is-not-checked-and-disabled"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <span
+    className="pf-c-switch__toggle"
+  />
+</label>
+`;

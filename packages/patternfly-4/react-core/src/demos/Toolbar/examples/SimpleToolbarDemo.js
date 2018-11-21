@@ -17,9 +17,6 @@ import spacingStyles from '@patternfly/patternfly-next/utilities/Spacing/spacing
 import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
 class SimpleToolbarDemo extends React.Component {
-  static title = 'Toolbar Simple Example';
-  static liveScope = { flexStyles, spacingStyles };
-
   constructor(props) {
     super(props);
     this.state = {

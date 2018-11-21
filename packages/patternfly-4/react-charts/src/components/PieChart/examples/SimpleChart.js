@@ -10,12 +10,8 @@ import {
   Text,
   TextVariants
 } from '@patternfly/react-core';
-import getContainerProps from './common/getContainerProps';
 
 class SimpleChart extends React.Component {
-  static getContainerProps = getContainerProps;
-  static title = 'Simple Chart';
-
   getChart = (theme) => (
     <ChartPie
       data={[

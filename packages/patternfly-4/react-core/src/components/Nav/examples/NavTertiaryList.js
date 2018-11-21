@@ -2,8 +2,6 @@ import React from 'react';
 import { Nav, NavList, NavItem, NavVariants } from '@patternfly/react-core';
 
 class NavTertiaryList extends React.Component {
-  static title = 'Tertiary List';
-
   state = {
     activeItem: 0
   };

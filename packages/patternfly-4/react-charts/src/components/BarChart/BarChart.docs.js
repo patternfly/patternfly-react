@@ -1,9 +1,6 @@
-import {
-  Chart,
-  ChartBar,
-  ChartGroup
-} from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartGroup } from '@patternfly/react-charts';
 import SimpleChart from './examples/SimpleChart';
+import getContainerProps from './examples/common/getContainerProps';
 
 export default {
   title: 'Bar Chart',
@@ -12,5 +9,5 @@ export default {
     ChartBar,
     ChartGroup
   },
-  examples: [SimpleChart]
+  examples: [{ component: SimpleChart, title: 'Simple Chart', getContainerProps }]
 };

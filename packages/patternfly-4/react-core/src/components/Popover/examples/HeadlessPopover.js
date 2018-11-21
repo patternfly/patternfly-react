@@ -9,8 +9,6 @@ import {
 } from '@patternfly/react-core';
 
 class HeadlessPopover extends React.Component {
-  static title = 'Headless Popover';
-
   constructor(props) {
     super(props);
     this.popoverRef = React.createRef();

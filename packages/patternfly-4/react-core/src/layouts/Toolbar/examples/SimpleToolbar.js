@@ -1,11 +1,7 @@
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
-import getContainerProps from './common/getContainerProps';
 
 class SimpleToolbar extends React.Component {
-  static title = 'Simple Toolbar Layout';
-  static getContainerProps = getContainerProps;
-
   render() {
     return (
       <Toolbar>

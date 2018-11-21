@@ -2,8 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
 
 class BorderStyles extends React.Component {
-  static title = 'Borders';
-
   render() {
     const { space, borders, radii, colors } = StyledConstants;
     return (

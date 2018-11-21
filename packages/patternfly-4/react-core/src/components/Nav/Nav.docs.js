@@ -21,13 +21,13 @@ export default {
     'Object.values(NavVariants)': Object.values(NavVariants)
   },
   examples: [
-    SimpleList,
-    GroupedList,
-    DefaultList,
-    ExpandableList,
-    ExpandableTitlesList,
-    MixedList,
-    HorizontalList,
-    TertiaryList
+    { component: SimpleList, title: 'Simple Nav' },
+    { component: GroupedList, title: 'Grouped Nav' },
+    { component: DefaultList, title: 'Default Nav' },
+    { component: ExpandableList, title: 'Expandable Nav' },
+    { component: ExpandableTitlesList, title: 'Expandable Nav (w/subnav titles)' },
+    { component: MixedList, title: 'Nav Mixed' },
+    { component: HorizontalList, title: 'Horizontal List' },
+    { component: TertiaryList, title: 'Tertiary List' }
   ]
 };

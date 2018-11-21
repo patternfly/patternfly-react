@@ -3,6 +3,70 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.19.8"></a>
+## [3.19.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.7...@patternfly/react-docs@3.19.8) (2018-11-21)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.7"></a>
+## [3.19.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.6...@patternfly/react-docs@3.19.7) (2018-11-20)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.6"></a>
+## [3.19.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.5...@patternfly/react-docs@3.19.6) (2018-11-20)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.5"></a>
+## [3.19.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.4...@patternfly/react-docs@3.19.5) (2018-11-16)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.4"></a>
+## [3.19.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.2...@patternfly/react-docs@3.19.4) (2018-11-15)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.3"></a>
+## [3.19.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.2...@patternfly/react-docs@3.19.3) (2018-11-14)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.2"></a>
+## [3.19.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.0...@patternfly/react-docs@3.19.2) (2018-11-13)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.1"></a>
+## [3.19.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.0...@patternfly/react-docs@3.19.1) (2018-11-13)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 <a name="3.19.0"></a>
 # [3.19.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.18.0...@patternfly/react-docs@3.19.0) (2018-11-12)
 

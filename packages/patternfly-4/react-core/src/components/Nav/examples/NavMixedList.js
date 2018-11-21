@@ -2,8 +2,6 @@ import React from 'react';
 import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
 
 class NavMixedList extends React.Component {
-  static title = 'Nav Mixed';
-
   state = {
     activeGroup: '',
     activeItem: 'itm-1'

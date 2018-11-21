@@ -3,6 +3,108 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.7.7"></a>
+## [1.7.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.7.6...@patternfly/react-console@1.7.7) (2018-11-20)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.7.6"></a>
+## [1.7.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.7.4...@patternfly/react-console@1.7.6) (2018-11-20)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.7.5"></a>
+## [1.7.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.7.4...@patternfly/react-console@1.7.5) (2018-11-20)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.7.4"></a>
+## [1.7.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.7.1...@patternfly/react-console@1.7.4) (2018-11-19)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.7.3"></a>
+## [1.7.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.7.1...@patternfly/react-console@1.7.3) (2018-11-19)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.7.2"></a>
+## [1.7.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.7.1...@patternfly/react-console@1.7.2) (2018-11-19)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.7.1"></a>
+## [1.7.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.7.0...@patternfly/react-console@1.7.1) (2018-11-16)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.6.3...@patternfly/react-console@1.7.0) (2018-11-15)
+
+
+### Features
+
+* **HintBlock:** Add the HintBlock component ([#922](https://github.com/patternfly/patternfly-react/issues/922)) ([92559e6](https://github.com/patternfly/patternfly-react/commit/92559e6))
+
+
+
+
+<a name="1.6.3"></a>
+## [1.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.6.2...@patternfly/react-console@1.6.3) (2018-11-15)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.6.2"></a>
+## [1.6.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.6.1...@patternfly/react-console@1.6.2) (2018-11-14)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.6.1"></a>
+## [1.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.6.0...@patternfly/react-console@1.6.1) (2018-11-13)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.5.6...@patternfly/react-console@1.6.0) (2018-11-13)
+
+
+### Features
+
+* **DesktopViewer:** introduce DesktopViewer component ([#607](https://github.com/patternfly/patternfly-react/issues/607)) ([f001ef5](https://github.com/patternfly/patternfly-react/commit/f001ef5))
+
+
+
+
 <a name="1.5.6"></a>
 ## [1.5.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.5.5...@patternfly/react-console@1.5.6) (2018-11-06)
 

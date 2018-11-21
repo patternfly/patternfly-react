@@ -8,6 +8,8 @@ export interface PageProps extends HTMLProps<HTMLDivElement> {
   sidebar?: ReactNode;
   useCondensed?: boolean;
   scrollingDistance?: number;
+  scrollingDebounce?: number;
+  getRef?: Function;
 }
 
 declare const Page: SFC<PageProps>;

@@ -1,42 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`alternative styles 1`] = `
-.pf-c-form-control.pf-m-form-control-alt {
-  display: block;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #282d33;
-  background-color: #ffffff;
-  border-radius: 0;
-  padding-right: 0px;
-  padding-left: 0px;
-  border-bottom: 2px solid #72767b;
-}
-
-<input
-  aria-invalid={false}
-  aria-label="alternative style text input"
-  className="pf-c-form-control pf-m-form-control-alt"
-  disabled={false}
-  onChange={[Function]}
-  readOnly={false}
-  required={false}
-  type="text"
-  value="test input"
-/>
-`;
-
 exports[`disabled text input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <input
@@ -55,13 +31,16 @@ exports[`disabled text input 1`] = `
 exports[`invalid text input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <input
@@ -80,13 +59,16 @@ exports[`invalid text input 1`] = `
 exports[`readonly text input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <input
@@ -105,13 +87,16 @@ exports[`readonly text input 1`] = `
 exports[`simple text input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <input

@@ -9,5 +9,5 @@ export default {
   enumValues: {
     'Object.values(TitleSize)': Object.values(TitleSize)
   },
-  examples: [TitleSizes]
+  examples: [{ component: TitleSizes, title: 'Title Sizes' }]
 };

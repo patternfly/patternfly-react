@@ -1,11 +1,7 @@
-import {
-  Chart,
-  ChartBar,
-  ChartLegend,
-  ChartStack
-} from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartLegend, ChartStack } from '@patternfly/react-charts';
 import HorizontalChart from './examples/HorizontalChart';
 import SimpleChart from './examples/SimpleChart';
+import getContainerProps from './examples/common/getContainerProps';
 
 export default {
   title: 'Stack Chart',
@@ -15,5 +11,8 @@ export default {
     ChartLegend,
     ChartStack
   },
-  examples: [SimpleChart, HorizontalChart]
+  examples: [
+    { component: SimpleChart, title: 'Simple Chart', getContainerProps },
+    { component: HorizontalChart, title: 'Horizontal Chart', getContainerProps }
+  ]
 };

@@ -1,19 +1,19 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "3.19.0",
+  "version": "3.19.8",
   "author": "Red Hat",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@patternfly/react-charts": "^1.0.3",
-    "@patternfly/react-core": "^1.32.2",
-    "@patternfly/react-icons": "^2.7.1",
-    "@patternfly/react-styled-system": "^1.1.0",
+    "@patternfly/react-charts": "^1.1.0",
+    "@patternfly/react-core": "^1.36.0",
+    "@patternfly/react-icons": "^2.8.0",
+    "@patternfly/react-styled-system": "^1.2.0",
     "@patternfly/react-styles": "^2.3.0",
-    "@patternfly/react-tokens": "^1.7.1",
+    "@patternfly/react-tokens": "^1.8.0",
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",
     "emotion": "^9.2.9",
@@ -26,7 +26,6 @@
     "gatsby-source-filesystem": "^1.5.36",
     "gatsby-transformer-react-docgen": "^1.0.17",
     "param-case": "^2.1.1",
-    "pascal-case": "^2.0.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

@@ -1,6 +1,7 @@
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 import VerticalPage from './examples/VerticalPage';
 import HorizontalPage from './examples/HorizontalPage';
+import getContainerProps from './examples/common/getContainerProps';
 
 export default {
   title: 'Page',
@@ -13,5 +14,8 @@ export default {
   enumValues: {
     'Object.values(PageSectionVariants)': Object.values(PageSectionVariants)
   },
-  examples: [VerticalPage, HorizontalPage]
+  examples: [
+    { component: VerticalPage, title: 'Vertical Page Layout', getContainerProps },
+    { component: HorizontalPage, title: 'Horizontal Page Layout', getContainerProps }
+  ]
 };

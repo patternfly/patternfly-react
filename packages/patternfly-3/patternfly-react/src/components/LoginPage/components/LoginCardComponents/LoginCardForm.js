@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LoginCardInput from './LoginCardInput';
 import LoginCardSettings from './LoginCardSettings';
+import LoginCardSubmitButton from './LoginCardSubmitButton';
 import LoginFormError from './LoginFormError';
-import { Button, Form } from '../../../../index';
+import { Form } from '../../../../index';
 import { noop } from '../../../../common/helpers';
 
 const LoginCardForm = ({
@@ -16,17 +17,19 @@ const LoginCardForm = ({
   forgotPassword,
   rememberMe,
   submitError,
-  showError
+  showError,
+  attributes,
+  isSubmitting
 }) => (
-  <Form onSubmit={onSubmit} noValidate>
+  <Form onSubmit={onSubmit} noValidate {...attributes}>
     <LoginFormError show={showError}>{submitError}</LoginFormError>
     <LoginCardInput {...usernameField} />
     <LoginCardInput {...passwordField} />
     {additionalFields}
     <LoginCardSettings rememberMe={rememberMe} forgotPassword={forgotPassword} />
-    <Button type="submit" bsStyle="primary" bsSize="large" block disabled={disableSubmit}>
+    <LoginCardSubmitButton isDisabled={disableSubmit} isLoading={isSubmitting}>
       {submitText}
-    </Button>
+    </LoginCardSubmitButton>
   </Form>
 );
 
@@ -40,18 +43,20 @@ LoginCardForm.propTypes = {
   forgotPassword: PropTypes.object,
   rememberMe: PropTypes.object,
   submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  showError: PropTypes.bool
+  showError: PropTypes.bool,
+  attributes: PropTypes.object,
+  isSubmitting: PropTypes.bool
 };
 
 LoginCardForm.defaultProps = {
   usernameField: {
-    ...LoginCardInput,
+    ...LoginCardInput.defaultProps,
     id: 'card_email',
     type: 'email',
     placeholder: 'Email Address'
   },
   passwordField: {
-    ...LoginCardInput,
+    ...LoginCardInput.defaultProps,
     id: 'card_password',
     type: 'password',
     placeholder: 'Password',
@@ -68,7 +73,9 @@ LoginCardForm.defaultProps = {
   },
   rememberMe: { label: null },
   submitError: null,
-  showError: false
+  showError: false,
+  attributes: null,
+  isSubmitting: false
 };
 
 export default LoginCardForm;

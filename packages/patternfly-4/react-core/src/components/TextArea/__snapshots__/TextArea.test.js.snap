@@ -3,13 +3,16 @@
 exports[`invalid text input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <textarea
@@ -25,13 +28,16 @@ exports[`invalid text input 1`] = `
 exports[`simple text input 1`] = `
 .pf-c-form-control {
   display: block;
+  position: relative;
   width: 100%;
   font-size: 1rem;
   line-height: 1.5;
   color: #282d33;
   background-color: #ffffff;
-  border: 1px solid #72767b;
-  border-radius: 3px;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
 }
 
 <textarea

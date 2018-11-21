@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 import { Terminal } from 'xterm';
 import { proposeGeometry } from 'xterm/lib/addons/fit/fit';
 
-import { noop } from 'patternfly-react';
 import { debounce } from '../common/helpers';
+
+import { helpers } from 'patternfly-react';
+
+const { noop } = helpers;
 
 /**
  * Wraps terminal to a React Component.

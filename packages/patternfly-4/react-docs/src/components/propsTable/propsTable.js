@@ -31,7 +31,12 @@ const defaultProps = {
 };
 
 export const PropsTable = ({ name, description: preface, props, enumValues }) => (
-  <Section title={`${name} Props`} preface={preface} description={`The ${name} component accepts the following props.`}>
+  <Section
+    name={name}
+    title={`${name} Props`}
+    preface={preface}
+    description={`The ${name} component accepts the following props.`}
+  >
     <Table>
       <Heading>
         <TH>Name</TH>

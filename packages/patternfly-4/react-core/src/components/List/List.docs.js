@@ -9,5 +9,9 @@ export default {
     List,
     ListItem
   },
-  examples: [Simple, Inline, Grid]
+  examples: [
+    { component: Simple, title: 'Simple List' },
+    { component: Inline, title: 'Inline List' },
+    { component: Grid, title: 'Grid List' }
+  ]
 };

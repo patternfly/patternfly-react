@@ -30,8 +30,6 @@ const propTypes = {
   isValid: PropTypes.bool,
   /** Flag to show if the input is disabled. */
   isDisabled: PropTypes.bool,
-  /** Flag to show if the input has the additional alternative class. */
-  isAlt: PropTypes.bool,
   /** A callback for when the input value changes. */
   onChange: PropTypes.func,
   /** Flag to show if the input is read only. */
@@ -48,7 +46,6 @@ const propTypes = {
 const defaultProps = {
   className: '',
   isRequired: false,
-  isAlt: false,
   isValid: true,
   isDisabled: false,
   isReadOnly: false,
@@ -71,7 +68,6 @@ class TextInput extends React.Component {
       onChange,
       isValid,
       isReadOnly,
-      isAlt,
       isRequired,
       isDisabled,
       ...props
@@ -79,7 +75,7 @@ class TextInput extends React.Component {
     return (
       <input
         {...props}
-        className={css(styles.formControl, className, isAlt && styles.modifiers.formControlAlt)}
+        className={css(styles.formControl, className)}
         onChange={this.handleChange}
         type={type}
         value={value}

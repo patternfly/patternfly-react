@@ -27,6 +27,9 @@ class LoginLanguagePicker extends React.Component {
 
   render() {
     const { availableLanguages } = this.props;
+    if (!availableLanguages) {
+      return null;
+    }
     const menuItems = availableLanguages.map((language, index) => (
       <MenuItem
         key={index}
@@ -50,15 +53,18 @@ class LoginLanguagePicker extends React.Component {
 
 LoginLanguagePicker.propTypes = {
   availableLanguages: PropTypes.array,
-  selectedLanguage: PropTypes.object,
+  selectedLanguage: PropTypes.shape({
+    value: PropTypes.string,
+    text: PropTypes.string
+  }),
   onLanguageChange: PropTypes.func,
   className: PropTypes.string,
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 };
 
 LoginLanguagePicker.defaultProps = {
-  selectedLanguage: { value: 'en', text: 'English' },
-  availableLanguages: [{ value: 'en', text: 'English' }],
+  selectedLanguage: null,
+  availableLanguages: null,
   onLanguageChange: noop,
   className: '',
   id: 'language-picker'

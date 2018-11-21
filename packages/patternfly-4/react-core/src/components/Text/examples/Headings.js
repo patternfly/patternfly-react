@@ -1,9 +1,7 @@
 import React from 'react';
-import { TextContent, Text, TextVariants, TextList, TextListVariants, TextListItem, TextListItemVariants } from '@patternfly/react-core';
+import { TextContent, Text, TextVariants } from '@patternfly/react-core';
 
 class Headings extends React.Component {
-  static title = 'Headings Example';
-
   render() {
     return (
       <TextContent>

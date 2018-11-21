@@ -2,8 +2,6 @@ import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
 
 class SimpleList extends React.Component {
-  static title = 'Simple List';
-
   render() {
     return (
       <List>

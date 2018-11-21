@@ -9,5 +9,10 @@ export default {
   components: {
     Checkbox
   },
-  examples: [Controlled, Uncontrolled, Disabled, Custom]
+  examples: [
+    { component: Controlled, title: 'Controlled Checkbox' },
+    { component: Uncontrolled, title: 'Uncontrolled Checkbox' },
+    { component: Disabled, title: 'Disabled Checkbox' },
+    { component: Custom, title: 'Custom label Checkbox' }
+  ]
 };

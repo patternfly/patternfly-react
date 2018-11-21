@@ -2,11 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 class OverrideTheme extends React.Component {
-  static title = 'Override Theme';
-  static description = `
-  <em><p>You can override the theme by supplying a theme object.</p>
-  <p>If multiple PatternFlyThemeProviders are nested, the theme object of the lower provider will be merged into the ancestor theme.</p></em>`;
-
   render() {
     const { colors } = StyledConstants;
     const customTheme = {

@@ -6,12 +6,8 @@ import {
   ChartTheme,
   ChartVoronoiContainer
 } from '@patternfly/react-charts';
-import getContainerProps from './common/getContainerPropsDark';
 
 class DarkGreenThemeChart extends React.Component {
-  static getContainerProps = getContainerProps;
-  static title = 'Dark, Green Theme Chart';
-
   containerRef = React.createRef();
   state = {
     width: 0

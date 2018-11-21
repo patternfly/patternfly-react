@@ -4,6 +4,7 @@ import Page from '../components/page';
 import Navigation from '../components/navigation';
 import PropTypes from 'prop-types';
 import { withPrefix } from 'gatsby-link';
+import * as DocsFiles from '../../.tmp';
 
 // This is a gatsby limitation will be fixed in newer version
 let globalStyles = require(`!raw-loader!@patternfly/react-core/../dist/styles/base.css`);
@@ -20,25 +21,37 @@ const propTypes = {
 };
 
 const Layout = ({ children, data }) => {
+  const componentMapper = (path, label) => {
+    const { components } = DocsFiles[`${label.toLowerCase()}_docs`];
+    return Object.keys(components).map(k => ({
+      label: k,
+      to: `${path}#${k}`
+    }));
+  };
+  const getPackage = label => DocsFiles[`${label.toLowerCase()}_package`].substr(6);
   const componentRoutes = data.componentPages
     ? data.componentPages.edges.map(e => ({
-        to: e.node.path,
-        label: e.node.fields.label
-      }))
+      to: e.node.path,
+      label: e.node.fields.label,
+      pkg: getPackage(e.node.fields.label),
+      components: componentMapper(e.node.path, e.node.fields.label)
+    }))
     : [];
 
   const layoutRoutes = data.layoutPages
     ? data.layoutPages.edges.map(e => ({
-        to: e.node.path,
-        label: e.node.fields.label
-      }))
+      to: e.node.path,
+      label: e.node.fields.label,
+      pkg: getPackage(e.node.fields.label),
+      components: componentMapper(e.node.path, e.node.fields.label)
+    }))
     : [];
 
   const demoRoutes = data.demoPages
     ? data.demoPages.edges.map(e => ({
-        to: e.node.path,
-        label: e.node.fields.label
-      }))
+      to: e.node.path,
+      label: e.node.fields.label
+    }))
     : [];
 
   return (

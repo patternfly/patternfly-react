@@ -37,11 +37,6 @@ test('invalid text input', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('alternative styles', () => {
-  const view = shallow(<TextInput {...props} isAlt aria-label="alternative style text input" />);
-  expect(view).toMatchSnapshot();
-});
-
 test('should throw console error when no aria-label or id is given', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };

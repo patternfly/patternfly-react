@@ -2,8 +2,6 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledFlex, StyledText } from '@patternfly/react-styled-system';
 
 class FlexStyles extends React.Component {
-  static title = 'Flex';
-
   render() {
     const { fonts, space, colors, fontSizes } = StyledConstants;
     return (

@@ -1,5 +1,4 @@
 const path = require(`path`);
-const pascalCase = require('pascal-case');
 const paramCase = require('param-case');
 const fs = require('fs-extra'); //eslint-disable-line
 
@@ -41,15 +40,16 @@ const componentPathRegEx = /(components|layouts|demos)\//;
 exports.onCreateNode = ({ node, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
   if (node.internal.type === 'SitePage' && componentPathRegEx.test(node.path)) {
-    const pathLabel = node.path
+    const pathLabel = node.component
       .split('/')
-      .filter(Boolean)
-      .pop();
+      .pop()
+      .split('.')
+      .shift();
 
     createNodeField({
       node,
       name: 'label',
-      value: pascalCase(pathLabel)
+      value: pathLabel
     });
   }
 };
@@ -90,11 +90,14 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
       }
     }
   `);
+  const docExports = [];
   const docsComponentPath = path.resolve(__dirname, './src/components/componentDocs');
   docs.edges.forEach(({ node: doc }) => {
     const filePath = path.resolve(__dirname, '.tmp', doc.base);
 
     const rawExamples = [];
+    const getPackage = pkg => doc.absolutePath.indexOf(pkg) !== -1 && pkg;
+    const packageDir = getPackage('react-core') || getPackage('react-charts') || getPackage('react-styled-system');
     examples.edges.forEach(({ node: example }) => {
       if (
         example.relativeDirectory
@@ -102,8 +105,6 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           .slice(0, 2)
           .join('/') === doc.relativeDirectory
       ) {
-        const getPackage = pkg => doc.absolutePath.indexOf(pkg) !== -1 && pkg;
-        const packageDir = getPackage('react-core') || getPackage('react-charts') || getPackage('react-styled-system');
         const examplePath = `../../${packageDir}/src/${example.relativePath}`;
         rawExamples.push(`{name: '${example.name}', path: '${examplePath}', file: require('!!raw!${examplePath}')}`);
       }
@@ -122,14 +123,27 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     const rawExamples = [${rawExamples}];
     const images = [${allImages}];
 
-    export default () => <ComponentDocs rawExamples={rawExamples} images={images} {...docs} />
+    export const ${doc.base.split('.')[0].toLowerCase()}_docs = docs;
+    export const ${doc.base.split('.')[0].toLowerCase()}_package = '${packageDir}';
+
+    export default () => <ComponentDocs rawExamples={rawExamples} images={images} {...docs} />;
     `;
+
+    docExports.push(
+      `export { ${doc.base.split('.')[0].toLowerCase()}_docs, ${doc.base
+        .split('.')[0]
+        .toLowerCase()}_package } from './${doc.base}';`
+    );
+
     fs.outputFileSync(filePath, content);
     boundActionCreators.createPage({
       path: `/${path.dirname(doc.relativePath).toLowerCase()}`,
       component: filePath
     });
   });
+
+  const indexFilePath = path.resolve(__dirname, '.tmp', 'index.js');
+  fs.writeFileSync(indexFilePath, docExports.join('\n'));
 
   examples.edges.forEach(({ node: example }) => {
     const examplePath = `/${path.dirname(example.relativePath).toLowerCase()}/${paramCase(example.name)}`;

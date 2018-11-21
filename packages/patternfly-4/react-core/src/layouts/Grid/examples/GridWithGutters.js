@@ -1,12 +1,8 @@
 import React from 'react';
 import Grid from '../Grid';
 import GridItem from '../GridItem';
-import getContainerProps from './common/getContainerProps';
 
 class GridWithGutters extends React.Component {
-  static title = 'Grid with gutters';
-  static getContainerProps = getContainerProps;
-
   render() {
     return (
       <Grid gutter="md">

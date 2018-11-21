@@ -11,12 +11,8 @@ import {
   Text,
   TextVariants
 } from '@patternfly/react-core';
-import getContainerProps from './common/getContainerProps';
 
 class SimpleChart extends React.Component {
-  static getContainerProps = getContainerProps;
-  static title = 'Simple Chart';
-
   getChart = (theme) => (
     <ChartDonut
       data={[
@@ -56,7 +52,7 @@ class SimpleChart extends React.Component {
         width={this.size}
       >
         <ChartLabel
-          style={{fontSize: 20}}
+          style={{ fontSize: 20 }}
           text="100"
           textAnchor="middle"
           verticalAnchor="middle"
@@ -64,7 +60,7 @@ class SimpleChart extends React.Component {
           y={90}
         />
         <ChartLabel
-          style={{fill: '#bbb'}}
+          style={{ fill: '#bbb' }}
           text="Pets"
           textAnchor="middle"
           verticalAnchor="middle"

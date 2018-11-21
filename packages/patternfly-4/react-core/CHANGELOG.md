@@ -3,6 +3,87 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.36.0"></a>
+# [1.36.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.35.2...@patternfly/react-core@1.36.0) (2018-11-20)
+
+
+### Features
+
+* **PF4 Page:** Allow passing of custom ref for condensed header ([#941](https://github.com/patternfly/patternfly-react/issues/941)) ([889ec1a](https://github.com/patternfly/patternfly-react/commit/889ec1a))
+
+
+
+
+<a name="1.35.2"></a>
+## [1.35.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.35.1...@patternfly/react-core@1.35.2) (2018-11-20)
+
+
+### Bug Fixes
+
+* **dropdown:** address typescript issue with toggle prop ([#935](https://github.com/patternfly/patternfly-react/issues/935)) ([8341297](https://github.com/patternfly/patternfly-react/commit/8341297))
+
+
+
+
+<a name="1.35.1"></a>
+## [1.35.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.35.0...@patternfly/react-core@1.35.1) (2018-11-16)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-core
+
+<a name="1.35.0"></a>
+# [1.35.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.34.1...@patternfly/react-core@1.35.0) (2018-11-15)
+
+
+### Features
+
+* **component:** introduce the pf4 switch component ([#761](https://github.com/patternfly/patternfly-react/issues/761)) ([ef13fd2](https://github.com/patternfly/patternfly-react/commit/ef13fd2))
+
+
+
+
+<a name="1.34.1"></a>
+## [1.34.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.34.0...@patternfly/react-core@1.34.1) (2018-11-14)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-core
+
+<a name="1.34.0"></a>
+# [1.34.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.32.2...@patternfly/react-core@1.34.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **PF4 AboutModal and Modal:** added a class to the body when the Mod… ([#895](https://github.com/patternfly/patternfly-react/issues/895)) ([5b12b97](https://github.com/patternfly/patternfly-react/commit/5b12b97)), closes [#724](https://github.com/patternfly/patternfly-react/issues/724)
+
+
+### Features
+
+* **LoginForm:** Added the PF4 LoginForm Component    ([#874](https://github.com/patternfly/patternfly-react/issues/874)) ([befeb77](https://github.com/patternfly/patternfly-react/commit/befeb77)), closes [#825](https://github.com/patternfly/patternfly-react/issues/825) [#825](https://github.com/patternfly/patternfly-react/issues/825)
+
+
+
+
+<a name="1.33.0"></a>
+# [1.33.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.32.2...@patternfly/react-core@1.33.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **PF4 AboutModal and Modal:** added a class to the body when the Mod… ([#895](https://github.com/patternfly/patternfly-react/issues/895)) ([5b12b97](https://github.com/patternfly/patternfly-react/commit/5b12b97)), closes [#724](https://github.com/patternfly/patternfly-react/issues/724)
+
+
+### Features
+
+* **LoginForm:** Added the PF4 LoginForm Component    ([#874](https://github.com/patternfly/patternfly-react/issues/874)) ([befeb77](https://github.com/patternfly/patternfly-react/commit/befeb77)), closes [#825](https://github.com/patternfly/patternfly-react/issues/825) [#825](https://github.com/patternfly/patternfly-react/issues/825)
+
+
+
+
 <a name="1.32.2"></a>
 ## [1.32.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.32.1...@patternfly/react-core@1.32.2) (2018-11-08)
 

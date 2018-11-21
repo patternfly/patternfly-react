@@ -1,4 +1,708 @@
 
+## patternfly3-react-lerna-root@7.10.7 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#942](https://github.com/patternfly/patternfly-react/pull/942) fix(LoginPage): improve form's error style and behavior ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.24.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#942](https://github.com/patternfly/patternfly-react/pull/942) fix(LoginPage): improve form's error style and behavior ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.13.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#942](https://github.com/patternfly/patternfly-react/pull/942) fix(LoginPage): improve form's error style and behavior ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.7.7 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#942](https://github.com/patternfly/patternfly-react/pull/942) fix(LoginPage): improve form's error style and behavior ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.10.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## patternfly-react@2.24.5 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## patternfly-react-extensions@2.13.5 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-console@1.7.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## patternfly4-react-lerna-root@1.26.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-tokens@1.8.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-table@0.2.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-styled-system@1.2.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-icons@2.8.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-docs@3.19.7 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-core@1.36.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-charts@1.1.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.25.2 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-table@0.1.3 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-docs@3.19.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-core@1.35.2 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## patternfly3-react-lerna-root@7.10.4 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#936](https://github.com/patternfly/patternfly-react/pull/936) fix(LoginPage): Improve inputs validation ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- CD Cabrera ([@cdcabrera](https://github.com/cdcabrera))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.24.3 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#936](https://github.com/patternfly/patternfly-react/pull/936) fix(LoginPage): Improve inputs validation ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- CD Cabrera ([@cdcabrera](https://github.com/cdcabrera))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.13.3 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#936](https://github.com/patternfly/patternfly-react/pull/936) fix(LoginPage): Improve inputs validation ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- CD Cabrera ([@cdcabrera](https://github.com/cdcabrera))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.7.4 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#936](https://github.com/patternfly/patternfly-react/pull/936) fix(LoginPage): Improve inputs validation ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- CD Cabrera ([@cdcabrera](https://github.com/cdcabrera))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.24.1 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#938](https://github.com/patternfly/patternfly-react/pull/938) Fix sub-component references in react-console DesktopViewer ([@KKoukiou](https://github.com/KKoukiou))
+
+#### Committers: 2
+- Katerina Koukiou ([@KKoukiou](https://github.com/KKoukiou))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.13.1 (2018-11-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#938](https://github.com/patternfly/patternfly-react/pull/938) Fix sub-component references in react-console DesktopViewer ([@KKoukiou](https://github.com/KKoukiou))
+
+#### Committers: 2
+- Katerina Koukiou ([@KKoukiou](https://github.com/KKoukiou))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.25.1 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-tokens@1.7.2 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-table@0.1.2 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-styled-system@1.1.2 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-icons@2.7.2 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-docs@3.19.5 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-core@1.35.1 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-charts@1.0.5 (2018-11-16)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#920](https://github.com/patternfly/patternfly-react/pull/920) chore(pf-core): update core for PF4 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## patternfly3-react-lerna-root@7.10.1 (2018-11-16)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#894](https://github.com/patternfly/patternfly-react/pull/894) Fix sub-component references in react-console ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## @patternfly/react-console@1.7.1 (2018-11-16)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#894](https://github.com/patternfly/patternfly-react/pull/894) Fix sub-component references in react-console ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## patternfly3-react-lerna-root@7.10.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#922](https://github.com/patternfly/patternfly-react/pull/922) feat(HintBlock): Add the HintBlock component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.24.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#922](https://github.com/patternfly/patternfly-react/pull/922) feat(HintBlock): Add the HintBlock component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.13.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#922](https://github.com/patternfly/patternfly-react/pull/922) feat(HintBlock): Add the HintBlock component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.7.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#922](https://github.com/patternfly/patternfly-react/pull/922) feat(HintBlock): Add the HintBlock component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly4-react-lerna-root@1.25.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#761](https://github.com/patternfly/patternfly-react/pull/761) feat(component): introduce the pf4 switch component ([@guillaumevincent](https://github.com/guillaumevincent))
+
+#### Committers: 1
+- Guillaume Vincent ([@guillaumevincent](https://github.com/guillaumevincent))
+
+
+## @patternfly/react-table@0.1.1 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#761](https://github.com/patternfly/patternfly-react/pull/761) feat(component): introduce the pf4 switch component ([@guillaumevincent](https://github.com/guillaumevincent))
+
+#### Committers: 1
+- Guillaume Vincent ([@guillaumevincent](https://github.com/guillaumevincent))
+
+
+## @patternfly/react-docs@3.19.4 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#761](https://github.com/patternfly/patternfly-react/pull/761) feat(component): introduce the pf4 switch component ([@guillaumevincent](https://github.com/guillaumevincent))
+
+#### Committers: 1
+- Guillaume Vincent ([@guillaumevincent](https://github.com/guillaumevincent))
+
+
+## @patternfly/react-core@1.35.0 (2018-11-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#761](https://github.com/patternfly/patternfly-react/pull/761) feat(component): introduce the pf4 switch component ([@guillaumevincent](https://github.com/guillaumevincent))
+
+#### Committers: 1
+- Guillaume Vincent ([@guillaumevincent](https://github.com/guillaumevincent))
+
+
+## patternfly3-react-lerna-root@7.9.4 (2018-11-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#916](https://github.com/patternfly/patternfly-react/pull/916) fix(subcomponents): Make all subcomponents available from base component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.23.3 (2018-11-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#916](https://github.com/patternfly/patternfly-react/pull/916) fix(subcomponents): Make all subcomponents available from base component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.12.11 (2018-11-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#916](https://github.com/patternfly/patternfly-react/pull/916) fix(subcomponents): Make all subcomponents available from base component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.6.3 (2018-11-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#916](https://github.com/patternfly/patternfly-react/pull/916) fix(subcomponents): Make all subcomponents available from base component ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.9.3 (2018-11-14)
+
+#### :memo: Documentation
+* `patternfly-3`
+  * [#907](https://github.com/patternfly/patternfly-react/pull/907) Updating reference link to PatternFly Storybook ([@lizsurette](https://github.com/lizsurette))
+
+#### Committers: 1
+- Liz ([@lizsurette](https://github.com/lizsurette))
+
+
+## patternfly-react@2.23.2 (2018-11-14)
+
+#### :memo: Documentation
+* `patternfly-3`
+  * [#907](https://github.com/patternfly/patternfly-react/pull/907) Updating reference link to PatternFly Storybook ([@lizsurette](https://github.com/lizsurette))
+
+#### Committers: 1
+- Liz ([@lizsurette](https://github.com/lizsurette))
+
+
+## patternfly-react-extensions@2.12.10 (2018-11-14)
+
+#### :memo: Documentation
+* `patternfly-3`
+  * [#907](https://github.com/patternfly/patternfly-react/pull/907) Updating reference link to PatternFly Storybook ([@lizsurette](https://github.com/lizsurette))
+
+#### Committers: 1
+- Liz ([@lizsurette](https://github.com/lizsurette))
+
+
+## @patternfly/react-console@1.6.2 (2018-11-14)
+
+#### :memo: Documentation
+* `patternfly-3`
+  * [#907](https://github.com/patternfly/patternfly-react/pull/907) Updating reference link to PatternFly Storybook ([@lizsurette](https://github.com/lizsurette))
+
+#### Committers: 1
+- Liz ([@lizsurette](https://github.com/lizsurette))
+
+
+## patternfly3-react-lerna-root@7.9.2 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#911](https://github.com/patternfly/patternfly-react/pull/911) fix(LoginPage): small fixes. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.23.1 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#911](https://github.com/patternfly/patternfly-react/pull/911) fix(LoginPage): small fixes. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.12.9 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#911](https://github.com/patternfly/patternfly-react/pull/911) fix(LoginPage): small fixes. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.6.1 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#911](https://github.com/patternfly/patternfly-react/pull/911) fix(LoginPage): small fixes. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.23.0 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#895](https://github.com/patternfly/patternfly-react/pull/895) fix(PF4 AboutModal and Modal): added a class to the body when the Mod… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-docs@3.19.2 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#895](https://github.com/patternfly/patternfly-react/pull/895) fix(PF4 AboutModal and Modal): added a class to the body when the Mod… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-core@1.34.0 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#895](https://github.com/patternfly/patternfly-react/pull/895) fix(PF4 AboutModal and Modal): added a class to the body when the Mod… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## patternfly3-react-lerna-root@7.9.1 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#910](https://github.com/patternfly/patternfly-react/pull/910) fix(CatalogTileView): Fix to prevent category size updates after unmount ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.12.8 (2018-11-13)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#910](https://github.com/patternfly/patternfly-react/pull/910) fix(CatalogTileView): Fix to prevent category size updates after unmount ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.9.0 (2018-11-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#607](https://github.com/patternfly/patternfly-react/pull/607) feat(DesktopViewer): introduce DesktopViewer component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## patternfly-react@2.23.0 (2018-11-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#607](https://github.com/patternfly/patternfly-react/pull/607) feat(DesktopViewer): introduce DesktopViewer component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## patternfly-react-extensions@2.12.7 (2018-11-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#607](https://github.com/patternfly/patternfly-react/pull/607) feat(DesktopViewer): introduce DesktopViewer component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## @patternfly/react-console@1.6.0 (2018-11-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#607](https://github.com/patternfly/patternfly-react/pull/607) feat(DesktopViewer): introduce DesktopViewer component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
 ## patternfly4-react-lerna-root@1.19.3 (2018-11-12)
 
 #### :memo: Documentation

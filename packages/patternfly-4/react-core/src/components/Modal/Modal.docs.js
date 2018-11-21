@@ -7,5 +7,5 @@ export default {
   components: {
     Modal
   },
-  examples: [Simple, Large]
+  examples: [{ component: Simple, title: 'Simple Modal' }, { component: Large, title: 'Large Modal' }]
 };

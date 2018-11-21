@@ -6,5 +6,10 @@ export default {
   components: {
     AboutModal
   },
-  examples: [SimpleAboutModal]
+  examples: [
+    {
+      component: SimpleAboutModal,
+      title: 'Simple AboutModal'
+    }
+  ]
 };

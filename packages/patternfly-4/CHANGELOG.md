@@ -3,6 +3,114 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.26.1"></a>
+## [1.26.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.26.0...patternfly4-react-lerna-root@1.26.1) (2018-11-21)
+
+
+
+
+**Note:** Version bump only for package patternfly4-react-lerna-root
+
+<a name="1.26.0"></a>
+# [1.26.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.25.2...patternfly4-react-lerna-root@1.26.0) (2018-11-20)
+
+
+### Features
+
+* **PF4 Page:** Allow passing of custom ref for condensed header ([#941](https://github.com/patternfly/patternfly-react/issues/941)) ([889ec1a](https://github.com/patternfly/patternfly-react/commit/889ec1a))
+
+
+
+
+<a name="1.25.2"></a>
+## [1.25.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.25.1...patternfly4-react-lerna-root@1.25.2) (2018-11-20)
+
+
+### Bug Fixes
+
+* **dropdown:** address typescript issue with toggle prop ([#935](https://github.com/patternfly/patternfly-react/issues/935)) ([8341297](https://github.com/patternfly/patternfly-react/commit/8341297))
+
+
+
+
+<a name="1.25.1"></a>
+## [1.25.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.25.0...patternfly4-react-lerna-root@1.25.1) (2018-11-16)
+
+
+
+
+**Note:** Version bump only for package patternfly4-react-lerna-root
+
+<a name="1.25.0"></a>
+# [1.25.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.24.0...patternfly4-react-lerna-root@1.25.0) (2018-11-15)
+
+
+### Features
+
+* **component:** introduce the pf4 switch component ([#761](https://github.com/patternfly/patternfly-react/issues/761)) ([ef13fd2](https://github.com/patternfly/patternfly-react/commit/ef13fd2))
+
+
+
+
+<a name="1.24.0"></a>
+# [1.24.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.23.0...patternfly4-react-lerna-root@1.24.0) (2018-11-14)
+
+
+### Bug Fixes
+
+* **styled-system:** check if global variables are defined before use ([#918](https://github.com/patternfly/patternfly-react/issues/918)) ([e8d1eb0](https://github.com/patternfly/patternfly-react/commit/e8d1eb0))
+
+
+### Features
+
+* **pf4-table:** Introduce new package [@patternfly](https://github.com/patternfly)/react-table for table implementation ([#899](https://github.com/patternfly/patternfly-react/issues/899)) ([9cee1ad](https://github.com/patternfly/patternfly-react/commit/9cee1ad))
+
+
+
+
+<a name="1.23.1"></a>
+## [1.23.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.23.0...patternfly4-react-lerna-root@1.23.1) (2018-11-14)
+
+
+### Bug Fixes
+
+* **styled-system:** check if global variables are defined before use ([#918](https://github.com/patternfly/patternfly-react/issues/918)) ([e8d1eb0](https://github.com/patternfly/patternfly-react/commit/e8d1eb0))
+
+
+
+
+<a name="1.23.0"></a>
+# [1.23.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.21.0...patternfly4-react-lerna-root@1.23.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **PF4 AboutModal and Modal:** added a class to the body when the Mod… ([#895](https://github.com/patternfly/patternfly-react/issues/895)) ([5b12b97](https://github.com/patternfly/patternfly-react/commit/5b12b97)), closes [#724](https://github.com/patternfly/patternfly-react/issues/724)
+
+
+### Features
+
+* **LoginForm:** Added the PF4 LoginForm Component    ([#874](https://github.com/patternfly/patternfly-react/issues/874)) ([befeb77](https://github.com/patternfly/patternfly-react/commit/befeb77)), closes [#825](https://github.com/patternfly/patternfly-react/issues/825) [#825](https://github.com/patternfly/patternfly-react/issues/825)
+
+
+
+
+<a name="1.22.0"></a>
+# [1.22.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.21.0...patternfly4-react-lerna-root@1.22.0) (2018-11-13)
+
+
+### Bug Fixes
+
+* **PF4 AboutModal and Modal:** added a class to the body when the Mod… ([#895](https://github.com/patternfly/patternfly-react/issues/895)) ([5b12b97](https://github.com/patternfly/patternfly-react/commit/5b12b97)), closes [#724](https://github.com/patternfly/patternfly-react/issues/724)
+
+
+### Features
+
+* **LoginForm:** Added the PF4 LoginForm Component    ([#874](https://github.com/patternfly/patternfly-react/issues/874)) ([befeb77](https://github.com/patternfly/patternfly-react/commit/befeb77)), closes [#825](https://github.com/patternfly/patternfly-react/issues/825) [#825](https://github.com/patternfly/patternfly-react/issues/825)
+
+
+
+
 <a name="1.21.0"></a>
 # [1.21.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.20.0...patternfly4-react-lerna-root@1.21.0) (2018-11-12)
 

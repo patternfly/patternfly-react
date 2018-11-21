@@ -21,13 +21,26 @@ class CatalogTileViewCategory extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this._isMounted = true;
+
+    // Watch for resizes and recompute the number shown when it does
+    this.computeNumShown();
+    this._resizeSensors.push(new ResizeSensor([this.categoryContainer], helpers.debounce(this.computeNumShown, 100)));
+  }
+
   componentWillUnmount() {
+    this._isMounted = false;
     this._resizeSensors.forEach(sensor => {
       sensor.detach();
     });
   }
 
   computeNumShown = () => {
+    if (!this._isMounted) {
+      return;
+    }
+
     if (this.categoryContainer && layout) {
       let rows = 1;
 
@@ -48,10 +61,6 @@ class CatalogTileViewCategory extends React.Component {
       return;
     }
     this.categoryContainer = ref;
-    this.computeNumShown();
-
-    // Watch for resizes and recompute the number shown when it does
-    this._resizeSensors.push(new ResizeSensor([this.categoryContainer], helpers.debounce(this.computeNumShown, 100)));
   };
 
   render() {

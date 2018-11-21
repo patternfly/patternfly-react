@@ -5,6 +5,7 @@ import styles from './section.styles';
 import { Title } from '@patternfly/react-core';
 
 const propTypes = {
+  name: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.node,
@@ -13,6 +14,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  name: '',
   children: null,
   className: '',
   title: '',
@@ -20,11 +22,15 @@ const defaultProps = {
   preface: ''
 };
 
-const Section = ({ children, className, title, description, preface, ...props }) => (
+const Section = ({ name, children, className, title, description, preface, ...props }) => (
   <section className={css(styles.section, className)}>
     {Boolean(title || description) && (
       <header className={css(styles.header)}>
-        {Boolean(title) && <Title size="lg">{title}</Title>}
+        {Boolean(title) && (
+          <Title size="lg" id={name}>
+            {title}
+          </Title>
+        )}
         {Boolean(preface) && <p className={css(styles.preface)}>{preface}</p>}
         {Boolean(description) && <p>{description}</p>}
       </header>

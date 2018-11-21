@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import AboutModalContainer from './AboutModalContainer';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../internal/constants';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/patternfly-next/components/Backdrop/backdrop.css';
 
 const propTypes = {
   /** content rendered inside the About Modal. */
@@ -57,6 +59,19 @@ class AboutModal extends React.Component {
   componentDidMount() {
     document.body.appendChild(this.container);
     document.addEventListener('keydown', this.handleEscKeyClick, false);
+    if (this.props.isOpen) {
+      document.body.classList.add(css(styles.backdropOpen));
+    } else {
+      document.body.classList.remove(css(styles.backdropOpen));
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.isOpen) {
+      document.body.classList.add(css(styles.backdropOpen));
+    } else {
+      document.body.classList.remove(css(styles.backdropOpen));
+    }
   }
 
   componentWillUnmount() {

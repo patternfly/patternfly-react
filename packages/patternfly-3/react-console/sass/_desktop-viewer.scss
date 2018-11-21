@@ -1,0 +1,58 @@
+.desktop-viewer-pf {
+  display: flex;
+  flex-wrap: wrap;
+
+  .manual-connection-pf {
+    min-width: $desktop-viewer-pf-panel-min-width;
+
+    > h2 {
+      text-align: center;
+    }
+
+    > p {
+      text-align: center;
+    }
+
+    .form {
+      min-width: 350px;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .manual-connection-pf-title {
+      text-align: right;
+    }
+
+    .manual-connection-pf-value {
+      text-align: left;
+      font-weight: bolder;
+    }
+  }
+
+  .remote-viewer-pf {
+    position: relative;
+    top: 15%;
+    width: 50%;
+    min-width: $desktop-viewer-pf-panel-min-width;
+    margin-right: 50px;
+
+    .expand-collapse-pf {
+      margin-top: 1em;
+    }
+
+    .remote-viewer-pf-launch {
+      text-align: center;
+      margin-top: 20px; /* Align with h2 of manual-connection-pf */
+    }
+
+    .more-information-pf-install {
+      display: inline-flex;
+
+      > b {
+        margin-right: 5px;
+      }
+    }
+  }
+}
