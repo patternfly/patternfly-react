@@ -30,7 +30,6 @@ export default StyleSheet.create({
   input: {
     padding: `${spacerSm.var} ${spacerXs.var}`,
     width: '100%',
-    border: 'none',
     fontSize: fontSizeXs.var
   }
 });

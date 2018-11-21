@@ -26,7 +26,6 @@
     "gatsby-source-filesystem": "^1.5.36",
     "gatsby-transformer-react-docgen": "^1.0.17",
     "param-case": "^2.1.1",
-    "pascal-case": "^2.0.1",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
