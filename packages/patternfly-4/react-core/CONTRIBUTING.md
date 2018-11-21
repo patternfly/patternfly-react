@@ -151,11 +151,9 @@ $ git rebase upstream/master
 $ git push origin my-branch
 ```
 
-8.  Create a Demo
+8.  Create a Pull Request
 
-    - For PatternFly 4, you can build and deploy the demo documentation to any hosting site of your choice.
-
-9.  Create a Pull Request
+    - A link to the PatternFly 4 demo documentation will be automatically generated and posted as a comment after the pull request build is complete.
 
 ## Additional Information
 
