@@ -9,8 +9,6 @@ import {
 } from '@patternfly/react-core';
 
 class SimplePopover extends React.Component {
-  static title = 'Closable Popover Position';
-
   constructor(props) {
     super(props);
     this.popoverRef = React.createRef();
