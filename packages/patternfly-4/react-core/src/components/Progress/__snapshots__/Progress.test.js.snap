@@ -1692,7 +1692,7 @@ exports[`value higher than maxValue 1`] = `
     aria-describedby="higher-max-value-description"
     aria-valuemax={60}
     aria-valuemin={0}
-    aria-valuenow={60}
+    aria-valuenow={100}
     className="pf-c-progress"
     id="higher-max-value"
     role="progressbar"
@@ -1701,7 +1701,7 @@ exports[`value higher than maxValue 1`] = `
       measureLocation="top"
       parentId="higher-max-value"
       title=""
-      value={60}
+      value={100}
       variant="info"
     >
       <div
@@ -1714,12 +1714,12 @@ exports[`value higher than maxValue 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          60%
+          100%
         </span>
       </div>
       <ProgressBar
         className=""
-        value={60}
+        value={100}
       >
         <div
           className="pf-c-progress__bar"
@@ -1728,7 +1728,7 @@ exports[`value higher than maxValue 1`] = `
             className="pf-c-progress__indicator"
             style={
               Object {
-                "width": "60%",
+                "width": "100%",
               }
             }
           >
