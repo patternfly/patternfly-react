@@ -54,13 +54,17 @@ test('Card Link is working properly', () => {
 });
 
 test('Card Drop Down Button is working properly', () => {
+  const onClick = jest.fn();
   const component = mount(
-    <CardDropdownButton id="cardDropdownButton1" title="Last 30 Days" onClick={jest.fn()}>
+    <CardDropdownButton id="cardDropdownButton1" title="Last 30 Days" onClick={onClick}>
       <MenuItem eventKey="1" active>
         Last 30 Days
       </MenuItem>
     </CardDropdownButton>
   );
 
+  component.find('button').simulate('click');
+
+  expect(onClick).toHaveBeenCalled();
   expect(component.render()).toMatchSnapshot();
 });

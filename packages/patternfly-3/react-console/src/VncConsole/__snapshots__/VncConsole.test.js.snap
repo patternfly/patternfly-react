@@ -4,6 +4,9 @@ exports[`placeholder render test 1`] = `
 <div
   className="vnc-console"
 >
+  <ToolbarRightContent
+    className=""
+  />
   <ToolbarResults
     className=""
   >

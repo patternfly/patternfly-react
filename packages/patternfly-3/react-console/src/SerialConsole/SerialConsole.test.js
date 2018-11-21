@@ -2,7 +2,9 @@
 import React from 'react';
 import { shallow, render } from 'enzyme';
 import SerialConsole from './SerialConsole';
-import { CONNECTED, DISCONNECTED, LOADING } from './constants';
+import constants from '../common/constants';
+
+const { CONNECTED, DISCONNECTED, LOADING } = constants;
 
 test('SerialConsole in the LOADING state', () => {
   const view = shallow(

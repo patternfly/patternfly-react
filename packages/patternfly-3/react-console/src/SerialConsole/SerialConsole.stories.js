@@ -7,7 +7,9 @@ import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName } from 'storybook/constants/siteConstants';
 
 import { SerialConsole } from './index';
-import { CONNECTED, DISCONNECTED, LOADING } from './constants';
+import constants from '../common/constants';
+
+const { CONNECTED, DISCONNECTED, LOADING } = constants;
 
 import { name } from '../../package.json';
 

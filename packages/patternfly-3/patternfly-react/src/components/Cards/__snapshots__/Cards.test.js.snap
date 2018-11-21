@@ -10,10 +10,10 @@ exports[`Card Body is working properly 1`] = `
 
 exports[`Card Drop Down Button is working properly 1`] = `
 <div
-  class="card-pf-time-frame-filter dropdown "
+  class="card-pf-time-frame-filter dropdown open "
 >
   <button
-    aria-expanded="false"
+    aria-expanded="true"
     aria-haspopup="true"
     class="dropdown-toggle btn btn-default"
     id="cardDropdownButton1"

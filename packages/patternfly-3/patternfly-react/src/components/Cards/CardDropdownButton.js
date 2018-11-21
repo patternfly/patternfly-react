@@ -8,7 +8,7 @@ const CardDropdownButton = ({ id, children, title, className, pullRight, ...prop
   const classes = classNames('card-pf-time-frame-filter', className);
   const CustomButtonGroup = customGroup => <ButtonGroup {...customGroup} bsClass=" " />;
   return (
-    <Dropdown className={classes} id={id} pullRight={pullRight} componentClass={CustomButtonGroup}>
+    <Dropdown className={classes} id={id} pullRight={pullRight} componentClass={CustomButtonGroup} {...props}>
       <Dropdown.Toggle>{title}</Dropdown.Toggle>
       <Dropdown.Menu>{children}</Dropdown.Menu>
     </Dropdown>
