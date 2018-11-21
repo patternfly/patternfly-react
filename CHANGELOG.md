@@ -2,6 +2,214 @@
 ## Change Log (2018-11-20)
 
 #### :bug: Bug Fix
+* `patternfly-3`
+  * [#942](https://github.com/patternfly/patternfly-react/pull/942) fix(LoginPage): improve form's error style and behavior ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.10.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## patternfly-react@2.24.5 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## patternfly-react-extensions@2.13.5 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-console@1.7.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#948](https://github.com/patternfly/patternfly-react/pull/948) fix(less): convert less variables from scss in treeview - #943 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## patternfly4-react-lerna-root@1.26.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-tokens@1.8.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-table@0.2.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-styled-system@1.2.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-icons@2.8.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-docs@3.19.7 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-core@1.36.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-charts@1.1.0 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#944](https://github.com/patternfly/patternfly-react/pull/944) fix(LoginPage): improve submit button UX ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-3`
+  * [#909](https://github.com/patternfly/patternfly-react/pull/909) refactor(SerialConsole,VncConsole): Unify use of Toolbar ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 3
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.25.2 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-table@0.1.3 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-docs@3.19.6 (2018-11-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-core@1.35.2 (2018-11-20)
+
+#### :bug: Bug Fix
 * `patternfly-4`
   * [#935](https://github.com/patternfly/patternfly-react/pull/935) Fix Dropdown typescript issue ([@dlabrecq](https://github.com/dlabrecq))
 

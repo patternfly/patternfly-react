@@ -20,7 +20,7 @@ class LoginCardWithValidation extends React.Component {
     },
     isCapsLock: false,
     form: {
-      showError: false,
+      showError: this.props.showError,
       submitError: this.props.submitError,
       disableSubmit: this.props.disableSubmit,
       isSubmitting: this.props.isSubmitting
@@ -260,7 +260,8 @@ LoginCardWithValidation.propTypes = {
   onSubmit: PropTypes.func,
   submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   disableSubmit: PropTypes.bool,
-  isSubmitting: PropTypes.bool
+  isSubmitting: PropTypes.bool,
+  showError: PropTypes.bool
 };
 
 LoginCardWithValidation.defaultProps = {
@@ -270,7 +271,8 @@ LoginCardWithValidation.defaultProps = {
   onSubmit: e => e.target.submit(),
   submitError: null,
   disableSubmit: false,
-  isSubmitting: false
+  isSubmitting: false,
+  showError: false
 };
 
 export default LoginCardWithValidation;

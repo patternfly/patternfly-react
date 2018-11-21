@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.10.7"></a>
+## [7.10.7](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.6...patternfly3-react-lerna-root@7.10.7) (2018-11-20)
+
+
+### Bug Fixes
+
+* **LoginPage:** improve form's error style and behavior ([#942](https://github.com/patternfly/patternfly-react/issues/942)) ([c828b04](https://github.com/patternfly/patternfly-react/commit/c828b04))
+
+
+
+
+<a name="7.10.6"></a>
+## [7.10.6](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.4...patternfly3-react-lerna-root@7.10.6) (2018-11-20)
+
+
+### Bug Fixes
+
+* **less:** convert less variables from scss ([#948](https://github.com/patternfly/patternfly-react/issues/948)) ([2b5bb71](https://github.com/patternfly/patternfly-react/commit/2b5bb71))
+* **LoginPage:** improve the submit UX ([#944](https://github.com/patternfly/patternfly-react/issues/944)) ([769b67b](https://github.com/patternfly/patternfly-react/commit/769b67b))
+
+
+
+
+<a name="7.10.5"></a>
+## [7.10.5](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.4...patternfly3-react-lerna-root@7.10.5) (2018-11-20)
+
+
+### Bug Fixes
+
+* **LoginPage:** improve the submit UX ([#944](https://github.com/patternfly/patternfly-react/issues/944)) ([769b67b](https://github.com/patternfly/patternfly-react/commit/769b67b))
+
+
+
+
 <a name="7.10.4"></a>
 ## [7.10.4](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.1...patternfly3-react-lerna-root@7.10.4) (2018-11-19)
 
