@@ -6,13 +6,8 @@ import SelectColumn from '../../SelectColumn';
 export default (label, { column: { extraParams: { onSelect } }, rowIndex, rowData }) => {
   const rowId = rowIndex !== undefined ? rowIndex : -1;
   function selectClick(event) {
-    let selected;
-    if (rowIndex === undefined) {
-      selected = event.target.checked;
-    } else {
-      selected = rowData && !rowData.selected;
-    }
-    onSelect && onSelect(event, selected, rowId);
+    let selected = rowIndex === undefined ? event.target.checked : rowData && !rowData.selected;
+    onSelect && onSelect(selected, selected, rowId);
   }
   const customProps = {
     ...rowId !== -1 ? {

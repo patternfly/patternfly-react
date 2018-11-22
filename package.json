@@ -112,7 +112,8 @@
       "<rootDir>/packages/*.*/dist/*.*",
       "<rootDir>/packages/*.*/examples/*.*",
       "<rootDir>/packages/*.docs.*",
-      "<rootDir>/packages/react-docs/*.*"
+      "<rootDir>/packages/react-docs/*.*",
+      "<rootDir>/packages/*.*/src/test-helpers/*.*"
     ],
     "setupFiles": [
       "./test.env.js"

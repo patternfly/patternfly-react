@@ -7,5 +7,6 @@ export default (actions) => {
   return (label, { rowIndex }) => ({
     className: css(tableAction),
     children: <ActionsColumn items={actions} rowId={rowIndex}>{label}</ActionsColumn>
-  })
+  });
+
 }

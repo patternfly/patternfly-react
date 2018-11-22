@@ -1,36 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Table, TableHeader, TableBody, TableGridBreakpoint, TableVariant, cellWidth, headerCol } from './index';
-
-const columns = [
-  { title: 'Header cell' },
-  'Branches',
-  { title: 'Pull requests' },
-  'Workspaces',
-  {
-    title: 'Last Commit'
-  }
-];
-
-const rows = [{
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}]
+import { Table, TableHeader, TableBody, TableGridBreakpoint, TableVariant, cellWidth, headerCol, sortable } from './index';
+import { rows, columns } from '../../test-helpers/data-sets';
 
 describe('Simple table', () => {
   test('caption', () => {
@@ -59,6 +30,7 @@ describe('Simple table', () => {
 
 test('Sortable table', () => {
   const onSortCall = () => undefined;
+  columns[0] = { ...columns[0], transforms: [sortable] };
   const view = mount(<Table aria-label="Aria labeled" onSort={onSortCall} sortBy={{}}>
     <TableHeader headerRows={columns} />
     <TableBody rows={rows} />
@@ -126,6 +98,19 @@ test('Collapsible table', () => {
   rows[1] = { ...rows[1], parent: 0 };
   rows[3] = { ...rows[3], isOpen: false };
   rows[4] = { ...rows[4], parent: 3 };
+  const onCollapse = () => undefined;
+  const view = mount(<Table aria-label="Aria labeled" onCollapse={onCollapse}>
+    <TableHeader headerRows={columns} />
+    <TableBody rows={rows} />
+  </Table>);
+  expect(view).toMatchSnapshot();
+});
+
+
+test('Collapsible nested table', () => {
+  rows[0] = { ...rows[0], isOpen: false };
+  rows[1] = { ...rows[1], parent: 0, isOpen: true };
+  rows[2] = { ...rows[2], parent: 1 };
   const onCollapse = () => undefined;
   const view = mount(<Table aria-label="Aria labeled" onCollapse={onCollapse}>
     <TableHeader headerRows={columns} />

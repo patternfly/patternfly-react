@@ -39,7 +39,6 @@ class ActionsTable extends React.Component {
 
   render() {
     const { columns, rows, actions } = this.state;
-
     return (
       <Table caption="Actions Table" actions={actions}>
         <TableHeader headerRows={columns} />

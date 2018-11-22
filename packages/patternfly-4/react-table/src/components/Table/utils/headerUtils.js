@@ -1,4 +1,4 @@
-import { scopeColTransformer, selectable, cellActions, emptyCol, mapProps, collapsible } from './transformers';
+import { scopeColTransformer, selectable, cellActions, emptyCol, mapProps, collapsible, emptyTD } from './transformers';
 import { defaultTitle } from './formatters';
 
 const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => {
@@ -35,7 +35,7 @@ const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
 const mapHeader = (column, extra, key, ...props) => {
   const title = typeof column === 'string' ? column : column.title;
   return ({
-    property: title.toLowerCase().trim().replace(/\s/g, '-') || `column-${key}`,
+    property: (title && title.toLowerCase().trim().replace(/\s/g, '-')) || `column-${key}`,
     extraParams: extra,
     header: generateHeader(column, title),
     cell: generateCell(column, extra),
@@ -59,10 +59,7 @@ const selectableTransforms = ({ onSelect }) => [
 const actionsTransforms = ({ actions }) => [
   ...actions ? [{
     title: '',
-    transforms: [() => ({
-      scope: '',
-      component: 'td'
-    })],
+    transforms: [emptyTD],
     cellTransforms: [cellActions(actions)]
   }] : []
 ]
@@ -70,10 +67,7 @@ const actionsTransforms = ({ actions }) => [
 const collapsibleTransfroms = ({ onCollapse }) => [
   ...onCollapse ? [{
     title: '',
-    transforms: [() => ({
-      scope: '',
-      component: 'td'
-    })],
+    transforms: [emptyTD],
     cellTransforms: [collapsible]
   }] : []
 ]

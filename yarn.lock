@@ -1532,6 +1532,11 @@
   version "1.0.120"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.120.tgz#2e8e1245b25d0207696c547059c5e8754eff8773"
 
+"@patternfly/patternfly-next@^1.0.79":
+  version "1.0.79"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.79.tgz#e9afb85224d3c3e7b60bfd4e70d1322072f53339"
+  integrity sha512-rWbvpm8yFrzterwVSAERLRXQr9giH9Nweic+mlTEH/HrZorN/Jgq2bac046z6Ru/wtmUx4CPqxHoO2hmA0Hbhg==
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"

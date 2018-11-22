@@ -33,19 +33,19 @@ const propTypes = {
   actions: PropTypes.array,
   header: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
-      return new Error('Header is required if no aria-label or caption is supplied!');
+      throw new Error('Header is required if no aria-label or caption is supplied!');
     }
     return null;
   },
   caption: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
-      return new Error('Caption is required if no aria-label or header is supplied!');
+      throw new Error('Caption is required if no aria-label or header is supplied!');
     }
     return null;
   },
   'aria-label': props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
-      return new Error('aria-label is required if no caption or header is supplied!');
+      throw new Error('aria-label is required if no caption or header is supplied!');
     }
     return null;
   }

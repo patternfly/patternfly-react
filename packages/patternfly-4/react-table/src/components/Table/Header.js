@@ -30,17 +30,14 @@ const defaultProps = {
 class ContextHeader extends React.Component {
   shouldComponentUpdate(nextProps) {
     const { sortBy: nextSortBy, actions: nextAction } = nextProps;
-    const { sortBy, actions, onCollapse } = this.props;
-    if (nextProps.onCollapse && onCollapse) {
-      return !isEqual(nextProps.onCollapse, onCollapse);
-    }
-    if (nextSortBy && sortBy) {
-      return nextSortBy.index !== sortBy.index || nextSortBy.direction !== sortBy.direction;
-    }
-    if (nextAction && actions) {
-      return !isEqual(nextAction, actions);
-    }
-    return !isEqual(nextProps.headerRows, this.props.headerRows);
+    const { sortBy, actions, onCollapse, headerRows } = this.props;
+    const updateCheckers = [
+      () => nextProps.onCollapse && onCollapse && !isEqual(nextProps.onCollapse, onCollapse),
+      () => nextSortBy && sortBy && (nextSortBy.index !== sortBy.index || nextSortBy.direction !== sortBy.direction),
+      () => nextAction && actions && !isEqual(nextAction, actions),
+      () => !isEqual(nextProps.headerRows, headerRows)
+    ];
+    return updateCheckers.some(checker => checker());
   }
 
   headerColumns() {
@@ -64,21 +61,23 @@ class ContextHeader extends React.Component {
   }
 }
 
-const TableHeader = ({ headerData, ...props }) => (
-  <TableContext.Consumer>
-    {({ updateHeaderData, onSort, sortBy, onSelect, actions, onCollapse }) => (
-      <ContextHeader
-        {...props}
-        updateHeaderData={updateHeaderData}
-        onSort={onSort}
-        sortBy={sortBy}
-        actions={actions}
-        onSelect={onSelect}
-        onCollapse={onCollapse}
-      />
-    )}
-  </TableContext.Consumer>
-);
+const TableHeader = ({ headerData, ...props }) => {
+  return (
+    <TableContext.Consumer>
+      {({ updateHeaderData, onSort, sortBy, onSelect, actions, onCollapse }) => (
+        <ContextHeader
+          {...props}
+          updateHeaderData={updateHeaderData}
+          onSort={onSort}
+          sortBy={sortBy}
+          actions={actions}
+          onSelect={onSelect}
+          onCollapse={onCollapse}
+        />
+      )}
+    </TableContext.Consumer>
+  )
+};
 
 TableHeader.propTypes = propTypes;
 TableHeader.defaultProps = defaultProps;

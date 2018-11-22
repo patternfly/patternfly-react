@@ -4,6 +4,11 @@ export { default as cellActions } from './decorators/cellActions';
 export { default as cellWidth } from './decorators/cellWidth';
 export { default as collapsible } from './decorators/collapsible';
 
+export const emptyTD = () => ({
+  scope: '',
+  component: 'td'
+})
+
 export const scopeColTransformer = () => ({
   scope: 'col'
 });

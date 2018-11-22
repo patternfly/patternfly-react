@@ -4,12 +4,11 @@ import { tableToggle, tableExpandableRow } from '@patternfly/patternfly-next/com
 import CollapseColumn from '../../CollapseColumn';
 
 export default (value, { rowIndex, rowData, column: { extraParams: { onCollapse } } }) => {
-  // console.log(onCollapse, rowIndex, rowData, 'bla');
   function onToggle(event) {
-    onCollapse && onCollapse(event, rowIndex, !rowData.isOpen)
+    onCollapse && onCollapse(event, rowIndex, rowData && !rowData.isOpen)
   }
   return {
     className: css(tableToggle),
-    children: <CollapseColumn onToggle={onToggle} isOpen={rowData.isOpen}>{value}</CollapseColumn>
+    children: <CollapseColumn onToggle={onToggle} isOpen={rowData && rowData.isOpen}>{value}</CollapseColumn>
   }
 }

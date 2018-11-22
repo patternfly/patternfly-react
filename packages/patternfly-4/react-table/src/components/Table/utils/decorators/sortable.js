@@ -4,8 +4,8 @@ import { css } from '@patternfly/react-styles';
 import { tableSort, modifiers } from '@patternfly/patternfly-next/components/Table/table.css';
 
 export default (label, { column: { extraParams: { sortBy, onSort } }, columnIndex }) => {
-  const isSortedBy = columnIndex === sortBy.index;
-  const direction = sortBy.direction === SortByDirection.asc ? modifiers.ascending : modifiers.descending;
+  const isSortedBy = sortBy && columnIndex === sortBy.index;
+  const direction = sortBy && sortBy.direction === SortByDirection.asc ? modifiers.ascending : modifiers.descending;
   function sortClicked(event) {
     let reversedDirection;
     if (!isSortedBy) {
