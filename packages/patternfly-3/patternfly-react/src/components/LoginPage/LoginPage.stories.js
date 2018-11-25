@@ -96,7 +96,10 @@ const createProps = () => {
         },
         disableSubmit: false,
         submitText: card.form.submitText,
-        onSubmit: e => storyAction(e, 'Form was submitted')
+        onSubmit: (e, onError) => {
+          onError(card.form.error);
+          storyAction(e, 'Form was submitted');
+        }
       },
       social: {
         links: createLogoList()

@@ -77,21 +77,34 @@ class LoginCardWithValidation extends React.Component {
   onSubmit = e => {
     e.preventDefault();
     if (this.isFormValid()) {
-      const { onSubmit, submitError } = this.props;
-      onSubmit && onSubmit(e);
-      submitError &&
-        this.setState({
-          form: {
-            ...this.state.form,
-            showError: true,
-            error: submitError,
-            disableSubmit: true,
-            isSubmitting: true
-          }
-        });
+      this.onSubmitStart();
+      this.props.onSubmit(e, this.onSubmitError);
     } else {
       this.handleOnInputErrors();
     }
+  };
+
+  onSubmitStart = () => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        disableSubmit: true,
+        isSubmitting: true,
+        showError: false
+      }
+    });
+  };
+
+  onSubmitError = submitError => {
+    this.setState({
+      form: {
+        ...this.state.form,
+        showError: true,
+        submitError,
+        disableSubmit: false,
+        isSubmitting: false
+      }
+    });
   };
 
   getModifiedProps = () => {
@@ -121,7 +134,8 @@ class LoginCardWithValidation extends React.Component {
       onSubmit: e => this.onSubmit(e),
       showError: this.state.form.showError,
       disableSubmit: this.state.form.disableSubmit,
-      isSubmitting: this.state.form.isSubmitting
+      isSubmitting: this.state.form.isSubmitting,
+      submitError: this.state.form.submitError
     };
   };
 
