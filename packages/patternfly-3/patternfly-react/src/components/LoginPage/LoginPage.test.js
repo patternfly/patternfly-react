@@ -4,7 +4,7 @@ import { DropdownButton } from 'react-bootstrap';
 import englishMessages from './mocks/messages.en';
 import frenchMessages from './mocks/messages.fr';
 import { LoginPage, LoginCardWithValidation } from './index';
-import { KEY_CODES } from '../../common/helpers';
+import { KEY_CODES, noop } from '../../common/helpers';
 
 const { Input, ForgotPassword, SignUp } = LoginPage.Card;
 const { FooterLinks } = LoginPage;
@@ -255,6 +255,22 @@ test('Submit while password is too short raises the correct error', () => {
       .at(1)
       .props().error
   ).toEqual(englishMessages.card.passwordField.errors.short);
+});
+
+test('valid form should be submitted and raise a "server error"', () => {
+  const serverError = 'server error';
+  const props = { ...createProps() };
+  props.card.form.onSubmit = (e, onError) => onError(serverError);
+  const component = mount(<LoginPage {...props} />);
+  const passwordElement = component.find('input[type="password"]').at(0);
+  const usernameElement = component.find('input[type="email"]').at(0);
+  passwordElement.simulate('change', { target: { value: 'validPassword' } });
+  usernameElement.simulate('change', { target: { value: 'validUser@gmail.com' } });
+
+  const validator = component.find(LoginCardWithValidation).instance();
+  validator.onSubmit({ preventDefault: noop, target: { submit: noop } });
+  component.update();
+  expect(validator.state.form.submitError).toBe(serverError);
 });
 
 test('Submit while username is invalid cause a specific error to be shown and onChange is disappears', () => {
