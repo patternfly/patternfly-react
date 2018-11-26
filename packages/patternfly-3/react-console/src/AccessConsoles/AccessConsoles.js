@@ -9,11 +9,17 @@ const { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } = constants;
 const { Row, Col } = Grid;
 const { Checkbox, FormGroup } = Form;
 
+const getChildTypeName = child => (child.props.type ? child.props.type : (child.type && child.type.name) || null);
+
+const isChildOfType = (child, type) => getChildTypeName(child) === type;
+
 class AccessConsoles extends React.Component {
   state = {
-    type: NONE_TYPE,
+    type: this.props.preselectedType,
     disconnectByChange: this.props.disconnectByChange,
-    keptConnection: {} // no connection exists when mounted
+    keptConnection: {
+      [this.props.preselectedType]: true
+    }
   };
 
   onTypeChange(type) {
@@ -40,20 +46,22 @@ class AccessConsoles extends React.Component {
     return this.getConsoleForType(this.state.type);
   }
 
+  isChildOfTypePresent(type) {
+    let found = false;
+    React.Children.forEach(this.props.children, child => {
+      found = found || isChildOfType(child, type);
+    });
+
+    return found;
+  }
+
   getConsoleForType(type) {
-    if (!this.props.children) {
-      return null;
-    }
-
-    const getChildTypeName = child => (child.props.type ? child.props.type : (child.type && child.type.name) || null);
-    const isChildOfType = child => getChildTypeName(child) === type;
-
     // To keep connection, render all consoles but hide those unused
     return React.Children.map(
       this.props.children,
       child =>
         this.state.keptConnection[getChildTypeName(child)] ? (
-          <div key={getChildTypeName(child)} hidden={!isChildOfType(child)}>
+          <div key={getChildTypeName(child)} hidden={!isChildOfType(child, type)}>
             {child}
           </div>
         ) : null
@@ -77,12 +85,12 @@ class AccessConsoles extends React.Component {
                   {this.props.children ? items[this.state.type] : this.props.textEmptyConsoleList}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                  {this.getConsoleForType(SERIAL_CONSOLE_TYPE) && (
+                  {this.isChildOfTypePresent(SERIAL_CONSOLE_TYPE) && (
                     <MenuItem eventKey="1" onClick={() => this.onTypeChange(SERIAL_CONSOLE_TYPE)}>
                       {items[SERIAL_CONSOLE_TYPE]}
                     </MenuItem>
                   )}
-                  {this.getConsoleForType(VNC_CONSOLE_TYPE) && (
+                  {this.isChildOfTypePresent(VNC_CONSOLE_TYPE) && (
                     <MenuItem eventKey="2" onClick={() => this.onTypeChange(VNC_CONSOLE_TYPE)}>
                       {items[VNC_CONSOLE_TYPE]}
                     </MenuItem>
@@ -141,6 +149,11 @@ AccessConsoles.propTypes = {
   textDisconnectByChange: PropTypes.string /** Internationalization */,
   textEmptyConsoleList: PropTypes.string /** Internationalization */,
 
+  preselectedType: PropTypes.oneOf([
+    NONE_TYPE,
+    SERIAL_CONSOLE_TYPE,
+    VNC_CONSOLE_TYPE
+  ]) /** Initial selection of the dropdown */,
   disconnectByChange:
     PropTypes.bool /** Initial value of "Disconnect before switching" checkbox, "false" to disconnect when console type changed */
 };
@@ -154,6 +167,7 @@ AccessConsoles.defaultProps = {
   textDisconnectByChange: 'Disconnect before switching',
   textEmptyConsoleList: 'No console available',
 
+  preselectedType: NONE_TYPE,
   disconnectByChange: true /** By default, console is unmounted (disconnected) when switching to other type */
 };
 

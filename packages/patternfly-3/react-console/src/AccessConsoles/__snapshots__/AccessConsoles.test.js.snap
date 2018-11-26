@@ -3,6 +3,7 @@
 exports[`AccessConsoles keeps connection when switching types 1`] = `
 <AccessConsoles
   disconnectByChange={false}
+  preselectedType="_none_"
   textDisconnectByChange="Disconnect before switching"
   textEmptyConsoleList="No console available"
   textSelectConsoleType="Select Console Type"
@@ -362,6 +363,7 @@ exports[`AccessConsoles keeps connection when switching types 1`] = `
 exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
 <AccessConsoles
   disconnectByChange={true}
+  preselectedType="_none_"
   textDisconnectByChange="Disconnect before switching"
   textEmptyConsoleList="No console available"
   textSelectConsoleType="Select Console Type"
@@ -808,16 +810,6 @@ exports[`AccessConsoles with SerialConsole as a single child 1`] = `
             >
               Serial Console
             </MenuItem>
-            <MenuItem
-              bsClass="dropdown"
-              disabled={false}
-              divider={false}
-              eventKey="2"
-              header={false}
-              onClick={[Function]}
-            >
-              VNC Console
-            </MenuItem>
           </DropdownMenu>
         </Uncontrolled(Dropdown)>
       </Col>
@@ -877,16 +869,6 @@ exports[`AccessConsoles with VncConsole as a single child 1`] = `
               bsClass="dropdown"
               disabled={false}
               divider={false}
-              eventKey="1"
-              header={false}
-              onClick={[Function]}
-            >
-              Serial Console
-            </MenuItem>
-            <MenuItem
-              bsClass="dropdown"
-              disabled={false}
-              divider={false}
               eventKey="2"
               header={false}
               onClick={[Function]}
@@ -908,6 +890,240 @@ exports[`AccessConsoles with VncConsole as a single child 1`] = `
     />
   </Row>
 </Grid>
+`;
+
+exports[`AccessConsoles with preselected SerialConsole 1`] = `
+<AccessConsoles
+  disconnectByChange={true}
+  preselectedType="SerialConsole"
+  textDisconnectByChange="Disconnect before switching"
+  textEmptyConsoleList="No console available"
+  textSelectConsoleType="Select Console Type"
+  textSerialConsole="Serial Console"
+  textVncConsole="VNC Console"
+>
+  <Grid
+    bsClass="container"
+    componentClass="div"
+    fluid={true}
+  >
+    <div
+      className="container-fluid"
+    >
+      <Form
+        bsClass="form"
+        componentClass="form"
+        horizontal={true}
+        inline={false}
+      >
+        <form
+          className="form-horizontal"
+        >
+          <FormGroup
+            bsClass="form-group"
+            className="console-selector-pf"
+            controlId="console-type"
+          >
+            <div
+              className="console-selector-pf form-group"
+            >
+              <Col
+                bsClass="col"
+                componentClass="div"
+              >
+                <div
+                  className=""
+                >
+                  <Uncontrolled(Dropdown)
+                    disabled={false}
+                    id="console-type-selector"
+                  >
+                    <Dropdown
+                      bsClass="dropdown"
+                      componentClass={[Function]}
+                      disabled={false}
+                      id="console-type-selector"
+                      onToggle={[Function]}
+                    >
+                      <ButtonGroup
+                        block={false}
+                        bsClass="btn-group"
+                        className="dropdown"
+                        justified={false}
+                        vertical={false}
+                      >
+                        <div
+                          className="dropdown btn-group"
+                        >
+                          <DropdownToggle
+                            bsClass="dropdown-toggle"
+                            bsRole="toggle"
+                            disabled={false}
+                            id="console-type-selector"
+                            key=".0"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            open={false}
+                            useAnchor={false}
+                          >
+                            <Button
+                              active={false}
+                              aria-expanded={false}
+                              aria-haspopup={true}
+                              block={false}
+                              bsClass="btn"
+                              bsStyle="default"
+                              className="dropdown-toggle"
+                              disabled={false}
+                              id="console-type-selector"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              role="button"
+                            >
+                              <button
+                                aria-expanded={false}
+                                aria-haspopup={true}
+                                className="dropdown-toggle btn btn-default"
+                                disabled={false}
+                                id="console-type-selector"
+                                onClick={[Function]}
+                                onKeyDown={[Function]}
+                                role="button"
+                                type="button"
+                              >
+                                Serial Console
+                                 
+                                <span
+                                  className="caret"
+                                />
+                              </button>
+                            </Button>
+                          </DropdownToggle>
+                          <DropdownMenu
+                            bsClass="dropdown-menu"
+                            bsRole="menu"
+                            key=".1"
+                            labelledBy="console-type-selector"
+                            onClose={[Function]}
+                            onSelect={[Function]}
+                            pullRight={false}
+                          >
+                            <RootCloseWrapper
+                              disabled={true}
+                              event="click"
+                              onRootClose={[Function]}
+                            >
+                              <ul
+                                aria-labelledby="console-type-selector"
+                                className="dropdown-menu"
+                                role="menu"
+                              >
+                                <MenuItem
+                                  bsClass="dropdown"
+                                  disabled={false}
+                                  divider={false}
+                                  eventKey="1"
+                                  header={false}
+                                  key=".0"
+                                  onClick={[Function]}
+                                  onKeyDown={[Function]}
+                                  onSelect={[Function]}
+                                >
+                                  <li
+                                    className=""
+                                    role="presentation"
+                                  >
+                                    <SafeAnchor
+                                      componentClass="a"
+                                      onClick={[Function]}
+                                      onKeyDown={[Function]}
+                                      role="menuitem"
+                                      tabIndex="-1"
+                                    >
+                                      <a
+                                        href="#"
+                                        onClick={[Function]}
+                                        onKeyDown={[Function]}
+                                        role="menuitem"
+                                        tabIndex="-1"
+                                      >
+                                        Serial Console
+                                      </a>
+                                    </SafeAnchor>
+                                  </li>
+                                </MenuItem>
+                              </ul>
+                            </RootCloseWrapper>
+                          </DropdownMenu>
+                        </div>
+                      </ButtonGroup>
+                    </Dropdown>
+                  </Uncontrolled(Dropdown)>
+                  <Checkbox
+                    bsClass="checkbox"
+                    className="console-selector-pf-disconnect-switch"
+                    defaultChecked={true}
+                    disabled={false}
+                    inline={true}
+                    onChange={[Function]}
+                    title=""
+                  >
+                    <label
+                      className="console-selector-pf-disconnect-switch checkbox-inline"
+                      title=""
+                    >
+                      <input
+                        defaultChecked={true}
+                        disabled={false}
+                        onChange={[Function]}
+                        type="checkbox"
+                      />
+                      Disconnect before switching
+                    </label>
+                  </Checkbox>
+                </div>
+              </Col>
+            </div>
+          </FormGroup>
+        </form>
+      </Form>
+      <Row
+        bsClass="row"
+        componentClass="div"
+      >
+        <div
+          className="row"
+        >
+          <Col
+            bsClass="col"
+            componentClass="div"
+          >
+            <div
+              className=""
+            >
+              <div
+                hidden={false}
+                key="SerialConsole/.0"
+              >
+                <SerialConsoleConnected
+                  type="SerialConsole"
+                >
+                  <p>
+                    Whatever component, preferably wrapping 
+                    <i>
+                      SerialConsole
+                    </i>
+                     with callbacks adapted to a particular backend.
+                  </p>
+                </SerialConsoleConnected>
+              </div>
+            </div>
+          </Col>
+        </div>
+      </Row>
+    </div>
+  </Grid>
+</AccessConsoles>
 `;
 
 exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
@@ -957,16 +1173,6 @@ exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
               onClick={[Function]}
             >
               Serial Console
-            </MenuItem>
-            <MenuItem
-              bsClass="dropdown"
-              disabled={false}
-              divider={false}
-              eventKey="2"
-              header={false}
-              onClick={[Function]}
-            >
-              VNC Console
             </MenuItem>
           </DropdownMenu>
         </Uncontrolled(Dropdown)>
