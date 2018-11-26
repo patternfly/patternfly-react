@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.11.0"></a>
+# [7.11.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.7...patternfly3-react-lerna-root@7.11.0) (2018-11-26)
+
+
+### Features
+
+* **Remote Desktop Protocol:** DesktopViewer is extended for the RDP ([#807](https://github.com/patternfly/patternfly-react/issues/807)) ([b27cf7b](https://github.com/patternfly/patternfly-react/commit/b27cf7b))
+
+
+
+
 <a name="7.10.7"></a>
 ## [7.10.7](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.6...patternfly3-react-lerna-root@7.10.7) (2018-11-20)
 

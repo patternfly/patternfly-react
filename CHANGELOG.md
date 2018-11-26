@@ -1,4 +1,14 @@
 
+## Change Log (2018-11-26)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#807](https://github.com/patternfly/patternfly-react/pull/807) Rdp console ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
 ## patternfly3-react-lerna-root@7.10.7 (2018-11-20)
 
 #### :bug: Bug Fix
