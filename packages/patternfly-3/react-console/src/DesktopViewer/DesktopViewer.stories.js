@@ -9,24 +9,58 @@ import { DesktopViewer } from './index';
 
 const stories = storiesOf(`${storybookPackageName(name)}/DesktopViewer`, module);
 
-stories.add(
-  'DesktopViewer',
-  withInfo()(() => {
-    const spice = {
-      address: 'my.host.com',
-      port: 5900,
-      tlsPort: '5901'
-    };
-    const vnc = {
-      address: 'my.host.com',
-      port: 5902,
-      tlsPort: '5903'
-    };
+const spice = {
+  address: 'my.host.com',
+  port: 5900,
+  tlsPort: '5901'
+};
+const vnc = {
+  address: 'my.host.com',
+  port: 5902,
+  tlsPort: '5903'
+};
+const rdp = {
+  address: 'my.host.com',
+  port: 3389
+};
 
+stories.add(
+  'DesktopViewer - SPICE and VNC',
+  withInfo()(() => {
     const story = <DesktopViewer spice={spice} vnc={vnc} />;
     return inlineTemplate({
       story,
-      title: 'DesktopViewer'
+      title: 'DesktopViewer  - SPICE and VNC'
+    });
+  })
+);
+
+stories.add(
+  'DesktopViewer - all',
+  withInfo()(() => {
+    const story = <DesktopViewer spice={spice} vnc={vnc} rdp={rdp} />;
+    return inlineTemplate({
+      story,
+      title: 'DesktopViewer - all'
+    });
+  })
+);
+
+stories.add(
+  'DesktopViewer - RDP only',
+  withInfo()(() => {
+    const story = (
+      <DesktopViewer rdp={rdp}>
+        <div />
+        <div>
+          Custom instructions for running an RDP client application. For default content, please see the{' '}
+          <i>DesktopViewer - all</i> storybook.
+        </div>
+      </DesktopViewer>
+    );
+    return inlineTemplate({
+      story,
+      title: 'DesktopViewer - RDP only'
     });
   })
 );
@@ -45,23 +79,12 @@ stories.add(
 stories.add(
   'DesktopViewer - custom instructions',
   withInfo()(() => {
-    const spice = {
-      address: 'my.host.com',
-      port: 5900,
-      tlsPort: '5901'
-    };
-    const vnc = {
-      address: 'my.host.com',
-      port: 5902,
-      tlsPort: '5903'
-    };
-
     const story = (
-      <DesktopViewer spice={spice} vnc={vnc}>
-        {' '}
+      <DesktopViewer spice={spice} vnc={vnc} rdp={rdp}>
         <div>
           Congratulations! You can provide whatever <b>custom installation instructions</b> here.
         </div>
+        <div>Same as for RDP.</div>
       </DesktopViewer>
     );
     return inlineTemplate({

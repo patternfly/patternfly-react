@@ -4,10 +4,10 @@ import { render, mount } from 'enzyme';
 
 import DesktopViewer from './DesktopViewer';
 import MoreInformationDefaultContent from './MoreInformationDefaultContent';
-import { generateVVFile } from './vvFileGenerator';
+import { generateDescriptorFile } from './consoleDescriptorGenerator';
 import constants from '../common/constants';
 
-const { SPICE_CONSOLE_TYPE } = constants;
+const { SPICE_CONSOLE_TYPE, RDP_CONSOLE_TYPE, DEFAULT_RDP_PORT } = constants;
 
 const spice = {
   address: 'my.host.com',
@@ -18,6 +18,16 @@ const vnc = {
   address: 'my.host.com',
   port: 5902,
   tlsPort: '5903'
+};
+
+const rdp = {
+  address: 'my.host.com',
+  port: DEFAULT_RDP_PORT
+};
+
+const rdp2 = {
+  address: 'my.differenthost.com',
+  port: 1234
 };
 
 test('DesktopViewer empty', () => {
@@ -35,11 +45,32 @@ test('DesktopViewer with Spice and VNC', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+test('DesktopViewer with Spice, VNC and RDP', () => {
+  const wrapper = render(<DesktopViewer spice={spice} vnc={vnc} rdp={rdp} />);
+  expect(wrapper).toMatchSnapshot();
+});
+
+test('DesktopViewer with Spice, VNC and RDP (different hostname)', () => {
+  const wrapper = render(<DesktopViewer spice={spice} vnc={vnc} rdp={rdp2} />);
+  expect(wrapper).toMatchSnapshot();
+});
+
 test('DesktopViewer launch button', () => {
   const onDownload = jest.fn();
   const onGenerate = jest.fn().mockReturnValue({ content: 'Foo' });
   const wrapper = mount(<DesktopViewer spice={spice} vnc={vnc} onDownload={onDownload} onGenerate={onGenerate} />);
-  const launchButton = wrapper.find('.remote-viewer-pf-launch button');
+  const launchButton = wrapper.find('button.remote-viewer-pf-launch-vv');
+  expect(launchButton).toHaveLength(1);
+  launchButton.simulate('click');
+  expect(onGenerate).toHaveBeenCalledTimes(1);
+  expect(onDownload).toHaveBeenCalledTimes(1);
+});
+
+test('DesktopViewer RDP launch button', () => {
+  const onDownload = jest.fn();
+  const onGenerate = jest.fn().mockReturnValue({ content: 'Foo' });
+  const wrapper = mount(<DesktopViewer rdp={rdp} onDownload={onDownload} onGenerate={onGenerate} />);
+  const launchButton = wrapper.find('button.remote-viewer-pf-launch-rdp');
   expect(launchButton).toHaveLength(1);
   launchButton.simulate('click');
   expect(onGenerate).toHaveBeenCalledTimes(1);
@@ -66,9 +97,15 @@ test('default MoreInformationContent', () => {
 });
 
 test('default implementation of generateVVFile()', () => {
-  const output = generateVVFile({ console: spice, type: SPICE_CONSOLE_TYPE });
+  const output = generateDescriptorFile({ console: spice, type: SPICE_CONSOLE_TYPE });
   expect(output.mimeType).toMatch('application/x-virt-viewer');
   expect(output.content).toMatch(
     '[virt-viewer]\ntype=spice\nhost=my.host.com\nport=5900\ndelete-this-file=1\nfullscreen=0\n'
   );
+});
+
+test('default implementation of generateRDPFile()', () => {
+  const output = generateDescriptorFile({ console: rdp, type: RDP_CONSOLE_TYPE });
+  expect(output.mimeType).toMatch('application/rdp');
+  expect(output.content).toEqual(expect.stringContaining('full address:s:my.host.com:3389\n')); // the rest is a constant so far
 });

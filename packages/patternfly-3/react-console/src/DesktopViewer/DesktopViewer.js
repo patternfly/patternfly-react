@@ -7,12 +7,19 @@ import ManualConnection from './ManualConnection';
 import ConnectWithRemoteViewer from './ConnectWithRemoteViewer';
 import consoleDetailPropType from './consoleDetailPropType';
 
-const DesktopViewer = ({ children, spice, vnc, onGenerate, onDownload, topClassName, ...props }) => (
+const DesktopViewer = ({ children, spice, vnc, rdp, onGenerate, onDownload, topClassName, ...props }) => (
   <div className={classNames('desktop-viewer-pf', topClassName)}>
-    <ConnectWithRemoteViewer spice={spice} vnc={vnc} onGenerate={onGenerate} onDownload={onDownload} {...props}>
+    <ConnectWithRemoteViewer
+      spice={spice}
+      vnc={vnc}
+      rdp={rdp}
+      onGenerate={onGenerate}
+      onDownload={onDownload}
+      {...props}
+    >
       {children}
     </ConnectWithRemoteViewer>
-    <ManualConnection spice={spice} vnc={vnc} {...props} />
+    <ManualConnection spice={spice} vnc={vnc} rdp={rdp} {...props} />
   </div>
 );
 
@@ -22,6 +29,7 @@ DesktopViewer.propTypes = {
 
   spice: consoleDetailPropType,
   vnc: consoleDetailPropType,
+  rdp: consoleDetailPropType,
 
   onGenerate: PropTypes.func,
   onDownload: PropTypes.func,
@@ -39,17 +47,23 @@ DesktopViewer.propTypes = {
   textVNCPort: PropTypes.string /** Internationalization */,
   textSpiceTlsPort: PropTypes.string /** Internationalization */,
   textVNCTlsPort: PropTypes.string /** Internationalization */,
+  textRDPPort: PropTypes.string /** Internationalization */,
+  textRdpAddress: PropTypes.string /** Internationalization */,
 
+  textDesktopConnection: PropTypes.string /** Internationalization */,
   textConnectWithRemoteViewer: PropTypes.string /** Internationalization */,
-  textMoreInfo: PropTypes.string
+  textConnectWithRDP: PropTypes.string /** Internationalization */,
+  textMoreInfo: PropTypes.string /** Internationalization */,
+  textMoreRDPInfo: PropTypes.string /** Internationalization */
 };
 
 DesktopViewer.defaultProps = {
   children: null /** Custom content of more-info section  */,
   topClassName: '' /** Custom class name to be added to the root element. */,
 
-  spice: null /** Optional. Connection details for spice */,
-  vnc: null /** Optional. Connection details for vnc */,
+  spice: null /** Optional. Connection details for Spice */,
+  vnc: null /** Optional. Connection details for VNC */,
+  rdp: null /** Optional. Connection details for RDP */,
 
   /** Callback function. Generate content of .vv file.
    * Parameters: ({ console, type }) => ({
@@ -85,9 +99,14 @@ DesktopViewer.defaultProps = {
   textVNCPort: 'VNC Port:',
   textSpiceTlsPort: 'SPICE TLS Port:',
   textVNCTlsPort: 'VNC TLS Port:',
+  textRDPPort: 'RDP Port:',
+  textRdpAddress: 'RDP Address:',
 
+  textDesktopConnection: 'Desktop Client',
   textConnectWithRemoteViewer: 'Launch Remote Viewer',
-  textMoreInfo: 'More Information'
+  textConnectWithRDP: 'Launch Remote Desktop',
+  textMoreInfo: 'Remote Viewer Details',
+  textMoreRDPInfo: 'Remote Desktop Details'
 };
 
 export default DesktopViewer;
