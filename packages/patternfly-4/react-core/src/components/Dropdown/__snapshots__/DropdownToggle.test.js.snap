@@ -29,6 +29,7 @@ exports[`state active 1`] = `
   isFocused={false}
   isHovered={false}
   isOpen={false}
+  isPlain={false}
   onToggle={[Function]}
   parentRef={<div />}
 >
@@ -39,6 +40,7 @@ exports[`state active 1`] = `
     isFocused={false}
     isHovered={false}
     isOpen={false}
+    isPlain={false}
     onToggle={[Function]}
     parentRef={<div />}
   >
@@ -110,6 +112,7 @@ exports[`state focus 1`] = `
   isFocused={true}
   isHovered={false}
   isOpen={false}
+  isPlain={false}
   onToggle={[Function]}
   parentRef={<div />}
 >
@@ -120,6 +123,7 @@ exports[`state focus 1`] = `
     isFocused={true}
     isHovered={false}
     isOpen={false}
+    isPlain={false}
     onToggle={[Function]}
     parentRef={<div />}
   >
@@ -191,6 +195,7 @@ exports[`state hover 1`] = `
   isFocused={false}
   isHovered={true}
   isOpen={false}
+  isPlain={false}
   onToggle={[Function]}
   parentRef={<div />}
 >
@@ -201,6 +206,7 @@ exports[`state hover 1`] = `
     isFocused={false}
     isHovered={true}
     isOpen={false}
+    isPlain={false}
     onToggle={[Function]}
     parentRef={<div />}
   >

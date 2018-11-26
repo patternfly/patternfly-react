@@ -31,6 +31,8 @@ DropdownToggle.propTypes = {
   isHovered: PropTypes.bool,
   /** Forces active state */
   isActive: PropTypes.bool,
+  /** Display the toggle with no border or background */
+  isPlain: PropTypes.bool,
   /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
   iconComponent: PropTypes.func
 };
@@ -43,6 +45,7 @@ DropdownToggle.defaultProps = {
   isFocused: false,
   isHovered: false,
   isActive: false,
+  isPlain: false,
   onToggle: Function.prototype,
   iconComponent: CaretDownIcon
 };
