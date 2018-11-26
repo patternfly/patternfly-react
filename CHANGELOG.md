@@ -1,6 +1,26 @@
 
 ## Change Log (2018-11-26)
 
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## patternfly3-react-lerna-root@7.11.0 (2018-11-26)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#807](https://github.com/patternfly/patternfly-react/pull/807) Rdp console ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## @patternfly/react-console@1.8.0 (2018-11-26)
+
 #### :rocket: New Feature
 * `patternfly-3`
   * [#807](https://github.com/patternfly/patternfly-react/pull/807) Rdp console ([@mareklibra](https://github.com/mareklibra))
