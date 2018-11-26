@@ -90,22 +90,15 @@ $ git rebase upstream/master
 $ git push origin my-branch
 ```
 
-8.  Create a Demo Storybook
-
-    - For PatternFly 3, you'll want to export Storybook in your fork and note the Storybook url generated.
-      ```text
-      $ yarn storybook:build
-      $ yarn storybook:deploy
-      ```
-
-9.  Create a Pull Request
+8.  Create a Pull Request
 
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `master` branch. Please be sure to include all of the following in your PR:
 
 - Any relevant issues associated with this pull request (`enhancement` issues, `bug` issues, etc.)
 - Storybook and Documentation
   - Include a link to the design documentation in the [PatternFly Pattern Library](http://www.patternfly.org/pattern-library/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
-  - for PatternFly 3, include the generated Storybook url. (from **Step 8**)
+
+A link to the PatternFly 3 Storybook will be automatically generated and posted as a comment after the pull request build is complete.
 
 Once your pull request has been reviewed, if all conditions above have been met your pull request will be approved and merged.
 

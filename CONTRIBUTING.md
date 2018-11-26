@@ -292,24 +292,15 @@ $ git rebase upstream/master
 $ git push origin my-branch
 ```
 
-8.  Create a Demo Storybook
-
-    - For PatternFly 4, you can build and deploy the demo documentation to any hosting site of your choice.
-
-    - For PatternFly 3, you'll want to export Storybook in your fork and note the Storybook url generated.
-      ```text
-      $ yarn storybook:build
-      $ yarn storybook:deploy
-      ```
-
-9.  Create a Pull Request
+8.  Create a Pull Request
 
 [Open a pull request](https://help.github.com/articles/using-pull-requests/) with a clear title and description against the `master` branch. Please be sure to include all of the following in your PR:
 
 - Any relevant issues associated with this pull request (`enhancement` issues, `bug` issues, etc.)
 - Storybook and Documentation
   - Include a link to the design documentation in the [PatternFly Pattern Library](http://www.patternfly.org/pattern-library/) if it exists. If a PatternFly design does not exist yet, then provide a description that explains when the component would be used and what goal or task it helps to accomplish.
-  - for PatternFly 3, include the generated Storybook url. For for PatternFly 4, include the url for the deployed documentation. (from **Step 8**)
+
+A link to the Storybook (PatternFly 3) and demo documentation (PatternFly 4) will be automatically generated and posted as a comment after the pull request build is complete.
 
 Once your pull request has been reviewed, if all conditions above have been met your pull request will be approved and merged.
 
@@ -318,7 +309,7 @@ Please help in ensuring all relevant issues are closed and that any subsequent i
 ### Guidelines for React implementation from Core
 
 - PF-React components should demonstrate all states implemented in Core without adding any new states.
-- If a new state is introduced in PF-React, it should not be accepted by the reviewer until an issue is created explaining why this example/modification is needed in Core and PF-React. Tag a UX/UI designer. 
+- If a new state is introduced in PF-React, it should not be accepted by the reviewer until an issue is created explaining why this example/modification is needed in Core and PF-React. Tag a UX/UI designer.
 - Textual content and styles from PF-Next and PF-React should always be consistent.
 - Larger PF-React components can be broken into sub-issues and those issues should link back to the larger issue.
 - If an issue in Core will affect a component in PF-React, this issue should link to the main PF-React issue.
