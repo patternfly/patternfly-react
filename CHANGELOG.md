@@ -1,6 +1,346 @@
 
 ## Change Log (2018-11-27)
 
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly4-react-lerna-root@1.27.0 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly3-react-lerna-root@7.12.0 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly-react@2.25.0 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly-react-extensions@2.13.7 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-tokens@1.9.0 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.1 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-styled-system@1.3.0 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-icons@2.9.0 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.9 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.37.0 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-console@1.9.0 (2018-11-27)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#964](https://github.com/patternfly/patternfly-react/pull/964) fix(DesktopViewer): Fix reference to constants in dist ([@mareklibra](https://github.com/mareklibra))
+  * [#952](https://github.com/patternfly/patternfly-react/pull/952) fix(LoginPage): Add submit error callback handling ([@Laviro](https://github.com/Laviro))
+  * [#906](https://github.com/patternfly/patternfly-react/pull/906) introduce preselectedType for AccessConsoles component ([@mareklibra](https://github.com/mareklibra))
+
+#### :memo: Documentation
+* `patternfly-3`, `patternfly-4`
+  * [#951](https://github.com/patternfly/patternfly-react/pull/951) docs(Contribution Guide): update Contribution Guide demo hosting step ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :house: Internal
+* [#931](https://github.com/patternfly/patternfly-react/pull/931) chore(generator): Update generator to match new docs structure ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 8
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+- Richard Všianský ([@rvsia](https://github.com/rvsia))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz1337](https://github.com/boaz1337)
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-charts@1.2.0 (2018-11-27)
+
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
   * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))

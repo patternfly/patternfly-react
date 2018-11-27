@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.12.1"></a>
+## [7.12.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.0...patternfly3-react-lerna-root@7.12.1) (2018-11-27)
+
+
+### Bug Fixes
+
+* **Slider:** Call onSlide on slide event ([#828](https://github.com/patternfly/patternfly-react/issues/828)) ([7638f80](https://github.com/patternfly/patternfly-react/commit/7638f80))
+
+
+
+
 <a name="7.12.0"></a>
 # [7.12.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.11.0...patternfly3-react-lerna-root@7.12.0) (2018-11-27)
 
