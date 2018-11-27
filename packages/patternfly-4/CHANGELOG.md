@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.27.2"></a>
+## [1.27.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.27.0...patternfly4-react-lerna-root@1.27.2) (2018-11-27)
+
+
+### Bug Fixes
+
+* **pagelayoutdemo:** Fix several issues in the PF4 pagelayoutdemo ([#969](https://github.com/patternfly/patternfly-react/issues/969)) ([6bcef8b](https://github.com/patternfly/patternfly-react/commit/6bcef8b))
+* **Radio:** Updated Radio aria-label prop so that it is optional ([#930](https://github.com/patternfly/patternfly-react/issues/930)) ([a3e74fa](https://github.com/patternfly/patternfly-react/commit/a3e74fa)), closes [#803](https://github.com/patternfly/patternfly-react/issues/803)
+
+
+
+
 <a name="1.27.1"></a>
 ## [1.27.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.27.0...patternfly4-react-lerna-root@1.27.1) (2018-11-27)
 

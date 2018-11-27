@@ -2,6 +2,16 @@
 ## Change Log (2018-11-27)
 
 #### :bug: Bug Fix
+* `patternfly-4`
+  * [#930](https://github.com/patternfly/patternfly-react/pull/930) fix(Radio): Updated Radio aria-label prop so that it is optional ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-icons@2.9.1 (2018-11-27)
+
+#### :bug: Bug Fix
 * `patternfly-4`, `react-icons`
   * [#971](https://github.com/patternfly/patternfly-react/pull/971) Icon alignment ([@jschuler](https://github.com/jschuler))
 
