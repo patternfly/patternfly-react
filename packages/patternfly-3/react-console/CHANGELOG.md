@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.8.0...@patternfly/react-console@1.9.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* **DesktopViewer:** Fix reference to constants in dist ([#964](https://github.com/patternfly/patternfly-react/issues/964)) ([57c63ca](https://github.com/patternfly/patternfly-react/commit/57c63ca))
+
+
+### Features
+
+* **LoadingState:** Add LoadingState component ([#881](https://github.com/patternfly/patternfly-react/issues/881)) ([#886](https://github.com/patternfly/patternfly-react/issues/886)) ([d48d45f](https://github.com/patternfly/patternfly-react/commit/d48d45f))
+
+
+
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.7.7...@patternfly/react-console@1.8.0) (2018-11-26)
 

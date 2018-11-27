@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.37.0"></a>
+# [1.37.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.36.0...@patternfly/react-core@1.37.0) (2018-11-27)
+
+
+### Features
+
+* **breadcrumb:** adds breadcrumb, breadcrumbItem components ([#872](https://github.com/patternfly/patternfly-react/issues/872)) ([bcd2954](https://github.com/patternfly/patternfly-react/commit/bcd2954)), closes [#856](https://github.com/patternfly/patternfly-react/issues/856)
+* **Popover:** Add PF4 Popover ([#754](https://github.com/patternfly/patternfly-react/issues/754)) ([17cf0c0](https://github.com/patternfly/patternfly-react/commit/17cf0c0))
+
+
+
+
 <a name="1.36.0"></a>
 # [1.36.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.35.2...@patternfly/react-core@1.36.0) (2018-11-20)
 

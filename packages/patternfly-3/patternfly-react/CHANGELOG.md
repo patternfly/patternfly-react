@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.25.0"></a>
+# [2.25.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.24.6...patternfly-react@2.25.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* **LoginPage:** Add submit error callback handling ([#952](https://github.com/patternfly/patternfly-react/issues/952)) ([44aab83](https://github.com/patternfly/patternfly-react/commit/44aab83))
+
+
+### Features
+
+* **LoadingState:** Add LoadingState component ([#881](https://github.com/patternfly/patternfly-react/issues/881)) ([#886](https://github.com/patternfly/patternfly-react/issues/886)) ([d48d45f](https://github.com/patternfly/patternfly-react/commit/d48d45f))
+
+
+
+
 <a name="2.24.6"></a>
 ## [2.24.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.24.5...patternfly-react@2.24.6) (2018-11-20)
 

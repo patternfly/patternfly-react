@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.9.0"></a>
+# [2.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.8.0...@patternfly/react-icons@2.9.0) (2018-11-27)
+
+
+### Features
+
+* **Popover:** Add PF4 Popover ([#754](https://github.com/patternfly/patternfly-react/issues/754)) ([17cf0c0](https://github.com/patternfly/patternfly-react/commit/17cf0c0))
+
+
+
+
 <a name="2.8.0"></a>
 # [2.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.7.2...@patternfly/react-icons@2.8.0) (2018-11-20)
 

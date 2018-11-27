@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.12.0"></a>
+# [7.12.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.11.0...patternfly3-react-lerna-root@7.12.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* **DesktopViewer:** Fix reference to constants in dist ([#964](https://github.com/patternfly/patternfly-react/issues/964)) ([57c63ca](https://github.com/patternfly/patternfly-react/commit/57c63ca))
+* **LoginPage:** Add submit error callback handling ([#952](https://github.com/patternfly/patternfly-react/issues/952)) ([44aab83](https://github.com/patternfly/patternfly-react/commit/44aab83))
+
+
+### Features
+
+* **LoadingState:** Add LoadingState component ([#881](https://github.com/patternfly/patternfly-react/issues/881)) ([#886](https://github.com/patternfly/patternfly-react/issues/886)) ([d48d45f](https://github.com/patternfly/patternfly-react/commit/d48d45f))
+
+
+
+
 <a name="7.11.0"></a>
 # [7.11.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.10.7...patternfly3-react-lerna-root@7.11.0) (2018-11-26)
 
