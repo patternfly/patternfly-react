@@ -31,7 +31,7 @@ import spacingStyles from '@patternfly/patternfly-next/utilities/Spacing/spacing
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import brandImg from './l_pf-reverse-164x11.png';
-import avatarImg from './img_avatar.png';
+import avatarImg from './img_avatar.svg';
 
 class PageLayoutGroupsNav extends React.Component {
   constructor(props) {
@@ -120,6 +120,25 @@ class PageLayoutGroupsNav extends React.Component {
         </NavGroup>
       </Nav>
     );
+    const kebabDropdownItems = [
+      <DropdownItem>
+        <BellIcon /> Notifications
+      </DropdownItem>,
+      <DropdownItem>
+        <CogIcon /> Settings
+      </DropdownItem>
+    ];
+    const userDropdownItems = [
+      <DropdownItem>Link</DropdownItem>,
+      <DropdownItem component="button">Action</DropdownItem>,
+      <DropdownItem isDisabled>Disabled Link</DropdownItem>,
+      <DropdownItem isDisabled component="button">
+        Disabled Action
+      </DropdownItem>,
+      <DropdownSeparator />,
+      <DropdownItem>Separated Link</DropdownItem>,
+      <DropdownItem component="button">Separated Action</DropdownItem>
+    ];
     const PageToolbar = (
       <Toolbar>
         <ToolbarGroup className={css(accessibleStyles.srOnly, accessibleStyles.visibleOnLg)}>
@@ -142,14 +161,8 @@ class PageLayoutGroupsNav extends React.Component {
               onSelect={this.onKebabDropdownSelect}
               toggle={<KebabToggle onToggle={this.onKebabDropdownToggle} />}
               isOpen={isKebabDropdownOpen}
-            >
-              <DropdownItem>
-                <BellIcon /> Notifications
-              </DropdownItem>
-              <DropdownItem>
-                <CogIcon /> Settings
-              </DropdownItem>
-            </Dropdown>
+              dropdownItems={kebabDropdownItems}
+            />
           </ToolbarItem>
           <ToolbarItem className={css(accessibleStyles.srOnly, accessibleStyles.visibleOnMd)}>
             <Dropdown
@@ -158,17 +171,8 @@ class PageLayoutGroupsNav extends React.Component {
               onSelect={this.onDropdownSelect}
               isOpen={isDropdownOpen}
               toggle={<DropdownToggle onToggle={this.onDropdownToggle}>Kyle Baker</DropdownToggle>}
-            >
-              <DropdownItem>Link</DropdownItem>
-              <DropdownItem component="button">Action</DropdownItem>
-              <DropdownItem isDisabled>Disabled Link</DropdownItem>
-              <DropdownItem isDisabled component="button">
-                Disabled Action
-              </DropdownItem>
-              <DropdownSeparator />
-              <DropdownItem>Separated Link</DropdownItem>
-              <DropdownItem component="button">Separated Action</DropdownItem>
-            </Dropdown>
+              dropdownItems={userDropdownItems}
+            />
           </ToolbarItem>
         </ToolbarGroup>
       </Toolbar>
