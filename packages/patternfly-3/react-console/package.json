@@ -45,7 +45,7 @@
     "xterm": "^3.3.0"
   },
   "devDependencies": {
-    "patternfly": "^3.52.1",
+    "patternfly": "^3.58.0",
     "patternfly-react": "^2.24.6"
   },
   "peerDependencies": {
