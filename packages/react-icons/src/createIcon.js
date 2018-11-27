@@ -18,9 +18,11 @@ const createIcon = iconDefinition => {
 
       const hasTitle = Boolean(title);
       const heightWidth = getSize(size);
+      const baseAlign = -.125 * Number.parseFloat(heightWidth);
 
       return (
         <svg
+          style={{ verticalAlign: `${baseAlign}em` }}
           fill={color}
           height={heightWidth}
           width={heightWidth}
