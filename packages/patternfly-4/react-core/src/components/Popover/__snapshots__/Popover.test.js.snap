@@ -126,6 +126,11 @@ exports[`popover renders close-button, header and body 1`] = `
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
                       viewBox="0 0 352 512"
                       width="1em"
                     >

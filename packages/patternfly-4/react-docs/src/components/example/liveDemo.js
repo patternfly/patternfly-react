@@ -124,7 +124,7 @@ class LiveDemo extends React.Component {
                 title="View on GitHub"
                 aria-label="View on GitHub"
               >
-                <i className={css('fab fa-github', styles.icon)} />
+                <i className={css('fab fa-github')} />
               </CoreComponents.Button>
             </a>
             <CoreComponents.TextContent className={css(styles.message, showCopyMessage && styles.messageShow)}>
