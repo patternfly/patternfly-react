@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.27.1"></a>
+## [1.27.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.27.0...patternfly4-react-lerna-root@1.27.1) (2018-11-27)
+
+
+### Bug Fixes
+
+* **pagelayoutdemo:** Fix several issues in the PF4 pagelayoutdemo ([#969](https://github.com/patternfly/patternfly-react/issues/969)) ([6bcef8b](https://github.com/patternfly/patternfly-react/commit/6bcef8b))
+
+
+
+
 <a name="1.27.0"></a>
 # [1.27.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.26.1...patternfly4-react-lerna-root@1.27.0) (2018-11-27)
 
