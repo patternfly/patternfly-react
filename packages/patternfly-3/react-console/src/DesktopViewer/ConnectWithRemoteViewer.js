@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Button, ExpandCollapse } from 'patternfly-react';
 
 import { child } from '../common/helpers';
+import constants from '../common/constants';
 
 import MoreInformationDefaultContent from './MoreInformationDefaultContent';
 import MoreInformationDefaultRDPContent from './MoreInformationDefaultRDPContent';
@@ -10,7 +11,7 @@ import MoreInformationDefaultRDPContent from './MoreInformationDefaultRDPContent
 import { generateDescriptorFile, downloadFile } from './consoleDescriptorGenerator';
 import consoleDetailPropType from './consoleDetailPropType';
 
-import {
+const {
   VNC_CONSOLE_TYPE,
   SPICE_CONSOLE_TYPE,
   RDP_CONSOLE_TYPE,
@@ -18,7 +19,7 @@ import {
   DEFAULT_VV_MIMETYPE,
   DEFAULT_RDP_FILENAME,
   DEFAULT_RDP_MIMETYPE
-} from '../common/constants';
+} = constants;
 
 const ConnectWithRemoteViewer = ({
   children,
