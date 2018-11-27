@@ -61,6 +61,11 @@ exports[`state active 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
           viewBox="0 0 320 512"
           width="1em"
         >
@@ -136,6 +141,11 @@ exports[`state focus 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
           viewBox="0 0 320 512"
           width="1em"
         >
@@ -211,6 +221,11 @@ exports[`state hover 1`] = `
           fill="currentColor"
           height="1em"
           role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
           viewBox="0 0 320 512"
           width="1em"
         >

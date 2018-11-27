@@ -424,6 +424,11 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
                       viewBox="0 0 256 512"
                       width="1em"
                     >
@@ -668,6 +673,11 @@ exports[`Expandable Nav List 1`] = `
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
                       viewBox="0 0 256 512"
                       width="1em"
                     >
@@ -920,6 +930,11 @@ exports[`Expandable Nav List with aria label 1`] = `
                       fill="currentColor"
                       height="1em"
                       role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
                       viewBox="0 0 256 512"
                       width="1em"
                     >

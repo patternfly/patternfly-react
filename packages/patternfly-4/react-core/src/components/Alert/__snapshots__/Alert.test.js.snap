@@ -63,6 +63,11 @@ exports[`Alert - danger Action 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -180,6 +185,11 @@ exports[`Alert - danger Action and Title 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -293,6 +303,11 @@ exports[`Alert - danger Body 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -402,6 +417,11 @@ exports[`Alert - danger Custom aria label 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -515,6 +535,11 @@ exports[`Alert - danger Title 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -624,6 +649,11 @@ exports[`Alert - info Action 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -741,6 +771,11 @@ exports[`Alert - info Action and Title 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -854,6 +889,11 @@ exports[`Alert - info Body 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -963,6 +1003,11 @@ exports[`Alert - info Custom aria label 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -1076,6 +1121,11 @@ exports[`Alert - info Title 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -1185,6 +1235,11 @@ exports[`Alert - success Action 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -1302,6 +1357,11 @@ exports[`Alert - success Action and Title 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -1415,6 +1475,11 @@ exports[`Alert - success Body 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -1524,6 +1589,11 @@ exports[`Alert - success Custom aria label 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -1637,6 +1707,11 @@ exports[`Alert - success Title 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 512 512"
             width="1em"
           >
@@ -1746,6 +1821,11 @@ exports[`Alert - warning Action 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 576 512"
             width="1em"
           >
@@ -1863,6 +1943,11 @@ exports[`Alert - warning Action and Title 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 576 512"
             width="1em"
           >
@@ -1976,6 +2061,11 @@ exports[`Alert - warning Body 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 576 512"
             width="1em"
           >
@@ -2085,6 +2175,11 @@ exports[`Alert - warning Custom aria label 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 576 512"
             width="1em"
           >
@@ -2198,6 +2293,11 @@ exports[`Alert - warning Title 1`] = `
             fill="currentColor"
             height="1em"
             role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
             viewBox="0 0 576 512"
             width="1em"
           >
