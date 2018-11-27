@@ -26,7 +26,7 @@ class ControlledRadio extends React.Component {
         <Radio
           value="4"
           isChecked={this.state.value === '4'}
-          name="pf-version"
+          name="pf-version2"
           onChange={this.handleChange}
           aria-label="Controlled radio 2"
           label="Controlled radio 2"

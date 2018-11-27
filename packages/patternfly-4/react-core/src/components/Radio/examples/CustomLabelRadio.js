@@ -9,7 +9,7 @@ class CustomLabelRadio extends React.Component {
         <Radio
           label={<Badge isRead>Different badge!</Badge>}
           id="radio-7"
-          name="radios-custom"
+          name="radios-custom2"
           aria-label="custom-label-2"
         />
       </React.Fragment>

@@ -19,7 +19,12 @@ const propTypes = {
   /** Id of the Radio. */
   id: PropTypes.string.isRequired,
   /** Aria-label of the Radio. */
-  'aria-label': PropTypes.any.isRequired,
+  'aria-label': props => {
+    if (!props['aria-label']) {
+      return new Error('Radio requires an aria-label to be specified');
+    }
+    return null;
+  },
   /** Name for group of Radios */
   name: PropTypes.string.isRequired
 };
@@ -30,7 +35,8 @@ const defaultProps = {
   isDisabled: false,
   isChecked: null,
   onChange: () => undefined,
-  label: undefined
+  label: undefined,
+  'aria-label': null
 };
 
 class Radio extends React.Component {
