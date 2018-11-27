@@ -2,6 +2,46 @@
 ## Change Log (2018-11-27)
 
 #### :bug: Bug Fix
+* `patternfly-4`, `react-icons`
+  * [#971](https://github.com/patternfly/patternfly-react/pull/971) Icon alignment ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly3-react-lerna-root@7.12.1 (2018-11-27)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly-react@2.25.1 (2018-11-27)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly-react-extensions@2.13.8 (2018-11-27)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-console@1.9.1 (2018-11-27)
+
+#### :bug: Bug Fix
 * `patternfly-3`
   * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz1337](https://github.com/boaz1337))
 
