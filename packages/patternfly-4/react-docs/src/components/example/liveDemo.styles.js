@@ -29,8 +29,5 @@ export default StyleSheet.create({
   messageShow: {
     opacity: 1,
     height: 'initial'
-  },
-  icon: {
-    'vertical-align': '10%'
   }
 });
