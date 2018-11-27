@@ -1,0 +1,252 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BreadcrumbItem component should render active breadcrumbItem 1`] = `
+.pf-c-breadcrumb__item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: undefined;
+  color: #393f44;
+  cursor: default;
+}
+
+<li
+  className="pf-c-breadcrumb__item"
+>
+  <React.Fragment>
+    Item
+  </React.Fragment>
+</li>
+`;
+
+exports[`BreadcrumbItem component should render breadcrumbItem with className 1`] = `
+.pf-c-breadcrumb__item-divider {
+  display: block;
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #393f44;
+}
+.pf-c-breadcrumb__item.Class {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: undefined;
+  color: #393f44;
+  cursor: default;
+}
+
+<li
+  className="pf-c-breadcrumb__item Class"
+>
+  <React.Fragment>
+    Item
+  </React.Fragment>
+  <span
+    className="pf-c-breadcrumb__item-divider"
+  >
+    <AngleRightIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </span>
+</li>
+`;
+
+exports[`BreadcrumbItem component should render breadcrumbItem with custom element 1`] = `
+.pf-c-breadcrumb__item-divider {
+  display: block;
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #393f44;
+}
+.pf-c-breadcrumb__item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: undefined;
+  color: #393f44;
+  cursor: default;
+}
+
+<li
+  className="pf-c-breadcrumb__item"
+>
+  <React.Fragment>
+    <h1>
+      Header
+    </h1>
+  </React.Fragment>
+  <span
+    className="pf-c-breadcrumb__item-divider"
+  >
+    <AngleRightIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </span>
+</li>
+`;
+
+exports[`BreadcrumbItem component should render breadcrumbItem with id 1`] = `
+.pf-c-breadcrumb__item-divider {
+  display: block;
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #393f44;
+}
+.pf-c-breadcrumb__item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: undefined;
+  color: #393f44;
+  cursor: default;
+}
+
+<li
+  className="pf-c-breadcrumb__item"
+  id="Item 1"
+>
+  <React.Fragment>
+    Item
+  </React.Fragment>
+  <span
+    className="pf-c-breadcrumb__item-divider"
+  >
+    <AngleRightIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </span>
+</li>
+`;
+
+exports[`BreadcrumbItem component should render breadcrumbItem with target 1`] = `
+.pf-c-breadcrumb__item-divider {
+  display: block;
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #393f44;
+}
+.pf-c-breadcrumb__item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: undefined;
+  color: #393f44;
+  cursor: default;
+}
+
+<li
+  className="pf-c-breadcrumb__item"
+>
+  <React.Fragment>
+    Item
+  </React.Fragment>
+  <span
+    className="pf-c-breadcrumb__item-divider"
+  >
+    <AngleRightIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </span>
+</li>
+`;
+
+exports[`BreadcrumbItem component should render default breadcrumbItem 1`] = `
+.pf-c-breadcrumb__item-divider {
+  display: block;
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #393f44;
+}
+.pf-c-breadcrumb__item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: undefined;
+  color: #393f44;
+  cursor: default;
+}
+
+<li
+  className="pf-c-breadcrumb__item"
+>
+  <React.Fragment>
+    Item
+  </React.Fragment>
+  <span
+    className="pf-c-breadcrumb__item-divider"
+  >
+    <AngleRightIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </span>
+</li>
+`;
+
+exports[`BreadcrumbItem component should render link breadcrumbItem 1`] = `
+.pf-c-breadcrumb__link {
+  display: block;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  color: #007bba;
+  text-decoration: underline;
+}
+.pf-c-breadcrumb__item-divider {
+  display: block;
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: #393f44;
+}
+.pf-c-breadcrumb__item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: undefined;
+  color: #393f44;
+  cursor: default;
+}
+
+<li
+  className="pf-c-breadcrumb__item"
+>
+  <a
+    className="pf-c-breadcrumb__link"
+    href="/somewhere"
+    target={null}
+  >
+    Item
+  </a>
+  <span
+    className="pf-c-breadcrumb__item-divider"
+  >
+    <AngleRightIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </span>
+</li>
+`;
