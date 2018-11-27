@@ -8,15 +8,16 @@ exports[`state active 1`] = `
   display: block;
 }
 .pf-c-dropdown__toggle.pf-m-active {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 
@@ -88,15 +89,16 @@ exports[`state focus 1`] = `
   display: block;
 }
 .pf-c-dropdown__toggle.pf-m-focus {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 
@@ -168,15 +170,16 @@ exports[`state hover 1`] = `
   display: block;
 }
 .pf-c-dropdown__toggle.pf-m-hover {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 

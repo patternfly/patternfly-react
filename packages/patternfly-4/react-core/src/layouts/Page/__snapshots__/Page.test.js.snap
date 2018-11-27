@@ -2,13 +2,12 @@
 
 exports[`Check page condensed header example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
-  display: none;
+  display: flex;
   align-items: center;
-  min-height: 2.5rem;
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 .pf-l-page__header-tools {
   display: block;
@@ -16,14 +15,14 @@ exports[`Check page condensed header example against snapshot 1`] = `
   margin-right: 1rem;
   margin-left: auto;
 }
-.pf-l-page__header.pf-m-tall {
+.pf-l-page__header {
   display: flex;
   grid-area: header;
   z-index: 300;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
   max-width: 100%;
-  min-height: 6.875rem;
+  height: 4.75rem;
 }
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
@@ -33,7 +32,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
   padding-top: 1rem;
   padding-bottom: 1rem;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   background-color: #ffffff;
   transform: translate3d(0,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
@@ -120,7 +119,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
       topNav={null}
     >
       <header
-        className="pf-l-page__header pf-m-tall"
+        className="pf-l-page__header"
         role="banner"
       >
         <div
@@ -202,13 +201,12 @@ exports[`Check page condensed header example against snapshot 1`] = `
 
 exports[`Check page horizontal layout example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
-  display: none;
+  display: flex;
   align-items: center;
-  min-height: 2.5rem;
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 .pf-l-page__header-tools {
   display: block;
@@ -221,9 +219,9 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   grid-area: header;
   z-index: 300;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
   max-width: 100%;
-  min-height: 0;
+  height: 4.75rem;
 }
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
@@ -233,7 +231,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   padding-top: 1rem;
   padding-bottom: 1rem;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   background-color: #ffffff;
   transform: translate3d(0,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
@@ -405,13 +403,12 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 
 exports[`Check page vertical layout example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
-  display: none;
+  display: flex;
   align-items: center;
-  min-height: 2.5rem;
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 .pf-l-page__header-tools {
   display: block;
@@ -424,9 +421,9 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   grid-area: header;
   z-index: 300;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
   max-width: 100%;
-  min-height: 0;
+  height: 4.75rem;
 }
 .pf-l-page__sidebar.pf-m-expanded {
   display: block;
@@ -436,7 +433,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   padding-top: 1rem;
   padding-bottom: 1rem;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   background-color: #ffffff;
   transform: translate3d(0,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);

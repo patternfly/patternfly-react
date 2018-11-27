@@ -2,13 +2,12 @@
 
 exports[`Check page vertical layout example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
-  display: none;
+  display: flex;
   align-items: center;
-  min-height: 2.5rem;
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 .pf-l-page__header-tools {
   display: block;
@@ -16,14 +15,14 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   margin-right: 1rem;
   margin-left: auto;
 }
-.pf-l-page__header.pf-m-tall {
+.pf-l-page__header {
   display: flex;
   grid-area: header;
   z-index: 300;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
   max-width: 100%;
-  min-height: 6.875rem;
+  height: 4.75rem;
 }
 
 <PageHeader
@@ -39,7 +38,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 >
   <Consumer>
     <header
-      className="pf-l-page__header pf-m-tall"
+      className="pf-l-page__header"
       role="banner"
     >
       <div
