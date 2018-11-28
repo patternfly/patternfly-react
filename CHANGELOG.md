@@ -1,6 +1,26 @@
 
 ## Change Log (2018-11-28)
 
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#972](https://github.com/patternfly/patternfly-react/pull/972) chore(core): update core to .83 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly3-react-lerna-root@7.12.2 (2018-11-28)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#958](https://github.com/patternfly/patternfly-react/pull/958) fix(CatalogTile): Fix to correctly position fading out of description text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.13.9 (2018-11-28)
+
 #### :bug: Bug Fix
 * `patternfly-3`
   * [#958](https://github.com/patternfly/patternfly-react/pull/958) fix(CatalogTile): Fix to correctly position fading out of description text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
