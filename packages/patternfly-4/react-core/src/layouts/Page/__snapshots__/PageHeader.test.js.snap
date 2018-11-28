@@ -28,7 +28,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 <PageHeader
   avatar=" | Avatar"
   className=""
-  isTall={true}
   logo="Logo"
   logoProps={null}
   onNavToggle={[Function]}
@@ -36,27 +35,25 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   toolbar="Toolbar"
   topNav={null}
 >
-  <Consumer>
-    <header
-      className="pf-l-page__header"
-      role="banner"
+  <header
+    className="pf-l-page__header"
+    role="banner"
+  >
+    <div
+      className="pf-l-page__header-brand"
     >
-      <div
-        className="pf-l-page__header-brand"
+      <a
+        className="pf-l-page__header-brand-link"
       >
-        <a
-          className="pf-l-page__header-brand-link"
-        >
-          Logo
-        </a>
-      </div>
-      <div
-        className="pf-l-page__header-tools"
-      >
-        Toolbar
-         | Avatar
-      </div>
-    </header>
-  </Consumer>
+        Logo
+      </a>
+    </div>
+    <div
+      className="pf-l-page__header-tools"
+    >
+      Toolbar
+       | Avatar
+    </div>
+  </header>
 </PageHeader>
 `;
