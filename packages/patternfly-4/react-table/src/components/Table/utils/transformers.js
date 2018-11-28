@@ -2,7 +2,7 @@ export { default as selectable } from './decorators/selectable';
 export { default as sortable } from './decorators/sortable';
 export { default as cellActions } from './decorators/cellActions';
 export { default as cellWidth } from './decorators/cellWidth';
-export { default as collapsible } from './decorators/collapsible';
+export { collapsible, expandedRow } from './decorators/collapsible';
 
 export const emptyTD = () => ({
   scope: '',
@@ -19,6 +19,10 @@ export const headerCol = () => ({
 
 export const emptyCol = (label) => ({
   ...label ? {} : { scope: '' }
+})
+
+export const parentId = (_value, { rowData }) => ({
+  parentId: rowData.parent
 })
 
 export const mapProps = (_label, { property, rowData }) => ({

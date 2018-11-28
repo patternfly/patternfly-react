@@ -5,8 +5,8 @@ class CompactTable extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      columns: [{ title: 'Header cell' }, 'Branches', { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } }, '', ''],
-      rows: [['one', 'two', 'three', 'four', 'five']]
+      columns: [{ title: 'Header cell' }, 'Branches', { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } }, ''],
+      rows: [['one', 'two', 'three', 'four']]
     };
   }
 

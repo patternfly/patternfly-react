@@ -1,4 +1,14 @@
-import { scopeColTransformer, selectable, cellActions, emptyCol, mapProps, collapsible, emptyTD } from './transformers';
+import {
+  scopeColTransformer,
+  selectable,
+  cellActions,
+  emptyCol,
+  mapProps,
+  collapsible,
+  emptyTD,
+  expandedRow,
+  parentId
+} from './transformers';
 import { defaultTitle } from './formatters';
 
 const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => {
@@ -72,11 +82,33 @@ const collapsibleTransfroms = ({ onCollapse }) => [
   }] : []
 ]
 
+const expandContent = (header, { onCollapse }) => {
+  let cells;
+  if (onCollapse) {
+    cells = header.map(cell => ({
+      ...cell.hasOwnProperty('title') ? cell : { title: cell },
+      cellTransforms: [
+        ...cell.hasOwnProperty('cellTransforms') ? cell.cellTransforms : [],
+        parentId
+      ]
+    }));
+    cells[0] = {
+      ...(cells[0] && cells[0].hasOwnProperty('title')) ? cells[0] : { title: cells[0] },
+      cellTransforms: [
+        ...(cells[0] && cells[0].hasOwnProperty('cellTransforms')) ? cells[0].cellTransforms : [],
+        expandedRow(cells.length)
+      ]
+    }
+  }
+
+  return cells || header;
+}
+
 export const calculateColumns = (headerRows, extra) => {
   return headerRows && [
     ...collapsibleTransfroms(extra),
     ...selectableTransforms(extra),
-    ...headerRows,
+    ...expandContent(headerRows, extra),
     ...actionsTransforms(extra)
   ].map((oneCol, key) => ({
     ...mapHeader(oneCol, extra, key)

@@ -98,7 +98,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
 
     const rawExamples = [];
     const getPackage = pkg => doc.absolutePath.indexOf(pkg) !== -1 && pkg;
-    const packageDir = getPackage('react-core') || getPackage('react-charts') || getPackage('react-styled-system');
+    const packageDir = ['react-core', 'react-charts', 'react-styled-system', 'react-table'].find(getPackage);
     examples.edges.forEach(({ node: example }) => {
       if (
         example.relativeDirectory
@@ -106,8 +106,6 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           .slice(0, 2)
           .join('/') === doc.relativeDirectory
       ) {
-        const getPackage = pkg => doc.absolutePath.indexOf(pkg) !== -1 && pkg;
-        const packageDir = ['react-core', 'react-charts', 'react-styled-system', 'react-table'].find(getPackage);
         const examplePath = `../../${packageDir}/src/${example.relativePath}`;
         rawExamples.push(`{name: '${example.name}', path: '${examplePath}', file: require('!!raw!${examplePath}')}`);
       }

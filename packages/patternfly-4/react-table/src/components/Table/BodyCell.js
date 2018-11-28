@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropsType from 'prop-types';
 
-const BodyCell = ({ ['data-label']: dataLabel, component: Component, ...props }) => {
+const BodyCell = ({ ['data-label']: dataLabel, parentId, component: Component, colSpan, ...props }) => {
   const mappedProps = {
     ...dataLabel ? { 'data-label': dataLabel } : {},
     ...props
   }
-  return <Component {...mappedProps} />;
+  return (parentId !== undefined && colSpan === undefined) ?
+    null :
+    <Component {...mappedProps} colSpan={colSpan} />;
 };
 
 BodyCell.propTypes = {

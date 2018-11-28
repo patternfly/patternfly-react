@@ -14,21 +14,23 @@ exports[`Actions table 1`] = `
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-dropdown__toggle {
-  display: block;
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 .pf-c-table__action {
   display: block;
@@ -36,21 +38,23 @@ exports[`Actions table 1`] = `
 .pf-c-table__action {
   display: block;
 }
-.pf-c-dropdown__toggle {
-  display: block;
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 .pf-c-table__action {
   display: block;
@@ -58,21 +62,23 @@ exports[`Actions table 1`] = `
 .pf-c-table__action {
   display: block;
 }
-.pf-c-dropdown__toggle {
-  display: block;
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 .pf-c-table__action {
   display: block;
@@ -80,21 +86,23 @@ exports[`Actions table 1`] = `
 .pf-c-table__action {
   display: block;
 }
-.pf-c-dropdown__toggle {
-  display: block;
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 .pf-c-table__action {
   display: block;
@@ -102,21 +110,23 @@ exports[`Actions table 1`] = `
 .pf-c-table__action {
   display: block;
 }
-.pf-c-dropdown__toggle {
-  display: block;
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 .pf-c-table__action {
   display: block;
@@ -124,21 +134,23 @@ exports[`Actions table 1`] = `
 .pf-c-table__action {
   display: block;
 }
-.pf-c-dropdown__toggle {
-  display: block;
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 .pf-c-table__action {
   display: block;
@@ -146,21 +158,23 @@ exports[`Actions table 1`] = `
 .pf-c-table__action {
   display: block;
 }
-.pf-c-dropdown__toggle {
-  display: block;
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 .pf-c-table__action {
   display: block;
@@ -168,21 +182,23 @@ exports[`Actions table 1`] = `
 .pf-c-table__action {
   display: block;
 }
-.pf-c-dropdown__toggle {
-  display: block;
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 .pf-c-table__action {
   display: block;
@@ -190,21 +206,23 @@ exports[`Actions table 1`] = `
 .pf-c-table__action {
   display: block;
 }
-.pf-c-dropdown__toggle {
-  display: block;
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 .pf-c-table__action {
   display: block;
@@ -1283,6 +1301,11 @@ exports[`Actions table 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >
@@ -2575,9 +2598,55 @@ exports[`Actions table 1`] = `
                           <Dropdown
                             className=""
                             direction="down"
-                            dropdownItems={Array []}
+                            dropdownItems={
+                              Array [
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={0}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Some action
+                                </Item>,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={1}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  <div>
+                                    Another action
+                                  </div>
+                                </Item>,
+                                <Separator
+                                  className=""
+                                  component="a"
+                                  data-key={2}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                />,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={3}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Third action
+                                </Item>,
+                              ]
+                            }
                             isOpen={false}
-                            isPlain={false}
+                            isPlain={true}
                             onSelect={[Function]}
                             onToggle={[Function]}
                             position="left"
@@ -2590,6 +2659,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={false}
                                 onToggle={[Function]}
                                 parentRef={null}
                               />
@@ -2607,6 +2677,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={true}
                                 key=".0"
                                 onToggle={[Function]}
                                 parentRef={null}
@@ -2619,13 +2690,14 @@ exports[`Actions table 1`] = `
                                   isFocused={false}
                                   isHovered={false}
                                   isOpen={false}
+                                  isPlain={true}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <button
                                     aria-expanded={false}
                                     aria-label="Actions"
-                                    className="pf-c-dropdown__toggle"
+                                    className="pf-c-dropdown__toggle pf-m-plain"
                                     id="pf-toggle-id-0"
                                     onClick={[Function]}
                                   >
@@ -2640,6 +2712,11 @@ exports[`Actions table 1`] = `
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
                                         viewBox="0 0 192 512"
                                         width="1em"
                                       >
@@ -3110,9 +3187,55 @@ exports[`Actions table 1`] = `
                           <Dropdown
                             className=""
                             direction="down"
-                            dropdownItems={Array []}
+                            dropdownItems={
+                              Array [
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={0}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Some action
+                                </Item>,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={1}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  <div>
+                                    Another action
+                                  </div>
+                                </Item>,
+                                <Separator
+                                  className=""
+                                  component="a"
+                                  data-key={2}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                />,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={3}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Third action
+                                </Item>,
+                              ]
+                            }
                             isOpen={false}
-                            isPlain={false}
+                            isPlain={true}
                             onSelect={[Function]}
                             onToggle={[Function]}
                             position="left"
@@ -3125,6 +3248,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={false}
                                 onToggle={[Function]}
                                 parentRef={null}
                               />
@@ -3142,6 +3266,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={true}
                                 key=".0"
                                 onToggle={[Function]}
                                 parentRef={null}
@@ -3154,13 +3279,14 @@ exports[`Actions table 1`] = `
                                   isFocused={false}
                                   isHovered={false}
                                   isOpen={false}
+                                  isPlain={true}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <button
                                     aria-expanded={false}
                                     aria-label="Actions"
-                                    className="pf-c-dropdown__toggle"
+                                    className="pf-c-dropdown__toggle pf-m-plain"
                                     id="pf-toggle-id-1"
                                     onClick={[Function]}
                                   >
@@ -3175,6 +3301,11 @@ exports[`Actions table 1`] = `
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
                                         viewBox="0 0 192 512"
                                         width="1em"
                                       >
@@ -3645,9 +3776,55 @@ exports[`Actions table 1`] = `
                           <Dropdown
                             className=""
                             direction="down"
-                            dropdownItems={Array []}
+                            dropdownItems={
+                              Array [
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={0}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Some action
+                                </Item>,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={1}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  <div>
+                                    Another action
+                                  </div>
+                                </Item>,
+                                <Separator
+                                  className=""
+                                  component="a"
+                                  data-key={2}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                />,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={3}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Third action
+                                </Item>,
+                              ]
+                            }
                             isOpen={false}
-                            isPlain={false}
+                            isPlain={true}
                             onSelect={[Function]}
                             onToggle={[Function]}
                             position="left"
@@ -3660,6 +3837,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={false}
                                 onToggle={[Function]}
                                 parentRef={null}
                               />
@@ -3677,6 +3855,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={true}
                                 key=".0"
                                 onToggle={[Function]}
                                 parentRef={null}
@@ -3689,13 +3868,14 @@ exports[`Actions table 1`] = `
                                   isFocused={false}
                                   isHovered={false}
                                   isOpen={false}
+                                  isPlain={true}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <button
                                     aria-expanded={false}
                                     aria-label="Actions"
-                                    className="pf-c-dropdown__toggle"
+                                    className="pf-c-dropdown__toggle pf-m-plain"
                                     id="pf-toggle-id-2"
                                     onClick={[Function]}
                                   >
@@ -3710,6 +3890,11 @@ exports[`Actions table 1`] = `
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
                                         viewBox="0 0 192 512"
                                         width="1em"
                                       >
@@ -4180,9 +4365,55 @@ exports[`Actions table 1`] = `
                           <Dropdown
                             className=""
                             direction="down"
-                            dropdownItems={Array []}
+                            dropdownItems={
+                              Array [
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={0}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Some action
+                                </Item>,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={1}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  <div>
+                                    Another action
+                                  </div>
+                                </Item>,
+                                <Separator
+                                  className=""
+                                  component="a"
+                                  data-key={2}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                />,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={3}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Third action
+                                </Item>,
+                              ]
+                            }
                             isOpen={false}
-                            isPlain={false}
+                            isPlain={true}
                             onSelect={[Function]}
                             onToggle={[Function]}
                             position="left"
@@ -4195,6 +4426,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={false}
                                 onToggle={[Function]}
                                 parentRef={null}
                               />
@@ -4212,6 +4444,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={true}
                                 key=".0"
                                 onToggle={[Function]}
                                 parentRef={null}
@@ -4224,13 +4457,14 @@ exports[`Actions table 1`] = `
                                   isFocused={false}
                                   isHovered={false}
                                   isOpen={false}
+                                  isPlain={true}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <button
                                     aria-expanded={false}
                                     aria-label="Actions"
-                                    className="pf-c-dropdown__toggle"
+                                    className="pf-c-dropdown__toggle pf-m-plain"
                                     id="pf-toggle-id-3"
                                     onClick={[Function]}
                                   >
@@ -4245,6 +4479,11 @@ exports[`Actions table 1`] = `
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
                                         viewBox="0 0 192 512"
                                         width="1em"
                                       >
@@ -4715,9 +4954,55 @@ exports[`Actions table 1`] = `
                           <Dropdown
                             className=""
                             direction="down"
-                            dropdownItems={Array []}
+                            dropdownItems={
+                              Array [
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={0}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Some action
+                                </Item>,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={1}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  <div>
+                                    Another action
+                                  </div>
+                                </Item>,
+                                <Separator
+                                  className=""
+                                  component="a"
+                                  data-key={2}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                />,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={3}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Third action
+                                </Item>,
+                              ]
+                            }
                             isOpen={false}
-                            isPlain={false}
+                            isPlain={true}
                             onSelect={[Function]}
                             onToggle={[Function]}
                             position="left"
@@ -4730,6 +5015,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={false}
                                 onToggle={[Function]}
                                 parentRef={null}
                               />
@@ -4747,6 +5033,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={true}
                                 key=".0"
                                 onToggle={[Function]}
                                 parentRef={null}
@@ -4759,13 +5046,14 @@ exports[`Actions table 1`] = `
                                   isFocused={false}
                                   isHovered={false}
                                   isOpen={false}
+                                  isPlain={true}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <button
                                     aria-expanded={false}
                                     aria-label="Actions"
-                                    className="pf-c-dropdown__toggle"
+                                    className="pf-c-dropdown__toggle pf-m-plain"
                                     id="pf-toggle-id-4"
                                     onClick={[Function]}
                                   >
@@ -4780,6 +5068,11 @@ exports[`Actions table 1`] = `
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
                                         viewBox="0 0 192 512"
                                         width="1em"
                                       >
@@ -5250,9 +5543,55 @@ exports[`Actions table 1`] = `
                           <Dropdown
                             className=""
                             direction="down"
-                            dropdownItems={Array []}
+                            dropdownItems={
+                              Array [
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={0}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Some action
+                                </Item>,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={1}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  <div>
+                                    Another action
+                                  </div>
+                                </Item>,
+                                <Separator
+                                  className=""
+                                  component="a"
+                                  data-key={2}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                />,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={3}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Third action
+                                </Item>,
+                              ]
+                            }
                             isOpen={false}
-                            isPlain={false}
+                            isPlain={true}
                             onSelect={[Function]}
                             onToggle={[Function]}
                             position="left"
@@ -5265,6 +5604,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={false}
                                 onToggle={[Function]}
                                 parentRef={null}
                               />
@@ -5282,6 +5622,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={true}
                                 key=".0"
                                 onToggle={[Function]}
                                 parentRef={null}
@@ -5294,13 +5635,14 @@ exports[`Actions table 1`] = `
                                   isFocused={false}
                                   isHovered={false}
                                   isOpen={false}
+                                  isPlain={true}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <button
                                     aria-expanded={false}
                                     aria-label="Actions"
-                                    className="pf-c-dropdown__toggle"
+                                    className="pf-c-dropdown__toggle pf-m-plain"
                                     id="pf-toggle-id-5"
                                     onClick={[Function]}
                                   >
@@ -5315,6 +5657,11 @@ exports[`Actions table 1`] = `
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
                                         viewBox="0 0 192 512"
                                         width="1em"
                                       >
@@ -5785,9 +6132,55 @@ exports[`Actions table 1`] = `
                           <Dropdown
                             className=""
                             direction="down"
-                            dropdownItems={Array []}
+                            dropdownItems={
+                              Array [
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={0}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Some action
+                                </Item>,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={1}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  <div>
+                                    Another action
+                                  </div>
+                                </Item>,
+                                <Separator
+                                  className=""
+                                  component="a"
+                                  data-key={2}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                />,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={3}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Third action
+                                </Item>,
+                              ]
+                            }
                             isOpen={false}
-                            isPlain={false}
+                            isPlain={true}
                             onSelect={[Function]}
                             onToggle={[Function]}
                             position="left"
@@ -5800,6 +6193,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={false}
                                 onToggle={[Function]}
                                 parentRef={null}
                               />
@@ -5817,6 +6211,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={true}
                                 key=".0"
                                 onToggle={[Function]}
                                 parentRef={null}
@@ -5829,13 +6224,14 @@ exports[`Actions table 1`] = `
                                   isFocused={false}
                                   isHovered={false}
                                   isOpen={false}
+                                  isPlain={true}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <button
                                     aria-expanded={false}
                                     aria-label="Actions"
-                                    className="pf-c-dropdown__toggle"
+                                    className="pf-c-dropdown__toggle pf-m-plain"
                                     id="pf-toggle-id-6"
                                     onClick={[Function]}
                                   >
@@ -5850,6 +6246,11 @@ exports[`Actions table 1`] = `
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
                                         viewBox="0 0 192 512"
                                         width="1em"
                                       >
@@ -6320,9 +6721,55 @@ exports[`Actions table 1`] = `
                           <Dropdown
                             className=""
                             direction="down"
-                            dropdownItems={Array []}
+                            dropdownItems={
+                              Array [
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={0}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Some action
+                                </Item>,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={1}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  <div>
+                                    Another action
+                                  </div>
+                                </Item>,
+                                <Separator
+                                  className=""
+                                  component="a"
+                                  data-key={2}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                />,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={3}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Third action
+                                </Item>,
+                              ]
+                            }
                             isOpen={false}
-                            isPlain={false}
+                            isPlain={true}
                             onSelect={[Function]}
                             onToggle={[Function]}
                             position="left"
@@ -6335,6 +6782,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={false}
                                 onToggle={[Function]}
                                 parentRef={null}
                               />
@@ -6352,6 +6800,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={true}
                                 key=".0"
                                 onToggle={[Function]}
                                 parentRef={null}
@@ -6364,13 +6813,14 @@ exports[`Actions table 1`] = `
                                   isFocused={false}
                                   isHovered={false}
                                   isOpen={false}
+                                  isPlain={true}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <button
                                     aria-expanded={false}
                                     aria-label="Actions"
-                                    className="pf-c-dropdown__toggle"
+                                    className="pf-c-dropdown__toggle pf-m-plain"
                                     id="pf-toggle-id-7"
                                     onClick={[Function]}
                                   >
@@ -6385,6 +6835,11 @@ exports[`Actions table 1`] = `
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
                                         viewBox="0 0 192 512"
                                         width="1em"
                                       >
@@ -6855,9 +7310,55 @@ exports[`Actions table 1`] = `
                           <Dropdown
                             className=""
                             direction="down"
-                            dropdownItems={Array []}
+                            dropdownItems={
+                              Array [
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={0}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Some action
+                                </Item>,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={1}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  <div>
+                                    Another action
+                                  </div>
+                                </Item>,
+                                <Separator
+                                  className=""
+                                  component="a"
+                                  data-key={2}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                />,
+                                <Item
+                                  className=""
+                                  component="a"
+                                  data-key={3}
+                                  href="#"
+                                  isDisabled={false}
+                                  isHovered={false}
+                                  onClick={[Function]}
+                                >
+                                  Third action
+                                </Item>,
+                              ]
+                            }
                             isOpen={false}
-                            isPlain={false}
+                            isPlain={true}
                             onSelect={[Function]}
                             onToggle={[Function]}
                             position="left"
@@ -6870,6 +7371,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={false}
                                 onToggle={[Function]}
                                 parentRef={null}
                               />
@@ -6887,6 +7389,7 @@ exports[`Actions table 1`] = `
                                 isFocused={false}
                                 isHovered={false}
                                 isOpen={false}
+                                isPlain={true}
                                 key=".0"
                                 onToggle={[Function]}
                                 parentRef={null}
@@ -6899,13 +7402,14 @@ exports[`Actions table 1`] = `
                                   isFocused={false}
                                   isHovered={false}
                                   isOpen={false}
+                                  isPlain={true}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <button
                                     aria-expanded={false}
                                     aria-label="Actions"
-                                    className="pf-c-dropdown__toggle"
+                                    className="pf-c-dropdown__toggle pf-m-plain"
                                     id="pf-toggle-id-8"
                                     onClick={[Function]}
                                   >
@@ -6920,6 +7424,11 @@ exports[`Actions table 1`] = `
                                         fill="currentColor"
                                         height="1em"
                                         role="img"
+                                        style={
+                                          Object {
+                                            "verticalAlign": "-0.125em",
+                                          }
+                                        }
                                         viewBox="0 0 192 512"
                                         width="1em"
                                       >
@@ -7581,6 +8090,11 @@ exports[`Cell header table 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >
@@ -10765,19 +11279,18 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  min-width: undefined;
+  min-height: undefined;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.5;
   text-align: center;
   white-space: nowrap;
   border: 0px;
-  border-radius: 30em;
+  border-radius: 3px;
   text-decoration: none;
   color: #282d33;
-  background-color: transparent;
 }
 .pf-c-table__toggle {
   display: block;
@@ -10785,24 +11298,23 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-table__toggle {
   display: block;
 }
-.pf-c-button.pf-m-plain {
+.pf-c-button.pf-m-plain.pf-m-expanded {
   display: inline-block;
   position: relative;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  min-width: undefined;
+  min-height: undefined;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.5;
   text-align: center;
   white-space: nowrap;
   border: 0px;
-  border-radius: 30em;
+  border-radius: 3px;
   text-decoration: none;
   color: #282d33;
-  background-color: transparent;
 }
-.pf-c-table__toggle {
+.pf-m-expanded {
   display: block;
 }
 .pf-c-table__toggle {
@@ -10811,8 +11323,31 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-table__toggle {
   display: block;
 }
+.pf-c-table__expandable-row-content {
+  display: block;
+  max-height: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  word-break: break-word;
+  border-top-color: transparent;
+  border-top-width: 0;
+}
 .pf-c-table__toggle {
   display: block;
+}
+.pf-c-table__toggle {
+  display: block;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+  max-height: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  word-break: break-word;
+  border-top-color: transparent;
+  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
   display: block;
@@ -10823,19 +11358,18 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  min-width: undefined;
+  min-height: undefined;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.5;
   text-align: center;
   white-space: nowrap;
   border: 0px;
-  border-radius: 30em;
+  border-radius: 3px;
   text-decoration: none;
   color: #282d33;
-  background-color: transparent;
 }
 .pf-c-table__toggle {
   display: block;
@@ -10848,6 +11382,16 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+  max-height: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  word-break: break-word;
+  border-top-color: transparent;
+  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
   display: block;
@@ -10941,6 +11485,8 @@ exports[`Collapsible nested table 1`] = `
             "transforms": Array [
               [Function],
               [Function],
+              [Function],
+              [Function],
             ],
           },
           "extraParams": Object {
@@ -10972,6 +11518,7 @@ exports[`Collapsible nested table 1`] = `
             ],
             "transforms": Array [
               [Function],
+              [Function],
             ],
           },
           "extraParams": Object {
@@ -11001,6 +11548,7 @@ exports[`Collapsible nested table 1`] = `
               [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -11032,6 +11580,7 @@ exports[`Collapsible nested table 1`] = `
             ],
             "transforms": Array [
               [Function],
+              [Function],
             ],
           },
           "extraParams": Object {
@@ -11061,6 +11610,7 @@ exports[`Collapsible nested table 1`] = `
               [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -11204,6 +11754,8 @@ exports[`Collapsible nested table 1`] = `
                       "transforms": Array [
                         [Function],
                         [Function],
+                        [Function],
+                        [Function],
                       ],
                     },
                     "extraParams": Object {
@@ -11235,6 +11787,7 @@ exports[`Collapsible nested table 1`] = `
                       ],
                       "transforms": Array [
                         [Function],
+                        [Function],
                       ],
                     },
                     "extraParams": Object {
@@ -11264,6 +11817,7 @@ exports[`Collapsible nested table 1`] = `
                         [Function],
                       ],
                       "transforms": Array [
+                        [Function],
                         [Function],
                       ],
                     },
@@ -11295,6 +11849,7 @@ exports[`Collapsible nested table 1`] = `
                       ],
                       "transforms": Array [
                         [Function],
+                        [Function],
                       ],
                     },
                     "extraParams": Object {
@@ -11324,6 +11879,7 @@ exports[`Collapsible nested table 1`] = `
                         [Function],
                       ],
                       "transforms": Array [
+                        [Function],
                         [Function],
                       ],
                     },
@@ -11407,6 +11963,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -11438,6 +11996,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -11467,6 +12026,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -11498,6 +12058,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -11527,6 +12088,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -11604,6 +12166,11 @@ exports[`Collapsible nested table 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >
@@ -11819,6 +12386,8 @@ exports[`Collapsible nested table 1`] = `
                   "transforms": Array [
                     [Function],
                     [Function],
+                    [Function],
+                    [Function],
                   ],
                 },
                 "extraParams": Object {
@@ -11850,6 +12419,7 @@ exports[`Collapsible nested table 1`] = `
                   ],
                   "transforms": Array [
                     [Function],
+                    [Function],
                   ],
                 },
                 "extraParams": Object {
@@ -11879,6 +12449,7 @@ exports[`Collapsible nested table 1`] = `
                     [Function],
                   ],
                   "transforms": Array [
+                    [Function],
                     [Function],
                   ],
                 },
@@ -11910,6 +12481,7 @@ exports[`Collapsible nested table 1`] = `
                   ],
                   "transforms": Array [
                     [Function],
+                    [Function],
                   ],
                 },
                 "extraParams": Object {
@@ -11939,6 +12511,7 @@ exports[`Collapsible nested table 1`] = `
                     [Function],
                   ],
                   "transforms": Array [
+                    [Function],
                     [Function],
                   ],
                 },
@@ -12391,6 +12964,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -12422,6 +12997,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -12451,6 +13027,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -12482,6 +13059,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -12511,6 +13089,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -12639,6 +13218,11 @@ exports[`Collapsible nested table 1`] = `
                                   fill="currentColor"
                                   height="1em"
                                   role="img"
+                                  style={
+                                    Object {
+                                      "verticalAlign": "-0.125em",
+                                    }
+                                  }
                                   viewBox="0 0 320 512"
                                   width="1em"
                                 >
@@ -12658,10 +13242,12 @@ exports[`Collapsible nested table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -12764,6 +13350,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -12795,6 +13383,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -12824,6 +13413,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -12855,6 +13445,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -12884,6 +13475,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -12981,7 +13573,7 @@ exports[`Collapsible nested table 1`] = `
                           <Button
                             aria-expanded={true}
                             aria-label="Details"
-                            className=""
+                            className="pf-m-expanded"
                             component="button"
                             isActive={false}
                             isBlock={false}
@@ -12996,7 +13588,7 @@ exports[`Collapsible nested table 1`] = `
                               aria-disabled={null}
                               aria-expanded={true}
                               aria-label="Details"
-                              className="pf-c-button pf-m-plain"
+                              className="pf-c-button pf-m-plain pf-m-expanded"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex={null}
@@ -13013,6 +13605,11 @@ exports[`Collapsible nested table 1`] = `
                                   fill="currentColor"
                                   height="1em"
                                   role="img"
+                                  style={
+                                    Object {
+                                      "verticalAlign": "-0.125em",
+                                    }
+                                  }
                                   viewBox="0 0 320 512"
                                   width="1em"
                                 >
@@ -13028,16 +13625,25 @@ exports[`Collapsible nested table 1`] = `
                       </td>
                     </BodyCell>
                     <BodyCell
+                      colSpan={5}
                       component="th"
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      parentId={0}
                     >
                       <th
+                        colSpan={5}
                         data-key={1}
                         data-label="Header cell"
                       >
-                        one
+                        <ExpandableRowContent>
+                          <div
+                            className="pf-c-table__expandable-row-content"
+                          >
+                            one
+                          </div>
+                        </ExpandableRowContent>
                       </th>
                     </BodyCell>
                     <BodyCell
@@ -13045,53 +13651,29 @@ exports[`Collapsible nested table 1`] = `
                       data-key={2}
                       data-label="Branches"
                       key="2-cell"
-                    >
-                      <td
-                        data-key={2}
-                        data-label="Branches"
-                      >
-                        two
-                      </td>
-                    </BodyCell>
+                      parentId={0}
+                    />
                     <BodyCell
                       component="td"
                       data-key={3}
                       data-label="Pull requests"
                       key="3-cell"
-                    >
-                      <td
-                        data-key={3}
-                        data-label="Pull requests"
-                      >
-                        three
-                      </td>
-                    </BodyCell>
+                      parentId={0}
+                    />
                     <BodyCell
                       component="td"
                       data-key={4}
                       data-label="Workspaces"
                       key="4-cell"
-                    >
-                      <td
-                        data-key={4}
-                        data-label="Workspaces"
-                      >
-                        four
-                      </td>
-                    </BodyCell>
+                      parentId={0}
+                    />
                     <BodyCell
                       component="td"
                       data-key={5}
                       data-label="Last Commit"
                       key="5-cell"
-                    >
-                      <td
-                        data-key={5}
-                        data-label="Last Commit"
-                      >
-                        five
-                      </td>
-                    </BodyCell>
+                      parentId={0}
+                    />
                   </tr>
                 </RowWrapper>
               </BodyRow>
@@ -13138,6 +13720,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -13169,6 +13753,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -13198,6 +13783,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -13229,6 +13815,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -13258,6 +13845,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -13354,16 +13942,25 @@ exports[`Collapsible nested table 1`] = `
                       </td>
                     </BodyCell>
                     <BodyCell
+                      colSpan={5}
                       component="th"
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      parentId={1}
                     >
                       <th
+                        colSpan={5}
                         data-key={1}
                         data-label="Header cell"
                       >
-                        one
+                        <ExpandableRowContent>
+                          <div
+                            className="pf-c-table__expandable-row-content"
+                          >
+                            one
+                          </div>
+                        </ExpandableRowContent>
                       </th>
                     </BodyCell>
                     <BodyCell
@@ -13371,53 +13968,29 @@ exports[`Collapsible nested table 1`] = `
                       data-key={2}
                       data-label="Branches"
                       key="2-cell"
-                    >
-                      <td
-                        data-key={2}
-                        data-label="Branches"
-                      >
-                        two
-                      </td>
-                    </BodyCell>
+                      parentId={1}
+                    />
                     <BodyCell
                       component="td"
                       data-key={3}
                       data-label="Pull requests"
                       key="3-cell"
-                    >
-                      <td
-                        data-key={3}
-                        data-label="Pull requests"
-                      >
-                        three
-                      </td>
-                    </BodyCell>
+                      parentId={1}
+                    />
                     <BodyCell
                       component="td"
                       data-key={4}
                       data-label="Workspaces"
                       key="4-cell"
-                    >
-                      <td
-                        data-key={4}
-                        data-label="Workspaces"
-                      >
-                        four
-                      </td>
-                    </BodyCell>
+                      parentId={1}
+                    />
                     <BodyCell
                       component="td"
                       data-key={5}
                       data-label="Last Commit"
                       key="5-cell"
-                    >
-                      <td
-                        data-key={5}
-                        data-label="Last Commit"
-                      >
-                        five
-                      </td>
-                    </BodyCell>
+                      parentId={1}
+                    />
                   </tr>
                 </RowWrapper>
               </BodyRow>
@@ -13464,6 +14037,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -13495,6 +14070,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -13524,6 +14100,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -13555,6 +14132,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -13584,6 +14162,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -13712,6 +14291,11 @@ exports[`Collapsible nested table 1`] = `
                                   fill="currentColor"
                                   height="1em"
                                   role="img"
+                                  style={
+                                    Object {
+                                      "verticalAlign": "-0.125em",
+                                    }
+                                  }
                                   viewBox="0 0 320 512"
                                   width="1em"
                                 >
@@ -13731,10 +14315,12 @@ exports[`Collapsible nested table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -13837,6 +14423,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -13868,6 +14456,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -13897,6 +14486,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -13928,6 +14518,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -13957,6 +14548,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -14053,16 +14645,25 @@ exports[`Collapsible nested table 1`] = `
                       </td>
                     </BodyCell>
                     <BodyCell
+                      colSpan={5}
                       component="th"
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      parentId={3}
                     >
                       <th
+                        colSpan={5}
                         data-key={1}
                         data-label="Header cell"
                       >
-                        one
+                        <ExpandableRowContent>
+                          <div
+                            className="pf-c-table__expandable-row-content"
+                          >
+                            one
+                          </div>
+                        </ExpandableRowContent>
                       </th>
                     </BodyCell>
                     <BodyCell
@@ -14070,53 +14671,29 @@ exports[`Collapsible nested table 1`] = `
                       data-key={2}
                       data-label="Branches"
                       key="2-cell"
-                    >
-                      <td
-                        data-key={2}
-                        data-label="Branches"
-                      >
-                        two
-                      </td>
-                    </BodyCell>
+                      parentId={3}
+                    />
                     <BodyCell
                       component="td"
                       data-key={3}
                       data-label="Pull requests"
                       key="3-cell"
-                    >
-                      <td
-                        data-key={3}
-                        data-label="Pull requests"
-                      >
-                        three
-                      </td>
-                    </BodyCell>
+                      parentId={3}
+                    />
                     <BodyCell
                       component="td"
                       data-key={4}
                       data-label="Workspaces"
                       key="4-cell"
-                    >
-                      <td
-                        data-key={4}
-                        data-label="Workspaces"
-                      >
-                        four
-                      </td>
-                    </BodyCell>
+                      parentId={3}
+                    />
                     <BodyCell
                       component="td"
                       data-key={5}
                       data-label="Last Commit"
                       key="5-cell"
-                    >
-                      <td
-                        data-key={5}
-                        data-label="Last Commit"
-                      >
-                        five
-                      </td>
-                    </BodyCell>
+                      parentId={3}
+                    />
                   </tr>
                 </RowWrapper>
               </BodyRow>
@@ -14163,6 +14740,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -14194,6 +14773,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -14223,6 +14803,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -14254,6 +14835,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -14283,6 +14865,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -14379,10 +14962,12 @@ exports[`Collapsible nested table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -14485,6 +15070,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -14516,6 +15103,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -14545,6 +15133,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -14576,6 +15165,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -14605,6 +15195,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -14701,10 +15292,12 @@ exports[`Collapsible nested table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -14807,6 +15400,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -14838,6 +15433,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -14867,6 +15463,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -14898,6 +15495,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -14927,6 +15525,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -15023,10 +15622,12 @@ exports[`Collapsible nested table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -15129,6 +15730,8 @@ exports[`Collapsible nested table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -15160,6 +15763,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -15189,6 +15793,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -15220,6 +15825,7 @@ exports[`Collapsible nested table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -15249,6 +15855,7 @@ exports[`Collapsible nested table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -15345,10 +15952,12 @@ exports[`Collapsible nested table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -15431,24 +16040,23 @@ exports[`Collapsible table 1`] = `
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-button.pf-m-plain {
+.pf-c-button.pf-m-plain.pf-m-expanded {
   display: inline-block;
   position: relative;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  min-width: undefined;
+  min-height: undefined;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.5;
   text-align: center;
   white-space: nowrap;
   border: 0px;
-  border-radius: 30em;
+  border-radius: 3px;
   text-decoration: none;
   color: #282d33;
-  background-color: transparent;
 }
-.pf-c-table__toggle {
+.pf-m-expanded {
   display: block;
 }
 .pf-c-table__toggle {
@@ -15459,6 +16067,19 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+}
+.pf-c-table__toggle {
+  display: block;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+  max-height: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  word-break: break-word;
+  border-top-color: transparent;
+  border-top-width: 0;
 }
 .pf-c-table__toggle {
   display: block;
@@ -15469,19 +16090,18 @@ exports[`Collapsible table 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  min-width: undefined;
+  min-height: undefined;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.5;
   text-align: center;
   white-space: nowrap;
   border: 0px;
-  border-radius: 30em;
+  border-radius: 3px;
   text-decoration: none;
   color: #282d33;
-  background-color: transparent;
 }
 .pf-c-table__toggle {
   display: block;
@@ -15494,6 +16114,16 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+  max-height: 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  word-break: break-word;
+  border-top-color: transparent;
+  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
   display: block;
@@ -15587,6 +16217,8 @@ exports[`Collapsible table 1`] = `
             "transforms": Array [
               [Function],
               [Function],
+              [Function],
+              [Function],
             ],
           },
           "extraParams": Object {
@@ -15618,6 +16250,7 @@ exports[`Collapsible table 1`] = `
             ],
             "transforms": Array [
               [Function],
+              [Function],
             ],
           },
           "extraParams": Object {
@@ -15647,6 +16280,7 @@ exports[`Collapsible table 1`] = `
               [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -15678,6 +16312,7 @@ exports[`Collapsible table 1`] = `
             ],
             "transforms": Array [
               [Function],
+              [Function],
             ],
           },
           "extraParams": Object {
@@ -15707,6 +16342,7 @@ exports[`Collapsible table 1`] = `
               [Function],
             ],
             "transforms": Array [
+              [Function],
               [Function],
             ],
           },
@@ -15850,6 +16486,8 @@ exports[`Collapsible table 1`] = `
                       "transforms": Array [
                         [Function],
                         [Function],
+                        [Function],
+                        [Function],
                       ],
                     },
                     "extraParams": Object {
@@ -15881,6 +16519,7 @@ exports[`Collapsible table 1`] = `
                       ],
                       "transforms": Array [
                         [Function],
+                        [Function],
                       ],
                     },
                     "extraParams": Object {
@@ -15910,6 +16549,7 @@ exports[`Collapsible table 1`] = `
                         [Function],
                       ],
                       "transforms": Array [
+                        [Function],
                         [Function],
                       ],
                     },
@@ -15941,6 +16581,7 @@ exports[`Collapsible table 1`] = `
                       ],
                       "transforms": Array [
                         [Function],
+                        [Function],
                       ],
                     },
                     "extraParams": Object {
@@ -15970,6 +16611,7 @@ exports[`Collapsible table 1`] = `
                         [Function],
                       ],
                       "transforms": Array [
+                        [Function],
                         [Function],
                       ],
                     },
@@ -16053,6 +16695,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -16084,6 +16728,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -16113,6 +16758,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -16144,6 +16790,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -16173,6 +16820,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -16250,6 +16898,11 @@ exports[`Collapsible table 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >
@@ -16463,6 +17116,8 @@ exports[`Collapsible table 1`] = `
                   "transforms": Array [
                     [Function],
                     [Function],
+                    [Function],
+                    [Function],
                   ],
                 },
                 "extraParams": Object {
@@ -16494,6 +17149,7 @@ exports[`Collapsible table 1`] = `
                   ],
                   "transforms": Array [
                     [Function],
+                    [Function],
                   ],
                 },
                 "extraParams": Object {
@@ -16523,6 +17179,7 @@ exports[`Collapsible table 1`] = `
                     [Function],
                   ],
                   "transforms": Array [
+                    [Function],
                     [Function],
                   ],
                 },
@@ -16554,6 +17211,7 @@ exports[`Collapsible table 1`] = `
                   ],
                   "transforms": Array [
                     [Function],
+                    [Function],
                   ],
                 },
                 "extraParams": Object {
@@ -16583,6 +17241,7 @@ exports[`Collapsible table 1`] = `
                     [Function],
                   ],
                   "transforms": Array [
+                    [Function],
                     [Function],
                   ],
                 },
@@ -17030,6 +17689,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -17061,6 +17722,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -17090,6 +17752,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -17121,6 +17784,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -17150,6 +17814,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -17246,7 +17911,7 @@ exports[`Collapsible table 1`] = `
                           <Button
                             aria-expanded={true}
                             aria-label="Details"
-                            className=""
+                            className="pf-m-expanded"
                             component="button"
                             isActive={false}
                             isBlock={false}
@@ -17261,7 +17926,7 @@ exports[`Collapsible table 1`] = `
                               aria-disabled={null}
                               aria-expanded={true}
                               aria-label="Details"
-                              className="pf-c-button pf-m-plain"
+                              className="pf-c-button pf-m-plain pf-m-expanded"
                               disabled={false}
                               onClick={[Function]}
                               tabIndex={null}
@@ -17278,6 +17943,11 @@ exports[`Collapsible table 1`] = `
                                   fill="currentColor"
                                   height="1em"
                                   role="img"
+                                  style={
+                                    Object {
+                                      "verticalAlign": "-0.125em",
+                                    }
+                                  }
                                   viewBox="0 0 320 512"
                                   width="1em"
                                 >
@@ -17297,10 +17967,12 @@ exports[`Collapsible table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -17403,6 +18075,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -17434,6 +18108,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -17463,6 +18138,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -17494,6 +18170,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -17523,6 +18200,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -17616,16 +18294,25 @@ exports[`Collapsible table 1`] = `
                       </td>
                     </BodyCell>
                     <BodyCell
+                      colSpan={5}
                       component="th"
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      parentId={0}
                     >
                       <th
+                        colSpan={5}
                         data-key={1}
                         data-label="Header cell"
                       >
-                        one
+                        <ExpandableRowContent>
+                          <div
+                            className="pf-c-table__expandable-row-content"
+                          >
+                            one
+                          </div>
+                        </ExpandableRowContent>
                       </th>
                     </BodyCell>
                     <BodyCell
@@ -17633,53 +18320,29 @@ exports[`Collapsible table 1`] = `
                       data-key={2}
                       data-label="Branches"
                       key="2-cell"
-                    >
-                      <td
-                        data-key={2}
-                        data-label="Branches"
-                      >
-                        two
-                      </td>
-                    </BodyCell>
+                      parentId={0}
+                    />
                     <BodyCell
                       component="td"
                       data-key={3}
                       data-label="Pull requests"
                       key="3-cell"
-                    >
-                      <td
-                        data-key={3}
-                        data-label="Pull requests"
-                      >
-                        three
-                      </td>
-                    </BodyCell>
+                      parentId={0}
+                    />
                     <BodyCell
                       component="td"
                       data-key={4}
                       data-label="Workspaces"
                       key="4-cell"
-                    >
-                      <td
-                        data-key={4}
-                        data-label="Workspaces"
-                      >
-                        four
-                      </td>
-                    </BodyCell>
+                      parentId={0}
+                    />
                     <BodyCell
                       component="td"
                       data-key={5}
                       data-label="Last Commit"
                       key="5-cell"
-                    >
-                      <td
-                        data-key={5}
-                        data-label="Last Commit"
-                      >
-                        five
-                      </td>
-                    </BodyCell>
+                      parentId={0}
+                    />
                   </tr>
                 </RowWrapper>
               </BodyRow>
@@ -17726,6 +18389,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -17757,6 +18422,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -17786,6 +18452,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -17817,6 +18484,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -17846,6 +18514,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -17942,10 +18611,12 @@ exports[`Collapsible table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -18048,6 +18719,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -18079,6 +18752,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -18108,6 +18782,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -18139,6 +18814,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -18168,6 +18844,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -18296,6 +18973,11 @@ exports[`Collapsible table 1`] = `
                                   fill="currentColor"
                                   height="1em"
                                   role="img"
+                                  style={
+                                    Object {
+                                      "verticalAlign": "-0.125em",
+                                    }
+                                  }
                                   viewBox="0 0 320 512"
                                   width="1em"
                                 >
@@ -18315,10 +18997,12 @@ exports[`Collapsible table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -18421,6 +19105,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -18452,6 +19138,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -18481,6 +19168,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -18512,6 +19200,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -18541,6 +19230,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -18637,16 +19327,25 @@ exports[`Collapsible table 1`] = `
                       </td>
                     </BodyCell>
                     <BodyCell
+                      colSpan={5}
                       component="th"
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      parentId={3}
                     >
                       <th
+                        colSpan={5}
                         data-key={1}
                         data-label="Header cell"
                       >
-                        one
+                        <ExpandableRowContent>
+                          <div
+                            className="pf-c-table__expandable-row-content"
+                          >
+                            one
+                          </div>
+                        </ExpandableRowContent>
                       </th>
                     </BodyCell>
                     <BodyCell
@@ -18654,53 +19353,29 @@ exports[`Collapsible table 1`] = `
                       data-key={2}
                       data-label="Branches"
                       key="2-cell"
-                    >
-                      <td
-                        data-key={2}
-                        data-label="Branches"
-                      >
-                        two
-                      </td>
-                    </BodyCell>
+                      parentId={3}
+                    />
                     <BodyCell
                       component="td"
                       data-key={3}
                       data-label="Pull requests"
                       key="3-cell"
-                    >
-                      <td
-                        data-key={3}
-                        data-label="Pull requests"
-                      >
-                        three
-                      </td>
-                    </BodyCell>
+                      parentId={3}
+                    />
                     <BodyCell
                       component="td"
                       data-key={4}
                       data-label="Workspaces"
                       key="4-cell"
-                    >
-                      <td
-                        data-key={4}
-                        data-label="Workspaces"
-                      >
-                        four
-                      </td>
-                    </BodyCell>
+                      parentId={3}
+                    />
                     <BodyCell
                       component="td"
                       data-key={5}
                       data-label="Last Commit"
                       key="5-cell"
-                    >
-                      <td
-                        data-key={5}
-                        data-label="Last Commit"
-                      >
-                        five
-                      </td>
-                    </BodyCell>
+                      parentId={3}
+                    />
                   </tr>
                 </RowWrapper>
               </BodyRow>
@@ -18747,6 +19422,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -18778,6 +19455,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -18807,6 +19485,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -18838,6 +19517,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -18867,6 +19547,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -18963,10 +19644,12 @@ exports[`Collapsible table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -19069,6 +19752,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -19100,6 +19785,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -19129,6 +19815,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -19160,6 +19847,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -19189,6 +19877,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -19285,10 +19974,12 @@ exports[`Collapsible table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -19391,6 +20082,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -19422,6 +20115,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -19451,6 +20145,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -19482,6 +20177,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -19511,6 +20207,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -19607,10 +20304,12 @@ exports[`Collapsible table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -19713,6 +20412,8 @@ exports[`Collapsible table 1`] = `
                         "transforms": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -19744,6 +20445,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -19773,6 +20475,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -19804,6 +20507,7 @@ exports[`Collapsible table 1`] = `
                         ],
                         "transforms": Array [
                           [Function],
+                          [Function],
                         ],
                       },
                       "extraParams": Object {
@@ -19833,6 +20537,7 @@ exports[`Collapsible table 1`] = `
                           [Function],
                         ],
                         "transforms": Array [
+                          [Function],
                           [Function],
                         ],
                       },
@@ -19929,10 +20634,12 @@ exports[`Collapsible table 1`] = `
                       data-key={1}
                       data-label="Header cell"
                       key="1-cell"
+                      title="one"
                     >
                       <th
                         data-key={1}
                         data-label="Header cell"
+                        title="one"
                       >
                         one
                       </th>
@@ -24690,6 +25397,11 @@ exports[`Selectable table 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >
@@ -40242,6 +40954,11 @@ exports[`Sortable table 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >
@@ -44022,6 +44739,11 @@ exports[`Table variants Breakpoint - grid 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >
@@ -47802,6 +48524,11 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >
@@ -51582,6 +52309,11 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >
@@ -55363,6 +56095,11 @@ exports[`Table variants Size - compact 1`] = `
                                 fill="currentColor"
                                 height="1em"
                                 role="img"
+                                style={
+                                  Object {
+                                    "verticalAlign": "-0.125em",
+                                  }
+                                }
                                 viewBox="0 0 320 512"
                                 width="1em"
                               >

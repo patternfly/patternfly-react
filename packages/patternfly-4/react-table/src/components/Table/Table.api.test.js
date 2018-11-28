@@ -11,10 +11,9 @@ describe('Actions table', () => {
       onClick: jest.fn()
     }
   ];
-  let view;
 
   test('show dropdown', () => {
-    view = mount(
+    const view = mount(
       <Table caption="Actions Table" actions={actions}>
         <TableHeader headerRows={columns} />
         <TableBody rows={rows} />
@@ -25,7 +24,7 @@ describe('Actions table', () => {
   })
 
   test('trigger action', () => {
-    view = mount(
+    const view = mount(
       <Table caption="Actions Table" actions={actions}>
         <TableHeader headerRows={columns} />
         <TableBody rows={rows} />

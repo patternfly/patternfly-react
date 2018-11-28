@@ -1,7 +1,15 @@
-import React from 'react';
 import { mount } from 'enzyme';
 import {
-  selectable, sortable, cellActions, cellWidth, collapsible, scopeColTransformer, headerCol, emptyCol, mapProps
+  selectable,
+  sortable,
+  cellActions,
+  cellWidth,
+  collapsible,
+  scopeColTransformer,
+  headerCol,
+  emptyCol,
+  mapProps,
+  expandedRow
 } from './transformers';
 
 describe('Transformer functions', () => {
@@ -76,7 +84,7 @@ describe('Transformer functions', () => {
       view.find('button').simulate('click');
       expect(onSort.mock.calls.length).toBe(1);
     });
-  })
+  });
 
   test('cellActions', () => {
     const actions = [{
@@ -91,12 +99,14 @@ describe('Transformer functions', () => {
     view.find('.pf-c-dropdown__menu li a').simulate('click');
     expect(actions[0].onClick.mock.calls.length).toBe(1);
   });
+
   describe('cellWidth', () => {
     const widths = [10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 'max']
     widths.forEach((width) => test(`${width}`, () => {
       expect(cellWidth(width)()).toEqual({ className: `pf-m-width-${width}` });
     }))
-  })
+  });
+
   test('collapsible', () => {
     const onCollapse = jest.fn();
     const rowData = {
@@ -111,6 +121,20 @@ describe('Transformer functions', () => {
     view.find('button').simulate('click');
     expect(onCollapse.mock.calls.length).toBe(1);
   });
+
+  describe('expandedRow', () => {
+    test('with parent', () => {
+      const returned = expandedRow(5)({ title: 'test' }, { rowData: { parent: 1 } });
+      expect(returned).toMatchObject({ colSpan: 5 });
+      const view = mount(returned.children);
+      expect(view.find('div.pf-c-table__expandable-row-content').length).toBe(1);
+    });
+
+    test('no parent', () => {
+      expect(expandedRow(5)({ title: 'test' }, { rowData: {} })).toMatchObject({ title: 'test' });
+    });
+  });
+
   test('scopeColTransformer', () => {
     expect(scopeColTransformer()).toEqual({ scope: 'col' });
   });

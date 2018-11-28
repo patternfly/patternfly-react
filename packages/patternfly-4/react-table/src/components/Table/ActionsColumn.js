@@ -44,12 +44,13 @@ class ActionsColumn extends React.Component {
           onToggle={this.onToggle}
           toggle={<KebabToggle onToggle={this.onToggle} />}
           isOpen={isOpen}
-        >
-          {items.map(({ title, itemKey, onClick, isSeparator, ...props }, key) => (
+          dropdownItems={items.map(({ title, itemKey, onClick, isSeparator, ...props }, key) => (
             isSeparator ?
               <DropdownSeparator {...props} key={itemKey || key} data-key={itemKey || key} /> :
               <DropdownItem onClick={(event) => this.onSelect(event, onClick)} {...props} key={itemKey || key} data-key={itemKey || key}>{title}</DropdownItem>
           ))}
+          isPlain
+        >
         </Dropdown>
         {children}
       </React.Fragment>

@@ -3,12 +3,19 @@ import { calculateColumns } from './headerUtils';
 describe('headerUtils', () => {
   describe('calculateColumns', () => {
     test('collapsibleTransfroms', () => {
-      const collapsibleTransfroms = calculateColumns([], { onCollapse: () => undefined })
+      const collapsibleTransfroms = calculateColumns(['Some'], { onCollapse: () => undefined })
       expect(collapsibleTransfroms[0].cell.formatters.length).toBe(1);
       expect(collapsibleTransfroms[0].cell.formatters[0].name).toBe('defaultTitle');
       expect(collapsibleTransfroms[0].cell.transforms.length).toBe(2);
       expect(collapsibleTransfroms[0].extraParams.onCollapse).toBeDefined();
       expect(collapsibleTransfroms[0].header.transforms.length).toBe(3);
+      expect(collapsibleTransfroms[1].cell.transforms.length).toBe(3);
+      expect(collapsibleTransfroms[1].cell.transforms.find(
+        transform => transform.name === 'parentId')
+      ).toBeDefined();
+      expect(collapsibleTransfroms[1].cell.transforms.find(
+        transform => transform.name === 'expandedRowFormatter')
+      ).toBeDefined();
     });
 
     test('selectableTransforms', () => {
