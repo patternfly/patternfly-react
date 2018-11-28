@@ -19,14 +19,24 @@ const defaultProps = {
 
 const pathPrefix = 'https://github.com/patternfly/patternfly-react/tree/master/packages/';
 const getPkgPrefix = pkg => (pkg === 'icons' ? 'react-icons' : `patternfly-4/react-${pkg}`);
+const navItemDescriptor = pkg => `Found in patternfly ${pkg}`;
+const navItemDescriptorId = children => `${children}Descriptor`;
 
 const NavigationItem = ({ to, children, pkg, components }) => (
   <li>
-    <Link className={css(styles.navigationItem)} activeClassName={css(styles.active)} to={to}>
+    <Link
+      className={css(styles.navigationItem)}
+      activeClassName={css(styles.active)}
+      to={to}
+      aria-describedby={navItemDescriptorId(children)}>
       {children}
     </Link>
     <Badge isRead className={css(styles.badge)}>
-      <a target="_blank" href={`${pathPrefix}${getPkgPrefix(pkg)}`}>
+      <a
+        target="_blank"
+        href={`${pathPrefix}${getPkgPrefix(pkg)}`}
+        id={navItemDescriptorId(children)}
+        aria-label={navItemDescriptor(pkg)}>
         {pkg}
       </a>
     </Badge>

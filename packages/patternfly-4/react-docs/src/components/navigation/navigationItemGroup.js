@@ -20,14 +20,7 @@ class NavigationItemGroup extends React.Component {
 
     return (
       <nav>
-        <div
-          className={css(styles.title)}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-          }}
-        >
+        <div className={css(styles.title)}>
           {title}
         </div>
         <ul>{children}</ul>
