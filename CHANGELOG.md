@@ -1,6 +1,46 @@
 
 ## Change Log (2018-11-28)
 
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#954](https://github.com/patternfly/patternfly-react/pull/954) fix(Dropdown): Apply `pf-m-plain` modifier to dropdown toggle element instead of wrapper ([@TheRealJon](https://github.com/TheRealJon))
+
+#### Committers: 1
+- Jon Jackson ([@TheRealJon](https://github.com/TheRealJon))
+
+
+## patternfly4-react-lerna-root@1.28.0 (2018-11-28)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#950](https://github.com/patternfly/patternfly-react/pull/950) feat(Progress): use max parameter to scale value of progress bar ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.5 (2018-11-28)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#950](https://github.com/patternfly/patternfly-react/pull/950) feat(Progress): use max parameter to scale value of progress bar ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.13 (2018-11-28)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#950](https://github.com/patternfly/patternfly-react/pull/950) feat(Progress): use max parameter to scale value of progress bar ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.38.0 (2018-11-28)
+
 #### :rocket: New Feature
 * `patternfly-4`
   * [#950](https://github.com/patternfly/patternfly-react/pull/950) feat(Progress): use max parameter to scale value of progress bar ([@kmcfaul](https://github.com/kmcfaul))

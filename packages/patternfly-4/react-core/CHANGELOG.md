@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.38.1"></a>
+## [1.38.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.38.0...@patternfly/react-core@1.38.1) (2018-11-28)
+
+
+### Bug Fixes
+
+* **Dropdown:** Apply `pf-m-plain` modifier to dropdown toggle element instead of wrapper ([#954](https://github.com/patternfly/patternfly-react/issues/954)) ([4e3afdb](https://github.com/patternfly/patternfly-react/commit/4e3afdb))
+
+
+
+
 <a name="1.38.0"></a>
 # [1.38.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.37.3...@patternfly/react-core@1.38.0) (2018-11-28)
 
