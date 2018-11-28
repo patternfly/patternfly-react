@@ -4,38 +4,66 @@ import classNames from 'classnames';
 
 import CatalogTileBadge from './CatalogTileBadge';
 
-const CatalogTile = ({
-  id,
-  className,
-  featured,
-  href,
-  onClick,
-  iconImg,
-  iconClass,
-  badges,
-  title,
-  vendor,
-  description,
-  maxDescriptionLength,
-  truncateDescriptionFn,
-  ...props
-}) => {
-  const classes = classNames('catalog-tile-pf', { featured }, className);
+const defaultTruncateDescription = (text, max) => {
+  if (max === -1 || typeof text !== 'string' || text.length <= max) {
+    return text;
+  }
 
-  const defaultTruncateDescription = (text, max) => {
-    if (max === -1 || typeof text !== 'string' || text.length <= max) {
-      return text;
-    }
+  return (
+    <React.Fragment>
+      {text.substring(0, max - 3)}
+      &hellip;
+    </React.Fragment>
+  );
+};
 
-    return (
-      <React.Fragment>
-        {text.substring(0, max - 3)}
-        &hellip;
-      </React.Fragment>
-    );
+class CatalogTile extends React.Component {
+  state = {
+    heightStyle: {}
   };
 
-  const renderBadges = () => {
+  componentDidMount() {
+    this.computeDescHeight();
+  }
+
+  computeDescHeight() {
+    const heightStyle = {};
+
+    if (this.descFullHeight && this.descLineHeight) {
+      heightStyle.maxHeight = `${Math.floor(this.descFullHeight / this.descLineHeight) * this.descLineHeight}px`;
+    }
+
+    this.setState({ heightStyle });
+  }
+
+  handleDescriptionRef = ref => {
+    if (!ref) {
+      return;
+    }
+
+    this.descFullHeight = ref.clientHeight;
+  };
+
+  handleDescriptionSpanRef = ref => {
+    if (!ref) {
+      return;
+    }
+
+    this.descLineHeight = parseInt(window.getComputedStyle(ref).getPropertyValue('line-height'), 10);
+  };
+
+  handleClick = e => {
+    const { onClick, href } = this.props;
+
+    if (!href) {
+      e.preventDefault();
+    }
+    if (onClick) {
+      onClick(e);
+    }
+  };
+
+  renderBadges = badges => {
     if (!badges || !badges.length) {
       return null;
     }
@@ -49,46 +77,61 @@ const CatalogTile = ({
     );
   };
 
-  const truncateDescription = truncateDescriptionFn || defaultTruncateDescription;
+  render() {
+    const {
+      id,
+      className,
+      featured,
+      href,
+      onClick,
+      iconImg,
+      iconClass,
+      badges,
+      title,
+      vendor,
+      description,
+      truncateDescriptionFn,
+      maxDescriptionLength,
+      ...otherProps
+    } = this.props;
+    const { heightStyle } = this.state;
+    const truncateDescription = truncateDescriptionFn || defaultTruncateDescription;
 
-  const renderInner = () => (
-    <React.Fragment>
-      <div className="catalog-tile-pf-header">
-        {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt="" />}
-        {!iconImg && iconClass && <span className={`catalog-tile-pf-icon ${iconClass}`} />}
-        {renderBadges()}
-      </div>
-      <div className="catalog-tile-pf-body">
-        <div className="catalog-tile-pf-title">{title}</div>
-        <div className="catalog-tile-pf-subtitle">{vendor}</div>
-        <div className="catalog-tile-pf-description">{truncateDescription(description, maxDescriptionLength, id)}</div>
-      </div>
-    </React.Fragment>
-  );
+    const classes = classNames('catalog-tile-pf', { featured }, className);
 
-  const handleClick = e => {
-    if (!href) {
-      e.preventDefault();
-    }
-    if (onClick) {
-      onClick(e);
-    }
-  };
+    const OuterComponent =
+      href || onClick
+        ? ({ children }) => (
+            <a id={id} className={classes} href={href || '#'} {...otherProps} onClick={e => this.handleClick(e)}>
+              {children}
+            </a>
+          )
+        : ({ children }) => (
+            <div id={id} className={classes} {...otherProps}>
+              {children}
+            </div>
+          );
 
-  if (href || onClick) {
     return (
-      <a id={id} className={classes} href={href || '#'} {...props} onClick={e => handleClick(e)}>
-        {renderInner()}
-      </a>
+      <OuterComponent>
+        <div className="catalog-tile-pf-header">
+          {iconImg && <img className="catalog-tile-pf-icon" src={iconImg} alt="" />}
+          {!iconImg && iconClass && <span className={`catalog-tile-pf-icon ${iconClass}`} />}
+          {this.renderBadges(badges)}
+        </div>
+        <div className="catalog-tile-pf-body">
+          <div className="catalog-tile-pf-title">{title}</div>
+          <div className="catalog-tile-pf-subtitle">{vendor}</div>
+          <div className="catalog-tile-pf-description" ref={this.handleDescriptionRef} style={heightStyle}>
+            <span ref={this.handleDescriptionSpanRef}>
+              {truncateDescription(description, maxDescriptionLength, id)}
+            </span>
+          </div>
+        </div>
+      </OuterComponent>
     );
   }
-
-  return (
-    <div id={id} className={classes} {...props}>
-      {renderInner()}
-    </div>
-  );
-};
+}
 
 CatalogTile.propTypes = {
   /** Id */

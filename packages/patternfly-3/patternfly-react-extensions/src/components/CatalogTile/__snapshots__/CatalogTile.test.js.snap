@@ -31,7 +31,9 @@ exports[`CatalogTile href renders properly 1`] = `
     <div
       class="catalog-tile-pf-description"
     >
-      1234567890123
+      <span>
+        1234567890123
+      </span>
     </div>
   </div>
 </a>
@@ -68,7 +70,9 @@ exports[`CatalogTile onClick behaves properly 1`] = `
     <div
       class="catalog-tile-pf-description"
     >
-      1234567890123
+      <span>
+        1234567890123
+      </span>
     </div>
   </div>
 </a>
@@ -141,7 +145,9 @@ exports[`CatalogTile renders properly 1`] = `
       <div
         class="catalog-tile-pf-description"
       >
-        A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+        <span>
+          A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+        </span>
       </div>
     </div>
   </div>
@@ -208,7 +214,9 @@ exports[`CatalogTile renders properly 1`] = `
       <div
         class="catalog-tile-pf-description"
       >
-        Simple collaboration from your desktop.
+        <span>
+          Simple collaboration from your desktop.
+        </span>
       </div>
     </div>
   </div>
@@ -267,7 +275,9 @@ exports[`CatalogTile renders properly 1`] = `
       <div
         class="catalog-tile-pf-description"
       >
-        This is a very long description that should be truncated after 112 characters. 112 is the default but can be …
+        <span>
+          This is a very long description that should be truncated after 112 characters. 112 is the default but can be …
+        </span>
       </div>
     </div>
   </div>
@@ -317,7 +327,9 @@ exports[`CatalogTile renders properly 1`] = `
       <div
         class="catalog-tile-pf-description"
       >
-        An online community for testing and showcasing user-created HTML, CSS and JavaScript code snippets.
+        <span>
+          An online community for testing and showcasing user-created HTML, CSS and JavaScript code snippets.
+        </span>
       </div>
     </div>
   </div>
@@ -357,7 +369,9 @@ exports[`CatalogTile renders properly 1`] = `
       <div
         class="catalog-tile-pf-description"
       >
-        truncated
+        <span>
+          truncated
+        </span>
       </div>
     </div>
   </div>

@@ -120,7 +120,9 @@ exports[`CatalogTile renders properly 1`] = `
           <div
             class="catalog-tile-pf-description"
           >
-            A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            <span>
+              A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            </span>
           </div>
         </div>
       </div>
@@ -182,7 +184,9 @@ exports[`CatalogTile renders properly 1`] = `
           <div
             class="catalog-tile-pf-description"
           >
-            Simple collaboration from your desktop.
+            <span>
+              Simple collaboration from your desktop.
+            </span>
           </div>
         </div>
       </div>
@@ -239,7 +243,9 @@ exports[`CatalogTile renders properly 1`] = `
           <div
             class="catalog-tile-pf-description"
           >
-            A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            <span>
+              A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            </span>
           </div>
         </div>
       </div>
@@ -301,7 +307,9 @@ exports[`CatalogTile renders properly 1`] = `
           <div
             class="catalog-tile-pf-description"
           >
-            Simple collaboration from your desktop.
+            <span>
+              Simple collaboration from your desktop.
+            </span>
           </div>
         </div>
       </div>
@@ -376,7 +384,9 @@ exports[`CatalogTile renders properly 1`] = `
           <div
             class="catalog-tile-pf-description"
           >
-            A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            <span>
+              A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            </span>
           </div>
         </div>
       </div>
@@ -438,7 +448,9 @@ exports[`CatalogTile renders properly 1`] = `
           <div
             class="catalog-tile-pf-description"
           >
-            Simple collaboration from your desktop.
+            <span>
+              Simple collaboration from your desktop.
+            </span>
           </div>
         </div>
       </div>
@@ -495,7 +507,9 @@ exports[`CatalogTile renders properly 1`] = `
           <div
             class="catalog-tile-pf-description"
           >
-            A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            <span>
+              A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            </span>
           </div>
         </div>
       </div>
@@ -590,7 +604,9 @@ exports[`CatalogTile renders wrapped tiles properly 1`] = `
             <div
               class="catalog-tile-pf-description"
             >
-              A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+              <span>
+                A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+              </span>
             </div>
           </div>
         </div>
@@ -657,7 +673,9 @@ exports[`CatalogTile renders wrapped tiles properly 1`] = `
               <div
                 class="catalog-tile-pf-description"
               >
-                Simple collaboration from your desktop.
+                <span>
+                  Simple collaboration from your desktop.
+                </span>
               </div>
             </div>
           </div>
@@ -716,7 +734,9 @@ exports[`CatalogTile renders wrapped tiles properly 1`] = `
           <div
             class="catalog-tile-pf-description"
           >
-            A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            <span>
+              A community of designers and developers collaborating to build a UI framework for enterprise web applications.
+            </span>
           </div>
         </div>
       </div>
