@@ -1,9 +1,8 @@
 import React from 'react';
 import styles from '@patternfly/patternfly-next/layouts/Page/page.css';
 import { css } from '@patternfly/react-styles';
-import { global_breakpoint_md as breakpointMd } from '@patternfly/react-tokens';
 import PropTypes from 'prop-types';
-import { debounce } from '../../internal/util';
+import { debounce, isDesktop } from '../../internal/util';
 
 export const PageLayouts = {
   vertical: 'vertical',
@@ -48,9 +47,11 @@ class Page extends React.Component {
     super(props);
     // This ref is only used if getRef function prop is not passed in
     this.mainRef = React.createRef();
+    this.onNavToggle = this.onNavToggle.bind(this);
 
     this.state = {
-      isTall: this.isTall(props)
+      isTall: this.isTall(props),
+      navHasToggled: false
     };
   }
   componentDidMount() {
@@ -61,8 +62,8 @@ class Page extends React.Component {
       } else {
         this.mainRef.current.addEventListener('scroll', debounce(this.handleScroll, scrollingDebounce));
       }
-      window.addEventListener('resize', this.handleResize);
     }
+    window.addEventListener('resize', this.handleResize);
   }
   componentWillUnmount() {
     const { useCondensed, getRef } = this.props;
@@ -72,16 +73,18 @@ class Page extends React.Component {
       } else {
         this.mainRef.current.removeEventListener('scroll', this.handleScroll);
       }
-      window.removeEventListener('resize', this.handleResize);
     }
+    window.removeEventListener('resize', this.handleResize);
   }
 
   // only enable tall header if the user is using the `useCondensed` header feature and we are on desktop
-  isTall = props =>
-    props.useCondensed && typeof window !== 'undefined' && window.innerWidth >= parseInt(breakpointMd.value, 10);
+  isTall = props => props.useCondensed && isDesktop();
 
   handleResize = () => {
-    this.setState({ isTall: this.isTall(this.props) });
+    this.setState({
+      isTall: this.isTall(this.props),
+      navHasToggled: false
+    });
   };
 
   handleScroll = e => {
@@ -100,6 +103,10 @@ class Page extends React.Component {
     }
   };
 
+  onNavToggle() {
+    this.setState({ navHasToggled: true });
+  }
+
   render() {
     const {
       className,
@@ -112,7 +119,7 @@ class Page extends React.Component {
       getRef,
       ...rest
     } = this.props;
-    const { isTall } = this.state;
+    const { isTall, navHasToggled } = this.state;
 
     // Only set the ref on the main container if it was not passed in through getRef
     const mainWithOptionalRef = getRef ? (
@@ -126,7 +133,7 @@ class Page extends React.Component {
       );
 
     return (
-      <PageContext.Provider value={{ isTall }}>
+      <PageContext.Provider value={{ isTall, navHasToggled, onNavToggle: this.onNavToggle }}>
         <div {...rest} className={css(styles.page, className)}>
           {header}
           {sidebar}

@@ -25,7 +25,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
   max-width: 100%;
   min-height: 6.875rem;
 }
-.pf-l-page__sidebar.pf-m-expanded {
+.pf-l-page__sidebar {
   display: block;
   grid-area: 2 / 1;
   z-index: 200;
@@ -35,8 +35,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #ffffff;
-  transform: translate3d(0,0,0);
-  box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
+  transform: translate3d(-100%,0,0);
 }
 .pf-l-page__main-section {
   display: block;
@@ -146,7 +145,7 @@ exports[`Check page condensed header example against snapshot 1`] = `
       nav="Navigation"
     >
       <aside
-        className="pf-l-page__sidebar pf-m-expanded"
+        className="pf-l-page__sidebar"
       >
         Navigation
       </aside>
@@ -225,7 +224,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   max-width: 100%;
   min-height: 0;
 }
-.pf-l-page__sidebar.pf-m-expanded {
+.pf-l-page__sidebar {
   display: block;
   grid-area: 2 / 1;
   z-index: 200;
@@ -235,8 +234,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #ffffff;
-  transform: translate3d(0,0,0);
-  box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
+  transform: translate3d(-100%,0,0);
 }
 .pf-l-page__main-section {
   display: block;
@@ -351,7 +349,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       nav={null}
     >
       <aside
-        className="pf-l-page__sidebar pf-m-expanded"
+        className="pf-l-page__sidebar"
       />
     </PageSidebar>
     <main
@@ -428,7 +426,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   max-width: 100%;
   min-height: 0;
 }
-.pf-l-page__sidebar.pf-m-expanded {
+.pf-l-page__sidebar {
   display: block;
   grid-area: 2 / 1;
   z-index: 200;
@@ -438,8 +436,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #ffffff;
-  transform: translate3d(0,0,0);
-  box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
+  transform: translate3d(-100%,0,0);
 }
 .pf-l-page__main-section {
   display: block;
@@ -549,7 +546,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       nav="Navigation"
     >
       <aside
-        className="pf-l-page__sidebar pf-m-expanded"
+        className="pf-l-page__sidebar"
       >
         Navigation
       </aside>

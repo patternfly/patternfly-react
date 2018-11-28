@@ -1,3 +1,5 @@
+import { global_breakpoint_md as breakpointMd } from '@patternfly/react-tokens';
+
 export function capitalize(input) {
   return input[0].toUpperCase() + input.substring(1);
 }
@@ -17,4 +19,8 @@ export function debounce(func, wait) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), wait);
   };
+}
+
+export function isDesktop() {
+  return !!window && window.innerWidth >= parseInt(breakpointMd.value, 10);
 }

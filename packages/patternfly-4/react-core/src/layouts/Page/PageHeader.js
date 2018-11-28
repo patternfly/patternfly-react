@@ -64,7 +64,10 @@ const PageHeader = ({
               <div className={css(styles.pageHeaderBrandToggle)}>
                 <Button
                   id="nav-toggle"
-                  onClick={onNavToggle}
+                  onClick={e => {
+                    context.onNavToggle(e);
+                    onNavToggle(e);
+                  }}
                   aria-label="Toggle primary navigation"
                   variant={ButtonVariant.plain}
                 >
