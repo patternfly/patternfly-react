@@ -1,6 +1,86 @@
 
 ## Change Log (2018-11-28)
 
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#950](https://github.com/patternfly/patternfly-react/pull/950) feat(Progress): use max parameter to scale value of progress bar ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.27.3 (2018-11-28)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#972](https://github.com/patternfly/patternfly-react/pull/972) chore(core): update core to .83 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-tokens@1.9.1 (2018-11-28)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#972](https://github.com/patternfly/patternfly-react/pull/972) chore(core): update core to .83 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-table@0.2.4 (2018-11-28)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#972](https://github.com/patternfly/patternfly-react/pull/972) chore(core): update core to .83 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-styled-system@1.3.1 (2018-11-28)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#972](https://github.com/patternfly/patternfly-react/pull/972) chore(core): update core to .83 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-icons@2.9.2 (2018-11-28)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#972](https://github.com/patternfly/patternfly-react/pull/972) chore(core): update core to .83 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.19.12 (2018-11-28)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#972](https://github.com/patternfly/patternfly-react/pull/972) chore(core): update core to .83 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.37.3 (2018-11-28)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#972](https://github.com/patternfly/patternfly-react/pull/972) chore(core): update core to .83 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-charts@1.2.1 (2018-11-28)
+
 #### :house: Internal
 * `patternfly-4`, `react-icons`
   * [#972](https://github.com/patternfly/patternfly-react/pull/972) chore(core): update core to .83 ([@jschuler](https://github.com/jschuler))

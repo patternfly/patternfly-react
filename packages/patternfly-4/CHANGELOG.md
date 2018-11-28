@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.28.0"></a>
+# [1.28.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.27.3...patternfly4-react-lerna-root@1.28.0) (2018-11-28)
+
+
+### Features
+
+* **Progress:** use max parameter to scale value of progress bar ([#950](https://github.com/patternfly/patternfly-react/issues/950)) ([52a6b6d](https://github.com/patternfly/patternfly-react/commit/52a6b6d))
+
+
+
+
 <a name="1.27.3"></a>
 ## [1.27.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.27.2...patternfly4-react-lerna-root@1.27.3) (2018-11-28)
 
