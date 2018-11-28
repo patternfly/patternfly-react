@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import styles from './navigationItem.styles';
 import Link from 'gatsby-link';
-import { Badge } from '@patternfly/react-core';
 
 const propTypes = {
   to: PropTypes.string.isRequired,
@@ -31,15 +30,14 @@ const NavigationItem = ({ to, children, pkg, components }) => (
       aria-describedby={navItemDescriptorId(children)}>
       {children}
     </Link>
-    <Badge isRead className={css(styles.badge)}>
-      <a
-        target="_blank"
-        href={`${pathPrefix}${getPkgPrefix(pkg)}`}
-        id={navItemDescriptorId(children)}
-        aria-label={navItemDescriptor(pkg)}>
-        {pkg}
-      </a>
-    </Badge>
+    <a
+      className={css(styles.pkgLabel)}
+      target="_blank"
+      href={`${pathPrefix}${getPkgPrefix(pkg)}`}
+      id={navItemDescriptorId(children)}
+      aria-label={navItemDescriptor(pkg)}>
+      {pkg}
+    </a>
     {components &&
       components.length > 0 && (
         <ul className={css(styles.secondaryList)}>
