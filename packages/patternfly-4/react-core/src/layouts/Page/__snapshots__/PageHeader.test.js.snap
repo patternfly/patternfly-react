@@ -2,13 +2,12 @@
 
 exports[`Check page vertical layout example against snapshot 1`] = `
 .pf-l-page__header-brand-link {
-  display: none;
+  display: flex;
   align-items: center;
-  min-height: 2.5rem;
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 .pf-l-page__header-tools {
   display: block;
@@ -16,20 +15,19 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   margin-right: 1rem;
   margin-left: auto;
 }
-.pf-l-page__header.pf-m-tall {
+.pf-l-page__header {
   display: flex;
   grid-area: header;
   z-index: 300;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
   max-width: 100%;
-  min-height: 6.875rem;
+  height: 4.75rem;
 }
 
 <PageHeader
   avatar=" | Avatar"
   className=""
-  isTall={true}
   logo="Logo"
   logoProps={null}
   onNavToggle={[Function]}
@@ -37,27 +35,25 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   toolbar="Toolbar"
   topNav={null}
 >
-  <Consumer>
-    <header
-      className="pf-l-page__header pf-m-tall"
-      role="banner"
+  <header
+    className="pf-l-page__header"
+    role="banner"
+  >
+    <div
+      className="pf-l-page__header-brand"
     >
-      <div
-        className="pf-l-page__header-brand"
+      <a
+        className="pf-l-page__header-brand-link"
       >
-        <a
-          className="pf-l-page__header-brand-link"
-        >
-          Logo
-        </a>
-      </div>
-      <div
-        className="pf-l-page__header-tools"
-      >
-        Toolbar
-         | Avatar
-      </div>
-    </header>
-  </Consumer>
+        Logo
+      </a>
+    </div>
+    <div
+      className="pf-l-page__header-tools"
+    >
+      Toolbar
+       | Avatar
+    </div>
+  </header>
 </PageHeader>
 `;

@@ -2,15 +2,16 @@
 
 exports[`KebabToggle basic 1`] = `
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown__menu {
@@ -28,6 +29,7 @@ exports[`KebabToggle basic 1`] = `
 .pf-c-dropdown.pf-m-expanded {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -136,20 +138,22 @@ exports[`KebabToggle basic 1`] = `
 
 exports[`KebabToggle dropup + right aligned 1`] = `
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -305,20 +309,22 @@ exports[`KebabToggle dropup + right aligned 1`] = `
 
 exports[`KebabToggle dropup 1`] = `
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -474,15 +480,16 @@ exports[`KebabToggle dropup 1`] = `
 
 exports[`KebabToggle expanded 1`] = `
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-m-disabled {
@@ -516,6 +523,7 @@ exports[`KebabToggle expanded 1`] = `
 .pf-c-dropdown.pf-m-expanded {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -831,20 +839,22 @@ exports[`KebabToggle expanded 1`] = `
 
 exports[`KebabToggle plain 1`] = `
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-plain {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -1000,20 +1010,22 @@ exports[`KebabToggle plain 1`] = `
 
 exports[`KebabToggle regular 1`] = `
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -1169,20 +1181,22 @@ exports[`KebabToggle regular 1`] = `
 
 exports[`KebabToggle right aligned 1`] = `
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -1344,15 +1358,16 @@ exports[`dropdown basic 1`] = `
   display: block;
 }
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown__menu {
@@ -1370,6 +1385,7 @@ exports[`dropdown basic 1`] = `
 .pf-c-dropdown.pf-m-expanded {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -1487,20 +1503,22 @@ exports[`dropdown dropup + right aligned 1`] = `
   display: block;
 }
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -1665,20 +1683,22 @@ exports[`dropdown dropup 1`] = `
   display: block;
 }
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -1843,15 +1863,16 @@ exports[`dropdown expanded 1`] = `
   display: block;
 }
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-m-disabled {
@@ -1885,6 +1906,7 @@ exports[`dropdown expanded 1`] = `
 .pf-c-dropdown.pf-m-expanded {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -2209,20 +2231,22 @@ exports[`dropdown regular 1`] = `
   display: block;
 }
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown
@@ -2387,20 +2411,22 @@ exports[`dropdown right aligned 1`] = `
   display: block;
 }
 .pf-c-dropdown__toggle {
-  display: block;
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   min-width: 44px;
-  min-height: 44px;
+  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
   position: relative;
+  max-width: 100%;
 }
 
 <Dropdown

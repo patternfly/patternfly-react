@@ -47,7 +47,6 @@ exports[`Default Nav List - Trigger item active update 1`] = `
   >
     <NavList
       className=""
-      isTall={false}
       variant="default"
     >
       <ul
@@ -198,7 +197,6 @@ exports[`Default Nav List 1`] = `
   >
     <NavList
       className=""
-      isTall={false}
       variant="default"
     >
       <ul
@@ -375,7 +373,6 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   >
     <NavList
       className=""
-      isTall={false}
       variant="default"
     >
       <ul
@@ -624,7 +621,6 @@ exports[`Expandable Nav List 1`] = `
   >
     <NavList
       className=""
-      isTall={false}
       variant="default"
     >
       <ul
@@ -881,7 +877,6 @@ exports[`Expandable Nav List with aria label 1`] = `
   >
     <NavList
       className=""
-      isTall={false}
       variant="default"
     >
       <ul
@@ -1110,7 +1105,6 @@ exports[`Horizontal Nav List 1`] = `
   >
     <NavList
       className=""
-      isTall={false}
       variant="horizontal"
     >
       <ul
@@ -1332,7 +1326,6 @@ exports[`Nav Grouped List 1`] = `
         >
           <NavList
             className=""
-            isTall={false}
             variant="default"
           >
             <ul
@@ -1455,7 +1448,6 @@ exports[`Nav Grouped List 1`] = `
         >
           <NavList
             className=""
-            isTall={false}
             variant="default"
           >
             <ul
@@ -1591,7 +1583,6 @@ exports[`Nav List with custom item nodes 1`] = `
   >
     <NavList
       className=""
-      isTall={false}
       variant="tertiary"
     >
       <ul
@@ -1673,7 +1664,6 @@ exports[`Simple Nav List 1`] = `
   >
     <NavList
       className=""
-      isTall={false}
       variant="simple"
     >
       <ul
@@ -1824,7 +1814,6 @@ exports[`Tertiary Nav List 1`] = `
   >
     <NavList
       className=""
-      isTall={false}
       variant="tertiary"
     >
       <ul

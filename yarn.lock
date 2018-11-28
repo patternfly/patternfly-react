@@ -350,9 +350,9 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.0.0.tgz#76b0e89e6f8738ca8154195baf5b8e6a80bc9105"
 
-"@patternfly/patternfly-next@1.0.78":
-  version "1.0.78"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.78.tgz#b3c1b32e03b114baf084e77f4c8eb5020ec1fedb"
+"@patternfly/patternfly-next@1.0.83":
+  version "1.0.83"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.83.tgz#849ead886e7dbbd62d46a04f782cd991edc2870f"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -11134,7 +11134,6 @@ patternfly-bootstrap-treeview@~2.1.0:
 patternfly@^3.58.0:
   version "3.58.0"
   resolved "https://registry.yarnpkg.com/patternfly/-/patternfly-3.58.0.tgz#c94516a9fbf2b645b63a53e58fcf39c45bf66a8b"
-  integrity sha512-geY0cbSFXoi9qv9cXCZe0OPCZBuLCuPKfEPXk0usTHjYSk5oUv3KMMuAJidbsbtXqc6vnDYjGfngepIlJ99rfg==
   dependencies:
     bootstrap "~3.3.7"
     font-awesome "^4.7.0"

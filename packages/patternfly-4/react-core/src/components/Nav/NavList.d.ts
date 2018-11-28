@@ -13,7 +13,6 @@ export interface NavListProps extends HTMLProps<HTMLDivElement> {
   isExpandable?: boolean;
   isExpanded?: boolean;
   isActive?: boolean;
-  isTall?: boolean;
 }
 
 declare const NavList: SFC<NavListProps>;
