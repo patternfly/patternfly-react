@@ -71,14 +71,7 @@ class Progress extends Component {
       ...props,
       ...(valueText ? { 'aria-valuetext': valueText } : { 'aria-describedby': `${this.id}-description` })
     };
-    const scaledValue =
-      max === 100
-        ? value < min
-          ? min
-          : Math.min(value, max)
-        : value < min
-          ? Math.floor(Math.min((min / max) * 100, 100))
-          : Math.floor(Math.min((value / max) * 100, 100));
+    const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
     return (
       <div
         {...additionalProps}
