@@ -71,9 +71,7 @@ class Progress extends Component {
       ...props,
       ...(valueText ? { 'aria-valuetext': valueText } : { 'aria-describedby': `${this.id}-description` })
     };
-    let limitedValue;
-    limitedValue = value < min ? min : value;
-    limitedValue = limitedValue > max ? max : limitedValue;
+    const scaledValue = Math.min(100, Math.max(0, Math.floor(((value - min) / (max - min)) * 100)));
     return (
       <div
         {...additionalProps}
@@ -87,12 +85,12 @@ class Progress extends Component {
         id={this.id}
         role="progressbar"
         aria-valuemin={min}
-        aria-valuenow={limitedValue}
+        aria-valuenow={scaledValue}
         aria-valuemax={max}
       >
         <ProgressContainer
           parentId={this.id}
-          value={limitedValue}
+          value={scaledValue}
           title={title}
           label={label}
           variant={variant}

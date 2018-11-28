@@ -55,12 +55,11 @@ const ProgressContainer = ({ value, title, parentId, label, variant, measureLoca
         {(measureLocation === ProgressMeasureLocation.top || measureLocation === ProgressMeasureLocation.outside) && (
           <span className={css(progressStyle.progressMeasure)}>{label || `${value}%`}</span>
         )}
-        {measureLocation !== ProgressMeasureLocation.none &&
-          variantToIcon.hasOwnProperty(variant) && (
-            <span className={css(progressStyle.progressStatusIcon)}>
-              <StatusIcon />
-            </span>
-          )}
+        {variantToIcon.hasOwnProperty(variant) && (
+          <span className={css(progressStyle.progressStatusIcon)}>
+            <StatusIcon />
+          </span>
+        )}
       </div>
       <ProgressBar value={value}>{measureLocation === ProgressMeasureLocation.inside && `${value}%`}</ProgressBar>
     </Fragment>

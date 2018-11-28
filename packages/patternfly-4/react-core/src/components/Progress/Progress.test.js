@@ -33,6 +33,21 @@ test('value higher than maxValue', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('value scaled with minValue', () => {
+  const view = mount(<Progress min={10} value={50} id="scaled-min-value" />);
+  expect(view).toMatchSnapshot();
+});
+
+test('value scaled with maxValue', () => {
+  const view = mount(<Progress value={50} id="scaled-max-value" max={80} />);
+  expect(view).toMatchSnapshot();
+});
+
+test('value scaled between minValue and maxValue', () => {
+  const view = mount(<Progress min={10} value={50} id="scaled-range-value" max={80} />);
+  expect(view).toMatchSnapshot();
+});
+
 describe('Progress size', () => {
   Object.keys(ProgressSize).forEach(oneSize => {
     test(oneSize, () => {

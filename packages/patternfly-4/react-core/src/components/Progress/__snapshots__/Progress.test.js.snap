@@ -1692,7 +1692,7 @@ exports[`value higher than maxValue 1`] = `
     aria-describedby="higher-max-value-description"
     aria-valuemax={60}
     aria-valuemin={0}
-    aria-valuenow={60}
+    aria-valuenow={100}
     className="pf-c-progress"
     id="higher-max-value"
     role="progressbar"
@@ -1701,7 +1701,7 @@ exports[`value higher than maxValue 1`] = `
       measureLocation="top"
       parentId="higher-max-value"
       title=""
-      value={60}
+      value={100}
       variant="info"
     >
       <div
@@ -1714,12 +1714,12 @@ exports[`value higher than maxValue 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          60%
+          100%
         </span>
       </div>
       <ProgressBar
         className=""
-        value={60}
+        value={100}
       >
         <div
           className="pf-c-progress__bar"
@@ -1728,7 +1728,7 @@ exports[`value higher than maxValue 1`] = `
             className="pf-c-progress__indicator"
             style={
               Object {
-                "width": "60%",
+                "width": "100%",
               }
             }
           >
@@ -1798,7 +1798,7 @@ exports[`value lower than minValue 1`] = `
     aria-describedby="lower-min-value-description"
     aria-valuemax={100}
     aria-valuemin={40}
-    aria-valuenow={40}
+    aria-valuenow={0}
     className="pf-c-progress"
     id="lower-min-value"
     role="progressbar"
@@ -1807,7 +1807,7 @@ exports[`value lower than minValue 1`] = `
       measureLocation="top"
       parentId="lower-min-value"
       title=""
-      value={40}
+      value={0}
       variant="info"
     >
       <div
@@ -1820,12 +1820,12 @@ exports[`value lower than minValue 1`] = `
         <span
           className="pf-c-progress__measure"
         >
-          40%
+          0%
         </span>
       </div>
       <ProgressBar
         className=""
-        value={40}
+        value={0}
       >
         <div
           className="pf-c-progress__bar"
@@ -1834,7 +1834,325 @@ exports[`value lower than minValue 1`] = `
             className="pf-c-progress__indicator"
             style={
               Object {
-                "width": "40%",
+                "width": "0%",
+              }
+            }
+          >
+            <span
+              className="pf-c-progress__measure"
+            />
+          </div>
+        </div>
+      </ProgressBar>
+    </ProgressContainer>
+  </div>
+</Progress>
+`;
+
+exports[`value scaled between minValue and maxValue 1`] = `
+.pf-c-progress__description {
+  display: block;
+  grid-column: 1 / 2;
+}
+.pf-c-progress__measure {
+  display: block;
+}
+.pf-c-progress__status {
+  display: block;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.pf-c-progress__measure {
+  display: block;
+}
+.pf-c-progress__indicator {
+  display: block;
+  position: absolute;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  height: 0.5rem;
+  background-color: #cc0000;
+}
+.pf-c-progress__bar {
+  display: block;
+  position: relative;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  height: 0.5rem;
+  background-color: #ffffff;
+}
+.pf-c-progress {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+}
+
+<Progress
+  className=""
+  id="scaled-range-value"
+  max={80}
+  measureLocation="top"
+  min={10}
+  size={null}
+  title=""
+  value={50}
+  valueText={null}
+  variant="info"
+>
+  <div
+    aria-describedby="scaled-range-value-description"
+    aria-valuemax={80}
+    aria-valuemin={10}
+    aria-valuenow={57}
+    className="pf-c-progress"
+    id="scaled-range-value"
+    role="progressbar"
+  >
+    <ProgressContainer
+      measureLocation="top"
+      parentId="scaled-range-value"
+      title=""
+      value={57}
+      variant="info"
+    >
+      <div
+        className="pf-c-progress__description"
+        id="scaled-range-value-description"
+      />
+      <div
+        className="pf-c-progress__status"
+      >
+        <span
+          className="pf-c-progress__measure"
+        >
+          57%
+        </span>
+      </div>
+      <ProgressBar
+        className=""
+        value={57}
+      >
+        <div
+          className="pf-c-progress__bar"
+        >
+          <div
+            className="pf-c-progress__indicator"
+            style={
+              Object {
+                "width": "57%",
+              }
+            }
+          >
+            <span
+              className="pf-c-progress__measure"
+            />
+          </div>
+        </div>
+      </ProgressBar>
+    </ProgressContainer>
+  </div>
+</Progress>
+`;
+
+exports[`value scaled with maxValue 1`] = `
+.pf-c-progress__description {
+  display: block;
+  grid-column: 1 / 2;
+}
+.pf-c-progress__measure {
+  display: block;
+}
+.pf-c-progress__status {
+  display: block;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.pf-c-progress__measure {
+  display: block;
+}
+.pf-c-progress__indicator {
+  display: block;
+  position: absolute;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  height: 0.5rem;
+  background-color: #cc0000;
+}
+.pf-c-progress__bar {
+  display: block;
+  position: relative;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  height: 0.5rem;
+  background-color: #ffffff;
+}
+.pf-c-progress {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+}
+
+<Progress
+  className=""
+  id="scaled-max-value"
+  max={80}
+  measureLocation="top"
+  min={0}
+  size={null}
+  title=""
+  value={50}
+  valueText={null}
+  variant="info"
+>
+  <div
+    aria-describedby="scaled-max-value-description"
+    aria-valuemax={80}
+    aria-valuemin={0}
+    aria-valuenow={62}
+    className="pf-c-progress"
+    id="scaled-max-value"
+    role="progressbar"
+  >
+    <ProgressContainer
+      measureLocation="top"
+      parentId="scaled-max-value"
+      title=""
+      value={62}
+      variant="info"
+    >
+      <div
+        className="pf-c-progress__description"
+        id="scaled-max-value-description"
+      />
+      <div
+        className="pf-c-progress__status"
+      >
+        <span
+          className="pf-c-progress__measure"
+        >
+          62%
+        </span>
+      </div>
+      <ProgressBar
+        className=""
+        value={62}
+      >
+        <div
+          className="pf-c-progress__bar"
+        >
+          <div
+            className="pf-c-progress__indicator"
+            style={
+              Object {
+                "width": "62%",
+              }
+            }
+          >
+            <span
+              className="pf-c-progress__measure"
+            />
+          </div>
+        </div>
+      </ProgressBar>
+    </ProgressContainer>
+  </div>
+</Progress>
+`;
+
+exports[`value scaled with minValue 1`] = `
+.pf-c-progress__description {
+  display: block;
+  grid-column: 1 / 2;
+}
+.pf-c-progress__measure {
+  display: block;
+}
+.pf-c-progress__status {
+  display: block;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+.pf-c-progress__measure {
+  display: block;
+}
+.pf-c-progress__indicator {
+  display: block;
+  position: absolute;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  height: 0.5rem;
+  background-color: #cc0000;
+}
+.pf-c-progress__bar {
+  display: block;
+  position: relative;
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  height: 0.5rem;
+  background-color: #ffffff;
+}
+.pf-c-progress {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 1fr auto;
+}
+
+<Progress
+  className=""
+  id="scaled-min-value"
+  max={100}
+  measureLocation="top"
+  min={10}
+  size={null}
+  title=""
+  value={50}
+  valueText={null}
+  variant="info"
+>
+  <div
+    aria-describedby="scaled-min-value-description"
+    aria-valuemax={100}
+    aria-valuemin={10}
+    aria-valuenow={44}
+    className="pf-c-progress"
+    id="scaled-min-value"
+    role="progressbar"
+  >
+    <ProgressContainer
+      measureLocation="top"
+      parentId="scaled-min-value"
+      title=""
+      value={44}
+      variant="info"
+    >
+      <div
+        className="pf-c-progress__description"
+        id="scaled-min-value-description"
+      />
+      <div
+        className="pf-c-progress__status"
+      >
+        <span
+          className="pf-c-progress__measure"
+        >
+          44%
+        </span>
+      </div>
+      <ProgressBar
+        className=""
+        value={44}
+      >
+        <div
+          className="pf-c-progress__bar"
+        >
+          <div
+            className="pf-c-progress__indicator"
+            style={
+              Object {
+                "width": "44%",
               }
             }
           >
