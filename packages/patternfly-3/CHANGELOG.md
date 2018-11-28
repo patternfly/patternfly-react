@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.12.2"></a>
+## [7.12.2](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.1...patternfly3-react-lerna-root@7.12.2) (2018-11-28)
+
+
+### Bug Fixes
+
+* **CatalogTile:** Fix to correctly position fading out of description text ([#958](https://github.com/patternfly/patternfly-react/issues/958)) ([b2237fc](https://github.com/patternfly/patternfly-react/commit/b2237fc))
+
+
+
+
 <a name="7.12.1"></a>
 ## [7.12.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.0...patternfly3-react-lerna-root@7.12.1) (2018-11-27)
 

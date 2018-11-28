@@ -1,5 +1,45 @@
 
-## Change Log (2018-11-27)
+## Change Log (2018-11-28)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#958](https://github.com/patternfly/patternfly-react/pull/958) fix(CatalogTile): Fix to correctly position fading out of description text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly4-react-lerna-root@1.27.2 (2018-11-27)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#930](https://github.com/patternfly/patternfly-react/pull/930) fix(Radio): Updated Radio aria-label prop so that it is optional ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-table@0.2.3 (2018-11-27)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#930](https://github.com/patternfly/patternfly-react/pull/930) fix(Radio): Updated Radio aria-label prop so that it is optional ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-docs@3.19.11 (2018-11-27)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#930](https://github.com/patternfly/patternfly-react/pull/930) fix(Radio): Updated Radio aria-label prop so that it is optional ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-core@1.37.2 (2018-11-27)
 
 #### :bug: Bug Fix
 * `patternfly-4`
