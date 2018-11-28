@@ -50,15 +50,15 @@ const defaultProps = {
 class Dropdown extends React.Component {
   render() {
     const {
-      className,
       children,
+      className,
+      direction,
       dropdownItems,
       isOpen,
-      toggle,
-      direction,
-      onSelect,
       isPlain,
+      onSelect,
       position,
+      toggle,
       ...props
     } = this.props;
     const id = toggle.props.id || `pf-toggle-id-${currentId++}`;
@@ -76,7 +76,6 @@ class Dropdown extends React.Component {
         {...props}
         className={css(
           styles.dropdown,
-          isPlain && styles.modifiers.plain,
           direction === DropdownDirection.up && styles.modifiers.top,
           isOpen && styles.modifiers.expanded,
           className
@@ -85,7 +84,7 @@ class Dropdown extends React.Component {
           this.parentRef = ref;
         }}
       >
-        {Children.map(toggle, oneToggle => cloneElement(oneToggle, { parentRef: this.parentRef, isOpen, id }))}
+        {Children.map(toggle, oneToggle => cloneElement(oneToggle, { parentRef: this.parentRef, isOpen, id, isPlain }))}
         {isOpen && (
           <DropdownMenu
             component={component}

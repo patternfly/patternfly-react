@@ -31,7 +31,9 @@ Kebab.propTypes = {
   /** Forces hover state */
   isHovered: PropTypes.bool,
   /** Forces active state */
-  isActive: PropTypes.bool
+  isActive: PropTypes.bool,
+  /** Display the toggle with no border or background */
+  isPlain: PropTypes.bool
 };
 Kebab.defaultProps = {
   id: '',
@@ -43,6 +45,7 @@ Kebab.defaultProps = {
   isFocused: false,
   isHovered: false,
   isActive: false,
+  isPlain: false,
   onToggle: Function.prototype
 };
 

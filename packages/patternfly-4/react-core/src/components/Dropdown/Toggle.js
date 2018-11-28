@@ -22,7 +22,9 @@ const propTypes = {
   /** Forces hover state */
   isHovered: PropTypes.bool,
   /** Forces active state */
-  isActive: PropTypes.bool
+  isActive: PropTypes.bool,
+  /** Display the toggle with no border or background */
+  isPlain: PropTypes.bool
 };
 
 const defaultProps = {
@@ -33,6 +35,7 @@ const defaultProps = {
   isFocused: false,
   isHovered: false,
   isActive: false,
+  isPlain: false,
   onToggle: Function.prototype
 };
 
@@ -70,6 +73,7 @@ class DropdownToggle extends Component {
       isFocused,
       isActive,
       isHovered,
+      isPlain,
       onToggle,
       parentRef,
       id,
@@ -87,6 +91,7 @@ class DropdownToggle extends Component {
           isFocused && styles.modifiers.focus,
           isHovered && styles.modifiers.hover,
           isActive && styles.modifiers.active,
+          isPlain && styles.modifiers.plain,
           className
         )}
         onClick={_event => onToggle && onToggle(!isOpen)}
