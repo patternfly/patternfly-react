@@ -96,6 +96,11 @@
   }
 }
 
+.catalog-tile-view-pf-no-categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .catalog-tile-view-pf-category {
   margin: 10px 0 15px;
 }

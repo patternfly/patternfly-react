@@ -81,6 +81,7 @@
     flex: 1;
     margin-top: 15px;
     overflow: hidden;
+    position: relative;
 
     &::after {
       background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 75%);
@@ -93,6 +94,11 @@
       text-align: right;
     }
   }
+}
+
+.catalog-tile-view-pf-no-categories {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .catalog-tile-view-pf-category {
@@ -121,6 +127,5 @@
 .catalog-tile-view-pf-category-body {
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
   margin-top: 10px;
 }

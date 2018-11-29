@@ -8,7 +8,7 @@ import { CatalogTile, CatalogTileBadge } from '../CatalogTile/index';
 const pfBrand = '<PatternFly Brand Image here>';
 const github = '<GitHub Brand Image here>';
 
-test('CatalogTile renders properly', () => {
+test('CatalogTileView renders properly', () => {
   const component = mount(
     <CatalogTileView id="test-catalog-tile-view">
       <CatalogTileViewCategory id="category-1" title="Category 1" totalItems={4} viewAll={false}>
@@ -99,7 +99,60 @@ test('CatalogTile renders properly', () => {
   component.unmount();
 });
 
-test('CatalogTile renders no tiles state properly', () => {
+test('CatalogTileView renders no categories properly', () => {
+  const component = mount(
+    <CatalogTileView id="test-catalog-tile-view" useCategories={false}>
+      <CatalogTile
+        featured
+        iconImg={pfBrand}
+        badges={[<CatalogTile.Badge type="fa" name="cog" title="Certified" id="certified" />]}
+        title="Patternfly"
+        vendor={
+          <span>
+            PatternFly is a <a href="redhat.com">Red Hat</a> sponsored project.
+          </span>
+        }
+        description="A community of designers and developers collaborating to build a UI framework for enterprise web applications."
+      />
+      <CatalogTile
+        iconImg={github}
+        badges={[
+          <CatalogTileBadge type="fa" name="cog" title="Certified" id="certified" />,
+          <CatalogTileBadge type="pf" name="ok" title="USDA Approved" id="approved" />
+        ]}
+        title="GitHub Desktop"
+        vendor="provided by GitHub"
+        description="Simple collaboration from your desktop."
+      />
+      <CatalogTile
+        featured
+        iconImg={pfBrand}
+        badges={[<CatalogTile.Badge type="fa" name="cog" title="Certified" id="certified" />]}
+        title="Patternfly"
+        vendor={
+          <span>
+            PatternFly is a <a href="redhat.com">Red Hat</a> sponsored project.
+          </span>
+        }
+        description="A community of designers and developers collaborating to build a UI framework for enterprise web applications."
+      />
+      <CatalogTile
+        iconImg={github}
+        badges={[
+          <CatalogTileBadge type="fa" name="cog" title="Certified" id="certified" />,
+          <CatalogTileBadge type="pf" name="ok" title="USDA Approved" id="approved" />
+        ]}
+        title="GitHub Desktop"
+        vendor="provided by GitHub"
+        description="Simple collaboration from your desktop."
+      />
+    </CatalogTileView>
+  );
+  expect(component.render()).toMatchSnapshot();
+  component.unmount();
+});
+
+test('CatalogTileView renders no tiles state properly', () => {
   const component = mount(
     <CatalogTileView id="test-catalog-tile-view">
       <CatalogTileViewCategory id="category-1" title="Category 1" totalItems={0}>
@@ -113,7 +166,7 @@ test('CatalogTile renders no tiles state properly', () => {
   component.unmount();
 });
 
-test('CatalogTile renders wrapped tiles properly', () => {
+test('CatalogTileView renders wrapped tiles properly', () => {
   const component = mount(
     <CatalogTileView id="test-catalog-tile-view">
       <CatalogTileViewCategory id="category-1" title="Category 1" totalItems={4} viewAll={false}>

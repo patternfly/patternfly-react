@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Breadcrumb, EmptyState, Icon } from 'patternfly-react';
-import { mockItems } from './mockItems';
+import { mockCategories } from './mockItems';
 
 import { CatalogTile } from '../../CatalogTile';
 import { CatalogTileView } from '../index';
@@ -85,7 +85,7 @@ class MockCatalogTileViewExample extends React.Component {
   render() {
     const { showAll } = this.state;
 
-    const activeCategory = showAll ? mockItems.find(category => category.id === showAll) : null;
+    const activeCategory = showAll ? mockCategories.find(category => category.id === showAll) : null;
 
     return (
       <div>
@@ -98,7 +98,7 @@ class MockCatalogTileViewExample extends React.Component {
         <CatalogTileView>
           {activeCategory
             ? this.renderCategory(activeCategory)
-            : mockItems.map(category => this.renderCategory(category))}
+            : mockCategories.map(category => this.renderCategory(category))}
         </CatalogTileView>
       </div>
     );
@@ -117,7 +117,7 @@ export const MockCatalogTileViewExampleSource = `
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Breadcrumb, EmptyState, Icon } from 'patternfly-react';
-import { mockItems } from './mockItems';
+import { mockCategories } from './mockCategories';
 
 import { CatalogTile } from '../../CatalogTile';
 import { CatalogTileView } from '../index';
@@ -201,7 +201,7 @@ class MockCatalogTileViewExample extends React.Component {
   render() {
     const { showAll } = this.state;
 
-    const activeCategory = showAll ? mockItems.find(category => category.id === showAll) : null;
+    const activeCategory = showAll ? mockCategories.find(category => category.id === showAll) : null;
 
     return (
       <div>
@@ -214,7 +214,7 @@ class MockCatalogTileViewExample extends React.Component {
         <CatalogTileView>
           {activeCategory
             ? this.renderCategory(activeCategory)
-            : mockItems.map(category => this.renderCategory(category))}
+            : mockCategories.map(category => this.renderCategory(category))}
         </CatalogTileView>
       </div>
     );

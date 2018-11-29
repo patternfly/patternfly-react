@@ -7,6 +7,10 @@ import { boolean, withKnobs } from '@storybook/addon-knobs';
 
 import { name } from '../../../package.json';
 import { MockCatalogTileViewExample, MockCatalogTileViewExampleSource } from './__mocks__/mockCatalogTileViewExample';
+import {
+  MockCatalogTileViewNoCategoriesExample,
+  MockCatalogTileViewNoCategoriesExampleSource
+} from './__mocks__/mockCatalogTileViewNoCategoriesExample';
 
 import { CatalogTileView, CatalogTileViewCategory } from './index';
 import { CatalogTile, CatalogTileBadge } from '../CatalogTile';
@@ -40,4 +44,26 @@ stories.add(
     const emptyState = boolean('Empty State', false);
     return <MockCatalogTileViewExample emptyState={emptyState} />;
   })
+);
+
+const noCategoryStories = storiesOf(`${storybookPackageName(name)}/Catalog Components/Catalog Tile View`, module);
+
+noCategoryStories.addDecorator(
+  defaultTemplate({
+    title: 'Catalog Tile View'
+  })
+);
+noCategoryStories.add(
+  'CatalogTileView w/o Categories',
+  withInfo({
+    source: false,
+    propTables: [CatalogTileView, CatalogTile, CatalogTileBadge],
+    propTablesExclude: [MockCatalogTileViewNoCategoriesExample],
+    text: (
+      <div>
+        <h1>Story Source</h1>
+        <pre>{MockCatalogTileViewNoCategoriesExampleSource}</pre>
+      </div>
+    )
+  })(() => <MockCatalogTileViewNoCategoriesExample />)
 );
