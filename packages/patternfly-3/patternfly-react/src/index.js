@@ -22,6 +22,7 @@ export * from './components/InlineEdit';
 export * from './components/Label';
 export * from './components/ListGroup';
 export * from './components/ListView';
+export * from './components/LoadingState';
 export * from './components/LoginPage';
 export * from './components/Masthead';
 export * from './components/MenuItem';
