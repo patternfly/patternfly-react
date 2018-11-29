@@ -31,7 +31,7 @@ const propTypes = {
   passwordValue: PropTypes.string,
   /** Function that handles the onChange event for the Password */
   onChangePassword: PropTypes.func,
-  /** Helper Text for the Username Input Field */
+  /** Helper Text for the Password Input Field */
   passwordHelperText: PropTypes.string,
   /** Helper Text for the Password Input Field when it is invalid */
   passwordHelperTextInvalid: PropTypes.string,
@@ -118,7 +118,7 @@ const LoginForm = ({
         isRequired
         isValid={isValidUsername}
         type="text"
-        mame="pf-login-username-id"
+        name="pf-login-username-id"
         value={usernameValue}
         onChange={onChangeUsername}
       />
