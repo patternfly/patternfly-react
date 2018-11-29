@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.12.3"></a>
+## [7.12.3](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.2...patternfly3-react-lerna-root@7.12.3) (2018-11-29)
+
+
+### Bug Fixes
+
+* **CatalogTileView:** Support tiles without categories. ([#977](https://github.com/patternfly/patternfly-react/issues/977)) ([134af90](https://github.com/patternfly/patternfly-react/commit/134af90))
+
+
+
+
 <a name="7.12.2"></a>
 ## [7.12.2](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.1...patternfly3-react-lerna-root@7.12.2) (2018-11-28)
 

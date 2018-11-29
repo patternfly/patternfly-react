@@ -1,5 +1,45 @@
 
-## Change Log (2018-11-28)
+## Change Log (2018-11-29)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#977](https://github.com/patternfly/patternfly-react/pull/977) fix(CatalogTileView): Support tiles without categories. ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly4-react-lerna-root@1.28.1 (2018-11-28)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#954](https://github.com/patternfly/patternfly-react/pull/954) fix(Dropdown): Apply `pf-m-plain` modifier to dropdown toggle element instead of wrapper ([@TheRealJon](https://github.com/TheRealJon))
+
+#### Committers: 1
+- Jon Jackson ([@TheRealJon](https://github.com/TheRealJon))
+
+
+## @patternfly/react-table@0.2.6 (2018-11-28)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#954](https://github.com/patternfly/patternfly-react/pull/954) fix(Dropdown): Apply `pf-m-plain` modifier to dropdown toggle element instead of wrapper ([@TheRealJon](https://github.com/TheRealJon))
+
+#### Committers: 1
+- Jon Jackson ([@TheRealJon](https://github.com/TheRealJon))
+
+
+## @patternfly/react-docs@3.19.14 (2018-11-28)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#954](https://github.com/patternfly/patternfly-react/pull/954) fix(Dropdown): Apply `pf-m-plain` modifier to dropdown toggle element instead of wrapper ([@TheRealJon](https://github.com/TheRealJon))
+
+#### Committers: 1
+- Jon Jackson ([@TheRealJon](https://github.com/TheRealJon))
+
+
+## @patternfly/react-core@1.38.1 (2018-11-28)
 
 #### :bug: Bug Fix
 * `patternfly-4`
