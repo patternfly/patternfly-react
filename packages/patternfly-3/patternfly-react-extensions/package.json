@@ -43,6 +43,7 @@
     "css-element-queries": "^1.0.1",
     "patternfly": "^3.58.0",
     "patternfly-react": "^2.25.1",
+    "react-bootstrap": "^0.32.1",
     "react-virtualized": "9.x"
   },
   "peerDependencies": {

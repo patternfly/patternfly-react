@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, helpers } from 'patternfly-react';
+import { Button } from 'patternfly-react';
+import { helpers } from '../../common/helpers';
 
 const FilterSidePanelCategory = ({
   children,

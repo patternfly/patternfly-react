@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, Grid, Icon, helpers } from 'patternfly-react';
+import { Button, Grid, Icon } from 'patternfly-react';
+import { helpers } from '../../common/helpers';
 
 /**
  * TableGridColumnHeader Component for PatternFly
