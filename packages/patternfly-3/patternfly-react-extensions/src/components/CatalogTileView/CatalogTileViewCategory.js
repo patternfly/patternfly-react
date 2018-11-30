@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Button, helpers } from 'patternfly-react';
+import { Button } from 'patternfly-react';
 import { ResizeSensor } from 'css-element-queries';
 import Break from 'breakjs';
+import { helpers } from '../../common/helpers';
 import CatalogTile from '../CatalogTile/CatalogTile';
 
 const layout =

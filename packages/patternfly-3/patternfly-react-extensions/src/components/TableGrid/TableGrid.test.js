@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Grid, Icon, helpers } from 'patternfly-react';
+import { Grid, Icon } from 'patternfly-react';
+import { helpers } from '../../common/helpers';
 
 import { TableGrid } from './index';
 
