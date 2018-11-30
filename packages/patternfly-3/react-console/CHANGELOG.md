@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.9.2"></a>
+## [1.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.1...@patternfly/react-console@1.9.2) (2018-11-30)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
 <a name="1.9.1"></a>
 ## [1.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.0...@patternfly/react-console@1.9.1) (2018-11-27)
 
