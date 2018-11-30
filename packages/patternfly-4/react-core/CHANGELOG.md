@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.38.4"></a>
+## [1.38.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.38.3...@patternfly/react-core@1.38.4) (2018-11-30)
+
+
+### Bug Fixes
+
+* **LoginPage:** typos ([#988](https://github.com/patternfly/patternfly-react/issues/988)) ([fb61a15](https://github.com/patternfly/patternfly-react/commit/fb61a15))
+
+
+
+
 <a name="1.38.3"></a>
 ## [1.38.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.38.2...@patternfly/react-core@1.38.3) (2018-11-30)
 

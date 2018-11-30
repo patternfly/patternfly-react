@@ -1,4 +1,14 @@
 
+## Change Log (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#988](https://github.com/patternfly/patternfly-react/pull/988) fix(LoginPage): typos ([@mcoker](https://github.com/mcoker))
+
+#### Committers: 1
+- Michael Coker ([@mcoker](https://github.com/mcoker))
+
+
 ## patternfly4-react-lerna-root@1.28.2 (2018-11-30)
 
 #### :bug: Bug Fix
