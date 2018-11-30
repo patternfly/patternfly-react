@@ -3,6 +3,27 @@
 
 #### :bug: Bug Fix
 * `patternfly-3`
+  * [#980](https://github.com/patternfly/patternfly-react/pull/980) fix(LoadingState): Add LoadingState component to exports (#881) ([@xprazak2](https://github.com/xprazak2))
+
+#### Committers: 2
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+
+
+## patternfly3-react-lerna-root@7.12.4 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#985](https://github.com/patternfly/patternfly-react/pull/985) fix(extensions): Create local helpers to lessen dependencies ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.13.11 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-3`
   * [#985](https://github.com/patternfly/patternfly-react/pull/985) fix(extensions): Create local helpers to lessen dependencies ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
 
 #### Committers: 1

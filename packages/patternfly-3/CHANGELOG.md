@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.12.5"></a>
+## [7.12.5](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.4...patternfly3-react-lerna-root@7.12.5) (2018-11-30)
+
+
+### Bug Fixes
+
+* **AccessConsoles:** Fix child component recognition in production build ([#979](https://github.com/patternfly/patternfly-react/issues/979)) ([dcd4065](https://github.com/patternfly/patternfly-react/commit/dcd4065))
+* **LoadingState:** Add LoadingState component to exports ([#881](https://github.com/patternfly/patternfly-react/issues/881)) ([#980](https://github.com/patternfly/patternfly-react/issues/980)) ([fb1e0e6](https://github.com/patternfly/patternfly-react/commit/fb1e0e6))
+
+
+
+
 <a name="7.12.4"></a>
 ## [7.12.4](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.3...patternfly3-react-lerna-root@7.12.4) (2018-11-30)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.25.2"></a>
+## [2.25.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.1...patternfly-react@2.25.2) (2018-11-30)
+
+
+### Bug Fixes
+
+* **LoadingState:** Add LoadingState component to exports ([#881](https://github.com/patternfly/patternfly-react/issues/881)) ([#980](https://github.com/patternfly/patternfly-react/issues/980)) ([fb1e0e6](https://github.com/patternfly/patternfly-react/commit/fb1e0e6))
+
+
+
+
 <a name="2.25.1"></a>
 ## [2.25.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.0...patternfly-react@2.25.1) (2018-11-27)
 
