@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.9.3"></a>
+## [1.9.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.1...@patternfly/react-console@1.9.3) (2018-11-30)
+
+
+### Bug Fixes
+
+* **AccessConsoles:** Fix child component recognition in production build ([#979](https://github.com/patternfly/patternfly-react/issues/979)) ([dcd4065](https://github.com/patternfly/patternfly-react/commit/dcd4065))
+
+
+
+
 <a name="1.9.2"></a>
 ## [1.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.1...@patternfly/react-console@1.9.2) (2018-11-30)
 
