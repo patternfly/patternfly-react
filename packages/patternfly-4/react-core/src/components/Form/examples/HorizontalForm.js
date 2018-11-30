@@ -55,7 +55,7 @@ class HorizontalForm extends React.Component {
     return (
       <Form isHorizontal>
         <FormGroup
-          label="required Name"
+          label="Required Name"
           isRequired
           fieldId="horizontal-form-name"
           helperText="Please provide your full name"
@@ -65,12 +65,12 @@ class HorizontalForm extends React.Component {
             isRequired
             type="text"
             id="horizontal-form-name"
-            describedby="horizontal-form-name-helper"
+            aria-describedby="horizontal-form-name-helper"
             name="horizontal-form-name"
             onChange={this.handleTextInputChange1}
           />
         </FormGroup>
-        <FormGroup label="Email" fieldId="horizontal-form-email">
+        <FormGroup label="Email" isRequired fieldId="horizontal-form-email">
           <TextInput
             value={value2}
             onChange={this.handleTextInputChange2}

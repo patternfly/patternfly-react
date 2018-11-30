@@ -36,7 +36,7 @@ class SimpleForm extends React.Component {
     return (
       <Form>
         <FormGroup
-          label="required Name"
+          label="Required Name"
           isRequired
           fieldId="simple-form-name"
           helperText="Please provide your full name"
@@ -46,12 +46,12 @@ class SimpleForm extends React.Component {
             type="text"
             id="simple-form-name"
             name="simple-form-name"
-            aria-describedby="simple-form-name-helper-1"
+            aria-describedby="simple-form-name-helper"
             value={value1}
             onChange={this.handleTextInputChange1}
           />
         </FormGroup>
-        <FormGroup label="required Email" isRequired fieldId="simple-form-email">
+        <FormGroup label="Required Email" isRequired fieldId="simple-form-email">
           <TextInput
             isRequired
             type="email"
@@ -61,7 +61,7 @@ class SimpleForm extends React.Component {
             onChange={this.handleTextInputChange2}
           />
         </FormGroup>
-        <FormGroup label="Phone number" fieldId="simple-form-number">
+        <FormGroup label="Phone number" isRequired fieldId="simple-form-number">
           <TextInput
             isRequired
             type="tel"

@@ -13,7 +13,7 @@ class InvalidForm extends React.Component {
           fieldId="email-label"
           isValid={false}
         >
-          <TextInput isValid={false} value="email||email.com" id="email-label" aria-errormesssage="email-helper" />
+          <TextInput isValid={false} value="email||email.com" id="email-label" aria-describedby="email-label-helper" />
         </FormGroup>
         <FormGroup
           label="Age"
@@ -23,7 +23,7 @@ class InvalidForm extends React.Component {
           fieldId="age"
           isValid={false}
         >
-          <TextInput isValid={false} value="Five" aria-label="Object" id="age" aria-errormesssage="age-helper" />
+          <TextInput isValid={false} value="Five" id="age" aria-describedby="age-helper" />
         </FormGroup>
       </Form>
     );
