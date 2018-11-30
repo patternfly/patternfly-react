@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Grid, Form, Dropdown, MenuItem } from 'patternfly-react';
+import { Grid, Form, Dropdown, MenuItem, helpers } from 'patternfly-react';
 
 import constants from '../common/constants';
 
@@ -9,9 +9,11 @@ const { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } = constants;
 const { Row, Col } = Grid;
 const { Checkbox, FormGroup } = Form;
 
-const getChildTypeName = child => (child.props.type ? child.props.type : (child.type && child.type.name) || null);
+const getChildTypeName = child =>
+  child.props.type ? child.props.type : (child.type && child.type.displayName) || null;
 
-const isChildOfType = (child, type) => getChildTypeName(child) === type;
+const isChildOfType = (child, type) =>
+  child.props.type === type || (!child.props.type && helpers.hasDisplayName(child, type));
 
 class AccessConsoles extends React.Component {
   state = {

@@ -130,6 +130,8 @@ class VncConsole extends React.Component {
   }
 }
 
+VncConsole.displayName = 'VncConsole';
+
 VncConsole.propTypes = {
   children: PropTypes.node /** Children nodes */,
 
