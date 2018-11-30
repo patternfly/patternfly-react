@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.13.11"></a>
+## [2.13.11](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.10...patternfly-react-extensions@2.13.11) (2018-11-30)
+
+
+### Bug Fixes
+
+* **extensions:** Create local helpers to lessen dependencies ([#985](https://github.com/patternfly/patternfly-react/issues/985)) ([3e1d440](https://github.com/patternfly/patternfly-react/commit/3e1d440))
+
+
+
+
 <a name="2.13.10"></a>
 ## [2.13.10](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.9...patternfly-react-extensions@2.13.10) (2018-11-29)
 

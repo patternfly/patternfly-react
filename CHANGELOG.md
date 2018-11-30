@@ -1,5 +1,25 @@
 
-## Change Log (2018-11-29)
+## Change Log (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#985](https://github.com/patternfly/patternfly-react/pull/985) fix(extensions): Create local helpers to lessen dependencies ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.12.3 (2018-11-29)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#977](https://github.com/patternfly/patternfly-react/pull/977) fix(CatalogTileView): Support tiles without categories. ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.13.10 (2018-11-29)
 
 #### :bug: Bug Fix
 * `patternfly-3`
