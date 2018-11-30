@@ -131,6 +131,8 @@ class SerialConsole extends React.Component {
   }
 }
 
+SerialConsole.displayName = 'SerialConsole';
+
 SerialConsole.propTypes = {
   /** Initiate connection to backend. In other words, the calling components manages connection state. */
   onConnect: PropTypes.func.isRequired,
