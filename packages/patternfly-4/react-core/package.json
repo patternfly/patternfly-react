@@ -6,7 +6,7 @@
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
   "patternfly:src": "src/",
-  "sideEffects": false,
+  "sideEffects": ["*.css"],
   "publishConfig": {
     "access": "public"
   },
