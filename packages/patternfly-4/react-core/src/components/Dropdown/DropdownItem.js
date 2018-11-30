@@ -30,12 +30,16 @@ const defaultProps = {
 
 const DropdownItem = ({ className, children, isHovered, component: Component, isDisabled, ...props }) => {
   const additionalProps = props;
-  if (Component === 'a') {
+  if (children && children.type && children.type.name === 'Link') {
+    Component = 'div';
+    additionalProps.href = null;
+  } else if (Component === 'a') {
     additionalProps['aria-disabled'] = isDisabled;
     additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
   } else if (Component === 'button') {
     additionalProps.disabled = isDisabled;
   }
+
   return (
     <li>
       <Component
