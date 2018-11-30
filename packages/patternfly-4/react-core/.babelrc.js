@@ -3,30 +3,44 @@ const modules = babelENV !== 'production:esm' ? 'commonjs' : false;
 
 module.exports = {
   presets: [['@babel/env', { modules }], '@babel/react'],
+  ignore: (() => {
+    const ignore = ['src/**/__snapshots__'];
+    ignore.push('src/**/*.d.ts');
+    if (babelENV.includes('production')) {
+      ignore.push('test.js', '__mocks__');
+    }
+    return ignore;
+  })(),
   env: {
-    "production:esm": {
+    'production:esm': {
       plugins: [
+        'babel-plugin-typescript-to-proptypes',
+        '@babel/proposal-class-properties',
+        '@babel/proposal-object-rest-spread',
         [
-          "@patternfly/react-styles/babel",
+          '@patternfly/react-styles/babel',
           {
-            srcDir: "./src",
-            outDir: "./dist/esm",
+            srcDir: './src',
+            outDir: './dist/esm',
             useModules: true
           }
         ]
       ]
     },
-    "production:cjs": {
+    'production:cjs': {
       plugins: [
+        'babel-plugin-typescript-to-proptypes',
+        '@babel/proposal-class-properties',
+        '@babel/proposal-object-rest-spread',
         [
-          "@patternfly/react-styles/babel",
+          '@patternfly/react-styles/babel',
           {
-            srcDir: "./src",
-            outDir: "./dist/js",
+            srcDir: './src',
+            outDir: './dist/js',
             useModules: false
           }
         ]
       ]
     }
   }
-}
+};

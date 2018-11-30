@@ -38,12 +38,11 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "prebuild": "yarn build:typescript",
     "build": "yarn build:babel && yarn build:tsd:copy",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel tsc_out --out-dir dist/js",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel tsc_out --out-dir dist/esm",
-    "build:typescript": "tsc",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js --extensions \".js,jsx,.ts,.tsx\"",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions \".js,jsx,.ts,.tsx\"",
+    "build:typecheck": "tsc",
     "build:tsd:copy": "node ./scripts/copyTS.js",
     "postbuild": "node ./build/copyStyles.js"
   },
@@ -60,9 +59,11 @@
     "@babel/plugin-transform-object-assign": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^22.4.3",
     "babel-plugin-transform-imports": "^1.5.0",
+    "babel-plugin-typescript-to-proptypes": "^0.13.0",
     "@patternfly/patternfly-next": "1.0.87",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
