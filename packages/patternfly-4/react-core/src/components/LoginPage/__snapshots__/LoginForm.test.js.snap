@@ -43,7 +43,7 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       isReadOnly={false}
       isRequired={true}
       isValid={true}
-      mame="pf-login-username-id"
+      name="pf-login-username-id"
       onChange={[Function]}
       type="text"
       value=""
@@ -153,7 +153,7 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       isReadOnly={false}
       isRequired={true}
       isValid={true}
-      mame="pf-login-username-id"
+      name="pf-login-username-id"
       onChange={[Function]}
       type="text"
       value=""
@@ -258,7 +258,7 @@ exports[`should render Login form 1`] = `
       isReadOnly={false}
       isRequired={true}
       isValid={true}
-      mame="pf-login-username-id"
+      name="pf-login-username-id"
       onChange={[Function]}
       type="text"
       value=""
