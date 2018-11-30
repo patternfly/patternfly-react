@@ -1,17 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@patternfly/react-styles';
-import flexStyles from '@patternfly/patternfly-next/utilities/Flex/flex.css';
-import displayStyles from '@patternfly/patternfly-next/utilities/Display/display.css';
-import alignmentStyles from '@patternfly/patternfly-next/utilities/Alignment/alignment.css';
-import spacingStyles from '@patternfly/patternfly-next/utilities/Spacing/spacing.css';
 import { Form, FormGroup, ActionGroup } from '../Form';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 
 const propTypes = {
-  /** Additional classes added to the LoginBox Body */
+  /** Additional classes added to the Login Main Body's Form */
   className: PropTypes.string,
   /** Label for the Username Input Field */
   usernameLabel: PropTypes.string,
@@ -141,40 +136,19 @@ const LoginForm = ({
         onChange={onChangePassword}
       />
     </FormGroup>
-    <ActionGroup
-      className={css(
-        displayStyles.displayFlex,
-        flexStyles.alignItemsCenter,
-        flexStyles.flexDirectionColumn,
-        flexStyles.flexDirectionRowOnMd
-      )}
-    >
-      <Button
-        className={css(
-          spacingStyles.mrLgOnMd,
-          spacingStyles.pxXl,
-          flexStyles.alignSelfStretch,
-          flexStyles.alignSelfFlexStartOnMd
-        )}
-        variant="primary"
-        type="submit"
-        onClick={onLoginButtonClick}
-        isDisabled={isLoginButtonDisabled}
-      >
+    <ActionGroup>
+      <Button variant="primary" type="submit" onClick={onLoginButtonClick} isDisabled={isLoginButtonDisabled}>
         {loginButtonLabel}
       </Button>
-      <div className={css(alignmentStyles.textAlignCenter, alignmentStyles.textAlignLeftOnMd)}>
-        {rememberMeLabel.length > 0 && (
-          <Checkbox
-            className={css(spacingStyles.mMd, flexStyles.alignItemsCenter, displayStyles.displayFlex)}
-            id="pf-login-remember-me-id"
-            label={rememberMeLabel}
-            checked={isRememberMeChecked}
-            onChange={onChangeRememberMe}
-            aria-label={rememberMeAriaLabel}
-          />
-        )}
-      </div>
+      {rememberMeLabel.length > 0 && (
+        <Checkbox
+          id="pf-login-remember-me-id"
+          label={rememberMeLabel}
+          checked={isRememberMeChecked}
+          onChange={onChangeRememberMe}
+          aria-label={rememberMeAriaLabel}
+        />
+      )}
     </ActionGroup>
   </Form>
 );

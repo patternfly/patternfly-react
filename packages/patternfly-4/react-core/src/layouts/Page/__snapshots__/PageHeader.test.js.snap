@@ -7,13 +7,12 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 .pf-l-page__header-brand {
   display: block;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
 }
 .pf-l-page__header-tools {
   display: block;
   align-items: center;
-  margin-right: 1rem;
-  margin-left: auto;
+  margin: 0.5rem 1rem 0.5rem auto;
 }
 .pf-l-page__header {
   display: flex;
@@ -22,7 +21,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   flex-wrap: wrap;
   align-items: center;
   max-width: 100%;
-  height: 4.75rem;
+  min-height: 4.75rem;
 }
 
 <PageHeader

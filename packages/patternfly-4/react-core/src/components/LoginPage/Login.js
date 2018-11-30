@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/layouts/Login/login.css';
+import styles from '@patternfly/patternfly-next/components/Login/login.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 

@@ -1,26 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates console error 1`] = `
-.pf-u-mr-lg-on-md.pf-u-px-xl.pf-u-align-self-stretch.pf-u-align-self-flex-start-on-md {
-  display: block;
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
-.pf-u-m-md.pf-u-align-items-center.pf-u-display-flex {
-  display: flex;
-  align-items: center;
-  margin: 1rem;
-}
-.pf-u-text-align-center.pf-u-text-align-left-on-md {
-  display: block;
-  text-align: center;
-}
-.pf-u-display-flex.pf-u-align-items-center.pf-u-flex-direction-column.pf-u-flex-direction-row-on-md {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 <Form
   className=""
   isHorizontal={false}
@@ -74,11 +54,11 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
     />
   </FormGroup>
   <ActionGroup
-    className="pf-u-display-flex pf-u-align-items-center pf-u-flex-direction-column pf-u-flex-direction-row-on-md"
+    className=""
   >
     <Button
       aria-label={null}
-      className="pf-u-mr-lg-on-md pf-u-px-xl pf-u-align-self-stretch pf-u-align-self-flex-start-on-md"
+      className=""
       component="button"
       isActive={false}
       isBlock={false}
@@ -91,46 +71,22 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
     >
       Log In
     </Button>
-    <div
-      className="pf-u-text-align-center pf-u-text-align-left-on-md"
-    >
-      <Checkbox
-        aria-label=""
-        checked={false}
-        className="pf-u-m-md pf-u-align-items-center pf-u-display-flex"
-        id="pf-login-remember-me-id"
-        isChecked={null}
-        isDisabled={false}
-        isValid={true}
-        label="remember me"
-        onChange={[MockFunction]}
-      />
-    </div>
+    <Checkbox
+      aria-label=""
+      checked={false}
+      className=""
+      id="pf-login-remember-me-id"
+      isChecked={null}
+      isDisabled={false}
+      isValid={true}
+      label="remember me"
+      onChange={[MockFunction]}
+    />
   </ActionGroup>
 </Form>
 `;
 
 exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generates console error 1`] = `
-.pf-u-mr-lg-on-md.pf-u-px-xl.pf-u-align-self-stretch.pf-u-align-self-flex-start-on-md {
-  display: block;
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
-.pf-u-m-md.pf-u-align-items-center.pf-u-display-flex {
-  display: flex;
-  align-items: center;
-  margin: 1rem;
-}
-.pf-u-text-align-center.pf-u-text-align-left-on-md {
-  display: block;
-  text-align: center;
-}
-.pf-u-display-flex.pf-u-align-items-center.pf-u-flex-direction-column.pf-u-flex-direction-row-on-md {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 <Form
   className=""
   isHorizontal={false}
@@ -184,11 +140,11 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
     />
   </FormGroup>
   <ActionGroup
-    className="pf-u-display-flex pf-u-align-items-center pf-u-flex-direction-column pf-u-flex-direction-row-on-md"
+    className=""
   >
     <Button
       aria-label={null}
-      className="pf-u-mr-lg-on-md pf-u-px-xl pf-u-align-self-stretch pf-u-align-self-flex-start-on-md"
+      className=""
       component="button"
       isActive={false}
       isBlock={false}
@@ -201,41 +157,22 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
     >
       Log In
     </Button>
-    <div
-      className="pf-u-text-align-center pf-u-text-align-left-on-md"
-    >
-      <Checkbox
-        aria-label="remember me"
-        checked={false}
-        className="pf-u-m-md pf-u-align-items-center pf-u-display-flex"
-        id="pf-login-remember-me-id"
-        isChecked={null}
-        isDisabled={false}
-        isValid={true}
-        label="remember me"
-        onChange={[MockFunction]}
-      />
-    </div>
+    <Checkbox
+      aria-label="remember me"
+      checked={false}
+      className=""
+      id="pf-login-remember-me-id"
+      isChecked={null}
+      isDisabled={false}
+      isValid={true}
+      label="remember me"
+      onChange={[MockFunction]}
+    />
   </ActionGroup>
 </Form>
 `;
 
 exports[`should render Login form 1`] = `
-.pf-u-mr-lg-on-md.pf-u-px-xl.pf-u-align-self-stretch.pf-u-align-self-flex-start-on-md {
-  display: block;
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
-.pf-u-text-align-center.pf-u-text-align-left-on-md {
-  display: block;
-  text-align: center;
-}
-.pf-u-display-flex.pf-u-align-items-center.pf-u-flex-direction-column.pf-u-flex-direction-row-on-md {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 <Form
   className=""
   isHorizontal={false}
@@ -289,11 +226,11 @@ exports[`should render Login form 1`] = `
     />
   </FormGroup>
   <ActionGroup
-    className="pf-u-display-flex pf-u-align-items-center pf-u-flex-direction-column pf-u-flex-direction-row-on-md"
+    className=""
   >
     <Button
       aria-label={null}
-      className="pf-u-mr-lg-on-md pf-u-px-xl pf-u-align-self-stretch pf-u-align-self-flex-start-on-md"
+      className=""
       component="button"
       isActive={false}
       isBlock={false}
@@ -306,9 +243,6 @@ exports[`should render Login form 1`] = `
     >
       Log In
     </Button>
-    <div
-      className="pf-u-text-align-center pf-u-text-align-left-on-md"
-    />
   </ActionGroup>
 </Form>
 `;

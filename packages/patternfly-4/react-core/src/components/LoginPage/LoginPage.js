@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 
 import Login from './Login';
 import LoginHeader from './LoginHeader';
-import LoginHeaderBrand from './LoginHeaderBrand';
 import LoginFooter from './LoginFooter';
 
-import LoginBox from './LoginBox';
-import LoginBoxHeader from './LoginBoxHeader';
-import LoginBoxBody from './LoginBoxBody';
-import LoginBoxFooter from './LoginBoxFooter';
+import LoginMainHeader from './LoginMainHeader';
+import LoginMainBody from './LoginMainBody';
+import LoginMainFooter from './LoginMainFooter';
 
 import { BackgroundImage } from '../BackgroundImage';
 import { Brand } from '../Brand';
@@ -41,13 +39,13 @@ const propTypes = {
   mainListItems: PropTypes.node,
   /** Adds list variant styles for the List component of the LoginPage */
   mainListVariants: PropTypes.oneOf(Object.values(LoginListVariant)),
-  /** Language dropdown component for the LoginBox Header of the LoginPage */
+  /** Language dropdown component for the Login Main Body Header of the LoginPage */
   loginLanguageDropdown: PropTypes.node,
-  /** Title for the LoginBox Header of the LoginPage */
+  /** Title for the Login Main Body Header of the LoginPage */
   loginTitle: PropTypes.string.isRequired,
-  /** Login subtitle that contains the Text, URL, and URL Text for the LoginBox Header of the LoginPage */
+  /** Login subtitle that contains the Text, URL, and URL Text for the Login Main Body Header of the LoginPage */
   loginSubtitle: PropTypes.node,
-  /** Content rendered inside of the LoginBox Footer of the LoginPage */
+  /** Content rendered inside of the Login Main Body Footer of the LoginPage */
   loginFooterContent: PropTypes.node
 };
 
@@ -84,9 +82,7 @@ const LoginPage = ({
 }) => {
   const HeaderBrand = (
     <React.Fragment>
-      <LoginHeaderBrand>
-        <Brand src={mainBrandImgSrc} alt={mainBrandImgAlt} />
-      </LoginHeaderBrand>
+      <Brand src={mainBrandImgSrc} alt={mainBrandImgAlt} />
       <TextContent>
         <Text>{mainTextContent}</Text>
       </TextContent>
@@ -103,11 +99,9 @@ const LoginPage = ({
     <React.Fragment>
       {mainBackgroundImgSrc && <BackgroundImage src={mainBackgroundImgSrc} alt={mainBackgroundImgAlt} />}
       <Login header={Header} footer={Footer} {...props} className={css(className)}>
-        <LoginBox>
-          <LoginBoxHeader title={loginTitle} dropdown={loginLanguageDropdown} subtitle={loginSubtitle} />
-          <LoginBoxBody>{children}</LoginBoxBody>
-          {loginFooterContent && <LoginBoxFooter>{loginFooterContent}</LoginBoxFooter>}
-        </LoginBox>
+        <LoginMainHeader title={loginTitle} dropdown={loginLanguageDropdown} subtitle={loginSubtitle} />
+        <LoginMainBody>{children}</LoginMainBody>
+        {loginFooterContent && <LoginMainFooter>{loginFooterContent}</LoginMainFooter>}
       </Login>
     </React.Fragment>
   );
