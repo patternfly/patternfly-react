@@ -5,11 +5,18 @@ import { noop } from 'patternfly-react';
 import { AccessConsoles } from './index';
 import { SerialConsole } from '../SerialConsole';
 import { VncConsole } from '../VncConsole';
+import { DesktopViewer } from '../DesktopViewer';
 import constants from '../common/constants';
 
 const { SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, LOADING } = constants;
 
 const MyVncConsoleTestWrapper = () => <p>This can be VncConsole component or a wrapper</p>;
+
+const vnc = {
+  address: 'my.host.com',
+  port: 5902,
+  tlsPort: '5903'
+};
 
 test('AccessConsoles with SerialConsole as a single child', () => {
   const view = shallow(
@@ -89,7 +96,7 @@ test('AccessConsoles switching SerialConsole and VncConsole', () => {
   let consoleItems = wrapper.find('ul li');
   expect(consoleItems).toHaveLength(2);
   consoleItems
-    .first()
+    .at(1)
     .find('a')
     .simulate('click');
   expect(consoleItems).toMatchSnapshot();
@@ -99,7 +106,7 @@ test('AccessConsoles switching SerialConsole and VncConsole', () => {
   consoleItems = wrapper.find('ul li');
   expect(consoleItems).toHaveLength(2);
   consoleItems
-    .at(1)
+    .at(0)
     .find('a')
     .simulate('click');
   expect(consoleItems).toMatchSnapshot();
@@ -146,7 +153,7 @@ test('AccessConsoles disconnects when switching types', () => {
   wrapper.find('button #console-type-selector').simulate('click');
   wrapper
     .find('ul li')
-    .first()
+    .at(1)
     .find('a')
     .simulate('click'); // Select SerialConsole
 
@@ -156,7 +163,7 @@ test('AccessConsoles disconnects when switching types', () => {
   wrapper.find('button #console-type-selector').simulate('click');
   wrapper
     .find('ul li')
-    .at(1)
+    .at(0)
     .find('a')
     .simulate('click'); // Select VncConsole
 
@@ -178,7 +185,7 @@ test('AccessConsoles keeps connection when switching types', () => {
   wrapper.find('button #console-type-selector').simulate('click');
   wrapper
     .find('ul li')
-    .first()
+    .at(1)
     .find('a')
     .simulate('click'); // Select SerialConsole
 
@@ -188,7 +195,7 @@ test('AccessConsoles keeps connection when switching types', () => {
   wrapper.find('button #console-type-selector').simulate('click');
   wrapper
     .find('ul li')
-    .at(1)
+    .at(0)
     .find('a')
     .simulate('click'); // Select VncConsole
 
@@ -201,5 +208,14 @@ test('AccessConsoles keeps connection when switching types', () => {
 
 test('Empty AccessConsoles', () => {
   const view = render(<AccessConsoles />);
+  expect(view).toMatchSnapshot();
+});
+
+test('AccessConsoles with DesktopViewer', () => {
+  const view = render(
+    <AccessConsoles>
+      <DesktopViewer vnc={vnc} />
+    </AccessConsoles>
+  );
   expect(view).toMatchSnapshot();
 });

@@ -57,6 +57,8 @@ DesktopViewer.propTypes = {
   textMoreRDPInfo: PropTypes.string /** Internationalization */
 };
 
+DesktopViewer.displayName = 'DesktopViewer';
+
 DesktopViewer.defaultProps = {
   children: null /** Custom content of more-info section  */,
   topClassName: '' /** Custom class name to be added to the root element. */,
