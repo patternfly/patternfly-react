@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.19.16"></a>
+## [3.19.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.15...@patternfly/react-docs@3.19.16) (2018-11-30)
+
+
+### Bug Fixes
+
+* **a11y:** tweak html for better accessibility ([#917](https://github.com/patternfly/patternfly-react/issues/917)) ([c1af473](https://github.com/patternfly/patternfly-react/commit/c1af473))
+
+
+
+
 <a name="3.19.15"></a>
 ## [3.19.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.14...@patternfly/react-docs@3.19.15) (2018-11-30)
 

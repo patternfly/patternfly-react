@@ -1,5 +1,35 @@
 
-## Change Log (2018-11-30)
+## patternfly4-react-lerna-root@1.28.2 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#983](https://github.com/patternfly/patternfly-react/pull/983) fix(packageJson) : Updated package.json to fix prod issue when import… ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-table@0.2.7 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#983](https://github.com/patternfly/patternfly-react/pull/983) fix(packageJson) : Updated package.json to fix prod issue when import… ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-docs@3.19.15 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#983](https://github.com/patternfly/patternfly-react/pull/983) fix(packageJson) : Updated package.json to fix prod issue when import… ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-core@1.38.2 (2018-11-30)
 
 #### :bug: Bug Fix
 * `patternfly-4`
