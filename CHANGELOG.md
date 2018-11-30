@@ -2,6 +2,49 @@
 ## Change Log (2018-11-30)
 
 #### :bug: Bug Fix
+* `patternfly-4`
+  * [#983](https://github.com/patternfly/patternfly-react/pull/983) fix(packageJson) : Updated package.json to fix prod issue when import… ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## patternfly3-react-lerna-root@7.12.6 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#980](https://github.com/patternfly/patternfly-react/pull/980) fix(LoadingState): Add LoadingState component to exports (#881) ([@xprazak2](https://github.com/xprazak2))
+
+#### Committers: 2
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+
+
+## patternfly-react@2.25.3 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#980](https://github.com/patternfly/patternfly-react/pull/980) fix(LoadingState): Add LoadingState component to exports (#881) ([@xprazak2](https://github.com/xprazak2))
+
+#### Committers: 2
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+
+
+## patternfly-react-extensions@2.13.13 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#980](https://github.com/patternfly/patternfly-react/pull/980) fix(LoadingState): Add LoadingState component to exports (#881) ([@xprazak2](https://github.com/xprazak2))
+
+#### Committers: 2
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+- Ondřej Pražák ([@xprazak2](https://github.com/xprazak2))
+
+
+## @patternfly/react-console@1.9.3 (2018-11-30)
+
+#### :bug: Bug Fix
 * `patternfly-3`
   * [#980](https://github.com/patternfly/patternfly-react/pull/980) fix(LoadingState): Add LoadingState component to exports (#881) ([@xprazak2](https://github.com/xprazak2))
 

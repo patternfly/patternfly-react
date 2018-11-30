@@ -1,12 +1,14 @@
 {
   "name": "@patternfly/react-core",
-  "version": "1.38.1",
+  "version": "1.38.2",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
   "patternfly:src": "src/",
-  "sideEffects": ["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "publishConfig": {
     "access": "public"
   },
