@@ -1,8 +1,9 @@
+
 import * as React from 'react';
 import { OneOf } from '../../typeUtils';
 import { componentShape } from '../../internal/componentShape';
 import { css, getModifier } from '@patternfly/react-styles';
-import * as styles from '@patternfly/patternfly-next/components/Button/button.css';
+import styles from '@patternfly/patternfly-next/components/Button/button.css';
 
 export const ButtonVariant = {
   primary: 'primary',
@@ -67,4 +68,4 @@ const Button: React.SFC<Props> = ({children,
      </button>)
 };
 
-export default Button;
+export default {Button, ButtonType, ButtonVariant};

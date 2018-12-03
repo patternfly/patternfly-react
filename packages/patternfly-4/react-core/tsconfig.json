@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "sourceMap": true, // allow sourcemap support
@@ -8,7 +9,10 @@
     "module": "es2015", // specify module code generation
     "jsx": "react", // use typescript to transpile jsx to js
     "target": "esnext", // specify ECMAScript target version
-    "allowJs": true // allow a partial TypeScript and JavaScript codebase
+    "allowJs": true, // allow a partial TypeScript and JavaScript codebase
+    "paths": {
+      "*": ["dist/esm/*"]
+    }
   },
   "include": ["./src/**/*"],
   "exclude": ["./src/**/*.d.ts"]
