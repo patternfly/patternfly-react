@@ -40,9 +40,9 @@
   "scripts": {
     "build": "yarn build:babel && yarn build:tsd:copy",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js --extensions \".js,jsx,.ts,.tsx\"",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions \".js,jsx,.ts,.tsx\"",
-    "build:typecheck": "tsc",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js --extensions \".css,.js,jsx,.ts,.tsx\"",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions \".css,.js,jsx,.ts,.tsx\"",
+    "build:typescript": "tsc",
     "build:tsd:copy": "node ./scripts/copyTS.js",
     "postbuild": "node ./build/copyStyles.js"
   },
@@ -60,6 +60,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.0.0",
+    "@patternfly/react-styles": "^2.0.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^22.4.3",
     "babel-plugin-transform-imports": "^1.5.0",
