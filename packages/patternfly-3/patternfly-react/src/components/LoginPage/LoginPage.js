@@ -33,7 +33,7 @@ const LoginPagePattern = ({ container, header, footerLinks, card }) => (
     <LoginPage.Alert {...container.alert} />
     <LoginPage.BasicLayout>
       <LoginPage.Header {...header} />
-      <LoginCard.BasicLayout>
+      <LoginCard.BasicLayout {...card.layout}>
         <LoginCard>
           <LoginCard.Header>
             <LoginCard.LanguagePicker

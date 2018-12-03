@@ -13,11 +13,25 @@ const LoginCardSocialLink = ({ link }) =>
   );
 
 LoginCardSocialLink.propTypes = {
-  link: PropTypes.shape({ ...Link.propTypes })
+  /** the link element props. */
+  link: PropTypes.shape({
+    ...Link.propTypes,
+    /** The image source */
+    src: PropTypes.string.isRequired,
+    /** The image alt description */
+    alt: PropTypes.string,
+    /** The link text */
+    text: PropTypes.string
+  })
 };
 
 LoginCardSocialLink.defaultProps = {
-  link: { ...Link.defaultProps, onClick: e => e.preventDefault() }
+  link: {
+    ...Link.defaultProps,
+    src: null,
+    alt: null,
+    text: null
+  }
 };
 
 export default LoginCardSocialLink;

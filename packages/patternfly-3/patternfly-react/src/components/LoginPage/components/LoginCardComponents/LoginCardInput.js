@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Fade } from 'react-bootstrap';
+import classNames from 'classnames';
 import LoginCardInputWarning from './LoginCardInputWarning';
 import { FormControl, FormGroup, HelpBlock } from '../../../../index';
 import { noop } from '../../../../common/helpers';
@@ -25,8 +26,9 @@ const LoginCardInput = ({
   const helpBlock =
     (showError && <HelpBlock>{error}</HelpBlock>) ||
     (showWarning && <LoginCardInputWarning>{warning}</LoginCardInputWarning>);
+  const validationState = showError ? 'error' : null;
   return (
-    <FormGroup className={`login_card_input ${className}`} controlId={id} validationState={showError ? 'error' : null}>
+    <FormGroup className={classNames('login_card_input', className)} controlId={id} validationState={validationState}>
       <FormControl
         {...attributes}
         type={type}
@@ -47,20 +49,35 @@ const LoginCardInput = ({
 };
 
 LoginCardInput.propTypes = {
+  /** The input's id */
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** The input's HTML type */
   type: PropTypes.string,
-  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /** The input's placeholder */
+  placeholder: PropTypes.string,
+  /** The bsSize of the input */
   size: PropTypes.string,
+  /** The error which is presented under the input */
   error: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /** The warning which is presented under the input */
   warning: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /** A callback which is fired when the input changes. */
   onChange: PropTypes.func,
+  /** Controlls the warning visibility */
   showWarning: PropTypes.bool,
+  /** A callback which is fired when the input blurs. */
   onBlur: PropTypes.func,
+  /** A callback which is fired when the input is focused. */
   onFocus: PropTypes.func,
+  /** A callback which is fired on a key press. */
   onKeyPress: PropTypes.func,
+  /** A callback which is fired when the input blurs. */
   showError: PropTypes.bool,
+  /** An additional css classes */
   className: PropTypes.string,
+  /** Sets the HTML autocomplete */
   autoComplete: PropTypes.string,
+  /** Additional HTML input's attributes. */
   attributes: PropTypes.object
 };
 
@@ -77,7 +94,7 @@ LoginCardInput.defaultProps = {
   onFocus: noop,
   onKeyPress: noop,
   showError: false,
-  className: '',
+  className: null,
   autoComplete: '',
   attributes: null
 };

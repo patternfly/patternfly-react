@@ -44,13 +44,13 @@ exports[`Component matches snapshot 1`] = `
       </div>
     </header>
     <div
-      class="card-pf login-pf-accounts "
+      class="card-pf login-pf-accounts"
     >
       <header
-        class="login-pf-header "
+        class="login-pf-header"
       >
         <div
-          class="bootstrap-select btn-group "
+          class="bootstrap-select btn-group"
         >
           <div
             class="dropdown btn-group"
@@ -107,7 +107,7 @@ exports[`Component matches snapshot 1`] = `
         </h1>
       </header>
       <section
-        class="login-pf-social-section "
+        class="login-pf-social-section"
       >
         <form
           class=""
@@ -124,7 +124,7 @@ exports[`Component matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="login_card_input  form-group"
+            class="login_card_input form-group"
           >
             <input
               autocomplete=""
@@ -138,7 +138,7 @@ exports[`Component matches snapshot 1`] = `
             />
           </div>
           <div
-            class="login_card_input  form-group"
+            class="login_card_input form-group"
           >
             <input
               autocomplete=""
@@ -152,7 +152,7 @@ exports[`Component matches snapshot 1`] = `
             />
           </div>
           <div
-            class="login-pf-settings  form-group"
+            class="login-pf-settings form-group"
           >
             <label
               class="checkbox-label "
@@ -163,7 +163,6 @@ exports[`Component matches snapshot 1`] = `
                Keep me logged in for 30 days
             </label>
             <a
-              class="forgot-password"
               href="#"
             >
               Forgot password?
@@ -178,16 +177,16 @@ exports[`Component matches snapshot 1`] = `
         </form>
       </section>
       <section
-        class="login-pf-social-section "
+        class="login-pf-social-section"
       >
         <div>
           <ul
-            class="login-pf-social list-unstyled "
+            class="login-pf-social list-unstyled"
           />
         </div>
       </section>
       <div
-        class="login-pf-signup "
+        class="login-pf-signup"
       >
         <p>
           Need an account?

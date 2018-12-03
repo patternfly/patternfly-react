@@ -15,7 +15,7 @@ const footerLinks = [
 
 const cardHeader = {
   title: 'Log In to Your Account',
-  selectedLanguage: { value: 'en', text: 'English' },
+  selectedLanguage: 'English',
   availableLanguages: [{ value: 'en', text: 'English' }, { value: 'fr', text: 'French' }]
 };
 

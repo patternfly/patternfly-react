@@ -1,25 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { noop } from '../../../../common/helpers';
+import LoginPageLink from '../LoginPageComponents/LoginPageLink';
 
-const LoginCardForgotPassword = ({ href, onClick, label, ...props }) => (
-  <a {...props} href={href} onClick={onClick}>
-    {label}
-  </a>
-);
+const LoginCardForgotPassword = ({ label, ...props }) => <LoginPageLink {...props}>{label}</LoginPageLink>;
 
 LoginCardForgotPassword.propTypes = {
-  label: PropTypes.string,
-  href: PropTypes.string,
-  className: PropTypes.string,
-  onClick: PropTypes.func
+  /** The forgot password label. */
+  label: PropTypes.string
 };
 
 LoginCardForgotPassword.defaultProps = {
-  label: 'Forgot password?',
-  href: '#',
-  className: 'forgot-password',
-  onClick: noop
+  label: 'Forgot password?'
 };
 
 export default LoginCardForgotPassword;

@@ -15,8 +15,11 @@ const LoginCardSubmitButton = ({ isDisabled, children, isLoading }) => (
 );
 
 LoginCardSubmitButton.propTypes = {
+  /** Sets the button disability  */
   isDisabled: PropTypes.bool,
+  /** Children nodes */
   children: PropTypes.string,
+  /** Sets the spinner visibility */
   isLoading: PropTypes.bool
 };
 
