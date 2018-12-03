@@ -17,6 +17,7 @@ const propTypes = {
   component: componentShape,
   /** Indicates where menu will be alligned horizontally */
   position: PropTypes.oneOf(Object.values(DropdownPosition)),
+  onSelect: PropTypes.func,
   /** Additional props are spread to the container component */
   '': PropTypes.any
 };
@@ -29,8 +30,9 @@ const defaultProps = {
   component: 'ul'
 };
 
-const DropdownMenu = ({ className, isOpen, position, children, component: Component, ...props }) => {
+const DropdownMenu = ({ className, isOpen, position, children, onSelect, component: Component, ...props }) => {
   let menu = null;
+  if (children) children = React.Children.map(children, child => React.cloneElement(child, { onSelect }));
   if (Component === 'div') {
     menu = (
       <Component

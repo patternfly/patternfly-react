@@ -17,8 +17,13 @@ const propTypes = {
   isHovered: PropTypes.bool,
   /** Default hyperlink location */
   href: PropTypes.string,
+<<<<<<< HEAD
   /** Additional props are spread to the container component */
   '': PropTypes.any
+=======
+  /** Function callback called when user selects item */
+  onSelect: PropTypes.func
+>>>>>>> feat(Dropdown): disable selection of disabled menu items
 };
 
 const defaultProps = {
@@ -30,7 +35,7 @@ const defaultProps = {
   href: '#'
 };
 
-const DropdownItem = ({ className, children, isHovered, component: Component, isDisabled, ...props }) => {
+const DropdownItem = ({ className, children, isHovered, onSelect, component: Component, isDisabled, ...props }) => {
   const additionalProps = props;
   if (Component === 'a') {
     additionalProps['aria-disabled'] = isDisabled;
@@ -56,6 +61,7 @@ const DropdownItem = ({ className, children, isHovered, component: Component, is
         <Component
           {...additionalProps}
           className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
+          onClick={!isDisabled ? onSelect : null}
         >
           {children}
         </Component>
