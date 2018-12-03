@@ -49,7 +49,7 @@ class ComponentDocs extends React.PureComponent {
         {Boolean(description) && (
           <p className={css(styles.description)} dangerouslySetInnerHTML={makeDescription(description)} />
         )}
-        <Section title="Examples">
+        <Section title="Examples" headingLevel="h2">
           {examples.map((exampleObj, i) => {
             const ComponentExample = exampleObj.component;
             const { __docgenInfo: componentDocs } = ComponentExample;

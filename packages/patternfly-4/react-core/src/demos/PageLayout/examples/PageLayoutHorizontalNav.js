@@ -30,6 +30,7 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 import { global_breakpoint_md as breakpointMd } from '@patternfly/react-tokens';
+// make sure you've installed @patternfly/patternfly-next
 import accessibleStyles from '@patternfly/patternfly-next/utilities/Accessibility/accessibility.css';
 import spacingStyles from '@patternfly/patternfly-next/utilities/Spacing/spacing.css';
 import { css } from '@patternfly/react-styles';
@@ -133,12 +134,12 @@ class PageLayoutHorizontalNav extends React.Component {
       <Toolbar>
         <ToolbarGroup className={css(accessibleStyles.srOnly, accessibleStyles.visibleOnLg)}>
           <ToolbarItem>
-            <Button id="nav-toggle" aria-label="Overflow actions" variant={ButtonVariant.plain}>
+            <Button id="horizontal-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
               <BellIcon />
             </Button>
           </ToolbarItem>
           <ToolbarItem>
-            <Button id="nav-toggle" aria-label="Overflow actions" variant={ButtonVariant.plain}>
+            <Button id="horizontal-example-uid-02" aria-label="Settings actions" variant={ButtonVariant.plain}>
               <CogIcon />
             </Button>
           </ToolbarItem>

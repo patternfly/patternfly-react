@@ -19,18 +19,34 @@ const propTypes = {
   /** content rendered inside the Title */
   children: PropTypes.node,
   /** additional classes added to the Title */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** the heading level to use */
+  headingLevel: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
 };
 
 const defaultProps = {
   children: '',
-  className: ''
+  className: '',
+  headingLevel: 'h1'
 };
 
-const Title = ({ size, className, children, ...props }) => (
-  <h1 {...props} className={css(styles.title, getModifier(styles, size), className)}>
-    {children}
-  </h1>
+const getTitleElement = (level, children, ...props) => {
+  return React.createElement(level, ...props, children);
+};
+
+const Title = ({ size, className, children, headingLevel, ...props }) => (
+  <React.Fragment>
+    {
+      getTitleElement(
+        headingLevel,
+        children,
+        {
+          ...props,
+          className: css(styles.title, getModifier(styles, size), className)
+        }
+      )
+    }
+  </React.Fragment>
 );
 
 Title.propTypes = propTypes;
