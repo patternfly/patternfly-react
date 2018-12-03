@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import styles from '@patternfly/patternfly-next/components/Avatar/avatar.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
 
 const propTypes = {
   /** Additional classes added to the Avatar. */
