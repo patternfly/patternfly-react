@@ -16,10 +16,14 @@ const propTypes = {
   /** Indicates which component will be used as dropdown menu */
   component: componentShape,
   /** Indicates where menu will be alligned horizontally */
+<<<<<<< HEAD
   position: PropTypes.oneOf(Object.values(DropdownPosition)),
   onSelect: PropTypes.func,
   /** Additional props are spread to the container component */
   '': PropTypes.any
+=======
+  position: PropTypes.oneOf(Object.keys(DropdownPosition))
+>>>>>>> feat(Dropdown): improved select event piping, added fix for focus trap toggle
 };
 
 const defaultProps = {
@@ -32,7 +36,6 @@ const defaultProps = {
 
 const DropdownMenu = ({ className, isOpen, position, children, onSelect, component: Component, ...props }) => {
   let menu = null;
-  if (children) children = React.Children.map(children, child => React.cloneElement(child, { onSelect }));
   if (Component === 'div') {
     menu = (
       <Component
@@ -43,6 +46,7 @@ const DropdownMenu = ({ className, isOpen, position, children, onSelect, compone
           className
         )}
         hidden={!isOpen}
+        onClick={onSelect}
       >
         {children}
       </Component>
@@ -63,7 +67,7 @@ const DropdownMenu = ({ className, isOpen, position, children, onSelect, compone
           )}
           hidden={!isOpen}
         >
-          {children}
+          {children && React.Children.map(children, child => React.cloneElement(child, { onSelect }))}
         </Component>
       </FocusTrap>
     );
