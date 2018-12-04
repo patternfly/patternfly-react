@@ -5,7 +5,7 @@ class CellHeader extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      columns: [{ title: 'Header cell', cellTransforms: [headerCol] }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
+      columns: [{ title: 'Header cell', cellTransforms: [headerCol('selectable')] }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
       rows: [['one', 'two', 'three', 'four', 'five']]
     };
   }

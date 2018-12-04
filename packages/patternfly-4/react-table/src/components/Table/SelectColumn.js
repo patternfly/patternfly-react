@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import { checkInput } from '@patternfly/patternfly-next/components/Table/table.css';
+import { checkInput } from '@patternfly/patternfly-next/components/Check/check.css';
 
 const propTypes = {
   children: PropTypes.node,

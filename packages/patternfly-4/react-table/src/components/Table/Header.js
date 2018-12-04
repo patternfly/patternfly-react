@@ -16,6 +16,7 @@ const propTypes = {
   onCollapse: PropTypes.func,
   onSort: PropTypes.func,
   onSelect: PropTypes.func,
+  selectLabeledBy: PropTypes.string,
   actions: PropTypes.array
 };
 
@@ -41,8 +42,8 @@ class ContextHeader extends React.Component {
   }
 
   headerColumns() {
-    const { headerRows, sortBy, onSort, onSelect, actions, onCollapse } = this.props;
-    return calculateColumns(headerRows, { sortBy, onSort, onSelect, actions, onCollapse });
+    const { headerRows, sortBy, onSort, onSelect, actions, onCollapse, selectLabeledBy } = this.props;
+    return calculateColumns(headerRows, { sortBy, onSort, onSelect, actions, onCollapse, selectLabeledBy });
   }
 
   componentDidUpdate() {
@@ -54,7 +55,18 @@ class ContextHeader extends React.Component {
   }
 
   render() {
-    const { className, headerRows, sortBy, updateHeaderData, onSort, onSelect, actions, onCollapse, ...props } = this.props;
+    const {
+      className,
+      headerRows,
+      sortBy,
+      updateHeaderData,
+      onSort,
+      onSelect,
+      actions,
+      onCollapse,
+      selectLabeledBy,
+      ...props
+    } = this.props;
     return (
       <Header headerRows={[this.headerColumns()]} {...props} className={className} />
     );
@@ -64,7 +76,7 @@ class ContextHeader extends React.Component {
 const TableHeader = ({ headerData, ...props }) => {
   return (
     <TableContext.Consumer>
-      {({ updateHeaderData, onSort, sortBy, onSelect, actions, onCollapse }) => (
+      {({ updateHeaderData, onSort, sortBy, onSelect, actions, onCollapse, selectLabeledBy }) => (
         <ContextHeader
           {...props}
           updateHeaderData={updateHeaderData}
@@ -73,6 +85,7 @@ const TableHeader = ({ headerData, ...props }) => {
           actions={actions}
           onSelect={onSelect}
           onCollapse={onCollapse}
+          selectLabeledBy={selectLabeledBy}
         />
       )}
     </TableContext.Consumer>

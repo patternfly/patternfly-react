@@ -31,6 +31,7 @@ const propTypes = {
   onSelect: PropTypes.func,
   onSort: PropTypes.func,
   actions: PropTypes.array,
+  selectLabeledBy: PropTypes.string,
   header: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
       throw new Error('Header is required if no aria-label or caption is supplied!');
@@ -80,6 +81,7 @@ class Table extends React.Component {
       children,
       actions,
       onCollapse,
+      selectLabeledBy,
       variant,
       ...props
     } = this.props;
@@ -92,6 +94,7 @@ class Table extends React.Component {
         onSelect,
         actions,
         onCollapse,
+        selectLabeledBy,
         updateHeaderData: (headerData) => this.setState({ headerData })
       }}>
         {header}

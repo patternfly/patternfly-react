@@ -140,7 +140,10 @@ describe('Transformer functions', () => {
   });
 
   test('headerCol', () => {
-    expect(headerCol()).toEqual({ component: 'th' });
+    const returned = headerCol('some-id')('value', { rowIndex: 0 });
+    expect(returned).toMatchObject({ component: 'th' });
+    const view = mount(returned.children);
+    expect(view.find('#some-id0').length).toBe(1);
   });
 
   test('emptyCol', () => {
