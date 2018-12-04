@@ -108,7 +108,7 @@ const Example = ({
           </div>
           <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
         </React.Fragment>
-        )}
+      )}
     </div>
   );
 };
