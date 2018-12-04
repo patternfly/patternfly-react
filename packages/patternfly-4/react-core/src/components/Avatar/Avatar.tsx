@@ -1,7 +1,9 @@
-import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Avatar/avatar.css';
+import * as React from 'react';
+import * as styles from '@patternfly/patternfly-next/components/Avatar/avatar.css';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types';
+
+let _styles: any = styles;
 
 const propTypes = {
   /** Additional classes added to the Avatar. */
@@ -18,7 +20,7 @@ const defaultProps = {
 };
 
 const Avatar = ({ className, src, alt, ...props }) => (
-  <img {...props} className={css(styles.avatar, className)} src={src} alt={alt} />
+  <img {...props} className={css(_styles.avatar, className)} src={src} alt={alt} />
 );
 
 Avatar.propTypes = propTypes;

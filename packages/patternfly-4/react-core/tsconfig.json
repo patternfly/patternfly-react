@@ -6,9 +6,9 @@
     "sourceMap": true, // allow sourcemap support
     "lib": ["es6", "dom"],
     "noEmit": true,
-    "module": "es2015", // specify module code generation
+    "module": "commonjs", // specify module code generation
     "jsx": "react", // use typescript to transpile jsx to js
-    "target": "esnext", // specify ECMAScript target version
+    "target": "es5", // specify ECMAScript target version
     "allowJs": true, // allow a partial TypeScript and JavaScript codebase
     "paths": {
       "*": ["dist/esm/*"]
