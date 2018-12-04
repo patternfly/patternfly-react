@@ -30,10 +30,7 @@ const defaultProps = {
 
 const DropdownItem = ({ className, children, isHovered, component: Component, isDisabled, ...props }) => {
   const additionalProps = props;
-  if (children && children.type && children.type.name === 'Link') {
-    Component = 'div';
-    additionalProps.href = null;
-  } else if (Component === 'a') {
+  if (Component === 'a') {
     additionalProps['aria-disabled'] = isDisabled;
     additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
   } else if (Component === 'button') {
@@ -42,12 +39,16 @@ const DropdownItem = ({ className, children, isHovered, component: Component, is
 
   return (
     <li>
-      <Component
-        {...additionalProps}
-        className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
-      >
-        {children}
-      </Component>
+      {React.isValidElement(children) ? (
+        React.Children.map(children, child => React.cloneElement(child, { className }))
+      ) : (
+        <Component
+          {...additionalProps}
+          className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
+        >
+          {children}
+        </Component>
+      )}
     </li>
   );
 };
