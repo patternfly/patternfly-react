@@ -102,12 +102,12 @@ const Example = ({
           />
         </React.Fragment>
       ) : (
-          <React.Fragment>
-            <div className={css(className, styles.example)} {...props}>
-              {children}
-            </div>
-            <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
-          </React.Fragment>
+        <React.Fragment>
+          <div className={css(className, styles.example)} {...props}>
+            {children}
+          </div>
+          <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
+        </React.Fragment>
         )}
     </div>
   );
