@@ -124,7 +124,7 @@ exports[`KebabToggle basic 1`] = `
       className=""
       component="div"
       isOpen={true}
-      onClick={[Function]}
+      onSelect={[Function]}
       position="left"
     >
       <div
@@ -694,7 +694,7 @@ exports[`KebabToggle expanded 1`] = `
       className=""
       component="ul"
       isOpen={true}
-      onClick={[Function]}
+      onSelect={[Function]}
       position="left"
     >
       <FocusTrap
@@ -713,7 +713,6 @@ exports[`KebabToggle expanded 1`] = `
             aria-labelledby="Dropdown Toggle"
             className="pf-c-dropdown__menu"
             hidden={false}
-            onClick={[Function]}
           >
             <DropdownItem
               className=""
@@ -721,13 +720,15 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="link"
+              key=".$link"
+              onSelect={[Function]}
             >
               <li>
                 <a
                   aria-disabled={false}
                   className=""
                   href="#"
+                  onClick={[Function]}
                 >
                   Link
                 </a>
@@ -739,14 +740,19 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="action"
+              key=".$action"
+              onSelect={[Function]}
             >
               <li>
                 <button
                   className=""
                   disabled={false}
                   href="#"
+<<<<<<< HEAD
                   type="button"
+=======
+                  onClick={[Function]}
+>>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
                 >
                   Action
                 </button>
@@ -758,13 +764,15 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={true}
               isHovered={false}
-              key="disabled link"
+              key=".$disabled link"
+              onSelect={[Function]}
             >
               <li>
                 <a
                   aria-disabled={true}
                   className="pf-m-disabled"
                   href="#"
+                  onClick={[Function]}
                   tabIndex={-1}
                 >
                   Disabled Link
@@ -777,14 +785,19 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={true}
               isHovered={false}
-              key="disabled action"
+              key=".$disabled action"
+              onSelect={[Function]}
             >
               <li>
                 <button
                   className="pf-m-disabled"
                   disabled={true}
                   href="#"
+<<<<<<< HEAD
                   type="button"
+=======
+                  onClick={[Function]}
+>>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
                 >
                   Disabled Action
                 </button>
@@ -796,7 +809,8 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="separator"
+              key=".$separator"
+              onSelect={[Function]}
             >
               <DropdownItem
                 className="pf-c-dropdown__separator"
@@ -804,12 +818,14 @@ exports[`KebabToggle expanded 1`] = `
                 href="#"
                 isDisabled={false}
                 isHovered={false}
+                onSelect={[Function]}
                 role="separator"
               >
                 <li>
                   <div
                     className="pf-c-dropdown__separator"
                     href="#"
+                    onClick={[Function]}
                     role="separator"
                   />
                 </li>
@@ -821,13 +837,15 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="separated link"
+              key=".$separated link"
+              onSelect={[Function]}
             >
               <li>
                 <a
                   aria-disabled={false}
                   className=""
                   href="#"
+                  onClick={[Function]}
                 >
                   Separated Link
                 </a>
@@ -839,14 +857,19 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="separated action"
+              key=".$separated action"
+              onSelect={[Function]}
             >
               <li>
                 <button
                   className=""
                   disabled={false}
                   href="#"
+<<<<<<< HEAD
                   type="button"
+=======
+                  onClick={[Function]}
+>>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
                 >
                   Separated Action
                 </button>
@@ -1518,7 +1541,7 @@ exports[`dropdown basic 1`] = `
       className=""
       component="div"
       isOpen={true}
-      onClick={[Function]}
+      onSelect={[Function]}
       position="left"
     >
       <div
@@ -2115,7 +2138,7 @@ exports[`dropdown expanded 1`] = `
       className=""
       component="ul"
       isOpen={true}
-      onClick={[Function]}
+      onSelect={[Function]}
       position="left"
     >
       <FocusTrap
@@ -2134,7 +2157,6 @@ exports[`dropdown expanded 1`] = `
             aria-labelledby="Dropdown Toggle"
             className="pf-c-dropdown__menu"
             hidden={false}
-            onClick={[Function]}
           >
             <DropdownItem
               className=""
@@ -2142,13 +2164,15 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="link"
+              key=".$link"
+              onSelect={[Function]}
             >
               <li>
                 <a
                   aria-disabled={false}
                   className=""
                   href="#"
+                  onClick={[Function]}
                 >
                   Link
                 </a>
@@ -2160,14 +2184,19 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="action"
+              key=".$action"
+              onSelect={[Function]}
             >
               <li>
                 <button
                   className=""
                   disabled={false}
                   href="#"
+<<<<<<< HEAD
                   type="button"
+=======
+                  onClick={[Function]}
+>>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
                 >
                   Action
                 </button>
@@ -2179,13 +2208,15 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={true}
               isHovered={false}
-              key="disabled link"
+              key=".$disabled link"
+              onSelect={[Function]}
             >
               <li>
                 <a
                   aria-disabled={true}
                   className="pf-m-disabled"
                   href="#"
+                  onClick={[Function]}
                   tabIndex={-1}
                 >
                   Disabled Link
@@ -2198,14 +2229,19 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={true}
               isHovered={false}
-              key="disabled action"
+              key=".$disabled action"
+              onSelect={[Function]}
             >
               <li>
                 <button
                   className="pf-m-disabled"
                   disabled={true}
                   href="#"
+<<<<<<< HEAD
                   type="button"
+=======
+                  onClick={[Function]}
+>>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
                 >
                   Disabled Action
                 </button>
@@ -2217,7 +2253,8 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="separator"
+              key=".$separator"
+              onSelect={[Function]}
             >
               <DropdownItem
                 className="pf-c-dropdown__separator"
@@ -2225,12 +2262,14 @@ exports[`dropdown expanded 1`] = `
                 href="#"
                 isDisabled={false}
                 isHovered={false}
+                onSelect={[Function]}
                 role="separator"
               >
                 <li>
                   <div
                     className="pf-c-dropdown__separator"
                     href="#"
+                    onClick={[Function]}
                     role="separator"
                   />
                 </li>
@@ -2242,13 +2281,15 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="separated link"
+              key=".$separated link"
+              onSelect={[Function]}
             >
               <li>
                 <a
                   aria-disabled={false}
                   className=""
                   href="#"
+                  onClick={[Function]}
                 >
                   Separated Link
                 </a>
@@ -2260,14 +2301,19 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key="separated action"
+              key=".$separated action"
+              onSelect={[Function]}
             >
               <li>
                 <button
                   className=""
                   disabled={false}
                   href="#"
+<<<<<<< HEAD
                   type="button"
+=======
+                  onClick={[Function]}
+>>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
                 >
                   Separated Action
                 </button>

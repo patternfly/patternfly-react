@@ -16,14 +16,10 @@ const propTypes = {
   /** Indicates which component will be used as dropdown menu */
   component: componentShape,
   /** Indicates where menu will be alligned horizontally */
-<<<<<<< HEAD
   position: PropTypes.oneOf(Object.values(DropdownPosition)),
   onSelect: PropTypes.func,
   /** Additional props are spread to the container component */
   '': PropTypes.any
-=======
-  position: PropTypes.oneOf(Object.keys(DropdownPosition))
->>>>>>> feat(Dropdown): improved select event piping, added fix for focus trap toggle
 };
 
 const defaultProps = {
