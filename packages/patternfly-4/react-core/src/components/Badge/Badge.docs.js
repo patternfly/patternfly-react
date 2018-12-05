@@ -10,13 +10,13 @@ export default {
   },
   examples: [
     {
-      component: Unread,
-      title: 'Unread Badge',
+      component: Read,
+      title: 'Read Badge',
       getContainerProps
     },
     {
-      component: Read,
-      title: 'Read Badge',
+      component: Unread,
+      title: 'Unread Badge',
       getContainerProps
     }
   ]
