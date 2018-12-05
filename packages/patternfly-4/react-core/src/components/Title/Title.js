@@ -30,23 +30,13 @@ const defaultProps = {
   headingLevel: 'h1'
 };
 
-const getTitleElement = (level, children, ...props) => {
-  return React.createElement(level, ...props, children);
-};
-
-const Title = ({ size, className, children, headingLevel, ...props }) => (
-  <React.Fragment>
-    {
-      getTitleElement(
-        headingLevel,
-        children,
-        {
-          ...props,
-          className: css(styles.title, getModifier(styles, size), className)
-        }
-      )
-    }
-  </React.Fragment>
+const Title = ({ size, className, children, headingLevel, ...props }) => React.createElement(
+  headingLevel,
+  {
+    ...props,
+    className: css(styles.title, getModifier(styles, size), className)
+  },
+  children
 );
 
 Title.propTypes = propTypes;
