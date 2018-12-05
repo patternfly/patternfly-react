@@ -19,9 +19,28 @@ const defaultProps = {
   src: ''
 };
 
-const Avatar = ({ className, src, alt, ...props }) => (
-  <img {...props} className={css(_styles.avatar, className)} src={src} alt={alt} />
-);
+/**
+ * Column properties.
+ */
+export interface IAvatarProps {
+  /** Additional classes added to the Avatar. */
+  className?: string;
+  /** Attribute that specifies the URL of the image for the Avatar. */
+  src?: number;
+  /** Attribute that specifies the alt text of the image for the Avatar. */
+  alt: string
+}
+
+class Avatar extends React.Component<IAvatarProps, {}> {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (<img {...this.props.props} className={css(_styles.avatar, this.props.className)} src={this.props.src} alt={this.props.alt} />);
+  }
+
+}
 
 Avatar.propTypes = propTypes;
 Avatar.defaultProps = defaultProps;

@@ -158,5 +158,6 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
 
 exports.modifyBabelrc = ({ stage, babelrc }) => {
   babelrc.plugins.push(require.resolve('babel-plugin-react-docgen'));
+  babelrc.plugins.push(require.resolve('babel-plugin-react-docgen-typescript'));
   return babelrc;
 };
