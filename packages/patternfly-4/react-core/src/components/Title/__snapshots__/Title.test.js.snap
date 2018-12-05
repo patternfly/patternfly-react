@@ -8,14 +8,12 @@ exports[`2xl Title 1`] = `
   line-height: 1.3;
 }
 
-<React.Fragment>
-  <h1
-    className="pf-c-title pf-m-2xl"
-  >
-    2xl
-     Title
-  </h1>
-</React.Fragment>
+<h1
+  className="pf-c-title pf-m-2xl"
+>
+  2xl
+   Title
+</h1>
 `;
 
 exports[`3xl Title 1`] = `
@@ -26,14 +24,12 @@ exports[`3xl Title 1`] = `
   line-height: 1.3;
 }
 
-<React.Fragment>
-  <h1
-    className="pf-c-title pf-m-3xl"
-  >
-    3xl
-     Title
-  </h1>
-</React.Fragment>
+<h1
+  className="pf-c-title pf-m-3xl"
+>
+  3xl
+   Title
+</h1>
 `;
 
 exports[`4xl Title 1`] = `
@@ -44,14 +40,12 @@ exports[`4xl Title 1`] = `
   line-height: 1.3;
 }
 
-<React.Fragment>
-  <h1
-    className="pf-c-title pf-m-4xl"
-  >
-    4xl
-     Title
-  </h1>
-</React.Fragment>
+<h1
+  className="pf-c-title pf-m-4xl"
+>
+  4xl
+   Title
+</h1>
 `;
 
 exports[`lg Title 1`] = `
@@ -62,14 +56,12 @@ exports[`lg Title 1`] = `
   line-height: 1.5;
 }
 
-<React.Fragment>
-  <h1
-    className="pf-c-title pf-m-lg"
-  >
-    lg
-     Title
-  </h1>
-</React.Fragment>
+<h1
+  className="pf-c-title pf-m-lg"
+>
+  lg
+   Title
+</h1>
 `;
 
 exports[`md Title 1`] = `
@@ -80,14 +72,12 @@ exports[`md Title 1`] = `
   line-height: 1.5;
 }
 
-<React.Fragment>
-  <h1
-    className="pf-c-title pf-m-md"
-  >
-    md
-     Title
-  </h1>
-</React.Fragment>
+<h1
+  className="pf-c-title pf-m-md"
+>
+  md
+   Title
+</h1>
 `;
 
 exports[`xl Title 1`] = `
@@ -98,12 +88,10 @@ exports[`xl Title 1`] = `
   line-height: 1.5;
 }
 
-<React.Fragment>
-  <h1
-    className="pf-c-title pf-m-xl"
-  >
-    xl
-     Title
-  </h1>
-</React.Fragment>
+<h1
+  className="pf-c-title pf-m-xl"
+>
+  xl
+   Title
+</h1>
 `;
