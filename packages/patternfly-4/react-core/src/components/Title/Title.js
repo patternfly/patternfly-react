@@ -30,14 +30,14 @@ const defaultProps = {
   headingLevel: 'h1'
 };
 
-const Title = ({ size, className, children, headingLevel, ...props }) => React.createElement(
-  headingLevel,
-  {
-    ...props,
-    className: css(styles.title, getModifier(styles, size), className)
-  },
-  children
-);
+const Title = ({ size, className, children, headingLevel, ...props }) => {
+  const HeadingLevel = headingLevel;
+  return (
+    <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size), className)}>
+      {children}
+    </HeadingLevel>
+  );
+};
 
 Title.propTypes = propTypes;
 Title.defaultProps = defaultProps;
