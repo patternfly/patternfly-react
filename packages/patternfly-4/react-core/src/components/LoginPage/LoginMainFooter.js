@@ -4,9 +4,9 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly-next/components/Login/login.css';
 
 const propTypes = {
-  /** Content rendered inside the Login Footer */
+  /** Content rendered inside the Login Main Footer */
   children: PropTypes.node,
-  /** Additional classes added to the Login Footer */
+  /** Additional classes added to the Login Main Footer */
   className: PropTypes.string
 };
 

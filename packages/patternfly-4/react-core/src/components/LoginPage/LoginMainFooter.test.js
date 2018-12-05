@@ -13,7 +13,7 @@ test('className is added to the root element', () => {
 });
 
 test('extra props are spread to the root element', () => {
-  const testId = 'loginbox-body';
+  const testId = 'login-body';
   const view = shallow(<LoginMainFooter data-testid={testId} />);
   expect(view.prop('data-testid')).toBe(testId);
 });

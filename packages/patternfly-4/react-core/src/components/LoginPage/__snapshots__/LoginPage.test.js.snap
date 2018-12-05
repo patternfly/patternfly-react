@@ -31,16 +31,9 @@ exports[`check loginpage example against snapshot 1`] = `
               className=""
               src="Brand src"
             />
-            <TextContent
-              className=""
-            >
-              <Text
-                className=""
-                component="p"
-              >
-                This is placeholder text only.
-              </Text>
-            </TextContent>
+            <p>
+              This is placeholder text only.
+            </p>
           </React.Fragment>
         }
       />

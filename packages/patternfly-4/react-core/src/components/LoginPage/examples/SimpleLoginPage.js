@@ -4,6 +4,7 @@ import {
   Dropdown,
   DropdownItem,
   DropdownToggle,
+  LoginFooterItem,
   LoginForm,
   LoginPage,
   BackgroundImageSrc,
@@ -76,7 +77,7 @@ class SimpleLoginPage extends React.Component {
       />
     );
 
-    const subtitle = (
+    const signUpMessage = (
       <React.Fragment>
         Need an account? <a href="https://www.patternfly.org">Sign Up.</a>
       </React.Fragment>
@@ -85,13 +86,13 @@ class SimpleLoginPage extends React.Component {
     const listItem = (
       <React.Fragment>
         <ListItem>
-          <a href="#">Terms of Use</a>
+          <LoginFooterItem href="#">Terms of Use </LoginFooterItem>
         </ListItem>
         <ListItem>
-          <a href="#">Help</a>
+          <LoginFooterItem href="#">Help</LoginFooterItem>
         </ListItem>
         <ListItem>
-          <a href="#">Privacy Policy</a>
+          <LoginFooterItem href="#">Privacy Policy</LoginFooterItem>
         </ListItem>
       </React.Fragment>
     );
@@ -117,17 +118,17 @@ class SimpleLoginPage extends React.Component {
 
     return (
       <LoginPage
-        mainListVariants="inline"
-        mainBrandImgSrc={brandImg}
-        mainBrandImgAlt="pf-logo"
-        mainBackgroundImgSrc={images}
-        mainBackgroundImgAlt="Images"
-        mainListItems={listItem}
-        mainTextContent="This is placeholder text only. Use this area to place any information or introductory message about your
+        footerListVariants="inline"
+        brandImgSrc={brandImg}
+        brandImgAlt="pf-logo"
+        backgroundImgSrc={images}
+        backgroundImgAlt="Images"
+        footerListItems={listItem}
+        textContent="This is placeholder text only. Use this area to place any information or introductory message about your
         application that may be relevant to users."
-        loginTitle="Login to your account"
-        loginSubtitle={subtitle}
-        loginLanguageDropdown={languageDropdown}
+        loginTitle="Log in to your account"
+        signUpForAccountMessage={signUpMessage}
+        languageSelector={languageDropdown}
       >
         {loginForm}
       </LoginPage>
