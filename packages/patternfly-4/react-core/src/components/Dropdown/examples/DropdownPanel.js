@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Dropdown, DropdownToggle } from '@patternfly/react-core';
 
-export default class BasicDropdown extends Component {
+export default class DropdownPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +29,7 @@ export default class BasicDropdown extends Component {
         toggle={<DropdownToggle onToggle={this.onToggle}>Expanded Dropdown</DropdownToggle>}
         isOpen={isOpen}
       >
-        <div>Expanded Dropdown</div>
+        <div>[Panel contents here]</div>
       </Dropdown>
     );
   }

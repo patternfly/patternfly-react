@@ -1,5 +1,5 @@
 import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator, DropdownToggle } from '@patternfly/react-core';
-import Basic from './examples/BasicDropdown';
+import Panel from './examples/DropdownPanel';
 import Simple from './examples/SimpleDropdown';
 import Kebab from './examples/KebabDropdown';
 import PositionRight from './examples/PositionRightDropdown';
@@ -15,10 +15,14 @@ export default {
     DropdownToggle
   },
   examples: [
-    { component: Basic, title: 'Basic dropdown' },
-    { component: Simple, title: 'Simple dropdown' },
+    { component: Simple, title: 'Dropdown' },
     { component: PositionRight, title: 'Dropdown - position right' },
     { component: DirectionUp, title: 'Dropdown - direction up' },
-    { component: Kebab, title: 'Kebab' }
+    { component: Kebab, title: 'Kebab' },
+    {
+      component: Panel,
+      title: 'Dropdown Panel',
+      description: 'The Basic Dropdown is provided for flexibility in allowing various content within a dropdown.'
+    }
   ]
 };
