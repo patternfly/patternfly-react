@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.28.5"></a>
+## [1.28.5](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.28.4...patternfly4-react-lerna-root@1.28.5) (2018-12-05)
+
+
+### Bug Fixes
+
+* **Badge:** remove margin between badges to match core ([#1001](https://github.com/patternfly/patternfly-react/issues/1001)) ([62ece9b](https://github.com/patternfly/patternfly-react/commit/62ece9b))
+
+
+
+
 <a name="1.28.4"></a>
 ## [1.28.4](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.28.3...patternfly4-react-lerna-root@1.28.4) (2018-11-30)
 

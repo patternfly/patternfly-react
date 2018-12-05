@@ -1,5 +1,45 @@
 
-## Change Log (2018-11-30)
+## Change Log (2018-12-05)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1001](https://github.com/patternfly/patternfly-react/pull/1001) fix(Badge): remove margin between badges to match core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.28.4 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#988](https://github.com/patternfly/patternfly-react/pull/988) fix(LoginPage): typos ([@mcoker](https://github.com/mcoker))
+
+#### Committers: 1
+- Michael Coker ([@mcoker](https://github.com/mcoker))
+
+
+## @patternfly/react-table@0.2.9 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#988](https://github.com/patternfly/patternfly-react/pull/988) fix(LoginPage): typos ([@mcoker](https://github.com/mcoker))
+
+#### Committers: 1
+- Michael Coker ([@mcoker](https://github.com/mcoker))
+
+
+## @patternfly/react-docs@3.19.17 (2018-11-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#988](https://github.com/patternfly/patternfly-react/pull/988) fix(LoginPage): typos ([@mcoker](https://github.com/mcoker))
+
+#### Committers: 1
+- Michael Coker ([@mcoker](https://github.com/mcoker))
+
+
+## @patternfly/react-core@1.38.4 (2018-11-30)
 
 #### :bug: Bug Fix
 * `patternfly-4`
