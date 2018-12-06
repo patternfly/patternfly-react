@@ -12,14 +12,11 @@ const BasicLoginCardLayout = ({ children, ...props }) => (
 
 BasicLoginCardLayout.propTypes = {
   /** Children nodes. */
-  children: PropTypes.node,
-  /** Additional layout props to override the default ones. */
-  layout: PropTypes.object
+  children: PropTypes.node
 };
 
 BasicLoginCardLayout.defaultProps = {
-  children: null,
-  layout: null
+  children: null
 };
 
 export default BasicLoginCardLayout;
