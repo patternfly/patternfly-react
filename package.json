@@ -53,7 +53,8 @@
     "react": "^16.3.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.3.0",
-    "travis-deploy-once": "^4.4.1"
+    "travis-deploy-once": "^4.4.1",
+    "ts-jest": "^23.10.5"
   },
   "sassIncludes": {
     "patternfly": "node_modules/patternfly/dist/sass",
@@ -116,6 +117,7 @@
       "<rootDir>/packages/patternfly-4/react-core/build/snapshot-serializer"
     ],
     "transform": {
+      "^.+\\.(ts|tsx)?$": "ts-jest",
       "^.+\\.jsx?$": "babel-jest",
       "\\.(css)$": "<rootDir>/packages/patternfly-4/react-styles/jest-transform.js"
     },
@@ -129,7 +131,8 @@
       "<rootDir>/packages",
       "<rootDir>/scripts"
     ],
-    "testURL": "http://localhost"
+    "testURL": "http://localhost",
+    "preset": "ts-jest/presets/js-with-babel"
   },
   "config": {
     "commitizen": {

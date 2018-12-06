@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true, 
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "lib": ["es6", "dom"],
@@ -7,7 +10,11 @@
     "moduleResolution": "node",
     "noEmit": true,
     "noImplicitAny": true,
-    "target": "esnext"
+    "target": "esnext",
+    "allowJs": true,
+    "paths": {
+      "*": ["./packages/patternfly-4/react-core/dist/esm/@patternfly"]
+    }
   },
   "include": ["packages/**/src/**/*"]
 }

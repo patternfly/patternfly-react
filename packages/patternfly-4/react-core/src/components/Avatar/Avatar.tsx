@@ -26,7 +26,7 @@ export interface IAvatarProps {
   /** Attribute that specifies the URL of the image for the Avatar. */
   src?: string;
   /** Attribute that specifies the alt text of the image for the Avatar. */
-  alt: string
+  alt: string;
 }
 
 const Avatar:React.SFC<IAvatarProps> = (props) => (
