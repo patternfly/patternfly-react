@@ -30,8 +30,7 @@ const defaultProps = {
   headingLevel: 'h1'
 };
 
-const Title = ({ size, className, children, headingLevel, ...props }) => {
-  const HeadingLevel = headingLevel;
+const Title = ({ size, className, children, headingLevel: HeadingLevel, ...props }) => {
   return (
     <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size), className)}>
       {children}
