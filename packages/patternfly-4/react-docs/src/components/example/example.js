@@ -66,7 +66,7 @@ const Example = ({
     const path = `/${pathStart}/examples/${exampleName}`;
     return (
       <Section>
-        <Title size="lg">{title}</Title>
+        <Title size="lg" headingLevel="h3">{title}</Title>
         <div className={css(className, styles.example)} {...props}>
           This example can only be accessed in&nbsp;
           <Link target="_blank" to={path}>

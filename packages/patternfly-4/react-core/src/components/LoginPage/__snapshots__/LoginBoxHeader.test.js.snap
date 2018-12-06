@@ -21,6 +21,7 @@ exports[`renders with PatternFly Core styles 1`] = `
 >
   <Title
     className="css-tc6z4j"
+    headingLevel="h1"
     size="3xl"
   />
   <div
