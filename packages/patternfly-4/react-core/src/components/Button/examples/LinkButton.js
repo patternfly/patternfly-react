@@ -7,7 +7,7 @@ class LinkButton extends React.Component {
       <React.Fragment>
         <Button component="a" href="https://pf-next.com/" target="_blank">
           Link to Core Docs
-        </Button>
+        </Button>{' '}
         <Button component="a" isDisabled href="https://pf-next.com/" target="_blank">
           Disabled Link
         </Button>
