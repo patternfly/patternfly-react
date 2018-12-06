@@ -1,21 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Icon } from '../../../../index';
 
 const LoginCardInputWarning = ({ children, className, ...props }) =>
   children && (
-    <div style={{ marginTop: '5px' }} className={className} {...props}>
+    <div {...props} className={classNames('login-pf-input-warning', className)}>
       <Icon type="pf" name="warning-triangle-o" />
-      {`   ${children}`}
+      {`   `}
+      {children}
     </div>
   );
 
 LoginCardInputWarning.propTypes = {
-  children: PropTypes.string
+  /** Children nodes. */
+  children: PropTypes.string,
+  /** Additional css classes. */
+  className: PropTypes.string
 };
 
 LoginCardInputWarning.defaultProps = {
-  children: null
+  children: null,
+  className: null
 };
 
 export default LoginCardInputWarning;

@@ -10,8 +10,11 @@ const LoginCardRememberMe = ({ onClick, label, className, ...props }) =>
   );
 
 LoginCardRememberMe.propTypes = {
+  /** The checkbox label. */
   label: PropTypes.string,
+  /** Additional css classes. */
   className: PropTypes.string,
+  /** Callback to trigger when clicking the checkbox */
   onClick: PropTypes.func
 };
 

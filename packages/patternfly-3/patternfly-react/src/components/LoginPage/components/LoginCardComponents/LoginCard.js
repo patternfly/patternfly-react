@@ -20,6 +20,7 @@ import BasicLoginCardLayout from './BasicLoginCardLayout';
 const LoginCard = ({ children, ...props }) => <Card {...props}>{children}</Card>;
 
 LoginCard.propTypes = {
+  /** Children nodes. */
   children: PropTypes.node
 };
 

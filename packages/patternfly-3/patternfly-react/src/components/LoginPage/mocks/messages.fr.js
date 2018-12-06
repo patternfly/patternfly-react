@@ -12,7 +12,7 @@ const footerLinks = [
 
 const cardHeader = {
   title: 'Connectez-vous à votre compte',
-  selectedLanguage: { value: 'fr', text: 'Français' },
+  selectedLanguage: 'Français',
   availableLanguages: [{ value: 'en', text: 'Anglais' }, { value: 'fr', text: 'Français' }]
 };
 

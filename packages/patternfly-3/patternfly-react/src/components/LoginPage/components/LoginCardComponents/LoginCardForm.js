@@ -34,17 +34,29 @@ const LoginCardForm = ({
 );
 
 LoginCardForm.propTypes = {
+  /** login username input's props */
   usernameField: PropTypes.shape({ ...LoginCardInput.propTypes }),
+  /** login password input's props */
   passwordField: PropTypes.shape({ ...LoginCardInput.propTypes }),
+  /** Add additional fields under the inputs  */
   additionalFields: PropTypes.node,
+  /** The submit button text */
   submitText: PropTypes.string,
+  /** Sets the submit button disability */
   disableSubmit: PropTypes.bool,
+  /** A callback that will be triggered when the form is submitted */
   onSubmit: PropTypes.func,
-  forgotPassword: PropTypes.object,
-  rememberMe: PropTypes.object,
+  /** The forgotPassowrd section props */
+  forgotPassword: LoginCardSettings.propTypes.forgotPassword,
+  /** The rememberMe section props */
+  rememberMe: LoginCardSettings.propTypes.rememberMe,
+  /** The login form error which is usually shown after the submit - a server error. */
   submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /** Controlls the form error visibility */
   showError: PropTypes.bool,
+  /** Additional HTML attributes to pass to the form */
   attributes: PropTypes.object,
+  /** Indicates the state of the form submit and whether to show a spinner or not */
   isSubmitting: PropTypes.bool
 };
 

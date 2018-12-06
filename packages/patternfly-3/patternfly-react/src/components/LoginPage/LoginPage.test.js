@@ -113,7 +113,7 @@ test('Dropdown updates succesfully', () => {
       .find(DropdownButton)
       .at(0)
       .props().title
-  ).toEqual(frenchMessages.card.header.selectedLanguage.text);
+  ).toEqual(frenchMessages.card.header.selectedLanguage);
 });
 
 test('Toggle Caps lock warning in password field by the events: focus, blur and mouseEnter', () => {
@@ -365,7 +365,7 @@ test('Translation works', () => {
       .find(DropdownButton)
       .at(0)
       .props().title
-  ).toEqual(frenchMessages.card.header.selectedLanguage.text);
+  ).toEqual(frenchMessages.card.header.selectedLanguage);
 
   expect(
     component

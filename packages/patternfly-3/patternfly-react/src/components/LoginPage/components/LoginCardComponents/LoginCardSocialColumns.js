@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Button, Icon } from '../../../../index';
 import LoginCardSocialLink from './LoginCardSocialLink';
 
@@ -25,10 +26,11 @@ class LoginCardSocialColumns extends React.Component {
 
   getListItems = () => {
     this.hiddenLinks = [];
+    const { links, numberOfButtonsToShow } = this.props;
     return (
-      this.props.links &&
-      this.props.links.map((link, index) => {
-        if (index >= this.props.shownButtons) {
+      links &&
+      links.map((link, index) => {
+        if (index >= numberOfButtonsToShow) {
           this.hiddenLinks.push(link);
           return true;
         }
@@ -38,25 +40,29 @@ class LoginCardSocialColumns extends React.Component {
     );
   };
 
-  getHiddenListItems = () =>
-    this.hiddenLinks &&
-    this.hiddenLinks.map((link, index) => (
-      <LoginCardSocialLink link={link} key={link.key || index + this.props.shownButtons} />
-    ));
+  getHiddenListItems = () => {
+    const { numberOfButtonsToShow } = this.props;
+    return (
+      this.hiddenLinks &&
+      this.hiddenLinks.map((link, index) => (
+        <LoginCardSocialLink link={link} key={link.key || index + numberOfButtonsToShow} />
+      ))
+    );
+  };
 
   toggleExpend = () => {
     this.setState({ expend: !this.state.expend });
   };
 
   render() {
-    const { links, shownButtons } = this.props;
+    const { links, numberOfButtonsToShow } = this.props;
     if (!links) {
       return null;
     }
     const { expend, width } = this.state;
     const expendButton = width > 768 &&
-      links.length > shownButtons && (
-        <Button bsStyle="link" bsClass="btn btn-link login-pf-social-toggle" onClick={e => this.toggleExpend(e)}>
+      links.length > numberOfButtonsToShow && (
+        <Button bsStyle="link" bsClass="btn btn-link login-pf-social-toggle" onClick={this.toggleExpend}>
           {expend ? 'Less' : 'More'} &nbsp;
           <Icon name={`angle-${expend ? 'up' : 'down'}`} />
         </Button>
@@ -66,7 +72,7 @@ class LoginCardSocialColumns extends React.Component {
     const moreItems = expend || width < 768 ? this.getHiddenListItems() : null;
     return (
       <div>
-        <ul className={`login-pf-social list-unstyled ${doubleColumn}`}>
+        <ul className={classNames('login-pf-social list-unstyled', doubleColumn)}>
           {this.getListItems()}
           {moreItems}
         </ul>
@@ -77,13 +83,15 @@ class LoginCardSocialColumns extends React.Component {
 }
 
 LoginCardSocialColumns.propTypes = {
-  links: PropTypes.array,
-  shownButtons: PropTypes.number
+  /** Array of social links to generate. */
+  links: PropTypes.arrayOf(PropTypes.shape({ ...LoginCardSocialLink.propTypes })),
+  /** The amount of buttons to show. Above this number, the buttons would be hidden */
+  numberOfButtonsToShow: PropTypes.number
 };
 
 LoginCardSocialColumns.defaultProps = {
   links: [],
-  shownButtons: 8
+  numberOfButtonsToShow: 8
 };
 
 export default LoginCardSocialColumns;
