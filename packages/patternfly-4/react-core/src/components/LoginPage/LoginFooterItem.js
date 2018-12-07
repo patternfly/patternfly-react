@@ -9,20 +9,30 @@ const propTypes = {
   /** Additional classes added to the Footer Link Item  */
   className: PropTypes.string,
   /** The URL of the Footer Link Item */
-  href: PropTypes.string
+  href: PropTypes.string,
+  /** Specifies where to open the linked document */
+  target: PropTypes.string
 };
 
 const defaultProps = {
   children: null,
   className: '',
-  href: '#'
+  href: '#',
+  target: '_blank'
 };
 
-const LoginFooterItem = ({ className, children, ...props }) => (
-  <a className={css(styles.loginFooterLink, className)} {...props}>
-    {children}
-  </a>
-);
+const LoginFooterItem = ({ className, children, href, target, ...props }) => {
+  const reactElement = React.isValidElement(children);
+  return reactElement ? (
+    React.cloneElement(children, {
+      className: css(styles.loginFooterLink, className)
+    })
+  ) : (
+    <a className={css(styles.loginFooterLink, className)} target={target} href={href} {...props}>
+      {children}
+    </a>
+  );
+};
 
 LoginFooterItem.propTypes = propTypes;
 LoginFooterItem.defaultProps = defaultProps;

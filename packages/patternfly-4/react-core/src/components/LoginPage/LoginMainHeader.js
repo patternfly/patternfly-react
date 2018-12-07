@@ -27,7 +27,7 @@ const defaultProps = {
 
 const LoginMainHeader = ({ children, className, dropdown, title, subtitle, ...props }) => (
   <header className={css(styles.loginMainHeader, className)} {...props}>
-    <Title size="3xl">{title}</Title>
+    {title && <Title size="3xl">{title}</Title>}
     {dropdown}
     {subtitle && <p>{subtitle}</p>}
     {children}

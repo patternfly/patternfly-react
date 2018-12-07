@@ -12,10 +12,5 @@ exports[`renders with PatternFly Core styles 1`] = `
 
 <header
   className="pf-c-login__main-header"
->
-  <Title
-    className=""
-    size="3xl"
-  />
-</header>
+/>
 `;
