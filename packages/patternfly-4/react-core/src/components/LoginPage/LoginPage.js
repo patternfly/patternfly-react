@@ -4,17 +4,14 @@ import PropTypes from 'prop-types';
 
 import Login from './Login';
 import LoginHeader from './LoginHeader';
-import LoginHeaderBrand from './LoginHeaderBrand';
 import LoginFooter from './LoginFooter';
 
-import LoginBox from './LoginBox';
-import LoginBoxHeader from './LoginBoxHeader';
-import LoginBoxBody from './LoginBoxBody';
-import LoginBoxFooter from './LoginBoxFooter';
+import LoginMainHeader from './LoginMainHeader';
+import LoginMainBody from './LoginMainBody';
+import LoginMainFooter from './LoginMainFooter';
 
 import { BackgroundImage } from '../BackgroundImage';
 import { Brand } from '../Brand';
-import { Text, TextContent } from '../Text';
 import { List } from '../List';
 
 const LoginListVariant = {
@@ -23,91 +20,85 @@ const LoginListVariant = {
 };
 
 const propTypes = {
-  /** Anything that can be rendered inside of the LoginPage */
+  /** Anything that can be rendered inside of the LoginPage (e.g. <LoginPageForm>) */
   children: PropTypes.node,
   /** Additional classes added to the LoginPage. */
   className: PropTypes.string,
   /** Attribute that specifies the URL of the brand image for the LoginPage */
-  mainBrandImgSrc: PropTypes.string,
+  brandImgSrc: PropTypes.string,
   /** Attribute that specifies the alt text of the brand image for the LoginPage. */
-  mainBrandImgAlt: PropTypes.string,
+  brandImgAlt: PropTypes.string,
   /** Attribute that specifies the URL of the background image for the LoginPage */
-  mainBackgroundImgSrc: PropTypes.string,
+  backgroundImgSrc: PropTypes.string,
   /** Attribute that specifies the alt text of the background image for the LoginPage. */
-  mainBackgroundImgAlt: PropTypes.string,
+  backgroundImgAlt: PropTypes.string,
   /** Content rendered inside of the Text Component of the LoginPage */
-  mainTextContent: PropTypes.string,
-  /** Items rendered inside of the List Component of the LoginPage */
-  mainListItems: PropTypes.node,
-  /** Adds list variant styles for the List component of the LoginPage */
-  mainListVariants: PropTypes.oneOf(Object.values(LoginListVariant)),
-  /** Language dropdown component for the LoginBox Header of the LoginPage */
-  loginLanguageDropdown: PropTypes.node,
-  /** Title for the LoginBox Header of the LoginPage */
+  textContent: PropTypes.string,
+  /** Items rendered inside of the Footer List Component of the LoginPage */
+  footerListItems: PropTypes.node,
+  /** Adds list variant styles for the Footer List component of the LoginPage.  Values are 'grid' or 'inline' */
+  footerListVariants: PropTypes.oneOf(Object.values(LoginListVariant)),
+  /** Language dropdown component for the Login Main Body Header of the LoginPage */
+  languageSelector: PropTypes.node,
+  /** Title for the Login Main Body Header of the LoginPage */
   loginTitle: PropTypes.string.isRequired,
-  /** Login subtitle that contains the Text, URL, and URL Text for the LoginBox Header of the LoginPage */
-  loginSubtitle: PropTypes.node,
-  /** Content rendered inside of the LoginBox Footer of the LoginPage */
-  loginFooterContent: PropTypes.node
+  /** Login message that contains the Text, URL, and URL Text for the sign up for an account Login Message */
+  signUpForAccountMessage: PropTypes.node,
+  /** Content rendered inside of Social Media Login footer section . */
+  socialMediaLoginContent: PropTypes.node
 };
 
 const defaultProps = {
   children: null,
   className: '',
-  mainBrandImgSrc: '',
-  mainBrandImgAlt: '',
-  mainBackgroundImgSrc: '',
-  mainBackgroundImgAlt: '',
-  mainListItems: null,
-  mainTextContent: '',
-  mainListVariants: null,
-  loginLanguageDropdown: null,
-  loginSubtitle: null,
-  loginFooterContent: null
+  brandImgSrc: '',
+  brandImgAlt: '',
+  backgroundImgSrc: '',
+  backgroundImgAlt: '',
+  footerListItems: null,
+  textContent: '',
+  footerListVariants: null,
+  languageSelector: null,
+  signUpForAccountMessage: null,
+  socialMediaLoginContent: null
 };
 
 const LoginPage = ({
   className,
   children,
-  mainBrandImgSrc,
-  mainBrandImgAlt,
-  mainBackgroundImgSrc,
-  mainBackgroundImgAlt,
-  mainTextContent,
-  mainListItems,
-  mainListVariants,
-  loginLanguageDropdown,
+  brandImgSrc,
+  brandImgAlt,
+  backgroundImgSrc,
+  backgroundImgAlt,
+  textContent,
+  footerListItems,
+  footerListVariants,
+  languageSelector,
   loginTitle,
-  loginSubtitle,
-  loginFooterContent,
+  signUpForAccountMessage,
+  socialMediaLoginContent,
   ...props
 }) => {
   const HeaderBrand = (
     <React.Fragment>
-      <LoginHeaderBrand>
-        <Brand src={mainBrandImgSrc} alt={mainBrandImgAlt} />
-      </LoginHeaderBrand>
-      <TextContent>
-        <Text>{mainTextContent}</Text>
-      </TextContent>
+      <Brand src={brandImgSrc} alt={brandImgAlt} />
+      <p>{textContent}</p>
     </React.Fragment>
   );
   const Header = <LoginHeader headerBrand={HeaderBrand} />;
   const Footer = (
     <LoginFooter>
-      <List variant={mainListVariants}>{mainListItems}</List>
+      <List variant={footerListVariants}>{footerListItems}</List>
     </LoginFooter>
   );
 
   return (
     <React.Fragment>
-      {mainBackgroundImgSrc && <BackgroundImage src={mainBackgroundImgSrc} alt={mainBackgroundImgAlt} />}
+      {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} alt={backgroundImgAlt} />}
       <Login header={Header} footer={Footer} {...props} className={css(className)}>
-        <LoginBox>
-          <LoginBoxHeader title={loginTitle} dropdown={loginLanguageDropdown} subtitle={loginSubtitle} />
-          <LoginBoxBody>{children}</LoginBoxBody>
-          {loginFooterContent && <LoginBoxFooter>{loginFooterContent}</LoginBoxFooter>}
-        </LoginBox>
+        <LoginMainHeader title={loginTitle} dropdown={languageSelector} subtitle={signUpForAccountMessage} />
+        <LoginMainBody>{children}</LoginMainBody>
+        {socialMediaLoginContent && <LoginMainFooter>{socialMediaLoginContent}</LoginMainFooter>}
       </Login>
     </React.Fragment>
   );

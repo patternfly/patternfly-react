@@ -1,6 +1,6 @@
 import { SFC, HTMLProps, ReactNode } from 'react';
 
-export interface LoginBoxHeaderProps extends HTMLProps<HTMLDivElement> {
+export interface LoginMainHeaderProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
   className?: string;
   dropdown?: ReactNode;
@@ -8,6 +8,6 @@ export interface LoginBoxHeaderProps extends HTMLProps<HTMLDivElement> {
   subtitle?: string;
 }
 
-declare const LoginBoxHeader: SFC<LoginBoxHeaderProps>;
+declare const LoginMainHeader: SFC<LoginMainHeaderProps>;
 
-export default LoginBoxHeader;
+export default LoginMainHeader;

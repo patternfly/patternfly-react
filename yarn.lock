@@ -350,9 +350,9 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.0.0.tgz#76b0e89e6f8738ca8154195baf5b8e6a80bc9105"
 
-"@patternfly/patternfly-next@1.0.83":
-  version "1.0.83"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.83.tgz#849ead886e7dbbd62d46a04f782cd991edc2870f"
+"@patternfly/patternfly-next@1.0.87":
+  version "1.0.87"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.87.tgz#72e844a20f2875319ffcaf9fe1787a462e6c4e77"
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
