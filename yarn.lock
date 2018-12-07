@@ -1121,6 +1121,7 @@
 "@patternfly/patternfly-next@1.0.87":
   version "1.0.87"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.87.tgz#72e844a20f2875319ffcaf9fe1787a462e6c4e77"
+  integrity sha512-2OKZUFCBz/AHPUDIv05J7VaJCq1a9nuPMio6DHVktyvI160zXM7p28ieEgdWo8saD6U2Pxq9FHF9TcwBJCUaUw==
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
