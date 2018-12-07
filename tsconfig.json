@@ -13,7 +13,7 @@
     "target": "esnext",
     "allowJs": true,
     "paths": {
-      "*": ["./packages/patternfly-4/react-core/dist/esm/@patternfly"]
+      "*": ["./packages/patternfly-4/react-core/dist/esm/*"]
     }
   },
   "include": ["packages/**/src/**/*"]

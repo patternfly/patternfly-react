@@ -24,6 +24,10 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "devDependencies": {
     "@commitlint/cli": "^7.1.2",
+    "@types/enzyme": "^3.1.15",
+    "@types/jest": "^23.3.10",
+    "@types/prop-types": "^15.5.6",
+    "@types/react": "^16.7.13",
     "change-case": "^3.0.2",
     "commitizen": "^3.0.1",
     "commitlint-config-cz": "^0.10.1",
