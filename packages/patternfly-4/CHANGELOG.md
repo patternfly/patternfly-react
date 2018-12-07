@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.28.6"></a>
+## [1.28.6](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.28.5...patternfly4-react-lerna-root@1.28.6) (2018-12-07)
+
+
+### Bug Fixes
+
+* **Button:** remove margin around Buttons in docs ([#1015](https://github.com/patternfly/patternfly-react/issues/1015)) ([4ba4af6](https://github.com/patternfly/patternfly-react/commit/4ba4af6))
+* **title:** allow multiple heading levels for Title ([#1005](https://github.com/patternfly/patternfly-react/issues/1005)) ([0eae3d1](https://github.com/patternfly/patternfly-react/commit/0eae3d1))
+
+
+
+
 <a name="1.28.5"></a>
 ## [1.28.5](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.28.4...patternfly4-react-lerna-root@1.28.5) (2018-12-05)
 

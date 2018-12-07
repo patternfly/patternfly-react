@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.19.19"></a>
+## [3.19.19](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.18...@patternfly/react-docs@3.19.19) (2018-12-07)
+
+
+### Bug Fixes
+
+* **title:** allow multiple heading levels for Title ([#1005](https://github.com/patternfly/patternfly-react/issues/1005)) ([0eae3d1](https://github.com/patternfly/patternfly-react/commit/0eae3d1))
+
+
+
+
 <a name="3.19.18"></a>
 ## [3.19.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.17...@patternfly/react-docs@3.19.18) (2018-12-05)
 

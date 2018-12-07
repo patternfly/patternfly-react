@@ -1,5 +1,53 @@
 
-## Change Log (2018-12-05)
+## Change Log (2018-12-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+  * [#1017](https://github.com/patternfly/patternfly-react/pull/1017) docs(Dropdown): clarify Dropdown example titles ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#998](https://github.com/patternfly/patternfly-react/pull/998) docs(Card): add card variations to documentation ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 3
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.28.5 (2018-12-05)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1001](https://github.com/patternfly/patternfly-react/pull/1001) fix(Badge): remove margin between badges to match core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.10 (2018-12-05)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1001](https://github.com/patternfly/patternfly-react/pull/1001) fix(Badge): remove margin between badges to match core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.18 (2018-12-05)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1001](https://github.com/patternfly/patternfly-react/pull/1001) fix(Badge): remove margin between badges to match core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.38.5 (2018-12-05)
 
 #### :bug: Bug Fix
 * `patternfly-4`

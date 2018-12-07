@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.25.4"></a>
+## [2.25.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.3...patternfly-react@2.25.4) (2018-12-07)
+
+
+### Bug Fixes
+
+* **LoginPage:** add LoginPageCard inner components documentation. ([#994](https://github.com/patternfly/patternfly-react/issues/994)) ([c00d355](https://github.com/patternfly/patternfly-react/commit/c00d355))
+
+
+
+
 <a name="2.25.3"></a>
 ## [2.25.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.1...patternfly-react@2.25.3) (2018-11-30)
 
