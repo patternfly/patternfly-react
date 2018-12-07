@@ -1,16 +1,15 @@
 import React from 'react';
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
-class SimpleCard extends React.Component {
+class NoFooterCard extends React.Component {
   render() {
     return (
       <Card>
         <CardHeader>Header</CardHeader>
-        <CardBody>Body</CardBody>
-        <CardFooter>Footer</CardFooter>
+        <CardBody>This card has no footer</CardBody>
       </Card>
     );
   }
 }
 
-export default SimpleCard;
+export default NoFooterCard;
