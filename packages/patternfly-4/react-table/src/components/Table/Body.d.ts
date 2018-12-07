@@ -1,9 +1,6 @@
 import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
-import { OneOf, Omit } from '../../../react-core/src/typeUtils';
 
-export interface TableBodyProps extends Omit<HTMLProps<HTMLTableRowElement>, 'onSelect'> {
-  children?: ReactNode;
-  className?: string;
+export interface TableBodyProps extends HTMLProps<HTMLTableRowElement> {
   rowKey?: string;
 }
 

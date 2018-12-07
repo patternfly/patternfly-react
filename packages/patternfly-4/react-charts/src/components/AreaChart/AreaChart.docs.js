@@ -12,7 +12,6 @@ export default {
     ChartLegend,
     ChartVoronoiContainer
   },
-
   examples: [
     { component: SimpleChart, title: 'Simple Chart', getContainerProps },
     { component: CustomColorsChart, title: 'Custom Colors Chart', getContainerProps },

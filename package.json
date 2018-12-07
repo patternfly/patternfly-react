@@ -112,8 +112,7 @@
       "<rootDir>/packages/*.*/dist/*.*",
       "<rootDir>/packages/*.*/examples/*.*",
       "<rootDir>/packages/*.docs.*",
-      "<rootDir>/packages/react-docs/*.*",
-      "<rootDir>/packages/*.*/src/test-helpers/*.*"
+      "<rootDir>/packages/react-docs/*.*"
     ],
     "setupFiles": [
       "./test.env.js"
@@ -157,8 +156,5 @@
   },
   "resolutions": {
     "cssom": "0.3.4"
-  },
-  "dependencies": {
-    "lodash": "^4.17.11"
   }
 }

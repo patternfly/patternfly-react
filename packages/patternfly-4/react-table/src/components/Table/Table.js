@@ -7,6 +7,7 @@ import { SortByDirection } from './SortColumn';
 import BodyCell from './BodyCell';
 import HeaderCell from './HeaderCell';
 import RowWrapper from './RowWrapper';
+import { calculateColumns } from './utils/headerUtils';
 
 export const TableGridBreakpoint = {
   grid: 'grid',
@@ -19,31 +20,65 @@ export const TableVariant = {
 }
 
 const propTypes = {
+  /** Table elements [Head, Body and Footer]. */
   children: PropTypes.node,
+  /** Addional classes for Table. */
   className: PropTypes.string,
+  /** Function called when user wants to collapse row. */
   onCollapse: PropTypes.func,
+  /** Table variant, defaults to large. */
   variant: PropTypes.oneOf(Object.values(TableVariant)),
+  /** Size at which table is broken into tiles. */
   gridBreakPoint: PropTypes.oneOf(Object.values(TableGridBreakpoint)),
+  /** Settings for sorting, which index and direction is sorted by. */
   sortBy: PropTypes.shape({
     index: PropTypes.number,
     direction: PropTypes.oneOf(Object.values(SortByDirection))
   }),
+  /** Function called when user wants to select row. */
   onSelect: PropTypes.func,
+  /** Function called when user wants to sort table. */
   onSort: PropTypes.func,
+  /** Additional cell displayed at the end of each row with dropdown of action items. */
   actions: PropTypes.array,
+  /** Actual rows to display in table. Either array of strings or row ojects. */
+  rows: PropTypes.arrayOf(PropTypes.oneOfType([
+    PropTypes.shape({
+      cells: PropTypes.arrayOf(PropTypes.string),
+      isOpen: PropTypes.bool,
+      parent: PropTypes.number
+    }),
+    PropTypes.arrayOf(PropTypes.string)
+  ])).isRequired,
+  /** Header cells to display in table. Either array of strings or array of string or cell object. */
+  cells: PropTypes.arrayOf(PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      title: PropTypes.string,
+      transforms: PropTypes.arrayOf(PropTypes.func),
+      cellTransforms: PropTypes.arrayOf(PropTypes.func),
+      formatters: PropTypes.arrayOf(PropTypes.func),
+      cellFormatters: PropTypes.arrayOf(PropTypes.func),
+      props: PropTypes.shape()
+    })
+  ])).isRequired,
+  /** Aria labeled by this property for select inputs. */
   selectLabeledBy: PropTypes.string,
+  /** Header to display above table for accessibility reasons. */
   header: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
       throw new Error('Header is required if no aria-label or caption is supplied!');
     }
     return null;
   },
+  /** Caption to display in table for accessibility reasons. */
   caption: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
       throw new Error('Caption is required if no aria-label or header is supplied!');
     }
     return null;
   },
+  /** aria-label in table for accessibility reasons. */
   'aria-label': props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
       throw new Error('aria-label is required if no caption or header is supplied!');
@@ -69,7 +104,6 @@ class Table extends React.Component {
     }
   }
   render() {
-    const { headerData } = this.state;
     const {
       caption,
       header,
@@ -83,19 +117,17 @@ class Table extends React.Component {
       onCollapse,
       selectLabeledBy,
       variant,
+      rows,
+      cells,
       ...props
     } = this.props;
+
+    const headerData = calculateColumns(cells, { sortBy, onSort, onSelect, actions, onCollapse, selectLabeledBy });
 
     return (
       <TableContext.Provider value={{
         headerData,
-        sortBy,
-        onSort,
-        onSelect,
-        actions,
-        onCollapse,
-        selectLabeledBy,
-        updateHeaderData: (headerData) => this.setState({ headerData })
+        rows: rows
       }}>
         {header}
         <Provider {...props} renderers={{

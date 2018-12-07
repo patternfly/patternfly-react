@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import { TableContext } from './Table';
 
 const propTypes = {
-  children: PropTypes.node,
+  /** Additional classes for table body. */
   className: PropTypes.string,
+  /** Specify key which should be used for labeling each row. */
   rowKey: PropTypes.string
 };
 
 const defaultProps = {
-  children: null,
   rowKey: 'id',
   className: ''
 };
@@ -69,7 +69,7 @@ class ContextBody extends React.Component {
 
 const TableBody = props => (
   <TableContext.Consumer>
-    {({ headerData }) => <ContextBody {...props} headerData={headerData} />}
+    {({ headerData, rows }) => <ContextBody {...props} headerData={headerData} rows={rows} />}
   </TableContext.Consumer>
 )
 

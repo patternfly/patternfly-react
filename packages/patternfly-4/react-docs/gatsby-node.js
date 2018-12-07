@@ -1,6 +1,7 @@
 const path = require(`path`);
 const paramCase = require('param-case');
 const fs = require('fs-extra'); //eslint-disable-line
+const packageDirs = ['react-core', 'react-charts', 'react-styled-system', 'react-table'];
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   const oldCSSLoader = config._loaders.css;
@@ -97,8 +98,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     const filePath = path.resolve(__dirname, '.tmp', doc.base);
 
     const rawExamples = [];
-    const getPackage = pkg => doc.absolutePath.indexOf(pkg) !== -1 && pkg;
-    const packageDir = ['react-core', 'react-charts', 'react-styled-system', 'react-table'].find(getPackage);
+    const packageDir = packageDirs.find(pkg => doc.absolutePath.indexOf(pkg) !== -1);
     examples.edges.forEach(({ node: example }) => {
       if (
         example.relativeDirectory

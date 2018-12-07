@@ -57,9 +57,9 @@ class CollapsibleTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Collapsible table" onCollapse={this.onCollapse}>
-        <TableHeader headerRows={columns} />
-        <TableBody rows={rows} />
+      <Table caption="Collapsible table" onCollapse={this.onCollapse} rows={rows} cells={columns}>
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }

@@ -6,7 +6,13 @@ class SimpleTable extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
+      columns: [
+        { title: 'Repositories' },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        'Last Commit'
+      ],
       rows: [['one', 'two', 'three', 'four', 'five']]
     };
   }
@@ -15,9 +21,9 @@ class SimpleTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Simple Table">
-        <TableHeader headerRows={columns} />
-        <TableBody rows={rows} />
+      <Table caption="Simple Table" cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }

@@ -5,7 +5,12 @@ class SortableTable extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      columns: [{ title: 'Repositories', transforms: [sortable] }, 'Branches', { title: 'Pull requests', transforms: [sortable] }, 'Workspaces', 'Last Commit'],
+      columns: [
+        { title: 'Repositories', transforms: [sortable] },
+        'Branches',
+        { title: 'Pull requests', transforms: [sortable] },
+        'Workspaces', 'Last Commit'
+      ],
       rows: [
         ['one', 'two', 'a', 'four', 'five'],
         ['a', 'two', 'k', 'four', 'five'],
@@ -31,9 +36,9 @@ class SortableTable extends React.Component {
     const { columns, rows, sortBy } = this.state;
 
     return (
-      <Table caption="Sortable Table" sortBy={sortBy} onSort={this.onSort}>
-        <TableHeader headerRows={columns} />
-        <TableBody rows={rows} />
+      <Table caption="Sortable Table" sortBy={sortBy} onSort={this.onSort} cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }

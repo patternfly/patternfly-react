@@ -264,9 +264,112 @@ exports[`Actions table 1`] = `
     ]
   }
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -592,378 +695,12 @@ exports[`Actions table 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
-          actions={
-            Array [
-              Object {
-                "onClick": [Function],
-                "title": "Some action",
-              },
-              Object {
-                "onClick": [Function],
-                "title": <div>
-                  Another action
-                </div>,
-              },
-              Object {
-                "isSeparator": true,
-              },
-              Object {
-                "onClick": [Function],
-                "title": "Third action",
-              },
-            ]
-          }
           className=""
-          headerRows={
-            Array [
-              Object {
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": Array [
-                        Object {
-                          "onClick": [Function],
-                          "title": "Some action",
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": <div>
-                            Another action
-                          </div>,
-                        },
-                        Object {
-                          "isSeparator": true,
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": "Third action",
-                        },
-                      ],
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": Array [
-                        Object {
-                          "onClick": [Function],
-                          "title": "Some action",
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": <div>
-                            Another action
-                          </div>,
-                        },
-                        Object {
-                          "isSeparator": true,
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": "Third action",
-                        },
-                      ],
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": Array [
-                        Object {
-                          "onClick": [Function],
-                          "title": "Some action",
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": <div>
-                            Another action
-                          </div>,
-                        },
-                        Object {
-                          "isSeparator": true,
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": "Third action",
-                        },
-                      ],
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": Array [
-                        Object {
-                          "onClick": [Function],
-                          "title": "Some action",
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": <div>
-                            Another action
-                          </div>,
-                        },
-                        Object {
-                          "isSeparator": true,
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": "Third action",
-                        },
-                      ],
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": Array [
-                        Object {
-                          "onClick": [Function],
-                          "title": "Some action",
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": <div>
-                            Another action
-                          </div>,
-                        },
-                        Object {
-                          "isSeparator": true,
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": "Third action",
-                        },
-                      ],
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": Array [
-                        Object {
-                          "onClick": [Function],
-                          "title": "Some action",
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": <div>
-                            Another action
-                          </div>,
-                        },
-                        Object {
-                          "isSeparator": true,
-                        },
-                        Object {
-                          "onClick": [Function],
-                          "title": "Third action",
-                        },
-                      ],
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "column-5",
-                    "props": Object {
-                      "data-key": 5,
-                      "data-label": "",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -1414,91 +1151,6 @@ exports[`Actions table 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -7563,9 +7215,115 @@ exports[`Cell header table 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "cellTransforms": Array [
+          [Function],
+        ],
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -7751,223 +7509,12 @@ exports[`Cell header table 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "cellTransforms": Array [
-                [Function],
-              ],
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "cellTransforms": Array [
-                  [Function],
-                ],
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -8267,91 +7814,6 @@ exports[`Cell header table 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -11422,8 +10884,6 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  min-width: undefined;
-  min-height: undefined;
   padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -11444,8 +10904,6 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-button.pf-m-plain.pf-m-expanded {
   display: inline-block;
   position: relative;
-  min-width: undefined;
-  min-height: undefined;
   padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -11501,8 +10959,6 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  min-width: undefined;
-  min-height: undefined;
   padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -11579,9 +11035,121 @@ exports[`Collapsible nested table 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "cellTransforms": Array [
+          [Function],
+        ],
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={[Function]}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": false,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": true,
+        "parent": 0,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "parent": 1,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": false,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "parent": 3,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -11806,262 +11374,12 @@ exports[`Collapsible nested table 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "cellTransforms": Array [
-                [Function],
-              ],
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "cellTransforms": Array [
-                  [Function],
-                ],
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={[Function]}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "column-0",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 5,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -12411,97 +11729,6 @@ exports[`Collapsible nested table 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": false,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": true,
-              "parent": 0,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "parent": 1,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": false,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "parent": 3,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -16264,8 +15491,6 @@ exports[`Collapsible table 1`] = `
 .pf-c-button.pf-m-plain.pf-m-expanded {
   display: inline-block;
   position: relative;
-  min-width: undefined;
-  min-height: undefined;
   padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -16311,8 +15536,6 @@ exports[`Collapsible table 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  min-width: undefined;
-  min-height: undefined;
   padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -16389,9 +15612,119 @@ exports[`Collapsible table 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "cellTransforms": Array [
+          [Function],
+        ],
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={[Function]}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": true,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "parent": 0,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": false,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "parent": 3,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -16616,262 +15949,12 @@ exports[`Collapsible table 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "cellTransforms": Array [
-                [Function],
-              ],
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "cellTransforms": Array [
-                  [Function],
-                ],
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={[Function]}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "column-0",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": [Function],
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 5,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -17221,95 +16304,6 @@ exports[`Collapsible table 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": true,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "parent": 0,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": false,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "parent": 3,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -21051,9 +20045,127 @@ exports[`Header width table 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "cellTransforms": Array [
+          [Function],
+        ],
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": false,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": true,
+        "parent": 0,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "parent": 1,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": false,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "parent": 3,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -21241,237 +20353,12 @@ exports[`Header width table 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "cellTransforms": Array [
-                [Function],
-              ],
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "cellTransforms": Array [
-                  [Function],
-                ],
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -21737,97 +20624,6 @@ exports[`Header width table 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": false,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": true,
-              "parent": 0,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "parent": 1,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": false,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "parent": 3,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -25062,10 +23858,122 @@ exports[`Selectable table 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "cellTransforms": Array [
+          [Function],
+        ],
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={null}
   onSelect={[Function]}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": false,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": true,
+        "parent": 0,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "parent": 1,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "isOpen": false,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+        "parent": 3,
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -25284,257 +24192,12 @@ exports[`Selectable table 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "cellTransforms": Array [
-                [Function],
-              ],
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "cellTransforms": Array [
-                  [Function],
-                ],
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          onSelect={[Function]}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": [Function],
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "column-0",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": [Function],
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": [Function],
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": [Function],
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": [Function],
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": [Function],
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 5,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -25895,97 +24558,6 @@ exports[`Selectable table 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": false,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": true,
-              "parent": 0,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "parent": 1,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "isOpen": false,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-              "parent": 3,
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -29694,9 +28266,109 @@ exports[`Simple table aria-label 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "title": "Header cell",
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -29880,209 +28552,12 @@ exports[`Simple table aria-label 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "title": "Header cell",
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "title": "Header cell",
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -30338,91 +28813,6 @@ exports[`Simple table aria-label 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -33470,9 +31860,109 @@ exports[`Simple table caption 1`] = `
 
 <Table
   caption="Simple Table"
+  cells={
+    Array [
+      Object {
+        "title": "Header cell",
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     className="pf-c-table pf-m-grid-md"
@@ -33657,209 +32147,12 @@ exports[`Simple table caption 1`] = `
       </caption>
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "title": "Header cell",
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "title": "Header cell",
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -34115,91 +32408,6 @@ exports[`Simple table caption 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -37246,6 +35454,21 @@ exports[`Simple table header 1`] = `
 }
 
 <Table
+  cells={
+    Array [
+      Object {
+        "title": "Header cell",
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   header={
@@ -37254,6 +35477,91 @@ exports[`Simple table header 1`] = `
     </h4>
   }
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <h4>
     Header title
@@ -37438,209 +35746,12 @@ exports[`Simple table header 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "title": "Header cell",
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "title": "Header cell",
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -37896,91 +36007,6 @@ exports[`Simple table header 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -41041,10 +39067,113 @@ exports[`Sortable table 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={null}
   onSort={[Function]}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
   sortBy={Object {}}
 >
   <Provider
@@ -41230,218 +39359,12 @@ exports[`Sortable table 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          onSort={[Function]}
-          sortBy={Object {}}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": [Function],
-                      "selectLabeledBy": undefined,
-                      "sortBy": Object {},
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": [Function],
-                      "selectLabeledBy": undefined,
-                      "sortBy": Object {},
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": [Function],
-                      "selectLabeledBy": undefined,
-                      "sortBy": Object {},
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": [Function],
-                      "selectLabeledBy": undefined,
-                      "sortBy": Object {},
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": [Function],
-                      "selectLabeledBy": undefined,
-                      "sortBy": Object {},
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -41740,91 +39663,6 @@ exports[`Sortable table 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -44895,9 +42733,112 @@ exports[`Table variants Breakpoint - grid 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid"
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -45082,216 +43023,12 @@ exports[`Table variants Breakpoint - grid 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -45590,91 +43327,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -48745,9 +46397,112 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-lg"
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -48932,216 +46687,12 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -49440,91 +46991,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -52595,9 +50061,112 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
 >
   <Provider
     aria-label="Aria labeled"
@@ -52782,216 +50351,12 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -53290,91 +50655,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""
@@ -56445,9 +53725,112 @@ exports[`Table variants Size - compact 1`] = `
 
 <Table
   aria-label="Aria labeled"
+  cells={
+    Array [
+      Object {
+        "title": "Header cell",
+        "transforms": Array [
+          [Function],
+        ],
+      },
+      "Branches",
+      Object {
+        "title": "Pull requests",
+      },
+      "Workspaces",
+      Object {
+        "title": "Last Commit",
+      },
+    ]
+  }
   className=""
   gridBreakPoint="grid-md"
   onCollapse={null}
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+      Object {
+        "cells": Array [
+          "one",
+          "two",
+          "three",
+          "four",
+          "five",
+        ],
+      },
+    ]
+  }
   variant="compact"
 >
   <Provider
@@ -56633,216 +54016,12 @@ exports[`Table variants Size - compact 1`] = `
     >
       <TableHeader
         className=""
-        headerRows={
-          Array [
-            Object {
-              "title": "Header cell",
-              "transforms": Array [
-                [Function],
-              ],
-            },
-            "Branches",
-            Object {
-              "title": "Pull requests",
-            },
-            "Workspaces",
-            Object {
-              "title": "Last Commit",
-            },
-          ]
-        }
-        onCollapse={null}
-        onSelect={null}
-        onSort={null}
-        sortBy={Object {}}
       >
         <ContextHeader
           className=""
-          headerRows={
-            Array [
-              Object {
-                "title": "Header cell",
-                "transforms": Array [
-                  [Function],
-                ],
-              },
-              "Branches",
-              Object {
-                "title": "Pull requests",
-              },
-              "Workspaces",
-              Object {
-                "title": "Last Commit",
-              },
-            ]
-          }
-          onCollapse={null}
-          updateHeaderData={[Function]}
         >
           <Header
             className=""
-            headerRows={
-              Array [
-                Array [
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Header cell",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "header-cell",
-                    "props": Object {
-                      "data-key": 0,
-                      "data-label": "Header cell",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Branches",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "branches",
-                    "props": Object {
-                      "data-key": 1,
-                      "data-label": "Branches",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Pull requests",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "pull-requests",
-                    "props": Object {
-                      "data-key": 2,
-                      "data-label": "Pull requests",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Workspaces",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "workspaces",
-                    "props": Object {
-                      "data-key": 3,
-                      "data-label": "Workspaces",
-                    },
-                  },
-                  Object {
-                    "cell": Object {
-                      "formatters": Array [
-                        [Function],
-                      ],
-                      "transforms": Array [
-                        [Function],
-                      ],
-                    },
-                    "extraParams": Object {
-                      "actions": undefined,
-                      "onCollapse": null,
-                      "onSelect": undefined,
-                      "onSort": undefined,
-                      "selectLabeledBy": undefined,
-                      "sortBy": undefined,
-                    },
-                    "header": Object {
-                      "formatters": Array [],
-                      "label": "Last Commit",
-                      "transforms": Array [
-                        [Function],
-                        [Function],
-                      ],
-                    },
-                    "property": "last-commit",
-                    "props": Object {
-                      "data-key": 4,
-                      "data-label": "Last Commit",
-                    },
-                  },
-                ],
-              ]
-            }
           >
             <thead
               className=""
@@ -57141,91 +54320,6 @@ exports[`Table variants Size - compact 1`] = `
       <TableBody
         className=""
         rowKey="id"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-            Object {
-              "cells": Array [
-                "one",
-                "two",
-                "three",
-                "four",
-                "five",
-              ],
-            },
-          ]
-        }
       >
         <ContextBody
           className=""

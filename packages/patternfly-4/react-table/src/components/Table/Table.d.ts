@@ -1,5 +1,5 @@
 import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
-import { OneOf, Omit } from '../../../react-core/src/typeUtils';
+import { OneOf, Omit } from '../../../../react-core/src/typeUtils';
 import { SortByDirection } from './SortColumn';
 
 export interface ISortBy {
@@ -26,7 +26,22 @@ export interface ISeparator {
   isSeparator: Boolean
 }
 
-export interface TableProps extends Omit<HTMLProps<HTMLTableElement>, 'onSelect'> {
+export interface ICell {
+  title: String;
+  transfroms: Array<Function>;
+  cellTransforms: Array<Function>;
+  formatters: Array<Function>;
+  cellFormatters: Array<Function>;
+  props: Object;
+}
+
+export interface IRow {
+  cells: Array<String>;
+  isOpen: Boolean;
+  parent: Number;
+}
+
+export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSelect'>, 'rows'> {
   children?: ReactNode;
   className?: string;
   variant?: OneOf<typeof TableVariant, keyof typeof TableVariant>;
@@ -38,6 +53,8 @@ export interface TableProps extends Omit<HTMLProps<HTMLTableElement>, 'onSelect'
   actions?: Array<IAction | ISeparator>;
   header?: ReactNode;
   caption?: ReactNode;
+  rows: Array<IRow | Array<String>>;
+  cells: Array<ICell | String>;
 }
 
 declare const Table: SFC<TableProps>;

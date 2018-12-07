@@ -5,7 +5,13 @@ class ActionsTable extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
+      columns: [
+        { title: 'Repositories' },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        'Last Commit'
+      ],
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five']
@@ -40,9 +46,9 @@ class ActionsTable extends React.Component {
   render() {
     const { columns, rows, actions } = this.state;
     return (
-      <Table caption="Actions Table" actions={actions}>
-        <TableHeader headerRows={columns} />
-        <TableBody rows={rows} />
+      <Table caption="Actions Table" actions={actions} cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }

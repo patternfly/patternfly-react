@@ -5,7 +5,13 @@ class SelectableTable extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      columns: [{ title: 'Repositories', cellTransforms: [headerCol()] }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
+      columns: [
+        { title: 'Repositories', cellTransforms: [headerCol()] },
+        'Branches',
+        { title: 'Pull requests' },
+        'Workspaces',
+        'Last Commit'
+      ],
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five']
@@ -41,9 +47,9 @@ class SelectableTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Selectable Table" onSelect={this.onSelect}>
-        <TableHeader headerRows={columns} />
-        <TableBody rows={rows} />
+      <Table caption="Selectable Table" onSelect={this.onSelect} cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }

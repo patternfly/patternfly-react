@@ -21,9 +21,9 @@ class WidthTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Table with Width Modifiers">
-        <TableHeader headerRows={columns} />
-        <TableBody rows={rows} />
+      <Table caption="Table with Width Modifiers" cells={columns} rows={rows}>
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }

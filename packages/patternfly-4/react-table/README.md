@@ -1,9 +1,5 @@
 # @patternfly/react-table
-<<<<<<< HEAD
 This package provides Table PatternFly components based on [PatternFly 4][patternfly-4]
-=======
-
->>>>>>> Add transforms for collapsible table
 ### Prerequisite
 
 #### Node Environment
@@ -56,9 +52,9 @@ class SimpleTable extends React.Component {
    render() {
     const { columns, rows } = this.state;
      return (
-      <Table caption="Simple Table">
-        <TableHeader headerRows={columns} />
-        <TableBody rows={rows} />
+      <Table caption="Simple Table" rows={rows} cells={columns} >
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }
