@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataList Cell 1`] = `
+.pf-c-data-list__cell.data-list-custom {
+  display: block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+<div
+  className="pf-c-data-list__cell data-list-custom"
+  id="primary-item"
+>
+  Primary Id
+</div>
+`;
+
+exports[`DataList Cell default 1`] = `
+.pf-c-data-list__cell {
+  display: block;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+<div
+  className="pf-c-data-list__cell"
+>
+  Secondary
+</div>
+`;
+
+exports[`DataList Item 1`] = `
+.pf-c-data-list__item.data-list-item-custom {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+<li
+  aria-labelledby="item-1"
+  className="pf-c-data-list__item data-list-item-custom"
+/>
+`;
+
+exports[`DataList Item default 1`] = `
+.pf-c-data-list__item {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+<li
+  aria-labelledby="item-1"
+  className="pf-c-data-list__item"
+/>
+`;
+
+exports[`DataList List 1`] = `
+.pf-c-data-list.pf-u-box-shadow-md.data-list-custom {
+  display: block;
+  list-style-type: disc;
+  background-color: #ffffff;
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
+}
+
+<ul
+  aria-label="this is a simple list"
+  className="pf-c-data-list pf-u-box-shadow-md data-list-custom"
+  role="list"
+/>
+`;
+
+exports[`DataList List default 1`] = `
+.pf-c-data-list.pf-u-box-shadow-md {
+  display: block;
+  list-style-type: disc;
+  background-color: #ffffff;
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
+}
+
+<ul
+  aria-label="this is a simple list"
+  className="pf-c-data-list pf-u-box-shadow-md"
+  role="list"
+/>
+`;
