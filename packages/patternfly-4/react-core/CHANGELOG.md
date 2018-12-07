@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.39.0"></a>
+# [1.39.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.38.6...@patternfly/react-core@1.39.0) (2018-12-07)
+
+
+### Features
+
+* **DataList:** Add simple data list ([#927](https://github.com/patternfly/patternfly-react/issues/927)) ([cd25279](https://github.com/patternfly/patternfly-react/commit/cd25279))
+
+
+
+
 <a name="1.38.6"></a>
 ## [1.38.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.38.5...@patternfly/react-core@1.38.6) (2018-12-07)
 
