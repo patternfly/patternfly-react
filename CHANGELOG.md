@@ -1,5 +1,131 @@
 
-## Change Log (2018-12-07)
+## patternfly4-react-lerna-root@1.28.6 (2018-12-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+  * [#1017](https://github.com/patternfly/patternfly-react/pull/1017) docs(Dropdown): clarify Dropdown example titles ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#998](https://github.com/patternfly/patternfly-react/pull/998) docs(Card): add card variations to documentation ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 3
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly3-react-lerna-root@7.12.7 (2018-12-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+  * [#1017](https://github.com/patternfly/patternfly-react/pull/1017) docs(Dropdown): clarify Dropdown example titles ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#998](https://github.com/patternfly/patternfly-react/pull/998) docs(Card): add card variations to documentation ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 3
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly-react@2.25.4 (2018-12-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+  * [#1017](https://github.com/patternfly/patternfly-react/pull/1017) docs(Dropdown): clarify Dropdown example titles ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#998](https://github.com/patternfly/patternfly-react/pull/998) docs(Card): add card variations to documentation ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 3
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly-react-extensions@2.13.14 (2018-12-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+  * [#1017](https://github.com/patternfly/patternfly-react/pull/1017) docs(Dropdown): clarify Dropdown example titles ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#998](https://github.com/patternfly/patternfly-react/pull/998) docs(Card): add card variations to documentation ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 3
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.11 (2018-12-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+  * [#1017](https://github.com/patternfly/patternfly-react/pull/1017) docs(Dropdown): clarify Dropdown example titles ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#998](https://github.com/patternfly/patternfly-react/pull/998) docs(Card): add card variations to documentation ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 3
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.19 (2018-12-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+  * [#1017](https://github.com/patternfly/patternfly-react/pull/1017) docs(Dropdown): clarify Dropdown example titles ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#998](https://github.com/patternfly/patternfly-react/pull/998) docs(Card): add card variations to documentation ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 3
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.38.6 (2018-12-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+  * [#1017](https://github.com/patternfly/patternfly-react/pull/1017) docs(Dropdown): clarify Dropdown example titles ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#998](https://github.com/patternfly/patternfly-react/pull/998) docs(Card): add card variations to documentation ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1005](https://github.com/patternfly/patternfly-react/pull/1005) fix(title): allow multiple heading levels for Title ([@seanforyou23](https://github.com/seanforyou23))
+
+#### Committers: 3
+- Michael Spaxman ([@seanforyou23](https://github.com/seanforyou23))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-console@1.9.4 (2018-12-07)
 
 #### :rocket: New Feature
 * `patternfly-4`
