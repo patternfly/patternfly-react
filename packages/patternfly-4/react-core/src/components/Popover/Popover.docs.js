@@ -24,7 +24,7 @@ export default {
     'Object.values(PopoverPosition)': Object.values(PopoverPosition)
   },
   examples: [
-    { component: SimplePopover, title: 'Closable Popover Position' },
-    { component: HeadlessPopover, title: 'Headless Popover' }
+    { component: SimplePopover, title: 'Closable Popover Position', live: true },
+    { component: HeadlessPopover, title: 'Headless Popover', live: false }
   ]
 };
