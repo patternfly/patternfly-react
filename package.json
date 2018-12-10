@@ -24,6 +24,10 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "devDependencies": {
     "@commitlint/cli": "^7.1.2",
+    "@types/enzyme": "^3.1.15",
+    "@types/jest": "^23.3.10",
+    "@types/prop-types": "^15.5.6",
+    "@types/react": "^16.7.13",
     "change-case": "^3.0.2",
     "commitizen": "^3.0.1",
     "commitlint-config-cz": "^0.10.1",
@@ -53,7 +57,8 @@
     "react": "^16.3.0",
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.3.0",
-    "travis-deploy-once": "^4.4.1"
+    "travis-deploy-once": "^4.4.1",
+    "ts-jest": "^23.10.5"
   },
   "sassIncludes": {
     "patternfly": "node_modules/patternfly/dist/sass",
@@ -64,6 +69,7 @@
     "bootstrap": "lerna bootstrap",
     "build": "yarn clean:build && lerna run prebuild --parallel && lerna run build --parallel && lerna run postbuild",
     "build:docs": "yarn build && lerna run docbuild --scope=@patternfly/react-docs --stream",
+    "build:typecheck": "lerna run build:typecheck --scope=@patternfly/react-core --stream",
     "build:prdocs": "lerna run pr-build --scope=@patternfly/react-docs --stream",
     "clean": "yarn clean:build",
     "clean:build": "rm -rf packages/*/dist && rm -rf packages/patternfly-?/*/dist",
@@ -115,6 +121,7 @@
       "<rootDir>/packages/patternfly-4/react-core/build/snapshot-serializer"
     ],
     "transform": {
+      "^.+\\.(ts|tsx)?$": "ts-jest",
       "^.+\\.jsx?$": "babel-jest",
       "\\.(css)$": "<rootDir>/packages/patternfly-4/react-styles/jest-transform.js"
     },
@@ -128,7 +135,8 @@
       "<rootDir>/packages",
       "<rootDir>/scripts"
     ],
-    "testURL": "http://localhost"
+    "testURL": "http://localhost",
+    "preset": "ts-jest/presets/js-with-babel"
   },
   "config": {
     "commitizen": {

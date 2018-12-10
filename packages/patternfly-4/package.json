@@ -30,5 +30,8 @@
     "lint:versions": "node ./verifyCoreVersions.js",
     "lint:styles": "yarn stylelint",
     "stylelint": "stylelint '**/sass/**/*.scss' !**/dist/**/*.scss"
+  },
+  "dependencies": {
+    "@types/jest": "^23.3.10"
   }
 }
