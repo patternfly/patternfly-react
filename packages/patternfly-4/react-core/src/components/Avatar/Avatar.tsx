@@ -8,6 +8,15 @@ const defaultProps = {
   src: ''
 };
 
+const propTypes = {
+  /** Additional classes added to the Avatar. */
+  className: PropTypes.string,
+  /** Attribute that specifies the URL of the image for the Avatar. */
+  src: PropTypes.string,
+  /** Attribute that specifies the alt text of the image for the Avatar. */
+  alt: PropTypes.string.isRequired
+};
+
 /**
  * Column properties.
  */
