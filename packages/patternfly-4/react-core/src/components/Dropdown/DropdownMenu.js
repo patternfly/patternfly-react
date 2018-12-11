@@ -29,12 +29,51 @@ const defaultProps = {
   component: 'ul'
 };
 
-const DropdownMenu = ({ className, isOpen, position, children, component: Component, ...props }) => {
-  let menu = null;
-  if (Component === 'div') {
-    menu = (
-      <DropdownContext.Consumer>
-        {onSelect => (
+class DropdownMenu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.keyHandler = this.keyHandler.bind(this);
+  }
+
+  componentDidMount() {
+    console.log('menu', this.refs);
+  }
+
+  keyHandler(ref) {
+    console.log('handled', ref);
+    console.log(this.props.children);
+  }
+
+  render() {
+    const { className, isOpen, position, children, component: Component, ...props } = this.props;
+    let menu = null;
+    if (Component === 'div') {
+      menu = (
+        <DropdownContext.Consumer>
+          {onSelect => (
+            <Component
+              {...props}
+              className={css(
+                styles.dropdownMenu,
+                position === DropdownPosition.right && styles.modifiers.alignRight,
+                className
+              )}
+              hidden={!isOpen}
+              onClick={event => onSelect && onSelect(event)}
+            >
+              {children &&
+                React.Children.map(children, child => React.cloneElement(child, { keyHandler: this.keyHandler }))}
+            </Component>
+          )}
+        </DropdownContext.Consumer>
+      );
+    } else if (Component === 'ul') {
+      menu = (
+        <FocusTrap
+          focusTrapOptions={{
+            clickOutsideDeactivates: true
+          }}
+        >
           <Component
             {...props}
             className={css(
@@ -43,36 +82,16 @@ const DropdownMenu = ({ className, isOpen, position, children, component: Compon
               className
             )}
             hidden={!isOpen}
-            onClick={event => onSelect && onSelect(event)}
           >
-            {children}
+            {children &&
+              React.Children.map(children, child => React.cloneElement(child, { keyHandler: this.keyHandler }))}
           </Component>
-        )}
-      </DropdownContext.Consumer>
-    );
-  } else if (Component === 'ul') {
-    menu = (
-      <FocusTrap
-        focusTrapOptions={{
-          clickOutsideDeactivates: true
-        }}
-      >
-        <Component
-          {...props}
-          className={css(
-            styles.dropdownMenu,
-            position === DropdownPosition.right && styles.modifiers.alignRight,
-            className
-          )}
-          hidden={!isOpen}
-        >
-          {children}
-        </Component>
-      </FocusTrap>
-    );
+        </FocusTrap>
+      );
+    }
+    return menu;
   }
-  return menu;
-};
+}
 
 DropdownMenu.propTypes = propTypes;
 DropdownMenu.defaultProps = defaultProps;
