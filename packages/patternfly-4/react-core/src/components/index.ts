@@ -12,6 +12,7 @@ export * from './Card';
 export * from './Checkbox';
 export * from './DataList';
 export * from './Dropdown';
+export * from './EmptyState';
 export * from './Form';
 export * from './Label';
 export * from './List';
