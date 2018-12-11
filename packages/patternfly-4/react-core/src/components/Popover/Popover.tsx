@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { HTMLProps, ReactNode } from 'react';
+import { Omit } from '../../typeUtils';
 import PropTypes from 'prop-types';
 import Tippy from '@tippy.js/react';
 import styles from '@patternfly/patternfly-next/components/Popover/popover.css';
@@ -9,9 +10,10 @@ import PopoverBody from './PopoverBody';
 import PopoverHeader from './PopoverHeader';
 import PopoverCloseButton from './PopoverCloseButton';
 import GenerateId from '../../internal/GenerateId/GenerateId';
+import { Instance, BasicPlacement } from 'tippy.js';
 
 // Need to unset tippy default styles
-// Also for 'auto' placement, need to make arrow aware of parent x-placement attribute in order to work
+// Also for enableFlip, need to make arrow aware of parent x-placement attribute in order to work
 const overrides = StyleSheet.parse(`
   .pf-tippy-theme {
     &.tippy-tooltip { 
@@ -47,16 +49,52 @@ const overrides = StyleSheet.parse(`
 overrides.inject();
 
 export const PopoverPosition = {
-  auto: 'auto',
   top: 'top',
   bottom: 'bottom',
   left: 'left',
   right: 'right'
 };
 
+export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'> {
+  /** Popover position */
+  position?: BasicPlacement;
+  /** If true, tries to keep the popover in view by flipping it if necessary */
+  enableFlip?: boolean;
+  /** Popover additional class */
+  className?: string;
+  /** The reference element to which the popover is relatively placed to */
+  children: React.ReactElement<any>;
+  /** Accessible label, required when header is not present */
+  'aria-label'?: string;
+  /** Header content, leave empty for no header */
+  headerContent?: ReactNode;
+  /** Body content */
+  bodyContent: ReactNode;
+  /** True to show the popover */
+  isVisible: boolean;
+  /** The element to append the popover to, defaults to body */
+  appendTo?: Element | ((ref: Element) => Element);
+  /** Hides the popover when a click occurs outside */
+  hideOnOutsideClick?: boolean;
+  /** Lifecycle function invoked when the popover begins to transition out. */
+  onHide?(instance: Instance): void;
+  /** Lifecycle function invoked when the popover has fully transitioned out. */
+  onHidden?(instance: Instance): void;
+  /** Lifecycle function invoked when the popover begins to transition in. */
+  onShow?(instance: Instance): void;
+  /** Lifecycle function invoked when the popover has fully transitioned in. */
+  onShown?(instance: Instance): void;
+  /** Lifecycle function invoked when the popover has been mounted to the DOM. */
+  onMount?(instance: Instance): void;
+  /** z-index of the popover */
+  zIndex?: number;
+}
+
 const propTypes = {
   /** Popover position */
-  position: PropTypes.oneOf(Object.values(PopoverPosition)),
+  position: PropTypes.oneOf(Object.keys(PopoverPosition).map(key => PopoverPosition[key])),
+  /** If true, tries to keep the popover in view by flipping it if necessary */
+  enableFlip: PropTypes.bool,
   /** Popover additional class */
   className: PropTypes.string,
   /** The reference element to which the popover is relatively placed to */
@@ -74,8 +112,6 @@ const propTypes = {
   bodyContent: PropTypes.node.isRequired,
   /** True to show the popover */
   isVisible: PropTypes.bool.isRequired,
-  /** Add an arrow to the dialog (if position is not 'auto') */
-  showArrow: PropTypes.bool,
   /** The element to append the popover to, defaults to body */
   appendTo: PropTypes.func,
   /** Hides the popover when a click occurs outside */
@@ -94,23 +130,29 @@ const propTypes = {
   zIndex: PropTypes.number
 };
 
-const defaultProps = {
-  position: 'top',
-  className: null,
-  'aria-label': '',
-  headerContent: null,
-  showArrow: true,
-  appendTo: () => document.body,
-  hideOnOutsideClick: true,
-  onHide: () => undefined,
-  onHidden: () => undefined,
-  onShow: () => undefined,
-  onShown: () => undefined,
-  onMount: () => undefined,
-  zIndex: 9999
-};
+class Popover extends React.Component<PopoverProps> {
+  tip: any;
 
-class PopoverDialog extends React.Component {
+  constructor(props: PopoverProps) {
+    super(props);
+  }
+
+  public static defaultProps = {
+    position: 'top',
+    enableFlip: true,
+    className: null,
+    'aria-label': '',
+    headerContent: null,
+    appendTo: () => document.body,
+    hideOnOutsideClick: true,
+    onHide: () => undefined,
+    onHidden: () => undefined,
+    onShow: () => undefined,
+    onShown: () => undefined,
+    onMount: () => undefined,
+    zIndex: 9999
+  };
+
   storeTippyInstance = tip => {
     this.tip = tip;
   };
@@ -122,13 +164,13 @@ class PopoverDialog extends React.Component {
   render() {
     const {
       position,
+      enableFlip,
       children,
       className,
       'aria-label': ariaLabel,
       headerContent,
       bodyContent,
       isVisible,
-      showArrow,
       appendTo,
       hideOnOutsideClick,
       onHide,
@@ -139,12 +181,11 @@ class PopoverDialog extends React.Component {
       zIndex,
       ...rest
     } = this.props;
-    const isAuto = position === PopoverPosition.auto;
-    const content = (
+    const content: React.ReactElement<any> = (
       <GenerateId>
         {randomId => (
           <div
-            className={css(styles.popover, !isAuto && getModifier(styles, position, styles.modifiers.top), className)}
+            className={css(styles.popover, !enableFlip && getModifier(styles, position, styles.modifiers.top), className)}
             role="dialog"
             aria-modal="true"
             aria-label={headerContent ? undefined : ariaLabel}
@@ -152,7 +193,7 @@ class PopoverDialog extends React.Component {
             aria-describedby={`popover-${randomId}-body`}
             {...rest}
           >
-            {showArrow && <PopoverArrow />}
+            <PopoverArrow />
             <PopoverContent>
               <PopoverCloseButton onClose={this.closePopover} />
               {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
@@ -177,15 +218,15 @@ class PopoverDialog extends React.Component {
         interactive
         interactiveBorder={0}
         placement={position}
-        distance={showArrow ? 20 : 10}
-        flip={isAuto}
+        distance={15}
+        flip={enableFlip}
         popperOptions={{
           modifiers: {
             preventOverflow: {
-              enabled: isAuto
+              enabled: enableFlip
             },
             hide: {
-              enabled: isAuto
+              enabled: enableFlip
             }
           }
         }}
@@ -202,7 +243,4 @@ class PopoverDialog extends React.Component {
   }
 }
 
-PopoverDialog.propTypes = propTypes;
-PopoverDialog.defaultProps = defaultProps;
-
-export default PopoverDialog;
+export default Popover;

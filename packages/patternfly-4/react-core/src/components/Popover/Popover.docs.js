@@ -1,30 +1,21 @@
-import {
-  PopoverPosition,
-  PopoverDialog,
-  PopoverArrow,
-  PopoverContent,
-  PopoverCloseButton,
-  PopoverHeader,
-  PopoverBody
-} from '@patternfly/react-core';
+import { Popover, PopoverPosition } from '@patternfly/react-core';
 import SimplePopover from './examples/SimplePopover';
+import AdvancedPopover from './examples/AdvancedPopover';
 import HeadlessPopover from './examples/HeadlessPopover';
 
 export default {
   title: 'Popover',
   components: {
-    PopoverDialog,
-    PopoverArrow,
-    PopoverContent,
-    PopoverCloseButton,
-    PopoverHeader,
-    PopoverBody
+    Popover
   },
   enumValues: {
-    'Object.values(PopoverPosition)': Object.values(PopoverPosition)
+    'Object.keys(PopoverPosition).map(key => PopoverPosition[key])': Object.keys(PopoverPosition).map(
+      key => PopoverPosition[key]
+    )
   },
   examples: [
-    { component: SimplePopover, title: 'Closable Popover Position', live: true },
-    { component: HeadlessPopover, title: 'Headless Popover', live: false }
+    { component: SimplePopover, title: 'Simple Popover' },
+    { component: AdvancedPopover, title: 'Advanced Usage Popover' },
+    { component: HeadlessPopover, title: 'Headless Popover' }
   ]
 };

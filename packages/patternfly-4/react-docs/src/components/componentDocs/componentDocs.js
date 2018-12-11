@@ -75,15 +75,21 @@ class ComponentDocs extends React.PureComponent {
             );
           })}
         </Section>
-        {Object.entries(components).map(([componentName, { __docgenInfo: componentDocs }]) => (
-          <PropsTable
-            key={componentName}
-            name={componentName}
-            description={componentDocs.description}
-            props={componentDocs.props}
-            enumValues={enumValues}
-          />
-        ))}
+        {Object.entries(components).map(([componentName, { __docgenInfo: componentDocs }]) => {
+          // Only generate docs for props for javascript code.
+          if (componentDocs) {
+            return (
+              <PropsTable
+                key={componentName}
+                name={componentName}
+                description={componentDocs.description}
+                props={componentDocs.props}
+                enumValues={enumValues}
+              />
+            );
+          }
+          return null;
+        })}
       </Content>
     );
   }
