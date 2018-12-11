@@ -171,6 +171,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -180,6 +181,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -189,6 +191,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -198,6 +201,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -214,6 +218,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -223,6 +228,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -346,6 +352,7 @@ exports[`KebabToggle dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -355,6 +362,7 @@ exports[`KebabToggle dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -364,6 +372,7 @@ exports[`KebabToggle dropup 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -373,6 +382,7 @@ exports[`KebabToggle dropup 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -389,6 +399,7 @@ exports[`KebabToggle dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -398,6 +409,7 @@ exports[`KebabToggle dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -549,6 +561,7 @@ exports[`KebabToggle expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -558,6 +571,7 @@ exports[`KebabToggle expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -567,6 +581,7 @@ exports[`KebabToggle expanded 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -576,6 +591,7 @@ exports[`KebabToggle expanded 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -592,6 +608,7 @@ exports[`KebabToggle expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -601,6 +618,7 @@ exports[`KebabToggle expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -914,6 +932,7 @@ exports[`KebabToggle plain 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -923,6 +942,7 @@ exports[`KebabToggle plain 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -932,6 +952,7 @@ exports[`KebabToggle plain 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -941,6 +962,7 @@ exports[`KebabToggle plain 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -957,6 +979,7 @@ exports[`KebabToggle plain 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -966,6 +989,7 @@ exports[`KebabToggle plain 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1089,6 +1113,7 @@ exports[`KebabToggle regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -1098,6 +1123,7 @@ exports[`KebabToggle regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -1107,6 +1133,7 @@ exports[`KebabToggle regular 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -1116,6 +1143,7 @@ exports[`KebabToggle regular 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1132,6 +1160,7 @@ exports[`KebabToggle regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -1141,6 +1170,7 @@ exports[`KebabToggle regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1264,6 +1294,7 @@ exports[`KebabToggle right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -1273,6 +1304,7 @@ exports[`KebabToggle right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -1282,6 +1314,7 @@ exports[`KebabToggle right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -1291,6 +1324,7 @@ exports[`KebabToggle right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1307,6 +1341,7 @@ exports[`KebabToggle right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -1316,6 +1351,7 @@ exports[`KebabToggle right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1594,6 +1630,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -1603,6 +1640,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -1612,6 +1650,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -1621,6 +1660,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1637,6 +1677,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -1646,6 +1687,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1778,6 +1820,7 @@ exports[`dropdown dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -1787,6 +1830,7 @@ exports[`dropdown dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -1796,6 +1840,7 @@ exports[`dropdown dropup 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -1805,6 +1850,7 @@ exports[`dropdown dropup 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1821,6 +1867,7 @@ exports[`dropdown dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -1830,6 +1877,7 @@ exports[`dropdown dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1990,6 +2038,7 @@ exports[`dropdown expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -1999,6 +2048,7 @@ exports[`dropdown expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -2008,6 +2058,7 @@ exports[`dropdown expanded 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -2017,6 +2068,7 @@ exports[`dropdown expanded 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2033,6 +2085,7 @@ exports[`dropdown expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -2042,6 +2095,7 @@ exports[`dropdown expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -2364,6 +2418,7 @@ exports[`dropdown regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -2373,6 +2428,7 @@ exports[`dropdown regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -2382,6 +2438,7 @@ exports[`dropdown regular 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -2391,6 +2448,7 @@ exports[`dropdown regular 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2407,6 +2465,7 @@ exports[`dropdown regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -2416,6 +2475,7 @@ exports[`dropdown regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -2548,6 +2608,7 @@ exports[`dropdown right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Link
       </DropdownItem>,
@@ -2557,6 +2618,7 @@ exports[`dropdown right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Action
       </DropdownItem>,
@@ -2566,6 +2628,7 @@ exports[`dropdown right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -2575,6 +2638,7 @@ exports[`dropdown right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onSelect={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2591,6 +2655,7 @@ exports[`dropdown right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -2600,6 +2665,7 @@ exports[`dropdown right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onSelect={[Function]}
       >
         Separated Action
       </DropdownItem>,

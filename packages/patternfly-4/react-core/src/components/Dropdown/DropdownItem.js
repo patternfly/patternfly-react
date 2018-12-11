@@ -16,18 +16,11 @@ const propTypes = {
   /** Forces display of the hover state of the element */
   isHovered: PropTypes.bool,
   /** Default hyperlink location */
-<<<<<<< HEAD
   href: PropTypes.string,
-<<<<<<< HEAD
   /** Additional props are spread to the container component */
-  '': PropTypes.any
-=======
+  '': PropTypes.any,
   /** Function callback called when user selects item */
   onSelect: PropTypes.func
->>>>>>> feat(Dropdown): disable selection of disabled menu items
-=======
-  href: PropTypes.string
->>>>>>> feat(Dropdown): improved select event piping, added fix for focus trap toggle
 };
 
 const defaultProps = {
@@ -36,7 +29,8 @@ const defaultProps = {
   isHovered: false,
   component: 'a',
   isDisabled: false,
-  href: '#'
+  href: '#',
+  onSelect: Function.prototype
 };
 
 const DropdownItem = ({ className, children, isHovered, onSelect, component: Component, isDisabled, ...props }) => {
@@ -65,7 +59,9 @@ const DropdownItem = ({ className, children, isHovered, onSelect, component: Com
         <Component
           {...additionalProps}
           className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
-          onClick={!isDisabled ? onSelect : Function.prototype}
+          onClick={() => {
+            Component === 'button' ? (props.onClick && props.onClick(), onSelect()) : onSelect();
+          }}
         >
           {children}
         </Component>

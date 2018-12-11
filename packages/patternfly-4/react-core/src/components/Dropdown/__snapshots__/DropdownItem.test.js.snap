@@ -6,6 +6,7 @@ exports[`dropdown items a 1`] = `
     aria-disabled={false}
     className=""
     href="#"
+    onClick={[Function]}
   >
     Something
   </a>
@@ -19,6 +20,7 @@ exports[`dropdown items button 1`] = `
     disabled={false}
     href="#"
     type="button"
+    onClick={[Function]}
   >
     Something
   </button>
@@ -35,6 +37,7 @@ exports[`dropdown items disabled a 1`] = `
     aria-disabled={true}
     className="pf-m-disabled"
     href="#"
+    onClick={[Function]}
     tabIndex={-1}
   >
     Something
@@ -53,6 +56,7 @@ exports[`dropdown items disabled button 1`] = `
     disabled={true}
     href="#"
     type="button"
+    onClick={[Function]}
   >
     Something
   </button>
@@ -69,6 +73,7 @@ exports[`dropdown items hover a 1`] = `
     aria-disabled={false}
     className="pf-m-hover"
     href="#"
+    onClick={[Function]}
   >
     Something
   </a>
@@ -86,6 +91,7 @@ exports[`dropdown items hover button 1`] = `
     disabled={false}
     href="#"
     type="button"
+    onClick={[Function]}
   >
     Something
   </button>
@@ -105,6 +111,7 @@ exports[`dropdown items separator 1`] = `
   href="#"
   isDisabled={false}
   isHovered={false}
+  onSelect={[Function]}
   role="separator"
 />
 `;
