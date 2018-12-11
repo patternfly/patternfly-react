@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const BulletChartAxisTic = ({ className, vertical, value, ...props }) => {
+const BulletChartAxisTic = ({ className, text, vertical, value, ...props }) => {
   const bulletChartAxisTicClass = classNames('bullet-chart-pf-axis-tic', className);
 
   let ticStyle;
@@ -14,7 +14,7 @@ const BulletChartAxisTic = ({ className, vertical, value, ...props }) => {
 
   return (
     <span className={bulletChartAxisTicClass} style={ticStyle}>
-      {value}
+      {text || value}
     </span>
   );
 };

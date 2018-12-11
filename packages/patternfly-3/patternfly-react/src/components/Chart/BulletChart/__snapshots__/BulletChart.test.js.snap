@@ -3137,7 +3137,7 @@ exports[`BulletChartAxisTic renders text properly 1`] = `
     }
   }
 >
-  25
+  my-bullet-axis-tic-text
 </span>
 `;
 
