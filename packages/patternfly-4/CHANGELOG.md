@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.30.0"></a>
+# [1.30.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.29.1...patternfly4-react-lerna-root@1.30.0) (2018-12-11)
+
+
+### Features
+
+* **EmptyState:** Add Empty State to PF-4 ([#995](https://github.com/patternfly/patternfly-react/issues/995)) ([04bbb1d](https://github.com/patternfly/patternfly-react/commit/04bbb1d))
+
+
+
+
 <a name="1.29.1"></a>
 ## [1.29.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.29.0...patternfly4-react-lerna-root@1.29.1) (2018-12-10)
 

@@ -1,5 +1,35 @@
 
-## Change Log (2018-12-11)
+## patternfly3-react-lerna-root@7.12.8 (2018-12-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1029](https://github.com/patternfly/patternfly-react/pull/1029) BulletChartAxisTic: Fixed text property for custom axis tic mark ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## patternfly-react@2.25.5 (2018-12-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1029](https://github.com/patternfly/patternfly-react/pull/1029) BulletChartAxisTic: Fixed text property for custom axis tic mark ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## patternfly-react-extensions@2.13.15 (2018-12-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1029](https://github.com/patternfly/patternfly-react/pull/1029) BulletChartAxisTic: Fixed text property for custom axis tic mark ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-console@1.9.5 (2018-12-11)
 
 #### :bug: Bug Fix
 * `patternfly-3`
