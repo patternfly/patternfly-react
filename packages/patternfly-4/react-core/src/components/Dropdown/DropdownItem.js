@@ -40,7 +40,9 @@ const DropdownItem = ({ className, children, isHovered, component: Component, is
   return (
     <li>
       {React.isValidElement(children) ? (
-        children
+        React.Children.map(children, child =>
+          React.cloneElement(child, { className: `${className} ${child.props.className}` })
+        )
       ) : (
         <Component
           {...additionalProps}
