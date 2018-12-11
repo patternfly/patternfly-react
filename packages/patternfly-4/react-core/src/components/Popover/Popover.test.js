@@ -1,9 +1,9 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { Popover } from './index';
 
 test('popover renders close-button, header and body', () => {
-  const view = mount(
+  const view = shallow(
     <Popover
       position="top"
       isVisible
@@ -20,4 +20,3 @@ test('popover renders close-button, header and body', () => {
   );
   expect(view).toMatchSnapshot();
 });
-

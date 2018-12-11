@@ -1,0 +1,49 @@
+import React, { SFC, HTMLProps, ReactNode } from 'react';
+import { Omit } from '../../typeUtils';
+import { Instance, BasicPlacement } from 'tippy.js';
+
+export const PopoverPosition: {
+  top: 'top';
+  bottom: 'bottom';
+  left: 'left';
+  right: 'right';
+};
+
+export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'> {
+  /** Popover position */
+  position?: BasicPlacement;
+  /** If true, tries to keep the popover in view by flipping it if necessary */
+  enableFlip?: boolean;
+  /** Popover additional class */
+  className?: string;
+  /** The reference element to which the popover is relatively placed to */
+  children: React.ReactElement<any>;
+  /** Accessible label, required when header is not present */
+  'aria-label'?: string;
+  /** Header content, leave empty for no header */
+  headerContent?: ReactNode;
+  /** Body content */
+  bodyContent: ReactNode;
+  /** True to show the popover */
+  isVisible: boolean;
+  /** The element to append the popover to, defaults to body */
+  appendTo?: Element | ((ref: Element) => Element);
+  /** Hides the popover when a click occurs outside */
+  hideOnOutsideClick?: boolean;
+  /** Lifecycle function invoked when the popover begins to transition out. */
+  onHide?(instance: Instance): void;
+  /** Lifecycle function invoked when the popover has fully transitioned out. */
+  onHidden?(instance: Instance): void;
+  /** Lifecycle function invoked when the popover begins to transition in. */
+  onShow?(instance: Instance): void;
+  /** Lifecycle function invoked when the popover has fully transitioned in. */
+  onShown?(instance: Instance): void;
+  /** Lifecycle function invoked when the popover has been mounted to the DOM. */
+  onMount?(instance: Instance): void;
+  /** z-index of the popover */
+  zIndex?: number;
+}
+
+declare const Popover: SFC<PopoverProps>;
+
+export default Popover;
