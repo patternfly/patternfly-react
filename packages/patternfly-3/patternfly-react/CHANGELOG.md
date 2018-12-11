@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.25.5"></a>
+## [2.25.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.4...patternfly-react@2.25.5) (2018-12-11)
+
+
+### Bug Fixes
+
+* **BulletChart:** Cannot set text property for custom axis tic mark ([#1029](https://github.com/patternfly/patternfly-react/issues/1029)) ([7e58ebf](https://github.com/patternfly/patternfly-react/commit/7e58ebf))
+
+
+
+
 <a name="2.25.4"></a>
 ## [2.25.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.3...patternfly-react@2.25.4) (2018-12-07)
 

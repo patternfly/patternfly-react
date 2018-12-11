@@ -1,4 +1,14 @@
 
+## Change Log (2018-12-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1029](https://github.com/patternfly/patternfly-react/pull/1029) BulletChartAxisTic: Fixed text property for custom axis tic mark ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
 ## patternfly4-react-lerna-root@1.28.6 (2018-12-07)
 
 #### :rocket: New Feature
