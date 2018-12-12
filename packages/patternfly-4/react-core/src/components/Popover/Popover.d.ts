@@ -9,7 +9,7 @@ export const PopoverPosition: {
   right: 'right';
 };
 
-export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'> {
+export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children' | 'size'> {
   /** Popover position */
   position?: BasicPlacement;
   /** If true, tries to keep the popover in view by flipping it if necessary */
