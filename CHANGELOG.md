@@ -1,6 +1,29 @@
 
 ## Change Log (2018-12-12)
 
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1041](https://github.com/patternfly/patternfly-react/pull/1041) docs(AboutModal): update logo alt text to Patternfly Logo ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1042](https://github.com/patternfly/patternfly-react/pull/1042) docs(Text): remove pre Text example ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1043](https://github.com/patternfly/patternfly-react/pull/1043) docs(Page): match example color order to core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly3-react-lerna-root@7.12.9 (2018-12-12)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1021](https://github.com/patternfly/patternfly-react/pull/1021) @patternfly/react-console: Remove unnecessary peer dependencies ([@vojtechszocs](https://github.com/vojtechszocs))
+
+#### Committers: 2
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+- Vojtech Szocs ([@vojtechszocs](https://github.com/vojtechszocs))
+
+
+## @patternfly/react-console@1.9.6 (2018-12-12)
+
 #### :house: Internal
 * `patternfly-3`
   * [#1021](https://github.com/patternfly/patternfly-react/pull/1021) @patternfly/react-console: Remove unnecessary peer dependencies ([@vojtechszocs](https://github.com/vojtechszocs))
