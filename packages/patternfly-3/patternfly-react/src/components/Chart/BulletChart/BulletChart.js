@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { patternfly } from '../../../common/patternfly';
 import { Tooltip } from '../../Tooltip/index';
+import { helpers } from '../../../common/helpers';
 
 import BulletChartValue from './BulletChartValue';
 import BulletChartRange from './BulletChartRange';
@@ -40,6 +41,8 @@ const BulletChart = ({
   label,
   details,
   values,
+  percents,
+  maxValue,
   useDots,
   useExtendedColors,
   thresholdWarning,
@@ -99,6 +102,8 @@ const BulletChart = ({
           <BulletChartValue
             key={`${value.title}-${index}`}
             value={value}
+            percent={percents}
+            maxValue={maxValue}
             prevValue={getPrevValue(value.value)}
             dot={useDots}
             vertical={vertical}
@@ -122,13 +127,15 @@ const BulletChart = ({
                 return value.tooltipFunction(value.value, value.title);
               }
 
-              return <Tooltip id={value.tooltipId || randomId()}>{`${value.title}: ${value.value}%`}</Tooltip>;
+              const tipText = `${value.title}: ${value.value}${percents ? '%' : ''}`;
+              return <Tooltip id={value.tooltipId || randomId()}>{tipText}</Tooltip>;
             };
 
+            const legendTextFunction = value.legendTextFunction || helpers.noop;
             return (
               <BulletChartLegendItem
                 key={`value-${index}`}
-                title={value.title}
+                title={legendTextFunction(value) || value.legendText || value.title}
                 value={value.value}
                 color={value.color}
                 tooltipFunction={tooltipFunction}
@@ -136,21 +143,25 @@ const BulletChart = ({
             );
           })}
           {rangeValues.map((range, index) => {
-            if (range.value > 0 && range.value <= 100) {
+            if (range.value > 0 && (percents ? range.value <= 100 : range.value <= maxValue)) {
               const tooltipFunction = () => {
                 if (range.tooltipFunction) {
                   return range.tooltipFunction(range.value, range.title);
                 }
 
-                return <Tooltip id={range.tooltipId || randomId()}>{`${range.title}: ${range.value}%`}</Tooltip>;
+                const tipText = `${range.title}: ${range.value}${percents ? '%' : ''}`;
+                return <Tooltip id={range.tooltipId || randomId()}>{tipText}</Tooltip>;
               };
+
+              const legendTextFunction = range.legendTextFunction || helpers.noop;
 
               return (
                 <BulletChartLegendItem
                   key={`range-${index}`}
-                  title={range.title}
+                  title={legendTextFunction(range) || range.legendText || range.title}
                   value={range.value}
                   boxClassName={`range-${index}`}
+                  color={range.color}
                   tooltipFunction={tooltipFunction}
                 />
               );
@@ -168,10 +179,30 @@ const BulletChart = ({
   const renderChartData = () => (
     <div className="bullet-chart-pf-data-container">
       {renderValues()}
-      <BulletChartThreshold className="warning" threshold={thresholdWarning} vertical={vertical} />
-      <BulletChartThreshold className="error" threshold={thresholdError} vertical={vertical} />
+      <BulletChartThreshold
+        className="warning"
+        threshold={thresholdWarning}
+        vertical={vertical}
+        percent={percents}
+        maxValue={maxValue}
+      />
+      <BulletChartThreshold
+        className="error"
+        threshold={thresholdError}
+        vertical={vertical}
+        percent={percents}
+        maxValue={maxValue}
+      />
       {rangeValues.map((range, index) => (
-        <BulletChartRange key={range.value} value={range.value} index={index + 1} vertical={vertical} />
+        <BulletChartRange
+          key={range.value}
+          value={range.value}
+          color={range.color}
+          percent={percents}
+          maxValue={maxValue}
+          index={index + 1}
+          vertical={vertical}
+        />
       ))}
     </div>
   );
@@ -184,10 +215,22 @@ const BulletChart = ({
     return (
       <BulletChartAxis>
         <BulletChartAxisTic value={0} vertical={vertical} />
-        <BulletChartAxisTic value={25} vertical={vertical} />
-        <BulletChartAxisTic value={50} vertical={vertical} />
-        <BulletChartAxisTic value={75} vertical={vertical} />
-        <BulletChartAxisTic value={100} vertical={vertical} />
+        <BulletChartAxisTic
+          value={25}
+          text={percents ? undefined : `${Math.floor(maxValue * 0.25)}`}
+          vertical={vertical}
+        />
+        <BulletChartAxisTic
+          value={50}
+          text={percents ? undefined : `${Math.floor(maxValue * 0.5)}`}
+          vertical={vertical}
+        />
+        <BulletChartAxisTic
+          value={75}
+          text={percents ? undefined : `${Math.floor(maxValue * 0.75)}`}
+          vertical={vertical}
+        />
+        <BulletChartAxisTic value={100} text={percents ? undefined : `${Math.floor(maxValue)}`} vertical={vertical} />
       </BulletChartAxis>
     );
   };
@@ -231,7 +274,9 @@ BulletChart.propTypes = {
   label: PropTypes.string,
   /** Text to display for details of the chart */
   details: PropTypes.string,
-  /** Array of values, value, title (for legend and tooltip), color, and tooltip function(value, title).
+  /** Array of values, value, title (for legend and tooltip), color, tooltip function(value, title), legendText(optional),
+   * legendTextFunction(value). The legendTextFunction takes priority, then the legendTextFunction, then the default
+   * legend text.
    * For Primary colors the first four values can use default colors, for Extended colors the first nine
    * values use default colors, further values the color MUST be specified. */
   values: PropTypes.arrayOf(
@@ -239,9 +284,15 @@ BulletChart.propTypes = {
       value: PropTypes.number.isRequired,
       title: PropTypes.string,
       color: PropTypes.string,
-      tooltipFunction: PropTypes.func
+      tooltipFunction: PropTypes.func,
+      legendText: PropTypes.string,
+      legendTextFunction: PropTypes.func
     })
   ).isRequired,
+  /** Option to use values as percentages, default is true */
+  percents: PropTypes.bool,
+  /** Maximum value when not using percents (ignored if percents is true) */
+  maxValue: PropTypes.number,
   /** Use a dot rather than a bar to depict values, default false */
   useDots: PropTypes.bool,
   /** Use extended color palette for default colors, default false */
@@ -255,8 +306,10 @@ BulletChart.propTypes = {
     PropTypes.shape({
       value: PropTypes.number.isRequired,
       title: PropTypes.string,
-      /** tooltip function(value, title) */
-      tooltipFunction: PropTypes.func
+      color: PropTypes.string,
+      tooltipFunction: PropTypes.func,
+      legendText: PropTypes.string,
+      legendTextFunction: PropTypes.func
     })
   ),
   /** Option to show the axis, default is true */
@@ -276,6 +329,8 @@ BulletChart.defaultProps = {
   stacked: false,
   label: null,
   details: null,
+  percents: true,
+  maxValue: 100,
   useDots: false,
   useExtendedColors: false,
   thresholdWarning: 70,

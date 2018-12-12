@@ -7,6 +7,7 @@ import { Tooltip } from '../../Tooltip/index';
 const customTooltipFunction = (value, title) => <Tooltip id="bullet-tip-1">{`${title}: ${value}%`}</Tooltip>;
 
 const customTooltipFunction2 = (value, title) => <Tooltip id="bullet-tip-2">{`${title} - ${value}%`}</Tooltip>;
+const nonPercentTooltipFunction = (value, title) => <Tooltip id="bullet-tip-1">{`${title}: ${value}`}</Tooltip>;
 
 const goodRanges = [
   { value: 50, title: 'Range 1', tooltipFunction: customTooltipFunction },
@@ -71,6 +72,25 @@ const singleValue = [
     title: 'data1',
     tooltipFunction: customTooltipFunction
   }
+];
+
+const nonPercentValues = [
+  {
+    value: 130,
+    title: 'data1',
+    tooltipFunction: nonPercentTooltipFunction
+  },
+  {
+    value: 220,
+    title: 'data2',
+    tooltipId: 'data2-tooltip'
+  }
+];
+
+const nonPercentRanges = [
+  { value: 100, title: 'Range 1', tooltipFunction: nonPercentTooltipFunction },
+  { value: 200, title: 'Range 2', tooltipFunction: nonPercentTooltipFunction },
+  { value: 300, title: 'Range 3', tooltipFunction: nonPercentTooltipFunction }
 ];
 
 test('BulletChart renders properly with defaults', () => {
@@ -560,6 +580,17 @@ test('BulletChartThreshold renders properly', () => {
       />
     ).getElement()
   ).toMatchSnapshot();
+  expect(
+    shallow(
+      <BulletChart.Threshold
+        id="my-bullet-threshold-non-percent"
+        className="my-bullet-threshold-non-percent"
+        threshold={160}
+        percent={false}
+        maxValue={200}
+      />
+    ).getElement()
+  ).toMatchSnapshot();
 });
 
 test('BulletChartValue renders properly', () => {
@@ -613,6 +644,11 @@ test('BulletChartValue renders properly', () => {
         vertical
         dot
       />
+    ).getElement()
+  ).toMatchSnapshot();
+  expect(
+    shallow(
+      <BulletChart.Value id="my-bullet-value-not-percent" value={nonPercentValues[0]} percent={false} maxValue={400} />
     ).getElement()
   ).toMatchSnapshot();
 });
@@ -755,6 +791,51 @@ test('BulletChartLegendItem renders properly', () => {
         value={values[0].value}
         color={values[0].color}
         tooltipFunction={customTooltipFunction}
+      />
+    ).getElement()
+  ).toMatchSnapshot();
+});
+
+test('BulletChart uses custom legend text correctly', () => {
+  const customLegendFunction = value => `Custom Legend: ${value.value}`;
+  const rangeTextFunction = range => `Custom Legend: ${range.value}`;
+
+  values[0].legendTextFunction = customLegendFunction;
+  values[1].legendText = 'Custom Value Legend Text';
+  goodRanges[0].legendTextFunction = rangeTextFunction;
+  goodRanges[1].legendText = 'Custom Range Legend Text';
+  goodRanges[2].color = 'black';
+
+  expect(
+    shallow(
+      <BulletChart
+        id="bullet-all"
+        label="Test Label"
+        details="Test Details"
+        values={values}
+        thresholdError={10}
+        thresholdWarning={20}
+        ranges={goodRanges}
+        showLegend
+      />
+    ).getElement()
+  ).toMatchSnapshot();
+});
+
+test('BulletChart renders properly with non-percent values', () => {
+  expect(
+    shallow(
+      <BulletChart
+        id="bullet-all"
+        label="Test Label"
+        details="Test Details"
+        percents={false}
+        values={nonPercentValues}
+        maxValue={400}
+        thresholdError={340}
+        thresholdWarning={220}
+        ranges={nonPercentRanges}
+        showLegend
       />
     ).getElement()
   ).toMatchSnapshot();

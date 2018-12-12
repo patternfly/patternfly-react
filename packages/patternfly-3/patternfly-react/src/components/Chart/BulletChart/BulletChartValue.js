@@ -6,16 +6,19 @@ import { Tooltip } from '../../Tooltip/index';
 
 const randomId = () => Date.now();
 
-const TooltipFunction = value => {
-  if (value.tooltipFunction) {
-    return value.tooltipFunction(value.value, value.title);
-  }
+const BulletChartValue = ({ className, value, percent, maxValue, prevValue, dot, vertical, ...props }) => {
+  const usedMax = percent ? 100 : maxValue;
+  const percentValue = percent ? value.value + prevValue : ((value.value + prevValue) / maxValue) * 100;
+  const showValue = Math.min(Math.max(percentValue, 0), usedMax * 1.2);
 
-  return <Tooltip id={value.tooltipId || randomId()}>{`${value.title}: ${value.value}%`}</Tooltip>;
-};
+  const TooltipFunction = () => {
+    if (value.tooltipFunction) {
+      return value.tooltipFunction(value.value, value.title);
+    }
 
-const BulletChartValue = ({ className, value, prevValue, dot, vertical, ...props }) => {
-  const showValue = Math.min(Math.max(value.value + prevValue, 0), 120);
+    const tipText = `${value.title}: ${value.value}${percent ? '%' : ''}`;
+    return <Tooltip id={value.tooltipId || randomId()}>{tipText}</Tooltip>;
+  };
 
   const valueClasses = classNames(
     {
@@ -34,22 +37,23 @@ const BulletChartValue = ({ className, value, prevValue, dot, vertical, ...props
           left: vertical ? undefined : `${showValue}%`,
           bottom: vertical ? `${showValue}%` : undefined,
           backgroundColor: value.color,
-          zIndex: 100 + showValue
+          zIndex: Math.round(100 + showValue)
         }}
         {...props}
       />
     );
   } else {
+    const prevShowValue = percent ? prevValue : (prevValue / maxValue) * 100;
     valueComponent = (
       <div
         className={valueClasses}
         style={{
-          left: vertical ? undefined : `${prevValue}%`,
-          width: vertical ? undefined : `${showValue - prevValue}%`,
-          bottom: vertical ? `${prevValue}%` : undefined,
-          height: vertical ? `${showValue - prevValue}%` : undefined,
+          left: vertical ? undefined : `${prevShowValue}%`,
+          width: vertical ? undefined : `${showValue - prevShowValue}%`,
+          bottom: vertical ? `${prevShowValue}%` : undefined,
+          height: vertical ? `${showValue - prevShowValue}%` : undefined,
           backgroundColor: value.color,
-          zIndex: 400 - showValue
+          zIndex: Math.round(400 - showValue)
         }}
         {...props}
       />
@@ -79,6 +83,10 @@ BulletChartValue.propTypes = {
     tooltipFunction: PropTypes.func,
     tooltipId: PropTypes.string
   }).isRequired,
+  /** Option to use value as a percentage, default is true */
+  percent: PropTypes.bool,
+  /** Maximum value when not using percents (ignored if percents is true) */
+  maxValue: PropTypes.number,
   /** Previous value (for stacked charts), default 0 */
   prevValue: PropTypes.number,
   /** Display a dot rather than a bar, default false */
@@ -89,6 +97,8 @@ BulletChartValue.propTypes = {
 
 BulletChartValue.defaultProps = {
   className: '',
+  percent: true,
+  maxValue: 100,
   prevValue: 0,
   dot: false,
   vertical: false
