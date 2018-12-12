@@ -15,7 +15,7 @@ export default {
   },
   examples: [
     { component: SimplePopover, title: 'Simple Popover' },
-    { component: AdvancedPopover, title: 'Advanced Usage Popover' },
+    { component: AdvancedPopover, title: 'Programmatically Controlled Popover' },
     { component: HeadlessPopover, title: 'Headless Popover' }
   ]
 };

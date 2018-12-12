@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly-next/components/Popover/popover.css';
 import { css } from '@patternfly/react-styles';
 
-const PopoverHeader = ({ children, id }) => (
-  <header className={css(styles.popoverHeader)}>
+const PopoverHeader = ({ children, id, ...rest }) => (
+  <header className={css(styles.popoverHeader)} {...rest}>
     <h1 className={css(styles.popoverHeaderTitle)} id={id}>
       {children}
     </h1>

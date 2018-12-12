@@ -5,8 +5,8 @@ import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core';
 import { TimesIcon } from '@patternfly/react-icons';
 
-const PopoverCloseButton = ({ onClose }) => (
-  <div className={css(styles.popoverClose)}>
+const PopoverCloseButton = ({ onClose, ...rest }) => (
+  <div className={css(styles.popoverClose)} {...rest}>
     <Button onClick={onClose} variant="plain" aria-label="Close">
       <TimesIcon />
     </Button>

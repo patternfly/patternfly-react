@@ -2,25 +2,10 @@ import React from 'react';
 import { Popover, Button } from '@patternfly/react-core';
 
 class SimplePopover extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      show: false
-    };
-  }
-
-  handleClick = () => {
-    this.setState({
-      show: !this.state.show
-    });
-  };
-
   render() {
     return (
       <Popover
-        onHidden={() => this.setState({ show: false })}
         position="right"
-        isVisible={this.state.show}
         headerContent={<div>Popover Header</div>}
         bodyContent={
           <div>
@@ -28,7 +13,7 @@ class SimplePopover extends React.Component {
           </div>
         }
       >
-        <Button onClick={this.handleClick}>Toggle Popover</Button>
+        <Button>Toggle Popover</Button>
       </Popover>
     );
   }

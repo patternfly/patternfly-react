@@ -13,10 +13,11 @@ exports[`popover renders close-button, header and body 1`] = `
   }
   distance={15}
   flip={true}
-  hideOnClick={true}
+  hideOnClick={false}
   interactive={true}
   interactiveBorder={0}
   isVisible={true}
+  lazy={true}
   onCreate={[Function]}
   onHidden={[Function]}
   onHide={[Function]}
@@ -37,7 +38,7 @@ exports[`popover renders close-button, header and body 1`] = `
       },
     }
   }
-  size="large"
+  size="regular"
   theme="pf-tippy"
   trigger="manual"
   zIndex={9999}

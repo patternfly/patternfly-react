@@ -7,7 +7,6 @@ class AdvancedPopover extends React.Component {
     this.state = {
       position: PopoverPosition.top,
       show: false,
-      hideOnOutsideClickChecked: true,
       keepInViewChecked: true
     };
   }
@@ -18,12 +17,18 @@ class AdvancedPopover extends React.Component {
     });
   };
 
-  handleOutSideClickChange = checked => {
-    this.setState({ hideOnOutsideClickChecked: checked });
-  };
-
   handleKeepInViewChange = checked => {
     this.setState({ keepInViewChecked: checked });
+  };
+
+  handleProgrammaticChange = checked => {
+    this.setState({
+      show: checked
+    });
+  };
+
+  shouldClose = tip => {
+    this.setState({ show: false });
   };
 
   render() {
@@ -37,33 +42,34 @@ class AdvancedPopover extends React.Component {
             }}
           >
             {Object.keys(PopoverPosition).map(key => (
-              <option value={PopoverPosition[key]}>{PopoverPosition[key]}</option>
+              <option key={key} value={PopoverPosition[key]}>
+                {PopoverPosition[key]}
+              </option>
             ))}
           </select>
           <Checkbox
-            label="Hide on outside click"
-            isChecked={this.state.hideOnOutsideClickChecked}
-            onChange={this.handleOutSideClickChange}
-            aria-label="Hide on outside click"
-            id="check-2"
-          />
-          <Checkbox
-            label="Keep in view"
+            label="Flip popover if the position falls outside the view"
             isChecked={this.state.keepInViewChecked}
             onChange={this.handleKeepInViewChange}
             aria-label="Keep in view"
             id="check-3"
           />
+          <Checkbox
+            label="Toggle popover from outside"
+            isChecked={this.state.show}
+            onChange={this.handleProgrammaticChange}
+            aria-label="Toggle popover from outside"
+            id="check-4"
+          />
         </div>
 
         <div style={{ margin: '180px 0px 0px 270px' }}>
           <Popover
-            onHidden={() => this.setState({ show: false })}
             position={this.state.position}
             isVisible={this.state.show}
-            hideOnOutsideClick={this.state.hideOnOutsideClickChecked}
+            shouldClose={this.shouldClose}
             enableFlip={this.state.keepInViewChecked}
-            appendTo={document.getElementById('___gatsby')}
+            appendTo={() => document.getElementById('___gatsby')}
             headerContent={<div>Popover Header</div>}
             bodyContent={
               <div>
