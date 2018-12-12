@@ -5,13 +5,11 @@ class InfoAlert extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Alert variant="info" title="Info Alert Title">
-          This is a description of the notification content.
+        <Alert variant="info" title="Info notification title">
+          Info notification description. <a href="#">This is a link.</a>
         </Alert>
-
-        <Alert variant="info" title="Info Alert Title" action={<Button variant="secondary">Action</Button>} />
-
-        <Alert variant="info" title="Info Alert Title" />
+        <Alert variant="info" title="Info notification title" action={<Button variant="secondary">Button</Button>} />
+        <Alert variant="info" title="Info notification title" />
       </React.Fragment>
     );
   }

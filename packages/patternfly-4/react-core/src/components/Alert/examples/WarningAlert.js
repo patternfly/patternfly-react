@@ -5,13 +5,15 @@ class WarningAlert extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Alert variant="warning" title="Warning Alert Title">
-          This is a description of the notification content.
+        <Alert variant="warning" title="Warning notification title">
+          Warning notification description. <a href="#">This is a link.</a>
         </Alert>
-
-        <Alert variant="warning" title="Warning Alert Title" action={<Button variant="secondary">Action</Button>} />
-
-        <Alert variant="warning" title="Warning Alert Title" />
+        <Alert
+          variant="warning"
+          title="Warning notification title"
+          action={<Button variant="secondary">Button</Button>}
+        />
+        <Alert variant="warning" title="Warning notification title" />
       </React.Fragment>
     );
   }
