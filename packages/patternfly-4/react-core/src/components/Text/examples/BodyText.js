@@ -17,9 +17,6 @@ class BodyText extends React.Component {
           </Text>
           . Phasellus lacus ex, semper ac tortor nec, fringilla condimentum orci. Fusce eu rutrum tellus.
         </Text>
-        <Text component={TextVariants.pre}>
-          Aliquam sagittis rhoncus vulputate. Cras non luctus sem, sed tincidunt ligula.
-        </Text>
         <Text component={TextVariants.blockquote}>
           Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit
           amet turpis.
