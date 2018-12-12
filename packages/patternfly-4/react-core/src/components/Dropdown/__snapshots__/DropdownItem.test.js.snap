@@ -111,6 +111,7 @@ exports[`dropdown items separator 1`] = `
   href="#"
   isDisabled={false}
   isHovered={false}
+  onClick={[Function]}
   onSelect={[Function]}
   role="separator"
 />
