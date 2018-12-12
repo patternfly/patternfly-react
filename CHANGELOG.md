@@ -1,4 +1,15 @@
 
+## Change Log (2018-12-12)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1021](https://github.com/patternfly/patternfly-react/pull/1021) @patternfly/react-console: Remove unnecessary peer dependencies ([@vojtechszocs](https://github.com/vojtechszocs))
+
+#### Committers: 2
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+- Vojtech Szocs ([@vojtechszocs](https://github.com/vojtechszocs))
+
+
 ## patternfly3-react-lerna-root@7.12.8 (2018-12-11)
 
 #### :bug: Bug Fix
