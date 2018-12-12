@@ -24,8 +24,18 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   headerContent?: ReactNode;
   /** Body content */
   bodyContent: ReactNode;
-  /** True to show the popover */
-  isVisible: boolean;
+  /** 
+   * True to show the popover programmatically. Used in conjunction with the shouldClose prop.
+   * By default, the popover child element handles click events automatically. If you want to control this programmatically,
+   * the popover will not auto-close if the Close button is clicked, ESC key is used, or if a click occurs outside the popover.
+   * Instead, the consumer is responsible for closing the popover themselves by adding a callback listener for the shouldClose prop.
+   */
+  isVisible?: boolean;
+  /**
+   * Callback function that is only invoked when isVisible is also controlled. Called when the popover Close button is
+   * clicked or the ESC key is used
+   */
+  shouldClose?(instance: Instance): void;
   /** The element to append the popover to, defaults to body */
   appendTo?: Element | ((ref: Element) => Element);
   /** Hides the popover when a click occurs outside */
@@ -42,6 +52,8 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   onMount?(instance: Instance): void;
   /** z-index of the popover */
   zIndex?: number;
+  /** Size of the popover */
+  size: 'small' | 'regular' | 'large';
 }
 
 declare const Popover: SFC<PopoverProps>;
