@@ -14,7 +14,8 @@ const props = {
   title: 'Modal',
   onClose: jest.fn(),
   isOpen: false,
-  children: 'modal content'
+  children: 'modal content',
+  reactRoot: document.createElement('div')
 };
 
 test('Modal creates a container element once for div', () => {

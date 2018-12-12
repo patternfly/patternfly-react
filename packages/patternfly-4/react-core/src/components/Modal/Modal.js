@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import ModalContent from './ModalContent';
+import safeHTMLElement from '../../internal/safeHTMLElement';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../internal/constants';
 import { css } from '@patternfly/react-styles';
@@ -23,7 +24,9 @@ const propTypes = {
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
   /** Creates a large version of the Modal */
-  isLarge: PropTypes.bool
+  isLarge: PropTypes.bool,
+  /** React application root element */
+  reactRoot: PropTypes.instanceOf(safeHTMLElement).isRequired
 };
 
 const defaultProps = {
@@ -62,8 +65,10 @@ class Modal extends React.Component {
   componentDidUpdate() {
     if (this.props.isOpen) {
       document.body.classList.add(css(styles.backdropOpen));
+      this.props.reactRoot.setAttribute('aria-hidden', true);
     } else {
       document.body.classList.remove(css(styles.backdropOpen));
+      this.props.reactRoot.removeAttribute('aria-hidden');
     }
   }
 
@@ -73,6 +78,8 @@ class Modal extends React.Component {
   }
 
   render() {
+    const { reactRoot, ...props } = this.props;
+
     if (!canUseDOM) {
       return null;
     }
@@ -81,7 +88,7 @@ class Modal extends React.Component {
       this.container = document.createElement('div');
     }
 
-    return ReactDOM.createPortal(<ModalContent {...this.props} id={this.id} />, this.container);
+    return ReactDOM.createPortal(<ModalContent {...props} id={this.id} />, this.container);
   }
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import FocusTrap from 'focus-trap-react';
 import ModalBoxBody from './ModalBoxBody';
 import ModalBoxHeader from './ModalBoxHeader';
 import ModalBoxHCloseButton from './ModalBoxCloseButton';
@@ -47,14 +48,16 @@ const ModalContent = ({ children, className, isOpen, title, hideTitle, actions, 
   return (
     <Backdrop>
       <Bullseye>
-        <ModalBox className={className} isLarge={isLarge} title={title} id={id}>
-          <ModalBoxHCloseButton onClose={onClose} />
-          {modalBoxHeader}
-          <ModalBoxBody {...props} id={id}>
-            {children}
-          </ModalBoxBody>
-          {modalBoxFooter}
-        </ModalBox>
+        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+          <ModalBox className={className} isLarge={isLarge} title={title} id={id}>
+            <ModalBoxHCloseButton onClose={onClose} />
+            {modalBoxHeader}
+            <ModalBoxBody {...props} id={id}>
+              {children}
+            </ModalBoxBody>
+            {modalBoxFooter}
+          </ModalBox>
+        </FocusTrap>
       </Bullseye>
     </Backdrop>
   );
