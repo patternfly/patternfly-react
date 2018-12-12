@@ -63,14 +63,14 @@ const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
  * @returns {*} object with property, extraParams, header, cell and props.
  */
 const mapHeader = (column, extra, key, ...props) => {
-  const title = typeof column === 'string' ? column : column.title;
+  const title = column.hasOwnProperty('title') ? column.title : column;
   return ({
-    property: (title && title.toLowerCase().trim().replace(/\s/g, '-')) || `column-${key}`,
+    property: (typeof title === 'string' && title.toLowerCase().trim().replace(/\s/g, '-')) || `column-${key}`,
     extraParams: extra,
     header: generateHeader(column, title),
     cell: generateCell(column, extra),
     props: {
-      'data-label': title,
+      'data-label': typeof title === 'string' ? title : `column-${key}`,
       'data-key': key,
       ...column.hasOwnProperty('props') ? column.props : {},
       ...props

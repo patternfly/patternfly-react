@@ -13,7 +13,17 @@ class SimpleTable extends React.Component {
         'Workspaces',
         'Last Commit'
       ],
-      rows: [['one', 'two', 'three', 'four', 'five']]
+      rows: [
+        ['one', 'two', 'three', 'four', 'five'],
+        [
+          {
+            title: <div>Col span</div>,
+            props: { colSpan: 3 }
+          },
+          'ff',
+          'dw'
+        ]
+      ]
     };
   }
 

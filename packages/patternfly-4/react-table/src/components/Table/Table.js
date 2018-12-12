@@ -44,17 +44,17 @@ const propTypes = {
   /** Actual rows to display in table. Either array of strings or row ojects. */
   rows: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.shape({
-      cells: PropTypes.arrayOf(PropTypes.string),
+      cells: PropTypes.arrayOf(PropTypes.node),
       isOpen: PropTypes.bool,
       parent: PropTypes.number
     }),
-    PropTypes.arrayOf(PropTypes.string)
+    PropTypes.arrayOf(PropTypes.node)
   ])).isRequired,
   /** Header cells to display in table. Either array of strings or array of string or cell object. */
   cells: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.string,
+    PropTypes.node,
     PropTypes.shape({
-      title: PropTypes.string,
+      title: PropTypes.node,
       transforms: PropTypes.arrayOf(PropTypes.func),
       cellTransforms: PropTypes.arrayOf(PropTypes.func),
       formatters: PropTypes.arrayOf(PropTypes.func),
