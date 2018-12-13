@@ -10,6 +10,7 @@ export * from './components/Cards';
 export * from './components/Chart';
 export * from './components/Dropdown';
 export * from './components/DropdownKebab';
+export * from './components/DualListSelector';
 export * from './components/EmptyState';
 export * from './components/FieldLevelHelp';
 export * from './components/Filter';
