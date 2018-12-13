@@ -3,6 +3,51 @@
 
 #### :rocket: New Feature
 * `patternfly-3`
+  * [#395](https://github.com/patternfly/patternfly-react/pull/395) feat(DualListSelector): add a Dual List Selector component ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1053](https://github.com/patternfly/patternfly-react/pull/1053) Removed Props from avatar ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.13.0 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1040](https://github.com/patternfly/patternfly-react/pull/1040) feat(BulletChart): Allow for custom values (non-percent) and legend text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.26.0 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1040](https://github.com/patternfly/patternfly-react/pull/1040) feat(BulletChart): Allow for custom values (non-percent) and legend text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.13.16 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1040](https://github.com/patternfly/patternfly-react/pull/1040) feat(BulletChart): Allow for custom values (non-percent) and legend text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.9.7 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
   * [#1040](https://github.com/patternfly/patternfly-react/pull/1040) feat(BulletChart): Allow for custom values (non-percent) and legend text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
 
 #### Committers: 1

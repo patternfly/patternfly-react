@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.40.0...@patternfly/react-core@4.0.0) (2018-12-13)
+
+
+### Features
+
+* **PF4-Modal:** Adds keyboard and screen reader focus trapping ([#1011](https://github.com/patternfly/patternfly-react/issues/1011)) ([7fa93b3](https://github.com/patternfly/patternfly-react/commit/7fa93b3)), closes [#561](https://github.com/patternfly/patternfly-react/issues/561)
+
+
+### BREAKING CHANGES
+
+* **PF4-Modal:** The reactRoot prop is required
+
+
+
+
 <a name="3.0.2"></a>
 ## [3.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.0.1...@patternfly/react-core@3.0.2) (2018-12-13)
 
