@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.26.0"></a>
+# [2.26.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.5...patternfly-react@2.26.0) (2018-12-13)
+
+
+### Features
+
+* **BulletChart:** Allow for custom values (non-percent) and legend text ([#1040](https://github.com/patternfly/patternfly-react/issues/1040)) ([685b400](https://github.com/patternfly/patternfly-react/commit/685b400))
+
+
+
+
 <a name="2.25.5"></a>
 ## [2.25.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.4...patternfly-react@2.25.5) (2018-12-11)
 
