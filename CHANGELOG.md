@@ -3,6 +3,46 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
+  * [#1047](https://github.com/patternfly/patternfly-react/pull/1047) docs(Alert): match Alert docs to core examples ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@3.0.1 (2018-12-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1046](https://github.com/patternfly/patternfly-react/pull/1046) docs(Stack): increase height of example containers to show flex grow ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.17 (2018-12-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1046](https://github.com/patternfly/patternfly-react/pull/1046) docs(Stack): increase height of example containers to show flex grow ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.25 (2018-12-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1046](https://github.com/patternfly/patternfly-react/pull/1046) docs(Stack): increase height of example containers to show flex grow ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@3.0.1 (2018-12-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
   * [#1046](https://github.com/patternfly/patternfly-react/pull/1046) docs(Stack): increase height of example containers to show flex grow ([@kmcfaul](https://github.com/kmcfaul))
 
 #### Committers: 1
