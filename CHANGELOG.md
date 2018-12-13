@@ -1,5 +1,51 @@
 
-## Change Log (2018-12-12)
+## Change Log (2018-12-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1046](https://github.com/patternfly/patternfly-react/pull/1046) docs(Stack): increase height of example containers to show flex grow ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@3.0.0 (2018-12-12)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1041](https://github.com/patternfly/patternfly-react/pull/1041) docs(AboutModal): update logo alt text to Patternfly Logo ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1042](https://github.com/patternfly/patternfly-react/pull/1042) docs(Text): remove pre Text example ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1043](https://github.com/patternfly/patternfly-react/pull/1043) docs(Page): match example color order to core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.16 (2018-12-12)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1041](https://github.com/patternfly/patternfly-react/pull/1041) docs(AboutModal): update logo alt text to Patternfly Logo ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1042](https://github.com/patternfly/patternfly-react/pull/1042) docs(Text): remove pre Text example ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1043](https://github.com/patternfly/patternfly-react/pull/1043) docs(Page): match example color order to core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.24 (2018-12-12)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1041](https://github.com/patternfly/patternfly-react/pull/1041) docs(AboutModal): update logo alt text to Patternfly Logo ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1042](https://github.com/patternfly/patternfly-react/pull/1042) docs(Text): remove pre Text example ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1043](https://github.com/patternfly/patternfly-react/pull/1043) docs(Page): match example color order to core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@3.0.0 (2018-12-12)
 
 #### :bug: Bug Fix
 * `patternfly-4`
