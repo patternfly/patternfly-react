@@ -22,14 +22,7 @@ const defaultProps = {
 };
 
 const ModalBox = ({ children, className, isLarge, title, id, ...props }) => (
-  <div
-    {...props}
-    role="dialog"
-    aria-label={title}
-    aria-describedby={id}
-    aria-modal="true"
-    className={css(styles.modalBox, className, isLarge && styles.modifiers.lg)}
-  >
+  <div {...props} className={css(styles.modalBox, className, isLarge && styles.modifiers.lg)}>
     {children}
   </div>
 );

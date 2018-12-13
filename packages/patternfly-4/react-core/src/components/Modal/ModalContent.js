@@ -49,12 +49,10 @@ const ModalContent = ({ children, className, isOpen, title, hideTitle, actions, 
     <Backdrop>
       <Bullseye>
         <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-          <ModalBox className={className} isLarge={isLarge} title={title} id={id}>
+          <ModalBox className={className} isLarge={isLarge} title={title} id={id} {...props}>
             <ModalBoxHCloseButton onClose={onClose} />
-            {modalBoxHeader}
-            <ModalBoxBody {...props} id={id}>
-              {children}
-            </ModalBoxBody>
+            {!hideTitle && modalBoxHeader}
+            <ModalBoxBody id={id}>{children}</ModalBoxBody>
             {modalBoxFooter}
           </ModalBox>
         </FocusTrap>
