@@ -18,6 +18,9 @@ const propTypes = {
   isHovered: PropTypes.bool,
   /** Default hyperlink location */
   href: PropTypes.string,
+  keyHandler: PropTypes.func,
+  index: PropTypes.number,
+  sendRef: PropTypes.func,
   /** Additional props are spread to the container component */
   '': PropTypes.any,
   /** Callback for click event */
@@ -31,7 +34,10 @@ const defaultProps = {
   component: 'a',
   isDisabled: false,
   href: '#',
-  onClick: Function.prototype
+  onClick: Function.prototype,
+  keyHandler: () => undefined,
+  index: -1,
+  sendRef: () => undefined
 };
 
 class DropdownItem extends React.Component {
@@ -41,15 +47,21 @@ class DropdownItem extends React.Component {
     this.onKeyDown = this.onKeyDown.bind(this);
   }
 
+  componentDidMount() {
+    this.props.sendRef(this.props.index, this.ref, this.props.isDisabled);
+  }
+
   onKeyDown = event => {
+    // Detected key press on this item, notify the menu parent so that the appropriate
+    // item can be focused
     if (event.key === 'Tab') return;
     event.preventDefault();
     if (event.key === 'ArrowUp') {
       console.log('arrow up pressed');
-      this.props.keyHandler(this.ref);
+      this.props.keyHandler(this.props.index, 'up');
     } else if (event.key === 'ArrowDown') {
       console.log('arrow down pressed');
-      this.props.keyHandler(this.ref);
+      this.props.keyHandler(this.props.index, 'down');
     }
   };
 
@@ -62,6 +74,8 @@ class DropdownItem extends React.Component {
       onClick,
       component: Component,
       isDisabled,
+      index,
+      sendRef,
       ...props
     } = this.props;
     const additionalProps = props;
