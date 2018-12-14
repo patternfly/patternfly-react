@@ -5,7 +5,7 @@ import { Grid, Form, Dropdown, MenuItem, helpers } from 'patternfly-react';
 
 import constants from '../common/constants';
 
-const { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE } = constants;
+const { NONE_TYPE, SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, DESKTOP_VIEWER_CONSOLE_TYPE } = constants;
 const { Row, Col } = Grid;
 const { Checkbox, FormGroup } = Form;
 
@@ -74,11 +74,12 @@ class AccessConsoles extends React.Component {
     const items = {
       [NONE_TYPE]: this.props.textSelectConsoleType,
       [SERIAL_CONSOLE_TYPE]: this.props.textSerialConsole,
-      [VNC_CONSOLE_TYPE]: this.props.textVncConsole
+      [VNC_CONSOLE_TYPE]: this.props.textVncConsole,
+      [DESKTOP_VIEWER_CONSOLE_TYPE]: this.props.textDesktopViewerConsole
     };
 
     return (
-      <Grid fluid>
+      <Grid fluid className="access-consoles-pf">
         <Form horizontal>
           <FormGroup controlId="console-type" className="console-selector-pf">
             <Col>
@@ -87,28 +88,34 @@ class AccessConsoles extends React.Component {
                   {this.props.children ? items[this.state.type] : this.props.textEmptyConsoleList}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
+                  {this.isChildOfTypePresent(VNC_CONSOLE_TYPE) && (
+                    <MenuItem eventKey="1" onClick={() => this.onTypeChange(VNC_CONSOLE_TYPE)}>
+                      {items[VNC_CONSOLE_TYPE]}
+                    </MenuItem>
+                  )}
                   {this.isChildOfTypePresent(SERIAL_CONSOLE_TYPE) && (
-                    <MenuItem eventKey="1" onClick={() => this.onTypeChange(SERIAL_CONSOLE_TYPE)}>
+                    <MenuItem eventKey="2" onClick={() => this.onTypeChange(SERIAL_CONSOLE_TYPE)}>
                       {items[SERIAL_CONSOLE_TYPE]}
                     </MenuItem>
                   )}
-                  {this.isChildOfTypePresent(VNC_CONSOLE_TYPE) && (
-                    <MenuItem eventKey="2" onClick={() => this.onTypeChange(VNC_CONSOLE_TYPE)}>
-                      {items[VNC_CONSOLE_TYPE]}
+                  {this.isChildOfTypePresent(DESKTOP_VIEWER_CONSOLE_TYPE) && (
+                    <MenuItem eventKey="3" onClick={() => this.onTypeChange(DESKTOP_VIEWER_CONSOLE_TYPE)}>
+                      {items[DESKTOP_VIEWER_CONSOLE_TYPE]}
                     </MenuItem>
                   )}
                 </Dropdown.Menu>
               </Dropdown>
-              {this.state.type !== NONE_TYPE && (
-                <Checkbox
-                  className="console-selector-pf-disconnect-switch"
-                  inline
-                  defaultChecked={this.props.disconnectByChange}
-                  onChange={e => this.onChangeDisconnectBySwitchClick(e.target)}
-                >
-                  {this.props.textDisconnectByChange}
-                </Checkbox>
-              )}
+              {this.state.type !== NONE_TYPE &&
+                this.state.type !== DESKTOP_VIEWER_CONSOLE_TYPE && (
+                  <Checkbox
+                    className="console-selector-pf-disconnect-switch"
+                    inline
+                    defaultChecked={this.props.disconnectByChange}
+                    onChange={e => this.onChangeDisconnectBySwitchClick(e.target)}
+                  >
+                    {this.props.textDisconnectByChange}
+                  </Checkbox>
+                )}
             </Col>
           </FormGroup>
         </Form>
@@ -120,14 +127,14 @@ class AccessConsoles extends React.Component {
   }
 }
 
-const validChildrenTypes = [SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE];
+const validChildrenTypes = [SERIAL_CONSOLE_TYPE, VNC_CONSOLE_TYPE, DESKTOP_VIEWER_CONSOLE_TYPE];
 const childElementValidator = propValue => {
   if (propValue) {
     const children = Array.isArray(propValue) ? propValue : [propValue];
     if (
       !children.every(
         child =>
-          (child.type && validChildrenTypes.indexOf(child.type.name) >= 0) ||
+          (child.type && validChildrenTypes.indexOf(child.type.displayName) >= 0) ||
           (child.props && validChildrenTypes.indexOf(child.props.type) >= 0)
       )
     ) {
@@ -140,7 +147,7 @@ const childElementValidator = propValue => {
 AccessConsoles.propTypes = {
   /**
    * Child element can be either
-   *   - <SerialConsole> or <VncConsole>
+   *   - <SerialConsole>, <VncConsole> or <DesktopViewer>
    *   - or has a property "type" of value either SERIAL_CONSOLE_TYPE or VNC_CONSOLE_TYPE (useful when wrapping (composing) basic console components
    */
   children: PropTypes.oneOfType([PropTypes.objectOf(childElementValidator), PropTypes.arrayOf(childElementValidator)]),
@@ -148,13 +155,15 @@ AccessConsoles.propTypes = {
   textSelectConsoleType: PropTypes.string /** Internationalization */,
   textSerialConsole: PropTypes.string /** Internationalization */,
   textVncConsole: PropTypes.string /** Internationalization */,
+  textDesktopViewerConsole: PropTypes.string /** Internationalization */,
   textDisconnectByChange: PropTypes.string /** Internationalization */,
   textEmptyConsoleList: PropTypes.string /** Internationalization */,
 
   preselectedType: PropTypes.oneOf([
     NONE_TYPE,
     SERIAL_CONSOLE_TYPE,
-    VNC_CONSOLE_TYPE
+    VNC_CONSOLE_TYPE,
+    DESKTOP_VIEWER_CONSOLE_TYPE
   ]) /** Initial selection of the dropdown */,
   disconnectByChange:
     PropTypes.bool /** Initial value of "Disconnect before switching" checkbox, "false" to disconnect when console type changed */
@@ -166,6 +175,7 @@ AccessConsoles.defaultProps = {
   textSelectConsoleType: 'Select Console Type',
   textSerialConsole: 'Serial Console',
   textVncConsole: 'VNC Console',
+  textDesktopViewerConsole: 'Desktop Viewer',
   textDisconnectByChange: 'Disconnect before switching',
   textEmptyConsoleList: 'No console available',
 

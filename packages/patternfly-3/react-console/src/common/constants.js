@@ -3,6 +3,7 @@ const SERIAL_CONSOLE_TYPE = 'SerialConsole';
 const SPICE_CONSOLE_TYPE = 'SpiceConsole';
 const VNC_CONSOLE_TYPE = 'VncConsole';
 const RDP_CONSOLE_TYPE = 'RdpConsole';
+const DESKTOP_VIEWER_CONSOLE_TYPE = 'DesktopViewer';
 
 const CONNECTING = 'connecting';
 const CONNECTED = 'connected';
@@ -21,6 +22,7 @@ const constants = {
   SPICE_CONSOLE_TYPE,
   VNC_CONSOLE_TYPE,
   RDP_CONSOLE_TYPE,
+  DESKTOP_VIEWER_CONSOLE_TYPE,
 
   CONNECTING,
   CONNECTED,
