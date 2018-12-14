@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.14.0"></a>
+# [7.14.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.13.0...patternfly3-react-lerna-root@7.14.0) (2018-12-14)
+
+
+### Features
+
+* **AccessConsoles:** add DesktopViewer to AccessConsoles ([#989](https://github.com/patternfly/patternfly-react/issues/989)) ([5a4e9c8](https://github.com/patternfly/patternfly-react/commit/5a4e9c8))
+
+
+
+
 <a name="7.13.1"></a>
 ## [7.13.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.13.0...patternfly3-react-lerna-root@7.13.1) (2018-12-13)
 

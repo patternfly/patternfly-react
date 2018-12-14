@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.7...@patternfly/react-console@1.10.0) (2018-12-14)
+
+
+### Features
+
+* **AccessConsoles:** add DesktopViewer to AccessConsoles ([#989](https://github.com/patternfly/patternfly-react/issues/989)) ([5a4e9c8](https://github.com/patternfly/patternfly-react/commit/5a4e9c8))
+
+
+
+
 <a name="1.9.8"></a>
 ## [1.9.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.7...@patternfly/react-console@1.9.8) (2018-12-13)
 
