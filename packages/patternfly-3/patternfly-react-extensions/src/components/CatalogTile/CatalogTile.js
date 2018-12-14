@@ -92,6 +92,7 @@ class CatalogTile extends React.Component {
       description,
       truncateDescriptionFn,
       maxDescriptionLength,
+      footer,
       ...otherProps
     } = this.props;
     const { heightStyle } = this.state;
@@ -128,6 +129,7 @@ class CatalogTile extends React.Component {
             </span>
           </div>
         </div>
+        {footer && <div className="catalog-tile-pf-footer">{footer}</div>}
       </OuterComponent>
     );
   }
@@ -159,7 +161,9 @@ CatalogTile.propTypes = {
   /** Max description length before applying truncation (when description is a string), -1 for auto truncate to last visible line */
   maxDescriptionLength: PropTypes.number,
   /** Truncation function(description, max, id) used to truncate description when necessary (defaults to using ellipses) */
-  truncateDescriptionFn: PropTypes.func
+  truncateDescriptionFn: PropTypes.func,
+  /** Footer for the tile */
+  footer: PropTypes.oneOfType([PropTypes.string, PropTypes.node])
 };
 
 CatalogTile.defaultProps = {
@@ -174,7 +178,8 @@ CatalogTile.defaultProps = {
   vendor: null,
   description: null,
   maxDescriptionLength: -1,
-  truncateDescriptionFn: null
+  truncateDescriptionFn: null,
+  footer: null
 };
 
 CatalogTile.displayName = 'CatalogTile';

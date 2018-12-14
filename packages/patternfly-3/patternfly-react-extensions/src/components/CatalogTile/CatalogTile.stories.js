@@ -45,6 +45,29 @@ stories.add(
         }
       />
       <CatalogTile
+        id="tile-footer-test"
+        featured
+        href="https://github.com/patternfly/patternfly-react"
+        iconImg={pfBrand}
+        badges={[
+          <CatalogTileBadge title="Certified" id="certified">
+            <Icon type="fa" name="cog" />
+          </CatalogTileBadge>
+        ]}
+        title="Patternfly-React"
+        vendor="provided by Red Hat"
+        description={
+          'This is a very long description that should be truncated after 112 characters. ' +
+          '112 is the default but can be overridden if need be. You can also provide a custom truncation function ' +
+          'to truncate the description how you see fit. It will be passed the description, max length, and id.'
+        }
+        footer={
+          <span>
+            <Icon type="pf" name="ok" /> Enabled
+          </span>
+        }
+      />
+      <CatalogTile
         iconImg={ngnix}
         badges={[
           <CatalogTileBadge title="Certified" id="certified">
@@ -54,6 +77,11 @@ stories.add(
         title="Nginx"
         vendor={<span>provided by Nginx</span>}
         description="The open source web server that powers 400 million websites."
+        footer={
+          <span>
+            <Icon type="fa" name="hourglass-half" /> Requested
+          </span>
+        }
       />
       <CatalogTile
         iconClass="fa fa-codepen"
