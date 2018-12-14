@@ -40,6 +40,7 @@ exports[`Alert - danger Action 1`] = `
   className=""
   title=""
   variant="danger"
+  variantLabel={null}
 >
   <div
     aria-label="Danger Notification"
@@ -162,6 +163,7 @@ exports[`Alert - danger Action and Title 1`] = `
   className=""
   title="Some title"
   variant="danger"
+  variantLabel={null}
 >
   <div
     aria-label="Danger Notification"
@@ -280,6 +282,7 @@ exports[`Alert - danger Body 1`] = `
   className=""
   title=""
   variant="danger"
+  variantLabel={null}
 >
   <div
     aria-label="Danger Notification"
@@ -394,6 +397,7 @@ exports[`Alert - danger Custom aria label 1`] = `
   className=""
   title="Some title"
   variant="danger"
+  variantLabel={null}
 >
   <div
     aria-label="Custom aria label for danger"
@@ -512,6 +516,7 @@ exports[`Alert - danger Title 1`] = `
   className=""
   title="Some title"
   variant="danger"
+  variantLabel={null}
 >
   <div
     aria-label="Danger Notification"
@@ -626,6 +631,7 @@ exports[`Alert - info Action 1`] = `
   className=""
   title=""
   variant="info"
+  variantLabel={null}
 >
   <div
     aria-label="Info Notification"
@@ -748,6 +754,7 @@ exports[`Alert - info Action and Title 1`] = `
   className=""
   title="Some title"
   variant="info"
+  variantLabel={null}
 >
   <div
     aria-label="Info Notification"
@@ -866,6 +873,7 @@ exports[`Alert - info Body 1`] = `
   className=""
   title=""
   variant="info"
+  variantLabel={null}
 >
   <div
     aria-label="Info Notification"
@@ -980,6 +988,7 @@ exports[`Alert - info Custom aria label 1`] = `
   className=""
   title="Some title"
   variant="info"
+  variantLabel={null}
 >
   <div
     aria-label="Custom aria label for info"
@@ -1098,6 +1107,7 @@ exports[`Alert - info Title 1`] = `
   className=""
   title="Some title"
   variant="info"
+  variantLabel={null}
 >
   <div
     aria-label="Info Notification"
@@ -1212,6 +1222,7 @@ exports[`Alert - success Action 1`] = `
   className=""
   title=""
   variant="success"
+  variantLabel={null}
 >
   <div
     aria-label="Success Notification"
@@ -1334,6 +1345,7 @@ exports[`Alert - success Action and Title 1`] = `
   className=""
   title="Some title"
   variant="success"
+  variantLabel={null}
 >
   <div
     aria-label="Success Notification"
@@ -1452,6 +1464,7 @@ exports[`Alert - success Body 1`] = `
   className=""
   title=""
   variant="success"
+  variantLabel={null}
 >
   <div
     aria-label="Success Notification"
@@ -1566,6 +1579,7 @@ exports[`Alert - success Custom aria label 1`] = `
   className=""
   title="Some title"
   variant="success"
+  variantLabel={null}
 >
   <div
     aria-label="Custom aria label for success"
@@ -1684,6 +1698,7 @@ exports[`Alert - success Title 1`] = `
   className=""
   title="Some title"
   variant="success"
+  variantLabel={null}
 >
   <div
     aria-label="Success Notification"
@@ -1798,6 +1813,7 @@ exports[`Alert - warning Action 1`] = `
   className=""
   title=""
   variant="warning"
+  variantLabel={null}
 >
   <div
     aria-label="Warning Notification"
@@ -1920,6 +1936,7 @@ exports[`Alert - warning Action and Title 1`] = `
   className=""
   title="Some title"
   variant="warning"
+  variantLabel={null}
 >
   <div
     aria-label="Warning Notification"
@@ -2038,6 +2055,7 @@ exports[`Alert - warning Body 1`] = `
   className=""
   title=""
   variant="warning"
+  variantLabel={null}
 >
   <div
     aria-label="Warning Notification"
@@ -2152,6 +2170,7 @@ exports[`Alert - warning Custom aria label 1`] = `
   className=""
   title="Some title"
   variant="warning"
+  variantLabel={null}
 >
   <div
     aria-label="Custom aria label for warning"
@@ -2270,6 +2289,7 @@ exports[`Alert - warning Title 1`] = `
   className=""
   title="Some title"
   variant="warning"
+  variantLabel={null}
 >
   <div
     aria-label="Warning Notification"

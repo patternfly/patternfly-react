@@ -27,7 +27,9 @@ const propTypes = {
   /** additional classes added to the Alert */
   className: PropTypes.string,
   /** Adds accessible text to the Alert */
-  'aria-label': PropTypes.string
+  'aria-label': PropTypes.string,
+  /** Variant label text for screen readers */
+  variantLabel: PropTypes.string
 };
 
 const defaultProps = {
@@ -35,13 +37,15 @@ const defaultProps = {
   action: null,
   title: '',
   children: '',
-  className: ''
+  className: '',
+  variantLabel: null
 };
 
 const getDefaultAriaLabel = variant => `${capitalize(AlertVariant[variant])} Notification`;
 
 const Alert = ({
   variant,
+  variantLabel,
   'aria-label': ariaLabel = getDefaultAriaLabel(variant),
   action,
   title,
@@ -49,9 +53,10 @@ const Alert = ({
   className,
   ...props
 }) => {
+  variantLabel = variantLabel || capitalize(AlertVariant[variant]);
   const readerTitle = (
     <React.Fragment>
-      <span className={css(accessibleStyles.srOnly)}>{capitalize(AlertVariant[variant])}: </span>
+      <span className={css(accessibleStyles.srOnly)}>{variantLabel}: </span>
       {title}
     </React.Fragment>
   );
