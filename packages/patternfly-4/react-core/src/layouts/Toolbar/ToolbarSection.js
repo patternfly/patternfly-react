@@ -14,7 +14,9 @@ const propTypes = {
       return new Error('ToolbarSection requires aria-label to be specified');
     }
     return null;
-  }
+  },
+  /** Additional props are spread to the container <section> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

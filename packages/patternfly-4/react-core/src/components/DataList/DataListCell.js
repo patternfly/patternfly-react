@@ -18,7 +18,9 @@ DataListCell.propTypes = {
   /** Additional classes added to the DataList cell */
   className: PropTypes.string,
   /** Width (from 1-5) to the DataList cell */
-  width: PropTypes.oneOf([1, 2, 3, 4, 5])
+  width: PropTypes.oneOf([1, 2, 3, 4, 5]),
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 DataListCell.defaultProps = {

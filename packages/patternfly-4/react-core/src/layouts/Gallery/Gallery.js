@@ -10,7 +10,9 @@ const propTypes = {
   /** additional classes added to the Gallery layout */
   className: PropTypes.string,
   /** Adds space between children. Options are sm, md or lg */
-  gutter: PropTypes.oneOf(Object.keys(GutterSize))
+  gutter: PropTypes.oneOf(Object.keys(GutterSize)),
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

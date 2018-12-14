@@ -22,7 +22,9 @@ const propTypes = {
     if (!props.id && !props['aria-label']) {
       return new Error('Switch requires either an id or aria-label to be specified');
     }
-  }
+  },
+  /** Additional props are spread to the container <input> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

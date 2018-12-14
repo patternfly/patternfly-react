@@ -30,7 +30,9 @@ DataListToggle.propTypes = {
   /** Adds accessible text to the DataList toggle */
   'aria-labelledby': PropTypes.string.isRequired,
   /** Adds accessible text to the DataList toggle */
-  'aria-label': PropTypes.string.isRequired
+  'aria-label': PropTypes.string.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 DataListToggle.defaultProps = {

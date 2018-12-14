@@ -33,7 +33,9 @@ const propTypes = {
   /** Maximum value of progress. */
   max: PropTypes.number,
   /** Dynamic description of progress. */
-  valueText: PropTypes.string
+  valueText: PropTypes.string,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

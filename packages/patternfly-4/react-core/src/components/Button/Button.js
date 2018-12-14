@@ -45,7 +45,9 @@ const propTypes = {
       return new Error('aria-label is required for Buttons with the plain variant');
     }
     return null;
-  }
+  },
+  /** Additional props are spread to the container <button> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

@@ -21,7 +21,9 @@ const propTypes = {
   /** True to show the nav toggle button (toggles side nav) */
   showNavToggle: PropTypes.bool,
   /** Callback function to handle the side nav toggle button */
-  onNavToggle: PropTypes.func
+  onNavToggle: PropTypes.func,
+  /** Additional props are spread to the container <header> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

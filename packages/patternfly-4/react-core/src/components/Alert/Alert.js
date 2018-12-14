@@ -29,7 +29,9 @@ const propTypes = {
   /** Adds accessible text to the Alert */
   'aria-label': PropTypes.string,
   /** Variant label text for screen readers */
-  variantLabel: PropTypes.string
+  variantLabel: PropTypes.string,
+  /** Additional props are spread to the container <div>  */
+  '': PropTypes.any
 };
 
 const defaultProps = {

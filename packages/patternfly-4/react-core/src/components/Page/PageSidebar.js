@@ -9,7 +9,9 @@ const propTypes = {
   /** Component to render the side navigation (e.g. <Nav /> */
   nav: PropTypes.node,
   /** True if the side nav is shown  */
-  isNavOpen: PropTypes.bool
+  isNavOpen: PropTypes.bool,
+  /** Additional props are spread to the container <aside> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

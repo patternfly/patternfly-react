@@ -13,7 +13,9 @@ const propTypes = {
   /** additional classes added to the Split layout */
   className: PropTypes.string,
   /** Sets the base component to render. defaults to div */
-  component: componentShape
+  component: componentShape,
+  /** Additional props are spread to the container component */
+  '': PropTypes.any
 };
 
 const defaultProps = {

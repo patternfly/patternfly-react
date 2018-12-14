@@ -22,7 +22,9 @@ const propTypes = {
   /** Content rendered within the Text */
   children: PropTypes.node,
   /** Additional classes added to the Text */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container component */
+  '': PropTypes.any
 };
 
 const defaultProps = {

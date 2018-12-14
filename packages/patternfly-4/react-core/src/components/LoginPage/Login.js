@@ -11,7 +11,9 @@ const propTypes = {
   /** Footer component (e.g. <LoginFooter />) */
   footer: PropTypes.node,
   /** Header component (e.g. <LoginHeader />) */
-  header: PropTypes.node
+  header: PropTypes.node,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

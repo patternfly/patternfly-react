@@ -8,7 +8,9 @@ const propTypes = {
   /** Attribute that specifies the URL of the image for the Brand. */
   src: PropTypes.string,
   /** Attribute that specifies the alt text of the image for the Brand. */
-  alt: PropTypes.string.isRequired
+  alt: PropTypes.string.isRequired,
+  /** Additional props are spread to the container <img> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

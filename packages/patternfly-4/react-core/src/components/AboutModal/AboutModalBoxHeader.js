@@ -13,7 +13,9 @@ const propTypes = {
   /** The Trademark info for the product */
   trademark: PropTypes.string.isRequired,
   /** id to used for Modal Box header */
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

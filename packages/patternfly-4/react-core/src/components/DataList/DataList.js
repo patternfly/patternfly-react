@@ -4,13 +4,16 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly-next/components/DataList/styles.css';
 import boxShStyles from '@patternfly/patternfly-next//utilities/BoxShadow/box-shadow.css';
 
-const DataList = ({ children, className, 'aria-label': ariaLabel, ...props }) => {
-  return (
-    <ul className={css(styles.dataList, boxShStyles.boxShadowMd, className)} role="list" aria-label={ariaLabel} {...props}>
-      {children}
-    </ul>
-  );
-};
+const DataList = ({ children, className, 'aria-label': ariaLabel, ...props }) => (
+  <ul
+    className={css(styles.dataList, boxShStyles.boxShadowMd, className)}
+    role="list"
+    aria-label={ariaLabel}
+    {...props}
+  >
+    {children}
+  </ul>
+);
 
 DataList.propTypes = {
   /** Content rendered inside the DataList list */
@@ -18,12 +21,14 @@ DataList.propTypes = {
   /** Additional classes added to the DataList list */
   className: PropTypes.string,
   /** Adds accessible text to the DataList list */
-  'aria-label': PropTypes.string.isRequired
+  'aria-label': PropTypes.string.isRequired,
+  /** Additional props are spread to the container <ul> */
+  '': PropTypes.any
 };
 
 DataList.defaultProps = {
   children: null,
-  className: '',
+  className: ''
 };
 
 export default DataList;

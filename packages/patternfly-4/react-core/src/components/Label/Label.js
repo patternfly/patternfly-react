@@ -15,7 +15,9 @@ Label.propTypes = {
   /** Content rendered inside the label. */
   children: PropTypes.node.isRequired,
   /** Flag to show if the label is compact. */
-  isCompact: PropTypes.bool
+  isCompact: PropTypes.bool,
+  /** Additional props are spread to the container <span> */
+  '': PropTypes.any
 };
 
 Label.defaultProps = {

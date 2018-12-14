@@ -24,7 +24,9 @@ const propTypes = {
   /** Forces active state */
   isActive: PropTypes.bool,
   /** Display the toggle with no border or background */
-  isPlain: PropTypes.bool
+  isPlain: PropTypes.bool,
+  /** Additional props are spread to the container <button> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

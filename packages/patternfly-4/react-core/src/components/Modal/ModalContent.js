@@ -27,7 +27,9 @@ const propTypes = {
   /** Creates a large version of the Modal */
   isLarge: PropTypes.bool,
   /** id to use for Modal Box description */
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  /** Additional props are spread to the ModalBoxBody component */
+  '': PropTypes.any
 };
 
 const defaultProps = {

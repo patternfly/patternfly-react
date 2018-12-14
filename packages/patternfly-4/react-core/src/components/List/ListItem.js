@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   /** Anything that can be rendered inside of list item */
-  children: PropTypes.node
+  children: PropTypes.node,
+  /** Additional props are spread to the container <li> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

@@ -14,7 +14,9 @@ const propTypes = {
   /** Title for the Login Main Header */
   title: PropTypes.string,
   /** Subtitle that contains the Text, URL, and URL Text for the Login Main Header */
-  subtitle: PropTypes.node
+  subtitle: PropTypes.node,
+  /** Additional props are spread to the container <header> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

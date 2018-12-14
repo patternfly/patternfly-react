@@ -10,7 +10,9 @@ export const propTypes = {
   /** content rendered inside the Badge */
   children: PropTypes.node,
   /** additional classes added to the Badge */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <span> */
+  '': PropTypes.any
 };
 
 export const defaultProps = {

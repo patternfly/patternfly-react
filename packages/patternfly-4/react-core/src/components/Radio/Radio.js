@@ -26,7 +26,9 @@ const propTypes = {
     return null;
   },
   /** Name for group of Radios */
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  /** Additional props are spread to the container <input> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

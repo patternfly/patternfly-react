@@ -7,7 +7,9 @@ const propTypes = {
   /** Content rendered within the TextContent */
   children: PropTypes.node,
   /** Additional classes added to the TextContent */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

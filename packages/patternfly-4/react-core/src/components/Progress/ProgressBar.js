@@ -9,7 +9,9 @@ const propTypes = {
   /** Additional classes for Progres bar. */
   className: PropTypes.string,
   /** Actual progress value. */
-  value: PropTypes.number.isRequired
+  value: PropTypes.number.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

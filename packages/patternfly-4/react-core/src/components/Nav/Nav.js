@@ -13,7 +13,9 @@ const propTypes = {
   /** Callback for when a list is expanded or collapsed */
   onToggle: PropTypes.func,
   /** Accessibility label */
-  'aria-label': PropTypes.string.isRequired
+  'aria-label': PropTypes.string.isRequired,
+  /** Additional props are spread to the container <nav> */
+  '': PropTypes.any
 };
 
 const defaultProps = {
@@ -53,7 +55,8 @@ class Nav extends React.Component {
     return (
       <NavContext.Provider
         value={{
-          onSelect: (event, groupId, itemId, to, preventDefault, onClick) => this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
+          onSelect: (event, groupId, itemId, to, preventDefault, onClick) =>
+            this.onSelect(event, groupId, itemId, to, preventDefault, onClick),
           onToggle: (event, groupId, expanded) => this.onToggle(event, groupId, expanded)
         }}
       >

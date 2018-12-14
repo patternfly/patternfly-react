@@ -16,7 +16,9 @@ const propTypes = {
   /** Additional classes added to the section */
   className: PropTypes.string,
   /** Section background color variant */
-  variant: PropTypes.oneOf(Object.values(PageSectionVariants))
+  variant: PropTypes.oneOf(Object.values(PageSectionVariants)),
+  /** Additional props are spread to the container <section> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

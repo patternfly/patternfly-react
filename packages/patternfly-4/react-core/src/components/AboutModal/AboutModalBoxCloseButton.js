@@ -9,7 +9,9 @@ const propTypes = {
   /** additional classes added to the About Modal Close button */
   className: PropTypes.string,
   /** A callback for when the close button is clicked */
-  onClose: PropTypes.func
+  onClose: PropTypes.func,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

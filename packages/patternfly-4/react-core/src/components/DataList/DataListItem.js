@@ -21,7 +21,9 @@ DataListItem.propTypes = {
   /** Additional classes added to the DataList item */
   className: PropTypes.string,
   /** Adds accessible text to the DataList item */
-  'aria-labelledby': PropTypes.string.isRequired
+  'aria-labelledby': PropTypes.string.isRequired,
+  /** Additional props are spread to the container <li> */
+  '': PropTypes.any
 };
 
 DataListItem.defaultProps = {

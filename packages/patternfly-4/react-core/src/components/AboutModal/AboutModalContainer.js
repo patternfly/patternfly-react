@@ -37,7 +37,9 @@ const propTypes = {
   /** id to use for About Modal Box aria labeled by */
   ariaLabelledbyId: PropTypes.string.isRequired,
   /** id to use for About Modal Box aria described by */
-  ariaDescribedById: PropTypes.string.isRequired
+  ariaDescribedById: PropTypes.string.isRequired,
+  /** Additional props are spread to the AboutModalBoxContent component */
+  '': PropTypes.any
 };
 
 const defaultProps = {

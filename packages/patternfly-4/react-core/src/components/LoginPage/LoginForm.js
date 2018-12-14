@@ -50,7 +50,9 @@ const propTypes = {
       return new Error('rememberMeAriaLabel is required with the Remember me checkbox');
     }
     return null;
-  }
+  },
+  /** Additional props are spread to the Form component */
+  '': PropTypes.any
 };
 
 const defaultProps = {

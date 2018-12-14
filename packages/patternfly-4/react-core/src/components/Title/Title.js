@@ -21,7 +21,9 @@ const propTypes = {
   /** additional classes added to the Title */
   className: PropTypes.string,
   /** the heading level to use */
-  headingLevel: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+  headingLevel: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
+  /** Additional props are spread to the HeadingLevel component */
+  '': PropTypes.any
 };
 
 const defaultProps = {
@@ -30,13 +32,11 @@ const defaultProps = {
   headingLevel: 'h1'
 };
 
-const Title = ({ size, className, children, headingLevel: HeadingLevel, ...props }) => {
-  return (
-    <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size), className)}>
-      {children}
-    </HeadingLevel>
-  );
-};
+const Title = ({ size, className, children, headingLevel: HeadingLevel, ...props }) => (
+  <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size), className)}>
+    {children}
+  </HeadingLevel>
+);
 
 Title.propTypes = propTypes;
 Title.defaultProps = defaultProps;

@@ -26,7 +26,9 @@ const propTypes = {
       return new Error('Select requires either an id or aria-label to be specified');
     }
     return null;
-  }
+  },
+  /** Additional props are spread to the container <select> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

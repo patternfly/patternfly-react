@@ -7,7 +7,9 @@ const propTypes = {
   /** content rendered inside the Header */
   children: PropTypes.node,
   /** additional classes added to the button */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <header> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

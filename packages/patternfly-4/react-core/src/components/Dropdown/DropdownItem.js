@@ -16,7 +16,9 @@ const propTypes = {
   /** Forces display of the hover state of the element */
   isHovered: PropTypes.bool,
   /** Default hyperlink location */
-  href: PropTypes.string
+  href: PropTypes.string,
+  /** Additional props are spread to the container component */
+  '': PropTypes.any
 };
 
 const defaultProps = {

@@ -14,7 +14,9 @@ const propTypes = {
   /** Content rendered within the TextList */
   children: PropTypes.node,
   /** Additional classes added to the TextList */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container component */
+  '': PropTypes.any
 };
 
 const defaultProps = {

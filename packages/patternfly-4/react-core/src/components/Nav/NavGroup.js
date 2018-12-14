@@ -12,7 +12,9 @@ const propTypes = {
   /** Additional classes added to the container */
   className: PropTypes.string,
   /** Identifier to use for the section aria label */
-  id: PropTypes.string
+  id: PropTypes.string,
+  /** Additional props are spread to the container <section> */
+  '': PropTypes.any
 };
 
 const defaultProps = {
