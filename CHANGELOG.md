@@ -53,22 +53,6 @@
 - Donald Labaj ([@dlabaj](https://github.com/dlabaj))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 
-
-## @patternfly/react-core@4.0.0 (2018-12-13)
-
-#### :rocket: New Feature
-* `patternfly-3`
-  * [#395](https://github.com/patternfly/patternfly-react/pull/395) feat(DualListSelector): add a Dual List Selector component ([@Laviro](https://github.com/Laviro))
-
-#### :house: Internal
-* `patternfly-4`
-  * [#1053](https://github.com/patternfly/patternfly-react/pull/1053) Removed Props from avatar ([@dlabaj](https://github.com/dlabaj))
-
-#### Committers: 2
-- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
-- Ron Lavi ([@Laviro](https://github.com/Laviro))
-
-
 ## patternfly3-react-lerna-root@7.13.0 (2018-12-13)
 
 #### :rocket: New Feature

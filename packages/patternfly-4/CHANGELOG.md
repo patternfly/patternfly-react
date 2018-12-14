@@ -3,62 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-<a name="3.0.3"></a>
-## [3.0.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@3.0.0...patternfly4-react-lerna-root@3.0.3) (2018-12-13)
-
-
-
-
-**Note:** Version bump only for package patternfly4-react-lerna-root
-
-<a name="3.0.2"></a>
-## [3.0.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@3.0.1...patternfly4-react-lerna-root@3.0.2) (2018-12-13)
-
-
-
-
-**Note:** Version bump only for package patternfly4-react-lerna-root
-
-<a name="3.0.1"></a>
-## [3.0.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@3.0.0...patternfly4-react-lerna-root@3.0.1) (2018-12-13)
-
-
-
-
-**Note:** Version bump only for package patternfly4-react-lerna-root
-
-<a name="3.0.0"></a>
-# [3.0.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.30.0...patternfly4-react-lerna-root@3.0.0) (2018-12-12)
-
-
-### Features
-
-* **PF4-Modal:** Adds keyboard and screen reader focus trapping ([#1011](https://github.com/patternfly/patternfly-react/issues/1011)) ([7fa93b3](https://github.com/patternfly/patternfly-react/commit/7fa93b3)), closes [#561](https://github.com/patternfly/patternfly-react/issues/561)
-
-
-### BREAKING CHANGES
-
-* **PF4-Modal:** The reactRoot prop is required
-
-
-
-
-<a name="2.0.0"></a>
-# [2.0.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.30.0...patternfly4-react-lerna-root@2.0.0) (2018-12-12)
-
-
-### Features
-
-* **PF4-Modal:** Adds keyboard and screen reader focus trapping ([#1011](https://github.com/patternfly/patternfly-react/issues/1011)) ([7fa93b3](https://github.com/patternfly/patternfly-react/commit/7fa93b3)), closes [#561](https://github.com/patternfly/patternfly-react/issues/561)
-
-
-### BREAKING CHANGES
-
-* **PF4-Modal:** The reactRoot prop is required
-
-
-
-
 <a name="1.30.0"></a>
 # [1.30.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.29.1...patternfly4-react-lerna-root@1.30.0) (2018-12-11)
 
