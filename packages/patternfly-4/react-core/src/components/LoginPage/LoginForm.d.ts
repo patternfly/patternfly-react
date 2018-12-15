@@ -5,12 +5,14 @@ export interface LoginFormProps extends HTMLProps<HTMLFormElement> {
   usernameLabel?: string;
   usernameValue?: string;
   onChangeUsername?: Function;
+  usernamePlaceholder?: string;
   usernameHelperText?: string;
   usernameHelperTextInvalid?: string;
   isValidUsername?: boolean;
   passwordLabel?: string;
   PasswordValue?: string;
   onChangePassword?: Function;
+  passwordPlaceholder?: string;
   passwordHelperText?: string;
   passwordHelperTextInvalid?: string;
   isValidPassword?: boolean;

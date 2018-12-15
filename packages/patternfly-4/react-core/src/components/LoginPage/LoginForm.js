@@ -14,6 +14,8 @@ const propTypes = {
   usernameValue: PropTypes.string,
   /** Function that handles the onChange event for the Username */
   onChangeUsername: PropTypes.func,
+  /** Placeholder for the User Input Field */
+  usernamePlaceholder: PropTypes.string,
   /** Helper Text for the Username Input Field */
   usernameHelperText: PropTypes.string,
   /** Helper Text for the Username Input Field when it is invalid */
@@ -26,6 +28,8 @@ const propTypes = {
   passwordValue: PropTypes.string,
   /** Function that handles the onChange event for the Password */
   onChangePassword: PropTypes.func,
+  /** Placeholder for the Password Input Field */
+  passwordPlaceholder: PropTypes.string,
   /** Helper Text for the Password Input Field */
   passwordHelperText: PropTypes.string,
   /** Helper Text for the Password Input Field when it is invalid */
@@ -58,12 +62,14 @@ const defaultProps = {
   usernameLabel: 'Username',
   usernameValue: '',
   onChangeUsername: () => undefined,
+  usernamePlaceholder: '',
   usernameHelperText: '',
   usernameHelperTextInvalid: '',
   isValidUsername: true,
   passwordLabel: 'Password',
   passwordValue: '',
   onChangePassword: () => undefined,
+  passwordPlaceholder: '',
   passwordHelperText: '',
   passwordHelperTextInvalid: '',
   isValidPassword: true,
@@ -81,12 +87,14 @@ const LoginForm = ({
   usernameLabel,
   usernameValue,
   onChangeUsername,
+  usernamePlaceholder,
   usernameHelperText,
   usernameHelperTextInvalid,
   isValidUsername,
   passwordLabel,
   passwordValue,
   onChangePassword,
+  passwordPlaceholder,
   passwordHelperText,
   passwordHelperTextInvalid,
   isValidPassword,
@@ -111,6 +119,7 @@ const LoginForm = ({
       <TextInput
         id="pf-login-username-id"
         isRequired
+        placeholder={usernamePlaceholder}
         isValid={isValidUsername}
         type="text"
         name="pf-login-username-id"
@@ -131,6 +140,7 @@ const LoginForm = ({
         type="password"
         id="pf-login-password-id"
         name="pf-login-password-id"
+        placeholder={passwordPlaceholder}
         isValid={isValidPassword}
         value={passwordValue}
         onChange={onChangePassword}

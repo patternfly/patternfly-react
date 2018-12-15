@@ -103,11 +103,13 @@ class SimpleLoginPage extends React.Component {
         usernameValue={this.state.usernameValue}
         onChangeUsername={this.handleUsernameChange}
         usernameHelperTextInvalid="Unknown Username"
+        usernamePlaceholder="Username"
         isValidUsername
         passwordLabel="Password"
         passwordValue={this.state.passwordValue}
         onChangePassword={this.handlePasswordChange}
         passwordHelperTextInvalid="Password Invalid"
+        passwordPlaceholder="Password"
         isValidPassword
         rememberMeLabel="Keep me logged in for 30 days."
         isRememberMeChecked={this.state.isRememberMeChecked}
