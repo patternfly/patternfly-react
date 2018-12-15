@@ -21,6 +21,7 @@ exports[`disabled text input 1`] = `
   className="pf-c-form-control"
   disabled={true}
   onChange={[Function]}
+  placeholder=""
   readOnly={false}
   required={false}
   type="text"
@@ -49,6 +50,36 @@ exports[`invalid text input 1`] = `
   className="pf-c-form-control"
   disabled={false}
   onChange={[Function]}
+  placeholder=""
+  readOnly={false}
+  required={false}
+  type="text"
+  value="test input"
+/>
+`;
+
+exports[`placeholder text input 1`] = `
+.pf-c-form-control {
+  display: block;
+  position: relative;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+  border-bottom-color: #007bba;
+}
+
+<input
+  aria-invalid={false}
+  aria-label="simple text input"
+  className="pf-c-form-control"
+  disabled={false}
+  onChange={[Function]}
+  placeholder="Set test input"
   readOnly={false}
   required={false}
   type="text"
@@ -77,6 +108,7 @@ exports[`readonly text input 1`] = `
   className="pf-c-form-control"
   disabled={false}
   onChange={[Function]}
+  placeholder=""
   readOnly={true}
   required={false}
   type="text"
@@ -105,6 +137,7 @@ exports[`simple text input 1`] = `
   className="pf-c-form-control"
   disabled={false}
   onChange={[Function]}
+  placeholder=""
   readOnly={false}
   required={false}
   type="text"

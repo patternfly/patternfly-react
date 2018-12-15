@@ -24,6 +24,8 @@ const propTypes = {
   isRequired: PropTypes.bool,
   /** Type that the input accepts. */
   type: PropTypes.oneOf(inputTypes),
+  /** Value of the input placeholder. */
+  placeholder: PropTypes.string,
   /** Value of the input. */
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Flag to show if the input is valid or invalid. */
@@ -50,6 +52,7 @@ const defaultProps = {
   isDisabled: false,
   isReadOnly: false,
   type: 'text',
+  placeholder: '',
   value: null,
   onChange: () => undefined,
   'aria-label': null
@@ -66,6 +69,7 @@ class TextInput extends React.Component {
       type,
       value,
       onChange,
+      placeholder,
       isValid,
       isReadOnly,
       isRequired,
@@ -80,6 +84,7 @@ class TextInput extends React.Component {
         type={type}
         value={value}
         aria-invalid={!isValid}
+        placeholder={placeholder}
         required={isRequired}
         disabled={isDisabled}
         readOnly={isReadOnly}

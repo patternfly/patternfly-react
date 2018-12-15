@@ -32,6 +32,11 @@ test('readonly text input', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('placeholder text input', () => {
+  const view = shallow(<TextInput {...props} placeholder="Set test input" aria-label="simple text input" />);
+  expect(view).toMatchSnapshot();
+});
+
 test('invalid text input', () => {
   const view = shallow(<TextInput {...props} required isValid={false} aria-label="invalid text input" />);
   expect(view).toMatchSnapshot();

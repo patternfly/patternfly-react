@@ -6,6 +6,7 @@ export interface TextInputProps extends Omit<HTMLProps<HTMLInputElement>, 'type'
   isRequired?: boolean;
   type?: string;
   value?: string | number;
+  placeholder?: string;
   isValid?: boolean;
   isDisabled?: boolean;
   onChange?(checked: boolean, event: FormEvent<HTMLInputElement>): void;
