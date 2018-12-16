@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import DualListItemTooltip from './DualListItemTooltip';
 import { TypeAheadSelect } from '../../../components/TypeAheadSelect';
 import { noop } from '../../../common/helpers';
 
@@ -16,10 +17,18 @@ const DualListItem = ({
   filterTerm,
   onChange,
   side,
-  hidden
+  hidden,
+  disabled,
+  tooltipID,
+  tooltipText
 }) => {
-  const cx = classNames('dual-list-pf-item', className, checked && ' selected');
-  return (
+  const cx = classNames('dual-list-pf-item', className, checked && 'selected', disabled && 'disabled');
+  const itemLabel = (
+    <span className="dual-list-pf-item-label">
+      <Highlighter search={filterTerm}>{label}</Highlighter>
+    </span>
+  );
+  const item = (
     <label className={cx} hidden={hidden}>
       <input
         type="checkbox"
@@ -29,11 +38,25 @@ const DualListItem = ({
         checked={checked || false}
         value={value}
         data-side={side}
+        disabled={disabled}
       />
-      <span className="dual-list-pf-item-label">
-        <Highlighter search={filterTerm}>{label}</Highlighter>
-      </span>
+      {itemLabel}
     </label>
+  );
+  const getTooltipID = () => {
+    let uniqueTooltipID = `dual-list-item-tooltip-${side}`;
+    if (parentPosition) {
+      uniqueTooltipID += `-${parentPosition}`;
+    }
+    uniqueTooltipID += `-${position}`;
+    return uniqueTooltipID;
+  };
+  return tooltipText ? (
+    <DualListItemTooltip text={tooltipText} id={tooltipID || getTooltipID()}>
+      {item}
+    </DualListItemTooltip>
+  ) : (
+    item
   );
 };
 
@@ -57,7 +80,13 @@ DualListItem.propTypes = {
   /** The side of the selector. */
   side: PropTypes.string,
   /** Sets the item visibillity when filtering. */
-  hidden: PropTypes.bool
+  hidden: PropTypes.bool,
+  /** Disable the item to move between lists */
+  disabled: PropTypes.bool,
+  /** unique tooltip ID */
+  tooltipID: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** text to be shown on the tooltip */
+  tooltipText: PropTypes.string
 };
 
 DualListItem.defaultProps = {
@@ -70,7 +99,10 @@ DualListItem.defaultProps = {
   filterTerm: null,
   onChange: noop,
   side: null,
-  hidden: false
+  hidden: false,
+  disabled: false,
+  tooltipID: null,
+  tooltipText: null
 };
 
 export default DualListItem;
