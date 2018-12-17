@@ -168,9 +168,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -178,9 +181,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -188,9 +194,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -198,9 +207,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -215,9 +227,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -225,9 +240,12 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -349,9 +367,12 @@ exports[`KebabToggle dropup 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -359,9 +380,12 @@ exports[`KebabToggle dropup 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -369,9 +393,12 @@ exports[`KebabToggle dropup 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -379,9 +406,12 @@ exports[`KebabToggle dropup 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -396,9 +426,12 @@ exports[`KebabToggle dropup 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -406,9 +439,12 @@ exports[`KebabToggle dropup 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -558,9 +594,12 @@ exports[`KebabToggle expanded 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -568,9 +607,12 @@ exports[`KebabToggle expanded 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -578,9 +620,12 @@ exports[`KebabToggle expanded 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -588,9 +633,12 @@ exports[`KebabToggle expanded 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -605,9 +653,12 @@ exports[`KebabToggle expanded 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -615,9 +666,12 @@ exports[`KebabToggle expanded 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -734,10 +788,13 @@ exports[`KebabToggle expanded 1`] = `
               className=""
               component="a"
               href="#"
+              index={0}
               isDisabled={false}
               isHovered={false}
-              key="link"
               onClick={[Function]}
+              key=".$link"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <a
@@ -745,6 +802,7 @@ exports[`KebabToggle expanded 1`] = `
                   className=""
                   href="#"
                   onClick={[Function]}
+                  onKeyDown={[Function]}
                 >
                   Link
                 </a>
@@ -754,10 +812,13 @@ exports[`KebabToggle expanded 1`] = `
               className=""
               component="button"
               href="#"
+              index={1}
               isDisabled={false}
               isHovered={false}
-              key="action"
               onClick={[Function]}
+              key=".$action"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <button
@@ -765,6 +826,8 @@ exports[`KebabToggle expanded 1`] = `
                   disabled={false}
                   href="#"
                   onClick={[Function]}
+                  type="button"
+                  onKeyDown={[Function]}
                 >
                   Action
                 </button>
@@ -774,10 +837,13 @@ exports[`KebabToggle expanded 1`] = `
               className=""
               component="a"
               href="#"
+              index={2}
               isDisabled={true}
               isHovered={false}
-              key="disabled link"
               onClick={[Function]}
+              key=".$disabled link"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <a
@@ -785,6 +851,7 @@ exports[`KebabToggle expanded 1`] = `
                   className="pf-m-disabled"
                   href="#"
                   onClick={[Function]}
+                  onKeyDown={[Function]}
                   tabIndex={-1}
                 >
                   Disabled Link
@@ -795,10 +862,13 @@ exports[`KebabToggle expanded 1`] = `
               className=""
               component="button"
               href="#"
+              index={3}
               isDisabled={true}
               isHovered={false}
-              key="disabled action"
               onClick={[Function]}
+              key=".$disabled action"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <button
@@ -806,6 +876,8 @@ exports[`KebabToggle expanded 1`] = `
                   disabled={true}
                   href="#"
                   onClick={[Function]}
+                  type="button"
+                  onKeyDown={[Function]}
                 >
                   Disabled Action
                 </button>
@@ -815,24 +887,31 @@ exports[`KebabToggle expanded 1`] = `
               className=""
               component="a"
               href="#"
+              index={4}
               isDisabled={false}
               isHovered={false}
-              key="separator"
+              key=".$separator"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <DropdownItem
                 className="pf-c-dropdown__separator"
                 component="div"
                 href="#"
+                index={4}
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                keyHandler={[Function]}
                 role="separator"
+                sendRef={[Function]}
               >
                 <li>
                   <div
                     className="pf-c-dropdown__separator"
                     href="#"
                     onClick={[Function]}
+                    onKeyDown={[Function]}
                     role="separator"
                   />
                 </li>
@@ -842,10 +921,13 @@ exports[`KebabToggle expanded 1`] = `
               className=""
               component="a"
               href="#"
+              index={5}
               isDisabled={false}
               isHovered={false}
-              key="separated link"
               onClick={[Function]}
+              key=".$separated link"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <a
@@ -853,6 +935,7 @@ exports[`KebabToggle expanded 1`] = `
                   className=""
                   href="#"
                   onClick={[Function]}
+                  onKeyDown={[Function]}
                 >
                   Separated Link
                 </a>
@@ -862,10 +945,13 @@ exports[`KebabToggle expanded 1`] = `
               className=""
               component="button"
               href="#"
+              index={6}
               isDisabled={false}
               isHovered={false}
-              key="separated action"
               onClick={[Function]}
+              key=".$separated action"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <button
@@ -873,6 +959,8 @@ exports[`KebabToggle expanded 1`] = `
                   disabled={false}
                   href="#"
                   onClick={[Function]}
+                  type="button"
+                  onKeyDown={[Function]}
                 >
                   Separated Action
                 </button>
@@ -915,9 +1003,12 @@ exports[`KebabToggle plain 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -925,9 +1016,12 @@ exports[`KebabToggle plain 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -935,9 +1029,12 @@ exports[`KebabToggle plain 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -945,9 +1042,12 @@ exports[`KebabToggle plain 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -962,9 +1062,12 @@ exports[`KebabToggle plain 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -972,9 +1075,12 @@ exports[`KebabToggle plain 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1096,9 +1202,12 @@ exports[`KebabToggle regular 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -1106,9 +1215,12 @@ exports[`KebabToggle regular 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -1116,9 +1228,12 @@ exports[`KebabToggle regular 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -1126,9 +1241,12 @@ exports[`KebabToggle regular 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1143,9 +1261,12 @@ exports[`KebabToggle regular 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -1153,9 +1274,12 @@ exports[`KebabToggle regular 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1277,9 +1401,12 @@ exports[`KebabToggle right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -1287,9 +1414,12 @@ exports[`KebabToggle right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -1297,9 +1427,12 @@ exports[`KebabToggle right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -1307,9 +1440,12 @@ exports[`KebabToggle right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1324,9 +1460,12 @@ exports[`KebabToggle right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -1334,9 +1473,12 @@ exports[`KebabToggle right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1612,9 +1754,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -1622,9 +1767,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -1632,9 +1780,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -1642,9 +1793,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1659,9 +1813,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -1669,9 +1826,12 @@ exports[`dropdown dropup + right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1802,9 +1962,12 @@ exports[`dropdown dropup 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -1812,9 +1975,12 @@ exports[`dropdown dropup 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -1822,9 +1988,12 @@ exports[`dropdown dropup 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -1832,9 +2001,12 @@ exports[`dropdown dropup 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1849,9 +2021,12 @@ exports[`dropdown dropup 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -1859,9 +2034,12 @@ exports[`dropdown dropup 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -2020,9 +2198,12 @@ exports[`dropdown expanded 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -2030,9 +2211,12 @@ exports[`dropdown expanded 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -2040,9 +2224,12 @@ exports[`dropdown expanded 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -2050,9 +2237,12 @@ exports[`dropdown expanded 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2067,9 +2257,12 @@ exports[`dropdown expanded 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -2077,9 +2270,12 @@ exports[`dropdown expanded 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -2199,10 +2395,13 @@ exports[`dropdown expanded 1`] = `
               className=""
               component="a"
               href="#"
+              index={0}
               isDisabled={false}
               isHovered={false}
-              key="link"
               onClick={[Function]}
+              key=".$link"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <a
@@ -2210,6 +2409,7 @@ exports[`dropdown expanded 1`] = `
                   className=""
                   href="#"
                   onClick={[Function]}
+                  onKeyDown={[Function]}
                 >
                   Link
                 </a>
@@ -2219,18 +2419,20 @@ exports[`dropdown expanded 1`] = `
               className=""
               component="button"
               href="#"
+              index={1}
               isDisabled={false}
               isHovered={false}
-              key="action"
               onClick={[Function]}
+              key=".$action"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <button
                   className=""
                   disabled={false}
                   href="#"
-                  onClick={[Function]}
-                >
+                  onKeyDown={[Function]}
                   Action
                 </button>
               </li>
@@ -2239,10 +2441,13 @@ exports[`dropdown expanded 1`] = `
               className=""
               component="a"
               href="#"
+              index={2}
               isDisabled={true}
               isHovered={false}
-              key="disabled link"
               onClick={[Function]}
+              key=".$disabled link"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <a
@@ -2250,6 +2455,7 @@ exports[`dropdown expanded 1`] = `
                   className="pf-m-disabled"
                   href="#"
                   onClick={[Function]}
+                  onKeyDown={[Function]}
                   tabIndex={-1}
                 >
                   Disabled Link
@@ -2260,10 +2466,13 @@ exports[`dropdown expanded 1`] = `
               className=""
               component="button"
               href="#"
+              index={3}
               isDisabled={true}
               isHovered={false}
-              key="disabled action"
               onClick={[Function]}
+              key=".$disabled action"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <button
@@ -2271,6 +2480,8 @@ exports[`dropdown expanded 1`] = `
                   disabled={true}
                   href="#"
                   onClick={[Function]}
+                  type="button"
+                  onKeyDown={[Function]}
                 >
                   Disabled Action
                 </button>
@@ -2280,24 +2491,31 @@ exports[`dropdown expanded 1`] = `
               className=""
               component="a"
               href="#"
+              index={4}
               isDisabled={false}
               isHovered={false}
-              key="separator"
+              key=".$separator"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <DropdownItem
                 className="pf-c-dropdown__separator"
                 component="div"
                 href="#"
+                index={4}
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
+                keyHandler={[Function]}
                 role="separator"
+                sendRef={[Function]}
               >
                 <li>
                   <div
                     className="pf-c-dropdown__separator"
                     href="#"
                     onClick={[Function]}
+                    onKeyDown={[Function]}
                     role="separator"
                   />
                 </li>
@@ -2307,10 +2525,13 @@ exports[`dropdown expanded 1`] = `
               className=""
               component="a"
               href="#"
+              index={5}
               isDisabled={false}
               isHovered={false}
-              key="separated link"
               onClick={[Function]}
+              key=".$separated link"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <a
@@ -2318,6 +2539,7 @@ exports[`dropdown expanded 1`] = `
                   className=""
                   href="#"
                   onClick={[Function]}
+                  onKeyDown={[Function]}
                 >
                   Separated Link
                 </a>
@@ -2327,10 +2549,13 @@ exports[`dropdown expanded 1`] = `
               className=""
               component="button"
               href="#"
+              index={6}
               isDisabled={false}
               isHovered={false}
-              key="separated action"
               onClick={[Function]}
+              key=".$separated action"
+              keyHandler={[Function]}
+              sendRef={[Function]}
             >
               <li>
                 <button
@@ -2338,6 +2563,8 @@ exports[`dropdown expanded 1`] = `
                   disabled={false}
                   href="#"
                   onClick={[Function]}
+                  type="button"
+                  onKeyDown={[Function]}
                 >
                   Separated Action
                 </button>
@@ -2386,9 +2613,12 @@ exports[`dropdown regular 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -2396,9 +2626,12 @@ exports[`dropdown regular 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -2406,9 +2639,12 @@ exports[`dropdown regular 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -2416,9 +2652,12 @@ exports[`dropdown regular 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2433,9 +2672,12 @@ exports[`dropdown regular 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -2443,9 +2685,12 @@ exports[`dropdown regular 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -2576,9 +2821,12 @@ exports[`dropdown right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
@@ -2586,9 +2834,12 @@ exports[`dropdown right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
@@ -2596,9 +2847,12 @@ exports[`dropdown right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -2606,9 +2860,12 @@ exports[`dropdown right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2623,9 +2880,12 @@ exports[`dropdown right aligned 1`] = `
         className=""
         component="a"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -2633,9 +2893,12 @@ exports[`dropdown right aligned 1`] = `
         className=""
         component="button"
         href="#"
+        index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
+        keyHandler={[Function]}
+        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,

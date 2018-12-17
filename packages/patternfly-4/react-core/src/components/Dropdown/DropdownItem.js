@@ -57,10 +57,8 @@ class DropdownItem extends React.Component {
     if (event.key === 'Tab') return;
     event.preventDefault();
     if (event.key === 'ArrowUp') {
-      console.log('arrow up pressed');
       this.props.keyHandler(this.props.index, 'up');
     } else if (event.key === 'ArrowDown') {
-      console.log('arrow down pressed');
       this.props.keyHandler(this.props.index, 'down');
     }
   };

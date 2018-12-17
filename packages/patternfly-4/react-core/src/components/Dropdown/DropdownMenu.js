@@ -38,7 +38,6 @@ class DropdownMenu extends React.Component {
 
   keyHandler(index, position) {
     const kids = this.props.children;
-    console.log(`current index: ${index}`);
     let nextIndex;
     if (position === 'up') {
       if (index === 0) {
@@ -54,10 +53,8 @@ class DropdownMenu extends React.Component {
       nextIndex = index + 1;
     }
     if (this.refsCollection[`item-${nextIndex}`] === null) {
-      console.log(`${nextIndex} is disabled`);
       this.keyHandler(nextIndex, position);
     } else {
-      console.log(`focusing ${nextIndex}`);
       this.refsCollection[`item-${nextIndex}`].focus();
     }
   }
