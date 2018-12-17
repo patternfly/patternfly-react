@@ -1,5 +1,193 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BulletChart prioritizes on legend text function 1`] = `
+<div
+  className="bullet-chart-pf"
+>
+  <div
+    className="bullet-chart-pf-chart"
+  >
+    <BulletChartTitle
+      className=""
+      details="Test Details"
+      label="Test Label"
+    />
+    <div
+      className="bullet-chart-pf-container show-axis"
+    >
+      <div
+        className="bullet-chart-pf-data-container"
+      >
+        <div
+          className="bullet-chart-pf-values-container"
+        >
+          <BulletChartValue
+            className=""
+            dot={false}
+            maxValue={100}
+            percent={true}
+            prevValue={0}
+            value={
+              Object {
+                "color": "#39a5dc",
+                "title": "data1",
+                "tooltipFunction": [Function],
+                "value": 10,
+              }
+            }
+            vertical={false}
+          />
+          <BulletChartValue
+            className=""
+            dot={false}
+            maxValue={100}
+            percent={true}
+            prevValue={0}
+            value={
+              Object {
+                "color": "#0088ce",
+                "title": "data2",
+                "tooltipId": "data2-tooltip",
+                "value": 20,
+              }
+            }
+            vertical={false}
+          />
+        </div>
+        <BulletChartThreshold
+          className="warning"
+          maxValue={100}
+          percent={true}
+          threshold={20}
+          vertical={false}
+        />
+        <BulletChartThreshold
+          className="error"
+          maxValue={100}
+          percent={true}
+          threshold={10}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={1}
+          maxValue={100}
+          percent={true}
+          value={50}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={2}
+          maxValue={100}
+          percent={true}
+          value={70}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={3}
+          maxValue={100}
+          percent={true}
+          value={100}
+          vertical={false}
+        />
+      </div>
+      <BulletChartAxis
+        className=""
+      >
+        <BulletChartAxisTic
+          className=""
+          value={0}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={25}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={50}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={75}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={100}
+          vertical={false}
+        />
+      </BulletChartAxis>
+    </div>
+    <span
+      className="bullet-chart-pf-overflow"
+    />
+  </div>
+  <BulletChartLegend
+    className=""
+  >
+    <BulletChartLegendItem
+      boxClassName=""
+      className=""
+      color="#39a5dc"
+      title="data1"
+      tooltipFunction={[Function]}
+      value={10}
+    />
+    <BulletChartLegendItem
+      boxClassName=""
+      className=""
+      color="#0088ce"
+      title="data2"
+      tooltipFunction={[Function]}
+      value={20}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-0"
+      className=""
+      title="Range 1"
+      tooltipFunction={[Function]}
+      value={50}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-1"
+      className=""
+      title="Range 2"
+      tooltipFunction={[Function]}
+      value={70}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-2"
+      className=""
+      title="Range 3"
+      tooltipFunction={[Function]}
+      value={100}
+    />
+    <BulletChartLegendItem
+      boxClassName="warning"
+      className=""
+      title="TEST Warning Function"
+      tooltipFunction={[Function]}
+      value={20}
+    />
+    <BulletChartLegendItem
+      boxClassName="error"
+      className=""
+      title="TEST Error Function"
+      tooltipFunction={[Function]}
+      value={10}
+    />
+  </BulletChartLegend>
+</div>
+`;
+
 exports[`BulletChart renders custom Axis properly 1`] = `
 <div
   className="bullet-chart-pf"
@@ -1262,6 +1450,20 @@ exports[`BulletChart renders properly with all fields 1`] = `
       title="Range 3"
       tooltipFunction={[Function]}
       value={100}
+    />
+    <BulletChartLegendItem
+      boxClassName="warning"
+      className=""
+      title="TEST Warning"
+      tooltipFunction={[Function]}
+      value={20}
+    />
+    <BulletChartLegendItem
+      boxClassName="error"
+      className=""
+      title="TEST Error"
+      tooltipFunction={[Function]}
+      value={10}
     />
   </BulletChartLegend>
 </div>

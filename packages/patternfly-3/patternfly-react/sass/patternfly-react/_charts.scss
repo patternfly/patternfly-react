@@ -1,0 +1,9 @@
+.bullet-chart-pf-legend-item-box {
+  &.error {
+    background-color: $alert-danger-border;
+  }
+
+  &.warning {
+    background-color: $alert-warning-border;
+  }
+}

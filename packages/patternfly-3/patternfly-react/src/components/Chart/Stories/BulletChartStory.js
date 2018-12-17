@@ -164,6 +164,7 @@ const bulletChart = stories => {
         },
         'Thresholds'
       );
+      const thresholdWarningText = text('Warning Threshold Text', '', 'Legend');
 
       const showErrorThreshold = boolean('Show Error Threshold', true, 'Thresholds');
       const thresholdError = number(
@@ -177,6 +178,7 @@ const bulletChart = stories => {
         },
         'Thresholds'
       );
+      const thresholdErrorText = text('Error Threshold Text', '', 'Legend');
 
       const showRange1 = boolean('Show Range 1', true, 'Ranges');
       const range1 = number(
@@ -347,7 +349,9 @@ const bulletChart = stories => {
               values={values}
               useDots={useDots}
               thresholdError={showErrorThreshold ? thresholdError : 0}
+              thresholdErrorLegendText={thresholdErrorText}
               thresholdWarning={showWarnThreshold ? thresholdWarning : 0}
+              thresholdWarningLegendText={thresholdWarningText}
               ranges={ranges}
               showAxis={showAxis}
               showLegend={showLegend}

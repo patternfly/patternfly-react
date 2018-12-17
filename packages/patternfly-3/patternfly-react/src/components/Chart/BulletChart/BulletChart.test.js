@@ -107,6 +107,29 @@ test('BulletChart renders properly with all fields', () => {
         values={values}
         thresholdError={10}
         thresholdWarning={20}
+        thresholdErrorLegendText="TEST Error"
+        thresholdWarningLegendText="TEST Warning"
+        ranges={goodRanges}
+        showLegend
+      />
+    ).getElement()
+  ).toMatchSnapshot();
+});
+
+test('BulletChart prioritizes on legend text function', () => {
+  expect(
+    shallow(
+      <BulletChart
+        id="bullet-all"
+        label="Test Label"
+        details="Test Details"
+        values={values}
+        thresholdError={10}
+        thresholdWarning={20}
+        thresholdErrorLegendText="TEST Error"
+        thresholdWarningegendText="TEST Warning"
+        thresholdErrorLegendTextFunction={() => 'TEST Error Function'}
+        thresholdWarningLegendTextFunction={() => 'TEST Warning Function'}
         ranges={goodRanges}
         showLegend
       />

@@ -46,7 +46,13 @@ const BulletChart = ({
   useDots,
   useExtendedColors,
   thresholdWarning,
+  thresholdWarningLegendText,
+  thresholdWarningLegendTextFunction,
+  thresholdWarningTooltipFunction,
   thresholdError,
+  thresholdErrorLegendText,
+  thresholdErrorLegendTextFunction,
+  thresholdErrorTooltipFunction,
   ranges,
   showAxis,
   customAxis,
@@ -119,6 +125,16 @@ const BulletChart = ({
         return customLegend;
       }
 
+      const warningThreshold = thresholdWarningLegendTextFunction(thresholdWarning) || thresholdWarningLegendText;
+      const errorThreshold = thresholdErrorLegendTextFunction(thresholdError) || thresholdErrorLegendText;
+      const thresholdTipFunction = (title, value) => {
+        if (thresholdWarningTooltipFunction) {
+          return thresholdWarningTooltipFunction(title, value);
+        }
+        const tipText = `${title}: ${value}${percents ? '%' : ''}`;
+        return <Tooltip id={randomId()}>{tipText}</Tooltip>;
+      };
+
       return (
         <BulletChartLegend>
           {displayValues.map((value, index) => {
@@ -169,6 +185,22 @@ const BulletChart = ({
 
             return null;
           })}
+          {warningThreshold && (
+            <BulletChartLegendItem
+              title={warningThreshold}
+              value={thresholdWarning}
+              boxClassName="warning"
+              tooltipFunction={thresholdTipFunction}
+            />
+          )}
+          {errorThreshold && (
+            <BulletChartLegendItem
+              title={errorThreshold}
+              value={thresholdError}
+              boxClassName="error"
+              tooltipFunction={thresholdTipFunction}
+            />
+          )}
         </BulletChartLegend>
       );
     }
@@ -299,8 +331,20 @@ BulletChart.propTypes = {
   useExtendedColors: PropTypes.bool,
   /** Warning threshold (optional), warning measure line drawn at this point */
   thresholdWarning: PropTypes.number,
+  /** Warning threshold legend text (optional), text to show in the legend for the warning threshold */
+  thresholdWarningLegendText: PropTypes.string,
+  /** Warning threshold legend text function(warningValue), function to return text to show in the legend for the warning threshold */
+  thresholdWarningLegendTextFunction: PropTypes.func,
+  /** Warning threshold legend tooltip function(text, value), function to return tooltip for the legend */
+  thresholdWarningTooltipFunction: PropTypes.func,
   /** Error threshold (optional), error measure line drawn at this point */
   thresholdError: PropTypes.number,
+  /** Error threshold legend text (optional), text to show in the legend for the warning threshold */
+  thresholdErrorLegendText: PropTypes.string,
+  /** Error threshold legend text function(text, value), function to return text to show in the legend for the warning threshold */
+  thresholdErrorLegendTextFunction: PropTypes.func,
+  /** Error threshold legend tooltip function(warningValue), function to return tooltip for the legend */
+  thresholdErrorTooltipFunction: PropTypes.func,
   /** Ranges, array of range bars (3 maximum, additional ranges will be ignored) */
   ranges: PropTypes.arrayOf(
     PropTypes.shape({
@@ -334,7 +378,13 @@ BulletChart.defaultProps = {
   useDots: false,
   useExtendedColors: false,
   thresholdWarning: 70,
+  thresholdWarningLegendText: null,
+  thresholdWarningLegendTextFunction: helpers.noop,
+  thresholdWarningTooltipFunction: null,
   thresholdError: 90,
+  thresholdErrorLegendText: null,
+  thresholdErrorLegendTextFunction: helpers.noop,
+  thresholdErrorTooltipFunction: null,
   ranges: null,
   showAxis: true,
   customAxis: null,
