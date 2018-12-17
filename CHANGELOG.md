@@ -1,5 +1,25 @@
 
-## Change Log (2018-12-14)
+## Change Log (2018-12-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1073](https://github.com/patternfly/patternfly-react/pull/1073) fix(BulletChart): Fix for duplicate key warning on ranges ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.14.0 (2018-12-14)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#989](https://github.com/patternfly/patternfly-react/pull/989) Add desktop viewer to access consoles ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## @patternfly/react-console@1.10.0 (2018-12-14)
 
 #### :rocket: New Feature
 * `patternfly-3`
@@ -52,6 +72,7 @@
 #### Committers: 2
 - Donald Labaj ([@dlabaj](https://github.com/dlabaj))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
+
 
 ## patternfly3-react-lerna-root@7.13.0 (2018-12-13)
 
