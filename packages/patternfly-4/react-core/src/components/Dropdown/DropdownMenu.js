@@ -36,8 +36,9 @@ class DropdownMenu extends React.Component {
     this.keyHandler = this.keyHandler.bind(this);
   }
 
-  keyHandler(index, position) {
+  keyHandler(index, position, custom = false) {
     const kids = this.props.children;
+    if (!Array.isArray(kids)) return;
     let nextIndex;
     if (position === 'up') {
       if (index === 0) {
@@ -53,9 +54,11 @@ class DropdownMenu extends React.Component {
       nextIndex = index + 1;
     }
     if (this.refsCollection[`item-${nextIndex}`] === null) {
-      this.keyHandler(nextIndex, position);
+      this.keyHandler(nextIndex, position, custom);
     } else {
-      this.refsCollection[`item-${nextIndex}`].focus();
+      custom
+        ? this.refsCollection[`item-${nextIndex}`].current.focus()
+        : this.refsCollection[`item-${nextIndex}`].focus();
     }
   }
 
@@ -77,6 +80,29 @@ class DropdownMenu extends React.Component {
     );
   }
 
+  extendCustomChildren() {
+    const mappedChildren = React.Children.map(this.props.children, (child, index) => {
+      const mappedChild = React.cloneElement(child, {
+        ref: React.createRef(),
+        tabIndex: index === 0 ? 0 : 1,
+        onKeyDown: event => {
+          if (event.key === 'Tab') return;
+          event.preventDefault();
+          if (event.key === 'ArrowUp') {
+            this.keyHandler(index, 'up', true);
+          } else if (event.key === 'ArrowDown') {
+            this.keyHandler(index, 'down', true);
+          }
+        }
+      });
+      !mappedChild.props.disabled
+        ? (this.refsCollection[`item-${index}`] = mappedChild.ref)
+        : (this.refsCollection[`item-${index}`] = null);
+      return mappedChild;
+    });
+    return mappedChildren;
+  }
+
   render() {
     const { className, isOpen, position, children, component: Component, ...props } = this.props;
     let menu = null;
@@ -94,13 +120,7 @@ class DropdownMenu extends React.Component {
               hidden={!isOpen}
               onClick={event => onSelect && onSelect(event)}
             >
-              {children &&
-                React.Children.map(children, (child, index) =>
-                  React.cloneElement(child, {
-                    keyHandler: this.keyHandler,
-                    index
-                  })
-                )}
+              {this.extendCustomChildren()}
             </Component>
           )}
         </DropdownContext.Consumer>

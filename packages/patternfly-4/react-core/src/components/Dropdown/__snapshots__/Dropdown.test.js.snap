@@ -132,7 +132,13 @@ exports[`KebabToggle basic 1`] = `
         hidden={false}
         onClick={[Function]}
       >
-        BASIC
+        <div
+          key=".0"
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          BASIC
+        </div>
       </div>
     </DropdownMenu>
   </div>
@@ -1712,7 +1718,13 @@ exports[`dropdown basic 1`] = `
         hidden={false}
         onClick={[Function]}
       >
-        BASIC
+        <div
+          key=".0"
+          onKeyDown={[Function]}
+          tabIndex={0}
+        >
+          BASIC
+        </div>
       </div>
     </DropdownMenu>
   </div>
