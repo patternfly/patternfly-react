@@ -195,7 +195,7 @@ const BulletChart = ({
       />
       {rangeValues.map((range, index) => (
         <BulletChartRange
-          key={range.value}
+          key={`${range.value}-${index}`}
           value={range.value}
           color={range.color}
           percent={percents}
