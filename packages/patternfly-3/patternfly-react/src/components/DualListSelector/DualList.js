@@ -16,12 +16,11 @@ import {
   isAllItemsChecked,
   isItemExistOnList,
   filterByHiding,
-  getItemsLength,
-  toggleFilterredItems,
   getFilterredItemsLength,
   makeAllItemsVisible,
   getSelectedFilterredItemsLength,
-  isItemSelected
+  isItemSelected,
+  getFilterredItems
 } from './helpers';
 
 class DualList extends React.Component {
@@ -81,11 +80,12 @@ class DualList extends React.Component {
     const items = cloneDeep(originalItems);
     let selectCount = originalSelectCount;
     if (filterTerm) {
-      toggleFilterredItems(items, checked);
-      selectCount += getFilterredItemsLength(items) * (checked ? 1 : -1);
+      const filterredItems = getFilterredItems(items);
+      const toggledAmount = toggleAllItems(filterredItems, checked);
+      selectCount += toggledAmount * (checked ? 1 : -1);
     } else {
-      toggleAllItems(items, checked);
-      selectCount = checked ? getItemsLength(items) : 0;
+      const toggledAmount = toggleAllItems(items, checked);
+      selectCount = checked ? selectCount + toggledAmount : 0;
     }
     this.props.onMainCheckboxChange({
       side,

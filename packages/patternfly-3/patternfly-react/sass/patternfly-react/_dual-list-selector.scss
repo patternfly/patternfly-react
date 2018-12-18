@@ -117,12 +117,22 @@ $dual-list-scroll-bar-length: 12px;
     color: white;
   }
 
+  &.disabled {
+    cursor: not-allowed;
+    background: $color-pf-black-150;
+    color: $color-pf-black-500;
+
+    input[type='checkbox'] {
+      cursor: not-allowed;
+    }
+  }
+
   &.child {
     padding-left: 22px;
   }
 
   &:hover {
-    &:not(.selected) {
+    &:not(.selected):not(.disabled) {
       background-color: $color-pf-blue-100;
       color: inherit;
     }
