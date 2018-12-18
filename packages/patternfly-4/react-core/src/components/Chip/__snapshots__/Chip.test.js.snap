@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip closable 1`] = `
+.pf-c-chip__text {
+  display: block;
+  max-width: 7.5rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  color: #282d33;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-chip.my-chp-cls {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  padding-left: 0.5rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+<div
+  className="pf-c-chip my-chp-cls"
+>
+  <span
+    className="pf-c-chip__text"
+    id="chip_one"
+  >
+    Chip
+  </span>
+  <ChipButton
+    aria-label="Remove"
+    aria-labelledby="remove_chip_one chip_one"
+    className=""
+    id="remove_chip_one"
+    onClick={[Function]}
+  >
+    <TimesCircleIcon
+      aria-hidden="true"
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </ChipButton>
+</div>
+`;
+
+exports[`Chip closable with tooltip 1`] = `
+.pf-c-chip__text {
+  display: block;
+  max-width: 7.5rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  color: #282d33;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-chip.my-chp-cls {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  padding-left: 0.5rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+<Tooltip
+  appendTo={[Function]}
+  className={null}
+  content="12345678901234567891"
+  enableFlip={true}
+  position="top"
+  size="small"
+  zIndex={9999}
+>
+  <div
+    className="pf-c-chip my-chp-cls"
+  >
+    <span
+      className="pf-c-chip__text"
+      id="chip_one"
+    >
+      12345678901234567891
+    </span>
+    <ChipButton
+      aria-label="Remove"
+      aria-labelledby="remove_chip_one chip_one"
+      className=""
+      id="remove_chip_one"
+      onClick={[Function]}
+    >
+      <TimesCircleIcon
+        aria-hidden="true"
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </ChipButton>
+  </div>
+</Tooltip>
+`;
+
+exports[`Chip overflow 1`] = `
+.pf-c-chip__text {
+  display: block;
+  max-width: 7.5rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  color: #282d33;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-chip.pf-m-overflow.my-chp-cls {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  padding-left: 0.5rem;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+<div
+  className="pf-c-chip pf-m-overflow my-chp-cls"
+>
+  <ChipButton
+    aria-label="Expand chip"
+    className=""
+    onClick={[Function]}
+  >
+    <span
+      className="pf-c-chip__text"
+    >
+      4 more
+    </span>
+  </ChipButton>
+</div>
+`;
+
+exports[`ChipButton 1`] = `
+<Button
+  aria-label={null}
+  className="chip-bttn-cls"
+  component="button"
+  id="my-chip-button"
+  isActive={false}
+  isBlock={false}
+  isDisabled={false}
+  isFocus={false}
+  isHover={false}
+  onClick={[Function]}
+  type="button"
+  variant="plain"
+>
+  <b>
+    Close
+  </b>
+</Button>
+`;
