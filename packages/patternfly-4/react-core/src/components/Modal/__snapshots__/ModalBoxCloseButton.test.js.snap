@@ -26,7 +26,7 @@ exports[`ModalBoxCloseButton Test 1`] = `
   >
     <TimesIcon
       color="currentColor"
-      size="lg"
+      size="sm"
       title={null}
     />
   </Button>
