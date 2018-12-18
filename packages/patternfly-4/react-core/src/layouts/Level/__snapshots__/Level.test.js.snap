@@ -6,8 +6,6 @@ exports[`Gutter lg 1`] = `
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0px;
-  margin: 0px;
 }
 
 <div
@@ -21,8 +19,6 @@ exports[`Gutter md 1`] = `
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0px;
-  margin: 0px;
 }
 
 <div
@@ -36,8 +32,6 @@ exports[`Gutter sm 1`] = `
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0px;
-  margin: 0px;
 }
 
 <div

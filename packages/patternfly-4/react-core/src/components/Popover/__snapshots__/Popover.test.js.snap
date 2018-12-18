@@ -13,7 +13,7 @@ exports[`popover renders close-button, header and body 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem 0.375rem 1rem;
+  padding: 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -22,7 +22,7 @@ exports[`popover renders close-button, header and body 1`] = `
   border: 0px;
   border-radius: 3px;
   text-decoration: none;
-  color: #282d33;
+  color: #72767b;
 }
 .pf-c-popover__close {
   display: block;
