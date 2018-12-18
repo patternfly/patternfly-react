@@ -104,7 +104,9 @@ const propTypes = {
   /** z-index of the popover */
   zIndex: PropTypes.number,
   /** Size of the popover */
-  size: PropTypes.oneOf(['small', 'regular', 'large'])
+  size: PropTypes.oneOf(['small', 'regular', 'large']),
+  /** Aria label for the Close button */
+  closeBtnAriaLabel: PropTypes.string
 };
 
 const defaultProps = {
@@ -123,7 +125,8 @@ const defaultProps = {
   onShown: () => undefined,
   onMount: () => undefined,
   zIndex: 9999,
-  size: 'regular'
+  size: 'regular',
+  closeBtnAriaLabel: 'Close'
 };
 
 class Popover extends React.Component {
@@ -211,6 +214,7 @@ class Popover extends React.Component {
       onMount,
       zIndex,
       size,
+      closeBtnAriaLabel,
       ...rest
     } = this.props;
     const content = (
@@ -233,7 +237,7 @@ class Popover extends React.Component {
               >
                 <PopoverArrow />
                 <PopoverContent>
-                  <PopoverCloseButton onClose={this.closePopover} />
+                  <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />
                   {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
                   <PopoverBody id={`popover-${randomId}-body`}>{bodyContent}</PopoverBody>
                 </PopoverContent>

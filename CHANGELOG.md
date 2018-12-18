@@ -1,4 +1,338 @@
 
+## Change Log (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1074](https://github.com/patternfly/patternfly-react/pull/1074) feat(BulletChart): Add Thresholds to Legend ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#1059](https://github.com/patternfly/patternfly-react/pull/1059) feat(CatalogTile): Add footer option to tiles ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.15.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1070](https://github.com/patternfly/patternfly-react/pull/1070) feat(Overlay): Export the Overlay component from react-bootstrap ([@sharvit](https://github.com/sharvit))
+
+#### Committers: 1
+- Avi Sharvit ([@sharvit](https://github.com/sharvit))
+
+
+## patternfly-react@2.27.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1070](https://github.com/patternfly/patternfly-react/pull/1070) feat(Overlay): Export the Overlay component from react-bootstrap ([@sharvit](https://github.com/sharvit))
+
+#### Committers: 1
+- Avi Sharvit ([@sharvit](https://github.com/sharvit))
+
+
+## patternfly-react-extensions@2.13.19 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1070](https://github.com/patternfly/patternfly-react/pull/1070) feat(Overlay): Export the Overlay component from react-bootstrap ([@sharvit](https://github.com/sharvit))
+
+#### Committers: 1
+- Avi Sharvit ([@sharvit](https://github.com/sharvit))
+
+
+## @patternfly/react-console@1.10.2 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1070](https://github.com/patternfly/patternfly-react/pull/1070) feat(Overlay): Export the Overlay component from react-bootstrap ([@sharvit](https://github.com/sharvit))
+
+#### Committers: 1
+- Avi Sharvit ([@sharvit](https://github.com/sharvit))
+
+
+## patternfly3-react-lerna-root@7.14.1 (2018-12-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1073](https://github.com/patternfly/patternfly-react/pull/1073) fix(BulletChart): Fix for duplicate key warning on ranges ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.26.2 (2018-12-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1073](https://github.com/patternfly/patternfly-react/pull/1073) fix(BulletChart): Fix for duplicate key warning on ranges ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.13.18 (2018-12-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1073](https://github.com/patternfly/patternfly-react/pull/1073) fix(BulletChart): Fix for duplicate key warning on ranges ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.10.1 (2018-12-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1073](https://github.com/patternfly/patternfly-react/pull/1073) fix(BulletChart): Fix for duplicate key warning on ranges ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.14.0 (2018-12-14)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#989](https://github.com/patternfly/patternfly-react/pull/989) Add desktop viewer to access consoles ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## @patternfly/react-console@1.10.0 (2018-12-14)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#989](https://github.com/patternfly/patternfly-react/pull/989) Add desktop viewer to access consoles ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## patternfly4-react-lerna-root@3.0.3 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#395](https://github.com/patternfly/patternfly-react/pull/395) feat(DualListSelector): add a Dual List Selector component ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1053](https://github.com/patternfly/patternfly-react/pull/1053) Removed Props from avatar ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-table@0.2.19 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#395](https://github.com/patternfly/patternfly-react/pull/395) feat(DualListSelector): add a Dual List Selector component ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1053](https://github.com/patternfly/patternfly-react/pull/1053) Removed Props from avatar ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-docs@3.19.27 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#395](https://github.com/patternfly/patternfly-react/pull/395) feat(DualListSelector): add a Dual List Selector component ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1053](https://github.com/patternfly/patternfly-react/pull/1053) Removed Props from avatar ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.13.0 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1040](https://github.com/patternfly/patternfly-react/pull/1040) feat(BulletChart): Allow for custom values (non-percent) and legend text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.26.0 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1040](https://github.com/patternfly/patternfly-react/pull/1040) feat(BulletChart): Allow for custom values (non-percent) and legend text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.13.16 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1040](https://github.com/patternfly/patternfly-react/pull/1040) feat(BulletChart): Allow for custom values (non-percent) and legend text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.9.7 (2018-12-13)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1040](https://github.com/patternfly/patternfly-react/pull/1040) feat(BulletChart): Allow for custom values (non-percent) and legend text ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-table@0.2.18 (2018-12-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1047](https://github.com/patternfly/patternfly-react/pull/1047) docs(Alert): match Alert docs to core examples ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.26 (2018-12-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1047](https://github.com/patternfly/patternfly-react/pull/1047) docs(Alert): match Alert docs to core examples ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.17 (2018-12-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1046](https://github.com/patternfly/patternfly-react/pull/1046) docs(Stack): increase height of example containers to show flex grow ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.25 (2018-12-13)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1046](https://github.com/patternfly/patternfly-react/pull/1046) docs(Stack): increase height of example containers to show flex grow ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@3.0.0 (2018-12-12)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1041](https://github.com/patternfly/patternfly-react/pull/1041) docs(AboutModal): update logo alt text to Patternfly Logo ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1042](https://github.com/patternfly/patternfly-react/pull/1042) docs(Text): remove pre Text example ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1043](https://github.com/patternfly/patternfly-react/pull/1043) docs(Page): match example color order to core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.16 (2018-12-12)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1041](https://github.com/patternfly/patternfly-react/pull/1041) docs(AboutModal): update logo alt text to Patternfly Logo ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1042](https://github.com/patternfly/patternfly-react/pull/1042) docs(Text): remove pre Text example ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1043](https://github.com/patternfly/patternfly-react/pull/1043) docs(Page): match example color order to core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.24 (2018-12-12)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1041](https://github.com/patternfly/patternfly-react/pull/1041) docs(AboutModal): update logo alt text to Patternfly Logo ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1042](https://github.com/patternfly/patternfly-react/pull/1042) docs(Text): remove pre Text example ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1043](https://github.com/patternfly/patternfly-react/pull/1043) docs(Page): match example color order to core ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly3-react-lerna-root@7.12.9 (2018-12-12)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1021](https://github.com/patternfly/patternfly-react/pull/1021) @patternfly/react-console: Remove unnecessary peer dependencies ([@vojtechszocs](https://github.com/vojtechszocs))
+
+#### Committers: 2
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+- Vojtech Szocs ([@vojtechszocs](https://github.com/vojtechszocs))
+
+
+## @patternfly/react-console@1.9.6 (2018-12-12)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1021](https://github.com/patternfly/patternfly-react/pull/1021) @patternfly/react-console: Remove unnecessary peer dependencies ([@vojtechszocs](https://github.com/vojtechszocs))
+
+#### Committers: 2
+- Michael Ro ([@michaelkro](https://github.com/michaelkro))
+- Vojtech Szocs ([@vojtechszocs](https://github.com/vojtechszocs))
+
+
+## patternfly3-react-lerna-root@7.12.8 (2018-12-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1029](https://github.com/patternfly/patternfly-react/pull/1029) BulletChartAxisTic: Fixed text property for custom axis tic mark ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## patternfly-react@2.25.5 (2018-12-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1029](https://github.com/patternfly/patternfly-react/pull/1029) BulletChartAxisTic: Fixed text property for custom axis tic mark ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## patternfly-react-extensions@2.13.15 (2018-12-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1029](https://github.com/patternfly/patternfly-react/pull/1029) BulletChartAxisTic: Fixed text property for custom axis tic mark ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
+## @patternfly/react-console@1.9.5 (2018-12-11)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1029](https://github.com/patternfly/patternfly-react/pull/1029) BulletChartAxisTic: Fixed text property for custom axis tic mark ([@dlabrecq](https://github.com/dlabrecq))
+
+#### Committers: 1
+- Dan Labrecque ([@dlabrecq](https://github.com/dlabrecq))
+
+
 ## patternfly4-react-lerna-root@1.28.6 (2018-12-07)
 
 #### :rocket: New Feature

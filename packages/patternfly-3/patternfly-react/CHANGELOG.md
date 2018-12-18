@@ -3,6 +3,69 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.28.0"></a>
+# [2.28.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.27.0...patternfly-react@2.28.0) (2018-12-18)
+
+
+### Features
+
+* **BulletChart:** Add Thresholds to Legend ([#1074](https://github.com/patternfly/patternfly-react/issues/1074)) ([49c3b94](https://github.com/patternfly/patternfly-react/commit/49c3b94))
+
+
+
+
+<a name="2.27.0"></a>
+# [2.27.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.26.2...patternfly-react@2.27.0) (2018-12-18)
+
+
+### Features
+
+* **Overlay:** Export the Overlay component from react-bootstrap ([#1070](https://github.com/patternfly/patternfly-react/issues/1070)) ([03788f4](https://github.com/patternfly/patternfly-react/commit/03788f4))
+
+
+
+
+<a name="2.26.2"></a>
+## [2.26.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.26.0...patternfly-react@2.26.2) (2018-12-17)
+
+
+### Bug Fixes
+
+* **BulletChart:** Fix for duplicate key warning on ranges ([#1073](https://github.com/patternfly/patternfly-react/issues/1073)) ([70f8d36](https://github.com/patternfly/patternfly-react/commit/70f8d36))
+
+
+
+
+<a name="2.26.1"></a>
+## [2.26.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.26.0...patternfly-react@2.26.1) (2018-12-13)
+
+
+
+
+**Note:** Version bump only for package patternfly-react
+
+<a name="2.26.0"></a>
+# [2.26.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.5...patternfly-react@2.26.0) (2018-12-13)
+
+
+### Features
+
+* **BulletChart:** Allow for custom values (non-percent) and legend text ([#1040](https://github.com/patternfly/patternfly-react/issues/1040)) ([685b400](https://github.com/patternfly/patternfly-react/commit/685b400))
+
+
+
+
+<a name="2.25.5"></a>
+## [2.25.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.4...patternfly-react@2.25.5) (2018-12-11)
+
+
+### Bug Fixes
+
+* **BulletChart:** Cannot set text property for custom axis tic mark ([#1029](https://github.com/patternfly/patternfly-react/issues/1029)) ([7e58ebf](https://github.com/patternfly/patternfly-react/commit/7e58ebf))
+
+
+
+
 <a name="2.25.4"></a>
 ## [2.25.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.25.3...patternfly-react@2.25.4) (2018-12-07)
 

@@ -25,13 +25,13 @@ export default {
       getContainerProps
     },
     {
-      component: InfoExample,
-      title: 'Info Alert',
+      component: WarningExample,
+      title: 'Warning Alert',
       getContainerProps
     },
     {
-      component: WarningExample,
-      title: 'Warning Alert',
+      component: InfoExample,
+      title: 'Info Alert',
       getContainerProps
     }
   ]

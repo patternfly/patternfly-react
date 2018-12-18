@@ -4,6 +4,7 @@ exports[`AccessConsoles keeps connection when switching types 1`] = `
 <AccessConsoles
   disconnectByChange={false}
   preselectedType="_none_"
+  textDesktopViewerConsole="Desktop Viewer"
   textDisconnectByChange="Disconnect before switching"
   textEmptyConsoleList="No console available"
   textSelectConsoleType="Select Console Type"
@@ -12,11 +13,12 @@ exports[`AccessConsoles keeps connection when switching types 1`] = `
 >
   <Grid
     bsClass="container"
+    className="access-consoles-pf"
     componentClass="div"
     fluid={true}
   >
     <div
-      className="container-fluid"
+      className="access-consoles-pf container-fluid"
     >
       <Form
         bsClass="form"
@@ -157,7 +159,7 @@ exports[`AccessConsoles keeps connection when switching types 1`] = `
                                         role="menuitem"
                                         tabIndex="-1"
                                       >
-                                        Serial Console
+                                        VNC Console
                                       </a>
                                     </SafeAnchor>
                                   </li>
@@ -191,7 +193,7 @@ exports[`AccessConsoles keeps connection when switching types 1`] = `
                                         role="menuitem"
                                         tabIndex="-1"
                                       >
-                                        VNC Console
+                                        Serial Console
                                       </a>
                                     </SafeAnchor>
                                   </li>
@@ -364,6 +366,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
 <AccessConsoles
   disconnectByChange={true}
   preselectedType="_none_"
+  textDesktopViewerConsole="Desktop Viewer"
   textDisconnectByChange="Disconnect before switching"
   textEmptyConsoleList="No console available"
   textSelectConsoleType="Select Console Type"
@@ -372,11 +375,12 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
 >
   <Grid
     bsClass="container"
+    className="access-consoles-pf"
     componentClass="div"
     fluid={true}
   >
     <div
-      className="container-fluid"
+      className="access-consoles-pf container-fluid"
     >
       <Form
         bsClass="form"
@@ -515,7 +519,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
                                         role="menuitem"
                                         tabIndex="-1"
                                       >
-                                        Serial Console
+                                        VNC Console
                                       </a>
                                     </SafeAnchor>
                                   </li>
@@ -549,7 +553,7 @@ exports[`AccessConsoles switching SerialConsole and VncConsole 1`] = `
                                         role="menuitem"
                                         tabIndex="-1"
                                       >
-                                        VNC Console
+                                        Serial Console
                                       </a>
                                     </SafeAnchor>
                                   </li>
@@ -609,7 +613,7 @@ Array [
         role="menuitem"
         tabIndex="-1"
       >
-        Serial Console
+        VNC Console
       </a>
     </SafeAnchor>
   </li>,
@@ -631,7 +635,7 @@ Array [
         role="menuitem"
         tabIndex="-1"
       >
-        VNC Console
+        Serial Console
       </a>
     </SafeAnchor>
   </li>,
@@ -658,7 +662,7 @@ Array [
         role="menuitem"
         tabIndex="-1"
       >
-        Serial Console
+        VNC Console
       </a>
     </SafeAnchor>
   </li>,
@@ -680,16 +684,78 @@ Array [
         role="menuitem"
         tabIndex="-1"
       >
-        VNC Console
+        Serial Console
       </a>
     </SafeAnchor>
   </li>,
 ]
 `;
 
+exports[`AccessConsoles with DesktopViewer 1`] = `
+<div
+  class="access-consoles-pf container-fluid"
+>
+  <form
+    class="form-horizontal"
+  >
+    <div
+      class="console-selector-pf form-group"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="dropdown btn-group"
+        >
+          <button
+            aria-expanded="false"
+            aria-haspopup="true"
+            class="dropdown-toggle btn btn-default"
+            id="console-type-selector"
+            role="button"
+            type="button"
+          >
+            Select Console Type 
+            <span
+              class="caret"
+            />
+          </button>
+          <ul
+            aria-labelledby="console-type-selector"
+            class="dropdown-menu"
+            role="menu"
+          >
+            <li
+              class=""
+              role="presentation"
+            >
+              <a
+                href="#"
+                role="menuitem"
+                tabindex="-1"
+              >
+                Desktop Viewer
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div
+    class="row"
+  >
+    <div
+      class=""
+    />
+  </div>
+</div>
+`;
+
 exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
 <Grid
   bsClass="container"
+  className="access-consoles-pf"
   componentClass="div"
   fluid={true}
 >
@@ -733,7 +799,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
               header={false}
               onClick={[Function]}
             >
-              Serial Console
+              VNC Console
             </MenuItem>
             <MenuItem
               bsClass="dropdown"
@@ -743,7 +809,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
               header={false}
               onClick={[Function]}
             >
-              VNC Console
+              Serial Console
             </MenuItem>
           </DropdownMenu>
         </Uncontrolled(Dropdown)>
@@ -765,6 +831,7 @@ exports[`AccessConsoles with SerialConsole and VncConsole as children 1`] = `
 exports[`AccessConsoles with SerialConsole as a single child 1`] = `
 <Grid
   bsClass="container"
+  className="access-consoles-pf"
   componentClass="div"
   fluid={true}
 >
@@ -804,7 +871,7 @@ exports[`AccessConsoles with SerialConsole as a single child 1`] = `
               bsClass="dropdown"
               disabled={false}
               divider={false}
-              eventKey="1"
+              eventKey="2"
               header={false}
               onClick={[Function]}
             >
@@ -830,6 +897,7 @@ exports[`AccessConsoles with SerialConsole as a single child 1`] = `
 exports[`AccessConsoles with VncConsole as a single child 1`] = `
 <Grid
   bsClass="container"
+  className="access-consoles-pf"
   componentClass="div"
   fluid={true}
 >
@@ -869,7 +937,7 @@ exports[`AccessConsoles with VncConsole as a single child 1`] = `
               bsClass="dropdown"
               disabled={false}
               divider={false}
-              eventKey="2"
+              eventKey="1"
               header={false}
               onClick={[Function]}
             >
@@ -896,6 +964,7 @@ exports[`AccessConsoles with preselected SerialConsole 1`] = `
 <AccessConsoles
   disconnectByChange={true}
   preselectedType="SerialConsole"
+  textDesktopViewerConsole="Desktop Viewer"
   textDisconnectByChange="Disconnect before switching"
   textEmptyConsoleList="No console available"
   textSelectConsoleType="Select Console Type"
@@ -904,11 +973,12 @@ exports[`AccessConsoles with preselected SerialConsole 1`] = `
 >
   <Grid
     bsClass="container"
+    className="access-consoles-pf"
     componentClass="div"
     fluid={true}
   >
     <div
-      className="container-fluid"
+      className="access-consoles-pf container-fluid"
     >
       <Form
         bsClass="form"
@@ -1022,9 +1092,9 @@ exports[`AccessConsoles with preselected SerialConsole 1`] = `
                                   bsClass="dropdown"
                                   disabled={false}
                                   divider={false}
-                                  eventKey="1"
+                                  eventKey="2"
                                   header={false}
-                                  key=".0"
+                                  key=".1"
                                   onClick={[Function]}
                                   onKeyDown={[Function]}
                                   onSelect={[Function]}
@@ -1129,6 +1199,7 @@ exports[`AccessConsoles with preselected SerialConsole 1`] = `
 exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
 <Grid
   bsClass="container"
+  className="access-consoles-pf"
   componentClass="div"
   fluid={true}
 >
@@ -1168,7 +1239,7 @@ exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
               bsClass="dropdown"
               disabled={false}
               divider={false}
-              eventKey="1"
+              eventKey="2"
               header={false}
               onClick={[Function]}
             >
@@ -1193,7 +1264,7 @@ exports[`AccessConsoles with wrapped SerialConsole as a child 1`] = `
 
 exports[`Empty AccessConsoles 1`] = `
 <div
-  class="container-fluid"
+  class="access-consoles-pf container-fluid"
 >
   <form
     class="form-horizontal"

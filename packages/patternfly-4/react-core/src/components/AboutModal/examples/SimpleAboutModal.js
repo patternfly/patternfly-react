@@ -31,7 +31,7 @@ class SimpleAboutModal extends React.Component {
           brandImageSrc={brandImg}
           brandImageAlt="Patternfly Logo"
           logoImageSrc={logoImg}
-          logoImageAlt="AboutModal Logo"
+          logoImageAlt="Patternfly Logo"
           heroImageSrc={heroImg}
         >
           <TextContent>

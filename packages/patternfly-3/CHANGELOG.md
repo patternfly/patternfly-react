@@ -3,6 +3,89 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.16.0"></a>
+# [7.16.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.15.0...patternfly3-react-lerna-root@7.16.0) (2018-12-18)
+
+
+### Features
+
+* **BulletChart:** Add Thresholds to Legend ([#1074](https://github.com/patternfly/patternfly-react/issues/1074)) ([49c3b94](https://github.com/patternfly/patternfly-react/commit/49c3b94))
+* **CatalogTile:** Add footer option to tiles ([#1059](https://github.com/patternfly/patternfly-react/issues/1059)) ([30c31bb](https://github.com/patternfly/patternfly-react/commit/30c31bb))
+
+
+
+
+<a name="7.15.0"></a>
+# [7.15.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.14.1...patternfly3-react-lerna-root@7.15.0) (2018-12-18)
+
+
+### Features
+
+* **Overlay:** Export the Overlay component from react-bootstrap ([#1070](https://github.com/patternfly/patternfly-react/issues/1070)) ([03788f4](https://github.com/patternfly/patternfly-react/commit/03788f4))
+
+
+
+
+<a name="7.14.1"></a>
+## [7.14.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.14.0...patternfly3-react-lerna-root@7.14.1) (2018-12-17)
+
+
+### Bug Fixes
+
+* **BulletChart:** Fix for duplicate key warning on ranges ([#1073](https://github.com/patternfly/patternfly-react/issues/1073)) ([70f8d36](https://github.com/patternfly/patternfly-react/commit/70f8d36))
+
+
+
+
+<a name="7.14.0"></a>
+# [7.14.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.13.0...patternfly3-react-lerna-root@7.14.0) (2018-12-14)
+
+
+### Features
+
+* **AccessConsoles:** add DesktopViewer to AccessConsoles ([#989](https://github.com/patternfly/patternfly-react/issues/989)) ([5a4e9c8](https://github.com/patternfly/patternfly-react/commit/5a4e9c8))
+
+
+
+
+<a name="7.13.1"></a>
+## [7.13.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.13.0...patternfly3-react-lerna-root@7.13.1) (2018-12-13)
+
+
+
+
+**Note:** Version bump only for package patternfly3-react-lerna-root
+
+<a name="7.13.0"></a>
+# [7.13.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.9...patternfly3-react-lerna-root@7.13.0) (2018-12-13)
+
+
+### Features
+
+* **BulletChart:** Allow for custom values (non-percent) and legend text ([#1040](https://github.com/patternfly/patternfly-react/issues/1040)) ([685b400](https://github.com/patternfly/patternfly-react/commit/685b400))
+
+
+
+
+<a name="7.12.9"></a>
+## [7.12.9](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.8...patternfly3-react-lerna-root@7.12.9) (2018-12-12)
+
+
+
+
+**Note:** Version bump only for package patternfly3-react-lerna-root
+
+<a name="7.12.8"></a>
+## [7.12.8](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.7...patternfly3-react-lerna-root@7.12.8) (2018-12-11)
+
+
+### Bug Fixes
+
+* **BulletChart:** Cannot set text property for custom axis tic mark ([#1029](https://github.com/patternfly/patternfly-react/issues/1029)) ([7e58ebf](https://github.com/patternfly/patternfly-react/commit/7e58ebf))
+
+
+
+
 <a name="7.12.7"></a>
 ## [7.12.7](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.12.6...patternfly3-react-lerna-root@7.12.7) (2018-12-07)
 

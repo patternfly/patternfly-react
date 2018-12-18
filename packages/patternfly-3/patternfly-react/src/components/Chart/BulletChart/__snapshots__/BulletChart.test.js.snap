@@ -1,5 +1,193 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`BulletChart prioritizes on legend text function 1`] = `
+<div
+  className="bullet-chart-pf"
+>
+  <div
+    className="bullet-chart-pf-chart"
+  >
+    <BulletChartTitle
+      className=""
+      details="Test Details"
+      label="Test Label"
+    />
+    <div
+      className="bullet-chart-pf-container show-axis"
+    >
+      <div
+        className="bullet-chart-pf-data-container"
+      >
+        <div
+          className="bullet-chart-pf-values-container"
+        >
+          <BulletChartValue
+            className=""
+            dot={false}
+            maxValue={100}
+            percent={true}
+            prevValue={0}
+            value={
+              Object {
+                "color": "#39a5dc",
+                "title": "data1",
+                "tooltipFunction": [Function],
+                "value": 10,
+              }
+            }
+            vertical={false}
+          />
+          <BulletChartValue
+            className=""
+            dot={false}
+            maxValue={100}
+            percent={true}
+            prevValue={0}
+            value={
+              Object {
+                "color": "#0088ce",
+                "title": "data2",
+                "tooltipId": "data2-tooltip",
+                "value": 20,
+              }
+            }
+            vertical={false}
+          />
+        </div>
+        <BulletChartThreshold
+          className="warning"
+          maxValue={100}
+          percent={true}
+          threshold={20}
+          vertical={false}
+        />
+        <BulletChartThreshold
+          className="error"
+          maxValue={100}
+          percent={true}
+          threshold={10}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={1}
+          maxValue={100}
+          percent={true}
+          value={50}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={2}
+          maxValue={100}
+          percent={true}
+          value={70}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={3}
+          maxValue={100}
+          percent={true}
+          value={100}
+          vertical={false}
+        />
+      </div>
+      <BulletChartAxis
+        className=""
+      >
+        <BulletChartAxisTic
+          className=""
+          value={0}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={25}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={50}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={75}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={100}
+          vertical={false}
+        />
+      </BulletChartAxis>
+    </div>
+    <span
+      className="bullet-chart-pf-overflow"
+    />
+  </div>
+  <BulletChartLegend
+    className=""
+  >
+    <BulletChartLegendItem
+      boxClassName=""
+      className=""
+      color="#39a5dc"
+      title="data1"
+      tooltipFunction={[Function]}
+      value={10}
+    />
+    <BulletChartLegendItem
+      boxClassName=""
+      className=""
+      color="#0088ce"
+      title="data2"
+      tooltipFunction={[Function]}
+      value={20}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-0"
+      className=""
+      title="Range 1"
+      tooltipFunction={[Function]}
+      value={50}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-1"
+      className=""
+      title="Range 2"
+      tooltipFunction={[Function]}
+      value={70}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-2"
+      className=""
+      title="Range 3"
+      tooltipFunction={[Function]}
+      value={100}
+    />
+    <BulletChartLegendItem
+      boxClassName="warning"
+      className=""
+      title="TEST Warning Function"
+      tooltipFunction={[Function]}
+      value={20}
+    />
+    <BulletChartLegendItem
+      boxClassName="error"
+      className=""
+      title="TEST Error Function"
+      tooltipFunction={[Function]}
+      value={10}
+    />
+  </BulletChartLegend>
+</div>
+`;
+
 exports[`BulletChart renders custom Axis properly 1`] = `
 <div
   className="bullet-chart-pf"
@@ -24,6 +212,8 @@ exports[`BulletChart renders custom Axis properly 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -38,6 +228,8 @@ exports[`BulletChart renders custom Axis properly 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -52,29 +244,42 @@ exports[`BulletChart renders custom Axis properly 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -168,6 +373,8 @@ exports[`BulletChart renders custom legend properly 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -182,6 +389,8 @@ exports[`BulletChart renders custom legend properly 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -196,29 +405,42 @@ exports[`BulletChart renders custom legend properly 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -290,6 +512,8 @@ exports[`BulletChart renders default colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -304,6 +528,8 @@ exports[`BulletChart renders default colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -318,6 +544,8 @@ exports[`BulletChart renders default colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -332,6 +560,8 @@ exports[`BulletChart renders default colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -346,29 +576,42 @@ exports[`BulletChart renders default colors properly 1`] = `
           </div>
           <BulletChartThreshold
             className="warning"
+            maxValue={100}
+            percent={true}
             threshold={20}
             vertical={true}
           />
           <BulletChartThreshold
             className="error"
+            maxValue={100}
+            percent={true}
             threshold={10}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={1}
+            maxValue={100}
+            percent={true}
             value={50}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={2}
+            maxValue={100}
+            percent={true}
             value={70}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={3}
+            maxValue={100}
+            percent={true}
             value={100}
             vertical={true}
           />
@@ -438,6 +681,8 @@ exports[`BulletChart renders extended colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -452,6 +697,8 @@ exports[`BulletChart renders extended colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={10}
               value={
                 Object {
@@ -466,6 +713,8 @@ exports[`BulletChart renders extended colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={20}
               value={
                 Object {
@@ -480,6 +729,8 @@ exports[`BulletChart renders extended colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={30}
               value={
                 Object {
@@ -494,6 +745,8 @@ exports[`BulletChart renders extended colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={40}
               value={
                 Object {
@@ -507,6 +760,8 @@ exports[`BulletChart renders extended colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={50}
               value={
                 Object {
@@ -520,6 +775,8 @@ exports[`BulletChart renders extended colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={60}
               value={
                 Object {
@@ -533,6 +790,8 @@ exports[`BulletChart renders extended colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={70}
               value={
                 Object {
@@ -546,6 +805,8 @@ exports[`BulletChart renders extended colors properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={80}
               value={
                 Object {
@@ -559,29 +820,42 @@ exports[`BulletChart renders extended colors properly 1`] = `
           </div>
           <BulletChartThreshold
             className="warning"
+            maxValue={100}
+            percent={true}
             threshold={20}
             vertical={true}
           />
           <BulletChartThreshold
             className="error"
+            maxValue={100}
+            percent={true}
             threshold={10}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={1}
+            maxValue={100}
+            percent={true}
             value={50}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={2}
+            maxValue={100}
+            percent={true}
             value={70}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={3}
+            maxValue={100}
+            percent={true}
             value={100}
             vertical={true}
           />
@@ -648,6 +922,8 @@ exports[`BulletChart renders properly handling invalid data 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -662,6 +938,8 @@ exports[`BulletChart renders properly handling invalid data 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -676,29 +954,42 @@ exports[`BulletChart renders properly handling invalid data 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={-10}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={110}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={-100}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={-70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={-50}
           vertical={false}
         />
@@ -764,6 +1055,8 @@ exports[`BulletChart renders properly with a single range 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -778,6 +1071,8 @@ exports[`BulletChart renders properly with a single range 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -792,29 +1087,42 @@ exports[`BulletChart renders properly with a single range 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={0}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={0}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
@@ -880,6 +1188,8 @@ exports[`BulletChart renders properly with a single value 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -894,29 +1204,42 @@ exports[`BulletChart renders properly with a single value 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -982,6 +1305,8 @@ exports[`BulletChart renders properly with all fields 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -996,6 +1321,8 @@ exports[`BulletChart renders properly with all fields 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1010,29 +1337,42 @@ exports[`BulletChart renders properly with all fields 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -1111,6 +1451,20 @@ exports[`BulletChart renders properly with all fields 1`] = `
       tooltipFunction={[Function]}
       value={100}
     />
+    <BulletChartLegendItem
+      boxClassName="warning"
+      className=""
+      title="TEST Warning"
+      tooltipFunction={[Function]}
+      value={20}
+    />
+    <BulletChartLegendItem
+      boxClassName="error"
+      className=""
+      title="TEST Error"
+      tooltipFunction={[Function]}
+      value={10}
+    />
   </BulletChartLegend>
 </div>
 `;
@@ -1139,6 +1493,8 @@ exports[`BulletChart renders properly with defaults 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1153,6 +1509,8 @@ exports[`BulletChart renders properly with defaults 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1167,11 +1525,15 @@ exports[`BulletChart renders properly with defaults 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={70}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={90}
           vertical={false}
         />
@@ -1237,6 +1599,8 @@ exports[`BulletChart renders properly with no thresholds 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1251,6 +1615,8 @@ exports[`BulletChart renders properly with no thresholds 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1265,29 +1631,42 @@ exports[`BulletChart renders properly with no thresholds 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={70}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={90}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -1329,6 +1708,184 @@ exports[`BulletChart renders properly with no thresholds 1`] = `
 </div>
 `;
 
+exports[`BulletChart renders properly with non-percent values 1`] = `
+<div
+  className="bullet-chart-pf"
+>
+  <div
+    className="bullet-chart-pf-chart"
+  >
+    <BulletChartTitle
+      className=""
+      details="Test Details"
+      label="Test Label"
+    />
+    <div
+      className="bullet-chart-pf-container show-axis"
+    >
+      <div
+        className="bullet-chart-pf-data-container"
+      >
+        <div
+          className="bullet-chart-pf-values-container"
+        >
+          <BulletChartValue
+            className=""
+            dot={false}
+            maxValue={400}
+            percent={false}
+            prevValue={0}
+            value={
+              Object {
+                "color": "#39a5dc",
+                "title": "data1",
+                "tooltipFunction": [Function],
+                "value": 130,
+              }
+            }
+            vertical={false}
+          />
+          <BulletChartValue
+            className=""
+            dot={false}
+            maxValue={400}
+            percent={false}
+            prevValue={0}
+            value={
+              Object {
+                "color": "#0088ce",
+                "title": "data2",
+                "tooltipId": "data2-tooltip",
+                "value": 220,
+              }
+            }
+            vertical={false}
+          />
+        </div>
+        <BulletChartThreshold
+          className="warning"
+          maxValue={400}
+          percent={false}
+          threshold={220}
+          vertical={false}
+        />
+        <BulletChartThreshold
+          className="error"
+          maxValue={400}
+          percent={false}
+          threshold={340}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={1}
+          maxValue={400}
+          percent={false}
+          value={100}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={2}
+          maxValue={400}
+          percent={false}
+          value={200}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={3}
+          maxValue={400}
+          percent={false}
+          value={300}
+          vertical={false}
+        />
+      </div>
+      <BulletChartAxis
+        className=""
+      >
+        <BulletChartAxisTic
+          className=""
+          value={0}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          text="100"
+          value={25}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          text="200"
+          value={50}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          text="300"
+          value={75}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          text="400"
+          value={100}
+          vertical={false}
+        />
+      </BulletChartAxis>
+    </div>
+    <span
+      className="bullet-chart-pf-overflow"
+    />
+  </div>
+  <BulletChartLegend
+    className=""
+  >
+    <BulletChartLegendItem
+      boxClassName=""
+      className=""
+      color="#39a5dc"
+      title="data1"
+      tooltipFunction={[Function]}
+      value={130}
+    />
+    <BulletChartLegendItem
+      boxClassName=""
+      className=""
+      color="#0088ce"
+      title="data2"
+      tooltipFunction={[Function]}
+      value={220}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-0"
+      className=""
+      title="Range 1"
+      tooltipFunction={[Function]}
+      value={100}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-1"
+      className=""
+      title="Range 2"
+      tooltipFunction={[Function]}
+      value={200}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-2"
+      className=""
+      title="Range 3"
+      tooltipFunction={[Function]}
+      value={300}
+    />
+  </BulletChartLegend>
+</div>
+`;
+
 exports[`BulletChart renders properly with only error threshold 1`] = `
 <div
   className="bullet-chart-pf"
@@ -1353,6 +1910,8 @@ exports[`BulletChart renders properly with only error threshold 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1367,6 +1926,8 @@ exports[`BulletChart renders properly with only error threshold 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1381,29 +1942,42 @@ exports[`BulletChart renders properly with only error threshold 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={70}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={100}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -1469,6 +2043,8 @@ exports[`BulletChart renders properly with only value in the legend 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1483,29 +2059,42 @@ exports[`BulletChart renders properly with only value in the legend 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={100}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -1604,6 +2193,8 @@ exports[`BulletChart renders properly with only warning threshold 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1618,6 +2209,8 @@ exports[`BulletChart renders properly with only warning threshold 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1632,29 +2225,42 @@ exports[`BulletChart renders properly with only warning threshold 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={90}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -1720,6 +2326,8 @@ exports[`BulletChart renders properly with two ranges 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1734,6 +2342,8 @@ exports[`BulletChart renders properly with two ranges 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1748,29 +2358,42 @@ exports[`BulletChart renders properly with two ranges 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={0}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -1836,6 +2459,8 @@ exports[`BulletChart renders properly with unsorted ranges 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1850,6 +2475,8 @@ exports[`BulletChart renders properly with unsorted ranges 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1864,29 +2491,42 @@ exports[`BulletChart renders properly with unsorted ranges 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -1952,6 +2592,8 @@ exports[`BulletChart renders properly without axis 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1966,6 +2608,8 @@ exports[`BulletChart renders properly without axis 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -1980,29 +2624,42 @@ exports[`BulletChart renders properly without axis 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -2080,6 +2737,8 @@ exports[`BulletChart renders stacked chart properly 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -2094,6 +2753,8 @@ exports[`BulletChart renders stacked chart properly 1`] = `
           <BulletChartValue
             className=""
             dot={false}
+            maxValue={100}
+            percent={true}
             prevValue={10}
             value={
               Object {
@@ -2108,29 +2769,42 @@ exports[`BulletChart renders stacked chart properly 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -2237,6 +2911,8 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
           <BulletChartValue
             className=""
             dot={true}
+            maxValue={100}
+            percent={true}
             prevValue={0}
             value={
               Object {
@@ -2251,6 +2927,8 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
           <BulletChartValue
             className=""
             dot={true}
+            maxValue={100}
+            percent={true}
             prevValue={10}
             value={
               Object {
@@ -2265,29 +2943,42 @@ exports[`BulletChart renders stacked dots chart properly 1`] = `
         </div>
         <BulletChartThreshold
           className="warning"
+          maxValue={100}
+          percent={true}
           threshold={20}
           vertical={false}
         />
         <BulletChartThreshold
           className="error"
+          maxValue={100}
+          percent={true}
           threshold={10}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={1}
+          maxValue={100}
+          percent={true}
           value={50}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={2}
+          maxValue={100}
+          percent={true}
           value={70}
           vertical={false}
         />
         <BulletChartRange
           className=""
+          color=""
           index={3}
+          maxValue={100}
+          percent={true}
           value={100}
           vertical={false}
         />
@@ -2397,6 +3088,8 @@ exports[`BulletChart renders vertical chart properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -2411,6 +3104,8 @@ exports[`BulletChart renders vertical chart properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -2425,29 +3120,42 @@ exports[`BulletChart renders vertical chart properly 1`] = `
           </div>
           <BulletChartThreshold
             className="warning"
+            maxValue={100}
+            percent={true}
             threshold={20}
             vertical={true}
           />
           <BulletChartThreshold
             className="error"
+            maxValue={100}
+            percent={true}
             threshold={10}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={1}
+            maxValue={100}
+            percent={true}
             value={50}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={2}
+            maxValue={100}
+            percent={true}
             value={70}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={3}
+            maxValue={100}
+            percent={true}
             value={100}
             vertical={true}
           />
@@ -2558,6 +3266,8 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
             <BulletChartValue
               className=""
               dot={true}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -2572,6 +3282,8 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
             <BulletChartValue
               className=""
               dot={true}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -2586,29 +3298,42 @@ exports[`BulletChart renders vertical dots chart properly 1`] = `
           </div>
           <BulletChartThreshold
             className="warning"
+            maxValue={100}
+            percent={true}
             threshold={20}
             vertical={true}
           />
           <BulletChartThreshold
             className="error"
+            maxValue={100}
+            percent={true}
             threshold={10}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={1}
+            maxValue={100}
+            percent={true}
             value={50}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={2}
+            maxValue={100}
+            percent={true}
             value={70}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={3}
+            maxValue={100}
+            percent={true}
             value={100}
             vertical={true}
           />
@@ -2719,6 +3444,8 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -2733,6 +3460,8 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
             <BulletChartValue
               className=""
               dot={false}
+              maxValue={100}
+              percent={true}
               prevValue={10}
               value={
                 Object {
@@ -2747,29 +3476,42 @@ exports[`BulletChart renders vertical stacked chart properly 1`] = `
           </div>
           <BulletChartThreshold
             className="warning"
+            maxValue={100}
+            percent={true}
             threshold={20}
             vertical={true}
           />
           <BulletChartThreshold
             className="error"
+            maxValue={100}
+            percent={true}
             threshold={10}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={1}
+            maxValue={100}
+            percent={true}
             value={50}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={2}
+            maxValue={100}
+            percent={true}
             value={70}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={3}
+            maxValue={100}
+            percent={true}
             value={100}
             vertical={true}
           />
@@ -2880,6 +3622,8 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
             <BulletChartValue
               className=""
               dot={true}
+              maxValue={100}
+              percent={true}
               prevValue={0}
               value={
                 Object {
@@ -2894,6 +3638,8 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
             <BulletChartValue
               className=""
               dot={true}
+              maxValue={100}
+              percent={true}
               prevValue={10}
               value={
                 Object {
@@ -2908,29 +3654,42 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
           </div>
           <BulletChartThreshold
             className="warning"
+            maxValue={100}
+            percent={true}
             threshold={20}
             vertical={true}
           />
           <BulletChartThreshold
             className="error"
+            maxValue={100}
+            percent={true}
             threshold={10}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={1}
+            maxValue={100}
+            percent={true}
             value={50}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={2}
+            maxValue={100}
+            percent={true}
             value={70}
             vertical={true}
           />
           <BulletChartRange
             className=""
+            color=""
             index={3}
+            maxValue={100}
+            percent={true}
             value={100}
             vertical={true}
           />
@@ -3006,6 +3765,183 @@ exports[`BulletChart renders vertical stacked dots chart properly 1`] = `
     <BulletChartLegendItem
       boxClassName="range-2"
       className=""
+      title="Range 3"
+      tooltipFunction={[Function]}
+      value={100}
+    />
+  </BulletChartLegend>
+</div>
+`;
+
+exports[`BulletChart uses custom legend text correctly 1`] = `
+<div
+  className="bullet-chart-pf"
+>
+  <div
+    className="bullet-chart-pf-chart"
+  >
+    <BulletChartTitle
+      className=""
+      details="Test Details"
+      label="Test Label"
+    />
+    <div
+      className="bullet-chart-pf-container show-axis"
+    >
+      <div
+        className="bullet-chart-pf-data-container"
+      >
+        <div
+          className="bullet-chart-pf-values-container"
+        >
+          <BulletChartValue
+            className=""
+            dot={false}
+            maxValue={100}
+            percent={true}
+            prevValue={0}
+            value={
+              Object {
+                "color": "#39a5dc",
+                "legendTextFunction": [Function],
+                "title": "data1",
+                "tooltipFunction": [Function],
+                "value": 10,
+              }
+            }
+            vertical={false}
+          />
+          <BulletChartValue
+            className=""
+            dot={false}
+            maxValue={100}
+            percent={true}
+            prevValue={0}
+            value={
+              Object {
+                "color": "#0088ce",
+                "legendText": "Custom Value Legend Text",
+                "title": "data2",
+                "tooltipId": "data2-tooltip",
+                "value": 20,
+              }
+            }
+            vertical={false}
+          />
+        </div>
+        <BulletChartThreshold
+          className="warning"
+          maxValue={100}
+          percent={true}
+          threshold={20}
+          vertical={false}
+        />
+        <BulletChartThreshold
+          className="error"
+          maxValue={100}
+          percent={true}
+          threshold={10}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={1}
+          maxValue={100}
+          percent={true}
+          value={50}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color=""
+          index={2}
+          maxValue={100}
+          percent={true}
+          value={70}
+          vertical={false}
+        />
+        <BulletChartRange
+          className=""
+          color="black"
+          index={3}
+          maxValue={100}
+          percent={true}
+          value={100}
+          vertical={false}
+        />
+      </div>
+      <BulletChartAxis
+        className=""
+      >
+        <BulletChartAxisTic
+          className=""
+          value={0}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={25}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={50}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={75}
+          vertical={false}
+        />
+        <BulletChartAxisTic
+          className=""
+          value={100}
+          vertical={false}
+        />
+      </BulletChartAxis>
+    </div>
+    <span
+      className="bullet-chart-pf-overflow"
+    />
+  </div>
+  <BulletChartLegend
+    className=""
+  >
+    <BulletChartLegendItem
+      boxClassName=""
+      className=""
+      color="#39a5dc"
+      title="Custom Legend: 10"
+      tooltipFunction={[Function]}
+      value={10}
+    />
+    <BulletChartLegendItem
+      boxClassName=""
+      className=""
+      color="#0088ce"
+      title="Custom Value Legend Text"
+      tooltipFunction={[Function]}
+      value={20}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-0"
+      className=""
+      title="Custom Legend: 50"
+      tooltipFunction={[Function]}
+      value={50}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-1"
+      className=""
+      title="Custom Range Legend Text"
+      tooltipFunction={[Function]}
+      value={70}
+    />
+    <BulletChartLegendItem
+      boxClassName="range-2"
+      className=""
+      color="black"
       title="Range 3"
       tooltipFunction={[Function]}
       value={100}
@@ -3137,7 +4073,7 @@ exports[`BulletChartAxisTic renders text properly 1`] = `
     }
   }
 >
-  25
+  my-bullet-axis-tic-text
 </span>
 `;
 
@@ -3321,6 +4257,19 @@ exports[`BulletChartThreshold renders properly 2`] = `
 exports[`BulletChartThreshold renders properly 3`] = `null`;
 
 exports[`BulletChartThreshold renders properly 4`] = `null`;
+
+exports[`BulletChartThreshold renders properly 5`] = `
+<div
+  className="bullet-chart-pf-threshold-indicator my-bullet-threshold-non-percent"
+  id="my-bullet-threshold-non-percent"
+  style={
+    Object {
+      "bottom": undefined,
+      "left": "80%",
+    }
+  }
+/>
+`;
 
 exports[`BulletChartTitle renders properly 1`] = `
 <div
@@ -3556,6 +4505,44 @@ exports[`BulletChartValue renders properly 6`] = `
         "bottom": "20%",
         "left": undefined,
         "zIndex": 120,
+      }
+    }
+  />
+</OverlayTrigger>
+`;
+
+exports[`BulletChartValue renders properly 7`] = `
+<OverlayTrigger
+  defaultOverlayShown={false}
+  overlay={
+    <Tooltip
+      bsClass="tooltip"
+      id="bullet-tip-1"
+      placement="right"
+    >
+      data1: 130
+    </Tooltip>
+  }
+  placement="top"
+  rootClose={false}
+  trigger={
+    Array [
+      "hover",
+      "focus",
+    ]
+  }
+>
+  <div
+    className="bullet-chart-pf-value-bar"
+    id="my-bullet-value-not-percent"
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "bottom": undefined,
+        "height": undefined,
+        "left": "0%",
+        "width": "32.5%",
+        "zIndex": 368,
       }
     }
   />

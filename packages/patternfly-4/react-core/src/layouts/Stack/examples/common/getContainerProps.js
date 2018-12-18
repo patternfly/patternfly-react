@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
       borderWidth: borderWidth.var,
       borderStyle: 'dashed',
       borderColor: borderColor.var
+    },
+    '&': {
+      height: 250
     }
   }
 });

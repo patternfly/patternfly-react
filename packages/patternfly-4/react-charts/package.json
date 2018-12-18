@@ -45,7 +45,7 @@
     "victory": "^30.1.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly-next": "1.0.87",
+    "@patternfly/patternfly-next": "1.0.105",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",

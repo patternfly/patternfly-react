@@ -7,61 +7,73 @@ import { SocialLoginPage } from './index';
 const mockFunction = jest.fn();
 const logoList = [
   {
+    src: './test.jpg',
     alt: 'Google',
     text: 'Google',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'Facebook',
     text: 'Facebook',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'Linkedin',
     text: 'Linkedin',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'Github',
     text: 'Github',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'Instagram',
     text: 'Instagram',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'Git',
     text: 'Git',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'OpenID',
     text: 'OpenID',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'Dropbox',
     text: 'Dropbox',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'Fedora',
     text: 'Fedora',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'Skype',
     text: 'Skype',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'Twitter',
     text: 'Twitter',
     onClick: mockFunction
   },
   {
+    src: './test.jpg',
     alt: 'StackExchange',
     text: 'StackExchange',
     onClick: mockFunction

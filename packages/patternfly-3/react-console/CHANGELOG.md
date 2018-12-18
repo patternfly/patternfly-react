@@ -3,6 +3,73 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.10.3"></a>
+## [1.10.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.10.2...@patternfly/react-console@1.10.3) (2018-12-18)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.10.2"></a>
+## [1.10.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.10.1...@patternfly/react-console@1.10.2) (2018-12-18)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.10.1"></a>
+## [1.10.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.10.0...@patternfly/react-console@1.10.1) (2018-12-17)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.7...@patternfly/react-console@1.10.0) (2018-12-14)
+
+
+### Features
+
+* **AccessConsoles:** add DesktopViewer to AccessConsoles ([#989](https://github.com/patternfly/patternfly-react/issues/989)) ([5a4e9c8](https://github.com/patternfly/patternfly-react/commit/5a4e9c8))
+
+
+
+
+<a name="1.9.8"></a>
+## [1.9.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.7...@patternfly/react-console@1.9.8) (2018-12-13)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.9.7"></a>
+## [1.9.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.6...@patternfly/react-console@1.9.7) (2018-12-13)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.9.6"></a>
+## [1.9.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.5...@patternfly/react-console@1.9.6) (2018-12-12)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
+<a name="1.9.5"></a>
+## [1.9.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.4...@patternfly/react-console@1.9.5) (2018-12-11)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
 <a name="1.9.4"></a>
 ## [1.9.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.9.3...@patternfly/react-console@1.9.4) (2018-12-07)
 

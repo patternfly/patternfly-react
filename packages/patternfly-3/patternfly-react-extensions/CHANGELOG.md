@@ -3,6 +3,57 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.14.0"></a>
+# [2.14.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.19...patternfly-react-extensions@2.14.0) (2018-12-18)
+
+
+### Features
+
+* **CatalogTile:** Add footer option to tiles ([#1059](https://github.com/patternfly/patternfly-react/issues/1059)) ([30c31bb](https://github.com/patternfly/patternfly-react/commit/30c31bb))
+
+
+
+
+<a name="2.13.19"></a>
+## [2.13.19](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.18...patternfly-react-extensions@2.13.19) (2018-12-18)
+
+
+
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+<a name="2.13.18"></a>
+## [2.13.18](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.16...patternfly-react-extensions@2.13.18) (2018-12-17)
+
+
+
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+<a name="2.13.17"></a>
+## [2.13.17](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.16...patternfly-react-extensions@2.13.17) (2018-12-13)
+
+
+
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+<a name="2.13.16"></a>
+## [2.13.16](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.15...patternfly-react-extensions@2.13.16) (2018-12-13)
+
+
+
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+<a name="2.13.15"></a>
+## [2.13.15](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.14...patternfly-react-extensions@2.13.15) (2018-12-11)
+
+
+
+
+**Note:** Version bump only for package patternfly-react-extensions
+
 <a name="2.13.14"></a>
 ## [2.13.14](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.13...patternfly-react-extensions@2.13.14) (2018-12-07)
 

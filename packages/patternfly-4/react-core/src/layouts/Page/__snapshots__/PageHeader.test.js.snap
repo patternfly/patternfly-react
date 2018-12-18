@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check page vertical layout example against snapshot 1`] = `
-.pf-l-page__header-brand-link {
+.pf-c-page__header-brand-link {
   display: flex;
   align-items: center;
 }
-.pf-l-page__header-brand {
+.pf-c-page__header-brand {
   display: block;
   padding-left: 1rem;
 }
-.pf-l-page__header-tools {
+.pf-c-page__header-tools {
   display: block;
   align-items: center;
   margin: 0.5rem 1rem 0.5rem auto;
 }
-.pf-l-page__header {
+.pf-c-page__header {
   display: flex;
   grid-area: header;
   z-index: 300;
@@ -35,20 +35,20 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   topNav={null}
 >
   <header
-    className="pf-l-page__header"
+    className="pf-c-page__header"
     role="banner"
   >
     <div
-      className="pf-l-page__header-brand"
+      className="pf-c-page__header-brand"
     >
       <a
-        className="pf-l-page__header-brand-link"
+        className="pf-c-page__header-brand-link"
       >
         Logo
       </a>
     </div>
     <div
-      className="pf-l-page__header-tools"
+      className="pf-c-page__header-tools"
     >
       Toolbar
        | Avatar
