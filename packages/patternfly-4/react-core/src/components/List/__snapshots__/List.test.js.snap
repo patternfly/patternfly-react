@@ -5,7 +5,7 @@ exports[`list grid list 1`] = `
   display: block;
   padding-left: 1.5rem;
   margin: 1rem 0px 1rem 1.5rem;
-  list-style: undefined;
+  list-style: disc outside;
 }
 .pf-c-list.pf-m-grid {
   display: grid;
@@ -55,7 +55,7 @@ exports[`list inline list 1`] = `
   display: block;
   padding-left: 1.5rem;
   margin: 1rem 0px 1rem 1.5rem;
-  list-style: undefined;
+  list-style: disc outside;
 }
 .pf-c-list.pf-m-inline {
   display: flex;
@@ -104,13 +104,13 @@ exports[`list simple list 1`] = `
   display: block;
   padding-left: 1.5rem;
   margin: 1rem 0px 1rem 1.5rem;
-  list-style: undefined;
+  list-style: disc outside;
 }
 .pf-c-list {
   display: block;
   padding-left: 1.5rem;
   margin: 1rem 0px 1rem 1.5rem;
-  list-style: undefined;
+  list-style: disc outside;
 }
 
 <List

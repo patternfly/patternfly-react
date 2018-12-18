@@ -4,7 +4,9 @@ exports[`Alert - danger Action 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -19,6 +21,7 @@ exports[`Alert - danger Action 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -26,7 +29,7 @@ exports[`Alert - danger Action 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-danger {
@@ -126,7 +129,9 @@ exports[`Alert - danger Action and Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -141,6 +146,7 @@ exports[`Alert - danger Action and Title 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -148,7 +154,7 @@ exports[`Alert - danger Action and Title 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-danger {
@@ -249,7 +255,9 @@ exports[`Alert - danger Body 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -264,6 +272,7 @@ exports[`Alert - danger Body 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -357,7 +366,9 @@ exports[`Alert - danger Custom aria label 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -372,6 +383,7 @@ exports[`Alert - danger Custom aria label 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -379,7 +391,7 @@ exports[`Alert - danger Custom aria label 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-danger {
@@ -481,7 +493,9 @@ exports[`Alert - danger Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -496,6 +510,7 @@ exports[`Alert - danger Title 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -590,7 +605,9 @@ exports[`Alert - info Action 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -605,6 +622,7 @@ exports[`Alert - info Action 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -612,7 +630,7 @@ exports[`Alert - info Action 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-info {
@@ -712,7 +730,9 @@ exports[`Alert - info Action and Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -727,6 +747,7 @@ exports[`Alert - info Action and Title 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -734,7 +755,7 @@ exports[`Alert - info Action and Title 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-info {
@@ -835,7 +856,9 @@ exports[`Alert - info Body 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -850,6 +873,7 @@ exports[`Alert - info Body 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -943,7 +967,9 @@ exports[`Alert - info Custom aria label 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -958,6 +984,7 @@ exports[`Alert - info Custom aria label 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -965,7 +992,7 @@ exports[`Alert - info Custom aria label 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-info {
@@ -1067,7 +1094,9 @@ exports[`Alert - info Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -1082,6 +1111,7 @@ exports[`Alert - info Title 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -1176,7 +1206,9 @@ exports[`Alert - success Action 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -1191,6 +1223,7 @@ exports[`Alert - success Action 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -1198,7 +1231,7 @@ exports[`Alert - success Action 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-success {
@@ -1298,7 +1331,9 @@ exports[`Alert - success Action and Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -1313,6 +1348,7 @@ exports[`Alert - success Action and Title 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -1320,7 +1356,7 @@ exports[`Alert - success Action and Title 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-success {
@@ -1421,7 +1457,9 @@ exports[`Alert - success Body 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -1436,6 +1474,7 @@ exports[`Alert - success Body 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -1529,7 +1568,9 @@ exports[`Alert - success Custom aria label 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -1544,6 +1585,7 @@ exports[`Alert - success Custom aria label 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -1551,7 +1593,7 @@ exports[`Alert - success Custom aria label 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-success {
@@ -1653,7 +1695,9 @@ exports[`Alert - success Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -1668,6 +1712,7 @@ exports[`Alert - success Title 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -1762,7 +1807,9 @@ exports[`Alert - warning Action 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -1777,6 +1824,7 @@ exports[`Alert - warning Action 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -1784,7 +1832,7 @@ exports[`Alert - warning Action 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-warning {
@@ -1884,7 +1932,9 @@ exports[`Alert - warning Action and Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -1899,6 +1949,7 @@ exports[`Alert - warning Action and Title 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -1906,7 +1957,7 @@ exports[`Alert - warning Action and Title 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-warning {
@@ -2007,7 +2058,9 @@ exports[`Alert - warning Body 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -2022,6 +2075,7 @@ exports[`Alert - warning Body 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -2115,7 +2169,9 @@ exports[`Alert - warning Custom aria label 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -2130,6 +2186,7 @@ exports[`Alert - warning Custom aria label 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;
@@ -2137,7 +2194,7 @@ exports[`Alert - warning Custom aria label 1`] = `
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-warning {
@@ -2239,7 +2296,9 @@ exports[`Alert - warning Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
   padding: 1rem;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #004368;
+  background-color: #39a5dc;
 }
 .pf-u-sr-only {
   display: block;
@@ -2254,6 +2313,7 @@ exports[`Alert - warning Title 1`] = `
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   font-size: 1rem;
+  color: #004368;
 }
 .pf-c-alert__body {
   display: block;

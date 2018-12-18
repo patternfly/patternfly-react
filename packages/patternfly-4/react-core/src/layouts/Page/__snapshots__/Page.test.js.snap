@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check page horizontal layout example against snapshot 1`] = `
-.pf-l-page__header-brand-link {
+.pf-c-page__header-brand-link {
   display: flex;
   align-items: center;
 }
-.pf-l-page__header-brand {
+.pf-c-page__header-brand {
   display: block;
   padding-left: 1rem;
 }
-.pf-l-page__header-tools {
+.pf-c-page__header-tools {
   display: block;
   align-items: center;
   margin: 0.5rem 1rem 0.5rem auto;
 }
-.pf-l-page__header {
+.pf-c-page__header {
   display: flex;
   grid-area: header;
   z-index: 300;
@@ -23,7 +23,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   max-width: 100%;
   min-height: 4.75rem;
 }
-.pf-l-page__sidebar.pf-m-expanded {
+.pf-c-page__sidebar.pf-m-expanded {
   display: block;
   grid-area: 2 / 1;
   z-index: 200;
@@ -36,27 +36,27 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   transform: translate3d(0,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
 }
-.pf-l-page__main-section {
+.pf-c-page__main-section {
   display: block;
   padding: 1rem;
   background-color: #ededed;
 }
-.pf-l-page__main-section.pf-m-light {
+.pf-c-page__main-section.pf-m-light {
   display: block;
   padding: 1rem;
   background-color: #ffffff;
 }
-.pf-l-page__main-section.pf-m-dark-200 {
+.pf-c-page__main-section.pf-m-dark-200 {
   display: block;
   padding: 1rem;
   background-color: rgba(3, 3, 3, 0.32);
 }
-.pf-l-page__main-section.pf-m-dark-100 {
+.pf-c-page__main-section.pf-m-dark-100 {
   display: block;
   padding: 1rem;
   background-color: rgba(3, 3, 3, 0.62);
 }
-.pf-l-page__main {
+.pf-c-page__main {
   display: flex;
   grid-area: main;
   z-index: 100;
@@ -65,7 +65,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: auto;
 }
-.pf-l-page.my-page-class {
+.pf-c-page.my-page-class {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr;
@@ -100,7 +100,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 >
   <div
     aria-label="Page layout"
-    className="pf-l-page my-page-class"
+    className="pf-c-page my-page-class"
     id="PageId"
     layout="horizontal"
   >
@@ -116,21 +116,21 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       topNav={null}
     >
       <header
-        className="pf-l-page__header"
+        className="pf-c-page__header"
         nav="Navigation"
         role="banner"
       >
         <div
-          className="pf-l-page__header-brand"
+          className="pf-c-page__header-brand"
         >
           <a
-            className="pf-l-page__header-brand-link"
+            className="pf-c-page__header-brand-link"
           >
             Logo
           </a>
         </div>
         <div
-          className="pf-l-page__header-tools"
+          className="pf-c-page__header-tools"
         >
           Toolbar
            | Avatar
@@ -143,11 +143,11 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       nav={null}
     >
       <aside
-        className="pf-l-page__sidebar pf-m-expanded"
+        className="pf-c-page__sidebar pf-m-expanded"
       />
     </PageSidebar>
     <main
-      className="pf-l-page__main"
+      className="pf-c-page__main"
       role="main"
     >
       <PageSection
@@ -155,7 +155,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         variant="default"
       >
         <section
-          className="pf-l-page__main-section"
+          className="pf-c-page__main-section"
         >
           Section with default background
         </section>
@@ -165,7 +165,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         variant="light"
       >
         <section
-          className="pf-l-page__main-section pf-m-light"
+          className="pf-c-page__main-section pf-m-light"
         >
           Section with light background
         </section>
@@ -175,7 +175,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         variant="dark"
       >
         <section
-          className="pf-l-page__main-section pf-m-dark-200"
+          className="pf-c-page__main-section pf-m-dark-200"
         >
           Section with dark background
         </section>
@@ -185,7 +185,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
         variant="darker"
       >
         <section
-          className="pf-l-page__main-section pf-m-dark-100"
+          className="pf-c-page__main-section pf-m-dark-100"
         >
           Section with darker background
         </section>
@@ -196,20 +196,20 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 `;
 
 exports[`Check page vertical layout example against snapshot 1`] = `
-.pf-l-page__header-brand-link {
+.pf-c-page__header-brand-link {
   display: flex;
   align-items: center;
 }
-.pf-l-page__header-brand {
+.pf-c-page__header-brand {
   display: block;
   padding-left: 1rem;
 }
-.pf-l-page__header-tools {
+.pf-c-page__header-tools {
   display: block;
   align-items: center;
   margin: 0.5rem 1rem 0.5rem auto;
 }
-.pf-l-page__header {
+.pf-c-page__header {
   display: flex;
   grid-area: header;
   z-index: 300;
@@ -218,7 +218,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   max-width: 100%;
   min-height: 4.75rem;
 }
-.pf-l-page__sidebar.pf-m-expanded {
+.pf-c-page__sidebar.pf-m-expanded {
   display: block;
   grid-area: 2 / 1;
   z-index: 200;
@@ -231,27 +231,27 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   transform: translate3d(0,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
 }
-.pf-l-page__main-section {
+.pf-c-page__main-section {
   display: block;
   padding: 1rem;
   background-color: #ededed;
 }
-.pf-l-page__main-section.pf-m-light {
+.pf-c-page__main-section.pf-m-light {
   display: block;
   padding: 1rem;
   background-color: #ffffff;
 }
-.pf-l-page__main-section.pf-m-dark-200 {
+.pf-c-page__main-section.pf-m-dark-200 {
   display: block;
   padding: 1rem;
   background-color: rgba(3, 3, 3, 0.32);
 }
-.pf-l-page__main-section.pf-m-dark-100 {
+.pf-c-page__main-section.pf-m-dark-100 {
   display: block;
   padding: 1rem;
   background-color: rgba(3, 3, 3, 0.62);
 }
-.pf-l-page__main {
+.pf-c-page__main {
   display: flex;
   grid-area: main;
   z-index: 100;
@@ -260,7 +260,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: auto;
 }
-.pf-l-page.my-page-class {
+.pf-c-page.my-page-class {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr;
@@ -293,7 +293,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 >
   <div
     aria-label="Page layout"
-    className="pf-l-page my-page-class"
+    className="pf-c-page my-page-class"
     id="PageId"
   >
     <PageHeader
@@ -307,20 +307,20 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       topNav={null}
     >
       <header
-        className="pf-l-page__header"
+        className="pf-c-page__header"
         role="banner"
       >
         <div
-          className="pf-l-page__header-brand"
+          className="pf-c-page__header-brand"
         >
           <a
-            className="pf-l-page__header-brand-link"
+            className="pf-c-page__header-brand-link"
           >
             Logo
           </a>
         </div>
         <div
-          className="pf-l-page__header-tools"
+          className="pf-c-page__header-tools"
         >
           Toolbar
            | Avatar
@@ -333,13 +333,13 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       nav="Navigation"
     >
       <aside
-        className="pf-l-page__sidebar pf-m-expanded"
+        className="pf-c-page__sidebar pf-m-expanded"
       >
         Navigation
       </aside>
     </PageSidebar>
     <main
-      className="pf-l-page__main"
+      className="pf-c-page__main"
       role="main"
     >
       <PageSection
@@ -347,7 +347,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         variant="default"
       >
         <section
-          className="pf-l-page__main-section"
+          className="pf-c-page__main-section"
         >
           Section with default background
         </section>
@@ -357,7 +357,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         variant="light"
       >
         <section
-          className="pf-l-page__main-section pf-m-light"
+          className="pf-c-page__main-section pf-m-light"
         >
           Section with light background
         </section>
@@ -367,7 +367,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         variant="dark"
       >
         <section
-          className="pf-l-page__main-section pf-m-dark-200"
+          className="pf-c-page__main-section pf-m-dark-200"
         >
           Section with dark background
         </section>
@@ -377,7 +377,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         variant="darker"
       >
         <section
-          className="pf-l-page__main-section pf-m-dark-100"
+          className="pf-c-page__main-section pf-m-dark-100"
         >
           Section with darker background
         </section>

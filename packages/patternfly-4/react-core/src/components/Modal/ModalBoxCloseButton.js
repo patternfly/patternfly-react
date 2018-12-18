@@ -20,7 +20,7 @@ const defaultProps = {
 const ModalBoxCloseButton = ({ className, onClose, ...props }) => (
   <div {...props} className={css(styles.modalBoxClose, className)}>
     <Button variant="plain" onClick={onClose} aria-label="Close">
-      <TimesIcon />
+      <TimesIcon size="lg" />
     </Button>
   </div>
 );
