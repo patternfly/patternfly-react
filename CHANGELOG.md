@@ -1,6 +1,49 @@
 
 ## Change Log (2018-12-18)
 
+#### :house: Internal
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.16.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1074](https://github.com/patternfly/patternfly-react/pull/1074) feat(BulletChart): Add Thresholds to Legend ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#1059](https://github.com/patternfly/patternfly-react/pull/1059) feat(CatalogTile): Add footer option to tiles ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.28.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1074](https://github.com/patternfly/patternfly-react/pull/1074) feat(BulletChart): Add Thresholds to Legend ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#1059](https://github.com/patternfly/patternfly-react/pull/1059) feat(CatalogTile): Add footer option to tiles ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.14.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1074](https://github.com/patternfly/patternfly-react/pull/1074) feat(BulletChart): Add Thresholds to Legend ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#1059](https://github.com/patternfly/patternfly-react/pull/1059) feat(CatalogTile): Add footer option to tiles ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.10.3 (2018-12-18)
+
 #### :rocket: New Feature
 * `patternfly-3`
   * [#1074](https://github.com/patternfly/patternfly-react/pull/1074) feat(BulletChart): Add Thresholds to Legend ([@jeff-phillips-18](https://github.com/jeff-phillips-18))

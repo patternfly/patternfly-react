@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.16.1"></a>
+## [7.16.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.16.0...patternfly3-react-lerna-root@7.16.1) (2018-12-18)
+
+
+### Bug Fixes
+
+* **SocialLoginPage:** fix the props provided in SocialLoginPage test. ([#1069](https://github.com/patternfly/patternfly-react/issues/1069)) ([c6c17ac](https://github.com/patternfly/patternfly-react/commit/c6c17ac)), closes [#1068](https://github.com/patternfly/patternfly-react/issues/1068)
+
+
+
+
 <a name="7.16.0"></a>
 # [7.16.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.15.0...patternfly3-react-lerna-root@7.16.0) (2018-12-18)
 
