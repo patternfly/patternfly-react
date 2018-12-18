@@ -1,5 +1,45 @@
 
-## Change Log (2018-12-17)
+## Change Log (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1070](https://github.com/patternfly/patternfly-react/pull/1070) feat(Overlay): Export the Overlay component from react-bootstrap ([@sharvit](https://github.com/sharvit))
+
+#### Committers: 1
+- Avi Sharvit ([@sharvit](https://github.com/sharvit))
+
+
+## patternfly3-react-lerna-root@7.14.1 (2018-12-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1073](https://github.com/patternfly/patternfly-react/pull/1073) fix(BulletChart): Fix for duplicate key warning on ranges ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.26.2 (2018-12-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1073](https://github.com/patternfly/patternfly-react/pull/1073) fix(BulletChart): Fix for duplicate key warning on ranges ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.13.18 (2018-12-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1073](https://github.com/patternfly/patternfly-react/pull/1073) fix(BulletChart): Fix for duplicate key warning on ranges ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.10.1 (2018-12-17)
 
 #### :bug: Bug Fix
 * `patternfly-3`

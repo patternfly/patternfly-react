@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.15.0"></a>
+# [7.15.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.14.1...patternfly3-react-lerna-root@7.15.0) (2018-12-18)
+
+
+### Features
+
+* **Overlay:** Export the Overlay component from react-bootstrap ([#1070](https://github.com/patternfly/patternfly-react/issues/1070)) ([03788f4](https://github.com/patternfly/patternfly-react/commit/03788f4))
+
+
+
+
 <a name="7.14.1"></a>
 ## [7.14.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.14.0...patternfly3-react-lerna-root@7.14.1) (2018-12-17)
 
