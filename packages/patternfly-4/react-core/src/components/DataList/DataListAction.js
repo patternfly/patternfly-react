@@ -2,22 +2,61 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
-import { EllipsisVIcon } from '@patternfly/react-icons';
-import { Button, ButtonVariant } from '../Button';
+import { Dropdown, DropdownPosition, KebabToggle } from '../Dropdown';
 
-const DataListAction = ({ className, id, 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy, rowid, ...props }) => (
-  <div className={css(styles.dataListAction, className)} {...props}>
-    <Button variant={ButtonVariant.plain} id={id} aria-labelledby={ariaLabelledBy} aria-label={ariaLabel}>
-      <EllipsisVIcon />
-    </Button>
-  </div>
-);
+class DataListAction extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+  }
+
+  onToggle = isOpen => {
+    this.setState({ isOpen });
+  };
+
+  onSelect = event => {
+    this.setState(prevState => ({
+      isOpen: !prevState.isOpen
+    }));
+  };
+
+  render() {
+    const {
+      children,
+      actions,
+      className,
+      id,
+      'aria-label': ariaLabel,
+      'aria-labelledby': ariaLabelledBy,
+      ...props
+    } = this.props;
+
+    return children ? (
+      children
+    ) : (
+      <div className={css(styles.dataListAction, className)} {...props}>
+        <Dropdown
+          isPlain
+          position={DropdownPosition.right}
+          isOpen={this.state.isOpen}
+          onSelect={this.onSelect}
+          toggle={<KebabToggle onToggle={this.onToggle} />}
+          dropdownItems={actions}
+        />
+      </div>
+    );
+  }
+}
 
 DataListAction.propTypes = {
   /** Content rendered inside the DataList list */
   children: PropTypes.node,
   /** Additional classes added to the DataList list */
   className: PropTypes.string,
+  /** DataList actions to show in the dropdown */
+  actions: PropTypes.arrayOf(PropTypes.node).isRequired,
   /** Identify the DataList toggle number */
   id: PropTypes.string.isRequired,
   /** Adds accessible text to the DataList item */
