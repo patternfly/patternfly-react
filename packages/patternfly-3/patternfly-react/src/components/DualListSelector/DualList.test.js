@@ -3,6 +3,20 @@ import { mount, shallow } from 'enzyme';
 import { DualListControlled } from './index';
 import { getCounterMessage as counterMessage, getFilterredItemsLength } from './helpers';
 
+jest.mock('../../common/helpers', () => {
+  const selectKeys = (obj, keys, fn = val => val) =>
+    keys.reduce((values, key) => ({ ...values, [key]: fn(obj[key]) }), {});
+
+  /** Returns a subset of the given object with a validator function applied to its keys. */
+  const filterKeys = (obj, validator) => selectKeys(obj, Object.keys(obj).filter(validator));
+
+  return {
+    debounce: fn => fn,
+    noop: Function.prototype,
+    excludeKeys: (obj, keys) => filterKeys(obj, key => !keys.includes(key))
+  };
+});
+
 const getProps = () => ({
   left: {
     items: [

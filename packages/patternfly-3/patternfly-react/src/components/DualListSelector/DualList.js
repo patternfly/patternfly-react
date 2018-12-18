@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import DualListArrows from './components/DualListArrows';
 import DualListSelector from './components/DualListSelector';
-import { noop } from '../../common/helpers';
+import { noop, debounce } from '../../common/helpers';
 import {
   arrangeArray,
   isAllChildrenChecked,
@@ -25,6 +25,10 @@ import {
 } from './helpers';
 
 class DualList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onFilterChangeDebounced = debounce(this.emitFilterChange, 200);
+  }
   onItemChange = ({
     target: {
       checked,
@@ -107,7 +111,13 @@ class DualList extends React.Component {
     });
   };
 
-  onFilterChange = ({
+  onFilterChange = event => {
+    /** https://reactjs.org/docs/events.html#event-pooling */
+    event.persist();
+    this.onFilterChangeDebounced(event);
+  };
+
+  emitFilterChange = ({
     target: {
       value,
       dataset: { side }
