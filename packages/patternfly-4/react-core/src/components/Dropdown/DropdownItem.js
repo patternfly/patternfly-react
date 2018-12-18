@@ -44,7 +44,6 @@ class DropdownItem extends React.Component {
   constructor(props) {
     super(props);
     this.ref = React.createRef();
-    this.onKeyDown = this.onKeyDown.bind(this);
   }
 
   componentDidMount() {
