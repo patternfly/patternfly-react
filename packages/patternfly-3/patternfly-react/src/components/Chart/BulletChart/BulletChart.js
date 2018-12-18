@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { patternfly } from '../../../common/patternfly';
 import { Tooltip } from '../../Tooltip/index';
-import { helpers } from '../../../common/helpers';
+import { noop } from '../../../common/helpers';
 
 import BulletChartValue from './BulletChartValue';
 import BulletChartRange from './BulletChartRange';
@@ -147,7 +147,7 @@ const BulletChart = ({
               return <Tooltip id={value.tooltipId || randomId()}>{tipText}</Tooltip>;
             };
 
-            const legendTextFunction = value.legendTextFunction || helpers.noop;
+            const legendTextFunction = value.legendTextFunction || noop;
             return (
               <BulletChartLegendItem
                 key={`value-${index}`}
@@ -169,7 +169,7 @@ const BulletChart = ({
                 return <Tooltip id={range.tooltipId || randomId()}>{tipText}</Tooltip>;
               };
 
-              const legendTextFunction = range.legendTextFunction || helpers.noop;
+              const legendTextFunction = range.legendTextFunction || noop;
 
               return (
                 <BulletChartLegendItem
@@ -379,11 +379,11 @@ BulletChart.defaultProps = {
   useExtendedColors: false,
   thresholdWarning: 70,
   thresholdWarningLegendText: null,
-  thresholdWarningLegendTextFunction: helpers.noop,
+  thresholdWarningLegendTextFunction: noop,
   thresholdWarningTooltipFunction: null,
   thresholdError: 90,
   thresholdErrorLegendText: null,
-  thresholdErrorLegendTextFunction: helpers.noop,
+  thresholdErrorLegendTextFunction: noop,
   thresholdErrorTooltipFunction: null,
   ranges: null,
   showAxis: true,
