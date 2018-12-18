@@ -56,7 +56,7 @@ test('Each modal is given new ariaDescribedById and ariaLablledbyId', () => {
   expect(first.props().ariaDescribedById).not.toBe(second.props().ariaDescribedById);
 });
 
-test('Console error is generated when the logoImageSrcis provided without logoImageAlt', () => {
+test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {
   const noImgAltrops = {
     onClose: jest.fn(),
     children: 'modal content',

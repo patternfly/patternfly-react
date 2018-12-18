@@ -29,7 +29,7 @@ const propTypes = {
   /** the alternate text of the Logo image. */
   logoImageAlt: props => {
     if (props.logoImageSrc && !props.logoImageAlt) {
-      return new Error('logoImageAlt ios required when a logoImageSrc is specified');
+      return new Error('logoImageAlt is required when a logoImageSrc is specified');
     }
     return null;
   },
