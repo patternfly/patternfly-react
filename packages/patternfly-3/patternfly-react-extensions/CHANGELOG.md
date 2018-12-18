@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.14.0"></a>
+# [2.14.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.19...patternfly-react-extensions@2.14.0) (2018-12-18)
+
+
+### Features
+
+* **CatalogTile:** Add footer option to tiles ([#1059](https://github.com/patternfly/patternfly-react/issues/1059)) ([30c31bb](https://github.com/patternfly/patternfly-react/commit/30c31bb))
+
+
+
+
 <a name="2.13.19"></a>
 ## [2.13.19](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.13.18...patternfly-react-extensions@2.13.19) (2018-12-18)
 

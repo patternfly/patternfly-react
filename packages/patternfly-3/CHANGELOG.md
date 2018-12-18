@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.16.0"></a>
+# [7.16.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.15.0...patternfly3-react-lerna-root@7.16.0) (2018-12-18)
+
+
+### Features
+
+* **BulletChart:** Add Thresholds to Legend ([#1074](https://github.com/patternfly/patternfly-react/issues/1074)) ([49c3b94](https://github.com/patternfly/patternfly-react/commit/49c3b94))
+* **CatalogTile:** Add footer option to tiles ([#1059](https://github.com/patternfly/patternfly-react/issues/1059)) ([30c31bb](https://github.com/patternfly/patternfly-react/commit/30c31bb))
+
+
+
+
 <a name="7.15.0"></a>
 # [7.15.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.14.1...patternfly3-react-lerna-root@7.15.0) (2018-12-18)
 

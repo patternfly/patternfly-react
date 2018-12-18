@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.28.0"></a>
+# [2.28.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.27.0...patternfly-react@2.28.0) (2018-12-18)
+
+
+### Features
+
+* **BulletChart:** Add Thresholds to Legend ([#1074](https://github.com/patternfly/patternfly-react/issues/1074)) ([49c3b94](https://github.com/patternfly/patternfly-react/commit/49c3b94))
+
+
+
+
 <a name="2.27.0"></a>
 # [2.27.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.26.2...patternfly-react@2.27.0) (2018-12-18)
 

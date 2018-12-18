@@ -3,6 +3,47 @@
 
 #### :rocket: New Feature
 * `patternfly-3`
+  * [#1074](https://github.com/patternfly/patternfly-react/pull/1074) feat(BulletChart): Add Thresholds to Legend ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#1059](https://github.com/patternfly/patternfly-react/pull/1059) feat(CatalogTile): Add footer option to tiles ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly3-react-lerna-root@7.15.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1070](https://github.com/patternfly/patternfly-react/pull/1070) feat(Overlay): Export the Overlay component from react-bootstrap ([@sharvit](https://github.com/sharvit))
+
+#### Committers: 1
+- Avi Sharvit ([@sharvit](https://github.com/sharvit))
+
+
+## patternfly-react@2.27.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1070](https://github.com/patternfly/patternfly-react/pull/1070) feat(Overlay): Export the Overlay component from react-bootstrap ([@sharvit](https://github.com/sharvit))
+
+#### Committers: 1
+- Avi Sharvit ([@sharvit](https://github.com/sharvit))
+
+
+## patternfly-react-extensions@2.13.19 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1070](https://github.com/patternfly/patternfly-react/pull/1070) feat(Overlay): Export the Overlay component from react-bootstrap ([@sharvit](https://github.com/sharvit))
+
+#### Committers: 1
+- Avi Sharvit ([@sharvit](https://github.com/sharvit))
+
+
+## @patternfly/react-console@1.10.2 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
   * [#1070](https://github.com/patternfly/patternfly-react/pull/1070) feat(Overlay): Export the Overlay component from react-bootstrap ([@sharvit](https://github.com/sharvit))
 
 #### Committers: 1
