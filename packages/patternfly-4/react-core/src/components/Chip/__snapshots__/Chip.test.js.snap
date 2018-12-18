@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Chip closable 1`] = `
+<GenerateId
+  prefix="pf-random-id-"
+/>
+`;
+
+exports[`Chip closable with tooltip 1`] = `
+<GenerateId
+  prefix="pf-random-id-"
+/>
+`;
+
+exports[`Chip overflow 1`] = `
+<GenerateId
+  prefix="pf-random-id-"
+/>
+`;
+
+exports[`ChipButton 1`] = `
+<Button
+  aria-label="close"
+  className="chip-bttn-cls"
+  component="button"
+  id="my-chip-button"
+  isActive={false}
+  isBlock={false}
+  isDisabled={false}
+  isFocus={false}
+  isHover={false}
+  onClick={[Function]}
+  type="button"
+  variant="plain"
+>
+  <b>
+    Close
+  </b>
+</Button>
+`;
