@@ -1,31 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BackgroundImage 1`] = `
-.pf-c-background-image.css-jrvmr5 {
+.pf-c-background-image.css-wv98h3 {
   display: block;
 }
 
 <div
-  className="pf-c-background-image css-jrvmr5"
+  className="pf-c-background-image css-wv98h3"
 />
 `;
 
 exports[`BackgroundImage 2`] = `
-.pf-c-background-image.css-jrvmr5 {
+.pf-c-background-image.css-wv98h3 {
   display: block;
 }
 
 <div
-  className="pf-c-background-image css-jrvmr5"
+  className="pf-c-background-image css-wv98h3"
 />
 `;
 
 exports[`allows passing in a single string as the image src 1`] = `
-.pf-c-background-image.css-1eio177 {
+.pf-c-background-image.css-f7zm90 {
   display: block;
 }
 
 <div
-  className="pf-c-background-image css-1eio177"
+  className="pf-c-background-image css-f7zm90"
 />
 `;
