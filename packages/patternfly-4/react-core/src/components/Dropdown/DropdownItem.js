@@ -36,14 +36,27 @@ const DropdownItem = ({ className, children, isHovered, component: Component, is
   } else if (Component === 'button') {
     additionalProps.disabled = isDisabled;
   }
+
   return (
     <li>
-      <Component
-        {...additionalProps}
-        className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
-      >
-        {children}
-      </Component>
+      {React.isValidElement(children) ? (
+        React.Children.map(children, child =>
+          React.cloneElement(child, {
+            className: `${css(
+              isDisabled && styles.modifiers.disabled,
+              isHovered && styles.modifiers.hover,
+              className
+            )} ${child.props.className}`
+          })
+        )
+      ) : (
+        <Component
+          {...additionalProps}
+          className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
+        >
+          {children}
+        </Component>
+      )}
     </li>
   );
 };

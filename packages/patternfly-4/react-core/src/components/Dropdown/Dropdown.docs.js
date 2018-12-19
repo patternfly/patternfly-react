@@ -4,6 +4,7 @@ import Simple from './examples/SimpleDropdown';
 import Kebab from './examples/KebabDropdown';
 import PositionRight from './examples/PositionRightDropdown';
 import DirectionUp from './examples/DirectionUpDropdown';
+import ReactLinkDropdown from './examples/ReactLinkDropdown';
 
 export default {
   title: 'Dropdown',
@@ -19,6 +20,12 @@ export default {
     { component: PositionRight, title: 'Dropdown - position right' },
     { component: DirectionUp, title: 'Dropdown - direction up' },
     { component: Kebab, title: 'Kebab' },
+    {
+      component: ReactLinkDropdown,
+      title: 'React Router Link usage',
+      description: 'A react-router Link may be wrapped by DropdownItem or used directly within Dropdown.',
+      live: false
+    },
     {
       component: Panel,
       title: 'Dropdown Panel',
