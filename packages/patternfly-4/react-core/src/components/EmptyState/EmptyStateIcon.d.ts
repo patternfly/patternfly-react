@@ -1,5 +1,5 @@
 import { SFC, HTMLProps } from 'react';
-import { OneOf, Omit } from './typeUtils';
+import { OneOf, Omit } from '../../typeUtils';
 
 export const IconSize: {
   sm: 'sm';
