@@ -1,8 +1,16 @@
 import React from 'react';
-import { DataList, DataListItem, DataListCell, DataListCheck, DataListAction } from '@patternfly/react-core';
+import {
+  DataList,
+  DataListItem,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent
+} from '@patternfly/react-core';
 
 class ModifiersDataList extends React.Component {
-  state = { show: true }
+  state = { show: true };
   render() {
     const previewPlaceholder = {
       display: 'block',
@@ -72,7 +80,7 @@ class ModifiersDataList extends React.Component {
               id="width-ex3-toggle1"
               aria-labelledby="width-ex3-toggle1 width-ex3-item1"
               aria-label="Toggle details for"
-              onClick={() => this.setState({show: !this.state.show})}
+              onClick={() => this.setState({ show: !this.state.show })}
             />
             <DataListCheck aria-labelledby="width-ex3-check1" name="width-ex3-check1" />
             <DataListCell width={5}>

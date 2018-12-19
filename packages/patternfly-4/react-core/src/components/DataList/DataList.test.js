@@ -72,7 +72,7 @@ describe('DataList', () => {
 
     expect(view.find(Button).props()['aria-label']).toBe('Toggle details for');
     expect(view.find(Button).props()['aria-labelledby']).toBe('ex-toggle2 ex-item2');
-    expect(view.find(Button).props()['aria-expanded']).toBe('false');
+    expect(view.find(Button).props()['aria-expanded']).toBe(false);
     expect(view.find(Button).props().id).toBe('ex-toggle2');
     expect(view.find(Button).props().id).toBe('ex-toggle2');
   });
@@ -86,6 +86,6 @@ describe('DataList', () => {
         isExpanded
       />
     );
-    expect(view.find(Button).props()['aria-expanded']).toBe('true');
+    expect(view.find(Button).props()['aria-expanded']).toBe(true);
   });
 });
