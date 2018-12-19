@@ -3,7 +3,7 @@
 exports[`EmptyState Main 1`] = `
 .pf-c-empty-state {
   display: block;
-  max-width: 25rem;
+  max-width: 37.5rem;
   padding: 2rem;
   text-align: center;
 }

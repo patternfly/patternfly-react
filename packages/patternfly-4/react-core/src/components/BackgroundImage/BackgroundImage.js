@@ -19,11 +19,8 @@ import {
 
 export const BackgroundImageSrc = {
   lg: 'lg',
-  md: 'md',
-  md2x: 'md2x',
   sm: 'sm',
   sm2x: 'sm2x',
-  xl: 'xl',
   xs: 'xs',
   xs2x: 'xs2x',
   filter: 'filter'
@@ -31,11 +28,8 @@ export const BackgroundImageSrc = {
 
 const variableMap = {
   [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name,
-  [BackgroundImageSrc.md]: c_background_image_BackgroundImage_md && c_background_image_BackgroundImage_md.name,
-  [BackgroundImageSrc.md2x]: c_background_image_BackgroundImage_md_2x && c_background_image_BackgroundImage_md_2x.name,
   [BackgroundImageSrc.sm]: c_background_image_BackgroundImage_sm && c_background_image_BackgroundImage_sm.name,
   [BackgroundImageSrc.sm2x]: c_background_image_BackgroundImage_sm_2x && c_background_image_BackgroundImage_sm_2x.name,
-  [BackgroundImageSrc.xl]: c_background_image_BackgroundImage_xl && c_background_image_BackgroundImage_xl.name,
   [BackgroundImageSrc.xs]: c_background_image_BackgroundImage_xs && c_background_image_BackgroundImage_xs.name,
   [BackgroundImageSrc.xs2x]: c_background_image_BackgroundImage_xs_2x && c_background_image_BackgroundImage_xs_2x.name,
   [BackgroundImageSrc.filter]: c_background_image_Filter && c_background_image_Filter.name
@@ -49,11 +43,8 @@ export const propTypes = {
     PropTypes.string,
     PropTypes.shape({
       lg: PropTypes.string,
-      md: PropTypes.string,
-      md2x: PropTypes.string,
       sm: PropTypes.string,
       sm2x: PropTypes.string,
-      xl: PropTypes.string,
       xs: PropTypes.string,
       xs2x: PropTypes.string,
       filter: PropTypes.string
@@ -81,9 +72,9 @@ const BackgroundImage = ({ className, src, ...props }) => {
   const bgStyles = StyleSheet.create({
     bgOverrides: `&.pf-c-background-image {
       ${Object.keys(variableOverrides).reduce(
-        (prev, size) => `${prev.length ? prev : ''}${variableMap[size]}: url('${variableOverrides[size]}');`,
-        {}
-      )}
+      (prev, size) => `${prev.length ? prev : ''}${variableMap[size]}: url('${variableOverrides[size]}');`,
+      {}
+    )}
     }`
   });
 
