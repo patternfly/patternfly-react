@@ -1,0 +1,47 @@
+@import '~react-diff-view/index.css';
+
+$diff-light-green-200: #cdffd8;
+$diff-light-green-100: #e6ffed;
+$diff-green: #acf2bd;
+$diff-light-red: #ffeef0;
+$diff-red: #fdb8c0;
+
+.diff-pf.diff {
+  border: 1px solid $color-pf-black-300;
+  max-height: 400px;
+  overflow: auto;
+  clear: both;
+
+  .diff-line {
+    line-height: 1.7;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  }
+
+  .diff-gutter {
+    border-left: 1px solid $color-pf-black-300;
+  }
+
+  .diff-gutter.diff-gutter-insert {
+    background-color: $diff-light-green-200;
+  }
+
+  .diff-hunk-header {
+    border: 1px solid $color-pf-black-300;
+  }
+
+  .diff-code-insert {
+    background-color: $diff-light-green-100;
+
+    mark.diff-code-edit {
+      background-color: $diff-green;
+    }
+  }
+
+  .diff-code-delete {
+    background-color: $diff-light-red;
+
+    mark.diff-code-edit {
+      background-color: $diff-red;
+    }
+  }
+}
