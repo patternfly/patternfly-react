@@ -15,7 +15,6 @@ export * from './Dropdown';
 export * from './EmptyState';
 export * from './Form';
 export * from './Label';
-export * from './Page';
 export * from './List';
 export * from './LoginPage';
 export * from './Modal';
