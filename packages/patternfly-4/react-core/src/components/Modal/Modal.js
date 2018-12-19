@@ -25,8 +25,8 @@ const propTypes = {
   onClose: PropTypes.func,
   /** Creates a large version of the Modal */
   isLarge: PropTypes.bool,
-  /** React application root element */
-  reactRoot: PropTypes.instanceOf(safeHTMLElement).isRequired
+  /** The parent element container to hide from screen-reader applications when the modal is open */
+  srHide: PropTypes.instanceOf(safeHTMLElement).isRequired
 };
 
 const defaultProps = {
@@ -65,10 +65,10 @@ class Modal extends React.Component {
   componentDidUpdate() {
     if (this.props.isOpen) {
       document.body.classList.add(css(styles.backdropOpen));
-      this.props.reactRoot.setAttribute('aria-hidden', true);
+      this.props.srHide.setAttribute('aria-hidden', true);
     } else {
       document.body.classList.remove(css(styles.backdropOpen));
-      this.props.reactRoot.removeAttribute('aria-hidden');
+      this.props.srHide.removeAttribute('aria-hidden');
     }
   }
 
@@ -78,7 +78,7 @@ class Modal extends React.Component {
   }
 
   render() {
-    const { reactRoot, ...props } = this.props;
+    const { srHide, ...props } = this.props;
 
     if (!canUseDOM) {
       return null;

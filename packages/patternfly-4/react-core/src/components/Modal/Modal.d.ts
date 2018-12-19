@@ -9,6 +9,7 @@ export interface ModalProps extends HTMLProps<HTMLDivElement> {
   isOpen?: boolean;
   onClose?: Function;
   title: string;
+  srHide: Element;
 }
 
 declare const Modal: SFC<ModalProps>;

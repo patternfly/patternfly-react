@@ -14,7 +14,8 @@ class LargeModal extends React.Component {
 
   render() {
     const { isModalOpen } = this.state;
-    const reactRoot = typeof document !== 'undefined' ? document.querySelector('#___gatsby') : '';
+    // The parent container to hide from screen readers when the modal is open
+    const srHide = typeof document !== 'undefined' ? document.querySelector('#___gatsby') : '';
 
     return (
       <React.Fragment>
@@ -34,7 +35,7 @@ class LargeModal extends React.Component {
               Confirm
             </Button>
           ]}
-          reactRoot={reactRoot}
+          srHide={srHide}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
