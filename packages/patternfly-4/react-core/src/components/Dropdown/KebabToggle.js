@@ -5,17 +5,15 @@ import Toggle from './Toggle';
 
 const defaultAriaLabel = 'Actions';
 
-const Kebab = ({ ...props }) => (
+const Kebab = ({icon,  ...props }) => (
   <Toggle {...props}>
-    <EllipsisVIcon />
+    {icon ? icon : <EllipsisVIcon />}
   </Toggle>
 );
 
 Kebab.propTypes = {
   /** HTML ID of dropdown toggle */
   id: PropTypes.string,
-  /** Anything which can be rendered as dropdown toggle */
-  children: PropTypes.node,
   /** Classess applied to root element of dropdown toggle */
   className: PropTypes.string,
   /** Flag to indicate if menu is opened */
@@ -33,11 +31,12 @@ Kebab.propTypes = {
   /** Forces active state */
   isActive: PropTypes.bool,
   /** Display the toggle with no border or background */
-  isPlain: PropTypes.bool
+  isPlain: PropTypes.bool,
+  /** Anything that can be displayed instead of the default EllipsisVIcon as a dropdown toggle **/
+  icon: PropTypes.node
 };
 Kebab.defaultProps = {
   id: '',
-  children: null,
   className: '',
   isOpen: false,
   'aria-label': defaultAriaLabel,
@@ -46,7 +45,8 @@ Kebab.defaultProps = {
   isHovered: false,
   isActive: false,
   isPlain: false,
-  onToggle: Function.prototype
+  onToggle: Function.prototype,
+  icon: null
 };
 
 export default Kebab;
