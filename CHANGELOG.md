@@ -1,4 +1,14 @@
 
+## Change Log (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#991](https://github.com/patternfly/patternfly-react/pull/991) fix(DropdownItem): wrap DropdownItem in div when child is a Link node ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
 ## patternfly4-react-lerna-root@1.33.0 (2018-12-19)
 
 #### :rocket: New Feature

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.33.2"></a>
+## [1.33.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.33.1...patternfly4-react-lerna-root@1.33.2) (2018-12-19)
+
+
+### Bug Fixes
+
+* **DropdownItem:** wrap DropdownItem in div when child is a Link node ([#991](https://github.com/patternfly/patternfly-react/issues/991)) ([584fd28](https://github.com/patternfly/patternfly-react/commit/584fd28))
+
+
+
+
 <a name="1.33.1"></a>
 ## [1.33.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.33.0...patternfly4-react-lerna-root@1.33.1) (2018-12-19)
 
