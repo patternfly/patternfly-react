@@ -55,3 +55,20 @@ test('Each modal is given new ariaDescribedById and ariaLablledbyId', () => {
   expect(first.props().ariaLabelledbyId).not.toBe(second.props().ariaLabelledbyId);
   expect(first.props().ariaDescribedById).not.toBe(second.props().ariaDescribedById);
 });
+
+test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {
+  const noImgAltrops = {
+    onClose: jest.fn(),
+    children: 'modal content',
+    productName: 'Product Name',
+    trademark: 'Trademark and copyright information here',
+    brandImageSrc: 'brandImg...',
+    brandImageAlt: 'Brand Image',
+    logoImageSrc: 'logoImg...',
+    heroImageSrc: 'heroImg...'
+  };
+  const myMock = jest.fn();
+  global.console = { error: myMock };
+  shallow(<AboutModal {...noImgAltrops}> Test About Modal </AboutModal>);
+  expect(myMock).toBeCalled();
+});

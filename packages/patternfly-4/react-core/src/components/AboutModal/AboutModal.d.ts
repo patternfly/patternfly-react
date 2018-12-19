@@ -5,11 +5,11 @@ export interface AboutModalProps extends HTMLProps<HTMLDivElement> {
   isOpen?: boolean;
   onClose?: Function;
   productName: string;
-  trademark: string;
+  trademark?: string;
   brandImageSrc: string;
   brandImageAlt: string;
-  logoImageSrc: string;
-  logoImageAlt: string;
+  logoImageSrc?: string;
+  logoImageAlt?: string;
   heroImageSrc: string;
   heroImageAlt?: string;
 }

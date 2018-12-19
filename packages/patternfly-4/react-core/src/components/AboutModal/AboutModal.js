@@ -19,15 +19,20 @@ const propTypes = {
   /** Product Name */
   productName: PropTypes.string.isRequired,
   /** Trademark information */
-  trademark: PropTypes.string.isRequired,
+  trademark: PropTypes.string,
   /** the URL of the image for the Brand. */
   brandImageSrc: PropTypes.string.isRequired,
   /** the alternate text of the Brand image. */
   brandImageAlt: PropTypes.string.isRequired,
   /** the URL of the image for the Logo. */
-  logoImageSrc: PropTypes.string.isRequired,
+  logoImageSrc: PropTypes.string,
   /** the alternate text of the Logo image. */
-  logoImageAlt: PropTypes.string.isRequired,
+  logoImageAlt: props => {
+    if (props.logoImageSrc && !props.logoImageAlt) {
+      return new Error('logoImageAlt is required when a logoImageSrc is specified');
+    }
+    return null;
+  },
   /** the URL of the image for the Hero. */
   heroImageSrc: PropTypes.string.isRequired,
   /** the alternate text of the Hero image. */
@@ -38,6 +43,9 @@ const defaultProps = {
   className: '',
   isOpen: false,
   onClose: () => undefined,
+  trademark: '',
+  logoImageSrc: '',
+  logoImageAlt: '',
   heroImageAlt: ''
 };
 
