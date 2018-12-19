@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.43.1"></a>
+## [1.43.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.0...@patternfly/react-core@1.43.1) (2018-12-19)
+
+
+### Bug Fixes
+
+* **modal:** rename reactRoot to srHide and add to ts file ([#1098](https://github.com/patternfly/patternfly-react/issues/1098)) ([1d0a941](https://github.com/patternfly/patternfly-react/commit/1d0a941))
+
+
+
+
 <a name="1.43.0"></a>
 # [1.43.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.42.0...@patternfly/react-core@1.43.0) (2018-12-19)
 

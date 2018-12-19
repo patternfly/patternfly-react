@@ -1,5 +1,35 @@
 
-## Change Log (2018-12-19)
+## patternfly4-react-lerna-root@1.33.0 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1032](https://github.com/patternfly/patternfly-react/pull/1032) feat(core): Popover positioning ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-table@0.2.25 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1032](https://github.com/patternfly/patternfly-react/pull/1032) feat(core): Popover positioning ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.19.33 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1032](https://github.com/patternfly/patternfly-react/pull/1032) feat(core): Popover positioning ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.43.0 (2018-12-19)
 
 #### :rocket: New Feature
 * `patternfly-4`
