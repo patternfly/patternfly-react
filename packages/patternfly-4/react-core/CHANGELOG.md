@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.41.0"></a>
+# [1.41.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.40.4...@patternfly/react-core@1.41.0) (2018-12-19)
+
+
+### Features
+
+* **Alert:** add sr variant customization ([#1056](https://github.com/patternfly/patternfly-react/issues/1056)) ([0b8d241](https://github.com/patternfly/patternfly-react/commit/0b8d241))
+
+
+
+
 <a name="1.40.4"></a>
 ## [1.40.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.40.3...@patternfly/react-core@1.40.4) (2018-12-19)
 

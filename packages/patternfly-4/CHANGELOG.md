@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.31.0"></a>
+# [1.31.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.30.3...patternfly4-react-lerna-root@1.31.0) (2018-12-19)
+
+
+### Features
+
+* **Alert:** add sr variant customization ([#1056](https://github.com/patternfly/patternfly-react/issues/1056)) ([0b8d241](https://github.com/patternfly/patternfly-react/commit/0b8d241))
+
+
+
+
 <a name="1.30.3"></a>
 ## [1.30.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.30.2...patternfly4-react-lerna-root@1.30.3) (2018-12-19)
 
