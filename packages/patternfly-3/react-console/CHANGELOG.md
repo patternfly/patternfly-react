@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.10.5"></a>
+## [1.10.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.10.3...@patternfly/react-console@1.10.5) (2018-12-19)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-console
+
 <a name="1.10.3"></a>
 ## [1.10.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.10.2...@patternfly/react-console@1.10.3) (2018-12-18)
 

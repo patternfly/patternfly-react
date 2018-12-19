@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.16.2"></a>
+## [7.16.2](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.16.0...patternfly3-react-lerna-root@7.16.2) (2018-12-19)
+
+
+### Bug Fixes
+
+* **DualList:** Add item disability functionality. ([#1071](https://github.com/patternfly/patternfly-react/issues/1071)) ([ddc0e8e](https://github.com/patternfly/patternfly-react/commit/ddc0e8e))
+* **DualList:** Adding debounce for filter changes ([#1078](https://github.com/patternfly/patternfly-react/issues/1078)) ([7f4c438](https://github.com/patternfly/patternfly-react/commit/7f4c438))
+* **pf3:** fix usage of noop in BulletChart ([#1083](https://github.com/patternfly/patternfly-react/issues/1083)) ([c73490d](https://github.com/patternfly/patternfly-react/commit/c73490d))
+* **SocialLoginPage:** fix the props provided in SocialLoginPage test. ([#1069](https://github.com/patternfly/patternfly-react/issues/1069)) ([c6c17ac](https://github.com/patternfly/patternfly-react/commit/c6c17ac)), closes [#1068](https://github.com/patternfly/patternfly-react/issues/1068)
+
+
+
+
 <a name="7.16.0"></a>
 # [7.16.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.15.0...patternfly3-react-lerna-root@7.16.0) (2018-12-18)
 
