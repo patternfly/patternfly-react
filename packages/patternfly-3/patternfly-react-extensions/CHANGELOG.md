@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.16.0"></a>
+# [2.16.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.14.2...patternfly-react-extensions@2.16.0) (2018-12-19)
+
+
+### Features
+
+* **component:** Creating a DiffView Component ([#1019](https://github.com/patternfly/patternfly-react/issues/1019)) ([f38c10a](https://github.com/patternfly/patternfly-react/commit/f38c10a))
+
+
+
+
 <a name="2.15.0"></a>
 # [2.15.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.14.2...patternfly-react-extensions@2.15.0) (2018-12-19)
 

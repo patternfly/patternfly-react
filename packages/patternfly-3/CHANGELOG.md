@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.18.0"></a>
+# [7.18.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.16.2...patternfly3-react-lerna-root@7.18.0) (2018-12-19)
+
+
+### Features
+
+* **component:** Creating a DiffView Component ([#1019](https://github.com/patternfly/patternfly-react/issues/1019)) ([f38c10a](https://github.com/patternfly/patternfly-react/commit/f38c10a))
+
+
+
+
 <a name="7.17.0"></a>
 # [7.17.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.16.2...patternfly3-react-lerna-root@7.17.0) (2018-12-19)
 
