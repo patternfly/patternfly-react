@@ -3,7 +3,7 @@ import { MenuItem } from '../../index';
 
 export const items = {
   left: [
-    { value: 'Ann Little', label: 'Ann Little' },
+    { value: 'Ann Little', label: 'Ann Little', disabled: true, tooltipText: 'Permission Denied' },
     { value: 'Daniel Nguyen', label: 'Daniel Nguyen' },
     { value: 'Heather Davis', label: 'Heather Davis' },
     {

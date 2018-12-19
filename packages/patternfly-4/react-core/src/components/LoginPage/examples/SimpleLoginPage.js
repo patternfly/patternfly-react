@@ -120,7 +120,7 @@ class SimpleLoginPage extends React.Component {
       <LoginPage
         footerListVariants="inline"
         brandImgSrc={brandImg}
-        brandImgAlt="pf-logo"
+        brandImgAlt="PatternFly logo"
         backgroundImgSrc={images}
         backgroundImgAlt="Images"
         footerListItems={listItem}

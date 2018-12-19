@@ -155,15 +155,29 @@ export const itemHasChildren = item => item.children !== undefined;
 export const getItemPosition = (array, position, isSortAsc) => (isSortAsc ? position : array.length - position - 1);
 
 export const toggleAllItems = (list, checked) => {
+  let toggleCount = 0;
   list.forEach(item => {
-    item.checked = checked;
-    if (itemHasChildren(item)) {
-      item.children.forEach(childItem => {
-        childItem.checked = checked;
-      });
+    if (item.disabled) {
+      return;
     }
-    return item;
+    if (item.checked !== checked) {
+      item.checked = checked;
+      toggleCount += 1;
+    }
+    if (itemHasChildren(item)) {
+      let childrenToggleCount = 0;
+      item.children.forEach(childItem => {
+        if (childItem.checked !== checked) {
+          childItem.checked = checked;
+          childrenToggleCount += 1;
+        }
+      });
+      if (childrenToggleCount > 0) {
+        toggleCount += childrenToggleCount - 1;
+      }
+    }
   });
+  return toggleCount;
 };
 
 export const isAllItemsChecked = (items, selectCount) => selectCount > 0 && selectCount === getItemsLength(items);
@@ -179,24 +193,7 @@ export const isItemExistOnList = (list, itemLabel) => {
   return { isParentExist: parentIndex !== null, parentIndex };
 };
 
-export const toggleFilterredItems = (list, checked) => {
-  list.forEach(item => {
-    if (!isItemHidden(item)) {
-      item.checked = checked;
-      if (itemHasChildren(item)) {
-        toggleAllItems(item.children, checked);
-      }
-    } else if (itemHasChildren(item)) {
-      item.children.forEach(childItem => {
-        if (!isItemHidden(childItem)) {
-          item.checked = checked;
-        }
-      });
-    }
-  });
-};
-
-export const getFilteredItems = list => {
+export const getFilterredItems = list => {
   const filteredItems = [];
   list.forEach(item => {
     if (!isItemHidden(item)) {
@@ -217,10 +214,10 @@ export const getFilteredItems = list => {
   return filteredItems;
 };
 
-export const getFilterredItemsLength = list => getItemsLength(getFilteredItems(list));
+export const getFilterredItemsLength = list => getItemsLength(getFilterredItems(list));
 
 export const getSelectedFilterredItemsLength = list => {
-  const filteredItems = getFilteredItems(list);
+  const filteredItems = getFilterredItems(list);
   let selectedAmount = 0;
   filteredItems.forEach(item => {
     if (isItemSelected(item)) {
@@ -244,3 +241,5 @@ export const getSelectedFilterredItemsLength = list => {
 export const isItemSelected = item => item.checked;
 
 export const isItemHidden = item => item.hidden;
+
+export const isItemDisabled = item => item.disabled;

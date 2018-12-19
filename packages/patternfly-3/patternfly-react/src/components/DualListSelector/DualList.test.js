@@ -28,7 +28,9 @@ const getProps = () => ({
       { value: 'Heather Davis', label: 'Heather Davis' }
     ]
   },
-  right: { items: [{ value: 'Donald Trump', label: 'Donald Trump' }] }
+  right: {
+    items: [{ value: 'Donald Trump', label: 'Donald Trump' }]
+  }
 });
 
 test('dual-list render properly ', () => {
@@ -169,4 +171,17 @@ test('sorting works ! ', () => {
   const originalList = [...component.state()[side].items];
   sortingIcon.simulate('click', mockedEvent);
   expect(component.state().left.items[0]).toBe(originalList[originalList.length - 1]);
+});
+
+test('item is disabled and tooltip exists', () => {
+  const props = getProps();
+  props.right.items.push({
+    value: 'Barack Obama',
+    label: 'Barack Obama',
+    disabled: true,
+    tooltipText: 'Barack Obama'
+  });
+  const component = mount(<DualListControlled {...props} />);
+  expect(component.exists('DualListItemTooltip')).toBeTruthy();
+  expect(component.exists('.disabled')).toBeTruthy();
 });

@@ -1,5 +1,382 @@
 
-## Change Log (2018-12-18)
+## Change Log (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1082](https://github.com/patternfly/patternfly-react/pull/1082) fix: PF4 About Modal: make trademark, logoImageSrc and logoImageAlt p… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 3
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## patternfly4-react-lerna-root@1.30.2 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1084](https://github.com/patternfly/patternfly-react/pull/1084) fix: update alt text in LoginPage ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-table@0.2.21 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1084](https://github.com/patternfly/patternfly-react/pull/1084) fix: update alt text in LoginPage ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-docs@3.19.29 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1084](https://github.com/patternfly/patternfly-react/pull/1084) fix: update alt text in LoginPage ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-core@1.40.3 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1084](https://github.com/patternfly/patternfly-react/pull/1084) fix: update alt text in LoginPage ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## patternfly4-react-lerna-root@1.30.1 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.16.2 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.28.2 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.14.2 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-tokens@1.9.3 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-table@0.2.20 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-styled-system@1.3.3 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-icons@2.9.4 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-docs@3.19.28 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-core@1.40.2 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.10.5 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-charts@1.2.3 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1071](https://github.com/patternfly/patternfly-react/pull/1071) fix(DualList): Add item disability functionality. ([@Laviro](https://github.com/Laviro))
+  * [#1083](https://github.com/patternfly/patternfly-react/pull/1083) fix(pf3): fix usage of noop in BulletChart ([@jschuler](https://github.com/jschuler))
+  * [#1078](https://github.com/patternfly/patternfly-react/pull/1078) fix(DualList): Adding debounce for filter changes ([@Laviro](https://github.com/Laviro))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1090](https://github.com/patternfly/patternfly-react/pull/1090) docs(gatsby): fix gatsby prod build issues ([@jschuler](https://github.com/jschuler))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1086](https://github.com/patternfly/patternfly-react/pull/1086) Update core .105 ([@jschuler](https://github.com/jschuler))
+* `patternfly-3`
+  * [#1069](https://github.com/patternfly/patternfly-react/pull/1069) fix(SocialLoginPage): fix the props provided in SocialLoginPage test. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 3
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.16.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1074](https://github.com/patternfly/patternfly-react/pull/1074) feat(BulletChart): Add Thresholds to Legend ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#1059](https://github.com/patternfly/patternfly-react/pull/1059) feat(CatalogTile): Add footer option to tiles ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react@2.28.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1074](https://github.com/patternfly/patternfly-react/pull/1074) feat(BulletChart): Add Thresholds to Legend ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#1059](https://github.com/patternfly/patternfly-react/pull/1059) feat(CatalogTile): Add footer option to tiles ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## patternfly-react-extensions@2.14.0 (2018-12-18)
+
+#### :rocket: New Feature
+* `patternfly-3`
+  * [#1074](https://github.com/patternfly/patternfly-react/pull/1074) feat(BulletChart): Add Thresholds to Legend ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+  * [#1059](https://github.com/patternfly/patternfly-react/pull/1059) feat(CatalogTile): Add footer option to tiles ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+#### Committers: 1
+- Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
+
+
+## @patternfly/react-console@1.10.3 (2018-12-18)
 
 #### :rocket: New Feature
 * `patternfly-3`
