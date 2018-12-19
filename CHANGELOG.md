@@ -1,6 +1,51 @@
 
 ## Change Log (2018-12-19)
 
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1082](https://github.com/patternfly/patternfly-react/pull/1082) fix: PF4 About Modal: make trademark, logoImageSrc and logoImageAlt p… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 3
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## patternfly4-react-lerna-root@1.30.2 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1084](https://github.com/patternfly/patternfly-react/pull/1084) fix: update alt text in LoginPage ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-table@0.2.21 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1084](https://github.com/patternfly/patternfly-react/pull/1084) fix: update alt text in LoginPage ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-docs@3.19.29 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1084](https://github.com/patternfly/patternfly-react/pull/1084) fix: update alt text in LoginPage ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-core@1.40.3 (2018-12-19)
+
 #### :bug: Bug Fix
 * `patternfly-4`
   * [#1084](https://github.com/patternfly/patternfly-react/pull/1084) fix: update alt text in LoginPage ([@rebeccaalpert](https://github.com/rebeccaalpert))

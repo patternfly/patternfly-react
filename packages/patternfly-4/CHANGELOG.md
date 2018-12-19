@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.30.3"></a>
+## [1.30.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.30.2...patternfly4-react-lerna-root@1.30.3) (2018-12-19)
+
+
+### Bug Fixes
+
+* PF4 About Modal: make trademark, logoImageSrc and logoImageAlt p… ([#1082](https://github.com/patternfly/patternfly-react/issues/1082)) ([dbc8b06](https://github.com/patternfly/patternfly-react/commit/dbc8b06))
+
+
+
+
 <a name="1.30.2"></a>
 ## [1.30.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.30.1...patternfly4-react-lerna-root@1.30.2) (2018-12-19)
 
