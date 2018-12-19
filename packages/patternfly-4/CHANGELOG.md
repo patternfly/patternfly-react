@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.33.0"></a>
+# [1.33.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.32.0...patternfly4-react-lerna-root@1.33.0) (2018-12-19)
+
+
+### Features
+
+* **core:** Popover positioning ([#1032](https://github.com/patternfly/patternfly-react/issues/1032)) ([13430ef](https://github.com/patternfly/patternfly-react/commit/13430ef))
+
+
+
+
 <a name="1.32.0"></a>
 # [1.32.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.30.3...patternfly4-react-lerna-root@1.32.0) (2018-12-19)
 

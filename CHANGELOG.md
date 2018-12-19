@@ -3,6 +3,106 @@
 
 #### :rocket: New Feature
 * `patternfly-4`
+  * [#1032](https://github.com/patternfly/patternfly-react/pull/1032) feat(core): Popover positioning ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly4-react-lerna-root@1.32.0 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1056](https://github.com/patternfly/patternfly-react/pull/1056) feat(Alert): add sr variant customization ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-3`
+  * [#1019](https://github.com/patternfly/patternfly-react/pull/1019) feat(component): Creating a DiffView Component ([@glekner](https://github.com/glekner))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1063](https://github.com/patternfly/patternfly-react/pull/1063) PF4: fix(LoginForm): LoginForm.d.ts fix typo passwordValue ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 3
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly3-react-lerna-root@7.18.0 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1056](https://github.com/patternfly/patternfly-react/pull/1056) feat(Alert): add sr variant customization ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-3`
+  * [#1019](https://github.com/patternfly/patternfly-react/pull/1019) feat(component): Creating a DiffView Component ([@glekner](https://github.com/glekner))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1063](https://github.com/patternfly/patternfly-react/pull/1063) PF4: fix(LoginForm): LoginForm.d.ts fix typo passwordValue ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 3
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly-react-extensions@2.16.0 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1056](https://github.com/patternfly/patternfly-react/pull/1056) feat(Alert): add sr variant customization ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-3`
+  * [#1019](https://github.com/patternfly/patternfly-react/pull/1019) feat(component): Creating a DiffView Component ([@glekner](https://github.com/glekner))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1063](https://github.com/patternfly/patternfly-react/pull/1063) PF4: fix(LoginForm): LoginForm.d.ts fix typo passwordValue ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 3
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.24 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1056](https://github.com/patternfly/patternfly-react/pull/1056) feat(Alert): add sr variant customization ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-3`
+  * [#1019](https://github.com/patternfly/patternfly-react/pull/1019) feat(component): Creating a DiffView Component ([@glekner](https://github.com/glekner))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1063](https://github.com/patternfly/patternfly-react/pull/1063) PF4: fix(LoginForm): LoginForm.d.ts fix typo passwordValue ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 3
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.32 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1056](https://github.com/patternfly/patternfly-react/pull/1056) feat(Alert): add sr variant customization ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-3`
+  * [#1019](https://github.com/patternfly/patternfly-react/pull/1019) feat(component): Creating a DiffView Component ([@glekner](https://github.com/glekner))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1063](https://github.com/patternfly/patternfly-react/pull/1063) PF4: fix(LoginForm): LoginForm.d.ts fix typo passwordValue ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 3
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.42.0 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
   * [#1056](https://github.com/patternfly/patternfly-react/pull/1056) feat(Alert): add sr variant customization ([@kmcfaul](https://github.com/kmcfaul))
 * `patternfly-3`
   * [#1019](https://github.com/patternfly/patternfly-react/pull/1019) feat(component): Creating a DiffView Component ([@glekner](https://github.com/glekner))
