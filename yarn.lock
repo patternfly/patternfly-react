@@ -1269,6 +1269,13 @@
     react-split-pane "^0.1.77"
     react-treebeard "^2.1.0"
 
+"@tippy.js/react@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@tippy.js/react/-/react-1.1.1.tgz#91476726529e31d4c9f9074d995d0fa31f3b6e2d"
+  dependencies:
+    prop-types "^15.6.2"
+    tippy.js "^3.2.0"
+
 "@types/c3@^0.6.0":
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/@types/c3/-/c3-0.6.0.tgz#74fe73461f18386ae460e8113ea4883ab7fbeab1"
@@ -12089,6 +12096,10 @@ popper.js@^1.14.1:
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.3.tgz#1438f98d046acf7b4d78cd502bf418ac64d4f095"
 
+popper.js@^1.14.6:
+  version "1.14.6"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.6.tgz#ab20dd4edf9288b8b3b6531c47c361107b60b4b0"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -15679,6 +15690,12 @@ tiny-emitter@^2.0.0:
 tinycolor2@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/tinycolor2/-/tinycolor2-1.4.1.tgz#f4fad333447bc0b07d4dc8e9209d8f39a8ac77e8"
+
+tippy.js@^3.2.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-3.3.0.tgz#90d4f90be9c80fdc0d0025f49378e3d9f60508d3"
+  dependencies:
+    popper.js "^1.14.6"
 
 title-case@^2.1.0:
   version "2.1.1"

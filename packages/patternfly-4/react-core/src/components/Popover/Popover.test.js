@@ -1,21 +1,22 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { Popover } from './index';
-import { Button } from '@patternfly/react-core';
 
 test('popover renders close-button, header and body', () => {
-  const view = mount(<Popover header="popover header">popover body</Popover>);
-  expect(view).toMatchSnapshot();
-});
-
-test('popover is calling onClose when clicking the close button', () => {
-  const onClose = jest.fn();
-  const view = mount(
-    <Popover header="popover header" onClose={onClose}>
-      popover body
+  const view = shallow(
+    <Popover
+      position="top"
+      isVisible
+      hideOnOutsideClick
+      headerContent={<div>Popover Header</div>}
+      bodyContent={
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      }
+    >
+      <div>Toggle Popover</div>
     </Popover>
   );
-  expect(onClose.mock.calls).toHaveLength(0);
-  view.find(Button).simulate('click');
-  expect(onClose.mock.calls).toHaveLength(1);
+  expect(view).toMatchSnapshot();
 });
