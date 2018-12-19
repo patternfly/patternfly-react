@@ -15,12 +15,12 @@ export * from './Dropdown';
 export * from './EmptyState';
 export * from './Form';
 export * from './Label';
-export * from './Page';
 export * from './List';
 export * from './LoginPage';
 export * from './Modal';
 export * from './Nav';
 // export * from './Popover'; // Not ready yet
+export * from './Page';
 export * from './Progress';
 export * from './Radio';
 export * from './Select';
