@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.40.3"></a>
+## [1.40.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.40.2...@patternfly/react-core@1.40.3) (2018-12-19)
+
+
+### Bug Fixes
+
+* **page:** move page from layouts to components ([#1089](https://github.com/patternfly/patternfly-react/issues/1089)) ([4c3e6af](https://github.com/patternfly/patternfly-react/commit/4c3e6af))
+* update alt text in LoginPage ([#1084](https://github.com/patternfly/patternfly-react/issues/1084)) ([2665351](https://github.com/patternfly/patternfly-react/commit/2665351))
+
+
+
+
 <a name="1.40.2"></a>
 ## [1.40.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.40.1...@patternfly/react-core@1.40.2) (2018-12-19)
 
