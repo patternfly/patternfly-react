@@ -3,6 +3,60 @@
 
 #### :rocket: New Feature
 * `patternfly-4`
+  * [#1056](https://github.com/patternfly/patternfly-react/pull/1056) feat(Alert): add sr variant customization ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-3`
+  * [#1019](https://github.com/patternfly/patternfly-react/pull/1019) feat(component): Creating a DiffView Component ([@glekner](https://github.com/glekner))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1063](https://github.com/patternfly/patternfly-react/pull/1063) PF4: fix(LoginForm): LoginForm.d.ts fix typo passwordValue ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 3
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.30.3 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1082](https://github.com/patternfly/patternfly-react/pull/1082) fix: PF4 About Modal: make trademark, logoImageSrc and logoImageAlt p… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 3
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-table@0.2.22 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1082](https://github.com/patternfly/patternfly-react/pull/1082) fix: PF4 About Modal: make trademark, logoImageSrc and logoImageAlt p… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 3
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-docs@3.19.30 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1082](https://github.com/patternfly/patternfly-react/pull/1082) fix: PF4 About Modal: make trademark, logoImageSrc and logoImageAlt p… ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 3
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-core@1.40.4 (2018-12-19)
+
+#### :rocket: New Feature
+* `patternfly-4`
   * [#1082](https://github.com/patternfly/patternfly-react/pull/1082) fix: PF4 About Modal: make trademark, logoImageSrc and logoImageAlt p… ([@tlabaj](https://github.com/tlabaj))
 
 #### Committers: 3
