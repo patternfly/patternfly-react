@@ -24,9 +24,7 @@ const propTypes = {
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
   /** Creates a large version of the Modal */
-  isLarge: PropTypes.bool,
-  /** React application root element */
-  reactRoot: PropTypes.instanceOf(safeHTMLElement).isRequired
+  isLarge: PropTypes.bool
 };
 
 const defaultProps = {
@@ -52,6 +50,15 @@ class Modal extends React.Component {
     }
   };
 
+  toggleSiblingsFromScreenReaders = hide => {
+    const bodyChildren = document.body.children;
+    for (const child of bodyChildren) {
+      if (child !== this.container) {
+        hide ? child.setAttribute('aria-hidden', hide) : child.removeAttribute('aria-hidden');
+      }
+    }
+  };
+
   componentDidMount() {
     document.body.appendChild(this.container);
     document.addEventListener('keydown', this.handleEscKeyClick, false);
@@ -65,10 +72,10 @@ class Modal extends React.Component {
   componentDidUpdate() {
     if (this.props.isOpen) {
       document.body.classList.add(css(styles.backdropOpen));
-      this.props.reactRoot.setAttribute('aria-hidden', true);
+      this.toggleSiblingsFromScreenReaders(true);
     } else {
       document.body.classList.remove(css(styles.backdropOpen));
-      this.props.reactRoot.removeAttribute('aria-hidden');
+      this.toggleSiblingsFromScreenReaders(false);
     }
   }
 
@@ -78,7 +85,7 @@ class Modal extends React.Component {
   }
 
   render() {
-    const { reactRoot, ...props } = this.props;
+    const { ...props } = this.props;
 
     if (!canUseDOM) {
       return null;
