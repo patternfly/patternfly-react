@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import AboutModalBoxContent from './AboutModalBoxContent';
 import AboutModalBoxHeader from './AboutModalBoxHeader';
 import AboutModalBoxHero from './AboutModalBoxHero';
-import AboutModalBoxLogo from './AboutModalBoxLogo';
 import AboutModalBoxBrand from './AboutModalBoxBrand';
 import AboutModalBoxCloseButton from './AboutModalBoxCloseButton';
 import AboutModalBox from './AboutModalBox';
@@ -79,7 +78,6 @@ const ModalContent = ({
             {children}
           </AboutModalBoxContent>
           <AboutModalBoxHero src={heroImageSrc} alt={heroImageAlt} />
-          <AboutModalBoxLogo src={logoImageSrc} alt={logoImageAlt} />
         </AboutModalBox>
       </Bullseye>
     </Backdrop>

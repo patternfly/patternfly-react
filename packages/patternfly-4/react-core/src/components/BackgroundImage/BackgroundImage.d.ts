@@ -3,11 +3,8 @@ import { Omit, OneOf } from '../../typeUtils';
 
 export const BackgroundImageSrc: {
   lg: 'lg';
-  md: 'md';
-  md2x: 'md2x';
   sm: 'sm';
   sm2x: 'sm2x';
-  xl: 'xl';
   xs: 'xs';
   xs2x: 'xs2x';
   filter: 'filter';
