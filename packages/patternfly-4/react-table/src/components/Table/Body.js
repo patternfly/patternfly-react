@@ -7,12 +7,15 @@ const propTypes = {
   /** Additional classes for table body. */
   className: PropTypes.string,
   /** Specify key which should be used for labeling each row. */
-  rowKey: PropTypes.string
+  rowKey: PropTypes.string,
+  /**  */
+  onRowClick: PropTypes.func
 };
 
 const defaultProps = {
   rowKey: 'id',
-  className: ''
+  className: '',
+  onRowClick: () => undefined
 };
 
 class ContextBody extends React.Component {
@@ -21,11 +24,13 @@ class ContextBody extends React.Component {
     this.onRow = this.onRow.bind(this);
   }
 
-  onRow(row) {
+  onRow(row, props) {
+    const { onRowClick } = this.props;
     return ({
       isExpanded: row.isExpanded,
-      isOpen: row.isOpen
-    })
+      isOpen: row.isOpen,
+      onClick: (event) => onRowClick(event, row, props)
+    });
   }
 
   parentsExpanded(parentId) {
@@ -34,7 +39,7 @@ class ContextBody extends React.Component {
   }
 
   render() {
-    const { className, headerData, rows, rowKey, children, ...props } = this.props;
+    const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
     let shiftKey = 0;
     shiftKey += headerData[0] && headerData[0].extraParams.onSelect ? 1 : 0;
     shiftKey += headerData[0] && headerData[0].extraParams.onCollapse ? 1 : 0;

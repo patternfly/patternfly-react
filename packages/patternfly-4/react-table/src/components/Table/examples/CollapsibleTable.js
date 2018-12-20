@@ -47,6 +47,10 @@ class CollapsibleTable extends React.Component {
 
   onCollapse(event, rowKey, isOpen) {
     const { rows } = this.state;
+    /** 
+     * Please do not use rowKey as row index for more complex tables.
+     * Rather use some kind of identifier like ID passed with each row.
+    */
     rows[rowKey].isOpen = isOpen;
     this.setState({
       rows

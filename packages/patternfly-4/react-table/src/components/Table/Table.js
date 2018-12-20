@@ -7,6 +7,7 @@ import { SortByDirection } from './SortColumn';
 import BodyCell from './BodyCell';
 import HeaderCell from './HeaderCell';
 import RowWrapper from './RowWrapper';
+import BodyWrapper from './BodyWrapper';
 import { calculateColumns } from './utils/headerUtils';
 
 export const TableGridBreakpoint = {
@@ -46,9 +47,15 @@ const propTypes = {
     PropTypes.shape({
       cells: PropTypes.arrayOf(PropTypes.node),
       isOpen: PropTypes.bool,
-      parent: PropTypes.number
+      parent: PropTypes.number,
+      props: PropTypes.any
     }),
-    PropTypes.arrayOf(PropTypes.node)
+    PropTypes.arrayOf(PropTypes.oneOfType([
+      PropTypes.shape({
+        title: PropTypes.node
+      }),
+      PropTypes.node
+    ]))
   ])).isRequired,
   /** Header cells to display in table. Either array of strings or array of string or cell object. */
   cells: PropTypes.arrayOf(PropTypes.oneOfType([
@@ -58,8 +65,7 @@ const propTypes = {
       transforms: PropTypes.arrayOf(PropTypes.func),
       cellTransforms: PropTypes.arrayOf(PropTypes.func),
       formatters: PropTypes.arrayOf(PropTypes.func),
-      cellFormatters: PropTypes.arrayOf(PropTypes.func),
-      props: PropTypes.shape()
+      cellFormatters: PropTypes.arrayOf(PropTypes.func)
     })
   ])).isRequired,
   /** Aria labeled by this property for select inputs. */
@@ -132,6 +138,7 @@ class Table extends React.Component {
         {header}
         <Provider {...props} renderers={{
           body: {
+            wrapper: BodyWrapper(rows),
             row: RowWrapper,
             cell: BodyCell
           },
