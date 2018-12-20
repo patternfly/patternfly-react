@@ -1,5 +1,45 @@
 
-## Change Log (2018-12-19)
+## Change Log (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## patternfly4-react-lerna-root@1.33.2 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#991](https://github.com/patternfly/patternfly-react/pull/991) fix(DropdownItem): wrap DropdownItem in div when child is a Link node ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.27 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#991](https://github.com/patternfly/patternfly-react/pull/991) fix(DropdownItem): wrap DropdownItem in div when child is a Link node ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.35 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#991](https://github.com/patternfly/patternfly-react/pull/991) fix(DropdownItem): wrap DropdownItem in div when child is a Link node ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.43.2 (2018-12-19)
 
 #### :bug: Bug Fix
 * `patternfly-4`
