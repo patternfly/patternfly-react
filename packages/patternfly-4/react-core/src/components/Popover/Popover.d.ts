@@ -1,4 +1,4 @@
-import React, { SFC, HTMLProps, ReactNode } from 'react';
+import { SFC, HTMLProps, ReactNode, ReactElement } from 'react';
 import { Omit } from '../../typeUtils';
 import { Instance, BasicPlacement } from 'tippy.js';
 
@@ -17,7 +17,7 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   /** Popover additional class */
   className?: string;
   /** The reference element to which the popover is relatively placed to */
-  children: React.ReactElement<any>;
+  children: ReactElement<any>;
   /** Accessible label, required when header is not present */
   'aria-label'?: string;
   /** Header content, leave empty for no header */
