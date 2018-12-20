@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.33.4"></a>
+## [1.33.4](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.33.3...patternfly4-react-lerna-root@1.33.4) (2018-12-20)
+
+
+### Bug Fixes
+
+* **EmptyState:** a typo at the import path in EmptyStateIcon.d.ts ([#1099](https://github.com/patternfly/patternfly-react/issues/1099)) ([187171d](https://github.com/patternfly/patternfly-react/commit/187171d))
+
+
+
+
 <a name="1.33.3"></a>
 ## [1.33.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.33.2...patternfly4-react-lerna-root@1.33.3) (2018-12-20)
 

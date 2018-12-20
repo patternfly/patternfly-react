@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.43.4"></a>
+## [1.43.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.3...@patternfly/react-core@1.43.4) (2018-12-20)
+
+
+### Bug Fixes
+
+* **EmptyState:** a typo at the import path in EmptyStateIcon.d.ts ([#1099](https://github.com/patternfly/patternfly-react/issues/1099)) ([187171d](https://github.com/patternfly/patternfly-react/commit/187171d))
+
+
+
+
 <a name="1.43.3"></a>
 ## [1.43.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.2...@patternfly/react-core@1.43.3) (2018-12-20)
 

@@ -1,6 +1,86 @@
 
 ## Change Log (2018-12-20)
 
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly4-react-lerna-root@1.33.3 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-tokens@1.9.4 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-table@0.2.28 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-styled-system@1.3.4 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-icons@2.9.5 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-docs@3.19.36 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-core@1.43.3 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-charts@1.2.4 (2018-12-20)
+
 #### :house: Internal
 * `patternfly-4`, `react-icons`
   * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
