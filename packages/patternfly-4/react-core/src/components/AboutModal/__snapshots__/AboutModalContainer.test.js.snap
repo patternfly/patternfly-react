@@ -40,11 +40,6 @@ exports[`About Modal Container Test isOpen 1`] = `
         className=""
         src="heroImg..."
       />
-      <AboutModalBoxHero
-        alt="AboutModal Logo"
-        className=""
-        src="logoImg..."
-      />
     </AboutModalBox>
   </Bullseye>
 </Backdrop>

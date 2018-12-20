@@ -5,11 +5,11 @@ exports[`AboutModalBox Test 1`] = `
   display: grid;
   z-index: 600;
   grid-template-rows: max-content max-content auto max-content;
-  grid-template-areas: "brand close" "header header" "content content" "logo logo";
+  grid-template-areas: "brand close" "header header" "content content";
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #030303;
-  box-shadow: 0 0 100px 0 rgba(255,255,255,0.4);
+  box-shadow: 0 0 100px 0 rgba(255,255,255,0.05);
 }
 
 <div

@@ -988,9 +988,10 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.0.0.tgz#76b0e89e6f8738ca8154195baf5b8e6a80bc9105"
 
-"@patternfly/patternfly-next@1.0.105":
-  version "1.0.105"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.105.tgz#fe83f1eab814d9333508cf25abbc677432ecc338"
+"@patternfly/patternfly-next@1.0.109":
+  version "1.0.109"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.109.tgz#5c1a8ca29ca48d030324d3d588af9954e2f36cea"
+  integrity sha512-jmDQbXCxAeBssoRfskLs+cgNMAxliHUZg8aodTkvEFRH+dTzU8lqbd+85cNy9zjw5hC507aqwArlCABc0Zpakw==
 
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
@@ -16066,10 +16067,10 @@ unicode-property-aliases-ecmascript@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/unicode-property-aliases-ecmascript/-/unicode-property-aliases-ecmascript-1.0.4.tgz#5a533f31b4317ea76f17d807fa0d116546111dd0"
 
-unidiff@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/unidiff/-/unidiff-0.0.4.tgz#257fc346ac6f134b0b75d08895320872a737e222"
-  integrity sha1-JX/DRqxvE0sLddCIlTIIcqc34iI=
+unidiff@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/unidiff/-/unidiff-1.0.1.tgz#2ff8da0710a9abb4e1133e9da4c87747fb5ff508"
+  integrity sha512-n9pCo9OKQE+QWsUa45BdSy7Y0hpHpyPHwNxcEgqFgPqxb1Y8DH4d9WTepcJpmLsnDEWDch6hxh2g/sM0bvyxMA==
   dependencies:
     diff "^2.2.2"
 
@@ -16311,10 +16312,6 @@ uuid@^2.0.1:
 uuid@^3.0.0, uuid@^3.0.1, uuid@^3.1.0, uuid@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
-
-uuid@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
 uuid@^3.3.2:
   version "3.3.2"
