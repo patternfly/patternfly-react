@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`tooltip renders 1`] = `
+<Tippy
+  animateFill={false}
+  appendTo={[Function]}
+  content={
+    <div
+      className="pf-c-tooltip"
+      role="tooltip"
+    >
+      <TooltipArrow
+        className={null}
+      />
+      <TooltipContent
+        className={null}
+      >
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+        </div>
+      </TooltipContent>
+    </div>
+  }
+  distance={15}
+  flip={true}
+  lazy={true}
+  onCreate={[Function]}
+  performance={true}
+  placement="top"
+  popperOptions={
+    Object {
+      "modifiers": Object {
+        "hide": Object {
+          "enabled": true,
+        },
+        "preventOverflow": Object {
+          "enabled": true,
+        },
+      },
+    }
+  }
+  size="small"
+  theme="pf-tippy"
+  zIndex={9999}
+>
+  <div>
+    Toggle tooltip
+  </div>
+</Tippy>
+`;
