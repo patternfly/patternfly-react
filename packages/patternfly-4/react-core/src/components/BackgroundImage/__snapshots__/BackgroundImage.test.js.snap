@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BackgroundImage 1`] = `
-.pf-c-background-image.css-vyby8o {
+.pf-c-background-image.css-1mxwfbc {
   display: block;
 }
 
 <div
-  className="pf-c-background-image css-vyby8o"
+  className="pf-c-background-image css-1mxwfbc"
 />
 `;
 
 exports[`BackgroundImage 2`] = `
-.pf-c-background-image.css-vyby8o {
+.pf-c-background-image.css-1mxwfbc {
   display: block;
 }
 
 <div
-  className="pf-c-background-image css-vyby8o"
+  className="pf-c-background-image css-1mxwfbc"
 />
 `;
 
