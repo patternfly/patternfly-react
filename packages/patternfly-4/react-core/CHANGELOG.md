@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.43.5"></a>
+## [1.43.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.4...@patternfly/react-core@1.43.5) (2018-12-20)
+
+
+### Bug Fixes
+
+* **ts:** fix for popover ts ([#1106](https://github.com/patternfly/patternfly-react/issues/1106)) ([7ea696f](https://github.com/patternfly/patternfly-react/commit/7ea696f))
+
+
+
+
 <a name="1.43.4"></a>
 ## [1.43.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.3...@patternfly/react-core@1.43.4) (2018-12-20)
 

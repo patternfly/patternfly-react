@@ -3,6 +3,46 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
+  * [#1106](https://github.com/patternfly/patternfly-react/pull/1106) fix(ts): fix for popover ts ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly4-react-lerna-root@1.33.4 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-table@0.2.29 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.19.37 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.43.4 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
   * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
 
 #### Committers: 1
