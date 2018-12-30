@@ -36,6 +36,8 @@
     "react-c3js": "^0.1.20",
     "react-click-outside": "^3.0.1",
     "react-collapse": "^4.0.3",
+    "react-debounce-input": "^3.2.0",
+    "react-ellipsis-with-tooltip": "^1.0.8",
     "react-fontawesome": "^1.6.1",
     "react-motion": "^0.5.2",
     "reactabular-table": "^8.14.0",
