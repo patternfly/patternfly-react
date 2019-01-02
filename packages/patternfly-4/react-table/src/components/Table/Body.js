@@ -19,12 +19,7 @@ const defaultProps = {
 };
 
 class ContextBody extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onRow = this.onRow.bind(this);
-  }
-
-  onRow(row, props) {
+  onRow = (row, props) => {
     const { onRowClick } = this.props;
     return ({
       isExpanded: row.isExpanded,

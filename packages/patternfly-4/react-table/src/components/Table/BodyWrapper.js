@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { modifiers } from '@patternfly/patternfly-next/components/Table/table.css';
+import styles from '@patternfly/patternfly-next/components/Table/table.css';
 import { css } from '@patternfly/react-styles';
 
 const BodyWrapper = (rows) => {
@@ -7,7 +7,7 @@ const BodyWrapper = (rows) => {
     render() {
       return (
         <tbody {...this.props} className={css(
-          rows.some(row => row.isOpen && !row.hasOwnProperty('parent')) && modifiers.expanded
+          rows.some(row => row.isOpen && !row.hasOwnProperty('parent')) && styles.modifiers.expanded
         )} />
       )
     }

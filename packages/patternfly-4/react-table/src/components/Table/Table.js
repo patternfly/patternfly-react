@@ -41,7 +41,10 @@ const propTypes = {
   /** Function called when user wants to sort table. */
   onSort: PropTypes.func,
   /** Additional cell displayed at the end of each row with dropdown of action items. */
-  actions: PropTypes.array,
+  actions: PropTypes.arrayOf(PropTypes.shape({
+    onClick: PropTypes.func,
+    title: PropTypes.node
+  })),
   /** Actual rows to display in table. Either array of strings or row ojects. */
   rows: PropTypes.arrayOf(PropTypes.oneOfType([
     PropTypes.shape({
@@ -73,21 +76,21 @@ const propTypes = {
   /** Header to display above table for accessibility reasons. */
   header: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
-      throw new Error('Header is required if no aria-label or caption is supplied!');
+      throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
   },
   /** Caption to display in table for accessibility reasons. */
   caption: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
-      throw new Error('Caption is required if no aria-label or header is supplied!');
+      throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
   },
   /** aria-label in table for accessibility reasons. */
   'aria-label': props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
-      throw new Error('aria-label is required if no caption or header is supplied!');
+      throw new Error('Specify at least one of: header, caption, aria-label');
     }
     return null;
   }

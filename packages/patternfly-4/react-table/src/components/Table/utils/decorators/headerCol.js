@@ -4,7 +4,7 @@ export default (id = 'simple-node') => {
   const headerCol = (value, { rowIndex } = {}) =>
     ({
       component: 'th',
-      children: <span id={id + rowIndex}>{value.title || value}</span>
+      children: <div id={id + rowIndex}>{value.title || value}</div>
     });
 
   return headerCol;

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropsType from 'prop-types';
 
 const BodyCell = ({ ['data-label']: dataLabel, parentId, component: Component, colSpan, ...props }) => {
@@ -13,7 +13,7 @@ const BodyCell = ({ ['data-label']: dataLabel, parentId, component: Component, c
 
 BodyCell.propTypes = {
   'data-label': PropsType.string,
-  component: PropsType.oneOfType([PropsType.string, PropsType.node, PropsType.number])
+  component: PropsType.node
 }
 
 BodyCell.defaultProps = {
