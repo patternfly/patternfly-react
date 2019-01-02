@@ -1,5 +1,45 @@
 
-## Change Log (2018-12-20)
+## Change Log (2019-01-02)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly4-react-lerna-root@1.33.5 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1106](https://github.com/patternfly/patternfly-react/pull/1106) fix(ts): fix for popover ts ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-table@0.2.30 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1106](https://github.com/patternfly/patternfly-react/pull/1106) fix(ts): fix for popover ts ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.19.38 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1106](https://github.com/patternfly/patternfly-react/pull/1106) fix(ts): fix for popover ts ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.43.5 (2018-12-20)
 
 #### :bug: Bug Fix
 * `patternfly-4`
