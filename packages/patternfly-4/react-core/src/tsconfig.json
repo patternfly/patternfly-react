@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "outDir": "../dist/js",
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "baseUrl": ".",
+      "moduleResolution": "node",
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "skipLibCheck": true,
+      "sourceMap": false, // allow sourcemap support
+      "lib": ["es6", "dom"],
+      "noEmit": false,
+      "module": "commonjs", // specify module code generation
+      "jsx": "react", // use typescript to transpile jsx to js
+      "target": "es5", // specify ECMAScript target version
+      "paths": {
+        "*": ["../dist/esm/*"]
+      }
+    },
+    "include": ["./**/*"],
+    "exclude": ["./**/*.d.ts", "./**/**.test.tsx", "./**/**.test.ts", "./**/examples/**"]
+}
