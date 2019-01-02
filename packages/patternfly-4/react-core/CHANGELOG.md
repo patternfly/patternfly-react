@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.43.6"></a>
+## [1.43.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.5...@patternfly/react-core@1.43.6) (2019-01-02)
+
+
+### Bug Fixes
+
+* **Form:** fix type definitions ([#1112](https://github.com/patternfly/patternfly-react/issues/1112)) ([47c4de0](https://github.com/patternfly/patternfly-react/commit/47c4de0))
+
+
+
+
+<a name="1.43.5"></a>
+## [1.43.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.4...@patternfly/react-core@1.43.5) (2018-12-20)
+
+
+### Bug Fixes
+
+* **ts:** fix for popover ts ([#1106](https://github.com/patternfly/patternfly-react/issues/1106)) ([7ea696f](https://github.com/patternfly/patternfly-react/commit/7ea696f))
+
+
+
+
+<a name="1.43.4"></a>
+## [1.43.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.3...@patternfly/react-core@1.43.4) (2018-12-20)
+
+
+### Bug Fixes
+
+* **EmptyState:** a typo at the import path in EmptyStateIcon.d.ts ([#1099](https://github.com/patternfly/patternfly-react/issues/1099)) ([187171d](https://github.com/patternfly/patternfly-react/commit/187171d))
+
+
+
+
+<a name="1.43.3"></a>
+## [1.43.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.2...@patternfly/react-core@1.43.3) (2018-12-20)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-core
+
 <a name="1.43.2"></a>
 ## [1.43.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.1...@patternfly/react-core@1.43.2) (2018-12-19)
 

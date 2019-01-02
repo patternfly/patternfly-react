@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.19.39"></a>
+## [3.19.39](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.38...@patternfly/react-docs@3.19.39) (2019-01-02)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.38"></a>
+## [3.19.38](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.37...@patternfly/react-docs@3.19.38) (2018-12-20)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.37"></a>
+## [3.19.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.36...@patternfly/react-docs@3.19.37) (2018-12-20)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
+<a name="3.19.36"></a>
+## [3.19.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.35...@patternfly/react-docs@3.19.36) (2018-12-20)
+
+
+
+
+**Note:** Version bump only for package @patternfly/react-docs
+
 <a name="3.19.35"></a>
 ## [3.19.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.19.34...@patternfly/react-docs@3.19.35) (2018-12-19)
 

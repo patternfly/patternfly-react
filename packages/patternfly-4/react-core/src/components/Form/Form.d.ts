@@ -1,9 +1,7 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { SFC, HTMLProps } from 'react';
 
-export interface FormProps extends React.Component<HTMLFormElement> {
+export interface FormProps extends HTMLProps<HTMLFormElement> {
     isHorizontal?: boolean;
-    children?: ReactNode;
-    className?: string;
 }
 
 declare const Form: SFC<FormProps>;

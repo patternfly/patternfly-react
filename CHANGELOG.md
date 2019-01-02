@@ -1,5 +1,205 @@
 
-## Change Log (2018-12-19)
+## Change Log (2019-01-02)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly4-react-lerna-root@1.33.5 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1106](https://github.com/patternfly/patternfly-react/pull/1106) fix(ts): fix for popover ts ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-table@0.2.30 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1106](https://github.com/patternfly/patternfly-react/pull/1106) fix(ts): fix for popover ts ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.19.38 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1106](https://github.com/patternfly/patternfly-react/pull/1106) fix(ts): fix for popover ts ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.43.5 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1106](https://github.com/patternfly/patternfly-react/pull/1106) fix(ts): fix for popover ts ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly4-react-lerna-root@1.33.4 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-table@0.2.29 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.19.37 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.43.4 (2018-12-20)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## patternfly4-react-lerna-root@1.33.3 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-tokens@1.9.4 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-table@0.2.28 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-styled-system@1.3.4 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-icons@2.9.5 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-docs@3.19.36 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-core@1.43.3 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-charts@1.2.4 (2018-12-20)
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1101](https://github.com/patternfly/patternfly-react/pull/1101) chore(update): Upgrade to 1.0.107 pf-next ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## patternfly4-react-lerna-root@1.33.2 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#991](https://github.com/patternfly/patternfly-react/pull/991) fix(DropdownItem): wrap DropdownItem in div when child is a Link node ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.27 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#991](https://github.com/patternfly/patternfly-react/pull/991) fix(DropdownItem): wrap DropdownItem in div when child is a Link node ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.35 (2018-12-19)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#991](https://github.com/patternfly/patternfly-react/pull/991) fix(DropdownItem): wrap DropdownItem in div when child is a Link node ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.43.2 (2018-12-19)
 
 #### :bug: Bug Fix
 * `patternfly-4`

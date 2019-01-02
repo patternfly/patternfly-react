@@ -1,8 +1,7 @@
 import { SFC, HTMLProps, ReactNode } from 'react';
+import { Omit } from '../../typeUtils'
 
-export interface FormGroupProps extends React.Component<HTMLDivElement> {
-  children?: ReactNode;
-  className?: string;
+export interface FormGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
   isValid?: boolean;
   isRequired?: boolean;
   label?: ReactNode;
