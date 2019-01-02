@@ -45,6 +45,7 @@
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions \".css,.js,jsx,.ts,.tsx\"",
     "build:typecheck": "tsc",
     "build:tsd:copy": "node ./scripts/copyTS.js",
+    "lint": "tslint --project tsconfig.json",
     "postbuild": "yarn build:typecheck && node ./build/copyStyles.js"
   },
   "optionalDependencies": {
@@ -81,6 +82,9 @@
     "jest-cli": "^23.6.0",
     "npmlog": "^4.1.2",
     "ts-jest": "^23.10.5",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-react": "^3.6.0",
     "typescript": "^3.1.5"
   }
 }
