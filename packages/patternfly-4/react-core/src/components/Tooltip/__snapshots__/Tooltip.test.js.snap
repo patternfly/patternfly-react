@@ -23,6 +23,7 @@ exports[`tooltip renders 1`] = `
   }
   distance={15}
   flip={true}
+  interactive={true}
   lazy={true}
   onCreate={[Function]}
   performance={true}

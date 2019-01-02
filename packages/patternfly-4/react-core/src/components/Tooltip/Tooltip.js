@@ -133,6 +133,7 @@ class Tooltip extends React.Component {
         placement={position}
         distance={15}
         flip={enableFlip}
+        interactive
         popperOptions={{
           modifiers: {
             preventOverflow: {
