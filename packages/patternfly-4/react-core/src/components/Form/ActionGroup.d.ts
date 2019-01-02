@@ -1,9 +1,6 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { SFC, HTMLProps } from 'react';
 
-export interface ActionGroupProps extends React.Component<HTMLDivElement> {
-    children?: ReactNode;
-    className?: string;
-}
+export interface ActionGroupProps extends HTMLProps<HTMLDivElement> { }
 
 declare const ActionGroup: SFC<ActionGroupProps>;
 
