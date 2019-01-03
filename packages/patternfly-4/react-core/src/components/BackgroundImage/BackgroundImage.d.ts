@@ -2,11 +2,11 @@ import { SFC, HTMLProps, ReactNode } from 'react';
 import { Omit, OneOf } from '../../typeUtils';
 
 export const BackgroundImageSrc: {
-  lg: 'lg';
-  sm: 'sm';
-  sm2x: 'sm2x';
   xs: 'xs';
   xs2x: 'xs2x';
+  sm: 'sm';
+  sm2x: 'sm2x';
+  lg: 'lg';
   filter: 'filter';
 };
 

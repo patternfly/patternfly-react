@@ -6,32 +6,29 @@ import styles from '@patternfly/patternfly-next/components/BackgroundImage/backg
 
 /* eslint-disable camelcase */
 import {
-  c_background_image_BackgroundImage_lg,
-  c_background_image_BackgroundImage_md,
-  c_background_image_BackgroundImage_md_2x,
+  c_background_image_BackgroundImage,
+  c_background_image_BackgroundImage_2x,
   c_background_image_BackgroundImage_sm,
   c_background_image_BackgroundImage_sm_2x,
-  c_background_image_BackgroundImage_xl,
-  c_background_image_BackgroundImage_xs,
-  c_background_image_BackgroundImage_xs_2x,
+  c_background_image_BackgroundImage_lg,
   c_background_image_Filter
 } from '@patternfly/react-tokens';
 
 export const BackgroundImageSrc = {
-  lg: 'lg',
-  sm: 'sm',
-  sm2x: 'sm2x',
   xs: 'xs',
   xs2x: 'xs2x',
+  sm: 'sm',
+  sm2x: 'sm2x',
+  lg: 'lg',
   filter: 'filter'
 };
 
 const variableMap = {
-  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name,
+  [BackgroundImageSrc.xs]: c_background_image_BackgroundImage && c_background_image_BackgroundImage.name,
+  [BackgroundImageSrc.xs2x]: c_background_image_BackgroundImage_2x && c_background_image_BackgroundImage_2x.name,
   [BackgroundImageSrc.sm]: c_background_image_BackgroundImage_sm && c_background_image_BackgroundImage_sm.name,
   [BackgroundImageSrc.sm2x]: c_background_image_BackgroundImage_sm_2x && c_background_image_BackgroundImage_sm_2x.name,
-  [BackgroundImageSrc.xs]: c_background_image_BackgroundImage_xs && c_background_image_BackgroundImage_xs.name,
-  [BackgroundImageSrc.xs2x]: c_background_image_BackgroundImage_xs_2x && c_background_image_BackgroundImage_xs_2x.name,
+  [BackgroundImageSrc.lg]: c_background_image_BackgroundImage_lg && c_background_image_BackgroundImage_lg.name,
   [BackgroundImageSrc.filter]: c_background_image_Filter && c_background_image_Filter.name
 };
 
@@ -42,11 +39,11 @@ export const propTypes = {
   src: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.shape({
-      lg: PropTypes.string,
-      sm: PropTypes.string,
-      sm2x: PropTypes.string,
       xs: PropTypes.string,
       xs2x: PropTypes.string,
+      sm: PropTypes.string,
+      sm2x: PropTypes.string,
+      lg: PropTypes.string,
       filter: PropTypes.string
     })
   ]).isRequired
@@ -72,9 +69,9 @@ const BackgroundImage = ({ className, src, ...props }) => {
   const bgStyles = StyleSheet.create({
     bgOverrides: `&.pf-c-background-image {
       ${Object.keys(variableOverrides).reduce(
-      (prev, size) => `${prev.length ? prev : ''}${variableMap[size]}: url('${variableOverrides[size]}');`,
-      {}
-    )}
+        (prev, size) => `${prev.length ? prev : ''}${variableMap[size]}: url('${variableOverrides[size]}');`,
+        {}
+      )}
     }`
   });
 
