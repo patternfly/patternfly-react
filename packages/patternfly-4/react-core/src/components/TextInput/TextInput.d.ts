@@ -1,16 +1,12 @@
 import { SFC, HTMLProps, FormEvent } from 'react';
 import { Omit } from '../../typeUtils';
 
-export interface TextInputProps extends Omit<HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled'> {
-  className?: string;
+export interface TextInputProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'disabled'> {
   isRequired?: boolean;
-  type?: string;
-  value?: string | number;
   isValid?: boolean;
   isDisabled?: boolean;
-  onChange?(checked: boolean, event: FormEvent<HTMLInputElement>): void;
+  onChange?(value: string, event: FormEvent<HTMLInputElement>): void;
   isReadOnly?: boolean;
-  'aria-label'?: string;
 }
 
 declare const TextInput: SFC<TextInputProps>;
