@@ -38,8 +38,14 @@ DualListItems.propTypes = {
   /** An array of items to create list items elements uppon */
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+      label: PropTypes.string.isRequired,
+      value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+      children: PropTypes.arrayOf(
+        PropTypes.shape({
+          label: PropTypes.string,
+          value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+        })
+      )
     })
   ),
   /** The term which is flitering the list. */

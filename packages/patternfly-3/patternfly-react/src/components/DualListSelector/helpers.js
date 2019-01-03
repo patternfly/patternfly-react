@@ -243,3 +243,23 @@ export const isItemSelected = item => item.checked;
 export const isItemHidden = item => item.hidden;
 
 export const isItemDisabled = item => item.disabled;
+
+export const getSelectedItems = list => {
+  const selectedItems = [];
+  list.forEach(item => {
+    if (isItemSelected(item)) {
+      selectedItems.push(item);
+    } else if (itemHasChildren(item)) {
+      const selectedChildren = [];
+      item.children.forEach(child => {
+        if (isItemSelected(child)) {
+          selectedChildren.push(child);
+        }
+      });
+      if (selectedChildren.length > 0) {
+        selectedItems.push({ ...item, children: selectedChildren });
+      }
+    }
+  });
+  return selectedItems;
+};

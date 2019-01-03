@@ -6,8 +6,10 @@ import DualListCounter from './components/DualListCounter';
 import DualListFilter from './components/DualListFilter';
 import DualListFooter from './components/DualListFooter';
 import DualListHeading from './components/DualListHeading';
+import DualListHiddenSelect from './components/DualListHiddenSelect';
 import DualListItem from './components/DualListItem';
 import DualListItems from './components/DualListItems';
+import DualListItemTooltip from './components/DualListItemTooltip';
 import DualListMainCheckbox from './components/DualListMainCheckbox';
 import DualListSelector from './components/DualListSelector';
 import DualListSort from './components/DualListSort';
@@ -21,8 +23,10 @@ export {
   DualListFilter,
   DualListFooter,
   DualListHeading,
+  DualListHiddenSelect,
   DualListItem,
   DualListItems,
+  DualListItemTooltip,
   DualListMainCheckbox,
   DualListSelector,
   DualListSort

@@ -30,7 +30,8 @@ const getProps = () => ({
   },
   right: {
     items: [{ value: 'Donald Trump', label: 'Donald Trump' }]
-  }
+  },
+  allowHiddenInputs: true
 });
 
 test('dual-list render properly ', () => {

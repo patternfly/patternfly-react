@@ -69,15 +69,17 @@ class DualListControlled extends React.Component {
   };
 
   render() {
+    const { left, right, allowHiddenInputs } = this.state;
     return (
       <DualList
-        left={{ ...this.state.left }}
-        right={{ ...this.state.right }}
+        left={{ ...left }}
+        right={{ ...right }}
         onItemChange={this.onItemChange}
         onSortClick={this.onSortClick}
         onFilterChange={this.onFilterChange}
         onMainCheckboxChange={this.onMainCheckboxChange}
         onChange={this.onChange}
+        allowHiddenInputs={allowHiddenInputs}
       />
     );
   }
