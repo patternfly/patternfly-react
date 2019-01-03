@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import UUID from 'uuid/v1';
-import { Form, DropdownKebab } from '../../../index';
+import { DropdownKebab } from '../../../index';
 import DualListFilter from './DualListFilter';
 import DualListSort from './DualListSort';
 import DualListMainCheckbox from './DualListMainCheckbox';
@@ -20,14 +20,12 @@ const DualListHeading = ({
   kebabID
 }) => (
   <div className="dual-list-pf-heading">
-    <Form inline>
-      <DualListMainCheckbox side={side} onChange={onMainCheckboxChange} isChecked={isMainChecked} />
-      <DualListFilter side={side} onChange={onFilterChange} />
-      <DualListSort side={side} onClick={onSortClick} isSortAsc={isSortAsc} ariaLabel={sortAriaLabel} />
-      <DropdownKebab id={kebabID} pullRight>
-        {kebabMenu}
-      </DropdownKebab>
-    </Form>
+    <DualListMainCheckbox side={side} onChange={onMainCheckboxChange} isChecked={isMainChecked} />
+    <DualListFilter side={side} onChange={onFilterChange} />
+    <DualListSort side={side} onClick={onSortClick} isSortAsc={isSortAsc} ariaLabel={sortAriaLabel} />
+    <DropdownKebab id={kebabID} pullRight>
+      {kebabMenu}
+    </DropdownKebab>
   </div>
 );
 
