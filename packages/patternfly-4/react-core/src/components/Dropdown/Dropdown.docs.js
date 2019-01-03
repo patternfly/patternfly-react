@@ -2,6 +2,7 @@ import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator, DropdownToggle 
 import Panel from './examples/DropdownPanel';
 import Simple from './examples/SimpleDropdown';
 import Kebab from './examples/KebabDropdown';
+import IconDropdown from './examples/IconDropdown';
 import PositionRight from './examples/PositionRightDropdown';
 import DirectionUp from './examples/DirectionUpDropdown';
 import ReactLinkDropdown from './examples/ReactLinkDropdown';
@@ -20,6 +21,7 @@ export default {
     { component: PositionRight, title: 'Dropdown - position right' },
     { component: DirectionUp, title: 'Dropdown - direction up' },
     { component: Kebab, title: 'Kebab' },
+    { component: IconDropdown, title: 'Dropdown - Icon Only' },
     {
       component: ReactLinkDropdown,
       title: 'React Router Link usage',
