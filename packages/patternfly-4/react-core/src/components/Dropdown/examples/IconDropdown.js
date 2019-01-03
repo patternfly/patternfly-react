@@ -3,12 +3,9 @@ import { Dropdown, DropdownItem, DropdownToggle, DropdownSeparator } from '@patt
 import { ThIcon } from '@patternfly/react-icons';
 
 export default class IconDropdown extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false
-    };
-  }
+  state = {
+    isOpen: false
+  };
 
   onToggle = isOpen => {
     this.setState({
