@@ -1,6 +1,8 @@
-import React, { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
+
 import styles from '@patternfly/patternfly-next/components/Avatar/avatar.css';
 import { css } from '@patternfly/react-styles';
+import React, { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
+
 
 const defaultProps = {
   className: '',
