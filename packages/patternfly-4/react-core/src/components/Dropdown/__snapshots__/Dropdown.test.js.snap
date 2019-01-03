@@ -696,7 +696,11 @@ exports[`KebabToggle expanded 1`] = `
       <FocusTrap
         _createFocusTrap={[Function]}
         active={true}
-        focusTrapOptions={Object {}}
+        focusTrapOptions={
+          Object {
+            "clickOutsideDeactivates": true,
+          }
+        }
         paused={false}
         tag="div"
       >
@@ -2103,7 +2107,11 @@ exports[`dropdown expanded 1`] = `
       <FocusTrap
         _createFocusTrap={[Function]}
         active={true}
-        focusTrapOptions={Object {}}
+        focusTrapOptions={
+          Object {
+            "clickOutsideDeactivates": true,
+          }
+        }
         paused={false}
         tag="div"
       >
