@@ -2,6 +2,7 @@
 
 exports[`dual-list render properly  1`] = `
 <DualList
+  allowHiddenInputs={true}
   arrows={
     Object {
       "left": Object {

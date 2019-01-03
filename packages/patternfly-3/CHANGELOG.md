@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.19.0"></a>
+# [7.19.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.18.0...patternfly3-react-lerna-root@7.19.0) (2019-01-03)
+
+
+### Bug Fixes
+
+* **DualList:** Adding hidden HTML select inputs to reflect the selector items. ([#1095](https://github.com/patternfly/patternfly-react/issues/1095)) ([59ca4e9](https://github.com/patternfly/patternfly-react/commit/59ca4e9))
+
+
+### Features
+
+* **ListViewItem:** Add initialExpand prop to ListViewItem ([#1114](https://github.com/patternfly/patternfly-react/issues/1114)) ([15ac1b7](https://github.com/patternfly/patternfly-react/commit/15ac1b7))
+
+
+
+
 <a name="7.18.0"></a>
 # [7.18.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.16.2...patternfly3-react-lerna-root@7.18.0) (2018-12-19)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.33.7"></a>
+## [1.33.7](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.33.6...patternfly4-react-lerna-root@1.33.7) (2019-01-03)
+
+
+### Bug Fixes
+
+* **BackgroundImage:** remove old tokens ([#1124](https://github.com/patternfly/patternfly-react/issues/1124)) ([f091e28](https://github.com/patternfly/patternfly-react/commit/f091e28))
+
+
+
+
 <a name="1.33.6"></a>
 ## [1.33.6](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.33.5...patternfly4-react-lerna-root@1.33.6) (2019-01-02)
 

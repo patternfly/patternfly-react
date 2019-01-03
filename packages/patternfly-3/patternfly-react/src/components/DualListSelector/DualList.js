@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import cloneDeep from 'lodash/cloneDeep';
 import DualListArrows from './components/DualListArrows';
 import DualListSelector from './components/DualListSelector';
+import DualListHiddenSelect from './components/DualListHiddenSelect';
 import { noop, debounce } from '../../common/helpers';
 import {
   arrangeArray,
@@ -220,9 +221,16 @@ class DualList extends React.Component {
   };
 
   render() {
-    const { left, right, arrows } = this.props;
+    const { left, right, arrows, allowHiddenInputs } = this.props;
+    const hiddenInputs = allowHiddenInputs ? (
+      <React.Fragment>
+        <DualListHiddenSelect {...left.inputProps} items={left.items} />
+        <DualListHiddenSelect {...right.inputProps} items={right.items} />
+      </React.Fragment>
+    ) : null;
     return (
       <div className="dual-list-pf">
+        {hiddenInputs}
         <DualListSelector
           side="left"
           {...left}
@@ -259,14 +267,21 @@ DualList.propTypes = {
   left: PropTypes.shape({
     items: PropTypes.arrayOf(
       PropTypes.shape({
-        label: PropTypes.string,
-        value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+        label: PropTypes.string.isRequired,
+        value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+        children: PropTypes.arrayOf(
+          PropTypes.shape({
+            label: PropTypes.string,
+            value: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+          })
+        )
       })
     ),
     options: PropTypes.node,
     isSortAsc: PropTypes.bool,
     sortBy: PropTypes.string,
-    isMainChecked: PropTypes.bool
+    isMainChecked: PropTypes.bool,
+    inputProps: PropTypes.object
   }),
   /**
    * - items: Array of objects that must contain a label and a value.
@@ -285,7 +300,8 @@ DualList.propTypes = {
     options: PropTypes.node,
     isSortAsc: PropTypes.bool,
     sortBy: PropTypes.string,
-    isMainChecked: PropTypes.bool
+    isMainChecked: PropTypes.bool,
+    inputProps: PropTypes.object
   }),
   /**
    * - Conatains the left and right arrows properties,
@@ -303,6 +319,12 @@ DualList.propTypes = {
       ariaLabel: PropTypes.string
     })
   }),
+  /**
+   * Allows adding hidden select inputs
+   * that reflects the dual list selected items.
+   * It can be used while submitting a form to access the dual list data.
+   * */
+  allowHiddenInputs: PropTypes.bool,
   /**
    * Function that runs after an item was clicked.
    * receives an object of: { side, items, selectCount, isMainChecked } as a callback.
@@ -337,7 +359,8 @@ DualList.defaultProps = {
     isSortAsc: true,
     sortBy: 'label',
     filterTerm: '',
-    isMainChecked: false
+    isMainChecked: false,
+    inputProps: null
   },
   right: {
     items: [],
@@ -345,7 +368,8 @@ DualList.defaultProps = {
     isSortAsc: true,
     sortBy: 'label',
     filterTerm: '',
-    isMainChecked: false
+    isMainChecked: false,
+    inputProps: null
   },
   arrows: {
     left: {
@@ -357,6 +381,7 @@ DualList.defaultProps = {
       ariaLabel: null
     }
   },
+  allowHiddenInputs: false,
   onItemChange: noop,
   onSortClick: noop,
   onFilterChange: noop,
