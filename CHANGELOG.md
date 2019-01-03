@@ -2,6 +2,52 @@
 ## Change Log (2019-01-03)
 
 #### :bug: Bug Fix
+* `patternfly-4`
+  * [#1124](https://github.com/patternfly/patternfly-react/pull/1124) fix(BackgroundImage): remove old tokens ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly3-react-lerna-root@7.19.0 (2019-01-03)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1114](https://github.com/patternfly/patternfly-react/pull/1114) feat(ListViewItem): Add initialExpand prop to ListViewItem ([@glekner](https://github.com/glekner))
+  * [#1095](https://github.com/patternfly/patternfly-react/pull/1095) fix(DualList): Adding hidden HTML select inputs to reflect the selector items ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.29.0 (2019-01-03)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1114](https://github.com/patternfly/patternfly-react/pull/1114) feat(ListViewItem): Add initialExpand prop to ListViewItem ([@glekner](https://github.com/glekner))
+  * [#1095](https://github.com/patternfly/patternfly-react/pull/1095) fix(DualList): Adding hidden HTML select inputs to reflect the selector items ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.16.1 (2019-01-03)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1114](https://github.com/patternfly/patternfly-react/pull/1114) feat(ListViewItem): Add initialExpand prop to ListViewItem ([@glekner](https://github.com/glekner))
+  * [#1095](https://github.com/patternfly/patternfly-react/pull/1095) fix(DualList): Adding hidden HTML select inputs to reflect the selector items ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.10.6 (2019-01-03)
+
+#### :bug: Bug Fix
 * `patternfly-3`
   * [#1114](https://github.com/patternfly/patternfly-react/pull/1114) feat(ListViewItem): Add initialExpand prop to ListViewItem ([@glekner](https://github.com/glekner))
   * [#1095](https://github.com/patternfly/patternfly-react/pull/1095) fix(DualList): Adding hidden HTML select inputs to reflect the selector items ([@Laviro](https://github.com/Laviro))
