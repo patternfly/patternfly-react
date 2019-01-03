@@ -43,9 +43,10 @@
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js --extensions \".css,.js,jsx,.ts,.tsx\"",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions \".css,.js,jsx,.ts,.tsx\"",
+    "build:generate:dts": "tsc -p src/tsconfig.dts.json",
     "build:typecheck": "tsc",
     "build:tsd:copy": "node ./scripts/copyTS.js",
-    "postbuild": "yarn build:typecheck && node ./build/copyStyles.js"
+    "postbuild": "yarn build:typecheck && yarn build:generate:dts && node ./build/copyStyles.js"
   },
   "optionalDependencies": {
     "@patternfly/react-tokens": "^1.0.0"
