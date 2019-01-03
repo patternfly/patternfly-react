@@ -1,5 +1,47 @@
 
-## Change Log (2019-01-02)
+## Change Log (2019-01-03)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1114](https://github.com/patternfly/patternfly-react/pull/1114) feat(ListViewItem): Add initialExpand prop to ListViewItem ([@glekner](https://github.com/glekner))
+  * [#1095](https://github.com/patternfly/patternfly-react/pull/1095) fix(DualList): Adding hidden HTML select inputs to reflect the selector items ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 2
+- Gilad Lekner ([@glekner](https://github.com/glekner))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.33.6 (2019-01-02)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-table@0.2.31 (2019-01-02)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.19.39 (2019-01-02)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 1
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.43.6 (2019-01-02)
 
 #### :bug: Bug Fix
 * `patternfly-4`
