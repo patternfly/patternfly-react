@@ -1,5 +1,35 @@
 
-## Change Log (2019-01-03)
+## patternfly4-react-lerna-root@1.33.7 (2019-01-03)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1124](https://github.com/patternfly/patternfly-react/pull/1124) fix(BackgroundImage): remove old tokens ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-table@0.2.32 (2019-01-03)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1124](https://github.com/patternfly/patternfly-react/pull/1124) fix(BackgroundImage): remove old tokens ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.19.40 (2019-01-03)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1124](https://github.com/patternfly/patternfly-react/pull/1124) fix(BackgroundImage): remove old tokens ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.43.7 (2019-01-03)
 
 #### :bug: Bug Fix
 * `patternfly-4`
