@@ -124,7 +124,6 @@ exports[`KebabToggle basic 1`] = `
       className=""
       component="div"
       isOpen={true}
-      onSelect={[Function]}
       position="left"
     >
       <div
@@ -730,7 +729,6 @@ exports[`KebabToggle expanded 1`] = `
       className=""
       component="ul"
       isOpen={true}
-      onSelect={[Function]}
       position="left"
     >
       <FocusTrap
@@ -756,7 +754,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$link"
+              key="link"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -766,6 +764,7 @@ exports[`KebabToggle expanded 1`] = `
                   className=""
                   href="#"
                   onClick={[Function]}
+                  onSelect={[Function]}
                 >
                   Link
                 </a>
@@ -777,7 +776,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$action"
+              key="action"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -790,7 +789,11 @@ exports[`KebabToggle expanded 1`] = `
                   type="button"
 =======
                   onClick={[Function]}
+<<<<<<< HEAD
 >>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
+=======
+                  onSelect={[Function]}
+>>>>>>> feat(Dropdown): use Context to pass onSelect handlers
                 >
                   Action
                 </button>
@@ -802,7 +805,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={true}
               isHovered={false}
-              key=".$disabled link"
+              key="disabled link"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -812,6 +815,7 @@ exports[`KebabToggle expanded 1`] = `
                   className="pf-m-disabled"
                   href="#"
                   onClick={[Function]}
+                  onSelect={[Function]}
                   tabIndex={-1}
                 >
                   Disabled Link
@@ -824,7 +828,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={true}
               isHovered={false}
-              key=".$disabled action"
+              key="disabled action"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -837,7 +841,11 @@ exports[`KebabToggle expanded 1`] = `
                   type="button"
 =======
                   onClick={[Function]}
+<<<<<<< HEAD
 >>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
+=======
+                  onSelect={[Function]}
+>>>>>>> feat(Dropdown): use Context to pass onSelect handlers
                 >
                   Disabled Action
                 </button>
@@ -849,8 +857,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$separator"
-              onSelect={[Function]}
+              key="separator"
             >
               <DropdownItem
                 className="pf-c-dropdown__separator"
@@ -867,6 +874,7 @@ exports[`KebabToggle expanded 1`] = `
                     className="pf-c-dropdown__separator"
                     href="#"
                     onClick={[Function]}
+                    onSelect={[Function]}
                     role="separator"
                   />
                 </li>
@@ -878,7 +886,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$separated link"
+              key="separated link"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -888,6 +896,7 @@ exports[`KebabToggle expanded 1`] = `
                   className=""
                   href="#"
                   onClick={[Function]}
+                  onSelect={[Function]}
                 >
                   Separated Link
                 </a>
@@ -899,7 +908,7 @@ exports[`KebabToggle expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$separated action"
+              key="separated action"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -912,7 +921,11 @@ exports[`KebabToggle expanded 1`] = `
                   type="button"
 =======
                   onClick={[Function]}
+<<<<<<< HEAD
 >>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
+=======
+                  onSelect={[Function]}
+>>>>>>> feat(Dropdown): use Context to pass onSelect handlers
                 >
                   Separated Action
                 </button>
@@ -1620,7 +1633,6 @@ exports[`dropdown basic 1`] = `
       className=""
       component="div"
       isOpen={true}
-      onSelect={[Function]}
       position="left"
     >
       <div
@@ -2253,7 +2265,6 @@ exports[`dropdown expanded 1`] = `
       className=""
       component="ul"
       isOpen={true}
-      onSelect={[Function]}
       position="left"
     >
       <FocusTrap
@@ -2279,7 +2290,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$link"
+              key="link"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -2289,6 +2300,7 @@ exports[`dropdown expanded 1`] = `
                   className=""
                   href="#"
                   onClick={[Function]}
+                  onSelect={[Function]}
                 >
                   Link
                 </a>
@@ -2300,7 +2312,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$action"
+              key="action"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -2313,7 +2325,11 @@ exports[`dropdown expanded 1`] = `
                   type="button"
 =======
                   onClick={[Function]}
+<<<<<<< HEAD
 >>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
+=======
+                  onSelect={[Function]}
+>>>>>>> feat(Dropdown): use Context to pass onSelect handlers
                 >
                   Action
                 </button>
@@ -2325,7 +2341,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={true}
               isHovered={false}
-              key=".$disabled link"
+              key="disabled link"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -2335,6 +2351,7 @@ exports[`dropdown expanded 1`] = `
                   className="pf-m-disabled"
                   href="#"
                   onClick={[Function]}
+                  onSelect={[Function]}
                   tabIndex={-1}
                 >
                   Disabled Link
@@ -2347,7 +2364,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={true}
               isHovered={false}
-              key=".$disabled action"
+              key="disabled action"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -2360,7 +2377,11 @@ exports[`dropdown expanded 1`] = `
                   type="button"
 =======
                   onClick={[Function]}
+<<<<<<< HEAD
 >>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
+=======
+                  onSelect={[Function]}
+>>>>>>> feat(Dropdown): use Context to pass onSelect handlers
                 >
                   Disabled Action
                 </button>
@@ -2372,8 +2393,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$separator"
-              onSelect={[Function]}
+              key="separator"
             >
               <DropdownItem
                 className="pf-c-dropdown__separator"
@@ -2390,6 +2410,7 @@ exports[`dropdown expanded 1`] = `
                     className="pf-c-dropdown__separator"
                     href="#"
                     onClick={[Function]}
+                    onSelect={[Function]}
                     role="separator"
                   />
                 </li>
@@ -2401,7 +2422,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$separated link"
+              key="separated link"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -2411,6 +2432,7 @@ exports[`dropdown expanded 1`] = `
                   className=""
                   href="#"
                   onClick={[Function]}
+                  onSelect={[Function]}
                 >
                   Separated Link
                 </a>
@@ -2422,7 +2444,7 @@ exports[`dropdown expanded 1`] = `
               href="#"
               isDisabled={false}
               isHovered={false}
-              key=".$separated action"
+              key="separated action"
               onClick={[Function]}
               onSelect={[Function]}
             >
@@ -2435,7 +2457,11 @@ exports[`dropdown expanded 1`] = `
                   type="button"
 =======
                   onClick={[Function]}
+<<<<<<< HEAD
 >>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
+=======
+                  onSelect={[Function]}
+>>>>>>> feat(Dropdown): use Context to pass onSelect handlers
                 >
                   Separated Action
                 </button>

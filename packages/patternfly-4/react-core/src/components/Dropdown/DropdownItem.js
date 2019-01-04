@@ -3,6 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../internal/componentShape';
+import { DropdownContext } from './dropdownConstants';
 
 const propTypes = {
   /** Anything which can be rendered as dropdown item */
@@ -36,56 +37,60 @@ const defaultProps = {
   onClick: Function.prototype
 };
 
-const DropdownItem = ({
-  className,
-  children,
-  isHovered,
-  onSelect,
-  onClick,
-  component: Component,
-  isDisabled,
-  ...props
-}) => {
-  const additionalProps = props;
-  if (Component === 'a') {
-    additionalProps['aria-disabled'] = isDisabled;
-    additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
-  } else if (Component === 'button') {
-    additionalProps.disabled = isDisabled;
-    additionalProps.type = additionalProps.type || 'button';
-  }
+class DropdownItem extends React.Component {
+  render() {
+    const {
+      className,
+      children,
+      isHovered,
+      onClick,
+      component: Component,
+      isDisabled,
+      ...additionalProps
+    } = this.props;
+    if (Component === 'a') {
+      additionalProps['aria-disabled'] = isDisabled;
+      additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
+    } else if (Component === 'button') {
+      additionalProps.disabled = isDisabled;
+    }
 
-  return (
-    <li>
-      {React.isValidElement(children) ? (
-        React.Children.map(children, child =>
-          React.cloneElement(child, {
-            className: `${css(
-              isDisabled && styles.modifiers.disabled,
-              isHovered && styles.modifiers.hover,
-              className
-            )} ${child.props.className}`
-          })
-        )
-      ) : (
-        <Component
-          {...additionalProps}
-          className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
-          onClick={event => {
-            if (Component === 'button') {
-              onClick && onClick(event);
-              onSelect(event);
-            } else {
-              onSelect(event);
-            }
-          }}
-        >
-          {children}
-        </Component>
-      )}
-    </li>
-  );
-};
+    return (
+      <DropdownContext.Consumer>
+        {onSelect => (
+          <li>
+            {React.isValidElement(children) ? (
+              React.Children.map(children, child =>
+                React.cloneElement(child, {
+                  className: `${css(
+                    isDisabled && styles.modifiers.disabled,
+                    isHovered && styles.modifiers.hover,
+                    className
+                  )} ${child.props.className}`
+                })
+              )
+            ) : (
+              <Component
+                {...additionalProps}
+                className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
+                onClick={event => {
+                  if (!isDisabled) {
+                    if (Component === 'button') onClick && onClick(event);
+                    onSelect && onSelect(event);
+                  } else {
+                    Function.prototype;
+                  }
+                }}
+              >
+                {children}
+              </Component>
+            )}
+          </li>
+        )}
+      </DropdownContext.Consumer>
+    );
+  }
+}
 
 DropdownItem.propTypes = propTypes;
 DropdownItem.defaultProps = defaultProps;
