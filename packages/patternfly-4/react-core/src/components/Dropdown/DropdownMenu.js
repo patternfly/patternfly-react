@@ -45,7 +45,9 @@ const DropdownMenu = ({ className, isOpen, position, children, component: Compon
     );
   } else if (Component === 'ul') {
     menu = (
-      <FocusTrap>
+      <FocusTrap focusTrapOptions={{
+        clickOutsideDeactivates: true
+      }}>
         <Component
           {...props}
           className={css(
