@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.44.2"></a>
+## [1.44.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.44.1...@patternfly/react-core@1.44.2) (2019-01-04)
+
+
+### Bug Fixes
+
+* **dropdown:** add focus trap option that allows  close on click ([#1126](https://github.com/patternfly/patternfly-react/issues/1126)) ([2878615](https://github.com/patternfly/patternfly-react/commit/2878615))
+
+
+
+
 <a name="1.44.1"></a>
 ## [1.44.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.44.0...@patternfly/react-core@1.44.1) (2019-01-04)
 

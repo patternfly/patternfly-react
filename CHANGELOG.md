@@ -1,4 +1,14 @@
 
+## Change Log (2019-01-04)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1126](https://github.com/patternfly/patternfly-react/pull/1126) fix(dropdown): add focus trap option that allows  close on click ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
 ## patternfly4-react-lerna-root@1.34.0 (2019-01-04)
 
 #### :rocket: New Feature
