@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.44.0"></a>
+# [1.44.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.7...@patternfly/react-core@1.44.0) (2019-01-04)
+
+
+### Bug Fixes
+
+* **TextInput/Area:** update type definitions ([#1120](https://github.com/patternfly/patternfly-react/issues/1120)) ([0306a08](https://github.com/patternfly/patternfly-react/commit/0306a08))
+
+
+### Features
+
+* **tooltip:** add tooltip to PF4 ([#1103](https://github.com/patternfly/patternfly-react/issues/1103)) ([c9aa254](https://github.com/patternfly/patternfly-react/commit/c9aa254))
+
+
+
+
 <a name="1.43.7"></a>
 ## [1.43.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.43.6...@patternfly/react-core@1.43.7) (2019-01-03)
 
