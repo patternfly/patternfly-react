@@ -1,5 +1,56 @@
 
-## Change Log (2019-01-04)
+## patternfly4-react-lerna-root@1.34.0 (2019-01-04)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1103](https://github.com/patternfly/patternfly-react/pull/1103) feat(tooltip): add tooltip to PF4 ([@jschuler](https://github.com/jschuler))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1127](https://github.com/patternfly/patternfly-react/pull/1127) Updated drop down with icon only example ([@dlabaj](https://github.com/dlabaj))
+  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 3
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-table@0.2.33 (2019-01-04)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1103](https://github.com/patternfly/patternfly-react/pull/1103) feat(tooltip): add tooltip to PF4 ([@jschuler](https://github.com/jschuler))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1127](https://github.com/patternfly/patternfly-react/pull/1127) Updated drop down with icon only example ([@dlabaj](https://github.com/dlabaj))
+  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 3
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-docs@3.19.41 (2019-01-04)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1103](https://github.com/patternfly/patternfly-react/pull/1103) feat(tooltip): add tooltip to PF4 ([@jschuler](https://github.com/jschuler))
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1127](https://github.com/patternfly/patternfly-react/pull/1127) Updated drop down with icon only example ([@dlabaj](https://github.com/dlabaj))
+  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz1337](https://github.com/boaz1337))
+
+#### Committers: 3
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- [@boaz1337](https://github.com/boaz1337)
+
+
+## @patternfly/react-core@1.44.0 (2019-01-04)
 
 #### :rocket: New Feature
 * `patternfly-4`

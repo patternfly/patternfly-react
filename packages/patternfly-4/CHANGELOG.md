@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.34.1"></a>
+## [1.34.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.34.0...patternfly4-react-lerna-root@1.34.1) (2019-01-04)
+
+
+### Bug Fixes
+
+* **Radio.d.ts:** Made aria-label required ([#1116](https://github.com/patternfly/patternfly-react/issues/1116)) ([0c01314](https://github.com/patternfly/patternfly-react/commit/0c01314))
+
+
+
+
 <a name="1.34.0"></a>
 # [1.34.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.33.7...patternfly4-react-lerna-root@1.34.0) (2019-01-04)
 
