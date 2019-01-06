@@ -14,7 +14,7 @@ export interface IconProps extends Omit<HTMLProps<SVGElement>, 'size'> {
   title?: string;
 }
 
-export interface EmptyStateIconProps extends HTMLProps<SVGElement> {
+export interface EmptyStateIconProps extends IconProps {
   icon: string | SFC<IconProps>,
 }
 
