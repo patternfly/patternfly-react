@@ -74,7 +74,17 @@ MessageDialog.propTypes = {
   /** A callback fired when the header closeButton or backdrop is clicked */
   onHide: PropTypes.func.isRequired,
   /** callback to trigger when clicking the default footer primary action button */
-  primaryAction: PropTypes.func.isRequired,
+  primaryAction(props, propName, componentName) {
+    if (props.footer) {
+      return null;
+    }
+    return PropTypes.checkPropTypes(
+      { primaryAction: PropTypes.func.isRequired },
+      { [propName]: props[propName] },
+      propName,
+      componentName
+    );
+  },
   /** callback to trigger when clicking the default footer secondary action button */
   secondaryAction: PropTypes.func,
   /** Bootstrap button style for primary action */
@@ -82,7 +92,17 @@ MessageDialog.propTypes = {
   /** Bootstrap button style for secondary action */
   secondaryActionButtonBsStyle: PropTypes.string,
   /** content for default footer primary action button */
-  primaryActionButtonContent: PropTypes.node.isRequired,
+  primaryActionButtonContent(props, propName, componentName) {
+    if (props.footer) {
+      return null;
+    }
+    return PropTypes.checkPropTypes(
+      { primaryActionButtonContent: PropTypes.node.isRequired },
+      { [propName]: props[propName] },
+      propName,
+      componentName
+    );
+  },
   /** content for default footer secondary action button */
   secondaryActionButtonContent: PropTypes.node,
   /** modal title */
@@ -105,9 +125,11 @@ MessageDialog.propTypes = {
 
 MessageDialog.defaultProps = {
   className: '',
+  primaryAction: null,
   secondaryAction: noop,
   primaryActionButtonBsStyle: 'primary',
   secondaryActionButtonBsStyle: 'default',
+  primaryActionButtonContent: null,
   secondaryActionButtonContent: null,
   title: '',
   icon: null,

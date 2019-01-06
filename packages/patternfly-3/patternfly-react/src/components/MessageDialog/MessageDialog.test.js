@@ -75,9 +75,7 @@ describe('rendering with options', () => {
         <Button>Close</Button>
       </React.Fragment>
     );
-    const wrapper = shallow(
-      <MessageDialog {...baseProps} onHide={onHide} primaryAction={primaryAction} footer={footer} />
-    );
+    const wrapper = shallow(<MessageDialog show onHide={onHide} footer={footer} />);
 
     expect(wrapper.contains(footer)).toBe(true);
   });
@@ -118,5 +116,36 @@ describe('button interactions', () => {
       .at(1)
       .simulate('click');
     expect(primaryAction).toHaveBeenCalled();
+  });
+});
+
+describe('test primary action and footer props conflict', () => {
+  const consoleErr = global.console.error;
+
+  beforeEach(() => {
+    global.console.error = jest.fn();
+  });
+
+  afterEach(() => {
+    global.console.error = consoleErr;
+  });
+
+  test('check that props check fails if footer is null and primary action is not set', () => {
+    shallow(<MessageDialog show onHide={jest.fn()} primaryActionButtonContent="OK" />);
+    expect(global.console.error).toBeCalledWith(
+      'Warning: Failed primaryAction type: The primaryAction `primaryAction` is marked as required in `MessageDialog`, but its value is `null`.'
+    );
+  });
+
+  test('check that props check fails if those props are not set', () => {
+    shallow(<MessageDialog show onHide={jest.fn()} />);
+    expect(global.console.error).toBeCalledWith(
+      'Warning: Failed primaryActionButtonContent type: The primaryActionButtonContent `primaryActionButtonContent` is marked as required in `MessageDialog`, but its value is `null`.'
+    );
+  });
+
+  test('check that props check does not fail if footer is not null and primary action props are not set', () => {
+    shallow(<MessageDialog show onHide={jest.fn()} footer={<div>This is my footer</div>} />);
+    expect(global.console.error).not.toBeCalled();
   });
 });
