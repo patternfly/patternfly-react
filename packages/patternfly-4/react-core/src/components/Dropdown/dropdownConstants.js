@@ -13,3 +13,8 @@ export const DropdownDirection = {
 export const DropdownContext = React.createContext({
   onSelect: () => {}
 });
+
+export const DropdownArrowContext = React.createContext({
+  keyHandler: null,
+  sendRef: null
+});

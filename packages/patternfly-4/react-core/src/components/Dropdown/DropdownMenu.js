@@ -3,7 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../internal/componentShape';
-import { DropdownPosition, DropdownContext } from './dropdownConstants';
+import { DropdownPosition, DropdownContext, DropdownArrowContext } from './dropdownConstants';
 import FocusTrap from 'focus-trap-react';
 
 const propTypes = {
@@ -73,9 +73,7 @@ class DropdownMenu extends React.Component {
   extendChildren() {
     return React.Children.map(this.props.children, (child, index) =>
       React.cloneElement(child, {
-        keyHandler: this.keyHandler,
-        index,
-        sendRef: this.sendRef
+        index
       })
     );
   }
@@ -127,23 +125,30 @@ class DropdownMenu extends React.Component {
       );
     } else if (Component === 'ul') {
       menu = (
-        <FocusTrap
-          focusTrapOptions={{
-            clickOutsideDeactivates: true
+        <DropdownArrowContext.Provider
+          value={{
+            keyHandler: this.keyHandler,
+            sendRef: this.sendRef
           }}
         >
-          <Component
-            {...props}
-            className={css(
-              styles.dropdownMenu,
-              position === DropdownPosition.right && styles.modifiers.alignRight,
-              className
-            )}
-            hidden={!isOpen}
+          <FocusTrap
+            focusTrapOptions={{
+              clickOutsideDeactivates: true
+            }}
           >
-            {this.extendChildren()}
-          </Component>
-        </FocusTrap>
+            <Component
+              {...props}
+              className={css(
+                styles.dropdownMenu,
+                position === DropdownPosition.right && styles.modifiers.alignRight,
+                className
+              )}
+              hidden={!isOpen}
+            >
+              {this.extendChildren()}
+            </Component>
+          </FocusTrap>
+        </DropdownArrowContext.Provider>
       );
     }
     return menu;

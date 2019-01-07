@@ -173,52 +173,68 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -232,26 +248,34 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -372,52 +396,68 @@ exports[`KebabToggle dropup 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -431,26 +471,34 @@ exports[`KebabToggle dropup 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -599,52 +647,68 @@ exports[`KebabToggle expanded 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -658,26 +722,34 @@ exports[`KebabToggle expanded 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -793,14 +865,18 @@ exports[`KebabToggle expanded 1`] = `
             <DropdownItem
               className=""
               component="a"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={0}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               key=".$link"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <a
@@ -817,14 +893,18 @@ exports[`KebabToggle expanded 1`] = `
             <DropdownItem
               className=""
               component="button"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={1}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               key=".$action"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <button
@@ -842,14 +922,18 @@ exports[`KebabToggle expanded 1`] = `
             <DropdownItem
               className=""
               component="a"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={2}
               isDisabled={true}
               isHovered={false}
               onClick={[Function]}
               key=".$disabled link"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <a
@@ -867,14 +951,18 @@ exports[`KebabToggle expanded 1`] = `
             <DropdownItem
               className=""
               component="button"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={3}
               isDisabled={true}
               isHovered={false}
               onClick={[Function]}
               key=".$disabled action"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <button
@@ -897,20 +985,22 @@ exports[`KebabToggle expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               key=".$separator"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <DropdownItem
                 className="pf-c-dropdown__separator"
                 component="div"
+                context={
+                  Object {
+                    "keyHandler": [Function],
+                    "sendRef": [Function],
+                  }
+                }
                 href="#"
                 index={4}
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                keyHandler={[Function]}
                 role="separator"
-                sendRef={[Function]}
               >
                 <li>
                   <div
@@ -926,14 +1016,18 @@ exports[`KebabToggle expanded 1`] = `
             <DropdownItem
               className=""
               component="a"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={5}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               key=".$separated link"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <a
@@ -950,14 +1044,18 @@ exports[`KebabToggle expanded 1`] = `
             <DropdownItem
               className=""
               component="button"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={6}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               key=".$separated action"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <button
@@ -1008,52 +1106,68 @@ exports[`KebabToggle plain 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1067,26 +1181,34 @@ exports[`KebabToggle plain 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1207,52 +1329,68 @@ exports[`KebabToggle regular 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1266,26 +1404,34 @@ exports[`KebabToggle regular 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1406,52 +1552,68 @@ exports[`KebabToggle right aligned 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1465,26 +1627,34 @@ exports[`KebabToggle right aligned 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1765,52 +1935,68 @@ exports[`dropdown dropup + right aligned 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -1824,26 +2010,32 @@ exports[`dropdown dropup + right aligned 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
-      >
-        Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -1973,52 +2165,68 @@ exports[`dropdown dropup 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2032,26 +2240,34 @@ exports[`dropdown dropup 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -2209,52 +2425,68 @@ exports[`dropdown expanded 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2268,26 +2500,34 @@ exports[`dropdown expanded 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -2406,14 +2646,18 @@ exports[`dropdown expanded 1`] = `
             <DropdownItem
               className=""
               component="a"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={0}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               key=".$link"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <a
@@ -2430,14 +2674,18 @@ exports[`dropdown expanded 1`] = `
             <DropdownItem
               className=""
               component="button"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={1}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               key=".$action"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <button
@@ -2452,14 +2700,18 @@ exports[`dropdown expanded 1`] = `
             <DropdownItem
               className=""
               component="a"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={2}
               isDisabled={true}
               isHovered={false}
               onClick={[Function]}
               key=".$disabled link"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <a
@@ -2477,14 +2729,18 @@ exports[`dropdown expanded 1`] = `
             <DropdownItem
               className=""
               component="button"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={3}
               isDisabled={true}
               isHovered={false}
               onClick={[Function]}
               key=".$disabled action"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <button
@@ -2507,20 +2763,22 @@ exports[`dropdown expanded 1`] = `
               isDisabled={false}
               isHovered={false}
               key=".$separator"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <DropdownItem
                 className="pf-c-dropdown__separator"
                 component="div"
+                context={
+                  Object {
+                    "keyHandler": [Function],
+                    "sendRef": [Function],
+                  }
+                }
                 href="#"
                 index={4}
                 isDisabled={false}
                 isHovered={false}
                 onClick={[Function]}
-                keyHandler={[Function]}
                 role="separator"
-                sendRef={[Function]}
               >
                 <li>
                   <div
@@ -2536,14 +2794,18 @@ exports[`dropdown expanded 1`] = `
             <DropdownItem
               className=""
               component="a"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={5}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               key=".$separated link"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <a
@@ -2560,14 +2822,18 @@ exports[`dropdown expanded 1`] = `
             <DropdownItem
               className=""
               component="button"
+              context={
+                Object {
+                  "keyHandler": [Function],
+                  "sendRef": [Function],
+                }
+              }
               href="#"
               index={6}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               key=".$separated action"
-              keyHandler={[Function]}
-              sendRef={[Function]}
             >
               <li>
                 <button
@@ -2624,52 +2890,68 @@ exports[`dropdown regular 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2683,26 +2965,34 @@ exports[`dropdown regular 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -2832,52 +3122,68 @@ exports[`dropdown right aligned 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Action
       </DropdownItem>,
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={true}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -2891,26 +3197,34 @@ exports[`dropdown right aligned 1`] = `
       <DropdownItem
         className=""
         component="a"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Link
       </DropdownItem>,
       <DropdownItem
         className=""
         component="button"
+        context={
+          Object {
+            "keyHandler": [Function],
+            "sendRef": [Function],
+          }
+        }
         href="#"
         index={-1}
         isDisabled={false}
         isHovered={false}
         onClick={[Function]}
-        keyHandler={[Function]}
-        sendRef={[Function]}
       >
         Separated Action
       </DropdownItem>,

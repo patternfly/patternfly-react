@@ -18,9 +18,11 @@ const propTypes = {
   isHovered: PropTypes.bool,
   /** Default hyperlink location */
   href: PropTypes.string,
-  keyHandler: PropTypes.func,
   index: PropTypes.number,
-  sendRef: PropTypes.func,
+  context: PropTypes.shape({
+    keyHandler: PropTypes.func,
+    sendRef: PropTypes.func
+  }),
   /** Additional props are spread to the container component */
   '': PropTypes.any,
   /** Callback for click event */
@@ -35,9 +37,11 @@ const defaultProps = {
   isDisabled: false,
   href: '#',
   onClick: Function.prototype,
-  keyHandler: () => undefined,
   index: -1,
-  sendRef: () => undefined
+  context: {
+    keyHandler: Function.prototype,
+    sendRef: Function.prototype
+  }
 };
 
 class DropdownItem extends React.Component {
@@ -46,7 +50,7 @@ class DropdownItem extends React.Component {
   }
 
   componentDidMount() {
-    this.props.sendRef(this.props.index, this.ref, this.props.isDisabled);
+    this.props.context.sendRef(this.props.index, this.ref, this.props.isDisabled);
   }
 
   onKeyDown = event => {
@@ -55,9 +59,9 @@ class DropdownItem extends React.Component {
     if (event.key === 'Tab') return;
     event.preventDefault();
     if (event.key === 'ArrowUp') {
-      this.props.keyHandler(this.props.index, 'up');
+      this.props.context.keyHandler(this.props.index, 'up');
     } else if (event.key === 'ArrowDown') {
-      this.props.keyHandler(this.props.index, 'down');
+      this.props.context.keyHandler(this.props.index, 'down');
     }
   };
 
@@ -66,12 +70,11 @@ class DropdownItem extends React.Component {
       className,
       children,
       isHovered,
-      keyHandler,
+      context,
       onClick,
       component: Component,
       isDisabled,
       index,
-      sendRef,
       ...props
     } = this.props;
     const additionalProps = props;
