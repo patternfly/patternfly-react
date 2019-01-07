@@ -10,7 +10,7 @@ import ToolbarViewSelector from './ToolbarViewSelector';
 
 import { toolbarContextTypes, getToolbarContext, ToolbarContextProvider } from './ToolbarConstants';
 
-const ContextualToolbar = ({ children, className, ...props }) => {
+const ContextualToolbar = ({ children, className, preventSubmit, ...props }) => {
   const toolbarChildren = filterChildren(children, child => !hasDisplayName(child, ToolbarResults.displayName));
   const resultsChildren = filterChildren(children, child => hasDisplayName(child, ToolbarResults.displayName));
 
@@ -19,7 +19,16 @@ const ContextualToolbar = ({ children, className, ...props }) => {
       <Grid fluid className={className}>
         <Grid.Row className="toolbar-pf">
           <Grid.Col sm={12}>
-            <form className="toolbar-pf-actions">{toolbarChildren}</form>
+            <form
+              className="toolbar-pf-actions"
+              onSubmit={e => {
+                if (preventSubmit) {
+                  e.preventDefault();
+                }
+              }}
+            >
+              {toolbarChildren}
+            </form>
             {resultsChildren}
           </Grid.Col>
         </Grid.Row>
@@ -32,12 +41,15 @@ ContextualToolbar.propTypes = {
   /** Children nodes */
   children: PropTypes.node,
   /** Additional css classes */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Prevent submission of toolbar children internal form */
+  preventSubmit: PropTypes.bool
 };
 
 ContextualToolbar.defaultProps = {
   children: null,
-  className: ''
+  className: '',
+  preventSubmit: false
 };
 
 const Toolbar = withContext(toolbarContextTypes, getToolbarContext)(ContextualToolbar);
