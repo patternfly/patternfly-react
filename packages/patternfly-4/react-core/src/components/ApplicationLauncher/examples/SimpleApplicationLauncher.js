@@ -36,6 +36,7 @@ export default class SimpleApplicationLauncher extends Component {
     ];
     return (
       <ApplicationLauncher
+        aria-label="My Application Launcher"
         onSelect={this.onSelect}
         onToggle={this.onToggle}
         isOpen={isOpen}

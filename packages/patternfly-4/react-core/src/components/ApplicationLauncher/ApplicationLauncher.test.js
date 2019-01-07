@@ -55,18 +55,4 @@ describe('ApplicationLauncher', () => {
     const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />);
     expect(view).toMatchSnapshot();
   });
-
-  test('click on item', () => {
-    const myMock = jest.fn();
-    const mockSelect = jest.fn();
-    global.console = { error: myMock };
-    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} onSelect={mockSelect} isOpen />);
-
-    view
-      .find('li')
-      .first()
-      .simulate('click');
-    expect(mockSelect.mock.calls).toHaveLength(1);
-    expect(myMock).not.toBeCalled();
-  });
 });

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Dropdown, DropdownDirection, DropdownToggle, DropdownPosition } from '../Dropdown';
 import { ThIcon } from '@patternfly/react-icons';
 
+const defaultAriaLabel = 'Application Launcher';
+
 export const propTypes = {
   /** Additional element css classes */
   className: PropTypes.string,
@@ -17,7 +19,9 @@ export const propTypes = {
   /** Callback called when application launcher toggle is clicked */
   onToggle: PropTypes.func,
   /** Indicates where menu will be alligned horizontally */
-  position: PropTypes.oneOf(Object.values(DropdownPosition))
+  position: PropTypes.oneOf(Object.values(DropdownPosition)),
+  /** Adds accessible text to the button. Required for plain buttons */
+  'aria-label': PropTypes.string
 };
 
 export const defaultProps = {
@@ -27,14 +31,15 @@ export const defaultProps = {
   isOpen: false,
   onSelect: Function.prototype,
   onToggle: Function.prototype,
-  position: DropdownPosition.left
+  position: DropdownPosition.left,
+  'aria-label': defaultAriaLabel
 };
 
-const ApplicationLauncher = ({ onToggle, ...props }) => (
+const ApplicationLauncher = ({ 'aria-label': ariaLabel, onToggle, ...props }) => (
   <Dropdown
     {...props}
     toggle={
-      <DropdownToggle iconComponent={null} onToggle={onToggle}>
+      <DropdownToggle aria-label={ariaLabel} iconComponent={null} onToggle={onToggle}>
         <ThIcon />
       </DropdownToggle>
     }

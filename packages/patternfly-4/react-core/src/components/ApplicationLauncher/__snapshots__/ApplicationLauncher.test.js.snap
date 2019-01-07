@@ -75,6 +75,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
   position="right"
   toggle={
     <DropdownToggle
+      aria-label="Application Launcher"
       className=""
       iconComponent={null}
       id=""
@@ -171,6 +172,7 @@ exports[`ApplicationLauncher dropup 1`] = `
   position="left"
   toggle={
     <DropdownToggle
+      aria-label="Application Launcher"
       className=""
       iconComponent={null}
       id=""
@@ -267,6 +269,7 @@ exports[`ApplicationLauncher expanded 1`] = `
   position="left"
   toggle={
     <DropdownToggle
+      aria-label="Application Launcher"
       className=""
       iconComponent={null}
       id=""
@@ -363,6 +366,7 @@ exports[`ApplicationLauncher regular 1`] = `
   position="left"
   toggle={
     <DropdownToggle
+      aria-label="Application Launcher"
       className=""
       iconComponent={null}
       id=""
@@ -459,6 +463,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
   position="right"
   toggle={
     <DropdownToggle
+      aria-label="Application Launcher"
       className=""
       iconComponent={null}
       id=""
