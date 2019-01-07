@@ -14,7 +14,7 @@ exports[`DesktopViewer custom topClassName 1`] = `
       class="remote-viewer-pf-launch"
     >
       <button
-        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-vv btn btn-default"
         disabled=""
         type="button"
       >
@@ -52,7 +52,7 @@ exports[`DesktopViewer empty 1`] = `
       class="remote-viewer-pf-launch"
     >
       <button
-        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-vv btn btn-default"
         disabled=""
         type="button"
       >
@@ -90,7 +90,7 @@ exports[`DesktopViewer with Spice and VNC 1`] = `
       class="remote-viewer-pf-launch"
     >
       <button
-        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-vv btn btn-default"
         type="button"
       >
         Launch Remote Viewer
@@ -222,13 +222,13 @@ exports[`DesktopViewer with Spice, VNC and RDP (different hostname) 1`] = `
       class="remote-viewer-pf-launch"
     >
       <button
-        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-vv btn btn-default"
         type="button"
       >
         Launch Remote Viewer
       </button>
       <button
-        class="remote-viewer-pf-launch-rdp btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-rdp btn btn-default"
         type="button"
       >
         Launch Remote Desktop
@@ -412,13 +412,13 @@ exports[`DesktopViewer with Spice, VNC and RDP 1`] = `
       class="remote-viewer-pf-launch"
     >
       <button
-        class="remote-viewer-pf-launch-vv btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-vv btn btn-default"
         type="button"
       >
         Launch Remote Viewer
       </button>
       <button
-        class="remote-viewer-pf-launch-rdp btn btn-lg btn-default"
+        class="remote-viewer-pf-launch-rdp btn btn-default"
         type="button"
       >
         Launch Remote Desktop
@@ -666,14 +666,13 @@ exports[`DesktopViewer with custom more-info content 1`] = `
             active={false}
             block={false}
             bsClass="btn"
-            bsSize="large"
             bsStyle="default"
             className="remote-viewer-pf-launch-vv"
             disabled={false}
             onClick={[Function]}
           >
             <button
-              className="remote-viewer-pf-launch-vv btn btn-lg btn-default"
+              className="remote-viewer-pf-launch-vv btn btn-default"
               disabled={false}
               onClick={[Function]}
               type="button"

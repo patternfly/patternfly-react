@@ -57,11 +57,11 @@ const ConnectWithRemoteViewer = ({
     <div className="remote-viewer-pf">
       <h2>{textDesktopConnection}</h2>
       <div className="remote-viewer-pf-launch">
-        <Button className="remote-viewer-pf-launch-vv" bsSize="large" onClick={onClickVV} disabled={!console}>
+        <Button className="remote-viewer-pf-launch-vv" onClick={onClickVV} disabled={!console}>
           {textConnectWithRemoteViewer}
         </Button>
         {!!rdp && (
-          <Button bsSize="large" onClick={onClickRDP} className="remote-viewer-pf-launch-rdp">
+          <Button onClick={onClickRDP} className="remote-viewer-pf-launch-rdp">
             {textConnectWithRDP}
           </Button>
         )}
