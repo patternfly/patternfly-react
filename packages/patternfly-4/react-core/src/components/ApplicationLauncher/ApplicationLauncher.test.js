@@ -55,11 +55,6 @@ describe('ApplicationLauncher', () => {
     const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />);
     expect(view).toMatchSnapshot();
   });
-
-  test('plain set to false', () => {
-    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} isPlain={false} />);
-    expect(view).toMatchSnapshot();
-  });
 });
 
 describe('API', () => {

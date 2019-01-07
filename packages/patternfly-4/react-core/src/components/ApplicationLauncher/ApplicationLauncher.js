@@ -7,19 +7,17 @@ export const propTypes = {
   /** Additional element css classes */
   className: PropTypes.string,
   /** Display menu above or below dropdown toggle */
-  direction: PropTypes.oneOf(Object.keys(DropdownDirection)),
+  direction: PropTypes.oneOf(Object.values(DropdownDirection)),
   /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
   dropdownItems: PropTypes.array,
   /** open bool */
   isOpen: PropTypes.bool,
-  /** Display the toggle with no border or background */
-  isPlain: PropTypes.bool,
   /** Function callback called when user selects item */
   onSelect: PropTypes.func,
   /** Callback called when application launcher toggle is clicked */
   onToggle: PropTypes.func,
   /** Indicates where menu will be alligned horizontally */
-  position: PropTypes.oneOf(Object.keys(DropdownPosition))
+  position: PropTypes.oneOf(Object.values(DropdownPosition))
 };
 
 export const defaultProps = {

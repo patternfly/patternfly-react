@@ -3,10 +3,9 @@ import SimpleApplicationLauncher from './examples/SimpleApplicationLauncher';
 import TooltipApplicationLauncher from './examples/TooltipApplicationLauncher';
 
 export default {
-  title: 'Dropdown',
+  title: 'Application Launcher',
   components: {
-    ApplicationLauncher,
-    TooltipApplicationLauncher
+    ApplicationLauncher
   },
   examples: [
     { component: SimpleApplicationLauncher, title: 'Application Launcher' },

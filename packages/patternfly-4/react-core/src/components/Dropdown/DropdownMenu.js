@@ -16,7 +16,7 @@ const propTypes = {
   /** Indicates which component will be used as dropdown menu */
   component: componentShape,
   /** Indicates where menu will be alligned horizontally */
-  position: PropTypes.oneOf(Object.keys(DropdownPosition))
+  position: PropTypes.oneOf(Object.values(DropdownPosition))
 };
 
 const defaultProps = {
