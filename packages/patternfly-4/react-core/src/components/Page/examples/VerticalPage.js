@@ -30,6 +30,7 @@ class VerticalPage extends React.Component {
         toolbar="Toolbar"
         avatar=" | Avatar"
         showNavToggle
+        isNavOpen={isNavOpen}
         onNavToggle={this.onNavToggle}
       />
     );
