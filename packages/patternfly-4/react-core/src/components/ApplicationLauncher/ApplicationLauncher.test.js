@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import ApplicationLauncher from './ApplicationLauncher';
 import DropdownItem from '../Dropdown/DropdownItem';
 
@@ -26,22 +26,22 @@ const dropdownItems = [
 
 describe('ApplicationLauncher', () => {
   test('regular', () => {
-    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} />);
+    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} />);
     expect(view).toMatchSnapshot();
   });
 
   test('right aligned', () => {
-    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} position={DropdownPosition.right} />);
+    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} position={DropdownPosition.right} />);
     expect(view).toMatchSnapshot();
   });
 
   test('dropup', () => {
-    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} direction={DropdownDirection.up} />);
+    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} direction={DropdownDirection.up} />);
     expect(view).toMatchSnapshot();
   });
 
   test('dropup + right aligned', () => {
-    const view = mount(
+    const view = shallow(
       <ApplicationLauncher
         dropdownItems={dropdownItems}
         direction={DropdownDirection.up}
@@ -52,14 +52,14 @@ describe('ApplicationLauncher', () => {
   });
 
   test('expanded', () => {
-    const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />);
+    const view = shallow(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />);
     expect(view).toMatchSnapshot();
   });
-});
 
-describe('Application Launcher API', () => {
   test('click on item', () => {
+    const myMock = jest.fn();
     const mockSelect = jest.fn();
+    global.console = { error: myMock };
     const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} onSelect={mockSelect} isOpen />);
 
     view
@@ -67,30 +67,6 @@ describe('Application Launcher API', () => {
       .first()
       .simulate('click');
     expect(mockSelect.mock.calls).toHaveLength(1);
-  });
-
-  test('dropdownItems and children console error ', () => {
-    const myMock = jest.fn();
-    global.console = { error: myMock };
-    mount(
-      <ApplicationLauncher dropdownItems={dropdownItems} isOpen>
-        Children items
-      </ApplicationLauncher>
-    );
-    expect(myMock).toBeCalled();
-  });
-
-  test('dropdownItems only, no console error ', () => {
-    const myMock = jest.fn();
-    global.console = { error: myMock };
-    mount(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />);
-    expect(myMock).not.toBeCalled();
-  });
-
-  test('children only, no console ', () => {
-    const myMock = jest.fn();
-    global.console = { error: myMock };
-    mount(<ApplicationLauncher isOpen>Children items</ApplicationLauncher>);
     expect(myMock).not.toBeCalled();
   });
 });
