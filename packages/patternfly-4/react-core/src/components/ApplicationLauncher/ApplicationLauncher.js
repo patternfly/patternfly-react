@@ -25,7 +25,6 @@ export const defaultProps = {
   direction: DropdownDirection.down,
   dropdownItems: [],
   isOpen: false,
-  isPlain: true,
   onSelect: Function.prototype,
   onToggle: Function.prototype,
   position: DropdownPosition.left
@@ -39,6 +38,7 @@ const ApplicationLauncher = ({ onToggle, ...props }) => (
         <ThIcon />
       </DropdownToggle>
     }
+    isPlain
   />
 );
 

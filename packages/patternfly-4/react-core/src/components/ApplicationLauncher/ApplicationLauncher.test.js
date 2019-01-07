@@ -57,7 +57,7 @@ describe('ApplicationLauncher', () => {
   });
 });
 
-describe('API', () => {
+describe('Application Launcher API', () => {
   test('click on item', () => {
     const mockSelect = jest.fn();
     const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} onSelect={mockSelect} isOpen />);

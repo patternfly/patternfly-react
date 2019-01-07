@@ -89,7 +89,6 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
     ]
   }
   isOpen={false}
-  isPlain={true}
   onSelect={[Function]}
   onToggle={[Function]}
   position="right"
@@ -342,7 +341,6 @@ exports[`ApplicationLauncher dropup 1`] = `
     ]
   }
   isOpen={false}
-  isPlain={true}
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -623,7 +621,6 @@ exports[`ApplicationLauncher expanded 1`] = `
     ]
   }
   isOpen={true}
-  isPlain={true}
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -947,259 +944,6 @@ exports[`ApplicationLauncher expanded 1`] = `
 </ApplicationLauncher>
 `;
 
-exports[`ApplicationLauncher plain set to false 1`] = `
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  background-color: transparent;
-}
-.pf-c-dropdown {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
-<ApplicationLauncher
-  className=""
-  direction="down"
-  dropdownItems={
-    Array [
-      <DropdownItem
-        className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
-      >
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        href="#"
-        isDisabled={true}
-        isHovered={false}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        href="#"
-        isDisabled={true}
-        isHovered={false}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
-      >
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
-  isOpen={false}
-  isPlain={false}
-  onSelect={[Function]}
-  onToggle={[Function]}
-  position="left"
->
-  <Dropdown
-    className=""
-    direction="down"
-    dropdownItems={
-      Array [
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-        >
-          Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-        >
-          Action
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-        >
-          Disabled Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={true}
-          isHovered={false}
-        >
-          Disabled Action
-        </DropdownItem>,
-        <Separator
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-        />,
-        <DropdownItem
-          className=""
-          component="a"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-        >
-          Separated Link
-        </DropdownItem>,
-        <DropdownItem
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-        >
-          Separated Action
-        </DropdownItem>,
-      ]
-    }
-    isOpen={false}
-    isPlain={false}
-    onSelect={[Function]}
-    position="left"
-    toggle={
-      <DropdownToggle
-        className=""
-        iconComponent={null}
-        id=""
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
-      >
-        <ThIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        />
-      </DropdownToggle>
-    }
-  >
-    <div
-      className="pf-c-dropdown"
-    >
-      <DropdownToggle
-        className=""
-        iconComponent={null}
-        id="pf-toggle-id-5"
-        isActive={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        key=".0"
-        onToggle={[Function]}
-        parentRef={null}
-      >
-        <DropdownToggle
-          className=""
-          id="pf-toggle-id-5"
-          isActive={false}
-          isFocused={false}
-          isHovered={false}
-          isOpen={false}
-          isPlain={false}
-          onToggle={[Function]}
-          parentRef={null}
-        >
-          <button
-            aria-expanded={false}
-            className="pf-c-dropdown__toggle"
-            id="pf-toggle-id-5"
-            onClick={[Function]}
-          >
-            <ThIcon
-              color="currentColor"
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 512 512"
-                width="1em"
-              >
-                <path
-                  d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
-                  transform=""
-                />
-              </svg>
-            </ThIcon>
-          </button>
-        </DropdownToggle>
-      </DropdownToggle>
-    </div>
-  </Dropdown>
-</ApplicationLauncher>
-`;
-
 exports[`ApplicationLauncher regular 1`] = `
 .pf-c-dropdown__toggle.pf-m-plain {
   display: flex;
@@ -1289,7 +1033,6 @@ exports[`ApplicationLauncher regular 1`] = `
     ]
   }
   isOpen={false}
-  isPlain={true}
   onSelect={[Function]}
   onToggle={[Function]}
   position="left"
@@ -1542,7 +1285,6 @@ exports[`ApplicationLauncher right aligned 1`] = `
     ]
   }
   isOpen={false}
-  isPlain={true}
   onSelect={[Function]}
   onToggle={[Function]}
   position="right"
