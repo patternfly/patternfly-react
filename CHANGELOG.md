@@ -1,5 +1,16 @@
 
-## Change Log (2019-01-07)
+## patternfly3-react-lerna-root@7.19.2 (2019-01-07)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1123](https://github.com/patternfly/patternfly-react/pull/1123) fix(VncConsole): disconnect VNC session when unmounting ([@mareklibra](https://github.com/mareklibra))
+  * [#1139](https://github.com/patternfly/patternfly-react/pull/1139) fix(AccessConsoles): fix propTypes checking for "null" child ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## @patternfly/react-console@1.10.8 (2019-01-07)
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -59,12 +70,12 @@
 #### :memo: Documentation
 * `patternfly-4`
   * [#1127](https://github.com/patternfly/patternfly-react/pull/1127) Updated drop down with icon only example ([@dlabaj](https://github.com/dlabaj))
-  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz1337](https://github.com/boaz1337))
+  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 3
 - Donald Labaj ([@dlabaj](https://github.com/dlabaj))
 - Joachim ([@jschuler](https://github.com/jschuler))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-table@0.2.33 (2019-01-04)
@@ -76,12 +87,12 @@
 #### :memo: Documentation
 * `patternfly-4`
   * [#1127](https://github.com/patternfly/patternfly-react/pull/1127) Updated drop down with icon only example ([@dlabaj](https://github.com/dlabaj))
-  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz1337](https://github.com/boaz1337))
+  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 3
 - Donald Labaj ([@dlabaj](https://github.com/dlabaj))
 - Joachim ([@jschuler](https://github.com/jschuler))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.19.41 (2019-01-04)
@@ -93,12 +104,12 @@
 #### :memo: Documentation
 * `patternfly-4`
   * [#1127](https://github.com/patternfly/patternfly-react/pull/1127) Updated drop down with icon only example ([@dlabaj](https://github.com/dlabaj))
-  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz1337](https://github.com/boaz1337))
+  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 3
 - Donald Labaj ([@dlabaj](https://github.com/dlabaj))
 - Joachim ([@jschuler](https://github.com/jschuler))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.44.0 (2019-01-04)
@@ -110,12 +121,12 @@
 #### :memo: Documentation
 * `patternfly-4`
   * [#1127](https://github.com/patternfly/patternfly-react/pull/1127) Updated drop down with icon only example ([@dlabaj](https://github.com/dlabaj))
-  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz1337](https://github.com/boaz1337))
+  * [#1110](https://github.com/patternfly/patternfly-react/pull/1110) docs(Select): Add an invalid select example ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 3
 - Donald Labaj ([@dlabaj](https://github.com/dlabaj))
 - Joachim ([@jschuler](https://github.com/jschuler))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly4-react-lerna-root@1.33.7 (2019-01-03)
@@ -210,40 +221,40 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz1337](https://github.com/boaz1337))
+  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-table@0.2.31 (2019-01-02)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz1337](https://github.com/boaz1337))
+  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.19.39 (2019-01-02)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz1337](https://github.com/boaz1337))
+  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.43.6 (2019-01-02)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz1337](https://github.com/boaz1337))
+  * [#1112](https://github.com/patternfly/patternfly-react/pull/1112) fix(Form): fix type definitions ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly4-react-lerna-root@1.33.5 (2018-12-20)
@@ -290,40 +301,40 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-table@0.2.29 (2018-12-20)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.19.37 (2018-12-20)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.43.4 (2018-12-20)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz1337](https://github.com/boaz1337))
+  * [#1099](https://github.com/patternfly/patternfly-react/pull/1099) fix(EmptyState): a typo at the import path in EmptyStateIcon.d.ts ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly4-react-lerna-root@1.33.3 (2018-12-20)
@@ -1923,47 +1934,47 @@
 
 #### :bug: Bug Fix
 * `patternfly-3`
-  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz1337](https://github.com/boaz1337))
+  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly-react@2.25.1 (2018-11-27)
 
 #### :bug: Bug Fix
 * `patternfly-3`
-  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz1337](https://github.com/boaz1337))
+  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly-react-extensions@2.13.8 (2018-11-27)
 
 #### :bug: Bug Fix
 * `patternfly-3`
-  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz1337](https://github.com/boaz1337))
+  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-console@1.9.1 (2018-11-27)
 
 #### :bug: Bug Fix
 * `patternfly-3`
-  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz1337](https://github.com/boaz1337))
+  * [#828](https://github.com/patternfly/patternfly-react/pull/828) fix(Slider): Call onSlide on slide event ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly4-react-lerna-root@1.27.0 (2018-11-27)
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -1985,7 +1996,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -1993,7 +2004,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2015,7 +2026,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2023,7 +2034,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2045,7 +2056,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2053,7 +2064,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2075,7 +2086,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2083,7 +2094,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2105,7 +2116,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2113,7 +2124,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2135,7 +2146,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2143,7 +2154,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2165,7 +2176,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2173,7 +2184,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2195,7 +2206,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2203,7 +2214,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2225,7 +2236,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2233,7 +2244,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2255,7 +2266,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2263,7 +2274,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2285,7 +2296,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -2293,7 +2304,7 @@
 
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
-  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz1337](https://github.com/boaz1337))
+  * [#754](https://github.com/patternfly/patternfly-react/pull/754) feat(Popover): Add PF4 Popover ([@boaz0](https://github.com/boaz0))
 
 #### :bug: Bug Fix
 * `patternfly-3`
@@ -2315,7 +2326,7 @@
 - Richard Všianský ([@rvsia](https://github.com/rvsia))
 - Ron Lavi ([@Laviro](https://github.com/Laviro))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 - [@kmcfaul](https://github.com/kmcfaul)
 
 
@@ -3341,30 +3352,30 @@
 
 #### :house: Internal
 * `patternfly-4`
-  * [#848](https://github.com/patternfly/patternfly-react/pull/848) refactor(Radio/Checkbox): replace checked with isChecked in API ([@boaz1337](https://github.com/boaz1337))
+  * [#848](https://github.com/patternfly/patternfly-react/pull/848) refactor(Radio/Checkbox): replace checked with isChecked in API ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.17.30 (2018-11-01)
 
 #### :house: Internal
 * `patternfly-4`
-  * [#848](https://github.com/patternfly/patternfly-react/pull/848) refactor(Radio/Checkbox): replace checked with isChecked in API ([@boaz1337](https://github.com/boaz1337))
+  * [#848](https://github.com/patternfly/patternfly-react/pull/848) refactor(Radio/Checkbox): replace checked with isChecked in API ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.29.1 (2018-11-01)
 
 #### :house: Internal
 * `patternfly-4`
-  * [#848](https://github.com/patternfly/patternfly-react/pull/848) refactor(Radio/Checkbox): replace checked with isChecked in API ([@boaz1337](https://github.com/boaz1337))
+  * [#848](https://github.com/patternfly/patternfly-react/pull/848) refactor(Radio/Checkbox): replace checked with isChecked in API ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly3-react-lerna-root@7.8.0 (2018-10-31)
@@ -3391,60 +3402,60 @@
 
 #### :rocket: New Feature
 * `patternfly-4`
-  * [#859](https://github.com/patternfly/patternfly-react/pull/859) feat(Label): add Label to PF4 ([@boaz1337](https://github.com/boaz1337))
+  * [#859](https://github.com/patternfly/patternfly-react/pull/859) feat(Label): add Label to PF4 ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.17.29 (2018-10-30)
 
 #### :rocket: New Feature
 * `patternfly-4`
-  * [#859](https://github.com/patternfly/patternfly-react/pull/859) feat(Label): add Label to PF4 ([@boaz1337](https://github.com/boaz1337))
+  * [#859](https://github.com/patternfly/patternfly-react/pull/859) feat(Label): add Label to PF4 ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.29.0 (2018-10-30)
 
 #### :rocket: New Feature
 * `patternfly-4`
-  * [#859](https://github.com/patternfly/patternfly-react/pull/859) feat(Label): add Label to PF4 ([@boaz1337](https://github.com/boaz1337))
+  * [#859](https://github.com/patternfly/patternfly-react/pull/859) feat(Label): add Label to PF4 ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly4-react-lerna-root@1.15.4 (2018-10-30)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#858](https://github.com/patternfly/patternfly-react/pull/858) fix(Progress): import progress style object ([@boaz1337](https://github.com/boaz1337))
+  * [#858](https://github.com/patternfly/patternfly-react/pull/858) fix(Progress): import progress style object ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.17.28 (2018-10-30)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#858](https://github.com/patternfly/patternfly-react/pull/858) fix(Progress): import progress style object ([@boaz1337](https://github.com/boaz1337))
+  * [#858](https://github.com/patternfly/patternfly-react/pull/858) fix(Progress): import progress style object ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.28.4 (2018-10-30)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#858](https://github.com/patternfly/patternfly-react/pull/858) fix(Progress): import progress style object ([@boaz1337](https://github.com/boaz1337))
+  * [#858](https://github.com/patternfly/patternfly-react/pull/858) fix(Progress): import progress style object ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly3-react-lerna-root@7.7.0 (2018-10-29)
@@ -3701,30 +3712,30 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz1337](https://github.com/boaz1337))
+  * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.17.19 (2018-10-26)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz1337](https://github.com/boaz1337))
+  * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.27.2 (2018-10-26)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz1337](https://github.com/boaz1337))
+  * [#833](https://github.com/patternfly/patternfly-react/pull/833) fix(Select/TextInput): fix components typescript interfaces ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-icons@2.5.3 (2018-10-25)
@@ -4565,22 +4576,22 @@
 
 #### :memo: Documentation
 * `patternfly-4`
-  * [#735](https://github.com/patternfly/patternfly-react/pull/735) docs(README.md): Update docs about running the site locally ([@boaz1337](https://github.com/boaz1337))
+  * [#735](https://github.com/patternfly/patternfly-react/pull/735) docs(README.md): Update docs about running the site locally ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 2
 - Amiee Lo ([@amarie401](https://github.com/amarie401))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.20.0 (2018-10-11)
 
 #### :memo: Documentation
 * `patternfly-4`
-  * [#735](https://github.com/patternfly/patternfly-react/pull/735) docs(README.md): Update docs about running the site locally ([@boaz1337](https://github.com/boaz1337))
+  * [#735](https://github.com/patternfly/patternfly-react/pull/735) docs(README.md): Update docs about running the site locally ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 2
 - Amiee Lo ([@amarie401](https://github.com/amarie401))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly3-react-lerna-root@7.1.7 (2018-10-11)
@@ -4677,30 +4688,30 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz1337](https://github.com/boaz1337))
+  * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.16.4 (2018-10-09)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz1337](https://github.com/boaz1337))
+  * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.19.1 (2018-10-09)
 
 #### :bug: Bug Fix
 * `patternfly-4`
-  * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz1337](https://github.com/boaz1337))
+  * [#727](https://github.com/patternfly/patternfly-react/pull/727) fix(Alert): [TS] action type is string while it should've been node ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly4-react-lerna-root@1.6.0 (2018-10-09)
@@ -4740,80 +4751,80 @@
 
 #### :memo: Documentation
 * `patternfly-3`
-  * [#716](https://github.com/patternfly/patternfly-react/pull/716) docs(Chart): Add more examples for line/area charts: zoom/subchart ([@boaz1337](https://github.com/boaz1337))
+  * [#716](https://github.com/patternfly/patternfly-react/pull/716) docs(Chart): Add more examples for line/area charts: zoom/subchart ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly-react@2.20.3 (2018-10-08)
 
 #### :memo: Documentation
 * `patternfly-3`
-  * [#716](https://github.com/patternfly/patternfly-react/pull/716) docs(Chart): Add more examples for line/area charts: zoom/subchart ([@boaz1337](https://github.com/boaz1337))
+  * [#716](https://github.com/patternfly/patternfly-react/pull/716) docs(Chart): Add more examples for line/area charts: zoom/subchart ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly-react-extensions@2.8.6 (2018-10-08)
 
 #### :memo: Documentation
 * `patternfly-3`
-  * [#716](https://github.com/patternfly/patternfly-react/pull/716) docs(Chart): Add more examples for line/area charts: zoom/subchart ([@boaz1337](https://github.com/boaz1337))
+  * [#716](https://github.com/patternfly/patternfly-react/pull/716) docs(Chart): Add more examples for line/area charts: zoom/subchart ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-console@1.4.6 (2018-10-08)
 
 #### :memo: Documentation
 * `patternfly-3`
-  * [#716](https://github.com/patternfly/patternfly-react/pull/716) docs(Chart): Add more examples for line/area charts: zoom/subchart ([@boaz1337](https://github.com/boaz1337))
+  * [#716](https://github.com/patternfly/patternfly-react/pull/716) docs(Chart): Add more examples for line/area charts: zoom/subchart ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly3-react-lerna-root@7.1.3 (2018-10-08)
 
 #### :bug: Bug Fix
 * `patternfly-3`
-  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz1337](https://github.com/boaz1337))
+  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly-react@2.20.2 (2018-10-08)
 
 #### :bug: Bug Fix
 * `patternfly-3`
-  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz1337](https://github.com/boaz1337))
+  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly-react-extensions@2.8.5 (2018-10-08)
 
 #### :bug: Bug Fix
 * `patternfly-3`
-  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz1337](https://github.com/boaz1337))
+  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-console@1.4.5 (2018-10-08)
 
 #### :bug: Bug Fix
 * `patternfly-3`
-  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz1337](https://github.com/boaz1337))
+  * [#661](https://github.com/patternfly/patternfly-react/pull/661) test(components): Add tests to Filter and Sort selectors  ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly4-react-lerna-root@1.5.0 (2018-10-08)
@@ -4830,7 +4841,7 @@
 - Joachim ([@jschuler](https://github.com/jschuler))
 - Karel Hala ([@karelhala](https://github.com/karelhala))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.16.0 (2018-10-08)
@@ -4847,7 +4858,7 @@
 - Joachim ([@jschuler](https://github.com/jschuler))
 - Karel Hala ([@karelhala](https://github.com/karelhala))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.18.0 (2018-10-08)
@@ -4864,7 +4875,7 @@
 - Joachim ([@jschuler](https://github.com/jschuler))
 - Karel Hala ([@karelhala](https://github.com/karelhala))
 - Titani Labaj ([@tlabaj](https://github.com/tlabaj))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly3-react-lerna-root@7.1.1 (2018-10-08)
@@ -5035,30 +5046,30 @@
 
 #### :house: Internal
 * `patternfly-4`
-  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz1337](https://github.com/boaz1337))
+  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-docs@3.14.2 (2018-10-03)
 
 #### :house: Internal
 * `patternfly-4`
-  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz1337](https://github.com/boaz1337))
+  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## @patternfly/react-core@1.16.1 (2018-10-03)
 
 #### :house: Internal
 * `patternfly-4`
-  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz1337](https://github.com/boaz1337))
+  * [#696](https://github.com/patternfly/patternfly-react/pull/696) fix(pf-4): checkboxProps to be consistent with Checkbox.propTypes ([@boaz0](https://github.com/boaz0))
 
 #### Committers: 1
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly4-react-lerna-root@1.2.0 (2018-10-03)
@@ -5500,7 +5511,7 @@
 #### Committers: 3
 - Jeff Phillips ([@jeff-phillips-18](https://github.com/jeff-phillips-18))
 - Tristan de Cacqueray ([@TristanCacqueray](https://github.com/TristanCacqueray))
-- [@boaz1337](https://github.com/boaz1337)
+- [@boaz0](https://github.com/boaz0)
 
 
 ## patternfly-react@2.14.1 (2018-08-28)
