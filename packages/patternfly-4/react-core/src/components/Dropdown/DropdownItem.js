@@ -41,8 +41,7 @@ const defaultProps = {
 };
 
 class DropdownItem extends React.Component {
-  constructor(props) {
-    super(props);
+  componentWillMount() {
     this.ref = React.createRef();
   }
 
