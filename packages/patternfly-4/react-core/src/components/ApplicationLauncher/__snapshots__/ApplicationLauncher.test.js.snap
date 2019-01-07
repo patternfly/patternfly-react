@@ -1,0 +1,486 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationLauncher dropup + right aligned 1`] = `
+<Dropdown
+  className=""
+  direction="up"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={false}
+  isPlain={true}
+  onSelect={[Function]}
+  position="right"
+  toggle={
+    <DropdownToggle
+      aria-label="Application Launcher"
+      className=""
+      iconComponent={null}
+      id=""
+      isActive={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+    >
+      <ThIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </DropdownToggle>
+  }
+/>
+`;
+
+exports[`ApplicationLauncher dropup 1`] = `
+<Dropdown
+  className=""
+  direction="up"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={false}
+  isPlain={true}
+  onSelect={[Function]}
+  position="left"
+  toggle={
+    <DropdownToggle
+      aria-label="Application Launcher"
+      className=""
+      iconComponent={null}
+      id=""
+      isActive={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+    >
+      <ThIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </DropdownToggle>
+  }
+/>
+`;
+
+exports[`ApplicationLauncher expanded 1`] = `
+<Dropdown
+  className=""
+  direction="down"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={true}
+  isPlain={true}
+  onSelect={[Function]}
+  position="left"
+  toggle={
+    <DropdownToggle
+      aria-label="Application Launcher"
+      className=""
+      iconComponent={null}
+      id=""
+      isActive={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+    >
+      <ThIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </DropdownToggle>
+  }
+/>
+`;
+
+exports[`ApplicationLauncher regular 1`] = `
+<Dropdown
+  className=""
+  direction="down"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={false}
+  isPlain={true}
+  onSelect={[Function]}
+  position="left"
+  toggle={
+    <DropdownToggle
+      aria-label="Application Launcher"
+      className=""
+      iconComponent={null}
+      id=""
+      isActive={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+    >
+      <ThIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </DropdownToggle>
+  }
+/>
+`;
+
+exports[`ApplicationLauncher right aligned 1`] = `
+<Dropdown
+  className=""
+  direction="down"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={false}
+  isPlain={true}
+  onSelect={[Function]}
+  position="right"
+  toggle={
+    <DropdownToggle
+      aria-label="Application Launcher"
+      className=""
+      iconComponent={null}
+      id=""
+      isActive={false}
+      isFocused={false}
+      isHovered={false}
+      isOpen={false}
+      isPlain={false}
+      onToggle={[Function]}
+      parentRef={null}
+    >
+      <ThIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </DropdownToggle>
+  }
+/>
+`;
