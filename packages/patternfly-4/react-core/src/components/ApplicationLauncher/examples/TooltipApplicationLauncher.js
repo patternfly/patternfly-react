@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { ApplicationLauncher, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
 
-export default class SimpleApplicationLauncher extends Component {
+export default class TooltipApplicationLauncher extends Component {
   state = {
     isOpen: false
   };
@@ -21,7 +21,7 @@ export default class SimpleApplicationLauncher extends Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="application_1" component="button">
+        <DropdownItem key="application_1" component="button">
         Application 1
       </DropdownItem>,
       <DropdownItem key="application_2" component="button">
@@ -35,12 +35,20 @@ export default class SimpleApplicationLauncher extends Component {
       </DropdownItem>
     ];
     return (
-      <ApplicationLauncher
-        onSelect={this.onSelect}
-        onToggle={this.onToggle}
-        isOpen={isOpen}
-        dropdownItems={dropdownItems}
-      />
+      <Tooltip
+        content={
+          <div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
+          </div>
+        }
+      >
+        <ApplicationLauncher
+          onSelect={this.onSelect}
+          onToggle={this.onToggle}
+          isOpen={isOpen}
+          dropdownItems={dropdownItems}
+        />
+      </Tooltip>
     );
   }
 }

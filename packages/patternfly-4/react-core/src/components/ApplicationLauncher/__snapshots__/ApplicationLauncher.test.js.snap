@@ -1,0 +1,1707 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApplicationLauncher dropup + right aligned 1`] = `
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: transparent;
+}
+.pf-c-dropdown.pf-m-top {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<ApplicationLauncher
+  className=""
+  direction="up"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={false}
+  isPlain={true}
+  onSelect={[Function]}
+  onToggle={[Function]}
+  position="right"
+>
+  <Dropdown
+    className=""
+    direction="up"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isOpen={false}
+    isPlain={true}
+    onSelect={[Function]}
+    position="right"
+    toggle={
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id=""
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <ThIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        />
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown pf-m-top"
+    >
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id="pf-toggle-id-3"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={true}
+        key=".0"
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <DropdownToggle
+          className=""
+          id="pf-toggle-id-3"
+          isActive={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={true}
+          onToggle={[Function]}
+          parentRef={null}
+        >
+          <button
+            aria-expanded={false}
+            className="pf-c-dropdown__toggle pf-m-plain"
+            id="pf-toggle-id-3"
+            onClick={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                  transform=""
+                />
+              </svg>
+            </ThIcon>
+          </button>
+        </DropdownToggle>
+      </DropdownToggle>
+    </div>
+  </Dropdown>
+</ApplicationLauncher>
+`;
+
+exports[`ApplicationLauncher dropup 1`] = `
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: transparent;
+}
+.pf-c-dropdown.pf-m-top {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<ApplicationLauncher
+  className=""
+  direction="up"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={false}
+  isPlain={true}
+  onSelect={[Function]}
+  onToggle={[Function]}
+  position="left"
+>
+  <Dropdown
+    className=""
+    direction="up"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isOpen={false}
+    isPlain={true}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id=""
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <ThIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        />
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown pf-m-top"
+    >
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id="pf-toggle-id-2"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={true}
+        key=".0"
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <DropdownToggle
+          className=""
+          id="pf-toggle-id-2"
+          isActive={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={true}
+          onToggle={[Function]}
+          parentRef={null}
+        >
+          <button
+            aria-expanded={false}
+            className="pf-c-dropdown__toggle pf-m-plain"
+            id="pf-toggle-id-2"
+            onClick={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                  transform=""
+                />
+              </svg>
+            </ThIcon>
+          </button>
+        </DropdownToggle>
+      </DropdownToggle>
+    </div>
+  </Dropdown>
+</ApplicationLauncher>
+`;
+
+exports[`ApplicationLauncher expanded 1`] = `
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: transparent;
+}
+.pf-m-disabled {
+  display: block;
+}
+.pf-m-disabled {
+  display: block;
+}
+.pf-c-dropdown__separator {
+  display: block;
+  height: 1px;
+  background-color: #ededed;
+}
+.pf-c-dropdown__separator {
+  display: block;
+  height: 1px;
+  background-color: #ededed;
+}
+.pf-c-dropdown__menu {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  min-width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background: #ffffff;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
+}
+.pf-c-dropdown.pf-m-expanded {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<ApplicationLauncher
+  className=""
+  direction="down"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={true}
+  isPlain={true}
+  onSelect={[Function]}
+  onToggle={[Function]}
+  position="left"
+>
+  <Dropdown
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isOpen={true}
+    isPlain={true}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id=""
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <ThIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        />
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown pf-m-expanded"
+    >
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id="pf-toggle-id-4"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={true}
+        isPlain={true}
+        key=".0"
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <DropdownToggle
+          className=""
+          id="pf-toggle-id-4"
+          isActive={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={true}
+          isPlain={true}
+          onToggle={[Function]}
+          parentRef={null}
+        >
+          <button
+            aria-expanded={true}
+            className="pf-c-dropdown__toggle pf-m-plain"
+            id="pf-toggle-id-4"
+            onClick={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                  transform=""
+                />
+              </svg>
+            </ThIcon>
+          </button>
+        </DropdownToggle>
+      </DropdownToggle>
+      <DropdownMenu
+        aria-labelledby="pf-toggle-id-4"
+        className=""
+        component="ul"
+        isOpen={true}
+        onClick={[Function]}
+        position="left"
+      >
+        <FocusTrap
+          _createFocusTrap={[Function]}
+          active={true}
+          focusTrapOptions={Object {}}
+          paused={false}
+          tag="div"
+        >
+          <div>
+            <ul
+              aria-labelledby="pf-toggle-id-4"
+              className="pf-c-dropdown__menu"
+              hidden={false}
+              onClick={[Function]}
+            >
+              <DropdownItem
+                className=""
+                component="a"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                key="link"
+              >
+                <li>
+                  <a
+                    aria-disabled={false}
+                    className=""
+                    href="#"
+                  >
+                    Link
+                  </a>
+                </li>
+              </DropdownItem>
+              <DropdownItem
+                className=""
+                component="button"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                key="action"
+              >
+                <li>
+                  <button
+                    className=""
+                    disabled={false}
+                    href="#"
+                  >
+                    Action
+                  </button>
+                </li>
+              </DropdownItem>
+              <DropdownItem
+                className=""
+                component="a"
+                href="#"
+                isDisabled={true}
+                isHovered={false}
+                key="disabled link"
+              >
+                <li>
+                  <a
+                    aria-disabled={true}
+                    className="pf-m-disabled"
+                    href="#"
+                    tabIndex={-1}
+                  >
+                    Disabled Link
+                  </a>
+                </li>
+              </DropdownItem>
+              <DropdownItem
+                className=""
+                component="button"
+                href="#"
+                isDisabled={true}
+                isHovered={false}
+                key="disabled action"
+              >
+                <li>
+                  <button
+                    className="pf-m-disabled"
+                    disabled={true}
+                    href="#"
+                  >
+                    Disabled Action
+                  </button>
+                </li>
+              </DropdownItem>
+              <Separator
+                className=""
+                component="a"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                key="separator"
+              >
+                <DropdownItem
+                  className="pf-c-dropdown__separator"
+                  component="div"
+                  href="#"
+                  isDisabled={false}
+                  isHovered={false}
+                  role="separator"
+                >
+                  <li>
+                    <div
+                      className="pf-c-dropdown__separator"
+                      href="#"
+                      role="separator"
+                    />
+                  </li>
+                </DropdownItem>
+              </Separator>
+              <DropdownItem
+                className=""
+                component="a"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                key="separated link"
+              >
+                <li>
+                  <a
+                    aria-disabled={false}
+                    className=""
+                    href="#"
+                  >
+                    Separated Link
+                  </a>
+                </li>
+              </DropdownItem>
+              <DropdownItem
+                className=""
+                component="button"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                key="separated action"
+              >
+                <li>
+                  <button
+                    className=""
+                    disabled={false}
+                    href="#"
+                  >
+                    Separated Action
+                  </button>
+                </li>
+              </DropdownItem>
+            </ul>
+          </div>
+        </FocusTrap>
+      </DropdownMenu>
+    </div>
+  </Dropdown>
+</ApplicationLauncher>
+`;
+
+exports[`ApplicationLauncher plain set to false 1`] = `
+.pf-c-dropdown__toggle {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<ApplicationLauncher
+  className=""
+  direction="down"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={false}
+  isPlain={false}
+  onSelect={[Function]}
+  onToggle={[Function]}
+  position="left"
+>
+  <Dropdown
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isOpen={false}
+    isPlain={false}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id=""
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <ThIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        />
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown"
+    >
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id="pf-toggle-id-5"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        key=".0"
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <DropdownToggle
+          className=""
+          id="pf-toggle-id-5"
+          isActive={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={false}
+          onToggle={[Function]}
+          parentRef={null}
+        >
+          <button
+            aria-expanded={false}
+            className="pf-c-dropdown__toggle"
+            id="pf-toggle-id-5"
+            onClick={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                  transform=""
+                />
+              </svg>
+            </ThIcon>
+          </button>
+        </DropdownToggle>
+      </DropdownToggle>
+    </div>
+  </Dropdown>
+</ApplicationLauncher>
+`;
+
+exports[`ApplicationLauncher regular 1`] = `
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<ApplicationLauncher
+  className=""
+  direction="down"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={false}
+  isPlain={true}
+  onSelect={[Function]}
+  onToggle={[Function]}
+  position="left"
+>
+  <Dropdown
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isOpen={false}
+    isPlain={true}
+    onSelect={[Function]}
+    position="left"
+    toggle={
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id=""
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <ThIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        />
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown"
+    >
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id="pf-toggle-id-0"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={true}
+        key=".0"
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <DropdownToggle
+          className=""
+          id="pf-toggle-id-0"
+          isActive={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={true}
+          onToggle={[Function]}
+          parentRef={null}
+        >
+          <button
+            aria-expanded={false}
+            className="pf-c-dropdown__toggle pf-m-plain"
+            id="pf-toggle-id-0"
+            onClick={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                  transform=""
+                />
+              </svg>
+            </ThIcon>
+          </button>
+        </DropdownToggle>
+      </DropdownToggle>
+    </div>
+  </Dropdown>
+</ApplicationLauncher>
+`;
+
+exports[`ApplicationLauncher right aligned 1`] = `
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<ApplicationLauncher
+  className=""
+  direction="down"
+  dropdownItems={
+    Array [
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Action
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={true}
+        isHovered={false}
+      >
+        Disabled Action
+      </DropdownItem>,
+      <Separator
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      />,
+      <DropdownItem
+        className=""
+        component="a"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Link
+      </DropdownItem>,
+      <DropdownItem
+        className=""
+        component="button"
+        href="#"
+        isDisabled={false}
+        isHovered={false}
+      >
+        Separated Action
+      </DropdownItem>,
+    ]
+  }
+  isOpen={false}
+  isPlain={true}
+  onSelect={[Function]}
+  onToggle={[Function]}
+  position="right"
+>
+  <Dropdown
+    className=""
+    direction="down"
+    dropdownItems={
+      Array [
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Action
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={true}
+          isHovered={false}
+        >
+          Disabled Action
+        </DropdownItem>,
+        <Separator
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        />,
+        <DropdownItem
+          className=""
+          component="a"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Link
+        </DropdownItem>,
+        <DropdownItem
+          className=""
+          component="button"
+          href="#"
+          isDisabled={false}
+          isHovered={false}
+        >
+          Separated Action
+        </DropdownItem>,
+      ]
+    }
+    isOpen={false}
+    isPlain={true}
+    onSelect={[Function]}
+    position="right"
+    toggle={
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id=""
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={false}
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <ThIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        />
+      </DropdownToggle>
+    }
+  >
+    <div
+      className="pf-c-dropdown"
+    >
+      <DropdownToggle
+        className=""
+        iconComponent={null}
+        id="pf-toggle-id-1"
+        isActive={false}
+        isFocused={false}
+        isHovered={false}
+        isOpen={false}
+        isPlain={true}
+        key=".0"
+        onToggle={[Function]}
+        parentRef={null}
+      >
+        <DropdownToggle
+          className=""
+          id="pf-toggle-id-1"
+          isActive={false}
+          isFocused={false}
+          isHovered={false}
+          isOpen={false}
+          isPlain={true}
+          onToggle={[Function]}
+          parentRef={null}
+        >
+          <button
+            aria-expanded={false}
+            className="pf-c-dropdown__toggle pf-m-plain"
+            id="pf-toggle-id-1"
+            onClick={[Function]}
+          >
+            <ThIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 512 512"
+                width="1em"
+              >
+                <path
+                  d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z"
+                  transform=""
+                />
+              </svg>
+            </ThIcon>
+          </button>
+        </DropdownToggle>
+      </DropdownToggle>
+    </div>
+  </Dropdown>
+</ApplicationLauncher>
+`;
