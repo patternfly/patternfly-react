@@ -1,4 +1,5 @@
-import { capitalize, getUniqueId, debounce } from './util';
+import { capitalize, getUniqueId, debounce, isElementInView, sideElementIsOutOfView } from './util';
+import { SIDE } from './constants';
 
 test('capitalize', () => {
   expect(capitalize('foo')).toBe('Foo');
@@ -28,4 +29,46 @@ test('debounce', () => {
   }
 
   expect(callback).toBeCalledTimes(10);
+});
+
+test('isElementInView should be true when partial out of view and with partial true', () => {
+  const container = { scrollLeft: 0, clientWidth: 200 };
+  const element = { offsetLeft: 10, clientWidth: 200 };
+  expect(isElementInView(container, element, true)).toBe(true);
+});
+
+test('isElementInView should be false when partial out of view and with partial false ', () => {
+  const container = { scrollLeft: 0, clientWidth: 200 };
+  const element = { offsetLeft: 10, clientWidth: 200 };
+  expect(isElementInView(container, element, false)).toBe(false);
+});
+
+test('isElementInView should be false completely out of view ', () => {
+  const container = { scrollLeft: 0, clientWidth: 200 };
+  const element = { offsetLeft: 200, clientWidth: 100 };
+  expect(isElementInView(container, element, true)).toBe(false);
+});
+
+test('isElementInView should be false completely out of view when partial false ', () => {
+  const container = { scrollLeft: 0, clientWidth: 200 };
+  const element = { offsetLeft: 200, clientWidth: 100 };
+  expect(isElementInView(container, element, false)).toBe(false);
+});
+
+test('sideElementIsOutOfView Returns left when off on left side', () => {
+  const container = { scrollLeft: 20, clientWidth: 200 };
+  const element = { offsetLeft: 10, clientWidth: 200 };
+  expect(sideElementIsOutOfView(container, element)).toBe(SIDE.LEFT);
+});
+
+test('sideElementIsOutOfView Returns right when off on right side', () => {
+  const container = { scrollLeft: 0, clientWidth: 200 };
+  const element = { offsetLeft: 210, clientWidth: 200 };
+  expect(sideElementIsOutOfView(container, element)).toBe(SIDE.RIGHT);
+});
+
+test('sideElementIsOutOfView Returns NONE when in view', () => {
+  const container = { scrollLeft: 0, clientWidth: 200 };
+  const element = { offsetLeft: 10, clientWidth: 100 };
+  expect(sideElementIsOutOfView(container, element)).toBe(SIDE.NONE);
 });
