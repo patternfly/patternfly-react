@@ -10,10 +10,10 @@ const { Row, Col } = Grid;
 const { Checkbox, FormGroup } = Form;
 
 const getChildTypeName = child =>
-  child.props.type ? child.props.type : (child.type && child.type.displayName) || null;
+  child && child.props && child.props.type ? child.props.type : (child && child.type && child.type.displayName) || null;
 
 const isChildOfType = (child, type) =>
-  child.props.type === type || (!child.props.type && helpers.hasDisplayName(child, type));
+  helpers.hasDisplayName(child, type) || (child && child.props && child.props.type === type);
 
 class AccessConsoles extends React.Component {
   state = {
@@ -134,6 +134,8 @@ const childElementValidator = propValue => {
     if (
       !children.every(
         child =>
+          child === undefined ||
+          child == null ||
           (child.type && validChildrenTypes.indexOf(child.type.displayName) >= 0) ||
           (child.props && validChildrenTypes.indexOf(child.props.type) >= 0)
       )
