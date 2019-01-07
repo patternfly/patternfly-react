@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.19.1"></a>
+## [7.19.1](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.0...patternfly3-react-lerna-root@7.19.1) (2019-01-07)
+
+
+### Bug Fixes
+
+* **AccessConsoles:** fix propTypes checking for "null" child ([#1139](https://github.com/patternfly/patternfly-react/issues/1139)) ([4eed95d](https://github.com/patternfly/patternfly-react/commit/4eed95d))
+* **VncConsole:** disconnect VNC session when unmounting ([#1123](https://github.com/patternfly/patternfly-react/issues/1123)) ([b7df8dc](https://github.com/patternfly/patternfly-react/commit/b7df8dc))
+
+
+
+
 <a name="7.19.0"></a>
 # [7.19.0](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.18.0...patternfly3-react-lerna-root@7.19.0) (2019-01-03)
 

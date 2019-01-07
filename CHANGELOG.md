@@ -1,5 +1,46 @@
 
-## Change Log (2019-01-04)
+## Change Log (2019-01-07)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1123](https://github.com/patternfly/patternfly-react/pull/1123) fix(VncConsole): disconnect VNC session when unmounting ([@mareklibra](https://github.com/mareklibra))
+  * [#1139](https://github.com/patternfly/patternfly-react/pull/1139) fix(AccessConsoles): fix propTypes checking for "null" child ([@mareklibra](https://github.com/mareklibra))
+
+#### Committers: 1
+- Marek Libra ([@mareklibra](https://github.com/mareklibra))
+
+
+## patternfly4-react-lerna-root@1.34.2 (2019-01-04)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1126](https://github.com/patternfly/patternfly-react/pull/1126) fix(dropdown): add focus trap option that allows  close on click ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-table@0.2.35 (2019-01-04)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1126](https://github.com/patternfly/patternfly-react/pull/1126) fix(dropdown): add focus trap option that allows  close on click ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-docs@3.19.43 (2019-01-04)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1126](https://github.com/patternfly/patternfly-react/pull/1126) fix(dropdown): add focus trap option that allows  close on click ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
+## @patternfly/react-core@1.44.2 (2019-01-04)
 
 #### :bug: Bug Fix
 * `patternfly-4`

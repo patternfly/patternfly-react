@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.10.7"></a>
+## [1.10.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.10.6...@patternfly/react-console@1.10.7) (2019-01-07)
+
+
+### Bug Fixes
+
+* **AccessConsoles:** fix propTypes checking for "null" child ([#1139](https://github.com/patternfly/patternfly-react/issues/1139)) ([4eed95d](https://github.com/patternfly/patternfly-react/commit/4eed95d))
+* **VncConsole:** disconnect VNC session when unmounting ([#1123](https://github.com/patternfly/patternfly-react/issues/1123)) ([b7df8dc](https://github.com/patternfly/patternfly-react/commit/b7df8dc))
+
+
+
+
 <a name="1.10.6"></a>
 ## [1.10.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.10.5...@patternfly/react-console@1.10.6) (2019-01-03)
 
