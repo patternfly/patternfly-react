@@ -18,6 +18,12 @@ const { noop } = helpers;
 class VncConsole extends React.Component {
   state = { status: CONNECTING };
 
+  addEventListeners() {
+    this.rfb.addEventListener('connect', this.onConnected);
+    this.rfb.addEventListener('disconnect', this.onDisconnected);
+    this.rfb.addEventListener('securityfailure', this.onSecurityFailure);
+  }
+
   componentDidMount() {
     const {
       host,
@@ -45,9 +51,7 @@ class VncConsole extends React.Component {
       };
 
       this.rfb = new RFB(this.novncElem, url, options);
-      this.rfb.addEventListener('connect', this.onConnected);
-      this.rfb.addEventListener('disconnect', this.onDisconnected);
-      this.rfb.addEventListener('securityfailure', this.onSecurityFailure);
+      this.addEventListeners();
       this.rfb.viewOnly = viewOnly;
       this.rfb.scaleViewport = false; // if the remote session is smaller than HTML container, the view will be centered
       this.rfb.resizeSession = resizeSession;
@@ -55,6 +59,19 @@ class VncConsole extends React.Component {
       onInitFailed && onInitFailed(e);
       this.rfb = undefined;
     }
+  }
+
+  componentWillUnmount() {
+    this.removeEventListeners();
+    this.disconnect();
+  }
+
+  disconnect() {
+    if (!this.rfb) {
+      return;
+    }
+    this.rfb.disconnect();
+    this.rfb = undefined;
   }
 
   onConnected = () => {
@@ -77,6 +94,12 @@ class VncConsole extends React.Component {
     this.setState({ status: DISCONNECTED });
     this.props.onSecurityFailure(e);
   };
+
+  removeEventListeners() {
+    this.rfb.removeEventListener('connect', this.onConnected);
+    this.rfb.removeEventListener('disconnect', this.onDisconnected);
+    this.rfb.removeEventListener('securityfailure', this.onSecurityFailure);
+  }
 
   setNovncElem = e => {
     this.novncElem = e;
