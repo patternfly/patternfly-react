@@ -1,6 +1,7 @@
 /** Keep alphabetically sorted */
 export * from './AboutModal';
 export * from './Alert';
+export * from './ApplicationLauncher';
 export * from './Avatar';
 export * from './Backdrop';
 export * from './BackgroundImage';
