@@ -1,4 +1,48 @@
 
+## patternfly4-react-lerna-root@1.34.3 (2019-01-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1140](https://github.com/patternfly/patternfly-react/pull/1140) Feat 1130: Application Launcher ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Timo M. Staudinger ([@TimoSta](https://github.com/TimoSta))
+
+
+## @patternfly/react-table@0.2.36 (2019-01-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1140](https://github.com/patternfly/patternfly-react/pull/1140) Feat 1130: Application Launcher ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Timo M. Staudinger ([@TimoSta](https://github.com/TimoSta))
+
+
+## @patternfly/react-docs@3.19.44 (2019-01-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1140](https://github.com/patternfly/patternfly-react/pull/1140) Feat 1130: Application Launcher ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Timo M. Staudinger ([@TimoSta](https://github.com/TimoSta))
+
+
+## @patternfly/react-core@1.44.3 (2019-01-07)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1140](https://github.com/patternfly/patternfly-react/pull/1140) Feat 1130: Application Launcher ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- Timo M. Staudinger ([@TimoSta](https://github.com/TimoSta))
+
+
 ## patternfly3-react-lerna-root@7.19.2 (2019-01-07)
 
 #### :bug: Bug Fix
