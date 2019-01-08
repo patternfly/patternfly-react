@@ -1,4 +1,14 @@
 
+## Change Log (2019-01-08)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1137](https://github.com/patternfly/patternfly-react/pull/1137) fix(EmptyState): Use IconProps to define EmptyStateIconProps ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
 ## patternfly4-react-lerna-root@1.34.3 (2019-01-07)
 
 #### :rocket: New Feature

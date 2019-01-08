@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.44.5"></a>
+## [1.44.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.44.4...@patternfly/react-core@1.44.5) (2019-01-08)
+
+
+### Bug Fixes
+
+* **EmptyState:** Use IconProps to define EmptyStateIconProps ([#1137](https://github.com/patternfly/patternfly-react/issues/1137)) ([ccf4240](https://github.com/patternfly/patternfly-react/commit/ccf4240))
+
+
+
+
 <a name="1.44.4"></a>
 ## [1.44.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.44.3...@patternfly/react-core@1.44.4) (2019-01-08)
 
