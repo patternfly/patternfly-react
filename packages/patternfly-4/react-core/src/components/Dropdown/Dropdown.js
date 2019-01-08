@@ -66,9 +66,11 @@ class Dropdown extends React.Component {
     const id = toggle.props.id || `pf-toggle-id-${currentId++}`;
     let component;
     let renderedContent;
+    let ariaHasPopup = null;
     if (dropdownItems && dropdownItems.length > 0) {
       component = 'ul';
       renderedContent = dropdownItems;
+      ariaHasPopup = true;
     } else {
       component = 'div';
       renderedContent = children;
@@ -86,7 +88,9 @@ class Dropdown extends React.Component {
           this.parentRef = ref;
         }}
       >
-        {Children.map(toggle, oneToggle => cloneElement(oneToggle, { parentRef: this.parentRef, isOpen, id, isPlain }))}
+        {Children.map(toggle, oneToggle =>
+          cloneElement(oneToggle, { parentRef: this.parentRef, isOpen, id, isPlain, ariaHasPopup })
+        )}
         {isOpen && (
           <DropdownContext.Provider value={event => onSelect && onSelect(event)}>
             <DropdownMenu component={component} isOpen={isOpen} position={position} aria-labelledby={id}>

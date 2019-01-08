@@ -76,6 +76,7 @@ class DropdownToggle extends Component {
       isActive,
       isHovered,
       isPlain,
+      ariaHasPopup,
       onToggle,
       parentRef,
       id,
@@ -100,6 +101,7 @@ class DropdownToggle extends Component {
         type={type || 'button'}
         onClick={_event => onToggle && onToggle(!isOpen)}
         aria-expanded={isOpen}
+        aria-haspopup={ariaHasPopup}
       >
         {children}
       </button>

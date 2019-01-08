@@ -144,6 +144,7 @@ class DropdownMenu extends React.Component {
                 className
               )}
               hidden={!isOpen}
+              role="menu"
             >
               {this.extendChildren()}
             </Component>
