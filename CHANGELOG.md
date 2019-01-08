@@ -1,6 +1,46 @@
 
 ## Change Log (2019-01-08)
 
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1054](https://github.com/patternfly/patternfly-react/pull/1054) docs: add additional props documentation ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.34.5 (2019-01-08)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1137](https://github.com/patternfly/patternfly-react/pull/1137) fix(EmptyState): Use IconProps to define EmptyStateIconProps ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-table@0.2.38 (2019-01-08)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1137](https://github.com/patternfly/patternfly-react/pull/1137) fix(EmptyState): Use IconProps to define EmptyStateIconProps ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-docs@3.19.46 (2019-01-08)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1137](https://github.com/patternfly/patternfly-react/pull/1137) fix(EmptyState): Use IconProps to define EmptyStateIconProps ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-core@1.44.5 (2019-01-08)
+
 #### :bug: Bug Fix
 * `patternfly-4`
   * [#1137](https://github.com/patternfly/patternfly-react/pull/1137) fix(EmptyState): Use IconProps to define EmptyStateIconProps ([@boaz0](https://github.com/boaz0))
