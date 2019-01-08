@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '@patternfly/patternfly-next/components/Table/table.css';
 import { Provider } from 'reactabular-table';
+import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { SortByDirection } from './SortColumn';
@@ -71,8 +72,16 @@ const propTypes = {
       cellFormatters: PropTypes.arrayOf(PropTypes.func)
     })
   ])).isRequired,
-  /** Aria labeled by this property for select inputs. */
-  selectLabeledBy: PropTypes.string,
+  /** Aria labeled by this property collapse and select. */
+  rowLabeledBy: PropTypes.string,
+  /** Id prefix for expand buttons. */
+  expandId: PropTypes.string,
+  /** Id prefix for expanded content. */
+  contentId: PropTypes.string,
+  /** Position of dropdown from actions will be displayed. */
+  dropdownPosition: PropTypes.oneOf(Object.values(DropdownPosition)),
+  /** Direction of from actions will be displayed. */
+  dropdownDirection: PropTypes.oneOf(Object.values(DropdownDirection)),
   /** Header to display above table for accessibility reasons. */
   header: props => {
     if (!props['aria-label'] && !props.caption && !props.header) {
@@ -100,6 +109,12 @@ const defaultProps = {
   children: null,
   onCollapse: null,
   className: '',
+  variant: null,
+  rowLabeledBy: 'simple-node',
+  expandId: 'expandable-toggle',
+  contentId: 'expanded-content',
+  dropdownPosition: DropdownPosition.right,
+  dropdownDirection: DropdownDirection.down,
   gridBreakPoint: TableGridBreakpoint.gridMd
 };
 
@@ -124,14 +139,32 @@ class Table extends React.Component {
       children,
       actions,
       onCollapse,
-      selectLabeledBy,
+      rowLabeledBy,
+      dropdownPosition,
+      dropdownDirection,
+      contentId,
+      expandId,
       variant,
       rows,
       cells,
       ...props
     } = this.props;
 
-    const headerData = calculateColumns(cells, { sortBy, onSort, onSelect, actions, onCollapse, selectLabeledBy });
+    const headerData = calculateColumns(
+      cells,
+      {
+        sortBy,
+        onSort,
+        onSelect,
+        actions,
+        onCollapse,
+        rowLabeledBy,
+        expandId,
+        contentId,
+        dropdownPosition,
+        dropdownDirection
+      }
+    );
 
     return (
       <TableContext.Provider value={{

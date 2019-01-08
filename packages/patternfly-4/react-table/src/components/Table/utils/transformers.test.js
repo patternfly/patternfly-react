@@ -91,7 +91,7 @@ describe('Transformer functions', () => {
       title: '',
       onClick: jest.fn()
     }];
-    const returnedData = cellActions(actions)('', { rowIndex: 0 });
+    const returnedData = cellActions(actions)('', { rowIndex: 0, column: { extraParams: {} } });
     expect(returnedData).toMatchObject({ className: 'pf-c-table__action' });
     const view = mount(returnedData.children);
     view.find('.pf-c-dropdown button').first().simulate('click');
@@ -124,14 +124,16 @@ describe('Transformer functions', () => {
 
   describe('expandedRow', () => {
     test('with parent', () => {
-      const returned = expandedRow(5)({ title: 'test' }, { rowData: { parent: 1 } });
+      const returned = expandedRow(5)({ title: 'test' }, { rowData: { parent: 1 }, column: { extraParams: {} } });
       expect(returned).toMatchObject({ colSpan: 5 });
       const view = mount(returned.children);
       expect(view.find('div.pf-c-table__expandable-row-content').length).toBe(1);
     });
 
     test('no parent', () => {
-      expect(expandedRow(5)({ title: 'test' }, { rowData: {} })).toMatchObject({ title: 'test' });
+      expect(
+        expandedRow(5)({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })
+      ).toMatchObject({ title: 'test' });
     });
   });
 

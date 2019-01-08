@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import { tableCheck } from '@patternfly/patternfly-next/components/Table/table.css';
 import SelectColumn from '../../SelectColumn';
 
-export default (label, { column: { extraParams: { onSelect, selectLabeledBy = 'simple-node' } }, rowIndex, rowData }) => {
+export default (label, { column: { extraParams: { onSelect, rowLabeledBy = 'simple-node' } }, rowIndex, rowData }) => {
   const rowId = rowIndex !== undefined ? rowIndex : -1;
   function selectClick(event) {
     let selected = rowIndex === undefined ? event.target.checked : rowData && !rowData.selected;
@@ -12,7 +12,7 @@ export default (label, { column: { extraParams: { onSelect, selectLabeledBy = 's
   const customProps = {
     ...rowId !== -1 ? {
       checked: rowData && !!rowData.selected,
-      'aria-labelledby': selectLabeledBy + rowIndex
+      'aria-labelledby': rowLabeledBy + rowIndex
     } : {
         'aria-label': 'Select all rows'
       }

@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 
 const propTypes = {
   children: PropTypes.node,
-  items: PropTypes.array
+  items: PropTypes.array,
+  dropdownPosition: PropTypes.oneOf(Object.values(DropdownPosition)),
+  dropdownDirection: PropTypes.oneOf(Object.values(DropdownDirection))
 };
 const defaultProps = {
   children: null,
   className: '',
-  onSelect: null
+  onSelect: null,
+  dropdownPosition: DropdownPosition.right,
+  dropdownDirection: DropdownDirection.down
 };
 
 class ActionsColumn extends React.Component {
@@ -37,12 +41,14 @@ class ActionsColumn extends React.Component {
 
   render() {
     const { isOpen } = this.state;
-    const { items, children } = this.props;
+    const { items, children, dropdownPosition, dropdownDirection } = this.props;
     return (
       <React.Fragment>
         <Dropdown
           onToggle={this.onToggle}
           toggle={<KebabToggle onToggle={this.onToggle} />}
+          position={dropdownPosition}
+          direction={dropdownDirection}
           isOpen={isOpen}
           dropdownItems={items.map(({ title, itemKey, onClick, isSeparator, ...props }, key) => (
             isSeparator ?
