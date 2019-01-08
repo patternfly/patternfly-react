@@ -89,6 +89,7 @@ exports[`KebabToggle basic 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           <EllipsisVIcon
             color="currentColor"
@@ -280,6 +281,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           <EllipsisVIcon
             color="currentColor"
@@ -454,6 +456,7 @@ exports[`KebabToggle dropup 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           <EllipsisVIcon
             color="currentColor"
@@ -656,6 +659,7 @@ exports[`KebabToggle expanded 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           <EllipsisVIcon
             color="currentColor"
@@ -742,6 +746,7 @@ exports[`KebabToggle expanded 1`] = `
                   className=""
                   disabled={false}
                   href="#"
+                  type="button"
                 >
                   Action
                 </button>
@@ -779,6 +784,7 @@ exports[`KebabToggle expanded 1`] = `
                   className="pf-m-disabled"
                   disabled={true}
                   href="#"
+                  type="button"
                 >
                   Disabled Action
                 </button>
@@ -840,6 +846,7 @@ exports[`KebabToggle expanded 1`] = `
                   className=""
                   disabled={false}
                   href="#"
+                  type="button"
                 >
                   Separated Action
                 </button>
@@ -994,6 +1001,7 @@ exports[`KebabToggle plain 1`] = `
           className="pf-c-dropdown__toggle pf-m-plain"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           <EllipsisVIcon
             color="currentColor"
@@ -1168,6 +1176,7 @@ exports[`KebabToggle regular 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           <EllipsisVIcon
             color="currentColor"
@@ -1342,6 +1351,7 @@ exports[`KebabToggle right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           <EllipsisVIcon
             color="currentColor"
@@ -1470,6 +1480,7 @@ exports[`dropdown basic 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           Dropdown
           <CaretDownIcon
@@ -1670,6 +1681,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           Dropdown
           <CaretDownIcon
@@ -1853,6 +1865,7 @@ exports[`dropdown dropup 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           Dropdown
           <CaretDownIcon
@@ -2064,6 +2077,7 @@ exports[`dropdown expanded 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           Dropdown
           <CaretDownIcon
@@ -2153,6 +2167,7 @@ exports[`dropdown expanded 1`] = `
                   className=""
                   disabled={false}
                   href="#"
+                  type="button"
                 >
                   Action
                 </button>
@@ -2190,6 +2205,7 @@ exports[`dropdown expanded 1`] = `
                   className="pf-m-disabled"
                   disabled={true}
                   href="#"
+                  type="button"
                 >
                   Disabled Action
                 </button>
@@ -2251,6 +2267,7 @@ exports[`dropdown expanded 1`] = `
                   className=""
                   disabled={false}
                   href="#"
+                  type="button"
                 >
                   Separated Action
                 </button>
@@ -2411,6 +2428,7 @@ exports[`dropdown regular 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           Dropdown
           <CaretDownIcon
@@ -2594,6 +2612,7 @@ exports[`dropdown right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          type="button"
         >
           Dropdown
           <CaretDownIcon
