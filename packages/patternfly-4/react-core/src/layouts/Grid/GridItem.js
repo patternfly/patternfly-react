@@ -46,7 +46,9 @@ const propTypes = {
   /** the number of rows the grid item spans on large device. Value should be a number 1-12   */
   xlRowSpan: PropTypes.oneOf(gridSpans),
   /** the number of columns the grid item is offset on xLarge device. Value should be a number 1-12   */
-  xlOffset: PropTypes.oneOf(gridSpans)
+  xlOffset: PropTypes.oneOf(gridSpans),
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

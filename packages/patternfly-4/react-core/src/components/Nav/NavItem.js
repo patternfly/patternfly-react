@@ -20,7 +20,9 @@ const propTypes = {
   /** If true prevents the default anchor link action to occur. Set to true if you want to handle navigation yourself. */
   preventDefault: PropTypes.bool,
   /** Callback for item click */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /** Additional props are spread to the container <a> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

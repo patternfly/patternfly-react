@@ -9,7 +9,9 @@ const propTypes = {
   /** additional classes added to the ModalBoxBody */
   className: PropTypes.string,
   /** id to use for Modal Box description */
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

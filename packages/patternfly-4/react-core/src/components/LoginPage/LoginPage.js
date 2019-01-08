@@ -45,7 +45,9 @@ const propTypes = {
   /** Login message that contains the Text, URL, and URL Text for the sign up for an account Login Message */
   signUpForAccountMessage: PropTypes.node,
   /** Content rendered inside of Social Media Login footer section . */
-  socialMediaLoginContent: PropTypes.node
+  socialMediaLoginContent: PropTypes.node,
+  /** Additional props are spread to the Login component */
+  '': PropTypes.any
 };
 
 const defaultProps = {

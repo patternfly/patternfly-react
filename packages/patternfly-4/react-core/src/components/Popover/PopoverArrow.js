@@ -7,7 +7,9 @@ const PopoverArrow = ({ className, ...rest }) => <div className={css(styles.popo
 
 PopoverArrow.propTypes = {
   /** Popover arrow additional className */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 PopoverArrow.defaultProps = {

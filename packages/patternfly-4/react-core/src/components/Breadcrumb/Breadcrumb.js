@@ -9,7 +9,9 @@ const propTypes = {
   /** Additional classes added to the breadcrumb nav. */
   className: PropTypes.string,
   /** Aria-label added to the breadcrumb nav. */
-  'aria-label': PropTypes.string
+  'aria-label': PropTypes.string,
+  /** Additional props are spread to the container <nav> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

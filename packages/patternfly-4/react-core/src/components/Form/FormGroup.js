@@ -23,7 +23,9 @@ const propTypes = {
   /** Helper text after the field when the field is isValid. It can be a simple text or an object. */
   helperTextInvalid: PropTypes.node,
   /** ID of the included field. It has to be the same for proper working. */
-  fieldId: PropTypes.string.isRequired
+  fieldId: PropTypes.string.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

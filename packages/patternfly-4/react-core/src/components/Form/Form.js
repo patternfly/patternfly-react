@@ -10,7 +10,9 @@ const propTypes = {
   /** Additional classes added to the Form. */
   className: PropTypes.string,
   /** Sets the Form to horizontal. */
-  isHorizontal: PropTypes.bool
+  isHorizontal: PropTypes.bool,
+  /** Additional props are spread to the container <form> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

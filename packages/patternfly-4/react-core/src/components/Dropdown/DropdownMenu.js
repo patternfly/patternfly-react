@@ -16,7 +16,9 @@ const propTypes = {
   /** Indicates which component will be used as dropdown menu */
   component: componentShape,
   /** Indicates where menu will be alligned horizontally */
-  position: PropTypes.oneOf(Object.values(DropdownPosition))
+  position: PropTypes.oneOf(Object.values(DropdownPosition)),
+  /** Additional props are spread to the container component */
+  '': PropTypes.any
 };
 
 const defaultProps = {
@@ -45,9 +47,11 @@ const DropdownMenu = ({ className, isOpen, position, children, component: Compon
     );
   } else if (Component === 'ul') {
     menu = (
-      <FocusTrap focusTrapOptions={{
-        clickOutsideDeactivates: true
-      }}>
+      <FocusTrap
+        focusTrapOptions={{
+          clickOutsideDeactivates: true
+        }}
+      >
         <Component
           {...props}
           className={css(

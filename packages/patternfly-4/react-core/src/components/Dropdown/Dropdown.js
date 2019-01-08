@@ -33,7 +33,9 @@ const propTypes = {
   /** Placeholder to use custom toggle elements */
   toggle: PropTypes.node.isRequired,
   /** Function callback called when user selects item */
-  onSelect: PropTypes.func
+  onSelect: PropTypes.func,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

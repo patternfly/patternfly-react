@@ -13,7 +13,9 @@ const propTypes = {
   /* Header title used for Modal Box Header */
   title: PropTypes.string.isRequired,
   /** id to use for Modal Box description */
-  id: PropTypes.string.isRequired
+  id: PropTypes.string.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

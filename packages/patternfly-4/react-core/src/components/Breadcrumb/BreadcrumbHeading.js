@@ -14,7 +14,9 @@ const propTypes = {
   /** Target for breadcrumb link. */
   target: PropTypes.string,
   /** Sets the base component to render. Defaults to <a> */
-  component: componentShape
+  component: componentShape,
+  /** Additional props are spread to the container <li> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

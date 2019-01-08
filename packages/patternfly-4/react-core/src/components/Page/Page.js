@@ -16,7 +16,9 @@ const propTypes = {
   /** Header component (e.g. <PageHeader />) */
   header: PropTypes.node,
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
-  sidebar: PropTypes.node
+  sidebar: PropTypes.node,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

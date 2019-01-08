@@ -8,7 +8,9 @@ const propTypes = {
   /** Anything that can be rendered as ActionGroup content. */
   children: PropTypes.node,
   /** Additional classes added to the ActionGroup. */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

@@ -24,7 +24,9 @@ const propTypes = {
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
   /** Creates a large version of the Modal */
-  isLarge: PropTypes.bool
+  isLarge: PropTypes.bool,
+  /** Additional props are passed and spread in the Modal body container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

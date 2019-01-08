@@ -7,7 +7,9 @@ const propTypes = {
   /** content rendered inside the Footer */
   children: PropTypes.node,
   /** additional classes added to the Footer */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

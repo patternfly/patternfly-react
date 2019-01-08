@@ -22,7 +22,9 @@ DataListContent.propTypes = {
   /** Flag to show if the expanded content of the DataList item is visible */
   isHidden: PropTypes.bool,
   /** Adds accessible text to the DataList toggle */
-  'aria-label': PropTypes.string.isRequired
+  'aria-label': PropTypes.string.isRequired,
+  /** Additional props are spread to the container <section> */
+  '': PropTypes.any
 };
 
 DataListContent.defaultProps = {

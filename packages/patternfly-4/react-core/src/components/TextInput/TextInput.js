@@ -40,7 +40,9 @@ const propTypes = {
       return new Error('TextInput requires either an id or aria-label to be specified');
     }
     return null;
-  }
+  },
+  /** Additional props are spread to the container <input> */
+  '': PropTypes.any
 };
 
 const defaultProps = {
@@ -61,17 +63,7 @@ class TextInput extends React.Component {
   };
 
   render() {
-    const {
-      className,
-      type,
-      value,
-      onChange,
-      isValid,
-      isReadOnly,
-      isRequired,
-      isDisabled,
-      ...props
-    } = this.props;
+    const { className, type, value, onChange, isValid, isReadOnly, isRequired, isDisabled, ...props } = this.props;
     return (
       <input
         {...props}

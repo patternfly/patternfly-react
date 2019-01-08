@@ -7,7 +7,9 @@ import { componentShape } from '../../internal/componentShape';
 const propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
-  component: componentShape
+  component: componentShape,
+  /** Additional props are spread to the container component */
+  '': PropTypes.any
 };
 
 const defaultProps = {

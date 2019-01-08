@@ -24,7 +24,9 @@ const propTypes = {
   /** If true makes the expandable list title active */
   isActive: PropTypes.bool,
   /** Identifier to use for the section aria label */
-  id: PropTypes.string
+  id: PropTypes.string,
+  /** Additional props are spread to the container <li> */
+  '': PropTypes.any
 };
 
 const defaultProps = {
@@ -82,11 +84,7 @@ class NavExpandable extends React.Component {
                     <AngleRightIcon aria-hidden="true" />
                   </span>
                 </a>
-                <section
-                  className={css(styles.navSubnav)}
-                  aria-labelledby={this.id}
-                  hidden={isExpanded ? null : true}
-                >
+                <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={isExpanded ? null : true}>
                   {srText && (
                     <h2 className={css(a11yStyles.srOnly)} id={this.id}>
                       {srText}

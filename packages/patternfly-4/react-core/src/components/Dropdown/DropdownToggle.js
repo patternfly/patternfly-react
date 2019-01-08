@@ -34,7 +34,9 @@ DropdownToggle.propTypes = {
   /** Display the toggle with no border or background */
   isPlain: PropTypes.bool,
   /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
-  iconComponent: PropTypes.func
+  iconComponent: PropTypes.func,
+  /** Additional props are spread to the container component */
+  '': PropTypes.any
 };
 
 DropdownToggle.defaultProps = {

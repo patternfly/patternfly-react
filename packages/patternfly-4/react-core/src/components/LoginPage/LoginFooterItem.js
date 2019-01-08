@@ -11,7 +11,9 @@ const propTypes = {
   /** The URL of the Footer Link Item */
   href: PropTypes.string,
   /** Specifies where to open the linked document */
-  target: PropTypes.string
+  target: PropTypes.string,
+  /** Additional props are spread to the container <a> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

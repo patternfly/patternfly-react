@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   /** content rendered inside the Gallery Item */
-  children: PropTypes.any
+  children: PropTypes.any,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

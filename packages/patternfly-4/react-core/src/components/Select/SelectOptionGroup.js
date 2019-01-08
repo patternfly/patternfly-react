@@ -9,7 +9,9 @@ const propTypes = {
   /** the label for the option */
   label: PropTypes.string.isRequired,
   /** flag indicating if the Option Group is disabled */
-  isDisabled: PropTypes.bool
+  isDisabled: PropTypes.bool,
+  /** Additional props are spread to the container <optgroup> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

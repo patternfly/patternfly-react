@@ -19,7 +19,9 @@ const propTypes = {
   /** Id of the checkbox. */
   id: PropTypes.string.isRequired,
   /** Aria-label of the checkbox. */
-  'aria-label': PropTypes.any.isRequired
+  'aria-label': PropTypes.any.isRequired,
+  /** Additional props are spread to the <input> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

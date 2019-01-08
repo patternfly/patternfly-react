@@ -30,7 +30,9 @@ DataListCheck.propTypes = {
   /** A callback for when the DataList checkbox selection changes */
   onChange: PropTypes.func,
   /** Aria-labelledby of the DataList checkbox */
-  'aria-labelledby': PropTypes.string.isRequired
+  'aria-labelledby': PropTypes.string.isRequired,
+  /** Additional props are spread to the <input> */
+  '': PropTypes.any
 };
 
 DataListCheck.defaultProps = {

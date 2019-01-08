@@ -9,7 +9,9 @@ const propTypes = {
   /** content rendered inside the Split Layout Item */
   children: PropTypes.node,
   /** additional classes added to the Split Layout Item */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

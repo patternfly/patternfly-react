@@ -9,7 +9,9 @@ const propTypes = {
   /** the URL of the image for the Hero. */
   src: PropTypes.string,
   /** the alternate text of the Hero image. */
-  alt: PropTypes.string.isRequired
+  alt: PropTypes.string.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

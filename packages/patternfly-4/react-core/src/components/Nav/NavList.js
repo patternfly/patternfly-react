@@ -10,7 +10,9 @@ const propTypes = {
   /** Children nodes */
   children: PropTypes.node,
   /** Additional classes added to the list */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <ul> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

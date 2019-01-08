@@ -20,7 +20,9 @@ const propTypes = {
       return new Error('TextArea requires either an id or aria-label to be specified');
     }
     return null;
-  }
+  },
+  /** Additional props are spread to the container <textarea> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

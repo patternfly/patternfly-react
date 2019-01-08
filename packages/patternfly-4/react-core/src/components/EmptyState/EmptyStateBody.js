@@ -13,7 +13,9 @@ EmptyStateBody.propTypes = {
   /** Additional classes added to the EmptyState */
   className: PropTypes.string,
   /** Content rendered inside the EmptyState */
-  children: PropTypes.node
+  children: PropTypes.node,
+  /** Additional props are spread to the container <p> */
+  '': PropTypes.any
 };
 
 EmptyStateBody.defaultProps = {

@@ -14,6 +14,8 @@ PopoverContent.propTypes = {
   className: PropTypes.string,
   /** PopoverContent content */
   children: PropTypes.node.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 PopoverContent.defaultProps = {

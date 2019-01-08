@@ -7,7 +7,9 @@ const propTypes = {
   /** Content rendered inside the footer of the login layout */
   children: PropTypes.node,
   /** Additional classes added to the login header */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <footer> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

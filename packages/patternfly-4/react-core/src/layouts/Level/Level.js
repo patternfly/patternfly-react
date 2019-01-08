@@ -10,7 +10,9 @@ const propTypes = {
   /** additional classes added to the Level layout */
   className: PropTypes.string,
   /** content rendered inside the Level layout */
-  children: PropTypes.node
+  children: PropTypes.node,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 const defaultProps = {
   gutter: null,

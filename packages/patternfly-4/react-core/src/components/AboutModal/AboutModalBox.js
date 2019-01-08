@@ -11,7 +11,9 @@ const propTypes = {
   /** id to use for About Modal Box aria-labelledby attribute */
   'aria-labelledby': PropTypes.string.isRequired,
   /** id to use for About Modal Box aria-describedby attribute */
-  'aria-describedby': PropTypes.string.isRequired
+  'aria-describedby': PropTypes.string.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

@@ -14,7 +14,9 @@ const propTypes = {
   /** Additional classes added to the list. */
   className: PropTypes.string,
   /** Adds list variant styles */
-  variant: PropTypes.oneOf(Object.values(ListVariant))
+  variant: PropTypes.oneOf(Object.values(ListVariant)),
+  /** Additional props are spread to the container <ul> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

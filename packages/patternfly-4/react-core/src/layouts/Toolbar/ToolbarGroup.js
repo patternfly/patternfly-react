@@ -7,7 +7,9 @@ const propTypes = {
   /** Anything that can be rendered as one toolbar group */
   children: PropTypes.node,
   /** Classes applied to toolbar group */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

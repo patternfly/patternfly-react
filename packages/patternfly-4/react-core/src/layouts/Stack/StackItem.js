@@ -9,7 +9,9 @@ const propTypes = {
   /** additional classes added to the Stack Layout Item */
   children: PropTypes.node,
   /** content rendered inside the Stack Layout Item */
-  className: PropTypes.string
+  className: PropTypes.string,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

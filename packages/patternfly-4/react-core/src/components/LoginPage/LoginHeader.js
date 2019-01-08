@@ -9,7 +9,9 @@ const propTypes = {
   /** Additional classes added to the login header */
   className: PropTypes.string,
   /** Header Brand component (e.g. <LoginHeader />) */
-  headerBrand: PropTypes.node
+  headerBrand: PropTypes.node,
+  /** Additional props are spread to the container <header> */
+  '': PropTypes.any
 };
 
 const defaultProps = {

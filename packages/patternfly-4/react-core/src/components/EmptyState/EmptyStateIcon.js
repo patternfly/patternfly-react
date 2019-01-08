@@ -11,7 +11,9 @@ EmptyStateIcon.propTypes = {
   /** Additional classes added to the EmptyState */
   className: PropTypes.string,
   /** Icon component to be rendered inside the EmptyState */
-  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
+  /** Additional props are spread to the Icon */
+  '': PropTypes.any
 };
 
 EmptyStateIcon.defaultProps = {
