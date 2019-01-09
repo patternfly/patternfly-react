@@ -25,7 +25,7 @@ class SecondaryTabs extends React.Component {
     return (
       <Tabs activeKey={this.state.activeTabKey1} onSelect={this.handleTabClickFirst}>
         <Tab eventKey={0} title="Tab item 1">
-          <Tabs activeKey={this.state.activeTabKey2} onSelect={this.handleTabClickSecond}>
+          <Tabs activeKey={this.state.activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
             <Tab eventKey={10} title="Secondary Tab 1">
               Secondary Tab 1 section
             </Tab>
