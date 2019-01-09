@@ -12,6 +12,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Link
       </DropdownItem>,
@@ -21,6 +22,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Action
       </DropdownItem>,
@@ -30,6 +32,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -39,6 +42,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -55,6 +59,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -64,6 +69,7 @@ exports[`ApplicationLauncher dropup + right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -109,6 +115,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Link
       </DropdownItem>,
@@ -118,6 +125,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Action
       </DropdownItem>,
@@ -127,6 +135,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -136,6 +145,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -152,6 +162,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -161,6 +172,7 @@ exports[`ApplicationLauncher dropup 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -206,6 +218,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Link
       </DropdownItem>,
@@ -215,6 +228,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Action
       </DropdownItem>,
@@ -224,6 +238,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -233,6 +248,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -249,6 +265,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -258,6 +275,7 @@ exports[`ApplicationLauncher expanded 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -303,6 +321,7 @@ exports[`ApplicationLauncher regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Link
       </DropdownItem>,
@@ -312,6 +331,7 @@ exports[`ApplicationLauncher regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Action
       </DropdownItem>,
@@ -321,6 +341,7 @@ exports[`ApplicationLauncher regular 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -330,6 +351,7 @@ exports[`ApplicationLauncher regular 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -346,6 +368,7 @@ exports[`ApplicationLauncher regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -355,6 +378,7 @@ exports[`ApplicationLauncher regular 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Action
       </DropdownItem>,
@@ -400,6 +424,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Link
       </DropdownItem>,
@@ -409,6 +434,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Action
       </DropdownItem>,
@@ -418,6 +444,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Link
       </DropdownItem>,
@@ -427,6 +454,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
         href="#"
         isDisabled={true}
         isHovered={false}
+        onClick={[Function]}
       >
         Disabled Action
       </DropdownItem>,
@@ -443,6 +471,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Link
       </DropdownItem>,
@@ -452,6 +481,7 @@ exports[`ApplicationLauncher right aligned 1`] = `
         href="#"
         isDisabled={false}
         isHovered={false}
+        onClick={[Function]}
       >
         Separated Action
       </DropdownItem>,

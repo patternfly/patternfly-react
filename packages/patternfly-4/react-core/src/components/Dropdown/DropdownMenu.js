@@ -17,7 +17,6 @@ const propTypes = {
   component: componentShape,
   /** Indicates where menu will be alligned horizontally */
   position: PropTypes.oneOf(Object.values(DropdownPosition)),
-  onSelect: PropTypes.func,
   /** Additional props are spread to the container component */
   '': PropTypes.any
 };

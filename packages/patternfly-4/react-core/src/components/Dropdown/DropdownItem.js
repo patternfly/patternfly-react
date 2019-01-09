@@ -20,8 +20,6 @@ const propTypes = {
   href: PropTypes.string,
   /** Additional props are spread to the container component */
   '': PropTypes.any,
-  /** Callback for select event */
-  onSelect: PropTypes.func,
   /** Callback for click event */
   onClick: PropTypes.func
 };
@@ -33,7 +31,6 @@ const defaultProps = {
   component: 'a',
   isDisabled: false,
   href: '#',
-  onSelect: Function.prototype,
   onClick: Function.prototype
 };
 
@@ -77,8 +74,6 @@ class DropdownItem extends React.Component {
                   if (!isDisabled) {
                     if (Component === 'button') onClick && onClick(event);
                     onSelect && onSelect(event);
-                  } else {
-                    Function.prototype;
                   }
                 }}
               >
