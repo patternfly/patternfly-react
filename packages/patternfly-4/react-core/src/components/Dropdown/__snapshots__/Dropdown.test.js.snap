@@ -764,18 +764,7 @@ exports[`KebabToggle expanded 1`] = `
                   className=""
                   disabled={false}
                   href="#"
-<<<<<<< HEAD
-                  type="button"
-=======
                   onClick={[Function]}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
-=======
-                  onSelect={[Function]}
->>>>>>> feat(Dropdown): use Context to pass onSelect handlers
-=======
->>>>>>> feat(Dropdown): remove onSelect default
                 >
                   Action
                 </button>
@@ -816,18 +805,7 @@ exports[`KebabToggle expanded 1`] = `
                   className="pf-m-disabled"
                   disabled={true}
                   href="#"
-<<<<<<< HEAD
-                  type="button"
-=======
                   onClick={[Function]}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
-=======
-                  onSelect={[Function]}
->>>>>>> feat(Dropdown): use Context to pass onSelect handlers
-=======
->>>>>>> feat(Dropdown): remove onSelect default
                 >
                   Disabled Action
                 </button>
@@ -894,18 +872,7 @@ exports[`KebabToggle expanded 1`] = `
                   className=""
                   disabled={false}
                   href="#"
-<<<<<<< HEAD
-                  type="button"
-=======
                   onClick={[Function]}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
-=======
-                  onSelect={[Function]}
->>>>>>> feat(Dropdown): use Context to pass onSelect handlers
-=======
->>>>>>> feat(Dropdown): remove onSelect default
                 >
                   Separated Action
                 </button>
@@ -2262,18 +2229,7 @@ exports[`dropdown expanded 1`] = `
                   className=""
                   disabled={false}
                   href="#"
-<<<<<<< HEAD
-                  type="button"
-=======
                   onClick={[Function]}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
-=======
-                  onSelect={[Function]}
->>>>>>> feat(Dropdown): use Context to pass onSelect handlers
-=======
->>>>>>> feat(Dropdown): remove onSelect default
                 >
                   Action
                 </button>
@@ -2314,18 +2270,7 @@ exports[`dropdown expanded 1`] = `
                   className="pf-m-disabled"
                   disabled={true}
                   href="#"
-<<<<<<< HEAD
-                  type="button"
-=======
                   onClick={[Function]}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
-=======
-                  onSelect={[Function]}
->>>>>>> feat(Dropdown): use Context to pass onSelect handlers
-=======
->>>>>>> feat(Dropdown): remove onSelect default
                 >
                   Disabled Action
                 </button>
@@ -2392,18 +2337,7 @@ exports[`dropdown expanded 1`] = `
                   className=""
                   disabled={false}
                   href="#"
-<<<<<<< HEAD
-                  type="button"
-=======
                   onClick={[Function]}
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> feat(Dropdown): assign onClick to disabled items, update tests
-=======
-                  onSelect={[Function]}
->>>>>>> feat(Dropdown): use Context to pass onSelect handlers
-=======
->>>>>>> feat(Dropdown): remove onSelect default
                 >
                   Separated Action
                 </button>
