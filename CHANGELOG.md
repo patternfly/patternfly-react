@@ -1,5 +1,35 @@
 
-## Change Log (2019-01-08)
+## patternfly4-react-lerna-root@1.34.6 (2019-01-08)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1054](https://github.com/patternfly/patternfly-react/pull/1054) docs: add additional props documentation ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.39 (2019-01-08)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1054](https://github.com/patternfly/patternfly-react/pull/1054) docs: add additional props documentation ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.47 (2019-01-08)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1054](https://github.com/patternfly/patternfly-react/pull/1054) docs: add additional props documentation ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.44.6 (2019-01-08)
 
 #### :memo: Documentation
 * `patternfly-4`
