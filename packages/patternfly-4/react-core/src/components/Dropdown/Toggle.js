@@ -79,6 +79,7 @@ class DropdownToggle extends Component {
       onToggle,
       parentRef,
       id,
+      type,
       ...props
     } = this.props;
     return (
@@ -96,6 +97,7 @@ class DropdownToggle extends Component {
           isPlain && styles.modifiers.plain,
           className
         )}
+        type={type || 'button'}
         onClick={_event => onToggle && onToggle(!isOpen)}
         aria-expanded={isOpen}
       >

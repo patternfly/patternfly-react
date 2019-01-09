@@ -49,6 +49,7 @@ exports[`Dropdown toggle 1`] = `
       className="pf-c-dropdown__toggle"
       id="Dropdown Toggle"
       onClick={[Function]}
+      type="button"
     >
       Dropdown
       <CaretDownIcon
@@ -128,6 +129,7 @@ exports[`Kebab toggle 1`] = `
       className="pf-c-dropdown__toggle"
       id="Dropdown Toggle"
       onClick={[Function]}
+      type="button"
     >
       <EllipsisVIcon
         color="currentColor"

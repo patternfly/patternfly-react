@@ -37,6 +37,7 @@ const DropdownItem = ({ className, children, isHovered, component: Component, is
     additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
   } else if (Component === 'button') {
     additionalProps.disabled = isDisabled;
+    additionalProps.type = additionalProps.type || 'button';
   }
 
   return (
