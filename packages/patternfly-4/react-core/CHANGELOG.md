@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.44.7"></a>
+## [1.44.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.44.6...@patternfly/react-core@1.44.7) (2019-01-09)
+
+
+### Bug Fixes
+
+* **Dropdown:** set default button type to button ([#1148](https://github.com/patternfly/patternfly-react/issues/1148)) ([b4bded3](https://github.com/patternfly/patternfly-react/commit/b4bded3))
+
+
+
+
 <a name="1.44.6"></a>
 ## [1.44.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.44.5...@patternfly/react-core@1.44.6) (2019-01-08)
 
