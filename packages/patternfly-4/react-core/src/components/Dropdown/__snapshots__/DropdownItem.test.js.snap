@@ -19,8 +19,8 @@ exports[`dropdown items button 1`] = `
     className=""
     disabled={false}
     href="#"
-    type="button"
     onKeyDown={[Function]}
+    type="button"
   >
     Something
   </button>
@@ -55,8 +55,8 @@ exports[`dropdown items disabled button 1`] = `
     className="pf-m-disabled"
     disabled={true}
     href="#"
-    type="button"
     onKeyDown={[Function]}
+    type="button"
   >
     Something
   </button>
@@ -84,8 +84,8 @@ exports[`dropdown items hover a 1`] = `<[object Object] />`;
     className="pf-m-hover"
     disabled={false}
     href="#"
-    type="button"
     onKeyDown={[Function]}
+    type="button"
   >
     Something
   </button>

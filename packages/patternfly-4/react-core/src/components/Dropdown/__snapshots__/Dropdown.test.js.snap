@@ -940,8 +940,8 @@ exports[`KebabToggle expanded 1`] = `
                   disabled={false}
                   href="#"
                   onClick={[Function]}
-                  type="button"
                   onKeyDown={[Function]}
+                  type="button"
                 >
                   Action
                 </button>
@@ -998,8 +998,8 @@ exports[`KebabToggle expanded 1`] = `
                   disabled={true}
                   href="#"
                   onClick={[Function]}
-                  type="button"
                   onKeyDown={[Function]}
+                  type="button"
                 >
                   Disabled Action
                 </button>
@@ -1091,8 +1091,8 @@ exports[`KebabToggle expanded 1`] = `
                   disabled={false}
                   href="#"
                   onClick={[Function]}
-                  type="button"
                   onKeyDown={[Function]}
+                  type="button"
                 >
                   Separated Action
                 </button>
@@ -2758,6 +2758,8 @@ exports[`dropdown expanded 1`] = `
                   disabled={false}
                   href="#"
                   onKeyDown={[Function]}
+                  type="button"
+                >
                   Action
                 </button>
               </li>
@@ -2813,8 +2815,8 @@ exports[`dropdown expanded 1`] = `
                   disabled={true}
                   href="#"
                   onClick={[Function]}
-                  type="button"
                   onKeyDown={[Function]}
+                  type="button"
                 >
                   Disabled Action
                 </button>
@@ -2906,8 +2908,8 @@ exports[`dropdown expanded 1`] = `
                   disabled={false}
                   href="#"
                   onClick={[Function]}
-                  type="button"
                   onKeyDown={[Function]}
+                  type="button"
                 >
                   Separated Action
                 </button>
