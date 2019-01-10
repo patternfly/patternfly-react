@@ -1,96 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`dropdown items a 1`] = `
-<li>
-  <a
-    aria-disabled={false}
-    className=""
-    href="#"
-  >
-    Something
-  </a>
-</li>
-`;
+exports[`dropdown items a 1`] = `<[object Object] />`;
 
-exports[`dropdown items button 1`] = `
-<li>
-  <button
-    className=""
-    disabled={false}
-    href="#"
-    type="button"
-  >
-    Something
-  </button>
-</li>
-`;
+exports[`dropdown items button 1`] = `<[object Object] />`;
 
-exports[`dropdown items disabled a 1`] = `
-.pf-m-disabled {
-  display: block;
-}
+exports[`dropdown items disabled a 1`] = `<[object Object] />`;
 
-<li>
-  <a
-    aria-disabled={true}
-    className="pf-m-disabled"
-    href="#"
-    tabIndex={-1}
-  >
-    Something
-  </a>
-</li>
-`;
+exports[`dropdown items disabled button 1`] = `<[object Object] />`;
 
-exports[`dropdown items disabled button 1`] = `
-.pf-m-disabled {
-  display: block;
-}
+exports[`dropdown items hover a 1`] = `<[object Object] />`;
 
-<li>
-  <button
-    className="pf-m-disabled"
-    disabled={true}
-    href="#"
-    type="button"
-  >
-    Something
-  </button>
-</li>
-`;
-
-exports[`dropdown items hover a 1`] = `
-.pf-m-hover {
-  display: block;
-}
-
-<li>
-  <a
-    aria-disabled={false}
-    className="pf-m-hover"
-    href="#"
-  >
-    Something
-  </a>
-</li>
-`;
-
-exports[`dropdown items hover button 1`] = `
-.pf-m-hover {
-  display: block;
-}
-
-<li>
-  <button
-    className="pf-m-hover"
-    disabled={false}
-    href="#"
-    type="button"
-  >
-    Something
-  </button>
-</li>
-`;
+exports[`dropdown items hover button 1`] = `<[object Object] />`;
 
 exports[`dropdown items separator 1`] = `
 .pf-c-dropdown__separator {
@@ -105,6 +25,7 @@ exports[`dropdown items separator 1`] = `
   href="#"
   isDisabled={false}
   isHovered={false}
+  onClick={[Function]}
   role="separator"
 />
 `;

@@ -4,4 +4,5 @@ export interface DropdownItemProps extends HTMLProps<HTMLAnchorElement> {
   component?: ReactType<DropdownItemProps>;
   children?: ReactNode;
   isDisabled?: Boolean;
+  onClick?: Function;
 }

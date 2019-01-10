@@ -3,7 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import DropdownMenu from './DropdownMenu';
-import { DropdownPosition, DropdownDirection } from './dropdownConstants';
+import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -88,15 +88,11 @@ class Dropdown extends React.Component {
       >
         {Children.map(toggle, oneToggle => cloneElement(oneToggle, { parentRef: this.parentRef, isOpen, id, isPlain }))}
         {isOpen && (
-          <DropdownMenu
-            component={component}
-            isOpen={isOpen}
-            position={position}
-            aria-labelledby={id}
-            onClick={event => onSelect && onSelect(event)}
-          >
-            {renderedContent}
-          </DropdownMenu>
+          <DropdownContext.Provider value={event => onSelect && onSelect(event)}>
+            <DropdownMenu component={component} isOpen={isOpen} position={position} aria-labelledby={id}>
+              {renderedContent}
+            </DropdownMenu>
+          </DropdownContext.Provider>
         )}
       </div>
     );

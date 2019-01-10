@@ -162,9 +162,8 @@ describe('API', () => {
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       />
     );
-
     view
-      .find('li')
+      .find('a')
       .first()
       .simulate('click');
     expect(mockToggle.mock.calls).toHaveLength(0);

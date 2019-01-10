@@ -3,7 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../internal/componentShape';
-import { DropdownPosition } from './dropdownConstants';
+import { DropdownPosition, DropdownContext } from './dropdownConstants';
 import FocusTrap from 'focus-trap-react';
 
 const propTypes = {
@@ -33,17 +33,22 @@ const DropdownMenu = ({ className, isOpen, position, children, component: Compon
   let menu = null;
   if (Component === 'div') {
     menu = (
-      <Component
-        {...props}
-        className={css(
-          styles.dropdownMenu,
-          position === DropdownPosition.right && styles.modifiers.alignRight,
-          className
+      <DropdownContext.Consumer>
+        {onSelect => (
+          <Component
+            {...props}
+            className={css(
+              styles.dropdownMenu,
+              position === DropdownPosition.right && styles.modifiers.alignRight,
+              className
+            )}
+            hidden={!isOpen}
+            onClick={event => onSelect && onSelect(event)}
+          >
+            {children}
+          </Component>
         )}
-        hidden={!isOpen}
-      >
-        {children}
-      </Component>
+      </DropdownContext.Consumer>
     );
   } else if (Component === 'ul') {
     menu = (
