@@ -1,4 +1,14 @@
 
+## Change Log (2019-01-10)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1159](https://github.com/patternfly/patternfly-react/pull/1159) fix(docs): fix workspace previews ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
 ## patternfly4-react-lerna-root@1.34.8 (2019-01-10)
 
 #### :bug: Bug Fix
