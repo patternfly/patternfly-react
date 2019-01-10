@@ -29,6 +29,7 @@
   "dependencies": {
     "@patternfly/react-icons": "^2.9.6",
     "@patternfly/react-styles": "^2.3.0",
+    "@patternfly/react-tokens": "^1.9.5",
     "@tippy.js/react": "^1.1.1",
     "exenv": "^1.2.2",
     "focus-trap-react": "^4.0.1"
@@ -61,8 +62,6 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.0.0",
     "@patternfly/patternfly-next": "1.0.117",
-    "@patternfly/react-styles": "^2.3.0",
-    "@patternfly/react-tokens": "^1.9.5",
     "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.10",
     "@types/prop-types": "^15.5.6",
