@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.6"></a>
+## [1.2.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@1.2.5...@patternfly/react-charts@1.2.6) (2019-01-10)
+
+
+### Bug Fixes
+
+* **prerelease:** attempt to add prerelease channel to react-charts ([#1160](https://github.com/patternfly/patternfly-react/issues/1160)) ([0e3e807](https://github.com/patternfly/patternfly-react/commit/0e3e807))
+
+
+
+
 <a name="1.2.5"></a>
 ## [1.2.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@1.2.4...@patternfly/react-charts@1.2.5) (2019-01-10)
 

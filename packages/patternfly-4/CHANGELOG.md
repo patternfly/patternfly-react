@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.34.11"></a>
+## [1.34.11](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.34.10...patternfly4-react-lerna-root@1.34.11) (2019-01-10)
+
+
+### Bug Fixes
+
+* **prerelease:** attempt to add prerelease channel to react-charts ([#1160](https://github.com/patternfly/patternfly-react/issues/1160)) ([0e3e807](https://github.com/patternfly/patternfly-react/commit/0e3e807))
+
+
+
+
 <a name="1.34.10"></a>
 ## [1.34.10](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.34.9...patternfly4-react-lerna-root@1.34.10) (2019-01-10)
 
