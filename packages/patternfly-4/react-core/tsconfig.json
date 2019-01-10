@@ -3,6 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "baseUrl": ".",
+    "isolatedModules": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
     "sourceMap": true, // allow sourcemap support

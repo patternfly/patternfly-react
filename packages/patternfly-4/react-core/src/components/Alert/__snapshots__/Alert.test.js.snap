@@ -25,11 +25,11 @@ exports[`Alert - danger Action 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-danger {
@@ -151,11 +151,11 @@ exports[`Alert - danger Action and Title 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-danger {
@@ -278,7 +278,7 @@ exports[`Alert - danger Body 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert.pf-m-danger {
   display: flex;
@@ -390,11 +390,11 @@ exports[`Alert - danger Custom aria label 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-danger {
@@ -518,7 +518,7 @@ exports[`Alert - danger Title 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert.pf-m-danger {
   display: flex;
@@ -631,11 +631,11 @@ exports[`Alert - info Action 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-info {
@@ -757,11 +757,11 @@ exports[`Alert - info Action and Title 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-info {
@@ -884,7 +884,7 @@ exports[`Alert - info Body 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert.pf-m-info {
   display: flex;
@@ -996,11 +996,11 @@ exports[`Alert - info Custom aria label 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-info {
@@ -1124,7 +1124,7 @@ exports[`Alert - info Title 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert.pf-m-info {
   display: flex;
@@ -1237,11 +1237,11 @@ exports[`Alert - success Action 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-success {
@@ -1363,11 +1363,11 @@ exports[`Alert - success Action and Title 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-success {
@@ -1490,7 +1490,7 @@ exports[`Alert - success Body 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert.pf-m-success {
   display: flex;
@@ -1602,11 +1602,11 @@ exports[`Alert - success Custom aria label 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-success {
@@ -1730,7 +1730,7 @@ exports[`Alert - success Title 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert.pf-m-success {
   display: flex;
@@ -1843,11 +1843,11 @@ exports[`Alert - warning Action 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-warning {
@@ -1969,11 +1969,11 @@ exports[`Alert - warning Action and Title 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-warning {
@@ -2096,7 +2096,7 @@ exports[`Alert - warning Body 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert.pf-m-warning {
   display: flex;
@@ -2208,11 +2208,11 @@ exports[`Alert - warning Custom aria label 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert__action {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   white-space: nowrap;
 }
 .pf-c-alert.pf-m-warning {
@@ -2336,7 +2336,7 @@ exports[`Alert - warning Title 1`] = `
 }
 .pf-c-alert__body {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
 }
 .pf-c-alert.pf-m-warning {
   display: flex;

@@ -9,7 +9,7 @@ export const TooltipPosition: {
   right: 'right';
 };
 
-export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'children' | 'size'> {
+export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' | 'children' | 'size'> {
   /** Tooltip position */
   position?: BasicPlacement;
   /** If true, tries to keep the tooltip in view by flipping it if necessary */

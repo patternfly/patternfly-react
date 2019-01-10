@@ -4,7 +4,7 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
 .pf-c-button.pf-m-primary.pf-m-disabled {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -34,7 +34,7 @@ exports[`danger button 1`] = `
 .pf-c-button.pf-m-danger {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -64,7 +64,7 @@ exports[`isBlock 1`] = `
 .pf-c-button.pf-m-primary.pf-m-block {
   display: block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -94,7 +94,7 @@ exports[`isDisabled 1`] = `
 .pf-c-button.pf-m-primary.pf-m-disabled {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -124,7 +124,7 @@ exports[`isFocus 1`] = `
 .pf-c-button.pf-m-primary.pf-m-focus {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -153,7 +153,7 @@ exports[`isHover 1`] = `
 .pf-c-button.pf-m-primary.pf-m-hover {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -182,7 +182,7 @@ exports[`link button 1`] = `
 .pf-c-button.pf-m-link {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -211,7 +211,7 @@ exports[`plain button 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -240,7 +240,7 @@ exports[`primary button 1`] = `
 .pf-c-button.pf-m-primary {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -270,7 +270,7 @@ exports[`secondary button 1`] = `
 .pf-c-button.pf-m-secondary {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -300,7 +300,7 @@ exports[`tertiary button 1`] = `
 .pf-c-button.pf-m-tertiary {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
