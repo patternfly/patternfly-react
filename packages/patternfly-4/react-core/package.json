@@ -29,6 +29,7 @@
   "dependencies": {
     "@patternfly/react-icons": "^2.9.6",
     "@patternfly/react-styles": "^2.3.0",
+    "@patternfly/react-tokens": "^1.9.5",
     "@tippy.js/react": "^1.1.1",
     "exenv": "^1.2.2",
     "focus-trap-react": "^4.0.1"
