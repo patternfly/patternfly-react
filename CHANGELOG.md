@@ -1,5 +1,124 @@
 
-## Change Log (2019-01-10)
+## patternfly4-react-lerna-root@1.34.8 (2019-01-10)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1014](https://github.com/patternfly/patternfly-react/pull/1014) Dropdown interaction issues ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-tokens@1.9.5 (2019-01-10)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1014](https://github.com/patternfly/patternfly-react/pull/1014) Dropdown interaction issues ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.41 (2019-01-10)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1014](https://github.com/patternfly/patternfly-react/pull/1014) Dropdown interaction issues ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-styled-system@1.3.5 (2019-01-10)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1014](https://github.com/patternfly/patternfly-react/pull/1014) Dropdown interaction issues ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-icons@2.9.6 (2019-01-10)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1014](https://github.com/patternfly/patternfly-react/pull/1014) Dropdown interaction issues ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.49 (2019-01-10)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1014](https://github.com/patternfly/patternfly-react/pull/1014) Dropdown interaction issues ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.44.8 (2019-01-10)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1014](https://github.com/patternfly/patternfly-react/pull/1014) Dropdown interaction issues ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-charts@1.2.5 (2019-01-10)
 
 #### :bug: Bug Fix
 * `patternfly-4`
