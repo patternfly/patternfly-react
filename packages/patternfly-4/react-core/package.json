@@ -49,9 +49,6 @@
     "lint": "tslint --project tsconfig.json",
     "postbuild": "yarn build:typecheck && node ./build/copyStyles.js"
   },
-  "optionalDependencies": {
-    "@patternfly/react-tokens": "^1.0.0"
-  },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
@@ -63,8 +60,9 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.0.0",
-    "@patternfly/patternfly-next": "1.0.109",
+    "@patternfly/patternfly-next": "1.0.117",
     "@patternfly/react-styles": "^2.3.0",
+    "@patternfly/react-tokens": "^1.9.4",
     "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.10",
     "@types/prop-types": "^15.5.6",

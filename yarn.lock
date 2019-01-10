@@ -1123,6 +1123,11 @@
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.109.tgz#5c1a8ca29ca48d030324d3d588af9954e2f36cea"
   integrity sha512-jmDQbXCxAeBssoRfskLs+cgNMAxliHUZg8aodTkvEFRH+dTzU8lqbd+85cNy9zjw5hC507aqwArlCABc0Zpakw==
 
+"@patternfly/patternfly-next@1.0.117":
+  version "1.0.117"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.117.tgz#18d3ce798cac91cba97f3f406031b58b9c6a2a7e"
+  integrity sha512-iTWdii0Y6Me5tNG1eKf8fL0nA0QgOT461WKKXtuSaRyUOqeSYCvpqECz7qY/h7W0RrCLuXy6A5EYUHxdnjKVkw==
+
 "@sindresorhus/is@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
@@ -6180,7 +6185,7 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0", cssom@^0.3.4:
+cssom@0.3.4, cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0", cssom@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.4.tgz#8cd52e8a3acfd68d3aed38ee0a640177d2f9d797"
   integrity sha512-+7prCSORpXNeR4/fUP3rL+TzqtiFfhMvTd7uEqMdgPvLPt4+uzFUeufx5RHjGTACCargg/DiEt/moMQmvnfkog==
