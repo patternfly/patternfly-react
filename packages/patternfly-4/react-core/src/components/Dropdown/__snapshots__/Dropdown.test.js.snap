@@ -69,6 +69,7 @@ exports[`KebabToggle basic 1`] = `
       isOpen={true}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -82,6 +83,7 @@ exports[`KebabToggle basic 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -92,6 +94,7 @@ exports[`KebabToggle basic 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <EllipsisVIcon
@@ -129,34 +132,20 @@ exports[`KebabToggle basic 1`] = `
       isOpen={true}
       position="left"
     >
-      <FocusTrap
-        _createFocusTrap={[Function]}
-        active={true}
-        focusTrapOptions={
-          Object {
-            "clickOutsideDeactivates": true,
-          }
-        }
-        paused={false}
-        tag="div"
+      <div
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={false}
+        onClick={[Function]}
       >
-        <div>
-          <div
-            aria-labelledby="Dropdown Toggle"
-            className="pf-c-dropdown__menu"
-            hidden={false}
-            onClick={[Function]}
-          >
-            <div
-              key=".0"
-              onKeyDown={[Function]}
-              tabIndex={0}
-            >
-              BASIC
-            </div>
-          </div>
+        <div
+          key=".0"
+          onKeyDown={[Function]}
+          tabIndex={-1}
+        >
+          BASIC
         </div>
-      </FocusTrap>
+      </div>
     </DropdownMenu>
   </div>
 </Dropdown>
@@ -331,6 +320,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       isOpen={false}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -344,6 +334,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -354,6 +345,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <EllipsisVIcon
@@ -557,6 +549,7 @@ exports[`KebabToggle dropup 1`] = `
       isOpen={false}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -570,6 +563,7 @@ exports[`KebabToggle dropup 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -580,6 +574,7 @@ exports[`KebabToggle dropup 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <EllipsisVIcon
@@ -811,6 +806,7 @@ exports[`KebabToggle expanded 1`] = `
       isOpen={true}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -824,6 +820,7 @@ exports[`KebabToggle expanded 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -834,6 +831,7 @@ exports[`KebabToggle expanded 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <EllipsisVIcon
@@ -871,34 +869,34 @@ exports[`KebabToggle expanded 1`] = `
       isOpen={true}
       position="left"
     >
-      <FocusTrap
-        _createFocusTrap={[Function]}
-        active={true}
-        focusTrapOptions={
-          Object {
-            "clickOutsideDeactivates": true,
-          }
-        }
-        paused={false}
-        tag="div"
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={false}
+        onClick={[Function]}
+        role="menu"
       >
-        <div>
-          <ul
-            aria-labelledby="Dropdown Toggle"
-            className="pf-c-dropdown__menu"
-            hidden={false}
-            onClick={[Function]}
-            role="menu"
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={0}
+          isDisabled={false}
+          isHovered={false}
+          key=".$link"
+        >
+          <li
+            role="none"
           >
-            <DropdownItem
+            <a
+              aria-disabled={false}
               className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
               href="#"
               index={0}
               isDisabled={false}
@@ -920,13 +918,7 @@ exports[`KebabToggle expanded 1`] = `
             </DropdownItem>
             <DropdownItem
               className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
+              disabled={false}
               href="#"
               index={1}
               isDisabled={false}
@@ -1014,15 +1006,8 @@ exports[`KebabToggle expanded 1`] = `
               isHovered={false}
               key=".$separator"
             >
-              <DropdownItem
+              <div
                 className="pf-c-dropdown__separator"
-                component="div"
-                context={
-                  Object {
-                    "keyHandler": [Function],
-                    "sendRef": [Function],
-                  }
-                }
                 href="#"
                 index={4}
                 isDisabled={false}
@@ -1043,13 +1028,6 @@ exports[`KebabToggle expanded 1`] = `
             </Separator>
             <DropdownItem
               className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
               href="#"
               index={5}
               isDisabled={false}
@@ -1071,13 +1049,7 @@ exports[`KebabToggle expanded 1`] = `
             </DropdownItem>
             <DropdownItem
               className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
+              disabled={false}
               href="#"
               index={6}
               isDisabled={false}
@@ -1275,6 +1247,7 @@ exports[`KebabToggle plain 1`] = `
       isOpen={false}
       isPlain={true}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1288,6 +1261,7 @@ exports[`KebabToggle plain 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={true}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -1298,6 +1272,7 @@ exports[`KebabToggle plain 1`] = `
           className="pf-c-dropdown__toggle pf-m-plain"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <EllipsisVIcon
@@ -1501,6 +1476,7 @@ exports[`KebabToggle regular 1`] = `
       isOpen={false}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1514,6 +1490,7 @@ exports[`KebabToggle regular 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -1524,6 +1501,7 @@ exports[`KebabToggle regular 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <EllipsisVIcon
@@ -1727,6 +1705,7 @@ exports[`KebabToggle right aligned 1`] = `
       isOpen={false}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1740,6 +1719,7 @@ exports[`KebabToggle right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -1750,6 +1730,7 @@ exports[`KebabToggle right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           <EllipsisVIcon
@@ -1861,6 +1842,7 @@ exports[`dropdown basic 1`] = `
       isOpen={true}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -1873,6 +1855,7 @@ exports[`dropdown basic 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -1882,6 +1865,7 @@ exports[`dropdown basic 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           Dropdown
@@ -1922,34 +1906,20 @@ exports[`dropdown basic 1`] = `
       isOpen={true}
       position="left"
     >
-      <FocusTrap
-        _createFocusTrap={[Function]}
-        active={true}
-        focusTrapOptions={
-          Object {
-            "clickOutsideDeactivates": true,
-          }
-        }
-        paused={false}
-        tag="div"
+      <div
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={false}
+        onClick={[Function]}
       >
-        <div>
-          <div
-            aria-labelledby="Dropdown Toggle"
-            className="pf-c-dropdown__menu"
-            hidden={false}
-            onClick={[Function]}
-          >
-            <div
-              key=".0"
-              onKeyDown={[Function]}
-              tabIndex={0}
-            >
-              BASIC
-            </div>
-          </div>
+        <div
+          key=".0"
+          onKeyDown={[Function]}
+          tabIndex={-1}
+        >
+          BASIC
         </div>
-      </FocusTrap>
+      </div>
     </DropdownMenu>
   </div>
 </Dropdown>
@@ -2130,6 +2100,7 @@ exports[`dropdown dropup + right aligned 1`] = `
       isOpen={false}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2142,6 +2113,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -2151,6 +2123,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           Dropdown
@@ -2365,6 +2338,7 @@ exports[`dropdown dropup 1`] = `
       isOpen={false}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2377,6 +2351,7 @@ exports[`dropdown dropup 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -2386,6 +2361,7 @@ exports[`dropdown dropup 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           Dropdown
@@ -2628,6 +2604,7 @@ exports[`dropdown expanded 1`] = `
       isOpen={true}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -2640,6 +2617,7 @@ exports[`dropdown expanded 1`] = `
         isHovered={false}
         isOpen={true}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -2649,6 +2627,7 @@ exports[`dropdown expanded 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           Dropdown
@@ -2689,34 +2668,34 @@ exports[`dropdown expanded 1`] = `
       isOpen={true}
       position="left"
     >
-      <FocusTrap
-        _createFocusTrap={[Function]}
-        active={true}
-        focusTrapOptions={
-          Object {
-            "clickOutsideDeactivates": true,
-          }
-        }
-        paused={false}
-        tag="div"
+      <ul
+        aria-labelledby="Dropdown Toggle"
+        className="pf-c-dropdown__menu"
+        hidden={false}
+        onClick={[Function]}
+        role="menu"
       >
-        <div>
-          <ul
-            aria-labelledby="Dropdown Toggle"
-            className="pf-c-dropdown__menu"
-            hidden={false}
-            onClick={[Function]}
-            role="menu"
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={0}
+          isDisabled={false}
+          isHovered={false}
+          key=".$link"
+        >
+          <li
+            role="none"
           >
-            <DropdownItem
+            <a
+              aria-disabled={false}
               className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
               href="#"
               index={0}
               isDisabled={false}
@@ -2738,41 +2717,41 @@ exports[`dropdown expanded 1`] = `
             </DropdownItem>
             <DropdownItem
               className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
+              disabled={false}
               href="#"
               index={1}
               isDisabled={false}
               isHovered={false}
               onClick={[Function]}
               key=".$action"
+              onKeyDown={[Function]}
+              type="button"
             >
-              <li>
-                <button
-                  className=""
-                  disabled={false}
-                  href="#"
-                  onKeyDown={[Function]}
-                  type="button"
-                >
-                  Action
-                </button>
-              </li>
-            </DropdownItem>
-            <DropdownItem
-              className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
+              Action
+            </button>
+          </li>
+        </DropdownItem>
+        <DropdownItem
+          className=""
+          component="a"
+          context={
+            Object {
+              "keyHandler": [Function],
+              "sendRef": [Function],
+            }
+          }
+          href="#"
+          index={2}
+          isDisabled={true}
+          isHovered={false}
+          key=".$disabled link"
+        >
+          <li
+            role="none"
+          >
+            <a
+              aria-disabled={true}
+              className="pf-m-disabled"
               href="#"
               index={2}
               isDisabled={true}
@@ -2831,15 +2810,8 @@ exports[`dropdown expanded 1`] = `
               isHovered={false}
               key=".$separator"
             >
-              <DropdownItem
+              <div
                 className="pf-c-dropdown__separator"
-                component="div"
-                context={
-                  Object {
-                    "keyHandler": [Function],
-                    "sendRef": [Function],
-                  }
-                }
                 href="#"
                 index={4}
                 isDisabled={false}
@@ -2860,13 +2832,6 @@ exports[`dropdown expanded 1`] = `
             </Separator>
             <DropdownItem
               className=""
-              component="a"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
               href="#"
               index={5}
               isDisabled={false}
@@ -2888,13 +2853,7 @@ exports[`dropdown expanded 1`] = `
             </DropdownItem>
             <DropdownItem
               className=""
-              component="button"
-              context={
-                Object {
-                  "keyHandler": [Function],
-                  "sendRef": [Function],
-                }
-              }
+              disabled={false}
               href="#"
               index={6}
               isDisabled={false}
@@ -3100,6 +3059,7 @@ exports[`dropdown regular 1`] = `
       isOpen={false}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -3112,6 +3072,7 @@ exports[`dropdown regular 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -3121,6 +3082,7 @@ exports[`dropdown regular 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           Dropdown
@@ -3335,6 +3297,7 @@ exports[`dropdown right aligned 1`] = `
       isOpen={false}
       isPlain={false}
       key=".0"
+      onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
     >
@@ -3347,6 +3310,7 @@ exports[`dropdown right aligned 1`] = `
         isHovered={false}
         isOpen={false}
         isPlain={false}
+        onEnter={[Function]}
         onToggle={[Function]}
         parentRef={null}
       >
@@ -3356,6 +3320,7 @@ exports[`dropdown right aligned 1`] = `
           className="pf-c-dropdown__toggle"
           id="Dropdown Toggle"
           onClick={[Function]}
+          onKeyDown={[Function]}
           type="button"
         >
           Dropdown

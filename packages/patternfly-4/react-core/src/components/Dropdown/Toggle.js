@@ -61,9 +61,20 @@ class DropdownToggle extends Component {
   onEscPress = event => {
     const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
-    if (keyCode === KEY_CODES.ESCAPE_KEY && parentRef && parentRef.contains(event.target)) {
+    if ((keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') && parentRef && parentRef.contains(event.target)) {
       this.props.onToggle && this.props.onToggle(false);
       this.toggle.focus();
+    }
+  };
+
+  onKeyDown = event => {
+    if (event.key === 'Tab' && !this.props.isOpen) return;
+    event.preventDefault();
+    if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isOpen) {
+      this.props.onToggle(!this.props.isOpen);
+    } else if ((event.key === 'Enter' || event.key === ' ') && !this.props.isOpen) {
+      this.props.onToggle(!this.props.isOpen);
+      this.props.onEnter();
     }
   };
 
@@ -78,6 +89,7 @@ class DropdownToggle extends Component {
       isPlain,
       ariaHasPopup,
       onToggle,
+      onEnter,
       parentRef,
       id,
       type,
@@ -102,6 +114,7 @@ class DropdownToggle extends Component {
         onClick={_event => onToggle && onToggle(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup={ariaHasPopup}
+        onKeyDown={this.onKeyDown}
       >
         {children}
       </button>

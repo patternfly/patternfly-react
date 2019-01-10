@@ -50,6 +50,14 @@ const defaultProps = {
 };
 
 class Dropdown extends React.Component {
+  onEnter = () => {
+    this.openedOnEnter = true;
+  };
+
+  componentDidUpdate() {
+    if (!this.props.isOpen) this.openedOnEnter = false;
+  }
+
   render() {
     const {
       children,
@@ -89,11 +97,25 @@ class Dropdown extends React.Component {
         }}
       >
         {Children.map(toggle, oneToggle =>
-          cloneElement(oneToggle, { parentRef: this.parentRef, isOpen, id, isPlain, ariaHasPopup })
+          cloneElement(oneToggle, {
+            parentRef: this.parentRef,
+            isOpen,
+            id,
+            isPlain,
+            ariaHasPopup,
+            onEnter: this.onEnter
+          })
         )}
         {isOpen && (
           <DropdownContext.Provider value={event => onSelect && onSelect(event)}>
-            <DropdownMenu component={component} isOpen={isOpen} position={position} aria-labelledby={id}>
+            <DropdownMenu
+              component={component}
+              isOpen={isOpen}
+              position={position}
+              aria-labelledby={id}
+              onClick={event => onSelect && onSelect(event)}
+              openedOnEnter={this.openedOnEnter}
+            >
               {renderedContent}
             </DropdownMenu>
           </DropdownContext.Provider>

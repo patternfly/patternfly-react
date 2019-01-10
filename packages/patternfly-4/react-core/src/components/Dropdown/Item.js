@@ -9,7 +9,13 @@ import { DropdownArrowContext } from './dropdownConstants';
 const Item = ({ className, ...props }) => (
   <DropdownArrowContext.Consumer>
     {context => (
-      <DropdownItem {...props} context={context} role="menuitem" className={css(styles.dropdownMenuItem, className)} />
+      <DropdownItem
+        {...props}
+        context={context}
+        role="menuitem"
+        tabIndex={-1}
+        className={css(styles.dropdownMenuItem, className)}
+      />
     )}
   </DropdownArrowContext.Consumer>
 );

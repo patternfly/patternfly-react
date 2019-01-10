@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`dropdown items a 1`] = `
-<li>
+<li
+  role="none"
+>
   <a
     aria-disabled={false}
     className=""
@@ -14,7 +16,9 @@ exports[`dropdown items a 1`] = `
 `;
 
 exports[`dropdown items button 1`] = `
-<li>
+<li
+  role="none"
+>
   <button
     className=""
     disabled={false}
@@ -32,7 +36,9 @@ exports[`dropdown items disabled a 1`] = `
   display: block;
 }
 
-<li>
+<li
+  role="none"
+>
   <a
     aria-disabled={true}
     className="pf-m-disabled"
@@ -50,7 +56,9 @@ exports[`dropdown items disabled button 1`] = `
   display: block;
 }
 
-<li>
+<li
+  role="none"
+>
   <button
     className="pf-m-disabled"
     disabled={true}
@@ -65,7 +73,9 @@ exports[`dropdown items disabled button 1`] = `
 
 exports[`dropdown items disabled a 1`] = `<[object Object] />`;
 
-<li>
+<li
+  role="none"
+>
   <a
     aria-disabled={false}
     className="pf-m-hover"
@@ -79,7 +89,9 @@ exports[`dropdown items disabled a 1`] = `<[object Object] />`;
 
 exports[`dropdown items hover a 1`] = `<[object Object] />`;
 
-<li>
+<li
+  role="none"
+>
   <button
     className="pf-m-hover"
     disabled={false}

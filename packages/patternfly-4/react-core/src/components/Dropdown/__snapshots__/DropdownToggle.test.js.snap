@@ -49,6 +49,7 @@ exports[`state active 1`] = `
       className="pf-c-dropdown__toggle pf-m-active"
       id="Dropdown Toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
       type="button"
     >
       Dropdown
@@ -133,6 +134,7 @@ exports[`state focus 1`] = `
       className="pf-c-dropdown__toggle pf-m-focus"
       id="Dropdown Toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
       type="button"
     >
       Dropdown
@@ -217,6 +219,7 @@ exports[`state hover 1`] = `
       className="pf-c-dropdown__toggle pf-m-hover"
       id="Dropdown Toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
       type="button"
     >
       Dropdown

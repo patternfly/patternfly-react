@@ -88,7 +88,7 @@ class DropdownItem extends React.Component {
     return (
       <DropdownContext.Consumer>
         {onSelect => (
-          <li>
+          <li role="none">
             {React.isValidElement(children) ? (
               React.Children.map(children, child =>
                 React.cloneElement(child, {

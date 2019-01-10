@@ -62,6 +62,15 @@ class DropdownMenu extends React.Component {
     }
   }
 
+  componentDidMount() {
+    if (this.props.openedOnEnter) {
+      if (this.props.component === 'ul') this.refsCollection['item-0'].focus();
+      else {
+        this.refsCollection['item-0'].current.focus();
+      }
+    }
+  }
+
   sendRef = (index, node, isDisabled) => {
     if (isDisabled || node.getAttribute('role') === 'separator') {
       this.refsCollection[`item-${index}`] = null;
@@ -82,7 +91,7 @@ class DropdownMenu extends React.Component {
     const mappedChildren = React.Children.map(this.props.children, (child, index) => {
       const mappedChild = React.cloneElement(child, {
         ref: React.createRef(),
-        tabIndex: index === 0 ? 0 : 1,
+        tabIndex: -1,
         onKeyDown: event => {
           if (event.key === 'Tab') return;
           event.preventDefault();
@@ -102,7 +111,7 @@ class DropdownMenu extends React.Component {
   }
 
   render() {
-    const { className, isOpen, position, children, component: Component, ...props } = this.props;
+    const { className, isOpen, position, children, component: Component, openedOnEnter, ...props } = this.props;
     let menu = null;
     if (Component === 'div') {
       menu = (
@@ -131,24 +140,18 @@ class DropdownMenu extends React.Component {
             sendRef: this.sendRef
           }}
         >
-          <FocusTrap
-            focusTrapOptions={{
-              clickOutsideDeactivates: true
-            }}
+          <Component
+            {...props}
+            className={css(
+              styles.dropdownMenu,
+              position === DropdownPosition.right && styles.modifiers.alignRight,
+              className
+            )}
+            hidden={!isOpen}
+            role="menu"
           >
-            <Component
-              {...props}
-              className={css(
-                styles.dropdownMenu,
-                position === DropdownPosition.right && styles.modifiers.alignRight,
-                className
-              )}
-              hidden={!isOpen}
-              role="menu"
-            >
-              {this.extendChildren()}
-            </Component>
-          </FocusTrap>
+            {this.extendChildren()}
+          </Component>
         </DropdownArrowContext.Provider>
       );
     }
