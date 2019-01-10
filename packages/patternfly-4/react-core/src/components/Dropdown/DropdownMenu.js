@@ -4,7 +4,6 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../internal/componentShape';
 import { DropdownPosition, DropdownContext, DropdownArrowContext } from './dropdownConstants';
-import FocusTrap from 'focus-trap-react';
 
 const propTypes = {
   /** Anything which can be rendered as dropdown items */

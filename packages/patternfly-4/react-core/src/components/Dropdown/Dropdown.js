@@ -113,7 +113,6 @@ class Dropdown extends React.Component {
               isOpen={isOpen}
               position={position}
               aria-labelledby={id}
-              onClick={event => onSelect && onSelect(event)}
               openedOnEnter={this.openedOnEnter}
             >
               {renderedContent}

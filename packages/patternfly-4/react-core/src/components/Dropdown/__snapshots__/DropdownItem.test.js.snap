@@ -1,107 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`dropdown items a 1`] = `
-<li
-  role="none"
->
-  <a
-    aria-disabled={false}
-    className=""
-    href="#"
-    onKeyDown={[Function]}
-  >
-    Something
-  </a>
-</li>
-`;
+exports[`dropdown items a 1`] = `<[object Object] />`;
 
-exports[`dropdown items button 1`] = `
-<li
-  role="none"
->
-  <button
-    className=""
-    disabled={false}
-    href="#"
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Something
-  </button>
-</li>
-`;
-
-exports[`dropdown items disabled a 1`] = `
-.pf-m-disabled {
-  display: block;
-}
-
-<li
-  role="none"
->
-  <a
-    aria-disabled={true}
-    className="pf-m-disabled"
-    href="#"
-    onKeyDown={[Function]}
-    tabIndex={-1}
-  >
-    Something
-  </a>
-</li>
-`;
-
-exports[`dropdown items disabled button 1`] = `
-.pf-m-disabled {
-  display: block;
-}
-
-<li
-  role="none"
->
-  <button
-    className="pf-m-disabled"
-    disabled={true}
-    href="#"
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Something
-  </button>
-</li>
-`;
+exports[`dropdown items button 1`] = `<[object Object] />`;
 
 exports[`dropdown items disabled a 1`] = `<[object Object] />`;
 
-<li
-  role="none"
->
-  <a
-    aria-disabled={false}
-    className="pf-m-hover"
-    href="#"
-    onKeyDown={[Function]}
-  >
-    Something
-  </a>
-</li>
-`;
+exports[`dropdown items disabled button 1`] = `<[object Object] />`;
 
 exports[`dropdown items hover a 1`] = `<[object Object] />`;
 
-<li
-  role="none"
->
-  <button
-    className="pf-m-hover"
-    disabled={false}
-    href="#"
-    onKeyDown={[Function]}
-    type="button"
-  >
-    Something
-  </button>
-</li>
-`;
+exports[`dropdown items hover button 1`] = `<[object Object] />`;
 
 exports[`dropdown items separator 1`] = `<[object Object] />`;

@@ -55,6 +55,7 @@ class DropdownToggle extends Component {
   onDocClick = event => {
     if (this.props.parentRef && !this.props.parentRef.contains(event.target)) {
       this.props.onToggle && this.props.onToggle(false);
+      this.toggle.focus();
     }
   };
 

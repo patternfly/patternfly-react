@@ -62,6 +62,8 @@ class DropdownItem extends React.Component {
       this.props.context.keyHandler(this.props.index, 'up');
     } else if (event.key === 'ArrowDown') {
       this.props.context.keyHandler(this.props.index, 'down');
+    } else if (event.key === 'Enter') {
+      this.ref.click();
     }
   };
 
