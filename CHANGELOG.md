@@ -1,4 +1,21 @@
 
+## Change Log (2019-01-10)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1014](https://github.com/patternfly/patternfly-react/pull/1014) Dropdown interaction issues ([@kmcfaul](https://github.com/kmcfaul))
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1151](https://github.com/patternfly/patternfly-react/pull/1151) Fix(dependencies): Fix react-tokens dependency and Tooltip typescript ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 2
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
 ## patternfly4-react-lerna-root@1.34.6 (2019-01-08)
 
 #### :memo: Documentation
