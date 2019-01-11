@@ -1430,6 +1430,9 @@ exports[`KebabToggle right aligned 1`] = `
 `;
 
 exports[`dropdown basic 1`] = `
+.pf-c-dropdown__toggle-text {
+  display: block;
+}
 .pf-c-dropdown__toggle-icon {
   display: block;
 }
@@ -1526,7 +1529,11 @@ exports[`dropdown basic 1`] = `
           onClick={[Function]}
           type="button"
         >
-          Dropdown
+          <span
+            className="pf-c-dropdown__toggle-text"
+          >
+            Dropdown
+          </span>
           <CaretDownIcon
             className="pf-c-dropdown__toggle-icon"
             color="currentColor"
@@ -1578,6 +1585,9 @@ exports[`dropdown basic 1`] = `
 `;
 
 exports[`dropdown dropup + right aligned 1`] = `
+.pf-c-dropdown__toggle-text {
+  display: block;
+}
 .pf-c-dropdown__toggle-icon {
   display: block;
 }
@@ -1732,7 +1742,11 @@ exports[`dropdown dropup + right aligned 1`] = `
           onClick={[Function]}
           type="button"
         >
-          Dropdown
+          <span
+            className="pf-c-dropdown__toggle-text"
+          >
+            Dropdown
+          </span>
           <CaretDownIcon
             className="pf-c-dropdown__toggle-icon"
             color="currentColor"
@@ -1768,6 +1782,9 @@ exports[`dropdown dropup + right aligned 1`] = `
 `;
 
 exports[`dropdown dropup 1`] = `
+.pf-c-dropdown__toggle-text {
+  display: block;
+}
 .pf-c-dropdown__toggle-icon {
   display: block;
 }
@@ -1922,7 +1939,11 @@ exports[`dropdown dropup 1`] = `
           onClick={[Function]}
           type="button"
         >
-          Dropdown
+          <span
+            className="pf-c-dropdown__toggle-text"
+          >
+            Dropdown
+          </span>
           <CaretDownIcon
             className="pf-c-dropdown__toggle-icon"
             color="currentColor"
@@ -1958,6 +1979,9 @@ exports[`dropdown dropup 1`] = `
 `;
 
 exports[`dropdown expanded 1`] = `
+.pf-c-dropdown__toggle-text {
+  display: block;
+}
 .pf-c-dropdown__toggle-icon {
   display: block;
 }
@@ -2140,7 +2164,11 @@ exports[`dropdown expanded 1`] = `
           onClick={[Function]}
           type="button"
         >
-          Dropdown
+          <span
+            className="pf-c-dropdown__toggle-text"
+          >
+            Dropdown
+          </span>
           <CaretDownIcon
             className="pf-c-dropdown__toggle-icon"
             color="currentColor"
@@ -2352,6 +2380,9 @@ exports[`dropdown expanded 1`] = `
 `;
 
 exports[`dropdown regular 1`] = `
+.pf-c-dropdown__toggle-text {
+  display: block;
+}
 .pf-c-dropdown__toggle-icon {
   display: block;
 }
@@ -2506,7 +2537,11 @@ exports[`dropdown regular 1`] = `
           onClick={[Function]}
           type="button"
         >
-          Dropdown
+          <span
+            className="pf-c-dropdown__toggle-text"
+          >
+            Dropdown
+          </span>
           <CaretDownIcon
             className="pf-c-dropdown__toggle-icon"
             color="currentColor"
@@ -2542,6 +2577,9 @@ exports[`dropdown regular 1`] = `
 `;
 
 exports[`dropdown right aligned 1`] = `
+.pf-c-dropdown__toggle-text {
+  display: block;
+}
 .pf-c-dropdown__toggle-icon {
   display: block;
 }
@@ -2696,7 +2734,11 @@ exports[`dropdown right aligned 1`] = `
           onClick={[Function]}
           type="button"
         >
-          Dropdown
+          <span
+            className="pf-c-dropdown__toggle-text"
+          >
+            Dropdown
+          </span>
           <CaretDownIcon
             className="pf-c-dropdown__toggle-icon"
             color="currentColor"
