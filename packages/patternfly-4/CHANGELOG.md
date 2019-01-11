@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.35.0"></a>
+# [1.35.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.34.12...patternfly4-react-lerna-root@1.35.0) (2019-01-11)
+
+
+### Features
+
+* **Nav:** add separator flag ([#1165](https://github.com/patternfly/patternfly-react/issues/1165)) ([a2ee4e3](https://github.com/patternfly/patternfly-react/commit/a2ee4e3))
+
+
+
+
 <a name="1.34.12"></a>
 ## [1.34.12](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.34.11...patternfly4-react-lerna-root@1.34.12) (2019-01-11)
 
