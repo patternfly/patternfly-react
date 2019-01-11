@@ -11,8 +11,9 @@ import { Icon } from '../Icon';
 import { Col, Row, Grid } from '../Grid';
 import { Button } from '../Button';
 import { Modal } from '../Modal';
-import { Form } from './index';
+import { Form, FormGroup, FormControl, ControlLabel } from './index';
 
+import { FormExample, FormExampleSource } from './Stories/FormExample';
 import { InlineFormFields, InlineFormButtons, getInlineFormKnobs } from './Stories/InlineForm';
 import { BasicFormFields, BasicFormButtons, BasicFormSpinner, getBasicFormKnobs } from './Stories/BasicForm';
 import { SupportedControlsFormFields, getSupportedControlsFormKnobs } from './Stories/SupportedControlsForm';
@@ -26,26 +27,59 @@ const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FO
 
 stories.addDecorator(withKnobs);
 
-// const description = (
-//   <p>
-//     Those components are based on React Bootstrap Form components. See{' '}
-//     <a href="https://react-bootstrap.github.io/components/forms/">
-//       React Bootstrap Docs
-//     </a>{' '}
-//     for complete Form components documentation.
-//   </p>
-// );
-
-// stories.addDecorator(
-//   defaultTemplate({
-//     title: 'Forms',
-//     documentationLink:
-//       'http://www.patternfly.org/pattern-library/widgets/#forms',
-//     description: description
-//   })
-// );
+stories.add(
+  'Forms (FormGroup, FormControl, ControlLabel)',
+  withInfo({
+    source: false,
+    propTables: [Form, FormGroup, FormControl, ControlLabel],
+    propTablesExclude: [FormExample],
+    text: (
+      <div>
+        <h1>Story Source</h1>
+        <pre>{FormExampleSource}</pre>
+      </div>
+    )
+  })(() => {
+    const story = <FormExample />;
+    return inlineTemplate({
+      title: 'Forms (FormGroup, FormControl, ControlLabel)',
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}forms/`,
+      story
+    });
+  })
+);
 
 stories.add(
+  'Supported Controls',
+  withInfo()(() => {
+    const formFieldsKnobs = getSupportedControlsFormKnobs();
+    const formFields = SupportedControlsFormFields.map(formField =>
+      VerticalFormField({ ...formField, ...formFieldsKnobs })
+    );
+    const story = (
+      <Grid>
+        <Form>{formFields}</Form>
+      </Grid>
+    );
+
+    return inlineTemplate({
+      title: 'Supported Controls',
+      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
+      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}forms/#forms-controls`,
+      story
+    });
+  })
+);
+
+const exampleStories = storiesOf(
+  `${storybookPackageName(name)}/${STORYBOOK_CATEGORY.FORMS_AND_CONTROLS}/Forms/Form Examples`,
+  module
+);
+
+exampleStories.addDecorator(withKnobs);
+
+exampleStories.add(
   'Inline Form',
   withInfo()(() => {
     const formFieldsKnobs = getInlineFormKnobs();
@@ -81,7 +115,7 @@ stories.add(
   })
 );
 
-stories.add(
+exampleStories.add(
   'Horizontal Form',
   withInfo()(() => {
     const formFieldsKnobs = getBasicFormKnobs();
@@ -129,7 +163,7 @@ stories.add(
   })
 );
 
-stories.add(
+exampleStories.add(
   'Vertical Form',
   withInfo()(() => {
     const formFieldsKnobs = getBasicFormKnobs();
@@ -175,7 +209,7 @@ stories.add(
   })
 );
 
-stories.add(
+exampleStories.add(
   'Modal Form',
   withInfo()(() => {
     const formFieldsKnobs = getBasicFormKnobs();
@@ -223,29 +257,7 @@ stories.add(
   })
 );
 
-stories.add(
-  'Supported Controls',
-  withInfo()(() => {
-    const formFieldsKnobs = getSupportedControlsFormKnobs();
-    const formFields = SupportedControlsFormFields.map(formField =>
-      VerticalFormField({ ...formField, ...formFieldsKnobs })
-    );
-    const story = (
-      <Grid>
-        <Form>{formFields}</Form>
-      </Grid>
-    );
-
-    return inlineTemplate({
-      title: 'Supported Controls',
-      documentationLink: `${DOCUMENTATION_URL.PATTERNFLY_ORG_WIDGETS}#forms`,
-      reactBootstrapDocumentationLink: `${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}forms/`,
-      story
-    });
-  })
-);
-
-stories.add(
+exampleStories.add(
   'Input Groups',
   withInfo()(() => {
     const formFieldsKnobs = getInputGroupsFormKnobs();
