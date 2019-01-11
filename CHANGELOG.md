@@ -1,4 +1,19 @@
 
+## Change Log (2019-01-11)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1152](https://github.com/patternfly/patternfly-react/pull/1152) fix(DropdownToggle): Listen for touch events on the document to close a Toggle on mobile ([@mturley](https://github.com/mturley))
+
+#### :house: Internal
+* `patternfly-4`, `react-icons`
+  * [#1162](https://github.com/patternfly/patternfly-react/pull/1162) Chore(update): Update core to 1.0.120 ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
 ## patternfly4-react-lerna-root@1.34.10 (2019-01-10)
 
 #### :memo: Documentation

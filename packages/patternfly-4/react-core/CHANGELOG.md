@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.44.11"></a>
+## [1.44.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.44.10...@patternfly/react-core@1.44.11) (2019-01-11)
+
+
+### Bug Fixes
+
+* **DropdownToggle:** Listen for touch events on the document to close a Toggle on mobile ([#1152](https://github.com/patternfly/patternfly-react/issues/1152)) ([a7f3c89](https://github.com/patternfly/patternfly-react/commit/a7f3c89)), closes [#1131](https://github.com/patternfly/patternfly-react/issues/1131)
+
+
+
+
 <a name="1.44.10"></a>
 ## [1.44.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.44.9...@patternfly/react-core@1.44.10) (2019-01-10)
 
