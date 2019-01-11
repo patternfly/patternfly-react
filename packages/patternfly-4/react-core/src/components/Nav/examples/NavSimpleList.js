@@ -23,8 +23,8 @@ class NavSimpleList extends React.Component {
           <NavItem to="#simple-link2" itemId={1} isActive={activeItem === 1}>
             Link 2
           </NavItem>
-          <NavItem to="#simple-link3" itemId={2} isActive={activeItem === 2}>
-            Link 3
+          <NavItem to="#simple-link3" itemId={2} isActive={activeItem === 2} isSeparated={true}>
+            Link 3 with separator
           </NavItem>
           <NavItem to="#simple-link4" itemId={3} isActive={activeItem === 3}>
             Link 4

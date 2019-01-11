@@ -33,8 +33,14 @@ class NavExpandableList extends React.Component {
             <NavItem to="#expandable-1" groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
               Subnav Link 1
             </NavItem>
-            <NavItem to="#expandable-2" groupId="grp-1" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
-              Subnav Link 2
+            <NavItem
+              to="#expandable-2"
+              groupId="grp-1"
+              itemId="grp-1_itm-2"
+              isActive={activeItem === 'grp-1_itm-2'}
+              isSeparated={true}
+            >
+              Subnav Link 2 with separator
             </NavItem>
             <NavItem to="#expandable-3" groupId="grp-1" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
               Subnav Link 3
