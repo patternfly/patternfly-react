@@ -1075,7 +1075,7 @@ exports[`Actions table 1`] = `
               >
                 <tr>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={0}
@@ -1084,7 +1084,7 @@ exports[`Actions table 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
                       scope="col"
@@ -2497,6 +2497,7 @@ exports[`Actions table 1`] = `
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-0"
                                       onClick={[Function]}
+                                      type="button"
                                     >
                                       <EllipsisVIcon
                                         color="currentColor"
@@ -3121,6 +3122,7 @@ exports[`Actions table 1`] = `
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-1"
                                       onClick={[Function]}
+                                      type="button"
                                     >
                                       <EllipsisVIcon
                                         color="currentColor"
@@ -3745,6 +3747,7 @@ exports[`Actions table 1`] = `
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-2"
                                       onClick={[Function]}
+                                      type="button"
                                     >
                                       <EllipsisVIcon
                                         color="currentColor"
@@ -4369,6 +4372,7 @@ exports[`Actions table 1`] = `
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-3"
                                       onClick={[Function]}
+                                      type="button"
                                     >
                                       <EllipsisVIcon
                                         color="currentColor"
@@ -4993,6 +4997,7 @@ exports[`Actions table 1`] = `
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-4"
                                       onClick={[Function]}
+                                      type="button"
                                     >
                                       <EllipsisVIcon
                                         color="currentColor"
@@ -5617,6 +5622,7 @@ exports[`Actions table 1`] = `
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-5"
                                       onClick={[Function]}
+                                      type="button"
                                     >
                                       <EllipsisVIcon
                                         color="currentColor"
@@ -6241,6 +6247,7 @@ exports[`Actions table 1`] = `
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-6"
                                       onClick={[Function]}
+                                      type="button"
                                     >
                                       <EllipsisVIcon
                                         color="currentColor"
@@ -6865,6 +6872,7 @@ exports[`Actions table 1`] = `
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-7"
                                       onClick={[Function]}
+                                      type="button"
                                     >
                                       <EllipsisVIcon
                                         color="currentColor"
@@ -7489,6 +7497,7 @@ exports[`Actions table 1`] = `
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-8"
                                       onClick={[Function]}
+                                      type="button"
                                     >
                                       <EllipsisVIcon
                                         color="currentColor"
@@ -8089,7 +8098,7 @@ exports[`Cell header table 1`] = `
               >
                 <tr>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={0}
@@ -8098,7 +8107,7 @@ exports[`Cell header table 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
                       scope="col"
@@ -11514,7 +11523,7 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -11534,7 +11543,7 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-button.pf-m-plain.pf-m-expanded {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -11589,7 +11598,7 @@ exports[`Collapsible nested table 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -12294,7 +12303,7 @@ exports[`Collapsible nested table 1`] = `
                     />
                   </HeaderCell>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={1}
@@ -12303,7 +12312,7 @@ exports[`Collapsible nested table 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={1}
                       scope="col"
@@ -16485,7 +16494,7 @@ exports[`Collapsible table 1`] = `
 .pf-c-button.pf-m-plain.pf-m-expanded {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -16530,7 +16539,7 @@ exports[`Collapsible table 1`] = `
 .pf-c-button.pf-m-plain {
   display: inline-block;
   position: relative;
-  padding: 0.375rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -17236,7 +17245,7 @@ exports[`Collapsible table 1`] = `
                     />
                   </HeaderCell>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={1}
@@ -17245,7 +17254,7 @@ exports[`Collapsible table 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={1}
                       scope="col"
@@ -26144,7 +26153,7 @@ exports[`Selectable table 1`] = `
                     </td>
                   </HeaderCell>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={1}
@@ -26153,7 +26162,7 @@ exports[`Selectable table 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={1}
                       scope="col"
@@ -42406,7 +42415,7 @@ exports[`Sortable table 1`] = `
               >
                 <tr>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={0}
@@ -42415,7 +42424,7 @@ exports[`Sortable table 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
                       scope="col"
@@ -46352,7 +46361,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
               >
                 <tr>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={0}
@@ -46361,7 +46370,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
                       scope="col"
@@ -50298,7 +50307,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
               >
                 <tr>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={0}
@@ -50307,7 +50316,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
                       scope="col"
@@ -54244,7 +54253,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
               >
                 <tr>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={0}
@@ -54253,7 +54262,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
                       scope="col"
@@ -58190,7 +58199,7 @@ exports[`Table variants Size - compact 1`] = `
               >
                 <tr>
                   <HeaderCell
-                    aria-sort="None"
+                    aria-sort="none"
                     className="pf-c-table__sort"
                     component="th"
                     data-key={0}
@@ -58199,7 +58208,7 @@ exports[`Table variants Size - compact 1`] = `
                     scope="col"
                   >
                     <th
-                      aria-sort="None"
+                      aria-sort="none"
                       className="pf-c-table__sort"
                       data-key={0}
                       scope="col"

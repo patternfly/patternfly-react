@@ -18,7 +18,7 @@ export default (label, { column: { extraParams: { sortBy, onSort } }, columnInde
 
   return ({
     className: css(tableSort, isSortedBy && direction),
-    'aria-sort': isSortedBy ? `${sortBy.direction}ending` : 'None',
+    'aria-sort': isSortedBy ? `${sortBy.direction}ending` : 'none',
     children: (
       <SortColumn isSortedBy={isSortedBy} onSort={sortClicked}>
         {label}

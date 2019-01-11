@@ -11,6 +11,7 @@ import {
   mapProps,
   expandedRow
 } from './transformers';
+import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
 
 describe('Transformer functions', () => {
   describe('selectable', () => {
@@ -88,16 +89,20 @@ describe('Transformer functions', () => {
 
   test('cellActions', () => {
     const actions = [{
-      title: '',
+      title: 'Some',
       onClick: jest.fn()
     }];
-    const returnedData = cellActions(actions)('', { rowIndex: 0, column: { extraParams: {} } });
+    const returnedData = cellActions(actions)('', {
+      rowIndex: 0, column: {
+        extraParams: {
+          dropdownPosition: DropdownPosition.right, dropdownDirection: DropdownDirection.down
+        }
+      }
+    });
     expect(returnedData).toMatchObject({ className: 'pf-c-table__action' });
     const view = mount(returnedData.children);
     view.find('.pf-c-dropdown button').first().simulate('click');
     expect(view.find('.pf-c-dropdown__menu li a').length).toBe(1);
-    view.find('.pf-c-dropdown__menu li a').simulate('click');
-    expect(actions[0].onClick.mock.calls.length).toBe(1);
   });
 
   describe('cellWidth', () => {

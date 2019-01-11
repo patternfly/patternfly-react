@@ -4,7 +4,12 @@ import { tableAction } from '@patternfly/patternfly-next/components/Table/table.
 import ActionsColumn from '../../ActionsColumn';
 
 export default (actions) => {
-  return (label, { rowIndex, column: { extraParams: { dropdownPosition, dropdownDirection } } }) => ({
+  return (label, {
+    rowIndex,
+    column: {
+      extraParams: { dropdownPosition, dropdownDirection }
+    }
+  }) => ({
     className: css(tableAction),
     children: <ActionsColumn
       items={actions}
