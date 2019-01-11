@@ -8,7 +8,7 @@ exports[`Alert - danger Action 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -88,7 +88,7 @@ exports[`Alert - danger Action 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -104,7 +104,7 @@ exports[`Alert - danger Action 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -134,7 +134,7 @@ exports[`Alert - danger Action and Title 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -214,7 +214,7 @@ exports[`Alert - danger Action and Title 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -230,7 +230,7 @@ exports[`Alert - danger Action and Title 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -261,7 +261,7 @@ exports[`Alert - danger Body 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -336,7 +336,7 @@ exports[`Alert - danger Body 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -352,7 +352,7 @@ exports[`Alert - danger Body 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -373,7 +373,7 @@ exports[`Alert - danger Custom aria label 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -454,7 +454,7 @@ exports[`Alert - danger Custom aria label 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -470,7 +470,7 @@ exports[`Alert - danger Custom aria label 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -501,7 +501,7 @@ exports[`Alert - danger Title 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -576,7 +576,7 @@ exports[`Alert - danger Title 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -592,7 +592,7 @@ exports[`Alert - danger Title 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Danger
             : 
@@ -614,7 +614,7 @@ exports[`Alert - info Action 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -694,7 +694,7 @@ exports[`Alert - info Action 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -710,7 +710,7 @@ exports[`Alert - info Action 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -740,7 +740,7 @@ exports[`Alert - info Action and Title 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -820,7 +820,7 @@ exports[`Alert - info Action and Title 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -836,7 +836,7 @@ exports[`Alert - info Action and Title 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -867,7 +867,7 @@ exports[`Alert - info Body 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -942,7 +942,7 @@ exports[`Alert - info Body 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -958,7 +958,7 @@ exports[`Alert - info Body 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -979,7 +979,7 @@ exports[`Alert - info Custom aria label 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -1060,7 +1060,7 @@ exports[`Alert - info Custom aria label 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -1076,7 +1076,7 @@ exports[`Alert - info Custom aria label 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -1107,7 +1107,7 @@ exports[`Alert - info Title 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -1182,7 +1182,7 @@ exports[`Alert - info Title 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -1198,7 +1198,7 @@ exports[`Alert - info Title 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Info
             : 
@@ -1220,7 +1220,7 @@ exports[`Alert - success Action 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -1300,7 +1300,7 @@ exports[`Alert - success Action 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1316,7 +1316,7 @@ exports[`Alert - success Action 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1346,7 +1346,7 @@ exports[`Alert - success Action and Title 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -1426,7 +1426,7 @@ exports[`Alert - success Action and Title 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1442,7 +1442,7 @@ exports[`Alert - success Action and Title 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1473,7 +1473,7 @@ exports[`Alert - success Body 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -1548,7 +1548,7 @@ exports[`Alert - success Body 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1564,7 +1564,7 @@ exports[`Alert - success Body 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1585,7 +1585,7 @@ exports[`Alert - success Custom aria label 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -1666,7 +1666,7 @@ exports[`Alert - success Custom aria label 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1682,7 +1682,7 @@ exports[`Alert - success Custom aria label 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1713,7 +1713,7 @@ exports[`Alert - success Title 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -1788,7 +1788,7 @@ exports[`Alert - success Title 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1804,7 +1804,7 @@ exports[`Alert - success Title 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Success
             : 
@@ -1826,7 +1826,7 @@ exports[`Alert - warning Action 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -1906,7 +1906,7 @@ exports[`Alert - warning Action 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 
@@ -1922,7 +1922,7 @@ exports[`Alert - warning Action 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 
@@ -1952,7 +1952,7 @@ exports[`Alert - warning Action and Title 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -2032,7 +2032,7 @@ exports[`Alert - warning Action and Title 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 
@@ -2048,7 +2048,7 @@ exports[`Alert - warning Action and Title 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 
@@ -2079,7 +2079,7 @@ exports[`Alert - warning Body 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -2154,7 +2154,7 @@ exports[`Alert - warning Body 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 
@@ -2170,7 +2170,7 @@ exports[`Alert - warning Body 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 
@@ -2191,7 +2191,7 @@ exports[`Alert - warning Custom aria label 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -2272,7 +2272,7 @@ exports[`Alert - warning Custom aria label 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 
@@ -2288,7 +2288,7 @@ exports[`Alert - warning Custom aria label 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 
@@ -2319,7 +2319,7 @@ exports[`Alert - warning Title 1`] = `
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -2394,7 +2394,7 @@ exports[`Alert - warning Title 1`] = `
       title={
         <React.Fragment>
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 
@@ -2410,7 +2410,7 @@ exports[`Alert - warning Title 1`] = `
           className="pf-c-alert__title"
         >
           <span
-            className="pf-u-sr-only"
+            className="pf-u-screen-reader"
           >
             Warning
             : 

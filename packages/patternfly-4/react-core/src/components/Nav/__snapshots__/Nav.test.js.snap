@@ -810,7 +810,7 @@ exports[`Expandable Nav List with aria label 1`] = `
 .pf-c-nav__link {
   display: block;
 }
-.pf-u-sr-only {
+.pf-u-screen-reader {
   display: block;
   position: fixed;
   overflow: hidden;
@@ -947,7 +947,7 @@ exports[`Expandable Nav List with aria label 1`] = `
                 hidden={true}
               >
                 <h2
-                  className="pf-u-sr-only"
+                  className="pf-u-screen-reader"
                   id="grp-1"
                 >
                   Section 1 - Example sub-navigation

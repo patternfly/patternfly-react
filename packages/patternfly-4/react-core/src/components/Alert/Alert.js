@@ -58,7 +58,7 @@ const Alert = ({
   variantLabel = variantLabel || capitalize(AlertVariant[variant]);
   const readerTitle = (
     <React.Fragment>
-      <span className={css(accessibleStyles.srOnly)}>{variantLabel}: </span>
+      <span className={css(accessibleStyles.screenReader)}>{variantLabel}: </span>
       {title}
     </React.Fragment>
   );
