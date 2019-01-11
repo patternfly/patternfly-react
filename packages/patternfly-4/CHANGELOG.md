@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.35.1"></a>
+## [1.35.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.35.0...patternfly4-react-lerna-root@1.35.1) (2019-01-11)
+
+
+### Bug Fixes
+
+* **dropdown:** add span wrapper for dropdown toggle text ([#1169](https://github.com/patternfly/patternfly-react/issues/1169)) ([9381f04](https://github.com/patternfly/patternfly-react/commit/9381f04))
+
+
+
+
 <a name="1.35.0"></a>
 # [1.35.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.34.12...patternfly4-react-lerna-root@1.35.0) (2019-01-11)
 

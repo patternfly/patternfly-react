@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.45.1"></a>
+## [1.45.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.45.0...@patternfly/react-core@1.45.1) (2019-01-11)
+
+
+### Bug Fixes
+
+* **dropdown:** add span wrapper for dropdown toggle text ([#1169](https://github.com/patternfly/patternfly-react/issues/1169)) ([9381f04](https://github.com/patternfly/patternfly-react/commit/9381f04))
+
+
+
+
 <a name="1.45.0"></a>
 # [1.45.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.44.11...@patternfly/react-core@1.45.0) (2019-01-11)
 

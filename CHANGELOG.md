@@ -1,4 +1,14 @@
 
+## Change Log (2019-01-11)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1169](https://github.com/patternfly/patternfly-react/pull/1169) fix(dropdown): add span wrapper for dropdown toggle text ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 1
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+
+
 ## patternfly4-react-lerna-root@1.34.12 (2019-01-11)
 
 #### :bug: Bug Fix
