@@ -133,7 +133,7 @@ class PageLayoutSimpleNav extends React.Component {
     ];
     const PageToolbar = (
       <Toolbar>
-        <ToolbarGroup className={css(accessibleStyles.srOnly, accessibleStyles.visibleOnLg)}>
+        <ToolbarGroup className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnLg)}>
           <ToolbarItem>
             <Button id="simple-example-uid-01" aria-label="Notifications actions" variant={ButtonVariant.plain}>
               <BellIcon />
@@ -156,7 +156,7 @@ class PageLayoutSimpleNav extends React.Component {
               dropdownItems={kebabDropdownItems}
             />
           </ToolbarItem>
-          <ToolbarItem className={css(accessibleStyles.srOnly, accessibleStyles.visibleOnMd)}>
+          <ToolbarItem className={css(accessibleStyles.screenReader, accessibleStyles.visibleOnMd)}>
             <Dropdown
               isPlain
               position="right"

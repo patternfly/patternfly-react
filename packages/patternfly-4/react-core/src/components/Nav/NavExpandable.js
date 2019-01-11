@@ -86,7 +86,7 @@ class NavExpandable extends React.Component {
                 </a>
                 <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={isExpanded ? null : true}>
                   {srText && (
-                    <h2 className={css(a11yStyles.srOnly)} id={this.id}>
+                    <h2 className={css(a11yStyles.screenReader)} id={this.id}>
                       {srText}
                     </h2>
                   )}
