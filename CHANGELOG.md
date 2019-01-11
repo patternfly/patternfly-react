@@ -1,4 +1,16 @@
 
+## Change Log (2019-01-11)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1167](https://github.com/patternfly/patternfly-react/pull/1167) fix(ModalContent): Hide footer when no actions ([@rebeccaalpert](https://github.com/rebeccaalpert))
+  * [#1169](https://github.com/patternfly/patternfly-react/pull/1169) fix(dropdown): add span wrapper for dropdown toggle text ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
 ## patternfly4-react-lerna-root@1.34.12 (2019-01-11)
 
 #### :bug: Bug Fix
