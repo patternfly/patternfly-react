@@ -4,7 +4,7 @@ import ModalContent from './ModalContent';
 
 test('Modal Content Test only body', () => {
   const view = shallow(
-    <ModalContent title="Test Modal Content title" id="id">
+    <ModalContent title="Test Modal Content title" id="id" isOpen>
       This is a ModalBox header
     </ModalContent>
   );
@@ -22,7 +22,7 @@ test('Modal Content Test isOpen', () => {
 
 test('Modal Content Test with header', () => {
   const view = shallow(
-    <ModalContent title="Test Modal Content title" id="id" header="Testing">
+    <ModalContent title="Test Modal Content title" id="id" isOpen header="Testing">
       This is a ModalBox header
     </ModalContent>
   );
@@ -31,7 +31,16 @@ test('Modal Content Test with header', () => {
 
 test('Modal Content Test with footer', () => {
   const view = shallow(
-    <ModalContent title="Test Modal Content title" id="id" footer="Testing">
+    <ModalContent title="Test Modal Content title" id="id" isOpen actions={["Testing"]}>
+      This is a ModalBox header
+    </ModalContent>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('Modal Content test without footer', () => {
+  const view = shallow(
+    <ModalContent title="Test Modal Content title" id="id" isOpen>
       This is a ModalBox header
     </ModalContent>
   );
@@ -40,22 +49,23 @@ test('Modal Content Test with footer', () => {
 
 test('Modal Content Test with header and footer', () => {
   const view = shallow(
-    <ModalContent title="Test Modal Content title" header="Testing header" footer="Testing footer" id="id">
+    <ModalContent title="Test Modal Content title" header="Testing header" id="id" isOpen actions={["Testing footer"]}>
       This is a ModalBox header
     </ModalContent>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('Modal Content Test with onlose', () => {
+test('Modal Content Test with onclose', () => {
   const view = shallow(
     <ModalContent
       title="Test Modal Content title"
       header="Testing header"
-      footer="Testing footer"
+      actions={["Testing footer"]}
       isLarge
       onclose={() => undefined}
       id="id"
+      isOpen
     >
       This is a ModalBox header
     </ModalContent>

@@ -43,7 +43,7 @@ const defaultProps = {
 
 const ModalContent = ({ children, className, isOpen, title, hideTitle, actions, onClose, isLarge, id, ...props }) => {
   const modalBoxHeader = title && <ModalBoxHeader> {title} </ModalBoxHeader>;
-  const modalBoxFooter = actions && <ModalBoxFooter> {actions} </ModalBoxFooter>;
+  const modalBoxFooter = actions.length > 0 && <ModalBoxFooter> {actions} </ModalBoxFooter>;
   if (!isOpen) {
     return null;
   }
