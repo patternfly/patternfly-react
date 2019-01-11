@@ -1,6 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown toggle 1`] = `
+.pf-c-dropdown__toggle-text {
+  display: block;
+}
 .pf-c-dropdown__toggle-icon {
   display: block;
 }
@@ -51,7 +54,11 @@ exports[`Dropdown toggle 1`] = `
       onClick={[Function]}
       type="button"
     >
-      Dropdown
+      <span
+        className="pf-c-dropdown__toggle-text"
+      >
+        Dropdown
+      </span>
       <CaretDownIcon
         className="pf-c-dropdown__toggle-icon"
         color="currentColor"
