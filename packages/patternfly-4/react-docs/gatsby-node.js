@@ -128,7 +128,6 @@ exports.createPages = async ({ graphql, actions }) => {
     );
 
     fs.outputFileSync(filePath, content);
-    console.log(`/${path.dirname(doc.relativePath).toLowerCase()}`);
     createPage({
       path: `/${path.dirname(doc.relativePath).toLowerCase()}`,
       component: filePath
@@ -140,7 +139,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   examples.edges.forEach(({ node: example }) => {
     const examplePath = `/${path.dirname(example.relativePath).toLowerCase()}/${paramCase(example.name)}`;
-    console.log(`creating page for: ${examplePath}`);
     createPage({
       path: examplePath,
       layout: 'example',
