@@ -1,6 +1,8 @@
 {
   "lerna": "2.11.0",
-  "nohoist": ["gatsby*", "babel*"],
+  "nohoist": [
+    "babel*"
+  ],
   "npmClient": "yarn",
   "publishConfig": {
     "access": "public",

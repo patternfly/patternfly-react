@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from './navigation.styles';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import logo from '../../assets/logo.png';
 import NavigationItemGroup from './navigationItemGroup';

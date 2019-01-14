@@ -13,15 +13,15 @@ const docGenPropShape = PropTypes.shape({
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(docGenPropValueShape)])
   }),
   required: PropTypes.bool,
-  description: PropTypes.string,
+  description: PropTypes.shape({ text: PropTypes.string }),
   defaultValue: PropTypes.shape({ value: PropTypes.string })
 });
 
 const propTypes = {
   name: PropTypes.string.isRequired,
-  props: PropTypes.objectOf(docGenPropShape),
+  props: PropTypes.arrayOf(docGenPropShape),
   enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
-  description: PropTypes.string
+  description: PropTypes.shape({ text: PropTypes.string })
 };
 
 const defaultProps = {
@@ -34,7 +34,7 @@ export const PropsTable = ({ name, description: preface, props, enumValues }) =>
   <Section
     name={name}
     title={`${name} Props`}
-    preface={preface}
+    preface={preface && preface.text}
     description={`The ${name} component accepts the following props.`}
   >
     <Table>
@@ -46,15 +46,15 @@ export const PropsTable = ({ name, description: preface, props, enumValues }) =>
         <TH>Description</TH>
       </Heading>
       <Body>
-        {Object.entries(props).map(([propName, propDef]) => (
-          <Row key={propName}>
-            <TD>{propName}</TD>
+        {props.map(prop => (
+          <Row key={prop.name}>
+            <TD>{prop.name}</TD>
             <TD>
-              <div className={css(styles.enumValues)}>{getEnumValue(propDef, enumValues)}</div>
+              <div className={css(styles.enumValues)}>{getEnumValue(prop, enumValues)}</div>
             </TD>
-            <TD align="center">{propDef.required && <ExclamationCircleIcon />}</TD>
-            <TD>{Boolean(propDef.defaultValue) && propDef.defaultValue.value}</TD>
-            <TD>{propDef.description}</TD>
+            <TD align="center">{prop.required && <ExclamationCircleIcon />}</TD>
+            <TD>{Boolean(prop.defaultValue) && prop.defaultValue.value}</TD>
+            <TD>{prop.description && prop.description.text}</TD>
           </Row>
         ))}
       </Body>

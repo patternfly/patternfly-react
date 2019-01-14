@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import styles from './navigationItem.styles';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
 const propTypes = {
   to: PropTypes.string.isRequired,
@@ -33,6 +33,7 @@ const NavigationItem = ({ to, children, pkg, components }) => (
     <a
       className={css(styles.pkgLabel)}
       target="_blank"
+      rel="noopener noreferrer"
       href={`${pathPrefix}${getPkgPrefix(pkg)}`}
       id={navItemDescriptorId(children)}
       aria-label={navItemDescriptor(pkg)}>

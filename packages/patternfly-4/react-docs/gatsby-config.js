@@ -28,8 +28,7 @@ module.exports = {
         path: resolve(__dirname, '../react-styled-system/src')
       }
     },
-    'gatsby-transformer-react-docgen',
-    'gatsby-plugin-emotion'
+    'gatsby-transformer-react-docgen'
   ],
   pathPrefix: 'patternfly-4'
 };

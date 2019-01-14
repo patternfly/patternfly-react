@@ -2,43 +2,35 @@ const path = require(`path`);
 const paramCase = require('param-case');
 const fs = require('fs-extra'); //eslint-disable-line
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  const oldCSSLoader = config._loaders.css;
-  const pfStylesTest = /patternfly-next.*(components|layouts|utilities).*\.css$/;
-  config.removeLoader('css');
-  if (oldCSSLoader.config.loaders && oldCSSLoader.config.loaders.includes('postcss')) {
-    oldCSSLoader.config.loaders.splice(oldCSSLoader.config.loaders.indexOf('postcss'), 1);
-  }
-  config
-    .loader('pf-styles', {
-      test: pfStylesTest,
-      loaders: ['babel-loader', require.resolve('@patternfly/react-styles/loader')]
-    })
-    .loader('css', {
-      ...oldCSSLoader.config,
-      exclude: pfStylesTest
-    });
-
-  config.merge({
+exports.onCreateWebpackConfig = ({ stage, actions, plugins, getConfig }) => {
+  actions.setWebpackConfig({
     resolve: {
       alias: {
-        '@patternfly/react-charts': path.resolve(__dirname, '../react-charts/src'),
-        '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
-        '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),
-        '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system/src'),
-        react: path.resolve(__dirname, 'node_modules/react'),
-        'react-dom': path.resolve(__dirname, 'node_modules/react-dom')
+        'gatsby/graphql': path.resolve(__dirname, './node_components/gatsby/graphql')
       }
-    }
+    },
   });
+  const configAfter = getConfig();
+  const minimizer = [
+    plugins.minifyJs({
+      terserOptions: {
+        // keep function names so that we can find the corresponding example components in src/components/componentDocs/componentDocs.js
+        keep_fnames: true
+      }
+    }),
+    plugins.minifyCss()
+  ];
+  if (!configAfter.optimization) {
+    configAfter.optimization = {};
+  }
+  configAfter.optimization.minimizer = minimizer;
 
-  return config;
+  actions.replaceWebpackConfig(configAfter);
 };
 
-const componentPathRegEx = /(components|layouts|demos)\//;
-
-exports.onCreateNode = ({ node, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
+  const componentPathRegEx = /(components|layouts|demos)\//;
   if (node.internal.type === 'SitePage' && componentPathRegEx.test(node.path)) {
     const pathLabel = node.component
       .split('/')
@@ -54,7 +46,8 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
   }
 };
 
-exports.createPages = async ({ boundActionCreators, graphql }) => {
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
   const {
     data: { docs, examples, exampleImages }
   } = await graphql(`
@@ -67,21 +60,25 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     }
 
     query AllDocsFiles {
-      docs: allFile(filter: { absolutePath: { glob: "**/*.docs.js" } }) {
+      docs: allFile(filter: { sourceInstanceName: { eq: "components" }, absolutePath: { glob: "**/*.docs.js" } }) {
         edges {
           node {
             ...DocFile
           }
         }
       }
-      examples: allFile(filter: { relativePath: { glob: "**/examples/!(*.styles).js" } }) {
+      examples: allFile(
+        filter: { sourceInstanceName: { eq: "components" }, relativePath: { glob: "**/examples/!(*.styles).js" } }
+      ) {
         edges {
           node {
             ...DocFile
           }
         }
       }
-      exampleImages: allFile(filter: { extension: { regex: "/(png|svg|jpg)/" } }) {
+      exampleImages: allFile(
+        filter: { sourceInstanceName: { eq: "components" }, extension: { regex: "/(png|svg|jpg)/" } }
+      ) {
         edges {
           node {
             ...DocFile
@@ -106,7 +103,9 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           .join('/') === doc.relativeDirectory
       ) {
         const examplePath = `../../${packageDir}/src/${example.relativePath}`;
-        rawExamples.push(`{name: '${example.name}', path: '${examplePath}', file: require('!!raw!${examplePath}')}`);
+        rawExamples.push(
+          `{name: '${example.name}', path: '${examplePath}', file: require('!!raw-loader!${examplePath}')}`
+        );
       }
     });
     const allImages = [];
@@ -136,7 +135,8 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     );
 
     fs.outputFileSync(filePath, content);
-    boundActionCreators.createPage({
+    console.log(`/${path.dirname(doc.relativePath).toLowerCase()}`);
+    createPage({
       path: `/${path.dirname(doc.relativePath).toLowerCase()}`,
       component: filePath
     });
@@ -147,17 +147,11 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
 
   examples.edges.forEach(({ node: example }) => {
     const examplePath = `/${path.dirname(example.relativePath).toLowerCase()}/${paramCase(example.name)}`;
-
-    boundActionCreators.createPage({
+    console.log(`creating page for: ${examplePath}`);
+    createPage({
       path: examplePath,
       layout: 'example',
       component: example.absolutePath
     });
   });
-};
-
-exports.modifyBabelrc = ({ stage, babelrc }) => {
-  babelrc.plugins.push(require.resolve('babel-plugin-react-docgen'));
-  babelrc.plugins.push(require.resolve('babel-plugin-react-docgen-typescript'));
-  return babelrc;
 };

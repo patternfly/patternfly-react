@@ -1,26 +1,19 @@
 import React from 'react';
-import Helmet from 'react-helmet';
-import Page from '../components/page';
-import Navigation from '../components/navigation';
 import PropTypes from 'prop-types';
-import { withPrefix } from 'gatsby-link';
-import * as DocsFiles from '../../.tmp';
+import Helmet from 'react-helmet';
+import { graphql, StaticQuery } from 'gatsby';
+import * as DocsFiles from '../../../.tmp';
+import Page from '../page';
+import Navigation from '../navigation';
 
-// This is a gatsby limitation will be fixed in newer version
-let globalStyles = require(`!raw-loader!@patternfly/react-core/../dist/styles/base.css`);
-globalStyles = globalStyles.replace(/\.\/assets\//g, withPrefix('/assets/'));
-const localStyles = require(`!raw-loader!./index.css`);
-import { injectGlobal } from 'emotion';
-
-injectGlobal(globalStyles);
-injectGlobal(localStyles);
+import './index.css';
 
 const propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   data: PropTypes.any.isRequired
 };
 
-const Layout = ({ children, data }) => {
+const DocsLayout = ({ children, data }) => {
   const componentMapper = (path, label) => {
     const { components } = DocsFiles[`${label.toLowerCase()}_docs`];
     return Object.keys(components).map(k => ({
@@ -54,6 +47,10 @@ const Layout = ({ children, data }) => {
     }))
     : [];
 
+  const searchCallback = term => {
+    debugger;
+  }
+
   return (
     <React.Fragment>
       <Helmet>
@@ -78,56 +75,62 @@ const Layout = ({ children, data }) => {
       <Page
         title="Patternfly React"
         navigation={
-          <Navigation componentRoutes={componentRoutes} layoutRoutes={layoutRoutes} demoRoutes={demoRoutes} />
+          <Navigation componentRoutes={componentRoutes} layoutRoutes={layoutRoutes} demoRoutes={demoRoutes} onSearch={searchCallback} />
         }
       >
-        {children()}
+        {children}
       </Page>
     </React.Fragment>
   );
 };
 
-Layout.propTypes = propTypes;
+DocsLayout.propTypes = propTypes;
 
-export default Layout;
-
-export const query = graphql`
-  query SiteLayoutQuery {
-    componentPages: allSitePage(
-      filter: { path: { glob: "**/components/*" } }
-      sort: { fields: [fields___label], order: ASC }
-    ) {
-      edges {
-        node {
-          path
-          fields {
-            label
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        componentPages: allSitePage(
+          filter: { path: { glob: "**/components/*" } }
+          sort: { fields: [fields___label], order: ASC }
+        ) {
+          edges {
+            node {
+              path
+              fields {
+                label
+              }
+            }
+          }
+        }
+        layoutPages: allSitePage(
+          filter: { path: { glob: "**/layouts/*" } }
+          sort: { fields: [fields___label], order: ASC }
+        ) {
+          edges {
+            node {
+              path
+              fields {
+                label
+              }
+            }
+          }
+        }
+        demoPages: allSitePage(
+          filter: { path: { glob: "**/demos/*" } }
+          sort: { fields: [fields___label], order: ASC }
+        ) {
+          edges {
+            node {
+              path
+              fields {
+                label
+              }
+            }
           }
         }
       }
-    }
-    layoutPages: allSitePage(
-      filter: { path: { glob: "**/layouts/*" } }
-      sort: { fields: [fields___label], order: ASC }
-    ) {
-      edges {
-        node {
-          path
-          fields {
-            label
-          }
-        }
-      }
-    }
-    demoPages: allSitePage(filter: { path: { glob: "**/demos/*" } }, sort: { fields: [fields___label], order: ASC }) {
-      edges {
-        node {
-          path
-          fields {
-            label
-          }
-        }
-      }
-    }
-  }
-`;
+    `}
+    render={data => <DocsLayout data={data} {...props} />}
+  />
+);
