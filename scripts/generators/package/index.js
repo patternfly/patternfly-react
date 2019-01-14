@@ -1,5 +1,4 @@
-const Repository = require('lerna/lib/Repository');
-const PackageUtilities = require('lerna/lib/PackageUtilities');
+const helpers = require('../../lernaHelpers');
 const { join, resolve } = require('path');
 const { REMOVE_NPM_SCOPE } = require('../helpers');
 
@@ -37,9 +36,10 @@ function setPackageGenerators(plop) {
         type: 'input',
         name: 'name',
         message: 'What should the package name be?',
-        validate(input) {
-          const packages = PackageUtilities.getPackages(new Repository());
-          const matchingPackage = packages.find(p => p.name === input);
+        async validate(input) {
+          const packages = await helpers.getPfPackages(false);
+          const pkgConfigs = packages.map(pkg => pkg.toJSON());
+          const matchingPackage = pkgConfigs.find(p => p.name === input);
           return matchingPackage ? `Packages already exits at ${matchingPackage.location}` : true;
         }
       },
