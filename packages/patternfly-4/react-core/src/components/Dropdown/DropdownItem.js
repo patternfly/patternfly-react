@@ -45,12 +45,10 @@ const defaultProps = {
 };
 
 class DropdownItem extends React.Component {
-  componentWillMount() {
-    this.ref = React.createRef();
-  }
+  ref = React.createRef();
 
   componentDidMount() {
-    this.props.context.sendRef(this.props.index, this.ref, this.props.isDisabled);
+    this.props.context.sendRef(this.props.index, this.ref.current, this.props.isDisabled);
   }
 
   onKeyDown = event => {
@@ -63,7 +61,7 @@ class DropdownItem extends React.Component {
     } else if (event.key === 'ArrowDown') {
       this.props.context.keyHandler(this.props.index, 'down');
     } else if (event.key === 'Enter') {
-      this.ref.click();
+      this.ref.current.click && this.ref.current.click();
     }
   };
 
@@ -105,7 +103,7 @@ class DropdownItem extends React.Component {
               <Component
                 {...additionalProps}
                 className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
-                ref={ref => (this.ref = ref)}
+                ref={this.ref}
                 onKeyDown={this.onKeyDown}
                 onClick={event => {
                   if (!isDisabled) {

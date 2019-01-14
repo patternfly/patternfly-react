@@ -29,13 +29,9 @@ const defaultProps = {
 };
 
 class DropdownMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.refsCollection = {};
-    this.keyHandler = this.keyHandler.bind(this);
-  }
+  refsCollection = {};
 
-  keyHandler(index, position, custom = false) {
+  keyHandler = (index, position, custom = false) => {
     const kids = this.props.children;
     if (!Array.isArray(kids)) return;
     let nextIndex;
@@ -59,7 +55,7 @@ class DropdownMenu extends React.Component {
         ? this.refsCollection[`item-${nextIndex}`].current.focus()
         : this.refsCollection[`item-${nextIndex}`].focus();
     }
-  }
+  };
 
   componentDidMount() {
     if (this.props.openedOnEnter) {
