@@ -3,13 +3,6 @@ const paramCase = require('param-case');
 const fs = require('fs-extra'); //eslint-disable-line
 
 exports.onCreateWebpackConfig = ({ stage, actions, plugins, getConfig }) => {
-  actions.setWebpackConfig({
-    resolve: {
-      alias: {
-        'gatsby/graphql': path.resolve(__dirname, './node_components/gatsby/graphql')
-      }
-    },
-  });
   const configAfter = getConfig();
   const minimizer = [
     plugins.minifyJs({
