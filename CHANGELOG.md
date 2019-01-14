@@ -3,6 +3,47 @@
 
 #### :bug: Bug Fix
 * `patternfly-4`
+  * [#1186](https://github.com/patternfly/patternfly-react/pull/1186) fix(Button): make aria-label optional prop ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 2
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.35.3 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1173](https://github.com/patternfly/patternfly-react/pull/1173) PF4: Add missing attribute isPlain to Dropdown ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 1
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+
+
+## @patternfly/react-table@0.2.48 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1173](https://github.com/patternfly/patternfly-react/pull/1173) PF4: Add missing attribute isPlain to Dropdown ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 1
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+
+
+## @patternfly/react-docs@3.19.57 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1173](https://github.com/patternfly/patternfly-react/pull/1173) PF4: Add missing attribute isPlain to Dropdown ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 1
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+
+
+## @patternfly/react-core@1.45.3 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
   * [#1173](https://github.com/patternfly/patternfly-react/pull/1173) PF4: Add missing attribute isPlain to Dropdown ([@aljesusg](https://github.com/aljesusg))
 
 #### Committers: 1

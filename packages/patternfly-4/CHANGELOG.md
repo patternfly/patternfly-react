@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.35.4"></a>
+## [1.35.4](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.35.3...patternfly4-react-lerna-root@1.35.4) (2019-01-14)
+
+
+### Bug Fixes
+
+* **Button:** make aria-label optional prop ([#1186](https://github.com/patternfly/patternfly-react/issues/1186)) ([0f7fef5](https://github.com/patternfly/patternfly-react/commit/0f7fef5)), closes [#1184](https://github.com/patternfly/patternfly-react/issues/1184)
+
+
+
+
 <a name="1.35.3"></a>
 ## [1.35.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.35.2...patternfly4-react-lerna-root@1.35.3) (2019-01-14)
 
