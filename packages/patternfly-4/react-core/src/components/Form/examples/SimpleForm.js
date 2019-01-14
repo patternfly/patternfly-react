@@ -82,6 +82,9 @@ class SimpleForm extends React.Component {
             aria-label="Please don't contact me"
           />
         </FormGroup>
+        <FormGroup label="Additional Note:" fieldId="simple-form-note">
+          <TextInput isDisabled type="text" id="simple-form-note" name="simple-form-number" value="disabled" />
+        </FormGroup>
         <FormGroup fieldId="checkbox1">
           <Checkbox label="I'd like updates via email" id="checkbox1" name="checkbox1" aria-label="Update via email" />
         </FormGroup>
