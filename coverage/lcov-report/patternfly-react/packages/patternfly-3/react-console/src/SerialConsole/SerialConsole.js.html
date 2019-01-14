@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/react-console/src/SerialConsole/SerialConsole.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/react-console/src/SerialConsole</a> SerialConsole.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">54.05% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>6/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">57.14% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+&nbsp;
+import { EmptyState, Button, helpers, Toolbar } from 'patternfly-react';
+import constants from '../common/constants';
+&nbsp;
+const { CONNECTED, DISCONNECTED, LOADING } = constants;
+import XTerm from './XTerm';
+import SerialConsoleActions from './SerialConsoleActions';
+&nbsp;
+const { noop } = helpers;
+&nbsp;
+/**
+ * SerialConsole Component for PatternFly React
+ */
+class SerialConsole extends React.Component {
+  componentDidMount() {
+    this.props.onConnect();
+  }
+&nbsp;
+  componentWillUnmount() {
+    this.props.onDisconnect();
+  }
+&nbsp;
+  onResetClick = <span class="fstat-no" title="function not covered" >ev</span>ent =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (event.button !== 0) <span class="cstat-no" title="statement not covered" >return;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.props.onDisconnect();</span>
+<span class="cstat-no" title="statement not covered" >    this.props.onConnect();</span>
+<span class="cstat-no" title="statement not covered" >    event.target.blur();</span>
+<span class="cstat-no" title="statement not covered" >    this.focusTerminal();</span>
+  };
+&nbsp;
+  onDisconnectClick = <span class="fstat-no" title="function not covered" >ev</span>ent =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (event.button !== 0) <span class="cstat-no" title="statement not covered" >return;</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.props.onDisconnect();</span>
+<span class="cstat-no" title="statement not covered" >    event.target.blur();</span>
+<span class="cstat-no" title="statement not covered" >    this.focusTerminal();</span>
+  };
+&nbsp;
+  /**
+   * Backend sent data.
+   */
+<span class="fstat-no" title="function not covered" >  on</span>DataReceived(data) {
+<span class="cstat-no" title="statement not covered" >    if (this.childTerminal &amp;&amp; this.props.status === CONNECTED) {</span>
+<span class="cstat-no" title="statement not covered" >      this.childTerminal.onDataReceived(data);</span>
+    }
+  }
+&nbsp;
+  /**
+   * Backend closed connection.
+   */
+<span class="fstat-no" title="function not covered" >  on</span>ConnectionClosed(reason) {
+<span class="cstat-no" title="statement not covered" >    if (this.childTerminal) {</span>
+<span class="cstat-no" title="statement not covered" >      this.childTerminal.onConnectionClosed(reason);</span>
+    }
+  }
+&nbsp;
+  focusTerminal = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.childTerminal &amp;&amp; this.childTerminal.focus();</span>
+  };
+&nbsp;
+  render() {
+    const { id, status, topClassName } = this.props;
+    const idPrefix = `${id || 'id'}-serialconsole`;
+&nbsp;
+    let terminal;
+    let isDisconnectEnabled = false;
+    switch (status) {
+      case CONNECTED:
+        terminal = (
+          &lt;XTerm
+            ref={<span class="fstat-no" title="function not covered" >c </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >              this.childTerminal = c;</span>
+            }}
+            className="serial-console-pf"
+            cols={this.props.cols}
+            rows={this.props.rows}
+            autoFit={this.props.autoFit}
+            fontFamily={this.props.fontFamily}
+            fontSize={this.props.fontSize}
+            onConnect={this.props.onConnect}
+            onDisconnect={this.props.onDisconnect}
+            onData={this.props.onData}
+            onTitleChanged={this.props.onTitleChanged}
+            onResize={this.props.onResize}
+          /&gt;
+        );
+        isDisconnectEnabled = true;
+        break;
+      case DISCONNECTED:
+        terminal = (
+          &lt;EmptyState&gt;
+            &lt;EmptyState.Title&gt;{this.props.textDisconnectedTitle}&lt;/EmptyState.Title&gt;
+            &lt;EmptyState.Info&gt;{this.props.textDisconnected}&lt;/EmptyState.Info&gt;
+            &lt;EmptyState.Action&gt;
+              &lt;Button bsStyle="primary" bsSize="large" onClick={this.props.onConnect}&gt;
+                {this.props.textConnect}
+              &lt;/Button&gt;
+            &lt;/EmptyState.Action&gt;
+          &lt;/EmptyState&gt;
+        );
+        break;
+      case LOADING:
+      default:
+        terminal = &lt;span&gt;{this.props.textLoading}&lt;/span&gt;;
+        break;
+    }
+&nbsp;
+    const classes = classNames('serial-console-pf', topClassName);
+&nbsp;
+    return (
+      &lt;div className={classes} id={id}&gt;
+        &lt;Toolbar.RightContent&gt;
+          &lt;SerialConsoleActions
+            idPrefix={idPrefix}
+            isDisconnectEnabled={isDisconnectEnabled}
+            onDisconnect={this.onDisconnectClick}
+            onReset={this.onResetClick}
+            textDisconnect={this.props.textDisconnect}
+            textReconnect={this.props.textReconnect}
+          /&gt;
+        &lt;/Toolbar.RightContent&gt;
+        &lt;Toolbar.Results&gt;
+          &lt;div className="panel-body console-terminal-pf"&gt;{terminal}&lt;/div&gt;
+        &lt;/Toolbar.Results&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+&nbsp;
+SerialConsole.displayName = 'SerialConsole';
+&nbsp;
+SerialConsole.propTypes = {
+  /** Initiate connection to backend. In other words, the calling components manages connection state. */
+  onConnect: PropTypes.func.isRequired,
+  /** Close connection to backend */
+  onDisconnect: PropTypes.func.isRequired,
+  /** Terminal has been resized, backend shall be informed. (rows, cols) =&gt; {} */
+  onResize: PropTypes.func,
+  /** Terminal produced data, like key-press */
+  onData: PropTypes.func,
+  /** Terminal title has been changed. */
+  onTitleChanged: PropTypes.func,
+&nbsp;
+  /** Connection status, a value from [''connected', 'disconnected', 'loading']. Default is 'loading' for a not matching value. */
+  status: PropTypes.oneOf([CONNECTED, DISCONNECTED, LOADING]).isRequired,
+  id: PropTypes.string,
+&nbsp;
+  /** Size of the terminal component */
+  rows: PropTypes.number,
+  cols: PropTypes.number,
+  autoFit: PropTypes.bool,
+&nbsp;
+  /** Font for text rendered to xterm canvas */
+  fontFamily: PropTypes.string,
+  fontSize: PropTypes.number,
+&nbsp;
+  /** Enable customization */
+  topClassName: PropTypes.string,
+&nbsp;
+  /** Localization */
+  textDisconnect: PropTypes.string,
+  textDisconnectedTitle: PropTypes.string,
+  textDisconnected: PropTypes.string,
+  textLoading: PropTypes.string,
+  textReconnect: PropTypes.string,
+  textConnect: PropTypes.string
+};
+&nbsp;
+SerialConsole.defaultProps = {
+  topClassName: '',
+&nbsp;
+  id: '',
+  rows: 25,
+  cols: 80,
+  autoFit: false,
+&nbsp;
+  fontFamily: undefined /** Use xterm default: 'courier-new, courier, monospace' */,
+  fontSize: undefined /** Use xterm default: 15 */,
+&nbsp;
+  onTitleChanged: noop,
+  onData: noop,
+  onResize: noop,
+&nbsp;
+  textDisconnectedTitle: 'Disconnected from serial console',
+  textDisconnected: 'Click Connect to open serial console.',
+  textLoading: 'Loading ...',
+  textConnect: 'Connect',
+  textDisconnect: undefined /** Default is set in SerialConsoleActions */,
+  textReconnect: undefined /** Default is set in SerialConsoleActions */
+};
+&nbsp;
+export default SerialConsole;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

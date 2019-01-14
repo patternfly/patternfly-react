@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/components/Wizard/Patterns/WizardPattern.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/components/Wizard/Patterns</a> WizardPattern.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>42/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.37% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>38/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>39/39</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+import { noop, Wizard, Icon, Button } from '../../../index';
+import WizardPatternBody from './WizardPatternBody';
+import { wizardStepShape } from './WizardPatternConstants';
+&nbsp;
+/**
+ * WizardPattern - the Wizard Pattern component.
+ */
+const WizardPattern = ({
+  steps,
+  activeStepIndex,
+  onStepChanged,
+  onNext,
+  onBack,
+  nextStepDisabled,
+  previousStepDisabled,
+  cancelButtonDisabled,
+  title,
+  loadingTitle,
+  loadingMessage,
+  show,
+  onHide,
+  onExited,
+  stepButtonsDisabled,
+  cancelText,
+  backText,
+  nextText,
+  closeText,
+  loading,
+  nextButtonRef,
+  bodyHeader,
+  children,
+  ...props
+}) =&gt; {
+  const onFirstStep = activeStepIndex === 0;
+  const onFinalStep = activeStepIndex === steps.length - 1;
+&nbsp;
+  const onHideClick = () =&gt; {
+    onHide(onFinalStep);
+  };
+&nbsp;
+  const onBackClick = () =&gt; {
+    goToStep(Math.max(activeStepIndex - 1, 0));
+  };
+&nbsp;
+  const onNextClick = () =&gt; {
+    goToStep(Math.min(activeStepIndex + 1, steps.length - 1));
+  };
+&nbsp;
+  const getStep = (index = activeStepIndex) =&gt; steps[index];
+&nbsp;
+  const getPrevStep = (relativeToIndex = activeStepIndex) =&gt; relativeToIndex &gt; 0 &amp;&amp; steps[relativeToIndex - 1];
+&nbsp;
+  const getNextStep = (relativeToIndex = activeStepIndex) =&gt;
+    relativeToIndex &lt; steps.length - 1 &amp;&amp; steps[relativeToIndex + 1];
+&nbsp;
+  const activeStep = getStep();
+&nbsp;
+  const goToStep = newStepIndex =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (shouldPreventGoToStep(newStepIndex)) <span class="cstat-no" title="statement not covered" >return;</span>
+    if (newStepIndex === activeStepIndex + 1) {
+      const stepOnNextResult = activeStep.onNext &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >activeStep.onNext();</span>
+      const propOnNextResult = onNext(newStepIndex);
+      const stepFailed = stepOnNextResult === false || propOnNextResult === false;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (stepFailed) <span class="cstat-no" title="statement not covered" >return;</span>
+    }
+    if (newStepIndex === activeStepIndex - 1) {
+      const stepFailed = onBack(newStepIndex) === false;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (stepFailed) <span class="cstat-no" title="statement not covered" >return;</span>
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (onStepChanged) onStepChanged(newStepIndex);
+  };
+&nbsp;
+  const shouldPreventGoToStep = newStepIndex =&gt; {
+    const targetStep = getStep(newStepIndex);
+    const stepBeforeTarget = getPrevStep(newStepIndex);
+&nbsp;
+    const preventExitActive = activeStep.preventExit;
+    const preventEnterTarget = targetStep.preventEnter || (stepBeforeTarget &amp;&amp; stepBeforeTarget.isInvalid);
+    const nextStepClicked = newStepIndex &gt; activeStepIndex;
+&nbsp;
+    return preventExitActive || preventEnterTarget || nextStepClicked ? nextStepDisabled : previousStepDisabled;
+  };
+&nbsp;
+  const activeStepStr = (activeStepIndex + 1).toString();
+&nbsp;
+  const prevStepUnreachable =
+    previousStepDisabled || onFirstStep || activeStep.preventExit || getPrevStep().preventEnter;
+  // nextStepUnreachable is still true onFinalStep, because the Next button turns into a Close button
+  const nextStepUnreachable =
+    nextStepDisabled || activeStep.isInvalid || activeStep.preventExit || getNextStep().preventEnter;
+&nbsp;
+  return (
+    &lt;Wizard show={show} onHide={onHideClick} onExited={onExited} {...props}&gt;
+      &lt;Wizard.Header onClose={onHideClick} title={title} /&gt;
+      &lt;Wizard.Body&gt;
+        {bodyHeader}
+        &lt;WizardPatternBody
+          loadingTitle={loadingTitle}
+          loadingMessage={loadingMessage}
+          loading={loading}
+          steps={steps}
+          activeStepIndex={activeStepIndex}
+          activeStepStr={activeStepStr}
+          goToStep={goToStep}
+          nextStepDisabled={nextStepDisabled}
+          stepButtonsDisabled={stepButtonsDisabled}
+        /&gt;
+      &lt;/Wizard.Body&gt;
+      &lt;Wizard.Footer&gt;
+        &lt;Button bsStyle="default" className="btn-cancel" disabled={cancelButtonDisabled} onClick={onHideClick}&gt;
+          {cancelText}
+        &lt;/Button&gt;
+        &lt;Button bsStyle="default" onClick={onBackClick} disabled={prevStepUnreachable}&gt;
+          &lt;Icon type="fa" name="angle-left" /&gt;
+          {backText}
+        &lt;/Button&gt;
+        &lt;Button
+          bsStyle="primary"
+          onClick={onFinalStep ? onHideClick : onNextClick}
+          disabled={nextStepUnreachable}
+          ref={nextButtonRef}
+        &gt;
+          {onFinalStep ? (
+            closeText
+          ) : (
+            &lt;React.Fragment&gt;
+              {nextText}
+              &lt;Icon type="fa" name="angle-right" /&gt;
+            &lt;/React.Fragment&gt;
+          )}
+        &lt;/Button&gt;
+      &lt;/Wizard.Footer&gt;
+      {children}
+    &lt;/Wizard&gt;
+  );
+};
+&nbsp;
+WizardPattern.propTypes = {
+  activeStepIndex: PropTypes.number.isRequired,
+  show: PropTypes.bool,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  onHide: PropTypes.func,
+  onExited: PropTypes.func,
+  onBack: PropTypes.func,
+  onNext: PropTypes.func,
+  onStepChanged: PropTypes.func,
+  loadingTitle: PropTypes.string,
+  loadingMessage: PropTypes.string,
+  loading: PropTypes.bool,
+  cancelText: PropTypes.string,
+  backText: PropTypes.string,
+  nextText: PropTypes.string,
+  closeText: PropTypes.string,
+  steps: PropTypes.arrayOf(PropTypes.shape(wizardStepShape)),
+  nextStepDisabled: PropTypes.bool,
+  previousStepDisabled: PropTypes.bool,
+  stepButtonsDisabled: PropTypes.bool,
+  cancelButtonDisabled: PropTypes.bool,
+  nextButtonRef: PropTypes.func,
+  bodyHeader: PropTypes.node,
+  children: PropTypes.node
+};
+&nbsp;
+WizardPattern.defaultProps = {
+  show: false,
+  title: '',
+  onHide: noop,
+  onExited: noop,
+  onBack: noop,
+  onNext: noop,
+  onStepChanged: noop,
+  loadingTitle: 'Loading Wizard...',
+  loadingMessage: 'Loading...',
+  loading: false,
+  cancelText: 'Cancel',
+  backText: 'Back',
+  nextText: 'Next',
+  closeText: 'Close',
+  steps: [],
+  nextStepDisabled: false,
+  previousStepDisabled: false,
+  stepButtonsDisabled: false,
+  cancelButtonDisabled: false,
+  nextButtonRef: noop,
+  bodyHeader: null,
+  children: null
+};
+&nbsp;
+WizardPattern.displayName = 'WizardPattern';
+&nbsp;
+export default WizardPattern;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -4,7 +4,6 @@ tsc_out
 .out
 /.changelog
 .DS_Store
-coverage
 public/
 .cache
 .tmp

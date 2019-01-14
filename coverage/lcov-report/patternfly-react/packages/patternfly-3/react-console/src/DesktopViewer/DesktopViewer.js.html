@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/react-console/src/DesktopViewer/DesktopViewer.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/react-console/src/DesktopViewer</a> DesktopViewer.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/5</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+&nbsp;
+import classNames from 'classnames';
+&nbsp;
+import ManualConnection from './ManualConnection';
+import ConnectWithRemoteViewer from './ConnectWithRemoteViewer';
+import consoleDetailPropType from './consoleDetailPropType';
+&nbsp;
+const DesktopViewer = ({ children, spice, vnc, rdp, onGenerate, onDownload, topClassName, ...props }) =&gt; (
+  &lt;div className={classNames('desktop-viewer-pf', topClassName)}&gt;
+    &lt;ConnectWithRemoteViewer
+      spice={spice}
+      vnc={vnc}
+      rdp={rdp}
+      onGenerate={onGenerate}
+      onDownload={onDownload}
+      {...props}
+    &gt;
+      {children}
+    &lt;/ConnectWithRemoteViewer&gt;
+    &lt;ManualConnection spice={spice} vnc={vnc} rdp={rdp} {...props} /&gt;
+  &lt;/div&gt;
+);
+&nbsp;
+DesktopViewer.propTypes = {
+  children: PropTypes.any,
+  topClassName: PropTypes.string,
+&nbsp;
+  spice: consoleDetailPropType,
+  vnc: consoleDetailPropType,
+  rdp: consoleDetailPropType,
+&nbsp;
+  onGenerate: PropTypes.func,
+  onDownload: PropTypes.func,
+&nbsp;
+  textManualConnection: PropTypes.string /** Internationalization */,
+  textSpice: PropTypes.string /** Internationalization */,
+  textVNC: PropTypes.string /** Internationalization */,
+  textNoProtocol: PropTypes.string /** Internationalization */,
+  textConnectWith: PropTypes.string /** Internationalization */,
+&nbsp;
+  textAddress: PropTypes.string /** Internationalization */,
+  textSpiceAddress: PropTypes.string /** Internationalization */,
+  textVNCAddress: PropTypes.string /** Internationalization */,
+  textSpicePort: PropTypes.string /** Internationalization */,
+  textVNCPort: PropTypes.string /** Internationalization */,
+  textSpiceTlsPort: PropTypes.string /** Internationalization */,
+  textVNCTlsPort: PropTypes.string /** Internationalization */,
+  textRDPPort: PropTypes.string /** Internationalization */,
+  textRdpAddress: PropTypes.string /** Internationalization */,
+&nbsp;
+  textDesktopConnection: PropTypes.string /** Internationalization */,
+  textConnectWithRemoteViewer: PropTypes.string /** Internationalization */,
+  textConnectWithRDP: PropTypes.string /** Internationalization */,
+  textMoreInfo: PropTypes.string /** Internationalization */,
+  textMoreRDPInfo: PropTypes.string /** Internationalization */
+};
+&nbsp;
+DesktopViewer.displayName = 'DesktopViewer';
+&nbsp;
+DesktopViewer.defaultProps = {
+  children: null /** Custom content of more-info section  */,
+  topClassName: '' /** Custom class name to be added to the root element. */,
+&nbsp;
+  spice: null /** Optional. Connection details for Spice */,
+  vnc: null /** Optional. Connection details for VNC */,
+  rdp: null /** Optional. Connection details for RDP */,
+&nbsp;
+  /** Callback function. Generate content of .vv file.
+   * Parameters: ({ console, type }) =&gt; ({
+   *     content,  // required string value
+   *     mimeType, // optional, default application/x-virt-viewer
+   *     fileName  // optional, default: console.vv
+   *   })
+   */
+  onGenerate: undefined,
+&nbsp;
+  /** Callback function. Perform file download.
+   * Default implementation is usually good enough, but i.e. in case of environment with tight
+   * content security policy set, this might be required.
+   *
+   * Examples for alternative file-download implementations:
+   *   - use of iframe
+   *   - use of http-server
+   *
+   * Parameters: (fileName, content, mimeType) =&gt; {}
+   */
+  onDownload: undefined,
+&nbsp;
+  textManualConnection: 'Manual Connection',
+  textSpice: 'Spice',
+  textVNC: 'VNC',
+  textNoProtocol: 'No connection available.',
+  textConnectWith: 'Connect with any viewer application for following protocols:',
+&nbsp;
+  textAddress: 'Address:',
+  textSpiceAddress: 'SPICE Address:',
+  textVNCAddress: 'VNC Address:',
+  textSpicePort: 'SPICE Port:',
+  textVNCPort: 'VNC Port:',
+  textSpiceTlsPort: 'SPICE TLS Port:',
+  textVNCTlsPort: 'VNC TLS Port:',
+  textRDPPort: 'RDP Port:',
+  textRdpAddress: 'RDP Address:',
+&nbsp;
+  textDesktopConnection: 'Desktop Client',
+  textConnectWithRemoteViewer: 'Launch Remote Viewer',
+  textConnectWithRDP: 'Launch Remote Desktop',
+  textMoreInfo: 'Remote Viewer Details',
+  textMoreRDPInfo: 'Remote Desktop Details'
+};
+&nbsp;
+export default DesktopViewer;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

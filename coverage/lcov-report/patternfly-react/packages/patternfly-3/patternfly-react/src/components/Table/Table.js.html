@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/components/Table/Table.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/components/Table</a> Table.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>23/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>23/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import * as Table from 'reactabular-table';
+&nbsp;
+import actionHeaderCellFormatter from './Formatters/actionHeaderCellFormatter';
+import customHeaderFormattersDefinition from './Formatters/customHeaderFormattersDefinition';
+import selectionCellFormatter from './Formatters/selectionCellFormatter';
+import selectionHeaderCellFormatter from './Formatters/selectionHeaderCellFormatter';
+import sortableHeaderCellFormatter from './Formatters/sortableHeaderCellFormatter';
+import tableCellFormatter from './Formatters/tableCellFormatter';
+import inlineEditFormatterFactory from './Formatters/inlineEditFormatterFactory';
+&nbsp;
+import {
+  defaultSortingOrder,
+  TABLE_ALIGN,
+  TABLE_ALIGNMENT_TYPES,
+  TABLE_SORT_DIRECTION,
+  TABLE_SORT_DIRECTIONS
+} from './TableConstants';
+import TableActions from './TableActions';
+import TableButton from './TableButton';
+import TableCell from './TableCell';
+import TableCheckbox from './TableCheckbox';
+import TableDropdownKebab from './TableDropdownKebab';
+import TableHeading from './TableHeading';
+import TableInlineEditRow from './TableInlineEditRow';
+import TableInlineEditHeaderRow from './TableInlineEditHeaderRow';
+import TablePfProvider from './TablePfProvider';
+import TableSelectionCell from './TableSelectionCell';
+import TableSelectionHeading from './TableSelectionHeading';
+&nbsp;
+Table.actionHeaderCellFormatter = actionHeaderCellFormatter;
+Table.customHeaderFormattersDefinition = customHeaderFormattersDefinition;
+Table.defaultSortingOrder = defaultSortingOrder;
+Table.selectionCellFormatter = selectionCellFormatter;
+Table.selectionHeaderCellFormatter = selectionHeaderCellFormatter;
+Table.sortableHeaderCellFormatter = sortableHeaderCellFormatter;
+Table.tableCellFormatter = tableCellFormatter;
+Table.inlineEditFormatterFactory = inlineEditFormatterFactory;
+&nbsp;
+Table.Actions = TableActions;
+Table.Button = TableButton;
+Table.Cell = TableCell;
+Table.Checkbox = TableCheckbox;
+Table.DropdownKebab = TableDropdownKebab;
+Table.Heading = TableHeading;
+Table.PfProvider = TablePfProvider;
+Table.InlineEditRow = TableInlineEditRow;
+Table.TableInlineEditHeaderRow = TableInlineEditHeaderRow;
+Table.SelectionCell = TableSelectionCell;
+Table.SelectionHeading = TableSelectionHeading;
+Table.TABLE_ALIGN = TABLE_ALIGN;
+Table.TABLE_ALIGNMENT_TYPES = TABLE_ALIGNMENT_TYPES;
+Table.TABLE_SORT_DIRECTION = TABLE_SORT_DIRECTION;
+Table.TABLE_SORT_DIRECTIONS = TABLE_SORT_DIRECTIONS;
+&nbsp;
+export { Table };
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

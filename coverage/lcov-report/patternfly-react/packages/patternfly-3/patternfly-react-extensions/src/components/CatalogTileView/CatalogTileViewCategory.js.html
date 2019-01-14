@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react-extensions/src/components/CatalogTileView/CatalogTileViewCategory.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react-extensions/src/components/CatalogTileView</a> CatalogTileViewCategory.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.48% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>38/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75.86% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>22/29</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>36/40</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">22x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { Button } from 'patternfly-react';
+import { ResizeSensor } from 'css-element-queries';
+import Break from 'breakjs';
+import { helpers } from '../../common/helpers';
+import CatalogTile from '../CatalogTile/CatalogTile';
+&nbsp;
+const layout =
+  window &amp;&amp; typeof window.matchMedia === 'function'
+    ? <span class="branch-0 cbranch-no" title="branch not covered" >Break({ mobile: 480, small: 768, medium: 992, large: 1200 })</span>
+    : { atMost: () =&gt; false };
+&nbsp;
+class CatalogTileViewCategory extends React.Component {
+  constructor(props) {
+    super(props);
+    this._resizeSensors = [];
+    this.state = {
+      numShown: 0,
+      rightSpacerWidth: 0
+    };
+  }
+&nbsp;
+  componentDidMount() {
+    this._isMounted = true;
+&nbsp;
+    // Watch for resizes and recompute the number shown when it does
+    this.computeNumShown();
+    this._resizeSensors.push(new ResizeSensor([this.categoryContainer], helpers.debounce(this.computeNumShown, 100)));
+  }
+&nbsp;
+  componentWillUnmount() {
+    this._isMounted = false;
+    this._resizeSensors.forEach(sensor =&gt; {
+      sensor.detach();
+    });
+  }
+&nbsp;
+  computeNumShown = () =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this._isMounted) {
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.categoryContainer &amp;&amp; layout) {
+      let rows = 1;
+&nbsp;
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (layout.atMost('mobile')) {
+<span class="cstat-no" title="statement not covered" >        rows = 3;</span>
+      } else <span class="missing-if-branch" title="if path not taken" >I</span>if (layout.atMost('small')) {
+<span class="cstat-no" title="statement not covered" >        rows = 2;</span>
+      }
+&nbsp;
+      const numShown = Math.floor(this.categoryContainer.clientWidth / 235) * rows;
+      const rightSpacerWidth = this.categoryContainer.clientWidth % 235;
+      this.setState({ numShown, rightSpacerWidth });
+    }
+  };
+&nbsp;
+  handleRef = ref =&gt; {
+    if (!ref) {
+      return;
+    }
+    this.categoryContainer = ref;
+  };
+&nbsp;
+  render() {
+    const { children, className, title, totalItems, viewAllText, viewAll, onViewAll, ...props } = this.props;
+    const { numShown, rightSpacerWidth } = this.state;
+    const classes = classNames('catalog-tile-view-pf-category', className);
+&nbsp;
+    const tileValidator = child =&gt; helpers.hasDisplayName(child, CatalogTile.displayName);
+    const filterCatalogTiles = childrenArray =&gt;
+      childrenArray &amp;&amp;
+      childrenArray.filter(
+        child =&gt;
+          tileValidator(child) ||
+          (child.props &amp;&amp; filterCatalogTiles(helpers.childrenToArray(child.props.children), tileValidator))
+      );
+&nbsp;
+    const allChildren = helpers.childrenToArray(children);
+&nbsp;
+    /* Find the children that are tiles (or are wrapped tiles) and those that are not */
+    let catalogTiles = filterCatalogTiles(allChildren);
+    const nonTiles = allChildren.filter(child =&gt; !catalogTiles.includes(child));
+&nbsp;
+    // Only show the tiles that fit in a single row, unless viewAll is specified
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!viewAll &amp;&amp; numShown &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >numShown &lt; totalItems)</span> {
+<span class="cstat-no" title="statement not covered" >      catalogTiles = catalogTiles.slice(0, numShown);</span>
+    }
+&nbsp;
+    return (
+      &lt;div className={classes} {...props} ref={this.handleRef}&gt;
+        &lt;div className="catalog-tile-view-pf-category-header"&gt;
+          &lt;span className="catalog-tile-view-pf-category-header-title"&gt;{title}&lt;/span&gt;
+          {!viewAll &amp;&amp;
+            numShown &lt; totalItems &amp;&amp; (
+              &lt;span className="pull-right"&gt;
+                &lt;Button
+                  bsStyle="link"
+                  className="catalog-tile-view-pf-category-view-all pull-right"
+                  style={{ marginRight: rightSpacerWidth }}
+                  onClick={onViewAll}
+                &gt;
+                  {`${viewAllText} (${totalItems})`}
+                &lt;/Button&gt;
+              &lt;/span&gt;
+            )}
+        &lt;/div&gt;
+        &lt;div className="catalog-tile-view-pf-category-body"&gt;
+          {catalogTiles}
+          {nonTiles}
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+&nbsp;
+CatalogTileViewCategory.propTypes = {
+  /** CatalogTile items */
+  children: PropTypes.node,
+  /** Additional css classes */
+  className: PropTypes.string,
+  /** Tile for the category */
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  /** Total number of items in this category */
+  totalItems: PropTypes.number,
+  /** Text to show for the view all toggle when viewAll is false */
+  viewAllText: PropTypes.string,
+  /** Flag to show all tiles (versus only the first row) */
+  viewAll: PropTypes.bool,
+  /** Callback when view all is clicked */
+  onViewAll: PropTypes.func
+};
+&nbsp;
+CatalogTileViewCategory.defaultProps = {
+  children: null,
+  className: '',
+  title: null,
+  totalItems: 0,
+  viewAll: true,
+  viewAllText: 'View All',
+  onViewAll: helpers.noop
+};
+&nbsp;
+export default CatalogTileViewCategory;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

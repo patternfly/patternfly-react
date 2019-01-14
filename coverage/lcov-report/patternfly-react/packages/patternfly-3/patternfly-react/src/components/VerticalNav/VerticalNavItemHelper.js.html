@@ -1,0 +1,1106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/components/VerticalNav/VerticalNavItemHelper.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/components/VerticalNav</a> VerticalNavItemHelper.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">44.79% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>43/96</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">59.69% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>77/129</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.63% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>10/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">43.62% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>41/94</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">289x</span>
+<span class="cline-any cline-yes">289x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">289x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">595x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">595x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2380x</span>
+<span class="cline-any cline-yes">595x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">204x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { getContext } from 'recompose';
+import { ListGroup, ListGroupItem } from '../ListGroup';
+import { OverlayTrigger } from '../OverlayTrigger';
+import { Tooltip } from '../Tooltip';
+import VerticalNavBadge from './VerticalNavBadge';
+import { filterChildren, hasDisplayName } from '../../common/helpers';
+import VerticalNavDividerItem from './VerticalNavDividerItem';
+import {
+  NavContextProvider,
+  getNextDepth,
+  componentForDepth,
+  isNavItem,
+  getItemProps,
+  itemObjectTypes,
+  navContextTypes
+} from './VerticalNavConstants';
+&nbsp;
+class BaseVerticalNavItemHelper extends React.Component {
+  componentDidMount() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.props.active) {
+<span class="cstat-no" title="statement not covered" >      this.props.setControlledActivePath(true);</span>
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.props.hovered) {
+<span class="cstat-no" title="statement not covered" >      this.props.setControlledHoverPath(true);</span>
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.props.selectedOnMobile) {
+<span class="cstat-no" title="statement not covered" >      this.props.setControlledMobilePath(true);</span>
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.props.pinned) {
+<span class="cstat-no" title="statement not covered" >      this.props.setControlledPinnedPath(true);</span>
+    }
+    if (this.navItem().initialActive) {
+      this.setActive();
+    }
+  }
+&nbsp;
+  componentWillReceiveProps(newProps) {
+    const {
+      setControlledActivePath,
+      setControlledHoverPath,
+      setControlledMobilePath,
+      setControlledPinnedPath
+    } = this.props;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.props.active &amp;&amp; newProps.active) {
+      // If the active prop is being added, make sure the activePath is in sync.
+<span class="cstat-no" title="statement not covered" >      if (newProps.activePath !== this.idPath()) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setActive();</span>
+      }
+<span class="cstat-no" title="statement not covered" >      setControlledActivePath(true);</span>
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.props.hovered &amp;&amp; newProps.hovered) {
+      // If the hovered prop is being added, make sure the hoverPath is in sync.
+<span class="cstat-no" title="statement not covered" >      if (newProps.hoverPath !== this.idPath()) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setHovered();</span>
+      }
+<span class="cstat-no" title="statement not covered" >      setControlledHoverPath(true);</span>
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.props.selectedOnMobile &amp;&amp; newProps.selectedOnMobile) {
+      // If the selectedOnMobile prop is being added, make sure the mobilePath is in sync.
+<span class="cstat-no" title="statement not covered" >      if (newProps.mobilePath !== this.idPath()) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setMobilePath(this.idPath());</span>
+      }
+<span class="cstat-no" title="statement not covered" >      setControlledMobilePath(true);</span>
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.props.pinned &amp;&amp; newProps.pinned) {
+      // If the pinned prop is being added, make sure the pinnedPath is in sync.
+<span class="cstat-no" title="statement not covered" >      if (newProps.pinnedPath !== this.idPath()) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setPinnedPath(this.idPath());</span>
+      }
+<span class="cstat-no" title="statement not covered" >      setControlledPinnedPath(true);</span>
+    }
+  }
+&nbsp;
+  onItemBlur = <span class="fstat-no" title="function not covered" >no</span>Delay =&gt; {
+    const { primary, secondary, tertiary } = <span class="cstat-no" title="statement not covered" >this.getContextNavItems();</span>
+    const { updateNavOnItemBlur, idPath, onBlur } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    updateNavOnItemBlur(primary, secondary, tertiary, this.idPath(), idPath, noDelay, onBlur);</span>
+  };
+&nbsp;
+  onItemClick = <span class="fstat-no" title="function not covered" >ev</span>ent =&gt; {
+    const { primary, secondary, tertiary } = <span class="cstat-no" title="statement not covered" >this.getContextNavItems();</span>
+    const { isMobile, preventHref, updateNavOnItemClick, idPath } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    const { onClick } = <span class="cstat-no" title="statement not covered" >this.navItem();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (preventHref &amp;&amp; !!onClick) {</span>
+<span class="cstat-no" title="statement not covered" >      event.preventDefault();</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    updateNavOnItemClick(primary, secondary, tertiary, this.idPath(), idPath); </span>// Clears all mobile selections
+<span class="cstat-no" title="statement not covered" >    if (isMobile) {</span>
+<span class="cstat-no" title="statement not covered" >      this.onMobileSelection(primary, secondary, tertiary); </span>// Applies new mobile selection here
+    }
+<span class="cstat-no" title="statement not covered" >    this.setActive();</span>
+<span class="cstat-no" title="statement not covered" >    onClick &amp;&amp; onClick(primary, secondary, tertiary);</span>
+  };
+&nbsp;
+  onItemHover = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    const { primary, secondary, tertiary } = <span class="cstat-no" title="statement not covered" >this.getContextNavItems();</span>
+    const { updateNavOnItemHover, idPath, onHover } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    updateNavOnItemHover(primary, secondary, tertiary, this.idPath(), idPath, onHover);</span>
+  };
+&nbsp;
+  onMobileSelection = <span class="fstat-no" title="function not covered" >(p</span>rimary, secondary, tertiary) =&gt; {
+    const { setMobilePath, updateNavOnMobileSelection } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    setMobilePath(this.idPath());</span>
+<span class="cstat-no" title="statement not covered" >    updateNavOnMobileSelection(primary, secondary, tertiary);</span>
+  };
+&nbsp;
+  getContextNavItems = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    // We have primary, secondary, and tertiary items as props if they are part of the parent context,
+    // but we also want to include the current item when calling handlers.
+    const { depth, primaryItem, secondaryItem, tertiaryItem } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    const navItem = <span class="cstat-no" title="statement not covered" >this.navItem();</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      primary: depth === 'primary' ? navItem : primaryItem,
+      secondary: depth === 'secondary' ? navItem : secondaryItem,
+      tertiary: depth === 'tertiary' ? navItem : tertiaryItem
+    };
+  };
+&nbsp;
+  setActive = () =&gt; {
+    this.props.setActivePath(this.idPath());
+  };
+&nbsp;
+<span class="fstat-no" title="function not covered" >  se</span>tHovered() {
+<span class="cstat-no" title="statement not covered" >    this.props.setHoverPath(this.idPath());</span>
+  }
+&nbsp;
+  id = () =&gt; {
+    const { id, title } = this.navItem(null, true); // Need to ignorePath here so we don't get an infinite call stack...
+    return id || title || <span class="branch-2 cbranch-no" title="branch not covered" >this.props.index;</span>
+  };
+&nbsp;
+  idPath = () =&gt; `${this.props.idPath}${this.id()}/`;
+&nbsp;
+  navItem = (oldProps, ignorePath) =&gt; {
+    const props = oldProps || this.props;
+    // Properties of the item object take priority over individual item props
+    const item = { ...getItemProps(props), ...props.item };
+    // Automatically set the active, hovered, and selectedOnMobile properties based on current path...
+    // ...But don't call idPath() when called from inside id(), or there will be an infinite loop.
+    const valOrOnPath = (val, path) =&gt; val || (ignorePath ? null : path &amp;&amp; path.startsWith(this.idPath()));
+    return {
+      ...item,
+      active: valOrOnPath(item.active, props.activePath),
+      hovered: valOrOnPath(item.hovered, props.hoverPath),
+      selectedOnMobile: valOrOnPath(item.selectedOnMobile, props.mobilePath),
+      pinned: valOrOnPath(item.pinned, props.pinnedPath)
+    };
+  };
+&nbsp;
+  pinNextDepth = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    const {
+      isMobile,
+      depth,
+      setMobilePath,
+      forceHideSecondaryMenu,
+      setPinnedPath,
+      updateNavOnPin,
+      idPath,
+      pinnedPath
+    } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    const nextDepth = <span class="cstat-no" title="statement not covered" >getNextDepth(depth);</span>
+<span class="cstat-no" title="statement not covered" >    if (isMobile) {</span>
+      // On mobile, the pin buttons act as back buttons instead.
+<span class="cstat-no" title="statement not covered" >      if (depth === 'primary') {</span>
+        // Going back to primary nav clears all selection.
+<span class="cstat-no" title="statement not covered" >        setMobilePath(null);</span>
+      } else <span class="cstat-no" title="statement not covered" >if (depth === 'secondary') {</span>
+        // Going back to secondary nav de-selects this item and re-selects the parent.
+<span class="cstat-no" title="statement not covered" >        setMobilePath(idPath); </span>// idPath prop, which is parent's path, not this.idPath().
+      }
+    } else {
+<span class="cstat-no" title="statement not covered" >      setPinnedPath(!pinnedPath ? this.idPath() : null);</span>
+<span class="cstat-no" title="statement not covered" >      if (pinnedPath) {</span>
+<span class="cstat-no" title="statement not covered" >        forceHideSecondaryMenu();</span>
+<span class="cstat-no" title="statement not covered" >        this.onItemBlur(true);</span>
+      }
+    }
+<span class="cstat-no" title="statement not covered" >    updateNavOnPin(this.navItem(), nextDepth, !pinnedPath);</span>
+  };
+&nbsp;
+  render() {
+    const {
+      pinnableMenus,
+      hiddenIcons,
+      isDivider,
+      navCollapsed,
+      showMobileSecondary,
+      showMobileTertiary,
+      showBadges,
+      children,
+      isMobile,
+      pinnedPath
+    } = this.props;
+&nbsp;
+    // The nav item can either be passed directly as one item object prop, or as individual props.
+    const navItem = this.navItem();
+    const {
+      active,
+      hovered,
+      selectedOnMobile,
+      pinned,
+      title,
+      iconClass,
+      badges,
+      subItems,
+      href,
+      onClick,
+      className
+    } = navItem;
+&nbsp;
+    const depth = this.props.depth || <span class="branch-1 cbranch-no" title="branch not covered" >'primary';</span>
+    const nextDepth = getNextDepth(depth);
+    const NextDepthItem = componentForDepth(nextDepth);
+&nbsp;
+    const childItemComponents =
+      filterChildren(children, isNavItem) ||
+      (subItems &amp;&amp;
+<span class="branch-2 cbranch-no" title="branch not covered" >        subItems.length &gt; 0 </span>&amp;&amp;
+<span class="branch-3 cbranch-no" title="branch not covered" >        subItems.map(<span class="fstat-no" title="function not covered" >ch</span>ildItem =&gt; <span class="cstat-no" title="statement not covered" >&lt;NextDepthItem item={childItem} key={childItem.title} /&gt;)</span>)</span>;
+&nbsp;
+    if (!childItemComponents &amp;&amp; !href &amp;&amp; !onClick) {
+      // eslint-disable-next-line
+      console.warn(
+        'Warning: Non-navigable item at',
+        this.idPath(),
+        '\nNav items should have one or more of: subItems, href, onClick.'
+      );
+    }
+&nbsp;
+    const childBadgeComponents =
+      filterChildren(children, child =&gt; hasDisplayName(child, VerticalNavBadge.displayName)) ||
+      (badges &amp;&amp;
+        badges.length &gt; 0 &amp;&amp;
+        badges.map(badge =&gt; {
+          const badgeKey = badge.badgeClass || badge.iconClass || badge.tooltip || badge.count;
+          return &lt;VerticalNavBadge {...badge} key={badgeKey} /&gt;;
+        }));
+&nbsp;
+    const onPinnedPath = pinnedPath &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >pinnedPath.startsWith(this.idPath());</span>
+&nbsp;
+    const icon = iconClass &amp;&amp; &lt;span className={classNames(iconClass, { hidden: hiddenIcons })} title={title} /&gt;;
+&nbsp;
+    const item = (
+      &lt;ListGroupItem
+        listItem // Renders as &lt;li&gt;. Other props can change this, see logic in react-bootstrap's ListGroupItem.
+        className={classNames(
+          {
+            [`${nextDepth}-nav-item-pf`]: depth !== 'tertiary' &amp;&amp; childItemComponents &amp;&amp; childItemComponents.length &gt; 0,
+            active: active || (pinned &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >pinnableMenus)</span>, // This is the only class we have at the tertiary depth.
+            'is-hover': (pinnableMenus &amp;&amp; onPinnedPath) || (depth !== 'tertiary' &amp;&amp; hovered),
+            // This class is present at primary and secondary depths if selectedOnMobile is true,
+            // except for the primary depth, where it is only present if showMobileSecondary is also true.
+            'mobile-nav-item-pf':
+              selectedOnMobile &amp;&amp; ((<span class="branch-1 cbranch-no" title="branch not covered" >depth === 'primary' </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >showMobileSecondary)</span> || <span class="branch-3 cbranch-no" title="branch not covered" >depth === 'secondary')</span>,
+            // This class is confusingly named, but the logic is more readable.
+            'mobile-secondary-item-pf': selectedOnMobile &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >depth === 'primary' </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >showMobileTertiary</span>
+            // I don't know, that's just how this stuff was in patternfly-ng...
+          },
+          className
+        )}
+        onMouseEnter={this.onItemHover}
+        // NOTE onItemBlur takes a boolean, we want to prevent it being passed a truthy event.
+        onMouseLeave={<span class="fstat-no" title="function not covered" >e </span>=&gt; <span class="cstat-no" title="statement not covered" >this.onItemBlur(false)}</span>
+      &gt;
+        &lt;a href={href || '#'} onClick={this.onItemClick}&gt;
+          {depth === 'primary' &amp;&amp;
+            icon &amp;&amp;
+            (!isMobile &amp;&amp; navCollapsed ? (
+<span class="branch-0 cbranch-no" title="branch not covered" >              &lt;OverlayTrigger placement="bottom" overlay={&lt;Tooltip id={title}&gt;{title}&lt;/Tooltip&gt;}&gt;</span>
+                {icon}
+              &lt;/OverlayTrigger&gt;
+            ) : (
+              icon
+            ))}
+          &lt;span className="list-group-item-value"&gt;{title}&lt;/span&gt;
+          {showBadges &amp;&amp; childBadgeComponents &amp;&amp; &lt;div className="badge-container-pf"&gt;{childBadgeComponents}&lt;/div&gt;}
+        &lt;/a&gt;
+        {childItemComponents &amp;&amp;
+          childItemComponents.length &gt; 0 &amp;&amp; (
+            &lt;div className={`nav-pf-${nextDepth}-nav`}&gt;
+              &lt;div className="nav-item-pf-header"&gt;
+                {(pinnableMenus || isMobile) &amp;&amp; (
+                  &lt;a
+                    className={classNames(`${nextDepth}-collapse-toggle-pf`, {
+                      collapsed: onPinnedPath
+                    })}
+                    onClick={this.pinNextDepth}
+                  /&gt;
+                )}
+                &lt;span&gt;{title}&lt;/span&gt;
+              &lt;/div&gt;
+              &lt;NavContextProvider {...this.props} idPath={this.idPath()} item={navItem}&gt;
+                &lt;ListGroup componentClass="ul"&gt;{childItemComponents}&lt;/ListGroup&gt;
+              &lt;/NavContextProvider&gt;
+            &lt;/div&gt;
+          )}
+      &lt;/ListGroupItem&gt;
+    );
+&nbsp;
+    const divider = (
+      &lt;ListGroupItem listItem&gt;
+        &lt;VerticalNavDividerItem title={title} /&gt;
+      &lt;/ListGroupItem&gt;
+    );
+&nbsp;
+    return isDivider ? divider : item;
+  }
+}
+&nbsp;
+BaseVerticalNavItemHelper.propTypes = {
+  ...itemObjectTypes,
+  ...navContextTypes,
+  /** Properties of the nav item, as an object. Can alternatively be passed as individual props. */
+  item: PropTypes.shape(itemObjectTypes),
+  /**
+   * Sub-items, passed as JSX children (SecondaryItem, TertiaryItem).
+   * Can alternatively pass subItems array as part of item or as its own prop.
+   */
+  children: PropTypes.node,
+  title: PropTypes.string,
+  /** Divider bool */
+  isDivider: PropTypes.bool,
+  /** should Prevent Href */
+  preventHref: PropTypes.bool
+};
+&nbsp;
+BaseVerticalNavItemHelper.defaultProps = {
+  item: {},
+  children: null,
+  title: '',
+  isDivider: false,
+  preventHref: true
+};
+&nbsp;
+const VerticalNavItemHelper = getContext(navContextTypes)(BaseVerticalNavItemHelper);
+&nbsp;
+VerticalNavItemHelper.displayName = 'VerticalNavItemHelper';
+VerticalNavItemHelper.propTypes = {
+  ...BaseVerticalNavItemHelper.propTypes
+};
+&nbsp;
+export default VerticalNavItemHelper;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/react-console/src/DesktopViewer/ManualConnection.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/react-console/src/DesktopViewer</a> ManualConnection.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>12/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">94.59% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>35/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>12/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+&nbsp;
+import consoleDetailPropType from './consoleDetailPropType';
+import { Form, Grid } from 'patternfly-react';
+&nbsp;
+const { Col } = Grid;
+const { FormGroup } = Form;
+&nbsp;
+const Detail = ({ title, value }) =&gt; (
+  &lt;FormGroup&gt;
+    &lt;Col xs={5} className="manual-connection-pf-title"&gt;
+      {title}
+    &lt;/Col&gt;
+    &lt;Col xs={7} className="manual-connection-pf-value"&gt;
+      {value}
+    &lt;/Col&gt;
+  &lt;/FormGroup&gt;
+);
+Detail.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+};
+&nbsp;
+const ManualConnection = ({
+  spice,
+  vnc,
+  rdp,
+  textSpice,
+  textVNC,
+  textNoProtocol,
+  textConnectWith,
+  textManualConnection,
+  textAddress,
+  textSpiceAddress,
+  textVNCAddress,
+  textSpicePort,
+  textVNCPort,
+  textSpiceTlsPort,
+  textVNCTlsPort,
+  textRDPPort,
+  textRdpAddress
+}) =&gt; {
+  const msg = spice || vnc ? textConnectWith : textNoProtocol;
+  const address = spice &amp;&amp; vnc &amp;&amp; spice.address === vnc.address &amp;&amp; spice.address; // merge value if equal
+  const rdpAddress = rdp &amp;&amp; rdp.address !== address ? rdp.address : null;
+&nbsp;
+  return (
+    &lt;div className="manual-connection-pf"&gt;
+      &lt;h2&gt;{textManualConnection}&lt;/h2&gt;
+      &lt;p&gt;{msg}&lt;/p&gt;
+      &lt;Form horizontal&gt;
+        {address &amp;&amp; &lt;Detail title={textAddress} value={address} /&gt;}
+        {!address &amp;&amp; spice &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >&lt;Detail title={textSpiceAddress} value={spice.address} /&gt;}</span>
+        {rdpAddress &amp;&amp; &lt;Detail title={textRdpAddress} value={rdpAddress} /&gt;}
+        {spice &amp;&amp; spice.port &amp;&amp; &lt;Detail title={textSpicePort} value={spice.port} /&gt;}
+        {spice &amp;&amp; spice.tlsPort &amp;&amp; &lt;Detail title={textSpiceTlsPort} value={spice.tlsPort} /&gt;}
+        {!address &amp;&amp; vnc &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >&lt;Detail title={textVNCAddress} value={vnc.address} /&gt;}</span>
+        {spice &amp;&amp; vnc.port &amp;&amp; &lt;Detail title={textVNCPort} value={vnc.port} /&gt;}
+        {spice &amp;&amp; vnc.tlsPort &amp;&amp; &lt;Detail title={textVNCTlsPort} value={vnc.tlsPort} /&gt;}
+        {rdp &amp;&amp; rdp.port &amp;&amp; &lt;Detail title={textRDPPort} value={rdp.port} /&gt;}
+      &lt;/Form&gt;
+    &lt;/div&gt;
+  );
+};
+&nbsp;
+ManualConnection.propTypes = {
+  spice: consoleDetailPropType,
+  vnc: consoleDetailPropType,
+  rdp: consoleDetailPropType,
+&nbsp;
+  textManualConnection: PropTypes.string.isRequired /** Internationalization */,
+  textSpice: PropTypes.string.isRequired,
+  textVNC: PropTypes.string.isRequired,
+  textNoProtocol: PropTypes.string.isRequired,
+  textConnectWith: PropTypes.string.isRequired,
+&nbsp;
+  textAddress: PropTypes.string.isRequired,
+  textSpiceAddress: PropTypes.string.isRequired,
+  textVNCAddress: PropTypes.string.isRequired,
+  textSpicePort: PropTypes.string.isRequired,
+  textVNCPort: PropTypes.string.isRequired,
+  textSpiceTlsPort: PropTypes.string.isRequired,
+  textVNCTlsPort: PropTypes.string.isRequired,
+  textRDPPort: PropTypes.string.isRequired,
+  textRdpAddress: PropTypes.string.isRequired
+};
+&nbsp;
+ManualConnection.defaultProps = {
+  spice: null,
+  vnc: null,
+  rdp: null
+};
+&nbsp;
+export default ManualConnection;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

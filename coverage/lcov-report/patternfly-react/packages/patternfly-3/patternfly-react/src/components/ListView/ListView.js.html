@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/components/ListView/ListView.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/components/ListView</a> ListView.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>22/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>22/22</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import classNames from 'classnames';
+import React from 'react';
+import PropTypes from 'prop-types';
+import ListViewActions from './ListViewActions';
+import ListViewAdditionalInfo from './ListViewAdditionalInfo';
+import ListViewBody from './ListViewBody';
+import ListViewCheckbox from './ListViewCheckbox';
+import ListViewDescription from './ListViewDescription';
+import ListViewDescriptionHeading from './ListViewDescriptionHeading';
+import ListViewDescriptionText from './ListViewDescriptionText';
+import ListViewExpand from './ListViewExpand';
+import ListViewGroupItem from './ListViewGroupItem';
+import ListViewGroupItemContainer from './ListViewGroupItemContainer';
+import ListViewGroupItemHeader from './ListViewGroupItemHeader';
+import ListViewIcon from './ListViewIcon';
+import ListViewInfoItem from './ListViewInfoItem';
+import ListViewItem from './ListViewItem';
+import ListViewLeft from './ListViewLeft';
+import ListViewMainInfo from './ListViewMainInfo';
+import ListViewRow from './ListViewRow';
+&nbsp;
+/**
+ * Components in this module are used as building blocks for ListViewItem and
+ * ListViewRow. If needed, components can be used to create custom ListViewItem
+ *
+ * Custom ListView example:
+ *
+ * &lt;ListView&gt;
+ *   &lt;ListViewGroupItem stacked expanded&gt;
+ *     &lt;ListViewGroupItemHeader toggleExpanded={functionToToggle}&gt; // required only if the ListViewGroupItem is supposed to be expandable
+ *       &lt;ListViewExpand expanded /&gt;
+ *       &lt;ListViewCheckbox /&gt;
+ *       &lt;ListViewActions&gt;
+ *         // buttons, dropdowns...
+ *       &lt;/ListViewActions&gt;
+ *       &lt;ListViewMainInfo&gt;
+ *         &lt;ListViewLeft&gt;
+ *           &lt;ListViewIcon size="sm" name={iconName} /&gt;
+ *         &lt;/ListViewLeft&gt;
+ *         &lt;ListViewBody&gt;
+ *           &lt;ListViewDescription&gt;
+ *             &lt;ListViewDescriptionHeading&gt;
+ *               {name}
+ *             &lt;/ListViewDescriptionHeading&gt;
+ *             &lt;ListViewDescriptionText&gt;
+ *               {description}
+ *             &lt;/ListViewDescriptionText&gt;
+ *           &lt;/ListViewDescription&gt;
+ *           &lt;ListViewAdditionalInfo&gt;
+ *             &lt;ListViewInfoItem&gt;
+ *               &lt;ListViewIcon type="pf" name="flavor" /&gt;
+ *               {Item1}
+ *             &lt;/ListViewInfoItem&gt;
+ *             &lt;ListViewInfoItem&gt;
+ *               &lt;ListViewIcon type="pf" name="cpu" /&gt;
+ *               {Item2}
+ *             &lt;/ListViewInfoItem&gt;
+ *           &lt;/ListViewAdditionalInfo&gt;
+ *         &lt;/ListViewBody&gt;
+ *       &lt;/ListViewMainInfo&gt;
+ *     &lt;/ListViewGroupItemHeader&gt;
+ *
+ *     &lt;ListViewGroupItemContainer onClose={functionWhichClosesMe} expanded&gt;
+ *       &lt;Row&gt;Some content goes here&lt;/Row&gt;
+ *     &lt;/ListViewGroupItemContainer&gt;
+ *
+ *   &lt;/ListViewGroupItem&gt;
+ *   ...
+ * &lt;/ListView&gt;
+ */
+&nbsp;
+/**
+ * ListView component wraps ListViewItems
+ */
+const ListView = ({ children, className, ...props }) =&gt; {
+  const classes = classNames('list-group list-view-pf list-view-pf-view', className);
+  return (
+    &lt;div className={classes} {...props}&gt;
+      {children}
+    &lt;/div&gt;
+  );
+};
+ListView.propTypes = {
+  /** Additional css classes */
+  className: PropTypes.string,
+  /** Children nodes - ListViewGroupItem or ListViewItem instances */
+  children: PropTypes.node
+};
+ListView.defaultProps = {
+  className: '',
+  children: null
+};
+&nbsp;
+ListView.Actions = ListViewActions;
+ListView.AdditionalInfo = ListViewAdditionalInfo;
+ListView.Body = ListViewBody;
+ListView.Checkbox = ListViewCheckbox;
+ListView.Description = ListViewDescription;
+ListView.DescriptionHeading = ListViewDescriptionHeading;
+ListView.DescriptionText = ListViewDescriptionText;
+ListView.Expand = ListViewExpand;
+ListView.GroupItem = ListViewGroupItem;
+ListView.GroupItemContainer = ListViewGroupItemContainer;
+ListView.GroupItemHeader = ListViewGroupItemHeader;
+ListView.Icon = ListViewIcon;
+ListView.InfoItem = ListViewInfoItem;
+ListView.Item = ListViewItem;
+ListView.Left = ListViewLeft;
+ListView.MainInfo = ListViewMainInfo;
+ListView.Row = ListViewRow;
+&nbsp;
+export default ListView;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/components/Chart/DonutChart.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/components/Chart</a> DonutChart.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.23% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>5/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">21.74% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>5/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import C3Chart from 'react-c3js';
+import { findDOMNode } from 'react-dom';
+import { lifecycle, compose } from 'recompose';
+&nbsp;
+import { patternfly } from '../../common/patternfly';
+import { getComposer } from './ChartConstants';
+&nbsp;
+const { pfSetDonutChartTitle } = patternfly;
+const colIndexOfMaxValue = <span class="fstat-no" title="function not covered" >co</span>lumns =&gt; <span class="cstat-no" title="statement not covered" >columns.reduce(<span class="fstat-no" title="function not covered" >(i</span>Max, x, i, arr) =&gt; (<span class="cstat-no" title="statement not covered" >x[1] &gt; arr[iMax][1] ? i : iMax)</span>, 0);</span>
+&nbsp;
+const setDonutTitle = <span class="fstat-no" title="function not covered" >ob</span>j =&gt; {
+  let primary;
+  let secondary;
+&nbsp;
+  const { props } = <span class="cstat-no" title="statement not covered" >obj;</span>
+  const { data, title = <span class="branch-0 cbranch-no" title="branch not covered" >{} </span>} = <span class="cstat-no" title="statement not covered" >props;</span>
+  const { columns } = <span class="cstat-no" title="statement not covered" >data;</span>
+  const sum = <span class="cstat-no" title="statement not covered" >columns.reduce(<span class="fstat-no" title="function not covered" >(a</span>cc, x) =&gt; <span class="cstat-no" title="statement not covered" >acc + x[1],</span> 0);</span>
+  const iMax = <span class="cstat-no" title="statement not covered" >colIndexOfMaxValue(columns);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  switch (title.type) {</span>
+    case 'percent':
+<span class="cstat-no" title="statement not covered" >      primary = `${Math.round((100 * columns[iMax][1]) / sum).toString()}%`;</span>
+<span class="cstat-no" title="statement not covered" >      [secondary] = columns[iMax];</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+    case 'max':
+<span class="cstat-no" title="statement not covered" >      primary = Math.round(columns[iMax][1]).toString();</span>
+<span class="cstat-no" title="statement not covered" >      [secondary] = columns[iMax];</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+    case 'total':
+    default:
+<span class="cstat-no" title="statement not covered" >      primary = Math.round(sum).toString();</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
+  }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  pfSetDonutChartTitle(</span>
+    // eslint-disable-next-line react/no-find-dom-node
+    findDOMNode(obj),
+    title.primary || primary,
+    title.secondary || secondary
+  );
+};
+&nbsp;
+const addDonutTitle = lifecycle({
+  componentDidMount() {
+<span class="cstat-no" title="statement not covered" >    setDonutTitle(this);</span>
+  },
+  componentDidUpdate(prevProps) {
+<span class="cstat-no" title="statement not covered" >    setDonutTitle(this);</span>
+  }
+});
+&nbsp;
+const DonutChart = compose(
+  getComposer('DONUT_CHART'),
+  addDonutTitle
+)(<span class="fstat-no" title="function not covered" >({</span> className, type, data, ...props }) =&gt; <span class="cstat-no" title="statement not covered" >&lt;C3Chart className={className} type={type} data={data} {...props} /&gt;)</span>;
+&nbsp;
+export default DonutChart;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

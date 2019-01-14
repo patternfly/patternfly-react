@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/react-console/src/SerialConsole/XTerm.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/react-console/src/SerialConsole</a> XTerm.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.18% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>10/55</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.88% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/34</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.76% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.52% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/54</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+&nbsp;
+import { Terminal } from 'xterm';
+import { proposeGeometry } from 'xterm/lib/addons/fit/fit';
+&nbsp;
+import { debounce } from '../common/helpers';
+&nbsp;
+import { helpers } from 'patternfly-react';
+&nbsp;
+const { noop } = helpers;
+&nbsp;
+/**
+ * Wraps terminal to a React Component.
+ * Based on cockpit-components-terminal.jsx from the Cockpit project (https://github.com/cockpit-project/cockpit)
+ */
+class XTerm extends React.Component {
+  state = { terminal: null, rows: null, cols: null, autoFit: false };
+&nbsp;
+  componentWillMount() {
+    const term = new Terminal({
+      cols: this.props.cols,
+      rows: this.props.rows,
+      screenKeys: true,
+      fontFamily: this.props.fontFamily,
+      fontSize: this.props.fontSize
+    });
+&nbsp;
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.props.onData) {
+      term.on('data', this.props.onData);
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.props.onTitleChanged) {
+      term.on('title', this.props.onTitleChanged);
+    }
+&nbsp;
+    this.setState({
+      terminal: term,
+      cols: this.props.cols,
+      rows: this.props.rows,
+      autoFit: this.props.autoFit
+    });
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentDidMount() {
+<span class="cstat-no" title="statement not covered" >    this.state.terminal.open(this.childTerminal);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    window.addEventListener('resize', debounce(this.onWindowResize.bind(this), 100));</span>
+<span class="cstat-no" title="statement not covered" >    this.onWindowResize();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentWillReceiveProps(newProps) {
+<span class="cstat-no" title="statement not covered" >    if (</span>
+      newProps.cols !== this.state.cols ||
+      newProps.rows !== this.state.rows ||
+      newProps.autoFit !== this.state.autoFit
+    ) {
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        cols: newProps.cols,
+        rows: newProps.rows,
+        autoFit: newProps.autoFit
+      });
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentWillUpdate(nextProps, nextState) {
+<span class="cstat-no" title="statement not covered" >    if (</span>
+      nextState.cols !== this.state.cols ||
+      nextState.rows !== this.state.rows ||
+      nextState.autoFit !== this.state.autoFit
+    ) {
+<span class="cstat-no" title="statement not covered" >      if (nextState.autoFit) {</span>
+        // If it is autoFit, get the computed size and set it
+<span class="cstat-no" title="statement not covered" >        this.removeMinWidth();</span>
+        const geometry = <span class="cstat-no" title="statement not covered" >proposeGeometry(this.state.terminal);</span>
+<span class="cstat-no" title="statement not covered" >        this.state.terminal.resize(geometry.cols, geometry.rows);</span>
+<span class="cstat-no" title="statement not covered" >        this.props.onResize(geometry.rows, geometry.cols);</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        this.addMinWidth(nextState.cols);</span>
+<span class="cstat-no" title="statement not covered" >        this.state.terminal.resize(nextState.cols, nextState.rows);</span>
+<span class="cstat-no" title="statement not covered" >        this.props.onResize(nextState.rows, nextState.cols);</span>
+      }
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentDidUpdate() {
+<span class="cstat-no" title="statement not covered" >    this.state.terminal.reset();</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentWillUnmount() {
+<span class="cstat-no" title="statement not covered" >    this.state.terminal.destroy();</span>
+<span class="cstat-no" title="statement not covered" >    window.removeEventListener('resize', this.onWindowResize);</span>
+  }
+&nbsp;
+  // eslint-disable-next-line class-methods-use-this
+  onBeforeUnload = <span class="fstat-no" title="function not covered" >ev</span>ent =&gt; {
+    // Firefox requires this when the page is in an iframe
+<span class="cstat-no" title="statement not covered" >    event.preventDefault();</span>
+&nbsp;
+    // see "an almost cross-browser solution" at
+    // https://developer.mozilla.org/en-US/docs/Web/Events/beforeunload
+<span class="cstat-no" title="statement not covered" >    event.returnValue = '';</span>
+<span class="cstat-no" title="statement not covered" >    return '';</span>
+  };
+&nbsp;
+  /**
+   * Backend closed connection.
+   */
+<span class="fstat-no" title="function not covered" >  on</span>ConnectionClosed(reason) {
+    const term = <span class="cstat-no" title="statement not covered" >this.state.terminal;</span>
+<span class="cstat-no" title="statement not covered" >    if (term) {</span>
+<span class="cstat-no" title="statement not covered" >      term.write(`\x1b[31m${reason || 'disconnected'}\x1b[m\r\n`);</span>
+<span class="cstat-no" title="statement not covered" >      term.cursorHidden = true;</span>
+<span class="cstat-no" title="statement not covered" >      term.refresh(term.y, term.y); </span>// start to end row
+    }
+  }
+&nbsp;
+  /**
+   * Backend sent data.
+   */
+<span class="fstat-no" title="function not covered" >  on</span>DataReceived(data) {
+<span class="cstat-no" title="statement not covered" >    if (this.state.terminal) {</span>
+<span class="cstat-no" title="statement not covered" >      this.state.terminal.write(data);</span>
+    }
+  }
+&nbsp;
+  onFocus = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    window.addEventListener('beforeunload', this.onBeforeUnload);</span>
+  };
+&nbsp;
+  onBlur = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    window.removeEventListener('beforeunload', this.onBeforeUnload);</span>
+  };
+&nbsp;
+  /**
+   * If autoFit is enabled, compute the size and set it
+   * Otherwise set the min-width on the console
+   */
+<span class="fstat-no" title="function not covered" >  on</span>WindowResize() {
+<span class="cstat-no" title="statement not covered" >    if (this.state.autoFit) {</span>
+<span class="cstat-no" title="statement not covered" >      this.removeMinWidth();</span>
+      const geometry = <span class="cstat-no" title="statement not covered" >proposeGeometry(this.state.terminal);</span>
+<span class="cstat-no" title="statement not covered" >      if (geometry) {</span>
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+          rows: geometry.rows,
+          cols: geometry.cols
+        });
+      }
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.addMinWidth(this.state.cols);</span>
+    }
+  }
+&nbsp;
+  /**
+   * Calculate the minimum width of the terminal based on the number of columns
+   *
+   * @param {Number} cols Number of columns
+   */
+<span class="fstat-no" title="function not covered" >  ad</span>dMinWidth(cols) {
+<span class="cstat-no" title="statement not covered" >    if (this.childTerminal &amp;&amp; this.state.terminal.renderer) {</span>
+      const padding = <span class="cstat-no" title="statement not covered" >2 * 11;</span>
+      const { actualCellWidth } = <span class="cstat-no" title="statement not covered" >this.state.terminal.renderer.dimensions;</span>
+      const minWidth = <span class="cstat-no" title="statement not covered" >actualCellWidth * cols + padding;</span>
+<span class="cstat-no" title="statement not covered" >      this.childTerminal.style.minWidth = `${minWidth}px`;</span>
+    }
+  }
+&nbsp;
+  /**
+   * Remove the min-width on the console
+   */
+<span class="fstat-no" title="function not covered" >  re</span>moveMinWidth() {
+<span class="cstat-no" title="statement not covered" >    if (this.childTerminal) {</span>
+<span class="cstat-no" title="statement not covered" >      this.childTerminal.style.minWidth = '';</span>
+    }
+  }
+&nbsp;
+  focus = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (this.state.terminal) <span class="cstat-no" title="statement not covered" >this.state.terminal.focus();</span></span>
+  };
+&nbsp;
+  render() {
+    // ensure react never reuses this div by keying it with the terminal widget
+    return (
+      &lt;div
+        ref={<span class="fstat-no" title="function not covered" >c </span>=&gt; {
+<span class="cstat-no" title="statement not covered" >          this.childTerminal = c;</span>
+        }}
+        key={this.state.terminal}
+        className="console-pf"
+        onFocus={this.onFocus}
+        onBlur={this.onBlur}
+      /&gt;
+    );
+  }
+}
+&nbsp;
+XTerm.propTypes = {
+  cols: PropTypes.number,
+  rows: PropTypes.number,
+  autoFit: PropTypes.bool,
+&nbsp;
+  fontFamily: PropTypes.string,
+  fontSize: PropTypes.number,
+&nbsp;
+  onTitleChanged: PropTypes.func, // (title) =&gt; {}
+  onData: PropTypes.func, // Data to be sent from terminal to backend; (data) =&gt; {}
+  onResize: PropTypes.func // (rows, cols) =&gt; {}
+};
+&nbsp;
+XTerm.defaultProps = {
+  cols: 80,
+  rows: 25,
+  autoFit: false,
+&nbsp;
+  fontFamily: undefined,
+  fontSize: undefined,
+&nbsp;
+  onTitleChanged: noop,
+  onData: noop,
+  onResize: noop
+};
+&nbsp;
+export default XTerm;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

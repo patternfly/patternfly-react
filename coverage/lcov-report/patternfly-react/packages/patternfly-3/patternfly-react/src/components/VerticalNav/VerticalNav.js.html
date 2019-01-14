@@ -1,0 +1,1631 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/components/VerticalNav/VerticalNav.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/components/VerticalNav</a> VerticalNav.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.19% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>55/144</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">27.12% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>32/118</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">32.43% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/37</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.14% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>52/140</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { ListGroup } from '../ListGroup';
+import VerticalNavItem from './VerticalNavItem';
+import VerticalNavMasthead from './VerticalNavMasthead';
+import { filterChildren, findChild, hasDisplayName, noop, propsChanged } from '../../common/helpers';
+import Timer from '../../common/Timer';
+import controlled from '../../common/controlled';
+import { layout } from '../../common/patternfly';
+import {
+  NavContextProvider,
+  deepestOf,
+  itemObjectTypes,
+  addBodyEventListener,
+  removeBodyEventListener,
+  setBodyClassIf
+} from './VerticalNavConstants';
+import VerticalNavSecondaryItem from './VerticalNavSecondaryItem';
+import VerticalNavTertiaryItem from './VerticalNavTertiaryItem';
+import VerticalNavBrand from './VerticalNavBrand';
+import VerticalNavIconBar from './VerticalNavIconBar';
+import VerticalNavBadge from './VerticalNavBadge';
+import VerticalNavDividerItem from './VerticalNavDividerItem';
+&nbsp;
+/**
+ * VerticalNav - The Vertical Navigation pattern
+ * http://www.patternfly.org/pattern-library/navigation/vertical-navigation/
+ */
+class BaseVerticalNav extends React.Component {
+  // More state is defined in controlledStateTypes.
+  // These ones just don't need to be able to be controlled by props.
+  state = {
+    forceHidden: false, // eslint-disable-line react/no-unused-state
+    controlledActivePath: false,
+    controlledHoverPath: false,
+    controlledMobilePath: false,
+    controlledPinnedPath: false
+  };
+&nbsp;
+  componentDidMount() {
+    this.updateBodyClasses();
+    layout.addChangeListener(this.onLayoutChange);
+    addBodyEventListener('mousedown', this.handleBodyClick);
+  }
+&nbsp;
+  componentDidUpdate(oldProps) {
+    const bodyClassProps = ['navCollapsed', 'pinnedPath', 'showMobileNav', 'isMobile'];
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (propsChanged(bodyClassProps, oldProps, this.props)) {
+<span class="cstat-no" title="statement not covered" >      this.updateBodyClasses();</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentWillUnmount() {
+    // Clear any timers so they don't trigger while the component is unmounted.
+<span class="cstat-no" title="statement not covered" >    this.hoverTimer.clearTimer();</span>
+<span class="cstat-no" title="statement not covered" >    this.clearBodyClasses();</span>
+<span class="cstat-no" title="statement not covered" >    layout.removeChangeListener(this.onLayoutChange);</span>
+<span class="cstat-no" title="statement not covered" >    removeBodyEventListener('mousedown', this.handleBodyClick);</span>
+  }
+&nbsp;
+  onLayoutChange = <span class="fstat-no" title="function not covered" >ne</span>wLayout =&gt; {
+    const { onLayoutChange, setControlledState } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    setControlledState({ isMobile: newLayout === 'mobile' });</span>
+<span class="cstat-no" title="statement not covered" >    onLayoutChange &amp;&amp; onLayoutChange(newLayout);</span>
+  };
+&nbsp;
+  setActivePath = activePath =&gt; {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.state.controlledActivePath) {
+      this.props.setControlledState({ activePath });
+    }
+  };
+&nbsp;
+  setControlledActivePath = <span class="fstat-no" title="function not covered" >co</span>ntrolledActivePath =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({ controlledActivePath });</span>
+  };
+&nbsp;
+  setControlledHoverPath = <span class="fstat-no" title="function not covered" >co</span>ntrolledHoverPath =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({ controlledHoverPath });</span>
+  };
+&nbsp;
+  setControlledMobilePath = <span class="fstat-no" title="function not covered" >co</span>ntrolledMobilePath =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({ controlledMobilePath });</span>
+  };
+&nbsp;
+  setControlledPinnedPath = <span class="fstat-no" title="function not covered" >co</span>ntrolledPinnedPath =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({ controlledPinnedPath });</span>
+  };
+&nbsp;
+  setHoverPath = <span class="fstat-no" title="function not covered" >ho</span>verPath =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!this.state.controlledHoverPath) {</span>
+<span class="cstat-no" title="statement not covered" >      this.props.setControlledState({</span>
+        hoverPath,
+        ...(hoverPath === null ? { showMobileNav: false } : {})
+      });
+    }
+  };
+&nbsp;
+  setMobilePath = <span class="fstat-no" title="function not covered" >mo</span>bilePath =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!this.state.controlledMobilePath) {</span>
+<span class="cstat-no" title="statement not covered" >      this.props.setControlledState({ mobilePath });</span>
+    }
+  };
+&nbsp;
+  setPinnedPath = <span class="fstat-no" title="function not covered" >pi</span>nnedPath =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (!this.state.controlledPinnedPath) {</span>
+<span class="cstat-no" title="statement not covered" >      this.props.setControlledState({ pinnedPath });</span>
+    }
+  };
+  hoverTimer = new Timer();
+  clearBodyClasses = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (this.props.dynamicBodyClasses) {</span>
+<span class="cstat-no" title="statement not covered" >      setBodyClassIf(false, 'collapsed-nav');</span>
+<span class="cstat-no" title="statement not covered" >      setBodyClassIf(false, 'hidden-nav');</span>
+    }
+  };
+&nbsp;
+  collapseMenu = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    const { onCollapse, setControlledState } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    setControlledState({ navCollapsed: true });</span>
+<span class="cstat-no" title="statement not covered" >    onCollapse &amp;&amp; onCollapse();</span>
+  };
+&nbsp;
+  expandMenu = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    const { onExpand, setControlledState } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    setControlledState({ navCollapsed: false });</span>
+<span class="cstat-no" title="statement not covered" >    onExpand &amp;&amp; onExpand();</span>
+  };
+&nbsp;
+  forceHideSecondaryMenu = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState({ forceHidden: true }); </span>// eslint-disable-line react/no-unused-state
+<span class="cstat-no" title="statement not covered" >    setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      this.setState({ forceHidden: false }); </span>// eslint-disable-line react/no-unused-state
+    }, 500);
+  };
+&nbsp;
+  handleBodyClick = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    // Clear hover state on body click. Helps especially when using blurDisabled prop.
+<span class="cstat-no" title="statement not covered" >    this.setHoverPath(null);</span>
+  };
+&nbsp;
+  navigateToItem = <span class="fstat-no" title="function not covered" >it</span>em =&gt; {
+    const { onNavigate } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    onNavigate(item);</span>
+    // Note: This should become router-aware later on.
+  };
+&nbsp;
+  updateBodyClasses = () =&gt; {
+    // Note: Updating the body element classes from here like this is a hacky, non-react-y pattern.
+    // It's only here for consistency. See comments on getBodyContentElement in ./constants.js.
+    const { dynamicBodyClasses, navCollapsed, pinnedPath, isMobile } = this.props;
+    const collapsed = navCollapsed &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >pinnedPath === null;</span>
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (dynamicBodyClasses) {
+      setBodyClassIf(!isMobile &amp;&amp; collapsed, 'collapsed-nav');
+      setBodyClassIf(isMobile, 'hidden-nav');
+    }
+  };
+&nbsp;
+  updateNavOnItemBlur = <span class="fstat-no" title="function not covered" >(p</span>rimary, secondary, tertiary, idPath, parentPath, noDelay, callback) =&gt; {
+    const { hoverPath, blurDelay, blurDisabled, setControlledState } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    const item = <span class="cstat-no" title="statement not covered" >deepestOf(primary, secondary, tertiary);</span>
+    const hovered = <span class="cstat-no" title="statement not covered" >hoverPath &amp;&amp; hoverPath.startsWith(idPath);</span>
+<span class="cstat-no" title="statement not covered" >    this.hoverTimer.clearTimer();</span>
+<span class="cstat-no" title="statement not covered" >    if (hovered) {</span>
+      const doBlur = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (!blurDisabled) {</span>
+          // IMPORTANT: We reference this.props below for the hoverPath value when the timeout fires.
+          // If we just use the hoverPath in scope from above, it is from when the timeout was set.
+<span class="cstat-no" title="statement not covered" >          if (idPath === this.props.hoverPath) {</span>
+            // Only bump up the hover path if it's still set to the item we're blurring
+<span class="cstat-no" title="statement not covered" >            setControlledState({ hoverPath: parentPath });</span>
+          }
+<span class="cstat-no" title="statement not covered" >          callback &amp;&amp; callback(primary, secondary, tertiary);</span>
+        }
+      };
+<span class="cstat-no" title="statement not covered" >      if (item.subItems &amp;&amp; item.subItems.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        if (noDelay) {</span>
+<span class="cstat-no" title="statement not covered" >          doBlur();</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >          this.hoverTimer.startTimer(doBlur, blurDelay);</span>
+        }
+      }
+    }
+  };
+&nbsp;
+  updateNavOnItemClick = <span class="fstat-no" title="function not covered" >(p</span>rimary, secondary, tertiary, idPath, parentPath) =&gt; {
+    const { onItemClick, hoverPath, hoverDisabled, isMobile } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    this.hoverTimer.skipTimer();</span>
+    const item = <span class="cstat-no" title="statement not covered" >deepestOf(primary, secondary, tertiary);</span>
+    const isLeafItem = <span class="cstat-no" title="statement not covered" >!item.subItems || item.subItems.length === 0;</span>
+<span class="cstat-no" title="statement not covered" >    if (isMobile) {</span>
+<span class="cstat-no" title="statement not covered" >      this.setMobilePath(null);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (isLeafItem) {</span>
+<span class="cstat-no" title="statement not covered" >      this.setHoverPath(null);</span>
+    } else <span class="cstat-no" title="statement not covered" >if (hoverDisabled &amp;&amp; hoverPath === idPath) {</span>
+      // Clicking the currently-"hovered" item in hoverDisabled un-"hovers" it.
+<span class="cstat-no" title="statement not covered" >      this.setHoverPath(parentPath);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    if (isLeafItem || !isMobile) {</span>
+<span class="cstat-no" title="statement not covered" >      this.navigateToItem(item);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    onItemClick &amp;&amp; onItemClick(primary, secondary, tertiary);</span>
+  };
+&nbsp;
+  updateNavOnItemHover = <span class="fstat-no" title="function not covered" >(p</span>rimary, secondary, tertiary, idPath, parentPath, callback) =&gt; {
+    const { onItemHover, hoverPath, hoverDelay, hoverDisabled, isMobile } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    const item = <span class="cstat-no" title="statement not covered" >deepestOf(primary, secondary, tertiary);</span>
+    const hovered = <span class="cstat-no" title="statement not covered" >hoverPath &amp;&amp; hoverPath.startsWith(idPath);</span>
+    const targetPath = <span class="cstat-no" title="statement not covered" >item.subItems &amp;&amp; item.subItems.length &gt; 0 ? idPath : parentPath;</span>
+    const that = <span class="cstat-no" title="statement not covered" >this;</span>
+<span class="cstat-no" title="statement not covered" >    if (!isMobile) {</span>
+<span class="cstat-no" title="statement not covered" >      this.hoverTimer.clearTimer();</span>
+<span class="cstat-no" title="statement not covered" >      if (!hovered) {</span>
+<span class="cstat-no" title="statement not covered" >        this.hoverTimer.startTimer(<span class="fstat-no" title="function not covered" >sk</span>ipped =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          if (skipped || !hoverDisabled) {</span>
+<span class="cstat-no" title="statement not covered" >            that.setHoverPath(targetPath);</span>
+<span class="cstat-no" title="statement not covered" >            callback &amp;&amp; callback(primary, secondary, tertiary);</span>
+<span class="cstat-no" title="statement not covered" >            onItemHover &amp;&amp; onItemHover(primary, secondary, tertiary);</span>
+          }
+        }, hoverDelay);
+      }
+    }
+  };
+&nbsp;
+  updateNavOnMenuToggleClick = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    const { onMenuToggleClick, isMobile, showMobileNav, navCollapsed, setControlledState } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    if (isMobile) {</span>
+<span class="cstat-no" title="statement not covered" >      if (showMobileNav) {</span>
+<span class="cstat-no" title="statement not covered" >        setControlledState({ showMobileNav: false });</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        this.setMobilePath(null);</span>
+<span class="cstat-no" title="statement not covered" >        setControlledState({ showMobileNav: true });</span>
+      }
+    } else <span class="cstat-no" title="statement not covered" >if (navCollapsed) {</span>
+<span class="cstat-no" title="statement not covered" >      this.expandMenu();</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      this.collapseMenu();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    onMenuToggleClick &amp;&amp; onMenuToggleClick();</span>
+  };
+&nbsp;
+  updateNavOnMobileSelection = <span class="fstat-no" title="function not covered" >(p</span>rimary, secondary, tertiary) =&gt; {
+    const { onMobileSelection } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    // All the behavior here is handled by mobilePath and setMobilePath,
+    // but we still make a callback available here.
+<span class="cstat-no" title="statement not covered" >    onMobileSelection &amp;&amp; onMobileSelection(primary, secondary, tertiary);</span>
+  };
+&nbsp;
+  updateNavOnPin = <span class="fstat-no" title="function not covered" >(i</span>tem, depth, pinned) =&gt; {
+    const { onItemPin, isMobile } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    if (!isMobile) {</span>
+<span class="cstat-no" title="statement not covered" >      onItemPin &amp;&amp; onItemPin(item, depth, pinned);</span>
+    }
+  };
+&nbsp;
+  render() {
+    const { items, children } = this.props;
+    // Nav items may be passed either as nested VerticalNavItem children, or as nested items in a prop.
+    // The items prop will take priority, if present, and must be an array of item objects (not React components).
+    // If the items prop is not present, items must be expressed as VerticalNavItem children instead.
+    const itemsFromChildren = filterChildren(children, child =&gt; hasDisplayName(child, VerticalNavItem.displayName));
+    const itemsFromProps =
+      items &amp;&amp;
+      items.length &gt; 0 &amp;&amp;
+      items.map((primaryItem, i) =&gt; (
+        &lt;VerticalNavItem item={primaryItem} key={`primary_${primaryItem.title}`}&gt;
+          {primaryItem.subItems &amp;&amp;
+            primaryItem.subItems.map(secondaryItem =&gt; (
+              &lt;VerticalNavSecondaryItem
+                isDivider={secondaryItem.isDivider}
+                preventHref={secondaryItem.preventHref}
+                item={secondaryItem}
+                key={`secondary_${secondaryItem.title}`}
+              &gt;
+                {secondaryItem.subItems &amp;&amp;
+                  secondaryItem.subItems.map(tertiaryItem =&gt; (
+                    &lt;VerticalNavTertiaryItem item={tertiaryItem} key={`tertiary_${tertiaryItem.title}`} /&gt;
+                  ))}
+              &lt;/VerticalNavSecondaryItem&gt;
+            ))}
+        &lt;/VerticalNavItem&gt;
+      ));
+    const itemComponents = itemsFromProps || itemsFromChildren || <span class="branch-2 cbranch-no" title="branch not covered" >[];</span>
+&nbsp;
+    const {
+      hiddenIcons,
+      pinnableMenus,
+      showBadges,
+      forceHidden,
+      hideMasthead,
+      persistentSecondary,
+      hoverDelay,
+      blurDelay,
+      isMobile,
+      showMobileNav,
+      masthead,
+      navCollapsed,
+      activePath,
+      hoverPath,
+      mobilePath,
+      pinnedPath
+    } = this.props;
+&nbsp;
+    const mastheadElem = masthead || (
+      &lt;nav className={classNames('navbar navbar-pf-vertical')}&gt;
+        {findChild(children, child =&gt; hasDisplayName(child, VerticalNavMasthead.displayName))}
+      &lt;/nav&gt;
+    );
+&nbsp;
+    const getPathDepth = path =&gt; path &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >path.split('/').filter(<span class="fstat-no" title="function not covered" >s </span>=&gt; <span class="cstat-no" title="statement not covered" >s !== '')</span>.length;</span>
+    const mobileDepth = getPathDepth(mobilePath);
+    const hoverDepth = getPathDepth(hoverPath);
+    const pinnedDepth = getPathDepth(pinnedPath);
+    const showMobileSecondary = isMobile &amp;&amp; mobileDepth &gt;= 1;
+    const showMobileTertiary = isMobile &amp;&amp; mobileDepth &gt;= 2;
+    const hoverSecondaryNav = hoverDepth &gt;= 1;
+    const hoverTertiaryNav = hoverDepth &gt;= 2;
+    const pinnedSecondaryNav = pinnedDepth &gt;= 1;
+    const pinnedTertiaryNav = pinnedDepth &gt;= 2;
+&nbsp;
+    return (
+      &lt;NavContextProvider
+        idPath="/"
+        updateNavOnMenuToggleClick={this.updateNavOnMenuToggleClick}
+        updateNavOnItemHover={this.updateNavOnItemHover}
+        updateNavOnItemBlur={this.updateNavOnItemBlur}
+        updateNavOnItemClick={this.updateNavOnItemClick}
+        updateNavOnMobileSelection={this.updateNavOnMobileSelection}
+        setActivePath={this.setActivePath}
+        setHoverPath={this.setHoverPath}
+        setMobilePath={this.setMobilePath}
+        setPinnedPath={this.setPinnedPath}
+        setControlledActivePath={this.setControlledActivePath}
+        setControlledHoverPath={this.setControlledHoverPath}
+        setControlledMobilePath={this.setControlledMobilePath}
+        setControlledPinnedPath={this.setControlledPinnedPath}
+        activePath={activePath}
+        hoverPath={hoverPath}
+        mobilePath={mobilePath}
+        pinnedPath={pinnedPath}
+        hiddenIcons={hiddenIcons}
+        pinnableMenus={pinnableMenus}
+        isMobile={isMobile}
+        showMobileSecondary={showMobileSecondary}
+        showMobileTertiary={showMobileTertiary}
+        showBadges={showBadges}
+        navCollapsed={navCollapsed}
+        updateNavOnPin={this.updateNavOnPin}
+        forceHideSecondaryMenu={this.forceHideSecondaryMenu}
+        hoverDelay={hoverDelay}
+        blurDelay={blurDelay}
+      &gt;
+        {!hideMasthead &amp;&amp; mastheadElem}
+        &lt;div
+          className={classNames('nav-pf-vertical nav-pf-vertical-with-sub-menus', {
+            'nav-pf-vertical-collapsible-menus': pinnableMenus,
+            'hidden-icons-pf': hiddenIcons,
+            'nav-pf-vertical-with-badges': showBadges,
+            'nav-pf-persistent-secondary': persistentSecondary,
+            'show-mobile-secondary': showMobileSecondary,
+            'show-mobile-tertiary': showMobileTertiary,
+            'hover-secondary-nav-pf': hoverSecondaryNav,
+            'hover-tertiary-nav-pf': hoverTertiaryNav,
+            'collapsed-secondary-nav-pf': pinnableMenus &amp;&amp; pinnedSecondaryNav,
+            'collapsed-tertiary-nav-pf': pinnableMenus &amp;&amp; pinnedTertiaryNav,
+            hidden: isMobile,
+            collapsed: !isMobile &amp;&amp; navCollapsed,
+            'force-hide-secondary-nav-pf': forceHidden,
+            'show-mobile-nav': showMobileNav
+          })}
+        &gt;
+          &lt;ListGroup componentClass="ul"&gt;{itemComponents}&lt;/ListGroup&gt;
+        &lt;/div&gt;
+      &lt;/NavContextProvider&gt;
+    );
+  }
+}
+&nbsp;
+const controlledState = {
+  // NOTE: If you use any of these props, be sure to also use the corresponding callbacks/handlers.
+  // These props override values of the same name set by setControlledState().
+  types: {
+    /** Use the mobile layout of the component. Corresponds to onLayoutChange callback. */
+    isMobile: PropTypes.bool,
+    /** Display the nav in mobile mode */
+    showMobileNav: PropTypes.bool,
+    /** Collapse the nav. Corresponds to onMenuToggleClick or onCollapse and onExpand callbacks. */
+    navCollapsed: PropTypes.bool,
+    /** The idPath matching the currently active item. Corresponds to onItemClick callback. */
+    activePath: PropTypes.string,
+    /** The idPath matching the currently hovered item. Corresponds to onItemHover and onItemBlur callbacks. */
+    hoverPath: PropTypes.string,
+    /** The idPath matching the currently selected item on mobile. Corresponds to onMobileSelection callback. */
+    mobilePath: PropTypes.string,
+    /** The idPath matching the currently pinned item. Corresponds to onItemPin callback. */
+    pinnedPath: PropTypes.string
+  },
+  defaults: {
+    isMobile: layout.is('mobile'),
+    showMobileNav: null,
+    navCollapsed: null,
+    activePath: null,
+    hoverPath: null,
+    mobilePath: null,
+    pinnedPath: null
+  }
+};
+&nbsp;
+BaseVerticalNav.propTypes = {
+  ...controlledState.types,
+  /** Navigation items, passed as an array of objects (as opposed to JSX children w/ props) */
+  items: PropTypes.arrayOf(PropTypes.shape(itemObjectTypes)),
+  /** Enables the pin buttons on the active submenu. */
+  pinnableMenus: PropTypes.bool,
+  /** Automatically applies classes to the body element when the layout changes. */
+  dynamicBodyClasses: PropTypes.bool,
+  /** Hide all icons */
+  hiddenIcons: PropTypes.bool,
+  /** Show badges in nav items */
+  showBadges: PropTypes.bool,
+  /** Don't show items on hover, require a click */
+  hoverDisabled: PropTypes.bool,
+  /** Don't hide items on blur, require a click elsewhere */
+  blurDisabled: PropTypes.bool,
+  /** Force the nav to be hidden temporarily. */
+  forceHidden: PropTypes.bool,
+  /** Hide the masthead and notification drawer areas. */
+  hideMasthead: PropTypes.bool,
+  /** Persist the secondary nav */
+  persistentSecondary: PropTypes.bool,
+  /** Delay between mouse hover and menu show in ms */
+  hoverDelay: PropTypes.number,
+  /** Delay between mouse blur and menu hide in ms */
+  blurDelay: PropTypes.number,
+  /**  */
+  masthead: PropTypes.node,
+  /** Optional callback for updating isMobile prop */
+  onLayoutChange: PropTypes.func, // eslint-disable-line react/require-default-props
+  /** Optional callback for updating navCollapsed and showMobileNav props (option 1) */
+  onMenuToggleClick: PropTypes.func,
+  /** Optional callback for updating navCollapsed and showMobileNav props (option 2) */
+  onCollapse: PropTypes.func,
+  /** Optional callback for updating navCollapsed and showMobileNav props (option 2) */
+  onExpand: PropTypes.func,
+  /** Optional callback for updating active props on items or activePath prop. Only called on leaf item click. */
+  onNavigate: PropTypes.func,
+  /** Optional callback for updating active props on items or activePath prop. Called on any item click. */
+  onItemClick: PropTypes.func,
+  /** Optional callback for updating hovered prop on items */
+  onItemHover: PropTypes.func,
+  /** Optional callback for updating hovered prop on items */
+  onItemBlur: PropTypes.func,
+  /** Optional callback for updating pinned props on items or pinnedPath prop. */
+  onItemPin: PropTypes.func,
+  /** Optional callback for updating mobilePath prop */
+  onMobileSelection: PropTypes.func, // *
+  /** Navigation items, passed as Item, SecondaryItem and TertiaryItem children. */
+  children: PropTypes.node,
+  /** Helper injected by `controlled()` to manage controlledStateTypes values */
+  setControlledState: PropTypes.func // eslint-disable-line react/require-default-props
+};
+&nbsp;
+BaseVerticalNav.defaultProps = {
+  items: null,
+  pinnableMenus: false,
+  dynamicBodyClasses: true,
+  hiddenIcons: false,
+  showBadges: false,
+  hoverDisabled: false,
+  blurDisabled: false,
+  forceHidden: false,
+  hideMasthead: false,
+  persistentSecondary: true,
+  hoverDelay: 500,
+  blurDelay: 700,
+  masthead: null,
+  onMenuToggleClick: null,
+  onCollapse: null,
+  onExpand: null,
+  onItemClick: null,
+  onItemHover: null,
+  onItemBlur: null,
+  onItemPin: null,
+  onMobileSelection: null,
+  onNavigate: noop,
+  children: null
+};
+&nbsp;
+const NoPersist = controlled(controlledState)(BaseVerticalNav);
+const WithPersist = controlled({
+  ...controlledState,
+  persist: ['navCollapsed', 'pinnedPath']
+})(BaseVerticalNav);
+&nbsp;
+const VerticalNav = ({ persist, ...props }) =&gt; (persist ? &lt;WithPersist {...props} /&gt; : &lt;NoPersist {...props} /&gt;);
+&nbsp;
+VerticalNav.propTypes = {
+  ...BaseVerticalNav.propTypes,
+  persist: PropTypes.bool
+};
+&nbsp;
+VerticalNav.defaultProps = {
+  ...BaseVerticalNav.defaultProps,
+  persist: true
+};
+&nbsp;
+VerticalNav.displayName = 'VerticalNav';
+&nbsp;
+VerticalNav.NoPersist = NoPersist;
+VerticalNav.WithPersist = WithPersist;
+&nbsp;
+VerticalNav.Masthead = VerticalNavMasthead;
+VerticalNav.Item = VerticalNavItem;
+VerticalNav.SecondaryItem = VerticalNavSecondaryItem;
+VerticalNav.TertiaryItem = VerticalNavTertiaryItem;
+VerticalNav.Brand = VerticalNavBrand;
+VerticalNav.IconBar = VerticalNavIconBar;
+VerticalNav.Badge = VerticalNavBadge;
+VerticalNav.Divider = VerticalNavDividerItem;
+&nbsp;
+export default VerticalNav;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

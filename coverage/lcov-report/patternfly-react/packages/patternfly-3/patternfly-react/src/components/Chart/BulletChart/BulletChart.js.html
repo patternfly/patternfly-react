@@ -1,0 +1,1289 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/components/Chart/BulletChart/BulletChart.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/components/Chart/BulletChart</a> BulletChart.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.91% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>73/87</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">75% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>54/72</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">77.78% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.52% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>71/84</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">72x</span>
+<span class="cline-any cline-yes">69x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">72x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">24x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import { patternfly } from '../../../common/patternfly';
+import { Tooltip } from '../../Tooltip/index';
+import { noop } from '../../../common/helpers';
+&nbsp;
+import BulletChartValue from './BulletChartValue';
+import BulletChartRange from './BulletChartRange';
+import BulletChartAxis from './BulletChartAxis';
+import BulletChartAxisTic from './BulletChartAxisTic';
+import BulletChartLegend from './BulletChartLegend';
+import BulletChartLegendItem from './BulletChartLegendItem';
+import BulletChartThreshold from './BulletChartThreshold';
+import BulletChartTitle from './BulletChartTitle';
+&nbsp;
+const randomId = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >Date.now();</span>
+&nbsp;
+const defaultPrimaryColors = [
+  patternfly.pfPaletteColors.blue300,
+  patternfly.pfPaletteColors.blue400,
+  patternfly.pfPaletteColors.blue500,
+  patternfly.pfPaletteColors.blue600
+];
+&nbsp;
+const defaultExtendedColors = [
+  patternfly.pfPaletteColors.blue400,
+  patternfly.pfPaletteColors.lightBlue400,
+  patternfly.pfPaletteColors.cyan400,
+  patternfly.pfPaletteColors.green400,
+  patternfly.pfPaletteColors.lightGreen400,
+  patternfly.pfPaletteColors.gold400,
+  patternfly.pfPaletteColors.orange400,
+  patternfly.pfPaletteColors.red300,
+  patternfly.pfPaletteColors.purple400
+];
+&nbsp;
+const BulletChart = ({
+  vertical,
+  stacked,
+  label,
+  details,
+  values,
+  percents,
+  maxValue,
+  useDots,
+  useExtendedColors,
+  thresholdWarning,
+  thresholdWarningLegendText,
+  thresholdWarningLegendTextFunction,
+  thresholdWarningTooltipFunction,
+  thresholdError,
+  thresholdErrorLegendText,
+  thresholdErrorLegendTextFunction,
+  thresholdErrorTooltipFunction,
+  ranges,
+  showAxis,
+  customAxis,
+  showLegend,
+  customLegend,
+  className
+}) =&gt; {
+  const classes = classNames('bullet-chart-pf', { 'bullet-chart-pf-vertical': vertical }, className);
+&nbsp;
+  // Order the ranges into an array of 3 ranges lowest to highest, insert 0's if necessary
+  // this is to keep darkest as highest and use darkest colors first (ie. 1 range still uses darkest)
+  const rangeValues = [];
+  if (ranges) {
+    for (let i = 0; i &lt; 3; i++) {
+      if (ranges.length &gt; i) {
+        rangeValues.push(ranges[i]);
+      } else {
+        rangeValues.push({ value: 0, title: '' });
+      }
+    }
+    rangeValues.sort((range1, range2) =&gt; range1.value - range2.value);
+  }
+&nbsp;
+  const displayValues = [...values];
+&nbsp;
+  const defaultColors = useExtendedColors ? <span class="branch-0 cbranch-no" title="branch not covered" >defaultExtendedColors </span>: defaultPrimaryColors;
+  displayValues.forEach((value, index) =&gt; {
+    if (!value.color &amp;&amp; defaultColors[index]) {
+      value.color = defaultColors[index];
+    }
+  });
+&nbsp;
+  if (!stacked) {
+    displayValues.sort((value1, value2) =&gt; value1.value - value2.value);
+  }
+&nbsp;
+  const renderValues = () =&gt; {
+    let prevValue = 0;
+&nbsp;
+    const getPrevValue = nextValue =&gt; {
+      if (stacked) {
+        const retVal = prevValue;
+        prevValue += nextValue;
+&nbsp;
+        return retVal;
+      }
+      return 0;
+    };
+&nbsp;
+    return (
+      &lt;div className="bullet-chart-pf-values-container"&gt;
+        {displayValues.map((value, index) =&gt; (
+          &lt;BulletChartValue
+            key={`${value.title}-${index}`}
+            value={value}
+            percent={percents}
+            maxValue={maxValue}
+            prevValue={getPrevValue(value.value)}
+            dot={useDots}
+            vertical={vertical}
+          /&gt;
+        ))}
+      &lt;/div&gt;
+    );
+  };
+&nbsp;
+  const renderLegend = () =&gt; {
+    if (showLegend) {
+      if (customLegend) {
+        return customLegend;
+      }
+&nbsp;
+      const warningThreshold = thresholdWarningLegendTextFunction(thresholdWarning) || thresholdWarningLegendText;
+      const errorThreshold = thresholdErrorLegendTextFunction(thresholdError) || thresholdErrorLegendText;
+      const thresholdTipFunction = <span class="fstat-no" title="function not covered" >(t</span>itle, value) =&gt; {
+<span class="cstat-no" title="statement not covered" >        if (thresholdWarningTooltipFunction) {</span>
+<span class="cstat-no" title="statement not covered" >          return thresholdWarningTooltipFunction(title, value);</span>
+        }
+        const tipText = <span class="cstat-no" title="statement not covered" >`${title}: ${value}${percents ? '%' : ''}`;</span>
+<span class="cstat-no" title="statement not covered" >        return &lt;Tooltip id={randomId()}&gt;{tipText}&lt;/Tooltip&gt;;</span>
+      };
+&nbsp;
+      return (
+        &lt;BulletChartLegend&gt;
+          {displayValues.map((value, index) =&gt; {
+            const tooltipFunction = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >              if (value.tooltipFunction) {</span>
+<span class="cstat-no" title="statement not covered" >                return value.tooltipFunction(value.value, value.title);</span>
+              }
+&nbsp;
+              const tipText = <span class="cstat-no" title="statement not covered" >`${value.title}: ${value.value}${percents ? '%' : ''}`;</span>
+<span class="cstat-no" title="statement not covered" >              return &lt;Tooltip id={value.tooltipId || randomId()}&gt;{tipText}&lt;/Tooltip&gt;;</span>
+            };
+&nbsp;
+            const legendTextFunction = value.legendTextFunction || noop;
+            return (
+              &lt;BulletChartLegendItem
+                key={`value-${index}`}
+                title={legendTextFunction(value) || value.legendText || value.title}
+                value={value.value}
+                color={value.color}
+                tooltipFunction={tooltipFunction}
+              /&gt;
+            );
+          })}
+          {rangeValues.map((range, index) =&gt; {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (range.value &gt; 0 &amp;&amp; (percents ? range.value &lt;= 100 : range.value &lt;= maxValue)) {
+              const tooltipFunction = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >                if (range.tooltipFunction) {</span>
+<span class="cstat-no" title="statement not covered" >                  return range.tooltipFunction(range.value, range.title);</span>
+                }
+&nbsp;
+                const tipText = <span class="cstat-no" title="statement not covered" >`${range.title}: ${range.value}${percents ? '%' : ''}`;</span>
+<span class="cstat-no" title="statement not covered" >                return &lt;Tooltip id={range.tooltipId || randomId()}&gt;{tipText}&lt;/Tooltip&gt;;</span>
+              };
+&nbsp;
+              const legendTextFunction = range.legendTextFunction || noop;
+&nbsp;
+              return (
+                &lt;BulletChartLegendItem
+                  key={`range-${index}`}
+                  title={legendTextFunction(range) || range.legendText || range.title}
+                  value={range.value}
+                  boxClassName={`range-${index}`}
+                  color={range.color}
+                  tooltipFunction={tooltipFunction}
+                /&gt;
+              );
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+          })}
+          {warningThreshold &amp;&amp; (
+            &lt;BulletChartLegendItem
+              title={warningThreshold}
+              value={thresholdWarning}
+              boxClassName="warning"
+              tooltipFunction={thresholdTipFunction}
+            /&gt;
+          )}
+          {errorThreshold &amp;&amp; (
+            &lt;BulletChartLegendItem
+              title={errorThreshold}
+              value={thresholdError}
+              boxClassName="error"
+              tooltipFunction={thresholdTipFunction}
+            /&gt;
+          )}
+        &lt;/BulletChartLegend&gt;
+      );
+    }
+&nbsp;
+    return null;
+  };
+&nbsp;
+  const renderChartData = () =&gt; (
+    &lt;div className="bullet-chart-pf-data-container"&gt;
+      {renderValues()}
+      &lt;BulletChartThreshold
+        className="warning"
+        threshold={thresholdWarning}
+        vertical={vertical}
+        percent={percents}
+        maxValue={maxValue}
+      /&gt;
+      &lt;BulletChartThreshold
+        className="error"
+        threshold={thresholdError}
+        vertical={vertical}
+        percent={percents}
+        maxValue={maxValue}
+      /&gt;
+      {rangeValues.map((range, index) =&gt; (
+        &lt;BulletChartRange
+          key={`${range.value}-${index}`}
+          value={range.value}
+          color={range.color}
+          percent={percents}
+          maxValue={maxValue}
+          index={index + 1}
+          vertical={vertical}
+        /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+&nbsp;
+  const renderChartAxis = () =&gt; {
+    if (customAxis) {
+      return customAxis;
+    }
+&nbsp;
+    return (
+      &lt;BulletChartAxis&gt;
+        &lt;BulletChartAxisTic value={0} vertical={vertical} /&gt;
+        &lt;BulletChartAxisTic
+          value={25}
+          text={percents ? undefined : `${Math.floor(maxValue * 0.25)}`}
+          vertical={vertical}
+        /&gt;
+        &lt;BulletChartAxisTic
+          value={50}
+          text={percents ? undefined : `${Math.floor(maxValue * 0.5)}`}
+          vertical={vertical}
+        /&gt;
+        &lt;BulletChartAxisTic
+          value={75}
+          text={percents ? undefined : `${Math.floor(maxValue * 0.75)}`}
+          vertical={vertical}
+        /&gt;
+        &lt;BulletChartAxisTic value={100} text={percents ? undefined : `${Math.floor(maxValue)}`} vertical={vertical} /&gt;
+      &lt;/BulletChartAxis&gt;
+    );
+  };
+&nbsp;
+  const renderChartContainer = () =&gt; {
+    const containerClasses = classNames('bullet-chart-pf-container', {
+      'show-axis': showAxis
+    });
+    const chartContainer = (
+      &lt;div className={containerClasses}&gt;
+        {renderChartData()}
+        {showAxis &amp;&amp; renderChartAxis()}
+      &lt;/div&gt;
+    );
+&nbsp;
+    if (vertical) {
+      return &lt;div className="bullet-chart-pf-vertical-data-container"&gt;{chartContainer}&lt;/div&gt;;
+    }
+&nbsp;
+    return chartContainer;
+  };
+&nbsp;
+  return (
+    &lt;div className={classes}&gt;
+      &lt;div className="bullet-chart-pf-chart"&gt;
+        &lt;BulletChartTitle label={label} details={details} /&gt;
+        {renderChartContainer()}
+        &lt;span className="bullet-chart-pf-overflow" /&gt;
+      &lt;/div&gt;
+      {renderLegend()}
+    &lt;/div&gt;
+  );
+};
+&nbsp;
+BulletChart.propTypes = {
+  /** Option to display the bullet chart vertically, default is false */
+  vertical: PropTypes.bool,
+  /** Option to stack values (each value is in addition to previous value), default is false */
+  stacked: PropTypes.bool,
+  /** Text to display as the main label for the chart */
+  label: PropTypes.string,
+  /** Text to display for details of the chart */
+  details: PropTypes.string,
+  /** Array of values, value, title (for legend and tooltip), color, tooltip function(value, title), legendText(optional),
+   * legendTextFunction(value). The legendTextFunction takes priority, then the legendTextFunction, then the default
+   * legend text.
+   * For Primary colors the first four values can use default colors, for Extended colors the first nine
+   * values use default colors, further values the color MUST be specified. */
+  values: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      title: PropTypes.string,
+      color: PropTypes.string,
+      tooltipFunction: PropTypes.func,
+      legendText: PropTypes.string,
+      legendTextFunction: PropTypes.func
+    })
+  ).isRequired,
+  /** Option to use values as percentages, default is true */
+  percents: PropTypes.bool,
+  /** Maximum value when not using percents (ignored if percents is true) */
+  maxValue: PropTypes.number,
+  /** Use a dot rather than a bar to depict values, default false */
+  useDots: PropTypes.bool,
+  /** Use extended color palette for default colors, default false */
+  useExtendedColors: PropTypes.bool,
+  /** Warning threshold (optional), warning measure line drawn at this point */
+  thresholdWarning: PropTypes.number,
+  /** Warning threshold legend text (optional), text to show in the legend for the warning threshold */
+  thresholdWarningLegendText: PropTypes.string,
+  /** Warning threshold legend text function(warningValue), function to return text to show in the legend for the warning threshold */
+  thresholdWarningLegendTextFunction: PropTypes.func,
+  /** Warning threshold legend tooltip function(text, value), function to return tooltip for the legend */
+  thresholdWarningTooltipFunction: PropTypes.func,
+  /** Error threshold (optional), error measure line drawn at this point */
+  thresholdError: PropTypes.number,
+  /** Error threshold legend text (optional), text to show in the legend for the warning threshold */
+  thresholdErrorLegendText: PropTypes.string,
+  /** Error threshold legend text function(text, value), function to return text to show in the legend for the warning threshold */
+  thresholdErrorLegendTextFunction: PropTypes.func,
+  /** Error threshold legend tooltip function(warningValue), function to return tooltip for the legend */
+  thresholdErrorTooltipFunction: PropTypes.func,
+  /** Ranges, array of range bars (3 maximum, additional ranges will be ignored) */
+  ranges: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      title: PropTypes.string,
+      color: PropTypes.string,
+      tooltipFunction: PropTypes.func,
+      legendText: PropTypes.string,
+      legendTextFunction: PropTypes.func
+    })
+  ),
+  /** Option to show the axis, default is true */
+  showAxis: PropTypes.bool,
+  /** Custom Axis */
+  customAxis: PropTypes.node,
+  /** Show the legend, default false */
+  showLegend: PropTypes.bool,
+  /** Custom Legend */
+  customLegend: PropTypes.node,
+  /** User's custom classes */
+  className: PropTypes.string
+};
+&nbsp;
+BulletChart.defaultProps = {
+  vertical: false,
+  stacked: false,
+  label: null,
+  details: null,
+  percents: true,
+  maxValue: 100,
+  useDots: false,
+  useExtendedColors: false,
+  thresholdWarning: 70,
+  thresholdWarningLegendText: null,
+  thresholdWarningLegendTextFunction: noop,
+  thresholdWarningTooltipFunction: null,
+  thresholdError: 90,
+  thresholdErrorLegendText: null,
+  thresholdErrorLegendTextFunction: noop,
+  thresholdErrorTooltipFunction: null,
+  ranges: null,
+  showAxis: true,
+  customAxis: null,
+  showLegend: false,
+  customLegend: null,
+  className: null
+};
+&nbsp;
+BulletChart.DEFAULT_PRIMARY_COLORS = defaultPrimaryColors;
+BulletChart.DEFAULT_EXTENDED_COLORS = defaultExtendedColors;
+&nbsp;
+BulletChart.Title = BulletChartTitle;
+BulletChart.Value = BulletChartValue;
+BulletChart.Range = BulletChartRange;
+BulletChart.Axis = BulletChartAxis;
+BulletChart.AxisTic = BulletChartAxisTic;
+BulletChart.Legend = BulletChartLegend;
+BulletChart.LegendItem = BulletChartLegendItem;
+BulletChart.Threshold = BulletChartThreshold;
+&nbsp;
+export default BulletChart;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../../sorter.js"></script>
+</body>
+</html>

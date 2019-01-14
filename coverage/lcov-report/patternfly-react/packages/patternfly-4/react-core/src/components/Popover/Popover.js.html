@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-4/react-core/src/components/Popover/Popover.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-4/react-core/src/components/Popover</a> Popover.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">39.22% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/51</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.43% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.08% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>6/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">39.22% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/51</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+import Tippy from '@tippy.js/react';
+import FocusTrap from 'focus-trap-react';
+import { KEY_CODES } from '../../internal/constants';
+import styles from '@patternfly/patternfly-next/components/Popover/popover.css';
+import { StyleSheet, css, getModifier } from '@patternfly/react-styles';
+import PopoverArrow from './PopoverArrow';
+import PopoverContent from './PopoverContent';
+import PopoverBody from './PopoverBody';
+import PopoverHeader from './PopoverHeader';
+import PopoverCloseButton from './PopoverCloseButton';
+import GenerateId from '../../internal/GenerateId/GenerateId';
+&nbsp;
+// Need to unset tippy default styles
+// Also for enableFlip, need to make arrow aware of parent x-placement attribute in order to work
+const overrides = StyleSheet.parse(`
+  .pf-tippy-theme {
+    &amp;.tippy-tooltip { 
+      background-color: unset;
+      font-size: unset;
+      color: unset;
+      border-radius: unset;
+      max-width: unset;
+      text-align: unset;
+    }
+  }
+  .tippy-popper[x-placement^=top] .pf-c-popover__arrow {
+    bottom: 0;
+    left: 50%;
+    transform: var(--pf-c-popover__arrow--m-top--Transform); 
+  }
+  .tippy-popper[x-placement^=bottom] .pf-c-popover__arrow {
+    top: 0;
+    left: 50%;
+    transform: var(--pf-c-popover__arrow--m-bottom--Transform); 
+  }
+  .tippy-popper[x-placement^=left] .pf-c-popover__arrow {
+    top: 50%;
+    right: 0;
+    transform: var(--pf-c-popover__arrow--m-left--Transform); 
+  }
+  .tippy-popper[x-placement^=right] .pf-c-popover__arrow {
+    top: 50%;
+    left: 0;
+    transform: var(--pf-c-popover__arrow--m-right--Transform); 
+  }  
+`);
+overrides.inject();
+&nbsp;
+export const PopoverPosition = {
+  top: 'top',
+  bottom: 'bottom',
+  left: 'left',
+  right: 'right'
+};
+&nbsp;
+const propTypes = {
+  /** Popover position */
+  position: PropTypes.oneOf(Object.keys(PopoverPosition).map(key =&gt; PopoverPosition[key])),
+  /** If true, tries to keep the popover in view by flipping it if necessary */
+  enableFlip: PropTypes.bool,
+  /** Popover additional class */
+  className: PropTypes.string,
+  /** The reference element to which the popover is relatively placed to */
+  children: PropTypes.element.isRequired,
+  /** Accessible label, required when header is not present */
+  'aria-label': props =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!props.headerContent &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!props['aria-label'])</span> {
+<span class="cstat-no" title="statement not covered" >      return new Error('aria-label is required when header is not used');</span>
+    }
+    return null;
+  },
+  /** Header content, leave empty for no header */
+  headerContent: PropTypes.node,
+  /** Body content */
+  bodyContent: PropTypes.node.isRequired,
+  /**
+   * True to show the popover programmatically. Used in conjunction with the shouldClose prop.
+   * By default, the popover child element handles click events automatically. If you want to control this programmatically,
+   * the popover will not auto-close if the Close button is clicked, ESC key is used, or if a click occurs outside the popover.
+   * Instead, the consumer is responsible for closing the popover themselves by adding a callback listener for the shouldClose prop.
+   */
+  isVisible: PropTypes.bool,
+  /**
+   * Callback function that is only invoked when isVisible is also controlled. Called when the popover Close button is
+   * clicked or the ESC key is used
+   */
+  shouldClose: PropTypes.func,
+  /** The element to append the popover to, defaults to body */
+  appendTo: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
+  /** Hides the popover when a click occurs outside (only works if isVisible is not controlled by the user) */
+  hideOnOutsideClick: PropTypes.bool,
+  /** Lifecycle function invoked when the popover begins to transition out. */
+  onHide: PropTypes.func,
+  /** Lifecycle function invoked when the popover has fully transitioned out. */
+  onHidden: PropTypes.func,
+  /** Lifecycle function invoked when the popover begins to transition in. */
+  onShow: PropTypes.func,
+  /** Lifecycle function invoked when the popover has fully transitioned in. */
+  onShown: PropTypes.func,
+  /** Lifecycle function invoked when the popover has been mounted to the DOM. */
+  onMount: PropTypes.func,
+  /** z-index of the popover */
+  zIndex: PropTypes.number,
+  /** Size of the popover */
+  size: PropTypes.oneOf(['small', 'regular', 'large']),
+  /** Aria label for the Close button */
+  closeBtnAriaLabel: PropTypes.string
+};
+&nbsp;
+const defaultProps = {
+  position: 'top',
+  enableFlip: true,
+  className: null,
+  isVisible: null,
+  shouldClose: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >undefined,</span>
+  'aria-label': '',
+  headerContent: null,
+  appendTo: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >document.body,</span>
+  hideOnOutsideClick: true,
+  onHide: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >undefined,</span>
+  onHidden: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >undefined,</span>
+  onShow: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >undefined,</span>
+  onShown: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >undefined,</span>
+  onMount: <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >undefined,</span>
+  zIndex: 9999,
+  size: 'regular',
+  closeBtnAriaLabel: 'Close'
+};
+&nbsp;
+class Popover extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+  }
+&nbsp;
+  hideOrNotify = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (this.props.isVisible === null) {</span>
+      // Handle closing
+<span class="cstat-no" title="statement not covered" >      this.tip.hide();</span>
+    } else {
+      // notify consumer
+<span class="cstat-no" title="statement not covered" >      this.props.shouldClose(this.tip);</span>
+    }
+  };
+&nbsp;
+  handleEscKeyClick = <span class="fstat-no" title="function not covered" >ev</span>ent =&gt; {
+<span class="cstat-no" title="statement not covered" >    if (event.keyCode === KEY_CODES.ESCAPE_KEY &amp;&amp; this.tip.state.isVisible) {</span>
+<span class="cstat-no" title="statement not covered" >      this.hideOrNotify();</span>
+    }
+  };
+&nbsp;
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleEscKeyClick, false);
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  co</span>mponentWillUnmount() {
+<span class="cstat-no" title="statement not covered" >    document.removeEventListener('keydown', this.handleEscKeyClick, false);</span>
+  }
+&nbsp;
+  storeTippyInstance = <span class="fstat-no" title="function not covered" >ti</span>p =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.tip = tip;</span>
+  };
+&nbsp;
+  closePopover = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.hideOrNotify();</span>
+  };
+&nbsp;
+  hideAllPopovers = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    document.querySelectorAll('.tippy-popper').forEach(<span class="fstat-no" title="function not covered" >po</span>pper =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      popper._tippy &amp;&amp; popper._tippy.hide();</span>
+    });
+  };
+&nbsp;
+  onHide = <span class="fstat-no" title="function not covered" >ti</span>p =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.state.isOpen &amp;&amp; this.setState({ isOpen: false });</span>
+<span class="cstat-no" title="statement not covered" >    return this.props.onHide(tip);</span>
+  };
+&nbsp;
+  onHidden = <span class="fstat-no" title="function not covered" >ti</span>p =&gt; <span class="cstat-no" title="statement not covered" >this.props.onHidden(tip);</span>
+&nbsp;
+  onMount = <span class="fstat-no" title="function not covered" >ti</span>p =&gt; <span class="cstat-no" title="statement not covered" >this.props.onMount(tip);</span>
+&nbsp;
+  onShow = <span class="fstat-no" title="function not covered" >ti</span>p =&gt; {
+    const { hideOnOutsideClick, isVisible, onShow } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    // hide all other open popovers first if events are managed by us
+<span class="cstat-no" title="statement not covered" >    !hideOnOutsideClick &amp;&amp; isVisible === null &amp;&amp; this.hideAllPopovers();</span>
+<span class="cstat-no" title="statement not covered" >    this.state.isOpen === false &amp;&amp; this.setState({ isOpen: true });</span>
+<span class="cstat-no" title="statement not covered" >    return onShow(tip);</span>
+  };
+&nbsp;
+  onShown = <span class="fstat-no" title="function not covered" >ti</span>p =&gt; <span class="cstat-no" title="statement not covered" >this.props.onShown(tip);</span>
+&nbsp;
+  render() {
+    const {
+      position,
+      enableFlip,
+      children,
+      className,
+      'aria-label': ariaLabel,
+      headerContent,
+      bodyContent,
+      isVisible,
+      shouldClose,
+      appendTo,
+      hideOnOutsideClick,
+      onHide,
+      onHidden,
+      onShow,
+      onShown,
+      onMount,
+      zIndex,
+      size,
+      closeBtnAriaLabel,
+      ...rest
+    } = this.props;
+    const content = (
+      &lt;GenerateId&gt;
+        {<span class="fstat-no" title="function not covered" >ra</span>ndomId =&gt;
+<span class="cstat-no" title="statement not covered" >          this.state.isOpen &amp;&amp; (</span>
+            &lt;FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}&gt;
+              &lt;div
+                className={css(
+                  styles.popover,
+                  !enableFlip &amp;&amp; getModifier(styles, position, styles.modifiers.top),
+                  className
+                )}
+                role="dialog"
+                aria-modal="true"
+                aria-label={headerContent ? undefined : ariaLabel}
+                aria-labelledby={headerContent ? `popover-${randomId}-header` : undefined}
+                aria-describedby={`popover-${randomId}-body`}
+                {...rest}
+              &gt;
+                &lt;PopoverArrow /&gt;
+                &lt;PopoverContent&gt;
+                  &lt;PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} /&gt;
+                  {headerContent &amp;&amp; &lt;PopoverHeader id={`popover-${randomId}-header`}&gt;{headerContent}&lt;/PopoverHeader&gt;}
+                  &lt;PopoverBody id={`popover-${randomId}-body`}&gt;{bodyContent}&lt;/PopoverBody&gt;
+                &lt;/PopoverContent&gt;
+              &lt;/div&gt;
+            &lt;/FocusTrap&gt;
+          )
+        }
+      &lt;/GenerateId&gt;
+    );
+    const handleEvents = isVisible === null;
+    const shouldHideOnClick = () =&gt; {
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (handleEvents) {
+<span class="cstat-no" title="statement not covered" >        if (hideOnOutsideClick === true) {</span>
+<span class="cstat-no" title="statement not covered" >          return true;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return 'toggle';</span>
+      }
+      return false;
+    };
+    return (
+      &lt;Tippy
+        onCreate={this.storeTippyInstance}
+        size={size}
+        zIndex={zIndex}
+        appendTo={appendTo}
+        content={content}
+        lazy
+        trigger={handleEvents ? <span class="branch-0 cbranch-no" title="branch not covered" >'click' </span>: 'manual'}
+        isVisible={isVisible}
+        hideOnClick={shouldHideOnClick()}
+        animateFill={false}
+        theme="pf-tippy"
+        performance
+        interactive
+        interactiveBorder={0}
+        placement={position}
+        distance={15}
+        flip={enableFlip}
+        popperOptions={{
+          modifiers: {
+            preventOverflow: {
+              enabled: enableFlip
+            },
+            hide: {
+              enabled: enableFlip
+            }
+          }
+        }}
+        onHide={this.onHide}
+        onHidden={this.onHidden}
+        onShow={this.onShow}
+        onShown={this.onShown}
+        onMount={this.onMount}
+      &gt;
+        {children}
+      &lt;/Tippy&gt;
+    );
+  }
+}
+&nbsp;
+Popover.propTypes = propTypes;
+Popover.defaultProps = defaultProps;
+&nbsp;
+export default Popover;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/common/controlled.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/common</a> controlled.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">73.91% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">40.74% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>11/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">72.73% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>14/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">232x</span>
+<span class="cline-any cline-yes">232x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import PropTypes from 'prop-types';
+import { nullValues, selectKeys, filterKeys } from './helpers';
+&nbsp;
+/*
+  controlled(stateTypes, defaults)(WrappedComponent)
+&nbsp;
+  *** NOTE / BEWARE! *******************************************************************************
+  This is already deprecated, even as new as it is, because we now have getDerivedStateFromProps!
+  It remains here for now because of its additional "persist" feature, which we should factor out.
+  **************************************************************************************************
+&nbsp;
+  This Higher Order Component provides the controlled component pattern on a prop-by-prop basis.
+  It's a nice way for components to implement internal state so they "just work" out of the box,
+  but also give users the option of lifting some or all of that state up into their application.
+&nbsp;
+  controlled() takes arguments as an object with three options:
+   * types - an object of PropTypes for the state that will be contained here
+   * defaults - an optional object with default values for stateTypes
+   * persist - an optional array of names from stateTypes which will be persisted to sessionStorage
+  
+  The WrappedComponent will be rendered with special props:
+   * setControlledState - a reference to this state wrapper's this.setState.
+   * Props for all the stateTypes, from this.props if present or from this.state otherwise.
+   * All other props passed to the controlled component HoC.
+  
+  The idea is that the values in stateTypes could be stored in state, or passed in via props.
+  The WrappedComponent doesn't have to care which is being used, and can manage the state
+  contained here. When present, props are used instead. If you provide these special props,
+  be sure to also provide corresponding callbacks/handlers to keep them updated.
+  
+  If you are using the persist option, you can optionally pass a sessionKey prop to the component
+  to ensure multiple instances of the component store their data separately. If you don't pass
+  a sessionKey, a stringified list of the persisted keys will be used (not unique to the instance).
+*/
+const controlled = ({ types, defaults = <span class="branch-0 cbranch-no" title="branch not covered" >{},</span> persist }) =&gt; WrappedComponent =&gt; {
+  class ControlledComponent extends React.Component {
+    state = { ...nullValues(types), ...defaults };
+&nbsp;
+    componentDidMount() {
+      this.loadPersistent();
+      window &amp;&amp; window.addEventListener &amp;&amp; window.addEventListener('beforeunload', this.savePersistent);
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    co</span>mponentWillUnmount() {
+<span class="cstat-no" title="statement not covered" >      this.savePersistent();</span>
+<span class="cstat-no" title="statement not covered" >      window &amp;&amp; window.removeEventListener &amp;&amp; window.removeEventListener('beforeunload', this.savePersistent);</span>
+    }
+&nbsp;
+    setControlledState = updater =&gt; {
+      this.setState(updater);
+    };
+&nbsp;
+    loadPersistent = () =&gt; {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (persist &amp;&amp; persist.length &gt; 0) {
+        const fromPersisted = window &amp;&amp; window.sessionStorage &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >window.sessionStorage.getItem(this.sessionKey());</span>
+        fromPersisted &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >this.setState(JSON.parse(fromPersisted));</span>
+      }
+    };
+&nbsp;
+    savePersistent = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >      if (persist &amp;&amp; persist.length &gt; 0) {</span>
+        const toPersist = <span class="cstat-no" title="statement not covered" >selectKeys(this.state, persist);</span>
+<span class="cstat-no" title="statement not covered" >        window &amp;&amp; window.sessionStorage &amp;&amp; window.sessionStorage.setItem(this.sessionKey(), JSON.stringify(toPersist));</span>
+      }
+    };
+&nbsp;
+    sessionKey = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >this.props.sessionKey || JSON.stringify(persist);</span>
+&nbsp;
+    render() {
+      const controlledStateProps = filterKeys(this.props, key =&gt; types.hasOwnProperty(key) &amp;&amp; this.props[key] !== null);
+      const otherProps = filterKeys(this.props, key =&gt; !types.hasOwnProperty(key));
+      return (
+        &lt;WrappedComponent
+          setControlledState={this.setControlledState}
+          {...this.state}
+          {...controlledStateProps}
+          {...otherProps}
+        /&gt;
+      );
+    }
+  }
+&nbsp;
+  ControlledComponent.displayName = WrappedComponent.displayName;
+  ControlledComponent.propTypes = {
+    ...WrappedComponent.propTypes,
+    ...types,
+    sessionKey: PropTypes.string
+  };
+&nbsp;
+  ControlledComponent.defaultProps = {
+    ...WrappedComponent.defaultProps
+  };
+&nbsp;
+  return ControlledComponent; // TODO use recompose withState or withStateHandlers here instead of component state above
+};
+&nbsp;
+export default controlled;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>

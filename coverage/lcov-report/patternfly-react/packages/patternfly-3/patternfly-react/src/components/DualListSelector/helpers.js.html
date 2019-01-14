@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/components/DualListSelector/helpers.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/components/DualListSelector</a> helpers.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.54% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>132/158</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>54/80</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.49% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>43/47</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">82.64% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>119/144</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266</td><td class="line-coverage quiet"><span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">41x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">46x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">98x</span>
+<span class="cline-any cline-yes">98x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95x</span>
+<span class="cline-any cline-yes">146x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">95x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">163x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">78x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">161x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">86x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-yes">68x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">33x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">44x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const filterByHiding = (list, value) =&gt; {
+  const filterValue = value.toLowerCase();
+  return list.map(item =&gt; {
+    const itemLabel = item.label.toLowerCase();
+    const included = itemLabel.includes(filterValue);
+    // if the item label matches the filter value.
+    item.hidden = !included;
+    // if it is a parent and its label doesn't match the filter value.
+    if (itemHasChildren(item)) {
+      if (isItemHidden(item)) {
+        let childrenIncludedAmount = 0;
+        item.children.forEach(childItem =&gt; {
+          const childLabel = childItem.label.toLowerCase();
+          const childIncluded = childLabel.includes(filterValue);
+          childItem.hidden = !childIncluded;
+          childrenIncludedAmount += childIncluded ? <span class="branch-0 cbranch-no" title="branch not covered" >1 </span>: 0;
+        });
+        item.hidden = childrenIncludedAmount === 0;
+      } else {
+        item.children = makeAllItemsVisible(item.children);
+      }
+    }
+    return item;
+  });
+};
+&nbsp;
+export const makeAllItemsVisible = list =&gt;
+  list.map(item =&gt; {
+    item.hidden = false;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (itemHasChildren(item)) {
+<span class="cstat-no" title="statement not covered" >      item.children.forEach(<span class="fstat-no" title="function not covered" >ch</span>ildItem =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        childItem.hidden = false;</span>
+      });
+    }
+    return item;
+  });
+&nbsp;
+export const sortItems = (items, sortFactor = 'label') =&gt;
+  items.sort((a, b) =&gt; (a[sortFactor].toLowerCase() &gt; b[sortFactor].toLowerCase() ? 1 : -1));
+&nbsp;
+export const arrangeArray = ({ items, sortBy, isSortAsc = true, isMainChecked = false }) =&gt; {
+  // sort the items
+  let itemsCopy = sortItems(items, sortBy).map((item, index) =&gt; {
+    // add position to the item and update if the main checkbox is initialy checked.
+    const modifiedItem = {
+      ...item,
+      position: index,
+      checked: item.checked || isMainChecked
+    };
+    if (itemHasChildren(item)) {
+      // sort the children array and add a position, parentPosition and update check state.
+      modifiedItem.children = sortItems(item.children, sortBy).map((child, childIndex) =&gt; ({
+        ...child,
+        position: childIndex,
+        parentPosition: index,
+        checked: child.checked || isMainChecked
+      }));
+    }
+    return modifiedItem;
+  });
+&nbsp;
+  itemsCopy = isSortAsc ? itemsCopy : <span class="branch-1 cbranch-no" title="branch not covered" >reverseAllItemsOrder(itemsCopy);</span>
+&nbsp;
+  return itemsCopy;
+};
+&nbsp;
+export const getDefaultProps = () =&gt; ({
+  items: [],
+  options: null,
+  isSortAsc: true,
+  sortBy: 'label',
+  filterTerm: '',
+  isMainChecked: false
+});
+&nbsp;
+export const getCheckedAmount = ({ items }) =&gt; {
+  let checkedAmount = 0;
+  items.forEach(item =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (isItemSelected(item)) {
+<span class="cstat-no" title="statement not covered" >      checkedAmount += 1;</span>
+<span class="cstat-no" title="statement not covered" >      if (itemHasChildren(item)) {</span>
+<span class="cstat-no" title="statement not covered" >        checkedAmount += item.children.length;</span>
+      }
+    } else if (itemHasChildren(item)) {
+      item.children.forEach(child =&gt; {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (isItemSelected(child)) {
+<span class="cstat-no" title="statement not covered" >          checkedAmount += 1;</span>
+        }
+      });
+    }
+  });
+  return checkedAmount;
+};
+export const getCounterMessage = (selected, total) =&gt; `${selected} of ${total} items selected`;
+&nbsp;
+export const adjustProps = ({ left, right, ...props }) =&gt; {
+  const defaultProps = getDefaultProps();
+  const leftItems = arrangeArray({ ...left });
+  const rightItems = arrangeArray({ ...right });
+  return {
+    ...props,
+    left: {
+      ...defaultProps,
+      ...left,
+      items: leftItems,
+      selectCount: getCheckedAmount({ ...left })
+    },
+    right: {
+      ...defaultProps,
+      ...right,
+      items: rightItems,
+      selectCount: getCheckedAmount({ ...right })
+    }
+  };
+};
+&nbsp;
+export const isAllChildrenChecked = ({ children }) =&gt;
+  children.filter(({ checked }) =&gt; checked).length === children.length;
+&nbsp;
+export const getItemsLength = items =&gt; {
+  let { length } = items;
+  if (length === 0) {
+    return 0;
+  }
+  items.forEach(({ children }) =&gt; {
+    if (children) {
+      // add the children amount and reduce the parent.
+      length += children.length - 1;
+    }
+  });
+  return length;
+};
+&nbsp;
+export const reverseAllItemsOrder = items =&gt; {
+  const reversedItems = [...items].reverse();
+  return reversedItems.map(item =&gt; (item.children ? { ...item, children: item.children.reverse() } : item));
+};
+&nbsp;
+export const getItem = ({ isSortAsc, items, position, parentPosition }) =&gt; {
+  // if item is a child.
+  if (parentPosition !== undefined) {
+    const parent = items[getItemPosition(items, parentPosition, isSortAsc)];
+    return parent.children[getItemPosition(parent.children, position, isSortAsc)];
+  }
+  return items[getItemPosition(items, position, isSortAsc)];
+};
+&nbsp;
+export const getUpdatedSelectCount = ({ selectCount, checked, amount = 1 }) =&gt;
+  selectCount + (checked ? amount : <span class="branch-1 cbranch-no" title="branch not covered" >-1 * amount)</span>;
+&nbsp;
+export const itemHasParent = item =&gt; item.parentPosition !== undefined;
+&nbsp;
+export const itemHasChildren = item =&gt; item.children !== undefined;
+&nbsp;
+export const getItemPosition = (array, position, isSortAsc) =&gt; (isSortAsc ? position : <span class="branch-1 cbranch-no" title="branch not covered" >array.length - position - 1)</span>;
+&nbsp;
+export const toggleAllItems = (list, checked) =&gt; {
+  let toggleCount = 0;
+  list.forEach(item =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (item.disabled) {
+<span class="cstat-no" title="statement not covered" >      return;</span>
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (item.checked !== checked) {
+      item.checked = checked;
+      toggleCount += 1;
+    }
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (itemHasChildren(item)) {
+      let childrenToggleCount = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >      item.children.forEach(<span class="fstat-no" title="function not covered" >ch</span>ildItem =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (childItem.checked !== checked) {</span>
+<span class="cstat-no" title="statement not covered" >          childItem.checked = checked;</span>
+<span class="cstat-no" title="statement not covered" >          childrenToggleCount += 1;</span>
+        }
+      });
+<span class="cstat-no" title="statement not covered" >      if (childrenToggleCount &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >        toggleCount += childrenToggleCount - 1;</span>
+      }
+    }
+  });
+  return toggleCount;
+};
+&nbsp;
+export const isAllItemsChecked = (items, selectCount) =&gt; selectCount &gt; 0 &amp;&amp; selectCount === getItemsLength(items);
+&nbsp;
+export const isItemExistOnList = (list, itemLabel) =&gt; {
+  let parentIndex = null;
+  // find if the parent already exist on the list.
+  list.forEach((listItem, index) =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (listItem.label === itemLabel) {
+<span class="cstat-no" title="statement not covered" >      parentIndex = index;</span>
+    }
+  });
+  return { isParentExist: parentIndex !== null, parentIndex };
+};
+&nbsp;
+export const getFilterredItems = list =&gt; {
+  const filteredItems = [];
+  list.forEach(item =&gt; {
+    if (!isItemHidden(item)) {
+      filteredItems.push(item);
+    } else if (itemHasChildren(item)) {
+      const filteredChildren = [];
+      item.children.forEach(childItem =&gt; {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!isItemHidden(childItem)) {
+<span class="cstat-no" title="statement not covered" >          filteredChildren.push(childItem);</span>
+        }
+      });
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (filteredChildren.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >        filteredItems.push({ ...item, children: filteredChildren });</span>
+      }
+    }
+  });
+&nbsp;
+  return filteredItems;
+};
+&nbsp;
+export const getFilterredItemsLength = list =&gt; getItemsLength(getFilterredItems(list));
+&nbsp;
+export const getSelectedFilterredItemsLength = list =&gt; {
+  const filteredItems = getFilterredItems(list);
+  let selectedAmount = 0;
+  filteredItems.forEach(item =&gt; {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (isItemSelected(item)) {
+<span class="cstat-no" title="statement not covered" >      selectedAmount += 1;</span>
+<span class="cstat-no" title="statement not covered" >      if (itemHasChildren(item)) {</span>
+        let selectedChildrenAmount = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >        item.children.forEach(<span class="fstat-no" title="function not covered" >ch</span>ildItem =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          if (isItemSelected(childItem)) {</span>
+<span class="cstat-no" title="statement not covered" >            selectedChildrenAmount += 1;</span>
+          }
+        });
+<span class="cstat-no" title="statement not covered" >        if (selectedChildrenAmount) {</span>
+<span class="cstat-no" title="statement not covered" >          selectedAmount += selectedChildrenAmount - 1;</span>
+        }
+      }
+    }
+  });
+  return selectedAmount;
+};
+&nbsp;
+export const isItemSelected = item =&gt; item.checked;
+&nbsp;
+export const isItemHidden = item =&gt; item.hidden;
+&nbsp;
+export const isItemDisabled = <span class="fstat-no" title="function not covered" >it</span>em =&gt; <span class="cstat-no" title="statement not covered" >item.disabled;</span>
+&nbsp;
+export const getSelectedItems = list =&gt; {
+  const selectedItems = [];
+  list.forEach(item =&gt; {
+    if (isItemSelected(item)) {
+      selectedItems.push(item);
+    } else if (itemHasChildren(item)) {
+      const selectedChildren = [];
+      item.children.forEach(child =&gt; {
+        if (isItemSelected(child)) {
+          selectedChildren.push(child);
+        }
+      });
+      if (selectedChildren.length &gt; 0) {
+        selectedItems.push({ ...item, children: selectedChildren });
+      }
+    }
+  });
+  return selectedItems;
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

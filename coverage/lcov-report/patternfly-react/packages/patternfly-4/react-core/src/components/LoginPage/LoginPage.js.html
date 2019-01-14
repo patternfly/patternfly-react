@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-4/react-core/src/components/LoginPage/LoginPage.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-4/react-core/src/components/LoginPage</a> LoginPage.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>10/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>10/10</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import { css } from '@patternfly/react-styles';
+import PropTypes from 'prop-types';
+&nbsp;
+import Login from './Login';
+import LoginHeader from './LoginHeader';
+import LoginFooter from './LoginFooter';
+&nbsp;
+import LoginMainHeader from './LoginMainHeader';
+import LoginMainBody from './LoginMainBody';
+import LoginMainFooter from './LoginMainFooter';
+&nbsp;
+import { BackgroundImage } from '../BackgroundImage';
+import { Brand } from '../Brand';
+import { List } from '../List';
+&nbsp;
+const LoginListVariant = {
+  grid: 'grid',
+  inline: 'inline'
+};
+&nbsp;
+const propTypes = {
+  /** Anything that can be rendered inside of the LoginPage (e.g. &lt;LoginPageForm&gt;) */
+  children: PropTypes.node,
+  /** Additional classes added to the LoginPage. */
+  className: PropTypes.string,
+  /** Attribute that specifies the URL of the brand image for the LoginPage */
+  brandImgSrc: PropTypes.string,
+  /** Attribute that specifies the alt text of the brand image for the LoginPage. */
+  brandImgAlt: PropTypes.string,
+  /** Attribute that specifies the URL of the background image for the LoginPage */
+  backgroundImgSrc: PropTypes.string,
+  /** Attribute that specifies the alt text of the background image for the LoginPage. */
+  backgroundImgAlt: PropTypes.string,
+  /** Content rendered inside of the Text Component of the LoginPage */
+  textContent: PropTypes.string,
+  /** Items rendered inside of the Footer List Component of the LoginPage */
+  footerListItems: PropTypes.node,
+  /** Adds list variant styles for the Footer List component of the LoginPage.  Values are 'grid' or 'inline' */
+  footerListVariants: PropTypes.oneOf(Object.values(LoginListVariant)),
+  /** Language dropdown component for the Login Main Body Header of the LoginPage */
+  languageSelector: PropTypes.node,
+  /** Title for the Login Main Body Header of the LoginPage */
+  loginTitle: PropTypes.string.isRequired,
+  /** Login message that contains the Text, URL, and URL Text for the sign up for an account Login Message */
+  signUpForAccountMessage: PropTypes.node,
+  /** Content rendered inside of Social Media Login footer section . */
+  socialMediaLoginContent: PropTypes.node,
+  /** Additional props are spread to the Login component */
+  '': PropTypes.any
+};
+&nbsp;
+const defaultProps = {
+  children: null,
+  className: '',
+  brandImgSrc: '',
+  brandImgAlt: '',
+  backgroundImgSrc: '',
+  backgroundImgAlt: '',
+  footerListItems: null,
+  textContent: '',
+  footerListVariants: null,
+  languageSelector: null,
+  signUpForAccountMessage: null,
+  socialMediaLoginContent: null
+};
+&nbsp;
+const LoginPage = ({
+  className,
+  children,
+  brandImgSrc,
+  brandImgAlt,
+  backgroundImgSrc,
+  backgroundImgAlt,
+  textContent,
+  footerListItems,
+  footerListVariants,
+  languageSelector,
+  loginTitle,
+  signUpForAccountMessage,
+  socialMediaLoginContent,
+  ...props
+}) =&gt; {
+  const HeaderBrand = (
+    &lt;React.Fragment&gt;
+      &lt;Brand src={brandImgSrc} alt={brandImgAlt} /&gt;
+      &lt;p&gt;{textContent}&lt;/p&gt;
+    &lt;/React.Fragment&gt;
+  );
+  const Header = &lt;LoginHeader headerBrand={HeaderBrand} /&gt;;
+  const Footer = (
+    &lt;LoginFooter&gt;
+      &lt;List variant={footerListVariants}&gt;{footerListItems}&lt;/List&gt;
+    &lt;/LoginFooter&gt;
+  );
+&nbsp;
+  return (
+    &lt;React.Fragment&gt;
+      {backgroundImgSrc &amp;&amp; &lt;BackgroundImage src={backgroundImgSrc} alt={backgroundImgAlt} /&gt;}
+      &lt;Login header={Header} footer={Footer} {...props} className={css(className)}&gt;
+        &lt;LoginMainHeader title={loginTitle} dropdown={languageSelector} subtitle={signUpForAccountMessage} /&gt;
+        &lt;LoginMainBody&gt;{children}&lt;/LoginMainBody&gt;
+        {socialMediaLoginContent &amp;&amp; &lt;LoginMainFooter&gt;{socialMediaLoginContent}&lt;/LoginMainFooter&gt;}
+      &lt;/Login&gt;
+    &lt;/React.Fragment&gt;
+  );
+};
+&nbsp;
+LoginPage.propTypes = propTypes;
+LoginPage.defaultProps = defaultProps;
+&nbsp;
+export default LoginPage;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../../sorter.js"></script>
+</body>
+</html>

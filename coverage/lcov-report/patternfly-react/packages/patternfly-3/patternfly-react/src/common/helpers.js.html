@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for patternfly-react/packages/patternfly-3/patternfly-react/src/common/helpers.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../../../index.html">All files</a> / <a href="index.html">patternfly-react/packages/patternfly-3/patternfly-react/src/common</a> helpers.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.7% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>39/43</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">87.5% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>14/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.48% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>19/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">90.91% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>30/33</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21663x</span>
+<span class="cline-any cline-yes">21699x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">837x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">1797x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">1789x</span>
+<span class="cline-any cline-yes">1789x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">235x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
+import { default as Timer } from './Timer';
+import { closest as closestPolyfill } from './closestPolyfill';
+import { default as controlled } from './controlled';
+import { patternfly, c3ChartDefaults, layout } from './patternfly';
+&nbsp;
+/** Equivalent to calling `this.someMethod = this.someMethod.bind(this)` for every method name in the methods array. */
+export const bindMethods = (context, methods) =&gt; {
+  // eslint-disable-next-line no-console
+  console.warn(`
+   bindMethods usage is deprecated in favor of class methods.
+   bindMethods will be removed in the next major release
+   `);
+  methods.forEach(method =&gt; {
+    context[method] = context[method].bind(context);
+  });
+};
+&nbsp;
+/** Implementation of the debounce function */
+export const debounce = (func, wait) =&gt; {
+  let timeout;
+  function <span class="fstat-no" title="function not covered" >innerFunc(</span>...args) {
+    const context = <span class="cstat-no" title="statement not covered" >this;</span>
+<span class="cstat-no" title="statement not covered" >    clearTimeout(timeout);</span>
+<span class="cstat-no" title="statement not covered" >    timeout = setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >func.apply(context, args),</span> wait);</span>
+  }
+  return innerFunc;
+};
+&nbsp;
+/** Returns true if propName is a non-null, defined property of the props object (can be any object, not just React props). */
+export const propExists = (props, propName) =&gt; props &amp;&amp; props.hasOwnProperty(propName) &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >props[propName] != null;</span>
+&nbsp;
+/** Given two objects (props and state), returns the value of propName from props if present, or from state otherwise. */
+export const propOrState = (props, state, propName) =&gt;
+  propExists(props, propName) ? <span class="branch-0 cbranch-no" title="branch not covered" >props[propName] </span>: state[propName];
+&nbsp;
+/** Returns a subset of the given object including only the given keys, with values optionally replaced by a fn. */
+export const selectKeys = (obj, keys, fn = val =&gt; val) =&gt;
+  keys.reduce((values, key) =&gt; ({ ...values, [key]: fn(obj[key]) }), {});
+&nbsp;
+/** Returns a subset of the given object with a validator function applied to its keys. */
+export const filterKeys = (obj, validator) =&gt; selectKeys(obj, Object.keys(obj).filter(validator));
+&nbsp;
+/** Returns a subset of the given object with the given keys left out. */
+export const excludeKeys = (obj, keys) =&gt; filterKeys(obj, key =&gt; !keys.includes(key));
+&nbsp;
+/** Returns the given React children prop as a regular array of React nodes. */
+export const childrenToArray = children =&gt;
+  children &amp;&amp; React.Children.count(children) &gt; 0 &amp;&amp; React.Children.toArray(children);
+&nbsp;
+/** Filters the given React children prop with the given validator function. Returns an array of nodes. */
+export const filterChildren = (children, validator) =&gt; {
+  const array = childrenToArray(children);
+  return array &amp;&amp; array.filter(validator);
+};
+&nbsp;
+/** Given a React children prop, finds the first child node to pass the validator function. */
+export const findChild = (children, validator) =&gt; {
+  const array = childrenToArray(children);
+  return array &amp;&amp; array.find(validator);
+};
+&nbsp;
+/** Returns true if there is at least one of propNames with a different value in newProps than in oldProps. */
+export const propsChanged = (propNames, oldProps, newProps) =&gt;
+  propNames.some(propName =&gt; oldProps[propName] !== newProps[propName]);
+&nbsp;
+/** Returns true if the component has the desired displayName value */
+export const hasDisplayName = (component, displayName) =&gt;
+  component &amp;&amp; component.type &amp;&amp; component.type.displayName === displayName;
+&nbsp;
+/** Returns an object with the same keys as the given one, but all null values. */
+export const nullValues = obj =&gt; selectKeys(obj, Object.keys(obj), () =&gt; null);
+&nbsp;
+export const noop = Function.prototype;
+&nbsp;
+export const KEY_CODES = {
+  TAB_KEY: 9,
+  ENTER_KEY: 13,
+  ESCAPE_KEY: 27,
+  SHIFT: 16,
+  A: 65,
+  Z: 90,
+  NUMPAD: { 0: 97 },
+  F11: 122
+};
+export const KEYS = {
+  ENTER: 'Enter',
+  CAPSLOCK: 'CapsLock',
+  SPACE: ' ',
+  ARROW_LEFT: 'ArrowLeft',
+  ARROW_RIGHT: 'ArrowRight',
+  ARROW_DOWN: 'ArrowDown',
+  ARROW_UP: 'ArrowUp',
+  HOME: 'Home',
+  END: 'End'
+};
+&nbsp;
+export const helpers = {
+  Timer,
+  closestPolyfill,
+  controlled,
+  patternfly,
+  c3ChartDefaults,
+  layout,
+  debounce,
+  propExists,
+  propOrState,
+  selectKeys,
+  filterKeys,
+  excludeKeys,
+  childrenToArray,
+  filterChildren,
+  findChild,
+  propsChanged,
+  hasDisplayName,
+  nullValues,
+  noop,
+  KEY_CODES,
+  KEYS
+};
+&nbsp;
+export default helpers;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jan 14 2019 10:05:59 GMT-0500 (EST)
+</div>
+</div>
+<script src="../../../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../../../sorter.js"></script>
+</body>
+</html>
