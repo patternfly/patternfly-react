@@ -99,8 +99,8 @@ test('move child items works properly', () => {
     .find('Icon')
     .first();
   rightArrow.simulate('click');
-  expect(component.state().right.items[0].checked).toBeTruthy();
-  expect(component.state().right.items[0].children[0].checked).toBeTruthy();
+  expect(component.state().right.items[0].checked).toBeFalsy();
+  expect(component.state().right.items[0].children[0].checked).toBeFalsy();
 });
 
 test('dual-list filter works ', () => {
@@ -147,7 +147,6 @@ test('transitions between selectors works!', () => {
     .first();
   const arrows = component.find('DualListArrows').find('Icon');
   const rightArrow = arrows.at(0);
-  const leftArrow = arrows.at(1);
   const { 'data-side': side, 'data-position': position } = firstItemCheckbox.props();
   const mockedEvent = { target: { checked: true, dataset: { position, side } } };
   const getState = () => component.state();
@@ -157,9 +156,6 @@ test('transitions between selectors works!', () => {
   rightArrow.simulate('click');
   expect(getState().left.items).toHaveLength(1);
   expect(getState().right.items).toHaveLength(2);
-  leftArrow.simulate('click');
-  expect(getState().left.items).toHaveLength(2);
-  expect(getState().right.items).toHaveLength(1);
 });
 
 test('sorting works ! ', () => {
