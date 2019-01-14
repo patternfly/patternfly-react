@@ -1,5 +1,51 @@
 
-## Change Log (2019-01-11)
+## Change Log (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1173](https://github.com/patternfly/patternfly-react/pull/1173) PF4: Add missing attribute isPlain to Dropdown ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 1
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+
+
+## patternfly4-react-lerna-root@1.35.2 (2019-01-11)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1167](https://github.com/patternfly/patternfly-react/pull/1167) fix(ModalContent): Hide footer when no actions ([@rebeccaalpert](https://github.com/rebeccaalpert))
+  * [#1169](https://github.com/patternfly/patternfly-react/pull/1169) fix(dropdown): add span wrapper for dropdown toggle text ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-table@0.2.47 (2019-01-11)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1167](https://github.com/patternfly/patternfly-react/pull/1167) fix(ModalContent): Hide footer when no actions ([@rebeccaalpert](https://github.com/rebeccaalpert))
+  * [#1169](https://github.com/patternfly/patternfly-react/pull/1169) fix(dropdown): add span wrapper for dropdown toggle text ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-docs@3.19.56 (2019-01-11)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1167](https://github.com/patternfly/patternfly-react/pull/1167) fix(ModalContent): Hide footer when no actions ([@rebeccaalpert](https://github.com/rebeccaalpert))
+  * [#1169](https://github.com/patternfly/patternfly-react/pull/1169) fix(dropdown): add span wrapper for dropdown toggle text ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-core@1.45.2 (2019-01-11)
 
 #### :bug: Bug Fix
 * `patternfly-4`

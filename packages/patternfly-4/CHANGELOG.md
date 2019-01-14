@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.35.3"></a>
+## [1.35.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.35.2...patternfly4-react-lerna-root@1.35.3) (2019-01-14)
+
+
+### Bug Fixes
+
+* PF4: Add missing attribute isPlain to Dropdown ([#1173](https://github.com/patternfly/patternfly-react/issues/1173)) ([72210f5](https://github.com/patternfly/patternfly-react/commit/72210f5))
+
+
+
+
 <a name="1.35.2"></a>
 ## [1.35.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.35.0...patternfly4-react-lerna-root@1.35.2) (2019-01-11)
 
