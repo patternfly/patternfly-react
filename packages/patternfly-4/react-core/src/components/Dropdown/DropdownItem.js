@@ -18,6 +18,11 @@ const propTypes = {
   isHovered: PropTypes.bool,
   /** Default hyperlink location */
   href: PropTypes.string,
+  index: PropTypes.number,
+  context: PropTypes.shape({
+    keyHandler: PropTypes.func,
+    sendRef: PropTypes.func
+  }),
   /** Additional props are spread to the container component */
   '': PropTypes.any,
   /** Callback for click event */
@@ -31,31 +36,59 @@ const defaultProps = {
   component: 'a',
   isDisabled: false,
   href: '#',
-  onClick: Function.prototype
+  onClick: Function.prototype,
+  index: -1,
+  context: {
+    keyHandler: Function.prototype,
+    sendRef: Function.prototype
+  }
 };
 
 class DropdownItem extends React.Component {
+  ref = React.createRef();
+
+  componentDidMount() {
+    this.props.context.sendRef(this.props.index, this.ref.current, this.props.isDisabled);
+  }
+
+  onKeyDown = event => {
+    // Detected key press on this item, notify the menu parent so that the appropriate
+    // item can be focused
+    if (event.key === 'Tab') return;
+    event.preventDefault();
+    if (event.key === 'ArrowUp') {
+      this.props.context.keyHandler(this.props.index, 'up');
+    } else if (event.key === 'ArrowDown') {
+      this.props.context.keyHandler(this.props.index, 'down');
+    } else if (event.key === 'Enter') {
+      this.ref.current.click && this.ref.current.click();
+    }
+  };
+
   render() {
     const {
       className,
       children,
       isHovered,
+      context,
       onClick,
       component: Component,
       isDisabled,
-      ...additionalProps
+      index,
+      ...props
     } = this.props;
+    const additionalProps = props;
     if (Component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
       additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
     } else if (Component === 'button') {
       additionalProps.disabled = isDisabled;
+      additionalProps.type = additionalProps.type || 'button';
     }
-
     return (
       <DropdownContext.Consumer>
         {onSelect => (
-          <li>
+          <li role="none">
             {React.isValidElement(children) ? (
               React.Children.map(children, child =>
                 React.cloneElement(child, {
@@ -70,6 +103,8 @@ class DropdownItem extends React.Component {
               <Component
                 {...additionalProps}
                 className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
+                ref={this.ref}
+                onKeyDown={this.onKeyDown}
                 onClick={event => {
                   if (!isDisabled) {
                     if (Component === 'button') onClick && onClick(event);

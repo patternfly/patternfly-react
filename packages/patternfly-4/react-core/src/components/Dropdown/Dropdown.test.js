@@ -81,7 +81,7 @@ describe('dropdown', () => {
   test('basic', () => {
     const view = mount(
       <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
-        BASIC
+        <div>BASIC</div>
       </Dropdown>
     );
     expect(view).toMatchSnapshot();
@@ -143,7 +143,7 @@ describe('KebabToggle', () => {
   test('basic', () => {
     const view = mount(
       <Dropdown isOpen toggle={<KebabToggle id="Dropdown Toggle" />}>
-        BASIC
+        <div>BASIC</div>
       </Dropdown>
     );
     expect(view).toMatchSnapshot();
@@ -179,7 +179,7 @@ describe('API', () => {
         isOpen
         toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}
       >
-        Children items
+        <div>Children items</div>
       </Dropdown>
     );
     expect(myMock).toBeCalled();
@@ -203,7 +203,7 @@ describe('API', () => {
     global.console = { error: myMock };
     mount(
       <Dropdown isOpen toggle={<DropdownToggle id="Dropdown Toggle">Dropdown</DropdownToggle>}>
-        Children items
+        <div>Children items</div>
       </Dropdown>
     );
     expect(myMock).not.toBeCalled();
