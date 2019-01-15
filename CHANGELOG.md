@@ -1,6 +1,50 @@
 
 ## Change Log (2019-01-15)
 
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## patternfly3-react-lerna-root@7.19.6 (2019-01-15)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1190](https://github.com/patternfly/patternfly-react/pull/1190) fix(DualList): refactor helpers functions signatures ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.29.4 (2019-01-15)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1190](https://github.com/patternfly/patternfly-react/pull/1190) fix(DualList): refactor helpers functions signatures ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.16.5 (2019-01-15)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1190](https://github.com/patternfly/patternfly-react/pull/1190) fix(DualList): refactor helpers functions signatures ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.10.12 (2019-01-15)
+
 #### :house: Internal
 * `patternfly-3`
   * [#1190](https://github.com/patternfly/patternfly-react/pull/1190) fix(DualList): refactor helpers functions signatures ([@Laviro](https://github.com/Laviro))

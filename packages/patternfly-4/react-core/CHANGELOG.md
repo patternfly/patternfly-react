@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.46.0"></a>
+# [1.46.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.45.4...@patternfly/react-core@1.46.0) (2019-01-15)
+
+
+### Features
+
+* **umd modules:** adds babel-transform-es2015-modules-umd for umd module support ([#1150](https://github.com/patternfly/patternfly-react/issues/1150)) ([7b4fde8](https://github.com/patternfly/patternfly-react/commit/7b4fde8))
+
+
+
+
 <a name="1.45.4"></a>
 ## [1.45.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.45.3...@patternfly/react-core@1.45.4) (2019-01-14)
 

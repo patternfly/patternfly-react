@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.36.0"></a>
+# [1.36.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.35.4...patternfly4-react-lerna-root@1.36.0) (2019-01-15)
+
+
+### Features
+
+* **umd modules:** adds babel-transform-es2015-modules-umd for umd module support ([#1150](https://github.com/patternfly/patternfly-react/issues/1150)) ([7b4fde8](https://github.com/patternfly/patternfly-react/commit/7b4fde8))
+
+
+
+
 <a name="1.35.4"></a>
 ## [1.35.4](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.35.3...patternfly4-react-lerna-root@1.35.4) (2019-01-14)
 
