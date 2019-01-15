@@ -87,7 +87,7 @@ export const getDefaultProps = () => ({
   isMainChecked: false
 });
 
-export const getCheckedAmount = ({ items }) => {
+export const getCheckedAmount = items => {
   let checkedAmount = 0;
   items.forEach(item => {
     if (isItemSelected(item)) {
@@ -117,19 +117,19 @@ export const adjustProps = ({ left, right, ...props }) => {
       ...defaultProps,
       ...left,
       items: leftItems,
-      selectCount: getCheckedAmount({ ...left })
+      selectCount: getCheckedAmount(leftItems)
     },
     right: {
       ...defaultProps,
       ...right,
       items: rightItems,
-      selectCount: getCheckedAmount({ ...right })
+      selectCount: getCheckedAmount(rightItems)
     }
   };
 };
 
 export const isAllChildrenChecked = ({ children }) =>
-  children.filter(({ checked }) => checked).length === children.length;
+  children && children.filter(({ checked }) => checked).length === children.length;
 
 export const getItemsLength = items => {
   let { length } = items;
@@ -150,7 +150,7 @@ export const reverseAllItemsOrder = items => {
   return reversedItems.map(item => (item.children ? { ...item, children: item.children.reverse() } : item));
 };
 
-export const getItem = ({ isSortAsc, items, position, parentPosition }) => {
+export const getItem = (isSortAsc, items, position, parentPosition) => {
   // if item is a child.
   if (parentPosition !== undefined) {
     const parent = items[getItemPosition(items, parentPosition, isSortAsc)];
@@ -159,7 +159,7 @@ export const getItem = ({ isSortAsc, items, position, parentPosition }) => {
   return items[getItemPosition(items, position, isSortAsc)];
 };
 
-export const getUpdatedSelectCount = ({ selectCount, checked, amount = 1 }) =>
+export const getUpdatedSelectCount = (selectCount, checked, amount = 1) =>
   selectCount + (checked ? amount : -1 * amount);
 
 export const itemHasParent = item => item.parentPosition !== undefined;
