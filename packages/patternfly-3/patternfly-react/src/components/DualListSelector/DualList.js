@@ -39,19 +39,19 @@ class DualList extends React.Component {
       [side]: { selectCount: originalSelectCount, items: originalItems, isSortAsc, filterTerm }
     } = this.props;
     const items = cloneDeep(originalItems);
-    const item = getItem({ isSortAsc, position, items, parentPosition });
+    const item = getItem(isSortAsc, items, position, parentPosition);
     let selectCount = originalSelectCount;
     item.checked = checked;
     if (itemHasParent(item)) {
-      const parent = getItem({ isSortAsc, position: parentPosition, items });
+      const parent = getItem(isSortAsc, items, parentPosition);
       parent.checked = isAllChildrenChecked(parent);
-      selectCount = getUpdatedSelectCount({ selectCount, checked });
+      selectCount = getUpdatedSelectCount(selectCount, checked);
     } else if (itemHasChildren(item)) {
       const { children } = item;
       toggleAllItems(children, checked);
-      selectCount = getUpdatedSelectCount({ selectCount, checked, amount: children.length });
+      selectCount = getUpdatedSelectCount(selectCount, checked, children.length);
     } else {
-      selectCount = getUpdatedSelectCount({ selectCount, checked });
+      selectCount = getUpdatedSelectCount(selectCount, checked);
     }
     let isMainChecked = false;
     if (filterTerm) {
