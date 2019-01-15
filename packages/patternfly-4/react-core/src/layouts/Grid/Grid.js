@@ -57,7 +57,11 @@ const Grid = ({ children, className, gutter, span, ...props }) => {
 
   return (
     <div
-      className={css(...classes, gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter), className)}
+      className={css(
+        ...classes,
+        gutter && getGutterModifier(styles, gutter, styles.modifiers && styles.modifiers.gutter),
+        className
+      )}
       {...props}
     >
       {children}
