@@ -4,7 +4,6 @@ const fs = require('fs-extra'); //eslint-disable-line
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }) => {
   // Enable hot reloading on source code changes
-  const PRODUCTION = !stage.includes(`develop`);
   const pfStylesTest = /patternfly-next.*(components|layouts|utilities).*\.css$/;
   actions.setWebpackConfig({
     module: {
