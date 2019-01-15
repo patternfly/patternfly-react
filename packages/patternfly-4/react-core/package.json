@@ -40,10 +40,11 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && yarn build:generate:dts && yarn build:tsd:copy",
+    "build": "yarn build:babel && yarn build:generate:dts && yarn build:tsd:copy && yarn build:umd",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js --extensions \".css,.js,jsx,.ts,.tsx\"",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions \".css,.js,jsx,.ts,.tsx\"",
+    "build:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd --extensions \".css,.js,jsx,.ts,.tsx\"",
     "build:generate:dts": "tsc -p src/tsconfig.dts.json",
     "build:typecheck": "tsc",
     "build:tsd:copy": "node ./scripts/copyTS.js",
@@ -68,6 +69,7 @@
     "@types/react": "^16.7.13",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^22.4.3",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-transform-imports": "^1.5.0",
     "babel-plugin-typescript-to-proptypes": "^0.13.0",
     "css": "^2.2.3",
