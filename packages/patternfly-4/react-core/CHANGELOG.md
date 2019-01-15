@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.47.0"></a>
+# [1.47.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.46.0...@patternfly/react-core@1.47.0) (2019-01-15)
+
+
+### Features
+
+* **Chip:** Add the Chip component to PF4 ([#1180](https://github.com/patternfly/patternfly-react/issues/1180)) ([752adae](https://github.com/patternfly/patternfly-react/commit/752adae))
+
+
+
+
 <a name="1.46.0"></a>
 # [1.46.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.45.4...@patternfly/react-core@1.46.0) (2019-01-15)
 
