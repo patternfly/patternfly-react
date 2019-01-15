@@ -186,22 +186,31 @@ class DualList extends React.Component {
     if (sideItemsWithRemainChildren.length > 0) {
       sideItems.push(...sideItemsWithRemainChildren);
     }
-    sideItems = arrangeArray({ ...sideState, items: sideItems });
-    otherSideItems = arrangeArray({ ...otherSideState, items: otherSideItems });
-
     const updatedSideState = {
       ...sideState,
-      items: sideItems,
-      selectCount: 0
+      selectCount: 0,
+      isMainChecked: false
     };
 
     const updatedOtherSideState = {
       ...otherSideState,
-      items: otherSideItems,
-      selectCount: sideState.selectCount + otherSideState.selectCount
+      selectCount: 0,
+      isMainChecked: false
     };
 
-    this.props.onChange({ [side]: updatedSideState, [otherSide]: updatedOtherSideState });
+    sideItems = arrangeArray({ ...updatedSideState, items: sideItems });
+    otherSideItems = arrangeArray({ ...updatedOtherSideState, items: otherSideItems, resetAllSelected: true });
+
+    this.props.onChange({
+      [side]: {
+        ...updatedSideState,
+        items: sideItems
+      },
+      [otherSide]: {
+        ...updatedOtherSideState,
+        items: otherSideItems
+      }
+    });
   };
 
   leftArrowClick = () => {
