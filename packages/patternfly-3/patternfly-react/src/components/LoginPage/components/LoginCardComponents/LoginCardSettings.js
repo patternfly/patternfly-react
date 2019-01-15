@@ -6,12 +6,12 @@ import { FormGroup } from '../../../../index';
 import ForgotPassword from './LoginCardForgotPassword';
 
 const LoginCardSettings = ({ rememberMe, forgotPassword, className, ...props }) =>
-  (rememberMe || forgotPassword) && (
+  rememberMe.label || forgotPassword.label ? (
     <FormGroup {...props} className={classNames('login-pf-settings', className)}>
       <RememberMe {...rememberMe} />
       <ForgotPassword {...forgotPassword} />
     </FormGroup>
-  );
+  ) : null;
 
 LoginCardSettings.propTypes = {
   /** Additional css classes. */
