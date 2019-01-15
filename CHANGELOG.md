@@ -1,5 +1,52 @@
 
-## Change Log (2019-01-14)
+## Change Log (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1171](https://github.com/patternfly/patternfly-react/pull/1171) fix(Login Page): fix settings visibility ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* [#1143](https://github.com/patternfly/patternfly-react/pull/1143) chore(generator): update generator to support typescript files ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.35.4 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1186](https://github.com/patternfly/patternfly-react/pull/1186) fix(Button): make aria-label optional prop ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 2
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.49 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1186](https://github.com/patternfly/patternfly-react/pull/1186) fix(Button): make aria-label optional prop ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 2
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.58 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1186](https://github.com/patternfly/patternfly-react/pull/1186) fix(Button): make aria-label optional prop ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 2
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.45.4 (2019-01-14)
 
 #### :bug: Bug Fix
 * `patternfly-4`

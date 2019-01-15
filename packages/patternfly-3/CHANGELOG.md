@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.19.4"></a>
+## [7.19.4](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.3...patternfly3-react-lerna-root@7.19.4) (2019-01-15)
+
+
+### Bug Fixes
+
+* **Login Page:** fix settings visibility ([#1171](https://github.com/patternfly/patternfly-react/issues/1171)) ([3f79c48](https://github.com/patternfly/patternfly-react/commit/3f79c48))
+
+
+
+
 <a name="7.19.3"></a>
 ## [7.19.3](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.2...patternfly3-react-lerna-root@7.19.3) (2019-01-09)
 
