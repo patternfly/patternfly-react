@@ -3,6 +3,58 @@
 
 #### :bug: Bug Fix
 * `patternfly-3`
+  * [#1178](https://github.com/patternfly/patternfly-react/pull/1178) fix(DualList): de-Select items after the transition between lists. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.19.4 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1171](https://github.com/patternfly/patternfly-react/pull/1171) fix(Login Page): fix settings visibility ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* [#1143](https://github.com/patternfly/patternfly-react/pull/1143) chore(generator): update generator to support typescript files ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.29.2 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1171](https://github.com/patternfly/patternfly-react/pull/1171) fix(Login Page): fix settings visibility ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* [#1143](https://github.com/patternfly/patternfly-react/pull/1143) chore(generator): update generator to support typescript files ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.16.3 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1171](https://github.com/patternfly/patternfly-react/pull/1171) fix(Login Page): fix settings visibility ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* [#1143](https://github.com/patternfly/patternfly-react/pull/1143) chore(generator): update generator to support typescript files ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.10.10 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
   * [#1171](https://github.com/patternfly/patternfly-react/pull/1171) fix(Login Page): fix settings visibility ([@Laviro](https://github.com/Laviro))
 
 #### :house: Internal

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="7.19.5"></a>
+## [7.19.5](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.4...patternfly3-react-lerna-root@7.19.5) (2019-01-15)
+
+
+### Bug Fixes
+
+* **DualList:** de-Select items after the transition between lists. ([#1178](https://github.com/patternfly/patternfly-react/issues/1178)) ([91c33bf](https://github.com/patternfly/patternfly-react/commit/91c33bf))
+
+
+
+
 <a name="7.19.4"></a>
 ## [7.19.4](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.3...patternfly3-react-lerna-root@7.19.4) (2019-01-15)
 
