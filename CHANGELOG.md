@@ -1,5 +1,47 @@
 
-## Change Log (2019-01-15)
+## patternfly4-react-lerna-root@1.36.0 (2019-01-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-table@0.2.50 (2019-01-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-docs@3.19.59 (2019-01-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-core@1.46.0 (2019-01-15)
 
 #### :rocket: New Feature
 * `patternfly-4`
