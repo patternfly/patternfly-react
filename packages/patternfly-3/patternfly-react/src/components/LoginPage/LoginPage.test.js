@@ -72,7 +72,6 @@ const createProps = () => {
           href: '#',
           onClick: mockFunction
         },
-        disableSubmit: false,
         submitText: card.form.submitText
       }
     }
@@ -177,6 +176,10 @@ test('Submit while inputs are empty cause specific errors to be shown and onChan
   const component = mount(<LoginPage {...createProps()} />);
   const usernameElement = component.find('input[type="email"]').at(0);
   const passwordElement = component.find('input[type="password"]').at(0);
+  const submit = component.find('button[type="submit"]').at(0);
+
+  expect(submit.props().disabled).toEqual(true);
+
   component
     .find('form')
     .at(0)
@@ -197,15 +200,6 @@ test('Submit while inputs are empty cause specific errors to be shown and onChan
       .props().showError
   ).toEqual(true);
 
-  usernameElement.simulate('change', { target: { value: 'Ron' } });
-
-  expect(
-    component
-      .find(Input)
-      .at(0)
-      .props().showError
-  ).toEqual(false);
-
   // check password field
   expect(
     component
@@ -220,6 +214,15 @@ test('Submit while inputs are empty cause specific errors to be shown and onChan
       .at(1)
       .props().showError
   ).toEqual(true);
+
+  usernameElement.simulate('change', { target: { value: 'Ron' } });
+
+  expect(
+    component
+      .find(Input)
+      .at(0)
+      .props().showError
+  ).toEqual(false);
 
   passwordElement.simulate('change', { target: { value: 'Q!w2e3' } });
 

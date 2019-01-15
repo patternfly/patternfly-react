@@ -94,7 +94,6 @@ const createProps = () => {
           href: '#',
           onClick: e => storyAction(e, 'Forgot password was clicked')
         },
-        disableSubmit: false,
         submitText: card.form.submitText,
         onSubmit: (e, onError) => {
           onError(card.form.error);
