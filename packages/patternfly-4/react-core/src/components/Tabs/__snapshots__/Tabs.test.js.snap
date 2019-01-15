@@ -13,18 +13,27 @@ exports[`onSelect callback called when tab selected 1`] = `
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
@@ -32,6 +41,7 @@ exports[`onSelect callback called when tab selected 1`] = `
 .pf-c-tabs__list {
   display: flex;
   position: relative;
+  max-width: 100%;
   overflow-x: auto;
 }
 .pf-c-tabs__scroll-button {
@@ -183,18 +193,27 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
@@ -202,6 +221,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
 .pf-c-tabs__list {
   display: flex;
   position: relative;
+  max-width: 100%;
   overflow-x: auto;
 }
 .pf-c-tabs__scroll-button {
@@ -386,18 +406,27 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
@@ -405,6 +434,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
 .pf-c-tabs__list {
   display: flex;
   position: relative;
+  max-width: 100%;
   overflow-x: auto;
 }
 .pf-c-tabs__scroll-button {
@@ -589,18 +619,27 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
@@ -608,6 +647,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
 .pf-c-tabs__list {
   display: flex;
   position: relative;
+  max-width: 100%;
   overflow-x: auto;
 }
 .pf-c-tabs__scroll-button {
@@ -792,18 +832,27 @@ exports[`should render filled tabs 1`] = `
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
@@ -811,6 +860,7 @@ exports[`should render filled tabs 1`] = `
 .pf-c-tabs__list {
   display: flex;
   position: relative;
+  max-width: 100%;
   overflow-x: auto;
 }
 .pf-c-tabs__scroll-button {
@@ -947,18 +997,27 @@ exports[`should render secondary tabs 1`] = `
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
@@ -966,6 +1025,7 @@ exports[`should render secondary tabs 1`] = `
 .pf-c-tabs__list {
   display: flex;
   position: relative;
+  max-width: 100%;
   overflow-x: auto;
 }
 .pf-c-tabs__scroll-button {
@@ -1135,18 +1195,27 @@ exports[`should render simple tabs 1`] = `
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
 }
 .pf-c-tabs__button {
   display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
@@ -1154,6 +1223,7 @@ exports[`should render simple tabs 1`] = `
 .pf-c-tabs__list {
   display: flex;
   position: relative;
+  max-width: 100%;
   overflow-x: auto;
 }
 .pf-c-tabs__scroll-button {
