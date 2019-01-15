@@ -2,8 +2,37 @@ const path = require(`path`);
 const paramCase = require('param-case');
 const fs = require('fs-extra'); //eslint-disable-line
 
-exports.onCreateWebpackConfig = ({ stage, actions, plugins, getConfig }) => {
+exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }) => {
+  // Enable hot reloading on source code changes
+  const PRODUCTION = !stage.includes(`develop`);
+  const pfStylesTest = /patternfly-next.*(components|layouts|utilities).*\.css$/;
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: pfStylesTest,
+          use: [{ loader: 'babel-loader' }, { loader: require.resolve('@patternfly/react-styles/loader') }]
+        },
+        {
+          test: /\.css$/,
+          use: [loaders.miniCssExtract(), loaders.css({ importLoaders: 1 })],
+          exclude: pfStylesTest
+        }
+      ]
+    },
+    resolve: {
+      alias: {
+        '@patternfly/react-charts': path.resolve(__dirname, '../react-charts/src'),
+        '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
+        '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),
+        '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system/src'),
+        react: path.resolve(__dirname, 'node_modules/react'),
+        'react-dom': path.resolve(__dirname, 'node_modules/react-dom')
+      }
+    }
+  });
   const configAfter = getConfig();
+  configAfter.module.rules = configAfter.module.rules.filter(rule => rule.oneOf === undefined);
   const minimizer = [
     plugins.minifyJs({
       terserOptions: {

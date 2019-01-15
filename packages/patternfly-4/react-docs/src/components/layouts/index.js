@@ -5,8 +5,25 @@ import { graphql, StaticQuery } from 'gatsby';
 import * as DocsFiles from '../../../.tmp';
 import Page from '../page';
 import Navigation from '../navigation';
+import { injectGlobal } from 'emotion';
 
-import './index.css';
+injectGlobal(`
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    background-color: #ececec;
+  }
+
+  #___gatsby {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+`);
 
 const propTypes = {
   children: PropTypes.node.isRequired,
