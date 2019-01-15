@@ -1,0 +1,28 @@
+{
+  "name": "react-integration",
+  "version": "1.0.0",
+  "description": "Integration testing for PF4 using demo applications",
+  "main": "lib/index.js",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "scripts": {
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
