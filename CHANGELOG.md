@@ -1,6 +1,46 @@
 
 ## Change Log (2019-01-15)
 
+#### :house: Internal
+* `patternfly-3`
+  * [#1190](https://github.com/patternfly/patternfly-react/pull/1190) fix(DualList): refactor helpers functions signatures ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.19.5 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1178](https://github.com/patternfly/patternfly-react/pull/1178) fix(DualList): de-Select items after the transition between lists. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.29.3 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1178](https://github.com/patternfly/patternfly-react/pull/1178) fix(DualList): de-Select items after the transition between lists. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.16.4 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1178](https://github.com/patternfly/patternfly-react/pull/1178) fix(DualList): de-Select items after the transition between lists. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.10.11 (2019-01-15)
+
 #### :bug: Bug Fix
 * `patternfly-3`
   * [#1178](https://github.com/patternfly/patternfly-react/pull/1178) fix(DualList): de-Select items after the transition between lists. ([@Laviro](https://github.com/Laviro))
