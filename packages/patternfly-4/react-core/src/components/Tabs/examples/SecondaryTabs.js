@@ -26,14 +26,14 @@ class SecondaryTabs extends React.Component {
       <Tabs activeKey={this.state.activeTabKey1} onSelect={this.handleTabClickFirst}>
         <Tab eventKey={0} title="Tab item 1">
           <Tabs activeKey={this.state.activeTabKey2} isSecondary onSelect={this.handleTabClickSecond}>
-            <Tab eventKey={10} title="Secondary Tab 1">
-              Secondary Tab 1 section
+            <Tab eventKey={10} title="Secondary tab item 1">
+              Secondary tab item 1 item section
             </Tab>
-            <Tab eventKey={11} title="Secondary Tab 2">
-              Secondary Tab 2 section
+            <Tab eventKey={11} title="Secondary tab item 2">
+              Secondary tab item 2 section
             </Tab>
-            <Tab eventKey={12} title="Secondary Tab 3">
-              Secondary Tab 3 section
+            <Tab eventKey={12} title="Secondary tab item 3">
+              Secondary tab item 3 section
             </Tab>
           </Tabs>
         </Tab>
