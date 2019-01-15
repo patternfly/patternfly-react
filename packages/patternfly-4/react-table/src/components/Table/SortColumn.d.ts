@@ -1,5 +1,5 @@
 import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
-import { OneOf, Omit } from '../../../react-core/src/typeUtils';
+import { OneOf, Omit } from '../../../../react-core/src/typeUtils';
 
 export const SortByDirection: {
   asc: 'asc',

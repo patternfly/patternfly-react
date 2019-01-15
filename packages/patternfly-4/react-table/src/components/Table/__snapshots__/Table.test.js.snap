@@ -2468,6 +2468,7 @@ exports[`Actions table 1`] = `
                               >
                                 <Kebab
                                   aria-label="Actions"
+                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-0"
                                   isActive={false}
@@ -2476,11 +2477,13 @@ exports[`Actions table 1`] = `
                                   isOpen={false}
                                   isPlain={true}
                                   key=".0"
+                                  onEnter={[Function]}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <DropdownToggle
                                     aria-label="Actions"
+                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-0"
                                     isActive={false}
@@ -2488,15 +2491,18 @@ exports[`Actions table 1`] = `
                                     isHovered={false}
                                     isOpen={false}
                                     isPlain={true}
+                                    onEnter={[Function]}
                                     onToggle={[Function]}
                                     parentRef={null}
                                   >
                                     <button
                                       aria-expanded={false}
+                                      aria-haspopup={true}
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-0"
                                       onClick={[Function]}
+                                      onKeyDown={[Function]}
                                       type="button"
                                     >
                                       <EllipsisVIcon
@@ -3093,6 +3099,7 @@ exports[`Actions table 1`] = `
                               >
                                 <Kebab
                                   aria-label="Actions"
+                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-1"
                                   isActive={false}
@@ -3101,11 +3108,13 @@ exports[`Actions table 1`] = `
                                   isOpen={false}
                                   isPlain={true}
                                   key=".0"
+                                  onEnter={[Function]}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <DropdownToggle
                                     aria-label="Actions"
+                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-1"
                                     isActive={false}
@@ -3113,15 +3122,18 @@ exports[`Actions table 1`] = `
                                     isHovered={false}
                                     isOpen={false}
                                     isPlain={true}
+                                    onEnter={[Function]}
                                     onToggle={[Function]}
                                     parentRef={null}
                                   >
                                     <button
                                       aria-expanded={false}
+                                      aria-haspopup={true}
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-1"
                                       onClick={[Function]}
+                                      onKeyDown={[Function]}
                                       type="button"
                                     >
                                       <EllipsisVIcon
@@ -3718,6 +3730,7 @@ exports[`Actions table 1`] = `
                               >
                                 <Kebab
                                   aria-label="Actions"
+                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-2"
                                   isActive={false}
@@ -3726,11 +3739,13 @@ exports[`Actions table 1`] = `
                                   isOpen={false}
                                   isPlain={true}
                                   key=".0"
+                                  onEnter={[Function]}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <DropdownToggle
                                     aria-label="Actions"
+                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-2"
                                     isActive={false}
@@ -3738,15 +3753,18 @@ exports[`Actions table 1`] = `
                                     isHovered={false}
                                     isOpen={false}
                                     isPlain={true}
+                                    onEnter={[Function]}
                                     onToggle={[Function]}
                                     parentRef={null}
                                   >
                                     <button
                                       aria-expanded={false}
+                                      aria-haspopup={true}
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-2"
                                       onClick={[Function]}
+                                      onKeyDown={[Function]}
                                       type="button"
                                     >
                                       <EllipsisVIcon
@@ -4343,6 +4361,7 @@ exports[`Actions table 1`] = `
                               >
                                 <Kebab
                                   aria-label="Actions"
+                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-3"
                                   isActive={false}
@@ -4351,11 +4370,13 @@ exports[`Actions table 1`] = `
                                   isOpen={false}
                                   isPlain={true}
                                   key=".0"
+                                  onEnter={[Function]}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <DropdownToggle
                                     aria-label="Actions"
+                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-3"
                                     isActive={false}
@@ -4363,15 +4384,18 @@ exports[`Actions table 1`] = `
                                     isHovered={false}
                                     isOpen={false}
                                     isPlain={true}
+                                    onEnter={[Function]}
                                     onToggle={[Function]}
                                     parentRef={null}
                                   >
                                     <button
                                       aria-expanded={false}
+                                      aria-haspopup={true}
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-3"
                                       onClick={[Function]}
+                                      onKeyDown={[Function]}
                                       type="button"
                                     >
                                       <EllipsisVIcon
@@ -4968,6 +4992,7 @@ exports[`Actions table 1`] = `
                               >
                                 <Kebab
                                   aria-label="Actions"
+                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-4"
                                   isActive={false}
@@ -4976,11 +5001,13 @@ exports[`Actions table 1`] = `
                                   isOpen={false}
                                   isPlain={true}
                                   key=".0"
+                                  onEnter={[Function]}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <DropdownToggle
                                     aria-label="Actions"
+                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-4"
                                     isActive={false}
@@ -4988,15 +5015,18 @@ exports[`Actions table 1`] = `
                                     isHovered={false}
                                     isOpen={false}
                                     isPlain={true}
+                                    onEnter={[Function]}
                                     onToggle={[Function]}
                                     parentRef={null}
                                   >
                                     <button
                                       aria-expanded={false}
+                                      aria-haspopup={true}
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-4"
                                       onClick={[Function]}
+                                      onKeyDown={[Function]}
                                       type="button"
                                     >
                                       <EllipsisVIcon
@@ -5593,6 +5623,7 @@ exports[`Actions table 1`] = `
                               >
                                 <Kebab
                                   aria-label="Actions"
+                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-5"
                                   isActive={false}
@@ -5601,11 +5632,13 @@ exports[`Actions table 1`] = `
                                   isOpen={false}
                                   isPlain={true}
                                   key=".0"
+                                  onEnter={[Function]}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <DropdownToggle
                                     aria-label="Actions"
+                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-5"
                                     isActive={false}
@@ -5613,15 +5646,18 @@ exports[`Actions table 1`] = `
                                     isHovered={false}
                                     isOpen={false}
                                     isPlain={true}
+                                    onEnter={[Function]}
                                     onToggle={[Function]}
                                     parentRef={null}
                                   >
                                     <button
                                       aria-expanded={false}
+                                      aria-haspopup={true}
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-5"
                                       onClick={[Function]}
+                                      onKeyDown={[Function]}
                                       type="button"
                                     >
                                       <EllipsisVIcon
@@ -6218,6 +6254,7 @@ exports[`Actions table 1`] = `
                               >
                                 <Kebab
                                   aria-label="Actions"
+                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-6"
                                   isActive={false}
@@ -6226,11 +6263,13 @@ exports[`Actions table 1`] = `
                                   isOpen={false}
                                   isPlain={true}
                                   key=".0"
+                                  onEnter={[Function]}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <DropdownToggle
                                     aria-label="Actions"
+                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-6"
                                     isActive={false}
@@ -6238,15 +6277,18 @@ exports[`Actions table 1`] = `
                                     isHovered={false}
                                     isOpen={false}
                                     isPlain={true}
+                                    onEnter={[Function]}
                                     onToggle={[Function]}
                                     parentRef={null}
                                   >
                                     <button
                                       aria-expanded={false}
+                                      aria-haspopup={true}
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-6"
                                       onClick={[Function]}
+                                      onKeyDown={[Function]}
                                       type="button"
                                     >
                                       <EllipsisVIcon
@@ -6843,6 +6885,7 @@ exports[`Actions table 1`] = `
                               >
                                 <Kebab
                                   aria-label="Actions"
+                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-7"
                                   isActive={false}
@@ -6851,11 +6894,13 @@ exports[`Actions table 1`] = `
                                   isOpen={false}
                                   isPlain={true}
                                   key=".0"
+                                  onEnter={[Function]}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <DropdownToggle
                                     aria-label="Actions"
+                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-7"
                                     isActive={false}
@@ -6863,15 +6908,18 @@ exports[`Actions table 1`] = `
                                     isHovered={false}
                                     isOpen={false}
                                     isPlain={true}
+                                    onEnter={[Function]}
                                     onToggle={[Function]}
                                     parentRef={null}
                                   >
                                     <button
                                       aria-expanded={false}
+                                      aria-haspopup={true}
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-7"
                                       onClick={[Function]}
+                                      onKeyDown={[Function]}
                                       type="button"
                                     >
                                       <EllipsisVIcon
@@ -7468,6 +7516,7 @@ exports[`Actions table 1`] = `
                               >
                                 <Kebab
                                   aria-label="Actions"
+                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-8"
                                   isActive={false}
@@ -7476,11 +7525,13 @@ exports[`Actions table 1`] = `
                                   isOpen={false}
                                   isPlain={true}
                                   key=".0"
+                                  onEnter={[Function]}
                                   onToggle={[Function]}
                                   parentRef={null}
                                 >
                                   <DropdownToggle
                                     aria-label="Actions"
+                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-8"
                                     isActive={false}
@@ -7488,15 +7539,18 @@ exports[`Actions table 1`] = `
                                     isHovered={false}
                                     isOpen={false}
                                     isPlain={true}
+                                    onEnter={[Function]}
                                     onToggle={[Function]}
                                     parentRef={null}
                                   >
                                     <button
                                       aria-expanded={false}
+                                      aria-haspopup={true}
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       id="pf-toggle-id-8"
                                       onClick={[Function]}
+                                      onKeyDown={[Function]}
                                       type="button"
                                     >
                                       <EllipsisVIcon

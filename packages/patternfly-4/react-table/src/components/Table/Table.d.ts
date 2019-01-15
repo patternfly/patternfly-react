@@ -1,7 +1,7 @@
 import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
 import { OneOf, Omit } from '../../../../react-core/src/typeUtils';
 import { SortByDirection } from './SortColumn';
-
+import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 export interface ISortBy {
   index?: Number;
   direction?: OneOf<typeof SortByDirection, keyof typeof SortByDirection>;
@@ -53,6 +53,11 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   actions?: Array<IAction | ISeparator>;
   header?: ReactNode;
   caption?: ReactNode;
+  rowLabeledBy?: String;
+  expandId?: String;
+  contentId?: String;
+  dropdownPosition?: OneOf<typeof DropdownPosition, keyof typeof DropdownPosition>;
+  dropdownDirection?: OneOf<typeof DropdownDirection, keyof typeof DropdownDirection>;
   rows: Array<IRow | Array<String>>;
   cells: Array<ICell | String>;
 }

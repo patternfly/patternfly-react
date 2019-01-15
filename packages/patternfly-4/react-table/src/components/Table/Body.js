@@ -8,7 +8,7 @@ const propTypes = {
   className: PropTypes.string,
   /** Specify key which should be used for labeling each row. */
   rowKey: PropTypes.string,
-  /**  */
+  /** Function that is fired when user clicks on row.  */
   onRowClick: PropTypes.func
 };
 
