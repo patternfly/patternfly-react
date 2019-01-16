@@ -4,7 +4,7 @@ import styles from './example.styles';
 import PropTypes from 'prop-types';
 import { Title } from '@patternfly/react-core';
 import LiveDemo from './liveDemo';
-import { Link } from 'gatsby';
+import { withPrefix } from 'gatsby';
 import Section from '../section';
 
 const propTypes = {
@@ -71,7 +71,7 @@ const Example = ({
         </Title>
         <div className={css(className, styles.example)} {...props}>
           This example can only be accessed in&nbsp;
-          <a href={path} target="_blank" rel="noopener noreferrer">
+          <a href={withPrefix(path)} target="_blank" rel="noopener noreferrer">
             full page mode
           </a>
           .
