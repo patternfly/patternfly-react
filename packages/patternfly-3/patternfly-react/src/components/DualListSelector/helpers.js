@@ -38,14 +38,28 @@ export const makeAllItemsVisible = list =>
 export const sortItems = (items, sortFactor = 'label') =>
   items.sort((a, b) => (a[sortFactor].toLowerCase() > b[sortFactor].toLowerCase() ? 1 : -1));
 
-export const arrangeArray = ({ items, sortBy, isSortAsc = true, isMainChecked = false }) => {
+export const shouldItemBeChecked = (item, isMainChecked, resetAllSelected) => {
+  let checked = item.checked || false;
+  const isItemEditable = !item.disabled || !item.hidden;
+  if (!isItemEditable) {
+    return checked;
+  }
+  if (resetAllSelected) {
+    checked = false;
+  } else if (isMainChecked) {
+    checked = isMainChecked;
+  }
+  return checked;
+};
+
+export const arrangeArray = ({ items, sortBy, isSortAsc = true, isMainChecked = false, resetAllSelected = false }) => {
   // sort the items
   let itemsCopy = sortItems(items, sortBy).map((item, index) => {
     // add position to the item and update if the main checkbox is initialy checked.
     const modifiedItem = {
       ...item,
       position: index,
-      checked: item.checked || isMainChecked
+      checked: shouldItemBeChecked(item, isMainChecked, resetAllSelected)
     };
     if (itemHasChildren(item)) {
       // sort the children array and add a position, parentPosition and update check state.
@@ -53,7 +67,7 @@ export const arrangeArray = ({ items, sortBy, isSortAsc = true, isMainChecked = 
         ...child,
         position: childIndex,
         parentPosition: index,
-        checked: child.checked || isMainChecked
+        checked: shouldItemBeChecked(child, isMainChecked, resetAllSelected)
       }));
     }
     return modifiedItem;
@@ -73,7 +87,7 @@ export const getDefaultProps = () => ({
   isMainChecked: false
 });
 
-export const getCheckedAmount = ({ items }) => {
+export const getCheckedAmount = items => {
   let checkedAmount = 0;
   items.forEach(item => {
     if (isItemSelected(item)) {
@@ -103,19 +117,19 @@ export const adjustProps = ({ left, right, ...props }) => {
       ...defaultProps,
       ...left,
       items: leftItems,
-      selectCount: getCheckedAmount({ ...left })
+      selectCount: getCheckedAmount(leftItems)
     },
     right: {
       ...defaultProps,
       ...right,
       items: rightItems,
-      selectCount: getCheckedAmount({ ...right })
+      selectCount: getCheckedAmount(rightItems)
     }
   };
 };
 
 export const isAllChildrenChecked = ({ children }) =>
-  children.filter(({ checked }) => checked).length === children.length;
+  children && children.filter(({ checked }) => checked).length === children.length;
 
 export const getItemsLength = items => {
   let { length } = items;
@@ -136,7 +150,7 @@ export const reverseAllItemsOrder = items => {
   return reversedItems.map(item => (item.children ? { ...item, children: item.children.reverse() } : item));
 };
 
-export const getItem = ({ isSortAsc, items, position, parentPosition }) => {
+export const getItem = (isSortAsc, items, position, parentPosition) => {
   // if item is a child.
   if (parentPosition !== undefined) {
     const parent = items[getItemPosition(items, parentPosition, isSortAsc)];
@@ -145,7 +159,7 @@ export const getItem = ({ isSortAsc, items, position, parentPosition }) => {
   return items[getItemPosition(items, position, isSortAsc)];
 };
 
-export const getUpdatedSelectCount = ({ selectCount, checked, amount = 1 }) =>
+export const getUpdatedSelectCount = (selectCount, checked, amount = 1) =>
   selectCount + (checked ? amount : -1 * amount);
 
 export const itemHasParent = item => item.parentPosition !== undefined;

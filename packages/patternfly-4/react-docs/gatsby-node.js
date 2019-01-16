@@ -14,7 +14,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }
         },
         {
           test: /\.css$/,
-          use: [loaders.miniCssExtract(), loaders.css({ importLoaders: 1 })],
+          use: [loaders.miniCssExtract(), loaders.css({ sourceMap: false, singleton: true })],
           exclude: pfStylesTest
         }
       ]

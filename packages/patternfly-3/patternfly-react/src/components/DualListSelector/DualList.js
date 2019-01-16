@@ -39,19 +39,19 @@ class DualList extends React.Component {
       [side]: { selectCount: originalSelectCount, items: originalItems, isSortAsc, filterTerm }
     } = this.props;
     const items = cloneDeep(originalItems);
-    const item = getItem({ isSortAsc, position, items, parentPosition });
+    const item = getItem(isSortAsc, items, position, parentPosition);
     let selectCount = originalSelectCount;
     item.checked = checked;
     if (itemHasParent(item)) {
-      const parent = getItem({ isSortAsc, position: parentPosition, items });
+      const parent = getItem(isSortAsc, items, parentPosition);
       parent.checked = isAllChildrenChecked(parent);
-      selectCount = getUpdatedSelectCount({ selectCount, checked });
+      selectCount = getUpdatedSelectCount(selectCount, checked);
     } else if (itemHasChildren(item)) {
       const { children } = item;
       toggleAllItems(children, checked);
-      selectCount = getUpdatedSelectCount({ selectCount, checked, amount: children.length });
+      selectCount = getUpdatedSelectCount(selectCount, checked, children.length);
     } else {
-      selectCount = getUpdatedSelectCount({ selectCount, checked });
+      selectCount = getUpdatedSelectCount(selectCount, checked);
     }
     let isMainChecked = false;
     if (filterTerm) {
@@ -186,22 +186,31 @@ class DualList extends React.Component {
     if (sideItemsWithRemainChildren.length > 0) {
       sideItems.push(...sideItemsWithRemainChildren);
     }
-    sideItems = arrangeArray({ ...sideState, items: sideItems });
-    otherSideItems = arrangeArray({ ...otherSideState, items: otherSideItems });
-
     const updatedSideState = {
       ...sideState,
-      items: sideItems,
-      selectCount: 0
+      selectCount: 0,
+      isMainChecked: false
     };
 
     const updatedOtherSideState = {
       ...otherSideState,
-      items: otherSideItems,
-      selectCount: sideState.selectCount + otherSideState.selectCount
+      selectCount: 0,
+      isMainChecked: false
     };
 
-    this.props.onChange({ [side]: updatedSideState, [otherSide]: updatedOtherSideState });
+    sideItems = arrangeArray({ ...updatedSideState, items: sideItems });
+    otherSideItems = arrangeArray({ ...updatedOtherSideState, items: otherSideItems, resetAllSelected: true });
+
+    this.props.onChange({
+      [side]: {
+        ...updatedSideState,
+        items: sideItems
+      },
+      [otherSide]: {
+        ...updatedOtherSideState,
+        items: otherSideItems
+      }
+    });
   };
 
   leftArrowClick = () => {

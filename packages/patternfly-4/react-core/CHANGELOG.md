@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.47.0"></a>
+# [1.47.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.46.0...@patternfly/react-core@1.47.0) (2019-01-15)
+
+
+### Features
+
+* **Chip:** Add the Chip component to PF4 ([#1180](https://github.com/patternfly/patternfly-react/issues/1180)) ([752adae](https://github.com/patternfly/patternfly-react/commit/752adae))
+
+
+
+
+<a name="1.46.0"></a>
+# [1.46.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.45.4...@patternfly/react-core@1.46.0) (2019-01-15)
+
+
+### Features
+
+* **umd modules:** adds babel-transform-es2015-modules-umd for umd module support ([#1150](https://github.com/patternfly/patternfly-react/issues/1150)) ([7b4fde8](https://github.com/patternfly/patternfly-react/commit/7b4fde8))
+
+
+
+
+<a name="1.45.4"></a>
+## [1.45.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.45.3...@patternfly/react-core@1.45.4) (2019-01-14)
+
+
+### Bug Fixes
+
+* **Button:** make aria-label optional prop ([#1186](https://github.com/patternfly/patternfly-react/issues/1186)) ([0f7fef5](https://github.com/patternfly/patternfly-react/commit/0f7fef5)), closes [#1184](https://github.com/patternfly/patternfly-react/issues/1184)
+
+
+
+
 <a name="1.45.3"></a>
 ## [1.45.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.45.2...@patternfly/react-core@1.45.3) (2019-01-14)
 

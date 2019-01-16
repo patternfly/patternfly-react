@@ -12,20 +12,4 @@ exports[`dropdown items hover a 1`] = `<[object Object] />`;
 
 exports[`dropdown items hover button 1`] = `<[object Object] />`;
 
-exports[`dropdown items separator 1`] = `
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  background-color: #ededed;
-}
-
-<DropdownItem
-  className="pf-c-dropdown__separator"
-  component="div"
-  href="#"
-  isDisabled={false}
-  isHovered={false}
-  onClick={[Function]}
-  role="separator"
-/>
-`;
+exports[`dropdown items separator 1`] = `<[object Object] />`;

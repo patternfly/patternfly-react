@@ -1,5 +1,271 @@
 
-## Change Log (2019-01-14)
+## patternfly4-react-lerna-root@1.36.0 (2019-01-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-table@0.2.50 (2019-01-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-docs@3.19.59 (2019-01-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## @patternfly/react-core@1.46.0 (2019-01-15)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1150](https://github.com/patternfly/patternfly-react/pull/1150) feat(umd modules): adds babel-transform-es2015-modules-umd  ([@priley86](https://github.com/priley86))
+
+#### Committers: 1
+- Patrick Riley ([@priley86](https://github.com/priley86))
+
+
+## patternfly3-react-lerna-root@7.19.6 (2019-01-15)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1190](https://github.com/patternfly/patternfly-react/pull/1190) fix(DualList): refactor helpers functions signatures ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.29.4 (2019-01-15)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1190](https://github.com/patternfly/patternfly-react/pull/1190) fix(DualList): refactor helpers functions signatures ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.16.5 (2019-01-15)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1190](https://github.com/patternfly/patternfly-react/pull/1190) fix(DualList): refactor helpers functions signatures ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.10.12 (2019-01-15)
+
+#### :house: Internal
+* `patternfly-3`
+  * [#1190](https://github.com/patternfly/patternfly-react/pull/1190) fix(DualList): refactor helpers functions signatures ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.19.5 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1178](https://github.com/patternfly/patternfly-react/pull/1178) fix(DualList): de-Select items after the transition between lists. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.29.3 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1178](https://github.com/patternfly/patternfly-react/pull/1178) fix(DualList): de-Select items after the transition between lists. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.16.4 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1178](https://github.com/patternfly/patternfly-react/pull/1178) fix(DualList): de-Select items after the transition between lists. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.10.11 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1178](https://github.com/patternfly/patternfly-react/pull/1178) fix(DualList): de-Select items after the transition between lists. ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly3-react-lerna-root@7.19.4 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1171](https://github.com/patternfly/patternfly-react/pull/1171) fix(Login Page): fix settings visibility ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* [#1143](https://github.com/patternfly/patternfly-react/pull/1143) chore(generator): update generator to support typescript files ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.29.2 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1171](https://github.com/patternfly/patternfly-react/pull/1171) fix(Login Page): fix settings visibility ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* [#1143](https://github.com/patternfly/patternfly-react/pull/1143) chore(generator): update generator to support typescript files ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.16.3 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1171](https://github.com/patternfly/patternfly-react/pull/1171) fix(Login Page): fix settings visibility ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* [#1143](https://github.com/patternfly/patternfly-react/pull/1143) chore(generator): update generator to support typescript files ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.10.10 (2019-01-15)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1171](https://github.com/patternfly/patternfly-react/pull/1171) fix(Login Page): fix settings visibility ([@Laviro](https://github.com/Laviro))
+
+#### :house: Internal
+* [#1143](https://github.com/patternfly/patternfly-react/pull/1143) chore(generator): update generator to support typescript files ([@ibolton336](https://github.com/ibolton336))
+
+#### Committers: 2
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.35.4 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1186](https://github.com/patternfly/patternfly-react/pull/1186) fix(Button): make aria-label optional prop ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 2
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.2.49 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1186](https://github.com/patternfly/patternfly-react/pull/1186) fix(Button): make aria-label optional prop ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 2
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.19.58 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1186](https://github.com/patternfly/patternfly-react/pull/1186) fix(Button): make aria-label optional prop ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 2
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.45.4 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1186](https://github.com/patternfly/patternfly-react/pull/1186) fix(Button): make aria-label optional prop ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 2
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.35.3 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1173](https://github.com/patternfly/patternfly-react/pull/1173) PF4: Add missing attribute isPlain to Dropdown ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 1
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+
+
+## @patternfly/react-table@0.2.48 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1173](https://github.com/patternfly/patternfly-react/pull/1173) PF4: Add missing attribute isPlain to Dropdown ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 1
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+
+
+## @patternfly/react-docs@3.19.57 (2019-01-14)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1173](https://github.com/patternfly/patternfly-react/pull/1173) PF4: Add missing attribute isPlain to Dropdown ([@aljesusg](https://github.com/aljesusg))
+
+#### Committers: 1
+- Alberto Gutierrez ([@aljesusg](https://github.com/aljesusg))
+
+
+## @patternfly/react-core@1.45.3 (2019-01-14)
 
 #### :bug: Bug Fix
 * `patternfly-4`

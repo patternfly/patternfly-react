@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.29.5"></a>
+## [2.29.5](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.4...patternfly-react@2.29.5) (2019-01-15)
+
+
+
+
+**Note:** Version bump only for package patternfly-react
+
+<a name="2.29.4"></a>
+## [2.29.4](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.3...patternfly-react@2.29.4) (2019-01-15)
+
+
+### Bug Fixes
+
+* **DualList:** refactor helpers functions signatures ([#1190](https://github.com/patternfly/patternfly-react/issues/1190)) ([378e44e](https://github.com/patternfly/patternfly-react/commit/378e44e))
+
+
+
+
+<a name="2.29.3"></a>
+## [2.29.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.2...patternfly-react@2.29.3) (2019-01-15)
+
+
+### Bug Fixes
+
+* **DualList:** de-Select items after the transition between lists. ([#1178](https://github.com/patternfly/patternfly-react/issues/1178)) ([91c33bf](https://github.com/patternfly/patternfly-react/commit/91c33bf))
+
+
+
+
+<a name="2.29.2"></a>
+## [2.29.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.1...patternfly-react@2.29.2) (2019-01-15)
+
+
+### Bug Fixes
+
+* **Login Page:** fix settings visibility ([#1171](https://github.com/patternfly/patternfly-react/issues/1171)) ([3f79c48](https://github.com/patternfly/patternfly-react/commit/3f79c48))
+
+
+
+
 <a name="2.29.1"></a>
 ## [2.29.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.0...patternfly-react@2.29.1) (2019-01-09)
 

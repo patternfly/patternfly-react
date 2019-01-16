@@ -52,6 +52,7 @@ exports[`Dropdown toggle 1`] = `
       className="pf-c-dropdown__toggle"
       id="Dropdown Toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
       type="button"
     >
       <span
@@ -136,6 +137,7 @@ exports[`Kebab toggle 1`] = `
       className="pf-c-dropdown__toggle"
       id="Dropdown Toggle"
       onClick={[Function]}
+      onKeyDown={[Function]}
       type="button"
     >
       <EllipsisVIcon

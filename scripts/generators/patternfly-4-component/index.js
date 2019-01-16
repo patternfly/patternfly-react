@@ -32,17 +32,40 @@ function setPF4Generators(plop) {
       };
       return [
         {
-          base,
           data,
-          type: 'addMany',
-          destination: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/'),
-          templateFiles: join(base, '**/*.js')
+          type: 'add',
+          templateFile: join(base, 'component.tsx.hbs'),
+          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/{{componentName}}.tsx')
+        },
+        {
+          data,
+          type: 'add',
+          templateFile: join(base, 'component.test.tsx.hbs'),
+          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/{{componentName}}.test.tsx')
+        },
+        {
+          data,
+          type: 'add',
+          templateFile: join(base, 'component.docs.js.hbs'),
+          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/{{componentName}}.docs.js')
+        },
+        {
+          data,
+          type: 'add',
+          templateFile: join(base, 'index.ts.hbs'),
+          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/index.ts')
+        },
+        {
+          data,
+          type: 'add',
+          templateFile: join(base, 'example.js.hbs'),
+          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/example/Simple{{componentName}}.ts')
         },
         {
           data,
           type: ADD_TO_BARREL_FILE,
           template: `export * from './{{componentName}}';`,
-          path: join(reactCoreRoot, './src/{{typeDir}}/index.js')
+          path: join(reactCoreRoot, './src/{{typeDir}}/index.ts')
         }
       ];
     }

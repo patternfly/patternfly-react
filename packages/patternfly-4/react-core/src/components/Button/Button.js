@@ -39,13 +39,8 @@ const propTypes = {
   type: PropTypes.oneOf(Object.values(ButtonType)),
   /** Adds button variant styles */
   variant: PropTypes.oneOf(Object.values(ButtonVariant)),
-  /** Adds accessible text to the button. Required for plain buttons */
-  'aria-label': props => {
-    if (props.variant === ButtonVariant.plain && !props['aria-label']) {
-      return new Error('aria-label is required for Buttons with the plain variant');
-    }
-    return null;
-  },
+  /** Adds accessible text to the button. */
+  'aria-label': PropTypes.string,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
 };
