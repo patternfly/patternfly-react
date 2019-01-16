@@ -6,6 +6,7 @@ import * as DocsFiles from '../../../.tmp';
 import Page from '../page';
 import Navigation from '../navigation';
 import { injectGlobal } from 'emotion';
+import { canUseDOM } from 'exenv';
 
 injectGlobal(`
   html,
@@ -41,63 +42,70 @@ const DocsLayout = ({ children, data }) => {
   const getPackage = label => DocsFiles[`${label.toLowerCase()}_package`].substr(6);
   const componentRoutes = data.componentPages
     ? data.componentPages.edges.map(e => ({
-      to: e.node.path,
-      label: e.node.fields.label,
-      pkg: getPackage(e.node.fields.label),
-      components: componentMapper(e.node.path, e.node.fields.label)
-    }))
+        to: e.node.path,
+        label: e.node.fields.label,
+        pkg: getPackage(e.node.fields.label),
+        components: componentMapper(e.node.path, e.node.fields.label)
+      }))
     : [];
 
   const layoutRoutes = data.layoutPages
     ? data.layoutPages.edges.map(e => ({
-      to: e.node.path,
-      label: e.node.fields.label,
-      pkg: getPackage(e.node.fields.label),
-      components: componentMapper(e.node.path, e.node.fields.label)
-    }))
+        to: e.node.path,
+        label: e.node.fields.label,
+        pkg: getPackage(e.node.fields.label),
+        components: componentMapper(e.node.path, e.node.fields.label)
+      }))
     : [];
 
   const demoRoutes = data.demoPages
     ? data.demoPages.edges.map(e => ({
-      to: e.node.path,
-      label: e.node.fields.label
-    }))
+        to: e.node.path,
+        label: e.node.fields.label
+      }))
     : [];
 
   const searchCallback = term => {
     debugger;
-  }
+  };
 
   return (
-    <React.Fragment>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <meta name="description" content="PatternFly React Documentation" />
-        <meta name="keywords" content="React, PatternFly, Red Hat" />
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/codemirror.min.css" />
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/theme/monokai.min.css" />
-        <link
-          rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.4.1/css/brands.css"
-          integrity="sha384-Px1uYmw7+bCkOsNAiAV5nxGKJ0Ixn5nChyW8lCK1Li1ic9nbO5pC/iXaq27X5ENt"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.4.1/css/fontawesome.css"
-          integrity="sha384-BzCy2fixOYd0HObpx3GMefNqdbA7Qjcc91RgYeDjrHTIEXqiF00jKvgQG0+zY/7I"
-          crossOrigin="anonymous"
-        />
-      </Helmet>
-      <Page
-        title="Patternfly React"
-        navigation={
-          <Navigation componentRoutes={componentRoutes} layoutRoutes={layoutRoutes} demoRoutes={demoRoutes} onSearch={searchCallback} />
-        }
-      >
-        {children}
-      </Page>
-    </React.Fragment>
+    canUseDOM && (
+      <React.Fragment>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <meta name="description" content="PatternFly React Documentation" />
+          <meta name="keywords" content="React, PatternFly, Red Hat" />
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/codemirror.min.css" />
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/5.0.0/theme/monokai.min.css" />
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.4.1/css/brands.css"
+            integrity="sha384-Px1uYmw7+bCkOsNAiAV5nxGKJ0Ixn5nChyW8lCK1Li1ic9nbO5pC/iXaq27X5ENt"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.4.1/css/fontawesome.css"
+            integrity="sha384-BzCy2fixOYd0HObpx3GMefNqdbA7Qjcc91RgYeDjrHTIEXqiF00jKvgQG0+zY/7I"
+            crossOrigin="anonymous"
+          />
+        </Helmet>
+        <Page
+          title="Patternfly React"
+          navigation={
+            <Navigation
+              componentRoutes={componentRoutes}
+              layoutRoutes={layoutRoutes}
+              demoRoutes={demoRoutes}
+              onSearch={searchCallback}
+            />
+          }
+        >
+          {children}
+        </Page>
+      </React.Fragment>
+    )
   );
 };
 
