@@ -28,10 +28,9 @@
   "dependencies": {
     "@patternfly/react-core": "^1.47.0",
     "@patternfly/react-icons": "^2.9.7",
+    "@patternfly/patternfly-next": "1.0.120",
     "@patternfly/react-styles": "^2.3.0",
-    "babel-plugin-lodash": "^3.3.4",
     "exenv": "^1.2.2",
-    "lodash": "^4.17.11",
     "reactabular-table": "^8.14.0"
   },
   "peerDependencies": {
@@ -51,7 +50,6 @@
     "@patternfly/react-tokens": "^1.9.4"
   },
   "devDependencies": {
-    "@patternfly/patternfly-next": "1.0.120",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",

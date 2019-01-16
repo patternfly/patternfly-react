@@ -25,6 +25,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `components`,
+        path: resolve(__dirname, '../react-table/src')
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `components`,
         path: resolve(__dirname, '../react-styled-system/src')
       }
     },

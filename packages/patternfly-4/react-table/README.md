@@ -52,9 +52,9 @@ class SimpleTable extends React.Component {
    render() {
     const { columns, rows } = this.state;
      return (
-      <Table caption="Simple Table">
-        <TableHeader headerRows={columns} />
-        <TableBody rows={rows} />
+      <Table caption="Simple Table" rows={rows} cells={columns} >
+        <TableHeader />
+        <TableBody />
       </Table>
     );
   }
