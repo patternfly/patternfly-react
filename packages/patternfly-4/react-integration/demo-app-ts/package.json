@@ -7,7 +7,7 @@
     "react-dom": "^16.7.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "integration:start": "react-scripts start",
     "build:demo": "react-scripts build",
     "test:demo": "react-scripts test"
   },

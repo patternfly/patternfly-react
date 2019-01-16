@@ -1,5 +1,5 @@
 {
-  "name": "react-integration",
+  "name": "@patternfly/react-integration",
   "version": "1.0.0",
   "description": "Integration testing for PF4 using demo applications",
   "main": "lib/index.js",
@@ -22,9 +22,14 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
+    "cypress:open": "cypress open",
+    "integration:setup": "rimraf node_modules && yarn install"
   },
   "dependencies": {
     "@patternfly/react-core": "file:../react-core"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "cypress": "^3.1.4",
+    "rimraf": "^2.6.3"
+  }
 }
