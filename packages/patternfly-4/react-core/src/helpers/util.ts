@@ -72,3 +72,13 @@ export function sideElementIsOutOfView(container, element) {
   // Return outcome
   return side;
 }
+/** This function returns the side the element is out of view on (right, left or both)
+ * @param {Objent} templateString  The string passed by the consumer
+ * @param {Object} templateVars The variables passed to the string
+ *
+ * @return {type} The template string literal result
+ */
+export function fillTemplate(templateString, templateVars) {
+  const func = new Function(...Object.keys(templateVars), `return \`${templateString}\`;`);
+  return func(...Object.values(templateVars));
+}

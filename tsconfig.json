@@ -5,10 +5,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "lib": [
-      "es6",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "module": "es2015",
     "moduleResolution": "node",
     "noEmit": true,
@@ -16,12 +13,8 @@
     "target": "esnext",
     "allowJs": true,
     "paths": {
-      "*": [
-        "./packages/patternfly-4/react-core/dist/esm/*"
-      ]
+      "*": ["./packages/patternfly-4/react-core/dist/esm/*"]
     }
   },
-  "include": [
-    "packages/**/src/**/*"
-  ]
+  "include": ["packages/**/src/**/*"]
 }

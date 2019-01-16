@@ -15,7 +15,7 @@ test('ChipButton', () => {
 describe('Chip', () => {
   test('overflow', () => {
     const view = shallow(
-      <Chip className="my-chp-cls" isOverflowChip={true}>
+      <Chip className="my-chp-cls" isOverflowChip>
         4 more
       </Chip>
     );
@@ -31,13 +31,12 @@ describe('Chip', () => {
     expect(view).toMatchSnapshot();
   });
 
-
   test('closable with tooltip', () => {
     const view = shallow(
       <Chip className="my-chp-cls" id="chip_one">
-        12345678901234567891
+        1234567890123456789
       </Chip>
     );
     expect(view).toMatchSnapshot();
   });
-})
+});
