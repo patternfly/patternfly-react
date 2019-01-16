@@ -1,4 +1,14 @@
 
+## Change Log (2019-01-16)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1193](https://github.com/patternfly/patternfly-react/pull/1193) fix(Dropdown): Pass down ref for dropdown item ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
 ## patternfly4-react-lerna-root@1.36.0 (2019-01-15)
 
 #### :rocket: New Feature
