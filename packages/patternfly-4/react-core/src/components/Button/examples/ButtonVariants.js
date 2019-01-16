@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@patternfly/react-core';
-import { TimesIcon } from '@patternfly/react-icons';
+import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
 
 class ButtonVariants extends React.Component {
   render() {
@@ -9,8 +9,10 @@ class ButtonVariants extends React.Component {
         <Button variant="primary">Primary</Button>{' '}
         <Button variant="secondary">Secondary</Button>{' '}
         <Button variant="tertiary">Tertiary</Button>{' '}
-        <Button variant="danger">Secondary</Button>{' '}
-        <Button variant="link">Link</Button>{' '}
+        <Button variant="danger">Danger</Button>{' '}
+        <Button variant="link">
+          <PlusCircleIcon />{' '} Link button
+        </Button>{' '}
         <Button variant="plain" aria-label="Action">
           <TimesIcon />
         </Button>

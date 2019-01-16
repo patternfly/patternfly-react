@@ -17,8 +17,7 @@ export default {
     { component: BlockExample, title: 'Block Button' },
     {
       component: LinkExample,
-      title: 'Links',
-      description: `Links with button styling. Semantic buttons and links are important for usability as well as accessibility. Using an "a" instead of a "button" element to perform user initiated actions should be avoided, unless absolutely necessary.`
+      title: 'Links'
     }
   ]
 };
