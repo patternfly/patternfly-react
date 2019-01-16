@@ -2,7 +2,6 @@ node_modules
 dist
 tsc_out
 .out
-.history
 /.changelog
 .DS_Store
 coverage

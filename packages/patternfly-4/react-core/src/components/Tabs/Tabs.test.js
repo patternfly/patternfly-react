@@ -37,6 +37,33 @@ test('should render filled tabs', () => {
   expect(view).toMatchSnapshot();
 });
 
+test('should render secondary tabs', () => {
+  const view = shallow(
+    <Tabs>
+      <Tab id="tab1" eventKey={0} title="Tab item 1">
+        <Tabs>
+          <Tab id="secondary tab1" eventKey={10} title="Secondary Tab 1">
+            Secondary Tab 1 section
+          </Tab>
+          <Tab id="secondary tab2" eventKey={11} title="Secondary Tab 2">
+            Secondary Tab 2 section
+          </Tab>
+          <Tab id="secondary tab3" eventKey={12} title="Secondary Tab 3">
+            Secondary Tab 3 section
+          </Tab>
+        </Tabs>
+      </Tab>
+      <Tab id="tab2" eventKey={1} title="Tab item 2">
+        Tab 2 section
+      </Tab>
+      <Tab id="tab3" eventKey={2} title="Tab item 3">
+        Tab 3 section
+      </Tab>
+    </Tabs>
+  );
+  expect(view).toMatchSnapshot();
+});
+
 test('should call scrollLeft tabs with scrolls', () => {
   const view = mount(
     <Tabs isFilled>
