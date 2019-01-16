@@ -29,6 +29,10 @@ const propTypes = {
   content: PropTypes.node.isRequired,
   /** The reference element to which the tooltip is relatively placed to */
   children: PropTypes.element.isRequired,
+  /** Delay in ms before the tooltip appears */
+  entryDelay: PropTypes.number,
+  /** Delay in ms before the tooltip disappears */
+  exitDelay: PropTypes.number,
   /** The element to append the tooltip to, defaults to body */
   appendTo: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** z-index of the tooltip */
@@ -41,6 +45,8 @@ const defaultProps = {
   position: 'top',
   enableFlip: true,
   className: null,
+  entryDelay: 500,
+  exitDelay: 500,
   appendTo: () => document.body,
   zIndex: 9999,
   maxWidth: tooltipMaxWidth && tooltipMaxWidth.value
@@ -72,6 +78,8 @@ class Tooltip extends React.Component {
       children,
       className,
       content: bodyContent,
+      entryDelay,
+      exitDelay,
       appendTo,
       zIndex,
       maxWidth,
@@ -99,6 +107,7 @@ class Tooltip extends React.Component {
         theme="pf-tippy"
         performance
         placement={position}
+        delay={[entryDelay, exitDelay]}
         distance={15}
         flip={enableFlip}
         popperOptions={{
