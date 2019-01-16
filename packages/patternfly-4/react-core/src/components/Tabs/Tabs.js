@@ -17,8 +17,6 @@ const propTypes = {
   onSelect: PropTypes.func,
   /** Enables the filled tab list layout */
   isFilled: PropTypes.bool,
-  /** Enables Secondary Tab styling */
-  isSecondary: PropTypes.bool,
   /** Aria Label for the left Scroll Button */
   leftScrollAriaLabel: PropTypes.string,
   /** Aria Label for the right Scroll Button */
@@ -30,7 +28,6 @@ const defaultProps = {
   activeKey: 0,
   onSelect: () => undefined,
   isFilled: false,
-  isSecondary: false,
   leftScrollAriaLabel: 'Scroll left',
   rightScrollAriaLabel: 'Scroll Right'
 };
@@ -140,7 +137,6 @@ class Tabs extends React.Component {
       children,
       activeKey,
       isFilled,
-      isSecondary,
       leftScrollAriaLabel,
       rightScrollAriaLabel,
       ...props
@@ -152,7 +148,6 @@ class Tabs extends React.Component {
           className={css(
             styles.tabs,
             isFilled && styles.modifiers.fill,
-            isSecondary && styles.modifiers.tabsSecondary,
             this.state.showLeftScrollButton && styles.modifiers.start,
             this.state.showRightScrollButton && styles.modifiers.end,
             this.state.highlightLeftScrollButton && styles.modifiers.startCurrent,
