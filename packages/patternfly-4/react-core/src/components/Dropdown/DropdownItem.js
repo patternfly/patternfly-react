@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
@@ -61,7 +62,10 @@ class DropdownItem extends React.Component {
     } else if (event.key === 'ArrowDown') {
       this.props.context.keyHandler(this.props.index, 'down');
     } else if (event.key === 'Enter') {
-      this.ref.current.click && this.ref.current.click();
+      if (!this.ref.current.getAttribute) ReactDOM.findDOMNode(this.ref.current).click();
+      else {
+        this.ref.current.click && this.ref.current.click();
+      }
     }
   };
 
@@ -97,7 +101,14 @@ class DropdownItem extends React.Component {
                     isHovered && styles.modifiers.hover,
                     className
                   )} ${child.props.className}`,
-                  ref: this.ref
+                  ref: this.ref,
+                  onKeyDown: this.onKeyDown,
+                  onClick: event => {
+                    if (!isDisabled) {
+                      if (Component === 'button') onClick && onClick(event);
+                      onSelect && onSelect(event);
+                    }
+                  }
                 })
               )
             ) : (
