@@ -1,6 +1,7 @@
 const path = require(`path`);
 const paramCase = require('param-case');
 const fs = require('fs-extra'); //eslint-disable-line
+const packageDirs = ['react-core', 'react-charts', 'react-styled-system', 'react-table'];
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
   const oldCSSLoader = config._loaders.css;
@@ -22,6 +23,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   config.merge({
     resolve: {
       alias: {
+        '@patternfly/react-table': path.resolve(__dirname, '../react-table/src'),
         '@patternfly/react-charts': path.resolve(__dirname, '../react-charts/src'),
         '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),
@@ -96,8 +98,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     const filePath = path.resolve(__dirname, '.tmp', doc.base);
 
     const rawExamples = [];
-    const getPackage = pkg => doc.absolutePath.indexOf(pkg) !== -1 && pkg;
-    const packageDir = getPackage('react-core') || getPackage('react-charts') || getPackage('react-styled-system');
+    const packageDir = packageDirs.find(pkg => doc.absolutePath.indexOf(pkg) !== -1);
     examples.edges.forEach(({ node: example }) => {
       if (
         example.relativeDirectory

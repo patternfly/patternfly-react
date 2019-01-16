@@ -15,6 +15,7 @@
     "@patternfly/react-styles": "^2.3.0",
     "@patternfly/react-tokens": "^1.9.6",
     "babel-plugin-react-docgen-typescript": "^1.0.1",
+    "@patternfly/react-table": "^0.2.0",
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",
     "emotion": "^9.2.9",
