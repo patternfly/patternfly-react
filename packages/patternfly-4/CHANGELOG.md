@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.38.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.37.0...patternfly4-react-lerna-root@1.38.0) (2019-01-16)
+
+
+### Bug Fixes
+
+* **Dropdown:** Pass down ref for dropdown item ([#1193](https://github.com/patternfly/patternfly-react/issues/1193)) ([29e536f](https://github.com/patternfly/patternfly-react/commit/29e536f))
+* **Dropdown:** pass onClick to any dropdown item if present ([#1203](https://github.com/patternfly/patternfly-react/issues/1203)) ([f4a92ee](https://github.com/patternfly/patternfly-react/commit/f4a92ee))
+
+
+### Features
+
+* **Dropdown:** handle keyboard navigation and styling for Link children ([#1201](https://github.com/patternfly/patternfly-react/issues/1201)) ([0996cfd](https://github.com/patternfly/patternfly-react/commit/0996cfd))
+* **Table:** introduce new component Table based on pf4 designs ([#821](https://github.com/patternfly/patternfly-react/issues/821)) ([7b38cbc](https://github.com/patternfly/patternfly-react/commit/7b38cbc))
+
+
+
+
+
 <a name="1.37.0"></a>
 # [1.37.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.36.0...patternfly4-react-lerna-root@1.37.0) (2019-01-15)
 

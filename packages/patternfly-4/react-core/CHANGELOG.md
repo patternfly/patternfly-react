@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.47.0...@patternfly/react-core@1.48.0) (2019-01-16)
+
+
+### Bug Fixes
+
+* **Dropdown:** Pass down ref for dropdown item ([#1193](https://github.com/patternfly/patternfly-react/issues/1193)) ([29e536f](https://github.com/patternfly/patternfly-react/commit/29e536f))
+* **Dropdown:** pass onClick to any dropdown item if present ([#1203](https://github.com/patternfly/patternfly-react/issues/1203)) ([f4a92ee](https://github.com/patternfly/patternfly-react/commit/f4a92ee))
+
+
+### Features
+
+* **Dropdown:** handle keyboard navigation and styling for Link children ([#1201](https://github.com/patternfly/patternfly-react/issues/1201)) ([0996cfd](https://github.com/patternfly/patternfly-react/commit/0996cfd))
+
+
+
+
+
 <a name="1.47.0"></a>
 # [1.47.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.46.0...@patternfly/react-core@1.47.0) (2019-01-15)
 

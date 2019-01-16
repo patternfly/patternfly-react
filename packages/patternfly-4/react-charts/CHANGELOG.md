@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@1.2.7...@patternfly/react-charts@1.3.0) (2019-01-16)
+
+
+### Features
+
+* **Table:** introduce new component Table based on pf4 designs ([#821](https://github.com/patternfly/patternfly-react/issues/821)) ([7b38cbc](https://github.com/patternfly/patternfly-react/commit/7b38cbc))
+
+
+
+
+
 <a name="1.2.7"></a>
 ## [1.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@1.2.6...@patternfly/react-charts@1.2.7) (2019-01-11)
 

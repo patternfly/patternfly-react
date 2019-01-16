@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@0.2.51...@patternfly/react-table@0.3.0) (2019-01-16)
+
+
+### Features
+
+* **Table:** introduce new component Table based on pf4 designs ([#821](https://github.com/patternfly/patternfly-react/issues/821)) ([7b38cbc](https://github.com/patternfly/patternfly-react/commit/7b38cbc))
+
+
+
+
+
 <a name="0.2.51"></a>
 ## [0.2.51](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@0.2.50...@patternfly/react-table@0.2.51) (2019-01-15)
 
