@@ -47,7 +47,7 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "lerna": "^3.10.5",
-    "lerna-changelog": "^0.8.1",
+    "lerna-changelog": "^0.8.2",
     "minimist": "^1.2.0",
     "npmlog": "^4.1.2",
     "plop": "^2.0.0",
@@ -80,7 +80,6 @@
     "generate": "yarn plop",
     "lerna": "lerna",
     "lerna:publish": "lerna publish --yes",
-    "lerna:changelog": "lerna-changelog --from=`git rev-list --max-parents=0 HEAD` > CHANGELOG.md && git add CHANGELOG.md",
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
     "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
@@ -95,7 +94,8 @@
     "test": "yarn lint && jest",
     "test:current": "jest --watch",
     "test:watch": "jest --watchAll",
-    "travis-deploy-once": "travis-deploy-once"
+    "travis-deploy-once": "travis-deploy-once",
+    "version": "lerna-changelog --from=`git rev-list --max-parents=0 HEAD` > CHANGELOG.md && git add CHANGELOG.md"
   },
   "jest": {
     "collectCoverage": true,
