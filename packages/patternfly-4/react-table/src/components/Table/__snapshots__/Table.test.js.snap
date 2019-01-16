@@ -26,6 +26,7 @@ exports[`Actions table 1`] = `
   font-weight: 400;
   line-height: 1.5;
   background-color: transparent;
+  color: #72767b;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -50,6 +51,7 @@ exports[`Actions table 1`] = `
   font-weight: 400;
   line-height: 1.5;
   background-color: transparent;
+  color: #72767b;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -74,6 +76,7 @@ exports[`Actions table 1`] = `
   font-weight: 400;
   line-height: 1.5;
   background-color: transparent;
+  color: #72767b;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -98,6 +101,7 @@ exports[`Actions table 1`] = `
   font-weight: 400;
   line-height: 1.5;
   background-color: transparent;
+  color: #72767b;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -122,6 +126,7 @@ exports[`Actions table 1`] = `
   font-weight: 400;
   line-height: 1.5;
   background-color: transparent;
+  color: #72767b;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -146,6 +151,7 @@ exports[`Actions table 1`] = `
   font-weight: 400;
   line-height: 1.5;
   background-color: transparent;
+  color: #72767b;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -170,6 +176,7 @@ exports[`Actions table 1`] = `
   font-weight: 400;
   line-height: 1.5;
   background-color: transparent;
+  color: #72767b;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -194,6 +201,7 @@ exports[`Actions table 1`] = `
   font-weight: 400;
   line-height: 1.5;
   background-color: transparent;
+  color: #72767b;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -218,6 +226,7 @@ exports[`Actions table 1`] = `
   font-weight: 400;
   line-height: 1.5;
   background-color: transparent;
+  color: #72767b;
 }
 .pf-c-dropdown {
   display: inline-block;
