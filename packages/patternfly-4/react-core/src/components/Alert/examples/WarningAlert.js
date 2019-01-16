@@ -11,7 +11,7 @@ class WarningAlert extends React.Component {
         <Alert
           variant="warning"
           title="Warning notification title"
-          action={<Button variant="secondary">Button</Button>}
+          action={<Button variant="link">Action Button</Button>}
         />
         <Alert variant="warning" title="Warning notification title" />
       </React.Fragment>

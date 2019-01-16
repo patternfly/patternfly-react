@@ -18,7 +18,7 @@ const defaultProps = {
 const AlertBody = ({ title, className, children, ...props }) => (
   <div {...props} className={css(styles.alertBody, className)}>
     {title && <h4 className={css(styles.alertTitle)}>{title}</h4>}
-    {children}
+    {children && <p>{children}</p>}
   </div>
 );
 

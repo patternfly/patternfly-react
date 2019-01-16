@@ -110,7 +110,9 @@ exports[`Alert - danger Action 1`] = `
             : 
           </span>
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -237,7 +239,9 @@ exports[`Alert - danger Action and Title 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -359,7 +363,9 @@ exports[`Alert - danger Body 1`] = `
             : 
           </span>
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
   </div>
@@ -478,7 +484,9 @@ exports[`Alert - danger Custom aria label 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -601,7 +609,9 @@ exports[`Alert - danger Title 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
   </div>
@@ -718,7 +728,9 @@ exports[`Alert - info Action 1`] = `
             : 
           </span>
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -845,7 +857,9 @@ exports[`Alert - info Action and Title 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -967,7 +981,9 @@ exports[`Alert - info Body 1`] = `
             : 
           </span>
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
   </div>
@@ -1086,7 +1102,9 @@ exports[`Alert - info Custom aria label 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -1209,7 +1227,9 @@ exports[`Alert - info Title 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
   </div>
@@ -1326,7 +1346,9 @@ exports[`Alert - success Action 1`] = `
             : 
           </span>
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -1453,7 +1475,9 @@ exports[`Alert - success Action and Title 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -1575,7 +1599,9 @@ exports[`Alert - success Body 1`] = `
             : 
           </span>
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
   </div>
@@ -1694,7 +1720,9 @@ exports[`Alert - success Custom aria label 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -1817,7 +1845,9 @@ exports[`Alert - success Title 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
   </div>
@@ -1934,7 +1964,9 @@ exports[`Alert - warning Action 1`] = `
             : 
           </span>
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -2061,7 +2093,9 @@ exports[`Alert - warning Action and Title 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -2183,7 +2217,9 @@ exports[`Alert - warning Body 1`] = `
             : 
           </span>
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
   </div>
@@ -2302,7 +2338,9 @@ exports[`Alert - warning Custom aria label 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
     <AlertAction
@@ -2425,7 +2463,9 @@ exports[`Alert - warning Title 1`] = `
           </span>
           Some title
         </h4>
-        Some alert
+        <p>
+          Some alert
+        </p>
       </div>
     </AlertBody>
   </div>

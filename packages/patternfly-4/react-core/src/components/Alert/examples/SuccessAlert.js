@@ -11,7 +11,7 @@ class SuccessAlert extends React.Component {
         <Alert
           variant="success"
           title="Success notification title"
-          action={<Button variant="secondary">Button</Button>}
+          action={<Button variant="link">Action Button</Button>}
         />
         <Alert variant="success" title="Success notification title" />
       </React.Fragment>

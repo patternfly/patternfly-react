@@ -8,7 +8,7 @@ class InfoAlert extends React.Component {
         <Alert variant="info" title="Info notification title">
           Info notification description. <a href="#">This is a link.</a>
         </Alert>
-        <Alert variant="info" title="Info notification title" action={<Button variant="secondary">Button</Button>} />
+        <Alert variant="info" title="Info notification title" action={<Button variant="link">Action Button</Button>} />
         <Alert variant="info" title="Info notification title" />
       </React.Fragment>
     );
