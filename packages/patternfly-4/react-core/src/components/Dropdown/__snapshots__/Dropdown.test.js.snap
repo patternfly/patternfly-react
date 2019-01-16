@@ -14,6 +14,19 @@ exports[`KebabToggle basic 1`] = `
   line-height: 1.5;
   background-color: transparent;
 }
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  text-decoration: none;
+  background-color: #ededed;
+}
 .pf-c-dropdown__menu {
   display: block;
   position: absolute;
@@ -139,6 +152,7 @@ exports[`KebabToggle basic 1`] = `
         onClick={[Function]}
       >
         <div
+          className="pf-c-dropdown__menu-item"
           key=".0"
           onKeyDown={[Function]}
           tabIndex={-1}
@@ -1813,6 +1827,19 @@ exports[`dropdown basic 1`] = `
   line-height: 1.5;
   background-color: transparent;
 }
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  text-decoration: none;
+  background-color: #ededed;
+}
 .pf-c-dropdown__menu {
   display: block;
   position: absolute;
@@ -1945,6 +1972,7 @@ exports[`dropdown basic 1`] = `
         onClick={[Function]}
       >
         <div
+          className="pf-c-dropdown__menu-item"
           key=".0"
           onKeyDown={[Function]}
           tabIndex={-1}
