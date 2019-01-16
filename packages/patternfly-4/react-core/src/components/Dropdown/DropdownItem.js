@@ -96,7 +96,8 @@ class DropdownItem extends React.Component {
                     isDisabled && styles.modifiers.disabled,
                     isHovered && styles.modifiers.hover,
                     className
-                  )} ${child.props.className}`
+                  )} ${child.props.className}`,
+                  ref: this.ref
                 })
               )
             ) : (

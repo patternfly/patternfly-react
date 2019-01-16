@@ -69,11 +69,13 @@ class ComplexToolbarDemo extends React.Component {
         position={DropdownPosition.right}
         toggle={<DropdownToggle onToggle={this.onDropDownToggle}>All</DropdownToggle>}
         isOpen={isDropDownOpen}
+        dropdownItems={[
+          <DropdownItem>Item 1</DropdownItem>,
+          <DropdownItem>Item 2</DropdownItem>,
+          <DropdownItem>Item 3</DropdownItem>,
+          <DropdownItem isDisabled>All</DropdownItem>
+        ]}
       >
-        <DropdownItem>Item 1</DropdownItem>
-        <DropdownItem>Item 2</DropdownItem>
-        <DropdownItem>Item 3</DropdownItem>
-        <DropdownItem isDisabled>All</DropdownItem>
       </Dropdown>
     );
   };
@@ -88,13 +90,15 @@ class ComplexToolbarDemo extends React.Component {
         toggle={<KebabToggle onToggle={this.onKebabToggle} />}
         isOpen={isKebabOpen}
         isPlain
-      >
-        <DropdownItem>Link</DropdownItem>
-        <DropdownItem component="button">Action</DropdownItem>
-        <DropdownItem isDisabled>Disabled Link</DropdownItem>
-        <DropdownItem isDisabled component="button">
-          Disabled Action
+        dropdownItems={[
+          <DropdownItem>Link</DropdownItem>,
+          <DropdownItem component="button">Action</DropdownItem>,
+          <DropdownItem isDisabled>Disabled Link</DropdownItem>,
+          <DropdownItem isDisabled component="button">
+            Disabled Action
         </DropdownItem>
+        ]}
+      >
       </Dropdown>
     );
   };
