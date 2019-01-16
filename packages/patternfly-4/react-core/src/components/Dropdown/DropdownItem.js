@@ -119,7 +119,7 @@ class DropdownItem extends React.Component {
                 onKeyDown={this.onKeyDown}
                 onClick={event => {
                   if (!isDisabled) {
-                    if (Component === 'button') onClick && onClick(event);
+                    onClick && onClick(event);
                     onSelect && onSelect(event);
                   }
                 }}
