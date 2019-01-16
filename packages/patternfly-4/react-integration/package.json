@@ -23,6 +23,8 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
   },
-  "dependencies": {},
+  "dependencies": {
+    "@patternfly/react-core": "file:../react-core"
+  },
   "devDependencies": {}
 }

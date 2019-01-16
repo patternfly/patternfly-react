@@ -3,16 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@patternfly/react-core": "^1.45.4",
-    "@patternfly/react-tokens": "^1.9.5",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build:demo": "react-scripts build",
+    "test:demo": "react-scripts test"
   },
   "devDependencies": {
     "@types/jest": "23.3.12",
