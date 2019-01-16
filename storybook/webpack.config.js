@@ -1,10 +1,15 @@
 const path = require('path');
 const pkg = require('../package.json');
+const { readdirSync, statSync } = require('fs');
+const { parse } = require('path');
 
-const PackageUtilities = require('lerna/lib/PackageUtilities');
-const Repository = require('lerna/lib/Repository');
+const ROOT_DIR = '..';
+const PCKGS = `${ROOT_DIR}/packages/patternfly-3`;
 
-const packages = PackageUtilities.getPackages(new Repository()).map(p => p.location);
+const packages = readdirSync(path.resolve(__dirname, PCKGS))
+  .filter(onePckg => statSync(path.resolve(__dirname, `${PCKGS}/${onePckg}`)).isDirectory())
+  .map(file => parse(file).name)
+  .reduce((acc, curr) => [...acc, path.resolve(__dirname, `${PCKGS}/${curr}`)], []);
 
 module.exports = (baseConfig, env, defaultConfig) => {
   // add the root path so root references can be used in stories
