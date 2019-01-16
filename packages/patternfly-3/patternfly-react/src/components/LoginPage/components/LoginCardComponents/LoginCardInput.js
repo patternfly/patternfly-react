@@ -1,52 +1,82 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Fade } from 'react-bootstrap';
 import classNames from 'classnames';
-import LoginCardInputWarning from './LoginCardInputWarning';
-import { FormControl, FormGroup, HelpBlock } from '../../../../index';
+import { FormControl, FormGroup, Overlay, Tooltip } from '../../../../index';
+
 import { noop } from '../../../../common/helpers';
 
-const LoginCardInput = ({
-  id,
-  type,
-  placeholder,
-  size,
-  error,
-  warning,
-  onChange,
-  onFocus,
-  onBlur,
-  onKeyPress,
-  showError,
-  showWarning,
-  className,
-  autoComplete,
-  attributes
-}) => {
-  const helpBlock =
-    (showError && <HelpBlock>{error}</HelpBlock>) ||
-    (showWarning && <LoginCardInputWarning>{warning}</LoginCardInputWarning>);
-  const validationState = showError ? 'error' : null;
-  return (
-    <FormGroup className={classNames('login_card_input', className)} controlId={id} validationState={validationState}>
-      <FormControl
-        {...attributes}
-        type={type}
-        placeholder={placeholder}
-        bsSize={size}
-        onChange={onChange}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onKeyPress={onKeyPress}
-        autoComplete={autoComplete}
-      />
+class LoginCardInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.input = React.createRef();
+    this.state = {
+      showTooltip: false
+    };
+  }
 
-      <Fade in={showError || showWarning}>
-        <div>{helpBlock}</div>
-      </Fade>
-    </FormGroup>
-  );
-};
+  showTooltip = validationState => {
+    this.setState({
+      showTooltip: validationState && true
+    });
+  };
+
+  hideTooltip = () => {
+    this.setState({
+      showTooltip: false
+    });
+  };
+
+  render() {
+    const {
+      id,
+      type,
+      placeholder,
+      size,
+      error,
+      warning,
+      onChange,
+      onFocus,
+      onBlur,
+      onKeyPress,
+      showError,
+      showWarning,
+      className,
+      autoComplete,
+      attributes
+    } = this.props;
+    const { showTooltip } = this.state;
+    // eslint-disable-next-line no-nested-ternary
+    const validationState = showError ? 'error' : showWarning ? 'warning' : null;
+    const tooltip = <Tooltip id={`${id}-tooltip`}>{showWarning ? warning : error}</Tooltip>;
+    const inputRef = this.input.current;
+    return (
+      <FormGroup
+        className={classNames('login_card_input', className)}
+        controlId={id}
+        validationState={validationState}
+        ref={this.input}
+        onMouseEnter={e => this.showTooltip(!!validationState)}
+        onMouseLeave={this.hideTooltip}
+      >
+        <FormControl
+          {...attributes}
+          type={type}
+          placeholder={placeholder}
+          bsSize={size}
+          onChange={onChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          onKeyPress={onKeyPress}
+          autoComplete={autoComplete}
+        />
+        <FormControl.Feedback />
+        <Overlay placement="right" target={inputRef} show={showTooltip}>
+          {tooltip}
+        </Overlay>
+      </FormGroup>
+    );
+  }
+}
 
 LoginCardInput.propTypes = {
   /** The input's id */

@@ -16,7 +16,6 @@ import LoginCardWithValidation from './components/LoginCardComponents/LoginCardW
 import LoginCardForm from './components/LoginCardComponents/LoginCardForm';
 import LoginCardSignUp from './components/LoginCardComponents/LoginCardSignUp';
 import LoginCardInput from './components/LoginCardComponents/LoginCardInput';
-import LoginCardInputWarning from './components/LoginCardComponents/LoginCardInputWarning';
 import LoginCardSettings from './components/LoginCardComponents/LoginCardSettings';
 import LoginFormError from './components/LoginCardComponents/LoginFormError';
 import LoginCardForgotPassword from './components/LoginCardComponents/LoginCardForgotPassword';
@@ -46,7 +45,6 @@ export {
   LoginCardForm,
   LoginCardSignUp,
   LoginCardInput,
-  LoginCardInputWarning,
   LoginCardSettings,
   LoginFormError,
   LoginCardForgotPassword,

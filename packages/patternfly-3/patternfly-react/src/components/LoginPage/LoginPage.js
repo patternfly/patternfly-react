@@ -17,7 +17,6 @@ import LoginCardWithValidation from './components/LoginCardComponents/LoginCardW
 import LoginCardForm from './components/LoginCardComponents/LoginCardForm';
 import LoginCardSignUp from './components/LoginCardComponents/LoginCardSignUp';
 import LoginCardInput from './components/LoginCardComponents/LoginCardInput';
-import LoginCardInputWarning from './components/LoginCardComponents/LoginCardInputWarning';
 import LoginCardSettings from './components/LoginCardComponents/LoginCardSettings';
 import LoginFormError from './components/LoginCardComponents/LoginFormError';
 import LoginCardForgotPassword from './components/LoginCardComponents/LoginCardForgotPassword';
@@ -78,7 +77,6 @@ LoginPage.CardWithValidation = LoginCardWithValidation;
 LoginPage.CardForm = LoginCardForm;
 LoginPage.CardSignUp = LoginCardSignUp;
 LoginPage.CardInput = LoginCardInput;
-LoginPage.CardInputWarning = LoginCardInputWarning;
 LoginPage.CardSettings = LoginCardSettings;
 LoginPage.FormError = LoginFormError;
 LoginPage.CardForgotPassword = LoginCardForgotPassword;

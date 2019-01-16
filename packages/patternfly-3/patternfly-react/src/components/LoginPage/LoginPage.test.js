@@ -5,6 +5,7 @@ import englishMessages from './mocks/messages.en';
 import frenchMessages from './mocks/messages.fr';
 import { LoginPage, LoginCardWithValidation } from './index';
 import { KEY_CODES, noop } from '../../common/helpers';
+import { Overlay } from '../Overlay';
 
 const { Input, ForgotPassword, SignUp } = LoginPage.Card;
 const { FooterLinks } = LoginPage;
@@ -153,6 +154,14 @@ test('Toggle Caps lock warning in password field by the events: focus, blur and 
       .at(1)
       .props().showWarning
   ).toEqual(true);
+
+  const passwordElementParent = component
+    .find('input[type="password"]')
+    .parents('.login_card_input')
+    .at(0);
+  passwordElementParent.simulate('mouseEnter');
+  const tooltip = component.find(Overlay);
+  expect(tooltip.at(1).props().show).toBeTruthy();
 });
 
 test('Toggle CapsLock cause warning to show under password field when focused', () => {

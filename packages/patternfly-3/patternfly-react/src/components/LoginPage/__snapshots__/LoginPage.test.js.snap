@@ -126,7 +126,7 @@ exports[`Component matches snapshot 1`] = `
                   novalidate=""
                 >
                   <div
-                    class="login_card_input form-group"
+                    class="login_card_input form-group has-feedback"
                   >
                     <input
                       autocomplete=""
@@ -135,12 +135,9 @@ exports[`Component matches snapshot 1`] = `
                       placeholder="Email address"
                       type="email"
                     />
-                    <div
-                      class="fade"
-                    />
                   </div>
                   <div
-                    class="login_card_input form-group"
+                    class="login_card_input form-group has-feedback"
                   >
                     <input
                       autocomplete=""
@@ -148,9 +145,6 @@ exports[`Component matches snapshot 1`] = `
                       id="card_password"
                       placeholder="Password"
                       type="password"
-                    />
-                    <div
-                      class="fade"
                     />
                   </div>
                   <div
