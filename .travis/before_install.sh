@@ -21,6 +21,9 @@ if [ "${TRAVIS_REPO_SLUG}" == "${TRIGGER_REPO_SLUG}" -a "$TRAVIS_BRANCH" == "${T
 
   npm config set "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" -q
   echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+  git add ~/.npmrc
+  git update-index --assume-unchanged ~/.npmrc
+
   npm prune
 
   git config --global user.email ${COMMIT_AUTHOR_EMAIL}

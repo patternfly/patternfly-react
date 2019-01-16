@@ -79,7 +79,7 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "generate": "yarn plop",
     "lerna": "lerna",
-    "lerna:publish": "lerna publish --yes",
+    "lerna:publish": "lerna publish --yes --npm-client npm",
     "lerna:changelog": "lerna-changelog --from=`git rev-list --max-parents=0 HEAD` > CHANGELOG.md && git add CHANGELOG.md",
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
