@@ -14,10 +14,6 @@ injectGlobal(`
     height: 100%;
   }
 
-  body {
-    background-color: #ececec;
-  }
-
   #___gatsby {
     position: relative;
     width: 100%;
@@ -41,27 +37,27 @@ const DocsLayout = ({ children, data }) => {
   const getPackage = label => DocsFiles[`${label.toLowerCase()}_package`].substr(6);
   const componentRoutes = data.componentPages
     ? data.componentPages.edges.map(e => ({
-        to: e.node.path,
-        label: e.node.fields.label,
-        pkg: getPackage(e.node.fields.label),
-        components: componentMapper(e.node.path, e.node.fields.label)
-      }))
+      to: e.node.path,
+      label: e.node.fields.label,
+      pkg: getPackage(e.node.fields.label),
+      components: componentMapper(e.node.path, e.node.fields.label)
+    }))
     : [];
 
   const layoutRoutes = data.layoutPages
     ? data.layoutPages.edges.map(e => ({
-        to: e.node.path,
-        label: e.node.fields.label,
-        pkg: getPackage(e.node.fields.label),
-        components: componentMapper(e.node.path, e.node.fields.label)
-      }))
+      to: e.node.path,
+      label: e.node.fields.label,
+      pkg: getPackage(e.node.fields.label),
+      components: componentMapper(e.node.path, e.node.fields.label)
+    }))
     : [];
 
   const demoRoutes = data.demoPages
     ? data.demoPages.edges.map(e => ({
-        to: e.node.path,
-        label: e.node.fields.label
-      }))
+      to: e.node.path,
+      label: e.node.fields.label
+    }))
     : [];
 
   return (
