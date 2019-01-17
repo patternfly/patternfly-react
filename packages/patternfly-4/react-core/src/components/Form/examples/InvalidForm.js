@@ -2,28 +2,35 @@ import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 
 class InvalidForm extends React.Component {
+  state = {
+    value: 'Five',
+    isValid: false
+  };
+
+  handleTextInputChange = value => {
+    this.setState({ value, isValid: /^\d+$/.test(value) });
+  };
+
   render() {
+    const { value, isValid } = this.state;
+
     return (
       <Form>
         <FormGroup
-          isRequired
-          label="Email"
-          helperText="This is should be your email"
-          helperTextInvalid="Your email is not in a correct format"
-          fieldId="email-label"
-          isValid={false}
-        >
-          <TextInput isValid={false} value="email||email.com" id="email-label" aria-describedby="email-label-helper" />
-        </FormGroup>
-        <FormGroup
-          label="Age"
+          label="Age:"
           type="number"
           helperText="Please write your age"
           helperTextInvalid="Age has to be a number"
           fieldId="age"
-          isValid={false}
+          isValid={isValid}
         >
-          <TextInput isValid={false} value="Five" id="age" aria-describedby="age-helper" />
+          <TextInput
+            isValid={isValid}
+            value={value}
+            id="age"
+            aria-describedby="age-helper"
+            onChange={this.handleTextInputChange}
+          />
         </FormGroup>
       </Form>
     );
