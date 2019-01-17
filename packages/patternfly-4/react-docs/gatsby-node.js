@@ -128,6 +128,27 @@ exports.createPages = async ({ graphql, actions }) => {
         rawExamples.push(
           `{name: '${example.name}', path: '${examplePath}', file: require('!!raw-loader!${examplePath}')}`
         );
+
+        // also create another example for the full version of it
+        const pathArr = examplePath.split('/');
+        const exampleName = pathArr[pathArr.length - 1];
+        const exampleFilePath = path.resolve(__dirname, '.tmp', 'examples', exampleName);
+        const fullExample = `
+        import React from 'react';
+        import Example from '${example.absolutePath}';
+        import ExampleLayout from '../../src/components/layouts/fullPage';
+
+        export default () => <ExampleLayout><Example /></ExampleLayout>;
+        `;
+        fs.outputFileSync(exampleFilePath, fullExample);
+        const newPath = `${path.dirname(example.relativePath.toLowerCase())}/${exampleName
+          .slice(0, -3)
+          .replace(/([a-z])([A-Z])/g, '$1-$2')
+          .toLowerCase()}`;
+        createPage({
+          path: newPath,
+          component: exampleFilePath
+        });
       }
     });
     const allImages = [];
@@ -157,6 +178,7 @@ exports.createPages = async ({ graphql, actions }) => {
     );
 
     fs.outputFileSync(filePath, content);
+    // console.log(`page: /${path.dirname(doc.relativePath).toLowerCase()}, component: ${filePath}`);
     createPage({
       path: `/${path.dirname(doc.relativePath).toLowerCase()}`,
       component: filePath
@@ -165,13 +187,4 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const indexFilePath = path.resolve(__dirname, '.tmp', 'index.js');
   fs.writeFileSync(indexFilePath, docExports.join('\n'));
-
-  examples.edges.forEach(({ node: example }) => {
-    const examplePath = `/${path.dirname(example.relativePath).toLowerCase()}/${paramCase(example.name)}`;
-    createPage({
-      path: examplePath,
-      layout: 'example',
-      component: example.absolutePath
-    });
-  });
 };
