@@ -1,6 +1,46 @@
 
 ## Unreleased (2019-01-17)
 
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1179](https://github.com/patternfly/patternfly-react/pull/1179) Gatsby v2 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly3-react-lerna-root@7.19.8 (2019-01-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1207](https://github.com/patternfly/patternfly-react/pull/1207) fix(DualList): fix hidden inputs ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react@2.29.6 (2019-01-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1207](https://github.com/patternfly/patternfly-react/pull/1207) fix(DualList): fix hidden inputs ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly-react-extensions@2.16.7 (2019-01-17)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1207](https://github.com/patternfly/patternfly-react/pull/1207) fix(DualList): fix hidden inputs ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## @patternfly/react-console@1.10.14 (2019-01-17)
+
 #### :bug: Bug Fix
 * `patternfly-3`
   * [#1207](https://github.com/patternfly/patternfly-react/pull/1207) fix(DualList): fix hidden inputs ([@Laviro](https://github.com/Laviro))
