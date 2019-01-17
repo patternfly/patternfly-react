@@ -1,6 +1,29 @@
 
 ## Unreleased (2019-01-17)
 
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1185](https://github.com/patternfly/patternfly-react/pull/1185) fix(Form): Update From Based on Audit ([@tlabaj](https://github.com/tlabaj))
+  * [#1211](https://github.com/patternfly/patternfly-react/pull/1211) fix(Dropdown): add onclick fix to custom items ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 3
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.39.1 (2019-01-17)
+
+#### :memo: Documentation
+* `patternfly-4`
+  * [#1179](https://github.com/patternfly/patternfly-react/pull/1179) Gatsby v2 ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.20.2 (2019-01-17)
+
 #### :memo: Documentation
 * `patternfly-4`
   * [#1179](https://github.com/patternfly/patternfly-react/pull/1179) Gatsby v2 ([@jschuler](https://github.com/jschuler))

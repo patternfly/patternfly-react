@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.21.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.20.2...@patternfly/react-docs@3.21.0) (2019-01-17)
+
+
+### Features
+
+* **example:** Add dark theme toggle button & change background colort ([#1212](https://github.com/patternfly/patternfly-react/issues/1212)) ([ec1bfbf](https://github.com/patternfly/patternfly-react/commit/ec1bfbf))
+
+
+
+
+
 ## [3.20.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.20.1...@patternfly/react-docs@3.20.2) (2019-01-17)
 
 **Note:** Version bump only for package @patternfly/react-docs

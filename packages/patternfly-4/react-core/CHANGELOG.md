@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.49.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.49.0...@patternfly/react-core@1.49.1) (2019-01-17)
+
+
+### Bug Fixes
+
+* **Dropdown:** add onclick fix to custom items ([#1211](https://github.com/patternfly/patternfly-react/issues/1211)) ([bbdf4cc](https://github.com/patternfly/patternfly-react/commit/bbdf4cc))
+* **Form:** Update From Based in Audit ([#1185](https://github.com/patternfly/patternfly-react/issues/1185)) ([a42ab72](https://github.com/patternfly/patternfly-react/commit/a42ab72)), closes [#1026](https://github.com/patternfly/patternfly-react/issues/1026)
+
+
+
+
+
 # [1.49.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.48.0...@patternfly/react-core@1.49.0) (2019-01-17)
 
 
