@@ -1,5 +1,4 @@
 const path = require(`path`);
-const paramCase = require('param-case');
 const fs = require('fs-extra'); //eslint-disable-line
 const packageDirs = ['react-core', 'react-charts', 'react-styled-system', 'react-table'];
 
