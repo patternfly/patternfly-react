@@ -1,19 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { getSelectedItems } from '../helpers';
 
 const DualListHiddenSelect = ({ items, ...props }) => {
-  const selectedItems = getSelectedItems(items);
   const selectedValues = [];
   const options = (
     <React.Fragment>
-      {selectedItems ? (
-        selectedItems.map(({ value, children, label }, index) => {
+      {items ? (
+        items.map(({ value, children, label }, index) => {
           if (children) {
             return children.map(({ value: childValue, label: childLabel }, childIndex) => {
               selectedValues.push(childValue);
               return (
-                <option key={`${index}-${childIndex}`} value={childValue} selected>
+                <option key={`${index}-${childIndex}`} value={childValue}>
                   {childLabel}
                 </option>
               );
@@ -21,7 +19,7 @@ const DualListHiddenSelect = ({ items, ...props }) => {
           }
           selectedValues.push(value);
           return (
-            <option key={index} value={value} selected>
+            <option key={index} value={value}>
               {label}
             </option>
           );
@@ -31,7 +29,6 @@ const DualListHiddenSelect = ({ items, ...props }) => {
       )}
     </React.Fragment>
   );
-
   return (
     <select {...props} multiple hidden defaultValue={selectedValues}>
       {options}
