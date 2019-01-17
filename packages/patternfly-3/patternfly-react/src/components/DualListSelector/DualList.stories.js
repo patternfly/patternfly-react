@@ -16,6 +16,7 @@ import {
   DualListFilter,
   DualListFooter,
   DualListHeading,
+  DualListHiddenSelect,
   DualListItem,
   DualListItems,
   DualListMainCheckbox,
@@ -41,9 +42,10 @@ const storyInfo = {
     DualListItem,
     DualListItems,
     DualListMainCheckbox,
-    DualListSort
+    DualListSort,
+    DualListHiddenSelect
   ],
-  propTablesExclude: [DualListControlled, DualListSelector]
+  propTablesExclude: [DualListControlled, DualListSelector, Button]
 };
 
 stories.addDecorator(
@@ -74,7 +76,7 @@ stories.add(
 stories.add(
   'Dual List Selector as a form input',
   withInfo(storyInfo)(() => (
-    <React.Fragment>
+    <div>
       <h3>Please see this short video to understand how to send the form values by network:</h3>
       <iframe
         width="400"
@@ -101,6 +103,6 @@ stories.add(
         />
         <Button type="submit">Submit form</Button>
       </form>
-    </React.Fragment>
+    </div>
   ))
 );
