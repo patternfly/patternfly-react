@@ -37,6 +37,30 @@ Object.keys(AlertVariant).forEach(variant => {
       expect(view).toMatchSnapshot();
     });
 
+    test('Close button', () => {
+      const onClose = jest.fn();
+      const view = mount(
+        <Alert variant={variant} onClose={onClose}>
+          Some alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
+      view.find('button[aria-label="Close"]').simulate('click');
+      expect(onClose).toHaveBeenCalled();
+    });
+
+    test('Close button and Title', () => {
+      const onClose = jest.fn();
+      const view = mount(
+        <Alert variant={variant} onClose={onClose} title="Some title">
+          Some alert
+        </Alert>
+      );
+      expect(view).toMatchSnapshot();
+      view.find('button[aria-label="Close"]').simulate('click');
+      expect(onClose).toHaveBeenCalled();
+    });
+
     test('Custom aria label', () => {
       const view = mount(
         <Alert variant={variant} aria-label={`Custom aria label for ${variant}`} action="action" title="Some title">
