@@ -128,7 +128,8 @@
       "\\.(css)$": "<rootDir>/packages/patternfly-4/react-styles/jest-transform.js"
     },
     "testPathIgnorePatterns": [
-      "<rootDir>/scripts/generators/"
+      "<rootDir>/scripts/generators/",
+      "<rootDir>/packages/patternfly-4/react-integration/"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!@patternfly|@novnc)"

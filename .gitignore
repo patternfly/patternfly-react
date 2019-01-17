@@ -5,7 +5,6 @@ tsc_out
 /.changelog
 .DS_Store
 coverage
-public/
 .cache
 .tmp
 packages/react-icons/src/icons/
