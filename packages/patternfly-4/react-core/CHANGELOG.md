@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.49.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.48.0...@patternfly/react-core@1.49.0) (2019-01-17)
+
+
+### Features
+
+* **Alert:** Add optional Close button to Alert via onClose prop ([#1200](https://github.com/patternfly/patternfly-react/issues/1200)) ([9d59dcb](https://github.com/patternfly/patternfly-react/commit/9d59dcb)), closes [#1036](https://github.com/patternfly/patternfly-react/issues/1036)
+
+
+
+
+
 # [1.48.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.47.0...@patternfly/react-core@1.48.0) (2019-01-16)
 
 

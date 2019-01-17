@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@0.3.0...@patternfly/react-table@0.4.0) (2019-01-17)
+
+
+### Features
+
+* **Alert:** Add optional Close button to Alert via onClose prop ([#1200](https://github.com/patternfly/patternfly-react/issues/1200)) ([9d59dcb](https://github.com/patternfly/patternfly-react/commit/9d59dcb)), closes [#1036](https://github.com/patternfly/patternfly-react/issues/1036)
+
+
+
+
+
 # [0.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@0.2.51...@patternfly/react-table@0.3.0) (2019-01-16)
 
 

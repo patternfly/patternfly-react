@@ -1,5 +1,123 @@
 
-## Unreleased (2019-01-16)
+## Unreleased (2019-01-17)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1200](https://github.com/patternfly/patternfly-react/pull/1200) feat(Alert): Add optional Close button to Alert via onClose prop ([@mturley](https://github.com/mturley))
+
+#### Committers: 1
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## patternfly4-react-lerna-root@1.38.0 (2019-01-16)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#821](https://github.com/patternfly/patternfly-react/pull/821) feat(Table): introduce new component Table based on pf4 designs ([@karelhala](https://github.com/karelhala))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1203](https://github.com/patternfly/patternfly-react/pull/1203) fix(Dropdown): pass onClick to any dropdown item if present ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1201](https://github.com/patternfly/patternfly-react/pull/1201) feat(Dropdown): handle keyboard navigation and styling for Link children ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1192](https://github.com/patternfly/patternfly-react/pull/1192) docs(Button): update button docs to match core ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1193](https://github.com/patternfly/patternfly-react/pull/1193) fix(Dropdown): Pass down ref for dropdown item ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* Other
+  * [#1204](https://github.com/patternfly/patternfly-react/pull/1204) fix(lockfile): updates out of date yarn.lock ([@priley86](https://github.com/priley86))
+  * [#1202](https://github.com/patternfly/patternfly-react/pull/1202) fix(lerna-changelog): update lerna changelog ([@priley86](https://github.com/priley86))
+  * [#1198](https://github.com/patternfly/patternfly-react/pull/1198) fix(lerna3): ignore npmrc ([@priley86](https://github.com/priley86))
+* `patternfly-4`
+  * [#1187](https://github.com/patternfly/patternfly-react/pull/1187) build(lerna3): enhances build scripts to support lerna3 ([@priley86](https://github.com/priley86))
+
+#### Committers: 3
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.3.0 (2019-01-16)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#821](https://github.com/patternfly/patternfly-react/pull/821) feat(Table): introduce new component Table based on pf4 designs ([@karelhala](https://github.com/karelhala))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1203](https://github.com/patternfly/patternfly-react/pull/1203) fix(Dropdown): pass onClick to any dropdown item if present ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1201](https://github.com/patternfly/patternfly-react/pull/1201) feat(Dropdown): handle keyboard navigation and styling for Link children ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1192](https://github.com/patternfly/patternfly-react/pull/1192) docs(Button): update button docs to match core ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1193](https://github.com/patternfly/patternfly-react/pull/1193) fix(Dropdown): Pass down ref for dropdown item ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* Other
+  * [#1204](https://github.com/patternfly/patternfly-react/pull/1204) fix(lockfile): updates out of date yarn.lock ([@priley86](https://github.com/priley86))
+  * [#1202](https://github.com/patternfly/patternfly-react/pull/1202) fix(lerna-changelog): update lerna changelog ([@priley86](https://github.com/priley86))
+  * [#1198](https://github.com/patternfly/patternfly-react/pull/1198) fix(lerna3): ignore npmrc ([@priley86](https://github.com/priley86))
+* `patternfly-4`
+  * [#1187](https://github.com/patternfly/patternfly-react/pull/1187) build(lerna3): enhances build scripts to support lerna3 ([@priley86](https://github.com/priley86))
+
+#### Committers: 3
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.20.0 (2019-01-16)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#821](https://github.com/patternfly/patternfly-react/pull/821) feat(Table): introduce new component Table based on pf4 designs ([@karelhala](https://github.com/karelhala))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1203](https://github.com/patternfly/patternfly-react/pull/1203) fix(Dropdown): pass onClick to any dropdown item if present ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1201](https://github.com/patternfly/patternfly-react/pull/1201) feat(Dropdown): handle keyboard navigation and styling for Link children ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1192](https://github.com/patternfly/patternfly-react/pull/1192) docs(Button): update button docs to match core ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1193](https://github.com/patternfly/patternfly-react/pull/1193) fix(Dropdown): Pass down ref for dropdown item ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* Other
+  * [#1204](https://github.com/patternfly/patternfly-react/pull/1204) fix(lockfile): updates out of date yarn.lock ([@priley86](https://github.com/priley86))
+  * [#1202](https://github.com/patternfly/patternfly-react/pull/1202) fix(lerna-changelog): update lerna changelog ([@priley86](https://github.com/priley86))
+  * [#1198](https://github.com/patternfly/patternfly-react/pull/1198) fix(lerna3): ignore npmrc ([@priley86](https://github.com/priley86))
+* `patternfly-4`
+  * [#1187](https://github.com/patternfly/patternfly-react/pull/1187) build(lerna3): enhances build scripts to support lerna3 ([@priley86](https://github.com/priley86))
+
+#### Committers: 3
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.48.0 (2019-01-16)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#821](https://github.com/patternfly/patternfly-react/pull/821) feat(Table): introduce new component Table based on pf4 designs ([@karelhala](https://github.com/karelhala))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1203](https://github.com/patternfly/patternfly-react/pull/1203) fix(Dropdown): pass onClick to any dropdown item if present ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1201](https://github.com/patternfly/patternfly-react/pull/1201) feat(Dropdown): handle keyboard navigation and styling for Link children ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1192](https://github.com/patternfly/patternfly-react/pull/1192) docs(Button): update button docs to match core ([@kmcfaul](https://github.com/kmcfaul))
+  * [#1193](https://github.com/patternfly/patternfly-react/pull/1193) fix(Dropdown): Pass down ref for dropdown item ([@karelhala](https://github.com/karelhala))
+
+#### :house: Internal
+* Other
+  * [#1204](https://github.com/patternfly/patternfly-react/pull/1204) fix(lockfile): updates out of date yarn.lock ([@priley86](https://github.com/priley86))
+  * [#1202](https://github.com/patternfly/patternfly-react/pull/1202) fix(lerna-changelog): update lerna changelog ([@priley86](https://github.com/priley86))
+  * [#1198](https://github.com/patternfly/patternfly-react/pull/1198) fix(lerna3): ignore npmrc ([@priley86](https://github.com/priley86))
+* `patternfly-4`
+  * [#1187](https://github.com/patternfly/patternfly-react/pull/1187) build(lerna3): enhances build scripts to support lerna3 ([@priley86](https://github.com/priley86))
+
+#### Committers: 3
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-charts@1.3.0 (2019-01-16)
 
 #### :rocket: New Feature
 * `patternfly-4`

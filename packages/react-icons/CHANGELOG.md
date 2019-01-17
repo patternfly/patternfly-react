@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.9.7...@patternfly/react-icons@2.10.0) (2019-01-17)
+
+
+### Features
+
+* **Alert:** Add optional Close button to Alert via onClose prop ([#1200](https://github.com/patternfly/patternfly-react/issues/1200)) ([9d59dcb](https://github.com/patternfly/patternfly-react/commit/9d59dcb)), closes [#1036](https://github.com/patternfly/patternfly-react/issues/1036)
+
+
+
+
+
 <a name="2.9.7"></a>
 ## [2.9.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.9.6...@patternfly/react-icons@2.9.7) (2019-01-11)
 
