@@ -8,7 +8,8 @@ export default StyleSheet.create({
   },
   nav: {
     position: 'relative',
-    flexShrink: 0
+    flexShrink: 0,
+    borderRight: 'solid 1px #cecece'
   },
   main: {
     position: 'relative',

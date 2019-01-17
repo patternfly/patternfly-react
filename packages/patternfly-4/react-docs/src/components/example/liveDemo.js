@@ -12,6 +12,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'reac
 import { transform } from 'babel-standalone';
 import Section from '../section';
 import copy from 'clipboard-copy';
+import classNames from 'classnames';
 
 const propTypes = {
   className: PropTypes.string,
@@ -56,7 +57,14 @@ const transformCode = code => {
 class LiveDemo extends React.Component {
   state = {
     codeOpen: false,
-    showCopyMessage: false
+    showCopyMessage: false,
+    isDarkTheme: false
+  };
+
+  handleToggleDarkTheme = () => {
+    this.setState({
+      isDarkTheme: !this.state.isDarkTheme
+    });
   };
 
   handleClickCodeOpen = () => {
@@ -79,7 +87,7 @@ class LiveDemo extends React.Component {
 
   render() {
     const { className, raw, images, live, liveScope, path } = this.props;
-    const { codeOpen, showCopyMessage } = this.state;
+    const { codeOpen, showCopyMessage, isDarkTheme } = this.state;
 
     const GITHUB_BASE = 'https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-4';
     const examplePath = `${GITHUB_BASE}${path.substr(5)}`;
@@ -96,11 +104,15 @@ class LiveDemo extends React.Component {
         scope[importName] = image.file;
       }
     }
+    const darkThemeClasses =
+      classNames({
+        'pf-t-dark pf-m-opaque-200': isDarkTheme,
+      })
 
     return (
       <Section>
         <LiveProvider code={raw} scope={scope} transformCode={transformCode}>
-          {live && <LivePreview className={css(className, exampleStyles.example)} />}
+          {live && <LivePreview className={css(className, exampleStyles.example, darkThemeClasses)} />}
           <div className={css(styles.toolbar)}>
             <CoreComponents.Button
               onClick={this.handleClickCodeOpen}
@@ -128,6 +140,15 @@ class LiveDemo extends React.Component {
                 <i className={css('fab fa-github')} />
               </CoreComponents.Button>
             </a>
+            <CoreComponents.Button
+              onClick={this.handleToggleDarkTheme}
+              variant="plain"
+              title="Toggle Dark Theme"
+              aria-label="Toggle Dark Theme"
+            >
+              <CoreIcons.AsleepIcon />
+            </CoreComponents.Button>
+
             <CoreComponents.TextContent className={css(styles.message, showCopyMessage && styles.messageShow)}>
               <CoreComponents.Text component="pre" className={css(styles.messageText)}>
                 Copied to clipboard
