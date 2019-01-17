@@ -1605,9 +1605,9 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.0.0.tgz#76b0e89e6f8738ca8154195baf5b8e6a80bc9105"
 
-"@patternfly/patternfly-next@1.0.120":
-  version "1.0.120"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.120.tgz#2e8e1245b25d0207696c547059c5e8754eff8773"
+"@patternfly/patternfly-next@1.0.126":
+  version "1.0.126"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.126.tgz#cdc2b40927663cca82f072b6b6eee98d244a1898"
 
 "@reach/router@^1.1.1":
   version "1.2.1"
@@ -7583,8 +7583,8 @@ eslint-plugin-react@^7.7.0:
     prop-types "^15.6.0"
 
 eslint-plugin-react@^7.8.2:
-  version "7.12.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.12.3.tgz#b9ca4cd7cd3f5d927db418a1950366a12d4568fd"
+  version "7.12.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.12.4.tgz#b1ecf26479d61aee650da612e425c53a99f48c8c"
   dependencies:
     array-includes "^3.0.3"
     doctrine "^2.1.0"
@@ -11382,9 +11382,9 @@ left-pad@^1.2.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/left-pad/-/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
 
-lerna-changelog@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/lerna-changelog/-/lerna-changelog-0.8.1.tgz#bb4c8b84603ebbf56e4decde30fae66d5282be53"
+lerna-changelog@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/lerna-changelog/-/lerna-changelog-0.8.2.tgz#05dc24add91741a4c198a79f82a1a4ac3fbb4754"
   dependencies:
     chalk "^2.4.1"
     cli-highlight "^1.2.3"
@@ -18384,8 +18384,8 @@ webpack-dev-middleware@^1.12.2:
     time-stamp "^2.0.0"
 
 webpack-dev-middleware@^3.0.1:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-3.5.0.tgz#fff0a07b0461314fb6ca82df3642c2423f768429"
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-3.5.1.tgz#9265b7742ef50f54f54c1d9af022fc17c1be9b88"
   dependencies:
     memory-fs "~0.4.1"
     mime "^2.3.1"

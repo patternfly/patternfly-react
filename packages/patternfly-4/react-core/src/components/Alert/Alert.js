@@ -30,6 +30,10 @@ const propTypes = {
   'aria-label': PropTypes.string,
   /** Variant label text for screen readers */
   variantLabel: PropTypes.string,
+  /** A callback for when the close button is clicked (if undefined, no close button is rendered) */
+  onClose: PropTypes.func,
+  /** Allows localization of the accessible label on the close button */
+  closeButtonAriaLabel: PropTypes.string,
   /** Additional props are spread to the container <div>  */
   '': PropTypes.any
 };
@@ -40,7 +44,9 @@ const defaultProps = {
   title: '',
   children: '',
   className: '',
-  variantLabel: null
+  variantLabel: null,
+  onClose: undefined,
+  closeButtonAriaLabel: 'Close'
 };
 
 const getDefaultAriaLabel = variant => `${capitalize(AlertVariant[variant])} Notification`;
@@ -53,6 +59,8 @@ const Alert = ({
   title,
   children,
   className,
+  onClose,
+  closeButtonAriaLabel,
   ...props
 }) => {
   variantLabel = variantLabel || capitalize(AlertVariant[variant]);
@@ -68,7 +76,9 @@ const Alert = ({
   return (
     <div {...props} className={customClassName} aria-label={ariaLabel}>
       <AlertIcon variant={variant} />
-      <AlertBody title={readerTitle}>{children}</AlertBody>
+      <AlertBody title={readerTitle} onClose={onClose} closeButtonAriaLabel={closeButtonAriaLabel}>
+        {children}
+      </AlertBody>
       {action && <AlertAction>{action}</AlertAction>}
     </div>
   );

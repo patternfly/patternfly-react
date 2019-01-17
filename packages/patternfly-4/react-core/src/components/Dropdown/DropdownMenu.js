@@ -4,6 +4,7 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../internal/componentShape';
 import { DropdownPosition, DropdownContext, DropdownArrowContext } from './dropdownConstants';
+import ReactDOM from 'react-dom';
 
 const propTypes = {
   /** Anything which can be rendered as dropdown items */
@@ -52,7 +53,9 @@ class DropdownMenu extends React.Component {
       this.keyHandler(nextIndex, position, custom);
     } else {
       custom
-        ? this.refsCollection[`item-${nextIndex}`].current.focus()
+        ? (this.refsCollection[`item-${nextIndex}`].current.focus &&
+            this.refsCollection[`item-${nextIndex}`].current.focus()) ||
+          ReactDOM.findDOMNode(this.refsCollection[`item-${nextIndex}`].current).focus()
         : this.refsCollection[`item-${nextIndex}`].focus();
     }
   };
@@ -61,13 +64,16 @@ class DropdownMenu extends React.Component {
     if (this.props.openedOnEnter) {
       if (this.props.component === 'ul') this.refsCollection['item-0'].focus();
       else {
-        this.refsCollection['item-0'].current.focus();
+        (this.refsCollection['item-0'].current.focus && this.refsCollection['item-0'].current.focus()) ||
+          ReactDOM.findDOMNode(this.refsCollection['item-0'].current).focus();
       }
     }
   }
 
   sendRef = (index, node, isDisabled) => {
-    if (isDisabled || node.getAttribute('role') === 'separator') {
+    if (!node.getAttribute) {
+      this.refsCollection[`item-${index}`] = ReactDOM.findDOMNode(node);
+    } else if (isDisabled || node.getAttribute('role') === 'separator') {
       this.refsCollection[`item-${index}`] = null;
     } else {
       this.refsCollection[`item-${index}`] = node;
@@ -86,6 +92,11 @@ class DropdownMenu extends React.Component {
     const mappedChildren = React.Children.map(this.props.children, (child, index) => {
       const mappedChild = React.cloneElement(child, {
         ref: React.createRef(),
+        className: `${css(
+          child.props.isDisabled && styles.modifiers.disabled,
+          child.props.isHovered && styles.modifiers.hover,
+          styles.dropdownMenuItem
+        )}${child.props.className ? child.props.className : ''}`,
         tabIndex: -1,
         onKeyDown: event => {
           if (event.key === 'Tab') return;

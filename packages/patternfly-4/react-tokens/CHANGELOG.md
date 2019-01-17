@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.9.6...@patternfly/react-tokens@1.10.0) (2019-01-17)
+
+
+### Features
+
+* **Alert:** Add optional Close button to Alert via onClose prop ([#1200](https://github.com/patternfly/patternfly-react/issues/1200)) ([9d59dcb](https://github.com/patternfly/patternfly-react/commit/9d59dcb)), closes [#1036](https://github.com/patternfly/patternfly-react/issues/1036)
+
+
+
+
+
 <a name="1.9.6"></a>
 ## [1.9.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.9.5...@patternfly/react-tokens@1.9.6) (2019-01-11)
 
