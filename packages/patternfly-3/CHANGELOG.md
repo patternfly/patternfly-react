@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.19.8](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.7...patternfly3-react-lerna-root@7.19.8) (2019-01-17)
+
+
+### Bug Fixes
+
+* **DualList:** fix hidden inputs ([#1207](https://github.com/patternfly/patternfly-react/issues/1207)) ([84942ff](https://github.com/patternfly/patternfly-react/commit/84942ff))
+
+
+
+
+
 <a name="7.19.7"></a>
 ## [7.19.7](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.6...patternfly3-react-lerna-root@7.19.7) (2019-01-15)
 

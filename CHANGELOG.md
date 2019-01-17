@@ -1,6 +1,86 @@
 
 ## Unreleased (2019-01-17)
 
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1207](https://github.com/patternfly/patternfly-react/pull/1207) fix(DualList): fix hidden inputs ([@Laviro](https://github.com/Laviro))
+
+#### Committers: 1
+- Ron Lavi ([@Laviro](https://github.com/Laviro))
+
+
+## patternfly4-react-lerna-root@1.39.0 (2019-01-17)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1200](https://github.com/patternfly/patternfly-react/pull/1200) feat(Alert): Add optional Close button to Alert via onClose prop ([@mturley](https://github.com/mturley))
+
+#### Committers: 1
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## @patternfly/react-tokens@1.10.0 (2019-01-17)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1200](https://github.com/patternfly/patternfly-react/pull/1200) feat(Alert): Add optional Close button to Alert via onClose prop ([@mturley](https://github.com/mturley))
+
+#### Committers: 1
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## @patternfly/react-table@0.4.0 (2019-01-17)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1200](https://github.com/patternfly/patternfly-react/pull/1200) feat(Alert): Add optional Close button to Alert via onClose prop ([@mturley](https://github.com/mturley))
+
+#### Committers: 1
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## @patternfly/react-styled-system@1.4.0 (2019-01-17)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1200](https://github.com/patternfly/patternfly-react/pull/1200) feat(Alert): Add optional Close button to Alert via onClose prop ([@mturley](https://github.com/mturley))
+
+#### Committers: 1
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## @patternfly/react-icons@2.10.0 (2019-01-17)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1200](https://github.com/patternfly/patternfly-react/pull/1200) feat(Alert): Add optional Close button to Alert via onClose prop ([@mturley](https://github.com/mturley))
+
+#### Committers: 1
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## @patternfly/react-docs@3.20.1 (2019-01-17)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1200](https://github.com/patternfly/patternfly-react/pull/1200) feat(Alert): Add optional Close button to Alert via onClose prop ([@mturley](https://github.com/mturley))
+
+#### Committers: 1
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## @patternfly/react-core@1.49.0 (2019-01-17)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1200](https://github.com/patternfly/patternfly-react/pull/1200) feat(Alert): Add optional Close button to Alert via onClose prop ([@mturley](https://github.com/mturley))
+
+#### Committers: 1
+- Mike Turley ([@mturley](https://github.com/mturley))
+
+
+## @patternfly/react-charts@1.4.0 (2019-01-17)
+
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
   * [#1200](https://github.com/patternfly/patternfly-react/pull/1200) feat(Alert): Add optional Close button to Alert via onClose prop ([@mturley](https://github.com/mturley))
