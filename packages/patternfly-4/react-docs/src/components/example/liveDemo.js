@@ -118,7 +118,7 @@ class LiveDemo extends React.Component {
             >
               <CoreIcons.CopyIcon />
             </CoreComponents.Button>
-            <a href={examplePath} target="_blank">
+            <a href={examplePath} target="_blank" rel="noopener noreferrer">
               <CoreComponents.Button
                 onClick={this.handleClickCopy}
                 variant="plain"

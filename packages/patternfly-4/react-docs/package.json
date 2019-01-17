@@ -15,26 +15,23 @@
     "@patternfly/react-styles": "^2.3.0",
     "@patternfly/react-table": "^0.4.0",
     "@patternfly/react-tokens": "^1.10.0",
-    "babel-plugin-react-docgen-typescript": "^1.0.1",
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",
-    "emotion": "^9.2.9",
-    "emotion-server": "^9.2.9",
-    "gatsby": "^1.9.247",
-    "gatsby-link": "^1.6.40",
-    "gatsby-plugin-emotion": "^2.0.5",
-    "gatsby-plugin-react-helmet": "^2.0.10",
-    "gatsby-plugin-react-next": "^1.0.11",
-    "gatsby-plugin-typescript": "^1.0.0",
-    "gatsby-source-filesystem": "^1.5.36",
-    "gatsby-transformer-react-docgen": "^1.0.17",
+    "css-loader": "^2.1.0",
+    "emotion": "^10.0.6",
+    "exenv": "^1.2.2",
+    "gatsby": "^2.0.91",
+    "gatsby-plugin-react-helmet": "^3.0.5",
+    "gatsby-plugin-typescript": "^2.0.3",
+    "gatsby-source-filesystem": "^2.0.16",
+    "gatsby-transformer-react-docgen": "^3.0.0",
     "param-case": "^2.1.1",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
-    "react-live": "^1.11.0",
-    "typescript": "^3.1.5"
+    "react-live": "^1.12.0",
+    "typescript": "^3.2.2"
   },
   "keywords": [
     "gatsby"
@@ -49,7 +46,7 @@
     "not ie <= 11"
   ],
   "devDependencies": {
-    "fs-extra": "^7.0.0",
-    "glob": "^7.1.2"
+    "fs-extra": "^7.0.1",
+    "glob": "^7.1.3"
   }
 }

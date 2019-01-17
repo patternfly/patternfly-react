@@ -150,7 +150,6 @@
       "packages/**"
     ],
     "nohoist": [
-      "**/gatsby*",
       "@patternfly/react-docs/react*"
     ]
   },

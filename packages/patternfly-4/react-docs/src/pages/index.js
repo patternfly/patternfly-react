@@ -8,6 +8,7 @@ import {
   global_Color_dark_100 as heroBackgrounColor,
   global_Color_light_100 as heroTextColor
 } from '@patternfly/react-tokens';
+import DocsLayout from '../components/layouts';
 
 if (process.env.NODE_ENV !== 'production') {
   const axe = require('react-axe'); // eslint-disable-line global-require
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
 });
 
 const IndexPage = () => (
-  <div>
+  <DocsLayout>
     <div className={css(styles.hero)}>
       <Content>
         <Title size="4xl" className={css(styles.heroText)}>
@@ -38,7 +39,7 @@ const IndexPage = () => (
         </Title>
       </Content>
     </div>
-  </div>
+  </DocsLayout>
 );
 
 export default IndexPage;

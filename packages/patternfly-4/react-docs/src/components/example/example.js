@@ -4,7 +4,7 @@ import styles from './example.styles';
 import PropTypes from 'prop-types';
 import { Title } from '@patternfly/react-core';
 import LiveDemo from './liveDemo';
-import Link from 'gatsby-link';
+import { withPrefix } from 'gatsby';
 import Section from '../section';
 
 const propTypes = {
@@ -66,12 +66,14 @@ const Example = ({
     const path = `/${pathStart}/examples/${exampleName}`;
     return (
       <Section>
-        <Title size="lg" headingLevel="h3">{title}</Title>
+        <Title size="lg" headingLevel="h3">
+          {title}
+        </Title>
         <div className={css(className, styles.example)} {...props}>
           This example can only be accessed in&nbsp;
-          <Link target="_blank" to={path}>
+          <a href={withPrefix(path)} target="_blank" rel="noopener noreferrer">
             full page mode
-          </Link>
+          </a>
           .
         </div>
         <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
@@ -102,13 +104,13 @@ const Example = ({
           />
         </React.Fragment>
       ) : (
-        <React.Fragment>
-          <div className={css(className, styles.example)} {...props}>
-            {children}
-          </div>
-          <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
-        </React.Fragment>
-      )}
+          <React.Fragment>
+            <div className={css(className, styles.example)} {...props}>
+              {children}
+            </div>
+            <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
+          </React.Fragment>
+        )}
     </div>
   );
 };

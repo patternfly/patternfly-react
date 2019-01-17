@@ -1,26 +1,24 @@
 const path = require(`path`);
-const paramCase = require('param-case');
 const fs = require('fs-extra'); //eslint-disable-line
 const packageDirs = ['react-core', 'react-charts', 'react-styled-system', 'react-table'];
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  const oldCSSLoader = config._loaders.css;
+exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }) => {
+  // Enable hot reloading on source code changes
   const pfStylesTest = /patternfly-next.*(components|layouts|utilities).*\.css$/;
-  config.removeLoader('css');
-  if (oldCSSLoader.config.loaders && oldCSSLoader.config.loaders.includes('postcss')) {
-    oldCSSLoader.config.loaders.splice(oldCSSLoader.config.loaders.indexOf('postcss'), 1);
-  }
-  config
-    .loader('pf-styles', {
-      test: pfStylesTest,
-      loaders: ['babel-loader', require.resolve('@patternfly/react-styles/loader')]
-    })
-    .loader('css', {
-      ...oldCSSLoader.config,
-      exclude: pfStylesTest
-    });
-
-  config.merge({
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: pfStylesTest,
+          use: [{ loader: 'babel-loader' }, { loader: require.resolve('@patternfly/react-styles/loader') }]
+        },
+        {
+          test: /\.css$/,
+          use: [loaders.miniCssExtract(), loaders.css({ sourceMap: false, singleton: true })],
+          exclude: pfStylesTest
+        }
+      ]
+    },
     resolve: {
       alias: {
         '@patternfly/react-table': path.resolve(__dirname, '../react-table/src'),
@@ -33,14 +31,28 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       }
     }
   });
+  const configAfter = getConfig();
+  configAfter.module.rules = configAfter.module.rules.filter(rule => rule.oneOf === undefined);
+  const minimizer = [
+    plugins.minifyJs({
+      terserOptions: {
+        // keep function names so that we can find the corresponding example components in src/components/componentDocs/componentDocs.js
+        keep_fnames: true
+      }
+    }),
+    plugins.minifyCss()
+  ];
+  if (!configAfter.optimization) {
+    configAfter.optimization = {};
+  }
+  configAfter.optimization.minimizer = minimizer;
 
-  return config;
+  actions.replaceWebpackConfig(configAfter);
 };
 
-const componentPathRegEx = /(components|layouts|demos)\//;
-
-exports.onCreateNode = ({ node, boundActionCreators }) => {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions;
+  const componentPathRegEx = /(components|layouts|demos)\//;
   if (node.internal.type === 'SitePage' && componentPathRegEx.test(node.path)) {
     const pathLabel = node.component
       .split('/')
@@ -56,7 +68,8 @@ exports.onCreateNode = ({ node, boundActionCreators }) => {
   }
 };
 
-exports.createPages = async ({ boundActionCreators, graphql }) => {
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
   const {
     data: { docs, examples, exampleImages }
   } = await graphql(`
@@ -69,21 +82,25 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     }
 
     query AllDocsFiles {
-      docs: allFile(filter: { absolutePath: { glob: "**/*.docs.js" } }) {
+      docs: allFile(filter: { sourceInstanceName: { eq: "components" }, absolutePath: { glob: "**/*.docs.js" } }) {
         edges {
           node {
             ...DocFile
           }
         }
       }
-      examples: allFile(filter: { relativePath: { glob: "**/examples/!(*.styles).js" } }) {
+      examples: allFile(
+        filter: { sourceInstanceName: { eq: "components" }, relativePath: { glob: "**/examples/!(*.styles).js" } }
+      ) {
         edges {
           node {
             ...DocFile
           }
         }
       }
-      exampleImages: allFile(filter: { extension: { regex: "/(png|svg|jpg)/" } }) {
+      exampleImages: allFile(
+        filter: { sourceInstanceName: { eq: "components" }, extension: { regex: "/(png|svg|jpg)/" } }
+      ) {
         edges {
           node {
             ...DocFile
@@ -107,7 +124,30 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
           .join('/') === doc.relativeDirectory
       ) {
         const examplePath = `../../${packageDir}/src/${example.relativePath}`;
-        rawExamples.push(`{name: '${example.name}', path: '${examplePath}', file: require('!!raw!${examplePath}')}`);
+        rawExamples.push(
+          `{name: '${example.name}', path: '${examplePath}', file: require('!!raw-loader!${examplePath}')}`
+        );
+
+        // also create another example for the full version of it
+        const pathArr = examplePath.split('/');
+        const exampleName = pathArr[pathArr.length - 1];
+        const exampleFilePath = path.resolve(__dirname, '.tmp', 'examples', exampleName);
+        const fullExample = `
+        import React from 'react';
+        import Example from '${example.absolutePath}';
+        import ExampleLayout from '../../src/components/layouts/fullPage';
+
+        export default () => <ExampleLayout><Example /></ExampleLayout>;
+        `;
+        fs.outputFileSync(exampleFilePath, fullExample);
+        const newPath = `${path.dirname(example.relativePath.toLowerCase())}/${exampleName
+          .slice(0, -3)
+          .replace(/([a-z])([A-Z])/g, '$1-$2')
+          .toLowerCase()}`;
+        createPage({
+          path: newPath,
+          component: exampleFilePath
+        });
       }
     });
     const allImages = [];
@@ -137,7 +177,8 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     );
 
     fs.outputFileSync(filePath, content);
-    boundActionCreators.createPage({
+    // console.log(`page: /${path.dirname(doc.relativePath).toLowerCase()}, component: ${filePath}`);
+    createPage({
       path: `/${path.dirname(doc.relativePath).toLowerCase()}`,
       component: filePath
     });
@@ -145,20 +186,4 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
 
   const indexFilePath = path.resolve(__dirname, '.tmp', 'index.js');
   fs.writeFileSync(indexFilePath, docExports.join('\n'));
-
-  examples.edges.forEach(({ node: example }) => {
-    const examplePath = `/${path.dirname(example.relativePath).toLowerCase()}/${paramCase(example.name)}`;
-
-    boundActionCreators.createPage({
-      path: examplePath,
-      layout: 'example',
-      component: example.absolutePath
-    });
-  });
-};
-
-exports.modifyBabelrc = ({ stage, babelrc }) => {
-  babelrc.plugins.push(require.resolve('babel-plugin-react-docgen'));
-  babelrc.plugins.push(require.resolve('babel-plugin-react-docgen-typescript'));
-  return babelrc;
 };
