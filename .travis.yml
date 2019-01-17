@@ -20,6 +20,7 @@ script:
 - yarn build
 - yarn test
 - yarn coveralls
+- yarn test:integration
 after_success:
 - .travis/after_success.sh
 - .travis/release.sh

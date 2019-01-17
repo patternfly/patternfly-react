@@ -7,9 +7,8 @@
     "react-dom": "^16.7.0"
   },
   "scripts": {
-    "integration:start": "react-scripts start",
     "build:demo": "react-scripts build",
-    "test:demo": "react-scripts test"
+    "start:demo": "react-scripts start"
   },
   "devDependencies": {
     "@types/jest": "23.3.12",
