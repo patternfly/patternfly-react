@@ -145,21 +145,24 @@ exports[`KebabToggle basic 1`] = `
       isOpen={true}
       position="left"
     >
-      <div
-        aria-labelledby="Dropdown Toggle"
+      <ul
         className="pf-c-dropdown__menu"
         hidden={false}
         onClick={[Function]}
       >
         <div
-          className="pf-c-dropdown__menu-item"
-          key=".0"
-          onKeyDown={[Function]}
-          tabIndex={-1}
+          aria-labelledby="Dropdown Toggle"
         >
-          BASIC
+          <div
+            className="pf-c-dropdown__menu-item"
+            key=".0"
+            onKeyDown={[Function]}
+            tabIndex={-1}
+          >
+            BASIC
+          </div>
         </div>
-      </div>
+      </ul>
     </DropdownMenu>
   </div>
 </Dropdown>
@@ -1966,21 +1969,24 @@ exports[`dropdown basic 1`] = `
       isOpen={true}
       position="left"
     >
-      <div
-        aria-labelledby="Dropdown Toggle"
+      <ul
         className="pf-c-dropdown__menu"
         hidden={false}
         onClick={[Function]}
       >
         <div
-          className="pf-c-dropdown__menu-item"
-          key=".0"
-          onKeyDown={[Function]}
-          tabIndex={-1}
+          aria-labelledby="Dropdown Toggle"
         >
-          BASIC
+          <div
+            className="pf-c-dropdown__menu-item"
+            key=".0"
+            onKeyDown={[Function]}
+            tabIndex={-1}
+          >
+            BASIC
+          </div>
         </div>
-      </div>
+      </ul>
     </DropdownMenu>
   </div>
 </Dropdown>
