@@ -118,34 +118,31 @@ class DropdownMenu extends React.Component {
 
   render() {
     const { className, isOpen, position, children, component: Component, openedOnEnter, ...props } = this.props;
-    let menu = null;
-    if (Component === 'div') {
-      menu = (
-        <DropdownContext.Consumer>
-          {onSelect => (
-            <Component
-              {...props}
-              className={css(
-                styles.dropdownMenu,
-                position === DropdownPosition.right && styles.modifiers.alignRight,
-                className
-              )}
-              hidden={!isOpen}
-              onClick={event => onSelect && onSelect(event)}
-            >
-              {this.extendCustomChildren()}
-            </Component>
-          )}
-        </DropdownContext.Consumer>
-      );
-    } else if (Component === 'ul') {
-      menu = (
-        <DropdownArrowContext.Provider
-          value={{
-            keyHandler: this.keyHandler,
-            sendRef: this.sendRef
-          }}
-        >
+
+    return (
+      <DropdownArrowContext.Provider
+        value={{
+          keyHandler: this.keyHandler,
+          sendRef: this.sendRef
+        }}
+      >
+        {Component === 'div' ? (
+          <DropdownContext.Consumer>
+            {onSelect => (
+              <ul
+                className={css(
+                  styles.dropdownMenu,
+                  position === DropdownPosition.right && styles.modifiers.alignRight,
+                  className
+                )}
+                hidden={!isOpen}
+                onClick={event => onSelect && onSelect(event)}
+              >
+                <Component {...props}>{this.extendCustomChildren()}</Component>
+              </ul>
+            )}
+          </DropdownContext.Consumer>
+        ) : (
           <Component
             {...props}
             className={css(
@@ -158,10 +155,9 @@ class DropdownMenu extends React.Component {
           >
             {this.extendChildren()}
           </Component>
-        </DropdownArrowContext.Provider>
-      );
-    }
-    return menu;
+        )}
+      </DropdownArrowContext.Provider>
+    );
   }
 }
 
