@@ -160,14 +160,16 @@ class Tabs extends React.Component {
             className
           )}
         >
-          <button
-            className={css(styles.tabsScrollButton)}
-            variant="plain"
-            aria-label={leftScrollAriaLabel}
-            onClick={this.scrollLeft}
-          >
-            <AngleLeftIcon />
-          </button>
+          {!isSecondary && (
+            <button
+              className={css(styles.tabsScrollButton)}
+              variant="plain"
+              aria-label={leftScrollAriaLabel}
+              onClick={this.scrollLeft}
+            >
+              <AngleLeftIcon />
+            </button>
+          )}
           <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
             {children.map((child, index) => (
               <li
@@ -189,14 +191,16 @@ class Tabs extends React.Component {
               </li>
             ))}
           </ul>
-          <button
-            className={css(styles.tabsScrollButton)}
-            variant="plain"
-            aria-label={rightScrollAriaLabel}
-            onClick={this.scrollRight}
-          >
-            <AngleRightIcon />
-          </button>
+          {!isSecondary && (
+            <button
+              className={css(styles.tabsScrollButton)}
+              variant="plain"
+              aria-label={rightScrollAriaLabel}
+              onClick={this.scrollRight}
+            >
+              <AngleRightIcon />
+            </button>
+          )}
         </div>
         {children.map((child, index) => (
           <section
