@@ -5,12 +5,12 @@ tsc_out
 /.changelog
 .DS_Store
 coverage
-public/
 .cache
 .tmp
 packages/react-icons/src/icons/
 packages/react-icons/src/index.js
 packages/react-icons/src/index.d.ts
+packages/patternfly-4/react-integration/cypress/videos/
 
 # package managers
 yarn-error.log

@@ -7,6 +7,7 @@ module.exports = {
         'prop-types': 'PropTypes'
       }
     ],
+    'jsx-a11y/heading-has-content': 'off',
     'jsx-a11y/anchor-has-content': 'off',
     'jsx-a11y/anchor-is-valid': 'off',
     'jsx-a11y/label-has-for': 'off',
