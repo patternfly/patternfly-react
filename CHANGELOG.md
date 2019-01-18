@@ -1,5 +1,54 @@
 
-## Unreleased (2019-01-17)
+## Unreleased (2019-01-18)
+
+#### :house: Internal
+* `eslint-plugin-patternfly-react`, `patternfly-3`, `patternfly-4`
+  * [#1209](https://github.com/patternfly/patternfly-react/pull/1209) CI Integration tests using Cypress and demo app ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 1
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## patternfly4-react-lerna-root@1.40.0 (2019-01-17)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1185](https://github.com/patternfly/patternfly-react/pull/1185) fix(Form): Update From Based on Audit ([@tlabaj](https://github.com/tlabaj))
+  * [#1211](https://github.com/patternfly/patternfly-react/pull/1211) fix(Dropdown): add onclick fix to custom items ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 3
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.4.1 (2019-01-17)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1185](https://github.com/patternfly/patternfly-react/pull/1185) fix(Form): Update From Based on Audit ([@tlabaj](https://github.com/tlabaj))
+  * [#1211](https://github.com/patternfly/patternfly-react/pull/1211) fix(Dropdown): add onclick fix to custom items ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 3
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.21.0 (2019-01-17)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1185](https://github.com/patternfly/patternfly-react/pull/1185) fix(Form): Update From Based on Audit ([@tlabaj](https://github.com/tlabaj))
+  * [#1211](https://github.com/patternfly/patternfly-react/pull/1211) fix(Dropdown): add onclick fix to custom items ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 3
+- Ian Bolton ([@ibolton336](https://github.com/ibolton336))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.49.1 (2019-01-17)
 
 #### :bug: Bug Fix
 * `patternfly-4`
