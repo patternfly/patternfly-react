@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.40.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.40.1...patternfly4-react-lerna-root@1.40.2) (2019-01-18)
+
+
+### Bug Fixes
+
+* **DropdownMenu:** Fixes dropdown menu when using items as children. ([#1219](https://github.com/patternfly/patternfly-react/issues/1219)) ([279a595](https://github.com/patternfly/patternfly-react/commit/279a595))
+
+
+
+
+
 ## [1.40.1](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.40.0...patternfly4-react-lerna-root@1.40.1) (2019-01-18)
 
 **Note:** Version bump only for package patternfly4-react-lerna-root

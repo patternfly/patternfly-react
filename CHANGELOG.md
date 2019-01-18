@@ -1,6 +1,86 @@
 
 ## Unreleased (2019-01-18)
 
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1219](https://github.com/patternfly/patternfly-react/pull/1219) fix(DropdownMenu): Fixes dropdown menu when using items as children. ([@Hyperkid123](https://github.com/Hyperkid123))
+
+#### Committers: 1
+- Martin Maroši ([@Hyperkid123](https://github.com/Hyperkid123))
+
+
+## patternfly4-react-lerna-root@1.40.1 (2019-01-18)
+
+#### :house: Internal
+* `eslint-plugin-patternfly-react`, `patternfly-3`, `patternfly-4`
+  * [#1209](https://github.com/patternfly/patternfly-react/pull/1209) CI Integration tests using Cypress and demo app ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 1
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## patternfly3-react-lerna-root@7.19.9 (2019-01-18)
+
+#### :house: Internal
+* `eslint-plugin-patternfly-react`, `patternfly-3`, `patternfly-4`
+  * [#1209](https://github.com/patternfly/patternfly-react/pull/1209) CI Integration tests using Cypress and demo app ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 1
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## eslint-plugin-patternfly-react@0.2.1 (2019-01-18)
+
+#### :house: Internal
+* `eslint-plugin-patternfly-react`, `patternfly-3`, `patternfly-4`
+  * [#1209](https://github.com/patternfly/patternfly-react/pull/1209) CI Integration tests using Cypress and demo app ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 1
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## demo-app-ts@0.1.1 (2019-01-18)
+
+#### :house: Internal
+* `eslint-plugin-patternfly-react`, `patternfly-3`, `patternfly-4`
+  * [#1209](https://github.com/patternfly/patternfly-react/pull/1209) CI Integration tests using Cypress and demo app ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 1
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## @patternfly/react-table@0.4.2 (2019-01-18)
+
+#### :house: Internal
+* `eslint-plugin-patternfly-react`, `patternfly-3`, `patternfly-4`
+  * [#1209](https://github.com/patternfly/patternfly-react/pull/1209) CI Integration tests using Cypress and demo app ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 1
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## @patternfly/react-integration@1.0.1 (2019-01-18)
+
+#### :house: Internal
+* `eslint-plugin-patternfly-react`, `patternfly-3`, `patternfly-4`
+  * [#1209](https://github.com/patternfly/patternfly-react/pull/1209) CI Integration tests using Cypress and demo app ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 1
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## @patternfly/react-docs@3.21.1 (2019-01-18)
+
+#### :house: Internal
+* `eslint-plugin-patternfly-react`, `patternfly-3`, `patternfly-4`
+  * [#1209](https://github.com/patternfly/patternfly-react/pull/1209) CI Integration tests using Cypress and demo app ([@dlabaj](https://github.com/dlabaj))
+
+#### Committers: 1
+- Donald Labaj ([@dlabaj](https://github.com/dlabaj))
+
+
+## @patternfly/react-core@1.49.2 (2019-01-18)
+
 #### :house: Internal
 * `eslint-plugin-patternfly-react`, `patternfly-3`, `patternfly-4`
   * [#1209](https://github.com/patternfly/patternfly-react/pull/1209) CI Integration tests using Cypress and demo app ([@dlabaj](https://github.com/dlabaj))
