@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@1.4.0...@patternfly/react-charts@1.4.1) (2019-01-21)
+
+
+### Bug Fixes
+
+* **readme:** update readme for react-charts ([#1225](https://github.com/patternfly/patternfly-react/issues/1225)) ([7799263](https://github.com/patternfly/patternfly-react/commit/7799263))
+
+
+
+
+
 # [1.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@1.3.0...@patternfly/react-charts@1.4.0) (2019-01-17)
 
 

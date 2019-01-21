@@ -1,5 +1,45 @@
 
-## Unreleased (2019-01-21)
+## patternfly4-react-lerna-root@1.40.3 (2019-01-21)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1222](https://github.com/patternfly/patternfly-react/pull/1222) fix(Dropdown): Do not focus Dropdown if menu is not opened ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-table@0.4.4 (2019-01-21)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1222](https://github.com/patternfly/patternfly-react/pull/1222) fix(Dropdown): Do not focus Dropdown if menu is not opened ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-integration@1.0.3 (2019-01-21)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1222](https://github.com/patternfly/patternfly-react/pull/1222) fix(Dropdown): Do not focus Dropdown if menu is not opened ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-docs@3.21.3 (2019-01-21)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1222](https://github.com/patternfly/patternfly-react/pull/1222) fix(Dropdown): Do not focus Dropdown if menu is not opened ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-core@1.49.4 (2019-01-21)
 
 #### :bug: Bug Fix
 * `patternfly-4`

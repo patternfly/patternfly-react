@@ -1,6 +1,6 @@
 {
   "name": "patternfly4-react-lerna-root",
-  "version": "1.40.3",
+  "version": "1.40.4",
   "private": true,
   "config": {
     "access": "private"
