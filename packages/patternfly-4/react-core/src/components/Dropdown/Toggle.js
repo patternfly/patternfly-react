@@ -55,7 +55,7 @@ class DropdownToggle extends Component {
   };
 
   onDocClick = event => {
-    if (this.props.parentRef && !this.props.parentRef.contains(event.target)) {
+    if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.contains(event.target)) {
       this.props.onToggle && this.props.onToggle(false);
       this.toggle.focus();
     }
@@ -64,7 +64,7 @@ class DropdownToggle extends Component {
   onEscPress = event => {
     const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
-    if ((keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') && parentRef && parentRef.contains(event.target)) {
+    if (this.props.isOpen && (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') && parentRef && parentRef.contains(event.target)) {
       this.props.onToggle && this.props.onToggle(false);
       this.toggle.focus();
     }
