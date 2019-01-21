@@ -1,6 +1,6 @@
 # @patternfly/react-charts
 
-This package provides Core PatternFly components for the [PatternFly 4][patternfly-4].
+This package provides PatternFly charting components for [PatternFly 4][patternfly-4].
 
 ### Prerequisite
 
