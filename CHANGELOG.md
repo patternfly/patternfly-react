@@ -1,4 +1,14 @@
 
+## Unreleased (2019-01-21)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1222](https://github.com/patternfly/patternfly-react/pull/1222) fix(Dropdown): Do not focus Dropdown if menu is not opened ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
 ## patternfly4-react-lerna-root@1.40.2 (2019-01-18)
 
 #### :bug: Bug Fix

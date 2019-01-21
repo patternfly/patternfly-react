@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.49.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.49.3...@patternfly/react-core@1.49.4) (2019-01-21)
+
+
+### Bug Fixes
+
+* **Dropdown:** Do not focus Dropdown if menu is not opened ([#1222](https://github.com/patternfly/patternfly-react/issues/1222)) ([45367bc](https://github.com/patternfly/patternfly-react/commit/45367bc))
+
+
+
+
+
 ## [1.49.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.49.2...@patternfly/react-core@1.49.3) (2019-01-18)
 
 
