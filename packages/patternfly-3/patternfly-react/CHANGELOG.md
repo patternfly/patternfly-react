@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.29.7](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.6...patternfly-react@2.29.7) (2019-01-21)
+
+
+### Bug Fixes
+
+* **MessageDialog:** conflict between footer and primaryAction props ([#1134](https://github.com/patternfly/patternfly-react/issues/1134)) ([83baeb9](https://github.com/patternfly/patternfly-react/commit/83baeb9))
+
+
+
+
+
 ## [2.29.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.5...patternfly-react@2.29.6) (2019-01-17)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.19.10](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.9...patternfly3-react-lerna-root@7.19.10) (2019-01-21)
+
+
+### Bug Fixes
+
+* **MessageDialog:** conflict between footer and primaryAction props ([#1134](https://github.com/patternfly/patternfly-react/issues/1134)) ([83baeb9](https://github.com/patternfly/patternfly-react/commit/83baeb9))
+
+
+
+
+
 ## [7.19.9](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.8...patternfly3-react-lerna-root@7.19.9) (2019-01-18)
 
 **Note:** Version bump only for package patternfly3-react-lerna-root

@@ -1,5 +1,45 @@
 
-## Unreleased (2019-01-18)
+## patternfly4-react-lerna-root@1.40.2 (2019-01-18)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1219](https://github.com/patternfly/patternfly-react/pull/1219) fix(DropdownMenu): Fixes dropdown menu when using items as children. ([@Hyperkid123](https://github.com/Hyperkid123))
+
+#### Committers: 1
+- Martin Maroši ([@Hyperkid123](https://github.com/Hyperkid123))
+
+
+## @patternfly/react-table@0.4.3 (2019-01-18)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1219](https://github.com/patternfly/patternfly-react/pull/1219) fix(DropdownMenu): Fixes dropdown menu when using items as children. ([@Hyperkid123](https://github.com/Hyperkid123))
+
+#### Committers: 1
+- Martin Maroši ([@Hyperkid123](https://github.com/Hyperkid123))
+
+
+## @patternfly/react-integration@1.0.2 (2019-01-18)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1219](https://github.com/patternfly/patternfly-react/pull/1219) fix(DropdownMenu): Fixes dropdown menu when using items as children. ([@Hyperkid123](https://github.com/Hyperkid123))
+
+#### Committers: 1
+- Martin Maroši ([@Hyperkid123](https://github.com/Hyperkid123))
+
+
+## @patternfly/react-docs@3.21.2 (2019-01-18)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1219](https://github.com/patternfly/patternfly-react/pull/1219) fix(DropdownMenu): Fixes dropdown menu when using items as children. ([@Hyperkid123](https://github.com/Hyperkid123))
+
+#### Committers: 1
+- Martin Maroši ([@Hyperkid123](https://github.com/Hyperkid123))
+
+
+## @patternfly/react-core@1.49.3 (2019-01-18)
 
 #### :bug: Bug Fix
 * `patternfly-4`
