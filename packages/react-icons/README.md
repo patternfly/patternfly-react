@@ -13,6 +13,14 @@ const closeIcon = <TimesIcon />;
 
 For a list of the available icons please refer to the [PatternFly React Docs](https://patternfly-react.surge.sh/patternfly-4/styles/icons)
 
+Every icon component has the following props:
+
+| Prop  | Description                                                      | Default        |
+| ----- | ---------------------------------------------------------------- | -------------- |
+| color | Color of the icon (e.g. red, white, #c3ee)                       | 'currentColor' |
+| size  | Size of the icon. There are 4 different sizes: sm, md, lg and xl | sm             |
+| title | Label of the icon                                                | null           |
+
 ## Adding Icons
 
 Icons for this package are generated from the `@fortawesome/free-solid-svg-icons` package. To add more to what is generated, modify the [icons.js](./build/icons.js) file in the build folder.
