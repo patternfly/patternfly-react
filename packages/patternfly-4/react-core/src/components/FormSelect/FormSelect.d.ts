@@ -1,7 +1,8 @@
 import { HTMLProps, FormEvent } from 'react';
 import { Omit } from '../../typeUtils';
 
-export interface SelectProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
+export interface FormSelectProps
+  extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
   children: any;
   value?: any;
   isValid?: boolean;
@@ -11,6 +12,6 @@ export interface SelectProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange
   onChange?(event: React.FormEvent<HTMLSelectElement>): void;
 }
 
-declare const Select: React.SFC<SelectProps>;
+declare const FormSelect: React.SFC<FormSelectProps>;
 
-export default Select;
+export default FormSelect;

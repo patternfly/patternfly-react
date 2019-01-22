@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Disabled Select input  1`] = `
+exports[`Disabled FormSelect input  1`] = `
 .pf-c-form-control {
   display: block;
   position: relative;
@@ -16,7 +16,7 @@ exports[`Disabled Select input  1`] = `
 
 <select
   aria-invalid={false}
-  aria-label="disabled  Select"
+  aria-label="disabled  FormSelect"
   className="pf-c-form-control"
   disabled={true}
   onBlur={[Function]}
@@ -24,7 +24,7 @@ exports[`Disabled Select input  1`] = `
   onFocus={[Function]}
   value=""
 >
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="1"
@@ -34,7 +34,7 @@ exports[`Disabled Select input  1`] = `
 </select>
 `;
 
-exports[`Grouped Select input 1`] = `
+exports[`FormSelect input with aria-label does not generate console error 1`] = `
 .pf-c-form-control {
   display: block;
   position: relative;
@@ -50,97 +50,7 @@ exports[`Grouped Select input 1`] = `
 
 <select
   aria-invalid={false}
-  aria-label=" grouped Select"
-  className="pf-c-form-control"
-  disabled={false}
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  value="2"
->
-  <SelectOptionGroup
-    className=""
-    isDisabled={false}
-    key="0"
-    label="Group1"
-  >
-    <SelectOption
-      className=""
-      isDisabled={false}
-      key="0"
-      label="The First Option"
-      value="1"
-    />
-    <SelectOption
-      className=""
-      isDisabled={false}
-      key="1"
-      label="Second option is selected by default"
-      value="2"
-    />
-  </SelectOptionGroup>
-  <SelectOptionGroup
-    className=""
-    isDisabled={false}
-    key="1"
-    label="Group2"
-  >
-    <SelectOption
-      className=""
-      isDisabled={false}
-      key="0"
-      label="The Third Option"
-      value="3"
-    />
-    <SelectOption
-      className=""
-      isDisabled={false}
-      key="1"
-      label="The Fourth option"
-      value="4"
-    />
-  </SelectOptionGroup>
-  <SelectOptionGroup
-    className=""
-    isDisabled={true}
-    key="2"
-    label="Group3"
-  >
-    <SelectOption
-      className=""
-      isDisabled={false}
-      key="0"
-      label="The Fifth Option"
-      value="5"
-    />
-    <SelectOption
-      className=""
-      isDisabled={false}
-      key="1"
-      label="The Sixth option"
-      value="6"
-    />
-  </SelectOptionGroup>
-</select>
-`;
-
-exports[`Select input with aria-label does not generate console error 1`] = `
-.pf-c-form-control {
-  display: block;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #282d33;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #72767b #ededed;
-  border-radius: 0;
-}
-
-<select
-  aria-invalid={false}
-  aria-label="Select with aria-label"
+  aria-label="FormSelect with aria-label"
   className="pf-c-form-control"
   disabled={false}
   onBlur={[Function]}
@@ -148,7 +58,7 @@ exports[`Select input with aria-label does not generate console error 1`] = `
   onFocus={[Function]}
   value=""
 >
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="1"
@@ -158,7 +68,7 @@ exports[`Select input with aria-label does not generate console error 1`] = `
 </select>
 `;
 
-exports[`Select input with id does not generate console error 1`] = `
+exports[`FormSelect input with id does not generate console error 1`] = `
 .pf-c-form-control {
   display: block;
   position: relative;
@@ -183,7 +93,7 @@ exports[`Select input with id does not generate console error 1`] = `
   onFocus={[Function]}
   value=""
 >
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="1"
@@ -193,7 +103,7 @@ exports[`Select input with id does not generate console error 1`] = `
 </select>
 `;
 
-exports[`Select input with no aria-label or id generates console error 1`] = `
+exports[`FormSelect input with no aria-label or id generates console error 1`] = `
 .pf-c-form-control {
   display: block;
   position: relative;
@@ -217,7 +127,7 @@ exports[`Select input with no aria-label or id generates console error 1`] = `
   onFocus={[Function]}
   value=""
 >
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="1"
@@ -227,7 +137,7 @@ exports[`Select input with no aria-label or id generates console error 1`] = `
 </select>
 `;
 
-exports[`Simple Select input 1`] = `
+exports[`Grouped FormSelect input 1`] = `
 .pf-c-form-control {
   display: block;
   position: relative;
@@ -243,7 +153,97 @@ exports[`Simple Select input 1`] = `
 
 <select
   aria-invalid={false}
-  aria-label="simple Select"
+  aria-label=" grouped FormSelect"
+  className="pf-c-form-control"
+  disabled={false}
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  value="2"
+>
+  <FormSelectOptionGroup
+    className=""
+    isDisabled={false}
+    key="0"
+    label="Group1"
+  >
+    <FormSelectOption
+      className=""
+      isDisabled={false}
+      key="0"
+      label="The First Option"
+      value="1"
+    />
+    <FormSelectOption
+      className=""
+      isDisabled={false}
+      key="1"
+      label="Second option is selected by default"
+      value="2"
+    />
+  </FormSelectOptionGroup>
+  <FormSelectOptionGroup
+    className=""
+    isDisabled={false}
+    key="1"
+    label="Group2"
+  >
+    <FormSelectOption
+      className=""
+      isDisabled={false}
+      key="0"
+      label="The Third Option"
+      value="3"
+    />
+    <FormSelectOption
+      className=""
+      isDisabled={false}
+      key="1"
+      label="The Fourth option"
+      value="4"
+    />
+  </FormSelectOptionGroup>
+  <FormSelectOptionGroup
+    className=""
+    isDisabled={true}
+    key="2"
+    label="Group3"
+  >
+    <FormSelectOption
+      className=""
+      isDisabled={false}
+      key="0"
+      label="The Fifth Option"
+      value="5"
+    />
+    <FormSelectOption
+      className=""
+      isDisabled={false}
+      key="1"
+      label="The Sixth option"
+      value="6"
+    />
+  </FormSelectOptionGroup>
+</select>
+`;
+
+exports[`Simple FormSelect input 1`] = `
+.pf-c-form-control {
+  display: block;
+  position: relative;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #282d33;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #ededed #ededed #72767b #ededed;
+  border-radius: 0;
+}
+
+<select
+  aria-invalid={false}
+  aria-label="simple FormSelect"
   className="pf-c-form-control"
   disabled={false}
   onBlur={[Function]}
@@ -251,49 +251,49 @@ exports[`Simple Select input 1`] = `
   onFocus={[Function]}
   value="mrs"
 >
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={true}
     key="0"
     label="Please Choose"
     value="please choose"
   />
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="1"
     label="Mr"
     value="mr"
   />
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="2"
     label="Miss"
     value="miss"
   />
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="3"
     label="Mrs"
     value="mrs"
   />
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="4"
     label="Ms"
     value="ms"
   />
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="5"
     label="Dr"
     value="dr"
   />
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={true}
     key="6"
@@ -303,7 +303,7 @@ exports[`Simple Select input 1`] = `
 </select>
 `;
 
-exports[`invalid Select input 1`] = `
+exports[`invalid FormSelect input 1`] = `
 .pf-c-form-control {
   display: block;
   position: relative;
@@ -319,7 +319,7 @@ exports[`invalid Select input 1`] = `
 
 <select
   aria-invalid={true}
-  aria-label="invalid Select"
+  aria-label="invalid FormSelect"
   className="pf-c-form-control"
   disabled={false}
   onBlur={[Function]}
@@ -327,7 +327,7 @@ exports[`invalid Select input 1`] = `
   onFocus={[Function]}
   value=""
 >
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="1"
@@ -337,7 +337,7 @@ exports[`invalid Select input 1`] = `
 </select>
 `;
 
-exports[`required Select input 1`] = `
+exports[`required FormSelect input 1`] = `
 .pf-c-form-control {
   display: block;
   position: relative;
@@ -353,7 +353,7 @@ exports[`required Select input 1`] = `
 
 <select
   aria-invalid={false}
-  aria-label="required Select"
+  aria-label="required FormSelect"
   className="pf-c-form-control"
   disabled={false}
   onBlur={[Function]}
@@ -362,7 +362,7 @@ exports[`required Select input 1`] = `
   required={true}
   value=""
 >
-  <SelectOption
+  <FormSelectOption
     className=""
     isDisabled={false}
     key="1"

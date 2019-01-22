@@ -4,15 +4,15 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  /** content rendered inside the Select */
+  /** content rendered inside the FormSelect */
   children: PropTypes.node.isRequired,
-  /** additional classes added to the Select control */
+  /** additional classes added to the FormSelect control */
   className: PropTypes.string,
   /** value of selected option */
   value: PropTypes.any,
   /** Flag indicating selection is valid */
   isValid: PropTypes.bool,
-  /** Flag indicating the Select is disabled */
+  /** Flag indicating the FormSelect is disabled */
   isDisabled: PropTypes.bool,
   /** Optional callback for updating when selection loses focus */
   onBlur: PropTypes.func,
@@ -20,10 +20,10 @@ const propTypes = {
   onFocus: PropTypes.func,
   /** Optional callback for updating when selection changes */
   onChange: PropTypes.func,
-  /** Custom flag to show that the Select requires an associated id or aria-label. */
+  /** Custom flag to show that the FormSelect requires an associated id or aria-label. */
   'aria-label': props => {
     if (!props.id && !props['aria-label']) {
-      return new Error('Select requires either an id or aria-label to be specified');
+      return new Error('FormSelect requires either an id or aria-label to be specified');
     }
     return null;
   },
@@ -42,7 +42,7 @@ const defaultProps = {
   'aria-label': null
 };
 
-class Select extends React.Component {
+class FormSelect extends React.Component {
   handleChange = event => {
     this.props.onChange(event.currentTarget.value, event);
   };
@@ -64,7 +64,7 @@ class Select extends React.Component {
   }
 }
 
-Select.propTypes = propTypes;
-Select.defaultProps = defaultProps;
+FormSelect.propTypes = propTypes;
+FormSelect.defaultProps = defaultProps;
 
-export default Select;
+export default FormSelect;

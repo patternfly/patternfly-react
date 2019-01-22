@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Select from './Select';
-import SelectOption from './SelectOption';
-import SelectOptionGroup from './SelectOptionGroup';
+import FormSelect from './FormSelect';
+import FormSelectOption from './FormSelectOption';
+import FormSelectOptionGroup from './FormSelectOptionGroup';
 
 const props = {
   options: [
@@ -47,105 +47,105 @@ const groupedProps = {
   value: '2'
 };
 
-test('Simple Select input', () => {
+test('Simple FormSelect input', () => {
   const view = shallow(
-    <Select value={props.value} aria-label="simple Select">
+    <FormSelect value={props.value} aria-label="simple FormSelect">
       {props.options.map((option, index) => (
-        <SelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+        <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
       ))}
-    </Select>
+    </FormSelect>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('Grouped Select input', () => {
+test('Grouped FormSelect input', () => {
   const view = shallow(
-    <Select value={groupedProps.value} aria-label=" grouped Select">
+    <FormSelect value={groupedProps.value} aria-label=" grouped FormSelect">
       {groupedProps.groups.map((group, index) => (
-        <SelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
+        <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
           {group.options.map((option, i) => (
-            <SelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
+            <FormSelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
           ))}
-        </SelectOptionGroup>
+        </FormSelectOptionGroup>
       ))}
-    </Select>
+    </FormSelect>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('Disabled Select input ', () => {
+test('Disabled FormSelect input ', () => {
   const view = shallow(
-    <Select isDisabled aria-label="disabled  Select">
-      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </Select>
+    <FormSelect isDisabled aria-label="disabled  FormSelect">
+      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </FormSelect>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('Select input with aria-label does not generate console error', () => {
+test('FormSelect input with aria-label does not generate console error', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };
   const view = shallow(
-    <Select aria-label="Select with aria-label">
-      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </Select>
+    <FormSelect aria-label="FormSelect with aria-label">
+      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </FormSelect>
   );
   expect(view).toMatchSnapshot();
   expect(myMock).not.toBeCalled();
 });
 
-test('Select input with id does not generate console error', () => {
+test('FormSelect input with id does not generate console error', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };
   const view = shallow(
-    <Select id="id">
-      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </Select>
+    <FormSelect id="id">
+      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </FormSelect>
   );
   expect(view).toMatchSnapshot();
   expect(myMock).not.toBeCalled();
 });
 
-test('Select input with no aria-label or id generates console error', () => {
+test('FormSelect input with no aria-label or id generates console error', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };
   const view = shallow(
-    <Select>
-      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </Select>
+    <FormSelect>
+      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </FormSelect>
   );
   expect(view).toMatchSnapshot();
   expect(myMock).toBeCalled();
 });
 
-test('invalid Select input', () => {
+test('invalid FormSelect input', () => {
   const view = shallow(
-    <Select isValid={false} aria-label="invalid Select">
-      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </Select>
+    <FormSelect isValid={false} aria-label="invalid FormSelect">
+      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </FormSelect>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('required Select input', () => {
+test('required FormSelect input', () => {
   const view = shallow(
-    <Select required aria-label="required Select">
-      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </Select>
+    <FormSelect required aria-label="required FormSelect">
+      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </FormSelect>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('Select passes value and event to onChange handler', () => {
+test('FormSelect passes value and event to onChange handler', () => {
   const myMock = jest.fn();
   const newValue = 1;
   const event = {
     currentTarget: { value: newValue }
   };
   const view = shallow(
-    <Select onChange={myMock} aria-label="onchange Select">
-      <SelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
-    </Select>
+    <FormSelect onChange={myMock} aria-label="onchange FormSelect">
+      <FormSelectOption key={1} value={props.options[1].value} label={props.options[1].label} />
+    </FormSelect>
   );
   view.find('select').simulate('change', event);
   expect(myMock).toBeCalledWith(newValue, event);
