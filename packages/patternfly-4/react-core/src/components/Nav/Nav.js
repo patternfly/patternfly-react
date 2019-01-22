@@ -13,7 +13,7 @@ const propTypes = {
   /** Callback for when a list is expanded or collapsed */
   onToggle: PropTypes.func,
   /** Accessibility label */
-  'aria-label': PropTypes.string.isRequired,
+  'aria-label': PropTypes.string,
   /** Additional props are spread to the container <nav> */
   '': PropTypes.any
 };
@@ -49,8 +49,14 @@ class Nav extends React.Component {
     });
   }
 
+  // Determine if it's a tertiary nav or not (tertiary needs a different aria-label)
+  determineLabel() {
+    const isTertiary = React.Children.map(this.props.children, child => child.props.variant === 'tertiary');
+    return isTertiary[0] ? 'Local' : 'Global';
+  }
+
   render() {
-    const { children, className, ...props } = this.props;
+    const { 'aria-label': ariaLabel, children, className, ...props } = this.props;
 
     return (
       <NavContext.Provider
@@ -60,7 +66,9 @@ class Nav extends React.Component {
           onToggle: (event, groupId, expanded) => this.onToggle(event, groupId, expanded)
         }}
       >
-        <nav className={css(styles.nav, className)} {...props}>
+        <nav className={css(styles.nav, className)}
+             {...props}
+             aria-label={ariaLabel ? ariaLabel : this.determineLabel()}>
           {children}
         </nav>
       </NavContext.Provider>
