@@ -29,8 +29,7 @@ class ExpandableDataList extends React.Component {
             onClick={() => toggle('ex-toggle1')}
             isExpanded={this.state.expanded.includes('ex-toggle1')}
             id="ex-toggle1"
-            aria-labelledby="ex-toggle1 ex-item1"
-            aria-label="Toggle details for"
+            aria-controls="ex-expand1"
           />
           <DataListCheck aria-labelledby="ex-item1" name="ex-check1" />
           <DataListCell>
@@ -41,7 +40,7 @@ class ExpandableDataList extends React.Component {
             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
           </DataListCell>
           <DataListAction aria-labelledby="ex-item1 ex-action1" id="ex-action1" aria-label="Actions" />
-          <DataListContent aria-label="Primary Content Details" isHidden={!this.state.expanded.includes('ex-toggle1')}>
+          <DataListContent aria-label="Primary Content Details" id="ex-expand1" isHidden={!this.state.expanded.includes('ex-toggle1')}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
@@ -53,8 +52,7 @@ class ExpandableDataList extends React.Component {
             onClick={() => toggle('ex-toggle2')}
             isExpanded={this.state.expanded.includes('ex-toggle2')}
             id="ex-toggle2"
-            aria-labelledby="ex-toggle2 ex-item2"
-            aria-label="Toggle details for"
+            aria-controls="ex-expand2"
           />
           <DataListCheck aria-labelledby="ex-item2" name="ex-check2" />
           <DataListCell>
@@ -64,7 +62,7 @@ class ExpandableDataList extends React.Component {
             <span>Lorem ipsum dolor sit amet.</span>
           </DataListCell>
           <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions" />
-          <DataListContent aria-label="Primary Content Details" isHidden={!this.state.expanded.includes('ex-toggle2')}>
+          <DataListContent aria-label="Primary Content Details" id="ex-expand2" isHidden={!this.state.expanded.includes('ex-toggle2')}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
