@@ -1,4 +1,14 @@
 
+## Unreleased (2019-01-24)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#1226](https://github.com/patternfly/patternfly-react/pull/1226) docs(react-icons): Add props table to README.md ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
 ## patternfly4-react-lerna-root@1.40.3 (2019-01-21)
 
 #### :bug: Bug Fix
