@@ -6,6 +6,7 @@ import { StyleSheet, css, getModifier } from '@patternfly/react-styles';
 import TooltipArrow from './TooltipArrow';
 import TooltipContent from './TooltipContent';
 import { KEY_CODES } from '../../internal/constants';
+import 'tippy.js/dist/tippy.css';
 
 // Need to unset tippy default styles
 // Also for enableFlip, need to make arrow aware of parent x-placement attribute in order to work

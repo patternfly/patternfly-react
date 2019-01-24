@@ -11,6 +11,7 @@ import PopoverBody from './PopoverBody';
 import PopoverHeader from './PopoverHeader';
 import PopoverCloseButton from './PopoverCloseButton';
 import GenerateId from '../../internal/GenerateId/GenerateId';
+import 'tippy.js/dist/tippy.css';
 
 // Need to unset tippy default styles
 // Also for enableFlip, need to make arrow aware of parent x-placement attribute in order to work
