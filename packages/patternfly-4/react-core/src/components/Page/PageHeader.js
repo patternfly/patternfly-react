@@ -20,7 +20,7 @@ const propTypes = {
   topNav: PropTypes.node,
   /** True to show the nav toggle button (toggles side nav) */
   showNavToggle: PropTypes.bool,
-  /** Callback function to handle the side nav toggle button */
+  /** Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
   onNavToggle: PropTypes.func,
   /** Additional props are spread to the container <header> */
   '': PropTypes.any

@@ -8,7 +8,7 @@ const propTypes = {
   className: PropTypes.string,
   /** Component to render the side navigation (e.g. <Nav /> */
   nav: PropTypes.node,
-  /** True if the side nav is shown  */
+  /** Programmatically manage if the side nav is shown, if isManagedSidebar is set to true in the Page component, this prop is managed */
   isNavOpen: PropTypes.bool,
   /** Additional props are spread to the container <aside> */
   '': PropTypes.any
