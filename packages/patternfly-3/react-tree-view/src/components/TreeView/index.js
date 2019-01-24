@@ -38,19 +38,6 @@ const data = [
   }
 ];
 
-// const lazyLoad(node) {
-//   const isWorking = true;
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       if (isWorking) {
-//         resolve([]);
-//       } else {
-//         reject(new Error('Something happened.'));
-//       }
-//     }, 2000);
-//   });
-// }
-
 const actionMapper = {
   'state.expanded': Tree.nodeExpanded,
   'state.checked': Tree.nodeChecked,
@@ -109,6 +96,7 @@ class TreeView extends React.Component {
           data={this.state.tree}
           onDataChange={this.onDataChange}
           lazyLoad={this.lazyLoad}
+          {...this.props}
         />
       </div>
     );
