@@ -3,7 +3,7 @@ import { Omit, OneOf } from '../../typeUtils';
 import { TooltipPosition } from '../Tooltip';
 
 export interface ChipProps extends HTMLProps<HTMLDivElement> {
-  children: string;
+  children?: string;
   closeBtnAriaLabel: string;
   isOverflowChip: boolean;
   tooltipPosition: OneOf<typeof TooltipPosition, keyof typeof TooltipPosition>;
