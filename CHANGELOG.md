@@ -2,6 +2,46 @@
 ## Unreleased (2019-01-25)
 
 #### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly3-react-lerna-root@7.19.11 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1223](https://github.com/patternfly/patternfly-react/pull/1223) fix(Slider): Update state when properties are updated. ([@lucasponce](https://github.com/lucasponce))
+
+#### Committers: 1
+- Lucas Ponce ([@lucasponce](https://github.com/lucasponce))
+
+
+## patternfly-react@2.29.8 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1223](https://github.com/patternfly/patternfly-react/pull/1223) fix(Slider): Update state when properties are updated. ([@lucasponce](https://github.com/lucasponce))
+
+#### Committers: 1
+- Lucas Ponce ([@lucasponce](https://github.com/lucasponce))
+
+
+## patternfly-react-extensions@2.16.9 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1223](https://github.com/patternfly/patternfly-react/pull/1223) fix(Slider): Update state when properties are updated. ([@lucasponce](https://github.com/lucasponce))
+
+#### Committers: 1
+- Lucas Ponce ([@lucasponce](https://github.com/lucasponce))
+
+
+## @patternfly/react-console@1.10.16 (2019-01-25)
+
+#### :bug: Bug Fix
 * `patternfly-3`
   * [#1223](https://github.com/patternfly/patternfly-react/pull/1223) fix(Slider): Update state when properties are updated. ([@lucasponce](https://github.com/lucasponce))
 
