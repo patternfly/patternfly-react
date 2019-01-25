@@ -22,6 +22,9 @@ const propTypes = {
   /** If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
    * the sidebar component or add a callback onNavToggle function into the PageHeader component */
   isManagedSidebar: PropTypes.bool,
+  /** Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px 
+   * Returns object { mobileView: boolean, windowSize: number } */
+  onPageResize: PropTypes.func,
   /** Additional props are spread to the container <div> */
   '': PropTypes.any
 };
@@ -31,7 +34,8 @@ const defaultProps = {
   className: '',
   header: null,
   sidebar: null,
-  isManagedSidebar: false
+  isManagedSidebar: false,
+  onPageResize: null
 };
 
 class Page extends React.Component {
@@ -46,8 +50,8 @@ class Page extends React.Component {
   }
 
   componentDidMount() {
-    const { isManagedSidebar } = this.props;
-    if (isManagedSidebar) {
+    const { isManagedSidebar, onPageResize } = this.props;
+    if (isManagedSidebar || onPageResize) {
       window.addEventListener('resize', debounce(this.handleResize, 250));
       // Initial check if should be shown
       this.handleResize();
@@ -55,13 +59,15 @@ class Page extends React.Component {
   }
 
   componentWillUnmount() {
-    const { isManagedSidebar } = this.props;
-    isManagedSidebar && window.removeEventListener('resize', debounce(this.handleResize, 250));
+    const { isManagedSidebar, onPageResize } = this.props;
+    (isManagedSidebar || onPageResize) && window.removeEventListener('resize', debounce(this.handleResize, 250));
   }
 
   handleResize = e => {
+    const { onPageResize } = this.props;
     const windowSize = window.innerWidth;
     const mobileView = windowSize < Number.parseInt(globalBreakpointMd.value, 10);
+    onPageResize && onPageResize({ mobileView, windowSize });
     this.setState(prevState => ({
       mobileView
     }));
@@ -80,7 +86,7 @@ class Page extends React.Component {
   };
 
   render() {
-    const { className, children, header, sidebar, isManagedSidebar, ...rest } = this.props;
+    const { className, children, header, sidebar, isManagedSidebar, onPageResize, ...rest } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
     return (
       <div {...rest} className={css(styles.page, className)}>

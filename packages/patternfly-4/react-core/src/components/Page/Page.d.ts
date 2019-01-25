@@ -6,6 +6,7 @@ export interface PageProps extends HTMLProps<HTMLDivElement> {
   header?: ReactNode;
   sidebar?: ReactNode;
   isManagedSidebar?: boolean;
+  onPageResize?: Function;
 }
 
 declare const Page: SFC<PageProps>;

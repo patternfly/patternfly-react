@@ -91,6 +91,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   id="PageId"
   isManagedSidebar={false}
   layout="horizontal"
+  onPageResize={null}
   sidebar={
     <PageSidebar
       className=""
@@ -285,6 +286,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   }
   id="PageId"
   isManagedSidebar={false}
+  onPageResize={null}
   sidebar={
     <PageSidebar
       className=""
