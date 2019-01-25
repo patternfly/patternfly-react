@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface LoginMainHeaderProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
@@ -8,6 +8,6 @@ export interface LoginMainHeaderProps extends HTMLProps<HTMLDivElement> {
   subtitle?: string;
 }
 
-declare const LoginMainHeader: SFC<LoginMainHeaderProps>;
+declare const LoginMainHeader: FunctionComponent<LoginMainHeaderProps>;
 
 export default LoginMainHeader;

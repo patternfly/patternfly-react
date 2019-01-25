@@ -1,4 +1,4 @@
-import { HTMLProps, FormEvent } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface FormSelectProps
@@ -11,6 +11,6 @@ export interface FormSelectProps
   onChange?(event: React.FormEvent<HTMLSelectElement>): void;
 }
 
-declare const FormSelect: React.SFC<FormSelectProps>;
+declare const FormSelect: FunctionComponent<FormSelectProps>;
 
 export default FormSelect;

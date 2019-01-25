@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface PageProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
@@ -9,6 +9,6 @@ export interface PageProps extends HTMLProps<HTMLDivElement> {
   onPageResize?: Function;
 }
 
-declare const Page: SFC<PageProps>;
+declare const Page: FunctionComponent<PageProps>;
 
 export default Page;

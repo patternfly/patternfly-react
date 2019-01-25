@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode, ReactType } from 'react';
 
 export interface DropdownToggleProps extends HTMLProps<HTMLButtonElement> {
   id?: string;
@@ -13,6 +13,6 @@ export interface DropdownToggleProps extends HTMLProps<HTMLButtonElement> {
   iconComponent?: ReactType;
 }
 
-declare const DropdownToggle: SFC<DropdownToggleProps>;
+declare const DropdownToggle: FunctionComponent<DropdownToggleProps>;
 
 export default DropdownToggle;

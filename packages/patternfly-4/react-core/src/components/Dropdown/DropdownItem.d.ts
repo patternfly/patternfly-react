@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
+import { HTMLProps, ReactType } from 'react';
 
 export interface DropdownItemProps extends HTMLProps<HTMLAnchorElement> {
   component?: ReactType<DropdownItemProps>;

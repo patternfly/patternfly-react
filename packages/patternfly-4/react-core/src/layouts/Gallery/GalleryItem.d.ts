@@ -1,7 +1,7 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface GalleryItemProps extends HTMLProps<HTMLDivElement> {}
 
-declare const GalleryItem: SFC<GalleryItemProps>;
+declare const GalleryItem: FunctionComponent<GalleryItemProps>;
 
 export default GalleryItem;

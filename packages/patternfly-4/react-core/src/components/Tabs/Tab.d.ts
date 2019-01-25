@@ -1,10 +1,10 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface TabProps extends HTMLProps<HTMLDivElement> {
   title: string;
   eventKey: number;
 }
 
-declare const Tab: SFC<TabProps>;
+declare const Tab: FunctionComponent<TabProps>;
 
 export default Tab;

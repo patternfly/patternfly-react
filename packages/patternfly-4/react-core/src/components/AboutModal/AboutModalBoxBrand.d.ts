@@ -1,8 +1,8 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
-export interface AboutMoalBoxBrandProps extends HTMLProps<HTMLImageElement> {
+export interface AboutModalBoxBrandProps extends HTMLProps<HTMLImageElement> {
   src?: string;
   alt: string;
 }
-declare const AboutMoalBoxBrand: SFC<AboutMoalBoxBrandProps>;
-export default AboutMoalBoxBrand;
+declare const AboutModalBoxBrand: FunctionComponent<AboutModalBoxBrandProps>;
+export default AboutModalBoxBrand;

@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, FormEvent } from 'react';
+import { FunctionComponent, HTMLProps, FormEvent } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface TabsProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
@@ -11,6 +11,6 @@ export interface TabsProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
   rightScrollAriaLabel?: string;
 }
 
-declare const Tabs: SFC<TabsProps>;
+declare const Tabs: FunctionComponent<TabsProps>;
 
 export default Tabs;

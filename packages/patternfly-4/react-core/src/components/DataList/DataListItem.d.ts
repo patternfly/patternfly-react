@@ -1,4 +1,4 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface DataListItemProps extends Omit<HTMLProps<HTMLLIElement>, 'aria-label'> {
@@ -6,6 +6,6 @@ export interface DataListItemProps extends Omit<HTMLProps<HTMLLIElement>, 'aria-
   'aria-labelledby': string;
 }
 
-declare const DataListItem: SFC<DataListItemProps>;
+declare const DataListItem: FunctionComponent<DataListItemProps>;
 
 export default DataListItem;

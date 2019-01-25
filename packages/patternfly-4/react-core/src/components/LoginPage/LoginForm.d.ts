@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface LoginFormProps extends HTMLProps<HTMLFormElement> {
   children?: ReactNode;
@@ -22,6 +22,6 @@ export interface LoginFormProps extends HTMLProps<HTMLFormElement> {
   rememberMeAriaLabel?: string;
 }
 
-declare const LoginForm: SFC<LoginFormProps>;
+declare const LoginForm: FunctionComponent<LoginFormProps>;
 
 export default LoginForm;

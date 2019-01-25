@@ -1,4 +1,4 @@
-import { HTMLProps, FormEvent, ReactNode } from 'react';
+import { FormEvent, FunctionComponent, HTMLProps } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface DataListCheckProps
@@ -10,6 +10,6 @@ export interface DataListCheckProps
   'aria-labelledby': string;
 }
 
-declare const DataListCheck: React.SFC<DataListCheckProps>;
+declare const DataListCheck: FunctionComponent<DataListCheckProps>;
 
 export default DataListCheck;

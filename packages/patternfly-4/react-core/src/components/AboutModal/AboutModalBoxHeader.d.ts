@@ -1,4 +1,4 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface AboutModalBoxHeaderProps extends HTMLProps<HTMLDivElement> {
   productName: string;
@@ -6,6 +6,6 @@ export interface AboutModalBoxHeaderProps extends HTMLProps<HTMLDivElement> {
   id: string;
 }
 
-declare const AboutModalBoxHeader: SFC<AboutModalBoxHeaderProps>;
+declare const AboutModalBoxHeader: FunctionComponent<AboutModalBoxHeaderProps>;
 
 export default AboutModalBoxHeader;

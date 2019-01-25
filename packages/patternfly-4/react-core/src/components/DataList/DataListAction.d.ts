@@ -1,4 +1,4 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface DataListActionProps extends HTMLProps<HTMLDivElement> {
   'aria-labelledby': string;
@@ -6,6 +6,6 @@ export interface DataListActionProps extends HTMLProps<HTMLDivElement> {
   id: string;
 }
 
-declare const DataListAction: SFC<DataListActionProps>;
+declare const DataListAction: FunctionComponent<DataListActionProps>;
 
 export default DataListAction;

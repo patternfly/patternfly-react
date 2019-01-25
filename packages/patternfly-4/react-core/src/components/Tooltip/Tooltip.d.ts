@@ -1,6 +1,6 @@
-import { SFC, HTMLProps, ReactNode, ReactElement } from 'react';
+import { FunctionComponent, HTMLProps, ReactElement, ReactNode } from 'react';
 import { Omit } from '../../typeUtils';
-import { Instance, BasicPlacement } from 'tippy.js';
+import { BasicPlacement } from 'tippy.js';
 
 export const TooltipPosition: {
   top: 'top';
@@ -28,6 +28,6 @@ export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' 
   size: 'small' | 'regular' | 'large';
 }
 
-declare const Tooltip: SFC<TooltipProps>;
+declare const Tooltip: FunctionComponent<TooltipProps>;
 
 export default Tooltip;

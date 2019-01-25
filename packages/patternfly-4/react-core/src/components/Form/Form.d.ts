@@ -1,9 +1,9 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface FormProps extends HTMLProps<HTMLFormElement> {
     isHorizontal?: boolean;
 }
 
-declare const Form: SFC<FormProps>;
+declare const Form: FunctionComponent<FormProps>;
 
 export default Form;

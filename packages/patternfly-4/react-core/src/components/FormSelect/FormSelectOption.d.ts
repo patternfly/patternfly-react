@@ -1,4 +1,4 @@
-import { HTMLProps, FormEvent } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface FormSelectOptionProps extends Omit<HTMLProps<HTMLOptionElement>, 'disabled'> {
@@ -8,6 +8,6 @@ export interface FormSelectOptionProps extends Omit<HTMLProps<HTMLOptionElement>
   isDisabled?: boolean;
 }
 
-declare const FormSelectOption: React.SFC<FormSelectOptionProps>;
+declare const FormSelectOption: FunctionComponent<FormSelectOptionProps>;
 
 export default FormSelectOption;

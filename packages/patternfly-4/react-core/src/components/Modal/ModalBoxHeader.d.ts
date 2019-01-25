@@ -1,10 +1,10 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface ModalBoxHeaderProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
   className?: string;
 }
 
-declare const ModalBoxHeader: SFC<ModalBoxHeaderProps>;
+declare const ModalBoxHeader: FunctionComponent<ModalBoxHeaderProps>;
 
 export default ModalBoxHeader;

@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface ModalProps extends HTMLProps<HTMLDivElement> {
   actions?: any,
@@ -11,6 +11,6 @@ export interface ModalProps extends HTMLProps<HTMLDivElement> {
   title: string;
 }
 
-declare const Modal: SFC<ModalProps>;
+declare const Modal: FunctionComponent<ModalProps>;
 
 export default Modal;

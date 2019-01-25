@@ -1,9 +1,9 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface SplitItemProps extends HTMLProps<HTMLDivElement> {
   isMain: boolean;
 }
 
-declare const SplitItem: SFC<SplitItemProps>;
+declare const SplitItem: FunctionComponent<SplitItemProps>;
 
 export default SplitItem;

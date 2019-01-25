@@ -1,4 +1,4 @@
-import { HTMLProps, SFC } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 type GridItemSpanValue = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
@@ -20,6 +20,6 @@ export interface GridItemProps extends HTMLProps<HTMLDivElement> {
   xlOffset?: GridItemSpanValue;
 }
 
-declare const GridItem: SFC<GridItemProps>;
+declare const GridItem: FunctionComponent<GridItemProps>;
 
 export default GridItem;

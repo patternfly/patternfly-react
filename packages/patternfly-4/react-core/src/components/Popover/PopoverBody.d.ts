@@ -1,10 +1,10 @@
-import { SFC, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 
 export interface PopoverBodyProps  {
   id: string
   children: ReactNode;
 }
 
-declare const PopoverBody: SFC<PopoverBodyProps>;
+declare const PopoverBody: FunctionComponent<PopoverBodyProps>;
 
 export default PopoverBody;

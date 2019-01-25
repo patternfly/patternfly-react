@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, FormEvent } from 'react';
+import { FormEvent, FunctionComponent, HTMLProps } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface TextInputProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'disabled'> {
@@ -9,6 +9,6 @@ export interface TextInputProps extends Omit<HTMLProps<HTMLInputElement>, 'onCha
   isReadOnly?: boolean;
 }
 
-declare const TextInput: SFC<TextInputProps>;
+declare const TextInput: FunctionComponent<TextInputProps>;
 
 export default TextInput;
