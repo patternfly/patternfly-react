@@ -3,7 +3,7 @@ const fs = require('fs-extra'); //eslint-disable-line
 const packageDirs = ['react-core', 'react-charts', 'react-styled-system', 'react-table'];
 
 // Escape single quotes and backslashes in a file path
-const escapeFilePath = path => path.replace(/[\\']/g, '\\$&');
+const escapeFilePath = filePath => filePath.replace(/[\\']/g, '\\$&');
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }) => {
   // Enable hot reloading on source code changes
