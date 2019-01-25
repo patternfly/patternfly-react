@@ -6690,7 +6690,7 @@ cross-spawn@^3.0.0:
 
 cross-var@^1.1.0:
   version "1.1.0"
-  resolved "http://ny-s-nexus:8081/nexus/content/groups/npm-all/cross-var/-/cross-var-1.1.0.tgz#f0f0d4bb235d95138d1a539842d290f00db71cd6"
+  resolved "https://registry.yarnpkg.com/cross-var/-/cross-var-1.1.0.tgz#f0f0d4bb235d95138d1a539842d290f00db71cd6"
   integrity sha1-8PDUuyNdlRONGlOYQtKQ8A23HNY=
   dependencies:
     babel-preset-es2015 "^6.18.0"
@@ -7012,7 +7012,7 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0", cssom@^0.3.4:
+cssom@0.3.4, cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0", cssom@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.4.tgz#8cd52e8a3acfd68d3aed38ee0a640177d2f9d797"
 
@@ -8061,7 +8061,7 @@ es6-map@^0.1.3:
 
 es6-object-assign@^1.0.3:
   version "1.1.0"
-  resolved "http://ny-s-nexus:8081/nexus/content/groups/npm-all/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
+  resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
   integrity sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
 
 es6-promise@^4.0.3:
@@ -18294,7 +18294,7 @@ shellwords@^0.1.1:
 
 shx@^0.3.2:
   version "0.3.2"
-  resolved "http://ny-s-nexus:8081/nexus/content/groups/npm-all/shx/-/shx-0.3.2.tgz#40501ce14eb5e0cbcac7ddbd4b325563aad8c123"
+  resolved "https://registry.yarnpkg.com/shx/-/shx-0.3.2.tgz#40501ce14eb5e0cbcac7ddbd4b325563aad8c123"
   integrity sha512-aS0mWtW3T2sHAenrSrip2XGv39O9dXIFUqxAEWHEOS1ePtGIBavdPJY1kE2IHl14V/4iCbUiNDPGdyYTtmhSoA==
   dependencies:
     es6-object-assign "^1.0.3"
