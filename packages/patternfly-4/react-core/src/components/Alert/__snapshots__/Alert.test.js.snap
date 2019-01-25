@@ -1,47 +1,59 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert - danger Action 1`] = `
+exports[`Alert - danger Action Close Button 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-screen-reader {
+.pf-c-alert__description {
   display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
   white-space: nowrap;
   border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-danger {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionCloseButton
+      aria-label="Close"
+      className=""
+      onClose={[MockFunction]}
+    />
+  }
   className=""
-  closeButtonAriaLabel="Close"
   title=""
   variant="danger"
   variantLabel={null}
@@ -84,48 +96,210 @@ exports[`Alert - danger Action 1`] = `
         </ExclamationCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
+    <div
+      className="pf-c-alert__description"
     >
-      <div
-        className="pf-c-alert__body"
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionCloseButton
+        aria-label="Close"
+        className=""
+        onClose={[MockFunction]}
       >
-        <h4
-          className="pf-c-alert__title"
+        <Button
+          aria-label="Close"
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[MockFunction]}
+          type="button"
+          variant="plain"
         >
-          <span
-            className="pf-u-screen-reader"
+          <button
+            aria-disabled={null}
+            aria-label="Close"
+            className="pf-c-button pf-m-plain"
+            disabled={false}
+            onClick={[MockFunction]}
+            tabIndex={null}
+            type="button"
           >
-            Danger
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
+            <TimesIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 352 512"
+                width="1em"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  transform=""
+                />
+              </svg>
+            </TimesIcon>
+          </button>
+        </Button>
+      </AlertActionCloseButton>
+    </div>
+  </div>
+</Alert>
+`;
+
+exports[`Alert - danger Action Link 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #39a5dc;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-danger {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
+<Alert
+  action={
+    <AlertActionLink
       className=""
     >
+      test
+    </AlertActionLink>
+  }
+  className=""
+  title=""
+  variant="danger"
+  variantLabel={null}
+>
+  <div
+    aria-label="Danger Notification"
+    className="pf-c-alert pf-m-danger"
+  >
+    <AlertIcon
+      className=""
+      variant="danger"
+    >
       <div
-        className="pf-c-alert__action"
+        className="pf-c-alert__icon"
       >
-        action
+        <ExclamationCircleIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+              transform=""
+            />
+          </svg>
+        </ExclamationCircleIcon>
       </div>
-    </AlertAction>
+    </AlertIcon>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionLink
+        className=""
+      >
+        <Button
+          aria-label={null}
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          type="button"
+          variant="link"
+        >
+          <button
+            aria-disabled={null}
+            aria-label={null}
+            className="pf-c-button pf-m-link"
+            disabled={false}
+            tabIndex={null}
+            type="button"
+          >
+            test
+          </button>
+        </Button>
+      </AlertActionLink>
+    </div>
   </div>
 </Alert>
 `;
@@ -133,8 +307,9 @@ exports[`Alert - danger Action 1`] = `
 exports[`Alert - danger Action and Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -148,30 +323,56 @@ exports[`Alert - danger Action and Title 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-danger {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionLink
+      className=""
+    >
+      test
+    </AlertActionLink>
+  }
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="danger"
   variantLabel={null}
@@ -214,286 +415,32 @@ exports[`Alert - danger Action and Title 1`] = `
         </ExclamationCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
-      className=""
+        Danger
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
     >
-      <div
-        className="pf-c-alert__action"
-      >
-        action
-      </div>
-    </AlertAction>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - danger Body 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-danger {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  title=""
-  variant="danger"
-  variantLabel={null}
->
-  <div
-    aria-label="Danger Notification"
-    className="pf-c-alert pf-m-danger"
-  >
-    <AlertIcon
-      className=""
-      variant="danger"
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
     >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <ExclamationCircleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-              transform=""
-            />
-          </svg>
-        </ExclamationCircleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
-      >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - danger Close button 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-c-button.pf-m-plain {
-  display: inline-block;
-  position: relative;
-  padding: 0.375rem 1rem 0.375rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  white-space: nowrap;
-  border: 0px;
-  border-radius: 3px;
-  text-decoration: none;
-  color: #72767b;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-danger {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  onClose={[MockFunction]}
-  title=""
-  variant="danger"
-  variantLabel={null}
->
-  <div
-    aria-label="Danger Notification"
-    className="pf-c-alert pf-m-danger"
-  >
-    <AlertIcon
-      className=""
-      variant="danger"
-    >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <ExclamationCircleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-              transform=""
-            />
-          </svg>
-        </ExclamationCircleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      onClose={[MockFunction]}
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
+      <AlertActionLink
+        className=""
       >
         <Button
-          aria-label="Close"
+          aria-label={null}
           className=""
           component="button"
           isActive={false}
@@ -501,244 +448,22 @@ exports[`Alert - danger Close button 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
-          onClick={[MockFunction]}
           type="button"
-          variant="plain"
+          variant="link"
         >
           <button
             aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
+            aria-label={null}
+            className="pf-c-button pf-m-link"
             disabled={false}
-            onClick={[MockFunction]}
             tabIndex={null}
             type="button"
           >
-            <TimesIcon
-              color="currentColor"
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
+            test
           </button>
         </Button>
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - danger Close button and Title 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-c-button.pf-m-plain {
-  display: inline-block;
-  position: relative;
-  padding: 0.375rem 1rem 0.375rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  white-space: nowrap;
-  border: 0px;
-  border-radius: 3px;
-  text-decoration: none;
-  color: #72767b;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-danger {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  onClose={[MockFunction]}
-  title="Some title"
-  variant="danger"
-  variantLabel={null}
->
-  <div
-    aria-label="Danger Notification"
-    className="pf-c-alert pf-m-danger"
-  >
-    <AlertIcon
-      className=""
-      variant="danger"
-    >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <ExclamationCircleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-              transform=""
-            />
-          </svg>
-        </ExclamationCircleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      onClose={[MockFunction]}
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
-      >
-        <Button
-          aria-label="Close"
-          className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          onClick={[MockFunction]}
-          type="button"
-          variant="plain"
-        >
-          <button
-            aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            disabled={false}
-            onClick={[MockFunction]}
-            tabIndex={null}
-            type="button"
-          >
-            <TimesIcon
-              color="currentColor"
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
-          </button>
-        </Button>
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
+      </AlertActionLink>
+    </div>
   </div>
 </Alert>
 `;
@@ -746,8 +471,9 @@ exports[`Alert - danger Close button and Title 1`] = `
 exports[`Alert - danger Custom aria label 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -761,31 +487,57 @@ exports[`Alert - danger Custom aria label 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-danger {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionLink
+      className=""
+    >
+      test
+    </AlertActionLink>
+  }
   aria-label="Custom aria label for danger"
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="danger"
   variantLabel={null}
@@ -828,49 +580,136 @@ exports[`Alert - danger Custom aria label 1`] = `
         </ExclamationCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
+        Danger
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionLink
+        className=""
+      >
+        <Button
+          aria-label={null}
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          type="button"
+          variant="link"
         >
-          <span
-            className="pf-u-screen-reader"
+          <button
+            aria-disabled={null}
+            aria-label={null}
+            className="pf-c-button pf-m-link"
+            disabled={false}
+            tabIndex={null}
+            type="button"
           >
-            Danger
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
+            test
+          </button>
+        </Button>
+      </AlertActionLink>
+    </div>
+  </div>
+</Alert>
+`;
+
+exports[`Alert - danger Description 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #39a5dc;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-danger {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
+<Alert
+  action={null}
+  className=""
+  title=""
+  variant="danger"
+  variantLabel={null}
+>
+  <div
+    aria-label="Danger Notification"
+    className="pf-c-alert pf-m-danger"
+  >
+    <AlertIcon
       className=""
+      variant="danger"
     >
       <div
-        className="pf-c-alert__action"
+        className="pf-c-alert__icon"
       >
-        action
+        <ExclamationCircleIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+              transform=""
+            />
+          </svg>
+        </ExclamationCircleIcon>
       </div>
-    </AlertAction>
+    </AlertIcon>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
   </div>
 </Alert>
 `;
@@ -878,8 +717,9 @@ exports[`Alert - danger Custom aria label 1`] = `
 exports[`Alert - danger Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -893,18 +733,23 @@ exports[`Alert - danger Title 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 .pf-c-alert.pf-m-danger {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
@@ -912,7 +757,6 @@ exports[`Alert - danger Title 1`] = `
 <Alert
   action={null}
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="danger"
   variantLabel={null}
@@ -955,86 +799,82 @@ exports[`Alert - danger Title 1`] = `
         </ExclamationCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Danger
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
+        Danger
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
   </div>
 </Alert>
 `;
 
-exports[`Alert - info Action 1`] = `
+exports[`Alert - info Action Close Button 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-screen-reader {
+.pf-c-alert__description {
   display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
   white-space: nowrap;
   border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-info {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionCloseButton
+      aria-label="Close"
+      className=""
+      onClose={[MockFunction]}
+    />
+  }
   className=""
-  closeButtonAriaLabel="Close"
   title=""
   variant="info"
   variantLabel={null}
@@ -1077,48 +917,210 @@ exports[`Alert - info Action 1`] = `
         </InfoCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
+    <div
+      className="pf-c-alert__description"
     >
-      <div
-        className="pf-c-alert__body"
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionCloseButton
+        aria-label="Close"
+        className=""
+        onClose={[MockFunction]}
       >
-        <h4
-          className="pf-c-alert__title"
+        <Button
+          aria-label="Close"
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[MockFunction]}
+          type="button"
+          variant="plain"
         >
-          <span
-            className="pf-u-screen-reader"
+          <button
+            aria-disabled={null}
+            aria-label="Close"
+            className="pf-c-button pf-m-plain"
+            disabled={false}
+            onClick={[MockFunction]}
+            tabIndex={null}
+            type="button"
           >
-            Info
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
+            <TimesIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 352 512"
+                width="1em"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  transform=""
+                />
+              </svg>
+            </TimesIcon>
+          </button>
+        </Button>
+      </AlertActionCloseButton>
+    </div>
+  </div>
+</Alert>
+`;
+
+exports[`Alert - info Action Link 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #39a5dc;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-info {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
+<Alert
+  action={
+    <AlertActionLink
       className=""
     >
+      test
+    </AlertActionLink>
+  }
+  className=""
+  title=""
+  variant="info"
+  variantLabel={null}
+>
+  <div
+    aria-label="Info Notification"
+    className="pf-c-alert pf-m-info"
+  >
+    <AlertIcon
+      className=""
+      variant="info"
+    >
       <div
-        className="pf-c-alert__action"
+        className="pf-c-alert__icon"
       >
-        action
+        <InfoCircleIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+              transform=""
+            />
+          </svg>
+        </InfoCircleIcon>
       </div>
-    </AlertAction>
+    </AlertIcon>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionLink
+        className=""
+      >
+        <Button
+          aria-label={null}
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          type="button"
+          variant="link"
+        >
+          <button
+            aria-disabled={null}
+            aria-label={null}
+            className="pf-c-button pf-m-link"
+            disabled={false}
+            tabIndex={null}
+            type="button"
+          >
+            test
+          </button>
+        </Button>
+      </AlertActionLink>
+    </div>
   </div>
 </Alert>
 `;
@@ -1126,8 +1128,9 @@ exports[`Alert - info Action 1`] = `
 exports[`Alert - info Action and Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -1141,30 +1144,56 @@ exports[`Alert - info Action and Title 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-info {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionLink
+      className=""
+    >
+      test
+    </AlertActionLink>
+  }
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="info"
   variantLabel={null}
@@ -1207,286 +1236,32 @@ exports[`Alert - info Action and Title 1`] = `
         </InfoCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
-      className=""
+        Info
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
     >
-      <div
-        className="pf-c-alert__action"
-      >
-        action
-      </div>
-    </AlertAction>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - info Body 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-info {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  title=""
-  variant="info"
-  variantLabel={null}
->
-  <div
-    aria-label="Info Notification"
-    className="pf-c-alert pf-m-info"
-  >
-    <AlertIcon
-      className=""
-      variant="info"
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
     >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <InfoCircleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
-              transform=""
-            />
-          </svg>
-        </InfoCircleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
-      >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - info Close button 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-c-button.pf-m-plain {
-  display: inline-block;
-  position: relative;
-  padding: 0.375rem 1rem 0.375rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  white-space: nowrap;
-  border: 0px;
-  border-radius: 3px;
-  text-decoration: none;
-  color: #72767b;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-info {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  onClose={[MockFunction]}
-  title=""
-  variant="info"
-  variantLabel={null}
->
-  <div
-    aria-label="Info Notification"
-    className="pf-c-alert pf-m-info"
-  >
-    <AlertIcon
-      className=""
-      variant="info"
-    >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <InfoCircleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
-              transform=""
-            />
-          </svg>
-        </InfoCircleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      onClose={[MockFunction]}
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
+      <AlertActionLink
+        className=""
       >
         <Button
-          aria-label="Close"
+          aria-label={null}
           className=""
           component="button"
           isActive={false}
@@ -1494,244 +1269,22 @@ exports[`Alert - info Close button 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
-          onClick={[MockFunction]}
           type="button"
-          variant="plain"
+          variant="link"
         >
           <button
             aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
+            aria-label={null}
+            className="pf-c-button pf-m-link"
             disabled={false}
-            onClick={[MockFunction]}
             tabIndex={null}
             type="button"
           >
-            <TimesIcon
-              color="currentColor"
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
+            test
           </button>
         </Button>
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - info Close button and Title 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-c-button.pf-m-plain {
-  display: inline-block;
-  position: relative;
-  padding: 0.375rem 1rem 0.375rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  white-space: nowrap;
-  border: 0px;
-  border-radius: 3px;
-  text-decoration: none;
-  color: #72767b;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-info {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  onClose={[MockFunction]}
-  title="Some title"
-  variant="info"
-  variantLabel={null}
->
-  <div
-    aria-label="Info Notification"
-    className="pf-c-alert pf-m-info"
-  >
-    <AlertIcon
-      className=""
-      variant="info"
-    >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <InfoCircleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
-              transform=""
-            />
-          </svg>
-        </InfoCircleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      onClose={[MockFunction]}
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
-      >
-        <Button
-          aria-label="Close"
-          className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          onClick={[MockFunction]}
-          type="button"
-          variant="plain"
-        >
-          <button
-            aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            disabled={false}
-            onClick={[MockFunction]}
-            tabIndex={null}
-            type="button"
-          >
-            <TimesIcon
-              color="currentColor"
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
-          </button>
-        </Button>
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
+      </AlertActionLink>
+    </div>
   </div>
 </Alert>
 `;
@@ -1739,8 +1292,9 @@ exports[`Alert - info Close button and Title 1`] = `
 exports[`Alert - info Custom aria label 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -1754,31 +1308,57 @@ exports[`Alert - info Custom aria label 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-info {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionLink
+      className=""
+    >
+      test
+    </AlertActionLink>
+  }
   aria-label="Custom aria label for info"
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="info"
   variantLabel={null}
@@ -1821,49 +1401,136 @@ exports[`Alert - info Custom aria label 1`] = `
         </InfoCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
+        Info
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionLink
+        className=""
+      >
+        <Button
+          aria-label={null}
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          type="button"
+          variant="link"
         >
-          <span
-            className="pf-u-screen-reader"
+          <button
+            aria-disabled={null}
+            aria-label={null}
+            className="pf-c-button pf-m-link"
+            disabled={false}
+            tabIndex={null}
+            type="button"
           >
-            Info
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
+            test
+          </button>
+        </Button>
+      </AlertActionLink>
+    </div>
+  </div>
+</Alert>
+`;
+
+exports[`Alert - info Description 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #39a5dc;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-info {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
+<Alert
+  action={null}
+  className=""
+  title=""
+  variant="info"
+  variantLabel={null}
+>
+  <div
+    aria-label="Info Notification"
+    className="pf-c-alert pf-m-info"
+  >
+    <AlertIcon
       className=""
+      variant="info"
     >
       <div
-        className="pf-c-alert__action"
+        className="pf-c-alert__icon"
       >
-        action
+        <InfoCircleIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
+              transform=""
+            />
+          </svg>
+        </InfoCircleIcon>
       </div>
-    </AlertAction>
+    </AlertIcon>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
   </div>
 </Alert>
 `;
@@ -1871,8 +1538,9 @@ exports[`Alert - info Custom aria label 1`] = `
 exports[`Alert - info Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -1886,18 +1554,23 @@ exports[`Alert - info Title 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 .pf-c-alert.pf-m-info {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
@@ -1905,7 +1578,6 @@ exports[`Alert - info Title 1`] = `
 <Alert
   action={null}
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="info"
   variantLabel={null}
@@ -1948,86 +1620,82 @@ exports[`Alert - info Title 1`] = `
         </InfoCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Info
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
+        Info
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
   </div>
 </Alert>
 `;
 
-exports[`Alert - success Action 1`] = `
+exports[`Alert - success Action Close Button 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-screen-reader {
+.pf-c-alert__description {
   display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
   white-space: nowrap;
   border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-success {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionCloseButton
+      aria-label="Close"
+      className=""
+      onClose={[MockFunction]}
+    />
+  }
   className=""
-  closeButtonAriaLabel="Close"
   title=""
   variant="success"
   variantLabel={null}
@@ -2070,48 +1738,210 @@ exports[`Alert - success Action 1`] = `
         </CheckCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
+    <div
+      className="pf-c-alert__description"
     >
-      <div
-        className="pf-c-alert__body"
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionCloseButton
+        aria-label="Close"
+        className=""
+        onClose={[MockFunction]}
       >
-        <h4
-          className="pf-c-alert__title"
+        <Button
+          aria-label="Close"
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[MockFunction]}
+          type="button"
+          variant="plain"
         >
-          <span
-            className="pf-u-screen-reader"
+          <button
+            aria-disabled={null}
+            aria-label="Close"
+            className="pf-c-button pf-m-plain"
+            disabled={false}
+            onClick={[MockFunction]}
+            tabIndex={null}
+            type="button"
           >
-            Success
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
+            <TimesIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 352 512"
+                width="1em"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  transform=""
+                />
+              </svg>
+            </TimesIcon>
+          </button>
+        </Button>
+      </AlertActionCloseButton>
+    </div>
+  </div>
+</Alert>
+`;
+
+exports[`Alert - success Action Link 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #39a5dc;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-success {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
+<Alert
+  action={
+    <AlertActionLink
       className=""
     >
+      test
+    </AlertActionLink>
+  }
+  className=""
+  title=""
+  variant="success"
+  variantLabel={null}
+>
+  <div
+    aria-label="Success Notification"
+    className="pf-c-alert pf-m-success"
+  >
+    <AlertIcon
+      className=""
+      variant="success"
+    >
       <div
-        className="pf-c-alert__action"
+        className="pf-c-alert__icon"
       >
-        action
+        <CheckCircleIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+              transform=""
+            />
+          </svg>
+        </CheckCircleIcon>
       </div>
-    </AlertAction>
+    </AlertIcon>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionLink
+        className=""
+      >
+        <Button
+          aria-label={null}
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          type="button"
+          variant="link"
+        >
+          <button
+            aria-disabled={null}
+            aria-label={null}
+            className="pf-c-button pf-m-link"
+            disabled={false}
+            tabIndex={null}
+            type="button"
+          >
+            test
+          </button>
+        </Button>
+      </AlertActionLink>
+    </div>
   </div>
 </Alert>
 `;
@@ -2119,8 +1949,9 @@ exports[`Alert - success Action 1`] = `
 exports[`Alert - success Action and Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -2134,30 +1965,56 @@ exports[`Alert - success Action and Title 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-success {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionLink
+      className=""
+    >
+      test
+    </AlertActionLink>
+  }
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="success"
   variantLabel={null}
@@ -2200,286 +2057,32 @@ exports[`Alert - success Action and Title 1`] = `
         </CheckCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
-      className=""
+        Success
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
     >
-      <div
-        className="pf-c-alert__action"
-      >
-        action
-      </div>
-    </AlertAction>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - success Body 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-success {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  title=""
-  variant="success"
-  variantLabel={null}
->
-  <div
-    aria-label="Success Notification"
-    className="pf-c-alert pf-m-success"
-  >
-    <AlertIcon
-      className=""
-      variant="success"
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
     >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <CheckCircleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-              transform=""
-            />
-          </svg>
-        </CheckCircleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
-      >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - success Close button 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-c-button.pf-m-plain {
-  display: inline-block;
-  position: relative;
-  padding: 0.375rem 1rem 0.375rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  white-space: nowrap;
-  border: 0px;
-  border-radius: 3px;
-  text-decoration: none;
-  color: #72767b;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-success {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  onClose={[MockFunction]}
-  title=""
-  variant="success"
-  variantLabel={null}
->
-  <div
-    aria-label="Success Notification"
-    className="pf-c-alert pf-m-success"
-  >
-    <AlertIcon
-      className=""
-      variant="success"
-    >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <CheckCircleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-              transform=""
-            />
-          </svg>
-        </CheckCircleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      onClose={[MockFunction]}
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
+      <AlertActionLink
+        className=""
       >
         <Button
-          aria-label="Close"
+          aria-label={null}
           className=""
           component="button"
           isActive={false}
@@ -2487,244 +2090,22 @@ exports[`Alert - success Close button 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
-          onClick={[MockFunction]}
           type="button"
-          variant="plain"
+          variant="link"
         >
           <button
             aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
+            aria-label={null}
+            className="pf-c-button pf-m-link"
             disabled={false}
-            onClick={[MockFunction]}
             tabIndex={null}
             type="button"
           >
-            <TimesIcon
-              color="currentColor"
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
+            test
           </button>
         </Button>
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - success Close button and Title 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-c-button.pf-m-plain {
-  display: inline-block;
-  position: relative;
-  padding: 0.375rem 1rem 0.375rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  white-space: nowrap;
-  border: 0px;
-  border-radius: 3px;
-  text-decoration: none;
-  color: #72767b;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-success {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  onClose={[MockFunction]}
-  title="Some title"
-  variant="success"
-  variantLabel={null}
->
-  <div
-    aria-label="Success Notification"
-    className="pf-c-alert pf-m-success"
-  >
-    <AlertIcon
-      className=""
-      variant="success"
-    >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <CheckCircleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 512 512"
-            width="1em"
-          >
-            <path
-              d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
-              transform=""
-            />
-          </svg>
-        </CheckCircleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      onClose={[MockFunction]}
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
-      >
-        <Button
-          aria-label="Close"
-          className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          onClick={[MockFunction]}
-          type="button"
-          variant="plain"
-        >
-          <button
-            aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            disabled={false}
-            onClick={[MockFunction]}
-            tabIndex={null}
-            type="button"
-          >
-            <TimesIcon
-              color="currentColor"
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
-          </button>
-        </Button>
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
+      </AlertActionLink>
+    </div>
   </div>
 </Alert>
 `;
@@ -2732,8 +2113,9 @@ exports[`Alert - success Close button and Title 1`] = `
 exports[`Alert - success Custom aria label 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -2747,31 +2129,57 @@ exports[`Alert - success Custom aria label 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-success {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionLink
+      className=""
+    >
+      test
+    </AlertActionLink>
+  }
   aria-label="Custom aria label for success"
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="success"
   variantLabel={null}
@@ -2814,49 +2222,136 @@ exports[`Alert - success Custom aria label 1`] = `
         </CheckCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
+        Success
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionLink
+        className=""
+      >
+        <Button
+          aria-label={null}
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          type="button"
+          variant="link"
         >
-          <span
-            className="pf-u-screen-reader"
+          <button
+            aria-disabled={null}
+            aria-label={null}
+            className="pf-c-button pf-m-link"
+            disabled={false}
+            tabIndex={null}
+            type="button"
           >
-            Success
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
+            test
+          </button>
+        </Button>
+      </AlertActionLink>
+    </div>
+  </div>
+</Alert>
+`;
+
+exports[`Alert - success Description 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #39a5dc;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-success {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
+<Alert
+  action={null}
+  className=""
+  title=""
+  variant="success"
+  variantLabel={null}
+>
+  <div
+    aria-label="Success Notification"
+    className="pf-c-alert pf-m-success"
+  >
+    <AlertIcon
       className=""
+      variant="success"
     >
       <div
-        className="pf-c-alert__action"
+        className="pf-c-alert__icon"
       >
-        action
+        <CheckCircleIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 512 512"
+            width="1em"
+          >
+            <path
+              d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+              transform=""
+            />
+          </svg>
+        </CheckCircleIcon>
       </div>
-    </AlertAction>
+    </AlertIcon>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
   </div>
 </Alert>
 `;
@@ -2864,8 +2359,9 @@ exports[`Alert - success Custom aria label 1`] = `
 exports[`Alert - success Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -2879,18 +2375,23 @@ exports[`Alert - success Title 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 .pf-c-alert.pf-m-success {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
@@ -2898,7 +2399,6 @@ exports[`Alert - success Title 1`] = `
 <Alert
   action={null}
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="success"
   variantLabel={null}
@@ -2941,86 +2441,82 @@ exports[`Alert - success Title 1`] = `
         </CheckCircleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Success
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
+        Success
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
   </div>
 </Alert>
 `;
 
-exports[`Alert - warning Action 1`] = `
+exports[`Alert - warning Action Close Button 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
-.pf-u-screen-reader {
+.pf-c-alert__description {
   display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
   white-space: nowrap;
   border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-warning {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionCloseButton
+      aria-label="Close"
+      className=""
+      onClose={[MockFunction]}
+    />
+  }
   className=""
-  closeButtonAriaLabel="Close"
   title=""
   variant="warning"
   variantLabel={null}
@@ -3063,48 +2559,210 @@ exports[`Alert - warning Action 1`] = `
         </ExclamationTriangleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
+    <div
+      className="pf-c-alert__description"
     >
-      <div
-        className="pf-c-alert__body"
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionCloseButton
+        aria-label="Close"
+        className=""
+        onClose={[MockFunction]}
       >
-        <h4
-          className="pf-c-alert__title"
+        <Button
+          aria-label="Close"
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[MockFunction]}
+          type="button"
+          variant="plain"
         >
-          <span
-            className="pf-u-screen-reader"
+          <button
+            aria-disabled={null}
+            aria-label="Close"
+            className="pf-c-button pf-m-plain"
+            disabled={false}
+            onClick={[MockFunction]}
+            tabIndex={null}
+            type="button"
           >
-            Warning
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
+            <TimesIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 352 512"
+                width="1em"
+              >
+                <path
+                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+                  transform=""
+                />
+              </svg>
+            </TimesIcon>
+          </button>
+        </Button>
+      </AlertActionCloseButton>
+    </div>
+  </div>
+</Alert>
+`;
+
+exports[`Alert - warning Action Link 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #39a5dc;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-warning {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
+<Alert
+  action={
+    <AlertActionLink
       className=""
     >
+      test
+    </AlertActionLink>
+  }
+  className=""
+  title=""
+  variant="warning"
+  variantLabel={null}
+>
+  <div
+    aria-label="Warning Notification"
+    className="pf-c-alert pf-m-warning"
+  >
+    <AlertIcon
+      className=""
+      variant="warning"
+    >
       <div
-        className="pf-c-alert__action"
+        className="pf-c-alert__icon"
       >
-        action
+        <ExclamationTriangleIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 576 512"
+            width="1em"
+          >
+            <path
+              d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+              transform=""
+            />
+          </svg>
+        </ExclamationTriangleIcon>
       </div>
-    </AlertAction>
+    </AlertIcon>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionLink
+        className=""
+      >
+        <Button
+          aria-label={null}
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          type="button"
+          variant="link"
+        >
+          <button
+            aria-disabled={null}
+            aria-label={null}
+            className="pf-c-button pf-m-link"
+            disabled={false}
+            tabIndex={null}
+            type="button"
+          >
+            test
+          </button>
+        </Button>
+      </AlertActionLink>
+    </div>
   </div>
 </Alert>
 `;
@@ -3112,8 +2770,9 @@ exports[`Alert - warning Action 1`] = `
 exports[`Alert - warning Action and Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -3127,30 +2786,56 @@ exports[`Alert - warning Action and Title 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-warning {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionLink
+      className=""
+    >
+      test
+    </AlertActionLink>
+  }
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="warning"
   variantLabel={null}
@@ -3193,286 +2878,32 @@ exports[`Alert - warning Action and Title 1`] = `
         </ExclamationTriangleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
-      className=""
+        Warning
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
     >
-      <div
-        className="pf-c-alert__action"
-      >
-        action
-      </div>
-    </AlertAction>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - warning Body 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-warning {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  title=""
-  variant="warning"
-  variantLabel={null}
->
-  <div
-    aria-label="Warning Notification"
-    className="pf-c-alert pf-m-warning"
-  >
-    <AlertIcon
-      className=""
-      variant="warning"
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
     >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <ExclamationTriangleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 576 512"
-            width="1em"
-          >
-            <path
-              d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-              transform=""
-            />
-          </svg>
-        </ExclamationTriangleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
-      >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - warning Close button 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-c-button.pf-m-plain {
-  display: inline-block;
-  position: relative;
-  padding: 0.375rem 1rem 0.375rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  white-space: nowrap;
-  border: 0px;
-  border-radius: 3px;
-  text-decoration: none;
-  color: #72767b;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-warning {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  onClose={[MockFunction]}
-  title=""
-  variant="warning"
-  variantLabel={null}
->
-  <div
-    aria-label="Warning Notification"
-    className="pf-c-alert pf-m-warning"
-  >
-    <AlertIcon
-      className=""
-      variant="warning"
-    >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <ExclamationTriangleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 576 512"
-            width="1em"
-          >
-            <path
-              d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-              transform=""
-            />
-          </svg>
-        </ExclamationTriangleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      onClose={[MockFunction]}
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
+      <AlertActionLink
+        className=""
       >
         <Button
-          aria-label="Close"
+          aria-label={null}
           className=""
           component="button"
           isActive={false}
@@ -3480,244 +2911,22 @@ exports[`Alert - warning Close button 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
-          onClick={[MockFunction]}
           type="button"
-          variant="plain"
+          variant="link"
         >
           <button
             aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
+            aria-label={null}
+            className="pf-c-button pf-m-link"
             disabled={false}
-            onClick={[MockFunction]}
             tabIndex={null}
             type="button"
           >
-            <TimesIcon
-              color="currentColor"
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
+            test
           </button>
         </Button>
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-  </div>
-</Alert>
-`;
-
-exports[`Alert - warning Close button and Title 1`] = `
-.pf-c-alert__icon {
-  display: flex;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #004368;
-  background-color: #39a5dc;
-}
-.pf-c-button.pf-m-plain {
-  display: inline-block;
-  position: relative;
-  padding: 0.375rem 1rem 0.375rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.5;
-  text-align: center;
-  white-space: nowrap;
-  border: 0px;
-  border-radius: 3px;
-  text-decoration: none;
-  color: #72767b;
-}
-.pf-u-screen-reader {
-  display: block;
-  position: fixed;
-  overflow: hidden;
-  clip: rect(0px, 0px, 0px, 0px);
-  white-space: nowrap;
-  border: 0px;
-}
-.pf-c-alert__title {
-  display: block;
-  font-size: 1rem;
-  color: #004368;
-}
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
-}
-.pf-c-alert.pf-m-warning {
-  display: flex;
-  background-color: #ffffff;
-  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
-}
-
-<Alert
-  action={null}
-  className=""
-  closeButtonAriaLabel="Close"
-  onClose={[MockFunction]}
-  title="Some title"
-  variant="warning"
-  variantLabel={null}
->
-  <div
-    aria-label="Warning Notification"
-    className="pf-c-alert pf-m-warning"
-  >
-    <AlertIcon
-      className=""
-      variant="warning"
-    >
-      <div
-        className="pf-c-alert__icon"
-      >
-        <ExclamationTriangleIcon
-          color="currentColor"
-          size="sm"
-          title={null}
-        >
-          <svg
-            aria-hidden={true}
-            aria-labelledby={null}
-            fill="currentColor"
-            height="1em"
-            role="img"
-            style={
-              Object {
-                "verticalAlign": "-0.125em",
-              }
-            }
-            viewBox="0 0 576 512"
-            width="1em"
-          >
-            <path
-              d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
-              transform=""
-            />
-          </svg>
-        </ExclamationTriangleIcon>
-      </div>
-    </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      onClose={[MockFunction]}
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
-    >
-      <div
-        className="pf-c-alert__body"
-      >
-        <Button
-          aria-label="Close"
-          className=""
-          component="button"
-          isActive={false}
-          isBlock={false}
-          isDisabled={false}
-          isFocus={false}
-          isHover={false}
-          onClick={[MockFunction]}
-          type="button"
-          variant="plain"
-        >
-          <button
-            aria-disabled={null}
-            aria-label="Close"
-            className="pf-c-button pf-m-plain"
-            disabled={false}
-            onClick={[MockFunction]}
-            tabIndex={null}
-            type="button"
-          >
-            <TimesIcon
-              color="currentColor"
-              size="sm"
-              title={null}
-            >
-              <svg
-                aria-hidden={true}
-                aria-labelledby={null}
-                fill="currentColor"
-                height="1em"
-                role="img"
-                style={
-                  Object {
-                    "verticalAlign": "-0.125em",
-                  }
-                }
-                viewBox="0 0 352 512"
-                width="1em"
-              >
-                <path
-                  d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
-                  transform=""
-                />
-              </svg>
-            </TimesIcon>
-          </button>
-        </Button>
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
+      </AlertActionLink>
+    </div>
   </div>
 </Alert>
 `;
@@ -3725,8 +2934,9 @@ exports[`Alert - warning Close button and Title 1`] = `
 exports[`Alert - warning Custom aria label 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -3740,31 +2950,57 @@ exports[`Alert - warning Custom aria label 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
   position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #007bba;
 }
 .pf-c-alert__action {
-  display: flex;
-  align-items: center;
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
 }
 .pf-c-alert.pf-m-warning {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
 
 <Alert
-  action="action"
+  action={
+    <AlertActionLink
+      className=""
+    >
+      test
+    </AlertActionLink>
+  }
   aria-label="Custom aria label for warning"
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="warning"
   variantLabel={null}
@@ -3807,49 +3043,136 @@ exports[`Alert - warning Custom aria label 1`] = `
         </ExclamationTriangleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
+        Warning
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
+    <div
+      className="pf-c-alert__action"
+    >
+      <AlertActionLink
+        className=""
+      >
+        <Button
+          aria-label={null}
+          className=""
+          component="button"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          type="button"
+          variant="link"
         >
-          <span
-            className="pf-u-screen-reader"
+          <button
+            aria-disabled={null}
+            aria-label={null}
+            className="pf-c-button pf-m-link"
+            disabled={false}
+            tabIndex={null}
+            type="button"
           >
-            Warning
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
-    <AlertAction
+            test
+          </button>
+        </Button>
+      </AlertActionLink>
+    </div>
+  </div>
+</Alert>
+`;
+
+exports[`Alert - warning Description 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #39a5dc;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-warning {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
+<Alert
+  action={null}
+  className=""
+  title=""
+  variant="warning"
+  variantLabel={null}
+>
+  <div
+    aria-label="Warning Notification"
+    className="pf-c-alert pf-m-warning"
+  >
+    <AlertIcon
       className=""
+      variant="warning"
     >
       <div
-        className="pf-c-alert__action"
+        className="pf-c-alert__icon"
       >
-        action
+        <ExclamationTriangleIcon
+          color="currentColor"
+          size="sm"
+          title={null}
+        >
+          <svg
+            aria-hidden={true}
+            aria-labelledby={null}
+            fill="currentColor"
+            height="1em"
+            role="img"
+            style={
+              Object {
+                "verticalAlign": "-0.125em",
+              }
+            }
+            viewBox="0 0 576 512"
+            width="1em"
+          >
+            <path
+              d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+              transform=""
+            />
+          </svg>
+        </ExclamationTriangleIcon>
       </div>
-    </AlertAction>
+    </AlertIcon>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
   </div>
 </Alert>
 `;
@@ -3857,8 +3180,9 @@ exports[`Alert - warning Custom aria label 1`] = `
 exports[`Alert - warning Title 1`] = `
 .pf-c-alert__icon {
   display: flex;
+  grid-area: icon;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.3125rem;
   color: #004368;
   background-color: #39a5dc;
 }
@@ -3872,18 +3196,23 @@ exports[`Alert - warning Title 1`] = `
 }
 .pf-c-alert__title {
   display: block;
+  grid-area: title;
+  padding: 1rem 1rem 0.5rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
-.pf-c-alert__body {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem 1rem 1rem;
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 .pf-c-alert.pf-m-warning {
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
   background-color: #ffffff;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
 }
@@ -3891,7 +3220,6 @@ exports[`Alert - warning Title 1`] = `
 <Alert
   action={null}
   className=""
-  closeButtonAriaLabel="Close"
   title="Some title"
   variant="warning"
   variantLabel={null}
@@ -3934,40 +3262,24 @@ exports[`Alert - warning Title 1`] = `
         </ExclamationTriangleIcon>
       </div>
     </AlertIcon>
-    <AlertBody
-      className=""
-      closeButtonAriaLabel="Close"
-      title={
-        <React.Fragment>
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          Some title
-        </React.Fragment>
-      }
+    <h4
+      className="pf-c-alert__title"
     >
-      <div
-        className="pf-c-alert__body"
+      <span
+        className="pf-u-screen-reader"
       >
-        <h4
-          className="pf-c-alert__title"
-        >
-          <span
-            className="pf-u-screen-reader"
-          >
-            Warning
-            : 
-          </span>
-          Some title
-        </h4>
-        <p>
-          Some alert
-        </p>
-      </div>
-    </AlertBody>
+        Warning
+        : 
+      </span>
+      Some title
+    </h4>
+    <div
+      className="pf-c-alert__description"
+    >
+      <p>
+        Some alert
+      </p>
+    </div>
   </div>
 </Alert>
 `;

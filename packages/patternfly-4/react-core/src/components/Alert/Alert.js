@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly-next/components/Alert/alert.css';
 import accessibleStyles from '@patternfly/patternfly-next/utilities/Accessibility/accessibility.css';
 import AlertIcon from './AlertIcon';
-import AlertBody from './AlertBody';
-import AlertAction from './AlertAction';
 import { capitalize } from '../../internal/util';
+import AlertActionCloseButton from './AlertActionCloseButton';
+import AlertActionLink from './AlertActionLink';
 
 export const AlertVariant = {
   success: 'success',
@@ -18,7 +18,7 @@ export const AlertVariant = {
 const propTypes = {
   /** Adds Alert variant styles */
   variant: PropTypes.oneOf(Object.values(AlertVariant)).isRequired,
-  /** Action button to put in the Alert */
+  /** Action button to put in the Alert.  Should be <AlertActionLink> or <AlertActionCloseButton> */
   action: PropTypes.node,
   /** Title of the Alert */
   title: PropTypes.string,
@@ -30,10 +30,6 @@ const propTypes = {
   'aria-label': PropTypes.string,
   /** Variant label text for screen readers */
   variantLabel: PropTypes.string,
-  /** A callback for when the close button is clicked (if undefined, no close button is rendered) */
-  onClose: PropTypes.func,
-  /** Allows localization of the accessible label on the close button */
-  closeButtonAriaLabel: PropTypes.string,
   /** Additional props are spread to the container <div>  */
   '': PropTypes.any
 };
@@ -44,9 +40,7 @@ const defaultProps = {
   title: '',
   children: '',
   className: '',
-  variantLabel: null,
-  onClose: undefined,
-  closeButtonAriaLabel: 'Close'
+  variantLabel: null
 };
 
 const getDefaultAriaLabel = variant => `${capitalize(AlertVariant[variant])} Notification`;
@@ -59,8 +53,6 @@ const Alert = ({
   title,
   children,
   className,
-  onClose,
-  closeButtonAriaLabel,
   ...props
 }) => {
   variantLabel = variantLabel || capitalize(AlertVariant[variant]);
@@ -76,10 +68,13 @@ const Alert = ({
   return (
     <div {...props} className={customClassName} aria-label={ariaLabel}>
       <AlertIcon variant={variant} />
-      <AlertBody title={readerTitle} onClose={onClose} closeButtonAriaLabel={closeButtonAriaLabel}>
-        {children}
-      </AlertBody>
-      {action && <AlertAction>{action}</AlertAction>}
+      {title && <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>}
+      {children && (
+        <div className={css(styles.alertDescription)}>
+          <p>{children}</p>
+        </div>
+      )}
+      {action && <div className={css(styles.alertAction, className)}>{action}</div>}
     </div>
   );
 };

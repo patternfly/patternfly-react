@@ -12,7 +12,6 @@ exports[`AboutModalBoxHeader Test 1`] = `
   display: flex;
   grid-area: header;
   flex-direction: column;
-  justify-content: flex-end;
   padding-right: 2rem;
   padding-bottom: 0.5rem;
   padding-left: 2rem;

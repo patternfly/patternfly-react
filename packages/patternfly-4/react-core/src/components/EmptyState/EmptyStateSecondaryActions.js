@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly-next/components/EmptyState/empty-state.css';
 
-const EmptyStateAction = ({ children, className, ...props }) => (
-  <div className={css(styles.emptyStateAction, className)} {...props}>
+const EmptyStateSecondaryActions = ({ children, className, ...props }) => (
+  <div className={css(styles.emptyStateSecondary, className)} {...props}>
     {children}
   </div>
 );
 
-EmptyStateAction.propTypes = {
+EmptyStateSecondaryActions.propTypes = {
   /** Additional classes added to the EmptyState */
   className: PropTypes.string,
   /** Content rendered inside the EmptyState */
@@ -18,8 +18,9 @@ EmptyStateAction.propTypes = {
   '': PropTypes.any
 };
 
-EmptyStateAction.defaultProps = {
-  className: ''
+EmptyStateSecondaryActions.defaultProps = {
+  className: '',
+  children: null
 };
 
-export default EmptyStateAction;
+export default EmptyStateSecondaryActions;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Button } from '@patternfly/react-core';
+import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
 class InfoAlert extends React.Component {
   state = { alertOneVisible: true, alertTwoVisible: true };
@@ -11,12 +11,26 @@ class InfoAlert extends React.Component {
     return (
       <React.Fragment>
         {alertOneVisible && (
-          <Alert variant="info" title="Info notification title" onClose={this.hideAlertOne}>
+          <Alert
+            variant="info"
+            title="Info notification title"
+            action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
+          >
             Info notification description. <a href="#">This is a link.</a>
           </Alert>
         )}
-        {alertTwoVisible && <Alert variant="info" title="Info notification title" onClose={this.hideAlertTwo} />}
-        <Alert variant="info" title="Info notification title" action={<Button variant="link">Action Button</Button>} />
+        {alertTwoVisible && (
+          <Alert
+            variant="info"
+            title="Info notification title"
+            action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
+          />
+        )}
+        <Alert
+          variant="info"
+          title="Info notification title"
+          action={<AlertActionLink>Action Button</AlertActionLink>}
+        />
         <Alert variant="info" title="Info notification title" />
       </React.Fragment>
     );
