@@ -38,6 +38,7 @@ exports[`ActionGroup component should render horizontal form ActionGroup variant
 >
   <form
     className="pf-c-form pf-m-horizontal"
+    noValidate={true}
   >
     <ActionGroup
       className=""
