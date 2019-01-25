@@ -77,7 +77,7 @@
     "clean:build": "shx rm -rf packages/*/dist && shx rm -rf packages/patternfly-?/*/dist",
     "commit": "git-cz",
     "commitmsg": "commitlint -e",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "coveralls": "shx cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "generate": "yarn plop",
     "lerna": "lerna",
     "lerna:publish": "lerna publish --yes",
