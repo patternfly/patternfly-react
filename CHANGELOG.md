@@ -1,5 +1,55 @@
 
-## Unreleased (2019-01-24)
+## Unreleased (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1223](https://github.com/patternfly/patternfly-react/pull/1223) fix(Slider): Update state when properties are updated. ([@lucasponce](https://github.com/lucasponce))
+
+#### Committers: 1
+- Lucas Ponce ([@lucasponce](https://github.com/lucasponce))
+
+
+## @patternfly/react-table@0.4.5 (2019-01-24)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#1226](https://github.com/patternfly/patternfly-react/pull/1226) docs(react-icons): Add props table to README.md ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-integration@1.0.4 (2019-01-24)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#1226](https://github.com/patternfly/patternfly-react/pull/1226) docs(react-icons): Add props table to README.md ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-icons@2.10.1 (2019-01-24)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#1226](https://github.com/patternfly/patternfly-react/pull/1226) docs(react-icons): Add props table to README.md ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-docs@3.21.5 (2019-01-24)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#1226](https://github.com/patternfly/patternfly-react/pull/1226) docs(react-icons): Add props table to README.md ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-core@1.49.5 (2019-01-24)
 
 #### :memo: Documentation
 * `react-icons`
