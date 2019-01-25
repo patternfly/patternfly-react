@@ -1,10 +1,9 @@
-import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
-import { ISortBy, IAction, ISeparator } from './Table';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface HeaderProps extends HTMLProps<HTMLTableRowElement> {
   className?: string;
 }
 
-declare const Header: SFC<HeaderProps>;
+declare const Header: FunctionComponent<HeaderProps>;
 
 export default Header;
