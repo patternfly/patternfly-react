@@ -4,6 +4,12 @@ import styles from '@patternfly/patternfly-next/components/Table/table.css';
 import SelectColumn from '../../SelectColumn';
 
 export default (label, { column: { extraParams: { onSelect, rowLabeledBy = 'simple-node' } }, rowIndex, rowData }) => {
+  if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect) {
+    return {
+      component: 'td',
+      scope: ''
+    }
+  }
   const rowId = rowIndex !== undefined ? rowIndex : -1;
   function selectClick(event) {
     let selected = rowIndex === undefined ? event.target.checked : rowData && !rowData.selected;

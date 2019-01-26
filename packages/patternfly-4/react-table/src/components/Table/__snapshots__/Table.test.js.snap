@@ -25497,50 +25497,17 @@ exports[`Selectable table 1`] = `
 .pf-c-table__check {
   display: block;
 }
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-table__check {
-  display: block;
-}
 .pf-c-table__expandable-row {
   display: block;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-table__check {
-  display: block;
-}
 .pf-c-table__expandable-row {
   display: block;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
-}
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-table__check {
-  display: block;
 }
 .pf-c-check__input {
   display: block;
@@ -27632,7 +27599,6 @@ exports[`Selectable table 1`] = `
                       onClick={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__check"
                         component="td"
                         data-key={0}
                         data-label=""
@@ -27640,27 +27606,9 @@ exports[`Selectable table 1`] = `
                         scope=""
                       >
                         <td
-                          className="pf-c-table__check"
                           data-key={0}
                           scope=""
-                        >
-                          <SelectColumn
-                            aria-labelledby="simple-node1"
-                            checked={false}
-                            className=""
-                            name="checkrow1"
-                            onSelect={[Function]}
-                          >
-                            <input
-                              aria-labelledby="simple-node1"
-                              checked={false}
-                              className="pf-c-check__input"
-                              name="checkrow1"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                          </SelectColumn>
-                        </td>
+                        />
                       </BodyCell>
                       <BodyCell
                         component="td"
@@ -28005,7 +27953,6 @@ exports[`Selectable table 1`] = `
                       onClick={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__check"
                         component="td"
                         data-key={0}
                         data-label=""
@@ -28013,27 +27960,9 @@ exports[`Selectable table 1`] = `
                         scope=""
                       >
                         <td
-                          className="pf-c-table__check"
                           data-key={0}
                           scope=""
-                        >
-                          <SelectColumn
-                            aria-labelledby="simple-node2"
-                            checked={false}
-                            className=""
-                            name="checkrow2"
-                            onSelect={[Function]}
-                          >
-                            <input
-                              aria-labelledby="simple-node2"
-                              checked={false}
-                              className="pf-c-check__input"
-                              name="checkrow2"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                          </SelectColumn>
-                        </td>
+                        />
                       </BodyCell>
                       <BodyCell
                         component="td"
@@ -28750,7 +28679,6 @@ exports[`Selectable table 1`] = `
                       onClick={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__check"
                         component="td"
                         data-key={0}
                         data-label=""
@@ -28758,27 +28686,9 @@ exports[`Selectable table 1`] = `
                         scope=""
                       >
                         <td
-                          className="pf-c-table__check"
                           data-key={0}
                           scope=""
-                        >
-                          <SelectColumn
-                            aria-labelledby="simple-node4"
-                            checked={false}
-                            className=""
-                            name="checkrow4"
-                            onSelect={[Function]}
-                          >
-                            <input
-                              aria-labelledby="simple-node4"
-                              checked={false}
-                              className="pf-c-check__input"
-                              name="checkrow4"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                          </SelectColumn>
-                        </td>
+                        />
                       </BodyCell>
                       <BodyCell
                         component="td"

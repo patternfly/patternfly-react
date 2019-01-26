@@ -52,6 +52,7 @@ const propTypes = {
       cells: PropTypes.arrayOf(PropTypes.node),
       isOpen: PropTypes.bool,
       parent: PropTypes.number,
+      showSelect: PropTypes.bool,
       props: PropTypes.any
     }),
     PropTypes.arrayOf(PropTypes.oneOfType([
