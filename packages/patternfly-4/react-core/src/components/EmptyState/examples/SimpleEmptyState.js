@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, Button, EmptyState, EmptyStateIcon, EmptyStateBody, EmptyStateAction } from '@patternfly/react-core';
+import { Title, Button, EmptyState, EmptyStateIcon, EmptyStateBody, EmptyStateSecondary } from '@patternfly/react-core';
 import { CubesIcon } from '@patternfly/react-icons';
 
 class SimpleEmptyState extends React.Component {
@@ -12,12 +12,27 @@ class SimpleEmptyState extends React.Component {
           This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
           enough to meet a variety of needs.
         </EmptyStateBody>
-        <EmptyStateAction>
-          <Button variant="primary">Buy more ideas</Button>
-          <Button variant="link" aria-label="Buy something else action">
-            Buy something else
+        <Button variant="primary">Primary action</Button>
+        <EmptyStateSecondary>
+          <Button variant="link">
+            Multiple
           </Button>
-        </EmptyStateAction>
+          <Button variant="link">
+            Action Buttons
+          </Button>
+          <Button variant="link">
+            Can
+          </Button>
+          <Button variant="link">
+            Go here
+          </Button>
+          <Button variant="link">
+            In the secondary
+          </Button>
+          <Button variant="link">
+            Action area
+          </Button>
+        </EmptyStateSecondary>
       </EmptyState>
     );
   }
