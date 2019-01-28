@@ -12,6 +12,7 @@ class SimplePopover extends React.Component {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
           </div>
         }
+        footerContent="Popover Footer"
       >
         <Button>Toggle Popover</Button>
       </Popover>

@@ -33,35 +33,34 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #ffffff;
-  transform: translate3d(0,0,0);
+  transform: translate3d(-100%,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
 }
 .pf-c-page__main-section {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
 }
 .pf-c-page__main-section.pf-m-light {
   display: block;
-  padding: 1rem;
-  background-color: #ffffff;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #ededed;
 }
 .pf-c-page__main-section.pf-m-dark-200 {
   display: block;
-  padding: 1rem;
-  background-color: rgba(3, 3, 3, 0.32);
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #ededed;
 }
 .pf-c-page__main-section.pf-m-dark-100 {
   display: block;
-  padding: 1rem;
-  background-color: rgba(3, 3, 3, 0.62);
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #ededed;
 }
 .pf-c-page__main {
   display: flex;
   grid-area: main;
   z-index: 100;
   flex-direction: column;
-  padding-right: 0px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -233,35 +232,34 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #ffffff;
-  transform: translate3d(0,0,0);
+  transform: translate3d(-100%,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
 }
 .pf-c-page__main-section {
   display: block;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
 }
 .pf-c-page__main-section.pf-m-light {
   display: block;
-  padding: 1rem;
-  background-color: #ffffff;
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #ededed;
 }
 .pf-c-page__main-section.pf-m-dark-200 {
   display: block;
-  padding: 1rem;
-  background-color: rgba(3, 3, 3, 0.32);
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #ededed;
 }
 .pf-c-page__main-section.pf-m-dark-100 {
   display: block;
-  padding: 1rem;
-  background-color: rgba(3, 3, 3, 0.62);
+  padding: 1rem 1rem 1rem 1rem;
+  background-color: #ededed;
 }
 .pf-c-page__main {
   display: flex;
   grid-area: main;
   z-index: 100;
   flex-direction: column;
-  padding-right: 0px;
   overflow-x: hidden;
   overflow-y: auto;
 }

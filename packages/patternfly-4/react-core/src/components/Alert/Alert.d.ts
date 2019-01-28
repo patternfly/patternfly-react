@@ -12,8 +12,9 @@ export interface AlertProps extends Omit<HTMLProps<HTMLDivElement>, 'action'> {
   variant: OneOf<typeof AlertVariant, keyof typeof AlertVariant>;
   children?: ReactNode;
   action?: ReactNode;
-  onClose?: Function;
-  closeButtonAriaLabel?: String;
+  title?: string;
+  'aria-label': string;
+  variantLabel?: string;
 }
 
 declare const Alert: SFC<AlertProps>;
