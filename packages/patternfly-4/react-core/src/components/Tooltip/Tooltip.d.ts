@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode, ReactElement } from 'react';
+import { SFC, HTMLProps, ReactNode, ReactElement, Element } from 'react';
 import { Omit } from '../../typeUtils';
 import { Instance, BasicPlacement } from 'tippy.js';
 
@@ -17,7 +17,7 @@ export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' 
   /** Tooltip additional class */
   className?: string;
   /** The reference element to which the tooltip is relatively placed to */
-  children: ReactElement<any>;
+  children: Element;
   /** Tooltip content */
   content: ReactNode;
   /** The element to append the tooltip to, defaults to body */
@@ -25,7 +25,7 @@ export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' 
   /** z-index of the tooltip */
   zIndex?: number;
   /** Size of the tooltip */
-  maxWidth: '12.5rem';
+  maxWidth?: '12.5rem';
 }
 
 declare const Tooltip: SFC<TooltipProps>;

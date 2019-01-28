@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps } from '@patternfly/react-core';
+import { Avatar, AvatarProps, Tooltip, Popover } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -14,6 +14,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Avatar src={logo} alt={new myProps().alt} />
+          <Tooltip content={<div>World</div>}><div>Hello</div></Tooltip>
+          <Popover bodyContent={<div>World</div>}><div>Hello</div></Popover>
           <NavTest />
         </header>
       </div>
