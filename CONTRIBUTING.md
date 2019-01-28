@@ -99,11 +99,18 @@ If you find a bug within the repo, please help us track the issue by following t
 
 To create an issue for adding a new component to the repo, please observe the following process:
 
-1.  If the component does not yet exist as a PatternFly component, check the [PatternFly Decision Tree](https://github.com/patternfly/patternfly-design/blob/master/resources/decision-tree/PatternflyDecisionTree.pdf) to see if your component meets the criteria for an addition to PatternFly. If you're unsure, reach out to us on the patternfly@redhat.com mailing list.
-2.  If the component exists in PatternFly or passes the Decision Tree, then create an issue with the following details:
+1.  If the component does not yet exist as a PatternFly component, please do not start coding yet.  Components contributed to PatternFly-React should have a design pattern in PatternFly or be approved PatternFly-Extension components.
+2.  If the component exists in PatternFly core (meaning CSS and the pattern design exists), then create an issue with the following details:
     - Assign the label `enhancement` to the issue
     - Include the text “Component -“ in the beginning of the title if the issue captures a new component
     - If the component is documented as a [PatternFly Library Pattern](http://www.patternfly.org/pattern-library/), include a link to it.
+3.  If a component is not in PatternFly, but you feel it would be a good addition to the library, please do the following:
+    - Open a new GitHub issue and tag it with the Extension label
+    - Reach out on the patternfly-react channel on slack, the mailing list or the forum to see if the issue is approved as an extension
+    - If it is approved:
+        - For PatternFly 3 components, please use the patternfly-react-extensions package
+        - For PatternFly 4 components, direction will be given as to which package it will go in.  Generally, we are recommending most extension components go in individual packages.  Several smaller common components may end up being grouped together.  In the future, a generator for extension component packages will be created.
+    - Extension components do not undergo the same rigorous design or coding review process as core PatternFly components.  If enough members of the community find them useful, we will work to move them into our core PatternFly system by starting the design process for the idea.
 
 ### Contributing Components
 
