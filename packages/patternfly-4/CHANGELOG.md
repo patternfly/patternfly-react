@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.41.0](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.40.5...patternfly4-react-lerna-root@1.41.0) (2019-01-28)
+
+
+### Features
+
+* **Form:** add novalidate flag to form ([#1253](https://github.com/patternfly/patternfly-react/issues/1253)) ([5e54437](https://github.com/patternfly/patternfly-react/commit/5e54437))
+
+
+
+
+
 ## [1.40.5](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.40.4...patternfly4-react-lerna-root@1.40.5) (2019-01-25)
 
 

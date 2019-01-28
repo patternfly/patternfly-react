@@ -1,5 +1,65 @@
 
-## Unreleased (2019-01-25)
+## Unreleased (2019-01-28)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1253](https://github.com/patternfly/patternfly-react/pull/1253) feat(Form): add novalidate flag to form ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.40.5 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## demo-app-ts@0.1.2 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-table@0.4.6 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-integration@1.0.5 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.21.6 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.49.6 (2019-01-25)
 
 #### :bug: Bug Fix
 * `patternfly-4`
