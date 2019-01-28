@@ -149,7 +149,7 @@ module.exports = (file, api, options) => {
 
     return prettier
       ? prettier.format(transformedSource, {
-          parser: 'babylon',
+          parser: 'babel',
           ...prettier.resolveConfig.sync(process.cwd())
         })
       : transformedSource;
