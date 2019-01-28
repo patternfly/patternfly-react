@@ -12,6 +12,7 @@ class HeadlessPopover extends React.Component {
           </div>
         }
         aria-label="Headless Popover"
+        footerContent="Popover Footer"
       >
         <Button>Toggle Popover</Button>
       </Popover>

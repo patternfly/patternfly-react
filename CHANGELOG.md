@@ -1,5 +1,155 @@
 
-## Unreleased (2019-01-24)
+## Unreleased (2019-01-28)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1253](https://github.com/patternfly/patternfly-react/pull/1253) feat(Form): add novalidate flag to form ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.40.5 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## demo-app-ts@0.1.2 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-table@0.4.6 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-integration@1.0.5 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-docs@3.21.6 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## @patternfly/react-core@1.49.6 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1242](https://github.com/patternfly/patternfly-react/pull/1242) fix(ts): nav ts props ([@jschuler](https://github.com/jschuler))
+
+#### Committers: 1
+- Joachim ([@jschuler](https://github.com/jschuler))
+
+
+## patternfly3-react-lerna-root@7.19.11 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1223](https://github.com/patternfly/patternfly-react/pull/1223) fix(Slider): Update state when properties are updated. ([@lucasponce](https://github.com/lucasponce))
+
+#### Committers: 1
+- Lucas Ponce ([@lucasponce](https://github.com/lucasponce))
+
+
+## patternfly-react@2.29.8 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1223](https://github.com/patternfly/patternfly-react/pull/1223) fix(Slider): Update state when properties are updated. ([@lucasponce](https://github.com/lucasponce))
+
+#### Committers: 1
+- Lucas Ponce ([@lucasponce](https://github.com/lucasponce))
+
+
+## patternfly-react-extensions@2.16.9 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1223](https://github.com/patternfly/patternfly-react/pull/1223) fix(Slider): Update state when properties are updated. ([@lucasponce](https://github.com/lucasponce))
+
+#### Committers: 1
+- Lucas Ponce ([@lucasponce](https://github.com/lucasponce))
+
+
+## @patternfly/react-console@1.10.16 (2019-01-25)
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1223](https://github.com/patternfly/patternfly-react/pull/1223) fix(Slider): Update state when properties are updated. ([@lucasponce](https://github.com/lucasponce))
+
+#### Committers: 1
+- Lucas Ponce ([@lucasponce](https://github.com/lucasponce))
+
+
+## @patternfly/react-table@0.4.5 (2019-01-24)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#1226](https://github.com/patternfly/patternfly-react/pull/1226) docs(react-icons): Add props table to README.md ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-integration@1.0.4 (2019-01-24)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#1226](https://github.com/patternfly/patternfly-react/pull/1226) docs(react-icons): Add props table to README.md ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-icons@2.10.1 (2019-01-24)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#1226](https://github.com/patternfly/patternfly-react/pull/1226) docs(react-icons): Add props table to README.md ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-docs@3.21.5 (2019-01-24)
+
+#### :memo: Documentation
+* `react-icons`
+  * [#1226](https://github.com/patternfly/patternfly-react/pull/1226) docs(react-icons): Add props table to README.md ([@boaz0](https://github.com/boaz0))
+
+#### Committers: 1
+- [@boaz0](https://github.com/boaz0)
+
+
+## @patternfly/react-core@1.49.5 (2019-01-24)
 
 #### :memo: Documentation
 * `react-icons`

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.29.8](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.7...patternfly-react@2.29.8) (2019-01-25)
+
+
+### Bug Fixes
+
+* **Slider:** Update state when properties are updated. ([#1223](https://github.com/patternfly/patternfly-react/issues/1223)) ([033a38b](https://github.com/patternfly/patternfly-react/commit/033a38b))
+
+
+
+
+
 ## [2.29.7](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.6...patternfly-react@2.29.7) (2019-01-21)
 
 

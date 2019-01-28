@@ -22,7 +22,7 @@ const defaultProps = {
 };
 
 const AlertBody = ({ title, className, children, onClose, closeButtonAriaLabel, ...props }) => (
-  <div {...props} className={css(styles.alertBody, className)}>
+  <div {...props} className={className}>
     {onClose && (
       <Button variant={ButtonVariant.plain} onClick={onClose} aria-label={closeButtonAriaLabel}>
         <TimesIcon />

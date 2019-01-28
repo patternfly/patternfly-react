@@ -22,7 +22,7 @@ const defaultProps = {
 };
 
 const Form = ({ className, children, isHorizontal, ...props }) => (
-  <form {...props} className={css(styles.form, isHorizontal && styles.modifiers.horizontal, className)}>
+  <form noValidate {...props} className={css(styles.form, isHorizontal && styles.modifiers.horizontal, className)}>
     <FormContext.Provider value={{ isHorizontal }}>{children}</FormContext.Provider>
   </form>
 );

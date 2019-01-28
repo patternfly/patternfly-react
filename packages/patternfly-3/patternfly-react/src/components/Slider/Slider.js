@@ -17,12 +17,19 @@ class Slider extends React.Component {
     };
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.value !== this.props.value) {
+      this.onSlide(this.props.value);
+    }
+  }
+
   onSlide = value => {
     this.setState({ value }, () => this.props.onSlide(value));
   };
 
   onInputChange = event => {
-    this.setState({ value: parseInt(event.target.value || 0, 10) });
+    const newValue = parseInt(event.target.value || 0, 10);
+    this.setState({ value: newValue }, () => this.props.onSlide(newValue));
   };
 
   onFormatChange = format => {

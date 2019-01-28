@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "1.49.5",
+  "version": "1.50.0",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -63,7 +63,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.0.0",
-    "@patternfly/patternfly-next": "1.0.126",
+    "@patternfly/patternfly-next": "1.0.137",
     "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.10",
     "@types/prop-types": "^15.5.6",

@@ -8,6 +8,7 @@ export interface PageHeaderProps extends HTMLProps<HTMLDivElement> {
   avatar?: ReactNode;
   topNav?: ReactNode;
   showNavToggle?: boolean;
+  isNavOpen?: boolean;
   onNavToggle?: Function;
 }
 

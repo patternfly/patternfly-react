@@ -9,6 +9,7 @@ import PopoverArrow from './PopoverArrow';
 import PopoverContent from './PopoverContent';
 import PopoverBody from './PopoverBody';
 import PopoverHeader from './PopoverHeader';
+import PopoverFooter from './PopoverFooter';
 import PopoverCloseButton from './PopoverCloseButton';
 import GenerateId from '../../internal/GenerateId/GenerateId';
 import { c_popover_MaxWidth as popoverMaxWidth } from '@patternfly/react-tokens';
@@ -41,6 +42,7 @@ const propTypes = {
   headerContent: PropTypes.node,
   /** Body content */
   bodyContent: PropTypes.node.isRequired,
+  footerContent: PropTypes.node,
   /**
    * True to show the popover programmatically. Used in conjunction with the shouldClose prop.
    * By default, the popover child element handles click events automatically. If you want to control this programmatically,
@@ -83,6 +85,7 @@ const defaultProps = {
   shouldClose: () => undefined,
   'aria-label': '',
   headerContent: null,
+  footerContent: null,
   appendTo: () => document.body,
   hideOnOutsideClick: true,
   onHide: () => undefined,
@@ -169,6 +172,7 @@ class Popover extends React.Component {
       'aria-label': ariaLabel,
       headerContent,
       bodyContent,
+      footerContent,
       isVisible,
       shouldClose,
       appendTo,
@@ -206,6 +210,7 @@ class Popover extends React.Component {
                   <PopoverCloseButton onClose={this.closePopover} aria-label={closeBtnAriaLabel} />
                   {headerContent && <PopoverHeader id={`popover-${randomId}-header`}>{headerContent}</PopoverHeader>}
                   <PopoverBody id={`popover-${randomId}-body`}>{bodyContent}</PopoverBody>
+                  {footerContent && <PopoverFooter>{footerContent}</PopoverFooter>}
                 </PopoverContent>
               </div>
             </FocusTrap>
