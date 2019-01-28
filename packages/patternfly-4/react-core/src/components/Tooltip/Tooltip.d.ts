@@ -9,7 +9,7 @@ export const TooltipPosition: {
   right: 'right';
 };
 
-export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' | 'children' | 'size'> {
+export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' | 'children'> {
   /** Tooltip position */
   position?: BasicPlacement;
   /** If true, tries to keep the tooltip in view by flipping it if necessary */
@@ -25,7 +25,7 @@ export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' 
   /** z-index of the tooltip */
   zIndex?: number;
   /** Size of the tooltip */
-  size: 'small' | 'regular' | 'large';
+  maxWidth: '12.5rem';
 }
 
 declare const Tooltip: SFC<TooltipProps>;

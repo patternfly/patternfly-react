@@ -4,50 +4,15 @@ import Tippy from '@tippy.js/react';
 import FocusTrap from 'focus-trap-react';
 import { KEY_CODES } from '../../internal/constants';
 import styles from '@patternfly/patternfly-next/components/Popover/popover.css';
-import { StyleSheet, css, getModifier } from '@patternfly/react-styles';
+import { css, getModifier } from '@patternfly/react-styles';
 import PopoverArrow from './PopoverArrow';
 import PopoverContent from './PopoverContent';
 import PopoverBody from './PopoverBody';
 import PopoverHeader from './PopoverHeader';
 import PopoverCloseButton from './PopoverCloseButton';
 import GenerateId from '../../internal/GenerateId/GenerateId';
-import 'tippy.js/dist/tippy.css';
-
-// Need to unset tippy default styles
-// Also for enableFlip, need to make arrow aware of parent x-placement attribute in order to work
-const overrides = StyleSheet.parse(`
-  .pf-tippy-theme {
-    &.tippy-tooltip { 
-      background-color: unset;
-      font-size: unset;
-      color: unset;
-      border-radius: unset;
-      max-width: unset;
-      text-align: unset;
-    }
-  }
-  .tippy-popper[x-placement^=top] .pf-c-popover__arrow {
-    bottom: 0;
-    left: 50%;
-    transform: var(--pf-c-popover__arrow--m-top--Transform); 
-  }
-  .tippy-popper[x-placement^=bottom] .pf-c-popover__arrow {
-    top: 0;
-    left: 50%;
-    transform: var(--pf-c-popover__arrow--m-bottom--Transform); 
-  }
-  .tippy-popper[x-placement^=left] .pf-c-popover__arrow {
-    top: 50%;
-    right: 0;
-    transform: var(--pf-c-popover__arrow--m-left--Transform); 
-  }
-  .tippy-popper[x-placement^=right] .pf-c-popover__arrow {
-    top: 50%;
-    left: 0;
-    transform: var(--pf-c-popover__arrow--m-right--Transform); 
-  }  
-`);
-overrides.inject();
+import { c_popover_MaxWidth as popoverMaxWidth } from '@patternfly/react-tokens';
+import '../Tooltip/styles';
 
 export const PopoverPosition = {
   top: 'top',
@@ -104,8 +69,8 @@ const propTypes = {
   onMount: PropTypes.func,
   /** z-index of the popover */
   zIndex: PropTypes.number,
-  /** Size of the popover */
-  size: PropTypes.oneOf(['small', 'regular', 'large']),
+  /** Maximum width of the tooltip (default 18.75rem) */
+  maxWidth: PropTypes.string,
   /** Aria label for the Close button */
   closeBtnAriaLabel: PropTypes.string
 };
@@ -126,7 +91,7 @@ const defaultProps = {
   onShown: () => undefined,
   onMount: () => undefined,
   zIndex: 9999,
-  size: 'regular',
+  maxWidth: popoverMaxWidth && popoverMaxWidth.value,
   closeBtnAriaLabel: 'Close'
 };
 
@@ -214,7 +179,7 @@ class Popover extends React.Component {
       onShown,
       onMount,
       zIndex,
-      size,
+      maxWidth,
       closeBtnAriaLabel,
       ...rest
     } = this.props;
@@ -261,7 +226,7 @@ class Popover extends React.Component {
     return (
       <Tippy
         onCreate={this.storeTippyInstance}
-        size={size}
+        maxWidth={maxWidth}
         zIndex={zIndex}
         appendTo={appendTo}
         content={content}
@@ -275,7 +240,7 @@ class Popover extends React.Component {
         interactive
         interactiveBorder={0}
         placement={position}
-        distance={15}
+        distance={25}
         flip={enableFlip}
         popperOptions={{
           modifiers: {

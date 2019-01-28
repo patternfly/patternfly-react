@@ -9,7 +9,7 @@ export const PopoverPosition: {
   right: 'right';
 };
 
-export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children' | 'size'> {
+export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'> {
   /** Popover position */
   position?: BasicPlacement;
   /** If true, tries to keep the popover in view by flipping it if necessary */
@@ -52,8 +52,8 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   onMount?(instance: Instance): void;
   /** z-index of the popover */
   zIndex?: number;
-  /** Size of the popover */
-  size: 'small' | 'regular' | 'large';
+  /** Maximum width of the popover */
+  maxWidth: '18.75rem';
 }
 
 declare const Popover: SFC<PopoverProps>;
