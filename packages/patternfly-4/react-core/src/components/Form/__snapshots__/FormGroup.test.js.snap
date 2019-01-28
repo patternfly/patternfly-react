@@ -491,6 +491,7 @@ exports[`FormGroup component should render horizontal form group variant 1`] = `
 >
   <form
     className="pf-c-form pf-m-horizontal"
+    noValidate={true}
   >
     <FormGroup
       className=""

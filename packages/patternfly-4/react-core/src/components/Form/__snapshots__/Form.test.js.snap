@@ -8,6 +8,7 @@ exports[`Form component should render default form variant 1`] = `
 
 <form
   className="pf-c-form"
+  noValidate={true}
 >
   <[object Object]
     value={
@@ -27,6 +28,7 @@ exports[`Form component should render horizontal form variant 1`] = `
 
 <form
   className="pf-c-form pf-m-horizontal"
+  noValidate={true}
 >
   <[object Object]
     value={
