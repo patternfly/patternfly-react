@@ -25,8 +25,10 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 
 <PageHeader
+  aria-label="Toggle global navigation"
   avatar=" | Avatar"
   className=""
+  isNavOpen={true}
   logo="Logo"
   logoProps={null}
   onNavToggle={[Function]}

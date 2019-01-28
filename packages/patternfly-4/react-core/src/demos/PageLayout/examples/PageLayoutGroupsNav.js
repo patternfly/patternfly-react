@@ -194,6 +194,7 @@ class PageLayoutGroupsNav extends React.Component {
         avatar={<Avatar src={avatarImg} alt="Avatar image" />}
         showNavToggle
         onNavToggle={this.onNavToggle}
+        isNavOpen={isNavOpen}
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} isNavOpen={isNavOpen} />;
