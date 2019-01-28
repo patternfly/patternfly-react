@@ -3,7 +3,6 @@ import { Omit } from '../../typeUtils';
 
 export interface FormSelectProps
   extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
-  children: any;
   value?: any;
   isValid?: boolean;
   isDisabled?: boolean;
