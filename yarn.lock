@@ -1688,14 +1688,15 @@
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.126.tgz#cdc2b40927663cca82f072b6b6eee98d244a1898"
 
 "@patternfly/react-core@file:packages/patternfly-4/react-core":
-  version "1.49.4"
+  version "1.49.5"
   dependencies:
-    "@patternfly/react-icons" "^2.10.0"
+    "@patternfly/react-icons" "^2.10.1"
     "@patternfly/react-styles" "^2.3.0"
     "@patternfly/react-tokens" "^1.10.0"
     "@tippy.js/react" "^1.1.1"
     exenv "^1.2.2"
     focus-trap-react "^4.0.1"
+    tippy.js "^3.4.1"
 
 "@reach/router@^1.1.1":
   version "1.2.1"
@@ -7001,7 +7002,7 @@ csso@~2.3.1:
     clap "^1.0.9"
     source-map "^0.5.3"
 
-cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0", cssom@^0.3.4:
+cssom@0.3.4, cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0", cssom@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/cssom/-/cssom-0.3.4.tgz#8cd52e8a3acfd68d3aed38ee0a640177d2f9d797"
 
