@@ -85,7 +85,7 @@ exports[`Radio check component label is function 1`] = `
 >
   <input
     aria-invalid={false}
-    aria-label="check"
+    aria-label={null}
     checked={true}
     className="pf-c-check__input"
     disabled={false}
@@ -131,7 +131,7 @@ exports[`Radio check component label is node 1`] = `
 >
   <input
     aria-invalid={false}
-    aria-label="check"
+    aria-label={null}
     checked={true}
     className="pf-c-check__input"
     disabled={false}
@@ -177,7 +177,7 @@ exports[`Radio check component label is string 1`] = `
 >
   <input
     aria-invalid={false}
-    aria-label="check"
+    aria-label={null}
     checked={true}
     className="pf-c-check__input"
     disabled={false}
@@ -221,7 +221,7 @@ exports[`Radio check component passing HTML attribute 1`] = `
 >
   <input
     aria-invalid={false}
-    aria-label="check"
+    aria-label={null}
     aria-labelledby="labelId"
     checked={true}
     className="pf-c-check__input"
@@ -266,7 +266,7 @@ exports[`Radio check component passing class 1`] = `
 >
   <input
     aria-invalid={false}
-    aria-label="check"
+    aria-label={null}
     checked={true}
     className="pf-c-check__input"
     disabled={false}

@@ -20,7 +20,7 @@ const propTypes = {
   id: PropTypes.string.isRequired,
   /** Aria-label of the Radio. */
   'aria-label': props => {
-    if (!props['aria-label']) {
+    if (!props.label && !props['aria-label']) {
       return new Error('Radio requires an aria-label to be specified');
     }
     return null;
@@ -37,8 +37,7 @@ const defaultProps = {
   isDisabled: false,
   isChecked: null,
   onChange: () => undefined,
-  label: undefined,
-  'aria-label': null
+  label: undefined
 };
 
 class Radio extends React.Component {
@@ -47,11 +46,12 @@ class Radio extends React.Component {
   };
 
   render() {
-    const { className, onChange, isValid, isDisabled, isChecked, label, checked, ...props } = this.props;
+    const { 'aria-label': ariaLabel, className, onChange, isValid, isDisabled, isChecked, label, checked, ...props } = this.props;
     return (
       <div className={css(styles.check, className)}>
         <input
           {...props}
+          aria-label={label ? null : ariaLabel}
           className={css(styles.checkInput)}
           type="radio"
           onChange={this.handleChange}

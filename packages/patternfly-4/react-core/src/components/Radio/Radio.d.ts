@@ -7,7 +7,7 @@ export interface RadioProps extends Omit<HTMLProps<HTMLInputElement>, 'type' | '
   isChecked?: boolean;
   onChange?(checked: boolean, event: FormEvent<HTMLInputElement>): void;
   id: string;
-  'aria-label': string;
+  'aria-label'?: string;
   label?: ReactNode;
   name: string;
 }
