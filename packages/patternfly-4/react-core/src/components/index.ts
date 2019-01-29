@@ -27,6 +27,7 @@ export * from './Popover';
 export * from './Progress';
 export * from './Radio';
 export * from './Switch';
+export * from './Tabs';
 export * from './Text';
 export * from './TextArea';
 export * from './TextInput';
