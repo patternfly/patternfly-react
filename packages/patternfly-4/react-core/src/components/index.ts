@@ -26,6 +26,7 @@ export * from './Page';
 export * from './Popover';
 export * from './Progress';
 export * from './Radio';
+export * from './Select';
 export * from './Switch';
 export * from './Tabs';
 export * from './Text';
