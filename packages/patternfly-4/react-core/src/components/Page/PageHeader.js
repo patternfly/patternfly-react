@@ -22,6 +22,10 @@ const propTypes = {
   showNavToggle: PropTypes.bool,
   /** Callback function to handle the side nav toggle button, managed by the Page component if the Page isManagedSidebar prop is set to true */
   onNavToggle: PropTypes.func,
+  /** True if the side nav is shown  */
+  isNavOpen: PropTypes.bool,
+  /** Callback function to handle the side nav toggle button */
+  'aria-label': PropTypes.string,
   /** Additional props are spread to the container <header> */
   '': PropTypes.any
 };
@@ -34,10 +38,25 @@ const defaultProps = {
   avatar: null,
   topNav: null,
   showNavToggle: false,
-  onNavToggle: () => undefined
+  isNavOpen: true,
+  onNavToggle: () => undefined,
+  'aria-label': 'Toggle global navigation',
+  '': ''
 };
 
-const PageHeader = ({ className, logo, logoProps, toolbar, avatar, topNav, showNavToggle, onNavToggle, ...props }) => (
+const PageHeader = ({
+  className,
+  logo,
+  logoProps,
+  toolbar,
+  avatar,
+  topNav,
+  isNavOpen,
+  showNavToggle,
+  onNavToggle,
+  'aria-label': ariaLabel,
+  ...props
+}) => (
   <header role="banner" className={css(styles.pageHeader, className)} {...props}>
     <div className={css(styles.pageHeaderBrand)}>
       {showNavToggle && (
@@ -45,7 +64,9 @@ const PageHeader = ({ className, logo, logoProps, toolbar, avatar, topNav, showN
           <Button
             id="nav-toggle"
             onClick={onNavToggle}
-            aria-label="Toggle primary navigation"
+            aria-label={ariaLabel}
+            aria-controls="page-sidebar"
+            aria-expanded={isNavOpen ? 'true' : 'false'}
             variant={ButtonVariant.plain}
           >
             <BarsIcon />

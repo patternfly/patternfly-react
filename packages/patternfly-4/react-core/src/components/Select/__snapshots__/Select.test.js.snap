@@ -12,7 +12,6 @@ exports[`Disabled Select input  1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <select
@@ -47,7 +46,6 @@ exports[`Grouped Select input 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <select
@@ -138,7 +136,6 @@ exports[`Select input with aria-label does not generate console error 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <select
@@ -173,7 +170,6 @@ exports[`Select input with id does not generate console error 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <select
@@ -209,7 +205,6 @@ exports[`Select input with no aria-label or id generates console error 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <select
@@ -244,7 +239,6 @@ exports[`Simple Select input 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <select
@@ -321,7 +315,6 @@ exports[`invalid Select input 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <select
@@ -356,7 +349,6 @@ exports[`required Select input 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <select

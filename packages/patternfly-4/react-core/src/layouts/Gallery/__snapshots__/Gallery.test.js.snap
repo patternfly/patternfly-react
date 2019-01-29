@@ -4,6 +4,7 @@ exports[`gutter lg 1`] = `
 .pf-l-gallery.pf-m-gutter {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  grid-template-rows: auto;
   grid-gap: 1.5rem;
 }
 
@@ -16,6 +17,7 @@ exports[`gutter md 1`] = `
 .pf-l-gallery.pf-m-gutter {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  grid-template-rows: auto;
   grid-gap: 1.5rem;
 }
 
@@ -28,6 +30,7 @@ exports[`gutter sm 1`] = `
 .pf-l-gallery.pf-m-gutter {
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  grid-template-rows: auto;
   grid-gap: 1.5rem;
 }
 

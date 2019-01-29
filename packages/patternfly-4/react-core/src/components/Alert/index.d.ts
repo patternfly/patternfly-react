@@ -1,1 +1,9 @@
-export { default as Alert, AlertVariant, AlertProps } from './Alert';
+export {
+  default as Alert,
+  AlertActionCloseButton,
+  AlertActionLink,
+  AlertVariant,
+  AlertProps,
+  AlertActionCloseButtonProps,
+  AlertActionLinkProps
+} from './Alert';

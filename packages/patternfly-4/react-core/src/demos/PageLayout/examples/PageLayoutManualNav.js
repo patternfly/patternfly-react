@@ -202,6 +202,7 @@ class PageLayoutManualNav extends React.Component {
         avatar={<Avatar src={avatarImg} alt="Avatar image" />}
         showNavToggle
         onNavToggle={isMobileView ? this.onNavToggleMobile : this.onNavToggleDesktop}
+        isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop}
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop} />;

@@ -22,7 +22,7 @@ const propTypes = {
   /** If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
    * the sidebar component or add a callback onNavToggle function into the PageHeader component */
   isManagedSidebar: PropTypes.bool,
-  /** Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px 
+  /** Can add callback to be notified when resize occurs, for example to set the sidebar isNav prop to false for a width < 768px
    * Returns object { mobileView: boolean, windowSize: number } */
   onPageResize: PropTypes.func,
   /** Additional props are spread to the container <div> */
@@ -92,13 +92,14 @@ class Page extends React.Component {
       <div {...rest} className={css(styles.page, className)}>
         {isManagedSidebar
           ? cloneElement(header, {
-            onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop
-          })
+              onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,
+              isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
+            })
           : header}
         {isManagedSidebar
           ? cloneElement(sidebar, {
-            isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
-          })
+              isNavOpen: mobileView ? mobileIsNavOpen : desktopIsNavOpen
+            })
           : sidebar}
         <main role="main" className={css(styles.pageMain)}>
           {children}

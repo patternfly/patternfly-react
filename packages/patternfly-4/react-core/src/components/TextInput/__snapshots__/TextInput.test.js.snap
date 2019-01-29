@@ -12,7 +12,6 @@ exports[`disabled text input 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <input
@@ -40,7 +39,6 @@ exports[`invalid text input 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <input
@@ -68,7 +66,6 @@ exports[`readonly text input 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <input
@@ -96,7 +93,6 @@ exports[`simple text input 1`] = `
   border: 1px solid;
   border-color: #ededed #ededed #72767b #ededed;
   border-radius: 0;
-  border-bottom-color: #007bba;
 }
 
 <input

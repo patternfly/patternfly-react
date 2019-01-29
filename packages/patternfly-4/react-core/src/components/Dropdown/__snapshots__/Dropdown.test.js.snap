@@ -649,11 +649,15 @@ exports[`KebabToggle expanded 1`] = `
 .pf-c-dropdown__separator {
   display: block;
   height: 1px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   background-color: #ededed;
 }
 .pf-c-dropdown__separator {
   display: block;
   height: 1px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   background-color: #ededed;
 }
 .pf-c-dropdown__menu {
@@ -2514,11 +2518,15 @@ exports[`dropdown expanded 1`] = `
 .pf-c-dropdown__separator {
   display: block;
   height: 1px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   background-color: #ededed;
 }
 .pf-c-dropdown__separator {
   display: block;
   height: 1px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   background-color: #ededed;
 }
 .pf-c-dropdown__menu {

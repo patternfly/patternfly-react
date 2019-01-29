@@ -21,7 +21,8 @@ const defaultProps = {
 };
 
 const PageSidebar = ({ className, nav, isNavOpen, ...props }) => (
-  <aside
+  <div
+    id="page-sidebar"
     className={css(
       styles.pageSidebar,
       isNavOpen && styles.modifiers.expanded,
@@ -31,7 +32,7 @@ const PageSidebar = ({ className, nav, isNavOpen, ...props }) => (
     {...props}
   >
     {nav}
-  </aside>
+  </div>
 );
 
 PageSidebar.propTypes = propTypes;

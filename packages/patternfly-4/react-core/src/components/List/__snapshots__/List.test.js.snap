@@ -4,13 +4,10 @@ exports[`list grid list 1`] = `
 .pf-c-list {
   display: block;
   padding-left: 1.5rem;
-  margin: 1rem 0px 1rem 1.5rem;
-  list-style: disc outside;
 }
-.pf-c-list.pf-m-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
-  grid-gap: 1rem;
+.pf-c-list {
+  display: block;
+  padding-left: 1.5rem;
 }
 
 <List
@@ -18,7 +15,7 @@ exports[`list grid list 1`] = `
   variant="grid"
 >
   <ul
-    className="pf-c-list pf-m-grid"
+    className="pf-c-list"
   >
     <ListItems>
       <List
@@ -54,11 +51,10 @@ exports[`list inline list 1`] = `
 .pf-c-list {
   display: block;
   padding-left: 1.5rem;
-  margin: 1rem 0px 1rem 1.5rem;
-  list-style: disc outside;
 }
 .pf-c-list.pf-m-inline {
   display: flex;
+  padding-left: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -103,14 +99,10 @@ exports[`list simple list 1`] = `
 .pf-c-list {
   display: block;
   padding-left: 1.5rem;
-  margin: 1rem 0px 1rem 1.5rem;
-  list-style: disc outside;
 }
 .pf-c-list {
   display: block;
   padding-left: 1.5rem;
-  margin: 1rem 0px 1rem 1.5rem;
-  list-style: disc outside;
 }
 
 <List
