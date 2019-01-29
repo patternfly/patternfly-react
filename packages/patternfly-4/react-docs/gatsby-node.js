@@ -2,6 +2,9 @@ const path = require(`path`);
 const fs = require('fs-extra'); //eslint-disable-line
 const packageDirs = ['react-core', 'react-charts', 'react-styled-system', 'react-table'];
 
+// Escape single quotes and backslashes in a file path
+const escapeFilePath = filePath => filePath.replace(/[\\']/g, '\\$&');
+
 exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }) => {
   // Enable hot reloading on source code changes
   const pfStylesTest = /patternfly-next.*(components|layouts|utilities).*\.css$/;
@@ -116,13 +119,20 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const rawExamples = [];
     const packageDir = packageDirs.find(pkg => doc.absolutePath.indexOf(pkg) !== -1);
+
+    // In Windows environments, paths use backslashes to separate directories;
+    // Ensure that forward slashes are used to make it comparable
+    const docIdentifier = doc.relativeDirectory.replace(/\\/g, '/');
+
     examples.edges.forEach(({ node: example }) => {
-      if (
-        example.relativeDirectory
-          .split('/')
-          .slice(0, 2)
-          .join('/') === doc.relativeDirectory
-      ) {
+      // Replace backslashes with forward slashes as for `docIdentifier` above,
+      // and remove `/example` postfix
+      const exampleIdentifier = example.relativeDirectory
+        .split(/[/\\]/)
+        .slice(0, 2)
+        .join('/');
+
+      if (exampleIdentifier === docIdentifier) {
         const examplePath = `../../${packageDir}/src/${example.relativePath}`;
         rawExamples.push(
           `{name: '${example.name}', path: '${examplePath}', file: require('!!raw-loader!${examplePath}')}`
@@ -159,7 +169,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const content = `
     import React from 'react';
     import docs from '${doc.absolutePath}';
-    import ComponentDocs from '${docsComponentPath}';
+    import ComponentDocs from '${escapeFilePath(docsComponentPath)}';
     
     const rawExamples = [${rawExamples}];
     const images = [${allImages}];

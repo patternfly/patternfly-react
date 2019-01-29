@@ -4,6 +4,8 @@ const templatesDir = path.resolve(__dirname, './templates');
 const srcDir = path.resolve(__dirname, '../src');
 const iconsDir = path.join(srcDir, './icons');
 
+const escapeFilePath = filePath => filePath.replace(/\\/g, '\\$&');
+
 module.exports = plop => {
   plop.setGenerator('icons', {
     prompts: [],
@@ -14,7 +16,7 @@ module.exports = plop => {
           type: 'add',
           force: true,
           data: icon,
-          path: path.join(iconsDir, './{{id}}.js'),
+          path: escapeFilePath(path.join(iconsDir, './{{id}}.js')),
           templateFile: path.join(templatesDir, 'iconFile.hbs')
         });
 
@@ -22,7 +24,7 @@ module.exports = plop => {
           type: 'add',
           force: true,
           data: icon,
-          path: path.join(iconsDir, './{{id}}.d.ts'),
+          path: escapeFilePath(path.join(iconsDir, './{{id}}.d.ts')),
           templateFile: path.join(templatesDir, 'iconFileTS.hbs')
         });
       });
@@ -30,14 +32,14 @@ module.exports = plop => {
       actions.push({
         type: 'add',
         force: true,
-        path: path.join(srcDir, './index.js'),
+        path: escapeFilePath(path.join(srcDir, './index.js')),
         templateFile: path.join(templatesDir, 'mainBarrelFile.hbs')
       });
 
       actions.push({
         type: 'add',
         force: true,
-        path: path.join(srcDir, './index.d.ts'),
+        path: escapeFilePath(path.join(srcDir, './index.d.ts')),
         templateFile: path.join(templatesDir, 'mainBarrelFileTS.hbs')
       });
 
