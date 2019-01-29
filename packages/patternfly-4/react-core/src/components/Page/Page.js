@@ -39,15 +39,11 @@ const defaultProps = {
 };
 
 class Page extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      desktopIsNavOpen: true,
-      mobileIsNavOpen: false,
-      mobileView: false
-    };
-  }
+  state = {
+    desktopIsNavOpen: true,
+    mobileIsNavOpen: false,
+    mobileView: false
+  };
 
   componentDidMount() {
     const { isManagedSidebar, onPageResize } = this.props;
