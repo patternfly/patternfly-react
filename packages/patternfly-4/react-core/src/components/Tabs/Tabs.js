@@ -39,10 +39,6 @@ class Tabs extends React.Component {
   static propTypes = propTypes;
   static defaultProps = defaultProps;
 
-  constructor(props) {
-    super(props);
-    this.tabList = React.createRef();
-  }
   state = {
     showLeftScrollButton: false,
     showRightScrollButton: false,
@@ -51,6 +47,7 @@ class Tabs extends React.Component {
   };
 
   id = getUniqueId();
+  tabList = React.createRef();
 
   handleTabClick(event, eventKey) {
     this.props.onSelect(event, eventKey);
@@ -145,6 +142,12 @@ class Tabs extends React.Component {
       rightScrollAriaLabel,
       ...props
     } = this.props;
+    const {
+      showLeftScrollButton,
+      showRightScrollButton,
+      highlightLeftScrollButton,
+      highlightRightScrollButton
+    } = this.state;
     return (
       <React.Fragment>
         <div
@@ -153,10 +156,10 @@ class Tabs extends React.Component {
             styles.tabs,
             isFilled && styles.modifiers.fill,
             isSecondary && styles.modifiers.tabsSecondary,
-            this.state.showLeftScrollButton && styles.modifiers.start,
-            this.state.showRightScrollButton && styles.modifiers.end,
-            this.state.highlightLeftScrollButton && styles.modifiers.startCurrent,
-            this.state.highlightRightScrollButton && styles.modifiers.endCurrent,
+            showLeftScrollButton && styles.modifiers.start,
+            showRightScrollButton && styles.modifiers.end,
+            highlightLeftScrollButton && styles.modifiers.startCurrent,
+            highlightRightScrollButton && styles.modifiers.endCurrent,
             className
           )}
         >
