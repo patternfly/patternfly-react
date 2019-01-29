@@ -138,7 +138,7 @@ describe('Transformer functions', () => {
     test('no parent', () => {
       expect(
         expandedRow(5)({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })
-      ).toMatchObject({ title: 'test' });
+      ).toBe(false)
     });
   });
 

@@ -13462,12 +13462,10 @@ exports[`Collapsible nested table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -14651,12 +14649,10 @@ exports[`Collapsible nested table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -15370,12 +15366,10 @@ exports[`Collapsible nested table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -15735,12 +15729,10 @@ exports[`Collapsible nested table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -16100,12 +16092,10 @@ exports[`Collapsible nested table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -16465,12 +16455,10 @@ exports[`Collapsible nested table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -18399,12 +18387,10 @@ exports[`Collapsible table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -19116,12 +19102,10 @@ exports[`Collapsible table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -19540,12 +19524,10 @@ exports[`Collapsible table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -20259,12 +20241,10 @@ exports[`Collapsible table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -20624,12 +20604,10 @@ exports[`Collapsible table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -20989,12 +20967,10 @@ exports[`Collapsible table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
@@ -21354,12 +21330,10 @@ exports[`Collapsible table 1`] = `
                         data-key={1}
                         data-label="Header cell"
                         key="1-cell"
-                        title="one"
                       >
                         <td
                           data-key={1}
                           data-label="Header cell"
-                          title="one"
                         >
                           one
                         </td>
