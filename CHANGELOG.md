@@ -1,5 +1,71 @@
 
-## Unreleased (2019-01-28)
+## Unreleased (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## patternfly4-react-lerna-root@1.41.0 (2019-01-28)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1253](https://github.com/patternfly/patternfly-react/pull/1253) feat(Form): add novalidate flag to form ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.4.7 (2019-01-28)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1253](https://github.com/patternfly/patternfly-react/pull/1253) feat(Form): add novalidate flag to form ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-integration@1.0.6 (2019-01-28)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1253](https://github.com/patternfly/patternfly-react/pull/1253) feat(Form): add novalidate flag to form ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.21.7 (2019-01-28)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1253](https://github.com/patternfly/patternfly-react/pull/1253) feat(Form): add novalidate flag to form ([@kmcfaul](https://github.com/kmcfaul))
+
+#### Committers: 1
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.50.0 (2019-01-28)
 
 #### :rocket: New Feature
 * `patternfly-4`

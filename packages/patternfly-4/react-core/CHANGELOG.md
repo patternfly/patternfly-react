@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.50.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.50.0...@patternfly/react-core@1.50.1) (2019-01-29)
+
+
+### Bug Fixes
+
+* **Page:** improve a11y in sidebar and header ([#1145](https://github.com/patternfly/patternfly-react/issues/1145)) ([274d7f7](https://github.com/patternfly/patternfly-react/commit/274d7f7))
+
+
+
+
+
 # [1.50.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.49.6...@patternfly/react-core@1.50.0) (2019-01-28)
 
 
