@@ -1,5 +1,55 @@
 
-## Unreleased (2019-01-29)
+## patternfly4-react-lerna-root@1.42.1 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1144](https://github.com/patternfly/patternfly-react/pull/1144) PF4: feat(Tabs) Add Tabs for PF4 ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## demo-app-ts@0.1.3 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1144](https://github.com/patternfly/patternfly-react/pull/1144) PF4: feat(Tabs) Add Tabs for PF4 ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-table@0.4.10 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1144](https://github.com/patternfly/patternfly-react/pull/1144) PF4: feat(Tabs) Add Tabs for PF4 ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-integration@1.0.9 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1144](https://github.com/patternfly/patternfly-react/pull/1144) PF4: feat(Tabs) Add Tabs for PF4 ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-docs@3.21.10 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1144](https://github.com/patternfly/patternfly-react/pull/1144) PF4: feat(Tabs) Add Tabs for PF4 ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## @patternfly/react-core@1.51.1 (2019-01-29)
 
 #### :rocket: New Feature
 * `patternfly-4`
