@@ -81,7 +81,6 @@ const createProps = () => {
           minLength: 8,
           errors: card.passwordField.errors,
           warnings: card.passwordField.warnings,
-          warning: card.passwordField.warnings.capsLock,
           showWarning: true
         },
         additionalFields: null,

@@ -37,9 +37,6 @@ const passwordField = {
   errors: {
     empty: 'Veuillez entrer votre mot de passe.',
     short: 'Mot de passe trop court, la longueur minimale est de 8 caractères'
-  },
-  warnings: {
-    capsLock: 'Le verrouillage des majuscules est actuellement activé.'
   }
 };
 

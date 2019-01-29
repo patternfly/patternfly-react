@@ -4,7 +4,7 @@ import { DropdownButton } from 'react-bootstrap';
 import englishMessages from './mocks/messages.en';
 import frenchMessages from './mocks/messages.fr';
 import { LoginPage, LoginCardWithValidation } from './index';
-import { KEY_CODES, noop } from '../../common/helpers';
+import { noop } from '../../common/helpers';
 
 const { Input, ForgotPassword, SignUp } = LoginPage.Card;
 const { FooterLinks } = LoginPage;
@@ -60,7 +60,6 @@ const createProps = () => {
           errors: card.passwordField.errors,
           minLength: 8,
           warnings: card.passwordField.warnings,
-          warning: card.passwordField.warnings.capsLock,
           showWarning: true
         },
         rememberMe: {
@@ -114,63 +113,6 @@ test('Dropdown updates succesfully', () => {
       .at(0)
       .props().title
   ).toEqual(frenchMessages.card.header.selectedLanguage);
-});
-
-test('Toggle Caps lock warning in password field by the events: focus, blur and mouseEnter', () => {
-  const component = mount(<LoginPage {...createProps()} />);
-  const passwordElement = component.find('input[type="password"]').at(0);
-
-  passwordElement.simulate('focus').simulate('keypress', { keyCode: KEY_CODES.A, shiftKey: false });
-
-  expect(
-    component
-      .find(Input)
-      .at(1)
-      .props().warning
-  ).toEqual(englishMessages.card.passwordField.warnings.capsLock);
-
-  expect(
-    component
-      .find(Input)
-      .at(1)
-      .props().showWarning
-  ).toEqual(true);
-
-  passwordElement.simulate('blur').simulate('keypress', { keyCode: KEY_CODES.A, shiftKey: false });
-
-  expect(
-    component
-      .find(Input)
-      .at(1)
-      .props().showWarning
-  ).toEqual(false);
-
-  passwordElement.simulate('keypress', { keyCode: KEY_CODES.A, shiftKey: false }).simulate('focus');
-
-  expect(
-    component
-      .find(Input)
-      .at(1)
-      .props().showWarning
-  ).toEqual(true);
-});
-
-test('Toggle CapsLock cause warning to show under password field when focused', () => {
-  const component = mount(<LoginPage {...createProps()} />);
-  component.find('input[type="password"]').simulate('change', { target: { value: 'test' } });
-  component
-    .find(LoginCardWithValidation)
-    .instance()
-    .toggleCapsLock({ key: 'CapsLock' });
-
-  component.find('input[type="password"]').simulate('focus');
-
-  expect(
-    component
-      .find(Input)
-      .at(1)
-      .props().showWarning
-  ).toBeTruthy();
 });
 
 test('Submit while inputs are empty cause specific errors to be shown and onChange they disappear', () => {

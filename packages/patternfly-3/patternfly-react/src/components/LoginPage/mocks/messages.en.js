@@ -40,9 +40,6 @@ const passwordField = {
   errors: {
     empty: 'Please enter your password.',
     short: 'Password too short, minimum length is 8 characters'
-  },
-  warnings: {
-    capsLock: 'Caps lock is currently on.'
   }
 };
 
