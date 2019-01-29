@@ -1,7 +1,7 @@
 import React from 'react';
-import { Select, SelectOption, SelectOptionGroup } from '@patternfly/react-core';
+import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
-class SelectInputGrouped extends React.Component {
+class FormSelectInputGrouped extends React.Component {
   state = {
     value: '2'
   };
@@ -43,17 +43,17 @@ class SelectInputGrouped extends React.Component {
 
   render() {
     return (
-      <Select value={this.state.value} onChange={this.onChange} aria-label="Select Input">
+      <FormSelect value={this.state.value} onChange={this.onChange} aria-label="FormSelect Input">
         {this.groups.map((group, index) => (
-          <SelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
+          <FormSelectOptionGroup isDisabled={group.disabled} key={index} label={group.groupLabel}>
             {group.options.map((option, i) => (
-              <SelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
+              <FormSelectOption isDisabled={option.disabled} key={i} value={option.value} label={option.label} />
             ))}
-          </SelectOptionGroup>
+          </FormSelectOptionGroup>
         ))}
-      </Select>
+      </FormSelect>
     );
   }
 }
 
-export default SelectInputGrouped;
+export default FormSelectInputGrouped;

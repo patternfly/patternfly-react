@@ -20,13 +20,13 @@ const defaultProps = {
   isDisabled: false
 };
 
-const SelectOptionGroup = ({ children, className, label, isDisabled, ...props }) => (
+const FormSelectOptionGroup = ({ children, className, label, isDisabled, ...props }) => (
   <optgroup {...props} disabled={!!isDisabled} className={className} label={label}>
     {children}
   </optgroup>
 );
 
-SelectOptionGroup.propTypes = propTypes;
-SelectOptionGroup.defaultProps = defaultProps;
+FormSelectOptionGroup.propTypes = propTypes;
+FormSelectOptionGroup.defaultProps = defaultProps;
 
-export default SelectOptionGroup;
+export default FormSelectOptionGroup;

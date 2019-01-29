@@ -1,7 +1,7 @@
 import React from 'react';
-import { Select, SelectOption } from '@patternfly/react-core';
+import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 
-class SelectInputDisabled extends React.Component {
+class FormSelectInputDisabled extends React.Component {
   state = {
     value: '1'
   };
@@ -20,13 +20,13 @@ class SelectInputDisabled extends React.Component {
 
   render() {
     return (
-      <Select value={this.state.value} onChange={this.onChange} isDisabled aria-label="Select Input">
+      <FormSelect value={this.state.value} onChange={this.onChange} isDisabled aria-label="FormSelect Input">
         {this.options.map((option, index) => (
-          <SelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+          <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
         ))}
-      </Select>
+      </FormSelect>
     );
   }
 }
 
-export default SelectInputDisabled;
+export default FormSelectInputDisabled;
