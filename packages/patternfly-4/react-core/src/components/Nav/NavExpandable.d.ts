@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface NavExpandableProps extends HTMLProps<HTMLDivElement> {
   title: string;
@@ -11,6 +11,6 @@ export interface NavExpandableProps extends HTMLProps<HTMLDivElement> {
   id?: string;
 }
 
-declare const NavExpandable: SFC<NavExpandableProps>;
+declare const NavExpandable: FunctionComponent<NavExpandableProps>;
 
 export default NavExpandable;

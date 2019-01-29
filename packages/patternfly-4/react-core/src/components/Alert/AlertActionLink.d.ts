@@ -1,8 +1,7 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
-import { OneOf, Omit } from '../../typeUtils';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface AlertActionLinkProps extends HTMLProps<HTMLDivElement> {}
 
-declare const AlertActionLink: SFC<AlertActionLinkProps>;
+declare const AlertActionLink: FunctionComponent<AlertActionLinkProps>;
 
 export default AlertActionLink;

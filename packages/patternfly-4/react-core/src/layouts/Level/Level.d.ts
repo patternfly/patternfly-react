@@ -1,11 +1,11 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
-import { Omit, OneOf } from '../../typeUtils';
+import { FunctionComponent, HTMLProps } from 'react';
+import { OneOf } from '../../typeUtils';
 import { GutterSize } from '../../styles/gutters';
 
 export interface LevelProps extends HTMLProps<HTMLDivElement> {
   gutter: OneOf<typeof GutterSize, keyof typeof GutterSize>;
 }
 
-declare const Level: SFC<LevelProps>;
+declare const Level: FunctionComponent<LevelProps>;
 
 export default Level;

@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf, Omit } from '../../typeUtils';
 
 export const ProgressSize: {
@@ -33,6 +33,6 @@ export interface ProgressProps extends Omit<HTMLProps<HTMLDivElement>, 'size'> {
   valueText?: string;
 }
 
-declare const Progress: SFC<ProgressProps>;
+declare const Progress: FunctionComponent<ProgressProps>;
 
 export default Progress;

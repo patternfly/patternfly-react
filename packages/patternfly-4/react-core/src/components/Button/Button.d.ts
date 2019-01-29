@@ -1,4 +1,4 @@
-import { HTMLProps, SFC, ReactType, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode, ReactType } from 'react';
 import { OneOf } from '../../typeUtils';
 
 export const ButtonVariant: {
@@ -27,6 +27,6 @@ export interface ButtonProps extends HTMLProps<HTMLButtonElement> {
   type?: OneOf<typeof ButtonType, keyof typeof ButtonType>;
 }
 
-declare const Button: SFC<ButtonProps>;
+declare const Button: FunctionComponent<ButtonProps>;
 
 export default Button;

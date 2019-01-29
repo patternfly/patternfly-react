@@ -1,7 +1,7 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface ChipButtonProps extends HTMLProps<HTMLButtonElement> {}
 
-declare const ChipButton: SFC<ChipButtonProps>;
+declare const ChipButton: FunctionComponent<ChipButtonProps>;
 
 export default ChipButton;

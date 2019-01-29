@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode, ReactElement } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode, ReactElement } from 'react';
 import { Omit } from '../../typeUtils';
 import { Instance, BasicPlacement } from 'tippy.js';
 
@@ -56,6 +56,6 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   size: 'small' | 'regular' | 'large';
 }
 
-declare const Popover: SFC<PopoverProps>;
+declare const Popover: FunctionComponent<PopoverProps>;
 
 export default Popover;

@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
 
 export const PageSectionVariants: {
@@ -14,6 +14,6 @@ export interface PageSectionProps extends HTMLProps<HTMLDivElement> {
   variant?: OneOf<typeof PageSectionVariants, keyof typeof PageSectionVariants>;
 }
 
-declare const PageSection: SFC<PageSectionProps>;
+declare const PageSection: FunctionComponent<PageSectionProps>;
 
 export default PageSection;

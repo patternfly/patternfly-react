@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
 
 export const ListVariant: {
@@ -11,6 +11,6 @@ export interface ListProps extends HTMLProps<HTMLUListElement> {
   variant?: OneOf<typeof ListVariant, keyof typeof ListVariant>;
 }
 
-declare const List: SFC<ListProps>;
+declare const List: FunctionComponent<ListProps>;
 
 export default List;

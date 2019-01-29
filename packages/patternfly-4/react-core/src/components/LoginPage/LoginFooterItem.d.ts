@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface LoginFooterItemProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
@@ -7,6 +7,6 @@ export interface LoginFooterItemProps extends HTMLProps<HTMLDivElement> {
   target?: string;
 }
 
-declare const LoginFooterItem: SFC<LoginFooterItemProps>;
+declare const LoginFooterItem: FunctionComponent<LoginFooterItemProps>;
 
 export default LoginFooterItem;

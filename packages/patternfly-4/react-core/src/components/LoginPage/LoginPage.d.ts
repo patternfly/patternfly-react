@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
 
 export const LoginListVariant: {
@@ -22,6 +22,6 @@ export interface LoginPageProps extends HTMLProps<HTMLElement> {
   socialMediaLoginContent?: ReactNode;
 }
 
-declare const LoginPage: SFC<LoginPageProps>;
+declare const LoginPage: FunctionComponent<LoginPageProps>;
 
 export default LoginPage;

@@ -1,4 +1,4 @@
-import { HTMLProps, FormEvent } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface FormSelectOptionGroupProps extends Omit<HTMLProps<HTMLOptGroupElement>, 'disabled'> {
@@ -6,6 +6,6 @@ export interface FormSelectOptionGroupProps extends Omit<HTMLProps<HTMLOptGroupE
   isDisabled?: boolean;
 }
 
-declare const FormSelectOptionGroup: React.SFC<FormSelectOptionGroupProps>;
+declare const FormSelectOptionGroup: FunctionComponent<FormSelectOptionGroupProps>;
 
 export default FormSelectOptionGroup;

@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
 import { NavVariants } from './NavVariants';
 
@@ -15,6 +15,6 @@ export interface NavListProps extends HTMLProps<HTMLDivElement> {
   isActive?: boolean;
 }
 
-declare const NavList: SFC<NavListProps>;
+declare const NavList: FunctionComponent<NavListProps>;
 
 export default NavList;

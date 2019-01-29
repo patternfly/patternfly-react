@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface BreadcrumbProps extends HTMLProps<HTMLElement> {
     children?: ReactNode;
@@ -6,6 +6,6 @@ export interface BreadcrumbProps extends HTMLProps<HTMLElement> {
     'aria-label'?: string;
 }
 
-declare const Breadcrumb: SFC<BreadcrumbProps>;
+declare const Breadcrumb: FunctionComponent<BreadcrumbProps>;
 
 export default Breadcrumb;

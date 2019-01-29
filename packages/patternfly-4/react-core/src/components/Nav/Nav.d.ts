@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode, FormEvent } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode, FormEvent } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface NavProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
@@ -9,6 +9,6 @@ export interface NavProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
   'aria-label': string;
 }
 
-declare const Nav: SFC<NavProps>;
+declare const Nav: FunctionComponent<NavProps>;
 
 export default Nav;

@@ -1,9 +1,8 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
-import { Omit } from '../../typeUtils';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface BrandProps extends HTMLProps<HTMLImageElement> {
   src?: string;
   alt: string;
 }
-declare const Brand: SFC<BrandProps>;
+declare const Brand: FunctionComponent<BrandProps>;
 export default Brand;
