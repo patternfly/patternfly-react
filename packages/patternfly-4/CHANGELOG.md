@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.42.3](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.42.2...patternfly4-react-lerna-root@1.42.3) (2019-01-29)
+
+
+### Bug Fixes
+
+* **Checkbox:** Adjustments to examples ([#1270](https://github.com/patternfly/patternfly-react/issues/1270)) ([ceb632b](https://github.com/patternfly/patternfly-react/commit/ceb632b)), closes [#1006](https://github.com/patternfly/patternfly-react/issues/1006)
+* **Radio:** Modify examples and aria-label/label ([#1269](https://github.com/patternfly/patternfly-react/issues/1269)) ([168dcaf](https://github.com/patternfly/patternfly-react/commit/168dcaf)), closes [#1007](https://github.com/patternfly/patternfly-react/issues/1007)
+
+
+
+
+
 ## [1.42.2](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.42.1...patternfly4-react-lerna-root@1.42.2) (2019-01-29)
 
 
