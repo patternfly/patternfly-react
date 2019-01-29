@@ -25,7 +25,7 @@ const defaultProps = {
 const AboutModalBoxHeader = ({ className, productName, trademark, id, ...props }) => (
   <div {...props} className={css(styles.aboutModalBoxHeader, className)}>
     <div className={css(styles.aboutModalBoxHeaderStrapline)}>
-      <h2 className={css(titleStyles.title)}>{trademark}</h2>
+      <p className={css(titleStyles.title)}>{trademark}</p>
     </div>
     <Title size="4xl" id={id}>
       {productName}
