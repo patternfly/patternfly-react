@@ -9,8 +9,6 @@ const propTypes = {
   children: PropTypes.node,
   /** Additional classes added to the Login Main Header */
   className: PropTypes.string,
-  /** Dropdown component for the Login Main Header */
-  dropdown: PropTypes.node,
   /** Title for the Login Main Header */
   title: PropTypes.string,
   /** Subtitle that contains the Text, URL, and URL Text for the Login Main Header */
@@ -22,15 +20,13 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  dropdown: null,
   title: '',
   subtitle: ''
 };
 
-const LoginMainHeader = ({ children, className, dropdown, title, subtitle, ...props }) => (
+const LoginMainHeader = ({ children, className, title, subtitle, ...props }) => (
   <header className={css(styles.loginMainHeader, className)} {...props}>
     {title && <Title size="3xl">{title}</Title>}
-    {dropdown}
     {subtitle && <p>{subtitle}</p>}
     {children}
   </header>

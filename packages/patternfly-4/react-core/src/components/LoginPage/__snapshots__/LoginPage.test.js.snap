@@ -41,6 +41,7 @@ exports[`check loginpage example against snapshot 1`] = `
   >
     <LoginMainHeader
       className=""
+<<<<<<< HEAD
       dropdown={
         <Dropdown
           className=""
@@ -73,6 +74,9 @@ exports[`check loginpage example against snapshot 1`] = `
       className=""
       forgotCredentials={null}
       signUpForAccountMessage={
+=======
+      subtitle={
+>>>>>>> fix(LoginPage): emove Language Selector from LoginPage
         <React.Fragment>
           Login to your account 
           <a
