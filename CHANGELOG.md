@@ -2,6 +2,283 @@
 ## Unreleased (2019-01-29)
 
 #### :rocket: New Feature
+* `patternfly-4`
+  * [#1231](https://github.com/patternfly/patternfly-react/pull/1231) feat(FormSelect): rename Select components to FormSelect ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1272](https://github.com/patternfly/patternfly-react/pull/1272) fix(Table): Do not return value if table is not collapsed ([@karelhala](https://github.com/karelhala))
+  * [#1262](https://github.com/patternfly/patternfly-react/pull/1262) fix(Chip): Replace check for length of chip text with refs ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 3
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## patternfly4-react-lerna-root@1.41.1 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## patternfly3-react-lerna-root@7.19.12 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## patternfly-react-extensions@2.16.10 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## @patternfly/react-tokens@1.10.1 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## @patternfly/react-table@0.4.8 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## @patternfly/react-styled-system@1.4.1 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## @patternfly/react-integration@1.0.7 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## @patternfly/react-icons@2.10.2 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## @patternfly/react-docs@3.21.8 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## @patternfly/react-core@1.50.1 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
+  * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :bug: Bug Fix
+* `patternfly-3`
+  * [#1260](https://github.com/patternfly/patternfly-react/pull/1260) fix(BadgedResource): don't restrict resourceName to a string ([@lizagilman](https://github.com/lizagilman))
+* `patternfly-4`
+  * [#1145](https://github.com/patternfly/patternfly-react/pull/1145) fix(Page): improve a11y in sidebar and header ([@boaz0](https://github.com/boaz0))
+
+#### :house: Internal
+* [#1236](https://github.com/patternfly/patternfly-react/pull/1236) chore(readme): update contribution guide for non-patternfly component… ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 5
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+- Joachim ([@jschuler](https://github.com/jschuler))
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+- [@boaz0](https://github.com/boaz0)
+- [@lizagilman](https://github.com/lizagilman)
+
+
+## @patternfly/react-charts@1.4.2 (2019-01-29)
+
+#### :rocket: New Feature
 * `patternfly-4`, `react-icons`
   * [#1249](https://github.com/patternfly/patternfly-react/pull/1249) PF4: Page component managed sidebar ([@jschuler](https://github.com/jschuler))
   * [#1259](https://github.com/patternfly/patternfly-react/pull/1259) refactor(Alert, EmptyState, Popover): Upgraded to Core version 1.0.137 ([@tlabaj](https://github.com/tlabaj))
