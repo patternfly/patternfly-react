@@ -6,13 +6,13 @@ class DisabledCheckbox extends React.Component {
     return (
       <React.Fragment>
         <Checkbox
-          id="check-3"
+          id="check-5"
           label="Disabled CheckBox"
           aria-label="disabled checked checkbox example"
           defaultChecked
           isDisabled
         />{' '}
-        <Checkbox id="check-4" label="Disabled CheckBox" aria-label="disabled checkbox example" isDisabled />
+        <Checkbox id="check-6" label="Disabled CheckBox" aria-label="disabled checkbox example" isDisabled />
       </React.Fragment>
     );
   }
