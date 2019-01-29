@@ -37,13 +37,16 @@ import { BellIcon, CogIcon } from '@patternfly/react-icons';
 import brandImg from './l_pf-reverse-164x11.png';
 import avatarImg from './img_avatar.svg';
 
-class PageLayoutDefaultNav extends React.Component {
+class PageLayoutManualNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
-      activeItem: 0
+      activeItem: 0,
+      isMobileView: false,
+      isNavOpenDesktop: true,
+      isNavOpenMobile: false
     };
   }
 
@@ -77,8 +80,33 @@ class PageLayoutDefaultNav extends React.Component {
     });
   };
 
+  onNavToggleDesktop = () => {
+    this.setState({
+      isNavOpenDesktop: !this.state.isNavOpenDesktop
+    });
+  };
+
+  onNavToggleMobile = () => {
+    this.setState({
+      isNavOpenMobile: !this.state.isNavOpenMobile
+    });
+  };
+
+  onPageResize = ({ mobileView, windowSize }) => {
+    this.setState({
+      isMobileView: mobileView
+    });
+  };
+
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
+    const {
+      isDropdownOpen,
+      isKebabDropdownOpen,
+      activeItem,
+      isNavOpenDesktop,
+      isNavOpenMobile,
+      isMobileView
+    } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
@@ -173,14 +201,16 @@ class PageLayoutDefaultNav extends React.Component {
         toolbar={PageToolbar}
         avatar={<Avatar src={avatarImg} alt="Avatar image" />}
         showNavToggle
+        onNavToggle={isMobileView ? this.onNavToggleMobile : this.onNavToggleDesktop}
+        isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop}
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} />;
+    const Sidebar = <PageSidebar nav={PageNav} isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop} />;
 
     return (
       <React.Fragment>
         <BackgroundImage src={bgImages} />
-        <Page header={Header} sidebar={Sidebar} isManagedSidebar>
+        <Page header={Header} sidebar={Sidebar} onPageResize={this.onPageResize}>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>
@@ -207,4 +237,4 @@ class PageLayoutDefaultNav extends React.Component {
   }
 }
 
-export default PageLayoutDefaultNav;
+export default PageLayoutManualNav;

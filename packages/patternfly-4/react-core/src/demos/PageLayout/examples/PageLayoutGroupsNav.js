@@ -25,7 +25,6 @@ import {
   ToolbarGroup,
   ToolbarItem
 } from '@patternfly/react-core';
-import { global_breakpoint_md as breakpointMd } from '@patternfly/react-tokens';
 // make sure you've installed @patternfly/patternfly-next
 import accessibleStyles from '@patternfly/patternfly-next/utilities/Accessibility/accessibility.css';
 import spacingStyles from '@patternfly/patternfly-next/utilities/Spacing/spacing.css';
@@ -37,13 +36,10 @@ import avatarImg from './img_avatar.svg';
 class PageLayoutGroupsNav extends React.Component {
   constructor(props) {
     super(props);
-    // Set initial isNavOpen state based on window width
-    const isNavOpen = typeof window !== 'undefined' && window.innerWidth >= parseInt(breakpointMd.value, 10);
     this.state = {
       isDropdownOpen: false,
       isKebabDropdownOpen: false,
-      activeItem: 'grp-1_itm-1',
-      isNavOpen
+      activeItem: 'grp-1_itm-1'
     };
   }
 
@@ -77,14 +73,8 @@ class PageLayoutGroupsNav extends React.Component {
     });
   };
 
-  onNavToggle = () => {
-    this.setState({
-      isNavOpen: !this.state.isNavOpen
-    });
-  };
-
   render() {
-    const { isDropdownOpen, isKebabDropdownOpen, activeItem, isNavOpen } = this.state;
+    const { isDropdownOpen, isKebabDropdownOpen, activeItem } = this.state;
 
     const PageNav = (
       <Nav onSelect={this.onNavSelect} aria-label="Nav">
@@ -193,16 +183,14 @@ class PageLayoutGroupsNav extends React.Component {
         toolbar={PageToolbar}
         avatar={<Avatar src={avatarImg} alt="Avatar image" />}
         showNavToggle
-        onNavToggle={this.onNavToggle}
-        isNavOpen={isNavOpen}
       />
     );
-    const Sidebar = <PageSidebar nav={PageNav} isNavOpen={isNavOpen} />;
+    const Sidebar = <PageSidebar nav={PageNav} />;
 
     return (
       <React.Fragment>
         <BackgroundImage src={bgImages} />
-        <Page header={Header} sidebar={Sidebar}>
+        <Page header={Header} sidebar={Sidebar} isManagedSidebar>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
               <Text component="h1">Main Title</Text>

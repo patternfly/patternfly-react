@@ -1683,16 +1683,12 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.0.0.tgz#76b0e89e6f8738ca8154195baf5b8e6a80bc9105"
 
-"@patternfly/patternfly-next@1.0.126":
-  version "1.0.126"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.126.tgz#cdc2b40927663cca82f072b6b6eee98d244a1898"
-
-"@patternfly/patternfly-next@1.0.137":
-  version "1.0.137"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.137.tgz#a8ae6c2920cf2152d7c931fb7f888b1d0e3bc4ae"
+"@patternfly/patternfly-next@1.0.148":
+  version "1.0.148"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.148.tgz#c1c87b565a9702651482a56eb391982117c61b03"
 
 "@patternfly/react-core@file:packages/patternfly-4/react-core":
-  version "1.49.6"
+  version "1.50.0"
   dependencies:
     "@patternfly/react-icons" "^2.10.1"
     "@patternfly/react-styles" "^2.3.0"

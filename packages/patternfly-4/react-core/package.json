@@ -62,7 +62,7 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.0.0",
-    "@patternfly/patternfly-next": "1.0.137",
+    "@patternfly/patternfly-next": "1.0.148",
     "@types/enzyme": "^3.1.15",
     "@types/jest": "^23.3.10",
     "@types/prop-types": "^15.5.6",
