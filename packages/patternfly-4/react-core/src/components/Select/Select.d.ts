@@ -3,7 +3,7 @@ import { Omit } from '../../typeUtils';
 
 export interface SelectProps extends Omit<HTMLProps<HTMLOptionElement>> {
   isExpanded?: boolean;
-  onSelect(event: React.SyntheticEvent<HTMLDivElement>): void;
+  onSelect: Function;
   onToggle: Function;
   placeholderText?: string;
   selectOptions?: array;
