@@ -3,6 +3,84 @@
 
 #### :rocket: New Feature
 * `patternfly-4`
+  * [#1144](https://github.com/patternfly/patternfly-react/pull/1144) PF4: feat(Tabs) Add Tabs for PF4 ([@tlabaj](https://github.com/tlabaj))
+
+#### Committers: 1
+- Titani Labaj ([@tlabaj](https://github.com/tlabaj))
+
+
+## patternfly4-react-lerna-root@1.42.0 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1231](https://github.com/patternfly/patternfly-react/pull/1231) feat(FormSelect): rename Select components to FormSelect ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1272](https://github.com/patternfly/patternfly-react/pull/1272) fix(Table): Do not return value if table is not collapsed ([@karelhala](https://github.com/karelhala))
+  * [#1262](https://github.com/patternfly/patternfly-react/pull/1262) fix(Chip): Replace check for length of chip text with refs ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 3
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-table@0.4.9 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1231](https://github.com/patternfly/patternfly-react/pull/1231) feat(FormSelect): rename Select components to FormSelect ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1272](https://github.com/patternfly/patternfly-react/pull/1272) fix(Table): Do not return value if table is not collapsed ([@karelhala](https://github.com/karelhala))
+  * [#1262](https://github.com/patternfly/patternfly-react/pull/1262) fix(Chip): Replace check for length of chip text with refs ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 3
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-integration@1.0.8 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1231](https://github.com/patternfly/patternfly-react/pull/1231) feat(FormSelect): rename Select components to FormSelect ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1272](https://github.com/patternfly/patternfly-react/pull/1272) fix(Table): Do not return value if table is not collapsed ([@karelhala](https://github.com/karelhala))
+  * [#1262](https://github.com/patternfly/patternfly-react/pull/1262) fix(Chip): Replace check for length of chip text with refs ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 3
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-docs@3.21.9 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
+  * [#1231](https://github.com/patternfly/patternfly-react/pull/1231) feat(FormSelect): rename Select components to FormSelect ([@kmcfaul](https://github.com/kmcfaul))
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1272](https://github.com/patternfly/patternfly-react/pull/1272) fix(Table): Do not return value if table is not collapsed ([@karelhala](https://github.com/karelhala))
+  * [#1262](https://github.com/patternfly/patternfly-react/pull/1262) fix(Chip): Replace check for length of chip text with refs ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### Committers: 3
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+- [@kmcfaul](https://github.com/kmcfaul)
+
+
+## @patternfly/react-core@1.51.0 (2019-01-29)
+
+#### :rocket: New Feature
+* `patternfly-4`
   * [#1231](https://github.com/patternfly/patternfly-react/pull/1231) feat(FormSelect): rename Select components to FormSelect ([@kmcfaul](https://github.com/kmcfaul))
 
 #### :bug: Bug Fix
