@@ -35,10 +35,16 @@ export interface ICell {
   props: Object;
 }
 
+export interface IRowCell {
+  title: ReactNode;
+  props: Object;
+}
+
 export interface IRow {
-  cells: Array<String>;
+  cells: Array<ReactNode | IRowCell>;
   isOpen: Boolean;
   parent: Number;
+  props: Object;
 }
 
 export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSelect'>, 'rows'> {
