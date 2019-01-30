@@ -11636,6 +11636,12 @@ exports[`Collapsible nested table 1`] = `
   border-top-color: transparent;
   border-top-width: 0;
 }
+.pf-c-table__expandable-row {
+  display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+}
 .pf-c-table__toggle {
   display: block;
 }
@@ -12864,6 +12870,7 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
+                  "isExpanded": false,
                   "isOpen": true,
                   "last-commit": Object {
                     "props": undefined,
@@ -13777,6 +13784,7 @@ exports[`Collapsible nested table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
+                      "isExpanded": false,
                       "isOpen": true,
                       "last-commit": Object {
                         "props": undefined,
@@ -13797,12 +13805,13 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+                    isExpanded={false}
                     isOpen={true}
                     onClick={[Function]}
                   >
                     <tr
-                      className=""
-                      hidden={false}
+                      className="pf-c-table__expandable-row"
+                      hidden={true}
                       onClick={[Function]}
                     >
                       <BodyCell
@@ -16581,6 +16590,14 @@ exports[`Collapsible table 1`] = `
   border-top-color: transparent;
   border-top-width: 0;
 }
+.pf-c-table__expandable-row.pf-m-expanded {
+  display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
+  border-bottom-color: #ededed;
+  border-bottom-width: 1px;
+}
 .pf-c-table__toggle {
   display: block;
 }
@@ -17792,6 +17809,7 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
+                  "isExpanded": true,
                   "last-commit": Object {
                     "props": undefined,
                     "title": "five",
@@ -18702,6 +18720,7 @@ exports[`Collapsible table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
+                      "isExpanded": true,
                       "last-commit": Object {
                         "props": undefined,
                         "title": "five",
@@ -18721,10 +18740,11 @@ exports[`Collapsible table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+                    isExpanded={true}
                     onClick={[Function]}
                   >
                     <tr
-                      className=""
+                      className="pf-c-table__expandable-row pf-m-expanded"
                       hidden={false}
                       onClick={[Function]}
                     >
@@ -21434,6 +21454,12 @@ exports[`Header width table 1`] = `
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
+.pf-c-table__expandable-row {
+  display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+}
 .pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
@@ -22408,6 +22434,7 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
+                  "isExpanded": false,
                   "isOpen": true,
                   "last-commit": Object {
                     "props": undefined,
@@ -23164,6 +23191,7 @@ exports[`Header width table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
+                      "isExpanded": false,
                       "isOpen": true,
                       "last-commit": Object {
                         "props": undefined,
@@ -23184,12 +23212,13 @@ exports[`Header width table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+                    isExpanded={false}
                     isOpen={true}
                     onClick={[Function]}
                   >
                     <tr
-                      className=""
-                      hidden={false}
+                      className="pf-c-table__expandable-row"
+                      hidden={true}
                       onClick={[Function]}
                     >
                       <BodyCell
@@ -25442,44 +25471,17 @@ exports[`Selectable table 1`] = `
 .pf-c-table__check {
   display: block;
 }
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-table__check {
-  display: block;
-}
 .pf-c-table__expandable-row {
   display: block;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
-.pf-c-check__input {
+.pf-c-table__expandable-row {
   display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-table__check {
-  display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-check__input {
   display: block;
@@ -26682,6 +26684,7 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
+                  "isExpanded": false,
                   "isOpen": true,
                   "last-commit": Object {
                     "props": undefined,
@@ -27539,6 +27542,7 @@ exports[`Selectable table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
+                      "isExpanded": false,
                       "isOpen": true,
                       "last-commit": Object {
                         "props": undefined,
@@ -27559,16 +27563,16 @@ exports[`Selectable table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+                    isExpanded={false}
                     isOpen={true}
                     onClick={[Function]}
                   >
                     <tr
-                      className=""
-                      hidden={false}
+                      className="pf-c-table__expandable-row"
+                      hidden={true}
                       onClick={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__check"
                         component="td"
                         data-key={0}
                         data-label=""
@@ -27576,27 +27580,9 @@ exports[`Selectable table 1`] = `
                         scope=""
                       >
                         <td
-                          className="pf-c-table__check"
                           data-key={0}
                           scope=""
-                        >
-                          <SelectColumn
-                            aria-labelledby="simple-node1"
-                            checked={false}
-                            className=""
-                            name="checkrow1"
-                            onSelect={[Function]}
-                          >
-                            <input
-                              aria-labelledby="simple-node1"
-                              checked={false}
-                              className="pf-c-check__input"
-                              name="checkrow1"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                          </SelectColumn>
-                        </td>
+                        />
                       </BodyCell>
                       <BodyCell
                         component="td"
@@ -27941,7 +27927,6 @@ exports[`Selectable table 1`] = `
                       onClick={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__check"
                         component="td"
                         data-key={0}
                         data-label=""
@@ -27949,27 +27934,9 @@ exports[`Selectable table 1`] = `
                         scope=""
                       >
                         <td
-                          className="pf-c-table__check"
                           data-key={0}
                           scope=""
-                        >
-                          <SelectColumn
-                            aria-labelledby="simple-node2"
-                            checked={false}
-                            className=""
-                            name="checkrow2"
-                            onSelect={[Function]}
-                          >
-                            <input
-                              aria-labelledby="simple-node2"
-                              checked={false}
-                              className="pf-c-check__input"
-                              name="checkrow2"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                          </SelectColumn>
-                        </td>
+                        />
                       </BodyCell>
                       <BodyCell
                         component="td"
@@ -28686,7 +28653,6 @@ exports[`Selectable table 1`] = `
                       onClick={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__check"
                         component="td"
                         data-key={0}
                         data-label=""
@@ -28694,27 +28660,9 @@ exports[`Selectable table 1`] = `
                         scope=""
                       >
                         <td
-                          className="pf-c-table__check"
                           data-key={0}
                           scope=""
-                        >
-                          <SelectColumn
-                            aria-labelledby="simple-node4"
-                            checked={false}
-                            className=""
-                            name="checkrow4"
-                            onSelect={[Function]}
-                          >
-                            <input
-                              aria-labelledby="simple-node4"
-                              checked={false}
-                              className="pf-c-check__input"
-                              name="checkrow4"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                          </SelectColumn>
-                        </td>
+                        />
                       </BodyCell>
                       <BodyCell
                         component="td"

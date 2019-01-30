@@ -1,11 +1,11 @@
 import React from 'react';
 import PropsType from 'prop-types';
-import { tableExpandableRow, modifiers } from '@patternfly/patternfly-next/components/Table/table.css';
+import styles from '@patternfly/patternfly-next/components/Table/table.css';
 import { css } from '@patternfly/react-styles';
 
 const RowWrapper = ({ isOpen, isExpanded, ...props }) => {
   return <tr {...props}
-    className={css(isExpanded !== undefined && tableExpandableRow, isExpanded && modifiers.expanded)}
+    className={css(isExpanded !== undefined && styles.tableExpandableRow, isExpanded && styles.modifiers.expanded)}
     hidden={isExpanded !== undefined && !isExpanded}
   />;
 };
