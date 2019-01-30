@@ -1,20 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Simple toolbar with single group 1`] = `
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__group {
-  display: flex;
-  flex-wrap: wrap;
+.pf-c-toolbar__action-group {
+  display: none;
   align-items: center;
 }
-.pf-l-toolbar {
+.pf-c-toolbar {
   display: flex;
   flex-wrap: wrap;
+  padding: 1rem 2rem 1rem 2rem;
   align-items: center;
 }
 
@@ -22,29 +16,25 @@ exports[`Simple toolbar with single group 1`] = `
   className={null}
 >
   <div
-    className="pf-l-toolbar"
+    className="pf-c-toolbar"
   >
     <ToolbarGroup
       className={null}
     >
       <div
-        className="pf-l-toolbar__group"
+        className="pf-c-toolbar__action-group"
       >
         <ToolbarItem
           className={null}
         >
-          <div
-            className="pf-l-toolbar__item"
-          >
+          <div>
             Item 1
           </div>
         </ToolbarItem>
         <ToolbarItem
           className={null}
         >
-          <div
-            className="pf-l-toolbar__item"
-          >
+          <div>
             Item 2
           </div>
         </ToolbarItem>
@@ -55,42 +45,22 @@ exports[`Simple toolbar with single group 1`] = `
 `;
 
 exports[`Toolbar with multiple groups 1`] = `
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__group {
-  display: flex;
-  flex-wrap: wrap;
+.pf-c-toolbar__action-group {
+  display: none;
   align-items: center;
 }
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__group {
-  display: flex;
-  flex-wrap: wrap;
+.pf-c-toolbar__action-group {
+  display: none;
   align-items: center;
 }
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__group {
-  display: flex;
-  flex-wrap: wrap;
+.pf-c-toolbar__action-group {
+  display: none;
   align-items: center;
 }
-.pf-l-toolbar {
+.pf-c-toolbar {
   display: flex;
   flex-wrap: wrap;
+  padding: 1rem 2rem 1rem 2rem;
   align-items: center;
 }
 
@@ -98,29 +68,25 @@ exports[`Toolbar with multiple groups 1`] = `
   className={null}
 >
   <div
-    className="pf-l-toolbar"
+    className="pf-c-toolbar"
   >
     <ToolbarGroup
       className={null}
     >
       <div
-        className="pf-l-toolbar__group"
+        className="pf-c-toolbar__action-group"
       >
         <ToolbarItem
           className={null}
         >
-          <div
-            className="pf-l-toolbar__item"
-          >
+          <div>
             Item 1
           </div>
         </ToolbarItem>
         <ToolbarItem
           className={null}
         >
-          <div
-            className="pf-l-toolbar__item"
-          >
+          <div>
             Item 2
           </div>
         </ToolbarItem>
@@ -130,14 +96,12 @@ exports[`Toolbar with multiple groups 1`] = `
       className={null}
     >
       <div
-        className="pf-l-toolbar__group"
+        className="pf-c-toolbar__action-group"
       >
         <ToolbarItem
           className={null}
         >
-          <div
-            className="pf-l-toolbar__item"
-          >
+          <div>
             Item 3
           </div>
         </ToolbarItem>
@@ -147,32 +111,26 @@ exports[`Toolbar with multiple groups 1`] = `
       className={null}
     >
       <div
-        className="pf-l-toolbar__group"
+        className="pf-c-toolbar__action-group"
       >
         <ToolbarItem
           className={null}
         >
-          <div
-            className="pf-l-toolbar__item"
-          >
+          <div>
             Item 4
           </div>
         </ToolbarItem>
         <ToolbarItem
           className={null}
         >
-          <div
-            className="pf-l-toolbar__item"
-          >
+          <div>
             Item 5
           </div>
         </ToolbarItem>
         <ToolbarItem
           className={null}
         >
-          <div
-            className="pf-l-toolbar__item"
-          >
+          <div>
             Item 6
           </div>
         </ToolbarItem>
@@ -183,52 +141,32 @@ exports[`Toolbar with multiple groups 1`] = `
 `;
 
 exports[`Toolbar with sections 1`] = `
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__group {
-  display: flex;
-  flex-wrap: wrap;
+.pf-c-toolbar__action-group {
+  display: none;
   align-items: center;
 }
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__group {
-  display: flex;
-  flex-wrap: wrap;
+.pf-c-toolbar__action-group {
+  display: none;
   align-items: center;
 }
-.pf-l-toolbar__section {
-  display: flex;
-  flex-wrap: wrap;
+.pf-c-toolbar__total-items {
+  display: block;
+  margin-left: auto;
+  font-size: 0.875rem;
+}
+.pf-c-toolbar__action-group {
+  display: none;
   align-items: center;
 }
-.pf-l-toolbar__item {
+.pf-c-toolbar__total-items {
   display: block;
+  margin-left: auto;
+  font-size: 0.875rem;
 }
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__item {
-  display: block;
-}
-.pf-l-toolbar__group {
+.pf-c-toolbar {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-}
-.pf-l-toolbar__section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.pf-l-toolbar {
-  display: flex;
-  flex-wrap: wrap;
+  padding: 1rem 2rem 1rem 2rem;
   align-items: center;
 }
 
@@ -236,37 +174,33 @@ exports[`Toolbar with sections 1`] = `
   className={null}
 >
   <div
-    className="pf-l-toolbar"
+    className="pf-c-toolbar"
   >
     <ToolbarSection
       aria-label="First section"
       className={null}
     >
-      <section
+      <div
         aria-label="First section"
-        className="pf-l-toolbar__section"
+        className="pf-c-toolbar__total-items"
       >
         <ToolbarGroup
           className={null}
         >
           <div
-            className="pf-l-toolbar__group"
+            className="pf-c-toolbar__action-group"
           >
             <ToolbarItem
               className={null}
             >
-              <div
-                className="pf-l-toolbar__item"
-              >
+              <div>
                 Item 1
               </div>
             </ToolbarItem>
             <ToolbarItem
               className={null}
             >
-              <div
-                className="pf-l-toolbar__item"
-              >
+              <div>
                 Item 2
               </div>
             </ToolbarItem>
@@ -276,65 +210,57 @@ exports[`Toolbar with sections 1`] = `
           className={null}
         >
           <div
-            className="pf-l-toolbar__group"
+            className="pf-c-toolbar__action-group"
           >
             <ToolbarItem
               className={null}
             >
-              <div
-                className="pf-l-toolbar__item"
-              >
+              <div>
                 Item 3
               </div>
             </ToolbarItem>
           </div>
         </ToolbarGroup>
-      </section>
+      </div>
     </ToolbarSection>
     <ToolbarSection
       aria-label="Second section"
       className={null}
     >
-      <section
+      <div
         aria-label="Second section"
-        className="pf-l-toolbar__section"
+        className="pf-c-toolbar__total-items"
       >
         <ToolbarGroup
           className={null}
         >
           <div
-            className="pf-l-toolbar__group"
+            className="pf-c-toolbar__action-group"
           >
             <ToolbarItem
               className={null}
             >
-              <div
-                className="pf-l-toolbar__item"
-              >
+              <div>
                 Item 4
               </div>
             </ToolbarItem>
             <ToolbarItem
               className={null}
             >
-              <div
-                className="pf-l-toolbar__item"
-              >
+              <div>
                 Item 5
               </div>
             </ToolbarItem>
             <ToolbarItem
               className={null}
             >
-              <div
-                className="pf-l-toolbar__item"
-              >
+              <div>
                 Item 6
               </div>
             </ToolbarItem>
           </div>
         </ToolbarGroup>
-      </section>
+      </div>
     </ToolbarSection>
   </div>
 </Toolbar>

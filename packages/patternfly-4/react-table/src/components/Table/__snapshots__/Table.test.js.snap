@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Actions table 1`] = `
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -241,13 +234,9 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -1109,7 +1098,7 @@ exports[`Actions table 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"
@@ -7609,13 +7598,6 @@ exports[`Actions table 1`] = `
 `;
 
 exports[`Cell header table 1`] = `
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -7624,13 +7606,9 @@ exports[`Cell header table 1`] = `
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -8186,7 +8164,7 @@ exports[`Cell header table 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"
@@ -11570,13 +11548,6 @@ exports[`Cell header table 1`] = `
 `;
 
 exports[`Collapsible nested table 1`] = `
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -11628,13 +11599,6 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
   display: block;
@@ -11650,19 +11614,9 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
   display: block;
-  position: relative;
-  border-bottom: 0 solid transparent;
-  box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-button.pf-m-plain {
   display: inline-block;
@@ -11692,19 +11646,9 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
   display: block;
-  position: relative;
-  border-bottom: 0 solid transparent;
-  box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-table__toggle {
   display: block;
@@ -11732,13 +11676,9 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -12397,7 +12337,7 @@ exports[`Collapsible nested table 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"
@@ -16538,13 +16478,6 @@ exports[`Collapsible nested table 1`] = `
 `;
 
 exports[`Collapsible table 1`] = `
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -16582,13 +16515,6 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row.pf-m-expanded {
   display: block;
@@ -16632,19 +16558,9 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
   display: block;
-  position: relative;
-  border-bottom: 0 solid transparent;
-  box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-table__toggle {
   display: block;
@@ -16675,13 +16591,9 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -17338,7 +17250,7 @@ exports[`Collapsible table 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"
@@ -21424,35 +21336,11 @@ exports[`Collapsible table 1`] = `
 `;
 
 exports[`Header width table 1`] = `
-.pf-m-width-10 {
-  display: block;
-}
-.pf-m-width-10 {
-  display: block;
-}
-.pf-m-width-30 {
-  display: block;
-}
-.pf-m-width-30 {
-  display: block;
-}
-.pf-m-width-max {
-  display: block;
-}
-.pf-m-width-max {
+.pf-c-table__expandable-row {
   display: block;
 }
 .pf-c-table__expandable-row {
   display: block;
-  position: relative;
-  border-bottom: 0 solid transparent;
-  box-shadow: 0 0 0 0 transparent;
-}
-.pf-c-table__expandable-row {
-  display: block;
-  position: relative;
-  border-bottom: 0 solid transparent;
-  box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-table__expandable-row {
   display: block;
@@ -21462,13 +21350,9 @@ exports[`Header width table 1`] = `
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -22015,7 +21899,7 @@ exports[`Header width table 1`] = `
               >
                 <tr>
                   <HeaderCell
-                    className="pf-m-width-10"
+                    className=""
                     component="th"
                     data-key={0}
                     data-label="Header cell"
@@ -22023,7 +21907,7 @@ exports[`Header width table 1`] = `
                     scope="col"
                   >
                     <th
-                      className="pf-m-width-10"
+                      className=""
                       data-key={0}
                       scope="col"
                     >
@@ -22045,7 +21929,7 @@ exports[`Header width table 1`] = `
                     </th>
                   </HeaderCell>
                   <HeaderCell
-                    className="pf-m-width-30"
+                    className=""
                     component="th"
                     data-key={2}
                     data-label="Pull requests"
@@ -22053,7 +21937,7 @@ exports[`Header width table 1`] = `
                     scope="col"
                   >
                     <th
-                      className="pf-m-width-30"
+                      className=""
                       data-key={2}
                       scope="col"
                     >
@@ -22075,7 +21959,7 @@ exports[`Header width table 1`] = `
                     </th>
                   </HeaderCell>
                   <HeaderCell
-                    className="pf-m-width-max"
+                    className=""
                     component="th"
                     data-key={4}
                     data-label="Last Commit"
@@ -22083,7 +21967,7 @@ exports[`Header width table 1`] = `
                     scope="col"
                   >
                     <th
-                      className="pf-m-width-max"
+                      className=""
                       data-key={4}
                       scope="col"
                     >
@@ -25447,13 +25331,6 @@ exports[`Selectable table 1`] = `
 .pf-c-table__check {
   display: block;
 }
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -25473,9 +25350,6 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table__expandable-row {
   display: block;
-  position: relative;
-  border-bottom: 0 solid transparent;
-  box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-table__expandable-row {
   display: block;
@@ -25496,9 +25370,6 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table__expandable-row {
   display: block;
-  position: relative;
-  border-bottom: 0 solid transparent;
-  box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-check__input {
   display: block;
@@ -25546,13 +25417,9 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -26217,7 +26084,7 @@ exports[`Selectable table 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"
@@ -30225,13 +30092,9 @@ exports[`Selectable table 1`] = `
 exports[`Simple table aria-label 1`] = `
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -34099,13 +33962,9 @@ exports[`Simple table aria-label 1`] = `
 exports[`Simple table caption 1`] = `
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -37974,13 +37833,9 @@ exports[`Simple table caption 1`] = `
 exports[`Simple table header 1`] = `
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -41851,13 +41706,6 @@ exports[`Simple table header 1`] = `
 `;
 
 exports[`Sortable table 1`] = `
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -41866,13 +41714,9 @@ exports[`Sortable table 1`] = `
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -42425,7 +42269,7 @@ exports[`Sortable table 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"
@@ -45799,13 +45643,6 @@ exports[`Sortable table 1`] = `
 `;
 
 exports[`Table variants Breakpoint - grid 1`] = `
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -45814,12 +45651,10 @@ exports[`Table variants Breakpoint - grid 1`] = `
 }
 .pf-c-table.pf-m-grid {
   display: grid;
-  width: 100%;
   background-color: transparent;
 }
 .pf-c-table.pf-m-grid {
   display: grid;
-  width: 100%;
   background-color: transparent;
 }
 
@@ -46371,7 +46206,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"
@@ -49745,13 +49580,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
 `;
 
 exports[`Table variants Breakpoint - grid-lg 1`] = `
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -49760,13 +49588,9 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
 }
 .pf-c-table.pf-m-grid-lg {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-lg {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -50317,7 +50141,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"
@@ -53691,13 +53515,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
 `;
 
 exports[`Table variants Breakpoint - grid-md 1`] = `
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -53706,13 +53523,9 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -54263,7 +54076,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"
@@ -57637,13 +57450,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
 `;
 
 exports[`Table variants Size - compact 1`] = `
-.pf-c-table__sort-indicator {
-  display: block;
-  margin-left: 1rem;
-  line-height: 1;
-  color: #d1d1d1;
-  pointer-events: none;
-}
 .pf-c-table__sort {
   display: block;
 }
@@ -57652,13 +57458,9 @@ exports[`Table variants Size - compact 1`] = `
 }
 .pf-c-table.pf-m-grid-md.pf-m-compact {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 .pf-c-table.pf-m-grid-md.pf-m-compact {
   display: block;
-  width: 100%;
-  background-color: #ffffff;
 }
 
 <Table
@@ -58209,7 +58011,7 @@ exports[`Table variants Size - compact 1`] = `
                         >
                           Header cell
                           <span
-                            className="pf-c-table__sort-indicator"
+                            className=""
                           >
                             <SortIcon
                               color="currentColor"

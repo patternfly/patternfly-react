@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-icons": "^2.10.3",
+    "@patternfly/react-icons": "^2.10.2",
     "@patternfly/react-styles": "^2.3.0",
     "@patternfly/react-tokens": "^1.10.1",
     "@tippy.js/react": "^1.1.1",

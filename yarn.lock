@@ -1691,17 +1691,12 @@
 "@patternfly/react-core@file:packages/patternfly-4/react-core":
   version "1.51.0"
   dependencies:
-    "@patternfly/react-icons" "^2.10.3"
+    "@patternfly/react-icons" "^2.10.2"
     "@patternfly/react-styles" "^2.3.0"
     "@patternfly/react-tokens" "^1.10.1"
     "@tippy.js/react" "^1.1.1"
     exenv "^1.2.2"
     focus-trap-react "^4.0.1"
-
-"@patternfly/react-icons@^2.10.3":
-  version "2.10.3"
-  resolved "https://registry.yarnpkg.com/@patternfly/react-icons/-/react-icons-2.10.3.tgz#737f02d2b8f52995f85e3d756cadc5d842707f03"
-  integrity sha512-b2FhcMQMefpe+X7ohqgcVCA40ZcmXKqE4raB0NWfBmjq4XIik6c9lSvnaoihT/WNQTf9e++DypAQtuo7bJT59A==
 
 "@reach/router@^1.1.1":
   version "1.2.1"
