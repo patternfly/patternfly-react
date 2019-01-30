@@ -1,5 +1,25 @@
 
-## Unreleased (2019-01-30)
+## patternfly4-react-lerna-root@1.42.4 (2019-01-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1237](https://github.com/patternfly/patternfly-react/pull/1237) fix(Table): Use direct imports instead of spread ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-table@0.4.13 (2019-01-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1237](https://github.com/patternfly/patternfly-react/pull/1237) fix(Table): Use direct imports instead of spread ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## @patternfly/react-docs@3.21.13 (2019-01-30)
 
 #### :bug: Bug Fix
 * `patternfly-4`
