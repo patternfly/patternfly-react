@@ -5,6 +5,7 @@ import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName } from 'storybook/constants/siteConstants';
 import { name } from '../../../package.json';
 import { TreeView } from './index';
+import { data } from './TreeView.fixtures.js';
 
 const stories = storiesOf(`${storybookPackageName(name)}/Tree View`, module);
 
@@ -24,7 +25,7 @@ stories.add(
     propTables: [TreeView]
   })(() => (
     <div style={{ display: 'flex' }}>
-      <TreeView />
+      <TreeView data={data} />
     </div>
   ))
 );
