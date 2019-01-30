@@ -4,8 +4,7 @@ import { withInfo } from '@storybook/addon-info/dist/index';
 import { defaultTemplate } from 'storybook/decorators/storyTemplates';
 import { storybookPackageName } from 'storybook/constants/siteConstants';
 import { name } from '../../../package.json';
-import { TreeView } from './index';
-import { data } from './TreeView.fixtures.js';
+import TreeViewExample from './TreeViewExample';
 
 const stories = storiesOf(`${storybookPackageName(name)}/Tree View`, module);
 
@@ -22,10 +21,10 @@ stories.add(
   'Tree View',
   withInfo({
     source: false,
-    propTables: [TreeView]
+    propTables: [TreeViewExample]
   })(() => (
     <div style={{ display: 'flex' }}>
-      <TreeView data={data} />
+      <TreeViewExample />
     </div>
   ))
 );
