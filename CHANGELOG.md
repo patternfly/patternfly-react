@@ -1,5 +1,83 @@
 
-## Unreleased (2019-01-29)
+## Unreleased (2019-01-30)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1237](https://github.com/patternfly/patternfly-react/pull/1237) fix(Table): Use direct imports instead of spread ([@karelhala](https://github.com/karelhala))
+
+#### Committers: 1
+- Karel Hala ([@karelhala](https://github.com/karelhala))
+
+
+## patternfly4-react-lerna-root@1.42.3 (2019-01-29)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1269](https://github.com/patternfly/patternfly-react/pull/1269) fix(Radio): Modify examples and aria-label/label ([@rebeccaalpert](https://github.com/rebeccaalpert))
+  * [#1270](https://github.com/patternfly/patternfly-react/pull/1270) fix(Checkbox): Adjustments to examples ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1247](https://github.com/patternfly/patternfly-react/pull/1247) chore(react-core): Replace SFC syntax with FunctionComponent ([@nicolethoen](https://github.com/nicolethoen))
+
+#### Committers: 3
+- Nicole Thoen ([@nicolethoen](https://github.com/nicolethoen))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-table@0.4.12 (2019-01-29)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1269](https://github.com/patternfly/patternfly-react/pull/1269) fix(Radio): Modify examples and aria-label/label ([@rebeccaalpert](https://github.com/rebeccaalpert))
+  * [#1270](https://github.com/patternfly/patternfly-react/pull/1270) fix(Checkbox): Adjustments to examples ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1247](https://github.com/patternfly/patternfly-react/pull/1247) chore(react-core): Replace SFC syntax with FunctionComponent ([@nicolethoen](https://github.com/nicolethoen))
+
+#### Committers: 3
+- Nicole Thoen ([@nicolethoen](https://github.com/nicolethoen))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-integration@1.0.11 (2019-01-29)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1269](https://github.com/patternfly/patternfly-react/pull/1269) fix(Radio): Modify examples and aria-label/label ([@rebeccaalpert](https://github.com/rebeccaalpert))
+  * [#1270](https://github.com/patternfly/patternfly-react/pull/1270) fix(Checkbox): Adjustments to examples ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1247](https://github.com/patternfly/patternfly-react/pull/1247) chore(react-core): Replace SFC syntax with FunctionComponent ([@nicolethoen](https://github.com/nicolethoen))
+
+#### Committers: 3
+- Nicole Thoen ([@nicolethoen](https://github.com/nicolethoen))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-docs@3.21.12 (2019-01-29)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1269](https://github.com/patternfly/patternfly-react/pull/1269) fix(Radio): Modify examples and aria-label/label ([@rebeccaalpert](https://github.com/rebeccaalpert))
+  * [#1270](https://github.com/patternfly/patternfly-react/pull/1270) fix(Checkbox): Adjustments to examples ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+#### :house: Internal
+* `patternfly-4`
+  * [#1247](https://github.com/patternfly/patternfly-react/pull/1247) chore(react-core): Replace SFC syntax with FunctionComponent ([@nicolethoen](https://github.com/nicolethoen))
+
+#### Committers: 3
+- Nicole Thoen ([@nicolethoen](https://github.com/nicolethoen))
+- Patrick Riley ([@priley86](https://github.com/priley86))
+- Rebecca Alpert ([@rebeccaalpert](https://github.com/rebeccaalpert))
+
+
+## @patternfly/react-core@1.51.3 (2019-01-29)
 
 #### :bug: Bug Fix
 * `patternfly-4`

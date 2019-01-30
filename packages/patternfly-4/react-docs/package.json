@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "3.21.12",
+  "version": "3.21.13",
   "author": "Red Hat",
   "license": "Apache-2.0",
   "publishConfig": {
@@ -13,7 +13,7 @@
     "@patternfly/react-icons": "^2.10.3",
     "@patternfly/react-styled-system": "^1.4.1",
     "@patternfly/react-styles": "^2.3.0",
-    "@patternfly/react-table": "^0.4.12",
+    "@patternfly/react-table": "^0.4.13",
     "@patternfly/react-tokens": "^1.10.1",
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",
