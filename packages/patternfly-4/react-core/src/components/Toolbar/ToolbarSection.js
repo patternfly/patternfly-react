@@ -1,7 +1,9 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/layouts/Toolbar/toolbar.css';
+import styles from '@patternfly/patternfly-next/components/Toolbar/toolbar.css';
 import PropTypes from 'prop-types';
+
+// TODO: This needs to be replaced with toolbar total items and toolbar filter.
 
 const propTypes = {
   /** Anything that can be rendered as toolbar section */
@@ -26,9 +28,9 @@ const defaultProps = {
 };
 
 const ToolbarSection = ({ children, className, ...props }) => (
-  <section {...props} className={css(styles.toolbarSection, className)}>
+  <div {...props} className={css(styles.toolbarTotalItems, className)}>
     {children}
-  </section>
+  </div>
 );
 
 ToolbarSection.propTypes = propTypes;

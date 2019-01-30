@@ -1,7 +1,7 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/layouts/Toolbar/toolbar.css';
 import PropTypes from 'prop-types';
+
+// TODO: Remove this object as it is no longer needed with the toolbar.
 
 const propTypes = {
   /** Anything that can be rendered as toolbar item content */
@@ -17,11 +17,7 @@ const defaultProps = {
   className: null
 };
 
-const ToolbarItem = ({ children, className, ...props }) => (
-  <div {...props} className={css(styles.toolbarItem, className)}>
-    {children}
-  </div>
-);
+const ToolbarItem = ({ children, className, ...props }) => <div {...props}>{children}</div>;
 
 ToolbarItem.propTypes = propTypes;
 ToolbarItem.defaultProps = defaultProps;

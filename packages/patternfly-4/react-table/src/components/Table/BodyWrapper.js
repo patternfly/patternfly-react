@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from '@patternfly/patternfly-next/components/Table/table.css';
+import styles from '@patternfly/patternfly-next/components/Table/table-grid.css';
 import { css } from '@patternfly/react-styles';
 
 const BodyWrapper = (rows) => {

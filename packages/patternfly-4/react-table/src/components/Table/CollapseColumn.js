@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { AngleDownIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
 import { Button } from '@patternfly/react-core';
-import styles from '@patternfly/patternfly-next/components/Table/table.css';
+import styles from '@patternfly/patternfly-next/components/Table/table-grid.css';
 
 const propTypes = {
   children: PropTypes.node,

@@ -1683,19 +1683,25 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.0.0.tgz#76b0e89e6f8738ca8154195baf5b8e6a80bc9105"
 
-"@patternfly/patternfly-next@1.0.148":
-  version "1.0.148"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.148.tgz#c1c87b565a9702651482a56eb391982117c61b03"
+"@patternfly/patternfly-next@1.0.167":
+  version "1.0.167"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.167.tgz#2b48850d84e1b7b210207d6b9a0ad12edb2abf13"
+  integrity sha512-Mx/sp63p0S+bz5kCdWI7F0XoQXF5KZoL1cPjSFUpIfO9ieCj7VOt+d2GV7joqK8X+relsApj0yNhBdiLFXPXCw==
 
 "@patternfly/react-core@file:packages/patternfly-4/react-core":
-  version "1.50.0"
+  version "1.51.0"
   dependencies:
-    "@patternfly/react-icons" "^2.10.1"
+    "@patternfly/react-icons" "^2.10.3"
     "@patternfly/react-styles" "^2.3.0"
-    "@patternfly/react-tokens" "^1.10.0"
+    "@patternfly/react-tokens" "^1.10.1"
     "@tippy.js/react" "^1.1.1"
     exenv "^1.2.2"
     focus-trap-react "^4.0.1"
+
+"@patternfly/react-icons@^2.10.3":
+  version "2.10.3"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-icons/-/react-icons-2.10.3.tgz#737f02d2b8f52995f85e3d756cadc5d842707f03"
+  integrity sha512-b2FhcMQMefpe+X7ohqgcVCA40ZcmXKqE4raB0NWfBmjq4XIik6c9lSvnaoihT/WNQTf9e++DypAQtuo7bJT59A==
 
 "@reach/router@^1.1.1":
   version "1.2.1"

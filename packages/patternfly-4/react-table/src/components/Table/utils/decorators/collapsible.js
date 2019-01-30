@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/Table/table.css';
+import { tableToggle } from '@patternfly/patternfly-next/components/Table/table-grid.css';
 import CollapseColumn from '../../CollapseColumn';
 import ExpandableRowContent from '../../ExpandableRowContent';
 
