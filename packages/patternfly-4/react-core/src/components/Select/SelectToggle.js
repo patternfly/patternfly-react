@@ -47,27 +47,29 @@ const defaultProps = {
 };
 
 class SelectToggle extends Component {
-  componentDidMount = () => {
+  componentDidMount() {
     document.addEventListener('mousedown', this.onDocClick);
     document.addEventListener('touchstart', this.onDocClick);
     document.addEventListener('keydown', this.onEscPress);
-  };
+  }
 
-  componentWillUnmount = () => {
+  componentWillUnmount() {
     document.removeEventListener('mousedown', this.onDocClick);
     document.removeEventListener('touchstart', this.onDocClick);
     document.removeEventListener('keydown', this.onEscPress);
-  };
+  }
 
   onDocClick = event => {
-    if (this.props.isExpanded && this.props.parentRef && !this.props.parentRef.contains(event.target)) {
-      this.props.onToggle && this.props.onToggle(false);
+    const { parentRef, isExpanded, onToggle, onClose } = this.props;
+    if (isExpanded && parentRef && !parentRef.contains(event.target)) {
+      onToggle && onToggle(false);
+      onClose && onClose();
       this.toggle.focus();
     }
   };
 
   onEscPress = event => {
-    const { parentRef, isExpanded, onToggle } = this.props;
+    const { parentRef, isExpanded, onToggle, onClose } = this.props;
     if (
       isExpanded &&
       (event.key === 'Escape' || event.key === 'Tab') &&
@@ -75,18 +77,21 @@ class SelectToggle extends Component {
       parentRef.contains(event.target)
     ) {
       onToggle && onToggle(false);
+      onClose && onClose();
       this.toggle.focus();
     }
   };
 
   onKeyDown = event => {
+    const { isExpanded, onToggle, onClose, onEnter } = this.props;
     if (event.key === 'Tab' && !this.props.isExpanded) return;
     event.preventDefault();
-    if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isExpanded) {
-      this.props.onToggle(!this.props.isExpanded);
-    } else if ((event.key === 'Enter' || event.key === ' ') && !this.props.isExpanded) {
-      this.props.onToggle(!this.props.isExpanded);
-      this.props.onEnter();
+    if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && isExpanded) {
+      onToggle(!isExpanded);
+      onClose && props.onClose();
+    } else if ((event.key === 'Enter' || event.key === ' ') && !isExpanded) {
+      onToggle(!isExpanded);
+      onEnter();
     }
   };
 

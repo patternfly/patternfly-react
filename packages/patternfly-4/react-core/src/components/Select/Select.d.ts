@@ -1,16 +1,14 @@
 import { HTMLProps, FormEvent } from 'react';
-import { Omit } from '../../typeUtils';
 
-export interface SelectProps extends Omit<HTMLProps<HTMLOptionElement>> {
+export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   isExpanded?: boolean;
-  onSelect: Function;
-  onToggle: Function;
+  onToggle(value: boolean): void;
   placeholderText?: string;
-  selectOptions?: array;
+  selectOptions?: ReactNode[];
   selections?: string;
   variant?: string;
 }
 
-declare const Select: React.SFC<SelectProps>;
+declare const Select: React.FunctionComponent<SelectProps>;
 
 export default Select;

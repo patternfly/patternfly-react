@@ -43,12 +43,15 @@ const defaultProps = {
 };
 
 class Select extends React.Component {
-  componentDidUpdate() {
-    if (!this.props.isExpanded) this.openedOnEnter = false;
-  }
+  parentRef = React.createRef();
+  state = { openedOnEnter: false };
 
   onEnter = () => {
-    this.openedOnEnter = true;
+    this.setState({ openedOnEnter: true });
+  };
+
+  onClose = () => {
+    this.setState({ openedOnEnter: false });
   };
 
   render() {
@@ -64,27 +67,24 @@ class Select extends React.Component {
       placeholderText,
       ...props
     } = this.props;
+    const { openedOnEnter } = this.state;
     return (
-      <div
-        className={css(styles.select, isExpanded && styles.modifiers.expanded, className)}
-        ref={ref => {
-          this.parentRef = ref;
-        }}
-      >
+      <div className={css(styles.select, isExpanded && styles.modifiers.expanded, className)} ref={this.parentRef}>
         <SelectContext.Provider value={onSelect}>
           {variant === 'single' && (
             <React.Fragment>
               <SelectToggle
                 id={`pf-toggle-id-${currentId++}`}
-                parentRef={this.parentRef}
+                parentRef={this.parentRef.current}
                 isExpanded={isExpanded}
                 onToggle={onToggle}
                 onEnter={this.onEnter}
+                onClose={this.onClose}
               >
                 {selections || placeholderText}
               </SelectToggle>
               {isExpanded && (
-                <SingleSelect {...props} selected={selections} openedOnEnter={this.openedOnEnter}>
+                <SingleSelect {...props} selected={selections} openedOnEnter={openedOnEnter}>
                   {children || selectOptions}
                 </SingleSelect>
               )}

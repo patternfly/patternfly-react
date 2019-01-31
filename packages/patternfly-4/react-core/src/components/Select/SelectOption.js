@@ -15,6 +15,8 @@ const propTypes = {
   isDisabled: PropTypes.bool,
   /** Optional on click callback */
   onClick: PropTypes.func,
+  /** Callback for ref tracking */
+  sendRef: PropTypes.func,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
 };

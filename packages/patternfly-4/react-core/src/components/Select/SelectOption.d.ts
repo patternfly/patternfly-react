@@ -6,8 +6,9 @@ export interface SelectOptionProps extends Omit<HTMLProps<HTMLOptionElement>, 'd
   isValid?: boolean;
   isDisabled?: boolean;
   onClick?: Function;
+  sendRef?: Function;
 }
 
-declare const SelectOption: React.SFC<SelectOptionProps>;
+declare const SelectOption: React.FunctionComponent<SelectOptionProps>;
 
 export default SelectOption;
