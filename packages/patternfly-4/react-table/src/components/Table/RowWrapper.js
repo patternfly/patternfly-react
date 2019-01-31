@@ -1,6 +1,6 @@
 import React from 'react';
 import PropsType from 'prop-types';
-import { tableExpandableRow, modifiers } from '@patternfly/patternfly-next/components/Table/table-grid.css';
+import { tableExpandableRow, modifiers } from '@patternfly/patternfly-next/components/Table/table.css';
 import { css } from '@patternfly/react-styles';
 
 const RowWrapper = ({ isOpen, isExpanded, ...props }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { tableCheck } from '@patternfly/patternfly-next/components/Table/table-grid.css';
+import { tableCheck } from '@patternfly/patternfly-next/components/Table/table.css';
 import SelectColumn from '../../SelectColumn';
 
 export default (label, { column: { extraParams: { onSelect, rowLabeledBy = 'simple-node' } }, rowIndex, rowData }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { tableAction } from '@patternfly/patternfly-next/components/Table/table-grid.css';
+import { tableAction } from '@patternfly/patternfly-next/components/Table/table.css';
 import ActionsColumn from '../../ActionsColumn';
 
 export default (actions) => {

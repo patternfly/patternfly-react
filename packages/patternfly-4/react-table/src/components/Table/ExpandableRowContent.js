@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import { tableExpandableRowContent } from '@patternfly/patternfly-next/components/Table/table-grid.css';
+import { tableExpandableRowContent } from '@patternfly/patternfly-next/components/Table/table.css';
 
 const propTypes = {
   children: PropTypes.node

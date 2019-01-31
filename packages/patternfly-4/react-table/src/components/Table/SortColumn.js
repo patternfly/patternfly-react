@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AngleUpIcon, SortIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
-import { tableSortIndicator } from '@patternfly/patternfly-next/components/Table/table-grid.css';
+import { tableSortIndicator } from '@patternfly/patternfly-next/components/Table/table.css';
 
 const propTypes = {
   children: PropTypes.node,

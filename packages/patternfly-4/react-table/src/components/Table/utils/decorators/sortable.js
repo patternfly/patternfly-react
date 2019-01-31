@@ -1,7 +1,7 @@
 import React from 'react';
 import SortColumn, { SortByDirection } from '../../SortColumn';
 import { css } from '@patternfly/react-styles';
-import { tableSort, modifiers } from '@patternfly/patternfly-next/components/Table/table-grid.css';
+import { tableSort, modifiers } from '@patternfly/patternfly-next/components/Table/table.css';
 
 export default (label, { column: { extraParams: { sortBy, onSort } }, columnIndex }) => {
   const isSortedBy = sortBy && columnIndex === sortBy.index;
