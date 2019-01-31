@@ -54,7 +54,7 @@ class ContextBody extends React.Component {
             })
           },
           { id: oneRowKey }),
-        ...oneRow.parent ? {
+        ...oneRow.parent !== undefined ? {
           isExpanded: this.parentsExpanded(oneRow.parent) && rows[oneRow.parent].isOpen
         } : {},
       }

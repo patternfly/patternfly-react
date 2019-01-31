@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.19.12](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.11...patternfly3-react-lerna-root@7.19.12) (2019-01-29)
+
+
+### Bug Fixes
+
+* **BadgedResource:** don't restrict resourceName to a string ([#1260](https://github.com/patternfly/patternfly-react/issues/1260)) ([e50bb35](https://github.com/patternfly/patternfly-react/commit/e50bb35))
+
+
+
+
+
 ## [7.19.11](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.10...patternfly3-react-lerna-root@7.19.11) (2019-01-25)
 
 

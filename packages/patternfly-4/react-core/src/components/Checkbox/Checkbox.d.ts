@@ -1,4 +1,4 @@
-import { HTMLProps, FormEvent, ReactNode } from 'react';
+import { FormEvent, FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface CheckboxProps extends Omit<HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
@@ -11,6 +11,6 @@ export interface CheckboxProps extends Omit<HTMLProps<HTMLInputElement>, 'type' 
   label?: ReactNode;
 }
 
-declare const Checkbox: React.SFC<CheckboxProps>;
+declare const Checkbox: FunctionComponent<CheckboxProps>;
 
 export default Checkbox;

@@ -1,4 +1,4 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface DataListToggleProps extends Omit<HTMLProps<HTMLDivElement>, 'aria-labelledby' | 'aria-label' | 'id'> {
@@ -8,6 +8,6 @@ export interface DataListToggleProps extends Omit<HTMLProps<HTMLDivElement>, 'ar
   id: string;
 }
 
-declare const DataListToggle: SFC<DataListToggleProps>;
+declare const DataListToggle: FunctionComponent<DataListToggleProps>;
 
 export default DataListToggle;

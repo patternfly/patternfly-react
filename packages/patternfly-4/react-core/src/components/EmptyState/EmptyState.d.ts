@@ -1,10 +1,10 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface EmptyStateProps extends Omit<HTMLProps<HTMLDivElement>, 'children'> {
   children: ReactNode;
 }
 
-declare const EmptyState: SFC<EmptyStateProps>;
+declare const EmptyState: FunctionComponent<EmptyStateProps>;
 
 export default EmptyState;

@@ -1,7 +1,7 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface ActionGroupProps extends HTMLProps<HTMLDivElement> { }
 
-declare const ActionGroup: SFC<ActionGroupProps>;
+declare const ActionGroup: FunctionComponent<ActionGroupProps>;
 
 export default ActionGroup;

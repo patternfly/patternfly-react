@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, FormEvent } from 'react';
+import { FormEvent, FunctionComponent, HTMLProps } from 'react';
 import { Omit } from '../../typeUtils';
 
 export interface TextAreaProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange'> {
@@ -7,6 +7,6 @@ export interface TextAreaProps extends Omit<HTMLProps<HTMLInputElement>, 'onChan
   onChange?(value: string, event: FormEvent<HTMLInputElement>): void;
 }
 
-declare const TextArea: SFC<TextAreaProps>;
+declare const TextArea: FunctionComponent<TextAreaProps>;
 
 export default TextArea;

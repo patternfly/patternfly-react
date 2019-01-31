@@ -1,9 +1,15 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { tableCheck } from '@patternfly/patternfly-next/components/Table/table.css';
+import styles from '@patternfly/patternfly-next/components/Table/table.css';
 import SelectColumn from '../../SelectColumn';
 
 export default (label, { column: { extraParams: { onSelect, rowLabeledBy = 'simple-node' } }, rowIndex, rowData }) => {
+  if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect) {
+    return {
+      component: 'td',
+      scope: ''
+    }
+  }
   const rowId = rowIndex !== undefined ? rowIndex : -1;
   function selectClick(event) {
     let selected = rowIndex === undefined ? event.target.checked : rowData && !rowData.selected;
@@ -19,7 +25,7 @@ export default (label, { column: { extraParams: { onSelect, rowLabeledBy = 'simp
   }
 
   return ({
-    className: css(tableCheck),
+    className: css(styles.tableCheck),
     component: 'td',
     scope: '',
     children: (

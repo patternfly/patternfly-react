@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode, ReactElement, Element } from 'react';
+import { FunctionComponent, HTMLProps, Element, ReactElement } from 'react';
 import { Omit } from '../../typeUtils';
 import { Instance, BasicPlacement } from 'tippy.js';
 
@@ -21,9 +21,9 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   /** Accessible label, required when header is not present */
   'aria-label'?: string;
   /** Header content, leave empty for no header */
-  headerContent?: ReactNode;
+  headerContent?: Element;
   /** Body content */
-  bodyContent: ReactNode;
+  bodyContent: Element;
   /** 
    * True to show the popover programmatically. Used in conjunction with the shouldClose prop.
    * By default, the popover child element handles click events automatically. If you want to control this programmatically,
@@ -56,6 +56,6 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   maxWidth?: '18.75rem';
 }
 
-declare const Popover: SFC<PopoverProps>;
+declare const Popover: FunctionComponent<PopoverProps>;
 
 export default Popover;

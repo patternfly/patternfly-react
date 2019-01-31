@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface ModalContentProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
@@ -12,6 +12,6 @@ export interface ModalContentProps extends HTMLProps<HTMLDivElement> {
   title: string;
 }
 
-declare const ModalContent: SFC<ModalContentProps>;
+declare const ModalContent: FunctionComponent<ModalContentProps>;
 
 export default ModalContent;

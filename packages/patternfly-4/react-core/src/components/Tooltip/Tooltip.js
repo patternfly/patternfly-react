@@ -87,6 +87,8 @@ class Tooltip extends React.Component {
     );
     return (
       <Tippy
+        trigger={'manual'}
+        isVisible
         onCreate={this.storeTippyInstance}
         maxWidth={maxWidth}
         zIndex={zIndex}

@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode, ReactType } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode, ReactType } from 'react';
 
 export interface BreadcrumbHeadingProps extends HTMLProps<HTMLLIElement> {
     children?: ReactNode;
@@ -8,6 +8,6 @@ export interface BreadcrumbHeadingProps extends HTMLProps<HTMLLIElement> {
     component?: ReactType<BreadcrumbHeadingProps>;
 }
 
-declare const BreeadcrumbHeading: SFC<BreadcrumbHeadingProps>;
+declare const BreeadcrumbHeading: FunctionComponent<BreadcrumbHeadingProps>;
 
 export default BreeadcrumbHeading;

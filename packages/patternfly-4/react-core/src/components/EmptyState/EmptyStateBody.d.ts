@@ -1,7 +1,7 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface EmptyStateBodyProps extends HTMLProps<HTMLParagraphElement> {}
 
-declare const EmptyStateBody: SFC<EmptyStateBodyProps>;
+declare const EmptyStateBody: FunctionComponent<EmptyStateBodyProps>;
 
 export default EmptyStateBody;

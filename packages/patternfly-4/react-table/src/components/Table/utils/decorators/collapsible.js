@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { tableToggle } from '@patternfly/patternfly-next/components/Table/table.css';
+import styles from '@patternfly/patternfly-next/components/Table/table.css';
 import CollapseColumn from '../../CollapseColumn';
 import ExpandableRowContent from '../../ExpandableRowContent';
 
@@ -20,7 +20,7 @@ export const collapsible = (
     onCollapse && onCollapse(event, rowIndex, rowData && !rowData.isOpen)
   }
   return {
-    className: css(tableToggle),
+    className: css(styles.tableToggle),
     children: <CollapseColumn aria-labelledby={`${rowLabeledBy}${rowIndex} ${expandId}${rowIndex}`}
       onToggle={onToggle}
       id={expandId + rowIndex}
@@ -33,12 +33,10 @@ export const collapsible = (
 
 export const expandedRow = (colSpan) => {
   const expandedRowFormatter = (value, { rowIndex, rowData, column: { extraParams: { contentId = 'expanded-content' } } }) => {
-    return {
-      ...rowData.hasOwnProperty('parent') ? {
+    return rowData.hasOwnProperty('parent') && {
         colSpan: colSpan,
         children: <ExpandableRowContent id={contentId + rowIndex}>{value.title || value}</ExpandableRowContent>
-      } : value
-    };
-  }
+      }
+  };
   return expandedRowFormatter;
 }

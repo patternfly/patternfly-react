@@ -1,5 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
-import { OneOf } from '../../typeUtils';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface PageSidebarProps extends HTMLProps<HTMLDivElement> {
   className?: string;
@@ -7,6 +6,6 @@ export interface PageSidebarProps extends HTMLProps<HTMLDivElement> {
   isNavOpen?: boolean;
 }
 
-declare const PageSidebar: SFC<PageSidebarProps>;
+declare const PageSidebar: FunctionComponent<PageSidebarProps>;
 
 export default PageSidebar;

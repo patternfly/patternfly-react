@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { Omit, OneOf } from '../../typeUtils';
 import { BaseSizes } from '../../styles/sizes';
 
@@ -13,6 +13,6 @@ export interface TitleProps
   children?: ReactNode;
 }
 
-declare const Title: SFC<TitleProps>;
+declare const Title: FunctionComponent<TitleProps>;
 
 export default Title;

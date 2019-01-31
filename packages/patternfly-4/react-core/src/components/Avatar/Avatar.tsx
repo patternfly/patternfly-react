@@ -21,7 +21,7 @@ export interface AvatarProps extends DetailedHTMLProps<ImgHTMLAttributes<HTMLIma
   alt: string;
 }
 
-const Avatar:React.SFC<AvatarProps> = (props) => (
+const Avatar:React.FunctionComponent<AvatarProps> = (props) => (
   <img {...props} className={css(styles.avatar, props.className)} />
 );
 

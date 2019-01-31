@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.51.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.3...@patternfly/react-core@1.51.4) (2019-01-30)
+
+
+### Bug Fixes
+
+* **AboutModal:** Use paragraph in heading ([#1280](https://github.com/patternfly/patternfly-react/issues/1280)) ([15b4b98](https://github.com/patternfly/patternfly-react/commit/15b4b98))
+
+
+
+
+
+## [1.51.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.2...@patternfly/react-core@1.51.3) (2019-01-29)
+
+
+### Bug Fixes
+
+* **Checkbox:** Adjustments to examples ([#1270](https://github.com/patternfly/patternfly-react/issues/1270)) ([ceb632b](https://github.com/patternfly/patternfly-react/commit/ceb632b)), closes [#1006](https://github.com/patternfly/patternfly-react/issues/1006)
+* **Radio:** Modify examples and aria-label/label ([#1269](https://github.com/patternfly/patternfly-react/issues/1269)) ([168dcaf](https://github.com/patternfly/patternfly-react/commit/168dcaf)), closes [#1007](https://github.com/patternfly/patternfly-react/issues/1007)
+
+
+
+
+
+## [1.51.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.1...@patternfly/react-core@1.51.2) (2019-01-29)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [1.51.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.0...@patternfly/react-core@1.51.1) (2019-01-29)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [1.51.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.50.1...@patternfly/react-core@1.51.0) (2019-01-29)
+
+
+### Bug Fixes
+
+* **Chip:** Replace check for length of chip text with refs/overflow values ([#1262](https://github.com/patternfly/patternfly-react/issues/1262)) ([57fb44f](https://github.com/patternfly/patternfly-react/commit/57fb44f)), closes [#1197](https://github.com/patternfly/patternfly-react/issues/1197)
+
+
+### Features
+
+* **FormSelect:** rename Select components to FormSelect ([#1231](https://github.com/patternfly/patternfly-react/issues/1231)) ([df32933](https://github.com/patternfly/patternfly-react/commit/df32933))
+
+
+
+
+
+## [1.50.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.50.0...@patternfly/react-core@1.50.1) (2019-01-29)
+
+
+### Bug Fixes
+
+* **Page:** improve a11y in sidebar and header ([#1145](https://github.com/patternfly/patternfly-react/issues/1145)) ([274d7f7](https://github.com/patternfly/patternfly-react/commit/274d7f7))
+
+
+
+
+
 # [1.50.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.49.6...@patternfly/react-core@1.50.0) (2019-01-28)
 
 

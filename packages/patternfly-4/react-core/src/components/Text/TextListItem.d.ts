@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
 
 export const TextListItemVariants: {
@@ -13,6 +13,6 @@ export interface TextListItemProps extends HTMLProps<HTMLDivElement> {
   className?: string;
 }
 
-declare const TextListItem: SFC<TextListItemProps>;
+declare const TextListItem: FunctionComponent<TextListItemProps>;
 
 export default TextListItem;

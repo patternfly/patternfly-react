@@ -1,9 +1,9 @@
-import { SFC, HTMLProps, ReactType } from 'react';
+import { FunctionComponent } from 'react';
 import { DropdownItemProps } from './DropdownItem';
 
 export interface SeparatorProps extends DropdownItemProps {
 }
 
-declare const Separator: SFC<SeparatorProps>;
+declare const Separator: FunctionComponent<SeparatorProps>;
 
 export default Separator;

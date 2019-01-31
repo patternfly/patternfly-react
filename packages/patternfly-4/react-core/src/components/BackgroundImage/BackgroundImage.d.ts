@@ -1,5 +1,5 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
-import { Omit, OneOf } from '../../typeUtils';
+import { FunctionComponent, HTMLProps } from 'react';
+import { Omit } from '../../typeUtils';
 
 export const BackgroundImageSrc: {
   xs: 'xs';
@@ -16,6 +16,6 @@ export interface BackgroundImageProps extends Omit<HTMLProps<HTMLDivElement>, 's
   src: string | BackgroundImageSrcMap;
 }
 
-declare const BackgroundImage: SFC<BackgroundImageProps>;
+declare const BackgroundImage: FunctionComponent<BackgroundImageProps>;
 
 export default BackgroundImage;

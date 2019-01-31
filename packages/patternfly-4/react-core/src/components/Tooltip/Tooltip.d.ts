@@ -1,6 +1,6 @@
-import { SFC, HTMLProps, ReactNode, ReactElement, Element } from 'react';
+import { FunctionComponent, HTMLProps, ReactElement, Element } from 'react';
 import { Omit } from '../../typeUtils';
-import { Instance, BasicPlacement } from 'tippy.js';
+import { BasicPlacement } from 'tippy.js';
 
 export const TooltipPosition: {
   top: 'top';
@@ -19,7 +19,7 @@ export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' 
   /** The reference element to which the tooltip is relatively placed to */
   children: Element;
   /** Tooltip content */
-  content: ReactNode;
+  content: Element;
   /** The element to append the tooltip to, defaults to body */
   appendTo?: Element | ((ref: Element) => Element);
   /** z-index of the tooltip */
@@ -28,6 +28,6 @@ export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' 
   maxWidth?: '12.5rem';
 }
 
-declare const Tooltip: SFC<TooltipProps>;
+declare const Tooltip: FunctionComponent<TooltipProps>;
 
 export default Tooltip;

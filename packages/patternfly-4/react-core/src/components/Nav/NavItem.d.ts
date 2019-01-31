@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface NavItemProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode | string;
@@ -10,6 +10,6 @@ export interface NavItemProps extends HTMLProps<HTMLDivElement> {
   itemId?: string | number;
 }
 
-declare const NavItem: SFC<NavItemProps>;
+declare const NavItem: FunctionComponent<NavItemProps>;
 
 export default NavItem;

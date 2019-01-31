@@ -1683,17 +1683,18 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.0.0.tgz#76b0e89e6f8738ca8154195baf5b8e6a80bc9105"
 
-"@patternfly/patternfly-next@1.0.137":
-  version "1.0.137"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.137.tgz#a8ae6c2920cf2152d7c931fb7f888b1d0e3bc4ae"
+"@patternfly/patternfly-next@1.0.148":
+  version "1.0.148"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.148.tgz#c1c87b565a9702651482a56eb391982117c61b03"
 
 "@patternfly/react-core@file:packages/patternfly-4/react-core":
-  version "1.50.0"
+  version "1.51.4"
   dependencies:
-    "@patternfly/react-icons" "^2.10.1"
+    "@patternfly/react-icons" "^2.10.3"
     "@patternfly/react-styles" "^2.3.0"
-    "@patternfly/react-tokens" "^1.10.0"
+    "@patternfly/react-tokens" "^1.10.1"
     "@tippy.js/react" "^1.1.1"
+    emotion "^10.0.6"
     exenv "^1.2.2"
     focus-trap-react "^4.0.1"
     tippy.js "^3.4.1"

@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { Omit } from '../../typeUtils'
 
 export interface FormGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
@@ -11,6 +11,6 @@ export interface FormGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'label'>
   isInline?: boolean;
 }
 
-declare const FormGroup: SFC<FormGroupProps>;
+declare const FormGroup: FunctionComponent<FormGroupProps>;
 
 export default FormGroup;

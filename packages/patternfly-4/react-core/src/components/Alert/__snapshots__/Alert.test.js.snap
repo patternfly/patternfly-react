@@ -324,7 +324,7 @@ exports[`Alert - danger Action and Title 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -488,7 +488,7 @@ exports[`Alert - danger Custom aria label 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -734,7 +734,7 @@ exports[`Alert - danger Title 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -1145,7 +1145,7 @@ exports[`Alert - info Action and Title 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -1309,7 +1309,7 @@ exports[`Alert - info Custom aria label 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -1555,7 +1555,7 @@ exports[`Alert - info Title 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -1966,7 +1966,7 @@ exports[`Alert - success Action and Title 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -2130,7 +2130,7 @@ exports[`Alert - success Custom aria label 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -2376,7 +2376,7 @@ exports[`Alert - success Title 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -2787,7 +2787,7 @@ exports[`Alert - warning Action and Title 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -2951,7 +2951,7 @@ exports[`Alert - warning Custom aria label 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }
@@ -3197,7 +3197,7 @@ exports[`Alert - warning Title 1`] = `
 .pf-c-alert__title {
   display: block;
   grid-area: title;
-  padding: 1rem 1rem 0.5rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   font-size: 1rem;
   color: #004368;
 }

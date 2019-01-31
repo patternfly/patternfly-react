@@ -23,11 +23,11 @@ exports[`AboutModalBoxHeader Test 1`] = `
   <div
     className="pf-c-about-modal-box__header-strapline"
   >
-    <h2
+    <p
       className="pf-c-title"
     >
       trademark
-    </h2>
+    </p>
   </div>
   <Title
     className=""

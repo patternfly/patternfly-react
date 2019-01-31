@@ -1,4 +1,4 @@
-import { SFC, HTMLProps } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 import { OneOf, Omit } from '../../typeUtils';
 
 export const IconSize: {
@@ -15,9 +15,9 @@ export interface IconProps extends Omit<HTMLProps<SVGElement>, 'size'> {
 }
 
 export interface EmptyStateIconProps extends IconProps {
-  icon: string | SFC<IconProps>,
+  icon: string | FunctionComponent<IconProps>,
 }
 
-declare const EmptyStateIcon: SFC<EmptyStateIconProps>;
+declare const EmptyStateIcon: FunctionComponent<EmptyStateIconProps>;
 
 export default EmptyStateIcon;

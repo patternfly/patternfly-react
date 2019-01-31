@@ -1,0 +1,1348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`onSelect callback called when tab selected 1`] = `
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item.pf-m-current {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__list {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+<React.Fragment>
+  <div
+    className="pf-c-tabs"
+    onSelect={
+      [MockFunction] {
+        "calls": Array [
+          Array [
+            undefined,
+            0,
+          ],
+        ],
+        "results": Array [
+          Object {
+            "isThrow": false,
+            "value": undefined,
+          },
+        ],
+      }
+    }
+  >
+    <button
+      aria-label="Scroll left"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </button>
+    <ul
+      className="pf-c-tabs__list"
+      onScroll={[Function]}
+    >
+      <li
+        className="pf-c-tabs__item pf-m-current"
+        key="0"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          className="pf-c-tabs__button"
+          id="pf-tab-0-tab1"
+          onClick={[Function]}
+        >
+          Tab item 1
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="1"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          className="pf-c-tabs__button"
+          id="pf-tab-1-tab2"
+          onClick={[Function]}
+        >
+          Tab item 2
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="2"
+      >
+        <button
+          aria-controls="pf-tab-section-2-tab3"
+          className="pf-c-tabs__button"
+          id="pf-tab-2-tab3"
+          onClick={[Function]}
+        >
+          Tab item 3
+        </button>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll Right"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleRightIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </button>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    className=""
+    hidden={false}
+    id="pf-tab-section-0-tab1"
+    key="0"
+  >
+    Tab 1 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    className=""
+    hidden={true}
+    id="pf-tab-section-1-tab2"
+    key="1"
+  >
+    Tab 2 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    className=""
+    hidden={true}
+    id="pf-tab-section-2-tab3"
+    key="2"
+  >
+    Tab 3 section
+  </section>
+</React.Fragment>
+`;
+
+exports[`should call handleScrollButtons tabs with scrolls 1`] = `
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item.pf-m-current {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__list {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs.pf-m-fill {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+<Tabs
+  activeKey={0}
+  className=""
+  isFilled={true}
+  isSecondary={false}
+  leftScrollAriaLabel="Scroll left"
+  onSelect={[Function]}
+  rightScrollAriaLabel="Scroll Right"
+>
+  <div
+    className="pf-c-tabs pf-m-fill"
+    onSelect={[Function]}
+  >
+    <button
+      aria-label="Scroll left"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 256 512"
+          width="1em"
+        >
+          <path
+            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            transform=""
+          />
+        </svg>
+      </AngleLeftIcon>
+    </button>
+    <ul
+      className="pf-c-tabs__list"
+      onScroll={[Function]}
+    >
+      <li
+        className="pf-c-tabs__item pf-m-current"
+        key="0"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          className="pf-c-tabs__button"
+          id="pf-tab-0-tab1"
+          onClick={[Function]}
+        >
+          Tab item 1
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="1"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          className="pf-c-tabs__button"
+          id="pf-tab-1-tab2"
+          onClick={[Function]}
+        >
+          Tab item 2
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="2"
+      >
+        <button
+          aria-controls="pf-tab-section-2-tab3"
+          className="pf-c-tabs__button"
+          id="pf-tab-2-tab3"
+          onClick={[Function]}
+        >
+          Tab item 3
+        </button>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll Right"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleRightIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 256 512"
+          width="1em"
+        >
+          <path
+            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            transform=""
+          />
+        </svg>
+      </AngleRightIcon>
+    </button>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    className=""
+    hidden={false}
+    id="pf-tab-section-0-tab1"
+    key="0"
+  >
+    Tab 1 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    className=""
+    hidden={true}
+    id="pf-tab-section-1-tab2"
+    key="1"
+  >
+    Tab 2 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    className=""
+    hidden={true}
+    id="pf-tab-section-2-tab3"
+    key="2"
+  >
+    Tab 3 section
+  </section>
+</Tabs>
+`;
+
+exports[`should call scrollLeft tabs with scrolls 1`] = `
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item.pf-m-current {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__list {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs.pf-m-fill {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+<Tabs
+  activeKey={0}
+  className=""
+  isFilled={true}
+  isSecondary={false}
+  leftScrollAriaLabel="Scroll left"
+  onSelect={[Function]}
+  rightScrollAriaLabel="Scroll Right"
+>
+  <div
+    className="pf-c-tabs pf-m-fill"
+    onSelect={[Function]}
+  >
+    <button
+      aria-label="Scroll left"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 256 512"
+          width="1em"
+        >
+          <path
+            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            transform=""
+          />
+        </svg>
+      </AngleLeftIcon>
+    </button>
+    <ul
+      className="pf-c-tabs__list"
+      onScroll={[Function]}
+    >
+      <li
+        className="pf-c-tabs__item pf-m-current"
+        key="0"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          className="pf-c-tabs__button"
+          id="pf-tab-0-tab1"
+          onClick={[Function]}
+        >
+          Tab item 1
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="1"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          className="pf-c-tabs__button"
+          id="pf-tab-1-tab2"
+          onClick={[Function]}
+        >
+          Tab item 2
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="2"
+      >
+        <button
+          aria-controls="pf-tab-section-2-tab3"
+          className="pf-c-tabs__button"
+          id="pf-tab-2-tab3"
+          onClick={[Function]}
+        >
+          Tab item 3
+        </button>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll Right"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleRightIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 256 512"
+          width="1em"
+        >
+          <path
+            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            transform=""
+          />
+        </svg>
+      </AngleRightIcon>
+    </button>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    className=""
+    hidden={false}
+    id="pf-tab-section-0-tab1"
+    key="0"
+  >
+    Tab 1 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    className=""
+    hidden={true}
+    id="pf-tab-section-1-tab2"
+    key="1"
+  >
+    Tab 2 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    className=""
+    hidden={true}
+    id="pf-tab-section-2-tab3"
+    key="2"
+  >
+    Tab 3 section
+  </section>
+</Tabs>
+`;
+
+exports[`should call scrollRight tabs with scrolls 1`] = `
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item.pf-m-current {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__list {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs.pf-m-fill {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+<Tabs
+  activeKey={0}
+  className=""
+  isFilled={true}
+  isSecondary={false}
+  leftScrollAriaLabel="Scroll left"
+  onSelect={[Function]}
+  rightScrollAriaLabel="Scroll Right"
+>
+  <div
+    className="pf-c-tabs pf-m-fill"
+    onSelect={[Function]}
+  >
+    <button
+      aria-label="Scroll left"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 256 512"
+          width="1em"
+        >
+          <path
+            d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+            transform=""
+          />
+        </svg>
+      </AngleLeftIcon>
+    </button>
+    <ul
+      className="pf-c-tabs__list"
+      onScroll={[Function]}
+    >
+      <li
+        className="pf-c-tabs__item pf-m-current"
+        key="0"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          className="pf-c-tabs__button"
+          id="pf-tab-0-tab1"
+          onClick={[Function]}
+        >
+          Tab item 1
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="1"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          className="pf-c-tabs__button"
+          id="pf-tab-1-tab2"
+          onClick={[Function]}
+        >
+          Tab item 2
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="2"
+      >
+        <button
+          aria-controls="pf-tab-section-2-tab3"
+          className="pf-c-tabs__button"
+          id="pf-tab-2-tab3"
+          onClick={[Function]}
+        >
+          Tab item 3
+        </button>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll Right"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleRightIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      >
+        <svg
+          aria-hidden={true}
+          aria-labelledby={null}
+          fill="currentColor"
+          height="1em"
+          role="img"
+          style={
+            Object {
+              "verticalAlign": "-0.125em",
+            }
+          }
+          viewBox="0 0 256 512"
+          width="1em"
+        >
+          <path
+            d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+            transform=""
+          />
+        </svg>
+      </AngleRightIcon>
+    </button>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    className=""
+    hidden={false}
+    id="pf-tab-section-0-tab1"
+    key="0"
+  >
+    Tab 1 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    className=""
+    hidden={true}
+    id="pf-tab-section-1-tab2"
+    key="1"
+  >
+    Tab 2 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    className=""
+    hidden={true}
+    id="pf-tab-section-2-tab3"
+    key="2"
+  >
+    Tab 3 section
+  </section>
+</Tabs>
+`;
+
+exports[`should render filled tabs 1`] = `
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item.pf-m-current {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__list {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs.pf-m-fill {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+<React.Fragment>
+  <div
+    className="pf-c-tabs pf-m-fill"
+    onSelect={[Function]}
+  >
+    <button
+      aria-label="Scroll left"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </button>
+    <ul
+      className="pf-c-tabs__list"
+      onScroll={[Function]}
+    >
+      <li
+        className="pf-c-tabs__item pf-m-current"
+        key="0"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          className="pf-c-tabs__button"
+          id="pf-tab-0-tab1"
+          onClick={[Function]}
+        >
+          Tab item 1
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="1"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          className="pf-c-tabs__button"
+          id="pf-tab-1-tab2"
+          onClick={[Function]}
+        >
+          Tab item 2
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="2"
+      >
+        <button
+          aria-controls="pf-tab-section-2-tab3"
+          className="pf-c-tabs__button"
+          id="pf-tab-2-tab3"
+          onClick={[Function]}
+        >
+          Tab item 3
+        </button>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll Right"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleRightIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </button>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    className=""
+    hidden={false}
+    id="pf-tab-section-0-tab1"
+    key="0"
+  >
+    Tab 1 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    className=""
+    hidden={true}
+    id="pf-tab-section-1-tab2"
+    key="1"
+  >
+    Tab 2 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    className=""
+    hidden={true}
+    id="pf-tab-section-2-tab3"
+    key="2"
+  >
+    Tab 3 section
+  </section>
+</React.Fragment>
+`;
+
+exports[`should render secondary tabs 1`] = `
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item.pf-m-current {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__list {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+<React.Fragment>
+  <div
+    className="pf-c-tabs"
+    onSelect={[Function]}
+  >
+    <button
+      aria-label="Scroll left"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </button>
+    <ul
+      className="pf-c-tabs__list"
+      onScroll={[Function]}
+    >
+      <li
+        className="pf-c-tabs__item pf-m-current"
+        key="0"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          className="pf-c-tabs__button"
+          id="pf-tab-0-tab1"
+          onClick={[Function]}
+        >
+          Tab item 1
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="1"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          className="pf-c-tabs__button"
+          id="pf-tab-1-tab2"
+          onClick={[Function]}
+        >
+          Tab item 2
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="2"
+      >
+        <button
+          aria-controls="pf-tab-section-2-tab3"
+          className="pf-c-tabs__button"
+          id="pf-tab-2-tab3"
+          onClick={[Function]}
+        >
+          Tab item 3
+        </button>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll Right"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleRightIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </button>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    className=""
+    hidden={false}
+    id="pf-tab-section-0-tab1"
+    key="0"
+  >
+    <Tabs
+      activeKey={0}
+      className=""
+      isFilled={false}
+      isSecondary={false}
+      leftScrollAriaLabel="Scroll left"
+      onSelect={[Function]}
+      rightScrollAriaLabel="Scroll Right"
+    >
+      <Tab
+        className=""
+        eventKey={10}
+        id="secondary tab1"
+        title="Secondary Tab 1"
+      >
+        Secondary Tab 1 section
+      </Tab>
+      <Tab
+        className=""
+        eventKey={11}
+        id="secondary tab2"
+        title="Secondary Tab 2"
+      >
+        Secondary Tab 2 section
+      </Tab>
+      <Tab
+        className=""
+        eventKey={12}
+        id="secondary tab3"
+        title="Secondary Tab 3"
+      >
+        Secondary Tab 3 section
+      </Tab>
+    </Tabs>
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    className=""
+    hidden={true}
+    id="pf-tab-section-1-tab2"
+    key="1"
+  >
+    Tab 2 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    className=""
+    hidden={true}
+    id="pf-tab-section-2-tab3"
+    key="2"
+  >
+    Tab 3 section
+  </section>
+</React.Fragment>
+`;
+
+exports[`should render simple tabs 1`] = `
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item.pf-m-current {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  border: 0px;
+}
+.pf-c-tabs__item {
+  display: block;
+}
+.pf-c-tabs__list {
+  display: flex;
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.pf-c-tabs__scroll-button {
+  display: block;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  z-index: 300;
+  width: 2rem;
+  line-height: 1;
+  background-color: #ffffff;
+}
+.pf-c-tabs {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+<React.Fragment>
+  <div
+    className="pf-c-tabs"
+    onSelect={[Function]}
+  >
+    <button
+      aria-label="Scroll left"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleLeftIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </button>
+    <ul
+      className="pf-c-tabs__list"
+      onScroll={[Function]}
+    >
+      <li
+        className="pf-c-tabs__item pf-m-current"
+        key="0"
+      >
+        <button
+          aria-controls="pf-tab-section-0-tab1"
+          className="pf-c-tabs__button"
+          id="pf-tab-0-tab1"
+          onClick={[Function]}
+        >
+          Tab item 1
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="1"
+      >
+        <button
+          aria-controls="pf-tab-section-1-tab2"
+          className="pf-c-tabs__button"
+          id="pf-tab-1-tab2"
+          onClick={[Function]}
+        >
+          Tab item 2
+        </button>
+      </li>
+      <li
+        className="pf-c-tabs__item"
+        key="2"
+      >
+        <button
+          aria-controls="pf-tab-section-2-tab3"
+          className="pf-c-tabs__button"
+          id="pf-tab-2-tab3"
+          onClick={[Function]}
+        >
+          Tab item 3
+        </button>
+      </li>
+    </ul>
+    <button
+      aria-label="Scroll Right"
+      className="pf-c-tabs__scroll-button"
+      onClick={[Function]}
+      variant="plain"
+    >
+      <AngleRightIcon
+        color="currentColor"
+        size="sm"
+        title={null}
+      />
+    </button>
+  </div>
+  <section
+    aria-labelledby="pf-tab-0-tab1"
+    className=""
+    hidden={false}
+    id="pf-tab-section-0-tab1"
+    key="0"
+  >
+    Tab 1 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-1-tab2"
+    className=""
+    hidden={true}
+    id="pf-tab-section-1-tab2"
+    key="1"
+  >
+    Tab 2 section
+  </section>
+  <section
+    aria-labelledby="pf-tab-2-tab3"
+    className=""
+    hidden={true}
+    id="pf-tab-section-2-tab3"
+    key="2"
+  >
+    Tab 3 section
+  </section>
+</React.Fragment>
+`;

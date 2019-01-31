@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface NavGroupProps extends HTMLProps<HTMLDivElement> {
   title: string;
@@ -7,6 +7,6 @@ export interface NavGroupProps extends HTMLProps<HTMLDivElement> {
   id?: string;
 }
 
-declare const NavGroup: SFC<NavGroupProps>;
+declare const NavGroup: FunctionComponent<NavGroupProps>;
 
 export default NavGroup;

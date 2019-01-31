@@ -4,8 +4,8 @@ import {
   TextInput,
   TextArea,
   Form,
-  SelectOption,
-  Select,
+  FormSelectOption,
+  FormSelect,
   Radio,
   Toolbar,
   ToolbarItem,
@@ -81,16 +81,16 @@ class HorizontalForm extends React.Component {
           />
         </FormGroup>
         <FormGroup label="Your title" fieldId="horizontal-form-title">
-          <Select
+          <FormSelect
             value={this.state.value}
             onChange={this.onChange}
             id="horzontal-form-title"
             name="horizontal-form-title"
           >
             {this.options.map((option, index) => (
-              <SelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
+              <FormSelectOption isDisabled={option.disabled} key={index} value={option.value} label={option.label} />
             ))}
-          </Select>
+          </FormSelect>
         </FormGroup>
         <FormGroup label="Your experience" fieldId="horizontal-form-exp">
           <TextArea

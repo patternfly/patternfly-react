@@ -7,6 +7,12 @@ import { TimesCircleIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly-next/components/Chip/chip.css';
 import GenerateId from '../../internal/GenerateId/GenerateId';
 class Chip extends React.Component {
+  span = React.createRef();
+  state = { isTooltipVisible: false };
+
+  componentDidMount() {
+    this.setState({ isTooltipVisible: this.span.current && this.span.current.offsetWidth < this.span.current.scrollWidth });
+  }
 
   renderOverflowChip = () => {
     const { children, className, onClick } = this.props;
@@ -27,12 +33,11 @@ class Chip extends React.Component {
       className,
       onClick,
     } = this.props;
-    const isTooltipVisible = children.length > 16;
-    if (isTooltipVisible) {
+    if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>
           <div className={css(styles.chip, className)}>
-            <span className={css(styles.chipText)} id={randomId}>
+            <span ref={this.span} className={css(styles.chipText)} id={randomId}>
               {children}
             </span>
             <ChipButton onClick={onClick} ariaLabel={closeBtnAriaLabel} id={`remove_${randomId}`} aria-labelledby={`remove_${randomId} ${randomId}`}>
@@ -44,7 +49,7 @@ class Chip extends React.Component {
     } else {
       return (
         <div className={css(styles.chip, className)}>
-          <span className={css(styles.chipText)} id={randomId}>
+          <span ref={this.span} className={css(styles.chipText)} id={randomId}>
             {children}
           </span>
           <ChipButton onClick={onClick} ariaLabel={closeBtnAriaLabel} id={`remove_${randomId}`} aria-labelledby={`remove_${randomId} ${randomId}`}>
@@ -74,7 +79,7 @@ class Chip extends React.Component {
 }
 Chip.propTypes = {
   /** Content rendered inside the chip text */
-  children: PropTypes.string.isRequired,
+  children: PropTypes.string,
   /** Aria Label for close button */
   closeBtnAriaLabel: PropTypes.string,
   /** ID of the chip */

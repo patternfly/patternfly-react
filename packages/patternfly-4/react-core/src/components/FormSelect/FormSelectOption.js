@@ -20,13 +20,13 @@ const defaultProps = {
   isDisabled: false
 };
 
-const SelectOption = ({ className, value, label, isDisabled, ...props }) => (
+const FormSelectOption = ({ className, value, label, isDisabled, ...props }) => (
   <option {...props} className={className} value={value} disabled={isDisabled}>
     {label}
   </option>
 );
 
-SelectOption.propTypes = propTypes;
-SelectOption.defaultProps = defaultProps;
+FormSelectOption.propTypes = propTypes;
+FormSelectOption.defaultProps = defaultProps;
 
-export default SelectOption;
+export default FormSelectOption;
