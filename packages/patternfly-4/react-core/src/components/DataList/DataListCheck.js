@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/DataList/styles.css';
+import styles from '@patternfly/patternfly-next/components/DataList/data-list.css';
 import checkboxStyles from '@patternfly/patternfly-next/components/Check/check.css';
 
 const DataListCheck = ({ className, onChange, isValid, isDisabled, isChecked, checked, ...props }) => (

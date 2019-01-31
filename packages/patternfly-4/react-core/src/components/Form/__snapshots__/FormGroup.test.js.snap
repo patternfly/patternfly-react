@@ -107,7 +107,7 @@ exports[`FormGroup component should render form group invalid variant 1`] = `
 .pf-c-form__helper-text.pf-m-error {
   display: block;
   font-size: 0.875rem;
-  color: #a30000;
+  color: #cc0000;
 }
 .pf-c-form__group {
   display: block;

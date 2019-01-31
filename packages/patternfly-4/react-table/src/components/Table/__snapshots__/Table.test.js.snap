@@ -8,6 +8,34 @@ exports[`Actions table 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
 .pf-c-table__sort {
   display: block;
 }
@@ -35,9 +63,15 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-dropdown__toggle.pf-m-plain {
   display: flex;
@@ -60,9 +94,15 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-dropdown__toggle.pf-m-plain {
   display: flex;
@@ -85,9 +125,15 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-dropdown__toggle.pf-m-plain {
   display: flex;
@@ -110,9 +156,15 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-dropdown__toggle.pf-m-plain {
   display: flex;
@@ -135,9 +187,15 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-dropdown__toggle.pf-m-plain {
   display: flex;
@@ -160,9 +218,15 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-dropdown__toggle.pf-m-plain {
   display: flex;
@@ -185,9 +249,15 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-dropdown__toggle.pf-m-plain {
   display: flex;
@@ -210,9 +280,15 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-dropdown__toggle.pf-m-plain {
   display: flex;
@@ -235,16 +311,22 @@ exports[`Actions table 1`] = `
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
 .pf-c-table__action {
   display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -388,7 +470,7 @@ exports[`Actions table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -730,7 +812,7 @@ exports[`Actions table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -1099,12 +1181,13 @@ exports[`Actions table 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell
@@ -7616,18 +7699,46 @@ exports[`Cell header table 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
-.pf-c-table__sort {
-  display: block;
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -7753,7 +7864,7 @@ exports[`Cell header table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -7951,7 +8062,7 @@ exports[`Cell header table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -8176,12 +8287,13 @@ exports[`Cell header table 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell
@@ -11577,6 +11689,34 @@ exports[`Collapsible nested table 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
 .pf-c-table__sort {
   display: block;
 }
@@ -11599,9 +11739,11 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-button.pf-m-plain.pf-m-expanded {
   display: inline-block;
@@ -11622,32 +11764,40 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__expandable-row-content {
   display: block;
   max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  overflow: auto;
   word-break: break-word;
   border-top-color: transparent;
   border-top-width: 0;
 }
-.pf-c-table__toggle {
+.pf-c-table__expandable-row {
   display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
 }
 .pf-c-table__expandable-row-content {
   display: block;
   max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  overflow: auto;
   word-break: break-word;
   border-top-color: transparent;
   border-top-width: 0;
@@ -11674,22 +11824,25 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__expandable-row-content {
   display: block;
   max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  overflow: auto;
   word-break: break-word;
   border-top-color: transparent;
   border-top-width: 0;
@@ -11702,34 +11855,42 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -11861,7 +12022,7 @@ exports[`Collapsible nested table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -12102,7 +12263,7 @@ exports[`Collapsible nested table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -12381,12 +12542,13 @@ exports[`Collapsible nested table 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell
@@ -12864,6 +13026,7 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
+                  "isExpanded": false,
                   "isOpen": true,
                   "last-commit": Object {
                     "props": undefined,
@@ -13777,6 +13940,7 @@ exports[`Collapsible nested table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
+                      "isExpanded": false,
                       "isOpen": true,
                       "last-commit": Object {
                         "props": undefined,
@@ -13797,12 +13961,13 @@ exports[`Collapsible nested table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+                    isExpanded={false}
                     isOpen={true}
                     onClick={[Function]}
                   >
                     <tr
-                      className=""
-                      hidden={false}
+                      className="pf-c-table__expandable-row"
+                      hidden={true}
                       onClick={[Function]}
                     >
                       <BodyCell
@@ -16536,6 +16701,34 @@ exports[`Collapsible table 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
 .pf-c-table__sort {
   display: block;
 }
@@ -16561,31 +16754,44 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__expandable-row-content {
   display: block;
   max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  overflow: auto;
   word-break: break-word;
   border-top-color: transparent;
   border-top-width: 0;
 }
-.pf-c-table__toggle {
+.pf-c-table__expandable-row.pf-m-expanded {
   display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0.3125rem 0.625rem -0.25rem rgba(3, 3, 3, 0.25);
+  border-bottom-color: #ededed;
+  border-bottom-width: 1px;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
 }
 .pf-c-button.pf-m-plain {
   display: inline-block;
@@ -16603,22 +16809,25 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__expandable-row-content {
   display: block;
   max-height: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  overflow: auto;
   word-break: break-word;
   border-top-color: transparent;
   border-top-width: 0;
@@ -16631,37 +16840,45 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__toggle {
   display: block;
+  vertical-align: top;
 }
 .pf-m-expanded {
   display: block;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -16791,7 +17008,7 @@ exports[`Collapsible table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -17032,7 +17249,7 @@ exports[`Collapsible table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -17311,12 +17528,13 @@ exports[`Collapsible table 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell
@@ -17792,6 +18010,7 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
+                  "isExpanded": true,
                   "last-commit": Object {
                     "props": undefined,
                     "title": "five",
@@ -18702,6 +18921,7 @@ exports[`Collapsible table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
+                      "isExpanded": true,
                       "last-commit": Object {
                         "props": undefined,
                         "title": "five",
@@ -18721,10 +18941,11 @@ exports[`Collapsible table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+                    isExpanded={true}
                     onClick={[Function]}
                   >
                     <tr
-                      className=""
+                      className="pf-c-table__expandable-row pf-m-expanded"
                       hidden={false}
                       onClick={[Function]}
                     >
@@ -21434,12 +21655,18 @@ exports[`Header width table 1`] = `
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table__expandable-row {
+  display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+}
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -21577,7 +21804,7 @@ exports[`Header width table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -21777,7 +22004,7 @@ exports[`Header width table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -22408,6 +22635,7 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
+                  "isExpanded": false,
                   "isOpen": true,
                   "last-commit": Object {
                     "props": undefined,
@@ -23164,6 +23392,7 @@ exports[`Header width table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
+                      "isExpanded": false,
                       "isOpen": true,
                       "last-commit": Object {
                         "props": undefined,
@@ -23184,12 +23413,13 @@ exports[`Header width table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+                    isExpanded={false}
                     isOpen={true}
                     onClick={[Function]}
                   >
                     <tr
-                      className=""
-                      hidden={false}
+                      className="pf-c-table__expandable-row"
+                      hidden={true}
                       onClick={[Function]}
                     >
                       <BodyCell
@@ -25414,9 +25644,11 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__sort-indicator {
   display: block;
@@ -25425,21 +25657,38 @@ exports[`Selectable table 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
-.pf-c-table__sort {
-  display: block;
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-table__check {
+.pf-c-table__sort {
   display: block;
 }
 .pf-c-check__input {
@@ -25449,20 +25698,17 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
-.pf-c-check__input {
+.pf-c-table__expandable-row {
   display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-table__check {
-  display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-table__expandable-row {
   display: block;
@@ -25477,20 +25723,11 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__check {
   display: block;
-}
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-}
-.pf-c-table__check {
-  display: block;
+  vertical-align: top;
 }
 .pf-c-table__expandable-row {
   display: block;
@@ -25505,9 +25742,11 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-check__input {
   display: block;
@@ -25516,9 +25755,11 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-check__input {
   display: block;
@@ -25527,9 +25768,11 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-check__input {
   display: block;
@@ -25538,16 +25781,18 @@ exports[`Selectable table 1`] = `
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
 .pf-c-table__check {
   display: block;
+  vertical-align: top;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -25680,7 +25925,7 @@ exports[`Selectable table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -25915,7 +26160,7 @@ exports[`Selectable table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -26205,12 +26450,13 @@ exports[`Selectable table 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell
@@ -26682,6 +26928,7 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
+                  "isExpanded": false,
                   "isOpen": true,
                   "last-commit": Object {
                     "props": undefined,
@@ -27539,6 +27786,7 @@ exports[`Selectable table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
+                      "isExpanded": false,
                       "isOpen": true,
                       "last-commit": Object {
                         "props": undefined,
@@ -27559,16 +27807,16 @@ exports[`Selectable table 1`] = `
                   rowKey="1-row"
                 >
                   <RowWrapper
+                    isExpanded={false}
                     isOpen={true}
                     onClick={[Function]}
                   >
                     <tr
-                      className=""
-                      hidden={false}
+                      className="pf-c-table__expandable-row"
+                      hidden={true}
                       onClick={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__check"
                         component="td"
                         data-key={0}
                         data-label=""
@@ -27576,27 +27824,9 @@ exports[`Selectable table 1`] = `
                         scope=""
                       >
                         <td
-                          className="pf-c-table__check"
                           data-key={0}
                           scope=""
-                        >
-                          <SelectColumn
-                            aria-labelledby="simple-node1"
-                            checked={false}
-                            className=""
-                            name="checkrow1"
-                            onSelect={[Function]}
-                          >
-                            <input
-                              aria-labelledby="simple-node1"
-                              checked={false}
-                              className="pf-c-check__input"
-                              name="checkrow1"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                          </SelectColumn>
-                        </td>
+                        />
                       </BodyCell>
                       <BodyCell
                         component="td"
@@ -27941,7 +28171,6 @@ exports[`Selectable table 1`] = `
                       onClick={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__check"
                         component="td"
                         data-key={0}
                         data-label=""
@@ -27949,27 +28178,9 @@ exports[`Selectable table 1`] = `
                         scope=""
                       >
                         <td
-                          className="pf-c-table__check"
                           data-key={0}
                           scope=""
-                        >
-                          <SelectColumn
-                            aria-labelledby="simple-node2"
-                            checked={false}
-                            className=""
-                            name="checkrow2"
-                            onSelect={[Function]}
-                          >
-                            <input
-                              aria-labelledby="simple-node2"
-                              checked={false}
-                              className="pf-c-check__input"
-                              name="checkrow2"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                          </SelectColumn>
-                        </td>
+                        />
                       </BodyCell>
                       <BodyCell
                         component="td"
@@ -28686,7 +28897,6 @@ exports[`Selectable table 1`] = `
                       onClick={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__check"
                         component="td"
                         data-key={0}
                         data-label=""
@@ -28694,27 +28904,9 @@ exports[`Selectable table 1`] = `
                         scope=""
                       >
                         <td
-                          className="pf-c-table__check"
                           data-key={0}
                           scope=""
-                        >
-                          <SelectColumn
-                            aria-labelledby="simple-node4"
-                            checked={false}
-                            className=""
-                            name="checkrow4"
-                            onSelect={[Function]}
-                          >
-                            <input
-                              aria-labelledby="simple-node4"
-                              checked={false}
-                              className="pf-c-check__input"
-                              name="checkrow4"
-                              onChange={[Function]}
-                              type="checkbox"
-                            />
-                          </SelectColumn>
-                        </td>
+                        />
                       </BodyCell>
                       <BodyCell
                         component="td"
@@ -30275,12 +30467,12 @@ exports[`Selectable table 1`] = `
 `;
 
 exports[`Simple table aria-label 1`] = `
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -30400,7 +30592,7 @@ exports[`Simple table aria-label 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -30596,7 +30788,7 @@ exports[`Simple table aria-label 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -34149,12 +34341,12 @@ exports[`Simple table aria-label 1`] = `
 `;
 
 exports[`Simple table caption 1`] = `
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -34273,7 +34465,7 @@ exports[`Simple table caption 1`] = `
   variant={null}
 >
   <Provider
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -34468,7 +34660,7 @@ exports[`Simple table caption 1`] = `
     role="grid"
   >
     <table
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <caption>
@@ -38024,12 +38216,12 @@ exports[`Simple table caption 1`] = `
 `;
 
 exports[`Simple table header 1`] = `
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -38155,7 +38347,7 @@ exports[`Simple table header 1`] = `
     Header title
   </h4>
   <Provider
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -38350,7 +38542,7 @@ exports[`Simple table header 1`] = `
     role="grid"
   >
     <table
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -41910,18 +42102,46 @@ exports[`Sortable table 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
-.pf-c-table__sort {
-  display: block;
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -42046,7 +42266,7 @@ exports[`Sortable table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -42243,7 +42463,7 @@ exports[`Sortable table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -42467,12 +42687,13 @@ exports[`Sortable table 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell
@@ -45858,21 +46079,49 @@ exports[`Table variants Breakpoint - grid 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
-.pf-c-table__sort {
-  display: block;
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table.pf-m-grid {
-  display: grid;
-  width: 100%;
-  background-color: transparent;
+.pf-c-table__sort {
+  display: block;
 }
-.pf-c-table.pf-m-grid {
-  display: grid;
+.pf-c-table {
+  display: block;
   width: 100%;
-  background-color: transparent;
+  background-color: #ffffff;
+}
+.pf-c-table {
+  display: block;
+  width: 100%;
+  background-color: #ffffff;
 }
 
 <Table
@@ -45992,7 +46241,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -46189,7 +46438,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -46413,12 +46662,13 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell
@@ -49804,18 +50054,46 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
-.pf-c-table__sort {
-  display: block;
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table.pf-m-grid-lg {
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-lg {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -49938,7 +50216,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-lg"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -50135,7 +50413,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-lg"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -50359,12 +50637,13 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell
@@ -53750,18 +54029,46 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
-.pf-c-table__sort {
-  display: block;
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md {
+.pf-c-table {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -53884,7 +54191,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md"
+    className="pf-c-table"
     columns={
       Array [
         Object {
@@ -54081,7 +54388,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md"
+      className="pf-c-table"
       role="grid"
     >
       <TableHeader
@@ -54305,12 +54612,13 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell
@@ -57696,18 +58004,46 @@ exports[`Table variants Size - compact 1`] = `
   color: #d1d1d1;
   pointer-events: none;
 }
-.pf-c-table__sort {
-  display: block;
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
 }
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table.pf-m-grid-md.pf-m-compact {
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table.pf-m-compact {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-grid-md.pf-m-compact {
+.pf-c-table.pf-m-compact {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -57830,7 +58166,7 @@ exports[`Table variants Size - compact 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md pf-m-compact"
+    className="pf-c-table pf-m-compact"
     columns={
       Array [
         Object {
@@ -58027,7 +58363,7 @@ exports[`Table variants Size - compact 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md pf-m-compact"
+      className="pf-c-table pf-m-compact"
       role="grid"
     >
       <TableHeader
@@ -58251,12 +58587,13 @@ exports[`Table variants Size - compact 1`] = `
                       scope="col"
                     >
                       <SortColumn
-                        className=""
+                        className="pf-c-button pf-m-plain"
                         isSortedBy={false}
                         onSort={[Function]}
+                        sortDirection=""
                       >
                         <button
-                          className=""
+                          className="pf-c-button pf-m-plain"
                           onClick={[Function]}
                         >
                           Header cell

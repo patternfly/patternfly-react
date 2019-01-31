@@ -25,7 +25,9 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 }
 .pf-c-page__sidebar.pf-m-expanded {
   display: block;
-  grid-area: 2 / 1;
+  grid-area: nav;
+  grid-row-start: 2;
+  grid-column-start: 1;
   z-index: 200;
   width: 80%;
   padding-top: 1rem;
@@ -40,25 +42,21 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
-  height: 100%;
 }
 .pf-c-page__main-section.pf-m-light {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
-  height: 100%;
 }
 .pf-c-page__main-section.pf-m-dark-200 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
-  height: 100%;
 }
 .pf-c-page__main-section.pf-m-dark-100 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
-  height: 100%;
 }
 .pf-c-page__main {
   display: flex;
@@ -70,6 +68,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 }
 .pf-c-page.my-page-class {
   display: grid;
+  height: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr;
   grid-template-areas: "header" "main";
@@ -233,7 +232,9 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 .pf-c-page__sidebar.pf-m-expanded {
   display: block;
-  grid-area: 2 / 1;
+  grid-area: nav;
+  grid-row-start: 2;
+  grid-column-start: 1;
   z-index: 200;
   width: 80%;
   padding-top: 1rem;
@@ -248,25 +249,21 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
-  height: 100%;
 }
 .pf-c-page__main-section.pf-m-light {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
-  height: 100%;
 }
 .pf-c-page__main-section.pf-m-dark-200 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
-  height: 100%;
 }
 .pf-c-page__main-section.pf-m-dark-100 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
-  height: 100%;
 }
 .pf-c-page__main {
   display: flex;
@@ -278,6 +275,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 .pf-c-page.my-page-class {
   display: grid;
+  height: 100%;
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr;
   grid-template-areas: "header" "main";

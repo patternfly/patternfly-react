@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.51.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.3...@patternfly/react-core@1.51.4) (2019-01-30)
+
+
+### Bug Fixes
+
+* **AboutModal:** Use paragraph in heading ([#1280](https://github.com/patternfly/patternfly-react/issues/1280)) ([15b4b98](https://github.com/patternfly/patternfly-react/commit/15b4b98))
+
+
+
+
+
 ## [1.51.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.2...@patternfly/react-core@1.51.3) (2019-01-29)
 
 

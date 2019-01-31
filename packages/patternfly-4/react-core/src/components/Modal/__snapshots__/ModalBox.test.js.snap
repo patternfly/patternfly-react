@@ -6,9 +6,10 @@ exports[`ModalBox Test 1`] = `
   position: relative;
   z-index: 600;
   flex-direction: column;
-  max-width: calc(100% - 1rem - 1rem);
-  min-height: calc(undefined + undefined + undefined + undefined + undefined + undefined + calc(1rem * 4 * 1.5));
+  width: 100%;
+  max-width: calc(100% - undefined - undefined);
   max-height: calc(100vh - 3rem);
+  padding: 2rem 2rem 2rem 2rem;
   background-color: #ffffff;
   border: 1px solid transparent;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
@@ -31,9 +32,10 @@ exports[`ModalBox Test isLarge 1`] = `
   position: relative;
   z-index: 600;
   flex-direction: column;
-  max-width: calc(100% - 1rem - 1rem);
-  min-height: calc(undefined + undefined + undefined + undefined + undefined + undefined + calc(1rem * 4 * 1.5));
+  width: 100%;
+  max-width: calc(100% - undefined - undefined);
   max-height: calc(100vh - 3rem);
+  padding: 2rem 2rem 2rem 2rem;
   background-color: #ffffff;
   border: 1px solid transparent;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
@@ -56,9 +58,10 @@ exports[`ModalBox Test isOpen 1`] = `
   position: relative;
   z-index: 600;
   flex-direction: column;
-  max-width: calc(100% - 1rem - 1rem);
-  min-height: calc(undefined + undefined + undefined + undefined + undefined + undefined + calc(1rem * 4 * 1.5));
+  width: 100%;
+  max-width: calc(100% - undefined - undefined);
   max-height: calc(100vh - 3rem);
+  padding: 2rem 2rem 2rem 2rem;
   background-color: #ffffff;
   border: 1px solid transparent;
   box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
