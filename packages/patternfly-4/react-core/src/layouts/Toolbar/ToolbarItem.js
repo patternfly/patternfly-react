@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from './toolbar.css';
 import PropTypes from 'prop-types';
+import './toolbar.css';
 
 const propTypes = {
   /** Anything that can be rendered as toolbar item content */
@@ -18,7 +18,7 @@ const defaultProps = {
 };
 
 const ToolbarItem = ({ children, className, ...props }) => (
-  <div {...props} className={css(styles.toolbarItem, className)}>
+  <div {...props} className={css('pf-l-toolbar__item', className)}>
     {children}
   </div>
 );

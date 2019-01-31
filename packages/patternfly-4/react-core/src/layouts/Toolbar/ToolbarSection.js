@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from './toolbar.css';
 import PropTypes from 'prop-types';
+import './toolbar.css';
 
 const propTypes = {
   /** Anything that can be rendered as toolbar section */
@@ -26,7 +26,7 @@ const defaultProps = {
 };
 
 const ToolbarSection = ({ children, className, ...props }) => (
-  <section {...props} className={css(styles.toolbarSection, className)}>
+  <section {...props} className={css('pf-l-toolbar__section', className)}>
     {children}
   </section>
 );
