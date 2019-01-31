@@ -32,5 +32,4 @@ export * from './Text';
 export * from './TextArea';
 export * from './TextInput';
 export * from './Title';
-export * from './Toolbar';
 export * from './Tooltip';

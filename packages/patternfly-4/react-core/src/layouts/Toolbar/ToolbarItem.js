@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/layouts/Toolbar/toolbar.css';
+import styles from './toolbar.css';
 import PropTypes from 'prop-types';
 
 const propTypes = {
