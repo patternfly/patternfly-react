@@ -14,9 +14,7 @@ export default (
   }
 ) => {
   const isSortedBy = sortBy && columnIndex === sortBy.index;
-  const direction = sortBy && sortBy.direction === SortByDirection.asc ?
-    styles.modifiers.ascending :
-    styles.modifiers.descending;
+  const direction = sortBy && sortBy.direction === SortByDirection.asc ? modifiers.ascending : modifiers.descending;
   function sortClicked(event) {
     let reversedDirection;
     if (!isSortedBy) {
@@ -26,6 +24,7 @@ export default (
     }
     onSort && onSort(event, columnIndex, reversedDirection);
   }
+  console.log(modifiers);
 
   return {
     className: css(tableSort, isSortedBy && direction),
