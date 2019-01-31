@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
+import dropdownStyles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
+import appLauncherStyles from '@patternfly/patternfly/components/AppLauncher/app-launcher.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../helpers/componentShape';
@@ -77,17 +78,25 @@ class DropdownItem extends React.Component {
       context,
       onClick,
       component: Component,
+      isAppLauncher,
       isDisabled,
       index,
       ...props
     } = this.props;
     const additionalProps = props;
+    let classes;
     if (Component === 'a') {
       additionalProps['aria-disabled'] = isDisabled;
       additionalProps.tabIndex = isDisabled ? -1 : additionalProps.tabIndex;
     } else if (Component === 'button') {
       additionalProps.disabled = isDisabled;
       additionalProps.type = additionalProps.type || 'button';
+    }
+
+    if (isAppLauncher) {
+      classes = css(appLauncherStyles.appLauncherMenuItem, isDisabled && appLauncherStyles.modifiers.disabled, isHovered && appLauncherStyles.modifiers.hover, className);
+    } else {
+      this.props.role === "separator" ?  classes = className : classes = css(dropdownStyles.dropdownMenuItem, isDisabled && dropdownStyles.modifiers.disabled, isHovered && dropdownStyles.modifiers.hover, className);
     }
     return (
       <DropdownContext.Consumer>
@@ -97,8 +106,8 @@ class DropdownItem extends React.Component {
               React.Children.map(children, child =>
                 React.cloneElement(child, {
                   className: `${css(
-                    isDisabled && styles.modifiers.disabled,
-                    isHovered && styles.modifiers.hover,
+                    isDisabled && dropdownStyles.modifiers.disabled,
+                    isHovered && dropdownStyles.modifiers.hover,
                     className
                   )} ${child.props.className}`,
                   ref: this.ref,
@@ -108,13 +117,13 @@ class DropdownItem extends React.Component {
                       onClick && onClick(event);
                       onSelect && onSelect(event);
                     }
-                  }
+                  },
                 })
               )
             ) : (
               <Component
                 {...additionalProps}
-                className={css(isDisabled && styles.modifiers.disabled, isHovered && styles.modifiers.hover, className)}
+                className={classes}
                 ref={this.ref}
                 onKeyDown={this.onKeyDown}
                 onClick={event => {

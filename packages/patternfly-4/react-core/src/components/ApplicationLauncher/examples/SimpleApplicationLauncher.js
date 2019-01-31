@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ApplicationLauncher, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
+import { ApplicationLauncher, DropdownItem } from '@patternfly/react-core';
 
 export default class SimpleApplicationLauncher extends Component {
   state = {
@@ -21,22 +21,21 @@ export default class SimpleApplicationLauncher extends Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="application_1" component="button">
+      <DropdownItem key="application_1" component="a">
         Application 1
       </DropdownItem>,
-      <DropdownItem key="application_2" component="button">
+      <DropdownItem key="application_2" component="a">
         Application 2
       </DropdownItem>,
-      <DropdownItem key="application_3" component="button">
+      <DropdownItem key="application_3" component="a">
         Application 3
       </DropdownItem>,
-      <DropdownItem key="disabled_application_4" isDisabled component="button">
+      <DropdownItem key="disabled_application_4" isDisabled component="a">
         Unavailable Application
       </DropdownItem>
     ];
     return (
       <ApplicationLauncher
-        aria-label="My Application Launcher"
         onSelect={this.onSelect}
         onToggle={this.onToggle}
         isOpen={isOpen}

@@ -640,11 +640,59 @@ exports[`KebabToggle expanded 1`] = `
   line-height: 1.5;
   background-color: transparent;
 }
-.pf-m-disabled {
+.pf-c-dropdown__menu-item {
   display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
 }
-.pf-m-disabled {
+.pf-c-dropdown__menu-item {
   display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+}
+.pf-c-dropdown__menu-item.pf-m-disabled {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  pointer-events: none;
+}
+.pf-c-dropdown__menu-item.pf-m-disabled {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  pointer-events: none;
 }
 .pf-c-dropdown__separator {
   display: block;
@@ -659,6 +707,32 @@ exports[`KebabToggle expanded 1`] = `
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   background-color: #ededed;
+}
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+}
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -917,7 +991,7 @@ exports[`KebabToggle expanded 1`] = `
           >
             <a
               aria-disabled={false}
-              className=""
+              className="pf-c-dropdown__menu-item"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -946,7 +1020,7 @@ exports[`KebabToggle expanded 1`] = `
             role="none"
           >
             <button
-              className=""
+              className="pf-c-dropdown__menu-item"
               disabled={false}
               href="#"
               onClick={[Function]}
@@ -978,7 +1052,7 @@ exports[`KebabToggle expanded 1`] = `
           >
             <a
               aria-disabled={true}
-              className="pf-m-disabled"
+              className="pf-c-dropdown__menu-item pf-m-disabled"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1008,7 +1082,7 @@ exports[`KebabToggle expanded 1`] = `
             role="none"
           >
             <button
-              className="pf-m-disabled"
+              className="pf-c-dropdown__menu-item pf-m-disabled"
               disabled={true}
               href="#"
               onClick={[Function]}
@@ -1078,7 +1152,7 @@ exports[`KebabToggle expanded 1`] = `
           >
             <a
               aria-disabled={false}
-              className=""
+              className="pf-c-dropdown__menu-item"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1107,7 +1181,7 @@ exports[`KebabToggle expanded 1`] = `
             role="none"
           >
             <button
-              className=""
+              className="pf-c-dropdown__menu-item"
               disabled={false}
               href="#"
               onClick={[Function]}
@@ -2509,11 +2583,59 @@ exports[`dropdown expanded 1`] = `
   line-height: 1.5;
   background-color: transparent;
 }
-.pf-m-disabled {
+.pf-c-dropdown__menu-item {
   display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
 }
-.pf-m-disabled {
+.pf-c-dropdown__menu-item {
   display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+}
+.pf-c-dropdown__menu-item.pf-m-disabled {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  pointer-events: none;
+}
+.pf-c-dropdown__menu-item.pf-m-disabled {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  pointer-events: none;
 }
 .pf-c-dropdown__separator {
   display: block;
@@ -2528,6 +2650,32 @@ exports[`dropdown expanded 1`] = `
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   background-color: #ededed;
+}
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+}
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -2793,7 +2941,7 @@ exports[`dropdown expanded 1`] = `
           >
             <a
               aria-disabled={false}
-              className=""
+              className="pf-c-dropdown__menu-item"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2822,7 +2970,7 @@ exports[`dropdown expanded 1`] = `
             role="none"
           >
             <button
-              className=""
+              className="pf-c-dropdown__menu-item"
               disabled={false}
               href="#"
               onClick={[Function]}
@@ -2854,7 +3002,7 @@ exports[`dropdown expanded 1`] = `
           >
             <a
               aria-disabled={true}
-              className="pf-m-disabled"
+              className="pf-c-dropdown__menu-item pf-m-disabled"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2884,7 +3032,7 @@ exports[`dropdown expanded 1`] = `
             role="none"
           >
             <button
-              className="pf-m-disabled"
+              className="pf-c-dropdown__menu-item pf-m-disabled"
               disabled={true}
               href="#"
               onClick={[Function]}
@@ -2954,7 +3102,7 @@ exports[`dropdown expanded 1`] = `
           >
             <a
               aria-disabled={false}
-              className=""
+              className="pf-c-dropdown__menu-item"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2983,7 +3131,7 @@ exports[`dropdown expanded 1`] = `
             role="none"
           >
             <button
-              className=""
+              className="pf-c-dropdown__menu-item"
               disabled={false}
               href="#"
               onClick={[Function]}

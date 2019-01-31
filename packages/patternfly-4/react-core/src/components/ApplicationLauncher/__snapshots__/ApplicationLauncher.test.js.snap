@@ -1,301 +1,113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ApplicationLauncher dropup + right aligned 1`] = `
-<Dropdown
-  className=""
-  direction="up"
-  dropdownItems={
-    Array [
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={true}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={true}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
-  isOpen={false}
-  isPlain={true}
-  onSelect={[Function]}
-  position="right"
-  toggle={
-    <DropdownToggle
-      aria-label="Application Launcher"
-      className=""
-      iconComponent={null}
-      id=""
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <ThIcon
-        color="currentColor"
-        size="sm"
-        title={null}
-      />
-    </DropdownToggle>
-  }
-/>
+.pf-c-app-launcher {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<div
+  className="pf-c-app-launcher"
+>
+  <ApplicationLauncherToggle
+    aria-label="Actions"
+    ariaHasPopup={true}
+    className=""
+    id="pf-toggle-id-3"
+    isActive={false}
+    isFocused={false}
+    isHovered={false}
+    isOpen={false}
+    isPlain={true}
+    key=".0"
+    onEnter={[Function]}
+    onToggle={[Function]}
+    parentRef={null}
+  >
+    <ThIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </ApplicationLauncherToggle>
+</div>
 `;
 
 exports[`ApplicationLauncher dropup 1`] = `
-<Dropdown
-  className=""
-  direction="up"
-  dropdownItems={
-    Array [
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={true}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={true}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
-  isOpen={false}
-  isPlain={true}
-  onSelect={[Function]}
-  position="left"
-  toggle={
-    <DropdownToggle
-      aria-label="Application Launcher"
-      className=""
-      iconComponent={null}
-      id=""
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <ThIcon
-        color="currentColor"
-        size="sm"
-        title={null}
-      />
-    </DropdownToggle>
-  }
-/>
+.pf-c-app-launcher {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<div
+  className="pf-c-app-launcher"
+>
+  <ApplicationLauncherToggle
+    aria-label="Actions"
+    ariaHasPopup={true}
+    className=""
+    id="pf-toggle-id-2"
+    isActive={false}
+    isFocused={false}
+    isHovered={false}
+    isOpen={false}
+    isPlain={true}
+    key=".0"
+    onEnter={[Function]}
+    onToggle={[Function]}
+    parentRef={null}
+  >
+    <ThIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </ApplicationLauncherToggle>
+</div>
 `;
 
 exports[`ApplicationLauncher expanded 1`] = `
-<Dropdown
-  className=""
-  direction="down"
-  dropdownItems={
-    Array [
+.pf-c-app-launcher.pf-m-expanded {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<div
+  className="pf-c-app-launcher pf-m-expanded"
+>
+  <ApplicationLauncherToggle
+    aria-label="Actions"
+    ariaHasPopup={true}
+    className=""
+    id="pf-toggle-id-4"
+    isActive={false}
+    isFocused={false}
+    isHovered={false}
+    isOpen={true}
+    isPlain={true}
+    key=".0"
+    onEnter={[Function]}
+    onToggle={[Function]}
+    parentRef={null}
+  >
+    <ThIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </ApplicationLauncherToggle>
+  <[object Object]
+    value={[Function]}
+  >
+    <ApplicationLauncherMenu
+      aria-labelledby="Actions"
+      className=""
+      isOpen={true}
+      position="left"
+    >
       <DropdownItem
         className=""
         component="a"
@@ -309,10 +121,11 @@ exports[`ApplicationLauncher expanded 1`] = `
         index={-1}
         isDisabled={false}
         isHovered={false}
+        key="link"
         onClick={[Function]}
       >
         Link
-      </DropdownItem>,
+      </DropdownItem>
       <DropdownItem
         className=""
         component="button"
@@ -326,10 +139,11 @@ exports[`ApplicationLauncher expanded 1`] = `
         index={-1}
         isDisabled={false}
         isHovered={false}
+        key="action"
         onClick={[Function]}
       >
         Action
-      </DropdownItem>,
+      </DropdownItem>
       <DropdownItem
         className=""
         component="a"
@@ -343,10 +157,11 @@ exports[`ApplicationLauncher expanded 1`] = `
         index={-1}
         isDisabled={true}
         isHovered={false}
+        key="disabled link"
         onClick={[Function]}
       >
         Disabled Link
-      </DropdownItem>,
+      </DropdownItem>
       <DropdownItem
         className=""
         component="button"
@@ -360,17 +175,19 @@ exports[`ApplicationLauncher expanded 1`] = `
         index={-1}
         isDisabled={true}
         isHovered={false}
+        key="disabled action"
         onClick={[Function]}
       >
         Disabled Action
-      </DropdownItem>,
+      </DropdownItem>
       <Separator
         className=""
         component="a"
         href="#"
         isDisabled={false}
         isHovered={false}
-      />,
+        key="separator"
+      />
       <DropdownItem
         className=""
         component="a"
@@ -384,10 +201,11 @@ exports[`ApplicationLauncher expanded 1`] = `
         index={-1}
         isDisabled={false}
         isHovered={false}
+        key="separated link"
         onClick={[Function]}
       >
         Separated Link
-      </DropdownItem>,
+      </DropdownItem>
       <DropdownItem
         className=""
         component="button"
@@ -401,326 +219,80 @@ exports[`ApplicationLauncher expanded 1`] = `
         index={-1}
         isDisabled={false}
         isHovered={false}
+        key="separated action"
         onClick={[Function]}
       >
         Separated Action
-      </DropdownItem>,
-    ]
-  }
-  isOpen={true}
-  isPlain={true}
-  onSelect={[Function]}
-  position="left"
-  toggle={
-    <DropdownToggle
-      aria-label="Application Launcher"
-      className=""
-      iconComponent={null}
-      id=""
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <ThIcon
-        color="currentColor"
-        size="sm"
-        title={null}
-      />
-    </DropdownToggle>
-  }
-/>
+      </DropdownItem>
+    </ApplicationLauncherMenu>
+  </[object Object]>
+</div>
 `;
 
 exports[`ApplicationLauncher regular 1`] = `
-<Dropdown
-  className=""
-  direction="down"
-  dropdownItems={
-    Array [
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={true}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={true}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
-  isOpen={false}
-  isPlain={true}
-  onSelect={[Function]}
-  position="left"
-  toggle={
-    <DropdownToggle
-      aria-label="Application Launcher"
-      className=""
-      iconComponent={null}
-      id=""
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <ThIcon
-        color="currentColor"
-        size="sm"
-        title={null}
-      />
-    </DropdownToggle>
-  }
-/>
+.pf-c-app-launcher {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<div
+  className="pf-c-app-launcher"
+>
+  <ApplicationLauncherToggle
+    aria-label="Actions"
+    ariaHasPopup={true}
+    className=""
+    id="pf-toggle-id-0"
+    isActive={false}
+    isFocused={false}
+    isHovered={false}
+    isOpen={false}
+    isPlain={true}
+    key=".0"
+    onEnter={[Function]}
+    onToggle={[Function]}
+    parentRef={null}
+  >
+    <ThIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </ApplicationLauncherToggle>
+</div>
 `;
 
 exports[`ApplicationLauncher right aligned 1`] = `
-<Dropdown
-  className=""
-  direction="down"
-  dropdownItems={
-    Array [
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Action
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={true}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Disabled Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={true}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Disabled Action
-      </DropdownItem>,
-      <Separator
-        className=""
-        component="a"
-        href="#"
-        isDisabled={false}
-        isHovered={false}
-      />,
-      <DropdownItem
-        className=""
-        component="a"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Separated Link
-      </DropdownItem>,
-      <DropdownItem
-        className=""
-        component="button"
-        context={
-          Object {
-            "keyHandler": [Function],
-            "sendRef": [Function],
-          }
-        }
-        href="#"
-        index={-1}
-        isDisabled={false}
-        isHovered={false}
-        onClick={[Function]}
-      >
-        Separated Action
-      </DropdownItem>,
-    ]
-  }
-  isOpen={false}
-  isPlain={true}
-  onSelect={[Function]}
-  position="right"
-  toggle={
-    <DropdownToggle
-      aria-label="Application Launcher"
-      className=""
-      iconComponent={null}
-      id=""
-      isActive={false}
-      isFocused={false}
-      isHovered={false}
-      isOpen={false}
-      isPlain={false}
-      onToggle={[Function]}
-      parentRef={null}
-    >
-      <ThIcon
-        color="currentColor"
-        size="sm"
-        title={null}
-      />
-    </DropdownToggle>
-  }
-/>
+.pf-c-app-launcher {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+<div
+  className="pf-c-app-launcher"
+>
+  <ApplicationLauncherToggle
+    aria-label="Actions"
+    ariaHasPopup={true}
+    className=""
+    id="pf-toggle-id-1"
+    isActive={false}
+    isFocused={false}
+    isHovered={false}
+    isOpen={false}
+    isPlain={true}
+    key=".0"
+    onEnter={[Function]}
+    onToggle={[Function]}
+    parentRef={null}
+  >
+    <ThIcon
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+  </ApplicationLauncherToggle>
+</div>
 `;
