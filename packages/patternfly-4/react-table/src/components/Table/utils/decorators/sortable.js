@@ -24,7 +24,6 @@ export default (
     }
     onSort && onSort(event, columnIndex, reversedDirection);
   }
-  console.log(modifiers);
 
   return {
     className: css(tableSort, isSortedBy && direction),
@@ -32,6 +31,7 @@ export default (
     children: (
       <SortColumn
         isSortedBy={isSortedBy}
+        sortDirection={isSortedBy ? sortBy.direction : ''}
         onSort={sortClicked}
         className={css(buttonStyles.button, buttonStyles.modifiers.plain)}
       >

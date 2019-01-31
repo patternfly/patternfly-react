@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AngleUpIcon, SortIcon } from '@patternfly/react-icons';
+import { AngleUpIcon, AngleDownIcon, SortIcon } from '@patternfly/react-icons';
 import { css } from '@patternfly/react-styles';
 import { tableSortIndicator } from '@patternfly/patternfly-next/components/Table/table.css';
 
@@ -8,13 +8,15 @@ const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   isSortedBy: PropTypes.bool,
-  onSort: PropTypes.func
+  onSort: PropTypes.func,
+  sortDirection: PropTypes.string,
 };
 const defaultProps = {
   children: null,
   className: '',
   isSortedBy: false,
-  onSort: null
+  onSort: null,
+  sortDirection: ''
 };
 
 export const SortByDirection = {
@@ -22,8 +24,8 @@ export const SortByDirection = {
   desc: 'desc'
 };
 
-const SortColumn = ({ isSortedBy, children, className, onSort, ...props }) => {
-  const SortedByIcon = isSortedBy ? AngleUpIcon : SortIcon;
+const SortColumn = ({ isSortedBy, children, className, onSort, sortDirection, ...props }) => {
+  const SortedByIcon = isSortedBy ? (sortDirection === 'asc' ? AngleUpIcon : AngleDownIcon) : SortIcon;
   return (
     <button {...props} className={css(className)} onClick={event => onSort && onSort(event)}>
       {children}

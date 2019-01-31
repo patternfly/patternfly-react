@@ -11,6 +11,7 @@ export interface SortColumn extends HTMLProps<HTMLButtonElement> {
   className?: string;
   isSortedBy?: Boolean;
   onSort?: Function;
+  sortDirection?: string;
 }
 
 declare const Table: SFC<SortColumn>;
