@@ -52,7 +52,7 @@ const propTypes = {
   rows: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({
-        cells: ropTypes.arrayOf(
+        cells: PropTypes.arrayOf(
           PropTypes.oneOfType([
             PropTypes.node,
             PropTypes.shape({
