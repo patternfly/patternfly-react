@@ -1,6 +1,6 @@
-import { FunctionComponent, HTMLProps, Element, ReactElement } from 'react';
+import { FunctionComponent, Element, ReactElement } from 'react';
 import { Omit } from '../../typeUtils';
-import { Instance, BasicPlacement } from 'tippy.js';
+import { Instance, BasicPlacement, Props } from 'tippy.js';
 
 export const PopoverPosition: {
   top: 'top';
@@ -9,7 +9,7 @@ export const PopoverPosition: {
   right: 'right';
 };
 
-export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'> {
+export interface PopoverProps extends Omit<Props, 'children'> {
   /** Popover position */
   position?: BasicPlacement;
   /** If true, tries to keep the popover in view by flipping it if necessary */
@@ -17,7 +17,7 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   /** Popover additional class */
   className?: string;
   /** The reference element to which the popover is relatively placed to */
-  children: Element;
+  children: ReactElement<any>;
   /** Accessible label, required when header is not present */
   'aria-label'?: string;
   /** Header content, leave empty for no header */

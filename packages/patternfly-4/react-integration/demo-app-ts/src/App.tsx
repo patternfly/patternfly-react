@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps, Tabs, Tab, Tooltip, Popover, Button } from '@patternfly/react-core';
+import { Avatar, AvatarProps, Tabs, Tab, Tooltip, Popover } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -27,9 +27,7 @@ class App extends Component {
           </Tab>
         </Tabs>
         <Tooltip content={<div>World</div>}><div>Hello</div></Tooltip>
-        <Tooltip content={<Button>World</Button>}><Button>Hello</Button></Tooltip>
         <Popover bodyContent={<div>World</div>}><div>Hello</div></Popover>
-        <Popover bodyContent={<Button>World</Button>}><Button>Hello</Button></Popover>
         <NavTest />
       </div>
     );
