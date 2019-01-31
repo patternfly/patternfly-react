@@ -5,9 +5,9 @@ exports[`className is added to the root element 1`] = `"pf-c-login__main-header 
 exports[`renders with PatternFly Core styles 1`] = `
 .pf-c-login__main-header {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  padding: 3rem 3rem 1rem 3rem;
+  padding: 3rem 2rem 1rem 2rem;
 }
 
 <header

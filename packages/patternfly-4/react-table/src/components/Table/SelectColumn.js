@@ -6,7 +6,7 @@ import styles from '@patternfly/patternfly-next/components/Check/check.css';
 const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  onSelect: PropTypes.func,
+  onSelect: PropTypes.func
 };
 const defaultProps = {
   children: null,

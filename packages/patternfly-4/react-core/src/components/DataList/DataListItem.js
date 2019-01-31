@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/DataList/styles.css';
+import styles from '@patternfly/patternfly-next/components/DataList/data-list.css';
 
 const DataListItem = ({ children, className, isExpanded, 'aria-labelledby': ariaLabelledBy, ...props }) => (
   <li

@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/DataList/styles.css';
+import styles from '@patternfly/patternfly-next/components/DataList/data-list.css';
 
 const DataListCell = ({ children, className, width, ...props }) => (
   <div

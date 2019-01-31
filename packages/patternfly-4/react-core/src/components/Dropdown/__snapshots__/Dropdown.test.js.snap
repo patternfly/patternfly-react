@@ -24,8 +24,8 @@ exports[`KebabToggle basic 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
+  background-color: transparent;
   text-decoration: none;
-  background-color: #ededed;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -1845,8 +1845,8 @@ exports[`dropdown basic 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
+  background-color: transparent;
   text-decoration: none;
-  background-color: #ededed;
 }
 .pf-c-dropdown__menu {
   display: block;

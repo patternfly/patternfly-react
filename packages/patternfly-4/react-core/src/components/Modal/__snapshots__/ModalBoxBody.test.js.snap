@@ -3,8 +3,8 @@
 exports[`ModalBoxBody Test 1`] = `
 .pf-c-modal-box__body {
   display: block;
-  padding: 0.5rem 2rem 0.5rem 2rem;
-  margin-top: 2rem;
+  min-height: calc(1rem * 1.5);
+  max-height: 22.5rem;
   overflow-x: hidden;
   overflow-y: auto;
   word-break: break-word;

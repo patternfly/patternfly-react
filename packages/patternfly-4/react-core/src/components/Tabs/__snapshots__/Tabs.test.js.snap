@@ -15,6 +15,7 @@ exports[`onSelect callback called when tab selected 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
@@ -24,6 +25,7 @@ exports[`onSelect callback called when tab selected 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -33,6 +35,7 @@ exports[`onSelect callback called when tab selected 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -195,6 +198,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
@@ -204,6 +208,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -213,6 +218,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -408,6 +414,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
@@ -417,6 +424,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -426,6 +434,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -621,6 +630,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
@@ -630,6 +640,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -639,6 +650,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -834,6 +846,7 @@ exports[`should render filled tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
@@ -843,6 +856,7 @@ exports[`should render filled tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -852,6 +866,7 @@ exports[`should render filled tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -999,6 +1014,7 @@ exports[`should render secondary tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
@@ -1008,6 +1024,7 @@ exports[`should render secondary tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -1017,6 +1034,7 @@ exports[`should render secondary tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -1197,6 +1215,7 @@ exports[`should render simple tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
@@ -1206,6 +1225,7 @@ exports[`should render simple tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
@@ -1215,6 +1235,7 @@ exports[`should render simple tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
