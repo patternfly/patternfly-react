@@ -17,11 +17,10 @@ const propTypes = {
 const defaultProps = {
   className: '',
   onClose: () => undefined,
-  'aria-label': 'Close'
 };
 
-const AlertActionCloseButton = ({ className, onClose, 'aria-label': ariaLabel, ...props }) => (
-  <Button variant={ButtonVariant.plain} onClick={onClose} aria-label={ariaLabel} {...props}>
+const AlertActionCloseButton = ({ className, onClose, 'aria-label': ariaLabel, title, variantLabel, ...props }) => (
+  <Button variant={ButtonVariant.plain} onClick={onClose} aria-label={ariaLabel ? ariaLabel : `Close ${variantLabel} alert: ${title}`} {...props}>
     <TimesIcon />
   </Button>
 );

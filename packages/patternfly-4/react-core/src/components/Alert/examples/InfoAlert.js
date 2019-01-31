@@ -13,25 +13,25 @@ class InfoAlert extends React.Component {
         {alertOneVisible && (
           <Alert
             variant="info"
-            title="Info notification title"
+            title="Info alert title"
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
-            Info notification description. <a href="#">This is a link.</a>
+            Info alert description. <a href="#">This is a link.</a>
           </Alert>
         )}
         {alertTwoVisible && (
           <Alert
             variant="info"
-            title="Info notification title"
+            title="Info alert title"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
         <Alert
           variant="info"
-          title="Info notification title"
+          title="Info alert title"
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
-        <Alert variant="info" title="Info notification title" />
+        <Alert variant="info" title="Info alert title" />
       </React.Fragment>
     );
   }

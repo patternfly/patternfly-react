@@ -13,25 +13,25 @@ class DangerAlert extends React.Component {
         {alertOneVisible && (
           <Alert
             variant="danger"
-            title="Danger notification title"
+            title="Danger alert title"
             action={<AlertActionCloseButton action={<AlertActionCloseButton onClose={this.hideAlertOne} />} />}
           >
-            Danger notification description. <a href="#">This is a link.</a>
+            Danger alert description. <a href="#">This is a link.</a>
           </Alert>
         )}
         {alertTwoVisible && (
           <Alert
             variant="danger"
-            title="Danger notification title"
+            title="Danger alert title"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
         <Alert
           variant="danger"
-          title="Danger notification title"
+          title="Danger alert title"
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
-        ><Alert variant="danger" title="Danger notification title" />
+        <Alert variant="danger" title="Danger alert title" />
       </React.Fragment>
     );
   }
