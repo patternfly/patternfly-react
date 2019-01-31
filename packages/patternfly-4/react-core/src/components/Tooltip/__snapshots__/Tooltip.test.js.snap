@@ -23,7 +23,6 @@ exports[`tooltip renders 1`] = `
   }
   distance={15}
   flip={true}
-  isVisible={true}
   lazy={true}
   maxWidth="12.5rem"
   onCreate={[Function]}
@@ -42,7 +41,6 @@ exports[`tooltip renders 1`] = `
     }
   }
   theme="pf-tippy"
-  trigger="manual"
   zIndex={9999}
 >
   <div>
