@@ -6,23 +6,16 @@ import styles from '@patternfly/patternfly-next/components/AboutModalBox/about-m
 const propTypes = {
   /** additional classes added to the About Modal Hero */
   className: PropTypes.string,
-  /** the URL of the image for the Hero. */
-  src: PropTypes.string,
-  /** the alternate text of the Hero image. */
-  alt: PropTypes.string.isRequired,
   /** Additional props are spread to the container <div> */
   '': PropTypes.any
 };
 
 const defaultProps = {
-  className: '',
-  src: ''
+  className: ''
 };
 
-const AboutModalBoxHero = ({ className, src, alt, ...props }) => (
-  <div {...props} className={css(styles.aboutModalBoxHero, className)}>
-    <img className={css(styles.aboutModalBoxHeroImage)} src={src} alt={alt} />
-  </div>
+const AboutModalBoxHero = ({ className, ...props }) => (
+  <div {...props} className={css(styles.aboutModalBoxHero, className)} />
 );
 
 AboutModalBoxHero.propTypes = propTypes;

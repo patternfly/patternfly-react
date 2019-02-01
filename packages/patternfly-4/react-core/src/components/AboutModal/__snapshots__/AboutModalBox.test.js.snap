@@ -3,6 +3,7 @@
 exports[`AboutModalBox Test 1`] = `
 .pf-c-about-modal-box {
   display: grid;
+  position: relative;
   z-index: 600;
   grid-template-rows: max-content max-content auto;
   grid-template-areas: "brand close" "header header" "content content";
