@@ -2,7 +2,7 @@ import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './pf_mini_logo_white.svg';
 import logoImg from './pf_logo.svg';
-import heroImg from './pfbg_992.jpg';
+
 
 class SimpleAboutModal extends React.Component {
   state = {
@@ -32,7 +32,6 @@ class SimpleAboutModal extends React.Component {
           brandImageAlt="Patternfly Logo"
           logoImageSrc={logoImg}
           logoImageAlt="Patternfly Logo"
-          heroImageSrc={heroImg}
         >
           <TextContent>
             <TextList component="dl">

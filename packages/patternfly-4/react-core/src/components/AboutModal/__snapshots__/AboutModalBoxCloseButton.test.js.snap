@@ -4,6 +4,7 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
 .pf-c-about-modal-box__close {
   display: flex;
   grid-area: close;
+  position: sticky;
   z-index: 600;
   align-items: flex-start;
   justify-content: flex-end;
@@ -41,6 +42,7 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
 .pf-c-about-modal-box__close {
   display: flex;
   grid-area: close;
+  position: sticky;
   z-index: 600;
   align-items: flex-start;
   justify-content: flex-end;

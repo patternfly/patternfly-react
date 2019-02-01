@@ -3,6 +3,6 @@ import { shallow } from 'enzyme';
 import AboutModalBoxHero from './AboutModalBoxHero';
 
 test('test About Modal Box SHero', () => {
-  const view = shallow(<AboutModalBoxHero src="heroImg..." alt="hero" />);
+  const view = shallow(<AboutModalBoxHero />);
   expect(view).toMatchSnapshot();
 });

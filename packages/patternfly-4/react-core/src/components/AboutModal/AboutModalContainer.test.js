@@ -10,7 +10,6 @@ const props = {
   brandImageAlt: 'Brand Image',
   logoImageSrc: 'logoImg...',
   logoImageAlt: 'AboutModal Logo',
-  heroImageSrc: 'heroImg...',
   ariaLabelledbyId: 'ariaLablledbyId',
   ariaDescribedById: 'ariaDescribedById'
 };
