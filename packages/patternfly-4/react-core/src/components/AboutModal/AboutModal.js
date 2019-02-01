@@ -33,10 +33,6 @@ const propTypes = {
     }
     return null;
   },
-  /** the URL of the image for the Hero. */
-  heroImageSrc: PropTypes.string.isRequired,
-  /** the alternate text of the Hero image. */
-  heroImageAlt: PropTypes.string,
   /** Additional props are passed and spread to Modal content container <div> */
   '': PropTypes.any
 };
@@ -47,8 +43,7 @@ const defaultProps = {
   onClose: () => undefined,
   trademark: '',
   logoImageSrc: '',
-  logoImageAlt: '',
-  heroImageAlt: ''
+  logoImageAlt: ''
 };
 
 let currentId = 0;

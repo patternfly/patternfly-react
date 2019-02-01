@@ -26,19 +26,17 @@ exports[`About Modal Container Test isOpen 1`] = `
         className=""
         id="ariaLablledbyId"
         productName="Product Name"
-        trademark="Trademark and copyright information here"
       />
       <AboutModalBoxContent
         className=""
         id="ariaDescribedById"
         title="Test Modal Container title"
+        trademark="Trademark and copyright information here"
       >
         This is ModalBox content
       </AboutModalBoxContent>
       <AboutModalBoxHero
-        alt=""
         className=""
-        src="heroImg..."
       />
     </AboutModalBox>
   </Bullseye>
