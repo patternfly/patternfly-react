@@ -318,30 +318,29 @@ export class MockToolbarExample extends React.Component {
               <h5>40 Results</h5>
             </Toolbar.Results>
           ))}
-        {activeFilters &&
-          activeFilters.length > 0 && (
-            <Toolbar.Results>
-              <h5>40 Results</h5>
-              <Filter.ActiveLabel>Active Filters:</Filter.ActiveLabel>
-              <Filter.List>
-                {activeFilters.map((item, index) => (
-                  <Filter.Item key={index} onRemove={this.removeFilter} filterData={item}>
-                    label=
-                    {item.label}
-                  </Filter.Item>
-                ))}
-              </Filter.List>
-              <a
-                href="#"
-                onClick={e => {
-                  e.preventDefault();
-                  this.clearFilters();
-                }}
-              >
-                Clear All Filters
-              </a>
-            </Toolbar.Results>
-          )}
+        {activeFilters && activeFilters.length > 0 && (
+          <Toolbar.Results>
+            <h5>40 Results</h5>
+            <Filter.ActiveLabel>Active Filters:</Filter.ActiveLabel>
+            <Filter.List>
+              {activeFilters.map((item, index) => (
+                <Filter.Item key={index} onRemove={this.removeFilter} filterData={item}>
+                  label=
+                  {item.label}
+                </Filter.Item>
+              ))}
+            </Filter.List>
+            <a
+              href="#"
+              onClick={e => {
+                e.preventDefault();
+                this.clearFilters();
+              }}
+            >
+              Clear All Filters
+            </a>
+          </Toolbar.Results>
+        )}
       </Toolbar>
     );
   }

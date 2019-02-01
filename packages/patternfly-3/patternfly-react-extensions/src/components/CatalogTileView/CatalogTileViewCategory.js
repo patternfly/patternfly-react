@@ -93,19 +93,18 @@ class CatalogTileViewCategory extends React.Component {
       <div className={classes} {...props} ref={this.handleRef}>
         <div className="catalog-tile-view-pf-category-header">
           <span className="catalog-tile-view-pf-category-header-title">{title}</span>
-          {!viewAll &&
-            numShown < totalItems && (
-              <span className="pull-right">
-                <Button
-                  bsStyle="link"
-                  className="catalog-tile-view-pf-category-view-all pull-right"
-                  style={{ marginRight: rightSpacerWidth }}
-                  onClick={onViewAll}
-                >
-                  {`${viewAllText} (${totalItems})`}
-                </Button>
-              </span>
-            )}
+          {!viewAll && numShown < totalItems && (
+            <span className="pull-right">
+              <Button
+                bsStyle="link"
+                className="catalog-tile-view-pf-category-view-all pull-right"
+                style={{ marginRight: rightSpacerWidth }}
+                onClick={onViewAll}
+              >
+                {`${viewAllText} (${totalItems})`}
+              </Button>
+            </span>
+          )}
         </div>
         <div className="catalog-tile-view-pf-category-body">
           {catalogTiles}
