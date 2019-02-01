@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-integration",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Integration testing for PF4 using demo applications",
   "main": "lib/index.js",
   "sideEffects": false,

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.19.13](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.12...patternfly3-react-lerna-root@7.19.13) (2019-02-01)
+
+
+### Bug Fixes
+
+* **build:** Support running npm scripts under Windows ([#1251](https://github.com/patternfly/patternfly-react/issues/1251)) ([df0c275](https://github.com/patternfly/patternfly-react/commit/df0c275))
+
+
+
+
+
 ## [7.19.12](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.11...patternfly3-react-lerna-root@7.19.12) (2019-01-29)
 
 

@@ -1,5 +1,25 @@
 
-## Unreleased (2019-02-01)
+## patternfly4-react-lerna-root@1.42.7 (2019-02-01)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1281](https://github.com/patternfly/patternfly-react/pull/1281) Fix react-table not expose index.d.ts issue ([@kunyan](https://github.com/kunyan))
+
+#### Committers: 1
+- Kun Yan ([@kunyan](https://github.com/kunyan))
+
+
+## @patternfly/react-table@0.4.16 (2019-02-01)
+
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1281](https://github.com/patternfly/patternfly-react/pull/1281) Fix react-table not expose index.d.ts issue ([@kunyan](https://github.com/kunyan))
+
+#### Committers: 1
+- Kun Yan ([@kunyan](https://github.com/kunyan))
+
+
+## @patternfly/react-docs@3.21.16 (2019-02-01)
 
 #### :bug: Bug Fix
 * `patternfly-4`

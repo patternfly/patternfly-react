@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.11](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.10...patternfly-react-extensions@2.16.11) (2019-02-01)
+
+
+### Bug Fixes
+
+* **build:** Support running npm scripts under Windows ([#1251](https://github.com/patternfly/patternfly-react/issues/1251)) ([df0c275](https://github.com/patternfly/patternfly-react/commit/df0c275))
+
+
+
+
+
 ## [2.16.10](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.9...patternfly-react-extensions@2.16.10) (2019-01-29)
 
 

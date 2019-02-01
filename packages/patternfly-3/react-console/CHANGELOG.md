@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.10.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.10.16...@patternfly/react-console@1.10.17) (2019-02-01)
+
+
+### Bug Fixes
+
+* **build:** Support running npm scripts under Windows ([#1251](https://github.com/patternfly/patternfly-react/issues/1251)) ([df0c275](https://github.com/patternfly/patternfly-react/commit/df0c275))
+
+
+
+
+
 ## [1.10.16](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-console@1.10.15...@patternfly/react-console@1.10.16) (2019-01-25)
 
 **Note:** Version bump only for package @patternfly/react-console
