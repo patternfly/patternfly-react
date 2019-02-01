@@ -1,6 +1,96 @@
 
 ## Unreleased (2019-02-01)
 
+#### :bug: Bug Fix
+* `patternfly-4`
+  * [#1281](https://github.com/patternfly/patternfly-react/pull/1281) Fix react-table not expose index.d.ts issue ([@kunyan](https://github.com/kunyan))
+
+#### Committers: 1
+- Kun Yan ([@kunyan](https://github.com/kunyan))
+
+
+## patternfly4-react-lerna-root@1.42.6 (2019-02-01)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-tokens@1.10.2 (2019-02-01)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-table@0.4.15 (2019-02-01)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-styled-system@1.4.2 (2019-02-01)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-integration@1.0.13 (2019-02-01)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-icons@2.10.4 (2019-02-01)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-docs@3.21.15 (2019-02-01)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-core@1.51.5 (2019-02-01)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
+## @patternfly/react-charts@1.4.3 (2019-02-01)
+
 #### :rocket: New Feature
 * `patternfly-4`, `react-icons`
   * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
