@@ -1,4 +1,14 @@
 
+## Unreleased (2019-02-01)
+
+#### :rocket: New Feature
+* `patternfly-4`, `react-icons`
+  * [#1304](https://github.com/patternfly/patternfly-react/pull/1304) Update react to pf-next 167 ([@dgutride](https://github.com/dgutride))
+
+#### Committers: 1
+- Dana Gutride ([@dgutride](https://github.com/dgutride))
+
+
 ## patternfly4-react-lerna-root@1.42.4 (2019-01-30)
 
 #### :bug: Bug Fix
