@@ -1,9 +1,9 @@
-import { FunctionComponent, HTMLProps } from 'react';
+import { SFC, HTMLProps, ReactNode } from 'react';
 
 export interface ToolbarSectionProps extends HTMLProps<HTMLDivElement> {
   children?: React.ReactNode
 }
 
-declare const ToolbarSection: FunctionComponent<ToolbarSectionProps>;
+declare const ToolbarSection: SFC<ToolbarSectionProps>;
 
 export default ToolbarSection;

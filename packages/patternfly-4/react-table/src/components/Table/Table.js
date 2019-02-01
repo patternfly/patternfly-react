@@ -18,8 +18,8 @@ export const TableGridBreakpoint = {
 };
 
 export const TableVariant = {
-  'compact': 'compact'
-}
+  compact: 'compact'
+};
 
 const propTypes = {
   /** Table elements [Head, Body and Footer]. */
@@ -42,37 +42,44 @@ const propTypes = {
   /** Function called when user wants to sort table. */
   onSort: PropTypes.func,
   /** Additional cell displayed at the end of each row with dropdown of action items. */
-  actions: PropTypes.arrayOf(PropTypes.shape({
-    onClick: PropTypes.func,
-    title: PropTypes.node
-  })),
-  /** Actual rows to display in table. Either array of strings or row ojects. */
-  rows: PropTypes.arrayOf(PropTypes.oneOfType([
+  actions: PropTypes.arrayOf(
     PropTypes.shape({
-      cells: PropTypes.arrayOf(PropTypes.node),
-      isOpen: PropTypes.bool,
-      parent: PropTypes.number,
-      showSelect: PropTypes.bool,
-      props: PropTypes.any
-    }),
-    PropTypes.arrayOf(PropTypes.oneOfType([
-      PropTypes.shape({
-        title: PropTypes.node
-      }),
-      PropTypes.node
-    ]))
-  ])).isRequired,
-  /** Header cells to display in table. Either array of strings or array of string or cell object. */
-  cells: PropTypes.arrayOf(PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.shape({
-      title: PropTypes.node,
-      transforms: PropTypes.arrayOf(PropTypes.func),
-      cellTransforms: PropTypes.arrayOf(PropTypes.func),
-      formatters: PropTypes.arrayOf(PropTypes.func),
-      cellFormatters: PropTypes.arrayOf(PropTypes.func)
+      onClick: PropTypes.func,
+      title: PropTypes.node
     })
-  ])).isRequired,
+  ),
+  /** Actual rows to display in table. Either array of strings or row ojects. */
+  rows: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.shape({
+        cells: PropTypes.arrayOf(PropTypes.node),
+        isOpen: PropTypes.bool,
+        parent: PropTypes.number,
+        props: PropTypes.any
+      }),
+      PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.shape({
+            title: PropTypes.node
+          }),
+          PropTypes.node
+        ])
+      )
+    ])
+  ).isRequired,
+  /** Header cells to display in table. Either array of strings or array of string or cell object. */
+  cells: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.node,
+      PropTypes.shape({
+        title: PropTypes.node,
+        transforms: PropTypes.arrayOf(PropTypes.func),
+        cellTransforms: PropTypes.arrayOf(PropTypes.func),
+        formatters: PropTypes.arrayOf(PropTypes.func),
+        cellFormatters: PropTypes.arrayOf(PropTypes.func)
+      })
+    ])
+  ).isRequired,
   /** Aria labeled by this property collapse and select. */
   rowLabeledBy: PropTypes.string,
   /** Id prefix for expand buttons. */
@@ -126,7 +133,7 @@ class Table extends React.Component {
     super(props);
     this.state = {
       headerData: []
-    }
+    };
   }
   render() {
     const {
@@ -151,51 +158,47 @@ class Table extends React.Component {
       ...props
     } = this.props;
 
-    const headerData = calculateColumns(
-      cells,
-      {
-        sortBy,
-        onSort,
-        onSelect,
-        actions,
-        onCollapse,
-        rowLabeledBy,
-        expandId,
-        contentId,
-        dropdownPosition,
-        dropdownDirection
-      }
-    );
+    const headerData = calculateColumns(cells, {
+      sortBy,
+      onSort,
+      onSelect,
+      actions,
+      onCollapse,
+      rowLabeledBy,
+      expandId,
+      contentId,
+      dropdownPosition,
+      dropdownDirection
+    });
 
     return (
-      <TableContext.Provider value={{
-        headerData,
-        rows: rows
-      }}>
-        {header}
-        <Provider {...props} renderers={{
-          body: {
-            wrapper: BodyWrapper(rows),
-            row: RowWrapper,
-            cell: BodyCell
-          },
-          header: {
-            cell: HeaderCell
-          }
+      <TableContext.Provider
+        value={{
+          headerData,
+          rows
         }}
+      >
+        {header}
+        <Provider
+          {...props}
+          renderers={{
+            body: {
+              wrapper: BodyWrapper(rows),
+              row: RowWrapper,
+              cell: BodyCell
+            },
+            header: {
+              cell: HeaderCell
+            }
+          }}
           columns={headerData}
           role="grid"
-          className={css(
-            styles.table,
-            getModifier(styles, gridBreakPoint, styles.modifiers.grid),
-            getModifier(styles, variant),
-            className
-          )}
+          className={css(styles.table, getModifier(styles, gridBreakPoint), getModifier(styles, variant), className)}
         >
           {caption && <caption>{caption}</caption>}
           {children}
         </Provider>
-      </TableContext.Provider >
+      </TableContext.Provider>
     );
   }
 }

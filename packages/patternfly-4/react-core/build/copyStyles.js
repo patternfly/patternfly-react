@@ -34,6 +34,7 @@ ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
 });
 
 copySync(join(pfDir, 'assets/images'), join(stylesDir, 'assets/images'));
+copySync(join(pfDir, 'assets/pficon'), join(stylesDir, 'assets/pficon'));
 copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
   filter(src) {
     return !ununsedFontFilesRegExt.test(src);

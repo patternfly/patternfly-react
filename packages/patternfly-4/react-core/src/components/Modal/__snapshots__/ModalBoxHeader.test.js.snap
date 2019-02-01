@@ -1,24 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxHeader Test 1`] = `
-.pf-c-modal-box__header-title {
-  display: block;
-  font-size: 1.75rem;
-  font-weight: 400;
-  line-height: 1.3;
-}
-.pf-c-modal-box__header {
-  display: block;
-  padding: 2rem 2rem 0.5rem 2rem;
-}
-
-<header
-  className="pf-c-modal-box__header"
->
-  <h1
-    className="pf-c-modal-box__header-title"
+<React.Fragment>
+  <Title
+    className=""
+    headingLevel="h1"
+    size="2xl"
   >
     This is a ModalBox header
-  </h1>
-</header>
+  </Title>
+</React.Fragment>
 `;

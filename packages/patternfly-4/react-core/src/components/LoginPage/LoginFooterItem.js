@@ -1,6 +1,4 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Login/login.css';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -26,11 +24,9 @@ const defaultProps = {
 const LoginFooterItem = ({ className, children, href, target, ...props }) => {
   const reactElement = React.isValidElement(children);
   return reactElement ? (
-    React.cloneElement(children, {
-      className: css(styles.loginFooterLink, className)
-    })
+    React.cloneElement(children)
   ) : (
-    <a className={css(styles.loginFooterLink, className)} target={target} href={href} {...props}>
+    <a target={target} href={href} {...props}>
       {children}
     </a>
   );
