@@ -13,6 +13,8 @@ class SimpleChart extends React.Component {
         <ChartLine data={[{ x: 1, y: 3 }, { x: 2, y: 4 }, { x: 3, y: 9 }, { x: 4, y: 5 }]} />
         <ChartLine data={[{ x: 1, y: 3 }, { x: 2, y: 3 }, { x: 3, y: 8 }, { x: 4, y: 7 }]} />
       </ChartGroup>
+      <ChartAxis tickValues={[2, 3, 4]} />
+      <ChartAxis dependentAxis tickValues={[2, 5, 8]} />
     </Chart>
   );
 
