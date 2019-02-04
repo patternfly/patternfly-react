@@ -1,5 +1,5 @@
 
-import styles from '@patternfly/patternfly-next/components/Avatar/avatar.css';
+import styles from '@patternfly/patternfly/components/Avatar/avatar.css';
 import { css } from '@patternfly/react-styles';
 import React, { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
 

@@ -16,6 +16,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 .pf-c-page__header {
   display: flex;
+  color: #ffffff;
   grid-area: header;
   z-index: 300;
   flex-wrap: wrap;

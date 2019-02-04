@@ -1,5 +1,5 @@
 import React, { cloneElement } from 'react';
-import styles from '@patternfly/patternfly-next/components/Page/page.css';
+import styles from '@patternfly/patternfly/components/Page/page.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { global_breakpoint_md as globalBreakpointMd } from '@patternfly/react-tokens';

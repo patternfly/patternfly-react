@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ChipButton from './ChipButton';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import { TimesCircleIcon } from '@patternfly/react-icons';
-import styles from '@patternfly/patternfly-next/components/Chip/chip.css';
+import styles from '@patternfly/patternfly/components/Chip/chip.css';
 import GenerateId from '../../internal/GenerateId/GenerateId';
 class Chip extends React.Component {
   span = React.createRef();
