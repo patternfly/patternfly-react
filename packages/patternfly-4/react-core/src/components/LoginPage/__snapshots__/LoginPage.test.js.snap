@@ -13,6 +13,9 @@ exports[`check loginpage example against snapshot 1`] = `
       <LoginFooter
         className=""
       >
+        <p>
+          This is placeholder text only.
+        </p>
         <List
           className=""
           variant="inline"
@@ -31,9 +34,6 @@ exports[`check loginpage example against snapshot 1`] = `
               className=""
               src="Brand src"
             />
-            <p>
-              This is placeholder text only.
-            </p>
           </React.Fragment>
         }
       />
@@ -63,7 +63,16 @@ exports[`check loginpage example against snapshot 1`] = `
           </Item>
         </Dropdown>
       }
-      subtitle={
+      subtitle=""
+      title="Log into your account"
+    />
+    <LoginMainBody
+      className=""
+    />
+    <LoginMainFooter
+      className=""
+      forgotCredentials={null}
+      signUpForAccountMessage={
         <React.Fragment>
           Login to your account 
           <a
@@ -73,16 +82,8 @@ exports[`check loginpage example against snapshot 1`] = `
           </a>
         </React.Fragment>
       }
-      title="Log into your account"
+      socialMediaLoginContent="Footer"
     />
-    <LoginMainBody
-      className=""
-    />
-    <LoginMainFooter
-      className=""
-    >
-      Footer
-    </LoginMainFooter>
   </Login>
 </React.Fragment>
 `;
