@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import {
   SpaceProps,
   ColorProps,
@@ -84,6 +84,6 @@ export interface StyledTextProps extends
   component?: string
 }
 
-declare const StyledText: SFC<StyledTextProps>;
+declare const StyledText: FunctionComponent<StyledTextProps>;
 
 export default StyledText;

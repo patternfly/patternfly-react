@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import {
   SpaceProps,
   ColorProps,
@@ -84,6 +84,6 @@ export interface StyledFlexProps extends
   component?: string
 }
 
-declare const StyledFlex: SFC<StyledFlexProps>;
+declare const StyledFlex: FunctionComponent<StyledFlexProps>;
 
 export default StyledFlex;

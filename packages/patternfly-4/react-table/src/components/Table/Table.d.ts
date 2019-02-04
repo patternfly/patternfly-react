@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf, Omit } from '../../../../react-core/src/typeUtils';
 import { SortByDirection } from './SortColumn';
 import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
@@ -62,6 +62,6 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   cells: Array<ICell | String>;
 }
 
-declare const Table: SFC<TableProps>;
+declare const Table: FunctionComponent<TableProps>;
 
 export default Table;
