@@ -20,6 +20,10 @@ export interface TooltipProps extends Omit<Props, 'content' | 'children'> {
   children: ReactElement<any>;
   /** Tooltip content */
   content: ReactElement<any> | string;
+  /** Delay in ms before a tooltip appears */
+  entryDelay?: number;
+  /** Delay in ms before a tooltip disappears */
+  exitDelay?: number;
   /** The element to append the tooltip to, defaults to body */
   appendTo?: Element | ((ref: Element) => Element);
   /** z-index of the tooltip */

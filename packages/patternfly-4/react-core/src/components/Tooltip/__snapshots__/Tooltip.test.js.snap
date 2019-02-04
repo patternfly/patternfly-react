@@ -21,6 +21,12 @@ exports[`tooltip renders 1`] = `
       </TooltipContent>
     </div>
   }
+  delay={
+    Array [
+      500,
+      500,
+    ]
+  }
   distance={15}
   flip={true}
   lazy={true}
