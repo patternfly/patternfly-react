@@ -31,8 +31,10 @@
     "@patternfly/react-styles": "^2.3.0",
     "@patternfly/react-tokens": "^1.10.2",
     "@tippy.js/react": "^1.1.1",
+    "emotion": "^10.0.6",
     "exenv": "^1.2.2",
-    "focus-trap-react": "^4.0.1"
+    "focus-trap-react": "^4.0.1",
+    "tippy.js": "^3.4.1"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",

@@ -2,46 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Tippy from '@tippy.js/react';
 import styles from '@patternfly/patternfly-next/components/Tooltip/tooltip.css';
-import { StyleSheet, css, getModifier } from '@patternfly/react-styles';
+import { css, getModifier } from '@patternfly/react-styles';
 import TooltipArrow from './TooltipArrow';
 import TooltipContent from './TooltipContent';
 import { KEY_CODES } from '../../internal/constants';
+import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
+import { tippyStyles } from './styles';
 
-// Need to unset tippy default styles
-// Also for enableFlip, need to make arrow aware of parent x-placement attribute in order to work
-const overrides = StyleSheet.parse(`
-  .pf-tippy-theme {
-    &.tippy-tooltip { 
-      background-color: unset;
-      font-size: unset;
-      color: unset;
-      border-radius: unset;
-      max-width: unset;
-      text-align: unset;
-    }
-  }
-  .tippy-popper[x-placement^=top] .pf-c-tooltip__arrow {
-    bottom: 0;
-    left: 50%;
-    transform: var(--pf-c-tooltip__arrow--m-top--Transform); 
-  }
-  .tippy-popper[x-placement^=bottom] .pf-c-tooltip__arrow {
-    top: 0;
-    left: 50%;
-    transform: var(--pf-c-tooltip__arrow--m-bottom--Transform); 
-  }
-  .tippy-popper[x-placement^=left] .pf-c-tooltip__arrow {
-    top: 50%;
-    right: 0;
-    transform: var(--pf-c-tooltip__arrow--m-left--Transform); 
-  }
-  .tippy-popper[x-placement^=right] .pf-c-tooltip__arrow {
-    top: 50%;
-    left: 0;
-    transform: var(--pf-c-tooltip__arrow--m-right--Transform); 
-  }  
-`);
-overrides.inject();
+tippyStyles();
 
 export const TooltipPosition = {
   top: 'top',
@@ -65,8 +33,8 @@ const propTypes = {
   appendTo: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   /** z-index of the tooltip */
   zIndex: PropTypes.number,
-  /** Size of the tooltip */
-  size: PropTypes.oneOf(['small', 'regular', 'large'])
+  /** Maximum width of the tooltip (default 12.5rem) */
+  maxWidth: PropTypes.string
 };
 
 const defaultProps = {
@@ -75,7 +43,7 @@ const defaultProps = {
   className: null,
   appendTo: () => document.body,
   zIndex: 9999,
-  size: 'small'
+  maxWidth: tooltipMaxWidth && tooltipMaxWidth.value
 };
 
 class Tooltip extends React.Component {
@@ -106,7 +74,7 @@ class Tooltip extends React.Component {
       content: bodyContent,
       appendTo,
       zIndex,
-      size,
+      maxWidth,
       ...rest
     } = this.props;
     const content = (
@@ -122,7 +90,7 @@ class Tooltip extends React.Component {
     return (
       <Tippy
         onCreate={this.storeTippyInstance}
-        size={size}
+        maxWidth={maxWidth}
         zIndex={zIndex}
         appendTo={appendTo}
         content={content}

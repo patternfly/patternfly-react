@@ -24,6 +24,7 @@ exports[`tooltip renders 1`] = `
   distance={15}
   flip={true}
   lazy={true}
+  maxWidth="12.5rem"
   onCreate={[Function]}
   performance={true}
   placement="top"
@@ -39,7 +40,6 @@ exports[`tooltip renders 1`] = `
       },
     }
   }
-  size="small"
   theme="pf-tippy"
   zIndex={9999}
 >
