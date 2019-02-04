@@ -1,30 +1,42 @@
 import React from 'react';
 import SortColumn, { SortByDirection } from '../../SortColumn';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/Table/table.css';
+import { tableSort, modifiers } from '@patternfly/patternfly-next/components/Table/table.css';
+import buttonStyles from '@patternfly/patternfly-next/components/Button/button.css';
 
-export default (label, { column: { extraParams: { sortBy, onSort } }, columnIndex }) => {
+export default (
+  label,
+  {
+    column: {
+      extraParams: { sortBy, onSort }
+    },
+    columnIndex
+  }
+) => {
   const isSortedBy = sortBy && columnIndex === sortBy.index;
-  const direction = sortBy && sortBy.direction === SortByDirection.asc ?
-    styles.modifiers.ascending :
-    styles.modifiers.descending;
+  const direction = sortBy && sortBy.direction === SortByDirection.asc ? modifiers.ascending : modifiers.descending;
   function sortClicked(event) {
     let reversedDirection;
     if (!isSortedBy) {
-      reversedDirection = SortByDirection.asc
+      reversedDirection = SortByDirection.asc;
     } else {
       reversedDirection = sortBy.direction === SortByDirection.asc ? SortByDirection.desc : SortByDirection.asc;
     }
     onSort && onSort(event, columnIndex, reversedDirection);
   }
 
-  return ({
-    className: css(styles.tableSort, isSortedBy && direction),
+  return {
+    className: css(tableSort, isSortedBy && direction),
     'aria-sort': isSortedBy ? `${sortBy.direction}ending` : 'none',
     children: (
-      <SortColumn isSortedBy={isSortedBy} onSort={sortClicked}>
+      <SortColumn
+        isSortedBy={isSortedBy}
+        sortDirection={isSortedBy ? sortBy.direction : ''}
+        onSort={sortClicked}
+        className={css(buttonStyles.button, buttonStyles.modifiers.plain)}
+      >
         {label}
       </SortColumn>
     )
-  })
+  };
 };

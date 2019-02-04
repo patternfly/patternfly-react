@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-icons",
-  "version": "2.10.3",
+  "version": "2.10.5",
   "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
     "prebuild": "node ./build/generateIcons.js",
-    "build": "yarn build:babel; yarn build:ts",
+    "build": "yarn build:babel && yarn build:ts",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.3.1",
-    "@patternfly/patternfly-next": "1.0.148",
+    "@patternfly/patternfly-next": "1.0.175",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "node-plop": "^0.15.0",

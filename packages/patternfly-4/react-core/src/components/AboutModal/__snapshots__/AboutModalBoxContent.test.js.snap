@@ -1,8 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AboutModalBoxContent Test 1`] = `
-.pf-c-about-modal-box__content {
+.pf-c-content {
   display: block;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+.pf-c-title {
+  display: block;
+}
+.pf-c-about-modal-box__strapline {
+  display: block;
+  padding-top: 2rem;
+  margin-top: auto;
+}
+.pf-c-about-modal-box__content {
+  display: flex;
+  flex-direction: column;
   grid-area: content;
   margin: 2rem 2rem 2rem 2rem;
   overflow-x: hidden;
@@ -13,6 +28,19 @@ exports[`AboutModalBoxContent Test 1`] = `
   className="pf-c-about-modal-box__content"
   id="id"
 >
-  This is a AboutModalBoxContent 
+  <div
+    className="pf-c-content"
+  >
+    This is a AboutModalBoxContent
+  </div>
+  <div
+    className="pf-c-about-modal-box__strapline"
+  >
+    <p
+      className="pf-c-title"
+    >
+      trademark
+    </p>
+  </div>
 </div>
 `;

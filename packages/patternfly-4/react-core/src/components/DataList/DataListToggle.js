@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
-import styles from '@patternfly/patternfly-next/components/DataList/styles.css';
+import styles from '@patternfly/patternfly-next/components/DataList/data-list.css';
 import { Button } from '../Button';
 
 const DataListToggle = ({

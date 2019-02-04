@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 test('AboutModalBoxHeader Test', () => {
   const view = shallow(
-    <AboutModalBoxHeader productName="Product Name" trademark="trademark" id="id">
+    <AboutModalBoxHeader productName="Product Name" id="id">
       This is a AboutModalBox header
     </AboutModalBoxHeader>
   );

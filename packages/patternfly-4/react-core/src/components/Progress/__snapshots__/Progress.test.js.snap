@@ -18,15 +18,15 @@ exports[`Progress measure location inside 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress.pf-m-inside.pf-m-lg {
@@ -117,15 +117,15 @@ exports[`Progress measure location inside and small should render large 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress.pf-m-inside.pf-m-lg {
@@ -216,15 +216,15 @@ exports[`Progress measure location none 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -316,15 +316,15 @@ exports[`Progress measure location outside 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress.pf-m-outside {
@@ -422,15 +422,15 @@ exports[`Progress measure location top 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -528,15 +528,15 @@ exports[`Progress size lg 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress.pf-m-lg {
@@ -634,15 +634,15 @@ exports[`Progress size md 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -740,15 +740,15 @@ exports[`Progress size sm 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress.pf-m-sm {
@@ -851,15 +851,15 @@ exports[`Progress variant danger 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress.pf-m-danger {
@@ -986,15 +986,15 @@ exports[`Progress variant info 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -1097,15 +1097,15 @@ exports[`Progress variant success 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress.pf-m-success {
@@ -1232,15 +1232,15 @@ exports[`Progress with aria-valuetext 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -1338,15 +1338,15 @@ exports[`Simple progress 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -1444,15 +1444,15 @@ exports[`additional label 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -1552,15 +1552,15 @@ exports[`no value specified 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -1658,15 +1658,15 @@ exports[`value higher than maxValue 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -1764,15 +1764,15 @@ exports[`value lower than minValue 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -1870,15 +1870,15 @@ exports[`value scaled between minValue and maxValue 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -1976,15 +1976,15 @@ exports[`value scaled with maxValue 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
@@ -2082,15 +2082,15 @@ exports[`value scaled with minValue 1`] = `
   position: absolute;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
-  background-color: #cc0000;
+  height: 1rem;
+  background-color: #007bba;
 }
 .pf-c-progress__bar {
   display: block;
   position: relative;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-  height: 0.5rem;
+  height: 1.5rem;
   background-color: #ffffff;
 }
 .pf-c-progress {
