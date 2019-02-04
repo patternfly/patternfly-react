@@ -13,7 +13,9 @@ import PopoverFooter from './PopoverFooter';
 import PopoverCloseButton from './PopoverCloseButton';
 import GenerateId from '../../internal/GenerateId/GenerateId';
 import { c_popover_MaxWidth as popoverMaxWidth } from '@patternfly/react-tokens';
-import '../Tooltip/styles';
+import { tippyStyles } from '../Tooltip/styles';
+
+tippyStyles();
 
 export const PopoverPosition = {
   top: 'top',

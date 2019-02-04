@@ -7,7 +7,9 @@ import TooltipArrow from './TooltipArrow';
 import TooltipContent from './TooltipContent';
 import { KEY_CODES } from '../../internal/constants';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
-import './styles';
+import { tippyStyles } from './styles';
+
+tippyStyles();
 
 export const TooltipPosition = {
   top: 'top',
