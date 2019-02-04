@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import {
   SpaceProps,
   ColorProps,
@@ -75,6 +75,6 @@ export interface StyledBoxProps extends
   component?: string
 }
 
-declare const StyledBox: SFC<StyledBoxProps>;
+declare const StyledBox: FunctionComponent<StyledBoxProps>;
 
 export default StyledBox;

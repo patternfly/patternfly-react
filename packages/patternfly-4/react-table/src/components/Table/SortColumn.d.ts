@@ -1,5 +1,4 @@
-import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
-import { OneOf, Omit } from '../../../../react-core/src/typeUtils';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export const SortByDirection: {
   asc: 'asc',
@@ -14,6 +13,6 @@ export interface SortColumn extends HTMLProps<HTMLButtonElement> {
   sortDirection?: string;
 }
 
-declare const Table: SFC<SortColumn>;
+declare const Table: FunctionComponent<SortColumn>;
 
 export default Table;

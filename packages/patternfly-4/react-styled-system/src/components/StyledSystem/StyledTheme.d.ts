@@ -1,4 +1,4 @@
-import { SFC, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 
 export interface Space {
   xs: number;
@@ -165,6 +165,6 @@ export interface PatternFlyThemeProviderProps extends HTMLProps<HTMLDivElement> 
   children: ReactNode;
 }
 
-declare const PatternFlyThemeProvider: SFC<PatternFlyThemeProviderProps>;
+declare const PatternFlyThemeProvider: FunctionComponent<PatternFlyThemeProviderProps>;
 
 export default PatternFlyThemeProvider;
