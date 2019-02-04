@@ -1683,9 +1683,10 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@novnc/novnc/-/novnc-1.0.0.tgz#76b0e89e6f8738ca8154195baf5b8e6a80bc9105"
 
-"@patternfly/patternfly-next@1.0.175":
-  version "1.0.175"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly-next/-/patternfly-next-1.0.175.tgz#47d2ee6448ee7132874290e8bb68bbd5d52e1664"
+"@patternfly/patternfly@1.0.178":
+  version "1.0.178"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.178.tgz#5b520cc6da54f54a7b5a0c449101335cfbff5218"
+  integrity sha512-yMzG6oFdu6WgBnKLkpzykB4suz5ff31ynE1Z82t2RQ5SR+NQ7cEE/n4l3VrAQEwprBoM5JsSHhMmePKvEFtsOw==
 
 "@patternfly/react-core@file:packages/patternfly-4/react-core":
   version "1.51.6"

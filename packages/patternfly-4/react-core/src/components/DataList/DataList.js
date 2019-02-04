@@ -1,8 +1,8 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/DataList/data-list.css';
-import boxShStyles from '@patternfly/patternfly-next//utilities/BoxShadow/box-shadow.css';
+import styles from '@patternfly/patternfly/components/DataList/data-list.css';
+import boxShStyles from '@patternfly/patternfly//utilities/BoxShadow/box-shadow.css';
 
 const DataList = ({ children, className, 'aria-label': ariaLabel, ...props }) => (
   <ul

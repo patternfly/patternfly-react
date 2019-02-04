@@ -5,7 +5,7 @@ const { parse: parseCSS, stringify: stringifyCSS } = require('css');
 
 const baseCSSFilename = 'patternfly-base.css';
 const stylesDir = resolve(__dirname, '../dist/styles');
-const pfDir = dirname(require.resolve(`@patternfly/patternfly-next/${baseCSSFilename}`));
+const pfDir = dirname(require.resolve(`@patternfly/patternfly/${baseCSSFilename}`));
 
 const css = readFileSync(join(pfDir, baseCSSFilename), 'utf8');
 const ast = parseCSS(css);

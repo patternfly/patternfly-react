@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/AboutModalBox/about-modal-box.css';
+import styles from '@patternfly/patternfly/components/AboutModalBox/about-modal-box.css';
 
 const propTypes = {
   /** additional classes added to the About Modal Hero */

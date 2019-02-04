@@ -2,7 +2,7 @@
 const helpers = require('../../scripts/lernaHelpers');
 
 const versions = new Map();
-const corePackageName = '@patternfly/patternfly-next';
+const corePackageName = '@patternfly/patternfly';
 
 async function verify() {
   const packages = await helpers.getPfPackages(false);
@@ -22,7 +22,7 @@ async function verify() {
     }
   );
   if (versions.size > 1) {
-    console.error(`error: @patternfly/patternfly-next versions must match for all packages`);
+    console.error(`error: @patternfly/patternfly versions must match for all packages`);
     console.error('-'.repeat(10));
     versions.forEach((packagesNames, version) => {
       console.error(`v${version}: ${packagesNames.join(', ')}`);

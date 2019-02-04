@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/AboutModalBox/about-modal-box.css';
-import titleStyles from '@patternfly/patternfly-next/components/Title/title.css';
-import contentStyles from '@patternfly/patternfly-next/components/Content/content.css';
+import styles from '@patternfly/patternfly/components/AboutModalBox/about-modal-box.css';
+import titleStyles from '@patternfly/patternfly/components/Title/title.css';
+import contentStyles from '@patternfly/patternfly/components/Content/content.css';
 
 const propTypes = {
   /** content rendered inside the AboutModalBoxContent */
