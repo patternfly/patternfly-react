@@ -28,6 +28,6 @@ Object {
   >
     
   </SortColumn>,
-  "className": "pf-c-table__sort",
+  "className": "pf-c-table__sort pf-m-selected",
 }
 `;

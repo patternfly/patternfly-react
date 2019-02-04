@@ -1,7 +1,7 @@
 import React from 'react';
 import SortColumn, { SortByDirection } from '../../SortColumn';
 import { css } from '@patternfly/react-styles';
-import { tableSort, modifiers } from '@patternfly/patternfly-next/components/Table/table.css';
+import styles from '@patternfly/patternfly-next/components/Table/table.css';
 import buttonStyles from '@patternfly/patternfly-next/components/Button/button.css';
 
 export default (
@@ -14,7 +14,6 @@ export default (
   }
 ) => {
   const isSortedBy = sortBy && columnIndex === sortBy.index;
-  const direction = sortBy && sortBy.direction === SortByDirection.asc ? modifiers.ascending : modifiers.descending;
   function sortClicked(event) {
     let reversedDirection;
     if (!isSortedBy) {
@@ -26,7 +25,7 @@ export default (
   }
 
   return {
-    className: css(tableSort, isSortedBy && direction),
+    className: css(styles.tableSort, isSortedBy && styles.modifiers.selected),
     'aria-sort': isSortedBy ? `${sortBy.direction}ending` : 'none',
     children: (
       <SortColumn

@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { tableCheck } from '@patternfly/patternfly-next/components/Table/table.css';
+import styles from '@patternfly/patternfly-next/components/Table/table.css';
 import SelectColumn from '../../SelectColumn';
 
 export default (
@@ -36,7 +36,7 @@ export default (
   };
 
   return {
-    className: css(tableCheck),
+    className: css(styles.tableCheck),
     component: 'td',
     scope: '',
     children: (
