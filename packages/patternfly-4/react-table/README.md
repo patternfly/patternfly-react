@@ -122,5 +122,5 @@ Testing is done at the root of this repo. To only run the @patternfly/react-tabl
 yarn test packages/patternfly-4/react-table
 ```
 
-[patternfly-4]: https://github.com/patternfly/patternfly
+[patternfly-4]: https://github.com/patternfly/patternfly-next
 [docs]: https://patternfly-react.surge.sh/patternfly-4

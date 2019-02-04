@@ -103,5 +103,5 @@ Testing is done at the root of this repo. To only run the patternfly-react tests
 yarn test packages/patternfly-4/react-core
 ```
 
-[patternfly-4]: https://github.com/patternfly/patternfly
+[patternfly-4]: https://github.com/patternfly/-next
 [docs]: https://patternfly-react.surge.sh/patternfly-4
