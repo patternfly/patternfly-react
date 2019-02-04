@@ -38,6 +38,7 @@ exports[`Alert - danger Action Close Button 1`] = `
 }
 .pf-c-alert.pf-m-danger {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -204,6 +205,7 @@ exports[`Alert - danger Action Link 1`] = `
 }
 .pf-c-alert.pf-m-danger {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -357,6 +359,7 @@ exports[`Alert - danger Action and Title 1`] = `
 }
 .pf-c-alert.pf-m-danger {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -521,6 +524,7 @@ exports[`Alert - danger Custom aria label 1`] = `
 }
 .pf-c-alert.pf-m-danger {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -651,6 +655,7 @@ exports[`Alert - danger Description 1`] = `
 }
 .pf-c-alert.pf-m-danger {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -747,6 +752,7 @@ exports[`Alert - danger Title 1`] = `
 }
 .pf-c-alert.pf-m-danger {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -859,6 +865,7 @@ exports[`Alert - info Action Close Button 1`] = `
 }
 .pf-c-alert.pf-m-info {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -1025,6 +1032,7 @@ exports[`Alert - info Action Link 1`] = `
 }
 .pf-c-alert.pf-m-info {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -1178,6 +1186,7 @@ exports[`Alert - info Action and Title 1`] = `
 }
 .pf-c-alert.pf-m-info {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -1342,6 +1351,7 @@ exports[`Alert - info Custom aria label 1`] = `
 }
 .pf-c-alert.pf-m-info {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -1472,6 +1482,7 @@ exports[`Alert - info Description 1`] = `
 }
 .pf-c-alert.pf-m-info {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -1568,6 +1579,7 @@ exports[`Alert - info Title 1`] = `
 }
 .pf-c-alert.pf-m-info {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -1680,6 +1692,7 @@ exports[`Alert - success Action Close Button 1`] = `
 }
 .pf-c-alert.pf-m-success {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -1846,6 +1859,7 @@ exports[`Alert - success Action Link 1`] = `
 }
 .pf-c-alert.pf-m-success {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -1999,6 +2013,7 @@ exports[`Alert - success Action and Title 1`] = `
 }
 .pf-c-alert.pf-m-success {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -2163,6 +2178,7 @@ exports[`Alert - success Custom aria label 1`] = `
 }
 .pf-c-alert.pf-m-success {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -2293,6 +2309,7 @@ exports[`Alert - success Description 1`] = `
 }
 .pf-c-alert.pf-m-success {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -2389,6 +2406,7 @@ exports[`Alert - success Title 1`] = `
 }
 .pf-c-alert.pf-m-success {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -2501,6 +2519,7 @@ exports[`Alert - warning Action Close Button 1`] = `
 }
 .pf-c-alert.pf-m-warning {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -2667,6 +2686,7 @@ exports[`Alert - warning Action Link 1`] = `
 }
 .pf-c-alert.pf-m-warning {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -2820,6 +2840,7 @@ exports[`Alert - warning Action and Title 1`] = `
 }
 .pf-c-alert.pf-m-warning {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -2984,6 +3005,7 @@ exports[`Alert - warning Custom aria label 1`] = `
 }
 .pf-c-alert.pf-m-warning {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -3114,6 +3136,7 @@ exports[`Alert - warning Description 1`] = `
 }
 .pf-c-alert.pf-m-warning {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";
@@ -3210,6 +3233,7 @@ exports[`Alert - warning Title 1`] = `
 }
 .pf-c-alert.pf-m-warning {
   display: grid;
+  color: #282d33;
   grid-template-columns: max-content 1fr max-content;
   grid-template-rows: 1fr auto;
   grid-template-areas: "icon title action" "icon content content";

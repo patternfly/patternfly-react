@@ -16,6 +16,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 }
 .pf-c-page__header {
   display: flex;
+  color: #ffffff;
   grid-area: header;
   z-index: 300;
   flex-wrap: wrap;
@@ -52,11 +53,13 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  color: #ffffff;
 }
 .pf-c-page__main-section.pf-m-dark-100 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  color: #ffffff;
 }
 .pf-c-page__main {
   display: flex;
@@ -223,6 +226,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 .pf-c-page__header {
   display: flex;
+  color: #ffffff;
   grid-area: header;
   z-index: 300;
   flex-wrap: wrap;
@@ -259,11 +263,13 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  color: #ffffff;
 }
 .pf-c-page__main-section.pf-m-dark-100 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  color: #ffffff;
 }
 .pf-c-page__main {
   display: flex;
