@@ -1,4 +1,4 @@
-import { calculateColumns } from './headerUtils';
+import { calculateColumns, mapOpenedRows } from './headerUtils';
 
 describe('headerUtils', () => {
   describe('calculateColumns', () => {
@@ -140,6 +140,44 @@ describe('headerUtils', () => {
         expect(result[0].cell.formatters.find(formatter => formatter.name === 'testFunc')).toBeDefined();
         expect(result[0].cell.transforms.find(transform => transform.name === 'testFunc')).toBeDefined();
       });
+    });
+  });
+
+  describe('mapOpenedRows', () => {
+    test('flat structure', () => {
+      const rows = [{}, { parent: 0 }, {}, { parent: 2 }];
+      const children = ['one', 'two', 'three', 'four'];
+      const mappedRows = mapOpenedRows(rows, children);
+      expect(mappedRows.length).toBe(2);
+      expect(mappedRows[0].rows.length).toBe(2);
+      expect(mappedRows[0]).toMatchObject({rows: ['one', 'two']});
+    });
+
+    test('nested children', () => {
+      const rows = [{}, { parent: 0 }, { parent: 1 }, { parent: 2 }];
+      const children = ['one', 'two', 'three', 'four'];
+      const mappedRows = mapOpenedRows(rows, children);
+      expect(mappedRows.length).toBe(1);
+      expect(mappedRows[0].rows.length).toBe(4);
+      expect(mappedRows[0]).toMatchObject({ rows: children });
+    });
+
+    test('no parent', () => {
+      const rows = [{ parent: 'something' }, { parent: 0 }, { }, { parent: 2 }];
+      const children = ['one', 'two', 'three', 'four'];
+      const mappedRows = mapOpenedRows(rows, children);
+      expect(mappedRows.length).toBe(1);
+      expect(mappedRows[0].rows.length).toBe(2);
+      expect(mappedRows[0]).toMatchObject({ rows: ['three', 'four'] });
+    });
+
+    test('should add rest props', () => {
+      const rows = [{ isOpen: true, somethig: 'other' }, { parent: 0 }, { isOpen: false }, { parent: 2 }];
+      const children = ['one', 'two', 'three', 'four'];
+      const mappedRows = mapOpenedRows(rows, children);
+      expect(mappedRows.length).toBe(2);
+      expect(mappedRows[0].rows.length).toBe(2);
+      expect(mappedRows[0]).toMatchObject({ ...rows[0], rows: ['one', 'two'] });
     });
   });
 });

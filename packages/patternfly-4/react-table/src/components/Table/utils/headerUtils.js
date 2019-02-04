@@ -148,6 +148,25 @@ const expandContent = (header, { onCollapse }) => {
 }
 
 /**
+ * Function to join parent and their children so they can be rendered in tbody.
+ * @param {*} rows raw data to find out if it's child or parent.
+ * @param {*} children data to render (array of react children).
+ */
+export const mapOpenedRows = (rows, children) => {
+  return rows.reduce((acc, curr, key) => {
+    if (curr.hasOwnProperty('parent')) {
+      const parent = acc.length > 0 && acc[acc.length - 1];
+      if (parent) {
+        acc[acc.length - 1].rows = [...acc[acc.length - 1].rows, children[key]];
+      }
+    } else {
+      acc = [...acc, { ...curr, rows: [children[key]] }];
+    }
+    return acc;
+  }, []);
+}
+
+/**
  * Function to calculate columns based on custom config.
  * It adds some custom cells for collapse, select, if expanded row and actions.
  * @param {*} headerRows custom object with described table header cells.
