@@ -10,7 +10,8 @@
     "*.css"
   ],
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "prerelease"
   },
   "repository": {
     "type": "git",
