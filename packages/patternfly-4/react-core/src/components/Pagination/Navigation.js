@@ -37,8 +37,9 @@ const Navigation = ({
         variant={ButtonVariant.plain}
         isDisabled={page === 1}
         aria-label="Go to first page"
+        data-action="first"
         onClick={(event) => {
-          onFirstClick(event);
+          onFirstClick(event, 1);
           onSetPage(event, 1)
         }}
       >
@@ -47,9 +48,11 @@ const Navigation = ({
       <Button
         variant={ButtonVariant.plain}
         isDisabled={page === 1}
+        data-action="previous"
         onClick={(event) => {
-          onFirstClick(event);
-          onSetPage(event, page - 1 >= 1 ? page - 1 : 1);
+          const newPage = page - 1 >= 1 ? page - 1 : 1
+          onPreviousClick(event, newPage);
+          onSetPage(event, newPage);
         }}
         aria-label="Go to previous page"
       >
@@ -78,9 +81,11 @@ const Navigation = ({
         variant={ButtonVariant.plain}
         isDisabled={page === lastPage}
         aria-label="Go to next page"
+        data-action="next"
         onClick={(event) => {
-          onFirstClick(event);
-          onSetPage(event, page + 1 <= lastPage ? page + 1 : lastPage);
+          const newPage = page + 1 <= lastPage ? page + 1 : lastPage
+          onNextClick(event, newPage);
+          onSetPage(event, newPage);
         }}
       >
         <AngleRightIcon />
@@ -89,8 +94,9 @@ const Navigation = ({
         variant={ButtonVariant.plain}
         isDisabled={page === lastPage}
         aria-label="Go to last page"
+        data-action="last"
         onClick={(event) => {
-          onFirstClick(event);
+          onLastClick(event, lastPage);
           onSetPage(event, lastPage);
         }}
       >

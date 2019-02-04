@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Pagination, PaginationVariant } from './index';
-import { values } from 'd3';
 
 describe('component render', () => {
   test('should render correctly top', () => {
@@ -51,10 +50,153 @@ describe('component render', () => {
 });
 
 describe('API', () => {
-  const onSetPage = jest.fn();
-  const onFirst = jest.fn();
-  const onLast = jest.fn();
-  const onPrevious = jest.fn();
-  const onNext = jest.fn();
-  const onPerPage = jest.fn();
+  describe('onSetPage', () => {
+    const onSetPage = jest.fn();
+
+    test('should call first', () => {
+      const wrapper = mount(<Pagination onSetPage={onSetPage} itemCount={40} page={2} />);
+      wrapper.find('[data-action="first"]').first().simulate('click');
+      expect(onSetPage.mock.calls.length).toBe(1);
+      expect(onSetPage.mock.calls[0][1]).toBe(1);
+    });
+
+    test('should call previous', () => {
+      const wrapper = mount(<Pagination onSetPage={onSetPage} itemCount={40} page={3} />);
+      wrapper.find('[data-action="previous"]').first().simulate('click');
+      expect(onSetPage.mock.calls.length).toBe(1);
+      expect(onSetPage.mock.calls[0][1]).toBe(2);
+    });
+
+    test('should call next', () => {
+      const wrapper = mount(<Pagination onSetPage={onSetPage} itemCount={40} />);
+      wrapper.find('[data-action="next"]').first().simulate('click');
+      expect(onSetPage.mock.calls.length).toBe(1);
+      expect(onSetPage.mock.calls[0][1]).toBe(2);
+    });
+
+    test('should call last', () => {
+      const wrapper = mount(<Pagination onSetPage={onSetPage} itemCount={40} />);
+      wrapper.find('[data-action="last"]').first().simulate('click');
+      expect(onSetPage.mock.calls.length).toBe(1);
+      expect(onSetPage.mock.calls[0][1]).toBe(4);
+    });
+
+    test('should call input', () => {
+      const wrapper = mount(<Pagination onSetPage={onSetPage} itemCount={40} />);
+      wrapper.find('input').first().simulate('change', { target: { value: '1' } });
+      expect(onSetPage.mock.calls.length).toBe(1);
+      expect(onSetPage.mock.calls[0][1]).toBe(1);
+    });
+
+    test('should call input wrong value', () => {
+      const wrapper = mount(<Pagination onSetPage={onSetPage} itemCount={40} />);
+      wrapper.find('input').first().simulate('change', { target: { value: 'a' } });
+      expect(onSetPage.mock.calls.length).toBe(1);
+      expect(onSetPage.mock.calls[0][1]).toBe(1);
+    });
+
+    test('should call input huge page number', () => {
+      const wrapper = mount(<Pagination onSetPage={onSetPage} itemCount={40} />);
+      wrapper.find('input').first().simulate('change', { target: { value: '10' } });
+      expect(onSetPage.mock.calls.length).toBe(1);
+      expect(onSetPage.mock.calls[0][1]).toBe(4);
+    });
+
+    test('should call input small page number', () => {
+      const wrapper = mount(<Pagination onSetPage={onSetPage} itemCount={40} />);
+      wrapper.find('input').first().simulate('change', { target: { value: '-10' } });
+      expect(onSetPage.mock.calls.length).toBe(1);
+      expect(onSetPage.mock.calls[0][1]).toBe(1);
+    });
+
+    test('should NOT call', () => {
+      const wrapper = mount(<Pagination itemCount={40} />);
+      wrapper.find('[data-action="last"]').first().simulate('click');
+      expect(onSetPage.mock.calls.length).toBe(0);
+    });
+  });
+
+  describe('onFirst', () => {
+    const onFirst = jest.fn();
+    test('should call', () => {
+      const wrapper = mount(<Pagination onFirstClick={onFirst} itemCount={40} page={2} />);
+      wrapper.find('[data-action="first"]').first().simulate('click');
+      expect(onFirst.mock.calls.length).toBe(1);
+      expect(onFirst.mock.calls[0][1]).toBe(1);
+    });
+
+    test('should NOT call', () => {
+      const wrapper = mount(<Pagination itemCount={40} page={2} />);
+      wrapper.find('[data-action="first"]').first().simulate('click');
+      expect(onFirst.mock.calls.length).toBe(0);
+    });
+  });
+
+  describe('onLast', () => {
+    const onLast = jest.fn();
+    test('should call', () => {
+      const wrapper = mount(<Pagination onLastClick={onLast} itemCount={40} />);
+      wrapper.find('[data-action="last"]').first().simulate('click');
+      expect(onLast.mock.calls.length).toBe(1);
+      expect(onLast.mock.calls[0][1]).toBe(4);
+    });
+
+    test('should NOT call', () => {
+      const wrapper = mount(<Pagination itemCount={40} />);
+      wrapper.find('[data-action="last"]').first().simulate('click');
+      expect(onLast.mock.calls.length).toBe(0);
+    });
+  });
+
+  describe('onPrevious', () => {
+    const onPrevious = jest.fn();
+    test('should call', () => {
+      const wrapper = mount(<Pagination onPreviousClick={onPrevious} itemCount={40} page={3} />);
+      wrapper.find('[data-action="previous"]').first().simulate('click');
+      expect(onPrevious.mock.calls.length).toBe(1);
+      expect(onPrevious.mock.calls[0][1]).toBe(2);
+    });
+
+    test('should NOT call', () => {
+      const wrapper = mount(<Pagination itemCount={40} />);
+      wrapper.find('[data-action="previous"]').first().simulate('click');
+      expect(onPrevious.mock.calls.length).toBe(0);
+    });
+  });
+
+  describe('onNext', () => {
+    const onNext = jest.fn();
+    test('should call', () => {
+      const wrapper = mount(<Pagination onNextClick={onNext} itemCount={40} />);
+      wrapper.find('[data-action="next"]').first().simulate('click');
+      expect(onNext.mock.calls.length).toBe(1);
+      expect(onNext.mock.calls[0][1]).toBe(2);
+    });
+
+    test('should NOT call', () => {
+      const wrapper = mount(<Pagination itemCount={40} />);
+      wrapper.find('[data-action="previous"]').first().simulate('click');
+      expect(onNext.mock.calls.length).toBe(0);
+    });
+  });
+
+  describe('onPerPage', () => {
+    const onPerPage = jest.fn();
+    test('should call', () => {
+      const wrapper = mount(<Pagination onPerPageSelect={onPerPage} itemCount={40} />);
+      wrapper.find('.pf-c-options-menu button').first().simulate('click');
+      wrapper.update();
+      wrapper.find('ul li [data-action="per-page-20"]').first().simulate('click');
+      expect(onPerPage.mock.calls.length).toBe(1);
+      expect(onPerPage.mock.calls[0][1]).toBe(20);
+    });
+
+    test('should NOT call', () => {
+      const wrapper = mount(<Pagination itemCount={40} />);
+      wrapper.find('.pf-c-options-menu button').first().simulate('click');
+      wrapper.update();
+      wrapper.find('ul li [data-action="per-page-20"]').first().simulate('click');
+      expect(onPerPage.mock.calls.length).toBe(0);
+    });
+  });
 });

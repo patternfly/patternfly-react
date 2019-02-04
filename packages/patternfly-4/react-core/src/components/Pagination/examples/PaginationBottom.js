@@ -7,15 +7,27 @@ class PaginationBottom extends Component {
   }
 
   onSetPage = (_event, pageNumber) => {
-    console.log('huh');
     this.setState({
       page: pageNumber
     })
   }
 
+  onPerPageSelect = (_event, perPage) => {
+    this.setState({
+      perPage
+    })
+  }
+
   render() {
     return (
-      <Pagination itemCount={20} widgetId="pagination-options-menu-bottom" page={this.state.page} variant={PaginationVariant.bottom} onSetPage={this.onSetPage}/>
+      <Pagination itemCount={20}
+        widgetId="pagination-options-menu-bottom"
+        perPage={this.state.perPage}
+        page={this.state.page}
+        variant={PaginationVariant.bottom}
+        onSetPage={this.onSetPage}
+        onPerPageSelect={this.onPerPageSelect}
+      />
     )
   }
 }

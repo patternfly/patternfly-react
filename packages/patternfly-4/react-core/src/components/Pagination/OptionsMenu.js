@@ -69,6 +69,7 @@ class OptionsMenu extends Component {
     return perPageOptions.map(({ value, title }) =>(
       <DropdownItem key={value}
         component="button"
+        data-action={`per-page-${value}`}
         className={css(styles.optionsMenuMenuItem, perPage === value && 'pf-m-selected')}
         onClick={(event) => onPerPageSelect(event, value)}
       >
