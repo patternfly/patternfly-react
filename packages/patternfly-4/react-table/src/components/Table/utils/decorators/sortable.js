@@ -1,8 +1,8 @@
 import React from 'react';
 import SortColumn, { SortByDirection } from '../../SortColumn';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/Table/table.css';
-import buttonStyles from '@patternfly/patternfly-next/components/Button/button.css';
+import styles from '@patternfly/patternfly/components/Table/table.css';
+import buttonStyles from '@patternfly/patternfly/components/Button/button.css';
 
 export default (
   label,

@@ -5,7 +5,7 @@ import AboutModalContainer from './AboutModalContainer';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../internal/constants';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/Backdrop/backdrop.css';
+import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
 
 const propTypes = {
   /** content rendered inside the About Modal. */

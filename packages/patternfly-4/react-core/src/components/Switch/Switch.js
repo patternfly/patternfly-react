@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Switch/switch.css';
+import styles from '@patternfly/patternfly/components/Switch/switch.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { getUniqueId } from '../../internal/util';

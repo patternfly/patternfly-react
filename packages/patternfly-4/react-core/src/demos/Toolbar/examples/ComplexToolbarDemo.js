@@ -13,8 +13,8 @@ import {
   ToolbarSection
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import flexStyles from '@patternfly/patternfly-next/utilities/Flex/flex.css';
-import spacingStyles from '@patternfly/patternfly-next/utilities/Spacing/spacing.css';
+import flexStyles from '@patternfly/patternfly/utilities/Flex/flex.css';
+import spacingStyles from '@patternfly/patternfly/utilities/Spacing/spacing.css';
 import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
 class ComplexToolbarDemo extends React.Component {

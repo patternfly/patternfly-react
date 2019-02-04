@@ -3,6 +3,7 @@
 exports[`Check login layout example against snapshot 1`] = `
 .pf-c-login__main {
   display: block;
+  color: #ffffff;
   grid-area: main;
   background-color: #ffffff;
 }
@@ -16,6 +17,7 @@ exports[`Check login layout example against snapshot 1`] = `
   min-height: 100vh;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  color: #ffffff;
 }
 
 <div

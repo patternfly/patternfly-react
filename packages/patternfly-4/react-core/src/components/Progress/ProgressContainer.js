@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import progressStyle from '@patternfly/patternfly-next/components/Progress/progress.css';
+import progressStyle from '@patternfly/patternfly/components/Progress/progress.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { CheckCircleIcon, TimesCircleIcon } from '@patternfly/react-icons';

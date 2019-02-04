@@ -48,7 +48,7 @@ import React from 'react';
 import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 class StyledStyles extends React.Component {
-   render() {
+  render() {
     const { fonts, space, fontWeights, fontSizes, borders, colors } = StyledConstants;
     return (
       <PatternFlyThemeProvider>
@@ -77,7 +77,7 @@ class StyledStyles extends React.Component {
     );
   }
 }
- export default StyledStyles;
+export default StyledStyles;
 ```
 
 All css related to each component is provided alongside it. There is no component level CSS to import.

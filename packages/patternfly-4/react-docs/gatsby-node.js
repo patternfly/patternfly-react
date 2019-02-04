@@ -7,7 +7,7 @@ const escapeFilePath = filePath => filePath.replace(/[\\']/g, '\\$&');
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }) => {
   // Enable hot reloading on source code changes
-  const pfStylesTest = /patternfly-next.*(components|layouts|utilities).*\.css$/;
+  const pfStylesTest = /patternfly.*(components|layouts|utilities).*\.css$/;
   actions.setWebpackConfig({
     module: {
       rules: [

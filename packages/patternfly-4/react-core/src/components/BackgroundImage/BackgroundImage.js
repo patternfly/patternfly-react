@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { css, StyleSheet } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/BackgroundImage/background-image.css';
+import styles from '@patternfly/patternfly/components/BackgroundImage/background-image.css';
 
 /* eslint-disable camelcase */
 import {

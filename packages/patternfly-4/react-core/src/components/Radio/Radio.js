@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Check/check.css';
+import styles from '@patternfly/patternfly/components/Check/check.css';
 import PropTypes from 'prop-types';
 import { css, getModifier } from '@patternfly/react-styles';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Progress/progress.css';
+import styles from '@patternfly/patternfly/components/Progress/progress.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
