@@ -80,7 +80,7 @@ describe('Transformer functions', () => {
       const onSort = jest.fn();
       const column = { extraParams: { sortBy: { index: 0, direction: 'desc' }, onSort } };
       const returnedData = sortable('', { column, columnIndex: 0 });
-      expect(returnedData).toMatchObject({ className: 'pf-c-table__sort' });
+      expect(returnedData).toMatchObject({ className: 'pf-c-table__sort pf-m-selected' });
       const view = mount(returnedData.children);
       view.find('button').simulate('click');
       expect(onSort.mock.calls).toHaveLength(1);
