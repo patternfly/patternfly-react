@@ -133,7 +133,7 @@
       "<rootDir>/packages/patternfly-4/react-integration/"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!@patternfly|@novnc)"
+      "node_modules/(?!@patternfly|@novnc|tippy.js)"
     ],
     "roots": [
       "<rootDir>/packages",
