@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
-import { tableAction } from '@patternfly/patternfly-next/components/Table/table.css';
+import styles from '@patternfly/patternfly-next/components/Table/table.css'
 import ActionsColumn from '../../ActionsColumn';
 
 export default actions => (
@@ -12,7 +12,7 @@ export default actions => (
     }
   }
 ) => ({
-  className: css(tableAction),
+  className: css(styles.tableAction),
   children: (
     <ActionsColumn
       items={actions}
