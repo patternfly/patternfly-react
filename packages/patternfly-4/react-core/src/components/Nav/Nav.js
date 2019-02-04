@@ -49,12 +49,6 @@ class Nav extends React.Component {
     });
   }
 
-  // Determine if it's a tertiary nav or not (tertiary needs a different aria-label)
-  determineLabel() {
-    const isTertiary = React.Children.map(this.props.children, child => child.props.variant === 'tertiary');
-    return isTertiary[0] ? 'Local' : 'Global';
-  }
-
   render() {
     const { 'aria-label': ariaLabel, children, className, ...props } = this.props;
 
@@ -68,7 +62,7 @@ class Nav extends React.Component {
       >
         <nav className={css(styles.nav, className)}
              {...props}
-             aria-label={ariaLabel ? ariaLabel : this.determineLabel()}>
+             aria-label={ariaLabel ? ariaLabel : typeof this.props.children.props !== 'undefined' && this.props.children.props.variant === 'tertiary' ? 'Local' : 'Global'}>
           {children}
         </nav>
       </NavContext.Provider>
