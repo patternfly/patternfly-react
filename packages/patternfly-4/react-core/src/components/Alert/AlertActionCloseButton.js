@@ -1,7 +1,5 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/Alert/alert.css';
 import { Button, ButtonVariant } from '../Button';
 import { TimesIcon } from '@patternfly/react-icons';
 
