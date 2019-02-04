@@ -123,7 +123,7 @@ const Pagination = ({
     >
       {
         variant === PaginationVariant.top &&
-        <div> { /*className={css(styles.paginationTotalItems)}*/}
+        <div className={css(styles.paginationTotalItems)}>
           {`${itemCount} ${titles.items}`}
         </div>
       }
