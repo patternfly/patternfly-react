@@ -1,1 +1,1 @@
-export { default as Pagination, PaginationVariant } from './Pagination';
+export { default as Pagination, PaginationVariant, PerPageOptions, PaginationTitles } from './Pagination';

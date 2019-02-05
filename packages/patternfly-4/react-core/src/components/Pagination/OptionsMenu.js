@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/OptionsMenu/options-menu.css';
+import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
 import { css } from '@patternfly/react-styles';
-import { Dropdown, DropdownItem, DropdownToggle, DropdownDirection } from '../Dropdown';
-import { CaretDownIcon, CheckIcon } from '@patternfly/react-icons';
+import { Dropdown, DropdownItem, DropdownDirection } from '../Dropdown';
+import { CheckIcon } from '@patternfly/react-icons';
+import OptionsToggle from './OptionsToggle';
+
 
 const propTypes = {
   className: PropTypes.string,
@@ -13,18 +15,27 @@ const propTypes = {
     title: PropTypes.node,
     value: PropTypes.number
   })),
-  titles: PropTypes.shape({
-    items: PropTypes.string
-  }),
+  itemsPerPageTitle: PropTypes.string,
+  itemsTitle: PropTypes.string,
+  optionsToggle: PropTypes.string,
   itemCount: PropTypes.number,
   firstIndex: PropTypes.number,
   lastIndex: PropTypes.number,
   perPage: PropTypes.number,
+  toggleTemplate: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   onPerPageSelect: PropTypes.func
 };
+
 const defaultProps = {
   dropDirection: DropdownDirection.down,
-  titles: {}
+  itemsTitle: 'items',
+  itemsPerPageTitle: 'Items per page',
+  optionsToggle: 'Select',
+  toggleTemplate: ({ firstIndex, lastIndex, itemCount, itemsTitle }) => (
+    <React.Fragment>
+      <strong>{firstIndex} - {lastIndex}</strong> of<strong>{itemCount}</strong> {itemsTitle}
+    </React.Fragment>
+  )
 };
 
 class OptionsMenu extends Component {
@@ -38,35 +49,15 @@ class OptionsMenu extends Component {
     });
   };
 
-  onSelect = event => {
+  onSelect = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
   };
 
-
-  renderToggle = () => {
-    const { titles, firstIndex, lastIndex, itemCount, widgetId } = this.props;
-    return (
-      <DropdownToggle
-        onToggle={this.onToggle}
-        iconComponent={null}
-        aria-haspopup="listbox"
-        id={`${widgetId}-toggle`}
-        aria-labelledby={`${widgetId}-label ${widgetId}-toggle`}
-        aria-label="Select"
-      >
-        <span className={css(styles.optionsMenuToggleText)}>
-          <b>{firstIndex} - {lastIndex}</b> of <b>{itemCount}</b> {titles.items}
-        </span>
-        <CaretDownIcon />
-      </DropdownToggle>
-    )
-  }
-
   renderItems = () => {
     const { perPageOptions, onPerPageSelect, perPage } = this.props;
-    return perPageOptions.map(({ value, title }) =>(
+    return perPageOptions.map(({ value, title }) => (
       <DropdownItem key={value}
         component="button"
         data-action={`per-page-${value}`}
@@ -88,21 +79,36 @@ class OptionsMenu extends Component {
       widgetId,
       dropDirection,
       perPageOptions,
-      titles,
+      itemsPerPageTitle,
+      itemsTitle,
+      optionsToggle,
       itemCount,
       firstIndex,
       lastIndex,
       perPage,
       onPerPageSelect,
+      toggleTemplate,
       ...props
     } = this.props;
     return (
       <div className={css(styles.optionsMenu, className)} {...props}>
-        <span id={`${widgetId}-label`} hidden>Items per page:</span>
+        <span id={`${widgetId}-label`} hidden>{itemsPerPageTitle}:</span>
         <Dropdown direction={dropDirection}
           onSelect={this.onSelect}
           isOpen={this.state.isOpen}
-          toggle={this.renderToggle()}
+          toggle={
+            <OptionsToggle
+              optionsToggle={optionsToggle}
+              itemsTitle={itemsTitle}
+              onToggle={this.onToggle}
+              isOpen={this.state.isOpen}
+              firstIndex={firstIndex}
+              lastIndex={lastIndex}
+              itemCount={itemCount}
+              widgetId={widgetId}
+              toggleTemplate={toggleTemplate}
+            />
+          }
           dropdownItems={this.renderItems()}
           isPlain
         />

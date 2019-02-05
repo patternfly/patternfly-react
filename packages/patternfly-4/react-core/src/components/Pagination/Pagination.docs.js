@@ -3,7 +3,7 @@ import PaginationTop from './examples/PaginationTop';
 import PaginationBottom from './examples/PaginationBottom';
 
 export default {
-  title: 'Page',
+  title: 'Pagination',
   components: {
     Pagination
   },

@@ -1,42 +1,68 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/Pagination/pagination.css';
+import styles from '@patternfly/patternfly/components/Pagination/pagination.css';
 import { css } from '@patternfly/react-styles';
 import { AngleLeftIcon, AngleDoubleLeftIcon, AngleRightIcon, AngleDoubleRightIcon } from '@patternfly/react-icons';
 import { Button, ButtonVariant } from '../Button';
 
 const propTypes = {
   lastPage: PropTypes.number,
-  titles: PropTypes.shape({
-    pages: PropTypes.string
-  }),
+  pagesTitle: PropTypes.string,
+  toLastPage: PropTypes.string,
+  toPreviousPage: PropTypes.string,
+  toNextPage: PropTypes.string,
+  toFirstPage: PropTypes.string,
+  currPage: PropTypes.string,
+  paginationTitle: PropTypes.string,
   page: PropTypes.number.isRequired,
   onSetPage: PropTypes.func.isRequired,
-  onNextclick: PropTypes.func,
+  onNextClick: PropTypes.func,
   onPreviousClick: PropTypes.func,
   onFirstClick: PropTypes.func,
-  onLastClick: PropTypes.func
+  onLastClick: PropTypes.func,
+  onPageInput: PropTypes.func
 };
-const defaultProps = {};
+const defaultProps = {
+  pagesTitle: '',
+  toLastPage: 'Go to last page',
+  toNextPage: 'Go to next page',
+  toFirstPage: 'Go to first page',
+  toPreviousPage: 'Go to previous page',
+  currPage: 'Current page',
+  paginationTitle: 'Pagination',
+  onSetPage: () => undefined,
+  onNextClick: () => undefined,
+  onPreviousClick: () => undefined,
+  onFirstClick: () => undefined,
+  onLastClick: () => undefined,
+  onPageInput: () => undefined
+};
 
 const Navigation = ({
   page,
   lastPage,
-  titles,
+  pagesTitle,
+  toLastPage,
+  toNextPage,
+  toFirstPage,
+  toPreviousPage,
+  currPage,
+  paginationTitle,
   onSetPage,
   onNextClick,
   onPreviousClick,
   onFirstClick,
   onLastClick,
+  onPageInput,
   className,
   ...props
 }) => {
   return (
-    <nav className={css(styles.paginationNav, className)} aria-label="Pagination" {...props}>
+    <nav className={css(styles.paginationNav, className)} aria-label={paginationTitle} {...props}>
       <Button
         variant={ButtonVariant.plain}
         isDisabled={page === 1}
-        aria-label="Go to first page"
+        aria-label={toFirstPage}
         data-action="first"
         onClick={(event) => {
           onFirstClick(event, 1);
@@ -54,14 +80,14 @@ const Navigation = ({
           onPreviousClick(event, newPage);
           onSetPage(event, newPage);
         }}
-        aria-label="Go to previous page"
+        aria-label={toPreviousPage}
       >
         <AngleLeftIcon />
       </Button>
-      <div className={css(styles.paginationNavPageSelect)} aria-label="Current page 1 of 4">
+      <div className={css(styles.paginationNavPageSelect)}>
         <input
           className={css(styles.formControl)}
-          aria-label="Current page"
+          aria-label={currPage}
           type="number"
           min="1"
           max={lastPage}
@@ -72,15 +98,16 @@ const Navigation = ({
             inputPage = isNaN(inputPage) ? page : inputPage;
             inputPage = inputPage > lastPage ? lastPage : inputPage;
             inputPage = inputPage < 1 ? 1 : inputPage;
-            onSetPage(event, isNaN(inputPage) ? page : inputPage)
+            onSetPage(event, isNaN(inputPage) ? page : inputPage);
+            onPageInput(event, isNaN(inputPage) ? page : inputPage);
           }}
         />
-        <span aria-hidden="true">of {lastPage} {titles.pages}</span>
+        <span aria-hidden="true">of {lastPage} {pagesTitle}</span>
       </div>
       <Button
         variant={ButtonVariant.plain}
         isDisabled={page === lastPage}
-        aria-label="Go to next page"
+        aria-label={toNextPage}
         data-action="next"
         onClick={(event) => {
           const newPage = page + 1 <= lastPage ? page + 1 : lastPage
@@ -93,7 +120,7 @@ const Navigation = ({
       <Button
         variant={ButtonVariant.plain}
         isDisabled={page === lastPage}
-        aria-label="Go to last page"
+        aria-label={toLastPage}
         data-action="last"
         onClick={(event) => {
           onLastClick(event, lastPage);

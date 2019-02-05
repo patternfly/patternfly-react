@@ -43,6 +43,11 @@ describe('component render', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  test('custom pagination toggle', () => {
+    const wrapper = mount(<Pagination itemCount={40} toggleTemplate={'${firstIndex} - ${lastIndex} - ${itemCount} - ${itemsTitle}'} />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   test('up drop direction', () => {
     const wrapper = mount(<Pagination itemCount={40} dropDirection="up" />);
     expect(wrapper).toMatchSnapshot();
