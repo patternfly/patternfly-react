@@ -13,7 +13,7 @@ export function getUniqueId(prefix = 'pf') {
   return `${prefix}-${uid}`;
 }
 
-export function debounce(this: any, func: (...args: any[]) => any, wait: number) {
+export function debounce(func: (...args: any[]) => any, wait: number) {
   let timeout: number;
   return (...args: any[]) => {
     clearTimeout(timeout);
