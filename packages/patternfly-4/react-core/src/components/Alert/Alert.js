@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Alert/alert.css';
 import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
 import AlertIcon from './AlertIcon';
-import { capitalize } from '../../internal/util';
+import { capitalize } from '../../helpers/util';
 import AlertActionCloseButton from './AlertActionCloseButton';
 import AlertActionLink from './AlertActionLink';
 

@@ -3,7 +3,7 @@ import styles from '@patternfly/patternfly/components/Breadcrumb/breadcrumb.css'
 import PropTypes from 'prop-types';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import { css, getModifier } from '@patternfly/react-styles';
-import { componentShape } from '../../internal/componentShape';
+import { componentShape } from '../../helpers/componentShape';
 
 const propTypes = {
   /** Content rendered inside the breadcrumb item. */

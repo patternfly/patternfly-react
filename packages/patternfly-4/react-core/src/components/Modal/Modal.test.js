@@ -2,7 +2,7 @@ import Modal from './Modal';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import { KEY_CODES } from '../../internal/constants';
+import { KEY_CODES } from '../../helpers/constants';
 
 jest.spyOn(ReactDOM, 'createPortal');
 jest.spyOn(document, 'createElement');

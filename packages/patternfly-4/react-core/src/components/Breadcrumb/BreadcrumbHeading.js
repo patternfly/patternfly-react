@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '@patternfly/patternfly/components/Breadcrumb/breadcrumb.css';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import { componentShape } from '../../internal/componentShape';
+import { componentShape } from '../../helpers/componentShape';
 
 const propTypes = {
   /** Content rendered inside the breadcrumb title. */

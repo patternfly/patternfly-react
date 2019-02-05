@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import NavToggle from './NavToggle';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import { NavContext } from './Nav';
-import { getUniqueId } from '../../internal/util';
+import { getUniqueId } from '../../helpers/util';
 
 const propTypes = {
   /** Title shown for the expandable list */

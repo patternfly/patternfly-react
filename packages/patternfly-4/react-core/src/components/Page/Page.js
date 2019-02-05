@@ -3,7 +3,7 @@ import styles from '@patternfly/patternfly/components/Page/page.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { global_breakpoint_md as globalBreakpointMd } from '@patternfly/react-tokens';
-import { debounce } from '../../internal/util';
+import { debounce } from '../../helpers/util';
 
 export const PageLayouts = {
   vertical: 'vertical',

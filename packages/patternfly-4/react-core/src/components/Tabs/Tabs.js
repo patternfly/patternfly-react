@@ -3,8 +3,8 @@ import styles from '@patternfly/patternfly/components/Tabs/tabs.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
-import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../internal/util';
-import { SIDE } from '../../internal/constants';
+import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
+import { SIDE } from '../../helpers/constants';
 
 const propTypes = {
   /** content rendered inside the Tabs Component. */

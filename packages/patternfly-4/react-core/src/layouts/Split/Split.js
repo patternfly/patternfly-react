@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/layouts/Split/split.css';
-import { componentShape } from '../../internal/componentShape';
+import { componentShape } from '../../helpers/componentShape';
 import { GutterSize, getGutterModifier } from '../../styles/gutters';
 import { css } from '@patternfly/react-styles';
 
