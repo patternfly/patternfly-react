@@ -35,7 +35,7 @@
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
     "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
-    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/* dist/sass && cross-var node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/console.scss"
+    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/* dist/sass && cross-env node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/console.scss"
   },
   "dependencies": {
     "@novnc/novnc": "^1.0.0",
@@ -45,7 +45,6 @@
     "xterm": "^3.3.0"
   },
   "devDependencies": {
-    "cross-var": "^1.1.0",
     "patternfly": "^3.58.0",
     "patternfly-react": "^2.29.9"
   },
