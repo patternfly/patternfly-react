@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, SelectOption, Button } from '@patternfly/react-core';
+import { Select, SelectOption } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   state = {
@@ -51,8 +51,7 @@ class SingleSelectInput extends React.Component {
           {this.options.map((option, index) => (
             <SelectOption isDisabled={option.disabled} key={index} value={option.value} />
           ))}
-        </Select>{' '}
-        <Button onClick={this.clearSelection}>Clear</Button>
+        </Select>
       </div>
     );
   }

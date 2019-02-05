@@ -134,7 +134,9 @@ class SelectToggle extends Component {
         aria-haspopup="listbox"
         onKeyDown={this.onKeyDown}
       >
-        <div className={css(styles.selectToggleWrapper)}>{children}</div>
+        <div className={css(styles.selectToggleWrapper)}>
+          <div className={css(styles.selectToggleText)}>{children}</div>
+        </div>
         {IconComponent && <IconComponent className={css(styles.selectToggleArrow)} />}
       </div>
     );

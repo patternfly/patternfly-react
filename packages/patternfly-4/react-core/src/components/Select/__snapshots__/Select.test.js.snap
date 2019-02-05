@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`select single select renders closed successfully 1`] = `
+.pf-c-select__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .pf-c-select__toggle-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -76,7 +82,11 @@ exports[`select single select renders closed successfully 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          Please choose one
+          <div
+            className="pf-c-select__toggle-text"
+          >
+            Please choose one
+          </div>
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
@@ -112,6 +122,12 @@ exports[`select single select renders closed successfully 1`] = `
 `;
 
 exports[`select single select renders expanded successfully 1`] = `
+.pf-c-select__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .pf-c-select__toggle-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -251,7 +267,11 @@ exports[`select single select renders expanded successfully 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          Please choose one
+          <div
+            className="pf-c-select__toggle-text"
+          >
+            Please choose one
+          </div>
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
@@ -391,6 +411,12 @@ exports[`select single select renders expanded successfully 1`] = `
 `;
 
 exports[`select single select renders with selectOptions parameter 1`] = `
+.pf-c-select__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .pf-c-select__toggle-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -493,7 +519,11 @@ exports[`select single select renders with selectOptions parameter 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          Please choose one
+          <div
+            className="pf-c-select__toggle-text"
+          >
+            Please choose one
+          </div>
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"

@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`state active 1`] = `
+.pf-c-select__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .pf-c-select__toggle-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -57,7 +63,11 @@ exports[`state active 1`] = `
     <div
       className="pf-c-select__toggle-wrapper"
     >
-      Select
+      <div
+        className="pf-c-select__toggle-text"
+      >
+        Select
+      </div>
     </div>
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
@@ -91,6 +101,12 @@ exports[`state active 1`] = `
 `;
 
 exports[`state focus 1`] = `
+.pf-c-select__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .pf-c-select__toggle-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -147,7 +163,11 @@ exports[`state focus 1`] = `
     <div
       className="pf-c-select__toggle-wrapper"
     >
-      Select
+      <div
+        className="pf-c-select__toggle-text"
+      >
+        Select
+      </div>
     </div>
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
@@ -181,6 +201,12 @@ exports[`state focus 1`] = `
 `;
 
 exports[`state hover 1`] = `
+.pf-c-select__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .pf-c-select__toggle-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -237,7 +263,11 @@ exports[`state hover 1`] = `
     <div
       className="pf-c-select__toggle-wrapper"
     >
-      Select
+      <div
+        className="pf-c-select__toggle-text"
+      >
+        Select
+      </div>
     </div>
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
