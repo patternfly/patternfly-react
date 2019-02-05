@@ -13,7 +13,7 @@ export interface AlertProps extends Omit<HTMLProps<HTMLDivElement>, 'action'> {
   children?: ReactNode;
   action?: ReactNode;
   title?: string;
-  'aria-label': string;
+  'aria-label'?: string;
   variantLabel?: string;
 }
 
