@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Card/card.css';
-import { componentShape } from '../../internal/componentShape';
+import { componentShape } from '../../helpers/componentShape';
 
 const propTypes = {
   /** content rendered inside the Card */

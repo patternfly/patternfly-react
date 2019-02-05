@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/layouts/Bullseye/bullseye.css';
 import PropTypes from 'prop-types';
-import { componentShape } from '../../internal/componentShape';
+import { componentShape } from '../../helpers/componentShape';
 
 const propTypes = {
   /** content rendered inside the Bullseye layout */

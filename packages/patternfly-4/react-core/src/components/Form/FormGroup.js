@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Form/form.css';
-import { ASTERISK } from '../../internal/htmlConstants';
+import { ASTERISK } from '../../helpers/htmlConstants';
 import { FormContext } from '../Form/FormContext';
 import { css, getModifier } from '@patternfly/react-styles';
 

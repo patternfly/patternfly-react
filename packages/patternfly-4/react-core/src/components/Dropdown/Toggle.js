@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import { KEY_CODES } from '../../internal/constants';
+import { KEY_CODES } from '../../helpers/constants';
 
 const propTypes = {
   /** HTML ID of dropdown toggle */
@@ -64,7 +64,12 @@ class DropdownToggle extends Component {
   onEscPress = event => {
     const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
-    if (this.props.isOpen && (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') && parentRef && parentRef.contains(event.target)) {
+    if (
+      this.props.isOpen &&
+      (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') &&
+      parentRef &&
+      parentRef.contains(event.target)
+    ) {
       this.props.onToggle && this.props.onToggle(false);
       this.toggle.focus();
     }
