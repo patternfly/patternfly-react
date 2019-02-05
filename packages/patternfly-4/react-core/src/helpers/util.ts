@@ -1,6 +1,6 @@
 import { SIDE } from './constants';
 
-export function capitalize(input) {
+export function capitalize(input: string) {
   return input[0].toUpperCase() + input.substring(1);
 }
 
@@ -13,11 +13,11 @@ export function getUniqueId(prefix = 'pf') {
   return `${prefix}-${uid}`;
 }
 
-export function debounce(func, wait) {
-  let timeout;
-  return (...args) => {
+export function debounce(func: (...args: any[]) => any, wait: number) {
+  let timeout: number;
+  return (...args: any[]) => {
     clearTimeout(timeout);
-    timeout = setTimeout(() => func.apply(this, args), wait);
+    timeout = setTimeout(() => func.apply(this, args), wait) as any;
   };
 }
 

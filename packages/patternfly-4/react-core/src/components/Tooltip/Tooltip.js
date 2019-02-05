@@ -5,7 +5,7 @@ import styles from '@patternfly/patternfly/components/Tooltip/tooltip.css';
 import { css, getModifier } from '@patternfly/react-styles';
 import TooltipArrow from './TooltipArrow';
 import TooltipContent from './TooltipContent';
-import { KEY_CODES } from '../../internal/constants';
+import { KEY_CODES } from '../../helpers/constants';
 import { c_tooltip_MaxWidth as tooltipMaxWidth } from '@patternfly/react-tokens';
 import { tippyStyles } from './styles';
 

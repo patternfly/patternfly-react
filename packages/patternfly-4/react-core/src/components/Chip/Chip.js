@@ -5,13 +5,16 @@ import ChipButton from './ChipButton';
 import { Tooltip, TooltipPosition } from '../Tooltip';
 import { TimesCircleIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/Chip/chip.css';
-import GenerateId from '../../internal/GenerateId/GenerateId';
+import GenerateId from '../../helpers/GenerateId/GenerateId';
+
 class Chip extends React.Component {
   span = React.createRef();
   state = { isTooltipVisible: false };
 
   componentDidMount() {
-    this.setState({ isTooltipVisible: this.span.current && this.span.current.offsetWidth < this.span.current.scrollWidth });
+    this.setState({
+      isTooltipVisible: this.span.current && this.span.current.offsetWidth < this.span.current.scrollWidth
+    });
   }
 
   renderOverflowChip = () => {
@@ -23,16 +26,10 @@ class Chip extends React.Component {
         </ChipButton>
       </div>
     );
-  }
+  };
 
-  renderChip = (randomId) => {
-    const {
-      children,
-      closeBtnAriaLabel,
-      tooltipPosition,
-      className,
-      onClick,
-    } = this.props;
+  renderChip = randomId => {
+    const { children, closeBtnAriaLabel, tooltipPosition, className, onClick } = this.props;
     if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>
@@ -40,41 +37,44 @@ class Chip extends React.Component {
             <span ref={this.span} className={css(styles.chipText)} id={randomId}>
               {children}
             </span>
-            <ChipButton onClick={onClick} ariaLabel={closeBtnAriaLabel} id={`remove_${randomId}`} aria-labelledby={`remove_${randomId} ${randomId}`}>
+            <ChipButton
+              onClick={onClick}
+              ariaLabel={closeBtnAriaLabel}
+              id={`remove_${randomId}`}
+              aria-labelledby={`remove_${randomId} ${randomId}`}
+            >
               <TimesCircleIcon aria-hidden="true" />
             </ChipButton>
           </div>
         </Tooltip>
-      )
-    } else {
-      return (
-        <div className={css(styles.chip, className)}>
-          <span ref={this.span} className={css(styles.chipText)} id={randomId}>
-            {children}
-          </span>
-          <ChipButton onClick={onClick} ariaLabel={closeBtnAriaLabel} id={`remove_${randomId}`} aria-labelledby={`remove_${randomId} ${randomId}`}>
-            <TimesCircleIcon aria-hidden="true" />
-          </ChipButton>
-        </div>
-      )
+      );
     }
-  }
+    return (
+      <div className={css(styles.chip, className)}>
+        <span ref={this.span} className={css(styles.chipText)} id={randomId}>
+          {children}
+        </span>
+        <ChipButton
+          onClick={onClick}
+          ariaLabel={closeBtnAriaLabel}
+          id={`remove_${randomId}`}
+          aria-labelledby={`remove_${randomId} ${randomId}`}
+        >
+          <TimesCircleIcon aria-hidden="true" />
+        </ChipButton>
+      </div>
+    );
+  };
 
   render() {
-    const {
-      isOverflowChip,
-    } = this.props;
+    const { isOverflowChip } = this.props;
     return (
       <GenerateId>
-        {(randomId) =>
-          (
-            <React.Fragment>
-              {isOverflowChip ? this.renderOverflowChip() : this.renderChip(randomId)}
-            </React.Fragment>
-          )
-        }
+        {randomId => (
+          <React.Fragment>{isOverflowChip ? this.renderOverflowChip() : this.renderChip(randomId)}</React.Fragment>
+        )}
       </GenerateId>
-    )
+    );
   }
 }
 Chip.propTypes = {
@@ -86,12 +86,12 @@ Chip.propTypes = {
   id: PropTypes.string,
   /** Additional classes added to the chip item */
   className: PropTypes.string,
-  /** Flag indicating if the chip has overflow*/
+  /** Flag indicating if the chip has overflow */
   isOverflowChip: PropTypes.bool,
   /** Position of the tooltip which is displayed if text is longer */
   tooltipPosition: PropTypes.oneOf(Object.values(TooltipPosition)),
   /** Function that is called when clicking on the chip button */
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 Chip.defaultProps = {
@@ -99,7 +99,7 @@ Chip.defaultProps = {
   closeBtnAriaLabel: 'close',
   className: '',
   tooltipPosition: 'top',
-  isOverflowChip: false,
+  isOverflowChip: false
 };
 
 export default Chip;

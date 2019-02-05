@@ -9,7 +9,7 @@ import PopoverContent from './PopoverContent';
 import PopoverBody from './PopoverBody';
 import PopoverHeader from './PopoverHeader';
 import PopoverCloseButton from './PopoverCloseButton';
-import GenerateId from '../../internal/GenerateId/GenerateId';
+import GenerateId from '../../helpers/GenerateId/GenerateId';
 import { Instance, BasicPlacement } from 'tippy.js';
 
 // Need to unset tippy default styles
