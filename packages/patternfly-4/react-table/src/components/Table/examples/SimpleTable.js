@@ -18,10 +18,8 @@ class SimpleTable extends React.Component {
         [
           {
             title: <div>one - 2</div>,
-            props: { title: 'hover title' }
+            props: { title: 'hover title', colSpan: 3 }
           },
-          'two - 2',
-          'three - 2',
           'four - 2',
           'five - 2'
         ]

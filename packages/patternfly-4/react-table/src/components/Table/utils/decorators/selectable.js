@@ -13,9 +13,10 @@ export default (
     rowData
   }
 ) => {
-  if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect) {
+  if ((rowData && rowData.hasOwnProperty('parent')) && !rowData.showSelect) {
     return {
       component: 'td',
+      isVisible: true,
       scope: ''
     };
   }
@@ -39,6 +40,7 @@ export default (
     className: css(styles.tableCheck),
     component: 'td',
     scope: '',
+    isVisible: true,
     children: (
       <SelectColumn {...customProps} onSelect={selectClick} name={rowId !== -1 ? `checkrow${rowIndex}` : 'check-all'}>
         {label}

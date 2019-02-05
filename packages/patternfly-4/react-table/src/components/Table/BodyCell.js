@@ -1,12 +1,12 @@
 import React from 'react';
 import PropsType from 'prop-types';
 
-const BodyCell = ({ ['data-label']: dataLabel, parentId, component: Component, colSpan, ...props }) => {
+const BodyCell = ({ ['data-label']: dataLabel, parentId, isVisible, component: Component, colSpan, ...props }) => {
   const mappedProps = {
     ...dataLabel ? { 'data-label': dataLabel } : {},
     ...props
   }
-  return (parentId !== undefined && colSpan === undefined) ?
+  return (parentId !== undefined && colSpan === undefined) || !isVisible ?
     null :
     <Component {...mappedProps} colSpan={colSpan} />;
 };

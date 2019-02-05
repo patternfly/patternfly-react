@@ -69,6 +69,23 @@ export default SimpleTable;
 
 This library makes use of the babel plugin from [@patternfly/react-styles](../react-styles/README.md) to enable providing the CSS alongside the components. This removes the need for consumers to use (style|css|sass)-loaders. For an example of using CSS from core you can reference [Button.js](./src/components/Button/Button.js). For any CSS not provided by core please use the `StyleSheet.create` utility from [@patternfly/react-styles](../react-styles/README.md). This will prevent collisions with any consumers, and allow the CSS to be bundled with the component.
 
+### Custom transformators
+If you want to add custom transformators to show some special column (collapsible, checkbox) you have to include `isVisible` there as well so cellRenderer knows which cells to render (main purpose is for colSpan).
+
+Example of such transformator can be:
+```JSX
+function someTransform(value) {
+  return {
+    isVisible: true,
+    children: <div>cell</div>
+  }
+}
+```
+
+If you want to add this transformer as default cell (first, last, any,...) for each row you also want to change function `calculateColumns`in [HeaderUtils.js](src/components/Table/utils/HeaderUtils.js).
+
+Notice: Any data provided as cell will be visible by default, no need to add `isVisible` if you want to change how data are displayed.
+
 ### Documentation
 
 This project uses Gatsby. For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
