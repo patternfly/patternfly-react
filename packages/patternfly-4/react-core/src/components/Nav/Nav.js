@@ -19,6 +19,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  'aria-label': '',
   children: null,
   className: '',
   onSelect: () => undefined,
@@ -61,8 +62,8 @@ class Nav extends React.Component {
         }}
       >
         <nav className={css(styles.nav, className)}
-             {...props}
-             aria-label={ariaLabel ? ariaLabel : typeof this.props.children.props !== 'undefined' && this.props.children.props.variant === 'tertiary' ? 'Local' : 'Global'}>
+             aria-label={ariaLabel === '' ? typeof this.props.children.props !== 'undefined' && this.props.children.props.variant === 'tertiary' ? 'Local' : 'Global' : ariaLabel}
+             {...props}>
           {children}
         </nav>
       </NavContext.Provider>
