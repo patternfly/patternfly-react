@@ -13,6 +13,8 @@ const propTypes = {
   value: PropTypes.string,
   /** flag indicating if the option is disabled */
   isDisabled: PropTypes.bool,
+  /** flag indicating if the option acts as a placeholder */
+  isPlaceholder: PropTypes.bool,
   /** Optional on click callback */
   onClick: PropTypes.func,
   /** Callback for ref tracking */
@@ -26,6 +28,7 @@ const defaultProps = {
   className: '',
   value: null,
   isDisabled: false,
+  isPlaceholder: false,
   onClick: Function.prototype
 };
 
@@ -55,6 +58,7 @@ class SelectOption extends React.Component {
       value,
       onClick,
       isDisabled,
+      isPlaceholder,
       selected,
       sendRef,
       keyHandler,
@@ -76,7 +80,7 @@ class SelectOption extends React.Component {
               onClick={event => {
                 if (!isDisabled) {
                   onClick && onClick(event);
-                  onSelect && onSelect(event, value || children);
+                  onSelect && onSelect(event, value || children, isPlaceholder);
                 }
               }}
               role="option"

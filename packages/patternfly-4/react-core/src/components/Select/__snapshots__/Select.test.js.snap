@@ -46,7 +46,7 @@ exports[`select single select renders closed successfully 1`] = `
 <Select
   className=""
   isExpanded={false}
-  placeholderText="Please choose one"
+  placeholderText={null}
   selectOptions={null}
   selections={null}
   variant="single"
@@ -85,7 +85,7 @@ exports[`select single select renders closed successfully 1`] = `
           <div
             className="pf-c-select__toggle-text"
           >
-            Please choose one
+            Mr
           </div>
         </div>
         <CaretDownIcon
@@ -231,7 +231,7 @@ exports[`select single select renders expanded successfully 1`] = `
 <Select
   className=""
   isExpanded={true}
-  placeholderText="Please choose one"
+  placeholderText={null}
   selectOptions={null}
   selections={null}
   variant="single"
@@ -270,7 +270,7 @@ exports[`select single select renders expanded successfully 1`] = `
           <div
             className="pf-c-select__toggle-text"
           >
-            Please choose one
+            Mr
           </div>
         </div>
         <CaretDownIcon
@@ -316,6 +316,7 @@ exports[`select single select renders expanded successfully 1`] = `
           className=""
           index={0}
           isDisabled={false}
+          isPlaceholder={false}
           key=".0"
           keyHandler={[Function]}
           onClick={[Function]}
@@ -339,6 +340,7 @@ exports[`select single select renders expanded successfully 1`] = `
           className=""
           index={1}
           isDisabled={false}
+          isPlaceholder={false}
           key=".1"
           keyHandler={[Function]}
           onClick={[Function]}
@@ -362,6 +364,7 @@ exports[`select single select renders expanded successfully 1`] = `
           className=""
           index={2}
           isDisabled={false}
+          isPlaceholder={false}
           key=".2"
           keyHandler={[Function]}
           onClick={[Function]}
@@ -385,6 +388,7 @@ exports[`select single select renders expanded successfully 1`] = `
           className=""
           index={3}
           isDisabled={false}
+          isPlaceholder={false}
           key=".3"
           keyHandler={[Function]}
           onClick={[Function]}
@@ -456,30 +460,34 @@ exports[`select single select renders with selectOptions parameter 1`] = `
 <Select
   className=""
   isExpanded={false}
-  placeholderText="Please choose one"
+  placeholderText={null}
   selectOptions={
     Array [
       <SelectOption
         className=""
         isDisabled={false}
+        isPlaceholder={false}
         onClick={[Function]}
         value="Mr"
       />,
       <SelectOption
         className=""
         isDisabled={false}
+        isPlaceholder={false}
         onClick={[Function]}
         value="Mrs"
       />,
       <SelectOption
         className=""
         isDisabled={false}
+        isPlaceholder={false}
         onClick={[Function]}
         value="Ms"
       />,
       <SelectOption
         className=""
         isDisabled={false}
+        isPlaceholder={false}
         onClick={[Function]}
         value="Other"
       />,
@@ -522,7 +530,7 @@ exports[`select single select renders with selectOptions parameter 1`] = `
           <div
             className="pf-c-select__toggle-text"
           >
-            Please choose one
+            Mr
           </div>
         </div>
         <CaretDownIcon

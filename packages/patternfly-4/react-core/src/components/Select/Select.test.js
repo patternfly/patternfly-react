@@ -54,6 +54,7 @@ describe('API', () => {
     mount(
       <Select variant="single" selectOptions={selectOptions} isExpanded>
         <div> child test </div>
+        <div> child test </div>
       </Select>
     );
     expect(myMock).toBeCalled();

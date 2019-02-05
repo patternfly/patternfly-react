@@ -38,7 +38,7 @@ const defaultProps = {
   isExpanded: false,
   selectOptions: null,
   selections: null,
-  placeholderText: 'Please choose one',
+  placeholderText: null,
   variant: 'single'
 };
 
@@ -68,6 +68,15 @@ class Select extends React.Component {
       ...props
     } = this.props;
     const { openedOnEnter } = this.state;
+    const renderedChildren = children || selectOptions;
+    let childPlaceholderText = null;
+    if (!selections && !placeholderText) {
+      const childPlaceholder = renderedChildren.filter(child => child.props.isPlaceholder === true);
+      childPlaceholderText =
+        (childPlaceholder[0] && childPlaceholder[0].props.value) ||
+        (renderedChildren[0] && renderedChildren[0].props.value);
+    }
+
     return (
       <div className={css(styles.select, isExpanded && styles.modifiers.expanded, className)} ref={this.parentRef}>
         <SelectContext.Provider value={onSelect}>
@@ -81,11 +90,11 @@ class Select extends React.Component {
                 onEnter={this.onEnter}
                 onClose={this.onClose}
               >
-                {selections || placeholderText}
+                {selections || placeholderText || childPlaceholderText}
               </SelectToggle>
               {isExpanded && (
                 <SingleSelect {...props} selected={selections} openedOnEnter={openedOnEnter}>
-                  {children || selectOptions}
+                  {renderedChildren}
                 </SingleSelect>
               )}
             </React.Fragment>
