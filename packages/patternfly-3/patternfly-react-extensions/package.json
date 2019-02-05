@@ -35,7 +35,7 @@
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
     "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
-    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react-extensions/* dist/sass && cross-var node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react-extensions.scss"
+    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react-extensions/* dist/sass && cross-env node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react-extensions.scss"
   },
   "dependencies": {
     "breakjs": "^1.0.0",
@@ -52,8 +52,5 @@
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
-  },
-  "devDependencies": {
-    "cross-var": "^1.1.0"
   }
 }
