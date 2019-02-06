@@ -21,9 +21,10 @@ cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssAst = parse(readFileSync(absFilePath, 'utf8'));
   cssAst.stylesheet.rules.forEach(node => {
-    if (node.type !== 'rule') {
+    if (node.type !== 'rule' || node.selectors.indexOf('.pf-t-dark') !== -1) {
       return;
     }
+
     node.declarations.forEach(decl => {
       if (decl.type !== 'declaration') {
         return;
