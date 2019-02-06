@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly/components/Check/check.css';
+import styles from '@patternfly/patternfly/components/Radio/radio.css';
 import PropTypes from 'prop-types';
 import { css, getModifier } from '@patternfly/react-styles';
 
@@ -48,11 +48,11 @@ class Radio extends React.Component {
   render() {
     const { 'aria-label': ariaLabel, className, onChange, isValid, isDisabled, isChecked, label, checked, ...props } = this.props;
     return (
-      <div className={css(styles.check, className)}>
+      <div className={css(styles.radio, className)}>
         <input
           {...props}
           aria-label={label ? null : ariaLabel}
-          className={css(styles.checkInput)}
+          className={css(styles.radioInput)}
           type="radio"
           onChange={this.handleChange}
           aria-invalid={!isValid}
@@ -60,7 +60,7 @@ class Radio extends React.Component {
           checked={isChecked || checked}
         />
         {label && (
-          <label className={css(styles.checkLabel, getModifier(styles, isDisabled && 'disabled'))} htmlFor={props.id}>
+          <label className={css(styles.radioLabel, getModifier(styles, isDisabled && 'disabled'))} htmlFor={props.id}>
             {label}
           </label>
         )}
