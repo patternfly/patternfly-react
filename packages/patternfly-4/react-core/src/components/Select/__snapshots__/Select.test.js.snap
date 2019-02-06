@@ -39,6 +39,7 @@ exports[`select single select renders closed successfully 1`] = `
 }
 .pf-c-select {
   display: inline-block;
+  color: #282d33;
   position: relative;
   max-width: 100%;
 }
@@ -223,6 +224,7 @@ exports[`select single select renders expanded successfully 1`] = `
 }
 .pf-c-select.pf-m-expanded {
   display: inline-block;
+  color: #282d33;
   position: relative;
   max-width: 100%;
 }
@@ -451,6 +453,7 @@ exports[`select single select renders with selectOptions parameter 1`] = `
 }
 .pf-c-select {
   display: inline-block;
+  color: #282d33;
   position: relative;
   max-width: 100%;
 }

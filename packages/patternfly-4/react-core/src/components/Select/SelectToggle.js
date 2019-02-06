@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from '@patternfly/patternfly-next/components/Select/select.css';
+import styles from '@patternfly/patternfly/components/Select/select.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { CaretDownIcon } from '@patternfly/react-icons';
