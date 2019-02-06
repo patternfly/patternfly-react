@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.43.0](https://github.com/dgutride/patternfly-react/compare/patternfly4-react-lerna-root@1.42.7...patternfly4-react-lerna-root@1.43.0) (2019-02-06)
+
+
+### Bug Fixes
+
+* **Alert:** Fix index.d.ts file ([#1320](https://github.com/dgutride/patternfly-react/issues/1320)) ([172403b](https://github.com/dgutride/patternfly-react/commit/172403b)), closes [#1318](https://github.com/dgutride/patternfly-react/issues/1318)
+* **Nav:** do not render the examples page ([#1316](https://github.com/dgutride/patternfly-react/issues/1316)) ([f3ebdee](https://github.com/dgutride/patternfly-react/commit/f3ebdee))
+* **PF4:** tooltip/popover - include tippy css ([#1244](https://github.com/dgutride/patternfly-react/issues/1244)) ([c045116](https://github.com/dgutride/patternfly-react/commit/c045116))
+* **Radio:** Use pf-c-radio class in Radio ([#1328](https://github.com/dgutride/patternfly-react/issues/1328)) ([544c9b6](https://github.com/dgutride/patternfly-react/commit/544c9b6))
+* **Table:** Use direct imports for styles ([#1314](https://github.com/dgutride/patternfly-react/issues/1314)) ([27fcfb1](https://github.com/dgutride/patternfly-react/commit/27fcfb1))
+* **utils:** export common utility functions and constants in react-core ([#1232](https://github.com/dgutride/patternfly-react/issues/1232)) ([516ace0](https://github.com/dgutride/patternfly-react/commit/516ace0))
+
+
+### Features
+
+* **Tooltip:** Add optional delay prop to Tooltip ([#1205](https://github.com/dgutride/patternfly-react/issues/1205)) ([f742fc5](https://github.com/dgutride/patternfly-react/commit/f742fc5)), closes [#1161](https://github.com/dgutride/patternfly-react/issues/1161)
+
+
+
+
+
 ## [1.42.7](https://github.com/patternfly/patternfly-react/compare/patternfly4-react-lerna-root@1.42.6...patternfly4-react-lerna-root@1.42.7) (2019-02-01)
 
 **Note:** Version bump only for package patternfly4-react-lerna-root

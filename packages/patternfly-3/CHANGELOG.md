@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.19.14](https://github.com/dgutride/patternfly-react/compare/patternfly3-react-lerna-root@7.19.13...patternfly3-react-lerna-root@7.19.14) (2019-02-06)
+
+**Note:** Version bump only for package patternfly3-react-lerna-root
+
+
+
+
+
 ## [7.19.13](https://github.com/patternfly/patternfly-react/compare/patternfly3-react-lerna-root@7.19.12...patternfly3-react-lerna-root@7.19.13) (2019-02-01)
 
 
