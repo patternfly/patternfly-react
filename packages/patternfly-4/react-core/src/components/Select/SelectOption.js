@@ -68,7 +68,7 @@ class SelectOption extends React.Component {
     return (
       <SelectContext.Consumer>
         {onSelect => (
-          <li>
+          <li role="presentation">
             <button
               {...props}
               className={css(

@@ -27,14 +27,17 @@ class SingleSelect extends React.Component {
 
   componentDidMount() {
     if (this.props.openedOnEnter) {
-      this.refCollection[0].current.focus();
+      const selectedRef = this.refCollection.filter(ref =>
+        ref.current.classList.contains('pf-c-select__menu-item--match')
+      );
+      selectedRef && selectedRef[0] ? selectedRef[0].current.focus() : this.refCollection[0].current.focus();
     }
   }
 
   extendChildren() {
     return React.Children.map(this.props.children, (child, index) =>
       React.cloneElement(child, {
-        selected: this.props.selected === child.props.label,
+        selected: this.props.selected === child.props.value,
         sendRef: this.sendRef,
         keyHandler: this.keyHandler,
         index

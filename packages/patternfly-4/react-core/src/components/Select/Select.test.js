@@ -42,7 +42,7 @@ describe('API', () => {
     );
     view
       .find('button')
-      .first()
+      .at(1)
       .simulate('click');
     expect(mockToggle.mock.calls).toHaveLength(0);
     expect(mockSelect.mock.calls).toHaveLength(1);

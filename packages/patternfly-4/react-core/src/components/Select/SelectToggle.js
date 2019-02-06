@@ -68,6 +68,7 @@ class SelectToggle extends Component {
 
   onEscPress = event => {
     const { parentRef, isExpanded, onToggle, onClose } = this.props;
+    if (!isExpanded && event.key === KeyTypes.Enter) this.toggle.focus();
     if (
       isExpanded &&
       (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&
@@ -85,8 +86,9 @@ class SelectToggle extends Component {
     if (event.key === KeyTypes.Tab && !isExpanded) return;
     event.preventDefault();
     if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && isExpanded) {
-      onToggle(!isExpanded);
+      onToggle && onToggle(!isExpanded);
       onClose && onClose();
+      this.toggle.focus();
     } else if ((event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && !isExpanded) {
       onToggle(!isExpanded);
       onEnter();
@@ -110,7 +112,7 @@ class SelectToggle extends Component {
       ...props
     } = this.props;
     return (
-      <div
+      <button
         {...props}
         id={id}
         ref={toggle => {
@@ -124,7 +126,6 @@ class SelectToggle extends Component {
           isPlain && styles.modifiers.plain,
           className
         )}
-        tabIndex={0}
         type={type || 'button'}
         onClick={_event => onToggle && onToggle(!isExpanded)}
         aria-expanded={isExpanded}
@@ -135,7 +136,7 @@ class SelectToggle extends Component {
           <span className={css(styles.selectToggleText)}>{children}</span>
         </div>
         <CaretDownIcon className={css(styles.selectToggleArrow)} />
-      </div>
+      </button>
     );
   }
 }

@@ -74,7 +74,7 @@ exports[`select single select renders closed successfully 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <div
+      <button
         aria-expanded={false}
         aria-haspopup="listbox"
         className="pf-c-select__toggle"
@@ -82,7 +82,6 @@ exports[`select single select renders closed successfully 1`] = `
         onClick={[Function]}
         onClose={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
         type="button"
       >
         <div
@@ -121,7 +120,7 @@ exports[`select single select renders closed successfully 1`] = `
             />
           </svg>
         </CaretDownIcon>
-      </div>
+      </button>
     </SelectToggle>
   </div>
 </Select>
@@ -265,7 +264,7 @@ exports[`select single select renders expanded successfully 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <div
+      <button
         aria-expanded={true}
         aria-haspopup="listbox"
         className="pf-c-select__toggle"
@@ -273,7 +272,6 @@ exports[`select single select renders expanded successfully 1`] = `
         onClick={[Function]}
         onClose={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
         type="button"
       >
         <div
@@ -312,7 +310,7 @@ exports[`select single select renders expanded successfully 1`] = `
             />
           </svg>
         </CaretDownIcon>
-      </div>
+      </button>
     </SelectToggle>
     <SingleSelect
       className=""
@@ -336,7 +334,9 @@ exports[`select single select renders expanded successfully 1`] = `
           sendRef={[Function]}
           value="Mr"
         >
-          <li>
+          <li
+            role="presentation"
+          >
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
@@ -360,7 +360,9 @@ exports[`select single select renders expanded successfully 1`] = `
           sendRef={[Function]}
           value="Mrs"
         >
-          <li>
+          <li
+            role="presentation"
+          >
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
@@ -384,7 +386,9 @@ exports[`select single select renders expanded successfully 1`] = `
           sendRef={[Function]}
           value="Ms"
         >
-          <li>
+          <li
+            role="presentation"
+          >
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
@@ -408,7 +412,9 @@ exports[`select single select renders expanded successfully 1`] = `
           sendRef={[Function]}
           value="Other"
         >
-          <li>
+          <li
+            role="presentation"
+          >
             <button
               aria-selected={null}
               className="pf-c-select__menu-item"
@@ -531,7 +537,7 @@ exports[`select single select renders with selectOptions parameter 1`] = `
       onToggle={[Function]}
       parentRef={null}
     >
-      <div
+      <button
         aria-expanded={false}
         aria-haspopup="listbox"
         className="pf-c-select__toggle"
@@ -539,7 +545,6 @@ exports[`select single select renders with selectOptions parameter 1`] = `
         onClick={[Function]}
         onClose={[Function]}
         onKeyDown={[Function]}
-        tabIndex={0}
         type="button"
       >
         <div
@@ -578,7 +583,7 @@ exports[`select single select renders with selectOptions parameter 1`] = `
             />
           </svg>
         </CaretDownIcon>
-      </div>
+      </button>
     </SelectToggle>
   </div>
 </Select>

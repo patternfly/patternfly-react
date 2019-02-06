@@ -49,14 +49,13 @@ exports[`state active 1`] = `
   onToggle={[Function]}
   parentRef={<div />}
 >
-  <div
+  <button
     aria-expanded={false}
     aria-haspopup="listbox"
     className="pf-c-select__toggle pf-m-active"
     id="Select Toggle"
     onClick={[Function]}
     onKeyDown={[Function]}
-    tabIndex={0}
     type="button"
   >
     <div
@@ -95,7 +94,7 @@ exports[`state active 1`] = `
         />
       </svg>
     </CaretDownIcon>
-  </div>
+  </button>
 </SelectToggle>
 `;
 
@@ -148,14 +147,13 @@ exports[`state focus 1`] = `
   onToggle={[Function]}
   parentRef={<div />}
 >
-  <div
+  <button
     aria-expanded={false}
     aria-haspopup="listbox"
     className="pf-c-select__toggle pf-m-focus"
     id="Select Toggle"
     onClick={[Function]}
     onKeyDown={[Function]}
-    tabIndex={0}
     type="button"
   >
     <div
@@ -194,7 +192,7 @@ exports[`state focus 1`] = `
         />
       </svg>
     </CaretDownIcon>
-  </div>
+  </button>
 </SelectToggle>
 `;
 
@@ -247,14 +245,13 @@ exports[`state hover 1`] = `
   onToggle={[Function]}
   parentRef={<div />}
 >
-  <div
+  <button
     aria-expanded={false}
     aria-haspopup="listbox"
     className="pf-c-select__toggle pf-m-hover"
     id="Select Toggle"
     onClick={[Function]}
     onKeyDown={[Function]}
-    tabIndex={0}
     type="button"
   >
     <div
@@ -293,6 +290,6 @@ exports[`state hover 1`] = `
         />
       </svg>
     </CaretDownIcon>
-  </div>
+  </button>
 </SelectToggle>
 `;
