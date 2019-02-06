@@ -3,6 +3,7 @@ import styles from '@patternfly/patternfly-next/components/Select/select.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { CaretDownIcon } from '@patternfly/react-icons';
+import { KeyTypes } from './selectConstants';
 
 const propTypes = {
   /** HTML ID of dropdown toggle */
@@ -27,8 +28,6 @@ const propTypes = {
   isPlain: PropTypes.bool,
   /** Type of the toggle button, defaults to 'button' */
   type: PropTypes.string,
-  /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
-  iconComponent: PropTypes.func,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
 };
@@ -42,7 +41,6 @@ const defaultProps = {
   isHovered: false,
   isActive: false,
   isPlain: false,
-  iconComponent: CaretDownIcon,
   onToggle: Function.prototype
 };
 
@@ -72,7 +70,7 @@ class SelectToggle extends Component {
     const { parentRef, isExpanded, onToggle, onClose } = this.props;
     if (
       isExpanded &&
-      (event.key === 'Escape' || event.key === 'Tab') &&
+      (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&
       parentRef &&
       parentRef.contains(event.target)
     ) {
@@ -84,12 +82,12 @@ class SelectToggle extends Component {
 
   onKeyDown = event => {
     const { isExpanded, onToggle, onClose, onEnter } = this.props;
-    if (event.key === 'Tab' && !isExpanded) return;
+    if (event.key === KeyTypes.Tab && !isExpanded) return;
     event.preventDefault();
-    if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && isExpanded) {
+    if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && isExpanded) {
       onToggle(!isExpanded);
       onClose && onClose();
-    } else if ((event.key === 'Enter' || event.key === ' ') && !isExpanded) {
+    } else if ((event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && !isExpanded) {
       onToggle(!isExpanded);
       onEnter();
     }
@@ -109,7 +107,6 @@ class SelectToggle extends Component {
       parentRef,
       id,
       type,
-      iconComponent: IconComponent,
       ...props
     } = this.props;
     return (
@@ -135,9 +132,9 @@ class SelectToggle extends Component {
         onKeyDown={this.onKeyDown}
       >
         <div className={css(styles.selectToggleWrapper)}>
-          <div className={css(styles.selectToggleText)}>{children}</div>
+          <span className={css(styles.selectToggleText)}>{children}</span>
         </div>
-        {IconComponent && <IconComponent className={css(styles.selectToggleArrow)} />}
+        <CaretDownIcon className={css(styles.selectToggleArrow)} />
       </div>
     );
   }

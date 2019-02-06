@@ -40,7 +40,6 @@ exports[`state active 1`] = `
 
 <SelectToggle
   className=""
-  iconComponent={[Function]}
   id="Select Toggle"
   isActive={true}
   isExpanded={false}
@@ -63,11 +62,11 @@ exports[`state active 1`] = `
     <div
       className="pf-c-select__toggle-wrapper"
     >
-      <div
+      <span
         className="pf-c-select__toggle-text"
       >
         Select
-      </div>
+      </span>
     </div>
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
@@ -140,7 +139,6 @@ exports[`state focus 1`] = `
 
 <SelectToggle
   className=""
-  iconComponent={[Function]}
   id="Select Toggle"
   isActive={false}
   isExpanded={false}
@@ -163,11 +161,11 @@ exports[`state focus 1`] = `
     <div
       className="pf-c-select__toggle-wrapper"
     >
-      <div
+      <span
         className="pf-c-select__toggle-text"
       >
         Select
-      </div>
+      </span>
     </div>
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
@@ -240,7 +238,6 @@ exports[`state hover 1`] = `
 
 <SelectToggle
   className=""
-  iconComponent={[Function]}
   id="Select Toggle"
   isActive={false}
   isExpanded={false}
@@ -263,11 +260,11 @@ exports[`state hover 1`] = `
     <div
       className="pf-c-select__toggle-wrapper"
     >
-      <div
+      <span
         className="pf-c-select__toggle-text"
       >
         Select
-      </div>
+      </span>
     </div>
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"

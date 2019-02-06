@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, SelectOption } from '@patternfly/react-core';
+import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   options = [
@@ -46,7 +46,7 @@ class SingleSelectInput extends React.Component {
     return (
       <div>
         <Select
-          variant="single"
+          variant={SelectVariant.single}
           aria-label="Select Input"
           onToggle={this.onToggle}
           onSelect={this.onSelect}

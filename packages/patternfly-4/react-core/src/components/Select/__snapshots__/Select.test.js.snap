@@ -56,7 +56,6 @@ exports[`select single select renders closed successfully 1`] = `
   >
     <SelectToggle
       className=""
-      iconComponent={[Function]}
       id="pf-toggle-id-0"
       isActive={false}
       isExpanded={false}
@@ -82,11 +81,11 @@ exports[`select single select renders closed successfully 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <div
+          <span
             className="pf-c-select__toggle-text"
           >
             Mr
-          </div>
+          </span>
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
@@ -241,7 +240,6 @@ exports[`select single select renders expanded successfully 1`] = `
   >
     <SelectToggle
       className=""
-      iconComponent={[Function]}
       id="pf-toggle-id-1"
       isActive={false}
       isExpanded={true}
@@ -267,11 +265,11 @@ exports[`select single select renders expanded successfully 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <div
+          <span
             className="pf-c-select__toggle-text"
           >
             Mr
-          </div>
+          </span>
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
@@ -501,7 +499,6 @@ exports[`select single select renders with selectOptions parameter 1`] = `
   >
     <SelectToggle
       className=""
-      iconComponent={[Function]}
       id="pf-toggle-id-2"
       isActive={false}
       isExpanded={false}
@@ -527,11 +524,11 @@ exports[`select single select renders with selectOptions parameter 1`] = `
         <div
           className="pf-c-select__toggle-wrapper"
         >
-          <div
+          <span
             className="pf-c-select__toggle-text"
           >
             Mr
-          </div>
+          </span>
         </div>
         <CaretDownIcon
           className="pf-c-select__toggle-arrow"
