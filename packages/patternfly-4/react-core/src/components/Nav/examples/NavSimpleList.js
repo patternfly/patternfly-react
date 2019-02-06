@@ -17,16 +17,16 @@ class NavSimpleList extends React.Component {
     return (
       <Nav onSelect={this.onSelect} id="nav-primary-simple" aria-label="Primary Nav, Simple List Example">
         <NavList variant={NavVariants.simple}>
-          <NavItem to="#simple-link1" itemId={0} isActive={activeItem === 0}>
+          <NavItem preventDefault to="#simple-link1" itemId={0} isActive={activeItem === 0}>
             Link 1
           </NavItem>
-          <NavItem to="#simple-link2" itemId={1} isActive={activeItem === 1}>
+          <NavItem preventDefault to="#simple-link2" itemId={1} isActive={activeItem === 1}>
             Link 2
           </NavItem>
-          <NavItem to="#simple-link3" itemId={2} isActive={activeItem === 2} isSeparated={true}>
+          <NavItem preventDefault to="#simple-link3" itemId={2} isActive={activeItem === 2} isSeparated={true}>
             Link 3 with separator
           </NavItem>
-          <NavItem to="#simple-link4" itemId={3} isActive={activeItem === 3}>
+          <NavItem preventDefault to="#simple-link4" itemId={3} isActive={activeItem === 3}>
             Link 4
           </NavItem>
         </NavList>
