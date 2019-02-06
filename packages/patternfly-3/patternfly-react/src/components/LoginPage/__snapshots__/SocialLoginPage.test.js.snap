@@ -115,12 +115,16 @@ exports[`Component matches snapshot 1`] = `
         >
           <div
             class="login-form-error"
-            style="overflow: hidden; height: 0px;"
           >
             <div
-              class="ReactCollapse--content"
+              class="ReactCollapse--collapse"
+              style="overflow: hidden; height: 0px;"
             >
-              Your account has been blocked. Contact your administrator to unblock it.
+              <div
+                class="ReactCollapse--content"
+              >
+                Your account has been blocked. Contact your administrator to unblock it.
+              </div>
             </div>
           </div>
           <div

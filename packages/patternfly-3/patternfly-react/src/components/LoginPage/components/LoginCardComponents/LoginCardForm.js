@@ -19,12 +19,15 @@ const LoginCardForm = ({
   submitError,
   showError,
   attributes,
-  isSubmitting
+  isSubmitting,
+  topErrorOnly
 }) => (
   <Form onSubmit={onSubmit} noValidate {...attributes}>
-    <LoginFormError show={showError}>{submitError}</LoginFormError>
-    <LoginCardInput {...usernameField} />
-    <LoginCardInput {...passwordField} />
+    <LoginFormError show={showError} topErrorOnly={topErrorOnly}>
+      {submitError}
+    </LoginFormError>
+    <LoginCardInput {...{ ...usernameField, topErrorOnly }} />
+    <LoginCardInput {...{ ...passwordField, topErrorOnly }} />
     {additionalFields}
     <LoginCardSettings rememberMe={rememberMe} forgotPassword={forgotPassword} />
     <LoginCardSubmitButton isDisabled={disableSubmit} isLoading={isSubmitting}>
@@ -57,7 +60,12 @@ LoginCardForm.propTypes = {
   /** Additional HTML attributes to pass to the form */
   attributes: PropTypes.object,
   /** Indicates the state of the form submit and whether to show a spinner or not */
-  isSubmitting: PropTypes.bool
+  isSubmitting: PropTypes.bool,
+  /** when topErrorOnly is set to true,
+   * the helpblock errors/warnings under each input won't appear,
+   * instead we will have only the form error above.
+   */
+  topErrorOnly: PropTypes.bool
 };
 
 LoginCardForm.defaultProps = {
@@ -87,7 +95,8 @@ LoginCardForm.defaultProps = {
   submitError: null,
   showError: false,
   attributes: null,
-  isSubmitting: false
+  isSubmitting: false,
+  topErrorOnly: false
 };
 
 export default LoginCardForm;
