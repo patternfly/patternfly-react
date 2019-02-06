@@ -43,7 +43,7 @@ const defaultProps = {
   measureLocation: ProgressMeasureLocation.top,
   variant: ProgressVariant.info,
   id: '',
-  title: '',
+  title: null,
   min: 0,
   max: 100,
   size: null,
@@ -82,6 +82,7 @@ class Progress extends Component {
           getModifier(styles, variant, ''),
           getModifier(styles, measureLocation, ''),
           getModifier(styles, measureLocation === ProgressMeasureLocation.inside ? ProgressSize.lg : size, ''),
+          !title && getModifier(styles, 'singleline', ''),
           className
         )}
         id={this.id}
@@ -93,7 +94,7 @@ class Progress extends Component {
         <ProgressContainer
           parentId={this.id}
           value={scaledValue}
-          title={title}
+          title={title || ''}
           label={label}
           variant={variant}
           measureLocation={measureLocation}
