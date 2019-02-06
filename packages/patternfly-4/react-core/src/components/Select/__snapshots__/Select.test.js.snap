@@ -51,9 +51,15 @@ exports[`select single select renders closed successfully 1`] = `
   selectOptions={null}
   selections={null}
   variant="single"
+  width="100%"
 >
   <div
     className="pf-c-select"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
   >
     <SelectToggle
       className=""
@@ -236,9 +242,15 @@ exports[`select single select renders expanded successfully 1`] = `
   selectOptions={null}
   selections={null}
   variant="single"
+  width="100%"
 >
   <div
     className="pf-c-select pf-m-expanded"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
   >
     <SelectToggle
       className=""
@@ -496,9 +508,15 @@ exports[`select single select renders with selectOptions parameter 1`] = `
   }
   selections={null}
   variant="single"
+  width="100%"
 >
   <div
     className="pf-c-select"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
   >
     <SelectToggle
       className=""

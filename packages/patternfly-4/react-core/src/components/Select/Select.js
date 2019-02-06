@@ -28,6 +28,8 @@ const propTypes = {
   onToggle: PropTypes.func.isRequired,
   /** Variant of rendered Select */
   variant: PropTypes.oneOf(['single']),
+  /** Width of the select container as a number of px or string percentage */
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Additional props are spread to the container <ul> */
   '': PropTypes.any
 };
@@ -39,7 +41,8 @@ const defaultProps = {
   selectOptions: null,
   selections: null,
   placeholderText: null,
-  variant: 'single'
+  variant: 'single',
+  width: '100%'
 };
 
 class Select extends React.Component {
@@ -65,6 +68,7 @@ class Select extends React.Component {
       selectOptions,
       selections,
       placeholderText,
+      width,
       ...props
     } = this.props;
     const { openedOnEnter } = this.state;
@@ -78,7 +82,11 @@ class Select extends React.Component {
     }
 
     return (
-      <div className={css(styles.select, isExpanded && styles.modifiers.expanded, className)} ref={this.parentRef}>
+      <div
+        className={css(styles.select, isExpanded && styles.modifiers.expanded, className)}
+        ref={this.parentRef}
+        style={{ width }}
+      >
         <SelectContext.Provider value={onSelect}>
           {variant === 'single' && (
             <React.Fragment>

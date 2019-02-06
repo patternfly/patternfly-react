@@ -7,6 +7,7 @@ export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   selectOptions?: ReactNode[];
   selections?: string;
   variant?: string;
+  width?: string | number;
 }
 
 declare const Select: React.FunctionComponent<SelectProps>;
