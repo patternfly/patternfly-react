@@ -1,1 +1,1 @@
-export * from './components/TreeView';
+export { default as TreeView } from './components/TreeView';
