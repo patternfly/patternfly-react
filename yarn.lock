@@ -1688,11 +1688,11 @@
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.178.tgz#5b520cc6da54f54a7b5a0c449101335cfbff5218"
 
 "@patternfly/react-core@file:packages/patternfly-4/react-core":
-  version "1.52.0"
+  version "1.51.6"
   dependencies:
-    "@patternfly/react-icons" "^2.10.6"
-    "@patternfly/react-styles" "^2.3.1"
-    "@patternfly/react-tokens" "^1.10.3"
+    "@patternfly/react-icons" "^2.10.5"
+    "@patternfly/react-styles" "^2.3.0"
+    "@patternfly/react-tokens" "^1.10.2"
     "@tippy.js/react" "^1.1.1"
     emotion "^10.0.6"
     exenv "^1.2.2"
@@ -2321,22 +2321,9 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-dom@16.0.11":
-  version "16.0.11"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.11.tgz#bd10ccb0d9260343f4b9a49d4f7a8330a5c1f081"
-  dependencies:
-    "@types/react" "*"
-
 "@types/react@*", "@types/react@^16.7.13":
   version "16.7.18"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.18.tgz#f4ce0d539a893dd61e36cd11ae3a5e54f5a48337"
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^2.2.0"
-
-"@types/react@16.7.13":
-  version "16.7.13"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.13.tgz#d2369ae78377356d42fb54275d30218e84f2247a"
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
