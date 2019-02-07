@@ -5,6 +5,6 @@ export interface GenerateIdProps {
   children(id: string): ReactNode;
 }
 
-declare const GenerateId: ComponentClass<GenerateId>;
+declare const GenerateId: ComponentClass<GenerateIdProps>;
 
 export default GenerateId;
