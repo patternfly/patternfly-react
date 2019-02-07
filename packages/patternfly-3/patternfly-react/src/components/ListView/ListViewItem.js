@@ -42,6 +42,7 @@ class ListViewItem extends React.Component {
       compoundExpand,
       compoundExpanded,
       onCloseCompoundExpand,
+      initExpanded,
       ...other
     } = this.props;
     const { expanded } = this.state;
