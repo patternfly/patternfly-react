@@ -33,32 +33,41 @@ class ContextBody extends React.Component {
     return rows[parentId].hasOwnProperty('parent') ? this.parentsExpanded(rows[parentId].parent) : rows[parentId].isOpen;
   }
 
+  mapCells = (row, rowKey) => {
+    const { headerData } = this.props;
+    let shiftKey = Boolean(headerData[0] && headerData[0].extraParams.onSelect);
+    shiftKey += Boolean(headerData[0] && headerData[0].extraParams.onCollapse);
+    return ({
+      ...row,
+      ...row && (row.cells || row).reduce((acc, curr, key) => {
+        const currShift = shiftKey;
+        if (curr.props && curr.props.colSpan) {
+          shiftKey += shiftKey + curr.props && curr.props.colSpan - 1;
+        }
+        return ({
+          ...acc,
+          ...{
+            [headerData[currShift + key].property]: {
+              title: curr.title || curr,
+              props: {
+                isVisible: true,
+                ...curr.props
+              }
+            }
+          }
+        })
+      }, { id: row.id !== undefined ? row.id : rowKey })
+    })
+  }
+
   render() {
     const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
-    let shiftKey = 0;
-    shiftKey += headerData[0] && headerData[0].extraParams.onSelect ? 1 : 0;
-    shiftKey += headerData[0] && headerData[0].extraParams.onCollapse ? 1 : 0;
-    const mappedRows = headerData.length !== 0 && rows.map((oneRow, oneRowKey) => {
-      return {
-        ...oneRow,
-        ...oneRow && (oneRow.cells || oneRow).reduce(
-          (acc, curr, key) => {
-            return ({
-              ...acc,
-              ...{
-                [headerData[shiftKey + key].property]: {
-                  title: curr.title || curr,
-                  props: curr.props
-                }
-              }
-            })
-          },
-          { id: oneRowKey }),
-        ...oneRow.parent !== undefined ? {
-          isExpanded: this.parentsExpanded(oneRow.parent) && rows[oneRow.parent].isOpen
-        } : {},
-      }
-    });
+    const mappedRows = headerData.length !== 0 && rows.map((oneRow, oneRowKey) => ({
+      ...this.mapCells(oneRow, oneRowKey),
+      ...oneRow.parent !== undefined ? {
+        isExpanded: this.parentsExpanded(oneRow.parent) && rows[oneRow.parent].isOpen
+      } : {},
+    }));
     return (
       <React.Fragment>
         {mappedRows && <Body {...props} rows={mappedRows} onRow={this.onRow} rowKey={rowKey} className={className} />}

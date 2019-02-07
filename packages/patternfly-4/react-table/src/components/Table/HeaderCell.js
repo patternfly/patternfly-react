@@ -1,7 +1,7 @@
 import React from 'react';
 import PropsType from 'prop-types';
 
-const HeaderCell = ({ ['data-label']: dataLabel, scope, component: Component, ...props }) => {
+const HeaderCell = ({ ['data-label']: dataLabel, isVisible, scope, component: Component, ...props }) => {
   const mappedProps = {
     ...scope ? { scope } : {},
     ...props

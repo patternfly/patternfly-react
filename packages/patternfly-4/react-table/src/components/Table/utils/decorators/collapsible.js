@@ -19,6 +19,7 @@ export const collapsible = (
   }
   return {
     className: css(styles.tableToggle),
+    isVisible: true,
     children: (
       <CollapseColumn
         aria-labelledby={`${rowLabeledBy}${rowIndex} ${expandId}${rowIndex}`}
