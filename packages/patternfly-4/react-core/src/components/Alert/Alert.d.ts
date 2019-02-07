@@ -10,9 +10,9 @@ export const AlertVariant: {
 
 export interface AlertProps extends Omit<HTMLProps<HTMLDivElement>, 'action'> {
   variant: OneOf<typeof AlertVariant, keyof typeof AlertVariant>;
+  title: string;
   children?: ReactNode;
   action?: ReactNode;
-  title?: string;
   'aria-label'?: string;
   variantLabel?: string;
 }
