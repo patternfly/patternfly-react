@@ -13,8 +13,8 @@ const stories = storiesOf(`${storybookPackageName(name)}/${STORYBOOK_CATEGORY.WI
 const description = (
   <p>
     This component is based on React Bootstrap Tabs component. See{' '}
-    <a href="https://react-bootstrap.github.io/components.html#tabs">React Bootstrap Docs</a> for complete Tabs
-    component documentation.
+    <a href={`${DOCUMENTATION_URL.REACT_BOOTSTRAP_COMPONENT}tabs/`}>React Bootstrap Docs</a> for complete Tabs component
+    documentation.
   </p>
 );
 stories.addDecorator(withKnobs);
