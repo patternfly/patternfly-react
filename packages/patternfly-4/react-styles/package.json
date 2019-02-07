@@ -25,11 +25,16 @@
     "relative": "^3.0.2",
     "resolve-from": "^4.0.0"
   },
+  "devDependencies": {
+    "glob": "^7.1.2",
+    "npmlog": "^4.1.2"
+  },
   "license": "Apache-2.0",
   "scripts": {
     "prebuild": "yarn build:babel",
-    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel": "concurrently \"yarn build:tsd:copy\" \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm"
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
+    "build:tsd:copy": "node ./scripts/copyTS.js"
   }
 }
