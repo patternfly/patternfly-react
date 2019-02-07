@@ -13,12 +13,13 @@ const propTypes = {
   /** Callback for when a list is expanded or collapsed */
   onToggle: PropTypes.func,
   /** Accessibility label */
-  'aria-label': PropTypes.string.isRequired,
+  'aria-label': PropTypes.string,
   /** Additional props are spread to the container <nav> */
   '': PropTypes.any
 };
 
 const defaultProps = {
+  'aria-label': '',
   children: null,
   className: '',
   onSelect: () => undefined,
@@ -50,7 +51,7 @@ class Nav extends React.Component {
   }
 
   render() {
-    const { children, className, ...props } = this.props;
+    const { 'aria-label': ariaLabel, children, className, ...props } = this.props;
 
     return (
       <NavContext.Provider
@@ -60,7 +61,9 @@ class Nav extends React.Component {
           onToggle: (event, groupId, expanded) => this.onToggle(event, groupId, expanded)
         }}
       >
-        <nav className={css(styles.nav, className)} {...props}>
+        <nav className={css(styles.nav, className)}
+             aria-label={ariaLabel === '' ? typeof this.props.children.props !== 'undefined' && this.props.children.props.variant === 'tertiary' ? 'Local' : 'Global' : ariaLabel}
+             {...props}>
           {children}
         </nav>
       </NavContext.Provider>

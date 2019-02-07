@@ -15,7 +15,7 @@ class NavGroupedList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} aria-label="Primary Nav Grouped Example">
+      <Nav onSelect={this.onSelect}>
         <NavGroup title="Section title 1">
           <NavItem preventDefault to="#grouped-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
             Link 1

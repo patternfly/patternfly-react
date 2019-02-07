@@ -15,7 +15,7 @@ class NavTertiaryList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} aria-label="Tertiary Example">
+      <Nav onSelect={this.onSelect}>
         <NavList variant={NavVariants.tertiary}>
           <NavItem preventDefault to="#tertiary-link1" itemId={0} isActive={activeItem === 0}>
             Link 1

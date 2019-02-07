@@ -15,7 +15,7 @@ class NavSimpleList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} id="nav-primary-simple" aria-label="Primary Nav, Simple List Example">
+      <Nav onSelect={this.onSelect} id="nav-primary-simple">
         <NavList variant={NavVariants.simple}>
           <NavItem preventDefault to="#simple-link1" itemId={0} isActive={activeItem === 0}>
             Link 1

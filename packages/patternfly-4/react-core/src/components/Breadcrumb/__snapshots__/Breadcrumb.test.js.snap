@@ -31,7 +31,7 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
 }
 
 <nav
-  aria-label="breadcrumb"
+  aria-label="Breadcrumb"
   className="pf-c-breadcrumb"
 >
   <ol
@@ -71,7 +71,7 @@ exports[`Breadcrumb component should render breadcrumb with className 1`] = `
 }
 
 <nav
-  aria-label="breadcrumb"
+  aria-label="Breadcrumb"
   className="pf-c-breadcrumb className"
 >
   <ol
@@ -91,7 +91,7 @@ exports[`Breadcrumb component should render default breadcrumb 1`] = `
 }
 
 <nav
-  aria-label="breadcrumb"
+  aria-label="Breadcrumb"
   className="pf-c-breadcrumb"
 >
   <ol

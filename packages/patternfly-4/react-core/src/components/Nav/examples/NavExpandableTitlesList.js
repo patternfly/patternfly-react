@@ -17,7 +17,7 @@ class NavExpandableTitlesList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} onToggle={this.onToggle} aria-label="Nav Expandable with screen reader headings">
+      <Nav onSelect={this.onSelect} onToggle={this.onToggle}>
         <NavList>
           <NavExpandable title="Link 1" srText="SR Link" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem preventDefault to="#sr-expandable-1" groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>

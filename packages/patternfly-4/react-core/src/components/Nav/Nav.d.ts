@@ -6,7 +6,7 @@ export interface NavProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
   className?: string;
   onSelect?(groupId: number, itemId: number, event: FormEvent<HTMLInputElement>): void;
   onToggle?(groupId: number, expanded: boolean, event: FormEvent<HTMLInputElement>): void;
-  'aria-label': string;
+  'aria-label'?: string;
 }
 
 declare const Nav: FunctionComponent<NavProps>;

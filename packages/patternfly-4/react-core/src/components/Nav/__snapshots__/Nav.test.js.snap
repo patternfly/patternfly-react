@@ -34,13 +34,13 @@ exports[`Default Nav List - Trigger item active update 1`] = `
 }
 
 <Nav
-  aria-label="Test"
+  aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
-    aria-label="Test"
+    aria-label="Global"
     className="pf-c-nav"
     onSelect={[Function]}
     onToggle={[Function]}
@@ -188,13 +188,13 @@ exports[`Default Nav List 1`] = `
 }
 
 <Nav
-  aria-label="Test"
+  aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
-    aria-label="Test"
+    aria-label="Global"
     className="pf-c-nav"
     onSelect={[Function]}
     onToggle={[Function]}
@@ -368,13 +368,13 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
 }
 
 <Nav
-  aria-label="Test"
+  aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
-    aria-label="Test"
+    aria-label="Global"
     className="pf-c-nav"
     onSelect={[Function]}
     onToggle={[Function]}
@@ -620,13 +620,13 @@ exports[`Expandable Nav List 1`] = `
 }
 
 <Nav
-  aria-label="Test"
+  aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
-    aria-label="Test"
+    aria-label="Global"
     className="pf-c-nav"
     onSelect={[Function]}
     onToggle={[Function]}
@@ -1112,13 +1112,13 @@ exports[`Horizontal Nav List 1`] = `
 }
 
 <Nav
-  aria-label="Test"
+  aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
-    aria-label="Test"
+    aria-label="Global"
     className="pf-c-nav"
     onSelect={[Function]}
     onToggle={[Function]}
@@ -1319,13 +1319,13 @@ exports[`Nav Grouped List 1`] = `
 }
 
 <Nav
-  aria-label="Test"
+  aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
-    aria-label="Test"
+    aria-label="Global"
     className="pf-c-nav"
     onSelect={[Function]}
     onToggle={[Function]}
@@ -1602,13 +1602,13 @@ exports[`Nav List with custom item nodes 1`] = `
 }
 
 <Nav
-  aria-label="Test"
+  aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
-    aria-label="Test"
+    aria-label="Local"
     className="pf-c-nav"
     onSelect={[Function]}
     onToggle={[Function]}
@@ -1684,13 +1684,13 @@ exports[`Simple Nav List 1`] = `
 }
 
 <Nav
-  aria-label="Test"
+  aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
-    aria-label="Test"
+    aria-label="Global"
     className="pf-c-nav"
     onSelect={[Function]}
     onToggle={[Function]}
@@ -1838,13 +1838,13 @@ exports[`Tertiary Nav List 1`] = `
 }
 
 <Nav
-  aria-label="Test"
+  aria-label=""
   className=""
   onSelect={[Function]}
   onToggle={[Function]}
 >
   <nav
-    aria-label="Test"
+    aria-label="Local"
     className="pf-c-nav"
     onSelect={[Function]}
     onToggle={[Function]}

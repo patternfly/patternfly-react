@@ -17,7 +17,7 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  'aria-label': 'breadcrumb'
+  'aria-label': 'Breadcrumb'
 };
 
 const Breadcrumb = ({ className, children, ...props }) => (
