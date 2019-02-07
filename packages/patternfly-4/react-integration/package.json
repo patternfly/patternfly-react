@@ -28,7 +28,6 @@
     "integration:test": "node ./scripts/server.js"
   },
   "dependencies": {
-    "@patternfly/react-core": "file:../react-core",
     "local-web-server": "^2.6.1"
   },
   "devDependencies": {
