@@ -13,25 +13,25 @@ class SuccessAlert extends React.Component {
         {alertOneVisible && (
           <Alert
             variant="success"
-            title="Success notification title"
+            title="Success alert title"
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
-            Success notification description. <a href="#">This is a link.</a>
+            Success alert description. <a href="#">This is a link.</a>
           </Alert>
         )}
         {alertTwoVisible && (
           <Alert
             variant="success"
-            title="Success notification title"
+            title="Success alert title"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
         <Alert
           variant="success"
-          title="Success notification title"
+          title="Success alert title"
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
-        <Alert variant="success" title="Success notification title" />
+        <Alert variant="success" title="Success alert title" />
       </React.Fragment>
     );
   }

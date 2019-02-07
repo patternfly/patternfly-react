@@ -17,7 +17,7 @@ class NavMixedList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} aria-label="Primary Nav Mixed Example">
+      <Nav onSelect={this.onSelect}>
         <NavList>
           <NavItem preventDefault to="#mixed-1" itemId="itm-1" isActive={activeItem === 'itm-1'}>
             Link 1 (not expandable)

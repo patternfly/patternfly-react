@@ -13,6 +13,7 @@ export default actions => (
   }
 ) => ({
   className: css(styles.tableAction),
+  isVisible: true,
   children: (
     <ActionsColumn
       items={actions}

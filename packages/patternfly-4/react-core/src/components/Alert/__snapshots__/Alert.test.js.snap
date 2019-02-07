@@ -75,7 +75,7 @@ exports[`Alert - danger Action Close Button 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Danger Notification"
+    aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -136,6 +136,8 @@ exports[`Alert - danger Action Close Button 1`] = `
         aria-label="Close"
         className=""
         onClose={[MockFunction]}
+        title=""
+        variantLabel="Danger"
       >
         <Button
           aria-label="Close"
@@ -267,7 +269,7 @@ exports[`Alert - danger Action Link 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Danger Notification"
+    aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -326,6 +328,8 @@ exports[`Alert - danger Action Link 1`] = `
     >
       <AlertActionLink
         className=""
+        title=""
+        variantLabel="Danger"
       >
         <Button
           aria-label={null}
@@ -336,8 +340,10 @@ exports[`Alert - danger Action Link 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title=""
           type="button"
           variant="link"
+          variantLabel="Danger"
         >
           <button
             aria-disabled={null}
@@ -345,7 +351,9 @@ exports[`Alert - danger Action Link 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title=""
             type="button"
+            variantLabel="Danger"
           >
             test
           </button>
@@ -431,7 +439,7 @@ exports[`Alert - danger Action and Title 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Danger Notification"
+    aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -474,8 +482,7 @@ exports[`Alert - danger Action and Title 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Danger
-        : 
+        Danger alert:
       </span>
       Some title
     </h4>
@@ -491,6 +498,8 @@ exports[`Alert - danger Action and Title 1`] = `
     >
       <AlertActionLink
         className=""
+        title="Some title"
+        variantLabel="Danger"
       >
         <Button
           aria-label={null}
@@ -501,8 +510,10 @@ exports[`Alert - danger Action and Title 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title="Some title"
           type="button"
           variant="link"
+          variantLabel="Danger"
         >
           <button
             aria-disabled={null}
@@ -510,7 +521,9 @@ exports[`Alert - danger Action and Title 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title="Some title"
             type="button"
+            variantLabel="Danger"
           >
             test
           </button>
@@ -640,8 +653,7 @@ exports[`Alert - danger Custom aria label 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Danger
-        : 
+        Danger alert:
       </span>
       Some title
     </h4>
@@ -657,6 +669,8 @@ exports[`Alert - danger Custom aria label 1`] = `
     >
       <AlertActionLink
         className=""
+        title="Some title"
+        variantLabel="Danger"
       >
         <Button
           aria-label={null}
@@ -667,8 +681,10 @@ exports[`Alert - danger Custom aria label 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title="Some title"
           type="button"
           variant="link"
+          variantLabel="Danger"
         >
           <button
             aria-disabled={null}
@@ -676,7 +692,9 @@ exports[`Alert - danger Custom aria label 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title="Some title"
             type="button"
+            variantLabel="Danger"
           >
             test
           </button>
@@ -736,7 +754,7 @@ exports[`Alert - danger Description 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Danger Notification"
+    aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -843,7 +861,7 @@ exports[`Alert - danger Title 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Danger Notification"
+    aria-label="Danger Alert"
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -886,8 +904,7 @@ exports[`Alert - danger Title 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Danger
-        : 
+        Danger alert:
       </span>
       Some title
     </h4>
@@ -977,7 +994,7 @@ exports[`Alert - info Action Close Button 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Info Notification"
+    aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -1038,6 +1055,8 @@ exports[`Alert - info Action Close Button 1`] = `
         aria-label="Close"
         className=""
         onClose={[MockFunction]}
+        title=""
+        variantLabel="Info"
       >
         <Button
           aria-label="Close"
@@ -1169,7 +1188,7 @@ exports[`Alert - info Action Link 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Info Notification"
+    aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -1228,6 +1247,8 @@ exports[`Alert - info Action Link 1`] = `
     >
       <AlertActionLink
         className=""
+        title=""
+        variantLabel="Info"
       >
         <Button
           aria-label={null}
@@ -1238,8 +1259,10 @@ exports[`Alert - info Action Link 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title=""
           type="button"
           variant="link"
+          variantLabel="Info"
         >
           <button
             aria-disabled={null}
@@ -1247,7 +1270,9 @@ exports[`Alert - info Action Link 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title=""
             type="button"
+            variantLabel="Info"
           >
             test
           </button>
@@ -1333,7 +1358,7 @@ exports[`Alert - info Action and Title 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Info Notification"
+    aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -1376,8 +1401,7 @@ exports[`Alert - info Action and Title 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Info
-        : 
+        Info alert:
       </span>
       Some title
     </h4>
@@ -1393,6 +1417,8 @@ exports[`Alert - info Action and Title 1`] = `
     >
       <AlertActionLink
         className=""
+        title="Some title"
+        variantLabel="Info"
       >
         <Button
           aria-label={null}
@@ -1403,8 +1429,10 @@ exports[`Alert - info Action and Title 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title="Some title"
           type="button"
           variant="link"
+          variantLabel="Info"
         >
           <button
             aria-disabled={null}
@@ -1412,7 +1440,9 @@ exports[`Alert - info Action and Title 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title="Some title"
             type="button"
+            variantLabel="Info"
           >
             test
           </button>
@@ -1542,8 +1572,7 @@ exports[`Alert - info Custom aria label 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Info
-        : 
+        Info alert:
       </span>
       Some title
     </h4>
@@ -1559,6 +1588,8 @@ exports[`Alert - info Custom aria label 1`] = `
     >
       <AlertActionLink
         className=""
+        title="Some title"
+        variantLabel="Info"
       >
         <Button
           aria-label={null}
@@ -1569,8 +1600,10 @@ exports[`Alert - info Custom aria label 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title="Some title"
           type="button"
           variant="link"
+          variantLabel="Info"
         >
           <button
             aria-disabled={null}
@@ -1578,7 +1611,9 @@ exports[`Alert - info Custom aria label 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title="Some title"
             type="button"
+            variantLabel="Info"
           >
             test
           </button>
@@ -1638,7 +1673,7 @@ exports[`Alert - info Description 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Info Notification"
+    aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -1745,7 +1780,7 @@ exports[`Alert - info Title 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Info Notification"
+    aria-label="Info Alert"
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -1788,8 +1823,7 @@ exports[`Alert - info Title 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Info
-        : 
+        Info alert:
       </span>
       Some title
     </h4>
@@ -1879,7 +1913,7 @@ exports[`Alert - success Action Close Button 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Success Notification"
+    aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -1940,6 +1974,8 @@ exports[`Alert - success Action Close Button 1`] = `
         aria-label="Close"
         className=""
         onClose={[MockFunction]}
+        title=""
+        variantLabel="Success"
       >
         <Button
           aria-label="Close"
@@ -2071,7 +2107,7 @@ exports[`Alert - success Action Link 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Success Notification"
+    aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -2130,6 +2166,8 @@ exports[`Alert - success Action Link 1`] = `
     >
       <AlertActionLink
         className=""
+        title=""
+        variantLabel="Success"
       >
         <Button
           aria-label={null}
@@ -2140,8 +2178,10 @@ exports[`Alert - success Action Link 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title=""
           type="button"
           variant="link"
+          variantLabel="Success"
         >
           <button
             aria-disabled={null}
@@ -2149,7 +2189,9 @@ exports[`Alert - success Action Link 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title=""
             type="button"
+            variantLabel="Success"
           >
             test
           </button>
@@ -2235,7 +2277,7 @@ exports[`Alert - success Action and Title 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Success Notification"
+    aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -2278,8 +2320,7 @@ exports[`Alert - success Action and Title 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Success
-        : 
+        Success alert:
       </span>
       Some title
     </h4>
@@ -2295,6 +2336,8 @@ exports[`Alert - success Action and Title 1`] = `
     >
       <AlertActionLink
         className=""
+        title="Some title"
+        variantLabel="Success"
       >
         <Button
           aria-label={null}
@@ -2305,8 +2348,10 @@ exports[`Alert - success Action and Title 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title="Some title"
           type="button"
           variant="link"
+          variantLabel="Success"
         >
           <button
             aria-disabled={null}
@@ -2314,7 +2359,9 @@ exports[`Alert - success Action and Title 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title="Some title"
             type="button"
+            variantLabel="Success"
           >
             test
           </button>
@@ -2444,8 +2491,7 @@ exports[`Alert - success Custom aria label 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Success
-        : 
+        Success alert:
       </span>
       Some title
     </h4>
@@ -2461,6 +2507,8 @@ exports[`Alert - success Custom aria label 1`] = `
     >
       <AlertActionLink
         className=""
+        title="Some title"
+        variantLabel="Success"
       >
         <Button
           aria-label={null}
@@ -2471,8 +2519,10 @@ exports[`Alert - success Custom aria label 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title="Some title"
           type="button"
           variant="link"
+          variantLabel="Success"
         >
           <button
             aria-disabled={null}
@@ -2480,7 +2530,9 @@ exports[`Alert - success Custom aria label 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title="Some title"
             type="button"
+            variantLabel="Success"
           >
             test
           </button>
@@ -2540,7 +2592,7 @@ exports[`Alert - success Description 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Success Notification"
+    aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -2647,7 +2699,7 @@ exports[`Alert - success Title 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Success Notification"
+    aria-label="Success Alert"
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -2690,8 +2742,7 @@ exports[`Alert - success Title 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Success
-        : 
+        Success alert:
       </span>
       Some title
     </h4>
@@ -2781,7 +2832,7 @@ exports[`Alert - warning Action Close Button 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Warning Notification"
+    aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon
@@ -2842,6 +2893,8 @@ exports[`Alert - warning Action Close Button 1`] = `
         aria-label="Close"
         className=""
         onClose={[MockFunction]}
+        title=""
+        variantLabel="Warning"
       >
         <Button
           aria-label="Close"
@@ -2973,7 +3026,7 @@ exports[`Alert - warning Action Link 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Warning Notification"
+    aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon
@@ -3032,6 +3085,8 @@ exports[`Alert - warning Action Link 1`] = `
     >
       <AlertActionLink
         className=""
+        title=""
+        variantLabel="Warning"
       >
         <Button
           aria-label={null}
@@ -3042,8 +3097,10 @@ exports[`Alert - warning Action Link 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title=""
           type="button"
           variant="link"
+          variantLabel="Warning"
         >
           <button
             aria-disabled={null}
@@ -3051,7 +3108,9 @@ exports[`Alert - warning Action Link 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title=""
             type="button"
+            variantLabel="Warning"
           >
             test
           </button>
@@ -3137,7 +3196,7 @@ exports[`Alert - warning Action and Title 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Warning Notification"
+    aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon
@@ -3180,8 +3239,7 @@ exports[`Alert - warning Action and Title 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Warning
-        : 
+        Warning alert:
       </span>
       Some title
     </h4>
@@ -3197,6 +3255,8 @@ exports[`Alert - warning Action and Title 1`] = `
     >
       <AlertActionLink
         className=""
+        title="Some title"
+        variantLabel="Warning"
       >
         <Button
           aria-label={null}
@@ -3207,8 +3267,10 @@ exports[`Alert - warning Action and Title 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title="Some title"
           type="button"
           variant="link"
+          variantLabel="Warning"
         >
           <button
             aria-disabled={null}
@@ -3216,7 +3278,9 @@ exports[`Alert - warning Action and Title 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title="Some title"
             type="button"
+            variantLabel="Warning"
           >
             test
           </button>
@@ -3346,8 +3410,7 @@ exports[`Alert - warning Custom aria label 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Warning
-        : 
+        Warning alert:
       </span>
       Some title
     </h4>
@@ -3363,6 +3426,8 @@ exports[`Alert - warning Custom aria label 1`] = `
     >
       <AlertActionLink
         className=""
+        title="Some title"
+        variantLabel="Warning"
       >
         <Button
           aria-label={null}
@@ -3373,8 +3438,10 @@ exports[`Alert - warning Custom aria label 1`] = `
           isDisabled={false}
           isFocus={false}
           isHover={false}
+          title="Some title"
           type="button"
           variant="link"
+          variantLabel="Warning"
         >
           <button
             aria-disabled={null}
@@ -3382,7 +3449,9 @@ exports[`Alert - warning Custom aria label 1`] = `
             className="pf-c-button pf-m-link"
             disabled={false}
             tabIndex={null}
+            title="Some title"
             type="button"
+            variantLabel="Warning"
           >
             test
           </button>
@@ -3442,7 +3511,7 @@ exports[`Alert - warning Description 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Warning Notification"
+    aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon
@@ -3549,7 +3618,7 @@ exports[`Alert - warning Title 1`] = `
   variantLabel={null}
 >
   <div
-    aria-label="Warning Notification"
+    aria-label="Warning Alert"
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon
@@ -3592,8 +3661,7 @@ exports[`Alert - warning Title 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Warning
-        : 
+        Warning alert:
       </span>
       Some title
     </h4>

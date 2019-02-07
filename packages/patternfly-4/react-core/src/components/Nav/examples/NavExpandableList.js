@@ -27,7 +27,7 @@ class NavExpandableList extends React.Component {
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} onToggle={this.onToggle} aria-label="Primary Nav Expandable Example">
+      <Nav onSelect={this.onSelect} onToggle={this.onToggle}>
         <NavList>
           <NavExpandable title="Link 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem preventDefault to="#expandable-1" groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>

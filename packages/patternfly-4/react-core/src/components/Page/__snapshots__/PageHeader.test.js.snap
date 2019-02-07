@@ -26,8 +26,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
 }
 
 <PageHeader
-  =""
-  aria-label="Toggle global navigation"
+  aria-label="Global navigation"
   avatar=" | Avatar"
   className=""
   isNavOpen={true}
@@ -39,7 +38,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   topNav={null}
 >
   <header
-    =""
     className="pf-c-page__header"
     role="banner"
   >

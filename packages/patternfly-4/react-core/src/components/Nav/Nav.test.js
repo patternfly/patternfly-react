@@ -26,7 +26,7 @@ const context = {
 
 test('Default Nav List', () => {
   const view = mount(
-    <Nav aria-label="Test">
+    <Nav>
       <NavList>
         {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
@@ -43,7 +43,7 @@ test('Default Nav List', () => {
 test('Default Nav List - Trigger item active update', () => {
   window.location.hash = '#link2';
   const view = mount(
-    <Nav aria-label="Test">
+    <Nav>
       <NavList>
         {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
@@ -63,7 +63,7 @@ test('Default Nav List - Trigger item active update', () => {
 
 test('Simple Nav List', () => {
   const view = mount(
-    <Nav aria-label="Test">
+    <Nav>
       <NavList variant="simple">
         {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
@@ -79,7 +79,7 @@ test('Simple Nav List', () => {
 
 test('Expandable Nav List', () => {
   const view = mount(
-    <Nav aria-label="Test">
+    <Nav>
       <NavList>
         <NavExpandable id="grp-1" title="Section 1">
           {props.items.map(item => (
@@ -98,7 +98,7 @@ test('Expandable Nav List', () => {
 test('Expandable Nav List - Trigger toggle', () => {
   window.location.hash = '#link2';
   const view = mount(
-    <Nav aria-label="Test">
+    <Nav>
       <NavList>
         <NavExpandable id="grp-1" title="Section 1" className="expandable-group" isExpanded>
           {props.items.map(item => (
@@ -138,7 +138,7 @@ test('Expandable Nav List with aria label', () => {
 
 test('Nav Grouped List', () => {
   const view = mount(
-    <Nav aria-label="Test">
+    <Nav>
       <NavGroup id="grp-1" title="Section 1">
         <NavList>
           {props.items.map(item => (
@@ -165,7 +165,7 @@ test('Nav Grouped List', () => {
 
 test('Horizontal Nav List', () => {
   const view = mount(
-    <Nav aria-label="Test">
+    <Nav>
       <NavList variant="horizontal">
         {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
@@ -181,7 +181,7 @@ test('Horizontal Nav List', () => {
 
 test('Tertiary Nav List', () => {
   const view = mount(
-    <Nav aria-label="Test">
+    <Nav>
       <NavList variant="tertiary">
         {props.items.map(item => (
           <NavItem to={item.to} key={item.to}>
@@ -198,7 +198,7 @@ test('Tertiary Nav List', () => {
 test('Nav List with custom item nodes', () => {
   const CustomNode = () => <div>My custom node</div>;
   const view = mount(
-    <Nav aria-label="Test">
+    <Nav>
       <NavList variant="tertiary">
         <NavItem to="/components/nav#link1">
           <CustomNode />

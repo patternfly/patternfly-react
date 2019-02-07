@@ -15,7 +15,7 @@ class NavDefaultList extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Nav onSelect={this.onSelect} aria-label="Primary Nav Default Example">
+      <Nav onSelect={this.onSelect}>
         <NavList>
           <NavItem id="default-link1" to="#default-link1" itemId={0} isActive={activeItem === 0}>
             Link 1

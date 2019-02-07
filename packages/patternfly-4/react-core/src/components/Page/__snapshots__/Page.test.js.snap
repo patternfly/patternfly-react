@@ -82,8 +82,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   className="my-page-class"
   header={
     <PageHeader
-      =""
-      aria-label="Toggle global navigation"
+      aria-label="Global navigation"
       avatar=" | Avatar"
       className=""
       isNavOpen={true}
@@ -115,8 +114,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     layout="horizontal"
   >
     <PageHeader
-      =""
-      aria-label="Toggle global navigation"
+      aria-label="Global navigation"
       avatar=" | Avatar"
       className=""
       isNavOpen={true}
@@ -129,7 +127,6 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       topNav={null}
     >
       <header
-        =""
         className="pf-c-page__header"
         nav="Navigation"
         role="banner"
@@ -292,8 +289,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   className="my-page-class"
   header={
     <PageHeader
-      =""
-      aria-label="Toggle global navigation"
+      aria-label="Global navigation"
       avatar=" | Avatar"
       className=""
       isNavOpen={true}
@@ -322,8 +318,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     id="PageId"
   >
     <PageHeader
-      =""
-      aria-label="Toggle global navigation"
+      aria-label="Global navigation"
       avatar=" | Avatar"
       className=""
       isNavOpen={true}
@@ -335,7 +330,6 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       topNav={null}
     >
       <header
-        =""
         className="pf-c-page__header"
         role="banner"
       >

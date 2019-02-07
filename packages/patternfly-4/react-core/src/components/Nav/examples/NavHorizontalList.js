@@ -16,7 +16,7 @@ class NavHorizontalList extends React.Component {
     const { activeItem } = this.state;
     return (
       <div style={{ backgroundColor: '#292e34', padding: '1rem' }}>
-        <Nav onSelect={this.onSelect} aria-label="Primary Nav Horizontal Example">
+        <Nav onSelect={this.onSelect}>
           <NavList variant={NavVariants.horizontal}>
             <NavItem preventDefault to="#horizontal-link1" itemId={0} isActive={activeItem === 0}>
               Item 1

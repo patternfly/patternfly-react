@@ -40,7 +40,7 @@ const defaultProps = {
   variantLabel: null
 };
 
-const getDefaultAriaLabel = variant => `${capitalize(AlertVariant[variant])} Notification`;
+const getDefaultAriaLabel = variant => `${capitalize(AlertVariant[variant])} Alert`;
 
 const Alert = ({
   variant,
@@ -55,7 +55,7 @@ const Alert = ({
   variantLabel = variantLabel || capitalize(AlertVariant[variant]);
   const readerTitle = (
     <React.Fragment>
-      <span className={css(accessibleStyles.screenReader)}>{variantLabel}: </span>
+      <span className={css(accessibleStyles.screenReader)}>{variantLabel + " alert:"}</span>
       {title}
     </React.Fragment>
   );
@@ -71,7 +71,8 @@ const Alert = ({
           <p>{children}</p>
         </div>
       )}
-      {action && <div className={css(styles.alertAction, className)}>{action}</div>}
+      {action && <div className={css(styles.alertAction, className)}>{React.cloneElement(action,
+           {title, variantLabel})}</div>}
     </div>
   );
 };
