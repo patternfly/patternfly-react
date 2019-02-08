@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-integration",
-  "version": "1.0.14",
+  "private": true,
   "description": "Integration testing for PF4 using demo applications",
   "main": "lib/index.js",
   "sideEffects": false,
@@ -24,7 +24,7 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "integration:setup": "rimraf node_modules && yarn install",
+    "integration:setup": "shx rm -rf node_modules && yarn install",
     "integration:test": "node ./scripts/server.js"
   },
   "dependencies": {
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "cypress": "^3.1.4",
-    "rimraf": "^2.6.3",
+    "shx": "^0.3.2",
     "typescript": "3.2.2"
   }
 }
