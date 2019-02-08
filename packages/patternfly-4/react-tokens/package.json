@@ -28,7 +28,7 @@
     "build": "node build/generateTokens.js"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "1.0.178",
+    "@patternfly/patternfly": "1.0.184",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2"
