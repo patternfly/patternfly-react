@@ -1194,7 +1194,7 @@ exports[`Actions table 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -1210,15 +1210,15 @@ exports[`Actions table 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>
@@ -8534,7 +8534,7 @@ exports[`Cell header table 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -8550,15 +8550,15 @@ exports[`Cell header table 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>
@@ -13014,7 +13014,7 @@ exports[`Collapsible nested table 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -13030,15 +13030,15 @@ exports[`Collapsible nested table 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>
@@ -13814,6 +13814,7 @@ exports[`Collapsible nested table 1`] = `
             >
               <tbody
                 className=""
+                key="tbody-0"
               >
                 <BodyRow
                   columns={
@@ -14040,7 +14041,7 @@ exports[`Collapsible nested table 1`] = `
                       },
                     ]
                   }
-                  key="0-row"
+                  key=".$0-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -14150,7 +14151,7 @@ exports[`Collapsible nested table 1`] = `
                                 tabIndex={null}
                                 type="button"
                               >
-                                <AngleDownIcon
+                                <AngleRightIcon
                                   color="currentColor"
                                   size="sm"
                                   title={null}
@@ -14166,15 +14167,15 @@ exports[`Collapsible nested table 1`] = `
                                         "verticalAlign": "-0.125em",
                                       }
                                     }
-                                    viewBox="0 0 320 512"
+                                    viewBox="0 0 256 512"
                                     width="1em"
                                   >
                                     <path
-                                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
                                       transform=""
                                     />
                                   </svg>
-                                </AngleDownIcon>
+                                </AngleRightIcon>
                               </button>
                             </Button>
                           </CollapseColumn>
@@ -14478,7 +14479,7 @@ exports[`Collapsible nested table 1`] = `
                       },
                     ]
                   }
-                  key="1-row"
+                  key=".$1-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -14907,7 +14908,7 @@ exports[`Collapsible nested table 1`] = `
                       },
                     ]
                   }
-                  key="2-row"
+                  key=".$2-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -15052,6 +15053,11 @@ exports[`Collapsible nested table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-1"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -15277,7 +15283,7 @@ exports[`Collapsible nested table 1`] = `
                       },
                     ]
                   }
-                  key="3-row"
+                  key=".$3-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -15387,7 +15393,7 @@ exports[`Collapsible nested table 1`] = `
                                 tabIndex={null}
                                 type="button"
                               >
-                                <AngleDownIcon
+                                <AngleRightIcon
                                   color="currentColor"
                                   size="sm"
                                   title={null}
@@ -15403,15 +15409,15 @@ exports[`Collapsible nested table 1`] = `
                                         "verticalAlign": "-0.125em",
                                       }
                                     }
-                                    viewBox="0 0 320 512"
+                                    viewBox="0 0 256 512"
                                     width="1em"
                                   >
                                     <path
-                                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
                                       transform=""
                                     />
                                   </svg>
-                                </AngleDownIcon>
+                                </AngleRightIcon>
                               </button>
                             </Button>
                           </CollapseColumn>
@@ -15715,7 +15721,7 @@ exports[`Collapsible nested table 1`] = `
                       },
                     ]
                   }
-                  key="4-row"
+                  key=".$4-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -15860,6 +15866,11 @@ exports[`Collapsible nested table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-2"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -16085,7 +16096,7 @@ exports[`Collapsible nested table 1`] = `
                       },
                     ]
                   }
-                  key="5-row"
+                  key=".$5-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -16239,6 +16250,11 @@ exports[`Collapsible nested table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-3"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -16464,7 +16480,7 @@ exports[`Collapsible nested table 1`] = `
                       },
                     ]
                   }
-                  key="6-row"
+                  key=".$6-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -16618,6 +16634,11 @@ exports[`Collapsible nested table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-4"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -16843,7 +16864,7 @@ exports[`Collapsible nested table 1`] = `
                       },
                     ]
                   }
-                  key="7-row"
+                  key=".$7-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -16997,6 +17018,11 @@ exports[`Collapsible nested table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-5"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -17222,7 +17248,7 @@ exports[`Collapsible nested table 1`] = `
                       },
                     ]
                   }
-                  key="8-row"
+                  key=".$8-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -17478,6 +17504,9 @@ exports[`Collapsible table 1`] = `
   border-bottom-color: #ededed;
   border-bottom-width: 1px;
 }
+.pf-m-expanded {
+  display: block;
+}
 .pf-c-table__toggle {
   display: block;
   vertical-align: top;
@@ -17562,9 +17591,6 @@ exports[`Collapsible table 1`] = `
 .pf-c-table__toggle {
   display: block;
   vertical-align: top;
-}
-.pf-m-expanded {
-  display: block;
 }
 .pf-c-table {
   display: block;
@@ -18234,7 +18260,7 @@ exports[`Collapsible table 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -18250,15 +18276,15 @@ exports[`Collapsible table 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>
@@ -19029,6 +19055,7 @@ exports[`Collapsible table 1`] = `
             >
               <tbody
                 className="pf-m-expanded"
+                key="tbody-0"
               >
                 <BodyRow
                   columns={
@@ -19255,7 +19282,7 @@ exports[`Collapsible table 1`] = `
                       },
                     ]
                   }
-                  key="0-row"
+                  key=".$0-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -19693,7 +19720,7 @@ exports[`Collapsible table 1`] = `
                       },
                     ]
                   }
-                  key="1-row"
+                  key=".$1-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -19838,6 +19865,11 @@ exports[`Collapsible table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-1"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -20063,7 +20095,7 @@ exports[`Collapsible table 1`] = `
                       },
                     ]
                   }
-                  key="2-row"
+                  key=".$2-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -20217,6 +20249,11 @@ exports[`Collapsible table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-2"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -20442,7 +20479,7 @@ exports[`Collapsible table 1`] = `
                       },
                     ]
                   }
-                  key="3-row"
+                  key=".$3-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -20552,7 +20589,7 @@ exports[`Collapsible table 1`] = `
                                 tabIndex={null}
                                 type="button"
                               >
-                                <AngleDownIcon
+                                <AngleRightIcon
                                   color="currentColor"
                                   size="sm"
                                   title={null}
@@ -20568,15 +20605,15 @@ exports[`Collapsible table 1`] = `
                                         "verticalAlign": "-0.125em",
                                       }
                                     }
-                                    viewBox="0 0 320 512"
+                                    viewBox="0 0 256 512"
                                     width="1em"
                                   >
                                     <path
-                                      d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"
+                                      d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
                                       transform=""
                                     />
                                   </svg>
-                                </AngleDownIcon>
+                                </AngleRightIcon>
                               </button>
                             </Button>
                           </CollapseColumn>
@@ -20880,7 +20917,7 @@ exports[`Collapsible table 1`] = `
                       },
                     ]
                   }
-                  key="4-row"
+                  key=".$4-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -21025,6 +21062,11 @@ exports[`Collapsible table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-3"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -21250,7 +21292,7 @@ exports[`Collapsible table 1`] = `
                       },
                     ]
                   }
-                  key="5-row"
+                  key=".$5-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -21404,6 +21446,11 @@ exports[`Collapsible table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-4"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -21629,7 +21676,7 @@ exports[`Collapsible table 1`] = `
                       },
                     ]
                   }
-                  key="6-row"
+                  key=".$6-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -21783,6 +21830,11 @@ exports[`Collapsible table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-5"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -22008,7 +22060,7 @@ exports[`Collapsible table 1`] = `
                       },
                     ]
                   }
-                  key="7-row"
+                  key=".$7-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -22162,6 +22214,11 @@ exports[`Collapsible table 1`] = `
                     </tr>
                   </RowWrapper>
                 </BodyRow>
+              </tbody>
+              <tbody
+                className=""
+                key="tbody-6"
+              >
                 <BodyRow
                   columns={
                     Array [
@@ -22387,7 +22444,7 @@ exports[`Collapsible table 1`] = `
                       },
                     ]
                   }
-                  key="8-row"
+                  key=".$8-row"
                   onRow={[Function]}
                   renderers={
                     Object {
@@ -27616,7 +27673,7 @@ exports[`Selectable table 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -27632,15 +27689,15 @@ exports[`Selectable table 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>
@@ -44762,7 +44819,7 @@ exports[`Sortable table 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -44778,15 +44835,15 @@ exports[`Sortable table 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>
@@ -48962,7 +49019,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -48978,15 +49035,15 @@ exports[`Table variants Breakpoint - grid 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>
@@ -53162,7 +53219,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -53178,15 +53235,15 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>
@@ -57362,7 +57419,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -57378,15 +57435,15 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>
@@ -61562,7 +61619,7 @@ exports[`Table variants Size - compact 1`] = `
                           <span
                             className="pf-c-table__sort-indicator"
                           >
-                            <SortIcon
+                            <ArrowsAltVIcon
                               color="currentColor"
                               size="sm"
                               title={null}
@@ -61578,15 +61635,15 @@ exports[`Table variants Size - compact 1`] = `
                                     "verticalAlign": "-0.125em",
                                   }
                                 }
-                                viewBox="0 0 320 512"
+                                viewBox="0 0 256 512"
                                 width="1em"
                               >
                                 <path
-                                  d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"
+                                  d="M214.059 377.941H168V134.059h46.059c21.382 0 32.09-25.851 16.971-40.971L144.971 7.029c-9.373-9.373-24.568-9.373-33.941 0L24.971 93.088c-15.119 15.119-4.411 40.971 16.971 40.971H88v243.882H41.941c-21.382 0-32.09 25.851-16.971 40.971l86.059 86.059c9.373 9.373 24.568 9.373 33.941 0l86.059-86.059c15.12-15.119 4.412-40.971-16.97-40.971z"
                                   transform=""
                                 />
                               </svg>
-                            </SortIcon>
+                            </ArrowsAltVIcon>
                           </span>
                         </button>
                       </SortColumn>

@@ -25,21 +25,14 @@ class CollapsibleTable extends React.Component {
         isOpen: false,
         cells: ['parent - 2', 'two', 'three', 'four', 'five'],
       }, {
-        isOpen: false,
         parent: 3,
-        cells: ['child and parent'],
-      }, {
-        parent: 4,
         cells: ['child - 2'],
       }, {
         isOpen: false,
         cells: ['parent - 3', 'two', 'three', 'four', 'five'],
       }, {
-        parent: 6,
+        parent: 5,
         cells: ['child - 3'],
-      }, {
-        parent: 6,
-        cells: ['child - 4'],
       }]
     };
     this.onCollapse = this.onCollapse.bind(this);

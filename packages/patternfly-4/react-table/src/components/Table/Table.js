@@ -190,7 +190,7 @@ class Table extends React.Component {
           {...props}
           renderers={{
             body: {
-              wrapper: BodyWrapper(rows),
+              wrapper: BodyWrapper(rows, onCollapse),
               row: RowWrapper,
               cell: BodyCell
             },
