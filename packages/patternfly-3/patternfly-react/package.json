@@ -1,6 +1,6 @@
 {
   "name": "patternfly-react",
-  "version": "2.29.9",
+  "version": "2.29.10",
   "private": false,
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
