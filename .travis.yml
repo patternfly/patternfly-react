@@ -18,21 +18,21 @@ before_install:
 - yarn install
 script:
 - yarn build
-#- yarn test
-#- yarn coveralls
-#- yarn test:integration
+- yarn test
+- yarn coveralls
+- yarn test:integration
 after_success:
 - .travis/after_success.sh
-#- .travis/release.sh
-#- chmod ugo+x ./.travis/deploy_pr.sh
-#- .travis/deploy_pr.sh
+- .travis/release.sh
+- chmod ugo+x ./.travis/deploy_pr.sh
+- .travis/deploy_pr.sh
 git:
   depth: 1
 branches:
   except:
   - "/^v\\d+\\.\\d+\\.\\d+$/"
-#deploy:
-#  provider: surge
-#  project: ./.public/
-#  domain: patternfly-react.surge.sh
-#  skip_cleanup: true
+deploy:
+  provider: surge
+  project: ./.public/
+  domain: patternfly-react.surge.sh
+  skip_cleanup: true
