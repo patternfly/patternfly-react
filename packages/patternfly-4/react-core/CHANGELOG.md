@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.6...@patternfly/react-core@2.0.0) (2019-02-08)
+
+
+### Bug Fixes
+
+* **Alert:** Fix index.d.ts file ([#1320](https://github.com/patternfly/patternfly-react/issues/1320)) ([b69d45d](https://github.com/patternfly/patternfly-react/commit/b69d45d)), closes [#1318](https://github.com/patternfly/patternfly-react/issues/1318)
+* **Alert:** Make Alert consistent with core ([#1298](https://github.com/patternfly/patternfly-react/issues/1298)) ([cba507e](https://github.com/patternfly/patternfly-react/commit/cba507e)), closes [#1286](https://github.com/patternfly/patternfly-react/issues/1286)
+* **Alert:** Make Alert title required ([#1326](https://github.com/patternfly/patternfly-react/issues/1326)) ([942ca78](https://github.com/patternfly/patternfly-react/commit/942ca78))
+* **nav:** Allow nav to expand by prop change ([#1345](https://github.com/patternfly/patternfly-react/issues/1345)) ([07097bc](https://github.com/patternfly/patternfly-react/commit/07097bc))
+* **Nav:** do not render the examples page ([#1316](https://github.com/patternfly/patternfly-react/issues/1316)) ([18dbd65](https://github.com/patternfly/patternfly-react/commit/18dbd65))
+* **PF4:** tooltip/popover - include tippy css ([#1244](https://github.com/patternfly/patternfly-react/issues/1244)) ([469477a](https://github.com/patternfly/patternfly-react/commit/469477a))
+* Add consistent aria labels for <nav> elements ([#1252](https://github.com/patternfly/patternfly-react/issues/1252)) ([fd87668](https://github.com/patternfly/patternfly-react/commit/fd87668)), closes [#1182](https://github.com/patternfly/patternfly-react/issues/1182)
+* **Radio:** Use pf-c-radio class in Radio ([#1328](https://github.com/patternfly/patternfly-react/issues/1328)) ([869d4bd](https://github.com/patternfly/patternfly-react/commit/869d4bd))
+* **tests:** update alert tests ([#1353](https://github.com/patternfly/patternfly-react/issues/1353)) ([9071f40](https://github.com/patternfly/patternfly-react/commit/9071f40))
+* **types:** popover, tooltip, and helper types fixes ([#1341](https://github.com/patternfly/patternfly-react/issues/1341)) ([40c9b26](https://github.com/patternfly/patternfly-react/commit/40c9b26))
+* **utils:** export common utility functions and constants in react-core ([#1232](https://github.com/patternfly/patternfly-react/issues/1232)) ([dc657b9](https://github.com/patternfly/patternfly-react/commit/dc657b9))
+
+
+### Code Refactoring
+
+* **AboutModal:** Upgrade core to 1.0.175 and Refactor AboutModal ([#1307](https://github.com/patternfly/patternfly-react/issues/1307)) ([1f85756](https://github.com/patternfly/patternfly-react/commit/1f85756)), closes [#1267](https://github.com/patternfly/patternfly-react/issues/1267)
+
+
+### Features
+
+* **Tooltip:** Add optional delay prop to Tooltip ([#1205](https://github.com/patternfly/patternfly-react/issues/1205)) ([0c5e910](https://github.com/patternfly/patternfly-react/commit/0c5e910)), closes [#1161](https://github.com/patternfly/patternfly-react/issues/1161)
+
+
+### BREAKING CHANGES
+
+* **AboutModal:** removed heroImg and heroImageSrc and heroImageAlt props
+
+
+
+
+
 ## [1.51.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.5...@patternfly/react-core@1.51.6) (2019-02-01)
 
 **Note:** Version bump only for package @patternfly/react-core

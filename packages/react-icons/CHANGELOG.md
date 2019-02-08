@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.10.5...@patternfly/react-icons@3.0.0) (2019-02-08)
+
+
+### Code Refactoring
+
+* **AboutModal:** Upgrade core to 1.0.175 and Refactor AboutModal ([#1307](https://github.com/patternfly/patternfly-react/issues/1307)) ([1f85756](https://github.com/patternfly/patternfly-react/commit/1f85756)), closes [#1267](https://github.com/patternfly/patternfly-react/issues/1267)
+
+
+### BREAKING CHANGES
+
+* **AboutModal:** removed heroImg and heroImageSrc and heroImageAlt props
+
+
+
+
+
 ## [2.10.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.10.4...@patternfly/react-icons@2.10.5) (2019-02-01)
 
 

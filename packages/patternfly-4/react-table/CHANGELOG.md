@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@0.4.17...@patternfly/react-table@1.0.0) (2019-02-08)
+
+
+### Bug Fixes
+
+* **Table:** allow colspan to be set in props for each cell ([#1324](https://github.com/patternfly/patternfly-react/issues/1324)) ([7e86f33](https://github.com/patternfly/patternfly-react/commit/7e86f33))
+* **Table:** Allow mixins of object, strings and numbers as row cell ([#1282](https://github.com/patternfly/patternfly-react/issues/1282)) ([e7ac17c](https://github.com/patternfly/patternfly-react/commit/e7ac17c))
+* **Table:** Use direct imports for styles ([#1314](https://github.com/patternfly/patternfly-react/issues/1314)) ([42b20e6](https://github.com/patternfly/patternfly-react/commit/42b20e6))
+
+
+### Code Refactoring
+
+* **AboutModal:** Upgrade core to 1.0.175 and Refactor AboutModal ([#1307](https://github.com/patternfly/patternfly-react/issues/1307)) ([1f85756](https://github.com/patternfly/patternfly-react/commit/1f85756)), closes [#1267](https://github.com/patternfly/patternfly-react/issues/1267)
+
+
+### BREAKING CHANGES
+
+* **AboutModal:** removed heroImg and heroImageSrc and heroImageAlt props
+
+
+
+
+
 ## [0.4.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@0.4.16...@patternfly/react-table@0.4.17) (2019-02-01)
 
 **Note:** Version bump only for package @patternfly/react-table

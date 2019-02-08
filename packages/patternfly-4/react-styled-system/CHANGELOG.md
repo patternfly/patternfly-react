@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@1.4.2...@patternfly/react-styled-system@2.0.0) (2019-02-08)
+
+
+### Code Refactoring
+
+* **AboutModal:** Upgrade core to 1.0.175 and Refactor AboutModal ([#1307](https://github.com/patternfly/patternfly-react/issues/1307)) ([1f85756](https://github.com/patternfly/patternfly-react/commit/1f85756)), closes [#1267](https://github.com/patternfly/patternfly-react/issues/1267)
+
+
+### BREAKING CHANGES
+
+* **AboutModal:** removed heroImg and heroImageSrc and heroImageAlt props
+
+
+
+
+
 ## [1.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@1.4.1...@patternfly/react-styled-system@1.4.2) (2019-02-01)
 
 **Note:** Version bump only for package @patternfly/react-styled-system
