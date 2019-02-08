@@ -48,7 +48,7 @@ import { Button } from '@patternfly/react-core';
 export default <Button variant="primary">Button</Button>;
 ```
 
-All css related to each component is provided alongside it. There is no component level CSS to import.
+All css related to each component is provided within it. There is no component level CSS to import.
 
 # Documentation
 
