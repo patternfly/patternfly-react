@@ -135,7 +135,7 @@
     "stylelint-config-standard": "^18.2.0",
     "test": "yarn lint && jest",
     "test:current": "jest --watch",
-    "test:integration": "lerna run build:demo && lerna run integration:test",
+    "test:integration": "lerna run integration:setup && lerna run build:demo && lerna run integration:test",
     "test:watch": "jest --watchAll",
     "travis-deploy-once": "travis-deploy-once"
   },
