@@ -52,7 +52,14 @@ const propTypes = {
   rows: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({
-        cells: PropTypes.arrayOf(PropTypes.node),
+        cells: PropTypes.arrayOf(
+          PropTypes.oneOfType([
+            PropTypes.node,
+            PropTypes.shape({
+              title: PropTypes.node
+            })
+          ])
+        ),
         isOpen: PropTypes.bool,
         parent: PropTypes.number,
         props: PropTypes.any

@@ -2,10 +2,6 @@ import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf, Omit } from '../../../../react-core/src/typeUtils';
 import { SortByDirection } from './SortColumn';
 import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
-export interface ISortBy {
-  index?: Number;
-  direction?: OneOf<typeof SortByDirection, keyof typeof SortByDirection>;
-}
 
 export const TableGridBreakpoint: {
   grid: 'grid',
@@ -15,6 +11,11 @@ export const TableGridBreakpoint: {
 
 export const TableVariant: {
   'compact': 'compact'
+}
+
+export interface ISortBy {
+  index?: Number;
+  direction?: OneOf<typeof SortByDirection, keyof typeof SortByDirection>;
 }
 
 export interface IAction {
@@ -32,13 +33,19 @@ export interface ICell {
   cellTransforms: Array<Function>;
   formatters: Array<Function>;
   cellFormatters: Array<Function>;
-  props: Object;
+  props: unknown;
+}
+
+export interface IRowCell {
+  title: ReactNode;
+  props: unknown;
 }
 
 export interface IRow {
-  cells: Array<String>;
+  cells: Array<ReactNode | IRowCell>;
   isOpen: Boolean;
   parent: Number;
+  props: unknown;
 }
 
 export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSelect'>, 'rows'> {
