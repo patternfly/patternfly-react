@@ -118,8 +118,7 @@ exports[`Alert - danger Action Close Button 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Danger
-        : 
+        Danger alert:
       </span>
     </h4>
     <div
@@ -312,8 +311,7 @@ exports[`Alert - danger Action Link 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Danger
-        : 
+        Danger alert:
       </span>
     </h4>
     <div
@@ -797,8 +795,7 @@ exports[`Alert - danger Description 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Danger
-        : 
+        Danger alert:
       </span>
     </h4>
     <div
@@ -1037,8 +1034,7 @@ exports[`Alert - info Action Close Button 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Info
-        : 
+        Info alert:
       </span>
     </h4>
     <div
@@ -1231,8 +1227,7 @@ exports[`Alert - info Action Link 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Info
-        : 
+        Info alert:
       </span>
     </h4>
     <div
@@ -1716,8 +1711,7 @@ exports[`Alert - info Description 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Info
-        : 
+        Info alert:
       </span>
     </h4>
     <div
@@ -1956,8 +1950,7 @@ exports[`Alert - success Action Close Button 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Success
-        : 
+        Success alert:
       </span>
     </h4>
     <div
@@ -2150,8 +2143,7 @@ exports[`Alert - success Action Link 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Success
-        : 
+        Success alert:
       </span>
     </h4>
     <div
@@ -2635,8 +2627,7 @@ exports[`Alert - success Description 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Success
-        : 
+        Success alert:
       </span>
     </h4>
     <div
@@ -2875,8 +2866,7 @@ exports[`Alert - warning Action Close Button 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Warning
-        : 
+        Warning alert:
       </span>
     </h4>
     <div
@@ -3069,8 +3059,7 @@ exports[`Alert - warning Action Link 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Warning
-        : 
+        Warning alert:
       </span>
     </h4>
     <div
@@ -3554,8 +3543,7 @@ exports[`Alert - warning Description 1`] = `
       <span
         className="pf-u-screen-reader"
       >
-        Warning
-        : 
+        Warning alert:
       </span>
     </h4>
     <div
