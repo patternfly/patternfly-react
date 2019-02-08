@@ -5,6 +5,7 @@ exports[`AboutModalBoxCloseButton Test 1`] = `
   display: flex;
   grid-area: close;
   position: sticky;
+  top: 0px;
   z-index: 600;
   align-items: flex-start;
   justify-content: flex-end;
@@ -43,6 +44,7 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
   display: flex;
   grid-area: close;
   position: sticky;
+  top: 0px;
   z-index: 600;
   align-items: flex-start;
   justify-content: flex-end;
