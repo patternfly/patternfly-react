@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.0...@patternfly/react-table@1.0.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* **Table:** Update table styles based on new styling from pf-next v 175 ([#1313](https://github.com/patternfly/patternfly-react/issues/1313)) ([63ab0f0](https://github.com/patternfly/patternfly-react/commit/63ab0f0))
+
+
+
+
+
 # [1.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@0.4.17...@patternfly/react-table@1.0.0) (2019-02-08)
 
 
