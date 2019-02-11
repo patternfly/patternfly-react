@@ -33,7 +33,7 @@ class Chip extends React.Component {
     if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>
-          <div className={css(styles.chip, className)}>
+          <li className={css(styles.chip, className)}>
             <span ref={this.span} className={css(styles.chipText)} id={randomId}>
               {children}
             </span>
@@ -45,12 +45,12 @@ class Chip extends React.Component {
             >
               <TimesCircleIcon aria-hidden="true" />
             </ChipButton>
-          </div>
+          </li>
         </Tooltip>
       );
     }
     return (
-      <div className={css(styles.chip, className)}>
+      <li className={css(styles.chip, className)}>
         <span ref={this.span} className={css(styles.chipText)} id={randomId}>
           {children}
         </span>
@@ -62,44 +62,38 @@ class Chip extends React.Component {
         >
           <TimesCircleIcon aria-hidden="true" />
         </ChipButton>
-      </div>
+      </li>
     );
   };
 
   render() {
     const { isOverflowChip } = this.props;
     return (
-      <GenerateId>
-        {randomId => (
-          <React.Fragment>{isOverflowChip ? this.renderOverflowChip() : this.renderChip(randomId)}</React.Fragment>
-        )}
-      </GenerateId>
+      <GenerateId>{randomId => (isOverflowChip ? this.renderOverflowChip() : this.renderChip(randomId))}</GenerateId>
     );
   }
 }
 Chip.propTypes = {
   /** Content rendered inside the chip text */
-  children: PropTypes.string,
+  children: PropTypes.node,
   /** Aria Label for close button */
   closeBtnAriaLabel: PropTypes.string,
-  /** ID of the chip */
-  id: PropTypes.string,
   /** Additional classes added to the chip item */
   className: PropTypes.string,
   /** Flag indicating if the chip has overflow */
   isOverflowChip: PropTypes.bool,
-  /** Position of the tooltip which is displayed if text is longer */
-  tooltipPosition: PropTypes.oneOf(Object.values(TooltipPosition)),
   /** Function that is called when clicking on the chip button */
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  /** Position of the tooltip which is displayed if text is longer */
+  tooltipPosition: PropTypes.oneOf(Object.values(TooltipPosition))
 };
 
 Chip.defaultProps = {
-  id: undefined,
+  children: null,
   closeBtnAriaLabel: 'close',
   className: '',
-  tooltipPosition: 'top',
-  isOverflowChip: false
+  isOverflowChip: false,
+  tooltipPosition: 'top'
 };
 
 export default Chip;

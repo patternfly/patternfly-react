@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChipGroup chip group default 1`] = `
+.pf-c-chip-group {
+  display: inline-flex;
+  color: #282d33;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+<div
+  className="pf-c-chip-group"
+>
+  <InnerChipGroup
+    className=""
+    collapsedText="\${remaining} more"
+    expandedText="Show Less"
+    isOpen={false}
+    onToggleCollapse={[Function]}
+    withToolbar={false}
+  >
+    <Chip
+      className=""
+      closeBtnAriaLabel="close"
+      isOverflowChip={false}
+      tooltipPosition="top"
+    >
+      1.1
+    </Chip>
+  </InnerChipGroup>
+</div>
+`;
+
+exports[`ChipGroup chip group with toolbar 1`] = `
+<InnerChipGroup
+  className=""
+  collapsedText="\${remaining} more"
+  expandedText="Show Less"
+  isOpen={false}
+  onToggleCollapse={[Function]}
+  withToolbar={true}
+>
+  <ChipGroupToolbarItem
+    categoryName=""
+    className=""
+  >
+    <Chip
+      className=""
+      closeBtnAriaLabel="close"
+      isOverflowChip={false}
+      tooltipPosition="top"
+    >
+      1.1
+    </Chip>
+  </ChipGroupToolbarItem>
+</InnerChipGroup>
+`;
