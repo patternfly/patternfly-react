@@ -1,15 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import LoginPage from './LoginPage';
-import { Dropdown, DropdownItem } from '../Dropdown';
-
-const dropdownToggle = jest.fn();
-
-const myDropdown = (
-  <Dropdown toggle={dropdownToggle}>
-    <DropdownItem>English</DropdownItem>
-  </Dropdown>
-);
 
 const needAccountMesseage = (
   <React.Fragment>
@@ -27,7 +18,6 @@ const props = {
   textContent: 'This is placeholder text only.',
   loginTitle: 'Log into your account',
   signUpForAccountMessage: needAccountMesseage,
-  languageSelector: myDropdown,
   socialMediaLoginContent: 'Footer'
 };
 

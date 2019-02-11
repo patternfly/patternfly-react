@@ -38,13 +38,11 @@ const propTypes = {
   footerListItems: PropTypes.node,
   /** Adds list variant styles for the Footer List component of the LoginPage.  Values are 'grid' or 'inline' */
   footerListVariants: PropTypes.oneOf(Object.values(LoginListVariant)),
-  /** Language dropdown component for the Login Main Body Header of the LoginPage */
-  languageSelector: PropTypes.node,
   /** Title for the Login Main Body Header of the LoginPage */
   loginTitle: PropTypes.string.isRequired,
-  /** Content rendered inside of Login Main Footer Band to display a sign up for account message*/
+  /** Content rendered inside of Login Main Footer Band to display a sign up for account message */
   signUpForAccountMessage: PropTypes.node,
-  /** Content rendered inside of Login Main Footer Band do display a forgot credentials link**/
+  /** Content rendered inside of Login Main Footer Band do display a forgot credentials link* */
   forgotCredentials: PropTypes.node,
   /** Content rendered inside of Social Media Login footer section . */
   socialMediaLoginContent: PropTypes.node,
@@ -62,7 +60,6 @@ const defaultProps = {
   footerListItems: null,
   textContent: '',
   footerListVariants: null,
-  languageSelector: null,
   signUpForAccountMessage: null,
   forgotCredentials: null,
   socialMediaLoginContent: null
@@ -78,7 +75,6 @@ const LoginPage = ({
   textContent,
   footerListItems,
   footerListVariants,
-  languageSelector,
   loginTitle,
   signUpForAccountMessage,
   forgotCredentials,
@@ -102,9 +98,15 @@ const LoginPage = ({
     <React.Fragment>
       {backgroundImgSrc && <BackgroundImage src={backgroundImgSrc} alt={backgroundImgAlt} />}
       <Login header={Header} footer={Footer} {...props} className={css(className)}>
-        <LoginMainHeader title={loginTitle} dropdown={languageSelector} />
+        <LoginMainHeader title={loginTitle} />
         <LoginMainBody>{children}</LoginMainBody>
-        {(socialMediaLoginContent || forgotCredentials || signUpForAccountMessage) && <LoginMainFooter socialMediaLoginContent={socialMediaLoginContent} forgotCredentials= {forgotCredentials} signUpForAccountMessage={signUpForAccountMessage} />}
+        {(socialMediaLoginContent || forgotCredentials || signUpForAccountMessage) && (
+          <LoginMainFooter
+            socialMediaLoginContent={socialMediaLoginContent}
+            forgotCredentials={forgotCredentials}
+            signUpForAccountMessage={signUpForAccountMessage}
+          />
+        )}
       </Login>
     </React.Fragment>
   );
