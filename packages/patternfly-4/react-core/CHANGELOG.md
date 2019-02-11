@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.0...@patternfly/react-core@2.1.1) (2019-02-11)
+
+
+### Bug Fixes
+
+* **Login:** update component to match pf4 design changes ([#1319](https://github.com/patternfly/patternfly-react/issues/1319)) ([c85ee8c](https://github.com/patternfly/patternfly-react/commit/c85ee8c))
+
+
+
+
+
 # [2.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.0.1...@patternfly/react-core@2.1.0) (2019-02-11)
 
 
