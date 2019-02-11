@@ -47,6 +47,7 @@ exports[`select single select renders closed successfully 1`] = `
 <Select
   className=""
   isExpanded={false}
+  labelId=""
   placeholderText={null}
   selectOptions={null}
   selections={null}
@@ -62,6 +63,7 @@ exports[`select single select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
+      aria-labelledby=" pf-toggle-id-0"
       className=""
       id="pf-toggle-id-0"
       isActive={false}
@@ -77,6 +79,7 @@ exports[`select single select renders closed successfully 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-labelledby=" pf-toggle-id-0"
         className="pf-c-select__toggle"
         id="pf-toggle-id-0"
         onClick={[Function]}
@@ -237,6 +240,7 @@ exports[`select single select renders expanded successfully 1`] = `
 <Select
   className=""
   isExpanded={true}
+  labelId=""
   placeholderText={null}
   selectOptions={null}
   selections={null}
@@ -252,6 +256,7 @@ exports[`select single select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
+      aria-labelledby=" pf-toggle-id-1"
       className=""
       id="pf-toggle-id-1"
       isActive={false}
@@ -267,6 +272,7 @@ exports[`select single select renders expanded successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup="listbox"
+        aria-labelledby=" pf-toggle-id-1"
         className="pf-c-select__toggle"
         id="pf-toggle-id-1"
         onClick={[Function]}
@@ -313,12 +319,14 @@ exports[`select single select renders expanded successfully 1`] = `
       </button>
     </SelectToggle>
     <SingleSelect
+      aria-labelledby=""
       className=""
       isExpanded={false}
       openedOnEnter={false}
       selected={null}
     >
       <ul
+        aria-labelledby=""
         className="pf-c-select__menu"
         role="listbox"
       >
@@ -479,6 +487,7 @@ exports[`select single select renders with selectOptions parameter 1`] = `
 <Select
   className=""
   isExpanded={false}
+  labelId=""
   placeholderText={null}
   selectOptions={
     Array [
@@ -525,6 +534,7 @@ exports[`select single select renders with selectOptions parameter 1`] = `
     }
   >
     <SelectToggle
+      aria-labelledby=" pf-toggle-id-2"
       className=""
       id="pf-toggle-id-2"
       isActive={false}
@@ -540,6 +550,7 @@ exports[`select single select renders with selectOptions parameter 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup="listbox"
+        aria-labelledby=" pf-toggle-id-2"
         className="pf-c-select__toggle"
         id="pf-toggle-id-2"
         onClick={[Function]}

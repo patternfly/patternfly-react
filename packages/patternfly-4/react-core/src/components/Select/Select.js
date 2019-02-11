@@ -22,6 +22,8 @@ const propTypes = {
   selectOptions: PropTypes.array,
   /** Selected item(s) structure */
   selections: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  /** Id of label for the Select aria-labelledby */
+  labelId: PropTypes.string,
   /** Callback for selection behavior */
   onSelect: PropTypes.func.isRequired,
   /** Callback for toggle button behavior */
@@ -38,6 +40,7 @@ const defaultProps = {
   children: null,
   className: '',
   isExpanded: false,
+  labelId: '',
   selectOptions: null,
   selections: null,
   placeholderText: null,
@@ -67,12 +70,14 @@ class Select extends React.Component {
       isExpanded,
       selectOptions,
       selections,
+      labelId,
       placeholderText,
       width,
       ...props
     } = this.props;
     const { openedOnEnter } = this.state;
     const renderedChildren = children || selectOptions;
+    const selectToggleId = `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
     if (!selections && !placeholderText) {
       const childPlaceholder = renderedChildren.filter(child => child.props.isPlaceholder === true);
@@ -91,17 +96,18 @@ class Select extends React.Component {
           {variant === 'single' && (
             <React.Fragment>
               <SelectToggle
-                id={`pf-toggle-id-${currentId++}`}
+                id={selectToggleId}
                 parentRef={this.parentRef.current}
                 isExpanded={isExpanded}
                 onToggle={onToggle}
                 onEnter={this.onEnter}
                 onClose={this.onClose}
+                aria-labelledby={`${labelId} ${selectToggleId}`}
               >
                 {selections || placeholderText || childPlaceholderText}
               </SelectToggle>
               {isExpanded && (
-                <SingleSelect {...props} selected={selections} openedOnEnter={openedOnEnter}>
+                <SingleSelect {...props} selected={selections} openedOnEnter={openedOnEnter} aria-labelledby={labelId}>
                   {renderedChildren}
                 </SingleSelect>
               )}

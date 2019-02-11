@@ -43,8 +43,12 @@ class SingleSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected } = this.state;
+    const titleId = 'title-id';
     return (
       <div>
+        <span id={titleId} hidden>
+          Title
+        </span>
         <Select
           variant={SelectVariant.single}
           aria-label="Select Input"
@@ -52,6 +56,7 @@ class SingleSelectInput extends React.Component {
           onSelect={this.onSelect}
           selections={selected}
           isExpanded={isExpanded}
+          labelId={titleId}
         >
           {this.options.map((option, index) => (
             <SelectOption
