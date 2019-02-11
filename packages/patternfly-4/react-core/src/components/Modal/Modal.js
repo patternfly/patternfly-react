@@ -23,19 +23,25 @@ const propTypes = {
   actions: PropTypes.any,
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
+  /** Default width of the Modal. */
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Creates a large version of the Modal */
   isLarge: PropTypes.bool,
+  /** Creates a small version of the Modal */
+  isSmall: PropTypes.bool,
   /** Additional props are passed and spread in the Modal body container <div> */
   '': PropTypes.any
 };
 
 const defaultProps = {
+  width: null,
   className: '',
   isOpen: false,
   hideTitle: false,
   actions: [],
   onClose: () => undefined,
-  isLarge: false
+  isLarge: false,
+  isSmall: false
 };
 
 let currentId = 0;
