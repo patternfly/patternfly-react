@@ -1,6 +1,7 @@
 import React from 'react';
+import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import { Form, FormGroup, ActionGroup } from '../Form';
+import { Form, FormGroup, ActionGroup, FormHelperText } from '../Form';
 import { TextInput } from '../TextInput';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
@@ -8,16 +9,16 @@ import { Checkbox } from '../Checkbox';
 const propTypes = {
   /** Additional classes added to the Login Main Body's Form */
   className: PropTypes.string,
+  /** Flag indicating the Helper Text is visible **/
+  showHelperText: PropTypes.bool,
+  /** Content displayed in the Helper Text component **/
+  helperText: PropTypes.node,
   /** Label for the Username Input Field */
   usernameLabel: PropTypes.string,
   /** Value for the Username */
   usernameValue: PropTypes.string,
   /** Function that handles the onChange event for the Username */
   onChangeUsername: PropTypes.func,
-  /** Helper Text for the Username Input Field */
-  usernameHelperText: PropTypes.string,
-  /** Helper Text for the Username Input Field when it is invalid */
-  usernameHelperTextInvalid: PropTypes.string,
   /** Flag indicating if the Username is valid */
   isValidUsername: PropTypes.bool,
   /** Label for the Password Input Field */
@@ -26,10 +27,6 @@ const propTypes = {
   passwordValue: PropTypes.string,
   /** Function that handles the onChange event for the Password */
   onChangePassword: PropTypes.func,
-  /** Helper Text for the Password Input Field */
-  passwordHelperText: PropTypes.string,
-  /** Helper Text for the Password Input Field when it is invalid */
-  passwordHelperTextInvalid: PropTypes.string,
   /** Flag indicating if the Password is valid */
   isValidPassword: PropTypes.bool,
   /** Label for the Log in Button Input */
@@ -57,17 +54,15 @@ const propTypes = {
 
 const defaultProps = {
   className: '',
+  showHelperText: false,
+  helperText: null,
   usernameLabel: 'Username',
   usernameValue: '',
   onChangeUsername: () => undefined,
-  usernameHelperText: '',
-  usernameHelperTextInvalid: '',
   isValidUsername: true,
   passwordLabel: 'Password',
   passwordValue: '',
   onChangePassword: () => undefined,
-  passwordHelperText: '',
-  passwordHelperTextInvalid: '',
   isValidPassword: true,
   loginButtonLabel: 'Log In',
   isLoginButtonDisabled: false,
@@ -80,17 +75,15 @@ const defaultProps = {
 
 const LoginForm = ({
   className,
+  showHelperText,
+  helperText,
   usernameLabel,
   usernameValue,
   onChangeUsername,
-  usernameHelperText,
-  usernameHelperTextInvalid,
   isValidUsername,
   passwordLabel,
   passwordValue,
   onChangePassword,
-  passwordHelperText,
-  passwordHelperTextInvalid,
   isValidPassword,
   loginButtonLabel,
   isLoginButtonDisabled,
@@ -102,11 +95,10 @@ const LoginForm = ({
   ...props
 }) => (
   <Form className={className} {...props}>
+    <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText}>{helperText}</FormHelperText>
     <FormGroup
       label={usernameLabel}
       isRequired
-      helperText={usernameHelperText}
-      helperTextInvalid={usernameHelperTextInvalid}
       isValid={isValidUsername}
       fieldId="pf-login-username-id"
     >
@@ -123,8 +115,6 @@ const LoginForm = ({
     <FormGroup
       label={passwordLabel}
       isRequired
-      helperText={passwordHelperText}
-      helperTextInvalid={passwordHelperTextInvalid}
       isValid={isValidPassword}
       fieldId="pf-login-password-id"
     >
@@ -138,11 +128,10 @@ const LoginForm = ({
         onChange={onChangePassword}
       />
     </FormGroup>
-    <ActionGroup>
-      <Button variant="primary" type="submit" onClick={onLoginButtonClick} isDisabled={isLoginButtonDisabled}>
-        {loginButtonLabel}
-      </Button>
-      {rememberMeLabel.length > 0 && (
+    {rememberMeLabel.length > 0 && (
+      <FormGroup
+        fieldId="pf-login-remember-me-id"
+      >
         <Checkbox
           id="pf-login-remember-me-id"
           label={rememberMeLabel}
@@ -150,7 +139,12 @@ const LoginForm = ({
           onChange={onChangeRememberMe}
           aria-label={rememberMeAriaLabel}
         />
+      </FormGroup>
       )}
+    <ActionGroup>
+      <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock={true} isDisabled={isLoginButtonDisabled}>
+        {loginButtonLabel}
+      </Button>
     </ActionGroup>
   </Form>
 );
