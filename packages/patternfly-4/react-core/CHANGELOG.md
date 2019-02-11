@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.0.1...@patternfly/react-core@2.1.0) (2019-02-11)
+
+
+### Features
+
+* **chipGroup:** Add Chip Group component to pf4 ([#1245](https://github.com/patternfly/patternfly-react/issues/1245)) ([d3f2cc9](https://github.com/patternfly/patternfly-react/commit/d3f2cc9))
+
+
+
+
+
 ## [2.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.0.0...@patternfly/react-core@2.0.1) (2019-02-08)
 
 
