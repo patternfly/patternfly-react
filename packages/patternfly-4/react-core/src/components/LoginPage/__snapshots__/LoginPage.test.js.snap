@@ -41,29 +41,6 @@ exports[`check loginpage example against snapshot 1`] = `
   >
     <LoginMainHeader
       className=""
-<<<<<<< HEAD
-      dropdown={
-        <Dropdown
-          className=""
-          direction="down"
-          dropdownItems={Array []}
-          isOpen={false}
-          isPlain={false}
-          onSelect={[Function]}
-          position="left"
-          toggle={[MockFunction]}
-        >
-          <Item
-            className=""
-            component="a"
-            href="#"
-            isDisabled={false}
-            isHovered={false}
-          >
-            English
-          </Item>
-        </Dropdown>
-      }
       subtitle=""
       title="Log into your account"
     />
@@ -74,9 +51,6 @@ exports[`check loginpage example against snapshot 1`] = `
       className=""
       forgotCredentials={null}
       signUpForAccountMessage={
-=======
-      subtitle={
->>>>>>> fix(LoginPage): emove Language Selector from LoginPage
         <React.Fragment>
           Login to your account 
           <a
