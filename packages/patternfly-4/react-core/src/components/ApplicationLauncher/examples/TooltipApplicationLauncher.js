@@ -21,16 +21,16 @@ export default class TooltipApplicationLauncher extends Component {
   render() {
     const { isOpen } = this.state;
     const dropdownItems = [
-      <DropdownItem key="application_1" component="button">
+      <DropdownItem key="application_1" component="a">
         Application 1
       </DropdownItem>,
-      <DropdownItem key="application_2" component="button">
+      <DropdownItem key="application_2" component="a">
         Application 2
       </DropdownItem>,
-      <DropdownItem key="application_3" component="button">
+      <DropdownItem key="application_3" component="a">
         Application 3
       </DropdownItem>,
-      <DropdownItem key="disabled_application_4" isDisabled component="button">
+      <DropdownItem key="disabled_application_4" isDisabled component="a">
         Unavailable Application
       </DropdownItem>
     ];
@@ -43,7 +43,6 @@ export default class TooltipApplicationLauncher extends Component {
         }
       >
         <ApplicationLauncher
-          aria-label="Tool Tip Application Launcher"
           onSelect={this.onSelect}
           onToggle={this.onToggle}
           isOpen={isOpen}
