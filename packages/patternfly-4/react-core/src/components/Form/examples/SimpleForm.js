@@ -1,15 +1,5 @@
 import React from 'react';
-import {
-  Form,
-  FormGroup,
-  TextInput,
-  Checkbox,
-  ActionGroup,
-  Toolbar,
-  ToolbarGroup,
-  Button,
-  Radio
-} from '@patternfly/react-core';
+import { Form, FormGroup, TextInput, Checkbox, ActionGroup, Button, Radio } from '@patternfly/react-core';
 
 class SimpleForm extends React.Component {
   state = {
@@ -89,14 +79,8 @@ class SimpleForm extends React.Component {
           <Checkbox label="I'd like updates via email" id="checkbox1" name="checkbox1" aria-label="Update via email" />
         </FormGroup>
         <ActionGroup>
-          <Toolbar>
-            <ToolbarGroup>
-              <Button variant="primary">Submit form</Button>
-            </ToolbarGroup>
-            <ToolbarGroup>
-              <Button variant="secondary">Cancel</Button>
-            </ToolbarGroup>
-          </Toolbar>
+          <Button variant="primary">Submit form</Button>
+          <Button variant="secondary">Cancel</Button>
         </ActionGroup>
       </Form>
     );
