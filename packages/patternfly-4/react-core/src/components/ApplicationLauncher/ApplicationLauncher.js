@@ -7,6 +7,7 @@ import Toggle from './Toggle';
 import { ThIcon } from '@patternfly/react-icons';
 import { ApplicationLauncherDirection, ApplicationLauncherPosition } from './applicationLauncherConstants';
 import { DropdownContext } from '../Dropdown/dropdownConstants';
+import GenerateId from '../../helpers/GenerateId/GenerateId';
 
 export const propTypes = {
   /** Additional element css classes */
@@ -26,9 +27,6 @@ export const propTypes = {
   /** Adds accessible text to the button. Required for plain buttons */
   'aria-label': PropTypes.string
 };
-
-// seed for the aria-labelledby ID
-let currentId = 0;
 
 export const defaultProps = {
   className: '',
@@ -51,40 +49,41 @@ class ApplicationLauncher extends React.Component {
   }
 
   render() {
-    const {'aria-label': ariaLabel, children, dropdownItems, className, isOpen, onSelect, onToggle, toggleID, ...props} = this.props;
-    const id = `pf-toggle-id-${currentId++}`;
-    const toggle = <Toggle id={id} aria-label={ariaLabel} onToggle={onToggle}><ThIcon /></Toggle>;
-    return <div
-                className={css(
-                  styles.appLauncher,
-                  isOpen && styles.modifiers.expanded,
-                  className
-                )}
-                ref={ref => {
-                    this.parentRef = ref;}}>
-      {Children.map(toggle, oneToggle =>
-        cloneElement(oneToggle, {
-          parentRef: this.parentRef,
-          isOpen,
-          id,
-          isPlain: true,
-          ariaHasPopup: true,
-          onEnter: this.onEnter
-        })
-      )}
-      {isOpen && (
-          <DropdownContext.Provider value={event => onSelect && onSelect(event)}>
-      <ApplicationLauncherMenu
-        isOpen={isOpen}
-        position="left"
-        aria-labelledby={ariaLabel}
-        openedOnEnter={this.openedOnEnter}
-      >
-        {dropdownItems}
-      </ApplicationLauncherMenu>
-      </DropdownContext.Provider>
+    const {'aria-label': ariaLabel, children, dropdownItems, className, isOpen, onSelect, onToggle, ...props} = this.props;
+    return <GenerateId>{randomId => (
+      <div
+        className={css(
+          styles.appLauncher,
+          isOpen && styles.modifiers.expanded,
+          className
         )}
-    </div>;
+        ref={ref => {
+            this.parentRef = ref;}}>
+        {Children.map(
+          <Toggle id={`pf-toggle-id-${randomId}`} aria-label={ariaLabel} onToggle={onToggle}><ThIcon /></Toggle>, oneToggle =>
+            cloneElement(oneToggle, {
+              parentRef: this.parentRef,
+              id: randomId,
+              isOpen,
+              isPlain: true,
+              ariaHasPopup: true,
+              onEnter: this.onEnter
+          })
+        )}
+        {isOpen && (
+            <DropdownContext.Provider value={event => onSelect && onSelect(event)}>
+        <ApplicationLauncherMenu
+          isOpen={isOpen}
+          position="left"
+          aria-labelledby={ariaLabel}
+          openedOnEnter={this.openedOnEnter}
+        >
+          {dropdownItems}
+        </ApplicationLauncherMenu>
+        </DropdownContext.Provider>
+          )}
+      </div>
+    )}</GenerateId>;
   }
 }
 
