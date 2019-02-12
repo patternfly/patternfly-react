@@ -103,6 +103,7 @@ class Select extends React.Component {
                 onEnter={this.onEnter}
                 onClose={this.onClose}
                 aria-labelledby={`${labelId} ${selectToggleId}`}
+                style={{ width }}
               >
                 {selections || placeholderText || childPlaceholderText}
               </SelectToggle>

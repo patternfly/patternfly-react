@@ -83,7 +83,8 @@ class SelectToggle extends Component {
 
   onKeyDown = event => {
     const { isExpanded, onToggle, onClose, onEnter } = this.props;
-    if (event.key === KeyTypes.Tab && !isExpanded) return;
+    if ((event.key === KeyTypes.Tab && !isExpanded) || (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space))
+      return;
     event.preventDefault();
     if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && isExpanded) {
       onToggle && onToggle(!isExpanded);

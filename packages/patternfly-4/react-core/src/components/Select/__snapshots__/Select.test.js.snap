@@ -75,6 +75,11 @@ exports[`select single select renders closed successfully 1`] = `
       onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
     >
       <button
         aria-expanded={false}
@@ -85,6 +90,11 @@ exports[`select single select renders closed successfully 1`] = `
         onClick={[Function]}
         onClose={[Function]}
         onKeyDown={[Function]}
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
         type="button"
       >
         <div
@@ -268,6 +278,11 @@ exports[`select single select renders expanded successfully 1`] = `
       onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
     >
       <button
         aria-expanded={true}
@@ -278,6 +293,11 @@ exports[`select single select renders expanded successfully 1`] = `
         onClick={[Function]}
         onClose={[Function]}
         onKeyDown={[Function]}
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
         type="button"
       >
         <div
@@ -546,6 +566,11 @@ exports[`select single select renders with selectOptions parameter 1`] = `
       onEnter={[Function]}
       onToggle={[Function]}
       parentRef={null}
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
     >
       <button
         aria-expanded={false}
@@ -556,6 +581,11 @@ exports[`select single select renders with selectOptions parameter 1`] = `
         onClick={[Function]}
         onClose={[Function]}
         onKeyDown={[Function]}
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
         type="button"
       >
         <div
