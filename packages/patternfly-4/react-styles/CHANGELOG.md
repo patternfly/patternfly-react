@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@2.3.1...@patternfly/react-styles@2.3.2) (2019-02-12)
+
+
+### Bug Fixes
+
+* **readme:** fix typo in readme to force react-styles release ([#1377](https://github.com/patternfly/patternfly-react/issues/1377)) ([38f69d8](https://github.com/patternfly/patternfly-react/commit/38f69d8))
+
+
+
+
+
 ## [2.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@2.3.0...@patternfly/react-styles@2.3.1) (2019-02-08)
 
 **Note:** Version bump only for package @patternfly/react-styles

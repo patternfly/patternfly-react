@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-core",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -29,7 +29,7 @@
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
     "@patternfly/react-icons": "^3.0.0",
-    "@patternfly/react-styles": "^2.3.1",
+    "@patternfly/react-styles": "^2.3.2",
     "@patternfly/react-tokens": "^2.0.0",
     "@tippy.js/react": "^1.1.1",
     "emotion": "^10.0.6",
