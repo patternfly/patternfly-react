@@ -8,7 +8,7 @@ export interface FormSelectProps
   isDisabled?: boolean;
   onBlur?(event: React.FormEvent<HTMLSelectElement>): void;
   onFocus?(event: React.FormEvent<HTMLSelectElement>): void;
-  onChange?(event: React.FormEvent<HTMLSelectElement>): void;
+  onChange?(value: string, event: React.FormEvent<HTMLSelectElement>): void;
 }
 
 declare const FormSelect: FunctionComponent<FormSelectProps>;
