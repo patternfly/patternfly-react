@@ -15,7 +15,7 @@ class SimpleSwitch extends React.Component {
     return (
       <Switch
         id="simple-switch"
-        label={isChecked ? 'On' : 'Off'}
+        label={isChecked ? 'Message when on' : 'Message when off'}
         isChecked={isChecked}
         onChange={this.handleChange}
         aria-label="simple Switch example"

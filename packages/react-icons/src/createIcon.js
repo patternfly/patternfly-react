@@ -14,15 +14,16 @@ const createIcon = iconDefinition => {
     id = `icon-title-${currentId++}`;
 
     render() {
-      const { size, color, title, ...props } = this.props;
+      const { size, color, title, noStyle, noVerticalAlign, ...props } = this.props;
 
       const hasTitle = Boolean(title);
       const heightWidth = getSize(size);
       const baseAlign = -.125 * Number.parseFloat(heightWidth);
+      const style = noVerticalAlign ? null : { verticalAlign: `${baseAlign}em` };
 
       return (
         <svg
-          style={{ verticalAlign: `${baseAlign}em` }}
+          style={style}
           fill={color}
           height={heightWidth}
           width={heightWidth}
