@@ -94,7 +94,7 @@ class Progress extends Component {
         <ProgressContainer
           parentId={this.id}
           value={scaledValue}
-          title={title || ''}
+          title={title}
           label={label}
           variant={variant}
           measureLocation={measureLocation}
