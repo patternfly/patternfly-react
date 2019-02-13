@@ -712,6 +712,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
       >
         <input
           aria-label="Select"
+          checked=""
           type="checkbox"
         />
       </div>

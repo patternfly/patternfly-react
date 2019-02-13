@@ -64,7 +64,7 @@ exports[`onSelect callback called when tab selected 1`] = `
   align-items: flex-start;
 }
 
-<React.Fragment>
+<Fragment>
   <div
     className="pf-c-tabs"
     onSelect={
@@ -180,7 +180,7 @@ exports[`onSelect callback called when tab selected 1`] = `
   >
     Tab 3 section
   </section>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`should call handleScrollButtons tabs with scrolls 1`] = `
@@ -895,7 +895,7 @@ exports[`should render filled tabs 1`] = `
   align-items: flex-start;
 }
 
-<React.Fragment>
+<Fragment>
   <div
     className="pf-c-tabs pf-m-fill"
     onSelect={[Function]}
@@ -996,7 +996,7 @@ exports[`should render filled tabs 1`] = `
   >
     Tab 3 section
   </section>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`should render secondary tabs 1`] = `
@@ -1063,7 +1063,7 @@ exports[`should render secondary tabs 1`] = `
   align-items: flex-start;
 }
 
-<React.Fragment>
+<Fragment>
   <div
     className="pf-c-tabs"
     onSelect={[Function]}
@@ -1197,7 +1197,7 @@ exports[`should render secondary tabs 1`] = `
   >
     Tab 3 section
   </section>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`should render simple tabs 1`] = `
@@ -1264,7 +1264,7 @@ exports[`should render simple tabs 1`] = `
   align-items: flex-start;
 }
 
-<React.Fragment>
+<Fragment>
   <div
     className="pf-c-tabs"
     onSelect={[Function]}
@@ -1365,5 +1365,5 @@ exports[`should render simple tabs 1`] = `
   >
     Tab 3 section
   </section>
-</React.Fragment>
+</Fragment>
 `;

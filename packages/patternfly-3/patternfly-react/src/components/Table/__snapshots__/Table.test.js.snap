@@ -1904,6 +1904,7 @@ exports[`Mock Server Pagination table renders 1`] = `
             Select all rows
           </label>
           <input
+            checked=""
             id="selectAll"
             type="checkbox"
           />

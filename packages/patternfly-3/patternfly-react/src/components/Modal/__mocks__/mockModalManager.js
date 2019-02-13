@@ -5,8 +5,8 @@ import { Modal } from '../index';
 
 export class MockModalManager extends React.Component {
   propTypes = {
-    children: PropTypes.node,
-    rightSide: PropTypes.bool
+    children: PropTypes.node, // eslint-disable-line react/require-default-props
+    rightSide: PropTypes.bool // eslint-disable-line react/require-default-props
   };
 
   constructor() {

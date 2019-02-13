@@ -18,7 +18,7 @@ const isChildOfType = (child, type) =>
 class AccessConsoles extends React.Component {
   state = {
     type: this.props.preselectedType,
-    disconnectByChange: this.props.disconnectByChange,
+    disconnectByChange: this.props.disconnectByChange, // eslint-disable-line react/no-unused-state
     keptConnection: {
       [this.props.preselectedType]: true
     }
@@ -39,7 +39,7 @@ class AccessConsoles extends React.Component {
 
   onChangeDisconnectBySwitchClick(target) {
     this.setState(prevState => ({
-      disconnectByChange: target.checked,
+      disconnectByChange: target.checked, // eslint-disable-line react/no-unused-state
       keptConnection: target.checked ? { [prevState.type]: true } : prevState.keptConnection
     }));
   }

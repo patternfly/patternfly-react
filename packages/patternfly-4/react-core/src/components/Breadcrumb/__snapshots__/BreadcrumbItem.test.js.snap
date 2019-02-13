@@ -14,9 +14,7 @@ exports[`BreadcrumbItem component should render active breadcrumbItem 1`] = `
 <li
   className="pf-c-breadcrumb__item"
 >
-  <React.Fragment>
-    Item
-  </React.Fragment>
+  Item
 </li>
 `;
 
@@ -41,9 +39,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with className 1`
 <li
   className="pf-c-breadcrumb__item Class"
 >
-  <React.Fragment>
-    Item
-  </React.Fragment>
+  Item
   <span
     className="pf-c-breadcrumb__item-divider"
   >
@@ -77,11 +73,9 @@ exports[`BreadcrumbItem component should render breadcrumbItem with custom eleme
 <li
   className="pf-c-breadcrumb__item"
 >
-  <React.Fragment>
-    <h1>
-      Header
-    </h1>
-  </React.Fragment>
+  <h1>
+    Header
+  </h1>
   <span
     className="pf-c-breadcrumb__item-divider"
   >
@@ -116,9 +110,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with id 1`] = `
   className="pf-c-breadcrumb__item"
   id="Item 1"
 >
-  <React.Fragment>
-    Item
-  </React.Fragment>
+  Item
   <span
     className="pf-c-breadcrumb__item-divider"
   >
@@ -152,9 +144,7 @@ exports[`BreadcrumbItem component should render breadcrumbItem with target 1`] =
 <li
   className="pf-c-breadcrumb__item"
 >
-  <React.Fragment>
-    Item
-  </React.Fragment>
+  Item
   <span
     className="pf-c-breadcrumb__item-divider"
   >
@@ -188,9 +178,7 @@ exports[`BreadcrumbItem component should render default breadcrumbItem 1`] = `
 <li
   className="pf-c-breadcrumb__item"
 >
-  <React.Fragment>
-    Item
-  </React.Fragment>
+  Item
   <span
     className="pf-c-breadcrumb__item-divider"
   >
