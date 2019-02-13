@@ -20,8 +20,8 @@ const propTypes = {
   placeholderText: PropTypes.string,
   /** Array of SelectOption nodes that will be rendered */
   selectOptions: PropTypes.array,
-  /** Selected item(s) structure */
-  selections: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  /** Selected item */
+  selections: PropTypes.string,
   /** Id of label for the Select aria-labelledby */
   labelId: PropTypes.string,
   /** Callback for selection behavior */
@@ -92,7 +92,7 @@ class Select extends React.Component {
         ref={this.parentRef}
         style={{ width }}
       >
-        <SelectContext.Provider value={onSelect}>
+        <SelectContext.Provider value={{ onSelect, onClose: this.onClose }}>
           {variant === 'single' && (
             <React.Fragment>
               <SelectToggle

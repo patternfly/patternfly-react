@@ -1,7 +1,8 @@
 import React from 'react';
 
 export const SelectContext = React.createContext({
-  onSelect: () => {}
+  onSelect: () => {},
+  onClose: () => {}
 });
 
 export const SelectVariant = {

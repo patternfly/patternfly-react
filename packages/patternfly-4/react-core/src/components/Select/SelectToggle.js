@@ -16,6 +16,10 @@ const propTypes = {
   isExpanded: PropTypes.bool,
   /** Callback called when toggle is clicked */
   onToggle: PropTypes.func,
+  /** Callback for toggle open on keyboard entry */
+  onEnter: PropTypes.func,
+  /** Callback for toggle close */
+  onClose: PropTypes.func,
   /** Element which wraps toggle */
   parentRef: PropTypes.any,
   /** Forces focus state */
@@ -107,6 +111,7 @@ class SelectToggle extends Component {
       isPlain,
       onToggle,
       onEnter,
+      onClose,
       parentRef,
       id,
       type,
@@ -128,7 +133,10 @@ class SelectToggle extends Component {
           className
         )}
         type={type || 'button'}
-        onClick={_event => onToggle && onToggle(!isExpanded)}
+        onClick={_event => {
+          onToggle && onToggle(!isExpanded);
+          if (isExpanded) onClose && onClose();
+        }}
         aria-expanded={isExpanded}
         aria-haspopup="listbox"
         onKeyDown={this.onKeyDown}

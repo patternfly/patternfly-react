@@ -67,7 +67,7 @@ class SelectOption extends React.Component {
     } = this.props;
     return (
       <SelectContext.Consumer>
-        {onSelect => (
+        {({ onSelect, onClose }) => (
           <li role="presentation">
             <button
               {...props}
@@ -81,6 +81,7 @@ class SelectOption extends React.Component {
                 if (!isDisabled) {
                   onClick && onClick(event);
                   onSelect && onSelect(event, value || children, isPlaceholder);
+                  onClose && onClose();
                 }
               }}
               role="option"
