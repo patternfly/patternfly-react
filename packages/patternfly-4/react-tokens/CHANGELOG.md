@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.0.0...@patternfly/react-tokens@2.0.1) (2019-02-13)
+
+
+### Bug Fixes
+
+* **tokens:** Use only light theme variables ([#1330](https://github.com/patternfly/patternfly-react/issues/1330)) ([300f6f3](https://github.com/patternfly/patternfly-react/commit/300f6f3))
+
+
+
+
+
 # [2.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.10.2...@patternfly/react-tokens@2.0.0) (2019-02-08)
 
 
