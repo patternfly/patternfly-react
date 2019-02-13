@@ -64,18 +64,18 @@ class ApplicationLauncherToggle extends Component {
   onEscPress = event => {
     const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
-    if (this.props.isOpen && (keyCode === KEY_CODES.ESCAPE_KEY || event.key === 'Tab') && parentRef && parentRef.contains(event.target)) {
+    if (this.props.isOpen && (keyCode === KEY_CODES.ESCAPE_KEY || event.keyCode === KEY_CODES.TAB) && parentRef && parentRef.contains(event.target)) {
       this.props.onToggle && this.props.onToggle(false);
       this.toggle.focus();
     }
   };
 
   onKeyDown = event => {
-    if (event.key === 'Tab' && !this.props.isOpen) return;
+    if (event.keyCode === KEY_CODES.TAB && !this.props.isOpen) return;
     event.preventDefault();
-    if ((event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') && this.props.isOpen) {
+    if ((event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key === ' ') && this.props.isOpen) {
       this.props.onToggle(!this.props.isOpen);
-    } else if ((event.key === 'Enter' || event.key === ' ') && !this.props.isOpen) {
+    } else if ((event.keyCode === KEY_CODES.ENTER || event.key === ' ') && !this.props.isOpen) {
       this.props.onToggle(!this.props.isOpen);
       this.props.onEnter();
     }
