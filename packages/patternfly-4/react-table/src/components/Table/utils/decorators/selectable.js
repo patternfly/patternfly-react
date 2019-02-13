@@ -7,7 +7,7 @@ export default (
   label,
   {
     column: {
-      extraParams: { onSelect, rowLabeledBy = 'simple-node' }
+      extraParams: { onSelect, allRowsSelected, rowLabeledBy = 'simple-node' }
     },
     rowIndex,
     rowData
@@ -21,9 +21,10 @@ export default (
     };
   }
   const rowId = rowIndex !== undefined ? rowIndex : -1;
+
   function selectClick(event) {
     const selected = rowIndex === undefined ? event.target.checked : rowData && !rowData.selected;
-    onSelect && onSelect(selected, selected, rowId);
+    onSelect && onSelect(event, selected, rowId);
   }
   const customProps = {
     ...(rowId !== -1
@@ -32,6 +33,7 @@ export default (
           'aria-labelledby': rowLabeledBy + rowIndex
         }
       : {
+          checked: allRowsSelected,
           'aria-label': 'Select all rows'
         })
   };

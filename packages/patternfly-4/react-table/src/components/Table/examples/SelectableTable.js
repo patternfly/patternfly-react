@@ -1,12 +1,12 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class SelectableTable extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       columns: [
-        { title: 'Repositories', cellTransforms: [headerCol()] },
+        { title: 'Repositories' },
         'Branches',
         { title: 'Pull requests' },
         'Workspaces',
