@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.29.12](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.11...patternfly-react@2.29.12) (2019-02-13)
+
+
+### Bug Fixes
+
+* **Login card page:** Submit is disabled when input is empty ([#1188](https://github.com/patternfly/patternfly-react/issues/1188)) ([b984fbb](https://github.com/patternfly/patternfly-react/commit/b984fbb))
+
+
+
+
+
 ## [2.29.11](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.9...patternfly-react@2.29.11) (2019-02-08)
 
 **Note:** Version bump only for package patternfly-react
