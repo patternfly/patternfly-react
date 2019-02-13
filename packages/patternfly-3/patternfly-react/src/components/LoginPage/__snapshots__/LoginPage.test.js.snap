@@ -172,6 +172,7 @@ exports[`Component matches snapshot 1`] = `
                   </div>
                   <button
                     class="login-pf-submit-button btn btn-lg btn-primary btn-block"
+                    disabled=""
                     type="submit"
                   >
                     Log In

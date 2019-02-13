@@ -22,7 +22,7 @@ class LoginCardWithValidation extends React.Component {
     form: {
       showError: this.props.showError,
       submitError: this.props.submitError,
-      disableSubmit: this.props.disableSubmit,
+      disableSubmit: true,
       isSubmitting: this.props.isSubmitting
     }
   };
@@ -35,15 +35,30 @@ class LoginCardWithValidation extends React.Component {
     window.removeEventListener('keyup', this.toggleCapsLock);
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  static getDerivedStateFromProps(props, state) {
+    // disableSubmit prop will only be used in a not validated login card
+    const { validate, disableSubmit } = props;
+    if (validate) return null;
+    if (disableSubmit !== state.form.disableSubmit) {
+      return {
+        form: { disableSubmit }
+      };
+    }
+    return null;
+  }
+
   onInputChange = (e, inputType) => {
     this.props[inputType].onChange && this.props[inputType].onChange(e);
-    this.setState({
-      [inputType]: {
-        ...this.state[inputType],
-        value: e.target.value,
-        showError: false
-      }
-    });
+    const updateState = {
+      usernameField: { value: inputType === 'usernameField' ? e.target.value : this.state.usernameField.value },
+      passwordField: { value: inputType === 'passwordField' ? e.target.value : this.state.passwordField.value }
+    };
+    updateState[inputType].showError = false;
+    updateState.form = {
+      disableSubmit: updateState.usernameField.value.length < 1 || updateState.passwordField.value.length < 1
+    };
+    this.setState(updateState);
   };
 
   onInputFocus = (e, inputType) => {
@@ -273,6 +288,7 @@ LoginCardWithValidation.propTypes = {
   }),
   onSubmit: PropTypes.func,
   submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  // eslint-disable-next-line react/no-unused-prop-types
   disableSubmit: PropTypes.bool,
   isSubmitting: PropTypes.bool,
   showError: PropTypes.bool
