@@ -17,13 +17,13 @@ ALREADY_DEPLOYED=`yarn run surge list | grep ${DEPLOY_DOMAIN}`
 
 yarn run surge --project .public --domain $DEPLOY_DOMAIN;
 
-if [ -z "$ALREADY_DEPLOYED" ] || true
+if [ -z "$ALREADY_DEPLOYED" ]
 then
-  echo 'Adding github PR comment'
   # Using the Issues api instead of the PR api
   # Done so because every PR is an issue, and the issues api allows to post general comments,
   # while the PR api requires that comments are made to specific files and specific commits
-  GITHUB_PR_COMMENTS="https://api.github.com/repos/${CIRCLE_PROJECT_REPONAME}/issues/${PR_NUM}/comments"
+  GITHUB_PR_COMMENTS="https://api.github.com/repos/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/issues/${PR_NUM}/comments"
+  echo "Adding github PR comment ${GITHUB_PR_COMMENTS}"
   curl -H "Authorization: token ${GH_PR_TOKEN}" --request POST ${GITHUB_PR_COMMENTS} --data '{"body":"PatternFly-React preview: '${DEPLOY_DOMAIN}'"}'
 else
   echo "Already deployed ${DEPLOY_DOMAIN}"
