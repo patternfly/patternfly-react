@@ -4,7 +4,7 @@ REPO_NAME=$CIRCLE_PROJECT_REPONAME
 DEPLOY_PATH=.public
 
 DEPLOY_SUBDOMAIN_UNFORMATTED_LIST=()
-if [ ! -z $CIRCLE_PULL_REQUEST ]
+if [ ! -z "$CIRCLE_PULL_REQUEST" ]
 then
     # Split on "/", ref: http://stackoverflow.com/a/5257398/689223
     URL_SPLIT=(${CIRCLE_PULL_REQUEST//\// })
@@ -41,12 +41,12 @@ do
   DEPLOY_SUBDOMAIN=`echo "$DEPLOY_SUBDOMAIN_UNFORMATTED" | tr '[\/|\.]' '-' | cut -c1-253`
   DEPLOY_DOMAIN=https://${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}.surge.sh
   echo 'Deploying domain: ' ${DEPLOY_DOMAIN}
-  ALREADY_DEPLOYED=`yarn run surge list | grep ${DEPLOY_SUBDOMAIN}-${REPO_NAME}-${REPO_OWNER}`
+  ALREADY_DEPLOYED=`yarn run surge list | grep ${DEPLOY_DOMAIN}`
   GITHUB_PR_COMMENTS=https://api.github.com/repos/${CIRCLE_PROJECT_REPONAME}/issues/${CIRCLE_PR_NUMBER}/comments
 
   yarn run surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
 
-  if [ -z "${ALREADY_DEPLOYED// }" ] && [ -z $CIRCLE_PULL_REQUEST ]
+  if [ ! -z "$CIRCLE_PULL_REQUEST" ] && [ -z "$ALREADY_DEPLOYED" ]
   then
     echo 'Adding github PR comment'
     # Using the Issues api instead of the PR api
