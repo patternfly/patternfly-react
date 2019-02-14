@@ -3,8 +3,10 @@ import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../helpers/componentShape';
-import { DropdownPosition, DropdownContext, DropdownArrowContext } from './dropdownConstants';
 import ReactDOM from 'react-dom';
+import { keyHandler } from '../../helpers/util';
+import { DropdownPosition, DropdownDirection, DropdownArrowContext, DropdownContext } from './dropdownConstants';
+import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 
 const propTypes = {
   /** Anything which can be rendered as dropdown items */
@@ -30,53 +32,29 @@ const defaultProps = {
 };
 
 class DropdownMenu extends React.Component {
-  refsCollection = {};
-
-  keyHandler = (index, position, custom = false) => {
-    const kids = this.props.children;
-    if (!Array.isArray(kids)) return;
-    let nextIndex;
-    if (position === 'up') {
-      if (index === 0) {
-        // loop back to end
-        nextIndex = kids.length - 1;
-      } else {
-        nextIndex = index - 1;
-      }
-    } else if (index === kids.length - 1) {
-      // loop back to beginning
-      nextIndex = 0;
-    } else {
-      nextIndex = index + 1;
-    }
-    if (this.refsCollection[`item-${nextIndex}`] === null) {
-      this.keyHandler(nextIndex, position, custom);
-    } else {
-      custom
-        ? (this.refsCollection[`item-${nextIndex}`].current.focus &&
-            this.refsCollection[`item-${nextIndex}`].current.focus()) ||
-          ReactDOM.findDOMNode(this.refsCollection[`item-${nextIndex}`].current).focus()
-        : this.refsCollection[`item-${nextIndex}`].focus();
-    }
-  };
+  refsCollection = [];
 
   componentDidMount() {
     if (this.props.openedOnEnter) {
-      if (this.props.component === 'ul') this.refsCollection['item-0'].focus();
+      if (this.props.component === 'ul') this.refsCollection[0].focus();
       else {
-        (this.refsCollection['item-0'].current.focus && this.refsCollection['item-0'].current.focus()) ||
-          ReactDOM.findDOMNode(this.refsCollection['item-0'].current).focus();
+        (this.refsCollection[0].current.focus && this.refsCollection[0].current.focus()) ||
+          ReactDOM.findDOMNode(this.refsCollection[0].current).focus();
       }
     }
   }
 
+  childKeyHandler = (index, position, custom = false) => {
+    keyHandler(index, position, this.refsCollection, this.props.children, custom);
+  };
+
   sendRef = (index, node, isDisabled) => {
     if (!node.getAttribute) {
-      this.refsCollection[`item-${index}`] = ReactDOM.findDOMNode(node);
+      this.refsCollection[index] = ReactDOM.findDOMNode(node);
     } else if (isDisabled || node.getAttribute('role') === 'separator') {
-      this.refsCollection[`item-${index}`] = null;
+      this.refsCollection[index] = null;
     } else {
-      this.refsCollection[`item-${index}`] = node;
+      this.refsCollection[index] = node;
     }
   };
 
@@ -99,18 +77,18 @@ class DropdownMenu extends React.Component {
         )}${child.props.className ? child.props.className : ''}`,
         tabIndex: -1,
         onKeyDown: event => {
-          if (event.key === 'Tab') return;
+          if (event.keyCode === KEY_CODES.TAB) return;
           event.preventDefault();
-          if (event.key === 'ArrowUp') {
-            this.keyHandler(index, 'up', true);
-          } else if (event.key === 'ArrowDown') {
-            this.keyHandler(index, 'down', true);
+          if (event.keyCode === KEY_CODES.ARROW_UP) {
+            keyHandler(index, KEYHANDLER_DIRECTION.up, this.refsCollection, this.props.children, true);
+          } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
+            keyHandler(index, KEYHANDLER_DIRECTION.DOWN, this.refsCollection, this.props.children, true);
           }
         }
       });
       !mappedChild.props.disabled
-        ? (this.refsCollection[`item-${index}`] = mappedChild.ref)
-        : (this.refsCollection[`item-${index}`] = null);
+        ? (this.refsCollection[index] = mappedChild.ref)
+        : (this.refsCollection[index] = null);
       return mappedChild;
     });
     return mappedChildren;
@@ -122,7 +100,7 @@ class DropdownMenu extends React.Component {
     return (
       <DropdownArrowContext.Provider
         value={{
-          keyHandler: this.keyHandler,
+          keyHandler: this.childKeyHandler,
           sendRef: this.sendRef
         }}
       >

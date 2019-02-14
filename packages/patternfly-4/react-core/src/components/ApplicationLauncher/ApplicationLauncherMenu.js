@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { ApplicationLauncherPosition } from './applicationLauncherConstants';
 import { DropdownContext, DropdownArrowContext } from '../Dropdown/dropdownConstants';
 import ReactDOM from 'react-dom';
+import { keyHandler } from '../../helpers/util';
+import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 
 const propTypes = {
   /** Anything which can be rendered as dropdown items */
@@ -27,46 +29,22 @@ const defaultProps = {
 };
 
 class ApplicationLauncherMenu extends React.Component {
-  refsCollection = {};
+  refsCollection = [];
 
-  keyHandler = (index, position, custom = false) => {
-    const kids = this.props.children;
-    if (!Array.isArray(kids)) return;
-    let nextIndex;
-    if (position === 'up') {
-      if (index === 0) {
-        // loop back to end
-        nextIndex = kids.length - 1;
-      } else {
-        nextIndex = index - 1;
-      }
-    } else if (index === kids.length - 1) {
-      // loop back to beginning
-      nextIndex = 0;
-    } else {
-      nextIndex = index + 1;
-    }
-    if (this.refsCollection[`item-${nextIndex}`] === null) {
-      this.keyHandler(nextIndex, position, custom);
-    } else {
-      custom
-        ? (this.refsCollection[`item-${nextIndex}`].current.focus &&
-            this.refsCollection[`item-${nextIndex}`].current.focus()) ||
-          ReactDOM.findDOMNode(this.refsCollection[`item-${nextIndex}`].current).focus()
-        : this.refsCollection[`item-${nextIndex}`].focus();
-    }
+  childKeyHandler = (index, position, custom = false) => {
+    keyHandler(index, position, this.refsCollection, this.props.children, custom);
   };
 
   onKeyDown = event => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
-    if (event.key === 'Tab') return;
+    if (event.key === KEY_CODES.TAB) return;
     event.preventDefault();
-    if (event.key === 'ArrowUp') {
-      this.keyHandler(this.props.index, 'up');
-    } else if (event.key === 'ArrowDown') {
-      this.keyHandler(this.props.index, 'down');
-    } else if (event.key === 'Enter') {
+    if (event.keyCode === KEY_CODES.ARROW_UP) {
+      keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP, this.refsCollection, this.props.children);
+    } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
+      keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN, this.refsCollection, this.props.children);
+    } else if (event.key === KEY_CODES.ENTER) {
       if (!this.ref.current.getAttribute) ReactDOM.findDOMNode(this.ref.current).click();
       else {
         this.ref.current.click && this.ref.current.click();
@@ -76,17 +54,17 @@ class ApplicationLauncherMenu extends React.Component {
 
   componentDidMount() {
     if (this.props.openedOnEnter) {
-      this.refsCollection['item-0'].focus();
+      this.refsCollection[0].focus();
     }
   }
 
   sendRef = (index, node, isDisabled) => {
     if (!node.getAttribute) {
-      this.refsCollection[`item-${index}`] = ReactDOM.findDOMNode(node);
+      this.refsCollection[index] = ReactDOM.findDOMNode(node);
     } else if (isDisabled || node.getAttribute('role') === 'separator') {
-      this.refsCollection[`item-${index}`] = null;
+      this.refsCollection[index] = null;
     } else {
-      this.refsCollection[`item-${index}`] = node;
+      this.refsCollection[index] = node;
     }
   };
 
@@ -104,7 +82,7 @@ class ApplicationLauncherMenu extends React.Component {
     return (
       <DropdownArrowContext.Provider
         value={{
-          keyHandler: this.keyHandler,
+          keyHandler: this.childKeyHandler,
           sendRef: this.sendRef
         }}
       >

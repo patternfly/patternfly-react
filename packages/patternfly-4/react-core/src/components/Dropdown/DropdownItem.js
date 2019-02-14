@@ -6,6 +6,7 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../helpers/componentShape';
 import { DropdownContext } from './dropdownConstants';
+import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 
 const propTypes = {
   /** Anything which can be rendered as dropdown item */
@@ -56,13 +57,13 @@ class DropdownItem extends React.Component {
   onKeyDown = event => {
     // Detected key press on this item, notify the menu parent so that the appropriate
     // item can be focused
-    if (event.key === 'Tab') return;
+    if (event.keyCode === KEY_CODES.TAB) return;
     event.preventDefault();
-    if (event.key === 'ArrowUp') {
-      this.props.context.keyHandler(this.props.index, 'up');
-    } else if (event.key === 'ArrowDown') {
-      this.props.context.keyHandler(this.props.index, 'down');
-    } else if (event.key === 'Enter') {
+    if (event.keyCode === KEY_CODES.ARROW_UP) {
+      this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
+    } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
+      this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN);
+    } else if (event.keyCode === KEY_CODES.ENTER) {
       if (!this.ref.current.getAttribute) ReactDOM.findDOMNode(this.ref.current).click();
       else {
         this.ref.current.click && this.ref.current.click();

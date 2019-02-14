@@ -1,5 +1,8 @@
+import React from 'react';
+import { mount } from 'enzyme';
+import { ApplicationLauncher, DropdownItem, Dropdown, DropdownToggle } from '@patternfly/react-core';
 import { capitalize, getUniqueId, debounce, isElementInView, sideElementIsOutOfView } from './util';
-import { SIDE } from './constants';
+import { KEY_CODES, SIDE } from './constants';
 
 test('capitalize', () => {
   expect(capitalize('foo')).toBe('Foo');
@@ -72,3 +75,82 @@ test('sideElementIsOutOfView Returns NONE when in view', () => {
   const element = { offsetLeft: 10, clientWidth: 100 };
   expect(sideElementIsOutOfView(container, element)).toBe(SIDE.NONE);
 });
+
+describe('keyHandler works on ApplicationLauncher', () => {
+  document.body.innerHTML = '<!doctype html><html><body></body></html>';
+  const dropdownItems = [
+    <DropdownItem key="link" id="first">Link</DropdownItem>,
+    <DropdownItem key="action" id="second" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled link" id="third" isDisabled>
+      Disabled Link
+    </DropdownItem>,
+  ];
+  const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />, {
+    attachTo: document.getElementsByName('div')[0]
+  });
+  const firstDropdownItem = view.find('#first').first();
+  const secondDropdownItem = view.find('#second').first();
+  const thirdDropdownItem = view.find('#third').first();
+
+  test('keyHandler advances forward', () => {
+    firstDropdownItem.simulate('keydown', { key: 'ArrowDown', keyCode: KEY_CODES.ARROW_DOWN, which: KEY_CODES.ARROW_DOWN });
+    expect(secondDropdownItem === document.activeElement);
+  });
+
+  test('keyHandler regresses backward', () => {
+    secondDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
+    expect(firstDropdownItem === document.activeElement);
+  });
+
+  test('keyHandler skips disabled items and loops down to top', () => {
+    secondDropdownItem.simulate('keydown', { key: 'ArrowDown', keyCode: KEY_CODES.ARROW_DOWN, which: KEY_CODES.ARROW_DOWN });
+    expect(firstDropdownItem === document.activeElement);
+  });
+
+   test('keyHandler loops top to bottom', () => {
+    firstDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
+    expect(secondDropdownItem === document.activeElement);
+  });
+});
+
+describe('keyHandler works on Dropdown', () => {
+  document.body.innerHTML = '<!doctype html><html><body></body></html>';
+  const dropdownItems = [
+    <DropdownItem key="link" id="first">Link</DropdownItem>,
+    <DropdownItem key="action" id="second" component="button">
+      Action
+    </DropdownItem>,
+    <DropdownItem key="disabled link" id="third" isDisabled>
+      Disabled Link
+    </DropdownItem>,
+  ];
+  const view = mount(<Dropdown dropdownItems={dropdownItems} isOpen toggle={<DropdownToggle>Expanded Dropdown</DropdownToggle>} />, {
+    attachTo: document.getElementsByName('div')[0]
+  });
+  const firstDropdownItem = view.find('#first').first();
+  const secondDropdownItem = view.find('#second').first();
+  const thirdDropdownItem = view.find('#third').first();
+
+  test('keyHandler advances forward', () => {
+    firstDropdownItem.simulate('keydown', { key: 'ArrowDown', keyCode: KEY_CODES.ARROW_DOWN, which: KEY_CODES.ARROW_DOWN });
+    expect(secondDropdownItem === document.activeElement);
+  });
+
+  test('keyHandler regresses backward', () => {
+    secondDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
+    expect(firstDropdownItem === document.activeElement);
+  });
+
+  test('keyHandler skips disabled items and loops down to top', () => {
+    secondDropdownItem.simulate('keydown', { key: 'ArrowDown', keyCode: KEY_CODES.ARROW_DOWN, which: KEY_CODES.ARROW_DOWN });
+    expect(firstDropdownItem === document.activeElement);
+  });
+
+   test('keyHandler loops top to bottom', () => {
+    firstDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
+    expect(secondDropdownItem === document.activeElement);
+  });
+});
+
