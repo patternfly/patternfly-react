@@ -17,4 +17,4 @@ git config --global push.default simple
 # helpful for debugging any lerna EUNCOMMIT errors
 git status --short;
 yarn run lerna changed
-yarn run lerna:publish
+yarn lerna:publish
