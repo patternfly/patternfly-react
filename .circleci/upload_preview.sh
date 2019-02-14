@@ -1,14 +1,15 @@
 #!/bin/bash
-# Split on "/", ref: http://stackoverflow.com/a/5257398/689223
-REPO_SLUG_ARRAY=(${CIRCLE_PROJECT_REPONAME//\// })
-REPO_OWNER=${REPO_SLUG_ARRAY[0]}
-REPO_NAME=${REPO_SLUG_ARRAY[1]}
-DEPLOY_PATH=./.public
+REPO_OWNER=$CIRCLE_PROJECT_USERNAME
+REPO_NAME=$CIRCLE_PROJECT_REPONAME
+DEPLOY_PATH=.public
 
 DEPLOY_SUBDOMAIN_UNFORMATTED_LIST=()
-if [ ! -z $CIRCLE_PR_NUMBER ]
+if [ ! -z $CIRCLE_PULL_REQUEST ]
 then
-    DEPLOY_SUBDOMAIN_UNFORMATTED_LIST+=($CIRCLE_PR_NUMBER-pr)
+    # Split on "/", ref: http://stackoverflow.com/a/5257398/689223
+    URL_SPLIT=(${CIRCLE_PULL_REQUEST//\// })
+    PR_NUM=$(printf %s\\n "${URL_SPLIT[@]:(-1)}")
+    DEPLOY_SUBDOMAIN_UNFORMATTED_LIST+=($PR_NUM-pr)
 fi
 
 if [ -n "${CIRCLE_TAG// }" ] #TAG is not empty
@@ -45,7 +46,7 @@ do
 
   yarn run surge --project ${DEPLOY_PATH} --domain $DEPLOY_DOMAIN;
 
-  if [ -z "${ALREADY_DEPLOYED// }" ] && [ -z $CIRCLE_PR_NUMBER ]
+  if [ -z "${ALREADY_DEPLOYED// }" ] && [ -z $CIRCLE_PULL_REQUEST ]
   then
     echo 'Adding github PR comment'
     # Using the Issues api instead of the PR api
