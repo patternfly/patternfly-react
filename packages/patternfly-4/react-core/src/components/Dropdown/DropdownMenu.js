@@ -6,7 +6,7 @@ import { componentShape } from '../../helpers/componentShape';
 import ReactDOM from 'react-dom';
 import { keyHandler } from '../../helpers/util';
 import { DropdownPosition, DropdownDirection, DropdownArrowContext, DropdownContext } from './dropdownConstants';
-import { ARROW_KEYS, KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
+import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 
 const propTypes = {
   /** Anything which can be rendered as dropdown items */
@@ -79,9 +79,9 @@ class DropdownMenu extends React.Component {
         onKeyDown: event => {
           if (event.keyCode === KEY_CODES.TAB) return;
           event.preventDefault();
-          if (event.keyCode === ARROW_KEYS.UP) {
+          if (event.keyCode === KEY_CODES.ARROW_UP) {
             keyHandler(index, KEYHANDLER_DIRECTION.up, this.refsCollection, this.props.children, true);
-          } else if (event.keyCode === ARROW_KEYS.DOWN) {
+          } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
             keyHandler(index, KEYHANDLER_DIRECTION.DOWN, this.refsCollection, this.props.children, true);
           }
         }

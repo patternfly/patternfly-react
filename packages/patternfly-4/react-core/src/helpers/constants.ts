@@ -1,6 +1,4 @@
-export const KEY_CODES = { ESCAPE_KEY: 27, TAB: 9, ENTER: 13 };
-
-export const ARROW_KEYS = { LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40 };
+export const KEY_CODES = { ARROW_UP: 38, ARROW_DOWN: 40, ESCAPE_KEY: 27, TAB: 9, ENTER: 13 };
 
 export const SIDE = { RIGHT: 'right', LEFT: 'left', BOTH: 'both', NONE: 'none' };
 

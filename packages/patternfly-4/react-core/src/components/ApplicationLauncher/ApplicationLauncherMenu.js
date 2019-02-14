@@ -6,7 +6,7 @@ import { ApplicationLauncherPosition } from './applicationLauncherConstants';
 import { DropdownContext, DropdownArrowContext } from '../Dropdown/dropdownConstants';
 import ReactDOM from 'react-dom';
 import { keyHandler } from '../../helpers/util';
-import { ARROW_KEYS, KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
+import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 
 const propTypes = {
   /** Anything which can be rendered as dropdown items */
@@ -40,9 +40,9 @@ class ApplicationLauncherMenu extends React.Component {
     // item can be focused
     if (event.key === KEY_CODES.TAB) return;
     event.preventDefault();
-    if (event.keyCode === ARROW_KEYS.UP) {
+    if (event.keyCode === KEY_CODES.ARROW_UP) {
       keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP, this.refsCollection, this.props.children);
-    } else if (event.keyCode === ARROW_KEYS.DOWN) {
+    } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
       keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN, this.refsCollection, this.props.children);
     } else if (event.key === KEY_CODES.ENTER) {
       if (!this.ref.current.getAttribute) ReactDOM.findDOMNode(this.ref.current).click();

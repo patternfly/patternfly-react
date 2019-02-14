@@ -6,7 +6,7 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { componentShape } from '../../helpers/componentShape';
 import { DropdownContext } from './dropdownConstants';
-import { ARROW_KEYS, KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
+import { KEY_CODES, KEYHANDLER_DIRECTION } from '../../helpers/constants';
 
 const propTypes = {
   /** Anything which can be rendered as dropdown item */
@@ -59,9 +59,9 @@ class DropdownItem extends React.Component {
     // item can be focused
     if (event.keyCode === KEY_CODES.TAB) return;
     event.preventDefault();
-    if (event.keyCode === ARROW_KEYS.UP) {
+    if (event.keyCode === KEY_CODES.ARROW_UP) {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.UP);
-    } else if (event.keyCode === ARROW_KEYS.DOWN) {
+    } else if (event.keyCode === KEY_CODES.ARROW_DOWN) {
       this.props.context.keyHandler(this.props.index, KEYHANDLER_DIRECTION.DOWN);
     } else if (event.keyCode === KEY_CODES.ENTER) {
       if (!this.ref.current.getAttribute) ReactDOM.findDOMNode(this.ref.current).click();

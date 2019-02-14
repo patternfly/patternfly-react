@@ -74,7 +74,7 @@ export function sideElementIsOutOfView(container, element) {
   return side;
 }
 /** This function returns the side the element is out of view on (right, left or both)
- * @param {Objent} templateString  The string passed by the consumer
+ * @param {Object} templateString  The string passed by the consumer
  * @param {Object} templateVars The variables passed to the string
  *
  * @return {type} The template string literal result
@@ -85,6 +85,11 @@ export function fillTemplate(templateString, templateVars) {
 }
 
 /** This function allows for keyboard navigation through dropdowns. The custom argument is optional.
+ * @param {number} index The index of the element you're on
+ * @param {string} position The orientation of the dropdown
+ * @param {string[]} refsCollection Array of refs to the items in the dropdown
+ * @param {Object[]} kids Array of items in the dropdown
+ * @param {boolean} [custom] Allows for handling of flexible content
  */
 export function keyHandler (index, position, refsCollection, kids, custom = false) {
   if (!Array.isArray(kids)) {
@@ -107,10 +112,12 @@ export function keyHandler (index, position, refsCollection, kids, custom = fals
   if (refsCollection[nextIndex] === null) {
     keyHandler(nextIndex, position, refsCollection, kids, custom);
   } else {
+      /* tslint:disable */
       custom
         ? (refsCollection[nextIndex].focus &&
             refsCollection[nextIndex].focus()) ||
           ReactDOM.findDOMNode(refsCollection[nextIndex]).focus()
         : refsCollection[nextIndex].focus();
+      /* tslint:enable */
   }
 }
