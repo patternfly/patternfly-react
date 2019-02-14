@@ -13,7 +13,7 @@ PR_NUM=$(printf %s\\n "${URL_SPLIT[@]:(-1)}")
 # So, just replace "/" or "." with "-"
 DEPLOY_SUBDOMAIN=`echo "$PR_NUM-pr-${CIRCLE_PROJECT_REPONAME}-${CIRCLE_PROJECT_USERNAME}" | tr '[\/|\.]' '-' | cut -c1-253`
 DEPLOY_DOMAIN="https://${DEPLOY_SUBDOMAIN}.surge.sh"
-ALREADY_DEPLOYED=`yarn run surge list | grep ${DEPLOY_DOMAIN}`
+ALREADY_DEPLOYED=`yarn run surge list | grep ${DEPLOY_SUBDOMAIN}`
 
 yarn run surge --project .public --domain $DEPLOY_DOMAIN;
 
