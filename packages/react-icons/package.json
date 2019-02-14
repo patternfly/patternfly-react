@@ -24,8 +24,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "prebuild": "node ./build/generateIcons.js",
-    "build": "yarn build:babel && yarn build:ts",
+    "build": "node ./build/generateIcons.js && yarn build:babel && yarn build:ts",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",

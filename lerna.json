@@ -1,8 +1,5 @@
 {
   "lerna": "3.10.5",
-  "nohoist": [
-    "babel*"
-  ],
   "npmClient": "yarn",
   "publishConfig": {
     "access": "public",

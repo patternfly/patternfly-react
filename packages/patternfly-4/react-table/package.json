@@ -40,17 +40,14 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && yarn build:ts",
+    "build": "yarn build:babel && yarn build:ts && node ./build/copyStyles.js",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
-    "build:ts": "node ./scripts/copyTS.js",
-    "postbuild": "node ./build/copyStyles.js"
-  },
-  "optionalDependencies": {
-    "@patternfly/react-tokens": "^2.0.1"
+    "build:ts": "node ./scripts/copyTS.js"
   },
   "devDependencies": {
+    "@patternfly/react-tokens": "^2.0.0",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",

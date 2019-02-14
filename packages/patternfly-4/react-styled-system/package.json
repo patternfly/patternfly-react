@@ -36,7 +36,7 @@
     "@patternfly/react-styles": "^2.3.2",
     "@patternfly/react-tokens": "^2.0.1",
     "emotion-theming": "^9.2.9",
-    "react-emotion": "^9.2.12",
+    "react-emotion": "^9.2.9",
     "styled-system": "^3.1.11"
   },
   "peerDependencies": {

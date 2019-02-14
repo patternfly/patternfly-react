@@ -18,7 +18,7 @@
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",
     "css-loader": "^2.1.0",
-    "emotion": "^10.0.6",
+    "emotion": "^9.2.9",
     "exenv": "^1.2.2",
     "gatsby": "^2.0.91",
     "gatsby-plugin-react-helmet": "^3.0.5",
