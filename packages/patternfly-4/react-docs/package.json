@@ -38,7 +38,7 @@
   ],
   "scripts": {
     "docbuild": "node build/copyDocs.js && gatsby build",
-    "pr-build": "node build/copyDocs.js && gatsby build --prefix-paths",
+    "pr-build": "node build/copyDocs.js && gatsby build --verbose --prefix-paths",
     "develop": "gatsby develop"
   },
   "browserslist": [
