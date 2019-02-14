@@ -70,6 +70,7 @@ jobs:
       install: skip
       script: .circleci/release.sh
     - name: Deploy Docs
+      if: type = pull_request
       install: skip
       script:
         - cp -r packages/patternfly-4/react-docs/public .public/patternfly-4

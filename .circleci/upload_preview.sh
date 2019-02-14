@@ -1,10 +1,4 @@
 #!/bin/bash
-if [ -z "$CIRCLE_PULL_REQUEST" ]
-then
-  echo 'Not a PR, not deploying'
-  exit 0
-fi
-
 # Split on "/" to get last part of URL, ref: http://stackoverflow.com/a/5257398/689223
 URL_SPLIT=(${CIRCLE_PULL_REQUEST//\// })
 PR_NUM=$(printf %s\\n "${URL_SPLIT[@]:(-1)}")
