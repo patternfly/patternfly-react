@@ -37,8 +37,8 @@
     "gatsby"
   ],
   "scripts": {
-    "docbuild": "node build/copyDocs.js && gatsby build",
-    "pr-build": "node build/copyDocs.js && gatsby build --verbose --prefix-paths",
+    "docbuild": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
+    "pr-build": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
     "develop": "gatsby develop"
   },
   "browserslist": [
