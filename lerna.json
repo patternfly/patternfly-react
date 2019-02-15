@@ -20,7 +20,7 @@
   },
   "command": {
     "publish": {
-      "message": "chore(release): releasing packages",
+      "message": "chore(release): releasing packages [ci skip]",
       "conventionalCommits": true
     }
   },

@@ -45,21 +45,22 @@ jobs:
       name: (PF4) Jest Tests
       install: skip
       script:
-        - yarn test:pf4
-        - yarn coveralls
+        - "true"
+        #- yarn test:pf4
+        #- yarn coveralls
     - name: (PF4) Build PR Docs
-      if: branch = master && type != pull_request && fork = false
+      # if: branch = master && type != pull_request && fork = false
       install: skip
       script:
         - yarn build:prdocs
         - .circleci/clean_cache.sh
-    - name: (PF3) Jest Tests
-      install: skip
-      script:
-        - yarn test:pf3
-        - yarn coveralls
+    # - name: (PF3) Jest Tests
+    #   install: skip
+    #   script:
+    #     - yarn test:pf3
+    #     - yarn coveralls
     - name: (PF3) Build Storybook
-      if: branch = master && type != pull_request && fork = false
+      # if: branch = master && type != pull_request && fork = false
       install: skip
       script:
         - yarn build:storybook
