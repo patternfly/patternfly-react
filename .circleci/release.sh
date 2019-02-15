@@ -13,8 +13,9 @@ npm prune
 git config --global user.email "patternfly-build@redhat.com"
 git config --global user.name "patternfly-build"
 git config --global push.default simple
+git checkout master
 
 # helpful for debugging any lerna EUNCOMMIT errors
-git status --short;
+git rev-parse HEAD
 yarn run lerna changed
 yarn lerna:publish
