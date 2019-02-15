@@ -1,0 +1,38 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.15
+    working_directory: ~/repo
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v3-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Conditional install
+          command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
+      - save_cache:
+          paths:
+            - node_modules
+            - packages/patternfly-4/react-core/node_modules
+            - packages/patternfly-4/react-docs/node_modules
+          key: v3-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Build Dist
+          command: yarn build
+      - run:
+          name: (PF3) Build Storybook
+          command: |
+            yarn build:storybook &&
+            cp -r .out .public/patternfly-3
+      - run:
+          name: (PF4) Build PR Docs
+          command: |
+            yarn build:prdocs &&
+            cp -r packages/patternfly-4/react-docs/public .public/patternfly-4 &&
+            cp -r packages/patternfly-4/react-docs/public/assets .public/assets
+      - run:
+          name: Deploy Docs
+          command: .circleci/upload_preview.sh

@@ -32,7 +32,7 @@
     "@patternfly/react-styles": "^2.3.2",
     "@patternfly/react-tokens": "^2.0.1",
     "@tippy.js/react": "^1.1.1",
-    "emotion": "^10.0.6",
+    "emotion": "^9.2.9",
     "exenv": "^1.2.2",
     "focus-trap-react": "^4.0.1",
     "tippy.js": "^3.4.1"
@@ -43,16 +43,15 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && yarn build:generate:dts && yarn build:tsd:copy && yarn build:umd",
+    "build": "yarn build:babel && yarn build:generate:dts && yarn build:ts && yarn build:umd && yarn build:typecheck && node ./build/copyStyles.js",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js --extensions \".js,jsx,.ts,.tsx\"",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm --extensions \".js,jsx,.ts,.tsx\"",
     "build:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd --extensions \".js,jsx,.ts,.tsx\"",
     "build:generate:dts": "tsc -p src/tsconfig.dts.json",
     "build:typecheck": "tsc",
-    "build:tsd:copy": "node ./scripts/copyTS.js",
-    "lint": "tslint --project tsconfig.json",
-    "postbuild": "yarn build:typecheck && node ./build/copyStyles.js"
+    "build:ts": "node ./scripts/copyTS.js",
+    "lint": "tslint --project tsconfig.json"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -67,11 +66,9 @@
     "@babel/preset-typescript": "^7.0.0",
     "@patternfly/patternfly": "1.0.184",
     "@types/enzyme": "^3.1.15",
-    "@types/jest": "^23.3.10",
     "@types/prop-types": "^15.5.6",
     "@types/react": "^16.7.13",
     "babel-eslint": "^9.0.0",
-    "babel-jest": "^23.6.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-transform-imports": "^1.5.0",
     "babel-plugin-typescript-to-proptypes": "^0.13.0",
@@ -81,10 +78,7 @@
     "enzyme-to-json": "^3.3.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
-    "jest": "^23.6.0",
-    "jest-cli": "^23.6.0",
     "npmlog": "^4.1.2",
-    "ts-jest": "^23.10.5",
     "tslint": "^5.12.0",
     "tslint-config-prettier": "^1.17.0",
     "tslint-react": "^3.6.0",

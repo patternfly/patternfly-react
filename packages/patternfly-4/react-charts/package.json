@@ -40,13 +40,13 @@
     "build:ts": "node ./scripts/copyTS.js"
   },
   "optionalDependencies": {
-    "@patternfly/react-tokens": "^2.0.1",
     "@types/victory": "^0.9.19",
     "hoist-non-react-statics": "^3.1.0",
     "victory": "^30.1.0"
   },
   "devDependencies": {
     "@patternfly/patternfly": "1.0.184",
+    "@patternfly/react-tokens": "^2.0.0",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",

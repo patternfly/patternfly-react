@@ -57,8 +57,7 @@
     "fontAwesome": "../../../node_modules/font-awesome-sass/assets/stylesheets"
   },
   "scripts": {
-    "prebuild": "yarn build:sass && yarn build:less",
-    "build": "yarn build:babel",
+    "build": "yarn build:sass && yarn build:less && yarn build:babel",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",

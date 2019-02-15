@@ -61,7 +61,7 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16.3": "^1.2.0",
     "enzyme-to-json": "^3.3.3",
-    "eslint": "5.6.0",
+    "eslint": "^5.13.0",
     "eslint-import-resolver-webpack": "^0.9.0",
     "eslint-plugin-patternfly-react": "file:packages/eslint-plugin-patternfly-react",
     "fs-extra": "^6.0.1",
@@ -74,7 +74,9 @@
     "lerna": "^3.11.0",
     "lerna-changelog": "^0.8.2",
     "local-web-server": "^2.6.1",
+    "lodash": "^4.17.0",
     "minimist": "^1.2.0",
+    "mutation-observer": "^1.0.3",
     "node-sass": "^4.8.3",
     "npmlog": "^4.1.2",
     "plop": "^2.0.0",
@@ -89,14 +91,10 @@
     "sass-loader": "^6.0.6",
     "shx": "^0.3.2",
     "style-loader": "^0.20.3",
-    "stylelint": "^8.4.0",
+    "stylelint": "^9.10.1",
     "stylelint-config-standard": "^18.2.0",
-    "travis-deploy-once": "^4.4.1",
-    "ts-jest": "^23.10.5",
-    "typescript": "3.2.2",
-    "lodash": "^4.17.0",
-    "mutation-observer": "^1.0.3",
-    "yarn": "^1.13.0"
+    "surge": "^0.20.1",
+    "ts-jest": "^23.10.5"
   },
   "optionalDependencies": {
     "sortabular": "^1.5.1",
@@ -109,12 +107,11 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "yarn clean:build && lerna run prebuild --parallel && lerna run build --parallel && lerna run postbuild",
-    "build:docs": "yarn build && lerna run docbuild --scope=@patternfly/react-docs --stream",
-    "build:typecheck": "lerna run build:typecheck --scope=@patternfly/react-core --stream",
-    "build:prdocs": "lerna run pr-build --scope=@patternfly/react-docs --stream",
-    "clean": "yarn clean:build",
-    "clean:build": "shx rm -rf packages/*/dist && shx rm -rf packages/patternfly-?/*/dist",
+    "build": "yarn prebuild:pf4 && lerna run --parallel build --since",
+    "prebuild:pf4": "lerna run --scope='@patternfly/react-styles' build",
+    "build:docs": "yarn build && lerna run docbuild",
+    "build:prdocs": "lerna run pr-build",
+    "build:storybook": "build-storybook -c storybook -o .out",
     "commit": "git-cz",
     "commitmsg": "commitlint -e",
     "coveralls": "shx cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
@@ -122,22 +119,20 @@
     "lerna:publish": "lerna publish --github-release --conventional-commits --yes --ci",
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
+    "lint:style": "lerna run stylelint",
     "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
     "start": "yarn start:pf3",
     "start:pf3": "concurrently \"yarn storybook:run\" \"yarn storybook:openurl\"",
     "start:pf4": "lerna run develop --scope=@patternfly/react-docs --stream",
-    "storybook:build": "build-storybook -c storybook -o .out",
-    "storybook:deploy": "storybook-to-ghpages '--script=storybook:build'",
     "storybook:openurl": "node ./storybook/openBrowser.js",
     "storybook:run": "start-storybook -c storybook -p 6006",
     "storybook": "yarn storybook:run",
-    "stylelint": "^8.4.0",
-    "stylelint-config-standard": "^18.2.0",
-    "test": "yarn lint && jest",
+    "test": "jest packages",
+    "test:pf3": "jest packages/patternfly-3",
+    "test:pf4": "jest packages/patternfly-4",
     "test:current": "jest --watch",
     "test:integration": "lerna run integration:setup && lerna run build:demo && lerna run integration:test",
-    "test:watch": "jest --watchAll",
-    "travis-deploy-once": "travis-deploy-once"
+    "test:watch": "jest --watchAll"
   },
   "jest": {
     "collectCoverage": true,
@@ -191,12 +186,10 @@
   "workspaces": {
     "packages": [
       "packages/**"
-    ],
-    "nohoist": [
-      "@patternfly/react-docs/react*"
     ]
   },
   "resolutions": {
-    "cssom": "0.3.4"
+    "cssom": "0.3.4",
+    "terser": "3.14.1"
   }
 }

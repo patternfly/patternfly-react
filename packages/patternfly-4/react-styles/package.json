@@ -17,8 +17,8 @@
     "css": "^2.2.3",
     "cssom": "^0.3.4",
     "cssstyle": "^0.3.1",
-    "emotion": "^9.2.6",
-    "emotion-server": "^9.2.6",
+    "emotion": "^9.2.9",
+    "emotion-server": "^9.2.9",
     "fbjs-scripts": "^0.8.3",
     "fs-extra": "^6.0.1",
     "jsdom": "^11.11.0",
@@ -31,10 +31,10 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "prebuild": "yarn build:babel",
-    "build:babel": "concurrently \"yarn build:tsd:copy\" \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build": "yarn build:babel && yarn build:ts",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
-    "build:tsd:copy": "node ./scripts/copyTS.js"
+    "build:ts": "node ./scripts/copyTS.js"
   }
 }
