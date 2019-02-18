@@ -146,11 +146,10 @@
       "<rootDir>/packages/*.*/public/*.*",
       "<rootDir>/packages/*.*/.cache/*.*"
     ],
-    "modulePaths": [
-      "<rootDir>/node_modules",
+    "moduleDirectories": [
       "node_modules",
-      "<rootDir>/packages/patternfly-3",
-      "<rootDir>/packages/patternfly-4"
+      "patternfly-3",
+      "patternfly-4"
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/packages/*.*/dist/*.*",
