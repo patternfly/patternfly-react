@@ -82,6 +82,7 @@ class Progress extends Component {
           getModifier(styles, variant, ''),
           getModifier(styles, measureLocation, ''),
           getModifier(styles, measureLocation === ProgressMeasureLocation.inside ? ProgressSize.lg : size, ''),
+          !title && getModifier(styles, 'singleline', ''),
           className
         )}
         id={this.id}
