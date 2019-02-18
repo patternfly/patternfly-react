@@ -46,7 +46,7 @@ jobs:
     - stage: Build
       name: Build Dist
       script:
-        - "true" # yarn build
+        - yarn build
         - .circleci/clean_cache.sh
 
     - stage: Tests
