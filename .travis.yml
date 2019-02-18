@@ -1,5 +1,4 @@
 language: node_js
-dist: xenial
 node_js:
   - "8" # Also included in .nvmrc, but this saves a few seconds
 cache:
