@@ -148,6 +148,7 @@
     ],
     "modulePaths": [
       "<rootDir>/node_modules",
+      "node_modules",
       "<rootDir>/packages/patternfly-3",
       "<rootDir>/packages/patternfly-4"
     ],
@@ -175,10 +176,6 @@
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!@patternfly|@novnc|tippy.js)"
-    ],
-    "roots": [
-      "<rootDir>/packages",
-      "<rootDir>/scripts"
     ],
     "testURL": "http://localhost",
     "preset": "ts-jest/presets/js-with-babel"
