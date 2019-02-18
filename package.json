@@ -153,6 +153,9 @@
       "<rootDir>/packages/patternfly-3/",
       "<rootDir>/packages/patternfly-4/"
     ],
+    "roots": [
+      "<rootDir>/packages"
+    ],
     "setupFiles": [
       "./test.env.js"
     ],
@@ -184,6 +187,10 @@
   "workspaces": {
     "packages": [
       "packages/**"
+    ],
+    "nohoist": [
+      "@patternfly/react-docs/react*",
+      "babel*"
     ]
   },
   "resolutions": {
