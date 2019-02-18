@@ -34,6 +34,7 @@ notifications:
 # Tests will come before build without a `stages` block.
 stages:
   - Build
+    if: type != pull_request
   - Tests
   - name: Deploy
     if: branch = master && type != pull_request && fork = false
