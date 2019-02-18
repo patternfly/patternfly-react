@@ -108,7 +108,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "yarn prebuild:pf4 && lerna run --parallel build --since",
+    "build": "yarn prebuild:pf4 && lerna run --parallel build",
     "prebuild:pf4": "lerna run --scope='@patternfly/react-styles' build",
     "build:docs": "yarn build && lerna run docbuild",
     "build:prdocs": "lerna run pr-build",
