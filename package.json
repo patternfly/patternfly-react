@@ -108,7 +108,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "yarn prebuild:pf4 && lerna run --parallel build --since",
+    "build": "yarn prebuild:pf4 && lerna run --parallel build",
     "prebuild:pf4": "lerna run --scope='@patternfly/react-styles' build",
     "build:docs": "yarn build && lerna run docbuild",
     "build:prdocs": "lerna run pr-build",
@@ -152,6 +152,15 @@
       "<rootDir>/packages/*.docs.*",
       "<rootDir>/packages/react-docs/*.*"
     ],
+    "modulePaths": [
+      "<rootDir>/**/node_modules/",
+      "<rootDir>/packages/",
+      "<rootDir>/packages/patternfly-3/",
+      "<rootDir>/packages/patternfly-4/"
+    ],
+    "roots": [
+      "<rootDir>/packages"
+    ],
     "setupFiles": [
       "./test.env.js"
     ],
@@ -170,10 +179,6 @@
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!@patternfly|@novnc|tippy.js)"
-    ],
-    "roots": [
-      "<rootDir>/packages",
-      "<rootDir>/scripts"
     ],
     "testURL": "http://localhost",
     "preset": "ts-jest/presets/js-with-babel"
