@@ -146,6 +146,13 @@
       "<rootDir>/packages/*.*/public/*.*",
       "<rootDir>/packages/*.*/.cache/*.*"
     ],
+    "modulePaths": [
+      "<rootDir>/node_modules",
+      "<rootDir>/packages/patternfly-3/patternfly-react",
+      "<rootDir>/packages/patternfly-4/react-core",
+      "<rootDir>/packages/patternfly-4/react-icons",
+      "<rootDir>/packages/patternfly-4/react-tokens"
+    ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/packages/*.*/dist/*.*",
       "<rootDir>/packages/*.*/examples/*.*",
