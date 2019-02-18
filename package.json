@@ -141,6 +141,11 @@
     "coverageReporters": [
       "lcov"
     ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/packages/*.*/dist/*.*",
+      "<rootDir>/packages/*.*/public/*.*",
+      "<rootDir>/packages/*.*/.cache/*.*"
+    ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/packages/*.*/dist/*.*",
       "<rootDir>/packages/*.*/examples/*.*",
@@ -187,10 +192,6 @@
   "workspaces": {
     "packages": [
       "packages/**"
-    ],
-    "nohoist": [
-      "@patternfly/react-docs/react*",
-      "babel*"
     ]
   },
   "resolutions": {
