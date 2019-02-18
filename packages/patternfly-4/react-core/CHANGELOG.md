@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.8...@patternfly/react-core@2.2.0) (2019-02-18)
+
+
+### Bug Fixes
+
+* additional boolean check in Grid layout ([#1404](https://github.com/patternfly/patternfly-react/issues/1404)) ([eecc4cf](https://github.com/patternfly/patternfly-react/commit/eecc4cf))
+
+
+### Features
+
+* **Progress:** add single line progress handling and example ([#1335](https://github.com/patternfly/patternfly-react/issues/1335)) ([592ffdb](https://github.com/patternfly/patternfly-react/commit/592ffdb))
+
+
+
+
+
 ## [2.1.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.7...@patternfly/react-core@2.1.8) (2019-02-15)
 
 **Note:** Version bump only for package @patternfly/react-core
