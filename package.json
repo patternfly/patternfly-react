@@ -148,10 +148,8 @@
     ],
     "modulePaths": [
       "<rootDir>/node_modules",
-      "<rootDir>/packages/patternfly-3/patternfly-react",
-      "<rootDir>/packages/patternfly-4/react-core",
-      "<rootDir>/packages/patternfly-4/react-icons",
-      "<rootDir>/packages/patternfly-4/react-tokens"
+      "<rootDir>/packages/patternfly-3",
+      "<rootDir>/packages/patternfly-4"
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/packages/*.*/dist/*.*",
