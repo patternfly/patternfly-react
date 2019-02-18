@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '@patternfly/patternfly/components/Select/select.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
+import { keyHandler } from '../../helpers/util';
 
 const propTypes = {
   /** Content rendered inside the SingleSelect */
@@ -27,10 +28,8 @@ class SingleSelect extends React.Component {
 
   componentDidMount() {
     if (this.props.openedOnEnter) {
-      const selectedRef = this.refCollection.filter(ref =>
-        ref.current.classList.contains('pf-c-select__menu-item--match')
-      );
-      selectedRef && selectedRef[0] ? selectedRef[0].current.focus() : this.refCollection[0].current.focus();
+      const selectedRef = this.refCollection.filter(ref => ref.classList.contains('pf-c-select__menu-item--match'));
+      selectedRef && selectedRef[0] ? selectedRef[0].focus() : this.refCollection[0].focus();
     }
   }
 
@@ -39,7 +38,7 @@ class SingleSelect extends React.Component {
       React.cloneElement(child, {
         selected: this.props.selected === child.props.value,
         sendRef: this.sendRef,
-        keyHandler: this.keyHandler,
+        keyHandler: this.childKeyHandler,
         index
       })
     );
@@ -49,28 +48,8 @@ class SingleSelect extends React.Component {
     this.refCollection[index] = ref;
   };
 
-  keyHandler = (index, position) => {
-    const kids = this.props.children;
-    if (!Array.isArray(kids)) return;
-    let nextIndex;
-    if (position === 'up') {
-      if (index === 0) {
-        // loop back to end
-        nextIndex = kids.length - 1;
-      } else {
-        nextIndex = index - 1;
-      }
-    } else if (index === kids.length - 1) {
-      // loop back to beginning
-      nextIndex = 0;
-    } else {
-      nextIndex = index + 1;
-    }
-    if (this.refCollection[nextIndex] === null) {
-      this.keyHandler(nextIndex, position);
-    } else {
-      this.refCollection[nextIndex].current.focus();
-    }
+  childKeyHandler = (index, position) => {
+    keyHandler(index, position, this.refCollection, this.props.children);
   };
 
   render() {

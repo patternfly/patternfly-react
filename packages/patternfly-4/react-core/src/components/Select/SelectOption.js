@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '@patternfly/patternfly/components/Select/select.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import { SelectContext } from './selectConstants';
+import { SelectContext, KeyTypes } from './selectConstants';
 
 const propTypes = {
   /** the value for the option */
@@ -36,17 +36,17 @@ class SelectOption extends React.Component {
   ref = React.createRef();
 
   componentDidMount() {
-    this.props.sendRef(this.ref, this.props.index);
+    this.props.sendRef(this.ref.current, this.props.index);
   }
 
   onKeyDown = event => {
-    if (event.key === 'Tab') return;
+    if (event.key === KeyTypes.Tab) return;
     event.preventDefault();
-    if (event.key === 'ArrowUp') {
+    if (event.key === KeyTypes.ArrowUp) {
       this.props.keyHandler(this.props.index, 'up');
     } else if (event.key === 'ArrowDown') {
       this.props.keyHandler(this.props.index, 'down');
-    } else if (event.key === 'Enter') {
+    } else if (event.key === KeyTypes.Enter) {
       this.ref.current.click && this.ref.current.click();
     }
   };
