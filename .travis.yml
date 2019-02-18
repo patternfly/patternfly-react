@@ -75,6 +75,7 @@ jobs:
         - cp -r .out .public/patternfly-3
         - yarn run surge --project .public --domain patternfly-react.surge.sh
 
+
 git:
   depth: 10
 branches:
