@@ -1,20 +1,20 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "3.21.30",
+  "version": "3.21.31",
   "author": "Red Hat",
   "license": "Apache-2.0",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@patternfly/react-charts": "^2.0.2",
-    "@patternfly/react-core": "^2.1.7",
-    "@patternfly/react-icons": "^3.0.0",
-    "@patternfly/react-styled-system": "^2.0.2",
-    "@patternfly/react-styles": "^2.3.2",
-    "@patternfly/react-table": "^1.0.11",
-    "@patternfly/react-tokens": "^2.0.1",
+    "@patternfly/react-charts": "^2.0.3",
+    "@patternfly/react-core": "^2.1.8",
+    "@patternfly/react-icons": "^3.0.1",
+    "@patternfly/react-styled-system": "^2.0.3",
+    "@patternfly/react-styles": "^2.3.3",
+    "@patternfly/react-table": "^1.0.12",
+    "@patternfly/react-tokens": "^2.0.2",
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",
     "css-loader": "^2.1.0",

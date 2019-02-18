@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.3.3 (2019-02-15)
+
+
+### Bug Fixes
+
+* **core:** FormSelect onChange value type was missing ([#1380](https://github.com/patternfly/patternfly-react/issues/1380)) ([d275105](https://github.com/patternfly/patternfly-react/commit/d275105))
+
+
+
+
+
 ## [2.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styles@2.3.1...@patternfly/react-styles@2.3.2) (2019-02-12)
 
 
