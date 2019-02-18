@@ -147,10 +147,11 @@
       "<rootDir>/packages/*.docs.*",
       "<rootDir>/packages/react-docs/*.*"
     ],
-    "moduleDirectories": [
-      "node_modules",
-      "patternfly-3",
-      "patternfly-4"
+    "modulePaths": [
+      "<rootDir>/**/node_modules/",
+      "<rootDir>/packages/",
+      "<rootDir>/packages/patternfly-3/",
+      "<rootDir>/packages/patternfly-4/"
     ],
     "setupFiles": [
       "./test.env.js"
