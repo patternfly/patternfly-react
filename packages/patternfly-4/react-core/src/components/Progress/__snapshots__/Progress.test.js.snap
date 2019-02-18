@@ -29,11 +29,11 @@ exports[`Progress measure location inside 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress.pf-m-inside.pf-m-lg {
+.pf-c-progress.pf-m-inside.pf-m-lg.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -53,7 +53,7 @@ exports[`Progress measure location inside 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress pf-m-inside pf-m-lg"
+    className="pf-c-progress pf-m-inside pf-m-lg pf-m-singleline"
     id="inside-progress"
     role="progressbar"
   >
@@ -128,11 +128,11 @@ exports[`Progress measure location inside and small should render large 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress.pf-m-inside.pf-m-lg {
+.pf-c-progress.pf-m-inside.pf-m-lg.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -152,7 +152,7 @@ exports[`Progress measure location inside and small should render large 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress pf-m-inside pf-m-lg"
+    className="pf-c-progress pf-m-inside pf-m-lg pf-m-singleline"
     id="large-progress"
     role="progressbar"
   >
@@ -227,11 +227,11 @@ exports[`Progress measure location none 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -251,7 +251,7 @@ exports[`Progress measure location none 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="none-progress"
     role="progressbar"
   >
@@ -327,11 +327,11 @@ exports[`Progress measure location outside 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress.pf-m-outside {
+.pf-c-progress.pf-m-outside.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -351,7 +351,7 @@ exports[`Progress measure location outside 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress pf-m-outside"
+    className="pf-c-progress pf-m-outside pf-m-singleline"
     id="outside-progress"
     role="progressbar"
   >
@@ -433,11 +433,11 @@ exports[`Progress measure location top 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -457,7 +457,7 @@ exports[`Progress measure location top 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="top-progress"
     role="progressbar"
   >
@@ -539,11 +539,11 @@ exports[`Progress size lg 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress.pf-m-lg {
+.pf-c-progress.pf-m-lg.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -563,7 +563,7 @@ exports[`Progress size lg 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress pf-m-lg"
+    className="pf-c-progress pf-m-lg pf-m-singleline"
     id="lg-progress"
     role="progressbar"
   >
@@ -645,11 +645,11 @@ exports[`Progress size md 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -669,7 +669,7 @@ exports[`Progress size md 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="md-progress"
     role="progressbar"
   >
@@ -751,11 +751,11 @@ exports[`Progress size sm 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress.pf-m-sm {
+.pf-c-progress.pf-m-sm.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -775,7 +775,7 @@ exports[`Progress size sm 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress pf-m-sm"
+    className="pf-c-progress pf-m-sm pf-m-singleline"
     id="sm-progress"
     role="progressbar"
   >
@@ -862,11 +862,11 @@ exports[`Progress variant danger 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress.pf-m-danger {
+.pf-c-progress.pf-m-danger.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -886,7 +886,7 @@ exports[`Progress variant danger 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress pf-m-danger"
+    className="pf-c-progress pf-m-danger pf-m-singleline"
     id="danger-progress"
     role="progressbar"
   >
@@ -997,11 +997,11 @@ exports[`Progress variant info 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -1021,7 +1021,7 @@ exports[`Progress variant info 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="info-progress"
     role="progressbar"
   >
@@ -1108,11 +1108,11 @@ exports[`Progress variant success 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress.pf-m-success {
+.pf-c-progress.pf-m-success.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -1132,7 +1132,7 @@ exports[`Progress variant success 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress pf-m-success"
+    className="pf-c-progress pf-m-success pf-m-singleline"
     id="success-progress"
     role="progressbar"
   >
@@ -1243,11 +1243,11 @@ exports[`Progress with aria-valuetext 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -1267,7 +1267,7 @@ exports[`Progress with aria-valuetext 1`] = `
     aria-valuemin={0}
     aria-valuenow={33}
     aria-valuetext="Descriptive text here"
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="progress-aria-valuetext"
     role="progressbar"
   >
@@ -1349,11 +1349,11 @@ exports[`Simple progress 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -1373,7 +1373,7 @@ exports[`Simple progress 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="progress-simple-example"
     role="progressbar"
   >
@@ -1455,11 +1455,11 @@ exports[`additional label 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -1480,7 +1480,7 @@ exports[`additional label 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={33}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="additional-label"
     role="progressbar"
   >
@@ -1563,11 +1563,11 @@ exports[`no value specified 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -1587,7 +1587,7 @@ exports[`no value specified 1`] = `
     aria-valuemax={100}
     aria-valuemin={0}
     aria-valuenow={0}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="no-value"
     role="progressbar"
   >
@@ -1669,11 +1669,11 @@ exports[`value higher than maxValue 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -1693,7 +1693,7 @@ exports[`value higher than maxValue 1`] = `
     aria-valuemax={60}
     aria-valuemin={0}
     aria-valuenow={100}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="higher-max-value"
     role="progressbar"
   >
@@ -1775,11 +1775,11 @@ exports[`value lower than minValue 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -1799,7 +1799,7 @@ exports[`value lower than minValue 1`] = `
     aria-valuemax={100}
     aria-valuemin={40}
     aria-valuenow={0}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="lower-min-value"
     role="progressbar"
   >
@@ -1881,11 +1881,11 @@ exports[`value scaled between minValue and maxValue 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -1905,7 +1905,7 @@ exports[`value scaled between minValue and maxValue 1`] = `
     aria-valuemax={80}
     aria-valuemin={10}
     aria-valuenow={57}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="scaled-range-value"
     role="progressbar"
   >
@@ -1987,11 +1987,11 @@ exports[`value scaled with maxValue 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -2011,7 +2011,7 @@ exports[`value scaled with maxValue 1`] = `
     aria-valuemax={80}
     aria-valuemin={0}
     aria-valuenow={62}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="scaled-max-value"
     role="progressbar"
   >
@@ -2093,11 +2093,11 @@ exports[`value scaled with minValue 1`] = `
   height: 1.5rem;
   background-color: #ffffff;
 }
-.pf-c-progress {
+.pf-c-progress.pf-m-singleline {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr;
 }
 
 <Progress
@@ -2117,7 +2117,7 @@ exports[`value scaled with minValue 1`] = `
     aria-valuemax={100}
     aria-valuemin={10}
     aria-valuenow={44}
-    className="pf-c-progress"
+    className="pf-c-progress pf-m-singleline"
     id="scaled-min-value"
     role="progressbar"
   >

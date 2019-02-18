@@ -12,6 +12,7 @@ import ProgressWithoutMeasure from './examples/ProgressWithoutMeasure';
 import SmallProgress from './examples/SmallProgress';
 import ProgressWithDynamicDescription from './examples/ProgressWithDynamicDescription';
 import LabeledProgress from './examples/LabeledProgress';
+import SingleLineProgress from './examples/SingleLineProgress';
 
 export default {
   title: 'Progress',
@@ -34,6 +35,7 @@ export default {
     { component: ProgressFailure, title: 'Progress Failure' },
     { component: ProgressInsideSuccess, title: 'Progress Inside Success' },
     { component: ProgressOutsideFailure, title: 'Progress Outside Failure' },
+    { component: SingleLineProgress, title: 'Progress on Single Line' },
     { component: ProgressWithoutMeasure, title: 'Progress Without Measure' },
     { component: ProgressFailureWithoutMeasure, title: 'Progress Failure Without Measure' },
     { component: ProgressWithDynamicDescription, title: 'Progress with Dynamic Description' }
