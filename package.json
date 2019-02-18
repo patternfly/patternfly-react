@@ -147,8 +147,8 @@
       "<rootDir>/packages/*.docs.*",
       "<rootDir>/packages/react-docs/*.*"
     ],
-    "modulePaths": [
-      "<rootDir>/**/node_modules",
+    "moduleDirectories": [
+      "node_modules",
       "patternfly-3",
       "patternfly-4"
     ],
