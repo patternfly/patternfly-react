@@ -141,21 +141,16 @@
     "coverageReporters": [
       "lcov"
     ],
-    "modulePathIgnorePatterns": [
-      "<rootDir>/packages/*.*/dist/*.*",
-      "<rootDir>/packages/*.*/public/*.*",
-      "<rootDir>/packages/*.*/.cache/*.*"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "patternfly-3",
-      "patternfly-4"
-    ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/packages/*.*/dist/*.*",
       "<rootDir>/packages/*.*/examples/*.*",
       "<rootDir>/packages/*.docs.*",
       "<rootDir>/packages/react-docs/*.*"
+    ],
+    "modulePaths": [
+      "<rootDir>/**/node_modules",
+      "patternfly-3",
+      "patternfly-4"
     ],
     "setupFiles": [
       "./test.env.js"
