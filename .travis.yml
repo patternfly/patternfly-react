@@ -48,8 +48,6 @@ jobs:
       name: Build Dist
       script:
         - yarn build
-        - yarn test:pf3
-        - .circleci/clean_cache.sh
 
     - stage: Tests
       name: (PF4) Jest Tests
