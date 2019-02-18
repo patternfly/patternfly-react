@@ -1,6 +1,7 @@
 {
   "name": "@patternfly/react-lerna-root",
   "private": true,
+  "version": "0.0.0",
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "repository": {
     "type": "git",
