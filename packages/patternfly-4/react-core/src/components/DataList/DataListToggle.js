@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
-import { Button } from '../Button';
+import { Button, ButtonVariant } from '../Button';
 
 const DataListToggle = ({
   className,
@@ -16,7 +16,7 @@ const DataListToggle = ({
   ...props
 }) => (
   <div className={css(styles.dataListToggle, className)} {...props}>
-    <Button id={id} variant="plain" aria-controls={ariaControls !== '' && ariaControls} aria-label={ariaLabel} aria-labelledby={ariaLabel !== "Details" ? null : `${rowid} ${id}`} aria-expanded={isExpanded}>
+    <Button id={id} variant={ButtonVariant.plain} aria-controls={ariaControls !== '' && ariaControls} aria-label={ariaLabel} aria-labelledby={ariaLabel !== "Details" ? null : `${rowid} ${id}`} aria-expanded={isExpanded}>
       <AngleRightIcon />
     </Button>
   </div>
