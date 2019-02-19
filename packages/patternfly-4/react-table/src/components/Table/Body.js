@@ -70,7 +70,7 @@ class ContextBody extends React.Component {
     }));
     return (
       <React.Fragment>
-        {mappedRows && <Body {...props} rows={mappedRows} onRow={this.onRow} rowKey={rowKey} className={className} />}
+        {mappedRows && <Body {...props} mappedRows={mappedRows} rows={mappedRows} onRow={this.onRow} rowKey={rowKey} className={className} />}
       </React.Fragment>
     )
   }
