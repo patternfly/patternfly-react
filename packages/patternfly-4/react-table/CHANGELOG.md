@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.14](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.13...@patternfly/react-table@1.0.14) (2019-02-19)
+
+
+### Bug Fixes
+
+* **Table:** Pass calculated rows to body wrapper to eliminate re-renders ([#1406](https://github.com/patternfly/patternfly-react/issues/1406)) ([333d16c](https://github.com/patternfly/patternfly-react/commit/333d16c))
+
+
+
+
+
 ## [1.0.13](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.12...@patternfly/react-table@1.0.13) (2019-02-18)
 
 **Note:** Version bump only for package @patternfly/react-table
