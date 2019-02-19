@@ -29,7 +29,17 @@ const propTypes = {
   /** Attribute that specifies the alt text of the brand image for the LoginPage. */
   brandImgAlt: PropTypes.string,
   /** Attribute that specifies the URL of the background image for the LoginPage */
-  backgroundImgSrc: PropTypes.string,
+  backgroundImgSrc: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.shape({
+      xs: PropTypes.string,
+      xs2x: PropTypes.string,
+      sm: PropTypes.string,
+      sm2x: PropTypes.string,
+      lg: PropTypes.string,
+      filter: PropTypes.string
+    })
+  ]),
   /** Attribute that specifies the alt text of the background image for the LoginPage. */
   backgroundImgAlt: PropTypes.string,
   /** Content rendered inside of the Text Component of the LoginPage */

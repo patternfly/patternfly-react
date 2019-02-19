@@ -1,5 +1,6 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
+import { BackgroundImageSrcMap } from '../BackgroundImage';
 
 export const LoginListVariant: {
   grid: 'grid';
@@ -11,7 +12,7 @@ export interface LoginPageProps extends HTMLProps<HTMLElement> {
   className?: string;
   brandImgSrc?: string;
   brandImgAlt?: string;
-  backgroundImgSrc?: string;
+  backgroundImgSrc?: string | BackgroundImageSrcMap;
   backgroundImgAlt?: string;
   textContent?: string;
   footerListItems?: ReactNode;
