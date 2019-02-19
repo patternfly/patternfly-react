@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-icons",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "PatternFly 4 Icons as React Components",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -35,8 +35,7 @@
     "@patternfly/patternfly": "1.0.184",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
-    "node-plop": "^0.15.0",
-    "npmlog": "^4.1.2"
+    "node-plop": "^0.15.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
