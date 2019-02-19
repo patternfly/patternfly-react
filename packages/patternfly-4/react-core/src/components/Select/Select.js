@@ -4,7 +4,7 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import SingleSelect from './SingleSelect';
 import SelectToggle from './SelectToggle';
-import { SelectContext } from './selectConstants';
+import { SelectContext, SelectVariant } from './selectConstants';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -23,7 +23,7 @@ const propTypes = {
   /** Selected item */
   selections: PropTypes.string,
   /** Id of label for the Select aria-labelledby */
-  labelId: PropTypes.string,
+  ariaLabelledBy: PropTypes.string,
   /** Callback for selection behavior */
   onSelect: PropTypes.func.isRequired,
   /** Callback for toggle button behavior */
@@ -40,11 +40,11 @@ const defaultProps = {
   children: null,
   className: '',
   isExpanded: false,
-  labelId: '',
+  ariaLabelledBy: '',
   selectOptions: null,
   selections: null,
   placeholderText: null,
-  variant: 'single',
+  variant: SelectVariant.single,
   width: '100%'
 };
 
@@ -70,7 +70,7 @@ class Select extends React.Component {
       isExpanded,
       selectOptions,
       selections,
-      labelId,
+      ariaLabelledBy,
       placeholderText,
       width,
       ...props
@@ -102,13 +102,18 @@ class Select extends React.Component {
                 onToggle={onToggle}
                 onEnter={this.onEnter}
                 onClose={this.onClose}
-                aria-labelledby={`${labelId} ${selectToggleId}`}
+                aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
                 style={{ width }}
               >
                 {selections || placeholderText || childPlaceholderText}
               </SelectToggle>
               {isExpanded && (
-                <SingleSelect {...props} selected={selections} openedOnEnter={openedOnEnter} aria-labelledby={labelId}>
+                <SingleSelect
+                  {...props}
+                  selected={selections}
+                  openedOnEnter={openedOnEnter}
+                  aria-labelledby={ariaLabelledBy}
+                >
                   {renderedChildren}
                 </SingleSelect>
               )}

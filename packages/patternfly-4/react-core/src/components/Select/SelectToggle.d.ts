@@ -5,6 +5,8 @@ export interface SelectToggleProps extends HTMLProps<HTMLButtonElement> {
   children?: ReactNode;
   isExpanded?: boolean;
   onToggle?: Function;
+  onEnter?: Function;
+  onClose?: Function;
   parentRef?: HTMLElement;
   isFocused?: boolean;
   isHovered?: boolean;

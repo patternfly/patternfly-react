@@ -45,9 +45,9 @@ exports[`select single select renders closed successfully 1`] = `
 }
 
 <Select
+  ariaLabelledBy=""
   className=""
   isExpanded={false}
-  labelId=""
   placeholderText={null}
   selectOptions={null}
   selections={null}
@@ -80,6 +80,7 @@ exports[`select single select renders closed successfully 1`] = `
           "width": "100%",
         }
       }
+      type="button"
     >
       <button
         aria-expanded={false}
@@ -247,9 +248,9 @@ exports[`select single select renders expanded successfully 1`] = `
 }
 
 <Select
+  ariaLabelledBy=""
   className=""
   isExpanded={true}
-  labelId=""
   placeholderText={null}
   selectOptions={null}
   selections={null}
@@ -282,6 +283,7 @@ exports[`select single select renders expanded successfully 1`] = `
           "width": "100%",
         }
       }
+      type="button"
     >
       <button
         aria-expanded={true}
@@ -353,10 +355,10 @@ exports[`select single select renders expanded successfully 1`] = `
           index={0}
           isDisabled={false}
           isPlaceholder={false}
+          isSelected={false}
           key=".0"
           keyHandler={[Function]}
           onClick={[Function]}
-          selected={false}
           sendRef={[Function]}
           value="Mr"
         >
@@ -379,10 +381,10 @@ exports[`select single select renders expanded successfully 1`] = `
           index={1}
           isDisabled={false}
           isPlaceholder={false}
+          isSelected={false}
           key=".1"
           keyHandler={[Function]}
           onClick={[Function]}
-          selected={false}
           sendRef={[Function]}
           value="Mrs"
         >
@@ -405,10 +407,10 @@ exports[`select single select renders expanded successfully 1`] = `
           index={2}
           isDisabled={false}
           isPlaceholder={false}
+          isSelected={false}
           key=".2"
           keyHandler={[Function]}
           onClick={[Function]}
-          selected={false}
           sendRef={[Function]}
           value="Ms"
         >
@@ -431,10 +433,10 @@ exports[`select single select renders expanded successfully 1`] = `
           index={3}
           isDisabled={false}
           isPlaceholder={false}
+          isSelected={false}
           key=".3"
           keyHandler={[Function]}
           onClick={[Function]}
-          selected={false}
           sendRef={[Function]}
           value="Other"
         >
@@ -503,37 +505,45 @@ exports[`select single select renders with selectOptions parameter 1`] = `
 }
 
 <Select
+  ariaLabelledBy=""
   className=""
   isExpanded={false}
-  labelId=""
   placeholderText={null}
   selectOptions={
     Array [
       <SelectOption
         className=""
+        index={0}
         isDisabled={false}
         isPlaceholder={false}
+        isSelected={false}
         onClick={[Function]}
         value="Mr"
       />,
       <SelectOption
         className=""
+        index={0}
         isDisabled={false}
         isPlaceholder={false}
+        isSelected={false}
         onClick={[Function]}
         value="Mrs"
       />,
       <SelectOption
         className=""
+        index={0}
         isDisabled={false}
         isPlaceholder={false}
+        isSelected={false}
         onClick={[Function]}
         value="Ms"
       />,
       <SelectOption
         className=""
+        index={0}
         isDisabled={false}
         isPlaceholder={false}
+        isSelected={false}
         onClick={[Function]}
         value="Other"
       />,
@@ -569,6 +579,7 @@ exports[`select single select renders with selectOptions parameter 1`] = `
           "width": "100%",
         }
       }
+      type="button"
     >
       <button
         aria-expanded={false}

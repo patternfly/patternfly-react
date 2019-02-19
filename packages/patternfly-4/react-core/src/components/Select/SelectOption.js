@@ -11,14 +11,20 @@ const propTypes = {
   className: PropTypes.string,
   /** the value for the option */
   value: PropTypes.string,
+  /** internal index of the option */
+  index: PropTypes.number,
   /** flag indicating if the option is disabled */
   isDisabled: PropTypes.bool,
   /** flag indicating if the option acts as a placeholder */
   isPlaceholder: PropTypes.bool,
+  /** flag indicating if the option is selected */
+  isSelected: PropTypes.bool,
   /** Optional on click callback */
   onClick: PropTypes.func,
   /** Callback for ref tracking */
   sendRef: PropTypes.func,
+  /** Callback for keyboard navigation */
+  keyHandler: PropTypes.func,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
 };
@@ -27,8 +33,10 @@ const defaultProps = {
   children: null,
   className: '',
   value: null,
+  index: 0,
   isDisabled: false,
   isPlaceholder: false,
+  isSelected: false,
   onClick: Function.prototype
 };
 
@@ -44,7 +52,7 @@ class SelectOption extends React.Component {
     event.preventDefault();
     if (event.key === KeyTypes.ArrowUp) {
       this.props.keyHandler(this.props.index, 'up');
-    } else if (event.key === 'ArrowDown') {
+    } else if (event.key === KeyTypes.ArrowDown) {
       this.props.keyHandler(this.props.index, 'down');
     } else if (event.key === KeyTypes.Enter) {
       this.ref.current.click && this.ref.current.click();
@@ -59,7 +67,7 @@ class SelectOption extends React.Component {
       onClick,
       isDisabled,
       isPlaceholder,
-      selected,
+      isSelected,
       sendRef,
       keyHandler,
       index,
@@ -73,7 +81,7 @@ class SelectOption extends React.Component {
               {...props}
               className={css(
                 styles.selectMenuItem,
-                selected && styles.selectMenuItemMatch,
+                isSelected && styles.selectMenuItemMatch,
                 isDisabled && styles.modifiers.disabled,
                 className
               )}
@@ -85,7 +93,7 @@ class SelectOption extends React.Component {
                 }
               }}
               role="option"
-              aria-selected={selected || null}
+              aria-selected={isSelected || null}
               ref={this.ref}
               onKeyDown={this.onKeyDown}
             >

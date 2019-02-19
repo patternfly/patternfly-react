@@ -56,7 +56,7 @@ class SingleSelectInput extends React.Component {
           onSelect={this.onSelect}
           selections={selected}
           isExpanded={isExpanded}
-          labelId={titleId}
+          ariaLabelledBy={titleId}
         >
           {this.options.map((option, index) => (
             <SelectOption

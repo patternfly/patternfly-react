@@ -45,7 +45,10 @@ const defaultProps = {
   isHovered: false,
   isActive: false,
   isPlain: false,
-  onToggle: Function.prototype
+  type: 'button',
+  onToggle: Function.prototype,
+  onEnter: Function.prototype,
+  onClose: Function.prototype
 };
 
 class SelectToggle extends Component {
@@ -132,7 +135,7 @@ class SelectToggle extends Component {
           isPlain && styles.modifiers.plain,
           className
         )}
-        type={type || 'button'}
+        type={type}
         onClick={_event => {
           onToggle && onToggle(!isExpanded);
           if (isExpanded) onClose && onClose();

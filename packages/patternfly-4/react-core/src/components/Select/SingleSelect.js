@@ -36,7 +36,7 @@ class SingleSelect extends React.Component {
   extendChildren() {
     return React.Children.map(this.props.children, (child, index) =>
       React.cloneElement(child, {
-        selected: this.props.selected === child.props.value,
+        isSelected: this.props.selected === child.props.value,
         sendRef: this.sendRef,
         keyHandler: this.childKeyHandler,
         index
