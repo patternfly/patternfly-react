@@ -4,13 +4,11 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/Chip/chip.css';
 import { Button } from '../Button';
 
-const ChipButton = ({ ariaLabel, children, className, onClick, ...props }) => {
-  return (
-    <Button variant="plain" aria-label={ariaLabel} onClick={onClick} className={className} {...props}>
-      {children}
-    </Button>
-  );
-};
+const ChipButton = ({ ariaLabel, children, className, onClick, ...props }) => (
+  <Button variant="plain" aria-label={ariaLabel} onClick={onClick} className={className} {...props}>
+    {children}
+  </Button>
+);
 
 ChipButton.propTypes = {
   /** Aria label for chip button */
@@ -20,14 +18,14 @@ ChipButton.propTypes = {
   /** Additional classes added to the chip item */
   className: PropTypes.string,
   /** Function that is called when clicking on the chip button */
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 ChipButton.defaultProps = {
   ariaLabel: 'close',
   children: null,
   className: '',
-  onClick: () => { }
+  onClick: () => {}
 };
 
 export default ChipButton;

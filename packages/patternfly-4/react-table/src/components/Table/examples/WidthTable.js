@@ -3,7 +3,7 @@ import { Table, TableHeader, TableBody, cellWidth } from '@patternfly/react-tabl
 
 class WidthTable extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       columns: [
         { title: 'Header cell', transforms: [cellWidth(10)] },
@@ -11,8 +11,10 @@ class WidthTable extends React.Component {
         { title: 'Pull requests', transforms: [cellWidth(30)] },
         'Workspaces',
         {
-          title: 'Last Commit', transforms: [cellWidth('max')]
-        }],
+          title: 'Last Commit',
+          transforms: [cellWidth('max')]
+        }
+      ],
       rows: [['one', 'two', 'three', 'four', 'five']]
     };
   }

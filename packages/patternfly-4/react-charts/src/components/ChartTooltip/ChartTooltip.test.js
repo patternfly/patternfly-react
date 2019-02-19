@@ -7,18 +7,14 @@ import ChartTooltip from './ChartTooltip';
 
 Object.values([true, false]).forEach(isRead => {
   test(`ChartTooltip`, () => {
-    const view = shallow(<ChartTooltip text={'This is a tooltip'}/>);
+    const view = shallow(<ChartTooltip text="This is a tooltip" />);
     expect(view).toMatchSnapshot();
   });
 });
 
 xtest('allows tooltip via container component', () => {
   const view = shallow(
-    <ChartGroup
-     containerComponent={<ChartVoronoiContainer labels={'This is a tooltip'}/>}
-     height={200}
-     width={200}
-    >
+    <ChartGroup containerComponent={<ChartVoronoiContainer labels="This is a tooltip" />} height={200} width={200}>
       <ChartArea
         data={[
           { name: 'Cats', x: 1, y: 1 },
@@ -29,7 +25,7 @@ xtest('allows tooltip via container component', () => {
       />
       <ChartArea
         data={[
-          { name: 'Dogs', x: 1, y: .5 },
+          { name: 'Dogs', x: 1, y: 0.5 },
           { name: 'Dogs', x: 2, y: 1 },
           { name: 'Dogs', x: 3, y: 2 },
           { name: 'Dogs', x: 4, y: 2.5 },

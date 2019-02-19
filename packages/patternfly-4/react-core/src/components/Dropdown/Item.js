@@ -7,14 +7,7 @@ import { DropdownArrowContext } from './dropdownConstants';
 
 const Item = ({ className, ...props }) => (
   <DropdownArrowContext.Consumer>
-    {context => (
-      <DropdownItem
-        {...props}
-        context={context}
-        role="menuitem"
-        tabIndex={-1}
-      />
-    )}
+    {context => <DropdownItem {...props} context={context} role="menuitem" tabIndex={-1} />}
   </DropdownArrowContext.Consumer>
 );
 

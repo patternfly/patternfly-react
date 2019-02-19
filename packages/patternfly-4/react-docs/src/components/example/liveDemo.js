@@ -31,7 +31,15 @@ const defaultProps = {
   liveScope: {}
 };
 
-const scopePlayground = { React, ...ChartComponents, ...TableComponents, ...StyledSystemComponents, ...CoreComponents, ...CoreIcons, css };
+const scopePlayground = {
+  React,
+  ...ChartComponents,
+  ...TableComponents,
+  ...StyledSystemComponents,
+  ...CoreComponents,
+  ...CoreIcons,
+  css
+};
 
 const transformCode = code => {
   try {
@@ -104,10 +112,9 @@ class LiveDemo extends React.Component {
         scope[importName] = image.file;
       }
     }
-    const darkThemeClasses =
-      classNames({
-        'pf-t-dark pf-m-opaque-200': isDarkTheme,
-      })
+    const darkThemeClasses = classNames({
+      'pf-t-dark pf-m-opaque-200': isDarkTheme
+    });
 
     return (
       <Section>

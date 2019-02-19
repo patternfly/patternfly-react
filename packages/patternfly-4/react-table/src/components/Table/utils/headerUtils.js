@@ -13,26 +13,21 @@ import { defaultTitle } from './formatters';
 
 /**
  * Generate header with transofmrs and formatters from custom header object.
- * @param {*} header with transforms formatters and rest of header object. 
+ * @param {*} header with transforms formatters and rest of header object.
  * @param {*} title to be used as label in header config.
  * @return {*} header, label, transforms: Array, formatters: Array.
  */
-const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => {
-  return ({
-    ...header,
-    label: title,
-    transforms: [
-      scopeColTransformer,
-      emptyCol,
-      ...origTransforms || [],
-      ...header && header.hasOwnProperty('transforms') ? header.transforms : []
-    ],
-    formatters: [
-      ...origFormatters || [],
-      ...header && header.hasOwnProperty('formatters') ? header.formatters : []
-    ]
-  });
-}
+const generateHeader = ({ transforms: origTransforms, formatters: origFormatters, header }, title) => ({
+  ...header,
+  label: title,
+  transforms: [
+    scopeColTransformer,
+    emptyCol,
+    ...(origTransforms || []),
+    ...(header && header.hasOwnProperty('transforms') ? header.transforms : [])
+  ],
+  formatters: [...(origFormatters || []), ...(header && header.hasOwnProperty('formatters') ? header.formatters : [])]
+});
 
 /**
  * Function to generate cell for header config to change look of each cell.
@@ -43,13 +38,13 @@ const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
   ...cell,
   transforms: [
     mapProps,
-    ...cellTransforms || [],
-    ...cell && cell.hasOwnProperty('transforms') ? cell.transforms : []
+    ...(cellTransforms || []),
+    ...(cell && cell.hasOwnProperty('transforms') ? cell.transforms : [])
   ],
   formatters: [
     defaultTitle,
-    ...cellFormatters || [],
-    ...cell && cell.hasOwnProperty('formatters') ? cell.formatters : []
+    ...(cellFormatters || []),
+    ...(cell && cell.hasOwnProperty('formatters') ? cell.formatters : [])
   ]
 });
 
@@ -64,19 +59,25 @@ const generateCell = ({ cellFormatters, cellTransforms, cell }) => ({
  */
 const mapHeader = (column, extra, key, ...props) => {
   const title = column.hasOwnProperty('title') ? column.title : column;
-  return ({
-    property: (typeof title === 'string' && title.toLowerCase().trim().replace(/\s/g, '-')) || `column-${key}`,
+  return {
+    property:
+      (typeof title === 'string' &&
+        title
+          .toLowerCase()
+          .trim()
+          .replace(/\s/g, '-')) ||
+      `column-${key}`,
     extraParams: extra,
     header: generateHeader(column, title),
     cell: generateCell(column, extra),
     props: {
       'data-label': typeof title === 'string' ? title : `column-${key}`,
       'data-key': key,
-      ...column.hasOwnProperty('props') ? column.props : {},
+      ...(column.hasOwnProperty('props') ? column.props : {}),
       ...props
     }
-  });
-}
+  };
+};
 
 /**
  * Function to define select cell in first column.
@@ -84,12 +85,16 @@ const mapHeader = (column, extra, key, ...props) => {
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
 const selectableTransforms = ({ onSelect }) => [
-  ...onSelect ? [{
-    title: '',
-    transforms: [selectable],
-    cellTransforms: [selectable]
-  }] : []
-]
+  ...(onSelect
+    ? [
+        {
+          title: '',
+          transforms: [selectable],
+          cellTransforms: [selectable]
+        }
+      ]
+    : [])
+];
 
 /**
  * Function to define actions in last column.
@@ -97,12 +102,16 @@ const selectableTransforms = ({ onSelect }) => [
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
 const actionsTransforms = ({ actions }) => [
-  ...actions ? [{
-    title: '',
-    transforms: [emptyTD],
-    cellTransforms: [cellActions(actions)]
-  }] : []
-]
+  ...(actions
+    ? [
+        {
+          title: '',
+          transforms: [emptyTD],
+          cellTransforms: [cellActions(actions)]
+        }
+      ]
+    : [])
+];
 
 /**
  * Function to define collapsible in first column.
@@ -110,11 +119,15 @@ const actionsTransforms = ({ actions }) => [
  * @returns {*} object with empty title, tranforms - Array, cellTransforms - Array.
  */
 const collapsibleTransfroms = ({ onCollapse }) => [
-  ...onCollapse ? [{
-    title: '',
-    transforms: [emptyTD],
-    cellTransforms: [collapsible]
-  }] : []
+  ...(onCollapse
+    ? [
+        {
+          title: '',
+          transforms: [emptyTD],
+          cellTransforms: [collapsible]
+        }
+      ]
+    : [])
 ];
 
 /**
@@ -124,12 +137,9 @@ const collapsibleTransfroms = ({ onCollapse }) => [
  * @returns {*} object with title from cell and cellTransforms with additional in.
  */
 const addAdditionalCellTranforms = (cell, additional) => ({
-  ...cell.hasOwnProperty('title') ? cell : { title: cell },
-  cellTransforms: [
-    ...cell.hasOwnProperty('cellTransforms') ? cell.cellTransforms : [],
-    additional
-  ]
-})
+  ...(cell.hasOwnProperty('title') ? cell : { title: cell }),
+  cellTransforms: [...(cell.hasOwnProperty('cellTransforms') ? cell.cellTransforms : []), additional]
+});
 
 /**
  * Function to change expanded row with additional transforms.
@@ -145,15 +155,15 @@ const expandContent = (header, { onCollapse }) => {
     const parentIdCell = addAdditionalCellTranforms(cell, parentId);
     return key === 0 ? addAdditionalCellTranforms(parentIdCell, expandedRow(header.length)) : parentIdCell;
   });
-}
+};
 
 /**
  * Function to join parent and their children so they can be rendered in tbody.
  * @param {*} rows raw data to find out if it's child or parent.
  * @param {*} children data to render (array of react children).
  */
-export const mapOpenedRows = (rows, children) => {
-  return rows.reduce((acc, curr, key) => {
+export const mapOpenedRows = (rows, children) =>
+  rows.reduce((acc, curr, key) => {
     if (curr.hasOwnProperty('parent')) {
       const parent = acc.length > 0 && acc[acc.length - 1];
       if (parent) {
@@ -164,7 +174,6 @@ export const mapOpenedRows = (rows, children) => {
     }
     return acc;
   }, []);
-}
 
 /**
  * Function to calculate columns based on custom config.
@@ -173,14 +182,13 @@ export const mapOpenedRows = (rows, children) => {
  * @param {*} extra object with custom callbacks.
  * @return {*} expected object for react tabular table.
  */
-export const calculateColumns = (headerRows, extra) => {
-  return headerRows && [
+export const calculateColumns = (headerRows, extra) =>
+  headerRows &&
+  [
     ...collapsibleTransfroms(extra),
     ...selectableTransforms(extra),
     ...expandContent(headerRows, extra),
     ...actionsTransforms(extra)
   ].map((oneCol, key) => ({
     ...mapHeader(oneCol, extra, key)
-  })
-  );
-}
+  }));

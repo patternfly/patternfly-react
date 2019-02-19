@@ -18,17 +18,18 @@ const defaultProps = {
 
 const CollapseColumn = ({ children, onToggle, isOpen, className, ...props }) => (
   <React.Fragment>
-    {isOpen !== undefined &&
-      <Button className={css(className, isOpen && styles.modifiers.expanded)}
+    {isOpen !== undefined && (
+      <Button
+        className={css(className, isOpen && styles.modifiers.expanded)}
         {...props}
         variant="plain"
         aria-label="Details"
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-       { isOpen ? <AngleDownIcon /> : <AngleRightIcon /> }
+        {isOpen ? <AngleDownIcon /> : <AngleRightIcon />}
       </Button>
-    }
+    )}
     {children}
   </React.Fragment>
 );

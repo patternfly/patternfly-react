@@ -3,7 +3,7 @@ import FormHelperText from './FormHelperText';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<FormHelperText isError={true} isHidden={false} />);
+  const view = shallow(<FormHelperText isError isHidden={false} />);
   expect(view).toMatchSnapshot();
 });
 

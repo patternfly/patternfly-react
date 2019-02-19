@@ -12,6 +12,6 @@ export default {
   examples: [
     { component: Controlled, title: 'Controlled Radio' },
     { component: Uncontrolled, title: 'Uncontrolled Radio' },
-    { component: Disabled, title: 'Disabled Radio' },
+    { component: Disabled, title: 'Disabled Radio' }
   ]
 };

@@ -25,7 +25,7 @@ const defaultProps = {
   children: null,
   className: '',
   isOpen: true,
-  position: ApplicationLauncherPosition.left,
+  position: ApplicationLauncherPosition.left
 };
 
 class ApplicationLauncherMenu extends React.Component {
@@ -71,7 +71,8 @@ class ApplicationLauncherMenu extends React.Component {
   extendChildren() {
     return React.Children.map(this.props.children, (child, index) =>
       React.cloneElement(child, {
-        index, isAppLauncher: true
+        index,
+        isAppLauncher: true
       })
     );
   }
@@ -86,15 +87,7 @@ class ApplicationLauncherMenu extends React.Component {
           sendRef: this.sendRef
         }}
       >
-        <ul
-          {...props}
-          className={css(
-            styles.appLauncherMenu,
-            className
-          )}
-          hidden={!isOpen}
-          role="menu"
-        >
+        <ul {...props} className={css(styles.appLauncherMenu, className)} hidden={!isOpen} role="menu">
           {this.extendChildren()}
         </ul>
       </DropdownArrowContext.Provider>

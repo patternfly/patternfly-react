@@ -12,9 +12,7 @@ export const propTypes = {
 };
 
 // Note: VictoryArea.role must be hoisted
-const ChartArea = (props) => (
-  <VictoryArea theme={ChartTheme.default} {...props}/>
-);
+const ChartArea = props => <VictoryArea theme={ChartTheme.default} {...props} />;
 hoistNonReactStatics(ChartArea, VictoryArea);
 ChartArea.propTypes = propTypes;
 

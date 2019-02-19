@@ -6,11 +6,7 @@ import PropTypes from 'prop-types';
 import logo from '../../assets/logo.png';
 import NavigationItemGroup from './navigationItemGroup';
 import NavigationItem from './navigationItem';
-import {
-  Form,
-  FormGroup,
-  TextInput
-} from '@patternfly/react-core';
+import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 
 const routeShape = PropTypes.shape({
   to: PropTypes.string.isRequired,
@@ -70,10 +66,14 @@ class Navigation extends React.Component {
               <img src={logo} alt="PatternFly Logo" />
             </Link>
           </div>
-          <Form className={css(styles.search)} onSubmit={event => { event.preventDefault(); return false; }}>
-            <FormGroup
-              label="Search Components"
-              fieldId="primaryComponentSearch">
+          <Form
+            className={css(styles.search)}
+            onSubmit={event => {
+              event.preventDefault();
+              return false;
+            }}
+          >
+            <FormGroup label="Search Components" fieldId="primaryComponentSearch">
               <TextInput
                 type="text"
                 id="primaryComponentSearch"
@@ -85,8 +85,12 @@ class Navigation extends React.Component {
             </FormGroup>
           </Form>
           <NavigationItemGroup title="Style">
-            <NavigationItem to="/styles/tokens" pkg="tokens">Tokens</NavigationItem>
-            <NavigationItem to="/styles/icons" pkg="icons">Icons</NavigationItem>
+            <NavigationItem to="/styles/tokens" pkg="tokens">
+              Tokens
+            </NavigationItem>
+            <NavigationItem to="/styles/icons" pkg="icons">
+              Icons
+            </NavigationItem>
           </NavigationItemGroup>
           {Boolean(filteredComponentRoutes.length) && (
             <NavigationItemGroup title="Components">

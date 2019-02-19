@@ -58,12 +58,12 @@ const BackgroundImage = ({ className, src, ...props }) => {
   const variableOverrides =
     typeof src === 'string'
       ? Object.keys(BackgroundImageSrc).reduce(
-        (prev, size) => ({
-          ...prev,
-          [BackgroundImageSrc[size]]: src
-        }),
-        {}
-      )
+          (prev, size) => ({
+            ...prev,
+            [BackgroundImageSrc[size]]: src
+          }),
+          {}
+        )
       : src;
 
   const bgStyles = StyleSheet.create({

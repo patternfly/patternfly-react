@@ -11,9 +11,7 @@ export const propTypes = {
 };
 
 // Note: VictoryTooltip.defaultEvents must be hoisted
-const ChartTooltip = (props) => (
-  <VictoryTooltip cornerRadius={0} {...props}/>
-);
+const ChartTooltip = props => <VictoryTooltip cornerRadius={0} {...props} />;
 hoistNonReactStatics(ChartTooltip, VictoryTooltip);
 ChartTooltip.propTypes = propTypes;
 

@@ -79,13 +79,15 @@ test('sideElementIsOutOfView Returns NONE when in view', () => {
 describe('keyHandler works on ApplicationLauncher', () => {
   document.body.innerHTML = '<!doctype html><html><body></body></html>';
   const dropdownItems = [
-    <DropdownItem key="link" id="first">Link</DropdownItem>,
+    <DropdownItem key="link" id="first">
+      Link
+    </DropdownItem>,
     <DropdownItem key="action" id="second" component="button">
       Action
     </DropdownItem>,
     <DropdownItem key="disabled link" id="third" isDisabled>
       Disabled Link
-    </DropdownItem>,
+    </DropdownItem>
   ];
   const view = mount(<ApplicationLauncher dropdownItems={dropdownItems} isOpen />, {
     attachTo: document.getElementsByName('div')[0]
@@ -95,7 +97,11 @@ describe('keyHandler works on ApplicationLauncher', () => {
   const thirdDropdownItem = view.find('#third').first();
 
   test('keyHandler advances forward', () => {
-    firstDropdownItem.simulate('keydown', { key: 'ArrowDown', keyCode: KEY_CODES.ARROW_DOWN, which: KEY_CODES.ARROW_DOWN });
+    firstDropdownItem.simulate('keydown', {
+      key: 'ArrowDown',
+      keyCode: KEY_CODES.ARROW_DOWN,
+      which: KEY_CODES.ARROW_DOWN
+    });
     expect(secondDropdownItem === document.activeElement);
   });
 
@@ -105,11 +111,15 @@ describe('keyHandler works on ApplicationLauncher', () => {
   });
 
   test('keyHandler skips disabled items and loops down to top', () => {
-    secondDropdownItem.simulate('keydown', { key: 'ArrowDown', keyCode: KEY_CODES.ARROW_DOWN, which: KEY_CODES.ARROW_DOWN });
+    secondDropdownItem.simulate('keydown', {
+      key: 'ArrowDown',
+      keyCode: KEY_CODES.ARROW_DOWN,
+      which: KEY_CODES.ARROW_DOWN
+    });
     expect(firstDropdownItem === document.activeElement);
   });
 
-   test('keyHandler loops top to bottom', () => {
+  test('keyHandler loops top to bottom', () => {
     firstDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
     expect(secondDropdownItem === document.activeElement);
   });
@@ -118,23 +128,32 @@ describe('keyHandler works on ApplicationLauncher', () => {
 describe('keyHandler works on Dropdown', () => {
   document.body.innerHTML = '<!doctype html><html><body></body></html>';
   const dropdownItems = [
-    <DropdownItem key="link" id="first">Link</DropdownItem>,
+    <DropdownItem key="link" id="first">
+      Link
+    </DropdownItem>,
     <DropdownItem key="action" id="second" component="button">
       Action
     </DropdownItem>,
     <DropdownItem key="disabled link" id="third" isDisabled>
       Disabled Link
-    </DropdownItem>,
+    </DropdownItem>
   ];
-  const view = mount(<Dropdown dropdownItems={dropdownItems} isOpen toggle={<DropdownToggle>Expanded Dropdown</DropdownToggle>} />, {
-    attachTo: document.getElementsByName('div')[0]
-  });
+  const view = mount(
+    <Dropdown dropdownItems={dropdownItems} isOpen toggle={<DropdownToggle>Expanded Dropdown</DropdownToggle>} />,
+    {
+      attachTo: document.getElementsByName('div')[0]
+    }
+  );
   const firstDropdownItem = view.find('#first').first();
   const secondDropdownItem = view.find('#second').first();
   const thirdDropdownItem = view.find('#third').first();
 
   test('keyHandler advances forward', () => {
-    firstDropdownItem.simulate('keydown', { key: 'ArrowDown', keyCode: KEY_CODES.ARROW_DOWN, which: KEY_CODES.ARROW_DOWN });
+    firstDropdownItem.simulate('keydown', {
+      key: 'ArrowDown',
+      keyCode: KEY_CODES.ARROW_DOWN,
+      which: KEY_CODES.ARROW_DOWN
+    });
     expect(secondDropdownItem === document.activeElement);
   });
 
@@ -144,13 +163,16 @@ describe('keyHandler works on Dropdown', () => {
   });
 
   test('keyHandler skips disabled items and loops down to top', () => {
-    secondDropdownItem.simulate('keydown', { key: 'ArrowDown', keyCode: KEY_CODES.ARROW_DOWN, which: KEY_CODES.ARROW_DOWN });
+    secondDropdownItem.simulate('keydown', {
+      key: 'ArrowDown',
+      keyCode: KEY_CODES.ARROW_DOWN,
+      which: KEY_CODES.ARROW_DOWN
+    });
     expect(firstDropdownItem === document.activeElement);
   });
 
-   test('keyHandler loops top to bottom', () => {
+  test('keyHandler loops top to bottom', () => {
     firstDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
     expect(secondDropdownItem === document.activeElement);
   });
 });
-

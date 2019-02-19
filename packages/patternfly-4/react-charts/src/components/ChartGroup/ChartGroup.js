@@ -12,7 +12,7 @@ export const propTypes = {
 };
 
 // Note: VictoryGroup.role must be hoisted
-const ChartGroup = ({children, ...props}) => (
+const ChartGroup = ({ children, ...props }) => (
   <VictoryGroup theme={ChartTheme.default} {...props}>
     {children}
   </VictoryGroup>

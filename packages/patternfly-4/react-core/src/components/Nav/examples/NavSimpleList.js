@@ -23,7 +23,7 @@ class NavSimpleList extends React.Component {
           <NavItem preventDefault to="#simple-link2" itemId={1} isActive={activeItem === 1}>
             Link 2
           </NavItem>
-          <NavItem preventDefault to="#simple-link3" itemId={2} isActive={activeItem === 2} isSeparated={true}>
+          <NavItem preventDefault to="#simple-link3" itemId={2} isActive={activeItem === 2} isSeparated>
             Link 3 with separator
           </NavItem>
           <NavItem preventDefault to="#simple-link4" itemId={3} isActive={activeItem === 3}>

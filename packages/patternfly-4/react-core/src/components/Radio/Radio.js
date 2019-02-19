@@ -46,7 +46,17 @@ class Radio extends React.Component {
   };
 
   render() {
-    const { 'aria-label': ariaLabel, className, onChange, isValid, isDisabled, isChecked, label, checked, ...props } = this.props;
+    const {
+      'aria-label': ariaLabel,
+      className,
+      onChange,
+      isValid,
+      isDisabled,
+      isChecked,
+      label,
+      checked,
+      ...props
+    } = this.props;
     return (
       <div className={css(styles.radio, className)}>
         <input

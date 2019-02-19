@@ -9,9 +9,9 @@ import { Checkbox } from '../Checkbox';
 const propTypes = {
   /** Additional classes added to the Login Main Body's Form */
   className: PropTypes.string,
-  /** Flag indicating the Helper Text is visible **/
+  /** Flag indicating the Helper Text is visible * */
   showHelperText: PropTypes.bool,
-  /** Content displayed in the Helper Text component **/
+  /** Content displayed in the Helper Text component * */
   helperText: PropTypes.node,
   /** Label for the Username Input Field */
   usernameLabel: PropTypes.string,
@@ -95,13 +95,10 @@ const LoginForm = ({
   ...props
 }) => (
   <Form className={className} {...props}>
-    <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText}>{helperText}</FormHelperText>
-    <FormGroup
-      label={usernameLabel}
-      isRequired
-      isValid={isValidUsername}
-      fieldId="pf-login-username-id"
-    >
+    <FormHelperText isError={!isValidUsername || !isValidPassword} isHidden={!showHelperText}>
+      {helperText}
+    </FormHelperText>
+    <FormGroup label={usernameLabel} isRequired isValid={isValidUsername} fieldId="pf-login-username-id">
       <TextInput
         id="pf-login-username-id"
         isRequired
@@ -112,12 +109,7 @@ const LoginForm = ({
         onChange={onChangeUsername}
       />
     </FormGroup>
-    <FormGroup
-      label={passwordLabel}
-      isRequired
-      isValid={isValidPassword}
-      fieldId="pf-login-password-id"
-    >
+    <FormGroup label={passwordLabel} isRequired isValid={isValidPassword} fieldId="pf-login-password-id">
       <TextInput
         isRequired
         type="password"
@@ -129,9 +121,7 @@ const LoginForm = ({
       />
     </FormGroup>
     {rememberMeLabel.length > 0 && (
-      <FormGroup
-        fieldId="pf-login-remember-me-id"
-      >
+      <FormGroup fieldId="pf-login-remember-me-id">
         <Checkbox
           id="pf-login-remember-me-id"
           label={rememberMeLabel}
@@ -140,9 +130,9 @@ const LoginForm = ({
           aria-label={rememberMeAriaLabel}
         />
       </FormGroup>
-      )}
+    )}
     <ActionGroup>
-      <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock={true} isDisabled={isLoginButtonDisabled}>
+      <Button variant="primary" type="submit" onClick={onLoginButtonClick} isBlock isDisabled={isLoginButtonDisabled}>
         {loginButtonLabel}
       </Button>
     </ActionGroup>

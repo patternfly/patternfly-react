@@ -5,13 +5,7 @@ class DisabledSwitch extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Switch
-          id="disabled-switch-on"
-          aria-label="disabled checked switch example"
-          label="On"
-          isChecked
-          isDisabled
-        />
+        <Switch id="disabled-switch-on" aria-label="disabled checked switch example" label="On" isChecked isDisabled />
         <br />
         <Switch
           id="disabled-switch-off"

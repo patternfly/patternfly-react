@@ -17,6 +17,6 @@ class SimpleBackgroundImage extends React.Component {
   render() {
     return <BackgroundImage src={images} />;
   }
-};
+}
 
 export default SimpleBackgroundImage;

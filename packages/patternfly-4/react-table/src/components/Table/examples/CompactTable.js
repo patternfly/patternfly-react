@@ -3,7 +3,7 @@ import { Table, TableHeader, TableBody, TableVariant } from '@patternfly/react-t
 
 class CompactTable extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       columns: [
         { title: 'Header cell' },
@@ -11,11 +11,7 @@ class CompactTable extends React.Component {
         { title: 'Pull requests', props: { className: 'pf-u-text-align-center' } },
         '' // deliberately empty
       ],
-      rows: [
-        ['one', 'two', 'three', 'four'],
-        ['one', 'two', 'three', 'four'],
-        ['one', 'two', 'three', 'four']
-      ]
+      rows: [['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four'], ['one', 'two', 'three', 'four']]
     };
   }
 

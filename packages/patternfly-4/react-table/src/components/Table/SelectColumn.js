@@ -16,7 +16,7 @@ const defaultProps = {
 
 const SelectColumn = ({ children, className, onSelect, ...props }) => (
   <React.Fragment>
-    <input {...props} className={css(styles.checkInput)} type="checkbox" onChange={onSelect}></input>
+    <input {...props} className={css(styles.checkInput)} type="checkbox" onChange={onSelect} />
     {children}
   </React.Fragment>
 );

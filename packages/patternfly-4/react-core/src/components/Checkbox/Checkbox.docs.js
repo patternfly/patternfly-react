@@ -11,6 +11,6 @@ export default {
   examples: [
     { component: Controlled, title: 'Controlled Checkbox' },
     { component: Uncontrolled, title: 'Uncontrolled Checkbox' },
-    { component: Disabled, title: 'Disabled Checkbox' },
+    { component: Disabled, title: 'Disabled Checkbox' }
   ]
 };

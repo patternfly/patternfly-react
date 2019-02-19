@@ -12,9 +12,7 @@ export const propTypes = {
 };
 
 // Note: VictoryBar.getDomain & VictoryBar.role must be hoisted
-const ChartBar = (props) => (
-  <VictoryBar theme={ChartTheme.default} {...props}/>
-);
+const ChartBar = props => <VictoryBar theme={ChartTheme.default} {...props} />;
 hoistNonReactStatics(ChartBar, VictoryBar);
 ChartBar.propTypes = propTypes;
 

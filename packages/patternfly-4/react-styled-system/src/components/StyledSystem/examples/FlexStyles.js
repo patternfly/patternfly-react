@@ -1,5 +1,11 @@
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledFlex, StyledText } from '@patternfly/react-styled-system';
+import {
+  PatternFlyThemeProvider,
+  StyledConstants,
+  StyledBox,
+  StyledFlex,
+  StyledText
+} from '@patternfly/react-styled-system';
 
 class FlexStyles extends React.Component {
   render() {

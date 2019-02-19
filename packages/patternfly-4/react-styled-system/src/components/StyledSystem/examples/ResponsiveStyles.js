@@ -9,8 +9,8 @@ class ResponsiveStyles extends React.Component {
       <PatternFlyThemeProvider>
         <StyledBox pb={space.md}>
           <StyledText py={space.md}>
-            In this example, the Box widths are: 100% below the smallest breakpoint, 50% from the next breakpoint and up,
-            25% from the next breakpoint and up
+            In this example, the Box widths are: 100% below the smallest breakpoint, 50% from the next breakpoint and
+            up, 25% from the next breakpoint and up
           </StyledText>
           <StyledBox width={[1, 1 / 2, 1 / 4]} height={50} bg={colors.success_100} display="inline-block" />
           <StyledBox width={[1, 1 / 2, 1 / 4]} height={50} bg={colors.info_100} display="inline-block" />

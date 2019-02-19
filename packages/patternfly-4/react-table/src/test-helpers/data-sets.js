@@ -8,22 +8,32 @@ export const columns = [
   }
 ];
 
-export const rows = [{
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}, {
-  cells: ['one', 'two', 'three', 'four', 'five'],
-}];
+export const rows = [
+  {
+    cells: ['one', 'two', 'three', 'four', 'five']
+  },
+  {
+    cells: ['one', 'two', 'three', 'four', 'five']
+  },
+  {
+    cells: ['one', 'two', 'three', 'four', 'five']
+  },
+  {
+    cells: ['one', 'two', 'three', 'four', 'five']
+  },
+  {
+    cells: ['one', 'two', 'three', 'four', 'five']
+  },
+  {
+    cells: ['one', 'two', 'three', 'four', 'five']
+  },
+  {
+    cells: ['one', 'two', 'three', 'four', 'five']
+  },
+  {
+    cells: ['one', 'two', 'three', 'four', 'five']
+  },
+  {
+    cells: ['one', 'two', 'three', 'four', 'five']
+  }
+];

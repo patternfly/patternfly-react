@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  ChartArea,
-  ChartGroup,
-  ChartLegend,
-  ChartVoronoiContainer
-} from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 class CustomColorsChart extends React.Component {
   containerRef = React.createRef();
@@ -23,9 +18,7 @@ class CustomColorsChart extends React.Component {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  getTooltipLabel = (datum) => {
-    return `${datum.name}: ${datum.y}`;
-  }
+  getTooltipLabel = datum => `${datum.name}: ${datum.y}`;
 
   handleResize = () => {
     this.setState({ width: this.containerRef.current.clientWidth });
@@ -33,9 +26,7 @@ class CustomColorsChart extends React.Component {
 
   render() {
     const { width } = this.state;
-    const container = (
-      <ChartVoronoiContainer labels={this.getTooltipLabel} />
-    );
+    const container = <ChartVoronoiContainer labels={this.getTooltipLabel} />;
     const cats = {
       data: {
         fill: '#486b00', // global_success_color_200.value,
@@ -53,11 +44,7 @@ class CustomColorsChart extends React.Component {
     return (
       <div ref={this.containerRef}>
         <div className="chart-overflow">
-          <ChartGroup
-            containerComponent={container}
-            height={100}
-            width={width}
-          >
+          <ChartGroup containerComponent={container} height={100} width={width}>
             <ChartArea
               data={[
                 { name: 'Cats', x: 1, y: 1 },
@@ -69,7 +56,7 @@ class CustomColorsChart extends React.Component {
             />
             <ChartArea
               data={[
-                { name: 'Dogs', x: 1, y: .5 },
+                { name: 'Dogs', x: 1, y: 0.5 },
                 { name: 'Dogs', x: 2, y: 1 },
                 { name: 'Dogs', x: 3, y: 2 },
                 { name: 'Dogs', x: 4, y: 2.5 },
@@ -81,9 +68,7 @@ class CustomColorsChart extends React.Component {
         </div>
         <ChartLegend
           colorScale={[cats.data.fill, dogs.data.fill]}
-          data={[
-            { name: 'Cats' }, { name: 'Dogs' }
-          ]}
+          data={[{ name: 'Cats' }, { name: 'Dogs' }]}
           title="Average number of pets"
           height={50}
           width={width}

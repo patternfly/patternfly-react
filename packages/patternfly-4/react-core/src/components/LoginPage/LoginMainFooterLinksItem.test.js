@@ -3,7 +3,7 @@ import LoginMainFooterLinksItem from './LoginMainFooterLinksItem';
 import { shallow } from 'enzyme';
 
 test('renders with PatternFly Core styles', () => {
-  const view = shallow(<LoginMainFooterLinksItem href="#" target=''/>);
+  const view = shallow(<LoginMainFooterLinksItem href="#" target="" />);
   expect(view).toMatchSnapshot();
 });
 

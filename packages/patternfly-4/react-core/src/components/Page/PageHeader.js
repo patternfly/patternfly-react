@@ -40,7 +40,7 @@ const defaultProps = {
   showNavToggle: false,
   isNavOpen: true,
   onNavToggle: () => undefined,
-  'aria-label': "Global navigation",
+  'aria-label': 'Global navigation'
 };
 
 const PageHeader = ({

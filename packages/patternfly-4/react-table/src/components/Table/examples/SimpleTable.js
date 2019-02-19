@@ -4,15 +4,9 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 class SimpleTable extends React.Component {
   static title = 'Simple Table';
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      columns: [
-        { title: 'Repositories' },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces',
-        'Last Commit'
-      ],
+      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
       rows: [
         ['one', 'two', 'three', 'four', 'five'],
         [

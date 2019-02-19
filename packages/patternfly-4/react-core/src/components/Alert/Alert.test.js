@@ -8,7 +8,11 @@ import AlertActionCLoseButton from './AlertActionCloseButton';
 Object.keys(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
-      const view = mount(<Alert variant={variant} title="">Some alert</Alert>);
+      const view = mount(
+        <Alert variant={variant} title="">
+          Some alert
+        </Alert>
+      );
       expect(view).toMatchSnapshot();
     });
 

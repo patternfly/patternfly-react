@@ -1,25 +1,11 @@
 import React from 'react';
-import {
-  ChartDonut,
-  ChartLabel,
-  ChartLegend,
-  ChartTheme
-} from '@patternfly/react-charts';
-import {
-  Grid,
-  GridItem,
-  Text,
-  TextVariants
-} from '@patternfly/react-core';
+import { ChartDonut, ChartLabel, ChartLegend, ChartTheme } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 class SimpleChart extends React.Component {
-  getChart = (theme) => (
+  getChart = theme => (
     <ChartDonut
-      data={[
-        { x: 'Cats', y: 35 },
-        { x: 'Dogs', y: 55 },
-        { x: 'Birds', y: 10 }
-      ]}
+      data={[{ x: 'Cats', y: 35 }, { x: 'Dogs', y: 55 }, { x: 'Birds', y: 10 }]}
       labels={this.getTooltipLabel}
       theme={theme}
       height={200}
@@ -29,9 +15,7 @@ class SimpleChart extends React.Component {
 
   getLegend = (theme, horizontal) => (
     <ChartLegend
-      data={[
-        { name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }
-      ]}
+      data={[{ name: 'Cats' }, { name: 'Dogs' }, { name: 'Birds' }]}
       orientation={horizontal ? 'horizontal' : 'vertical'}
       theme={theme}
       y={horizontal ? 0 : 55}
@@ -40,40 +24,22 @@ class SimpleChart extends React.Component {
     />
   );
 
-  getTooltipLabel = (datum) => {
-    return `${datum.x}: ${datum.y}`;
-  };
+  getTooltipLabel = datum => `${datum.x}: ${datum.y}`;
 
   render() {
     const label = (
-      <svg
-        className="chart-label"
-        height={this.size}
-        width={this.size}
-      >
-        <ChartLabel
-          style={{ fontSize: 20 }}
-          text="100"
-          textAnchor="middle"
-          verticalAnchor="middle"
-          x={100}
-          y={90}
-        />
-        <ChartLabel
-          style={{ fill: '#bbb' }}
-          text="Pets"
-          textAnchor="middle"
-          verticalAnchor="middle"
-          x={100}
-          y={110}
-        />
+      <svg className="chart-label" height={this.size} width={this.size}>
+        <ChartLabel style={{ fontSize: 20 }} text="100" textAnchor="middle" verticalAnchor="middle" x={100} y={90} />
+        <ChartLabel style={{ fill: '#bbb' }} text="Pets" textAnchor="middle" verticalAnchor="middle" x={100} y={110} />
       </svg>
     );
 
     return (
       <Grid gutter="md">
         <GridItem lg={6}>
-          <Text className="chart-title" component={TextVariants.h2}>Blue Theme</Text>
+          <Text className="chart-title" component={TextVariants.h2}>
+            Blue Theme
+          </Text>
           <div className="chart-inline">
             <div className="chart-container">
               {label}
@@ -83,7 +49,9 @@ class SimpleChart extends React.Component {
           </div>
         </GridItem>
         <GridItem lg={3}>
-          <Text className="chart-title" component={TextVariants.h2}>Multi Color Theme</Text>
+          <Text className="chart-title" component={TextVariants.h2}>
+            Multi Color Theme
+          </Text>
           <div className="chart-container">
             {label}
             {this.getChart(ChartTheme.light.multi)}
