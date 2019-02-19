@@ -2,30 +2,35 @@ import React, { Component, Children, Fragment } from 'react';
 import styles from '@patternfly/patternfly/components/Table/table.css';
 import { css } from '@patternfly/react-styles';
 import { mapOpenedRows } from './utils/headerUtils';
+import PropTypes from 'prop-types';
 
-const BodyWrapper = (rows, onCollapse) => {
-  class TableBody extends Component {
-    render() {
-      if (onCollapse) {
-        return (
-          <Fragment>
-            {mapOpenedRows(rows, Children.toArray(this.props.children)).map((oneRow, key) => (
-                <tbody {...this.props} className={css(oneRow.isOpen && styles.modifiers.expanded)} key={`tbody-${key}`}>
-                {oneRow.rows}
-              </tbody>
-            ))}
-          </Fragment>
-        )
-      }
+class BodyWrapper extends Component {
+  render() {
+    const { mappedRows, ...props } = this.props;
+    if (mappedRows.some(row => row.hasOwnProperty('isOpen'))) {
       return (
-        <tbody {...this.props} className={css(
-          rows.some(row => row.isOpen && !row.hasOwnProperty('parent')) && styles.modifiers.expanded
-        )} />
+        <Fragment>
+          {mapOpenedRows(mappedRows, this.props.children).map((oneRow, key) => (
+            <tbody {...props} className={css(oneRow.isOpen && styles.modifiers.expanded)} key={`tbody-${key}`}>
+              {oneRow.rows}
+            </tbody>
+          ))}
+        </Fragment>
       )
     }
-  };
+    return (
+      <tbody {...props} />
+    )
+  }
+}
 
-  return TableBody;
+BodyWrapper.propTypes = {
+  rows: PropTypes.array,
+  onCollapse: PropTypes.func
+}
+
+BodyWrapper.defaultProps = {
+  rows: []
 }
 
 export default BodyWrapper;
