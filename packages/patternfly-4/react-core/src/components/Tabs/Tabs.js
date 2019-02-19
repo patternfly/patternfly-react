@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import styles from '@patternfly/patternfly/components/Tabs/tabs.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
@@ -6,6 +7,7 @@ import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
 import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
 import { SIDE } from '../../helpers/constants';
 import TabContent from './TabContent';
+import Tab from './Tab';
 
 const propTypes = {
   /** content rendered inside the Tabs Component. */
@@ -50,8 +52,34 @@ class Tabs extends React.Component {
   id = getUniqueId();
   tabList = React.createRef();
 
-  handleTabClick(event, eventKey) {
+  handleTabClick(event, eventKey, tabContentId, tabContentRef) {
     this.props.onSelect(event, eventKey);
+    // process any tab content sections outside of the component
+    if (tabContentRef) {
+      React.Children.map(this.props.children, (child, i) => {
+        const section = ReactDOM.findDOMNode(child.props.tabContentRef.current);
+        if (section) {
+          section.hidden = true;
+        }
+      });
+      // most recently selected tabContent
+      const selectedTabContent = ReactDOM.findDOMNode(tabContentRef.current);
+      if (selectedTabContent) {
+        selectedTabContent.hidden = false;
+      }
+    } else if (tabContentId) {
+      React.Children.map(this.props.children, (child, i) => {
+        const section = document.getElementById(child.props.tabContentId);
+        if (section && section.tagName === 'SECTION') {
+          section.hidden = true;
+        }
+      });
+      // most recently selected tabContent
+      const selectedTabContent = document.getElementById(tabContentId);
+      if (selectedTabContent && selectedTabContent.tagName === 'SECTION') {
+        selectedTabContent.hidden = false;
+      }
+    }
   }
 
   handleScrollButtons = () => {
@@ -123,7 +151,6 @@ class Tabs extends React.Component {
 
   componentDidMount() {
     window.addEventListener('resize', this.handleScrollButtons, false);
-
     // call the handle resize function to check if scroll buttons should be shown
     this.handleScrollButtons();
   }
@@ -149,6 +176,7 @@ class Tabs extends React.Component {
       highlightLeftScrollButton,
       highlightRightScrollButton
     } = this.state;
+
     return (
       <React.Fragment>
         <div
@@ -184,14 +212,14 @@ class Tabs extends React.Component {
                   className
                 )}
               >
-                <button
+                <Tab {...child.props}
+                  ref={(node) => { this.child = node; }}
                   className={css(styles.tabsButton)}
-                  onClick={event => this.handleTabClick(event, child.props.eventKey)}
+                  onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentId, child.props.tabContentRef)}
                   id={`pf-tab-${child.props.eventKey}-${child.props.id || this.id}`}
-                  aria-controls={`pf-tab-section-${child.props.eventKey}-${child.props.id || this.id}`}
-                >
-                  {child.props.title}
-                </button>
+                  aria-controls={child.props.tabContentId ? `pf-tab-section-${child.props.eventKey}-${child.props.tabContentId}` : `pf-tab-section-${child.props.eventKey}-${child.props.id || this.id}`}>
+                    {child.props.title}
+                </Tab>
               </li>
             ))}
           </ul>
@@ -206,7 +234,7 @@ class Tabs extends React.Component {
             </button>
           )}
         </div>
-        {children.map((child, index) => (
+        {children && children.map((child, index) => (
           <TabContent key={index} activeKey={activeKey} child={child} index={index} id={child.props.id || this.id} />
         ))}
       </React.Fragment>

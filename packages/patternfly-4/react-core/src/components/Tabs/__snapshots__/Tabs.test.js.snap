@@ -110,40 +110,52 @@ exports[`onSelect callback called when tab selected 1`] = `
         className="pf-c-tabs__item pf-m-current"
         key="0"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-0-tab1"
           className="pf-c-tabs__button"
+          eventKey={0}
           id="pf-tab-0-tab1"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 1"
         >
           Tab item 1
-        </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="1"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-1-tab2"
           className="pf-c-tabs__button"
+          eventKey={1}
           id="pf-tab-1-tab2"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 2"
         >
           Tab item 2
-        </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="2"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-2-tab3"
           className="pf-c-tabs__button"
+          eventKey={2}
           id="pf-tab-2-tab3"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 3"
         >
           Tab item 3
-        </button>
+        </Tab>
       </li>
     </ul>
     <button
@@ -166,11 +178,15 @@ exports[`onSelect callback called when tab selected 1`] = `
         className=""
         eventKey={0}
         id="tab1"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 1"
       >
         Tab 1 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab1"
     index={0}
     key="0"
@@ -182,11 +198,15 @@ exports[`onSelect callback called when tab selected 1`] = `
         className=""
         eventKey={1}
         id="tab2"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 2"
       >
         Tab 2 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab2"
     index={1}
     key="1"
@@ -198,11 +218,15 @@ exports[`onSelect callback called when tab selected 1`] = `
         className=""
         eventKey={2}
         id="tab3"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 3"
       >
         Tab 3 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab3"
     index={2}
     key="2"
@@ -229,6 +253,14 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
   background: transparent;
   border: 0px;
 }
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
+  background: transparent;
+  border: 0px;
+}
 .pf-c-tabs__item.pf-m-current {
   display: block;
   flex: 0 0 auto;
@@ -241,9 +273,25 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
   background: transparent;
   border: 0px;
 }
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
+  background: transparent;
+  border: 0px;
+}
 .pf-c-tabs__item {
   display: block;
   flex: 0 0 auto;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
+  background: transparent;
+  border: 0px;
 }
 .pf-c-tabs__button {
   display: block;
@@ -333,40 +381,76 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         className="pf-c-tabs__item pf-m-current"
         key="0"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-0-tab1"
           className="pf-c-tabs__button"
+          eventKey={0}
           id="pf-tab-0-tab1"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 1"
         >
-          Tab item 1
-        </button>
+          <button
+            aria-controls="pf-tab-section-0-tab1"
+            className="pf-c-tabs__button"
+            id="pf-tab-0-tab1"
+            onClick={[Function]}
+            title="Tab item 1"
+          >
+            Tab item 1
+          </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="1"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-1-tab2"
           className="pf-c-tabs__button"
+          eventKey={1}
           id="pf-tab-1-tab2"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 2"
         >
-          Tab item 2
-        </button>
+          <button
+            aria-controls="pf-tab-section-1-tab2"
+            className="pf-c-tabs__button"
+            id="pf-tab-1-tab2"
+            onClick={[Function]}
+            title="Tab item 2"
+          >
+            Tab item 2
+          </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="2"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-2-tab3"
           className="pf-c-tabs__button"
+          eventKey={2}
           id="pf-tab-2-tab3"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 3"
         >
-          Tab item 3
-        </button>
+          <button
+            aria-controls="pf-tab-section-2-tab3"
+            className="pf-c-tabs__button"
+            id="pf-tab-2-tab3"
+            onClick={[Function]}
+            title="Tab item 3"
+          >
+            Tab item 3
+          </button>
+        </Tab>
       </li>
     </ul>
     <button
@@ -409,11 +493,15 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         className=""
         eventKey={0}
         id="tab1"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 1"
       >
         Tab 1 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab1"
     index={0}
     key="0"
@@ -437,11 +525,15 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         className=""
         eventKey={1}
         id="tab2"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 2"
       >
         Tab 2 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab2"
     index={1}
     key="1"
@@ -465,11 +557,15 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         className=""
         eventKey={2}
         id="tab3"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 3"
       >
         Tab 3 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab3"
     index={2}
     key="2"
@@ -508,6 +604,14 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
   background: transparent;
   border: 0px;
 }
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
+  background: transparent;
+  border: 0px;
+}
 .pf-c-tabs__item.pf-m-current {
   display: block;
   flex: 0 0 auto;
@@ -520,9 +624,25 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
   background: transparent;
   border: 0px;
 }
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
+  background: transparent;
+  border: 0px;
+}
 .pf-c-tabs__item {
   display: block;
   flex: 0 0 auto;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
+  background: transparent;
+  border: 0px;
 }
 .pf-c-tabs__button {
   display: block;
@@ -612,40 +732,76 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         className="pf-c-tabs__item pf-m-current"
         key="0"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-0-tab1"
           className="pf-c-tabs__button"
+          eventKey={0}
           id="pf-tab-0-tab1"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 1"
         >
-          Tab item 1
-        </button>
+          <button
+            aria-controls="pf-tab-section-0-tab1"
+            className="pf-c-tabs__button"
+            id="pf-tab-0-tab1"
+            onClick={[Function]}
+            title="Tab item 1"
+          >
+            Tab item 1
+          </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="1"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-1-tab2"
           className="pf-c-tabs__button"
+          eventKey={1}
           id="pf-tab-1-tab2"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 2"
         >
-          Tab item 2
-        </button>
+          <button
+            aria-controls="pf-tab-section-1-tab2"
+            className="pf-c-tabs__button"
+            id="pf-tab-1-tab2"
+            onClick={[Function]}
+            title="Tab item 2"
+          >
+            Tab item 2
+          </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="2"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-2-tab3"
           className="pf-c-tabs__button"
+          eventKey={2}
           id="pf-tab-2-tab3"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 3"
         >
-          Tab item 3
-        </button>
+          <button
+            aria-controls="pf-tab-section-2-tab3"
+            className="pf-c-tabs__button"
+            id="pf-tab-2-tab3"
+            onClick={[Function]}
+            title="Tab item 3"
+          >
+            Tab item 3
+          </button>
+        </Tab>
       </li>
     </ul>
     <button
@@ -688,11 +844,15 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         className=""
         eventKey={0}
         id="tab1"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 1"
       >
         Tab 1 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab1"
     index={0}
     key="0"
@@ -716,11 +876,15 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         className=""
         eventKey={1}
         id="tab2"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 2"
       >
         Tab 2 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab2"
     index={1}
     key="1"
@@ -744,11 +908,15 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         className=""
         eventKey={2}
         id="tab3"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 3"
       >
         Tab 3 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab3"
     index={2}
     key="2"
@@ -787,6 +955,14 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
   background: transparent;
   border: 0px;
 }
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
+  background: transparent;
+  border: 0px;
+}
 .pf-c-tabs__item.pf-m-current {
   display: block;
   flex: 0 0 auto;
@@ -799,9 +975,25 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
   background: transparent;
   border: 0px;
 }
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
+  background: transparent;
+  border: 0px;
+}
 .pf-c-tabs__item {
   display: block;
   flex: 0 0 auto;
+}
+.pf-c-tabs__button {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
+  background: transparent;
+  border: 0px;
 }
 .pf-c-tabs__button {
   display: block;
@@ -891,40 +1083,76 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         className="pf-c-tabs__item pf-m-current"
         key="0"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-0-tab1"
           className="pf-c-tabs__button"
+          eventKey={0}
           id="pf-tab-0-tab1"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 1"
         >
-          Tab item 1
-        </button>
+          <button
+            aria-controls="pf-tab-section-0-tab1"
+            className="pf-c-tabs__button"
+            id="pf-tab-0-tab1"
+            onClick={[Function]}
+            title="Tab item 1"
+          >
+            Tab item 1
+          </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="1"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-1-tab2"
           className="pf-c-tabs__button"
+          eventKey={1}
           id="pf-tab-1-tab2"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 2"
         >
-          Tab item 2
-        </button>
+          <button
+            aria-controls="pf-tab-section-1-tab2"
+            className="pf-c-tabs__button"
+            id="pf-tab-1-tab2"
+            onClick={[Function]}
+            title="Tab item 2"
+          >
+            Tab item 2
+          </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="2"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-2-tab3"
           className="pf-c-tabs__button"
+          eventKey={2}
           id="pf-tab-2-tab3"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 3"
         >
-          Tab item 3
-        </button>
+          <button
+            aria-controls="pf-tab-section-2-tab3"
+            className="pf-c-tabs__button"
+            id="pf-tab-2-tab3"
+            onClick={[Function]}
+            title="Tab item 3"
+          >
+            Tab item 3
+          </button>
+        </Tab>
       </li>
     </ul>
     <button
@@ -967,11 +1195,15 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         className=""
         eventKey={0}
         id="tab1"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 1"
       >
         Tab 1 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab1"
     index={0}
     key="0"
@@ -995,11 +1227,15 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         className=""
         eventKey={1}
         id="tab2"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 2"
       >
         Tab 2 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab2"
     index={1}
     key="1"
@@ -1023,11 +1259,15 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         className=""
         eventKey={2}
         id="tab3"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 3"
       >
         Tab 3 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab3"
     index={2}
     key="2"
@@ -1142,40 +1382,52 @@ exports[`should render filled tabs 1`] = `
         className="pf-c-tabs__item pf-m-current"
         key="0"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-0-tab1"
           className="pf-c-tabs__button"
+          eventKey={0}
           id="pf-tab-0-tab1"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 1"
         >
           Tab item 1
-        </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="1"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-1-tab2"
           className="pf-c-tabs__button"
+          eventKey={1}
           id="pf-tab-1-tab2"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 2"
         >
           Tab item 2
-        </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="2"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-2-tab3"
           className="pf-c-tabs__button"
+          eventKey={2}
           id="pf-tab-2-tab3"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 3"
         >
           Tab item 3
-        </button>
+        </Tab>
       </li>
     </ul>
     <button
@@ -1198,11 +1450,15 @@ exports[`should render filled tabs 1`] = `
         className=""
         eventKey={0}
         id="tab1"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 1"
       >
         Tab 1 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab1"
     index={0}
     key="0"
@@ -1214,11 +1470,15 @@ exports[`should render filled tabs 1`] = `
         className=""
         eventKey={1}
         id="tab2"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 2"
       >
         Tab 2 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab2"
     index={1}
     key="1"
@@ -1230,11 +1490,15 @@ exports[`should render filled tabs 1`] = `
         className=""
         eventKey={2}
         id="tab3"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 3"
       >
         Tab 3 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab3"
     index={2}
     key="2"
@@ -1337,40 +1601,52 @@ exports[`should render secondary tabs 1`] = `
         className="pf-c-tabs__item pf-m-current"
         key="0"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-0-tab1"
           className="pf-c-tabs__button"
+          eventKey={0}
           id="pf-tab-0-tab1"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 1"
         >
           Tab item 1
-        </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="1"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-1-tab2"
           className="pf-c-tabs__button"
+          eventKey={1}
           id="pf-tab-1-tab2"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 2"
         >
           Tab item 2
-        </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="2"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-2-tab3"
           className="pf-c-tabs__button"
+          eventKey={2}
           id="pf-tab-2-tab3"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 3"
         >
           Tab item 3
-        </button>
+        </Tab>
       </li>
     </ul>
     <button
@@ -1393,6 +1669,8 @@ exports[`should render secondary tabs 1`] = `
         className=""
         eventKey={0}
         id="tab1"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 1"
       >
         <Tabs
@@ -1408,6 +1686,8 @@ exports[`should render secondary tabs 1`] = `
             className=""
             eventKey={10}
             id="secondary tab1"
+            tabContentId=""
+            tabContentRef={null}
             title="Secondary Tab 1"
           >
             Secondary Tab 1 section
@@ -1416,6 +1696,8 @@ exports[`should render secondary tabs 1`] = `
             className=""
             eventKey={11}
             id="secondary tab2"
+            tabContentId=""
+            tabContentRef={null}
             title="Secondary Tab 2"
           >
             Secondary Tab 2 section
@@ -1424,6 +1706,8 @@ exports[`should render secondary tabs 1`] = `
             className=""
             eventKey={12}
             id="secondary tab3"
+            tabContentId=""
+            tabContentRef={null}
             title="Secondary Tab 3"
           >
             Secondary Tab 3 section
@@ -1431,6 +1715,8 @@ exports[`should render secondary tabs 1`] = `
         </Tabs>
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab1"
     index={0}
     key="0"
@@ -1442,11 +1728,15 @@ exports[`should render secondary tabs 1`] = `
         className=""
         eventKey={1}
         id="tab2"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 2"
       >
         Tab 2 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab2"
     index={1}
     key="1"
@@ -1458,11 +1748,15 @@ exports[`should render secondary tabs 1`] = `
         className=""
         eventKey={2}
         id="tab3"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 3"
       >
         Tab 3 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab3"
     index={2}
     key="2"
@@ -1565,40 +1859,52 @@ exports[`should render simple tabs 1`] = `
         className="pf-c-tabs__item pf-m-current"
         key="0"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-0-tab1"
           className="pf-c-tabs__button"
+          eventKey={0}
           id="pf-tab-0-tab1"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 1"
         >
           Tab item 1
-        </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="1"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-1-tab2"
           className="pf-c-tabs__button"
+          eventKey={1}
           id="pf-tab-1-tab2"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 2"
         >
           Tab item 2
-        </button>
+        </Tab>
       </li>
       <li
         className="pf-c-tabs__item"
         key="2"
       >
-        <button
+        <Tab
           aria-controls="pf-tab-section-2-tab3"
           className="pf-c-tabs__button"
+          eventKey={2}
           id="pf-tab-2-tab3"
           onClick={[Function]}
+          tabContentId=""
+          tabContentRef={null}
+          title="Tab item 3"
         >
           Tab item 3
-        </button>
+        </Tab>
       </li>
     </ul>
     <button
@@ -1621,11 +1927,15 @@ exports[`should render simple tabs 1`] = `
         className=""
         eventKey={0}
         id="tab1"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 1"
       >
         Tab 1 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab1"
     index={0}
     key="0"
@@ -1637,11 +1947,15 @@ exports[`should render simple tabs 1`] = `
         className=""
         eventKey={1}
         id="tab2"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 2"
       >
         Tab 2 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab2"
     index={1}
     key="1"
@@ -1653,11 +1967,15 @@ exports[`should render simple tabs 1`] = `
         className=""
         eventKey={2}
         id="tab3"
+        tabContentId=""
+        tabContentRef={null}
         title="Tab item 3"
       >
         Tab 3 section
       </Tab>
     }
+    className={null}
+    hidden={false}
     id="tab3"
     index={2}
     key="2"

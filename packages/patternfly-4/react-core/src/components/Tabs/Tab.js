@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -9,15 +10,26 @@ const propTypes = {
   /** Tab title */
   title: PropTypes.string.isRequired,
   /** uniquely identifies the tab */
-  eventKey: PropTypes.number.isRequired
+  eventKey: PropTypes.number.isRequired,
+  /** child id for case in which a TabContent section is defined outside of a Tabs component */
+  tabContentId: PropTypes.string,
+  /** child reference for case in which a TabContent section is defined outside of a Tabs component */
+  tabContentRef: PropTypes.object,
 };
 
 const defaultProps = {
   children: null,
-  className: ''
+  className: '',
+  tabContentId: '',
+  tabContentRef: null,
 };
 
-const Tab = ({ className, children, title, eventKey, ...props }) => <React.Fragment>{children}</React.Fragment>;
+class Tab extends React.Component {
+  render() {
+    const { children, eventKey, tabContentId, tabContentRef, ...props } = this.props;
+    return <button {...props}>{children}</button>;
+  }
+}
 
 Tab.propTypes = propTypes;
 Tab.defaultProps = defaultProps;
