@@ -4,7 +4,6 @@ export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   isExpanded?: boolean;
   onToggle(value: boolean): void;
   placeholderText?: string;
-  selectOptions?: ReactNode[];
   selections?: string;
   variant?: string;
   width?: string | number;

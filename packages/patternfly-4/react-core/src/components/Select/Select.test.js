@@ -4,30 +4,29 @@ import Select from './Select';
 import SelectOption from './SelectOption';
 
 const selectOptions = [
-  <SelectOption value="Mr" />,
-  <SelectOption value="Mrs" />,
-  <SelectOption value="Ms" />,
-  <SelectOption value="Other" />
+  <SelectOption value="Mr" key="0" />,
+  <SelectOption value="Mrs" key="1" />,
+  <SelectOption value="Ms" key="2" />,
+  <SelectOption value="Other" key="3" />
 ];
 
 describe('select', () => {
   describe('single select', () => {
     test('renders closed successfully', () => {
-      const view = mount(<Select variant="single">{selectOptions}</Select>);
-      expect(view).toMatchSnapshot();
-    });
-
-    test('renders expanded successfully', () => {
       const view = mount(
-        <Select variant="single" isExpanded>
+        <Select variant="single" onSelect={jest.fn()} onToggle={jest.fn()}>
           {selectOptions}
         </Select>
       );
       expect(view).toMatchSnapshot();
     });
 
-    test('renders with selectOptions parameter', () => {
-      const view = mount(<Select variant="single" selectOptions={selectOptions} />);
+    test('renders expanded successfully', () => {
+      const view = mount(
+        <Select variant="single" onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+          {selectOptions}
+        </Select>
+      );
       expect(view).toMatchSnapshot();
     });
   });
@@ -38,7 +37,9 @@ describe('API', () => {
     const mockToggle = jest.fn();
     const mockSelect = jest.fn();
     const view = mount(
-      <Select variant="single" onToggle={mockToggle} onSelect={mockSelect} selectOptions={selectOptions} isExpanded />
+      <Select variant="single" onToggle={mockToggle} onSelect={mockSelect} isExpanded>
+        {selectOptions}
+      </Select>
     );
     view
       .find('button')
@@ -48,30 +49,11 @@ describe('API', () => {
     expect(mockSelect.mock.calls).toHaveLength(1);
   });
 
-  test('selectOptions and children console error ', () => {
-    const myMock = jest.fn();
-    global.console = { error: myMock };
-    mount(
-      <Select variant="single" selectOptions={selectOptions} isExpanded>
-        <div> child test </div>
-        <div> child test </div>
-      </Select>
-    );
-    expect(myMock).toBeCalled();
-  });
-
-  test('selectOptions only, no console error ', () => {
-    const myMock = jest.fn();
-    global.console = { error: myMock };
-    mount(<Select variant="single" selectOptions={selectOptions} isExpanded />);
-    expect(myMock).not.toBeCalled();
-  });
-
   test('children only, no console error', () => {
     const myMock = jest.fn();
     global.console = { error: myMock };
     mount(
-      <Select variant="single" isExpanded>
+      <Select variant="single" onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
         {selectOptions}
       </Select>
     );

@@ -8,11 +8,6 @@ describe('select options', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('renders with children successfully', () => {
-    const view = shallow(<SelectOption sendRef={jest.fn()}>test</SelectOption>);
-    expect(view).toMatchSnapshot();
-  });
-
   describe('hover', () => {
     test('renders with hover successfully', () => {
       const view = shallow(<SelectOption isHovered value="test" sendRef={jest.fn()} />);

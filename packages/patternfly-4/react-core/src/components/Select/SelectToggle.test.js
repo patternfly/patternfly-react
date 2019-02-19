@@ -6,7 +6,7 @@ describe('API', () => {
   test('click on closed', () => {
     const mockToggle = jest.fn();
     const view = mount(
-      <SelectToggle onToggle={mockToggle} parentRef={document.createElement('div')}>
+      <SelectToggle id="Select Toggle" onToggle={mockToggle} parentRef={document.createElement('div')}>
         Select
       </SelectToggle>
     );

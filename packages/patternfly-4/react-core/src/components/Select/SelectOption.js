@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import { SelectContext, KeyTypes } from './selectConstants';
 
 const propTypes = {
-  /** the value for the option */
-  children: PropTypes.string,
   /** additional classes added to the Select Option */
   className: PropTypes.string,
   /** the value for the option */
@@ -30,7 +28,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  children: null,
   className: '',
   value: null,
   index: 0,
@@ -61,7 +58,6 @@ class SelectOption extends React.Component {
 
   render() {
     const {
-      children,
       className,
       value,
       onClick,
@@ -88,7 +84,7 @@ class SelectOption extends React.Component {
               onClick={event => {
                 if (!isDisabled) {
                   onClick && onClick(event);
-                  onSelect && onSelect(event, value || children, isPlaceholder);
+                  onSelect && onSelect(event, value, isPlaceholder);
                   onClose && onClose();
                 }
               }}
@@ -97,7 +93,7 @@ class SelectOption extends React.Component {
               ref={this.ref}
               onKeyDown={this.onKeyDown}
             >
-              {value || children}
+              {value}
             </button>
           </li>
         )}

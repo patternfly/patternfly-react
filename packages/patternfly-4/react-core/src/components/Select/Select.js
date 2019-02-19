@@ -18,8 +18,6 @@ const propTypes = {
   isExpanded: PropTypes.bool,
   /** Placeholder text of Select */
   placeholderText: PropTypes.string,
-  /** Array of SelectOption nodes that will be rendered */
-  selectOptions: PropTypes.array,
   /** Selected item */
   selections: PropTypes.string,
   /** Id of label for the Select aria-labelledby */
@@ -41,7 +39,6 @@ const defaultProps = {
   className: '',
   isExpanded: false,
   ariaLabelledBy: '',
-  selectOptions: null,
   selections: null,
   placeholderText: null,
   variant: SelectVariant.single,
@@ -68,7 +65,6 @@ class Select extends React.Component {
       onToggle,
       onSelect,
       isExpanded,
-      selectOptions,
       selections,
       ariaLabelledBy,
       placeholderText,
@@ -76,14 +72,12 @@ class Select extends React.Component {
       ...props
     } = this.props;
     const { openedOnEnter } = this.state;
-    const renderedChildren = children || selectOptions;
     const selectToggleId = `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
     if (!selections && !placeholderText) {
-      const childPlaceholder = renderedChildren.filter(child => child.props.isPlaceholder === true);
+      const childPlaceholder = children.filter(child => child.props.isPlaceholder === true);
       childPlaceholderText =
-        (childPlaceholder[0] && childPlaceholder[0].props.value) ||
-        (renderedChildren[0] && renderedChildren[0].props.value);
+        (childPlaceholder[0] && childPlaceholder[0].props.value) || (children[0] && children[0].props.value);
     }
 
     return (
@@ -114,7 +108,7 @@ class Select extends React.Component {
                   openedOnEnter={openedOnEnter}
                   aria-labelledby={ariaLabelledBy}
                 >
-                  {renderedChildren}
+                  {children}
                 </SingleSelect>
               )}
             </React.Fragment>
