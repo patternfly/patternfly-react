@@ -35,8 +35,7 @@
     "@patternfly/patternfly": "1.0.184",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
-    "node-plop": "^0.15.0",
-    "npmlog": "^4.1.2"
+    "node-plop": "^0.15.0"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",

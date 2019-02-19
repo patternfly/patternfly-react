@@ -26,8 +26,7 @@
     "resolve-from": "^4.0.0"
   },
   "devDependencies": {
-    "glob": "^7.1.2",
-    "npmlog": "^4.1.2"
+    "glob": "^7.1.2"
   },
   "license": "Apache-2.0",
   "scripts": {
