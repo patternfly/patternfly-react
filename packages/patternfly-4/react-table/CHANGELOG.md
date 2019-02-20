@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.18](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.17...@patternfly/react-table@1.0.18) (2019-02-20)
+
+
+### Bug Fixes
+
+* **Table:** Fix grid breakpoints for table ([#1398](https://github.com/patternfly/patternfly-react/issues/1398)) ([5467549](https://github.com/patternfly/patternfly-react/commit/5467549))
+
+
+
+
+
 ## [1.0.17](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.16...@patternfly/react-table@1.0.17) (2019-02-20)
 
 
