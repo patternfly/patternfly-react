@@ -1,6 +1,9 @@
 version: 2
 jobs:
   build:
+    branches:
+        ignore:
+          - master
     docker:
       - image: circleci/node:8.15
     working_directory: ~/repo

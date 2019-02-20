@@ -22,7 +22,6 @@ cache:
     - packages/patternfly-4/react-table/dist
     - packages/patternfly-4/react-tokens/dist
     - packages/patternfly-4/react-docs/public # PF4 docs
-    - .out # PF3 docs
 git:
   depth: 10
 branches:
@@ -39,8 +38,6 @@ stages:
     if: branch = master && type != pull_request && fork = false
 
 install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.7.0
-  - export PATH="$HOME/.yarn/bin:$PATH"
   - yarn install --frozen-lockfile
 jobs:
   include:
@@ -66,6 +63,7 @@ jobs:
       if: branch = master && type != pull_request && fork = false
       install: skip
       script:
+        - rm -rf packages/patternfly-4/react-docs/public
         - yarn build:prdocs
         - .circleci/clean_cache.sh
     - name: Lint and Stylelint
