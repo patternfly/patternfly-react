@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartStack, ChartTheme } from '../../index';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 class HorizontalChart extends React.Component {

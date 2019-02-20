@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bullseye } from '@patternfly/react-core';
+import { Bullseye } from '../Bullseye';
 
 class SimpleBullseye extends React.Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-core';
+import { ApplicationLauncher, DropdownItem, Tooltip } from '../index';
 
 export default class TooltipApplicationLauncher extends Component {
   state = {

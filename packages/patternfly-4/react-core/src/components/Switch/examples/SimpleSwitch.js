@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch } from '@patternfly/react-core';
+import { Switch } from '../index';
 
 class SimpleSwitch extends React.Component {
   state = {

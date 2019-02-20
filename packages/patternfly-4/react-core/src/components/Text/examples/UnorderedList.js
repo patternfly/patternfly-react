@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextContent, TextList, TextListItem } from '@patternfly/react-core';
+import { TextContent, TextList, TextListItem } from '../index';
 
 class UnorderedList extends React.Component {
   render() {

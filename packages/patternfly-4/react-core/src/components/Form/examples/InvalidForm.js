@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, TextInput } from '@patternfly/react-core';
+import { Form, FormGroup, TextInput } from '../index';
 
 class InvalidForm extends React.Component {
   state = {

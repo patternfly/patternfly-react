@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
+import { Modal, Button } from '../index';
 
 class SimpleModal extends React.Component {
   state = {

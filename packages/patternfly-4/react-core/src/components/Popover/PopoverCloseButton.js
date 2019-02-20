@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '@patternfly/react-core';
+import { Button } from '../Button/index';
 import { TimesIcon } from '@patternfly/react-icons';
 
 const PopoverCloseButton = ({ onClose, 'aria-label': ariaLabel, ...rest }) => (

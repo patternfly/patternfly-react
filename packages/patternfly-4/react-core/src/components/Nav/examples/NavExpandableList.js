@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
+import { Nav, NavList, NavExpandable, NavItem } from '../index';
 
 class NavExpandableList extends React.Component {
   state = {

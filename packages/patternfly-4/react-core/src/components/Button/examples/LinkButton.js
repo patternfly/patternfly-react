@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@patternfly/react-core';
+import { Button } from '../Button';
 
 class LinkButton extends React.Component {
   render() {

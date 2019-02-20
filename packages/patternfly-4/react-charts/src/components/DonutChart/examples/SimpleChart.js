@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartDonut, ChartLabel, ChartLegend, ChartTheme } from '@patternfly/react-charts';
+import { ChartDonut, ChartLabel, ChartLegend, ChartTheme } from '../../index';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 class SimpleChart extends React.Component {

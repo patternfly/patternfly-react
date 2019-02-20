@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { ApplicationLauncher, DropdownItem, Dropdown, DropdownToggle } from '@patternfly/react-core';
-import { capitalize, getUniqueId, debounce, isElementInView, sideElementIsOutOfView } from './util';
-import { KEY_CODES, SIDE } from './constants';
+import { ApplicationLauncher, DropdownItem, Dropdown, DropdownToggle } from '../index.ts';
+import { capitalize, getUniqueId, debounce, isElementInView, sideElementIsOutOfView } from './util.ts';
+import { KEY_CODES, SIDE } from './constants.ts';
 
 test('capitalize', () => {
   expect(capitalize('foo')).toBe('Foo');

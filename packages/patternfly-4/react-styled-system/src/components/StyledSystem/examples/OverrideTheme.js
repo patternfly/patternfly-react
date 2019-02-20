@@ -1,5 +1,5 @@
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '../index';
 
 class OverrideTheme extends React.Component {
   render() {

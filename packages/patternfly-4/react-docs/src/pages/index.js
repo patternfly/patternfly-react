@@ -11,7 +11,7 @@ import {
 import DocsLayout from '../components/layouts';
 
 if (process.env.NODE_ENV !== 'production') {
-  const axe = require('react-axe'); // eslint-disable-line global-require
+  const axe = require('react-axe');
   axe(React, ReactDOM, 1000);
 }
 

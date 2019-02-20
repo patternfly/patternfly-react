@@ -1,5 +1,5 @@
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledText } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledText } from '../index';
 
 class TypographyStyles extends React.Component {
   render() {

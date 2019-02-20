@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextArea } from '@patternfly/react-core';
+import { TextArea } from '../index';
 
 class SimpleTextArea extends React.Component {
   state = {

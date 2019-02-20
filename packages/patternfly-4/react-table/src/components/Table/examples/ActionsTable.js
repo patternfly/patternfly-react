@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody } from '../index';
 
 class ActionsTable extends React.Component {
   constructor(props) {

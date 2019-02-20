@@ -26,9 +26,11 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "dependencies": {
-    "@patternfly/react-styles": "^2.3.4"
+    "@patternfly/react-styles": "^2.3.4",
+    "enzyme": "^3.3.0"
   },
   "peerDependencies": {
+    "@patternfly/react-core": "1.0.184",
     "prop-types": "^15.6.1",
     "react": "^16.4.0"
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Level, LevelItem } from '@patternfly/react-core';
+import { Level, LevelItem } from '../index';
 
 class LevelWithGutters extends React.Component {
   render() {

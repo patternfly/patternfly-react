@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
+import { AboutModal, Button, TextContent, TextList, TextListItem } from '../index';
 import brandImg from './pf_mini_logo_white.svg';
 import logoImg from './pf_logo.svg';
 

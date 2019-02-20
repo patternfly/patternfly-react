@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartTheme } from '@patternfly/react-charts';
+import { ChartTheme } from '../../index';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 import getContainerProps from './common/getContainerProps';
 

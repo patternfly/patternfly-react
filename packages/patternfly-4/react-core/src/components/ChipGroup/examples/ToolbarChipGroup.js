@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chip, ChipGroup, ChipGroupToolbarItem } from '@patternfly/react-core';
+import { Chip, ChipGroup, ChipGroupToolbarItem } from '../index';
 
 class ToolbarChipGroup extends React.Component {
   state = {

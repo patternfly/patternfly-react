@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '../../index';
 
 class DarkGreenThemeChart extends React.Component {
   containerRef = React.createRef();
@@ -25,7 +25,9 @@ class DarkGreenThemeChart extends React.Component {
   };
   render() {
     const { width } = this.state;
-    const container = <ChartVoronoiContainer labels={this.getTooltipLabel} />;
+    const container = (
+      <ChartVoronoiContainer labels={this.getTooltipLabel} />
+    );
 
     return (
       <div ref={this.containerRef}>
@@ -51,7 +53,9 @@ class DarkGreenThemeChart extends React.Component {
           </ChartGroup>
         </div>
         <ChartLegend
-          data={[{ name: 'Cats' }, { name: 'Dogs' }]}
+          data={[
+            { name: 'Cats' }, { name: 'Dogs' }
+          ]}
           theme={ChartTheme.dark.green}
           title="Average number of pets"
           height={50}

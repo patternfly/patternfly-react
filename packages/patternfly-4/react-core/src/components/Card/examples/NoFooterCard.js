@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+import { Card, CardHeader, CardBody } from '../index';
 
 class NoFooterCard extends React.Component {
   render() {

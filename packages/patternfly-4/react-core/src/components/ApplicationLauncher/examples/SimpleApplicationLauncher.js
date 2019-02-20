@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ApplicationLauncher, DropdownItem } from '@patternfly/react-core';
+import { ApplicationLauncher, DropdownItem } from '../index';
 
 export default class SimpleApplicationLauncher extends Component {
   state = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress, ProgressVariant } from '@patternfly/react-core';
+import { Progress, ProgressVariant } from '../index';
 
 class ProgressSuccess extends React.Component {
   render() {

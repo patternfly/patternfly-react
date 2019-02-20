@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label } from '@patternfly/react-core';
+import { Label } from '../Label';
 
 class SimpleLabel extends React.Component {
   render() {

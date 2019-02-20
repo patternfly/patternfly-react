@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
+import { ChartLegend, ChartTheme, ChartPie } from '../../index';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 class SimpleChart extends React.Component {

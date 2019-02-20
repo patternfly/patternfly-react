@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dropdown, DropdownItem, DropdownToggle, DropdownSeparator } from '@patternfly/react-core';
+import { Dropdown, DropdownItem, DropdownToggle, DropdownSeparator } from '../index';
 import { ThIcon } from '@patternfly/react-icons';
 
 export default class IconDropdown extends Component {

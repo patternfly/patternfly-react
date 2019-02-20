@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavGroup, NavItem } from '@patternfly/react-core';
+import { Nav, NavGroup, NavItem } from '../index';
 
 class NavGroupedList extends React.Component {
   state = {

@@ -2,8 +2,8 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/ChipGroup/chip-group.css';
-import { Chip } from '@patternfly/react-core';
-import { fillTemplate } from '../../helpers';
+import { Chip } from './Chip';
+import { fillTemplate } from '../../helpers/index.ts';
 
 class ChipGroup extends React.Component {
   state = {
@@ -49,12 +49,12 @@ const InnerChipGroup = props => {
       {isOpen ? (
         <React.Fragment>{children}</React.Fragment>
       ) : (
-        <React.Fragment>
-          {React.Children.map(children, (child, i) => {
-            if (i === 0) return child;
-          })}
-        </React.Fragment>
-      )}
+          <React.Fragment>
+            {React.Children.map(children, (child, i) => {
+              if (i === 0) return child;
+            })}
+          </React.Fragment>
+        )}
       {React.Children.count(children) > 1 && (
         <Chip isOverflowChip onClick={onToggleCollapse}>
           {isOpen ? expandedText : collapsedTextResult}

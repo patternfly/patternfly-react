@@ -8,7 +8,7 @@ import {
   LoginPage,
   BackgroundImageSrc,
   ListItem
-} from '@patternfly/react-core';
+} from '../index';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 /**

@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataList, DataListItem, DataListCell, DataListCheck, DataListAction } from '@patternfly/react-core';
+import { DataList, DataListItem, DataListCell, DataListCheck, DataListAction } from '../index';
 
 class CheckboxActionDataList extends React.Component {
   render() {

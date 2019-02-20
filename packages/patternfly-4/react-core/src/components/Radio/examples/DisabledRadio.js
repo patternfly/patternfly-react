@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio } from '@patternfly/react-core';
+import { Radio } from '../index';
 
 class DisabledRadio extends React.Component {
   render() {

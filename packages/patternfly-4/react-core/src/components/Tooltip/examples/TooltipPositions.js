@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
+import { Tooltip, TooltipPosition, Checkbox } from '../index';
 
 class TooltipPositions extends React.Component {
   constructor(props) {

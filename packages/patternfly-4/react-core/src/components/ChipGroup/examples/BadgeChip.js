@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge, ChipGroup, Chip } from '@patternfly/react-core';
+import { Badge, ChipGroup, Chip } from '../index';
 
 class BadgeChip extends React.Component {
   state = {

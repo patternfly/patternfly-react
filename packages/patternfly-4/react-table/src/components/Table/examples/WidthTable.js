@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, cellWidth } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, cellWidth } from '../index';
 
 class WidthTable extends React.Component {
   constructor(props) {

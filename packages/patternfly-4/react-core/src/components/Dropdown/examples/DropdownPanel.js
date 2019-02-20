@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dropdown, DropdownToggle } from '@patternfly/react-core';
+import { Dropdown, DropdownToggle } from '../index';
 
 export default class DropdownPanel extends Component {
   constructor(props) {

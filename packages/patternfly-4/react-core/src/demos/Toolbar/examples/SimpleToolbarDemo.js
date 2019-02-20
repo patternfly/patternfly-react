@@ -10,7 +10,7 @@ import {
   Toolbar,
   ToolbarGroup,
   ToolbarItem
-} from '@patternfly/react-core';
+} from '../../../components/index.ts';
 import { css } from '@patternfly/react-styles';
 import flexStyles from '@patternfly/patternfly/utilities/Flex/flex.css';
 import spacingStyles from '@patternfly/patternfly/utilities/Spacing/spacing.css';

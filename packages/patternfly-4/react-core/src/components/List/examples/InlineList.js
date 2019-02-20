@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem } from '@patternfly/react-core';
+import { List, ListItem } from '../index';
 
 class InlineList extends React.Component {
   render() {

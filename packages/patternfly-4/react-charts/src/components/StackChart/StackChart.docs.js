@@ -1,4 +1,4 @@
-import { Chart, ChartBar, ChartLegend, ChartStack } from '@patternfly/react-charts';
+import { Chart, ChartBar, ChartLegend, ChartStack } from '../index';
 import HorizontalChart from './examples/HorizontalChart';
 import SimpleChart from './examples/SimpleChart';
 import getContainerProps from './examples/common/getContainerProps';

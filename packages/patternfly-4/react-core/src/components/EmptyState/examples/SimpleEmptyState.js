@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Title,
-  Button,
-  EmptyState,
-  EmptyStateIcon,
-  EmptyStateBody,
-  EmptyStateSecondaryActions
-} from '@patternfly/react-core';
+import { Title, Button, EmptyState, EmptyStateIcon, EmptyStateBody, EmptyStateSecondaryActions } from '../index';
 import { CubesIcon } from '@patternfly/react-icons';
 
 class SimpleEmptyState extends React.Component {

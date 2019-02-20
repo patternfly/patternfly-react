@@ -31,7 +31,7 @@
     "@patternfly/react-core": "^2.2.3",
     "@patternfly/react-icons": "^3.0.2",
     "@patternfly/react-styles": "^2.3.4",
-    "exenv": "^1.2.2",
+    "enzyme": "^3.3.0",
     "reactabular-table": "^8.14.0"
   },
   "peerDependencies": {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput } from '@patternfly/react-core';
+import { TextInput } from '../index';
 
 class DisabledTextInput extends React.Component {
   state = {

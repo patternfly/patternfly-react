@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, PageHeader, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { Page, PageHeader, PageSection, PageSectionVariants } from '../index';
 
 class HorizontalPage extends React.Component {
   render() {

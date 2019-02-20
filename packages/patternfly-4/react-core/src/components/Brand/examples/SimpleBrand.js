@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brand } from '@patternfly/react-core';
+import { Brand } from '../Brand';
 import brandImg from './pf_logo.svg';
 
 class SimpleBrand extends React.Component {

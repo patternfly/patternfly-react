@@ -1,5 +1,5 @@
 import React from 'react';
-import { Gallery, GalleryItem } from '@patternfly/react-core';
+import { Gallery, GalleryItem } from '../Gallery';
 
 class GalleryWithGutters extends React.Component {
   render() {

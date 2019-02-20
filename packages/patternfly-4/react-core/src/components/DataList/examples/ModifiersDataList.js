@@ -7,7 +7,7 @@ import {
   DataListAction,
   DataListToggle,
   DataListContent
-} from '@patternfly/react-core';
+} from '../index';
 
 class ModifiersDataList extends React.Component {
   state = { show: true };

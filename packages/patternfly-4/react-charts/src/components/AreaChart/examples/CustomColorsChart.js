@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '../../index';
 
 class CustomColorsChart extends React.Component {
   containerRef = React.createRef();

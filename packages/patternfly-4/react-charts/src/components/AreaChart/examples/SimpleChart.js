@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '../../index';
 
 class SimpleChart extends React.Component {
   containerRef = React.createRef();

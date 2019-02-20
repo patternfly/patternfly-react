@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, StackItem } from '@patternfly/react-core';
+import { Stack, StackItem } from '../index';
 
 class StackWithGutter extends React.Component {
   render() {

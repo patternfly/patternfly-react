@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataList, DataListItem, DataListCell } from '@patternfly/react-core';
+import { DataList, DataListItem, DataListCell } from '../index';
 
 class SimpleDataList extends React.Component {
   render() {

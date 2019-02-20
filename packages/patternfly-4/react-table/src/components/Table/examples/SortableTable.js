@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, sortable, SortByDirection } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, sortable, SortByDirection } from '../index';
 
 class SortableTable extends React.Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
+import { Alert, AlertActionLink, AlertActionCloseButton } from '../index';
 
 class WarningAlert extends React.Component {
   state = { alertOneVisible: true, alertTwoVisible: true };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Chip, ChipGroup, ChipGroupItem } from '@patternfly/react-core';
+import { Chip, ChipGroup } from '../index';
 
 class MultiSelectChipGroup extends React.Component {
   state = {

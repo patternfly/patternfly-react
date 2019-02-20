@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '../index';
 
 class FormSelectInputGrouped extends React.Component {
   state = {

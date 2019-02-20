@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHeader, TableBody, TableVariant } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, TableVariant } from '../index';
 
 class CompactTable extends React.Component {
   constructor(props) {

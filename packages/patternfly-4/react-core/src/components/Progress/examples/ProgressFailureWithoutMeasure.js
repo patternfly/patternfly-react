@@ -1,5 +1,5 @@
 import React from 'react';
-import { Progress, ProgressMeasureLocation, ProgressVariant } from '@patternfly/react-core';
+import { Progress, ProgressMeasureLocation, ProgressVariant } from '../index';
 
 class ProgressFailureWithoutMeasure extends React.Component {
   render() {

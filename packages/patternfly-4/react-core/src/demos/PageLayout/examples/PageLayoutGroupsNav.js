@@ -24,7 +24,7 @@ import {
   Toolbar,
   ToolbarGroup,
   ToolbarItem
-} from '@patternfly/react-core';
+} from '../../../index.ts';
 // make sure you've installed @patternfly/patternfly
 import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
 import spacingStyles from '@patternfly/patternfly/utilities/Spacing/spacing.css';

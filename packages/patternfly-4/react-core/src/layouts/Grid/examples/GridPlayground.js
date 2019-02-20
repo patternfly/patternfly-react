@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridItem, Button } from '@patternfly/react-core';
+import { Grid, GridItem, Button } from '../../index';
 import { css } from '@patternfly/react-styles';
 import styles from './GridPlayground.styles';
 import ItemControl from './common/ItemControl';

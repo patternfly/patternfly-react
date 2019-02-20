@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs, Tab } from '@patternfly/react-core';
+import { Tabs, Tab } from '../index';
 
 class ScrollButtonsTabs extends React.Component {
   state = {
