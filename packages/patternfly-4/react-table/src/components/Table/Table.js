@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '@patternfly/patternfly/components/Table/table.css';
+import stylesGrid from '@patternfly/patternfly/components/Table/table-grid.css';
 import { Provider } from 'reactabular-table';
 import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
 import { css, getModifier } from '@patternfly/react-styles';
@@ -212,7 +213,7 @@ class Table extends React.Component {
           }}
           columns={headerData}
           role="grid"
-          className={css(styles.table, getModifier(styles, gridBreakPoint), getModifier(styles, variant), className)}
+          className={css(styles.table, getModifier(stylesGrid, gridBreakPoint), getModifier(styles, variant), className)}
         >
           {caption && <caption>{caption}</caption>}
           {children}

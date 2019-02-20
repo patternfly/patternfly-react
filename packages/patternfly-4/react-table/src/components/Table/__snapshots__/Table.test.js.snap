@@ -321,12 +321,12 @@ exports[`Actions table 1`] = `
   padding-bottom: 0px;
   vertical-align: middle;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -470,7 +470,7 @@ exports[`Actions table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -818,7 +818,7 @@ exports[`Actions table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -8769,12 +8769,12 @@ exports[`Cell header table 1`] = `
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -8900,7 +8900,7 @@ exports[`Cell header table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -9103,7 +9103,7 @@ exports[`Cell header table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -13936,12 +13936,12 @@ exports[`Collapsible nested table 1`] = `
   display: block;
   vertical-align: top;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -14073,7 +14073,7 @@ exports[`Collapsible nested table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -14320,7 +14320,7 @@ exports[`Collapsible nested table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -20009,12 +20009,12 @@ exports[`Collapsible table 1`] = `
   display: block;
   vertical-align: top;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -20144,7 +20144,7 @@ exports[`Collapsible table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -20391,7 +20391,7 @@ exports[`Collapsible table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -25882,12 +25882,12 @@ exports[`Header width table 1`] = `
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -26025,7 +26025,7 @@ exports[`Header width table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -26230,7 +26230,7 @@ exports[`Header width table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -31072,12 +31072,12 @@ exports[`Selectable table 1`] = `
   display: block;
   vertical-align: top;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -31210,7 +31210,7 @@ exports[`Selectable table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -31451,7 +31451,7 @@ exports[`Selectable table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -36840,12 +36840,12 @@ exports[`Selectable table 1`] = `
 `;
 
 exports[`Simple table aria-label 1`] = `
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -36965,7 +36965,7 @@ exports[`Simple table aria-label 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -37166,7 +37166,7 @@ exports[`Simple table aria-label 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -41729,12 +41729,12 @@ exports[`Simple table aria-label 1`] = `
 `;
 
 exports[`Simple table caption 1`] = `
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -41853,7 +41853,7 @@ exports[`Simple table caption 1`] = `
   variant={null}
 >
   <Provider
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -42053,7 +42053,7 @@ exports[`Simple table caption 1`] = `
     role="grid"
   >
     <table
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <caption>
@@ -46619,12 +46619,12 @@ exports[`Simple table caption 1`] = `
 `;
 
 exports[`Simple table header 1`] = `
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -46750,7 +46750,7 @@ exports[`Simple table header 1`] = `
     Header title
   </h4>
   <Provider
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -46950,7 +46950,7 @@ exports[`Simple table header 1`] = `
     role="grid"
   >
     <table
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -51554,12 +51554,12 @@ exports[`Sortable table 1`] = `
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -51684,7 +51684,7 @@ exports[`Sortable table 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -51886,7 +51886,7 @@ exports[`Sortable table 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -56546,15 +56546,15 @@ exports[`Table variants Breakpoint - grid 1`] = `
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table {
-  display: block;
+.pf-c-table.pf-m-grid {
+  display: grid;
   width: 100%;
-  background-color: #ffffff;
+  background-color: transparent;
 }
-.pf-c-table {
-  display: block;
+.pf-c-table.pf-m-grid {
+  display: grid;
   width: 100%;
-  background-color: #ffffff;
+  background-color: transparent;
 }
 
 <Table
@@ -56674,7 +56674,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid"
     columns={
       Array [
         Object {
@@ -56876,7 +56876,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid"
       role="grid"
     >
       <TableHeader
@@ -61536,12 +61536,12 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-lg {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-lg {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -61664,7 +61664,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-lg"
     columns={
       Array [
         Object {
@@ -61866,7 +61866,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-lg"
       role="grid"
     >
       <TableHeader
@@ -66526,12 +66526,12 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table {
+.pf-c-table.pf-m-grid-md {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -66654,7 +66654,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table"
+    className="pf-c-table pf-m-grid-md"
     columns={
       Array [
         Object {
@@ -66856,7 +66856,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table"
+      className="pf-c-table pf-m-grid-md"
       role="grid"
     >
       <TableHeader
@@ -71516,12 +71516,12 @@ exports[`Table variants Size - compact 1`] = `
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-table.pf-m-compact {
+.pf-c-table.pf-m-grid-md.pf-m-compact {
   display: block;
   width: 100%;
   background-color: #ffffff;
 }
-.pf-c-table.pf-m-compact {
+.pf-c-table.pf-m-grid-md.pf-m-compact {
   display: block;
   width: 100%;
   background-color: #ffffff;
@@ -71644,7 +71644,7 @@ exports[`Table variants Size - compact 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-compact"
+    className="pf-c-table pf-m-grid-md pf-m-compact"
     columns={
       Array [
         Object {
@@ -71846,7 +71846,7 @@ exports[`Table variants Size - compact 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-compact"
+      className="pf-c-table pf-m-grid-md pf-m-compact"
       role="grid"
     >
       <TableHeader
