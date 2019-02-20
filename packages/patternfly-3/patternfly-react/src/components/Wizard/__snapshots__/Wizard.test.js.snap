@@ -79,11 +79,13 @@ exports[`Wizard Pattern renders properly: Wizard pattern snapshot 1`] = `
       disabled={false}
       onClick={[Function]}
     >
-      Next
-      <Icon
-        name="angle-right"
-        type="fa"
-      />
+      <React.Fragment>
+        Next
+        <Icon
+          name="angle-right"
+          type="fa"
+        />
+      </React.Fragment>
     </Button>
   </WizardFooter>
 </Wizard>
@@ -214,7 +216,7 @@ exports[`Wizard main renders properly: Wizard main snapshot 1`] = `
 `;
 
 exports[`Wizard pattern body renders active step: Wizard pattern body renders active step snapshot 1`] = `
-<Fragment>
+<React.Fragment>
   <WizardSteps
     className=""
     steps={
@@ -268,7 +270,7 @@ exports[`Wizard pattern body renders active step: Wizard pattern body renders ac
       </WizardContents>
     </WizardMain>
   </WizardRow>
-</Fragment>
+</React.Fragment>
 `;
 
 exports[`Wizard pattern body renders empty if no steps and not loading: Wizard pattern body renders empty snapshot 1`] = `""`;

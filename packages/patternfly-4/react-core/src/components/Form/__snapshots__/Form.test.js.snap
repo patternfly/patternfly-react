@@ -10,7 +10,7 @@ exports[`Form component should render default form variant 1`] = `
   className="pf-c-form"
   noValidate={true}
 >
-  <ContextProvider
+  <[object Object]
     value={
       Object {
         "isHorizontal": false,
@@ -30,7 +30,7 @@ exports[`Form component should render horizontal form variant 1`] = `
   className="pf-c-form pf-m-horizontal"
   noValidate={true}
 >
-  <ContextProvider
+  <[object Object]
     value={
       Object {
         "isHorizontal": true,
