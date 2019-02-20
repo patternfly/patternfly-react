@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.29.14 (2019-02-20)
+
+
+### Bug Fixes
+
+* **login:** Add union types for backgroundImgSrc ([#1373](https://github.com/patternfly/patternfly-react/issues/1373)) ([79b4f20](https://github.com/patternfly/patternfly-react/commit/79b4f20))
+
+
+
+
+
 ## [2.29.13](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.12...patternfly-react@2.29.13) (2019-02-15)
 
 **Note:** Version bump only for package patternfly-react
