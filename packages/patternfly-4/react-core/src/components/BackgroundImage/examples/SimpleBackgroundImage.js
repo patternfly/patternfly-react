@@ -1,5 +1,5 @@
 import React from 'react';
-import { BackgroundImage, BackgroundImageSrc } from '../index';
+import { BackgroundImage, BackgroundImageSrc } from '../BackgroundImage';
 
 /**
  * Note: When using background-filter.svg, you must also include #image_overlay as the fragment identifier
