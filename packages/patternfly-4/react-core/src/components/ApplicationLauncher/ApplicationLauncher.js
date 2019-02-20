@@ -49,41 +49,55 @@ class ApplicationLauncher extends React.Component {
   }
 
   render() {
-    const {'aria-label': ariaLabel, children, dropdownItems, className, isOpen, onSelect, onToggle, ...props} = this.props;
-    return <GenerateId>{randomId => (
-      <div
-        className={css(
-          styles.appLauncher,
-          isOpen && styles.modifiers.expanded,
-          className
+    const {
+      'aria-label': ariaLabel,
+      children,
+      dropdownItems,
+      className,
+      isOpen,
+      onSelect,
+      onToggle,
+      ...props
+    } = this.props;
+    return (
+      <GenerateId>
+        {randomId => (
+          <div
+            className={css(styles.appLauncher, isOpen && styles.modifiers.expanded, className)}
+            ref={ref => {
+              this.parentRef = ref;
+            }}
+          >
+            {Children.map(
+              <Toggle id={`pf-toggle-id-${randomId}`} aria-label={ariaLabel} onToggle={onToggle}>
+                <ThIcon />
+              </Toggle>,
+              oneToggle =>
+                cloneElement(oneToggle, {
+                  parentRef: this.parentRef,
+                  id: randomId,
+                  isOpen,
+                  isPlain: true,
+                  ariaHasPopup: true,
+                  onEnter: this.onEnter
+                })
+            )}
+            {isOpen && (
+              <DropdownContext.Provider value={event => onSelect && onSelect(event)}>
+                <ApplicationLauncherMenu
+                  isOpen={isOpen}
+                  position="left"
+                  aria-labelledby={ariaLabel}
+                  openedOnEnter={this.openedOnEnter}
+                >
+                  {dropdownItems}
+                </ApplicationLauncherMenu>
+              </DropdownContext.Provider>
+            )}
+          </div>
         )}
-        ref={ref => {
-            this.parentRef = ref;}}>
-        {Children.map(
-          <Toggle id={`pf-toggle-id-${randomId}`} aria-label={ariaLabel} onToggle={onToggle}><ThIcon /></Toggle>, oneToggle =>
-            cloneElement(oneToggle, {
-              parentRef: this.parentRef,
-              id: randomId,
-              isOpen,
-              isPlain: true,
-              ariaHasPopup: true,
-              onEnter: this.onEnter
-          })
-        )}
-        {isOpen && (
-            <DropdownContext.Provider value={event => onSelect && onSelect(event)}>
-        <ApplicationLauncherMenu
-          isOpen={isOpen}
-          position="left"
-          aria-labelledby={ariaLabel}
-          openedOnEnter={this.openedOnEnter}
-        >
-          {dropdownItems}
-        </ApplicationLauncherMenu>
-        </DropdownContext.Provider>
-          )}
-      </div>
-    )}</GenerateId>;
+      </GenerateId>
+    );
   }
 }
 

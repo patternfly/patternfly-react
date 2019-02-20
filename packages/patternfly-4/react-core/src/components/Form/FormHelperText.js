@@ -6,9 +6,9 @@ import React from 'react';
 const propTypes = {
   /** Content rendered inside the Helper Text Item */
   children: PropTypes.node,
-  /** Adds error styling to the Helper Text  **/
+  /** Adds error styling to the Helper Text  * */
   isError: PropTypes.bool,
-  /** Hides the helper text **/
+  /** Hides the helper text * */
   isHidden: PropTypes.bool,
   /** Additional classes added to the Helper Text  Item  */
   className: PropTypes.string,
@@ -20,14 +20,22 @@ const defaultProps = {
   children: null,
   isError: false,
   isHidden: true,
-  className: '',
+  className: ''
 };
 
-const FormHelperText = ({ className, isError, isHidden, children, ...props }) => {
-  return <p className={css(styles.formHelperText, getModifier(styles, isError && 'error'), getModifier(styles, isHidden && 'hidden'), className) } {...props}>
+const FormHelperText = ({ className, isError, isHidden, children, ...props }) => (
+  <p
+    className={css(
+      styles.formHelperText,
+      getModifier(styles, isError && 'error'),
+      getModifier(styles, isHidden && 'hidden'),
+      className
+    )}
+    {...props}
+  >
     {children}
   </p>
-};
+);
 
 FormHelperText.propTypes = propTypes;
 FormHelperText.defaultProps = defaultProps;

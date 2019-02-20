@@ -5,10 +5,7 @@ class UnreadBadge extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Badge>7</Badge>{' '}
-        <Badge>24</Badge>{' '}
-        <Badge>240</Badge>{' '}
-        <Badge>999+</Badge>
+        <Badge>7</Badge> <Badge>24</Badge> <Badge>240</Badge> <Badge>999+</Badge>
       </React.Fragment>
     );
   }

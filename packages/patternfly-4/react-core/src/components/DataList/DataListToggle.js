@@ -13,12 +13,12 @@ const DataListToggle = ({
   id,
   ...props
 }) => (
-    <div className={css(styles.dataListToggle, className)} {...props}>
-      <Button id={id} variant="plain" aria-label={ariaLabel} aria-labelledby={ariaLabelledBy} aria-expanded={isExpanded}>
-        <AngleRightIcon />
-      </Button>
-    </div>
-  );
+  <div className={css(styles.dataListToggle, className)} {...props}>
+    <Button id={id} variant="plain" aria-label={ariaLabel} aria-labelledby={ariaLabelledBy} aria-expanded={isExpanded}>
+      <AngleRightIcon />
+    </Button>
+  </div>
+);
 
 DataListToggle.propTypes = {
   /** Additional classes added to the DataList cell */

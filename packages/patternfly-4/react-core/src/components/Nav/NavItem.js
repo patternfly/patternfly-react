@@ -57,10 +57,12 @@ const NavItem = ({
         <a
           href={to}
           onClick={e => context.onSelect(e, groupId, itemId, to, preventDefault, onClick)}
-          className={css(styles.navLink,
+          className={css(
+            styles.navLink,
             isActive && styles.modifiers.current,
             isSeparated && styles.modifiers.separator,
-            className)}
+            className
+          )}
           aria-current={isActive ? 'page' : null}
           {...rest}
         >
@@ -80,7 +82,8 @@ const NavItem = ({
             styles.navLink,
             isActive && styles.modifiers.current,
             isSeparated && styles.modifiers.separator,
-            className),
+            className
+          ),
           'aria-current': isActive ? 'page' : null
         })
       }

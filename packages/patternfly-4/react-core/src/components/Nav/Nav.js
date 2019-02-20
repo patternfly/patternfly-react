@@ -61,9 +61,17 @@ class Nav extends React.Component {
           onToggle: (event, groupId, expanded) => this.onToggle(event, groupId, expanded)
         }}
       >
-        <nav className={css(styles.nav, className)}
-             aria-label={ariaLabel === '' ? typeof this.props.children.props !== 'undefined' && this.props.children.props.variant === 'tertiary' ? 'Local' : 'Global' : ariaLabel}
-             {...props}>
+        <nav
+          className={css(styles.nav, className)}
+          aria-label={
+            ariaLabel === ''
+              ? typeof this.props.children.props !== 'undefined' && this.props.children.props.variant === 'tertiary'
+                ? 'Local'
+                : 'Global'
+              : ariaLabel
+          }
+          {...props}
+        >
           {children}
         </nav>
       </NavContext.Provider>

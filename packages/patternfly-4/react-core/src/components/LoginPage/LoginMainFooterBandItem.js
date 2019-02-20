@@ -14,14 +14,14 @@ const propTypes = {
 
 const defaultProps = {
   children: null,
-  className: '',
+  className: ''
 };
 
-const LoginMainFooterBandItem = ({ className, children, ...props }) => {
-  return <p className={css(styles.loginMainFooterBand + "-item", className)} {...props}>
-        {children}
-    </p>
-};
+const LoginMainFooterBandItem = ({ className, children, ...props }) => (
+  <p className={css(`${styles.loginMainFooterBand}-item`, className)} {...props}>
+    {children}
+  </p>
+);
 
 LoginMainFooterBandItem.propTypes = propTypes;
 LoginMainFooterBandItem.defaultProps = defaultProps;

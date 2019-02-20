@@ -55,7 +55,7 @@ const Alert = ({
   variantLabel = variantLabel || capitalize(AlertVariant[variant]);
   const readerTitle = (
     <React.Fragment>
-      <span className={css(accessibleStyles.screenReader)}>{variantLabel + " alert:"}</span>
+      <span className={css(accessibleStyles.screenReader)}>{`${variantLabel} alert:`}</span>
       {title}
     </React.Fragment>
   );
@@ -71,8 +71,9 @@ const Alert = ({
           <p>{children}</p>
         </div>
       )}
-      {action && <div className={css(styles.alertAction, className)}>{React.cloneElement(action,
-           {title, variantLabel})}</div>}
+      {action && (
+        <div className={css(styles.alertAction, className)}>{React.cloneElement(action, { title, variantLabel })}</div>
+      )}
     </div>
   );
 };

@@ -9,17 +9,13 @@ class SimpleDataList extends React.Component {
           <DataListCell>
             <span id="simple-item1">Primary content</span>
           </DataListCell>
-          <DataListCell>
-            Secondary content
-          </DataListCell>
+          <DataListCell>Secondary content</DataListCell>
         </DataListItem>
         <DataListItem aria-labelledby="simple-item2">
           <DataListCell>
             <span id="simple-item2">Second list item title</span>
           </DataListCell>
-          <DataListCell>
-            Secondary content
-          </DataListCell>
+          <DataListCell>Secondary content</DataListCell>
         </DataListItem>
       </DataList>
     );

@@ -68,15 +68,11 @@ jobs:
       script:
         - yarn build:prdocs
         - .circleci/clean_cache.sh
-    - name: Lint
+    - name: Lint and Stylelint
       install: skip
       script:
-        - yarn lint
-    - name: Stylelint
-      install: skip
-      script:
+        - yarn lint || true
         - yarn lint:style
-    
     
     - stage: Deploy
       name: NPM and Github Release

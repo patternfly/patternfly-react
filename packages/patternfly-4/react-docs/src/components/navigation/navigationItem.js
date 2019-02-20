@@ -27,7 +27,8 @@ const NavigationItem = ({ to, children, pkg, components }) => (
       className={css(styles.navigationItem)}
       activeClassName={css(styles.active)}
       to={to}
-      aria-describedby={navItemDescriptorId(children)}>
+      aria-describedby={navItemDescriptorId(children)}
+    >
       {children}
     </Link>
     <a
@@ -36,7 +37,8 @@ const NavigationItem = ({ to, children, pkg, components }) => (
       rel="noopener noreferrer"
       href={`${pathPrefix}${getPkgPrefix(pkg)}`}
       id={navItemDescriptorId(children)}
-      aria-label={navItemDescriptor(pkg)}>
+      aria-label={navItemDescriptor(pkg)}
+    >
       {pkg}
     </a>
     {components &&

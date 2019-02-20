@@ -13,12 +13,12 @@ class NoLabelSwitch extends React.Component {
   render() {
     const { isChecked } = this.state;
     return (
-        <Switch
-          id="no-label-switch-on"
-          aria-label="no label checked switch example"
-          isChecked={isChecked}
-          onChange={this.handleChange}
-        />
+      <Switch
+        id="no-label-switch-on"
+        aria-label="no label checked switch example"
+        isChecked={isChecked}
+        onChange={this.handleChange}
+      />
     );
   }
 }

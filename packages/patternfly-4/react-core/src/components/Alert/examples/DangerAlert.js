@@ -26,11 +26,7 @@ class DangerAlert extends React.Component {
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
-        <Alert
-          variant="danger"
-          title="Danger alert title"
-          action={<AlertActionLink>Action Button</AlertActionLink>}
-        />
+        <Alert variant="danger" title="Danger alert title" action={<AlertActionLink>Action Button</AlertActionLink>} />
         <Alert variant="danger" title="Danger alert title" />
       </React.Fragment>
     );

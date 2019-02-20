@@ -112,7 +112,6 @@ class ComponentDocs extends React.PureComponent {
 ComponentDocs.propTypes = propTypes;
 ComponentDocs.defaultProps = defaultProps;
 
-
 export default props => (
   <StaticQuery
     query={graphql`

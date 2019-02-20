@@ -95,9 +95,21 @@ class DropdownItem extends React.Component {
     }
 
     if (isAppLauncher) {
-      classes = css(appLauncherStyles.appLauncherMenuItem, isDisabled && appLauncherStyles.modifiers.disabled, isHovered && appLauncherStyles.modifiers.hover, className);
+      classes = css(
+        appLauncherStyles.appLauncherMenuItem,
+        isDisabled && appLauncherStyles.modifiers.disabled,
+        isHovered && appLauncherStyles.modifiers.hover,
+        className
+      );
     } else {
-      this.props.role === "separator" ?  classes = className : classes = css(dropdownStyles.dropdownMenuItem, isDisabled && dropdownStyles.modifiers.disabled, isHovered && dropdownStyles.modifiers.hover, className);
+      this.props.role === 'separator'
+        ? (classes = className)
+        : (classes = css(
+            dropdownStyles.dropdownMenuItem,
+            isDisabled && dropdownStyles.modifiers.disabled,
+            isHovered && dropdownStyles.modifiers.hover,
+            className
+          ));
     }
     return (
       <DropdownContext.Consumer>
@@ -118,7 +130,7 @@ class DropdownItem extends React.Component {
                       onClick && onClick(event);
                       onSelect && onSelect(event);
                     }
-                  },
+                  }
                 })
               )
             ) : (

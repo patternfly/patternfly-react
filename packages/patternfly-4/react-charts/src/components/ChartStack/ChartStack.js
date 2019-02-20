@@ -12,7 +12,7 @@ export const propTypes = {
 };
 
 // Note: VictoryStack.getChildren & VictoryStack.role must be hoisted
-const ChartStack = ({children, ...props}) => (
+const ChartStack = ({ children, ...props }) => (
   <VictoryStack theme={ChartTheme.default} {...props}>
     {children}
   </VictoryStack>

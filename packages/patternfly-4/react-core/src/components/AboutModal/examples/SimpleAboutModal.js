@@ -3,7 +3,6 @@ import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patter
 import brandImg from './pf_mini_logo_white.svg';
 import logoImg from './pf_logo.svg';
 
-
 class SimpleAboutModal extends React.Component {
   state = {
     isModalOpen: false

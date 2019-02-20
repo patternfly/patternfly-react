@@ -21,58 +21,77 @@ const defaultProps = {
 class ContextBody extends React.Component {
   onRow = (row, props) => {
     const { onRowClick } = this.props;
-    return ({
+    return {
       isExpanded: row.isExpanded,
       isOpen: row.isOpen,
-      onClick: (event) => onRowClick(event, row, props)
-    });
-  }
+      onClick: event => onRowClick(event, row, props)
+    };
+  };
 
   parentsExpanded(parentId) {
     const { rows } = this.props;
-    return rows[parentId].hasOwnProperty('parent') ? this.parentsExpanded(rows[parentId].parent) : rows[parentId].isOpen;
+    return rows[parentId].hasOwnProperty('parent')
+      ? this.parentsExpanded(rows[parentId].parent)
+      : rows[parentId].isOpen;
   }
 
   mapCells = (row, rowKey) => {
     const { headerData } = this.props;
     let shiftKey = Boolean(headerData[0] && headerData[0].extraParams.onSelect);
     shiftKey += Boolean(headerData[0] && headerData[0].extraParams.onCollapse);
-    return ({
+    return {
       ...row,
-      ...row && (row.cells || row).reduce((acc, curr, key) => {
-        const currShift = shiftKey;
-        if (curr.props && curr.props.colSpan) {
-          shiftKey += shiftKey + curr.props && curr.props.colSpan - 1;
-        }
-        return ({
-          ...acc,
-          ...{
-            [headerData[currShift + key].property]: {
-              title: curr.title || curr,
-              props: {
-                isVisible: true,
-                ...curr.props
-              }
+      ...(row &&
+        (row.cells || row).reduce(
+          (acc, curr, key) => {
+            const currShift = shiftKey;
+            if (curr.props && curr.props.colSpan) {
+              shiftKey += shiftKey + curr.props && curr.props.colSpan - 1;
             }
-          }
-        })
-      }, { id: row.id !== undefined ? row.id : rowKey })
-    })
-  }
+            return {
+              ...acc,
+              ...{
+                [headerData[currShift + key].property]: {
+                  title: curr.title || curr,
+                  props: {
+                    isVisible: true,
+                    ...curr.props
+                  }
+                }
+              }
+            };
+          },
+          { id: row.id !== undefined ? row.id : rowKey }
+        ))
+    };
+  };
 
   render() {
     const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
-    const mappedRows = headerData.length !== 0 && rows.map((oneRow, oneRowKey) => ({
-      ...this.mapCells(oneRow, oneRowKey),
-      ...oneRow.parent !== undefined ? {
-        isExpanded: this.parentsExpanded(oneRow.parent) && rows[oneRow.parent].isOpen
-      } : {},
-    }));
+    const mappedRows =
+      headerData.length !== 0 &&
+      rows.map((oneRow, oneRowKey) => ({
+        ...this.mapCells(oneRow, oneRowKey),
+        ...(oneRow.parent !== undefined
+          ? {
+              isExpanded: this.parentsExpanded(oneRow.parent) && rows[oneRow.parent].isOpen
+            }
+          : {})
+      }));
     return (
       <React.Fragment>
-        {mappedRows && <Body {...props} mappedRows={mappedRows} rows={mappedRows} onRow={this.onRow} rowKey={rowKey} className={className} />}
+        {mappedRows && (
+          <Body
+            {...props}
+            mappedRows={mappedRows}
+            rows={mappedRows}
+            onRow={this.onRow}
+            rowKey={rowKey}
+            className={className}
+          />
+        )}
       </React.Fragment>
-    )
+    );
   }
 }
 
@@ -80,7 +99,7 @@ const TableBody = props => (
   <TableContext.Consumer>
     {({ headerData, rows }) => <ContextBody {...props} headerData={headerData} rows={rows} />}
   </TableContext.Consumer>
-)
+);
 
 TableBody.propTypes = propTypes;
 TableBody.defaultProps = defaultProps;

@@ -20,18 +20,16 @@ const defaultProps = {
   children: null,
   href: '',
   target: '',
-  className: '',
+  className: ''
 };
 
-const LoginMainFooterLinksItem = ({ className, children, href, target, ...props }) => {
-  return <li className={css(styles.loginMainFooterLinksItem, className)} {...props}>
-    <a className={css(styles.loginMainFooterLinksItemLink)}
-       href={href}
-       target={target}>
+const LoginMainFooterLinksItem = ({ className, children, href, target, ...props }) => (
+  <li className={css(styles.loginMainFooterLinksItem, className)} {...props}>
+    <a className={css(styles.loginMainFooterLinksItemLink)} href={href} target={target}>
       {children}
-      </a>
+    </a>
   </li>
-};
+);
 
 LoginMainFooterLinksItem.propTypes = propTypes;
 LoginMainFooterLinksItem.defaultProps = defaultProps;

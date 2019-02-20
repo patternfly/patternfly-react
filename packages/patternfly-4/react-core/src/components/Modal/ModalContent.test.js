@@ -31,7 +31,7 @@ test('Modal Content Test with header', () => {
 
 test('Modal Content Test with footer', () => {
   const view = shallow(
-    <ModalContent title="Test Modal Content title" id="id" isOpen actions={["Testing"]}>
+    <ModalContent title="Test Modal Content title" id="id" isOpen actions={['Testing']}>
       This is a ModalBox header
     </ModalContent>
   );
@@ -49,7 +49,7 @@ test('Modal Content test without footer', () => {
 
 test('Modal Content Test with header and footer', () => {
   const view = shallow(
-    <ModalContent title="Test Modal Content title" header="Testing header" id="id" isOpen actions={["Testing footer"]}>
+    <ModalContent title="Test Modal Content title" header="Testing header" id="id" isOpen actions={['Testing footer']}>
       This is a ModalBox header
     </ModalContent>
   );
@@ -61,7 +61,7 @@ test('Modal Content Test with onclose', () => {
     <ModalContent
       title="Test Modal Content title"
       header="Testing header"
-      actions={["Testing footer"]}
+      actions={['Testing footer']}
       isLarge
       onclose={() => undefined}
       id="id"

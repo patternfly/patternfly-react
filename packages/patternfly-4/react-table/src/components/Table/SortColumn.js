@@ -9,7 +9,7 @@ const propTypes = {
   className: PropTypes.string,
   isSortedBy: PropTypes.bool,
   onSort: PropTypes.func,
-  sortDirection: PropTypes.string,
+  sortDirection: PropTypes.string
 };
 const defaultProps = {
   children: null,
@@ -25,7 +25,11 @@ export const SortByDirection = {
 };
 
 const SortColumn = ({ isSortedBy, children, className, onSort, sortDirection, ...props }) => {
-  const SortedByIcon = isSortedBy ? (sortDirection === 'asc' ? LongArrowAltUpIcon : LongArrowAltDownIcon) : ArrowsAltVIcon;
+  const SortedByIcon = isSortedBy
+    ? sortDirection === 'asc'
+      ? LongArrowAltUpIcon
+      : LongArrowAltDownIcon
+    : ArrowsAltVIcon;
   return (
     <button {...props} className={css(className)} onClick={event => onSort && onSort(event)}>
       {children}

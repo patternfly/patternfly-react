@@ -3,15 +3,9 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class ActionsTable extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      columns: [
-        { title: 'Repositories' },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces',
-        'Last Commit'
-      ],
+      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five']
@@ -38,7 +32,7 @@ class ActionsTable extends React.Component {
         {
           title: 'Third action',
           onClick: (event, rowId) => console.log('clicked on Third action, on row: ', rowId)
-        },
+        }
       ]
     };
   }

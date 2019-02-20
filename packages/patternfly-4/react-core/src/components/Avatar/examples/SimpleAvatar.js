@@ -6,7 +6,6 @@ class SimpleAvatar extends React.Component {
   render() {
     return <Avatar src={avatarImg} alt="avatar" />;
   }
-
 }
 
 export default SimpleAvatar;

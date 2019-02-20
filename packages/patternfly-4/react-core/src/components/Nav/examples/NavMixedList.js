@@ -23,24 +23,60 @@ class NavMixedList extends React.Component {
             Link 1 (not expandable)
           </NavItem>
           <NavExpandable title="Link 2 - expandable" groupId="grp-1" isActive={activeGroup === 'grp-1'}>
-            <NavItem preventDefault to="#mixed-2" groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
+            <NavItem
+              preventDefault
+              to="#mixed-2"
+              groupId="grp-1"
+              itemId="grp-1_itm-1"
+              isActive={activeItem === 'grp-1_itm-1'}
+            >
               Link 1
             </NavItem>
-            <NavItem preventDefault to="#mixed-3" groupId="grp-1" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
+            <NavItem
+              preventDefault
+              to="#mixed-3"
+              groupId="grp-1"
+              itemId="grp-1_itm-2"
+              isActive={activeItem === 'grp-1_itm-2'}
+            >
               Link 2
             </NavItem>
-            <NavItem preventDefault to="#mixed-4" groupId="grp-1" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
+            <NavItem
+              preventDefault
+              to="#mixed-4"
+              groupId="grp-1"
+              itemId="grp-1_itm-3"
+              isActive={activeItem === 'grp-1_itm-3'}
+            >
               Link 3
             </NavItem>
           </NavExpandable>
           <NavExpandable title="Link 3 - expandable" groupId="grp-2" isActive={activeGroup === 'grp-2'}>
-            <NavItem preventDefault to="#mixed-5" groupId="grp-2" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
+            <NavItem
+              preventDefault
+              to="#mixed-5"
+              groupId="grp-2"
+              itemId="grp-2_itm-1"
+              isActive={activeItem === 'grp-2_itm-1'}
+            >
               Link 1
             </NavItem>
-            <NavItem preventDefault to="#mixed-6" groupId="grp-2" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
+            <NavItem
+              preventDefault
+              to="#mixed-6"
+              groupId="grp-2"
+              itemId="grp-2_itm-2"
+              isActive={activeItem === 'grp-2_itm-2'}
+            >
               Link 2
             </NavItem>
-            <NavItem preventDefault to="#mixed-7" groupId="grp-2" itemId="grp-2_itm-3" isActive={activeItem === 'grp-2_itm-3'}>
+            <NavItem
+              preventDefault
+              to="#mixed-7"
+              groupId="grp-2"
+              itemId="grp-2_itm-3"
+              isActive={activeItem === 'grp-2_itm-3'}
+            >
               Link 3
             </NavItem>
           </NavExpandable>

@@ -3,15 +3,9 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class SelectableTable extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      columns: [
-        { title: 'Repositories' },
-        'Branches',
-        { title: 'Pull requests' },
-        'Workspaces',
-        'Last Commit'
-      ],
+      columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
       rows: [
         {
           cells: ['one', 'two', 'a', 'four', 'five']
@@ -33,7 +27,7 @@ class SelectableTable extends React.Component {
       rows = this.state.rows.map(oneRow => {
         oneRow.selected = isSelected;
         return oneRow;
-      })
+      });
     } else {
       rows = [...this.state.rows];
       rows[rowId].selected = isSelected;

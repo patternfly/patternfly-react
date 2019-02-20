@@ -30,7 +30,13 @@ class NavExpandableList extends React.Component {
       <Nav onSelect={this.onSelect} onToggle={this.onToggle}>
         <NavList>
           <NavExpandable title="Link 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
-            <NavItem preventDefault to="#expandable-1" groupId="grp-1" itemId="grp-1_itm-1" isActive={activeItem === 'grp-1_itm-1'}>
+            <NavItem
+              preventDefault
+              to="#expandable-1"
+              groupId="grp-1"
+              itemId="grp-1_itm-1"
+              isActive={activeItem === 'grp-1_itm-1'}
+            >
               Subnav Link 1
             </NavItem>
             <NavItem
@@ -38,7 +44,7 @@ class NavExpandableList extends React.Component {
               groupId="grp-1"
               itemId="grp-1_itm-2"
               isActive={activeItem === 'grp-1_itm-2'}
-              isSeparated={true}
+              isSeparated
             >
               Subnav Link 2 with separator
             </NavItem>
@@ -56,13 +62,31 @@ class NavExpandableList extends React.Component {
             >
               Custom onClick
             </NavItem>
-            <NavItem preventDefault to="#expandable-4" groupId="grp-2" itemId="grp-2_itm-1" isActive={activeItem === 'grp-2_itm-1'}>
+            <NavItem
+              preventDefault
+              to="#expandable-4"
+              groupId="grp-2"
+              itemId="grp-2_itm-1"
+              isActive={activeItem === 'grp-2_itm-1'}
+            >
               Subnav Link 1
             </NavItem>
-            <NavItem preventDefault to="#expandable-5" groupId="grp-2" itemId="grp-2_itm-2" isActive={activeItem === 'grp-2_itm-2'}>
+            <NavItem
+              preventDefault
+              to="#expandable-5"
+              groupId="grp-2"
+              itemId="grp-2_itm-2"
+              isActive={activeItem === 'grp-2_itm-2'}
+            >
               Subnav Link 2
             </NavItem>
-            <NavItem preventDefault to="#expandable-6" groupId="grp-2" itemId="grp-2_itm-3" isActive={activeItem === 'grp-2_itm-3'}>
+            <NavItem
+              preventDefault
+              to="#expandable-6"
+              groupId="grp-2"
+              itemId="grp-2_itm-3"
+              isActive={activeItem === 'grp-2_itm-3'}
+            >
               Subnav Link 3
             </NavItem>
           </NavExpandable>

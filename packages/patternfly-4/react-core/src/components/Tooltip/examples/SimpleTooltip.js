@@ -2,7 +2,6 @@ import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
 
 class SimpleTooltip extends React.Component {
-
   render() {
     return (
       <Tooltip

@@ -13,7 +13,7 @@ export default (
     rowData
   }
 ) => {
-  if ((rowData && rowData.hasOwnProperty('parent')) && !rowData.showSelect) {
+  if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect) {
     return {
       component: 'td',
       isVisible: true,

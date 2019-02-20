@@ -13,12 +13,8 @@ export const propTypes = {
 };
 
 // Note: VictoryLegend.role must be hoisted
-const container = (
-  <ChartContainer responsive={false}/>
-);
-const ChartLegend = (props) => (
-  <VictoryLegend containerComponent={container} theme={ChartTheme.default} {...props}/>
-);
+const container = <ChartContainer responsive={false} />;
+const ChartLegend = props => <VictoryLegend containerComponent={container} theme={ChartTheme.default} {...props} />;
 hoistNonReactStatics(ChartLegend, VictoryLegend);
 ChartLegend.propTypes = propTypes;
 

@@ -3,7 +3,7 @@ import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-tabl
 
 class CellHeader extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       columns: [
         { title: 'Header cell', cellTransforms: [headerCol('selectable')] },

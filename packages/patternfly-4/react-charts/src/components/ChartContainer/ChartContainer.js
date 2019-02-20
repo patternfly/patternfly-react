@@ -11,9 +11,7 @@ export const propTypes = {
 };
 
 // Note: VictoryContainer.role must be hoisted
-const ChartContainer = (props) => (
-  <VictoryContainer {...props}/>
-);
+const ChartContainer = props => <VictoryContainer {...props} />;
 hoistNonReactStatics(ChartContainer, VictoryContainer);
 ChartContainer.propTypes = propTypes;
 

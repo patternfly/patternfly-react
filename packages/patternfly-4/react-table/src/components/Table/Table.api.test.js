@@ -16,8 +16,11 @@ describe('Collapsible table', () => {
         <TableBody />
       </Table>
     );
-    view.find('.pf-c-table__toggle button').first().simulate('click');
-    expect(onCollapse.mock.calls.length).toBe(1);
+    view
+      .find('.pf-c-table__toggle button')
+      .first()
+      .simulate('click');
+    expect(onCollapse.mock.calls).toHaveLength(1);
   });
 });
 
@@ -30,8 +33,11 @@ describe('Selectable table', () => {
         <TableBody />
       </Table>
     );
-    view.find('tbody .pf-c-table__check input').first().simulate('change');
-    expect(onSelect.mock.calls.length).toBe(1);
+    view
+      .find('tbody .pf-c-table__check input')
+      .first()
+      .simulate('change');
+    expect(onSelect.mock.calls).toHaveLength(1);
   });
 });
 
@@ -45,9 +51,12 @@ describe('Sortable table', () => {
       <Table caption="Sortable table" onSort={onSort} sortBy={sortBy} cells={header} rows={rows}>
         <TableHeader />
         <TableBody />
-      </Table >
+      </Table>
     );
-    view.find('thead .pf-c-table__sort button').first().simulate('click');
-    expect(onSort.mock.calls.length).toBe(1);
+    view
+      .find('thead .pf-c-table__sort button')
+      .first()
+      .simulate('click');
+    expect(onSort.mock.calls).toHaveLength(1);
   });
 });

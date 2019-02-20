@@ -72,10 +72,11 @@ class SimpleToolbarDemo extends React.Component {
           <DropdownItem key="item-1">Item 1</DropdownItem>,
           <DropdownItem key="item2">Item 2</DropdownItem>,
           <DropdownItem key="item-3">Item 3</DropdownItem>,
-          <DropdownItem isDisabled key="all">All</DropdownItem>
+          <DropdownItem isDisabled key="all">
+            All
+          </DropdownItem>
         ]}
-      >
-      </Dropdown>
+      />
     );
   };
   buildKebab = () => {
@@ -91,14 +92,17 @@ class SimpleToolbarDemo extends React.Component {
         isPlain
         dropdownItems={[
           <DropdownItem key="link">Link</DropdownItem>,
-          <DropdownItem component="button" key="action-button">Action</DropdownItem>,
-          <DropdownItem isDisabled key="disabled-link">Disabled Link</DropdownItem>,
+          <DropdownItem component="button" key="action-button">
+            Action
+          </DropdownItem>,
+          <DropdownItem isDisabled key="disabled-link">
+            Disabled Link
+          </DropdownItem>,
           <DropdownItem isDisabled component="button" key="disabled-button">
             Disabled Action
           </DropdownItem>
         ]}
-      >
-      </Dropdown>
+      />
     );
   };
   render() {

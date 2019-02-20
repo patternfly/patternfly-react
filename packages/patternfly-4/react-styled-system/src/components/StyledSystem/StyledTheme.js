@@ -287,8 +287,10 @@ export const StyledTheme = {
     bg_light_300: global_BackgroundColor_light_300 && global_BackgroundColor_light_300.var,
     bg_dark_100: global_BackgroundColor_dark_100 && global_BackgroundColor_dark_100.var,
     bg_dark_200: global_BackgroundColor_dark_200 && global_BackgroundColor_dark_200.var,
-    bg_dark_transparent_100: global_BackgroundColor_dark_transparent_100 && global_BackgroundColor_dark_transparent_100.var,
-    bg_dark_transparent_200: global_BackgroundColor_dark_transparent_200 && global_BackgroundColor_dark_transparent_200.var,
+    bg_dark_transparent_100:
+      global_BackgroundColor_dark_transparent_100 && global_BackgroundColor_dark_transparent_100.var,
+    bg_dark_transparent_200:
+      global_BackgroundColor_dark_transparent_200 && global_BackgroundColor_dark_transparent_200.var,
     color_100: global_Color_100 && global_Color_100.var,
     color_200: global_Color_200 && global_Color_200.var,
     light_100: global_Color_light_100 && global_Color_light_100.var,

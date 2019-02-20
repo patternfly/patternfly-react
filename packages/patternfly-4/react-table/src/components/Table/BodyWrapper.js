@@ -16,21 +16,19 @@ class BodyWrapper extends Component {
             </tbody>
           ))}
         </Fragment>
-      )
+      );
     }
-    return (
-      <tbody {...props} />
-    )
+    return <tbody {...props} />;
   }
 }
 
 BodyWrapper.propTypes = {
   rows: PropTypes.array,
   onCollapse: PropTypes.func
-}
+};
 
 BodyWrapper.defaultProps = {
   rows: []
-}
+};
 
 export default BodyWrapper;
