@@ -21,9 +21,7 @@ exports[`BreadcrumbHeading component should pass classname 1`] = `
   <h1
     className="pf-c-breadcrumb__heading"
   >
-    <React.Fragment>
-      Item
-    </React.Fragment>
+    Item
   </h1>
 </li>
 `;
@@ -50,9 +48,7 @@ exports[`BreadcrumbHeading component should pass custom id 1`] = `
   <h1
     className="pf-c-breadcrumb__heading"
   >
-    <React.Fragment>
-      Item
-    </React.Fragment>
+    Item
   </h1>
 </li>
 `;
@@ -120,9 +116,7 @@ exports[`BreadcrumbHeading component should render default breadcrumbHeading 1`]
   <h1
     className="pf-c-breadcrumb__heading"
   >
-    <React.Fragment>
-      Item
-    </React.Fragment>
+    Item
   </h1>
 </li>
 `;

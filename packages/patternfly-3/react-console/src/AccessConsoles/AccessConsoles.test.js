@@ -71,7 +71,7 @@ test('AccessConsoles with preselected SerialConsole', () => {
   expect(wrapper.find('SerialConsoleConnected')).toHaveLength(1);
 
   const button = wrapper.find('button #console-type-selector');
-  expect(button).toHaveLength(1);
+  expect(button).toHaveLength(1); // bad
   const consoleItems = wrapper.find('ul li');
   expect(consoleItems).toHaveLength(1); // single value only
 });
@@ -89,7 +89,7 @@ test('AccessConsoles switching SerialConsole and VncConsole', () => {
   expect(wrapper.find('MyVncConsoleTestWrapper')).toHaveLength(0);
 
   const button = wrapper.find('button #console-type-selector');
-  expect(button).toHaveLength(1);
+  expect(button).toHaveLength(1); // bad
   button.simulate('click');
   expect(wrapper.find('SerialConsole')).toHaveLength(0);
 
@@ -130,7 +130,7 @@ test('AccessConsoles default setting', () => {
     </AccessConsoles>
   );
   expect(wrapperKeepConnection.find('.console-selector-pf-disconnect-switch')).toHaveLength(0); // not rendered when no type selected
-  wrapperKeepConnection.find('button #console-type-selector').simulate('click');
+  wrapperKeepConnection.find('button #console-type-selector').simulate('click'); // bad
   wrapperKeepConnection
     .find('ul li')
     .first()
@@ -150,7 +150,7 @@ test('AccessConsoles disconnects when switching types', () => {
   expect(wrapper.find('SerialConsole')).toHaveLength(0);
   expect(wrapper.find('MyVncConsoleTestWrapper')).toHaveLength(0);
 
-  wrapper.find('button #console-type-selector').simulate('click');
+  wrapper.find('button #console-type-selector').simulate('click'); // bad
   wrapper
     .find('ul li')
     .at(1)
@@ -182,7 +182,7 @@ test('AccessConsoles keeps connection when switching types', () => {
   expect(wrapper.find('SerialConsole')).toHaveLength(0);
   expect(wrapper.find('MyVncConsoleTestWrapper')).toHaveLength(0);
 
-  wrapper.find('button #console-type-selector').simulate('click');
+  wrapper.find('button #console-type-selector').simulate('click'); // bad
   wrapper
     .find('ul li')
     .at(1)
