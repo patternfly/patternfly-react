@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.21.36](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.21.35...@patternfly/react-docs@3.21.36) (2019-02-20)
+
+
+### Bug Fixes
+
+* **lint:** fix linting glob and auto-fixable linter errors  ([#1256](https://github.com/patternfly/patternfly-react/issues/1256)) ([#1409](https://github.com/patternfly/patternfly-react/issues/1409)) ([0b637fe](https://github.com/patternfly/patternfly-react/commit/0b637fe))
+
+
+
+
+
 ## [3.21.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.21.34...@patternfly/react-docs@3.21.35) (2019-02-19)
 
 **Note:** Version bump only for package @patternfly/react-docs

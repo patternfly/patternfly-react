@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.0.4...@patternfly/react-charts@2.0.5) (2019-02-20)
+
+
+### Bug Fixes
+
+* **lint:** fix linting glob and auto-fixable linter errors  ([#1256](https://github.com/patternfly/patternfly-react/issues/1256)) ([#1409](https://github.com/patternfly/patternfly-react/issues/1409)) ([0b637fe](https://github.com/patternfly/patternfly-react/commit/0b637fe))
+
+
+
+
+
 ## [2.0.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.0.3...@patternfly/react-charts@2.0.4) (2019-02-19)
 
 **Note:** Version bump only for package @patternfly/react-charts
