@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/ChipGroup/chip-group.css';
 import { Chip } from './index';
-import { fillTemplate } from '../../helpers/util.ts';
+import { fillTemplate } from '../../helpers/index.ts';
 
 class ChipGroup extends React.Component {
   state = {
