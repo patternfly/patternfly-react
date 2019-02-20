@@ -9,7 +9,7 @@ For an overview of the project structure please refer to the [Gatsby documentati
 ## Install
 Run to install all the dependencies
 ```sh
-lerna bootstrap
+yarn install
 ```
 
 ## Running
@@ -21,7 +21,7 @@ yarn build && yarn start:pf4
 ## Building
 To build the site.
 ```sh
-yarn build:site
+yarn build:prdocs
 ```
 
 ## Live examples
