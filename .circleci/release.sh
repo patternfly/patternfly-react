@@ -17,5 +17,5 @@ git checkout master
 
 # helpful for debugging any lerna EUNCOMMIT errors
 git rev-parse HEAD
-yarn run lerna changed
+yarn run lerna changed || true
 yarn lerna:publish
