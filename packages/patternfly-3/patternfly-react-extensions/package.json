@@ -1,6 +1,6 @@
 {
   "name": "patternfly-react-extensions",
-  "version": "2.16.16",
+  "version": "2.16.17",
   "private": false,
   "description": "This library provides an extended set of React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
@@ -41,7 +41,7 @@
     "classnames": "^2.2.5",
     "css-element-queries": "^1.0.1",
     "patternfly": "^3.58.0",
-    "patternfly-react": "^2.29.14",
+    "patternfly-react": "^2.29.15",
     "react-bootstrap": "^0.32.1",
     "react-diff-view": "^1.8.1",
     "react-virtualized": "9.x",
