@@ -21,6 +21,6 @@ npx lerna version --conventional-commits --no-commit-hooks --no-git-tag-version 
 if npx lerna publish from-package --no-changelog --no-git-tag-version --no-push --yes ; then
     # Undo that last commit locally
     git reset --hard HEAD~1
-    # Now only if it publishes should we also release this commit to Github.
+    # Now only if it publishes should we also push this commit to Github and do a Github release.
     npx lerna version --conventional-commits --github-release --no-commit-hooks --yes
 fi
