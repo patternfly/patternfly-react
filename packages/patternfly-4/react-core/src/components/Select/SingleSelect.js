@@ -11,6 +11,8 @@ const propTypes = {
   className: PropTypes.string,
   /** Flag indicating the Select is expanded */
   isExpanded: PropTypes.bool,
+  /** Internal flag indicating whether select was opened via keyboard */
+  openedOnEnter: PropTypes.bool,
   /** Currently selected option */
   selected: PropTypes.string,
   /** Additional props are spread to the container <select> */
@@ -20,6 +22,7 @@ const propTypes = {
 const defaultProps = {
   className: '',
   isExpanded: false,
+  openedOnEnter: false,
   selected: ''
 };
 

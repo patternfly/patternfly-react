@@ -15,13 +15,13 @@ const propTypes = {
   isDisabled: PropTypes.bool,
   /** flag indicating if the option acts as a placeholder */
   isPlaceholder: PropTypes.bool,
-  /** flag indicating if the option is selected */
+  /** Internal flag indicating if the option is selected */
   isSelected: PropTypes.bool,
   /** Optional on click callback */
   onClick: PropTypes.func,
-  /** Callback for ref tracking */
+  /** Internal callback for ref tracking */
   sendRef: PropTypes.func,
-  /** Callback for keyboard navigation */
+  /** Internal callback for keyboard navigation */
   keyHandler: PropTypes.func,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
@@ -34,7 +34,9 @@ const defaultProps = {
   isDisabled: false,
   isPlaceholder: false,
   isSelected: false,
-  onClick: Function.prototype
+  onClick: Function.prototype,
+  sendRef: Function.prototype,
+  keyHandler: Function.prototype
 };
 
 class SelectOption extends React.Component {
