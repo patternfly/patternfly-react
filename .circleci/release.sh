@@ -29,5 +29,6 @@ if npx lerna publish from-package --no-git-tag-version --no-push --yes ; then
     # Now only if it publishes should we also push this commit to Github and do a Github release
     npx lerna version --conventional-commits --github-release --no-commit-hooks --yes
 else # Failed to publish to npm
+    echo "Failed to publish to npm :("
     exit 1
 fi
