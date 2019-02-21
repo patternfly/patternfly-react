@@ -17,10 +17,17 @@ echo "Doing a release..."
 git checkout $TRAVIS_BRANCH # Lerna needs to be on a real HEAD
 git rev-parse HEAD # helpful for debugging any lerna EUNCOMMIT errors
 
-# > Check each package.json and determe if any package version is not present in the registry.
-#   Any versions not present in the registry will be published.
-if npx lerna publish from-package --yes ; then
-    # If we publish succesfully to npm, update the changelog and commit it. 
-    # Tag it with each package change. Push commit and tags with a pretty Github release.
-    npx lerna version --github-release --conventional-commits --no-commit-hooks --yes
+
+# It's possible someone manually version-bumped, or we failed to bump for some other reason.
+
+
+# Bump packages with changes since the last git tags. Update the changelog and commit it.
+# Tag this new commit with each package change. Don't push it yet.
+npx lerna version --conventional-commits --no-commit-hooks --no-push --yes
+
+# Check each package.json and determe if any package version is not present in the registry.
+# Any versions not present in the registry will be published.
+if npx lerna publish from-package --no-changelog --no-git-tag-version --no-push --yes ; then
+    # Only if it publishes should we also release this commit to Github.
+    npx lerna version --conventional-commits --github-release --no-commit-hooks --yes
 fi
