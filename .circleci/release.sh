@@ -15,7 +15,7 @@ git rev-parse HEAD
 
 # Identify packages that have been updated since the previous tagged release
 # Update their versions and changelogs
-npx lerna version --conventional-commits --no-git-tag-version --no-commit-hooks --yes
+npx lerna version --conventional-commits --no-git-tag-version --no-commit-hooks --no-push --yes
 
 # Amend the commit to avoid lerna ERR! EUNCOMMIT
 git add **/package.json **/CHANGELOG.md
