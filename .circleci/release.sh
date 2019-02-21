@@ -15,4 +15,4 @@ git checkout $TRAVIS_BRANCH
 git rev-parse HEAD # helpful for debugging any lerna EUNCOMMIT errors
 npx lerna changed || true
 npx lerna version --github-release --conventional-commits --yes
-npx lerna publish from-git
+npx lerna publish from-package
