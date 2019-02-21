@@ -14,4 +14,5 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
 git checkout $TRAVIS_BRANCH
 git rev-parse HEAD # helpful for debugging any lerna EUNCOMMIT errors
 npx lerna changed || true
-npm run lerna:publish
+npx lerna version --github-release --conventional-commits --yes
+npx lerna publish from-git

@@ -114,7 +114,6 @@
     "commitmsg": "commitlint -e",
     "coveralls": "shx cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "generate": "yarn plop",
-    "lerna:publish": "lerna publish --github-release --conventional-commits --yes --ci",
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
     "lint:style": "lerna run stylelint",

@@ -25,15 +25,16 @@ cache:
 git:
   depth: 10
 branches:
-  except:
-  - "/^v\\d+\\.\\d+\\.\\d+$/"
+  except: # Avoid tags
+    - "/^v\\d+\\.\\d+\\.\\d+$/"
 notifications:
   email: false
 
-# Tests will come before build without a `stages` block.
+# Test will come before build without a `stages` block.
 stages:
   - Build
-  - Tests
+  - name: Test
+    if: branch = master
   - name: Deploy
     # if: branch = master && type != pull_request && fork = false
 
@@ -44,24 +45,24 @@ jobs:
     - stage: Build
       name: Build Dist
       script:
-        - yarn build
+        - "true"
+        # - yarn build
 
-    # Due to Travis limitations, nothing can be cached here since steps
-    # run in parallel.
-    - stage: Tests
+    # Due to Travis limitations, nothing can be cached here since steps run in parallel.
+    - stage: Test
       name: (PF4) Jest Tests
       install: skip
-    #  script:
-    #     - yarn test:pf4
-    #     - yarn coveralls || true
-    # - name: (PF3) Jest Tests
-    #   install: skip
-    #   script:
-    #     - yarn test:pf3
-    #     - yarn coveralls || true
-    # - name: (PF4) Build PR Docs
-    #   if: branch = master && type != pull_request && fork = false
-    #   install: skip
+      script:
+        - yarn test:pf4
+        - yarn coveralls || true
+    - name: (PF3) Jest Tests
+      install: skip
+      script:
+        - yarn test:pf3
+        - yarn coveralls || true
+    - name: (PF4) Build PR Docs
+      if: branch = master && type != pull_request && fork = false
+      install: skip
       script:
         # Stop docs from getting too big to cache/host (some files use UUIDs)
         - rm -rf packages/patternfly-4/react-docs/public
