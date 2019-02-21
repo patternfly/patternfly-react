@@ -2,13 +2,11 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
-import checkboxStyles from '@patternfly/patternfly/components/Check/check.css';
 
 const DataListCheck = ({ className, onChange, isValid, isDisabled, isChecked, checked, ...props }) => (
   <div className={css(styles.dataListCheck, className)}>
     <input
       {...props}
-      className={css(checkboxStyles.checkInput)}
       type="checkbox"
       onChange={event => onChange(event.currentTarget.checked, event)}
       aria-invalid={!isValid}

@@ -30922,11 +30922,6 @@ exports[`Header width table 1`] = `
 `;
 
 exports[`Selectable table 1`] = `
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
 .pf-c-table__check {
   display: block;
   vertical-align: top;
@@ -30976,11 +30971,6 @@ exports[`Selectable table 1`] = `
 .pf-c-table__sort {
   display: block;
 }
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
 .pf-c-table__check {
   display: block;
   vertical-align: top;
@@ -31001,11 +30991,6 @@ exports[`Selectable table 1`] = `
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
 .pf-c-table__check {
   display: block;
   vertical-align: top;
@@ -31020,10 +31005,13 @@ exports[`Selectable table 1`] = `
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
-.pf-c-check__input {
+.pf-c-table__check {
   display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
 }
 .pf-c-table__check {
   display: block;
@@ -31033,11 +31021,6 @@ exports[`Selectable table 1`] = `
   display: block;
   vertical-align: top;
 }
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
 .pf-c-table__check {
   display: block;
   vertical-align: top;
@@ -31045,24 +31028,6 @@ exports[`Selectable table 1`] = `
 .pf-c-table__check {
   display: block;
   vertical-align: top;
-}
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-table__check {
-  display: block;
-  vertical-align: top;
-}
-.pf-c-table__check {
-  display: block;
-  vertical-align: top;
-}
-.pf-c-check__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
 }
 .pf-c-table__check {
   display: block;
@@ -31726,7 +31691,6 @@ exports[`Selectable table 1`] = `
                         <input
                           aria-label="Select all rows"
                           checked={false}
-                          className="pf-c-check__input"
                           name="check-all"
                           onChange={[Function]}
                           type="checkbox"
@@ -33626,7 +33590,6 @@ exports[`Selectable table 1`] = `
                             <input
                               aria-labelledby="simple-node0"
                               checked={false}
-                              className="pf-c-check__input"
                               name="checkrow0"
                               onChange={[Function]}
                               type="checkbox"
@@ -34780,7 +34743,6 @@ exports[`Selectable table 1`] = `
                             <input
                               aria-labelledby="simple-node3"
                               checked={false}
-                              className="pf-c-check__input"
                               name="checkrow3"
                               onChange={[Function]}
                               type="checkbox"
@@ -35554,7 +35516,6 @@ exports[`Selectable table 1`] = `
                             <input
                               aria-labelledby="simple-node5"
                               checked={false}
-                              className="pf-c-check__input"
                               name="checkrow5"
                               onChange={[Function]}
                               type="checkbox"
@@ -35952,7 +35913,6 @@ exports[`Selectable table 1`] = `
                             <input
                               aria-labelledby="simple-node6"
                               checked={false}
-                              className="pf-c-check__input"
                               name="checkrow6"
                               onChange={[Function]}
                               type="checkbox"
@@ -36350,7 +36310,6 @@ exports[`Selectable table 1`] = `
                             <input
                               aria-labelledby="simple-node7"
                               checked={false}
-                              className="pf-c-check__input"
                               name="checkrow7"
                               onChange={[Function]}
                               type="checkbox"
@@ -36748,7 +36707,6 @@ exports[`Selectable table 1`] = `
                             <input
                               aria-labelledby="simple-node8"
                               checked={false}
-                              className="pf-c-check__input"
                               name="checkrow8"
                               onChange={[Function]}
                               type="checkbox"
