@@ -24,7 +24,11 @@ class ContextBody extends React.Component {
     return {
       isExpanded: row.isExpanded,
       isOpen: row.isOpen,
-      onClick: event => onRowClick(event, row, props)
+      onClick: event => {
+        if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'BUTTON') {
+          onRowClick(event, row, props);
+        }
+      }
     };
   };
 
