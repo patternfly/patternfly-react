@@ -9,10 +9,9 @@ git config --global push.default simple
 git config credential.helper store
 echo "https://${GH_USERNAME}:${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git" > ~/.git-credentials
 
-npm config set "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" -q
-echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
 
-git checkout master
+git checkout $TRAVIS_BRANCH
 git rev-parse HEAD # helpful for debugging any lerna EUNCOMMIT errors
 npx lerna changed || true
 npm run lerna:publish
