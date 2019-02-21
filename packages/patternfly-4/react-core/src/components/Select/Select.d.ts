@@ -1,5 +1,9 @@
 import { HTMLProps, FormEvent } from 'react';
 
+export const SelectVariant = {
+  single: 'single'
+};
+
 export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   isExpanded?: boolean;
   onToggle(value: boolean): void;

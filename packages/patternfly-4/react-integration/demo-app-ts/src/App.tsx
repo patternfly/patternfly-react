@@ -8,7 +8,10 @@ import {
   Alert,
   AlertActionCloseButton,
   AlertActionLink,
-  AlertVariant
+  AlertVariant,
+  Select,
+  SelectOption,
+  SelectVariant
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -20,7 +23,27 @@ class myProps implements AvatarProps {
 }
 
 class App extends Component {
+  state = {
+    isExpanded: false,
+    selected: 'Placeholder text'
+  };
+
+  onToggle = isExpanded => {
+    this.setState({
+      isExpanded
+    });
+  };
+
+  onSelect = event => {
+    this.setState({
+      selected: event.target.innerHTML,
+      isExpanded: false
+    });
+    console.log('selected:', event.target.innerHTML);
+  };
+
   render() {
+    const { isExpanded, selected } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -54,6 +77,17 @@ class App extends Component {
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
         <Alert variant="success" title="Success notification title" />
+        <Select
+          variant={SelectVariant.single}
+          onToggle={this.onToggle}
+          onSelect={this.onSelect}
+          selections={selected}
+          isExpanded={isExpanded}
+        >
+          <SelectOption value="option 1" />
+          <SelectOption value="option 2" />
+          <SelectOption value="option 3" />
+        </Select>
       </div>
     );
   }
