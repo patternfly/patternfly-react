@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { AngleLeftIcon, AngleRightIcon } from '@patternfly/react-icons';
 import { getUniqueId, isElementInView, sideElementIsOutOfView } from '../../helpers/util';
 import { SIDE } from '../../helpers/constants';
+import TabContent from './TabContent';
 
 const propTypes = {
   /** content rendered inside the Tabs Component. */
@@ -206,15 +207,7 @@ class Tabs extends React.Component {
           )}
         </div>
         {children.map((child, index) => (
-          <section
-            key={index}
-            hidden={child.props.eventKey !== activeKey}
-            className={css(child.props.className)}
-            id={`pf-tab-section-${child.props.eventKey}-${child.props.id || this.id}`}
-            aria-labelledby={`pf-tab-${child.props.eventKey}-${child.props.id || this.id}`}
-          >
-            {child.props.children}
-          </section>
+          <TabContent key={index} activeKey={activeKey} child={child} index={index} id={child.props.id || this.id} />
         ))}
       </React.Fragment>
     );
