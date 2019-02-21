@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`select options disabled renders disabled successfully 1`] = `<[object Object] />`;
+
+exports[`select options hover renders with hover successfully 1`] = `<[object Object] />`;
+
+exports[`select options renders with value parameter successfully 1`] = `<[object Object] />`;

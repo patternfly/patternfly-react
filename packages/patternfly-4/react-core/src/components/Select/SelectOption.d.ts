@@ -1,0 +1,18 @@
+import { HTMLProps, FormEvent } from 'react';
+import { Omit } from '../../typeUtils';
+
+export interface SelectOptionProps extends Omit<HTMLProps<HTMLOptionElement>, 'disabled'> {
+  value?: string;
+  index?: number;
+  isValid?: boolean;
+  isDisabled?: boolean;
+  isPlaceholder?: boolean;
+  isSelected?: boolean;
+  onClick?: Function;
+  sendRef?: Function;
+  keyHandler?: Function;
+}
+
+declare const SelectOption: React.FunctionComponent<SelectOptionProps>;
+
+export default SelectOption;
