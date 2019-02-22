@@ -114,6 +114,7 @@
     "commit": "git-cz",
     "commitmsg": "commitlint -e",
     "coveralls": "shx cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "demo:run": "lerna run integration:setup && lerna run start:demo",
     "generate": "yarn plop",
     "lerna:publish": "lerna publish --github-release --conventional-commits --yes --ci",
     "lint": "lerna run lint --parallel",
