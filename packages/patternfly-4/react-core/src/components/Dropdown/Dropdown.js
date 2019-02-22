@@ -1,9 +1,10 @@
 import React, { Children, cloneElement } from 'react';
 import styles from '@patternfly/patternfly/components/Dropdown/dropdown.css';
+import toolbarStyles from '@patternfly/patternfly/components/Toolbar/toolbar.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import DropdownMenu from './DropdownMenu';
-import { DropdownPosition, DropdownDirection, DropdownContext } from './dropdownConstants';
+import { DropdownPosition, DropdownDirection, DropdownContext, DropdownVariant } from './dropdownConstants';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -34,6 +35,8 @@ const propTypes = {
   toggle: PropTypes.node.isRequired,
   /** Function callback called when user selects item */
   onSelect: PropTypes.func,
+  /** Used to indicate different variants for the dropdown */
+  variant: PropTypes.oneOf(Object.values(DropdownVariant)),
   /** Additional props are spread to the container <div> */
   '': PropTypes.any
 };
@@ -46,7 +49,8 @@ const defaultProps = {
   isPlain: false,
   position: DropdownPosition.left,
   direction: DropdownDirection.down,
-  onSelect: Function.prototype
+  onSelect: Function.prototype,
+  variant: DropdownVariant.default
 };
 
 class Dropdown extends React.Component {
@@ -69,6 +73,7 @@ class Dropdown extends React.Component {
       onSelect,
       position,
       toggle,
+      variant,
       ...props
     } = this.props;
     const id = toggle.props.id || `pf-toggle-id-${currentId++}`;
@@ -88,6 +93,7 @@ class Dropdown extends React.Component {
         {...props}
         className={css(
           styles.dropdown,
+          variant.actionList === DropdownVariant.actionList && toolbarStyles.toolbarActionList,
           direction === DropdownDirection.up && styles.modifiers.top,
           isOpen && styles.modifiers.expanded,
           className

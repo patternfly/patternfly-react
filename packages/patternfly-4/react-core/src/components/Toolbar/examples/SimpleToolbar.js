@@ -3,11 +3,17 @@ import { Button, Dropdown, KebabToggle, DropdownItem, DropdownSeparator } from '
 import {
   Toolbar,
   ToolbarTotalItems,
-  ToolbarActionGroup,
-  ToolbarActionList
-} from '@patternfly/react-core/dist/js/experimental';
+  ToolbarActionGroup
+} from '@patternfly/react-core/experimental';
 
 class SimpleToolbarComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+  }
+
   onToggle = isOpen => {
     this.setState({
       isOpen

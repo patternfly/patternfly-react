@@ -4,7 +4,7 @@ import {
   Button,
   Dropdown,
   DropdownItem,
-  DropdownToggle,
+  KebabToggle,
   Tabs,
   Tab,
   Tooltip,
@@ -14,24 +14,30 @@ import {
   AlertActionLink,
   AlertVariant
 } from '@patternfly/react-core';
-import { Toolbar, ToolbarTotalItems, ToolbarActionGroup, ToolbarActionList } from '@patternfly/react-core/dist/js/experimental'
+import { Toolbar, ToolbarTotalItems, ToolbarActionGroup } from '@patternfly/react-core/dist/js/experimental';
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import NavTest from './Nav';
+import NavTest from './Nav';2
 
 class myProps implements AvatarProps {
   alt: string = 'avatar';
 }
 
+class App extends Component<{}, { isOpen: boolean } > {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+  }
 
-class App extends Component<{},{isOpen: boolean}> {
   onToggle = isOpen => {
     this.setState({
       isOpen
     });
   };
-  
+
   onSelect = event => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -39,15 +45,11 @@ class App extends Component<{},{isOpen: boolean}> {
   };
 
   render() {
-    const toolbarButtons: React.ReactNode[] = [
-      <Button>action 1</Button>
-    ]
+    const toolbarButtons: React.ReactNode[] = [<Button>action 1</Button>];
 
     const dropdownItems = [
       <DropdownItem key="link">Link</DropdownItem>,
-      <DropdownItem key="action">
-        Action
-      </DropdownItem>,
+      <DropdownItem key="action">Action</DropdownItem>,
       <DropdownItem key="disabled link" isDisabled>
         Disabled Link
       </DropdownItem>,
@@ -55,19 +57,23 @@ class App extends Component<{},{isOpen: boolean}> {
         Disabled Action
       </DropdownItem>,
       <DropdownItem key="separated link">Separated Link</DropdownItem>,
-      <DropdownItem key="separated action">
-        Separated Action
-      </DropdownItem>
+      <DropdownItem key="separated action">Separated Action</DropdownItem>
     ];
     return (
       <div className="App">
         <header className="App-header">
           <Avatar src={logo} alt={new myProps().alt} />
         </header>
-        < Toolbar >  
-          <ToolbarActionGroup actionItems={toolbarButtons}/>
-          <ToolbarActionList dropdownItems={dropdownItems}/>
-          <ToolbarTotalItems totalItems={37} />  
+        <Toolbar>
+          <ToolbarActionGroup actionItems={toolbarButtons} />
+          <Dropdown
+            dropdownItems={dropdownItems}
+            isOpen={this.state.isOpen}
+            isPlain
+            onSelect={this.onSelect}
+            toggle={<KebabToggle onToggle={this.onToggle} />}
+          />
+          <ToolbarTotalItems totalItems={37} />
         </Toolbar>
         <Tabs>
           <Tab eventKey={0} title="Tab item 1">

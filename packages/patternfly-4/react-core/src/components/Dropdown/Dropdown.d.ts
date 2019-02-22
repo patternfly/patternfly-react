@@ -1,6 +1,6 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf } from '../../typeUtils';
-import { DropdownPosition, DropdownDirection } from './dropdownConstants';
+import { DropdownPosition, DropdownDirection, DropdownVariant } from './dropdownConstants';
 
 export interface DropdownProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
