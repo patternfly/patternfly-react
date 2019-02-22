@@ -3,7 +3,7 @@
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 [![Build Status](https://travis-ci.org/patternfly/patternfly-react.svg?branch=master)](https://travis-ci.org/patternfly/patternfly-react)
 [![npm version](https://badge.fury.io/js/patternfly-react.svg)](https://badge.fury.io/js/patternfly-react)
-[![Coverage Status](https://coveralls.io/repos/github/patternfly/patternfly-react/badge.svg?branch=master)](https://coveralls.io/github/patternfly/patternfly-react?branch=master)
+[![codecov](https://codecov.io/gh/patternfly/patternfly-react/branch/master/graph/badge.svg)](https://codecov.io/gh/patternfly/patternfly-react)
 [![Selenium Tests](https://travis-ci.org/quarckster/widgetastic.patternfly4.svg?branch=master)](https://travis-ci.org/quarckster/widgetastic.patternfly4)
 
 This project will provide a set of React UI components for the [PatternFly project](https://patternfly.org).
