@@ -10,6 +10,7 @@ export * from './ChartLabel';
 export * from './ChartLegend';
 export * from './ChartLine';
 export * from './ChartPie';
+export * from './ChartPoint';
 export * from './ChartStack';
 export * from './ChartTheme';
 export * from './ChartTooltip';
