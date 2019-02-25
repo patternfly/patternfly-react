@@ -22,11 +22,12 @@ const ActionGroup = ({ className, children, ...props }) => {
   const customClassName = css(styles.formGroup, styles.modifiers.action, className);
   const classesHorizontal = css(styles.formHorizontalGroup);
 
+  const formActionsComponent = <div className={css(styles.formActions)}>{children}</div>;
   return (
     <FormContext.Consumer>
       {({ isHorizontal }) => (
         <div {...props} className={customClassName}>
-          {isHorizontal ? <div className={classesHorizontal}>{children}</div> : children}
+          {isHorizontal ? <div className={classesHorizontal}>{formActionsComponent}</div> : formActionsComponent}
         </div>
       )}
     </FormContext.Consumer>
