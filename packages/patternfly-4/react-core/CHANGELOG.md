@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.7...@patternfly/react-core@2.2.8) (2019-02-25)
+
+
+### Bug Fixes
+
+* **modalbox:** add the small modifier to modalbox ([#1372](https://github.com/patternfly/patternfly-react/issues/1372)) ([ca131f3](https://github.com/patternfly/patternfly-react/commit/ca131f3))
+
+
+
+
+
 ## [2.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.5...@patternfly/react-core@2.2.7) (2019-02-21)
 
 **Note:** Version bump only for package @patternfly/react-core
