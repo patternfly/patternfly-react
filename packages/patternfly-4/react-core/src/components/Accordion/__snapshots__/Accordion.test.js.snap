@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion Accordion default 1`] = `
+.pf-c-accordion {
+  display: block;
+  color: #282d33;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
+}
+
+<dl
+  aria-label="this is a simple accordion"
+  className="pf-c-accordion"
+/>
+`;
