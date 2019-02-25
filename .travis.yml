@@ -38,7 +38,7 @@ stages:
   - Build
   - Test
   - Deploy
-    # if: branch = master && type != pull_request && fork = false
+    if: branch = master && type != pull_request && fork = false
 
 install:
   - yarn install --frozen-lockfile
