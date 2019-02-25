@@ -50,12 +50,12 @@ jobs:
       install: skip
       script:
         - yarn test:pf4
-        - yarn coveralls || true
+        - npx codecov -F patternfly4
     - name: (PF3) Jest Tests
       install: skip
       script:
         - yarn test:pf3
-        - yarn coveralls || true
+        - npx codecov -F patternfly3
     - name: (PF4) Build PR Docs
       if: branch = master && type != pull_request && fork = false
       install: skip
