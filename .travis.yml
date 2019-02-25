@@ -79,5 +79,5 @@ jobs:
         - cp -r .out .public/patternfly-3
         - cp -r packages/patternfly-4/react-docs/public .public/patternfly-4
         - cp -r packages/patternfly-4/react-docs/public/assets .public/assets
-        - yarn run surge --project .public --domain test-patternfly-react.surge.sh
+        - yarn run surge --project .public --domain patternfly-react-chart-test.surge.sh
         # - .circleci/trigger_browser_tests.sh
