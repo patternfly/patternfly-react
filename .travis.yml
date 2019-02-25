@@ -5,6 +5,13 @@ node_js:
 cache:
   yarn: false
   directories:
+    - node_modules # God help us...
+    - packages/react-icons/node_modules/
+    - packages/patternfly-4/react-core/node_modules # To build PF4 docs
+    - packages/patternfly-4/react-docs/node_modules # To build PF4 docs
+    - packages/patternfly-4/react-charts/node_modules
+    - packages/patternfly-4/react-styles/node_modules
+    - packages/patternfly-3/patternfly-react/node_modules
     - packages/react-icons/dist
     - packages/react-icons/src/icons
     - packages/react-icons/src/index.d.ts
@@ -43,13 +50,7 @@ jobs:
         - yarn build
       cache:
         directories:
-            - node_modules # God help us...
-            - packages/react-icons/node_modules/
-            - packages/patternfly-4/react-core/node_modules # To build PF4 docs
-            - packages/patternfly-4/react-docs/node_modules # To build PF4 docs
-            - packages/patternfly-4/react-charts/node_modules
-            - packages/patternfly-4/react-styles/node_modules
-            - packages/patternfly-3/patternfly-react/node_modules
+          - $HOME/.cache/yarn
 
     - stage: Test # Nothing can be cached in this stage since steps run in parallel.
       name: (PF4) Jest Tests
