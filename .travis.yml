@@ -33,8 +33,8 @@ notifications:
 stages:
   - Build
   - Test
-  - name: Deploy
-    if: branch = master && type != pull_request && fork = false
+  - Deploy
+    # if: branch = master && type != pull_request && fork = false
 
 install:
   - yarn install --frozen-lockfile
@@ -47,38 +47,37 @@ jobs:
 
     - stage: Test # Nothing can be cached in this stage since steps run in parallel.
       name: (PF4) Jest Tests
-      install: skip
-      script:
-        - yarn test:pf4
-        - yarn coveralls || true
-    - name: (PF3) Jest Tests
-      install: skip
-      script:
-        - yarn test:pf3
-        - yarn coveralls || true
-    - name: (PF4) Build PR Docs
-      if: branch = master && type != pull_request && fork = false
+    #   install: skip
+    #   script:
+    #     - yarn test:pf4
+    #     - yarn coveralls || true
+    # - name: (PF3) Jest Tests
+    #   install: skip
+    #   script:
+    #     - yarn test:pf3
+    #     - yarn coveralls || true
+    # - name: (PF4) Build PR Docs
+    #   if: branch = master && type != pull_request && fork = false
       install: skip
       script:
         - rm -rf packages/patternfly-4/react-docs/public
         - yarn build:prdocs
-    - name: Lint and Stylelint
-      install: skip
-      script:
-        - yarn lint || true # Disable linting failing build (for now)
-        - yarn lint:style
+    # - name: Lint and Stylelint
+    #   install: skip
+    #   script:
+    #     - yarn lint || true # Disable linting failing build (for now)
+    #     - yarn lint:style
     
     - stage: Deploy
       name: NPM and Github Release
-      install: skip
-      script: .circleci/release.sh
-    - name: (PF3) Build Storybook and Deploy Docs
+    #   install: skip
+    #   script: .circleci/release.sh
+    # - name: (PF3) Build Storybook and Deploy Docs
       install: skip
       script:
         - yarn build:storybook
         - cp -r .out .public/patternfly-3
         - cp -r packages/patternfly-4/react-docs/public .public/patternfly-4
         - cp -r packages/patternfly-4/react-docs/public/assets .public/assets
-        - cp -r .out .public/patternfly-3
-        - yarn run surge --project .public --domain patternfly-react.surge.sh
-        - .circleci/trigger_browser_tests.sh
+        - yarn run surge --project .public --domain test-patternfly-react.surge.sh
+        # - .circleci/trigger_browser_tests.sh
