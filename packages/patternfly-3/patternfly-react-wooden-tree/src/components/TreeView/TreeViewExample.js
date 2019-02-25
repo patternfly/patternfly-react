@@ -35,31 +35,26 @@ const data = [
   }
 ];
 
+const EXPANDED = 'state.expanded';
+const CHECKED = 'state.checked';
+const DISABLED = 'state.disabled';
+const SELECTED = 'state.selected';
+const NODES = 'nodes';
+const LOADING = 'loading';
+
 const actionMapper = {
-  'state.expanded': TreeView.nodeExpanded,
-  'state.checked': TreeView.nodeChecked,
-  'state.disabled': TreeView.nodeDisabled,
-  'state.selected': TreeView.nodeSelected,
-  nodes: TreeView.nodeChildren,
-  loading: TreeView.nodeLoading
+  [EXPANDED]: TreeView.nodeExpanded,
+  [CHECKED]: TreeView.nodeChecked,
+  [DISABLED]: TreeView.nodeDisabled,
+  [SELECTED]: TreeView.nodeSelected,
+  [NODES]: TreeView.nodeChildren,
+  [LOADING]: TreeView.nodeLoading
 };
 
 class TreeViewExample extends React.Component {
-  /**
-   * Constructor.
-   * @param {{}} props
-   */
-  constructor(props) {
-    super(props);
-
-    this.data = TreeView.initTree(data);
-
-    this.state = {
-      tree: this.data
-    };
-
-    this.onDataChange = this.onDataChange.bind(this);
-  }
+  state = {
+    tree: TreeView.initTree(data)
+  };
 
   /**
    * The callback function for changing data in the tree.
@@ -68,18 +63,17 @@ class TreeViewExample extends React.Component {
    * @param {string} type The field name which changed.
    * @param {boolean} value The new value to assign.
    */
-  onDataChange(nodeId, type, value) {
-    let node = TreeView.nodeSelector(this.data, nodeId);
+  onDataChange = (nodeId, type, value) => {
+    let node = TreeView.nodeSelector(this.state.tree, nodeId);
     if (node == null) {
       return;
     }
 
     if (actionMapper.hasOwnProperty(type)) {
       node = actionMapper[type](node, value);
-      this.data = TreeView.nodeUpdater(this.data, node);
+      this.setState({ tree: TreeView.nodeUpdater(this.state.tree, node) });
     }
-    this.setState({ tree: this.data });
-  }
+  };
 
   render() {
     return (
