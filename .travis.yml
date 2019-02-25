@@ -37,7 +37,7 @@ notifications:
 stages:
   - Build
   - Test
-  - Deploy
+  - name: Deploy
     if: branch = master && type != pull_request && fork = false
 
 install:
