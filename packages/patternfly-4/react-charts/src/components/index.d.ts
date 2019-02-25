@@ -1,6 +1,7 @@
 /** Keep alphabetically sorted */
 export * from './Chart';
 export * from './ChartArea';
+export * from './ChartAxis';
 export * from './ChartBar';
 export * from './ChartContainer';
 export * from './ChartDonut';
