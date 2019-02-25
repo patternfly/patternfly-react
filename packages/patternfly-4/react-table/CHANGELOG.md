@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.24](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.23...@patternfly/react-table@1.0.24) (2019-02-25)
+
+
+### Bug Fixes
+
+* **Table:** Disable row click when clicked on select or button ([#1419](https://github.com/patternfly/patternfly-react/issues/1419)) ([d988e33](https://github.com/patternfly/patternfly-react/commit/d988e33))
+
+
+
+
+
 ## [1.0.23](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.22...@patternfly/react-table@1.0.23) (2019-02-25)
 
 **Note:** Version bump only for package @patternfly/react-table
