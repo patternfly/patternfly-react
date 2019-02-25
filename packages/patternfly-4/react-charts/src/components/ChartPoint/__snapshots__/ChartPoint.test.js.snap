@@ -22,11 +22,7 @@ exports[`Chart 1`] = `
       },
     ]
   }
-  dataComponent={
-    <Point
-      pathComponent={<Path />}
-    />
-  }
+  dataComponent={<ChartPoint />}
   groupComponent={<g />}
   labelComponent={
     <VictoryLabel
@@ -519,11 +515,7 @@ exports[`Chart 2`] = `
       },
     ]
   }
-  dataComponent={
-    <Point
-      pathComponent={<Path />}
-    />
-  }
+  dataComponent={<ChartPoint />}
   groupComponent={<g />}
   labelComponent={
     <VictoryLabel
@@ -1013,6 +1005,9 @@ exports[`renders component data 1`] = `
       },
       Object {
         "name": "Dogs",
+        "symbol": Object {
+          "type": "dash",
+        },
       },
     ]
   }

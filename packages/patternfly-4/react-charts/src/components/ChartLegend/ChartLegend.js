@@ -4,6 +4,7 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryLegend } from 'victory';
 import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 import ChartContainer from '../ChartContainer/ChartContainer';
+import ChartPoint from '../ChartPoint/ChartPoint';
 
 export const propTypes = {
   /**

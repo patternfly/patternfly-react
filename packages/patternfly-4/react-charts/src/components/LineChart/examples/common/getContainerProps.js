@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   demoLayout: {
     '& > *': {
       '.chart-container': {
-        height: '200px',
+        height: '250px',
         width: '300px'
       },
       '.chart-margin': {
@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
       },
       '.chart-inline': {
         display: 'inline-flex'
+      },
+      '.chart-legend': {
+        marginTop: '30px'
       },
       '.chart-overflow': {
         '& svg': {
