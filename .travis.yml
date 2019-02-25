@@ -48,9 +48,6 @@ jobs:
       name: Build Dist
       script:
         - yarn build
-      cache:
-        directories:
-          - $HOME/.cache/yarn
 
     - stage: Test # Nothing can be cached in this stage since steps run in parallel.
       name: (PF4) Jest Tests
