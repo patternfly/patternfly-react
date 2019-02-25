@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.1.0 (2019-02-25)
+
+
+### Features
+
+* **charts:** Add ChartAxis ([#1309](https://github.com/patternfly/patternfly-react/issues/1309)) ([cd6788b](https://github.com/patternfly/patternfly-react/commit/cd6788b))
+
+
+
+
+
 ## [2.0.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.0.4...@patternfly/react-charts@2.0.5) (2019-02-20)
 
 
