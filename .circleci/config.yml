@@ -12,16 +12,20 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v3-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - v1-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Conditional install
           command: if [ ! -d node_modules ]; then yarn install --frozen-lockfile; fi
       - save_cache:
           paths:
             - node_modules
+            - packages/react-icons/node_modules/
             - packages/patternfly-4/react-core/node_modules
             - packages/patternfly-4/react-docs/node_modules
-          key: v3-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - packages/patternfly-4/react-charts/node_modules
+            - packages/patternfly-4/react-styles/node_modules
+            - packages/patternfly-3/patternfly-react/node_modules
+          key: v1-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
       - run:
           name: Build Dist
           command: yarn build
