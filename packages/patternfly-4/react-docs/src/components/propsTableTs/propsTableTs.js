@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './propsTableTs.styles';
-import { css } from '@patternfly/react-styles';
 import { Table, Row, TD, TH, Body, Heading } from '../table';
 import Section from '../section';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
@@ -26,7 +24,7 @@ const defaultProps = {
 };
 
 export const PropsTableTs = ({ name, props }) => (
-  <Section name={name} title={`${name} Props`} description={`The ${name} component accepts the following props.`}>
+  <Section headingLevel="h3" name={name} title={`${name} Props`} description={`The ${name} component accepts the following props.`}>
     <Table>
       <Heading>
         <TH>Name</TH>

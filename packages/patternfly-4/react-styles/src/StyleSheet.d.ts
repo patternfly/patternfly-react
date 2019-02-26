@@ -1,5 +1,8 @@
 import { StyleDeclarationStatic } from './utils';
-import { cx, Interpolation } from 'emotion';
+import { Interpolation } from 'emotion';
+import { ClassNameArg } from 'create-emotion';
+
+type emotionCss = (...classNames: Array<ClassNameArg | StyleDeclarationStatic>) => string;
 
 export interface StyleSheetStatic {
   parse(cssString: string): StyleSheetValueStatic;
@@ -15,4 +18,4 @@ export type StyleSheetValueStatic = {
 
 export const StyleSheet: StyleSheetStatic;
 
-export const css: typeof cx;
+export const css: emotionCss;

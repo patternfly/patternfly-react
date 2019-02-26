@@ -25,7 +25,7 @@ function Icons() {
   return (
     <DocsLayout>
       <Content>
-        <Title size="3xl">Icons</Title>
+        <Title size="4xl" headingLevel="h1">Icons</Title>
         <Grid>
           {allIcons.map(([id, Icon]) => (
             <GridItem key={id} className={css(styles.iconCell)} sm={6} md={4} lg={2}>

@@ -13,7 +13,7 @@ exports[`EmptyState Main 1`] = `
 >
   <Title
     className=""
-    headingLevel="h1"
+    headingLevel="h5"
     size="lg"
   >
     HTTP Proxies

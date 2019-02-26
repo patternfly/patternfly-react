@@ -83,7 +83,7 @@ const Example = ({
 
   return (
     <div>
-      <Title size="lg">{title}</Title>
+      <Title size="lg" headingLevel="h3">{title}</Title>
       {Boolean(description) && (
         <p className={css(styles.description)} dangerouslySetInnerHTML={makeDescription(description)} />
       )}
@@ -104,13 +104,13 @@ const Example = ({
           />
         </React.Fragment>
       ) : (
-        <React.Fragment>
-          <div className={css(className, styles.example)} {...props}>
-            {children}
-          </div>
-          <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
-        </React.Fragment>
-      )}
+          <React.Fragment>
+            <div className={css(className, styles.example)} {...props}>
+              {children}
+            </div>
+            <LiveDemo raw={raw.trim()} path={examplePath} live={false} />
+          </React.Fragment>
+        )}
     </div>
   );
 };

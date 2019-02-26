@@ -12,7 +12,7 @@ describe('EmptyState', () => {
   test('Main', () => {
     const view = shallow(
       <EmptyState>
-        <Title size="lg">HTTP Proxies</Title>
+        <Title headingLevel="h5" size="lg">HTTP Proxies</Title>
         <EmptyStateBody>
           Defining HTTP Proxies that exist on your network allows you to perform various actions through those proxies.
         </EmptyStateBody>

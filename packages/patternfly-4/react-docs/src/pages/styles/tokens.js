@@ -8,7 +8,7 @@ function GlobalVariables() {
   return (
     <DocsLayout>
       <Content>
-        <Title size="3xl">Global CSS Variables</Title>
+        <Title size="4xl" headingLevel="h1">Global CSS Variables</Title>
         <Tokens variables="pf-global" />
       </Content>
     </DocsLayout>

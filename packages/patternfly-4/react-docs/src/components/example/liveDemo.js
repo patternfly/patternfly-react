@@ -117,7 +117,7 @@ class LiveDemo extends React.Component {
     });
 
     return (
-      <Section>
+      <Section headingLevel="h6">
         <LiveProvider code={raw} scope={scope} transformCode={transformCode}>
           {live && <LivePreview className={css(className, exampleStyles.example, darkThemeClasses)} />}
           <div className={css(styles.toolbar)}>
