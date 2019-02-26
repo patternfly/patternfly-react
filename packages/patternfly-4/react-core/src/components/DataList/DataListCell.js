@@ -3,17 +3,14 @@ import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
-class DataListCell extends React.Component {
-  render() {
-    const {rowid, width, className, children, ...rest} = this.props;
-    return <div
-      className={css(styles.dataListCell, width > 1 && getModifier(styles, `flex_${width}`, ''), className)}
-      {...rest}
-    >
-      {children}
-    </div>;
-  }
-}
+const DataListCell = ({ children, className, width, rowid, ...props }) => (
+  <div
+    className={css(styles.dataListCell, width > 1 && getModifier(styles, `flex_${width}`, ''), className)}
+    {...props}
+  >
+    {children}
+  </div>
+);
 
 DataListCell.propTypes = {
   /** Content rendered inside the DataList cell */

@@ -5,16 +5,13 @@ import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 import { EllipsisVIcon } from '@patternfly/react-icons';
 import { Button, ButtonVariant } from '../Button';
 
-class DataListAction extends React.Component {
-  render() {
-    const {className, id, 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy, rowid, ...rest} = this.props;
-    return <div className={css(styles.dataListAction, className)} {...rest}>
-      <Button variant={ButtonVariant.plain} id={id} aria-labelledby={ariaLabelledBy} aria-label={ariaLabel}>
-        <EllipsisVIcon />
-      </Button>
-    </div>;
-  }
-}
+const DataListAction = ({ className, id, 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy, rowid, ...props }) => (
+  <div className={css(styles.dataListAction, className)} {...props}>
+    <Button variant={ButtonVariant.plain} id={id} aria-labelledby={ariaLabelledBy} aria-label={ariaLabel}>
+      <EllipsisVIcon />
+    </Button>
+  </div>
+);
 
 DataListAction.propTypes = {
   /** Content rendered inside the DataList list */
