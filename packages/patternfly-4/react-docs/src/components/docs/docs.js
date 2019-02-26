@@ -26,6 +26,7 @@ const Docs = ({ title, description, children, props }) => (
       <Title size="xl">Examples</Title>
       <div>{children}</div>
     </section>
+
     <section>
       <Title size="xl">Props</Title>
       <p className={css(styles.description)}>The {title} component accepts the following props:</p>
