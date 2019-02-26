@@ -5,26 +5,26 @@ import { Point } from 'victory';
 import { Helpers } from 'victory-core';
 import pathHelpers from './path-helpers';
 
-export const propTypes = {
-  ...Point.propTypes,
-  symbol: PropTypes.oneOfType([
-    PropTypes.oneOf([
-      'circle',
-      'diamond',
-      'plus',
-      'minus',
-      'square',
-      'star',
-      'triangleDown',
-      'triangleUp',
-      'dash',
-    ]),
-    PropTypes.func
-  ])
-};
-
 // Todo: Submit dash symbol to victory-core, providing PF4 doesn't need a smaller lineHeight for dash and minus?
 class VictoryPoint extends Point {
+  static propTypes = {
+    ...Point.propTypes,
+    symbol: PropTypes.oneOfType([
+      PropTypes.oneOf([
+        'circle',
+        'diamond',
+        'plus',
+        'minus',
+        'square',
+        'star',
+        'triangleDown',
+        'triangleUp',
+        'dash',
+      ]),
+      PropTypes.func
+    ])
+  };
+
   getPath(props) {
     const { datum, active, x, y } = props;
     const size = Helpers.evaluateProp(props.size, datum, active);
@@ -53,6 +53,5 @@ const ChartPoint = (props) => (
 );
 
 hoistNonReactStatics(ChartPoint, Point);
-ChartPoint.propTypes = propTypes;
 
 export default ChartPoint;
