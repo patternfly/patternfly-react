@@ -23,7 +23,6 @@ exports[`disabled text input 1`] = `
   readOnly={false}
   required={false}
   type="text"
-  value={null}
 />
 `;
 

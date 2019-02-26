@@ -20,15 +20,17 @@ const defaultProps = {
 };
 
 class ContextBody extends React.Component {
-  onRow = (row, props) => {
+  onRow = (row, rowProps) => {
     const { onRowClick } = this.props;
     return {
-      isExpanded: row.isExpanded,
-      isOpen: row.isOpen,
-      onClick: event => {
-        if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'BUTTON') {
-          onRowClick(event, row, props);
-        }
+      row,
+      rowProps,
+      onMouseDown: event => {
+        const computedData = {
+          isInput: event.target.tagName !== 'INPUT',
+          isButton: event.target.tagName !== 'BUTTON'
+        };
+        onRowClick(event, row, rowProps, computedData);
       }
     };
   };
@@ -74,7 +76,9 @@ class ContextBody extends React.Component {
       rows.map((oneRow, oneRowKey) => ({
         ...oneRow,
         ...this.mapCells(headerData, oneRow, oneRowKey),
-        isExpanded: isRowExpanded(oneRow, rows)
+        isExpanded: isRowExpanded(oneRow, rows),
+        isFirst: oneRowKey === 0,
+        isLast: oneRowKey === rows.length - 1
       }));
 
     return (
@@ -96,7 +100,7 @@ class ContextBody extends React.Component {
 
 const TableBody = props => (
   <TableContext.Consumer>
-    {({ headerData, rows }) => <ContextBody {...props} headerData={headerData} rows={rows} />}
+    {({ headerData, rows }) => <ContextBody headerData={headerData} rows={rows} {...props} />}
   </TableContext.Consumer>
 );
 

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it renders properly 1`] = `
+<Button
+  aria-label={null}
+  className=""
+  component="button"
+  isActive={false}
+  isBlock={false}
+  isDisabled={false}
+  isFocus={false}
+  isHover={false}
+  type="button"
+  variant="plain"
+>
+  <CloseIcon
+    color="currentColor"
+    size="sm"
+    title={null}
+  />
+</Button>
+`;

@@ -68,6 +68,7 @@ const mapHeader = (column, extra, key, ...props) => {
           .replace(/\s/g, '-')) ||
       `column-${key}`,
     extraParams: extra,
+    data: column.data,
     header: generateHeader(column, title),
     cell: generateCell(column, extra),
     props: {

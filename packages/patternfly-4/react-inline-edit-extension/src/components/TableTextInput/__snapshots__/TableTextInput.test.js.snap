@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`focused table text input 1`] = `
+<Fragment>
+  <TextInput
+    aria-label="focused text input"
+    autoFocus={true}
+    className=""
+    defaultValue="test"
+    isDisabled={false}
+    isReadOnly={false}
+    isRequired={false}
+    isValid={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+  />
+</Fragment>
+`;
+
+exports[`simple table text input 1`] = `
+<Fragment>
+  <TextInput
+    aria-label="simple text input"
+    autoFocus={false}
+    className=""
+    defaultValue={null}
+    isDisabled={false}
+    isReadOnly={false}
+    isRequired={false}
+    isValid={true}
+    onBlur={[Function]}
+    onChange={[Function]}
+    type="text"
+  />
+</Fragment>
+`;

@@ -40,6 +40,13 @@ module.exports = {
         ignore: [`**/*.d.ts`]
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `components`,
+        path: resolve(__dirname, '../react-inline-edit-extension/src')
+      }
+    },
     'gatsby-transformer-react-docgen'
   ],
   pathPrefix: 'patternfly-4'
