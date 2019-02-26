@@ -25,13 +25,31 @@ describe('headerUtils', () => {
       expect(selectableTransforms[0].header.transforms).toHaveLength(3);
     });
 
-    test('actionsTransforms', () => {
-      const actionsTransforms = calculateColumns([], { actions: { title: 'some' } });
+    test('basicActionsTransforms', () => {
+      const actionsTransforms = calculateColumns([], { actions: [{ title: 'some' }] });
       expect(actionsTransforms[0].cell.formatters).toHaveLength(1);
       expect(actionsTransforms[0].cell.formatters[0].name).toBe('defaultTitle');
       expect(actionsTransforms[0].cell.transforms).toHaveLength(2);
-      expect(actionsTransforms[0].extraParams).toEqual({ actions: { title: 'some' } });
+      expect(actionsTransforms[0].extraParams).toEqual({ actions: [{ title: 'some' }] });
       expect(actionsTransforms[0].header.transforms).toHaveLength(3);
+    });
+
+    test('actionsTransforms', () => {
+      const actionsTransforms = calculateColumns([], {
+        areActionsDisabled: () => false,
+        actionResolver: () => [{ title: 'some' }]
+      });
+      expect(actionsTransforms[0].cell.formatters).toHaveLength(1);
+      expect(actionsTransforms[0].cell.formatters[0].name).toBe('defaultTitle');
+      expect(actionsTransforms[0].extraParams.areActionsDisabled).toBeDefined();
+      expect(actionsTransforms[0].extraParams.actionResolver).toBeDefined();
+      expect(actionsTransforms[0].cell.transforms).toHaveLength(2);
+      expect(actionsTransforms[0].header.transforms).toHaveLength(3);
+    });
+
+    test('emptyTransforms', () => {
+      const actionsTransforms = calculateColumns([], {});
+      expect(actionsTransforms).toHaveLength(0);
     });
 
     describe('mixed strings and objects', () => {

@@ -49,6 +49,10 @@ const propTypes = {
       title: PropTypes.node
     })
   ),
+  /** Function should resolve an array of actions for each row in the same format as actions. */
+  actionResolver: PropTypes.func,
+  /** Function should resolve if action is disabled for each row */
+  areActionsDisabled: PropTypes.func,
   /** Actual rows to display in table. Either array of strings or row ojects. */
   rows: PropTypes.arrayOf(
     PropTypes.oneOfType([
@@ -165,6 +169,8 @@ class Table extends React.Component {
       sortBy,
       children,
       actions,
+      actionResolver,
+      areActionsDisabled,
       onCollapse,
       rowLabeledBy,
       dropdownPosition,
@@ -183,6 +189,8 @@ class Table extends React.Component {
       onSelect,
       allRowsSelected: onSelect ? this.areAllRowsSelected(rows) : false,
       actions,
+      actionResolver,
+      areActionsDisabled,
       onCollapse,
       rowLabeledBy,
       expandId,
