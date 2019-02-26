@@ -1,1 +1,1 @@
-export { default as ChartPoint, ChartPointProps } from './ChartPoint';
+export { default as ChartPoint } from './ChartPoint';
