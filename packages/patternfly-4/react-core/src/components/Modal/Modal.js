@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import ModalContent from './ModalContent';
-import safeHTMLElement from '../../helpers/safeHTMLElement';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
@@ -19,6 +18,8 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   /** Flag to show the title */
   hideTitle: PropTypes.bool,
+  /** id to use for Modal Box description */
+  ariaDescribedById: PropTypes.string,
   /** Action buttons to put in the Modal Footer */
   actions: PropTypes.any,
   /** A callback for when the close button is clicked */
@@ -38,6 +39,7 @@ const defaultProps = {
   className: '',
   isOpen: false,
   hideTitle: false,
+  ariaDescribedById: '',
   actions: [],
   onClose: () => undefined,
   isLarge: false,
@@ -103,7 +105,7 @@ class Modal extends React.Component {
       this.container = document.createElement('div');
     }
 
-    return ReactDOM.createPortal(<ModalContent {...props} id={this.id} />, this.container);
+    return ReactDOM.createPortal(<ModalContent {...props} title={this.props.title} id={this.id} ariaDescribedById={this.props.ariaDescribedById}/>, this.container);
   }
 }
 

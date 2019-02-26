@@ -5,6 +5,7 @@ export interface ModalProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
   className?: string;
   hideTitle?: boolean;
+  ariaDescribedById?: string;
   isLarge?: boolean;
   isSmall?: boolean;
   isOpen?: boolean;
