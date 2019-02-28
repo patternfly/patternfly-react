@@ -1,6 +1,6 @@
 import { HTMLProps, FormEvent } from 'react';
 
-export const SelectVariant = {
+export const SelectVariant : {
   single: 'single'
 };
 
