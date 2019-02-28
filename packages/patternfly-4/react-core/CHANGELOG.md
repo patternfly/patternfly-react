@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.9...@patternfly/react-core@2.2.10) (2019-02-28)
+
+
+### Bug Fixes
+
+* **DataList:** Add aria-label and aria-labelledby improvements ([#1347](https://github.com/patternfly/patternfly-react/issues/1347)) ([4aa38fe](https://github.com/patternfly/patternfly-react/commit/4aa38fe)), closes [#1163](https://github.com/patternfly/patternfly-react/issues/1163) [#1163](https://github.com/patternfly/patternfly-react/issues/1163) [#1163](https://github.com/patternfly/patternfly-react/issues/1163)
+
+
+
+
+
 ## [2.2.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.8...@patternfly/react-core@2.2.9) (2019-02-25)
 
 **Note:** Version bump only for package @patternfly/react-core
