@@ -8,7 +8,6 @@ export interface SelectOptionProps extends Omit<HTMLProps<HTMLOptionElement>, 'd
   isDisabled?: boolean;
   isPlaceholder?: boolean;
   isSelected?: boolean;
-  onClick?: Function;
   sendRef?: Function;
   keyHandler?: Function;
 }
