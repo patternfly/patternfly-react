@@ -57,7 +57,11 @@ const NavigationItem = ({ to, children, pkg, components, collapsed }) => (
               <ul className={css(styles.secondaryList)}>
                 {components.map(route => (
                   <li key={route.to}>
-                    <Link className={css(styles.navigationItemSecondary)} to={route.to}>{`${route.label} Props`}</Link>
+                    <Link
+                      className={css(styles.navigationItemSecondary)}
+                      to={route.to}
+                      state={{ shouldBeCollapsed: collapsed }}
+                    >{`${route.label} Props`}</Link>
                   </li>
                 ))}
               </ul>
