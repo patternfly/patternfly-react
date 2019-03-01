@@ -24,6 +24,7 @@
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-plugin-typescript": "^2.0.3",
     "gatsby-source-filesystem": "^2.0.16",
+    "gatsby-transformer-json": "^2.1.8",
     "gatsby-transformer-react-docgen": "^3.0.0",
     "param-case": "^2.1.1",
     "prop-types": "^15.6.2",
@@ -37,9 +38,10 @@
     "gatsby"
   ],
   "scripts": {
-    "docbuild": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
-    "pr-build": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
-    "develop": "gatsby develop"
+    "docbuild": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 && yarn gen-ts-docs && gatsby build",
+    "pr-build": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 && yarn gen-ts-docs && gatsby build --verbose --prefix-paths",
+    "develop": "gatsby develop",
+    "gen-ts-docs": "typedoc --json ts-docs/ts-output.json ../react-core --ignoreCompilerErrors --mode file --tsconfig ../react-core/src/tsconfig.dts.json && node build/transformTsDocs.js"
   },
   "browserslist": [
     "last 2 versions",
@@ -47,6 +49,7 @@
   ],
   "devDependencies": {
     "fs-extra": "^7.0.1",
-    "glob": "^7.1.3"
+    "glob": "^7.1.3",
+    "typedoc": "^0.14.2"
   }
 }
