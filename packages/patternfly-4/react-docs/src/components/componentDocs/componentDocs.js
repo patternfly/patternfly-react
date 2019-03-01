@@ -7,6 +7,7 @@ import Example from '../example';
 import Content from '../content';
 import { Title } from '@patternfly/react-core';
 import PropsTable from '../propsTable';
+import PropsTableTs from '../propsTableTs';
 import Section from '../section';
 import DocsLayout from '../layouts';
 
@@ -57,6 +58,7 @@ class ComponentDocs extends React.PureComponent {
     } = this.props;
     const makeDescription = html => ({ __html: html });
     const getDocGenInfo = name => data.allComponentMetadata.edges.find(edge => edge.node.displayName === name);
+    const getDocGenInfoTs = name => data.allTsDocsJson.edges[0].node.data.find(edge => edge.name === `${name}Props`);
     return (
       <DocsLayout>
         <Content>
@@ -89,17 +91,24 @@ class ComponentDocs extends React.PureComponent {
           </Section>
           {Object.entries(components).map(([componentName]) => {
             // Only generate docs for props for javascript code.
-            const componentDocs = getDocGenInfo(componentName);
-            if (componentDocs) {
+            const componentDocsJs = getDocGenInfo(componentName);
+            if (componentDocsJs) {
               return (
                 <PropsTable
                   key={componentName}
                   name={componentName}
-                  description={componentDocs.node.description}
-                  props={componentDocs.node.props}
+                  description={componentDocsJs.node.description}
+                  props={componentDocsJs.node.props}
                   enumValues={enumValues}
                 />
               );
+            }
+            let componentDocsTs;
+            if (!componentDocsJs) {
+              componentDocsTs = getDocGenInfoTs(componentName);
+              if (componentDocsTs) {
+                return <PropsTableTs key={componentName} name={componentName} props={componentDocsTs.children} />;
+              }
             }
             return null;
           })}
@@ -136,6 +145,31 @@ export default props => (
                   value
                 }
                 required
+              }
+            }
+          }
+        }
+        allTsDocsJson {
+          edges {
+            node {
+              id
+              name
+              kind
+              data {
+                name
+                children {
+                  name
+                  comment {
+                    shortText
+                  }
+                  type {
+                    type
+                    name
+                  }
+                  flags {
+                    isOptional
+                  }
+                }
               }
             }
           }
