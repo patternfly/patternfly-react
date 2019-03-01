@@ -3,11 +3,11 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 import { EllipsisVIcon } from '@patternfly/react-icons';
-import { Button } from '../Button';
+import { Button, ButtonVariant } from '../Button';
 
-const DataListAction = ({ className, id, 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy, ...props }) => (
+const DataListAction = ({ className, id, 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy, rowid, ...props }) => (
   <div className={css(styles.dataListAction, className)} {...props}>
-    <Button variant="plain" id={id} aria-labelledby={ariaLabelledBy} aria-label={ariaLabel}>
+    <Button variant={ButtonVariant.plain} id={id} aria-labelledby={ariaLabelledBy} aria-label={ariaLabel}>
       <EllipsisVIcon />
     </Button>
   </div>
