@@ -65,13 +65,13 @@ describe('DataList', () => {
     });
   });
 
-  test('Toggle default', () => {
+  test('Toggle default with aria label', () => {
     const view = shallow(
       <DataListToggle aria-label="Toggle details for" aria-labelledby="ex-toggle2 ex-item2" id="ex-toggle2" />
     );
 
     expect(view.find(Button).props()['aria-label']).toBe('Toggle details for');
-    expect(view.find(Button).props()['aria-labelledby']).toBe('ex-toggle2 ex-item2');
+    expect(view.find(Button).props()['aria-labelledby']).toBe(null);
     expect(view.find(Button).props()['aria-expanded']).toBe(false);
     expect(view.find(Button).props().id).toBe('ex-toggle2');
     expect(view.find(Button).props().id).toBe('ex-toggle2');
@@ -81,7 +81,6 @@ describe('DataList', () => {
     const view = shallow(
       <DataListToggle
         aria-label="Toggle details for"
-        aria-labelledby="ex-toggle2 ex-item2"
         id="ex-toggle2"
         isExpanded
       />
