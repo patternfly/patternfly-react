@@ -28,7 +28,7 @@
   "devDependencies": {
     "glob": "^7.1.2"
   },
-  "license": "Apache-2.0",
+  "license": "MIT",
   "scripts": {
     "build": "yarn build:babel && yarn build:ts",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",

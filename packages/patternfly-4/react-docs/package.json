@@ -3,7 +3,7 @@
   "description": "PatternFly React Docs",
   "version": "3.21.48",
   "author": "Red Hat",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
