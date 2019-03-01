@@ -23,6 +23,7 @@ export default {
     DataListContent,
     DataListToggle
   },
+  variablesRoot: 'pf-c-data-list',
   examples: [
     {
       component: Simple,

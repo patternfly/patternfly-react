@@ -11,6 +11,7 @@ export default {
     Gallery,
     GalleryItem
   },
+  variablesRoot: 'pf-l-gallery',
   examples: [
     { component: SimpleGallery, title: 'Simple Gallery Layout', getContainerProps },
     { component: GalleryWithGutters, title: 'Gallery With Gutters', getContainerProps }

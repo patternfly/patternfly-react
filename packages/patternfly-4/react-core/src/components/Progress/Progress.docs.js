@@ -24,6 +24,7 @@ export default {
     'Object.values(ProgressSize)': Object.values(ProgressSize),
     'Object.values(ProgressMeasureLocation)': Object.values(ProgressMeasureLocation)
   },
+  variablesRoot: 'pf-c-progress',
   examples: [
     { component: Simple, title: 'Simple Progress' },
     { component: LabeledProgress, title: 'Progress with additional label' },

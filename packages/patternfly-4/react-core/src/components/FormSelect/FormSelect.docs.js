@@ -11,6 +11,7 @@ export default {
     FormSelectOption,
     FormSelectOptionGroup
   },
+  variablesRoot: 'pf-c-form-control',
   examples: [
     { component: FormSelectInput, title: 'FormSelect Input' },
     { component: FormSelectInputGrouped, title: 'FormSelect Input with grouping' },

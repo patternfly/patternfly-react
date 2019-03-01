@@ -22,6 +22,9 @@ export default StyleSheet.create({
       textDecoration: 'none'
     }
   },
+  collapsedNavItem: {
+    padding: `${spacerXs.var} 0`
+  },
   secondaryList: {
     paddingBottom: spacerXs.var
   },

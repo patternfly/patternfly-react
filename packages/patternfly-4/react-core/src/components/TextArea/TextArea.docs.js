@@ -7,5 +7,6 @@ export default {
   components: {
     TextArea
   },
+  variablesRoot: 'pf-c-form-control',
   examples: [{ component: Simple, title: 'Simple TextArea' }, { component: Invalid, title: 'Invalid TextArea' }]
 };

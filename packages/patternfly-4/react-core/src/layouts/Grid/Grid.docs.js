@@ -15,6 +15,7 @@ export default {
   enumValues: {
     gridSpans: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
   },
+  variablesRoot: 'pf-l-grid',
   examples: [
     { component: Simple, title: 'Simple Grid', getContainerProps },
     { component: WithGutters, title: 'Grid with gutters', getContainerProps },

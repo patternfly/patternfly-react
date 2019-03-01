@@ -14,6 +14,7 @@ export default {
   enumValues: {
     'Object.values(PageSectionVariants)': Object.values(PageSectionVariants)
   },
+  variablesRoot: 'pf-c-page',
   examples: [
     { component: VerticalPage, title: 'Vertical Page Layout', getContainerProps },
     { component: HorizontalPage, title: 'Horizontal Page Layout', getContainerProps }

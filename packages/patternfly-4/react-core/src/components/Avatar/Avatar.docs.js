@@ -6,6 +6,7 @@ export default {
   components: {
     Avatar
   },
+  variablesRoot: 'pf-c-avatar',
   examples: [
     {
       component: Simple,

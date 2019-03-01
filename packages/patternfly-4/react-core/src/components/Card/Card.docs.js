@@ -12,6 +12,7 @@ export default {
     CardBody,
     CardFooter
   },
+  variablesRoot: 'pf-c-card',
   examples: [
     { component: Simple, title: 'Card' },
     { component: NoFooter, title: 'Card with no footer' },

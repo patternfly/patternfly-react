@@ -20,6 +20,7 @@ export default {
   enumValues: {
     'Object.values(NavVariants)': Object.values(NavVariants)
   },
+  variablesRoot: 'pf-c-nav',
   examples: [
     { component: SimpleList, title: 'Simple Nav' },
     { component: GroupedList, title: 'Grouped Nav' },

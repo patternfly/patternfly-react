@@ -12,6 +12,7 @@ export default {
       key => TooltipPosition[key]
     )
   },
+  variablesRoot: 'pf-c-tooltip',
   examples: [
     { component: SimpleTooltip, title: 'Simple Tooltip' },
     { component: TooltipPositions, title: 'Tooltip Positions' }

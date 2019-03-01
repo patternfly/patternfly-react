@@ -12,6 +12,7 @@ export default {
     'Object.values(ButtonVariant)': Object.values(ButtonVariant),
     'Object.values(ButtonType)': Object.values(ButtonType)
   },
+  variablesRoot: 'pf-c-button',
   examples: [
     { component: VariantsExample, title: 'Button Variants' },
     { component: BlockExample, title: 'Block Button' },

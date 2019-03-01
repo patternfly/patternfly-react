@@ -13,6 +13,7 @@ export default {
       key => PopoverPosition[key]
     )
   },
+  variablesRoot: 'pf-c-popover',
   examples: [
     { component: SimplePopover, title: 'Simple Popover' },
     { component: AdvancedPopover, title: 'Programmatically Controlled Popover' },
