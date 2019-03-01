@@ -10,6 +10,7 @@ export default {
     Level,
     LevelItem
   },
+  variablesRoot: 'pf-l-level',
   examples: [
     { component: Simple, title: 'Simple Level Layout', getContainerProps },
     { component: WithGutters, title: 'Level With Gutters', getContainerProps }

@@ -9,6 +9,7 @@ export default {
   enumValues: {
     'Object.values(BackgroundImageSrc)': Object.values(BackgroundImageSrc)
   },
+  variablesRoot: 'pf-c-background-image',
   examples: [{ component: SimpleBackgroundImage, title: 'Simple Background Image' }],
   fullPageOnly: true
 };

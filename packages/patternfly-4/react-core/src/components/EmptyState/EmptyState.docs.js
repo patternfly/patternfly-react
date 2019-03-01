@@ -4,6 +4,7 @@ import Simple from './examples/SimpleEmptyState';
 export default {
   title: 'EmptyState',
   components: { EmptyState, EmptyStateBody, EmptyStateSecondaryActions },
+  variablesRoot: 'pf-c-empty-state',
   examples: [
     {
       component: Simple,

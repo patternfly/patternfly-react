@@ -11,6 +11,7 @@ export default {
     Tabs,
     Tab
   },
+  variablesRoot: 'pf-c-tabs',
   examples: [
     { component: SimpleTabs, title: 'Primary tabs with sections' },
     { component: ScrollButtonsTabs, title: 'Scroll buttons' },

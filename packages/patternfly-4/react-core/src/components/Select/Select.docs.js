@@ -7,5 +7,6 @@ export default {
     Select,
     SelectOption
   },
+  variablesRoot: 'pf-c-select',
   examples: [{ component: SingleSelectInput, title: 'Single Select Input' }]
 };

@@ -177,7 +177,7 @@ exports.createPages = async ({ graphql, actions }) => {
     export const ${doc.base.split('.')[0].toLowerCase()}_docs = docs;
     export const ${doc.base.split('.')[0].toLowerCase()}_package = '${packageDir}';
 
-    export default () => <ComponentDocs rawExamples={rawExamples} images={images} {...docs} />;
+    export default ({location}) => <ComponentDocs rawExamples={rawExamples} location={location} images={images} {...docs} />;
     `;
 
     docExports.push(

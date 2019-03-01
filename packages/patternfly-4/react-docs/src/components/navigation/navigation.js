@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 import logo from '../../assets/logo.png';
 import NavigationItemGroup from './navigationItemGroup';
 import NavigationItem from './navigationItem';
-import { Form, FormGroup, TextInput } from '@patternfly/react-core';
+import { Button, Form, FormGroup, TextInput } from '@patternfly/react-core';
+import { GoFold, GoUnfold } from 'react-icons/go';
 
 const routeShape = PropTypes.shape({
   to: PropTypes.string.isRequired,
@@ -18,13 +19,19 @@ const routeShape = PropTypes.shape({
 const propTypes = {
   componentRoutes: PropTypes.arrayOf(routeShape),
   layoutRoutes: PropTypes.arrayOf(routeShape),
-  demoRoutes: PropTypes.arrayOf(routeShape)
+  demoRoutes: PropTypes.arrayOf(routeShape),
+  collapsed: PropTypes.bool,
+  handleCollapseExpandClick: PropTypes.func,
+  location: PropTypes.any
 };
 
 const defaultProps = {
   componentRoutes: [],
   layoutRoutes: [],
-  demoRoutes: []
+  demoRoutes: [],
+  collapsed: true,
+  handleCollapseExpandClick: null,
+  location: null
 };
 
 class Navigation extends React.Component {
@@ -41,8 +48,20 @@ class Navigation extends React.Component {
     }));
   };
 
+  expand = () => {
+    this.props.handleCollapseExpandClick(false);
+  };
+
+  collapse = () => {
+    this.props.handleCollapseExpandClick(true);
+  };
+
   render() {
-    const { componentRoutes, layoutRoutes, demoRoutes } = this.props;
+    const { componentRoutes, layoutRoutes, demoRoutes, collapsed, location } = this.props;
+    const computedCollapsed =
+      location && location.state && location.state.shouldBeCollapsed !== null
+        ? location.state.shouldBeCollapsed
+        : collapsed;
     const { searchValue } = this.state;
     const searchRE = new RegExp(searchValue, 'i');
 
@@ -84,11 +103,24 @@ class Navigation extends React.Component {
               />
             </FormGroup>
           </Form>
+          <div className={css(styles.collapseExpandButtons)}>
+            {computedCollapsed ? (
+              <Button variant="plain" onClick={this.expand}>
+                <span className={css(styles.collapseExpandButton)}>Expand All</span>
+                <GoUnfold className={css(styles.collapseExpandIcon)} />
+              </Button>
+            ) : (
+                <Button variant="plain" onClick={this.collapse}>
+                  <span className={css(styles.collapseExpandButton)}>Collapse All</span>
+                  <GoFold className={css(styles.collapseExpandIcon)} />
+                </Button>
+              )}
+          </div>
           <NavigationItemGroup title="Style">
-            <NavigationItem to="/styles/tokens" pkg="tokens">
-              Tokens
+            <NavigationItem to="/styles/tokens" pkg="tokens" collapsed={computedCollapsed}>
+              Global Variables
             </NavigationItem>
-            <NavigationItem to="/styles/icons" pkg="icons">
+            <NavigationItem to="/styles/icons" pkg="icons" collapsed={computedCollapsed}>
               Icons
             </NavigationItem>
           </NavigationItemGroup>
@@ -100,6 +132,7 @@ class Navigation extends React.Component {
                   to={route.to}
                   pkg={route.pkg}
                   components={route.filteredComponents || route.components}
+                  collapsed={computedCollapsed}
                 >
                   {route.label}
                 </NavigationItem>
@@ -114,6 +147,7 @@ class Navigation extends React.Component {
                   to={route.to}
                   pkg={route.pkg}
                   components={route.filteredComponents || route.components}
+                  collapsed={computedCollapsed}
                 >
                   {route.label}
                 </NavigationItem>
@@ -123,7 +157,7 @@ class Navigation extends React.Component {
           {Boolean(filteredDemoRoutes.length) && (
             <NavigationItemGroup title="Demos">
               {filteredDemoRoutes.map(route => (
-                <NavigationItem key={route.label} to={route.to}>
+                <NavigationItem key={route.label} to={route.to} collapsed={computedCollapsed}>
                   {route.label}
                 </NavigationItem>
               ))}

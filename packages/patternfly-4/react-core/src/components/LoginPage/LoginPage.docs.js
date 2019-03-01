@@ -7,6 +7,7 @@ export default {
     LoginPage,
     LoginForm
   },
+  variablesRoot: 'pf-c-login',
   examples: [{ component: SimpleLoginPage, title: 'Simple LoginPage' }],
   fullPageOnly: true
 };

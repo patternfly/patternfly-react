@@ -8,5 +8,6 @@ export default {
   components: {
     Bullseye
   },
+  variablesRoot: 'pf-l-bullseye',
   examples: [{ component: Simple, title: 'Simple Bullseye Layout', getContainerProps }]
 };

@@ -9,6 +9,7 @@ export default {
   components: {
     Modal
   },
+  variablesRoot: 'pf-c-modal-box',
   examples: [
     { component: Simple, title: 'Simple Modal' },
     { component: Small, title: 'Small Modal' },

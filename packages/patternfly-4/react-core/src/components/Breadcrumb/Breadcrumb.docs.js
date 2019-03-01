@@ -10,6 +10,7 @@ export default {
     BreadcrumbItem,
     BreadcrumbHeading
   },
+  variablesRoot: 'pf-c-breadcrumb',
   examples: [
     {
       component: Simple,

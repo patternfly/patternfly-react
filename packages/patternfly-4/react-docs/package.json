@@ -31,6 +31,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
+    "react-icons": "^3.4.0",
     "react-live": "^1.12.0",
     "typescript": "^3.2.2"
   },
@@ -40,7 +41,7 @@
   "scripts": {
     "docbuild": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 && yarn gen-ts-docs && gatsby build",
     "pr-build": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 && yarn gen-ts-docs && gatsby build --verbose --prefix-paths",
-    "develop": "gatsby develop",
+    "develop": "yarn gen-ts-docs && gatsby develop",
     "gen-ts-docs": "typedoc --json ts-docs/ts-output.json ../react-core --ignoreCompilerErrors --mode file --tsconfig ../react-core/src/tsconfig.dts.json && node build/transformTsDocs.js"
   },
   "browserslist": [

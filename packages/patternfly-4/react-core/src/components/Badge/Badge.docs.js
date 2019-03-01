@@ -8,6 +8,7 @@ export default {
   components: {
     Badge
   },
+  variablesRoot: 'pf-c-badge',
   examples: [
     {
       component: Read,

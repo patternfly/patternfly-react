@@ -9,6 +9,7 @@ export default {
   components: {
     Switch
   },
+  variablesRoot: 'pf-c-switch',
   examples: [
     { component: SimpleSwitch, title: 'Simple Switch' },
     { component: NoLabelSwitch, title: 'Switch with no labels' },

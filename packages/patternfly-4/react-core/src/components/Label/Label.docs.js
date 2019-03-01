@@ -6,5 +6,6 @@ export default {
   components: {
     Label
   },
+  variablesRoot: 'pf-c-label',
   examples: [{ component: SimpleLabel, title: 'Labels' }]
 };

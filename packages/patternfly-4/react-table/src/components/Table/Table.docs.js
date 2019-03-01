@@ -15,6 +15,7 @@ export default {
     TableBody,
     TableHeader
   },
+  variablesRoot: 'pf-c-table',
   examples: [
     { component: Simple, title: 'Simple Table' },
     { component: Sortable, title: 'Sortable Table' },

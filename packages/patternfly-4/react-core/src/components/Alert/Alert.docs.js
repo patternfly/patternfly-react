@@ -15,6 +15,7 @@ export default {
   enumValues: {
     'Object.values(AlertVariant)': Object.values(AlertVariant)
   },
+  variablesRoot: 'pf-c-alert',
   examples: [
     {
       component: SuccessExample,

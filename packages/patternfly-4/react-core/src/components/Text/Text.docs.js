@@ -26,6 +26,7 @@ export default {
     'Object.values(TextListVariants)': Object.values(TextListVariants),
     'Object.values(TextListItemVariants)': Object.values(TextListItemVariants)
   },
+  variablesRoot: 'pf-c-content',
   examples: [
     { component: Headings, title: 'Headings Example' },
     { component: BodyText, title: 'Body text examples' },

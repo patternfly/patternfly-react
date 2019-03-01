@@ -12,6 +12,7 @@ export default {
   enumValues: {
     'Object.keys(GutterSize)': Object.keys(GutterSize)
   },
+  variablesRoot: 'pf-l-split',
   examples: [
     { component: Simple, title: 'Simple Split Layout', getContainerProps },
     { component: WithGutter, title: 'Split Layout With Gutter', getContainerProps }

@@ -10,6 +10,7 @@ export default {
     FormGroup,
     ActionGroup
   },
+  variablesRoot: 'pf-c-form',
   examples: [
     { component: Simple, title: 'Simple Form' },
     { component: Horizontal, title: 'Horizontal form' },

@@ -9,6 +9,7 @@ export default {
   components: {
     TextInput
   },
+  variablesRoot: 'pf-c-form-control',
   examples: [
     { component: Simple, title: 'Simple TextInput' },
     { component: Disabled, title: 'Disabled TextInput' },

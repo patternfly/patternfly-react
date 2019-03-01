@@ -10,6 +10,7 @@ export default {
     ChipGroupToolbarItem,
     Chip
   },
+  variablesRoot: ['pf-c-chip', 'pf-c-chip-group'],
   examples: [
     {
       component: Toolbar,
