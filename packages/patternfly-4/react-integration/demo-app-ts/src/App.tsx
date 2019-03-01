@@ -8,10 +8,7 @@ import {
   Alert,
   AlertActionCloseButton,
   AlertActionLink,
-  AlertVariant,
-  Select,
-  SelectOption,
-  SelectVariant
+  AlertVariant
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -77,7 +74,7 @@ class App extends Component {
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
         <Alert variant="success" title="Success notification title" />
-        <Select
+        {/* <Select
           variant={SelectVariant.single}
           onToggle={this.onToggle}
           onSelect={this.onSelect}
@@ -87,7 +84,7 @@ class App extends Component {
           <SelectOption value="option 1" />
           <SelectOption value="option 2" />
           <SelectOption value="option 3" />
-        </Select>
+        </Select> */}
       </div>
     );
   }

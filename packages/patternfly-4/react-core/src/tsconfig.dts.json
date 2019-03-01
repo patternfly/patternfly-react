@@ -8,16 +8,28 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "skipLibCheck": true,
-    "sourceMap": false, // allow sourcemap support
-    "lib": ["es2017", "dom"],
+    "sourceMap": false,
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "noEmit": false,
-    "module": "commonjs", // specify module code generation
-    "jsx": "react", // use typescript to transpile jsx to js
-    "target": "es5", // specify ECMAScript target version
+    "module": "commonjs",
+    "jsx": "react",
+    "target": "es5",
     "paths": {
-      "*": ["../dist/esm/*"]
+      "*": [
+        "../dist/esm/*"
+      ]
     }
   },
-  "include": ["./**/*"],
-  "exclude": ["./**/*.d.ts", "./**/**.test.tsx", "./**/**.test.ts", "./**/examples/**"]
+  "include": [
+    "./**/*"
+  ],
+  "exclude": [
+    "./**/*.d.ts",
+    "./**/**.test.tsx",
+    "./**/**.test.ts",
+    "./**/examples/**"
+  ]
 }
