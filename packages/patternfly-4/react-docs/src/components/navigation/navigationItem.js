@@ -36,7 +36,7 @@ const NavigationItem = ({ to, children, pkg, components, collapsed }) => (
           <Link
             className={css(styles.navigationItem, isActive && styles.active)}
             to={to}
-            state={{ collapsed }}
+            state={{ shouldBeCollapsed: collapsed }}
             aria-describedby={navItemDescriptorId(children)}
           >
             {children}

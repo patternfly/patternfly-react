@@ -33,7 +33,11 @@ class DocsLayout extends React.Component {
   };
 
   handleCollapseExpandClick = collapsed => {
+    const { location } = this.props;
     this.setState({ collapsed });
+    if (location && location.state) {
+      location.state.shouldBeCollapsed = collapsed;
+    }
   };
 
   render() {
@@ -51,25 +55,25 @@ class DocsLayout extends React.Component {
 
     const componentRoutes = data.componentPages
       ? data.componentPages.edges.map(e => ({
-          to: e.node.path,
-          label: e.node.fields.label,
-          pkg: getPackage(e.node.fields.label),
-          components: componentMapper(e.node.path, e.node.fields.label)
-        }))
+        to: e.node.path,
+        label: e.node.fields.label,
+        pkg: getPackage(e.node.fields.label),
+        components: componentMapper(e.node.path, e.node.fields.label)
+      }))
       : [];
     const layoutRoutes = data.layoutPages
       ? data.layoutPages.edges.map(e => ({
-          to: e.node.path,
-          label: e.node.fields.label,
-          pkg: getPackage(e.node.fields.label),
-          components: componentMapper(e.node.path, e.node.fields.label)
-        }))
+        to: e.node.path,
+        label: e.node.fields.label,
+        pkg: getPackage(e.node.fields.label),
+        components: componentMapper(e.node.path, e.node.fields.label)
+      }))
       : [];
     const demoRoutes = data.demoPages
       ? data.demoPages.edges.map(e => ({
-          to: e.node.path,
-          label: e.node.fields.label
-        }))
+        to: e.node.path,
+        label: e.node.fields.label
+      }))
       : [];
     return (
       <React.Fragment>

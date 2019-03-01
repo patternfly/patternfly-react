@@ -58,7 +58,10 @@ class Navigation extends React.Component {
 
   render() {
     const { componentRoutes, layoutRoutes, demoRoutes, collapsed, location } = this.props;
-    const computedCollapsed = location && location.state && location.state.collapsed !== null ? location.state.collapsed : collapsed;
+    const computedCollapsed =
+      location && location.state && location.state.shouldBeCollapsed !== null
+        ? location.state.shouldBeCollapsed
+        : collapsed;
     console.log(`Navigation: collapsed: ${computedCollapsed}`);
     const { searchValue } = this.state;
     const searchRE = new RegExp(searchValue, 'i');
@@ -108,11 +111,11 @@ class Navigation extends React.Component {
                 <GoUnfold className={css(styles.collapseExpandIcon)} />
               </Button>
             ) : (
-              <Button variant="plain" onClick={this.collapse}>
-                <span className={css(styles.collapseExpandButton)}>Collapse All</span>
-                <GoFold className={css(styles.collapseExpandIcon)} />
-              </Button>
-            )}
+                <Button variant="plain" onClick={this.collapse}>
+                  <span className={css(styles.collapseExpandButton)}>Collapse All</span>
+                  <GoFold className={css(styles.collapseExpandIcon)} />
+                </Button>
+              )}
           </div>
           <NavigationItemGroup title="Style">
             <NavigationItem to="/styles/tokens" pkg="tokens">
