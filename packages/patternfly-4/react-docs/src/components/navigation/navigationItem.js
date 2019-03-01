@@ -27,10 +27,8 @@ const navItemDescriptorId = children => `${children}Descriptor`;
 const NavigationItem = ({ to, children, pkg, components, collapsed }) => (
   <Location>
     {({ location }) => {
-      // console.log(location);
       const currentPath = location.pathname;
       const isActive = currentPath.toLowerCase().indexOf(children.toLowerCase()) > -1;
-      console.log(`NavigationItem: ${children}, collapsed: ${collapsed}`);
       return (
         <li className={css(collapsed && styles.collapsedNavItem)}>
           <Link

@@ -62,7 +62,6 @@ class Navigation extends React.Component {
       location && location.state && location.state.shouldBeCollapsed !== null
         ? location.state.shouldBeCollapsed
         : collapsed;
-    console.log(`Navigation: collapsed: ${computedCollapsed}`);
     const { searchValue } = this.state;
     const searchRE = new RegExp(searchValue, 'i');
 
@@ -118,10 +117,10 @@ class Navigation extends React.Component {
               )}
           </div>
           <NavigationItemGroup title="Style">
-            <NavigationItem to="/styles/tokens" pkg="tokens">
+            <NavigationItem to="/styles/tokens" pkg="tokens" collapsed={computedCollapsed}>
               Global Variables
             </NavigationItem>
-            <NavigationItem to="/styles/icons" pkg="icons">
+            <NavigationItem to="/styles/icons" pkg="icons" collapsed={computedCollapsed}>
               Icons
             </NavigationItem>
           </NavigationItemGroup>
@@ -158,7 +157,7 @@ class Navigation extends React.Component {
           {Boolean(filteredDemoRoutes.length) && (
             <NavigationItemGroup title="Demos">
               {filteredDemoRoutes.map(route => (
-                <NavigationItem key={route.label} to={route.to}>
+                <NavigationItem key={route.label} to={route.to} collapsed={computedCollapsed}>
                   {route.label}
                 </NavigationItem>
               ))}
