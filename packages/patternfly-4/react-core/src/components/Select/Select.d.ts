@@ -9,7 +9,7 @@ export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   isExpanded?: boolean;
   isGrouped?: boolean;
   onToggle(value: boolean): void;
-  onSelect(event: React.SyntheticEvent<HTMLDivElement>): void;
+  onSelect(event: React.SyntheticEvent<HTMLDivElement>, selection: string): void;
   title?: string | ReactNode;
   selections?: string | Array<string>;
   variant?: string;

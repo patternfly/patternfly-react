@@ -54,7 +54,6 @@ class Select extends React.Component {
   state = { openedOnEnter: false };
 
   onEnter = () => {
-    console.log('setting onEnter');
     this.setState({ openedOnEnter: true });
   };
 
