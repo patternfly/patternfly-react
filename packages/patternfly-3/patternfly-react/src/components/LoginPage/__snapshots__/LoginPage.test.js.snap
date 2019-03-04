@@ -126,6 +126,9 @@ exports[`Component matches snapshot 1`] = `
                   novalidate=""
                 >
                   <div
+                    class="login-form-error"
+                  />
+                  <div
                     class="login_card_input form-group"
                   >
                     <input
