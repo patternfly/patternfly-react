@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.29.16 (2019-03-04)
+
+
+### Bug Fixes
+
+* **LoginPage:** remove inputs errors ([#1278](https://github.com/patternfly/patternfly-react/issues/1278)) ([cf789ed](https://github.com/patternfly/patternfly-react/commit/cf789ed))
+
+
+
+
+
 ## [2.29.15](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.14...patternfly-react@2.29.15) (2019-02-20)
 
 **Note:** Version bump only for package patternfly-react
