@@ -29,7 +29,7 @@ class NavExpandableList extends React.Component {
     return (
       <Nav onSelect={this.onSelect} onToggle={this.onToggle}>
         <NavList>
-          <NavExpandable title="Link 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
+          <NavExpandable title="Link 1" groupId="grp-1" isActive={activeGroup === 'grp-1'} defaultExpanded>
             <NavItem
               preventDefault
               to="#expandable-1"

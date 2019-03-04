@@ -42,11 +42,11 @@ class Nav extends React.Component {
   }
 
   // Callback from NavExpandable
-  onToggle(event, groupId, isExpanded) {
+  onToggle(event, groupId, toggleValue) {
     this.props.onToggle({
       event,
       groupId,
-      isExpanded
+      toggleValue
     });
   }
 

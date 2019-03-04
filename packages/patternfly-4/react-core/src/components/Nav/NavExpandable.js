@@ -14,6 +14,8 @@ const propTypes = {
   /** If defined, screen readers will read this text instead of the list title */
   srText: PropTypes.string,
   /** If true will default the list to be expanded */
+  defaultExpanded: PropTypes.bool,
+  /** Boolean to programatically expand or collapse section */
   isExpanded: PropTypes.bool,
   /** Anything that can be rendered inside of the expandable list */
   children: PropTypes.node,
@@ -31,7 +33,8 @@ const propTypes = {
 
 const defaultProps = {
   srText: '',
-  isExpanded: false,
+  defaultExpanded: false,
+  isExpanded: null,
   children: null,
   className: '',
   groupId: null,
@@ -41,13 +44,13 @@ const defaultProps = {
 
 class NavExpandable extends React.Component {
   id = this.props.id || getUniqueId();
-
   render() {
     const {
       id,
       title,
       srText,
-      isExpanded: defaultExpanded,
+      isExpanded,
+      defaultExpanded,
       children,
       className,
       groupId,
@@ -58,12 +61,17 @@ class NavExpandable extends React.Component {
     return (
       <NavContext.Consumer>
         {context => (
-          <NavToggle defaultValue={defaultExpanded} groupId={groupId} onToggle={context.onToggle}>
-            {({ value: isExpanded, toggle }) => (
+          <NavToggle
+            defaultValue={defaultExpanded}
+            isExpanded={isExpanded}
+            groupId={groupId}
+            onToggle={context.onToggle}
+          >
+            {({ toggleValue, toggle }) => (
               <li
                 className={css(
                   styles.navItem,
-                  isExpanded && styles.modifiers.expanded,
+                  toggleValue && styles.modifiers.expanded,
                   isActive && styles.modifiers.current,
                   className
                 )}
@@ -77,14 +85,14 @@ class NavExpandable extends React.Component {
                   href="#"
                   onClick={e => e.preventDefault()}
                   onMouseDown={e => e.preventDefault()}
-                  aria-expanded={isExpanded}
+                  aria-expanded={toggleValue}
                 >
                   {title}
                   <span className={css(styles.navToggle)}>
                     <AngleRightIcon aria-hidden="true" />
                   </span>
                 </a>
-                <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={isExpanded ? null : true}>
+                <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={toggleValue ? null : true}>
                   {srText && (
                     <h2 className={css(a11yStyles.screenReader)} id={this.id}>
                       {srText}
