@@ -356,7 +356,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
   overflow: hidden;
   opacity: 0;
 }
-.pf-c-nav__item.pf-m-expanded.expandable-group {
+.pf-c-nav__item.expandable-group {
   display: block;
 }
 .pf-c-nav__list {
@@ -388,6 +388,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
       >
         <NavExpandable
           className="expandable-group"
+          defaultExpanded={false}
           groupId={null}
           id="grp-1"
           isActive={false}
@@ -396,16 +397,17 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
           title="Section 1"
         >
           <NavToggle
-            defaultValue={true}
+            defaultValue={false}
             groupId={null}
+            isExpanded={true}
             onToggle={[Function]}
           >
             <li
-              className="pf-c-nav__item pf-m-expanded expandable-group"
+              className="pf-c-nav__item expandable-group"
               onClick={[Function]}
             >
               <a
-                aria-expanded={true}
+                aria-expanded={false}
                 className="pf-c-nav__link"
                 data-component="pf-nav-expandable"
                 href="#"
@@ -448,7 +450,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
               <section
                 aria-labelledby="grp-1"
                 className="pf-c-nav__subnav"
-                hidden={null}
+                hidden={true}
               >
                 <ul
                   className="pf-c-nav__simple-list"
@@ -640,16 +642,18 @@ exports[`Expandable Nav List 1`] = `
       >
         <NavExpandable
           className=""
+          defaultExpanded={false}
           groupId={null}
           id="grp-1"
           isActive={false}
-          isExpanded={false}
+          isExpanded={null}
           srText=""
           title="Section 1"
         >
           <NavToggle
             defaultValue={false}
             groupId={null}
+            isExpanded={null}
             onToggle={[Function]}
           >
             <li
@@ -900,16 +904,18 @@ exports[`Expandable Nav List with aria label 1`] = `
       >
         <NavExpandable
           className=""
+          defaultExpanded={false}
           groupId={null}
           id="grp-1"
           isActive={false}
-          isExpanded={false}
+          isExpanded={null}
           srText="Section 1 - Example sub-navigation"
           title="Section 1"
         >
           <NavToggle
             defaultValue={false}
             groupId={null}
+            isExpanded={null}
             onToggle={[Function]}
           >
             <li

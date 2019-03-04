@@ -9,7 +9,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  defaultValue: true,
+  defaultValue: false,
   groupId: 0,
   onToggle: () => undefined
 };
@@ -18,29 +18,30 @@ class NavToggle extends React.Component {
   static propTypes = propTypes;
   static defaultProps = defaultProps;
   state = {
-    value: this.props.defaultValue
+    toggleValue: this.props.defaultValue
   };
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.defaultValue !== this.state.value) {
-      this.setState({ value: nextProps.defaultValue });
+  componentDidUpdate(prevProps) {
+    if (this.props.isExpanded !== prevProps.isExpanded) {
+      this.setState({ toggleValue: this.props.isExpanded });
     }
   }
+
   handleToggle = e => {
     // Item events can bubble up, ignore those
     if (e.target.getAttribute('data-component') !== 'pf-nav-expandable') {
       return;
     }
-    const { value } = this.state;
+    const { toggleValue } = this.state;
     const { groupId, onToggle } = this.props;
     this.setState({
-      value: !value
+      toggleValue: !toggleValue
     });
-    onToggle(e, groupId, !value);
+    onToggle(e, groupId, !toggleValue);
   };
 
   render() {
     return this.props.children({
-      value: this.state.value,
+      toggleValue: this.state.toggleValue,
       toggle: this.handleToggle
     });
   }
