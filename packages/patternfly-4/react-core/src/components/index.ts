@@ -17,6 +17,7 @@ export * from './Dropdown';
 export * from './EmptyState';
 export * from './Form';
 export * from './FormSelect';
+export * from './InputGroup';
 export * from './Label';
 export * from './List';
 export * from './LoginPage';
