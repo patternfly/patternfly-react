@@ -2,6 +2,7 @@ import { HTMLProps, FormEvent } from 'react';
 
 export const SelectVariant: {
   single: 'single';
+  checkbox: 'checkbox';
 };
 
 export interface SelectProps extends HTMLProps<HTMLOptionElement> {
