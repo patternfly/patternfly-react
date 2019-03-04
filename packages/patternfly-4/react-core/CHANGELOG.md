@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.11...@patternfly/react-core@2.3.0) (2019-03-04)
+
+
+### Bug Fixes
+
+* **nav:** Fix bug where previous was expanding on select ([#1479](https://github.com/patternfly/patternfly-react/issues/1479)) ([f0863a0](https://github.com/patternfly/patternfly-react/commit/f0863a0))
+
+
+### Features
+
+* **InputGroup:** Add InputGroup to PF4 ([#1108](https://github.com/patternfly/patternfly-react/issues/1108)) ([807ca69](https://github.com/patternfly/patternfly-react/commit/807ca69))
+
+
+
+
+
 ## [2.2.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.10...@patternfly/react-core@2.2.11) (2019-02-28)
 
 

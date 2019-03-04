@@ -71,6 +71,12 @@ class Tooltip extends React.Component {
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
   }
 
+  extendChildren() {
+    return React.cloneElement(this.props.children, {
+      isAppLauncher: this.props.isAppLauncher
+    });
+  }
+
   render() {
     const {
       position,
@@ -83,6 +89,7 @@ class Tooltip extends React.Component {
       appendTo,
       zIndex,
       maxWidth,
+      isAppLauncher,
       ...rest
     } = this.props;
     const content = (
@@ -121,7 +128,7 @@ class Tooltip extends React.Component {
           }
         }}
       >
-        {children}
+        {isAppLauncher ? this.extendChildren() : children}
       </Tippy>
     );
   }
