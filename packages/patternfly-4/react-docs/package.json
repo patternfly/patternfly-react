@@ -39,8 +39,8 @@
     "gatsby"
   ],
   "scripts": {
-    "docbuild": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 && yarn gen-ts-docs && gatsby build",
-    "pr-build": "node build/copyDocs.js && env NODE_OPTIONS=--max_old_space_size=4096 && yarn gen-ts-docs && gatsby build --verbose --prefix-paths",
+    "docbuild": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
+    "pr-build": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
     "develop": "yarn gen-ts-docs && gatsby develop",
     "gen-ts-docs": "typedoc --json ts-docs/ts-output.json ../react-core --ignoreCompilerErrors --mode file --tsconfig ../react-core/src/tsconfig.dts.json && node build/transformTsDocs.js"
   },
