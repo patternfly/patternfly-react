@@ -75,7 +75,6 @@ class SelectToggle extends Component {
 
   onEscPress = event => {
     const { parentRef, isExpanded, onToggle, onClose } = this.props;
-    if (!isExpanded && event.key === KeyTypes.Enter) this.toggle.focus();
     if (
       isExpanded &&
       (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&

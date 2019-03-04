@@ -3,6 +3,7 @@ import styles from '@patternfly/patternfly/components/Select/select.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import SingleSelect from './SingleSelect';
+import CheckboxSelect from './CheckboxSelect';
 import SelectToggle from './SelectToggle';
 import { SelectContext, SelectVariant } from './selectConstants';
 
@@ -16,10 +17,12 @@ const propTypes = {
   className: PropTypes.string,
   /** Flag to indicate if select is expanded */
   isExpanded: PropTypes.bool,
-  /** Placeholder text of Select */
-  placeholderText: PropTypes.string,
+  /** Flag to indicate if select options are grouped */
+  isGrouped: PropTypes.bool,
+  /** Title text of Select */
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Selected item */
-  selections: PropTypes.string,
+  selections: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
   /** Id of label for the Select aria-labelledby */
   ariaLabelledBy: PropTypes.string,
   /** Callback for selection behavior */
@@ -27,7 +30,7 @@ const propTypes = {
   /** Callback for toggle button behavior */
   onToggle: PropTypes.func.isRequired,
   /** Variant of rendered Select */
-  variant: PropTypes.oneOf(['single']),
+  variant: PropTypes.oneOf(['single', 'checkbox']),
   /** Width of the select container as a number of px or string percentage */
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Additional props are spread to the container <ul> */
@@ -38,9 +41,10 @@ const defaultProps = {
   children: null,
   className: '',
   isExpanded: false,
+  isGrouped: false,
   ariaLabelledBy: '',
   selections: null,
-  placeholderText: null,
+  title: null,
   variant: SelectVariant.single,
   width: '100%'
 };
@@ -50,6 +54,7 @@ class Select extends React.Component {
   state = { openedOnEnter: false };
 
   onEnter = () => {
+    console.log('setting onEnter');
     this.setState({ openedOnEnter: true });
   };
 
@@ -65,16 +70,17 @@ class Select extends React.Component {
       onToggle,
       onSelect,
       isExpanded,
+      isGrouped,
       selections,
       ariaLabelledBy,
-      placeholderText,
+      title,
       width,
       ...props
     } = this.props;
     const { openedOnEnter } = this.state;
     const selectToggleId = `pf-toggle-id-${currentId++}`;
     let childPlaceholderText = null;
-    if (!selections && !placeholderText) {
+    if (!selections && !title) {
       const childPlaceholder = children.filter(child => child.props.isPlaceholder === true);
       childPlaceholderText =
         (childPlaceholder[0] && childPlaceholder[0].props.value) || (children[0] && children[0].props.value);
@@ -99,7 +105,7 @@ class Select extends React.Component {
                 aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
                 style={{ width }}
               >
-                {selections || placeholderText || childPlaceholderText}
+                {selections || title || childPlaceholderText}
               </SelectToggle>
               {isExpanded && (
                 <SingleSelect
@@ -110,6 +116,33 @@ class Select extends React.Component {
                 >
                   {children}
                 </SingleSelect>
+              )}
+            </React.Fragment>
+          )}
+          {variant === 'checkbox' && (
+            <React.Fragment>
+              <SelectToggle
+                id={selectToggleId}
+                parentRef={this.parentRef.current}
+                isExpanded={isExpanded}
+                onToggle={onToggle}
+                onEnter={this.onEnter}
+                onClose={this.onClose}
+                aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
+                style={{ width }}
+              >
+                {title}
+              </SelectToggle>
+              {isExpanded && (
+                <CheckboxSelect
+                  {...props}
+                  checked={selections}
+                  openedOnEnter={openedOnEnter}
+                  aria-labelledby={ariaLabelledBy}
+                  isGrouped={isGrouped}
+                >
+                  {children}
+                </CheckboxSelect>
               )}
             </React.Fragment>
           )}

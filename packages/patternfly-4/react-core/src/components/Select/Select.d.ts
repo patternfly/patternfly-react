@@ -1,16 +1,19 @@
 import { HTMLProps, FormEvent } from 'react';
 
-export const SelectVariant : {
-  single: 'single'
+export const SelectVariant: {
+  single: 'single';
 };
 
 export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   isExpanded?: boolean;
+  isGrouped?: boolean;
   onToggle(value: boolean): void;
-  placeholderText?: string;
-  selections?: string;
+  onSelect(event: React.SyntheticEvent<HTMLDivElement>): void;
+  title?: string | ReactNode;
+  selections?: string | Array<string>;
   variant?: string;
   width?: string | number;
+  ariaLabelledBy?: string;
 }
 
 declare const Select: React.FunctionComponent<SelectProps>;
