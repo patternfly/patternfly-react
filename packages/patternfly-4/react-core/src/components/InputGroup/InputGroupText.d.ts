@@ -3,7 +3,7 @@ import { Omit } from '../../typeUtils'
 
 export interface InputGroupTextProps extends Omit<HTMLProps<HTMLSpanElement | HTMLLabelElement>, 'children'> {
     children: ReactNode;
-    component?: ReactType<HTMLSpanElement> | ReactType<HTMLLabelElement>;
+    component?: ReactType;
 }
 
 declare const InputGroupText: SFC<InputGroupTextProps>;

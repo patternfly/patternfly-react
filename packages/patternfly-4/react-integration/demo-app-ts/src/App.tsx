@@ -9,9 +9,12 @@ import {
   AlertActionCloseButton,
   AlertActionLink,
   AlertVariant,
+  InputGroup,
+  InputGroupText,
   Select,
   SelectOption,
-  SelectVariant
+  SelectVariant,
+  TextInput
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -88,6 +91,12 @@ class App extends Component {
           <SelectOption value="option 2" />
           <SelectOption value="option 3" />
         </Select>
+        <InputGroup>
+          <InputGroupText component="label" htmlFor="dollar_number">
+            $
+          </InputGroupText>
+          <TextInput id="dollar_number" type="number" />
+        </InputGroup>
       </div>
     );
   }
