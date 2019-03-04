@@ -21,12 +21,21 @@ const LoginCardInput = ({
   showWarning,
   className,
   autoComplete,
-  attributes
+  attributes,
+  topErrorOnly
 }) => {
-  const helpBlock =
-    (showError && <HelpBlock>{error}</HelpBlock>) ||
-    (showWarning && <LoginCardInputWarning>{warning}</LoginCardInputWarning>);
-  const validationState = showError ? 'error' : null;
+  const helpBlock = !topErrorOnly
+    ? (showError && <HelpBlock>{error}</HelpBlock>) ||
+      (showWarning && <LoginCardInputWarning>{warning}</LoginCardInputWarning>)
+    : null;
+  let validationState = null;
+  if (topErrorOnly) {
+    if (showWarning) {
+      validationState = 'warning';
+    }
+  } else if (showError) {
+    validationState = 'error';
+  }
   return (
     <FormGroup className={classNames('login_card_input', className)} controlId={id} validationState={validationState}>
       <FormControl
@@ -40,7 +49,7 @@ const LoginCardInput = ({
         onKeyPress={onKeyPress}
         autoComplete={autoComplete}
       />
-
+      {topErrorOnly && <FormControl.Feedback />}
       <Fade in={showError || showWarning}>
         <div>{helpBlock}</div>
       </Fade>
@@ -78,7 +87,12 @@ LoginCardInput.propTypes = {
   /** Sets the HTML autocomplete */
   autoComplete: PropTypes.string,
   /** Additional HTML input's attributes. */
-  attributes: PropTypes.object
+  attributes: PropTypes.object,
+  /** when topErrorOnly is set to true,
+   * the helpblock errors/warnings under each input won't appear,
+   * instead we will have only the form error above.
+   */
+  topErrorOnly: PropTypes.bool
 };
 
 LoginCardInput.defaultProps = {
@@ -96,7 +110,8 @@ LoginCardInput.defaultProps = {
   showError: false,
   className: null,
   autoComplete: '',
-  attributes: null
+  attributes: null,
+  topErrorOnly: false
 };
 
 export default LoginCardInput;
