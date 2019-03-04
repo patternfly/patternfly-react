@@ -2,48 +2,77 @@ import React from 'react';
 import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
 import {
   Button,
+  ButtonVariant,
   TextArea,
   InputGroup,
   InputGroupText,
   TextInput,
   Dropdown,
   DropdownToggle,
-  Popover
+  DropdownItem,
+  Popover,
+  PopoverPosition
 } from '@patternfly/react-core';
 
 class SimpleInputGroups extends React.Component {
+  state = {
+    isOpen: false,
+    selected: ''
+  };
+
+  onToggle = isOpen => {
+    this.setState({
+      isOpen
+    });
+  };
+
+  onSelect = (event) => {
+    this.setState({
+      isOpen: false,
+      selected: event.currentTarget.value,
+    });
+  };
   render() {
     return (
       <React.Fragment>
         <InputGroup>
-          <Button id="textAreaButton1" variant="secondary">
+          <Button id="textAreaButton1" variant={ButtonVariant.secondary}>
             Button
           </Button>
           <TextArea name="textarea1" id="textarea1" aria-label="textarea with buttons" />
-          <Button variant="tertiary">Button</Button>
+          <Button variant={ButtonVariant.tertiary}>Button</Button>
         </InputGroup>
         <br />
         <br />
         <InputGroup>
           <TextArea name="textarea2" id="textarea2" aria-label="textarea with button" />
-          <Button id="textAreaButton2" variant="tertiary">
+          <Button id="textAreaButton2" variant={ButtonVariant.tertiary}>
             Button
           </Button>
         </InputGroup>
         <br />
         <br />
         <InputGroup>
-          <Button id="textAreaButton3" variant="primary">
+          <Button id="textAreaButton3" variant={ButtonVariant.primary}>
             Button
           </Button>
-          <Button variant="secondary">Button</Button>
+          <Button variant={ButtonVariant.secondary}>Button</Button>
           <TextArea name="textarea3" id="textarea3" aria-label="textarea with 3 buttons" />
-          <Button variant="tertiary">Button</Button>
+          <Button variant={ButtonVariant.tertiary}>Button</Button>
         </InputGroup>
         <br />
         <br />
         <InputGroup>
-          <Dropdown onSelect={() => {}} toggle={<DropdownToggle onToggle={() => {}}>Dropdown</DropdownToggle>}>
+          <Dropdown
+            onSelect={this.onSelect}
+            toggle={<DropdownToggle onToggle={this.onToggle}>{this.state.selected ? this.state.selected : 'Dropdown' }</DropdownToggle>}
+            isOpen={this.state.isOpen}
+            dropdownItems={[
+              <DropdownItem key="opt-1" value="Option 1" component="button">Option 1</DropdownItem>,
+              <DropdownItem key="opt-2" value="Option 2" component="button">Option 2</DropdownItem>,
+              <DropdownItem key="opt-3" value="Option 3" component="button">Option 3</DropdownItem>,
+            ]}
+          >
             Dropdown
           </Dropdown>
           <TextInput id="textInput3" aria-label="input with dropdown and button" />
@@ -84,7 +113,7 @@ class SimpleInputGroups extends React.Component {
         <br />
         <InputGroup>
           <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
-          <Button variant="tertiary" aria-label="search button for search input">
+          <Button variant={ButtonVariant.tertiary} aria-label="search button for search input">
             <SearchIcon />
           </Button>
         </InputGroup>
@@ -92,8 +121,12 @@ class SimpleInputGroups extends React.Component {
         <br />
         <InputGroup>
           <TextInput name="textInput10" id="textInput10" type="search" aria-label="input example with popover" />
-          <Popover position="top" bodyContent={'This field is an example of input group with popover'}>
-            <Button variant="tertiary" aria-label="popover for input">
+          <Popover
+            aria-label="popover example"
+            position={PopoverPosition.top}
+            bodyContent={'This field is an example of input group with popover'}
+          >
+            <Button variant={ButtonVariant.tertiary} aria-label="popover for input">
               <QuestionCircleIcon />
             </Button>
           </Popover>
