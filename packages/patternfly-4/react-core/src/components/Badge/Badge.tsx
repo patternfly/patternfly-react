@@ -18,9 +18,9 @@ export interface BadgeProps extends DetailedHTMLProps<HTMLAttributes<HTMLSpanEle
   className?: string;
 }
 
-const Badge: React.FunctionComponent<BadgeProps> = (props) => (
-  <span {...props} className={css(styles.badge, (props.isRead ? styles.modifiers.read : styles.modifiers.unread) as any, props.className)}>
-    {props.children}
+const Badge: React.FunctionComponent<BadgeProps> = ({ isRead, className, children, ...props }: BadgeProps) => (
+  <span {...props} className={css(styles.badge, (isRead ? styles.modifiers.read : styles.modifiers.unread) as any, className)}>
+    {children}
   </span>
 );
 
