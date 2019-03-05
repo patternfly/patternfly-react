@@ -7,7 +7,7 @@ import { css } from '@patternfly/react-styles';
 
 const DropdownToggle = ({ children, iconComponent: IconComponent, ...props }) => (
   <Toggle {...props}>
-    <span className={css(styles.dropdownToggleText)}>{children}</span>
+    <span className={IconComponent && css(styles.dropdownToggleText)}>{children}</span>
     {IconComponent && <IconComponent className={css(styles.dropdownToggleIcon)} />}
   </Toggle>
 );
