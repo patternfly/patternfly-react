@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.2...@patternfly/react-core@2.3.3) (2019-03-05)
+
+
+### Bug Fixes
+
+* **navExpand:** remove defaultExpand in favor of just using isExpanded ([#1490](https://github.com/patternfly/patternfly-react/issues/1490)) ([9aafabd](https://github.com/patternfly/patternfly-react/commit/9aafabd))
+
+
+
+
+
 ## [2.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.1...@patternfly/react-core@2.3.2) (2019-03-05)
 
 **Note:** Version bump only for package @patternfly/react-core
