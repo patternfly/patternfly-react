@@ -151,7 +151,7 @@ class Table extends React.Component {
   }
 
   areAllRowsSelected(rows) {
-    return rows.every(this.isSelected);
+    return rows.every(row => this.isSelected(row) || (row.hasOwnProperty('parent') && !row.showSelect));
   }
 
   render() {
