@@ -52,7 +52,13 @@ TypeAheadSelectStories.addWithInfo('Menu Alignment', () => {
       <br />
       <br />
       <h2>Menu Alignment</h2>
-      <TypeAheadSelect align={align} options={Mocks.countries} labelKey="country" placeholder="Choose a state..." />
+      <TypeAheadSelect
+        id="some-typeahead"
+        align={align}
+        options={Mocks.countries}
+        labelKey="country"
+        placeholder="Choose a state..."
+      />
     </div>
   );
 });
@@ -66,7 +72,13 @@ TypeAheadSelectStories.addWithInfo('Input Size', () => {
       <br />
       <br />
       <h2>Input Size</h2>
-      <TypeAheadSelect bsSize={bsSize} options={Mocks.countries} labelKey="name" placeholder="Choose a state..." />
+      <TypeAheadSelect
+        id="some-typeahead"
+        bsSize={bsSize}
+        options={Mocks.countries}
+        labelKey="name"
+        placeholder="Choose a state..."
+      />
     </div>
   );
 });
@@ -82,6 +94,7 @@ TypeAheadSelectStories.addWithInfo('Multiple Selection', () => {
       <br />
       <h2>Multiple Selection</h2>
       <TypeAheadSelect
+        id="some-typeahead"
         multiple={multiple}
         clearButton={clearButton}
         selected={['Burkina Fasu', 'Papua New Guinea', 'Satellite']}
@@ -104,6 +117,7 @@ TypeAheadSelectStories.addWithInfo('Highlight Results', () => {
       <br />
       <h2>Highlight Results</h2>
       <TypeAheadSelect
+        id="some-typeahead"
         highlightOnlyResult={highlightOnlyResult}
         selectHintOnEnter={selectHintOnEnter}
         options={Mocks.countries}
@@ -127,6 +141,7 @@ TypeAheadSelectStories.addWithInfo('Allow Adding New Items', () => {
         <strong>If a search result doesn&apos;t exist, allow the user to add a custom input.</strong>
       </p>
       <TypeAheadSelect
+        id="some-typeahead"
         multiple
         allowNew={allowNew}
         newSelectionPrefix="Create and select item: "
@@ -148,6 +163,7 @@ TypeAheadSelectStories.addWithInfo('Min Chars To AutoComplete', () => {
       <br />
       <h2>AutoCompletion will start when there are enough characters.</h2>
       <TypeAheadSelect
+        id="some-typeahead"
         minLength={minLength}
         options={Mocks.countries}
         labelKey="name"
@@ -176,6 +192,7 @@ TypeAheadSelectStories.addWithInfo('Use With Forms', () => {
         <div className="col-sm-10">
           <FormGroup>
             <TypeAheadSelect
+              id="some-typeahead"
               minLength={1}
               submitFormOnEnter={submitFormOnEnter}
               labelKey="name"
@@ -210,6 +227,7 @@ TypeAheadSelectStories.addWithInfo('Using Async Calls', () => {
       <br />
       <h2>Search a Forker</h2>
       <AsyncTypeAheadSelect
+        id="some-typeahead"
         labelKey="login"
         minLength={0}
         placeholder="Search someone who have forked Patternfly-react.."
@@ -233,6 +251,7 @@ TypeAheadSelectStories.addWithInfo('Controlled input value', () => (
       <strong>A default value will be shown when the component is rendered.</strong>
     </p>
     <TypeAheadSelect
+      id="some-typeahead"
       defaultInputValue="Denmark"
       options={Mocks.countries}
       labelKey="name"
