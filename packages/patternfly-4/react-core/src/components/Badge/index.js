@@ -1,1 +1,1 @@
-export { default as Badge } from './Badge.tsx';
+yexport { default as Badge } from './Badge';
