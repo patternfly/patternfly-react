@@ -1688,9 +1688,9 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@patternfly/patternfly@1.0.184":
-  version "1.0.184"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.184.tgz#4a27921653d4cbf8272d62f66d9a17db6590d3d6"
+"@patternfly/patternfly@1.0.218":
+  version "1.0.218"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.218.tgz#90a7d13c736c9d7fce73c4d51337f1d521ddc184"
 
 "@reach/router@^1.1.1":
   version "1.2.1"

@@ -53,8 +53,8 @@ exports[`Actions table 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -84,8 +84,8 @@ exports[`Actions table 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -115,8 +115,8 @@ exports[`Actions table 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -146,8 +146,8 @@ exports[`Actions table 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -177,8 +177,8 @@ exports[`Actions table 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -208,8 +208,8 @@ exports[`Actions table 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -239,8 +239,8 @@ exports[`Actions table 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -270,8 +270,8 @@ exports[`Actions table 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -301,8 +301,8 @@ exports[`Actions table 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -13823,15 +13823,9 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding: 0px 0px 0px 0px;
-  overflow: auto;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
@@ -13846,15 +13840,9 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding: 0px 0px 0px 0px;
-  overflow: auto;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
@@ -13891,15 +13879,9 @@ exports[`Collapsible nested table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding: 0px 0px 0px 0px;
-  overflow: auto;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
@@ -19906,12 +19888,6 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding: 0px 0px 0px 0px;
-  overflow: auto;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row.pf-m-expanded {
   display: block;
@@ -19964,15 +19940,9 @@ exports[`Collapsible table 1`] = `
 }
 .pf-c-table__expandable-row-content {
   display: block;
-  max-height: 0;
-  padding: 0px 0px 0px 0px;
-  overflow: auto;
-  word-break: break-word;
-  border-top-color: transparent;
-  border-top-width: 0;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
@@ -25865,19 +25835,19 @@ exports[`Header width table 1`] = `
   display: block;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
@@ -30980,13 +30950,13 @@ exports[`Selectable table 1`] = `
   vertical-align: top;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
@@ -31000,7 +30970,7 @@ exports[`Selectable table 1`] = `
   vertical-align: top;
 }
 .pf-c-table__expandable-row {
-  display: block;
+  display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;

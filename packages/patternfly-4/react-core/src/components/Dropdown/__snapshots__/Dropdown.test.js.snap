@@ -12,6 +12,7 @@ exports[`KebabToggle basic 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown__menu-item {
@@ -180,6 +181,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
@@ -409,6 +411,7 @@ exports[`KebabToggle dropup 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
@@ -638,6 +641,7 @@ exports[`KebabToggle expanded 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown__menu-item {
@@ -1210,8 +1214,8 @@ exports[`KebabToggle plain 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -1440,6 +1444,7 @@ exports[`KebabToggle regular 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
@@ -1669,6 +1674,7 @@ exports[`KebabToggle right aligned 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
@@ -1907,6 +1913,7 @@ exports[`dropdown basic 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown__menu-item {
@@ -2091,6 +2098,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
@@ -2336,6 +2344,7 @@ exports[`dropdown dropup 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
@@ -2581,6 +2590,7 @@ exports[`dropdown expanded 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown__menu-item {
@@ -3169,6 +3179,7 @@ exports[`dropdown regular 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
@@ -3414,6 +3425,7 @@ exports[`dropdown right aligned 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
