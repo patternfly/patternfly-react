@@ -194,7 +194,9 @@ class BaseVerticalNavItemHelper extends React.Component {
       showBadges,
       children,
       isMobile,
-      pinnedPath
+      pinnedPath,
+      id,
+      dataID
     } = this.props;
 
     // The nav item can either be passed directly as one item object prop, or as individual props.
@@ -267,7 +269,7 @@ class BaseVerticalNavItemHelper extends React.Component {
         // NOTE onItemBlur takes a boolean, we want to prevent it being passed a truthy event.
         onMouseLeave={e => this.onItemBlur(false)}
       >
-        <a href={href || '#'} onClick={this.onItemClick}>
+        <a id={id} data-id={dataID} href={href || '#'} onClick={this.onItemClick}>
           {depth === 'primary' &&
             icon &&
             (!isMobile && navCollapsed ? (
@@ -326,7 +328,11 @@ BaseVerticalNavItemHelper.propTypes = {
   /** Divider bool */
   isDivider: PropTypes.bool,
   /** should Prevent Href */
-  preventHref: PropTypes.bool
+  preventHref: PropTypes.bool,
+  /** anchor id */
+  id: PropTypes.string,
+  /** anchor data-id */
+  dataID: PropTypes.string
 };
 
 BaseVerticalNavItemHelper.defaultProps = {
@@ -334,7 +340,9 @@ BaseVerticalNavItemHelper.defaultProps = {
   children: null,
   title: '',
   isDivider: false,
-  preventHref: true
+  preventHref: true,
+  id: '',
+  dataID: ''
 };
 
 const VerticalNavItemHelper = getContext(navContextTypes)(BaseVerticalNavItemHelper);
