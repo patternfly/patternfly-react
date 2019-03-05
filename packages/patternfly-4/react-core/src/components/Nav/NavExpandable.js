@@ -67,7 +67,7 @@ class NavExpandable extends React.Component {
   };
 
   render() {
-    const { id, title, srText, isExpanded, children, className, groupId, isActive, ...props } = this.props;
+    const { id, title, srText, isExpanded, children, className, groupId, isActive, onExpand, ...props } = this.props;
     const { expandedState } = this.state;
 
     return (
