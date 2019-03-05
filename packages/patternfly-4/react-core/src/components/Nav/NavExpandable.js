@@ -13,8 +13,6 @@ const propTypes = {
   title: PropTypes.string.isRequired,
   /** If defined, screen readers will read this text instead of the list title */
   srText: PropTypes.string,
-  /** If true will default the list to be expanded */
-  defaultExpanded: PropTypes.bool,
   /** Boolean to programatically expand or collapse section */
   isExpanded: PropTypes.bool,
   /** Anything that can be rendered inside of the expandable list */
@@ -28,45 +26,54 @@ const propTypes = {
   /** Identifier to use for the section aria label */
   id: PropTypes.string,
   /** Additional props are spread to the container <li> */
-  '': PropTypes.any
+  '': PropTypes.any,
+  /** allow consumer to optionally override this callback and manage expand state externally */
+  onExpand: PropTypes.func
 };
 
 const defaultProps = {
   srText: '',
-  defaultExpanded: false,
-  isExpanded: null,
+  isExpanded: false,
   children: null,
   className: '',
   groupId: null,
   isActive: false,
-  id: ''
+  id: '',
+  onExpand: undefined
 };
 
 class NavExpandable extends React.Component {
   id = this.props.id || getUniqueId();
+  state = {
+    expandedState: false
+  };
+
+  componentDidMount() {
+    this.setState({ expandedState: this.props.isExpanded });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.isExpanded !== prevProps.isExpanded) {
+      this.setState({ expandedState: this.props.isExpanded });
+    }
+  }
+
+  onExpand = (e, val) => {
+    if (this.props.onExpand) {
+      this.props.onExpand(e, val);
+    } else {
+      this.setState({ expandedState: val });
+    }
+  };
+
   render() {
-    const {
-      id,
-      title,
-      srText,
-      isExpanded,
-      defaultExpanded,
-      children,
-      className,
-      groupId,
-      isActive,
-      ...props
-    } = this.props;
+    const { id, title, srText, isExpanded, children, className, groupId, isActive, ...props } = this.props;
+    const { expandedState } = this.state;
 
     return (
       <NavContext.Consumer>
         {context => (
-          <NavToggle
-            defaultValue={defaultExpanded}
-            isExpanded={isExpanded}
-            groupId={groupId}
-            onToggle={context.onToggle}
-          >
+          <NavToggle groupId={groupId} onToggle={context.onToggle} onExpand={this.onExpand} isExpanded={expandedState}>
             {({ toggleValue, toggle }) => (
               <li
                 className={css(

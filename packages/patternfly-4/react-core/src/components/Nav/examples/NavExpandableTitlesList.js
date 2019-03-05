@@ -19,13 +19,7 @@ class NavExpandableTitlesList extends React.Component {
     return (
       <Nav onSelect={this.onSelect}>
         <NavList>
-          <NavExpandable
-            title="Link 1"
-            srText="SR Link"
-            groupId="grp-1"
-            isActive={activeGroup === 'grp-1'}
-            defaultExpanded
-          >
+          <NavExpandable title="Link 1" srText="SR Link" groupId="grp-1" isActive={activeGroup === 'grp-1'} isExpanded>
             <NavItem
               preventDefault
               to="#sr-expandable-1"
