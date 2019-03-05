@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.29.17](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.16...patternfly-react@2.29.17) (2019-03-05)
+
+
+### Bug Fixes
+
+* **TypeAhead:** upgrade typeahead to v3.4.1fix [#1491](https://github.com/patternfly/patternfly-react/issues/1491) ([#1493](https://github.com/patternfly/patternfly-react/issues/1493)) ([e1a27ef](https://github.com/patternfly/patternfly-react/commit/e1a27ef))
+
+
+
+
+
 ## 2.29.16 (2019-03-04)
 
 
