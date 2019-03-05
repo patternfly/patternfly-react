@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.3...@patternfly/react-core@2.3.4) (2019-03-05)
+
+
+### Bug Fixes
+
+* **iconOnly:** Add conditional for icon only styles ([#1505](https://github.com/patternfly/patternfly-react/issues/1505)) ([abdbcb1](https://github.com/patternfly/patternfly-react/commit/abdbcb1))
+* **nav:** fix React warning with onExpand prop ([#1504](https://github.com/patternfly/patternfly-react/issues/1504)) ([a879274](https://github.com/patternfly/patternfly-react/commit/a879274))
+
+
+
+
+
 ## [2.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.2...@patternfly/react-core@2.3.3) (2019-03-05)
 
 
