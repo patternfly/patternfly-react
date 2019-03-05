@@ -20,7 +20,7 @@ class PaginationBottom extends Component {
 
   render() {
     return (
-      <Pagination itemCount={20}
+      <Pagination itemCount={333}
         widgetId="pagination-options-menu-bottom"
         perPage={this.state.perPage}
         page={this.state.page}

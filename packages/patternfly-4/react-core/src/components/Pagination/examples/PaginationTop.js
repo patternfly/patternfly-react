@@ -22,7 +22,7 @@ class PaginationTop extends Component {
   render() {
     return (
       <Pagination
-        itemCount={20}
+        itemCount={523}
         perPage={this.state.perPage}
         page={this.state.page}
         onSetPage={this.onSetPage}

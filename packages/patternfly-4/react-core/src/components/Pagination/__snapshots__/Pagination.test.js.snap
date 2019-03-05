@@ -884,7 +884,7 @@ exports[`component render custom perPageOptions 1`] = `
                        - 
                       10
                     </strong>
-                     of
+                     of 
                     <strong>
                       40
                     </strong>
@@ -1521,7 +1521,7 @@ exports[`component render custom start end 1`] = `
                        - 
                       15
                     </strong>
-                     of
+                     of 
                     <strong>
                       40
                     </strong>
@@ -2156,7 +2156,7 @@ exports[`component render last page 1`] = `
                        - 
                       20
                     </strong>
-                     of
+                     of 
                     <strong>
                       20
                     </strong>
@@ -2795,7 +2795,7 @@ exports[`component render limited number of pages 1`] = `
                        - 
                       20
                     </strong>
-                     of
+                     of 
                     <strong>
                       20
                     </strong>
@@ -3430,7 +3430,7 @@ exports[`component render no items 1`] = `
                        - 
                       0
                     </strong>
-                     of
+                     of 
                     <strong>
                       0
                     </strong>
@@ -4057,7 +4057,7 @@ exports[`component render should render correctly bottom 1`] = `
                        - 
                       10
                     </strong>
-                     of
+                     of 
                     <strong>
                       20
                     </strong>
@@ -4692,7 +4692,7 @@ exports[`component render should render correctly top 1`] = `
                        - 
                       10
                     </strong>
-                     of
+                     of 
                     <strong>
                       20
                     </strong>
@@ -5319,7 +5319,7 @@ exports[`component render titles 1`] = `
                        - 
                       10
                     </strong>
-                     of
+                     of 
                     <strong>
                       40
                     </strong>
@@ -5954,7 +5954,7 @@ exports[`component render up drop direction 1`] = `
                        - 
                       10
                     </strong>
-                     of
+                     of 
                     <strong>
                       40
                     </strong>
