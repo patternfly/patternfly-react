@@ -3,6 +3,6 @@ import { Tree } from 'react-wooden-tree';
 require('react-wooden-tree/dist/react-wooden-tree.css');
 require('./style.css');
 
-class TreeView extends Tree {}
+class WoodenTreeView extends Tree {}
 
-export default TreeView;
+export default WoodenTreeView;

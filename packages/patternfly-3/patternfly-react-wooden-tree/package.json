@@ -1,7 +1,7 @@
 {
   "name": "patternfly-react-wooden-tree",
   "version": "1.0.0",
-  "description": "",
+  "description": "Reexport react-wooden-tree with Patternfly design.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
@@ -15,14 +15,15 @@
   },
   "keywords": [
     "react",
-    "patternfly"
+    "patternfly",
+    "treeview"
   ],
   "author": "Red Hat",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
-  "homepage": "https://github.com/patternfly/patternfly-react#readme",
+  "homepage": "https://github.com/patternfly/patternfly-react/blob/master/packages/patternfly-react-wooden-tree/README.md",
   "scripts": {
     "build": "yarn build:babel",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",

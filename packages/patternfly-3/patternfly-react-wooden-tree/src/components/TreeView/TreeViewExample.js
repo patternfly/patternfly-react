@@ -1,5 +1,5 @@
 import React from 'react';
-import TreeView from './index';
+import WoodenTreeView from './index';
 
 const data = [
   {
@@ -43,17 +43,17 @@ const NODES = 'nodes';
 const LOADING = 'loading';
 
 const actionMapper = {
-  [EXPANDED]: TreeView.nodeExpanded,
-  [CHECKED]: TreeView.nodeChecked,
-  [DISABLED]: TreeView.nodeDisabled,
-  [SELECTED]: TreeView.nodeSelected,
-  [NODES]: TreeView.nodeChildren,
-  [LOADING]: TreeView.nodeLoading
+  [EXPANDED]: WoodenTreeView.nodeExpanded,
+  [CHECKED]: WoodenTreeView.nodeChecked,
+  [DISABLED]: WoodenTreeView.nodeDisabled,
+  [SELECTED]: WoodenTreeView.nodeSelected,
+  [NODES]: WoodenTreeView.nodeChildren,
+  [LOADING]: WoodenTreeView.nodeLoading
 };
 
 class TreeViewExample extends React.Component {
   state = {
-    tree: TreeView.initTree(data)
+    tree: WoodenTreeView.initTree(data)
   };
 
   /**
@@ -64,21 +64,21 @@ class TreeViewExample extends React.Component {
    * @param {boolean} value The new value to assign.
    */
   onDataChange = (nodeId, type, value) => {
-    let node = TreeView.nodeSelector(this.state.tree, nodeId);
+    let node = WoodenTreeView.nodeSelector(this.state.tree, nodeId);
     if (node == null) {
       return;
     }
 
     if (actionMapper.hasOwnProperty(type)) {
       node = actionMapper[type](node, value);
-      this.setState({ tree: TreeView.nodeUpdater(this.state.tree, node) });
+      this.setState({ tree: WoodenTreeView.nodeUpdater(this.state.tree, node) });
     }
   };
 
   render() {
     return (
       <div className="App">
-        <TreeView nodeIcon="fa fa-file-o" data={this.state.tree} onDataChange={this.onDataChange} {...this.props} />
+        <WoodenTreeView nodeIcon="fa fa-file-o" data={this.state.tree} onDataChange={this.onDataChange} {...this.props} />
       </div>
     );
   }

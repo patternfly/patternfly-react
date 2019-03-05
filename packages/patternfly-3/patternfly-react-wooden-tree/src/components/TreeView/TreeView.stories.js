@@ -6,19 +6,22 @@ import { storybookPackageName } from 'storybook/constants/siteConstants';
 import { name } from '../../../package.json';
 import TreeViewExample from './TreeViewExample';
 
-const stories = storiesOf(`${storybookPackageName(name)}/Tree View`, module);
+const stories = storiesOf(`${storybookPackageName(name)}/Wooden Tree View`, module);
 
 stories.addDecorator(
   defaultTemplate({
-    title: 'Catalog Tile',
-    description:
-      'This is a Tree View component to display trees and hierarchical data using React Wooden Tree.' +
-      'The tree uses the https://www.npmjs.com/package/react-wooden-tree component.'
+    title: 'Wooden Tree View',
+    description: (
+      <div>
+        This is a Tree View component to display trees and hierarchical data using React Wooden Tree.
+        The tree uses the <a href="https://www.npmjs.com/package/react-wooden-tree">https://www.npmjs.com/package/react-wooden-tree</a> component.
+      </div>
+    )
   })
 );
 
 stories.add(
-  'Tree View',
+  'Wooden Tree View',
   withInfo({
     source: false,
     propTables: [TreeViewExample]

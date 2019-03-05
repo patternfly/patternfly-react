@@ -1,1 +1,1 @@
-export { default as TreeView } from './components/TreeView';
+export { default as WoodenTreeView } from './components/TreeView';
