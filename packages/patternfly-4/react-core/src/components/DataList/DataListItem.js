@@ -10,7 +10,7 @@ const DataListItem = ({ children, className, isExpanded, 'aria-labelledby': aria
     {...props}
   >
     {React.Children.map(children, child =>
-      React.cloneElement(child, {
+      React.isValidElement(child) && React.cloneElement(child, {
         rowid: ariaLabelledBy
       })
     )}
