@@ -9,6 +9,7 @@ const kebabCase = plop.getHelper('kebabCase');
 const allIcons = [
   ...icons.fontAwesome.solid.map((icon) => getFontAwesomeIcon(icon, 'solid')),
   ...icons.fontAwesome.regular.map((icon) => getFontAwesomeIcon(icon, 'regular', 'outlined')),
+  ...Object.keys(icons.custom).map((iconName) => generateIcon(icons.custom[iconName], iconName)),
   ...Object.keys(icons.pfIcons).map(getPfIcon)
 ];
 
