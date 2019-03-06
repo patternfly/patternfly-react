@@ -26,10 +26,10 @@ class SimpleInputGroups extends React.Component {
     });
   };
 
-  onSelect = (event) => {
+  onSelect = event => {
     this.setState({
       isOpen: false,
-      selected: event.currentTarget.value,
+      selected: event.currentTarget.value
     });
   };
   render() {
@@ -65,12 +65,22 @@ class SimpleInputGroups extends React.Component {
         <InputGroup>
           <Dropdown
             onSelect={this.onSelect}
-            toggle={<DropdownToggle onToggle={this.onToggle}>{this.state.selected ? this.state.selected : 'Dropdown' }</DropdownToggle>}
+            toggle={
+              <DropdownToggle onToggle={this.onToggle}>
+                {this.state.selected ? this.state.selected : 'Dropdown'}
+              </DropdownToggle>
+            }
             isOpen={this.state.isOpen}
             dropdownItems={[
-              <DropdownItem key="opt-1" value="Option 1" component="button">Option 1</DropdownItem>,
-              <DropdownItem key="opt-2" value="Option 2" component="button">Option 2</DropdownItem>,
-              <DropdownItem key="opt-3" value="Option 3" component="button">Option 3</DropdownItem>,
+              <DropdownItem key="opt-1" value="Option 1" component="button">
+                Option 1
+              </DropdownItem>,
+              <DropdownItem key="opt-2" value="Option 2" component="button">
+                Option 2
+              </DropdownItem>,
+              <DropdownItem key="opt-3" value="Option 3" component="button">
+                Option 3
+              </DropdownItem>
             ]}
           >
             Dropdown
@@ -124,7 +134,7 @@ class SimpleInputGroups extends React.Component {
           <Popover
             aria-label="popover example"
             position={PopoverPosition.top}
-            bodyContent={'This field is an example of input group with popover'}
+            bodyContent="This field is an example of input group with popover"
           >
             <Button variant={ButtonVariant.tertiary} aria-label="popover for input">
               <QuestionCircleIcon />
