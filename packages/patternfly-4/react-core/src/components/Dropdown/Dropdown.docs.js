@@ -1,6 +1,7 @@
 import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator, DropdownToggle } from '@patternfly/react-core';
 import Panel from './examples/DropdownPanel';
 import Simple from './examples/SimpleDropdown';
+import Disabled from './examples/DisabledDropdown';
 import Kebab from './examples/KebabDropdown';
 import IconDropdown from './examples/IconDropdown';
 import PositionRight from './examples/PositionRightDropdown';
@@ -19,6 +20,7 @@ export default {
   variablesRoot: 'pf-c-dropdown',
   examples: [
     { component: Simple, title: 'Dropdown' },
+    { component: Disabled, title: 'Dropdown - disabled' },
     { component: PositionRight, title: 'Dropdown - position right' },
     { component: DirectionUp, title: 'Dropdown - direction up' },
     { component: Kebab, title: 'Kebab' },
