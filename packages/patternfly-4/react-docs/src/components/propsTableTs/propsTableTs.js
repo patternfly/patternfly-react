@@ -36,19 +36,19 @@ export const PropsTableTs = ({ name, props }) => (
         <TH>Description</TH>
       </Heading>
       <Body>
-        {props.map(prop => (
-          <Row key={prop.name}>
-            <TD>{prop.name}</TD>
-            <TD>{prop.type.name}</TD>
-            <TD align="center">{prop.flags.isOptional === null && <ExclamationCircleIcon />}</TD>
-            {/* <TD>{Boolean(prop.defaultValue) && prop.defaultValue.value}</TD> */}
-            <TD>{prop.comment && prop.comment.shortText}</TD>
-          </Row>
-        ))}
       </Body>
     </Table>
   </Section>
 );
+// {props.map(prop => (
+//   <Row key={prop.name}>
+//     <TD>{prop.name}</TD>
+//     <TD>{prop.type.name}</TD>
+//     <TD align="center">{prop.flags.isOptional === null && <ExclamationCircleIcon />}</TD>
+//     {/* <TD>{Boolean(prop.defaultValue) && prop.defaultValue.value}</TD> */}
+//     <TD>{prop.comment && prop.comment.shortText}</TD>
+//   </Row>
+// ))}
 
 function getEnumValue(prop, enumValues) {
   let returnValue = '';
