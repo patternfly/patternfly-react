@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "devDependencies": {
-    "@commitlint/cli": "^7.1.2",
     "@storybook/addon-actions": "^v3.4.11",
     "@storybook/addon-info": "^v3.4.11",
     "@storybook/addon-knobs": "^v3.4.11",
@@ -51,7 +50,6 @@
     "change-case": "^3.0.2",
     "codecov": "^3.2.0",
     "commitizen": "^3.0.1",
-    "commitlint-config-cz": "^0.10.1",
     "concurrently": "^3.5.1",
     "conventional-changelog-cli": "^2.0.5",
     "cross-env": "^5.1.4",
@@ -108,7 +106,6 @@
     "build:prdocs": "lerna run pr-build --stream",
     "build:storybook": "build-storybook -c storybook -o .out",
     "commit": "git-cz",
-    "commitmsg": "commitlint -e",
     "generate": "yarn plop",
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
