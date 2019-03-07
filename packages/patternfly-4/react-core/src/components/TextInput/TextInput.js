@@ -36,7 +36,7 @@ const propTypes = {
   isReadOnly: PropTypes.bool,
   /** Custom flag to show that the input requires an associated id or aria-label. */
   'aria-label': props => {
-    if (!props.id && !props['aria-label']) {
+    if (!props.id && !props['aria-label'] && !props['aria-labelledby']) {
       return new Error('TextInput requires either an id or aria-label to be specified');
     }
     return null;

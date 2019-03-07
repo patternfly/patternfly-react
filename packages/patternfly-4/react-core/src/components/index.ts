@@ -12,6 +12,7 @@ export * from './Button';
 export * from './Card';
 export * from './Checkbox';
 export * from './ChipGroup';
+export * from './ContextSelector';
 export * from './DataList';
 export * from './Dropdown';
 export * from './EmptyState';
