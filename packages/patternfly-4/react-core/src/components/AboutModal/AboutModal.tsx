@@ -86,7 +86,7 @@ class AboutModal extends Component<AboutModalProps, { container: HTMLDivElement 
   }
 
   render() {
-    if (!canUseDOM) {
+    if (!canUseDOM || !this.state.container) {
       return null;
     }
 
