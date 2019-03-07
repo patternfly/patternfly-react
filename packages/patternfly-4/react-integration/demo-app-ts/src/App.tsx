@@ -1,6 +1,7 @@
 import {
   Avatar,
   AvatarProps,
+  Badge,
   Tabs,
   Tab,
   Tooltip,
@@ -51,6 +52,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Avatar src={logo} alt={new myProps().alt} />
+          <Badge isRead={true}>Read Badge</Badge>
         </header>
         <Tabs>
           <Tab eventKey={0} title="Tab item 1">
@@ -70,16 +72,16 @@ class App extends Component {
           <div>Hello</div>
         </Popover>
         <NavTest />
-        <Alert variant={AlertVariant.success} title="Success notification title" action={<AlertActionCloseButton />}>
+        <Alert variant={AlertVariant.SUCCESS} title="Success notification title" action={<AlertActionCloseButton />}>
           Success notification description. <a href="#">This is a link.</a>
         </Alert>
-        <Alert variant={AlertVariant.success} title="Success notification title" action={<AlertActionCloseButton />} />
+        <Alert variant={AlertVariant.SUCCESS} title="Success notification title" action={<AlertActionCloseButton />} />
         <Alert
-          variant={AlertVariant.success}
+          variant={AlertVariant.SUCCESS}
           title="Success notification title"
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
-        <Alert variant="success" title="Success notification title" />
+        <Alert variant={AlertVariant.SUCCESS} title="Success notification title" />
         <Select
           variant={SelectVariant.single}
           onToggle={this.onToggle}

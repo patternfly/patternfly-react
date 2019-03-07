@@ -4,21 +4,23 @@ import { TimesIcon } from '@patternfly/react-icons';
 
 export interface AlertActionCloseButtonProps {
   /** aria-label  */
-  'aria-label': string;
+  'aria-label'?: string;
   /** additional classes added to the AlertActionCloseButton  */
   className?: string;
   /** A callback for when the close button is clicked  */
   onClose?(event: MouseEvent<HTMLButtonElement>): void;
   /** title  */
-  title: string;
+  title?: string;
   /** variantLabel  */
-  variantLabel: string;
+  variantLabel?: string;
 };
 
 export const defaultAlertActionCloseButtonProps = {
   'aria-label': '',
   className: '',
-  onClose: () => undefined
+  onClose: () => undefined,
+  title: '',
+  variantLabel: ''
 };
 
 export const AlertActionCloseButton: React.FunctionComponent<AlertActionCloseButtonProps> = ({ className, onClose, 'aria-label': ariaLabel, title, variantLabel, ...props }: AlertActionCloseButtonProps) => (
