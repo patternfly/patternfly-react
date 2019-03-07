@@ -1,5 +1,5 @@
 import { SFC, HTMLProps, ReactNode, ReactType } from 'react';
-import { Omit } from '../../typeUtils'
+import { Omit } from '../../helpers/typeUtils'
 
 export interface InputGroupTextProps extends Omit<HTMLProps<HTMLSpanElement | HTMLLabelElement>, 'children'> {
     children: ReactNode;

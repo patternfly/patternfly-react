@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, FormEvent } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface TabsProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
   children: any;

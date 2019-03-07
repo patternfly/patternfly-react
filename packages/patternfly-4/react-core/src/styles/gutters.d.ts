@@ -1,5 +1,5 @@
 import { StyleDeclarationStatic, getModifier } from '@patternfly/react-styles';
-import { OneOf } from '../typeUtils';
+import { OneOf } from '../helpers/typeUtils';
 
 export const GutterSize: {
   sm: 'sm';

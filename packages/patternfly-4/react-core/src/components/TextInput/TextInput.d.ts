@@ -1,5 +1,5 @@
 import { FormEvent, FunctionComponent, HTMLProps } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface TextInputProps extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'disabled'> {
   isRequired?: boolean;

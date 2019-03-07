@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, ReactElement } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 import { Instance, BasicPlacement, Props } from 'tippy.js';
 
 export const PopoverPosition: {
