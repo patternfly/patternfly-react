@@ -40,6 +40,7 @@ jobs:
             yarn build:prdocs &&
             cp -r packages/patternfly-4/react-docs/public .public/patternfly-4 &&
             cp -r packages/patternfly-4/react-docs/public/assets .public/assets
+          no_output_timeout: 20m
       - run:
           name: Deploy Docs
           command: if [ -n "$CIRCLE_PULL_REQUEST" ]; then .circleci/upload_preview.sh; fi
