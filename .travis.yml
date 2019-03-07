@@ -29,8 +29,9 @@ cache:
 git:
   depth: 10
 branches:
-  except: # Avoid tags
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
+  except:
+    - "/^v\\d+\\.\\d+\\.\\d+$/" # Avoid tags
+    - "/^chore/bump-.*$/" # Avoid hookbot double-builds
 notifications:
   email: false
 

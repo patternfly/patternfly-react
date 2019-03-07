@@ -29,7 +29,10 @@ if npx lerna publish from-package --no-git-tag-version --no-push --yes ; then
     # Undo that last amended commit locally, because we don't actually want to push it
     git reset --hard origin/$TRAVIS_BRANCH
     # Now only if it publishes should we also push this commit to Github and do a Github release
-    npx lerna version --conventional-commits --github-release --no-commit-hooks --yes
+    if ! npx lerna version --conventional-commits --github-release --no-commit-hooks --yes ; then
+        echo "Something went wrong committing or making a Github release."
+        exit 0 # Publishing to the registry is what matters...
+    fi
 else # Failed to publish to npm
     echo "Failed to publish to npm :("
     exit 1
