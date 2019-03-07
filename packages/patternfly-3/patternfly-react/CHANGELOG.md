@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.30.0 (2019-03-07)
+
+
+### Bug Fixes
+
+* **navExpand:** remove defaultExpand in favor of just using isExpanded ([#1490](https://github.com/patternfly/patternfly-react/issues/1490)) ([9aafabd](https://github.com/patternfly/patternfly-react/commit/9aafabd))
+
+
+### Features
+
+* **VerticalNav:** add id, data-id to secondary items ([#1495](https://github.com/patternfly/patternfly-react/issues/1495)) ([8847a65](https://github.com/patternfly/patternfly-react/commit/8847a65))
+
+
+
+
+
 ## [2.29.17](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.16...patternfly-react@2.29.17) (2019-03-05)
 
 
