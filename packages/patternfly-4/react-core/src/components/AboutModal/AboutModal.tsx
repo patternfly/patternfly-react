@@ -1,40 +1,32 @@
-import React from 'react';
+import React, { ReactNode, Component, MouseEvent } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import AboutModalContainer from './AboutModalContainer';
 import { canUseDOM } from 'exenv';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
 
-const propTypes = {
+export type AboutModalProps = {
   /** content rendered inside the About Modal. */
-  children: PropTypes.node.isRequired,
+  children: ReactNode;
   /** additional classes added to the About Modal */
-  className: PropTypes.string,
+  className?: string;
   /** Flag to show the  About modal */
-  isOpen: PropTypes.bool,
+  isOpen: boolean;
   /** A callback for when the close button is clicked */
-  onClose: PropTypes.func,
+  onClose?(event: MouseEvent<HTMLButtonElement>): void;
   /** Product Name */
-  productName: PropTypes.string.isRequired,
+  productName: string;
   /** Trademark information */
-  trademark: PropTypes.string,
+  trademark: string;
   /** the URL of the image for the Brand. */
-  brandImageSrc: PropTypes.string.isRequired,
+  brandImageSrc: string;
   /** the alternate text of the Brand image. */
-  brandImageAlt: PropTypes.string.isRequired,
+  brandImageAlt: string;
   /** the URL of the image for the Logo. */
-  logoImageSrc: PropTypes.string,
+  logoImageSrc: string;
   /** the alternate text of the Logo image. */
-  logoImageAlt: props => {
-    if (props.logoImageSrc && !props.logoImageAlt) {
-      return new Error('logoImageAlt is required when a logoImageSrc is specified');
-    }
-    return null;
-  },
-  /** Additional props are passed and spread to Modal content container <div> */
-  '': PropTypes.any
+  logoImageAlt: string;
 };
 
 const defaultProps = {
@@ -48,8 +40,14 @@ const defaultProps = {
 
 let currentId = 0;
 
-class AboutModal extends React.Component {
-  static propTypes = propTypes;
+class AboutModal extends Component<AboutModalProps, { container: HTMLDivElement }> {
+  constructor(props) {
+    super(props);
+    this.state = { container: null };
+    if (props.logoImageSrc && !props.logoImageAlt) {
+      console.error('AboutModal:', 'logoImageAlt is required when a logoImageSrc is specified');
+    }
+  }
   static defaultProps = defaultProps;
 
   ariaLabelledbyId = `pf-about-modal-title-${currentId++}`;
@@ -57,12 +55,15 @@ class AboutModal extends React.Component {
 
   handleEscKeyClick = event => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
-      this.props.onClose();
+      this.props.onClose(null);
     }
   };
 
+
   componentDidMount() {
-    document.body.appendChild(this.container);
+    const container = document.createElement('div');
+    this.setState({ container: container });
+    document.body.appendChild(container);
     document.addEventListener('keydown', this.handleEscKeyClick, false);
     if (this.props.isOpen) {
       document.body.classList.add(css(styles.backdropOpen));
@@ -80,7 +81,7 @@ class AboutModal extends React.Component {
   }
 
   componentWillUnmount() {
-    document.body.removeChild(this.container);
+    document.body.removeChild(this.state.container);
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
   }
 
@@ -89,17 +90,14 @@ class AboutModal extends React.Component {
       return null;
     }
 
-    if (!this.container) {
-      this.container = document.createElement('div');
-    }
-
+    /** Additional props are passed and spread to Modal content container <div> */
     return ReactDOM.createPortal(
       <AboutModalContainer
         {...this.props}
         ariaLabelledbyId={this.ariaLabelledbyId}
         ariaDescribedById={this.ariaDescribedById}
       />,
-      this.container
+      this.state.container
     );
   }
 }

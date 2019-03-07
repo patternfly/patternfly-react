@@ -34,7 +34,7 @@ test('About Modal closes with escape', () => {
       Test About Modal
     </AboutModal>
   );
-  const [event, handler] = document.addEventListener.mock.calls[0];
+  const [event, handler] = (document.addEventListener as any).mock.calls[0];
   expect(event).toBe('keydown');
   handler({ keyCode: KEY_CODES.ESCAPE_KEY });
   expect(props.onClose).toBeCalled();
@@ -42,7 +42,7 @@ test('About Modal closes with escape', () => {
 
 test('modal does not call onClose for esc key if it is not open', () => {
   shallow(<AboutModal {...props} />);
-  const [event, handler] = document.addEventListener.mock.calls[0];
+  const [event, handler] = (document.addEventListener as any).mock.calls[0];
   expect(event).toBe('keydown');
   handler({ keyCode: KEY_CODES.ESCAPE_KEY });
   expect(props.onClose).not.toBeCalled();
@@ -65,8 +65,8 @@ test('Console error is generated when the logoImageSrc is provided without logoI
     brandImageAlt: 'Brand Image',
     logoImageSrc: 'logoImg...'
   };
-  const myMock = jest.fn();
-  global.console = { error: myMock };
+  const myMock = jest.fn() as any;
+  global.console = { error: myMock } as any;
   shallow(<AboutModal {...noImgAltrops}> Test About Modal </AboutModal>);
   expect(myMock).toBeCalled();
 });

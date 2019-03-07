@@ -16,9 +16,9 @@ exports[`AboutModalBox Test 1`] = `
 }
 
 <div
-  aria-describedby="id2"
-  aria-labelledby="id"
   aria-modal="true"
+  ariaDescribedById="id2"
+  ariaLabelledbyId="id"
   className="pf-c-about-modal-box"
   role="dialog"
 >

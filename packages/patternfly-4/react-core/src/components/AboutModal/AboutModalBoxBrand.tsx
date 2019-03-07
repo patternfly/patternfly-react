@@ -1,17 +1,14 @@
-import React from 'react';
+import React, { HTMLProps, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/AboutModalBox/about-modal-box.css';
 
-const propTypes = {
+export interface AboutModalBoxBrandProps extends HTMLProps<HTMLDivElement> {
   /** additional classes added to the About Modal Brand */
-  className: PropTypes.string,
+  className?: string;
   /** the URL of the image for the Brand. */
-  src: PropTypes.string,
+  src: string;
   /** the alternate text of the Brand image. */
-  alt: PropTypes.string.isRequired,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  alt: string;
 };
 
 const defaultProps = {
@@ -19,13 +16,13 @@ const defaultProps = {
   src: ''
 };
 
-const AboutModalBoxBrand = ({ className, src, alt, ...props }) => (
+const AboutModalBoxBrand: FunctionComponent<AboutModalBoxBrandProps> = ({ className, src, alt, ...props }: AboutModalBoxBrandProps) => (
+  /** Additional props are spread to the container <div> */
   <div {...props} className={css(styles.aboutModalBoxBrand, className)}>
     <img className={css(styles.aboutModalBoxBrandImage)} src={src} alt={alt} />
   </div>
 );
 
-AboutModalBoxBrand.propTypes = propTypes;
 AboutModalBoxBrand.defaultProps = defaultProps;
 
 export default AboutModalBoxBrand;

@@ -1,25 +1,23 @@
-import React from 'react';
+import React, { HTMLProps, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/AboutModalBox/about-modal-box.css';
 import Title from '../Title/Title';
 
-const propTypes = {
+export interface AboutModalBoxHeaderProps extends HTMLProps<HTMLDivElement> {
   /** additional classes added to the button */
-  className: PropTypes.string,
+  className?: string;
   /** Name of the Product */
-  productName: PropTypes.string.isRequired,
+  productName: string;
   /** id to used for Modal Box header */
-  id: PropTypes.string.isRequired,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  id: string;
 };
 
 const defaultProps = {
   className: ''
 };
 
-const AboutModalBoxHeader = ({ className, productName, id, ...props }) => (
+const AboutModalBoxHeader: FunctionComponent<AboutModalBoxHeaderProps> = ({ className, productName, id, ...props }: AboutModalBoxHeaderProps) => (
+  /** Additional props are spread to the container <div> */
   <div {...props} className={css(styles.aboutModalBoxHeader, className)}>
     <Title size="4xl" id={id}>
       {productName}
@@ -27,7 +25,6 @@ const AboutModalBoxHeader = ({ className, productName, id, ...props }) => (
   </div>
 );
 
-AboutModalBoxHeader.propTypes = propTypes;
 AboutModalBoxHeader.defaultProps = defaultProps;
 
 export default AboutModalBoxHeader;

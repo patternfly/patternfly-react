@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { FunctionComponent, ReactNode, MouseEvent } from 'react';
 import AboutModalBoxContent from './AboutModalBoxContent';
 import AboutModalBoxHeader from './AboutModalBoxHeader';
 import AboutModalBoxHero from './AboutModalBoxHero';
@@ -9,33 +8,31 @@ import AboutModalBox from './AboutModalBox';
 import Backdrop from '../Backdrop/Backdrop';
 import Bullseye from '../../layouts/Bullseye/Bullseye';
 
-const propTypes = {
+export interface AboutModalContainerProps {
   /** content rendered inside the About Modal Box Content. */
-  children: PropTypes.node.isRequired,
+  children: ReactNode;
   /** additional classes added to the About Modal Box */
-  className: PropTypes.string,
+  className?: string;
   /** Flag to show the About Modal */
-  isOpen: PropTypes.bool,
+  isOpen?: boolean;
   /** A callback for when the close button is clicked */
-  onClose: PropTypes.func,
+  onClose?(event: MouseEvent<HTMLButtonElement>): void;
   /** Product Name */
-  productName: PropTypes.string.isRequired,
+  productName: string;
   /** Trademark information */
-  trademark: PropTypes.string.isRequired,
+  trademark: string;
   /** the URL of the image for the Brand. */
-  brandImageSrc: PropTypes.string.isRequired,
+  brandImageSrc: string;
   /** the alternate text of the Brand image. */
-  brandImageAlt: PropTypes.string.isRequired,
+  brandImageAlt: string;
   /** the URL of the image for the Logo. */
-  logoImageSrc: PropTypes.string.isRequired,
+  logoImageSrc: string;
   /** the alternate text of the Logo image. */
-  logoImageAlt: PropTypes.string.isRequired,
+  logoImageAlt: string;
   /** id to use for About Modal Box aria labeled by */
-  ariaLabelledbyId: PropTypes.string.isRequired,
+  ariaLabelledbyId: string;
   /** id to use for About Modal Box aria described by */
-  ariaDescribedById: PropTypes.string.isRequired,
-  /** Additional props are spread to the AboutModalBoxContent component */
-  '': PropTypes.any
+  ariaDescribedById: string;
 };
 
 const defaultProps = {
@@ -44,7 +41,7 @@ const defaultProps = {
   onClose: () => undefined
 };
 
-const ModalContent = ({
+const ModalContent: FunctionComponent<AboutModalContainerProps> = ({
   children,
   className,
   isOpen,
@@ -58,14 +55,15 @@ const ModalContent = ({
   ariaLabelledbyId,
   ariaDescribedById,
   ...props
-}) => {
+}: AboutModalContainerProps) => {
   if (!isOpen) {
     return null;
   }
+  /** Additional props are spread to the AboutModalBoxContent component */
   return (
     <Backdrop>
       <Bullseye>
-        <AboutModalBox className={className} aria-labelledby={ariaLabelledbyId} aria-describedby={ariaDescribedById}>
+        <AboutModalBox className={className} ariaLabelledbyId={ariaLabelledbyId} ariaDescribedById={ariaDescribedById}>
           <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
           <AboutModalBoxCloseButton onClose={onClose} />
           <AboutModalBoxHeader id={ariaLabelledbyId} productName={productName} />
@@ -79,7 +77,6 @@ const ModalContent = ({
   );
 };
 
-ModalContent.propTypes = propTypes;
 ModalContent.defaultProps = defaultProps;
 
 export default ModalContent;

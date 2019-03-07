@@ -1,28 +1,26 @@
-import React from 'react';
+import React, { HTMLProps, ReactNode, FunctionComponent } from 'react';
 import { css } from '@patternfly/react-styles';
-import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/AboutModalBox/about-modal-box.css';
 import titleStyles from '@patternfly/patternfly/components/Title/title.css';
 import contentStyles from '@patternfly/patternfly/components/Content/content.css';
 
-const propTypes = {
+export interface AboutModalBoxContentProps extends HTMLProps<HTMLDivElement> {
   /** content rendered inside the AboutModalBoxContent */
-  children: PropTypes.node.isRequired,
+  children: ReactNode;
   /** additional classes added to the AboutModalBoxContent */
-  className: PropTypes.string,
+  className?: string;
   /** id to use for About Modal Box aria described by */
-  id: PropTypes.string.isRequired,
+  id: string;
   /** The Trademark info for the product */
-  trademark: PropTypes.string.isRequired,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
+  trademark: string;
 };
 
 const defaultProps = {
   className: ''
 };
 
-const AboutModalBoxContent = ({ children, className, trademark, id, ...props }) => (
+const AboutModalBoxContent: FunctionComponent<AboutModalBoxContentProps> = ({ children, className, trademark, id, ...props }: AboutModalBoxContentProps) => (
+  /** Additional props are spread to the container <div> */
   <div {...props} className={css(styles.aboutModalBoxContent, className)} id={id}>
     <div className={css(contentStyles.content)}>{children}</div>
     <div className={css(styles.aboutModalBoxStrapline)}>
@@ -31,7 +29,6 @@ const AboutModalBoxContent = ({ children, className, trademark, id, ...props }) 
   </div>
 );
 
-AboutModalBoxContent.propTypes = propTypes;
 AboutModalBoxContent.defaultProps = defaultProps;
 
 export default AboutModalBoxContent;

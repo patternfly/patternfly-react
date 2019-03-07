@@ -20,7 +20,7 @@ test('About Modal Container Test simple', () => {
 
 test('About Modal Container Test isOpen', () => {
   const view = shallow(
-    <AboutModalContainer title="Test Modal Container title" {...props} isOpen>
+    <AboutModalContainer {...props} isOpen>
       This is ModalBox content
     </AboutModalContainer>
   );
@@ -29,7 +29,7 @@ test('About Modal Container Test isOpen', () => {
 
 test('About Modal Container Test with onlose', () => {
   const view = shallow(
-    <AboutModalContainer onclose={() => undefined} {...props}>
+    <AboutModalContainer onClose={() => undefined} {...props}>
       This is ModalBox content
     </AboutModalContainer>
   );
