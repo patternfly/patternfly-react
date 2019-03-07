@@ -22,10 +22,10 @@
     "exenv": "^1.2.2",
     "gatsby": "^2.1.24",
     "gatsby-plugin-react-helmet": "^3.0.8",
-    "gatsby-plugin-typescript": "^2.0.10",
+    "gatsby-plugin-typescript": "^2.0.3",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-json": "^2.1.8",
-    "gatsby-transformer-react-docgen": "^3.0.5",
+    "gatsby-transformer-react-docgen": "3.0.0",
     "param-case": "^2.1.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
@@ -40,7 +40,7 @@
   ],
   "scripts": {
     "docbuild": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
-    "pr-build": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths --no-minify",
+    "pr-build": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
     "develop": "yarn gen-ts-docs && gatsby develop",
     "gen-ts-docs": "typedoc --json ts-docs/ts-output.json ../react-core --ignoreCompilerErrors --mode file --tsconfig ../react-core/src/tsconfig.dts.json && node build/transformTsDocs.js"
   },
