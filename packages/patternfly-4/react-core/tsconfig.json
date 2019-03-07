@@ -3,20 +3,28 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "isolatedModules": true,
     "moduleResolution": "node",
     "skipLibCheck": true,
     "sourceMap": true, // allow sourcemap support
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "noEmit": true,
     "module": "commonjs", // specify module code generation
     "jsx": "react", // use typescript to transpile jsx to js
     "target": "es5", // specify ECMAScript target version
     "allowJs": true, // allow a partial TypeScript and JavaScript codebase
     "paths": {
-      "*": ["dist/esm/*"]
+      "*": [
+        "dist/esm/*"
+      ]
     }
   },
-  "include": ["./src/**/*"],
-  "exclude": ["./src/**/*.d.ts"]
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "./src/**/*.d.ts"
+  ]
 }
