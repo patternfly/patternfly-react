@@ -4,15 +4,13 @@ const pfColorBlue50 = '#def3ff';
 const pfColorBlue200 = '#7dc3e8';
 
 export const inlineEditCss = StyleSheet.parse(`
-  .pf-c-table__editable-row {    
-    border: 1px solid transparent;
-    
+  tr.pf-c-table__editable-row {    
     &:hover,
     &.pf-m-editing {
+      background: ${pfColorBlue50} !important;
       td {
-        background: ${pfColorBlue50};
-        border-top: 1px solid ${pfColorBlue200} !important;
         border-bottom: 1px solid ${pfColorBlue200} !important;
+        border-top: 1px solid ${pfColorBlue200} !important;
   
         &:first-child {
           border-left: 1px solid ${pfColorBlue200} !important;

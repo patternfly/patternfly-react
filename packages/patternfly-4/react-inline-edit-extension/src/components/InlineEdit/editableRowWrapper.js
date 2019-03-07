@@ -27,8 +27,11 @@ const propTypes = {
     isExpanded: PropTypes.bool,
     isEditing: PropTypes.bool,
     isTableEditing: PropTypes.bool,
-    isLast: PropTypes.bool,
-    isFirst: PropTypes.bool,
+    isFirstVisible: PropTypes.bool,
+    isLastVisible: PropTypes.bool,
+    isChildEditing: PropTypes.bool,
+    isParentEditing: PropTypes.bool,
+    isLastVisibleParent: PropTypes.bool,
     editConfig: PropTypes.object
   }),
   rowProps: PropTypes.object
@@ -45,38 +48,54 @@ const defaultProps = {
     isExpanded: undefined,
     isEditing: undefined,
     isTableEditing: undefined,
-    isLast: undefined,
-    isFirst: undefined,
+    isFirstVisible: undefined,
+    isLastVisible: undefined,
+    isChildEditing: undefined,
+    isParentEditing: undefined,
+    isLastVisibleParent: undefined,
     editConfig: undefined
   },
   rowProps: null
 };
 
+// TableEditConfirmation constants like TABLE_TOP cannot be referenced but must be hardcoded due to this issue:
+// https://github.com/reactjs/react-docgen/issues/317#issue-393678795
 const tableConfirmationMapper = {
-  [TableEditConfirmation.TABLE_TOP]: {
-    hasConfirmationButtons: ({ isTableEditing, isFirst }) => isTableEditing && isFirst,
+  TABLE_TOP: {
+    hasConfirmationButtons: ({ isTableEditing, isFirstVisible }) => isTableEditing && isFirstVisible,
     isTableConfirmation: () => true,
     areButtonsOnTop: () => true,
     hasBoldBorder: () => true,
-    getEditStyles: ({ isTableEditing, isFirst }) =>
-      css(styles.tableEditableRow, isTableEditing && isFirst && styles.modifiers.tableEditingFirstRow)
+    getEditStyles: ({ isTableEditing, isFirstVisible }) =>
+      css(styles.tableEditableRow, isTableEditing && isFirstVisible && styles.modifiers.tableEditingFirstRow)
   },
-  [TableEditConfirmation.TABLE_BOTTOM]: {
-    hasConfirmationButtons: ({ isTableEditing, isLast }) => isTableEditing && isLast,
+  TABLE_BOTTOM: {
+    hasConfirmationButtons: ({ isTableEditing, isLastVisible }) => isTableEditing && isLastVisible,
     isTableConfirmation: () => true,
     areButtonsOnTop: () => false,
     hasBoldBorder: () => true,
-    getEditStyles: ({ isTableEditing, isLast }) =>
-      css(styles.tableEditableRow, isTableEditing && isLast && styles.modifiers.tableEditingLastRow)
+    getEditStyles: ({ isTableEditing, isLastVisible }) =>
+      css(styles.tableEditableRow, isTableEditing && isLastVisible && styles.modifiers.tableEditingLastRow)
   },
-  [TableEditConfirmation.ROW]: {
-    hasConfirmationButtons: ({ isEditing }) => isEditing,
+  ROW: {
+    hasConfirmationButtons: ({ isEditing, isParentEditing, isLastVisibleParent, isChildEditing, isLastVisible }) =>
+      isEditing &&
+      !(isChildEditing && isParentEditing) && // buttons can't appear in the middle
+      !(isParentEditing && isLastVisible) && // parent will show the buttons on top
+      !(isChildEditing && !isLastVisibleParent), // child will show the buttons on bottom
     isTableConfirmation: () => false,
-    areButtonsOnTop: ({ isLast }) => isLast,
+    areButtonsOnTop: ({ isLastVisible, isLastVisibleParent }) => isLastVisible || isLastVisibleParent,
     hasBoldBorder: () => false,
     getEditStyles: ({ isEditing }) => css(styles.tableEditableRow, isEditing && styles.modifiers.editing)
   },
-  [TableEditConfirmation.NONE]: {
+  NO_CONFIRM_ROW: {
+    hasConfirmationButtons: () => false,
+    isTableConfirmation: () => false,
+    areButtonsOnTop: () => false,
+    hasBoldBorder: () => false,
+    getEditStyles: ({ isEditing }) => css(styles.tableEditableRow, isEditing && styles.modifiers.editing)
+  },
+  NONE: {
     hasConfirmationButtons: () => false,
     isTableConfirmation: () => false,
     areButtonsOnTop: () => false,
@@ -105,9 +124,8 @@ const editableRowWrapper = RowWrapperComponent => {
     });
 
     setStateWith2dEquals = newState => {
-      this.setState(
-        oldState =>
-          Object.keys(newState).find(key => !shallowLeftSideEquals(newState[key], oldState[key])) ? newState : null
+      this.setState(oldState =>
+        Object.keys(newState).find(key => !shallowLeftSideEquals(newState[key], oldState[key])) ? newState : null
       );
     };
 
@@ -150,7 +168,7 @@ const editableRowWrapper = RowWrapperComponent => {
 
     getConfirmationButtons() {
       const { row, rowProps, ...props } = this.props;
-      const { isLast, editConfig } = row;
+      const { isLastVisible, isParentEditing, isLastVisibleParent, editConfig } = row;
 
       if (!editConfig) {
         return null;
@@ -167,7 +185,7 @@ const editableRowWrapper = RowWrapperComponent => {
             {...props}
             onConfirm={event => onEditConfirmed(event, actionObject, options)}
             onCancel={event => onEditCanceled(event, actionObject, options)}
-            buttonsOnTop={tableConfirmation.areButtonsOnTop({ isLast })}
+            buttonsOnTop={tableConfirmation.areButtonsOnTop({ isLastVisible, isParentEditing, isLastVisibleParent })}
             boldBorder={tableConfirmation.hasBoldBorder()}
             environment={{
               window: this.state.window,
@@ -186,14 +204,14 @@ const editableRowWrapper = RowWrapperComponent => {
         className,
         onScroll,
         onResize,
-        row: { isFirst, isLast, isEditing, isTableEditing, editConfig }
+        row: { isFirstVisible, isLastVisible, isEditing, isTableEditing, editConfig }
       } = this.props;
       const { hasConfirmationButtons } = this.state;
       const trClassName = getTableConfirmation({ editConfig }).getEditStyles({
         isEditing,
         isTableEditing,
-        isFirst,
-        isLast
+        isFirstVisible,
+        isLastVisible
       });
 
       return (

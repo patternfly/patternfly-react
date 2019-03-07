@@ -26,14 +26,18 @@ export interface IColumn {
   }
 }
 
+export interface IExtraRowData {
+  rowIndex: number;
+  rowKey?: string;
+}
+
 export interface IExtraColumnData {
   columnIndex: number,
   column: IColumn,
   property: string,
 }
 
-export interface IExtraData extends IExtraColumnData {
-  rowIndex: number
+export interface IExtraData extends IExtraColumnData, IExtraRowData {
 }
 
 export interface IExtra extends IExtraData {

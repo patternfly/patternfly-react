@@ -1,14 +1,15 @@
 import React from 'react';
-import { TableContext, TableBody } from '@patternfly/react-table';
+import { TableContext, TableBody, isRowExpanded } from '@patternfly/react-table';
 
 import PropTypes from 'prop-types';
 import { TableEditConfirmation } from './constants';
+import { showIdWarnings } from './utils/utils';
 
 const propTypes = {
   ...TableBody.propTypes,
   editConfig: PropTypes.shape({
     editConfirmationType: PropTypes.oneOf(Object.values(TableEditConfirmation)),
-    onEditCellChanged: PropTypes.func,
+    onEditCellClicked: PropTypes.func,
     onEditConfirmed: PropTypes.func,
     onEditCanceled: PropTypes.func
   }).isRequired,
@@ -22,20 +23,60 @@ const defaultProps = {
   onRowClick: () => undefined
 };
 
+const resolveCascadeEditability = rows => {
+  const isRowExpandedIndexes = new Set(
+    rows.map((row, idx) => (isRowExpanded(row, rows) ? idx : null)).filter(row => row !== null)
+  );
+
+  // flag parents and their children which are edited together
+  rows
+    .filter(
+      (row, idx) =>
+        row.parent !== undefined &&
+        row.isEditing &&
+        isRowExpandedIndexes.has(idx) &&
+        row.isEditableTogetherWithParent &&
+        rows[row.parent].isEditing
+    )
+    .forEach(row => {
+      rows[row.parent].isChildEditing = true;
+      row.isParentEditing = true;
+    });
+
+  const lastVisibleRow = rows.filter((row, idx) => !row.parent || isRowExpandedIndexes.has(idx)).pop();
+
+  // flag last parent row if there are only descendants under it
+  if (lastVisibleRow && lastVisibleRow.isParentEditing) {
+    let parentRow = lastVisibleRow;
+    while (parentRow.parent !== undefined && parentRow.isEditableTogetherWithParent) {
+      parentRow = rows[parentRow.parent];
+    }
+    parentRow.isLastVisibleParent = true;
+  }
+};
+
 const onRow = (event, row, rowProps, computedData, { onRowClick, editConfig }) => {
-  const cell = event.target.closest('[data-key]');
+  const { target } = event;
+  const cell = target.closest('[data-key]');
   const cellNumber = parseInt(cell && cell.getAttribute('data-key'));
   const hasCellNumber = !Number.isNaN(cellNumber);
 
-  let onEditCellChanged;
-  let targetsAlreadyEditedCell = false;
+  let onEditCellClicked;
 
-  if (hasCellNumber && editConfig && typeof editConfig.onEditCellChanged === 'function') {
-    targetsAlreadyEditedCell = cellNumber === row.activeEditCell;
-    onEditCellChanged = () => {
-      editConfig.onEditCellChanged(event, row, {
+  if (hasCellNumber && editConfig && typeof editConfig.onEditCellClicked === 'function') {
+    // resolve closest (e.g. for dropdowns) usable id of a clicked element inside a cell
+    const idElement = target.closest('[id]');
+    const elementId = idElement && cell.contains(idElement) ? idElement.getAttribute('id') || null : null;
+
+    if (!elementId) {
+      showIdWarnings(row, target);
+    }
+
+    onEditCellClicked = () => {
+      editConfig.onEditCellClicked(event, row, {
         ...rowProps,
-        columnIndex: cellNumber
+        columnIndex: cellNumber,
+        elementId
       });
     };
   }
@@ -45,12 +86,12 @@ const onRow = (event, row, rowProps, computedData, { onRowClick, editConfig }) =
   setTimeout(() => {
     if (!row.isEditing) {
       onRowClick(event, row, rowProps, computedData);
-      if (onEditCellChanged) {
+      if (onEditCellClicked) {
         // edit cell after rerender
-        setTimeout(onEditCellChanged, 0);
+        setTimeout(onEditCellClicked, 0);
       }
-    } else if (onEditCellChanged && !targetsAlreadyEditedCell) {
-      onEditCellChanged();
+    } else if (onEditCellClicked) {
+      onEditCellClicked();
     }
   }, 0);
 };
@@ -62,6 +103,8 @@ const Body = ({ BodyComponent, rows, editConfig, onRowClick, ...props }) => {
     editConfig,
     isTableEditing
   }));
+
+  resolveCascadeEditability(mappedRows);
 
   return (
     <BodyComponent

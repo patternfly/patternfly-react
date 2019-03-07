@@ -2,16 +2,17 @@ const inlineEditFormatterFactory = ({ renderEdit, renderValue, resolveValue, isE
   value,
   additionalData
 ) => {
-  const { rowData, columnIndex } = additionalData;
+  const { rowData } = additionalData;
 
   if (resolveValue) {
     value = resolveValue(value, additionalData);
   }
 
   if (renderEdit && rowData.isEditing && (!isEditable || isEditable(additionalData))) {
-    return renderEdit(value, additionalData, {
-      autoFocus: rowData.activeEditCell === columnIndex
-    });
+    const computedData = {
+      activeEditId: rowData.editConfig && rowData.editConfig.activeEditId
+    };
+    return renderEdit(value, additionalData, computedData);
   } else if (renderValue) {
     return renderValue(value, additionalData);
   }

@@ -6,8 +6,8 @@ import { EditConfig } from './editableTableBody'
 export interface EditableRowWrapperRow extends RowWrapperRow {
   isEditing: boolean;
   isTableEditing: boolean;
-  isLast: boolean;
-  isFirst: boolean;
+  isFirstVisible: boolean;
+  isLastVisible: boolean;
   editConfig: EditConfig;
 }
 

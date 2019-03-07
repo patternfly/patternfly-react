@@ -10,19 +10,30 @@ import {
 import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
 
 class EditableTable extends React.Component {
+  makeId = ({ column, rowIndex, columnIndex, name }) =>
+    `${column.property}-${rowIndex}-${columnIndex}${name ? `-${name}` : ''}`;
+
   constructor(props) {
     super(props);
 
     // text input
     const textInputFormatter = inlineEditFormatterFactory({
-      renderEdit: (value, { columnIndex, rowIndex }, { autoFocus }) => (
-        <TableTextInput
-          id={`repositories-${rowIndex}-${columnIndex}`}
-          defaultValue={value}
-          onBlur={newValue => this.onChange(newValue, { rowIndex, columnIndex })}
-          autoFocus={autoFocus}
-        />
-      )
+      renderEdit: (value, { columnIndex, rowIndex, column }, { activeEditId }) => {
+        const id = this.makeId({ rowIndex, columnIndex, column });
+        return (
+          <TableTextInput
+            id={id}
+            defaultValue={value}
+            onBlur={newValue =>
+              this.onChange(newValue, {
+                rowIndex,
+                columnIndex
+              })
+            }
+            autoFocus={activeEditId === id}
+          />
+        );
+      }
     });
 
     // dropdown
@@ -32,12 +43,13 @@ class EditableTable extends React.Component {
         const dropdownItems = column.data.dropdownItems.map(item => <DropdownItem key={item}>{item}</DropdownItem>);
         return (
           <Dropdown
-            id={`workspaces-${rowIndex}-${columnIndex}`}
+            id={this.makeId({ rowIndex, columnIndex, column, name: 'dropdown' })}
             onSelect={event =>
               this.onWorkspaceChange({ selected: event.target.text, isDropdownOpen: false }, { rowIndex, columnIndex })
             }
             toggle={
               <DropdownToggle
+                id={this.makeId({ rowIndex, columnIndex, column, name: 'toggle' })}
                 onToggle={() =>
                   this.onWorkspaceChange({ isDropdownOpen: !workspace.isDropdownOpen }, { rowIndex, columnIndex })
                 }
@@ -56,17 +68,22 @@ class EditableTable extends React.Component {
     // checkbox
     const privateRepoFormatter = inlineEditFormatterFactory({
       resolveValue: (value, { rowData }) => rowData.data.privateRepo,
-      renderEdit: (privateRepo, { columnIndex, rowIndex }) => (
+      renderEdit: (privateRepo, { column, columnIndex, rowIndex }) => (
         <Checkbox
-          id={`privaterepo-${rowIndex}-${columnIndex}`}
+          id={this.makeId({ rowIndex, columnIndex, column })}
           isChecked={privateRepo}
-          onChange={value => this.onPrivateRepoChange(value, { rowIndex, columnIndex })}
+          onChange={value =>
+            this.onPrivateRepoChange(value, {
+              rowIndex,
+              columnIndex
+            })
+          }
           aria-label="checkbox"
         />
       ),
-      renderValue: (privateRepo, { columnIndex, rowIndex }) => (
+      renderValue: (privateRepo, { columnIndex, rowIndex, column }) => (
         <Checkbox
-          id={`privaterepo-${rowIndex}-${columnIndex}`}
+          id={this.makeId({ rowIndex, columnIndex, column })}
           isChecked={privateRepo}
           isDisabled
           aria-label="checkbox"
@@ -113,7 +130,6 @@ class EditableTable extends React.Component {
             privateRepo: false
           }
           // isEditing: true,
-          // activeEditCell: 3
         },
         {
           cells: ['', null, 0, null, '', null],
@@ -151,11 +167,14 @@ class EditableTable extends React.Component {
     });
   };
 
-  onWorkspaceChange = (value, { rowIndex }) => {
-    this.setState(({ rows }) => {
+  onWorkspaceChange = (value, { rowIndex, columnIndex }) => {
+    this.setState(({ rows, activeEditId }) => {
       const row = rows[rowIndex];
       row.data.workspace = Object.assign({}, row.data.workspace, value);
-      return { rows };
+      if (value.isDropdownOpen) {
+        activeEditId = this.makeId({ rowIndex, columnIndex, column: { property: 'workspaces' }, name: 'dropdown' });
+      }
+      return { rows, activeEditId };
     });
   };
 
@@ -164,26 +183,48 @@ class EditableTable extends React.Component {
       rows = [...rows];
       const row = rows[rowIndex];
       row.cells[columnIndex] = value;
-      row.activeEditCell = null; // stop autoFocus
-      return { rows };
+      return {
+        rows,
+        activeEditId: null // stop autoFocus
+      };
     });
   };
 
-  onEditCellChanged = (event, clickedRow, { rowIndex, columnIndex }) => {
+  onEditCellClicked = (event, clickedRow, { rowIndex, columnIndex, elementId }) => {
     const WORKSPACE_COL = 3;
     const PRIVATE_REPO_COL = 5;
+    const ACTIONS_COL = 6;
 
-    if (clickedRow.isEditing) {
-      this.setState(({ rows }) => ({
-        rows: rows.map((row, id) => {
-          row.activeEditCell = id === rowIndex ? columnIndex : null;
-          row.data.workspace.isDropdownOpen = id === rowIndex && columnIndex === WORKSPACE_COL;
-          if (id === rowIndex && columnIndex === PRIVATE_REPO_COL) {
-            row.data.privateRepo = !row.data.privateRepo;
-          }
-          return row;
-        })
-      }));
+    if (elementId !== this.state.activeEditId && clickedRow.isEditing && columnIndex !== ACTIONS_COL) {
+      this.setState(({ rows }) => {
+        // focus dropdown if it opens ('toggle' is mistakenly assumed to be the elementId)
+        const activeEditId =
+          elementId && columnIndex === WORKSPACE_COL && !rows[rowIndex].data.workspace.isDropdownOpen
+            ? this.makeId({
+                rowIndex,
+                columnIndex,
+                column: { property: 'workspaces' },
+                name: 'dropdown'
+              })
+            : elementId;
+
+        return {
+          activeEditId,
+          rows: rows.map((row, id) => {
+            if (id === rowIndex) {
+              if (elementId && columnIndex === WORKSPACE_COL) {
+                row.data.workspace.isDropdownOpen = !row.data.workspace.isDropdownOpen;
+              } else {
+                if (elementId && columnIndex === PRIVATE_REPO_COL) {
+                  row.data.privateRepo = !row.data.privateRepo;
+                }
+                row.data.workspace.isDropdownOpen = false;
+              }
+            }
+            return row;
+          })
+        };
+      });
     }
   };
 
@@ -207,7 +248,7 @@ class EditableTable extends React.Component {
       return {
         rows,
         editedRowBackup: null,
-        activeEditCell: null
+        activeEditId: null
       };
     });
   };
@@ -219,7 +260,7 @@ class EditableTable extends React.Component {
       return {
         rows,
         editedRowBackup: null,
-        activeEditCell: null
+        activeEditId: null
       };
     });
   };
@@ -235,9 +276,10 @@ class EditableTable extends React.Component {
         ];
 
   render() {
-    const { columns, rows } = this.state;
+    const { columns, rows, activeEditId } = this.state;
     const editConfig = {
-      onEditCellChanged: this.onEditCellChanged,
+      activeEditId,
+      onEditCellClicked: this.onEditCellClicked,
       editConfirmationType: TableEditConfirmation.ROW,
       onEditConfirmed: this.onEditConfirmed,
       onEditCanceled: this.onEditCanceled

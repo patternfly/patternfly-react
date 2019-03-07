@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RowWrapper renders correctly 1`] = `
+<table>
+  <tbody>
+    <RowWrapper
+      className=""
+      onResize={[MockFunction]}
+      onScroll={[MockFunction]}
+      row={
+        Object {
+          "isExpanded": undefined,
+          "isOpen": undefined,
+        }
+      }
+      rowProps={null}
+      trRef={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              <tr
+                class=""
+              />,
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      <tr
+        className=""
+        hidden={false}
+      />
+    </RowWrapper>
+  </tbody>
+</table>
+`;
+
+exports[`RowWrapper renders expanded correctly 1`] = `
+.pf-c-table__expandable-row.pf-m-expanded {
+  display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0.3125rem 0.625rem -0.25rem rgba(3, 3, 3, 0.25);
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  border-bottom-color: #ededed;
+  border-bottom-width: 1px;
+}
+
+<table>
+  <tbody>
+    <RowWrapper
+      className=""
+      row={
+        Object {
+          "isExpanded": true,
+        }
+      }
+      rowProps={null}
+    >
+      <tr
+        className="pf-c-table__expandable-row pf-m-expanded"
+        hidden={false}
+      />
+    </RowWrapper>
+  </tbody>
+</table>
+`;

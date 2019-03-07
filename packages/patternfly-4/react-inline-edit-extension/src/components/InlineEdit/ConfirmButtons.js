@@ -18,7 +18,7 @@ const buttonsTopPosition = (window, rowDimensions, bold) => {
 const buttonsBottomPosition = (window, rowDimensions, bold) => {
   const boldShift = bold ? -1 : 0;
   return {
-    top: rowDimensions.bottom + boldShift,
+    top: rowDimensions.bottom - 1 + boldShift,
     right: window.width - rowDimensions.right + 10
   };
 };

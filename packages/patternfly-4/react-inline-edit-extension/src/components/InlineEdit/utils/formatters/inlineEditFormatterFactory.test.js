@@ -3,11 +3,12 @@ import { default as inlineEditFormatterFactory } from './inlineEditFormatterFact
 const blue = 'blue';
 const alteredValue = 'violet';
 
-const buildAdditionalData = (data, isEditing = true, activeCell = 3) => ({
-  columnIndex: activeCell,
+const buildAdditionalData = (data, isEditing = true, activeEditId = 'testId') => ({
   rowData: {
     isEditing,
-    activeEditCell: activeCell,
+    editConfig: {
+      activeEditId
+    },
     data
   }
 });
@@ -50,5 +51,15 @@ describe('inlineEditFormatterFactory', () => {
         renderEdit: value => `ultra ${value}`
       })(blue, additionalData)
     ).toBe(`ultra ${alteredValue}`);
+  });
+
+  test('passes computed data', () => {
+    const additionalData = buildAdditionalData(alteredValue, true, 'myId');
+
+    expect(
+      inlineEditFormatterFactory({
+        renderEdit: (value, data, { activeEditId }) => activeEditId
+      })(blue, additionalData)
+    ).toBe('myId');
   });
 });

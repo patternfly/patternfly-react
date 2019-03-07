@@ -8,9 +8,7 @@ export {
   EditableTableBody,
   InlineEditBodyProps,
   EditConfig,
-  RowProps,
-  RowExtraProps,
-  RowData
+  IEditedCellData,
 } from  './editableTableBody'
 
 export {

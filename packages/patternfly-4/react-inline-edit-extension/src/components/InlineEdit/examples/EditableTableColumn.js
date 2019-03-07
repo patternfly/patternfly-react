@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unused-state */
 import React from 'react';
-import { Table, TableHeader, TableBody, RowWrapper } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, RowWrapper, TableVariant } from '@patternfly/react-table';
 import {
   editableTableBody,
   editableRowWrapper,
@@ -10,19 +10,30 @@ import {
 } from '@patternfly/react-inline-edit-extension';
 
 class EditableTableColumn extends React.Component {
+  makeId = ({ column, rowIndex, columnIndex, name }) =>
+    `${column.property}-${rowIndex}-${columnIndex}${name ? `-${name}` : ''}`;
+
   constructor(props) {
     super(props);
 
     // text input
     const inlineEditingFormatter = inlineEditFormatterFactory({
-      renderEdit: (value, { columnIndex, rowIndex }, { autoFocus }) => (
-        <TableTextInput
-          id={`repositories-${rowIndex}-${columnIndex}`}
-          defaultValue={value}
-          onBlur={newValue => this.onBlur(newValue, { rowIndex, columnIndex })}
-          autoFocus={autoFocus}
-        />
-      ),
+      renderEdit: (value, { columnIndex, rowIndex, column }, { activeEditId }) => {
+        const id = this.makeId({ rowIndex, columnIndex, column });
+        return (
+          <TableTextInput
+            id={id}
+            defaultValue={value}
+            onBlur={newValue =>
+              this.onBlur(newValue, {
+                rowIndex,
+                columnIndex
+              })
+            }
+            autoFocus={activeEditId === id}
+          />
+        );
+      },
       renderValue: (value, { rowData }) => (rowData.isTableEditing ? `${value} (Not Editable)` : value),
       isEditable: ({ rowIndex }) => rowIndex !== 1
     });
@@ -58,7 +69,8 @@ class EditableTableColumn extends React.Component {
           cells: ['a', 'two', 5, 'four', 'five']
         }
       ],
-      rowsBackup: null
+      rowsBackup: null,
+      activeEditId: null
     };
   }
 
@@ -67,26 +79,24 @@ class EditableTableColumn extends React.Component {
       rows = [...rows];
       const row = rows[rowIndex];
       row.cells[columnIndex] = value;
-      row.activeEditCell = null; // stop autoFocus
-      return { rows };
+      return {
+        rows,
+        activeEditId: null // stop autoFocus
+      };
     });
   };
 
-  onEditCellChanged = (event, clickedRow, { rowIndex, columnIndex }) => {
-    this.setState(({ rows }) => ({
-      rows: rows.map((row, id) => {
-        row.activeEditCell = id === rowIndex ? columnIndex : null;
-        return row;
-      })
-    }));
+  onEditCellClicked = (event, clickedRow, { rowIndex, columnIndex, elementId }) => {
+    if (elementId !== this.state.activeEditId) {
+      this.setState({
+        activeEditId: elementId
+      });
+    }
   };
 
   setEditing = (rows, isEditing) =>
     rows.map(row => {
       row.isEditing = isEditing;
-      if (!isEditing) {
-        row.activeEditCell = null;
-      }
       return row;
     });
 
@@ -103,35 +113,40 @@ class EditableTableColumn extends React.Component {
   onEditConfirmed = () => {
     this.setState(({ rows }) => ({
       rows: this.setEditing(rows, false),
-      rowsBackup: null
+      rowsBackup: null,
+      activeEditId: null
     }));
   };
 
   onEditCanceled = () => {
     this.setState(({ rows, rowsBackup }) => ({
       rows: rowsBackup,
-      rowsBackup: null
+      rowsBackup: null,
+      activeEditId: null
     }));
   };
 
   render() {
-    const { columns, rows } = this.state;
+    const { columns, rows, activeEditId } = this.state;
     const editConfig = {
+      activeEditId,
       editConfirmationType: TableEditConfirmation.TABLE_BOTTOM,
-      onEditCellChanged: this.onEditCellChanged,
+      onEditCellClicked: this.onEditCellClicked,
       onEditConfirmed: this.onEditConfirmed,
       onEditCanceled: this.onEditCanceled
     };
 
     const ComposedBody = editableTableBody(TableBody);
-    const ComposedRawWrapper = editableRowWrapper(RowWrapper);
+    const ComposedRowWrapper = editableRowWrapper(RowWrapper);
 
     return (
       <Table
+        variant={TableVariant.compact}
         caption="Editable Table With Inline Edit Columns"
         cells={columns}
         rows={rows}
-        rowWrapper={ComposedRawWrapper}
+        rowWrapper={ComposedRowWrapper}
+        onCollapse={this.onCollapse}
       >
         <TableHeader />
         <ComposedBody editConfig={editConfig} onRowClick={this.onRowClick} />
