@@ -105,7 +105,7 @@
     "build": "yarn prebuild:pf4 && lerna run --parallel build",
     "prebuild:pf4": "lerna run --scope='@patternfly/react-styles' build",
     "build:docs": "yarn build && lerna run docbuild",
-    "build:prdocs": "lerna run pr-build",
+    "build:prdocs": "lerna run pr-build --stream",
     "build:storybook": "build-storybook -c storybook -o .out",
     "commit": "git-cz",
     "commitmsg": "commitlint -e",
