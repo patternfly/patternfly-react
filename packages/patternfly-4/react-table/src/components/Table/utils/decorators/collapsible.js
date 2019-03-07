@@ -34,6 +34,9 @@ export const collapsible = (value, { rowIndex, columnIndex, rowData, column, pro
   };
 };
 
+export const expandable = (value, { rowData }) =>
+  rowData.hasOwnProperty('parent') ? <ExpandableRowContent>{value}</ExpandableRowContent> : value;
+
 export const expandedRow = colSpan => {
   const expandedRowFormatter = (
     value,
@@ -47,7 +50,7 @@ export const expandedRow = colSpan => {
   ) =>
     rowData.hasOwnProperty('parent') && {
       colSpan,
-      children: <ExpandableRowContent id={contentId + rowIndex}>{value.title || value}</ExpandableRowContent>
+      id: contentId + rowIndex
     };
   return expandedRowFormatter;
 };
