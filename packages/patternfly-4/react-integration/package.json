@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "clean": "rimraf cypress",
+    "clean": "rimraf cypress/videos cypress/screenshots",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "integration:setup": "rimraf node_modules && yarn install",
