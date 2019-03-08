@@ -143,9 +143,7 @@ class SelectToggle extends Component {
         aria-haspopup="listbox"
         onKeyDown={this.onKeyDown}
       >
-        <div className={css(styles.selectToggleWrapper)}>
-          <span className={css(styles.selectToggleText)}>{children}</span>
-        </div>
+        {children}
         <CaretDownIcon className={css(styles.selectToggleArrow)} />
       </button>
     );

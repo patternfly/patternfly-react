@@ -100,6 +100,7 @@ class CheckboxSelectOption extends React.Component {
                 }
               }}
               checked={isChecked}
+              disabled={isDisabled}
             />
             <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{value}</span>
           </label>

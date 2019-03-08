@@ -24,8 +24,8 @@ const CheckboxSelectGroup = ({ children, className, label, ...props }) => (
   <React.Fragment>
     <div {...props} className={css(styles.selectMenuGroup, className)}>
       <div className={css(styles.selectMenuGroupTitle)}>{label}</div>
+      {children}
     </div>
-    {children}
   </React.Fragment>
 );
 

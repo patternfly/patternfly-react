@@ -62,15 +62,7 @@ exports[`state active 1`] = `
     onKeyDown={[Function]}
     type="button"
   >
-    <div
-      className="pf-c-select__toggle-wrapper"
-    >
-      <span
-        className="pf-c-select__toggle-text"
-      >
-        Select
-      </span>
-    </div>
+    Select
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
       color="currentColor"
@@ -164,15 +156,7 @@ exports[`state focus 1`] = `
     onKeyDown={[Function]}
     type="button"
   >
-    <div
-      className="pf-c-select__toggle-wrapper"
-    >
-      <span
-        className="pf-c-select__toggle-text"
-      >
-        Select
-      </span>
-    </div>
+    Select
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
       color="currentColor"
@@ -266,15 +250,7 @@ exports[`state hover 1`] = `
     onKeyDown={[Function]}
     type="button"
   >
-    <div
-      className="pf-c-select__toggle-wrapper"
-    >
-      <span
-        className="pf-c-select__toggle-text"
-      >
-        Select
-      </span>
-    </div>
+    Select
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
       color="currentColor"

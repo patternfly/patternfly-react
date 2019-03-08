@@ -39,30 +39,39 @@ class CheckboxSelect extends React.Component {
     }
   }
 
-  extendChildren() {
+  extendChildren(props) {
     const { children, isGrouped, checked } = this.props;
     if (isGrouped) {
       let index = 0;
       return React.Children.map(children, group =>
         React.cloneElement(group, {
-          children: group.props.children.map(option =>
-            React.cloneElement(option, {
-              isChecked: checked && checked.includes(option.props.value),
-              sendRef: this.sendRef,
-              keyHandler: this.childKeyHandler,
-              index: index++
-            })
+          id: group.props.label,
+          children: (
+            <fieldset aria-labelledby={group.props.label} className={css(formStyles.formFieldset)}>
+              {group.props.children.map(option =>
+                React.cloneElement(option, {
+                  isChecked: checked && checked.includes(option.props.value),
+                  sendRef: this.sendRef,
+                  keyHandler: this.childKeyHandler,
+                  index: index++
+                })
+              )}
+            </fieldset>
           )
         })
       );
     }
-    return React.Children.map(children, (child, index) =>
-      React.cloneElement(child, {
-        isChecked: checked && checked.includes(child.props.value),
-        sendRef: this.sendRef,
-        keyHandler: this.childKeyHandler,
-        index
-      })
+    return (
+      <fieldset {...props} className={css(formStyles.formFieldset)}>
+        {React.Children.map(children, (child, index) =>
+          React.cloneElement(child, {
+            isChecked: checked && checked.includes(child.props.value),
+            sendRef: this.sendRef,
+            keyHandler: this.childKeyHandler,
+            index
+          })
+        )}
+      </fieldset>
     );
   }
 
@@ -76,13 +85,11 @@ class CheckboxSelect extends React.Component {
 
   render() {
     const { children, className, isExpanded, openedOnEnter, checked, isGrouped, ...props } = this.props;
-    this.renderedChildren = this.extendChildren();
+    this.renderedChildren = this.extendChildren(props);
     return (
       <div className={css(styles.selectMenu, className)}>
         <form noValidate className={css(formStyles.form)}>
-          <fieldset {...props} className={css(formStyles.formFieldset)}>
-            {this.renderedChildren}
-          </fieldset>
+          {this.renderedChildren}
         </form>
       </div>
     );

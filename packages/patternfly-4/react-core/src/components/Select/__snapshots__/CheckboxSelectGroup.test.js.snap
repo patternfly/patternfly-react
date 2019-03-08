@@ -21,9 +21,9 @@ exports[`checkbox select options renders with children successfully 1`] = `
     >
       test
     </div>
-  </div>
-  <div>
-    child
+    <div>
+      child
+    </div>
   </div>
 </React.Fragment>
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '@patternfly/patternfly/components/Select/select.css';
+import * as badgeStyles from '@patternfly/patternfly/components/Badge/badge.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import SingleSelect from './SingleSelect';
@@ -104,7 +105,9 @@ class Select extends React.Component {
                 aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
                 style={{ width }}
               >
-                {selections || title || childPlaceholderText}
+                <div className={css(styles.selectToggleWrapper)}>
+                  <span className={css(styles.selectToggleText)}>{selections || title || childPlaceholderText}</span>
+                </div>
               </SelectToggle>
               {isExpanded && (
                 <SingleSelect
@@ -130,7 +133,17 @@ class Select extends React.Component {
                 aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
                 style={{ width }}
               >
-                {title}
+                <React.Fragment>
+                  <div className={css(styles.selectToggleWrapper)}>
+                    <span className={css(styles.selectToggleText)}>{title}</span>
+                  </div>
+                  {selections &&
+                    selections.length > 0 && (
+                      <div className={css(styles.selectToggleBadge)}>
+                        <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
+                      </div>
+                    )}
+                </React.Fragment>
               </SelectToggle>
               {isExpanded && (
                 <CheckboxSelect

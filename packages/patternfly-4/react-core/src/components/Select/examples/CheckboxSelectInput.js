@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption, Badge } from '../../index';
+import { Select, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '../../index';
 
 class CheckboxSelectInput extends React.Component {
   state = {
@@ -51,11 +51,12 @@ class CheckboxSelectInput extends React.Component {
 
   render() {
     const { isExpanded, selected } = this.state;
-    const customTitle = (
-      <React.Fragment>Filter by status {selected.length > 0 && <Badge isRead>{selected.length}</Badge>}</React.Fragment>
-    );
+    const titleId = 'checkbox-select-id';
     return (
       <div>
+        <span id={titleId} hidden>
+          Checkbox Title
+        </span>
         <Select
           variant={SelectVariant.checkbox}
           aria-label="Select Input"
@@ -63,7 +64,8 @@ class CheckboxSelectInput extends React.Component {
           onSelect={this.onSelect}
           selections={selected}
           isExpanded={isExpanded}
-          title={customTitle}
+          title="Filter by status"
+          ariaLabelledBy={titleId}
           isGrouped
         >
           {this.options}
