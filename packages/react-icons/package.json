@@ -34,7 +34,7 @@
   "devDependencies": {
     "@fortawesome/free-regular-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
-    "@patternfly/patternfly": "1.0.222",
+    "@patternfly/patternfly": "1.0.225",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
     "node-plop": "^0.15.0",
