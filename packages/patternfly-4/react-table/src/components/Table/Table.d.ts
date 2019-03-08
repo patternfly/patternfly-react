@@ -57,6 +57,8 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   onSelect?: Function;
   onSort?: Function;
   actions?: Array<IAction | ISeparator>;
+  actionResolver?: (rowData: Object, extraParams: Object) => Array<IAction | ISeparator>;
+  areActionsDisabled?: (rowData: Object, extraParams: Object) => boolean;
   header?: ReactNode;
   caption?: ReactNode;
   rowLabeledBy?: String;

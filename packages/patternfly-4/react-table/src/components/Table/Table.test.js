@@ -10,7 +10,7 @@ import {
   headerCol,
   sortable
 } from './index';
-import { rows, columns } from '../../test-helpers/data-sets';
+import { rows, columns, actions } from '../../test-helpers/data-sets';
 
 describe('Simple table', () => {
   test('caption', () => {
@@ -80,26 +80,33 @@ describe('Table variants', () => {
   });
 });
 
-test('Actions table', () => {
-  const actions = [
+test('Simple Actions table', () => {
+  const rowsWithDisabledAction = [
+    ...rows,
     {
-      title: 'Some action',
-      onClick: (event, rowId) => console.log('clicked on Some action, on row: ', rowId)
-    },
-    {
-      title: <div>Another action</div>,
-      onClick: (event, rowId) => console.log('clicked on Another action, on row: ', rowId)
-    },
-    {
-      isSeparator: true
-    },
-    {
-      title: 'Third action',
-      onClick: (event, rowId) => console.log('clicked on Third action, on row: ', rowId)
+      cells: ['one', 'two', 'three', 'four', 'five'],
+      disableActions: true
     }
   ];
+
   const view = mount(
-    <Table aria-label="Aria labeled" actions={actions} cells={columns} rows={rows}>
+    <Table aria-label="Aria labeled" actions={actions} cells={columns} rows={rowsWithDisabledAction}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('Actions table', () => {
+  const view = mount(
+    <Table
+      aria-label="Aria labeled"
+      actionResolver={() => actions}
+      areActionsDisabled={() => false}
+      cells={columns}
+      rows={rows}
+    >
       <TableHeader />
       <TableBody />
     </Table>

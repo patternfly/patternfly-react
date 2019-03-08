@@ -13,6 +13,36 @@ import {
 } from './transformers';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
 
+const testCellActions = ({ actions, actionResolver, areActionsDisabled, rowData, expectDisabled }) => {
+  const returnedData = cellActions(actions, actionResolver, areActionsDisabled)('', {
+    rowIndex: 0,
+    rowData,
+    column: {
+      extraParams: {
+        dropdownPosition: DropdownPosition.right,
+        dropdownDirection: DropdownDirection.down
+      }
+    }
+  });
+
+  if (actionResolver) {
+    actions = actionResolver(rowData);
+  }
+
+  expect(returnedData).toMatchObject({ className: 'pf-c-table__action' });
+
+  if (!actions || actions.length === 0) {
+    expect(returnedData.children).toBeUndefined();
+  } else {
+    const view = mount(returnedData.children);
+    view
+      .find('.pf-c-dropdown button')
+      .first()
+      .simulate('click');
+    expect(view.find('.pf-c-dropdown__menu li a')).toHaveLength(expectDisabled ? 0 : 1);
+  }
+};
+
 describe('Transformer functions', () => {
   describe('selectable', () => {
     test('main select', () => {
@@ -87,29 +117,46 @@ describe('Transformer functions', () => {
     });
   });
 
-  test('cellActions', () => {
+  test('simpleCellActions', () => {
     const actions = [
       {
         title: 'Some',
         onClick: jest.fn()
       }
     ];
-    const returnedData = cellActions(actions)('', {
-      rowIndex: 0,
-      column: {
-        extraParams: {
-          dropdownPosition: DropdownPosition.right,
-          dropdownDirection: DropdownDirection.down
-        }
+
+    const actionConfigs = [
+      {
+        actions: []
+      },
+      {
+        actions
+      },
+      {
+        actionResolver: () => null
+      },
+      {
+        actionResolver: () => actions
+      },
+      {
+        actionResolver: () => actions,
+        areActionsDisabled: () => false
+      },
+      {
+        actions,
+        rowData: {
+          disableActions: true
+        },
+        expectDisabled: true
+      },
+      {
+        actionResolver: () => actions,
+        areActionsDisabled: () => true,
+        expectDisabled: true
       }
-    });
-    expect(returnedData).toMatchObject({ className: 'pf-c-table__action' });
-    const view = mount(returnedData.children);
-    view
-      .find('.pf-c-dropdown button')
-      .first()
-      .simulate('click');
-    expect(view.find('.pf-c-dropdown__menu li a')).toHaveLength(1);
+    ];
+
+    actionConfigs.forEach(testCellActions);
   });
 
   describe('cellWidth', () => {

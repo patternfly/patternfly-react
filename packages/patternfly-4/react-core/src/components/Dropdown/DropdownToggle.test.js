@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import DropdownToggle from './DropdownToggle';
 
+
 describe('API', () => {
   test('click on closed', () => {
     const mockToggle = jest.fn();
