@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expanded content render 1`] = `
+<div
+  className="pf-c-clipboard-copy__expandable-content class-1"
+  id="id-1"
+>
+  <textarea
+    onChange={[Function]}
+    style={
+      Object {
+        "borderWidth": "0",
+        "height": "100%",
+        "resize": "none",
+        "width": "100%",
+      }
+    }
+    value="This is my text"
+  />
+</div>
+`;
