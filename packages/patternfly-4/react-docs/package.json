@@ -22,7 +22,7 @@
     "exenv": "^1.2.2",
     "gatsby": "^2.1.24",
     "gatsby-plugin-react-helmet": "^3.0.8",
-    "gatsby-plugin-typescript": "^2.0.3",
+    "gatsby-plugin-typescript": "2.0.3",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-json": "^2.1.8",
     "gatsby-transformer-react-docgen": "3.0.0",
@@ -33,7 +33,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.4.0",
     "react-live": "^1.12.0",
-    "typescript": "^3.2.2"
+    "typescript": "3.2.2"
   },
   "keywords": [
     "gatsby"
