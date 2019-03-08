@@ -39,9 +39,10 @@
     "gatsby"
   ],
   "scripts": {
-    "docbuild": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
-    "pr-build": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
     "develop": "yarn gen-ts-docs && gatsby develop",
+    "docbuild": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
+    "clean": "rimraf .cache .tmp dist public static ts-docs",
+    "pr-build": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
     "gen-ts-docs": "typedoc --json ts-docs/ts-output.json ../react-core --ignoreCompilerErrors --mode file --tsconfig ../react-core/src/tsconfig.dts.json && node build/transformTsDocs.js"
   },
   "browserslist": [
@@ -51,6 +52,7 @@
   "devDependencies": {
     "fs-extra": "^7.0.1",
     "glob": "^7.1.3",
-    "typedoc": "^0.14.2"
+    "typedoc": "^0.14.2",
+    "rimraf": "^2.6.2"
   }
 }
