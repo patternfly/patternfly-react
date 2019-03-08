@@ -1,0 +1,6258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component render custom pagination toggle 1`] = `
+.pf-c-pagination__total-items {
+  display: block;
+}
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="down"
+  itemCount={40}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={1}
+  perPage={10}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "10",
+        "value": 10,
+      },
+      Object {
+        "title": "20",
+        "value": 20,
+      },
+      Object {
+        "title": "50",
+        "value": 50,
+      },
+      Object {
+        "title": "100",
+        "value": 100,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "currPage": "Current page",
+      "items": "items",
+      "itemsPerPage": "Items per page",
+      "optionsToggle": "Select",
+      "pages": "pages",
+      "paginationTitle": "Pagination",
+      "toFirstPage": "Go to first page",
+      "toLastPage": "Go to last page",
+      "toNextPage": "Go to next page",
+      "toPreviousPage": "Go to previous page",
+    }
+  }
+  toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
+  variant="top"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      40 items
+    </div>
+    <OptionsMenu
+      dropDirection="down"
+      firstIndex={1}
+      itemCount={40}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={10}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                10
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                20
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                50
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                100
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={1}
+              isOpen={false}
+              itemCount={40}
+              itemsTitle="items"
+              lastIndex={10}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-8"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  1 - 10 - 40 - items
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={4}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="pages"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={4}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            4
+             
+            pages
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain"
+            data-action="next"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain"
+            data-action="last"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
+
+exports[`component render custom perPageOptions 1`] = `
+.pf-c-pagination__total-items {
+  display: block;
+}
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="down"
+  itemCount={40}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={1}
+  perPage={10}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "some",
+        "value": 1,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "currPage": "Current page",
+      "items": "items",
+      "itemsPerPage": "Items per page",
+      "optionsToggle": "Select",
+      "pages": "pages",
+      "paginationTitle": "Pagination",
+      "toFirstPage": "Go to first page",
+      "toLastPage": "Go to last page",
+      "toNextPage": "Go to next page",
+      "toPreviousPage": "Go to previous page",
+    }
+  }
+  toggleTemplate={[Function]}
+  variant="top"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      40 items
+    </div>
+    <OptionsMenu
+      dropDirection="down"
+      firstIndex={1}
+      itemCount={40}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={10}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "some",
+            "value": 1,
+          },
+        ]
+      }
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-1"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                some
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={1}
+              isOpen={false}
+              itemCount={40}
+              itemsTitle="items"
+              lastIndex={10}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-4"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  <ToggleTamplate
+                    firstIndex={1}
+                    itemCount={40}
+                    itemsTitle="items"
+                    lastIndex={10}
+                  >
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </ToggleTamplate>
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={4}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="pages"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={4}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            4
+             
+            pages
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain"
+            data-action="next"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain"
+            data-action="last"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
+
+exports[`component render custom start end 1`] = `
+.pf-c-pagination__total-items {
+  display: block;
+}
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="down"
+  itemCount={40}
+  itemsEnd={15}
+  itemsStart={5}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={1}
+  perPage={10}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "10",
+        "value": 10,
+      },
+      Object {
+        "title": "20",
+        "value": 20,
+      },
+      Object {
+        "title": "50",
+        "value": 50,
+      },
+      Object {
+        "title": "100",
+        "value": 100,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "currPage": "Current page",
+      "items": "items",
+      "itemsPerPage": "Items per page",
+      "optionsToggle": "Select",
+      "pages": "pages",
+      "paginationTitle": "Pagination",
+      "toFirstPage": "Go to first page",
+      "toLastPage": "Go to last page",
+      "toNextPage": "Go to next page",
+      "toPreviousPage": "Go to previous page",
+    }
+  }
+  toggleTemplate={[Function]}
+  variant="top"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      40 items
+    </div>
+    <OptionsMenu
+      dropDirection="down"
+      firstIndex={5}
+      itemCount={40}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={15}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                10
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                20
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                50
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                100
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={5}
+              isOpen={false}
+              itemCount={40}
+              itemsTitle="items"
+              lastIndex={15}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={5}
+              id="pf-toggle-id-6"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={15}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  <ToggleTamplate
+                    firstIndex={5}
+                    itemCount={40}
+                    itemsTitle="items"
+                    lastIndex={15}
+                  >
+                    <strong>
+                      5
+                       - 
+                      15
+                    </strong>
+                     of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </ToggleTamplate>
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={4}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="pages"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={4}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            4
+             
+            pages
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain"
+            data-action="next"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain"
+            data-action="last"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
+
+exports[`component render last page 1`] = `
+.pf-c-pagination__total-items {
+  display: block;
+}
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="down"
+  itemCount={20}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={2}
+  perPage={10}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "10",
+        "value": 10,
+      },
+      Object {
+        "title": "20",
+        "value": 20,
+      },
+      Object {
+        "title": "50",
+        "value": 50,
+      },
+      Object {
+        "title": "100",
+        "value": 100,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "currPage": "Current page",
+      "items": "items",
+      "itemsPerPage": "Items per page",
+      "optionsToggle": "Select",
+      "pages": "pages",
+      "paginationTitle": "Pagination",
+      "toFirstPage": "Go to first page",
+      "toLastPage": "Go to last page",
+      "toNextPage": "Go to next page",
+      "toPreviousPage": "Go to previous page",
+    }
+  }
+  toggleTemplate={[Function]}
+  variant="top"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      20 items
+    </div>
+    <OptionsMenu
+      dropDirection="down"
+      firstIndex={11}
+      itemCount={20}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={20}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                10
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                20
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                50
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                100
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={11}
+              isOpen={false}
+              itemCount={20}
+              itemsTitle="items"
+              lastIndex={20}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={11}
+              id="pf-toggle-id-3"
+              isOpen={false}
+              isPlain={true}
+              itemCount={20}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={20}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  <ToggleTamplate
+                    firstIndex={11}
+                    itemCount={20}
+                    itemsTitle="items"
+                    lastIndex={20}
+                  >
+                    <strong>
+                      11
+                       - 
+                      20
+                    </strong>
+                     of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </ToggleTamplate>
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={2}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={2}
+      pagesTitle="pages"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain"
+            data-action="first"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain"
+            data-action="previous"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={2}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={2}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            2
+             
+            pages
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="next"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="last"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
+
+exports[`component render limited number of pages 1`] = `
+.pf-c-pagination__total-items {
+  display: block;
+}
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="down"
+  itemCount={20}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={1}
+  perPage={20}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "10",
+        "value": 10,
+      },
+      Object {
+        "title": "20",
+        "value": 20,
+      },
+      Object {
+        "title": "50",
+        "value": 50,
+      },
+      Object {
+        "title": "100",
+        "value": 100,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "currPage": "Current page",
+      "items": "items",
+      "itemsPerPage": "Items per page",
+      "optionsToggle": "Select",
+      "pages": "pages",
+      "paginationTitle": "Pagination",
+      "toFirstPage": "Go to first page",
+      "toLastPage": "Go to last page",
+      "toNextPage": "Go to next page",
+      "toPreviousPage": "Go to previous page",
+    }
+  }
+  toggleTemplate={[Function]}
+  variant="top"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      20 items
+    </div>
+    <OptionsMenu
+      dropDirection="down"
+      firstIndex={1}
+      itemCount={20}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={20}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={20}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-10"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                10
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-20"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                20
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                50
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                100
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={1}
+              isOpen={false}
+              itemCount={20}
+              itemsTitle="items"
+              lastIndex={20}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-2"
+              isOpen={false}
+              isPlain={true}
+              itemCount={20}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={20}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  <ToggleTamplate
+                    firstIndex={1}
+                    itemCount={20}
+                    itemsTitle="items"
+                    lastIndex={20}
+                  >
+                    <strong>
+                      1
+                       - 
+                      20
+                    </strong>
+                     of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </ToggleTamplate>
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={1}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="pages"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={1}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            1
+             
+            pages
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="next"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="last"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
+
+exports[`component render no items 1`] = `
+.pf-c-pagination__total-items {
+  display: block;
+}
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="down"
+  itemCount={0}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={1}
+  perPage={10}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "10",
+        "value": 10,
+      },
+      Object {
+        "title": "20",
+        "value": 20,
+      },
+      Object {
+        "title": "50",
+        "value": 50,
+      },
+      Object {
+        "title": "100",
+        "value": 100,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "currPage": "Current page",
+      "items": "items",
+      "itemsPerPage": "Items per page",
+      "optionsToggle": "Select",
+      "pages": "pages",
+      "paginationTitle": "Pagination",
+      "toFirstPage": "Go to first page",
+      "toLastPage": "Go to last page",
+      "toNextPage": "Go to next page",
+      "toPreviousPage": "Go to previous page",
+    }
+  }
+  toggleTemplate={[Function]}
+  variant="top"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      0 items
+    </div>
+    <OptionsMenu
+      dropDirection="down"
+      firstIndex={0}
+      itemCount={0}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={0}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                10
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                20
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                50
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                100
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={0}
+              isOpen={false}
+              itemCount={0}
+              itemsTitle="items"
+              lastIndex={0}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={0}
+              id="pf-toggle-id-5"
+              isOpen={false}
+              isPlain={true}
+              itemCount={0}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={0}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  <ToggleTamplate
+                    firstIndex={0}
+                    itemCount={0}
+                    itemsTitle="items"
+                    lastIndex={0}
+                  >
+                    <strong>
+                      0
+                       - 
+                      0
+                    </strong>
+                     of 
+                    <strong>
+                      0
+                    </strong>
+                     
+                    items
+                  </ToggleTamplate>
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={0}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="pages"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={0}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            0
+             
+            pages
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain"
+            data-action="next"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain"
+            data-action="last"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
+
+exports[`component render should render correctly bottom 1`] = `
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination.pf-m-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="down"
+  itemCount={20}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={1}
+  perPage={10}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "10",
+        "value": 10,
+      },
+      Object {
+        "title": "20",
+        "value": 20,
+      },
+      Object {
+        "title": "50",
+        "value": 50,
+      },
+      Object {
+        "title": "100",
+        "value": 100,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "currPage": "Current page",
+      "items": "items",
+      "itemsPerPage": "Items per page",
+      "optionsToggle": "Select",
+      "pages": "pages",
+      "paginationTitle": "Pagination",
+      "toFirstPage": "Go to first page",
+      "toLastPage": "Go to last page",
+      "toNextPage": "Go to next page",
+      "toPreviousPage": "Go to previous page",
+    }
+  }
+  toggleTemplate={[Function]}
+  variant="bottom"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination pf-m-footer"
+  >
+    <OptionsMenu
+      dropDirection="down"
+      firstIndex={1}
+      itemCount={20}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={10}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                10
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                20
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                50
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                100
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={1}
+              isOpen={false}
+              itemCount={20}
+              itemsTitle="items"
+              lastIndex={10}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-1"
+              isOpen={false}
+              isPlain={true}
+              itemCount={20}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  <ToggleTamplate
+                    firstIndex={1}
+                    itemCount={20}
+                    itemsTitle="items"
+                    lastIndex={10}
+                  >
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </ToggleTamplate>
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={2}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="pages"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={2}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            2
+             
+            pages
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain"
+            data-action="next"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain"
+            data-action="last"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
+
+exports[`component render should render correctly top 1`] = `
+.pf-c-pagination__total-items {
+  display: block;
+}
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="down"
+  itemCount={20}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={1}
+  perPage={10}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "10",
+        "value": 10,
+      },
+      Object {
+        "title": "20",
+        "value": 20,
+      },
+      Object {
+        "title": "50",
+        "value": 50,
+      },
+      Object {
+        "title": "100",
+        "value": 100,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "currPage": "Current page",
+      "items": "items",
+      "itemsPerPage": "Items per page",
+      "optionsToggle": "Select",
+      "pages": "pages",
+      "paginationTitle": "Pagination",
+      "toFirstPage": "Go to first page",
+      "toLastPage": "Go to last page",
+      "toNextPage": "Go to next page",
+      "toPreviousPage": "Go to previous page",
+    }
+  }
+  toggleTemplate={[Function]}
+  variant="top"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      20 items
+    </div>
+    <OptionsMenu
+      dropDirection="down"
+      firstIndex={1}
+      itemCount={20}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={10}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                10
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                20
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                50
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                100
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={1}
+              isOpen={false}
+              itemCount={20}
+              itemsTitle="items"
+              lastIndex={10}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-0"
+              isOpen={false}
+              isPlain={true}
+              itemCount={20}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  <ToggleTamplate
+                    firstIndex={1}
+                    itemCount={20}
+                    itemsTitle="items"
+                    lastIndex={10}
+                  >
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     of 
+                    <strong>
+                      20
+                    </strong>
+                     
+                    items
+                  </ToggleTamplate>
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={2}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="pages"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={2}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            2
+             
+            pages
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain"
+            data-action="next"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain"
+            data-action="last"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
+
+exports[`component render titles 1`] = `
+.pf-c-pagination__total-items {
+  display: block;
+}
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="down"
+  itemCount={40}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={1}
+  perPage={10}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "10",
+        "value": 10,
+      },
+      Object {
+        "title": "20",
+        "value": 20,
+      },
+      Object {
+        "title": "50",
+        "value": 50,
+      },
+      Object {
+        "title": "100",
+        "value": 100,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "items": "values",
+      "pages": "books",
+    }
+  }
+  toggleTemplate={[Function]}
+  variant="top"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      40 values
+    </div>
+    <OptionsMenu
+      dropDirection="down"
+      firstIndex={1}
+      itemCount={40}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="values"
+      lastIndex={10}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="down"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                10
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                20
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                50
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                100
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={1}
+              isOpen={false}
+              itemCount={40}
+              itemsTitle="values"
+              lastIndex={10}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-7"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="values"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  <ToggleTamplate
+                    firstIndex={1}
+                    itemCount={40}
+                    itemsTitle="values"
+                    lastIndex={10}
+                  >
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    values
+                  </ToggleTamplate>
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={4}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="books"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={4}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            4
+             
+            books
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain"
+            data-action="next"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain"
+            data-action="last"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
+
+exports[`component render up drop direction 1`] = `
+.pf-c-pagination__total-items {
+  display: block;
+}
+.pf-c-options-menu__toggle-text {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pf-c-options-menu__toggle-button {
+  display: block;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  background: transparent;
+  border: 0px;
+}
+.pf-c-options-menu__toggle.pf-m-plain.pf-m-text {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding-left: 0.5rem;
+  background: transparent;
+}
+.pf-c-dropdown.pf-m-top {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-options-menu {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-button.pf-m-plain.pf-m-disabled {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+  pointer-events: none;
+  background-color: transparent;
+}
+.pf-c-form-control {
+  display: block;
+}
+.pf-c-pagination__nav-page-select {
+  display: flex;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  border: 0px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #72767b;
+}
+.pf-c-pagination__nav {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+.pf-c-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.875rem;
+}
+
+<Pagination
+  dropDirection="up"
+  itemCount={40}
+  onFirstClick={[Function]}
+  onLastClick={[Function]}
+  onNextClick={[Function]}
+  onPageInput={[Function]}
+  onPerPageSelect={[Function]}
+  onPreviousClick={[Function]}
+  onSetPage={[Function]}
+  page={1}
+  perPage={10}
+  perPageOptions={
+    Array [
+      Object {
+        "title": "10",
+        "value": 10,
+      },
+      Object {
+        "title": "20",
+        "value": 20,
+      },
+      Object {
+        "title": "50",
+        "value": 50,
+      },
+      Object {
+        "title": "100",
+        "value": 100,
+      },
+    ]
+  }
+  titles={
+    Object {
+      "currPage": "Current page",
+      "items": "items",
+      "itemsPerPage": "Items per page",
+      "optionsToggle": "Select",
+      "pages": "pages",
+      "paginationTitle": "Pagination",
+      "toFirstPage": "Go to first page",
+      "toLastPage": "Go to last page",
+      "toNextPage": "Go to next page",
+      "toPreviousPage": "Go to previous page",
+    }
+  }
+  toggleTemplate={[Function]}
+  variant="top"
+  widgetId="pagination-options-menu"
+>
+  <div
+    className="pf-c-pagination"
+  >
+    <div
+      className="pf-c-pagination__total-items"
+    >
+      40 items
+    </div>
+    <OptionsMenu
+      dropDirection="up"
+      firstIndex={1}
+      itemCount={40}
+      itemsPerPageTitle="Items per page"
+      itemsTitle="items"
+      lastIndex={10}
+      onPerPageSelect={[Function]}
+      optionsToggle="Select"
+      perPage={10}
+      perPageOptions={
+        Array [
+          Object {
+            "title": "10",
+            "value": 10,
+          },
+          Object {
+            "title": "20",
+            "value": 20,
+          },
+          Object {
+            "title": "50",
+            "value": 50,
+          },
+          Object {
+            "title": "100",
+            "value": 100,
+          },
+        ]
+      }
+      toggleTemplate={[Function]}
+      widgetId="pagination-options-menu"
+    >
+      <div
+        className="pf-c-options-menu"
+      >
+        <span
+          hidden={true}
+          id="pagination-options-menu-label"
+        >
+          Items per page
+          :
+        </span>
+        <Dropdown
+          className=""
+          direction="up"
+          dropdownItems={
+            Array [
+              <Item
+                className="pf-c-options-menu__menu-item pf-m-selected"
+                component="button"
+                data-action="per-page-10"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                10
+                <i
+                  className="pf-c-options-menu__menu-item-icon"
+                >
+                  <CheckIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  />
+                </i>
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-20"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                20
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-50"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                50
+              </Item>,
+              <Item
+                className="pf-c-options-menu__menu-item"
+                component="button"
+                data-action="per-page-100"
+                href="#"
+                isDisabled={false}
+                isHovered={false}
+                onClick={[Function]}
+              >
+                100
+              </Item>,
+            ]
+          }
+          isOpen={false}
+          isPlain={true}
+          onSelect={[Function]}
+          position="left"
+          toggle={
+            <OptionsToggle
+              firstIndex={1}
+              isOpen={false}
+              itemCount={40}
+              itemsTitle="items"
+              lastIndex={10}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            />
+          }
+        >
+          <div
+            className="pf-c-dropdown pf-m-top"
+          >
+            <OptionsToggle
+              ariaHasPopup={true}
+              firstIndex={1}
+              id="pf-toggle-id-9"
+              isOpen={false}
+              isPlain={true}
+              itemCount={40}
+              itemsTitle="items"
+              key=".0"
+              lastIndex={10}
+              onEnter={[Function]}
+              onToggle={[Function]}
+              optionsToggle="Select"
+              toggleTemplate={[Function]}
+              widgetId="pagination-options-menu"
+            >
+              <div
+                className="pf-c-options-menu__toggle pf-m-plain pf-m-text"
+              >
+                <span
+                  className="pf-c-options-menu__toggle-text"
+                >
+                  <ToggleTamplate
+                    firstIndex={1}
+                    itemCount={40}
+                    itemsTitle="items"
+                    lastIndex={10}
+                  >
+                    <strong>
+                      1
+                       - 
+                      10
+                    </strong>
+                     of 
+                    <strong>
+                      40
+                    </strong>
+                     
+                    items
+                  </ToggleTamplate>
+                </span>
+                <button
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-label="Select"
+                  aria-labelledby="pagination-options-menu-toggle pagination-options-menu-label"
+                  className="pf-c-options-menu__toggle-button"
+                  id="pagination-options-menu-toggle"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <CaretDownIcon
+                    color="currentColor"
+                    size="sm"
+                    title={null}
+                  >
+                    <svg
+                      aria-hidden={true}
+                      aria-labelledby={null}
+                      fill="currentColor"
+                      height="1em"
+                      role="img"
+                      style={
+                        Object {
+                          "verticalAlign": "-0.125em",
+                        }
+                      }
+                      viewBox="0 0 320 512"
+                      width="1em"
+                    >
+                      <path
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                        transform=""
+                      />
+                    </svg>
+                  </CaretDownIcon>
+                </button>
+              </div>
+            </OptionsToggle>
+          </div>
+        </Dropdown>
+      </div>
+    </OptionsMenu>
+    <Navigation
+      currPage="Current page"
+      lastPage={4}
+      onFirstClick={[Function]}
+      onLastClick={[Function]}
+      onNextClick={[Function]}
+      onPageInput={[Function]}
+      onPreviousClick={[Function]}
+      onSetPage={[Function]}
+      page={1}
+      pagesTitle="pages"
+      paginationTitle="Pagination"
+      toFirstPage="Go to first page"
+      toLastPage="Go to last page"
+      toNextPage="Go to next page"
+      toPreviousPage="Go to previous page"
+    >
+      <nav
+        aria-label="Pagination"
+        className="pf-c-pagination__nav"
+      >
+        <Button
+          aria-label="Go to first page"
+          className=""
+          component="button"
+          data-action="first"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to first page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="first"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M223.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L319.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L393.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34zm-192 34l136 136c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9L127.9 256l96.4-96.4c9.4-9.4 9.4-24.6 0-33.9L201.7 103c-9.4-9.4-24.6-9.4-33.9 0l-136 136c-9.5 9.4-9.5 24.6-.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleLeftIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to previous page"
+          className=""
+          component="button"
+          data-action="previous"
+          isActive={false}
+          isBlock={false}
+          isDisabled={true}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to previous page"
+            className="pf-c-button pf-m-plain pf-m-disabled"
+            data-action="previous"
+            disabled={true}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleLeftIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+                  transform=""
+                />
+              </svg>
+            </AngleLeftIcon>
+          </button>
+        </Button>
+        <div
+          className="pf-c-pagination__nav-page-select"
+        >
+          <input
+            aria-label="Current page"
+            className="pf-c-form-control"
+            max={4}
+            min="1"
+            onChange={[Function]}
+            size="2"
+            type="number"
+            value={1}
+          />
+          <span
+            aria-hidden="true"
+          >
+            of 
+            4
+             
+            pages
+          </span>
+        </div>
+        <Button
+          aria-label="Go to next page"
+          className=""
+          component="button"
+          data-action="next"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to next page"
+            className="pf-c-button pf-m-plain"
+            data-action="next"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 256 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+                  transform=""
+                />
+              </svg>
+            </AngleRightIcon>
+          </button>
+        </Button>
+        <Button
+          aria-label="Go to last page"
+          className=""
+          component="button"
+          data-action="last"
+          isActive={false}
+          isBlock={false}
+          isDisabled={false}
+          isFocus={false}
+          isHover={false}
+          onClick={[Function]}
+          type="button"
+          variant="plain"
+        >
+          <button
+            aria-disabled={null}
+            aria-label="Go to last page"
+            className="pf-c-button pf-m-plain"
+            data-action="last"
+            disabled={false}
+            onClick={[Function]}
+            tabIndex={null}
+            type="button"
+          >
+            <AngleDoubleRightIcon
+              color="currentColor"
+              size="sm"
+              title={null}
+            >
+              <svg
+                aria-hidden={true}
+                aria-labelledby={null}
+                fill="currentColor"
+                height="1em"
+                role="img"
+                style={
+                  Object {
+                    "verticalAlign": "-0.125em",
+                  }
+                }
+                viewBox="0 0 448 512"
+                width="1em"
+              >
+                <path
+                  d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34zm192-34l-136-136c-9.4-9.4-24.6-9.4-33.9 0l-22.6 22.6c-9.4 9.4-9.4 24.6 0 33.9l96.4 96.4-96.4 96.4c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l136-136c9.4-9.2 9.4-24.4 0-33.8z"
+                  transform=""
+                />
+              </svg>
+            </AngleDoubleRightIcon>
+          </button>
+        </Button>
+      </nav>
+    </Navigation>
+  </div>
+</Pagination>
+`;
