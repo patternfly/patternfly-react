@@ -177,3 +177,29 @@ test('Header width table', () => {
   );
   expect(view).toMatchSnapshot();
 });
+
+test('Selectable table with selected expandable row', () => {
+  const data = {
+    cells: ['column'],
+    rows: [
+      {
+        cells: ['one'],
+        selected: true
+      },
+      {
+        cells: ['one'],
+        parent: 0
+      }
+    ],
+    onSelect: f => f
+  };
+
+  const view = mount(
+    <Table aria-label="Aria labeled" {...data}>
+      <TableHeader />
+      <TableBody />
+    </Table>
+  );
+
+  expect(view.find('input[name="check-all"]').prop('checked')).toEqual(true);
+});
