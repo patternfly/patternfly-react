@@ -107,6 +107,7 @@
     "build:docs": "yarn build && lerna run docbuild",
     "build:prdocs": "lerna run pr-build --stream",
     "build:storybook": "build-storybook -c storybook -o .out",
+    "clean": "lerna run clean --parallel",
     "commit": "git-cz",
     "commitmsg": "commitlint -e",
     "generate": "yarn plop",
@@ -125,7 +126,8 @@
     "test:pf4": "jest packages/patternfly-4",
     "test:current": "jest --watch",
     "test:integration": "lerna run integration:setup && lerna run build:demo && lerna run integration:test",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "uninstall": "find . -name node_modules -type d | xargs rm -rf"
   },
   "config": {
     "commitizen": {

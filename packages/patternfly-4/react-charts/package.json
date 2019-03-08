@@ -37,7 +37,8 @@
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
-    "build:ts": "node ./scripts/copyTS.js"
+    "build:ts": "node ./scripts/copyTS.js",
+    "clean": "rimraf dist"
   },
   "optionalDependencies": {
     "@types/victory": "^0.9.19",
@@ -50,6 +51,7 @@
     "@patternfly/react-tokens": "^2.0.5",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
-    "glob": "^7.1.2"
+    "glob": "^7.1.2",
+    "rimraf": "^2.6.2"
   }
 }

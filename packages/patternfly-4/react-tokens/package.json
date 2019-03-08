@@ -25,12 +25,14 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
-    "build": "node build/generateTokens.js"
+    "build": "node build/generateTokens.js",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "@patternfly/patternfly": "1.0.222",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
-    "glob": "^7.1.2"
+    "glob": "^7.1.2",
+    "rimraf": "^2.6.2"
   }
 }

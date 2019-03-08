@@ -22,9 +22,10 @@
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
+    "clean": "rimraf cypress",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "integration:setup": "shx rm -rf node_modules && yarn install",
+    "integration:setup": "rimraf node_modules && yarn install",
     "integration:test": "node ./scripts/server.js"
   },
   "dependencies": {
@@ -32,7 +33,7 @@
   },
   "devDependencies": {
     "cypress": "^3.1.4",
-    "shx": "^0.3.2",
+    "rimraf": "^2.6.2",
     "typescript": "3.2.2"
   }
 }

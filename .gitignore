@@ -1,3 +1,4 @@
+# Javascript builds
 node_modules
 dist
 tsc_out
@@ -7,10 +8,6 @@ tsc_out
 coverage
 .cache
 .tmp
-packages/react-icons/src/icons/
-packages/react-icons/src/index.js
-packages/react-icons/src/index.d.ts
-packages/patternfly-4/react-integration/cypress/videos/
 
 # package managers
 yarn-error.log

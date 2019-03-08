@@ -34,7 +34,8 @@
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
     "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
-    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react-extensions/* dist/sass && cross-env node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react-extensions.scss"
+    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react-extensions/* dist/sass && cross-env node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react-extensions.scss",
+    "clean": "rimraf dist"
   },
   "dependencies": {
     "breakjs": "^1.0.0",
@@ -46,6 +47,10 @@
     "react-diff-view": "^1.8.1",
     "react-virtualized": "9.x",
     "unidiff": "^1.0.1"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "shx": "^0.3.2"
   },
   "peerDependencies": {
     "prop-types": "^15.6.1",
