@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.1.2...@patternfly/react-icons@3.2.0) (2019-03-08)
+
+
+### Features
+
+* **Icon:** Openshift icon ([#1508](https://github.com/patternfly/patternfly-react/issues/1508)) ([07330fa](https://github.com/patternfly/patternfly-react/commit/07330fa))
+
+
+
+
+
 ## 3.1.2 (2019-03-08)
 
 **Note:** Version bump only for package @patternfly/react-icons

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.35](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.34...@patternfly/react-table@1.0.35) (2019-03-08)
+
+
+### Bug Fixes
+
+* **core:** fix pagination tests ([#1530](https://github.com/patternfly/patternfly-react/issues/1530)) ([1116f32](https://github.com/patternfly/patternfly-react/commit/1116f32))
+* **Table:** Expandable row should not prevent select all checkbox from being checked ([#1503](https://github.com/patternfly/patternfly-react/issues/1503)) ([bd3f49f](https://github.com/patternfly/patternfly-react/commit/bd3f49f))
+
+
+
+
+
 ## [1.0.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.33...@patternfly/react-table@1.0.34) (2019-03-08)
 
 

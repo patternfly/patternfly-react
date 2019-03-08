@@ -1,20 +1,20 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "3.21.57",
+  "version": "3.21.58",
   "author": "Red Hat",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@patternfly/react-charts": "^2.1.6",
-    "@patternfly/react-core": "^2.3.7",
-    "@patternfly/react-icons": "^3.1.2",
-    "@patternfly/react-styled-system": "^2.0.9",
-    "@patternfly/react-styles": "^2.3.5",
-    "@patternfly/react-table": "^1.0.34",
-    "@patternfly/react-tokens": "^2.0.5",
+    "@patternfly/react-charts": "^2.1.7",
+    "@patternfly/react-core": "^2.4.0",
+    "@patternfly/react-icons": "^3.2.0",
+    "@patternfly/react-styled-system": "^2.0.10",
+    "@patternfly/react-styles": "^2.3.6",
+    "@patternfly/react-table": "^1.0.35",
+    "@patternfly/react-tokens": "^2.0.6",
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",
     "css-loader": "^2.1.1",
@@ -52,7 +52,7 @@
   "devDependencies": {
     "fs-extra": "^7.0.1",
     "glob": "^7.1.3",
-    "typedoc": "^0.14.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "typedoc": "^0.14.2"
   }
 }

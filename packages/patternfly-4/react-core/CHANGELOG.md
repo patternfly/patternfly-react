@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.7...@patternfly/react-core@2.4.0) (2019-03-08)
+
+
+### Bug Fixes
+
+* **core:** fix pagination tests ([#1530](https://github.com/patternfly/patternfly-react/issues/1530)) ([1116f32](https://github.com/patternfly/patternfly-react/commit/1116f32))
+
+
+### Features
+
+* **Pagination:** Introduce new PF4 pagination component ([#1297](https://github.com/patternfly/patternfly-react/issues/1297)) ([4778a28](https://github.com/patternfly/patternfly-react/commit/4778a28))
+
+
+
+
+
 ## [2.3.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.6...@patternfly/react-core@2.3.7) (2019-03-08)
 
 
