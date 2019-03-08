@@ -17,6 +17,7 @@ import {
   Tabs,
   TextInput,
   Title,
+  TextInput,
   Tooltip
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
