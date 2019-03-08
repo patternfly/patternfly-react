@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.34](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.33...@patternfly/react-table@1.0.34) (2019-03-08)
+
+
+### Bug Fixes
+
+* **typeUtils:** export typeUtils and move them to helpers ([#1521](https://github.com/patternfly/patternfly-react/issues/1521)) ([886082d](https://github.com/patternfly/patternfly-react/commit/886082d))
+
+
+
+
+
 ## [1.0.33](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.32...@patternfly/react-table@1.0.33) (2019-03-06)
 
 **Note:** Version bump only for package @patternfly/react-table
