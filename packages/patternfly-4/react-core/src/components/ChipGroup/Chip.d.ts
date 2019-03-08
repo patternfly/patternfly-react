@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps } from 'react';
-import { OneOf } from '../../typeUtils';
+import { OneOf } from '../../helpers/typeUtils';
 import { TooltipPosition } from '../Tooltip';
 
 export interface ChipProps extends HTMLProps<HTMLDivElement> {

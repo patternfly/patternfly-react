@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps } from 'react';
-import { OneOf } from '../../typeUtils';
+import { OneOf } from '../../helpers/typeUtils';
 import { GutterSize } from '../../styles/gutters';
 
 export interface GalleryProps extends HTMLProps<HTMLDivElement> {

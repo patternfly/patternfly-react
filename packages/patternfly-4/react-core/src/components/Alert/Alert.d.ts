@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
-import { OneOf, Omit } from '../../typeUtils';
+import { OneOf, Omit } from '../../helpers/typeUtils';
 
 export const AlertVariant: {
   success: 'success';

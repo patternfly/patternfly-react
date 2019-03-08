@@ -1,5 +1,5 @@
 import { HTMLProps, FormEvent } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface SelectOptionProps extends Omit<HTMLProps<HTMLOptionElement>, 'disabled'> {
   value?: string;

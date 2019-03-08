@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, ReactNode, ReactType } from 'react';
-import { OneOf } from '../../typeUtils';
+import { OneOf } from '../../helpers/typeUtils';
 
 export const ButtonVariant: {
   primary: 'primary';

@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface EmptyStateProps extends Omit<HTMLProps<HTMLDivElement>, 'children'> {
   children: ReactNode;

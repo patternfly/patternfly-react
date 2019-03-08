@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, ReactNode, FormEvent } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface NavProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
   children?: ReactNode;

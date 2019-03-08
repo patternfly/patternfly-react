@@ -1,5 +1,5 @@
 import { FormEvent, FunctionComponent, HTMLProps } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface SwitchProps extends Omit<HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
   isDisabled?: boolean;

@@ -1,7 +1,6 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
-import { OneOf, Omit } from '../../../../react-core/src/typeUtils';
 import { SortByDirection } from './SortColumn';
-import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
+import { DropdownPosition, DropdownDirection, OneOf, Omit } from '@patternfly/react-core';
 
 export const TableGridBreakpoint: {
   grid: 'grid',
