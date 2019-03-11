@@ -89,7 +89,7 @@ class CheckboxSelect extends React.Component {
     return (
       <div className={css(styles.selectMenu, className)}>
         <form noValidate className={css(formStyles.form)}>
-          {this.renderedChildren}
+          <div className={css(formStyles.formGroup)}>{this.renderedChildren}</div>
         </form>
       </div>
     );
