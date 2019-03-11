@@ -40,9 +40,9 @@ exports[`Alert - danger Action Close Button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-alert__action {
@@ -233,9 +233,9 @@ exports[`Alert - danger Action Link 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -402,9 +402,9 @@ exports[`Alert - danger Action and Title 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -572,9 +572,9 @@ exports[`Alert - danger Custom aria label 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -956,9 +956,9 @@ exports[`Alert - info Action Close Button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-alert__action {
@@ -1149,9 +1149,9 @@ exports[`Alert - info Action Link 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -1318,9 +1318,9 @@ exports[`Alert - info Action and Title 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -1488,9 +1488,9 @@ exports[`Alert - info Custom aria label 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -1872,9 +1872,9 @@ exports[`Alert - success Action Close Button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-alert__action {
@@ -2065,9 +2065,9 @@ exports[`Alert - success Action Link 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -2234,9 +2234,9 @@ exports[`Alert - success Action and Title 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -2404,9 +2404,9 @@ exports[`Alert - success Custom aria label 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -2788,9 +2788,9 @@ exports[`Alert - warning Action Close Button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-alert__action {
@@ -2981,9 +2981,9 @@ exports[`Alert - warning Action Link 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -3150,9 +3150,9 @@ exports[`Alert - warning Action and Title 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {
@@ -3320,9 +3320,9 @@ exports[`Alert - warning Custom aria label 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 .pf-c-alert__action {

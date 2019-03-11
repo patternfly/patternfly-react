@@ -4,7 +4,6 @@ exports[`gutter lg 1`] = `
 .pf-l-grid.pf-m-gutter {
   display: grid;
   grid-template-columns: repeat(12,[col-start] 1fr);
-  grid-gap: 1.5rem;
 }
 
 <div
@@ -16,7 +15,6 @@ exports[`gutter md 1`] = `
 .pf-l-grid.pf-m-gutter {
   display: grid;
   grid-template-columns: repeat(12,[col-start] 1fr);
-  grid-gap: 1.5rem;
 }
 
 <div
@@ -28,7 +26,6 @@ exports[`gutter sm 1`] = `
 .pf-l-grid.pf-m-gutter {
   display: grid;
   grid-template-columns: repeat(12,[col-start] 1fr);
-  grid-gap: 1.5rem;
 }
 
 <div

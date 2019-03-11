@@ -3,6 +3,7 @@
 exports[`ModalBoxFooter Test 1`] = `
 .pf-c-modal-box__footer {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   margin-top: 2rem;
 }

@@ -311,6 +311,7 @@ exports[`Default Nav List 1`] = `
 exports[`Expandable Nav List - Trigger toggle 1`] = `
 .pf-c-nav__toggle {
   display: block;
+  flex: 0 0 auto;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: auto;
@@ -351,10 +352,12 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
 }
 .pf-c-nav__subnav {
   display: block;
+  flex: 1 0 100%;
   max-height: 0;
   margin-top: 0px;
   overflow: hidden;
   opacity: 0;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-nav__item.pf-m-expanded.expandable-group {
   display: block;
@@ -564,6 +567,7 @@ exports[`Expandable Nav List - Trigger toggle 1`] = `
 exports[`Expandable Nav List 1`] = `
 .pf-c-nav__toggle {
   display: block;
+  flex: 0 0 auto;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: auto;
@@ -604,10 +608,12 @@ exports[`Expandable Nav List 1`] = `
 }
 .pf-c-nav__subnav {
   display: block;
+  flex: 1 0 100%;
   max-height: 0;
   margin-top: 0px;
   overflow: hidden;
   opacity: 0;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-nav__item {
   display: block;
@@ -817,6 +823,7 @@ exports[`Expandable Nav List 1`] = `
 exports[`Expandable Nav List with aria label 1`] = `
 .pf-c-nav__toggle {
   display: block;
+  flex: 0 0 auto;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-left: auto;
@@ -865,10 +872,12 @@ exports[`Expandable Nav List with aria label 1`] = `
 }
 .pf-c-nav__subnav {
   display: block;
+  flex: 1 0 100%;
   max-height: 0;
   margin-top: 0px;
   overflow: hidden;
   opacity: 0;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-nav__item {
   display: block;

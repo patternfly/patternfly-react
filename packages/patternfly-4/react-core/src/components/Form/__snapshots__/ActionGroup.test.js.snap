@@ -41,7 +41,6 @@ exports[`ActionGroup component should render horizontal form ActionGroup variant
 }
 .pf-c-form.pf-m-horizontal {
   display: grid;
-  grid-gap: 1.5rem;
 }
 
 <Form

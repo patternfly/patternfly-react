@@ -3,19 +3,25 @@
 exports[`Chip closable 1`] = `
 <GenerateId
   prefix="pf-random-id-"
-/>
+>
+  <Component />
+</GenerateId>
 `;
 
 exports[`Chip closable with tooltip 1`] = `
 <GenerateId
   prefix="pf-random-id-"
-/>
+>
+  <Component />
+</GenerateId>
 `;
 
 exports[`Chip overflow 1`] = `
 <GenerateId
   prefix="pf-random-id-"
-/>
+>
+  <Component />
+</GenerateId>
 `;
 
 exports[`ChipButton 1`] = `

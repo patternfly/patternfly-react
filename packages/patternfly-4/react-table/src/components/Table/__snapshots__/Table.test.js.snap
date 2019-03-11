@@ -17,9 +17,9 @@ exports[`Actions table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -31,9 +31,9 @@ exports[`Actions table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -8401,9 +8401,9 @@ exports[`Cell header table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -8415,9 +8415,9 @@ exports[`Cell header table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -13526,9 +13526,9 @@ exports[`Collapsible nested table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -13540,9 +13540,9 @@ exports[`Collapsible nested table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -13560,9 +13560,9 @@ exports[`Collapsible nested table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__toggle {
@@ -13582,9 +13582,9 @@ exports[`Collapsible nested table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-m-expanded {
@@ -13606,6 +13606,7 @@ exports[`Collapsible nested table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-table__toggle {
   display: block;
@@ -13623,6 +13624,7 @@ exports[`Collapsible nested table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-button.pf-m-plain {
   display: inline-block;
@@ -13633,9 +13635,9 @@ exports[`Collapsible nested table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__toggle {
@@ -13662,6 +13664,7 @@ exports[`Collapsible nested table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-table__toggle {
   display: block;
@@ -19749,9 +19752,9 @@ exports[`Collapsible table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -19763,9 +19766,9 @@ exports[`Collapsible table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -19783,9 +19786,9 @@ exports[`Collapsible table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-m-expanded {
@@ -19815,6 +19818,7 @@ exports[`Collapsible table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0.3125rem 0.625rem -0.25rem rgba(3, 3, 3, 0.25);
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
   border-bottom-color: #ededed;
   border-bottom-width: 1px;
 }
@@ -19838,9 +19842,9 @@ exports[`Collapsible table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__toggle {
@@ -19867,6 +19871,7 @@ exports[`Collapsible table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-table__toggle {
   display: block;
@@ -25904,18 +25909,21 @@ exports[`Header width table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-table__expandable-row {
   display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-table__expandable-row {
   display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
@@ -31101,9 +31109,9 @@ exports[`Selectable table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -31115,9 +31123,9 @@ exports[`Selectable table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -31139,12 +31147,14 @@ exports[`Selectable table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-table__expandable-row {
   display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-table__check {
   display: block;
@@ -31159,6 +31169,7 @@ exports[`Selectable table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
 }
 .pf-c-table__check {
   display: block;
@@ -37113,9 +37124,9 @@ exports[`Simple Actions table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -37127,9 +37138,9 @@ exports[`Simple Actions table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -62959,9 +62970,9 @@ exports[`Sortable table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -62973,9 +62984,9 @@ exports[`Sortable table 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -68071,9 +68082,9 @@ exports[`Table variants Breakpoint - grid 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -68085,9 +68096,9 @@ exports[`Table variants Breakpoint - grid 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -73181,9 +73192,9 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -73195,9 +73206,9 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -78291,9 +78302,9 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -78305,9 +78316,9 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {
@@ -83401,9 +83412,9 @@ exports[`Table variants Size - compact 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -83415,9 +83426,9 @@ exports[`Table variants Size - compact 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-table__sort {

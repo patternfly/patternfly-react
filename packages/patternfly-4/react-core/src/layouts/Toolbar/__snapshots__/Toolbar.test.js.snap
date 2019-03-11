@@ -206,6 +206,7 @@ exports[`Toolbar with sections 1`] = `
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  flex-basis: 100%;
 }
 .pf-l-toolbar__item {
   display: block;
@@ -225,6 +226,7 @@ exports[`Toolbar with sections 1`] = `
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  flex-basis: 100%;
 }
 .pf-l-toolbar {
   display: flex;

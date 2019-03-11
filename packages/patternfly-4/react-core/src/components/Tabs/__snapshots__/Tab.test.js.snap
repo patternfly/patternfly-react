@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render active tab 1`] = `
-<React.Fragment>
+<Fragment>
   Tab 1 section
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`should render tab 1`] = `
-<React.Fragment>
+<Fragment>
   Tab 1 section
-</React.Fragment>
+</Fragment>
 `;

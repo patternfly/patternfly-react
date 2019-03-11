@@ -6,6 +6,8 @@ exports[`renders with PatternFly Core styles 1`] = `
 .pf-c-login__main-header {
   display: grid;
   grid-template-columns: 1fr auto;
+  column-gap: 1rem;
+  row-gap: 0.5rem;
   align-items: center;
   padding: 3rem 2rem 1rem 2rem;
 }
