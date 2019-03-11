@@ -153,33 +153,54 @@ exports[`onSelect callback called when tab selected 1`] = `
       />
     </button>
   </div>
-  <section
-    aria-labelledby="pf-tab-0-tab1"
-    className=""
-    hidden={false}
-    id="pf-tab-section-0-tab1"
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={0}
+        id="tab1"
+        title="Tab item 1"
+      >
+        Tab 1 section
+      </Tab>
+    }
+    id="tab1"
+    index={0}
     key="0"
-  >
-    Tab 1 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-1-tab2"
-    className=""
-    hidden={true}
-    id="pf-tab-section-1-tab2"
+  />
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={1}
+        id="tab2"
+        title="Tab item 2"
+      >
+        Tab 2 section
+      </Tab>
+    }
+    id="tab2"
+    index={1}
     key="1"
-  >
-    Tab 2 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-2-tab3"
-    className=""
-    hidden={true}
-    id="pf-tab-section-2-tab3"
+  />
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={2}
+        id="tab3"
+        title="Tab item 3"
+      >
+        Tab 3 section
+      </Tab>
+    }
+    id="tab3"
+    index={2}
     key="2"
-  >
-    Tab 3 section
-  </section>
+  />
 </React.Fragment>
 `;
 
@@ -369,33 +390,90 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       </AngleRightIcon>
     </button>
   </div>
-  <section
-    aria-labelledby="pf-tab-0-tab1"
-    className=""
-    hidden={false}
-    id="pf-tab-section-0-tab1"
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={0}
+        id="tab1"
+        title="Tab item 1"
+      >
+        Tab 1 section
+      </Tab>
+    }
+    id="tab1"
+    index={0}
     key="0"
   >
-    Tab 1 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-1-tab2"
-    className=""
-    hidden={true}
-    id="pf-tab-section-1-tab2"
+    <section
+      aria-labelledby="pf-tab-0-tab1"
+      className="pf-c-tab-content"
+      hidden={false}
+      id="pf-tab-section-0-tab1"
+      index={0}
+      role="tabpanel"
+      tabIndex="0"
+    >
+      Tab 1 section
+    </section>
+  </TabContent>
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={1}
+        id="tab2"
+        title="Tab item 2"
+      >
+        Tab 2 section
+      </Tab>
+    }
+    id="tab2"
+    index={1}
     key="1"
   >
-    Tab 2 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-2-tab3"
-    className=""
-    hidden={true}
-    id="pf-tab-section-2-tab3"
+    <section
+      aria-labelledby="pf-tab-1-tab2"
+      className="pf-c-tab-content"
+      hidden={true}
+      id="pf-tab-section-1-tab2"
+      index={1}
+      role="tabpanel"
+      tabIndex="0"
+    >
+      Tab 2 section
+    </section>
+  </TabContent>
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={2}
+        id="tab3"
+        title="Tab item 3"
+      >
+        Tab 3 section
+      </Tab>
+    }
+    id="tab3"
+    index={2}
     key="2"
   >
-    Tab 3 section
-  </section>
+    <section
+      aria-labelledby="pf-tab-2-tab3"
+      className="pf-c-tab-content"
+      hidden={true}
+      id="pf-tab-section-2-tab3"
+      index={2}
+      role="tabpanel"
+      tabIndex="0"
+    >
+      Tab 3 section
+    </section>
+  </TabContent>
 </Tabs>
 `;
 
@@ -585,33 +663,90 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       </AngleRightIcon>
     </button>
   </div>
-  <section
-    aria-labelledby="pf-tab-0-tab1"
-    className=""
-    hidden={false}
-    id="pf-tab-section-0-tab1"
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={0}
+        id="tab1"
+        title="Tab item 1"
+      >
+        Tab 1 section
+      </Tab>
+    }
+    id="tab1"
+    index={0}
     key="0"
   >
-    Tab 1 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-1-tab2"
-    className=""
-    hidden={true}
-    id="pf-tab-section-1-tab2"
+    <section
+      aria-labelledby="pf-tab-0-tab1"
+      className="pf-c-tab-content"
+      hidden={false}
+      id="pf-tab-section-0-tab1"
+      index={0}
+      role="tabpanel"
+      tabIndex="0"
+    >
+      Tab 1 section
+    </section>
+  </TabContent>
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={1}
+        id="tab2"
+        title="Tab item 2"
+      >
+        Tab 2 section
+      </Tab>
+    }
+    id="tab2"
+    index={1}
     key="1"
   >
-    Tab 2 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-2-tab3"
-    className=""
-    hidden={true}
-    id="pf-tab-section-2-tab3"
+    <section
+      aria-labelledby="pf-tab-1-tab2"
+      className="pf-c-tab-content"
+      hidden={true}
+      id="pf-tab-section-1-tab2"
+      index={1}
+      role="tabpanel"
+      tabIndex="0"
+    >
+      Tab 2 section
+    </section>
+  </TabContent>
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={2}
+        id="tab3"
+        title="Tab item 3"
+      >
+        Tab 3 section
+      </Tab>
+    }
+    id="tab3"
+    index={2}
     key="2"
   >
-    Tab 3 section
-  </section>
+    <section
+      aria-labelledby="pf-tab-2-tab3"
+      className="pf-c-tab-content"
+      hidden={true}
+      id="pf-tab-section-2-tab3"
+      index={2}
+      role="tabpanel"
+      tabIndex="0"
+    >
+      Tab 3 section
+    </section>
+  </TabContent>
 </Tabs>
 `;
 
@@ -801,33 +936,90 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       </AngleRightIcon>
     </button>
   </div>
-  <section
-    aria-labelledby="pf-tab-0-tab1"
-    className=""
-    hidden={false}
-    id="pf-tab-section-0-tab1"
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={0}
+        id="tab1"
+        title="Tab item 1"
+      >
+        Tab 1 section
+      </Tab>
+    }
+    id="tab1"
+    index={0}
     key="0"
   >
-    Tab 1 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-1-tab2"
-    className=""
-    hidden={true}
-    id="pf-tab-section-1-tab2"
+    <section
+      aria-labelledby="pf-tab-0-tab1"
+      className="pf-c-tab-content"
+      hidden={false}
+      id="pf-tab-section-0-tab1"
+      index={0}
+      role="tabpanel"
+      tabIndex="0"
+    >
+      Tab 1 section
+    </section>
+  </TabContent>
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={1}
+        id="tab2"
+        title="Tab item 2"
+      >
+        Tab 2 section
+      </Tab>
+    }
+    id="tab2"
+    index={1}
     key="1"
   >
-    Tab 2 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-2-tab3"
-    className=""
-    hidden={true}
-    id="pf-tab-section-2-tab3"
+    <section
+      aria-labelledby="pf-tab-1-tab2"
+      className="pf-c-tab-content"
+      hidden={true}
+      id="pf-tab-section-1-tab2"
+      index={1}
+      role="tabpanel"
+      tabIndex="0"
+    >
+      Tab 2 section
+    </section>
+  </TabContent>
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={2}
+        id="tab3"
+        title="Tab item 3"
+      >
+        Tab 3 section
+      </Tab>
+    }
+    id="tab3"
+    index={2}
     key="2"
   >
-    Tab 3 section
-  </section>
+    <section
+      aria-labelledby="pf-tab-2-tab3"
+      className="pf-c-tab-content"
+      hidden={true}
+      id="pf-tab-section-2-tab3"
+      index={2}
+      role="tabpanel"
+      tabIndex="0"
+    >
+      Tab 3 section
+    </section>
+  </TabContent>
 </Tabs>
 `;
 
@@ -969,33 +1161,54 @@ exports[`should render filled tabs 1`] = `
       />
     </button>
   </div>
-  <section
-    aria-labelledby="pf-tab-0-tab1"
-    className=""
-    hidden={false}
-    id="pf-tab-section-0-tab1"
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={0}
+        id="tab1"
+        title="Tab item 1"
+      >
+        Tab 1 section
+      </Tab>
+    }
+    id="tab1"
+    index={0}
     key="0"
-  >
-    Tab 1 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-1-tab2"
-    className=""
-    hidden={true}
-    id="pf-tab-section-1-tab2"
+  />
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={1}
+        id="tab2"
+        title="Tab item 2"
+      >
+        Tab 2 section
+      </Tab>
+    }
+    id="tab2"
+    index={1}
     key="1"
-  >
-    Tab 2 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-2-tab3"
-    className=""
-    hidden={true}
-    id="pf-tab-section-2-tab3"
+  />
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={2}
+        id="tab3"
+        title="Tab item 3"
+      >
+        Tab 3 section
+      </Tab>
+    }
+    id="tab3"
+    index={2}
     key="2"
-  >
-    Tab 3 section
-  </section>
+  />
 </React.Fragment>
 `;
 
@@ -1137,66 +1350,87 @@ exports[`should render secondary tabs 1`] = `
       />
     </button>
   </div>
-  <section
-    aria-labelledby="pf-tab-0-tab1"
-    className=""
-    hidden={false}
-    id="pf-tab-section-0-tab1"
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={0}
+        id="tab1"
+        title="Tab item 1"
+      >
+        <Tabs
+          activeKey={0}
+          className=""
+          isFilled={false}
+          isSecondary={false}
+          leftScrollAriaLabel="Scroll left"
+          onSelect={[Function]}
+          rightScrollAriaLabel="Scroll Right"
+        >
+          <Tab
+            className=""
+            eventKey={10}
+            id="secondary tab1"
+            title="Secondary Tab 1"
+          >
+            Secondary Tab 1 section
+          </Tab>
+          <Tab
+            className=""
+            eventKey={11}
+            id="secondary tab2"
+            title="Secondary Tab 2"
+          >
+            Secondary Tab 2 section
+          </Tab>
+          <Tab
+            className=""
+            eventKey={12}
+            id="secondary tab3"
+            title="Secondary Tab 3"
+          >
+            Secondary Tab 3 section
+          </Tab>
+        </Tabs>
+      </Tab>
+    }
+    id="tab1"
+    index={0}
     key="0"
-  >
-    <Tabs
-      activeKey={0}
-      className=""
-      isFilled={false}
-      isSecondary={false}
-      leftScrollAriaLabel="Scroll left"
-      onSelect={[Function]}
-      rightScrollAriaLabel="Scroll Right"
-    >
+  />
+  <TabContent
+    activeKey={0}
+    child={
       <Tab
         className=""
-        eventKey={10}
-        id="secondary tab1"
-        title="Secondary Tab 1"
+        eventKey={1}
+        id="tab2"
+        title="Tab item 2"
       >
-        Secondary Tab 1 section
+        Tab 2 section
       </Tab>
-      <Tab
-        className=""
-        eventKey={11}
-        id="secondary tab2"
-        title="Secondary Tab 2"
-      >
-        Secondary Tab 2 section
-      </Tab>
-      <Tab
-        className=""
-        eventKey={12}
-        id="secondary tab3"
-        title="Secondary Tab 3"
-      >
-        Secondary Tab 3 section
-      </Tab>
-    </Tabs>
-  </section>
-  <section
-    aria-labelledby="pf-tab-1-tab2"
-    className=""
-    hidden={true}
-    id="pf-tab-section-1-tab2"
+    }
+    id="tab2"
+    index={1}
     key="1"
-  >
-    Tab 2 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-2-tab3"
-    className=""
-    hidden={true}
-    id="pf-tab-section-2-tab3"
+  />
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={2}
+        id="tab3"
+        title="Tab item 3"
+      >
+        Tab 3 section
+      </Tab>
+    }
+    id="tab3"
+    index={2}
     key="2"
-  >
-    Tab 3 section
-  </section>
+  />
 </React.Fragment>
 `;
 
@@ -1338,32 +1572,53 @@ exports[`should render simple tabs 1`] = `
       />
     </button>
   </div>
-  <section
-    aria-labelledby="pf-tab-0-tab1"
-    className=""
-    hidden={false}
-    id="pf-tab-section-0-tab1"
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={0}
+        id="tab1"
+        title="Tab item 1"
+      >
+        Tab 1 section
+      </Tab>
+    }
+    id="tab1"
+    index={0}
     key="0"
-  >
-    Tab 1 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-1-tab2"
-    className=""
-    hidden={true}
-    id="pf-tab-section-1-tab2"
+  />
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={1}
+        id="tab2"
+        title="Tab item 2"
+      >
+        Tab 2 section
+      </Tab>
+    }
+    id="tab2"
+    index={1}
     key="1"
-  >
-    Tab 2 section
-  </section>
-  <section
-    aria-labelledby="pf-tab-2-tab3"
-    className=""
-    hidden={true}
-    id="pf-tab-section-2-tab3"
+  />
+  <TabContent
+    activeKey={0}
+    child={
+      <Tab
+        className=""
+        eventKey={2}
+        id="tab3"
+        title="Tab item 3"
+      >
+        Tab 3 section
+      </Tab>
+    }
+    id="tab3"
+    index={2}
     key="2"
-  >
-    Tab 3 section
-  </section>
+  />
 </React.Fragment>
 `;
