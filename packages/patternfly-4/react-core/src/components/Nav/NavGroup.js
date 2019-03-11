@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
+import styles from '@patternfly/patternfly/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import { getUniqueId } from '../../internal/util';
+import { getUniqueId } from '../../helpers/util';
 
 const propTypes = {
   /** Title shown for the group */

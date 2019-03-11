@@ -6,6 +6,7 @@ export default {
   components: {
     AboutModal
   },
+  variablesRoot: 'pf-c-about-modal-box',
   examples: [
     {
       component: SimpleAboutModal,

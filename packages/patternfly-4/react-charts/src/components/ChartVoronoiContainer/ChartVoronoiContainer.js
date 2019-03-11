@@ -12,9 +12,7 @@ export const propTypes = {
 };
 
 // Note: VictoryVoronoiContainer.defaultEvents & VictoryContainer.role must be hoisted
-const ChartVoronoiContainer = (props) => (
-  <VictoryVoronoiContainer labelComponent={<ChartTooltip/>} {...props}/>
-);
+const ChartVoronoiContainer = props => <VictoryVoronoiContainer labelComponent={<ChartTooltip />} {...props} />;
 hoistNonReactStatics(ChartVoronoiContainer, VictoryVoronoiContainer);
 ChartVoronoiContainer.propTypes = propTypes;
 

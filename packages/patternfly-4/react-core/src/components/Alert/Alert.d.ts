@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
-import { OneOf, Omit } from '../../typeUtils';
+import { OneOf, Omit } from '../../helpers/typeUtils';
 
 export const AlertVariant: {
   success: 'success';
@@ -10,10 +10,10 @@ export const AlertVariant: {
 
 export interface AlertProps extends Omit<HTMLProps<HTMLDivElement>, 'action'> {
   variant: OneOf<typeof AlertVariant, keyof typeof AlertVariant>;
+  title: string;
   children?: ReactNode;
   action?: ReactNode;
-  title?: string;
-  'aria-label': string;
+  'aria-label'?: string;
   variantLabel?: string;
 }
 

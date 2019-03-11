@@ -9,5 +9,6 @@ export default {
   enumValues: {
     'Object.values(TitleSize)': Object.values(TitleSize)
   },
+  variablesRoot: 'pf-c-title',
   examples: [{ component: TitleSizes, title: 'Title Sizes' }]
 };

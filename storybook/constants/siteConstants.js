@@ -3,7 +3,7 @@ const PATTERNFLY_ORG = 'http://www.patternfly.org/';
 export const BASE_URL = {
   PATTERNFLY_ORG,
   PATTERNFLY_LIBRARY: `${PATTERNFLY_ORG}pattern-library/`,
-  REACT_BOOTSTRAP: 'https://react-bootstrap.github.io/'
+  REACT_BOOTSTRAP: 'https://5c507d49471426000887a6a7--react-bootstrap.netlify.com/'
 };
 
 export const DOCUMENTATION_URL = {

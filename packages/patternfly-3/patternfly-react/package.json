@@ -1,6 +1,6 @@
 {
   "name": "patternfly-react",
-  "version": "2.29.8",
+  "version": "2.30.3",
   "private": false,
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
@@ -18,7 +18,7 @@
     "patternfly"
   ],
   "author": "Red Hat",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
@@ -32,7 +32,7 @@
     "patternfly": "^3.58.0",
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-switch": "^15.5.3",
-    "react-bootstrap-typeahead": "^3.1.3",
+    "react-bootstrap-typeahead": "^3.4.1",
     "react-c3js": "^0.1.20",
     "react-click-outside": "^3.0.1",
     "react-collapse": "^4.0.3",
@@ -57,15 +57,17 @@
     "fontAwesome": "../../../node_modules/font-awesome-sass/assets/stylesheets"
   },
   "scripts": {
-    "prebuild": "yarn build:sass && yarn build:less",
-    "build": "yarn build:babel",
+    "build": "yarn build:sass && yarn build:less && yarn build:babel",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
-    "build:less": "mkdir -p dist/less && cp -r less/* dist/less",
-    "build:sass": "mkdir -p dist/sass && cp -r sass/patternfly-react/* dist/sass && node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react.scss"
+    "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",
+    "build:sass": "shx mkdir -p dist/sass && shx cp -r sass/patternfly-react/* dist/sass && cross-env node-sass --output-style compressed --include-path sass --include-path $npm_package_sassIncludes_patternfly --include-path $npm_package_sassIncludes_bootstrap --include-path $npm_package_sassIncludes_fontAwesome -o dist/css sass/patternfly-react.scss",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
-    "react-axe": "^3.0.2"
+    "react-axe": "^3.0.2",
+    "rimraf": "^2.6.2",
+    "shx": "^0.3.2"
   }
 }

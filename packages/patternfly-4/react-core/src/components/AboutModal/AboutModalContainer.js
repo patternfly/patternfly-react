@@ -30,10 +30,6 @@ const propTypes = {
   logoImageSrc: PropTypes.string.isRequired,
   /** the alternate text of the Logo image. */
   logoImageAlt: PropTypes.string.isRequired,
-  /** the URL of the image for the Hero. */
-  heroImageSrc: PropTypes.string.isRequired,
-  /** the alternate text of the Hero image. */
-  heroImageAlt: PropTypes.string,
   /** id to use for About Modal Box aria labeled by */
   ariaLabelledbyId: PropTypes.string.isRequired,
   /** id to use for About Modal Box aria described by */
@@ -45,8 +41,7 @@ const propTypes = {
 const defaultProps = {
   className: '',
   isOpen: false,
-  onClose: () => undefined,
-  heroImageAlt: ''
+  onClose: () => undefined
 };
 
 const ModalContent = ({
@@ -60,8 +55,6 @@ const ModalContent = ({
   brandImageAlt,
   logoImageSrc,
   logoImageAlt,
-  heroImageSrc,
-  heroImageAlt,
   ariaLabelledbyId,
   ariaDescribedById,
   ...props
@@ -75,11 +68,11 @@ const ModalContent = ({
         <AboutModalBox className={className} aria-labelledby={ariaLabelledbyId} aria-describedby={ariaDescribedById}>
           <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
           <AboutModalBoxCloseButton onClose={onClose} />
-          <AboutModalBoxHeader id={ariaLabelledbyId} productName={productName} trademark={trademark} />
-          <AboutModalBoxContent {...props} id={ariaDescribedById}>
+          <AboutModalBoxHeader id={ariaLabelledbyId} productName={productName} />
+          <AboutModalBoxContent {...props} trademark={trademark} id={ariaDescribedById}>
             {children}
           </AboutModalBoxContent>
-          <AboutModalBoxHero src={heroImageSrc} alt={heroImageAlt} />
+          <AboutModalBoxHero />
         </AboutModalBox>
       </Bullseye>
     </Backdrop>

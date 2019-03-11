@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/Tooltip/tooltip.css';
+import styles from '@patternfly/patternfly/components/Tooltip/tooltip.css';
 import { css } from '@patternfly/react-styles';
 
 const TooltipContent = ({ className, children, id, ...rest }) => (

@@ -3,6 +3,140 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.1.6...@patternfly/react-charts@2.1.7) (2019-03-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 2.1.6 (2019-03-08)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [2.1.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.1.4...@patternfly/react-charts@2.1.5) (2019-03-05)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## 2.1.4 (2019-03-04)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [2.1.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.1.2...@patternfly/react-charts@2.1.3) (2019-02-26)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [2.1.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.1.1...@patternfly/react-charts@2.1.2) (2019-02-25)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [2.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.1.0...@patternfly/react-charts@2.1.1) (2019-02-25)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# 2.1.0 (2019-02-25)
+
+
+### Features
+
+* **charts:** Add ChartAxis ([#1309](https://github.com/patternfly/patternfly-react/issues/1309)) ([cd6788b](https://github.com/patternfly/patternfly-react/commit/cd6788b))
+
+
+
+
+
+## [2.0.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.0.4...@patternfly/react-charts@2.0.5) (2019-02-20)
+
+
+### Bug Fixes
+
+* **lint:** fix linting glob and auto-fixable linter errors  ([#1256](https://github.com/patternfly/patternfly-react/issues/1256)) ([#1409](https://github.com/patternfly/patternfly-react/issues/1409)) ([0b637fe](https://github.com/patternfly/patternfly-react/commit/0b637fe))
+
+
+
+
+
+## [2.0.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.0.3...@patternfly/react-charts@2.0.4) (2019-02-19)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [2.0.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.0.2...@patternfly/react-charts@2.0.3) (2019-02-15)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [2.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.0.1...@patternfly/react-charts@2.0.2) (2019-02-13)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+## [2.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.0.0...@patternfly/react-charts@2.0.1) (2019-02-12)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
+# [2.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@1.4.3...@patternfly/react-charts@2.0.0) (2019-02-08)
+
+
+### Code Refactoring
+
+* **AboutModal:** Upgrade core to 1.0.175 and Refactor AboutModal ([#1307](https://github.com/patternfly/patternfly-react/issues/1307)) ([1f85756](https://github.com/patternfly/patternfly-react/commit/1f85756)), closes [#1267](https://github.com/patternfly/patternfly-react/issues/1267)
+
+
+### BREAKING CHANGES
+
+* **AboutModal:** removed heroImg and heroImageSrc and heroImageAlt props
+
+
+
+
+
+## [1.4.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@1.4.2...@patternfly/react-charts@1.4.3) (2019-02-01)
+
+**Note:** Version bump only for package @patternfly/react-charts
+
+
+
+
+
 ## [1.4.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@1.4.1...@patternfly/react-charts@1.4.2) (2019-01-29)
 
 **Note:** Version bump only for package @patternfly/react-charts

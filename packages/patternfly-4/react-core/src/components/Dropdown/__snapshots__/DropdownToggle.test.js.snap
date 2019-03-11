@@ -21,6 +21,7 @@ exports[`state active 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 
@@ -40,6 +41,7 @@ exports[`state active 1`] = `
     className=""
     id="Dropdown Toggle"
     isActive={true}
+    isDisabled={false}
     isFocused={false}
     isHovered={false}
     isOpen={false}
@@ -50,6 +52,7 @@ exports[`state active 1`] = `
     <button
       aria-expanded={false}
       className="pf-c-dropdown__toggle pf-m-active"
+      disabled={false}
       id="Dropdown Toggle"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -113,6 +116,7 @@ exports[`state focus 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 
@@ -132,6 +136,7 @@ exports[`state focus 1`] = `
     className=""
     id="Dropdown Toggle"
     isActive={false}
+    isDisabled={false}
     isFocused={true}
     isHovered={false}
     isOpen={false}
@@ -142,6 +147,7 @@ exports[`state focus 1`] = `
     <button
       aria-expanded={false}
       className="pf-c-dropdown__toggle pf-m-focus"
+      disabled={false}
       id="Dropdown Toggle"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -205,6 +211,7 @@ exports[`state hover 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 
@@ -224,6 +231,7 @@ exports[`state hover 1`] = `
     className=""
     id="Dropdown Toggle"
     isActive={false}
+    isDisabled={false}
     isFocused={false}
     isHovered={true}
     isOpen={false}
@@ -234,6 +242,7 @@ exports[`state hover 1`] = `
     <button
       aria-expanded={false}
       className="pf-c-dropdown__toggle pf-m-hover"
+      disabled={false}
       id="Dropdown Toggle"
       onClick={[Function]}
       onKeyDown={[Function]}

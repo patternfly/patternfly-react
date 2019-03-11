@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
+import styles from '@patternfly/patternfly/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 
@@ -13,12 +13,13 @@ const propTypes = {
   /** Callback for when a list is expanded or collapsed */
   onToggle: PropTypes.func,
   /** Accessibility label */
-  'aria-label': PropTypes.string.isRequired,
+  'aria-label': PropTypes.string,
   /** Additional props are spread to the container <nav> */
   '': PropTypes.any
 };
 
 const defaultProps = {
+  'aria-label': '',
   children: null,
   className: '',
   onSelect: () => undefined,
@@ -41,16 +42,16 @@ class Nav extends React.Component {
   }
 
   // Callback from NavExpandable
-  onToggle(event, groupId, isExpanded) {
+  onToggle(event, groupId, toggleValue) {
     this.props.onToggle({
       event,
       groupId,
-      isExpanded
+      toggleValue
     });
   }
 
   render() {
-    const { children, className, ...props } = this.props;
+    const { 'aria-label': ariaLabel, children, className, ...props } = this.props;
 
     return (
       <NavContext.Provider
@@ -60,7 +61,17 @@ class Nav extends React.Component {
           onToggle: (event, groupId, expanded) => this.onToggle(event, groupId, expanded)
         }}
       >
-        <nav className={css(styles.nav, className)} {...props}>
+        <nav
+          className={css(styles.nav, className)}
+          aria-label={
+            ariaLabel === ''
+              ? typeof this.props.children.props !== 'undefined' && this.props.children.props.variant === 'tertiary'
+                ? 'Local'
+                : 'Global'
+              : ariaLabel
+          }
+          {...props}
+        >
           {children}
         </nav>
       </NavContext.Provider>

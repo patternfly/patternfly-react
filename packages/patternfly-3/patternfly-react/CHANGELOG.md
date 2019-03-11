@@ -3,6 +3,128 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.30.3](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.30.2...patternfly-react@2.30.3) (2019-03-08)
+
+
+### Bug Fixes
+
+* **TypeAheadSelect:** Fix input height overflow issue without breaking IE11 compatibility ([#1369](https://github.com/patternfly/patternfly-react/issues/1369)) ([0b2905b](https://github.com/patternfly/patternfly-react/commit/0b2905b)), closes [#1362](https://github.com/patternfly/patternfly-react/issues/1362) [#413](https://github.com/patternfly/patternfly-react/issues/413)
+
+
+
+
+
+## [2.30.2](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.30.1...patternfly-react@2.30.2) (2019-03-08)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+## [2.30.1](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.30.0...patternfly-react@2.30.1) (2019-03-08)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+# 2.30.0 (2019-03-07)
+
+
+### Bug Fixes
+
+* **navExpand:** remove defaultExpand in favor of just using isExpanded ([#1490](https://github.com/patternfly/patternfly-react/issues/1490)) ([9aafabd](https://github.com/patternfly/patternfly-react/commit/9aafabd))
+
+
+### Features
+
+* **VerticalNav:** add id, data-id to secondary items ([#1495](https://github.com/patternfly/patternfly-react/issues/1495)) ([8847a65](https://github.com/patternfly/patternfly-react/commit/8847a65))
+
+
+
+
+
+## [2.29.17](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.16...patternfly-react@2.29.17) (2019-03-05)
+
+
+### Bug Fixes
+
+* **TypeAhead:** upgrade typeahead to v3.4.1fix [#1491](https://github.com/patternfly/patternfly-react/issues/1491) ([#1493](https://github.com/patternfly/patternfly-react/issues/1493)) ([e1a27ef](https://github.com/patternfly/patternfly-react/commit/e1a27ef))
+
+
+
+
+
+## 2.29.16 (2019-03-04)
+
+
+### Bug Fixes
+
+* **LoginPage:** remove inputs errors ([#1278](https://github.com/patternfly/patternfly-react/issues/1278)) ([cf789ed](https://github.com/patternfly/patternfly-react/commit/cf789ed))
+
+
+
+
+
+## [2.29.15](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.14...patternfly-react@2.29.15) (2019-02-20)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+## 2.29.14 (2019-02-20)
+
+
+### Bug Fixes
+
+* **login:** Add union types for backgroundImgSrc ([#1373](https://github.com/patternfly/patternfly-react/issues/1373)) ([79b4f20](https://github.com/patternfly/patternfly-react/commit/79b4f20))
+
+
+
+
+
+## [2.29.13](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.12...patternfly-react@2.29.13) (2019-02-15)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+## [2.29.12](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.11...patternfly-react@2.29.12) (2019-02-13)
+
+
+### Bug Fixes
+
+* **Login card page:** Submit is disabled when input is empty ([#1188](https://github.com/patternfly/patternfly-react/issues/1188)) ([b984fbb](https://github.com/patternfly/patternfly-react/commit/b984fbb))
+
+
+
+
+
+## [2.29.11](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.9...patternfly-react@2.29.11) (2019-02-08)
+
+**Note:** Version bump only for package patternfly-react
+
+
+
+
+
+## [2.29.9](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.8...patternfly-react@2.29.9) (2019-02-01)
+
+
+### Bug Fixes
+
+* **build:** Support running npm scripts under Windows ([#1251](https://github.com/patternfly/patternfly-react/issues/1251)) ([df0c275](https://github.com/patternfly/patternfly-react/commit/df0c275))
+
+
+
+
+
 ## [2.29.8](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.29.7...patternfly-react@2.29.8) (2019-01-25)
 
 

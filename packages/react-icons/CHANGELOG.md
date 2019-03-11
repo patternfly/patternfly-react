@@ -3,6 +3,98 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.1.2...@patternfly/react-icons@3.2.0) (2019-03-08)
+
+
+### Features
+
+* **Icon:** Openshift icon ([#1508](https://github.com/patternfly/patternfly-react/issues/1508)) ([07330fa](https://github.com/patternfly/patternfly-react/commit/07330fa))
+
+
+
+
+
+## 3.1.2 (2019-03-08)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## [3.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.1.0...@patternfly/react-icons@3.1.1) (2019-03-05)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+# 3.1.0 (2019-03-04)
+
+
+### Features
+
+* **Icons:** Add fa regular icons ([#1385](https://github.com/patternfly/patternfly-react/issues/1385)) ([629880d](https://github.com/patternfly/patternfly-react/commit/629880d))
+
+
+
+
+
+## [3.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.0.1...@patternfly/react-icons@3.0.2) (2019-02-19)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+## 3.0.1 (2019-02-15)
+
+
+### Bug Fixes
+
+* **core:** FormSelect onChange value type was missing ([#1380](https://github.com/patternfly/patternfly-react/issues/1380)) ([d275105](https://github.com/patternfly/patternfly-react/commit/d275105))
+
+
+
+
+
+# [3.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.10.5...@patternfly/react-icons@3.0.0) (2019-02-08)
+
+
+### Code Refactoring
+
+* **AboutModal:** Upgrade core to 1.0.175 and Refactor AboutModal ([#1307](https://github.com/patternfly/patternfly-react/issues/1307)) ([1f85756](https://github.com/patternfly/patternfly-react/commit/1f85756)), closes [#1267](https://github.com/patternfly/patternfly-react/issues/1267)
+
+
+### BREAKING CHANGES
+
+* **AboutModal:** removed heroImg and heroImageSrc and heroImageAlt props
+
+
+
+
+
+## [2.10.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.10.4...@patternfly/react-icons@2.10.5) (2019-02-01)
+
+
+### Bug Fixes
+
+* **build:** Support running npm scripts under Windows ([#1251](https://github.com/patternfly/patternfly-react/issues/1251)) ([df0c275](https://github.com/patternfly/patternfly-react/commit/df0c275))
+
+
+
+
+
+## [2.10.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.10.3...@patternfly/react-icons@2.10.4) (2019-02-01)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
 ## [2.10.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@2.10.2...@patternfly/react-icons@2.10.3) (2019-01-29)
 
 

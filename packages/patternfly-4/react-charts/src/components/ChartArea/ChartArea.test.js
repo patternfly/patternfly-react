@@ -4,7 +4,7 @@ import ChartArea from '../ChartArea/ChartArea';
 
 Object.values([true, false]).forEach(isRead => {
   test(`Chart`, () => {
-    const view = shallow(<ChartArea/>);
+    const view = shallow(<ChartArea />);
     expect(view).toMatchSnapshot();
   });
 });

@@ -6,8 +6,8 @@ import {
   global_spacer_3xl as spacer3Xl,
   global_Color_dark_100 as itemColor,
   global_BackgroundColor_300 as bgColorHover,
-  global_BackgroundColor_200,
-  global_FontSize_xs,
+  global_BackgroundColor_200 as bgColorHover2,
+  global_FontSize_xs as fontSizeXs,
   global_BorderRadius_lg as borderRadiusLg
 } from '@patternfly/react-tokens';
 
@@ -22,6 +22,9 @@ export default StyleSheet.create({
       textDecoration: 'none'
     }
   },
+  collapsedNavItem: {
+    padding: `${spacerXs.var} 0`
+  },
   secondaryList: {
     paddingBottom: spacerXs.var
   },
@@ -31,10 +34,10 @@ export default StyleSheet.create({
     color: itemColor.var,
     textDecoration: 'none',
     ':hover': {
-      backgroundColor: global_BackgroundColor_200.var,
+      backgroundColor: bgColorHover2.var,
       textDecoration: 'none'
     },
-    fontSize: global_FontSize_xs.var
+    fontSize: fontSizeXs.var
   },
   active: {
     backgroundColor: bgColorHover.var
@@ -44,7 +47,7 @@ export default StyleSheet.create({
     float: right;
     margin-top: -25px;
     margin-right: 10px;
-    font-size: ${global_FontSize_xs.var};
+    font-size: ${fontSizeXs.var};
     padding: 0 ${spacerSm.var};
     border-radius: ${borderRadiusLg.var};
   `

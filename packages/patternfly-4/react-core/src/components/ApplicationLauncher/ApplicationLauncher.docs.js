@@ -7,6 +7,7 @@ export default {
   components: {
     ApplicationLauncher
   },
+  variablesRoot: 'pf-c-app-launcher',
   examples: [
     { component: SimpleApplicationLauncher, title: 'Application Launcher' },
     { component: TooltipApplicationLauncher, title: 'Application Launcher with Tool Tip' }

@@ -5,6 +5,7 @@ export interface ModalBoxProps extends HTMLProps<HTMLDivElement> {
   className?: string;
   id: string;
   isLarge?: boolean;
+  isSmall?: boolean;
   title: string;
 }
 

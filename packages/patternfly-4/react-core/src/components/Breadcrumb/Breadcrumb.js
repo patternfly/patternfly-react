@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Breadcrumb/breadcrumb.css';
+import styles from '@patternfly/patternfly/components/Breadcrumb/breadcrumb.css';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 
@@ -17,7 +17,7 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  'aria-label': 'breadcrumb'
+  'aria-label': 'Breadcrumb'
 };
 
 const Breadcrumb = ({ className, children, ...props }) => (

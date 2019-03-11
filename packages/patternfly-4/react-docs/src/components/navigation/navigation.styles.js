@@ -30,5 +30,14 @@ export default StyleSheet.create({
     .pf-c-form__label {
       --pf-c-form__label--FontSize: ${fontSizeLg.var};
     }
+  `,
+  collapseExpandButtons: `
+    text-align: right;
+  `,
+  collapseExpandButton: `
+    padding-right: 5px;
+  `,
+  collapseExpandIcon: `
+    vertical-align: -3px;
   `
 });

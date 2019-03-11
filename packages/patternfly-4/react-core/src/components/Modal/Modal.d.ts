@@ -6,6 +6,7 @@ export interface ModalProps extends HTMLProps<HTMLDivElement> {
   className?: string;
   hideTitle?: boolean;
   isLarge?: boolean;
+  isSmall?: boolean;
   isOpen?: boolean;
   onClose?: Function;
   title: string;

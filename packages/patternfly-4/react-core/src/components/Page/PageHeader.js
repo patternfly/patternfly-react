@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Page/page.css';
+import styles from '@patternfly/patternfly/components/Page/page.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { BarsIcon } from '@patternfly/react-icons';
@@ -40,8 +40,7 @@ const defaultProps = {
   showNavToggle: false,
   isNavOpen: true,
   onNavToggle: () => undefined,
-  'aria-label': 'Toggle global navigation',
-  '': ''
+  'aria-label': 'Global navigation'
 };
 
 const PageHeader = ({

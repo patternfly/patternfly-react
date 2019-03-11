@@ -14,7 +14,7 @@ const {
   filter,
   key,
   ...icons
-} = require('@patternfly/patternfly-next/icons/pf-icons');
+} = require('@patternfly/patternfly/icons/pf-icons');
 
 module.exports = {
   pfIcons: {

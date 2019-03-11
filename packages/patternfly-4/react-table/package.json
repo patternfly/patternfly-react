@@ -1,13 +1,14 @@
 {
   "name": "@patternfly/react-table",
-  "version": "0.4.14",
+  "version": "1.0.36",
   "description": "This library provides a set of React table components for use with the PatternFly 4",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
   "sideEffects": false,
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "prerelease"
   },
   "repository": {
     "type": "git",
@@ -20,16 +21,16 @@
     "reacttabular"
   ],
   "author": "Red Hat",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
   "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/react-table#readme",
   "dependencies": {
-    "@patternfly/patternfly-next": "1.0.148",
-    "@patternfly/react-core": "^1.51.4",
-    "@patternfly/react-icons": "^2.10.3",
-    "@patternfly/react-styles": "^2.3.0",
+    "@patternfly/patternfly": "1.0.222",
+    "@patternfly/react-core": "^2.4.1",
+    "@patternfly/react-icons": "^3.2.0",
+    "@patternfly/react-styles": "^2.3.6",
     "exenv": "^1.2.2",
     "reactabular-table": "^8.14.0"
   },
@@ -39,20 +40,18 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && yarn build:ts",
+    "build": "yarn build:babel && yarn build:ts && node ./build/copyStyles.js",
     "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
     "build:ts": "node ./scripts/copyTS.js",
-    "postbuild": "node ./build/copyStyles.js"
-  },
-  "optionalDependencies": {
-    "@patternfly/react-tokens": "^1.10.1"
+    "clean": "rimraf dist"
   },
   "devDependencies": {
+    "@patternfly/react-tokens": "^2.0.6",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
-    "npmlog": "^4.1.2"
+    "rimraf": "^2.6.2"
   }
 }

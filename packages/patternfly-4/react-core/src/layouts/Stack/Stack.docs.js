@@ -12,6 +12,7 @@ export default {
   enumValues: {
     'Object.keys(GutterSize)': Object.keys(GutterSize)
   },
+  variablesRoot: 'pf-l-stack',
   examples: [
     { component: Simple, title: 'Simple Stack Layout', getContainerProps },
     { component: StackWithGutter, title: 'Stack Layout With Gutter', getContainerProps }

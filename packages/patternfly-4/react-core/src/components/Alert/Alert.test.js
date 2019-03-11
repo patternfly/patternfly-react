@@ -8,7 +8,11 @@ import AlertActionCLoseButton from './AlertActionCloseButton';
 Object.keys(AlertVariant).forEach(variant => {
   describe(`Alert - ${variant}`, () => {
     test('Description', () => {
-      const view = mount(<Alert variant={variant}>Some alert</Alert>);
+      const view = mount(
+        <Alert variant={variant} title="">
+          Some alert
+        </Alert>
+      );
       expect(view).toMatchSnapshot();
     });
 
@@ -23,7 +27,7 @@ Object.keys(AlertVariant).forEach(variant => {
 
     test('Action Link', () => {
       const view = mount(
-        <Alert variant={variant} action={<AlertActionLink>test</AlertActionLink>}>
+        <Alert variant={variant} action={<AlertActionLink>test</AlertActionLink>} title="">
           Some alert
         </Alert>
       );
@@ -33,7 +37,7 @@ Object.keys(AlertVariant).forEach(variant => {
     test('Action Close Button', () => {
       const onClose = jest.fn();
       const view = mount(
-        <Alert variant={variant} action={<AlertActionCLoseButton aria-label="Close" onClose={onClose} />}>
+        <Alert variant={variant} action={<AlertActionCLoseButton aria-label="Close" onClose={onClose} />} title="">
           Some alert
         </Alert>
       );

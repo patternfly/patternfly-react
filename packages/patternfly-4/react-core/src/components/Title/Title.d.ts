@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
-import { Omit, OneOf } from '../../typeUtils';
+import { Omit, OneOf } from '../../helpers/typeUtils';
 import { BaseSizes } from '../../styles/sizes';
 
 export const TitleSize: Pick<

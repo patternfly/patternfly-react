@@ -32,6 +32,8 @@ Kebab.propTypes = {
   isHovered: PropTypes.bool,
   /** Forces active state */
   isActive: PropTypes.bool,
+  /** Disables the dropdown toggle */
+  isDisabled: PropTypes.bool,
   /** Display the toggle with no border or background */
   isPlain: PropTypes.bool,
   /** Additional props are spread to the container component */
@@ -48,6 +50,7 @@ Kebab.defaultProps = {
   isHovered: false,
   isActive: false,
   isPlain: false,
+  isDisabled: false,
   onToggle: Function.prototype
 };
 

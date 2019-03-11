@@ -1,11 +1,11 @@
 {
   "name": "@patternfly/react-integration",
-  "version": "1.0.12",
+  "private": true,
   "description": "Integration testing for PF4 using demo applications",
   "main": "lib/index.js",
   "sideEffects": false,
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   },
   "repository": {
     "type": "git",
@@ -16,24 +16,24 @@
     "patternfly"
   ],
   "author": "Red Hat",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
   "scripts": {
+    "clean": "rimraf cypress/videos cypress/screenshots",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "integration:setup": "rimraf node_modules && yarn install",
     "integration:test": "node ./scripts/server.js"
   },
   "dependencies": {
-    "@patternfly/react-core": "file:../react-core",
     "local-web-server": "^2.6.1"
   },
   "devDependencies": {
     "cypress": "^3.1.4",
-    "rimraf": "^2.6.3",
+    "rimraf": "^2.6.2",
     "typescript": "3.2.2"
   }
 }

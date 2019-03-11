@@ -1,6 +1,6 @@
-import { FunctionComponent, HTMLProps, ReactNode, ReactElement } from 'react';
-import { Omit } from '../../typeUtils';
-import { Instance, BasicPlacement } from 'tippy.js';
+import { FunctionComponent, HTMLProps, ReactElement } from 'react';
+import { Omit } from '../../helpers/typeUtils';
+import { Instance, BasicPlacement, Props } from 'tippy.js';
 
 export const PopoverPosition: {
   top: 'top';
@@ -9,7 +9,7 @@ export const PopoverPosition: {
   right: 'right';
 };
 
-export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children' | 'size'> {
+export interface PopoverProps extends HTMLProps<HTMLDivElement> {
   /** Popover position */
   position?: BasicPlacement;
   /** If true, tries to keep the popover in view by flipping it if necessary */
@@ -21,10 +21,10 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   /** Accessible label, required when header is not present */
   'aria-label'?: string;
   /** Header content, leave empty for no header */
-  headerContent?: ReactNode;
+  headerContent?: ReactElement<any>;
   /** Body content */
-  bodyContent: ReactNode;
-  /** 
+  bodyContent: ReactElement<any>;
+  /**
    * True to show the popover programmatically. Used in conjunction with the shouldClose prop.
    * By default, the popover child element handles click events automatically. If you want to control this programmatically,
    * the popover will not auto-close if the Close button is clicked, ESC key is used, or if a click occurs outside the popover.
@@ -37,7 +37,7 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
    */
   shouldClose?(instance: Instance): void;
   /** The element to append the popover to, defaults to body */
-  appendTo?: Element | ((ref: Element) => Element);
+  appendTo?: ReactElement<any> | ((ref: ReactElement<any>) => ReactElement<any>);
   /** Hides the popover when a click occurs outside */
   hideOnOutsideClick?: boolean;
   /** Lifecycle function invoked when the popover begins to transition out. */
@@ -52,8 +52,8 @@ export interface PopoverProps extends Omit<HTMLProps<HTMLDivElement>, 'children'
   onMount?(instance: Instance): void;
   /** z-index of the popover */
   zIndex?: number;
-  /** Size of the popover */
-  size: 'small' | 'regular' | 'large';
+  /** Maximum width of the popover */
+  maxWidth?: '18.75rem';
 }
 
 declare const Popover: FunctionComponent<PopoverProps>;

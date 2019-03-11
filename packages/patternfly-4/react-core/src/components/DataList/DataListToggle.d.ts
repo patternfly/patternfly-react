@@ -1,10 +1,11 @@
 import { FunctionComponent, HTMLProps } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface DataListToggleProps extends Omit<HTMLProps<HTMLDivElement>, 'aria-labelledby' | 'aria-label' | 'id'> {
   isExpanded: boolean;
-  'aria-labelledby': string;
-  'aria-label': string;
+  'aria-controls'?: string;
+  'aria-labelledby'?: string;
+  'aria-label'?: string;
   id: string;
 }
 

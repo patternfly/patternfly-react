@@ -1,10 +1,10 @@
 # patternfly-react
 
-[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 [![Build Status](https://travis-ci.org/patternfly/patternfly-react.svg?branch=master)](https://travis-ci.org/patternfly/patternfly-react)
 [![npm version](https://badge.fury.io/js/patternfly-react.svg)](https://badge.fury.io/js/patternfly-react)
-[![Coverage Status](https://coveralls.io/repos/github/patternfly/patternfly-react/badge.svg?branch=master)](https://coveralls.io/github/patternfly/patternfly-react?branch=master)
+[![codecov](https://codecov.io/gh/patternfly/patternfly-react/branch/master/graph/badge.svg)](https://codecov.io/gh/patternfly/patternfly-react)
+[![Selenium Tests](https://travis-ci.org/quarckster/widgetastic.patternfly4.svg?branch=master)](https://travis-ci.org/quarckster/widgetastic.patternfly4)
 
 This project will provide a set of React UI components for the [PatternFly project](https://patternfly.org).
 
@@ -22,7 +22,7 @@ This project is governed by the Contributor Covenant version 1.4. All contributo
 
 ### Contributing Guide
 
-If you are interested in contributing to PatternFly React, please see the [Contributing Guide](https://github.com/patternfly/patternfly-react/blob/master/CONTRIBUTING.md).
+If you are interested in contributing to PatternFly React, please see the [Contributing Guide](./CONTRIBUTING.md).
 
 ## Meeting Notes
 

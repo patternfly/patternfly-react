@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginFooterItem  with custom node 1`] = `
+<p
+  className="[object Object]-item"
+>
+  <CustomNode />
+</p>
+`;
+
+exports[`className is added to the root element 1`] = `"[object Object]-item extra-class"`;
+
+exports[`renders with PatternFly Core styles 1`] = `
+<p
+  className="[object Object]-item"
+/>
+`;

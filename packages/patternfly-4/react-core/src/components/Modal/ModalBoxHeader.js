@@ -1,7 +1,6 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/ModalBox/modal-box.css';
+import Title from '../Title/Title';
 
 const propTypes = {
   /** content rendered inside the Header */
@@ -18,9 +17,11 @@ const defaultProps = {
 };
 
 const ModalBoxHeader = ({ children, className, ...props }) => (
-  <header {...props} className={css(styles.modalBoxHeader, className)}>
-    <h1 className={css(styles.modalBoxHeaderTitle)}>{children}</h1>
-  </header>
+  <React.Fragment>
+    <Title size="2xl" {...props}>
+      {children}
+    </Title>
+  </React.Fragment>
 );
 
 ModalBoxHeader.propTypes = propTypes;

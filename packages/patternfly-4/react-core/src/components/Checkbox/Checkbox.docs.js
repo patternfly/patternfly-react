@@ -8,9 +8,10 @@ export default {
   components: {
     Checkbox
   },
+  variablesRoot: 'pf-c-check',
   examples: [
     { component: Controlled, title: 'Controlled Checkbox' },
     { component: Uncontrolled, title: 'Uncontrolled Checkbox' },
-    { component: Disabled, title: 'Disabled Checkbox' },
+    { component: Disabled, title: 'Disabled Checkbox' }
   ]
 };

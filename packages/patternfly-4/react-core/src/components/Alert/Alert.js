@@ -1,12 +1,10 @@
 import React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/Alert/alert.css';
-import accessibleStyles from '@patternfly/patternfly-next/utilities/Accessibility/accessibility.css';
+import styles from '@patternfly/patternfly/components/Alert/alert.css';
+import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
 import AlertIcon from './AlertIcon';
-import { capitalize } from '../../internal/util';
-import AlertActionCloseButton from './AlertActionCloseButton';
-import AlertActionLink from './AlertActionLink';
+import { capitalize } from '../../helpers/util';
 
 export const AlertVariant = {
   success: 'success',
@@ -18,10 +16,10 @@ export const AlertVariant = {
 const propTypes = {
   /** Adds Alert variant styles */
   variant: PropTypes.oneOf(Object.values(AlertVariant)).isRequired,
+  /** Title of the Alert */
+  title: PropTypes.string.isRequired,
   /** Action button to put in the Alert.  Should be <AlertActionLink> or <AlertActionCloseButton> */
   action: PropTypes.node,
-  /** Title of the Alert */
-  title: PropTypes.string,
   /** content rendered inside the Alert */
   children: PropTypes.node,
   /** additional classes added to the Alert */
@@ -37,13 +35,12 @@ const propTypes = {
 const defaultProps = {
   'aria-label': undefined,
   action: null,
-  title: '',
   children: '',
   className: '',
   variantLabel: null
 };
 
-const getDefaultAriaLabel = variant => `${capitalize(AlertVariant[variant])} Notification`;
+const getDefaultAriaLabel = variant => `${capitalize(AlertVariant[variant])} Alert`;
 
 const Alert = ({
   variant,
@@ -58,7 +55,7 @@ const Alert = ({
   variantLabel = variantLabel || capitalize(AlertVariant[variant]);
   const readerTitle = (
     <React.Fragment>
-      <span className={css(accessibleStyles.screenReader)}>{variantLabel}: </span>
+      <span className={css(accessibleStyles.screenReader)}>{`${variantLabel} alert:`}</span>
       {title}
     </React.Fragment>
   );
@@ -68,13 +65,15 @@ const Alert = ({
   return (
     <div {...props} className={customClassName} aria-label={ariaLabel}>
       <AlertIcon variant={variant} />
-      {title && <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>}
+      <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>
       {children && (
         <div className={css(styles.alertDescription)}>
           <p>{children}</p>
         </div>
       )}
-      {action && <div className={css(styles.alertAction, className)}>{action}</div>}
+      {action && (
+        <div className={css(styles.alertAction, className)}>{React.cloneElement(action, { title, variantLabel })}</div>
+      )}
     </div>
   );
 };

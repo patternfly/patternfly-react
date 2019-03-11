@@ -4,6 +4,7 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import { VictoryLegend } from 'victory';
 import { default as ChartTheme } from '../ChartTheme/ChartTheme';
 import ChartContainer from '../ChartContainer/ChartContainer';
+import ChartPoint from '../ChartPoint/ChartPoint';
 
 export const propTypes = {
   /**
@@ -13,11 +14,13 @@ export const propTypes = {
 };
 
 // Note: VictoryLegend.role must be hoisted
-const container = (
-  <ChartContainer responsive={false}/>
-);
-const ChartLegend = (props) => (
-  <VictoryLegend containerComponent={container} theme={ChartTheme.default} {...props}/>
+const container = <ChartContainer responsive={false} />;
+const ChartLegend = props => (
+  <VictoryLegend
+    containerComponent={container}
+    dataComponent={<ChartPoint />}
+    theme={ChartTheme.default} {...props}
+  />
 );
 hoistNonReactStatics(ChartLegend, VictoryLegend);
 ChartLegend.propTypes = propTypes;

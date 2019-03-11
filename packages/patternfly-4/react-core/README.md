@@ -48,7 +48,7 @@ import { Button } from '@patternfly/react-core';
 export default <Button variant="primary">Button</Button>;
 ```
 
-All css related to each component is provided alongside it. There is no component level CSS to import.
+All css related to each component is provided within it. There is no component level CSS to import.
 
 # Documentation
 
@@ -103,5 +103,5 @@ Testing is done at the root of this repo. To only run the patternfly-react tests
 yarn test packages/patternfly-4/react-core
 ```
 
-[patternfly-4]: https://github.com/patternfly/patternfly-next
+[patternfly-4]: https://github.com/patternfly/-next
 [docs]: https://patternfly-react.surge.sh/patternfly-4

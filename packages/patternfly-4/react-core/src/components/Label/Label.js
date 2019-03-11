@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Label/label.css';
+import styles from '@patternfly/patternfly/components/Label/label.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 

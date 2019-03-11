@@ -1,7 +1,5 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/Alert/alert.css';
 import { Button, ButtonVariant } from '../Button';
 import { TimesIcon } from '@patternfly/react-icons';
 
@@ -17,13 +15,18 @@ const propTypes = {
 };
 
 const defaultProps = {
+  'aria-label': '',
   className: '',
-  onClose: () => undefined,
-  'aria-label': 'Close'
+  onClose: () => undefined
 };
 
-const AlertActionCloseButton = ({ className, onClose, 'aria-label': ariaLabel, ...props }) => (
-  <Button variant={ButtonVariant.plain} onClick={onClose} aria-label={ariaLabel} {...props}>
+const AlertActionCloseButton = ({ className, onClose, 'aria-label': ariaLabel, title, variantLabel, ...props }) => (
+  <Button
+    variant={ButtonVariant.plain}
+    onClick={onClose}
+    aria-label={ariaLabel === '' ? `Close ${variantLabel} alert: ${title}` : ariaLabel}
+    {...props}
+  >
     <TimesIcon />
   </Button>
 );

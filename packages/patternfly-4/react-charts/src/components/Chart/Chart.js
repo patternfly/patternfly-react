@@ -11,7 +11,7 @@ export const propTypes = {
   '': PropTypes.any
 };
 
-const Chart = ({children, ...props}) => (
+const Chart = ({ children, ...props }) => (
   <VictoryChart theme={ChartTheme.default} {...props}>
     {children}
   </VictoryChart>

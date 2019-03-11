@@ -21,6 +21,7 @@ exports[`Dropdown toggle 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 
@@ -40,6 +41,7 @@ exports[`Dropdown toggle 1`] = `
     className=""
     id="Dropdown Toggle"
     isActive={false}
+    isDisabled={false}
     isFocused={false}
     isHovered={false}
     isOpen={false}
@@ -50,6 +52,7 @@ exports[`Dropdown toggle 1`] = `
     <button
       aria-expanded={false}
       className="pf-c-dropdown__toggle"
+      disabled={false}
       id="Dropdown Toggle"
       onClick={[Function]}
       onKeyDown={[Function]}
@@ -104,6 +107,7 @@ exports[`Kebab toggle 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 
@@ -112,6 +116,7 @@ exports[`Kebab toggle 1`] = `
   className=""
   id="Dropdown Toggle"
   isActive={false}
+  isDisabled={false}
   isFocused={false}
   isHovered={false}
   isOpen={false}
@@ -124,6 +129,7 @@ exports[`Kebab toggle 1`] = `
     className=""
     id="Dropdown Toggle"
     isActive={false}
+    isDisabled={false}
     isFocused={false}
     isHovered={false}
     isOpen={false}
@@ -135,6 +141,7 @@ exports[`Kebab toggle 1`] = `
       aria-expanded={false}
       aria-label="Actions"
       className="pf-c-dropdown__toggle"
+      disabled={false}
       id="Dropdown Toggle"
       onClick={[Function]}
       onKeyDown={[Function]}

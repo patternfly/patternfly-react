@@ -78,8 +78,7 @@ class ModifiersDataList extends React.Component {
             <DataListToggle
               isExpanded={this.state.show}
               id="width-ex3-toggle1"
-              aria-labelledby="width-ex3-toggle1 width-ex3-item1"
-              aria-label="Toggle details for"
+              aria-controls="width-ex3-expand1"
               onClick={() => this.setState({ show: !this.state.show })}
             />
             <DataListCheck aria-labelledby="width-ex3-check1" name="width-ex3-check1" />
@@ -103,7 +102,7 @@ class ModifiersDataList extends React.Component {
               id="width-ex3-action1"
               aria-label="Actions"
             />
-            <DataListContent aria-label="Primary Content Details" isHidden={!this.state.show}>
+            <DataListContent aria-label="Primary Content Details" id="width-ex3-expand1" isHidden={!this.state.show}>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua.

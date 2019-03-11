@@ -1,8 +1,8 @@
 import React from 'react';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import { componentShape } from '../../internal/componentShape';
-import styles from '@patternfly/patternfly-next/components/Button/button.css';
+import { componentShape } from '../../helpers/componentShape';
+import styles from '@patternfly/patternfly/components/Button/button.css';
 
 export const ButtonVariant = {
   primary: 'primary',

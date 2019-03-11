@@ -1,8 +1,5 @@
 import { FunctionComponent, HTMLProps } from 'react';
 
-export interface AboutMoalBoxHeroProps extends HTMLProps<HTMLImageElement> {
-  src?: string;
-  alt: string;
-}
-declare const AboutMoalBoxHero: FunctionComponent<AboutMoalBoxHeroProps>;
-export default AboutMoalBoxHero;
+export interface AboutModalBoxHeroProps extends HTMLProps<HTMLImageElement> {}
+declare const AboutModalBoxHero: FunctionComponent<AboutModalBoxHeroProps>;
+export default AboutModalBoxHero;

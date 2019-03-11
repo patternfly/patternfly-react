@@ -9,9 +9,10 @@ export default {
   components: {
     Radio
   },
+  variablesRoot: 'pf-c-radio',
   examples: [
     { component: Controlled, title: 'Controlled Radio' },
     { component: Uncontrolled, title: 'Uncontrolled Radio' },
-    { component: Disabled, title: 'Disabled Radio' },
+    { component: Disabled, title: 'Disabled Radio' }
   ]
 };

@@ -1,11 +1,6 @@
-import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
-import { OneOf, Omit } from '../../../../react-core/src/typeUtils';
+import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { SortByDirection } from './SortColumn';
-import { DropdownPosition, DropdownDirection } from '@patternfly/react-core';
-export interface ISortBy {
-  index?: Number;
-  direction?: OneOf<typeof SortByDirection, keyof typeof SortByDirection>;
-}
+import { DropdownPosition, DropdownDirection, OneOf, Omit } from '@patternfly/react-core';
 
 export const TableGridBreakpoint: {
   grid: 'grid',
@@ -15,6 +10,11 @@ export const TableGridBreakpoint: {
 
 export const TableVariant: {
   'compact': 'compact'
+}
+
+export interface ISortBy {
+  index?: Number;
+  direction?: OneOf<typeof SortByDirection, keyof typeof SortByDirection>;
 }
 
 export interface IAction {
@@ -32,13 +32,19 @@ export interface ICell {
   cellTransforms: Array<Function>;
   formatters: Array<Function>;
   cellFormatters: Array<Function>;
-  props: Object;
+  props: unknown;
+}
+
+export interface IRowCell {
+  title: ReactNode;
+  props: unknown;
 }
 
 export interface IRow {
-  cells: Array<String>;
+  cells: Array<ReactNode | IRowCell>;
   isOpen: Boolean;
   parent: Number;
+  props: unknown;
 }
 
 export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSelect'>, 'rows'> {
@@ -51,6 +57,8 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   onSelect?: Function;
   onSort?: Function;
   actions?: Array<IAction | ISeparator>;
+  actionResolver?: (rowData: Object, extraParams: Object) => Array<IAction | ISeparator>;
+  areActionsDisabled?: (rowData: Object, extraParams: Object) => boolean;
   header?: ReactNode;
   caption?: ReactNode;
   rowLabeledBy?: String;
@@ -62,6 +70,6 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   cells: Array<ICell | String>;
 }
 
-declare const Table: SFC<TableProps>;
+declare const Table: FunctionComponent<TableProps>;
 
 export default Table;

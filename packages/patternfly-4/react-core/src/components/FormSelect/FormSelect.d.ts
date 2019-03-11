@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface FormSelectProps
   extends Omit<HTMLProps<HTMLInputElement>, 'onChange' | 'onBlur' | 'onFocus' | 'disabled'> {
@@ -8,7 +8,7 @@ export interface FormSelectProps
   isDisabled?: boolean;
   onBlur?(event: React.FormEvent<HTMLSelectElement>): void;
   onFocus?(event: React.FormEvent<HTMLSelectElement>): void;
-  onChange?(event: React.FormEvent<HTMLSelectElement>): void;
+  onChange?(value: string, event: React.FormEvent<HTMLSelectElement>): void;
 }
 
 declare const FormSelect: FunctionComponent<FormSelectProps>;

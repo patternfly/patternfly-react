@@ -13,8 +13,8 @@ export const propTypes = {
 };
 
 // Note: VictoryPie.role must be hoisted
-const ChartDonut = (props) => (
-  <VictoryPie innerRadius={88} labelComponent={<ChartTooltip/>} padAngle={1} theme={ChartTheme.default} {...props}/>
+const ChartDonut = props => (
+  <VictoryPie innerRadius={88} labelComponent={<ChartTooltip />} padAngle={1} theme={ChartTheme.default} {...props} />
 );
 hoistNonReactStatics(ChartDonut, VictoryPie);
 ChartDonut.propTypes = propTypes;

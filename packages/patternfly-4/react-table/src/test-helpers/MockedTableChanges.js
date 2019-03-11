@@ -10,7 +10,7 @@ export const withContext = ({ context = {}, contextType = {} }) => WrappedCompon
     }
 
     render() {
-      return (<WrappedComponent>{this.props.children}</WrappedComponent>);
+      return <WrappedComponent>{this.props.children}</WrappedComponent>;
     }
   }
   WithContext.WrappedComponent = WrappedComponent;
@@ -30,13 +30,13 @@ export const TableProvider = withContext({
       }
     }
   },
-  contextType: { columns: PropTypes.any, renderers: PropTypes.any },
+  contextType: { columns: PropTypes.any, renderers: PropTypes.any }
 })('table');
 
 export default ({ updateFunc, columns }) => (
-  <TableContext.Provider value={{ updateHeaderData: updateFunc }} >
+  <TableContext.Provider value={{ updateHeaderData: updateFunc }}>
     <TableProvider>
       <TableHeader headerRows={columns} />
     </TableProvider>
-  </ TableContext.Provider >
+  </TableContext.Provider>
 );

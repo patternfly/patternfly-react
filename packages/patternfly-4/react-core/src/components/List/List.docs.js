@@ -9,6 +9,7 @@ export default {
     List,
     ListItem
   },
+  variablesRoot: 'pf-c-list',
   examples: [
     { component: Simple, title: 'Simple List' },
     { component: Inline, title: 'Inline List' },

@@ -7,6 +7,14 @@ module.exports = {
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-json',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `ts-docs`,
+        path: resolve(__dirname, 'ts-docs/')
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

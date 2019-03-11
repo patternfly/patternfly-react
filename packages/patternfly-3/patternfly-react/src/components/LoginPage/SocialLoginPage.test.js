@@ -140,7 +140,6 @@ const createProps = () => {
           href: '#',
           onClick: mockFunction
         },
-        disableSubmit: false,
         submitText: card.form.submitText,
         onSubmit: mockFunction
       },

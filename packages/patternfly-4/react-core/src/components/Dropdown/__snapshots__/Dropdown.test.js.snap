@@ -12,6 +12,7 @@ exports[`KebabToggle basic 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown__menu-item {
@@ -24,8 +25,8 @@ exports[`KebabToggle basic 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
+  background-color: transparent;
   text-decoration: none;
-  background-color: #ededed;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -59,6 +60,7 @@ exports[`KebabToggle basic 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -77,6 +79,7 @@ exports[`KebabToggle basic 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={true}
@@ -92,6 +95,7 @@ exports[`KebabToggle basic 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={true}
@@ -105,6 +109,7 @@ exports[`KebabToggle basic 1`] = `
           aria-haspopup={null}
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -180,6 +185,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
@@ -314,6 +320,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -332,6 +339,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -347,6 +355,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
@@ -360,6 +369,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
           aria-haspopup={true}
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -409,6 +419,7 @@ exports[`KebabToggle dropup 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
@@ -543,6 +554,7 @@ exports[`KebabToggle dropup 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -561,6 +573,7 @@ exports[`KebabToggle dropup 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -576,6 +589,7 @@ exports[`KebabToggle dropup 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
@@ -589,6 +603,7 @@ exports[`KebabToggle dropup 1`] = `
           aria-haspopup={true}
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -638,13 +653,62 @@ exports[`KebabToggle expanded 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
-.pf-m-disabled {
+.pf-c-dropdown__menu-item {
   display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
 }
-.pf-m-disabled {
+.pf-c-dropdown__menu-item {
   display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+}
+.pf-c-dropdown__menu-item.pf-m-disabled {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  pointer-events: none;
+}
+.pf-c-dropdown__menu-item.pf-m-disabled {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  pointer-events: none;
 }
 .pf-c-dropdown__separator {
   display: block;
@@ -659,6 +723,32 @@ exports[`KebabToggle expanded 1`] = `
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   background-color: #ededed;
+}
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+}
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -804,6 +894,7 @@ exports[`KebabToggle expanded 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -822,6 +913,7 @@ exports[`KebabToggle expanded 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={true}
@@ -837,6 +929,7 @@ exports[`KebabToggle expanded 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={true}
@@ -850,6 +943,7 @@ exports[`KebabToggle expanded 1`] = `
           aria-haspopup={true}
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -917,7 +1011,7 @@ exports[`KebabToggle expanded 1`] = `
           >
             <a
               aria-disabled={false}
-              className=""
+              className="pf-c-dropdown__menu-item"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -946,7 +1040,7 @@ exports[`KebabToggle expanded 1`] = `
             role="none"
           >
             <button
-              className=""
+              className="pf-c-dropdown__menu-item"
               disabled={false}
               href="#"
               onClick={[Function]}
@@ -978,7 +1072,7 @@ exports[`KebabToggle expanded 1`] = `
           >
             <a
               aria-disabled={true}
-              className="pf-m-disabled"
+              className="pf-c-dropdown__menu-item pf-m-disabled"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1008,7 +1102,7 @@ exports[`KebabToggle expanded 1`] = `
             role="none"
           >
             <button
-              className="pf-m-disabled"
+              className="pf-c-dropdown__menu-item pf-m-disabled"
               disabled={true}
               href="#"
               onClick={[Function]}
@@ -1078,7 +1172,7 @@ exports[`KebabToggle expanded 1`] = `
           >
             <a
               aria-disabled={false}
-              className=""
+              className="pf-c-dropdown__menu-item"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -1107,7 +1201,7 @@ exports[`KebabToggle expanded 1`] = `
             role="none"
           >
             <button
-              className=""
+              className="pf-c-dropdown__menu-item"
               disabled={false}
               href="#"
               onClick={[Function]}
@@ -1136,8 +1230,8 @@ exports[`KebabToggle plain 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  background-color: transparent;
   color: #72767b;
+  background-color: transparent;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -1271,6 +1365,7 @@ exports[`KebabToggle plain 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -1289,6 +1384,7 @@ exports[`KebabToggle plain 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -1304,6 +1400,7 @@ exports[`KebabToggle plain 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
@@ -1317,6 +1414,7 @@ exports[`KebabToggle plain 1`] = `
           aria-haspopup={true}
           aria-label="Actions"
           className="pf-c-dropdown__toggle pf-m-plain"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1366,6 +1464,7 @@ exports[`KebabToggle regular 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
@@ -1500,6 +1599,7 @@ exports[`KebabToggle regular 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -1518,6 +1618,7 @@ exports[`KebabToggle regular 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -1533,6 +1634,7 @@ exports[`KebabToggle regular 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
@@ -1546,6 +1648,7 @@ exports[`KebabToggle regular 1`] = `
           aria-haspopup={true}
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1595,6 +1698,7 @@ exports[`KebabToggle right aligned 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
@@ -1729,6 +1833,7 @@ exports[`KebabToggle right aligned 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -1747,6 +1852,7 @@ exports[`KebabToggle right aligned 1`] = `
       className=""
       id="Dropdown Toggle"
       isActive={false}
+      isDisabled={false}
       isFocused={false}
       isHovered={false}
       isOpen={false}
@@ -1762,6 +1868,7 @@ exports[`KebabToggle right aligned 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
@@ -1775,6 +1882,7 @@ exports[`KebabToggle right aligned 1`] = `
           aria-haspopup={true}
           aria-label="Actions"
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -1833,6 +1941,7 @@ exports[`dropdown basic 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown__menu-item {
@@ -1845,8 +1954,8 @@ exports[`dropdown basic 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
+  background-color: transparent;
   text-decoration: none;
-  background-color: #ededed;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -1914,6 +2023,7 @@ exports[`dropdown basic 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={true}
@@ -1926,6 +2036,7 @@ exports[`dropdown basic 1`] = `
           aria-expanded={true}
           aria-haspopup={null}
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2017,6 +2128,7 @@ exports[`dropdown dropup + right aligned 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
@@ -2185,6 +2297,7 @@ exports[`dropdown dropup + right aligned 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
@@ -2197,6 +2310,7 @@ exports[`dropdown dropup + right aligned 1`] = `
           aria-expanded={false}
           aria-haspopup={true}
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2262,6 +2376,7 @@ exports[`dropdown dropup 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown.pf-m-top {
@@ -2430,6 +2545,7 @@ exports[`dropdown dropup 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
@@ -2442,6 +2558,7 @@ exports[`dropdown dropup 1`] = `
           aria-expanded={false}
           aria-haspopup={true}
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2507,13 +2624,62 @@ exports[`dropdown expanded 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
-.pf-m-disabled {
+.pf-c-dropdown__menu-item {
   display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
 }
-.pf-m-disabled {
+.pf-c-dropdown__menu-item {
   display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+}
+.pf-c-dropdown__menu-item.pf-m-disabled {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  pointer-events: none;
+}
+.pf-c-dropdown__menu-item.pf-m-disabled {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+  pointer-events: none;
 }
 .pf-c-dropdown__separator {
   display: block;
@@ -2528,6 +2694,32 @@ exports[`dropdown expanded 1`] = `
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   background-color: #ededed;
+}
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
+}
+.pf-c-dropdown__menu-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  text-decoration: none;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -2707,6 +2899,7 @@ exports[`dropdown expanded 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={true}
@@ -2719,6 +2912,7 @@ exports[`dropdown expanded 1`] = `
           aria-expanded={true}
           aria-haspopup={true}
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -2793,7 +2987,7 @@ exports[`dropdown expanded 1`] = `
           >
             <a
               aria-disabled={false}
-              className=""
+              className="pf-c-dropdown__menu-item"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2822,7 +3016,7 @@ exports[`dropdown expanded 1`] = `
             role="none"
           >
             <button
-              className=""
+              className="pf-c-dropdown__menu-item"
               disabled={false}
               href="#"
               onClick={[Function]}
@@ -2854,7 +3048,7 @@ exports[`dropdown expanded 1`] = `
           >
             <a
               aria-disabled={true}
-              className="pf-m-disabled"
+              className="pf-c-dropdown__menu-item pf-m-disabled"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2884,7 +3078,7 @@ exports[`dropdown expanded 1`] = `
             role="none"
           >
             <button
-              className="pf-m-disabled"
+              className="pf-c-dropdown__menu-item pf-m-disabled"
               disabled={true}
               href="#"
               onClick={[Function]}
@@ -2954,7 +3148,7 @@ exports[`dropdown expanded 1`] = `
           >
             <a
               aria-disabled={false}
-              className=""
+              className="pf-c-dropdown__menu-item"
               href="#"
               onClick={[Function]}
               onKeyDown={[Function]}
@@ -2983,7 +3177,7 @@ exports[`dropdown expanded 1`] = `
             role="none"
           >
             <button
-              className=""
+              className="pf-c-dropdown__menu-item"
               disabled={false}
               href="#"
               onClick={[Function]}
@@ -3021,6 +3215,7 @@ exports[`dropdown regular 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
@@ -3189,6 +3384,7 @@ exports[`dropdown regular 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
@@ -3201,6 +3397,7 @@ exports[`dropdown regular 1`] = `
           aria-expanded={false}
           aria-haspopup={true}
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}
@@ -3266,6 +3463,7 @@ exports[`dropdown right aligned 1`] = `
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #282d33;
   background-color: transparent;
 }
 .pf-c-dropdown {
@@ -3434,6 +3632,7 @@ exports[`dropdown right aligned 1`] = `
         className=""
         id="Dropdown Toggle"
         isActive={false}
+        isDisabled={false}
         isFocused={false}
         isHovered={false}
         isOpen={false}
@@ -3446,6 +3645,7 @@ exports[`dropdown right aligned 1`] = `
           aria-expanded={false}
           aria-haspopup={true}
           className="pf-c-dropdown__toggle"
+          disabled={false}
           id="Dropdown Toggle"
           onClick={[Function]}
           onKeyDown={[Function]}

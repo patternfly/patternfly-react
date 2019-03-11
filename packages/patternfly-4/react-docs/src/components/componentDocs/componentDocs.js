@@ -7,8 +7,10 @@ import Example from '../example';
 import Content from '../content';
 import { Title } from '@patternfly/react-core';
 import PropsTable from '../propsTable';
+import PropsTableTs from '../propsTableTs';
 import Section from '../section';
 import DocsLayout from '../layouts';
+import Tokens from '../css-variables';
 
 const propTypes = {
   data: PropTypes.any.isRequired,
@@ -29,7 +31,9 @@ const propTypes = {
   enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
   rawExamples: PropTypes.array,
   images: PropTypes.array,
-  fullPageOnly: PropTypes.bool
+  fullPageOnly: PropTypes.bool,
+  variablesRoot: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  location: PropTypes.any
 };
 
 const defaultProps = {
@@ -39,7 +43,9 @@ const defaultProps = {
   enumValues: {},
   rawExamples: [],
   images: [],
-  fullPageOnly: false
+  fullPageOnly: false,
+  variablesRoot: null,
+  location: null
 };
 
 class ComponentDocs extends React.PureComponent {
@@ -53,12 +59,15 @@ class ComponentDocs extends React.PureComponent {
       enumValues,
       fullPageOnly,
       rawExamples,
-      images
+      images,
+      variablesRoot,
+      location
     } = this.props;
     const makeDescription = html => ({ __html: html });
     const getDocGenInfo = name => data.allComponentMetadata.edges.find(edge => edge.node.displayName === name);
+    const getDocGenInfoTs = name => data.allTsDocsJson.edges[0].node.data.find(edge => edge.name === `${name}Props`);
     return (
-      <DocsLayout>
+      <DocsLayout location={location}>
         <Content>
           <Title size="3xl">{title}</Title>
           {Boolean(description) && (
@@ -89,20 +98,32 @@ class ComponentDocs extends React.PureComponent {
           </Section>
           {Object.entries(components).map(([componentName]) => {
             // Only generate docs for props for javascript code.
-            const componentDocs = getDocGenInfo(componentName);
-            if (componentDocs) {
+            const componentDocsJs = getDocGenInfo(componentName);
+            if (componentDocsJs) {
               return (
                 <PropsTable
                   key={componentName}
                   name={componentName}
-                  description={componentDocs.node.description}
-                  props={componentDocs.node.props}
+                  description={componentDocsJs.node.description}
+                  props={componentDocsJs.node.props}
                   enumValues={enumValues}
                 />
               );
             }
+            let componentDocsTs;
+            if (!componentDocsJs) {
+              componentDocsTs = getDocGenInfoTs(componentName);
+              if (componentDocsTs) {
+                return <PropsTableTs key={componentName} name={componentName} props={componentDocsTs.children} />;
+              }
+            }
             return null;
           })}
+          {variablesRoot && (
+            <Section title="CSS Variables" headingLevel="h2">
+              <Tokens variables={variablesRoot} />
+            </Section>
+          )}
         </Content>
       </DocsLayout>
     );
@@ -111,7 +132,6 @@ class ComponentDocs extends React.PureComponent {
 
 ComponentDocs.propTypes = propTypes;
 ComponentDocs.defaultProps = defaultProps;
-
 
 export default props => (
   <StaticQuery
@@ -137,6 +157,31 @@ export default props => (
                   value
                 }
                 required
+              }
+            }
+          }
+        }
+        allTsDocsJson {
+          edges {
+            node {
+              id
+              name
+              kind
+              data {
+                name
+                children {
+                  name
+                  comment {
+                    shortText
+                  }
+                  type {
+                    type
+                    name
+                  }
+                  flags {
+                    isOptional
+                  }
+                }
               }
             }
           }

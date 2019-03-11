@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import AboutModalContainer from './AboutModalContainer';
 import { canUseDOM } from 'exenv';
-import { KEY_CODES } from '../../internal/constants';
+import { KEY_CODES } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/Backdrop/backdrop.css';
+import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
 
 const propTypes = {
   /** content rendered inside the About Modal. */
@@ -33,10 +33,6 @@ const propTypes = {
     }
     return null;
   },
-  /** the URL of the image for the Hero. */
-  heroImageSrc: PropTypes.string.isRequired,
-  /** the alternate text of the Hero image. */
-  heroImageAlt: PropTypes.string,
   /** Additional props are passed and spread to Modal content container <div> */
   '': PropTypes.any
 };
@@ -47,8 +43,7 @@ const defaultProps = {
   onClose: () => undefined,
   trademark: '',
   logoImageSrc: '',
-  logoImageAlt: '',
-  heroImageAlt: ''
+  logoImageAlt: ''
 };
 
 let currentId = 0;

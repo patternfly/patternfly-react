@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import ModalContent from './ModalContent';
-import safeHTMLElement from '../../internal/safeHTMLElement';
+import safeHTMLElement from '../../helpers/safeHTMLElement';
 import { canUseDOM } from 'exenv';
-import { KEY_CODES } from '../../internal/constants';
+import { KEY_CODES } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/Backdrop/backdrop.css';
+import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
 
 const propTypes = {
   /** content rendered inside the Modal. */
@@ -23,19 +23,25 @@ const propTypes = {
   actions: PropTypes.any,
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
+  /** Default width of the Modal. */
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Creates a large version of the Modal */
   isLarge: PropTypes.bool,
+  /** Creates a small version of the Modal */
+  isSmall: PropTypes.bool,
   /** Additional props are passed and spread in the Modal body container <div> */
   '': PropTypes.any
 };
 
 const defaultProps = {
+  width: null,
   className: '',
   isOpen: false,
   hideTitle: false,
   actions: [],
   onClose: () => undefined,
-  isLarge: false
+  isLarge: false,
+  isSmall: false
 };
 
 let currentId = 0;

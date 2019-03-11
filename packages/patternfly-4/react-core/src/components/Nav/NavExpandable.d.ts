@@ -9,6 +9,7 @@ export interface NavExpandableProps extends HTMLProps<HTMLDivElement> {
   groupId?: string | number;
   isActive?: boolean;
   id?: string;
+  onExpand?(e: Event, val: boolean): void;
 }
 
 declare const NavExpandable: FunctionComponent<NavExpandableProps>;

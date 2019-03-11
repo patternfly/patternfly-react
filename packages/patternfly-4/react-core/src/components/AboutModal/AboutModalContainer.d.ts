@@ -12,8 +12,6 @@ export interface AboutModalContainerProps extends HTMLProps<HTMLDivElement> {
   brandImageAlt: string;
   logoImageSrc: string;
   logoImageAlt: string;
-  heroImageSrc: string;
-  heroImageAlt?: string;
 }
 
 declare const AboutModalContainer: FunctionComponent<AboutModalContainerProps>;

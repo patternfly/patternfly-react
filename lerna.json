@@ -1,8 +1,5 @@
 {
   "lerna": "3.10.5",
-  "nohoist": [
-    "babel*"
-  ],
   "npmClient": "yarn",
   "publishConfig": {
     "access": "public",
@@ -23,7 +20,7 @@
   },
   "command": {
     "publish": {
-      "message": "chore(release): releasing packages",
+      "message": "chore(release): releasing packages [ci skip]",
       "conventionalCommits": true
     }
   },

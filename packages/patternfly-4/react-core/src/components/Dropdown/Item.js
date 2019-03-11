@@ -1,22 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DropdownItem from './DropdownItem';
-import styles from '@patternfly/patternfly-next/components/Dropdown/dropdown.css';
 import { css } from '@patternfly/react-styles';
-import { componentShape } from '../../internal/componentShape';
+import { componentShape } from '../../helpers/componentShape';
 import { DropdownArrowContext } from './dropdownConstants';
 
 const Item = ({ className, ...props }) => (
   <DropdownArrowContext.Consumer>
-    {context => (
-      <DropdownItem
-        {...props}
-        context={context}
-        role="menuitem"
-        tabIndex={-1}
-        className={css(styles.dropdownMenuItem, className)}
-      />
-    )}
+    {context => <DropdownItem {...props} context={context} role="menuitem" tabIndex={-1} />}
   </DropdownArrowContext.Consumer>
 );
 

@@ -7,9 +7,6 @@ import {
   FormSelectOption,
   FormSelect,
   Radio,
-  Toolbar,
-  ToolbarItem,
-  ToolbarGroup,
   Button,
   ActionGroup,
   Checkbox
@@ -105,28 +102,14 @@ class HorizontalForm extends React.Component {
           <Radio label="No" aria-label="no" id="horizontal-radio2" name="horizontal-radios" />
         </FormGroup>
         <ActionGroup>
-          <Toolbar>
-            <ToolbarGroup>
-              <ToolbarItem>
-                <Button variant="primary">Submit form</Button>
-              </ToolbarItem>
-            </ToolbarGroup>
-            <ToolbarGroup>
-              <ToolbarItem>
-                <Button variant="secondary">Cancel</Button>
-              </ToolbarItem>
-            </ToolbarGroup>
-            <ToolbarGroup>
-              <ToolbarItem>
-                <Checkbox
-                  label="Remember my password for 30 days"
-                  aria-label="Remember my password for 30 days"
-                  id="alt-form-checkbox-1"
-                  name="alt-form-checkbox-1"
-                />
-              </ToolbarItem>
-            </ToolbarGroup>
-          </Toolbar>
+          <Button variant="primary">Submit form</Button>
+          <Button variant="secondary">Cancel</Button>
+          <Checkbox
+            label="Remember my password for 30 days"
+            aria-label="Remember my password for 30 days"
+            id="alt-form-checkbox-1"
+            name="alt-form-checkbox-1"
+          />
         </ActionGroup>
       </Form>
     );

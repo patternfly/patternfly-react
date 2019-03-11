@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@patternfly/react-styles';
-import styles from '@patternfly/patternfly-next/components/Check/check.css';
 
 const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  onSelect: PropTypes.func,
+  onSelect: PropTypes.func
 };
 const defaultProps = {
   children: null,
@@ -16,7 +14,7 @@ const defaultProps = {
 
 const SelectColumn = ({ children, className, onSelect, ...props }) => (
   <React.Fragment>
-    <input {...props} className={css(styles.checkInput)} type="checkbox" onChange={onSelect}></input>
+    <input {...props} type="checkbox" onChange={onSelect} />
     {children}
   </React.Fragment>
 );

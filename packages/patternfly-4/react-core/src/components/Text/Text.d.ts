@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
-import { OneOf } from '../../typeUtils';
+import { OneOf } from '../../helpers/typeUtils';
 
 export const TextVariants: {
   h1: 'h1';

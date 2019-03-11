@@ -45,10 +45,9 @@ import '@patternfly/react-core/dist/styles/base.css';
 import React from 'react';
 import { Area } from '@patternfly/react-charts';
 
-export default <Area/>;
+export default <Area />;
 
-<Area data={[{ x: 1, y: 1 }, { x: 2, y: 2 }]}/>
-
+<Area data={[{ x: 1, y: 1 }, { x: 2, y: 2 }]} />;
 ```
 
 All css related to each component is provided alongside it. There is no component level CSS to import.
@@ -106,5 +105,5 @@ Testing is done at the root of this repo. To only run the patternfly-react tests
 yarn test packages/patternfly-4/react-charts
 ```
 
-[patternfly-4]: https://github.com/patternfly/patternfly-next
+[patternfly-4]: https://github.com/patternfly/patternfly
 [docs]: https://patternfly-react.surge.sh/patternfly-4

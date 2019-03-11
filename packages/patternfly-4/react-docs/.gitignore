@@ -1,6 +1,5 @@
-node_modules
-dist
-public/
 .cache
 .tmp
-static/
+public
+static
+ts-docs

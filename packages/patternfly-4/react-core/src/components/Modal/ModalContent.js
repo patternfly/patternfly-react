@@ -8,6 +8,8 @@ import ModalBox from './ModalBox';
 import ModalBoxFooter from './ModalBoxFooter';
 import Backdrop from '../Backdrop/Backdrop';
 import Bullseye from '../../layouts/Bullseye/Bullseye';
+import bullseyeStyle from '@patternfly/patternfly/layouts/Bullseye/bullseye.css';
+import { css } from '@patternfly/react-styles';
 
 const propTypes = {
   /** content rendered inside the Modal. */
@@ -24,8 +26,12 @@ const propTypes = {
   actions: PropTypes.any,
   /** A callback for when the close button is clicked */
   onClose: PropTypes.func,
+  /** Default width of the Modal. */
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Creates a large version of the Modal */
   isLarge: PropTypes.bool,
+  /** Creates a small version of the Modal */
+  isSmall: PropTypes.bool,
   /** id to use for Modal Box description */
   id: PropTypes.string.isRequired,
   /** Additional props are spread to the ModalBoxBody component */
@@ -33,15 +39,30 @@ const propTypes = {
 };
 
 const defaultProps = {
+  width: null,
   className: '',
   isOpen: false,
   hideTitle: false,
   actions: [],
   onClose: () => undefined,
-  isLarge: false
+  isLarge: false,
+  isSmall: false
 };
 
-const ModalContent = ({ children, className, isOpen, title, hideTitle, actions, onClose, isLarge, id, ...props }) => {
+const ModalContent = ({
+  children,
+  className,
+  isOpen,
+  title,
+  hideTitle,
+  actions,
+  onClose,
+  isLarge,
+  isSmall,
+  width,
+  id,
+  ...props
+}) => {
   const modalBoxHeader = title && <ModalBoxHeader> {title} </ModalBoxHeader>;
   const modalBoxFooter = actions.length > 0 && <ModalBoxFooter> {actions} </ModalBoxFooter>;
   if (!isOpen) {
@@ -50,8 +71,8 @@ const ModalContent = ({ children, className, isOpen, title, hideTitle, actions, 
   return (
     <Backdrop>
       <Bullseye>
-        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-          <ModalBox className={className} isLarge={isLarge} title={title} id={id}>
+        <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(bullseyeStyle.bullseye)}>
+          <ModalBox style={{ width }} className={className} isLarge={isLarge} isSmall={isSmall} title={title} id={id}>
             <ModalBoxHCloseButton onClose={onClose} />
             {modalBoxHeader}
             <ModalBoxBody {...props} id={id}>

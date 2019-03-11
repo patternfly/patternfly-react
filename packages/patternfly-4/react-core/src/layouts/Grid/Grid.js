@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/layouts/Grid/grid.css';
+import styles from '@patternfly/patternfly/layouts/Grid/grid.css';
 import { css } from '@patternfly/react-styles';
 import { GutterSize, getGutterModifier } from '../../styles/gutters';
 import { getGridSpanModifier, gridSpans } from './gridUtils';
@@ -57,7 +57,11 @@ const Grid = ({ children, className, gutter, span, ...props }) => {
 
   return (
     <div
-      className={css(...classes, gutter && getGutterModifier(styles, gutter, styles.modifiers.gutter), className)}
+      className={css(
+        ...classes,
+        gutter && getGutterModifier(styles, gutter, styles.modifiers && styles.modifiers.gutter),
+        className
+      )}
       {...props}
     >
       {children}

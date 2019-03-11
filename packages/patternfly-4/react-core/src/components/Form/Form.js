@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Form/form.css';
+import styles from '@patternfly/patternfly/components/Form/form.css';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import { FormContext } from './FormContext';

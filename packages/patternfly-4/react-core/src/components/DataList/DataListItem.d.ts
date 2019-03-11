@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface DataListItemProps extends Omit<HTMLProps<HTMLLIElement>, 'aria-label'> {
   isExpanded: boolean;

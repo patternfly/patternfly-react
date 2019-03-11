@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import AboutModal from './AboutModal';
 import ReactDOM from 'react-dom';
-import { KEY_CODES } from '../../internal/constants';
+import { KEY_CODES } from '../../helpers/constants';
 
 jest.spyOn(ReactDOM, 'createPortal');
 jest.spyOn(document, 'createElement');
@@ -18,8 +18,7 @@ const props = {
   brandImageSrc: 'brandImg...',
   brandImageAlt: 'Brand Image',
   logoImageSrc: 'logoImg...',
-  logoImageAlt: 'AboutModal Logo',
-  heroImageSrc: 'heroImg...'
+  logoImageAlt: 'AboutModal Logo'
 };
 
 test('AboutModal creates a container element once for div', () => {
@@ -64,8 +63,7 @@ test('Console error is generated when the logoImageSrc is provided without logoI
     trademark: 'Trademark and copyright information here',
     brandImageSrc: 'brandImg...',
     brandImageAlt: 'Brand Image',
-    logoImageSrc: 'logoImg...',
-    heroImageSrc: 'heroImg...'
+    logoImageSrc: 'logoImg...'
   };
   const myMock = jest.fn();
   global.console = { error: myMock };

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
+import styles from '@patternfly/patternfly/components/Nav/nav.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { NavContext } from './Nav';
@@ -57,10 +57,12 @@ const NavItem = ({
         <a
           href={to}
           onClick={e => context.onSelect(e, groupId, itemId, to, preventDefault, onClick)}
-          className={css(styles.navLink,
+          className={css(
+            styles.navLink,
             isActive && styles.modifiers.current,
             isSeparated && styles.modifiers.separator,
-            className)}
+            className
+          )}
           aria-current={isActive ? 'page' : null}
           {...rest}
         >
@@ -80,7 +82,8 @@ const NavItem = ({
             styles.navLink,
             isActive && styles.modifiers.current,
             isSeparated && styles.modifiers.separator,
-            className),
+            className
+          ),
           'aria-current': isActive ? 'page' : null
         })
       }

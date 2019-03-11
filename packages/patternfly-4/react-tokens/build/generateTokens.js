@@ -6,7 +6,7 @@ const { readFileSync, readdirSync } = require('fs');
 const { outputFileSync } = require('fs-extra');
 
 const outDir = resolve(__dirname, '../dist');
-const pfStylesDir = dirname(require.resolve('@patternfly/patternfly-next/patternfly.css'));
+const pfStylesDir = dirname(require.resolve('@patternfly/patternfly/patternfly.css'));
 const templateDir = resolve(__dirname, './templates');
 
 const cssFiles = glob.sync('**/*.css', {
@@ -21,9 +21,10 @@ cssFiles.forEach(filePath => {
   const absFilePath = resolve(pfStylesDir, filePath);
   const cssAst = parse(readFileSync(absFilePath, 'utf8'));
   cssAst.stylesheet.rules.forEach(node => {
-    if (node.type !== 'rule') {
+    if (node.type !== 'rule' || node.selectors.indexOf('.pf-t-dark') !== -1) {
       return;
     }
+
     node.declarations.forEach(decl => {
       if (decl.type !== 'declaration') {
         return;

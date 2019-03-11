@@ -9,28 +9,30 @@ class ControlledCheckbox extends React.Component {
 
   handleChange = checked => {
     const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
     this.setState({ [name]: value });
   };
 
   render() {
-    return <React.Fragment>
-      <Checkbox
-        label="Controlled CheckBox"
-        isChecked={this.state.check1}
-        onChange={this.handleChange}
-        aria-label="controlled checkbox example"
-        id="check-1"
-      />
-      <Checkbox
-        label="Controlled CheckBox"
-        isChecked={this.state.check2}
-        onChange={this.handleChange}
-        aria-label="controlled checkbox example"
-        id="check-2"
-      />
-    </React.Fragment>;
+    return (
+      <React.Fragment>
+        <Checkbox
+          label="Controlled CheckBox"
+          isChecked={this.state.check1}
+          onChange={this.handleChange}
+          aria-label="controlled checkbox example"
+          id="check-1"
+        />
+        <Checkbox
+          label="Controlled CheckBox"
+          isChecked={this.state.check2}
+          onChange={this.handleChange}
+          aria-label="controlled checkbox example"
+          id="check-2"
+        />
+      </React.Fragment>
+    );
   }
 }
 

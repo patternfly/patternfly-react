@@ -13,25 +13,25 @@ class WarningAlert extends React.Component {
         {alertOneVisible && (
           <Alert
             variant="warning"
-            title="Warning notification title"
+            title="Warning alert title"
             action={<AlertActionCloseButton onClose={this.hideAlertOne} />}
           >
-            Warning notification description. <a href="#">This is a link.</a>
+            Warning alert description. <a href="#">This is a link.</a>
           </Alert>
         )}
         {alertTwoVisible && (
           <Alert
             variant="warning"
-            title="Warning notification title"
+            title="Warning alert title"
             action={<AlertActionCloseButton onClose={this.hideAlertTwo} />}
           />
         )}
         <Alert
           variant="warning"
-          title="Warning notification title"
+          title="Warning alert title"
           action={<AlertActionLink>Action Button</AlertActionLink>}
         />
-        <Alert variant="warning" title="Warning notification title" />
+        <Alert variant="warning" title="Warning alert title" />
       </React.Fragment>
     );
   }

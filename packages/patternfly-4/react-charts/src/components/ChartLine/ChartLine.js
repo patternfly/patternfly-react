@@ -12,9 +12,7 @@ export const propTypes = {
 };
 
 // Note: VictoryLine.role must be hoisted
-const ChartLine = (props) => (
-  <VictoryLine theme={ChartTheme.default} {...props}/>
-);
+const ChartLine = props => <VictoryLine theme={ChartTheme.default} {...props} />;
 hoistNonReactStatics(ChartLine, VictoryLine);
 ChartLine.propTypes = propTypes;
 

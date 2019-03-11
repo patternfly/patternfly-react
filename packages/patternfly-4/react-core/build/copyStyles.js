@@ -5,7 +5,7 @@ const { parse: parseCSS, stringify: stringifyCSS } = require('css');
 
 const baseCSSFilename = 'patternfly-base.css';
 const stylesDir = resolve(__dirname, '../dist/styles');
-const pfDir = dirname(require.resolve(`@patternfly/patternfly-next/${baseCSSFilename}`));
+const pfDir = dirname(require.resolve(`@patternfly/patternfly/${baseCSSFilename}`));
 
 const css = readFileSync(join(pfDir, baseCSSFilename), 'utf8');
 const ast = parseCSS(css);
@@ -34,6 +34,7 @@ ast.stylesheet.rules = ast.stylesheet.rules.filter(rule => {
 });
 
 copySync(join(pfDir, 'assets/images'), join(stylesDir, 'assets/images'));
+copySync(join(pfDir, 'assets/pficon'), join(stylesDir, 'assets/pficon'));
 copySync(join(pfDir, 'assets/fonts'), join(stylesDir, 'assets/fonts'), {
   filter(src) {
     return !ununsedFontFilesRegExt.test(src);

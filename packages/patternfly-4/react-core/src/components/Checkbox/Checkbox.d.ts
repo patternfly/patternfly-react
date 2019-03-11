@@ -1,5 +1,5 @@
 import { FormEvent, FunctionComponent, HTMLProps, ReactNode } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
 export interface CheckboxProps extends Omit<HTMLProps<HTMLInputElement>, 'type' | 'onChange' | 'disabled' | 'label'> {
   isDisabled?: boolean;

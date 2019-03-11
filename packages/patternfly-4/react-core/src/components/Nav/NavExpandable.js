@@ -1,19 +1,19 @@
 import React from 'react';
-import styles from '@patternfly/patternfly-next/components/Nav/nav.css';
-import a11yStyles from '@patternfly/patternfly-next/utilities/Accessibility/accessibility.css';
+import styles from '@patternfly/patternfly/components/Nav/nav.css';
+import a11yStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import NavToggle from './NavToggle';
 import { AngleRightIcon } from '@patternfly/react-icons';
 import { NavContext } from './Nav';
-import { getUniqueId } from '../../internal/util';
+import { getUniqueId } from '../../helpers/util';
 
 const propTypes = {
   /** Title shown for the expandable list */
   title: PropTypes.string.isRequired,
   /** If defined, screen readers will read this text instead of the list title */
   srText: PropTypes.string,
-  /** If true will default the list to be expanded */
+  /** Boolean to programatically expand or collapse section */
   isExpanded: PropTypes.bool,
   /** Anything that can be rendered inside of the expandable list */
   children: PropTypes.node,
@@ -26,7 +26,9 @@ const propTypes = {
   /** Identifier to use for the section aria label */
   id: PropTypes.string,
   /** Additional props are spread to the container <li> */
-  '': PropTypes.any
+  '': PropTypes.any,
+  /** allow consumer to optionally override this callback and manage expand state externally */
+  onExpand: PropTypes.func
 };
 
 const defaultProps = {
@@ -36,34 +38,47 @@ const defaultProps = {
   className: '',
   groupId: null,
   isActive: false,
-  id: ''
+  id: '',
+  onExpand: undefined
 };
 
 class NavExpandable extends React.Component {
   id = this.props.id || getUniqueId();
+  state = {
+    expandedState: false
+  };
+
+  componentDidMount() {
+    this.setState({ expandedState: this.props.isExpanded });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.isExpanded !== prevProps.isExpanded) {
+      this.setState({ expandedState: this.props.isExpanded });
+    }
+  }
+
+  onExpand = (e, val) => {
+    if (this.props.onExpand) {
+      this.props.onExpand(e, val);
+    } else {
+      this.setState({ expandedState: val });
+    }
+  };
 
   render() {
-    const {
-      id,
-      title,
-      srText,
-      isExpanded: defaultExpanded,
-      children,
-      className,
-      groupId,
-      isActive,
-      ...props
-    } = this.props;
+    const { id, title, srText, isExpanded, children, className, groupId, isActive, onExpand, ...props } = this.props;
+    const { expandedState } = this.state;
 
     return (
       <NavContext.Consumer>
         {context => (
-          <NavToggle defaultValue={defaultExpanded} groupId={groupId} onToggle={context.onToggle}>
-            {({ value: isExpanded, toggle }) => (
+          <NavToggle groupId={groupId} onToggle={context.onToggle} onExpand={this.onExpand} isExpanded={expandedState}>
+            {({ toggleValue, toggle }) => (
               <li
                 className={css(
                   styles.navItem,
-                  isExpanded && styles.modifiers.expanded,
+                  toggleValue && styles.modifiers.expanded,
                   isActive && styles.modifiers.current,
                   className
                 )}
@@ -77,14 +92,14 @@ class NavExpandable extends React.Component {
                   href="#"
                   onClick={e => e.preventDefault()}
                   onMouseDown={e => e.preventDefault()}
-                  aria-expanded={isExpanded}
+                  aria-expanded={toggleValue}
                 >
                   {title}
                   <span className={css(styles.navToggle)}>
                     <AngleRightIcon aria-hidden="true" />
                   </span>
                 </a>
-                <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={isExpanded ? null : true}>
+                <section className={css(styles.navSubnav)} aria-labelledby={this.id} hidden={toggleValue ? null : true}>
                   {srText && (
                     <h2 className={css(a11yStyles.screenReader)} id={this.id}>
                       {srText}

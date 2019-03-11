@@ -12,8 +12,8 @@ import {
   ToolbarItem
 } from '@patternfly/react-core';
 import { css } from '@patternfly/react-styles';
-import flexStyles from '@patternfly/patternfly-next/utilities/Flex/flex.css';
-import spacingStyles from '@patternfly/patternfly-next/utilities/Spacing/spacing.css';
+import flexStyles from '@patternfly/patternfly/utilities/Flex/flex.css';
+import spacingStyles from '@patternfly/patternfly/utilities/Spacing/spacing.css';
 import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
 class SimpleToolbarDemo extends React.Component {
@@ -72,10 +72,11 @@ class SimpleToolbarDemo extends React.Component {
           <DropdownItem key="item-1">Item 1</DropdownItem>,
           <DropdownItem key="item2">Item 2</DropdownItem>,
           <DropdownItem key="item-3">Item 3</DropdownItem>,
-          <DropdownItem isDisabled key="all">All</DropdownItem>
+          <DropdownItem isDisabled key="all">
+            All
+          </DropdownItem>
         ]}
-      >
-      </Dropdown>
+      />
     );
   };
   buildKebab = () => {
@@ -91,14 +92,17 @@ class SimpleToolbarDemo extends React.Component {
         isPlain
         dropdownItems={[
           <DropdownItem key="link">Link</DropdownItem>,
-          <DropdownItem component="button" key="action-button">Action</DropdownItem>,
-          <DropdownItem isDisabled key="disabled-link">Disabled Link</DropdownItem>,
+          <DropdownItem component="button" key="action-button">
+            Action
+          </DropdownItem>,
+          <DropdownItem isDisabled key="disabled-link">
+            Disabled Link
+          </DropdownItem>,
           <DropdownItem isDisabled component="button" key="disabled-button">
             Disabled Action
           </DropdownItem>
         ]}
-      >
-      </Dropdown>
+      />
     );
   };
   render() {

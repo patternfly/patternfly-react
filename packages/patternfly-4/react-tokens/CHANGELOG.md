@@ -3,6 +3,81 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.0.5...@patternfly/react-tokens@2.0.6) (2019-03-08)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 2.0.5 (2019-03-08)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.0.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.0.3...@patternfly/react-tokens@2.0.4) (2019-03-05)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## 2.0.3 (2019-03-04)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.0.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.0.1...@patternfly/react-tokens@2.0.2) (2019-02-15)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
+## [2.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.0.0...@patternfly/react-tokens@2.0.1) (2019-02-13)
+
+
+### Bug Fixes
+
+* **tokens:** Use only light theme variables ([#1330](https://github.com/patternfly/patternfly-react/issues/1330)) ([300f6f3](https://github.com/patternfly/patternfly-react/commit/300f6f3))
+
+
+
+
+
+# [2.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.10.2...@patternfly/react-tokens@2.0.0) (2019-02-08)
+
+
+### Code Refactoring
+
+* **AboutModal:** Upgrade core to 1.0.175 and Refactor AboutModal ([#1307](https://github.com/patternfly/patternfly-react/issues/1307)) ([1f85756](https://github.com/patternfly/patternfly-react/commit/1f85756)), closes [#1267](https://github.com/patternfly/patternfly-react/issues/1267)
+
+
+### BREAKING CHANGES
+
+* **AboutModal:** removed heroImg and heroImageSrc and heroImageAlt props
+
+
+
+
+
+## [1.10.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.10.1...@patternfly/react-tokens@1.10.2) (2019-02-01)
+
+**Note:** Version bump only for package @patternfly/react-tokens
+
+
+
+
+
 ## [1.10.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@1.10.0...@patternfly/react-tokens@1.10.1) (2019-01-29)
 
 **Note:** Version bump only for package @patternfly/react-tokens

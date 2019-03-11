@@ -3,6 +3,379 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.4.0...@patternfly/react-core@2.4.1) (2019-03-11)
+
+
+### Bug Fixes
+
+* **tsconfig:** avatar tsx change ([#1535](https://github.com/patternfly/patternfly-react/issues/1535)) ([8107f5c](https://github.com/patternfly/patternfly-react/commit/8107f5c))
+
+
+
+
+
+# [2.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.7...@patternfly/react-core@2.4.0) (2019-03-08)
+
+
+### Bug Fixes
+
+* **core:** fix pagination tests ([#1530](https://github.com/patternfly/patternfly-react/issues/1530)) ([1116f32](https://github.com/patternfly/patternfly-react/commit/1116f32))
+
+
+### Features
+
+* **Pagination:** Introduce new PF4 pagination component ([#1297](https://github.com/patternfly/patternfly-react/issues/1297)) ([4778a28](https://github.com/patternfly/patternfly-react/commit/4778a28))
+
+
+
+
+
+## [2.3.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.6...@patternfly/react-core@2.3.7) (2019-03-08)
+
+
+### Bug Fixes
+
+* **typeUtils:** export typeUtils and move them to helpers ([#1521](https://github.com/patternfly/patternfly-react/issues/1521)) ([886082d](https://github.com/patternfly/patternfly-react/commit/886082d))
+
+
+
+
+
+## [2.3.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.5...@patternfly/react-core@2.3.6) (2019-03-06)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.3.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.4...@patternfly/react-core@2.3.5) (2019-03-06)
+
+
+### Bug Fixes
+
+* **datalistitem:** add validity check before cloning children ([#1512](https://github.com/patternfly/patternfly-react/issues/1512)) ([05cc2a2](https://github.com/patternfly/patternfly-react/commit/05cc2a2))
+
+
+
+
+
+## [2.3.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.3...@patternfly/react-core@2.3.4) (2019-03-05)
+
+
+### Bug Fixes
+
+* **iconOnly:** Add conditional for icon only styles ([#1505](https://github.com/patternfly/patternfly-react/issues/1505)) ([abdbcb1](https://github.com/patternfly/patternfly-react/commit/abdbcb1))
+* **nav:** fix React warning with onExpand prop ([#1504](https://github.com/patternfly/patternfly-react/issues/1504)) ([a879274](https://github.com/patternfly/patternfly-react/commit/a879274))
+
+
+
+
+
+## [2.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.2...@patternfly/react-core@2.3.3) (2019-03-05)
+
+
+### Bug Fixes
+
+* **navExpand:** remove defaultExpand in favor of just using isExpanded ([#1490](https://github.com/patternfly/patternfly-react/issues/1490)) ([9aafabd](https://github.com/patternfly/patternfly-react/commit/9aafabd))
+
+
+
+
+
+## [2.3.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.1...@patternfly/react-core@2.3.2) (2019-03-05)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.0...@patternfly/react-core@2.3.1) (2019-03-04)
+
+
+### Bug Fixes
+
+* **inputgroup:** fix typescript and examples ([#1489](https://github.com/patternfly/patternfly-react/issues/1489)) ([59c29a5](https://github.com/patternfly/patternfly-react/commit/59c29a5))
+
+
+
+
+
+# [2.3.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.11...@patternfly/react-core@2.3.0) (2019-03-04)
+
+
+### Bug Fixes
+
+* **nav:** Fix bug where previous was expanding on select ([#1479](https://github.com/patternfly/patternfly-react/issues/1479)) ([f0863a0](https://github.com/patternfly/patternfly-react/commit/f0863a0))
+
+
+### Features
+
+* **InputGroup:** Add InputGroup to PF4 ([#1108](https://github.com/patternfly/patternfly-react/issues/1108)) ([807ca69](https://github.com/patternfly/patternfly-react/commit/807ca69))
+
+
+
+
+
+## [2.2.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.10...@patternfly/react-core@2.2.11) (2019-02-28)
+
+
+### Bug Fixes
+
+* **Select:** fix typescript def for SelectProps and SelectOptionProps ([#1470](https://github.com/patternfly/patternfly-react/issues/1470)) ([56e6340](https://github.com/patternfly/patternfly-react/commit/56e6340))
+
+
+
+
+
+## [2.2.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.9...@patternfly/react-core@2.2.10) (2019-02-28)
+
+
+### Bug Fixes
+
+* **DataList:** Add aria-label and aria-labelledby improvements ([#1347](https://github.com/patternfly/patternfly-react/issues/1347)) ([4aa38fe](https://github.com/patternfly/patternfly-react/commit/4aa38fe)), closes [#1163](https://github.com/patternfly/patternfly-react/issues/1163) [#1163](https://github.com/patternfly/patternfly-react/issues/1163) [#1163](https://github.com/patternfly/patternfly-react/issues/1163)
+
+
+
+
+
+## [2.2.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.8...@patternfly/react-core@2.2.9) (2019-02-25)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.2.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.7...@patternfly/react-core@2.2.8) (2019-02-25)
+
+
+### Bug Fixes
+
+* **modalbox:** add the small modifier to modalbox ([#1372](https://github.com/patternfly/patternfly-react/issues/1372)) ([ca131f3](https://github.com/patternfly/patternfly-react/commit/ca131f3))
+
+
+
+
+
+## [2.2.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.5...@patternfly/react-core@2.2.7) (2019-02-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.2.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.4...@patternfly/react-core@2.2.5) (2019-02-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.2.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.3...@patternfly/react-core@2.2.4) (2019-02-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.2.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.2...@patternfly/react-core@2.2.3) (2019-02-20)
+
+
+### Bug Fixes
+
+* **lint:** fix linting glob and auto-fixable linter errors  ([#1256](https://github.com/patternfly/patternfly-react/issues/1256)) ([#1409](https://github.com/patternfly/patternfly-react/issues/1409)) ([0b637fe](https://github.com/patternfly/patternfly-react/commit/0b637fe))
+
+
+
+
+
+## [2.2.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.1...@patternfly/react-core@2.2.2) (2019-02-19)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.2.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.2.0...@patternfly/react-core@2.2.1) (2019-02-19)
+
+
+### Bug Fixes
+
+* **login:** Add union types for backgroundImgSrc ([#1373](https://github.com/patternfly/patternfly-react/issues/1373)) ([79b4f20](https://github.com/patternfly/patternfly-react/commit/79b4f20))
+
+
+
+
+
+# [2.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.8...@patternfly/react-core@2.2.0) (2019-02-18)
+
+
+### Bug Fixes
+
+* additional boolean check in Grid layout ([#1404](https://github.com/patternfly/patternfly-react/issues/1404)) ([eecc4cf](https://github.com/patternfly/patternfly-react/commit/eecc4cf))
+
+
+### Features
+
+* **Progress:** add single line progress handling and example ([#1335](https://github.com/patternfly/patternfly-react/issues/1335)) ([592ffdb](https://github.com/patternfly/patternfly-react/commit/592ffdb))
+
+
+
+
+
+## [2.1.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.7...@patternfly/react-core@2.1.8) (2019-02-15)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.1.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.6...@patternfly/react-core@2.1.7) (2019-02-14)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.1.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.5...@patternfly/react-core@2.1.6) (2019-02-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.1.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.4...@patternfly/react-core@2.1.5) (2019-02-13)
+
+
+### Bug Fixes
+
+* **core:** FormSelect onChange value type was missing ([#1380](https://github.com/patternfly/patternfly-react/issues/1380)) ([d275105](https://github.com/patternfly/patternfly-react/commit/d275105))
+
+
+
+
+
+## [2.1.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.3...@patternfly/react-core@2.1.4) (2019-02-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.1.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.2...@patternfly/react-core@2.1.3) (2019-02-12)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.1.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.1...@patternfly/react-core@2.1.2) (2019-02-11)
+
+
+### Bug Fixes
+
+* **LoginPage:** Remove Language Selector from LoginPage ([#1279](https://github.com/patternfly/patternfly-react/issues/1279)) ([c6e90ba](https://github.com/patternfly/patternfly-react/commit/c6e90ba)), closes [#1243](https://github.com/patternfly/patternfly-react/issues/1243)
+
+
+
+
+
+## [2.1.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.1.0...@patternfly/react-core@2.1.1) (2019-02-11)
+
+
+### Bug Fixes
+
+* **Login:** update component to match pf4 design changes ([#1319](https://github.com/patternfly/patternfly-react/issues/1319)) ([c85ee8c](https://github.com/patternfly/patternfly-react/commit/c85ee8c))
+
+
+
+
+
+# [2.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.0.1...@patternfly/react-core@2.1.0) (2019-02-11)
+
+
+### Features
+
+* **chipGroup:** Add Chip Group component to pf4 ([#1245](https://github.com/patternfly/patternfly-react/issues/1245)) ([d3f2cc9](https://github.com/patternfly/patternfly-react/commit/d3f2cc9))
+
+
+
+
+
+## [2.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.0.0...@patternfly/react-core@2.0.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* **readme:** modify readme content for react-core release ([#1358](https://github.com/patternfly/patternfly-react/issues/1358)) ([e0a0dab](https://github.com/patternfly/patternfly-react/commit/e0a0dab))
+
+
+
+
+
+# [2.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.6...@patternfly/react-core@2.0.0) (2019-02-08)
+
+
+### Bug Fixes
+
+* **Alert:** Fix index.d.ts file ([#1320](https://github.com/patternfly/patternfly-react/issues/1320)) ([b69d45d](https://github.com/patternfly/patternfly-react/commit/b69d45d)), closes [#1318](https://github.com/patternfly/patternfly-react/issues/1318)
+* **Alert:** Make Alert consistent with core ([#1298](https://github.com/patternfly/patternfly-react/issues/1298)) ([cba507e](https://github.com/patternfly/patternfly-react/commit/cba507e)), closes [#1286](https://github.com/patternfly/patternfly-react/issues/1286)
+* **Alert:** Make Alert title required ([#1326](https://github.com/patternfly/patternfly-react/issues/1326)) ([942ca78](https://github.com/patternfly/patternfly-react/commit/942ca78))
+* **nav:** Allow nav to expand by prop change ([#1345](https://github.com/patternfly/patternfly-react/issues/1345)) ([07097bc](https://github.com/patternfly/patternfly-react/commit/07097bc))
+* **Nav:** do not render the examples page ([#1316](https://github.com/patternfly/patternfly-react/issues/1316)) ([18dbd65](https://github.com/patternfly/patternfly-react/commit/18dbd65))
+* **PF4:** tooltip/popover - include tippy css ([#1244](https://github.com/patternfly/patternfly-react/issues/1244)) ([469477a](https://github.com/patternfly/patternfly-react/commit/469477a))
+* Add consistent aria labels for <nav> elements ([#1252](https://github.com/patternfly/patternfly-react/issues/1252)) ([fd87668](https://github.com/patternfly/patternfly-react/commit/fd87668)), closes [#1182](https://github.com/patternfly/patternfly-react/issues/1182)
+* **Radio:** Use pf-c-radio class in Radio ([#1328](https://github.com/patternfly/patternfly-react/issues/1328)) ([869d4bd](https://github.com/patternfly/patternfly-react/commit/869d4bd))
+* **tests:** update alert tests ([#1353](https://github.com/patternfly/patternfly-react/issues/1353)) ([9071f40](https://github.com/patternfly/patternfly-react/commit/9071f40))
+* **types:** popover, tooltip, and helper types fixes ([#1341](https://github.com/patternfly/patternfly-react/issues/1341)) ([40c9b26](https://github.com/patternfly/patternfly-react/commit/40c9b26))
+* **utils:** export common utility functions and constants in react-core ([#1232](https://github.com/patternfly/patternfly-react/issues/1232)) ([dc657b9](https://github.com/patternfly/patternfly-react/commit/dc657b9))
+
+
+### Code Refactoring
+
+* **AboutModal:** Upgrade core to 1.0.175 and Refactor AboutModal ([#1307](https://github.com/patternfly/patternfly-react/issues/1307)) ([1f85756](https://github.com/patternfly/patternfly-react/commit/1f85756)), closes [#1267](https://github.com/patternfly/patternfly-react/issues/1267)
+
+
+### Features
+
+* **Tooltip:** Add optional delay prop to Tooltip ([#1205](https://github.com/patternfly/patternfly-react/issues/1205)) ([0c5e910](https://github.com/patternfly/patternfly-react/commit/0c5e910)), closes [#1161](https://github.com/patternfly/patternfly-react/issues/1161)
+
+
+### BREAKING CHANGES
+
+* **AboutModal:** removed heroImg and heroImageSrc and heroImageAlt props
+
+
+
+
+
+## [1.51.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.5...@patternfly/react-core@1.51.6) (2019-02-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [1.51.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.4...@patternfly/react-core@1.51.5) (2019-02-01)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [1.51.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@1.51.3...@patternfly/react-core@1.51.4) (2019-01-30)
 
 

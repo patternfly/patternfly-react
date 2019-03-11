@@ -2,17 +2,38 @@
 
 exports[`TypeAheadSelect is working !! 1`] = `
 <p>
-  <OnClickOutside(TypeaheadContainer(WrappedTypeahead))
+  <TypeaheadContainer(WrappedTypeahead)
+    a11yNumResults={[Function]}
+    a11yNumSelected={[Function]}
+    align="justify"
     allowNew={true}
+    autoFocus={false}
+    caseSensitive={false}
     clearButton={true}
-    eventTypes={
-      Array [
-        "mousedown",
-        "touchstart",
-      ]
-    }
-    excludeScrollbar={false}
+    defaultInputValue=""
+    defaultOpen={false}
+    defaultSelected={Array []}
+    disabled={false}
+    dropup={false}
+    emptyLabel="No matches found."
+    filterBy={Array []}
+    flip={false}
+    highlightOnlyResult={false}
+    id="some-id"
+    ignoreDiacritics={true}
+    inputProps={Object {}}
+    isInvalid={false}
+    isLoading={false}
+    isValid={false}
+    labelKey="label"
+    maxResults={100}
+    minLength={0}
     multiple={true}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onInputChange={[Function]}
+    onKeyDown={[Function]}
+    onPaginate={[Function]}
     options={
       Array [
         "One",
@@ -20,9 +41,10 @@ exports[`TypeAheadSelect is working !! 1`] = `
         "Three",
       ]
     }
-    outsideClickIgnoreClass="ignore-react-onclickoutside"
-    preventDefault={false}
-    stopPropagation={false}
+    paginate={true}
+    paginationText="Display additional results..."
+    placeholder=""
+    selectHintOnEnter={false}
   />
 </p>
 `;

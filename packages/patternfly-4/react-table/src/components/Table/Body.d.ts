@@ -1,10 +1,10 @@
-import { SFC, HTMLProps, ReactType, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps } from 'react';
 
 export interface TableBodyProps extends HTMLProps<HTMLTableRowElement> {
   rowKey?: string;
   onRowClick?: Function;
 }
 
-declare const TableBody: SFC<TableBodyProps>;
+declare const TableBody: FunctionComponent<TableBodyProps>;
 
 export default TableBody;

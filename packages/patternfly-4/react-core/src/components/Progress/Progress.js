@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import styles from '@patternfly/patternfly-next/components/Progress/progress.css';
+import styles from '@patternfly/patternfly/components/Progress/progress.css';
 import { css, getModifier } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import ProgressContainer, { ProgressMeasureLocation, ProgressVariant } from './ProgressContainer';
-import { getUniqueId } from '../../internal/util';
+import { getUniqueId } from '../../helpers/util';
 
 export const ProgressSize = {
   sm: 'sm',
@@ -82,6 +82,7 @@ class Progress extends Component {
           getModifier(styles, variant, ''),
           getModifier(styles, measureLocation, ''),
           getModifier(styles, measureLocation === ProgressMeasureLocation.inside ? ProgressSize.lg : size, ''),
+          !title && getModifier(styles, 'singleline', ''),
           className
         )}
         id={this.id}

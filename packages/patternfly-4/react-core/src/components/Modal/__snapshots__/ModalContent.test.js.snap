@@ -1,6 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal Content Test isOpen 1`] = `
+.pf-l-bullseye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 <Backdrop
   className=""
 >
@@ -11,6 +20,7 @@ exports[`Modal Content Test isOpen 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
+      className="pf-l-bullseye"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
@@ -23,6 +33,12 @@ exports[`Modal Content Test isOpen 1`] = `
         className=""
         id="id"
         isLarge={false}
+        isSmall={false}
+        style={
+          Object {
+            "width": null,
+          }
+        }
         title="Test Modal Content title"
       >
         <ModalBoxCloseButton
@@ -49,6 +65,15 @@ exports[`Modal Content Test isOpen 1`] = `
 `;
 
 exports[`Modal Content Test only body 1`] = `
+.pf-l-bullseye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 <Backdrop
   className=""
 >
@@ -59,6 +84,7 @@ exports[`Modal Content Test only body 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
+      className="pf-l-bullseye"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
@@ -71,6 +97,12 @@ exports[`Modal Content Test only body 1`] = `
         className=""
         id="id"
         isLarge={false}
+        isSmall={false}
+        style={
+          Object {
+            "width": null,
+          }
+        }
         title="Test Modal Content title"
       >
         <ModalBoxCloseButton
@@ -97,6 +129,15 @@ exports[`Modal Content Test only body 1`] = `
 `;
 
 exports[`Modal Content Test with footer 1`] = `
+.pf-l-bullseye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 <Backdrop
   className=""
 >
@@ -107,6 +148,7 @@ exports[`Modal Content Test with footer 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
+      className="pf-l-bullseye"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
@@ -119,6 +161,12 @@ exports[`Modal Content Test with footer 1`] = `
         className=""
         id="id"
         isLarge={false}
+        isSmall={false}
+        style={
+          Object {
+            "width": null,
+          }
+        }
         title="Test Modal Content title"
       >
         <ModalBoxCloseButton
@@ -152,6 +200,15 @@ exports[`Modal Content Test with footer 1`] = `
 `;
 
 exports[`Modal Content Test with header 1`] = `
+.pf-l-bullseye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 <Backdrop
   className=""
 >
@@ -162,6 +219,7 @@ exports[`Modal Content Test with header 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
+      className="pf-l-bullseye"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
@@ -174,6 +232,12 @@ exports[`Modal Content Test with header 1`] = `
         className=""
         id="id"
         isLarge={false}
+        isSmall={false}
+        style={
+          Object {
+            "width": null,
+          }
+        }
         title="Test Modal Content title"
       >
         <ModalBoxCloseButton
@@ -201,6 +265,15 @@ exports[`Modal Content Test with header 1`] = `
 `;
 
 exports[`Modal Content Test with header and footer 1`] = `
+.pf-l-bullseye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 <Backdrop
   className=""
 >
@@ -211,6 +284,7 @@ exports[`Modal Content Test with header and footer 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
+      className="pf-l-bullseye"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
@@ -223,6 +297,12 @@ exports[`Modal Content Test with header and footer 1`] = `
         className=""
         id="id"
         isLarge={false}
+        isSmall={false}
+        style={
+          Object {
+            "width": null,
+          }
+        }
         title="Test Modal Content title"
       >
         <ModalBoxCloseButton
@@ -257,6 +337,15 @@ exports[`Modal Content Test with header and footer 1`] = `
 `;
 
 exports[`Modal Content Test with onclose 1`] = `
+.pf-l-bullseye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 <Backdrop
   className=""
 >
@@ -267,6 +356,7 @@ exports[`Modal Content Test with onclose 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
+      className="pf-l-bullseye"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
@@ -279,6 +369,12 @@ exports[`Modal Content Test with onclose 1`] = `
         className=""
         id="id"
         isLarge={true}
+        isSmall={false}
+        style={
+          Object {
+            "width": null,
+          }
+        }
         title="Test Modal Content title"
       >
         <ModalBoxCloseButton
@@ -314,6 +410,15 @@ exports[`Modal Content Test with onclose 1`] = `
 `;
 
 exports[`Modal Content test without footer 1`] = `
+.pf-l-bullseye {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
 <Backdrop
   className=""
 >
@@ -324,6 +429,7 @@ exports[`Modal Content test without footer 1`] = `
     <FocusTrap
       _createFocusTrap={[Function]}
       active={true}
+      className="pf-l-bullseye"
       focusTrapOptions={
         Object {
           "clickOutsideDeactivates": true,
@@ -336,6 +442,12 @@ exports[`Modal Content test without footer 1`] = `
         className=""
         id="id"
         isLarge={false}
+        isSmall={false}
+        style={
+          Object {
+            "width": null,
+          }
+        }
         title="Test Modal Content title"
       >
         <ModalBoxCloseButton

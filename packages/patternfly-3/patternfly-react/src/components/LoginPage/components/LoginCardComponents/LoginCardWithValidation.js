@@ -20,10 +20,12 @@ class LoginCardWithValidation extends React.Component {
     },
     isCapsLock: false,
     form: {
-      showError: this.props.showError,
+      showError: this.props.topErrorOnly ? true : this.props.showError,
       submitError: this.props.submitError,
-      disableSubmit: this.props.disableSubmit,
-      isSubmitting: this.props.isSubmitting
+      disableSubmit: true,
+      isSubmitting: this.props.isSubmitting,
+      topErrorOnly: this.props.topErrorOnly,
+      errors: [this.props.submitError]
     }
   };
 
@@ -35,15 +37,44 @@ class LoginCardWithValidation extends React.Component {
     window.removeEventListener('keyup', this.toggleCapsLock);
   }
 
+  // eslint-disable-next-line class-methods-use-this
+  static getDerivedStateFromProps(props, state) {
+    // disableSubmit prop will only be used in a not validated login card
+    const { validate, disableSubmit } = props;
+    if (validate) return null;
+    if (disableSubmit !== state.form.disableSubmit) {
+      return {
+        form: { disableSubmit }
+      };
+    }
+    return null;
+  }
+
+  shouldDisableSubmit = (inputType, updatedInputValue) => {
+    if (updatedInputValue.length < 1) {
+      return true;
+    }
+    const otherInputType = inputType === 'usernameField' ? 'passwordField' : 'usernameField';
+    const otherInputValue = this.state[otherInputType].value;
+    return otherInputValue.length < 1;
+  };
+
   onInputChange = (e, inputType) => {
+    const {
+      target: { value }
+    } = e;
     this.props[inputType].onChange && this.props[inputType].onChange(e);
-    this.setState({
+    this.setState(({ form }) => ({
       [inputType]: {
         ...this.state[inputType],
-        value: e.target.value,
+        value,
         showError: false
+      },
+      form: {
+        ...form,
+        disableSubmit: this.shouldDisableSubmit(inputType, value)
       }
-    });
+    }));
   };
 
   onInputFocus = (e, inputType) => {
@@ -85,62 +116,84 @@ class LoginCardWithValidation extends React.Component {
   };
 
   onSubmitStart = () => {
-    this.setState({
+    this.setState(({ form }) => ({
       form: {
-        ...this.state.form,
+        ...form,
         disableSubmit: true,
         isSubmitting: true,
+        errors: form.topErrorOnly ? [] : form.topErrorOnly,
         showError: false
       }
-    });
+    }));
   };
 
   onSubmitError = submitError => {
-    this.setState({
+    this.setState(({ form }) => ({
       form: {
-        ...this.state.form,
+        ...form,
         showError: true,
         submitError,
+        errors: [submitError],
         disableSubmit: false,
         isSubmitting: false
       }
-    });
+    }));
+  };
+
+  getFormError = () => {
+    const {
+      form: { topErrorOnly, submitError, errors }
+    } = this.state;
+    return topErrorOnly
+      ? errors.map((error, index) => (
+          <div className="login-form-error" key={index}>
+            {error}
+          </div>
+        ))
+      : submitError;
   };
 
   getModifiedProps = () => {
-    const { usernameField, passwordField } = this.props;
+    const { usernameField, passwordField, isCapsLock, form } = this.state;
+    const {
+      passwordField: { warnings }
+    } = this.props;
     const passwordFieldWarningType = this.state.isCapsLock ? 'capsLock' : this.state.passwordField.warningType;
     return {
       usernameField: {
-        ...usernameField,
+        ...this.props.usernameField,
         onChange: e => this.onInputChange(e, 'usernameField'),
         onFocus: e => this.onInputFocus(e, 'usernameField'),
         onBlur: e => this.onInputBlur(e, 'usernameField'),
         onKeyPress: e => this.onKeyPress(e, 'usernameField'),
-        error: usernameField.errors[this.state.usernameField.errorType],
-        showError: this.state.usernameField.showError
+        error: usernameField.error,
+        showError: usernameField.showError
       },
       passwordField: {
-        ...passwordField,
+        ...this.props.passwordField,
         onChange: e => this.onInputChange(e, 'passwordField'),
         onFocus: e => this.onInputFocus(e, 'passwordField'),
         onBlur: e => this.onInputBlur(e, 'passwordField'),
         onKeyPress: e => this.onKeyPress(e, 'passwordField'),
-        warning: passwordField.warnings[passwordFieldWarningType],
-        showWarning: this.state.passwordField.isFocused && this.state.isCapsLock,
-        error: passwordField.errors[this.state.passwordField.errorType],
-        showError: this.state.passwordField.showError
+        warning: warnings && warnings[passwordFieldWarningType],
+        showWarning: passwordField.isFocused && isCapsLock,
+        error: passwordField.error,
+        showError: passwordField.showError
       },
       onSubmit: e => this.onSubmit(e),
-      showError: this.state.form.showError,
-      disableSubmit: this.state.form.disableSubmit,
-      isSubmitting: this.state.form.isSubmitting,
-      submitError: this.state.form.submitError
+      showError: form.showError,
+      disableSubmit: form.disableSubmit,
+      isSubmitting: form.isSubmitting,
+      submitError: this.getFormError()
     };
   };
 
   handleOnInputErrors = () => {
     const { usernameField, passwordField } = this.state;
+    const { topErrorOnly } = this.props;
+
+    topErrorOnly && this.clearFormErrors();
+
     if (usernameField.value) {
       !this.isUserNameValid() && this.handleOnInvalidUsername();
     } else {
@@ -153,7 +206,7 @@ class LoginCardWithValidation extends React.Component {
       this.handleOnEmptyInput('passwordField');
     }
 
-    this.hideSubmitError();
+    !topErrorOnly && this.hideSubmitError();
   };
 
   isFormValid = () =>
@@ -183,34 +236,91 @@ class LoginCardWithValidation extends React.Component {
     });
   };
 
-  handleOnPasswordTooShort = () => {
-    this.setState({
-      passwordField: {
-        ...this.state.passwordField,
-        errorType: 'short',
-        showError: true
+  clearFormErrors = () => {
+    this.setState(({ form }) => ({
+      form: {
+        ...form,
+        errors: []
       }
-    });
+    }));
   };
 
-  handleOnInvalidUsername = error => {
-    this.setState({
-      usernameField: {
-        ...this.state.usernameField,
-        errorType: 'invalid',
-        showError: true
+  handleOnPasswordTooShort = () => {
+    const {
+      passwordField: {
+        errors: { short: error }
       }
-    });
+    } = this.props;
+    this.setState(
+      ({ form, passwordField }) =>
+        form.topErrorOnly
+          ? {
+              form: {
+                ...form,
+                errors: [...form.errors, error],
+                showError: true
+              }
+            }
+          : {
+              passwordField: {
+                ...passwordField,
+                error,
+                showError: true
+              }
+            }
+    );
+  };
+
+  handleOnInvalidUsername = () => {
+    const {
+      usernameField: {
+        errors: { invalid: error }
+      }
+    } = this.props;
+    this.setState(
+      ({ form, usernameField }) =>
+        form.topErrorOnly
+          ? {
+              form: {
+                ...form,
+                errors: [...form.errors, error],
+                showError: true
+              }
+            }
+          : {
+              usernameField: {
+                ...usernameField,
+                error,
+                showError: true
+              }
+            }
+    );
   };
 
   handleOnEmptyInput = inputType => {
-    this.setState({
+    const {
       [inputType]: {
-        ...this.state[inputType],
-        errorType: 'empty',
-        showError: true
+        errors: { empty: error }
       }
-    });
+    } = this.props;
+    this.setState(
+      ({ form }) =>
+        form.topErrorOnly
+          ? {
+              form: {
+                ...form,
+                errors: [...form.errors, error],
+                showError: true
+              }
+            }
+          : {
+              [inputType]: {
+                ...this.state[inputType],
+                error,
+                showError: true
+              }
+            }
+    );
   };
 
   toggleCapsLock = e => {
@@ -273,9 +383,11 @@ LoginCardWithValidation.propTypes = {
   }),
   onSubmit: PropTypes.func,
   submitError: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  // eslint-disable-next-line react/no-unused-prop-types
   disableSubmit: PropTypes.bool,
   isSubmitting: PropTypes.bool,
-  showError: PropTypes.bool
+  showError: PropTypes.bool,
+  topErrorOnly: PropTypes.bool
 };
 
 LoginCardWithValidation.defaultProps = {
@@ -286,7 +398,8 @@ LoginCardWithValidation.defaultProps = {
   submitError: null,
   disableSubmit: false,
   isSubmitting: false,
-  showError: false
+  showError: false,
+  topErrorOnly: false
 };
 
 export default LoginCardWithValidation;

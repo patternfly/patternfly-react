@@ -1,49 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Chart 1`] = `
-<VictoryPie
+<VictoryLegend
+  borderComponent={
+    <Border
+      rectComponent={<Rect />}
+    />
+  }
   containerComponent={
-    <VictoryContainer
-      className="VictoryContainer"
-      portalComponent={<Portal />}
-      portalZIndex={99}
-      responsive={true}
+    <ChartContainer
+      responsive={false}
     />
   }
   data={
     Array [
       Object {
-        "x": "A",
-        "y": 1,
+        "name": "Series 1",
       },
       Object {
-        "x": "B",
-        "y": 2,
-      },
-      Object {
-        "x": "C",
-        "y": 3,
-      },
-      Object {
-        "x": "D",
-        "y": 1,
-      },
-      Object {
-        "x": "E",
-        "y": 2,
+        "name": "Series 2",
       },
     ]
   }
-  dataComponent={
-    <Slice
-      pathComponent={<Path />}
+  dataComponent={<ChartPoint />}
+  groupComponent={<g />}
+  labelComponent={
+    <VictoryLabel
+      capHeight={0.71}
+      direction="inherit"
+      lineHeight={1}
+      textComponent={<Text />}
+      tspanComponent={<TSpan />}
     />
   }
-  groupComponent={<g />}
-  innerRadius={88}
-  labelComponent={<ChartTooltip />}
-  padAngle={1}
-  sortOrder="ascending"
   standalone={true}
   theme={
     Object {
@@ -491,54 +480,52 @@ exports[`Chart 1`] = `
         "width": 451,
       },
     }
+  }
+  titleComponent={
+    <VictoryLabel
+      capHeight={0.71}
+      direction="inherit"
+      lineHeight={1}
+      textComponent={<Text />}
+      tspanComponent={<TSpan />}
+    />
   }
 />
 `;
 
 exports[`Chart 2`] = `
-<VictoryPie
+<VictoryLegend
+  borderComponent={
+    <Border
+      rectComponent={<Rect />}
+    />
+  }
   containerComponent={
-    <VictoryContainer
-      className="VictoryContainer"
-      portalComponent={<Portal />}
-      portalZIndex={99}
-      responsive={true}
+    <ChartContainer
+      responsive={false}
     />
   }
   data={
     Array [
       Object {
-        "x": "A",
-        "y": 1,
+        "name": "Series 1",
       },
       Object {
-        "x": "B",
-        "y": 2,
-      },
-      Object {
-        "x": "C",
-        "y": 3,
-      },
-      Object {
-        "x": "D",
-        "y": 1,
-      },
-      Object {
-        "x": "E",
-        "y": 2,
+        "name": "Series 2",
       },
     ]
   }
-  dataComponent={
-    <Slice
-      pathComponent={<Path />}
+  dataComponent={<ChartPoint />}
+  groupComponent={<g />}
+  labelComponent={
+    <VictoryLabel
+      capHeight={0.71}
+      direction="inherit"
+      lineHeight={1}
+      textComponent={<Text />}
+      tspanComponent={<TSpan />}
     />
   }
-  groupComponent={<g />}
-  innerRadius={88}
-  labelComponent={<ChartTooltip />}
-  padAngle={1}
-  sortOrder="ascending"
   standalone={true}
   theme={
     Object {
@@ -987,17 +974,28 @@ exports[`Chart 2`] = `
       },
     }
   }
+  titleComponent={
+    <VictoryLabel
+      capHeight={0.71}
+      direction="inherit"
+      lineHeight={1}
+      textComponent={<Text />}
+      tspanComponent={<TSpan />}
+    />
+  }
 />
 `;
 
 exports[`renders component data 1`] = `
-<VictoryPie
+<VictoryLegend
+  borderComponent={
+    <Border
+      rectComponent={<Rect />}
+    />
+  }
   containerComponent={
-    <VictoryContainer
-      className="VictoryContainer"
-      portalComponent={<Portal />}
-      portalZIndex={99}
-      responsive={true}
+    <ChartContainer
+      responsive={false}
     />
   }
   data={
@@ -1010,17 +1008,18 @@ exports[`renders component data 1`] = `
       },
     ]
   }
-  dataComponent={
-    <Slice
-      pathComponent={<Path />}
-    />
-  }
+  dataComponent={<ChartPoint />}
   groupComponent={<g />}
   height={50}
-  innerRadius={88}
-  labelComponent={<ChartTooltip />}
-  padAngle={1}
-  sortOrder="ascending"
+  labelComponent={
+    <VictoryLabel
+      capHeight={0.71}
+      direction="inherit"
+      lineHeight={1}
+      textComponent={<Text />}
+      tspanComponent={<TSpan />}
+    />
+  }
   standalone={true}
   theme={
     Object {
@@ -1470,6 +1469,15 @@ exports[`renders component data 1`] = `
     }
   }
   title="Average number of pets"
+  titleComponent={
+    <VictoryLabel
+      capHeight={0.71}
+      direction="inherit"
+      lineHeight={1}
+      textComponent={<Text />}
+      tspanComponent={<TSpan />}
+    />
+  }
   width={200}
 />
 `;

@@ -11,9 +11,7 @@ export const propTypes = {
 };
 
 // Note: VictoryLabel.role must be hoisted
-const ChartLabel = (props) => (
-  <VictoryLabel {...props}/>
-);
+const ChartLabel = props => <VictoryLabel {...props} />;
 hoistNonReactStatics(ChartLabel, VictoryLabel);
 ChartLabel.propTypes = propTypes;
 

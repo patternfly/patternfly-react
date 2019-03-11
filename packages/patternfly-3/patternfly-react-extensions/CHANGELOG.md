@@ -3,6 +3,111 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.16.23](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.22...patternfly-react-extensions@2.16.23) (2019-03-08)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.16.22](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.21...patternfly-react-extensions@2.16.22) (2019-03-08)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.16.21](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.20...patternfly-react-extensions@2.16.21) (2019-03-08)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## 2.16.20 (2019-03-07)
+
+
+### Bug Fixes
+
+* **navExpand:** remove defaultExpand in favor of just using isExpanded ([#1490](https://github.com/patternfly/patternfly-react/issues/1490)) ([9aafabd](https://github.com/patternfly/patternfly-react/commit/9aafabd))
+
+
+
+
+
+## [2.16.19](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.18...patternfly-react-extensions@2.16.19) (2019-03-05)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## 2.16.18 (2019-03-04)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.16.17](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.16...patternfly-react-extensions@2.16.17) (2019-02-20)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## 2.16.16 (2019-02-20)
+
+
+### Bug Fixes
+
+* **login:** Add union types for backgroundImgSrc ([#1373](https://github.com/patternfly/patternfly-react/issues/1373)) ([79b4f20](https://github.com/patternfly/patternfly-react/commit/79b4f20))
+
+
+
+
+
+## [2.16.15](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.14...patternfly-react-extensions@2.16.15) (2019-02-15)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.16.14](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.13...patternfly-react-extensions@2.16.14) (2019-02-13)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.16.13](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.11...patternfly-react-extensions@2.16.13) (2019-02-08)
+
+**Note:** Version bump only for package patternfly-react-extensions
+
+
+
+
+
+## [2.16.11](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.10...patternfly-react-extensions@2.16.11) (2019-02-01)
+
+
+### Bug Fixes
+
+* **build:** Support running npm scripts under Windows ([#1251](https://github.com/patternfly/patternfly-react/issues/1251)) ([df0c275](https://github.com/patternfly/patternfly-react/commit/df0c275))
+
+
+
+
+
 ## [2.16.10](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.9...patternfly-react-extensions@2.16.10) (2019-01-29)
 
 

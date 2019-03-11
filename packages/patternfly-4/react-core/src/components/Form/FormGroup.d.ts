@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
-import { Omit } from '../../typeUtils'
+import { Omit } from '../../helpers/typeUtils'
 
 export interface FormGroupProps extends Omit<HTMLProps<HTMLDivElement>, 'label'> {
   isValid?: boolean;

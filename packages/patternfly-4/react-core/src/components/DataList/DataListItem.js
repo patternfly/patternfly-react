@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly-next/components/DataList/styles.css';
+import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
 const DataListItem = ({ children, className, isExpanded, 'aria-labelledby': ariaLabelledBy, ...props }) => (
   <li
@@ -9,7 +9,11 @@ const DataListItem = ({ children, className, isExpanded, 'aria-labelledby': aria
     aria-labelledby={ariaLabelledBy}
     {...props}
   >
-    {children}
+    {React.Children.map(children, child =>
+      React.isValidElement(child) && React.cloneElement(child, {
+        rowid: ariaLabelledBy
+      })
+    )}
   </li>
 );
 

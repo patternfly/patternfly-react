@@ -62,7 +62,7 @@ Ensure no lint errors are introduced in `yarn-error.log` after running this comm
 
 5.  Add a commit using `yarn commit`:
 
-This project uses [`semantic-release`](https://npmjs.com/package/semantic-release) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
+This project uses [`lerna`](https://lernajs.io/) to do automatic releases and generate a changelog based on the commit history. So we follow [a convention][3] for commit messages. Please follow this convention for your commit messages.
 
 You can use `commitizen` to help you to follow [the convention][3].
 

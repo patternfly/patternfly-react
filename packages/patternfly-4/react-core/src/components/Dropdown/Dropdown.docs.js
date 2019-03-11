@@ -16,6 +16,7 @@ export default {
     DropdownSeparator,
     DropdownToggle
   },
+  variablesRoot: 'pf-c-dropdown',
   examples: [
     { component: Simple, title: 'Dropdown' },
     { component: PositionRight, title: 'Dropdown - position right' },

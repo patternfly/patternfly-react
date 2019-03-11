@@ -21,9 +21,16 @@ exports[`tooltip renders 1`] = `
       </TooltipContent>
     </div>
   }
+  delay={
+    Array [
+      500,
+      500,
+    ]
+  }
   distance={15}
   flip={true}
   lazy={true}
+  maxWidth="18.75rem"
   onCreate={[Function]}
   performance={true}
   placement="top"
@@ -39,7 +46,6 @@ exports[`tooltip renders 1`] = `
       },
     }
   }
-  size="small"
   theme="pf-tippy"
   zIndex={9999}
 >

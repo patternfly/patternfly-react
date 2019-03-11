@@ -5,11 +5,14 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
   className=""
   isHorizontal={false}
 >
+  <FormHelperText
+    className=""
+    isError={false}
+    isHidden={true}
+  />
   <FormGroup
     className=""
     fieldId="pf-login-username-id"
-    helperText=""
-    helperTextInvalid=""
     isInline={false}
     isRequired={true}
     isValid={true}
@@ -32,8 +35,6 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
   <FormGroup
     className=""
     fieldId="pf-login-password-id"
-    helperText=""
-    helperTextInvalid=""
     isInline={false}
     isRequired={true}
     isValid={true}
@@ -53,24 +54,13 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       value=""
     />
   </FormGroup>
-  <ActionGroup
+  <FormGroup
     className=""
+    fieldId="pf-login-remember-me-id"
+    isInline={false}
+    isRequired={false}
+    isValid={true}
   >
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      onClick={[Function]}
-      type="submit"
-      variant="primary"
-    >
-      Log In
-    </Button>
     <Checkbox
       aria-label=""
       checked={false}
@@ -82,6 +72,25 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
       label="remember me"
       onChange={[MockFunction]}
     />
+  </FormGroup>
+  <ActionGroup
+    className=""
+  >
+    <Button
+      aria-label={null}
+      className=""
+      component="button"
+      isActive={false}
+      isBlock={true}
+      isDisabled={false}
+      isFocus={false}
+      isHover={false}
+      onClick={[Function]}
+      type="submit"
+      variant="primary"
+    >
+      Log In
+    </Button>
   </ActionGroup>
 </Form>
 `;
@@ -91,11 +100,14 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
   className=""
   isHorizontal={false}
 >
+  <FormHelperText
+    className=""
+    isError={false}
+    isHidden={true}
+  />
   <FormGroup
     className=""
     fieldId="pf-login-username-id"
-    helperText=""
-    helperTextInvalid=""
     isInline={false}
     isRequired={true}
     isValid={true}
@@ -118,8 +130,6 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
   <FormGroup
     className=""
     fieldId="pf-login-password-id"
-    helperText=""
-    helperTextInvalid=""
     isInline={false}
     isRequired={true}
     isValid={true}
@@ -139,24 +149,13 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       value=""
     />
   </FormGroup>
-  <ActionGroup
+  <FormGroup
     className=""
+    fieldId="pf-login-remember-me-id"
+    isInline={false}
+    isRequired={false}
+    isValid={true}
   >
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
-      isActive={false}
-      isBlock={false}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      onClick={[Function]}
-      type="submit"
-      variant="primary"
-    >
-      Log In
-    </Button>
     <Checkbox
       aria-label="remember me"
       checked={false}
@@ -168,6 +167,25 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
       label="remember me"
       onChange={[MockFunction]}
     />
+  </FormGroup>
+  <ActionGroup
+    className=""
+  >
+    <Button
+      aria-label={null}
+      className=""
+      component="button"
+      isActive={false}
+      isBlock={true}
+      isDisabled={false}
+      isFocus={false}
+      isHover={false}
+      onClick={[Function]}
+      type="submit"
+      variant="primary"
+    >
+      Log In
+    </Button>
   </ActionGroup>
 </Form>
 `;
@@ -177,11 +195,14 @@ exports[`should render Login form 1`] = `
   className=""
   isHorizontal={false}
 >
+  <FormHelperText
+    className=""
+    isError={false}
+    isHidden={true}
+  />
   <FormGroup
     className=""
     fieldId="pf-login-username-id"
-    helperText=""
-    helperTextInvalid=""
     isInline={false}
     isRequired={true}
     isValid={true}
@@ -204,8 +225,6 @@ exports[`should render Login form 1`] = `
   <FormGroup
     className=""
     fieldId="pf-login-password-id"
-    helperText=""
-    helperTextInvalid=""
     isInline={false}
     isRequired={true}
     isValid={true}
@@ -233,7 +252,7 @@ exports[`should render Login form 1`] = `
       className=""
       component="button"
       isActive={false}
-      isBlock={false}
+      isBlock={true}
       isDisabled={false}
       isFocus={false}
       isHover={false}

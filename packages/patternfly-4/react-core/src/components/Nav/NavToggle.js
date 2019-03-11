@@ -3,40 +3,36 @@ import PropTypes from 'prop-types';
 
 const propTypes = {
   children: PropTypes.func.isRequired,
-  defaultValue: PropTypes.bool,
+  isExpanded: PropTypes.bool,
   groupId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onToggle: PropTypes.func
+  onToggle: PropTypes.func,
+  onExpand: PropTypes.func
 };
 
 const defaultProps = {
-  defaultValue: true,
+  isExpanded: false,
   groupId: 0,
-  onToggle: () => undefined
+  onToggle: () => undefined,
+  onExpand: () => undefined
 };
 
 class NavToggle extends React.Component {
   static propTypes = propTypes;
   static defaultProps = defaultProps;
-  state = {
-    value: this.props.defaultValue
-  };
 
   handleToggle = e => {
     // Item events can bubble up, ignore those
     if (e.target.getAttribute('data-component') !== 'pf-nav-expandable') {
       return;
     }
-    const { value } = this.state;
-    const { groupId, onToggle } = this.props;
-    this.setState({
-      value: !value
-    });
-    onToggle(e, groupId, !value);
+    const { groupId, onToggle, onExpand, isExpanded } = this.props;
+    onToggle(e, groupId, !isExpanded);
+    onExpand(e, !isExpanded);
   };
 
   render() {
     return this.props.children({
-      value: this.state.value,
+      toggleValue: this.props.isExpanded,
       toggle: this.handleToggle
     });
   }
