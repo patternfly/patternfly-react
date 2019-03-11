@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.11 (2019-03-11)
+
+
+### Bug Fixes
+
+* **tsconfig:** avatar tsx change ([#1535](https://github.com/patternfly/patternfly-react/issues/1535)) ([8107f5c](https://github.com/patternfly/patternfly-react/commit/8107f5c))
+
+
+
+
+
 ## [2.0.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@2.0.9...@patternfly/react-styled-system@2.0.10) (2019-03-08)
 
 **Note:** Version bump only for package @patternfly/react-styled-system
