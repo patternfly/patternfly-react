@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
-import { getUniqueId } from '../../helpers/util';
 
 const propTypes = {
   /** the index of the active tab */
@@ -9,7 +8,7 @@ const propTypes = {
   /** content rendered inside the tab content area. */
   child: PropTypes.node,
   /** id passed from parent to identify the content section */
-  id: PropTypes.string
+  id: PropTypes.string.isRequired
 };
 
 const defaultProps = {
