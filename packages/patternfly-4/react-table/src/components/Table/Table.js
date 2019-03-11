@@ -53,7 +53,15 @@ const propTypes = {
   actionResolver: PropTypes.func,
   /** Function should resolve if action is disabled for each row */
   areActionsDisabled: PropTypes.func,
-  /** Actual rows to display in table. Either array of strings or row ojects. */
+  /** Actual rows to display in table. Either array of strings or row objects. <br/>
+   * If you want to use components in row cells you can pass them as title prop in cells definition. <br/>
+   * <pre>Ex: rows:[
+   *   {cells:[
+   *     {title: &lt;div>Some component&lt;/div>}
+   *     ...
+   *   ]}
+   * ]
+   * </pre>*/
   rows: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({

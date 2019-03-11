@@ -54,7 +54,7 @@ export const PropsTable = ({ name, description: preface, props, enumValues }) =>
             </TD>
             <TD align="center">{prop.required && <ExclamationCircleIcon />}</TD>
             <TD>{Boolean(prop.defaultValue) && prop.defaultValue.value}</TD>
-            <TD>{prop.description && prop.description.text}</TD>
+            <TD>{prop.description && <span dangerouslySetInnerHTML={{__html: prop.description.text}}/>}</TD>
           </Row>
         ))}
       </Body>
