@@ -22,6 +22,9 @@ lerna-debug.log
 .settings/
 *.sublime-workspace
 .history/*
+.vscode
+# For prettier
+!.vscode/settings.json
 
 # IDE - VSCode
 .vscode/*
