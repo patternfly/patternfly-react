@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.1.8 (2019-03-11)
+
+
+### Bug Fixes
+
+* **tsconfig:** avatar tsx change ([#1535](https://github.com/patternfly/patternfly-react/issues/1535)) ([8107f5c](https://github.com/patternfly/patternfly-react/commit/8107f5c))
+
+
+
+
+
 ## [2.1.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.1.6...@patternfly/react-charts@2.1.7) (2019-03-08)
 
 **Note:** Version bump only for package @patternfly/react-charts

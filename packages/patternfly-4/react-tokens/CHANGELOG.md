@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.7 (2019-03-11)
+
+
+### Bug Fixes
+
+* **build:** Support running the test suite under Windows ([#1255](https://github.com/patternfly/patternfly-react/issues/1255)) [ci skip] ([851756e](https://github.com/patternfly/patternfly-react/commit/851756e))
+* **tsconfig:** avatar tsx change ([#1535](https://github.com/patternfly/patternfly-react/issues/1535)) ([8107f5c](https://github.com/patternfly/patternfly-react/commit/8107f5c))
+
+
+
+
+
 ## [2.0.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-tokens@2.0.5...@patternfly/react-tokens@2.0.6) (2019-03-08)
 
 **Note:** Version bump only for package @patternfly/react-tokens

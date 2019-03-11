@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.0...@patternfly/react-core@2.5.1) (2019-03-11)
+
+
+### Bug Fixes
+
+* **Modal:** accessibility enhancements and other small fixes ([#1453](https://github.com/patternfly/patternfly-react/issues/1453)) ([da9a224](https://github.com/patternfly/patternfly-react/commit/da9a224))
+* **tabs:** remove d.ts file from tabContent ([#1543](https://github.com/patternfly/patternfly-react/issues/1543)) ([d908f7a](https://github.com/patternfly/patternfly-react/commit/d908f7a))
+
+
+
+
+
 # [2.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.4.1...@patternfly/react-core@2.5.0) (2019-03-11)
 
 
