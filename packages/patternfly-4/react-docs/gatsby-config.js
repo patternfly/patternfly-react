@@ -12,35 +12,40 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `ts-docs`,
-        path: resolve(__dirname, 'ts-docs/')
+        path: resolve(__dirname, 'ts-docs/'),
+        ignore: [`**/*.d.ts`]
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `components`,
-        path: resolve(__dirname, '../react-core/src')
+        path: resolve(__dirname, '../react-core/src'),
+        ignore: [`**/*.d.ts`, `**/helpers`]
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `components`,
-        path: resolve(__dirname, '../react-charts/src')
+        path: resolve(__dirname, '../react-charts/src'),
+        ignore: [`**/*.d.ts`]
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `components`,
-        path: resolve(__dirname, '../react-table/src')
+        path: resolve(__dirname, '../react-table/src'),
+        ignore: [`**/*.d.ts`]
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `components`,
-        path: resolve(__dirname, '../react-styled-system/src')
+        path: resolve(__dirname, '../react-styled-system/src'),
+        ignore: [`**/*.d.ts`]
       }
     },
     'gatsby-transformer-react-docgen'
