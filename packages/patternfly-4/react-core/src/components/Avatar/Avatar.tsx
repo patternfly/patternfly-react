@@ -1,8 +1,6 @@
-
 import styles from '@patternfly/patternfly/components/Avatar/avatar.css';
 import { css } from '@patternfly/react-styles';
-import React, { DetailedHTMLProps, ImgHTMLAttributes } from 'react';
-
+import * as React from 'react';
 
 const defaultProps = {
   className: '',
@@ -12,7 +10,8 @@ const defaultProps = {
 /**
  * Column properties.
  */
-export interface AvatarProps extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>{
+export interface AvatarProps
+  extends React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   /** Additional classes added to the Avatar. */
   className?: string;
   /** Attribute that specifies the URL of the image for the Avatar. */
@@ -21,7 +20,7 @@ export interface AvatarProps extends DetailedHTMLProps<ImgHTMLAttributes<HTMLIma
   alt: string;
 }
 
-const Avatar:React.FunctionComponent<AvatarProps> = (props) => (
+const Avatar: React.FunctionComponent<AvatarProps> = props => (
   <img {...props} className={css(styles.avatar, props.className)} />
 );
 
