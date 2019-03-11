@@ -8,7 +8,7 @@ const propTypes = {
   children: PropTypes.node,
   /** additional classes added to the ModalBoxBody */
   className: PropTypes.string,
-  /** id to use for Modal Box description */
+  /** id of the ModalBoxBody */
   id: PropTypes.string.isRequired,
   /** Additional props are spread to the container <div> */
   '': PropTypes.any

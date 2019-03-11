@@ -12,7 +12,7 @@ const propTypes = {
   isLarge: PropTypes.bool,
   /** Creates a small version of the ModalBox. */
   isSmall: PropTypes.bool,
-  /* Header title used for Modal Box Header */
+  /** string to use for Modal Box label */
   title: PropTypes.string.isRequired,
   /** id to use for Modal Box description */
   id: PropTypes.string.isRequired,
