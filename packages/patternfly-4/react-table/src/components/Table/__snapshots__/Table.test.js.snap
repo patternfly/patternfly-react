@@ -37417,7 +37417,7 @@ exports[`Simple Actions table 1`] = `
   padding-bottom: 0px;
   vertical-align: middle;
 }
-.pf-c-dropdown__toggle.pf-m-plain {
+.pf-c-dropdown__toggle.pf-m-plain.pf-m-disabled {
   display: flex;
   position: relative;
   align-items: center;
@@ -37430,6 +37430,7 @@ exports[`Simple Actions table 1`] = `
   line-height: 1.5;
   color: #72767b;
   background-color: transparent;
+  pointer-events: none;
 }
 .pf-c-dropdown {
   display: inline-block;
@@ -47855,7 +47856,7 @@ exports[`Simple Actions table 1`] = `
                                       aria-expanded={false}
                                       aria-haspopup={true}
                                       aria-label="Actions"
-                                      className="pf-c-dropdown__toggle pf-m-plain"
+                                      className="pf-c-dropdown__toggle pf-m-plain pf-m-disabled"
                                       disabled={true}
                                       id="pf-toggle-id-9"
                                       onClick={[Function]}

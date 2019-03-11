@@ -120,6 +120,7 @@ class DropdownToggle extends Component {
           isHovered && styles.modifiers.hover,
           isActive && styles.modifiers.active,
           isPlain && styles.modifiers.plain,
+          isDisabled && styles.modifiers.disabled,
           className
         )}
         type={type || 'button'}
