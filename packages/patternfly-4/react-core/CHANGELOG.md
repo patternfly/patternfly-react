@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.4.0...@patternfly/react-core@2.4.1) (2019-03-11)
+
+
+### Bug Fixes
+
+* **tsconfig:** avatar tsx change ([#1535](https://github.com/patternfly/patternfly-react/issues/1535)) ([8107f5c](https://github.com/patternfly/patternfly-react/commit/8107f5c))
+
+
+
+
+
 # [2.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.3.7...@patternfly/react-core@2.4.0) (2019-03-08)
 
 
