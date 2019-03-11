@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.37...@patternfly/react-table@1.1.0) (2019-03-11)
+
+
+### Features
+
+* **Dropdown:** add support for disabled dropdown menus ([#1510](https://github.com/patternfly/patternfly-react/issues/1510)) ([ef12ef0](https://github.com/patternfly/patternfly-react/commit/ef12ef0))
+
+
+
+
+
 ## [1.0.37](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.0.36...@patternfly/react-table@1.0.37) (2019-03-11)
 
 **Note:** Version bump only for package @patternfly/react-table

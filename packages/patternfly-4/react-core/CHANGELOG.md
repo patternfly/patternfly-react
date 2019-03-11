@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.4.1...@patternfly/react-core@2.5.0) (2019-03-11)
+
+
+### Bug Fixes
+
+* **tabs:** Move TabContent to its own component ([#1423](https://github.com/patternfly/patternfly-react/issues/1423)) ([a0dcdc3](https://github.com/patternfly/patternfly-react/commit/a0dcdc3))
+
+
+### Features
+
+* **Dropdown:** add support for disabled dropdown menus ([#1510](https://github.com/patternfly/patternfly-react/issues/1510)) ([ef12ef0](https://github.com/patternfly/patternfly-react/commit/ef12ef0))
+
+
+
+
+
 ## [2.4.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.4.0...@patternfly/react-core@2.4.1) (2019-03-11)
 
 
