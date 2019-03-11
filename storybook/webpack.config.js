@@ -24,7 +24,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
           loader: require.resolve('@storybook/addon-storysource/loader'),
           options: {
             prettierConfig: {
-              parser: 'babylon' //The default prettier parser
+              parser: 'babel' //The default prettier parser
             }
           }
         }
