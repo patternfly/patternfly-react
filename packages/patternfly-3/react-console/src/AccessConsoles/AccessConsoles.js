@@ -59,14 +59,12 @@ class AccessConsoles extends React.Component {
 
   getConsoleForType(type) {
     // To keep connection, render all consoles but hide those unused
-    return React.Children.map(
-      this.props.children,
-      child =>
-        this.state.keptConnection[getChildTypeName(child)] ? (
-          <div key={getChildTypeName(child)} hidden={!isChildOfType(child, type)}>
-            {child}
-          </div>
-        ) : null
+    return React.Children.map(this.props.children, child =>
+      this.state.keptConnection[getChildTypeName(child)] ? (
+        <div key={getChildTypeName(child)} hidden={!isChildOfType(child, type)}>
+          {child}
+        </div>
+      ) : null
     );
   }
 
@@ -105,17 +103,16 @@ class AccessConsoles extends React.Component {
                   )}
                 </Dropdown.Menu>
               </Dropdown>
-              {this.state.type !== NONE_TYPE &&
-                this.state.type !== DESKTOP_VIEWER_CONSOLE_TYPE && (
-                  <Checkbox
-                    className="console-selector-pf-disconnect-switch"
-                    inline
-                    defaultChecked={this.props.disconnectByChange}
-                    onChange={e => this.onChangeDisconnectBySwitchClick(e.target)}
-                  >
-                    {this.props.textDisconnectByChange}
-                  </Checkbox>
-                )}
+              {this.state.type !== NONE_TYPE && this.state.type !== DESKTOP_VIEWER_CONSOLE_TYPE && (
+                <Checkbox
+                  className="console-selector-pf-disconnect-switch"
+                  inline
+                  defaultChecked={this.props.disconnectByChange}
+                  onChange={e => this.onChangeDisconnectBySwitchClick(e.target)}
+                >
+                  {this.props.textDisconnectByChange}
+                </Checkbox>
+              )}
             </Col>
           </FormGroup>
         </Form>

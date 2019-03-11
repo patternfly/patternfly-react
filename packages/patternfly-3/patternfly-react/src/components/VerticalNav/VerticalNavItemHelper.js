@@ -282,25 +282,24 @@ class BaseVerticalNavItemHelper extends React.Component {
           <span className="list-group-item-value">{title}</span>
           {showBadges && childBadgeComponents && <div className="badge-container-pf">{childBadgeComponents}</div>}
         </a>
-        {childItemComponents &&
-          childItemComponents.length > 0 && (
-            <div className={`nav-pf-${nextDepth}-nav`}>
-              <div className="nav-item-pf-header">
-                {(pinnableMenus || isMobile) && (
-                  <a
-                    className={classNames(`${nextDepth}-collapse-toggle-pf`, {
-                      collapsed: onPinnedPath
-                    })}
-                    onClick={this.pinNextDepth}
-                  />
-                )}
-                <span>{title}</span>
-              </div>
-              <NavContextProvider {...this.props} idPath={this.idPath()} item={navItem}>
-                <ListGroup componentClass="ul">{childItemComponents}</ListGroup>
-              </NavContextProvider>
+        {childItemComponents && childItemComponents.length > 0 && (
+          <div className={`nav-pf-${nextDepth}-nav`}>
+            <div className="nav-item-pf-header">
+              {(pinnableMenus || isMobile) && (
+                <a
+                  className={classNames(`${nextDepth}-collapse-toggle-pf`, {
+                    collapsed: onPinnedPath
+                  })}
+                  onClick={this.pinNextDepth}
+                />
+              )}
+              <span>{title}</span>
             </div>
-          )}
+            <NavContextProvider {...this.props} idPath={this.idPath()} item={navItem}>
+              <ListGroup componentClass="ul">{childItemComponents}</ListGroup>
+            </NavContextProvider>
+          </div>
+        )}
       </ListGroupItem>
     );
 

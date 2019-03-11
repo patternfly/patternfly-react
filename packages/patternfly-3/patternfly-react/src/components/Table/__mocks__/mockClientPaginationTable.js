@@ -295,8 +295,8 @@ export class MockClientPaginationTable extends React.Component {
 
     if (checked) {
       const updatedSelections = [...new Set([...currentRows.map(r => r.id), ...selectedRows])];
-      const updatedRows = rows.map(
-        r => (updatedSelections.indexOf(r.id) > -1 ? MockClientPaginationTable.selectRow(r) : r)
+      const updatedRows = rows.map(r =>
+        updatedSelections.indexOf(r.id) > -1 ? MockClientPaginationTable.selectRow(r) : r
       );
       this.setState({
         // important: you must update rows to force a re-render and trigger onRow hook
@@ -307,8 +307,8 @@ export class MockClientPaginationTable extends React.Component {
     } else {
       const ids = currentRows.map(r => r.id);
       const updatedSelections = selectedRows.filter(r => !(ids.indexOf(r) > -1));
-      const updatedRows = rows.map(
-        r => (updatedSelections.indexOf(r.id) > -1 ? r : MockClientPaginationTable.deselectRow(r))
+      const updatedRows = rows.map(r =>
+        updatedSelections.indexOf(r.id) > -1 ? r : MockClientPaginationTable.deselectRow(r)
       );
       this.setState({
         rows: updatedRows,

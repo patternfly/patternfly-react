@@ -55,7 +55,7 @@ test('keeps variable reference if computing fails', () => {
 function getOutputs() {
   return outputFileSyncMock.mock.calls.reduce((acc, call) => {
     const [filePath, content] = call;
-    const splitPath = filePath.split('/');
+    const splitPath = filePath.split(/[/\\]/);
     const name = splitPath.slice(-2).join('/');
     return {
       ...acc,

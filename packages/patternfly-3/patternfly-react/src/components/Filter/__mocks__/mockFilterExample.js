@@ -277,28 +277,27 @@ export class MockFilterExample extends React.Component {
             {this.renderInput()}
           </Filter>
         </div>
-        {activeFilters &&
-          activeFilters.length > 0 && (
-            <Toolbar.Results>
-              <Filter.ActiveLabel>Active Filters:</Filter.ActiveLabel>
-              <Filter.List>
-                {activeFilters.map((item, index) => (
-                  <Filter.Item key={index} onRemove={this.removeFilter} filterData={item}>
-                    {item.label}
-                  </Filter.Item>
-                ))}
-              </Filter.List>
-              <a
-                href="#"
-                onClick={e => {
-                  e.preventDefault();
-                  this.clearFilters();
-                }}
-              >
-                Clear All Filters
-              </a>
-            </Toolbar.Results>
-          )}
+        {activeFilters && activeFilters.length > 0 && (
+          <Toolbar.Results>
+            <Filter.ActiveLabel>Active Filters:</Filter.ActiveLabel>
+            <Filter.List>
+              {activeFilters.map((item, index) => (
+                <Filter.Item key={index} onRemove={this.removeFilter} filterData={item}>
+                  {item.label}
+                </Filter.Item>
+              ))}
+            </Filter.List>
+            <a
+              href="#"
+              onClick={e => {
+                e.preventDefault();
+                this.clearFilters();
+              }}
+            >
+              Clear All Filters
+            </a>
+          </Toolbar.Results>
+        )}
       </div>
     );
   }

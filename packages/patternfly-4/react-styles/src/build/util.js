@@ -40,7 +40,7 @@ export function writeCSSJSFile(rootPath, originalPath, destinationPath, contents
 
 export function getRelativeImportPath(from, to) {
   const parsedTo = path.parse(to);
-  const newImportPath = path.normalize(path.join(relative(from, parsedTo.dir), parsedTo.base).replace(/\\/g, ''));
+  const newImportPath = path.normalize(path.join(relative(from, parsedTo.dir), parsedTo.base));
   return newImportPath.startsWith('.') ? newImportPath : `./${newImportPath}`;
 }
 
