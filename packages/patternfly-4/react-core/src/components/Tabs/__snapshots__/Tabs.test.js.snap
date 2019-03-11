@@ -206,9 +206,7 @@ exports[`onSelect callback called when tab selected 1`] = `
     id="tab3"
     index={2}
     key="2"
-  >
-    Tab 3 section
-  </section>
+  />
 </Fragment>
 `;
 
@@ -1240,9 +1238,7 @@ exports[`should render filled tabs 1`] = `
     id="tab3"
     index={2}
     key="2"
-  >
-    Tab 3 section
-  </section>
+  />
 </Fragment>
 `;
 
@@ -1470,9 +1466,7 @@ exports[`should render secondary tabs 1`] = `
     id="tab3"
     index={2}
     key="2"
-  >
-    Tab 3 section
-  </section>
+  />
 </Fragment>
 `;
 
@@ -1667,8 +1661,6 @@ exports[`should render simple tabs 1`] = `
     id="tab3"
     index={2}
     key="2"
-  >
-    Tab 3 section
-  </section>
+  />
 </Fragment>
 `;
