@@ -47,6 +47,7 @@ exports[`Modal Content Test isOpen 1`] = `
         />
         <ModalBoxHeader
           className=""
+          hideTitle={false}
         >
            
           Test Modal Content title
@@ -111,6 +112,7 @@ exports[`Modal Content Test only body 1`] = `
         />
         <ModalBoxHeader
           className=""
+          hideTitle={false}
         >
            
           Test Modal Content title
@@ -175,6 +177,7 @@ exports[`Modal Content Test with footer 1`] = `
         />
         <ModalBoxHeader
           className=""
+          hideTitle={false}
         >
            
           Test Modal Content title
@@ -246,6 +249,7 @@ exports[`Modal Content Test with header 1`] = `
         />
         <ModalBoxHeader
           className=""
+          hideTitle={false}
         >
            
           Test Modal Content title
@@ -311,6 +315,7 @@ exports[`Modal Content Test with header and footer 1`] = `
         />
         <ModalBoxHeader
           className=""
+          hideTitle={false}
         >
            
           Test Modal Content title
@@ -383,6 +388,7 @@ exports[`Modal Content Test with onclose 1`] = `
         />
         <ModalBoxHeader
           className=""
+          hideTitle={false}
         >
            
           Test Modal Content title
@@ -456,6 +462,7 @@ exports[`Modal Content test without footer 1`] = `
         />
         <ModalBoxHeader
           className=""
+          hideTitle={false}
         >
            
           Test Modal Content title

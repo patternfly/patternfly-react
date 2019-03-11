@@ -60,20 +60,18 @@ export class WizardExample extends MockWizardBase {
                 <Icon type="fa" name="angle-right" />
               </Button>
             )}
-            {activeStepIndex === 2 &&
-              activeSubStepIndex === 0 && (
-                <Button bsStyle="primary" onClick={this.onNextButtonClick}>
-                  Deploy
-                  <Icon type="fa" name="angle-right" />
-                </Button>
-              )}
-            {activeStepIndex === 2 &&
-              activeSubStepIndex === 1 && (
-                <Button bsStyle="primary" onClick={this.close}>
-                  Close
-                  <Icon type="fa" name="angle-right" />
-                </Button>
-              )}
+            {activeStepIndex === 2 && activeSubStepIndex === 0 && (
+              <Button bsStyle="primary" onClick={this.onNextButtonClick}>
+                Deploy
+                <Icon type="fa" name="angle-right" />
+              </Button>
+            )}
+            {activeStepIndex === 2 && activeSubStepIndex === 1 && (
+              <Button bsStyle="primary" onClick={this.close}>
+                Close
+                <Icon type="fa" name="angle-right" />
+              </Button>
+            )}
           </Wizard.Footer>
         </Wizard>
       </div>

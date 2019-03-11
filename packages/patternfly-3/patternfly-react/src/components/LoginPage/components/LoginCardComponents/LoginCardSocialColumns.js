@@ -60,13 +60,12 @@ class LoginCardSocialColumns extends React.Component {
       return null;
     }
     const { expend, width } = this.state;
-    const expendButton = width > 768 &&
-      links.length > numberOfButtonsToShow && (
-        <Button bsStyle="link" bsClass="btn btn-link login-pf-social-toggle" onClick={this.toggleExpend}>
-          {expend ? 'Less' : 'More'} &nbsp;
-          <Icon name={`angle-${expend ? 'up' : 'down'}`} />
-        </Button>
-      );
+    const expendButton = width > 768 && links.length > numberOfButtonsToShow && (
+      <Button bsStyle="link" bsClass="btn btn-link login-pf-social-toggle" onClick={this.toggleExpend}>
+        {expend ? 'Less' : 'More'} &nbsp;
+        <Icon name={`angle-${expend ? 'up' : 'down'}`} />
+      </Button>
+    );
 
     const doubleColumn = links.length > 4 ? 'login-pf-social-double-col' : '';
     const moreItems = expend || width < 768 ? this.getHiddenListItems() : null;

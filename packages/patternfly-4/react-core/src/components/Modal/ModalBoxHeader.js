@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Title from '../Title/Title';
+import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
+import { css } from '@patternfly/react-styles';
 
 const propTypes = {
   /** content rendered inside the Header */
   children: PropTypes.node,
   /** additional classes added to the button */
   className: PropTypes.string,
+  /** Flag to show the title */
+  hideTitle: PropTypes.bool.required,
   /** Additional props are spread to the container <header> */
   '': PropTypes.any
 };
@@ -16,13 +20,15 @@ const defaultProps = {
   className: ''
 };
 
-const ModalBoxHeader = ({ children, className, ...props }) => (
-  <React.Fragment>
-    <Title size="2xl" {...props}>
+const ModalBoxHeader = ({ hideTitle, children, className, ...props }) => {
+  const hidden = hideTitle ? css(accessibleStyles.screenReader) : '';
+
+  return <React.Fragment>
+    <Title size="2xl" className={className + hidden} {...props}>
       {children}
     </Title>
-  </React.Fragment>
-);
+  </React.Fragment>;
+};
 
 ModalBoxHeader.propTypes = propTypes;
 ModalBoxHeader.defaultProps = defaultProps;
