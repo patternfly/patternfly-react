@@ -15,20 +15,22 @@ export default (actions, actionResolver, areActionsDisabled) => (
     columnIndex,
     column: {
       extraParams: { dropdownPosition, dropdownDirection }
-    }
+    },
+    property
   }
 ) => {
-  const extraParams = {
+  const extraData = {
     rowIndex,
     columnIndex,
-    column
+    column,
+    property
   };
-  const resolvedActions = resolveOrDefault(actionResolver, actions, rowData, extraParams);
+  const resolvedActions = resolveOrDefault(actionResolver, actions, rowData, extraData);
   const resolvedIsDisabled = resolveOrDefault(
     areActionsDisabled,
     rowData && rowData.disableActions,
     rowData,
-    extraParams
+    extraData
   );
 
   const renderProps =
@@ -41,7 +43,7 @@ export default (actions, actionResolver, areActionsDisabled) => (
               dropdownDirection={dropdownDirection}
               isDisabled={resolvedIsDisabled}
               rowData={rowData}
-              extraParams={extraParams}
+              extraData={extraData}
             >
               {label}
             </ActionsColumn>

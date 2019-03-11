@@ -1,4 +1,4 @@
-import { FunctionComponent, HTMLProps, ReactNode } from 'react';
+import { FunctionComponent, HTMLProps, ReactNode, MouseEvent } from 'react';
 import { SortByDirection } from './SortColumn';
 import { DropdownPosition, DropdownDirection, OneOf, Omit } from '@patternfly/react-core';
 
@@ -12,6 +12,19 @@ export const TableVariant: {
   'compact': 'compact'
 }
 
+export interface IRowData {
+}
+
+export interface IExtraColumnData {
+  columnIndex: number,
+  column: Object,
+  property: string,
+}
+
+export interface IExtraData extends IExtraColumnData {
+  rowIndex: number
+}
+
 export interface ISortBy {
   index?: Number;
   direction?: OneOf<typeof SortByDirection, keyof typeof SortByDirection>;
@@ -19,7 +32,7 @@ export interface ISortBy {
 
 export interface IAction {
   title: String;
-  onClick: Function;
+  onClick: (event: MouseEvent, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
 }
 
 export interface ISeparator {
@@ -53,12 +66,12 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   variant?: OneOf<typeof TableVariant, keyof typeof TableVariant>;
   gridBreakPoint?: OneOf<typeof TableGridBreakpoint, keyof typeof TableGridBreakpoint>;
   sortBy?: ISortBy;
-  onCollapse?: Function;
-  onSelect?: Function;
-  onSort?: Function;
+  onCollapse?: (event: MouseEvent, rowIndex: number,isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
+  onSelect?: (event: MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
+  onSort?: (event: MouseEvent, columnIndex: number, extraData: IExtraColumnData) => void;
   actions?: Array<IAction | ISeparator>;
-  actionResolver?: (rowData: Object, extraParams: Object) => Array<IAction | ISeparator>;
-  areActionsDisabled?: (rowData: Object, extraParams: Object) => boolean;
+  actionResolver?: (rowData: IRowData,  extraData: IExtraData) => Array<IAction | ISeparator>;
+  areActionsDisabled?: (rowData: IRowData, extraData: IExtraData) => boolean;
   header?: ReactNode;
   caption?: ReactNode;
   rowLabeledBy?: String;
