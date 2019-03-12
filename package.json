@@ -122,6 +122,7 @@
     "storybook:run": "start-storybook -c storybook -p 6006",
     "storybook": "yarn storybook:run",
     "test": "jest packages",
+    "test:misc": "jest packages/react-*",
     "test:pf3": "jest packages/patternfly-3",
     "test:pf4": "jest packages/patternfly-4",
     "test:current": "jest --watch",
