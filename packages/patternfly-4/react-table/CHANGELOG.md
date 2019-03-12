@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.1.2...@patternfly/react-table@1.1.3) (2019-03-12)
+
+
+### Bug Fixes
+
+* **typeUtils:** fix transformers test ([#1553](https://github.com/patternfly/patternfly-react/issues/1553)) ([7daacce](https://github.com/patternfly/patternfly-react/commit/7daacce))
+
+
+
+
+
 ## [1.1.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.1.1...@patternfly/react-table@1.1.2) (2019-03-12)
 
 **Note:** Version bump only for package @patternfly/react-table
