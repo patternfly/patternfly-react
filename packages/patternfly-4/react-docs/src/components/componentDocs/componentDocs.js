@@ -96,7 +96,9 @@ class ComponentDocs extends React.PureComponent {
               );
             })}
           </Section>
-          {Object.entries(components).map(([componentName]) => {
+          {Object.entries(components).map(component => {
+            const componentName = component[0];
+            const componentFunction = component[1];
             // Only generate docs for props for javascript code.
             const componentDocsJs = getDocGenInfo(componentName);
             if (componentDocsJs) {
@@ -114,7 +116,14 @@ class ComponentDocs extends React.PureComponent {
             if (!componentDocsJs) {
               componentDocsTs = getDocGenInfoTs(componentName);
               if (componentDocsTs) {
-                return <PropsTableTs key={componentName} name={componentName} props={componentDocsTs.children} />;
+                return (
+                  <PropsTableTs
+                    key={componentName}
+                    name={componentName}
+                    props={componentDocsTs.children}
+                    defaultProps={componentFunction.defaultProps}
+                  />
+                );
               }
             }
             return null;
@@ -171,6 +180,7 @@ export default props => (
                 name
                 children {
                   name
+                  kindString
                   comment {
                     shortText
                   }
@@ -180,6 +190,20 @@ export default props => (
                   }
                   flags {
                     isOptional
+                  }
+                  signatures {
+                    comment {
+                      shortText
+                    }
+                    parameters {
+                      name
+                      type {
+                        name
+                      }
+                    }
+                    type {
+                      name
+                    }
                   }
                 }
               }
