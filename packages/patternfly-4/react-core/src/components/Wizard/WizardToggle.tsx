@@ -2,12 +2,12 @@ import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon, CaretDownIcon } from '@patternfly/react-icons';
-import { Step } from './Wizard';
+import { WizardStep } from './Wizard';
 
 interface WizardToggleProps {
   nav: any;
-  steps: Step[];
-  activeStep: Step;
+  steps: WizardStep[];
+  activeStep: WizardStep;
 }
 
 class WizardToggle extends React.Component<WizardToggleProps> {

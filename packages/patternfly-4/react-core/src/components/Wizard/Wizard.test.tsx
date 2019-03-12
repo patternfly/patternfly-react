@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import Wizard from './Wizard';
-import { Step } from './Wizard';
+import { Wizard, WizardStep } from './Wizard';
 
 test('Wizard should match snapshot', () => {
-  const steps: Step[] = [
+  const steps: WizardStep[] = [
     { name: 'A', component: <p>Step 1</p> },
     {
       name: 'B',

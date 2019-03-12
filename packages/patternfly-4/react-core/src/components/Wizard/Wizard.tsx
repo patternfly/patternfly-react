@@ -18,7 +18,7 @@ import { BackgroundImageSrcMap } from '../BackgroundImage';
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
 
-export interface Step {
+export interface WizardStep {
   /** Optional identifier */
   id?: string | number;
   /** The name of the step */
@@ -35,7 +35,7 @@ export interface Step {
   steps?: any[];
 }
 
-interface ComputedStep extends Step {
+interface ComputedStep extends WizardStep {
   /** The condition needed to be able to navigate to this step */
   canJumpTo?: boolean;
 };
@@ -62,7 +62,7 @@ interface WizardProps {
   /** Additional classes spread to the Wizard */
   className?: string;
   /** The wizard steps configuration object */
-  steps: Step[];
+  steps: WizardStep[];
   /** The step to start the wizard at (1 or higher) */
   startAtStep?: number;
   /** The Next button text */
@@ -349,4 +349,4 @@ class Wizard extends React.Component<WizardProps> {
   }
 }
 
-export default Wizard;
+export { Wizard };

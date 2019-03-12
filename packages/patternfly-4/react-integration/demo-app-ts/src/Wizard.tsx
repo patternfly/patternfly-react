@@ -1,9 +1,9 @@
-import { Wizard } from '@patternfly/react-core';
+import { Wizard, WizardStep } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 class WizardTest extends Component {
   render() {
-    const steps = [
+    const steps: WizardStep[] = [
       { name: 'A', component: <p>Step 1</p> },
       {
         name: 'B',
@@ -31,6 +31,7 @@ class WizardTest extends Component {
         description="Description here"
         steps={steps}
         startAtStep={1}
+
       />
     );
   }
