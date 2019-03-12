@@ -31,7 +31,7 @@
     "@patternfly/react-icons": "^3.2.0",
     "@patternfly/react-styles": "^2.3.7",
     "@patternfly/react-tokens": "^2.0.7",
-    "@tippy.js/react": "^2.1.1",
+    "@tippy.js/react": "^1.1.1",
     "emotion": "^9.2.9",
     "exenv": "^1.2.2",
     "focus-trap-react": "^6.0.0"
