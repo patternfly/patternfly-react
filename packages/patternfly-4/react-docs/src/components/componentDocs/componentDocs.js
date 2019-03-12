@@ -97,9 +97,11 @@ class ComponentDocs extends React.PureComponent {
             })}
           </Section>
           {Object.entries(components).map(([componentName]) => {
-            // Only generate docs for props for javascript code.
             const componentDocsJs = getDocGenInfo(componentName);
-            if (componentDocsJs) {
+            const componentDocsTs = getDocGenInfoTs(componentName);
+            if (componentDocsTs) {
+              return <PropsTableTs key={componentName} name={componentName} props={componentDocsTs.children} />;
+            } else if (componentDocsJs) {
               return (
                 <PropsTable
                   key={componentName}
@@ -109,13 +111,6 @@ class ComponentDocs extends React.PureComponent {
                   enumValues={enumValues}
                 />
               );
-            }
-            let componentDocsTs;
-            if (!componentDocsJs) {
-              componentDocsTs = getDocGenInfoTs(componentName);
-              if (componentDocsTs) {
-                return <PropsTableTs key={componentName} name={componentName} props={componentDocsTs.children} />;
-              }
             }
             return null;
           })}

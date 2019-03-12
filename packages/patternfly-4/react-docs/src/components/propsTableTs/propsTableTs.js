@@ -32,7 +32,7 @@ export const PropsTableTs = ({ name, props }) => (
         <TH>Name</TH>
         <TH>Type</TH>
         <TH align="center">Required</TH>
-        {/* <TH>Default</TH> */}
+        <TH>Default</TH>
         <TH>Description</TH>
       </Heading>
       <Body>
