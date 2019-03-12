@@ -3,25 +3,9 @@ import prettier from 'prettier';
 import { defineInlineTest, runInlineTest } from 'jscodeshift/dist/testUtils';
 import transform from './pf3-pf4';
 
-/**
- * Codemod outputs should follow the EOL pattern of the target codebase, not
- * Patternfly's. Patternfly currently enforces LF as line ending, independent of
- * the OS building the codebase.
- *
- * JSCodeShift produces OS-dependent line endings however, LF for Unix based
- * systems, and CRLF for Windows based ones. This is also likely what most
- * projects would like to see the codemod prduce.
- *
- * To make sure we both adhere to Patternfly's conventions, and compare the
- * correct OS-specific line endings during the test cases' assertions, we store
- * expected values with LF line endings, and convert them into the OS-specific
- * ones at runtime using prettier.
- */
-const PRETTIER_EOL = SYSTEM_EOL === '\r\n' ? 'crlf' : 'cr';
 const prettierConfig = {
   ...prettier.resolveConfig.sync(process.cwd()),
-  parser: 'babel',
-  endOfLine: PRETTIER_EOL
+  parser: 'babel'
 };
 const pretty = src => prettier.format(src, prettierConfig);
 

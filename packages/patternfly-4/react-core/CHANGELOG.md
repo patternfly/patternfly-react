@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.1...@patternfly/react-core@2.5.2) (2019-03-12)
+
+
+### Bug Fixes
+
+* PF4 Fix HelperText definition in LoginForm ([#1551](https://github.com/patternfly/patternfly-react/issues/1551)) ([b3bc152](https://github.com/patternfly/patternfly-react/commit/b3bc152))
+
+
+
+
+
 ## [2.5.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.0...@patternfly/react-core@2.5.1) (2019-03-11)
 
 

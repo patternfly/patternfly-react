@@ -56,11 +56,14 @@ jobs:
       script:
         - yarn test:pf4
         - npx codecov -F patternfly4
-    - name: (PF3) Jest Tests
+    - name: (PF3 and Misc) Jest Tests
       install: skip
       script:
         - yarn test:pf3
         - npx codecov -F patternfly3
+        - rm -rf coverage
+        - yarn test:misc
+        - npx codecov -F patternflymisc
     - name: (PF4) Build PR Docs
       if: branch = master && type != pull_request && fork = false
       install: skip
