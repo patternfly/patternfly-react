@@ -13606,6 +13606,7 @@ exports[`Collapsible nested table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-table__toggle {
   display: block;
@@ -13623,6 +13624,7 @@ exports[`Collapsible nested table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-button.pf-m-plain {
   display: inline-block;
@@ -13662,6 +13664,7 @@ exports[`Collapsible nested table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-table__toggle {
   display: block;
@@ -19867,6 +19870,7 @@ exports[`Collapsible table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-table__toggle {
   display: block;
@@ -25904,18 +25908,21 @@ exports[`Header width table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-table__expandable-row {
   display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-table__expandable-row {
   display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-table.pf-m-grid-md {
   display: block;
@@ -31139,12 +31146,14 @@ exports[`Selectable table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-table__expandable-row {
   display: none;
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-table__check {
   display: block;
@@ -31159,6 +31168,7 @@ exports[`Selectable table 1`] = `
   position: relative;
   border-bottom: 0 solid transparent;
   box-shadow: 0 0 0 0 transparent;
+  visibility: hidden;
 }
 .pf-c-table__check {
   display: block;
