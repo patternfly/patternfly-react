@@ -46,7 +46,7 @@ class WizardToggle extends React.Component<WizardToggleProps> {
     }
     return (
       <>
-        <button onClick={this.toggleNav} className={css(styles.wizardToggle)} aria-expanded={isOpen}>
+        <button onClick={this.toggleNav} className={css(styles.wizardToggle, isOpen && 'pf-m-expanded')} aria-expanded={isOpen}>
           <ol className={css(styles.wizardToggleList)}>
             <li className={css(styles.wizardToggleListItem)}>
               <span className={css(styles.wizardToggleNum)}>{activeStepIndex}</span> {activeStepName}
