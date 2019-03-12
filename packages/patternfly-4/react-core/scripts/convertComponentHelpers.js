@@ -76,6 +76,9 @@ function fixFunctionalComponent(srcText, name) {
 }
 
 module.exports = {
+    // Runs some regexs to extremely roughly convert a JS component to TS. You'll
+    // need to have the JS on hand to finish the conversion.
+    // Usage: node scripts/convertComponentToTS.js src/components/Alert
     convertToTS: function (srcText) {
         const name = getComponentName(srcText);
         console.log('Converting', name);
@@ -90,8 +93,6 @@ module.exports = {
             console.log('detected stateful component, skipping');
         }
         res += '\n';
-        // console.log('='.repeat(20));
-        // console.log(res);
         return res;
     }
 };
