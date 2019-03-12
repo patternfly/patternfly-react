@@ -23,6 +23,7 @@ exports[`ChipGroup chip group default 1`] = `
       className=""
       closeBtnAriaLabel="close"
       isOverflowChip={false}
+      onClick={[Function]}
       tooltipPosition="top"
     >
       1.1
@@ -48,6 +49,7 @@ exports[`ChipGroup chip group with toolbar 1`] = `
       className=""
       closeBtnAriaLabel="close"
       isOverflowChip={false}
+      onClick={[Function]}
       tooltipPosition="top"
     >
       1.1
