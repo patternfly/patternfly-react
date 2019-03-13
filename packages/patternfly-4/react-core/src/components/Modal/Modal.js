@@ -92,6 +92,7 @@ class Modal extends React.Component {
   componentWillUnmount() {
     document.body.removeChild(this.container);
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
+    document.body.classList.remove(css(styles.backdropOpen));
   }
 
   render() {
