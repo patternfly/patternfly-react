@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.3...@patternfly/react-core@2.5.4) (2019-03-13)
+
+
+### Bug Fixes
+
+* **Modal:** remove backdropOpen class from body when Modal is removed ([#1563](https://github.com/patternfly/patternfly-react/issues/1563)) ([23533af](https://github.com/patternfly/patternfly-react/commit/23533af)), closes [#1531](https://github.com/patternfly/patternfly-react/issues/1531)
+
+
+
+
+
 ## [2.5.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.2...@patternfly/react-core@2.5.3) (2019-03-13)
 
 **Note:** Version bump only for package @patternfly/react-core
