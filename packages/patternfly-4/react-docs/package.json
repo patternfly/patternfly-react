@@ -45,9 +45,9 @@
     "gatsby"
   ],
   "scripts": {
+    "clean": "rimraf .cache .tmp dist public static ts-docs",
     "develop": "yarn gen-ts-docs && gatsby develop",
     "docbuild": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
-    "clean": "rimraf .cache .tmp dist public static ts-docs",
     "pr-build": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
     "gen-ts-docs": "typedoc --json ts-docs/ts-output.json ../react-core --ignoreCompilerErrors --mode file --tsconfig ../react-core/src/tsconfig.dts.json && node build/transformTsDocs.js"
   },

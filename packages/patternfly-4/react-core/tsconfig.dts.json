@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "esModuleInterop": true,
-    "noEmit": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist/js",
     "skipLibCheck": true,
     "baseUrl": ".",
     "moduleResolution": "node",
@@ -20,6 +20,12 @@
     }
   },
   "include": [
+    "typings",
     "./src/**/*"
+  ],
+  "exclude": [
+    "./src/**/**.test.tsx",
+    "./src/**/**.test.ts",
+    "./src/**/examples/**"
   ]
 }

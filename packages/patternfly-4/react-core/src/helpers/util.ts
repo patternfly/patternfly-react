@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import * as ReactDOM from 'react-dom';
 import { SIDE } from './constants';
 
 export function capitalize(input: string) {
@@ -91,7 +91,7 @@ export function fillTemplate(templateString, templateVars) {
  * @param {Object[]} kids Array of items in the dropdown
  * @param {boolean} [custom] Allows for handling of flexible content
  */
-export function keyHandler (index, position, refsCollection, kids, custom = false) {
+export function keyHandler(index, position, refsCollection, kids, custom = false) {
   if (!Array.isArray(kids)) {
     return;
   }
@@ -111,13 +111,14 @@ export function keyHandler (index, position, refsCollection, kids, custom = fals
   }
   if (refsCollection[nextIndex] === null) {
     keyHandler(nextIndex, position, refsCollection, kids, custom);
-  } else {
-      /* tslint:disable */
-      custom
-        ? (refsCollection[nextIndex].focus &&
-            refsCollection[nextIndex].focus()) ||
-          ReactDOM.findDOMNode(refsCollection[nextIndex]).focus()
-        : refsCollection[nextIndex].focus();
-      /* tslint:enable */
+  } else if (custom) {
+    if (refsCollection[nextIndex].focus) {
+      refsCollection[nextIndex].focus()
+    }
+    const element = ReactDOM.findDOMNode(refsCollection[nextIndex]) as HTMLElement;
+    element.focus()
+  }
+  else {
+    refsCollection[nextIndex].focus();
   }
 }

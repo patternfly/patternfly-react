@@ -33,9 +33,6 @@
     "@storybook/addons": "^3.3.0",
     "@storybook/react": "^v3.4.11",
     "@storybook/storybook-deployer": "^2.1.0",
-    "@types/enzyme": "3.9.0",
-    "@types/jest": "^24.0.11",
-    "@types/react": "~16.8.7",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^9.0.0",
@@ -97,41 +94,39 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "build": "yarn prebuild:pf4 && lerna run --parallel build",
-    "commit": "git-cz",
-    "prebuild:pf4": "lerna run --scope='@patternfly/react-styles' build",
-    "build:docs": "yarn build && lerna run docbuild",
+    "build": "lerna run build --stream",
+    "build:docs": "lerna run docbuild --stream",
     "build:prdocs": "lerna run pr-build --stream",
     "build:storybook": "build-storybook -c storybook -o .out",
     "clean": "lerna run clean --parallel",
+    "commit": "git-cz",
     "generate": "yarn plop",
     "lint": "lerna run lint --parallel",
     "lint:fix": "lerna run lint:fix --parallel",
     "lint:style": "lerna run stylelint",
     "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
     "start": "yarn start:pf3",
-    "start:pf3": "concurrently \"yarn storybook:run\" \"yarn storybook:openurl\"",
+    "start:pf3": "concurrently 'yarn storybook' 'yarn storybook:openurl'",
     "start:pf4": "lerna run develop --scope=@patternfly/react-docs --stream",
     "storybook:openurl": "node ./storybook/openBrowser.js",
-    "storybook:run": "start-storybook -c storybook -p 6006",
-    "storybook": "yarn storybook:run",
+    "storybook": "start-storybook -c storybook -p 6006",
     "test": "jest packages",
+    "test:current": "jest --watch",
+    "test:integration": "lerna run integration:setup && lerna run build:demo && lerna run integration:test",
     "test:misc": "jest packages/react-*",
     "test:pf3": "jest packages/patternfly-3",
     "test:pf4": "jest packages/patternfly-4",
-    "test:current": "jest --watch",
-    "test:integration": "lerna run integration:setup && lerna run build:demo && lerna run integration:test",
     "test:watch": "jest --watchAll",
     "uninstall": "find . -name node_modules -type d | xargs rm -rf"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/**"
-    ]
   },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
+  },
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ]
   }
 }
