@@ -25,7 +25,7 @@
     "gatsby-plugin-typescript": "2.0.3",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-json": "^2.1.8",
-    "gatsby-transformer-react-docgen": "^3.0.5",
+    "gatsby-transformer-react-docgen": "3.0.2",
     "param-case": "^2.1.1",
     "prop-types": "^15.6.1",
     "react": "~16.8.4",
