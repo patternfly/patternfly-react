@@ -1713,7 +1713,7 @@ exports[`Mock Client Pagination table renders 1`] = `
     </tbody>
   </table>
   <form
-    class="content-view-pf-pagination table-view-pf-pagination clearfix "
+    class="content-view-pf-pagination table-view-pf-pagination clearfix"
   >
     <div
       class="form-group"
@@ -1904,6 +1904,7 @@ exports[`Mock Server Pagination table renders 1`] = `
             Select all rows
           </label>
           <input
+            checked=""
             id="selectAll"
             type="checkbox"
           />
@@ -1967,7 +1968,7 @@ exports[`Mock Server Pagination table renders 1`] = `
     <tbody />
   </table>
   <form
-    class="content-view-pf-pagination table-view-pf-pagination clearfix "
+    class="content-view-pf-pagination table-view-pf-pagination clearfix"
   >
     <div
       class="form-group"

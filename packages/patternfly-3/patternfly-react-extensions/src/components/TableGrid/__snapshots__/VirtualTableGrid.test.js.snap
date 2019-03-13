@@ -64,7 +64,7 @@ exports[`Bordered TableGrid renders properly 1`] = `
           aria-readonly="true"
           class="ReactVirtualized__Grid ReactVirtualized__List"
           role="grid"
-          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; overflow-x: hidden; overflow-y: auto;"
+          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
         />
       </div>
     </div>
@@ -150,7 +150,7 @@ exports[`TableGrid with Cell select renders properly 1`] = `
           aria-readonly="true"
           class="ReactVirtualized__Grid ReactVirtualized__List"
           role="grid"
-          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; overflow-x: hidden; overflow-y: auto;"
+          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
         />
       </div>
     </div>
@@ -250,7 +250,7 @@ exports[`TableGrid with Checkbox select and everything selected renders properly
           aria-readonly="true"
           class="ReactVirtualized__Grid ReactVirtualized__List"
           role="grid"
-          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; overflow-x: hidden; overflow-y: auto;"
+          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
         />
       </div>
     </div>
@@ -350,7 +350,7 @@ exports[`TableGrid with Checkbox select and no selections renders properly 1`] =
           aria-readonly="true"
           class="ReactVirtualized__Grid ReactVirtualized__List"
           role="grid"
-          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; overflow-x: hidden; overflow-y: auto;"
+          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
         />
       </div>
     </div>
@@ -450,7 +450,7 @@ exports[`TableGrid with Checkbox select and partial selections renders properly 
           aria-readonly="true"
           class="ReactVirtualized__Grid ReactVirtualized__List"
           role="grid"
-          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; overflow-x: hidden; overflow-y: auto;"
+          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
         />
       </div>
     </div>
@@ -536,7 +536,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
           aria-readonly="true"
           class="ReactVirtualized__Grid ReactVirtualized__List"
           role="grid"
-          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; overflow-x: hidden; overflow-y: auto;"
+          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
         />
       </div>
     </div>
@@ -622,7 +622,7 @@ exports[`VirtualTableGrid renders properly 1`] = `
           aria-readonly="true"
           class="ReactVirtualized__Grid ReactVirtualized__List"
           role="grid"
-          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; overflow-x: hidden; overflow-y: auto;"
+          style="box-sizing: border-box; direction: ltr; height: auto; position: relative; width: 0px; will-change: transform; overflow-x: hidden; overflow-y: auto;"
         />
       </div>
     </div>

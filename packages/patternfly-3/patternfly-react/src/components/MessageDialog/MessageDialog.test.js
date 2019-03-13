@@ -70,11 +70,7 @@ describe('rendering with options', () => {
   });
 
   test('renders with a custom footer', () => {
-    const footer = (
-      <React.Fragment>
-        <Button>Close</Button>
-      </React.Fragment>
-    );
+    const footer = <button>Close</button>;
     const wrapper = shallow(<MessageDialog show onHide={onHide} footer={footer} />);
 
     expect(wrapper.contains(footer)).toBe(true);

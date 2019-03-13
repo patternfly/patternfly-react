@@ -58,7 +58,7 @@
   },
   "scripts": {
     "build": "yarn build:sass && yarn build:less && yarn build:babel",
-    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
     "build:less": "shx mkdir -p dist/less && shx cp -r less/* dist/less",

@@ -47,9 +47,9 @@ exports[`component render custom pagination toggle 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -63,9 +63,9 @@ exports[`component render custom pagination toggle 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -88,9 +88,9 @@ exports[`component render custom pagination toggle 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -102,9 +102,9 @@ exports[`component render custom pagination toggle 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-pagination__nav {
@@ -667,9 +667,9 @@ exports[`component render custom perPageOptions 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -683,9 +683,9 @@ exports[`component render custom perPageOptions 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -708,9 +708,9 @@ exports[`component render custom perPageOptions 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -722,9 +722,9 @@ exports[`component render custom perPageOptions 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-pagination__nav {
@@ -1238,9 +1238,9 @@ exports[`component render custom start end 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -1254,9 +1254,9 @@ exports[`component render custom start end 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -1279,9 +1279,9 @@ exports[`component render custom start end 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -1293,9 +1293,9 @@ exports[`component render custom start end 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-pagination__nav {
@@ -1877,9 +1877,9 @@ exports[`component render last page 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -1891,9 +1891,9 @@ exports[`component render last page 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-form-control {
@@ -1914,9 +1914,9 @@ exports[`component render last page 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -1930,9 +1930,9 @@ exports[`component render last page 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -2514,9 +2514,9 @@ exports[`component render limited number of pages 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -2530,9 +2530,9 @@ exports[`component render limited number of pages 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -2555,9 +2555,9 @@ exports[`component render limited number of pages 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -2571,9 +2571,9 @@ exports[`component render limited number of pages 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -3155,9 +3155,9 @@ exports[`component render no items 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -3171,9 +3171,9 @@ exports[`component render no items 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -3196,9 +3196,9 @@ exports[`component render no items 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -3210,9 +3210,9 @@ exports[`component render no items 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-pagination__nav {
@@ -3789,9 +3789,9 @@ exports[`component render should render correctly bottom 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -3805,9 +3805,9 @@ exports[`component render should render correctly bottom 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -3830,9 +3830,9 @@ exports[`component render should render correctly bottom 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -3844,9 +3844,9 @@ exports[`component render should render correctly bottom 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-pagination__nav {
@@ -4421,9 +4421,9 @@ exports[`component render should render correctly top 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -4437,9 +4437,9 @@ exports[`component render should render correctly top 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -4462,9 +4462,9 @@ exports[`component render should render correctly top 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -4476,9 +4476,9 @@ exports[`component render should render correctly top 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-pagination__nav {
@@ -5058,9 +5058,9 @@ exports[`component render titles 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -5074,9 +5074,9 @@ exports[`component render titles 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -5099,9 +5099,9 @@ exports[`component render titles 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -5113,9 +5113,9 @@ exports[`component render titles 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-pagination__nav {
@@ -5687,9 +5687,9 @@ exports[`component render up drop direction 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -5703,9 +5703,9 @@ exports[`component render up drop direction 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   pointer-events: none;
   background-color: transparent;
@@ -5728,9 +5728,9 @@ exports[`component render up drop direction 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-button.pf-m-plain {
@@ -5742,9 +5742,9 @@ exports[`component render up drop direction 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 .pf-c-pagination__nav {

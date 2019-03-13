@@ -187,8 +187,7 @@ exports[`select single select renders expanded successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
 }
 .pf-c-select__menu-item {
   display: block;
@@ -200,8 +199,7 @@ exports[`select single select renders expanded successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
 }
 .pf-c-select__menu-item {
   display: block;
@@ -213,8 +211,7 @@ exports[`select single select renders expanded successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
 }
 .pf-c-select__menu-item {
   display: block;
@@ -226,8 +223,7 @@ exports[`select single select renders expanded successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
 }
 .pf-c-select__menu {
   display: block;

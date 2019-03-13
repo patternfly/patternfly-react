@@ -3,7 +3,7 @@ node_modules
 dist
 tsc_out
 .out
-/.changelog
+.changelog
 .DS_Store
 coverage
 .cache
@@ -14,21 +14,20 @@ yarn-error.log
 lerna-debug.log
 
 # IDEs and editors
-/.idea
+.idea
 .project
 .classpath
-.c9/
+.c9
 *.launch
-.settings/
+.settings
 *.sublime-workspace
-.history/*
+.history
+.vscode
 
 # IDE - VSCode
-.vscode/*
+.vscode
+# For prettier
 !.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
 # Deploy directory
 .public

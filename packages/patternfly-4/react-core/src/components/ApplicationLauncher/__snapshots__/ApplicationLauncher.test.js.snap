@@ -3,29 +3,39 @@
 exports[`ApplicationLauncher dropup + right aligned 1`] = `
 <GenerateId
   prefix="pf-random-id-"
-/>
+>
+  <Component />
+</GenerateId>
 `;
 
 exports[`ApplicationLauncher dropup 1`] = `
 <GenerateId
   prefix="pf-random-id-"
-/>
+>
+  <Component />
+</GenerateId>
 `;
 
 exports[`ApplicationLauncher expanded 1`] = `
 <GenerateId
   prefix="pf-random-id-"
-/>
+>
+  <Component />
+</GenerateId>
 `;
 
 exports[`ApplicationLauncher regular 1`] = `
 <GenerateId
   prefix="pf-random-id-"
-/>
+>
+  <Component />
+</GenerateId>
 `;
 
 exports[`ApplicationLauncher right aligned 1`] = `
 <GenerateId
   prefix="pf-random-id-"
-/>
+>
+  <Component />
+</GenerateId>
 `;

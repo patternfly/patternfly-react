@@ -5,6 +5,7 @@ exports[`className is added to the root element 1`] = `"pf-c-card__footer extra-
 exports[`renders with PatternFly Core styles 1`] = `
 .pf-c-card__footer {
   display: block;
+  flex: 0 0 auto;
   padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 }
 

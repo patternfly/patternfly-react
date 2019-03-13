@@ -10,9 +10,9 @@ exports[`aria-disabled is set to true and tabIndex to -1 if component is not a b
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   background-color: #d1d1d1;
   pointer-events: none;
@@ -40,9 +40,9 @@ exports[`danger button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #ffffff;
   background-color: #cc0000;
 }
@@ -70,9 +70,9 @@ exports[`isBlock 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   width: 100%;
   color: #ffffff;
   background-color: #007bba;
@@ -100,9 +100,9 @@ exports[`isDisabled 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
   background-color: #d1d1d1;
   pointer-events: none;
@@ -130,9 +130,9 @@ exports[`isFocus 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #ffffff;
   background-color: #007bba;
 }
@@ -159,6 +159,7 @@ exports[`isHover 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
   text-decoration: none;
@@ -188,9 +189,9 @@ exports[`link button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
 }
 
@@ -217,9 +218,9 @@ exports[`plain button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #72767b;
 }
 
@@ -246,9 +247,9 @@ exports[`primary button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #ffffff;
   background-color: #007bba;
 }
@@ -276,9 +277,9 @@ exports[`secondary button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #007bba;
   background-color: transparent;
 }
@@ -306,9 +307,9 @@ exports[`tertiary button 1`] = `
   line-height: 1.5;
   text-align: center;
   white-space: nowrap;
+  user-select: none;
   border: 0px;
   border-radius: 3px;
-  text-decoration: none;
   color: #282d33;
   background-color: transparent;
 }

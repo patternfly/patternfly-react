@@ -15,31 +15,37 @@ exports[`onSelect callback called when tab selected 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__list {
   display: flex;
@@ -64,7 +70,7 @@ exports[`onSelect callback called when tab selected 1`] = `
   align-items: flex-start;
 }
 
-<React.Fragment>
+<Fragment>
   <div
     className="pf-c-tabs"
     onSelect={
@@ -201,7 +207,7 @@ exports[`onSelect callback called when tab selected 1`] = `
     index={2}
     key="2"
   />
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`should call handleScrollButtons tabs with scrolls 1`] = `
@@ -219,31 +225,37 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__list {
   display: flex;
@@ -492,31 +504,37 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__list {
   display: flex;
@@ -765,31 +783,37 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__list {
   display: flex;
@@ -1038,31 +1062,37 @@ exports[`should render filled tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__list {
   display: flex;
@@ -1087,7 +1117,7 @@ exports[`should render filled tabs 1`] = `
   align-items: flex-start;
 }
 
-<React.Fragment>
+<Fragment>
   <div
     className="pf-c-tabs pf-m-fill"
     onSelect={[Function]}
@@ -1209,7 +1239,7 @@ exports[`should render filled tabs 1`] = `
     index={2}
     key="2"
   />
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`should render secondary tabs 1`] = `
@@ -1227,31 +1257,37 @@ exports[`should render secondary tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__list {
   display: flex;
@@ -1276,7 +1312,7 @@ exports[`should render secondary tabs 1`] = `
   align-items: flex-start;
 }
 
-<React.Fragment>
+<Fragment>
   <div
     className="pf-c-tabs"
     onSelect={[Function]}
@@ -1431,7 +1467,7 @@ exports[`should render secondary tabs 1`] = `
     index={2}
     key="2"
   />
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`should render simple tabs 1`] = `
@@ -1449,31 +1485,37 @@ exports[`should render simple tabs 1`] = `
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item.pf-m-current {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__button {
   display: block;
   position: relative;
   padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  user-select: none;
   background: transparent;
   border: 0px;
 }
 .pf-c-tabs__item {
   display: block;
+  flex: 0 0 auto;
 }
 .pf-c-tabs__list {
   display: flex;
@@ -1498,7 +1540,7 @@ exports[`should render simple tabs 1`] = `
   align-items: flex-start;
 }
 
-<React.Fragment>
+<Fragment>
   <div
     className="pf-c-tabs"
     onSelect={[Function]}
@@ -1620,5 +1662,5 @@ exports[`should render simple tabs 1`] = `
     index={2}
     key="2"
   />
-</React.Fragment>
+</Fragment>
 `;

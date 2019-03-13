@@ -3,6 +3,7 @@
 exports[`DataList Cell 1`] = `
 .pf-c-data-list__cell.data-list-custom {
   display: block;
+  flex: 1;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -18,6 +19,7 @@ exports[`DataList Cell 1`] = `
 exports[`DataList Cell default 1`] = `
 .pf-c-data-list__cell {
   display: block;
+  flex: 1;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }

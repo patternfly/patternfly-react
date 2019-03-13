@@ -40,11 +40,10 @@
     "react-dom": "^15.6.2 || ^16.4.0"
   },
   "scripts": {
-    "build": "yarn build:babel && yarn build:ts && node ./build/copyStyles.js",
-    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build": "yarn build:babel && node ./scripts/copyTS.js && node ./build/copyStyles.js",
+    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
-    "build:ts": "node ./scripts/copyTS.js",
     "clean": "rimraf dist"
   },
   "devDependencies": {

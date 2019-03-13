@@ -9,7 +9,7 @@ exports[`Bordered TableGrid renders properly 1`] = `
     class="table-grid-pf-head row"
   >
     <div
-      class="table-grid-pf-column-header text-nowrap active-sort test-class "
+      class="table-grid-pf-column-header text-nowrap active-sort test-class"
       id="title"
     >
       <button
@@ -24,15 +24,15 @@ exports[`Bordered TableGrid renders properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Column 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     />
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     >
       <div>
         <span>
@@ -61,25 +61,25 @@ exports[`Bordered TableGrid renders properly 1`] = `
         />
       </div>
       <div
-        class="test-col1 "
+        class="test-col1"
         id="test-col-1"
       >
         item 1 column 1
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="test-col-2"
       >
         item 1 column 2
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="test-col-3"
       >
         item 1 column 3
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         item 1 column 4
@@ -104,7 +104,7 @@ exports[`Bordered TableGrid renders properly 1`] = `
         item 2 column 1
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="two-children"
       >
         <span>
@@ -115,7 +115,7 @@ exports[`Bordered TableGrid renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="icon-name"
       >
         <span
@@ -125,7 +125,7 @@ exports[`Bordered TableGrid renders properly 1`] = `
         Danger
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         item 2 column 4
@@ -144,7 +144,7 @@ exports[`TableGrid renders properly 1`] = `
     class="table-grid-pf-head row"
   >
     <div
-      class="table-grid-pf-column-header text-nowrap active-sort test-class "
+      class="table-grid-pf-column-header text-nowrap active-sort test-class"
       id="title"
     >
       <button
@@ -159,15 +159,15 @@ exports[`TableGrid renders properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Column 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     />
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     >
       <div>
         <span>
@@ -196,25 +196,25 @@ exports[`TableGrid renders properly 1`] = `
         />
       </div>
       <div
-        class="test-col1 "
+        class="test-col1"
         id="test-col-1"
       >
         item 1 column 1
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="test-col-2"
       >
         item 1 column 2
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="test-col-3"
       >
         item 1 column 3
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         item 1 column 4
@@ -239,7 +239,7 @@ exports[`TableGrid renders properly 1`] = `
         item 2 column 1
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="two-children"
       >
         <span>
@@ -250,7 +250,7 @@ exports[`TableGrid renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="icon-name"
       >
         <span
@@ -260,7 +260,7 @@ exports[`TableGrid renders properly 1`] = `
         Danger
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         item 2 column 4
@@ -279,7 +279,7 @@ exports[`TableGrid with Cell select renders properly 1`] = `
     class="table-grid-pf-head row"
   >
     <div
-      class="table-grid-pf-column-header text-nowrap active-sort test-class "
+      class="table-grid-pf-column-header text-nowrap active-sort test-class"
       id="title"
     >
       <button
@@ -294,15 +294,15 @@ exports[`TableGrid with Cell select renders properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Column 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     />
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     >
       <div>
         <span>
@@ -331,7 +331,7 @@ exports[`TableGrid with Cell select renders properly 1`] = `
         />
       </div>
       <div
-        class="test-col1 "
+        class="test-col1"
         id="test-col-1"
       >
         <span
@@ -341,7 +341,7 @@ exports[`TableGrid with Cell select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="test-col-2"
       >
         <span
@@ -351,7 +351,7 @@ exports[`TableGrid with Cell select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="test-col-3"
       >
         <span
@@ -361,7 +361,7 @@ exports[`TableGrid with Cell select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         <span
@@ -394,7 +394,7 @@ exports[`TableGrid with Cell select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="two-children"
       >
         <span
@@ -409,7 +409,7 @@ exports[`TableGrid with Cell select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="icon-name"
       >
         <span
@@ -423,7 +423,7 @@ exports[`TableGrid with Cell select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         <span
@@ -460,7 +460,7 @@ exports[`TableGrid with Checkbox select renders properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap active-sort test-class "
+      class="table-grid-pf-column-header text-nowrap active-sort test-class"
       id="title"
     >
       <button
@@ -475,15 +475,15 @@ exports[`TableGrid with Checkbox select renders properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Column 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     />
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     >
       <div>
         <span>
@@ -512,7 +512,7 @@ exports[`TableGrid with Checkbox select renders properly 1`] = `
         />
       </div>
       <div
-        class="test-col1 "
+        class="test-col1"
         id="test-col-1"
       >
         <span
@@ -522,7 +522,7 @@ exports[`TableGrid with Checkbox select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="test-col-2"
       >
         <span
@@ -532,7 +532,7 @@ exports[`TableGrid with Checkbox select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="test-col-3"
       >
         <span
@@ -542,7 +542,7 @@ exports[`TableGrid with Checkbox select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         <span
@@ -575,7 +575,7 @@ exports[`TableGrid with Checkbox select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="two-children"
       >
         <span
@@ -590,7 +590,7 @@ exports[`TableGrid with Checkbox select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="icon-name"
       >
         <span
@@ -604,7 +604,7 @@ exports[`TableGrid with Checkbox select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         <span
@@ -627,7 +627,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
     class="table-grid-pf-head row"
   >
     <div
-      class="table-grid-pf-column-header text-nowrap active-sort test-class "
+      class="table-grid-pf-column-header text-nowrap active-sort test-class"
       id="title"
     >
       <button
@@ -642,15 +642,15 @@ exports[`TableGrid with Row select renders properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Column 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     />
     <div
-      class="table-grid-pf-column-header text-nowrap descending "
+      class="table-grid-pf-column-header text-nowrap descending"
     >
       <div>
         <span>
@@ -679,25 +679,25 @@ exports[`TableGrid with Row select renders properly 1`] = `
         />
       </div>
       <div
-        class="test-col1 "
+        class="test-col1"
         id="test-col-1"
       >
         item 1 column 1
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="test-col-2"
       >
         item 1 column 2
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="test-col-3"
       >
         item 1 column 3
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         item 1 column 4
@@ -712,6 +712,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
       >
         <input
           aria-label="Select"
+          checked=""
           type="checkbox"
         />
       </div>
@@ -722,7 +723,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
         item 2 column 1
       </div>
       <div
-        class="test-col2 "
+        class="test-col2"
         id="two-children"
       >
         <span>
@@ -733,7 +734,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="icon-name"
       >
         <span
@@ -743,7 +744,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
         Danger
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         item 2 column 4
@@ -768,7 +769,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
         item 3 column 1
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="two-children"
       >
         <span>
@@ -779,7 +780,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
         </span>
       </div>
       <div
-        class="test-col3 "
+        class="test-col3"
         id="icon-name"
       >
         <span
@@ -789,7 +790,7 @@ exports[`TableGrid with Row select renders properly 1`] = `
         Danger
       </div>
       <div
-        class="test-col4 "
+        class="test-col4"
         id="test-col-4"
       >
         item 3 column 4
@@ -809,17 +810,17 @@ exports[`TableGridHead renders options properly 1`] = `
     id="all-selected-no-checkbox"
   >
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 1
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 3
     </div>
@@ -843,17 +844,17 @@ exports[`TableGridHead renders options properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 1
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 3
     </div>
@@ -877,17 +878,17 @@ exports[`TableGridHead renders options properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 1
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 3
     </div>
@@ -911,17 +912,17 @@ exports[`TableGridHead renders options properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 1
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 3
     </div>
@@ -945,17 +946,17 @@ exports[`TableGridHead renders options properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 1
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 3
     </div>
@@ -979,17 +980,17 @@ exports[`TableGridHead renders options properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 1
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 3
     </div>
@@ -1013,17 +1014,17 @@ exports[`TableGridHead renders options properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 1
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 3
     </div>
@@ -1047,17 +1048,17 @@ exports[`TableGridHead renders options properly 1`] = `
       </button>
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 1
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 2
     </div>
     <div
-      class="table-grid-pf-column-header text-nowrap "
+      class="table-grid-pf-column-header text-nowrap"
     >
       Col 3
     </div>
