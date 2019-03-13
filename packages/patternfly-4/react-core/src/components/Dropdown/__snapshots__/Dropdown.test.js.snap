@@ -26,7 +26,6 @@ exports[`KebabToggle basic 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -667,7 +666,6 @@ exports[`KebabToggle expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu-item {
   display: block;
@@ -680,7 +678,6 @@ exports[`KebabToggle expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu-item.pf-m-disabled {
   display: block;
@@ -693,7 +690,6 @@ exports[`KebabToggle expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
   pointer-events: none;
 }
 .pf-c-dropdown__menu-item.pf-m-disabled {
@@ -707,7 +703,6 @@ exports[`KebabToggle expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
   pointer-events: none;
 }
 .pf-c-dropdown__separator {
@@ -735,7 +730,6 @@ exports[`KebabToggle expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu-item {
   display: block;
@@ -748,7 +742,6 @@ exports[`KebabToggle expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -1955,7 +1948,6 @@ exports[`dropdown basic 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu {
   display: block;
@@ -2638,7 +2630,6 @@ exports[`dropdown expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu-item {
   display: block;
@@ -2651,7 +2642,6 @@ exports[`dropdown expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu-item.pf-m-disabled {
   display: block;
@@ -2664,7 +2654,6 @@ exports[`dropdown expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
   pointer-events: none;
 }
 .pf-c-dropdown__menu-item.pf-m-disabled {
@@ -2678,7 +2667,6 @@ exports[`dropdown expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
   pointer-events: none;
 }
 .pf-c-dropdown__separator {
@@ -2706,7 +2694,6 @@ exports[`dropdown expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu-item {
   display: block;
@@ -2719,7 +2706,6 @@ exports[`dropdown expanded 1`] = `
   text-align: left;
   white-space: nowrap;
   background-color: transparent;
-  text-decoration: none;
 }
 .pf-c-dropdown__menu {
   display: block;

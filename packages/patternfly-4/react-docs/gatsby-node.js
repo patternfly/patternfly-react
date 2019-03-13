@@ -28,9 +28,7 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }
         '@patternfly/react-charts': path.resolve(__dirname, '../react-charts/src'),
         '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),
-        '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system/src'),
-        react: path.resolve(__dirname, 'node_modules/react'),
-        'react-dom': path.resolve(__dirname, 'node_modules/react-dom')
+        '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system/src')
       }
     }
   });

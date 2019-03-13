@@ -9,6 +9,9 @@ export default {
   components: {
     Wizard
   },
+  types: {
+    WizardStepFunctionType: '(step: { id?: string | number; name: string; }) => void'
+  },
   examples: [
     { component: SimpleWizard, title: 'Simple Wizard' },
     { component: ValidationWizard, title: 'Validation Wizard', liveScope: { SampleFormOne, SampleFormTwo } }

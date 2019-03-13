@@ -3,6 +3,7 @@
 exports[`Check page horizontal layout example against snapshot 1`] = `
 .pf-c-page__header-brand-link {
   display: flex;
+  flex: 1;
   align-items: center;
 }
 .pf-c-page__header-brand {
@@ -36,6 +37,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #ffffff;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
   transform: translate3d(-100%,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
 }
@@ -43,22 +45,26 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  flex: 1 0 0px;
 }
 .pf-c-page__main-section.pf-m-light {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  flex: 1 0 0px;
 }
 .pf-c-page__main-section.pf-m-dark-200 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  flex: 1 0 0px;
   color: #ffffff;
 }
 .pf-c-page__main-section.pf-m-dark-100 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  flex: 1 0 0px;
   color: #ffffff;
 }
 .pf-c-page__main {
@@ -210,6 +216,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
 exports[`Check page vertical layout example against snapshot 1`] = `
 .pf-c-page__header-brand-link {
   display: flex;
+  flex: 1;
   align-items: center;
 }
 .pf-c-page__header-brand {
@@ -243,6 +250,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #ffffff;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
   transform: translate3d(-100%,0,0);
   box-shadow: 0.75rem 0 0.625rem -0.25rem rgba(3, 3, 3, 0.07);
 }
@@ -250,22 +258,26 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  flex: 1 0 0px;
 }
 .pf-c-page__main-section.pf-m-light {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  flex: 1 0 0px;
 }
 .pf-c-page__main-section.pf-m-dark-200 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  flex: 1 0 0px;
   color: #ffffff;
 }
 .pf-c-page__main-section.pf-m-dark-100 {
   display: block;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #ededed;
+  flex: 1 0 0px;
   color: #ffffff;
 }
 .pf-c-page__main {

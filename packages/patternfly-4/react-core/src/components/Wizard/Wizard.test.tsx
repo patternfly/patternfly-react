@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import { Wizard, WizardStep } from './Wizard';
+import { Wizard, WizardStep, WizardStepFunctionType } from './Wizard';
 
 test('Wizard should match snapshot', () => {
   const steps: WizardStep[] = [
@@ -23,6 +23,9 @@ test('Wizard should match snapshot', () => {
     { name: 'C', component: <p>Step 4</p> },
     { name: 'D', component: <p>Step 5</p> }
   ];
+  const onBack: WizardStepFunctionType = (step) => {
+    const name = { step };
+  };
   const view = mount(
     <Wizard
       isOpen
@@ -30,6 +33,7 @@ test('Wizard should match snapshot', () => {
       description="Description here"
       steps={steps}
       startAtStep={1}
+      onBack={onBack}
     />
   );
   // ran into: https://github.com/airbnb/enzyme/issues/1213

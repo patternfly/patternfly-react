@@ -394,7 +394,7 @@ const testDisablePreviousStepWizard = props => {
       shouldDisableCancelButton={idx => idx === 1}
       steps={[
         { title: '1', render: () => <p>1</p> },
-        { title: '2', render: () => <p className=".step2">2</p> },
+        { title: '2', render: () => <p className="step2">2</p> },
         { title: '3', render: () => <p>3</p> }
       ]}
       {...props}

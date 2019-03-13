@@ -6,13 +6,13 @@ import { Title } from '../Title';
 import { TimesIcon } from '@patternfly/react-icons';
 
 interface WizardHeaderProps {
-  onClose?(): any;
+  onClose?: () => any;
   title: string;
   description: string;
   ariaLabel: string;
 }
 
-const WizardHeader: React.SFC<WizardHeaderProps> = ({ onClose = null, title, description, ariaLabel }) => (
+const WizardHeader: React.SFC<WizardHeaderProps> = ({ onClose, title, description, ariaLabel }) => (
   <div className={css(styles.wizardHeader)}>
     <Button variant="plain" className={css(styles.wizardClose)} aria-label={ariaLabel} onClick={onClose}>
       <TimesIcon aria-hidden="true" />
@@ -23,5 +23,9 @@ const WizardHeader: React.SFC<WizardHeaderProps> = ({ onClose = null, title, des
     </p>}
   </div>
 );
+
+WizardHeader.defaultProps = {
+  onClose: () => undefined
+};
 
 export default WizardHeader;

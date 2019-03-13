@@ -9,8 +9,8 @@ exports[`controlled 1`] = `
 .pf-c-check {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -38,8 +38,8 @@ exports[`isDisabled 1`] = `
 .pf-c-check {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -74,8 +74,8 @@ exports[`label is function 1`] = `
 .pf-c-check {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -119,8 +119,8 @@ exports[`label is node 1`] = `
 .pf-c-check {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -164,8 +164,8 @@ exports[`label is string 1`] = `
 .pf-c-check {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -207,8 +207,8 @@ exports[`passing HTML attribute 1`] = `
 .pf-c-check {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -251,8 +251,8 @@ exports[`passing class 1`] = `
 .pf-c-check.class-123 {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -286,8 +286,8 @@ exports[`uncontrolled 1`] = `
 .pf-c-check {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div

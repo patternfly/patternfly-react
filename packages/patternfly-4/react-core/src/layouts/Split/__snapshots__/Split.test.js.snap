@@ -102,6 +102,7 @@ exports[`Gutter sm 1`] = `
 exports[`isMain 1`] = `
 .pf-l-split__item.pf-m-main {
   display: block;
+  flex-grow: 1;
 }
 .pf-l-split {
   display: flex;

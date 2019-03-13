@@ -29,6 +29,7 @@ const propTypes = {
   ),
   components: PropTypes.objectOf(PropTypes.func),
   enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
+  types: PropTypes.object,
   rawExamples: PropTypes.array,
   images: PropTypes.array,
   fullPageOnly: PropTypes.bool,
@@ -41,6 +42,7 @@ const defaultProps = {
   examples: [],
   components: {},
   enumValues: {},
+  types: {},
   rawExamples: [],
   images: [],
   fullPageOnly: false,
@@ -57,6 +59,7 @@ class ComponentDocs extends React.PureComponent {
       examples,
       components,
       enumValues,
+      types,
       fullPageOnly,
       rawExamples,
       images,
@@ -99,9 +102,19 @@ class ComponentDocs extends React.PureComponent {
           {Object.entries(components).map(component => {
             const componentName = component[0];
             const componentFunction = component[1];
-            // Only generate docs for props for javascript code.
             const componentDocsJs = getDocGenInfo(componentName);
-            if (componentDocsJs) {
+            const componentDocsTs = getDocGenInfoTs(componentName);
+            if (componentDocsTs) {
+              return (
+                <PropsTableTs
+                  key={componentName}
+                  name={componentName}
+                  props={componentDocsTs.children}
+                  types={types}
+                  defaultProps={componentFunction.defaultProps}
+                />
+              );
+            } else if (componentDocsJs) {
               return (
                 <PropsTable
                   key={componentName}
@@ -111,20 +124,6 @@ class ComponentDocs extends React.PureComponent {
                   enumValues={enumValues}
                 />
               );
-            }
-            let componentDocsTs;
-            if (!componentDocsJs) {
-              componentDocsTs = getDocGenInfoTs(componentName);
-              if (componentDocsTs) {
-                return (
-                  <PropsTableTs
-                    key={componentName}
-                    name={componentName}
-                    props={componentDocsTs.children}
-                    defaultProps={componentFunction.defaultProps}
-                  />
-                );
-              }
             }
             return null;
           })}

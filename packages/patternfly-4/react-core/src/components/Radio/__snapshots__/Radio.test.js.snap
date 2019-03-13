@@ -9,8 +9,8 @@ exports[`Radio check component controlled 1`] = `
 .pf-c-radio {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -39,8 +39,8 @@ exports[`Radio check component isDisabled 1`] = `
 .pf-c-radio {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -76,8 +76,8 @@ exports[`Radio check component label is function 1`] = `
 .pf-c-radio {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -122,8 +122,8 @@ exports[`Radio check component label is node 1`] = `
 .pf-c-radio {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -168,8 +168,8 @@ exports[`Radio check component label is string 1`] = `
 .pf-c-radio {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -212,8 +212,8 @@ exports[`Radio check component passing HTML attribute 1`] = `
 .pf-c-radio {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -257,8 +257,8 @@ exports[`Radio check component passing class 1`] = `
 .pf-c-radio.class-123 {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div
@@ -293,8 +293,8 @@ exports[`Radio check component uncontrolled 1`] = `
 .pf-c-radio {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 
 <div

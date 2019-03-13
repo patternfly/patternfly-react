@@ -29,6 +29,7 @@ class WizardToggle extends React.Component<WizardToggleProps> {
     let activeStepSubName;
     for (let i = 0; i < steps.length; i++) {
       if (steps[i].steps) {
+        // tslint:disable-next-line
         for (let j = 0; j < steps[i].steps.length; j++) {
           if (steps[i].steps[j] === activeStep) {
             activeStepIndex = i + 1;

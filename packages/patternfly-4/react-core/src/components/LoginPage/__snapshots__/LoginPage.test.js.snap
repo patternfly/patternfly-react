@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`check loginpage example against snapshot 1`] = `
-<React.Fragment>
+<Fragment>
   <BackgroundImage
     alt="Pf-background"
     className=""
@@ -63,5 +63,5 @@ exports[`check loginpage example against snapshot 1`] = `
       socialMediaLoginContent="Footer"
     />
   </Login>
-</React.Fragment>
+</Fragment>
 `;

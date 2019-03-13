@@ -40,6 +40,8 @@ interface ComputedStep extends WizardStep {
   canJumpTo?: boolean;
 };
 
+export type WizardStepFunctionType = (step: { id?: string | number; name: string; }) => void;
+
 interface WizardProps {
   /** True to show the wizard */
   isOpen?: boolean;
@@ -50,15 +52,15 @@ interface WizardProps {
   /** Mapping of image sizes to image paths */
   backgroundImgSrc?: string | BackgroundImageSrcMap;
   /** Calback function to close the wizard */
-  onClose?(): any;
+  onClose?: () => any;
   /** Callback function to save at the end of the wizard, if not specified uses onClose */
-  onSave?(): any;
+  onSave?: () => any;
   /** Callback function after Next button is clicked */
-  onNext?(step: any): { id?: string | number; name: string; };
+  onNext?: WizardStepFunctionType;
   /** Callback function after Back button is clicked */
-  onBack?(step: any): { id?: string | number; name: string; };
+  onBack?: WizardStepFunctionType;
   /** Calback function when a step in the nav is clicked */
-  onGoToStep?(step: any): { id?: string | number; name: string; };
+  onGoToStep?: WizardStepFunctionType;
   /** Additional classes spread to the Wizard */
   className?: string;
   /** The wizard steps configuration object */

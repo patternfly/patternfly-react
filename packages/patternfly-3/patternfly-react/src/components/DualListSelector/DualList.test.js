@@ -70,7 +70,7 @@ test('Footer updates when items are selected ', () => {
 test('selecting child items works properly', () => {
   const props = getProps();
   const component = mount(<DualListControlled {...props} />);
-  const childItemsCheckbox = component.find('label.dual-list-pf-item .child > input[type="checkbox"]');
+  const childItemsCheckbox = component.find('label.dual-list-pf-item.child > input[type="checkbox"]');
   const {
     'data-side': side,
     'data-position': position,
@@ -86,7 +86,7 @@ test('selecting child items works properly', () => {
 test('move child items works properly', () => {
   const props = getProps();
   const component = mount(<DualListControlled {...props} />);
-  const childItemsCheckbox = component.find('label.dual-list-pf-item .child > input[type="checkbox"]');
+  const childItemsCheckbox = component.find('label.dual-list-pf-item.child > input[type="checkbox"]');
   const {
     'data-side': side,
     'data-position': position,

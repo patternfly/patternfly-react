@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styles",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/js/index.d.ts",
@@ -31,11 +31,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:babel && yarn build:ts",
-    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build": "yarn build:babel && node ./scripts/copyTS.js",
+    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
     "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
     "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
-    "build:ts": "node ./scripts/copyTS.js",
     "clean": "rimraf dist"
   }
 }

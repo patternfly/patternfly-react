@@ -18,15 +18,17 @@ const docGenPropShape = PropTypes.shape({
 const propTypes = {
   name: PropTypes.string.isRequired,
   props: PropTypes.arrayOf(docGenPropShape),
+  types: PropTypes.object,
   defaultProps: PropTypes.any
 };
 
 const defaultProps = {
   props: [],
+  types: {},
   defaultProps: {}
 };
 
-export const PropsTableTs = ({ name, props, defaultProps: defaults }) => (
+export const PropsTableTs = ({ name, props, defaultProps: defaults, types }) => (
   <Section name={name} title={`${name} Props`} description={`The ${name} component accepts the following props.`}>
     <Table>
       <Heading>
@@ -38,8 +40,9 @@ export const PropsTableTs = ({ name, props, defaultProps: defaults }) => (
       </Heading>
       <Body>
         {props.map(prop => {
+          debugger;
           let typeName = prop.type && prop.type.name;
-          let comment = prop.comment && prop.comment.shortText;;
+          let comment = prop.comment && prop.comment.shortText;
           if (!prop.type && prop.kindString && prop.kindString === 'Method') {
             typeName = 'func';
             comment = prop.signatures.length && prop.signatures[0].comment && prop.signatures[0].comment.shortText;
@@ -48,6 +51,10 @@ export const PropsTableTs = ({ name, props, defaultProps: defaults }) => (
               typeName = 'func';
             } else {
               typeName = prop.type.type;
+            }
+          } else if (prop.type && prop.type.type && prop.type.type === 'reference') {
+            if (types[prop.type.name]) {
+              typeName = types[prop.type.name];
             }
           }
           // TODO: Parse function signature and return that info
