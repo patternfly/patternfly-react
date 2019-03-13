@@ -10,7 +10,7 @@ const propTypes = {
   /** additional classes added to the button */
   className: PropTypes.string,
   /** Flag to show the title */
-  hideTitle: PropTypes.bool.required,
+  hideTitle: PropTypes.bool.isRequired,
   /** Additional props are spread to the container <header> */
   '': PropTypes.any
 };
