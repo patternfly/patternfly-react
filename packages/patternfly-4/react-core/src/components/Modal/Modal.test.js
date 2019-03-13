@@ -1,8 +1,10 @@
 import Modal from './Modal';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { KEY_CODES } from '../../helpers/constants';
+import { css } from '../../../../react-styles/dist/js';
+import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
 
 jest.spyOn(ReactDOM, 'createPortal');
 jest.spyOn(document, 'createElement');
@@ -44,4 +46,14 @@ test('Each modal is given a new id', () => {
   const first = shallow(<Modal {...props} />);
   const second = shallow(<Modal {...props} />);
   expect(first.props().id).not.toBe(second.props().id);
+});
+
+test('modal removes body backdropOpen class when removed', () => {
+  const TestRemoval = testProps => (testProps.display ? <Modal {...props} isOpen /> : <p>Not displayed</p>);
+  const view = mount(<TestRemoval display />);
+  view.update();
+  expect(document.body.className).toContain(css(styles.backdropOpen));
+  view.setProps({ display: false });
+  view.update();
+  expect(document.body.className).not.toContain(css(styles.backdropOpen));
 });
