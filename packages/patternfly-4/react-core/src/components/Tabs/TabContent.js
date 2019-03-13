@@ -11,8 +11,6 @@ const propTypes = {
   children: PropTypes.any,
   /** class of tab content area if used outside Tabs component */
   className: PropTypes.string,
-  /** visibility of content if used outside Tabs component */
-  hidden: PropTypes.boolean,
   /** id passed from parent to identify the content section */
   id: PropTypes.string.isRequired
 };
@@ -22,15 +20,15 @@ const defaultProps = {
   child: null,
   children: null,
   className: null,
-  hidden: false,
 };
 
 class TabContent extends React.Component {
   render() {
-    const { id, activeKey, child, children, className, eventKey, hidden, ...props } = this.props;
+    const { id, activeKey, child, children, className, eventKey, innerRef, ...props } = this.props;
     return <section
+      ref={innerRef}
       index={eventKey}
-      hidden={children ? hidden : child.props.eventKey !== activeKey}
+      hidden={children ? null : child.props.eventKey !== activeKey}
       className={children ? css('pf-c-tab-content', className) : css('pf-c-tab-content', child.props.className)}
       id={children ? id : `pf-tab-section-${child.props.eventKey}-${id}`}
       aria-labelledby={children ? `pf-tab-${eventKey}-${id}` : `pf-tab-${child.props.eventKey}-${id}`}
@@ -46,4 +44,4 @@ class TabContent extends React.Component {
 TabContent.propTypes = propTypes;
 TabContent.defaultProps = defaultProps;
 
-export default TabContent;
+export default React.forwardRef((props, ref) => <TabContent innerRef={ref} {...props}/>);

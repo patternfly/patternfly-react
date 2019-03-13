@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -24,14 +23,26 @@ const defaultProps = {
   tabContentRef: null,
 };
 
+const withForwardedRef = Component => {
+  class TabContainer extends React.Component {
+    render() {
+      const { tabContentRef, ...rest } = this.props;
+      return <Component ref={tabContentRef} {...rest} />;
+    }
+  }
+  return React.forwardRef((props, tabContentRef) => {
+    return <TabContainer {...props} forwardRef={tabContentRef} />;
+  });
+}
+
 class Tab extends React.Component {
   render() {
-    const { children, eventKey, tabContentId, tabContentRef, ...props } = this.props;
-    return <button {...props}>{children}</button>;
+    const { children, eventKey, tabContentId, tabContentRef, forwardRef, ...props } = this.props;
+    return <button {...props} ref={tabContentRef}>{children}</button>;
   }
 }
 
 Tab.propTypes = propTypes;
 Tab.defaultProps = defaultProps;
 
-export default Tab;
+export default withForwardedRef(Tab);

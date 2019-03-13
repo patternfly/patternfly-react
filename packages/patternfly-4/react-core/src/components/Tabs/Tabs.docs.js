@@ -4,8 +4,7 @@ import AccessibleTabs from './examples/AccessibleTabs';
 import ScrollButtonsTabs from './examples/ScrollButtonsTabs';
 import FilledTabs from './examples/FilledTabs';
 import SecondaryTabs from './examples/SecondaryTabs';
-import TabContentWithIds from './examples/TabContentWithIds';
-import TabContentWithRefs from './examples/TabContentWithRefs';
+import SeparateTabContent from './examples/SeparateTabContent';
 
 export default {
   title: 'Tabs',
@@ -22,7 +21,6 @@ export default {
     { component: ScrollButtonsTabs, title: 'Scroll buttons' },
     { component: SecondaryTabs, title: 'Secondary buttons' },
     { component: FilledTabs, title: 'Filled buttons' },
-    { component: TabContentWithIds, title: 'Primary tabs with sections outside of the Tabs component (ids)' },
-    { component: TabContentWithRefs, title: 'Primary tabs with sections outside of the Tabs component (refs)' },
+    { component: SeparateTabContent, title: 'Primary tabs with sections outside of the Tabs component' },
   ]
 };

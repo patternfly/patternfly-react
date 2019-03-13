@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/patternfly/components/Tabs/tabs.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
@@ -60,28 +59,10 @@ class Tabs extends React.Component {
     // process any tab content sections outside of the component
     if (tabContentRef) {
       React.Children.map(this.props.children, (child, i) => {
-        const section = ReactDOM.findDOMNode(child.props.tabContentRef.current);
-        if (section) {
-          section.hidden = true;
-        }
+        child.props.tabContentRef.current.hidden = true;
       });
       // most recently selected tabContent
-      const selectedTabContent = ReactDOM.findDOMNode(tabContentRef.current);
-      if (selectedTabContent) {
-        selectedTabContent.hidden = false;
-      }
-    } else if (tabContentId) {
-      React.Children.map(this.props.children, (child, i) => {
-        const section = document.getElementById(child.props.tabContentId);
-        if (section && section.tagName === 'SECTION') {
-          section.hidden = true;
-        }
-      });
-      // most recently selected tabContent
-      const selectedTabContent = document.getElementById(tabContentId);
-      if (selectedTabContent && selectedTabContent.tagName === 'SECTION') {
-        selectedTabContent.hidden = false;
-      }
+      tabContentRef.current.hidden = false;
     }
   }
 
@@ -250,8 +231,8 @@ class Tabs extends React.Component {
             {component}
           </div>
         }
-        {children && children.map((child, index) => (
-          <TabContent key={index} activeKey={activeKey} child={child} index={index} id={child.props.id || this.id} />
+        {children.map((child, index) => (
+          !child.props.children ? null : <TabContent key={index} activeKey={activeKey} child={child} index={index} id={child.props.id || this.id} />
         ))}
       </React.Fragment>
     );

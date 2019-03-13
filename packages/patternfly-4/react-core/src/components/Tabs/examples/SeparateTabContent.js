@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs, Tab, TabContent } from '@patternfly/react-core';
 
-class TabContentWithRefs extends React.Component {
+class SeparateTabContent extends React.Component {
   state = {
     activeKey: 0,
   };
@@ -33,4 +33,4 @@ class TabContentWithRefs extends React.Component {
   }
 }
 
-export default TabContentWithRefs;
+export default SeparateTabContent;
