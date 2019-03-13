@@ -45,9 +45,9 @@ class CheckboxSelect extends React.Component {
       let index = 0;
       return React.Children.map(children, group =>
         React.cloneElement(group, {
-          id: group.props.label,
+          titleId: group.props.label.replace(/\W/g, '-'),
           children: (
-            <fieldset aria-labelledby={group.props.label} className={css(formStyles.formFieldset)}>
+            <fieldset aria-labelledby={group.props.label.replace(/\W/g, '-')} className={css(formStyles.formFieldset)}>
               {group.props.children.map(option =>
                 React.cloneElement(option, {
                   isChecked: checked && checked.includes(option.props.value),

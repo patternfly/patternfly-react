@@ -67,11 +67,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-check__input {
   display: block;
@@ -96,11 +95,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-check__input {
   display: block;
@@ -125,11 +123,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-check__input {
   display: block;
@@ -154,11 +151,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-form__fieldset {
   display: block;
@@ -196,11 +192,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-check__input {
   display: block;
@@ -225,11 +220,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-check__input {
   display: block;
@@ -254,11 +248,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-check__input {
   display: block;
@@ -283,11 +276,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-form__fieldset {
   display: block;
@@ -300,7 +292,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 }
 .pf-c-form {
   display: grid;
-  grid-gap: 1.5rem;
 }
 .pf-c-select__menu {
   display: block;
@@ -328,8 +319,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   isGrouped={true}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  placeholderText={null}
   selections={null}
-  title={null}
   variant="checkbox"
   width="100%"
 >
@@ -432,21 +423,21 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
           >
             <CheckboxSelectGroup
               className=""
-              id="group 1"
               key=".0"
               label="group 1"
+              titleId="group-1"
             >
               <div
                 className="pf-c-select__menu-group"
-                id="group 1"
               >
                 <div
                   className="pf-c-select__menu-group-title"
+                  id="group-1"
                 >
                   group 1
                 </div>
                 <fieldset
-                  aria-labelledby="group 1"
+                  aria-labelledby="group-1"
                   className="pf-c-form__fieldset"
                 >
                   <CheckboxSelectOption
@@ -582,21 +573,21 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
             </CheckboxSelectGroup>
             <CheckboxSelectGroup
               className=""
-              id="group 2"
               key=".1"
               label="group 2"
+              titleId="group-2"
             >
               <div
                 className="pf-c-select__menu-group"
-                id="group 2"
               >
                 <div
                   className="pf-c-select__menu-group-title"
+                  id="group-2"
                 >
                   group 2
                 </div>
                 <fieldset
-                  aria-labelledby="group 2"
+                  aria-labelledby="group-2"
                   className="pf-c-form__fieldset"
                 >
                   <CheckboxSelectOption
@@ -789,8 +780,8 @@ exports[`checkbox select renders closed successfully 1`] = `
   isGrouped={false}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  placeholderText={null}
   selections={null}
-  title={null}
   variant="checkbox"
   width="100%"
 >
@@ -937,11 +928,10 @@ exports[`checkbox select renders expanded successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-check__input {
   display: block;
@@ -966,11 +956,10 @@ exports[`checkbox select renders expanded successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-check__input {
   display: block;
@@ -995,11 +984,10 @@ exports[`checkbox select renders expanded successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-check__input {
   display: block;
@@ -1024,11 +1012,10 @@ exports[`checkbox select renders expanded successfully 1`] = `
   color: #282d33;
   text-align: left;
   white-space: nowrap;
-  background-color: #ededed;
-  text-decoration: none;
+  background-color: transparent;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5rem;
   align-items: center;
+  justify-items: start;
 }
 .pf-c-form__fieldset {
   display: block;
@@ -1038,7 +1025,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
 }
 .pf-c-form {
   display: grid;
-  grid-gap: 1.5rem;
 }
 .pf-c-select__menu {
   display: block;
@@ -1066,8 +1052,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
   isGrouped={false}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  placeholderText={null}
   selections={null}
-  title={null}
   variant="checkbox"
   width="100%"
 >
@@ -1361,8 +1347,8 @@ exports[`select single select renders closed successfully 1`] = `
   isGrouped={false}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  placeholderText={null}
   selections={null}
-  title={null}
   variant="single"
   width="100%"
 >
@@ -1563,8 +1549,8 @@ exports[`select single select renders expanded successfully 1`] = `
   isGrouped={false}
   onSelect={[MockFunction]}
   onToggle={[MockFunction]}
+  placeholderText={null}
   selections={null}
-  title={null}
   variant="single"
   width="100%"
 >

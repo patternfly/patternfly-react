@@ -1,7 +1,281 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`checkbox select options disabled renders disabled successfully 1`] = `<[object Object] />`;
+exports[`checkbox select options disabled renders disabled successfully 1`] = `
+.pf-c-check__input {
+  display: block;
+  margin-top: -0.1875rem;
+  cursor: pointer;
+}
+.pf-c-check__label.pf-m-disabled {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #282d33;
+  cursor: not-allowed;
+}
+.pf-c-check.pf-c-select__menu-item.pf-m-disabled {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-items: start;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+  pointer-events: none;
+}
 
-exports[`checkbox select options hover renders with checked successfully 1`] = `<[object Object] />`;
+<CheckboxSelectOption
+  className=""
+  index={0}
+  isChecked={false}
+  isDisabled={true}
+  keyHandler={[Function]}
+  onClick={[Function]}
+  sendRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <label
+            class="pf-c-check pf-c-select__menu-item pf-m-disabled"
+            tabindex="0"
+          >
+            <input
+              class="pf-c-check__input"
+              disabled=""
+              id="test"
+              type="checkbox"
+            />
+            <span
+              class="pf-c-check__label pf-m-disabled"
+            >
+              test
+            </span>
+          </label>,
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  value="test"
+>
+  <label
+    aria-selected={null}
+    className="pf-c-check pf-c-select__menu-item pf-m-disabled"
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <input
+      checked={false}
+      className="pf-c-check__input"
+      disabled={true}
+      id="test"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="pf-c-check__label pf-m-disabled"
+    >
+      test
+    </span>
+  </label>
+</CheckboxSelectOption>
+`;
 
-exports[`checkbox select options renders with value parameter successfully 1`] = `<[object Object] />`;
+exports[`checkbox select options hover renders with checked successfully 1`] = `
+.pf-c-check__input {
+  display: block;
+  margin-top: -0.1875rem;
+  cursor: pointer;
+}
+.pf-c-check__label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #282d33;
+  cursor: pointer;
+}
+.pf-c-check.pf-c-select__menu-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-items: start;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+<CheckboxSelectOption
+  className=""
+  index={0}
+  isChecked={true}
+  isDisabled={false}
+  keyHandler={[Function]}
+  onClick={[Function]}
+  sendRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <label
+            aria-selected="true"
+            class="pf-c-check pf-c-select__menu-item"
+            tabindex="0"
+          >
+            <input
+              checked=""
+              class="pf-c-check__input"
+              id="test"
+              type="checkbox"
+            />
+            <span
+              class="pf-c-check__label"
+            >
+              test
+            </span>
+          </label>,
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  value="test"
+>
+  <label
+    aria-selected={true}
+    className="pf-c-check pf-c-select__menu-item"
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <input
+      checked={true}
+      className="pf-c-check__input"
+      disabled={false}
+      id="test"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="pf-c-check__label"
+    >
+      test
+    </span>
+  </label>
+</CheckboxSelectOption>
+`;
+
+exports[`checkbox select options renders with value parameter successfully 1`] = `
+.pf-c-check__input {
+  display: block;
+  margin-top: -0.1875rem;
+  cursor: pointer;
+}
+.pf-c-check__label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: #282d33;
+  cursor: pointer;
+}
+.pf-c-check.pf-c-select__menu-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-items: start;
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #282d33;
+  text-align: left;
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+<CheckboxSelectOption
+  className=""
+  index={0}
+  isChecked={false}
+  isDisabled={false}
+  keyHandler={[Function]}
+  onClick={[Function]}
+  sendRef={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          <label
+            class="pf-c-check pf-c-select__menu-item"
+            tabindex="0"
+          >
+            <input
+              class="pf-c-check__input"
+              id="test"
+              type="checkbox"
+            />
+            <span
+              class="pf-c-check__label"
+            >
+              test
+            </span>
+          </label>,
+          0,
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  value="test"
+>
+  <label
+    aria-selected={null}
+    className="pf-c-check pf-c-select__menu-item"
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <input
+      checked={false}
+      className="pf-c-check__input"
+      disabled={false}
+      id="test"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    <span
+      className="pf-c-check__label"
+    >
+      test
+    </span>
+  </label>
+</CheckboxSelectOption>
+`;

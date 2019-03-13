@@ -12,12 +12,13 @@ exports[`checkbox select options renders with children successfully 1`] = `
   display: block;
 }
 
-<React.Fragment>
+<Fragment>
   <div
     className="pf-c-select__menu-group"
   >
     <div
       className="pf-c-select__menu-group-title"
+      id=""
     >
       test
     </div>
@@ -25,5 +26,5 @@ exports[`checkbox select options renders with children successfully 1`] = `
       child
     </div>
   </div>
-</React.Fragment>
+</Fragment>
 `;
