@@ -7,7 +7,6 @@ import { BackgroundImage, BackgroundImageSrc } from '../BackgroundImage';
 import { Button } from '../Button';
 import WizardHeader from './WizardHeader';
 import WizardToggle from './WizardToggle';
-import WizardBody from './WizardBody';
 import WizardNav from './WizardNav';
 import WizardNavItem from './WizardNavItem';
 import * as ReactDOM from 'react-dom';
@@ -323,12 +322,7 @@ class Wizard extends React.Component<WizardProps> {
               <div {...rest} className={css(styles.wizard, className)}>
                 <BackgroundImage src={backgroundImgSrc} />
                 <WizardHeader onClose={onClose} title={title} description={description} ariaLabel={ariaLabelCloseButton} />
-                <WizardToggle nav={nav} steps={steps} activeStep={activeStep} />
-                <div className={css(styles.wizardOuterWrap)}>
-                  <div className={css(styles.wizardInnerWrap)}>
-                    {nav(false)}
-                    <WizardBody>{activeStep.component}</WizardBody>
-                  </div>
+                <WizardToggle nav={nav} steps={steps} activeStep={activeStep}>
                   <footer className={css(styles.wizardFooter, footerRightAlign && 'pf-m-align-right')}>
                     <Button variant="primary" type="submit" onClick={this.onNext} isDisabled={!isValid}>
                       {lastStep ? lastStepButtonText : nextButtonText}
@@ -340,7 +334,7 @@ class Wizard extends React.Component<WizardProps> {
                       {cancelButtonText}
                     </Button>}
                   </footer>
-                </div>
+                </WizardToggle>
               </div>
             </Bullseye>
           </Backdrop>

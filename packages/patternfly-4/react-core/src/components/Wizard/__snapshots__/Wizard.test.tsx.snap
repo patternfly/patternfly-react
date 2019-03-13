@@ -97,72 +97,7 @@ exports[`Wizard should match snapshot 1`] = `
                   },
                 ]
               }
-            />
-            <div
-              className="pf-c-wizard__outer-wrap"
             >
-              <div
-                className="pf-c-wizard__inner-wrap"
-              >
-                <WizardNav
-                  ariaLabel="Steps"
-                  isOpen={false}
-                >
-                  <WizardNavItem
-                    current={true}
-                    disabled={false}
-                    label="A"
-                    onNavItemClick={[Function]}
-                    step={1}
-                  />
-                  <WizardNavItem
-                    current={false}
-                    disabled={true}
-                    hasChildren={true}
-                    label="B"
-                    onNavItemClick={[Function]}
-                    step={2}
-                  >
-                    <WizardNav
-                      returnList={true}
-                    >
-                      <WizardNavItem
-                        current={false}
-                        disabled={true}
-                        label="B-1"
-                        onNavItemClick={[Function]}
-                        step={2}
-                      />
-                      <WizardNavItem
-                        current={false}
-                        disabled={true}
-                        label="B-2"
-                        onNavItemClick={[Function]}
-                        step={3}
-                      />
-                    </WizardNav>
-                  </WizardNavItem>
-                  <WizardNavItem
-                    current={false}
-                    disabled={true}
-                    label="C"
-                    onNavItemClick={[Function]}
-                    step={4}
-                  />
-                  <WizardNavItem
-                    current={false}
-                    disabled={true}
-                    label="D"
-                    onNavItemClick={[Function]}
-                    step={5}
-                  />
-                </WizardNav>
-                <WizardBody>
-                  <p>
-                    Step 1
-                  </p>
-                </WizardBody>
-              </div>
               <footer
                 className="pf-c-wizard__footer"
               >
@@ -197,7 +132,7 @@ exports[`Wizard should match snapshot 1`] = `
                   Cancel
                 </Button>
               </footer>
-            </div>
+            </WizardToggle>
           </div>
         </Bullseye>
       </Backdrop>

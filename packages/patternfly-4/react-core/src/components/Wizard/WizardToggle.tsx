@@ -3,11 +3,13 @@ import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { css } from '@patternfly/react-styles';
 import { AngleRightIcon, CaretDownIcon } from '@patternfly/react-icons';
 import { WizardStep } from './Wizard';
+import WizardBody from './WizardBody';
 
 interface WizardToggleProps {
   nav: any;
   steps: WizardStep[];
   activeStep: WizardStep;
+  children: React.ReactNode
 }
 
 class WizardToggle extends React.Component<WizardToggleProps> {
@@ -23,7 +25,7 @@ class WizardToggle extends React.Component<WizardToggleProps> {
 
   public render() {
     const { isOpen } = this.state;
-    const { nav, steps, activeStep } = this.props;
+    const { nav, steps, activeStep, children } = this.props;
     let activeStepIndex;
     let activeStepName;
     let activeStepSubName;
@@ -59,13 +61,13 @@ class WizardToggle extends React.Component<WizardToggleProps> {
           </ol>
           <CaretDownIcon className={css(styles.wizardToggleIcon)} aria-hidden="true" />
         </button>
-        {isOpen && (
-          <div className={css(styles.wizardOuterWrap)}>
-            <div className={css(styles.wizardInnerWrap)}>
-              {nav(isOpen)}
-            </div>
+        <div className={css(styles.wizardOuterWrap)}>
+          <div className={css(styles.wizardInnerWrap)}>
+            {nav(isOpen)}
+            <WizardBody>{activeStep.component}</WizardBody>
           </div>
-        )}
+          {children}
+        </div>
       </>
     );
   }
