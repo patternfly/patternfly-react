@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import styles from '@patternfly/patternfly/components/Tabs/tabs.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
@@ -25,7 +25,9 @@ const propTypes = {
   /** Aria Label for the left Scroll Button */
   leftScrollAriaLabel: PropTypes.string,
   /** Aria Label for the right Scroll Button */
-  rightScrollAriaLabel: PropTypes.string
+  rightScrollAriaLabel: PropTypes.string,
+  /** allows for accessible Tabs with aria-label (should only be used if there is only one Tabs component on the current page) */
+  label: PropTypes.string
 };
 
 const defaultProps = {
@@ -35,7 +37,8 @@ const defaultProps = {
   isFilled: false,
   isSecondary: false,
   leftScrollAriaLabel: 'Scroll left',
-  rightScrollAriaLabel: 'Scroll Right'
+  rightScrollAriaLabel: 'Scroll Right',
+  label: ''
 };
 
 class Tabs extends React.Component {
@@ -166,6 +169,7 @@ class Tabs extends React.Component {
       activeKey,
       isFilled,
       isSecondary,
+      label,
       leftScrollAriaLabel,
       rightScrollAriaLabel,
       ...props
@@ -177,63 +181,75 @@ class Tabs extends React.Component {
       highlightRightScrollButton
     } = this.state;
 
+    const wrapperClass = css(
+      styles.tabs,
+      isFilled && styles.modifiers.fill,
+      isSecondary && styles.modifiers.tabsSecondary,
+      showLeftScrollButton && styles.modifiers.start,
+      showRightScrollButton && styles.modifiers.end,
+      highlightLeftScrollButton && styles.modifiers.startCurrent,
+      highlightRightScrollButton && styles.modifiers.endCurrent,
+      className
+    );
+    const component = <React.Fragment>
+      {!isSecondary && (
+        <button
+          className={css(styles.tabsScrollButton)}
+          variant="plain"
+          aria-label={leftScrollAriaLabel}
+          onClick={this.scrollLeft}
+        >
+          <AngleLeftIcon />
+        </button>
+      )}
+      <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
+        {children.map((child, index) => (
+          <li
+            key={index}
+            className={css(
+              styles.tabsItem,
+              child.props.eventKey === activeKey && styles.modifiers.current,
+              className
+            )}
+          >
+            <Tab {...child.props}
+              ref={(node) => { this.child = node; }}
+              className={css(styles.tabsButton)}
+              onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentId, child.props.tabContentRef)}
+              id={`pf-tab-${child.props.eventKey}-${child.props.id || this.id}`}
+              aria-controls={child.props.tabContentId ? `pf-tab-section-${child.props.eventKey}-${child.props.tabContentId}` : `pf-tab-section-${child.props.eventKey}-${child.props.id || this.id}`}>
+                {child.props.title}
+            </Tab>
+          </li>
+        ))}
+      </ul>
+      {!isSecondary && (
+        <button
+          className={css(styles.tabsScrollButton)}
+          variant="plain"
+          aria-label={rightScrollAriaLabel}
+          onClick={this.scrollRight}
+        >
+          <AngleRightIcon />
+        </button>
+      )}
+    </React.Fragment>;
+
     return (
       <React.Fragment>
-        <div
-          {...props}
-          className={css(
-            styles.tabs,
-            isFilled && styles.modifiers.fill,
-            isSecondary && styles.modifiers.tabsSecondary,
-            showLeftScrollButton && styles.modifiers.start,
-            showRightScrollButton && styles.modifiers.end,
-            highlightLeftScrollButton && styles.modifiers.startCurrent,
-            highlightRightScrollButton && styles.modifiers.endCurrent,
-            className
-          )}
-        >
-          {!isSecondary && (
-            <button
-              className={css(styles.tabsScrollButton)}
-              variant="plain"
-              aria-label={leftScrollAriaLabel}
-              onClick={this.scrollLeft}
-            >
-              <AngleLeftIcon />
-            </button>
-          )}
-          <ul className={css(styles.tabsList)} ref={this.tabList} onScroll={this.handleScrollButtons}>
-            {children.map((child, index) => (
-              <li
-                key={index}
-                className={css(
-                  styles.tabsItem,
-                  child.props.eventKey === activeKey && styles.modifiers.current,
-                  className
-                )}
-              >
-                <Tab {...child.props}
-                  ref={(node) => { this.child = node; }}
-                  className={css(styles.tabsButton)}
-                  onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentId, child.props.tabContentRef)}
-                  id={`pf-tab-${child.props.eventKey}-${child.props.id || this.id}`}
-                  aria-controls={child.props.tabContentId ? `pf-tab-section-${child.props.eventKey}-${child.props.tabContentId}` : `pf-tab-section-${child.props.eventKey}-${child.props.id || this.id}`}>
-                    {child.props.title}
-                </Tab>
-              </li>
-            ))}
-          </ul>
-          {!isSecondary && (
-            <button
-              className={css(styles.tabsScrollButton)}
-              variant="plain"
-              aria-label={rightScrollAriaLabel}
-              onClick={this.scrollRight}
-            >
-              <AngleRightIcon />
-            </button>
-          )}
-        </div>
+        {label !== ''
+          ? <nav {...props}
+            aria-label={label}
+            className={wrapperClass}
+          >
+            {component}
+          </nav>
+          : <div {...props}
+            className={wrapperClass}
+          >
+            {component}
+          </div>
+        }
         {children && children.map((child, index) => (
           <TabContent key={index} activeKey={activeKey} child={child} index={index} id={child.props.id || this.id} />
         ))}

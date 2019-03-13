@@ -1,5 +1,6 @@
 import { Tabs, Tab, TabContent } from '@patternfly/react-core';
 import SimpleTabs from './examples/SimpleTabs';
+import AccessibleTabs from './examples/AccessibleTabs';
 import ScrollButtonsTabs from './examples/ScrollButtonsTabs';
 import FilledTabs from './examples/FilledTabs';
 import SecondaryTabs from './examples/SecondaryTabs';
@@ -17,6 +18,7 @@ export default {
   variablesRoot: 'pf-c-tabs',
   examples: [
     { component: SimpleTabs, title: 'Primary tabs with sections' },
+    { component: AccessibleTabs, title: 'Accessible primary tabs with aria-label' },
     { component: ScrollButtonsTabs, title: 'Scroll buttons' },
     { component: SecondaryTabs, title: 'Secondary buttons' },
     { component: FilledTabs, title: 'Filled buttons' },

@@ -9,6 +9,7 @@ export interface TabsProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
   isSecondary?: boolean;
   leftScrollAriaLabel?: string;
   rightScrollAriaLabel?: string;
+  label?: string;
 }
 
 declare const Tabs: FunctionComponent<TabsProps>;
