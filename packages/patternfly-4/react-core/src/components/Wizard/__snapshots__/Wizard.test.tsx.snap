@@ -54,6 +54,7 @@ exports[`Wizard should match snapshot 1`] = `
                   "name": "A",
                 }
               }
+              hasBodyPadding={true}
               nav={[Function]}
               steps={
                 Array [

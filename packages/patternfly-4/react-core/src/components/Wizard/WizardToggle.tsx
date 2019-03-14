@@ -9,7 +9,8 @@ interface WizardToggleProps {
   nav: any;
   steps: WizardStep[];
   activeStep: WizardStep;
-  children: React.ReactNode
+  children: React.ReactNode,
+  hasBodyPadding: boolean;
 }
 
 class WizardToggle extends React.Component<WizardToggleProps> {
@@ -25,7 +26,7 @@ class WizardToggle extends React.Component<WizardToggleProps> {
 
   public render() {
     const { isOpen } = this.state;
-    const { nav, steps, activeStep, children } = this.props;
+    const { nav, steps, activeStep, children, hasBodyPadding } = this.props;
     let activeStepIndex;
     let activeStepName;
     let activeStepSubName;
@@ -64,7 +65,7 @@ class WizardToggle extends React.Component<WizardToggleProps> {
         <div className={css(styles.wizardOuterWrap)}>
           <div className={css(styles.wizardInnerWrap)}>
             {nav(isOpen)}
-            <WizardBody>{activeStep.component}</WizardBody>
+            <WizardBody hasBodyPadding={hasBodyPadding}>{activeStep.component}</WizardBody>
           </div>
           {children}
         </div>

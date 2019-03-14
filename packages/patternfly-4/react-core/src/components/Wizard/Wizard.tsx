@@ -80,6 +80,8 @@ interface WizardProps {
   ariaLabelCloseButton?: string;
   /** aria-label for the Nav */
   ariaLabelNav?: string;
+  /** Can remove the default padding around the main body content by setting this to false */
+  hasBodyPadding?: boolean;
 }
 
 const images = {
@@ -109,7 +111,8 @@ class Wizard extends React.Component<WizardProps> {
     lastStepButtonText: 'Save',
     footerRightAlign: false,
     ariaLabelCloseButton: 'Close',
-    ariaLabelNav: 'Steps'
+    ariaLabelNav: 'Steps',
+    hasBodyPadding: true
   };
 
   public state = {
@@ -267,6 +270,7 @@ class Wizard extends React.Component<WizardProps> {
       footerRightAlign,
       ariaLabelCloseButton,
       ariaLabelNav,
+      hasBodyPadding,
       ...rest
     } = this.props;
     const { currentStep } = this.state;
@@ -322,7 +326,7 @@ class Wizard extends React.Component<WizardProps> {
               <div {...rest} className={css(styles.wizard, className)}>
                 <BackgroundImage src={backgroundImgSrc} />
                 <WizardHeader onClose={onClose} title={title} description={description} ariaLabel={ariaLabelCloseButton} />
-                <WizardToggle nav={nav} steps={steps} activeStep={activeStep}>
+                <WizardToggle nav={nav} steps={steps} activeStep={activeStep} hasBodyPadding={hasBodyPadding}>
                   <footer className={css(styles.wizardFooter, footerRightAlign && 'pf-m-align-right')}>
                     <Button variant="primary" type="submit" onClick={this.onNext} isDisabled={!isValid}>
                       {lastStep ? lastStepButtonText : nextButtonText}
