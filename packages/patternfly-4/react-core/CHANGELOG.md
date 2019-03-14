@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.5...@patternfly/react-core@2.5.6) (2019-03-14)
+
+
+### Bug Fixes
+
+* **Nav:** add onClick to the definition file ([#1576](https://github.com/patternfly/patternfly-react/issues/1576)) ([b7f0094](https://github.com/patternfly/patternfly-react/commit/b7f0094))
+
+
+
+
+
 ## [2.5.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.4...@patternfly/react-core@2.5.5) (2019-03-14)
 
 
