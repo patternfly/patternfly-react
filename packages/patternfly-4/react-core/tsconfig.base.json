@@ -1,8 +1,5 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "esModuleInterop": true,
-    "noEmit": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "moduleResolution": "node",
@@ -12,14 +9,15 @@
     ],
     "module": "commonjs",
     "jsx": "react",
-    "target": "es5",
-    "paths": {
-      "*": [
-        "dist/esm/*"
-      ]
-    }
+    "target": "es5"
   },
   "include": [
+    "./src/*",
     "./src/**/*"
+  ],
+  "exclude": [
+    "./src/**/**.test.tsx",
+    "./src/**/**.test.ts",
+    "./src/**/examples/**"
   ]
 }
