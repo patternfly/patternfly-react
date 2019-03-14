@@ -47,7 +47,7 @@ module.exports = {
   preset: "ts-jest/presets/js-with-babel",
   globals: {
     "ts-jest": {
-      tsConfig: "packages/patternfly-4/react-core/tsconfig.base.json"
+      tsConfig: "packages/patternfly-4/react-core/tsconfig.jest.json"
     }
   }
 };
