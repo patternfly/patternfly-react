@@ -1,7 +1,6 @@
-import { Title } from './Title';
-import { TitleSize } from '.';
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
+import { Title, TitleSize } from '.';
 
 Object.values(TitleSize).forEach(size => {
   test(`${size} Title`, () => {
