@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.4...@patternfly/react-core@2.5.5) (2019-03-14)
+
+
+### Bug Fixes
+
+* **Chip, NavItem:** Fixed Typescript definition file errors ([#1560](https://github.com/patternfly/patternfly-react/issues/1560)) ([9ef332c](https://github.com/patternfly/patternfly-react/commit/9ef332c)), closes [#1559](https://github.com/patternfly/patternfly-react/issues/1559) [#1506](https://github.com/patternfly/patternfly-react/issues/1506)
+
+
+
+
+
 ## [2.5.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.3...@patternfly/react-core@2.5.4) (2019-03-13)
 
 
