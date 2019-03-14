@@ -35,6 +35,7 @@ export const PropsTable = ({ name, description: preface, props, enumValues }) =>
     name={name}
     title={`${name} Props`}
     preface={preface && preface.text}
+    headingLevel="h3"
     description={`The ${name} component accepts the following props.`}
   >
     <Table>

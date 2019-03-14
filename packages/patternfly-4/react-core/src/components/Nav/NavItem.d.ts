@@ -8,6 +8,8 @@ export interface NavItemProps extends HTMLProps<HTMLDivElement> {
   isSeparated?: boolean;
   groupId?: string | number;
   itemId?: string | number;
+  preventDefault?: boolean;
+  onClick?: (event: MouseEvent) => void;
 }
 
 declare const NavItem: FunctionComponent<NavItemProps>;

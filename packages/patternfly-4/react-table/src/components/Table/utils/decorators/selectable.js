@@ -3,16 +3,17 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Table/table.css';
 import SelectColumn from '../../SelectColumn';
 
-export default (
-  label,
-  {
-    column: {
-      extraParams: { onSelect, allRowsSelected, rowLabeledBy = 'simple-node' }
-    },
+export default (label, { rowIndex, columnIndex, rowData, column, property }) => {
+  const {
+    extraParams: { onSelect, allRowsSelected, rowLabeledBy = 'simple-node' }
+  } = column;
+  const extraData = {
     rowIndex,
-    rowData
-  }
-) => {
+    columnIndex,
+    column,
+    property
+  };
+
   if (rowData && rowData.hasOwnProperty('parent') && !rowData.showSelect) {
     return {
       component: 'td',
@@ -24,7 +25,7 @@ export default (
 
   function selectClick(event) {
     const selected = rowIndex === undefined ? event.target.checked : rowData && !rowData.selected;
-    onSelect && onSelect(event, selected, rowId);
+    onSelect && onSelect(event, selected, rowId, rowData, extraData);
   }
   const customProps = {
     ...(rowId !== -1

@@ -14,7 +14,8 @@ import {
   Select,
   SelectOption,
   SelectVariant,
-  TextInput
+  TextInput,
+  Title
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -50,6 +51,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <Title style={{ color: '#fff', padding: '12px 0' }} headingLevel="h1" size="4xl">PF4 Integration Sandbox</Title>
           <Avatar src={logo} alt={new myProps().alt} />
         </header>
         <Tabs>

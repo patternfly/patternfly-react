@@ -1,6 +1,6 @@
 import { FunctionComponent, HTMLProps, ReactNode, ReactElement } from 'react';
 import { DropdownDirection } from '../Dropdown';
-import { Omit, OneOf } from '../../typeUtils';
+import { Omit, OneOf } from '../../helpers/typeUtils';
 
 export const PaginationVariant: {
   top?: 'top';

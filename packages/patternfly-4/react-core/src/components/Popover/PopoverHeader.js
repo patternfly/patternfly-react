@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Title, TitleSize } from '../Title';
 
 const PopoverHeader = ({ children, id, ...rest }) => (
-  <Title size={TitleSize.xl} id={id} {...rest}>
+  <Title headingLevel="h6" size={TitleSize.xl} id={id} {...rest}>
     {children}
   </Title>
 );

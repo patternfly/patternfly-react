@@ -2,9 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import DataList from './DataList';
 import DataListItem from './DataListItem';
+import DataListAction from './DataListAction';
 import DataListCell from './DataListCell';
 import DataListToggle from './DataListToggle';
 import { Button } from '../Button';
+import { DropdownItem } from '../Dropdown';
 
 describe('DataList', () => {
   test('List default', () => {
@@ -78,13 +80,35 @@ describe('DataList', () => {
   });
 
   test('Toggle expanded', () => {
+    const view = shallow(<DataListToggle aria-label="Toggle details for" id="ex-toggle2" isExpanded />);
+    expect(view.find(Button).props()['aria-expanded']).toBe(true);
+  });
+
+  test('DataListAction dropdown', () => {
     const view = shallow(
-      <DataListToggle
-        aria-label="Toggle details for"
-        id="ex-toggle2"
-        isExpanded
+      <DataListAction
+        aria-label="Actions"
+        aria-labelledby="ex-action"
+        id="ex-action"
+        actions={[
+          <DropdownItem component="button" onClick={jest.fn()} key="action-1">
+            action-1
+          </DropdownItem>,
+          <DropdownItem component="button" onClick={jest.fn()} key="action-2">
+            action-2
+          </DropdownItem>
+        ]}
       />
     );
-    expect(view.find(Button).props()['aria-expanded']).toBe(true);
+    expect(view).toMatchSnapshot();
+  });
+
+  test('DataListAction button', () => {
+    const view = shallow(
+      <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
+        <Button id="delete-item-1">Delete</Button>
+      </DataListAction>
+    );
+    expect(view).toMatchSnapshot();
   });
 });

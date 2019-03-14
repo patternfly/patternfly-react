@@ -11,6 +11,7 @@ import Simple from './examples/SimpleDataList';
 import CheckboxAction from './examples/CheckboxActionDataList';
 import Expandable from './examples/ExpandableDataList';
 import Modifiers from './examples/ModifiersDataList';
+import Actions from './examples/ActionsDataList';
 
 export default {
   title: 'DataList',
@@ -32,6 +33,10 @@ export default {
     {
       component: CheckboxAction,
       title: 'Data List Checkboxes, Actions and Additional Cells'
+    },
+    {
+      component: Actions,
+      title: 'Data List Actions: single and multiple'
     },
     {
       component: Expandable,

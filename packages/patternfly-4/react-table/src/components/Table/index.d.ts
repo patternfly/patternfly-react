@@ -7,7 +7,10 @@ export {
   IAction,
   ISeparator,
   ICell,
-  IRow
+  IRow,
+  IRowData,
+  IExtraData,
+  IExtraColumnData
 } from './Table';
 export { default as TableHeader, HeaderProps } from './Header';
 export { default as TableBody, TableBodyProps } from './Body';

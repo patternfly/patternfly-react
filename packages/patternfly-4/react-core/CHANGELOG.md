@@ -3,6 +3,58 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.6...@patternfly/react-core@2.5.7) (2019-03-14)
+
+
+### Bug Fixes
+
+* **DataList:** Add dropdown and button actions to DataList ([#1079](https://github.com/patternfly/patternfly-react/issues/1079)) ([7636381](https://github.com/patternfly/patternfly-react/commit/7636381))
+
+
+
+
+
+## [2.5.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.5...@patternfly/react-core@2.5.6) (2019-03-14)
+
+
+### Bug Fixes
+
+* **Nav:** add onClick to the definition file ([#1576](https://github.com/patternfly/patternfly-react/issues/1576)) ([b7f0094](https://github.com/patternfly/patternfly-react/commit/b7f0094))
+
+
+
+
+
+## [2.5.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.4...@patternfly/react-core@2.5.5) (2019-03-14)
+
+
+### Bug Fixes
+
+* **Chip, NavItem:** Fixed Typescript definition file errors ([#1560](https://github.com/patternfly/patternfly-react/issues/1560)) ([9ef332c](https://github.com/patternfly/patternfly-react/commit/9ef332c)), closes [#1559](https://github.com/patternfly/patternfly-react/issues/1559) [#1506](https://github.com/patternfly/patternfly-react/issues/1506)
+
+
+
+
+
+## [2.5.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.3...@patternfly/react-core@2.5.4) (2019-03-13)
+
+
+### Bug Fixes
+
+* **Modal:** remove backdropOpen class from body when Modal is removed ([#1563](https://github.com/patternfly/patternfly-react/issues/1563)) ([23533af](https://github.com/patternfly/patternfly-react/commit/23533af)), closes [#1531](https://github.com/patternfly/patternfly-react/issues/1531)
+
+
+
+
+
+## [2.5.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.2...@patternfly/react-core@2.5.3) (2019-03-13)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [2.5.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.1...@patternfly/react-core@2.5.2) (2019-03-12)
 
 

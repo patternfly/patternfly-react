@@ -31,10 +31,10 @@ const IndexPage = () => (
   <DocsLayout>
     <div className={css(styles.hero)}>
       <Content>
-        <Title size="4xl" className={css(styles.heroText)}>
+        <Title size="4xl" headingLevel="h1" className={css(styles.heroText)}>
           PatternFly React
         </Title>
-        <Title size="md" className={css(styles.heroText)}>
+        <Title size="md" headingLevel="h2" className={css(styles.heroText)}>
           Version: {packageJson.version}
         </Title>
       </Content>

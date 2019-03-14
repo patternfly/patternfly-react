@@ -4,18 +4,19 @@ import styles from '@patternfly/patternfly/components/Table/table.css';
 import CollapseColumn from '../../CollapseColumn';
 import ExpandableRowContent from '../../ExpandableRowContent';
 
-export const collapsible = (
-  value,
-  {
+export const collapsible = (value, { rowIndex, columnIndex, rowData, column, property }) => {
+  const {
+    extraParams: { onCollapse, rowLabeledBy = 'simple-node', expandId = 'expand-toggle' }
+  } = column;
+  const extraData = {
     rowIndex,
-    rowData,
-    column: {
-      extraParams: { onCollapse, rowLabeledBy = 'simple-node', expandId = 'expand-toggle' }
-    }
-  }
-) => {
+    columnIndex,
+    column,
+    property
+  };
+
   function onToggle(event) {
-    onCollapse && onCollapse(event, rowIndex, rowData && !rowData.isOpen);
+    onCollapse && onCollapse(event, rowIndex, rowData && !rowData.isOpen, rowData, extraData);
   }
   return {
     className: css(styles.tableToggle),
