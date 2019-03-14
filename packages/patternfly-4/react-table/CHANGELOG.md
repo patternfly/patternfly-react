@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.1.5...@patternfly/react-table@1.2.0) (2019-03-14)
+
+
+### Features
+
+* **Table:** pass rowData and extraData to table callbacks ([#1542](https://github.com/patternfly/patternfly-react/issues/1542)) ([cb3e010](https://github.com/patternfly/patternfly-react/commit/cb3e010))
+
+
+
+
+
 ## [1.1.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.1.4...@patternfly/react-table@1.1.5) (2019-03-13)
 
 **Note:** Version bump only for package @patternfly/react-table
