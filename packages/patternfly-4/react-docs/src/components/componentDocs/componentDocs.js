@@ -69,11 +69,11 @@ class ComponentDocs extends React.PureComponent {
     return (
       <DocsLayout location={location}>
         <Content>
-          <Title size="3xl">{title}</Title>
+          <Title headingLevel="h1" size="4xl">{title}</Title>
           {Boolean(description) && (
             <p className={css(styles.description)} dangerouslySetInnerHTML={makeDescription(description)} />
           )}
-          <Section title="Examples" headingLevel="h2">
+          <Section title="Examples" headingLevel="h2" headingSize="2xl">
             {examples.map((exampleObj, i) => {
               const ComponentExample = exampleObj.component;
               const rawExample = rawExamples.find(example => example.name === ComponentExample.name);
@@ -115,7 +115,7 @@ class ComponentDocs extends React.PureComponent {
             return null;
           })}
           {variablesRoot && (
-            <Section title="CSS Variables" headingLevel="h2">
+            <Section title="CSS Variables" headingLevel="h2" headingSize="2xl">
               <Tokens variables={variablesRoot} />
             </Section>
           )}

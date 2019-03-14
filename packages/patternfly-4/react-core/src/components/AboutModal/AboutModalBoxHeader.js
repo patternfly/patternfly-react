@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/AboutModalBox/about-modal-box.css';
-import Title from '../Title/Title';
+import { Title } from '../Title/Title';
 
 const propTypes = {
   /** additional classes added to the button */
@@ -21,7 +21,7 @@ const defaultProps = {
 
 const AboutModalBoxHeader = ({ className, productName, id, ...props }) => (
   <div {...props} className={css(styles.aboutModalBoxHeader, className)}>
-    <Title size="4xl" id={id}>
+    <Title headingLevel="h1" size="4xl" id={id}>
       {productName}
     </Title>
   </div>

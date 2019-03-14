@@ -95,6 +95,7 @@ class DocsLayout extends React.Component {
             integrity="sha384-BzCy2fixOYd0HObpx3GMefNqdbA7Qjcc91RgYeDjrHTIEXqiF00jKvgQG0+zY/7I"
             crossOrigin="anonymous"
           />
+          <html lang="en-US" />
         </Helmet>
         <Page
           title="Patternfly React"

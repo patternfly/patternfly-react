@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Title from '../Title/Title';
+import { Title } from '../Title/Title';
 import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/accessibility.css';
 import { css } from '@patternfly/react-styles';
 
@@ -24,7 +24,7 @@ const ModalBoxHeader = ({ hideTitle, children, className, ...props }) => {
   const hidden = hideTitle ? css(accessibleStyles.screenReader) : '';
 
   return <React.Fragment>
-    <Title size="2xl" className={className + hidden} {...props}>
+    <Title size="2xl" headingLevel="h3" className={className + hidden} {...props}>
       {children}
     </Title>
   </React.Fragment>;

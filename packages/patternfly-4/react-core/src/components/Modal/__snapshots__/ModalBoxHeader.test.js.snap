@@ -4,7 +4,7 @@ exports[`ModalBoxHeader Test 1`] = `
 <Fragment>
   <Title
     className=""
-    headingLevel="h1"
+    headingLevel="h3"
     size="2xl"
   >
     This is a ModalBox header
