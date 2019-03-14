@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.6...@patternfly/react-core@2.5.7) (2019-03-14)
+
+
+### Bug Fixes
+
+* **DataList:** Add dropdown and button actions to DataList ([#1079](https://github.com/patternfly/patternfly-react/issues/1079)) ([7636381](https://github.com/patternfly/patternfly-react/commit/7636381))
+
+
+
+
+
 ## [2.5.6](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.5...@patternfly/react-core@2.5.6) (2019-03-14)
 
 
