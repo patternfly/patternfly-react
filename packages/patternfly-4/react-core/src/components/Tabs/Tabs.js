@@ -54,7 +54,7 @@ class Tabs extends React.Component {
   id = getUniqueId();
   tabList = React.createRef();
 
-  handleTabClick(event, eventKey, tabContentId, tabContentRef) {
+  handleTabClick(event, eventKey, tabContentRef) {
     this.props.onSelect(event, eventKey);
     // process any tab content sections outside of the component
     if (tabContentRef) {
@@ -196,7 +196,7 @@ class Tabs extends React.Component {
             <Tab {...child.props}
               ref={(node) => { this.child = node; }}
               className={css(styles.tabsButton)}
-              onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentId, child.props.tabContentRef)}
+              onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentRef)}
               id={`pf-tab-${child.props.eventKey}-${child.props.id || this.id}`}
               aria-controls={child.props.tabContentId ? `pf-tab-section-${child.props.eventKey}-${child.props.tabContentId}` : `pf-tab-section-${child.props.eventKey}-${child.props.id || this.id}`}>
                 {child.props.title}
