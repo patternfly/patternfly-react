@@ -25,7 +25,7 @@ const defaultProps = {
   props: []
 };
 
-export const PropsTableTs = ({ name, props }) => (
+export const PropsTableTs = React.FunctionComponent = ({ name, props }) => (
   <Section name={name} title={`${name} Props`} description={`The ${name} component accepts the following props.`}>
     <Table>
       <Heading>
@@ -36,23 +36,19 @@ export const PropsTableTs = ({ name, props }) => (
         <TH>Description</TH>
       </Heading>
       <Body>
+        {props.map(prop => (
+          <Row key={prop.name}>
+            <TD>{prop.name}</TD>
+            <TD>{prop.type}</TD>
+            <TD align="center">{prop.required && <ExclamationCircleIcon />}</TD>
+            <TD>{prop.default ? prop.default : ''}</TD>
+            <TD>{prop.comment && <span dangerouslySetInnerHTML={{ __html: prop.comment }} />}</TD>
+          </Row>
+        ))}
       </Body>
     </Table>
   </Section>
 );
-
-function getEnumValue(prop, enumValues) {
-  let returnValue = '';
-  let values;
-  if (prop.type.name === 'union') {
-    values = prop.type.value.map(v => v.name);
-    returnValue = `${values.join(' | ')}`;
-  } else {
-    values = Array.isArray(prop.type.value) ? prop.type.value.map(v => v.value) : enumValues[prop.type.value];
-    returnValue = values ? `${prop.type.name}: ${values.join(', ')}` : prop.type.name;
-  }
-  return returnValue;
-}
 
 PropsTableTs.propTypes = propTypes;
 PropsTableTs.defaultProps = defaultProps;
