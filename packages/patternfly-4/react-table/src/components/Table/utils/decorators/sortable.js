@@ -4,15 +4,16 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Table/table.css';
 import buttonStyles from '@patternfly/patternfly/components/Button/button.css';
 
-export default (
-  label,
-  {
-    column: {
-      extraParams: { sortBy, onSort }
-    },
-    columnIndex
-  }
-) => {
+export default (label, { columnIndex, column, property }) => {
+  const {
+    extraParams: { sortBy, onSort }
+  } = column;
+  const extraData = {
+    columnIndex,
+    column,
+    property
+  };
+
   const isSortedBy = sortBy && columnIndex === sortBy.index;
   function sortClicked(event) {
     let reversedDirection;
@@ -21,7 +22,7 @@ export default (
     } else {
       reversedDirection = sortBy.direction === SortByDirection.asc ? SortByDirection.desc : SortByDirection.asc;
     }
-    onSort && onSort(event, columnIndex, reversedDirection);
+    onSort && onSort(event, columnIndex, reversedDirection, extraData);
   }
 
   return {

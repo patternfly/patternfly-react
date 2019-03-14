@@ -12,12 +12,8 @@ class NavTest extends Component {
     return (
       <Nav aria-label={new myProps()['aria-label']}>
         <NavList>
-          <NavItem>
-            Link 1
-          </NavItem>
-          <NavItem>
-            Link 2
-          </NavItem>
+          <NavItem preventDefault={false}>Link 1</NavItem>
+          <NavItem>Link 2</NavItem>
         </NavList>
       </Nav>
     );
