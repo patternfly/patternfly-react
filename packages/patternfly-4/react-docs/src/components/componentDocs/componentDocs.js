@@ -11,7 +11,7 @@ import PropsTableTs from '../propsTableTs';
 import Section from '../section';
 import DocsLayout from '../layouts';
 import Tokens from '../css-variables';
-import { accumulateProps } from '../../../ts-docs/propHelper';
+import { accumulateProps } from './propsHelper';
 
 const propTypes = {
   data: PropTypes.any.isRequired,
