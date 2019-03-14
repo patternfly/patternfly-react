@@ -93,7 +93,8 @@ Chip.defaultProps = {
   closeBtnAriaLabel: 'close',
   className: '',
   isOverflowChip: false,
-  tooltipPosition: 'top'
+  tooltipPosition: 'top',
+  onClick: () => {}
 };
 
 export default Chip;
