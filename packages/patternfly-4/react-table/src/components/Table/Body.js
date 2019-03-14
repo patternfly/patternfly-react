@@ -44,7 +44,6 @@ class ContextBody extends React.Component {
     let shiftKey = Boolean(headerData[0] && headerData[0].extraParams.onSelect);
     shiftKey += Boolean(headerData[0] && headerData[0].extraParams.onCollapse);
     return {
-      ...row,
       ...(row &&
         (row.cells || row).reduce(
           (acc, curr, key) => {
@@ -75,6 +74,7 @@ class ContextBody extends React.Component {
     const mappedRows =
       headerData.length !== 0 &&
       rows.map((oneRow, oneRowKey) => ({
+        ...oneRow,
         ...this.mapCells(oneRow, oneRowKey),
         ...(oneRow.parent !== undefined
           ? {

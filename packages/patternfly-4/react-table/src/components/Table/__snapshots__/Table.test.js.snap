@@ -2914,10 +2914,9 @@ exports[`Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -2960,6 +2959,7 @@ exports[`Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 0,
                               }
                             }
@@ -2985,7 +2985,6 @@ exports[`Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -3563,10 +3562,9 @@ exports[`Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -3609,6 +3607,7 @@ exports[`Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 1,
                               }
                             }
@@ -3634,7 +3633,6 @@ exports[`Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -4212,10 +4210,9 @@ exports[`Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -4258,6 +4255,7 @@ exports[`Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 2,
                               }
                             }
@@ -4283,7 +4281,6 @@ exports[`Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -4861,10 +4858,9 @@ exports[`Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -4907,6 +4903,7 @@ exports[`Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 3,
                               }
                             }
@@ -4932,7 +4929,6 @@ exports[`Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -5510,10 +5506,9 @@ exports[`Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -5556,6 +5551,7 @@ exports[`Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 4,
                               }
                             }
@@ -5581,7 +5577,6 @@ exports[`Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -6159,10 +6154,9 @@ exports[`Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -6205,6 +6199,7 @@ exports[`Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 5,
                               }
                             }
@@ -6230,7 +6225,6 @@ exports[`Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -6808,10 +6802,9 @@ exports[`Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -6854,6 +6847,7 @@ exports[`Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 6,
                               }
                             }
@@ -6879,7 +6873,6 @@ exports[`Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -7457,10 +7450,9 @@ exports[`Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -7503,6 +7495,7 @@ exports[`Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 7,
                               }
                             }
@@ -7528,7 +7521,6 @@ exports[`Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -8106,10 +8098,9 @@ exports[`Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -8152,6 +8143,7 @@ exports[`Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 8,
                               }
                             }
@@ -8177,7 +8169,6 @@ exports[`Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -40647,10 +40638,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -40711,6 +40701,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 0,
                               }
                             }
@@ -40736,7 +40727,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -41422,10 +41412,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -41486,6 +41475,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 1,
                               }
                             }
@@ -41511,7 +41501,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -42197,10 +42186,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -42261,6 +42249,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 2,
                               }
                             }
@@ -42286,7 +42275,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -42972,10 +42960,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -43036,6 +43023,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 3,
                               }
                             }
@@ -43061,7 +43049,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -43747,10 +43734,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -43811,6 +43797,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 4,
                               }
                             }
@@ -43836,7 +43823,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -44522,10 +44508,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -44586,6 +44571,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 5,
                               }
                             }
@@ -44611,7 +44597,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -45297,10 +45282,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -45361,6 +45345,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 6,
                               }
                             }
@@ -45386,7 +45371,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -46072,10 +46056,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -46136,6 +46119,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 7,
                               }
                             }
@@ -46161,7 +46145,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -46847,10 +46830,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -46911,6 +46893,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 8,
                               }
                             }
@@ -46936,7 +46919,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {
@@ -47623,10 +47605,9 @@ exports[`Simple Actions table 1`] = `
                           data-key={5}
                         >
                           <ActionsColumn
-                            className=""
                             dropdownDirection="down"
                             dropdownPosition="right"
-                            extraParams={
+                            extraData={
                               Object {
                                 "column": Object {
                                   "cell": Object {
@@ -47687,6 +47668,7 @@ exports[`Simple Actions table 1`] = `
                                   },
                                 },
                                 "columnIndex": 5,
+                                "property": "column-5",
                                 "rowIndex": 9,
                               }
                             }
@@ -47712,7 +47694,6 @@ exports[`Simple Actions table 1`] = `
                                 },
                               ]
                             }
-                            onSelect={null}
                             rowData={
                               Object {
                                 "branches": Object {

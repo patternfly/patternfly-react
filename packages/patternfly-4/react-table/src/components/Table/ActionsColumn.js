@@ -14,15 +14,23 @@ const propTypes = {
   items: PropTypes.array,
   isDisabled: PropTypes.bool,
   dropdownPosition: PropTypes.oneOf(Object.values(DropdownPosition)),
-  dropdownDirection: PropTypes.oneOf(Object.values(DropdownDirection))
+  dropdownDirection: PropTypes.oneOf(Object.values(DropdownDirection)),
+  rowData: PropTypes.object,
+  extraData: PropTypes.shape({
+    rowIndex: PropTypes.number,
+    columnIndex: PropTypes.number,
+    column: PropTypes.object,
+    property: PropTypes.string
+  })
 };
 const defaultProps = {
   children: null,
-  className: '',
-  onSelect: null,
+  items: [],
   isDisabled: false,
   dropdownPosition: DropdownPosition.right,
-  dropdownDirection: DropdownDirection.down
+  dropdownDirection: DropdownDirection.down,
+  rowData: {},
+  extraData: {}
 };
 
 class ActionsColumn extends React.Component {
@@ -40,9 +48,9 @@ class ActionsColumn extends React.Component {
   };
 
   onSelect = (event, onClick) => {
-    const { rowData, extraParams } = this.props;
+    const { rowData, extraData } = this.props;
     event.preventDefault();
-    onClick && onClick(event, extraParams.rowIndex, rowData, extraParams);
+    onClick && onClick(event, extraData.rowIndex, rowData, extraData);
     this.setState({
       isOpen: !this.state.isOpen
     });
