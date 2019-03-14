@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "skipLibCheck": true,
     "baseUrl": ".",
-    "moduleResolution": "node",
+    "jsx": "react",
     "lib": [
       "es2017",
       "dom"
     ],
     "module": "commonjs",
-    "jsx": "react",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
     "target": "es5"
   },
   "include": [
