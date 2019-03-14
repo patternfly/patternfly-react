@@ -34,21 +34,18 @@ export interface TitleProps
   headingLevel?: HeadingLevels | keyof Levels;
 }
 
-const defaultProps = {
-  children: '',
-  className: '',
-  headingLevel: HeadingLevels.h1
-};
-
-const Title: React.FunctionComponent<TitleProps> = ({ size, className, children, headingLevel: HeadingLevel, ...props }) => {
+const Title: React.FunctionComponent<TitleProps> = ({
+  size,
+  className = '',
+  children = '',
+  headingLevel: HeadingLevel = HeadingLevels.h1,
+  ...props
+}) => {
   return (
-    <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size), className)}>
+    <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size) as string, className)}>
       {children}
     </HeadingLevel>
   )
 };
 
-Title.defaultProps = defaultProps;
-
-export { Title };
 export default Title;
