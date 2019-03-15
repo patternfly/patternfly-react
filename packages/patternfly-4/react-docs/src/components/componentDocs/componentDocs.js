@@ -29,6 +29,7 @@ const propTypes = {
   ),
   components: PropTypes.objectOf(PropTypes.func),
   enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
+  types: PropTypes.object,
   rawExamples: PropTypes.array,
   images: PropTypes.array,
   fullPageOnly: PropTypes.bool,
@@ -41,6 +42,7 @@ const defaultProps = {
   examples: [],
   components: {},
   enumValues: {},
+  types: {},
   rawExamples: [],
   images: [],
   fullPageOnly: false,
@@ -57,6 +59,7 @@ class ComponentDocs extends React.PureComponent {
       examples,
       components,
       enumValues,
+      types,
       fullPageOnly,
       rawExamples,
       images,
@@ -96,11 +99,21 @@ class ComponentDocs extends React.PureComponent {
               );
             })}
           </Section>
-          {Object.entries(components).map(([componentName]) => {
+          {Object.entries(components).map(component => {
+            const componentName = component[0];
+            const componentFunction = component[1];
             const componentDocsJs = getDocGenInfo(componentName);
             const componentDocsTs = getDocGenInfoTs(componentName);
             if (componentDocsTs) {
-              return <PropsTableTs key={componentName} name={componentName} props={componentDocsTs.children} />;
+              return (
+                <PropsTableTs
+                  key={componentName}
+                  name={componentName}
+                  props={componentDocsTs.children}
+                  types={types}
+                  defaultProps={componentFunction.defaultProps}
+                />
+              );
             } else if (componentDocsJs) {
               return (
                 <PropsTable
@@ -166,6 +179,7 @@ export default props => (
                 name
                 children {
                   name
+                  kindString
                   comment {
                     shortText
                   }
@@ -175,6 +189,20 @@ export default props => (
                   }
                   flags {
                     isOptional
+                  }
+                  signatures {
+                    comment {
+                      shortText
+                    }
+                    parameters {
+                      name
+                      type {
+                        name
+                      }
+                    }
+                    type {
+                      name
+                    }
                   }
                 }
               }
