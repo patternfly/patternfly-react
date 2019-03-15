@@ -154,20 +154,14 @@ class Wizard extends React.Component<WizardProps> {
 
   public componentDidMount() {
     document.body.appendChild(this.container);
+    this.toggleSiblingsFromScreenReaders(true);
     document.addEventListener('keydown', this.handleKeyClicks, false);
   }
 
   public componentWillUnmount() {
     document.body.removeChild(this.container);
+    this.toggleSiblingsFromScreenReaders(false);
     document.removeEventListener('keydown', this.handleKeyClicks, false);
-  }
-
-  public componentDidUpdate() {
-    if (this.props.isOpen) {
-      this.toggleSiblingsFromScreenReaders(true);
-    } else {
-      this.toggleSiblingsFromScreenReaders(false);
-    }
   }
 
   private onNavToggle = isNavOpen => {

@@ -10,7 +10,8 @@ export default {
     Wizard
   },
   types: {
-    WizardStepFunctionType: '(step: { id?: string | number; name: string; }) => void'
+    WizardStepFunctionType:
+      '(newStep: { id?: string | number; name: string; }, prevStep: { prevId?: string | number; prevName: string; }) => void'
   },
   examples: [
     { component: SimpleWizard, title: 'Simple Wizard' },
