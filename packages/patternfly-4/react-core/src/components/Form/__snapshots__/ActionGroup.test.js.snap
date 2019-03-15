@@ -4,6 +4,7 @@ exports[`ActionGroup component should render default action group variant 1`] = 
 .pf-c-form__actions {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 .pf-c-form__group.pf-m-action {
   display: block;
@@ -31,6 +32,7 @@ exports[`ActionGroup component should render horizontal form ActionGroup variant
 .pf-c-form__actions {
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
 }
 .pf-c-form__horizontal-group {
   display: block;
