@@ -29,7 +29,8 @@ const getPlugin = (overrides = {}) => [
 
 resolveFrom.mockImplementation((scriptDir, importPath) => importPath);
 utils.getCSS.mockReturnValue(mockCSS);
-const getCSSOutputPathReturnValue = cssFilePath => `${cssFilePath}.js`;
+const getCSSOutputPathReturnValue = cssFilePath => `${cssFilePath}`;
+const getCSSJSOutputPathReturnValue = cssFilePath => `${cssFilePath}.js`;
 utils.getCSSOutputPath.mockImplementation((outDir, rootPath, cssFilePath) => getCSSOutputPathReturnValue(cssFilePath));
 utils.getRelativeImportPath.mockImplementation((_, cssOutputPath) => cssOutputPath);
 const cssToJSReturnValue = 'JSCSS';
@@ -53,7 +54,7 @@ it('updates the import path', () => {
   expect(utils.writeCSSJSFile).toBeCalledWith(
     expect.any(String),
     importPath,
-    getCSSOutputPathReturnValue(importPath),
+    getCSSJSOutputPathReturnValue(importPath),
     cssToJSReturnValue
   );
   expect(code).toMatchSnapshot();

@@ -58,7 +58,8 @@ export function css(...styles) {
   const filteredStyles = [];
   styles.forEach(style => {
     if (isValidStyleDeclaration(style)) {
-      style.__inject();
+      // remove global injection of styles in favor of require(css) in the component
+      // style.__inject();
       filteredStyles.push(getClassName(style));
       return;
     }
