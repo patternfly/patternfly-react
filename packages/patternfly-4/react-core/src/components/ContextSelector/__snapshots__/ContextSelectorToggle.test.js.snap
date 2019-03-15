@@ -12,7 +12,7 @@ exports[`Renders ContextSelectorToggle 1`] = `
   position: relative;
   align-items: center;
   justify-content: space-between;
-  min-width: 100%;
+  width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   color: #282d33;
   white-space: nowrap;
@@ -55,7 +55,7 @@ exports[`Verify ESC press  1`] = `
   position: relative;
   align-items: center;
   justify-content: space-between;
-  min-width: 100%;
+  width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   color: #282d33;
   white-space: nowrap;
@@ -132,7 +132,7 @@ exports[`Verify ESC press with not isOpen 1`] = `
   position: relative;
   align-items: center;
   justify-content: space-between;
-  min-width: 100%;
+  width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   color: #282d33;
   white-space: nowrap;
@@ -209,7 +209,7 @@ exports[`Verify keydown enter  1`] = `
   position: relative;
   align-items: center;
   justify-content: space-between;
-  min-width: 100%;
+  width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   color: #282d33;
   white-space: nowrap;
@@ -286,7 +286,7 @@ exports[`Verify keydown tab  1`] = `
   position: relative;
   align-items: center;
   justify-content: space-between;
-  min-width: 100%;
+  width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   color: #282d33;
   white-space: nowrap;
