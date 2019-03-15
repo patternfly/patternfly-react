@@ -433,7 +433,6 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               forwardRef={[Function]}
               id="pf-tab-0-tab1"
               onClick={[Function]}
-              tabContentId=""
               tabContentRef={null}
               title="Tab item 1"
             >
@@ -478,7 +477,6 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               forwardRef={[Function]}
               id="pf-tab-1-tab2"
               onClick={[Function]}
-              tabContentId=""
               tabContentRef={null}
               title="Tab item 2"
             >
@@ -523,7 +521,6 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
               forwardRef={[Function]}
               id="pf-tab-2-tab3"
               onClick={[Function]}
-              tabContentId=""
               tabContentRef={null}
               title="Tab item 3"
             >
@@ -929,7 +926,6 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               forwardRef={[Function]}
               id="pf-tab-0-tab1"
               onClick={[Function]}
-              tabContentId=""
               tabContentRef={null}
               title="Tab item 1"
             >
@@ -974,7 +970,6 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               forwardRef={[Function]}
               id="pf-tab-1-tab2"
               onClick={[Function]}
-              tabContentId=""
               tabContentRef={null}
               title="Tab item 2"
             >
@@ -1019,7 +1014,6 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
               forwardRef={[Function]}
               id="pf-tab-2-tab3"
               onClick={[Function]}
-              tabContentId=""
               tabContentRef={null}
               title="Tab item 3"
             >
@@ -1425,7 +1419,6 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               forwardRef={[Function]}
               id="pf-tab-0-tab1"
               onClick={[Function]}
-              tabContentId=""
               tabContentRef={null}
               title="Tab item 1"
             >
@@ -1470,7 +1463,6 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               forwardRef={[Function]}
               id="pf-tab-1-tab2"
               onClick={[Function]}
-              tabContentId=""
               tabContentRef={null}
               title="Tab item 2"
             >
@@ -1515,7 +1507,6 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
               forwardRef={[Function]}
               id="pf-tab-2-tab3"
               onClick={[Function]}
-              tabContentId=""
               tabContentRef={null}
               title="Tab item 3"
             >

@@ -20,9 +20,9 @@ class SeparateTabContent extends React.Component {
   render() {
     return <React.Fragment>
       <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
-        <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1}></Tab>
-        <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2}></Tab>
-        <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3}></Tab>
+        <Tab eventKey={0} title="Tab item 1" tabContentRef={this.contentRef1}></Tab>
+        <Tab eventKey={1} title="Tab item 2" tabContentRef={this.contentRef2}></Tab>
+        <Tab eventKey={2} title="Tab item 3" tabContentRef={this.contentRef3}></Tab>
       </Tabs>
       <div>
         <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1}>Tab 1 section</TabContent>

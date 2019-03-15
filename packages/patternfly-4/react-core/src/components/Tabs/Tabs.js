@@ -198,7 +198,7 @@ class Tabs extends React.Component {
               className={css(styles.tabsButton)}
               onClick={event => this.handleTabClick(event, child.props.eventKey, child.props.tabContentRef)}
               id={`pf-tab-${child.props.eventKey}-${child.props.id || this.id}`}
-              aria-controls={child.props.tabContentId ? `pf-tab-section-${child.props.eventKey}-${child.props.tabContentId}` : `pf-tab-section-${child.props.eventKey}-${child.props.id || this.id}`}>
+              aria-controls={`pf-tab-section-${child.props.eventKey}-${child.props.id || this.id}`}>
                 {child.props.title}
             </Tab>
           </li>
