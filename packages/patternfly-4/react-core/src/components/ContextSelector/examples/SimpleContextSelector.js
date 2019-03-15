@@ -6,7 +6,7 @@ class SimpleContextSelector extends React.Component {
 
   state = {
     isOpen: false,
-    selected: 0,
+    selected: this.items[0],
     searchValue: '',
     filteredItems: this.items
   };
@@ -17,16 +17,16 @@ class SimpleContextSelector extends React.Component {
     });
   };
 
-  onSelect = (event, index) => {
+  onSelect = (event, value) => {
     this.setState({
-      selected: index,
+      selected: value,
       isOpen: !this.state.isOpen
     });
   };
 
   onSearchInputChange = value => {
-    /* filter list */
-    const filtered = value === '' ? this.items : this.state.filteredItems.filter(str => str.indexOf(value) !== -1);
+    const filtered =
+      value === '' ? this.items : this.items.filter(str => str.toLowerCase().indexOf(value.toLowerCase()) !== -1);
 
     this.setState({ searchValue: value, filteredItems: filtered || [] });
   };
@@ -35,12 +35,13 @@ class SimpleContextSelector extends React.Component {
     const { isOpen, selected, searchValue, filteredItems } = this.state;
     return (
       <ContextSelector
-        toggleText={this.items[selected]}
+        toggleText={selected}
         onSearchInputChange={this.onSearchInputChange}
         isOpen={isOpen}
         searchInputValue={searchValue}
         onToggle={this.onToggle}
         onSelect={this.onSelect}
+        screenReaderLabel="Selected Project:"
       >
         {filteredItems &&
           filteredItems.map((item, index) => <ContextSelectorItem key={index}>{item}</ContextSelectorItem>)}

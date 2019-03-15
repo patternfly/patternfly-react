@@ -18,8 +18,6 @@ const propTypes = {
   onToggle: PropTypes.func,
   /** Callback for toggle open on keyboard entry */
   onEnter: PropTypes.func,
-  /** Callback for toggle close */
-  onClose: PropTypes.func,
   /** Element which wraps toggle */
   parentRef: PropTypes.any,
   /** Forces focus state */
@@ -36,7 +34,6 @@ const defaultProps = {
   className: '',
   toggleText: '',
   isOpen: false,
-  onClose: () => {},
   onEnter: () => {},
   parentRef: null,
   isFocused: false,
@@ -68,12 +65,7 @@ class ContextSelectorToggle extends Component {
   onEscPress = event => {
     const { parentRef } = this.props;
     const keyCode = event.keyCode || event.which;
-    if (
-      this.props.isOpen &&
-      (keyCode === KEY_CODES.ESCAPE_KEY || event.keyCode === KEY_CODES.TAB) &&
-      parentRef &&
-      parentRef.contains(event.target)
-    ) {
+    if (this.props.isOpen && keyCode === KEY_CODES.ESCAPE_KEY && parentRef && parentRef.contains(event.target)) {
       this.props.onToggle && this.props.onToggle(false);
       this.toggle.focus();
     }
@@ -103,7 +95,6 @@ class ContextSelectorToggle extends Component {
       isHovered,
       onToggle,
       onEnter,
-      onClose,
       parentRef,
       id,
       ...props
@@ -125,7 +116,6 @@ class ContextSelectorToggle extends Component {
         type="button"
         onClick={_event => {
           onToggle && onToggle(!isOpen);
-          if (isOpen) onClose && onClose();
         }}
         aria-expanded={isOpen}
         onKeyDown={this.onKeyDown}

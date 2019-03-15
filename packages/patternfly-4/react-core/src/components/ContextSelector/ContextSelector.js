@@ -10,10 +10,9 @@ import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
 import { SearchIcon } from '@patternfly/react-icons';
 import { InputGroup } from '../InputGroup';
-import { getUniqueId } from '../../helpers/util';
 
 // seed for the aria-labelledby ID
-let currentId = getUniqueId();
+let currentId = 0;
 
 const propTypes = {
   /** content rendered inside the Context Selector  * */
@@ -56,18 +55,8 @@ const defaultProps = {
 
 class ContextSelector extends React.Component {
   parentRef = React.createRef();
-  state = { openedOnEnter: false };
-
-  onEnter = () => {
-    this.setState({ openedOnEnter: true });
-  };
-
-  onClose = () => {
-    this.setState({ openedOnEnter: false });
-  };
 
   render() {
-    const { openedOnEnter } = this.state;
     const toggleId = `pf-context-selector-toggle-id-${currentId++}`;
     const screenReaderLabelId = `pf-context-selector-label-id-${currentId++}`;
     const searchButtonId = `pf-context-selector-search-button-id-${currentId++}`;
@@ -86,7 +75,11 @@ class ContextSelector extends React.Component {
       ...props
     } = this.props;
     return (
-      <div className={css(styles.contextSelector, props.className)} ref={this.parentRef} {...props}>
+      <div
+        className={css(styles.contextSelector, isOpen && styles.modifiers.expanded, className)}
+        ref={this.parentRef}
+        {...props}
+      >
         {screenReaderLabel && (
           <span id={screenReaderLabelId} hidden>
             {screenReaderLabel}
@@ -95,37 +88,35 @@ class ContextSelector extends React.Component {
         <ContextSelectorToggle
           onToggle={onToggle}
           isOpen={isOpen}
-          onEnter={this.onEnter}
-          onClose={this.onClose}
           toggleText={toggleText}
           id={toggleId}
           parentRef={this.parentRef.current}
           aria-labelledby={`${toggleId} ${screenReaderLabelId}`}
         />
         {isOpen && (
-          <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
-            <div className={css(styles.contextSelectorMenu)}>
-              <div className={css(styles.contextSelectorMenuInput)}>
-                <InputGroup>
-                  <TextInput
-                    value={searchInputValue}
-                    type="search"
-                    placeholder={searchInputPlaceholder}
-                    onChange={onSearchInputChange}
-                    aria-labelledby={searchButtonId}
-                  />
-                  <Button variant={ButtonVariant.tertiary} aria-label={searchButtonAriaLabel} id={searchButtonId}>
-                    <SearchIcon aria-hidden="true" />
-                  </Button>
-                </InputGroup>
-              </div>
-              <ContextSelectorContext.Provider value={{ onSelect }}>
-                <ContextSelectorMenuList isOpen={isOpen} openedOnEnter={openedOnEnter}>
-                  {children}
-                </ContextSelectorMenuList>
-              </ContextSelectorContext.Provider>
-            </div>
-          </FocusTrap>
+          <div className={css(styles.contextSelectorMenu)}>
+            {isOpen && (
+              <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+                <div className={css(styles.contextSelectorMenuInput)}>
+                  <InputGroup>
+                    <TextInput
+                      value={searchInputValue}
+                      type="search"
+                      placeholder={searchInputPlaceholder}
+                      onChange={onSearchInputChange}
+                      aria-labelledby={searchButtonId}
+                    />
+                    <Button variant={ButtonVariant.tertiary} aria-label={searchButtonAriaLabel} id={searchButtonId}>
+                      <SearchIcon aria-hidden="true" />
+                    </Button>
+                  </InputGroup>
+                </div>
+                <ContextSelectorContext.Provider value={{ onSelect }}>
+                  <ContextSelectorMenuList isOpen={isOpen}>{children}</ContextSelectorMenuList>
+                </ContextSelectorContext.Provider>
+              </FocusTrap>
+            )}
+          </div>
         )}
       </div>
     );

@@ -10,11 +10,11 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
 <ul
   className="pf-c-context-selector__menu-list"
   hidden={false}
+  openedOnEnter={false}
   role="menu"
 >
   <ContextSelectorItem
     className=""
-    index={0}
     isDisabled={false}
     isHovered={false}
     key=".$0"
@@ -25,7 +25,6 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
   </ContextSelectorItem>
   <ContextSelectorItem
     className=""
-    index={1}
     isDisabled={false}
     isHovered={false}
     key=".$1"
@@ -36,7 +35,6 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
   </ContextSelectorItem>
   <ContextSelectorItem
     className=""
-    index={2}
     isDisabled={false}
     isHovered={false}
     key=".$2"
@@ -47,7 +45,6 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
   </ContextSelectorItem>
   <ContextSelectorItem
     className=""
-    index={3}
     isDisabled={false}
     isHovered={false}
     key=".$3"
@@ -58,7 +55,6 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
   </ContextSelectorItem>
   <ContextSelectorItem
     className=""
-    index={4}
     isDisabled={false}
     isHovered={false}
     key=".$4"
@@ -80,11 +76,11 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
 <ul
   className="pf-c-context-selector__menu-list"
   hidden={false}
+  openedOnEnter={false}
   role="menu"
 >
   <ContextSelectorItem
     className=""
-    index={0}
     isDisabled={false}
     isHovered={false}
     key=".$0"
@@ -95,7 +91,6 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
   </ContextSelectorItem>
   <ContextSelectorItem
     className=""
-    index={1}
     isDisabled={false}
     isHovered={false}
     key=".$1"
@@ -106,7 +101,6 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
   </ContextSelectorItem>
   <ContextSelectorItem
     className=""
-    index={2}
     isDisabled={false}
     isHovered={false}
     key=".$2"
@@ -117,7 +111,6 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
   </ContextSelectorItem>
   <ContextSelectorItem
     className=""
-    index={3}
     isDisabled={false}
     isHovered={false}
     key=".$3"
@@ -128,7 +121,6 @@ exports[`Renders ContextSelectorMenuList open 1`] = `
   </ContextSelectorItem>
   <ContextSelectorItem
     className=""
-    index={4}
     isDisabled={false}
     isHovered={false}
     key=".$4"

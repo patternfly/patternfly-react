@@ -5,7 +5,7 @@ export interface ContextSelectorProps extends HTMLProps<HTMLDivElement> {
   children?: ReactNode;
   isOpen?: boolean;
   onToggle?(value: boolean): void;
-  onSelect?(event: React.SyntheticEvent<HTMLDivElement>, value: string): void;
+  onSelect?(event: React.SyntheticEvent<HTMLButtonElement>, value: ReactNode): void;
   screenReaderLabel?: string;
   toggleText?: string;
   searchButtonAriaLabel?: string;

@@ -52,7 +52,7 @@ class ContextSelectorItem extends React.Component {
               onClick={event => {
                 if (!isDisabled) {
                   onClick && onClick(event);
-                  onSelect && onSelect(event, index);
+                  onSelect && onSelect(event, children);
                 }
               }}
               {...props}

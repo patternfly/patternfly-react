@@ -3,7 +3,6 @@
 exports[`Renders ContextSelector 1`] = `
 .pf-c-context-selector {
   display: inline-block;
-  color: #282d33;
   position: relative;
   width: 15.625rem;
   max-width: 100%;
@@ -13,14 +12,13 @@ exports[`Renders ContextSelector 1`] = `
   className="pf-c-context-selector"
 >
   <ContextSelectorToggle
-    aria-labelledby="pf-context-selector-toggle-id-NaN pf-context-selector-label-id-NaN"
+    aria-labelledby="pf-context-selector-toggle-id-0 pf-context-selector-label-id-1"
     className=""
-    id="pf-context-selector-toggle-id-NaN"
+    id="pf-context-selector-toggle-id-0"
     isActive={false}
     isFocused={false}
     isHovered={false}
     isOpen={false}
-    onClose={[Function]}
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={null}
@@ -38,6 +36,7 @@ exports[`Renders ContextSelector open 1`] = `
 }
 .pf-c-context-selector__menu {
   display: block;
+  color: #282d33;
   position: absolute;
   z-index: 100;
   min-width: 100%;
@@ -47,44 +46,42 @@ exports[`Renders ContextSelector open 1`] = `
   border: 1px solid transparent;
   box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
-.pf-c-context-selector {
+.pf-c-context-selector.pf-m-expanded {
   display: inline-block;
-  color: #282d33;
   position: relative;
   width: 15.625rem;
   max-width: 100%;
 }
 
 <div
-  className="pf-c-context-selector"
+  className="pf-c-context-selector pf-m-expanded"
 >
   <ContextSelectorToggle
-    aria-labelledby="pf-context-selector-toggle-id-NaN pf-context-selector-label-id-NaN"
+    aria-labelledby="pf-context-selector-toggle-id-3 pf-context-selector-label-id-4"
     className=""
-    id="pf-context-selector-toggle-id-NaN"
+    id="pf-context-selector-toggle-id-3"
     isActive={false}
     isFocused={false}
     isHovered={false}
     isOpen={true}
-    onClose={[Function]}
     onEnter={[Function]}
     onToggle={[Function]}
     parentRef={null}
     toggleText=""
   />
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={true}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-      }
-    }
-    paused={false}
-    tag="div"
+  <div
+    className="pf-c-context-selector__menu"
   >
-    <div
-      className="pf-c-context-selector__menu"
+    <FocusTrap
+      _createFocusTrap={[Function]}
+      active={true}
+      focusTrapOptions={
+        Object {
+          "clickOutsideDeactivates": true,
+        }
+      }
+      paused={false}
+      tag="div"
     >
       <div
         className="pf-c-context-selector__menu-input"
@@ -94,7 +91,7 @@ exports[`Renders ContextSelector open 1`] = `
         >
           <TextInput
             aria-label={null}
-            aria-labelledby="pf-context-selector-search-button-id-NaN"
+            aria-labelledby="pf-context-selector-search-button-id-5"
             className=""
             isDisabled={false}
             isReadOnly={false}
@@ -109,7 +106,7 @@ exports[`Renders ContextSelector open 1`] = `
             aria-label="Search menu items"
             className=""
             component="button"
-            id="pf-context-selector-search-button-id-NaN"
+            id="pf-context-selector-search-button-id-5"
             isActive={false}
             isBlock={false}
             isDisabled={false}
@@ -127,7 +124,7 @@ exports[`Renders ContextSelector open 1`] = `
           </Button>
         </InputGroup>
       </div>
-      <[object Object]
+      <ContextProvider
         value={
           Object {
             "onSelect": [Function],
@@ -137,7 +134,6 @@ exports[`Renders ContextSelector open 1`] = `
         <ContextSelectorMenuList
           className=""
           isOpen={true}
-          openedOnEnter={false}
         >
            
           <ContextSelectorItem
@@ -187,8 +183,8 @@ exports[`Renders ContextSelector open 1`] = `
           </ContextSelectorItem>
            
         </ContextSelectorMenuList>
-      </[object Object]>
-    </div>
-  </FocusTrap>
+      </ContextProvider>
+    </FocusTrap>
+  </div>
 </div>
 `;

@@ -8,26 +8,12 @@ test('Renders ContextSelectorToggle', () => {
 });
 
 test('Verify onToggle is called ', () => {
-  const mockfnOnClose = jest.fn();
   const mockfnOnToggle = jest.fn();
-  const view = mount(<ContextSelectorToggle onToggle={mockfnOnToggle} onClose={mockfnOnClose} id="toggle-id" />);
+  const view = mount(<ContextSelectorToggle onToggle={mockfnOnToggle} id="toggle-id" />);
   view
     .find('button')
     .at(0)
     .simulate('click');
-  expect(mockfnOnToggle.mock.calls).toHaveLength(1);
-  expect(mockfnOnClose.mock.calls).toHaveLength(0);
-});
-
-test('Verify onClose is called ', () => {
-  const mockfnOnClose = jest.fn();
-  const mockfnOnToggle = jest.fn();
-  const view = mount(<ContextSelectorToggle isOpen onToggle={mockfnOnToggle} onClose={mockfnOnClose} id="toggle-id" />);
-  view
-    .find('button')
-    .at(0)
-    .simulate('click');
-  expect(mockfnOnClose.mock.calls).toHaveLength(1);
   expect(mockfnOnToggle.mock.calls).toHaveLength(1);
 });
 

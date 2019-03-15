@@ -10,8 +10,6 @@ const propTypes = {
   className: PropTypes.string,
   /** Flag to indicate if Context Selector menu is opened */
   isOpen: PropTypes.bool,
-  /** Internal flag indicating whether select was opened via keyboard */
-  openedOnEnter: PropTypes.bool,
   /** Additional props are spread to the container component */
   '': PropTypes.any
 };
@@ -19,34 +17,26 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  isOpen: true,
-  openedOnEnter: false
+  isOpen: true
 };
 
 class ContextSelectorMenuList extends React.Component {
   refsCollection = [];
-
-  componentDidMount() {
-    if (this.props.openedOnEnter) {
-      this.refsCollection[0].focus();
-    }
-  }
 
   sendRef = (index, ref) => {
     this.refsCollection[index] = ref;
   };
 
   extendChildren() {
-    return React.Children.map(this.props.children, (child, index) =>
+    return React.Children.map(this.props.children, child =>
       React.cloneElement(child, {
-        sendRef: this.sendRef,
-        index
+        sendRef: this.sendRef
       })
     );
   }
 
   render() {
-    const { className, isOpen, children, openedOnEnter, ...props } = this.props;
+    const { className, isOpen, children, ...props } = this.props;
 
     return (
       <ul className={css(styles.contextSelectorMenuList, className)} hidden={!isOpen} role="menu" {...props}>
