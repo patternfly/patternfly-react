@@ -23,7 +23,11 @@ exports[`Wizard should match snapshot 1`] = `
           component="div"
         >
           <div
+            aria-describedby="pf-wizard-description-0"
+            aria-labelledby="pf-wizard-title-0"
+            aria-modal="true"
             className="pf-c-wizard"
+            role="dialog"
           >
             <BackgroundImage
               className=""
@@ -41,8 +45,10 @@ exports[`Wizard should match snapshot 1`] = `
             <WizardHeader
               ariaLabel="Close"
               description="Description here"
+              descriptionId="pf-wizard-description-0"
               onClose={null}
               title="Wizard title"
+              titleId="pf-wizard-title-0"
             />
             <WizardToggle
               activeStep={
@@ -55,7 +61,9 @@ exports[`Wizard should match snapshot 1`] = `
                 }
               }
               hasBodyPadding={true}
+              isNavOpen={false}
               nav={[Function]}
+              onNavToggle={[Function]}
               steps={
                 Array [
                   Object {
@@ -147,7 +155,11 @@ exports[`Wizard should match snapshot 1`] = `
             class="pf-l-bullseye"
           >
             <div
+              aria-describedby="pf-wizard-description-0"
+              aria-labelledby="pf-wizard-title-0"
+              aria-modal="true"
               class="pf-c-wizard"
+              role="dialog"
             >
               <div
                 class="pf-c-background-image css-6fbjc4"
@@ -176,12 +188,15 @@ exports[`Wizard should match snapshot 1`] = `
                   </svg>
                 </button>
                 <h1
+                  aria-label="Wizard title"
                   class="pf-c-title pf-m-3xl pf-c-wizard__title"
+                  id="pf-wizard-title-0"
                 >
                   Wizard title
                 </h1>
                 <p
                   class="pf-c-wizard__description"
+                  id="pf-wizard-description-0"
                 >
                   Description here
                 </p>
@@ -342,7 +357,11 @@ exports[`Wizard should match snapshot 1`] = `
             class="pf-l-bullseye"
           >
             <div
+              aria-describedby="pf-wizard-description-0"
+              aria-labelledby="pf-wizard-title-0"
+              aria-modal="true"
               class="pf-c-wizard"
+              role="dialog"
             >
               <div
                 class="pf-c-background-image css-6fbjc4"
@@ -371,12 +390,15 @@ exports[`Wizard should match snapshot 1`] = `
                   </svg>
                 </button>
                 <h1
+                  aria-label="Wizard title"
                   class="pf-c-title pf-m-3xl pf-c-wizard__title"
+                  id="pf-wizard-title-0"
                 >
                   Wizard title
                 </h1>
                 <p
                   class="pf-c-wizard__description"
+                  id="pf-wizard-description-0"
                 >
                   Description here
                 </p>

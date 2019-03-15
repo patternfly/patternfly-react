@@ -29,7 +29,12 @@ const defaultProps = {
 };
 
 export const PropsTableTs = ({ name, props, defaultProps: defaults, types }) => (
-  <Section name={name} title={`${name} Props`} description={`The ${name} component accepts the following props.`}>
+  <Section
+    headingLevel="h3"
+    name={name}
+    title={`${name} Props`}
+    description={`The ${name} component accepts the following props.`}
+  >
     <Table>
       <Heading>
         <TH>Name</TH>
@@ -40,7 +45,6 @@ export const PropsTableTs = ({ name, props, defaultProps: defaults, types }) => 
       </Heading>
       <Body>
         {props.map(prop => {
-          debugger;
           let typeName = prop.type && prop.type.name;
           let comment = prop.comment && prop.comment.shortText;
           if (!prop.type && prop.kindString && prop.kindString === 'Method') {

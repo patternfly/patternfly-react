@@ -45,18 +45,18 @@ class ValidationWizard extends React.Component {
     });
   };
 
-  onNext = ({ id, name }) => {
-    console.log(`id: ${id}, name: ${name}`);
+  onNext = ({ id, name }, { prevId, prevName }) => {
+    console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
     this.areAllStepsValid();
   };
 
-  onBack = ({ id, name }) => {
-    console.log(`id: ${id}, name: ${name}`);
+  onBack = ({ id, name }, { prevId, prevName }) => {
+    console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
     this.areAllStepsValid();
   };
 
-  onGoToStep = ({ id, name }) => {
-    console.log(`id: ${id}, name: ${name}`);
+  onGoToStep = ({ id, name }, { prevId, prevName }) => {
+    console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
   };
 
   onSave = () => {

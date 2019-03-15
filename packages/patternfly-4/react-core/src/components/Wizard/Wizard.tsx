@@ -39,7 +39,7 @@ interface ComputedStep extends WizardStep {
   canJumpTo?: boolean;
 };
 
-export type WizardStepFunctionType = (step: { id?: string | number; name: string; }) => void;
+export type WizardStepFunctionType = (newStep: { id?: string | number; name: string; }, prevStep: { prevId?: string | number; prevName: string; }) => void;
 
 interface WizardProps {
   /** True to show the wizard */
@@ -93,6 +93,8 @@ const images = {
   [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg#image_overlay'
 };
 
+let currentId = 0;
+
 class Wizard extends React.Component<WizardProps> {
   public static defaultProps = {
     isOpen: false,
@@ -115,15 +117,38 @@ class Wizard extends React.Component<WizardProps> {
     hasBodyPadding: true
   };
 
+  public container = null;
+  public titleId = `pf-wizard-title-0`;
+  public descriptionId = `pf-wizard-description-0`;
+
+  constructor(props) {
+    super(props);
+    const newId = currentId++;
+    this.titleId = `pf-wizard-title-${newId}`;
+    this.descriptionId = `pf-wizard-description-${newId}`;
+  }
+
   public state = {
-    currentStep: Number.isInteger(this.props.startAtStep) ? this.props.startAtStep : 1
+    currentStep: Number.isInteger(this.props.startAtStep) ? this.props.startAtStep : 1,
+    isNavOpen: false
   };
 
-  public container = null;
-
   private handleKeyClicks = event => {
-    if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
-      this.props.onClose();
+    if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
+      if (this.state.isNavOpen) {
+        this.setState({ isNavOpen: !this.state.isNavOpen })
+      } else if (this.props.isOpen) {
+        this.props.onClose();
+      }
+    }
+  };
+
+  private toggleSiblingsFromScreenReaders = hide => {
+    const bodyChildren = document.body.children;
+    for (const child of Array.from(bodyChildren)) {
+      if (child !== this.container) {
+        hide ? child.setAttribute('aria-hidden', hide) : child.removeAttribute('aria-hidden');
+      }
     }
   };
 
@@ -135,6 +160,18 @@ class Wizard extends React.Component<WizardProps> {
   public componentWillUnmount() {
     document.body.removeChild(this.container);
     document.removeEventListener('keydown', this.handleKeyClicks, false);
+  }
+
+  public componentDidUpdate() {
+    if (this.props.isOpen) {
+      this.toggleSiblingsFromScreenReaders(true);
+    } else {
+      this.toggleSiblingsFromScreenReaders(false);
+    }
+  }
+
+  private onNavToggle = isNavOpen => {
+    this.setState({ isNavOpen })
   }
 
   private onNext = () => {
@@ -153,8 +190,9 @@ class Wizard extends React.Component<WizardProps> {
       this.setState({
         currentStep: newStep
       });
+      const { id: prevId, name: prevName } = flattenedSteps[currentStep - 1];
       const { id, name } = flattenedSteps[newStep - 1];
-      return onNext && onNext({ id, name });
+      return onNext && onNext({ id, name }, { prevId, prevName });
     }
   };
 
@@ -166,12 +204,14 @@ class Wizard extends React.Component<WizardProps> {
     this.setState({
       currentStep: newStep
     });
+    const { id: prevId, name: prevName } = flattenedSteps[currentStep - 1];
     const { id, name } = flattenedSteps[newStep - 1];
-    return onBack && onBack({ id, name });
+    return onBack && onBack({ id, name }, { prevId, prevName });
   };
 
   private goToStep = step => {
     const { onGoToStep } = this.props;
+    const { currentStep } = this.state;
     let newStep;
     const flattenedSteps = this.getFlattenedSteps();
     const maxSteps = flattenedSteps.length;
@@ -185,8 +225,9 @@ class Wizard extends React.Component<WizardProps> {
     this.setState({
       currentStep: newStep
     });
+    const { id: prevId, name: prevName } = flattenedSteps[currentStep - 1];
     const { id, name } = flattenedSteps[newStep - 1];
-    return onGoToStep && onGoToStep({ id, name });
+    return onGoToStep && onGoToStep({ id, name }, { prevId, prevName });
   };
 
   private getFlattenedSteps = () => {
@@ -273,7 +314,7 @@ class Wizard extends React.Component<WizardProps> {
       hasBodyPadding,
       ...rest
     } = this.props;
-    const { currentStep } = this.state;
+    const { currentStep, isNavOpen } = this.state;
     const flattenedSteps = this.getFlattenedSteps();
     const activeStep = flattenedSteps[currentStep - 1];
     const computedSteps: ComputedStep[] = this.initSteps(steps, activeStep);
@@ -281,8 +322,8 @@ class Wizard extends React.Component<WizardProps> {
     const lastStep = activeStep === flattenedSteps[flattenedSteps.length - 1];
     const isValid = activeStep.enableNext !== undefined ? activeStep.enableNext : true;
 
-    const nav = isNavOpen => (
-      <WizardNav isOpen={isNavOpen} ariaLabel={ariaLabelNav}>
+    const nav = isWizardNavOpen => (
+      <WizardNav isOpen={isWizardNavOpen} ariaLabel={ariaLabelNav}>
         {computedSteps.map((step, index) => {
           let enabled;
           let navItemStep;
@@ -323,10 +364,10 @@ class Wizard extends React.Component<WizardProps> {
         <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
           <Backdrop>
             <Bullseye>
-              <div {...rest} className={css(styles.wizard, className)}>
+              <div {...rest} className={css(styles.wizard, className)} role="dialog" aria-modal="true" aria-labelledby={this.titleId} aria-describedby={description ? this.descriptionId : null}>
                 <BackgroundImage src={backgroundImgSrc} />
-                <WizardHeader onClose={onClose} title={title} description={description} ariaLabel={ariaLabelCloseButton} />
-                <WizardToggle nav={nav} steps={steps} activeStep={activeStep} hasBodyPadding={hasBodyPadding}>
+                <WizardHeader titleId={this.titleId} descriptionId={this.descriptionId} onClose={onClose} title={title} description={description} ariaLabel={ariaLabelCloseButton} />
+                <WizardToggle isNavOpen={isNavOpen} onNavToggle={this.onNavToggle} nav={nav} steps={steps} activeStep={activeStep} hasBodyPadding={hasBodyPadding}>
                   <footer className={css(styles.wizardFooter, footerRightAlign && 'pf-m-align-right')}>
                     <Button variant="primary" type="submit" onClick={this.onNext} isDisabled={!isValid}>
                       {lastStep ? lastStepButtonText : nextButtonText}

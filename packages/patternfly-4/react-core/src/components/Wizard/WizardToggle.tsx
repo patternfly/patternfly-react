@@ -11,21 +11,18 @@ interface WizardToggleProps {
   activeStep: WizardStep;
   children: React.ReactNode,
   hasBodyPadding: boolean;
+  isNavOpen: boolean;
+  onNavToggle: (isOpen: boolean) => void;
 }
 
 class WizardToggle extends React.Component<WizardToggleProps> {
-  public state = {
-    isOpen: false
-  };
 
   private toggleNav = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
+    this.props.onNavToggle(!this.props.isNavOpen);
   }
 
   public render() {
-    const { isOpen } = this.state;
+    const { isNavOpen: isOpen } = this.props;
     const { nav, steps, activeStep, children, hasBodyPadding } = this.props;
     let activeStepIndex;
     let activeStepName;
