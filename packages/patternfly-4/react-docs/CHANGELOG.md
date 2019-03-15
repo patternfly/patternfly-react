@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.21.71...@patternfly/react-docs@3.22.0) (2019-03-15)
+
+
+### Features
+
+* **PF4:** Wizard ([#1539](https://github.com/patternfly/patternfly-react/issues/1539)) ([c668a33](https://github.com/patternfly/patternfly-react/commit/c668a33))
+
+
+
+
+
 ## [3.21.71](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.21.70...@patternfly/react-docs@3.21.71) (2019-03-15)
 
 **Note:** Version bump only for package @patternfly/react-docs

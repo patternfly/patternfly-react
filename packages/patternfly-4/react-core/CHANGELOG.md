@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.8...@patternfly/react-core@2.6.0) (2019-03-15)
+
+
+### Features
+
+* **PF4:** Wizard ([#1539](https://github.com/patternfly/patternfly-react/issues/1539)) ([c668a33](https://github.com/patternfly/patternfly-react/commit/c668a33))
+
+
+
+
+
 ## [2.5.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.5.7...@patternfly/react-core@2.5.8) (2019-03-15)
 
 **Note:** Version bump only for package @patternfly/react-core
