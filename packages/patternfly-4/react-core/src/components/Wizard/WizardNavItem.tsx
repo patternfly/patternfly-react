@@ -12,7 +12,7 @@ interface WizardNavItemProps {
   hasChildren?: boolean;
 }
 
-const WizardNavItem: React.SFC<WizardNavItemProps> = ({
+const WizardNavItem: React.FunctionComponent<WizardNavItemProps> = ({
   children = null,
   label = '',
   current = false,

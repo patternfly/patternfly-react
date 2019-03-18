@@ -21,7 +21,7 @@ const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
   ariaLabel,
   titleId,
   descriptionId
-}) => (
+}: WizardHeaderProps) => (
     <div className={css(styles.wizardHeader)}>
       <Button variant="plain" className={css(styles.wizardClose)} aria-label={ariaLabel} onClick={onClose}>
         <TimesIcon aria-hidden="true" />
