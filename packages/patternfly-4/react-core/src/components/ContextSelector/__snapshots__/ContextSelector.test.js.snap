@@ -12,7 +12,7 @@ exports[`Renders ContextSelector 1`] = `
   className="pf-c-context-selector"
 >
   <ContextSelectorToggle
-    aria-labelledby="pf-context-selector-toggle-id-0 pf-context-selector-label-id-1"
+    aria-labelledby="pf-context-selector-toggle-id-0 pf-context-selector-label-id-0"
     className=""
     id="pf-context-selector-toggle-id-0"
     isActive={false}
@@ -57,9 +57,9 @@ exports[`Renders ContextSelector open 1`] = `
   className="pf-c-context-selector pf-m-expanded"
 >
   <ContextSelectorToggle
-    aria-labelledby="pf-context-selector-toggle-id-3 pf-context-selector-label-id-4"
+    aria-labelledby="pf-context-selector-toggle-id-0 pf-context-selector-label-id-0"
     className=""
-    id="pf-context-selector-toggle-id-3"
+    id="pf-context-selector-toggle-id-0"
     isActive={false}
     isFocused={false}
     isHovered={false}
@@ -91,7 +91,7 @@ exports[`Renders ContextSelector open 1`] = `
         >
           <TextInput
             aria-label={null}
-            aria-labelledby="pf-context-selector-search-button-id-5"
+            aria-labelledby="pf-context-selector-search-button-id-0"
             className=""
             isDisabled={false}
             isReadOnly={false}
@@ -106,7 +106,7 @@ exports[`Renders ContextSelector open 1`] = `
             aria-label="Search menu items"
             className=""
             component="button"
-            id="pf-context-selector-search-button-id-5"
+            id="pf-context-selector-search-button-id-0"
             isActive={false}
             isBlock={false}
             isDisabled={false}
