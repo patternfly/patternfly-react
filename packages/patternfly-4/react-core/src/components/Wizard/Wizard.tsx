@@ -99,8 +99,6 @@ class Wizard extends React.Component<WizardProps> {
     isOpen: false,
     description: '',
     backgroundImgSrc: images,
-    onClose: () => undefined,
-    onSave: () => undefined,
     onBack: null,
     onNext: null,
     onGoToStep: null,
@@ -132,7 +130,7 @@ class Wizard extends React.Component<WizardProps> {
     isNavOpen: false
   };
 
-  handleKeyClicks(event: KeyboardEvent): void {
+  handleKeyClicks = (event: KeyboardEvent): void => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY) {
       if (this.state.isNavOpen) {
         this.setState({ isNavOpen: !this.state.isNavOpen })
@@ -142,7 +140,7 @@ class Wizard extends React.Component<WizardProps> {
     }
   };
 
-  toggleSiblingsFromScreenReaders(hide: boolean): void {
+  toggleSiblingsFromScreenReaders = (hide: boolean): void => {
     const bodyChildren = document.body.children;
     for (const child of Array.from(bodyChildren)) {
       if (child !== this.container) {
@@ -151,23 +149,7 @@ class Wizard extends React.Component<WizardProps> {
     }
   };
 
-  public componentDidMount() {
-    if (this.container) {
-      document.body.appendChild(this.container);
-    }
-    this.toggleSiblingsFromScreenReaders(true);
-    document.addEventListener('keydown', this.handleKeyClicks, false);
-  }
-
-  public componentWillUnmount() {
-    if (this.container) {
-      document.body.removeChild(this.container);
-    }
-    this.toggleSiblingsFromScreenReaders(false);
-    document.removeEventListener('keydown', this.handleKeyClicks, false);
-  }
-
-  onNext(): void {
+  onNext = (): void => {
     const { onNext, onClose, onSave } = this.props;
     const { currentStep } = this.state;
     const flattenedSteps = this.getFlattenedSteps();
@@ -175,6 +157,7 @@ class Wizard extends React.Component<WizardProps> {
     if (currentStep >= maxSteps) {
       // Hit the save button at the end of the wizard
       if (onSave) {
+        console.log('save');
         return onSave();
       }
       return onClose!();
@@ -189,7 +172,7 @@ class Wizard extends React.Component<WizardProps> {
     }
   };
 
-  onBack(): void {
+  onBack = (): void => {
     const { onBack } = this.props;
     const { currentStep } = this.state;
     const flattenedSteps = this.getFlattenedSteps();
@@ -202,7 +185,7 @@ class Wizard extends React.Component<WizardProps> {
     return onBack && onBack({ id, name }, { prevId, prevName });
   };
 
-  goToStep(step: number): void {
+  goToStep = (step: number): void => {
     const { onGoToStep } = this.props;
     const { currentStep } = this.state;
     const flattenedSteps = this.getFlattenedSteps();
@@ -218,7 +201,7 @@ class Wizard extends React.Component<WizardProps> {
     return onGoToStep && onGoToStep({ id, name }, { prevId, prevName });
   };
 
-  getFlattenedSteps(): WizardStep[] {
+  getFlattenedSteps = (): WizardStep[] => {
     const { steps } = this.props;
     const flattenedSteps: WizardStep[] = [];
     for (const step of steps) {
@@ -233,7 +216,7 @@ class Wizard extends React.Component<WizardProps> {
     return flattenedSteps;
   };
 
-  getFlattenedStepsIndex(stepName: string): number {
+  getFlattenedStepsIndex = (stepName: string): number => {
     const flattenedSteps = this.getFlattenedSteps();
     for (let i = 0; i < flattenedSteps.length; i++) {
       if (flattenedSteps[i].name === stepName) {
@@ -244,7 +227,7 @@ class Wizard extends React.Component<WizardProps> {
     return 0;
   }
 
-  initSteps(steps: WizardStep[], activeStep: WizardStep): ComputedStep[] {
+  initSteps = (steps: WizardStep[], activeStep: WizardStep): ComputedStep[] => {
     // Set canJumpTo on all steps leading up to and including the active step
     const computedSteps: ComputedStep[] = steps;
     for (const step of computedSteps) {
@@ -272,7 +255,23 @@ class Wizard extends React.Component<WizardProps> {
       }
     }
     return computedSteps;
-  };
+  }
+
+  public componentDidMount() {
+    if (this.container) {
+      document.body.appendChild(this.container);
+    }
+    this.toggleSiblingsFromScreenReaders(true);
+    document.addEventListener('keydown', this.handleKeyClicks, false);
+  }
+
+  public componentWillUnmount() {
+    if (this.container) {
+      document.body.removeChild(this.container);
+    }
+    this.toggleSiblingsFromScreenReaders(false);
+    document.removeEventListener('keydown', this.handleKeyClicks, false);
+  }
 
   public render() {
     if (!canUseDOM) {
