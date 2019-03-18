@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.1.12...@patternfly/react-charts@2.2.0) (2019-03-18)
+
+
+### Features
+
+* **core:** clean tsconfigs, add defaultProps to TS-docs ([#1570](https://github.com/patternfly/patternfly-react/issues/1570)) ([9df0f15](https://github.com/patternfly/patternfly-react/commit/9df0f15))
+
+
+
+
+
 ## [2.1.12](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-charts@2.1.11...@patternfly/react-charts@2.1.12) (2019-03-15)
 
 **Note:** Version bump only for package @patternfly/react-charts
