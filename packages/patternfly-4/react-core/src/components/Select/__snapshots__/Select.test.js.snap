@@ -12,6 +12,7 @@ exports[`select single select renders closed successfully 1`] = `
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
+  min-width: 0;
   max-width: calc(100% - 1.5rem);
   white-space: normal;
 }
@@ -152,6 +153,7 @@ exports[`select single select renders expanded successfully 1`] = `
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
+  min-width: 0;
   max-width: calc(100% - 1.5rem);
   white-space: normal;
 }

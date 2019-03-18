@@ -13,7 +13,7 @@ children?: any;
 className?: string;
 }
 
-const {{componentName}}: React.SFC< {{componentName}} Props> = (props) => (
+const {{componentName}}: React.SFC<{{componentName}}Props> = (props) => (
   <div {...props} className={css(styles.{{ camelCase componentName }}, props.className)}>
     {props.children}
   </div>

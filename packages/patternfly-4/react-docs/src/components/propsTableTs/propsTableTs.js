@@ -11,20 +11,30 @@ const docGenPropShape = PropTypes.shape({
     name: PropTypes.string,
     type: PropTypes.string
   }),
-  flags: PropTypes.shape({ isOptional: PropTypes.bool })
+  flags: PropTypes.shape({ isOptional: PropTypes.bool }),
+  signatures: PropTypes.array
 });
 
 const propTypes = {
   name: PropTypes.string.isRequired,
-  props: PropTypes.arrayOf(docGenPropShape)
+  props: PropTypes.arrayOf(docGenPropShape),
+  types: PropTypes.object,
+  defaultProps: PropTypes.any
 };
 
 const defaultProps = {
-  props: []
+  props: [],
+  types: {},
+  defaultProps: {}
 };
 
-export const PropsTableTs = React.FunctionComponent = ({ name, props }) => (
-  <Section headingLevel="h3" name={name} title={`${name} Props`} description={`The ${name} component accepts the following props.`}>
+export const PropsTableTs = ({ name, props }) => (
+  <Section
+    headingLevel="h3"
+    name={name}
+    title={`${name} Props`}
+    description={`The ${name} component accepts the following props.`}
+  >
     <Table>
       <Heading>
         <TH>Name</TH>

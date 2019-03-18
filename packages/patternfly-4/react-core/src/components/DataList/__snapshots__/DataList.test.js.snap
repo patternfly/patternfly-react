@@ -144,8 +144,11 @@ exports[`DataList Item default 1`] = `
 exports[`DataList List 1`] = `
 .pf-c-data-list.pf-u-box-shadow-md.data-list-custom {
   display: block;
+  color: #282d33;
   list-style-type: disc;
   background-color: #ffffff;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
   box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 
@@ -159,8 +162,11 @@ exports[`DataList List 1`] = `
 exports[`DataList List default 1`] = `
 .pf-c-data-list.pf-u-box-shadow-md {
   display: block;
+  color: #282d33;
   list-style-type: disc;
   background-color: #ffffff;
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
   box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
 }
 

@@ -3,6 +3,7 @@
 exports[`test About Modal Box SHero 1`] = `
 .pf-c-about-modal-box__hero {
   display: none;
+  visibility: hidden;
 }
 
 <div

@@ -30,6 +30,7 @@ const propTypes = {
   ),
   components: PropTypes.objectOf(PropTypes.func),
   enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
+  types: PropTypes.object,
   rawExamples: PropTypes.array,
   images: PropTypes.array,
   fullPageOnly: PropTypes.bool,
@@ -42,6 +43,7 @@ const defaultProps = {
   examples: [],
   components: {},
   enumValues: {},
+  types: {},
   rawExamples: [],
   images: [],
   fullPageOnly: false,
@@ -97,7 +99,8 @@ class ComponentDocs extends React.PureComponent {
               );
             })}
           </Section>
-          {Object.entries(components).map(([componentName]) => {
+          {Object.entries(components).map(component => {
+            const componentName = component[0];
             const componentDocsJs = getDocGenInfo(componentName);
             const componentDocsTs = accumulateProps(componentName);
             if (componentDocsTs) {

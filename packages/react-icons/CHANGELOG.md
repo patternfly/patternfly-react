@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.3.0...@patternfly/react-icons@3.3.1) (2019-03-15)
+
+**Note:** Version bump only for package @patternfly/react-icons
+
+
+
+
+
+# 3.3.0 (2019-03-15)
+
+
+### Features
+
+* **Table:** pass rowData and extraData to table callbacks ([#1542](https://github.com/patternfly/patternfly-react/issues/1542)) ([cb3e010](https://github.com/patternfly/patternfly-react/commit/cb3e010))
+
+
+
+
+
 ## 3.2.1 (2019-03-13)
 
 **Note:** Version bump only for package @patternfly/react-icons

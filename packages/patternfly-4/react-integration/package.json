@@ -26,7 +26,8 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "integration:setup": "rimraf node_modules && yarn install",
-    "integration:test": "node ./scripts/server.js"
+    "integration:test": "node ./scripts/server.js",
+    "build:demo": "yarn integration:setup && yarn --cwd demo-app-ts build:demo"
   },
   "dependencies": {
     "local-web-server": "^2.6.1"

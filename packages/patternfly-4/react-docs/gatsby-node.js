@@ -91,7 +91,10 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
       examples: allFile(
-        filter: { sourceInstanceName: { eq: "components" }, relativePath: { glob: "**/examples/!(*.styles).js" } }
+        filter: {
+          sourceInstanceName: { eq: "components" }
+          relativePath: { glob: "**/examples/!(*.styles).+(js|tsx)" }
+        }
       ) {
         edges {
           node {
