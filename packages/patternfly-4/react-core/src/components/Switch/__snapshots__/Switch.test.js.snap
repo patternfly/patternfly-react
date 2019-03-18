@@ -4,6 +4,9 @@ exports[`no label switch is checked 1`] = `
 .pf-c-switch__input {
   display: block;
 }
+.pf-c-switch__toggle-icon {
+  display: block;
+}
 .pf-c-switch__toggle {
   display: block;
 }
@@ -30,12 +33,27 @@ exports[`no label switch is checked 1`] = `
   />
   <span
     className="pf-c-switch__toggle"
-  />
+  >
+    <div
+      aria-hidden="true"
+      className="pf-c-switch__toggle-icon"
+    >
+      <CheckIcon
+        color="currentColor"
+        noVerticalAlign={true}
+        size="sm"
+        title={null}
+      />
+    </div>
+  </span>
 </label>
 `;
 
 exports[`no label switch is not checked 1`] = `
 .pf-c-switch__input {
+  display: block;
+}
+.pf-c-switch__toggle-icon {
   display: block;
 }
 .pf-c-switch__toggle {
@@ -64,7 +82,19 @@ exports[`no label switch is not checked 1`] = `
   />
   <span
     className="pf-c-switch__toggle"
-  />
+  >
+    <div
+      aria-hidden="true"
+      className="pf-c-switch__toggle-icon"
+    >
+      <CheckIcon
+        color="currentColor"
+        noVerticalAlign={true}
+        size="sm"
+        title={null}
+      />
+    </div>
+  </span>
 </label>
 `;
 
@@ -75,7 +105,10 @@ exports[`switch is checked 1`] = `
 .pf-c-switch__toggle {
   display: block;
 }
-.pf-c-switch__label {
+.pf-c-switch__label.pf-m-on {
+  display: block;
+}
+.pf-c-switch__label.pf-m-off {
   display: block;
 }
 .pf-c-switch {
@@ -104,7 +137,13 @@ exports[`switch is checked 1`] = `
   />
   <span
     aria-hidden="true"
-    className="pf-c-switch__label"
+    className="pf-c-switch__label pf-m-on"
+  >
+    On
+  </span>
+  <span
+    aria-hidden="true"
+    className="pf-c-switch__label pf-m-off"
   >
     On
   </span>
@@ -113,6 +152,9 @@ exports[`switch is checked 1`] = `
 
 exports[`switch is checked and disabled 1`] = `
 .pf-c-switch__input {
+  display: block;
+}
+.pf-c-switch__toggle-icon {
   display: block;
 }
 .pf-c-switch__toggle {
@@ -141,7 +183,19 @@ exports[`switch is checked and disabled 1`] = `
   />
   <span
     className="pf-c-switch__toggle"
-  />
+  >
+    <div
+      aria-hidden="true"
+      className="pf-c-switch__toggle-icon"
+    >
+      <CheckIcon
+        color="currentColor"
+        noVerticalAlign={true}
+        size="sm"
+        title={null}
+      />
+    </div>
+  </span>
 </label>
 `;
 
@@ -152,7 +206,10 @@ exports[`switch is not checked 1`] = `
 .pf-c-switch__toggle {
   display: block;
 }
-.pf-c-switch__label {
+.pf-c-switch__label.pf-m-on {
+  display: block;
+}
+.pf-c-switch__label.pf-m-off {
   display: block;
 }
 .pf-c-switch {
@@ -181,7 +238,13 @@ exports[`switch is not checked 1`] = `
   />
   <span
     aria-hidden="true"
-    className="pf-c-switch__label"
+    className="pf-c-switch__label pf-m-on"
+  >
+    Off
+  </span>
+  <span
+    aria-hidden="true"
+    className="pf-c-switch__label pf-m-off"
   >
     Off
   </span>
@@ -190,6 +253,9 @@ exports[`switch is not checked 1`] = `
 
 exports[`switch is not checked and disabled 1`] = `
 .pf-c-switch__input {
+  display: block;
+}
+.pf-c-switch__toggle-icon {
   display: block;
 }
 .pf-c-switch__toggle {
@@ -218,6 +284,18 @@ exports[`switch is not checked and disabled 1`] = `
   />
   <span
     className="pf-c-switch__toggle"
-  />
+  >
+    <div
+      aria-hidden="true"
+      className="pf-c-switch__toggle-icon"
+    >
+      <CheckIcon
+        color="currentColor"
+        noVerticalAlign={true}
+        size="sm"
+        title={null}
+      />
+    </div>
+  </span>
 </label>
 `;

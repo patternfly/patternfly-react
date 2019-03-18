@@ -3,6 +3,7 @@ import styles from '@patternfly/patternfly/components/Switch/switch.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { getUniqueId } from '../../helpers/util';
+import { CheckIcon } from '@patternfly/react-icons';
 
 const propTypes = {
   /** id for the label. */
@@ -53,12 +54,21 @@ class Switch extends React.Component {
           checked={isChecked}
           disabled={isDisabled}
         />
-        <span className={css(styles.switchToggle)} />
-        {label && (
-          <span className={css(styles.switchLabel)} aria-hidden="true">
-            {label}
-          </span>
-        )}
+        {label !== ''
+          ? <React.Fragment>
+              <span className={css(styles.switchToggle)} />
+              <span className={css(styles.switchLabel, styles.modifiers.on)} aria-hidden="true">
+                {label}
+              </span>
+              <span className={css(styles.switchLabel, styles.modifiers.off)} aria-hidden="true">
+                {label}
+              </span>
+            </React.Fragment>
+          : <span className={css(styles.switchToggle)}>
+              <div className={css(styles.switchToggleIcon)} aria-hidden="true">
+                <CheckIcon noVerticalAlign />
+              </div>
+            </span>}
       </label>
     );
   }
