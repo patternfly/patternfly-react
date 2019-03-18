@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import AboutModal from './AboutModal';
+import { AboutModal } from './AboutModal';
 import { KEY_CODES } from '../../helpers/constants';
 
 const mockListener = jest.spyOn(ReactDOM, 'createPortal');
