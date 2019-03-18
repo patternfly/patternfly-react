@@ -1,7 +1,6 @@
 import Modal from './Modal';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '../../../../react-styles/dist/js';
 import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
@@ -46,11 +45,10 @@ test('Each modal is given a new id', () => {
 });
 
 test('modal removes body backdropOpen class when removed', () => {
-  const TestRemoval = testProps => (testProps.display ? <Modal {...props} isOpen /> : <p>Not displayed</p>);
-  const view = mount(<TestRemoval display />);
+  const view = shallow(<Modal {...props} isOpen />);
   view.update();
   expect(document.body.className).toContain(css(styles.backdropOpen));
-  view.setProps({ display: false });
+  view.setProps({ isOpen: false });
   view.update();
   expect(document.body.className).not.toContain(css(styles.backdropOpen));
 });
