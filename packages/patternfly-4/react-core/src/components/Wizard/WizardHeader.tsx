@@ -6,7 +6,7 @@ import { Title } from '../Title';
 import { TimesIcon } from '@patternfly/react-icons';
 
 interface WizardHeaderProps {
-  onClose?: () => any;
+  onClose?: () => void;
   title: string;
   description: string;
   ariaLabel: string;
@@ -14,20 +14,23 @@ interface WizardHeaderProps {
   descriptionId: string;
 }
 
-const WizardHeader: React.SFC<WizardHeaderProps> = ({ onClose, title, description, ariaLabel, titleId, descriptionId }) => (
-  <div className={css(styles.wizardHeader)}>
-    <Button variant="plain" className={css(styles.wizardClose)} aria-label={ariaLabel} onClick={onClose}>
-      <TimesIcon aria-hidden="true" />
-    </Button>
-    <Title size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>{title}</Title>
-    {description && <p className={css(styles.wizardDescription)} id={descriptionId}>
-      {description}
-    </p>}
-  </div>
-);
-
-WizardHeader.defaultProps = {
-  onClose: () => undefined
-};
+const WizardHeader: React.FunctionComponent<WizardHeaderProps> = ({
+  onClose = () => undefined,
+  title,
+  description,
+  ariaLabel,
+  titleId,
+  descriptionId
+}: WizardHeaderProps) => (
+    <div className={css(styles.wizardHeader)}>
+      <Button variant="plain" className={css(styles.wizardClose)} aria-label={ariaLabel} onClick={onClose}>
+        <TimesIcon aria-hidden="true" />
+      </Button>
+      <Title size="3xl" className={css(styles.wizardTitle)} aria-label={title} id={titleId}>{title}</Title>
+      {description && <p className={css(styles.wizardDescription)} id={descriptionId}>
+        {description}
+      </p>}
+    </div>
+  );
 
 export default WizardHeader;

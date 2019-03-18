@@ -1,6 +1,6 @@
+import * as React from 'react';
 import styles from '@patternfly/patternfly/components/Avatar/avatar.css';
 import { css } from '@patternfly/react-styles';
-import * as React from 'react';
 
 const defaultProps = {
   className: '',
@@ -20,9 +20,14 @@ export interface AvatarProps
   alt: string;
 }
 
-const Avatar: React.FunctionComponent<AvatarProps> = props => (
-  <img {...props} className={css(styles.avatar, props.className)} />
-);
+const Avatar: React.FunctionComponent<AvatarProps> = ({
+  className = '',
+  src = '',
+  alt,
+  ...props
+}) => (
+    <img {...props} src={src} alt={alt} className={css(styles.avatar, className)} />
+  );
 
 Avatar.defaultProps = defaultProps;
 

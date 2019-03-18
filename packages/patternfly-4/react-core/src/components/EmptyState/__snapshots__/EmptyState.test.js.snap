@@ -12,7 +12,6 @@ exports[`EmptyState Main 1`] = `
   className="pf-c-empty-state"
 >
   <Title
-    className=""
     headingLevel="h5"
     size="lg"
   >

@@ -9,7 +9,12 @@ interface WizardNavProps {
   returnList?: boolean;
 }
 
-const WizardNav: React.SFC<WizardNavProps> = ({ children, ariaLabel, isOpen = false, returnList = false }) => {
+const WizardNav: React.FunctionComponent<WizardNavProps> = ({
+  children,
+  ariaLabel,
+  isOpen = false,
+  returnList = false
+}: WizardNavProps) => {
   const innerList = (
     <ol className={css(styles.wizardNavList)}>
       {children}

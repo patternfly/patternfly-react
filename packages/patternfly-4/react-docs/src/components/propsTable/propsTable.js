@@ -36,7 +36,7 @@ export const PropsTable = ({ name, description: preface, props, enumValues }) =>
     title={`${name} Props`}
     preface={preface && preface.text}
     headingLevel="h3"
-    description={`The ${name} component accepts the following props.`}
+    description={`The ${name} component accepts the following props:`}
   >
     <Table>
       <Heading>
@@ -55,7 +55,7 @@ export const PropsTable = ({ name, description: preface, props, enumValues }) =>
             </TD>
             <TD align="center">{prop.required && <ExclamationCircleIcon />}</TD>
             <TD>{Boolean(prop.defaultValue) && prop.defaultValue.value}</TD>
-            <TD>{prop.description && <span dangerouslySetInnerHTML={{__html: prop.description.text}}/>}</TD>
+            <TD>{prop.description && <span dangerouslySetInnerHTML={{ __html: prop.description.text }} />}</TD>
           </Row>
         ))}
       </Body>

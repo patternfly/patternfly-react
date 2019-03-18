@@ -11,17 +11,9 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `ts-docs`,
-        path: resolve(__dirname, 'ts-docs/'),
-        ignore: [`**/*.d.ts`]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `components`,
         path: resolve(__dirname, '../react-core/src'),
-        ignore: [`**/*.d.ts`, `**/helpers`]
+        ignore: [`**/*.d.ts`, `**/*.tsx`, `**/helpers`]
       }
     },
     {
