@@ -1,5 +1,5 @@
+import * as React from 'react';
 import AboutModalBoxHeader from './AboutModalBoxHeader';
-import React from 'react';
 import { shallow } from 'enzyme';
 
 test('AboutModalBoxHeader Test', () => {

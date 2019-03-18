@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { shallow } from 'enzyme';
 import AboutModalContainer from './AboutModalContainer';
 
@@ -20,16 +20,16 @@ test('About Modal Container Test simple', () => {
 
 test('About Modal Container Test isOpen', () => {
   const view = shallow(
-    <AboutModalContainer title="Test Modal Container title" {...props} isOpen>
+    <AboutModalContainer {...props} isOpen>
       This is ModalBox content
     </AboutModalContainer>
   );
   expect(view).toMatchSnapshot();
 });
 
-test('About Modal Container Test with onlose', () => {
+test('About Modal Container Test with onClose', () => {
   const view = shallow(
-    <AboutModalContainer onclose={() => undefined} {...props}>
+    <AboutModalContainer onClose={() => undefined} {...props}>
       This is ModalBox content
     </AboutModalContainer>
   );

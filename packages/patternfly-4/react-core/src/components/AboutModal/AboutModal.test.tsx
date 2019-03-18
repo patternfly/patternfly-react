@@ -1,14 +1,14 @@
-import React from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import AboutModal from './AboutModal';
-import ReactDOM from 'react-dom';
 import { KEY_CODES } from '../../helpers/constants';
 
-jest.spyOn(ReactDOM, 'createPortal');
+const mockListener = jest.spyOn(ReactDOM, 'createPortal');
 jest.spyOn(document, 'createElement');
 jest.spyOn(document, 'addEventListener');
 
-ReactDOM.createPortal.mockImplementation(v => v);
+mockListener.mockImplementation(node => node as React.ReactPortal);
 
 const props = {
   onClose: jest.fn(),
@@ -34,7 +34,7 @@ test('About Modal closes with escape', () => {
       Test About Modal
     </AboutModal>
   );
-  const [event, handler] = document.addEventListener.mock.calls[0];
+  const [event, handler] = (document.addEventListener as any).mock.calls[0];
   expect(event).toBe('keydown');
   handler({ keyCode: KEY_CODES.ESCAPE_KEY });
   expect(props.onClose).toBeCalled();
@@ -42,17 +42,17 @@ test('About Modal closes with escape', () => {
 
 test('modal does not call onClose for esc key if it is not open', () => {
   shallow(<AboutModal {...props} />);
-  const [event, handler] = document.addEventListener.mock.calls[0];
+  const [event, handler] = (document.addEventListener as any).mock.calls[0];
   expect(event).toBe('keydown');
   handler({ keyCode: KEY_CODES.ESCAPE_KEY });
   expect(props.onClose).not.toBeCalled();
 });
 
-test('Each modal is given new ariaDescribedById and ariaLablledbyId', () => {
+test('Each modal is given new ariaDescribedById and ariaLabelledbyId', () => {
   const first = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
   const second = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
-  expect(first.props().ariaLabelledbyId).not.toBe(second.props().ariaLabelledbyId);
-  expect(first.props().ariaDescribedById).not.toBe(second.props().ariaDescribedById);
+  expect(first.state('ariaLabelledbyId')).not.toBe(second.state('ariaLabelledbyId'));
+  expect(first.state('ariaDescribedById')).not.toBe(second.state('ariaDescribedById'));
 });
 
 test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {
@@ -65,8 +65,8 @@ test('Console error is generated when the logoImageSrc is provided without logoI
     brandImageAlt: 'Brand Image',
     logoImageSrc: 'logoImg...'
   };
-  const myMock = jest.fn();
-  global.console = { error: myMock };
+  const myMock = jest.fn() as any;
+  global.console = { error: myMock } as any;
   shallow(<AboutModal {...noImgAltrops}> Test About Modal </AboutModal>);
   expect(myMock).toBeCalled();
 });
