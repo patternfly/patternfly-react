@@ -2,4 +2,4 @@
 .tmp
 public
 static
-ts-docs
+build/ts-output.json

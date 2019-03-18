@@ -49,7 +49,7 @@
     "develop": "yarn gen-ts-docs && gatsby develop",
     "docbuild": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
     "pr-build": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
-    "gen-ts-docs": "typedoc --mode file --json ts-docs/ts-output.json --tsconfig ../react-core/tsconfig.base.json ../react-core"
+    "gen-ts-docs": "typedoc --mode file --json build/ts-output.json --tsconfig ../react-core/tsconfig.base.json ../react-core"
   },
   "browserslist": [
     "last 2 versions",

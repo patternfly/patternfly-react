@@ -1,4 +1,4 @@
-const typedoc = require('../../../ts-docs/ts-output.json')
+const typedoc = require('../../../build/ts-output.json')
 
 function getObjectNamed(iterable, name) {
   for (let i = 0; i < iterable.length; i++) {
@@ -37,7 +37,8 @@ function getDefaultFunctionProps(component) {
     if (param.defaultValue) {
       result.push({
         name: param.name,
-        default: param.defaultValue
+        default: param.defaultValue,
+        type: param.type
       })
     }
   });
@@ -48,15 +49,18 @@ function getDefaultFunctionProps(component) {
 // Takes typedoc json, returns something like (event?: React.MouseEvent): void
 function getType(method) {
   let type = '(';
-  method.parameters.forEach(param => {
-    type += param.name;
-    if (param.flags.isOptional)
-      type += '?';
-    type += ': ' + param.type.name
-    type += ', ';
-  });
-  type = type.slice(0, type.length - 2) + ')';
-  type += ': ' + method.type.name;
+  if (method.parameters) {
+    method.parameters.forEach(param => {
+      type += param.name;
+      if (param.flags.isOptional)
+        type += '?';
+      type += ': ' + param.type.name
+      type += ', ';
+    });
+    type = type.slice(0, type.length - 2);
+  }
+  type += '): ' + method.type.name;
+
 
   return type;
 }
@@ -70,13 +74,14 @@ function getProps(name) {
     // Skip extended props
     if (prop.inheritedFrom) continue;
     if (prop.kindString === 'Property') {
-      let isRequired = false;
+      let isRequired = true;
       let propType = prop.type.name;
       if (prop.type.type === 'union') { // Multiple types...
+        // TODO: use what typedoc uses: https://github.com/TypeStrong/typedoc/blob/master/src/lib/converter/factories/type-parameter.ts
         const typeNames = prop.type.types.map(t => t.name);
         const undefinedLoc = typeNames.indexOf('undefined');
         if (undefinedLoc !== -1) {
-          isRequired = true;
+          isRequired = false;
           typeNames.splice(undefinedLoc, 1);
         }
         if (typeNames.indexOf('false') !== -1 &&
@@ -108,6 +113,19 @@ function getProps(name) {
   return result;
 }
 
+// Fuzzy find prop.name in props.keys and set it's value
+function setDefaultProp(props, prop) {
+  // Remove dashes and make lowercase
+  const simplifyName = (name) => name.replace('-', '').toLowerCase();
+  Object.keys(props).forEach(k => {
+    if (simplifyName(k) === simplifyName(prop.name)) {
+      props[k].default = prop.default;
+      props[k].required = false;
+      return;
+    }
+  });
+}
+
 export function accumulateProps(componentName) {
   const component = getObjectNamed(typedoc.children, componentName);
   if (!component)
@@ -115,14 +133,11 @@ export function accumulateProps(componentName) {
 
   let props = getProps(componentName);
   if (component.kindString === 'Class') {
-    getDefaultClassProps(componentName).forEach(p => {
-      props[p.name].default = p.default;
-    });
+    getDefaultClassProps(componentName).forEach(p => setDefaultProp(props, p));
   } else if (component.kindString === 'Function') {
-    getDefaultFunctionProps(component).forEach(p => {
-      props[p.name].default = p.default;
-    });
+    getDefaultFunctionProps(component).forEach(p => setDefaultProp(props, p));
   }
 
   return Object.values(props);
 }
+

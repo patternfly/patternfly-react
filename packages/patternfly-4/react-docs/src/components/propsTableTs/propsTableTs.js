@@ -33,7 +33,7 @@ export const PropsTableTs = ({ name, props }) => (
     headingLevel="h3"
     name={name}
     title={`${name} Props`}
-    description={`The ${name} component accepts the following props.`}
+    description={`The ${name} component accepts the following props:`}
   >
     <Table>
       <Heading>
