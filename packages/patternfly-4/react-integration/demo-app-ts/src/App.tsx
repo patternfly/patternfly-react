@@ -22,6 +22,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavTest from './Nav';
 import WizardTest from './Wizard';
+import AboutModalTest from './AboutModal';
 
 class myProps implements AvatarProps {
   alt: string = 'avatar';
@@ -74,6 +75,7 @@ class App extends Component {
         </Popover>
         <NavTest />
         <WizardTest />
+        <AboutModalTest />
         <Alert variant={AlertVariant.success} title="Success notification title" action={<AlertActionCloseButton />}>
           Success notification description. <a href="#">This is a link.</a>
         </Alert>
