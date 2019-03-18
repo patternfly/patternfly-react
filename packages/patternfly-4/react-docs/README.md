@@ -21,7 +21,7 @@ yarn build && yarn start:pf4
 ## Building
 To build the site.
 ```sh
-yarn build:prdocs
+yarn build:docs
 ```
 
 ## Live examples

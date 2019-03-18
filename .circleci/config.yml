@@ -35,9 +35,9 @@ jobs:
             yarn build:storybook &&
             cp -r .out .public/patternfly-3
       - run:
-          name: (PF4) Build PR Docs
+          name: (PF4) Build Docs
           command: |
-            yarn build:prdocs &&
+            yarn build:docs &&
             cp -r packages/patternfly-4/react-docs/public .public/patternfly-4 &&
             cp -r packages/patternfly-4/react-docs/public/assets .public/assets
           no_output_timeout: 30m

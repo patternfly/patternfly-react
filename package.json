@@ -95,8 +95,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
-    "build:docs": "lerna run docbuild --stream",
-    "build:prdocs": "lerna run pr-build --stream",
+    "build:docs": "lerna run build:docs --stream",
     "build:storybook": "build-storybook -c storybook -o .out",
     "clean": "lerna run clean --parallel",
     "commit": "git-cz",
