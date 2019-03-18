@@ -2,7 +2,18 @@ import React from 'react';
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
 class SimpleContextSelector extends React.Component {
-  items = ['My Project', 'OpenShift Cluster', 'Production Ansible', 'AWS', 'Azure'];
+  items = [
+    'My Project',
+    'OpenShift Cluster',
+    'Production Ansible',
+    'AWS',
+    'Azure',
+    'My Project 2',
+    'OpenShift Cluster ',
+    'Production Ansible 2 ',
+    'AWS 2',
+    'Azure 2'
+  ];
 
   state = {
     isOpen: false,
@@ -11,7 +22,7 @@ class SimpleContextSelector extends React.Component {
     filteredItems: this.items
   };
 
-  onToggle = isOpen => {
+  onToggle = (event, isOpen) => {
     this.setState({
       isOpen
     });

@@ -13,9 +13,10 @@ import { InputGroup } from '../InputGroup';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
+const newId = currentId++;
 
 const propTypes = {
-  /** content rendered inside the Context Selector  * */
+  /** content rendered inside the Context Selector */
   children: PropTypes.node,
   /** Classes applied to root element of Context Selector */
   className: PropTypes.string,
@@ -57,9 +58,9 @@ class ContextSelector extends React.Component {
   parentRef = React.createRef();
 
   render() {
-    const toggleId = `pf-context-selector-toggle-id-${currentId++}`;
-    const screenReaderLabelId = `pf-context-selector-label-id-${currentId++}`;
-    const searchButtonId = `pf-context-selector-search-button-id-${currentId++}`;
+    const toggleId = `pf-context-selector-toggle-id-${newId}`;
+    const screenReaderLabelId = `pf-context-selector-label-id-${newId}`;
+    const searchButtonId = `pf-context-selector-search-button-id-${newId}`;
     const {
       children,
       className,

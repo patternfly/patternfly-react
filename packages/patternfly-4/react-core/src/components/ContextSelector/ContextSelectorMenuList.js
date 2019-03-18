@@ -28,9 +28,10 @@ class ContextSelectorMenuList extends React.Component {
   };
 
   extendChildren() {
-    return React.Children.map(this.props.children, child =>
+    return React.Children.map(this.props.children, (child, index) =>
       React.cloneElement(child, {
-        sendRef: this.sendRef
+        sendRef: this.sendRef,
+        index
       })
     );
   }

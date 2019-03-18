@@ -56,32 +56,31 @@ class ContextSelectorToggle extends Component {
   };
 
   onDocClick = event => {
-    if (this.props.isOpen && this.props.parentRef && !this.props.parentRef.contains(event.target)) {
-      this.props.onToggle && this.props.onToggle(false);
+    const { isOpen, parentRef, onToggle } = this.props;
+    if (isOpen && parentRef && !parentRef.contains(event.target)) {
+      onToggle && onToggle(false);
       this.toggle.focus();
     }
   };
 
   onEscPress = event => {
-    const { parentRef } = this.props;
+    const { isOpen, parentRef, onToggle } = this.props;
     const keyCode = event.keyCode || event.which;
-    if (this.props.isOpen && keyCode === KEY_CODES.ESCAPE_KEY && parentRef && parentRef.contains(event.target)) {
-      this.props.onToggle && this.props.onToggle(false);
+    if (isOpen && keyCode === KEY_CODES.ESCAPE_KEY && parentRef && parentRef.contains(event.target)) {
+      onToggle && onToggle(false);
       this.toggle.focus();
     }
   };
 
   onKeyDown = event => {
-    if (event.keyCode === KEY_CODES.TAB && !this.props.isOpen) return;
+    const { isOpen, onToggle, onEnter } = this.props;
+    if (event.keyCode === KEY_CODES.TAB && !isOpen) return;
     event.preventDefault();
-    if (
-      (event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key === ' ') &&
-      this.props.isOpen
-    ) {
-      this.props.onToggle(!this.props.isOpen);
-    } else if ((event.keyCode === KEY_CODES.ENTER || event.key === ' ') && !this.props.isOpen) {
-      this.props.onToggle(!this.props.isOpen);
-      this.props.onEnter();
+    if ((event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key === ' ') && isOpen) {
+      onToggle(!isOpen);
+    } else if ((event.keyCode === KEY_CODES.ENTER || event.key === ' ') && !isOpen) {
+      onToggle(!isOpen);
+      onEnter();
     }
   };
 
@@ -114,8 +113,8 @@ class ContextSelectorToggle extends Component {
           className
         )}
         type="button"
-        onClick={_event => {
-          onToggle && onToggle(!isOpen);
+        onClick={event => {
+          onToggle && onToggle(event, !isOpen);
         }}
         aria-expanded={isOpen}
         onKeyDown={this.onKeyDown}

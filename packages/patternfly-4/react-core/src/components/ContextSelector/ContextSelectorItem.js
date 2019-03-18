@@ -15,7 +15,7 @@ const propTypes = {
   isHovered: PropTypes.bool,
   /** Callback for click event */
   onClick: PropTypes.func,
-  /** Additional props are spread to the li component */
+  /** Additional props are spread to the button element */
   '': PropTypes.any
 };
 
