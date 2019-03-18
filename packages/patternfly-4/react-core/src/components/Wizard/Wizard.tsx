@@ -93,7 +93,7 @@ const images = {
   [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg#image_overlay'
 };
 
-class Wizard extends React.Component<WizardProps> {
+export class Wizard extends React.Component<WizardProps> {
   static currentId = 0;
   static defaultProps = {
     isOpen: false,
@@ -378,5 +378,3 @@ class Wizard extends React.Component<WizardProps> {
     );
   }
 }
-
-export { Wizard };

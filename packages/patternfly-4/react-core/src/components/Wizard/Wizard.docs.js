@@ -9,10 +9,6 @@ export default {
   components: {
     Wizard
   },
-  types: {
-    WizardStepFunctionType:
-      '(newStep: { id?: string | number; name: string; }, prevStep: { prevId?: string | number; prevName: string; }) => void'
-  },
   examples: [
     { component: SimpleWizard, title: 'Simple Wizard' },
     { component: ValidationWizard, title: 'Validation Wizard', liveScope: { SampleFormOne, SampleFormTwo } }
