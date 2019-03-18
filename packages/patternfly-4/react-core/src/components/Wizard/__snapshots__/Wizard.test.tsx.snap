@@ -46,7 +46,6 @@ exports[`Wizard should match snapshot 1`] = `
               ariaLabel="Close"
               description="Description here"
               descriptionId="pf-wizard-description-0"
-              onClose={[Function]}
               title="Wizard title"
               titleId="pf-wizard-title-0"
             />
@@ -134,7 +133,6 @@ exports[`Wizard should match snapshot 1`] = `
                   isDisabled={false}
                   isFocus={false}
                   isHover={false}
-                  onClick={[Function]}
                   type="button"
                   variant="link"
                 >
