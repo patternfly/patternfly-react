@@ -55,7 +55,6 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
 
 <div
   className="pf-c-about-modal-box__close"
-  onclose={[MockFunction]}
 >
   <Button
     aria-label="Close Dialog"
@@ -66,7 +65,7 @@ exports[`AboutModalBoxCloseButton Test onclose 1`] = `
     isDisabled={false}
     isFocus={false}
     isHover={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
     type="button"
     variant="plain"
   >
