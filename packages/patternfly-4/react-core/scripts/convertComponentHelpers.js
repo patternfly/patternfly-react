@@ -8,7 +8,7 @@ function fixImports(srcText) {
     // Get where styles are coming from
     const styleRegex = /import styles from '(.*)';/g;
 
-    let res = "import React, { HTMLProps, ReactNode } from 'react';";
+    let res = "import * as React from 'react';";
     res += "\nimport { css } from '@patternfly/react-styles';";
     if (srcText.match(styleRegex)) {
         const styleImport = getMatches(srcText, styleRegex)[0][1];
@@ -22,7 +22,7 @@ function getType(type) {
         case 'bool':
             return 'boolean';
         case 'node':
-            return 'ReactNode';
+            return 'React.ReactNode';
         default:
             return type;
     }
@@ -31,7 +31,7 @@ function getType(type) {
 function fixProps(srcText, name) {
     const propRegex1 = /\/\*\*\s+(.*)\*\/\n\s+([\w']+):\s+PropTypes.([\w.]+)/g;
     const propRegex2 = /([\w']+):\s+PropTypes.([\w.]+)/g;
-    let res = `export interface ${name}Props extends HTMLProps<> {`;
+    let res = `export interface ${name}Props extends React.HTMLProps<> {`;
 
     let propTypes;
     let indexOffset = 0;
@@ -58,7 +58,7 @@ function fixProps(srcText, name) {
 function fixDefaultProps(srcText, name) {
     const defaultPropRegex = /defaultProps\s*=\s*({[\s\S]*};)/g;
     const props = getMatches(srcText, defaultPropRegex)[0][1];
-    return `export const default${name}Props = ${props}`;
+    return props;
 }
 
 function getComponentName(srcText) {
@@ -69,9 +69,10 @@ function getComponentName(srcText) {
 function fixFunctionalComponent(srcText, name) {
     const componentRegex = /const .*\s*=\s*(\([\s\S]+\));/g;
     const component = getMatches(srcText, componentRegex)[0][1];
-    let res = `export const ${name}: React.FunctionComponent<${name}Props> = `;
+    let res = `export const ${name}: React.FC<${name}Props> = `;
     res += res.replace(/}\)\s*=>\s*\(/, `}: ${name}Props) => (`);
-    res += `;\n\n${name}.defaultProps = default${name}Props;`;
+    res += '\n' + fixDefaultProps(srcText, name);
+    res += `;`;
     return res;
 }
 
@@ -85,7 +86,6 @@ module.exports = {
 
         let res = fixImports(srcText);
         res += '\n\n' + fixProps(srcText, name);
-        res += '\n\n' + fixDefaultProps(srcText, name);
         if (srcText.indexOf('extends React.Component') === -1) {
             res += '\n\n' + fixFunctionalComponent(srcText, name);
         }
