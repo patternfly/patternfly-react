@@ -104,13 +104,11 @@ class ComponentDocs extends React.PureComponent {
             const componentDocsJs = getDocGenInfo(componentName);
             const componentDocsTs = accumulateProps(componentName);
             if (componentDocsTs) {
-              console.log('ts', componentName);
               return <PropsTableTs
                 key={componentName}
                 name={componentName}
                 props={componentDocsTs} />;
             } else if (componentDocsJs) {
-              console.log('js', componentName);
               return (
                 <PropsTable
                   key={componentName}
