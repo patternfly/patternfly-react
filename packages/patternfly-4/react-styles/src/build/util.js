@@ -1,7 +1,7 @@
 import path from 'path';
 import { readFileSync } from 'fs';
 import css from 'css';
-import { outputFileSync, copyFileSync } from 'fs-extra';
+import { outputFileSync, copyFileSync, ensureDir } from 'fs-extra';
 import relative from 'relative';
 
 export const packageName = '@patternfly/react-styles';
@@ -10,8 +10,7 @@ export const styleSheetToken = 'StyleSheet';
 export function cssToJS(cssString, cssOutputPath = '', useModules = false) {
   let cssRequire = '';
   if (cssOutputPath) {
-    cssRequire = `require('${cssOutputPath}');
-    `;
+    cssRequire = `require('${cssOutputPath}');`;
   }
   if (useModules) {
     return `import { ${styleSheetToken} } from '${packageName}';
@@ -40,7 +39,10 @@ export function minifyCSS(cssString) {
 }
 
 export function writeCSSFile(originalPath, destinationPath) {
-  copyFileSync(originalPath, destinationPath);
+  ensureDir(path.dirname(destinationPath)).then(() => {
+    // dir has now been created, including the directory it is to be placed in
+    copyFileSync(originalPath, destinationPath);
+  });
 }
 
 export function writeCSSJSFile(rootPath, originalPath, destinationPath, contents) {
