@@ -1,33 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`gutter lg 1`] = `
-.pf-l-grid.pf-m-gutter {
-  display: grid;
-  grid-template-columns: repeat(12,[col-start] 1fr);
-}
-
 <div
   className="pf-l-grid pf-m-gutter"
 />
 `;
 
 exports[`gutter md 1`] = `
-.pf-l-grid.pf-m-gutter {
-  display: grid;
-  grid-template-columns: repeat(12,[col-start] 1fr);
-}
-
 <div
   className="pf-l-grid pf-m-gutter"
 />
 `;
 
 exports[`gutter sm 1`] = `
-.pf-l-grid.pf-m-gutter {
-  display: grid;
-  grid-template-columns: repeat(12,[col-start] 1fr);
-}
-
 <div
   className="pf-l-grid pf-m-gutter"
 />

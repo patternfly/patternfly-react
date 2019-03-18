@@ -1,15 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxBody Test 1`] = `
-.pf-c-modal-box__body {
-  display: block;
-  flex: 1 1 auto;
-  min-height: calc(1rem * 1.5);
-  overflow-x: hidden;
-  overflow-y: auto;
-  word-break: break-word;
-}
-
 <div
   className="pf-c-modal-box__body"
   id="id"

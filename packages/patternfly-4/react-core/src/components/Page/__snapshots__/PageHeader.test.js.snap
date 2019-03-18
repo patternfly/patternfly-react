@@ -1,31 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check page vertical layout example against snapshot 1`] = `
-.pf-c-page__header-brand-link {
-  display: flex;
-  flex: 1;
-  align-items: center;
-}
-.pf-c-page__header-brand {
-  display: block;
-  padding-left: 1rem;
-}
-.pf-c-page__header-tools {
-  display: block;
-  align-items: center;
-  margin: 0.5rem 1rem 0.5rem auto;
-}
-.pf-c-page__header {
-  display: flex;
-  color: #ffffff;
-  grid-area: header;
-  z-index: 300;
-  flex-wrap: wrap;
-  align-items: center;
-  max-width: 100%;
-  min-height: 4.75rem;
-}
-
 <PageHeader
   aria-label="Global navigation"
   avatar=" | Avatar"

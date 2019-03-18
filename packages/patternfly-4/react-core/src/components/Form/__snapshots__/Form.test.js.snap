@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Form component should render default form variant 1`] = `
-.pf-c-form {
-  display: grid;
-}
-
 <form
   className="pf-c-form"
   noValidate={true}
@@ -20,10 +16,6 @@ exports[`Form component should render default form variant 1`] = `
 `;
 
 exports[`Form component should render horizontal form variant 1`] = `
-.pf-c-form.pf-m-horizontal {
-  display: grid;
-}
-
 <form
   className="pf-c-form pf-m-horizontal"
   noValidate={true}

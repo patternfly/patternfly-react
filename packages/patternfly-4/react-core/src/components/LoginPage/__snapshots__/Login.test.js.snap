@@ -1,25 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check login layout example against snapshot 1`] = `
-.pf-c-login__main {
-  display: block;
-  color: #ffffff;
-  grid-area: main;
-  background-color: #ffffff;
-}
-.pf-c-login__container {
-  display: block;
-  max-width: 31.25rem;
-}
-.pf-c-login {
-  display: flex;
-  justify-content: center;
-  min-height: 100vh;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  color: #ffffff;
-}
-
 <div
   className="pf-c-login"
 >
