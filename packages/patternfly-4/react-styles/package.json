@@ -11,6 +11,14 @@
     "access": "public",
     "tag": "prerelease"
   },
+  "scripts": {
+    "build": "yarn build:babel && node ./scripts/copyTS.js",
+    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm' && yarn build:babel:umd",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
+    "build:babel:umd": "cross-env BABEL_ENV=production:umd babel dist/esm --out-dir dist/umd --plugins transform-es2015-modules-umd",
+    "clean": "rimraf dist"
+  },
   "dependencies": {
     "@babel/helper-plugin-utils": "^7.0.0-beta.48",
     "camel-case": "^3.0.0",
@@ -26,15 +34,9 @@
     "resolve-from": "^4.0.0"
   },
   "devDependencies": {
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "glob": "^7.1.2",
     "rimraf": "^2.6.2"
   },
-  "license": "MIT",
-  "scripts": {
-    "build": "yarn build:babel && node ./scripts/copyTS.js",
-    "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm'",
-    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
-    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
-    "clean": "rimraf dist"
-  }
+  "license": "MIT"
 }

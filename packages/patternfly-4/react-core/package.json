@@ -27,20 +27,6 @@
     "url": "https://github.com/patternfly/patternfly-react/issues"
   },
   "homepage": "https://github.com/patternfly/patternfly-react#readme",
-  "dependencies": {
-    "@patternfly/react-icons": "^3.4.0",
-    "@patternfly/react-styles": "^2.3.9",
-    "@patternfly/react-tokens": "^2.1.1",
-    "@tippy.js/react": "^1.1.1",
-    "emotion": "^9.2.9",
-    "exenv": "^1.2.2",
-    "focus-trap-react": "^4.0.1"
-  },
-  "peerDependencies": {
-    "prop-types": "^15.6.1",
-    "react": "^16.4.0",
-    "react-dom": "^15.6.2 || ^16.4.0"
-  },
   "scripts": {
     "build": "yarn typecheck && yarn build:babel && yarn build:types && node ./scripts/copyTS.js && node ./build/copyStyles.js",
     "build:babel": "concurrently 'yarn build:babel:cjs' 'yarn build:babel:esm' && yarn build:babel:umd",
@@ -51,6 +37,15 @@
     "typecheck": "tsc -p tsconfig.typecheck.json",
     "clean": "rimraf dist",
     "lint": "tslint -p tsconfig.typecheck.json"
+  },
+  "dependencies": {
+    "@patternfly/react-icons": "^3.3.1",
+    "@patternfly/react-styles": "^2.3.9",
+    "@patternfly/react-tokens": "^2.1.1",
+    "@tippy.js/react": "^1.1.1",
+    "emotion": "^9.2.9",
+    "exenv": "^1.2.2",
+    "focus-trap-react": "^4.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -73,7 +68,7 @@
     "babel-eslint": "^9.0.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-plugin-transform-imports": "^1.5.0",
-    "babel-plugin-typescript-to-proptypes": "^0.13.0",
+    "babel-plugin-typescript-to-proptypes": "^0.17.1",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",
@@ -82,5 +77,10 @@
     "tslint-config-prettier": "^1.17.0",
     "tslint-react": "^3.6.0",
     "typescript": "3.2.2"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^15.6.2 || ^16.4.0"
   }
 }
