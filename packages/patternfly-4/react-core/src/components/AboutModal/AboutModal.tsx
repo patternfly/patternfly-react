@@ -83,7 +83,9 @@ export class AboutModal extends React.Component<AboutModalProps, {
   }
 
   componentWillUnmount() {
-    document.body.removeChild(this.state.container as Node);
+    if (this.state.container) {
+      document.body.removeChild(this.state.container as Node);
+    }
     document.removeEventListener('keydown', this.handleEscKeyClick, false);
   }
 
