@@ -7,9 +7,9 @@ class SimpleWizard extends React.Component {
   };
 
   toggleOpen = () => {
-    this.setState(({ isOpen }) => ({
-      isOpen: !isOpen
-    }));
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   };
 
   render() {

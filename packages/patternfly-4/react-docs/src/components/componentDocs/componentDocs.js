@@ -11,6 +11,7 @@ import PropsTableTs from '../propsTableTs';
 import Section from '../section';
 import DocsLayout from '../layouts';
 import Tokens from '../css-variables';
+import { accumulateProps } from './propsHelper';
 
 const propTypes = {
   data: PropTypes.any.isRequired,
@@ -59,7 +60,6 @@ class ComponentDocs extends React.PureComponent {
       examples,
       components,
       enumValues,
-      types,
       fullPageOnly,
       rawExamples,
       images,
@@ -68,7 +68,7 @@ class ComponentDocs extends React.PureComponent {
     } = this.props;
     const makeDescription = html => ({ __html: html });
     const getDocGenInfo = name => data.allComponentMetadata.edges.find(edge => edge.node.displayName === name);
-    const getDocGenInfoTs = name => data.allTsDocsJson.edges[0].node.data.find(edge => edge.name === `${name}Props`);
+
     return (
       <DocsLayout location={location}>
         <Content>
@@ -101,20 +101,16 @@ class ComponentDocs extends React.PureComponent {
           </Section>
           {Object.entries(components).map(component => {
             const componentName = component[0];
-            const componentFunction = component[1];
             const componentDocsJs = getDocGenInfo(componentName);
-            const componentDocsTs = getDocGenInfoTs(componentName);
+            const componentDocsTs = accumulateProps(componentName);
             if (componentDocsTs) {
-              return (
-                <PropsTableTs
-                  key={componentName}
-                  name={componentName}
-                  props={componentDocsTs.children}
-                  types={types}
-                  defaultProps={componentFunction.defaultProps}
-                />
-              );
+              console.log('ts', componentName);
+              return <PropsTableTs
+                key={componentName}
+                name={componentName}
+                props={componentDocsTs} />;
             } else if (componentDocsJs) {
+              console.log('js', componentName);
               return (
                 <PropsTable
                   key={componentName}
@@ -165,46 +161,6 @@ export default props => (
                   value
                 }
                 required
-              }
-            }
-          }
-        }
-        allTsDocsJson {
-          edges {
-            node {
-              id
-              name
-              kind
-              data {
-                name
-                children {
-                  name
-                  kindString
-                  comment {
-                    shortText
-                  }
-                  type {
-                    type
-                    name
-                  }
-                  flags {
-                    isOptional
-                  }
-                  signatures {
-                    comment {
-                      shortText
-                    }
-                    parameters {
-                      name
-                      type {
-                        name
-                      }
-                    }
-                    type {
-                      name
-                    }
-                  }
-                }
               }
             }
           }

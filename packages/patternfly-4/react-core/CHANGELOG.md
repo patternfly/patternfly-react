@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.6.3...@patternfly/react-core@2.7.0) (2019-03-18)
+
+
+### Features
+
+* **core:** clean tsconfigs, add defaultProps to TS-docs ([#1570](https://github.com/patternfly/patternfly-react/issues/1570)) ([9df0f15](https://github.com/patternfly/patternfly-react/commit/9df0f15))
+
+
+
+
+
 ## [2.6.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.6.2...@patternfly/react-core@2.6.3) (2019-03-18)
 
 

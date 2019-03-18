@@ -1,19 +1,19 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "3.22.3",
+  "version": "3.23.0",
   "author": "Red Hat",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@patternfly/react-charts": "^2.1.12",
-    "@patternfly/react-core": "^2.6.3",
-    "@patternfly/react-icons": "^3.3.1",
+    "@patternfly/react-charts": "^2.2.0",
+    "@patternfly/react-core": "^2.7.0",
+    "@patternfly/react-icons": "^3.4.0",
     "@patternfly/react-styled-system": "^2.0.15",
     "@patternfly/react-styles": "^2.3.9",
-    "@patternfly/react-table": "^1.2.8",
+    "@patternfly/react-table": "^1.2.9",
     "@patternfly/react-tokens": "^2.1.1",
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",
@@ -27,9 +27,6 @@
     "gatsby-transformer-json": "^2.1.8",
     "gatsby-transformer-react-docgen": "3.0.2",
     "param-case": "^2.1.1",
-    "prop-types": "^15.6.1",
-    "react": "~16.8.4",
-    "react-dom": "~16.8.4",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.5.0",
     "react-live": "^1.12.0",
@@ -45,11 +42,11 @@
     "gatsby"
   ],
   "scripts": {
+    "clean": "rimraf .cache .tmp dist public static ts-docs",
     "develop": "yarn gen-ts-docs && gatsby develop",
     "docbuild": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
-    "clean": "rimraf .cache .tmp dist public static ts-docs",
     "pr-build": "node build/copyDocs.js && yarn gen-ts-docs && env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
-    "gen-ts-docs": "typedoc --json ts-docs/ts-output.json ../react-core --ignoreCompilerErrors --mode file --tsconfig ../react-core/src/tsconfig.dts.json && node build/transformTsDocs.js"
+    "gen-ts-docs": "typedoc --mode file --json build/ts-output.json --tsconfig ../react-core/tsconfig.base.json ../react-core"
   },
   "browserslist": [
     "last 2 versions",

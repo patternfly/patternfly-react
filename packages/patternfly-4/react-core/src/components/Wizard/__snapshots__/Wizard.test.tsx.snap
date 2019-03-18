@@ -46,7 +46,6 @@ exports[`Wizard should match snapshot 1`] = `
               ariaLabel="Close"
               description="Description here"
               descriptionId="pf-wizard-description-0"
-              onClose={null}
               title="Wizard title"
               titleId="pf-wizard-title-0"
             />
@@ -134,7 +133,6 @@ exports[`Wizard should match snapshot 1`] = `
                   isDisabled={false}
                   isFocus={false}
                   isHover={false}
-                  onClick={null}
                   type="button"
                   variant="link"
                 >
@@ -254,6 +252,7 @@ exports[`Wizard should match snapshot 1`] = `
                       >
                         <a
                           aria-current="page"
+                          aria-disabled="false"
                           class="pf-c-wizard__nav-link pf-m-current"
                         >
                           A
@@ -263,6 +262,7 @@ exports[`Wizard should match snapshot 1`] = `
                         class="pf-c-wizard__nav-item"
                       >
                         <a
+                          aria-current="false"
                           aria-disabled="true"
                           class="pf-c-wizard__nav-link pf-m-disabled"
                           tabindex="-1"
@@ -276,6 +276,7 @@ exports[`Wizard should match snapshot 1`] = `
                             class="pf-c-wizard__nav-item"
                           >
                             <a
+                              aria-current="false"
                               aria-disabled="true"
                               class="pf-c-wizard__nav-link pf-m-disabled"
                               tabindex="-1"
@@ -287,6 +288,7 @@ exports[`Wizard should match snapshot 1`] = `
                             class="pf-c-wizard__nav-item"
                           >
                             <a
+                              aria-current="false"
                               aria-disabled="true"
                               class="pf-c-wizard__nav-link pf-m-disabled"
                               tabindex="-1"
@@ -300,6 +302,7 @@ exports[`Wizard should match snapshot 1`] = `
                         class="pf-c-wizard__nav-item"
                       >
                         <a
+                          aria-current="false"
                           aria-disabled="true"
                           class="pf-c-wizard__nav-link pf-m-disabled"
                           tabindex="-1"
@@ -311,6 +314,7 @@ exports[`Wizard should match snapshot 1`] = `
                         class="pf-c-wizard__nav-item"
                       >
                         <a
+                          aria-current="false"
                           aria-disabled="true"
                           class="pf-c-wizard__nav-link pf-m-disabled"
                           tabindex="-1"
@@ -456,6 +460,7 @@ exports[`Wizard should match snapshot 1`] = `
                       >
                         <a
                           aria-current="page"
+                          aria-disabled="false"
                           class="pf-c-wizard__nav-link pf-m-current"
                         >
                           A
@@ -465,6 +470,7 @@ exports[`Wizard should match snapshot 1`] = `
                         class="pf-c-wizard__nav-item"
                       >
                         <a
+                          aria-current="false"
                           aria-disabled="true"
                           class="pf-c-wizard__nav-link pf-m-disabled"
                           tabindex="-1"
@@ -478,6 +484,7 @@ exports[`Wizard should match snapshot 1`] = `
                             class="pf-c-wizard__nav-item"
                           >
                             <a
+                              aria-current="false"
                               aria-disabled="true"
                               class="pf-c-wizard__nav-link pf-m-disabled"
                               tabindex="-1"
@@ -489,6 +496,7 @@ exports[`Wizard should match snapshot 1`] = `
                             class="pf-c-wizard__nav-item"
                           >
                             <a
+                              aria-current="false"
                               aria-disabled="true"
                               class="pf-c-wizard__nav-link pf-m-disabled"
                               tabindex="-1"
@@ -502,6 +510,7 @@ exports[`Wizard should match snapshot 1`] = `
                         class="pf-c-wizard__nav-item"
                       >
                         <a
+                          aria-current="false"
                           aria-disabled="true"
                           class="pf-c-wizard__nav-link pf-m-disabled"
                           tabindex="-1"
@@ -513,6 +522,7 @@ exports[`Wizard should match snapshot 1`] = `
                         class="pf-c-wizard__nav-item"
                       >
                         <a
+                          aria-current="false"
                           aria-disabled="true"
                           class="pf-c-wizard__nav-link pf-m-disabled"
                           tabindex="-1"

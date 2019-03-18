@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.3.1...@patternfly/react-icons@3.4.0) (2019-03-18)
+
+
+### Features
+
+* **core:** clean tsconfigs, add defaultProps to TS-docs ([#1570](https://github.com/patternfly/patternfly-react/issues/1570)) ([9df0f15](https://github.com/patternfly/patternfly-react/commit/9df0f15))
+
+
+
+
+
 ## [3.3.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.3.0...@patternfly/react-icons@3.3.1) (2019-03-15)
 
 **Note:** Version bump only for package @patternfly/react-icons

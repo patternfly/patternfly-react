@@ -28,12 +28,12 @@ const defaultProps = {
   defaultProps: {}
 };
 
-export const PropsTableTs = ({ name, props, defaultProps: defaults, types }) => (
+export const PropsTableTs = ({ name, props }) => (
   <Section
     headingLevel="h3"
     name={name}
     title={`${name} Props`}
-    description={`The ${name} component accepts the following props.`}
+    description={`The ${name} component accepts the following props:`}
   >
     <Table>
       <Heading>
@@ -44,57 +44,19 @@ export const PropsTableTs = ({ name, props, defaultProps: defaults, types }) => 
         <TH>Description</TH>
       </Heading>
       <Body>
-        {props.map(prop => {
-          let typeName = prop.type && prop.type.name;
-          let comment = prop.comment && prop.comment.shortText;
-          if (!prop.type && prop.kindString && prop.kindString === 'Method') {
-            typeName = 'func';
-            comment = prop.signatures.length && prop.signatures[0].comment && prop.signatures[0].comment.shortText;
-          } else if (!prop.type.name) {
-            if (prop.type.type === 'reflection') {
-              typeName = 'func';
-            } else {
-              typeName = prop.type.type;
-            }
-          } else if (prop.type && prop.type.type && prop.type.type === 'reference') {
-            if (types[prop.type.name]) {
-              typeName = types[prop.type.name];
-            }
-          }
-          // TODO: Parse function signature and return that info
-          return (
-            <Row key={prop.name}>
-              <TD>{prop.name}</TD>
-              <TD>{typeName}</TD>
-              <TD align="center">{prop.flags.isOptional === null && <ExclamationCircleIcon />}</TD>
-              <TD>
-                {typeName === 'union' ? (
-                  <pre>{JSON.stringify(defaults[prop.name], null, 2)}</pre>
-                ) : (
-                    JSON.stringify(defaults[prop.name], null, 2)
-                  )}
-              </TD>
-              <TD>{comment}</TD>
-            </Row>
-          );
-        })}
+        {props.map(prop => (
+          <Row key={prop.name}>
+            <TD>{prop.name}</TD>
+            <TD>{prop.type}</TD>
+            <TD align="center">{prop.required && <ExclamationCircleIcon />}</TD>
+            <TD>{prop.default ? prop.default : ''}</TD>
+            <TD>{prop.comment && <span dangerouslySetInnerHTML={{ __html: prop.comment }} />}</TD>
+          </Row>
+        ))}
       </Body>
     </Table>
   </Section>
 );
-
-function getEnumValue(prop, enumValues) {
-  let returnValue = '';
-  let values;
-  if (prop.type.name === 'union') {
-    values = prop.type.value.map(v => v.name);
-    returnValue = `${values.join(' | ')}`;
-  } else {
-    values = Array.isArray(prop.type.value) ? prop.type.value.map(v => v.value) : enumValues[prop.type.value];
-    returnValue = values ? `${prop.type.name}: ${values.join(', ')}` : prop.type.name;
-  }
-  return returnValue;
-}
 
 PropsTableTs.propTypes = propTypes;
 PropsTableTs.defaultProps = defaultProps;
