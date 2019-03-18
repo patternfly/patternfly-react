@@ -15,7 +15,7 @@ class AccessibleTabs extends React.Component {
 
   render() {
     return (
-      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} label="Accessible Tab Example">
+      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} label="Local">
         <Tab eventKey={0} title="Tab item 1">
           Tab 1 section
         </Tab>

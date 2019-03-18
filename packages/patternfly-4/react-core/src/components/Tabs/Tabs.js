@@ -25,7 +25,7 @@ const propTypes = {
   leftScrollAriaLabel: PropTypes.string,
   /** Aria Label for the right Scroll Button */
   rightScrollAriaLabel: PropTypes.string,
-  /** allows for accessible Tabs with aria-label (should only be used if there is only one Tabs component on the current page) */
+  /** provides an accessible label for the Tabs and defines the Tabs inside a navigation region (labels should be unique for each set of Tabs that are present on a page) */
   label: PropTypes.string
 };
 
