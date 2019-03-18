@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.7.0...@patternfly/react-core@2.8.0) (2019-03-18)
+
+
+### Features
+
+* **Switch:** Add icon and fix labels ([#1591](https://github.com/patternfly/patternfly-react/issues/1591)) ([3a86a66](https://github.com/patternfly/patternfly-react/commit/3a86a66)), closes [#1296](https://github.com/patternfly/patternfly-react/issues/1296)
+* **umd:** add umd for styles, tokens, and icons ([#1599](https://github.com/patternfly/patternfly-react/issues/1599)) ([4ca1a5c](https://github.com/patternfly/patternfly-react/commit/4ca1a5c))
+
+
+
+
+
 # [2.7.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.6.3...@patternfly/react-core@2.7.0) (2019-03-18)
 
 

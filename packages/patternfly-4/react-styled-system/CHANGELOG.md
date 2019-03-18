@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.0.16 (2019-03-18)
+
+
+### Bug Fixes
+
+* **Dropdown:** fix d.ts file to make props optional ([#1593](https://github.com/patternfly/patternfly-react/issues/1593)) ([a2c6645](https://github.com/patternfly/patternfly-react/commit/a2c6645)), closes [#1584](https://github.com/patternfly/patternfly-react/issues/1584)
+
+
+
+
+
 ## [2.0.15](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@2.0.14...@patternfly/react-styled-system@2.0.15) (2019-03-15)
 
 **Note:** Version bump only for package @patternfly/react-styled-system
