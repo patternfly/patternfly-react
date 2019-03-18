@@ -18,7 +18,7 @@ const propTypes = {
   isDisabled: PropTypes.bool,
   /** A callback for when the Switch selection changes. (isChecked, event) => {} */
   onChange: PropTypes.func,
-  /** Adds accessible text to the Switch. */
+  /** Adds accessible text to the Switch, and should describe the isChecked="true" state. When label is defined, aria-label should be set to the text string that is visible when isChecked is true. */
   'aria-label': props => {
     if (!props.id && !props['aria-label']) {
       return new Error('Switch requires either an id or aria-label to be specified');
