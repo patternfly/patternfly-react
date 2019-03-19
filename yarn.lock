@@ -1627,9 +1627,9 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@patternfly/patternfly@1.0.240":
-  version "1.0.240"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.240.tgz#80e8663695cc8e4ea463b7021d41313c43f710c9"
+"@patternfly/patternfly@1.0.242":
+  version "1.0.242"
+  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.242.tgz#ae51f8de8f424baa26556af8cdc135cdd37de79d"
 
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
