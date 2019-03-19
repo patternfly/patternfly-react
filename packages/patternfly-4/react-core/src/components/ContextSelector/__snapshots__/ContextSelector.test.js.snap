@@ -70,7 +70,9 @@ exports[`Renders ContextSelector open 1`] = `
     toggleText=""
   />
   <div
+    aria-modal="true"
     className="pf-c-context-selector__menu"
+    role="dialog"
   >
     <FocusTrap
       _createFocusTrap={[Function]}
