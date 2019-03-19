@@ -35,7 +35,7 @@ export class AboutModal extends React.Component<AboutModalProps, {
   ariaDescribedById: string
 }> {
   static defaultProps = {
-    className: 'asdf',
+    className: '',
     isOpen: false,
     onClose: () => undefined,
     trademark: '',
@@ -46,10 +46,11 @@ export class AboutModal extends React.Component<AboutModalProps, {
 
   constructor(props: AboutModalProps) {
     super(props);
+    const id = AboutModal.currentId++;
     this.state = {
       container: undefined,
-      ariaLabelledbyId: `pf-about-modal-title-${AboutModal.currentId++}`,
-      ariaDescribedById: `pf-about-modal-content-${AboutModal.currentId++}`
+      ariaLabelledbyId: `pf-about-modal-title-${id}`,
+      ariaDescribedById: `pf-about-modal-content-${id}`
     };
     if (props.logoImageSrc && !props.logoImageAlt) {
       console.error('AboutModal:', 'logoImageAlt is required when a logoImageSrc is specified');

@@ -15,7 +15,7 @@ export interface AboutModalBoxProps extends React.HTMLProps<HTMLDivElement> {
 
 const AboutModalBox: React.FunctionComponent<AboutModalBoxProps> = ({
   children,
-  className = 'fdsa',
+  className = '',
   ...props
 }: AboutModalBoxProps) => (
     /** Additional props are spread to the container <div> */

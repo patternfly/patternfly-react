@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AboutModalBox Test 1`] = `
-.pf-c-about-modal-box.fdsa {
+.pf-c-about-modal-box {
   display: grid;
   color: #ffffff;
   position: relative;
@@ -20,7 +20,7 @@ exports[`AboutModalBox Test 1`] = `
   aria-describedby="id2"
   aria-labelledby="id"
   aria-modal="true"
-  className="pf-c-about-modal-box fdsa"
+  className="pf-c-about-modal-box"
   role="dialog"
 >
   This is a AboutModalBox
