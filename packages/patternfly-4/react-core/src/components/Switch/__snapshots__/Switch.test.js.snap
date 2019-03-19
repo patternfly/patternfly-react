@@ -1,23 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`no label switch is checked 1`] = `
-.pf-c-switch__input {
-  display: block;
-}
-.pf-c-switch__toggle-icon {
-  display: block;
-}
-.pf-c-switch__toggle {
-  display: block;
-}
-.pf-c-switch {
-  display: inline-block;
-  position: relative;
-  line-height: 1.5;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
 <label
   className="pf-c-switch"
   htmlFor="no-label-switch-is-checked"
@@ -50,23 +33,6 @@ exports[`no label switch is checked 1`] = `
 `;
 
 exports[`no label switch is not checked 1`] = `
-.pf-c-switch__input {
-  display: block;
-}
-.pf-c-switch__toggle-icon {
-  display: block;
-}
-.pf-c-switch__toggle {
-  display: block;
-}
-.pf-c-switch {
-  display: inline-block;
-  position: relative;
-  line-height: 1.5;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
 <label
   className="pf-c-switch"
   htmlFor="no-label-switch-is-not-checked"
@@ -99,26 +65,6 @@ exports[`no label switch is not checked 1`] = `
 `;
 
 exports[`switch is checked 1`] = `
-.pf-c-switch__input {
-  display: block;
-}
-.pf-c-switch__toggle {
-  display: block;
-}
-.pf-c-switch__label.pf-m-on {
-  display: block;
-}
-.pf-c-switch__label.pf-m-off {
-  display: block;
-}
-.pf-c-switch {
-  display: inline-block;
-  position: relative;
-  line-height: 1.5;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
 <label
   className="pf-c-switch"
   htmlFor="switch-is-checked"
@@ -151,23 +97,6 @@ exports[`switch is checked 1`] = `
 `;
 
 exports[`switch is checked and disabled 1`] = `
-.pf-c-switch__input {
-  display: block;
-}
-.pf-c-switch__toggle-icon {
-  display: block;
-}
-.pf-c-switch__toggle {
-  display: block;
-}
-.pf-c-switch {
-  display: inline-block;
-  position: relative;
-  line-height: 1.5;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
 <label
   className="pf-c-switch"
   htmlFor="switch-is-checked-and-disabled"
@@ -200,26 +129,6 @@ exports[`switch is checked and disabled 1`] = `
 `;
 
 exports[`switch is not checked 1`] = `
-.pf-c-switch__input {
-  display: block;
-}
-.pf-c-switch__toggle {
-  display: block;
-}
-.pf-c-switch__label.pf-m-on {
-  display: block;
-}
-.pf-c-switch__label.pf-m-off {
-  display: block;
-}
-.pf-c-switch {
-  display: inline-block;
-  position: relative;
-  line-height: 1.5;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
 <label
   className="pf-c-switch"
   htmlFor="switch-is-not-checked"
@@ -252,23 +161,6 @@ exports[`switch is not checked 1`] = `
 `;
 
 exports[`switch is not checked and disabled 1`] = `
-.pf-c-switch__input {
-  display: block;
-}
-.pf-c-switch__toggle-icon {
-  display: block;
-}
-.pf-c-switch__toggle {
-  display: block;
-}
-.pf-c-switch {
-  display: inline-block;
-  position: relative;
-  line-height: 1.5;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
 <label
   className="pf-c-switch"
   htmlFor="switch-is-not-checked-and-disabled"
