@@ -9005,13 +9005,6 @@ gatsby-source-filesystem@^2.0.23:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-transformer-json@^2.1.8:
-  version "2.1.11"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.1.11.tgz#b1c9acbc0da6e7e11b7dd278e9543171a71ecd89"
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    bluebird "^3.5.0"
-
 gatsby-transformer-react-docgen@3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-react-docgen/-/gatsby-transformer-react-docgen-3.0.2.tgz#cc35829a48810dcc9b5d2d6f052b57ff7cec4cb1"
@@ -9024,8 +9017,8 @@ gatsby-transformer-react-docgen@3.0.2:
     react-docgen-displayname-handler " ^2.1.0"
 
 gatsby@^2.1.29:
-  version "2.1.37"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.1.37.tgz#bbb16aef7d4cd65a0757688b8fd2550299a123bb"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.2.0.tgz#46973febe3fb2ea5f09d9eccd50a3529ac9d2f2e"
   dependencies:
     "@babel/code-frame" "^7.0.0"
     "@babel/core" "^7.0.0"
@@ -9087,15 +9080,15 @@ gatsby@^2.1.29:
     gatsby-react-router-scroll "^2.0.6"
     glob "^7.1.1"
     graphql "^14.1.1"
+    graphql-compose "^5.11.0"
     graphql-playground-middleware-express "^1.7.10"
     graphql-relay "^0.6.0"
-    graphql-skip-limit "^2.0.6"
     graphql-tools "^3.0.4"
-    graphql-type-json "^0.2.1"
     hash-mod "^0.0.5"
     invariant "^2.2.4"
     is-relative "^1.0.0"
     is-relative-url "^2.0.0"
+    is-wsl "^1.1.0"
     jest-worker "^23.2.0"
     joi "12.x.x"
     json-loader "^0.5.7"
@@ -9544,6 +9537,13 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.4
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
 
+graphql-compose@^5.11.0:
+  version "5.12.0"
+  resolved "https://registry.yarnpkg.com/graphql-compose/-/graphql-compose-5.12.0.tgz#335341dd843657200081f84e76734d72a1ddaba7"
+  dependencies:
+    graphql-type-json "^0.2.1"
+    object-path "^0.11.4"
+
 graphql-config@^2.0.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/graphql-config/-/graphql-config-2.2.1.tgz#5fd0ec77ac7428ca5fb2026cf131be10151a0cb2"
@@ -9582,12 +9582,6 @@ graphql-request@^1.5.0:
   resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-1.8.2.tgz#398d10ae15c585676741bde3fc01d5ca948f8fbe"
   dependencies:
     cross-fetch "2.2.2"
-
-graphql-skip-limit@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/graphql-skip-limit/-/graphql-skip-limit-2.0.6.tgz#67cdfbf33254db338aade6e7b44ea3e779b4b1c4"
-  dependencies:
-    "@babel/runtime" "^7.0.0"
 
 graphql-tools@^3.0.4:
   version "3.1.1"
@@ -13566,7 +13560,7 @@ object-keys@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/object-keys/-/object-keys-0.4.0.tgz#28a6aae7428dd2c3a92f3d95f21335dd204e0336"
 
-object-path@^0.11.2:
+object-path@^0.11.2, object-path@^0.11.4:
   version "0.11.4"
   resolved "https://registry.yarnpkg.com/object-path/-/object-path-0.11.4.tgz#370ae752fbf37de3ea70a861c23bba8915691949"
 
@@ -13983,7 +13977,7 @@ parallel-transform@^1.1.0:
     inherits "^2.0.3"
     readable-stream "^2.1.5"
 
-param-case@2.1.x, param-case@^2.1.0, param-case@^2.1.1:
+param-case@2.1.x, param-case@^2.1.0:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/param-case/-/param-case-2.1.1.tgz#df94fd8cf6531ecf75e6bef9a0858fbc72be2247"
   dependencies:

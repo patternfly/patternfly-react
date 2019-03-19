@@ -7,6 +7,13 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "clean": "rimraf .cache .tmp dist public static ts-docs",
+    "develop": "yarn gen-ts-docs && gatsby develop",
+    "build:docs": "node build/copyDocs.js && yarn gen-ts-docs && yarn build:gatsby",
+    "build:gatsby": "env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
+    "gen-ts-docs": "typedoc --mode file --json build/ts-output.json --tsconfig ../react-core/tsconfig.base.json ../react-core"
+  },
   "dependencies": {
     "@patternfly/react-charts": "^2.2.1",
     "@patternfly/react-core": "^2.8.1",
@@ -24,9 +31,7 @@
     "gatsby-plugin-react-helmet": "^3.0.8",
     "gatsby-plugin-typescript": "2.0.3",
     "gatsby-source-filesystem": "^2.0.23",
-    "gatsby-transformer-json": "^2.1.8",
     "gatsby-transformer-react-docgen": "3.0.2",
-    "param-case": "^2.1.1",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.5.0",
     "react-live": "^1.12.0",
@@ -41,13 +46,6 @@
   "keywords": [
     "gatsby"
   ],
-  "scripts": {
-    "clean": "rimraf .cache .tmp dist public static ts-docs",
-    "develop": "yarn gen-ts-docs && gatsby develop",
-    "build:docs": "node build/copyDocs.js && yarn gen-ts-docs && yarn build:gatsby",
-    "build:gatsby": "env NODE_OPTIONS=--max_old_space_size=4096 gatsby build --verbose --prefix-paths",
-    "gen-ts-docs": "typedoc --mode file --json build/ts-output.json --tsconfig ../react-core/tsconfig.base.json ../react-core"
-  },
   "browserslist": [
     "last 2 versions",
     "not ie <= 11"
