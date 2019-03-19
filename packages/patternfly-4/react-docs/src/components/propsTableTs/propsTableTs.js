@@ -1,32 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Table, Row, TD, TH, Body, Heading } from '../table';
 import Section from '../section';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
-
-const docGenPropShape = PropTypes.shape({
-  name: PropTypes.string,
-  comment: PropTypes.shape({ shortText: PropTypes.string }),
-  type: PropTypes.shape({
-    name: PropTypes.string,
-    type: PropTypes.string
-  }),
-  flags: PropTypes.shape({ isOptional: PropTypes.bool }),
-  signatures: PropTypes.array
-});
-
-const propTypes = {
-  name: PropTypes.string.isRequired,
-  props: PropTypes.arrayOf(docGenPropShape),
-  types: PropTypes.object,
-  defaultProps: PropTypes.any
-};
-
-const defaultProps = {
-  props: [],
-  types: {},
-  defaultProps: {}
-};
 
 export const PropsTableTs = ({ name, props }) => (
   <Section
@@ -57,8 +32,5 @@ export const PropsTableTs = ({ name, props }) => (
     </Table>
   </Section>
 );
-
-PropsTableTs.propTypes = propTypes;
-PropsTableTs.defaultProps = defaultProps;
 
 export default PropsTableTs;
