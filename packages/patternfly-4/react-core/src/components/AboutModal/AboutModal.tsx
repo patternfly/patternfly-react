@@ -30,9 +30,8 @@ export interface AboutModalProps {
 };
 
 export class AboutModal extends React.Component<AboutModalProps, {
-  container: HTMLDivElement | undefined,
-  ariaLabelledbyId: string,
-  ariaDescribedById: string
+  container?: HTMLDivElement,
+  id: number
 }> {
   static defaultProps = {
     className: '',
@@ -46,11 +45,9 @@ export class AboutModal extends React.Component<AboutModalProps, {
 
   constructor(props: AboutModalProps) {
     super(props);
-    const id = AboutModal.currentId++;
     this.state = {
-      container: undefined,
-      ariaLabelledbyId: `pf-about-modal-title-${id}`,
-      ariaDescribedById: `pf-about-modal-content-${id}`
+      container: canUseDOM ? document.createElement('div') : undefined,
+      id: AboutModal.currentId++,
     };
     if (props.logoImageSrc && !props.logoImageAlt) {
       console.error('AboutModal:', 'logoImageAlt is required when a logoImageSrc is specified');
@@ -64,15 +61,10 @@ export class AboutModal extends React.Component<AboutModalProps, {
   };
 
   componentDidMount() {
-    const container = document.createElement('div');
-    this.setState({ container: container });
-    document.body.appendChild(container);
-    document.addEventListener('keydown', this.handleEscKeyClick, false);
-    if (this.props.isOpen) {
-      document.body.classList.add(css(styles.backdropOpen));
-    } else {
-      document.body.classList.remove(css(styles.backdropOpen));
+    if (this.state.container) {
+      document.body.appendChild(this.state.container);
     }
+    document.addEventListener('keydown', this.handleEscKeyClick, false);
   }
 
   componentDidUpdate() {
@@ -91,7 +83,7 @@ export class AboutModal extends React.Component<AboutModalProps, {
   }
 
   render() {
-    if (!canUseDOM || !this.state.container) {
+    if (!this.state.container) {
       return null;
     }
 
@@ -99,8 +91,8 @@ export class AboutModal extends React.Component<AboutModalProps, {
     return ReactDOM.createPortal(
       <AboutModalContainer
         {...this.props}
-        ariaLabelledbyId={this.state.ariaLabelledbyId}
-        ariaDescribedById={this.state.ariaDescribedById}
+        ariaLabelledbyId={`pf-about-modal-title-${this.state.id}`}
+        ariaDescribedById={`pf-about-modal-content-${this.state.id}`}
       />,
       this.state.container
     );

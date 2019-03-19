@@ -25,7 +25,7 @@ test('AboutModal creates a container element once for div', () => {
   const view = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
   view.update();
   expect(document.createElement).toBeCalledWith('div');
-  expect(document.createElement).toHaveBeenCalledTimes(3);
+  expect(document.createElement).toHaveBeenCalledTimes(1);
 });
 
 test('About Modal closes with escape', () => {
@@ -48,11 +48,10 @@ test('modal does not call onClose for esc key if it is not open', () => {
   expect(props.onClose).not.toBeCalled();
 });
 
-test('Each modal is given new ariaDescribedById and ariaLabelledbyId', () => {
+test('Each modal is given new id for ariaDescribedById and ariaLabelledbyId', () => {
   const first = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
   const second = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
-  expect(first.state('ariaLabelledbyId')).not.toBe(second.state('ariaLabelledbyId'));
-  expect(first.state('ariaDescribedById')).not.toBe(second.state('ariaDescribedById'));
+  expect(first.state('id')).not.toBe(second.state('id'));
 });
 
 test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {
