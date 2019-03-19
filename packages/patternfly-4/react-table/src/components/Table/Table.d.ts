@@ -45,19 +45,19 @@ export interface ICell {
   cellTransforms: Array<Function>;
   formatters: Array<Function>;
   cellFormatters: Array<Function>;
-  props: unknown;
+  props: any;
 }
 
 export interface IRowCell {
   title: ReactNode;
-  props: unknown;
+  props: any;
 }
 
 export interface IRow {
   cells: Array<ReactNode | IRowCell>;
   isOpen: Boolean;
   parent: Number;
-  props: unknown;
+  props: any;
 }
 
 export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSelect'>, 'rows'> {
@@ -66,11 +66,11 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   variant?: OneOf<typeof TableVariant, keyof typeof TableVariant>;
   gridBreakPoint?: OneOf<typeof TableGridBreakpoint, keyof typeof TableGridBreakpoint>;
   sortBy?: ISortBy;
-  onCollapse?: (event: MouseEvent, rowIndex: number,isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
+  onCollapse?: (event: MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
   onSelect?: (event: MouseEvent, isSelected: boolean, rowIndex: number, rowData: IRowData, extraData: IExtraData) => void;
   onSort?: (event: MouseEvent, columnIndex: number, extraData: IExtraColumnData) => void;
   actions?: Array<IAction | ISeparator>;
-  actionResolver?: (rowData: IRowData,  extraData: IExtraData) => Array<IAction | ISeparator>;
+  actionResolver?: (rowData: IRowData, extraData: IExtraData) => Array<IAction | ISeparator>;
   areActionsDisabled?: (rowData: IRowData, extraData: IExtraData) => boolean;
   header?: ReactNode;
   caption?: ReactNode;
