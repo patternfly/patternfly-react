@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.31.0 (2019-03-19)
+
+
+### Features
+
+* **ModalPattern:** Add ModalPattern and StatefulModalPattern components ([#343](https://github.com/patternfly/patternfly-react/issues/343)) ([6c3cfac](https://github.com/patternfly/patternfly-react/commit/6c3cfac))
+
+
+
+
+
 ## [2.30.6](https://github.com/patternfly/patternfly-react/compare/patternfly-react@2.30.5...patternfly-react@2.30.6) (2019-03-13)
 
 **Note:** Version bump only for package patternfly-react
