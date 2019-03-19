@@ -11,12 +11,12 @@ exports[`EmptyState Main 1`] = `
 <div
   className="pf-c-empty-state"
 >
-  <Title
+  <Component
     headingLevel="h5"
     size="lg"
   >
     HTTP Proxies
-  </Title>
+  </Component>
   <EmptyStateBody
     className=""
   >
