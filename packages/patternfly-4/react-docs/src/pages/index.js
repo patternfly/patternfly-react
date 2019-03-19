@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import SidebarLayout from '../templates/sidebarLayout';
 import { Title, PageSection, PageSectionVariants } from '@patternfly/react-core';
-require('@patternfly/patternfly/patternfly.css');
 
 const containerStyle = {
   display: "flex",
