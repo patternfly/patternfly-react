@@ -21,7 +21,7 @@ const props = {
   logoImageAlt: 'AboutModal Logo'
 };
 
-test('AboutModal creates a container element once for div', () => {
+test('AboutModal creates a container element once', () => {
   const view = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
   view.update();
   expect(document.createElement).toBeCalledWith('div');
