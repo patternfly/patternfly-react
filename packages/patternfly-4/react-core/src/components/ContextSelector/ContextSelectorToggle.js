@@ -74,9 +74,12 @@ class ContextSelectorToggle extends Component {
 
   onKeyDown = event => {
     const { isOpen, onToggle, onEnter } = this.props;
-    if (event.keyCode === KEY_CODES.TAB && !isOpen) return;
+    if ((event.keyCode === KEY_CODES.TAB && !isOpen) || event.key !== KEY_CODES.ENTER) return;
     event.preventDefault();
-    if ((event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key === ' ') && isOpen) {
+    if (
+      (event.keyCode === KEY_CODES.TAB || event.keyCode === KEY_CODES.ENTER || event.key !== KEY_CODES.SPACE) &&
+      isOpen
+    ) {
       onToggle(!isOpen);
     } else if ((event.keyCode === KEY_CODES.ENTER || event.key === ' ') && !isOpen) {
       onToggle(!isOpen);

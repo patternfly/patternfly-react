@@ -95,7 +95,7 @@ class ContextSelector extends React.Component {
           aria-labelledby={`${toggleId} ${screenReaderLabelId}`}
         />
         {isOpen && (
-          <div className={css(styles.contextSelectorMenu)}>
+          <div className={css(styles.contextSelectorMenu)} role="dialog" aria-modal="true">
             {isOpen && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
                 <div className={css(styles.contextSelectorMenuInput)}>
