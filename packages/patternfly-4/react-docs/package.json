@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "3.23.3",
+  "version": "3.23.4",
   "author": "Red Hat",
   "license": "MIT",
   "publishConfig": {
@@ -9,11 +9,11 @@
   },
   "dependencies": {
     "@patternfly/react-charts": "^2.2.1",
-    "@patternfly/react-core": "^2.8.1",
+    "@patternfly/react-core": "^2.8.2",
     "@patternfly/react-icons": "^3.5.0",
     "@patternfly/react-styled-system": "^2.0.16",
     "@patternfly/react-styles": "^2.4.0",
-    "@patternfly/react-table": "^1.2.12",
+    "@patternfly/react-table": "^1.2.13",
     "@patternfly/react-tokens": "^2.2.0",
     "babel-standalone": "^6.26.0",
     "clipboard-copy": "^2.0.1",

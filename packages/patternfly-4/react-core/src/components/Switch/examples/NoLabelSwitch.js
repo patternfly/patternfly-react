@@ -15,7 +15,7 @@ class NoLabelSwitch extends React.Component {
     return (
       <Switch
         id="no-label-switch-on"
-        aria-label="no label checked switch example"
+        aria-label="Message when on"
         isChecked={isChecked}
         onChange={this.handleChange}
       />

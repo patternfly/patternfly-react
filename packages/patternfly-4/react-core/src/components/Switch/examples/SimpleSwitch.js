@@ -18,7 +18,7 @@ class SimpleSwitch extends React.Component {
         label={isChecked ? 'Message when on' : 'Message when off'}
         isChecked={isChecked}
         onChange={this.handleChange}
-        aria-label="simple Switch example"
+        aria-label="Message when on"
       />
     );
   }

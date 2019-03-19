@@ -5,19 +5,19 @@ class UncontrolledSwitch extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Switch id="uncontrolled-switch-on" aria-label="uncontrolled checked switch example" label="Message when on" isChecked />
+        <Switch id="uncontrolled-switch-on" aria-label="Message when on" label="Message when on" isChecked />
         <br />
-        <Switch id="uncontrolled-switch-off" aria-label="uncontrolled switch example" label="Message when off" isChecked={false} />
+        <Switch id="uncontrolled-switch-off" aria-label="Message when on" label="Message when off" isChecked={false} />
         <br />
         <Switch
           id="uncontrolled-no-label-switch-on"
-          aria-label="uncontrolled no label checked switch example"
+          aria-label="Message when on"
           isChecked
         />
         <br />
         <Switch
           id="uncontrolled-no-label-switch-off"
-          aria-label="uncontrolled no label switch example"
+          aria-label="Message when on"
           isChecked={false}
         />
       </React.Fragment>
