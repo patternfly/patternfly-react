@@ -10,6 +10,7 @@ import { Button, ButtonVariant } from '../Button';
 import { TextInput } from '../TextInput';
 import { SearchIcon } from '@patternfly/react-icons';
 import { InputGroup } from '../InputGroup';
+import { KEY_CODES } from '../../helpers/constants';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -37,7 +38,9 @@ const propTypes = {
   /** Function callback called when user changes the Search Input */
   onSearchInputChange: PropTypes.func,
   /** Search Input placeholder */
-  searchInputPlaceholder: PropTypes.string
+  searchInputPlaceholder: PropTypes.string,
+  /** Function callback for when Search Button is clicked */
+  onSearchButtonClick: PropTypes.func
 };
 
 const defaultProps = {
@@ -51,11 +54,18 @@ const defaultProps = {
   searchButtonAriaLabel: 'Search menu items',
   searchInputValue: '',
   onSearchInputChange: () => {},
-  searchInputPlaceholder: 'Search'
+  searchInputPlaceholder: 'Search',
+  onSearchButtonClick: () => {}
 };
 
 class ContextSelector extends React.Component {
   parentRef = React.createRef();
+
+  onEnterPressed = event => {
+    if (event.charCode === KEY_CODES.ENTER) {
+      this.props.onSearchButtonClick();
+    }
+  };
 
   render() {
     const toggleId = `pf-context-selector-toggle-id-${newId}`;
@@ -73,6 +83,7 @@ class ContextSelector extends React.Component {
       searchInputValue,
       onSearchInputChange,
       searchInputPlaceholder,
+      onSearchButtonClick,
       ...props
     } = this.props;
     return (
@@ -92,7 +103,7 @@ class ContextSelector extends React.Component {
           toggleText={toggleText}
           id={toggleId}
           parentRef={this.parentRef.current}
-          aria-labelledby={` ${screenReaderLabelId} ${toggleId}`}
+          aria-labelledby={`${screenReaderLabelId} ${toggleId}`}
         />
         {isOpen && (
           <div className={css(styles.contextSelectorMenu)}>
@@ -105,9 +116,15 @@ class ContextSelector extends React.Component {
                       type="search"
                       placeholder={searchInputPlaceholder}
                       onChange={onSearchInputChange}
+                      onKeyPress={this.onEnterPressed}
                       aria-labelledby={searchButtonId}
                     />
-                    <Button variant={ButtonVariant.tertiary} aria-label={searchButtonAriaLabel} id={searchButtonId}>
+                    <Button
+                      variant={ButtonVariant.tertiary}
+                      aria-label={searchButtonAriaLabel}
+                      id={searchButtonId}
+                      onClick={onSearchButtonClick}
+                    >
                       <SearchIcon aria-hidden="true" />
                     </Button>
                   </InputGroup>

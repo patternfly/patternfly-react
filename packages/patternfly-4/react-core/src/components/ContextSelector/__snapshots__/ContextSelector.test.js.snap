@@ -12,7 +12,7 @@ exports[`Renders ContextSelector 1`] = `
   className="pf-c-context-selector"
 >
   <ContextSelectorToggle
-    aria-labelledby=" pf-context-selector-label-id-0 pf-context-selector-toggle-id-0"
+    aria-labelledby="pf-context-selector-label-id-0 pf-context-selector-toggle-id-0"
     className=""
     id="pf-context-selector-toggle-id-0"
     isActive={false}
@@ -57,7 +57,7 @@ exports[`Renders ContextSelector open 1`] = `
   className="pf-c-context-selector pf-m-expanded"
 >
   <ContextSelectorToggle
-    aria-labelledby=" pf-context-selector-label-id-0 pf-context-selector-toggle-id-0"
+    aria-labelledby="pf-context-selector-label-id-0 pf-context-selector-toggle-id-0"
     className=""
     id="pf-context-selector-toggle-id-0"
     isActive={false}
@@ -98,6 +98,7 @@ exports[`Renders ContextSelector open 1`] = `
             isRequired={false}
             isValid={true}
             onChange={[Function]}
+            onKeyPress={[Function]}
             placeholder="Search"
             type="search"
             value=""
@@ -112,6 +113,7 @@ exports[`Renders ContextSelector open 1`] = `
             isDisabled={false}
             isFocus={false}
             isHover={false}
+            onClick={[Function]}
             type="button"
             variant="tertiary"
           >
