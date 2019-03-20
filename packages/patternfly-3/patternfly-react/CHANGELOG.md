@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.31.1 (2019-03-20)
+
+
+### Bug Fixes
+
+* **VerticalNav:** fix attributes for secondary items ([#1574](https://github.com/patternfly/patternfly-react/issues/1574)) ([7d130de](https://github.com/patternfly/patternfly-react/commit/7d130de))
+
+
+
+
+
 # 2.31.0 (2019-03-19)
 
 
