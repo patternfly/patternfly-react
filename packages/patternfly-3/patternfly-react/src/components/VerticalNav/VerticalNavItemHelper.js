@@ -340,8 +340,8 @@ BaseVerticalNavItemHelper.defaultProps = {
   title: '',
   isDivider: false,
   preventHref: true,
-  id: '',
-  dataID: ''
+  id: null,
+  dataID: null
 };
 
 const VerticalNavItemHelper = getContext(navContextTypes)(BaseVerticalNavItemHelper);
