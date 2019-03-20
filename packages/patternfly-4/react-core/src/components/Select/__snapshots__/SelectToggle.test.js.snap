@@ -27,8 +27,8 @@ exports[`state active 1`] = `
   position: relative;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   min-width: 44px;
-  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -129,8 +129,8 @@ exports[`state focus 1`] = `
   position: relative;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   min-width: 44px;
-  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
@@ -231,8 +231,8 @@ exports[`state hover 1`] = `
   position: relative;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
   min-width: 44px;
-  max-width: 100%;
   padding: 0.375rem 0.5rem 0.375rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
