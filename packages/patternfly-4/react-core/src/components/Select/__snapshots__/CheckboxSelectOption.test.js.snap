@@ -42,22 +42,12 @@ exports[`checkbox select options disabled renders disabled successfully 1`] = `
     [MockFunction] {
       "calls": Array [
         Array [
-          <label
-            class="pf-c-check pf-c-select__menu-item pf-m-disabled"
-            tabindex="0"
-          >
-            <input
-              class="pf-c-check__input"
-              disabled=""
-              id="test"
-              type="checkbox"
-            />
-            <span
-              class="pf-c-check__label pf-m-disabled"
-            >
-              test
-            </span>
-          </label>,
+          <input
+            class="pf-c-check__input"
+            disabled=""
+            id="test"
+            type="checkbox"
+          />,
           0,
         ],
       ],
@@ -75,7 +65,6 @@ exports[`checkbox select options disabled renders disabled successfully 1`] = `
     aria-selected={null}
     className="pf-c-check pf-c-select__menu-item pf-m-disabled"
     onKeyDown={[Function]}
-    tabIndex={0}
   >
     <input
       checked={false}
@@ -135,23 +124,12 @@ exports[`checkbox select options hover renders with checked successfully 1`] = `
     [MockFunction] {
       "calls": Array [
         Array [
-          <label
-            aria-selected="true"
-            class="pf-c-check pf-c-select__menu-item"
-            tabindex="0"
-          >
-            <input
-              checked=""
-              class="pf-c-check__input"
-              id="test"
-              type="checkbox"
-            />
-            <span
-              class="pf-c-check__label"
-            >
-              test
-            </span>
-          </label>,
+          <input
+            checked=""
+            class="pf-c-check__input"
+            id="test"
+            type="checkbox"
+          />,
           0,
         ],
       ],
@@ -169,7 +147,6 @@ exports[`checkbox select options hover renders with checked successfully 1`] = `
     aria-selected={true}
     className="pf-c-check pf-c-select__menu-item"
     onKeyDown={[Function]}
-    tabIndex={0}
   >
     <input
       checked={true}
@@ -229,21 +206,11 @@ exports[`checkbox select options renders with value parameter successfully 1`] =
     [MockFunction] {
       "calls": Array [
         Array [
-          <label
-            class="pf-c-check pf-c-select__menu-item"
-            tabindex="0"
-          >
-            <input
-              class="pf-c-check__input"
-              id="test"
-              type="checkbox"
-            />
-            <span
-              class="pf-c-check__label"
-            >
-              test
-            </span>
-          </label>,
+          <input
+            class="pf-c-check__input"
+            id="test"
+            type="checkbox"
+          />,
           0,
         ],
       ],
@@ -261,7 +228,6 @@ exports[`checkbox select options renders with value parameter successfully 1`] =
     aria-selected={null}
     className="pf-c-check pf-c-select__menu-item"
     onKeyDown={[Function]}
-    tabIndex={0}
   >
     <input
       checked={false}

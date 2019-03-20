@@ -85,9 +85,7 @@ class CheckboxSelectOption extends React.Component {
               className
             )}
             aria-selected={isChecked || null}
-            ref={this.ref}
             onKeyDown={this.onKeyDown}
-            tabIndex={0}
           >
             <input
               id={value}
@@ -99,6 +97,7 @@ class CheckboxSelectOption extends React.Component {
                   onSelect && onSelect(event, value);
                 }
               }}
+              ref={this.ref}
               checked={isChecked}
               disabled={isDisabled}
             />

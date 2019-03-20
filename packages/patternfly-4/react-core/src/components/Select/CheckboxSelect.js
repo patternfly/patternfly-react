@@ -4,6 +4,7 @@ import { default as formStyles } from '@patternfly/patternfly/components/Form/fo
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { keyHandler } from '../../helpers/util';
+import FocusTrap from 'focus-trap-react';
 
 const propTypes = {
   /** Content rendered inside the CheckboxSelect */
@@ -32,12 +33,6 @@ const defaultProps = {
 
 class CheckboxSelect extends React.Component {
   refCollection = [];
-
-  componentDidMount() {
-    if (this.props.openedOnEnter) {
-      this.refCollection[0].focus();
-    }
-  }
 
   extendChildren(props) {
     const { children, isGrouped, checked } = this.props;
@@ -87,11 +82,13 @@ class CheckboxSelect extends React.Component {
     const { children, className, isExpanded, openedOnEnter, checked, isGrouped, ...props } = this.props;
     this.renderedChildren = this.extendChildren(props);
     return (
-      <div className={css(styles.selectMenu, className)}>
-        <form noValidate className={css(formStyles.form)}>
-          <div className={css(formStyles.formGroup)}>{this.renderedChildren}</div>
-        </form>
-      </div>
+      <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
+        <div className={css(styles.selectMenu, className)}>
+          <form noValidate className={css(formStyles.form)}>
+            <div className={css(formStyles.formGroup)}>{this.renderedChildren}</div>
+          </form>
+        </div>
+      </FocusTrap>
     );
   }
 }

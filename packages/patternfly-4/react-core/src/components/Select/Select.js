@@ -102,15 +102,16 @@ class Select extends React.Component {
             onClose={this.onClose}
             aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
             style={{ width }}
+            isCheckbox={variant === SelectVariant.checkbox}
           >
-            {variant === 'single' && (
+            {variant === SelectVariant.single && (
               <div className={css(styles.selectToggleWrapper)}>
                 <span className={css(styles.selectToggleText)}>
                   {selections || placeholderText || childPlaceholderText}
                 </span>
               </div>
             )}
-            {variant === 'checkbox' && (
+            {variant === SelectVariant.checkbox && (
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
@@ -124,7 +125,7 @@ class Select extends React.Component {
               </React.Fragment>
             )}
           </SelectToggle>
-          {variant === 'single' &&
+          {variant === SelectVariant.single &&
             isExpanded && (
               <SingleSelect
                 {...props}
@@ -135,7 +136,7 @@ class Select extends React.Component {
                 {children}
               </SingleSelect>
             )}
-          {variant === 'checkbox' &&
+          {variant === SelectVariant.checkbox &&
             isExpanded && (
               <CheckboxSelect
                 {...props}
