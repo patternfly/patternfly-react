@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.6.0 (2019-03-20)
+
+
+### Features
+
+* **Cloud icons:** Add new cloud icons ([#1565](https://github.com/patternfly/patternfly-react/issues/1565)) ([632edca](https://github.com/patternfly/patternfly-react/commit/632edca))
+
+
+
+
+
 # [3.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.4.0...@patternfly/react-icons@3.5.0) (2019-03-18)
 
 
