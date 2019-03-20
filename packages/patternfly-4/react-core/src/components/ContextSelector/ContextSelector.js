@@ -32,7 +32,7 @@ const propTypes = {
   toggleText: PropTypes.string,
   /** aria-label for the Context Selector Search Button */
   searchButtonAriaLabel: PropTypes.string,
-  /* Value in the Search field */
+  /** Value in the Search field */
   searchInputValue: PropTypes.string,
   /** Function callback called when user changes the Search Input */
   onSearchInputChange: PropTypes.func,
@@ -92,10 +92,10 @@ class ContextSelector extends React.Component {
           toggleText={toggleText}
           id={toggleId}
           parentRef={this.parentRef.current}
-          aria-labelledby={`${toggleId} ${screenReaderLabelId}`}
+          aria-labelledby={` ${screenReaderLabelId} ${toggleId}`}
         />
         {isOpen && (
-          <div className={css(styles.contextSelectorMenu)} role="dialog" aria-modal="true">
+          <div className={css(styles.contextSelectorMenu)}>
             {isOpen && (
               <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>
                 <div className={css(styles.contextSelectorMenuInput)}>
