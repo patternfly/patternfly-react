@@ -37,23 +37,30 @@ test('invalid text input', () => {
   expect(view).toMatchSnapshot();
 });
 
-test('should throw console error when no aria-label or id is given', () => {
+test('should throw console error when no aria-label, id or aria-labelledby is given', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };
   shallow(<TextInput {...props} />);
   expect(myMock).toBeCalled();
 });
 
-test('should not throw console error when id is given but no aria-label', () => {
+test('should not throw console error when id is given but no aria-label or aria-labelledby', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };
   shallow(<TextInput {...props} id="5" />);
   expect(myMock).not.toBeCalled();
 });
 
-test('should not throw console error when aria-label is given but no id', () => {
+test('should not throw console error when aria-label is given but no id or aria-labelledby', () => {
   const myMock = jest.fn();
   global.console = { error: myMock };
   shallow(<TextInput {...props} aria-label="test input" />);
+  expect(myMock).not.toBeCalled();
+});
+
+test('should not throw console error when aria-labelledby is given but no id or aria-label', () => {
+  const myMock = jest.fn();
+  global.console = { error: myMock };
+  shallow(<TextInput {...props} aria-labelledby="test input" />);
   expect(myMock).not.toBeCalled();
 });

@@ -1,21 +1,23 @@
 import {
-  Avatar,
-  AvatarProps,
-  Tabs,
-  Tab,
-  Tooltip,
-  Popover,
   Alert,
   AlertActionCloseButton,
   AlertActionLink,
   AlertVariant,
+  Avatar,
+  AvatarProps,
+  ContextSelector,
+  ContextSelectorItem,
   InputGroup,
   InputGroupText,
+  Popover,
   Select,
   SelectOption,
   SelectVariant,
+  Tab,
+  Tabs,
   TextInput,
-  Title
+  Title,
+  Tooltip
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -52,7 +54,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Title style={{ color: '#fff', padding: '12px 0' }} headingLevel="h1" size="4xl">PF4 Integration Sandbox</Title>
+          <Title style={{ color: '#fff', padding: '12px 0' }} headingLevel="h1" size="4xl">
+            PF4 Integration Sandbox
+          </Title>
           <Avatar src={logo} alt={new myProps().alt} />
         </header>
         <Tabs>
@@ -101,9 +105,25 @@ class App extends Component {
           </InputGroupText>
           <TextInput id="dollar_number" type="number" />
         </InputGroup>
+        <ContextSelector
+          toggleText="My Project"
+          onSearchInputChange={() => {}}
+          isOpen={true}
+          searchInputValue=""
+          onToggle={() => {}}
+          onSelect={() => {}}
+          screenReaderLabel="screenReader Label"
+          searchInputPlaceholder="test"
+          searchButtonAriaLabel="Aria Lable"
+        >
+          <ContextSelectorItem key="0">My Project</ContextSelectorItem>
+          <ContextSelectorItem key="1">OpenShift Cluster</ContextSelectorItem>
+          <ContextSelectorItem key="2">Production Ansible</ContextSelectorItem>
+          <ContextSelectorItem key="3">AWS</ContextSelectorItem>
+          <ContextSelectorItem key="4">Azure</ContextSelectorItem>
+        </ContextSelector>
       </div>
     );
   }
 }
-
 export default App;
