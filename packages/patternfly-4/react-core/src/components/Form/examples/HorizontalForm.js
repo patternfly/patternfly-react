@@ -97,19 +97,15 @@ class HorizontalForm extends React.Component {
             id="horizontal-form-exp"
           />
         </FormGroup>
-        <FormGroup label="Can we follow up via email?" fieldId="horizontal-radio1">
-          <Radio label="Yes" aria-label="yes" id="horizontal-radio1" name="horizontal-radios" />
-          <Radio label="No" aria-label="no" id="horizontal-radio2" name="horizontal-radios" />
+        <FormGroup>
+          <Checkbox label="Follow up via email" id="alt-form-checkbox-1" name="alt-form-checkbox-1" />
+        </FormGroup>
+        <FormGroup>
+          <Checkbox label="Remember my password for 30 days" id="alt-form-checkbox-2" name="alt-form-checkbox-2" />
         </FormGroup>
         <ActionGroup>
           <Button variant="primary">Submit form</Button>
           <Button variant="secondary">Cancel</Button>
-          <Checkbox
-            label="Remember my password for 30 days"
-            aria-label="Remember my password for 30 days"
-            id="alt-form-checkbox-1"
-            name="alt-form-checkbox-1"
-          />
         </ActionGroup>
       </Form>
     );
