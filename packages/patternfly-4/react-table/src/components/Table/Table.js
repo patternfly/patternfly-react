@@ -204,7 +204,8 @@ class Table extends React.Component {
       expandId,
       contentId,
       dropdownPosition,
-      dropdownDirection
+      dropdownDirection,
+      firstUserColumnIndex: [onCollapse, onSelect].filter(callback => callback).length
     });
 
     return (

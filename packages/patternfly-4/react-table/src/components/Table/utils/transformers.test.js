@@ -9,6 +9,7 @@ import {
   headerCol,
   emptyCol,
   mapProps,
+  expandable,
   expandedRow
 } from './transformers';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
@@ -183,12 +184,26 @@ describe('Transformer functions', () => {
     expect(onCollapse.mock.calls).toHaveLength(1);
   });
 
+  describe('expandable', () => {
+    test('with parent', () => {
+      const returned = expandable('test', { rowIndex: 2, rowData: { parent: 1 }, column: { extraParams: {} } });
+      const view = mount(returned);
+      expect(view.find('div.pf-c-table__expandable-row-content')).toHaveLength(1);
+      expect(view).toMatchSnapshot();
+    });
+
+    test('no parent', () => {
+      expect(expandable('test', { rowData: {}, column: { extraParams: {} } })).toBe('test');
+    });
+  });
+
   describe('expandedRow', () => {
     test('with parent', () => {
-      const returned = expandedRow(5)({ title: 'test' }, { rowData: { parent: 1 }, column: { extraParams: {} } });
-      expect(returned).toMatchObject({ colSpan: 5 });
-      const view = mount(returned.children);
-      expect(view.find('div.pf-c-table__expandable-row-content')).toHaveLength(1);
+      const returned = expandedRow(5)(
+        { title: 'test' },
+        { rowIndex: 2, rowData: { parent: 1 }, column: { extraParams: {} } }
+      );
+      expect(returned).toMatchObject({ colSpan: 5, id: 'expanded-content2' });
     });
 
     test('no parent', () => {
