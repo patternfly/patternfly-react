@@ -12,6 +12,7 @@ export interface ContextSelectorProps extends HTMLProps<HTMLDivElement> {
   searchInputValue?: string;
   onSearchInputChange?(value: string): void;
   searchInputPlaceholder?: string;
+  onSearchButtonClick?(event: React.SyntheticEvent<HTMLButtonElement>): void;
 }
 
 declare const ContextSelector: FunctionComponent<ContextSelectorProps>;
