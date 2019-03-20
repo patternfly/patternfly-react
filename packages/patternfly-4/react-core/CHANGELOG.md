@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.8.4...@patternfly/react-core@2.9.0) (2019-03-20)
+
+
+### Features
+
+* **ContextSelector:** Add PF4 ContextSelector Component ([#1526](https://github.com/patternfly/patternfly-react/issues/1526)) ([df745ea](https://github.com/patternfly/patternfly-react/commit/df745ea)), closes [#1294](https://github.com/patternfly/patternfly-react/issues/1294) [#1525](https://github.com/patternfly/patternfly-react/issues/1525)
+
+
+
+
+
 ## [2.8.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.8.3...@patternfly/react-core@2.8.4) (2019-03-20)
 
 
