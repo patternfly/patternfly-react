@@ -1,7 +1,7 @@
-import { FunctionComponent, HTMLProps, ReactNode } from 'react';
-import { OneOf } from '../../typeUtils';
+import { FunctionComponent, ReactNode } from 'react';
+import { OneOf } from '../../helpers/typeUtils';
 
-export interface ContextSelectorProps extends HTMLProps<HTMLDivElement> {
+export interface ContextSelectorProps {
   children?: ReactNode;
   isOpen?: boolean;
   onToggle?(value: boolean): void;
