@@ -27,7 +27,6 @@ query SiteTitleQuery {
     edge.node.page = getPagePath(edge.node.fileAbsolutePath)
     return edge.node
   }).sort((n1, n2) => n1.page.localeCompare(n2.page));
-  console.log('ordered', orderedNodes);
 
   return (
     <React.Fragment>
