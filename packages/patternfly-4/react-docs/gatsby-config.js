@@ -1,46 +1,22 @@
-const { resolve } = require('path');
-
 module.exports = {
   siteMetadata: {
-    title: 'PatternFly React'
+    title: `Patternfly React Docs`,
+    description: `Documentation for https://github.com/patternfly/patternfly-react`,
+    keywords: `Red Hat`,
   },
+  pathPrefix: `/patternfly-4`,
   plugins: [
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-json',
-    {
+    `gatsby-plugin-react-helmet`,
+    { // react-core source files to pipe through react-docgen
+      // react-core .md files to pipe through remark
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `components`,
-        path: resolve(__dirname, '../react-core/src'),
-        ignore: [`**/*.d.ts`, `**/*.tsx`, `**/helpers`]
-      }
+        name: `react-core`,
+        path: `${__dirname}/../react-core/src/components`,
+        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`]
+      },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `components`,
-        path: resolve(__dirname, '../react-charts/src'),
-        ignore: [`**/*.d.ts`]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `components`,
-        path: resolve(__dirname, '../react-table/src'),
-        ignore: [`**/*.d.ts`]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `components`,
-        path: resolve(__dirname, '../react-styled-system/src'),
-        ignore: [`**/*.d.ts`]
-      }
-    },
-    'gatsby-transformer-react-docgen'
+    `gatsby-transformer-react-docgen-typescript`,
+    `gatsby-transformer-remark`
   ],
-  pathPrefix: 'patternfly-4'
-};
+}

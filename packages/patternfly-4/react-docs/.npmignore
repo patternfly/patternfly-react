@@ -1,8 +1,0 @@
-.cache
-.tmp
-.babelrc
-.eslintrc
-
-public
-src
-static

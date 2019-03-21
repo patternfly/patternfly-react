@@ -1,86 +1,17 @@
-# PatternFly React Docs
-This site uses gatsby.
+# React-docs
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/).
+Gatsby is a static site generator that doubles as a hot-module reloader for building our docs.
+
+We have to more or less build our own version of [React Styleguidist](https://github.com/styleguidist/react-styleguidist). To enable hot-module reloading and other async efficiences, we have to build our own data pipeline and transformations through Gatsby's GraphQL. 
+
+1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+  - We include our own plugins for transforming component source files into metadata via [React Docgen](https://github.com/reactjs/react-docgen) and [React Docgen Typescript](https://github.com/styleguidist/react-docgen-typescript).
+
+2.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+
+3.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
 
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
-### Note: All commands below assume you are on the root directory in this repository.
-## Install
-Run to install all the dependencies
-```sh
-yarn install
-```
-
-## Running
-To start the site locally.
-```sh
-yarn build && yarn start:pf4
-```
-
-## Building
-To build the site.
-```sh
-yarn build:docs
-```
-
-## Live examples
-### Disabling globally
-You can turn off the functionality to live edit the examples globally by settings GATSBY_LIVE_EXAMPLES to false, either by editing [.env.development](./.env.development) and [.env.production](./.env.production) or by setting it in the CLI prior to starting the docs:
-```sh
-GATSBY_LIVE_EXAMPLES=false yarn start:pf4
-```
-### Other example settings
-There are some special static fields you can specify in the example to change behavior:
-```sh
-// Sets the title for the example
-static title = 'Example title';
-
-// Sets the description for the example
-static description = 'Example description';
-
-// True by default, set to false to disable live editing for this example
-static live = false;
-
-// Pass imports into the liveScope object so it is available to the live editor.
-// By default, the live editor only knows about React.*, react-core components, react-icons, and the react-styles css function
-// If you have additional imports in your examples, they can be passed to the live editor scope like this:
-static liveScope = { spacingStyles };
-
-// Additional styles relevant to the example display can be added via a static field getContainerProps.
-// getContainerProps is an import to a .js file that has content such as:
-/*
-import { css, StyleSheet } from '@patternfly/react-styles';
-const styles = StyleSheet.create({
-  demoLayout: {
-    '& > .pf-c-alert': {
-      marginBottom: '0.5rem'
-    }
-  }
-});
-export default () => ({ className: css(styles.demoLayout) });
-*/
-static getContainerProps = getContainerProps;
-
-```
-In the examples *.docs.js file, you can specify these properties:
-```sh
-// Main title for the examples
-title: 'Alert',
-
-// Components to display in the props table
-components: {
-  Alert
-},
-
-// Enums that need to be evaluated for the props table
-enumValues: {
-  'Object.values(AlertVariant)': Object.values(AlertVariant)
-},
-
-// The examples
-examples: [SuccessExample, DangerExample, InfoExample, WarningExample],
-// True to show links instead of inline examples, also turns live editing off
-
-fullPageOnly: false
-```
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
