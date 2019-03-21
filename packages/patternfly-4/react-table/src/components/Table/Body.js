@@ -2,7 +2,6 @@ import React from 'react';
 import { Body } from 'reactabular-table';
 import PropTypes from 'prop-types';
 import { TableContext } from './Table';
-import { isRowExpanded } from './utils';
 
 const propTypes = {
   /** Additional classes for table body. */
@@ -33,33 +32,50 @@ class ContextBody extends React.Component {
     };
   };
 
-  mapCells = (headerData, row, rowKey) => {
-    // column indexes start after generated optional columns
-    let additionalColsIndexShift = headerData[0].extraParams.firstUserColumnIndex;
+  parentsExpanded(parentId) {
+    const { rows } = this.props;
+    return rows[parentId].hasOwnProperty('parent')
+      ? this.parentsExpanded(rows[parentId].parent)
+      : rows[parentId].isOpen;
+  }
 
+  mapCells = (row, rowKey) => {
+    const { headerData } = this.props;
+    let shiftKey = Boolean(headerData[0] && headerData[0].extraParams.onSelect);
+    shiftKey += Boolean(headerData[0] && headerData[0].extraParams.onCollapse);
     return {
       ...(row &&
         (row.cells || row).reduce(
-          (acc, cell, cellIndex) => {
-            const isCellObject = cell === Object(cell);
-
-            const mappedCell = {
-              [headerData[cellIndex + additionalColsIndexShift].property]: {
-                title: isCellObject ? cell.title : cell,
-                props: {
-                  isVisible: true,
-                  ...(isCellObject ? cell.props : null)
-                }
+          (acc, curr, key) => {
+            const currShift = shiftKey;
+            if (curr) {
+              if (curr.props && curr.props.colSpan) {
+                shiftKey += shiftKey + curr.props && curr.props.colSpan - 1;
               }
-            };
-
-            // increment the shift index when a cell spans multiple columns
-            if (isCellObject && cell.props && cell.props.colSpan) {
-              additionalColsIndexShift += cell.props.colSpan - 1;
+              return {
+                ...acc,
+                ...{
+                  [headerData[currShift + key].property]: {
+                    title: curr.title || curr,
+                    props: {
+                      isVisible: true,
+                      ...curr.props
+                    }
+                  }
+                }
+              };
             }
+            console.warn(`Cell value at [ ${rowKey}, ${key} ] should not be set to ${curr}`);
             return {
               ...acc,
-              ...mappedCell
+              ...{
+                [headerData[currShift + key].property]: {
+                  title: curr,
+                  props: {
+                    isVisible: true
+                  }
+                }
+              }
             };
           },
           { id: row.id !== undefined ? row.id : rowKey }
@@ -70,13 +86,16 @@ class ContextBody extends React.Component {
   render() {
     const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
     const mappedRows =
-      headerData.length > 0 &&
+      headerData.length !== 0 &&
       rows.map((oneRow, oneRowKey) => ({
         ...oneRow,
-        ...this.mapCells(headerData, oneRow, oneRowKey),
-        isExpanded: isRowExpanded(oneRow, rows)
+        ...this.mapCells(oneRow, oneRowKey),
+        ...(oneRow.parent !== undefined
+          ? {
+              isExpanded: this.parentsExpanded(oneRow.parent) && rows[oneRow.parent].isOpen
+            }
+          : {})
       }));
-
     return (
       <React.Fragment>
         {mappedRows && (
