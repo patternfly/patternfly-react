@@ -1,6 +1,6 @@
 import { FunctionComponent, HTMLProps, ReactType } from 'react';
 
-export interface ContextSelectorItemProps extends HTMLProps<HTMLButtonElement> {
+export interface ContextSelectorItemProps {
   isDisabled?: boolean;
   isSelected?: boolean;
   isHovered?: boolean;

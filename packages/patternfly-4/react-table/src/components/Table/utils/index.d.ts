@@ -3,7 +3,7 @@ import { IRow, IExtra } from '../Table';
 
 export interface ISortable {
   className: string;
-  children: ReactNode
+  children: ReactNode;
 }
 
 export const sortable: (label: string, extra: IExtra) => ISortable;
