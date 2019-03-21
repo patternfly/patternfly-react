@@ -1,30 +1,32 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { getUsedComponents } from './helpers'
+import SidebarLayout from "../components/sidebarLayout"
+// import Tokens from '../components/tokens'
+/* <Tokens variables="pf-global"></Tokens> */
 
 export default function Template({ data, pageContext }) {
-  // const { markdownRemark } = data // data.markdownRemark holds our post data
-  // const { frontmatter, html } = markdownRemark
-  // return (
-  //   <div className="blog-post-container">
-  //     <div className="blog-post">
-  //       <h1>{frontmatter.title}</h1>
-  //       <div
-  //         className="blog-post-content"
-  //         dangerouslySetInnerHTML={{ __html: html }}
-  //       />
-  //     </div>
-  //   </div>
-  // )
-  return <div>
-    bad html
-    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+  // Exported components in the folder (i.e. src/components/Alerts/*)
+  const siblingComponents = data.metadata.edges.map(e => e.node.name)
+  // Exported components with names used in the docs
+  const propComponents = getUsedComponents(data.markdownRemark.htmlAst, siblingComponents, {})
+  // Finally, their props!
+  const props = data.metadata.edges
+    .filter(edge => propComponents.indexOf(edge.node.name) !== -1)
+    .map(edge => { return { name: edge.node.name, props: edge.node.props } });
+
+  return <SidebarLayout>
+    <h1>{data.markdownRemark.frontmatter.title}</h1>
+    tokens
     props
-    <div></div>
+    <div>{JSON.stringify(props)}</div>
     context
     <p>{JSON.stringify(pageContext)}</p>
+    bad html
+    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
     data
     <p>{JSON.stringify(data)}</p>
-  </div>
+  </SidebarLayout>
 }
 
 // Test queries in http://localhost:8000/___graphql
@@ -39,9 +41,10 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
     htmlAst
     frontmatter {
       title
+      cssPrefix
     }
   }
-  allComponentMetadata(filter: {path: {regex: $pathRegex}}) {
+  metadata: allComponentMetadata(filter: {path: {regex: $pathRegex}}) {
     edges {
       node {
         path

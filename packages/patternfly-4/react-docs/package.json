@@ -11,6 +11,7 @@
     "build": "gatsby build --prefix-paths"
   },
   "dependencies": {
+    "@patternfly/react-tokens": "^2.2.0",
     "gatsby": "^2.1.37",
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-react-helmet": "^3.0.10",

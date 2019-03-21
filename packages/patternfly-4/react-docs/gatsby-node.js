@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+const helpers = require("./src/helpers/navHelpers")
 const path = require("path")
 
 exports.createPages = ({ actions, graphql }) => {
@@ -12,32 +13,24 @@ exports.createPages = ({ actions, graphql }) => {
   const blogPostTemplate = path.resolve(`./src/templates/markdownTemplate.js`)
 
   return graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            fileAbsolutePath
-            htmlAst
-            frontmatter {
-              title
-              cssPrefix
-            }
-          }
-        }
+{
+  allMarkdownRemark {
+    edges {
+      node {
+        fileAbsolutePath
       }
     }
+  }
+}
   `).then(result => {
     if (result.errors) {
       return Promise.reject(result.errors)
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      const extension = path.extname(node.fileAbsolutePath);
-      const componentName = path.basename(node.fileAbsolutePath, extension).toLowerCase().trim();
-      const split = node.fileAbsolutePath.split('/');
-      const folderName = split[split.length - 2]; // i.e. 'Alert' in '/ff/ff/Alert/AlertSomething.js'
+      const pagePath = helpers.getPagePath(node.fileAbsolutePath); // node.fileAbsolutePath // 
+      const folderName = helpers.getParentFolder(node.fileAbsolutePath); // 'asdf' //
 
-      const pagePath = '/components/' + componentName
       console.log('adding page', pagePath);
       createPage({
         path: pagePath,
@@ -49,4 +42,4 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
   })
-}
+};

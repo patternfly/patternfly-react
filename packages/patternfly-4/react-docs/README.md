@@ -4,8 +4,9 @@ Gatsby is a static site generator that doubles as a hot-module reloader for buil
 
 We have to more or less build our own version of [React Styleguidist](https://github.com/styleguidist/react-styleguidist). To enable hot-module reloading and other async efficiences, we have to build our own data pipeline and transformations through Gatsby's GraphQL. 
 
-1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-  - We include our own plugins for transforming component source files into metadata via [React Docgen](https://github.com/reactjs/react-docgen) and [React Docgen Typescript](https://github.com/styleguidist/react-docgen-typescript).
+1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+  - We include our own plugin `gatsby-transformer-react-docgen-typescript` for transforming component source files into metadata via [React Docgen](https://github.com/reactjs/react-docgen) and [React Docgen Typescript](https://github.com/styleguidist/react-docgen-typescript).
+  - We use `gatsby-transformer-remark` to parse the *.md files into HTML
 
 2.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 

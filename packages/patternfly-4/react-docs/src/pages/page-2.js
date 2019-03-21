@@ -1,14 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import SidebarLayout from "../components/sidebarLayout"
 
 const SecondPage = () => (
-  <Layout>
+  <SidebarLayout>
     <h1>Hi from the second page</h1>
     <p>Welcome to page 2</p>
     <Link to="/">Go back to the homepage</Link>
-  </Layout>
+  </SidebarLayout>
 )
 
 export default SecondPage

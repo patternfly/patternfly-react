@@ -78,7 +78,7 @@ async function onCreateNode({
       parsed = docgenJavascript.parse(sourceText);
     }
   } catch (err) {
-    console.warn("Can't find a component in", node.absolutePath);
+    console.warn("No component found in", node.absolutePath);
   }
 
   if (parsed) {
