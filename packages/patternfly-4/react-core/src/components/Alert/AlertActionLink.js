@@ -7,7 +7,7 @@ const propTypes = {
   children: PropTypes.string,
   /** additional classes added to the AlertActionLink */
   className: PropTypes.string,
-  /** Additional props are spread to the container <Button>  */
+  /** Additional props are spread to the container - button  */
   '': PropTypes.any
 };
 

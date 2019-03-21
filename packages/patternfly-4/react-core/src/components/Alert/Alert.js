@@ -24,16 +24,19 @@ const propTypes = {
   children: PropTypes.node,
   /** additional classes added to the Alert */
   className: PropTypes.string,
-  /** Adds accessible text to the Alert */
+  /** Adds an accessible name to the Alert */
   'aria-label': PropTypes.string,
+  /** Sets recommended aria attributes and CSS classes */
+  isToast: PropTypes.bool,
   /** Variant label text for screen readers */
   variantLabel: PropTypes.string,
-  /** Additional props are spread to the container <div>  */
+  /** Additional props are spread to the container - div  */
   '': PropTypes.any
 };
 
 const defaultProps = {
   'aria-label': undefined,
+  isToast: false,
   action: null,
   children: '',
   className: '',
@@ -46,6 +49,7 @@ const Alert = ({
   variant,
   variantLabel,
   'aria-label': ariaLabel = getDefaultAriaLabel(variant),
+  isToast,
   action,
   title,
   children,
@@ -60,19 +64,30 @@ const Alert = ({
     </React.Fragment>
   );
 
-  const customClassName = css(styles.alert, getModifier(styles, variant, styles.modifiers.info), className);
-
+  const customClassName = css(
+    styles.alert,
+    getModifier(styles, variant, styles.modifiers.info),
+    className,
+    (isToast && 'pf-m-live')
+  );
   return (
     <div {...props} className={customClassName} aria-label={ariaLabel}>
       <AlertIcon variant={variant} />
-      <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>
-      {children && (
-        <div className={css(styles.alertDescription)}>
-          <p>{children}</p>
-        </div>
-      )}
+      <div
+        aria-live={isToast ? 'polite' : undefined}
+        aria-atomic={isToast ? 'false' : undefined}
+        className="pf-c-alert__content">
+        <h4 className={css(styles.alertTitle)}>{readerTitle}</h4>
+        {children && (
+          <div className={css(styles.alertDescription)}>
+            <p>{children}</p>
+          </div>
+        )}
+      </div>
       {action && (
-        <div className={css(styles.alertAction, className)}>{React.cloneElement(action, { title, variantLabel })}</div>
+        <div className={css(styles.alertAction, className)}>
+          {React.cloneElement(action, { title, variantLabel })}
+        </div>
       )}
     </div>
   );

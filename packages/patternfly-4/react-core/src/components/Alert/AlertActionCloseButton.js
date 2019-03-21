@@ -10,7 +10,7 @@ const propTypes = {
   onClose: PropTypes.func,
   /** Aria Label for the Close button */
   'aria-label': PropTypes.string,
-  /** Additional props are spread to the container <Button>  */
+  /** Additional props are spread to the container - button  */
   '': PropTypes.any
 };
 

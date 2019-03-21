@@ -14,6 +14,7 @@ export interface AlertProps extends Omit<HTMLProps<HTMLDivElement>, 'action'> {
   children?: ReactNode;
   action?: ReactNode;
   'aria-label'?: string;
+  isToast?: boolean;
   variantLabel?: string;
 }
 

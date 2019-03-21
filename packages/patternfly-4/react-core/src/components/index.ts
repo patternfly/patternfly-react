@@ -2,6 +2,7 @@
 export * from './AboutModal';
 export * from './Accordion';
 export * from './Alert';
+export * from './AlertGroup';
 export * from './ApplicationLauncher';
 export * from './Avatar';
 export * from './Backdrop';
