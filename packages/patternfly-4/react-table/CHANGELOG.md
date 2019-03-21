@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.3.3...@patternfly/react-table@1.3.4) (2019-03-21)
+
+
+### Bug Fixes
+
+* **Table:** reverts 5d31f0d52c7253b2f267f88b401debd5d479610a ([#1623](https://github.com/patternfly/patternfly-react/issues/1623)) ([83165c5](https://github.com/patternfly/patternfly-react/commit/83165c5))
+* **ts-fixes:** ts definition changes ([#1619](https://github.com/patternfly/patternfly-react/issues/1619)) ([11cc103](https://github.com/patternfly/patternfly-react/commit/11cc103))
+
+
+
+
+
 ## [1.3.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.3.2...@patternfly/react-table@1.3.3) (2019-03-21)
 
 **Note:** Version bump only for package @patternfly/react-table
