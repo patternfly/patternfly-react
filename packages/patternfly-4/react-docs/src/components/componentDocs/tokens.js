@@ -13,14 +13,21 @@ class Tokens extends React.Component {
   }
 
   render() {
-    return <div>
-      {this.props.cssPrefix}
-      <ul>
-        {this.cssTokens.map(token =>
-          <li key={token.name}>{token.name} / {token.value} / {token.var}</li>
-        )}
-      </ul>
-    </div>
+    return <table>
+      Prefix: {this.props.cssPrefix}
+      <tbody>
+      <tr>
+        <th>CSS Variable</th>
+        <th>Value</th>
+      </tr>
+      {this.cssTokens.map(token =>
+        <tr key={token.name}>
+          <td>{token.name}</td>
+          <td>{token.value}</td>
+        </tr>
+      )}
+      </tbody>
+    </table>
   }
 }
 

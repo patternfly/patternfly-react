@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { getUsedComponents } from './helpers'
 import SidebarLayout from "../components/sidebarLayout"
-import { Tokens, Props } from "../components"
+import { Tokens, Props } from "../components/componentDocs"
 // import Tokens from '../components/tokens'
 /* <Tokens variables="pf-global"></Tokens> */
 

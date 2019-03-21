@@ -3,13 +3,13 @@ import React from 'react';
 const Props = ({ propList }) => {
 
   return <table style={{ width: "100%" }}>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Required</th>
-      <th>Default</th>
-    </tr>
     <tbody>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+      </tr>
       {propList.map(prop =>
         <tr key={prop.name}>
           <td>{prop.name}</td>
