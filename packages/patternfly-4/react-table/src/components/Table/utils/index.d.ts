@@ -11,4 +11,3 @@ export const headerCol: () => { component: string };
 export const cellWidth: (width: string) => () => { className: string };
 export const expandable: (value: ReactNode, extra: IExtra) => ReactNode;
 export const isRowExpanded: (row: IRow, rows: Array<IRow>) => boolean | undefined;
-export { IExtra };
