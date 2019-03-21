@@ -15,8 +15,10 @@ const propTypes = {
   className: PropTypes.string,
   /** the index of the active tab */
   activeKey: PropTypes.number,
-  /** handel tab selection */
+  /** handle tab selection */
   onSelect: PropTypes.func,
+  /** uniquely identifies the Tabs */
+  id: PropTypes.string,
   /** Enables the filled tab list layout */
   isFilled: PropTypes.bool,
   /** Enables Secondary Tab styling */
@@ -33,6 +35,7 @@ const defaultProps = {
   className: '',
   activeKey: 0,
   onSelect: () => undefined,
+  id: null,
   isFilled: false,
   isSecondary: false,
   leftScrollAriaLabel: 'Scroll left',
@@ -40,15 +43,15 @@ const defaultProps = {
   'aria-label': null
 };
 
-const Tabs = ({ 'aria-label': ariaLabel, ...props }) => (
-  ariaLabel
-    ? <TabsWithNav ariaLabel={ariaLabel} {...props} />
-    : <TabsWithDiv {...props} />
-);
+const Tabs = ({ 'aria-label': ariaLabel, id, ...props }) => {
+  const unique_id = id ? id : getUniqueId();
+  return ariaLabel
+    ? <TabsWithNav ariaLabel={ariaLabel} id={unique_id} {...props} />
+    : <TabsWithDiv id={unique_id} {...props} />;
+}
 
-const TabsWithNav = ({ activeKey, ariaLabel, className, isFilled, isSecondary, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => {
-  const id = getUniqueId();
-  return <nav {...props}
+const TabsWithNav = ({ activeKey, ariaLabel, className, id, isFilled, isSecondary, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
+  <nav {...props}
     aria-label={ariaLabel}
     className={css(
       styles.tabs,
@@ -62,12 +65,11 @@ const TabsWithNav = ({ activeKey, ariaLabel, className, isFilled, isSecondary, s
   >
     <InternalTabs id={id} activeKey={activeKey} {...props} />
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
-  </nav>;
-}
+  </nav>
+);
 
-const TabsWithDiv = ({ activeKey, className, isFilled, isSecondary, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => {
-  const id = getUniqueId();
-  return <div {...props}
+const TabsWithDiv = ({ activeKey, className, id, isFilled, isSecondary, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
+  <div {...props}
     className={css(
       styles.tabs,
       isFilled && styles.modifiers.fill,
@@ -80,8 +82,8 @@ const TabsWithDiv = ({ activeKey, className, isFilled, isSecondary, showLeftScro
   >
     <InternalTabs id={id} activeKey={activeKey} {...props} />
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
-  </div>;
-}
+  </div>
+);
 
 class InternalTabs extends React.Component {
   static propTypes = propTypes;

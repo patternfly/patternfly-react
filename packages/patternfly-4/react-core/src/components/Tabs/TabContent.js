@@ -11,11 +11,13 @@ const propTypes = {
   children: PropTypes.any,
   /** class of tab content area if used outside Tabs component */
   className: PropTypes.string,
+  /** uniquely identifies the controlling Tab if used outside Tabs component */
+  eventKey: PropTypes.number,
   /** id passed from parent to identify the content section */
   id: PropTypes.string.isRequired,
   /** title of controlling Tab if used outside Tabs component */
   'aria-label': PropTypes.string
-};
+}
 
 const defaultProps = {
   activeKey: 0,

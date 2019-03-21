@@ -143,9 +143,11 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
 }
 
 <Tabs
+  id="handleScrollButtons"
   isFilled={true}
 >
   <TabsWithDiv
+    id="handleScrollButtons"
     isFilled={true}
   >
     <div
@@ -155,7 +157,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         activeKey={0}
         aria-label={null}
         className=""
-        id="pf-15531963924231g3a3apvgi8"
+        id="handleScrollButtons"
         isFilled={false}
         isSecondary={false}
         leftScrollAriaLabel="Scroll left"
@@ -365,7 +367,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
         </button>
       </InternalTabs>
       <InternalTabContainer
-        id="pf-15531963924231g3a3apvgi8"
+        id="handleScrollButtons"
       >
         <ForwardRef
           child={
@@ -642,9 +644,11 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
 }
 
 <Tabs
+  id="scrollLeft"
   isFilled={true}
 >
   <TabsWithDiv
+    id="scrollLeft"
     isFilled={true}
   >
     <div
@@ -654,7 +658,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         activeKey={0}
         aria-label={null}
         className=""
-        id="pf-1553196390483w6pldt57db"
+        id="scrollLeft"
         isFilled={false}
         isSecondary={false}
         leftScrollAriaLabel="Scroll left"
@@ -864,7 +868,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
         </button>
       </InternalTabs>
       <InternalTabContainer
-        id="pf-1553196390483w6pldt57db"
+        id="scrollLeft"
       >
         <ForwardRef
           child={
@@ -1141,9 +1145,11 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
 }
 
 <Tabs
+  id="scrollRight"
   isFilled={true}
 >
   <TabsWithDiv
+    id="scrollRight"
     isFilled={true}
   >
     <div
@@ -1153,7 +1159,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         activeKey={0}
         aria-label={null}
         className=""
-        id="pf-15531963916886yos6zk18kx"
+        id="scrollRight"
         isFilled={false}
         isSecondary={false}
         leftScrollAriaLabel="Scroll left"
@@ -1363,7 +1369,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
         </button>
       </InternalTabs>
       <InternalTabContainer
-        id="pf-15531963916886yos6zk18kx"
+        id="scrollRight"
       >
         <ForwardRef
           child={
@@ -1497,8 +1503,38 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
 </Tabs>
 `;
 
+exports[`should render accessible tabs 1`] = `
+<TabsWithNav
+  ariaLabel="accessible Tabs example"
+  id="accessibleTabs"
+>
+  <ForwardRef
+    eventKey={0}
+    id="tab1"
+    title="Tab item 1"
+  >
+    Tab 1 section
+  </ForwardRef>
+  <ForwardRef
+    eventKey={1}
+    id="tab2"
+    title="Tab item 2"
+  >
+    Tab 2 section
+  </ForwardRef>
+  <ForwardRef
+    eventKey={2}
+    id="tab3"
+    title="Tab item 3"
+  >
+    Tab 3 section
+  </ForwardRef>
+</TabsWithNav>
+`;
+
 exports[`should render filled tabs 1`] = `
 <TabsWithDiv
+  id="filledTabs"
   isFilled={true}
 >
   <ForwardRef
@@ -1526,13 +1562,16 @@ exports[`should render filled tabs 1`] = `
 `;
 
 exports[`should render secondary tabs 1`] = `
-<TabsWithDiv>
+<TabsWithDiv
+  id="primaryTabs"
+>
   <ForwardRef
     eventKey={0}
-    id="tab1"
     title="Tab item 1"
   >
-    <Tabs>
+    <Tabs
+      id="secondaryTabs"
+    >
       <ForwardRef
         eventKey={10}
         id="secondary tab1"
@@ -1574,7 +1613,9 @@ exports[`should render secondary tabs 1`] = `
 `;
 
 exports[`should render simple tabs 1`] = `
-<TabsWithDiv>
+<TabsWithDiv
+  id="simpleTabs"
+>
   <ForwardRef
     eventKey={0}
     id="tab1"

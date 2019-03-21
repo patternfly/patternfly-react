@@ -11,9 +11,12 @@ const propTypes = {
   /** uniquely identifies the tab */
   eventKey: PropTypes.number.isRequired,
   /** child id for case in which a TabContent section is defined outside of a Tabs component */
-  tabContentId: PropTypes.string,
+  tabContentId: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   /** child reference for case in which a TabContent section is defined outside of a Tabs component */
-  tabContentRef: PropTypes.object,
+  tabContentRef: PropTypes.elementType,
 };
 
 const defaultProps = {
