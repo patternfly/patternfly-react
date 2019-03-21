@@ -1471,7 +1471,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1512,7 +1511,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1553,7 +1551,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1594,7 +1591,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1635,7 +1631,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1676,7 +1671,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1717,7 +1711,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1758,7 +1751,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1799,7 +1791,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1846,7 +1837,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1887,7 +1877,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1928,7 +1917,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -1969,7 +1957,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -2010,7 +1997,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -2051,7 +2037,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -2092,7 +2077,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -2133,7 +2117,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -2174,7 +2157,6 @@ exports[`Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -2222,7 +2204,6 @@ exports[`Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -2263,7 +2244,6 @@ exports[`Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -2304,7 +2284,6 @@ exports[`Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -2345,7 +2324,6 @@ exports[`Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -2386,7 +2364,6 @@ exports[`Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -2427,7 +2404,6 @@ exports[`Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -2468,7 +2444,6 @@ exports[`Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -2509,7 +2484,6 @@ exports[`Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -2550,7 +2524,6 @@ exports[`Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -2851,7 +2824,6 @@ exports[`Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -3060,7 +3032,6 @@ exports[`Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 0,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -3508,7 +3479,6 @@ exports[`Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -3717,7 +3687,6 @@ exports[`Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 1,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -4165,7 +4134,6 @@ exports[`Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -4374,7 +4342,6 @@ exports[`Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 2,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -4822,7 +4789,6 @@ exports[`Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -5031,7 +4997,6 @@ exports[`Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 3,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -5479,7 +5444,6 @@ exports[`Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -5688,7 +5652,6 @@ exports[`Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 4,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -6136,7 +6099,6 @@ exports[`Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -6345,7 +6307,6 @@ exports[`Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 5,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -6793,7 +6754,6 @@ exports[`Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -7002,7 +6962,6 @@ exports[`Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 6,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -7450,7 +7409,6 @@ exports[`Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -7659,7 +7617,6 @@ exports[`Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 7,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -8107,7 +8064,6 @@ exports[`Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -8316,7 +8272,6 @@ exports[`Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 8,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -9563,7 +9518,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9604,7 +9558,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9645,7 +9598,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9686,7 +9638,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9727,7 +9678,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9768,7 +9718,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9809,7 +9758,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9850,7 +9798,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9891,7 +9838,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9938,7 +9884,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -9979,7 +9924,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -10020,7 +9964,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -10061,7 +10004,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -10102,7 +10044,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -10143,7 +10084,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -10184,7 +10124,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -10225,7 +10164,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -10266,7 +10204,6 @@ exports[`Cell header table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -10314,7 +10251,6 @@ exports[`Cell header table 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -10355,7 +10291,6 @@ exports[`Cell header table 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -10396,7 +10331,6 @@ exports[`Cell header table 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -10437,7 +10371,6 @@ exports[`Cell header table 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -10478,7 +10411,6 @@ exports[`Cell header table 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -10519,7 +10451,6 @@ exports[`Cell header table 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -10560,7 +10491,6 @@ exports[`Cell header table 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -10601,7 +10531,6 @@ exports[`Cell header table 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -10642,7 +10571,6 @@ exports[`Cell header table 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -10903,7 +10831,6 @@ exports[`Cell header table 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -11241,7 +11168,6 @@ exports[`Cell header table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -11579,7 +11505,6 @@ exports[`Cell header table 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -11917,7 +11842,6 @@ exports[`Cell header table 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -12255,7 +12179,6 @@ exports[`Cell header table 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -12593,7 +12516,6 @@ exports[`Cell header table 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -12931,7 +12853,6 @@ exports[`Cell header table 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -13269,7 +13190,6 @@ exports[`Cell header table 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -13607,7 +13527,6 @@ exports[`Cell header table 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -15104,7 +15023,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -15231,7 +15149,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -15315,7 +15232,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -15356,7 +15272,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -15397,7 +15312,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -15438,7 +15352,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -15485,7 +15398,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -15612,7 +15524,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -15696,7 +15607,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -15737,7 +15647,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -15778,7 +15687,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -15819,7 +15727,6 @@ exports[`Collapsible nested table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -15867,7 +15774,6 @@ exports[`Collapsible nested table 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "isOpen": false,
                     "last-commit": Object {
                       "props": Object {
@@ -15994,7 +15900,6 @@ exports[`Collapsible nested table 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "isOpen": false,
                     "last-commit": Object {
                       "props": Object {
@@ -16078,7 +15983,6 @@ exports[`Collapsible nested table 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -16119,7 +16023,6 @@ exports[`Collapsible nested table 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -16160,7 +16063,6 @@ exports[`Collapsible nested table 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -16201,7 +16103,6 @@ exports[`Collapsible nested table 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -16511,7 +16412,6 @@ exports[`Collapsible nested table 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "isOpen": false,
                       "last-commit": Object {
                         "props": Object {
@@ -17828,7 +17728,6 @@ exports[`Collapsible nested table 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "isOpen": false,
                       "last-commit": Object {
                         "props": Object {
@@ -18692,7 +18591,6 @@ exports[`Collapsible nested table 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -19103,7 +19001,6 @@ exports[`Collapsible nested table 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -19514,7 +19411,6 @@ exports[`Collapsible nested table 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -19925,7 +19821,6 @@ exports[`Collapsible nested table 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -21416,7 +21311,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "isOpen": true,
                   "last-commit": Object {
                     "props": Object {
@@ -21500,7 +21394,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -21541,7 +21434,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -21625,7 +21517,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -21666,7 +21557,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -21707,7 +21597,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -21748,7 +21637,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -21795,7 +21683,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "isOpen": true,
                   "last-commit": Object {
                     "props": Object {
@@ -21879,7 +21766,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -21920,7 +21806,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -22004,7 +21889,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -22045,7 +21929,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -22086,7 +21969,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -22127,7 +22009,6 @@ exports[`Collapsible table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -22175,7 +22056,6 @@ exports[`Collapsible table 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "isOpen": true,
                     "last-commit": Object {
                       "props": Object {
@@ -22259,7 +22139,6 @@ exports[`Collapsible table 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -22300,7 +22179,6 @@ exports[`Collapsible table 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "isOpen": false,
                     "last-commit": Object {
                       "props": Object {
@@ -22384,7 +22262,6 @@ exports[`Collapsible table 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -22425,7 +22302,6 @@ exports[`Collapsible table 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -22466,7 +22342,6 @@ exports[`Collapsible table 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -22507,7 +22382,6 @@ exports[`Collapsible table 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -22817,7 +22691,6 @@ exports[`Collapsible table 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "isOpen": true,
                       "last-commit": Object {
                         "props": Object {
@@ -23681,7 +23554,6 @@ exports[`Collapsible table 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -24092,7 +23964,6 @@ exports[`Collapsible table 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "isOpen": false,
                       "last-commit": Object {
                         "props": Object {
@@ -24956,7 +24827,6 @@ exports[`Collapsible table 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -25367,7 +25237,6 @@ exports[`Collapsible table 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -25778,7 +25647,6 @@ exports[`Collapsible table 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -26189,7 +26057,6 @@ exports[`Collapsible table 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -27386,7 +27253,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -27513,7 +27379,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -27597,7 +27462,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -27638,7 +27502,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -27679,7 +27542,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -27720,7 +27582,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -27767,7 +27628,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -27894,7 +27754,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -27978,7 +27837,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -28019,7 +27877,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -28060,7 +27917,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -28101,7 +27957,6 @@ exports[`Header width table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -28149,7 +28004,6 @@ exports[`Header width table 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "isOpen": false,
                     "last-commit": Object {
                       "props": Object {
@@ -28276,7 +28130,6 @@ exports[`Header width table 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "isOpen": false,
                     "last-commit": Object {
                       "props": Object {
@@ -28360,7 +28213,6 @@ exports[`Header width table 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -28401,7 +28253,6 @@ exports[`Header width table 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -28442,7 +28293,6 @@ exports[`Header width table 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -28483,7 +28333,6 @@ exports[`Header width table 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -28748,7 +28597,6 @@ exports[`Header width table 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "isOpen": false,
                       "last-commit": Object {
                         "props": Object {
@@ -29797,7 +29645,6 @@ exports[`Header width table 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "isOpen": false,
                       "last-commit": Object {
                         "props": Object {
@@ -30495,7 +30342,6 @@ exports[`Header width table 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -30842,7 +30688,6 @@ exports[`Header width table 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -31189,7 +31034,6 @@ exports[`Header width table 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -31536,7 +31380,6 @@ exports[`Header width table 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -32974,7 +32817,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -33101,7 +32943,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -33185,7 +33026,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -33226,7 +33066,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -33267,7 +33106,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -33308,7 +33146,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -33355,7 +33192,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -33482,7 +33318,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "isOpen": false,
                   "last-commit": Object {
                     "props": Object {
@@ -33566,7 +33401,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -33607,7 +33441,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -33648,7 +33481,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -33689,7 +33521,6 @@ exports[`Selectable table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -33737,7 +33568,6 @@ exports[`Selectable table 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "isOpen": false,
                     "last-commit": Object {
                       "props": Object {
@@ -33864,7 +33694,6 @@ exports[`Selectable table 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "isOpen": false,
                     "last-commit": Object {
                       "props": Object {
@@ -33948,7 +33777,6 @@ exports[`Selectable table 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -33989,7 +33817,6 @@ exports[`Selectable table 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -34030,7 +33857,6 @@ exports[`Selectable table 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -34071,7 +33897,6 @@ exports[`Selectable table 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -34375,7 +34200,6 @@ exports[`Selectable table 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "isOpen": false,
                       "last-commit": Object {
                         "props": Object {
@@ -35598,7 +35422,6 @@ exports[`Selectable table 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "isOpen": false,
                       "last-commit": Object {
                         "props": Object {
@@ -36418,7 +36241,6 @@ exports[`Selectable table 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -36835,7 +36657,6 @@ exports[`Selectable table 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -37252,7 +37073,6 @@ exports[`Selectable table 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -37669,7 +37489,6 @@ exports[`Selectable table 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -39681,7 +39500,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -39722,7 +39540,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -39763,7 +39580,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -39804,7 +39620,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -39845,7 +39660,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -39886,7 +39700,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -39927,7 +39740,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -39968,7 +39780,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40009,7 +39820,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40051,7 +39861,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 9,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40098,7 +39907,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40139,7 +39947,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40180,7 +39987,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40221,7 +40027,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40262,7 +40067,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40303,7 +40107,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40344,7 +40147,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40385,7 +40187,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40426,7 +40227,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40468,7 +40268,6 @@ exports[`Simple Actions table 1`] = `
                     "title": "one",
                   },
                   "id": 9,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -40516,7 +40315,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -40557,7 +40355,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -40598,7 +40395,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -40639,7 +40435,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -40680,7 +40475,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -40721,7 +40515,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -40762,7 +40555,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -40803,7 +40595,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -40844,7 +40635,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -40886,7 +40676,6 @@ exports[`Simple Actions table 1`] = `
                       "title": "one",
                     },
                     "id": 9,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -41295,7 +41084,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -41522,7 +41310,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 0,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -42078,7 +41865,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -42305,7 +42091,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 1,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -42861,7 +42646,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -43088,7 +42872,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 2,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -43644,7 +43427,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -43871,7 +43653,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 3,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -44427,7 +44208,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -44654,7 +44434,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 4,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -45210,7 +44989,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -45437,7 +45215,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 5,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -45993,7 +45770,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -46220,7 +45996,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 6,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -46776,7 +46551,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -47003,7 +46777,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 7,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -47559,7 +47332,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -47786,7 +47558,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 8,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -48343,7 +48114,6 @@ exports[`Simple Actions table 1`] = `
                         "title": "one",
                       },
                       "id": 9,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -48571,7 +48341,6 @@ exports[`Simple Actions table 1`] = `
                                   "title": "one",
                                 },
                                 "id": 9,
-                                "isExpanded": undefined,
                                 "last-commit": Object {
                                   "props": Object {
                                     "isVisible": true,
@@ -49720,7 +49489,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -49761,7 +49529,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -49802,7 +49569,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -49843,7 +49609,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -49884,7 +49649,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -49925,7 +49689,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -49966,7 +49729,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50007,7 +49769,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50048,7 +49809,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50095,7 +49855,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50136,7 +49895,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50177,7 +49935,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50218,7 +49975,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50259,7 +50015,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50300,7 +50055,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50341,7 +50095,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50382,7 +50135,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50423,7 +50175,6 @@ exports[`Simple table aria-label 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -50471,7 +50222,6 @@ exports[`Simple table aria-label 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -50512,7 +50262,6 @@ exports[`Simple table aria-label 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -50553,7 +50302,6 @@ exports[`Simple table aria-label 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -50594,7 +50342,6 @@ exports[`Simple table aria-label 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -50635,7 +50382,6 @@ exports[`Simple table aria-label 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -50676,7 +50422,6 @@ exports[`Simple table aria-label 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -50717,7 +50462,6 @@ exports[`Simple table aria-label 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -50758,7 +50502,6 @@ exports[`Simple table aria-label 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -50799,7 +50542,6 @@ exports[`Simple table aria-label 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -51058,7 +50800,6 @@ exports[`Simple table aria-label 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -51394,7 +51135,6 @@ exports[`Simple table aria-label 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -51730,7 +51470,6 @@ exports[`Simple table aria-label 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -52066,7 +51805,6 @@ exports[`Simple table aria-label 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -52402,7 +52140,6 @@ exports[`Simple table aria-label 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -52738,7 +52475,6 @@ exports[`Simple table aria-label 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -53074,7 +52810,6 @@ exports[`Simple table aria-label 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -53410,7 +53145,6 @@ exports[`Simple table aria-label 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -53746,7 +53480,6 @@ exports[`Simple table aria-label 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -54826,7 +54559,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -54867,7 +54599,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -54908,7 +54639,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -54949,7 +54679,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -54990,7 +54719,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55031,7 +54759,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55072,7 +54799,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55113,7 +54839,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55154,7 +54879,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55201,7 +54925,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55242,7 +54965,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55283,7 +55005,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55324,7 +55045,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55365,7 +55085,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55406,7 +55125,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55447,7 +55165,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55488,7 +55205,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55529,7 +55245,6 @@ exports[`Simple table caption 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -55577,7 +55292,6 @@ exports[`Simple table caption 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -55618,7 +55332,6 @@ exports[`Simple table caption 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -55659,7 +55372,6 @@ exports[`Simple table caption 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -55700,7 +55412,6 @@ exports[`Simple table caption 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -55741,7 +55452,6 @@ exports[`Simple table caption 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -55782,7 +55492,6 @@ exports[`Simple table caption 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -55823,7 +55532,6 @@ exports[`Simple table caption 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -55864,7 +55572,6 @@ exports[`Simple table caption 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -55905,7 +55612,6 @@ exports[`Simple table caption 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -56164,7 +55870,6 @@ exports[`Simple table caption 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -56500,7 +56205,6 @@ exports[`Simple table caption 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -56836,7 +56540,6 @@ exports[`Simple table caption 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -57172,7 +56875,6 @@ exports[`Simple table caption 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -57508,7 +57210,6 @@ exports[`Simple table caption 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -57844,7 +57545,6 @@ exports[`Simple table caption 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -58180,7 +57880,6 @@ exports[`Simple table caption 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -58516,7 +58215,6 @@ exports[`Simple table caption 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -58852,7 +58550,6 @@ exports[`Simple table caption 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -59936,7 +59633,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -59977,7 +59673,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60018,7 +59713,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60059,7 +59753,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60100,7 +59793,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60141,7 +59833,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60182,7 +59873,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60223,7 +59913,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60264,7 +59953,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60311,7 +59999,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60352,7 +60039,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60393,7 +60079,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60434,7 +60119,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60475,7 +60159,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60516,7 +60199,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60557,7 +60239,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60598,7 +60279,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60639,7 +60319,6 @@ exports[`Simple table header 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -60687,7 +60366,6 @@ exports[`Simple table header 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -60728,7 +60406,6 @@ exports[`Simple table header 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -60769,7 +60446,6 @@ exports[`Simple table header 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -60810,7 +60486,6 @@ exports[`Simple table header 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -60851,7 +60526,6 @@ exports[`Simple table header 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -60892,7 +60566,6 @@ exports[`Simple table header 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -60933,7 +60606,6 @@ exports[`Simple table header 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -60974,7 +60646,6 @@ exports[`Simple table header 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -61015,7 +60686,6 @@ exports[`Simple table header 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -61274,7 +60944,6 @@ exports[`Simple table header 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -61610,7 +61279,6 @@ exports[`Simple table header 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -61946,7 +61614,6 @@ exports[`Simple table header 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -62282,7 +61949,6 @@ exports[`Simple table header 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -62618,7 +62284,6 @@ exports[`Simple table header 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -62954,7 +62619,6 @@ exports[`Simple table header 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -63290,7 +62954,6 @@ exports[`Simple table header 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -63626,7 +63289,6 @@ exports[`Simple table header 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -63962,7 +63624,6 @@ exports[`Simple table header 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -65135,7 +64796,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65176,7 +64836,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65217,7 +64876,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65258,7 +64916,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65299,7 +64956,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65340,7 +64996,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65381,7 +65036,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65422,7 +65076,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65463,7 +65116,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65510,7 +65162,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65551,7 +65202,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65592,7 +65242,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65633,7 +65282,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65674,7 +65322,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65715,7 +65362,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65756,7 +65402,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65797,7 +65442,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65838,7 +65482,6 @@ exports[`Sortable table 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -65886,7 +65529,6 @@ exports[`Sortable table 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -65927,7 +65569,6 @@ exports[`Sortable table 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -65968,7 +65609,6 @@ exports[`Sortable table 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -66009,7 +65649,6 @@ exports[`Sortable table 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -66050,7 +65689,6 @@ exports[`Sortable table 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -66091,7 +65729,6 @@ exports[`Sortable table 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -66132,7 +65769,6 @@ exports[`Sortable table 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -66173,7 +65809,6 @@ exports[`Sortable table 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -66214,7 +65849,6 @@ exports[`Sortable table 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -66474,7 +66108,6 @@ exports[`Sortable table 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -66811,7 +66444,6 @@ exports[`Sortable table 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -67148,7 +66780,6 @@ exports[`Sortable table 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -67485,7 +67116,6 @@ exports[`Sortable table 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -67822,7 +67452,6 @@ exports[`Sortable table 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -68159,7 +67788,6 @@ exports[`Sortable table 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -68496,7 +68124,6 @@ exports[`Sortable table 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -68833,7 +68460,6 @@ exports[`Sortable table 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -69170,7 +68796,6 @@ exports[`Sortable table 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -70341,7 +69966,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70382,7 +70006,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70423,7 +70046,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70464,7 +70086,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70505,7 +70126,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70546,7 +70166,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70587,7 +70206,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70628,7 +70246,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70669,7 +70286,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70716,7 +70332,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70757,7 +70372,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70798,7 +70412,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70839,7 +70452,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70880,7 +70492,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70921,7 +70532,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -70962,7 +70572,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -71003,7 +70612,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -71044,7 +70652,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -71092,7 +70699,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -71133,7 +70739,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -71174,7 +70779,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -71215,7 +70819,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -71256,7 +70859,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -71297,7 +70899,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -71338,7 +70939,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -71379,7 +70979,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -71420,7 +71019,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -71680,7 +71278,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -72017,7 +71614,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -72354,7 +71950,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -72691,7 +72286,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -73028,7 +72622,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -73365,7 +72958,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -73702,7 +73294,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -74039,7 +73630,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -74376,7 +73966,6 @@ exports[`Table variants Breakpoint - grid 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -75547,7 +75136,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75588,7 +75176,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75629,7 +75216,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75670,7 +75256,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75711,7 +75296,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75752,7 +75336,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75793,7 +75376,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75834,7 +75416,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75875,7 +75456,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75922,7 +75502,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -75963,7 +75542,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -76004,7 +75582,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -76045,7 +75622,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -76086,7 +75662,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -76127,7 +75702,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -76168,7 +75742,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -76209,7 +75782,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -76250,7 +75822,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -76298,7 +75869,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -76339,7 +75909,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -76380,7 +75949,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -76421,7 +75989,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -76462,7 +76029,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -76503,7 +76069,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -76544,7 +76109,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -76585,7 +76149,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -76626,7 +76189,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -76886,7 +76448,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -77223,7 +76784,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -77560,7 +77120,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -77897,7 +77456,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -78234,7 +77792,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -78571,7 +78128,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -78908,7 +78464,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -79245,7 +78800,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -79582,7 +79136,6 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -80753,7 +80306,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -80794,7 +80346,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -80835,7 +80386,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -80876,7 +80426,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -80917,7 +80466,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -80958,7 +80506,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -80999,7 +80546,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81040,7 +80586,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81081,7 +80626,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81128,7 +80672,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81169,7 +80712,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81210,7 +80752,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81251,7 +80792,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81292,7 +80832,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81333,7 +80872,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81374,7 +80912,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81415,7 +80952,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81456,7 +80992,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -81504,7 +81039,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -81545,7 +81079,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -81586,7 +81119,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -81627,7 +81159,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -81668,7 +81199,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -81709,7 +81239,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -81750,7 +81279,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -81791,7 +81319,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -81832,7 +81359,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -82092,7 +81618,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -82429,7 +81954,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -82766,7 +82290,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -83103,7 +82626,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -83440,7 +82962,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -83777,7 +83298,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -84114,7 +83634,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -84451,7 +83970,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -84788,7 +84306,6 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -85959,7 +85476,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86000,7 +85516,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86041,7 +85556,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86082,7 +85596,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86123,7 +85636,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86164,7 +85676,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86205,7 +85716,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86246,7 +85756,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86287,7 +85796,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86334,7 +85842,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 0,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86375,7 +85882,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 1,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86416,7 +85922,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 2,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86457,7 +85962,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 3,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86498,7 +86002,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 4,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86539,7 +86042,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 5,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86580,7 +86082,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 6,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86621,7 +86122,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 7,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86662,7 +86162,6 @@ exports[`Table variants Size - compact 1`] = `
                     "title": "one",
                   },
                   "id": 8,
-                  "isExpanded": undefined,
                   "last-commit": Object {
                     "props": Object {
                       "isVisible": true,
@@ -86710,7 +86209,6 @@ exports[`Table variants Size - compact 1`] = `
                       "title": "one",
                     },
                     "id": 0,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -86751,7 +86249,6 @@ exports[`Table variants Size - compact 1`] = `
                       "title": "one",
                     },
                     "id": 1,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -86792,7 +86289,6 @@ exports[`Table variants Size - compact 1`] = `
                       "title": "one",
                     },
                     "id": 2,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -86833,7 +86329,6 @@ exports[`Table variants Size - compact 1`] = `
                       "title": "one",
                     },
                     "id": 3,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -86874,7 +86369,6 @@ exports[`Table variants Size - compact 1`] = `
                       "title": "one",
                     },
                     "id": 4,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -86915,7 +86409,6 @@ exports[`Table variants Size - compact 1`] = `
                       "title": "one",
                     },
                     "id": 5,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -86956,7 +86449,6 @@ exports[`Table variants Size - compact 1`] = `
                       "title": "one",
                     },
                     "id": 6,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -86997,7 +86489,6 @@ exports[`Table variants Size - compact 1`] = `
                       "title": "one",
                     },
                     "id": 7,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -87038,7 +86529,6 @@ exports[`Table variants Size - compact 1`] = `
                       "title": "one",
                     },
                     "id": 8,
-                    "isExpanded": undefined,
                     "last-commit": Object {
                       "props": Object {
                         "isVisible": true,
@@ -87298,7 +86788,6 @@ exports[`Table variants Size - compact 1`] = `
                         "title": "one",
                       },
                       "id": 0,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -87635,7 +87124,6 @@ exports[`Table variants Size - compact 1`] = `
                         "title": "one",
                       },
                       "id": 1,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -87972,7 +87460,6 @@ exports[`Table variants Size - compact 1`] = `
                         "title": "one",
                       },
                       "id": 2,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -88309,7 +87796,6 @@ exports[`Table variants Size - compact 1`] = `
                         "title": "one",
                       },
                       "id": 3,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -88646,7 +88132,6 @@ exports[`Table variants Size - compact 1`] = `
                         "title": "one",
                       },
                       "id": 4,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -88983,7 +88468,6 @@ exports[`Table variants Size - compact 1`] = `
                         "title": "one",
                       },
                       "id": 5,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -89320,7 +88804,6 @@ exports[`Table variants Size - compact 1`] = `
                         "title": "one",
                       },
                       "id": 6,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -89657,7 +89140,6 @@ exports[`Table variants Size - compact 1`] = `
                         "title": "one",
                       },
                       "id": 7,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
@@ -89994,7 +89476,6 @@ exports[`Table variants Size - compact 1`] = `
                         "title": "one",
                       },
                       "id": 8,
-                      "isExpanded": undefined,
                       "last-commit": Object {
                         "props": Object {
                           "isVisible": true,
