@@ -126,6 +126,9 @@
   "workspaces": {
     "packages": [
       "packages/**"
+    ],
+    "nohoist": [
+      "**/acorn*"
     ]
   }
 }
