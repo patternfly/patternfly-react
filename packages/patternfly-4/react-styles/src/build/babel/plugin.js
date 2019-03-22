@@ -134,7 +134,7 @@ export default declare(({ types: t }) => {
             const scriptOutputPath = resolve(file.opts.filename).replace(resolve(srcDir), outDir);
 
             if (!outputFiles.has(cssOutputPath)) {
-              writeCSSFile(cssfilePath, cssOutputPath);
+              writeCSSFile(cssOutputPath, cssString);
               writeCSSJSFile(
                 rootPath,
                 cssfilePath,

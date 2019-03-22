@@ -9,12 +9,14 @@ export const styleSheetToken = 'StyleSheet';
 
 export function cssToJS(cssString, cssOutputPath = '', useModules = false) {
   let cssRequire = '';
+  let cssImport = '';
   if (cssOutputPath) {
     cssRequire = `require('${cssOutputPath}');`;
+    cssImport = `import '${cssOutputPath}';`;
   }
   if (useModules) {
     return `import { ${styleSheetToken} } from '${packageName}';
-${cssRequire}
+${cssImport}
 
 export default ${styleSheetToken}.parse(\`${cssString}\`);
 `;
@@ -38,10 +40,10 @@ export function minifyCSS(cssString) {
   });
 }
 
-export function writeCSSFile(originalPath, destinationPath) {
+export function writeCSSFile(destinationPath, contents) {
   ensureDir(path.dirname(destinationPath)).then(() => {
-    // dir has now been created, including the directory it is to be placed in
-    copyFileSync(originalPath, destinationPath);
+    const replacementString = contents.replace(/..\/..\/assets/g, '../../../../../styles/assets');
+    outputFileSync(destinationPath, replacementString);
   });
 }
 
