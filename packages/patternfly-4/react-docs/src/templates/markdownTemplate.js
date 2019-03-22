@@ -2,9 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import { getUsedComponents } from './helpers'
 import SidebarLayout from "../components/sidebarLayout"
-import { Tokens, Props } from "../components/componentDocs"
-// import Tokens from '../components/tokens'
-/* <Tokens variables="pf-global"></Tokens> */
+import { Tokens, Props, LiveEdit } from "../components/componentDocs"
+import rehypeReact from "rehype-react"
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: {
+    "code": LiveEdit
+  },
+}).Compiler
 
 export default function Template({ data, pageContext }) {
   // Exported components in the folder (i.e. src/components/Alerts/*)
@@ -18,7 +24,9 @@ export default function Template({ data, pageContext }) {
 
   return <SidebarLayout>
     <h1>{data.markdownRemark.frontmatter.title}</h1>
-    <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div>
+    {/* https://using-remark.gatsbyjs.org/custom-components/ */}
+    {renderAst(data.markdownRemark.htmlAst)}
+    {/* <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}></div> */}
     <h2>tokens</h2>
     <Tokens cssPrefix={data.markdownRemark.frontmatter.cssPrefix}></Tokens>
     <h2>props</h2>
@@ -43,7 +51,6 @@ export default function Template({ data, pageContext }) {
 export const pageQuery = graphql`
 query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
   markdownRemark(fileAbsolutePath: { eq: $fileAbsolutePath }) {
-    html
     htmlAst
     frontmatter {
       title

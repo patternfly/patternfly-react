@@ -14,7 +14,6 @@ class Tokens extends React.Component {
 
   render() {
     return <table>
-      Prefix: {this.props.cssPrefix}
       <tbody>
       <tr>
         <th>CSS Variable</th>
