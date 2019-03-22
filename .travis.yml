@@ -87,5 +87,4 @@ jobs:
         - mv .out .public/patternfly-3
         - mv packages/patternfly-4/react-docs/public .public/patternfly-4
         - cp -r .public/patternfly-4/assets .public/assets
-        - yarn run surge --project .public --domain patternfly-react.surge.sh
-        - .circleci/trigger_browser_tests.sh
+        - .circleci/conditional_upload.sh
