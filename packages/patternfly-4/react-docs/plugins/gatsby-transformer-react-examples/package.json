@@ -1,19 +1,18 @@
 {
-  "name": "gatsby-transformer-react-docgen-typescript",
-  "description": "Transforms JSX/TSX source files into JSON metadata",
+  "name": "gatsby-transformer-react-assets",
+  "description": "Transforms JSX into compiled JS",
   "version": "0.0.1",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
   "scripts": {
+    "babel": "babel",
     "clean": "rimraf .cache .tmp dist public static",
     "develop": "gatsby develop",
     "build": "gatsby build --prefix-paths"
   },
   "dependencies": {
-    "gatsby": "^2.1.37",
-    "react-docgen": "^4.1.0",
-    "react-docgen-typescript": "^1.12.3"
+    "gatsby": "^2.1.37"
   },
   "keywords": [
     "gatsby",

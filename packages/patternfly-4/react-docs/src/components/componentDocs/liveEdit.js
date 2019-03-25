@@ -1,64 +1,30 @@
 import React from 'react';
-import { LiveProvider, LiveEditor, LiveError, LivePreview, withLive } from 'react-live';
-// Acorn has the quirk of not being able to be hoisted in yarn workspaces.
-import { Parser } from 'acorn';
-import classFields from 'acorn-class-fields';
-import jsx from 'acorn-jsx';
-import { generate } from 'astring'
-import jsxGenerator from './astring-jsx'
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-// Things to inject
-import * as CoreComponents from '@patternfly/react-core';
-import * as CoreIcons from '@patternfly/react-icons';
-import * as TableComponents from '@patternfly/react-table';
-import * as ChartComponents from '@patternfly/react-charts';
-import * as StyledSystemComponents from '@patternfly/react-styled-system';
-import { css } from '@patternfly/react-styles';
-import avatarImg from '../../../../react-core/src/components/Avatar/examples/img_avatar.svg';
 
 class LiveEdit extends React.Component {
-  static acorn = Parser.extend(jsx()).extend(classFields);
-
   constructor(props) {
     super(props);
     // Our children are elements inside a <code> tag created from rendered markdown
-    this.scope = this.getScope(this.props.children[0]);
-    this.code = this.makeCodeES6(this.props.children[0]);
-  }
+    this.code = this.props.children[0];
+    this.scope = this.props.scope;
+    this.scope.React = React;
+    console.log('scope', this.scope);
+    // this.scope = {
+    //   React,
+    //   ...CoreComponents,
+    //   ...CoreIcons,
+    //   ...TableComponents,
+    //   ...ChartComponents,
+    //   ...StyledSystemComponents,
+    //   ...Styles
+    // };
 
-  makeCodeES6(code) {
-    // Before you think about dropping Babel in here, let me remind you it's 1.5MB and we should
-    // keep this site lightweight for building and testing. Instead, think about linking to a
-    // real Javascript editor like Blaze, JSBin, JSFiddle, Codepen, etc.
-
-    // console.log('parsing', toParse);
-    code = this.transformCode(code);
-    console.log('giving acorn', code);
-    const ast = LiveEdit.acorn.parse(code, { ecmaVersion: 6 });
-    console.log('givinst astring', ast);
-    const res = generate(ast, { generator: jsxGenerator });
-    console.log('transformed', res);
-
-    return res;
-  }
-
-  getScope(code) {
-    const res = { React, avatarImg };
-
-    const addToScope = (importPath, mod) => {
-      if (code.indexOf(importPath) !== -1) {
-        console.log('react-live importing', importPath);
-        Object.entries(mod).forEach(([key, value]) => res[key] = value);
-      }
-    }
-    addToScope('@patternfly/react-core', CoreComponents);
-    addToScope('@patternfly/react-icons', CoreIcons);
-    addToScope('@patternfly/react-table', TableComponents);
-    addToScope('@patternfly/react-charts', ChartComponents);
-    addToScope('@patternfly/react-styles', css);
-    addToScope('@patternfly/react-styled-system', StyledSystemComponents);
-
-    return res;
+    // const fullPath = props.exampleResources[0];
+    // const importName = fullPath.replace(/^.*[\\\/]/, '').replace(/\..*/, '');
+    // console.log(importName, '=require', fullPath);
+    // console.log('confused', '/Users/zallen/src/patternfly-react/packages/patternfly-4/react-core/src/components/Avatar/examples/avatarImg.svg' === fullPath);
+    // this.scope.importName = require(fullPath);
   }
 
   transformCode(code) {
@@ -67,9 +33,9 @@ class LiveEdit extends React.Component {
       return code;
     }
     // These don't actually do anything except make Buble mad
-    const toParse = code.
-      replace(/^\s*import.*/gm, '').
-      replace(/^\s*export.*/gm, '');
+    const toParse = code
+      .replace(/^\s*import.*/gm, '')
+      .replace(/^\s*export.*/gm, '');
 
     return toParse;
   }

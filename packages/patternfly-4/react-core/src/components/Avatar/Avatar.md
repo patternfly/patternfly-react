@@ -6,7 +6,7 @@ cssPrefix: "pf-c-avatar"
 
 ```js
 import { Avatar } from '@patternfly/react-core';
-import avatarImg from './examples/img_avatar.svg';
+import { avatarImg } from './examples/imgAvatar.svg';
 
 <Avatar src={avatarImg} alt="avatar"></Avatar>
 ```

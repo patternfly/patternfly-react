@@ -8,10 +8,13 @@ import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
 class InfoAlert extends React.Component {
-  state = { alertOneVisible: true, alertTwoVisible: true };
-  hideAlertOne = () => this.setState({ alertOneVisible: false });
-  hideAlertTwo = () => this.setState({ alertTwoVisible: false });
-
+  constructor(props) {
+    super(props)
+    this.state = { alertOneVisible: true, alertTwoVisible: true };
+    this.hideAlertOne = () => this.setState({ alertOneVisible: false });
+    this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
+  }
+  
   render() {
     const { alertOneVisible, alertTwoVisible } = this.state;
     return (
@@ -46,10 +49,12 @@ import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
 class SuccessAlert extends React.Component {
-  state = { alertOneVisible: true, alertTwoVisible: true };
-  hideAlertOne = () => this.setState({ alertOneVisible: false });
-  hideAlertTwo = () => this.setState({ alertTwoVisible: false });
-
+  constructor(props) {
+    super(props)
+    this.state = { alertOneVisible: true, alertTwoVisible: true };
+    this.hideAlertOne = () => this.setState({ alertOneVisible: false });
+    this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
+  }
   render() {
     const { alertOneVisible, alertTwoVisible } = this.state;
     return (
@@ -88,10 +93,12 @@ import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
 class WarningAlert extends React.Component {
-  state = { alertOneVisible: true, alertTwoVisible: true };
-  hideAlertOne = () => this.setState({ alertOneVisible: false });
-  hideAlertTwo = () => this.setState({ alertTwoVisible: false });
-
+  constructor(props) {
+    super(props)
+    this.state = { alertOneVisible: true, alertTwoVisible: true };
+    this.hideAlertOne = () => this.setState({ alertOneVisible: false });
+    this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
+  }
   render() {
     const { alertOneVisible, alertTwoVisible } = this.state;
     return (
@@ -130,10 +137,12 @@ import React from 'react';
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
 class DangerAlert extends React.Component {
-  state = { alertOneVisible: true, alertTwoVisible: true };
-  hideAlertOne = () => this.setState({ alertOneVisible: false });
-  hideAlertTwo = () => this.setState({ alertTwoVisible: false });
-
+  constructor(props) {
+    super(props)
+    this.state = { alertOneVisible: true, alertTwoVisible: true };
+    this.hideAlertOne = () => this.setState({ alertOneVisible: false });
+    this.hideAlertTwo = () => this.setState({ alertTwoVisible: false });
+  }
   render() {
     const { alertOneVisible, alertTwoVisible } = this.state;
     return (

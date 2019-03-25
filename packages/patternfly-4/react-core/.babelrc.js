@@ -2,7 +2,7 @@ const babelENV = process.env.BABEL_ENV || 'development';
 const modules = babelENV !== 'production:esm' ? 'commonjs' : false;
 
 module.exports = {
-  presets: [['@babel/env', { modules }], '@babel/preset-typescript', '@babel/react'],
+  presets: [['@babel/env', { modules }], '@babel/react'],
   ignore: (() => {
     const ignore = ['src/**/__snapshots__'];
     ignore.push('src/**/*.d.ts');
@@ -14,6 +14,7 @@ module.exports = {
   env: {
     'production:esm': {
       plugins: [
+        '@babel/plugin-transform-typescript',
         'babel-plugin-typescript-to-proptypes',
         '@babel/plugin-proposal-export-default-from',
         '@babel/proposal-class-properties',
@@ -30,6 +31,7 @@ module.exports = {
     },
     'production:cjs': {
       plugins: [
+        '@babel/plugin-transform-typescript',
         'babel-plugin-typescript-to-proptypes',
         '@babel/plugin-proposal-export-default-from',
         '@babel/proposal-class-properties',

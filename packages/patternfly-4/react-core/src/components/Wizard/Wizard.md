@@ -8,15 +8,17 @@ import React from 'react';
 import { Button, Wizard, BackgroundImageSrc } from '@patternfly/react-core';
 
 class SimpleWizard extends React.Component {
-  state = {
-    isOpen: false
-  };
-
-  toggleOpen = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false
+    };
+    this.toggleOpen = () => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
+  }
 
   render() {
     const { isOpen } = this.state;
@@ -78,145 +80,65 @@ import React from 'react';
 import { Button, Wizard, BackgroundImageSrc } from '@patternfly/react-core';
 import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';
-
-class SampleFormOne extends React.Component {
-  state = {
-    value: this.props.formValue,
-    isValid: this.props.isFormValid
-  };
-
-  handleTextInputChange = value => {
-    const isValid = /^\d+$/.test(value);
-    this.setState({ value, isValid });
-    this.props.onChange(isValid, value);
-  };
-
-  render() {
-    const { value, isValid } = this.state;
-
-    return (
-      <Form>
-        <FormGroup
-          label="Age:"
-          type="number"
-          helperText="Please write your age"
-          helperTextInvalid="Age has to be a number"
-          fieldId="age"
-          isValid={isValid}
-        >
-          <TextInput
-            isValid={isValid}
-            value={value}
-            id="age"
-            aria-describedby="age-helper"
-            onChange={this.handleTextInputChange}
-          />
-        </FormGroup>
-      </Form>
-    );
-  }
-}
-
-class SampleFormTwo extends React.Component {
-  state = {
-    value: this.props.formValue,
-    isValid: this.props.isFormValid
-  };
-
-  handleTextInputChange = value => {
-    const isValid = /^\d+$/.test(value);
-    this.setState({ value, isValid });
-    this.props.onChange(isValid, value);
-  };
-
-  render() {
-    const { value, isValid } = this.state;
-
-    return (
-      <Form>
-        <FormGroup
-          label="Age:"
-          type="number"
-          helperText="Please write your age"
-          helperTextInvalid="Age has to be a number"
-          fieldId="age"
-          isValid={isValid}
-        >
-          <TextInput
-            isValid={isValid}
-            value={value}
-            id="age"
-            aria-describedby="age-helper"
-            onChange={this.handleTextInputChange}
-          />
-        </FormGroup>
-      </Form>
-    );
-  }
-}
+import { SampleFormOne, SampleFormTwo } from './examples';
 
 class ValidationWizard extends React.Component {
-  state = {
-    isOpen: false,
-    isFormValidA: false,
-    formValueA: 'Five',
-    isFormValidB: false,
-    formValueB: 'Six',
-    allStepsValid: false
-  };
-
-  toggleOpen = () => {
-    this.setState(({ isOpen }) => ({
-      isOpen: !isOpen
-    }));
-  };
-
-  onFormChangeA = (isValid, value) => {
-    this.setState(
-      {
-        isFormValidA: isValid,
-        formValueA: value
-      },
-      this.areAllStepsValid
-    );
-  };
-
-  onFormChangeB = (isValid, value) => {
-    this.setState(
-      {
-        isFormValidB: isValid,
-        formValueB: value
-      },
-      this.areAllStepsValid
-    );
-  };
-
-  areAllStepsValid = () => {
-    this.setState({
-      allStepsValid: this.state.isFormValidA && this.state.isFormValidB
-    });
-  };
-
-  onNext = ({ id, name }, { prevId, prevName }) => {
-    console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
-    this.areAllStepsValid();
-  };
-
-  onBack = ({ id, name }, { prevId, prevName }) => {
-    console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
-    this.areAllStepsValid();
-  };
-
-  onGoToStep = ({ id, name }, { prevId, prevName }) => {
-    console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
-  };
-
-  onSave = () => {
-    console.log('Saved and closed the wizard');
-    this.setState({
-      isOpen: false
-    });
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: false,
+      isFormValidA: false,
+      formValueA: 'Five',
+      isFormValidB: false,
+      formValueB: 'Six',
+      allStepsValid: false
+    };
+    this.toggleOpen = () => {
+      this.setState(({ isOpen }) => ({
+        isOpen: !isOpen
+      }));
+    };
+    this.onFormChangeA = (isValid, value) => {
+      this.setState(
+        {
+          isFormValidA: isValid,
+          formValueA: value
+        },
+        this.areAllStepsValid
+      );
+    };
+    this.onFormChangeB = (isValid, value) => {
+      this.setState(
+        {
+          isFormValidB: isValid,
+          formValueB: value
+        },
+        this.areAllStepsValid
+      );
+    };
+    this.areAllStepsValid = () => {
+      this.setState({
+        allStepsValid: this.state.isFormValidA && this.state.isFormValidB
+      });
+    };
+    this.onNext = ({ id, name }, { prevId, prevName }) => {
+      console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
+      this.areAllStepsValid();
+    };
+    this.onBack = ({ id, name }, { prevId, prevName }) => {
+      console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
+      this.areAllStepsValid();
+    };
+    this.onGoToStep = ({ id, name }, { prevId, prevName }) => {
+      console.log(`current id: ${id}, current name: ${name}, previous id: ${prevId}, previous name: ${prevName}`);
+    };
+    this.onSave = () => {
+      console.log('Saved and closed the wizard');
+      this.setState({
+        isOpen: false
+      });
+    };
+  }
 
   render() {
     const { isOpen, isFormValidA, isFormValidB, formValueA, formValueB, allStepsValid } = this.state;

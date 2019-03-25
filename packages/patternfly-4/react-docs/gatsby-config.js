@@ -9,6 +9,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     { // react-core source files to pipe through react-docgen
       // react-core .md files to pipe through remark
+      // react-core example/* files to dynamically require in various ways
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `react-core`,
@@ -17,6 +18,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-react-docgen-typescript`,
+    `gatsby-transformer-react-examples`,
     `gatsby-transformer-remark`
   ],
 }

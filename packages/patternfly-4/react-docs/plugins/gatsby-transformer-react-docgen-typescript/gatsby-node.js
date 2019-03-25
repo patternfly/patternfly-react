@@ -4,7 +4,8 @@ const docgenJavascript = require('react-docgen')
 function isSource(node) {
   if (!node ||
     node.relativePath.indexOf('/example') !== -1 ||
-    node.relativePath.indexOf('.docs') !== -1)
+    node.relativePath.indexOf('.docs') !== -1 ||
+    node.relativePath.indexOf('.md') !== -1)
     return false;
 
   return true;
@@ -38,6 +39,7 @@ function flattenProps(props) {
   return res;
 }
 
+// Docs https://www.gatsbyjs.org/docs/actions/#createNode
 async function onCreateNode({
   node,
   actions,
@@ -45,27 +47,7 @@ async function onCreateNode({
   createNodeId,
   createContentDigest,
 }) {
-  const { createNode, createParentChildLink } = actions
-
   if (!canParse(node)) return
-
-  // Docs https://www.gatsbyjs.org/docs/actions/#createNode
-  function registerNode(node, result) {
-    const metadataNode = {
-      ...result,
-      path: node.relativePath,
-      basePath: node.relativePath.split('/')[0],
-      id: createNodeId(`${node.id}imunique${node.relativePath}`),
-      children: [],
-      parent: node.id,
-      internal: {
-        contentDigest: createContentDigest(node),
-        type: `ComponentMetadata`,
-      },
-    }
-    createNode(metadataNode)
-    createParentChildLink({ parent: node, child: metadataNode })
-  }
 
   const sourceText = await loadNodeContent(node);
   let parsed = null;
@@ -82,11 +64,22 @@ async function onCreateNode({
   }
 
   if (parsed) {
-    registerNode(node, {
+    const metadataNode = {
       name: parsed.displayName,
       description: parsed.description,
-      props: flattenProps(parsed.props)
-    });
+      props: flattenProps(parsed.props),
+      path: node.relativePath,
+      basePath: node.relativePath.split('/')[0],
+      id: createNodeId(`${node.id}imunique${node.relativePath}`),
+      children: [],
+      parent: node.id,
+      internal: {
+        contentDigest: createContentDigest(node),
+        type: `ComponentMetadata`,
+      },
+    }
+    actions.createNode(metadataNode)
+    actions.createParentChildLink({ parent: node, child: metadataNode })
   }
 }
 
