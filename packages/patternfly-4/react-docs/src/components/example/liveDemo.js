@@ -4,6 +4,7 @@ import exampleStyles from './example.styles';
 import styles from './liveDemo.styles';
 import PropTypes from 'prop-types';
 import * as TableComponents from '@patternfly/react-table';
+import * as TableInlineEditingComponents from '@patternfly/react-inline-edit-extension';
 import * as ChartComponents from '@patternfly/react-charts';
 import * as CoreComponents from '@patternfly/react-core';
 import * as CoreIcons from '@patternfly/react-icons';
@@ -35,6 +36,7 @@ const scopePlayground = {
   React,
   ...ChartComponents,
   ...TableComponents,
+  ...TableInlineEditingComponents,
   ...StyledSystemComponents,
   ...CoreComponents,
   ...CoreIcons,

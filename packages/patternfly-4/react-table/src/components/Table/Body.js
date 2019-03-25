@@ -19,16 +19,26 @@ const defaultProps = {
   onRowClick: () => undefined
 };
 
+const flagVisibility = rows => {
+  const visibleRows = rows.filter(oneRow => !oneRow.parent || oneRow.isExpanded);
+  if (visibleRows.length > 0) {
+    visibleRows[0].isFirstVisible = true;
+    visibleRows[visibleRows.length - 1].isLastVisible = true;
+  }
+};
+
 class ContextBody extends React.Component {
-  onRow = (row, props) => {
+  onRow = (row, rowProps) => {
     const { onRowClick } = this.props;
     return {
-      isExpanded: row.isExpanded,
-      isOpen: row.isOpen,
-      onClick: event => {
-        if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'BUTTON') {
-          onRowClick(event, row, props);
-        }
+      row,
+      rowProps,
+      onMouseDown: event => {
+        const computedData = {
+          isInput: event.target.tagName !== 'INPUT',
+          isButton: event.target.tagName !== 'BUTTON'
+        };
+        onRowClick(event, row, rowProps, computedData);
       }
     };
   };
@@ -69,13 +79,20 @@ class ContextBody extends React.Component {
 
   render() {
     const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
-    const mappedRows =
-      headerData.length > 0 &&
-      rows.map((oneRow, oneRowKey) => ({
+
+    let mappedRows;
+    if (headerData.length > 0) {
+      mappedRows = rows.map((oneRow, oneRowKey) => ({
         ...oneRow,
         ...this.mapCells(headerData, oneRow, oneRowKey),
-        isExpanded: isRowExpanded(oneRow, rows)
+        isExpanded: isRowExpanded(oneRow, rows),
+        isFirst: oneRowKey === 0,
+        isLast: oneRowKey === rows.length - 1,
+        isFirstVisible: false,
+        isLastVisible: false
       }));
+      flagVisibility(mappedRows);
+    }
 
     return (
       <React.Fragment>
@@ -96,7 +113,7 @@ class ContextBody extends React.Component {
 
 const TableBody = props => (
   <TableContext.Consumer>
-    {({ headerData, rows }) => <ContextBody {...props} headerData={headerData} rows={rows} />}
+    {({ headerData, rows }) => <ContextBody headerData={headerData} rows={rows} {...props} />}
   </TableContext.Consumer>
 );
 

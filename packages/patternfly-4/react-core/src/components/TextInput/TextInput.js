@@ -52,7 +52,7 @@ const defaultProps = {
   isDisabled: false,
   isReadOnly: false,
   type: 'text',
-  value: null,
+  value: undefined,
   onChange: () => undefined,
   'aria-label': null
 };

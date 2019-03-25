@@ -51,8 +51,12 @@ const propTypes = {
   ),
   /** Function should resolve an array of actions for each row in the same format as actions. */
   actionResolver: PropTypes.func,
-  /** Function should resolve if action is disabled for each row */
+  /** Function should resolve if action kebap is disabled for each row */
   areActionsDisabled: PropTypes.func,
+  /** Override to the default BodyWrapper renderer */
+  bodyWrapper: PropTypes.func,
+  /** Override to the default RowWrapper renderer */
+  rowWrapper: PropTypes.func,
   /** Actual rows to display in table. Either array of strings or row objects. <br/>
    * If you want to use components in row cells you can pass them as title prop in cells definition. <br/>
    * <pre>Ex: rows:[
@@ -188,6 +192,8 @@ class Table extends React.Component {
       variant,
       rows,
       cells,
+      bodyWrapper,
+      rowWrapper,
       ...props
     } = this.props;
 
@@ -220,8 +226,8 @@ class Table extends React.Component {
           {...props}
           renderers={{
             body: {
-              wrapper: BodyWrapper,
-              row: RowWrapper,
+              wrapper: bodyWrapper || BodyWrapper,
+              row: rowWrapper || RowWrapper,
               cell: BodyCell
             },
             header: {

@@ -1,6 +1,6 @@
 const path = require(`path`);
 const fs = require('fs-extra'); //eslint-disable-line
-const packageDirs = ['react-core', 'react-charts', 'react-styled-system', 'react-table'];
+const packageDirs = ['react-core', 'react-charts', 'react-styled-system', 'react-table', 'react-inline-edit-extension'];
 
 // Escape single quotes and backslashes in a file path
 const escapeFilePath = filePath => filePath.replace(/[\\']/g, '\\$&');
@@ -28,7 +28,8 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions, plugins, getConfig }
         '@patternfly/react-charts': path.resolve(__dirname, '../react-charts/src'),
         '@patternfly/react-core': path.resolve(__dirname, '../react-core/src'),
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles/src'),
-        '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system/src')
+        '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system/src'),
+        '@patternfly/react-inline-edit-extension': path.resolve(__dirname, '../react-inline-edit-extension/src'),
       }
     }
   });
@@ -119,7 +120,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const filePath = path.resolve(__dirname, '.tmp', doc.base);
 
     const rawExamples = [];
-    const packageDir = packageDirs.find(pkg => doc.absolutePath.indexOf(pkg) !== -1);
+    const packageDir = packageDirs.find(pkg => doc.absolutePath.indexOf(`/${pkg}/`) !== -1);
 
     // In Windows environments, paths use backslashes to separate directories;
     // Ensure that forward slashes are used to make it comparable
