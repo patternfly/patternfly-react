@@ -29,39 +29,43 @@ class Chip extends React.Component {
   };
 
   renderChip = randomId => {
-    const { children, closeBtnAriaLabel, tooltipPosition, className, onClick } = this.props;
+    const { children, closeBtnAriaLabel, tooltipPosition, className, onClick, isReadOnly } = this.props;
     if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>
-          <li className={css(styles.chip, className)}>
+          <li className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}>
             <span ref={this.span} className={css(styles.chipText)} id={randomId}>
               {children}
             </span>
-            <ChipButton
-              onClick={onClick}
-              ariaLabel={closeBtnAriaLabel}
-              id={`remove_${randomId}`}
-              aria-labelledby={`remove_${randomId} ${randomId}`}
-            >
-              <TimesCircleIcon aria-hidden="true" />
-            </ChipButton>
+            {!isReadOnly && (
+              <ChipButton
+                onClick={onClick}
+                ariaLabel={closeBtnAriaLabel}
+                id={`remove_${randomId}`}
+                aria-labelledby={`remove_${randomId} ${randomId}`}
+              >
+                <TimesCircleIcon aria-hidden="true" />
+              </ChipButton>
+            )}
           </li>
         </Tooltip>
       );
     }
     return (
-      <li className={css(styles.chip, className)}>
+      <li className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}>
         <span ref={this.span} className={css(styles.chipText)} id={randomId}>
           {children}
         </span>
-        <ChipButton
-          onClick={onClick}
-          ariaLabel={closeBtnAriaLabel}
-          id={`remove_${randomId}`}
-          aria-labelledby={`remove_${randomId} ${randomId}`}
-        >
-          <TimesCircleIcon aria-hidden="true" />
-        </ChipButton>
+        {!isReadOnly && (
+          <ChipButton
+            onClick={onClick}
+            ariaLabel={closeBtnAriaLabel}
+            id={`remove_${randomId}`}
+            aria-labelledby={`remove_${randomId} ${randomId}`}
+          >
+            <TimesCircleIcon aria-hidden="true" />
+          </ChipButton>
+        )}
       </li>
     );
   };
@@ -82,6 +86,8 @@ Chip.propTypes = {
   className: PropTypes.string,
   /** Flag indicating if the chip has overflow */
   isOverflowChip: PropTypes.bool,
+  /** Flag if chip is read only */
+  isReadOnly: PropTypes.bool,
   /** Function that is called when clicking on the chip button */
   onClick: PropTypes.func,
   /** Position of the tooltip which is displayed if text is longer */
@@ -93,6 +99,7 @@ Chip.defaultProps = {
   closeBtnAriaLabel: 'close',
   className: '',
   isOverflowChip: false,
+  isReadOnly: false,
   tooltipPosition: 'top',
   onClick: () => {}
 };

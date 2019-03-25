@@ -39,4 +39,13 @@ describe('Chip', () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  test('readonly', () => {
+    const view = shallow(
+      <Chip className="my-chp-cls" isReadOnly>
+        4 more
+      </Chip>
+    );
+    expect(view).toMatchSnapshot();
+  });
 });
