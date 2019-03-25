@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.24.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.23.10...@patternfly/react-docs@3.24.0) (2019-03-25)
+
+
+### Features
+
+* **Table:** support inline editing in PF4 ([#1227](https://github.com/patternfly/patternfly-react/issues/1227)) ([b6eb553](https://github.com/patternfly/patternfly-react/commit/b6eb553))
+
+
+
+
+
 ## [3.23.10](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.23.9...@patternfly/react-docs@3.23.10) (2019-03-25)
 
 **Note:** Version bump only for package @patternfly/react-docs
