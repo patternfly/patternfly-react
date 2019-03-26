@@ -47,6 +47,7 @@ exports[`tooltip renders 1`] = `
     }
   }
   theme="pf-tippy"
+  trigger="mouseenter focus"
   zIndex={9999}
 >
   <div>
