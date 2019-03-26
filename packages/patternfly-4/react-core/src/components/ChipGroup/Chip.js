@@ -6,6 +6,7 @@ import { Tooltip, TooltipPosition } from '../Tooltip';
 import { TimesCircleIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/Chip/chip.css';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
+import { componentShape } from '../../helpers/componentShape';
 
 class Chip extends React.Component {
   span = React.createRef();
@@ -29,11 +30,19 @@ class Chip extends React.Component {
   };
 
   renderChip = randomId => {
-    const { children, closeBtnAriaLabel, tooltipPosition, className, onClick, isReadOnly } = this.props;
+    const {
+      children,
+      closeBtnAriaLabel,
+      tooltipPosition,
+      className,
+      component: Component,
+      onClick,
+      isReadOnly
+    } = this.props;
     if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>
-          <li className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}>
+          <Component className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}>
             <span ref={this.span} className={css(styles.chipText)} id={randomId}>
               {children}
             </span>
@@ -47,12 +56,12 @@ class Chip extends React.Component {
                 <TimesCircleIcon aria-hidden="true" />
               </ChipButton>
             )}
-          </li>
+          </Component>
         </Tooltip>
       );
     }
     return (
-      <li className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}>
+      <Component className={css(styles.chip, isReadOnly && styles.modifiers.readOnly, className)}>
         <span ref={this.span} className={css(styles.chipText)} id={randomId}>
           {children}
         </span>
@@ -66,7 +75,7 @@ class Chip extends React.Component {
             <TimesCircleIcon aria-hidden="true" />
           </ChipButton>
         )}
-      </li>
+      </Component>
     );
   };
 
@@ -90,6 +99,8 @@ Chip.propTypes = {
   isReadOnly: PropTypes.bool,
   /** Function that is called when clicking on the chip button */
   onClick: PropTypes.func,
+  /** Interal flag for which component will be used for chip */
+  component: componentShape,
   /** Position of the tooltip which is displayed if text is longer */
   tooltipPosition: PropTypes.oneOf(Object.values(TooltipPosition))
 };
@@ -101,7 +112,8 @@ Chip.defaultProps = {
   isOverflowChip: false,
   isReadOnly: false,
   tooltipPosition: 'top',
-  onClick: () => {}
+  onClick: () => {},
+  component: 'div'
 };
 
 export default Chip;

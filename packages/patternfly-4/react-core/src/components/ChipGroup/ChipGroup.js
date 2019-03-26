@@ -41,16 +41,25 @@ class ChipGroup extends React.Component {
 }
 
 const InnerChipGroup = props => {
-  const { children, expandedText, isOpen, onToggleCollapse, collapsedText } = props;
+  const { children, expandedText, isOpen, onToggleCollapse, collapsedText, withToolbar } = props;
 
   const collapsedTextResult = fillTemplate(collapsedText, { remaining: React.Children.count(children) - 1 });
+  const mappedChildren = React.Children.map(children, child => {
+    if (withToolbar)
+      return React.cloneElement(child, {
+        children: child.props.children.map(chip => React.cloneElement(chip, { component: 'li' }))
+      });
+    return React.cloneElement(child, {
+      component: 'li'
+    });
+  });
   return (
     <React.Fragment>
       {isOpen ? (
-        <React.Fragment>{children}</React.Fragment>
+        <React.Fragment>{mappedChildren}</React.Fragment>
       ) : (
         <React.Fragment>
-          {React.Children.map(children, (child, i) => {
+          {mappedChildren.map((child, i) => {
             if (i === 0) return child;
           })}
         </React.Fragment>
