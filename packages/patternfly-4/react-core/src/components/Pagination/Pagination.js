@@ -60,6 +60,7 @@ const propTypes = {
     page: PropTypes.string,
     items: PropTypes.string,
     itemsPerPage: PropTypes.string,
+    perPageSuffix: PropTypes.string,
     toFirstPage: PropTypes.string,
     toPreviousPage: PropTypes.string,
     toLastPage: PropTypes.string,
@@ -93,6 +94,7 @@ const defaultProps = {
     items: 'items',
     pages: 'pages',
     itemsPerPage: 'Items per page',
+    perPageSuffix: 'per page',
     toFirstPage: 'Go to first page',
     toPreviousPage: 'Go to previous page',
     toLastPage: 'Go to last page',
@@ -155,6 +157,7 @@ const Pagination = ({
       }
       <OptionsMenu
         itemsPerPageTitle={titles.itemsPerPage}
+        perPageSuffix={titles.perPageSuffix}
         itemsTitle={titles.items}
         optionsToggle={titles.optionsToggle}
         perPageOptions={perPageOptions}

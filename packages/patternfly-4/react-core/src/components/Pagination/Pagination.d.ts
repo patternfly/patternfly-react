@@ -18,6 +18,7 @@ export interface PaginationTitles {
   page?: string;
   items?: string;
   itemsPerPage?: string;
+  perPageSuffix?: string;
   toFirstPage?: string;
   toPreviousPage?: string;
   toLastPage?: string;

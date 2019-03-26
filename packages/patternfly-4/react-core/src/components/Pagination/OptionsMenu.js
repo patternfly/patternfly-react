@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/OptionsMenu/options-menu.css';
+import paginationStyles from '@patternfly/patternfly/components/Pagination/pagination.css';
 import { css } from '@patternfly/react-styles';
 import { Dropdown, DropdownItem, DropdownDirection } from '../Dropdown';
 import { CheckIcon } from '@patternfly/react-icons';
@@ -16,6 +17,7 @@ const propTypes = {
     value: PropTypes.number
   })),
   itemsPerPageTitle: PropTypes.string,
+  perPageSuffix: PropTypes.string,
   itemsTitle: PropTypes.string,
   optionsToggle: PropTypes.string,
   itemCount: PropTypes.number,
@@ -30,6 +32,7 @@ const defaultProps = {
   dropDirection: DropdownDirection.down,
   itemsTitle: 'items',
   itemsPerPageTitle: 'Items per page',
+  perPageSuffix: 'per page',
   optionsToggle: 'Select',
   toggleTemplate: ({ firstIndex, lastIndex, itemCount, itemsTitle }) => (
     <React.Fragment>
@@ -56,7 +59,7 @@ class OptionsMenu extends Component {
   };
 
   renderItems = () => {
-    const { perPageOptions, onPerPageSelect, perPage } = this.props;
+    const { perPageOptions, onPerPageSelect, perPage, perPageSuffix } = this.props;
     return perPageOptions.map(({ value, title }) => (
       <DropdownItem key={value}
         component="button"
@@ -65,6 +68,7 @@ class OptionsMenu extends Component {
         onClick={(event) => onPerPageSelect(event, value)}
       >
         {title}
+        <span className={css(paginationStyles.paginationMenuText)}>{` ${perPageSuffix}`}</span>
         {
           perPage === value &&
           <i className={css(styles.optionsMenuMenuItemIcon)} ><CheckIcon /></i>
