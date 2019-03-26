@@ -138,13 +138,7 @@ class Select extends React.Component {
             )}
           {variant === SelectVariant.checkbox &&
             isExpanded && (
-              <CheckboxSelect
-                {...props}
-                checked={selections}
-                openedOnEnter={openedOnEnter}
-                aria-labelledby={ariaLabelledBy}
-                isGrouped={isGrouped}
-              >
+              <CheckboxSelect {...props} checked={selections} aria-labelledby={ariaLabelledBy} isGrouped={isGrouped}>
                 {children}
               </CheckboxSelect>
             )}

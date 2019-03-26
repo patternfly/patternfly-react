@@ -10,8 +10,6 @@ const propTypes = {
   className: PropTypes.string,
   /** Group label */
   label: PropTypes.string,
-  /** Internal ID for group title */
-  titleId: PropTypes.string,
   /** Additional props are spread to the container <select> */
   '': PropTypes.any
 };
@@ -19,14 +17,13 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  label: '',
-  titleId: ''
+  label: ''
 };
 
 const CheckboxSelectGroup = ({ children, className, label, titleId, ...props }) => (
   <React.Fragment>
     <div {...props} className={css(styles.selectMenuGroup, className)}>
-      <div className={css(styles.selectMenuGroupTitle)} id={titleId}>
+      <div className={css(styles.selectMenuGroupTitle)} id={titleId || ''}>
         {label}
       </div>
       {children}

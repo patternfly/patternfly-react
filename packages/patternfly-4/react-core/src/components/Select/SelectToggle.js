@@ -78,7 +78,7 @@ class SelectToggle extends Component {
 
   onEscPress = event => {
     const { parentRef, isExpanded, isCheckbox, onToggle, onClose } = this.props;
-    if (isCheckbox && event.key === KeyTypes.Tab) return;
+    if (event.key === KeyTypes.Tab && isCheckbox) return;
     if (
       isExpanded &&
       (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&
@@ -92,23 +92,19 @@ class SelectToggle extends Component {
   };
 
   onKeyDown = event => {
-    const { isExpanded, isCheckbox, onToggle, onClose, onEnter } = this.props;
-    if (!isCheckbox) {
-      if ((event.key === KeyTypes.Tab && !isExpanded) || (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space))
-        return;
-    } else if (event.key !== KeyTypes.Tab && event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space) return;
-    event.preventDefault();
+    const { isExpanded, onToggle, isCheckbox, onClose, onEnter } = this.props;
     if (
-      ((event.key === KeyTypes.Tab && !isCheckbox) || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) &&
-      isExpanded
-    ) {
+      (event.key === KeyTypes.Tab && isCheckbox) ||
+      (event.key === KeyTypes.Tab && !isExpanded) ||
+      (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space)
+    )
+      return;
+    event.preventDefault();
+    if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && isExpanded) {
       onToggle && onToggle(!isExpanded);
       onClose && onClose();
       this.toggle.focus();
-    } else if (
-      (event.key === KeyTypes.Enter || event.key === KeyTypes.Space || (event.key === KeyTypes.Tab && isCheckbox)) &&
-      !isExpanded
-    ) {
+    } else if ((event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && !isExpanded) {
       onToggle(!isExpanded);
       onEnter();
     }
@@ -123,6 +119,7 @@ class SelectToggle extends Component {
       isActive,
       isHovered,
       isPlain,
+      isCheckbox,
       onToggle,
       onEnter,
       onClose,
@@ -152,7 +149,7 @@ class SelectToggle extends Component {
           if (isExpanded) onClose && onClose();
         }}
         aria-expanded={isExpanded}
-        aria-haspopup="listbox"
+        aria-haspopup={!isCheckbox && 'listbox'}
         onKeyDown={this.onKeyDown}
       >
         {children}

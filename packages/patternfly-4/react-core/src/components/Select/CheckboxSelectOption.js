@@ -12,18 +12,10 @@ const propTypes = {
   className: PropTypes.string,
   /** the value for the option */
   value: PropTypes.string,
-  /** Internal index of the option */
-  index: PropTypes.number,
-  /** Internal flag indicating if the option is checked */
-  isChecked: PropTypes.bool,
   /** flag indicating if the option is disabled */
   isDisabled: PropTypes.bool,
   /** Optional on click callback */
   onClick: PropTypes.func,
-  /** Internal callback for ref tracking */
-  sendRef: PropTypes.func,
-  /** Internal callback for keyboard navigation */
-  keyHandler: PropTypes.func,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
 };
@@ -32,12 +24,8 @@ const defaultProps = {
   children: null,
   className: '',
   value: null,
-  index: 0,
-  isChecked: false,
   isDisabled: false,
-  onClick: Function.prototype,
-  sendRef: Function.prototype,
-  keyHandler: Function.prototype
+  onClick: Function.prototype
 };
 
 class CheckboxSelectOption extends React.Component {
@@ -54,7 +42,7 @@ class CheckboxSelectOption extends React.Component {
       this.props.keyHandler(this.props.index, 'up');
     } else if (event.key === KeyTypes.ArrowDown) {
       this.props.keyHandler(this.props.index, 'down');
-    } else if (event.key === KeyTypes.Enter) {
+    } else if (event.key === KeyTypes.Enter || event.key === KeyTypes.Space) {
       this.ref.current.click && this.ref.current.click();
       this.ref.current.focus();
     }
@@ -98,7 +86,7 @@ class CheckboxSelectOption extends React.Component {
                 }
               }}
               ref={this.ref}
-              checked={isChecked}
+              checked={isChecked || false}
               disabled={isDisabled}
             />
             <span className={css(checkStyles.checkLabel, isDisabled && styles.modifiers.disabled)}>{value}</span>

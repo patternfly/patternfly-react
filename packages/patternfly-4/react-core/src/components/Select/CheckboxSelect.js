@@ -15,8 +15,6 @@ const propTypes = {
   isExpanded: PropTypes.bool,
   /** Flag indicating whether checkboxes are grouped */
   isGrouped: PropTypes.bool,
-  /** Internal flag indicating whether select was opened via keyboard */
-  openedOnEnter: PropTypes.bool,
   /** Currently checked options */
   checked: PropTypes.arrayOf(PropTypes.string),
   /** Additional props are spread to the container <select> */
@@ -27,7 +25,6 @@ const defaultProps = {
   className: '',
   isExpanded: false,
   isGrouped: false,
-  openedOnEnter: false,
   checked: []
 };
 
@@ -79,7 +76,7 @@ class CheckboxSelect extends React.Component {
   };
 
   render() {
-    const { children, className, isExpanded, openedOnEnter, checked, isGrouped, ...props } = this.props;
+    const { children, className, isExpanded, checked, isGrouped, ...props } = this.props;
     this.renderedChildren = this.extendChildren(props);
     return (
       <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }}>

@@ -356,11 +356,10 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
     >
       <button
         aria-expanded={true}
-        aria-haspopup="listbox"
+        aria-haspopup={false}
         aria-labelledby=" pf-toggle-id-4"
         className="pf-c-select__toggle"
         id="pf-toggle-id-4"
-        isCheckbox={true}
         onClick={[Function]}
         onKeyDown={[Function]}
         style={
@@ -412,7 +411,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       className=""
       isExpanded={false}
       isGrouped={true}
-      openedOnEnter={false}
     >
       <FocusTrap
         _createFocusTrap={[Function]}
@@ -472,7 +470,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={null}
+                            checked={false}
                             className="pf-c-check__input"
                             disabled={false}
                             id="Mr"
@@ -503,7 +501,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={null}
+                            checked={false}
                             className="pf-c-check__input"
                             disabled={false}
                             id="Mrs"
@@ -534,7 +532,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={null}
+                            checked={false}
                             className="pf-c-check__input"
                             disabled={false}
                             id="Ms"
@@ -565,7 +563,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={null}
+                            checked={false}
                             className="pf-c-check__input"
                             disabled={false}
                             id="Other"
@@ -618,7 +616,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={null}
+                            checked={false}
                             className="pf-c-check__input"
                             disabled={false}
                             id="Mr"
@@ -649,7 +647,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={null}
+                            checked={false}
                             className="pf-c-check__input"
                             disabled={false}
                             id="Mrs"
@@ -680,7 +678,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={null}
+                            checked={false}
                             className="pf-c-check__input"
                             disabled={false}
                             id="Ms"
@@ -711,7 +709,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                           onKeyDown={[Function]}
                         >
                           <input
-                            checked={null}
+                            checked={false}
                             className="pf-c-check__input"
                             disabled={false}
                             id="Other"
@@ -826,11 +824,10 @@ exports[`checkbox select renders closed successfully 1`] = `
     >
       <button
         aria-expanded={false}
-        aria-haspopup="listbox"
+        aria-haspopup={false}
         aria-labelledby=" pf-toggle-id-2"
         className="pf-c-select__toggle"
         id="pf-toggle-id-2"
-        isCheckbox={true}
         onClick={[Function]}
         onKeyDown={[Function]}
         style={
@@ -1101,11 +1098,10 @@ exports[`checkbox select renders expanded successfully 1`] = `
     >
       <button
         aria-expanded={true}
-        aria-haspopup="listbox"
+        aria-haspopup={false}
         aria-labelledby=" pf-toggle-id-3"
         className="pf-c-select__toggle"
         id="pf-toggle-id-3"
-        isCheckbox={true}
         onClick={[Function]}
         onKeyDown={[Function]}
         style={
@@ -1157,7 +1153,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
       className=""
       isExpanded={false}
       isGrouped={false}
-      openedOnEnter={false}
     >
       <FocusTrap
         _createFocusTrap={[Function]}
@@ -1202,7 +1197,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={null}
+                        checked={false}
                         className="pf-c-check__input"
                         disabled={false}
                         id="Mr"
@@ -1233,7 +1228,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={null}
+                        checked={false}
                         className="pf-c-check__input"
                         disabled={false}
                         id="Mrs"
@@ -1264,7 +1259,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={null}
+                        checked={false}
                         className="pf-c-check__input"
                         disabled={false}
                         id="Ms"
@@ -1295,7 +1290,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
                       onKeyDown={[Function]}
                     >
                       <input
-                        checked={null}
+                        checked={false}
                         className="pf-c-check__input"
                         disabled={false}
                         id="Other"
@@ -1412,7 +1407,6 @@ exports[`select single select renders closed successfully 1`] = `
         aria-labelledby=" pf-toggle-id-0"
         className="pf-c-select__toggle"
         id="pf-toggle-id-0"
-        isCheckbox={false}
         onClick={[Function]}
         onKeyDown={[Function]}
         style={
@@ -1616,7 +1610,6 @@ exports[`select single select renders expanded successfully 1`] = `
         aria-labelledby=" pf-toggle-id-1"
         className="pf-c-select__toggle"
         id="pf-toggle-id-1"
-        isCheckbox={false}
         onClick={[Function]}
         onKeyDown={[Function]}
         style={
