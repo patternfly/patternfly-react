@@ -15,6 +15,7 @@ exports[`ChipGroup chip group default 1`] = `
     <Chip
       className=""
       closeBtnAriaLabel="close"
+      component="div"
       isOverflowChip={false}
       isReadOnly={false}
       onClick={[Function]}
@@ -42,6 +43,7 @@ exports[`ChipGroup chip group with toolbar 1`] = `
     <Chip
       className=""
       closeBtnAriaLabel="close"
+      component="div"
       isOverflowChip={false}
       isReadOnly={false}
       onClick={[Function]}
