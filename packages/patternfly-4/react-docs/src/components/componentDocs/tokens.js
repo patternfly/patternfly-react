@@ -13,20 +13,22 @@ class Tokens extends React.Component {
   }
 
   render() {
-    return <table>
-      <tbody>
-      <tr>
-        <th>CSS Variable</th>
-        <th>Value</th>
-      </tr>
-      {this.cssTokens.map(token =>
-        <tr key={token.name}>
-          <td>{token.name}</td>
-          <td>{token.value}</td>
+    return (
+      <table>
+        <tbody>
+        <tr>
+          <th>CSS Variable</th>
+          <th>Value</th>
         </tr>
-      )}
-      </tbody>
-    </table>
+        {this.cssTokens && this.cssTokens.map(token =>
+          <tr key={token.name}>
+            <td>{token.name}</td>
+            <td>{token.value}</td>
+          </tr>
+        )}
+        </tbody>
+      </table>
+    );
   }
 }
 

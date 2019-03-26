@@ -57,4 +57,4 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }) =>
   }
   actions.createNode(metadataNode)
   actions.createParentChildLink({ parent: node, child: metadataNode })
-}
+};

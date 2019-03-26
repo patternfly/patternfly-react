@@ -9,48 +9,39 @@ class LiveEdit extends React.Component {
     this.code = this.props.children[0];
     this.scope = this.props.scope;
     this.scope.React = React;
-    console.log('scope', this.scope);
-    // this.scope = {
-    //   React,
-    //   ...CoreComponents,
-    //   ...CoreIcons,
-    //   ...TableComponents,
-    //   ...ChartComponents,
-    //   ...StyledSystemComponents,
-    //   ...Styles
-    // };
-
-    // const fullPath = props.exampleResources[0];
-    // const importName = fullPath.replace(/^.*[\\\/]/, '').replace(/\..*/, '');
-    // console.log(importName, '=require', fullPath);
-    // console.log('confused', '/Users/zallen/src/patternfly-react/packages/patternfly-4/react-core/src/components/Avatar/examples/avatarImg.svg' === fullPath);
-    // this.scope.importName = require(fullPath);
   }
 
   transformCode(code) {
     if (typeof code !== 'string') {
-      console.log('confusing', code)
-      return code;
+      return;
     }
     // These don't actually do anything except make Buble mad
     const toParse = code
-      .replace(/^\s*import.*/gm, '')
-      .replace(/^\s*export.*/gm, '');
+      .replace(/^\s*import.*from.*/gm, '') // single line import
+      .replace(/^\s*import\s+{[\s\S]+?}\s+from.*/gm, '') // multi line import
+      .replace(/^\s*export.*;/gm, '') // single line export
+      .replace(/export default/gm, '') // inline export
 
     return toParse;
   }
 
   render() {
-    // return <React.Fragment>
-    //   <div className="component-documentation">
-    //     <Playground codeText={this.transformCode(this.code)} scope={this.scope} collapsableCode={true} initiallyExpanded={false}></Playground>
-    //   </div>
-    // </React.Fragment>
-    return <LiveProvider code={this.code} scope={this.scope} transformCode={this.transformCode}>
-      <LivePreview />
-      <LiveEditor />
-      <LiveError />
-    </LiveProvider>
+    if (this.props.className === 'language-nolive') {
+      return (
+        <LiveProvider code={this.code} disabled>
+          <LiveEditor />
+        </LiveProvider>
+      );
+    }
+    else {
+      return (
+        <LiveProvider code={this.code} scope={this.scope} transformCode={this.transformCode}>
+          <LivePreview />
+          <LiveEditor />
+          <LiveError />
+        </LiveProvider>
+      );
+    }
   }
 }
 

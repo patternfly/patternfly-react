@@ -6,8 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "clean": "rimraf .cache dist public static",
-    "develop": "gatsby develop",
+    "clean": "rimraf .cache public",
+    "develop": "yarn clean && gatsby develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve --prefix-paths"
   },
