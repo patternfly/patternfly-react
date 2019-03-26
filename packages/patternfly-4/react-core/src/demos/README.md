@@ -1,1 +1,0 @@
-This folder contains demos that show case the PatternFly components used in a variety of use cases. Demos should be placed in a sub folder with the name of the demo. For example a demo for PageLayout would found in src/demos/PageLayout.

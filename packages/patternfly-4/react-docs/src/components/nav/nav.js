@@ -5,17 +5,17 @@ import { getFileName } from '../../helpers/navHelpers'
 
 const Nav = () => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    {
       site {
         siteMetadata {
           title
         }
       }
-      allMarkdownRemark {
+      allSitePage {
         edges {
           node {
-            fileAbsolutePath
-            frontmatter {
+            path
+            context {
               title
             }
           }
@@ -23,18 +23,28 @@ const Nav = () => {
       }
     }`);
 
-  const orderedNodes = data.allMarkdownRemark.edges.map(edge => {
-    edge.node.pageName = getFileName(edge.node.fileAbsolutePath)
-    return edge.node
-  }).sort((n1, n2) => n1.pageName.localeCompare(n2.pageName));
+  // const grouped = data.allSitePage.edges
+  //   .filter(edge => edge.node.path.split('/').length > 3)
+  //   .reduce((acc, item) => {
+  //     const group = item.node.path.split('/')[1];
+  //     acc[group] = acc[group] || [];
+  //     acc[group].push(item.node);
+  //     return acc;
+  //   });
+
+  console.log('a lil help', data.allSitePage.edges);
+  const orderedNodes = data.allSitePage.edges
+    .map(edge => edge.node)
+    .filter(node => node.context.title)
+    .sort((e1, e2) => e1.context.title.localeCompare(e2.context.title));
 
   return (
     <React.Fragment>
       {data.site.siteMetadata.title}
       <ul>
         {orderedNodes.map(node =>
-          <li key={node.pageName}>
-            <Link to={node.pageName}>{node.frontmatter.title}</Link>
+          <li key={node.path}>
+            <Link to={node.path}>{node.context.title}</Link>
           </li>
         )}
       </ul>

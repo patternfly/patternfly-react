@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@patternfly/react-styles';
-import styles from './ItemControl.styles';
 import SpanSlider from './SpanSlider';
 
 const StringOrNumber = PropTypes.oneOfType([PropTypes.string, PropTypes.number]);
@@ -36,7 +34,7 @@ class ItemControl extends React.Component {
     const { id, span, offset, rowSpan } = this.props;
 
     return (
-      <div className={css(styles.itemControl)}>
+      <div>
         <div>{id}</div>
         <SpanSlider id={`grid-item-${id}-span`} label="Span" value={span} onChange={this.handleSpanChange} />
         <SpanSlider

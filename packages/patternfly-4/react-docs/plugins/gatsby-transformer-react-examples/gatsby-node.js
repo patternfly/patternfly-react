@@ -28,7 +28,7 @@ exports.onCreateNode = ({ node, actions, createNodeId, createContentDigest }) =>
   if (!canParse(node)) return
 
   const extension = path.extname(node.absolutePath);
-  const importName = path.basename(node.absolutePath, extension).replace('-', '').replace('_', '').trim();
+  const importName = path.basename(node.absolutePath, extension).replace('-', '').replace('_', '').replace('.', '').trim();
 
   if (imports[importName])
     console.warn(`Import ${importName} from ${node.absolutePath} also appears in ${imports[importName].path}`);

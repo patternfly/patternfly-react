@@ -5,7 +5,6 @@ class Tokens extends React.Component {
   constructor(props) {
     super(props);
     if (!props.cssPrefix) {
-      console.error('No css prefix for component');
       return;
     }
     this.cssTokens = Object.values(tokensModule).filter(val => (
@@ -16,16 +15,16 @@ class Tokens extends React.Component {
     return (
       <table>
         <tbody>
-        <tr>
-          <th>CSS Variable</th>
-          <th>Value</th>
-        </tr>
-        {this.cssTokens && this.cssTokens.map(token =>
-          <tr key={token.name}>
-            <td>{token.name}</td>
-            <td>{token.value}</td>
+          <tr>
+            <th>CSS Variable</th>
+            <th>Value</th>
           </tr>
-        )}
+          {this.cssTokens && this.cssTokens.map(token =>
+            <tr key={token.name}>
+              <td>{token.name}</td>
+              <td>{token.value}</td>
+            </tr>
+          )}
         </tbody>
       </table>
     );

@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from '@patternfly/react-styles';
-import styles from './SpanSlider.styles';
 import { Grid, GridItem } from '@patternfly/react-core';
 
 const propTypes = {
@@ -17,14 +15,13 @@ const defaultProps = {
 };
 
 const SpanSlider = ({ label, id, onChange, min, value }) => (
-  <Grid className={css(styles.spanSlider)}>
-    <GridItem span={4} className={css(styles.label)}>
+  <Grid>
+    <GridItem span={4}>
       <label htmlFor={id}>{label}</label>
     </GridItem>
     <GridItem span={7}>
       <input
         id={id}
-        className={css(styles.rangeInput)}
         type="range"
         min={min}
         max={12}
@@ -32,7 +29,7 @@ const SpanSlider = ({ label, id, onChange, min, value }) => (
         onChange={onChange}
       />
     </GridItem>
-    <GridItem span={1} className={css(styles.value)}>
+    <GridItem span={1}>
       {value}
     </GridItem>
   </Grid>

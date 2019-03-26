@@ -34,8 +34,8 @@ import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/acc
 import spacingStyles from '@patternfly/patternfly/utilities/Spacing/spacing.css';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import brandImg from './l_pf-reverse-164x11.png';
-import avatarImg from './img_avatar.svg';
+import brandImg from './brandImg.png';
+import avatarImg from './imgAvatar.svg';
 
 class PageLayoutDefaultNav extends React.Component {
   constructor(props) {
