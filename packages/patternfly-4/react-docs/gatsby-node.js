@@ -34,34 +34,50 @@ exports.createPages = ({ actions, graphql }) => {
       const componentName = navHelpers.getFileName(node.fileAbsolutePath);
       const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
 
-      // Create fullscreen example component pages
+      let link = '/bad-page/';
+      let context = {};
+      // Create fullscreen example component pages for any links in the *.md
       if (node.frontmatter.seperatePages) {
+        // Create the templated page to link to them differently
+        link = `/${node.frontmatter.section}/${componentName}/`;
+        context = {
+          title: node.frontmatter.title,
+          fileAbsolutePath: node.fileAbsolutePath,
+          pathRegex: '', // No props
+          examplesRegex: '', // No examples to inject (they're on separate pages)
+        }
+        console.log('adding base page', link);
+
+        // Create the separate pages
         astHelpers.getLinks(node.htmlAst).forEach(link => {
-          if (link.endsWith('/'))
-            link = link.substr(0, link.length - 1);
-          const split = link.split('/');
+          const split = link.split('/').filter(s => s);
           const demoComponent = split[split.length - 1];
           const basePath = path.dirname(node.fileAbsolutePath);
 
+          link = `/${node.frontmatter.section}/${split.join('/')}/`
           console.log('adding page', link);
           actions.createPage({
             path: link,
-            // Assume components are under "examples" folder and hence in example_index.js
+            // Assume [Link](/demos/PageLayoutSimpleNav/) means there is a ./examples/PageLayoutSimpleNav.js
             component: path.resolve(`${basePath}/examples/${demoComponent}.js`),
           });
         })
-      }
-      // Normal, templated component pages
-      console.log('adding page', `/components/${componentName}/`);
-      actions.createPage({
-        path: `/components/${componentName}/`,
-        component: templatePath,
-        context: {
+      } else {
+        // Normal templated component pages
+        let section = node.frontmatter.section ? node.frontmatter.section : 'components';
+        link = `/${section}/${componentName}/`;
+        context = {
           title: node.frontmatter.title,
           fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
           pathRegex: `/${folderName}\/.*/`, // Helps us get the docgenned props
           examplesRegex: `/${folderName}\/examples\/.*/`, // Helps us inject the example files
         }
+        console.log('adding page', link);
+      }
+      actions.createPage({
+        path: link,
+        component: templatePath,
+        context: context
       });
     });
   })

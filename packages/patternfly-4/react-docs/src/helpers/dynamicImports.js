@@ -1,11 +1,16 @@
-// Dynamic imports
-const reactCharts = require("@patternfly/react-charts");
-const reactCore = require("@patternfly/react-core");
-const reactIcons = require("@patternfly/react-icons");
-const reactStyled = require("@patternfly/react-styled-system");
-const reactStyles = require("@patternfly/react-styles");
-const reactTable = require("@patternfly/react-table");
-const reactTokens = require("@patternfly/react-tokens");
+// Dynamic imports. Yep, this is as ghetto as it looks.
+// We cannot use `"@patternfly/react-core": "file:../react-core"` in package.json and then
+// use the normal require("@patternfly/react-core") here because we need to use a *locked*
+// version of react-core for other component _inside_ our website (like the nav) in case
+// they break during local development. This is so the website won't fall apart if you break
+// the code for react-core/src/components/Button locally.
+const reactCharts = require("../../../react-charts/dist/js");
+const reactCore = require("../../../react-core/dist/js");
+const reactIcons = require("../../../../react-icons/dist/js");
+const reactStyled = require("../../../react-styled-system/dist/js");
+const reactStyles = require("../../../react-styles/dist/js");
+const reactTable = require("../../../react-table/dist/js");
+const reactTokens = require("../../../react-tokens/dist/js");
 // This is from our gatsby-transformer-react-examples plugin
 const exampleComponents = require("../../.cache/example_index");
 
@@ -28,6 +33,8 @@ exports.getScope = (sourceCode, exampleResources) => {
     }
   });
 
+  // If this doesn't resolve, the filename of the imported component _must_ match
+  // the import. i.e. import abc123 from './examples/abc123'
   exampleResources.forEach(resource => {
     res[resource] = exampleComponents[resource];
   });

@@ -12,13 +12,7 @@
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
-    "@patternfly/react-charts": "file:../react-charts",
-    "@patternfly/react-core": "file:../react-core",
-    "@patternfly/react-icons": "file:../react-icons",
-    "@patternfly/react-styled-system": "file:../react-styled-system",
-    "@patternfly/react-styles": "file:../react-styles",
-    "@patternfly/react-table": "file:../react-table",
-    "@patternfly/react-tokens": "file:../react-tokens",
+    "@patternfly/react-core": "2.9.2",
     "gatsby": "^2.1.37",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-source-filesystem": "^2.0.27",

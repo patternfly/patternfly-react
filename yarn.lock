@@ -1638,6 +1638,26 @@
   version "1.0.240"
   resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.240.tgz#80e8663695cc8e4ea463b7021d41313c43f710c9"
 
+"@patternfly/react-core@2.9.2":
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-core/-/react-core-2.9.2.tgz#f21cfaaa244d690ff0429f53fff5f937d1c7d16b"
+  dependencies:
+    "@patternfly/react-icons" "^3.6.1"
+    "@patternfly/react-styles" "^2.4.0"
+    "@patternfly/react-tokens" "^2.2.1"
+    "@tippy.js/react" "^1.1.1"
+    emotion "^9.2.9"
+    exenv "^1.2.2"
+    focus-trap-react "^4.0.1"
+
+"@patternfly/react-icons@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-icons/-/react-icons-3.6.1.tgz#e5c55bd0f52c5b48e17117a9db30233eb2f242af"
+
+"@patternfly/react-tokens@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@patternfly/react-tokens/-/react-tokens-2.2.1.tgz#703d79535884d88a0c2cce517956318d6ba6156c"
+
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
   resolved "https://registry.yarnpkg.com/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz#2e9da9d3ade9d18d013333eb408c457d04eabac0"

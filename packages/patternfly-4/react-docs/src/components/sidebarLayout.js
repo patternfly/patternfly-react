@@ -5,43 +5,41 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import Nav from './nav/nav'
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
+import { Page, PageHeader, PageSection } from '@patternfly/react-core';
+import SiteNav from './nav/siteNav';
 
 // Import global CSS files here. Have no remorse.
 // https://www.gatsbyjs.org/docs/creating-global-styles
 import '@patternfly/react-core/dist/styles/base.css'
 
-// TODO: make look good https://www.patternfly.org/pattern-library/navigation/vertical-navigation/#code
-// or like gatsby's https://www.gatsbyjs.org/docs/linking-and-prefetching-with-gatsby
-const SidebarLayout = ({ children }) => (
-  <React.Fragment>
-    <Helmet>
-      <html lang="en-US" />
-      <meta charSet="utf-8" />
-      <meta name="description" content="PatternFly React Documentation" />
-      <meta name="keywords" content="React, PatternFly, Red Hat" />
-    </Helmet>
-    <div style={{
-      display: 'flex',
-      minHeight: '100%',
-      width: '100%'
-    }}>
-      <aside style={{
-        position: 'relative',
-        flexShrink: 0,
-        borderRight: 'solid 1px #cecece'
-      }}>
-        <Nav />
-      </aside>
-      <main style={{
-        position: 'relative',
-        flex: '1 1 auto',
-        overflowX: 'hidden'
-      }}>{children}</main>
-    </div>
-  </React.Fragment >
-)
+const SidebarLayout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }`);
+  return (
+    <React.Fragment>
+      <Helmet>
+        <html lang="en-US" />
+        <meta charSet="utf-8" />
+        <meta name="description" content="PatternFly React Documentation" />
+        <meta name="keywords" content="React, PatternFly, Red Hat" />
+      </Helmet>
+      {/* Nothing quite like dogfooding your own components */}
+      <Page header={<PageHeader logo={data.site.siteMetadata.title} showNavToggle />} sidebar={<SiteNav />} isManagedSidebar>
+        <PageSection>
+          {children}
+        </PageSection>
+      </Page>
+    </React.Fragment >
+  );
+}
 
-export default SidebarLayout
+export default SidebarLayout;
