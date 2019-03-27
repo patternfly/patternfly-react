@@ -46,7 +46,6 @@ exports.createPages = ({ actions, graphql }) => {
           pathRegex: '', // No props
           examplesRegex: '', // No examples to inject (they're on separate pages)
         }
-        console.log('adding base page', link);
 
         // Create the separate pages
         astHelpers.getLinks(node.htmlAst).forEach(link => {
@@ -55,7 +54,6 @@ exports.createPages = ({ actions, graphql }) => {
           const basePath = path.dirname(node.fileAbsolutePath);
 
           link = `/${node.frontmatter.section}/${split.join('/')}/`
-          console.log('adding page', link);
           actions.createPage({
             path: link,
             // Assume [Link](/demos/PageLayoutSimpleNav/) means there is a ./examples/PageLayoutSimpleNav.js
@@ -72,8 +70,8 @@ exports.createPages = ({ actions, graphql }) => {
           pathRegex: `/${folderName}\/.*/`, // Helps us get the docgenned props
           examplesRegex: `/${folderName}\/examples\/.*/`, // Helps us inject the example files
         }
-        console.log('adding page', link);
       }
+      // console.log('adding page', link);
       actions.createPage({
         path: link,
         component: templatePath,

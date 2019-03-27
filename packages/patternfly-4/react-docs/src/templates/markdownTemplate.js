@@ -78,7 +78,7 @@ export default function Template({ data }) {
           <p>
             CSS Variables from
               <a href="https://github.com/patternfly/patternfly-next/" target="_blank"> patternfly-next </a>
-            starting with <strong>{cssPrefix}</strong>.
+            starting with <strong>--{cssPrefix}</strong>.
           </p>
           <br />
           <CSSVars cssPrefix={cssPrefix}></CSSVars>

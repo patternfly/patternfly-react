@@ -41,10 +41,12 @@ const SiteNav = () => {
       return acc;
     }, {});
 
+  console.log('grouped', grouped);
+
   return (
     <Nav aria-label="Nav">
       {Object.entries(grouped)
-        .sort(([k1, v1], [k2, v2]) => k1.localeCompare(k2))
+        .sort(([k1], [k2]) => k1.localeCompare(k2))
         .map(([key, value]) =>
           <NavGroup key={key} title={key}>
             {value
