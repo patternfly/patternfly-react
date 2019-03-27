@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 3.7.0 (2019-03-27)
+
+
+### Features
+
+* **Icons:** Paper plane alt icon ([#1643](https://github.com/patternfly/patternfly-react/issues/1643)) ([cd149e0](https://github.com/patternfly/patternfly-react/commit/cd149e0))
+
+
+
+
+
 ## [3.6.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-icons@3.6.0...@patternfly/react-icons@3.6.1) (2019-03-21)
 
 **Note:** Version bump only for package @patternfly/react-icons
