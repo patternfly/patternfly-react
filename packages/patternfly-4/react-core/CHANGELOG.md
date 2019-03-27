@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.0...@patternfly/react-core@2.10.1) (2019-03-27)
+
+
+### Bug Fixes
+
+* **DataList:** set width and isExpanded to optional in d.ts ([#1627](https://github.com/patternfly/patternfly-react/issues/1627)) ([0aa174d](https://github.com/patternfly/patternfly-react/commit/0aa174d))
+
+
+
+
+
 # [2.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.9.3...@patternfly/react-core@2.10.0) (2019-03-25)
 
 
