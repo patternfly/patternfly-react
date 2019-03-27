@@ -5,24 +5,26 @@ import { Tokens, Props, LiveEdit } from '../components/componentDocs';
 import rehypeReact from 'rehype-react';
 import { getUsedComponents } from '../helpers/astHelpers';
 import { getScope } from '../helpers/dynamicImports';
-
+import { Title, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
 const getRehypeReact = scope => {
   return new rehypeReact({
-    // Here we inject the scope property down to our liveEdit
+    // Here we inject the properties down to ALL our listed components
     createElement: (type, props, ...children) => {
       if (typeof type === 'function') {
         props.scope = scope;
+        props.size = 'xl';
       }
       return React.createElement(type, props, ...children);
     },
     components: {
-      code: LiveEdit
+      code: LiveEdit,
+      h2: Title
     },
   }).Compiler;
 }
 
-export default function Template({ data, pageContext }) {
+export default function Template({ data }) {
   // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
   const helperComponents = data.metadata.edges.map(e => e.node.name)
   // Exported components with names used in the *.md file
@@ -43,28 +45,38 @@ export default function Template({ data, pageContext }) {
 
   const cssPrefix = data.markdownRemark.frontmatter.cssPrefix;
 
+  let section = data.markdownRemark.frontmatter.section;
+  if (!section)
+    section = 'component';
+
   return (
     <SidebarLayout>
-      <h1>{data.markdownRemark.frontmatter.title}</h1>
-      {renderAst(data.markdownRemark.htmlAst)}
+      <PageSection variant={PageSectionVariants.darker}>
+        <Title size="4xl" style={{ textTransform: 'capitalize' }}>
+          {data.markdownRemark.frontmatter.title} {section}
+        </Title>
+      </PageSection>
 
-      {cssPrefix &&
-        <React.Fragment>
-          <h2>tokens</h2>
-          <Tokens cssPrefix={cssPrefix}></Tokens>
-        </React.Fragment>
-      }
+      <PageSection>
+        {renderAst(data.markdownRemark.htmlAst)}
+      </PageSection>
 
       {props.length > 0 &&
-        <React.Fragment>
-          <h2>props</h2>
-          {props.map(prop =>
-            <React.Fragment key={prop.name}>
-              <h3>{prop.name}</h3>
-              <Props propList={prop.props}></Props>
+        <PageSection variant={PageSectionVariants.dark}>
+          {props.map(component =>
+            <React.Fragment key={component.name}>
+              <Title size="lg">{component.name} Properties</Title>
+              <Props propList={component.props} />
             </React.Fragment>
           )}
-        </React.Fragment>
+        </PageSection>
+      }
+
+      {cssPrefix &&
+        <PageSection>
+          <Title size="lg">Tokens</Title>
+          <Tokens cssPrefix={cssPrefix}></Tokens>
+        </PageSection>
       }
     </SidebarLayout>
   );
@@ -82,6 +94,7 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!, $examplesReg
     rawMarkdownBody
     frontmatter {
       title
+      section
       cssPrefix
     }
   }

@@ -8,7 +8,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { Page, PageHeader, PageSection } from '@patternfly/react-core';
+import { Page, PageHeader } from '@patternfly/react-core';
 import SiteNav from './nav/siteNav';
 
 // Import global CSS files here. Have no remorse.
@@ -34,9 +34,7 @@ const SidebarLayout = ({ children }) => {
       </Helmet>
       {/* Nothing quite like dogfooding your own components */}
       <Page header={<PageHeader logo={data.site.siteMetadata.title} showNavToggle />} sidebar={<SiteNav />} isManagedSidebar>
-        <PageSection>
-          {children}
-        </PageSection>
+        {children}
       </Page>
     </React.Fragment >
   );
