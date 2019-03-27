@@ -2,7 +2,7 @@
 title: "Brand"
 cssPrefix: null
 ---
-#### Simple Brand
+## Simple Brand
 ```js
 import React from 'react';
 import { Brand } from '@patternfly/react-core';

@@ -2,7 +2,7 @@
 title: "Text"
 cssPrefix: "pf-c-content"
 ---
-#### Headings
+## Headings
 ```js
 import React from 'react';
 import { TextContent, Text, TextVariants } from '@patternfly/react-core';
@@ -17,7 +17,7 @@ import { TextContent, Text, TextVariants } from '@patternfly/react-core';
 </TextContent>
 ```
 
-#### Body Text
+## Body Text
 ```js
 import React from 'react';
 import { TextContent, Text, TextVariants } from '@patternfly/react-core';
@@ -43,7 +43,7 @@ import { TextContent, Text, TextVariants } from '@patternfly/react-core';
 </TextContent>
 ```
 
-#### Unordered List
+## Unordered List
 Text components such as Text, TextList, TextListItem need to be placed within a TextContent
 ```js
 import React from 'react';
@@ -65,7 +65,7 @@ import { TextContent, TextList, TextListItem } from '@patternfly/react-core';
 </TextContent>
 ```
 
-#### Ordered List
+## Ordered List
 ```js
 import React from 'react';
 import { TextContent, TextList, TextListVariants, TextListItem } from '@patternfly/react-core';
@@ -83,7 +83,7 @@ import { TextContent, TextList, TextListVariants, TextListItem } from '@patternf
 </TextContent>
 ```
 
-#### Data List
+## Data List
 ```js
 import React from 'react';
 import { TextContent, TextList, TextListVariants, TextListItem, TextListItemVariants } from '@patternfly/react-core';

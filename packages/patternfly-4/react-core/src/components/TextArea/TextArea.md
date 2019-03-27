@@ -2,7 +2,7 @@
 title: "Text Area"
 cssPrefix: "pf-c-form-control"
 ---
-#### Simple Text Area
+## Simple Text Area
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';
@@ -26,7 +26,7 @@ class SimpleTextArea extends React.Component {
 }
 ```
 
-#### Invalid Text Area
+## Invalid Text Area
 ```js
 import React from 'react';
 import { TextArea } from '@patternfly/react-core';

@@ -2,7 +2,7 @@
 title: "Pagination"
 cssPrefix: null
 ---
-#### Pagination Top
+## Pagination Top
 ```js
 import React from 'react';
 import { Pagination } from '@patternfly/react-core';
@@ -42,7 +42,7 @@ class PaginationTop extends React.Component {
 }
 ```
 
-#### Pagination Bottom
+## Pagination Bottom
 ```js
 import React from 'react';
 import { Pagination, PaginationVariant } from '@patternfly/react-core';

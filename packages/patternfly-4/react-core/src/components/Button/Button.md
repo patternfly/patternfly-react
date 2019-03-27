@@ -2,7 +2,7 @@
 title: "Button"
 cssPrefix: "pf-c-button"
 ---
-#### Block Button
+## Block Button
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
@@ -12,7 +12,7 @@ BlockButton = () => (
 );
 ```
 
-#### Button Variants
+## Button Variants
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';
@@ -32,7 +32,7 @@ ButtonVariants = () => (
 );
 ```
 
-#### Link Button
+## Link Button
 ```js
 import React from 'react';
 import { Button } from '@patternfly/react-core';

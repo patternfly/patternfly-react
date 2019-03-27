@@ -2,7 +2,7 @@
 title: "Tooltip"
 cssPrefix: "pf-c-tooltip"
 ---
-#### Simple Tooltip
+## Simple Tooltip
 ```js
 import React from 'react';
 import { Tooltip } from '@patternfly/react-core';
@@ -19,7 +19,7 @@ import { Tooltip } from '@patternfly/react-core';
 </Tooltip>
 ```
 
-#### Tooltip Positions
+## Tooltip Positions
 ```js
 import React from 'react';
 import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';

@@ -2,7 +2,7 @@
 title: "List"
 cssPrefix: "pf-c-list"
 ---
-#### Simple List
+## Simple List
 ```js
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
@@ -16,7 +16,7 @@ SimpleList = (
 );
 ```
 
-#### Inline List
+## Inline List
 ```js
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';
@@ -30,7 +30,7 @@ InlineList = (
 );
 ```
 
-#### Grid List
+## Grid List
 ```js
 import React from 'react';
 import { List, ListItem } from '@patternfly/react-core';

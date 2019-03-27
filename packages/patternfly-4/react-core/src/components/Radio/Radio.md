@@ -2,7 +2,7 @@
 title: "Radio"
 cssPrefix: "pf-c-radio"
 ---
-#### Controlled Radio
+## Controlled Radio
 ```js
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
@@ -44,7 +44,7 @@ class ControlledRadio extends React.Component {
 }
 ```
 
-#### Uncontrolled Radio
+## Uncontrolled Radio
 ```js
 import React from 'react';
 import { Radio } from '@patternfly/react-core';
@@ -57,7 +57,7 @@ UncontrolledRadio = () => (
 );
 ```
 
-#### Disabled Radio
+## Disabled Radio
 ```js
 import React from 'react';
 import { Radio } from '@patternfly/react-core';

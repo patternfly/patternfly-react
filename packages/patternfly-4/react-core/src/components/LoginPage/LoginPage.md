@@ -2,7 +2,7 @@
 title: "Login Page"
 cssPrefix: "pf-c-login"
 ---
-#### Simple Login Page
+## Simple Login Page
 ```js
 import React from 'react';
 import brandImgColor from './brandImgColor.svg';

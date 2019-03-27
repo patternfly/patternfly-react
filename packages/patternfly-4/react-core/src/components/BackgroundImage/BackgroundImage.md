@@ -2,7 +2,7 @@
 title: "Background Image"
 cssPrefix: "pf-c-background-image"
 ---
-#### Simple Background Image
+## Simple Background Image
 
 ```js
 import React from 'react';

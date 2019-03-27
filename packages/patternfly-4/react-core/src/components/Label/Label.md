@@ -2,7 +2,7 @@
 title: "Label"
 cssPrefix: "pf-c-label"
 ---
-#### Simple Label
+## Simple Label
 ```js
 import React from 'react';
 import { Label } from '@patternfly/react-core';

@@ -2,7 +2,7 @@
 title: "Data List"
 cssPrefix: "pf-c-data-list"
 ---
-#### Simple Data List
+## Simple Data List
 ```js
 import React from 'react';
 import { DataList, DataListItem, DataListCell } from '@patternfly/react-core';
@@ -25,7 +25,7 @@ SimpleDataList = () => (
 );
 ```
 
-#### Data List Checkboxes, Actions and Additional Cells
+## Data List Checkboxes, Actions and Additional Cells
 ```js
 import React from 'react';
 import { DataList, DataListItem, DataListCell, DataListCheck, DataListAction } from '@patternfly/react-core';
@@ -61,7 +61,7 @@ CheckboxActionDataList = () =>  (
 );
 ```
 
-#### Data List Actions: single and multiple
+## Data List Actions: single and multiple
 ```js
 import React from 'react';
 import {
@@ -137,7 +137,7 @@ class ActionsDataList extends React.Component {
 }
 ```
 
-#### Data List Expandable
+## Data List Expandable
 ```js
 import React from 'react';
 import {
@@ -218,7 +218,7 @@ render() {
 }
 ```
 
-#### Data List Width Modifiers
+## Data List Width Modifiers
 ```js
 import React from 'react';
 import {

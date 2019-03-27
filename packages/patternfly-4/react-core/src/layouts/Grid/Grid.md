@@ -2,7 +2,7 @@
 title: "Grid"
 cssPrefix: "pf-l-grid"
 ---
-#### Simple Grid
+## Simple Grid
 ```js
 import React from 'react';
 import Grid from '@patternfly/react-core';
@@ -28,7 +28,7 @@ import GridItem from '@patternfly/react-core';
 </Grid>
 ```
 
-#### Grid with gutters
+## Grid with gutters
 ```js
 import React from 'react';
 import Grid from '@patternfly/react-core';
@@ -54,7 +54,7 @@ import GridItem from '@patternfly/react-core';
 </Grid>
 ```
 
-#### Grid With Overrides
+## Grid With Overrides
 ```js
 import React from 'react';
 import Grid from '@patternfly/react-core';
@@ -78,7 +78,7 @@ import GridItem from '@patternfly/react-core';
 </Grid>
 ```
 
-#### Grid Playground
+## Grid Playground
 ```js
 import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';

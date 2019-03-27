@@ -2,7 +2,7 @@
 title: "Empty State"
 cssPrefix: "pf-c-empty-state"
 ---
-#### Simple Empty State
+## Simple Empty State
 ```js
 import React from 'react';
 import {

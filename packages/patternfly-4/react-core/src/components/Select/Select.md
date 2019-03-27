@@ -2,7 +2,7 @@
 title: "Select"
 cssPrefix: "pf-c-select"
 ---
-#### Single Select Input
+## Single Select Input
 ```js
 import React from 'react';
 import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';

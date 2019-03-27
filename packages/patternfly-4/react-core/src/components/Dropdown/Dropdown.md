@@ -2,7 +2,7 @@
 title: "Dropdown"
 cssPrefix: "pf-c-dropdown"
 ---
-#### Simple Dropdown
+## Simple Dropdown
 ```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
@@ -56,7 +56,7 @@ class SimpleDropdown extends React.Component {
 }
 ```
 
-#### Dropdown (disabled)
+## Dropdown (disabled)
 ```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
@@ -110,7 +110,7 @@ class DisabledDropdown extends React.Component {
 }
 ```
 
-#### Dropdown (position right)
+## Dropdown (position right)
 ```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition } from '@patternfly/react-core';
@@ -165,7 +165,7 @@ class PositionRightDropdown extends React.Component {
 }
 ```
 
-#### Dropdown (direction up)
+## Dropdown (direction up)
 ```js
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownDirection } from '@patternfly/react-core';
@@ -220,7 +220,7 @@ class DirectionUpDropdown extends React.Component {
 }
 ```
 
-#### Dropdown with Kebab
+## Dropdown with Kebab
 ```js
 import React from 'react';
 import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
@@ -275,7 +275,7 @@ class KebabDropdown extends React.Component {
 }
 ```
 
-#### Dropdown (icon only)
+## Dropdown (icon only)
 ```js
 import React from 'react';
 import { Dropdown, DropdownItem, DropdownToggle, DropdownSeparator } from '@patternfly/react-core';
@@ -335,7 +335,7 @@ class IconDropdown extends React.Component {
 }
 ```
 
-#### React Router Link usage
+## React Router Link usage
 A react-router Link may be wrapped by DropdownItem or used directly within Dropdown.
 ```nolive
 /** Wrapped Link for DropdownItem list **/
@@ -357,7 +357,7 @@ isOpen={isOpen}
 </Dropdown>
 ```
 
-#### Dropdown Panel
+## Dropdown Panel
 The Basic Dropdown is provided for flexibility in allowing various content within a dropdown.
 ```js
 import React from 'react';

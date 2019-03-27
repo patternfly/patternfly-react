@@ -2,7 +2,7 @@
 title: "About Modal"
 cssPrefix: "pf-c-about-modal-box"
 ---
-#### Simple About Modal
+## Simple About Modal
 
 ```js
 import React from 'react';

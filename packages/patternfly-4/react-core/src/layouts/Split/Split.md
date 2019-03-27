@@ -2,7 +2,7 @@
 title: "Split"
 cssPrefix: "pf-l-split"
 ---
-#### Simple Split
+## Simple Split
 ```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
@@ -14,7 +14,7 @@ import { Split, SplitItem } from '@patternfly/react-core';
 </Split>
 ```
 
-#### Split Layout with Gutter
+## Split Layout with Gutter
 ```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';

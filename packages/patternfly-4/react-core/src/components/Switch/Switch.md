@@ -2,7 +2,7 @@
 title: "Switch"
 cssPrefix: "pf-c-switch"
 ---
-#### Simple Switch
+## Simple Switch
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
@@ -32,7 +32,7 @@ class SimpleSwitch extends React.Component {
 }
 ```
 
-#### Switch (No Labels)
+## Switch (No Labels)
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
@@ -61,7 +61,7 @@ class NoLabelSwitch extends React.Component {
 }
 ```
 
-#### Switch (Disabled)
+## Switch (Disabled)
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';
@@ -95,7 +95,7 @@ DisabledSwitch = () => (
 );
 ```
 
-#### Switch (Uncontrolled)
+## Switch (Uncontrolled)
 ```js
 import React from 'react';
 import { Switch } from '@patternfly/react-core';

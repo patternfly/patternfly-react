@@ -2,7 +2,7 @@
 title: "Tabs"
 cssPrefix: "pf-c-tabs"
 ---
-#### Simple Tabs
+## Simple Tabs
 Use Primary Sections
 ```js
 import React from 'react';
@@ -39,7 +39,7 @@ class SimpleTabs extends React.Component {
 }
 ```
 
-#### Scroll Buttons Tabs
+## Scroll Buttons Tabs
 ```js
 import React from 'react';
 import { Tabs, Tab } from '@patternfly/react-core';
@@ -103,7 +103,7 @@ class ScrollButtonsTabs extends React.Component {
 }
 ```
 
-#### Secondary Buttons Tabs
+## Secondary Buttons Tabs
 ```js
 import React from 'react';
 import { Tabs, Tab } from '@patternfly/react-core';
@@ -156,7 +156,7 @@ class SecondaryTabs extends React.Component {
 }
 ```
 
-#### Filled Buttons Tabs
+## Filled Buttons Tabs
 ```js
 import React from 'react';
 import { Tabs, Tab } from '@patternfly/react-core';

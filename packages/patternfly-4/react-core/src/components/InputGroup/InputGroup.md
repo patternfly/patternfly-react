@@ -2,7 +2,7 @@
 title: "Input Group"
 cssPrefix: null
 ---
-#### Simple Input Group
+## Simple Input Group
 Buttons and TextArea
 ```js
 import React from 'react';

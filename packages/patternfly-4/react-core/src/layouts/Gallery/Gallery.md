@@ -2,7 +2,7 @@
 title: "Gallery"
 cssPrefix: "pf-l-gallery"
 ---
-#### Simple Gallery Layout
+## Simple Gallery Layout
 ```js
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';
@@ -19,7 +19,7 @@ import { Gallery, GalleryItem } from '@patternfly/react-core';
 </Gallery>
 ```
 
-#### Gallery With Gutters
+## Gallery With Gutters
 ```js
 import React from 'react';
 import { Gallery, GalleryItem } from '@patternfly/react-core';

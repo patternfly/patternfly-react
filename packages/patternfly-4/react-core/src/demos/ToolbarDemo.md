@@ -3,7 +3,7 @@ title: "Toolbar Demo"
 cssPrefix: null
 section: "demos"
 ---
-#### Toolbar Demo
+## Toolbar Demo
 ```js
 import React from 'react';
 import {

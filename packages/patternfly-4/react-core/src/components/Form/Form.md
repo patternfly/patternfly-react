@@ -2,7 +2,7 @@
 title: "Form"
 cssPrefix: "pf-c-form"
 ---
-#### Simple Form
+## Simple Form
 ```js
 import React from 'react';
 import { Form, FormGroup, TextInput, Checkbox, ActionGroup, Button, Radio } from '@patternfly/react-core';
@@ -93,7 +93,7 @@ class SimpleForm extends React.Component {
 }
 ```
 
-#### Form (Horizontal)
+## Form (Horizontal)
 ```js
 import React from 'react';
 import {
@@ -211,7 +211,7 @@ class HorizontalForm extends React.Component {
 }
 ```
 
-#### Form (Invalid)
+## Form (Invalid)
 ```js
 import React from 'react';
 import { Form, FormGroup, TextInput } from '@patternfly/react-core';

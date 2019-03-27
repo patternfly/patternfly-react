@@ -2,7 +2,7 @@
 title: "Toolbar"
 cssPrefix: "pf-c-avatar"
 ---
-#### Simple Toolbar Layout
+## Simple Toolbar Layout
 ```js
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
@@ -21,7 +21,7 @@ import { Toolbar, ToolbarGroup, ToolbarItem } from '@patternfly/react-core';
 </Toolbar>
 ```
 
-#### Toolbar with sections
+## Toolbar with sections
 ```js
 import React from 'react';
 import { Toolbar, ToolbarGroup, ToolbarSection, ToolbarItem } from '@patternfly/react-core';

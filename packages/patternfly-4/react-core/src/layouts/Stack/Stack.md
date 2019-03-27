@@ -2,7 +2,7 @@
 title: "Stack"
 cssPrefix: "pf-l-stack"
 ---
-#### Simple Stack Layout
+## Simple Stack Layout
 ```js
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';
@@ -14,7 +14,7 @@ import { Stack, StackItem } from '@patternfly/react-core';
 </Stack>
 ```
 
-#### Simple Stack Layout with Gutter
+## Simple Stack Layout with Gutter
 ```js
 import React from 'react';
 import { Stack, StackItem } from '@patternfly/react-core';

@@ -2,7 +2,7 @@
 title: "Text Input"
 cssPrefix: "pf-c-form-control"
 ---
-#### Simple Text Input
+## Simple Text Input
 ```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
@@ -27,7 +27,7 @@ class SimpleTextInput extends React.Component {
 }
 ```
 
-#### Text Input (Disabled)
+## Text Input (Disabled)
 ```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
@@ -40,7 +40,7 @@ import { TextInput } from '@patternfly/react-core';
 />
 ```
 
-#### Text Input (Read-Only)
+## Text Input (Read-Only)
 ```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
@@ -48,7 +48,7 @@ import { TextInput } from '@patternfly/react-core';
 <TextInput value="read only text input example" type="text" isReadOnly aria-label="readonly input example" />;
 ```
 
-#### Text Input (Invalid)
+## Text Input (Invalid)
 ```js
 import React from 'react';
 import { TextInput } from '@patternfly/react-core';
