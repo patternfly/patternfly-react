@@ -39,13 +39,13 @@ export interface PaginationProps extends HTMLProps<HTMLDivElement> {
   widgetId?: string;
   dropDirection?: OneOf<typeof DropdownDirection, keyof typeof DropdownDirection>;
   titles?: PaginationTitles;
-  onSetPage?: Function;
-  onFirstClick?: Function;
-  onPreviousClick?: Function;
-  onNextClick?: Function;
-  onLastClick?: Function;
-  onPageInput?: Function;
-  onPerPageSelect?: Function;
+  onSetPage?(event: React.SyntheticEvent<HTMLButtonElement>, page: number): void;
+  onFirstClick?(event: React.SyntheticEvent<HTMLButtonElement>, page: number): void;
+  onPreviousClick?(event: React.SyntheticEvent<HTMLButtonElement>, page: number): void;
+  onNextClick?(event: React.SyntheticEvent<HTMLButtonElement>, page: number): void;
+  onLastClick?(event: React.SyntheticEvent<HTMLButtonElement>, page: number): void;
+  onPageInput?(event: React.SyntheticEvent<HTMLButtonElement>, page: number): void;
+  onPerPageSelect?(event: React.SyntheticEvent<HTMLDivElement>, perPage: number): void;
 }
 
 declare const Pagination: FunctionComponent<PaginationProps>;
