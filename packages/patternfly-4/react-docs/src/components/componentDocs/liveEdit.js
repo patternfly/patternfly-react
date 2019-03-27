@@ -26,14 +26,7 @@ class LiveEdit extends React.Component {
   }
 
   render() {
-    if (this.props.className === 'language-nolive') {
-      return (
-        <LiveProvider code={this.code} disabled>
-          <LiveEditor />
-        </LiveProvider>
-      );
-    }
-    else {
+    if (this.props.className === 'language-js') {
       return (
         <LiveProvider code={this.code} scope={this.scope} transformCode={this.transformCode}>
           <LivePreview />
@@ -41,6 +34,16 @@ class LiveEdit extends React.Component {
           <LiveError />
         </LiveProvider>
       );
+    }
+    else if (this.props.className === 'language-nolive') {
+      return (
+        <LiveProvider code={this.code} disabled>
+          <LiveEditor />
+        </LiveProvider>
+      );
+    }
+    else {
+      return <strong>{this.code}</strong>
     }
   }
 }

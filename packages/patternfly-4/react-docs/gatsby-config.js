@@ -7,10 +7,10 @@ module.exports = {
   },
   pathPrefix: `/patternfly-4`,
   plugins: [
+    // Plugin to inject stuff into <head></head>
     `gatsby-plugin-react-helmet`,
-    { // react-core source files to pipe through transformer-react-docgen to get prop types
-      // react-core *.md files to pipe through transformer-remark
-      // react-core example/* files to dynamically require in various ways
+    // Plugin to load source files to do fun things with
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `react-core`,
@@ -18,8 +18,20 @@ module.exports = {
         ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/helpers/**`, `**/styles/**`]
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `react-charts`,
+        path: `${__dirname}/../react-charts/src`,
+        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/scripts/**`]
+      },
+    },
+    // Our custom plugin for *.js?x *.ts?x files to get prop types
     `gatsby-transformer-react-docgen-typescript`,
+    // Our custom plugin for examples/**/*.(js|svg) files to add to .cache/example_index.js
+    // ...then webpack deals with those files statically instead of us dynamically :)
     `gatsby-transformer-react-examples`,
+    // The markdown plugin for *.md files
     `gatsby-transformer-remark`
   ],
 }

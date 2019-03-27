@@ -1,6 +1,5 @@
 ---
 title: "Toolbar Demo"
-cssPrefix: null
 section: "demos"
 ---
 ## Toolbar Demo
