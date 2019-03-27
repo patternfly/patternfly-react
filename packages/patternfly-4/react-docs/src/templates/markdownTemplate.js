@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SidebarLayout from '../components/sidebarLayout';
-import { Tokens, Props, LiveEdit } from '../components/componentDocs';
+import { CSSVars, Props, LiveEdit } from '../components/componentDocs';
 import rehypeReact from 'rehype-react';
 import { getUsedComponents } from '../helpers/astHelpers';
 import { getScope } from '../helpers/dynamicImports';
-import { Title, PageSection, PageSectionVariants } from '@patternfly/react-core';
+import { Title, PageSection, PageSectionVariants, TextContent, Text } from '@patternfly/react-core';
 
 const getRehypeReact = scope => {
   return new rehypeReact({
@@ -65,7 +65,7 @@ export default function Template({ data }) {
         <PageSection variant={PageSectionVariants.dark}>
           {props.map(component =>
             <React.Fragment key={component.name}>
-              <Title size="lg">{component.name} Properties</Title>
+              <Title size="xl">{component.name} Properties</Title>
               <Props propList={component.props} />
             </React.Fragment>
           )}
@@ -74,8 +74,14 @@ export default function Template({ data }) {
 
       {cssPrefix &&
         <PageSection>
-          <Title size="lg">Tokens</Title>
-          <Tokens cssPrefix={cssPrefix}></Tokens>
+          <Title size="xl">CSS Variables</Title>
+          <p>
+            CSS Variables from
+              <a href="https://github.com/patternfly/patternfly-next/" target="_blank"> patternfly-next </a>
+            starting with <strong>{cssPrefix}</strong>.
+          </p>
+          <br />
+          <CSSVars cssPrefix={cssPrefix}></CSSVars>
         </PageSection>
       }
     </SidebarLayout>
