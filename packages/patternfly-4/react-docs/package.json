@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf .cache public",
     "develop": "yarn clean && gatsby develop",
-    "build": "gatsby build --prefix-paths",
+    "build:docs": "gatsby build --prefix-paths",
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
