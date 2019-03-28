@@ -324,13 +324,13 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
   placeholderText={null}
   selections={null}
   variant="checkbox"
-  width="100%"
+  width={null}
 >
   <div
     className="pf-c-select pf-m-expanded"
     style={
       Object {
-        "width": "100%",
+        "width": null,
       }
     }
   >
@@ -348,11 +348,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       onEnter={[Function]}
       onToggle={[MockFunction]}
       parentRef={null}
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
       type="button"
     >
       <button
@@ -363,11 +358,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
         id="pf-toggle-id-4"
         onClick={[Function]}
         onKeyDown={[Function]}
-        style={
-          Object {
-            "width": "100%",
-          }
-        }
         type="button"
       >
         <div
@@ -788,13 +778,13 @@ exports[`checkbox select renders closed successfully 1`] = `
   placeholderText={null}
   selections={null}
   variant="checkbox"
-  width="100%"
+  width={null}
 >
   <div
     className="pf-c-select"
     style={
       Object {
-        "width": "100%",
+        "width": null,
       }
     }
   >
@@ -812,11 +802,6 @@ exports[`checkbox select renders closed successfully 1`] = `
       onEnter={[Function]}
       onToggle={[MockFunction]}
       parentRef={null}
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
       type="button"
     >
       <button
@@ -827,11 +812,6 @@ exports[`checkbox select renders closed successfully 1`] = `
         id="pf-toggle-id-2"
         onClick={[Function]}
         onKeyDown={[Function]}
-        style={
-          Object {
-            "width": "100%",
-          }
-        }
         type="button"
       >
         <div
@@ -1063,13 +1043,13 @@ exports[`checkbox select renders expanded successfully 1`] = `
   placeholderText={null}
   selections={null}
   variant="checkbox"
-  width="100%"
+  width={null}
 >
   <div
     className="pf-c-select pf-m-expanded"
     style={
       Object {
-        "width": "100%",
+        "width": null,
       }
     }
   >
@@ -1087,11 +1067,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
       onEnter={[Function]}
       onToggle={[MockFunction]}
       parentRef={null}
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
       type="button"
     >
       <button
@@ -1102,11 +1077,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
         id="pf-toggle-id-3"
         onClick={[Function]}
         onKeyDown={[Function]}
-        style={
-          Object {
-            "width": "100%",
-          }
-        }
         type="button"
       >
         <div
@@ -1367,13 +1337,13 @@ exports[`select single select renders closed successfully 1`] = `
   placeholderText={null}
   selections={null}
   variant="single"
-  width="100%"
+  width={null}
 >
   <div
     className="pf-c-select"
     style={
       Object {
-        "width": "100%",
+        "width": null,
       }
     }
   >
@@ -1391,11 +1361,6 @@ exports[`select single select renders closed successfully 1`] = `
       onEnter={[Function]}
       onToggle={[MockFunction]}
       parentRef={null}
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
       type="button"
     >
       <button
@@ -1406,11 +1371,6 @@ exports[`select single select renders closed successfully 1`] = `
         id="pf-toggle-id-0"
         onClick={[Function]}
         onKeyDown={[Function]}
-        style={
-          Object {
-            "width": "100%",
-          }
-        }
         type="button"
       >
         <div
@@ -1571,13 +1531,13 @@ exports[`select single select renders expanded successfully 1`] = `
   placeholderText={null}
   selections={null}
   variant="single"
-  width="100%"
+  width={null}
 >
   <div
     className="pf-c-select pf-m-expanded"
     style={
       Object {
-        "width": "100%",
+        "width": null,
       }
     }
   >
@@ -1595,11 +1555,6 @@ exports[`select single select renders expanded successfully 1`] = `
       onEnter={[Function]}
       onToggle={[MockFunction]}
       parentRef={null}
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
       type="button"
     >
       <button
@@ -1610,11 +1565,6 @@ exports[`select single select renders expanded successfully 1`] = `
         id="pf-toggle-id-1"
         onClick={[Function]}
         onKeyDown={[Function]}
-        style={
-          Object {
-            "width": "100%",
-          }
-        }
         type="button"
       >
         <div

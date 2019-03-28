@@ -50,7 +50,7 @@ const defaultProps = {
   selections: null,
   placeholderText: null,
   variant: SelectVariant.single,
-  width: '100%'
+  width: null,
 };
 
 class Select extends React.Component {
@@ -105,7 +105,6 @@ class Select extends React.Component {
             onEnter={this.onEnter}
             onClose={this.onClose}
             aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
-            style={{ width }}
             isCheckbox={variant === SelectVariant.checkbox}
           >
             {variant === SelectVariant.single && (
