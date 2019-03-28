@@ -13,13 +13,13 @@
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
-    "@patternfly/react-core": "2.9.2",
-    "gatsby": "^2.1.37",
-    "gatsby-plugin-react-helmet": "^3.0.10",
-    "gatsby-source-filesystem": "^2.0.27",
-    "gatsby-transformer-remark": "^2.3.7",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "@patternfly/react-core": "^2.10.3",
+    "gatsby": "^2.3.3",
+    "gatsby-plugin-react-helmet": "^3.0.11",
+    "gatsby-source-filesystem": "^2.0.28",
+    "gatsby-transformer-remark": "^2.3.8",
+    "react": "~16.8.4",
+    "react-dom": "~16.8.4",
     "react-helmet": "^5.2.0",
     "react-live": "^2.0.0",
     "rehype-react": "^3.1.0"

@@ -5,11 +5,6 @@
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "clean": "rimraf .cache .tmp dist public static",
-    "develop": "gatsby develop",
-    "build": "gatsby build --prefix-paths"
-  },
   "dependencies": {
     "gatsby": "^2.1.37",
     "react-docgen": "^4.1.0",

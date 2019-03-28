@@ -1,16 +1,10 @@
 {
   "name": "gatsby-transformer-react-assets",
-  "description": "Transforms JSX into compiled JS",
+  "description": "Creates an index file from assets matching a path",
   "version": "0.0.1",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
-  "scripts": {
-    "babel": "babel",
-    "clean": "rimraf .cache .tmp dist public static",
-    "develop": "gatsby develop",
-    "build": "gatsby build --prefix-paths"
-  },
   "dependencies": {
     "gatsby": "^2.1.37"
   },
