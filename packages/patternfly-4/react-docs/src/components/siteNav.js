@@ -31,6 +31,7 @@ const SiteNav = () => {
 
   const grouped = data.allSitePage.edges
     .map(edge => edge.node)
+    .filter(node => node.context)
     .map(node => { // Add a title for pages under src/pages/*/*.js
       if (!node.context.title) {
         const split = node.path.split('/');
@@ -38,7 +39,7 @@ const SiteNav = () => {
       }
       return node;
     })
-    .filter(node => getSlashCount(node.path) == 2) // to exclude default /404.html/
+    .filter(node => getSlashCount(node.path) > 1) // to exclude default /404.html/
     .reduce((acc, node) => {
       const group = node.path.split('/')[1];
       acc[group] = acc[group] || [];

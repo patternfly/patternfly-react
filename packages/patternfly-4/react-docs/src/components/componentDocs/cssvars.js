@@ -1,5 +1,5 @@
 import React from 'react';
-import * as tokensModule from '../../../../react-tokens/dist/js';
+import { getTokens } from '../../helpers/dynamicImports';
 
 class CSSVars extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class CSSVars extends React.Component {
       return;
     }
 
-    this.cssTokens = Object.entries(tokensModule)
+    this.cssTokens = Object.entries(getTokens())
       .filter(([key, val]) => (val.name.indexOf(props.cssPrefix) !== -1))
       .map(([key, val]) => ({
         token: key,
@@ -37,8 +37,8 @@ class CSSVars extends React.Component {
                     display: 'inline-block',
                     height: 18,
                     width: 18,
-                    border: `${tokensModule.global_BorderWidth_sm.var} solid ${tokensModule.global_BorderColor.var}`,
-                    marginRight: tokensModule.global_spacer_sm.var,
+                    border: `1px solid #72767b`,
+                    marginRight: '0.5rem',
                     verticalAlign: 'middle'
                   }}></span>
                 }

@@ -4,13 +4,13 @@
 // version of react-core for other component _inside_ our website (like the nav) in case
 // they break during local development. This is so the website won't fall apart if you break
 // the code for react-core/src/components/Button locally.
-const reactCharts = require("../../../react-charts/dist/js");
-const reactCore = require("../../../react-core/dist/js");
-const reactIcons = require("../../../../react-icons/dist/js");
-const reactStyled = require("../../../react-styled-system/dist/js");
-const reactStyles = require("../../../react-styles/dist/js");
-const reactTable = require("../../../react-table/dist/js");
-const reactTokens = require("../../../react-tokens/dist/js");
+const reactCharts = require("../../../react-charts/dist/esm");
+const reactCore = require("../../../react-core/dist/esm");
+const reactIcons = require("../../../../react-icons/dist/esm");
+const reactStyled = require("../../../react-styled-system/dist/esm");
+const reactStyles = require("../../../react-styles/dist/esm");
+const reactTable = require("../../../react-table/dist/esm");
+const reactTokens = require("../../../react-tokens/dist/esm");
 // This is from our gatsby-transformer-react-examples plugin
 const exampleComponents = require("../../.cache/example_index");
 
@@ -40,4 +40,6 @@ exports.getScope = (sourceCode, exampleResources) => {
   });
 
   return res;
-}
+};
+
+exports.getTokens = () => imports["@patternfly/react-tokens"];
