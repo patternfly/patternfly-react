@@ -48,15 +48,17 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         // Create the separate pages
-        astHelpers.getLinks(node.htmlAst).forEach(link => {
-          const split = link.split('/').filter(s => s);
+        astHelpers.getLinks(node.htmlAst).forEach(mdLink => {
+          const split = mdLink
+            .replace('.', '')
+            .split('/')
+            .filter(s => s);
           const demoComponent = split[split.length - 1];
           const basePath = path.dirname(node.fileAbsolutePath);
 
-          link = `/${node.frontmatter.section}/${split.join('/')}/`
           actions.createPage({
-            path: link,
-            // Assume [Link](/demos/PageLayoutSimpleNav/) means there is a ./examples/PageLayoutSimpleNav.js
+            path: `${link}${split.join('/')}/`,
+            // Assume [Link](/PageLayoutSimpleNav/) in *.md means there is a ./examples/PageLayoutSimpleNav.js
             component: path.resolve(`${basePath}/examples/${demoComponent}.js`),
           });
         })

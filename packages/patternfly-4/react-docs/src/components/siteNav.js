@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 
-import { Nav, NavGroup, NavItem } from '@patternfly/react-core';
+import { Nav, NavGroup } from '@patternfly/react-core';
 
 const SiteNav = () => {
   const data = useStaticQuery(graphql`
@@ -31,14 +31,14 @@ const SiteNav = () => {
 
   const grouped = data.allSitePage.edges
     .map(edge => edge.node)
-    .filter(node => getSlashCount(node.path) > 1) // to exclude default /404.html/
     .map(node => { // Add a title for pages under src/pages/*/*.js
       if (!node.context.title) {
         const split = node.path.split('/');
-        split.forEach(s => { if (s) node.context.title = s; })
+        split.forEach(s => { if (s) node.context.title = s; });
       }
       return node;
     })
+    .filter(node => getSlashCount(node.path) == 2) // to exclude default /404.html/
     .reduce((acc, node) => {
       const group = node.path.split('/')[1];
       acc[group] = acc[group] || [];
