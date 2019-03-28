@@ -32,16 +32,20 @@ const SiteNav = () => {
 
   const grouped = data.allSitePage.edges
     .map(edge => edge.node)
-    .filter(node => getSlashCount(node.path) > 1) // to exclude default /404.html
-    .filter(node => node.context.title) // to exclude unlisted paths
+    .filter(node => getSlashCount(node.path) > 1) // to exclude default /404.html/
+    .map(node => { // Add a title for pages under src/pages/*/*.js
+      if (!node.context.title) {
+        const split = node.path.split('/');
+        split.forEach(s => { if (s) node.context.title = s; })
+      }
+      return node;
+    })
     .reduce((acc, node) => {
       const group = node.path.split('/')[1];
       acc[group] = acc[group] || [];
       acc[group].push(node);
       return acc;
     }, {});
-
-  console.log('grouped', grouped);
 
   return (
     <Nav aria-label="Nav">
@@ -53,7 +57,7 @@ const SiteNav = () => {
               .sort((v1, v2) => v1.context.title.localeCompare(v2.context.title))
               .map(value =>
                 <li key={value.path}>
-                  <Link to={value.path}>{value.context.title}</Link>
+                  <Link to={value.path} style={{ textTransform: 'capitalize' }}>{value.context.title}</Link>
                 </li>
               )}
           </NavGroup>
