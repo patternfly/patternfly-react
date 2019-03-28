@@ -8,8 +8,8 @@
   "scripts": {
     "clean": "rimraf .cache public static",
     "build:static": "shx cp -r ../react-core/dist/styles static",
-    "develop": "yarn build:static && yarn clean && gatsby develop",
-    "build:docs": "yarn build:static && gatsby build --prefix-paths",
+    "develop": "yarn clean && yarn build:static && gatsby develop",
+    "build:docs": "yarn clean && yarn build:static && gatsby build --prefix-paths",
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
