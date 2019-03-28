@@ -9,6 +9,7 @@ import { TextInput } from '@patternfly/react-core';
 
 class SimpleTextInput extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: ''
     };
@@ -55,6 +56,7 @@ import { TextInput } from '@patternfly/react-core';
 
 class InvalidTextInput extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: ''
     };

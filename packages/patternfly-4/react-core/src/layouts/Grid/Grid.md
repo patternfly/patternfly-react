@@ -86,6 +86,7 @@ import ItemControl from './examples/ItemControl';
 
 class GridPlayground extends React.Component {
   constructor(props) {
+    super(props);
     this.currentId = 1;
     this.state = {
       gridItems: [this.createGridItem(), this.createGridItem(), this.createGridItem(), this.createGridItem()]

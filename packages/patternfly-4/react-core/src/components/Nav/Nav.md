@@ -9,6 +9,7 @@ import { Nav, NavList, NavItem, NavVariants } from '@patternfly/react-core';
 
 class NavSimpleList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeItem: 0
     };
@@ -50,6 +51,7 @@ import { Nav, NavGroup, NavItem } from '@patternfly/react-core';
 
 class NavGroupedList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeItem: 'grp-1_itm-1'
     };
@@ -99,6 +101,7 @@ import { Nav, NavList, NavItem } from '@patternfly/react-core';
 
 class NavDefaultList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeItem: 0
     };
@@ -140,6 +143,7 @@ import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
 
 class NavExpandableList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeGroup: 'grp-1',
       activeItem: 'grp-1_itm-1'
@@ -240,6 +244,7 @@ import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
 
 class NavExpandableTitlesList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeGroup: 'grp-1',
       activeItem: 'grp-1_itm-1'
@@ -329,6 +334,7 @@ import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
 
 class NavMixedList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeGroup: '',
       activeItem: 'itm-1'
@@ -421,6 +427,7 @@ import { Nav, NavList, NavItem, NavVariants } from '@patternfly/react-core';
 
 class NavHorizontalList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeItem: 0
     };
@@ -461,6 +468,7 @@ import { Nav, NavList, NavItem, NavVariants } from '@patternfly/react-core';
 
 class NavTertiaryList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeItem: 0
     };

@@ -9,6 +9,7 @@ import { Switch } from '@patternfly/react-core';
 
 class SimpleSwitch extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isChecked: true
     };
@@ -39,6 +40,7 @@ import { Switch } from '@patternfly/react-core';
 
 class NoLabelSwitch extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isChecked: true
     };

@@ -9,6 +9,7 @@ import { Radio } from '@patternfly/react-core';
 
 class ControlledRadio extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: '4'
     };

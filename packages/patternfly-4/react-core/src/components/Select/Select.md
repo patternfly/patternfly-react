@@ -9,6 +9,7 @@ import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
 class SingleSelectInput extends React.Component {
   constructor(props) {
+    super(props);
     this.options = [
       { value: 'Choose...', disabled: false, isPlaceholder: true },
       { value: 'Mr', disabled: false },

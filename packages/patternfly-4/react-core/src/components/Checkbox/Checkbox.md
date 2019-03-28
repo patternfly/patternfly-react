@@ -9,6 +9,7 @@ import { Checkbox } from '@patternfly/react-core';
 
 class ControlledCheckbox extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       check1: false,
       check2: false

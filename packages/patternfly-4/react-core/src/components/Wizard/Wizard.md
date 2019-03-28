@@ -10,6 +10,7 @@ import { Button, Wizard, BackgroundImageSrc } from '@patternfly/react-core';
 class SimpleWizard extends React.Component {
   constructor(props) {
     super(props);
+    super(props);
     this.state = {
       isOpen: false
     };
@@ -84,6 +85,7 @@ import { SampleFormOne, SampleFormTwo } from './examples';
 
 class ValidationWizard extends React.Component {
   constructor(props) {
+    super(props);
     super(props);
     this.state = {
       isOpen: false,

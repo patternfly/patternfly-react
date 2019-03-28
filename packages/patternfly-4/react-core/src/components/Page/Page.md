@@ -10,6 +10,7 @@ import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from 
 class VerticalPage extends React.Component {
   constructor(props) {
     super(props);
+    super(props);
     this.state = {
       isNavOpen: true
     };

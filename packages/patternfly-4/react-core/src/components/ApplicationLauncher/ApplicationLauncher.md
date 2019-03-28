@@ -9,6 +9,7 @@ import { ApplicationLauncher, DropdownItem } from '@patternfly/react-core';
 
 class SimpleApplicationLauncher extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isOpen: false
     };
@@ -59,6 +60,7 @@ import { ApplicationLauncher, DropdownItem, Tooltip } from '@patternfly/react-co
 
 class TooltipApplicationLauncher extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isOpen: false
     };

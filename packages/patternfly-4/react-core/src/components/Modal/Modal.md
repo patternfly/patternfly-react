@@ -9,6 +9,7 @@ import { Modal, Button } from '@patternfly/react-core';
 
 class SimpleModal extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isModalOpen: false
     };
@@ -59,6 +60,7 @@ import { Modal, Button } from '@patternfly/react-core';
 
 class SmallModal extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isModalOpen: false
     };
@@ -110,6 +112,7 @@ import { Modal, Button } from '@patternfly/react-core';
 
 class LargeModal extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isModalOpen: false
     };
@@ -161,6 +164,7 @@ import { Modal, Button } from '@patternfly/react-core';
 
 class WidthModal extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isModalOpen: false
     };
@@ -212,6 +216,7 @@ import { Modal, Button } from '@patternfly/react-core';
 
 class NoHeader extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isModalOpen: false
     };

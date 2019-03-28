@@ -9,6 +9,7 @@ import { Form, FormGroup, TextInput, Checkbox, ActionGroup, Button, Radio } from
 
 class SimpleForm extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value1: '',
       value2: '',
@@ -111,6 +112,7 @@ import {
 
 class HorizontalForm extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: 'please choose',
       value1: '',
@@ -218,6 +220,7 @@ import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 
 class InvalidForm extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: 'Five',
       isValid: false

@@ -78,6 +78,7 @@ import {
 
 class ActionsDataList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = { isOpen: false, isDeleted: false };
   }
   render() {
@@ -152,6 +153,7 @@ import {
 
 class ExpandableDataList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       expanded: ['ex-toggle1']
     };
@@ -233,6 +235,7 @@ import {
 
 class ModifiersDataList extends React.Component {
   constructor(props) {
+    super(props);
     this.state = { show: true };
   }
   render() {

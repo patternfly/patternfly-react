@@ -9,6 +9,7 @@ import { Pagination } from '@patternfly/react-core';
 
 class PaginationTop extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       page: 1,
       perPage: 20
@@ -49,6 +50,7 @@ import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
 class PaginationBottom extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       page: 1
     }

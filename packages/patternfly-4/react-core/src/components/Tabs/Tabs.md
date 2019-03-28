@@ -10,6 +10,7 @@ import { Tabs, Tab } from '@patternfly/react-core';
 
 class SimpleTabs extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeTabKey: 0
     };
@@ -46,6 +47,7 @@ import { Tabs, Tab } from '@patternfly/react-core';
 
 class ScrollButtonsTabs extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeTabKey: 0
     };
@@ -110,6 +112,7 @@ import { Tabs, Tab } from '@patternfly/react-core';
 
 class SecondaryTabs extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeTabKey1: 0,
       activeTabKey2: 10
@@ -163,6 +166,7 @@ import { Tabs, Tab } from '@patternfly/react-core';
 
 class FilledTabs extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       activeTabKey: 0
     };

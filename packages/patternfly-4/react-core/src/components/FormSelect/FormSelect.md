@@ -9,6 +9,7 @@ import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 
 class FormSelectInput extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: 'mrs'
     };
@@ -45,6 +46,7 @@ import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 
 class FormSelectInputInvalid extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: ''
     };
@@ -84,6 +86,7 @@ import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 
 class FormSelectInputDisabled extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: 'mrs'
     };
@@ -120,6 +123,7 @@ import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly
 
 class FormSelectInputGrouped extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: '2'
     };

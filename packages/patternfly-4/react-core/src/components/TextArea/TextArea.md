@@ -9,6 +9,7 @@ import { TextArea } from '@patternfly/react-core';
 
 class SimpleTextArea extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
     value: ''
     };
@@ -33,6 +34,7 @@ import { TextArea } from '@patternfly/react-core';
 
 class InvalidTextArea extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       value: ''
     };

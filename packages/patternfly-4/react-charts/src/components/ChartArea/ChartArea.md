@@ -9,6 +9,7 @@ import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patt
 
 class SimpleChart extends React.Component {
   constructor(props) {
+    super(props);
     this.containerRef = React.createRef();
     this.state = {
       width: 0
@@ -78,6 +79,7 @@ import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patt
 
 class CustomColorsChart extends React.Component {
   constructor(props) {
+    super(props);
     this.containerRef = React.createRef();
     this.state = {
       width: 0
@@ -163,6 +165,7 @@ import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer }
 
 class DarkGreenThemeChart extends React.Component {
   constructor(props) {
+    super(props);
     this.containerRef = React.createRef();
     this.state = {
       width: 0

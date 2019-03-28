@@ -9,6 +9,7 @@ import { Chip, ChipGroup, ChipGroupToolbarItem } from '@patternfly/react-core';
 
 class ToolbarChipGroup extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       chipGroups: [
         {
@@ -70,6 +71,7 @@ import { Chip, ChipGroup, ChipGroupItem } from '@patternfly/react-core';
 
 class MultiSelectChipGroup extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       chipObject: ['Chip 1', 'Really long chip that goes on and on', 'Chip 3', 'Chip 4']
     };
@@ -105,6 +107,7 @@ import { Badge, ChipGroup, Chip } from '@patternfly/react-core';
 
 class BadgeChip extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       badgeChipArray: [
         {

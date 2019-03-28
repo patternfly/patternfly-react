@@ -12,6 +12,7 @@ import logoImg from './examples/logoImg.svg';
 
 class SimpleAboutModal extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isModalOpen: false
     };

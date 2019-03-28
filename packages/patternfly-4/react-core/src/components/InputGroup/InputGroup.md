@@ -23,6 +23,7 @@ import {
 
 class SimpleInputGroups extends React.Component {
   constructor(props) {
+    super(props);
     this.state = {
       isOpen: false,
       selected: ''
