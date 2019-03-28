@@ -91,7 +91,6 @@ class GridPlayground extends React.Component {
     this.state = {
       gridItems: [this.createGridItem(), this.createGridItem(), this.createGridItem(), this.createGridItem()]
     };
-    console.log('items', this.state.gridItems);
     this.handleAddGridItem = () => {
       this.setState(({ gridItems }) => ({
         gridItems: [...gridItems, this.createGridItem()]
