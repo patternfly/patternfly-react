@@ -7,9 +7,8 @@ const IndexPage = () => (
   <React.Fragment>
     <SidebarLayout>
       <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
+      <p>Welcome to React docs.</p>
       <p>Now go build something great.</p>
-      <Link to="/page-2/">Go to page 2</Link>
     </SidebarLayout>
   </React.Fragment>
 )

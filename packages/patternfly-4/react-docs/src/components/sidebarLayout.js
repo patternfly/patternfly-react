@@ -9,7 +9,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Page, PageHeader } from '@patternfly/react-core';
-import SiteNav from './nav/siteNav';
+import SiteNav from './siteNav';
 
 // Import global CSS files here. Have no remorse.
 // https://www.gatsbyjs.org/docs/creating-global-styles

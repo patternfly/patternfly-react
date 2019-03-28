@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
-import { getFileName } from '../../helpers/navHelpers'
 
 import { Nav, NavGroup, NavItem } from '@patternfly/react-core';
 
