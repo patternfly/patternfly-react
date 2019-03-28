@@ -6,9 +6,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "clean": "rimraf .cache public",
-    "develop": "yarn clean && gatsby develop",
-    "build:docs": "gatsby build --prefix-paths",
+    "clean": "rimraf .cache public static",
+    "build:static": "shx cp -r ../react-core/dist/styles static",
+    "develop": "yarn build:static && yarn clean && gatsby develop",
+    "build:docs": "yarn build:static && gatsby build --prefix-paths",
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
@@ -24,7 +25,8 @@
     "rehype-react": "^3.1.0"
   },
   "devDependencies": {
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "shx": "^0.3.2"
   },
   "keywords": [
     "gatsby"

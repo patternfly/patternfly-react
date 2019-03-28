@@ -31,7 +31,7 @@ module.exports = {
       options: {
         name: `react-table`,
         path: `${__dirname}/../react-table/src`,
-        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/scripts/**`, `**/build/**`, `**/utils/**`]
+        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/scripts/**`, `**/build/**`, `**/utils/**`, `**/test-helpers/**`]
       },
     },
     // Our custom plugin for *.js?x *.ts?x files to get prop types
