@@ -34,6 +34,14 @@ module.exports = {
         ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/scripts/**`, `**/build/**`, `**/utils/**`, `**/test-helpers/**`]
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `react-inline-edit-extension`,
+        path: `${__dirname}/../react-inline-edit-extension/src`,
+        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/scripts/**`, `**/build/**`, `**/utils/**`, `**/test-helpers/**`]
+      },
+    },
     // Our custom plugin for *.js?x *.ts?x files to get prop types
     `gatsby-transformer-react-docgen-typescript`,
     // Our custom plugin for examples/**/*.(js|svg) files to add to .cache/example_index.js

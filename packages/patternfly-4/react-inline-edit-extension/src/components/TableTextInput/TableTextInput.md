@@ -1,14 +1,23 @@
+---
+title: "Table Text Input"
+section: "inline-table"
+---
+## Simple TableTextInput
+```js
 import React from 'react';
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';
 
 class SimpleTableTextInput extends React.Component {
-  state = {
-    value: ''
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ''
+    };
 
-  handleTextInputChange = value => {
-    this.setState({ value });
-  };
+    this.handleTextInputChange = value => {
+      this.setState({ value });
+    };
+  }
 
   render() {
     const { value } = this.state;
@@ -18,5 +27,4 @@ class SimpleTableTextInput extends React.Component {
     );
   }
 }
-
-export default SimpleTableTextInput;
+```
