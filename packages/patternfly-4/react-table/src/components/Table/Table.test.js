@@ -8,7 +8,8 @@ import {
   TableVariant,
   cellWidth,
   headerCol,
-  sortable
+  sortable,
+  expandable
 } from './index';
 import { rows, columns, actions } from '../../test-helpers/data-sets';
 
@@ -130,6 +131,7 @@ test('Collapsible table', () => {
   rows[1] = { ...rows[1], parent: 0 };
   rows[3] = { ...rows[3], isOpen: false };
   rows[4] = { ...rows[4], parent: 3 };
+  columns[0] = { ...columns[0], cellFormatters: [expandable] };
   const onCollapse = () => undefined;
   const view = mount(
     <Table aria-label="Aria labeled" onCollapse={onCollapse} cells={columns} rows={rows}>

@@ -3,6 +3,106 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.2...@patternfly/react-core@2.10.3) (2019-03-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.10.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.1...@patternfly/react-core@2.10.2) (2019-03-27)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.10.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.0...@patternfly/react-core@2.10.1) (2019-03-27)
+
+
+### Bug Fixes
+
+* **DataList:** set width and isExpanded to optional in d.ts ([#1627](https://github.com/patternfly/patternfly-react/issues/1627)) ([0aa174d](https://github.com/patternfly/patternfly-react/commit/0aa174d))
+
+
+
+
+
+# [2.10.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.9.3...@patternfly/react-core@2.10.0) (2019-03-25)
+
+
+### Bug Fixes
+
+* **dropdown-toggle:** toggle props, allow null iconComponent ([#1638](https://github.com/patternfly/patternfly-react/issues/1638)) ([2ef2de6](https://github.com/patternfly/patternfly-react/commit/2ef2de6))
+
+
+### Features
+
+* **Table:** support inline editing in PF4 ([#1227](https://github.com/patternfly/patternfly-react/issues/1227)) ([b6eb553](https://github.com/patternfly/patternfly-react/commit/b6eb553))
+
+
+
+
+
+## [2.9.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.9.2...@patternfly/react-core@2.9.3) (2019-03-25)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+## [2.9.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.9.1...@patternfly/react-core@2.9.2) (2019-03-21)
+
+
+### Bug Fixes
+
+* **ts-fixes:** ts definition changes ([#1619](https://github.com/patternfly/patternfly-react/issues/1619)) ([11cc103](https://github.com/patternfly/patternfly-react/commit/11cc103))
+
+
+
+
+
+## [2.9.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.9.0...@patternfly/react-core@2.9.1) (2019-03-21)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
+# [2.9.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.8.4...@patternfly/react-core@2.9.0) (2019-03-20)
+
+
+### Features
+
+* **ContextSelector:** Add PF4 ContextSelector Component ([#1526](https://github.com/patternfly/patternfly-react/issues/1526)) ([df745ea](https://github.com/patternfly/patternfly-react/commit/df745ea)), closes [#1294](https://github.com/patternfly/patternfly-react/issues/1294) [#1525](https://github.com/patternfly/patternfly-react/issues/1525)
+
+
+
+
+
+## [2.8.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.8.3...@patternfly/react-core@2.8.4) (2019-03-20)
+
+
+### Bug Fixes
+
+* **DataList:** remove shadow-box ([#1613](https://github.com/patternfly/patternfly-react/issues/1613)) ([85e670f](https://github.com/patternfly/patternfly-react/commit/85e670f))
+
+
+
+
+
+## [2.8.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.8.2...@patternfly/react-core@2.8.3) (2019-03-20)
+
+**Note:** Version bump only for package @patternfly/react-core
+
+
+
+
+
 ## [2.8.2](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.8.1...@patternfly/react-core@2.8.2) (2019-03-19)
 
 **Note:** Version bump only for package @patternfly/react-core

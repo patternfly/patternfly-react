@@ -33,7 +33,7 @@ const propTypes = {
   isDisabled: PropTypes.bool,
   /** Adds focus styling to the button */
   isFocus: PropTypes.bool,
-  /** Adds hove styling to the button */
+  /** Adds hover styling to the button */
   isHover: PropTypes.bool,
   /** Sets button type */
   type: PropTypes.oneOf(Object.values(ButtonType)),

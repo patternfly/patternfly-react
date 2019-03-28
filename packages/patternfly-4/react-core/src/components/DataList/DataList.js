@@ -2,11 +2,10 @@ import React from 'react';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
-import boxShStyles from '@patternfly/patternfly//utilities/BoxShadow/box-shadow.css';
 
 const DataList = ({ children, className, 'aria-label': ariaLabel, ...props }) => (
   <ul
-    className={css(styles.dataList, boxShStyles.boxShadowMd, className)}
+    className={css(styles.dataList, className)}
     role="list"
     aria-label={ariaLabel}
     {...props}

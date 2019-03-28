@@ -157,7 +157,6 @@ class Wizard extends React.Component<WizardProps> {
     if (currentStep >= maxSteps) {
       // Hit the save button at the end of the wizard
       if (onSave) {
-        console.log('save');
         return onSave();
       }
       return onClose!();

@@ -392,7 +392,7 @@ class WidthTable extends React.Component {
 ## Collapsible table
 ```js
 import React from 'react';
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
+import { Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
 
 class CollapsibleTable extends React.Component {
   constructor(props) {
@@ -400,7 +400,10 @@ class CollapsibleTable extends React.Component {
     super(props);
     this.state = {
       columns: [
-        { title: 'Header cell' },
+        {
+          title: 'Header cell',
+          cellFormatters: [expandable]
+        },
         'Branches',
         { title: 'Pull requests' },
         'Workspaces',
