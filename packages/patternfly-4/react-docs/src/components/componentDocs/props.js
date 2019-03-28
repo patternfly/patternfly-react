@@ -9,6 +9,7 @@ const Props = ({ propList }) => {
         <th>Type</th>
         <th>Required</th>
         <th>Default</th>
+        <th>Description</th>
       </tr>
       {propList.map(prop =>
         <tr key={prop.name}>
@@ -16,6 +17,7 @@ const Props = ({ propList }) => {
           <td>{prop.type.name}</td>
           <td>{'' + prop.required}</td>
           <td>{prop.defaultValue && prop.defaultValue.value}</td>
+          <td>{'' + prop.description}</td>
         </tr>
       )}
     </tbody>

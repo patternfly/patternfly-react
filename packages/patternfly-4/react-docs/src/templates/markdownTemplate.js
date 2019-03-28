@@ -66,6 +66,7 @@ export default function Template({ data }) {
           {props.map(component =>
             <React.Fragment key={component.name}>
               <Title size="xl">{component.name} Properties</Title>
+              {props.description}
               <Props propList={component.props} />
             </React.Fragment>
           )}
@@ -112,6 +113,7 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!, $examplesReg
         description
         props {
           name
+          description
           required
           type {
             name
