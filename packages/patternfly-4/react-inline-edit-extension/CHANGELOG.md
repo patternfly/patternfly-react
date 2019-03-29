@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@1.1.4...@patternfly/react-inline-edit-extension@1.1.5) (2019-03-29)
+
+
+### Bug Fixes
+
+* **InlineEdit:** remove flickering of dropdown in an example ([#1645](https://github.com/patternfly/patternfly-react/issues/1645)) ([e65cae8](https://github.com/patternfly/patternfly-react/commit/e65cae8))
+
+
+
+
+
 ## [1.1.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@1.1.3...@patternfly/react-inline-edit-extension@1.1.4) (2019-03-28)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension
