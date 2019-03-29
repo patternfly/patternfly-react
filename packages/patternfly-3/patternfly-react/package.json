@@ -1,6 +1,6 @@
 {
   "name": "patternfly-react",
-  "version": "2.31.1",
+  "version": "2.32.0",
   "private": false,
   "description": "This library provides a set of common React components for use with the PatternFly reference implementation.",
   "main": "dist/js/index.js",
@@ -36,6 +36,8 @@
     "react-c3js": "^0.1.20",
     "react-click-outside": "^3.0.1",
     "react-collapse": "^4.0.3",
+    "react-debounce-input": "^3.2.0",
+    "react-ellipsis-with-tooltip": "^1.0.8",
     "react-fontawesome": "^1.6.1",
     "react-motion": "^0.5.2",
     "reactabular-table": "^8.14.0",

@@ -1,7 +1,7 @@
 {
   "name": "@patternfly/react-docs",
   "description": "PatternFly React Docs",
-  "version": "3.24.4",
+  "version": "3.24.5",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
@@ -13,7 +13,7 @@
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
-    "@patternfly/react-core": "^2.10.4",
+    "@patternfly/react-core": "^2.10.5",
     "@patternfly/react-icons": "^3.7.0",
     "gatsby": "^2.3.3",
     "gatsby-plugin-react-helmet": "^3.0.11",

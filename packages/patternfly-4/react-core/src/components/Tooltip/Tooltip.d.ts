@@ -12,6 +12,8 @@ export const TooltipPosition: {
 export interface TooltipProps extends Omit<HTMLProps<HTMLDivElement>, 'content' | 'children'> {
   /** Tooltip position */
   position?: BasicPlacement;
+  /** Tooltip trigger */
+  trigger?: string;
   /** If true, tries to keep the tooltip in view by flipping it if necessary */
   enableFlip?: boolean;
   /** Tooltip additional class */

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.32.0 (2019-03-29)
+
+
+### Bug Fixes
+
+* **DataList:** set width and isExpanded to optional in d.ts ([#1627](https://github.com/patternfly/patternfly-react/issues/1627)) ([0aa174d](https://github.com/patternfly/patternfly-react/commit/0aa174d))
+
+
+### Features
+
+* **BreadcrumbSwitcher:** creating a BreadcrumbSwitcher component ([#1109](https://github.com/patternfly/patternfly-react/issues/1109)) ([6ba853f](https://github.com/patternfly/patternfly-react/commit/6ba853f))
+
+
+
+
+
 ## 2.31.1 (2019-03-20)
 
 
