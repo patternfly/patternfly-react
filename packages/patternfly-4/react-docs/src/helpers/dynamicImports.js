@@ -11,6 +11,7 @@ const reactStyled = require("../../../react-styled-system/dist/esm");
 const reactStyles = require("../../../react-styles/dist/esm");
 const reactTable = require("../../../react-table/dist/esm");
 const reactTokens = require("../../../react-tokens/dist/esm");
+const reactStyledSystem = require("../../../react-styled-system/dist/esm")
 const reactInlineEdit = require("../../../react-inline-edit-extension/dist/esm")
 // This is from our gatsby-transformer-react-examples plugin
 const exampleComponents = require("../../.cache/example_index");
@@ -24,6 +25,7 @@ let imports = {
   "@patternfly/react-styles": reactStyles,
   "@patternfly/react-table": reactTable,
   "@patternfly/react-tokens": reactTokens,
+  "@patternfly/react-styled-system": reactStyledSystem,
   "@patternfly/react-inline-edit-extension": reactInlineEdit
 };
 

@@ -1,5 +1,5 @@
 ---
-title: "Toolbar Demo"
+title: "Toolbar"
 section: "demos"
 ---
 ## Toolbar Demo

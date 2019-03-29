@@ -5,7 +5,7 @@ import { CSSVars, Props, LiveEdit } from '../components/componentDocs';
 import rehypeReact from 'rehype-react';
 import { getUsedComponents } from '../helpers/astHelpers';
 import { getScope } from '../helpers/dynamicImports';
-import { Title, PageSection, PageSectionVariants, TextContent, Text } from '@patternfly/react-core';
+import { Title, PageSection } from '@patternfly/react-core';
 
 const getRehypeReact = scope => {
   return new rehypeReact({
@@ -53,25 +53,20 @@ export default function Template({ data }) {
     <SidebarLayout>
       <PageSection>
         <Title size="4xl" style={{ textTransform: 'capitalize' }}>
-          {data.markdownRemark.frontmatter.title} {section}
+          {data.markdownRemark.frontmatter.title} {section.indexOf('-') === -1 ? section : ''}
         </Title>
-      </PageSection>
-
-      <PageSection>
         {renderAst(data.markdownRemark.htmlAst)}
       </PageSection>
 
-      {props.length > 0 &&
+      {props.length > 0 && props.map(component =>
         <PageSection>
-          {props.map(component =>
-            <React.Fragment key={component.name}>
-              <Title size="xl">{component.name} Properties</Title>
-              {props.description}
-              <Props propList={component.props} />
-            </React.Fragment>
-          )}
+          <React.Fragment key={component.name}>
+            <Title size="xl">{component.name} Properties</Title>
+            {props.description}
+            <Props propList={component.props} />
+          </React.Fragment>
         </PageSection>
-      }
+      )}
 
       {cssPrefix &&
         <PageSection>
@@ -81,7 +76,6 @@ export default function Template({ data }) {
               <a href="https://github.com/patternfly/patternfly-next/" target="_blank"> patternfly-next </a>
             starting with <strong>--{cssPrefix}</strong>.
           </p>
-          <br />
           <CSSVars cssPrefix={cssPrefix}></CSSVars>
         </PageSection>
       }
