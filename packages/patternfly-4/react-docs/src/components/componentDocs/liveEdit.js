@@ -41,7 +41,8 @@ class LiveEdit extends React.Component {
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
-    this.setState({ copied: true })
+    document.body.removeChild(el);
+    this.setState({ copied: true });
   }
 
   render() {

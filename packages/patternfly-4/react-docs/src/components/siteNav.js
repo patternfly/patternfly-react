@@ -39,7 +39,7 @@ const SiteNav = () => {
       }
       return node;
     })
-    .filter(node => getSlashCount(node.path) > 1) // to exclude default /404.html/
+    .filter(node => getSlashCount(node.path) == 2) // to exclude default /404.html/
     .reduce((acc, node) => {
       const group = node.path.split('/')[1];
       acc[group] = acc[group] || [];
@@ -63,7 +63,7 @@ const SiteNav = () => {
           </NavGroup>
         )}
     </Nav>
-  )
+  );
 }
 
-export default SiteNav
+export default SiteNav;
