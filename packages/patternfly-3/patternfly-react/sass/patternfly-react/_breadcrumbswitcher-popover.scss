@@ -1,0 +1,92 @@
+$switcher-max-height: 400px;
+$switcher-max-width: 200px;
+$switcher-min-width: 200px;
+
+#breadcrumb-switcher-popover {
+  z-index: 1000 !important;
+
+  .popover-content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+    max-height: $switcher-max-height;
+    overflow: hidden;
+    max-width: $switcher-max-width;
+    min-width: $switcher-max-width;
+
+    .input-search {
+      position: relative;
+      left: 0;
+      margin-left: auto;
+      margin-right: auto;
+
+      input {
+        padding: 0 25px 0 25px;
+        width: 180px;
+      }
+
+      .fa-search {
+        color: $color-pf-blue-400;
+        position: absolute;
+        top: 7px;
+        left: 8px;
+        z-index: 99;
+      }
+
+      .fa-close {
+        cursor: pointer;
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        z-index: 99;
+      }
+    }
+
+    .breadcrumb-switcher-popover-error {
+      text-indent: 10px;
+      color: $color-pf-red-100;
+    }
+
+    .list-group-item {
+      padding: 5px 10px 5px 10px;
+
+      &:hover {
+        background-color: $color-pf-blue-25;
+      }
+
+      &.active {
+        background-color: $color-pf-blue-400;
+      }
+    }
+
+    .no-border {
+      border: none;
+    }
+
+    .pager {
+      margin: 0 10px;
+
+      a {
+        width: 22px;
+      }
+
+      .fa {
+        margin-left: -2px;
+      }
+    }
+
+    .scrollable-list {
+      margin-top: 5px;
+      margin-bottom: 10px;
+
+      &.list-group {
+        border-top: 0;
+      }
+    }
+  }
+
+  .breadcrumb-switcher-popover-loading {
+    margin-top: 10px;
+  }
+}
