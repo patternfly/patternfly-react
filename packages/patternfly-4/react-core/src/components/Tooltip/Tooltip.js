@@ -21,6 +21,8 @@ export const TooltipPosition = {
 const propTypes = {
   /** Tooltip position */
   position: PropTypes.oneOf(Object.keys(TooltipPosition).map(key => TooltipPosition[key])),
+  /** Tooltip trigger: click, mouseenter, focus */
+  trigger: PropTypes.string,
   /** If true, tries to keep the tooltip in view by flipping it if necessary */
   enableFlip: PropTypes.bool,
   /** Tooltip additional class */
@@ -43,6 +45,7 @@ const propTypes = {
 
 const defaultProps = {
   position: 'top',
+  trigger: 'mouseenter focus',
   enableFlip: true,
   className: null,
   entryDelay: 500,
@@ -80,6 +83,7 @@ class Tooltip extends React.Component {
   render() {
     const {
       position,
+      trigger,
       enableFlip,
       children,
       className,
@@ -114,6 +118,7 @@ class Tooltip extends React.Component {
         theme="pf-tippy"
         performance
         placement={position}
+        trigger={trigger}
         delay={[entryDelay, exitDelay]}
         distance={15}
         flip={enableFlip}
