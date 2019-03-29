@@ -16,11 +16,6 @@ import SiteNav from './siteNav';
 // https://www.gatsbyjs.org/docs/creating-global-styles
 import '../../static/base.css';
 
-// For accessibility
-if (process.env.NODE_ENV !== 'production') {
-  const axe = require('react-axe'); // eslint-disable-line global-require
-  axe(React, ReactDOM, 1000);
-}
 
 const SidebarLayout = ({ children }) => {
   const data = useStaticQuery(graphql`

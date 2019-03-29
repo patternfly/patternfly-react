@@ -1,7 +1,9 @@
 import React from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
+import { Button, TextContent, Text } from '@patternfly/react-core';
+import { CodeIcon, CopyIcon } from '@patternfly/react-icons';
 
-
+const liveEditorStyle = { code: { 'max-height': '37.5rem', overflow: 'auto' } };
 class LiveEdit extends React.Component {
   constructor(props) {
     super(props);
@@ -9,6 +11,10 @@ class LiveEdit extends React.Component {
     this.code = this.props.children[0];
     this.scope = this.props.scope;
     this.scope.React = React;
+    this.state = {
+      codeOpen: false,
+      copied: false
+    };
   }
 
   transformCode(code) {
@@ -25,27 +31,67 @@ class LiveEdit extends React.Component {
     return toParse;
   }
 
+  onCodeOpen = () => {
+    this.setState({ codeOpen: !this.state.codeOpen })
+  }
+
+  onCopy = () => {
+    const el = document.createElement('textarea');
+    el.value = this.code;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    this.setState({ copied: true })
+  }
+
   render() {
+    const Toolbar = (
+      <div style={{ borderTop: `1px solid #72767b`, borderBottom: `1px solid #72767b` }}>
+        <Button
+          onClick={this.onCodeOpen}
+          variant="plain"
+          title="Toggle code"
+          aria-label="Toggle code"
+        >
+          <CodeIcon />
+        </Button>
+        <Button
+          onClick={this.onCopy}
+          variant="plain"
+          title="Copy code"
+          aria-label="Copy code"
+        >
+          <CopyIcon />
+        </Button>
+        <span>
+          {this.state.copied && 'Copied to clipboard!'}
+        </span>
+      </div>
+    );
+
     if (this.props.className === 'language-js') {
       return (
-        <LiveProvider code={this.code} scope={this.scope} transformCode={this.transformCode}>
-          <LivePreview />
-          <LiveEditor />
-          <LiveError />
-        </LiveProvider>
+        <div style={{ border: `1px solid #72767b` }}>
+          <LiveProvider code={this.code} scope={this.scope} transformCode={this.transformCode}>
+            <LivePreview />
+            {Toolbar}
+            {this.state.codeOpen && <LiveEditor style={liveEditorStyle} />}
+            <LiveError />
+          </LiveProvider>
+        </div>
       );
     }
     else if (this.props.className === 'language-nolive') {
       return (
         <LiveProvider code={this.code} disabled>
-          <LiveEditor />
+          <LiveEditor style={liveEditorStyle} contentEditable={false} />
         </LiveProvider>
       );
     }
     else {
-      return <strong>{this.code}</strong>
+      return <strong>{this.code}</strong>;
     }
   }
 }
 
-export default LiveEdit
+export default LiveEdit;

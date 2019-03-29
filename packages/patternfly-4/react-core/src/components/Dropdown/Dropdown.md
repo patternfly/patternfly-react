@@ -341,28 +341,6 @@ class IconDropdown extends React.Component {
 }
 ```
 
-## React Router Link usage
-A react-router Link may be wrapped by DropdownItem or used directly within Dropdown.
-```nolive
-/** Wrapped Link for DropdownItem list **/
-<DropdownItem key="link">
-  <Link to={'/'}>Link</Link>
-</DropdownItem>
-
-/** Direct child of Dropdown **/
-<Dropdown
-onSelect={this.onSelect}
-toggle={
-  <DropdownToggle onToggle={this.onToggle}>
-    Expanded Dropdown
-  </DropdownToggle>
-}
-isOpen={isOpen}
->
-  <Link to={'/'}>Link</Link>
-</Dropdown>
-```
-
 ## Dropdown Panel
 The Basic Dropdown is provided for flexibility in allowing various content within a dropdown.
 ```js
@@ -401,4 +379,26 @@ class DropdownPanel extends React.Component {
     );
   }
 }
+```
+
+## React Router Link usage
+A react-router Link may be wrapped by DropdownItem or used directly within Dropdown. Here's some example HTML:
+```nolive
+/** Wrapped Link for DropdownItem list **/
+<DropdownItem key="link">
+  <Link to={'/'}>Link</Link>
+</DropdownItem>
+
+/** Direct child of Dropdown **/
+<Dropdown
+onSelect={this.onSelect}
+toggle={
+  <DropdownToggle onToggle={this.onToggle}>
+    Expanded Dropdown
+  </DropdownToggle>
+}
+isOpen={isOpen}
+>
+  <Link to={'/'}>Link</Link>
+</Dropdown>
 ```

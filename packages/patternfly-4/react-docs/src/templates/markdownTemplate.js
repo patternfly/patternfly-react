@@ -51,7 +51,7 @@ export default function Template({ data }) {
 
   return (
     <SidebarLayout>
-      <PageSection variant={PageSectionVariants.darker}>
+      <PageSection>
         <Title size="4xl" style={{ textTransform: 'capitalize' }}>
           {data.markdownRemark.frontmatter.title} {section}
         </Title>
@@ -62,7 +62,7 @@ export default function Template({ data }) {
       </PageSection>
 
       {props.length > 0 &&
-        <PageSection variant={PageSectionVariants.dark}>
+        <PageSection>
           {props.map(component =>
             <React.Fragment key={component.name}>
               <Title size="xl">{component.name} Properties</Title>
