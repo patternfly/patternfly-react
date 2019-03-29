@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.5](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.4...@patternfly/react-core@2.10.5) (2019-03-29)
+
+
+### Bug Fixes
+
+* **tooltip:** trigger tooltip by mouse click or other events ([#1648](https://github.com/patternfly/patternfly-react/issues/1648)) ([acc1e3b](https://github.com/patternfly/patternfly-react/commit/acc1e3b))
+
+
+
+
+
 ## [2.10.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.3...@patternfly/react-core@2.10.4) (2019-03-28)
 
 
