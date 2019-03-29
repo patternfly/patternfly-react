@@ -62,9 +62,9 @@ export interface ISeparator {
 export interface ICell {
   title: String;
   transforms: Array<Function>;
-  cellTransforms: Array<Function>;
-  formatters: Array<Function>;
-  cellFormatters: Array<Function>;
+  cellTransforms?: Array<Function>;
+  formatters?: Array<Function>;
+  cellFormatters?: Array<Function>;
   props: any;
 }
 
