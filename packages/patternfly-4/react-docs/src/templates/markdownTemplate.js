@@ -14,6 +14,7 @@ const getRehypeReact = scope => {
       if (typeof type === 'function') {
         props.scope = scope;
         props.size = 'xl';
+        props.style = { marginTop: '32px' }
       }
       return React.createElement(type, props, ...children);
     },
