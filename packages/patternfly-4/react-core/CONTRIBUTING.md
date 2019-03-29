@@ -1,3 +1,7 @@
+---
+title: Contributing
+section: patternfly-4
+---
 # Contributing to @patternfly/react-core
 
 ## Adding a new component

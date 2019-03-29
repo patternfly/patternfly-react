@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SidebarLayout from '../components/sidebarLayout';
+import SidebarLayout from './sidebarLayout';
 import { CSSVars, Props, LiveEdit } from '../components/componentDocs';
 import rehypeReact from 'rehype-react';
 import { getUsedComponents } from '../helpers/astHelpers';

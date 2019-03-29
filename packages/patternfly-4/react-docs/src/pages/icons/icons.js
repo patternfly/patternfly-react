@@ -2,7 +2,7 @@ import React from 'react';
 import { Title, Grid, GridItem, Tooltip, Text } from '@patternfly/react-core';
 import { global_spacer_md as spacerMd, global_FontSize_sm as labelFontSize } from '@patternfly/react-tokens';
 import * as IconsModule from '@patternfly/react-icons';
-import SidebarLayout from '../../components/sidebarLayout';
+import SidebarLayout from '../../templates/sidebarLayout';
 
 const Icons = () => {
   const allIcons = Object.entries(IconsModule)

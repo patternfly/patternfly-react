@@ -1,7 +1,31 @@
 // This is the entrypoint of gatsby (aside from boring default gatsby plugins)
+
+// Files we never care to pull data from
+const ignore = [
+  `**/dist/**`,
+  `**/*.d.ts`,
+  `**/*.test.*`,
+  `**/index.*`,
+  `**/helpers/**`,
+  `**/scripts/**`,
+  `**/styles/**`,
+  `**/build/**`,
+  `**/utils/**`,
+  `**/test-helpers/**`,
+  `**/\.*`,
+  `**/\..*/**`,
+  `**/tsconfig.*`,
+  `**/tslint.*`,
+  `**/README.*`,
+  `**/CHANGELOG.*`,
+  `**/react\-docs/**`,
+  `**/react\-styles/**`,
+  `**/react\-integration/**`,
+];
+
 module.exports = {
   siteMetadata: {
-    title: `Patternfly React Docs`,
+    title: `Patternfly 4 React Docs`,
     description: `Documentation for https://github.com/patternfly/patternfly-react`,
     keywords: `Red Hat`,
   },
@@ -9,45 +33,13 @@ module.exports = {
   plugins: [
     // Plugin to inject stuff into <head></head>
     `gatsby-plugin-react-helmet`,
-    // Plugin to load source files to do fun things with
+    // Plugin to load pf4 files to do fun documentation things with
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `react-core`,
-        path: `${__dirname}/../react-core/src`,
-        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/helpers/**`, `**/styles/**`]
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `react-charts`,
-        path: `${__dirname}/../react-charts/src`,
-        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/scripts/**`]
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `react-table`,
-        path: `${__dirname}/../react-table/src`,
-        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/scripts/**`, `**/build/**`, `**/utils/**`, `**/test-helpers/**`]
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `react-inline-edit-extension`,
-        path: `${__dirname}/../react-inline-edit-extension/src`,
-        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/scripts/**`, `**/build/**`, `**/utils/**`, `**/test-helpers/**`]
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `react-styled-system`,
-        path: `${__dirname}/../react-styled-system/src`,
-        ignore: [`**/*.d.ts`, `**/*.test.*`, `**/index.*`, `**/scripts/**`]
+        name: `patternfly-4`,
+        path: `${__dirname}/../../patternfly-4`,
+        ignore: ignore
       },
     },
     // Our custom plugin for *.js?x *.ts?x files to get prop types
@@ -56,6 +48,8 @@ module.exports = {
     // ...then webpack deals with those files statically instead of us dynamically :)
     `gatsby-transformer-react-examples`,
     // The markdown plugin for *.md files
-    `gatsby-transformer-remark`
+    `gatsby-transformer-remark`,
+    // The plugin for package.json files
+    `gatsby-transformer-json`
   ],
 }

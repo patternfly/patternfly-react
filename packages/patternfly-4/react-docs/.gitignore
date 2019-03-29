@@ -20,3 +20,6 @@ static
 
 # Mac files
 .DS_Store
+
+# Old build files
+**/ts-output.json

@@ -7755,25 +7755,6 @@ eslint-plugin-node@^6.0.1:
     resolve "^1.3.3"
     semver "^5.4.1"
 
-"eslint-plugin-patternfly-react@file:packages/eslint-plugin-patternfly-react":
-  version "0.2.2"
-  dependencies:
-    babel-eslint "^9.0.0"
-    eslint-config-airbnb "^16.1.0"
-    eslint-config-prettier "^2.9.0"
-    eslint-config-standard "^11.0.0"
-    eslint-config-standard-jsx "^5.0.0"
-    eslint-config-standard-react "^6.0.0"
-    eslint-plugin-import "^2.13.0"
-    eslint-plugin-jest "^21.15.0"
-    eslint-plugin-jsx-a11y "^6.0.3"
-    eslint-plugin-node "^6.0.1"
-    eslint-plugin-prettier "^2.6.0"
-    eslint-plugin-promise "^3.7.0"
-    eslint-plugin-react "^7.7.0"
-    eslint-plugin-rulesdir "^0.1.0"
-    eslint-plugin-standard "^3.0.1"
-
 eslint-plugin-prettier@^2.6.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-2.7.0.tgz#b4312dcf2c1d965379d7f9d5b5f8aaadc6a45904"
@@ -9013,6 +8994,13 @@ gatsby-telemetry@^1.0.4:
     stack-trace "^0.0.10"
     stack-utils "1.0.2"
     uuid "3.3.2"
+
+gatsby-transformer-json@^2.1.11:
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.1.11.tgz#b1c9acbc0da6e7e11b7dd278e9543171a71ecd89"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    bluebird "^3.5.0"
 
 gatsby-transformer-remark@^2.3.8:
   version "2.3.8"
@@ -15894,7 +15882,6 @@ react-datetime@^2.14.0:
 react-debounce-input@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-debounce-input/-/react-debounce-input-3.2.0.tgz#6978c6061d898f549f40417fb0d2ebbecf50aaaa"
-  integrity sha1-aXjGBh2Jj1SfQEF/sNLrvs9Qqqo=
   dependencies:
     lodash.debounce "^4"
     prop-types "^15"
@@ -16026,7 +16013,6 @@ react-dom@^16.2.0, react-dom@~16.8.4:
 react-ellipsis-with-tooltip@^1.0.8:
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/react-ellipsis-with-tooltip/-/react-ellipsis-with-tooltip-1.0.8.tgz#fce2d0c9c4820e85ad7fc8c1a77e9a0b86f429fb"
-  integrity sha512-GdEYrrvS/iPYVAufShdJz8gtwG5kZNxlBh1Kb/LjCwYgNwGmRlCbVEmXS///bHrbhXoSxnzYbymGHFyYKR4Q6A==
   dependencies:
     uuid "^3.1.0"
 

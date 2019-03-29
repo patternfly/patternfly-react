@@ -1,16 +1,70 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { graphql } from 'gatsby';
+import SidebarLayout from '../templates/sidebarLayout';
+import { Title } from '@patternfly/react-core';
 
-import SidebarLayout from "../components/sidebarLayout"
+export default function IndexPage({ data }) {
+  const nodes = Object.values(data).map(v => v.nodes[0]);
+  return (
+    <React.Fragment>
+      <SidebarLayout>
+        <Title size='4xl'>
+          PatternFly 4 React Docs
+        </Title>
+        {Object.values(data).map(v => v.nodes[0]).map(node => (
+          <p>{node.name}: {node.version}</p>
+        ))}
+        <h1>Hi people</h1>
+        <p>Welcome to React docs.</p>
+        <p>Now go build something great.</p>
+      </SidebarLayout>
+    </React.Fragment>
+  );
+}
 
-const IndexPage = () => (
-  <React.Fragment>
-    <SidebarLayout>
-      <h1>Hi people</h1>
-      <p>Welcome to React docs.</p>
-      <p>Now go build something great.</p>
-    </SidebarLayout>
-  </React.Fragment>
-)
-
-export default IndexPage
+export const pageQuery = graphql`
+{
+	allReactCoreJson {
+    nodes {
+      name
+      version
+    }
+  }
+  allReactTableJson {
+    nodes {
+      name
+      version
+    }
+  }
+  allReactChartsJson {
+    nodes {
+      name
+      version
+    }
+  }
+  allReactTokensJson {
+    nodes {
+      name
+      version
+    }
+  }
+  allReactStyledSystemJson {
+    nodes {
+      name
+      version
+    }
+  }
+	allReactInlineEditExtensionJson {
+    nodes {
+      name
+      version
+    }
+  }
+  allReactTokensJson {
+    nodes {
+      name
+      version
+    }
+  }
+}
+`;
