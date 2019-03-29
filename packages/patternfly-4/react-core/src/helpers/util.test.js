@@ -1,8 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { ApplicationLauncher, DropdownItem, Dropdown, DropdownToggle } from '@patternfly/react-core';
-import { capitalize, getUniqueId, debounce, isElementInView, sideElementIsOutOfView } from './util';
+import { capitalize, getUniqueId, debounce, isElementInView, sideElementIsOutOfView, fillTemplate } from './util';
 import { KEY_CODES, SIDE } from './constants';
+
+const createMockHtmlElement = bounds => ({
+  getBoundingClientRect: () => bounds
+});
 
 test('capitalize', () => {
   expect(capitalize('foo')).toBe('Foo');
@@ -35,44 +39,44 @@ test('debounce', () => {
 });
 
 test('isElementInView should be true when partial out of view and with partial true', () => {
-  const container = { scrollLeft: 0, clientWidth: 200 };
-  const element = { offsetLeft: 10, clientWidth: 200 };
+  const container = createMockHtmlElement({ left: 0, right: 200 });
+  const element = createMockHtmlElement({ left: 10, right: 210 });
   expect(isElementInView(container, element, true)).toBe(true);
 });
 
 test('isElementInView should be false when partial out of view and with partial false ', () => {
-  const container = { scrollLeft: 0, clientWidth: 200 };
-  const element = { offsetLeft: 10, clientWidth: 200 };
+  const container = createMockHtmlElement({ left: 0, right: 200 });
+  const element = createMockHtmlElement({ left: 10, right: 210 });
   expect(isElementInView(container, element, false)).toBe(false);
 });
 
 test('isElementInView should be false completely out of view ', () => {
-  const container = { scrollLeft: 0, clientWidth: 200 };
-  const element = { offsetLeft: 200, clientWidth: 100 };
+  const container = createMockHtmlElement({ left: 0, right: 200 });
+  const element = createMockHtmlElement({ left: 200, right: 300 });
   expect(isElementInView(container, element, true)).toBe(false);
 });
 
 test('isElementInView should be false completely out of view when partial false ', () => {
-  const container = { scrollLeft: 0, clientWidth: 200 };
-  const element = { offsetLeft: 200, clientWidth: 100 };
+  const container = createMockHtmlElement({ left: 0, right: 200 });
+  const element = createMockHtmlElement({ left: 200, right: 300 });
   expect(isElementInView(container, element, false)).toBe(false);
 });
 
 test('sideElementIsOutOfView Returns left when off on left side', () => {
-  const container = { scrollLeft: 20, clientWidth: 200 };
-  const element = { offsetLeft: 10, clientWidth: 200 };
+  const container = createMockHtmlElement({ left: 20, right: 220 });
+  const element = createMockHtmlElement({ left: 10, right: 210 });
   expect(sideElementIsOutOfView(container, element)).toBe(SIDE.LEFT);
 });
 
 test('sideElementIsOutOfView Returns right when off on right side', () => {
-  const container = { scrollLeft: 0, clientWidth: 200 };
-  const element = { offsetLeft: 210, clientWidth: 200 };
+  const container = createMockHtmlElement({ left: 0, right: 200 });
+  const element = createMockHtmlElement({ left: 210, right: 410 });
   expect(sideElementIsOutOfView(container, element)).toBe(SIDE.RIGHT);
 });
 
 test('sideElementIsOutOfView Returns NONE when in view', () => {
-  const container = { scrollLeft: 0, clientWidth: 200 };
-  const element = { offsetLeft: 10, clientWidth: 100 };
+  const container = createMockHtmlElement({ left: 0, right: 200 });
+  const element = createMockHtmlElement({ left: 10, right: 110 });
   expect(sideElementIsOutOfView(container, element)).toBe(SIDE.NONE);
 });
 
@@ -175,4 +179,16 @@ describe('keyHandler works on Dropdown', () => {
     firstDropdownItem.simulate('keydown', { key: 'ArrowUp', keyCode: KEY_CODES.ARROW_UP, which: KEY_CODES.ARROW_UP });
     expect(secondDropdownItem === document.activeElement);
   });
+});
+
+test('fillTemplate interpolates strings correctly', () => {
+  // eslint-disable-next-line no-template-curly-in-string
+  const templateString = 'My name is ${firstName} ${lastName}';
+  const expected = 'My name is Jon Dough';
+  const templatVars = {
+    firstName: 'Jon',
+    lastName: 'Dough'
+  };
+  const actual = fillTemplate(templateString, templatVars);
+  expect(actual).toEqual(expected);
 });

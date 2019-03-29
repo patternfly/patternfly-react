@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.4](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.3...@patternfly/react-core@2.10.4) (2019-03-28)
+
+
+### Bug Fixes
+
+* **util.ts:** Improve cross-browser compatibility of `isElementInView` and `sideElementIsOutOfView` ([#1625](https://github.com/patternfly/patternfly-react/issues/1625)) ([96d033c](https://github.com/patternfly/patternfly-react/commit/96d033c)), closes [#1451](https://github.com/patternfly/patternfly-react/issues/1451)
+
+
+
+
+
 ## [2.10.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.2...@patternfly/react-core@2.10.3) (2019-03-27)
 
 **Note:** Version bump only for package @patternfly/react-core

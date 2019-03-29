@@ -10,6 +10,10 @@ import {
 import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
 
 class EditableTable extends React.Component {
+  WORKSPACE_COL = 3;
+  PRIVATE_REPO_COL = 5;
+  ACTIONS_COL = 6;
+
   makeId = ({ column, rowIndex, columnIndex, name }) =>
     `${column.property}-${rowIndex}-${columnIndex}${name ? `-${name}` : ''}`;
 
@@ -39,20 +43,20 @@ class EditableTable extends React.Component {
     // dropdown
     const workspacesFormatter = inlineEditFormatterFactory({
       resolveValue: (value, { rowData }) => rowData.data.workspace,
-      renderEdit: (workspace, { column, rowData, columnIndex, rowIndex }) => {
+      renderEdit: (workspace, { column, rowData, columnIndex, rowIndex }, { activeEditId }) => {
         const dropdownItems = column.data.dropdownItems.map(item => <DropdownItem key={item}>{item}</DropdownItem>);
+        const toggleId = this.makeId({ rowIndex, columnIndex, column, name: 'toggle' });
         return (
           <Dropdown
             id={this.makeId({ rowIndex, columnIndex, column, name: 'dropdown' })}
             onSelect={event =>
-              this.onWorkspaceChange({ selected: event.target.text, isDropdownOpen: false }, { rowIndex, columnIndex })
+              this.onWorkspaceChange({ selected: event.target.text, isDropdownOpen: false }, { rowIndex })
             }
             toggle={
               <DropdownToggle
-                id={this.makeId({ rowIndex, columnIndex, column, name: 'toggle' })}
-                onToggle={() =>
-                  this.onWorkspaceChange({ isDropdownOpen: !workspace.isDropdownOpen }, { rowIndex, columnIndex })
-                }
+                id={toggleId}
+                autoFocus={activeEditId === toggleId}
+                onToggle={() => this.onWorkspaceChange({ isDropdownOpen: !workspace.isDropdownOpen }, { rowIndex })}
               >
                 {workspace.selected}
               </DropdownToggle>
@@ -154,6 +158,7 @@ class EditableTable extends React.Component {
           }
         }
       ],
+      // eslint-disable-next-line react/no-unused-state
       editedRowBackup: null,
       activeEditId: null
     };
@@ -167,14 +172,11 @@ class EditableTable extends React.Component {
     });
   };
 
-  onWorkspaceChange = (value, { rowIndex, columnIndex }) => {
-    this.setState(({ rows, activeEditId }) => {
+  onWorkspaceChange = (value, { rowIndex }) => {
+    this.setState(({ rows }) => {
       const row = rows[rowIndex];
       row.data.workspace = Object.assign({}, row.data.workspace, value);
-      if (value.isDropdownOpen) {
-        activeEditId = this.makeId({ rowIndex, columnIndex, column: { property: 'workspaces' }, name: 'dropdown' });
-      }
-      return { rows, activeEditId };
+      return { rows };
     });
   };
 
@@ -190,41 +192,46 @@ class EditableTable extends React.Component {
     });
   };
 
-  onEditCellClicked = (event, clickedRow, { rowIndex, columnIndex, elementId }) => {
-    const WORKSPACE_COL = 3;
-    const PRIVATE_REPO_COL = 5;
-    const ACTIONS_COL = 6;
-
-    if (elementId !== this.state.activeEditId && clickedRow.isEditing && columnIndex !== ACTIONS_COL) {
-      this.setState(({ rows }) => {
-        // focus dropdown if it opens ('toggle' is mistakenly assumed to be the elementId)
-        const activeEditId =
-          elementId && columnIndex === WORKSPACE_COL && !rows[rowIndex].data.workspace.isDropdownOpen
-            ? this.makeId({
-                rowIndex,
-                columnIndex,
-                column: { property: 'workspaces' },
-                name: 'dropdown'
-              })
-            : elementId;
-
-        return {
-          activeEditId,
-          rows: rows.map((row, id) => {
-            if (id === rowIndex) {
-              if (elementId && columnIndex === WORKSPACE_COL) {
-                row.data.workspace.isDropdownOpen = !row.data.workspace.isDropdownOpen;
-              } else {
-                if (elementId && columnIndex === PRIVATE_REPO_COL) {
-                  row.data.privateRepo = !row.data.privateRepo;
-                }
-                row.data.workspace.isDropdownOpen = false;
-              }
-            }
-            return row;
-          })
-        };
+  idEquals = (elementId, activeEditId, { rowIndex, columnIndex }) => {
+    if (columnIndex === this.WORKSPACE_COL) {
+      // equality for dropdowns should take toggle vs dropdown id clicks into account
+      const genericDropdownId = this.makeId({
+        rowIndex,
+        columnIndex,
+        column: { property: 'workspaces' }
       });
+      return (
+        elementId &&
+        activeEditId &&
+        elementId.startsWith(genericDropdownId) &&
+        activeEditId.startsWith(genericDropdownId)
+      );
+    }
+    return elementId === activeEditId;
+  };
+
+  onEditCellClicked = (event, clickedRow, { rowIndex, columnIndex, elementId }) => {
+    if (
+      !this.idEquals(elementId, this.state.activeEditId, { rowIndex, columnIndex }) &&
+      clickedRow.isEditing &&
+      columnIndex !== this.ACTIONS_COL
+    ) {
+      this.setState(({ rows }) => ({
+        activeEditId: elementId,
+        rows: rows.map((row, id) => {
+          if (id === rowIndex) {
+            if (elementId && columnIndex === this.WORKSPACE_COL) {
+              row.data.workspace.isDropdownOpen = !row.data.workspace.isDropdownOpen;
+            } else {
+              if (elementId && columnIndex === this.PRIVATE_REPO_COL) {
+                row.data.privateRepo = !row.data.privateRepo;
+              }
+              row.data.workspace.isDropdownOpen = false;
+            }
+          }
+          return row;
+        })
+      }));
     }
   };
 
