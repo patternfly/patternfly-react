@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.10.36 (2019-03-29)
+
+
+### Bug Fixes
+
+* **DataList:** set width and isExpanded to optional in d.ts ([#1627](https://github.com/patternfly/patternfly-react/issues/1627)) ([0aa174d](https://github.com/patternfly/patternfly-react/commit/0aa174d))
+
+
+
+
+
 ## 1.10.35 (2019-03-20)
 
 **Note:** Version bump only for package @patternfly/react-console
