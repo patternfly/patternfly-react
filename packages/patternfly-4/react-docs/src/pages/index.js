@@ -4,7 +4,6 @@ import SidebarLayout from '../templates/sidebarLayout';
 import { Title } from '@patternfly/react-core';
 
 export default function IndexPage({ data }) {
-  const nodes = Object.values(data).map(v => v.nodes[0]);
   return (
     <React.Fragment>
       <SidebarLayout>
