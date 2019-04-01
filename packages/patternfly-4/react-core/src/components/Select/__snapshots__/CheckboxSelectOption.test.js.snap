@@ -59,7 +59,6 @@ exports[`checkbox select options disabled renders disabled successfully 1`] = `
   value="test"
 >
   <label
-    aria-selected={null}
     className="pf-c-check pf-c-select__menu-item pf-m-disabled"
     onKeyDown={[Function]}
   >
@@ -139,7 +138,6 @@ exports[`checkbox select options hover renders with checked successfully 1`] = `
   value="test"
 >
   <label
-    aria-selected={true}
     className="pf-c-check pf-c-select__menu-item"
     onKeyDown={[Function]}
   >
@@ -217,7 +215,6 @@ exports[`checkbox select options renders with value parameter successfully 1`] =
   value="test"
 >
   <label
-    aria-selected={null}
     className="pf-c-check pf-c-select__menu-item"
     onKeyDown={[Function]}
   >

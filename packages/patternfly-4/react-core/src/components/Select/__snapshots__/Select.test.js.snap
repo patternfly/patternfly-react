@@ -314,7 +314,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 }
 
 <Select
-  ariaLabelledBy=""
+  aria-label={null}
+  ariaLabelledBy={null}
   className=""
   isExpanded={true}
   isGrouped={true}
@@ -334,7 +335,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby=" pf-toggle-id-4"
+      aria-labelledby="null pf-toggle-id-4"
       className=""
       id="pf-toggle-id-4"
       isActive={false}
@@ -356,8 +357,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
     >
       <button
         aria-expanded={true}
-        aria-haspopup={false}
-        aria-labelledby=" pf-toggle-id-4"
+        aria-haspopup={null}
+        aria-labelledby="null pf-toggle-id-4"
         className="pf-c-select__toggle"
         id="pf-toggle-id-4"
         onClick={[Function]}
@@ -406,7 +407,8 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
       </button>
     </SelectToggle>
     <CheckboxSelect
-      aria-labelledby=""
+      aria-label={null}
+      aria-labelledby={null}
       checked={null}
       className=""
       isExpanded={false}
@@ -444,6 +446,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                     className="pf-c-select__menu-group"
                   >
                     <div
+                      aria-hidden={true}
                       className="pf-c-select__menu-group-title"
                       id="group-1"
                     >
@@ -465,7 +468,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         value="Mr"
                       >
                         <label
-                          aria-selected={null}
                           className="pf-c-check pf-c-select__menu-item"
                           onKeyDown={[Function]}
                         >
@@ -496,7 +498,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         value="Mrs"
                       >
                         <label
-                          aria-selected={null}
                           className="pf-c-check pf-c-select__menu-item"
                           onKeyDown={[Function]}
                         >
@@ -527,7 +528,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         value="Ms"
                       >
                         <label
-                          aria-selected={null}
                           className="pf-c-check pf-c-select__menu-item"
                           onKeyDown={[Function]}
                         >
@@ -558,7 +558,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         value="Other"
                       >
                         <label
-                          aria-selected={null}
                           className="pf-c-check pf-c-select__menu-item"
                           onKeyDown={[Function]}
                         >
@@ -590,6 +589,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                     className="pf-c-select__menu-group"
                   >
                     <div
+                      aria-hidden={true}
                       className="pf-c-select__menu-group-title"
                       id="group-2"
                     >
@@ -611,7 +611,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         value="Mr"
                       >
                         <label
-                          aria-selected={null}
                           className="pf-c-check pf-c-select__menu-item"
                           onKeyDown={[Function]}
                         >
@@ -642,7 +641,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         value="Mrs"
                       >
                         <label
-                          aria-selected={null}
                           className="pf-c-check pf-c-select__menu-item"
                           onKeyDown={[Function]}
                         >
@@ -673,7 +671,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         value="Ms"
                       >
                         <label
-                          aria-selected={null}
                           className="pf-c-check pf-c-select__menu-item"
                           onKeyDown={[Function]}
                         >
@@ -704,7 +701,6 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
                         value="Other"
                       >
                         <label
-                          aria-selected={null}
                           className="pf-c-check pf-c-select__menu-item"
                           onKeyDown={[Function]}
                         >
@@ -782,7 +778,8 @@ exports[`checkbox select renders closed successfully 1`] = `
 }
 
 <Select
-  ariaLabelledBy=""
+  aria-label={null}
+  ariaLabelledBy={null}
   className=""
   isExpanded={false}
   isGrouped={false}
@@ -802,7 +799,7 @@ exports[`checkbox select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby=" pf-toggle-id-2"
+      aria-labelledby="null pf-toggle-id-2"
       className=""
       id="pf-toggle-id-2"
       isActive={false}
@@ -824,8 +821,8 @@ exports[`checkbox select renders closed successfully 1`] = `
     >
       <button
         aria-expanded={false}
-        aria-haspopup={false}
-        aria-labelledby=" pf-toggle-id-2"
+        aria-haspopup={null}
+        aria-labelledby="null pf-toggle-id-2"
         className="pf-c-select__toggle"
         id="pf-toggle-id-2"
         onClick={[Function]}
@@ -1056,7 +1053,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
 }
 
 <Select
-  ariaLabelledBy=""
+  aria-label={null}
+  ariaLabelledBy={null}
   className=""
   isExpanded={true}
   isGrouped={false}
@@ -1076,7 +1074,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby=" pf-toggle-id-3"
+      aria-labelledby="null pf-toggle-id-3"
       className=""
       id="pf-toggle-id-3"
       isActive={false}
@@ -1098,8 +1096,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
     >
       <button
         aria-expanded={true}
-        aria-haspopup={false}
-        aria-labelledby=" pf-toggle-id-3"
+        aria-haspopup={null}
+        aria-labelledby="null pf-toggle-id-3"
         className="pf-c-select__toggle"
         id="pf-toggle-id-3"
         onClick={[Function]}
@@ -1148,7 +1146,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
       </button>
     </SelectToggle>
     <CheckboxSelect
-      aria-labelledby=""
+      aria-label={null}
+      aria-labelledby={null}
       checked={null}
       className=""
       isExpanded={false}
@@ -1177,7 +1176,8 @@ exports[`checkbox select renders expanded successfully 1`] = `
                 className="pf-c-form__group"
               >
                 <fieldset
-                  aria-labelledby=""
+                  aria-label={null}
+                  aria-labelledby={null}
                   className="pf-c-form__fieldset"
                 >
                   <CheckboxSelectOption
@@ -1192,7 +1192,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
                     value="Mr"
                   >
                     <label
-                      aria-selected={null}
                       className="pf-c-check pf-c-select__menu-item"
                       onKeyDown={[Function]}
                     >
@@ -1223,7 +1222,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
                     value="Mrs"
                   >
                     <label
-                      aria-selected={null}
                       className="pf-c-check pf-c-select__menu-item"
                       onKeyDown={[Function]}
                     >
@@ -1254,7 +1252,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
                     value="Ms"
                   >
                     <label
-                      aria-selected={null}
                       className="pf-c-check pf-c-select__menu-item"
                       onKeyDown={[Function]}
                     >
@@ -1285,7 +1282,6 @@ exports[`checkbox select renders expanded successfully 1`] = `
                     value="Other"
                   >
                     <label
-                      aria-selected={null}
                       className="pf-c-check pf-c-select__menu-item"
                       onKeyDown={[Function]}
                     >
@@ -1361,7 +1357,8 @@ exports[`select single select renders closed successfully 1`] = `
 }
 
 <Select
-  ariaLabelledBy=""
+  aria-label={null}
+  ariaLabelledBy={null}
   className=""
   isExpanded={false}
   isGrouped={false}
@@ -1381,7 +1378,7 @@ exports[`select single select renders closed successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby=" pf-toggle-id-0"
+      aria-labelledby="null pf-toggle-id-0"
       className=""
       id="pf-toggle-id-0"
       isActive={false}
@@ -1404,7 +1401,7 @@ exports[`select single select renders closed successfully 1`] = `
       <button
         aria-expanded={false}
         aria-haspopup="listbox"
-        aria-labelledby=" pf-toggle-id-0"
+        aria-labelledby="null pf-toggle-id-0"
         className="pf-c-select__toggle"
         id="pf-toggle-id-0"
         onClick={[Function]}
@@ -1564,7 +1561,8 @@ exports[`select single select renders expanded successfully 1`] = `
 }
 
 <Select
-  ariaLabelledBy=""
+  aria-label={null}
+  ariaLabelledBy={null}
   className=""
   isExpanded={true}
   isGrouped={false}
@@ -1584,7 +1582,7 @@ exports[`select single select renders expanded successfully 1`] = `
     }
   >
     <SelectToggle
-      aria-labelledby=" pf-toggle-id-1"
+      aria-labelledby="null pf-toggle-id-1"
       className=""
       id="pf-toggle-id-1"
       isActive={false}
@@ -1607,7 +1605,7 @@ exports[`select single select renders expanded successfully 1`] = `
       <button
         aria-expanded={true}
         aria-haspopup="listbox"
-        aria-labelledby=" pf-toggle-id-1"
+        aria-labelledby="null pf-toggle-id-1"
         className="pf-c-select__toggle"
         id="pf-toggle-id-1"
         onClick={[Function]}
@@ -1658,14 +1656,16 @@ exports[`select single select renders expanded successfully 1`] = `
       </button>
     </SelectToggle>
     <SingleSelect
-      aria-labelledby=""
+      aria-label={null}
+      aria-labelledby={null}
       className=""
       isExpanded={false}
       openedOnEnter={false}
       selected={null}
     >
       <ul
-        aria-labelledby=""
+        aria-label={null}
+        aria-labelledby={null}
         className="pf-c-select__menu"
         role="listbox"
       >

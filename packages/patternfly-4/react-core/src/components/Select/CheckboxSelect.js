@@ -33,6 +33,7 @@ class CheckboxSelect extends React.Component {
 
   extendChildren(props) {
     const { children, isGrouped, checked } = this.props;
+    const { 'aria-label': ariaLabel, 'aria-labelledby': ariaLabelledBy } = props;
     if (isGrouped) {
       let index = 0;
       return React.Children.map(children, group =>
@@ -54,7 +55,12 @@ class CheckboxSelect extends React.Component {
       );
     }
     return (
-      <fieldset {...props} className={css(formStyles.formFieldset)}>
+      <fieldset
+        {...props}
+        aria-label={ariaLabel}
+        aria-labelledby={(!ariaLabel && ariaLabelledBy) || null}
+        className={css(formStyles.formFieldset)}
+      >
         {React.Children.map(children, (child, index) =>
           React.cloneElement(child, {
             isChecked: checked && checked.includes(child.props.value),

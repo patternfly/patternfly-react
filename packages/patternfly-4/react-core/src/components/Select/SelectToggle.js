@@ -149,7 +149,7 @@ class SelectToggle extends Component {
           if (isExpanded) onClose && onClose();
         }}
         aria-expanded={isExpanded}
-        aria-haspopup={!isCheckbox && 'listbox'}
+        aria-haspopup={(!isCheckbox && 'listbox') || null}
         onKeyDown={this.onKeyDown}
       >
         {children}

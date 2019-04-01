@@ -72,7 +72,6 @@ class CheckboxSelectOption extends React.Component {
               isDisabled && styles.modifiers.disabled,
               className
             )}
-            aria-selected={isChecked || null}
             onKeyDown={this.onKeyDown}
           >
             <input

@@ -24,6 +24,8 @@ const propTypes = {
   placeholderText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Selected item */
   selections: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  /** Adds accessible text to Select */
+  'aria-label': PropTypes.string,
   /** Id of label for the Select aria-labelledby */
   ariaLabelledBy: PropTypes.string,
   /** Callback for selection behavior */
@@ -43,7 +45,8 @@ const defaultProps = {
   className: '',
   isExpanded: false,
   isGrouped: false,
-  ariaLabelledBy: '',
+  'aria-label': null,
+  ariaLabelledBy: null,
   selections: null,
   placeholderText: null,
   variant: SelectVariant.single,
@@ -73,6 +76,7 @@ class Select extends React.Component {
       isGrouped,
       selections,
       ariaLabelledBy,
+      'aria-label': ariaLabel,
       placeholderText,
       width,
       ...props
@@ -116,32 +120,36 @@ class Select extends React.Component {
                 <div className={css(styles.selectToggleWrapper)}>
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
                 </div>
-                {selections &&
-                  selections.length > 0 && (
-                    <div className={css(styles.selectToggleBadge)}>
-                      <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
-                    </div>
-                  )}
+                {selections && selections.length > 0 && (
+                  <div className={css(styles.selectToggleBadge)}>
+                    <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
+                  </div>
+                )}
               </React.Fragment>
             )}
           </SelectToggle>
-          {variant === SelectVariant.single &&
-            isExpanded && (
-              <SingleSelect
-                {...props}
-                selected={selections}
-                openedOnEnter={openedOnEnter}
-                aria-labelledby={ariaLabelledBy}
-              >
-                {children}
-              </SingleSelect>
-            )}
-          {variant === SelectVariant.checkbox &&
-            isExpanded && (
-              <CheckboxSelect {...props} checked={selections} aria-labelledby={ariaLabelledBy} isGrouped={isGrouped}>
-                {children}
-              </CheckboxSelect>
-            )}
+          {variant === SelectVariant.single && isExpanded && (
+            <SingleSelect
+              {...props}
+              selected={selections}
+              openedOnEnter={openedOnEnter}
+              aria-label={ariaLabel}
+              aria-labelledby={ariaLabelledBy}
+            >
+              {children}
+            </SingleSelect>
+          )}
+          {variant === SelectVariant.checkbox && isExpanded && (
+            <CheckboxSelect
+              {...props}
+              checked={selections}
+              aria-label={ariaLabel}
+              aria-labelledby={ariaLabelledBy}
+              isGrouped={isGrouped}
+            >
+              {children}
+            </CheckboxSelect>
+          )}
         </SelectContext.Provider>
       </div>
     );
