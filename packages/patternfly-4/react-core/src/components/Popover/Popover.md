@@ -31,7 +31,6 @@ import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-co
 class AdvancedPopover extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       position: PopoverPosition.top,
       show: false,

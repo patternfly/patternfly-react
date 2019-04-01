@@ -2,7 +2,7 @@
 title: "Table"
 cssPrefix: "pf-c-table"
 ---
-Note: Table lives in its own package `@patternfly/react-table`!
+Note: Table lives in its own package [`@patternfly/react-table`](https://www.npmjs.com/package/@patternfly/react-table)!
 
 ## Simple Table
 ```js
@@ -11,7 +11,6 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class SimpleTable extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
@@ -49,7 +48,6 @@ import { Table, TableHeader, TableBody, sortable, SortByDirection } from '@patte
 
 class SortableTable extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       columns: [
@@ -96,7 +94,6 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class SelectableTable extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
@@ -152,7 +149,6 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 class SimpleActionsTable extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
       rows: [
@@ -206,7 +202,6 @@ import { Table, TableHeader, TableBody } from '@patternfly/react-table';
 
 class ActionsTable extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       columns: [{ title: 'Repositories' }, 'Branches', { title: 'Pull requests' }, 'Workspaces', 'Last Commit'],
@@ -293,7 +288,6 @@ import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-tabl
 class CellHeader extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       columns: [
         { title: 'Header cell', cellTransforms: [headerCol('selectable')] },
@@ -327,7 +321,6 @@ import { Table, TableHeader, TableBody, TableVariant } from '@patternfly/react-t
 class CompactTable extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       columns: [
         { title: 'Header cell' },
@@ -359,7 +352,6 @@ import { Table, TableHeader, TableBody, cellWidth } from '@patternfly/react-tabl
 
 class WidthTable extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       columns: [
@@ -396,7 +388,6 @@ import { Table, TableHeader, TableBody, expandable } from '@patternfly/react-tab
 
 class CollapsibleTable extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       columns: [

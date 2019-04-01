@@ -23,7 +23,6 @@ import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icon
 class ComplexToolbarDemo extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       isDropDownOpen: false,
       isKebabOpen: false,

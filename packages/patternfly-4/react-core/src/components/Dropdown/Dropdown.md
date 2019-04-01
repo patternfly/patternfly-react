@@ -10,7 +10,6 @@ import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patt
 class SimpleDropdown extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       isOpen: false
     };
@@ -65,7 +64,6 @@ import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator } from '@patt
 class DisabledDropdown extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       isOpen: false
     };
@@ -119,7 +117,6 @@ import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosi
 
 class PositionRightDropdown extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       isOpen: false
@@ -176,7 +173,6 @@ import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownDire
 class DirectionUpDropdown extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       isOpen: false
     };
@@ -231,7 +227,6 @@ import { Dropdown, KebabToggle, DropdownItem, DropdownSeparator } from '@pattern
 
 class KebabDropdown extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       isOpen: false
@@ -288,7 +283,6 @@ import { ThIcon } from '@patternfly/react-icons';
 
 class IconDropdown extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       isOpen: false
@@ -349,7 +343,6 @@ import { Dropdown, DropdownToggle } from '@patternfly/react-core';
 
 class DropdownPanel extends React.Component {
   constructor(props) {
-    super(props);
     super(props);
     this.state = {
       isOpen: false

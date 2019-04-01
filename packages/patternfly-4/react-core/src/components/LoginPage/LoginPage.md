@@ -20,7 +20,6 @@ import { ExclamationCircleIcon } from '@patternfly/react-icons';
 class SimpleLoginPage extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       showHelperText: false,
       usernameValue: '',

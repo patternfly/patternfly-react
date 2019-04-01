@@ -27,7 +27,6 @@ import { Tooltip, TooltipPosition, Checkbox } from '@patternfly/react-core';
 class TooltipPositions extends React.Component {
   constructor(props) {
     super(props);
-    super(props);
     this.state = {
       position: TooltipPosition.top,
       keepInViewChecked: true
