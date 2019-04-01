@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import SidebarLayout from '../templates/sidebarLayout';
 import { Title } from '@patternfly/react-core';
 
-export default function IndexPage({ data }) {
+const IndexPage = ({ data }) => {
   return (
     <React.Fragment>
       <SidebarLayout>
@@ -19,7 +19,7 @@ export default function IndexPage({ data }) {
       </SidebarLayout>
     </React.Fragment>
   );
-}
+};
 
 export const pageQuery = graphql`
 {
@@ -65,5 +65,6 @@ export const pageQuery = graphql`
       version
     }
   }
-}
-`;
+}`;
+
+export default IndexPage;

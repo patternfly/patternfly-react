@@ -1,9 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import SidebarLayout from './sidebarLayout';
-import CSSVars from '../components/componentDocs/cssVars';
-import Props from '../components/componentDocs/props';
-import LiveEdit from '../components/componentDocs/liveEdit';
+import { CSSVars, Props, LiveEdit } from '../components/componentDocs';
 import rehypeReact from 'rehype-react';
 import { getUsedComponents } from '../helpers/astHelpers';
 import { getScope } from '../helpers/dynamicImports';
