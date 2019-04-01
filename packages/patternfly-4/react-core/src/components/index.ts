@@ -38,4 +38,3 @@ export * from './TextInput';
 export * from './Title';
 export * from './Tooltip';
 export * from './Wizard';
-export * from './TestThing';
