@@ -11,7 +11,7 @@ export default function IndexPage({ data }) {
           PatternFly 4 React Docs
         </Title>
         {Object.values(data).map(v => v.nodes[0]).map(node => (
-          <p>{node.name}: {node.version}</p>
+          <p key={node.name}>{node.name}: {node.version}</p>
         ))}
         <h1>Hi people</h1>
         <p>Welcome to React docs.</p>

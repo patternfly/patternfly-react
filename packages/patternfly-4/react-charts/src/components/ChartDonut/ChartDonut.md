@@ -1,5 +1,5 @@
 ---
-title: "Donut Charts"
+title: "Donut Chart"
 section: "charts"
 ---
 ## Blue Theme Donut Chart

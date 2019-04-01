@@ -39,7 +39,8 @@ jobs:
           command: |
             yarn build:docs &&
             cp -r packages/patternfly-4/react-docs/public .public/patternfly-4 &&
-            cp -r packages/patternfly-4/react-docs/public/assets .public/assets
+            cp -r .public/patternfly-4/assets .public/assets &&
+            cp .public/patternfly-4/favicon* .public
           no_output_timeout: 30m
       - run:
           name: Deploy Docs

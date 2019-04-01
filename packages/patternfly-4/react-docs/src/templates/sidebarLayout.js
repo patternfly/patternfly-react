@@ -24,13 +24,25 @@ const SidebarLayout = ({ children }) => {
           title
         }
       }
+      allEnvVars {
+        edges {
+          node {
+            name
+            num
+            url
+          }
+        }
+      }
     }`);
+
+  const prInfo = data.allEnvVars.edges
+    .filter(({ node }) => node.name === 'PR_INFO')[0].node;
 
   const Header = (
     <PageHeader
-      logo={data.site.siteMetadata.title}
+      logo={prInfo.num ? `PR #${prInfo.num}` : data.site.siteMetadata.title}
       logoProps={{
-        href: "/"
+        href: prInfo.url ? prInfo.url : "/"
       }}
       showNavToggle />
   );
@@ -41,6 +53,7 @@ const SidebarLayout = ({ children }) => {
         <meta charSet="utf-8" />
         <meta name="description" content="PatternFly React Documentation" />
         <meta name="keywords" content="React, PatternFly, Red Hat" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Helmet>
       {/* Nothing quite like dogfooding your own components */}
       <Page

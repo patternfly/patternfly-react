@@ -8,6 +8,25 @@ const navHelpers = require("./src/helpers/navHelpers");
 const astHelpers = require("./src/helpers/astHelpers");
 const path = require("path");
 
+// Add map PR-related environment variables to gatsby nodes
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  const num = process.env.CIRCLE_PR_NUMBER;
+  const url = process.env.CIRCLE_PULL_REQUEST;
+  // Docs https://www.gatsbyjs.org/docs/actions/#createNode
+  actions.createNode({
+    name: 'PR_INFO',
+    num: num ? num : '',
+    url: url ? url : '',
+    id: createNodeId(`PR_INFO`),
+    parent: null,
+    children: [],
+    internal: {
+      contentDigest: createContentDigest({ a: 'PR_INFO' }),
+      type: `EnvVars`,
+    },
+  });
+}
+
 exports.createPages = ({ actions, graphql }) => {
   const templatePath = path.resolve(`./src/templates/markdownTemplate.js`);
 

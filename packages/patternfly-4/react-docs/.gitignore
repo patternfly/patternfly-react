@@ -16,7 +16,9 @@ jspm_packages/
 # gatsby files
 .cache/
 public
-static
+# copied files
+static/assets
+static/base.css
 
 # Mac files
 .DS_Store
