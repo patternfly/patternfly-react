@@ -1,27 +1,31 @@
 import React from 'react';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 const Props = ({ propList }) => {
-
-  return <table style={{ width: "100%" }}>
-    <tbody>
-      <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Required</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-      {propList.map(prop =>
-        <tr key={prop.name}>
-          <td>{prop.name}</td>
-          <td>{prop.type.name}</td>
-          <td>{'' + prop.required}</td>
-          <td>{prop.defaultValue && prop.defaultValue.value}</td>
-          <td>{'' + prop.description}</td>
+  return (
+    <table class="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="Properties for a component">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Type</th>
+          <th class="pf-c-table__icon" scope="col">Required</th>
+          <th scope="col">Default</th>
+          <th scope="col">Description</th>
         </tr>
-      )}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {propList.map(prop =>
+          <tr key={prop.name}>
+            <td>{prop.name}</td>
+            <td>{prop.type.name}</td>
+            <td class="pf-c-table__icon">{prop.required && <ExclamationCircleIcon />}</td>
+            <td>{prop.defaultValue && prop.defaultValue.value}</td>
+            <td>{'' + prop.description}</td>
+          </tr>
+        )}
+      </tbody>
+    </table>
+  );
 }
 
 export default Props

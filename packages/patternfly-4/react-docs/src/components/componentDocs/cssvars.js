@@ -18,15 +18,20 @@ class CSSVars extends React.Component {
   }
 
   render() {
+    if (!this.cssTokens)
+      return <p>No CSS Variables</p>;
+
     return (
-      <table>
-        <tbody>
+      <table class="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="CSS Variable Table">
+        <thead>
           <tr>
-            <th>CSS Variable</th>
-            <th>React Token</th>
-            <th>Value</th>
+            <th scope="col">CSS Variable</th>
+            <th scope="col">React Token</th>
+            <th scope="col">Value</th>
           </tr>
-          {this.cssTokens && this.cssTokens.map(token =>
+        </thead>
+        <tbody>
+          {this.cssTokens.map(token =>
             <tr key={token.name}>
               <td>{token.name}</td>
               <td>{token.token}</td>
