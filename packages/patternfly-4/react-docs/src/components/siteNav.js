@@ -8,6 +8,9 @@ import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
 const SiteNav = () => {
   const data = useStaticQuery(graphql`
     {
+      site {
+        pathPrefix
+      }
       allSitePage {
         edges {
           node {
@@ -60,8 +63,8 @@ const SiteNav = () => {
 
   const hasActiveLink = (navGroup, location) => {
     for (const value of navGroup) {
-      console.log('comp', value.path, location.pathname, value.path === location.pathname);
-      if (value.path === location.pathname) {
+      if (location.pathname === value.path ||
+        location.pathname === data.site.pathPrefix + value.path) {
         return true;
       }
     }
