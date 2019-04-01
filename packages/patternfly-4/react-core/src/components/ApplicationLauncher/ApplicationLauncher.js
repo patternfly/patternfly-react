@@ -1,19 +1,13 @@
-import React, { Children, cloneElement } from 'react';
-import styles from '@patternfly/patternfly/components/AppLauncher/app-launcher.css';
-import { css } from '@patternfly/react-styles';
+import React from 'react';
 import PropTypes from 'prop-types';
-import ApplicationLauncherMenu from './ApplicationLauncherMenu';
-import Toggle from './Toggle';
+import { Dropdown, DropdownDirection, DropdownPosition, DropdownToggle } from '../Dropdown';
 import { ThIcon } from '@patternfly/react-icons';
-import { ApplicationLauncherDirection, ApplicationLauncherPosition } from './applicationLauncherConstants';
-import { DropdownContext } from '../Dropdown/dropdownConstants';
-import GenerateId from '../../helpers/GenerateId/GenerateId';
 
 export const propTypes = {
   /** Additional element css classes */
   className: PropTypes.string,
   /** Display menu above or below dropdown toggle */
-  direction: PropTypes.oneOf(Object.values(ApplicationLauncherDirection)),
+  direction: PropTypes.oneOf(Object.values(DropdownDirection)),
   /** Array of DropdownItem nodes that will be rendered in the dropdown Menu list */
   dropdownItems: PropTypes.array,
   /** open bool */
@@ -23,81 +17,33 @@ export const propTypes = {
   /** Callback called when application launcher toggle is clicked */
   onToggle: PropTypes.func,
   /** Indicates where menu will be alligned horizontally */
-  position: PropTypes.oneOf(Object.values(ApplicationLauncherPosition)),
+  position: PropTypes.oneOf(Object.values(DropdownPosition)),
   /** Adds accessible text to the button. Required for plain buttons */
   'aria-label': PropTypes.string
 };
 
 export const defaultProps = {
   className: '',
-  direction: ApplicationLauncherDirection.down,
+  direction: DropdownDirection.down,
   dropdownItems: [],
   isOpen: false,
   onSelect: Function.prototype,
   onToggle: Function.prototype,
-  position: ApplicationLauncherPosition.left,
+  position: DropdownPosition.left,
   'aria-label': 'Actions'
 };
 
 class ApplicationLauncher extends React.Component {
-  onEnter = () => {
-    this.openedOnEnter = true;
-  };
-
-  componentDidUpdate() {
-    if (!this.props.isOpen) this.openedOnEnter = false;
-  }
-
   render() {
-    const {
-      'aria-label': ariaLabel,
-      children,
-      dropdownItems,
-      className,
-      isOpen,
-      onSelect,
-      onToggle,
-      ...props
-    } = this.props;
-    return (
-      <GenerateId>
-        {randomId => (
-          <div
-            className={css(styles.appLauncher, isOpen && styles.modifiers.expanded, className)}
-            ref={ref => {
-              this.parentRef = ref;
-            }}
-          >
-            {Children.map(
-              <Toggle id={`pf-toggle-id-${randomId}`} aria-label={ariaLabel} onToggle={onToggle}>
-                <ThIcon />
-              </Toggle>,
-              oneToggle =>
-                cloneElement(oneToggle, {
-                  parentRef: this.parentRef,
-                  id: randomId,
-                  isOpen,
-                  isPlain: true,
-                  ariaHasPopup: true,
-                  onEnter: this.onEnter
-                })
-            )}
-            {isOpen && (
-              <DropdownContext.Provider value={event => onSelect && onSelect(event)}>
-                <ApplicationLauncherMenu
-                  isOpen={isOpen}
-                  position="left"
-                  aria-labelledby={ariaLabel}
-                  openedOnEnter={this.openedOnEnter}
-                >
-                  {dropdownItems}
-                </ApplicationLauncherMenu>
-              </DropdownContext.Provider>
-            )}
-          </div>
-        )}
-      </GenerateId>
-    );
+    return <Dropdown
+      { ...this.props }
+      toggle={
+        <DropdownToggle iconComponent={null} onToggle={this.props.onToggle}>
+          <ThIcon />
+        </DropdownToggle>
+      }
+      isPlain
+    />
   }
 }
 
