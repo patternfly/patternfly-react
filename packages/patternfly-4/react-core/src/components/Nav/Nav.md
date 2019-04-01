@@ -24,17 +24,17 @@ class NavSimpleList extends React.Component {
     const { activeItem } = this.state;
     return (
       <Nav onSelect={this.onSelect} id="nav-primary-simple">
-        <NavList variant={NavVariants.simple}>
-          <NavItem preventDefault to="#simple-link1" itemId={0} isActive={activeItem === 0}>
+        <NavList id="nav-list-simple" variant={NavVariants.simple}>
+          <NavItem id="simple-link1" preventDefault to="#simple-link1" itemId={0} isActive={activeItem === 0}>
             Link 1
           </NavItem>
-          <NavItem preventDefault to="#simple-link2" itemId={1} isActive={activeItem === 1}>
+          <NavItem id="simple-link2" preventDefault to="#simple-link2" itemId={1} isActive={activeItem === 1}>
             Link 2
           </NavItem>
-          <NavItem preventDefault to="#simple-link3" itemId={2} isActive={activeItem === 2} isSeparated>
+          <NavItem id="simple-link3" preventDefault to="#simple-link3" itemId={2} isActive={activeItem === 2} isSeparated>
             Link 3 with separator
           </NavItem>
-          <NavItem preventDefault to="#simple-link4" itemId={3} isActive={activeItem === 3}>
+          <NavItem id="simple-link4" preventDefault to="#simple-link4" itemId={3} isActive={activeItem === 3}>
             Link 4
           </NavItem>
         </NavList>
