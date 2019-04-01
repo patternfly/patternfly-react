@@ -51,10 +51,14 @@ const SiteNav = () => {
       return acc;
     }, {});
 
+  const isActive = (path, curPath) => {
+    return curPath === path || curPath === data.site.pathPrefix + path;
+  };
+
   const getNavItem = (value) => (
     <Location key={value.path}>
       {({ location }) => (
-        <NavItem isActive={location.pathname === value.path} >
+        <NavItem isActive={isActive(value.path, location.pathname)} >
           <Link to={value.path} style={{ textTransform: 'capitalize' }}>{value.context.title}</Link>
         </NavItem>
       )}
@@ -63,8 +67,7 @@ const SiteNav = () => {
 
   const hasActiveLink = (navGroup, location) => {
     for (const value of navGroup) {
-      if (location.pathname === value.path ||
-        location.pathname === data.site.pathPrefix + value.path) {
+      if (isActive(value.path, location.pathname)) {
         return true;
       }
     }
