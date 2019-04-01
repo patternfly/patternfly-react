@@ -1,5 +1,30 @@
 # React-docs
 
+## Writing Your Docs
+
+Gatsby recursively scans all `../../patternfly-4` directories for *.md files. Your Markdown file can have the following frontmatter:
+```
+---
+title: "(required) title of the page"
+section: "(optional, default=components) the section the page should be generated under"
+seperatePages: "(optional, default=false) if the links inside the page should redirect to fullscreen pages
+---
+```
+
+Your Markdown file will have its JS code blocks converted to live-editable components via [`react-live`](https://github.com/FormidableLabs/react-live):
+`````
+## Title describing example
+```js
+<p>Hello, world!</p>
+```
+`````
+
+The easiest way to develop your example is by creating an empty code block and then editing it in your browser. Once your happy, copy the code back to your Markdown file.
+
+Remember that you are unable to use experimental language features like [class properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) as [Buble](https://github.com/bublejs/buble) does not support them.
+
+## About Gatsby
+
 Gatsby is a static site generator that doubles as a hot-module reloader for building our docs. This is an overengineered grandious way to use our own components in our docs, which is a terrible idea.
 
 We have to more or less build our own version of [React Styleguidist](https://github.com/styleguidist/react-styleguidist). We can't just use [React Styleguidist](https://github.com/styleguidist/react-styleguidist) because [patternfly-next](https://github.com/patternfly/patternfly-next) also uses Gatsby for their docs and the two are currently being merged and styled at [v2.patternfly.org](v2.patternfly.org).
