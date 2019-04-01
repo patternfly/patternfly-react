@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 2.3.0 (2019-03-29)
+
+
+### Features
+
+* **Icons:** Paper plane alt icon ([#1643](https://github.com/patternfly/patternfly-react/issues/1643)) ([cd149e0](https://github.com/patternfly/patternfly-react/commit/cd149e0))
+
+
+
+
+
 ## 2.2.1 (2019-03-21)
 
 **Note:** Version bump only for package @patternfly/react-tokens
