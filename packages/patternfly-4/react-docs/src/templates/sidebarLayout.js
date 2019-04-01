@@ -42,12 +42,18 @@ const SidebarLayout = ({ children }) => {
 
   const Header = (
     <PageHeader
+      style={{ backgroundColor: "black" }}
       logo={prInfo.num ? `PR #${prInfo.num}` : data.site.siteMetadata.title}
       logoProps={{
         href: prInfo.url ? prInfo.url : "/"
       }}
       showNavToggle />
   );
+
+  const SideBar = (
+    <PageSidebar nav={<SiteNav />} />
+  );
+
   return (
     <React.Fragment>
       <Helmet>
@@ -60,7 +66,7 @@ const SidebarLayout = ({ children }) => {
       {/* Nothing quite like dogfooding your own components */}
       <Page
         header={Header}
-        sidebar={<PageSidebar nav={<SiteNav />}></PageSidebar>}
+        sidebar={SideBar}
         isManagedSidebar>
         {children}
       </Page>

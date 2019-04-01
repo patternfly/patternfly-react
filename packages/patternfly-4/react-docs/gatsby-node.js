@@ -80,7 +80,7 @@ exports.createPages = ({ actions, graphql }) => {
             // Assume [Link](/PageLayoutSimpleNav/) in *.md means there is a ./examples/PageLayoutSimpleNav.js
             component: path.resolve(`${basePath}/examples/${demoComponent}.js`),
           });
-        })
+        });
       } else {
         // Normal templated component pages
         let section = node.frontmatter.section ? node.frontmatter.section : 'components';

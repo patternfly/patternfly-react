@@ -6,6 +6,7 @@ Gatsby recursively scans all `../../patternfly-4` directories for *.md files. Yo
 ```
 ---
 title: "(required) title of the page"
+cssPrefix: "(optional) the cssPrefix from @patternfly/patternfly (i.e. pf-c-nav)"
 section: "(optional, default=components) the section the page should be generated under"
 seperatePages: "(optional, default=false) if the links inside the page should redirect to fullscreen pages
 ---

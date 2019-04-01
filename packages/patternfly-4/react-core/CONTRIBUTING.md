@@ -20,7 +20,7 @@ section: patternfly-4
 3. Write the component implementation in `[Component].js`.
 4. Add tests to `[Component].test.js`. All new components must be tested.
 5. Add any additional public exports to `index.js`
-6. Update the generated example and add any others. Any examples created must be imported into `[ComponentName].md` [See how to create component docs](../react-core/README.md)
+6. Update the generated `[ComponentName].md.` See how to create [component docs.](../react-core/README.md)
 
 
 

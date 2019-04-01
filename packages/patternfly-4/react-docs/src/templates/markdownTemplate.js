@@ -25,9 +25,9 @@ const getRehypeReact = scope => {
   }).Compiler;
 }
 
-export default function Template({ data }) {
+const MarkdownTemplate = ({ data }) => {
   // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
-  const helperComponents = data.metadata.edges.map(e => e.node.name)
+  const helperComponents = data.metadata.edges.map(edge => edge.node.name)
   // Exported components with names used in the *.md file
   const propComponents = getUsedComponents(data.markdownRemark.htmlAst, helperComponents, {})
   // Finally, the props for each relevant component!
@@ -60,24 +60,20 @@ export default function Template({ data }) {
       </PageSection>
 
       {props.length > 0 && props.map(component =>
-        <PageSection>
-          <React.Fragment key={component.name}>
-            <Title size="xl">{component.name} Properties</Title>
-            {props.description}
-            <Props propList={component.props} />
-          </React.Fragment>
+        <PageSection key={component.name}>
+          {props.description}
+          <Props caption={`${component.name} Properties`} propList={component.props} />
         </PageSection>
       )}
 
       {cssPrefix &&
         <PageSection>
-          <Title size="xl">CSS Variables</Title>
-          <p>
-            CSS Variables from
-              <a href="https://github.com/patternfly/patternfly-next/" target="_blank"> patternfly-next </a>
-            starting with <strong>--{cssPrefix}</strong>.
-          </p>
-          <CSSVars cssPrefix={cssPrefix}></CSSVars>
+          <CSSVars caption={
+            <p>
+              CSS Variables starting with <strong>--{cssPrefix}</strong> from&nbsp;
+                <a href="https://github.com/patternfly/patternfly-next/" target="_blank">patternfly-next</a>
+            </p>
+          } cssPrefix={cssPrefix} />
         </PageSection>
       }
     </SidebarLayout>
@@ -129,3 +125,5 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!, $examplesReg
   }
 }
 `;
+
+export default MarkdownTemplate;

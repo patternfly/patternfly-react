@@ -1,8 +1,9 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import { Link } from "gatsby"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import { Link } from "gatsby";
+import { Location } from '@reach/router';
 
-import { Nav, NavGroup } from '@patternfly/react-core';
+import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
 
 const SiteNav = () => {
   const data = useStaticQuery(graphql`
@@ -39,7 +40,7 @@ const SiteNav = () => {
       }
       return node;
     })
-    .filter(node => getSlashCount(node.path) == 2) // to exclude default /404.html/
+    .filter(node => getSlashCount(node.path) === 2) // to exclude default /404.html/
     .reduce((acc, node) => {
       const group = node.path.split('/')[1];
       acc[group] = acc[group] || [];
@@ -47,21 +48,59 @@ const SiteNav = () => {
       return acc;
     }, {});
 
+  const getNavItem = (value) => (
+    <Location key={value.path}>
+      {({ location }) => (
+        <NavItem isActive={location.pathname === value.path} >
+          <Link to={value.path} style={{ textTransform: 'capitalize' }}>{value.context.title}</Link>
+        </NavItem>
+      )}
+    </Location>
+  );
+
+  const hasActiveLink = (navGroup, location) => {
+    for (const value of navGroup) {
+      console.log('comp', value.path, location.pathname, value.path === location.pathname);
+      if (value.path === location.pathname) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
+  const getNavGroup = ([navGroupName, navGroup]) => {
+    if (navGroup.length === 1) {
+      return getNavItem(navGroup[0]);
+    } else {
+      return (
+        <Location key={navGroupName}>
+          {({ location }) => (
+            <NavExpandable title={navGroupName} isActive={hasActiveLink(navGroup, location)} isExpanded={hasActiveLink(navGroup, location)}>
+              {navGroup
+                .sort((v1, v2) => v1.context.title.localeCompare(v2.context.title))
+                .map(getNavItem)}
+            </NavExpandable>
+          )}
+        </Location>
+      );
+    }
+  };
+
   return (
     <Nav aria-label="Nav">
-      {Object.entries(grouped)
-        .sort(([k1], [k2]) => k1.localeCompare(k2))
-        .map(([key, value]) =>
-          <NavGroup key={key} title={key}>
-            {value
-              .sort((v1, v2) => v1.context.title.localeCompare(v2.context.title))
-              .map(value =>
-                <li key={value.path}>
-                  <Link to={value.path} style={{ textTransform: 'capitalize' }}>{value.context.title}</Link>
-                </li>
-              )}
-          </NavGroup>
-        )}
+      <NavList>
+        {Object.entries(grouped)
+          .sort(([k1, v1], [k2, v2]) => {
+            if (v1.length === 1 && v2.length > 1) { // Group single items at bottom
+              return 1;
+            } else if (v1.length > 1 && v2.length === 1) {
+              return -1;
+            }
+            return k1.localeCompare(k2)
+          })
+          .map(getNavGroup)}
+      </NavList>
     </Nav>
   );
 }

@@ -1,14 +1,15 @@
 import React from 'react';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
-const Props = ({ propList }) => {
+const Props = ({ propList, caption }) => {
   return (
-    <table class="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="Properties for a component">
+    <table className="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="Properties for a component">
+      <caption>{caption}</caption>
       <thead>
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Type</th>
-          <th class="pf-c-table__icon" scope="col">Required</th>
+          <th className="pf-c-table__icon" scope="col">Required</th>
           <th scope="col">Default</th>
           <th scope="col">Description</th>
         </tr>
@@ -18,7 +19,7 @@ const Props = ({ propList }) => {
           <tr key={prop.name}>
             <td>{prop.name}</td>
             <td>{prop.type.name}</td>
-            <td class="pf-c-table__icon">{prop.required && <ExclamationCircleIcon />}</td>
+            <td className="pf-c-table__icon">{prop.required && <ExclamationCircleIcon />}</td>
             <td>{prop.defaultValue && prop.defaultValue.value}</td>
             <td>{'' + prop.description}</td>
           </tr>

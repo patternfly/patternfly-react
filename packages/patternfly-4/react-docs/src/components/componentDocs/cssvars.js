@@ -22,7 +22,8 @@ class CSSVars extends React.Component {
       return <p>No CSS Variables</p>;
 
     return (
-      <table class="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="CSS Variable Table">
+      <table className="pf-c-table pf-m-compact pf-m-grid-md" role="grid" aria-label="CSS Variable Table">
+        <caption>{this.props.caption}</caption>
         <thead>
           <tr>
             <th scope="col">CSS Variable</th>

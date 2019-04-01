@@ -1,5 +1,5 @@
 ---
-title: "Navigation"
+title: "Nav"
 cssPrefix: "pf-c-nav"
 ---
 ## Simple Nav
