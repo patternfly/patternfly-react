@@ -17,7 +17,7 @@ git rev-parse HEAD
 
 # Identify packages that have been updated since the previous tagged release
 # Update their versions and changelogs
-npx lerna version --conventional-commits --no-git-tag-version --no-commit-hooks --no-push --yes
+npx lerna version patch --conventional-commits --no-git-tag-version --no-commit-hooks --no-push --yes
 
 # Amend the commit to avoid lerna ERR! EUNCOMMIT
 git add **/package.json **/CHANGELOG.md
@@ -29,7 +29,7 @@ if npx lerna publish from-package --no-git-tag-version --no-push --yes ; then
     # Undo that last amended commit locally, because we don't actually want to push it
     git reset --hard origin/$TRAVIS_BRANCH
     # Now only if it publishes should we also push this commit to Github and do a Github release
-    if ! npx lerna version --conventional-commits --github-release --no-commit-hooks --yes ; then
+    if ! npx lerna version patch --conventional-commits --github-release --no-commit-hooks --yes ; then
         echo "Something went wrong committing or making a Github release."
         exit 0 # Publishing to the registry is what matters...
     fi
