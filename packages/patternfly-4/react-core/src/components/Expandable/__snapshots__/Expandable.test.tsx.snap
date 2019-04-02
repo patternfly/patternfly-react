@@ -50,12 +50,12 @@ exports[`Renders Expandable expanded 1`] = `
 .pf-c-expandable__content {
   display: block;
 }
-.pf-c-expandable {
+.pf-c-expandable.pf-m-expanded {
   display: block;
 }
 
 <div
-  className="pf-c-expandable"
+  className="pf-c-expandable pf-m-expanded"
 >
   <button
     aria-expanded={true}
