@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.11.0...@patternfly/react-core@2.11.1) (2019-04-02)
+
+
+### Bug Fixes
+
+* **Tabs:** Use TabsVariant.nav and fix a minor HTML issue ([#1690](https://github.com/patternfly/patternfly-react/issues/1690)) ([ae581fe](https://github.com/patternfly/patternfly-react/commit/ae581fe)), closes [#1689](https://github.com/patternfly/patternfly-react/issues/1689)
+
+
+
+
+
 # [2.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.9...@patternfly/react-core@2.11.0) (2019-04-02)
 
 
