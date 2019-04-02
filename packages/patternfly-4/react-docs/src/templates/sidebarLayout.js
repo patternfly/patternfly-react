@@ -11,12 +11,6 @@ import Helmet from 'react-helmet';
 import { Page, PageHeader, PageSidebar } from '@patternfly/react-core';
 import SiteNav from '../components/siteNav';
 
-// Import global CSS files here. Have no remorse.
-// https://www.gatsbyjs.org/docs/creating-global-styles
-import '../../static/base.css';
-import '@patternfly/patternfly/components/Table/table.css';
-import '@patternfly/patternfly/components/Table/table-grid.css';
-
 
 const SidebarLayout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -64,10 +58,7 @@ const SidebarLayout = ({ children }) => {
         <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
       </Helmet>
       {/* Nothing quite like dogfooding your own components */}
-      <Page
-        header={Header}
-        sidebar={SideBar}
-        isManagedSidebar>
+      <Page style={{ height: "100vh" }} header={Header} sidebar={SideBar} isManagedSidebar>
         {children}
       </Page>
     </React.Fragment >

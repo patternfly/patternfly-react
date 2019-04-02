@@ -1,9 +1,3 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 const navHelpers = require("./src/helpers/navHelpers");
 const astHelpers = require("./src/helpers/astHelpers");
 const path = require("path");
