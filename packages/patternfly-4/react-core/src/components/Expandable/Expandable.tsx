@@ -43,7 +43,7 @@ export const Expandable: React.SFC<ExpandableProps> = ({
   isHovered,
   ...props
 }) => (
-  <div {...props} className={css(styles.expandable, className)}>
+  <div {...props} className={css(styles.expandable, isExpanded && styles.modifiers.expanded, className)}>
     <button
       className={css(
         styles.expandableToggle,
