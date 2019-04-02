@@ -35,10 +35,11 @@ export const defaultProps = {
 
 class ApplicationLauncher extends React.Component {
   render() {
+    const { 'aria-label': ariaLabel, ...props } = this.props;
     return <Dropdown
-      { ...this.props }
+      { ...props }
       toggle={
-        <DropdownToggle iconComponent={null} onToggle={this.props.onToggle}>
+        <DropdownToggle iconComponent={null} onToggle={this.props.onToggle} aria-label={ariaLabel}>
           <ThIcon />
         </DropdownToggle>
       }
