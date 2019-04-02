@@ -23,9 +23,9 @@ class AccessibleSecondaryTabs extends React.Component {
 
   render() {
     return (
-      <Tabs activeKey={this.state.activeTabKey1} onSelect={this.handleTabClickFirst} aria-label="Local">
+      <Tabs activeKey={this.state.activeTabKey1} onSelect={this.handleTabClickFirst} aria-label="Local" variant="nav">
         <Tab eventKey={0} title="Tab item 1">
-          <Tabs activeKey={this.state.activeTabKey2} isSecondary onSelect={this.handleTabClickSecond} aria-label="Local secondary">
+          <Tabs activeKey={this.state.activeTabKey2} isSecondary onSelect={this.handleTabClickSecond} aria-label="Local secondary" variant="nav">
             <Tab eventKey={10} title="Secondary tab item 1">
               Secondary tab item 1 item section
             </Tab>

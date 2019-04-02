@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {
-  /** the index of the active tab (not needed if used outside Tabs component) */
-  activeKey: PropTypes.number,
-  /** content rendered inside the tab content area if used inside Tabs component */
-  child: PropTypes.node,
   /** content rendered inside the tab content area if used outside Tabs component */
   children: PropTypes.any,
   /** class of tab content area if used outside Tabs component */
@@ -20,8 +16,6 @@ const propTypes = {
 }
 
 const defaultProps = {
-  activeKey: 0,
-  child: null,
   children: null,
   className: null,
   'aria-label': null

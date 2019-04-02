@@ -8,6 +8,11 @@ import { SIDE } from '../../helpers/constants';
 import TabContent from './TabContent';
 import Tab from './Tab';
 
+export const TabsVariant = {
+  div: 'div',
+  nav: 'nav'
+};
+
 const propTypes = {
   /** content rendered inside the Tabs Component. */
   children: PropTypes.node.isRequired,
@@ -19,15 +24,17 @@ const propTypes = {
   onSelect: PropTypes.func,
   /** uniquely identifies the Tabs */
   id: PropTypes.string,
-  /** Enables the filled tab list layout */
+  /** enables the filled tab list layout */
   isFilled: PropTypes.bool,
-  /** Enables Secondary Tab styling */
+  /** enables Secondary Tab styling */
   isSecondary: PropTypes.bool,
-  /** Aria Label for the left Scroll Button */
+  /** aria-label for the left Scroll Button */
   leftScrollAriaLabel: PropTypes.string,
-  /** Aria Label for the right Scroll Button */
+  /** aria-label for the right Scroll Button */
   rightScrollAriaLabel: PropTypes.string,
-  /** provides an accessible label for the Tabs and defines the Tabs inside a navigation region (labels should be unique for each set of Tabs that are present on a page) */
+  /** determines what tag is used around the Tabs. Use "nav" to define the Tabs inside a navigation region */
+  variant: PropTypes.oneOf(Object.values(TabsVariant)),
+  /** provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */
   'aria-label': PropTypes.string
 };
 
@@ -40,12 +47,13 @@ const defaultProps = {
   isSecondary: false,
   leftScrollAriaLabel: 'Scroll left',
   rightScrollAriaLabel: 'Scroll Right',
-  'aria-label': null
+  'aria-label': null,
+  variant: TabsVariant.div
 };
 
-const Tabs = ({ 'aria-label': ariaLabel, id, ...props }) => {
+const Tabs = ({ 'aria-label': ariaLabel, id, variant, ...props }) => {
   const unique_id = id ? id : getUniqueId();
-  return ariaLabel
+  return variant === TabsVariant.nav
     ? <TabsWithNav ariaLabel={ariaLabel} id={unique_id} {...props} />
     : <TabsWithDiv id={unique_id} {...props} />;
 }
@@ -261,4 +269,6 @@ const InternalTabContainer = ({activeKey, children, id, ...props}) => (
 );
 
 Tabs.propTypes = propTypes;
+Tabs.defaultProps = defaultProps;
+
 export default Tabs;
