@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expandable 1`] = `
+.pf-c-expandable__toggle-icon {
+  display: block;
+}
+.pf-c-expandable__toggle {
+  display: block;
+}
+.pf-c-expandable__content {
+  display: block;
+}
+.pf-c-expandable {
+  display: block;
+}
+
+<div
+  className="pf-c-expandable"
+>
+  <button
+    aria-expanded={false}
+    className="pf-c-expandable__toggle"
+    onClick={[Function]}
+  >
+    <AngleRightIcon
+      aria-hidden={true}
+      className="pf-c-expandable__toggle-icon"
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+    <span />
+  </button>
+  <div
+    className="pf-c-expandable__content"
+    hidden={true}
+  >
+    test 
+  </div>
+</div>
+`;
+
+exports[`Renders Expandable expanded 1`] = `
+.pf-c-expandable__toggle-icon {
+  display: block;
+}
+.pf-c-expandable__toggle {
+  display: block;
+}
+.pf-c-expandable__content {
+  display: block;
+}
+.pf-c-expandable {
+  display: block;
+}
+
+<div
+  className="pf-c-expandable"
+>
+  <button
+    aria-expanded={true}
+    className="pf-c-expandable__toggle"
+    onClick={[Function]}
+  >
+    <AngleRightIcon
+      aria-hidden={true}
+      className="pf-c-expandable__toggle-icon"
+      color="currentColor"
+      size="sm"
+      title={null}
+    />
+    <span />
+  </button>
+  <div
+    className="pf-c-expandable__content"
+    hidden={false}
+  >
+     test 
+  </div>
+</div>
+`;

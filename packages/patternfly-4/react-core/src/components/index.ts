@@ -16,6 +16,7 @@ export * from './ContextSelector';
 export * from './DataList';
 export * from './Dropdown';
 export * from './EmptyState';
+export * from './Expandable';
 export * from './Form';
 export * from './FormSelect';
 export * from './InputGroup';
