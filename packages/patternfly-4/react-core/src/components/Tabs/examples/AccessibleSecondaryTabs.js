@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs, Tab } from '@patternfly/react-core';
+import { Tabs, TabsVariant, Tab } from '@patternfly/react-core';
 
 class AccessibleSecondaryTabs extends React.Component {
   state = {
@@ -23,9 +23,9 @@ class AccessibleSecondaryTabs extends React.Component {
 
   render() {
     return (
-      <Tabs activeKey={this.state.activeTabKey1} onSelect={this.handleTabClickFirst} aria-label="Local" variant="nav">
+      <Tabs activeKey={this.state.activeTabKey1} onSelect={this.handleTabClickFirst} aria-label="Local" variant={TabsVariant.nav}>
         <Tab eventKey={0} title="Tab item 1">
-          <Tabs activeKey={this.state.activeTabKey2} isSecondary onSelect={this.handleTabClickSecond} aria-label="Local secondary" variant="nav">
+          <Tabs activeKey={this.state.activeTabKey2} isSecondary onSelect={this.handleTabClickSecond} aria-label="Local secondary" variant={TabsVariant.nav}>
             <Tab eventKey={10} title="Secondary tab item 1">
               Secondary tab item 1 item section
             </Tab>

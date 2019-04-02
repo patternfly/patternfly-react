@@ -58,7 +58,7 @@ const Tabs = ({ 'aria-label': ariaLabel, id, variant, ...props }) => {
     : <TabsWithDiv id={unique_id} {...props} />;
 }
 
-const TabsWithNav = ({ activeKey, ariaLabel, className, id, isFilled, isSecondary, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
+const TabsWithNav = ({ activeKey, ariaLabel, className, id, isFilled, isSecondary, leftScrollAriaLabel, rightScrollAriaLabel, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
   <nav {...props}
     aria-label={ariaLabel}
     className={css(
@@ -71,12 +71,12 @@ const TabsWithNav = ({ activeKey, ariaLabel, className, id, isFilled, isSecondar
       highlightRightScrollButton && styles.modifiers.endCurrent,
       className)}
   >
-    <InternalTabs id={id} activeKey={activeKey} {...props} />
+    <InternalTabs id={id} activeKey={activeKey} leftScrollAriaLabel={leftScrollAriaLabel} rightScrollAriaLabel={rightScrollAriaLabel} {...props} />
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
   </nav>
 );
 
-const TabsWithDiv = ({ activeKey, className, id, isFilled, isSecondary, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
+const TabsWithDiv = ({ activeKey, className, id, isFilled, isSecondary, leftScrollAriaLabel, rightScrollAriaLabel, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
   <div {...props}
     className={css(
       styles.tabs,
@@ -88,7 +88,7 @@ const TabsWithDiv = ({ activeKey, className, id, isFilled, isSecondary, showLeft
       highlightRightScrollButton && styles.modifiers.endCurrent,
       className)}
   >
-    <InternalTabs id={id} activeKey={activeKey} {...props} />
+    <InternalTabs id={id} activeKey={activeKey} leftScrollAriaLabel={leftScrollAriaLabel} rightScrollAriaLabel={rightScrollAriaLabel} {...props} />
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
   </div>
 );
