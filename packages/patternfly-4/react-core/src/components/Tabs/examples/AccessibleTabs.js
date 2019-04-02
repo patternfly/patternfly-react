@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs, Tab } from '@patternfly/react-core';
+import { Tabs, TabsVariant, Tab } from '@patternfly/react-core';
 
 class AccessibleTabs extends React.Component {
   state = {
@@ -15,7 +15,7 @@ class AccessibleTabs extends React.Component {
 
   render() {
     return (
-      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Local" variant="nav">
+      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Local" variant={TabsVariant.nav}>
         <Tab eventKey={0} title="Tab item 1">
           Tab 1 section
         </Tab>

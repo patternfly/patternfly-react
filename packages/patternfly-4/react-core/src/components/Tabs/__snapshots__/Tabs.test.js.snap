@@ -166,9 +166,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
   >
     <div
       className="pf-c-tabs pf-m-fill"
-      leftScrollAriaLabel="Scroll left"
       onSelect={[Function]}
-      rightScrollAriaLabel="Scroll Right"
     >
       <InternalTabs
         activeKey={0}
@@ -387,9 +385,7 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
       <InternalTabContainer
         activeKey={0}
         id="handleScrollButtons"
-        leftScrollAriaLabel="Scroll left"
         onSelect={[Function]}
-        rightScrollAriaLabel="Scroll Right"
       >
         <ForwardRef
           activeKey={0}
@@ -692,9 +688,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
   >
     <div
       className="pf-c-tabs pf-m-fill"
-      leftScrollAriaLabel="Scroll left"
       onSelect={[Function]}
-      rightScrollAriaLabel="Scroll Right"
     >
       <InternalTabs
         activeKey={0}
@@ -913,9 +907,7 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
       <InternalTabContainer
         activeKey={0}
         id="scrollLeft"
-        leftScrollAriaLabel="Scroll left"
         onSelect={[Function]}
-        rightScrollAriaLabel="Scroll Right"
       >
         <ForwardRef
           activeKey={0}
@@ -1218,9 +1210,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
   >
     <div
       className="pf-c-tabs pf-m-fill"
-      leftScrollAriaLabel="Scroll left"
       onSelect={[Function]}
-      rightScrollAriaLabel="Scroll Right"
     >
       <InternalTabs
         activeKey={0}
@@ -1439,9 +1429,7 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
       <InternalTabContainer
         activeKey={0}
         id="scrollRight"
-        leftScrollAriaLabel="Scroll left"
         onSelect={[Function]}
-        rightScrollAriaLabel="Scroll Right"
       >
         <ForwardRef
           activeKey={0}
