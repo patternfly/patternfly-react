@@ -5,7 +5,24 @@ import Tab from './Tab';
 
 test('should render simple tabs', () => {
   const view = shallow(
-    <Tabs>
+    <Tabs id="simpleTabs">
+      <Tab id="tab1" eventKey={0} title="Tab item 1">
+        Tab 1 section
+      </Tab>
+      <Tab id="tab2" eventKey={1} title="Tab item 2">
+        Tab 2 section
+      </Tab>
+      <Tab id="tab3" eventKey={2} title="Tab item 3">
+        Tab 3 section
+      </Tab>
+    </Tabs>
+  );
+  expect(view).toMatchSnapshot();
+});
+
+test('should render accessible tabs', () => {
+  const view = shallow(
+    <Tabs id="accessibleTabs" aria-label="accessible Tabs example" variant="nav">
       <Tab id="tab1" eventKey={0} title="Tab item 1">
         Tab 1 section
       </Tab>
@@ -22,7 +39,7 @@ test('should render simple tabs', () => {
 
 test('should render filled tabs', () => {
   const view = shallow(
-    <Tabs isFilled>
+    <Tabs id="filledTabs" isFilled>
       <Tab id="tab1" eventKey={0} title="Tab item 1">
         Tab 1 section
       </Tab>
@@ -39,9 +56,9 @@ test('should render filled tabs', () => {
 
 test('should render secondary tabs', () => {
   const view = shallow(
-    <Tabs>
-      <Tab id="tab1" eventKey={0} title="Tab item 1">
-        <Tabs>
+    <Tabs id="primaryTabs">
+      <Tab eventKey={0} title="Tab item 1">
+        <Tabs id="secondaryTabs">
           <Tab id="secondary tab1" eventKey={10} title="Secondary Tab 1">
             Secondary Tab 1 section
           </Tab>
@@ -66,7 +83,7 @@ test('should render secondary tabs', () => {
 
 test('should call scrollLeft tabs with scrolls', () => {
   const view = mount(
-    <Tabs isFilled>
+    <Tabs id="scrollLeft" isFilled>
       <Tab id="tab1" eventKey={0} title="Tab item 1">
         Tab 1 section
       </Tab>
@@ -87,7 +104,7 @@ test('should call scrollLeft tabs with scrolls', () => {
 
 test('should call scrollRight tabs with scrolls', () => {
   const view = mount(
-    <Tabs isFilled>
+    <Tabs id="scrollRight" isFilled>
       <Tab id="tab1" eventKey={0} title="Tab item 1">
         Tab 1 section
       </Tab>
@@ -108,7 +125,7 @@ test('should call scrollRight tabs with scrolls', () => {
 
 test('should call handleScrollButtons tabs with scrolls', () => {
   const view = mount(
-    <Tabs isFilled>
+    <Tabs id="handleScrollButtons" isFilled>
       <Tab id="tab1" eventKey={0} title="Tab item 1">
         Tab 1 section
       </Tab>
@@ -121,28 +138,5 @@ test('should call handleScrollButtons tabs with scrolls', () => {
     </Tabs>
   );
   view.simulate('scroll');
-  expect(view).toMatchSnapshot();
-});
-
-test('onSelect callback called when tab selected', () => {
-  const mockFn = jest.fn();
-  const view = shallow(
-    <Tabs activeKey={0} onSelect={mockFn}>
-      <Tab id="tab1" eventKey={0} title="Tab item 1">
-        Tab 1 section
-      </Tab>
-      <Tab id="tab2" eventKey={1} title="Tab item 2">
-        Tab 2 section
-      </Tab>
-      <Tab id="tab3" eventKey={2} title="Tab item 3">
-        Tab 3 section
-      </Tab>
-    </Tabs>
-  );
-  view
-    .find('.pf-c-tabs__button')
-    .first()
-    .simulate('click');
-  expect(mockFn).toHaveBeenCalled();
   expect(view).toMatchSnapshot();
 });

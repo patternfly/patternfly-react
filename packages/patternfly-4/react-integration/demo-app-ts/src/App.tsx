@@ -4,7 +4,6 @@ import {
   AlertActionLink,
   AlertVariant,
   Avatar,
-  AvatarProps,
   ContextSelector,
   ContextSelectorItem,
   InputGroup,
@@ -15,6 +14,7 @@ import {
   SelectVariant,
   Tab,
   Tabs,
+  TabContent,
   TextInput,
   Title,
   Tooltip
@@ -29,6 +29,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavTest from './Nav';
 import WizardTest from './Wizard';
+
 
 class myProps implements AvatarProps {
   alt: string = 'avatar';
@@ -48,6 +49,10 @@ class App extends Component<AppState> {
     selected: 'Placeholder text',
     checked: []
   };
+
+  contentRef1 = React.createRef<HTMLDivElement>();
+  contentRef2 = React.createRef<HTMLDivElement>();
+  contentRef3 = React.createRef<HTMLDivElement>();
 
   onToggle = isExpanded => {
     this.setState({
@@ -89,7 +94,7 @@ class App extends Component<AppState> {
           <Title style={{ color: '#fff', padding: '12px 0' }} headingLevel="h1" size="4xl">
             PF4 Integration Sandbox
           </Title>
-          <Avatar src={logo} alt={new myProps().alt} />
+          <Avatar src={logo} alt={'avatar'} />
         </header>
         <Tabs>
           <Tab eventKey={0} title="Tab item 1">
@@ -102,6 +107,25 @@ class App extends Component<AppState> {
             Tab 3 section
           </Tab>
         </Tabs>
+        <Tabs aria-label="Accessible tabs example" variant="nav">
+          <Tab eventKey={0} title="Tab item 1">
+            Tab 1 section
+          </Tab>
+          <Tab eventKey={1} title="Tab item 2">
+            Tab 2 section
+          </Tab>
+          <Tab eventKey={2} title="Tab item 3">
+            Tab 3 section
+          </Tab>
+        </Tabs>
+        <Tabs>
+          <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1} />
+          <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2} />
+          <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3} />
+        </Tabs>
+        <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">Tab 1 section</TabContent>
+        <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>Tab 2 section</TabContent>
+        <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>Tab 3 section</TabContent>
         <Tooltip content={<div>World</div>}>
           <div>Hello</div>
         </Tooltip>

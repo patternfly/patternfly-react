@@ -101,14 +101,14 @@ class Tokens extends React.Component {
       const toPush = [];
       rows.push(
         toPush.concat([
-          <span className={css(styles.tokenCell)}>{dataRow[1]}</span>,
-          <span className={css(styles.tokenCell)}>{dataRow[0]}</span>,
-          <span>
+          {title: <span key={dataRow[1]} className={css(styles.tokenCell)}>{dataRow[1]}</span>},
+          {title: <span key={dataRow[0]} className={css(styles.tokenCell)}>{dataRow[0]}</span>},
+          {title: <span key={dataRow[2]}>
             {isColorRegex.test(dataRow[2]) && (
               <span className={css(styles.color)} style={{ backgroundColor: dataRow[2] }} />
             )}
             <span className={css(styles.value)}>{dataRow[2]}</span>
-          </span>
+          </span>}
         ])
       );
     }, []);

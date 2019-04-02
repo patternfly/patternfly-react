@@ -28,7 +28,7 @@ const propTypes = {
       liveScope: PropTypes.object
     })
   ),
-  components: PropTypes.objectOf(PropTypes.func),
+  components: PropTypes.objectOf(PropTypes.elementType),
   enumValues: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.any)),
   types: PropTypes.object,
   rawExamples: PropTypes.array,
