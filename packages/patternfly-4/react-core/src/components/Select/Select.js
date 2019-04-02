@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from '@patternfly/patternfly/components/Select/select.css';
+import * as badgeStyles from '@patternfly/patternfly/components/Badge/badge.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import SingleSelect from './SingleSelect';
+import CheckboxSelect from './CheckboxSelect';
 import SelectToggle from './SelectToggle';
 import { SelectContext, SelectVariant } from './selectConstants';
 
@@ -16,10 +18,14 @@ const propTypes = {
   className: PropTypes.string,
   /** Flag to indicate if select is expanded */
   isExpanded: PropTypes.bool,
-  /** Placeholder text of Select */
-  placeholderText: PropTypes.string,
+  /** Flag to indicate if select options are grouped */
+  isGrouped: PropTypes.bool,
+  /** Title text of Select */
+  placeholderText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Selected item */
-  selections: PropTypes.string,
+  selections: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+  /** Adds accessible text to Select */
+  'aria-label': PropTypes.string,
   /** Id of label for the Select aria-labelledby */
   ariaLabelledBy: PropTypes.string,
   /** Callback for selection behavior */
@@ -27,7 +33,7 @@ const propTypes = {
   /** Callback for toggle button behavior */
   onToggle: PropTypes.func.isRequired,
   /** Variant of rendered Select */
-  variant: PropTypes.oneOf(['single']),
+  variant: PropTypes.oneOf(['single', 'checkbox']),
   /** Width of the select container as a number of px or string percentage */
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   /** Additional props are spread to the container <ul> */
@@ -38,7 +44,9 @@ const defaultProps = {
   children: null,
   className: '',
   isExpanded: false,
-  ariaLabelledBy: '',
+  isGrouped: false,
+  'aria-label': null,
+  ariaLabelledBy: null,
   selections: null,
   placeholderText: null,
   variant: SelectVariant.single,
@@ -65,8 +73,10 @@ class Select extends React.Component {
       onToggle,
       onSelect,
       isExpanded,
+      isGrouped,
       selections,
       ariaLabelledBy,
+      'aria-label': ariaLabel,
       placeholderText,
       width,
       ...props
@@ -87,31 +97,58 @@ class Select extends React.Component {
         style={{ width }}
       >
         <SelectContext.Provider value={{ onSelect, onClose: this.onClose }}>
-          {variant === 'single' && (
-            <React.Fragment>
-              <SelectToggle
-                id={selectToggleId}
-                parentRef={this.parentRef.current}
-                isExpanded={isExpanded}
-                onToggle={onToggle}
-                onEnter={this.onEnter}
-                onClose={this.onClose}
-                aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
-                style={{ width }}
-              >
-                {selections || placeholderText || childPlaceholderText}
-              </SelectToggle>
-              {isExpanded && (
-                <SingleSelect
-                  {...props}
-                  selected={selections}
-                  openedOnEnter={openedOnEnter}
-                  aria-labelledby={ariaLabelledBy}
-                >
-                  {children}
-                </SingleSelect>
-              )}
-            </React.Fragment>
+          <SelectToggle
+            id={selectToggleId}
+            parentRef={this.parentRef.current}
+            isExpanded={isExpanded}
+            onToggle={onToggle}
+            onEnter={this.onEnter}
+            onClose={this.onClose}
+            aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
+            style={{ width }}
+            isCheckbox={variant === SelectVariant.checkbox}
+          >
+            {variant === SelectVariant.single && (
+              <div className={css(styles.selectToggleWrapper)}>
+                <span className={css(styles.selectToggleText)}>
+                  {selections || placeholderText || childPlaceholderText}
+                </span>
+              </div>
+            )}
+            {variant === SelectVariant.checkbox && (
+              <React.Fragment>
+                <div className={css(styles.selectToggleWrapper)}>
+                  <span className={css(styles.selectToggleText)}>{placeholderText}</span>
+                  {selections && selections.length > 0 && (
+                    <div className={css(styles.selectToggleBadge)}>
+                      <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
+                    </div>
+                  )}
+                </div>
+              </React.Fragment>
+            )}
+          </SelectToggle>
+          {variant === SelectVariant.single && isExpanded && (
+            <SingleSelect
+              {...props}
+              selected={selections}
+              openedOnEnter={openedOnEnter}
+              aria-label={ariaLabel}
+              aria-labelledby={ariaLabelledBy}
+            >
+              {children}
+            </SingleSelect>
+          )}
+          {variant === SelectVariant.checkbox && isExpanded && (
+            <CheckboxSelect
+              {...props}
+              checked={selections}
+              aria-label={ariaLabel}
+              aria-labelledby={ariaLabelledBy}
+              isGrouped={isGrouped}
+            >
+              {children}
+            </CheckboxSelect>
           )}
         </SelectContext.Provider>
       </div>

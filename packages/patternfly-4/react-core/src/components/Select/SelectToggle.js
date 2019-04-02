@@ -32,6 +32,8 @@ const propTypes = {
   isPlain: PropTypes.bool,
   /** Type of the toggle button, defaults to 'button' */
   type: PropTypes.string,
+  /** Flag for checkbox variant keyboard interaction */
+  isCheckbox: PropTypes.bool,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
 };
@@ -45,6 +47,7 @@ const defaultProps = {
   isHovered: false,
   isActive: false,
   isPlain: false,
+  isCheckbox: false,
   type: 'button',
   onToggle: Function.prototype,
   onEnter: Function.prototype,
@@ -74,8 +77,8 @@ class SelectToggle extends Component {
   };
 
   onEscPress = event => {
-    const { parentRef, isExpanded, onToggle, onClose } = this.props;
-    if (!isExpanded && event.key === KeyTypes.Enter) this.toggle.focus();
+    const { parentRef, isExpanded, isCheckbox, onToggle, onClose } = this.props;
+    if (event.key === KeyTypes.Tab && isCheckbox) return;
     if (
       isExpanded &&
       (event.key === KeyTypes.Escape || event.key === KeyTypes.Tab) &&
@@ -89,8 +92,12 @@ class SelectToggle extends Component {
   };
 
   onKeyDown = event => {
-    const { isExpanded, onToggle, onClose, onEnter } = this.props;
-    if ((event.key === KeyTypes.Tab && !isExpanded) || (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space))
+    const { isExpanded, onToggle, isCheckbox, onClose, onEnter } = this.props;
+    if (
+      (event.key === KeyTypes.Tab && isCheckbox) ||
+      (event.key === KeyTypes.Tab && !isExpanded) ||
+      (event.key !== KeyTypes.Enter && event.key !== KeyTypes.Space)
+    )
       return;
     event.preventDefault();
     if ((event.key === KeyTypes.Tab || event.key === KeyTypes.Enter || event.key === KeyTypes.Space) && isExpanded) {
@@ -112,6 +119,7 @@ class SelectToggle extends Component {
       isActive,
       isHovered,
       isPlain,
+      isCheckbox,
       onToggle,
       onEnter,
       onClose,
@@ -141,12 +149,10 @@ class SelectToggle extends Component {
           if (isExpanded) onClose && onClose();
         }}
         aria-expanded={isExpanded}
-        aria-haspopup="listbox"
+        aria-haspopup={(!isCheckbox && 'listbox') || null}
         onKeyDown={this.onKeyDown}
       >
-        <div className={css(styles.selectToggleWrapper)}>
-          <span className={css(styles.selectToggleText)}>{children}</span>
-        </div>
+        {children}
         <CaretDownIcon className={css(styles.selectToggleArrow)} />
       </button>
     );

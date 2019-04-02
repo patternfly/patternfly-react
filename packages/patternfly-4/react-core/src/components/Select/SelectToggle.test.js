@@ -12,7 +12,7 @@ describe('API', () => {
     );
 
     view
-      .find('div')
+      .find('button')
       .first()
       .simulate('click');
     expect(mockToggle.mock.calls[0][0]).toBe(true);
@@ -27,7 +27,7 @@ describe('API', () => {
     );
 
     view
-      .find('div')
+      .find('button')
       .first()
       .simulate('click');
     expect(mockToggle.mock.calls[0][0]).toBe(false);

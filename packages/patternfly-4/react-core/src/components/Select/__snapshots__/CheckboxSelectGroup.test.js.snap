@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`checkbox select options renders with children successfully 1`] = `
+.pf-c-select__menu-group-title {
+  display: block;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #72767b;
+}
+.pf-c-select__menu-group {
+  display: block;
+}
+
+<Fragment>
+  <div
+    className="pf-c-select__menu-group"
+  >
+    <div
+      aria-hidden={true}
+      className="pf-c-select__menu-group-title"
+      id=""
+    >
+      test
+    </div>
+    <div>
+      child
+    </div>
+  </div>
+</Fragment>
+`;

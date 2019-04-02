@@ -18,6 +18,11 @@ import {
   TextInput,
   Title,
   Tooltip
+  Title,
+  TextInput,
+  CheckboxSelectOption,
+  CheckboxSelectGroup,
+  Badge
 } from '@patternfly/react-core';
 import React, { Component } from 'react';
 import logo from './logo.svg';
@@ -25,10 +30,24 @@ import './App.css';
 import NavTest from './Nav';
 import WizardTest from './Wizard';
 
-class App extends Component {
+
+class myProps implements AvatarProps {
+  alt: string = 'avatar';
+}
+
+interface AppState {
+  isExpanded?: boolean;
+  checkboxIsExpanded?: boolean;
+  selected?: string;
+  checked?: Array<string>;
+}
+
+class App extends Component<AppState> {
   state = {
     isExpanded: false,
-    selected: 'Placeholder text'
+    checkboxIsExpanded: false,
+    selected: 'Placeholder text',
+    checked: []
   };
 
   contentRef1 = React.createRef<HTMLDivElement>();
@@ -49,8 +68,26 @@ class App extends Component {
     console.log('selected:', event.target.innerHTML);
   };
 
+  checkboxOnToggle = checkboxIsExpanded => {
+    this.setState({
+      checkboxIsExpanded
+    });
+  };
+
+  checkboxOnSelect = (event, selection) => {
+    const { checked } = this.state;
+    if (checked.includes(selection)) {
+      this.setState((prevState: AppState) => ({ checked: prevState.checked.filter(item => item !== selection) }));
+    } else {
+      this.setState((prevState: AppState) => ({ checked: [...prevState.checked, selection] }));
+    }
+  };
+
   render() {
-    const { isExpanded, selected } = this.state;
+    const { isExpanded, selected, checkboxIsExpanded, checked } = this.state;
+    const checkboxCustomTitle = (
+      <React.Fragment>Filter by status {checked.length > 0 && <Badge isRead>{checked.length}</Badge>}</React.Fragment>
+    );
     return (
       <div className="App">
         <header className="App-header">
@@ -141,6 +178,25 @@ class App extends Component {
           <ContextSelectorItem key="3">AWS</ContextSelectorItem>
           <ContextSelectorItem key="4">Azure</ContextSelectorItem>
         </ContextSelector>
+        <Select
+          variant={SelectVariant.checkbox}
+          onToggle={this.checkboxOnToggle}
+          onSelect={this.checkboxOnSelect}
+          selections={checked}
+          isExpanded={checkboxIsExpanded}
+          title={checkboxCustomTitle}
+          isGrouped
+        >
+          <CheckboxSelectGroup label="Group 1" key={0}>
+            <CheckboxSelectOption value="option 1" key={2} />
+            <CheckboxSelectOption value="option 2" key={3} />
+            <CheckboxSelectOption value="option 3" key={4} />
+          </CheckboxSelectGroup>
+          <CheckboxSelectGroup label="Group 2" key={1}>
+            <CheckboxSelectOption value="option 4" key={5} />
+            <CheckboxSelectOption value="option 5" key={6} />
+          </CheckboxSelectGroup>
+        </Select>
       </div>
     );
   }
