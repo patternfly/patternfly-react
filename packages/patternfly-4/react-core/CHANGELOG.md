@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.7...@patternfly/react-core@2.10.8) (2019-04-02)
+
+
+### Bug Fixes
+
+* **pagination:** add "per page" suffix in options ([#1642](https://github.com/patternfly/patternfly-react/issues/1642)) ([a0ff240](https://github.com/patternfly/patternfly-react/commit/a0ff240))
+
+
+
+
+
 ## [2.10.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.6...@patternfly/react-core@2.10.7) (2019-04-01)
 
 
