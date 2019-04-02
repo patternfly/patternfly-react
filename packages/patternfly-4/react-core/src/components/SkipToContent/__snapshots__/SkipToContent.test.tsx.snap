@@ -1,12 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Verify Skip To Content 1`] = `
-.pf-c-skip-to-content.pf-c-button.pf-m-primary {
+.pf-c-button.pf-m-primary.pf-c-skip-to-content {
   display: inline-block;
-  position: relative;
-  top: 1rem;
-  left: -300%;
-  z-index: 600;
+  position: absolute;
   padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -18,21 +15,21 @@ exports[`Verify Skip To Content 1`] = `
   border-radius: 3px;
   color: #ffffff;
   background-color: #007bba;
+  top: 1rem;
+  left: -300%;
+  z-index: 600;
 }
 
 <a
-  className="pf-c-skip-to-content pf-c-button pf-m-primary"
+  className="pf-c-button pf-m-primary pf-c-skip-to-content"
   href="#main-content"
 />
 `;
 
 exports[`Verify Skip To Content if forced to display 1`] = `
-.pf-c-skip-to-content.pf-c-button.pf-m-primary.pf-m-focus {
+.pf-c-button.pf-m-primary.pf-c-skip-to-content.pf-m-focus {
   display: inline-block;
-  position: relative;
-  top: 1rem;
-  left: 1rem;
-  z-index: 600;
+  position: absolute;
   padding: 0.375rem 1rem 0.375rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -44,10 +41,13 @@ exports[`Verify Skip To Content if forced to display 1`] = `
   border-radius: 3px;
   color: #ffffff;
   background-color: #007bba;
+  top: 1rem;
+  left: 1rem;
+  z-index: 600;
 }
 
 <a
-  className="pf-c-skip-to-content pf-c-button pf-m-primary pf-m-focus"
+  className="pf-c-button pf-m-primary pf-c-skip-to-content pf-m-focus"
   href="#main-content"
 />
 `;
