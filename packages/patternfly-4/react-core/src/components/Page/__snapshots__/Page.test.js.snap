@@ -30,6 +30,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       nav={null}
     />
   }
+  skipToContent={null}
 >
   <div
     aria-label="Page layout"
@@ -171,6 +172,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
       nav="Navigation"
     />
   }
+  skipToContent={null}
 >
   <div
     aria-label="Page layout"

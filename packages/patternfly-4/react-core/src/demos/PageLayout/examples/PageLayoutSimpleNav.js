@@ -22,6 +22,7 @@ import {
   PageSection,
   PageSectionVariants,
   PageSidebar,
+  SkipToContent,
   TextContent,
   Text,
   Toolbar,
@@ -166,6 +167,7 @@ class PageLayoutSimpleNav extends React.Component {
       />
     );
     const Sidebar = <PageSidebar nav={PageNav} />;
+    const PageSkipToContent = <SkipToContent href="#main-content">Skip to Content</SkipToContent>;
 
     return (
       <React.Fragment>

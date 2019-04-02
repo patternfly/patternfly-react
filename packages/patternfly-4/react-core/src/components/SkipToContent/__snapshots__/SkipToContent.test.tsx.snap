@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Verify Skip To Content 1`] = `
+.pf-c-skip-to-content.pf-c-button.pf-m-primary {
+  display: inline-block;
+  position: relative;
+  top: 1rem;
+  left: -300%;
+  z-index: 600;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #007bba;
+}
+
+<a
+  className="pf-c-skip-to-content pf-c-button pf-m-primary"
+  href="#main-content"
+/>
+`;
+
+exports[`Verify Skip To Content if forced to display 1`] = `
+.pf-c-skip-to-content.pf-c-button.pf-m-primary.pf-m-focus {
+  display: inline-block;
+  position: relative;
+  top: 1rem;
+  left: 1rem;
+  z-index: 600;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #007bba;
+}
+
+<a
+  className="pf-c-skip-to-content pf-c-button pf-m-primary pf-m-focus"
+  href="#main-content"
+/>
+`;

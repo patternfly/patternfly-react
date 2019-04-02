@@ -19,6 +19,8 @@ const propTypes = {
   header: PropTypes.node,
   /** Sidebar component for a side nav (e.g. <PageSidebar />) */
   sidebar: PropTypes.node,
+  /** Skip to content componet for the page */
+  skipToContent: PropTypes.node,
   /** If true, manages the sidebar open/close state and there is no need to pass the isNavOpen boolean into
    * the sidebar component or add a callback onNavToggle function into the PageHeader component */
   isManagedSidebar: PropTypes.bool,
@@ -34,6 +36,7 @@ const defaultProps = {
   className: '',
   header: null,
   sidebar: null,
+  skipToContent: null,
   isManagedSidebar: false,
   onPageResize: null
 };
@@ -82,10 +85,11 @@ class Page extends React.Component {
   };
 
   render() {
-    const { className, children, header, sidebar, isManagedSidebar, onPageResize, ...rest } = this.props;
+    const { className, children, header, sidebar, skipToContent, isManagedSidebar, onPageResize, ...rest } = this.props;
     const { mobileView, mobileIsNavOpen, desktopIsNavOpen } = this.state;
     return (
       <div {...rest} className={css(styles.page, className)}>
+        {skipToContent}
         {isManagedSidebar
           ? cloneElement(header, {
               onNavToggle: mobileView ? this.onNavToggleMobile : this.onNavToggleDesktop,

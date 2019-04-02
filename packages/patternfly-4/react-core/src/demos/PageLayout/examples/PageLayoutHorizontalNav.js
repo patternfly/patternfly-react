@@ -21,6 +21,7 @@ import {
   PageHeader,
   PageSection,
   PageSectionVariants,
+  SkipToContent,
   TextContent,
   Text,
   Toolbar,
@@ -165,6 +166,8 @@ class PageLayoutHorizontalNav extends React.Component {
         topNav={PageNav}
       />
     );
+
+    const PageSkipToContent = <SkipToContent href="#main-content">Skip to Content</SkipToContent>;
 
     return (
       <React.Fragment>
