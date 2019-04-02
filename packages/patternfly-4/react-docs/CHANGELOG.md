@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.25.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.24.9...@patternfly/react-docs@3.25.0) (2019-04-02)
+
+
+### Features
+
+* **Select:** add checkbox select variant ([#1487](https://github.com/patternfly/patternfly-react/issues/1487)) ([3b64c00](https://github.com/patternfly/patternfly-react/commit/3b64c00))
+
+
+
+
+
 ## [3.24.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.24.8...@patternfly/react-docs@3.24.9) (2019-04-02)
 
 
