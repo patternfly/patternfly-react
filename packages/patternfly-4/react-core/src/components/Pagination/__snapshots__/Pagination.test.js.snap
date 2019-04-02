@@ -159,6 +159,7 @@ exports[`component render custom pagination toggle 1`] = `
       "optionsToggle": "Select",
       "pages": "pages",
       "paginationTitle": "Pagination",
+      "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
       "toLastPage": "Go to last page",
       "toNextPage": "Go to next page",
@@ -207,11 +208,13 @@ exports[`component render custom pagination toggle 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate="\${firstIndex} - \${lastIndex} - \${itemCount} - \${itemsTitle}"
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -235,6 +238,11 @@ exports[`component render custom pagination toggle 1`] = `
                 onClick={[Function]}
               >
                 10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
                 <i
                   className="pf-c-options-menu__menu-item-icon"
                 >
@@ -255,6 +263,11 @@ exports[`component render custom pagination toggle 1`] = `
                 onClick={[Function]}
               >
                 20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -266,6 +279,11 @@ exports[`component render custom pagination toggle 1`] = `
                 onClick={[Function]}
               >
                 50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -277,6 +295,11 @@ exports[`component render custom pagination toggle 1`] = `
                 onClick={[Function]}
               >
                 100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
@@ -767,6 +790,7 @@ exports[`component render custom perPageOptions 1`] = `
       "optionsToggle": "Select",
       "pages": "pages",
       "paginationTitle": "Pagination",
+      "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
       "toLastPage": "Go to last page",
       "toNextPage": "Go to next page",
@@ -803,11 +827,13 @@ exports[`component render custom perPageOptions 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate={[Function]}
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -831,6 +857,11 @@ exports[`component render custom perPageOptions 1`] = `
                 onClick={[Function]}
               >
                 some
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
@@ -1352,6 +1383,7 @@ exports[`component render custom start end 1`] = `
       "optionsToggle": "Select",
       "pages": "pages",
       "paginationTitle": "Pagination",
+      "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
       "toLastPage": "Go to last page",
       "toNextPage": "Go to next page",
@@ -1400,11 +1432,13 @@ exports[`component render custom start end 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate={[Function]}
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -1428,6 +1462,11 @@ exports[`component render custom start end 1`] = `
                 onClick={[Function]}
               >
                 10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
                 <i
                   className="pf-c-options-menu__menu-item-icon"
                 >
@@ -1448,6 +1487,11 @@ exports[`component render custom start end 1`] = `
                 onClick={[Function]}
               >
                 20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -1459,6 +1503,11 @@ exports[`component render custom start end 1`] = `
                 onClick={[Function]}
               >
                 50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -1470,6 +1519,11 @@ exports[`component render custom start end 1`] = `
                 onClick={[Function]}
               >
                 100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
@@ -1989,6 +2043,7 @@ exports[`component render last page 1`] = `
       "optionsToggle": "Select",
       "pages": "pages",
       "paginationTitle": "Pagination",
+      "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
       "toLastPage": "Go to last page",
       "toNextPage": "Go to next page",
@@ -2037,11 +2092,13 @@ exports[`component render last page 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate={[Function]}
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -2065,6 +2122,11 @@ exports[`component render last page 1`] = `
                 onClick={[Function]}
               >
                 10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
                 <i
                   className="pf-c-options-menu__menu-item-icon"
                 >
@@ -2085,6 +2147,11 @@ exports[`component render last page 1`] = `
                 onClick={[Function]}
               >
                 20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -2096,6 +2163,11 @@ exports[`component render last page 1`] = `
                 onClick={[Function]}
               >
                 50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -2107,6 +2179,11 @@ exports[`component render last page 1`] = `
                 onClick={[Function]}
               >
                 100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
@@ -2630,6 +2707,7 @@ exports[`component render limited number of pages 1`] = `
       "optionsToggle": "Select",
       "pages": "pages",
       "paginationTitle": "Pagination",
+      "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
       "toLastPage": "Go to last page",
       "toNextPage": "Go to next page",
@@ -2678,11 +2756,13 @@ exports[`component render limited number of pages 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate={[Function]}
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -2706,6 +2786,11 @@ exports[`component render limited number of pages 1`] = `
                 onClick={[Function]}
               >
                 10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item pf-m-selected"
@@ -2717,6 +2802,11 @@ exports[`component render limited number of pages 1`] = `
                 onClick={[Function]}
               >
                 20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
                 <i
                   className="pf-c-options-menu__menu-item-icon"
                 >
@@ -2737,6 +2827,11 @@ exports[`component render limited number of pages 1`] = `
                 onClick={[Function]}
               >
                 50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -2748,6 +2843,11 @@ exports[`component render limited number of pages 1`] = `
                 onClick={[Function]}
               >
                 100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
@@ -3267,6 +3367,7 @@ exports[`component render no items 1`] = `
       "optionsToggle": "Select",
       "pages": "pages",
       "paginationTitle": "Pagination",
+      "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
       "toLastPage": "Go to last page",
       "toNextPage": "Go to next page",
@@ -3315,11 +3416,13 @@ exports[`component render no items 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate={[Function]}
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -3343,6 +3446,11 @@ exports[`component render no items 1`] = `
                 onClick={[Function]}
               >
                 10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
                 <i
                   className="pf-c-options-menu__menu-item-icon"
                 >
@@ -3363,6 +3471,11 @@ exports[`component render no items 1`] = `
                 onClick={[Function]}
               >
                 20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -3374,6 +3487,11 @@ exports[`component render no items 1`] = `
                 onClick={[Function]}
               >
                 50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -3385,6 +3503,11 @@ exports[`component render no items 1`] = `
                 onClick={[Function]}
               >
                 100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
@@ -3901,6 +4024,7 @@ exports[`component render should render correctly bottom 1`] = `
       "optionsToggle": "Select",
       "pages": "pages",
       "paginationTitle": "Pagination",
+      "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
       "toLastPage": "Go to last page",
       "toNextPage": "Go to next page",
@@ -3944,11 +4068,13 @@ exports[`component render should render correctly bottom 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate={[Function]}
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -3972,6 +4098,11 @@ exports[`component render should render correctly bottom 1`] = `
                 onClick={[Function]}
               >
                 10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
                 <i
                   className="pf-c-options-menu__menu-item-icon"
                 >
@@ -3992,6 +4123,11 @@ exports[`component render should render correctly bottom 1`] = `
                 onClick={[Function]}
               >
                 20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -4003,6 +4139,11 @@ exports[`component render should render correctly bottom 1`] = `
                 onClick={[Function]}
               >
                 50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -4014,6 +4155,11 @@ exports[`component render should render correctly bottom 1`] = `
                 onClick={[Function]}
               >
                 100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
@@ -4533,6 +4679,7 @@ exports[`component render should render correctly top 1`] = `
       "optionsToggle": "Select",
       "pages": "pages",
       "paginationTitle": "Pagination",
+      "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
       "toLastPage": "Go to last page",
       "toNextPage": "Go to next page",
@@ -4581,11 +4728,13 @@ exports[`component render should render correctly top 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate={[Function]}
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -4609,6 +4758,11 @@ exports[`component render should render correctly top 1`] = `
                 onClick={[Function]}
               >
                 10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
                 <i
                   className="pf-c-options-menu__menu-item-icon"
                 >
@@ -4629,6 +4783,11 @@ exports[`component render should render correctly top 1`] = `
                 onClick={[Function]}
               >
                 20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -4640,6 +4799,11 @@ exports[`component render should render correctly top 1`] = `
                 onClick={[Function]}
               >
                 50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -4651,6 +4815,11 @@ exports[`component render should render correctly top 1`] = `
                 onClick={[Function]}
               >
                 100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
@@ -5210,11 +5379,13 @@ exports[`component render titles 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate={[Function]}
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -5238,6 +5409,11 @@ exports[`component render titles 1`] = `
                 onClick={[Function]}
               >
                 10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
                 <i
                   className="pf-c-options-menu__menu-item-icon"
                 >
@@ -5258,6 +5434,11 @@ exports[`component render titles 1`] = `
                 onClick={[Function]}
               >
                 20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -5269,6 +5450,11 @@ exports[`component render titles 1`] = `
                 onClick={[Function]}
               >
                 50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -5280,6 +5466,11 @@ exports[`component render titles 1`] = `
                 onClick={[Function]}
               >
                 100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
@@ -5799,6 +5990,7 @@ exports[`component render up drop direction 1`] = `
       "optionsToggle": "Select",
       "pages": "pages",
       "paginationTitle": "Pagination",
+      "perPageSuffix": "per page",
       "toFirstPage": "Go to first page",
       "toLastPage": "Go to last page",
       "toNextPage": "Go to next page",
@@ -5847,11 +6039,13 @@ exports[`component render up drop direction 1`] = `
           },
         ]
       }
+      perPageSuffix="per page"
       toggleTemplate={[Function]}
       widgetId="pagination-options-menu"
     >
       <div
         className="pf-c-options-menu"
+        perPageSuffix="per page"
       >
         <span
           hidden={true}
@@ -5875,6 +6069,11 @@ exports[`component render up drop direction 1`] = `
                 onClick={[Function]}
               >
                 10
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
                 <i
                   className="pf-c-options-menu__menu-item-icon"
                 >
@@ -5895,6 +6094,11 @@ exports[`component render up drop direction 1`] = `
                 onClick={[Function]}
               >
                 20
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -5906,6 +6110,11 @@ exports[`component render up drop direction 1`] = `
                 onClick={[Function]}
               >
                 50
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
               <Item
                 className="pf-c-options-menu__menu-item"
@@ -5917,6 +6126,11 @@ exports[`component render up drop direction 1`] = `
                 onClick={[Function]}
               >
                 100
+                <span
+                  className="pf-c-pagination__menu-text"
+                >
+                   per page
+                </span>
               </Item>,
             ]
           }
