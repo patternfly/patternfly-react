@@ -6,7 +6,8 @@ export const SelectContext = React.createContext({
 });
 
 export const SelectVariant = {
-  single: 'single'
+  single: 'single',
+  checkbox: 'checkbox'
 };
 
 export const KeyTypes = {

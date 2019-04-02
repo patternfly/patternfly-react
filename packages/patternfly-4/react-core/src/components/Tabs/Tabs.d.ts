@@ -1,6 +1,11 @@
 import { FunctionComponent, HTMLProps, FormEvent } from 'react';
 import { Omit } from '../../helpers/typeUtils';
 
+export const TabsVariant: {
+  div: 'div';
+  nav: 'nav';
+};
+
 export interface TabsProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
   children: any;
   activeKey?: number;
@@ -9,6 +14,8 @@ export interface TabsProps extends Omit<HTMLProps<HTMLDivElement>, 'onSelect'> {
   isSecondary?: boolean;
   leftScrollAriaLabel?: string;
   rightScrollAriaLabel?: string;
+  'aria-label'?: string;
+  variant?: OneOf<typeof TabsVariant, keyof typeof TabsVariant>;
 }
 
 declare const Tabs: FunctionComponent<TabsProps>;

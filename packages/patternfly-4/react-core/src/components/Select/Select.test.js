@@ -2,6 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Select from './Select';
 import SelectOption from './SelectOption';
+import { SelectVariant } from './selectConstants';
+import CheckboxSelectOption from './CheckboxSelectOption';
+import CheckboxSelectGroup from './CheckboxSelectGroup';
 
 const selectOptions = [
   <SelectOption value="Mr" key="0" />,
@@ -10,11 +13,18 @@ const selectOptions = [
   <SelectOption value="Other" key="3" />
 ];
 
+const checkboxSelectOptions = [
+  <CheckboxSelectOption value="Mr" key="0" />,
+  <CheckboxSelectOption value="Mrs" key="1" />,
+  <CheckboxSelectOption value="Ms" key="2" />,
+  <CheckboxSelectOption value="Other" key="3" />
+];
+
 describe('select', () => {
   describe('single select', () => {
     test('renders closed successfully', () => {
       const view = mount(
-        <Select variant="single" onSelect={jest.fn()} onToggle={jest.fn()}>
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()}>
           {selectOptions}
         </Select>
       );
@@ -23,12 +33,42 @@ describe('select', () => {
 
     test('renders expanded successfully', () => {
       const view = mount(
-        <Select variant="single" onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        <Select variant={SelectVariant.single} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
           {selectOptions}
         </Select>
       );
       expect(view).toMatchSnapshot();
     });
+  });
+});
+
+describe('checkbox select', () => {
+  test('renders closed successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()}>
+        {checkboxSelectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders expanded successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded>
+        {checkboxSelectOptions}
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('renders checkbox select groups successfully', () => {
+    const view = mount(
+      <Select variant={SelectVariant.checkbox} onSelect={jest.fn()} onToggle={jest.fn()} isExpanded isGrouped>
+        <CheckboxSelectGroup label="group 1">{checkboxSelectOptions}</CheckboxSelectGroup>
+        <CheckboxSelectGroup label="group 2">{checkboxSelectOptions}</CheckboxSelectGroup>
+      </Select>
+    );
+    expect(view).toMatchSnapshot();
   });
 });
 

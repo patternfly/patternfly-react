@@ -1,13 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render active tab 1`] = `
-<Fragment>
+<TabContainer
+  eventKey={0}
+  forwardRef={null}
+  id="tab1"
+  isActive={true}
+  title="Tab item 1"
+>
   Tab 1 section
-</Fragment>
+</TabContainer>
 `;
 
 exports[`should render tab 1`] = `
-<Fragment>
+<TabContainer
+  eventKey={0}
+  forwardRef={null}
+  id="tab1"
+  title="Tab item 1"
+>
   Tab 1 section
-</Fragment>
+</TabContainer>
 `;

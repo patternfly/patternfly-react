@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.11.0...@patternfly/react-core@2.11.1) (2019-04-02)
+
+
+### Bug Fixes
+
+* **Tabs:** Use TabsVariant.nav and fix a minor HTML issue ([#1690](https://github.com/patternfly/patternfly-react/issues/1690)) ([ae581fe](https://github.com/patternfly/patternfly-react/commit/ae581fe)), closes [#1689](https://github.com/patternfly/patternfly-react/issues/1689)
+
+
+
+
+
+# [2.11.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.9...@patternfly/react-core@2.11.0) (2019-04-02)
+
+
+### Features
+
+* **Select:** add checkbox select variant ([#1487](https://github.com/patternfly/patternfly-react/issues/1487)) ([3b64c00](https://github.com/patternfly/patternfly-react/commit/3b64c00))
+
+
+
+
+
+## [2.10.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.8...@patternfly/react-core@2.10.9) (2019-04-02)
+
+
+### Features
+
+* **Tabs:** Allow tabbing of content outside Tabs ([#1413](https://github.com/patternfly/patternfly-react/issues/1413)) ([b3c406f](https://github.com/patternfly/patternfly-react/commit/b3c406f)), closes [#1364](https://github.com/patternfly/patternfly-react/issues/1364) [#1364](https://github.com/patternfly/patternfly-react/issues/1364) [#1364](https://github.com/patternfly/patternfly-react/issues/1364) [#1364](https://github.com/patternfly/patternfly-react/issues/1364) [#1597](https://github.com/patternfly/patternfly-react/issues/1597) [#1268](https://github.com/patternfly/patternfly-react/issues/1268) [#1268](https://github.com/patternfly/patternfly-react/issues/1268) [#1597](https://github.com/patternfly/patternfly-react/issues/1597)
+
+
+### BREAKING CHANGES
+
+* **Tabs:** Use of React.forwardRef
+
+
+
+
+
+## [2.10.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.7...@patternfly/react-core@2.10.8) (2019-04-02)
+
+
+### Bug Fixes
+
+* **pagination:** add "per page" suffix in options ([#1642](https://github.com/patternfly/patternfly-react/issues/1642)) ([a0ff240](https://github.com/patternfly/patternfly-react/commit/a0ff240))
+
+
+
+
+
 ## [2.10.7](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.10.6...@patternfly/react-core@2.10.7) (2019-04-01)
 
 

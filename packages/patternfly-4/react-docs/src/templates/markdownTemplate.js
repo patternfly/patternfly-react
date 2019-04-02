@@ -27,7 +27,9 @@ const getRehypeReact = scope => {
 
 const MarkdownTemplate = ({ data }) => {
   // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
-  const helperComponents = data.metadata.edges.map(edge => edge.node.name)
+  const helperComponents = data.metadata.edges
+    .map(edge => edge.node.name)
+    .filter(name => name); // Some HOCs don't get docgenned properly (like TabContent)
   // Exported components with names used in the *.md file
   const propComponents = getUsedComponents(data.markdownRemark.htmlAst, helperComponents, {})
   // Finally, the props for each relevant component!

@@ -195,3 +195,139 @@ class FilledTabs extends React.Component {
   }
 }
 ```
+
+
+## Accessible Secondary Tabs
+```js
+import React from 'react';
+import { Tabs, TabsVariant, Tab } from '@patternfly/react-core';
+
+class AccessibleSecondaryTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey1: 0,
+      activeTabKey2: 10
+    };
+
+    // Toggle currently active tab
+    this.handleTabClickFirst = (event, tabIndex) => {
+      this.setState({
+        activeTabKey1: tabIndex
+      });
+    };
+
+    // Toggle currently active secondary tab
+    this.handleTabClickSecond = (event, tabIndex) => {
+      this.setState({
+        activeTabKey2: tabIndex
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Tabs activeKey={this.state.activeTabKey1} onSelect={this.handleTabClickFirst} aria-label="Local" variant={TabsVariant.nav}>
+        <Tab eventKey={0} title="Tab item 1">
+          <Tabs activeKey={this.state.activeTabKey2} isSecondary onSelect={this.handleTabClickSecond} aria-label="Local secondary" variant={TabsVariant.nav}>
+            <Tab eventKey={10} title="Secondary tab item 1">
+              Secondary tab item 1 item section
+            </Tab>
+            <Tab eventKey={11} title="Secondary tab item 2">
+              Secondary tab item 2 section
+            </Tab>
+            <Tab eventKey={12} title="Secondary tab item 3">
+              Secondary tab item 3 section
+            </Tab>
+          </Tabs>
+        </Tab>
+        <Tab eventKey={1} title="Tab item 2">
+          Tab 2 section
+        </Tab>
+        <Tab eventKey={2} title="Tab item 3">
+          Tab 3 section
+        </Tab>
+      </Tabs>
+    );
+  }
+}
+```
+
+## AccessibleTabs
+```js
+import React from 'react';
+import { Tabs, TabsVariant, Tab } from '@patternfly/react-core';
+
+class AccessibleTabs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTabKey: 0
+    };
+
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+  }
+
+  render() {
+    return (
+      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick} aria-label="Local" variant={TabsVariant.nav}>
+        <Tab eventKey={0} title="Tab item 1">
+          Tab 1 section
+        </Tab>
+        <Tab eventKey={1} title="Tab item 2">
+          Tab 2 section
+        </Tab>
+        <Tab eventKey={2} title="Tab item 3">
+          Tab 3 section
+        </Tab>
+      </Tabs>
+    );
+  }
+}
+```
+
+## SeparateTabContent
+```js
+import React from 'react';
+import { Tabs, Tab, TabContent } from '@patternfly/react-core';
+
+class SeparateTabContent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeKey: 0,
+    };
+
+    this.contentRef1 = React.createRef();
+    this.contentRef2 = React.createRef();
+    this.contentRef3 = React.createRef();
+
+    // Toggle currently active tab
+    this.handleTabClick = (event, tabIndex) => {
+      this.setState({
+        activeTabKey: tabIndex
+      });
+    };
+  }
+
+  render() {
+    return <React.Fragment>
+      <Tabs activeKey={this.state.activeTabKey} onSelect={this.handleTabClick}>
+        <Tab eventKey={0} title="Tab item 1" tabContentId="refTab1Section" tabContentRef={this.contentRef1}></Tab>
+        <Tab eventKey={1} title="Tab item 2" tabContentId="refTab2Section" tabContentRef={this.contentRef2}></Tab>
+        <Tab eventKey={2} title="Tab item 3" tabContentId="refTab3Section" tabContentRef={this.contentRef3}></Tab>
+      </Tabs>
+      <div>
+        <TabContent eventKey={0} id="refTab1Section" ref={this.contentRef1} aria-label="Tab item 1">Tab 1 section</TabContent>
+        <TabContent eventKey={1} id="refTab2Section" ref={this.contentRef2} aria-label="Tab item 2" hidden>Tab 2 section</TabContent>
+        <TabContent eventKey={2} id="refTab3Section" ref={this.contentRef3} aria-label="Tab item 3" hidden>Tab 3 section</TabContent>
+      </div>
+    </React.Fragment>;
+  }
+}
+```
