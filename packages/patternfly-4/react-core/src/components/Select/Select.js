@@ -119,12 +119,12 @@ class Select extends React.Component {
               <React.Fragment>
                 <div className={css(styles.selectToggleWrapper)}>
                   <span className={css(styles.selectToggleText)}>{placeholderText}</span>
+                  {selections && selections.length > 0 && (
+                    <div className={css(styles.selectToggleBadge)}>
+                      <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
+                    </div>
+                  )}
                 </div>
-                {selections && selections.length > 0 && (
-                  <div className={css(styles.selectToggleBadge)}>
-                    <span className={css(badgeStyles.badge, badgeStyles.modifiers.read)}>{selections.length}</span>
-                  </div>
-                )}
               </React.Fragment>
             )}
           </SelectToggle>
