@@ -25,9 +25,9 @@ export const SkipToContent: React.SFC<SkipToContentProps> = ({ children, classNa
   <a
     {...props}
     className={css(
-      styles.skipToContent,
       buttonStyles.button,
       getModifier(buttonStyles.modifiers, 'primary'),
+      styles.skipToContent,
       show && getModifier(styles, 'focus'),
       className
     )}
