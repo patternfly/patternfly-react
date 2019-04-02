@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.24.9](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.24.8...@patternfly/react-docs@3.24.9) (2019-04-02)
+
+
+### Features
+
+* **Tabs:** Allow tabbing of content outside Tabs ([#1413](https://github.com/patternfly/patternfly-react/issues/1413)) ([b3c406f](https://github.com/patternfly/patternfly-react/commit/b3c406f)), closes [#1364](https://github.com/patternfly/patternfly-react/issues/1364) [#1364](https://github.com/patternfly/patternfly-react/issues/1364) [#1364](https://github.com/patternfly/patternfly-react/issues/1364) [#1364](https://github.com/patternfly/patternfly-react/issues/1364) [#1597](https://github.com/patternfly/patternfly-react/issues/1597) [#1268](https://github.com/patternfly/patternfly-react/issues/1268) [#1268](https://github.com/patternfly/patternfly-react/issues/1268) [#1597](https://github.com/patternfly/patternfly-react/issues/1597)
+
+
+### BREAKING CHANGES
+
+* **Tabs:** Use of React.forwardRef
+
+
+
+
+
 ## [3.24.8](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-docs@3.24.7...@patternfly/react-docs@3.24.8) (2019-04-02)
 
 **Note:** Version bump only for package @patternfly/react-docs
