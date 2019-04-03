@@ -91,7 +91,6 @@ const Navigation = ({
           type="number"
           min="1"
           max={lastPage}
-          size="2"
           value={page}
           onChange={(event) => {
             let inputPage = Number.parseInt(event.target.value);
