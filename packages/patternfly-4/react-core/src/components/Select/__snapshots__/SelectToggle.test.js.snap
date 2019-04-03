@@ -5,6 +5,7 @@ exports[`state active 1`] = `
   className=""
   id="Select Toggle"
   isActive={true}
+  isCheckbox={false}
   isExpanded={false}
   isFocused={false}
   isHovered={false}
@@ -24,15 +25,7 @@ exports[`state active 1`] = `
     onKeyDown={[Function]}
     type="button"
   >
-    <div
-      className="pf-c-select__toggle-wrapper"
-    >
-      <span
-        className="pf-c-select__toggle-text"
-      >
-        Select
-      </span>
-    </div>
+    Select
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
       color="currentColor"
@@ -69,6 +62,7 @@ exports[`state focus 1`] = `
   className=""
   id="Select Toggle"
   isActive={false}
+  isCheckbox={false}
   isExpanded={false}
   isFocused={true}
   isHovered={false}
@@ -88,15 +82,7 @@ exports[`state focus 1`] = `
     onKeyDown={[Function]}
     type="button"
   >
-    <div
-      className="pf-c-select__toggle-wrapper"
-    >
-      <span
-        className="pf-c-select__toggle-text"
-      >
-        Select
-      </span>
-    </div>
+    Select
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
       color="currentColor"
@@ -133,6 +119,7 @@ exports[`state hover 1`] = `
   className=""
   id="Select Toggle"
   isActive={false}
+  isCheckbox={false}
   isExpanded={false}
   isFocused={false}
   isHovered={true}
@@ -152,15 +139,7 @@ exports[`state hover 1`] = `
     onKeyDown={[Function]}
     type="button"
   >
-    <div
-      className="pf-c-select__toggle-wrapper"
-    >
-      <span
-        className="pf-c-select__toggle-text"
-      >
-        Select
-      </span>
-    </div>
+    Select
     <CaretDownIcon
       className="pf-c-select__toggle-arrow"
       color="currentColor"

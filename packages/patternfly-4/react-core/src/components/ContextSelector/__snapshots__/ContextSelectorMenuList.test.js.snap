@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders ContextSelectorMenuList closed 1`] = `
-.pf-c-context-selector__menu-list {
-  display: block;
-  max-height: 12.5rem;
-  overflow-y: scroll;
-}
-
 <ul
   className="pf-c-context-selector__menu-list"
   hidden={false}
@@ -72,12 +66,6 @@ exports[`Renders ContextSelectorMenuList closed 1`] = `
 `;
 
 exports[`Renders ContextSelectorMenuList open 1`] = `
-.pf-c-context-selector__menu-list {
-  display: block;
-  max-height: 12.5rem;
-  overflow-y: scroll;
-}
-
 <ul
   className="pf-c-context-selector__menu-list"
   hidden={false}

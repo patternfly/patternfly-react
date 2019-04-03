@@ -104,18 +104,6 @@ exports[`DataList Item default 1`] = `
 `;
 
 exports[`DataList List 1`] = `
-<<<<<<< b21b72065f140a85176e95e6e7b88719fea33f81
-.pf-c-data-list.data-list-custom {
-  display: block;
-  color: #282d33;
-  list-style-type: disc;
-  background-color: #ffffff;
-  border-top: 1px solid #ededed;
-  border-bottom: 1px solid #ededed;
-}
-
-=======
->>>>>>> chore(snapshots): update snapshots due to change in format
 <ul
   aria-label="this is a simple list"
   className="pf-c-data-list data-list-custom"
@@ -124,18 +112,6 @@ exports[`DataList List 1`] = `
 `;
 
 exports[`DataList List default 1`] = `
-<<<<<<< b21b72065f140a85176e95e6e7b88719fea33f81
-.pf-c-data-list {
-  display: block;
-  color: #282d33;
-  list-style-type: disc;
-  background-color: #ffffff;
-  border-top: 1px solid #ededed;
-  border-bottom: 1px solid #ededed;
-}
-
-=======
->>>>>>> chore(snapshots): update snapshots due to change in format
 <ul
   aria-label="this is a simple list"
   className="pf-c-data-list"
