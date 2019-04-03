@@ -1,0 +1,17 @@
+{
+  "name": "gatsby-transformer-react-assets",
+  "description": "Creates an index file from assets matching a path",
+  "version": "0.0.1",
+  "author": "Red Hat",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "gatsby": "^2.1.37"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-transformer-plugin",
+    "react"
+  ]
+}

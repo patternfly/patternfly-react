@@ -18,63 +18,16 @@ After you have written your new PatternFly component, tests, and Storybook stori
 
 ## PatternFly React Doc
 
-PatternFly 4 React uses Gatsby. Examples are created toe demonstrate of the use of the React components. Documents are generated from these examples.
-
-### Adding Component Documentation
-
-Component Documentation has two parts. a `[Component].docs.js` file, and files under `[Component]/examples/`. Each file must follow a few guidelines for them to be consumed properly by the docs website.
-
-The `docs.js` file has the following structure
-
-```js
-import SimpleExample from './examples/SimpleComponent';
-import { Component, ComponentSize } from '@patternfly/react-core'; // only @patternfly/react-* imports are allowed
-
-export default {
-  title: 'Component', // Title to display at the top of the docs page
-  description: 'description', // Opening description for the component
-  components: {
-    Component: Component // Key value pair for components to include prop documentation
-  },
-  enumValues: {
-    // Optional
-    ComponentSize: Object.values(ComponentSize) // key value pair for any enums that cannot be statically analyzed.
-  },
-  examples: [SimpleExample] // Array of examples to include on the page.  They must be stored under /examples/
-};
-```
-
-An example file has the following structure
-
-```jsx
-import React from 'react';
-import { Component } from '@patternfly/react-core'; // only @patternfly/react-* imports are allowed
-import something from './common/something'; // any directory under examples/ is ignored in page generation.
-import styles from './Example.styles.js'; // any .styles.js file under examples/ is ignored in page generation
-
-// note: this can be a function too with the title, etc, set similar to setting Component.propTypes
-class Example extends React.Component {
-  static title = 'Simple Example'; // Sets the examples title
-  static description = 'description'; // Optional: Extra description for the example
-  static getContainerProps = () => ({
-    // Optional: Adds any extra props to the container.  Useful for example specific styles
-    style: styles
-  });
-
-  render() {
-    return <Component />;
-  }
-}
-
-export default Example;
-```
+PatternFly 4 React uses Gatsby. Examples are created to demonstrate of the use of the React components. Documents are generated from these examples.
+See how to write documentation in the [`react-docs` README](./packages/patternfly-4/react-docs/README.md)
 
 Some things to keep in mind when writing examples:
 
 1. Keep them simple. It is much easier for a person to understand what is going on.
 1. Do not do any iteration of variants, sizes, etc in the render. This is easier for the developer, but it makes it much harder to reason for the consumer.
-1. Keep anything you think is useful inside this file. The source view (coming soon) will only include the source of the example. If everything is broken out it will not be useful to the consumer. Remember, you are writing examples not a super optimized application.
 1. Try not to add extra external dependencies. These will only be approved on a case by case basis.
+1. You are unable to use experimental language features like [class properties](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) as [Buble](https://github.com/bublejs/buble) does not support them.
+1. The easiest way to develop your example is by creating an empty code block and then editing it in your browser. Once your happy, copy the code back to your Markdown file.
 
 ## Testing
 

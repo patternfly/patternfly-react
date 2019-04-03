@@ -46,20 +46,14 @@ function setPF4Generators(plop) {
         {
           data,
           type: 'add',
-          templateFile: join(base, 'component.docs.js.hbs'),
-          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/{{componentName}}.docs.js')
+          templateFile: join(base, 'component.md.hbs'),
+          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/{{componentName}}.md')
         },
         {
           data,
           type: 'add',
           templateFile: join(base, 'index.ts.hbs'),
           path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/index.ts')
-        },
-        {
-          data,
-          type: 'add',
-          templateFile: join(base, 'example.js.hbs'),
-          path: join(reactCoreRoot, './src/{{typeDir}}/{{componentName}}/examples/Simple{{componentName}}.tsx')
         },
         {
           data,

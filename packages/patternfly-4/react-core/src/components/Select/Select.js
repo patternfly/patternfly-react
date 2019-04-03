@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '@patternfly/patternfly/components/Select/select.css';
-import * as badgeStyles from '@patternfly/patternfly/components/Badge/badge.css';
+import badgeStyles from '@patternfly/patternfly/components/Badge/badge.css';
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import SingleSelect from './SingleSelect';

@@ -34,8 +34,8 @@ import accessibleStyles from '@patternfly/patternfly/utilities/Accessibility/acc
 import spacingStyles from '@patternfly/patternfly/utilities/Spacing/spacing.css';
 import { css } from '@patternfly/react-styles';
 import { BellIcon, CogIcon } from '@patternfly/react-icons';
-import brandImg from './l_pf-reverse-164x11.png';
-import avatarImg from './img_avatar.svg';
+import imgBrand from './imgBrand.png';
+import imgAvatar from './imgAvatar.svg';
 
 class PageLayoutManualNav extends React.Component {
   constructor(props) {
@@ -197,9 +197,9 @@ class PageLayoutManualNav extends React.Component {
 
     const Header = (
       <PageHeader
-        logo={<Brand src={brandImg} alt="Patternfly Logo" />}
+        logo={<Brand src={imgBrand} alt="Patternfly Logo" />}
         toolbar={PageToolbar}
-        avatar={<Avatar src={avatarImg} alt="Avatar image" />}
+        avatar={<Avatar src={imgAvatar} alt="Avatar image" />}
         showNavToggle
         onNavToggle={isMobileView ? this.onNavToggleMobile : this.onNavToggleDesktop}
         isNavOpen={isMobileView ? isNavOpenMobile : isNavOpenDesktop}

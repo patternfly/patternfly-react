@@ -1,53 +1,55 @@
-const { resolve } = require('path');
+// This is the entrypoint of gatsby (aside from boring default gatsby plugins)
+
+// Files we never care to pull data from
+const ignore = [
+  `**/dist/**`,
+  `**/*.d.ts`,
+  `**/*.test.*`,
+  `**/index.*`,
+  `**/helpers/**`,
+  `**/scripts/**`,
+  `**/styles/**`,
+  `**/build/**`,
+  `**/utils/**`,
+  `**/test-helpers/**`,
+  `**/\.*`,
+  `**/\..*/**`,
+  `**/tsconfig.*`,
+  `**/tslint.*`,
+  `**/README.*`,
+  `**/CHANGELOG.*`,
+  `**/react\-docs/**`,
+  `**/react\-styles/**`,
+  `**/react\-integration/**`,
+];
 
 module.exports = {
   siteMetadata: {
-    title: 'PatternFly React'
+    title: `Patternfly 4 React Docs`,
+    description: `Documentation for https://github.com/patternfly/patternfly-react`,
+    keywords: `Red Hat`,
   },
+  pathPrefix: `/patternfly-4`,
   plugins: [
-    'gatsby-plugin-typescript',
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-json',
+    // Plugin to inject stuff into <head></head>
+    `gatsby-plugin-react-helmet`,
+    // Plugin to load pf4 files to do fun documentation things with
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `components`,
-        path: resolve(__dirname, '../react-core/src'),
-        ignore: [`**/*.d.ts`, `**/*.tsx`, `**/helpers`]
-      }
+        name: `patternfly-4`,
+        path: `${__dirname}/../../patternfly-4`,
+        ignore: ignore
+      },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `components`,
-        path: resolve(__dirname, '../react-charts/src'),
-        ignore: [`**/*.d.ts`]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `components`,
-        path: resolve(__dirname, '../react-table/src'),
-        ignore: [`**/*.d.ts`]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `components`,
-        path: resolve(__dirname, '../react-styled-system/src'),
-        ignore: [`**/*.d.ts`]
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `components`,
-        path: resolve(__dirname, '../react-inline-edit-extension/src')
-      }
-    },
-    'gatsby-transformer-react-docgen'
+    // Our custom plugin for *.js?x *.ts?x files to get prop types
+    `gatsby-transformer-react-docgen-typescript`,
+    // Our custom plugin for examples/**/*.(js|svg) files to add to .cache/example_index.js
+    // ...then webpack deals with those files statically instead of us dynamically :)
+    `gatsby-transformer-react-examples`,
+    // The markdown plugin for *.md files
+    `gatsby-transformer-remark`,
+    // The plugin for package.json files
+    `gatsby-transformer-json`
   ],
-  pathPrefix: 'patternfly-4'
-};
+}

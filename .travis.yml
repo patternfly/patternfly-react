@@ -86,5 +86,6 @@ jobs:
         - yarn build:storybook
         - mv .out .public/patternfly-3
         - mv packages/patternfly-4/react-docs/public .public/patternfly-4
+        - cp .public/patternfly-4/favicon* .public
         - cp -r .public/patternfly-4/assets .public/assets
         - .circleci/conditional_upload.sh

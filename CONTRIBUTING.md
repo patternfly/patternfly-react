@@ -192,9 +192,8 @@ Please ensure that all React UI components contributed meet the following guidel
   - When your stories contain multiple files, put them in a subfolder named `Stories`
   - `src/**/*.stories.js` and `src/**/Stories/` are excluded from the package build output
 - Documentation for PatternFly 4
-  - Provide documentation for your component with examples in the component's example directory. examples (e.g `Listgroup/examples/SimpleListGroup.js`)
-  - All examples should be added to the component's documentation file (`ComponentName.docs.js`) exports.
-    See the getting started guide for more information on [Adding documentation](./GETTING-STARTED.md#adding-component-documentation)
+  - Provide documentation for your component with a single Markdown file. (e.g., `ListGroup.md`)
+    See how to write documentation in the [`react-docs` README](./packages/patternfly-4/react-docs/README.md)
 - When writing a component and you want to use the classnames package, be sure to import and name it `classNames`. For example - `import classNames from 'classnames'`
 - When destructuring or spreading expressions , use ...props as the variable name.
 - Exporting components from other libraries (without manipulating them)
@@ -256,9 +255,7 @@ $ git checkout -b my-branch -t upstream/master
     index.js - Barrel File exporting public exports
     ComponentName.js - Component Implementation
     ComponentName.test.js - Component Tests
-    ComponentName.docs.js - Component Docs
-    examples/ - dir for all examples
-        SimpleComp
+    ComponentName.md - Component Docs
   ```
 
 4.  Develop your component. After development is complete, ensure tests and lint standards pass.
