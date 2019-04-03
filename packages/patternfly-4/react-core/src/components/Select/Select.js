@@ -90,8 +90,6 @@ class Select extends React.Component {
         (childPlaceholder[0] && childPlaceholder[0].props.value) || (children[0] && children[0].props.value);
     }
 
-    console.log('cmon bruh', badgeStyles);
-
     return (
       <div
         className={css(styles.select, isExpanded && styles.modifiers.expanded, className)}
