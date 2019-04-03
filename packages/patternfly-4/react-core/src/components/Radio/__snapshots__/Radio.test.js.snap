@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio check component controlled 1`] = `
-.pf-c-radio__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-radio {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  justify-items: start;
-}
-
 <div
   className="pf-c-radio"
 >
@@ -31,18 +19,6 @@ exports[`Radio check component controlled 1`] = `
 `;
 
 exports[`Radio check component isDisabled 1`] = `
-.pf-c-radio__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-radio {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  justify-items: start;
-}
-
 <div
   className="pf-c-radio"
 >
@@ -60,26 +36,6 @@ exports[`Radio check component isDisabled 1`] = `
 `;
 
 exports[`Radio check component label is function 1`] = `
-.pf-c-radio__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-radio__label {
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: #282d33;
-  cursor: pointer;
-}
-.pf-c-radio {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  justify-items: start;
-}
-
 <div
   className="pf-c-radio"
 >
@@ -106,26 +62,6 @@ exports[`Radio check component label is function 1`] = `
 `;
 
 exports[`Radio check component label is node 1`] = `
-.pf-c-radio__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-radio__label {
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: #282d33;
-  cursor: pointer;
-}
-.pf-c-radio {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  justify-items: start;
-}
-
 <div
   className="pf-c-radio"
 >
@@ -152,26 +88,6 @@ exports[`Radio check component label is node 1`] = `
 `;
 
 exports[`Radio check component label is string 1`] = `
-.pf-c-radio__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-radio__label {
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: #282d33;
-  cursor: pointer;
-}
-.pf-c-radio {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  justify-items: start;
-}
-
 <div
   className="pf-c-radio"
 >
@@ -196,26 +112,6 @@ exports[`Radio check component label is string 1`] = `
 `;
 
 exports[`Radio check component passing HTML attribute 1`] = `
-.pf-c-radio__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-radio__label {
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: #282d33;
-  cursor: pointer;
-}
-.pf-c-radio {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  justify-items: start;
-}
-
 <div
   className="pf-c-radio"
 >
@@ -241,26 +137,6 @@ exports[`Radio check component passing HTML attribute 1`] = `
 `;
 
 exports[`Radio check component passing class 1`] = `
-.pf-c-radio__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-radio__label {
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.3;
-  color: #282d33;
-  cursor: pointer;
-}
-.pf-c-radio.class-123 {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  justify-items: start;
-}
-
 <div
   className="pf-c-radio class-123"
 >
@@ -285,18 +161,6 @@ exports[`Radio check component passing class 1`] = `
 `;
 
 exports[`Radio check component uncontrolled 1`] = `
-.pf-c-radio__input {
-  display: block;
-  margin-top: -0.1875rem;
-  cursor: pointer;
-}
-.pf-c-radio {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  justify-items: start;
-}
-
 <div
   className="pf-c-radio"
 >

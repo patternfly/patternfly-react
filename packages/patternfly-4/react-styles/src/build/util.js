@@ -1,20 +1,30 @@
 import path from 'path';
 import { readFileSync } from 'fs';
 import css from 'css';
-import { outputFileSync } from 'fs-extra';
+import { outputFileSync, copyFileSync, ensureDir } from 'fs-extra';
 import relative from 'relative';
 
 export const packageName = '@patternfly/react-styles';
 export const styleSheetToken = 'StyleSheet';
 
-export function cssToJS(cssString, useModules = false) {
+export function cssToJS(cssString, cssOutputPath = '', useModules = false) {
+  let cssRequire = '';
+  let cssImport = '';
+  if (cssOutputPath) {
+    cssRequire = `require('${cssOutputPath}');`;
+    cssImport = `import '${cssOutputPath}';`;
+  }
   if (useModules) {
     return `import { ${styleSheetToken} } from '${packageName}';
+${cssImport}
+
 export default ${styleSheetToken}.parse(\`${cssString}\`);
 `;
   }
 
   return `const { ${styleSheetToken} } = require('${packageName}');
+${cssRequire}
+
 module.exports = ${styleSheetToken}.parse(\`${cssString}\`);
 `;
 }
@@ -27,6 +37,13 @@ export function getCSS(pathToCSSFile) {
 export function minifyCSS(cssString) {
   return css.stringify(css.parse(cssString.replace('@charset "UTF-8";', '')), {
     compress: true
+  });
+}
+
+export function writeCSSFile(destinationPath, contents) {
+  ensureDir(path.dirname(destinationPath)).then(() => {
+    const replacementString = contents.replace(/..\/..\/assets/g, '../../../../../styles/assets');
+    outputFileSync(destinationPath, replacementString);
   });
 }
 
@@ -56,5 +73,5 @@ function getFormattedCSSOutputPath(pathToCSSFile) {
   if (nodeIndex !== -1) {
     formattedDir = formattedDir.substring(nodeIndex + nodeText.length);
   }
-  return path.join(formattedDir, `${name}.css.js`);
+  return path.join(formattedDir, `${name}.css`);
 }

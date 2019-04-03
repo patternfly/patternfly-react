@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`simple avatar 1`] = `
-.pf-c-avatar {
-  display: block;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 30em;
-}
-
 <img
   alt="avatar"
   className="pf-c-avatar"

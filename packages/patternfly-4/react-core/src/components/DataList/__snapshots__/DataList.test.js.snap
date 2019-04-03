@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DataList Cell 1`] = `
-.pf-c-data-list__cell.data-list-custom {
-  display: block;
-  flex: 1;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 <div
   className="pf-c-data-list__cell data-list-custom"
   id="primary-item"
@@ -17,13 +10,6 @@ exports[`DataList Cell 1`] = `
 `;
 
 exports[`DataList Cell default 1`] = `
-.pf-c-data-list__cell {
-  display: block;
-  flex: 1;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 <div
   className="pf-c-data-list__cell"
 >
@@ -50,12 +36,6 @@ exports[`DataList DataListAction button 1`] = `
 `;
 
 exports[`DataList DataListAction dropdown 1`] = `
-.pf-c-data-list__action {
-  display: block;
-  flex: 0 0 auto;
-  margin-left: 1.5rem;
-}
-
 <div
   className="pf-c-data-list__action"
 >
@@ -110,15 +90,6 @@ exports[`DataList DataListAction dropdown 1`] = `
 `;
 
 exports[`DataList Item 1`] = `
-.pf-c-data-list__item.data-list-item-custom {
-  display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  align-items: baseline;
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
-
 <li
   aria-labelledby="item-1"
   className="pf-c-data-list__item data-list-item-custom"
@@ -126,15 +97,6 @@ exports[`DataList Item 1`] = `
 `;
 
 exports[`DataList Item default 1`] = `
-.pf-c-data-list__item {
-  display: flex;
-  position: relative;
-  flex-wrap: wrap;
-  align-items: baseline;
-  padding-right: 2rem;
-  padding-left: 2rem;
-}
-
 <li
   aria-labelledby="item-1"
   className="pf-c-data-list__item"
@@ -142,15 +104,6 @@ exports[`DataList Item default 1`] = `
 `;
 
 exports[`DataList List 1`] = `
-.pf-c-data-list.data-list-custom {
-  display: block;
-  color: #282d33;
-  list-style-type: disc;
-  background-color: #ffffff;
-  border-top: 1px solid #ededed;
-  border-bottom: 1px solid #ededed;
-}
-
 <ul
   aria-label="this is a simple list"
   className="pf-c-data-list data-list-custom"
@@ -159,15 +112,6 @@ exports[`DataList List 1`] = `
 `;
 
 exports[`DataList List default 1`] = `
-.pf-c-data-list {
-  display: block;
-  color: #282d33;
-  list-style-type: disc;
-  background-color: #ffffff;
-  border-top: 1px solid #ededed;
-  border-bottom: 1px solid #ededed;
-}
-
 <ul
   aria-label="this is a simple list"
   className="pf-c-data-list"

@@ -1,6 +1,6 @@
 /* eslint-disable no-case-declarations */
 import { declare } from '@babel/helper-plugin-utils';
-import { dirname, extname, resolve } from 'path';
+import { dirname, extname, resolve, basename } from 'path';
 import resolveFrom from 'resolve-from';
 import {
   cssToJS,
@@ -8,6 +8,7 @@ import {
   styleSheetToken,
   packageName,
   writeCSSJSFile,
+  writeCSSFile,
   getRelativeImportPath,
   getCSSOutputPath
 } from '../util';
@@ -128,15 +129,21 @@ export default declare(({ types: t }) => {
           } else {
             const { srcDir, outDir } = options;
             const cssOutputPath = getCSSOutputPath(outDir, rootPath, cssfilePath);
-
+            const cssJsOutputPath = `${cssOutputPath}.js`;
+            const cssFileName = `./${basename(cssfilePath)}`;
             const scriptOutputPath = resolve(file.opts.filename).replace(resolve(srcDir), outDir);
 
             if (!outputFiles.has(cssOutputPath)) {
-              writeCSSJSFile(rootPath, cssfilePath, cssOutputPath, cssToJS(cssString, options.useModules));
+              writeCSSFile(cssOutputPath, cssString);
+              writeCSSJSFile(
+                rootPath,
+                cssfilePath,
+                cssJsOutputPath,
+                cssToJS(cssString, cssFileName, options.useModules)
+              );
               outputFiles.add(cssOutputPath);
             }
-
-            path.node.source.value = getRelativeImportPath(scriptOutputPath, cssOutputPath);
+            path.node.source.value = getRelativeImportPath(scriptOutputPath, cssJsOutputPath);
           }
         }
       }

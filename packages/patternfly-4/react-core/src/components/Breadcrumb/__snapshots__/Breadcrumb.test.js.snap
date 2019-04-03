@@ -1,15 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumb component should render breadcrumb with aria-label 1`] = `
-.pf-c-breadcrumb__list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.pf-c-breadcrumb {
-  display: inline-flex;
-}
-
 <nav
   aria-label="custom label"
   className="pf-c-breadcrumb"
@@ -21,15 +12,6 @@ exports[`Breadcrumb component should render breadcrumb with aria-label 1`] = `
 `;
 
 exports[`Breadcrumb component should render breadcrumb with children 1`] = `
-.pf-c-breadcrumb__list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.pf-c-breadcrumb {
-  display: inline-flex;
-}
-
 <nav
   aria-label="Breadcrumb"
   className="pf-c-breadcrumb"
@@ -61,15 +43,6 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
 `;
 
 exports[`Breadcrumb component should render breadcrumb with className 1`] = `
-.pf-c-breadcrumb__list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.pf-c-breadcrumb.className {
-  display: inline-flex;
-}
-
 <nav
   aria-label="Breadcrumb"
   className="pf-c-breadcrumb className"
@@ -81,15 +54,6 @@ exports[`Breadcrumb component should render breadcrumb with className 1`] = `
 `;
 
 exports[`Breadcrumb component should render default breadcrumb 1`] = `
-.pf-c-breadcrumb__list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.pf-c-breadcrumb {
-  display: inline-flex;
-}
-
 <nav
   aria-label="Breadcrumb"
   className="pf-c-breadcrumb"

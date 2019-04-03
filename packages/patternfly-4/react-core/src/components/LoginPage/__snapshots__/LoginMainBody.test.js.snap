@@ -3,13 +3,6 @@
 exports[`className is added to the root element 1`] = `"pf-c-login__main-body extra-class"`;
 
 exports[`renders with PatternFly Core styles 1`] = `
-.pf-c-login__main-body {
-  display: block;
-  padding-right: 2rem;
-  padding-bottom: 2rem;
-  padding-left: 2rem;
-}
-
 <div
   className="pf-c-login__main-body"
 />

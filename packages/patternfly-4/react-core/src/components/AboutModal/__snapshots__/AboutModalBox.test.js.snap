@@ -1,21 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AboutModalBox Test 1`] = `
-.pf-c-about-modal-box {
-  display: grid;
-  color: #ffffff;
-  position: relative;
-  z-index: 600;
-  grid-template-rows: max-content max-content auto;
-  grid-template-areas: "brand close" "header header" "content content";
-  width: 100vw;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background-color: #030303;
-  box-shadow: 0 0 100px 0 rgba(255,255,255,.05);
-}
-
 <div
   aria-describedby="id2"
   aria-labelledby="id"

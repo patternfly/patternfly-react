@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBoxFooter Test 1`] = `
-.pf-c-modal-box__footer {
-  display: flex;
-  flex: 0 0 auto;
-  align-items: center;
-  margin-top: 2rem;
-}
-
 <div
   className="pf-c-modal-box__footer"
 >
