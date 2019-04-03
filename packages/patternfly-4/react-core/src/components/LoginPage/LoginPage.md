@@ -166,6 +166,7 @@ class SimpleLoginPage extends React.Component {
         footerListItems={listItem}
         textContent={textContent}
         loginTitle="Log in to your account"
+        loginSubtitle="Please use your single sign-on LDAP credentials"
         socialMediaLoginContent={socialMediaLoginContent}
         signUpForAccountMessage={signUpForAccountMessage}
         forgotCredentials={forgotCredentials}
