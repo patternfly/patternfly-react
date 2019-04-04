@@ -1,11 +1,13 @@
 ---
-title: "Nav"
-cssPrefix: "pf-c-nav"
+title: 'Nav'
+cssPrefix: 'pf-c-nav'
 ---
+
 ## Simple Nav
+
 ```js
 import React from 'react';
-import { Nav, NavList, NavItem, NavVariants } from '@patternfly/react-core';
+import { Nav, NavList, NavItem, NavItemSeparator, NavVariants } from '@patternfly/react-core';
 
 class NavSimpleList extends React.Component {
   constructor(props) {
@@ -31,9 +33,10 @@ class NavSimpleList extends React.Component {
           <NavItem id="simple-link2" preventDefault to="#simple-link2" itemId={1} isActive={activeItem === 1}>
             Link 2
           </NavItem>
-          <NavItem id="simple-link3" preventDefault to="#simple-link3" itemId={2} isActive={activeItem === 2} isSeparated>
-            Link 3 with separator
+          <NavItem id="simple-link3" preventDefault to="#simple-link3" itemId={2} isActive={activeItem === 2}>
+            Link 3
           </NavItem>
+          <NavItemSeparator />
           <NavItem id="simple-link4" preventDefault to="#simple-link4" itemId={3} isActive={activeItem === 3}>
             Link 4
           </NavItem>
@@ -45,6 +48,7 @@ class NavSimpleList extends React.Component {
 ```
 
 ## Nav (Grouped)
+
 ```js
 import React from 'react';
 import { Nav, NavGroup, NavItem } from '@patternfly/react-core';
@@ -95,6 +99,7 @@ class NavGroupedList extends React.Component {
 ```
 
 ## Nav (Default)
+
 ```js
 import React from 'react';
 import { Nav, NavList, NavItem } from '@patternfly/react-core';
@@ -111,7 +116,7 @@ class NavDefaultList extends React.Component {
       });
     };
   }
-  
+
   render() {
     const { activeItem } = this.state;
     return (
@@ -137,6 +142,7 @@ class NavDefaultList extends React.Component {
 ```
 
 ## Nav (Expandable)
+
 ```js
 import React from 'react';
 import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
@@ -179,14 +185,9 @@ class NavExpandableList extends React.Component {
             >
               Subnav Link 1
             </NavItem>
-            <NavItem
-              preventDefault
-              groupId="grp-1"
-              itemId="grp-1_itm-2"
-              isActive={activeItem === 'grp-1_itm-2'}
-              isSeparated
-            >
-              Subnav Link 2 with separator
+            <NavItemSeparator />
+            <NavItem preventDefault groupId="grp-1" itemId="grp-1_itm-2" isActive={activeItem === 'grp-1_itm-2'}>
+              Subnav Link 2
             </NavItem>
             <NavItem to="#expandable-3" groupId="grp-1" itemId="grp-1_itm-3" isActive={activeItem === 'grp-1_itm-3'}>
               Subnav Link 3
@@ -238,6 +239,7 @@ class NavExpandableList extends React.Component {
 ```
 
 ## Nav (Expandable+Titles)
+
 ```js
 import React from 'react';
 import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
@@ -328,6 +330,7 @@ class NavExpandableTitlesList extends React.Component {
 ```
 
 ## Nav (Mixed)
+
 ```js
 import React from 'react';
 import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
@@ -346,7 +349,7 @@ class NavMixedList extends React.Component {
       });
     };
   }
-  
+
   render() {
     const { activeGroup, activeItem } = this.state;
     return (
@@ -421,6 +424,7 @@ class NavMixedList extends React.Component {
 ```
 
 ## Nav (Horizontal)
+
 ```js
 import React from 'react';
 import { Nav, NavList, NavItem, NavVariants } from '@patternfly/react-core';
@@ -462,6 +466,7 @@ class NavHorizontalList extends React.Component {
 ```
 
 ## Nav (Tertiary)
+
 ```js
 import React from 'react';
 import { Nav, NavList, NavItem, NavVariants } from '@patternfly/react-core';
