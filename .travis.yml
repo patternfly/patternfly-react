@@ -68,7 +68,6 @@ jobs:
       if: branch = master && type != pull_request && fork = false
       install: skip
       script:
-        - rm -rf packages/patternfly-4/react-docs/public
         - yarn build:docs
     - name: Lint and Stylelint
       install: skip
