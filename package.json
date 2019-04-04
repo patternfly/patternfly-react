@@ -116,7 +116,8 @@
     "test:pf3": "jest packages/patternfly-3",
     "test:pf4": "jest packages/patternfly-4",
     "test:watch": "jest --watchAll",
-    "uninstall": "find . -name node_modules -type d | xargs rm -rf"
+    "uninstall": "find . -name node_modules -type d | xargs rm -rf",
+    "postinstall": "rm -rf node_modules/@patternfly/patternfly && mv node_modules/dg-testrelease/ node_modules/@patternfly/patternfly"
   },
   "config": {
     "commitizen": {
