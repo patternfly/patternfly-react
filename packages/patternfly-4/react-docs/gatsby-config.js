@@ -44,12 +44,12 @@ module.exports = {
     },
     // Our custom plugin for *.js?x *.ts?x files to get prop types
     `gatsby-transformer-react-docgen-typescript`,
-    // Our custom plugin for examples/**/*.(js|svg) files to add to .cache/example_index.js
+    // Our custom plugin for examples/*.(js|svg) files to add to .cache/example_index.js
     // ...then webpack deals with those files statically instead of us dynamically :)
     `gatsby-transformer-react-examples`,
     // The markdown plugin for *.md files
     `gatsby-transformer-remark`,
-    // The plugin for package.json files
-    `gatsby-transformer-json`
+    // The plugin for package.json files (to get version numbers)
+    `gatsby-transformer-json`,
   ],
 }

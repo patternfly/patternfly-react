@@ -22,28 +22,25 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
 }
 
 exports.createPages = ({ actions, graphql }) => {
-  const templatePath = path.resolve(`./src/templates/markdownTemplate.js`);
+  const templatePath = path.resolve('./src/templates/markdownTemplate.js');
 
   const markdown = graphql(`
     {
       allMarkdownRemark {
-        edges {
-          node {
-            fileAbsolutePath
-            htmlAst
-            frontmatter {
-              title
-              section
-              seperatePages
-            }
+        nodes {
+          fileAbsolutePath
+          htmlAst
+          frontmatter {
+            title
+            section
+            seperatePages
           }
         }
       }
     }
   `);
-
-  return markdown.then(markdownRemark => {
-    markdownRemark.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  return markdown.then(result => {
+    result.data.allMarkdownRemark.nodes.forEach(node => {
       const componentName = navHelpers.getFileName(node.fileAbsolutePath);
       const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
 
@@ -58,7 +55,7 @@ exports.createPages = ({ actions, graphql }) => {
           fileAbsolutePath: node.fileAbsolutePath,
           pathRegex: '', // No props
           examplesRegex: '', // No examples to inject (they're on separate pages)
-        }
+        };
 
         // Create the separate pages
         astHelpers.getLinks(node.htmlAst).forEach(mdLink => {
