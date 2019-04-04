@@ -10,7 +10,8 @@ import {
   emptyCol,
   mapProps,
   expandable,
-  expandedRow
+  expandedRow,
+  textCenter
 } from './transformers';
 import { DropdownDirection, DropdownPosition } from '@patternfly/react-core';
 
@@ -261,5 +262,9 @@ describe('Transformer functions', () => {
     };
     expect(mapProps(undefined, { property: 'some', rowData })).toEqual({ one: 1 });
     expect(mapProps(undefined, { property: 'wrong', rowData })).toEqual({});
+  });
+
+  test('textCenter', () => {
+    expect(textCenter()).toEqual({ textCenter: true });
   });
 });

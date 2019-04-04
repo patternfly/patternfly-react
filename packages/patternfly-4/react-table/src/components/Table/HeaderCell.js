@@ -1,24 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { css } from '@patternfly/react-styles';
+import styles from '@patternfly/patternfly/components/Table/table.css';
 
-const HeaderCell = ({ 'data-label': dataLabel, isVisible, scope, component: Component, ...props }) => {
+const HeaderCell = ({
+  'data-label': dataLabel,
+  className,
+  component: Component,
+  isVisible,
+  scope,
+  textCenter,
+  ...props
+}) => {
   const mappedProps = {
     ...(scope ? { scope } : {}),
     ...props
   };
-  return <Component {...mappedProps} />;
+  return <Component {...mappedProps} className={css(className, textCenter && styles.modifiers.center)} />;
 };
 
 HeaderCell.propTypes = {
   'data-label': PropTypes.string,
+  className: PropTypes.string,
+  component: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.number]),
+  isVisible: PropTypes.bool,
   scope: PropTypes.string,
-  component: PropTypes.oneOfType([PropTypes.string, PropTypes.node, PropTypes.number])
+  textCenter: PropTypes.bool
 };
 
 HeaderCell.defaultProps = {
-  scope: '',
+  'data-label': '',
+  className: undefined,
   component: 'th',
-  'data-label': ''
+  isVisible: undefined,
+  scope: '',
+  textCenter: false
 };
 
 export default HeaderCell;
