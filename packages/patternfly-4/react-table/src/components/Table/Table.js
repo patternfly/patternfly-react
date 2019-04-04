@@ -15,7 +15,8 @@ import { calculateColumns } from './utils/headerUtils';
 export const TableGridBreakpoint = {
   grid: 'grid',
   gridMd: 'grid-md',
-  gridLg: 'grid-lg'
+  gridLg: 'grid-lg',
+  gridXl: 'grid-xl'
 };
 
 export const TableVariant = {
