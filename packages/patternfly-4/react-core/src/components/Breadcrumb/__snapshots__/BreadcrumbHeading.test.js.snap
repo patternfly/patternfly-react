@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BreadcrumbHeading component should pass classname 1`] = `
-.pf-c-breadcrumb__heading {
-  display: block;
-  font-size: 0.875rem;
-}
-.pf-c-breadcrumb__item.Class {
-  display: flex;
-  align-items: center;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.3;
-  cursor: default;
-}
-
 <li
   className="pf-c-breadcrumb__item Class"
 >
@@ -26,19 +13,6 @@ exports[`BreadcrumbHeading component should pass classname 1`] = `
 `;
 
 exports[`BreadcrumbHeading component should pass custom id 1`] = `
-.pf-c-breadcrumb__heading {
-  display: block;
-  font-size: 0.875rem;
-}
-.pf-c-breadcrumb__item {
-  display: flex;
-  align-items: center;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.3;
-  cursor: default;
-}
-
 <li
   className="pf-c-breadcrumb__item"
   id="Id"
@@ -52,28 +26,6 @@ exports[`BreadcrumbHeading component should pass custom id 1`] = `
 `;
 
 exports[`BreadcrumbHeading component should render breadcrumbHeading with target 1`] = `
-.pf-c-breadcrumb__link.pf-m-current {
-  display: block;
-  font-size: inherit;
-  font-weight: 500;
-  line-height: inherit;
-  cursor: default;
-  color: #151515;
-  text-decoration: none;
-}
-.pf-c-breadcrumb__heading {
-  display: block;
-  font-size: 0.875rem;
-}
-.pf-c-breadcrumb__item {
-  display: flex;
-  align-items: center;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.3;
-  cursor: default;
-}
-
 <li
   className="pf-c-breadcrumb__item"
 >
@@ -93,19 +45,6 @@ exports[`BreadcrumbHeading component should render breadcrumbHeading with target
 `;
 
 exports[`BreadcrumbHeading component should render default breadcrumbHeading 1`] = `
-.pf-c-breadcrumb__heading {
-  display: block;
-  font-size: 0.875rem;
-}
-.pf-c-breadcrumb__item {
-  display: flex;
-  align-items: center;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.3;
-  cursor: default;
-}
-
 <li
   className="pf-c-breadcrumb__item"
 >
@@ -118,28 +57,6 @@ exports[`BreadcrumbHeading component should render default breadcrumbHeading 1`]
 `;
 
 exports[`BreadcrumbHeading component should render link breadcrumbTItle 1`] = `
-.pf-c-breadcrumb__link.pf-m-current {
-  display: block;
-  font-size: inherit;
-  font-weight: 500;
-  line-height: inherit;
-  cursor: default;
-  color: #151515;
-  text-decoration: none;
-}
-.pf-c-breadcrumb__heading {
-  display: block;
-  font-size: 0.875rem;
-}
-.pf-c-breadcrumb__item {
-  display: flex;
-  align-items: center;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.3;
-  cursor: default;
-}
-
 <li
   className="pf-c-breadcrumb__item"
 >

@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EmptyState Main 1`] = `
-.pf-c-empty-state {
-  display: block;
-  padding: 2rem;
-  text-align: center;
-}
-
 <div
   className="pf-c-empty-state"
 >

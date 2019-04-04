@@ -1,20 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Disabled FormSelect input  1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <select
   aria-invalid={false}
   aria-label="disabled  FormSelect"
@@ -36,20 +22,6 @@ exports[`Disabled FormSelect input  1`] = `
 `;
 
 exports[`FormSelect input with aria-label does not generate console error 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <select
   aria-invalid={false}
   aria-label="FormSelect with aria-label"
@@ -71,20 +43,6 @@ exports[`FormSelect input with aria-label does not generate console error 1`] = 
 `;
 
 exports[`FormSelect input with id does not generate console error 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <select
   aria-invalid={false}
   aria-label={null}
@@ -107,20 +65,6 @@ exports[`FormSelect input with id does not generate console error 1`] = `
 `;
 
 exports[`FormSelect input with no aria-label or id generates console error 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <select
   aria-invalid={false}
   aria-label={null}
@@ -142,20 +86,6 @@ exports[`FormSelect input with no aria-label or id generates console error 1`] =
 `;
 
 exports[`Grouped FormSelect input 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <select
   aria-invalid={false}
   aria-label=" grouped FormSelect"
@@ -233,20 +163,6 @@ exports[`Grouped FormSelect input 1`] = `
 `;
 
 exports[`Simple FormSelect input 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <select
   aria-invalid={false}
   aria-label="simple FormSelect"
@@ -310,20 +226,6 @@ exports[`Simple FormSelect input 1`] = `
 `;
 
 exports[`invalid FormSelect input 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <select
   aria-invalid={true}
   aria-label="invalid FormSelect"
@@ -345,20 +247,6 @@ exports[`invalid FormSelect input 1`] = `
 `;
 
 exports[`required FormSelect input 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <select
   aria-invalid={false}
   aria-label="required FormSelect"

@@ -1,24 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Renders ContextSelectorToggle 1`] = `
-.pf-c-context-selector__toggle-text {
-  display: block;
-}
-.pf-c-context-selector__toggle-icon {
-  display: block;
-}
-.pf-c-context-selector__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  color: #151515;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
 <button
   aria-expanded={false}
   className="pf-c-context-selector__toggle"
@@ -41,27 +23,6 @@ exports[`Renders ContextSelectorToggle 1`] = `
 `;
 
 exports[`Verify ESC press  1`] = `
-.pf-c-context-selector__toggle-text {
-  display: block;
-}
-.pf-c-context-selector__toggle-icon {
-  display: block;
-}
-.pf-c-context-selector__toggle-icon {
-  display: block;
-}
-.pf-c-context-selector__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  color: #151515;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
 <ContextSelectorToggle
   className=""
   id="toggle-id"
@@ -118,27 +79,6 @@ exports[`Verify ESC press  1`] = `
 `;
 
 exports[`Verify ESC press with not isOpen 1`] = `
-.pf-c-context-selector__toggle-text {
-  display: block;
-}
-.pf-c-context-selector__toggle-icon {
-  display: block;
-}
-.pf-c-context-selector__toggle-icon {
-  display: block;
-}
-.pf-c-context-selector__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  color: #151515;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
 <ContextSelectorToggle
   className=""
   id="toggle-id"
@@ -195,27 +135,6 @@ exports[`Verify ESC press with not isOpen 1`] = `
 `;
 
 exports[`Verify keydown enter  1`] = `
-.pf-c-context-selector__toggle-text {
-  display: block;
-}
-.pf-c-context-selector__toggle-icon {
-  display: block;
-}
-.pf-c-context-selector__toggle-icon {
-  display: block;
-}
-.pf-c-context-selector__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  color: #151515;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
 <ContextSelectorToggle
   className=""
   id="toggle-id"
@@ -272,27 +191,6 @@ exports[`Verify keydown enter  1`] = `
 `;
 
 exports[`Verify keydown tab  1`] = `
-.pf-c-context-selector__toggle-text {
-  display: block;
-}
-.pf-c-context-selector__toggle-icon {
-  display: block;
-}
-.pf-c-context-selector__toggle-icon {
-  display: block;
-}
-.pf-c-context-selector__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  color: #151515;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
 <ContextSelectorToggle
   className=""
   id="toggle-id"

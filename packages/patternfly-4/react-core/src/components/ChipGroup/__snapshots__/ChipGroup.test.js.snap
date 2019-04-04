@@ -1,13 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ChipGroup chip group default 1`] = `
-.pf-c-chip-group {
-  display: inline-flex;
-  color: #151515;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
 <div
   className="pf-c-chip-group"
 >

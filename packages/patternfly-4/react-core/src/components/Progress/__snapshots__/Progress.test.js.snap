@@ -1,42 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Progress measure location inside 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-inside.pf-m-lg.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="inside-progress"
@@ -101,42 +65,6 @@ exports[`Progress measure location inside 1`] = `
 `;
 
 exports[`Progress measure location inside and small should render large 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-inside.pf-m-lg.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="large-progress"
@@ -201,42 +129,6 @@ exports[`Progress measure location inside and small should render large 1`] = `
 `;
 
 exports[`Progress measure location none 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="none-progress"
@@ -299,45 +191,6 @@ exports[`Progress measure location none 1`] = `
 `;
 
 exports[`Progress measure location outside 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-outside.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="outside-progress"
@@ -406,45 +259,6 @@ exports[`Progress measure location outside 1`] = `
 `;
 
 exports[`Progress measure location top 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="top-progress"
@@ -513,45 +327,6 @@ exports[`Progress measure location top 1`] = `
 `;
 
 exports[`Progress size lg 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-lg.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="lg-progress"
@@ -620,45 +395,6 @@ exports[`Progress size lg 1`] = `
 `;
 
 exports[`Progress size md 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="md-progress"
@@ -727,45 +463,6 @@ exports[`Progress size md 1`] = `
 `;
 
 exports[`Progress size sm 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-sm.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="sm-progress"
@@ -834,50 +531,6 @@ exports[`Progress size sm 1`] = `
 `;
 
 exports[`Progress variant danger 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status-icon {
-  display: block;
-  margin-left: 0.5rem;
-  color: #c9190b;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-danger.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="danger-progress"
@@ -975,45 +628,6 @@ exports[`Progress variant danger 1`] = `
 `;
 
 exports[`Progress variant info 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="info-progress"
@@ -1082,50 +696,6 @@ exports[`Progress variant info 1`] = `
 `;
 
 exports[`Progress variant success 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status-icon {
-  display: block;
-  margin-left: 0.5rem;
-  color: #c9190b;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-success.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="success-progress"
@@ -1223,45 +793,6 @@ exports[`Progress variant success 1`] = `
 `;
 
 exports[`Progress with aria-valuetext 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="progress-aria-valuetext"
@@ -1330,45 +861,6 @@ exports[`Progress with aria-valuetext 1`] = `
 `;
 
 exports[`Simple progress 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="progress-simple-example"
@@ -1437,45 +929,6 @@ exports[`Simple progress 1`] = `
 `;
 
 exports[`additional label 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="additional-label"
@@ -1546,45 +999,6 @@ exports[`additional label 1`] = `
 `;
 
 exports[`no value specified 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="no-value"
@@ -1653,45 +1067,6 @@ exports[`no value specified 1`] = `
 `;
 
 exports[`value higher than maxValue 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="higher-max-value"
@@ -1760,45 +1135,6 @@ exports[`value higher than maxValue 1`] = `
 `;
 
 exports[`value lower than minValue 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="lower-min-value"
@@ -1867,45 +1203,6 @@ exports[`value lower than minValue 1`] = `
 `;
 
 exports[`value scaled between minValue and maxValue 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="scaled-range-value"
@@ -1974,45 +1271,6 @@ exports[`value scaled between minValue and maxValue 1`] = `
 `;
 
 exports[`value scaled with maxValue 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="scaled-max-value"
@@ -2081,45 +1339,6 @@ exports[`value scaled with maxValue 1`] = `
 `;
 
 exports[`value scaled with minValue 1`] = `
-.pf-c-progress__description {
-  display: block;
-  grid-column: 1 / 2;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__status {
-  display: block;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  align-self: end;
-}
-.pf-c-progress__measure {
-  display: block;
-}
-.pf-c-progress__indicator {
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 1rem;
-  background-color: #0066cc;
-}
-.pf-c-progress__bar {
-  display: block;
-  position: relative;
-  grid-column: 1 / 3;
-  grid-row: 2 / 3;
-  align-self: center;
-  height: 1.5rem;
-  background-color: #ffffff;
-}
-.pf-c-progress.pf-m-singleline {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr;
-}
-
 <Progress
   className=""
   id="scaled-min-value"

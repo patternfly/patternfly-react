@@ -1,20 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`disabled text input 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <input
   aria-invalid={false}
   aria-label="disabled text input"
@@ -28,20 +14,6 @@ exports[`disabled text input 1`] = `
 `;
 
 exports[`invalid text input 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <input
   aria-invalid={true}
   aria-label="invalid text input"
@@ -56,20 +28,6 @@ exports[`invalid text input 1`] = `
 `;
 
 exports[`readonly text input 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <input
   aria-invalid={false}
   aria-label="readonly text input"
@@ -84,20 +42,6 @@ exports[`readonly text input 1`] = `
 `;
 
 exports[`simple text input 1`] = `
-.pf-c-form-control {
-  display: block;
-  color: #151515;
-  position: relative;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #ededed #ededed #8b8d8f #ededed;
-  border-radius: 0;
-  text-overflow: ellipsis;
-}
-
 <input
   aria-invalid={false}
   aria-label="simple text input"

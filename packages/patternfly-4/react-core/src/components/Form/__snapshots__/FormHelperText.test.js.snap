@@ -1,14 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginFooterItem  with custom node 1`] = `
-.pf-c-form__helper-text.pf-m-hidden {
-  display: block;
-  font-size: 0.875rem;
-  color: #151515;
-  visibility: hidden;
-  opacity: 0;
-}
-
 <p
   className="pf-c-form__helper-text pf-m-hidden"
 >
@@ -19,12 +11,6 @@ exports[`LoginFooterItem  with custom node 1`] = `
 exports[`className is added to the root element 1`] = `"pf-c-form__helper-text pf-m-hidden extra-class"`;
 
 exports[`renders with PatternFly Core styles 1`] = `
-.pf-c-form__helper-text.pf-m-error {
-  display: block;
-  font-size: 0.875rem;
-  color: #c9190b;
-}
-
 <p
   className="pf-c-form__helper-text pf-m-error"
 />

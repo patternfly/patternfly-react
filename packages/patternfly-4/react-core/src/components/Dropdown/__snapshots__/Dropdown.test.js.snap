@@ -1,50 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`KebabToggle basic 1`] = `
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
-.pf-c-dropdown.pf-m-expanded {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="down"
@@ -173,26 +129,6 @@ exports[`KebabToggle basic 1`] = `
 `;
 
 exports[`KebabToggle dropup + right aligned 1`] = `
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown.pf-m-top {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="up"
@@ -407,26 +343,6 @@ exports[`KebabToggle dropup + right aligned 1`] = `
 `;
 
 exports[`KebabToggle dropup 1`] = `
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown.pf-m-top {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="up"
@@ -641,126 +557,6 @@ exports[`KebabToggle dropup 1`] = `
 `;
 
 exports[`KebabToggle expanded 1`] = `
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item.pf-m-disabled {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-  pointer-events: none;
-}
-.pf-c-dropdown__menu-item.pf-m-disabled {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-  pointer-events: none;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  background-color: #d2d2d2;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  background-color: #d2d2d2;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
-.pf-c-dropdown.pf-m-expanded {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="down"
@@ -1426,26 +1222,6 @@ exports[`KebabToggle plain 1`] = `
 `;
 
 exports[`KebabToggle regular 1`] = `
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="down"
@@ -1660,26 +1436,6 @@ exports[`KebabToggle regular 1`] = `
 `;
 
 exports[`KebabToggle right aligned 1`] = `
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="down"
@@ -1894,59 +1650,6 @@ exports[`KebabToggle right aligned 1`] = `
 `;
 
 exports[`dropdown basic 1`] = `
-.pf-c-dropdown__toggle-text {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
-.pf-c-dropdown.pf-m-expanded {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="down"
@@ -2080,35 +1783,6 @@ exports[`dropdown basic 1`] = `
 `;
 
 exports[`dropdown dropup + right aligned 1`] = `
-.pf-c-dropdown__toggle-text {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown.pf-m-top {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="up"
@@ -2328,35 +2002,6 @@ exports[`dropdown dropup + right aligned 1`] = `
 `;
 
 exports[`dropdown dropup 1`] = `
-.pf-c-dropdown__toggle-text {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown.pf-m-top {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="up"
@@ -2576,135 +2221,6 @@ exports[`dropdown dropup 1`] = `
 `;
 
 exports[`dropdown expanded 1`] = `
-.pf-c-dropdown__toggle-text {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item.pf-m-disabled {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-  pointer-events: none;
-}
-.pf-c-dropdown__menu-item.pf-m-disabled {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-  pointer-events: none;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  background-color: #d2d2d2;
-}
-.pf-c-dropdown__separator {
-  display: block;
-  height: 1px;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  background-color: #d2d2d2;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu-item {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  text-align: left;
-  white-space: nowrap;
-  background-color: transparent;
-}
-.pf-c-dropdown__menu {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
-.pf-c-dropdown.pf-m-expanded {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="down"
@@ -3161,35 +2677,6 @@ exports[`dropdown expanded 1`] = `
 `;
 
 exports[`dropdown regular 1`] = `
-.pf-c-dropdown__toggle-text {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="down"
@@ -3409,35 +2896,6 @@ exports[`dropdown regular 1`] = `
 `;
 
 exports[`dropdown right aligned 1`] = `
-.pf-c-dropdown__toggle-text {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle-icon {
-  display: block;
-}
-.pf-c-dropdown__toggle {
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  max-width: 100%;
-  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #151515;
-  background-color: transparent;
-}
-.pf-c-dropdown {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-
 <Dropdown
   className=""
   direction="down"

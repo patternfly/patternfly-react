@@ -21,34 +21,6 @@ exports[`Renders ContextSelector 1`] = `
 `;
 
 exports[`Renders ContextSelector open 1`] = `
-<<<<<<< master
-=======
-.pf-c-context-selector__menu-input {
-  display: block;
-  position: relative;
-  padding: 0.5rem 1rem 1rem 1rem;
-  border-bottom: 1px solid #d2d2d2;
-}
-.pf-c-context-selector__menu {
-  display: block;
-  color: #151515;
-  position: absolute;
-  z-index: 100;
-  min-width: 100%;
-  padding-top: 0.5rem;
-  background-color: #ffffff;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  box-shadow: 0 0.0625rem 0.0625rem 0rem rgba(3, 3, 3, 0.05), 0 0.25rem 0.5rem 0.25rem rgba(3, 3, 3, 0.06);
-}
-.pf-c-context-selector.pf-m-expanded {
-  display: inline-block;
-  position: relative;
-  width: 15.625rem;
-  max-width: 100%;
-}
-
->>>>>>> fix: Update React with changes from core
 <div
   className="pf-c-context-selector pf-m-expanded"
 >
