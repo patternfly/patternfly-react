@@ -1,6 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ModalBox Test 1`] = `
+.pf-c-modal-box {
+  display: flex;
+  color: #151515;
+  position: relative;
+  z-index: 600;
+  flex-direction: column;
+  width: 100%;
+  max-width: calc(100% - 2rem);
+  max-height: calc(100vh - 3rem);
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <div
   aria-modal="true"
   ariaDescribedById="bodyId"
@@ -13,6 +28,21 @@ exports[`ModalBox Test 1`] = `
 `;
 
 exports[`ModalBox Test isLarge 1`] = `
+.pf-c-modal-box.pf-m-lg {
+  display: flex;
+  color: #151515;
+  position: relative;
+  z-index: 600;
+  flex-direction: column;
+  width: 100%;
+  max-width: calc(100% - 2rem);
+  max-height: calc(100vh - 3rem);
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <div
   aria-modal="true"
   ariaDescribedById="bodyId"
@@ -25,6 +55,21 @@ exports[`ModalBox Test isLarge 1`] = `
 `;
 
 exports[`ModalBox Test isOpen 1`] = `
+.pf-c-modal-box.pf-m-lg {
+  display: flex;
+  color: #151515;
+  position: relative;
+  z-index: 600;
+  flex-direction: column;
+  width: 100%;
+  max-width: calc(100% - 2rem);
+  max-height: calc(100vh - 3rem);
+  padding: 2rem 2rem 2rem 2rem;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <div
   aria-modal="true"
   ariaDescribedById="bodyId"

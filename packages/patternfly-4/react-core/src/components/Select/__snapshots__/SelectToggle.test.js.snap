@@ -1,6 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`state active 1`] = `
+.pf-c-select__toggle-arrow {
+  display: block;
+}
+.pf-c-select__toggle-arrow {
+  display: block;
+}
+.pf-c-select__toggle.pf-m-active {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 44px;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #151515;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
 <SelectToggle
   className=""
   id="Select Toggle"
@@ -58,6 +81,29 @@ exports[`state active 1`] = `
 `;
 
 exports[`state focus 1`] = `
+.pf-c-select__toggle-arrow {
+  display: block;
+}
+.pf-c-select__toggle-arrow {
+  display: block;
+}
+.pf-c-select__toggle.pf-m-focus {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 44px;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #151515;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
 <SelectToggle
   className=""
   id="Select Toggle"
@@ -115,6 +161,29 @@ exports[`state focus 1`] = `
 `;
 
 exports[`state hover 1`] = `
+.pf-c-select__toggle-arrow {
+  display: block;
+}
+.pf-c-select__toggle-arrow {
+  display: block;
+}
+.pf-c-select__toggle.pf-m-hover {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 44px;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #151515;
+  white-space: nowrap;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
 <SelectToggle
   className=""
   id="Select Toggle"

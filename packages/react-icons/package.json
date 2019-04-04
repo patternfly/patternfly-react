@@ -34,7 +34,7 @@
   "devDependencies": {
     "@fortawesome/free-regular-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
-    "@patternfly/patternfly": "1.0.250",
+    "dg-testrelease": "1.0.10",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "fs-extra": "^6.0.1",
     "glob": "^7.1.2",

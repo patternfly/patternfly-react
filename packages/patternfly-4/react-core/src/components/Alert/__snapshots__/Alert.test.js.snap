@@ -1,6 +1,66 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert - danger Action Close Button 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-danger {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionCloseButton
@@ -134,6 +194,66 @@ exports[`Alert - danger Action Close Button 1`] = `
 `;
 
 exports[`Alert - danger Action Link 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-danger {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -243,6 +363,66 @@ exports[`Alert - danger Action Link 1`] = `
 `;
 
 exports[`Alert - danger Action and Title 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-danger {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -353,6 +533,66 @@ exports[`Alert - danger Action and Title 1`] = `
 `;
 
 exports[`Alert - danger Custom aria label 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-danger {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -464,6 +704,46 @@ exports[`Alert - danger Custom aria label 1`] = `
 `;
 
 exports[`Alert - danger Description 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-danger {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={null}
   className=""
@@ -530,6 +810,46 @@ exports[`Alert - danger Description 1`] = `
 `;
 
 exports[`Alert - danger Title 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-danger {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={null}
   className=""
@@ -597,6 +917,66 @@ exports[`Alert - danger Title 1`] = `
 `;
 
 exports[`Alert - info Action Close Button 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-info {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionCloseButton
@@ -730,6 +1110,66 @@ exports[`Alert - info Action Close Button 1`] = `
 `;
 
 exports[`Alert - info Action Link 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-info {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -839,6 +1279,66 @@ exports[`Alert - info Action Link 1`] = `
 `;
 
 exports[`Alert - info Action and Title 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-info {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -949,6 +1449,66 @@ exports[`Alert - info Action and Title 1`] = `
 `;
 
 exports[`Alert - info Custom aria label 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-info {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -1060,6 +1620,46 @@ exports[`Alert - info Custom aria label 1`] = `
 `;
 
 exports[`Alert - info Description 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-info {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={null}
   className=""
@@ -1126,6 +1726,46 @@ exports[`Alert - info Description 1`] = `
 `;
 
 exports[`Alert - info Title 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-info {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={null}
   className=""
@@ -1193,6 +1833,66 @@ exports[`Alert - info Title 1`] = `
 `;
 
 exports[`Alert - success Action Close Button 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-success {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionCloseButton
@@ -1326,6 +2026,66 @@ exports[`Alert - success Action Close Button 1`] = `
 `;
 
 exports[`Alert - success Action Link 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-success {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -1435,6 +2195,66 @@ exports[`Alert - success Action Link 1`] = `
 `;
 
 exports[`Alert - success Action and Title 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-success {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -1545,6 +2365,66 @@ exports[`Alert - success Action and Title 1`] = `
 `;
 
 exports[`Alert - success Custom aria label 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-success {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -1656,6 +2536,46 @@ exports[`Alert - success Custom aria label 1`] = `
 `;
 
 exports[`Alert - success Description 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-success {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={null}
   className=""
@@ -1722,6 +2642,46 @@ exports[`Alert - success Description 1`] = `
 `;
 
 exports[`Alert - success Title 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-success {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={null}
   className=""
@@ -1789,6 +2749,66 @@ exports[`Alert - success Title 1`] = `
 `;
 
 exports[`Alert - warning Action Close Button 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-warning {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionCloseButton
@@ -1922,6 +2942,66 @@ exports[`Alert - warning Action Close Button 1`] = `
 `;
 
 exports[`Alert - warning Action Link 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-warning {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -2031,6 +3111,66 @@ exports[`Alert - warning Action Link 1`] = `
 `;
 
 exports[`Alert - warning Action and Title 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-warning {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -2141,6 +3281,66 @@ exports[`Alert - warning Action and Title 1`] = `
 `;
 
 exports[`Alert - warning Custom aria label 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-button.pf-m-link {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #0066cc;
+}
+.pf-c-alert__action {
+  display: block;
+  grid-area: action;
+  padding-top: 0.6875rem;
+  padding-right: 0.25rem;
+}
+.pf-c-alert.pf-m-warning {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={
     <AlertActionLink
@@ -2252,6 +3452,46 @@ exports[`Alert - warning Custom aria label 1`] = `
 `;
 
 exports[`Alert - warning Description 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-warning {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={null}
   className=""
@@ -2318,6 +3558,46 @@ exports[`Alert - warning Description 1`] = `
 `;
 
 exports[`Alert - warning Title 1`] = `
+.pf-c-alert__icon {
+  display: flex;
+  grid-area: icon;
+  padding: 1rem;
+  font-size: 1.3125rem;
+  color: #004368;
+  background-color: #73bcf7;
+}
+.pf-u-screen-reader {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border: 0px;
+}
+.pf-c-alert__title {
+  display: block;
+  grid-area: title;
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1rem;
+  color: #004368;
+}
+.pf-c-alert__description {
+  display: block;
+  grid-area: content;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+.pf-c-alert.pf-m-warning {
+  display: grid;
+  color: #151515;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "icon title action" "icon content content";
+  background-color: #ffffff;
+  box-shadow: 0 0.1875rem 0.4375rem 0.1875rem rgba(3, 3, 3, 0.13), 0 0.6875rem 1.5rem 1rem rgba(3, 3, 3, 0.12);
+}
+
 <Alert
   action={null}
   className=""

@@ -46,7 +46,7 @@
     "victory-core": "^31.1.0"
   },
   "devDependencies": {
-    "@patternfly/patternfly": "1.0.250",
+    "dg-testrelease": "1.0.10",
     "@patternfly/react-tokens": "^2.3.0",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",

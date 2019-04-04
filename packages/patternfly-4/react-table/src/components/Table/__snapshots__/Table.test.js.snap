@@ -1,6 +1,339 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Actions table 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   actionResolver={[Function]}
   areActionsDisabled={[Function]}
@@ -8918,6 +9251,60 @@ exports[`Actions table 1`] = `
 `;
 
 exports[`Cell header table 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -14777,6 +15164,210 @@ exports[`Cell header table 1`] = `
 `;
 
 exports[`Collapsible nested table 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-button.pf-m-plain.pf-m-expanded {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-m-expanded {
+  display: block;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -21614,6 +22205,189 @@ exports[`Collapsible nested table 1`] = `
 `;
 
 exports[`Collapsible table 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-button.pf-m-plain.pf-m-expanded {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-m-expanded {
+  display: block;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row.pf-m-expanded {
+  display: block;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0.3125rem 0.625rem -0.25rem rgba(3, 3, 3, 0.25);
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  border-bottom-color: #fff;
+  border-bottom-width: 1px;
+}
+.pf-m-expanded {
+  display: block;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__toggle {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -28399,6 +29173,70 @@ exports[`Collapsible table 1`] = `
 `;
 
 exports[`Header width table 1`] = `
+.pf-m-width-10 {
+  display: block;
+}
+.pf-m-width-10 {
+  display: block;
+}
+.pf-m-width-30 {
+  display: block;
+}
+.pf-m-width-30 {
+  display: block;
+}
+.pf-m-width-max {
+  display: block;
+}
+.pf-m-width-max {
+  display: block;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -34355,6 +35193,149 @@ exports[`Header width table 1`] = `
 `;
 
 exports[`Selectable table 1`] = `
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__expandable-row-content {
+  display: block;
+}
+.pf-c-table__expandable-row {
+  display: none;
+  position: relative;
+  border-bottom: 0 solid transparent;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 250ms cubic-bezier(0.42, 0, 0.58, 1);
+  visibility: hidden;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table__check {
+  display: block;
+  vertical-align: top;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -41080,6 +42061,371 @@ exports[`Selectable table 1`] = `
 `;
 
 exports[`Simple Actions table 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-dropdown__toggle.pf-m-plain.pf-m-disabled {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #72767b;
+  background-color: transparent;
+  pointer-events: none;
+}
+.pf-c-dropdown {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table__action {
+  display: block;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   actions={
     Array [
@@ -52487,6 +53833,19 @@ exports[`Simple Actions table 1`] = `
 `;
 
 exports[`Simple table aria-label 1`] = `
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -58271,6 +59630,19 @@ exports[`Simple table aria-label 1`] = `
 `;
 
 exports[`Simple table caption 1`] = `
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   caption="Simple Table"
   cells={
@@ -64056,6 +65428,19 @@ exports[`Simple table caption 1`] = `
 `;
 
 exports[`Simple table header 1`] = `
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   cells={
     Array [
@@ -69845,6 +71230,60 @@ exports[`Simple table header 1`] = `
 `;
 
 exports[`Sortable table 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -75691,6 +77130,60 @@ exports[`Sortable table 1`] = `
 `;
 
 exports[`Table variants Breakpoint - grid 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table.pf-m-grid {
+  display: grid;
+  color: #151515;
+  width: 100%;
+  background-color: transparent;
+}
+.pf-c-table.pf-m-grid {
+  display: grid;
+  color: #151515;
+  width: 100%;
+  background-color: transparent;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -81535,6 +83028,60 @@ exports[`Table variants Breakpoint - grid 1`] = `
 `;
 
 exports[`Table variants Breakpoint - grid-lg 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table.pf-m-grid-lg {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-lg {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -87379,6 +88926,60 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
 `;
 
 exports[`Table variants Breakpoint - grid-md 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={
@@ -93223,6 +94824,60 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
 `;
 
 exports[`Table variants Size - compact 1`] = `
+.pf-c-table__sort-indicator {
+  display: block;
+  margin-left: 1rem;
+  line-height: 1;
+  color: #d2d2d2;
+  pointer-events: none;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table__sort {
+  display: block;
+}
+.pf-c-table.pf-m-grid-md.pf-m-compact {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+.pf-c-table.pf-m-grid-md.pf-m-compact {
+  display: block;
+  color: #151515;
+  width: 100%;
+  background-color: #ffffff;
+}
+
 <Table
   aria-label="Aria labeled"
   cells={

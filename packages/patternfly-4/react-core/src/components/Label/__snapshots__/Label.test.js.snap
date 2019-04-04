@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`compact label 1`] = `
+.pf-c-label.pf-m-compact {
+  display: inline-block;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #0066cc;
+  border-radius: 3px;
+}
+
 <span
   className="pf-c-label pf-m-compact"
 >
@@ -9,6 +20,17 @@ exports[`compact label 1`] = `
 `;
 
 exports[`label 1`] = `
+.pf-c-label {
+  display: inline-block;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #0066cc;
+  border-radius: 3px;
+}
+
 <span
   className="pf-c-label"
 >
@@ -17,6 +39,17 @@ exports[`label 1`] = `
 `;
 
 exports[`label with additional class name 1`] = `
+.pf-c-label.klass1 {
+  display: inline-block;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #0066cc;
+  border-radius: 3px;
+}
+
 <span
   className="pf-c-label klass1"
 >
@@ -25,6 +58,17 @@ exports[`label with additional class name 1`] = `
 `;
 
 exports[`label with additional class name and props 1`] = `
+.pf-c-label.class-1 {
+  display: inline-block;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #0066cc;
+  border-radius: 3px;
+}
+
 <span
   className="pf-c-label class-1"
   data-label-name="something"

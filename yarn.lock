@@ -1648,10 +1648,6 @@
     universal-user-agent "^2.0.0"
     url-template "^2.0.8"
 
-"@patternfly/patternfly@1.0.250":
-  version "1.0.250"
-  resolved "https://registry.yarnpkg.com/@patternfly/patternfly/-/patternfly-1.0.250.tgz#02952d55039891ab4796b6e78e677ecd01c25855"
-
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
   resolved "https://registry.yarnpkg.com/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz#2e9da9d3ade9d18d013333eb408c457d04eabac0"
@@ -7015,6 +7011,10 @@ dezalgo@^1.0.0:
   dependencies:
     asap "^2.0.0"
     wrappy "1"
+
+dg-testrelease@1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/dg-testrelease/-/dg-testrelease-1.0.10.tgz#f81fc99a6e2a85d841097628a38baace604856ee"
 
 diff@3.5.0, diff@^3.2.0:
   version "3.5.0"

@@ -1,6 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown toggle 1`] = `
+.pf-c-dropdown__toggle-text {
+  display: block;
+}
+.pf-c-dropdown__toggle-icon {
+  display: block;
+}
+.pf-c-dropdown__toggle-icon {
+  display: block;
+}
+.pf-c-dropdown__toggle {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #151515;
+  background-color: transparent;
+}
+
 <DropdownToggle
   className=""
   iconComponent={[Function]}
@@ -72,6 +96,21 @@ exports[`Dropdown toggle 1`] = `
 `;
 
 exports[`Kebab toggle 1`] = `
+.pf-c-dropdown__toggle {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  max-width: 100%;
+  padding: 0.375rem 0.5rem 0.375rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #151515;
+  background-color: transparent;
+}
+
 <Kebab
   aria-label="Actions"
   className=""

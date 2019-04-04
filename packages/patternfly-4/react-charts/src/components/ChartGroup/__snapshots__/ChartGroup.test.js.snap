@@ -19,9 +19,9 @@ exports[`ChartGroup 1`] = `
     Object {
       "area": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -30,11 +30,11 @@ exports[`ChartGroup 1`] = `
           "data": Object {
             "fill": "#bee1f4",
             "fillOpacity": 0.4,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -47,9 +47,9 @@ exports[`ChartGroup 1`] = `
       },
       "axis": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -63,7 +63,7 @@ exports[`ChartGroup 1`] = `
             "strokeWidth": 1,
           },
           "axisLabel": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -77,7 +77,7 @@ exports[`ChartGroup 1`] = `
             "stroke": "none",
           },
           "tickLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -95,9 +95,9 @@ exports[`ChartGroup 1`] = `
       "bar": Object {
         "barWidth": 10,
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -107,7 +107,7 @@ exports[`ChartGroup 1`] = `
             "stroke": "none",
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -120,9 +120,9 @@ exports[`ChartGroup 1`] = `
       "boxplot": Object {
         "boxWidth": 20,
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -130,11 +130,11 @@ exports[`ChartGroup 1`] = `
         "style": Object {
           "max": Object {
             "padding": 8,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "maxLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -143,11 +143,11 @@ exports[`ChartGroup 1`] = `
           },
           "median": Object {
             "padding": 8,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "medianLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -156,11 +156,11 @@ exports[`ChartGroup 1`] = `
           },
           "min": Object {
             "padding": 8,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "minLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -172,7 +172,7 @@ exports[`ChartGroup 1`] = `
             "padding": 8,
           },
           "q1Labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -184,7 +184,7 @@ exports[`ChartGroup 1`] = `
             "padding": 8,
           },
           "q3Labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -196,24 +196,24 @@ exports[`ChartGroup 1`] = `
       },
       "candlestick": Object {
         "candleColors": Object {
-          "negative": "#39a5dc",
+          "negative": "#73bcf7",
           "positive": "#bee1f4",
         },
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
         "padding": 8,
         "style": Object {
           "data": Object {
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -226,9 +226,9 @@ exports[`ChartGroup 1`] = `
       },
       "chart": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -243,9 +243,9 @@ exports[`ChartGroup 1`] = `
       "errorbar": Object {
         "borderWidth": 8,
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -253,11 +253,11 @@ exports[`ChartGroup 1`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -270,9 +270,9 @@ exports[`ChartGroup 1`] = `
       },
       "group": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -281,9 +281,9 @@ exports[`ChartGroup 1`] = `
       },
       "legend": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "gutter": 20,
@@ -293,7 +293,7 @@ exports[`ChartGroup 1`] = `
             "type": "square",
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -301,7 +301,7 @@ exports[`ChartGroup 1`] = `
             "stroke": "transparent",
           },
           "title": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -313,9 +313,9 @@ exports[`ChartGroup 1`] = `
       },
       "line": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -323,11 +323,11 @@ exports[`ChartGroup 1`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -340,9 +340,9 @@ exports[`ChartGroup 1`] = `
       },
       "pie": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "padding": 20,
@@ -353,7 +353,7 @@ exports[`ChartGroup 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -364,9 +364,9 @@ exports[`ChartGroup 1`] = `
       },
       "scatter": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -378,7 +378,7 @@ exports[`ChartGroup 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -391,9 +391,9 @@ exports[`ChartGroup 1`] = `
       },
       "stack": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -412,7 +412,7 @@ exports[`ChartGroup 1`] = `
           "cornerRadius": 0,
           "fill": "#fff",
           "pointerEvents": "none",
-          "stroke": "#282d33",
+          "stroke": "#151515",
           "strokeWidth": 1,
         },
         "pointerLength": 10,
@@ -423,15 +423,15 @@ exports[`ChartGroup 1`] = `
           "letterSpacing": "normal",
           "padding": 8,
           "pointerEvents": "none",
-          "stroke": "#282d33",
+          "stroke": "#151515",
           "textAnchor": "middle",
         },
       },
       "voronoi": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -448,7 +448,7 @@ exports[`ChartGroup 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -484,9 +484,9 @@ exports[`ChartGroup 2`] = `
     Object {
       "area": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -495,11 +495,11 @@ exports[`ChartGroup 2`] = `
           "data": Object {
             "fill": "#bee1f4",
             "fillOpacity": 0.4,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -512,9 +512,9 @@ exports[`ChartGroup 2`] = `
       },
       "axis": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -528,7 +528,7 @@ exports[`ChartGroup 2`] = `
             "strokeWidth": 1,
           },
           "axisLabel": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -542,7 +542,7 @@ exports[`ChartGroup 2`] = `
             "stroke": "none",
           },
           "tickLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -560,9 +560,9 @@ exports[`ChartGroup 2`] = `
       "bar": Object {
         "barWidth": 10,
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -572,7 +572,7 @@ exports[`ChartGroup 2`] = `
             "stroke": "none",
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -585,9 +585,9 @@ exports[`ChartGroup 2`] = `
       "boxplot": Object {
         "boxWidth": 20,
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -595,11 +595,11 @@ exports[`ChartGroup 2`] = `
         "style": Object {
           "max": Object {
             "padding": 8,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "maxLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -608,11 +608,11 @@ exports[`ChartGroup 2`] = `
           },
           "median": Object {
             "padding": 8,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "medianLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -621,11 +621,11 @@ exports[`ChartGroup 2`] = `
           },
           "min": Object {
             "padding": 8,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "minLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -637,7 +637,7 @@ exports[`ChartGroup 2`] = `
             "padding": 8,
           },
           "q1Labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -649,7 +649,7 @@ exports[`ChartGroup 2`] = `
             "padding": 8,
           },
           "q3Labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -661,24 +661,24 @@ exports[`ChartGroup 2`] = `
       },
       "candlestick": Object {
         "candleColors": Object {
-          "negative": "#39a5dc",
+          "negative": "#73bcf7",
           "positive": "#bee1f4",
         },
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
         "padding": 8,
         "style": Object {
           "data": Object {
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -691,9 +691,9 @@ exports[`ChartGroup 2`] = `
       },
       "chart": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -708,9 +708,9 @@ exports[`ChartGroup 2`] = `
       "errorbar": Object {
         "borderWidth": 8,
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -718,11 +718,11 @@ exports[`ChartGroup 2`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -735,9 +735,9 @@ exports[`ChartGroup 2`] = `
       },
       "group": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -746,9 +746,9 @@ exports[`ChartGroup 2`] = `
       },
       "legend": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "gutter": 20,
@@ -758,7 +758,7 @@ exports[`ChartGroup 2`] = `
             "type": "square",
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -766,7 +766,7 @@ exports[`ChartGroup 2`] = `
             "stroke": "transparent",
           },
           "title": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -778,9 +778,9 @@ exports[`ChartGroup 2`] = `
       },
       "line": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -788,11 +788,11 @@ exports[`ChartGroup 2`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -805,9 +805,9 @@ exports[`ChartGroup 2`] = `
       },
       "pie": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "padding": 20,
@@ -818,7 +818,7 @@ exports[`ChartGroup 2`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -829,9 +829,9 @@ exports[`ChartGroup 2`] = `
       },
       "scatter": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -843,7 +843,7 @@ exports[`ChartGroup 2`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -856,9 +856,9 @@ exports[`ChartGroup 2`] = `
       },
       "stack": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -877,7 +877,7 @@ exports[`ChartGroup 2`] = `
           "cornerRadius": 0,
           "fill": "#fff",
           "pointerEvents": "none",
-          "stroke": "#282d33",
+          "stroke": "#151515",
           "strokeWidth": 1,
         },
         "pointerLength": 10,
@@ -888,15 +888,15 @@ exports[`ChartGroup 2`] = `
           "letterSpacing": "normal",
           "padding": 8,
           "pointerEvents": "none",
-          "stroke": "#282d33",
+          "stroke": "#151515",
           "textAnchor": "middle",
         },
       },
       "voronoi": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -913,7 +913,7 @@ exports[`ChartGroup 2`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -950,9 +950,9 @@ exports[`renders container children 1`] = `
     Object {
       "area": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -961,11 +961,11 @@ exports[`renders container children 1`] = `
           "data": Object {
             "fill": "#bee1f4",
             "fillOpacity": 0.4,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -978,9 +978,9 @@ exports[`renders container children 1`] = `
       },
       "axis": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -994,7 +994,7 @@ exports[`renders container children 1`] = `
             "strokeWidth": 1,
           },
           "axisLabel": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1008,7 +1008,7 @@ exports[`renders container children 1`] = `
             "stroke": "none",
           },
           "tickLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1026,9 +1026,9 @@ exports[`renders container children 1`] = `
       "bar": Object {
         "barWidth": 10,
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -1038,7 +1038,7 @@ exports[`renders container children 1`] = `
             "stroke": "none",
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1051,9 +1051,9 @@ exports[`renders container children 1`] = `
       "boxplot": Object {
         "boxWidth": 20,
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -1061,11 +1061,11 @@ exports[`renders container children 1`] = `
         "style": Object {
           "max": Object {
             "padding": 8,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "maxLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1074,11 +1074,11 @@ exports[`renders container children 1`] = `
           },
           "median": Object {
             "padding": 8,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "medianLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1087,11 +1087,11 @@ exports[`renders container children 1`] = `
           },
           "min": Object {
             "padding": 8,
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "minLabels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1103,7 +1103,7 @@ exports[`renders container children 1`] = `
             "padding": 8,
           },
           "q1Labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1115,7 +1115,7 @@ exports[`renders container children 1`] = `
             "padding": 8,
           },
           "q3Labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1127,24 +1127,24 @@ exports[`renders container children 1`] = `
       },
       "candlestick": Object {
         "candleColors": Object {
-          "negative": "#39a5dc",
+          "negative": "#73bcf7",
           "positive": "#bee1f4",
         },
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
         "padding": 8,
         "style": Object {
           "data": Object {
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1157,9 +1157,9 @@ exports[`renders container children 1`] = `
       },
       "chart": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -1174,9 +1174,9 @@ exports[`renders container children 1`] = `
       "errorbar": Object {
         "borderWidth": 8,
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -1184,11 +1184,11 @@ exports[`renders container children 1`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1201,9 +1201,9 @@ exports[`renders container children 1`] = `
       },
       "group": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -1212,9 +1212,9 @@ exports[`renders container children 1`] = `
       },
       "legend": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "gutter": 20,
@@ -1224,7 +1224,7 @@ exports[`renders container children 1`] = `
             "type": "square",
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1232,7 +1232,7 @@ exports[`renders container children 1`] = `
             "stroke": "transparent",
           },
           "title": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1244,9 +1244,9 @@ exports[`renders container children 1`] = `
       },
       "line": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -1254,11 +1254,11 @@ exports[`renders container children 1`] = `
         "style": Object {
           "data": Object {
             "fill": "transparent",
-            "stroke": "#39a5dc",
+            "stroke": "#73bcf7",
             "strokeWidth": 2,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1271,9 +1271,9 @@ exports[`renders container children 1`] = `
       },
       "pie": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "padding": 20,
@@ -1284,7 +1284,7 @@ exports[`renders container children 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1295,9 +1295,9 @@ exports[`renders container children 1`] = `
       },
       "scatter": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -1309,7 +1309,7 @@ exports[`renders container children 1`] = `
             "strokeWidth": 0,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",
@@ -1322,9 +1322,9 @@ exports[`renders container children 1`] = `
       },
       "stack": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -1343,7 +1343,7 @@ exports[`renders container children 1`] = `
           "cornerRadius": 0,
           "fill": "#fff",
           "pointerEvents": "none",
-          "stroke": "#282d33",
+          "stroke": "#151515",
           "strokeWidth": 1,
         },
         "pointerLength": 10,
@@ -1354,15 +1354,15 @@ exports[`renders container children 1`] = `
           "letterSpacing": "normal",
           "padding": 8,
           "pointerEvents": "none",
-          "stroke": "#282d33",
+          "stroke": "#151515",
           "textAnchor": "middle",
         },
       },
       "voronoi": Object {
         "colorScale": Array [
-          "#007bba",
+          "#06c",
           "#bee1f4",
-          "#39a5dc",
+          "#73bcf7",
           "#0066ff",
         ],
         "height": 301,
@@ -1379,7 +1379,7 @@ exports[`renders container children 1`] = `
             "strokeWidth": 1,
           },
           "labels": Object {
-            "fill": "#282d33",
+            "fill": "#151515",
             "fontFamily": "'Gill Sans', 'Gill Sans MT', 'Ser­avek', 'Trebuchet MS', sans-serif",
             "fontSize": 14,
             "letterSpacing": "normal",

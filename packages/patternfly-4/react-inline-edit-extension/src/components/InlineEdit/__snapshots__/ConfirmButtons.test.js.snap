@@ -1,6 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ConfirmButtons renders correctly 1`] = `
+.pf-c-button.pf-m-primary {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #0066cc;
+}
+.pf-c-button.pf-m-plain {
+  display: inline-block;
+  position: relative;
+  padding: 0.375rem 1rem 0.375rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 0px;
+  border-radius: 3px;
+  color: #72767b;
+}
 .pf-c-table__inline-edit-buttons.pf-m-top.pf-m-bold {
   display: block;
   position: fixed;
