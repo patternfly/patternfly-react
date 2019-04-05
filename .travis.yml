@@ -65,7 +65,7 @@ jobs:
         - yarn test:misc
         - npx codecov -F patternflymisc
     - name: (PF4) Build Docs
-      if: branch = master && type != pull_request && fork = false
+      if: "true" # branch = master && type != pull_request && fork = false
       install: skip
       script:
         - yarn build:docs
