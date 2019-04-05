@@ -40,6 +40,9 @@ exports.createPages = ({ actions, graphql }) => {
     }
   `);
   return markdown.then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
     result.data.allMarkdownRemark.nodes.forEach(node => {
       const componentName = navHelpers.getFileName(node.fileAbsolutePath);
       const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
