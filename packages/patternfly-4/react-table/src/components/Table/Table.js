@@ -236,7 +236,7 @@ class Table extends React.Component {
           }}
           columns={headerData}
           role="grid"
-          className={css(styles.table, getModifier(stylesGrid, gridBreakPoint), getModifier(styles, variant), className)}
+          className={css(styles.table, getModifier(stylesGrid, gridBreakPoint), getModifier(styles, variant), onCollapse && variant === TableVariant.compact && styles.modifiers.expandable, className)}
         >
           {caption && <caption>{caption}</caption>}
           {children}
