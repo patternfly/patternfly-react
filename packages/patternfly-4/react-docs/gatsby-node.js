@@ -43,7 +43,7 @@ exports.createPages = ({ actions, graphql }) => {
   `);
 
   return markdown.then(markdownRemark => {
-    console.log('~~test~~ ', markdownRemark, markdownRemark.data);
+    console.log('~~test~~', markdownRemark, markdownRemark.data);
     if (markdownRemark.data) {
       markdownRemark.data.allMarkdownRemark.edges.forEach(({node}) => {
         const componentName = navHelpers.getFileName(node.fileAbsolutePath);
