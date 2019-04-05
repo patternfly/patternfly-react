@@ -37,7 +37,7 @@ const Icons = () => {
   return (
     <SidebarLayout>
       <PageSection>
-        <Title size="4xl" headingLevel="h1">Icons</Title>
+        <Title size="4xl" level="h1">Icons</Title>
         <Text>
           These are all Patternfly React Icons.
         </Text>

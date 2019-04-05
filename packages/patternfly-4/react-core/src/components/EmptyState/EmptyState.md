@@ -18,7 +18,7 @@ import { CubesIcon } from '@patternfly/react-icons';
 SimpleEmptyState = () => (
   <EmptyState>
     <EmptyStateIcon icon={CubesIcon} />
-    <Title headingLevel="h5" size="lg">Empty State</Title>
+    <Title level="h5" size="lg">Empty State</Title>
     <EmptyStateBody>
       This represents an the empty state pattern in Patternfly 4. Hopefully it's simple enough to use but flexible
       enough to meet a variety of needs.

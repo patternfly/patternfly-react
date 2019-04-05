@@ -27,8 +27,8 @@ const IndexPage = ({ data }) => {
       <div style={containerStyle}>
         <PageSection style={centerStyle}>
           <div style={{ flex: "none", textAlign: "center" }}>
-            <Title size="4xl">PatternFly 4 React Docs</Title>
-            <Title size="2xl">
+            <Title size="4xl" level="h1">PatternFly 4 React Docs</Title>
+            <Title size="2xl" level="h3">
               {prInfo.num ? <a href={prInfo.url}>PR #{prInfo.num}</a> : "Hi people!"}
             </Title>
             <p>Welcome to Patternfly 4 React docs.</p>

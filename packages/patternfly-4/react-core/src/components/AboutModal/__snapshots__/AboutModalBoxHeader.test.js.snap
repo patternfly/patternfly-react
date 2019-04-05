@@ -5,8 +5,8 @@ exports[`AboutModalBoxHeader Test 1`] = `
   className="pf-c-about-modal-box__header"
 >
   <Title
-    headingLevel="h1"
     id="id"
+    level="h1"
     size="4xl"
   >
     Product Name

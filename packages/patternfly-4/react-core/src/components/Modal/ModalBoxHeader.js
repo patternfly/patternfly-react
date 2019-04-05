@@ -24,7 +24,7 @@ const ModalBoxHeader = ({ hideTitle, children, className, ...props }) => {
   const hidden = hideTitle ? css(accessibleStyles.screenReader) : '';
 
   return <React.Fragment>
-    <Title size="2xl" headingLevel="h3" className={className + hidden} {...props}>
+    <Title size="2xl" level="h3" className={className + hidden} {...props}>
       {children}
     </Title>
   </React.Fragment>;

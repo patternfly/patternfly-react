@@ -55,7 +55,7 @@ const MarkdownTemplate = ({ data }) => {
   return (
     <SidebarLayout>
       <PageSection>
-        <Title size="4xl" style={{ textTransform: 'capitalize' }}>
+        <Title size="4xl" level="h1" style={{ textTransform: 'capitalize' }}>
           {data.markdownRemark.frontmatter.title} {section.indexOf('-') === -1 ? section : ''}
         </Title>
         {renderAst(data.markdownRemark.htmlAst)}

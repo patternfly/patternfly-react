@@ -12,14 +12,14 @@ export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 's
   /** Additional classes added to the Title */
   className?: string;
   /** the heading level to use */
-  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  level: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 const Title: React.FunctionComponent<TitleProps> = ({
   size,
   className = '',
   children = '',
-  headingLevel: HeadingLevel = 'h1',
+  level: HeadingLevel = 'h1',
   ...props
 }: TitleProps) => {
   return (

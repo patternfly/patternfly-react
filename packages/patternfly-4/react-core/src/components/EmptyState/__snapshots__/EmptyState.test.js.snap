@@ -5,7 +5,7 @@ exports[`EmptyState Main 1`] = `
   className="pf-c-empty-state"
 >
   <Title
-    headingLevel="h5"
+    level="h5"
     size="lg"
   >
     HTTP Proxies

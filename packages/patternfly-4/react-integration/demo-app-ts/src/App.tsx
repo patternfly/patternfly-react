@@ -91,7 +91,7 @@ class App extends Component<AppState> {
     return (
       <div className="App">
         <header className="App-header">
-          <Title style={{ color: '#fff', padding: '12px 0' }} headingLevel="h1" size="4xl">
+          <Title style={{ color: '#fff', padding: '12px 0' }} level="h1" size="4xl">
             PF4 Integration Sandbox
           </Title>
           <Avatar src={logo} alt={'avatar'} />
@@ -163,11 +163,11 @@ class App extends Component<AppState> {
         </InputGroup>
         <ContextSelector
           toggleText="My Project"
-          onSearchInputChange={() => {}}
+          onSearchInputChange={() => { }}
           isOpen={true}
           searchInputValue=""
-          onToggle={() => {}}
-          onSelect={() => {}}
+          onToggle={() => { }}
+          onSelect={() => { }}
           screenReaderLabel="screenReader Label"
           searchInputPlaceholder="test"
           searchButtonAriaLabel="Aria Lable"

@@ -21,7 +21,7 @@ const defaultProps = {
 
 const AboutModalBoxHeader = ({ className, productName, id, ...props }) => (
   <div {...props} className={css(styles.aboutModalBoxHeader, className)}>
-    <Title headingLevel="h1" size="4xl" id={id}>
+    <Title level="h1" size="4xl" id={id}>
       {productName}
     </Title>
   </div>
