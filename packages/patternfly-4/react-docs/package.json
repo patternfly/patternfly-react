@@ -16,7 +16,7 @@
     "@patternfly/patternfly": "1.0.250",
     "@patternfly/react-core": "2.11.1",
     "@patternfly/react-icons": "^3.7.1",
-    "gatsby": "2.3.3",
+    "gatsby": "2.2.5",
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-json": "^2.1.11",
