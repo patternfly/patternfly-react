@@ -1,26 +1,27 @@
 // This is the entrypoint of gatsby (aside from boring default gatsby plugins)
+const path = require("path");
 
 // Files we never care to pull data from
+// matched by https://github.com/paulmillr/chokidar
 const ignore = [
-  `**/dist/**`,
+  `**/dist`,
+  `**/helpers`,
+  `**/scripts`,
+  `**/styles`,
+  `**/build`,
+  `**/utils`,
+  `**/test-helpers`,
+  /.*react-styles.*/,
+  /.*react-docs.*/,
+  /.*react-integration.*/,
+  `**/\..*`, // dotfiles
   `**/*.d.ts`,
   `**/*.test.*`,
   `**/index.*`,
-  `**/helpers/**`,
-  `**/scripts/**`,
-  `**/styles/**`,
-  `**/build/**`,
-  `**/utils/**`,
-  `**/test-helpers/**`,
-  `**/\.*`,
-  `**/\..*/**`,
   `**/tsconfig.*`,
   `**/tslint.*`,
   `**/README.*`,
-  `**/CHANGELOG.*`,
-  `**/react\-docs/**`,
-  `**/react\-styles/**`,
-  `**/react\-integration/**`,
+  `**/CHANGELOG.*`
 ];
 
 module.exports = {
@@ -38,15 +39,19 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `patternfly-4`,
-        path: `${__dirname}/../../patternfly-4`,
+        path: path.resolve(`${__dirname}/..`),
         ignore: ignore
       },
     },
-    // Our custom plugin for *.js?x *.ts?x files to get prop types
-    `gatsby-transformer-react-docgen-typescript`,
-    // Our custom plugin for examples/*.(js|svg) files to add to .cache/example_index.js
-    // ...then webpack deals with those files statically instead of us dynamically :)
-    `gatsby-transformer-react-examples`,
+    {
+      // Our custom plugin for *.js?x *.ts?x files to get prop types
+      resolve: require.resolve(`${__dirname}/plugins/gatsby-transformer-react-docgen-typescript`),
+    },
+    {
+      // Our custom plugin for examples/*.(js|svg) files to add to .cache/example_index.js
+      // ...then webpack deals with those files statically instead of us dynamically :)
+      resolve: require.resolve(`${__dirname}/plugins/gatsby-transformer-react-examples`),
+    },
     // The markdown plugin for *.md files
     `gatsby-transformer-remark`,
     // The plugin for package.json files (to get version numbers)

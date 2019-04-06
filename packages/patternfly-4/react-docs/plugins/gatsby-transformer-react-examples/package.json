@@ -5,8 +5,8 @@
   "author": "Red Hat",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "gatsby": "^2.1.37"
+  "peerDependencies": {
+    "gatsby": ">=2"
   },
   "keywords": [
     "gatsby",
