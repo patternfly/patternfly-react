@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import BreadcrumbItem from './BreadcrumbItem';
 import { shallow } from 'enzyme';
 
