@@ -17,17 +17,17 @@ exports[`Breadcrumb component should render breadcrumb with children 1`] = `
   <ol
     className="pf-c-breadcrumb__list"
   >
-    <BreadcrumbItem
+    <Component
       to="#"
     >
       Item 1
-    </BreadcrumbItem>
+    </Component>
      
-    <BreadcrumbItem
+    <Component
       to="#"
     >
       Item 1
-    </BreadcrumbItem>
+    </Component>
   </ol>
 </nav>
 `;

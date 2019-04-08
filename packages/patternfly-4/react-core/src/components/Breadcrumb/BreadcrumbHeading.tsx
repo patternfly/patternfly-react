@@ -10,7 +10,7 @@ export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
   component?: React.ReactType<BreadcrumbHeadingProps>;
 }
 
-const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
+export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
   children = null,
   className = '',
   to = null,
@@ -34,5 +34,3 @@ const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
     </h1>
   </li>
 );
-
-export default BreadcrumbHeading;
