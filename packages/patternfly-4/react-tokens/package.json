@@ -30,7 +30,7 @@
     "clean": "rimraf dist"
   },
   "devDependencies": {
-    "dg-testrelease": "1.0.10",
+   "@patternfly/patternfly": "2.0.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "css": "^2.2.3",
     "fs-extra": "^6.0.1",

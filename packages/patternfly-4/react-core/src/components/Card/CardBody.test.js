@@ -29,3 +29,8 @@ test('allows passing in a React Component as the component', () => {
   const view = shallow(<CardBody component={Component} />);
   expect(view.type()).toBe(Component);
 });
+
+test('body with no-fill applied ', () => {
+  const view = shallow(<CardBody isFilled={false} />);
+  expect(view).toMatchSnapshot();
+});
