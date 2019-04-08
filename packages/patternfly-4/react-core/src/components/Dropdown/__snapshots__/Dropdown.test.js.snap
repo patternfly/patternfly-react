@@ -5,6 +5,7 @@ exports[`KebabToggle basic 1`] = `
   className=""
   direction="down"
   dropdownItems={Array []}
+  isGrouped={false}
   isOpen={true}
   isPlain={false}
   onSelect={[Function]}
@@ -102,6 +103,7 @@ exports[`KebabToggle basic 1`] = `
       aria-labelledby="Dropdown Toggle"
       className=""
       component="div"
+      isGrouped={false}
       isOpen={true}
       position="left"
     >
@@ -245,6 +247,7 @@ exports[`KebabToggle dropup + right aligned 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -459,6 +462,7 @@ exports[`KebabToggle dropup 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -673,6 +677,7 @@ exports[`KebabToggle expanded 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={true}
   isPlain={false}
   onSelect={[Function]}
@@ -770,6 +775,7 @@ exports[`KebabToggle expanded 1`] = `
       aria-labelledby="Dropdown Toggle"
       className=""
       component="ul"
+      isGrouped={false}
       isOpen={true}
       position="left"
     >
@@ -1124,6 +1130,7 @@ exports[`KebabToggle plain 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={false}
   isPlain={true}
   onSelect={[Function]}
@@ -1338,6 +1345,7 @@ exports[`KebabToggle regular 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -1552,6 +1560,7 @@ exports[`KebabToggle right aligned 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -1654,6 +1663,7 @@ exports[`dropdown basic 1`] = `
   className=""
   direction="down"
   dropdownItems={Array []}
+  isGrouped={false}
   isOpen={true}
   isPlain={false}
   onSelect={[Function]}
@@ -1756,6 +1766,7 @@ exports[`dropdown basic 1`] = `
       aria-labelledby="Dropdown Toggle"
       className=""
       component="div"
+      isGrouped={false}
       isOpen={true}
       position="left"
     >
@@ -1899,6 +1910,7 @@ exports[`dropdown dropup + right aligned 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -2118,6 +2130,7 @@ exports[`dropdown dropup 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -2337,6 +2350,7 @@ exports[`dropdown expanded 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={true}
   isPlain={false}
   onSelect={[Function]}
@@ -2439,6 +2453,7 @@ exports[`dropdown expanded 1`] = `
       aria-labelledby="Dropdown Toggle"
       className=""
       component="ul"
+      isGrouped={false}
       isOpen={true}
       position="left"
     >
@@ -2793,6 +2808,7 @@ exports[`dropdown regular 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}
@@ -3012,6 +3028,7 @@ exports[`dropdown right aligned 1`] = `
       </DropdownItem>,
     ]
   }
+  isGrouped={false}
   isOpen={false}
   isPlain={false}
   onSelect={[Function]}

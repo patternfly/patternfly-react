@@ -184,6 +184,7 @@ exports[`component render custom pagination toggle 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -630,6 +631,7 @@ exports[`component render custom perPageOptions 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -1176,6 +1178,7 @@ exports[`component render custom start end 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -1720,6 +1723,7 @@ exports[`component render last page 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -2264,6 +2268,7 @@ exports[`component render limited number of pages 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -2808,6 +2813,7 @@ exports[`component render no items 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -3347,6 +3353,7 @@ exports[`component render should render correctly bottom 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -3891,6 +3898,7 @@ exports[`component render should render correctly top 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -4426,6 +4434,7 @@ exports[`component render titles 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
@@ -4970,6 +4979,7 @@ exports[`component render up drop direction 1`] = `
               </Item>,
             ]
           }
+          isGrouped={false}
           isOpen={false}
           isPlain={true}
           onSelect={[Function]}
