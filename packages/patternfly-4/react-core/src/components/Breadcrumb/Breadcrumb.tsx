@@ -1,0 +1,22 @@
+import * as React from 'react';
+import styles from '@patternfly/patternfly/components/Avatar/avatar.css';
+import { css } from '@patternfly/react-styles';
+
+export interface BreadcrumbProps extends React.HTMLProps<HTMLElement> {
+    children?: React.ReactNode;
+    className?: string;
+    'aria-label'?: string;
+}
+
+const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
+    children = null, 
+    className = '', 
+    'aria-label': ariaLabel = '',
+    ...props
+}) => (
+    <nav {...props} className={css(styles.breadcrumb, className)}>
+        <ol className={css(styles.breadcrumbList)}>{children}</ol>
+    </nav>
+);
+
+export default Breadcrumb;
