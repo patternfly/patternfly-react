@@ -11,7 +11,7 @@ const DataListContent = ({ className, children, id, isHidden, 'aria-label': aria
     aria-label={ariaLabel}
     {...props}
   >
-    {children}
+    <div className={css(styles.dataListExpandableContentBody)}>{children}</div>
   </section>
 );
 

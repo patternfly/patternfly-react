@@ -80,7 +80,11 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
       <div
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
-      />
+      >
+        <div
+          className="pf-c-page__sidebar-body"
+        />
+      </div>
     </PageSidebar>
     <main
       className="pf-c-page__main"
@@ -207,7 +211,11 @@ exports[`Check page vertical layout example against snapshot 1`] = `
         className="pf-c-page__sidebar pf-m-expanded"
         id="page-sidebar"
       >
-        Navigation
+        <div
+          className="pf-c-page__sidebar-body"
+        >
+          Navigation
+        </div>
       </div>
     </PageSidebar>
     <main
