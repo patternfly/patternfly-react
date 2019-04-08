@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { AngleRightIcon } from '@patternfly/react-icons';
-import styles from '@patternfly/patternfly/components/Avatar/avatar.css';
+import styles from '@patternfly/patternfly/components/Breadcrumb/breadcrumb.css';
 import { css, getModifier } from '@patternfly/react-styles';
 
 export interface BreadcrumbItemProps extends React.HTMLProps<HTMLLIElement> {

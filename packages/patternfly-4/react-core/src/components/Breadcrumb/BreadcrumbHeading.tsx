@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '@patternfly/patternfly/components/Avatar/avatar.css';
+import styles from '@patternfly/patternfly/components/Breadcrumb/breadcrumb.css';
 import { css } from '@patternfly/react-styles';
 
 export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
@@ -18,9 +18,21 @@ const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
   component = 'a',
   ...props
 }) => (
-  <nav {...props} className={css(styles.breadcrumb, className)}>
-    <ol className={css(styles.breadcrumbList)}>{children}</ol>
-  </nav>
+  <li {...props} className={css(styles.breadcrumbItem, className)}>
+    <h1 className={css(styles.breadcrumbHeading)}>
+      {to && (
+        <React.Component
+          href={to}
+          target={target}
+          className={css(styles.breadcrumbLink, styles.modifiers.current)}
+          aria-current="page"
+        >
+          {children}
+        </React.Component>
+      )}
+      {!to && <React.Fragment>{children}</React.Fragment>}
+    </h1>
+  </li>
 );
 
 export default BreadcrumbHeading;
