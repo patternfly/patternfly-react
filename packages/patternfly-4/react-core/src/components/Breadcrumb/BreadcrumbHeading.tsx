@@ -13,9 +13,9 @@ export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
 const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
   children = null,
   className = '',
-  to = '',
-  target = '',
-  component = null,
+  to = null,
+  target = null,
+  component = 'a',
   ...props
 }) => (
   <nav {...props} className={css(styles.breadcrumb, className)}>
