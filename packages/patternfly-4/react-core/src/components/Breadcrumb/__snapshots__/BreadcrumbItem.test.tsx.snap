@@ -100,13 +100,13 @@ exports[`BreadcrumbItem component should render link breadcrumbItem 1`] = `
 <li
   className="pf-c-breadcrumb__item"
 >
-  <a
+  <Component
     className="pf-c-breadcrumb__link"
     href="/somewhere"
     target={null}
   >
     Item
-  </a>
+  </Component>
   <span
     className="pf-c-breadcrumb__item-divider"
   >

@@ -32,14 +32,14 @@ exports[`BreadcrumbHeading component should render breadcrumbHeading with target
   <h1
     className="pf-c-breadcrumb__heading"
   >
-    <a
+    <Component
       aria-current="page"
       className="pf-c-breadcrumb__link pf-m-current"
       href="#here"
       target="_blank"
     >
       Item
-    </a>
+    </Component>
   </h1>
 </li>
 `;
@@ -56,21 +56,21 @@ exports[`BreadcrumbHeading component should render default breadcrumbHeading 1`]
 </li>
 `;
 
-exports[`BreadcrumbHeading component should render link breadcrumbTItle 1`] = `
+exports[`BreadcrumbHeading component should render link breadcrumbTitle 1`] = `
 <li
   className="pf-c-breadcrumb__item"
 >
   <h1
     className="pf-c-breadcrumb__heading"
   >
-    <a
+    <Component
       aria-current="page"
       className="pf-c-breadcrumb__link pf-m-current"
       href="/somewhere"
       target={null}
     >
       Item
-    </a>
+    </Component>
   </h1>
 </li>
 `;
