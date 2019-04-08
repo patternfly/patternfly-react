@@ -95,8 +95,8 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
-    "build:pf3": "lerna run build --stream --scope='patternfly-*' --scope=@patternfly/react-console",
-    "build:pf4": "lerna run build --stream --scope='@patternfly/react-*' --ignore=@patternfly/react-console",
+    "build:pf3": "lerna run build --stream --scope='patternfly-*' --scope='@patternfly/react-console'",
+    "build:pf4": "lerna run build --stream --scope='@patternfly/react-*' --ignore='@patternfly/react-console'",
     "build:docs": "lerna run build:docs --stream",
     "build:storybook": "build-storybook -c storybook -o .out",
     "clean": "lerna run clean --parallel",
