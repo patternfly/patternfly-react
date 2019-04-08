@@ -46,6 +46,8 @@
     "react-bootstrap": "^0.32.1",
     "react-diff-view": "^1.8.1",
     "react-virtualized": "9.x",
+    "react-ellipsis-with-tooltip": "^1.0.8",
+    "react-click-outside": "^3.0.1",
     "unidiff": "^1.0.1"
   },
   "devDependencies": {
