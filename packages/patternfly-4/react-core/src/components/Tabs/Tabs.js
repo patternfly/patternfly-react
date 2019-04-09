@@ -65,10 +65,11 @@ const TabsWithNav = ({
   showRightScrollButton,
   highlightLeftScrollButton,
   highlightRightScrollButton,
+  'aria-label-left-scroll': ariaLabelLeftScroll,
+  'aria-label-right-scroll': ariaLabelRightScroll,
   ...props
 }) => (
   <nav {...props}
-    aria-label={ariaLabel}
     className={css(
       styles.tabs,
       isFilled && styles.modifiers.fill,
@@ -226,12 +227,6 @@ class InternalTabs extends React.Component {
       'aria-label-left-scroll': ariaLabelLeftScroll,
       'aria-label-right-scroll': ariaLabelRightScroll,
     } = this.props;
-    const {
-      showLeftScrollButton,
-      showRightScrollButton,
-      highlightLeftScrollButton,
-      highlightRightScrollButton
-    } = this.state;
 
     return <React.Fragment>
       {!isSecondary && (
