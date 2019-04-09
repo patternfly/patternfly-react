@@ -65,7 +65,7 @@ class GroupedCheckboxSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           isGrouped
         >
           {this.options}

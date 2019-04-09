@@ -17,6 +17,10 @@ const propTypes = {
   isGrouped: PropTypes.bool,
   /** Currently checked options */
   checked: PropTypes.arrayOf(PropTypes.string),
+  /** Aria label for fieldset */
+  'aria-label': PropTypes.string,
+  /** Aria labelled by for fieldset */
+  'aria-labelledby': PropTypes.string,
   /** Additional props are spread to the container <select> */
   '': PropTypes.any
 };

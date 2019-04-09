@@ -48,11 +48,11 @@ test('modal does not call onClose for esc key if it is not open', () => {
   expect(props.onClose).not.toBeCalled();
 });
 
-test('Each modal is given new ariaDescribedById and ariaLablledbyId', () => {
+test('Each modal is given new aria-describedby and aria-lablledby', () => {
   const first = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
   const second = shallow(<AboutModal {...props}> Test About Modal </AboutModal>);
-  expect(first.props().ariaLabelledbyId).not.toBe(second.props().ariaLabelledbyId);
-  expect(first.props().ariaDescribedById).not.toBe(second.props().ariaDescribedById);
+  expect(first.props()['aria-labelledby']).not.toBe(second.props()['aria-labelledby']);
+  expect(first.props()['aria-describedby']).not.toBe(second.props()['aria-describedby']);
 });
 
 test('Console error is generated when the logoImageSrc is provided without logoImageAlt', () => {

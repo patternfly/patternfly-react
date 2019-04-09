@@ -1,5 +1,4 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import { Form, FormGroup, ActionGroup, FormHelperText } from '../Form';
 import { TextInput } from '../TextInput';
@@ -42,9 +41,9 @@ const propTypes = {
   /** Function that handles the onChange event for the Remember Me Checkbox */
   onChangeRememberMe: PropTypes.func,
   /** Aria Label for the Remember me checkbox */
-  rememberMeAriaLabel: props => {
-    if (props.rememberMeLabel && !props.rememberMeAriaLabel) {
-      return new Error('rememberMeAriaLabel is required with the Remember me checkbox');
+  'aria-label': props => {
+    if (props.rememberMeLabel && !props['aria-label']) {
+      return new Error('aria-label is required with the Remember me checkbox');
     }
     return null;
   },
@@ -70,7 +69,7 @@ const defaultProps = {
   rememberMeLabel: '',
   isRememberMeChecked: false,
   onChangeRememberMe: () => undefined,
-  rememberMeAriaLabel: ''
+  'aria-label': ''
 };
 
 const LoginForm = ({
@@ -91,7 +90,7 @@ const LoginForm = ({
   rememberMeLabel,
   isRememberMeChecked,
   onChangeRememberMe,
-  rememberMeAriaLabel,
+  'aria-label': ariaLabel,
   ...props
 }) => (
   <Form className={className} {...props}>
@@ -127,7 +126,7 @@ const LoginForm = ({
           label={rememberMeLabel}
           checked={isRememberMeChecked}
           onChange={onChangeRememberMe}
-          aria-label={rememberMeAriaLabel}
+          aria-label={ariaLabel}
         />
       </FormGroup>
     )}

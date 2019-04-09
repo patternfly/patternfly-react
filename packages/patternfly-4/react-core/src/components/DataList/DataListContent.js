@@ -3,19 +3,7 @@ import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
-const DataListContent = ({ className, children, id, isHidden, 'aria-label': ariaLabel, rowid, ...props }) => (
-  <section
-    id={id}
-    className={css(styles.dataListExpandableContent, className)}
-    hidden={isHidden}
-    aria-label={ariaLabel}
-    {...props}
-  >
-    {children}
-  </section>
-);
-
-DataListContent.propTypes = {
+const propTypes = {
   /** Content rendered inside the DataList item */
   children: PropTypes.node,
   /** Additional classes added to the DataList cell */
@@ -30,10 +18,25 @@ DataListContent.propTypes = {
   '': PropTypes.any
 };
 
-DataListContent.defaultProps = {
+const defaultProps = {
   className: '',
   id: '',
   isHidden: false
 };
+
+const DataListContent = ({ className, children, id, isHidden, 'aria-label': ariaLabel, rowid, ...props }) => (
+  <section
+    id={id}
+    className={css(styles.dataListExpandableContent, className)}
+    hidden={isHidden}
+    aria-label={ariaLabel}
+    {...props}
+  >
+    {children}
+  </section>
+);
+
+DataListContent.propTypes = propTypes;
+DataListContent.defaultProps = defaultProps;
 
 export default DataListContent;

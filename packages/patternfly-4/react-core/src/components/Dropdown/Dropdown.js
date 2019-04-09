@@ -102,7 +102,7 @@ class Dropdown extends React.Component {
             isOpen,
             id,
             isPlain,
-            ariaHasPopup,
+            'aria-haspopup': '' + ariaHasPopup,
             onEnter: this.onEnter
           })
         )}

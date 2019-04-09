@@ -5,6 +5,29 @@ import styles from '@patternfly/patternfly/components/ChipGroup/chip-group.css';
 import { Chip } from '@patternfly/react-core';
 import { fillTemplate } from '../../helpers';
 
+const propTypes = {
+  /** Content rendered inside the chip text */
+  children: PropTypes.node,
+  /** Additional classes added to the chip item */
+  className: PropTypes.string,
+  /** Customizable "Show Less" text string */
+  expandedText: PropTypes.string,
+  /**
+   * Customizeable template string. Use variable "${remaining}" for the overflow chip count.
+   */
+  collapsedText: PropTypes.string,
+  /** Flag for grouping with a toolbar & category name */
+  withToolbar: PropTypes.bool
+};
+
+const defaultProps = {
+  children: null,
+  className: '',
+  expandedText: 'Show Less',
+  collapsedText: '${remaining} more',
+  withToolbar: false
+};
+
 class ChipGroup extends React.Component {
   state = {
     isOpen: false
@@ -64,27 +87,7 @@ const InnerChipGroup = props => {
   );
 };
 
-ChipGroup.propTypes = {
-  /** Content rendered inside the chip text */
-  children: PropTypes.node,
-  /** Additional classes added to the chip item */
-  className: PropTypes.string,
-  /** Customizable "Show Less" text string */
-  expandedText: PropTypes.string,
-  /**
-   * Customizeable template string. Use variable "${remaining}" for the overflow chip count.
-   */
-  collapsedText: PropTypes.string,
-  /** Flag for grouping with a toolbar & category name */
-  withToolbar: PropTypes.bool
-};
-
-ChipGroup.defaultProps = {
-  children: null,
-  className: '',
-  expandedText: 'Show Less',
-  collapsedText: '${remaining} more',
-  withToolbar: false
-};
+ChipGroup.propTypes = propTypes;
+ChipGroup.defaultProps = defaultProps;
 
 export default ChipGroup;

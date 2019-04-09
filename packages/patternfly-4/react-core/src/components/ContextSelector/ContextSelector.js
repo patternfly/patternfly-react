@@ -32,7 +32,7 @@ const propTypes = {
   /** Text that appears in the Context Selector Toggle */
   toggleText: PropTypes.string,
   /** aria-label for the Context Selector Search Button */
-  searchButtonAriaLabel: PropTypes.string,
+  'aria-label': PropTypes.string,
   /** Value in the Search field */
   searchInputValue: PropTypes.string,
   /** Function callback called when user changes the Search Input */
@@ -47,15 +47,15 @@ const defaultProps = {
   children: null,
   className: '',
   isOpen: false,
-  onToggle: () => {},
-  onSelect: () => {},
+  onToggle: () => { },
+  onSelect: () => { },
   screenReaderLabel: '',
   toggleText: '',
-  searchButtonAriaLabel: 'Search menu items',
+  'aria-label': 'Search menu items',
   searchInputValue: '',
-  onSearchInputChange: () => {},
+  onSearchInputChange: () => { },
   searchInputPlaceholder: 'Search',
-  onSearchButtonClick: () => {}
+  onSearchButtonClick: () => { }
 };
 
 class ContextSelector extends React.Component {
@@ -79,7 +79,7 @@ class ContextSelector extends React.Component {
       onSelect,
       screenReaderLabel,
       toggleText,
-      searchButtonAriaLabel,
+      'aria-label': ariaLabel,
       searchInputValue,
       onSearchInputChange,
       searchInputPlaceholder,
@@ -121,7 +121,7 @@ class ContextSelector extends React.Component {
                     />
                     <Button
                       variant={ButtonVariant.tertiary}
-                      aria-label={searchButtonAriaLabel}
+                      aria-label={ariaLabel}
                       id={searchButtonId}
                       onClick={onSearchButtonClick}
                     >

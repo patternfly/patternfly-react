@@ -72,7 +72,9 @@ const Alert = ({
         </div>
       )}
       {action && (
-        <div className={css(styles.alertAction, className)}>{React.cloneElement(action, { title, variantLabel })}</div>
+        <div className={css(styles.alertAction, className)}>
+          {React.cloneElement(action, { title, variantLabel })}
+        </div>
       )}
     </div>
   );

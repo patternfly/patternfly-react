@@ -92,6 +92,7 @@ class OptionsMenu extends Component {
       perPage,
       onPerPageSelect,
       toggleTemplate,
+      perPageSuffix,
       ...props
     } = this.props;
     return (

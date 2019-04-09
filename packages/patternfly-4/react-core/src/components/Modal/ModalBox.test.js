@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 
 test('ModalBox Test', () => {
   const view = shallow(
-    <ModalBox titleId="titleId" ariaDescribedById="bodyId">
+    <ModalBox titleId="titleId" aria-describedby="bodyId">
       This is a ModalBox
     </ModalBox>
   );
@@ -13,7 +13,7 @@ test('ModalBox Test', () => {
 
 test('ModalBox Test isLarge', () => {
   const view = shallow(
-    <ModalBox titleId="titleId" ariaDescribedById="bodyId" isLarge>
+    <ModalBox titleId="titleId" aria-describedby="bodyId" isLarge>
       This is a ModalBox
     </ModalBox>
   );
@@ -22,7 +22,7 @@ test('ModalBox Test isLarge', () => {
 
 test('ModalBox Test isOpen', () => {
   const view = shallow(
-    <ModalBox titleId="titleId" ariaDescribedById="bodyId" isLarge isOpen>
+    <ModalBox titleId="titleId" aria-describedby="bodyId" isLarge isOpen>
       This is a ModalBox
     </ModalBox>
   );

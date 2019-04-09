@@ -1,18 +1,10 @@
 import React from 'react';
-import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
-import styles from '@patternfly/patternfly/components/Chip/chip.css';
 import { Button } from '../Button';
 
-const ChipButton = ({ ariaLabel, children, className, onClick, ...props }) => (
-  <Button variant="plain" aria-label={ariaLabel} onClick={onClick} className={className} {...props}>
-    {children}
-  </Button>
-);
-
-ChipButton.propTypes = {
+const propTypes = {
   /** Aria label for chip button */
-  ariaLabel: PropTypes.string,
+  'aria-label': PropTypes.string,
   /** Content rendered inside the chip item */
   children: PropTypes.node,
   /** Additional classes added to the chip item */
@@ -21,11 +13,20 @@ ChipButton.propTypes = {
   onClick: PropTypes.func
 };
 
-ChipButton.defaultProps = {
-  ariaLabel: 'close',
+const defaultProps = {
+  'aria-label': 'close',
   children: null,
   className: '',
-  onClick: () => {}
+  onClick: () => { }
 };
+
+const ChipButton = ({ children, ...props }) => (
+  <Button variant="plain"  {...props}>
+    {children}
+  </Button>
+);
+
+ChipButton.propTypes = propTypes;
+ChipButton.defaultProps = defaultProps;
 
 export default ChipButton;

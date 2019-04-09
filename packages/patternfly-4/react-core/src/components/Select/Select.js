@@ -27,7 +27,7 @@ const propTypes = {
   /** Adds accessible text to Select */
   'aria-label': PropTypes.string,
   /** Id of label for the Select aria-labelledby */
-  ariaLabelledBy: PropTypes.string,
+  'aria-labelledby': PropTypes.string,
   /** Callback for selection behavior */
   onSelect: PropTypes.func.isRequired,
   /** Callback for toggle button behavior */
@@ -46,7 +46,7 @@ const defaultProps = {
   isExpanded: false,
   isGrouped: false,
   'aria-label': null,
-  ariaLabelledBy: null,
+  'aria-labelledby': null,
   selections: null,
   placeholderText: null,
   variant: SelectVariant.single,
@@ -75,7 +75,7 @@ class Select extends React.Component {
       isExpanded,
       isGrouped,
       selections,
-      ariaLabelledBy,
+      'aria-labelledby': ariaLabelledBy,
       'aria-label': ariaLabel,
       placeholderText,
       width,

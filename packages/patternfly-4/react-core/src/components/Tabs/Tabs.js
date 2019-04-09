@@ -29,13 +29,11 @@ const propTypes = {
   /** enables Secondary Tab styling */
   isSecondary: PropTypes.bool,
   /** aria-label for the left Scroll Button */
-  leftScrollAriaLabel: PropTypes.string,
+  'aria-label-left-scroll': PropTypes.string,
   /** aria-label for the right Scroll Button */
-  rightScrollAriaLabel: PropTypes.string,
+  'aria-label-right-scroll': PropTypes.string,
   /** determines what tag is used around the Tabs. Use "nav" to define the Tabs inside a navigation region */
   variant: PropTypes.oneOf(Object.values(TabsVariant)),
-  /** provides an accessible label for the Tabs. Labels should be unique for each set of Tabs that are present on a page. When variant is set to nav, this prop should be defined to differentiate the Tabs from other navigation regions on the page. */
-  'aria-label': PropTypes.string
 };
 
 const defaultProps = {
@@ -45,20 +43,30 @@ const defaultProps = {
   id: null,
   isFilled: false,
   isSecondary: false,
-  leftScrollAriaLabel: 'Scroll left',
-  rightScrollAriaLabel: 'Scroll Right',
-  'aria-label': null,
+  'aria-label-left-scroll': 'Scroll left',
+  'aria-label-right-scroll': 'Scroll Right',
   variant: TabsVariant.div
 };
 
-const Tabs = ({ 'aria-label': ariaLabel, id, variant, ...props }) => {
+const Tabs = ({ id, variant, ...props }) => {
   const unique_id = id ? id : getUniqueId();
   return variant === TabsVariant.nav
-    ? <TabsWithNav ariaLabel={ariaLabel} id={unique_id} {...props} />
+    ? <TabsWithNav id={unique_id} {...props} />
     : <TabsWithDiv id={unique_id} {...props} />;
 }
 
-const TabsWithNav = ({ activeKey, ariaLabel, className, id, isFilled, isSecondary, leftScrollAriaLabel, rightScrollAriaLabel, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
+const TabsWithNav = ({
+  activeKey,
+  className,
+  id,
+  isFilled,
+  isSecondary,
+  showLeftScrollButton,
+  showRightScrollButton,
+  highlightLeftScrollButton,
+  highlightRightScrollButton,
+  ...props
+}) => (
   <nav {...props}
     aria-label={ariaLabel}
     className={css(
@@ -71,12 +79,24 @@ const TabsWithNav = ({ activeKey, ariaLabel, className, id, isFilled, isSecondar
       highlightRightScrollButton && styles.modifiers.endCurrent,
       className)}
   >
-    <InternalTabs id={id} activeKey={activeKey} leftScrollAriaLabel={leftScrollAriaLabel} rightScrollAriaLabel={rightScrollAriaLabel} {...props} />
+    <InternalTabs id={id} activeKey={activeKey} {...props} />
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
   </nav>
 );
 
-const TabsWithDiv = ({ activeKey, className, id, isFilled, isSecondary, leftScrollAriaLabel, rightScrollAriaLabel, showLeftScrollButton, showRightScrollButton, highlightLeftScrollButton, highlightRightScrollButton, ...props }) => (
+const TabsWithDiv = ({
+  activeKey,
+  className,
+  id,
+  isFilled,
+  isSecondary,
+  showLeftScrollButton,
+  showRightScrollButton,
+  highlightLeftScrollButton,
+  highlightRightScrollButton,
+  'aria-label-left-scroll': ariaLabelLeftScroll,
+  'aria-label-right-scroll': ariaLabelRightScroll,
+  ...props }) => (
   <div {...props}
     className={css(
       styles.tabs,
@@ -88,7 +108,7 @@ const TabsWithDiv = ({ activeKey, className, id, isFilled, isSecondary, leftScro
       highlightRightScrollButton && styles.modifiers.endCurrent,
       className)}
   >
-    <InternalTabs id={id} activeKey={activeKey} leftScrollAriaLabel={leftScrollAriaLabel} rightScrollAriaLabel={rightScrollAriaLabel} {...props} />
+    <InternalTabs id={id} activeKey={activeKey} {...props} />
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
   </div>
 );
@@ -203,9 +223,8 @@ class InternalTabs extends React.Component {
       id,
       isFilled,
       isSecondary,
-      leftScrollAriaLabel,
-      rightScrollAriaLabel,
-      ...props
+      'aria-label-left-scroll': ariaLabelLeftScroll,
+      'aria-label-right-scroll': ariaLabelRightScroll,
     } = this.props;
     const {
       showLeftScrollButton,
@@ -219,7 +238,7 @@ class InternalTabs extends React.Component {
         <button
           className={css(styles.tabsScrollButton)}
           variant="plain"
-          aria-label={leftScrollAriaLabel}
+          aria-label={ariaLabelLeftScroll}
           onClick={this.scrollLeft}
         >
           <AngleLeftIcon />
@@ -250,7 +269,7 @@ class InternalTabs extends React.Component {
         <button
           className={css(styles.tabsScrollButton)}
           variant="plain"
-          aria-label={rightScrollAriaLabel}
+          aria-label={ariaLabelRightScroll}
           onClick={this.scrollRight}
         >
           <AngleRightIcon />

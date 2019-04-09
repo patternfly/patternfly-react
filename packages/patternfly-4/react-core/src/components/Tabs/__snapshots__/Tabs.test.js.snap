@@ -3,25 +3,24 @@
 exports[`should call handleScrollButtons tabs with scrolls 1`] = `
 <Tabs
   activeKey={0}
-  aria-label={null}
+  aria-label-left-scroll="Scroll left"
+  aria-label-right-scroll="Scroll Right"
   className=""
   id="handleScrollButtons"
   isFilled={true}
   isSecondary={false}
-  leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
   variant="div"
 >
   <TabsWithDiv
     activeKey={0}
+    aria-label-left-scroll="Scroll left"
+    aria-label-right-scroll="Scroll Right"
     className=""
     id="handleScrollButtons"
     isFilled={true}
     isSecondary={false}
-    leftScrollAriaLabel="Scroll left"
     onSelect={[Function]}
-    rightScrollAriaLabel="Scroll Right"
   >
     <div
       className="pf-c-tabs pf-m-fill"
@@ -29,14 +28,13 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
     >
       <InternalTabs
         activeKey={0}
-        aria-label={null}
+        aria-label-left-scroll="Scroll left"
+        aria-label-right-scroll="Scroll Right"
         className=""
         id="handleScrollButtons"
         isFilled={false}
         isSecondary={false}
-        leftScrollAriaLabel="Scroll left"
         onSelect={[Function]}
-        rightScrollAriaLabel="Scroll Right"
         variant="div"
       >
         <button
@@ -384,25 +382,24 @@ exports[`should call handleScrollButtons tabs with scrolls 1`] = `
 exports[`should call scrollLeft tabs with scrolls 1`] = `
 <Tabs
   activeKey={0}
-  aria-label={null}
+  aria-label-left-scroll="Scroll left"
+  aria-label-right-scroll="Scroll Right"
   className=""
   id="scrollLeft"
   isFilled={true}
   isSecondary={false}
-  leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
   variant="div"
 >
   <TabsWithDiv
     activeKey={0}
+    aria-label-left-scroll="Scroll left"
+    aria-label-right-scroll="Scroll Right"
     className=""
     id="scrollLeft"
     isFilled={true}
     isSecondary={false}
-    leftScrollAriaLabel="Scroll left"
     onSelect={[Function]}
-    rightScrollAriaLabel="Scroll Right"
   >
     <div
       className="pf-c-tabs pf-m-fill"
@@ -410,14 +407,13 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
     >
       <InternalTabs
         activeKey={0}
-        aria-label={null}
+        aria-label-left-scroll="Scroll left"
+        aria-label-right-scroll="Scroll Right"
         className=""
         id="scrollLeft"
         isFilled={false}
         isSecondary={false}
-        leftScrollAriaLabel="Scroll left"
         onSelect={[Function]}
-        rightScrollAriaLabel="Scroll Right"
         variant="div"
       >
         <button
@@ -765,25 +761,24 @@ exports[`should call scrollLeft tabs with scrolls 1`] = `
 exports[`should call scrollRight tabs with scrolls 1`] = `
 <Tabs
   activeKey={0}
-  aria-label={null}
+  aria-label-left-scroll="Scroll left"
+  aria-label-right-scroll="Scroll Right"
   className=""
   id="scrollRight"
   isFilled={true}
   isSecondary={false}
-  leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
   variant="div"
 >
   <TabsWithDiv
     activeKey={0}
+    aria-label-left-scroll="Scroll left"
+    aria-label-right-scroll="Scroll Right"
     className=""
     id="scrollRight"
     isFilled={true}
     isSecondary={false}
-    leftScrollAriaLabel="Scroll left"
     onSelect={[Function]}
-    rightScrollAriaLabel="Scroll Right"
   >
     <div
       className="pf-c-tabs pf-m-fill"
@@ -791,14 +786,13 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
     >
       <InternalTabs
         activeKey={0}
-        aria-label={null}
+        aria-label-left-scroll="Scroll left"
+        aria-label-right-scroll="Scroll Right"
         className=""
         id="scrollRight"
         isFilled={false}
         isSecondary={false}
-        leftScrollAriaLabel="Scroll left"
         onSelect={[Function]}
-        rightScrollAriaLabel="Scroll Right"
         variant="div"
       >
         <button
@@ -1146,14 +1140,14 @@ exports[`should call scrollRight tabs with scrolls 1`] = `
 exports[`should render accessible tabs 1`] = `
 <TabsWithNav
   activeKey={0}
-  ariaLabel="accessible Tabs example"
+  aria-label="accessible Tabs example"
+  aria-label-left-scroll="Scroll left"
+  aria-label-right-scroll="Scroll Right"
   className=""
   id="accessibleTabs"
   isFilled={false}
   isSecondary={false}
-  leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
 >
   <ForwardRef
     eventKey={0}
@@ -1182,13 +1176,13 @@ exports[`should render accessible tabs 1`] = `
 exports[`should render filled tabs 1`] = `
 <TabsWithDiv
   activeKey={0}
+  aria-label-left-scroll="Scroll left"
+  aria-label-right-scroll="Scroll Right"
   className=""
   id="filledTabs"
   isFilled={true}
   isSecondary={false}
-  leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
 >
   <ForwardRef
     eventKey={0}
@@ -1217,13 +1211,13 @@ exports[`should render filled tabs 1`] = `
 exports[`should render secondary tabs 1`] = `
 <TabsWithDiv
   activeKey={0}
+  aria-label-left-scroll="Scroll left"
+  aria-label-right-scroll="Scroll Right"
   className=""
   id="primaryTabs"
   isFilled={false}
   isSecondary={false}
-  leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
 >
   <ForwardRef
     eventKey={0}
@@ -1231,14 +1225,13 @@ exports[`should render secondary tabs 1`] = `
   >
     <Tabs
       activeKey={0}
-      aria-label={null}
+      aria-label-left-scroll="Scroll left"
+      aria-label-right-scroll="Scroll Right"
       className=""
       id="secondaryTabs"
       isFilled={false}
       isSecondary={false}
-      leftScrollAriaLabel="Scroll left"
       onSelect={[Function]}
-      rightScrollAriaLabel="Scroll Right"
       variant="div"
     >
       <ForwardRef
@@ -1284,13 +1277,13 @@ exports[`should render secondary tabs 1`] = `
 exports[`should render simple tabs 1`] = `
 <TabsWithDiv
   activeKey={0}
+  aria-label-left-scroll="Scroll left"
+  aria-label-right-scroll="Scroll Right"
   className=""
   id="simpleTabs"
   isFilled={false}
   isSecondary={false}
-  leftScrollAriaLabel="Scroll left"
   onSelect={[Function]}
-  rightScrollAriaLabel="Scroll Right"
 >
   <ForwardRef
     eventKey={0}

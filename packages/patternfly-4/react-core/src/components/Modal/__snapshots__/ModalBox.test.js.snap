@@ -3,7 +3,6 @@
 exports[`ModalBox Test 1`] = `
 <div
   aria-modal="true"
-  ariaDescribedById="bodyId"
   className="pf-c-modal-box"
   role="dialog"
   titleId="titleId"
@@ -15,7 +14,6 @@ exports[`ModalBox Test 1`] = `
 exports[`ModalBox Test isLarge 1`] = `
 <div
   aria-modal="true"
-  ariaDescribedById="bodyId"
   className="pf-c-modal-box pf-m-lg"
   role="dialog"
   titleId="titleId"
@@ -27,7 +25,6 @@ exports[`ModalBox Test isLarge 1`] = `
 exports[`ModalBox Test isOpen 1`] = `
 <div
   aria-modal="true"
-  ariaDescribedById="bodyId"
   className="pf-c-modal-box pf-m-lg"
   isOpen={true}
   role="dialog"

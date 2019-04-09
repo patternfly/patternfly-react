@@ -1,101 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates console error 1`] = `
-<Form
-  className=""
-  isHorizontal={false}
->
-  <FormHelperText
-    className=""
-    isError={false}
-    isHidden={true}
-  />
-  <FormGroup
-    className=""
-    fieldId="pf-login-username-id"
-    isInline={false}
-    isRequired={true}
-    isValid={true}
-    label="Username"
-  >
-    <TextInput
-      aria-label={null}
-      className=""
-      id="pf-login-username-id"
-      isDisabled={false}
-      isReadOnly={false}
-      isRequired={true}
-      isValid={true}
-      name="pf-login-username-id"
-      onChange={[Function]}
-      type="text"
-      value=""
-    />
-  </FormGroup>
-  <FormGroup
-    className=""
-    fieldId="pf-login-password-id"
-    isInline={false}
-    isRequired={true}
-    isValid={true}
-    label="Password"
-  >
-    <TextInput
-      aria-label={null}
-      className=""
-      id="pf-login-password-id"
-      isDisabled={false}
-      isReadOnly={false}
-      isRequired={true}
-      isValid={true}
-      name="pf-login-password-id"
-      onChange={[Function]}
-      type="password"
-      value=""
-    />
-  </FormGroup>
-  <FormGroup
-    className=""
-    fieldId="pf-login-remember-me-id"
-    isInline={false}
-    isRequired={false}
-    isValid={true}
-  >
-    <Checkbox
-      aria-label=""
-      checked={false}
-      className=""
-      id="pf-login-remember-me-id"
-      isChecked={null}
-      isDisabled={false}
-      isValid={true}
-      label="remember me"
-      onChange={[MockFunction]}
-    />
-  </FormGroup>
-  <ActionGroup
-    className=""
-  >
-    <Button
-      aria-label={null}
-      className=""
-      component="button"
-      isActive={false}
-      isBlock={true}
-      isDisabled={false}
-      isFocus={false}
-      isHover={false}
-      onClick={[Function]}
-      type="submit"
-      variant="primary"
-    >
-      Log In
-    </Button>
-  </ActionGroup>
-</Form>
-`;
-
-exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generates console error 1`] = `
+exports[`LoginForm with rememberMeLabel and aria-label does not generates console error 1`] = `
 <Form
   className=""
   isHorizontal={false}
@@ -158,6 +63,101 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
   >
     <Checkbox
       aria-label="remember me"
+      checked={false}
+      className=""
+      id="pf-login-remember-me-id"
+      isChecked={null}
+      isDisabled={false}
+      isValid={true}
+      label="remember me"
+      onChange={[MockFunction]}
+    />
+  </FormGroup>
+  <ActionGroup
+    className=""
+  >
+    <Button
+      aria-label={null}
+      className=""
+      component="button"
+      isActive={false}
+      isBlock={true}
+      isDisabled={false}
+      isFocus={false}
+      isHover={false}
+      onClick={[Function]}
+      type="submit"
+      variant="primary"
+    >
+      Log In
+    </Button>
+  </ActionGroup>
+</Form>
+`;
+
+exports[`LoginForm with rememberMeLabel and no aria-label generates console error 1`] = `
+<Form
+  className=""
+  isHorizontal={false}
+>
+  <FormHelperText
+    className=""
+    isError={false}
+    isHidden={true}
+  />
+  <FormGroup
+    className=""
+    fieldId="pf-login-username-id"
+    isInline={false}
+    isRequired={true}
+    isValid={true}
+    label="Username"
+  >
+    <TextInput
+      aria-label={null}
+      className=""
+      id="pf-login-username-id"
+      isDisabled={false}
+      isReadOnly={false}
+      isRequired={true}
+      isValid={true}
+      name="pf-login-username-id"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </FormGroup>
+  <FormGroup
+    className=""
+    fieldId="pf-login-password-id"
+    isInline={false}
+    isRequired={true}
+    isValid={true}
+    label="Password"
+  >
+    <TextInput
+      aria-label={null}
+      className=""
+      id="pf-login-password-id"
+      isDisabled={false}
+      isReadOnly={false}
+      isRequired={true}
+      isValid={true}
+      name="pf-login-password-id"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+  </FormGroup>
+  <FormGroup
+    className=""
+    fieldId="pf-login-remember-me-id"
+    isInline={false}
+    isRequired={false}
+    isValid={true}
+  >
+    <Checkbox
+      aria-label=""
       checked={false}
       className=""
       id="pf-login-remember-me-id"

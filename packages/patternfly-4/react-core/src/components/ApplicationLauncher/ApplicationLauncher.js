@@ -3,7 +3,7 @@ import styles from '@patternfly/patternfly/components/AppLauncher/app-launcher.c
 import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import ApplicationLauncherMenu from './ApplicationLauncherMenu';
-import Toggle from './Toggle';
+import ApplicationLauncherToggle from './ApplicationLauncherToggle';
 import { ThIcon } from '@patternfly/react-icons';
 import { ApplicationLauncherDirection, ApplicationLauncherPosition } from './applicationLauncherConstants';
 import { DropdownContext } from '../Dropdown/dropdownConstants';
@@ -51,13 +51,11 @@ class ApplicationLauncher extends React.Component {
   render() {
     const {
       'aria-label': ariaLabel,
-      children,
       dropdownItems,
       className,
       isOpen,
       onSelect,
       onToggle,
-      ...props
     } = this.props;
     return (
       <GenerateId>
@@ -69,16 +67,16 @@ class ApplicationLauncher extends React.Component {
             }}
           >
             {Children.map(
-              <Toggle id={`pf-toggle-id-${randomId}`} aria-label={ariaLabel} onToggle={onToggle}>
+              <ApplicationLauncherToggle id={`pf-toggle-id-${randomId}`} aria-label={ariaLabel} onToggle={onToggle}>
                 <ThIcon />
-              </Toggle>,
+              </ApplicationLauncherToggle>,
               oneToggle =>
                 cloneElement(oneToggle, {
                   parentRef: this.parentRef,
                   id: randomId,
                   isOpen,
                   isPlain: true,
-                  ariaHasPopup: true,
+                  'aria-haspopup': 'true',
                   onEnter: this.onEnter
                 })
             )}

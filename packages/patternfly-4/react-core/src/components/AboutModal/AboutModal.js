@@ -52,8 +52,8 @@ class AboutModal extends React.Component {
   static propTypes = propTypes;
   static defaultProps = defaultProps;
 
-  ariaLabelledbyId = `pf-about-modal-title-${currentId++}`;
-  ariaDescribedById = `pf-about-modal-content-${currentId++}`;
+  ariaLabelledBy = `pf-about-modal-title-${currentId++}`;
+  ariaDescribedBy = `pf-about-modal-content-${currentId++}`;
 
   handleEscKeyClick = event => {
     if (event.keyCode === KEY_CODES.ESCAPE_KEY && this.props.isOpen) {
@@ -96,8 +96,8 @@ class AboutModal extends React.Component {
     return ReactDOM.createPortal(
       <AboutModalContainer
         {...this.props}
-        ariaLabelledbyId={this.ariaLabelledbyId}
-        ariaDescribedById={this.ariaDescribedById}
+        aria-labelledby={this.ariaLabelledBy}
+        aria-describedby={this.ariaDescribedBy}
       />,
       this.container
     );

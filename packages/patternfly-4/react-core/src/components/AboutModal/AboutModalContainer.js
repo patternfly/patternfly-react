@@ -31,9 +31,9 @@ const propTypes = {
   /** the alternate text of the Logo image. */
   logoImageAlt: PropTypes.string.isRequired,
   /** id to use for About Modal Box aria labeled by */
-  ariaLabelledbyId: PropTypes.string.isRequired,
+  'aria-labelledby': PropTypes.string.isRequired,
   /** id to use for About Modal Box aria described by */
-  ariaDescribedById: PropTypes.string.isRequired,
+  'aria-describedby': PropTypes.string.isRequired,
   /** Additional props are spread to the AboutModalBoxContent component */
   '': PropTypes.any
 };
@@ -55,8 +55,8 @@ const ModalContent = ({
   brandImageAlt,
   logoImageSrc,
   logoImageAlt,
-  ariaLabelledbyId,
-  ariaDescribedById,
+  'aria-labelledby': ariaLabelledBy,
+  'aria-describedby': ariaDescribedBy,
   ...props
 }) => {
   if (!isOpen) {
@@ -65,11 +65,11 @@ const ModalContent = ({
   return (
     <Backdrop>
       <Bullseye>
-        <AboutModalBox className={className} aria-labelledby={ariaLabelledbyId} aria-describedby={ariaDescribedById}>
+        <AboutModalBox className={className} aria-labelledby={ariaLabelledBy} aria-describedby={ariaDescribedBy}>
           <AboutModalBoxBrand src={brandImageSrc} alt={brandImageAlt} />
           <AboutModalBoxCloseButton onClose={onClose} />
-          <AboutModalBoxHeader id={ariaLabelledbyId} productName={productName} />
-          <AboutModalBoxContent {...props} trademark={trademark} id={ariaDescribedById}>
+          <AboutModalBoxHeader id={ariaLabelledBy} productName={productName} />
+          <AboutModalBoxContent {...props} trademark={trademark} id={ariaDescribedBy}>
             {children}
           </AboutModalBoxContent>
           <AboutModalBoxHero />

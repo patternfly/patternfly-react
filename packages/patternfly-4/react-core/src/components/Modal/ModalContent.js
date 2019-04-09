@@ -33,7 +33,7 @@ const propTypes = {
   /** Creates a small version of the Modal */
   isSmall: PropTypes.bool,
   /** id to use for Modal Box description */
-  ariaDescribedById: PropTypes.string,
+  'aria-describedby': PropTypes.string,
   /** id of the ModalBoxBody */
   id: PropTypes.string.isRequired,
   /** Additional props are spread to the ModalBoxBody component */
@@ -49,7 +49,7 @@ const defaultProps = {
   onClose: () => undefined,
   isLarge: false,
   isSmall: false,
-  ariaDescribedById: ''
+  'aria-describedby': ''
 };
 
 const ModalContent = ({
@@ -63,7 +63,7 @@ const ModalContent = ({
   isLarge,
   isSmall,
   width,
-  ariaDescribedById,
+  'aria-describedby': ariaDescribedBy,
   id,
   ...props
 }) => {
@@ -76,7 +76,7 @@ const ModalContent = ({
     <Backdrop>
       <Bullseye>
         <FocusTrap focusTrapOptions={{ clickOutsideDeactivates: true }} className={css(bullseyeStyle.bullseye)}>
-          <ModalBox style={{ width }} className={className} isLarge={isLarge} isSmall={isSmall} title={title} id={ariaDescribedById || id}>
+          <ModalBox style={{ width }} className={className} isLarge={isLarge} isSmall={isSmall} title={title} id={ariaDescribedBy || id}>
             <ModalBoxHCloseButton onClose={onClose} />
             {modalBoxHeader}
             <ModalBoxBody {...props} id={id}>

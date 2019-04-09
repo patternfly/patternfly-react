@@ -9,8 +9,8 @@ exports[`About Modal Container Test isOpen 1`] = `
     component="div"
   >
     <AboutModalBox
-      aria-describedby="ariaDescribedById"
-      aria-labelledby="ariaLablledbyId"
+      aria-describedby="ariaDescribedBy"
+      aria-labelledby="ariaLabelledBy"
       className=""
     >
       <AboutModalBoxBrand
@@ -24,12 +24,12 @@ exports[`About Modal Container Test isOpen 1`] = `
       />
       <AboutModalBoxHeader
         className=""
-        id="ariaLablledbyId"
+        id="ariaLabelledBy"
         productName="Product Name"
       />
       <AboutModalBoxContent
         className=""
-        id="ariaDescribedById"
+        id="ariaDescribedBy"
         title="Test Modal Container title"
         trademark="Trademark and copyright information here"
       >

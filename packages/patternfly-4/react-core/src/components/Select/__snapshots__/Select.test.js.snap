@@ -3,7 +3,7 @@
 exports[`checkbox select renders checkbox select groups successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelledBy={null}
+  aria-labelledby={null}
   className=""
   isExpanded={true}
   isGrouped={true}
@@ -423,7 +423,7 @@ exports[`checkbox select renders checkbox select groups successfully 1`] = `
 exports[`checkbox select renders closed successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelledBy={null}
+  aria-labelledby={null}
   className=""
   isExpanded={false}
   isGrouped={false}
@@ -521,7 +521,7 @@ exports[`checkbox select renders closed successfully 1`] = `
 exports[`checkbox select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelledBy={null}
+  aria-labelledby={null}
   className=""
   isExpanded={true}
   isGrouped={false}
@@ -781,7 +781,7 @@ exports[`checkbox select renders expanded successfully 1`] = `
 exports[`select single select renders closed successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelledBy={null}
+  aria-labelledby={null}
   className=""
   isExpanded={false}
   isGrouped={false}
@@ -881,7 +881,7 @@ exports[`select single select renders closed successfully 1`] = `
 exports[`select single select renders expanded successfully 1`] = `
 <Select
   aria-label={null}
-  ariaLabelledBy={null}
+  aria-labelledby={null}
   className=""
   isExpanded={true}
   isGrouped={false}

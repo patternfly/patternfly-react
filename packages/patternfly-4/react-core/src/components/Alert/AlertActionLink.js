@@ -16,7 +16,7 @@ const defaultProps = {
   className: ''
 };
 
-const AlertActionLink = ({ className, children, ...props }) => (
+const AlertActionLink = ({ className, variantLabel, children, ...props }) => (
   <Button variant={ButtonVariant.link} {...props}>
     {children}
   </Button>

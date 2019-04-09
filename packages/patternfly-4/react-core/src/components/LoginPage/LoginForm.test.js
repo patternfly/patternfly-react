@@ -8,7 +8,7 @@ test('should render Login form', () => {
 });
 
 test('default function onChangeUsername', () => {
-  const view = shallow(<LoginForm rememberMeLabel="Login Form" rememberMeAriaLabel="Login Form" />);
+  const view = shallow(<LoginForm rememberMeLabel="Login Form" aria-label="Login Form" />);
   view.find('#pf-login-username-id').simulate('change');
   const result = LoginForm.defaultProps.onChangeUsername();
   expect(result).toBe(undefined);
@@ -17,14 +17,14 @@ test('default function onChangeUsername', () => {
 test('should call onChangeUsername callback', () => {
   const mockFn = jest.fn();
   const view = shallow(
-    <LoginForm onChangeUsername={mockFn} rememberMeLabel="Login Form" rememberMeAriaLabel="Login Form" />
+    <LoginForm onChangeUsername={mockFn} rememberMeLabel="Login Form" aria-label="Login Form" />
   );
   view.find('#pf-login-username-id').simulate('change');
   expect(mockFn).toHaveBeenCalled();
 });
 
 test('default function onChangePassword', () => {
-  const view = shallow(<LoginForm rememberMeLabel="Login Form" rememberMeAriaLabel="Login Form" />);
+  const view = shallow(<LoginForm rememberMeLabel="Login Form" aria-label="Login Form" />);
   view.find('#pf-login-password-id').simulate('change');
   const result = LoginForm.defaultProps.onChangePassword();
   expect(result).toBe(undefined);
@@ -33,14 +33,14 @@ test('default function onChangePassword', () => {
 test('should call onChangePassword callback', () => {
   const mockFn = jest.fn();
   const view = shallow(
-    <LoginForm onChangePassword={mockFn} rememberMeLabel="Login Form" rememberMeAriaLabel="Login Form" />
+    <LoginForm onChangePassword={mockFn} rememberMeLabel="Login Form" aria-label="Login Form" />
   );
   view.find('#pf-login-password-id').simulate('change');
   expect(mockFn).toHaveBeenCalled();
 });
 
 test('default function onChangeRememberMe', () => {
-  const view = shallow(<LoginForm rememberMeLabel="Login Form" rememberMeAriaLabel="Login Form" />);
+  const view = shallow(<LoginForm rememberMeLabel="Login Form" aria-label="Login Form" />);
   view.find('#pf-login-remember-me-id').simulate('change');
   const result = LoginForm.defaultProps.onChangeRememberMe();
   expect(result).toBe(undefined);
@@ -49,13 +49,13 @@ test('default function onChangeRememberMe', () => {
 test('should call onChangeRememberMe callback', () => {
   const mockFn = jest.fn();
   const view = shallow(
-    <LoginForm onChangeRememberMe={mockFn} rememberMeLabel="Login Form" rememberMeAriaLabel="Login Form" />
+    <LoginForm onChangeRememberMe={mockFn} rememberMeLabel="Login Form" aria-label="Login Form" />
   );
   view.find('#pf-login-remember-me-id').simulate('change');
   expect(mockFn).toHaveBeenCalled();
 });
 
-test('LoginForm with rememberMeLabel and no rememberMeAriaLabel generates console error', () => {
+test('LoginForm with rememberMeLabel and no aria-label generates console error', () => {
   const myMock = jest.fn();
   const mockFn = jest.fn();
   global.console = { error: myMock };
@@ -64,12 +64,12 @@ test('LoginForm with rememberMeLabel and no rememberMeAriaLabel generates consol
   expect(myMock).toBeCalled();
 });
 
-test('LoginForm with rememberMeLabel and rememberMeAriaLabel does not generates console error', () => {
+test('LoginForm with rememberMeLabel and aria-label does not generates console error', () => {
   const myMock = jest.fn();
   const mockFn = jest.fn();
   global.console = { error: myMock };
   const view = shallow(
-    <LoginForm onChangeRememberMe={mockFn} rememberMeAriaLabel="remember me" rememberMeLabel="remember me" />
+    <LoginForm onChangeRememberMe={mockFn} aria-label="remember me" rememberMeLabel="remember me" />
   );
   expect(view).toMatchSnapshot();
   expect(myMock).not.toBeCalled();

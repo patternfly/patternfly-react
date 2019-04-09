@@ -58,7 +58,7 @@ class CheckboxSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
         >
           {this.options}
         </Select>

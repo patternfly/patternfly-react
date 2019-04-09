@@ -19,7 +19,7 @@ const propTypes = {
   /** Flag to show the title */
   hideTitle: PropTypes.bool,
   /** id to use for Modal Box description */
-  ariaDescribedById: PropTypes.string,
+  'aria-describedby': PropTypes.string,
   /** Action buttons to put in the Modal Footer */
   actions: PropTypes.any,
   /** A callback for when the close button is clicked */
@@ -39,7 +39,7 @@ const defaultProps = {
   className: '',
   isOpen: false,
   hideTitle: false,
-  ariaDescribedById: '',
+  'aria-describedby': '',
   actions: [],
   onClose: () => undefined,
   isLarge: false,
@@ -96,8 +96,6 @@ class Modal extends React.Component {
   }
 
   render() {
-    const { ...props } = this.props;
-
     if (!canUseDOM) {
       return null;
     }
@@ -106,7 +104,7 @@ class Modal extends React.Component {
       this.container = document.createElement('div');
     }
 
-    return ReactDOM.createPortal(<ModalContent {...props} title={this.props.title} id={this.id} ariaDescribedById={this.props.ariaDescribedById}/>, this.container);
+    return ReactDOM.createPortal(<ModalContent {...this.props} title={this.props.title} id={this.id} />, this.container);
   }
 }
 

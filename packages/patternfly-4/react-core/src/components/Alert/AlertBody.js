@@ -10,7 +10,7 @@ const propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   onClose: PropTypes.func,
-  closeButtonAriaLabel: PropTypes.string
+  'aria-label': PropTypes.string
 };
 
 const defaultProps = {
@@ -18,13 +18,13 @@ const defaultProps = {
   children: '',
   className: '',
   onClose: undefined,
-  closeButtonAriaLabel: 'Close'
+  'aria-label': 'Close'
 };
 
-const AlertBody = ({ title, className, children, onClose, closeButtonAriaLabel, ...props }) => (
+const AlertBody = ({ title, className, children, onClose, 'aria-label': ariaLabel, ...props }) => (
   <div {...props} className={className}>
     {onClose && (
-      <Button variant={ButtonVariant.plain} onClick={onClose} aria-label={closeButtonAriaLabel}>
+      <Button variant={ButtonVariant.plain} onClick={onClose} aria-label={ariaLabel}>
         <TimesIcon />
       </Button>
     )}

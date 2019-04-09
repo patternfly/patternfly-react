@@ -35,13 +35,13 @@ const defaultProps = {
   children: null,
   className: '',
   isOpen: false,
+  onToggle: Function.prototype,
   parentRef: null,
   isFocused: false,
   isHovered: false,
   isActive: false,
   isDisabled: false,
-  isPlain: false,
-  onToggle: Function.prototype
+  isPlain: false
 };
 
 class DropdownToggle extends Component {
@@ -99,7 +99,6 @@ class DropdownToggle extends Component {
       isHovered,
       isDisabled,
       isPlain,
-      ariaHasPopup,
       onToggle,
       onEnter,
       parentRef,
@@ -126,7 +125,6 @@ class DropdownToggle extends Component {
         type={type || 'button'}
         onClick={_event => onToggle && onToggle(!isOpen)}
         aria-expanded={isOpen}
-        aria-haspopup={ariaHasPopup}
         onKeyDown={this.onKeyDown}
         disabled={isDisabled}
       >

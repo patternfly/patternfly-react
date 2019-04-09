@@ -3022,8 +3022,8 @@ exports[`Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-10"
                                   isActive={false}
@@ -3038,8 +3038,8 @@ exports[`Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-10"
                                     isActive={false}
@@ -3054,7 +3054,7 @@ exports[`Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -3748,8 +3748,8 @@ exports[`Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-11"
                                   isActive={false}
@@ -3764,8 +3764,8 @@ exports[`Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-11"
                                     isActive={false}
@@ -3780,7 +3780,7 @@ exports[`Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -4474,8 +4474,8 @@ exports[`Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-12"
                                   isActive={false}
@@ -4490,8 +4490,8 @@ exports[`Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-12"
                                     isActive={false}
@@ -4506,7 +4506,7 @@ exports[`Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -5200,8 +5200,8 @@ exports[`Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-13"
                                   isActive={false}
@@ -5216,8 +5216,8 @@ exports[`Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-13"
                                     isActive={false}
@@ -5232,7 +5232,7 @@ exports[`Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -5926,8 +5926,8 @@ exports[`Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-14"
                                   isActive={false}
@@ -5942,8 +5942,8 @@ exports[`Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-14"
                                     isActive={false}
@@ -5958,7 +5958,7 @@ exports[`Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -6652,8 +6652,8 @@ exports[`Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-15"
                                   isActive={false}
@@ -6668,8 +6668,8 @@ exports[`Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-15"
                                     isActive={false}
@@ -6684,7 +6684,7 @@ exports[`Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -7378,8 +7378,8 @@ exports[`Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-16"
                                   isActive={false}
@@ -7394,8 +7394,8 @@ exports[`Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-16"
                                     isActive={false}
@@ -7410,7 +7410,7 @@ exports[`Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -8104,8 +8104,8 @@ exports[`Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-17"
                                   isActive={false}
@@ -8120,8 +8120,8 @@ exports[`Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-17"
                                     isActive={false}
@@ -8136,7 +8136,7 @@ exports[`Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -8830,8 +8830,8 @@ exports[`Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-18"
                                   isActive={false}
@@ -8846,8 +8846,8 @@ exports[`Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-18"
                                     isActive={false}
@@ -8862,7 +8862,7 @@ exports[`Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -44728,8 +44728,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-0"
                                   isActive={false}
@@ -44744,8 +44744,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-0"
                                     isActive={false}
@@ -44760,7 +44760,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -45580,8 +45580,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-1"
                                   isActive={false}
@@ -45596,8 +45596,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-1"
                                     isActive={false}
@@ -45612,7 +45612,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -46432,8 +46432,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-2"
                                   isActive={false}
@@ -46448,8 +46448,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-2"
                                     isActive={false}
@@ -46464,7 +46464,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -47284,8 +47284,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-3"
                                   isActive={false}
@@ -47300,8 +47300,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-3"
                                     isActive={false}
@@ -47316,7 +47316,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -48136,8 +48136,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-4"
                                   isActive={false}
@@ -48152,8 +48152,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-4"
                                     isActive={false}
@@ -48168,7 +48168,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -48988,8 +48988,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-5"
                                   isActive={false}
@@ -49004,8 +49004,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-5"
                                     isActive={false}
@@ -49020,7 +49020,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -49840,8 +49840,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-6"
                                   isActive={false}
@@ -49856,8 +49856,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-6"
                                     isActive={false}
@@ -49872,7 +49872,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -50692,8 +50692,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-7"
                                   isActive={false}
@@ -50708,8 +50708,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-7"
                                     isActive={false}
@@ -50724,7 +50724,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -51544,8 +51544,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-8"
                                   isActive={false}
@@ -51560,8 +51560,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-8"
                                     isActive={false}
@@ -51576,7 +51576,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain"
                                       disabled={false}
@@ -52399,8 +52399,8 @@ exports[`Simple Actions table 1`] = `
                                 onToggle={[Function]}
                               >
                                 <Kebab
+                                  aria-haspopup="true"
                                   aria-label="Actions"
-                                  ariaHasPopup={true}
                                   className=""
                                   id="pf-toggle-id-9"
                                   isActive={false}
@@ -52415,8 +52415,8 @@ exports[`Simple Actions table 1`] = `
                                   parentRef={null}
                                 >
                                   <DropdownToggle
+                                    aria-haspopup="true"
                                     aria-label="Actions"
-                                    ariaHasPopup={true}
                                     className=""
                                     id="pf-toggle-id-9"
                                     isActive={false}
@@ -52431,7 +52431,7 @@ exports[`Simple Actions table 1`] = `
                                   >
                                     <button
                                       aria-expanded={false}
-                                      aria-haspopup={true}
+                                      aria-haspopup="true"
                                       aria-label="Actions"
                                       className="pf-c-dropdown__toggle pf-m-plain pf-m-disabled"
                                       disabled={true}

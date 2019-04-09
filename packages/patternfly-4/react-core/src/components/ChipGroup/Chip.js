@@ -7,6 +7,30 @@ import { TimesCircleIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/Chip/chip.css';
 import GenerateId from '../../helpers/GenerateId/GenerateId';
 
+const propTypes = {
+  /** Content rendered inside the chip text */
+  children: PropTypes.node,
+  /** Aria Label for close button */
+  'aria-label': PropTypes.string,
+  /** Additional classes added to the chip item */
+  className: PropTypes.string,
+  /** Flag indicating if the chip has overflow */
+  isOverflowChip: PropTypes.bool,
+  /** Function that is called when clicking on the chip button */
+  onClick: PropTypes.func,
+  /** Position of the tooltip which is displayed if text is longer */
+  tooltipPosition: PropTypes.oneOf(Object.values(TooltipPosition))
+};
+
+const defaultProps = {
+  children: null,
+  'aria-label': 'close',
+  className: '',
+  isOverflowChip: false,
+  tooltipPosition: 'top',
+  onClick: () => { }
+};
+
 class Chip extends React.Component {
   span = React.createRef();
   state = { isTooltipVisible: false };
@@ -29,7 +53,7 @@ class Chip extends React.Component {
   };
 
   renderChip = randomId => {
-    const { children, closeBtnAriaLabel, tooltipPosition, className, onClick } = this.props;
+    const { children, 'aria-label': ariaLabel, tooltipPosition, className, onClick } = this.props;
     if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>
@@ -39,7 +63,7 @@ class Chip extends React.Component {
             </span>
             <ChipButton
               onClick={onClick}
-              ariaLabel={closeBtnAriaLabel}
+              aria-label={ariaLabel}
               id={`remove_${randomId}`}
               aria-labelledby={`remove_${randomId} ${randomId}`}
             >
@@ -56,7 +80,7 @@ class Chip extends React.Component {
         </span>
         <ChipButton
           onClick={onClick}
-          ariaLabel={closeBtnAriaLabel}
+          aria-label={ariaLabel}
           id={`remove_${randomId}`}
           aria-labelledby={`remove_${randomId} ${randomId}`}
         >
@@ -73,28 +97,8 @@ class Chip extends React.Component {
     );
   }
 }
-Chip.propTypes = {
-  /** Content rendered inside the chip text */
-  children: PropTypes.node,
-  /** Aria Label for close button */
-  closeBtnAriaLabel: PropTypes.string,
-  /** Additional classes added to the chip item */
-  className: PropTypes.string,
-  /** Flag indicating if the chip has overflow */
-  isOverflowChip: PropTypes.bool,
-  /** Function that is called when clicking on the chip button */
-  onClick: PropTypes.func,
-  /** Position of the tooltip which is displayed if text is longer */
-  tooltipPosition: PropTypes.oneOf(Object.values(TooltipPosition))
-};
 
-Chip.defaultProps = {
-  children: null,
-  closeBtnAriaLabel: 'close',
-  className: '',
-  isOverflowChip: false,
-  tooltipPosition: 'top',
-  onClick: () => {}
-};
+Chip.propTypes = propTypes;
+Chip.defaultProps = defaultProps;
 
 export default Chip;

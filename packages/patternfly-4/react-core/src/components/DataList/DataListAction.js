@@ -4,6 +4,28 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 import { Dropdown, DropdownPosition, KebabToggle } from '../Dropdown';
 
+const propTypes = {
+  /** Content rendered inside the DataList list */
+  children: PropTypes.node,
+  /** Additional classes added to the DataList list */
+  className: PropTypes.string,
+  /** DataList actions to show in the dropdown */
+  actions: PropTypes.arrayOf(PropTypes.node).isRequired,
+  /** Identify the DataList toggle number */
+  id: PropTypes.string.isRequired,
+  /** Adds accessible text to the DataList item */
+  'aria-labelledby': PropTypes.string.isRequired,
+  /** Adds accessible text to the DataList item */
+  'aria-label': PropTypes.string.isRequired,
+  /** Additional props are spread to the container <div> */
+  '': PropTypes.any
+};
+
+const defaultProps = {
+  children: null,
+  className: ''
+};
+
 class DataListAction extends React.Component {
   constructor(props) {
     super(props);
@@ -36,40 +58,21 @@ class DataListAction extends React.Component {
     return children ? (
       children
     ) : (
-      <div className={css(styles.dataListAction, className)} {...props}>
-        <Dropdown
-          isPlain
-          position={DropdownPosition.right}
-          isOpen={this.state.isOpen}
-          onSelect={this.onSelect}
-          toggle={<KebabToggle onToggle={this.onToggle} />}
-          dropdownItems={actions}
-        />
-      </div>
-    );
+        <div className={css(styles.dataListAction, className)} {...props}>
+          <Dropdown
+            isPlain
+            position={DropdownPosition.right}
+            isOpen={this.state.isOpen}
+            onSelect={this.onSelect}
+            toggle={<KebabToggle onToggle={this.onToggle} />}
+            dropdownItems={actions}
+          />
+        </div>
+      );
   }
 }
 
-DataListAction.propTypes = {
-  /** Content rendered inside the DataList list */
-  children: PropTypes.node,
-  /** Additional classes added to the DataList list */
-  className: PropTypes.string,
-  /** DataList actions to show in the dropdown */
-  actions: PropTypes.arrayOf(PropTypes.node).isRequired,
-  /** Identify the DataList toggle number */
-  id: PropTypes.string.isRequired,
-  /** Adds accessible text to the DataList item */
-  'aria-labelledby': PropTypes.string.isRequired,
-  /** Adds accessible text to the DataList item */
-  'aria-label': PropTypes.string.isRequired,
-  /** Additional props are spread to the container <div> */
-  '': PropTypes.any
-};
-
-DataListAction.defaultProps = {
-  children: null,
-  className: ''
-};
+DataListAction.propTypes = propTypes;
+DataListAction.defaultProps = defaultProps;
 
 export default DataListAction;
