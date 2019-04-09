@@ -26,7 +26,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
         <Component
           href={to}
           target={target}
-          className={css(styles.breadcrumbLink, getModifier(styles, isActive && 'current'))}
+          className={css(styles.breadcrumbLink, isActive ? getModifier(styles, 'current') : '')}
           aria-current={isActive ? 'page' : undefined}
         >
           {children}
