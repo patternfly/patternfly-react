@@ -106,7 +106,7 @@
     "prettier": "prettier --write 'storybook/**/*.js' 'packages/**/*.js' 'scripts/**/*.js'",
     "start": "yarn start:pf3",
     "start:pf3": "concurrently 'yarn storybook' 'yarn storybook:openurl'",
-    "start:pf4": "lerna run develop --scope=@patternfly/react-docs --stream",
+    "start:pf4": "lerna run develop --scope='@patternfly/react-docs' --scope='@patternfly/react-core' --parallel --stream",
     "storybook:openurl": "node ./storybook/openBrowser.js",
     "storybook": "start-storybook -c storybook -p 6006",
     "test": "jest packages",
