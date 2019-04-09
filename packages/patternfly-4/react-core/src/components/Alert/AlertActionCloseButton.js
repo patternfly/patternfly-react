@@ -20,11 +20,19 @@ const defaultProps = {
   onClose: () => undefined
 };
 
-const AlertActionCloseButton = ({ className, onClose, variantLabel, 'aria-label': ariaLabel, title, variant, ...props }) => (
+const AlertActionCloseButton = ({
+  className,
+  onClose,
+  'aria-label': ariaLabel,
+  title,
+  variant,
+  variantLabel,
+  ...props
+}) => (
   <Button
     variant={ButtonVariant.plain}
     onClick={onClose}
-    aria-label={ariaLabel === '' ? `Close ${variant} alert: ${title}` : ariaLabel}
+    aria-label={ariaLabel === '' ? `Close ${variantLabel} alert: ${title}` : ariaLabel}
     {...props}
   >
     <TimesIcon />
