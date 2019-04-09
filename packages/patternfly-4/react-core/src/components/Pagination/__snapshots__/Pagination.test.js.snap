@@ -404,7 +404,6 @@ exports[`component render custom pagination toggle 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={1}
           />
@@ -865,7 +864,6 @@ exports[`component render custom perPageOptions 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={1}
           />
@@ -1409,7 +1407,6 @@ exports[`component render custom start end 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={1}
           />
@@ -1951,7 +1948,6 @@ exports[`component render last page 1`] = `
             max={2}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={2}
           />
@@ -2493,7 +2489,6 @@ exports[`component render limited number of pages 1`] = `
             max={1}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={1}
           />
@@ -3035,7 +3030,6 @@ exports[`component render no items 1`] = `
             max={0}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={1}
           />
@@ -3572,7 +3566,6 @@ exports[`component render should render correctly bottom 1`] = `
             max={2}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={1}
           />
@@ -4114,7 +4107,6 @@ exports[`component render should render correctly top 1`] = `
             max={2}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={1}
           />
@@ -4647,7 +4639,6 @@ exports[`component render titles 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={1}
           />
@@ -5189,7 +5180,6 @@ exports[`component render up drop direction 1`] = `
             max={4}
             min="1"
             onChange={[Function]}
-            size="2"
             type="number"
             value={1}
           />
