@@ -11,7 +11,7 @@ const propTypes = {
   /** Content rendered inside the chip text */
   children: PropTypes.node,
   /** Aria Label for close button */
-  'aria-label': PropTypes.string,
+  'aria-label-button': PropTypes.string,
   /** Additional classes added to the chip item */
   className: PropTypes.string,
   /** Flag indicating if the chip has overflow */
@@ -24,7 +24,7 @@ const propTypes = {
 
 const defaultProps = {
   children: null,
-  'aria-label': 'close',
+  'aria-label-button': 'close',
   className: '',
   isOverflowChip: false,
   tooltipPosition: 'top',
@@ -53,7 +53,7 @@ class Chip extends React.Component {
   };
 
   renderChip = randomId => {
-    const { children, 'aria-label': ariaLabel, tooltipPosition, className, onClick } = this.props;
+    const { children, 'aria-label-button': ariaLabel, tooltipPosition, className, onClick } = this.props;
     if (this.state.isTooltipVisible) {
       return (
         <Tooltip position={tooltipPosition} content={children}>

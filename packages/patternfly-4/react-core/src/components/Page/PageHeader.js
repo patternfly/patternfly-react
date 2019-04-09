@@ -24,8 +24,8 @@ const propTypes = {
   onNavToggle: PropTypes.func,
   /** True if the side nav is shown  */
   isNavOpen: PropTypes.bool,
-  /** Callback function to handle the side nav toggle button */
-  'aria-label': PropTypes.string,
+  /** aria-label for the button */
+  'aria-label-button': PropTypes.string,
   /** Additional props are spread to the container <header> */
   '': PropTypes.any
 };
@@ -40,7 +40,7 @@ const defaultProps = {
   showNavToggle: false,
   isNavOpen: true,
   onNavToggle: () => undefined,
-  'aria-label': 'Global navigation'
+  'aria-label-button': 'Global navigation'
 };
 
 const PageHeader = ({
@@ -53,7 +53,7 @@ const PageHeader = ({
   isNavOpen,
   showNavToggle,
   onNavToggle,
-  'aria-label': ariaLabel,
+  'aria-label-button': ariaLabel,
   ...props
 }) => (
   <header role="banner" className={css(styles.pageHeader, className)} {...props}>

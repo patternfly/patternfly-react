@@ -33,7 +33,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-  'aria-label': undefined,
+  'aria-label': '',
   action: null,
   children: '',
   className: '',

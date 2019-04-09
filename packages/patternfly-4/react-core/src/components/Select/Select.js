@@ -24,7 +24,7 @@ const propTypes = {
   placeholderText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   /** Selected item */
   selections: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
-  /** Adds accessible text to Select */
+  /** Adds accessible text to all Select elements */
   'aria-label': PropTypes.string,
   /** Id of label for the Select aria-labelledby */
   'aria-labelledby': PropTypes.string,

@@ -25,7 +25,7 @@ export const propTypes = {
   /** Indicates where menu will be alligned horizontally */
   position: PropTypes.oneOf(Object.values(ApplicationLauncherPosition)),
   /** Adds accessible text to the button. Required for plain buttons */
-  'aria-label': PropTypes.string
+  'aria-label-button': PropTypes.string
 };
 
 export const defaultProps = {
@@ -36,7 +36,7 @@ export const defaultProps = {
   onSelect: Function.prototype,
   onToggle: Function.prototype,
   position: ApplicationLauncherPosition.left,
-  'aria-label': 'Actions'
+  'aria-label-button': 'Actions'
 };
 
 class ApplicationLauncher extends React.Component {
@@ -50,7 +50,7 @@ class ApplicationLauncher extends React.Component {
 
   render() {
     const {
-      'aria-label': ariaLabel,
+      'aria-label-button': ariaLabel,
       dropdownItems,
       className,
       isOpen,

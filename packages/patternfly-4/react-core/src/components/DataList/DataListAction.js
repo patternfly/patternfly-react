@@ -13,10 +13,6 @@ const propTypes = {
   actions: PropTypes.arrayOf(PropTypes.node).isRequired,
   /** Identify the DataList toggle number */
   id: PropTypes.string.isRequired,
-  /** Adds accessible text to the DataList item */
-  'aria-labelledby': PropTypes.string.isRequired,
-  /** Adds accessible text to the DataList item */
-  'aria-label': PropTypes.string.isRequired,
   /** Additional props are spread to the container <div> */
   '': PropTypes.any
 };
@@ -50,8 +46,6 @@ class DataListAction extends React.Component {
       actions,
       className,
       id,
-      'aria-label': ariaLabel,
-      'aria-labelledby': ariaLabelledBy,
       ...props
     } = this.props;
 
