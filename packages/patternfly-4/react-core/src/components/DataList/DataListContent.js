@@ -12,7 +12,7 @@ const propTypes = {
   id: PropTypes.string,
   /** Flag to show if the expanded content of the DataList item is visible */
   isHidden: PropTypes.bool,
-  /** Adds accessible text to the DataList toggle */
+  /** Adds accessible text to the expandable context section */
   'aria-label': PropTypes.string.isRequired,
   /** Additional props are spread to the container <section> */
   '': PropTypes.any
@@ -24,12 +24,11 @@ const defaultProps = {
   isHidden: false
 };
 
-const DataListContent = ({ className, children, id, isHidden, 'aria-label': ariaLabel, rowid, ...props }) => (
+const DataListContent = ({ className, children, id, isHidden, rowid, ...props }) => (
   <section
     id={id}
     className={css(styles.dataListExpandableContent, className)}
     hidden={isHidden}
-    aria-label={ariaLabel}
     {...props}
   >
     {children}

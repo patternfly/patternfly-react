@@ -5,24 +5,7 @@ import { AngleRightIcon } from '@patternfly/react-icons';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 import { Button, ButtonVariant } from '../Button';
 
-const DataListToggle = ({
-  className,
-  isExpanded,
-  'aria-controls': ariaControls,
-  'aria-label': ariaLabel,
-  'aria-labelledby': ariaLabelledBy,
-  rowid,
-  id,
-  ...props
-}) => (
-  <div className={css(styles.dataListToggle, className)} {...props}>
-    <Button id={id} variant={ButtonVariant.plain} aria-controls={ariaControls !== '' && ariaControls} aria-label={ariaLabel} aria-labelledby={ariaLabel !== "Details" ? null : `${rowid} ${id}`} aria-expanded={isExpanded}>
-      <AngleRightIcon />
-    </Button>
-  </div>
-);
-
-DataListToggle.propTypes = {
+const propTypes = {
   /** Additional classes added to the DataList cell */
   className: PropTypes.string,
   /** Flag to show if the expanded content of the DataList item is visible */
@@ -39,12 +22,45 @@ DataListToggle.propTypes = {
   '': PropTypes.any
 };
 
-DataListToggle.defaultProps = {
+const defaultProps = {
   'aria-controls': '',
   'aria-label': 'Details',
   'aria-labelledby': '',
   className: '',
   isExpanded: false
 };
+
+const DataListToggle = ({
+  className,
+  isExpanded,
+  'aria-controls': ariaControls,
+  'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledBy,
+  rowid,
+  id,
+  ...props
+}) => {
+  if (ariaLabel === "Details") {
+    ariaLabelledBy = `${rowid} ${id}`;
+  }
+
+  return (
+    <div className={css(styles.dataListToggle, className)} {...props}>
+      <Button
+        id={id}
+        variant={ButtonVariant.plain}
+        aria-controls={ariaControls !== '' && ariaControls}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        aria-expanded={isExpanded}
+      >
+        <AngleRightIcon />
+      </Button>
+    </div>
+  );
+}
+
+DataListToggle.propTypes = propTypes;
+DataListToggle.defaultProps = defaultProps;
 
 export default DataListToggle;
