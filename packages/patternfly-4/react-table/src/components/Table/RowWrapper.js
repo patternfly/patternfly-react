@@ -68,7 +68,8 @@ class RowWrapper extends React.Component {
         className={css(
           className,
           isExpanded !== undefined && styles.tableExpandableRow,
-          isExpanded && styles.modifiers.expanded
+          isExpanded && styles.modifiers.expanded,
+          isExpanded && styles.modifiers.noPadding
         )}
         hidden={isExpanded !== undefined && !isExpanded}
       />

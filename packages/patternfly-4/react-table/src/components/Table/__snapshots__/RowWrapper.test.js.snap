@@ -54,7 +54,7 @@ exports[`RowWrapper renders expanded correctly 1`] = `
       rowProps={null}
     >
       <tr
-        className="pf-c-table__expandable-row pf-m-expanded"
+        className="pf-c-table__expandable-row pf-m-expanded pf-m-no-padding"
         hidden={false}
       />
     </RowWrapper>

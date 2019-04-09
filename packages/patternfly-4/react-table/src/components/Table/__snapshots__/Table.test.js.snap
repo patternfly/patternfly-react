@@ -18211,7 +18211,7 @@ exports[`Collapsible nested table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -18669,7 +18669,7 @@ exports[`Collapsible nested table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -19661,7 +19661,7 @@ exports[`Collapsible nested table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -24938,7 +24938,7 @@ exports[`Collapsible table 1`] = `
                     }
                   >
                     <tr
-                      className="pf-c-table__expandable-row pf-m-expanded"
+                      className="pf-c-table__expandable-row pf-m-expanded pf-m-no-padding"
                       hidden={false}
                       onMouseDown={[Function]}
                     >
@@ -24979,7 +24979,7 @@ exports[`Collapsible table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -26446,7 +26446,7 @@ exports[`Collapsible table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -31402,7 +31402,7 @@ exports[`Header width table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -31814,7 +31814,7 @@ exports[`Header width table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -32638,7 +32638,7 @@ exports[`Header width table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -37666,7 +37666,7 @@ exports[`Selectable table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -38131,7 +38131,7 @@ exports[`Selectable table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>
@@ -39079,7 +39079,7 @@ exports[`Selectable table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content"
+                              className="pf-c-table__expandable-row-content pf-m-no-padding"
                             >
                               one
                             </div>

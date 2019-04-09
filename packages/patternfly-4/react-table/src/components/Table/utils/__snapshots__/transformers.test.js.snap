@@ -3,7 +3,7 @@
 exports[`Transformer functions expandable with parent 1`] = `
 <ExpandableRowContent>
   <div
-    className="pf-c-table__expandable-row-content"
+    className="pf-c-table__expandable-row-content pf-m-no-padding"
   >
     test
   </div>
