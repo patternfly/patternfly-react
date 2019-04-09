@@ -17,3 +17,11 @@ test('extra props are spread to the root element', () => {
   const view = shallow(<CardHeader data-testid={testId} />);
   expect(view.prop('data-testid')).toBe(testId);
 });
+
+test('set size and level props', () => {
+  const size = 'xl';
+  const level = 'h6';
+  const view = shallow(<CardHeader size={size} headingLevel={level} />);
+  expect(view.prop('size')).toBe(size);
+  expect(view.prop('headingLevel')).toBe(size);
+});
