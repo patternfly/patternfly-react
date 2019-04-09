@@ -29,19 +29,6 @@ exports[`Wizard should match snapshot 1`] = `
             className="pf-c-wizard"
             role="dialog"
           >
-            <BackgroundImage
-              className=""
-              src={
-                Object {
-                  "filter": "/assets/images/background-filter.svg#image_overlay",
-                  "lg": "/assets/images/pfbg_1200.jpg",
-                  "sm": "/assets/images/pfbg_768.jpg",
-                  "sm2x": "/assets/images/pfbg_768@2x.jpg",
-                  "xs": "/assets/images/pfbg_576.jpg",
-                  "xs2x": "/assets/images/pfbg_576@2x.jpg",
-                }
-              }
-            />
             <WizardHeader
               ariaLabel="Close"
               description="Description here"
@@ -160,9 +147,6 @@ exports[`Wizard should match snapshot 1`] = `
               role="dialog"
             >
               <div
-                class="pf-c-background-image css-6fbjc4"
-              />
-              <div
                 class="pf-c-wizard__header"
               >
                 <button
@@ -327,9 +311,13 @@ exports[`Wizard should match snapshot 1`] = `
                   <main
                     class="pf-c-wizard__main"
                   >
-                    <p>
-                      Step 1
-                    </p>
+                    <div
+                      class="pf-c-wizard__main-body"
+                    >
+                      <p>
+                        Step 1
+                      </p>
+                    </div>
                   </main>
                 </div>
                 <footer
@@ -368,9 +356,6 @@ exports[`Wizard should match snapshot 1`] = `
               role="dialog"
             >
               <div
-                class="pf-c-background-image css-6fbjc4"
-              />
-              <div
                 class="pf-c-wizard__header"
               >
                 <button
@@ -535,9 +520,13 @@ exports[`Wizard should match snapshot 1`] = `
                   <main
                     class="pf-c-wizard__main"
                   >
-                    <p>
-                      Step 1
-                    </p>
+                    <div
+                      class="pf-c-wizard__main-body"
+                    >
+                      <p>
+                        Step 1
+                      </p>
+                    </div>
                   </main>
                 </div>
                 <footer
