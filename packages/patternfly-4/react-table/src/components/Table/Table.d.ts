@@ -60,7 +60,7 @@ export interface ISeparator {
 
 export interface ICell {
   title: String;
-  transfroms: Array<Function>;
+  transforms: Array<Function>;
   cellTransforms: Array<Function>;
   formatters: Array<Function>;
   cellFormatters: Array<Function>;
