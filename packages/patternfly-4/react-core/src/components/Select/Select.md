@@ -65,7 +65,7 @@ class SingleSelectInput extends React.Component {
           onSelect={this.onSelect}
           selections={selected}
           isExpanded={isExpanded}
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
         >
           {this.options.map((option, index) => (
             <SelectOption
@@ -148,7 +148,7 @@ class CheckboxSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
         >
           {this.options}
         </Select>
@@ -230,7 +230,7 @@ class GroupedCheckboxSelectInput extends React.Component {
           selections={selected}
           isExpanded={isExpanded}
           placeholderText="Filter by status"
-          ariaLabelledBy={titleId}
+          aria-labelledby={titleId}
           isGrouped
         >
           {this.options}
