@@ -7,7 +7,7 @@ export interface BreadcrumbHeadingProps extends React.HTMLProps<HTMLLIElement> {
   className?: string;
   to?: string;
   target?: string;
-  component?: string;
+  component?: React.ReactType<BreadcrumbHeadingProps>;
 }
 
 export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> = ({
@@ -17,24 +17,20 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
   target = null,
   component: Component = 'a',
   ...props
-}) => {
-
-  let Heading;
-  if (to) {
-    Heading = React.createElement(Component, {
-      href: to,
-      target: target,
-      className: css(styles.breadcrumbLink, styles.modifiers.current),
-    }, children);
-  } else {
-    Heading = <React.Fragment>{children}</React.Fragment>
-  }
-
-  return (
+}) => (
     <li {...props} className={css(styles.breadcrumbItem, className)}>
       <h1 className={css(styles.breadcrumbHeading)}>
-        <Heading />
+        {to && (
+          <Component
+            href={to}
+            target={target}
+            className={css(styles.breadcrumbLink, styles.modifiers.current)}
+            aria-current="page"
+          >
+            {children}
+          </Component>
+        )}
+        {!to && <React.Fragment>{children}</React.Fragment>}
       </h1>
     </li>
   );
-}
