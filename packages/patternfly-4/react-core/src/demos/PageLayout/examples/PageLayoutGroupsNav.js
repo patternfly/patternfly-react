@@ -1,8 +1,6 @@
 import React from 'react';
 import {
   Avatar,
-  BackgroundImage,
-  BackgroundImageSrc,
   Brand,
   Button,
   ButtonVariant,
@@ -168,14 +166,6 @@ class PageLayoutGroupsNav extends React.Component {
         </ToolbarGroup>
       </Toolbar>
     );
-    const bgImages = {
-      [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg',
-      [BackgroundImageSrc.sm]: '/assets/images/pfbg_768.jpg',
-      [BackgroundImageSrc.sm2x]: '/assets/images/pfbg_768@2x.jpg',
-      [BackgroundImageSrc.xs]: '/assets/images/pfbg_576.jpg',
-      [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
-      [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg#image_overlay'
-    };
 
     const Header = (
       <PageHeader
@@ -189,7 +179,6 @@ class PageLayoutGroupsNav extends React.Component {
 
     return (
       <React.Fragment>
-        <BackgroundImage src={bgImages} />
         <Page header={Header} sidebar={Sidebar} isManagedSidebar>
           <PageSection variant={PageSectionVariants.light}>
             <TextContent>
