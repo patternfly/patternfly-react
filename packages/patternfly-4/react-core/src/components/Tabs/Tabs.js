@@ -80,7 +80,12 @@ const TabsWithNav = ({
       highlightRightScrollButton && styles.modifiers.endCurrent,
       className)}
   >
-    <InternalTabs id={id} activeKey={activeKey} {...props} />
+    <InternalTabs
+      id={id}
+      activeKey={activeKey}
+      aria-label-left-scroll={ariaLabelLeftScroll}
+      aria-label-right-scroll={ariaLabelRightScroll}
+      {...props} />
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
   </nav>
 );
@@ -109,7 +114,12 @@ const TabsWithDiv = ({
       highlightRightScrollButton && styles.modifiers.endCurrent,
       className)}
   >
-    <InternalTabs id={id} activeKey={activeKey} {...props} />
+    <InternalTabs
+      id={id}
+      activeKey={activeKey}
+      aria-label-left-scroll={ariaLabelLeftScroll}
+      aria-label-right-scroll={ariaLabelRightScroll}
+      {...props} />
     <InternalTabContainer id={id} activeKey={activeKey} {...props} />
   </div>
 );
