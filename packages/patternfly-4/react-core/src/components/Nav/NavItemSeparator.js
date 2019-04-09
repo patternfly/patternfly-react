@@ -14,7 +14,9 @@ const defaultProps = {
   className: ''
 };
 
-const NavItemSeparator = ({ className, ...rest }) => <li className={css(styles.navSeparator, className)} {...rest} />;
+const NavItemSeparator = ({ className, ...rest }) => (
+  <li className={css(styles.navSeparator, className)} role="separator" {...rest} />
+);
 
 NavItemSeparator.propTypes = propTypes;
 NavItemSeparator.defaultProps = defaultProps;
