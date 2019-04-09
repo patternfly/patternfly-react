@@ -18,3 +18,5 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
     <ol className={css(styles.breadcrumbList)}>{children}</ol>
   </nav>
 );
+
+export default Breadcrumb;

@@ -34,3 +34,5 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
     </h1>
   </li>
 );
+
+export default BreadcrumbHeading;
