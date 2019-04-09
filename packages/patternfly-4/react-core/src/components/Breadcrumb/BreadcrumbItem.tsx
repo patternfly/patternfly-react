@@ -18,27 +18,25 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
   to = null,
   isActive = false,
   target = null,
-  component = 'a',
+  component: Component = 'a',
   ...props
 }) => (
-  <li {...props} className={css(styles.breadcrumbItem, className)}>
-    {to && (
-      <React.Component
-        href={to}
-        target={target}
-        className={css(styles.breadcrumbLink, isActive ? getModifier(styles, 'current') : '')}
-        aria-current={isActive ? 'page' : undefined}
-      >
-        {children}
-      </React.Component>
-    )}
-    {!to && <React.Fragment>{children}</React.Fragment>}
-    {!isActive && (
-      <span className={css(styles.breadcrumbItemDivider)}>
-        <AngleRightIcon />
-      </span>
-    )}
-  </li>
-);
-
-export default BreadcrumbItem;
+    <li {...props} className={css(styles.breadcrumbItem, className)}>
+      {to && (
+        <Component
+          href={to}
+          target={target}
+          className={css(styles.breadcrumbLink, getModifier(styles, isActive && 'current'))}
+          aria-current={isActive ? 'page' : undefined}
+        >
+          {children}
+        </Component>
+      )}
+      {!to && <React.Fragment>{children}</React.Fragment>}
+      {!isActive && (
+        <span className={css(styles.breadcrumbItemDivider)}>
+          <AngleRightIcon />
+        </span>
+      )}
+    </li>
+  );

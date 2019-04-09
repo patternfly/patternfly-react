@@ -15,24 +15,22 @@ export const BreadcrumbHeading: React.FunctionComponent<BreadcrumbHeadingProps> 
   className = '',
   to = null,
   target = null,
-  component = 'a',
+  component: Component = 'a',
   ...props
 }) => (
-  <li {...props} className={css(styles.breadcrumbItem, className)}>
-    <h1 className={css(styles.breadcrumbHeading)}>
-      {to && (
-        <React.Component
-          href={to}
-          target={target}
-          className={css(styles.breadcrumbLink, styles.modifiers.current)}
-          aria-current="page"
-        >
-          {children}
-        </React.Component>
-      )}
-      {!to && <React.Fragment>{children}</React.Fragment>}
-    </h1>
-  </li>
-);
-
-export default BreadcrumbHeading;
+    <li {...props} className={css(styles.breadcrumbItem, className)}>
+      <h1 className={css(styles.breadcrumbHeading)}>
+        {to && (
+          <Component
+            href={to}
+            target={target}
+            className={css(styles.breadcrumbLink, styles.modifiers.current)}
+            aria-current="page"
+          >
+            {children}
+          </Component>
+        )}
+        {!to && <React.Fragment>{children}</React.Fragment>}
+      </h1>
+    </li>
+  );

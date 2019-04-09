@@ -14,9 +14,7 @@ export const Breadcrumb: React.FunctionComponent<BreadcrumbProps> = ({
   'aria-label': ariaLabel = '',
   ...props
 }) => (
-  <nav {...props} className={css(styles.breadcrumb, className)}>
-    <ol className={css(styles.breadcrumbList)}>{children}</ol>
-  </nav>
-);
-
-export default Breadcrumb;
+    <nav {...props} className={css(styles.breadcrumb, className)}>
+      <ol className={css(styles.breadcrumbList)}>{children}</ol>
+    </nav>
+  );
