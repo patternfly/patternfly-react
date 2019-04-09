@@ -6,13 +6,11 @@ import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
 import { Backdrop } from '../Backdrop';
 import { Bullseye } from '../../layouts/Bullseye';
-import { BackgroundImage, BackgroundImageSrc } from '../BackgroundImage';
 import { Button } from '../Button';
 import WizardHeader from './WizardHeader';
 import WizardToggle from './WizardToggle';
 import WizardNav from './WizardNav';
 import WizardNavItem from './WizardNavItem';
-import { BackgroundImageSrcMap } from '../BackgroundImage';
 // because of the way this module is exported, cannot use regular import syntax
 // tslint:disable-next-line
 const FocusTrap: any = require('focus-trap-react');
@@ -30,6 +28,8 @@ export interface WizardStep {
   hideCancelButton?: boolean;
   /** True to hide the Back button */
   hideBackButton?: boolean;
+  /** Can change the Next button text (for example to Finish or Close). If nextButtonText is also set for the Wizard, this step specific one overrides it. */
+  nextButtonText?: string;
   /** Sub steps */
   steps?: any[];
 }
@@ -48,16 +48,8 @@ export interface WizardProps {
   title: string;
   /** The wizard description */
   description?: string;
-  /** Mapping of image sizes to image paths */
-  backgroundImgSrc?: string | BackgroundImageSrcMap;
   /** Calback function to close the wizard */
   onClose?(): void;
-  /** Callback function to save at the end of the wizard, if not specified uses onClose */
-  onSave?(): void;
-  /** Callback function after Next button is clicked */
-  onNext?: WizardStepFunctionType;
-  /** Callback function after Back button is clicked */
-  onBack?: WizardStepFunctionType;
   /** Calback function when a step in the nav is clicked */
   onGoToStep?: WizardStepFunctionType;
   /** Additional classes spread to the Wizard */
@@ -66,39 +58,31 @@ export interface WizardProps {
   steps: WizardStep[];
   /** The step to start the wizard at (1 or higher) */
   startAtStep?: number;
+  /** aria-label for the Nav */
+  ariaLabelNav?: string;
+  /** Can remove the default padding around the main body content by setting this to false */
+  hasBodyPadding?: boolean;
+  /** Callback function to save at the end of the wizard, if not specified uses onClose */
+  onSave?(): void;
+  /** Callback function after Next button is clicked */
+  onNext?: WizardStepFunctionType;
+  /** Callback function after Back button is clicked */
+  onBack?: WizardStepFunctionType;
   /** The Next button text */
   nextButtonText?: string;
   /** The Back button text */
   backButtonText?: string;
   /** The Cancel button text */
   cancelButtonText?: string;
-  /** The text for the Next button on the last step */
-  lastStepButtonText?: string;
-  /** Alignment of the footer items */
-  footerRightAlign?: boolean;
   /** aria-label for the close button */
   ariaLabelCloseButton?: string;
-  /** aria-label for the Nav */
-  ariaLabelNav?: string;
-  /** Can remove the default padding around the main body content by setting this to false */
-  hasBodyPadding?: boolean;
 }
-
-const images = {
-  [BackgroundImageSrc.xs]: '/assets/images/pfbg_576.jpg',
-  [BackgroundImageSrc.xs2x]: '/assets/images/pfbg_576@2x.jpg',
-  [BackgroundImageSrc.sm]: '/assets/images/pfbg_768.jpg',
-  [BackgroundImageSrc.sm2x]: '/assets/images/pfbg_768@2x.jpg',
-  [BackgroundImageSrc.lg]: '/assets/images/pfbg_1200.jpg',
-  [BackgroundImageSrc.filter]: '/assets/images/background-filter.svg#image_overlay'
-};
 
 class Wizard extends React.Component<WizardProps> {
   static currentId = 0;
   static defaultProps = {
     isOpen: false,
     description: '',
-    backgroundImgSrc: images,
     onBack: null,
     onNext: null,
     onGoToStep: null,
@@ -107,8 +91,6 @@ class Wizard extends React.Component<WizardProps> {
     nextButtonText: 'Next',
     backButtonText: 'Back',
     cancelButtonText: 'Cancel',
-    lastStepButtonText: 'Save',
-    footerRightAlign: false,
     ariaLabelCloseButton: 'Close',
     ariaLabelNav: 'Steps',
     hasBodyPadding: true
@@ -283,7 +265,6 @@ class Wizard extends React.Component<WizardProps> {
       isOpen,
       title,
       description,
-      backgroundImgSrc = images,
       onClose,
       onSave,
       onBack,
@@ -295,8 +276,6 @@ class Wizard extends React.Component<WizardProps> {
       nextButtonText,
       backButtonText,
       cancelButtonText,
-      lastStepButtonText,
-      footerRightAlign,
       ariaLabelCloseButton,
       ariaLabelNav,
       hasBodyPadding,
@@ -307,7 +286,6 @@ class Wizard extends React.Component<WizardProps> {
     const activeStep = flattenedSteps[currentStep - 1];
     const computedSteps: ComputedStep[] = this.initSteps(steps, activeStep);
     const firstStep = activeStep === flattenedSteps[0];
-    const lastStep = activeStep === flattenedSteps[flattenedSteps.length - 1];
     const isValid = activeStep.enableNext !== undefined ? activeStep.enableNext : true;
 
     const nav = (isWizardNavOpen: boolean) => (
@@ -353,12 +331,11 @@ class Wizard extends React.Component<WizardProps> {
           <Backdrop>
             <Bullseye>
               <div {...rest} className={css(styles.wizard, className)} role="dialog" aria-modal="true" aria-labelledby={this.titleId} aria-describedby={description ? this.descriptionId : undefined}>
-                <BackgroundImage src={backgroundImgSrc} />
                 <WizardHeader titleId={this.titleId} descriptionId={this.descriptionId} onClose={onClose} title={title} description={description as string} ariaLabel={ariaLabelCloseButton as string} />
                 <WizardToggle isNavOpen={isNavOpen} onNavToggle={(isNavOpen) => this.setState({ isNavOpen })} nav={nav} steps={steps} activeStep={activeStep} hasBodyPadding={hasBodyPadding as boolean}>
-                  <footer className={css(styles.wizardFooter, footerRightAlign && 'pf-m-align-right')}>
+                  <footer className={css(styles.wizardFooter)}>
                     <Button variant="primary" type="submit" onClick={this.onNext} isDisabled={!isValid}>
-                      {lastStep ? lastStepButtonText : nextButtonText}
+                      {nextButtonText}
                     </Button>
                     {!firstStep && !activeStep.hideBackButton && <Button variant="secondary" onClick={this.onBack}>
                       {backButtonText}
