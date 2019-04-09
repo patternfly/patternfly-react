@@ -1,17 +1,21 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
-import { Title, TitleSize } from '.';
+import { Title, TitleSize, TitleLevel } from '.';
 
 Object.values(TitleSize).forEach(size => {
   test(`${size} Title`, () => {
-    const view = shallow(<Title size={size} headingLevel="h1">{size} Title</Title>);
+    const view = shallow(
+      <Title size={size} headingLevel={TitleLevel.h1}>
+        {size} Title
+      </Title>
+    );
     expect(view).toMatchSnapshot();
   });
 });
 
 test('Heading level can be set using a string value', () => {
   const view = shallow(
-    <Title size="lg" headingLevel="h3">
+    <Title size="lg" headingLevel={TitleLevel.h3}>
       H3 Heading
     </Title>
   );
