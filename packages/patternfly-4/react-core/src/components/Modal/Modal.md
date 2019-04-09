@@ -240,7 +240,7 @@ class NoHeader extends React.Component {
           title="Modal Header"
           isOpen={isModalOpen}
           hideTitle={true}
-          ariaDescribedById="no-header-example"
+          aria-describedby="no-header-example"
           onClose={this.handleModalToggle}
           actions={[
             <Button key="confirm" variant="primary" onClick={this.handleModalToggle}>
