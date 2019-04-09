@@ -18,7 +18,7 @@ export const BreadcrumbItem: React.FunctionComponent<BreadcrumbItemProps> = ({
   to = null,
   isActive = false,
   target = null,
-  component: Component = 'a',
+  component: Component = 'a' as any,
   ...props
 }) => (
     <li {...props} className={css(styles.breadcrumbItem, className)}>
