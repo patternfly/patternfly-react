@@ -73,7 +73,7 @@ describe('DataList', () => {
     );
 
     expect(view.find(Button).props()['aria-label']).toBe('Toggle details for');
-    expect(view.find(Button).props()['aria-labelledby']).toBe(null);
+    expect(view.find(Button).props()['aria-labelledby']).toBe("ex-toggle2 ex-item2");
     expect(view.find(Button).props()['aria-expanded']).toBe(false);
     expect(view.find(Button).props().id).toBe('ex-toggle2');
     expect(view.find(Button).props().id).toBe('ex-toggle2');
@@ -105,7 +105,7 @@ describe('DataList', () => {
 
   test('DataListAction button', () => {
     const view = shallow(
-      <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
+      <DataListAction aria-label="Actions" actions={[]} aria-labelledby="ex-action" id="ex-action">
         <Button id="delete-item-1">Delete</Button>
       </DataListAction>
     );

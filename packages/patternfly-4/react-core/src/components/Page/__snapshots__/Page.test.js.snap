@@ -6,7 +6,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
   className="my-page-class"
   header={
     <PageHeader
-      aria-label="Global navigation"
+      aria-label-button="Global navigation"
       avatar=" | Avatar"
       className=""
       isNavOpen={true}
@@ -38,7 +38,7 @@ exports[`Check page horizontal layout example against snapshot 1`] = `
     layout="horizontal"
   >
     <PageHeader
-      aria-label="Global navigation"
+      aria-label-button="Global navigation"
       avatar=" | Avatar"
       className=""
       isNavOpen={true}
@@ -137,7 +137,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
   className="my-page-class"
   header={
     <PageHeader
-      aria-label="Global navigation"
+      aria-label-button="Global navigation"
       avatar=" | Avatar"
       className=""
       isNavOpen={true}
@@ -166,7 +166,7 @@ exports[`Check page vertical layout example against snapshot 1`] = `
     id="PageId"
   >
     <PageHeader
-      aria-label="Global navigation"
+      aria-label-button="Global navigation"
       avatar=" | Avatar"
       className=""
       isNavOpen={true}

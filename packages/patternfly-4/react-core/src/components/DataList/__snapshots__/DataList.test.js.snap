@@ -37,6 +37,8 @@ exports[`DataList DataListAction button 1`] = `
 
 exports[`DataList DataListAction dropdown 1`] = `
 <div
+  aria-label="Actions"
+  aria-labelledby="ex-action"
   className="pf-c-data-list__action"
 >
   <Dropdown

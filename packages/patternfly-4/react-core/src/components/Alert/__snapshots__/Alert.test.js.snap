@@ -9,13 +9,14 @@ exports[`Alert - danger Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
+  aria-label=""
   className=""
   title=""
   variant="danger"
   variantLabel={null}
 >
   <div
-    aria-label="Danger Alert"
+    aria-label=""
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -142,13 +143,14 @@ exports[`Alert - danger Action Link 1`] = `
       test
     </AlertActionLink>
   }
+  aria-label=""
   className=""
   title=""
   variant="danger"
   variantLabel={null}
 >
   <div
-    aria-label="Danger Alert"
+    aria-label=""
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -247,13 +249,14 @@ exports[`Alert - danger Action and Title 1`] = `
       test
     </AlertActionLink>
   }
+  aria-label=""
   className=""
   title="Some title"
   variant="danger"
   variantLabel={null}
 >
   <div
-    aria-label="Danger Alert"
+    aria-label=""
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -454,13 +457,14 @@ exports[`Alert - danger Custom aria label 1`] = `
 exports[`Alert - danger Description 1`] = `
 <Alert
   action={null}
+  aria-label=""
   className=""
   title=""
   variant="danger"
   variantLabel={null}
 >
   <div
-    aria-label="Danger Alert"
+    aria-label=""
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -520,13 +524,14 @@ exports[`Alert - danger Description 1`] = `
 exports[`Alert - danger Title 1`] = `
 <Alert
   action={null}
+  aria-label=""
   className=""
   title="Some title"
   variant="danger"
   variantLabel={null}
 >
   <div
-    aria-label="Danger Alert"
+    aria-label=""
     className="pf-c-alert pf-m-danger"
   >
     <AlertIcon
@@ -593,13 +598,14 @@ exports[`Alert - info Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
+  aria-label=""
   className=""
   title=""
   variant="info"
   variantLabel={null}
 >
   <div
-    aria-label="Info Alert"
+    aria-label=""
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -726,13 +732,14 @@ exports[`Alert - info Action Link 1`] = `
       test
     </AlertActionLink>
   }
+  aria-label=""
   className=""
   title=""
   variant="info"
   variantLabel={null}
 >
   <div
-    aria-label="Info Alert"
+    aria-label=""
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -831,13 +838,14 @@ exports[`Alert - info Action and Title 1`] = `
       test
     </AlertActionLink>
   }
+  aria-label=""
   className=""
   title="Some title"
   variant="info"
   variantLabel={null}
 >
   <div
-    aria-label="Info Alert"
+    aria-label=""
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -1038,13 +1046,14 @@ exports[`Alert - info Custom aria label 1`] = `
 exports[`Alert - info Description 1`] = `
 <Alert
   action={null}
+  aria-label=""
   className=""
   title=""
   variant="info"
   variantLabel={null}
 >
   <div
-    aria-label="Info Alert"
+    aria-label=""
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -1104,13 +1113,14 @@ exports[`Alert - info Description 1`] = `
 exports[`Alert - info Title 1`] = `
 <Alert
   action={null}
+  aria-label=""
   className=""
   title="Some title"
   variant="info"
   variantLabel={null}
 >
   <div
-    aria-label="Info Alert"
+    aria-label=""
     className="pf-c-alert pf-m-info"
   >
     <AlertIcon
@@ -1177,13 +1187,14 @@ exports[`Alert - success Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
+  aria-label=""
   className=""
   title=""
   variant="success"
   variantLabel={null}
 >
   <div
-    aria-label="Success Alert"
+    aria-label=""
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -1310,13 +1321,14 @@ exports[`Alert - success Action Link 1`] = `
       test
     </AlertActionLink>
   }
+  aria-label=""
   className=""
   title=""
   variant="success"
   variantLabel={null}
 >
   <div
-    aria-label="Success Alert"
+    aria-label=""
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -1415,13 +1427,14 @@ exports[`Alert - success Action and Title 1`] = `
       test
     </AlertActionLink>
   }
+  aria-label=""
   className=""
   title="Some title"
   variant="success"
   variantLabel={null}
 >
   <div
-    aria-label="Success Alert"
+    aria-label=""
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -1622,13 +1635,14 @@ exports[`Alert - success Custom aria label 1`] = `
 exports[`Alert - success Description 1`] = `
 <Alert
   action={null}
+  aria-label=""
   className=""
   title=""
   variant="success"
   variantLabel={null}
 >
   <div
-    aria-label="Success Alert"
+    aria-label=""
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -1688,13 +1702,14 @@ exports[`Alert - success Description 1`] = `
 exports[`Alert - success Title 1`] = `
 <Alert
   action={null}
+  aria-label=""
   className=""
   title="Some title"
   variant="success"
   variantLabel={null}
 >
   <div
-    aria-label="Success Alert"
+    aria-label=""
     className="pf-c-alert pf-m-success"
   >
     <AlertIcon
@@ -1761,13 +1776,14 @@ exports[`Alert - warning Action Close Button 1`] = `
       onClose={[MockFunction]}
     />
   }
+  aria-label=""
   className=""
   title=""
   variant="warning"
   variantLabel={null}
 >
   <div
-    aria-label="Warning Alert"
+    aria-label=""
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon
@@ -1894,13 +1910,14 @@ exports[`Alert - warning Action Link 1`] = `
       test
     </AlertActionLink>
   }
+  aria-label=""
   className=""
   title=""
   variant="warning"
   variantLabel={null}
 >
   <div
-    aria-label="Warning Alert"
+    aria-label=""
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon
@@ -1999,13 +2016,14 @@ exports[`Alert - warning Action and Title 1`] = `
       test
     </AlertActionLink>
   }
+  aria-label=""
   className=""
   title="Some title"
   variant="warning"
   variantLabel={null}
 >
   <div
-    aria-label="Warning Alert"
+    aria-label=""
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon
@@ -2206,13 +2224,14 @@ exports[`Alert - warning Custom aria label 1`] = `
 exports[`Alert - warning Description 1`] = `
 <Alert
   action={null}
+  aria-label=""
   className=""
   title=""
   variant="warning"
   variantLabel={null}
 >
   <div
-    aria-label="Warning Alert"
+    aria-label=""
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon
@@ -2272,13 +2291,14 @@ exports[`Alert - warning Description 1`] = `
 exports[`Alert - warning Title 1`] = `
 <Alert
   action={null}
+  aria-label=""
   className=""
   title="Some title"
   variant="warning"
   variantLabel={null}
 >
   <div
-    aria-label="Warning Alert"
+    aria-label=""
     className="pf-c-alert pf-m-warning"
   >
     <AlertIcon

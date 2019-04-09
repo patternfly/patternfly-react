@@ -2,7 +2,7 @@
 
 exports[`Check page vertical layout example against snapshot 1`] = `
 <PageHeader
-  aria-label="Global navigation"
+  aria-label-button="Global navigation"
   avatar=" | Avatar"
   className=""
   isNavOpen={true}
