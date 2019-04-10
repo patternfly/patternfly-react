@@ -11,7 +11,7 @@ exports[`Gutter lg 1`] = `
   >
     <StackItem
       className=""
-      isMain={false}
+      isFilled={false}
     >
       <div
         className="pf-l-stack__item"
@@ -34,7 +34,7 @@ exports[`Gutter md 1`] = `
   >
     <StackItem
       className=""
-      isMain={false}
+      isFilled={false}
     >
       <div
         className="pf-l-stack__item"
@@ -57,7 +57,7 @@ exports[`Gutter sm 1`] = `
   >
     <StackItem
       className=""
-      isMain={false}
+      isFilled={false}
     >
       <div
         className="pf-l-stack__item"
@@ -80,7 +80,7 @@ exports[`isMain defaults to false 1`] = `
   >
     <StackItem
       className=""
-      isMain={false}
+      isFilled={false}
     >
       <div
         className="pf-l-stack__item"
@@ -103,12 +103,12 @@ exports[`isMain set to true 1`] = `
   >
     <StackItem
       className=""
-      isMain={true}
+      isFilled={true}
     >
       <div
-        className="pf-l-stack__item pf-m-main"
+        className="pf-l-stack__item pf-m-fill"
       >
-        Main content
+        Filled content
       </div>
     </StackItem>
   </div>

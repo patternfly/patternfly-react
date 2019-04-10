@@ -4,8 +4,8 @@ import styles from '@patternfly/patternfly/layouts/Split/split.css';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {
-  /** Flag indicating if this Split Layout item contains the primary content */
-  isMain: PropTypes.bool,
+  /** Flag indicating if this Split Layout item should fill the available horizontal space. */
+  isFilled: PropTypes.bool,
   /** content rendered inside the Split Layout Item */
   children: PropTypes.node,
   /** additional classes added to the Split Layout Item */
@@ -15,13 +15,13 @@ const propTypes = {
 };
 
 const defaultProps = {
-  isMain: false,
+  isFilled: false,
   className: '',
   children: null
 };
 
-const SplitItem = ({ isMain, className, children, ...props }) => (
-  <div {...props} className={css(styles.splitItem, isMain && styles.modifiers.main, className)}>
+const SplitItem = ({ isFilled, className, children, ...props }) => (
+  <div {...props} className={css(styles.splitItem, isFilled && styles.modifiers.fill, className)}>
     {children}
   </div>
 );

@@ -10,7 +10,7 @@ const defaultProps = {
   children: null
 };
 
-const ExpandableRowContent = ({ children, className, ...props }) => (
+const ExpandableRowContent = ({ children, ...props }) => (
   <div {...props} className={css(styles.tableExpandableRowContent)}>
     {children}
   </div>

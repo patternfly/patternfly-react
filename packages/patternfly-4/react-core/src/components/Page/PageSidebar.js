@@ -31,7 +31,7 @@ const PageSidebar = ({ className, nav, isNavOpen, ...props }) => (
     )}
     {...props}
   >
-    {nav}
+    <div className={css(styles.pageSidebarBody)}>{nav}</div>
   </div>
 );
 

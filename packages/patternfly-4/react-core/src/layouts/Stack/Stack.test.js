@@ -7,7 +7,7 @@ import { GutterSize } from '../../styles/gutters';
 test('isMain set to true', () => {
   const view = mount(
     <Stack>
-      <StackItem isMain>Main content</StackItem>
+      <StackItem isFilled>Filled content</StackItem>
     </Stack>
   );
   expect(view).toMatchSnapshot();

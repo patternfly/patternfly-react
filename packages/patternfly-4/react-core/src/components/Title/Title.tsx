@@ -4,6 +4,15 @@ import { Omit } from '../../helpers/typeUtils';
 import styles from '@patternfly/patternfly/components/Title/title.css';
 import { BaseSizes } from '../../styles/sizes';
 
+export enum TitleLevel {
+  h1 = 'h1',
+  h2 = 'h2',
+  h3 = 'h3',
+  h4 = 'h4',
+  h5 = 'h5',
+  h6 = 'h6'
+}
+
 export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 'size' | 'className'> {
   /** the size of the Title  */
   size: keyof typeof BaseSizes;
@@ -12,21 +21,19 @@ export interface TitleProps extends Omit<React.HTMLProps<HTMLHeadingElement>, 's
   /** Additional classes added to the Title */
   className?: string;
   /** the heading level to use */
-  headingLevel?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  headingLevel?: TitleLevel;
 }
 
 const Title: React.FunctionComponent<TitleProps> = ({
   size,
   className = '',
   children = '',
-  headingLevel: HeadingLevel = 'h1',
+  headingLevel: HeadingLevel = TitleLevel.h1,
   ...props
-}: TitleProps) => {
-  return (
-    <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size) as string, className)}>
-      {children}
-    </HeadingLevel>
-  )
-};
+}: TitleProps) => (
+  <HeadingLevel {...props} className={css(styles.title, getModifier(styles, size) as string, className)}>
+    {children}
+  </HeadingLevel>
+);
 
-export default Title;
+export { Title };

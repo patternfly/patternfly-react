@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Card/card.css';
-import { componentShape } from '../../helpers/componentShape';
+import { Title, TitleSize, TitleLevel } from '../Title';
 
 const propTypes = {
   children: PropTypes.any,
   className: PropTypes.string,
-  component: componentShape,
+  /** the size of the Title  */
+  size: PropTypes.oneOf(Object.values(TitleSize)),
+  /** the heading level to use */
+  headingLevel: PropTypes.oneOf(Object.values(TitleLevel)),
   /** Additional props are spread to the container component */
   '': PropTypes.any
 };
@@ -15,13 +18,14 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  component: 'div'
+  size: TitleSize.lg,
+  headingLevel: TitleLevel.h1
 };
 
-const CardHeader = ({ children, className, component: Component, ...props }) => (
-  <Component className={css(styles.cardHeader, className)} {...props}>
+const CardHeader = ({ children, className, size, headingLevel, ...props }) => (
+  <Title className={css(styles.cardHeader, className)} size={size} headingLevel={headingLevel} {...props}>
     {children}
-  </Component>
+  </Title>
 );
 
 CardHeader.propTypes = propTypes;

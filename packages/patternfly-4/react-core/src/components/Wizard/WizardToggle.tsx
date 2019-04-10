@@ -9,7 +9,7 @@ interface WizardToggleProps {
   nav: any;
   steps: WizardStep[];
   activeStep: WizardStep;
-  children: React.ReactNode,
+  children: React.ReactNode;
   hasBodyPadding: boolean;
   isNavOpen: boolean;
   onNavToggle: (isOpen: boolean) => void;
@@ -33,8 +33,7 @@ const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
       activeStepIndex = i + 1;
       activeStepName = steps[i].name;
       break;
-    }
-    else if (steps[i].steps) {
+    } else if (steps[i].steps) {
       for (let j = 0; j < steps[i].steps!.length; j++) {
         if (steps[i].steps![j] === activeStep) {
           activeStepIndex = i + 1;
@@ -55,11 +54,9 @@ const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
         <ol className={css(styles.wizardToggleList)}>
           <li className={css(styles.wizardToggleListItem)}>
             <span className={css(styles.wizardToggleNum)}>{activeStepIndex}</span> {activeStepName}
-            {activeStepSubName && <AngleRightIcon className={css(styles.wizardToggleDivider)} aria-hidden="true" />}
+            {activeStepSubName && <AngleRightIcon className={css(styles.wizardToggleSeparator)} aria-hidden="true" />}
           </li>
-          {activeStepSubName && <li className={css(styles.wizardToggleListItem)}>
-            {activeStepSubName}
-          </li>}
+          {activeStepSubName && <li className={css(styles.wizardToggleListItem)}>{activeStepSubName}</li>}
         </ol>
         <CaretDownIcon className={css(styles.wizardToggleIcon)} aria-hidden="true" />
       </button>
@@ -72,6 +69,6 @@ const WizardToggle: React.FunctionComponent<WizardToggleProps> = ({
       </div>
     </>
   );
-}
+};
 
 export default WizardToggle;

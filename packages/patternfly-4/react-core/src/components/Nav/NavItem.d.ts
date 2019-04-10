@@ -5,7 +5,6 @@ export interface NavItemProps extends HTMLProps<HTMLDivElement> {
   className?: string;
   to?: string;
   isActive?: boolean;
-  isSeparated?: boolean;
   groupId?: string | number;
   itemId?: string | number;
   preventDefault?: boolean;

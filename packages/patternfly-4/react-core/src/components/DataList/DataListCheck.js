@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
 const DataListCheck = ({ className, onChange, isValid, isDisabled, isChecked, checked, ...props }) => (
-  <div className={css(styles.dataListCheck, className)}>
+  <div className={css('pf-c-data-list__check', className)}>
     <input
       {...props}
       type="checkbox"

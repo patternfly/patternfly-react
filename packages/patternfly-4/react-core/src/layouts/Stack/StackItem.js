@@ -4,8 +4,8 @@ import styles from '@patternfly/patternfly/layouts/Stack/stack.css';
 import { css } from '@patternfly/react-styles';
 
 const propTypes = {
-  /** Flag indicating if this Stack Layout item contains the primary content */
-  isMain: PropTypes.bool,
+  /** Flag indicating if this Stack Layout item should fill the available horizontal space. */
+  isFilled: PropTypes.bool,
   /** additional classes added to the Stack Layout Item */
   children: PropTypes.node,
   /** content rendered inside the Stack Layout Item */
@@ -15,13 +15,13 @@ const propTypes = {
 };
 
 const defaultProps = {
-  isMain: false,
+  isFilled: false,
   className: '',
   children: null
 };
 
-const StackItem = ({ isMain, className, children, ...props }) => (
-  <div {...props} className={css(styles.stackItem, isMain && styles.modifiers.main, className)}>
+const StackItem = ({ isFilled, className, children, ...props }) => (
+  <div {...props} className={css(styles.stackItem, isFilled && styles.modifiers.fill, className)}>
     {children}
   </div>
 );
