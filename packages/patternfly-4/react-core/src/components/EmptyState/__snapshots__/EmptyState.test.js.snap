@@ -2,7 +2,7 @@
 
 exports[`EmptyState Main 1`] = `
 <div
-  className="pf-c-empty-state"
+  className="pf-c-empty-state pf-m-lg"
 >
   <Title
     headingLevel="h5"
@@ -47,5 +47,25 @@ exports[`EmptyState Main 1`] = `
       Learn more about this in the documentation.
     </Button>
   </EmptyStateSecondaryActions>
+</div>
+`;
+
+exports[`EmptyState Main variant regular 1`] = `
+<div
+  className="pf-c-empty-state"
+>
+  <Title>
+    EmptyState full
+  </Title>
+</div>
+`;
+
+exports[`EmptyState Main variant small 1`] = `
+<div
+  className="pf-c-empty-state pf-m-sm"
+>
+  <Title>
+    EmptyState small
+  </Title>
 </div>
 `;

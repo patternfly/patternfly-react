@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { AddressBookIcon } from '@patternfly/react-icons';
-import EmptyState from './EmptyState';
+import EmptyState, {EmptyStateVariant} from './EmptyState';
 import EmptyStateBody from './EmptyStateBody';
 import EmptyStateSecondaryActions from './EmptyStateSecondaryActions';
 import EmptyStateIcon from './EmptyStateIcon';
@@ -22,6 +22,24 @@ describe('EmptyState', () => {
             Learn more about this in the documentation.
           </Button>
         </EmptyStateSecondaryActions>
+      </EmptyState>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Main variant regular', () => {
+    const view = shallow(
+      <EmptyState variant={EmptyStateVariant.full}>
+        <Title>EmptyState full</Title>
+      </EmptyState>
+    );
+    expect(view).toMatchSnapshot();
+  });
+
+  test('Main variant small', () => {
+    const view = shallow(
+      <EmptyState variant={EmptyStateVariant.small}>
+        <Title>EmptyState small</Title>
       </EmptyState>
     );
     expect(view).toMatchSnapshot();
