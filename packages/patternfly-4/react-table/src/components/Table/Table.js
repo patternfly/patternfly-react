@@ -145,7 +145,7 @@ const defaultProps = {
   onCollapse: null,
   className: '',
   variant: null,
-  borders: false,
+  borders: true,
   rowLabeledBy: 'simple-node',
   expandId: 'expandable-toggle',
   contentId: 'expanded-content',

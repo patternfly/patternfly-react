@@ -346,7 +346,7 @@ class CompactTable extends React.Component {
 ```
 
 
-## Compact Table with border
+## Compact Table Borderless Rows
 ```js
 import React from 'react';
 import { Table, TableHeader, TableBody, TableVariant } from '@patternfly/react-table';
@@ -369,7 +369,7 @@ class CompactTable extends React.Component {
     const { columns, rows } = this.state;
 
     return (
-      <Table caption="Compact Table with border" variant={TableVariant.compact} borders={true} cells={columns} rows={rows}>
+      <Table caption="Compact Table with border" variant={TableVariant.compact} borders={false} cells={columns} rows={rows}>
         <TableHeader />
         <TableBody />
       </Table>
