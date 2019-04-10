@@ -18197,6 +18197,7 @@ exports[`Collapsible nested table 1`] = `
                         </td>
                       </BodyCell>
                       <BodyCell
+                        className=""
                         colSpan={5}
                         component="td"
                         data-key={1}
@@ -18207,6 +18208,7 @@ exports[`Collapsible nested table 1`] = `
                         parentId={0}
                       >
                         <td
+                          className=""
                           colSpan={5}
                           data-key={1}
                           data-label="Header cell"
@@ -18636,7 +18638,7 @@ exports[`Collapsible nested table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -18644,7 +18646,7 @@ exports[`Collapsible nested table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -18655,6 +18657,7 @@ exports[`Collapsible nested table 1`] = `
                         </td>
                       </BodyCell>
                       <BodyCell
+                        className=""
                         colSpan={5}
                         component="td"
                         data-key={1}
@@ -18665,6 +18668,7 @@ exports[`Collapsible nested table 1`] = `
                         parentId={1}
                       >
                         <td
+                          className=""
                           colSpan={5}
                           data-key={1}
                           data-label="Header cell"
@@ -19628,7 +19632,7 @@ exports[`Collapsible nested table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -19636,7 +19640,7 @@ exports[`Collapsible nested table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -19647,6 +19651,7 @@ exports[`Collapsible nested table 1`] = `
                         </td>
                       </BodyCell>
                       <BodyCell
+                        className=""
                         colSpan={5}
                         component="td"
                         data-key={1}
@@ -19657,6 +19662,7 @@ exports[`Collapsible nested table 1`] = `
                         parentId={3}
                       >
                         <td
+                          className=""
                           colSpan={5}
                           data-key={1}
                           data-label="Header cell"
@@ -20090,7 +20096,7 @@ exports[`Collapsible nested table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -20098,7 +20104,7 @@ exports[`Collapsible nested table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -20565,7 +20571,7 @@ exports[`Collapsible nested table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -20573,7 +20579,7 @@ exports[`Collapsible nested table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -21040,7 +21046,7 @@ exports[`Collapsible nested table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -21048,7 +21054,7 @@ exports[`Collapsible nested table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -21515,7 +21521,7 @@ exports[`Collapsible nested table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -21523,7 +21529,7 @@ exports[`Collapsible nested table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -24947,7 +24953,7 @@ exports[`Collapsible table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -24955,7 +24961,7 @@ exports[`Collapsible table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -24966,6 +24972,7 @@ exports[`Collapsible table 1`] = `
                         </td>
                       </BodyCell>
                       <BodyCell
+                        className=""
                         colSpan={5}
                         component="td"
                         data-key={1}
@@ -24976,6 +24983,7 @@ exports[`Collapsible table 1`] = `
                         parentId={0}
                       >
                         <td
+                          className=""
                           colSpan={5}
                           data-key={1}
                           data-label="Header cell"
@@ -25409,7 +25417,7 @@ exports[`Collapsible table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -25417,7 +25425,7 @@ exports[`Collapsible table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -26414,7 +26422,7 @@ exports[`Collapsible table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -26422,7 +26430,7 @@ exports[`Collapsible table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -26433,6 +26441,7 @@ exports[`Collapsible table 1`] = `
                         </td>
                       </BodyCell>
                       <BodyCell
+                        className=""
                         colSpan={5}
                         component="td"
                         data-key={1}
@@ -26443,6 +26452,7 @@ exports[`Collapsible table 1`] = `
                         parentId={3}
                       >
                         <td
+                          className=""
                           colSpan={5}
                           data-key={1}
                           data-label="Header cell"
@@ -26876,7 +26886,7 @@ exports[`Collapsible table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -26884,7 +26894,7 @@ exports[`Collapsible table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -27351,7 +27361,7 @@ exports[`Collapsible table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -27359,7 +27369,7 @@ exports[`Collapsible table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -27826,7 +27836,7 @@ exports[`Collapsible table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -27834,7 +27844,7 @@ exports[`Collapsible table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn
@@ -28301,7 +28311,7 @@ exports[`Collapsible table 1`] = `
                       onMouseDown={[Function]}
                     >
                       <BodyCell
-                        className="pf-c-table__toggle"
+                        className=""
                         component="td"
                         data-key={0}
                         data-label=""
@@ -28309,7 +28319,7 @@ exports[`Collapsible table 1`] = `
                         key="0-cell"
                       >
                         <td
-                          className="pf-c-table__toggle"
+                          className=""
                           data-key={0}
                         >
                           <CollapseColumn

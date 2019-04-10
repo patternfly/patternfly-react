@@ -19,8 +19,8 @@ export const collapsible = (value, { rowIndex, columnIndex, rowData, column, pro
     onCollapse && onCollapse(event, rowIndex, rowData && !rowData.isOpen, rowData, extraData);
   }
   return {
-    className: css(styles.tableToggle),
-    isVisible: true,
+    className: rowData.isOpen !== undefined && css(styles.tableToggle),
+    isVisible: !rowData.fullWidth,
     children: (
       <CollapseColumn
         aria-labelledby={`${rowLabeledBy}${rowIndex} ${expandId}${rowIndex}`}
@@ -49,8 +49,9 @@ export const expandedRow = colSpan => {
     }
   ) =>
     rowData.hasOwnProperty('parent') && {
-      colSpan,
-      id: contentId + rowIndex
+      colSpan: colSpan + !!rowData.fullWidth,
+      id: contentId + rowIndex,
+      className: rowData.noPadding && css(styles.modifiers.noPadding)
     };
   return expandedRowFormatter;
 };
