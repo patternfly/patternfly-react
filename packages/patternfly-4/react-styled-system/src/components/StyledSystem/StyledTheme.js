@@ -92,10 +92,10 @@ import {
   global_link_Color,
   global_link_Color_hover,
   global_link_Color_light_hover,
-  global_BorderColor,
-  global_BorderColor_light,
-  global_BorderColor_light_200,
-  global_BorderColor_dark,
+  global_BorderColor_100,
+  global_BorderColor_300,
+  global_BorderColor_light_100,
+  global_BorderColor_dark_100,
   global_ZIndex_xs,
   global_ZIndex_sm,
   global_ZIndex_md,
@@ -320,10 +320,10 @@ export const StyledTheme = {
     link: global_link_Color && global_link_Color.var,
     link_hover: global_link_Color_hover && global_link_Color_hover.var,
     link_light_hover: global_link_Color_light_hover && global_link_Color_light_hover.var,
-    border: global_BorderColor && global_BorderColor.var,
-    border_light: global_BorderColor_light && global_BorderColor_light.var,
-    border_light_200: global_BorderColor_light_200 && global_BorderColor_light_200.var,
-    border_dark: global_BorderColor_dark && global_BorderColor_dark.var
+    border_100: global_BorderColor_100 && global_BorderColor_100.var,
+    border_300: global_BorderColor_300 && global_BorderColor_300.var,
+    border_light_100: global_BorderColor_light_100 && global_BorderColor_light_100.var,
+    border_dark_100: global_BorderColor_dark_100 && global_BorderColor_dark_100.var
   },
 
   // Array or Object: Values for the fontFamily prop

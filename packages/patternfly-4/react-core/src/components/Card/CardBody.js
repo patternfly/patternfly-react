@@ -11,6 +11,8 @@ const propTypes = {
   className: PropTypes.string,
   /** Sets the base component to render. defaults to div */
   component: componentShape,
+  /** Enables the body Content to fill the height of the card */
+  isFilled: PropTypes.bool,
   /** Additional props are spread to the container component */
   '': PropTypes.any
 };
@@ -18,11 +20,12 @@ const propTypes = {
 const defaultProps = {
   children: null,
   className: '',
-  component: 'div'
+  component: 'div',
+  isFilled: true
 };
 
-const CardBody = ({ children, className, component: Component, ...props }) => (
-  <Component className={css(styles.cardBody, className)} {...props}>
+const CardBody = ({ children, className, component: Component, isFilled, ...props }) => (
+  <Component className={css(styles.cardBody, !isFilled && styles.modifiers.noFill, className)} {...props}>
     {children}
   </Component>
 );

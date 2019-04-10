@@ -11,7 +11,7 @@ exports[`Gutter lg 1`] = `
   >
     <SplitItem
       className=""
-      isMain={false}
+      isFilled={false}
     >
       <div
         className="pf-l-split__item"
@@ -34,7 +34,7 @@ exports[`Gutter md 1`] = `
   >
     <SplitItem
       className=""
-      isMain={false}
+      isFilled={false}
     >
       <div
         className="pf-l-split__item"
@@ -57,7 +57,7 @@ exports[`Gutter sm 1`] = `
   >
     <SplitItem
       className=""
-      isMain={false}
+      isFilled={false}
     >
       <div
         className="pf-l-split__item"
@@ -80,10 +80,12 @@ exports[`isMain 1`] = `
   >
     <SplitItem
       className=""
+      isFilled={false}
       isMain={true}
     >
       <div
-        className="pf-l-split__item pf-m-main"
+        className="pf-l-split__item"
+        isMain={true}
       >
         Main content
       </div>
@@ -103,7 +105,7 @@ exports[`isMain defaults to false 1`] = `
   >
     <SplitItem
       className=""
-      isMain={false}
+      isFilled={false}
     >
       <div
         className="pf-l-split__item"
