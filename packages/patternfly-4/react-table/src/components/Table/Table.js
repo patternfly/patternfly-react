@@ -34,6 +34,8 @@ const propTypes = {
   variant: PropTypes.oneOf(Object.values(TableVariant)),
   /** Size at which table is broken into tiles. */
   gridBreakPoint: PropTypes.oneOf(Object.values(TableGridBreakpoint)),
+  /** Indicates if border is visible on a compacat table.  Note that this can not be applied when using expandable */
+  borders: PropTypes.bool,
   /** Settings for sorting, which index and direction is sorted by. */
   sortBy: PropTypes.shape({
     index: PropTypes.number,
@@ -66,7 +68,7 @@ const propTypes = {
    *     ...
    *   ]}
    * ]
-   * </pre>*/
+   * </pre> */
   rows: PropTypes.arrayOf(
     PropTypes.oneOfType([
       PropTypes.shape({
@@ -143,6 +145,7 @@ const defaultProps = {
   onCollapse: null,
   className: '',
   variant: null,
+  borders: true,
   rowLabeledBy: 'simple-node',
   expandId: 'expandable-toggle',
   contentId: 'expanded-content',
@@ -195,6 +198,7 @@ class Table extends React.Component {
       cells,
       bodyWrapper,
       rowWrapper,
+      borders,
       ...props
     } = this.props;
 
@@ -237,7 +241,14 @@ class Table extends React.Component {
           }}
           columns={headerData}
           role="grid"
-          className={css(styles.table, getModifier(stylesGrid, gridBreakPoint), getModifier(styles, variant), onCollapse && variant === TableVariant.compact && styles.modifiers.expandable, className)}
+          className={css(
+            styles.table,
+            getModifier(stylesGrid, gridBreakPoint),
+            getModifier(styles, variant),
+            onCollapse && variant === TableVariant.compact && styles.modifiers.expandable,
+            variant === TableVariant.compact && borders ? styles.modifiers.noBorderRows : null,
+            className
+          )}
         >
           {caption && <caption>{caption}</caption>}
           {children}
