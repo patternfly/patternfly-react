@@ -17,10 +17,10 @@ import { TextContent, Text, TextVariants } from '@patternfly/react-core';
 </TextContent>
 ```
 
-## Body Text
+## Body Text and horizontal rule
 ```js
 import React from 'react';
-import { TextContent, Text, TextVariants } from '@patternfly/react-core';
+import { TextContent, Text, TextVariants, TextRule } from '@patternfly/react-core';
 
 <TextContent>
   <Text component={TextVariants.p}>
@@ -39,6 +39,7 @@ import { TextContent, Text, TextVariants } from '@patternfly/react-core';
     Ut venenatis, nisl scelerisque sollicitudin fermentum, quam libero hendrerit ipsum, ut blandit est tellus sit
     amet turpis.
   </Text>
+  <TextRule />
   <Text component={TextVariants.small}>Sometimes you need small text to display things like date created</Text>
 </TextContent>
 ```

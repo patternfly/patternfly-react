@@ -4,6 +4,7 @@ import TextContent from './TextContent';
 import Text, { TextVariants } from './Text';
 import TextList, { TextListVariants } from './TextList';
 import TextListItem, { TextListItemVariants } from './TextListItem';
+import TextRule from './TextRule';
 
 test('Text example should match snapshot', () => {
   const view = mount(
@@ -106,6 +107,7 @@ test('Text example should match snapshot', () => {
         malesuada ultrices turpis. Nunc vitae maximus purus, nec consectetur dui. Suspendisse euismod, elit vel rutrum
         commodo, ipsum tortor maximus dui, sed varius sapien odio vitae est. Etiam at cursus metus.
       </Text>
+      <TextRule />
     </TextContent>
   );
   expect(view).toMatchSnapshot();
