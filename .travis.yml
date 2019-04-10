@@ -9,6 +9,8 @@ cache:
     - packages/react-icons/node_modules/
     - packages/patternfly-4/react-core/node_modules
     - packages/patternfly-4/react-docs/node_modules
+    - packages/patternfly-4/react-docs/plugins/gatsby-transformer-react-docgen-typescript/node_modules
+    - packages/patternfly-4/react-docs/plugins/gatsby-transformer-react-examples/node_modules
     - packages/patternfly-4/react-charts/node_modules
     - packages/patternfly-4/react-styles/node_modules
     - packages/patternfly-3/patternfly-react/node_modules
@@ -25,6 +27,7 @@ cache:
     - packages/patternfly-4/react-styles/dist
     - packages/patternfly-4/react-table/dist
     - packages/patternfly-4/react-tokens/dist
+    - packages/patternfly-4/react-inline-edit-extension/dist
     - packages/patternfly-4/react-docs/public # To cache PF4 docs
 git:
   depth: 10

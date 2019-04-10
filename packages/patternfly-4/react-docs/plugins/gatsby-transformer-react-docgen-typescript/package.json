@@ -6,9 +6,11 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "gatsby": "^2.1.37",
     "react-docgen": "^4.1.0",
     "react-docgen-typescript": "^1.12.3"
+  },
+  "peerDependencies": {
+    "gatsby": ">=2"
   },
   "keywords": [
     "gatsby",
