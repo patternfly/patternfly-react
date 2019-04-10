@@ -82,6 +82,8 @@ const propTypes = {
         ),
         isOpen: PropTypes.bool,
         parent: PropTypes.number,
+        fullWidth: PropTypes.bool,
+        noPadding: PropTypes.bool,
         props: PropTypes.any
       }),
       PropTypes.arrayOf(

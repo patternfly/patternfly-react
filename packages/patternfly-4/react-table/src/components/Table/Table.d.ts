@@ -78,6 +78,8 @@ export interface IRow {
   isOpen: Boolean;
   parent: Number;
   props: any;
+  fullWidth?: Boolean;
+  noPadding?: Boolean;
 }
 
 export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSelect'>, 'rows'> {

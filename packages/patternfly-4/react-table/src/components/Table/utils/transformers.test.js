@@ -184,6 +184,18 @@ describe('Transformer functions', () => {
     expect(onCollapse.mock.calls).toHaveLength(1);
   });
 
+  test('collapsible full width', () => {
+    const onCollapse = jest.fn();
+    const rowData = {
+      fullWidth: true
+    };
+    const column = {
+      extraParams: { onCollapse }
+    };
+    const returnedData = collapsible('', { rowIndex: 0, rowData, column });
+    expect(returnedData).toMatchObject({ className: false, isVisible: false });
+  });
+
   describe('expandable', () => {
     test('with parent', () => {
       const returned = expandable('test', { rowIndex: 2, rowData: { parent: 1 }, column: { extraParams: {} } });
@@ -209,6 +221,22 @@ describe('Transformer functions', () => {
     test('no parent', () => {
       expect(expandedRow(5)({ title: 'test' }, { rowData: {}, column: { extraParams: {} } })).toBe(false);
     });
+
+    test('full width', () => {
+      const returned = expandedRow(5)(
+        { title: 'test' },
+        { rowIndex: 2, rowData: { parent: 1, fullWidth: true }, column: { extraParams: {} } }
+      );
+      expect(returned).toMatchObject({ colSpan: 6, id: 'expanded-content2' });
+    });
+
+    test('no padding', () => {
+      const returned = expandedRow(5)(
+        { title: 'test' },
+        { rowIndex: 2, rowData: { parent: 1, noPadding: true }, column: { extraParams: {} } }
+      );
+      expect(returned).toMatchObject({ colSpan: 5, id: 'expanded-content2', className: 'pf-m-no-padding' });
+    })
   });
 
   test('scopeColTransformer', () => {
