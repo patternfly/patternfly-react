@@ -5,6 +5,7 @@ exports[`Actions table 1`] = `
   actionResolver={[Function]}
   areActionsDisabled={[Function]}
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -8920,6 +8921,7 @@ exports[`Actions table 1`] = `
 exports[`Cell header table 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -14779,6 +14781,7 @@ exports[`Cell header table 1`] = `
 exports[`Collapsible nested table 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -18211,7 +18214,7 @@ exports[`Collapsible nested table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -18669,7 +18672,7 @@ exports[`Collapsible nested table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -19661,7 +19664,7 @@ exports[`Collapsible nested table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -21616,6 +21619,7 @@ exports[`Collapsible nested table 1`] = `
 exports[`Collapsible table 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -24938,7 +24942,7 @@ exports[`Collapsible table 1`] = `
                     }
                   >
                     <tr
-                      className="pf-c-table__expandable-row pf-m-expanded pf-m-no-padding"
+                      className="pf-c-table__expandable-row pf-m-expanded"
                       hidden={false}
                       onMouseDown={[Function]}
                     >
@@ -24979,7 +24983,7 @@ exports[`Collapsible table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -26446,7 +26450,7 @@ exports[`Collapsible table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -28401,6 +28405,7 @@ exports[`Collapsible table 1`] = `
 exports[`Header width table 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -31402,7 +31407,7 @@ exports[`Header width table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -31814,7 +31819,7 @@ exports[`Header width table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -32638,7 +32643,7 @@ exports[`Header width table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -34357,6 +34362,7 @@ exports[`Header width table 1`] = `
 exports[`Selectable table 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -37666,7 +37672,7 @@ exports[`Selectable table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -38131,7 +38137,7 @@ exports[`Selectable table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -39079,7 +39085,7 @@ exports[`Selectable table 1`] = `
                         >
                           <ExpandableRowContent>
                             <div
-                              className="pf-c-table__expandable-row-content pf-m-no-padding"
+                              className="pf-c-table__expandable-row-content"
                             >
                               one
                             </div>
@@ -41103,6 +41109,7 @@ exports[`Simple Actions table 1`] = `
     ]
   }
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -52489,6 +52496,7 @@ exports[`Simple Actions table 1`] = `
 exports[`Simple table aria-label 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -58272,6 +58280,7 @@ exports[`Simple table aria-label 1`] = `
 
 exports[`Simple table caption 1`] = `
 <Table
+  borders={true}
   caption="Simple Table"
   cells={
     Array [
@@ -64057,6 +64066,7 @@ exports[`Simple table caption 1`] = `
 
 exports[`Simple table header 1`] = `
 <Table
+  borders={true}
   cells={
     Array [
       Object {
@@ -69847,6 +69857,7 @@ exports[`Simple table header 1`] = `
 exports[`Sortable table 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -75693,6 +75704,7 @@ exports[`Sortable table 1`] = `
 exports[`Table variants Breakpoint - grid 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -81537,6 +81549,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
 exports[`Table variants Breakpoint - grid-lg 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -87381,6 +87394,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
 exports[`Table variants Breakpoint - grid-md 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -93225,6 +93239,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
 exports[`Table variants Breakpoint - grid-xl 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -99069,6 +99084,7 @@ exports[`Table variants Breakpoint - grid-xl 1`] = `
 exports[`Table variants Size - compact 1`] = `
 <Table
   aria-label="Aria labeled"
+  borders={true}
   cells={
     Array [
       Object {
@@ -99184,7 +99200,7 @@ exports[`Table variants Size - compact 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md pf-m-compact"
+    className="pf-c-table pf-m-grid-md pf-m-compact pf-m-no-border-rows"
     columns={
       Array [
         Object {
@@ -99406,7 +99422,7 @@ exports[`Table variants Size - compact 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md pf-m-compact"
+      className="pf-c-table pf-m-grid-md pf-m-compact pf-m-no-border-rows"
       role="grid"
     >
       <TableHeader
