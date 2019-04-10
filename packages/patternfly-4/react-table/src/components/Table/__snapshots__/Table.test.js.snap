@@ -99210,7 +99210,7 @@ exports[`Table variants Size - compact 1`] = `
 >
   <Provider
     aria-label="Aria labeled"
-    className="pf-c-table pf-m-grid-md pf-m-compact pf-m-no-border-rows"
+    className="pf-c-table pf-m-grid-md pf-m-compact"
     columns={
       Array [
         Object {
@@ -99432,7 +99432,7 @@ exports[`Table variants Size - compact 1`] = `
   >
     <table
       aria-label="Aria labeled"
-      className="pf-c-table pf-m-grid-md pf-m-compact pf-m-no-border-rows"
+      className="pf-c-table pf-m-grid-md pf-m-compact"
       role="grid"
     >
       <TableHeader

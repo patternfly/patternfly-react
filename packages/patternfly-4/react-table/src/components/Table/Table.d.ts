@@ -86,6 +86,7 @@ export interface TableProps extends Omit<Omit<HTMLProps<HTMLTableElement>, 'onSe
   children?: ReactNode;
   className?: string;
   variant?: OneOf<typeof TableVariant, keyof typeof TableVariant>;
+  borders?: boolean;
   gridBreakPoint?: OneOf<typeof TableGridBreakpoint, keyof typeof TableGridBreakpoint>;
   sortBy?: ISortBy;
   onCollapse?: (event: MouseEvent, rowIndex: number, isOpen: boolean, rowData: IRowData, extraData: IExtraData) => void;
