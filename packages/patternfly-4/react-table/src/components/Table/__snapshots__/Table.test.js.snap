@@ -5,7 +5,7 @@ exports[`Actions table 1`] = `
   actionResolver={[Function]}
   areActionsDisabled={[Function]}
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -8921,7 +8921,7 @@ exports[`Actions table 1`] = `
 exports[`Cell header table 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -14781,7 +14781,7 @@ exports[`Cell header table 1`] = `
 exports[`Collapsible nested table 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -21619,7 +21619,7 @@ exports[`Collapsible nested table 1`] = `
 exports[`Collapsible table 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -28405,7 +28405,7 @@ exports[`Collapsible table 1`] = `
 exports[`Header width table 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -34362,7 +34362,7 @@ exports[`Header width table 1`] = `
 exports[`Selectable table 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -41109,7 +41109,7 @@ exports[`Simple Actions table 1`] = `
     ]
   }
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -52496,7 +52496,7 @@ exports[`Simple Actions table 1`] = `
 exports[`Simple table aria-label 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -58280,7 +58280,7 @@ exports[`Simple table aria-label 1`] = `
 
 exports[`Simple table caption 1`] = `
 <Table
-  borders={true}
+  borders={false}
   caption="Simple Table"
   cells={
     Array [
@@ -64066,7 +64066,7 @@ exports[`Simple table caption 1`] = `
 
 exports[`Simple table header 1`] = `
 <Table
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -69857,7 +69857,7 @@ exports[`Simple table header 1`] = `
 exports[`Sortable table 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -75704,7 +75704,7 @@ exports[`Sortable table 1`] = `
 exports[`Table variants Breakpoint - grid 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -81549,7 +81549,7 @@ exports[`Table variants Breakpoint - grid 1`] = `
 exports[`Table variants Breakpoint - grid-lg 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -87394,7 +87394,7 @@ exports[`Table variants Breakpoint - grid-lg 1`] = `
 exports[`Table variants Breakpoint - grid-md 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -93239,7 +93239,7 @@ exports[`Table variants Breakpoint - grid-md 1`] = `
 exports[`Table variants Breakpoint - grid-xl 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {
@@ -99084,7 +99084,7 @@ exports[`Table variants Breakpoint - grid-xl 1`] = `
 exports[`Table variants Size - compact 1`] = `
 <Table
   aria-label="Aria labeled"
-  borders={true}
+  borders={false}
   cells={
     Array [
       Object {

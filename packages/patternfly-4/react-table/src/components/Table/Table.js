@@ -145,7 +145,7 @@ const defaultProps = {
   onCollapse: null,
   className: '',
   variant: null,
-  borders: true,
+  borders: false,
   rowLabeledBy: 'simple-node',
   expandId: 'expandable-toggle',
   contentId: 'expanded-content',
@@ -246,7 +246,7 @@ class Table extends React.Component {
             getModifier(stylesGrid, gridBreakPoint),
             getModifier(styles, variant),
             onCollapse && variant === TableVariant.compact && styles.modifiers.expandable,
-            variant === TableVariant.compact && borders ? styles.modifiers.noBorderRows : null,
+            variant === TableVariant.compact && borders === false ? styles.modifiers.noBorderRows : null,
             className
           )}
         >
