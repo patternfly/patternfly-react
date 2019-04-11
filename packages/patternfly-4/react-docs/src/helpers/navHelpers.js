@@ -5,7 +5,7 @@ exports.getFileName = filename => {
   return path.basename(filename, extension).toLowerCase().trim();
 }
 
-exports.getParentFolder = filename => {
+exports.getParentFolder = (filename, level = 2) => {
   const split = filename.split('/');
-  return split[split.length - 2]; // i.e. 'Alert' in '/ff/ff/Alert/AlertSomething.js'
+  return split[split.length - level]; // i.e. 'Alert' in '/ff/ff/Alert/AlertSomething.js'
 }

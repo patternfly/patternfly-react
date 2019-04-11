@@ -10,7 +10,7 @@ const components = {
   code: LiveEdit
 };
 
-const MarkdownTemplate = ({ data }) => {
+const MdxTemplate = ({ data }) => {
   // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
   const helperComponents = data.metadata.edges
     .map(edge => edge.node.name)
@@ -101,4 +101,4 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
 }
 `;
 
-export default MarkdownTemplate;
+export default MdxTemplate;

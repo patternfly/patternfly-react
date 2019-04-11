@@ -8,7 +8,7 @@ Gatsby recursively scans all `../../patternfly-4` directories for *.md files. Yo
 title: "(required) title of the page"
 cssPrefix: "(optional) the cssPrefix from @patternfly/patternfly (i.e. pf-c-nav)"
 section: "(optional, default=components) the section the page should be generated under"
-seperatePages: "(optional, default=false) if the links inside the page should redirect to fullscreen pages
+fullscreen: "(optional, default=false) if the page should be rendered as-is
 ---
 ```
 
@@ -34,8 +34,7 @@ Their used to be another Gatsby project here that took 10 minutes to build and w
 
 1.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where we which Gatsby plugins to include. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
   - We include our own plugin `gatsby-transformer-react-docgen-typescript` for transforming component source files into metadata via [React Docgen](https://github.com/reactjs/react-docgen) and [React Docgen Typescript](https://github.com/styleguidist/react-docgen-typescript).
-  - We include our own plugin `gatsby-transformer-react-examples` to create a `.cache/example_index.js` to import all example components for usage in the live docs.
-  - We use `gatsby-transformer-remark` to parse the *.md files into html Abstract Syntax Trees. We use the generated HTML _except for in <code> tags_, where we instead use our own `components/componentDocs/liveEdit.js` component.
+  - We use `gatsby-mdx` to parse the *.md files into React Functional Components. We use the generated HTML _except for in <code> tags_, where we instead use our own `components/componentDocs/liveEdit.js` component.
 
 2.  **`gatsby-node.js`**: This file is the secondary copnfiguration file for a Gatsby site. It expects usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/). We use it just to enumerate which pages to create based off of data loaded from the `gatsby-transformer-remark` plugin.
 

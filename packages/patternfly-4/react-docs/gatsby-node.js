@@ -1,5 +1,4 @@
 const navHelpers = require("./src/helpers/navHelpers");
-const astHelpers = require("./src/helpers/astHelpers");
 const path = require("path");
 
 // Add map PR-related environment variables to gatsby nodes
@@ -31,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
         frontmatter {
           title
           section
-          seperatePages
+          fullscreen
         }
       }
     }
@@ -40,52 +39,39 @@ exports.createPages = ({ graphql, actions }) => {
 
   return mdx.then(({ data }) => {
     data.allMdx.nodes.forEach(node => {
-      const componentName = navHelpers.getFileName(node.fileAbsolutePath);
-      const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
+      const componentName = navHelpers.getFileName(node.fileAbsolutePath).toLowerCase();
+      const folderName = navHelpers.getParentFolder(node.fileAbsolutePath).toLowerCase();
 
       let link = '/bad-page/';
-      let context = {};
       // Create fullscreen example component pages for any links in the *.md
-      if (node.frontmatter.seperatePages) {
+      if (node.frontmatter.fullscreen) {
         // Create the templated page to link to them differently
-        link = `/${node.frontmatter.section}/${componentName}/`;
-        context = {
-          title: node.frontmatter.title,
-          fileAbsolutePath: node.fileAbsolutePath,
-          pathRegex: '', // No props
-        };
-
-        // Create the separate pages
-        // astHelpers.getLinks(node.htmlAst).forEach(mdLink => {
-        //   const split = mdLink
-        //     .replace('.', '')
-        //     .split('/')
-        //     .filter(s => s);
-        //   const demoComponent = split[split.length - 1];
-        //   const basePath = path.dirname(node.fileAbsolutePath);
-
-        //   actions.createPage({
-        //     path: `${link}${split.join('/')}/`,
-        //     // Assume [Link](/PageLayoutSimpleNav/) in *.md means there is a ./examples/PageLayoutSimpleNav.js
-        //     component: path.resolve(`${basePath}/examples/${demoComponent}.js`),
-        //   });
-        // });
+        const parentFolderName = navHelpers.getParentFolder(node.fileAbsolutePath, 3).toLowerCase();
+        link = `/${node.frontmatter.section}/${parentFolderName}/${componentName}/`;
+        console.log('adding fullscreen page', link);
+        actions.createPage({
+          path: link,
+          component: path.resolve('./src/templates/mdxFullscreenTemplate.js'),
+          context: {
+            title: node.frontmatter.title,
+            fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
+          }
+        });
       } else {
         // Normal templated component pages
-        let section = node.frontmatter.section ? node.frontmatter.section : 'components';
+        let section = node.frontmatter.section ? node.frontmatter.section.toLowerCase() : 'components';
         link = `/${section}/${componentName}/`;
-        context = {
-          title: node.frontmatter.title,
-          fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
-          pathRegex: `/${folderName}\/.*/`, // Helps us get the docgenned props
-        }
+        console.log('adding page', link);
+        actions.createPage({
+          path: link,
+          component: path.resolve('./src/templates/mdxTemplate.js'),
+          context: {
+            title: node.frontmatter.title,
+            fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
+            pathRegex: `/${folderName}\/.*/` // Helps us get the docgenned props
+          }
+        });
       }
-      console.log('adding page', link);
-      actions.createPage({
-        path: link,
-        component: path.resolve('./src/templates/markdownTemplate.js'),
-        context: context
-      });
     });
   });
 };
