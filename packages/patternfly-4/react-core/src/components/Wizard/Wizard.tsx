@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { canUseDOM } from 'exenv';
+import * as ExecutionEnvironment from 'exenv';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Wizard/wizard.css';
@@ -255,7 +255,7 @@ class Wizard extends React.Component<WizardProps> {
   }
 
   public render() {
-    if (!canUseDOM) {
+    if (!ExecutionEnvironment.canUseDOM) {
       return null;
     }
     if (!this.container) {

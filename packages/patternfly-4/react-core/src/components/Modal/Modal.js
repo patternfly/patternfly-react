@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import ModalContent from './ModalContent';
-import { canUseDOM } from 'exenv';
+import * as ExecutionEnvironment from 'exenv';
 import { KEY_CODES } from '../../helpers/constants';
 import { css } from '@patternfly/react-styles';
 import styles from '@patternfly/patternfly/components/Backdrop/backdrop.css';
@@ -98,7 +98,7 @@ class Modal extends React.Component {
   render() {
     const { ...props } = this.props;
 
-    if (!canUseDOM) {
+    if (!ExecutionEnvironment.canUseDOM) {
       return null;
     }
 
@@ -106,7 +106,7 @@ class Modal extends React.Component {
       this.container = document.createElement('div');
     }
 
-    return ReactDOM.createPortal(<ModalContent {...props} title={this.props.title} id={this.id} ariaDescribedById={this.props.ariaDescribedById}/>, this.container);
+    return ReactDOM.createPortal(<ModalContent {...props} title={this.props.title} id={this.id} ariaDescribedById={this.props.ariaDescribedById} />, this.container);
   }
 }
 
