@@ -21,7 +21,7 @@ const ignore = [
   `**/tsconfig.*`,
   `**/tslint.*`,
   `**/README.*`,
-  `**/CHANGELOG.*`
+  `**/CHANGELOG.*`,
 ];
 
 module.exports = {
@@ -47,13 +47,13 @@ module.exports = {
       // Our custom plugin for *.js?x *.ts?x files to get prop types
       resolve: require.resolve(`${__dirname}/plugins/gatsby-transformer-react-docgen-typescript`),
     },
-    {
-      // Our custom plugin for examples/*.(js|svg) files to add to .cache/example_index.js
-      // ...then webpack deals with those files statically instead of us dynamically :)
-      resolve: require.resolve(`${__dirname}/plugins/gatsby-transformer-react-examples`),
-    },
     // The markdown plugin for *.md files
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`]
+      }
+    },
     // The plugin for package.json files (to get version numbers)
     `gatsby-transformer-json`,
   ],

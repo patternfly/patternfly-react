@@ -1,6 +1,6 @@
 import React from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import { Button, TextContent, Text } from '@patternfly/react-core';
+import { Button } from '@patternfly/react-core';
 import { CodeIcon, CopyIcon } from '@patternfly/react-icons';
 
 const liveEditorStyle = { code: { 'max-height': '37.5rem', overflow: 'auto' } };
@@ -8,9 +8,9 @@ class LiveEdit extends React.Component {
   constructor(props) {
     super(props);
     // Our children are elements inside a <code> tag created from rendered markdown
-    this.code = this.props.children[0];
-    this.scope = this.props.scope;
-    this.scope.React = React;
+    this.code = this.props.children;
+    // This is injected in src/components/mdx-renderer
+    this.scope = this.getScope();
     this.state = {
       codeOpen: false,
       copied: false

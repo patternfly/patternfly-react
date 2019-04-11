@@ -2,28 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import SidebarLayout from './sidebarLayout';
 import { CSSVars, Props, LiveEdit } from '../components/componentDocs';
-import rehypeReact from 'rehype-react';
-import { getUsedComponents } from '../helpers/astHelpers';
-import { getScope } from '../helpers/dynamicImports';
 import { Title, PageSection } from '@patternfly/react-core';
+import { MDXProvider } from '@mdx-js/tag';
+import { MDXRenderer } from '../components/mdx-renderer';
 
-const getRehypeReact = scope => {
-  return new rehypeReact({
-    // Here we inject the properties down to ALL our listed components
-    createElement: (type, props, ...children) => {
-      if (typeof type === 'function') {
-        props.scope = scope;
-        props.size = 'xl';
-        props.style = { marginTop: '32px' }
-      }
-      return React.createElement(type, props, ...children);
-    },
-    components: {
-      code: LiveEdit,
-      h2: Title
-    },
-  }).Compiler;
-}
+const components = {
+  code: LiveEdit
+};
 
 const MarkdownTemplate = ({ data }) => {
   // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
@@ -31,24 +16,14 @@ const MarkdownTemplate = ({ data }) => {
     .map(edge => edge.node.name)
     .filter(name => name); // Some HOCs don't get docgenned properly (like TabContent)
   // Exported components with names used in the *.md file
-  const propComponents = getUsedComponents(data.markdownRemark.htmlAst, helperComponents, {})
+  const propComponents = [] // getUsedComponents(data.mdx.htmlAst, helperComponents, {})
   // Finally, the props for each relevant component!
   const props = data.metadata.edges
     .filter(edge => propComponents.indexOf(edge.node.name) !== -1)
     .map(edge => { return { name: edge.node.name, props: edge.node.props } });
 
-  // These get set at compile time, so no hot-reloading
-  // This is good, we don't want every single one of our packages' full dist in our bundle!
-  let scope = getScope(data.markdownRemark.rawMarkdownBody,
-    data.exampleResources.edges.map(edge => edge.node.importName));
-
-  // https://github.com/rhysd/rehype-react#programmatic
-  // https://using-remark.gatsbyjs.org/custom-components
-  const renderAst = getRehypeReact(scope);
-
-  const cssPrefix = data.markdownRemark.frontmatter.cssPrefix;
-
-  let section = data.markdownRemark.frontmatter.section;
+  const cssPrefix = data.mdx.frontmatter.cssPrefix;
+  let section = data.mdx.frontmatter.section;
   if (!section)
     section = 'component';
 
@@ -56,9 +31,13 @@ const MarkdownTemplate = ({ data }) => {
     <SidebarLayout>
       <PageSection>
         <Title size="4xl" style={{ textTransform: 'capitalize' }}>
-          {data.markdownRemark.frontmatter.title} {section.indexOf('-') === -1 ? section : ''}
+          {data.mdx.frontmatter.title} {section.indexOf('-') === -1 ? section : ''}
         </Title>
-        {renderAst(data.markdownRemark.htmlAst)}
+        <MDXProvider components={components}>
+          <MDXRenderer>
+            {data.mdx.code.body}
+          </MDXRenderer>
+        </MDXProvider>
       </PageSection>
 
       {props.length > 0 && props.map(component =>
@@ -88,10 +67,11 @@ const MarkdownTemplate = ({ data }) => {
 // We want ALL the component metadata from gatsby-transformer-react-docgen-typescript
 // for components in that folder
 export const pageQuery = graphql`
-query GetComponent($fileAbsolutePath: String!, $pathRegex: String!, $examplesRegex: String!) {
-  markdownRemark(fileAbsolutePath: { eq: $fileAbsolutePath }) {
-    htmlAst
-    rawMarkdownBody
+query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
+  mdx(fileAbsolutePath: { eq: $fileAbsolutePath }) {
+    code {
+      body
+    }
     frontmatter {
       title
       section
@@ -115,13 +95,6 @@ query GetComponent($fileAbsolutePath: String!, $pathRegex: String!, $examplesReg
             value
           }
         }
-      }
-    }
-  }
-  exampleResources: allComponentExamples(filter: {path: {regex: $examplesRegex}}) {
-    edges {
-      node {
-        importName
       }
     }
   }

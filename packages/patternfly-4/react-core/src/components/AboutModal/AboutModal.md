@@ -4,12 +4,11 @@ cssPrefix: "pf-c-about-modal-box"
 ---
 ## Simple About Modal
 
-```js
-import React from 'react';
 import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
 import brandImg from './examples/brandImg.svg';
 import logoImg from './examples/logoImg.svg';
 
+```js
 class SimpleAboutModal extends React.Component {
   constructor(props) {
     super(props);

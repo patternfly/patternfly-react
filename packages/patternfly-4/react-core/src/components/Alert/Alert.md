@@ -3,10 +3,10 @@ title: "Alert"
 cssPrefix: "pf-c-alert"
 ---
 ## Info Alert
-```js
-import React from 'react';
+
 import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
 
+```js
 class InfoAlert extends React.Component {
   constructor(props) {
     super(props);
@@ -46,9 +46,6 @@ class InfoAlert extends React.Component {
 
 ## Success Alert
 ```js
-import React from 'react';
-import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
-
 class SuccessAlert extends React.Component {
   constructor(props) {
     super(props);
@@ -91,9 +88,6 @@ class SuccessAlert extends React.Component {
 
 ## Warning Alert
 ```js
-import React from 'react';
-import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
-
 class WarningAlert extends React.Component {
   constructor(props) {
     super(props);
@@ -136,9 +130,6 @@ class WarningAlert extends React.Component {
 
 ## Danger Alert
 ```js
-import React from 'react';
-import { Alert, AlertActionLink, AlertActionCloseButton } from '@patternfly/react-core';
-
 class DangerAlert extends React.Component {
   constructor(props) {
     super(props);
