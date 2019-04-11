@@ -27,7 +27,7 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   'aria-label': ariaLabel = '',
   ...props
 }) => {
-  const handleChange = event => {
+  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
     this.props.onChange(event.currentTarget.checked, event);
   };
 
