@@ -3,10 +3,10 @@ title: "Brand"
 cssPrefix: null
 ---
 ## Simple Brand
-```js
-import React from 'react';
-import { Brand } from '@patternfly/react-core';
-import pfLogo from './pf_logo.svg';
 
+import { Brand } from '@patternfly/react-core';
+import pfLogo from './examples/pfLogo.svg';
+
+```js
 <Brand src={pfLogo} alt="Patternfly Logo" />
 ```
