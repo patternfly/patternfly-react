@@ -2,6 +2,9 @@ import { Wizard, WizardStep } from '@patternfly/react-core';
 import React, { Component } from 'react';
 
 class WizardTest extends Component {
+  state = {
+    isOpen: true
+  };
   render() {
     const steps: WizardStep[] = [
       { name: 'A', component: <p>Step 1</p> },
@@ -26,12 +29,12 @@ class WizardTest extends Component {
     ];
     return (
       <Wizard
-        isOpen
+        isOpen={this.state.isOpen}
         title="Wizard title"
         description="Description here"
         steps={steps}
         startAtStep={1}
-
+        onClose={() => this.setState({ isOpen: false })}
       />
     );
   }
