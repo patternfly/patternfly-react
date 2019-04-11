@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`dropdown groups basic render 1`] = `
-.pf-c-dropdown__group {
-  display: block;
-  padding-top: 1rem;
-}
-
 <Fragment>
   <section
     className="pf-c-dropdown__group"
