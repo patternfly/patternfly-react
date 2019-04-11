@@ -1,78 +1,167 @@
 ---
-title: "Data List"
-cssPrefix: "pf-c-data-list"
+title: 'Data List'
+cssPrefix: 'pf-c-data-list'
 ---
+
 ## Simple Data List
+
 ```js
 import React from 'react';
-import { DataList, DataListItem, DataListCell } from '@patternfly/react-core';
+import { DataList, DataListItem, DataListItemCells, DataListCell } from '@patternfly/react-core';
 
 SimpleDataList = () => (
   <DataList aria-label="Simple data list example">
     <DataListItem aria-labelledby="simple-item1">
-      <DataListCell>
-        <span id="simple-item1">Primary content</span>
-      </DataListCell>
-      <DataListCell>Secondary content</DataListCell>
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell key="primary content">
+            <span id="simple-item1">Primary content</span>
+          </DataListCell>,
+          <DataListCell key="secondary content">Secondary content</DataListCell>
+        ]}
+      />
     </DataListItem>
     <DataListItem aria-labelledby="simple-item2">
-      <DataListCell>
-        <span id="simple-item2">Second list item title</span>
-      </DataListCell>
-      <DataListCell>Secondary content</DataListCell>
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell isFilled={false} key="secondary content fill">
+            <span id="simple-item2">Secondary content (pf-m-no-fill)</span>
+          </DataListCell>,
+          <DataListCell isFilled={false} alignRight key="secondary content align">
+            Secondary content (pf-m-align-right pf-m-no-fill)
+          </DataListCell>
+        ]}
+      />
     </DataListItem>
   </DataList>
 );
 ```
 
 ## Data List Checkboxes, Actions and Additional Cells
+
 ```js
 import React from 'react';
-import { DataList, DataListItem, DataListCell, DataListCheck, DataListAction } from '@patternfly/react-core';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListItemCells,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  Dropdown,
+  DropdownItem,
+  DropdownPosition,
+  KebabToggle
+} from '@patternfly/react-core';
 
-CheckboxActionDataList = () =>  (
-  <DataList aria-label="Checkbox and action data list example">
-    <DataListItem aria-labelledby="check-action-item1">
-      <DataListCheck aria-labelledby="check-action-item1" name="check-action-check1" />
-      <DataListCell>
-        <span id="check-action-item1">Primary content</span>
-      </DataListCell>
-      <DataListCell>Secondary content</DataListCell>
-      <DataListAction
-        aria-labelledby="check-action-item1 check-action-action1"
-        id="check-action-action1"
-        aria-label="Actions"
-      />
-    </DataListItem>
-    <DataListItem aria-labelledby="check-action-item2">
-      <DataListCheck aria-labelledby="check-action-item2" name="check-action-check2" />
-      <DataListCell>
-        <span id="check-action-item2">Primary content - Lorem ipsum</span> dolor sit amet, consectetur adipisicing
-        elit, sed do eiusmod.
-      </DataListCell>
-      <DataListCell>Secondary content</DataListCell>
-      <DataListAction
-        aria-labelledby="check-action-item2 check-action-action2"
-        id="check-action-action2"
-        aria-label="Actions"
-      />
-    </DataListItem>
-  </DataList>
-);
+class CheckboxActionDataList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isOpen: false };
+
+    this.onToggle = isOpen => {
+      this.setState({ isOpen });
+    };
+
+    this.onSelect = event => {
+      this.setState(prevState => ({
+        isOpen: !prevState.isOpen
+      }));
+    };
+  }
+
+  render() {
+    return (
+      <DataList aria-label="Checkbox and action data list example">
+        <DataListItem aria-labelledby="check-action-item1">
+          <DataListCheck aria-labelledby="check-action-item1" name="check-action-check1" />
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary content">
+                <span id="check-action-item1">Primary content</span> Dolor sit amet, consectetur adipisicing elit, sed
+                do eiusmod.
+              </DataListCell>,
+              <DataListCell key="secondary content 1">
+                Secondary content. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+              </DataListCell>,
+              <DataListCell key="secondary content 2">
+                <span>Tertiary content</span> Dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+              </DataListCell>,
+              <DataListCell key="more content 1">
+                <span>More content</span> Dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+              </DataListCell>,
+              <DataListCell key="more content 2">
+                <span>More content</span> Dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+              </DataListCell>
+            ]}
+          />
+          <DataListAction
+            aria-labelledby="check-action-item1 check-action-action1"
+            id="check-action-action1"
+            aria-label="Actions"
+          >
+            <Dropdown
+              isPlain
+              position={DropdownPosition.right}
+              isOpen={this.state.isOpen}
+              onSelect={this.onSelect}
+              toggle={<KebabToggle onToggle={this.onToggle} />}
+              dropdownItems={[
+                <DropdownItem key="link">Link</DropdownItem>,
+                <DropdownItem key="action" component="button">
+                  Action
+                </DropdownItem>,
+                <DropdownItem key="disabled link" isDisabled>
+                  Disabled Link
+                </DropdownItem>
+              ]}
+            />
+          </DataListAction>
+        </DataListItem>
+        <DataListItem aria-labelledby="check-action-item2">
+          <DataListCheck aria-labelledby="check-action-item2" name="check-action-check2" />
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell key="primary content">
+                <span id="check-action-item2">Primary content - Lorem ipsum</span> dolor sit amet, consectetur
+                adipisicing elit, sed do eiusmod.
+              </DataListCell>,
+              <DataListCell key="secondary content">
+                Secondary content. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+              </DataListCell>
+            ]}
+          />
+          <DataListAction
+            aria-labelledby="check-action-item2 check-action-action2"
+            id="check-action-action2"
+            aria-label="Actions"
+          >
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+          </DataListAction>
+        </DataListItem>
+      </DataList>
+    );
+  }
+}
 ```
 
 ## Data List Actions: single and multiple
+
 ```js
 import React from 'react';
 import {
   Button,
   Dropdown,
-  KebabToggle,
   DropdownItem,
+  DropdownPosition,
+  KebabToggle,
   DataList,
   DataListItem,
   DataListCell,
   DataListCheck,
+  DataListItemCells,
   DataListAction
 } from '@patternfly/react-core';
 
@@ -80,17 +169,32 @@ class ActionsDataList extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isOpen: false, isDeleted: false };
+
+    this.onToggle = isOpen => {
+      this.setState({ isOpen });
+    };
+
+    this.onSelect = event => {
+      this.setState(prevState => ({
+        isOpen: !prevState.isOpen
+      }));
+    };
   }
+
   render() {
     return (
       <React.Fragment>
         <DataList aria-label="single action data list example ">
           {!this.state.isDeleted && (
             <DataListItem aria-labelledby="single-action-item1">
-              <DataListCell>
-                <span id="single-action-item1">Single actionable Primary content</span>
-              </DataListCell>
-              <DataListCell>Single actionable Secondary content</DataListCell>
+              <DataListItemCells
+                dataListCells={[
+                  <DataListCell key="primary content">
+                    <span id="single-action-item1">Single actionable Primary content</span>
+                  </DataListCell>,
+                  <DataListCell key="secondary content">Single actionable Secondary content</DataListCell>
+                ]}
+              />
               <DataListAction
                 aria-labelledby="single-action-item1 single-action-action1"
                 id="single-action-action1"
@@ -111,25 +215,36 @@ class ActionsDataList extends React.Component {
             </DataListItem>
           )}
           <DataListItem aria-labelledby="multi-actions-item1">
-            <DataListCell>
-              <span id="multi-actions-item1">Multi actions Primary content</span>
-            </DataListCell>
-            <DataListCell>Multi actions Secondary content</DataListCell>
+            <DataListItemCells
+              dataListCells={[
+                <DataListCell key="primary content">
+                  <span id="multi-actions-item1">Multi actions Primary content</span>
+                </DataListCell>,
+                <DataListCell key="secondary content">Multi actions Secondary content</DataListCell>
+              ]}
+            />
             <DataListAction
               aria-labelledby="multi-actions-item1 multi-actions-action1"
               id="multi-actions-action1"
               aria-label="Actions"
-              actions={[
-                <DropdownItem key="link">Link</DropdownItem>,
-                <DropdownItem key="action" component="button">
-                  Action
-                </DropdownItem>,
-                <DropdownItem key="disabled link" isDisabled>
-                  Disabled Link
-                </DropdownItem>
-              ]}
-            />
-            } />
+            >
+              <Dropdown
+                isPlain
+                position={DropdownPosition.right}
+                isOpen={this.state.isOpen}
+                onSelect={this.onSelect}
+                toggle={<KebabToggle onToggle={this.onToggle} />}
+                dropdownItems={[
+                  <DropdownItem key="link">Link</DropdownItem>,
+                  <DropdownItem key="action" component="button">
+                    Action
+                  </DropdownItem>,
+                  <DropdownItem key="disabled link" isDisabled>
+                    Disabled Link
+                  </DropdownItem>
+                ]}
+              />
+            </DataListAction>
           </DataListItem>
         </DataList>
       </React.Fragment>
@@ -139,6 +254,7 @@ class ActionsDataList extends React.Component {
 ```
 
 ## Data List Expandable
+
 ```js
 import React from 'react';
 import {
@@ -148,18 +264,57 @@ import {
   DataListToggle,
   DataListContent,
   DataListCheck,
-  DataListAction
+  DataListAction,
+  DataListItemCells,
+  Dropdown,
+  DropdownItem,
+  DropdownPosition,
+  KebabToggle
 } from '@patternfly/react-core';
+import { CodeBranchIcon } from '@patternfly/react-icons';
 
 class ExpandableDataList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: ['ex-toggle1']
+      expanded: ['ex-toggle1'],
+      isOpen1: false,
+      isOpen2: false,
+      isOpen3: false
+    };
+
+    this.onToggle1 = isOpen1 => {
+      this.setState({ isOpen1 });
+    };
+
+    this.onToggle2 = isOpen2 => {
+      this.setState({ isOpen2 });
+    };
+
+    this.onToggle3 = isOpen3 => {
+      this.setState({ isOpen3 });
+    };
+
+    this.onSelect1 = event => {
+      this.setState(prevState => ({
+        isOpen1: !prevState.isOpen1
+      }));
+    };
+
+    this.onSelect2 = event => {
+      this.setState(prevState => ({
+        isOpen2: !prevState.isOpen2
+      }));
+    };
+
+    this.onSelect3 = event => {
+      this.setState(prevState => ({
+        isOpen3: !prevState.isOpen3
+      }));
     };
   }
 
-render() {
+  render() {
     const toggle = id => {
       const expanded = this.state.expanded;
       const index = expanded.indexOf(id);
@@ -176,16 +331,47 @@ render() {
             id="ex-toggle1"
             aria-controls="ex-expand1"
           />
-          <DataListCheck aria-labelledby="ex-item1" name="ex-check1" />
-          <DataListCell>
-            <div id="ex-item1">Primary content</div>
-            <a href="#">link</a>
-          </DataListCell>
-          <DataListCell>
-            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-          </DataListCell>
-          <DataListAction aria-labelledby="ex-item1 ex-action1" id="ex-action1" aria-label="Actions" />
-          <DataListContent aria-label="Primary Content Details" id="ex-expand1" isHidden={!this.state.expanded.includes('ex-toggle1')}>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell isIcon key="icon">
+                <CodeBranchIcon />
+              </DataListCell>,
+              <DataListCell key="primary content">
+                <div id="ex-item1">Primary content</div>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                <a href="#">link</a>
+              </DataListCell>,
+              <DataListCell key="secondary content">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </DataListCell>,
+              <DataListCell key="secondary content 2">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </DataListCell>
+            ]}
+          />
+          <DataListAction aria-labelledby="ex-item1 ex-action1" id="ex-action1" aria-label="Actions">
+            <Dropdown
+              isPlain
+              position={DropdownPosition.right}
+              isOpen={this.state.isOpen1}
+              onSelect={this.onSelect1}
+              toggle={<KebabToggle onToggle={this.onToggle1} />}
+              dropdownItems={[
+                <DropdownItem key="link">Link</DropdownItem>,
+                <DropdownItem key="action" component="button">
+                  Action
+                </DropdownItem>,
+                <DropdownItem key="disabled link" isDisabled>
+                  Disabled Link
+                </DropdownItem>
+              ]}
+            />
+          </DataListAction>
+          <DataListContent
+            aria-label="Primary Content Details"
+            id="ex-expand1"
+            isHidden={!this.state.expanded.includes('ex-toggle1')}
+          >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
@@ -199,15 +385,91 @@ render() {
             id="ex-toggle2"
             aria-controls="ex-expand2"
           />
-          <DataListCheck aria-labelledby="ex-item2" name="ex-check2" />
-          <DataListCell>
-            <div id="ex-item2">Primary content</div>
-          </DataListCell>
-          <DataListCell>
-            <span>Lorem ipsum dolor sit amet.</span>
-          </DataListCell>
-          <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions" />
-          <DataListContent aria-label="Primary Content Details" id="ex-expand2" isHidden={!this.state.expanded.includes('ex-toggle2')}>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell isIcon key="icon">
+                <CodeBranchIcon />
+              </DataListCell>,
+              <DataListCell key="secondary content">
+                <div id="ex-item2">Secondary content</div>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </DataListCell>,
+              <DataListCell key="secondary content 2">
+                <span>Lorem ipsum dolor sit amet.</span>
+              </DataListCell>,
+              <DataListCell key="secondary content3">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </DataListCell>
+            ]}
+          />
+          <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions">
+            <Dropdown
+              isPlain
+              position={DropdownPosition.right}
+              isOpen={this.state.isOpen2}
+              onSelect={this.onSelect2}
+              toggle={<KebabToggle onToggle={this.onToggle2} />}
+              dropdownItems={[
+                <DropdownItem key="link">Link</DropdownItem>,
+                <DropdownItem key="action" component="button">
+                  Action
+                </DropdownItem>,
+                <DropdownItem key="disabled link" isDisabled>
+                  Disabled Link
+                </DropdownItem>
+              ]}
+            />
+          </DataListAction>
+          <DataListContent
+            aria-label="Primary Content Details"
+            id="ex-expand2"
+            isHidden={!this.state.expanded.includes('ex-toggle2')}
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua.
+            </p>
+          </DataListContent>
+          <DataListItemCells
+            dataListCells={[
+              <DataListCell isIcon key="icon">
+                <CodeBranchIcon />
+              </DataListCell>,
+              <DataListCell key="tertiary content">
+                <div id="ex-item2">Tertiary content</div>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </DataListCell>,
+              <DataListCell key="secondary content">
+                <span>Lorem ipsum dolor sit amet.</span>
+              </DataListCell>,
+              <DataListCell key="secondary content 2">
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+              </DataListCell>
+            ]}
+          />
+          <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions">
+            <Dropdown
+              isPlain
+              position={DropdownPosition.right}
+              isOpen={this.state.isOpen3}
+              onSelect={this.onSelect3}
+              toggle={<KebabToggle onToggle={this.onToggle3} />}
+              dropdownItems={[
+                <DropdownItem key="link">Link</DropdownItem>,
+                <DropdownItem key="action" component="button">
+                  Action
+                </DropdownItem>,
+                <DropdownItem key="disabled link" isDisabled>
+                  Disabled Link
+                </DropdownItem>
+              ]}
+            />
+          </DataListAction>
+          <DataListContent
+            aria-label="Primary Content Details"
+            id="ex-expand2"
+            isHidden={!this.state.expanded.includes('ex-toggle2')}
+          >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
@@ -221,6 +483,7 @@ render() {
 ```
 
 ## Data List Width Modifiers
+
 ```js
 import React from 'react';
 import {
@@ -231,6 +494,7 @@ import {
   DataListAction,
   DataListToggle,
   DataListContent
+  DataListItemCells,
 } from '@patternfly/react-core';
 
 class ModifiersDataList extends React.Component {
@@ -255,13 +519,14 @@ class ModifiersDataList extends React.Component {
         <DataList aria-label="Width modifier data list example 1">
           <DataListItem aria-labelledby="width-ex1-item1">
             <DataListCheck aria-labelledby="width-ex1-check1" name="width-ex1-item1" />
-            <DataListCell>
+            <DataListItemCells dataListCells={[
+              <DataListCell key="default">
               <div style={previewPlaceholder}>
                 <b id="width-ex1-item1">default</b>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
               </div>
-            </DataListCell>
-            <DataListCell>
+            </DataListCell>,
+            <DataListCell key="default2">
               <div style={previewPlaceholder}>
                 <b>default</b>
                 <p>
@@ -269,7 +534,8 @@ class ModifiersDataList extends React.Component {
                   et dolore magna aliqua.
                 </p>
               </div>
-            </DataListCell>
+            </DataListCell>,
+            ]} />
           </DataListItem>
         </DataList>
       </div>,
@@ -278,18 +544,20 @@ class ModifiersDataList extends React.Component {
         <DataList aria-label="Width modifier data list example 2">
           <DataListItem aria-labelledby="width-ex2-item1">
             <DataListCheck aria-labelledby="width-ex2-check1" name="width-ex2-check1" />
-            <DataListCell width={2}>
+            <DataListItemCells dataListCells={[
+              <DataListCell width={2} key="width 2">
               <div style={previewPlaceholder}>
                 <b id="width-ex2-item1">width 2</b>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
               </div>
-            </DataListCell>
-            <DataListCell width={4}>
+            </DataListCell>,
+            <DataListCell width={4} key="width 4">
               <div style={previewPlaceholder}>
                 <b>width 4</b>
                 <p>Lorem ipsum dolor sit amet.</p>
               </div>
             </DataListCell>
+            ]} />
             <DataListAction
               aria-labelledby="width-ex2-item1 width-ex2-action1"
               id="width-ex2-action1"
@@ -309,21 +577,22 @@ class ModifiersDataList extends React.Component {
               onClick={() => this.setState({ show: !this.state.show })}
             />
             <DataListCheck aria-labelledby="width-ex3-check1" name="width-ex3-check1" />
-            <DataListCell width={5}>
-              <div style={previewPlaceholder}>
-                <b id="width-ex3-item1">width 5</b>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </DataListCell>
-            <DataListCell width={2}>
-              <div style={previewPlaceholder}>
-                <b>width 2</b>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              </div>
-            </DataListCell>
-            <DataListCell>
-              <div style={previewPlaceholder}>default</div>
-            </DataListCell>
+            <DataListItemCells dataListCells={[
+              <DataListCell width={5} key="width 5">
+                <div style={previewPlaceholder}>
+                  <b id="width-ex3-item1">width 5</b>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </DataListCell>,
+              <DataListCell width={2} key="width 2">
+                <div style={previewPlaceholder}>
+                  <b>width 2</b>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </DataListCell>,
+              <DataListCell key="default">
+                <div style={previewPlaceholder}>default</div>
+              </DataListCell>]} />
             <DataListAction
               aria-labelledby="width-ex3-item1 width-ex3-action1"
               id="width-ex3-action1"

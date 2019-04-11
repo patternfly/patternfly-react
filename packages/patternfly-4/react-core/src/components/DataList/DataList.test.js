@@ -5,8 +5,9 @@ import DataListItem from './DataListItem';
 import DataListAction from './DataListAction';
 import DataListCell from './DataListCell';
 import DataListToggle from './DataListToggle';
+import DataListItemCells from './DataListItemCells';
 import { Button } from '../Button';
-import { DropdownItem } from '../Dropdown';
+import { DropdownItem, Dropdown, KebabToggle, DropdownPosition } from '../Dropdown';
 
 describe('DataList', () => {
   test('List default', () => {
@@ -39,11 +40,18 @@ describe('DataList', () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('Cell', () => {
+  test('Cells', () => {
     const view = shallow(
-      <DataListCell key="list-id-1" id="primary-item" className="data-list-custom">
-        Primary Id
-      </DataListCell>
+      <DataListItemCells
+        dataListCells={[
+          <DataListCell key="list-id-1" id="primary-item" className="data-list-custom">
+            Primary Id
+          </DataListCell>,
+          <DataListCell key="list-id-2" id="primary-item" className="data-list-custom">
+            Primary Id 2
+          </DataListCell>
+        ]}
+      />
     );
     expect(view).toMatchSnapshot();
   });
@@ -86,19 +94,21 @@ describe('DataList', () => {
 
   test('DataListAction dropdown', () => {
     const view = shallow(
-      <DataListAction
-        aria-label="Actions"
-        aria-labelledby="ex-action"
-        id="ex-action"
-        actions={[
-          <DropdownItem component="button" onClick={jest.fn()} key="action-1">
-            action-1
-          </DropdownItem>,
-          <DropdownItem component="button" onClick={jest.fn()} key="action-2">
-            action-2
-          </DropdownItem>
-        ]}
-      />
+      <DataListAction aria-label="Actions" aria-labelledby="ex-action" id="ex-action">
+        <Dropdown
+          isPlain
+          position={DropdownPosition.right}
+          toggle={<KebabToggle />}
+          dropdownItems={[
+            <DropdownItem component="button" onClick={jest.fn()} key="action-1">
+              action-1
+            </DropdownItem>,
+            <DropdownItem component="button" onClick={jest.fn()} key="action-2">
+              action-2
+            </DropdownItem>
+          ]}
+        />
+      </DataListAction>
     );
     expect(view).toMatchSnapshot();
   });
