@@ -525,6 +525,7 @@ class CollapsibleTable extends React.Component {
         },
         {
           parent: 1,
+          fullWidth: true,
           cells: ['child - 1']
         },
         {
