@@ -67,25 +67,23 @@ class SimpleDropdown extends React.Component {
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownGroup, DropdownItem, DropdownSeparator } from '@patternfly/react-core';
 
-export default class GroupedDropdown extends Component {
+class GroupedDropdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       isOpen: false
     };
+    this.onToggle = isOpen => {
+      this.setState({
+        isOpen
+      });
+    };
+    this.onSelect = event => {
+      this.setState({
+        isOpen: !this.state.isOpen
+      });
+    };
   }
-
-  onToggle = isOpen => {
-    this.setState({
-      isOpen
-    });
-  };
-
-  onSelect = event => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  };
 
   render() {
     const { isOpen } = this.state;
