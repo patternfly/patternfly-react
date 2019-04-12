@@ -6,7 +6,8 @@ cssPrefix: 'pf-c-wizard'
 ### Simple Wizard
 
 import { Button, Wizard, Form, FormGroup, TextInput } from '@patternfly/react-core';
-import { SampleFormOne, SampleFormTwo } from './examples';
+import SampleFormOne from './examples/SampleFormOne';
+import SampleFormTwo from './examples/SampleFormTwo';
 
 ```js
 class SimpleWizard extends React.Component {

@@ -5,7 +5,7 @@ cssPrefix: 'pf-c-dropdown'
 
 ## Simple Dropdown
 
-import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';\
+import { Dropdown, DropdownToggle, DropdownItem, DropdownSeparator, DropdownPosition, DropdownDirection, KebabToggle } from '@patternfly/react-core';
 import { ThIcon } from '@patternfly/react-icons';
 
 ```js

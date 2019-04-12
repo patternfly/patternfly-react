@@ -1,6 +1,7 @@
 ---
 title: 'Grid'
 cssPrefix: 'pf-l-grid'
+section: 'layouts'
 ---
 
 ## Simple Grid

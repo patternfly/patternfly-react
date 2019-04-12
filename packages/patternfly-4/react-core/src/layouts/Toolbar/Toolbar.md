@@ -1,6 +1,7 @@
 ---
 title: 'Toolbar'
 cssPrefix: 'pf-c-avatar'
+section: 'layouts'
 ---
 
 ## Simple Toolbar Layout

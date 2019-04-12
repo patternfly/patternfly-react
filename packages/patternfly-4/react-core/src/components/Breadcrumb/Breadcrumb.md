@@ -4,7 +4,7 @@ cssPrefix: "pf-c-breadcrumb"
 ---
 ## Simple Breadcrumb
 
-import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 ```js
 SimpleBreadcrumbs = () => (

@@ -1,6 +1,7 @@
 ---
 title: 'Level'
 cssPrefix: 'pf-l-level'
+section: 'layouts'
 ---
 
 ## Simple Level Layout

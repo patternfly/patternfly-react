@@ -5,7 +5,18 @@ cssPrefix: 'pf-c-form'
 
 ## Simple Form
 
-import { Form, FormGroup, TextInput, TextArea, Form, FormSelectionOption, FormSelect, Checkbox, ActionGroup, Button, Radio } from '@patternfly/react-core';
+import {
+  Form,
+  FormGroup,
+  TextInput,
+  TextArea,
+  FormSelectionOption,
+  FormSelect,
+  Checkbox,
+  ActionGroup,
+  Button,
+  Radio
+} from '@patternfly/react-core';
 
 ```js
 class SimpleForm extends React.Component {

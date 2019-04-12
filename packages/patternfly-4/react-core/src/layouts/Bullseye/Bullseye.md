@@ -1,6 +1,7 @@
 ---
 title: 'Bullseye'
 cssPrefix: 'pf-l-bullseye'
+section: 'layouts'
 ---
 
 ## Simple Bullseye Layout

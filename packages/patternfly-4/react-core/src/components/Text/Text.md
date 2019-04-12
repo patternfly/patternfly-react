@@ -5,7 +5,15 @@ cssPrefix: 'pf-c-content'
 
 ## Headings
 
-import { TextContent, Text, TextVariants, TextList, TextListItem, TextListItemVariants } from '@patternfly/react-core';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
 
 ```js
 <TextContent>

@@ -3,7 +3,7 @@ title: 'Line Chart'
 section: 'charts'
 ---
 
-import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme } from '@patternfly/react-charts';
+import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 ## Green Themed Line Chart

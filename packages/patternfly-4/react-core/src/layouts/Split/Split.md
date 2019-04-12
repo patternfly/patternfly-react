@@ -1,6 +1,7 @@
 ---
 title: 'Split'
 cssPrefix: 'pf-l-split'
+section: 'layouts'
 ---
 
 ## Simple Split

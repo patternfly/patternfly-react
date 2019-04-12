@@ -2,7 +2,7 @@
 title: "Table"
 cssPrefix: "pf-c-table"
 ---
-Note: Table lives in its own package [`@patternfly/react-table`](https://www.npmjs.com/package/@patternfly/react-table)!
+Note: Table lives in its own package at [`@patternfly/react-table`](https://www.npmjs.com/package/@patternfly/react-table)!
 
 ## Simple Table
 ```js

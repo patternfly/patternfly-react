@@ -5,7 +5,15 @@ cssPrefix: 'pf-c-nav'
 
 ## Simple Nav
 
-import { Nav, NavList, NavItem, NavExpandable, NavItemSeparator, NavVariants } from '@patternfly/react-core';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  NavVariants
+} from '@patternfly/react-core';
 
 ```js
 class NavSimpleList extends React.Component {

@@ -32,7 +32,7 @@ class SimpleTextInput extends React.Component {
 ## Text Input (Disabled)
 
 ```js
-<TextInput type="text" value={value} aria-label="disabled text input example" isDisabled />
+<TextInput type="text" value="disabled text input example" aria-label="disabled text input example" isDisabled />
 ```
 
 ## Text Input (Read-Only)

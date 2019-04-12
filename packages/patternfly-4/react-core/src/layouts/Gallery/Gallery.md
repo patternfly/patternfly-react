@@ -1,6 +1,7 @@
 ---
 title: 'Gallery'
 cssPrefix: 'pf-l-gallery'
+section: 'layouts'
 ---
 
 ## Simple Gallery Layout

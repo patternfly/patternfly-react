@@ -6,13 +6,13 @@ cssPrefix: 'pf-c-empty-state'
 ## Empty State
 
 import {
-Title,
-Button,
-EmptyState,
-EmptyStateVariant,
-EmptyStateIcon,
-EmptyStateBody,
-EmptyStateSecondaryActions
+  Title,
+  Button,
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions
 } from '@patternfly/react-core';
 import { CubesIcon } from '@patternfly/react-icons';
 

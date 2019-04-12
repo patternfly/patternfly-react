@@ -1,6 +1,7 @@
 ---
 title: 'Stack'
 cssPrefix: 'pf-l-stack'
+section: 'layouts'
 ---
 
 ## Simple Stack Layout
