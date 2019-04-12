@@ -1,31 +1,32 @@
 ---
-title: "Pagination"
+title: 'Pagination'
 cssPrefix: null
 ---
-## Pagination Top
-```js
-import React from 'react';
-import { Pagination } from '@patternfly/react-core';
 
+## Pagination Top
+
+import { Pagination, PaginationVariant } from '@patternfly/react-core';
+
+```js
 class PaginationTop extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       page: 1,
       perPage: 20
-    }
+    };
 
     this.onSetPage = (_event, pageNumber) => {
       this.setState({
         page: pageNumber
-      })
-    }
+      });
+    };
 
     this.onPerPageSelect = (_event, perPage) => {
       this.setState({
         perPage
-      })
-    }
+      });
+    };
   }
 
   render() {
@@ -38,37 +39,36 @@ class PaginationTop extends React.Component {
         widgetId="pagination-options-menu-top"
         onPerPageSelect={this.onPerPageSelect}
       />
-    )
+    );
   }
 }
 ```
 
 ## Pagination Bottom
-```js
-import React from 'react';
-import { Pagination, PaginationVariant } from '@patternfly/react-core';
 
+```js
 class PaginationBottom extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       page: 1
-    }
+    };
     this.onSetPage = (_event, pageNumber) => {
       this.setState({
         page: pageNumber
-      })
-    }
+      });
+    };
     this.onPerPageSelect = (_event, perPage) => {
       this.setState({
         perPage
-      })
-    }
+      });
+    };
   }
 
   render() {
     return (
-      <Pagination itemCount={333}
+      <Pagination
+        itemCount={333}
         widgetId="pagination-options-menu-bottom"
         perPage={this.state.perPage}
         page={this.state.page}
@@ -76,7 +76,7 @@ class PaginationBottom extends React.Component {
         onSetPage={this.onSetPage}
         onPerPageSelect={this.onPerPageSelect}
       />
-    )
+    );
   }
 }
 ```

@@ -1,12 +1,13 @@
 ---
-title: "FormSelect"
-cssPrefix: "pf-c-form-control"
+title: 'FormSelect'
+cssPrefix: 'pf-c-form-control'
 ---
-## Simple FormSelect
-```js
-import React from 'react';
-import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 
+## Simple FormSelect
+
+import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
+
+```js
 class FormSelectInput extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +27,7 @@ class FormSelectInput extends React.Component {
       { value: 'other', label: 'Other', disabled: false }
     ];
   }
-  
+
   render() {
     return (
       <FormSelect value={this.state.value} onChange={this.onChange} aria-label="FormSelect Input">
@@ -40,10 +41,8 @@ class FormSelectInput extends React.Component {
 ```
 
 ## FormSelect (Invalid)
-```js
-import React from 'react';
-import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 
+```js
 class FormSelectInputInvalid extends React.Component {
   constructor(props) {
     super(props);
@@ -80,10 +79,8 @@ class FormSelectInputInvalid extends React.Component {
 ```
 
 ## FormSelect (Disabled)
-```js
-import React from 'react';
-import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 
+```js
 class FormSelectInputDisabled extends React.Component {
   constructor(props) {
     super(props);
@@ -117,10 +114,8 @@ class FormSelectInputDisabled extends React.Component {
 ```
 
 ## FormSelect (Grouped)
-```js
-import React from 'react';
-import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly/react-core';
 
+```js
 class FormSelectInputGrouped extends React.Component {
   constructor(props) {
     super(props);

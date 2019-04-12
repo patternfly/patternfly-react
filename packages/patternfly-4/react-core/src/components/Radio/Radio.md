@@ -1,12 +1,13 @@
 ---
-title: "Radio"
-cssPrefix: "pf-c-radio"
+title: 'Radio'
+cssPrefix: 'pf-c-radio'
 ---
+
 ## Controlled Radio
-```js
-import React from 'react';
+
 import { Radio } from '@patternfly/react-core';
 
+```js
 class ControlledRadio extends React.Component {
   constructor(props) {
     super(props);
@@ -46,10 +47,8 @@ class ControlledRadio extends React.Component {
 ```
 
 ## Uncontrolled Radio
-```js
-import React from 'react';
-import { Radio } from '@patternfly/react-core';
 
+```js
 UncontrolledRadio = () => (
   <React.Fragment>
     <Radio label="Uncontrolled radio example" id="radio-4" name="radio-4" />
@@ -59,10 +58,8 @@ UncontrolledRadio = () => (
 ```
 
 ## Disabled Radio
-```js
-import React from 'react';
-import { Radio } from '@patternfly/react-core';
 
+```js
 DisabledRadio = () => (
   <React.Fragment>
     <Radio label="Disabled checked radio example" defaultChecked isDisabled name="group-1" id="radio-disabled" />{' '}

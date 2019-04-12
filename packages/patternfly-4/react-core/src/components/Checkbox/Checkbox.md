@@ -1,12 +1,13 @@
 ---
-title: "Checkbox"
-cssPrefix: "pf-c-check"
+title: 'Checkbox'
+cssPrefix: 'pf-c-check'
 ---
+
 ## Controlled Checkbox
-```js
-import React from 'react';
+
 import { Checkbox } from '@patternfly/react-core';
 
+```js
 class ControlledCheckbox extends React.Component {
   constructor(props) {
     super(props);
@@ -46,10 +47,8 @@ class ControlledCheckbox extends React.Component {
 ```
 
 ## Uncontrolled Checkbox
-```js
-import React from 'react';
-import { Checkbox } from '@patternfly/react-core';
 
+```js
 UncontrolledCheckbox = () => (
   <React.Fragment>
     <Checkbox label="Uncontrolled CheckBox" aria-label="uncontrolled checkbox example" id="check-3" />
@@ -59,10 +58,8 @@ UncontrolledCheckbox = () => (
 ```
 
 ## Disabled Checkbox
-```js
-import React from 'react';
-import { Checkbox } from '@patternfly/react-core';
 
+```js
 DisabledCheckbox = () => (
   <React.Fragment>
     <Checkbox

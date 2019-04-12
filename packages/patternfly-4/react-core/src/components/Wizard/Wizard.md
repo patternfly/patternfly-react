@@ -1,12 +1,14 @@
 ---
-title: "Wizard"
-cssPrefix: "pf-c-wizard"
+title: 'Wizard'
+cssPrefix: 'pf-c-wizard'
 ---
-### Simple Wizard
-```js
-import React from 'react';
-import { Button, Wizard } from '@patternfly/react-core';
 
+### Simple Wizard
+
+import { Button, Wizard, Form, FormGroup, TextInput } from '@patternfly/react-core';
+import { SampleFormOne, SampleFormTwo } from './examples';
+
+```js
 class SimpleWizard extends React.Component {
   constructor(props) {
     super(props);
@@ -52,13 +54,8 @@ class SimpleWizard extends React.Component {
 ```
 
 ### Validation Wizard
-```js
-import React from 'react';
-import { Button, Wizard } from '@patternfly/react-core';
-import React from 'react';
-import { Form, FormGroup, TextInput } from '@patternfly/react-core';
-import { SampleFormOne, SampleFormTwo } from './examples';
 
+```js
 class ValidationWizard extends React.Component {
   constructor(props) {
     super(props);

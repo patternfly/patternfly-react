@@ -1,13 +1,14 @@
 ---
-title: "Bar Chart"
-section: "charts"
+title: 'Bar Chart'
+section: 'charts'
 ---
+
 ## Blue Theme Bar Chart
-```js
-import React from 'react';
+
 import { Chart, ChartBar, ChartGroup, ChartTheme } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
+```js
 <div className="chart-container chart-margin chart-overflow">
   <Chart domainPadding={{ x: [30, 25] }} theme={ChartTheme.light.blue} height={200} width={300}>
     <ChartGroup offset={11}>
@@ -21,11 +22,8 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 ```
 
 ## Multi-Color Theme Bar Char
-```js
-import React from 'react';
-import { Chart, ChartBar, ChartGroup, ChartTheme } from '@patternfly/react-charts';
-import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
+```js
 <div className="chart-container chart-margin chart-overflow">
   <Chart domainPadding={{ x: [30, 25] }} theme={ChartTheme.light.multi} height={200} width={300}>
     <ChartGroup offset={11}>

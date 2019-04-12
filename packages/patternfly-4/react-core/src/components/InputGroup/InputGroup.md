@@ -1,26 +1,28 @@
 ---
-title: "Input Group"
+title: 'Input Group'
 cssPrefix: null
 ---
+
 ## Simple Input Group
-Buttons and TextArea
-```js
-import React from 'react';
+
 import { DollarSignIcon, AtIcon, CalendarAltIcon, SearchIcon, QuestionCircleIcon } from '@patternfly/react-icons';
 import {
-  Button,
-  ButtonVariant,
-  TextArea,
-  InputGroup,
-  InputGroupText,
-  TextInput,
-  Dropdown,
-  DropdownToggle,
-  DropdownItem,
-  Popover,
-  PopoverPosition
+Button,
+ButtonVariant,
+TextArea,
+InputGroup,
+InputGroupText,
+TextInput,
+Dropdown,
+DropdownToggle,
+DropdownItem,
+Popover,
+PopoverPosition
 } from '@patternfly/react-core';
 
+Buttons and TextArea
+
+```js
 class SimpleInputGroups extends React.Component {
   constructor(props) {
     super(props);

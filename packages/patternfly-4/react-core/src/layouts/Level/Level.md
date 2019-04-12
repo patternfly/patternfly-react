@@ -1,12 +1,13 @@
 ---
-title: "Level"
-cssPrefix: "pf-l-level"
+title: 'Level'
+cssPrefix: 'pf-l-level'
 ---
+
 ## Simple Level Layout
-```js
-import React from 'react';
+
 import { Level, LevelItem } from '@patternfly/react-core';
 
+```js
 <Level>
   <LevelItem>Level Item</LevelItem>
   <LevelItem>Level Item</LevelItem>
@@ -15,10 +16,8 @@ import { Level, LevelItem } from '@patternfly/react-core';
 ```
 
 ## Level With Gutters
-```js
-import React from 'react';
-import { Level, LevelItem } from '@patternfly/react-core';
 
+```js
 <Level gutter="md">
   <LevelItem>Level Item</LevelItem>
   <LevelItem>Level Item</LevelItem>

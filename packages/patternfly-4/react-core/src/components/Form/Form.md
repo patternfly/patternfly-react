@@ -1,12 +1,13 @@
 ---
-title: "Form"
-cssPrefix: "pf-c-form"
+title: 'Form'
+cssPrefix: 'pf-c-form'
 ---
-## Simple Form
-```js
-import React from 'react';
-import { Form, FormGroup, TextInput, Checkbox, ActionGroup, Button, Radio } from '@patternfly/react-core';
 
+## Simple Form
+
+import { Form, FormGroup, TextInput, TextArea, Form, FormSelectionOption, FormSelect, Checkbox, ActionGroup, Button, Radio } from '@patternfly/react-core';
+
+```js
 class SimpleForm extends React.Component {
   constructor(props) {
     super(props);
@@ -95,21 +96,8 @@ class SimpleForm extends React.Component {
 ```
 
 ## Form (Horizontal)
-```js
-import React from 'react';
-import {
-  FormGroup,
-  TextInput,
-  TextArea,
-  Form,
-  FormSelectOption,
-  FormSelect,
-  Radio,
-  Button,
-  ActionGroup,
-  Checkbox
-} from '@patternfly/react-core';
 
+```js
 class HorizontalForm extends React.Component {
   constructor(props) {
     super(props);
@@ -141,7 +129,7 @@ class HorizontalForm extends React.Component {
       { value: 'other', label: 'Other', disabled: false }
     ];
   }
-  
+
   render() {
     const { value1, value2, value3 } = this.state;
 
@@ -210,10 +198,8 @@ class HorizontalForm extends React.Component {
 ```
 
 ## Form (Invalid)
-```js
-import React from 'react';
-import { Form, FormGroup, TextInput } from '@patternfly/react-core';
 
+```js
 class InvalidForm extends React.Component {
   constructor(props) {
     super(props);

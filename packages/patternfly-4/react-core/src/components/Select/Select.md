@@ -1,12 +1,13 @@
 ---
-title: "Select"
-cssPrefix: "pf-c-select"
+title: 'Select'
+cssPrefix: 'pf-c-select'
 ---
-## Single Select Input
-```js
-import React from 'react';
-import { Select, SelectOption, SelectVariant } from '@patternfly/react-core';
 
+## Single Select Input
+
+import { Select, SelectOption, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
+
+```js
 class SingleSelectInput extends React.Component {
   constructor(props) {
     super(props);
@@ -83,10 +84,8 @@ class SingleSelectInput extends React.Component {
 ```
 
 ## Checkbox Select Input
-```js
-import React from 'react';
-import { Select, SelectVariant, CheckboxSelectOption } from '@patternfly/react-core';
 
+```js
 class CheckboxSelectInput extends React.Component {
   constructor(props) {
     super(props);
@@ -159,10 +158,8 @@ class CheckboxSelectInput extends React.Component {
 ```
 
 ## Grouped Checkbox Select Input
-```js
-import React from 'react';
-import { Select, SelectVariant, CheckboxSelectGroup, CheckboxSelectOption } from '@patternfly/react-core';
 
+```js
 class GroupedCheckboxSelectInput extends React.Component {
   constructor(props) {
     super(props);

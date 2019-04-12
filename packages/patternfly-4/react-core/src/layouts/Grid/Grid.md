@@ -1,20 +1,21 @@
 ---
-title: "Grid"
-cssPrefix: "pf-l-grid"
+title: 'Grid'
+cssPrefix: 'pf-l-grid'
 ---
-## Simple Grid
-```js
-import React from 'react';
-import Grid from '@patternfly/react-core';
-import GridItem from '@patternfly/react-core';
 
+## Simple Grid
+
+import { Grid, GridItem, Button } from '@patternfly/react-core';
+import ItemControl from './examples/ItemControl';
+
+```js
 <Grid>
   <GridItem span={8}>span = 8</GridItem>
   <GridItem span={4} rowSpan={2}>
-      span = 4, rowSpan = 2
+    span = 4, rowSpan = 2
   </GridItem>
   <GridItem span={2} rowSpan={3}>
-      span = 2, rowSpan = 3
+    span = 2, rowSpan = 3
   </GridItem>
   <GridItem span={2}>span = 2</GridItem>
   <GridItem span={4}>span = 4</GridItem>
@@ -29,18 +30,15 @@ import GridItem from '@patternfly/react-core';
 ```
 
 ## Grid with gutters
-```js
-import React from 'react';
-import Grid from '@patternfly/react-core';
-import GridItem from '@patternfly/react-core';
 
+```js
 <Grid gutter="md">
   <GridItem span={8}>span = 8</GridItem>
   <GridItem span={4} rowSpan={2}>
-      span = 4, rowSpan = 2
+    span = 4, rowSpan = 2
   </GridItem>
   <GridItem span={2} rowSpan={3}>
-      span = 2, rowSpan = 3
+    span = 2, rowSpan = 3
   </GridItem>
   <GridItem span={2}>span = 2</GridItem>
   <GridItem span={4}>span = 4</GridItem>
@@ -55,11 +53,8 @@ import GridItem from '@patternfly/react-core';
 ```
 
 ## Grid With Overrides
-```js
-import React from 'react';
-import Grid from '@patternfly/react-core';
-import GridItem from '@patternfly/react-core';
 
+```js
 <Grid sm={6} md={4} lg={3}>
   <GridItem pan={3} rowSpan={2}>
     span = 3 rowSpan= 2
@@ -79,11 +74,8 @@ import GridItem from '@patternfly/react-core';
 ```
 
 ## Grid Playground
-```js
-import React from 'react';
-import { Grid, GridItem, Button } from '@patternfly/react-core';
-import ItemControl from './examples/ItemControl';
 
+```js
 class GridPlayground extends React.Component {
   constructor(props) {
     super(props);
@@ -107,7 +99,7 @@ class GridPlayground extends React.Component {
       });
     };
   }
-  
+
   createGridItem() {
     return {
       id: this.currentId++,
@@ -123,12 +115,7 @@ class GridPlayground extends React.Component {
         <GridItem span={9}>
           <Grid gutter="sm">
             {this.state.gridItems.map(({ id, span, rowSpan, offset }) => (
-              <GridItem
-                key={id}
-                span={+span}
-                rowSpan={+rowSpan}
-                offset={+offset}
-              >
+              <GridItem key={id} span={+span} rowSpan={+rowSpan} offset={+offset}>
                 {id}
               </GridItem>
             ))}

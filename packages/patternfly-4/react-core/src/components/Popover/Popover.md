@@ -1,20 +1,19 @@
 ---
-title: "Popover"
-cssPrefix: "pf-c-popover"
+title: 'Popover'
+cssPrefix: 'pf-c-popover'
 ---
-## Simple Popover
-```js
-import React from 'react';
-import { Popover, Button } from '@patternfly/react-core';
 
+## Simple Popover
+
+import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
+
+```js
 SimplePopover = () => (
   <Popover
     position="right"
     headerContent={<div>Popover Header</div>}
     bodyContent={
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
     footerContent="Popover Footer"
   >
@@ -24,10 +23,8 @@ SimplePopover = () => (
 ```
 
 ## Advanced Popover
-```js
-import React from 'react';
-import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
+```js
 class AdvancedPopover extends React.Component {
   constructor(props) {
     super(props);
@@ -44,7 +41,7 @@ class AdvancedPopover extends React.Component {
     this.handleKeepInViewChange = checked => {
       this.setState({ keepInViewChecked: checked });
     };
-    this. handleProgrammaticChange = checked => {
+    this.handleProgrammaticChange = checked => {
       this.setState({
         show: checked
       });
@@ -111,17 +108,13 @@ class AdvancedPopover extends React.Component {
 ```
 
 ## Popover (Headless)
-```js
-import React from 'react';
-import { Popover, Button } from '@patternfly/react-core';
 
+```js
 HeadlessPopover = () => (
   <Popover
     position="right"
     bodyContent={
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.
-      </div>
+      <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id feugiat augue, nec fringilla turpis.</div>
     }
     aria-label="Headless Popover"
     footerContent="Popover Footer"
@@ -129,5 +122,4 @@ HeadlessPopover = () => (
     <Button>Toggle Popover</Button>
   </Popover>
 );
-
 ```

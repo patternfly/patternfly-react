@@ -1,12 +1,13 @@
 ---
-title: "Data List"
-cssPrefix: "pf-c-data-list"
+title: 'Data List'
+cssPrefix: 'pf-c-data-list'
 ---
-## Simple Data List
-```js
-import React from 'react';
-import { DataList, DataListItem, DataListCell } from '@patternfly/react-core';
 
+## Simple Data List
+
+import { Button, DataList, DataListItem, DataListCell, DataListCheck, DataListAction, DataListToggle, DataListContent, Dropdown, KebabToggle, DropdownItem} from '@patternfly/react-core';
+
+```js
 SimpleDataList = () => (
   <DataList aria-label="Simple data list example">
     <DataListItem aria-labelledby="simple-item1">
@@ -26,11 +27,9 @@ SimpleDataList = () => (
 ```
 
 ## Data List Checkboxes, Actions and Additional Cells
-```js
-import React from 'react';
-import { DataList, DataListItem, DataListCell, DataListCheck, DataListAction } from '@patternfly/react-core';
 
-CheckboxActionDataList = () =>  (
+```js
+CheckboxActionDataList = () => (
   <DataList aria-label="Checkbox and action data list example">
     <DataListItem aria-labelledby="check-action-item1">
       <DataListCheck aria-labelledby="check-action-item1" name="check-action-check1" />
@@ -47,8 +46,8 @@ CheckboxActionDataList = () =>  (
     <DataListItem aria-labelledby="check-action-item2">
       <DataListCheck aria-labelledby="check-action-item2" name="check-action-check2" />
       <DataListCell>
-        <span id="check-action-item2">Primary content - Lorem ipsum</span> dolor sit amet, consectetur adipisicing
-        elit, sed do eiusmod.
+        <span id="check-action-item2">Primary content - Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod.
       </DataListCell>
       <DataListCell>Secondary content</DataListCell>
       <DataListAction
@@ -62,20 +61,8 @@ CheckboxActionDataList = () =>  (
 ```
 
 ## Data List Actions: single and multiple
-```js
-import React from 'react';
-import {
-  Button,
-  Dropdown,
-  KebabToggle,
-  DropdownItem,
-  DataList,
-  DataListItem,
-  DataListCell,
-  DataListCheck,
-  DataListAction
-} from '@patternfly/react-core';
 
+```js
 class ActionsDataList extends React.Component {
   constructor(props) {
     super(props);
@@ -139,18 +126,8 @@ class ActionsDataList extends React.Component {
 ```
 
 ## Data List Expandable
-```js
-import React from 'react';
-import {
-  DataList,
-  DataListItem,
-  DataListCell,
-  DataListToggle,
-  DataListContent,
-  DataListCheck,
-  DataListAction
-} from '@patternfly/react-core';
 
+```js
 class ExpandableDataList extends React.Component {
   constructor(props) {
     super(props);
@@ -159,7 +136,7 @@ class ExpandableDataList extends React.Component {
     };
   }
 
-render() {
+  render() {
     const toggle = id => {
       const expanded = this.state.expanded;
       const index = expanded.indexOf(id);
@@ -185,7 +162,11 @@ render() {
             <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
           </DataListCell>
           <DataListAction aria-labelledby="ex-item1 ex-action1" id="ex-action1" aria-label="Actions" />
-          <DataListContent aria-label="Primary Content Details" id="ex-expand1" isHidden={!this.state.expanded.includes('ex-toggle1')}>
+          <DataListContent
+            aria-label="Primary Content Details"
+            id="ex-expand1"
+            isHidden={!this.state.expanded.includes('ex-toggle1')}
+          >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
@@ -207,7 +188,11 @@ render() {
             <span>Lorem ipsum dolor sit amet.</span>
           </DataListCell>
           <DataListAction aria-labelledby="ex-item2 ex-action2" id="ex-action2" aria-label="Actions" />
-          <DataListContent aria-label="Primary Content Details" id="ex-expand2" isHidden={!this.state.expanded.includes('ex-toggle2')}>
+          <DataListContent
+            aria-label="Primary Content Details"
+            id="ex-expand2"
+            isHidden={!this.state.expanded.includes('ex-toggle2')}
+          >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
@@ -221,18 +206,8 @@ render() {
 ```
 
 ## Data List Width Modifiers
-```js
-import React from 'react';
-import {
-  DataList,
-  DataListItem,
-  DataListCell,
-  DataListCheck,
-  DataListAction,
-  DataListToggle,
-  DataListContent
-} from '@patternfly/react-core';
 
+```js
 class ModifiersDataList extends React.Component {
   constructor(props) {
     super(props);

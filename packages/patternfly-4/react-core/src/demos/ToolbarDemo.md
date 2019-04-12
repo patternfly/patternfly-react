@@ -4,7 +4,6 @@ section: "demos"
 ---
 ## Toolbar Demo
 ```js
-import React from 'react';
 import {
   Button,
   Dropdown,

@@ -1,22 +1,23 @@
 ---
-title: "Login Page"
-cssPrefix: "pf-c-login"
+title: 'Login Page'
+cssPrefix: 'pf-c-login'
 ---
+
 ## Simple Login Page
-```js
-import React from 'react';
-import brandImgColor from './brandImgColor.svg';
+
+import brandImgColor from './examples/brandImgColor.svg';
 import {
-  LoginFooterItem,
-  LoginForm,
-  LoginMainFooterBandItem,
-  LoginMainFooterLinksItem,
-  LoginPage,
-  BackgroundImageSrc,
-  ListItem
+LoginFooterItem,
+LoginForm,
+LoginMainFooterBandItem,
+LoginMainFooterLinksItem,
+LoginPage,
+BackgroundImageSrc,
+ListItem
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
+```js
 class SimpleLoginPage extends React.Component {
   constructor(props) {
     super(props);

@@ -1,17 +1,18 @@
 ---
-title: "Text Area"
-cssPrefix: "pf-c-form-control"
+title: 'Text Area'
+cssPrefix: 'pf-c-form-control'
 ---
+
 ## Simple Text Area
-```js
-import React from 'react';
+
 import { TextArea } from '@patternfly/react-core';
 
+```js
 class SimpleTextArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    value: ''
+      value: ''
     };
 
     this.handleInvalidTextAreaChange = value => {
@@ -28,10 +29,8 @@ class SimpleTextArea extends React.Component {
 ```
 
 ## Invalid Text Area
-```js
-import React from 'react';
-import { TextArea } from '@patternfly/react-core';
 
+```js
 class InvalidTextArea extends React.Component {
   constructor(props) {
     super(props);

@@ -1,12 +1,13 @@
 ---
-title: "Table Text Input"
-section: "inline-table"
+title: 'Table Text Input'
+section: 'inline-table'
 ---
+
 ## Simple TableTextInput
-```js
-import React from 'react';
+
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';
 
+```js
 class SimpleTableTextInput extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +24,12 @@ class SimpleTableTextInput extends React.Component {
     const { value } = this.state;
 
     return (
-      <TableTextInput defaultValue={value} type="text" onBlur={this.handleTextInputChange} aria-label="text input example" />
+      <TableTextInput
+        defaultValue={value}
+        type="text"
+        onBlur={this.handleTextInputChange}
+        aria-label="text input example"
+      />
     );
   }
 }

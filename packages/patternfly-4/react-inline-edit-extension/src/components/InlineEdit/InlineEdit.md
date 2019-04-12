@@ -1,20 +1,21 @@
 ---
-title: "Inline Edit"
-section: "inline-table"
+title: 'Inline Edit'
+section: 'inline-table'
 ---
+
 ## Editable table With Inline Edit Row
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody, RowWrapper } from '@patternfly/react-table';
+
+import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
-  editableTableBody,
-  editableRowWrapper,
-  inlineEditFormatterFactory,
-  TableEditConfirmation,
-  TableTextInput
+editableTableBody,
+editableRowWrapper,
+inlineEditFormatterFactory,
+TableEditConfirmation,
+TableTextInput
 } from '@patternfly/react-inline-edit-extension';
 import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
 
+```js
 class EditableTable extends React.Component {
   constructor(props) {
     super(props);
@@ -168,7 +169,7 @@ class EditableTable extends React.Component {
 
     this.makeId = ({ column, rowIndex, columnIndex, name }) =>
       `${column.property}-${rowIndex}-${columnIndex}${name ? `-${name}` : ''}`;
-  
+
     this.onPrivateRepoChange = (value, { rowIndex }) => {
       this.setState(({ rows }) => {
         const row = rows[rowIndex];
@@ -318,23 +319,14 @@ class EditableTable extends React.Component {
 ```
 
 ## Editable Table With Inline Edit Columns
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody, RowWrapper, TableVariant } from '@patternfly/react-table';
-import {
-  editableTableBody,
-  editableRowWrapper,
-  inlineEditFormatterFactory,
-  TableEditConfirmation,
-  TableTextInput
-} from '@patternfly/react-inline-edit-extension';
 
+```js
 class EditableTableColumn extends React.Component {
   constructor(props) {
     super(props);
 
     this.makeId = ({ column, rowIndex, columnIndex, name }) =>
-    `${column.property}-${rowIndex}-${columnIndex}${name ? `-${name}` : ''}`;
+      `${column.property}-${rowIndex}-${columnIndex}${name ? `-${name}` : ''}`;
 
     // text input
     const inlineEditingFormatter = inlineEditFormatterFactory({
@@ -477,23 +469,14 @@ class EditableTableColumn extends React.Component {
 ```
 
 ## Editable Table With Collapsible Rows
-```js
-import React from 'react';
-import { Table, TableHeader, TableBody, RowWrapper, ExpandableRowContent } from '@patternfly/react-table';
-import {
-  editableTableBody,
-  editableRowWrapper,
-  inlineEditFormatterFactory,
-  TableEditConfirmation,
-  TableTextInput
-} from '@patternfly/react-inline-edit-extension';
 
+```js
 class CollapsibleEditableTable extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.makeId = ({ column, rowIndex, columnIndex, name }) =>
-    `${column.property}-${rowIndex}-${columnIndex}${name ? `-${name}` : ''}`;
+      `${column.property}-${rowIndex}-${columnIndex}${name ? `-${name}` : ''}`;
 
     const childEditRenderer = (value, { column, rowIndex, rowData, columnIndex, activeEditId }) => (
       <ExpandableRowContent>
@@ -729,7 +712,7 @@ class CollapsibleEditableTable extends React.Component {
               onClick: this.onEditActionClick
             }
           ];
-    }
+  }
 
   render() {
     const { activeEditId, columns, rows } = this.state;
@@ -758,5 +741,4 @@ class CollapsibleEditableTable extends React.Component {
     );
   }
 }
-
 ```

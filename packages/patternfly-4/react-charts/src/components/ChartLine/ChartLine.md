@@ -1,15 +1,16 @@
 ---
-title: "Line Chart"
-section: "charts"
+title: 'Line Chart'
+section: 'charts'
 ---
-## Green Themed Line Chart
-```js
-import React from 'react';
+
 import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
-<div style={{display: 'flex-inline'}}>
-  <div style={{width: 450, height: 360}}>
+## Green Themed Line Chart
+
+```js
+<div style={{ display: 'flex-inline' }}>
+  <div style={{ width: 450, height: 360 }}>
     <div>
       <Chart theme={ChartTheme.light.green}>
         <ChartGroup>
@@ -56,8 +57,8 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
       </Chart>
     </div>
     <div className="chart-legend">
-        <ChartLegend
-        data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash'} }, { name: 'Birds' }, { name: 'Mice' }]}
+      <ChartLegend
+        data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
         title="Average number of pets"
         height={50}
         theme={ChartTheme.light.green}
@@ -68,9 +69,10 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 ```
 
 ## Multi-color Themed Line Chart
+
 ```js
-<div style={{display: 'flex-inline'}}>
-  <div style={{width: 450, height: 360}}>
+<div style={{ display: 'flex-inline' }}>
+  <div style={{ width: 450, height: 360 }}>
     <div>
       <Chart theme={ChartTheme.light.multi}>
         <ChartGroup>
@@ -117,8 +119,8 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
       </Chart>
     </div>
     <div className="chart-legend">
-        <ChartLegend
-        data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash'} }, { name: 'Birds' }, { name: 'Mice' }]}
+      <ChartLegend
+        data={[{ name: 'Cats' }, { name: 'Dogs', symbol: { type: 'dash' } }, { name: 'Birds' }, { name: 'Mice' }]}
         title="Average number of pets"
         height={50}
         theme={ChartTheme.light.multi}

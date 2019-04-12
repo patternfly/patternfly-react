@@ -1,12 +1,13 @@
 ---
-title: "Modal"
-cssPrefix: "pf-c-modal-box"
+title: 'Modal'
+cssPrefix: 'pf-c-modal-box'
 ---
+
 ## Simple Modal
-```js
-import React from 'react';
+
 import { Modal, Button } from '@patternfly/react-core';
 
+```js
 class SimpleModal extends React.Component {
   constructor(props) {
     super(props);
@@ -54,10 +55,8 @@ class SimpleModal extends React.Component {
 ```
 
 ## Modal (Small)
-```js
-import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
 
+```js
 class SmallModal extends React.Component {
   constructor(props) {
     super(props);
@@ -106,10 +105,8 @@ class SmallModal extends React.Component {
 ```
 
 ## Modal (Large)
-```js
-import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
 
+```js
 class LargeModal extends React.Component {
   constructor(props) {
     super(props);
@@ -158,10 +155,8 @@ class LargeModal extends React.Component {
 ```
 
 ## Modal (Width)
-```js
-import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
 
+```js
 class WidthModal extends React.Component {
   constructor(props) {
     super(props);
@@ -210,10 +205,8 @@ class WidthModal extends React.Component {
 ```
 
 ## Modal (No Header)
-```js
-import React from 'react';
-import { Modal, Button } from '@patternfly/react-core';
 
+```js
 class NoHeader extends React.Component {
   constructor(props) {
     super(props);
@@ -248,11 +241,13 @@ class NoHeader extends React.Component {
             </Button>
           ]}
         >
-          <span id="no-header-example">When static text describing the modal is available, it can be wrapped with
-          an ID referring to the modal's aria-describedby value.</span> Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <span id="no-header-example">
+            When static text describing the modal is available, it can be wrapped with an ID referring to the modal's
+            aria-describedby value.
+          </span>{' '}
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </Modal>
       </React.Fragment>
     );
