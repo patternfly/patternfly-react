@@ -39,15 +39,14 @@ exports.createPages = ({ graphql, actions }) => {
 
   return mdx.then(({ data }) => {
     data.allMdx.nodes.forEach(node => {
-      const componentName = navHelpers.getFileName(node.fileAbsolutePath).toLowerCase();
-      const folderName = navHelpers.getParentFolder(node.fileAbsolutePath).toLowerCase();
+      const componentName = navHelpers.getFileName(node.fileAbsolutePath);
+      const parentFolderName = navHelpers.getParentFolder(node.fileAbsolutePath, 3);
+      const folderName = navHelpers.getParentFolder(node.fileAbsolutePath);
 
       let link = '/bad-page/';
-      // Create fullscreen example component pages for any links in the *.md
+      // Create fullscreen example component pages
       if (node.frontmatter.fullscreen) {
-        // Create the templated page to link to them differently
-        const parentFolderName = navHelpers.getParentFolder(node.fileAbsolutePath, 3).toLowerCase();
-        link = `/${node.frontmatter.section}/${parentFolderName}/${componentName}/`;
+        link = `/${node.frontmatter.section}/${parentFolderName}/${componentName}/`.toLowerCase();
         console.log('adding fullscreen page', link);
         actions.createPage({
           path: link,
@@ -59,8 +58,8 @@ exports.createPages = ({ graphql, actions }) => {
         });
       } else {
         // Normal templated component pages
-        let section = node.frontmatter.section ? node.frontmatter.section.toLowerCase() : 'components';
-        link = `/${section}/${componentName}/`;
+        let section = node.frontmatter.section ? node.frontmatter.section : 'components';
+        link = `/${section}/${componentName}/`.toLowerCase();
         console.log('adding page', link);
         actions.createPage({
           path: link,

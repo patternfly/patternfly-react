@@ -30,7 +30,7 @@ export const MDXRenderer = withMDXScope(
     // Inject our scope into our custom <code> component.
     let propComponents = element.props.components;
     if (propComponents && propComponents.code) {
-      propComponents.code.prototype.getScope = () => scope;
+      propComponents.code.prototype.getScope = () => fullScope;
     }
 
     return element;

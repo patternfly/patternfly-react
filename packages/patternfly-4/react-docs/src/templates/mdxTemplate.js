@@ -7,16 +7,19 @@ import { MDXProvider } from '@mdx-js/tag';
 import { MDXRenderer } from '../components/mdx-renderer';
 
 const components = {
-  code: LiveEdit
+  code: LiveEdit,
+  pre: React.Fragment
 };
 
 const MdxTemplate = ({ data }) => {
   // Exported components in the folder (i.e. src/components/Alerts/[Alert, AlertIcon, AlertBody])
-  const helperComponents = data.metadata.edges
+  // We *should* use the MDXRenderer scope to get the names of these, but that's pretty difficult
+  const propComponents = data.metadata.edges
     .map(edge => edge.node.name)
-    .filter(name => name); // Some HOCs don't get docgenned properly (like TabContent)
-  // Exported components with names used in the *.md file
-  const propComponents = [] // getUsedComponents(data.mdx.htmlAst, helperComponents, {})
+    .filter(name => name) // Some HOCs don't get docgenned properly (like TabContent)
+    .filter(name => data.mdx.code.body.indexOf(name) !== -1);
+  console.log('propComponents', propComponents);
+
   // Finally, the props for each relevant component!
   const props = data.metadata.edges
     .filter(edge => propComponents.indexOf(edge.node.name) !== -1)
@@ -63,9 +66,9 @@ const MdxTemplate = ({ data }) => {
 
 // Test queries in http://localhost:8000/___graphql
 // See how to filter from: https://www.gatsbyjs.org/docs/graphql-reference/
-// We want the markdown from gatsby-transformer-remark
-// We want ALL the component metadata from gatsby-transformer-react-docgen-typescript
-// for components in that folder
+// We want the markdown from gatsby-mdx
+// We want component metadata from gatsby-transformer-react-docgen-typescript
+// for ALL components in that folder
 export const pageQuery = graphql`
 query GetComponent($fileAbsolutePath: String!, $pathRegex: String!) {
   mdx(fileAbsolutePath: { eq: $fileAbsolutePath }) {
