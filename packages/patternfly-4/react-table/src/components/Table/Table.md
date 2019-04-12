@@ -4,10 +4,20 @@ cssPrefix: "pf-c-table"
 ---
 Note: Table lives in its own package at [`@patternfly/react-table`](https://www.npmjs.com/package/@patternfly/react-table)!
 
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  sortable,
+  SortByDirection,
+  headerCol,
+  TableVariant,
+  expandable,
+  cellWidth
+} from '@patternfly/react-table';
+
 ## Simple Table
 ```js
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-
 class SimpleTable extends React.Component {
   constructor(props) {
     super(props);
@@ -42,8 +52,6 @@ class SimpleTable extends React.Component {
 
 ## Sortable Table
 ```js
-import { Table, TableHeader, TableBody, sortable, SortByDirection } from '@patternfly/react-table';
-
 class SortableTable extends React.Component {
   constructor(props) {
     super(props);
@@ -87,8 +95,6 @@ class SortableTable extends React.Component {
 
 ## Selectable Table
 ```js
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-
 class SelectableTable extends React.Component {
   constructor(props) {
     super(props);
@@ -140,8 +146,6 @@ class SelectableTable extends React.Component {
 
 ## Simple Actions Table
 ```js
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-
 class SimpleActionsTable extends React.Component {
   constructor(props) {
     super(props);
@@ -193,8 +197,6 @@ class SimpleActionsTable extends React.Component {
 
 ## Actions Table
 ```js
-import { Table, TableHeader, TableBody } from '@patternfly/react-table';
-
 class ActionsTable extends React.Component {
   constructor(props) {
     super(props);
@@ -277,8 +279,6 @@ class ActionsTable extends React.Component {
 
 ## First cell as Header Table
 ```js
-import { Table, TableHeader, TableBody, headerCol } from '@patternfly/react-table';
-
 class CellHeader extends React.Component {
   constructor(props) {
     super(props);
@@ -309,8 +309,6 @@ class CellHeader extends React.Component {
 
 ## Compact Table
 ```js
-import { Table, TableHeader, TableBody, TableVariant } from '@patternfly/react-table';
-
 class CompactTable extends React.Component {
   constructor(props) {
     super(props);
@@ -341,8 +339,6 @@ class CompactTable extends React.Component {
 
 ## Compact Table Borderless Rows
 ```js
-import { Table, TableHeader, TableBody, TableVariant } from '@patternfly/react-table';
-
 class CompactTable extends React.Component {
   constructor(props) {
     super(props);
@@ -372,8 +368,6 @@ class CompactTable extends React.Component {
 
 ## Compact Expandable Table
 ```js
-import { Table, TableHeader, TableBody, expandable, TableVariant } from '@patternfly/react-table';
-
 class ContactExpandableTable extends React.Component {
   constructor(props) {
     super(props);
@@ -451,8 +445,6 @@ class ContactExpandableTable extends React.Component {
 
 ## Table with Width Modifiers
 ```js
-import { Table, TableHeader, TableBody, cellWidth } from '@patternfly/react-table';
-
 class WidthTable extends React.Component {
   constructor(props) {
     super(props);
@@ -486,8 +478,6 @@ class WidthTable extends React.Component {
 
 ## Collapsible table
 ```js
-import { Table, TableHeader, TableBody, expandable } from '@patternfly/react-table';
-
 class CollapsibleTable extends React.Component {
   constructor(props) {
     super(props);
