@@ -500,8 +500,30 @@ import {
 class ModifiersDataList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { show: true };
+    this.state = { show: true, isOpen1: false,
+      isOpen2: false};
+
+    this.onToggle1 = isOpen1 => {
+      this.setState({ isOpen1 });
+    };
+
+    this.onToggle2 = isOpen2 => {
+      this.setState({ isOpen2 });
+    };
+
+    this.onSelect1 = event => {
+      this.setState(prevState => ({
+        isOpen1: !prevState.isOpen1
+      }));
+    };
+
+    this.onSelect2 = event => {
+      this.setState(prevState => ({
+        isOpen2: !prevState.isOpen2
+      }));
+    };
   }
+
   render() {
     const previewPlaceholder = {
       display: 'block',
@@ -562,7 +584,24 @@ class ModifiersDataList extends React.Component {
               aria-labelledby="width-ex2-item1 width-ex2-action1"
               id="width-ex2-action1"
               aria-label="Actions"
+            >
+            <Dropdown
+              isPlain
+              position={DropdownPosition.right}
+              isOpen={this.state.isOpen1}
+              onSelect={this.onSelect1}
+              toggle={<KebabToggle onToggle={this.onToggle1} />}
+              dropdownItems={[
+                <DropdownItem key="link">Link</DropdownItem>,
+                <DropdownItem key="action" component="button">
+                  Action
+                </DropdownItem>,
+                <DropdownItem key="disabled link" isDisabled>
+                  Disabled Link
+                </DropdownItem>
+              ]}
             />
+          </DataListAction>
           </DataListItem>
         </DataList>
       </div>,
@@ -597,7 +636,24 @@ class ModifiersDataList extends React.Component {
               aria-labelledby="width-ex3-item1 width-ex3-action1"
               id="width-ex3-action1"
               aria-label="Actions"
+            >
+            <Dropdown
+              isPlain
+              position={DropdownPosition.right}
+              isOpen={this.state.isOpen2}
+              onSelect={this.onSelect2}
+              toggle={<KebabToggle onToggle={this.onToggle2} />}
+              dropdownItems={[
+                <DropdownItem key="link">Link</DropdownItem>,
+                <DropdownItem key="action" component="button">
+                  Action
+                </DropdownItem>,
+                <DropdownItem key="disabled link" isDisabled>
+                  Disabled Link
+                </DropdownItem>
+              ]}
             />
+          </DataListAction>
             <DataListContent aria-label="Primary Content Details" id="width-ex3-expand1" isHidden={!this.state.show}>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
