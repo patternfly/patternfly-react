@@ -32,8 +32,10 @@ class DataListAction extends React.Component {
     } = this.props;
 
     return (
-      <div className={css(styles.dataListItemAction, className)} {...props}>
-        <div className={css(styles.dataListAction, className)}>{children}</div>
+      <div className={css(styles.dataListItemAction, className)}>
+        <div className={css(styles.dataListAction, className)} {...props}>
+          {children}
+        </div>
       </div>
     );
   }
@@ -41,7 +43,7 @@ class DataListAction extends React.Component {
 
 DataListAction.propTypes = {
   /** Content rendered as DataList Action  (e.g <Button> or <Dropdown>) */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]).isRequired,
   /** Additional classes added to the DataList Action */
   className: PropTypes.string,
   /** Identify the DataList toggle number */

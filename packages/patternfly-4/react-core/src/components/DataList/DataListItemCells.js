@@ -3,7 +3,7 @@ import { css } from '@patternfly/react-styles';
 import PropTypes from 'prop-types';
 import styles from '@patternfly/patternfly/components/DataList/data-list.css';
 
-const DataListItemCells = ({ className, dataListCells, ...props }) => (
+const DataListItemCells = ({ className, dataListCells, rowid, ...props }) => (
   <div className={css(styles.dataListItemContent, className)} {...props}>
     {dataListCells}
   </div>
