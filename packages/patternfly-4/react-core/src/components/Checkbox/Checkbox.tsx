@@ -20,7 +20,7 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   className = '',
   isValid = true,
   isDisabled = false,
-  isChecked = false,
+  isChecked = null,
   checked = false,
   onChange = () => undefined,
   label = undefined,
