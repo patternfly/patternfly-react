@@ -47,7 +47,7 @@ exports.createPages = ({ graphql, actions }) => {
       // Create fullscreen example component pages
       if (node.frontmatter.fullscreen) {
         link = `/${node.frontmatter.section}/${parentFolderName}/${componentName}/`.toLowerCase();
-        console.log('adding fullscreen page', link);
+        // console.log('adding fullscreen page', link);
         actions.createPage({
           path: link,
           component: path.resolve('./src/templates/mdxFullscreenTemplate.js'),
@@ -60,7 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
         // Normal templated component pages
         let section = node.frontmatter.section ? node.frontmatter.section : 'components';
         link = `/${section}/${componentName}/`.toLowerCase();
-        console.log('adding page', link);
+        // console.log('adding page', link);
         actions.createPage({
           path: link,
           component: path.resolve('./src/templates/mdxTemplate.js'),
@@ -73,4 +73,28 @@ exports.createPages = ({ graphql, actions }) => {
       }
     });
   });
+};
+
+
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        // Resolve imports in our app to node_modules so they don't break
+        '@patternfly-safe/patternfly': '@patternfly/patternfly',
+        '@patternfly-safe/react-core': '@patternfly/react-core',
+        '@patternfly-safe/react-icons': '@patternfly/react-icons',
+        '@patternfly-safe/react-tokens': '@patternfly/react-tokens',
+        // Resolve imports in .mdx files to local files
+        '@patternfly/react-charts': path.resolve(__dirname, '../react-charts'),
+        '@patternfly/react-core': path.resolve(__dirname, '../react-core'),
+        '@patternfly/react-icons': path.resolve(__dirname, '../../react-icons'),
+        '@patternfly/react-inline-edit-extension': path.resolve(__dirname, '../react-inline-edit-extension'),
+        '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system'),
+        '@patternfly/react-styles': path.resolve(__dirname, '../react-styles'),
+        '@patternfly/react-table': path.resolve(__dirname, '../react-table'),
+        '@patternfly/react-tokens': path.resolve(__dirname, '../react-tokens'),
+      }
+    },
+  })
 };

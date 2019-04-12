@@ -25,6 +25,7 @@ export function MDXRenderer({
   };
 
   // children is pre-compiled mdx
+  children = children.replace(/_frontmatter: _frontmatter/gm, '');
   const keys = Object.keys(fullScope);
   const values = keys.map(key => fullScope[key]);
   const fn = new Function("_fn", ...keys, `${children}`);

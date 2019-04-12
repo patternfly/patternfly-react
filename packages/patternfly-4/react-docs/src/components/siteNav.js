@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 import { Location } from '@reach/router';
 
-import { Nav, NavList, NavExpandable, NavItem } from '@patternfly/react-core';
+import { Nav, NavList, NavExpandable, NavItem } from '@patternfly-safe/react-core';
 
 const SiteNav = () => {
   const data = useStaticQuery(graphql`

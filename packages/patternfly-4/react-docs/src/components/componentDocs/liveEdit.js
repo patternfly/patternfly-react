@@ -1,7 +1,7 @@
 import React from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import { Button } from '@patternfly/react-core';
-import { CodeIcon, CopyIcon } from '@patternfly/react-icons';
+import { Button } from '@patternfly-safe/react-core';
+import { CodeIcon, CopyIcon } from '@patternfly-safe/react-icons';
 
 const liveEditorStyle = { code: { 'max-height': '37.5rem', overflow: 'auto' } };
 class LiveEdit extends React.Component {
