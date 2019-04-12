@@ -13,13 +13,13 @@
     "serve": "gatsby serve --prefix-paths"
   },
   "dependencies": {
-    "@mdx-js/mdx": "0.20.3",
-    "@mdx-js/tag": "0.20.3",
+    "@mdx-js/mdx": "1.0.2",
+    "@mdx-js/react": "1.0.2",
     "@patternfly/patternfly": "2.0.0",
-    "@patternfly/react-core": "2.11.1",
+    "@patternfly/react-core": "^2.11.1",
     "@patternfly/react-icons": "^3.7.1",
     "gatsby": "2.3.14",
-    "gatsby-mdx": "0.4.5",
+    "gatsby-mdx": "0.6.1",
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-json": "^2.1.11",

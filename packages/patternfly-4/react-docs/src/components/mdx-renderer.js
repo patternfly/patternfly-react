@@ -1,38 +1,42 @@
 import React from "react";
-import { MDXTag } from "@mdx-js/tag";
-import { withMDXComponents } from "@mdx-js/tag/dist/mdx-provider";
-import { withMDXScope } from "gatsby-mdx/context";
+import { useMDXComponents, mdx } from "@mdx-js/react";
+import { useMDXScope } from "gatsby-mdx/context";
 
 // Copy of `import { MDXRenderer } from 'gatsby-mdx';` with some added injection.
-export const MDXRenderer = withMDXScope(
-  withMDXComponents(({ scope = {}, components = {}, children, ...props }) => {
-    if (!children) {
-      return null;
-    }
-    const fullScope = {
-      // React and MDXTag are here just in case the user doesn't pass them in
-      // in a manual usage of the renderer
-      React,
-      MDXTag,
-      ...scope
-    };
+export function MDXRenderer({
+  scope,
+  components,
+  children,
+  ...props
+}) {
+  const mdxComponents = useMDXComponents(components);
+  const mdxScope = useMDXScope(scope);
 
-    // children is pre-compiled mdx
-    const keys = Object.keys(fullScope);
-    const values = keys.map(key => fullScope[key]);
-    const fn = new Function("_fn", ...keys, `${children}`);
+  if (!children) {
+    return null;
+  }
 
+  const fullScope = {
+    // React is here just in case the user doesn't pass them in
+    // in a manual usage of the renderer
+    React,
+    mdx,
+    ...mdxScope
+  };
 
-    const End = fn({}, ...values);
+  // children is pre-compiled mdx
+  const keys = Object.keys(fullScope);
+  const values = keys.map(key => fullScope[key]);
+  const fn = new Function("_fn", ...keys, `${children}`);
 
-    const element = React.createElement(End, { components, ...props });
+  const End = fn({}, ...values);
+  const element = React.createElement(End, { components: mdxComponents, ...props });
 
-    // Inject our scope into our custom <code> component.
-    let propComponents = element.props.components;
-    if (propComponents && propComponents.code) {
-      propComponents.code.prototype.getScope = () => fullScope;
-    }
+  // Inject our scope into our custom <code> component.
+  let propComponents = element.props.components;
+  if (propComponents && propComponents.code) {
+    propComponents.code.prototype.getScope = () => fullScope;
+  }
 
-    return element;
-  })
-);
+  return element;
+};

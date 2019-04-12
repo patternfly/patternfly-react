@@ -62,7 +62,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@>=7.1.0", "@babel/core@^7.0.0", "@babel/core@^7.0.1":
+"@babel/core@>=7.1.0", "@babel/core@^7.0.0", "@babel/core@^7.0.1", "@babel/core@^7.2.2", "@babel/core@^7.4.3":
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.4.3.tgz#198d6d3af4567be3989550d97e068de94503074f"
   dependencies:
@@ -783,7 +783,7 @@
     js-levenshtein "^1.1.3"
     semver "^5.3.0"
 
-"@babel/preset-env@^7.0.0", "@babel/preset-env@^7.4.1":
+"@babel/preset-env@^7.0.0", "@babel/preset-env@^7.4.1", "@babel/preset-env@^7.4.3":
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.4.3.tgz#e71e16e123dc0fbf65a52cbcbcefd072fbd02880"
   dependencies:
@@ -1582,17 +1582,19 @@
     npmlog "^4.1.2"
     write-file-atomic "^2.3.0"
 
-"@mdx-js/mdx@0.20.3":
-  version "0.20.3"
-  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-0.20.3.tgz#1f32b4a4a0cc176a3192ef51a0a3502cdfdca3f0"
-  integrity sha512-IIlssEIPPAqo04krm270ifGjSVPqtTmjlryYGi8/4VXHCdi42l8v2piTJPo2NVc7J+HizY1uxxZb6AeoFsO/Iw==
+"@mdx-js/mdx@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.0.2.tgz#9d171d69b4a7c7115b02d1a61ffe347155a47351"
+  integrity sha512-J+oshObzFo6OTOsG/7BhlaeBj9vomJWT18+JFnSKLpcuhUA3Ng7DVUM5e0c3GmIrgMuTv3WVTmRkc5+67Wk7MQ==
   dependencies:
-    "@babel/plugin-proposal-object-rest-spread" "^7.3.2"
+    "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.2.0"
+    "@babel/plugin-syntax-object-rest-spread" "^7.2.0"
     change-case "^3.0.2"
     detab "^2.0.0"
     hast-util-raw "^5.0.0"
     mdast-util-to-hast "^4.0.0"
+    remark-mdx "^1.0.2"
     remark-parse "^6.0.0"
     remark-squeeze-paragraphs "^3.0.1"
     to-style "^1.3.3"
@@ -1600,10 +1602,10 @@
     unist-builder "^1.0.1"
     unist-util-visit "^1.3.0"
 
-"@mdx-js/tag@0.20.3":
-  version "0.20.3"
-  resolved "https://registry.yarnpkg.com/@mdx-js/tag/-/tag-0.20.3.tgz#9e2306040b6469248c45a5f5baf44d0014db0493"
-  integrity sha512-Co3gUFmNDv9z2LjuvLTpTj2NaOSHFxuoZjohcG0YK/KfECO+Ns9idzThMYjfEDe1vAf4c824rqlBYseedJdFNw==
+"@mdx-js/react@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-1.0.2.tgz#5390102a5d4f4666fe40184622a8cc75bd8f4f77"
+  integrity sha512-CUlVG7FQytvzsIgoRYd3TSTzeHSwhG9sY0i7XBKpk8btxBPkwZju7Rgy322AKcR2PYxqJtT40rm7FQ/jgE9kLA==
 
 "@mikaelkristiansson/domready@^1.0.9":
   version "1.0.9"
@@ -6115,6 +6117,10 @@ core-js-pure@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.0.0.tgz#a5679adb4875427c8c0488afc93e6f5b7125859b"
 
+core-js@2, core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.0, core-js@^2.5.3, core-js@^2.6.5:
+  version "2.6.5"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
+
 core-js@2.6.4:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.4.tgz#b8897c062c4d769dd30a0ac5c73976c47f92ea0d"
@@ -6126,10 +6132,6 @@ core-js@3.0.0:
 core-js@^1.0.0:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
-
-core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.0, core-js@^2.5.3, core-js@^2.6.5:
-  version "2.6.5"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.5.tgz#44bc8d249e7fb2ff5d00e0341a7ffb94fbf67895"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -6740,6 +6742,11 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     abab "^2.0.0"
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
+
+dataloader@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/dataloader/-/dataloader-1.4.0.tgz#bca11d867f5d3f1b9ed9f737bd15970c65dff5c8"
+  integrity sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==
 
 datatables.net-bs@>=1.10.9:
   version "1.10.19"
@@ -9025,12 +9032,17 @@ gatsby-link@^2.0.16:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
-gatsby-mdx@0.4.5:
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/gatsby-mdx/-/gatsby-mdx-0.4.5.tgz#da99c43a0c7dba98f6132e5c4cc7d1e3d35260cd"
-  integrity sha512-zyh5CheYXrdV8USjY4m6THuLAFmcNTGWCfoFC51dPeO8ODZUFJ2adHI0RVQW76u2IciK3hc73FNXUx8OslTvhQ==
+gatsby-mdx@0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/gatsby-mdx/-/gatsby-mdx-0.6.1.tgz#1e2625d007b05e1210e37c1dcf09fdd9099bf718"
+  integrity sha512-7Q6bcKRA6rFJTsTyKpzzp5GjGns5k8oRl/4cOYhdQlA9OREQdRVR/PCiYdHanHJ7cVY8QqUbDxRBdOwxDBtzvQ==
   dependencies:
-    "@babel/plugin-proposal-object-rest-spread" "^7.0.0"
+    "@babel/core" "^7.4.3"
+    "@babel/plugin-proposal-object-rest-spread" "^7.4.3"
+    "@babel/preset-env" "^7.4.3"
+    "@babel/preset-react" "^7.0.0"
+    core-js "2"
+    dataloader "^1.4.0"
     debug "^4.0.1"
     escape-string-regexp "^1.0.5"
     fs-extra "^7.0.0"
@@ -9038,14 +9050,14 @@ gatsby-mdx@0.4.5:
     loader-utils "^1.2.3"
     lodash "^4.17.10"
     mdast-util-to-string "^1.0.4"
-    mdast-util-toc "^2.0.1"
+    mdast-util-toc "^3.0.0"
     mime "^2.3.1"
     pretty-bytes "^5.1.0"
-    remark "^9.0.0"
-    retext "^5.0.0"
+    remark "^10.0.0"
+    remark-retext "^3.1.2"
+    retext-english "^3.0.2"
     slash "^2.0.0"
     static-site-generator-webpack-plugin "^3.4.2"
-    strip-markdown "^3.0.1"
     underscore.string "^3.3.4"
     unist-util-map "^1.0.4"
     unist-util-remove "^1.0.1"
@@ -9407,9 +9419,10 @@ gitdiff-parser@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/gitdiff-parser/-/gitdiff-parser-0.1.2.tgz#26a256e05e9c2d5016b512a96c1dacb40862b92a"
 
-github-slugger@^1.1.1:
+github-slugger@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.2.1.tgz#47e904e70bf2dccd0014748142d31126cfd49508"
+  integrity sha512-SsZUjg/P03KPzQBt7OxJPasGw6NRO5uOgiZ5RGXVud5iSIZ0eNZeNp5rTwCxtavrRUa/A77j8mePVc5lEvk0KQ==
   dependencies:
     emoji-regex ">=6.0.0 <=6.1.1"
 
@@ -10650,7 +10663,7 @@ is-accessor-descriptor@^1.0.0:
   dependencies:
     kind-of "^6.0.0"
 
-is-alphabetical@^1.0.0:
+is-alphabetical@^1.0.0, is-alphabetical@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-alphabetical/-/is-alphabetical-1.0.2.tgz#1fa6e49213cb7885b75d15862fb3f3d96c884f41"
 
@@ -10683,7 +10696,7 @@ is-boolean-object@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-boolean-object/-/is-boolean-object-1.0.0.tgz#98f8b28030684219a95f375cfbd88ce3405dff93"
 
-is-buffer@^1.0.2, is-buffer@^1.1.4, is-buffer@^1.1.5, is-buffer@~1.1.1:
+is-buffer@^1.0.2, is-buffer@^1.1.5, is-buffer@~1.1.1:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
 
@@ -12864,16 +12877,28 @@ mdast-util-to-hast@^4.0.0:
     unist-util-visit "^1.1.0"
     xtend "^4.0.1"
 
-mdast-util-to-string@^1.0.2, mdast-util-to-string@^1.0.4:
+mdast-util-to-nlcst@^3.2.0:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/mdast-util-to-nlcst/-/mdast-util-to-nlcst-3.2.2.tgz#71972eecd64dc03d5cf2713f08555e2d9e2d7d10"
+  integrity sha512-TmJlri8dHt7duRU6jfWBMqf5gW+VZ6o/8GHaWzwdxslseB2lL8bSOiox6c8VwYX5v2E4CzUWm/1GkAYqgbNw9A==
+  dependencies:
+    nlcst-to-string "^2.0.0"
+    repeat-string "^1.5.2"
+    unist-util-position "^3.0.0"
+    vfile-location "^2.0.0"
+
+mdast-util-to-string@^1.0.4, mdast-util-to-string@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/mdast-util-to-string/-/mdast-util-to-string-1.0.5.tgz#3552b05428af22ceda34f156afe62ec8e6d731ca"
 
-mdast-util-toc@^2.0.1:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/mdast-util-toc/-/mdast-util-toc-2.1.0.tgz#82b6b218577bb0e67b23abf5c3f7ac73a4b5389f"
+mdast-util-toc@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/mdast-util-toc/-/mdast-util-toc-3.1.0.tgz#395eeb877f067f9d2165d990d77c7eea6f740934"
+  integrity sha512-Za0hqL1PqWrvxGtA/3NH9D5nhGAUS9grMM4obEAz5+zsk1RIw/vWUchkaoDLNdrwk05A0CSC5eEXng36/1qE5w==
   dependencies:
-    github-slugger "^1.1.1"
-    mdast-util-to-string "^1.0.2"
+    github-slugger "^1.2.1"
+    mdast-util-to-string "^1.0.5"
+    unist-util-is "^2.1.2"
     unist-util-visit "^1.1.0"
 
 mdn-data@~1.1.0:
@@ -14263,6 +14288,16 @@ parse-domain@^2.0.0:
     got "^8.3.2"
     mkdirp "^0.5.1"
     mocha "^5.2.0"
+
+parse-english@^4.0.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/parse-english/-/parse-english-4.1.1.tgz#2f75872e617769d857d9b6992dcde2a891f1b2d3"
+  integrity sha512-g7hegR9AFIlGXl5645mG8nQeeWW7SrK7lgmgIWR0KKWvGyZO5mxa4GGoNxRLm6VW2LGpLnn6g4O9yyLJQ4IzQw==
+  dependencies:
+    nlcst-to-string "^2.0.0"
+    parse-latin "^4.0.0"
+    unist-util-modify-children "^1.0.0"
+    unist-util-visit-children "^1.0.0"
 
 parse-entities@^1.0.2, parse-entities@^1.1.0, parse-entities@^1.1.2:
   version "1.2.1"
@@ -16838,25 +16873,18 @@ relay-runtime@2.0.0:
     "@babel/runtime" "^7.0.0"
     fbjs "^1.0.0"
 
-remark-parse@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/remark-parse/-/remark-parse-5.0.0.tgz#4c077f9e499044d1d5c13f80d7a98cf7b9285d95"
+remark-mdx@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/remark-mdx/-/remark-mdx-1.0.2.tgz#858b2a0109f9b56e30b79fb4eba41be71ec3ec34"
+  integrity sha512-j4jj0RvTQKRNqSeGEHHaPGVc3QX9fBwb+Y8pwRJopeUvy/44iaLpZObHjtg766CZPe2cPVOGu9gsnYFRg2CRwA==
   dependencies:
-    collapse-white-space "^1.0.2"
-    is-alphabetical "^1.0.0"
-    is-decimal "^1.0.0"
-    is-whitespace-character "^1.0.0"
-    is-word-character "^1.0.0"
-    markdown-escapes "^1.0.0"
-    parse-entities "^1.1.0"
-    repeat-string "^1.5.4"
-    state-toggle "^1.0.0"
-    trim "0.0.1"
-    trim-trailing-lines "^1.0.0"
-    unherit "^1.0.4"
-    unist-util-remove-position "^1.0.0"
-    vfile-location "^2.0.0"
-    xtend "^4.0.1"
+    "@babel/core" "^7.2.2"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-proposal-object-rest-spread" "^7.3.2"
+    "@babel/plugin-syntax-jsx" "^7.2.0"
+    is-alphabetical "^1.0.2"
+    remark-parse "^6.0.0"
+    unified "^7.0.0"
 
 remark-parse@^6.0.0:
   version "6.0.3"
@@ -16878,31 +16906,19 @@ remark-parse@^6.0.0:
     vfile-location "^2.0.0"
     xtend "^4.0.1"
 
+remark-retext@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/remark-retext/-/remark-retext-3.1.2.tgz#983003d7495cf9198aa450c5ae5a7737011eec5f"
+  integrity sha512-+48KzJdSXvsPupY5pj5AY7oBUSiDOqFPZBKebX5WemrMyIG+RImIt9hgeqelluVDd1kooHen33K/aybTPyoI9g==
+  dependencies:
+    mdast-util-to-nlcst "^3.2.0"
+
 remark-squeeze-paragraphs@^3.0.1:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/remark-squeeze-paragraphs/-/remark-squeeze-paragraphs-3.0.3.tgz#299d8db7d44008c9ae240dbf6d1f55b8b0f924ce"
   integrity sha512-eDvjtwFa9eClqb7XgdF/1H9Pfs2LPnf/P3eRs9ucYAWUuv4WO8ZOVAUeT/1h66rQvghnfctz9au+HEmoKcdoqA==
   dependencies:
     mdast-squeeze-paragraphs "^3.0.0"
-
-remark-stringify@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/remark-stringify/-/remark-stringify-5.0.0.tgz#336d3a4d4a6a3390d933eeba62e8de4bd280afba"
-  dependencies:
-    ccount "^1.0.0"
-    is-alphanumeric "^1.0.0"
-    is-decimal "^1.0.0"
-    is-whitespace-character "^1.0.0"
-    longest-streak "^2.0.1"
-    markdown-escapes "^1.0.0"
-    markdown-table "^1.1.0"
-    mdast-util-compact "^1.0.0"
-    parse-entities "^1.0.2"
-    repeat-string "^1.5.4"
-    state-toggle "^1.0.0"
-    stringify-entities "^1.0.1"
-    unherit "^1.0.4"
-    xtend "^4.0.1"
 
 remark-stringify@^6.0.0:
   version "6.0.4"
@@ -16923,21 +16939,13 @@ remark-stringify@^6.0.0:
     unherit "^1.0.4"
     xtend "^4.0.1"
 
-remark@^10.0.1:
+remark@^10.0.0, remark@^10.0.1:
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/remark/-/remark-10.0.1.tgz#3058076dc41781bf505d8978c291485fe47667df"
   dependencies:
     remark-parse "^6.0.0"
     remark-stringify "^6.0.0"
     unified "^7.0.0"
-
-remark@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/remark/-/remark-9.0.0.tgz#c5cfa8ec535c73a67c4b0f12bfdbd3a67d8b2f60"
-  dependencies:
-    remark-parse "^5.0.0"
-    remark-stringify "^5.0.0"
-    unified "^6.0.0"
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
@@ -17139,29 +17147,13 @@ ret@~0.1.10:
   version "0.1.15"
   resolved "https://registry.yarnpkg.com/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
 
-retext-latin@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/retext-latin/-/retext-latin-2.0.2.tgz#7b548937397ecdc47f7e242c77460c053f5b2555"
-  integrity sha512-7eIuQ23AepCmIbWPoJY/1YBPKYkfR81Pcr0daU6GWWenxF/UM6WUvKGHLtko4g9wrrQiu8XyDSfQ9jAV6rbKyg==
+retext-english@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/retext-english/-/retext-english-3.0.2.tgz#efc239c445b112d13f3f511b1856abc2b5476cb4"
+  integrity sha512-iWffdWUvJngqaRlE570SaYRgQbn4/QVBfGa/XseEBuBazymnyW24o37oLPY0vm+PJdLmDghnjZX0UbkZSZF0Cg==
   dependencies:
-    parse-latin "^4.0.0"
+    parse-english "^4.0.0"
     unherit "^1.0.4"
-
-retext-stringify@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/retext-stringify/-/retext-stringify-2.0.2.tgz#f3885c5fccaa31998b53862acbb9058994eed27d"
-  integrity sha512-SphWgEipyuEVXRsKqxhUN6+h7H6GNFFjPDxNJs4ZX7HEhizmaXUdHSSuOyRjbY764SH2mMVf+kj8NNpMksfgUA==
-  dependencies:
-    nlcst-to-string "^2.0.0"
-
-retext@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/retext/-/retext-5.0.0.tgz#5d9018c4a677d6103c142362d76f50eb1d398bf6"
-  integrity sha1-XZAYxKZ31hA8FCNi129Q6x05i/Y=
-  dependencies:
-    retext-latin "^2.0.0"
-    retext-stringify "^2.0.0"
-    unified "^6.0.0"
 
 retry@^0.10.0:
   version "0.10.1"
@@ -18271,11 +18263,6 @@ strip-json-comments@2.0.1, strip-json-comments@^2.0.1, strip-json-comments@~2.0.
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-strip-markdown@^3.0.1:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/strip-markdown/-/strip-markdown-3.0.3.tgz#93b4526abe32a1d69e5ca943f4d9ba25c01a4d48"
-  integrity sha512-G2DSM9wy3PWxY3miAibWpsTqZgXLXgRoq0yVyaVs9O7FDGEwPO6pmSE8CyzHhU88Z2w1dkFqFmWUklFNsQKwqg==
-
 strong-log-transformer@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/strong-log-transformer/-/strong-log-transformer-2.1.0.tgz#0f5ed78d325e0421ac6f90f7f10e691d6ae3ae10"
@@ -19197,17 +19184,6 @@ unidiff@^1.0.1:
   dependencies:
     diff "^2.2.2"
 
-unified@^6.0.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/unified/-/unified-6.2.0.tgz#7fbd630f719126d67d40c644b7e3f617035f6dba"
-  dependencies:
-    bail "^1.0.0"
-    extend "^3.0.0"
-    is-plain-obj "^1.1.0"
-    trough "^1.0.0"
-    vfile "^2.0.0"
-    x-is-string "^0.1.0"
-
 unified@^7.0.0:
   version "7.1.0"
   resolved "https://registry.yarnpkg.com/unified/-/unified-7.1.0.tgz#5032f1c1ee3364bd09da12e27fdd4a7553c7be13"
@@ -19579,15 +19555,6 @@ vfile-message@^1.0.0:
   resolved "https://registry.yarnpkg.com/vfile-message/-/vfile-message-1.1.1.tgz#5833ae078a1dfa2d96e9647886cd32993ab313e1"
   dependencies:
     unist-util-stringify-position "^1.1.1"
-
-vfile@^2.0.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/vfile/-/vfile-2.3.0.tgz#e62d8e72b20e83c324bc6c67278ee272488bf84a"
-  dependencies:
-    is-buffer "^1.1.4"
-    replace-ext "1.0.0"
-    unist-util-stringify-position "^1.0.0"
-    vfile-message "^1.0.0"
 
 vfile@^3.0.0:
   version "3.0.1"

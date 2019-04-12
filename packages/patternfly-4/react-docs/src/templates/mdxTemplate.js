@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import SidebarLayout from './sidebarLayout';
 import { CSSVars, Props, LiveEdit } from '../components/componentDocs';
 import { Title, PageSection } from '@patternfly/react-core';
-import { MDXProvider } from '@mdx-js/tag';
+import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from '../components/mdx-renderer';
 
 const components = {
