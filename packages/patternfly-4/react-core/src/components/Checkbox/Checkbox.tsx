@@ -20,33 +20,31 @@ export const Checkbox: React.FunctionComponent<CheckboxProps> = ({
   className = '',
   isValid = true,
   isDisabled = false,
-  isChecked = null,
-  checked = null,
+  isChecked = false,
+  checked = false,
   onChange = () => undefined,
   label = undefined,
   'aria-label': ariaLabel = '',
   ...props
-}) => {
-  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
-    this.props.onChange(event.currentTarget.checked, event);
-  };
-
-  return (
-    <div className={css(styles.check, className)}>
-      <input
-        {...props}
-        className={css(styles.checkInput)}
-        type="checkbox"
-        onChange={handleChange}
-        aria-invalid={!isValid}
-        disabled={isDisabled}
-        checked={isChecked || checked}
-      />
-      {label && (
-        <label className={css(styles.checkLabel, getModifier(styles, isDisabled && 'disabled'))} htmlFor={props.id}>
-          {label}
-        </label>
-      )}
-    </div>
-  );
-};
+}) => (
+  <div className={css(styles.check, className)}>
+    <input
+      {...props}
+      className={css(styles.checkInput)}
+      type="checkbox"
+      onChange={(event: React.FormEvent<HTMLInputElement>) => {
+        {
+          onChange(event.currentTarget.checked, event);
+        }
+      }}
+      aria-invalid={!isValid}
+      disabled={isDisabled}
+      checked={isChecked || checked}
+    />
+    {label && (
+      <label className={css(styles.checkLabel, isDisabled ? getModifier(styles, 'disabled') : '')} htmlFor={props.id}>
+        {label}
+      </label>
+    )}
+  </div>
+);

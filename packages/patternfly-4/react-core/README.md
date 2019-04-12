@@ -42,7 +42,6 @@ import '@patternfly/react-core/dist/styles/base.css';
 #### Example Component Usage
 
 ```javascript
-import React from 'react';
 import { Button } from '@patternfly/react-core';
 
 export default <Button variant="primary">Button</Button>;
