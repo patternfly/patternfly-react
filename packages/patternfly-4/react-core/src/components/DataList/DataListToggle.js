@@ -15,10 +15,19 @@ const DataListToggle = ({
   id,
   ...props
 }) => (
-  <div className={css(styles.dataListToggle, className)} {...props}>
-    <Button id={id} variant={ButtonVariant.plain} aria-controls={ariaControls !== '' && ariaControls} aria-label={ariaLabel} aria-labelledby={ariaLabel !== "Details" ? null : `${rowid} ${id}`} aria-expanded={isExpanded}>
-      <AngleRightIcon />
-    </Button>
+  <div className={css(styles.dataListItemControl, className)} {...props}>
+    <div className={css(styles.dataListToggle)}>
+      <Button
+        id={id}
+        variant={ButtonVariant.plain}
+        aria-controls={ariaControls !== '' && ariaControls}
+        aria-label={ariaLabel}
+        aria-labelledby={ariaLabel !== 'Details' ? null : `${rowid} ${id}`}
+        aria-expanded={isExpanded}
+      >
+        <AngleRightIcon />
+      </Button>
+    </div>
   </div>
 );
 

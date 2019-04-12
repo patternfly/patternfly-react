@@ -3,6 +3,7 @@ import { Omit } from '../../helpers/typeUtils';
 
 export interface DataListContentProps extends Omit<HTMLProps<HTMLElement>, 'aria-label'> {
   isHidden: boolean;
+  noPadding: boolean;
   'aria-label': string;
 }
 
