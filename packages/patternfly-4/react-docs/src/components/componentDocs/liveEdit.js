@@ -11,7 +11,6 @@ class LiveEdit extends React.Component {
     this.code = this.props.children;
     // This is injected in src/components/mdx-renderer
     this.scope = this.getScope();
-    console.log('my scope is', this.scope);
     this.state = {
       codeOpen: false,
       copied: false
