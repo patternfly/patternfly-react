@@ -1,6 +1,6 @@
 {
   "name": "@patternfly/react-styled-system",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Experimental: Styled System package with PatternFly 4 theming",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
@@ -33,8 +33,8 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@patternfly/react-styles": "^3.0.0",
-    "@patternfly/react-tokens": "^2.3.1",
+    "@patternfly/react-styles": "^3.0.1",
+    "@patternfly/react-tokens": "^2.3.2",
     "emotion-theming": "^9.2.9",
     "react-emotion": "^9.2.9",
     "styled-system": "^3.1.11"

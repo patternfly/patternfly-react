@@ -1,7 +1,7 @@
 {
   "name": "gatsby-transformer-react-assets",
   "description": "Creates an index file from assets matching a path",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Red Hat",
   "license": "MIT",
   "private": true,

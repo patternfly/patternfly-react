@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.1.4 (2019-04-15)
+
+
+### Bug Fixes
+
+* Update React with changes from core ([#1703](https://github.com/patternfly/patternfly-react/issues/1703)) ([a219cae](https://github.com/patternfly/patternfly-react/commit/a219cae)), closes [#1680](https://github.com/patternfly/patternfly-react/issues/1680) [#1684](https://github.com/patternfly/patternfly-react/issues/1684) [#1684](https://github.com/patternfly/patternfly-react/issues/1684)
+
+
+
+
+
 ## [1.1.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-codemods@1.1.2...@patternfly/react-codemods@1.1.3) (2019-03-12)
 
 **Note:** Version bump only for package @patternfly/react-codemods

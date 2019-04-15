@@ -1,6 +1,6 @@
 {
   "name": "patternfly-react-wooden-tree",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Reexport react-wooden-tree with Patternfly design.",
   "main": "dist/js/index.js",
   "module": "dist/esm/index.js",
