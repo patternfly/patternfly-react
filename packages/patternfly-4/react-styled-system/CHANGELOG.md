@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-styled-system@2.2.0...@patternfly/react-styled-system@3.0.0) (2019-04-15)
+
+### BREAKING CHANEGS
+
+* Update React with changes from core ([#1703](https://github.com/patternfly/patternfly-react/issues/1703)) ([a219cae](https://github.com/patternfly/patternfly-react/commit/a219cae)), closes [#1680](https://github.com/patternfly/patternfly-react/issues/1680) [#1684](https://github.com/patternfly/patternfly-react/issues/1684) [#1684](https://github.com/patternfly/patternfly-react/issues/1684)
+
+
+### Features
+
+* **gatsby:** Refactor Gatsby ([#1656](https://github.com/patternfly/patternfly-react/issues/1656)) ([bc32a25](https://github.com/patternfly/patternfly-react/commit/bc32a25))
+
+
+
+
+
 # 2.1.0 (2019-03-29)
 
 

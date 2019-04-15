@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/redallen/patternfly-react/compare/@patternfly/react-styles@2.5.0...@patternfly/react-styles@3.0.0) (2019-04-15)
+
+### BREAKING CHANGES
+
+* **css:** change css import methodology ([#1592](https://github.com/redallen/patternfly-react/issues/1592)) ([80cd41a](https://github.com/redallen/patternfly-react/commit/80cd41a))
+
+
+
+
+
 # 2.4.0 (2019-03-18)
 
 

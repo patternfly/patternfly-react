@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.17.0](https://github.com/patternfly/patternfly-react/compare/patternfly-react-extensions@2.16.29...patternfly-react-extensions@2.17.0) (2019-04-15)
+
+
+### Features
+
+* **component:** add Select component ([#1650](https://github.com/patternfly/patternfly-react/issues/1650)) ([5afa5a0](https://github.com/patternfly/patternfly-react/commit/5afa5a0))
+
+
+
+
+
 ## 2.16.29 (2019-03-29)
 
 
