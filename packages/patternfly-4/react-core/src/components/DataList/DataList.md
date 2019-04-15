@@ -5,9 +5,40 @@ cssPrefix: 'pf-c-data-list'
 
 ## Simple Data List
 
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListItemCells,
+  DataListItemRow,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent,
+  Dropdown,
+  DropdownPosition,
+  KebabToggle,
+  DropdownItem
+} from '@patternfly/react-core';
+import { CodeBranchIcon } from '@patternfly/react-icons';
+
 ```js
 import React from 'react';
-import { DataList, DataListItem, DataListItemRow, DataListItemCells, DataListCell } from '@patternfly/react-core';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListItemCells,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent,
+  Dropdown,
+  KebabToggle,
+  DropdownItem
+} from '@patternfly/react-core';
 
 SimpleDataList = () => (
   <DataList aria-label="Simple data list example">
@@ -272,9 +303,12 @@ class ActionsDataList extends React.Component {
 ```js
 import React from 'react';
 import {
+  Button,
   DataList,
   DataListItem,
   DataListCell,
+  DataListCheck,
+  DataListAction,
   DataListToggle,
   DataListContent,
   DataListCheck,
@@ -513,6 +547,7 @@ class ExpandableDataList extends React.Component {
 ```js
 import React from 'react';
 import {
+  Button,
   DataList,
   DataListItem,
   DataListCell,

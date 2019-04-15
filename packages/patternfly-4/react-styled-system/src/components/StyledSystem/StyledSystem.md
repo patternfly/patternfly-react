@@ -1,6 +1,6 @@
 ---
-title: "Styled System"
-section: "styled-system"
+title: 'Styled System'
+section: 'styled-system'
 ---
 ## **Warning, the StyledSystem components are experimental and in their own package _@patternfly/react-styled-system_. Use at your own risk!**
 The PatternFlyThemeProvider component maps CSS to PatternFly global values that can be used with StyledBox, StyledFlex, and StyledText components. The StyledFlex and StyledText components inherit all the props from StyledBox in addition to their own props. To apply the PatternFly theme, use <strong>PatternFlyThemeProvider</strong> at the root of your application.
@@ -16,9 +16,11 @@ String values are passed as raw CSS values.
 
 Array values are converted into responsive values.
 
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
+
 ```js
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 SpaceStyles = () => {
   const { space, borders } = StyledConstants;
@@ -50,7 +52,7 @@ String values are passed as raw CSS values.
 Array values are converted into responsive width styles.
 ```js
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 WidthStyles = () => {
   const { borders, ratio } = StyledConstants;
@@ -121,7 +123,7 @@ Array values are converted into responsive values.
 
 ```js
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 ColorStyles = () => {
   const { colors } = StyledConstants;
@@ -143,7 +145,7 @@ ColorStyles = () => {
 ## Typography
 ```js
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledText } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 TypographyStyles = () => {
   const { fonts, lineHeights, fontWeights, fontSizes } = StyledConstants;
@@ -177,7 +179,7 @@ TypographyStyles = () => {
 ## Borders
 ```js
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 BorderStyles = () => {
   const { space, borders, radii, colors } = StyledConstants;
@@ -217,7 +219,7 @@ BorderStyles = () => {
 ## Box Shadow
 ```js
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 BoxShadowStyles = () => {
   const { space, borders, radii, colors, shadows } = StyledConstants;
@@ -254,7 +256,7 @@ BoxShadowStyles = () => {
 ## Position
 ```js
 import React from 'react';
-import { PatternFlyThemeProvider, StyledConstants, StyledBox } from '@patternfly/react-styled-system';
+import { PatternFlyThemeProvider, StyledConstants, StyledBox, StyledText } from '@patternfly/react-styled-system';
 
 PositionStyles = () => {
   const { space, borders, zIndices, colors } = StyledConstants;

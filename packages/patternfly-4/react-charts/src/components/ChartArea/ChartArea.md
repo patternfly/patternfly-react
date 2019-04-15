@@ -1,11 +1,14 @@
 ---
-title: "Area Chart"
-section: "charts"
+title: 'Area Chart'
+section: 'charts'
 ---
+
+import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '@patternfly/react-charts';
+
 ## Simple Chart
 ```js
 import React from 'react';
-import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 class SimpleChart extends React.Component {
   constructor(props) {
@@ -32,7 +35,7 @@ class SimpleChart extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
   }
-  
+
   render() {
     const { width } = this.state;
     const container = <ChartVoronoiContainer labels={this.getTooltipLabel} />;
@@ -75,7 +78,7 @@ class SimpleChart extends React.Component {
 ## Custom Colors Chart
 ```js
 import React from 'react';
-import { ChartArea, ChartGroup, ChartLegend, ChartVoronoiContainer } from '@patternfly/react-charts';
+import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '@patternfly/react-charts';
 
 class CustomColorsChart extends React.Component {
   constructor(props) {

@@ -1,9 +1,10 @@
 ---
-title: "Badge"
-cssPrefix: "pf-c-badge"
+title: 'Badge'
+cssPrefix: 'pf-c-badge'
 ---
-## Badge (Read)
+import { Badge } from '@patternfly/react-core';
 
+## Badge (Read)
 ```js
 import React from 'react';
 import { Badge } from '@patternfly/react-core';

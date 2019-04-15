@@ -1,8 +1,13 @@
 ---
-title: "Bar Chart"
-section: "charts"
+title: 'Bar Chart'
+section: 'charts'
 ---
+
 ## Blue Theme Bar Chart
+
+import { Chart, ChartBar, ChartGroup, ChartTheme } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+
 ```js
 import React from 'react';
 import { Chart, ChartBar, ChartGroup, ChartTheme } from '@patternfly/react-charts';

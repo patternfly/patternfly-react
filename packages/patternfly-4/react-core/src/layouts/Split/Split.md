@@ -1,10 +1,12 @@
 ---
 title: 'Split'
 cssPrefix: 'pf-l-split'
+section: 'layouts'
 ---
 
-## Simple Split
+import { Split, SplitItem } from '@patternfly/react-core';
 
+## Simple Split
 ```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
@@ -13,11 +15,10 @@ import { Split, SplitItem } from '@patternfly/react-core';
   <SplitItem>content</SplitItem>
   <SplitItem isFilled>pf-m-fill</SplitItem>
   <SplitItem>content</SplitItem>
-</Split>;
+</Split>
 ```
 
 ## Split Layout with Gutter
-
 ```js
 import React from 'react';
 import { Split, SplitItem } from '@patternfly/react-core';
@@ -26,5 +27,5 @@ import { Split, SplitItem } from '@patternfly/react-core';
   <SplitItem>content</SplitItem>
   <SplitItem isFilled>pf-m-fill</SplitItem>
   <SplitItem>content</SplitItem>
-</Split>;
+</Split>
 ```

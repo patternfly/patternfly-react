@@ -1,7 +1,11 @@
 ---
-title: "Bullseye"
-cssPrefix: "pf-l-bullseye"
+title: 'Bullseye'
+cssPrefix: 'pf-l-bullseye'
+section: 'layouts'
 ---
+
+import { Bullseye } from '@patternfly/react-core';
+
 ## Simple Bullseye Layout
 ```js
 import React from 'react';

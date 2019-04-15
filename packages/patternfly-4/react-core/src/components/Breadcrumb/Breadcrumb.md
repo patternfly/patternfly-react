@@ -1,11 +1,13 @@
 ---
-title: "Breadcrumb"
-cssPrefix: "pf-c-breadcrumb"
+title: 'Breadcrumb'
+cssPrefix: 'pf-c-breadcrumb'
 ---
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
+
 ## Simple Breadcrumb
 ```js
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 SimpleBreadcrumbs = () => (
   <Breadcrumb>
@@ -22,7 +24,7 @@ SimpleBreadcrumbs = () => (
 ## Breadcrumb without Home Link
 ```js
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 WithoutLinkBreadcrumbs = () => (
   <Breadcrumb>
@@ -41,7 +43,7 @@ WithoutLinkBreadcrumbs = () => (
 ## Breadcrumb with Heading
 ```js
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem } from '@patternfly/react-core';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbHeading } from '@patternfly/react-core';
 
 HeadingBreadcrumbs = () => (
   <Breadcrumb>

@@ -1,7 +1,10 @@
 ---
-title: "Checkbox"
-cssPrefix: "pf-c-check"
+title: 'Checkbox'
+cssPrefix: 'pf-c-check'
 ---
+
+import { Checkbox } from '@patternfly/react-core';
+
 ## Controlled Checkbox
 ```js
 import React from 'react';
