@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.0.0...@patternfly/react-core@3.0.1) (2019-04-15)
+
+### BREAKING CHANGES
+
+* Update React with changes from core ([#1703](https://github.com/patternfly/patternfly-react/issues/1703)) ([a219cae](https://github.com/patternfly/patternfly-react/commit/a219cae)), closes [#1680](https://github.com/patternfly/patternfly-react/issues/1680) [#1684](https://github.com/patternfly/patternfly-react/issues/1684) [#1684](https://github.com/patternfly/patternfly-react/issues/1684)
+* **pagination:** remove size attr from type="number" input ([#1694](https://github.com/patternfly/patternfly-react/issues/1694)) ([7229b95](https://github.com/patternfly/patternfly-react/commit/7229b95))
+* **css:** change css import methodology ([#1592](https://github.com/patternfly/patternfly-react/issues/1592)) ([80cd41a](https://github.com/patternfly/patternfly-react/commit/80cd41a))
+
+### Bug Fixes
+
+* **ChipGroup:** remove unused prop from d.ts file ([#1728](https://github.com/patternfly/patternfly-react/issues/1728)) ([74c430f](https://github.com/patternfly/patternfly-react/commit/74c430f)), closes [#1559](https://github.com/patternfly/patternfly-react/issues/1559)
+* **emptyState:** add small/large modifiers ([#1729](https://github.com/patternfly/patternfly-react/issues/1729)) ([4f97ba1](https://github.com/patternfly/patternfly-react/commit/4f97ba1))
+
+
+### Features
+
+* **docs:** fix regression to hot reload core changes ([#1727](https://github.com/patternfly/patternfly-react/issues/1727)) ([67190ab](https://github.com/patternfly/patternfly-react/commit/67190ab))
+* **gatsby:** Refactor Gatsby ([#1656](https://github.com/patternfly/patternfly-react/issues/1656)) ([bc32a25](https://github.com/patternfly/patternfly-react/commit/bc32a25))
+
+
+
+
+
 ## [2.11.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@2.11.0...@patternfly/react-core@2.11.1) (2019-04-02)
 
 
