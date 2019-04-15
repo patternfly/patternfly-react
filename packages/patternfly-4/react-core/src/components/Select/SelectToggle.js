@@ -34,6 +34,8 @@ const propTypes = {
   type: PropTypes.string,
   /** Flag for checkbox variant keyboard interaction */
   isCheckbox: PropTypes.bool,
+  /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
+  iconComponent: PropTypes.func,
   /** Additional props are spread to the container <button> */
   '': PropTypes.any
 };
@@ -51,7 +53,8 @@ const defaultProps = {
   type: 'button',
   onToggle: Function.prototype,
   onEnter: Function.prototype,
-  onClose: Function.prototype
+  onClose: Function.prototype,
+  iconComponent: CaretDownIcon
 };
 
 class SelectToggle extends Component {
@@ -126,6 +129,7 @@ class SelectToggle extends Component {
       parentRef,
       id,
       type,
+      iconComponent: IconComponent,
       ...props
     } = this.props;
     return (
@@ -153,7 +157,7 @@ class SelectToggle extends Component {
         onKeyDown={this.onKeyDown}
       >
         {children}
-        <CaretDownIcon className={css(styles.selectToggleArrow)} />
+        {IconComponent && <IconComponent className={css(styles.selectToggleArrow)} />}
       </button>
     );
   }

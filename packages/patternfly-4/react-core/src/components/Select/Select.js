@@ -7,6 +7,7 @@ import SingleSelect from './SingleSelect';
 import CheckboxSelect from './CheckboxSelect';
 import SelectToggle from './SelectToggle';
 import { SelectContext, SelectVariant } from './selectConstants';
+import { CaretDownIcon } from '@patternfly/react-icons';
 
 // seed for the aria-labelledby ID
 let currentId = 0;
@@ -36,6 +37,8 @@ const propTypes = {
   variant: PropTypes.oneOf(['single', 'checkbox']),
   /** Width of the select container as a number of px or string percentage */
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  /** The icon to display for the toggle. Defaults to CaretDownIcon. Set to null to not show an icon. */
+  iconComponent: PropTypes.func,
   /** Additional props are spread to the container <ul> */
   '': PropTypes.any
 };
@@ -50,7 +53,8 @@ const defaultProps = {
   selections: null,
   placeholderText: null,
   variant: SelectVariant.single,
-  width: '100%'
+  width: '100%',
+  iconComponent: CaretDownIcon
 };
 
 class Select extends React.Component {
@@ -79,6 +83,7 @@ class Select extends React.Component {
       'aria-label': ariaLabel,
       placeholderText,
       width,
+      iconComponent,
       ...props
     } = this.props;
     const { openedOnEnter } = this.state;
@@ -107,6 +112,7 @@ class Select extends React.Component {
             aria-labelledby={`${ariaLabelledBy} ${selectToggleId}`}
             style={{ width }}
             isCheckbox={variant === SelectVariant.checkbox}
+            iconComponent={iconComponent}
           >
             {variant === SelectVariant.single && (
               <div className={css(styles.selectToggleWrapper)}>

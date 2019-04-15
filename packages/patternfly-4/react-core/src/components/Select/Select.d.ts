@@ -1,4 +1,4 @@
-import { HTMLProps, FormEvent } from 'react';
+import  {HTMLProps, FormEvent, ReactType } from 'react';
 
 export const SelectVariant: {
   single: 'single';
@@ -15,6 +15,7 @@ export interface SelectProps extends HTMLProps<HTMLOptionElement> {
   variant?: string;
   width?: string | number;
   ariaLabelledBy?: string;
+  iconComponent?: ReactType | null;
 }
 
 declare const Select: React.FunctionComponent<SelectProps>;

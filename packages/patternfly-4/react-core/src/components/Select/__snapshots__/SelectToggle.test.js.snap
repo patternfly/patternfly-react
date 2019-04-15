@@ -3,6 +3,7 @@
 exports[`state active 1`] = `
 <SelectToggle
   className=""
+  iconComponent={[Function]}
   id="Select Toggle"
   isActive={true}
   isCheckbox={false}
@@ -60,6 +61,7 @@ exports[`state active 1`] = `
 exports[`state focus 1`] = `
 <SelectToggle
   className=""
+  iconComponent={[Function]}
   id="Select Toggle"
   isActive={false}
   isCheckbox={false}
@@ -117,6 +119,7 @@ exports[`state focus 1`] = `
 exports[`state hover 1`] = `
 <SelectToggle
   className=""
+  iconComponent={[Function]}
   id="Select Toggle"
   isActive={false}
   isCheckbox={false}
