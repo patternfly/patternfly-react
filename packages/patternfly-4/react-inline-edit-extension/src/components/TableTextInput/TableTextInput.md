@@ -3,11 +3,13 @@ title: 'Table Text Input'
 section: 'inline-table'
 ---
 
-## Simple TableTextInput
-
 import { TableTextInput } from '@patternfly/react-inline-edit-extension';
 
+## Simple TableTextInput
 ```js
+import React from 'react';
+import { TableTextInput } from '@patternfly/react-inline-edit-extension';
+
 class SimpleTableTextInput extends React.Component {
   constructor(props) {
     super(props);

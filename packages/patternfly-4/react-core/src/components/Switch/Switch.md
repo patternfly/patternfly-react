@@ -3,11 +3,13 @@ title: 'Switch'
 cssPrefix: 'pf-c-switch'
 ---
 
-## Simple Switch
-
 import { Switch } from '@patternfly/react-core';
 
+## Simple Switch
 ```js
+import React from 'react';
+import { Switch } from '@patternfly/react-core';
+
 class SimpleSwitch extends React.Component {
   constructor(props) {
     super(props);
@@ -35,8 +37,10 @@ class SimpleSwitch extends React.Component {
 ```
 
 ## Switch (No Labels)
-
 ```js
+import React from 'react';
+import { Switch } from '@patternfly/react-core';
+
 class NoLabelSwitch extends React.Component {
   constructor(props) {
     super(props);
@@ -58,8 +62,10 @@ class NoLabelSwitch extends React.Component {
 ```
 
 ## Switch (Disabled)
-
 ```js
+import React from 'react';
+import { Switch } from '@patternfly/react-core';
+
 DisabledSwitch = () => (
   <React.Fragment>
     <Switch id="disabled-switch-on" aria-label="Message when on" label="Message when on" isChecked isDisabled />
@@ -80,8 +86,10 @@ DisabledSwitch = () => (
 ```
 
 ## Switch (Uncontrolled)
-
 ```js
+import React from 'react';
+import { Switch } from '@patternfly/react-core';
+
 UncontrolledSwitch = () => (
   <React.Fragment>
     <Switch id="uncontrolled-switch-on" aria-label="Message when on" label="Message when on" isChecked />

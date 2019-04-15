@@ -5,9 +5,36 @@ cssPrefix: 'pf-c-data-list'
 
 ## Simple Data List
 
-import { Button, DataList, DataListItem, DataListCell, DataListCheck, DataListAction, DataListToggle, DataListContent, Dropdown, KebabToggle, DropdownItem} from '@patternfly/react-core';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent,
+  Dropdown,
+  KebabToggle,
+  DropdownItem
+} from '@patternfly/react-core';
 
 ```js
+import React from 'react';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent,
+  Dropdown,
+  KebabToggle,
+  DropdownItem
+} from '@patternfly/react-core';
+
 SimpleDataList = () => (
   <DataList aria-label="Simple data list example">
     <DataListItem aria-labelledby="simple-item1">
@@ -27,8 +54,22 @@ SimpleDataList = () => (
 ```
 
 ## Data List Checkboxes, Actions and Additional Cells
-
 ```js
+import React from 'react';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent,
+  Dropdown,
+  KebabToggle,
+  DropdownItem
+} from '@patternfly/react-core';
+
 CheckboxActionDataList = () => (
   <DataList aria-label="Checkbox and action data list example">
     <DataListItem aria-labelledby="check-action-item1">
@@ -61,8 +102,22 @@ CheckboxActionDataList = () => (
 ```
 
 ## Data List Actions: single and multiple
-
 ```js
+import React from 'react';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent,
+  Dropdown,
+  KebabToggle,
+  DropdownItem
+} from '@patternfly/react-core';
+
 class ActionsDataList extends React.Component {
   constructor(props) {
     super(props);
@@ -126,8 +181,22 @@ class ActionsDataList extends React.Component {
 ```
 
 ## Data List Expandable
-
 ```js
+import React from 'react';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent,
+  Dropdown,
+  KebabToggle,
+  DropdownItem
+} from '@patternfly/react-core';
+
 class ExpandableDataList extends React.Component {
   constructor(props) {
     super(props);
@@ -206,8 +275,22 @@ class ExpandableDataList extends React.Component {
 ```
 
 ## Data List Width Modifiers
-
 ```js
+import React from 'react';
+import {
+  Button,
+  DataList,
+  DataListItem,
+  DataListCell,
+  DataListCheck,
+  DataListAction,
+  DataListToggle,
+  DataListContent,
+  Dropdown,
+  KebabToggle,
+  DropdownItem
+} from '@patternfly/react-core';
+
 class ModifiersDataList extends React.Component {
   constructor(props) {
     super(props);

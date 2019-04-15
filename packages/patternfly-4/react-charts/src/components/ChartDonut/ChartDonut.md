@@ -9,6 +9,8 @@ import { ChartDonut, ChartLabel, ChartLegend, ChartTheme } from '@patternfly/rea
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 ```js
+import React from 'react';
+
 <div style={{ display: 'inline-flex' }}>
   <div style={{ height: 450, width: 450 }}>
     <svg style={{ position: 'absolute' }} height={this.size} width={this.size}>
@@ -31,8 +33,9 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 ```
 
 ## Multi-color Theme Donut Chart
-
 ```js
+import React from 'react';
+
 <div>
   <div style={{ height: 450, width: 450 }}>
     <svg style={{ position: 'absolute' }} height={this.size} width={this.size}>

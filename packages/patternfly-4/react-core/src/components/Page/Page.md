@@ -3,11 +3,13 @@ title: 'Page'
 cssPrefix: 'pf-c-page'
 ---
 
-## Vertical Page Layout
-
 import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
 
+## Vertical Page Layout
 ```js
+import React from 'react';
+import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+
 class VerticalPage extends React.Component {
   constructor(props) {
     super(props);
@@ -54,8 +56,10 @@ class VerticalPage extends React.Component {
 ```
 
 ## Horizontal Page Layout
-
 ```js
+import React from 'react';
+import { Page, PageHeader, PageSidebar, PageSection, PageSectionVariants } from '@patternfly/react-core';
+
 HorizontalPage = () => {
   const logoProps = {
     href: 'https://patternfly.org',

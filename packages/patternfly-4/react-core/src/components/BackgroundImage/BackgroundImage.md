@@ -2,12 +2,13 @@
 title: 'Background Image'
 cssPrefix: 'pf-c-background-image'
 ---
-## Simple Background Image
-
 import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
 
-
+## Simple Background Image
 ```js
+import React from 'react';
+import { BackgroundImage, BackgroundImageSrc } from '@patternfly/react-core';
+
 class SimpleBackgroundImage extends React.Component {
   constructor(props) {
     super(props);

@@ -3,11 +3,13 @@ title: 'Modal'
 cssPrefix: 'pf-c-modal-box'
 ---
 
-## Simple Modal
-
 import { Modal, Button } from '@patternfly/react-core';
 
+## Simple Modal
 ```js
+import React from 'react';
+import { Modal, Button } from '@patternfly/react-core';
+
 class SimpleModal extends React.Component {
   constructor(props) {
     super(props);
@@ -55,8 +57,10 @@ class SimpleModal extends React.Component {
 ```
 
 ## Modal (Small)
-
 ```js
+import React from 'react';
+import { Modal, Button } from '@patternfly/react-core';
+
 class SmallModal extends React.Component {
   constructor(props) {
     super(props);
@@ -105,8 +109,10 @@ class SmallModal extends React.Component {
 ```
 
 ## Modal (Large)
-
 ```js
+import React from 'react';
+import { Modal, Button } from '@patternfly/react-core';
+
 class LargeModal extends React.Component {
   constructor(props) {
     super(props);
@@ -155,8 +161,10 @@ class LargeModal extends React.Component {
 ```
 
 ## Modal (Width)
-
 ```js
+import React from 'react';
+import { Modal, Button } from '@patternfly/react-core';
+
 class WidthModal extends React.Component {
   constructor(props) {
     super(props);
@@ -205,8 +213,10 @@ class WidthModal extends React.Component {
 ```
 
 ## Modal (No Header)
-
 ```js
+import React from 'react';
+import { Modal, Button } from '@patternfly/react-core';
+
 class NoHeader extends React.Component {
   constructor(props) {
     super(props);

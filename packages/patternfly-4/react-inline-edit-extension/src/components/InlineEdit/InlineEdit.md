@@ -7,15 +7,26 @@ section: 'inline-table'
 
 import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
 import {
-editableTableBody,
-editableRowWrapper,
-inlineEditFormatterFactory,
-TableEditConfirmation,
-TableTextInput
+  editableTableBody,
+  editableRowWrapper,
+  inlineEditFormatterFactory,
+  TableEditConfirmation,
+  TableTextInput
 } from '@patternfly/react-inline-edit-extension';
 import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
 
 ```js
+import React from 'react';
+import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
+import {
+  editableTableBody,
+  editableRowWrapper,
+  inlineEditFormatterFactory,
+  TableEditConfirmation,
+  TableTextInput
+} from '@patternfly/react-inline-edit-extension';
+import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
+
 class EditableTable extends React.Component {
   constructor(props) {
     super(props);
@@ -319,8 +330,18 @@ class EditableTable extends React.Component {
 ```
 
 ## Editable Table With Inline Edit Columns
-
 ```js
+import React from 'react';
+import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
+import {
+  editableTableBody,
+  editableRowWrapper,
+  inlineEditFormatterFactory,
+  TableEditConfirmation,
+  TableTextInput
+} from '@patternfly/react-inline-edit-extension';
+import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
+
 class EditableTableColumn extends React.Component {
   constructor(props) {
     super(props);
@@ -469,8 +490,18 @@ class EditableTableColumn extends React.Component {
 ```
 
 ## Editable Table With Collapsible Rows
-
 ```js
+import React from 'react';
+import { Table, TableHeader, TableBody, RowWrapper, TableVariant, ExpandableRowContent } from '@patternfly/react-table';
+import {
+  editableTableBody,
+  editableRowWrapper,
+  inlineEditFormatterFactory,
+  TableEditConfirmation,
+  TableTextInput
+} from '@patternfly/react-inline-edit-extension';
+import { Dropdown, DropdownToggle, DropdownItem, Checkbox } from '@patternfly/react-core';
+
 class CollapsibleEditableTable extends React.Component {
   constructor(props) {
     super(props);

@@ -3,11 +3,13 @@ title: 'Title'
 cssPrefix: 'pf-c-title'
 ---
 
-## Title Sizes
-
 import { Title } from '@patternfly/react-core';
 
+## Title Sizes
 ```js
+import React from 'react';
+import { Title } from '@patternfly/react-core';
+
 <React.Fragment>
   <Title headingLevel="h1" size="4xl">
     4xl Title

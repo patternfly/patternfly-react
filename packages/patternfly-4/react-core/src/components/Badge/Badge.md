@@ -2,11 +2,13 @@
 title: 'Badge'
 cssPrefix: 'pf-c-badge'
 ---
-## Badge (Read)
-
 import { Badge } from '@patternfly/react-core';
 
+## Badge (Read)
 ```js
+import React from 'react';
+import { Badge } from '@patternfly/react-core';
+
 ReadBadge = () => (
   <React.Fragment>
     <Badge isRead>7</Badge>
@@ -19,6 +21,9 @@ ReadBadge = () => (
 
 ## Badge (Unread)
 ```js
+import React from 'react';
+import { Badge } from '@patternfly/react-core';
+
 UnreadBadge = () => (
   <React.Fragment>
     <Badge>7</Badge>

@@ -9,6 +9,11 @@ import brandImg from './examples/brandImg.svg';
 import logoImg from './examples/logoImg.svg';
 
 ```js
+import React from 'react';
+import { AboutModal, Button, TextContent, TextList, TextListItem } from '@patternfly/react-core';
+import brandImg from './examples/brandImg.svg';
+import logoImg from './examples/logoImg.svg';
+
 class SimpleAboutModal extends React.Component {
   constructor(props) {
     super(props);

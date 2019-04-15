@@ -18,6 +18,19 @@ import {
 import { ExclamationCircleIcon } from '@patternfly/react-icons';
 
 ```js
+import React from 'react';
+import brandImgColor from './examples/brandImgColor.svg';
+import {
+  LoginFooterItem,
+  LoginForm,
+  LoginMainFooterBandItem,
+  LoginMainFooterLinksItem,
+  LoginPage,
+  BackgroundImageSrc,
+  ListItem
+} from '@patternfly/react-core';
+import { ExclamationCircleIcon } from '@patternfly/react-icons';
+
 class SimpleLoginPage extends React.Component {
   constructor(props) {
     super(props);

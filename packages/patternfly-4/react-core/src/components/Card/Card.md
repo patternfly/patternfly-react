@@ -3,11 +3,13 @@ title: 'Card'
 cssPrefix: 'pf-c-card'
 ---
 
-## Simple Card
-
 import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
 
+## Simple Card
 ```js
+import React from 'react';
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+
 SimpleCard = () => (
   <Card>
     <CardHeader>Header</CardHeader>
@@ -18,8 +20,10 @@ SimpleCard = () => (
 ```
 
 ## Card with no Footer
-
 ```js
+import React from 'react';
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+
 NoFooterCard = () => (
   <Card>
     <CardHeader>Header</CardHeader>
@@ -29,8 +33,10 @@ NoFooterCard = () => (
 ```
 
 ## Card with no Header
-
 ```js
+import React from 'react';
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+
 NoHeaderCard = () => (
   <Card>
     <CardBody>This card has no header</CardBody>
@@ -40,8 +46,10 @@ NoHeaderCard = () => (
 ```
 
 ## Card with only a Content Section
-
 ```js
+import React from 'react';
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+
 ContentOnlyCard = () => (
   <Card>
     <CardBody>Body</CardBody>
@@ -50,8 +58,10 @@ ContentOnlyCard = () => (
 ```
 
 ## Card with multiple body sections
-
 ```js
+import React from 'react';
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+
 MultipleBodyCard = () => (
   <Card>
     <CardHeader>Header</CardHeader>
@@ -64,8 +74,10 @@ MultipleBodyCard = () => (
 ```
 
 ## Card with only one body that fills
-
 ```js
+import React from 'react';
+import { Card, CardHeader, CardBody, CardFooter } from '@patternfly/react-core';
+
 NoFillBodyCard = () => (
   <Card style={{ minHeight: '30em' }}>
     <CardHeader>Header</CardHeader>

@@ -17,6 +17,18 @@ import {
 import { CubesIcon } from '@patternfly/react-icons';
 
 ```js
+import React from 'react';
+import {
+  Title,
+  Button,
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions
+} from '@patternfly/react-core';
+import { CubesIcon } from '@patternfly/react-icons';
+
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.full}>
     <EmptyStateIcon icon={CubesIcon} />
@@ -41,8 +53,19 @@ SimpleEmptyState = () => (
 ```
 
 ## Empty State Small
-
 ```js
+import React from 'react';
+import {
+  Title,
+  Button,
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions
+} from '@patternfly/react-core';
+import { CubesIcon } from '@patternfly/react-icons';
+
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.small}>
     <EmptyStateIcon icon={CubesIcon} />
@@ -67,8 +90,19 @@ SimpleEmptyState = () => (
 ```
 
 ## Empty State Large
-
 ```js
+import React from 'react';
+import {
+  Title,
+  Button,
+  EmptyState,
+  EmptyStateVariant,
+  EmptyStateIcon,
+  EmptyStateBody,
+  EmptyStateSecondaryActions
+} from '@patternfly/react-core';
+import { CubesIcon } from '@patternfly/react-icons';
+
 SimpleEmptyState = () => (
   <EmptyState variant={EmptyStateVariant.large}>
     <EmptyStateIcon icon={CubesIcon} />

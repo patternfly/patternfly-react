@@ -16,6 +16,17 @@ import {
 } from '@patternfly/react-core';
 
 ```js
+import React from 'react';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  NavVariants
+} from '@patternfly/react-core';
+
 class NavSimpleList extends React.Component {
   constructor(props) {
     super(props);
@@ -55,8 +66,18 @@ class NavSimpleList extends React.Component {
 ```
 
 ## Nav (Grouped)
-
 ```js
+import React from 'react';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  NavVariants
+} from '@patternfly/react-core';
+
 class NavGroupedList extends React.Component {
   constructor(props) {
     super(props);
@@ -103,8 +124,18 @@ class NavGroupedList extends React.Component {
 ```
 
 ## Nav (Default)
-
 ```js
+import React from 'react';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  NavVariants
+} from '@patternfly/react-core';
+
 class NavDefaultList extends React.Component {
   constructor(props) {
     super(props);
@@ -143,8 +174,18 @@ class NavDefaultList extends React.Component {
 ```
 
 ## Nav (Expandable)
-
 ```js
+import React from 'react';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  NavVariants
+} from '@patternfly/react-core';
+
 class NavExpandableList extends React.Component {
   constructor(props) {
     super(props);
@@ -237,8 +278,18 @@ class NavExpandableList extends React.Component {
 ```
 
 ## Nav (Expandable+Titles)
-
 ```js
+import React from 'react';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  NavVariants
+} from '@patternfly/react-core';
+
 class NavExpandableTitlesList extends React.Component {
   constructor(props) {
     super(props);
@@ -325,8 +376,18 @@ class NavExpandableTitlesList extends React.Component {
 ```
 
 ## Nav (Mixed)
-
 ```js
+import React from 'react';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  NavVariants
+} from '@patternfly/react-core';
+
 class NavMixedList extends React.Component {
   constructor(props) {
     super(props);
@@ -416,8 +477,18 @@ class NavMixedList extends React.Component {
 ```
 
 ## Nav (Horizontal)
-
 ```js
+import React from 'react';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  NavVariants
+} from '@patternfly/react-core';
+
 class NavHorizontalList extends React.Component {
   constructor(props) {
     super(props);
@@ -455,8 +526,18 @@ class NavHorizontalList extends React.Component {
 ```
 
 ## Nav (Tertiary)
-
 ```js
+import React from 'react';
+import {
+  Nav,
+  NavExpandable,
+  NavItem,
+  NavItemSeparator,
+  NavList,
+  NavGroup,
+  NavVariants
+} from '@patternfly/react-core';
+
 class NavTertiaryList extends React.Component {
   constructor(props) {
     super(props);

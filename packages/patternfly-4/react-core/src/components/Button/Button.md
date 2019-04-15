@@ -9,12 +9,19 @@ import { Button } from '@patternfly/react-core';
 import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
 
 ```js
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
+
 BlockButton = () => <Button isBlock>Block level button</Button>;
 ```
 
 ## Button Variants
-
 ```js
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
+
 ButtonVariants = () => (
   <React.Fragment>
     <Button variant="primary">Primary</Button> <Button variant="secondary">Secondary</Button>{' '}
@@ -30,8 +37,11 @@ ButtonVariants = () => (
 ```
 
 ## Link Button
-
 ```js
+import React from 'react';
+import { Button } from '@patternfly/react-core';
+import { TimesIcon, PlusCircleIcon } from '@patternfly/react-icons';
+
 LinkButton = () => (
   <React.Fragment>
     <Button component="a" href="https://pf-next.com/" target="_blank" variant="primary">

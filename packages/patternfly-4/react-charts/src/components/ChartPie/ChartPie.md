@@ -9,6 +9,10 @@ import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 ```js
+import React from 'react';
+import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+
 <div>
   <div style={{ height: 450, width: 450 }}>
     <ChartPie
@@ -27,8 +31,11 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 ```
 
 ## Multi-Color Themed Pie Chart
-
 ```js
+import React from 'react';
+import { ChartLegend, ChartTheme, ChartPie } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+
 <div>
   <div style={{ height: 450, width: 450 }}>
     <ChartPie

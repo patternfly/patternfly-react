@@ -3,11 +3,13 @@ title: 'Popover'
 cssPrefix: 'pf-c-popover'
 ---
 
-## Simple Popover
-
 import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
 
+## Simple Popover
 ```js
+import React from 'react';
+import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
+
 SimplePopover = () => (
   <Popover
     position="right"
@@ -23,8 +25,10 @@ SimplePopover = () => (
 ```
 
 ## Advanced Popover
-
 ```js
+import React from 'react';
+import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
+
 class AdvancedPopover extends React.Component {
   constructor(props) {
     super(props);
@@ -108,8 +112,10 @@ class AdvancedPopover extends React.Component {
 ```
 
 ## Popover (Headless)
-
 ```js
+import React from 'react';
+import { Popover, PopoverPosition, Checkbox, Button } from '@patternfly/react-core';
+
 HeadlessPopover = () => (
   <Popover
     position="right"

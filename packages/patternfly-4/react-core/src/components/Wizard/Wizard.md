@@ -10,6 +10,11 @@ import SampleFormOne from './examples/SampleFormOne';
 import SampleFormTwo from './examples/SampleFormTwo';
 
 ```js
+import React from 'react';
+import { Button, Wizard, Form, FormGroup, TextInput } from '@patternfly/react-core';
+import SampleFormOne from './examples/SampleFormOne';
+import SampleFormTwo from './examples/SampleFormTwo';
+
 class SimpleWizard extends React.Component {
   constructor(props) {
     super(props);
@@ -55,8 +60,12 @@ class SimpleWizard extends React.Component {
 ```
 
 ### Validation Wizard
-
 ```js
+import React from 'react';
+import { Button, Wizard, Form, FormGroup, TextInput } from '@patternfly/react-core';
+import SampleFormOne from './examples/SampleFormOne';
+import SampleFormTwo from './examples/SampleFormTwo';
+
 class ValidationWizard extends React.Component {
   constructor(props) {
     super(props);

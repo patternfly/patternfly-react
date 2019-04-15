@@ -2,11 +2,13 @@
 title: 'Context Selector'
 ---
 
-## Simple Context Selector
-
 import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
 
+## Simple Context Selector
 ```js
+import React from 'react';
+import { ContextSelector, ContextSelectorItem } from '@patternfly/react-core';
+
 class SimpleContextSelector extends React.Component {
   constructor(props) {
     super(props);

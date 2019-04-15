@@ -13,6 +13,10 @@ import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-chart
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 ```js
+import React from 'react';
+import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+
 <div style={{ width: 450, height: 300, marginRight: 20, marginLeft: 20 }}>
   <Chart theme={ChartTheme.light.blue}>
     <ChartStack>
@@ -26,8 +30,11 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 ```
 
 ## Vertical Multi-Color Themed Stack Chart
-
 ```js
+import React from 'react';
+import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+
 <div style={{ width: 450, height: 300, marginRight: 20, marginLeft: 20 }}>
   <Chart theme={ChartTheme.light.multi}>
     <ChartStack>
@@ -41,8 +48,11 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 ```
 
 ## Horizontal Blue Themed Stack Chart
-
 ```js
+import React from 'react';
+import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+
 <div style={{ width: 450, height: 450, marginLeft: 20, marginRight: 20 }}>
   <Chart theme={ChartTheme.light.blue}>
     <ChartStack horizontal>
@@ -56,8 +66,11 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 ```
 
 ## Horizontal Multi-Color Stack Chart
-
 ```js
+import React from 'react';
+import { Chart, ChartBar, ChartStack, ChartTheme } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+
 <div style={{ width: 450, height: 450, marginLeft: 20, marginRight: 20 }}>
   <Chart theme={ChartTheme.light.multi}>
     <ChartStack horizontal>

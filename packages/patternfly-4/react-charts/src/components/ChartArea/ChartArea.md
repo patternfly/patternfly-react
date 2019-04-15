@@ -3,11 +3,13 @@ title: 'Area Chart'
 section: 'charts'
 ---
 
-## Simple Chart
-
 import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '@patternfly/react-charts';
 
+## Simple Chart
 ```js
+import React from 'react';
+import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '@patternfly/react-charts';
+
 class SimpleChart extends React.Component {
   constructor(props) {
     super(props);
@@ -74,8 +76,10 @@ class SimpleChart extends React.Component {
 ```
 
 ## Custom Colors Chart
-
 ```js
+import React from 'react';
+import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '@patternfly/react-charts';
+
 class CustomColorsChart extends React.Component {
   constructor(props) {
     super(props);
@@ -158,8 +162,10 @@ class CustomColorsChart extends React.Component {
 ```
 
 ## Dark Green Theme Chart
-
 ```js
+import React from 'react';
+import { ChartArea, ChartGroup, ChartLegend, ChartTheme, ChartVoronoiContainer } from '@patternfly/react-charts';
+
 class DarkGreenThemeChart extends React.Component {
   constructor(props) {
     super(props);

@@ -3,8 +3,6 @@ title: 'Text'
 cssPrefix: 'pf-c-content'
 ---
 
-## Headings
-
 import {
   TextContent,
   Text,
@@ -15,7 +13,19 @@ import {
   TextListItemVariants
 } from '@patternfly/react-core';
 
+## Headings
 ```js
+import React from 'react';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
+
 <TextContent>
   <Text component={TextVariants.h1}>Hello World</Text>
   <Text component={TextVariants.h2}>Second level</Text>
@@ -27,8 +37,18 @@ import {
 ```
 
 ## Body Text
-
 ```js
+import React from 'react';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
+
 <TextContent>
   <Text component={TextVariants.p}>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc
@@ -55,6 +75,17 @@ import {
 Text components such as Text, TextList, TextListItem need to be placed within a TextContent
 
 ```js
+import React from 'react';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
+
 <TextContent>
   <TextList>
     <TextListItem>In fermentum leo eu lectus mollis, quis dictum mi aliquet.</TextListItem>
@@ -72,8 +103,18 @@ Text components such as Text, TextList, TextListItem need to be placed within a 
 ```
 
 ## Ordered List
-
 ```js
+import React from 'react';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
+
 <TextContent>
   <TextList component={TextListVariants.ol}>
     <TextListItem>Donec blandit a lorem id convallis.</TextListItem>
@@ -88,8 +129,18 @@ Text components such as Text, TextList, TextListItem need to be placed within a 
 ```
 
 ## Data List
-
 ```js
+import React from 'react';
+import {
+  TextContent,
+  Text,
+  TextVariants,
+  TextList,
+  TextListVariants,
+  TextListItem,
+  TextListItemVariants
+} from '@patternfly/react-core';
+
 <TextContent>
   <TextList component={TextListVariants.dl}>
     <TextListItem component={TextListItemVariants.dt}>Web</TextListItem>

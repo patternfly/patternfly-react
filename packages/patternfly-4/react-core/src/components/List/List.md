@@ -3,11 +3,13 @@ title: 'List'
 cssPrefix: 'pf-c-list'
 ---
 
-## Simple List
-
 import { List, ListItem } from '@patternfly/react-core';
 
+## Simple List
 ```js
+import React from 'react';
+import { List, ListItem } from '@patternfly/react-core';
+
 SimpleList = (
   <List>
     <ListItem>First</ListItem>
@@ -18,8 +20,10 @@ SimpleList = (
 ```
 
 ## Inline List
-
 ```js
+import React from 'react';
+import { List, ListItem } from '@patternfly/react-core';
+
 InlineList = (
   <List variant="inline">
     <ListItem>First</ListItem>
@@ -30,8 +34,10 @@ InlineList = (
 ```
 
 ## Grid List
-
 ```js
+import React from 'react';
+import { List, ListItem } from '@patternfly/react-core';
+
 GridList = () => (
   <List variant="grid">
     <ListItem>First</ListItem>

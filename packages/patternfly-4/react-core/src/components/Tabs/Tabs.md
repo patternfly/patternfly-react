@@ -10,6 +10,9 @@ import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
 Use Primary Sections
 
 ```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+
 class SimpleTabs extends React.Component {
   constructor(props) {
     super(props);
@@ -43,8 +46,10 @@ class SimpleTabs extends React.Component {
 ```
 
 ## Scroll Buttons Tabs
-
 ```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+
 class ScrollButtonsTabs extends React.Component {
   constructor(props) {
     super(props);
@@ -106,8 +111,10 @@ class ScrollButtonsTabs extends React.Component {
 ```
 
 ## Secondary Buttons Tabs
-
 ```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+
 class SecondaryTabs extends React.Component {
   constructor(props) {
     super(props);
@@ -158,8 +165,10 @@ class SecondaryTabs extends React.Component {
 ```
 
 ## Filled Buttons Tabs
-
 ```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+
 class FilledTabs extends React.Component {
   constructor(props) {
     super(props);
@@ -193,8 +202,10 @@ class FilledTabs extends React.Component {
 ```
 
 ## Accessible Secondary Tabs
-
 ```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+
 class AccessibleSecondaryTabs extends React.Component {
   constructor(props) {
     super(props);
@@ -258,8 +269,10 @@ class AccessibleSecondaryTabs extends React.Component {
 ```
 
 ## AccessibleTabs
-
 ```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+
 class AccessibleTabs extends React.Component {
   constructor(props) {
     super(props);
@@ -299,8 +312,10 @@ class AccessibleTabs extends React.Component {
 ```
 
 ## SeparateTabContent
-
 ```js
+import React from 'react';
+import { Tabs, Tab, TabsVariant, TabContent } from '@patternfly/react-core';
+
 class SeparateTabContent extends React.Component {
   constructor(props) {
     super(props);

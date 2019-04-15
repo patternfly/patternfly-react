@@ -7,8 +7,11 @@ import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from
 import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 
 ## Green Themed Line Chart
-
 ```js
+import React from 'react';
+import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+
 <div style={{ display: 'flex-inline' }}>
   <div style={{ width: 450, height: 360 }}>
     <div>
@@ -69,8 +72,11 @@ import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
 ```
 
 ## Multi-color Themed Line Chart
-
 ```js
+import React from 'react';
+import { Chart, ChartGroup, ChartLegend, ChartLine, ChartTheme, ChartAxis } from '@patternfly/react-charts';
+import { Grid, GridItem, Text, TextVariants } from '@patternfly/react-core';
+
 <div style={{ display: 'flex-inline' }}>
   <div style={{ width: 450, height: 360 }}>
     <div>

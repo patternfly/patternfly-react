@@ -18,7 +18,6 @@ const MdxTemplate = ({ data }) => {
     .map(edge => edge.node.name)
     .filter(name => name) // Some HOCs don't get docgenned properly (like TabContent)
     .filter(name => data.mdx.code.body.indexOf(name) !== -1);
-  console.log('propComponents', propComponents);
 
   // Finally, the props for each relevant component!
   const props = data.metadata.edges

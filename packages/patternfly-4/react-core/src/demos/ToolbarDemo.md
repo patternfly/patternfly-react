@@ -20,6 +20,22 @@ import {
 import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
 
 ```js
+import React from 'react';
+import {
+  Button,
+  Dropdown,
+  DropdownPosition,
+  DropdownToggle,
+  DropdownItem,
+  KebabToggle,
+  TextInput,
+  Toolbar,
+  ToolbarGroup,
+  ToolbarItem,
+  ToolbarSection
+} from '@patternfly/react-core';
+import { ListUlIcon, SortAlphaDownIcon, TableIcon } from '@patternfly/react-icons';
+
 class ComplexToolbarDemo extends React.Component {
   constructor(props) {
     super(props);
