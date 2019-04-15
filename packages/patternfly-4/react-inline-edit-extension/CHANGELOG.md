@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@2.0.0...@patternfly/react-inline-edit-extension@2.0.1) (2019-04-15)
+
+### BREAKING CHANGES
+
+* Update React with changes from core ([#1703](https://github.com/patternfly/patternfly-react/issues/1703)) ([a219cae](https://github.com/patternfly/patternfly-react/commit/a219cae)), closes [#1680](https://github.com/patternfly/patternfly-react/issues/1680) [#1684](https://github.com/patternfly/patternfly-react/issues/1684) [#1684](https://github.com/patternfly/patternfly-react/issues/1684)
+* **css:** change css import methodology ([#1592](https://github.com/patternfly/patternfly-react/issues/1592)) ([80cd41a](https://github.com/patternfly/patternfly-react/commit/80cd41a))
+
+
+### Features
+
+* **gatsby:** Refactor Gatsby ([#1656](https://github.com/patternfly/patternfly-react/issues/1656)) ([bc32a25](https://github.com/patternfly/patternfly-react/commit/bc32a25))
+
+
+
+
+
 ## [1.1.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-inline-edit-extension@1.1.10...@patternfly/react-inline-edit-extension@1.1.11) (2019-04-02)
 
 **Note:** Version bump only for package @patternfly/react-inline-edit-extension

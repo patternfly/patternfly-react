@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@2.0.0...@patternfly/react-table@2.0.1) (2019-04-15)
+
+### BREAKING CHANGES
+
+* Update React with changes from core ([#1703](https://github.com/patternfly/patternfly-react/issues/1703)) ([a219cae](https://github.com/patternfly/patternfly-react/commit/a219cae)), closes [#1680](https://github.com/patternfly/patternfly-react/issues/1680) [#1684](https://github.com/patternfly/patternfly-react/issues/1684) [#1684](https://github.com/patternfly/patternfly-react/issues/1684)
+
+
+
+
+
+# [1.5.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.4.11...@patternfly/react-table@1.5.0) (2019-04-15)
+
+
+### Bug Fixes
+
+* Update React with changes from core ([#1703](https://github.com/patternfly/patternfly-react/issues/1703)) ([a219cae](https://github.com/patternfly/patternfly-react/commit/a219cae)), closes [#1680](https://github.com/patternfly/patternfly-react/issues/1680) [#1684](https://github.com/patternfly/patternfly-react/issues/1684) [#1684](https://github.com/patternfly/patternfly-react/issues/1684)
+* **table:** Make these types optional: transforms, cellTransforms, formatters, and cellFormatters ([#1663](https://github.com/patternfly/patternfly-react/issues/1663)) ([04aba61](https://github.com/patternfly/patternfly-react/commit/04aba61)), closes [#1463](https://github.com/patternfly/patternfly-react/issues/1463)
+* **Table:** fix type-o in ICell Interface transform (transfrom) ([#1664](https://github.com/patternfly/patternfly-react/issues/1664)) ([70fedc9](https://github.com/patternfly/patternfly-react/commit/70fedc9)), closes [#1662](https://github.com/patternfly/patternfly-react/issues/1662)
+* **Table:** Update expanded row to span over all cells and remove padding ([#1744](https://github.com/patternfly/patternfly-react/issues/1744)) ([9701e45](https://github.com/patternfly/patternfly-react/commit/9701e45))
+
+
+### Features
+
+* **css:** change css import methodology ([#1592](https://github.com/patternfly/patternfly-react/issues/1592)) ([80cd41a](https://github.com/patternfly/patternfly-react/commit/80cd41a))
+* **gatsby:** Refactor Gatsby ([#1656](https://github.com/patternfly/patternfly-react/issues/1656)) ([bc32a25](https://github.com/patternfly/patternfly-react/commit/bc32a25))
+
+
+
+
+
 ## [1.4.11](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-table@1.4.10...@patternfly/react-table@1.4.11) (2019-04-02)
 
 **Note:** Version bump only for package @patternfly/react-table
