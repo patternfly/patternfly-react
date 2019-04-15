@@ -29,6 +29,11 @@ module.exports = ${styleSheetToken}.parse(\`${cssString}\`);
 `;
 }
 
+export function getFullCSS(pathToCSSFile) {
+  const rawCss = readFileSync(pathToCSSFile, 'utf8').replace('@charset "UTF-8";', '');
+  return rawCss;
+}
+
 export function getCSS(pathToCSSFile) {
   const rawCss = readFileSync(pathToCSSFile, 'utf8').replace('@charset "UTF-8";', '');
   return minifyCSS(rawCss);
