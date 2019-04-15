@@ -1,7 +1,7 @@
 import { HTMLProps, FormEvent } from 'react';
-import { Omit } from '../../typeUtils';
+import { Omit } from '../../helpers/typeUtils';
 
-export interface CheckboxSelectGroupProps extends Omit<HTMLProps<HTMLOptionElement>> {
+export interface CheckboxSelectGroupProps extends Omit<HTMLProps<HTMLOptionElement>, 'disabled'> {
   label?: string;
 }
 

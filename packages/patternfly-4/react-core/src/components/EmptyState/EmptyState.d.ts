@@ -1,7 +1,7 @@
 import { FunctionComponent, HTMLProps, ReactNode } from 'react';
 import { OneOf, Omit } from '../../helpers/typeUtils';
 
-export const EmptyStateVariant = {
+export const EmptyStateVariant : {
   large: 'large',
   small: 'small',
   full: 'full'
