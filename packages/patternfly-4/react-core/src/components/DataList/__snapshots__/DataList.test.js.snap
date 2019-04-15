@@ -1,14 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DataList Cell 1`] = `
-<div
-  className="pf-c-data-list__cell data-list-custom"
-  id="primary-item"
->
-  Primary Id
-</div>
-`;
-
 exports[`DataList Cell default 1`] = `
 <div
   className="pf-c-data-list__cell"
@@ -17,76 +8,147 @@ exports[`DataList Cell default 1`] = `
 </div>
 `;
 
-exports[`DataList DataListAction button 1`] = `
-<Button
-  aria-label={null}
-  className=""
-  component="button"
-  id="delete-item-1"
-  isActive={false}
-  isBlock={false}
-  isDisabled={false}
-  isFocus={false}
-  isHover={false}
-  type="button"
-  variant="primary"
+exports[`DataList Cells 1`] = `
+<div
+  className="pf-c-data-list__item-content"
 >
-  Delete
-</Button>
+  <DataListCell
+    alignRight={false}
+    className="data-list-custom"
+    id="primary-item"
+    isFilled={true}
+    isIcon={false}
+    key="list-id-1"
+    width={1}
+  >
+    Primary Id
+  </DataListCell>
+  <DataListCell
+    alignRight={false}
+    className="data-list-custom"
+    id="primary-item"
+    isFilled={true}
+    isIcon={false}
+    key="list-id-2"
+    width={1}
+  >
+    Primary Id 2
+  </DataListCell>
+</div>
+`;
+
+exports[`DataList DataListAction button 1`] = `
+<div
+  className="pf-c-data-list__item-action"
+>
+  <div
+    className="pf-c-data-list__action"
+  >
+    <Button
+      aria-label={null}
+      className=""
+      component="button"
+      id="delete-item-1"
+      isActive={false}
+      isBlock={false}
+      isDisabled={false}
+      isFocus={false}
+      isHover={false}
+      type="button"
+      variant="primary"
+    >
+      Delete
+    </Button>
+  </div>
+</div>
 `;
 
 exports[`DataList DataListAction dropdown 1`] = `
 <div
-  className="pf-c-data-list__action"
+  className="pf-c-data-list__item-action"
 >
-  <Dropdown
-    className=""
-    direction="down"
-    dropdownItems={
-      Array [
-        <Item
+  <div
+    className="pf-c-data-list__action"
+  >
+    <Dropdown
+      className=""
+      direction="down"
+      dropdownItems={
+        Array [
+          <Item
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            onClick={[MockFunction]}
+          >
+            action-1
+          </Item>,
+          <Item
+            className=""
+            component="button"
+            href="#"
+            isDisabled={false}
+            isHovered={false}
+            onClick={[MockFunction]}
+          >
+            action-2
+          </Item>,
+        ]
+      }
+      isOpen={false}
+      isPlain={true}
+      onSelect={[Function]}
+      position="right"
+      toggle={
+        <Kebab
+          aria-label="Actions"
           className=""
-          component="button"
-          href="#"
+          id=""
+          isActive={false}
           isDisabled={false}
+          isFocused={false}
           isHovered={false}
-          onClick={[MockFunction]}
-        >
-          action-1
-        </Item>,
-        <Item
-          className=""
-          component="button"
-          href="#"
-          isDisabled={false}
-          isHovered={false}
-          onClick={[MockFunction]}
-        >
-          action-2
-        </Item>,
-      ]
-    }
-    isOpen={false}
-    isPlain={true}
-    onSelect={[Function]}
-    position="right"
-    toggle={
-      <Kebab
-        aria-label="Actions"
-        className=""
-        id=""
-        isActive={false}
-        isDisabled={false}
-        isFocused={false}
-        isHovered={false}
-        isOpen={false}
-        isPlain={false}
-        onToggle={[Function]}
-        parentRef={null}
-      />
-    }
-  />
+          isOpen={false}
+          isPlain={false}
+          onToggle={[Function]}
+          parentRef={null}
+        />
+      }
+    />
+  </div>
 </div>
+`;
+
+exports[`DataList DataListContent 1`] = `
+<section
+  aria-label="Primary Content Details"
+  className="pf-c-data-list__expandable-content"
+  hidden={false}
+  id=""
+>
+  <div
+    className="pf-c-data-list__expandable-content-body"
+  >
+     test
+  </div>
+</section>
+`;
+
+exports[`DataList DataListContent noPadding 1`] = `
+<section
+  aria-label="Primary Content Details"
+  className="pf-c-data-list__expandable-content"
+  hidden={true}
+  id=""
+>
+  <div
+    className="pf-c-data-list__expandable-content-body pf-m-no-padding"
+  >
+    test
+  </div>
+</section>
 `;
 
 exports[`DataList Item 1`] = `
@@ -116,5 +178,11 @@ exports[`DataList List default 1`] = `
   aria-label="this is a simple list"
   className="pf-c-data-list"
   role="list"
+/>
+`;
+
+exports[`DataList item row default 1`] = `
+<div
+  className="pf-c-data-list__item-row"
 />
 `;
