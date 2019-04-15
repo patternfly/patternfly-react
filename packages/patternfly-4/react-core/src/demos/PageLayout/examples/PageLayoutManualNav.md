@@ -1,6 +1,6 @@
 ---
-title: "Page Layout Manual Nav"
-section: "demos"
+title: 'Page Layout Manual Nav'
+section: 'demos'
 fullscreen: true
 ---
 

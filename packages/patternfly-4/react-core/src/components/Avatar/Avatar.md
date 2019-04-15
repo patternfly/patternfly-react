@@ -1,6 +1,6 @@
 ---
-title: "Avatar"
-cssPrefix: "pf-c-avatar"
+title: 'Avatar'
+cssPrefix: 'pf-c-avatar'
 ---
 ## Simple Avatar
 

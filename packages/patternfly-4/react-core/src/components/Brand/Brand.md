@@ -1,5 +1,5 @@
 ---
-title: "Brand"
+title: 'Brand'
 cssPrefix: null
 ---
 ## Simple Brand

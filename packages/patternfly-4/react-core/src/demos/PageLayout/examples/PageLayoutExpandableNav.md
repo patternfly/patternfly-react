@@ -1,6 +1,6 @@
 ---
-title: "Page Layout Expandable Nav"
-section: "demos"
+title: 'Page Layout Expandable Nav'
+section: 'demos'
 fullscreen: true
 ---
 

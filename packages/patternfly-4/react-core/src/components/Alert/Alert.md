@@ -1,6 +1,6 @@
 ---
-title: "Alert"
-cssPrefix: "pf-c-alert"
+title: 'Alert'
+cssPrefix: 'pf-c-alert'
 ---
 ## Info Alert
 

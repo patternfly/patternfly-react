@@ -1,6 +1,6 @@
 ---
-title: "Table"
-cssPrefix: "pf-c-table"
+title: 'Table'
+cssPrefix: 'pf-c-table'
 ---
 Note: Table lives in its own package at [`@patternfly/react-table`](https://www.npmjs.com/package/@patternfly/react-table)!
 

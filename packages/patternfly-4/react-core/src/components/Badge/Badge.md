@@ -1,6 +1,6 @@
 ---
-title: "Badge"
-cssPrefix: "pf-c-badge"
+title: 'Badge'
+cssPrefix: 'pf-c-badge'
 ---
 ## Badge (Read)
 

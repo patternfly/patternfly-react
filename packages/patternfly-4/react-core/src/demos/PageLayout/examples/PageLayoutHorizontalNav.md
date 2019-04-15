@@ -1,6 +1,6 @@
 ---
-title: "Page Layout Horizontal Nav"
-section: "demos"
+title: 'Page Layout Horizontal Nav'
+section: 'demos'
 fullscreen: true
 ---
 

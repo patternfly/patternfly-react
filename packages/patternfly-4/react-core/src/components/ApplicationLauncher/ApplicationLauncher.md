@@ -1,6 +1,6 @@
 ---
-title: "Application Launcher"
-cssPrefix: "pf-c-app-launcher"
+title: 'Application Launcher'
+cssPrefix: 'pf-c-app-launcher'
 ---
 ## Simple Application Launcher
 

@@ -1,6 +1,6 @@
 ---
-title: "Toolbar"
-section: "demos"
+title: 'Toolbar'
+section: 'demos'
 ---
 ## Toolbar Demo
 

@@ -1,6 +1,6 @@
 ---
-title: "Background Image"
-cssPrefix: "pf-c-background-image"
+title: 'Background Image'
+cssPrefix: 'pf-c-background-image'
 ---
 ## Simple Background Image
 

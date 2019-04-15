@@ -1,6 +1,6 @@
 ---
-title: "Page Layout"
-section: "demos"
+title: 'Page Layout'
+section: 'demos'
 ---
 ## Using simple navigation
 <a href="pagelayoutsimplenav" target="_blank">Popout example</a>

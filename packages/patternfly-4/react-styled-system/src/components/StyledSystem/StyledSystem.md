@@ -1,6 +1,6 @@
 ---
-title: "Styled System"
-section: "styled-system"
+title: 'Styled System'
+section: 'styled-system'
 ---
 ## **Warning, the StyledSystem components are experimental and in their own package _@patternfly/react-styled-system_. Use at your own risk!**
 The PatternFlyThemeProvider component maps CSS to PatternFly global values that can be used with StyledBox, StyledFlex, and StyledText components. The StyledFlex and StyledText components inherit all the props from StyledBox in addition to their own props. To apply the PatternFly theme, use <strong>PatternFlyThemeProvider</strong> at the root of your application.
