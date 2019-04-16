@@ -1,5 +1,5 @@
 import { FunctionComponent, HTMLProps, FormEvent } from 'react';
-import { Omit } from '../../helpers/typeUtils';
+import { OneOf, Omit } from '../../helpers/typeUtils';
 
 export const TabsVariant: {
   div: 'div';
