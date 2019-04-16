@@ -63,6 +63,7 @@ module.exports = {
       }
     },
     // The plugin for package.json files (to get version numbers)
-    `gatsby-transformer-json`
+    `gatsby-transformer-json`,
+    `gatsby-plugin-flow`
   ]
 };

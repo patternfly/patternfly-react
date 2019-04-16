@@ -91,6 +91,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@patternfly/react-core': path.resolve(__dirname, '../react-core'),
         '@patternfly/react-icons': path.resolve(__dirname, '../../react-icons'),
         '@patternfly/react-inline-edit-extension': path.resolve(__dirname, '../react-inline-edit-extension'),
+        '@patternfly/react-virtualized-extension': path.resolve(__dirname, '../react-virtualized-extension'),
         '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system'),
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles'),
         '@patternfly/react-table': path.resolve(__dirname, '../react-table'),
