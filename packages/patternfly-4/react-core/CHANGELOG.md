@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.1.3...@patternfly/react-core@3.2.0) (2019-04-16)
+
+
+### Bug Fixes
+
+* **Nav:** fix onSelect and onToggle arg list types from positional params to obj ([#1665](https://github.com/patternfly/patternfly-react/issues/1665)) ([bba2e4f](https://github.com/patternfly/patternfly-react/commit/bba2e4f)), closes [#1391](https://github.com/patternfly/patternfly-react/issues/1391)
+
+
+### Features
+
+* **mdx:** use mdx for docs ([#1753](https://github.com/patternfly/patternfly-react/issues/1753)) ([a03ecd0](https://github.com/patternfly/patternfly-react/commit/a03ecd0))
+
+
+
+
+
 ## [3.1.3](https://github.com/patternfly/patternfly-react/compare/@patternfly/react-core@3.1.2...@patternfly/react-core@3.1.3) (2019-04-15)
 
 **Note:** Version bump only for package @patternfly/react-core
