@@ -1,5 +1,5 @@
-const navHelpers = require("./src/helpers/navHelpers");
-const path = require("path");
+const navHelpers = require('./src/helpers/navHelpers');
+const path = require('path');
 
 // Add map PR-related environment variables to gatsby nodes
 exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
@@ -8,17 +8,17 @@ exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
   // Docs https://www.gatsbyjs.org/docs/actions/#createNode
   actions.createNode({
     name: 'PR_INFO',
-    num: num ? num : '',
-    url: url ? url : '',
+    num: num || '',
+    url: url || '',
     id: createNodeId(`PR_INFO`),
     parent: null,
     children: [],
     internal: {
       contentDigest: createContentDigest({ a: 'PR_INFO' }),
-      type: `EnvVars`,
-    },
+      type: `EnvVars`
+    }
   });
-};
+}
 
 // Create pages for markdown files
 exports.createPages = ({ graphql, actions }) => {
@@ -35,7 +35,6 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  }
   `);
 
   return mdx.then(({ data }) => {
@@ -55,7 +54,7 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve('./src/templates/mdxFullscreenTemplate.js'),
           context: {
             title: node.frontmatter.title,
-            fileAbsolutePath: node.fileAbsolutePath, // Helps us get the markdown
+            fileAbsolutePath: node.fileAbsolutePath // Helps us get the markdown
           }
         });
       } else {
@@ -74,9 +73,8 @@ exports.createPages = ({ graphql, actions }) => {
         });
       }
     });
-  });
-};
-
+  })
+}
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
@@ -92,6 +90,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         '@patternfly/react-core': path.resolve(__dirname, '../react-core'),
         '@patternfly/react-icons': path.resolve(__dirname, '../../react-icons'),
         '@patternfly/react-inline-edit-extension': path.resolve(__dirname, '../react-inline-edit-extension'),
+        '@patternfly/react-virtualized-extension': path.resolve(__dirname, '../react-virtualized-extension'),
         '@patternfly/react-styled-system': path.resolve(__dirname, '../react-styled-system'),
         '@patternfly/react-styles': path.resolve(__dirname, '../react-styles'),
         '@patternfly/react-table': path.resolve(__dirname, '../react-table'),
@@ -99,6 +98,6 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         // Hack to work downstream in https://github.com/patternfly/patternfly-org
         '@content': path.resolve(__dirname, 'src/components/componentDocs'),
       }
-    },
-  })
-};
+    }
+  });
+}

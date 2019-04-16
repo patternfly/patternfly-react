@@ -1,0 +1,58 @@
+{
+  "name": "@patternfly/react-virtualized-extension",
+  "version": "2.1.0",
+  "description": "This library provides efficient rendering extensions for PatternFly 4 React tables and lists.",
+  "main": "dist/js/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/js/index.d.ts",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "tag": "prerelease"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patternfly/patternfly-react.git"
+  },
+  "keywords": [
+    "react",
+    "patternfly",
+    "table",
+    "reacttabular"
+  ],
+  "author": "Red Hat",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/patternfly/patternfly-react/issues"
+  },
+  "homepage": "https://github.com/patternfly/patternfly-react/tree/master/packages/patternfly-4/",
+  "dependencies": {
+    "@patternfly/patternfly": "2.6.5",
+    "@patternfly/react-core": "^3.16.10",
+    "@patternfly/react-icons": "^3.8.1",
+    "@patternfly/react-styles": "^3.2.0",
+    "exenv": "^1.2.2",
+    "reactabular-table": "^8.14.0"
+  },
+  "peerDependencies": {
+    "@patternfly/react-table": "^2.5.11",
+    "lodash-es": "4.x",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^15.6.2 || ^16.4.0"
+  },
+  "scripts": {
+    "build": "yarn build:babel && yarn build:ts",
+    "build:babel": "concurrently \"yarn build:babel:cjs\" \"yarn build:babel:esm\"",
+    "build:babel:cjs": "cross-env BABEL_ENV=production:cjs babel src --out-dir dist/js",
+    "build:babel:esm": "cross-env BABEL_ENV=production:esm babel src --out-dir dist/esm",
+    "build:ts": "node ./scripts/copyTS.js",
+    "postbuild": "node ./build/copyStyles.js"
+  },
+  "devDependencies": {
+    "css": "^2.2.3",
+    "fs-extra": "^6.0.1",
+    "glob": "^7.1.2",
+    "uuid": "^3.3.2"
+  }
+}

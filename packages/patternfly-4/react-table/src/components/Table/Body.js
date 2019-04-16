@@ -10,13 +10,16 @@ const propTypes = {
   /** Specify key which should be used for labeling each row. */
   rowKey: PropTypes.string,
   /** Function that is fired when user clicks on row.  */
-  onRowClick: PropTypes.func
+  onRowClick: PropTypes.func,
+  /** Virtualized rows (optional provided in place of rows) */
+  rowsToRender: PropTypes.array
 };
 
 const defaultProps = {
   rowKey: 'id',
   className: '',
-  onRowClick: () => undefined
+  onRowClick: () => undefined,
+  rowsToRender: undefined
 };
 
 const flagVisibility = rows => {
@@ -29,10 +32,14 @@ const flagVisibility = rows => {
 
 class ContextBody extends React.Component {
   onRow = (row, rowProps) => {
-    const { onRowClick } = this.props;
+    const { onRowClick, onRow } = this.props;
+    const extendedRowProps = {
+      ...rowProps,
+      ...(onRow ? onRow(row, rowProps) : {})
+    };
     return {
       row,
-      rowProps,
+      rowProps: extendedRowProps,
       onMouseDown: event => {
         const computedData = {
           isInput: event.target.tagName !== 'INPUT',
@@ -78,7 +85,7 @@ class ContextBody extends React.Component {
   };
 
   render() {
-    const { className, headerData, rows, rowKey, children, onRowClick, ...props } = this.props;
+    const { className, headerData, rows, rowKey, rowsToRender, children, onRowClick, ...props } = this.props;
 
     let mappedRows;
     if (headerData.length > 0) {
@@ -113,7 +120,7 @@ class ContextBody extends React.Component {
 
 const TableBody = props => (
   <TableContext.Consumer>
-    {({ headerData, rows }) => <ContextBody headerData={headerData} rows={rows} {...props} />}
+    {({ headerData, rows }) => <ContextBody headerData={headerData} rows={props.rowsToRender || rows} {...props} />}
   </TableContext.Consumer>
 );
 

@@ -6,29 +6,36 @@ import PropTypes from 'prop-types';
 
 class BodyWrapper extends Component {
   render() {
-    const { mappedRows, ...props } = this.props;
-    if (mappedRows.some(row => row.hasOwnProperty('parent'))) {
+    const { mappedRows, tbodyRef, ...props } = this.props;
+    if (mappedRows && mappedRows.some(row => row.hasOwnProperty('parent'))) {
       return (
         <Fragment>
           {mapOpenedRows(mappedRows, this.props.children).map((oneRow, key) => (
-            <tbody {...props} className={css(oneRow.isOpen && styles.modifiers.expanded)} key={`tbody-${key}`}>
+            <tbody
+              {...props}
+              className={css(oneRow.isOpen && styles.modifiers.expanded)}
+              key={`tbody-${key}`}
+              ref={tbodyRef}
+            >
               {oneRow.rows}
             </tbody>
           ))}
         </Fragment>
       );
     }
-    return <tbody {...props} />;
+    return <tbody {...props} ref={tbodyRef} />;
   }
 }
 
 BodyWrapper.propTypes = {
   rows: PropTypes.array,
-  onCollapse: PropTypes.func
+  onCollapse: PropTypes.func,
+  tbodyRef: PropTypes.func
 };
 
 BodyWrapper.defaultProps = {
-  rows: []
+  rows: [],
+  tbodyRef: null
 };
 
 export default BodyWrapper;
