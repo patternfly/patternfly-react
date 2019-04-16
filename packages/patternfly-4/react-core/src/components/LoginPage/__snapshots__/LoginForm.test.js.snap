@@ -61,10 +61,14 @@ exports[`LoginForm with rememberMeLabel and no rememberMeAriaLabel generates con
     isRequired={false}
     isValid={true}
   >
-    <Component
+    <Checkbox
       aria-label=""
       checked={false}
+      className=""
       id="pf-login-remember-me-id"
+      isChecked={null}
+      isDisabled={false}
+      isValid={true}
       label="remember me"
       onChange={[MockFunction]}
     />
@@ -152,10 +156,14 @@ exports[`LoginForm with rememberMeLabel and rememberMeAriaLabel does not generat
     isRequired={false}
     isValid={true}
   >
-    <Component
+    <Checkbox
       aria-label="remember me"
       checked={false}
+      className=""
       id="pf-login-remember-me-id"
+      isChecked={null}
+      isDisabled={false}
+      isValid={true}
       label="remember me"
       onChange={[MockFunction]}
     />
